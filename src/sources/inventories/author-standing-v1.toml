@@ -32,7 +32,8 @@
 # WHAT A ROW CLAIMS, AND ON WHAT. `standing_basis` states the act or the
 # convention and its date; `basis_sources` cites every source the basis was read
 # from, as an https URL or a library record id. Every source was fetched whole
-# with curl on 2026-09-22 and read locally; none passed through a model. A web
+# with curl on 2026-09-22, or on 2026-09-23 for the rows added or corrected that
+# day, and read locally; none passed through a model. A web
 # search was used only to locate a page, never to read one. Where a source
 # gives no date, `died` says so rather than supplying one. `censures` records a
 # judgment on a point -- the body, the year, the point, the source -- and a
@@ -59,11 +60,25 @@
 
 schema = "triptych-author-standing/v1"
 record_type = "author-standing"
-audited_on = "2026-09-22"
+audited_on = "2026-09-23"
 
 # ---------------------------------------------------------------------------
 # Fathers, Doctors and saints named as lane authors by published proper studies
 # ---------------------------------------------------------------------------
+
+[[persons]]
+id = "ambrose"
+namespaces = ["ambrose"]
+name = "Ambrose of Milan"
+names = ["Ambrose", "Ambrose of Milan", "St Ambrose"]
+died = "4 April 397"
+standing = "father"
+standing_basis = "Bishop of Milan from 374 to 397, born probably 340, died 4 April 397, 'one of the most illustrious Fathers and Doctors of the Church' (Catholic Encyclopedia, 'St. Ambrose'); one of the four Latin Doctors, whose feasts a decree of Boniface VIII (1298) ordered kept as doubles throughout the Church (Catholic Encyclopedia, 'Doctors of the Church')."
+basis_sources = [
+  "https://www.newadvent.org/cathen/01383c.htm",
+  "https://www.newadvent.org/cathen/05075a.htm",
+]
+confession = "Catholic"
 
 [[persons]]
 id = "augustine"
@@ -246,6 +261,57 @@ year = "553"
 point = "his writings against St Cyril of Alexandria and the Council of Ephesus, one of the Three Chapters"
 source = "https://www.newadvent.org/cathen/04308b.htm"
 
+[[persons]]
+id = "cornelius-a-lapide"
+namespaces = ["cornelius-a-lapide"]
+name = "Cornelius a Lapide"
+names = ["Cornelius a Lapide", "Cornelis Cornelissen van den Steen"]
+died = "12 March 1637"
+standing = "ecclesiastical-writer"
+standing_basis = "Flemish Jesuit and exegete, born at Bocholt 18 December 1567, died at Rome 12 March 1637, professor of Holy Scripture at Louvain and then at Rome (Catholic Encyclopedia, 'Cornelius Cornelii a Lapide'). His brethren buried him apart in the hope that he 'should receive the honour of beatification'; the article records no cause, beatification or cultus."
+basis_sources = ["https://www.newadvent.org/cathen/04377a.htm"]
+confession = "Catholic"
+
+# ---------------------------------------------------------------------------
+# Exegetes of the commentary harvest whose standing the maintainer settled or
+# asked for on 2026-09-23
+# ---------------------------------------------------------------------------
+
+[[persons]]
+id = "theophylact-of-ohrid"
+namespaces = ["theophylact-of-ohrid"]
+name = "Theophylact of Ohrid"
+names = ["Theophylact of Ohrid", "Theophylact", "Theophylactus", "Theophylact of Achrida", "Theophylact of Bulgaria"]
+died = "1107, as the Catholic Encyclopedia's 'Exegesis, Biblical' gives it ('Theophylactus (d. 1107)'); the other articles read give no date"
+standing = "ecclesiastical-writer"
+standing_basis = "Greek exegete and Archbishop of Achrida (Ohrid) in Bulgaria after the breach of 1054. 'Theophylactus of Achrida (1078) was one of the most famous of the medieval Greek exegetes', in a see whose Bulgaria 'was incorporated with the Byzantine patriarchate' at Constantinople in 869, whose metropolitan Leo signed Michael Caerularius's circular letter against the Latin Church in 1053: 'In reality Achrida was during this period seldom in communion with either Constantinople or Rome' (Catholic Encyclopedia, 'Achrida'); 'Theophylactus, Archbishop in Bulgaria (eleventh)' is among the Greek catenists (Catholic Encyclopedia, 'Commentaries on the Bible'). No cultus is recorded in these sources. The standing is the maintainer's settlement of 2026-09-23 (guidance/liturgy/liturgical-commentators-plan-2026-09-22.md, 'Standing settlements'): an ecclesiastical writer and not a writer outside Catholic communion under decision D3, for his long Western reception and because his commentary is not schismatic polemic. The reception, as far as it was counted: Aquinas's Catena aurea, in the Corpus Thomisticum text of every Catena page its index links, names Theophylactus 1,033 times, in the volumes on Mark (362), Luke (423) and John (248), and not in the volume on Matthew."
+basis_sources = [
+  "https://www.newadvent.org/cathen/01103b.htm",
+  "https://www.newadvent.org/cathen/04157a.htm",
+  "https://www.newadvent.org/cathen/05692b.htm",
+  "https://www.corpusthomisticum.org/iopera.html",
+  "work.theophylact-of-ohrid.enarratio-in-evangelium-ioannis",
+]
+confession = "Byzantine, as Archbishop of Achrida after 1054"
+notes = "EVIDENCE AGAINST THE SETTLEMENT, RECORDED AND NOT ADOPTED: the Catholic Encyclopedia's 'Exegesis, Biblical' names 'Photius (d. 891), Œcumenius (tenth century), Theophylactus (d. 1107), and Euthymius (d. 1118)' as 'adherents of the Greek Schism, but their exegetical works deserve attention'. The settlement did not cite that sentence; the row keeps the maintainer's standing and records the sentence beside it."
+
+[[persons]]
+id = "rabanus-maurus"
+name = "Rabanus Maurus"
+names = ["Rabanus Maurus", "Hrabanus Maurus", "Rhabanus Maurus", "Rabanus", "Maurus Magnentius Rabanus"]
+died = "4 February 856"
+standing = "ecclesiastical-writer"
+standing_basis = "Abbot of Fulda and Archbishop of Mainz, born at Mainz about 776 (784?), died at Winkel near Mainz on 4 February 856 (Catholic Encyclopedia, 'Blessed Maurus Magnentius Rabanus'). That article is headed 'Blessed' and gives the title's basis: 'Mabillon and the Bollandists style him \"Blessed\", and his feast is celebrated in the dioceses of Fulda, Mainz, and Limburg on 4 February.' Migne's PL 107 (Paris, 1864) calls him 'B. Rabani Mauri' on its title page (edition record) and in its running head ('B. RABANI MAURI ARCHIEP. MOGUNT. OPERUM PARS I.', read on the page image of columns 871-872). The Roman Martyrology does not name him on 4 February, Pridie Nonas Februarii, in the Latin recension printed at Rome in 1902, nor on that day or in the index of the English translation of the edition printed at Rome in 1914 (Baltimore: John Murphy, 1916). None of these sources records a beatification or a confirmation of his cultus by the Holy See, so the registry's `blessed` (beatified) is not established, and the row records the standing the sources support. NOT VERIFIED: the current Martyrologium Romanum of 2001 and 2004, which Internet Archive offers only as a controlled loan and which was not read."
+basis_sources = [
+  "https://www.newadvent.org/cathen/12617a.htm",
+  "edition.jacques-paul-migne.patrologia-latina-volume-107.1864-paris",
+  "artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.columns-869-874-facsimile-9d084bb1",
+  "https://archive.org/download/gtu_32400004276022/gtu_32400004276022_djvu.txt",
+  "https://archive.org/download/romanmartyrology00cathuoft/romanmartyrology00cathuoft_djvu.txt",
+]
+confession = "Catholic"
+notes = "A local cultus: a feast in three German dioceses and the title Mabillon and the Bollandists give him. The row moves to `blessed` if a source is read that establishes the Holy See's beatification of him or its confirmation of that cultus, or his entry in the current Martyrologium Romanum. No library namespace: his works are held inside the PL 107 container (src/sources/inventories/source-containment-v1.toml), not under a work record of his own."
+
 # ---------------------------------------------------------------------------
 # Authors of the registered liturgical commentaries
 # ---------------------------------------------------------------------------
@@ -288,15 +354,16 @@ name = "Lucien Fromage"
 names = ["Lucien Fromage", "Dom Lucien Fromage", "Fromage"]
 died = "February 1916"
 standing = "ecclesiastical-writer"
-standing_basis = "Monk and priest of the Benedictine abbey of Solesmes, 1845-1916, born 8 May 1845 and died February 1916 (BnF authority record cb13171283h); the BnF names him continuator (relator 257) of L'Année liturgique (cb318196703) and preface-writer (relator 080) of its 'Deuxième volume de la continuation. Le temps après la Pentecôte. Tome II' (cb321334875), whose preface in the 1911 Oudin printing is signed 'Fr. L. F., O. S. B., Solesmes' (Internet Archive lanneliturgiqu11gu, text layer sha256 c24539c74426ab89d37b6dd1fb4909297c1361b15b555a760165920fd7fd6c07, lines 111-115). No cause, beatification or canonization is recorded in these sources."
+standing_basis = "Monk and priest of the Benedictine abbey of Solesmes, 1845-1916, born 8 May 1845 and died February 1916 (BnF authority record cb13171283h); the BnF names him continuator (relator 257) of L'Année liturgique (cb318196703) and preface-writer (relator 080) of its 'Deuxième volume de la continuation. Le temps après la Pentecôte. Tome II' (cb321334875), whose preface in the 1911 Oudin printing, registered as edition french-oudin-1911-volume-11, closes 'Fr. L. F., O. S. B. Solesmes, le 27 octobre 1882', read on the page image retained in that edition's front-matter facsimile excerpt (its p. 2, the parent PDF's p. 11, printed p. vij); the tracked text layer of the same Internet Archive item, lanneliturgiqu11gu, carries the signature at lines 111-115. No cause, beatification or canonization is recorded in these sources."
 basis_sources = [
   "https://catalogue.bnf.fr/ark:/12148/cb13171283h",
   "https://catalogue.bnf.fr/ark:/12148/cb318196703",
   "https://catalogue.bnf.fr/ark:/12148/cb321334875",
-  "https://archive.org/download/lanneliturgiqu11gu/lanneliturgiqu11gu_djvu.txt",
+  "artifact.prosper-gueranger.the-liturgical-year.french-oudin-1911-volume-11.front-matter-facsimile-85a2d57c",
+  "artifact.prosper-gueranger.the-liturgical-year.french-oudin-1911-volume-11.ia-djvu-text-c24539c7",
 ]
 confession = "Catholic"
-notes = "No library namespace: his continuation is registered under work.prosper-gueranger.the-liturgical-year, and formulary-loci.yaml names him as that work's writer for the Time after Pentecost volumes. The preface's year is damaged in the layer ('i8<i2')."
+notes = "No library namespace: his continuation is registered under work.prosper-gueranger.the-liturgical-year, and formulary-loci.yaml names him as that work's writer for the Time after Pentecost volumes. The preface is dated 27 October 1882 on the page image; only the text layer damages the date line ('Solesmes,  te  2y  octobre  i8<i2.', line 115). Until 2026-09-23 this row, which then cited the layer alone, called the year unread."
 
 [[persons]]
 id = "rupert-of-deutz"

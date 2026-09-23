@@ -60,7 +60,7 @@
 # here; they are the containment inventory's.
 
 schema: 'triptych-commentary-formulary-loci/v1'
-updated: '2026-09-22'
+updated: '2026-09-23'
 numbering: 'vulgate'
 works:
 
@@ -385,13 +385,16 @@ works:
           - {role: 'introit', incipit: 'Da pacem Domine, sustinentibus te', ref: 'Sirach 36:18'}
           - {role: 'collect', said: 'In Oratione vero corda a Deo dirigi precatur', incipit: 'Dirigat corda'}
           - {role: 'epistle', said: 'In Epistola intelligitur ejus admonitio, quam fecit pro pacis vinculo (I Cor. 1)', ref: '1 Corinthians 1'}
+          - {role: 'gradual', said: 'In Graduale laetatur, quia pax ab eis laudatur', ref: 'Psalm 121:1'}
           - {role: 'gradual', said: 'In Versu denuo orat, ut pax in turribus Ecclesiae fiat', ref: 'Psalm 121:7', as: 'verse'}
+          - {role: 'alleluia', said: 'In Alleluia populum monet, ut Deum pro pace laudet', incipit: 'Laudate Dominum'}
           - {role: 'gospel', said: 'Evangelium innuit qualiter populum in gemina dilectione copulaverit', ref: 'Matthew 22:37-40'}
+          - {role: 'offertory', said: 'Offertorium vero innotescit quod sacrificium laudis pro populi salute obtulit, sicut Moyses olim ... pro populo fecit', ref: 'Exodus 24:4-5'}
           - {role: 'communion', incipit: 'Tollite hostias', ref: 'Psalm 95:8'}
           - {role: 'communion', said: 'Hae duae Communiones, scilicet Vovete (Psal. lxxv) et Tollite hostias (Psal. xcv)', ref: 'Psalm 75:12', alternative: 'the second of the two Communions he names'}
         state: 'located'
-        checked_on: '2026-09-22'
-        notes: "The 'sub gratia' half of IV.84's Sunday: its heading carries no number, so no season or ordinal is recorded for it."
+        checked_on: '2026-09-23'
+        notes: "The 'sub gratia' half of IV.84's Sunday: its heading carries no number, so no season or ordinal is recorded for it. The Gradual's respond, the Alleluia and the Offertory are described here, not quoted (lines 57014-57015, 57016-57017 and 57019-57021), and each is identified by what IV.84 names for the same Sunday: the Gradual that 'laetatur' over the house of the Lord (Psalm 121:1), the Alleluia 'Laudate Domi-', and the Offertory 'Sanctificavit Moyses altare (Exod. xxiv)'. The quotation of the Offertory leaves out 'imperat ut', which the layer repeats from the line below ('sicut, Moyses olim imperat ut pro populo fecit'). These three were entered on 2026-09-23; the row as first entered omitted them."
       - locus: 'IV.86'
         read_in: 'artifact.honorius-augustodunensis.gemma-animae.1895-garnier-migne-pl-172.ia-djvu-ocr-2ebfcb5f'
         lines: [57029, 57068]
@@ -691,11 +694,11 @@ works:
         lines: [141354, 141412]
         own_label: 'De responsoriis Job et Tobiae'
         own_label_in_layer: 'De responsoriis Job et Tobia.'
-        topic: 'the September responsories of the night office: Job in the first three weeks of the month, Tobias in the fourth'
+        topic: 'the September responsories of the night office: from the psalms in the first week of the month, from Job in the second and third, from Tobias in the fourth'
         treatment: 'structural'
         state: 'located'
-        checked_on: '2026-09-22'
-        notes: 'The work record''s own reading, at columns 1309-1310 (leaf n660). A synod at Kiersy censured him in 838 on another point, the signification of the divided Host; the author-standing registry records it.'
+        checked_on: '2026-09-23'
+        notes: 'At columns 1309-1310, on leaf n660 (artifact.amalarius-of-metz.liber-de-ordine-antiphonarii.latin-migne-pl-105.ia-leaf-n660-a28f5891, fetched on 2026-09-23 and matching its recorded SHA-256), the page image reads ''responsorios de psalmis in prima hebdomada, secunda et tertia de Job, in quarta de Tobia''; the layer damages ''de psalmis'' (line 141362). The work record''s description, which this row first repeated, gives Job the first three weeks; that reading is not the page''s. A synod at Kiersy censured him in 838 on another point, the signification of the divided Host; the author-standing registry records it.'
 
   - work_id: 'work.ildefonso-schuster.the-sacramentary'
     genre: 'missal-commentary'
@@ -774,12 +777,12 @@ works:
     writer:
       person: 'lucien-fromage'
       scope: 'the Time after Pentecost volumes, the continuation after Guéranger''s death, which are the only volumes this file enters'
-      basis: "Decision D7 of 2026-09-22 (guidance/liturgy/liturgical-commentators-plan-2026-09-22.md). The French second volume of the continuation, Le Temps après la Pentecôte tome II, is prefaced 'Fr. L. F., O. S. B., Solesmes' (Internet Archive lanneliturgiqu11gu, text layer lines 111-115); the BnF names Lucien Fromage (1845-1916) its preface-writer (cb321334875) and the series' continuator (cb318196703). The English Time after Pentecost II translates that volume. The registry row lucien-fromage cites these sources."
+      basis: "Decision D7 of 2026-09-22 (guidance/liturgy/liturgical-commentators-plan-2026-09-22.md). The French second volume of the continuation, Le Temps après la Pentecôte tome II, registered as edition french-oudin-1911-volume-11, closes its preface 'Fr. L. F., O. S. B. Solesmes, le 27 octobre 1882', as read on the page image retained in artifact.prosper-gueranger.the-liturgical-year.french-oudin-1911-volume-11.front-matter-facsimile-85a2d57c (its p. 2, the parent PDF's p. 11, printed p. vij); the tracked text layer of the same item, artifact.prosper-gueranger.the-liturgical-year.french-oudin-1911-volume-11.ia-djvu-text-c24539c7, carries the signature at lines 111-115 and damages the date line. The BnF names Lucien Fromage (1845-1916) its preface-writer (cb321334875) and the series' continuator (cb318196703). The English Time after Pentecost II translates that volume. The registry row lucien-fromage cites these sources."
     loci:
-      - locus: 'Time after Pentecost II (series vol. XI), pp. 251-271'
+      - locus: 'Time after Pentecost II (series vol. XI), pp. 251-272'
         read_in: 'artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2'
-        pages: [272, 292]
-        printed: '1909 Stanbrook printing, pp. 251-271'
+        pages: [272, 293]
+        printed: '1909 Stanbrook printing, pp. 251-272'
         own_label: 'The Tenth Sunday after Pentecost'
         season: 'after-pentecost'
         ordinal: 10
@@ -795,12 +798,12 @@ works:
           - {role: 'communion', incipit: 'Acceptabis sacrificium justitiae'}
           - {role: 'postcommunion', incipit: 'Quaesumus, Domine Deus noster'}
         state: 'located'
-        checked_on: '2026-09-22'
-        notes: 'The library''s verified passage vol-xi-p-271, on the Postcommunion, is inside this chapter. The layer reads the Introit ''Cum clainarem''.'
-      - locus: 'Time after Pentecost II (series vol. XI), pp. 344-355'
+        checked_on: '2026-09-23'
+        notes: 'The library''s verified passage vol-xi-p-271, on the Postcommunion, is inside this chapter. The layer reads the Introit ''Cum clainarem''. The chapter closes on printed p. 272 (PDF p. 293) with the Vespers Collect, above the heading of the Eleventh Sunday; entered on 2026-09-22 as ending at p. 271, corrected on 2026-09-23.'
+      - locus: 'Time after Pentecost II (series vol. XI), pp. 344-356'
         read_in: 'artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2'
-        pages: [365, 376]
-        printed: '1909 Stanbrook printing, pp. 344-355'
+        pages: [365, 377]
+        printed: '1909 Stanbrook printing, pp. 344-356'
         own_label: 'The Fifteenth Sunday after Pentecost'
         season: 'after-pentecost'
         ordinal: 15
@@ -816,8 +819,8 @@ works:
           - {role: 'communion', incipit: 'Panis, quem ego dedero, caro mea est'}
           - {role: 'postcommunion', incipit: 'Mentes nostras et corpora possideat'}
         state: 'located'
-        checked_on: '2026-09-22'
-        notes: 'The OCR artifact''s notes locate this chapter at printed p. 344, the Gradual and Alleluia at 349 and the Offertory and Communion at 353-354.'
+        checked_on: '2026-09-23'
+        notes: 'The OCR artifact''s notes locate this chapter at printed p. 344, the Gradual and Alleluia at 349 and the Offertory and Communion at 353-354. The chapter closes on printed p. 356 (PDF p. 377) with the Magnificat antiphon Propheta magnus and the Vespers Collect, above the heading of the Sixteenth Sunday; entered on 2026-09-22 as ending at p. 355, corrected on 2026-09-23.'
       - locus: 'Time after Pentecost II (series vol. XI), pp. 356-372'
         read_in: 'artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2'
         pages: [377, 393]
@@ -841,7 +844,7 @@ works:
       - locus: 'Time after Pentecost II (series vol. XI), pp. 393-409'
         read_in: 'artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2'
         pages: [414, 430]
-        printed: '1909 Stanbrook printing, pp. 393-409; the first edition of 1883 prints it at vol. II p. 407'
+        printed: '1909 Stanbrook printing, pp. 393-409; the first edition of 1883, edition english-duffy-1883-volume-11, prints it at vol. II pp. 407-424'
         own_label: 'The Eighteenth Sunday after Pentecost'
         season: 'after-pentecost'
         ordinal: 18
@@ -858,8 +861,8 @@ works:
           - {role: 'communion', incipit: 'Tollite hostias, et introite in atria ejus'}
           - {role: 'postcommunion', incipit: 'Gratias tibi referimus, Domine'}
         state: 'located'
-        checked_on: '2026-09-22'
-        notes: "Read in the facsimile's embedded text layer, PDF pages 414-430 (printed 393-409), where the Mass is printed in Latin beside the English; the refs are the chapters it prints ('Caput I', 'Caput IX') and the verses its text runs. The locus is bounded by pages and not replayed, because the only local copy is the PDF. The first-edition page is the plan's reading of the 1883 layer and is not registered here."
+        checked_on: '2026-09-23'
+        notes: "Read in the facsimile's embedded text layer, PDF pages 414-430 (printed 393-409), where the Mass is printed in Latin beside the English; the refs are the chapters it prints ('Caput I', 'Caput IX') and the verses its text runs. The locus is bounded by pages and not replayed, because the only local copy is the PDF. The first edition is registered as edition.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11: the chapter opens at printed p. 407, which is PDF p. 433 of its facsimile artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-pdf-f1893738, read on the page image on 2026-09-23, and whose running head is physical line 24508 of the tracked text layer artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-djvu-text-95cdb0fc, with the chapter heading at lines 24511-24513; it closes at printed p. 424 (PDF p. 450) with the Vespers Collect Dirigat corda."
 
   - work_id: 'work.john-henry-blunt.the-annotated-book-of-common-prayer'
     genre: 'missal-commentary'

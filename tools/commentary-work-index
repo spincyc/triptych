@@ -162,16 +162,16 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index containment",
             (
-                "containment: 117 containers (89 records, 28 whole-volume artifacts), 290 constituents, 53 of them commentary-index leads",
-                "  resolved 22 · partial 78 · unresolved 17 · not containers 26 · identities 6",
+                "containment: 119 containers (91 records, 28 whole-volume artifacts), 298 constituents, 57 of them commentary-index leads",
+                "  resolved 22 · partial 80 · unresolved 17 · not containers 26 · identities 6",
             ),
             "validates the inventory; a container-shaped record with no entry, an unknown record or a malformed extent fails it",
         ),
         Example(
             "tools/commentary-work-index containment --container work.jacques-paul-migne.patrologia-latina-volume-37",
             (
-                "containment: 117 containers (89 records, 28 whole-volume artifacts), 290 constituents, 53 of them commentary-index leads",
-                "  resolved 22 · partial 78 · unresolved 17 · not containers 26 · identities 6",
+                "containment: 119 containers (91 records, 28 whole-volume artifacts), 298 constituents, 57 of them commentary-index leads",
+                "  resolved 22 · partial 80 · unresolved 17 · not containers 26 · identities 6",
                 "",
                 "  work.jacques-paul-migne.patrologia-latina-volume-37  [resolved]",
                 "    Augustine of Hippo -- Enarrationes in Psalmos (index lead): Psalms 80-150",
@@ -202,7 +202,7 @@ EXAMPLES = {
                 "      read in artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-volume-3-ocr-4d8c8988 lines 10500-10701; located 2026-09-22",
                 "",
                 "   2. Lucien Fromage — The Liturgical Year, Time after Pentecost II (series vol. XI), pp. 393-409",
-                "... 135 more lines",
+                "... 136 more lines",
             ),
             "matched on elements, never on the Sunday number; each row keeps the commentator's own heading and says where it drifts",
         ),
@@ -211,16 +211,16 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index standing",
             (
-                "author standing: 24 persons · father 8 · doctor 2 · blessed 1 · servant-of-god 1 · ecclesiastical-writer 11 · non-catholic 1",
-                "  liturgical commentaries with a row: 11 of 11 · published lane authors with a row: 14 of 14",
+                "author standing: 28 persons · father 9 · doctor 2 · blessed 1 · servant-of-god 1 · ecclesiastical-writer 14 · non-catholic 1",
+                "  liturgical commentaries with a row: 11 of 11 · published lane authors with a row: 19 of 19",
             ),
             "validates the registry; coverage is reported, never failed",
         ),
         Example(
             "tools/commentary-work-index standing --person theodoret-of-cyrus",
             (
-                "author standing: 24 persons · father 8 · doctor 2 · blessed 1 · servant-of-god 1 · ecclesiastical-writer 11 · non-catholic 1",
-                "  liturgical commentaries with a row: 11 of 11 · published lane authors with a row: 14 of 14",
+                "author standing: 28 persons · father 9 · doctor 2 · blessed 1 · servant-of-god 1 · ecclesiastical-writer 14 · non-catholic 1",
+                "  liturgical commentaries with a row: 11 of 11 · published lane authors with a row: 19 of 19",
                 "",
                 "  Theodoret of Cyrus (theodoret-of-cyrus), died about 457: ecclesiastical-writer",
                 "    basis: Bishop of Cyrus, born at Antioch about 393, died about 457 (Catholic Encyclopedia, 'Theodoret'). The Catholic Encyclopedia's 'Second Council of Constantinople' calls him and Theodore of Mopsuestia 'ecclesiastical writers'. No cultus is recorded. The liturgical-commentators plan of 2026-09-22 listed him as a Father 'by patrological convention'; the sources read here do not bear that out.",
