@@ -515,8 +515,12 @@ here takes v. 8 of the ministry stands. The disagreements inside single readings
 - the three senses of *virtus* and the towers at Ps 121:7;
 - Augustine's lemma against the Missal's;
 - Jerome's *forsan* against Aquinas on why the sins came first;
-- accusation against promise at 1 Cor 1:8;
-- the contrite heart against the priests' sacrifice at Ps 95:8.
+- accusation against promise at 1 Cor 1:8.
+
+The Communion's two identifications of the *hostiae* at Ps 95:8, the contrite
+heart and the Church's sacrifice offered by its priests, are kept as compatible
+emphases that Bellarmine and the continuation hold together, not as a
+disagreement (corrected at iteration 1; iteration 0 had listed them here as one).
 
 The compression set aside the study's liturgical commentators on the Introit
 (Rupert, Durandus, Honorius, Sicard) and on the chants of the return from
@@ -600,3 +604,80 @@ and 4. The revision timestamp and the rights colophon share the last page with
 the end of the References. This is an author proof inspection, not the
 independent visual evaluation, which follows the shared-timestamp
 three-document build.
+
+### Iteration 1: repair of the synthesis review
+
+Revised 23 September 2026 at derive-synthesis iteration 1, after synthesis
+review returned three blocking findings and four advisories. Only the concise
+components, the shared generation record and this entry changed. No research
+record, study component or manifest entry was edited.
+
+- SYN-001 (`sections/concise/10-commentary.tex`, the Communion paragraph): the
+  framing sentence and the two "On that reading ... rests" clauses said the
+  witnesses divide over the *hostiae* and that the division runs between the
+  second and third readings. The paragraph now presents the two
+  identifications as compatible. The third reading hears the offering of the
+  heart (Augustine, Cassiodorus), the second the priests' sacrifice (Theodoret,
+  the expositions under Athanasius's name), and neither denies the other.
+  Bellarmine gives both and the continuation holds both together. The
+  witnesses and quotations are unchanged. Mt 9:8 remains the only place where
+  two readings follow contrary judgements, as the Themes and the fifth
+  commentary heading state.
+- SYN-002 (the same file, "Where the Mass sends its people"): the gloss *sine
+  crimine* as *sine peccato mortali* is now Aquinas's alone. Ambrosiaster and
+  Cornelius a Lapide are kept as readers of a promise of perseverance, in the
+  study's own attribution.
+- SYN-003 (`sections/concise/03-date-location.tex`, the Gospel's explanatory
+  row): the critical span is restored in the study's words, "from shortly
+  before the fall of Jerusalem to well into the second century", without
+  numerals. The chronology sheet still begins and ends on physical page 2.
+
+The standing advisories were cleared in the same files. SYN-004: four
+sentences that narrated the discipline were recast with the witness or the text
+as subject. They covered the continuation's reading of the Epistle, the Epistle
+join at Mt 9:8 (now the third reading's hearing of Hilary's crowd), the order
+of the study's report (dropped), and the keys and Penance. SYN-005: the Themes
+now say that in the Missal the Sunday's Mass follows those of the September
+Ember Days. SYN-006: the Collect paragraph opens with the study's framing, "The
+Collect says outright what the Epistle implies", so that Berno and Schuster no
+longer stand under a Collect-Gospel claim. SYN-007: the scope note now says
+that the dossier's Date cells, relation labels, alternatives and unresolved
+states are the generated record's, as in the study, and that the map and the
+dossier's explanatory rows condense the study's.
+
+**Substantive word count at iteration 1: 6,193 words** (5,570 with the content
+of the `\latin{}` quotations removed): the themes section 1,585 (1,475) and the
+commentary 4,608 (4,095). This is the same stated rule, recounted with this
+iteration's tokeniser. That tokeniser gives 6,195 (5,572) for the iteration-0
+text, so the repair shortened the argument by two words. The iteration-0 figure
+of 6,218 came from a tokeniser that treats some control-word arguments
+differently.
+
+The shared generation record carries the iteration-1 repair in this stage's
+contribution and the revision timestamp `2026-09-23T14:53:00Z`. The expansive
+study was rebuilt at that timestamp and is unchanged at 34 pages with a clean
+log.
+
+`make doc DOC=liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-synthesis PROVIDER=claude`
+settles with no overfull or underfull box, no undefined reference, no LaTeX
+warning and no rerun request. The PDF has 12 physical pages. The settled
+auxiliary file places the inventory, overview and four sense markers on page 1,
+chronology start and end on page 2, themes start on page 3 and end on page 4,
+and commentary start on page 5. The checks named in the iteration-0 entry all
+pass again: the component artifacts check, the content check with presentation
+and format, every synthesis `check-content-preflight` check including
+provenance-matches-run against this run, and `check-generation-metadata`.
+
+The settled proof is SHA-256
+`c55f9eff3bf44abdbbae874df2a118073f608236cadc505ff67a0a8e3135ecc1`. Its
+auxiliary file is SHA-256
+`462a8f9e960cdda5fdf5b065a768e40e967e02010a8442e00b75d1e6b21f8528`, unchanged,
+because no marker moved. The expansive study rebuilt at the same timestamp is
+SHA-256 `bcdf6c6b73a7b312fa9f823801c75136379270408226aac1e106674780248b96`.
+Copies, with the log, the extracted text, the checks and their digests, are
+kept beneath this iteration's own artifact directory in the run. The page
+rasters are in a child directory of their own. The author read the contact
+sheet of all twelve pages and the rasters of pages 2 and 10. The dossier stands
+whole on page 2 with room below it, and the revised Communion and *sine
+crimine* passages set cleanly on page 10. This is an author proof inspection,
+not the independent visual evaluation.
