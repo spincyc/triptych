@@ -681,3 +681,180 @@ sheet of all twelve pages and the rasters of pages 2 and 10. The dossier stands
 whole on page 2 with room below it, and the revised Communion and *sine
 crimine* passages set cleanly on page 10. This is an author proof inspection,
 not the independent visual evaluation.
+
+## Derive-homily
+
+Authored 23 September 2026 in `proper-study` v6, run `71b6f89518984232`, seeded
+at commit `fa5355745b5e973584f047a7f59a20ad22676d64`, at derive-homily
+iteration 0, after the synthesis review passed. The homily is *The Eighteenth
+Sunday after Pentecost: The Man Who Was Carried*, built from `homily.tex`,
+addressed to an adult parish assembly for the occurrence of 27 September 2026,
+and derived from the two accepted studies of this same leaf. No research
+record and no component of either study was edited for it. The manifest
+changed only in one comment, which had described the homily components as
+still to be written.
+
+The entrypoint imports `common/preamble`, `common/propers-format` and
+`common/propers-homily` in that order, then the leaf's `format.tex`, and uses
+the shared full-width `\propertitle`. The `properhomily` environment encloses
+only the literal import of the spoken component; the terminal note follows the
+environment's closing page break. No font, geometry, title or column setting
+is overridden locally.
+
+The two homily components the manifest declares were written at this stage:
+
+- `homily-body` (`sections/homily/10-homily.tex`): the spoken text, continuous
+  preaching with no heading, no direction to a preacher and no citation inside
+  the speech, in six movements. It opens on the paralytic who never speaks. It
+  hears the Collect's *sine te* and the Epistle's thanks for gifts given, with
+  Chrysostom on grace as no debt and no payment, and the parties that the
+  verses after the lesson reveal. It keeps the open disagreement over whose
+  faith Christ saw (Jerome and Ambrose against Chrysostom) and rests on what
+  both sides grant. It takes the power "on earth" to forgive from Mt 9:6, with
+  Chrysostom's unseen proved by the seen and Aquinas's ministry beneath
+  Christ's authority, and applies it to the sacrament of Penance. It sets
+  Chrysostom's and Hilary's judgements of the crowd at Mt 9:8 side by side. It
+  hears the Communion's command with Augustine's contrite heart and the
+  Postcommunion's thanks and plea. It answers quietism from the Gospel's own
+  commands and Aquinas's *quia portabatur, praecepit ut portaret*. It ends with
+  three practicable responses (confession, carrying another, thanks for what
+  one is proudest of) and the hope of 1 Cor 1:8, where Chrysostom's warning
+  and Aquinas's promise are both named.
+- `homily-note` (`sections/homily/90-note.tex`): the terminal note and the
+  References, read aloud by nobody: audience and occasion, spoken word count
+  and pace, relation to the three reviewed readings, the route by which each
+  quoted text reaches the page, and the exact loci.
+
+The argument follows the third reviewed reading, `nothing-of-our-own`, as
+`research/interpretations.md` § 4.5 recommends. It takes from
+`authority-on-earth` only the Gospel's power on earth (Mt 9:6), and it takes
+the Communion as the entry into the courts, not the first reading's city;
+`peace-of-the-house` is not otherwise used. The homily stays within § 4.5's
+bounds:
+
+- no Father is given a ministerial reading of Mt 9:8;
+- the ministry of forgiveness is spoken as Aquinas's at v. 6, and its
+  application to Penance is the homily's own;
+- the crowd's praise as thanks for a gift is named as Hilary's, with
+  Chrysostom's different judgement beside it, and its join to the Epistle is
+  editorial;
+- no liturgical commentator is cited, and nothing is said of the Offertory's
+  age or pairing;
+- the Chrysostom sentence on 1 Cor 1:7 is not used, and his reading of 1:8 is
+  given as a warning.
+
+The Gospel, the Epistle, the Collect, the Communion and the Postcommunion carry
+the argument. The Introit, the Gradual, the Alleluia, the Offertory and the
+Secret are left to the studies. The manifest's complete element keys on both
+homily components are the component checker's coverage declaration and are
+unchanged.
+
+No English of a liturgical text was composed. The Collect and the
+Postcommunion are quoted from the 1861 Cummiskey translation, re-read in the
+tracked orations table (`post-pentecosten-18`, pp. 444–445). Scripture is the
+Douay–Rheims at the canonical verses, and 1 Cor 1:4, 5, 8, 10 were re-read in
+the tracked verse table. *Sine te* is glossed as the studies gloss it, and no
+prayer is recited at the end. The following were re-read at this stage in the
+tracked sources:
+
+- Chrysostom on Matthew, homily 29, in the tracked CCEL text of NPNF1 10
+  within the registered segment (lines 18438–18793);
+- Augustine on Ps 95, 9, in the tracked CCEL text of NPNF1 8 (line 48061);
+- Ambrose, *Exp. in Lc.* V.11, in the tracked Wikisource transcription;
+- Hilary, *In Matth.* VIII.8, in the tracked PL 9 optical text;
+- Aquinas on Matthew, c. 9, in the tracked Venice 1745 optical text, lines
+  16493–16496 (*per viam administrationis, non auctoritatis*) and 16508–16511
+  (*quia portabatur, praecepit ut portaret*).
+
+Three sources are reported as the reviewed study prints them and were not
+re-read here:
+
+- Chrysostom on First Corinthians, homily 2, whose New Advent delivery is
+  unregistered;
+- Jerome on Mt 9:1–2, whose PL 26 scan has no text layer;
+- Aquinas on First Corinthians, whose Corpus Thomisticum artifact is not held
+  locally.
+
+No anecdote, personal experience, clerical identity, miraculous story or
+attributed quotation was manufactured.
+
+**Spoken word count: 1,448 words.** The count is taken over
+`sections/homily/10-homily.tex` alone. Comments are removed, `\latin{}`
+contents kept and every other macro dropped, and the remainder is counted as
+whitespace-separated words carrying a letter. At an unhurried preaching pace
+of 120 to 130 words a minute that is 11.1 to 12.1 minutes, within the
+profile's approximately 10–12 minutes. The figure is arithmetic on the word
+count and not a timed delivery: nobody has spoken these words and no
+rehearsal was audible. The prose was read through in full, silently, for
+sense, sentence length and ease of speech. That reading changed one sentence
+that called the Collect "the one prayer said before the Epistle".
+
+### Upstream observations reported for the homily's cold reviewer
+
+- Standing advisory RES-034 remains true. The homily's Aquinas sentence *quia
+  portabatur, praecepit ut portaret* is in the accepted study but in no
+  research record. It was confirmed at this stage in the tracked Venice optical
+  text, lines 16508–16511.
+- Chrysostom's *Homilies on First Corinthians* 2, which both studies and this
+  homily quote, rests on an unregistered New Advent delivery
+  (`research/scope.md` § 6.3 register). The library's registered route to that
+  text was deliberately not used. The homily's two quotations were not re-read
+  here.
+- No other missing argument or source was found, and nothing upstream was
+  edited.
+
+### Author proof and checks
+
+The shared generation record now carries a contribution for this stage and the
+revision timestamp `2026-09-23T15:16:00Z`. The expansive study and the concise
+study were rebuilt at that timestamp. They are unchanged at 34 and 12 physical
+pages, with clean logs. The concise study's settled auxiliary file is
+byte-identical to the one the synthesis stage recorded (SHA-256
+`462a8f9e960cdda5fdf5b065a768e40e967e02010a8442e00b75d1e6b21f8528`), so its
+presentation markers have not moved.
+
+`make doc DOC=liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-homily PROVIDER=claude`
+settles with no overfull or underfull box, no undefined reference, no LaTeX
+warning and no rerun request. The PDF has 3 physical pages, letter size, Latin
+Modern Roman and Mono only, all embedded, subsetted and Unicode-mapped. The
+document info carries the entrypoint's title and subject and the tracked
+`ModDate`. Deleting the PDF, the auxiliary file and the log and building again
+reproduced the same bytes.
+
+These all pass:
+
+- `python3 scripts/_proper_study.py check --phase content --edition homily
+  --require-presentation --require-format`;
+- every `check-content-preflight` check the homily gate names: references-used
+  (nine entries, every one used), identifiers-resolve, bindings-valid,
+  restricted-not-reproduced, relation-coverage, unquoted-not-quoted,
+  structural-meta-labels, house-voice, the three chronology checks, and
+  provenance-matches-run against this run;
+- `tools/check-proper-components --phase artifacts --edition homily`;
+- `check-generation-metadata`.
+
+The settled proof is
+`build/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-homily.pdf`,
+SHA-256 `40de55df12b6823dd85549af759f5ff38e86e5727ded405fd1140a7c625af4bc`.
+Its auxiliary file is SHA-256
+`96da8bd61cc21463cd3eda0260cb058d26e765e456536a181a79f8efa1798486`. The
+expansive and concise studies rebuilt at the same timestamp are SHA-256
+`aaaec463874d813efd9e205a64fbccf351f983a3be51621e95f118b8aa2e5fcb` and
+`c44638b77c6b25f9473b665fb85a6a50d1a7938860f4b28e77a7d91cd60d75ff`.
+
+The author read the individual rasters and the extracted text of all three
+pages:
+
+- The speech occupies pages 1 and 2 in two balanced Latin Modern columns under
+  the full-width title, and ends about four-fifths of the way down page 2. Its five
+  wider spaces mark the six movements.
+- The running head reads "Eighteenth Sunday after Pentecost" and "Homily" on
+  page 2.
+- The note, the References, the revision timestamp and the rights colophon
+  share page 3.
+
+A first layout put the colophon alone on a fourth page. The note was shortened
+by trimming the quotations repeated in its loci paragraph and compressing two
+sentences, and nothing was set smaller. The proof shows no clipping,
+collision, missing text, blank page or heading-only page. This is an author
+proof inspection, not the independent visual evaluation.
