@@ -131,6 +131,17 @@ is satisfied by not asserting one. In postconciliar Ordinary Time the premise
 holds with added force, because the semi-continuous readings and shared Missal
 prayers follow independent courses.
 
+The history of this formulary's own texts in early lectionary and sacramentary
+lists may appear only in the expansive study, where it can replace an
+unsupported claim about a pairing's age. It never appears in the concise study
+or the homily. What another Sunday's Mass contained stays in the research
+records. This extends to lectionary history the principle that
+[Liturgical commentators](#liturgical-commentators) applies to a commentator's
+other Mass. The maintainer decided this on 2026-09-23 (D12 in
+[the plan of 2026-09-22](liturgical-commentators-plan-2026-09-22.md)).
+Research and documents first submitted for review before that date are not
+reopened for this paragraph alone.
+
 Declare controlling external source owners in
 `research/review-dependencies.toml`; its paths must remain beneath `src/`.
 Registered bindings already seal their source ancestry and available payloads.
