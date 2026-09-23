@@ -310,9 +310,10 @@ Rebinding is an operator approval and has not been done.
   no sweep could reach him. Research-review iteration 6 raised this as
   RES-032 and an observation. Registering him and mapping him at Matthew 9
   are sourcing follow-ups;
-- Theophylact has no row in `author-standing-v1.toml`. Whether the "outside
-  Catholic communion" limit applies to him is the maintainer's judgement
-  (raised as an observation in research-review iteration 4).
+- Theophylact has no row in `author-standing-v1.toml`. The maintainer decided
+  on 2026-09-23 to class him as an ecclesiastical writer, not as outside
+  Catholic communion; add the row with his post-1054 see recorded. Theodoret
+  and Cassiodorus stay ecclesiastical writers.
 
 **Open.** These may land now:
 

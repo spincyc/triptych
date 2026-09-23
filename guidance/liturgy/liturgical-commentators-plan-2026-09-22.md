@@ -72,6 +72,22 @@ publishes, because that run's accepted reviews seal the current profile. That
 Sunday's accepted study already keeps such history to one paragraph of its
 element-by-element section and is not revised for D12.
 
+**Standing settlements, 2026-09-23.** Decided on the evidence of the
+Eighteenth Sunday run. Recorded so a later session does not re-derive them.
+
+- **Theodoret of Cyrus and Cassiodorus stay ecclesiastical writers, not
+  Fathers.** No source read calls them Fathers. The Catholic Encyclopedia calls
+  Theodoret an "ecclesiastical writer", and Constantinople II (553) condemned
+  his writings against Cyril. Neither may be one of an interpretation's two
+  authors; both remain usable as supporting witnesses. Every published lane
+  already has two Fathers or saints without them.
+- **Theophylact of Ohrid is an ecclesiastical writer, not a writer outside
+  Catholic communion under D3.** His Western reception is long (Aquinas draws
+  on him throughout the *Catena aurea*), and his Pauline commentary is not
+  schismatic polemic. His row records his post-1054 Byzantine see. He may
+  support what his checked locus says and is never one of a reading's two
+  authors.
+
 **Erratum to the proposal.** §0, §1.3 and D7 count seven published leaves that
 credit the continuation to Guéranger with a corrected imprint. A search of the
 published leaves for that imprint finds more than seven, and the set it names
