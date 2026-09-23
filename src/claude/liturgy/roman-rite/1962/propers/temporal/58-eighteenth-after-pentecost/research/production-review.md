@@ -282,3 +282,95 @@ page of its own by merging two pairs of References entries and dropping the
 Catena entry, which the study no longer quotes or relies on. This remains author
 verification; the shared-timestamp three-document build and independent visual
 review are still to be done.
+
+## Author-study, iteration 2
+
+Revised 22–23 September 2026 in the same run, at author-study iteration 2,
+after study review iteration 1 returned one blocking finding, STU-014, on the
+comparison. The entries above are kept as the record of the earlier passes;
+where the iteration-1 entry describes the third reading's anagogical sense as
+resting on Hilary at v. 8, this entry supersedes it.
+
+### Blocking finding
+
+- **STU-014.** Hilary on Mt 9:8 is kept in the third reading, and the
+  comparison now says so. Its shared-ground paragraph no longer says that none
+  of the readings sets the crowd's praise against Chrysostom's reading. It says
+  that none takes a sense of the Church's ministry from a Father's reading of
+  that verse. It names all four places where the second reading takes the
+  ministerial sense: Ambrose, *Exp. in Lc.* V.13, glossing the scribes'
+  question; Aquinas at v. 6; Schuster's third sense of v. 8; and the
+  continuation, with its keys and Penance. It also says that the readings hear
+  the verse differently: the first does not use it, the second reports
+  Chrysostom first, and the third draws on Hilary. The disagreements paragraph
+  now opens "Most of the real disagreements", and a new paragraph adds the one
+  that runs between two readings. Chrysostom, with Ambrose at V.15, hears an
+  inadequate confession. Hilary hears fitting honour for a power and a way
+  given through Christ's word to the many who receive them. The second reading
+  reports both and draws its own sense of the verse from Schuster. The third
+  takes Hilary's side, so that its Gospel closes, as its Epistle opens, with
+  God glorified for what men have been given. The sentence "No witness sets one
+  reading's use of a text against another's" is removed. The Postcommunion
+  clause keeps "all three" and now says how each reading hears
+  *perficias*. For the first reading, the sentence on the prayers now says that
+  the Postcommunion still asks to be made worthy: the courts are entered and
+  the city is still ahead. The table's Gospel row for the third reading adds
+  Hilary. In the third reading's Gospel subsection, Hilary's *conclusa sunt
+  omnia suo ordine* and his contrast between the praise of one man and the
+  praise of many (PL 9, col. 962, text layer `db389fea`, re-read for this stage)
+  are added. The sentence "The last of those gifts is given as the first was"
+  is replaced: the power and the way are given now, through the word, and the
+  resurrection and the return to heaven are where the way ends.
+
+### Standing advisories cleared
+
+- STU-010: the element-by-element section opens with the books its elements
+  come from. The second sentence of the second reading's pairing paragraph is
+  dropped.
+- STU-011: the Gradual's Sextuplex placings are given only as the database's
+  report.
+- STU-015: Hilary's plea is given in his own form, that all be of one mind,
+  exercising the same charity (*Tract. in Ps.* 121, 5). Zingerle refers it to
+  1 Cor 1:10, and the schisms clause is attributed to Paul's verse. *Pax enim
+  ecclesiae …* is cited to § 14. Both were checked in the registered CSEL 22
+  optical layer, re-fetched for this stage with its SHA-256 matching
+  `research/scope.md` (`6b39d974…14a7fa`). The page images were not reopened.
+- STU-016: Augustine argues from Luke's *homo* beside Matthew's *fili*.
+- STU-017: Honorius's reading of the Gospel's city (IV.86) is dropped from the
+  second reading. The scope appendix no longer says that the commentators are
+  cited for what they say of this Gospel at another Sunday.
+- STU-018: Hilary's way home is kept only in the second reading's anagogical
+  sense, which develops it with Ambrose and Aquinas. The third reading's
+  anagogical sense now rests on 1 Cor 1:8 and the Postcommunion.
+- STU-019: the Introit's commentators are no longer counted. "The Mass whose
+  Epistle begins *Gratias ago*" replaces the Epistle-as-beginning phrasing. The
+  objection's four words are described as the chants' words. The references
+  are narrowed to Rupert XII.18 (col. 326), Durandus VI.135, Honorius IV.84–85
+  (cols. 722–723) and Sicard VIII.18. The column locations are from the
+  tracked layers' chapter headings.
+
+### For the reviewer
+
+`research/interpretations.md` § 4.3 still says that all three readings treat
+*qui dedit potestatem talem hominibus* alike and that none turns on it. That
+was true of the research's own readings. It is not true of the study since the
+iteration-1 revision gave the third reading Hilary at v. 8. The same section
+lists the Chrysostom–Hilary disagreement among the real ones, and the study now
+follows that list. This stage does not edit research records. The drift is
+reported for routing.
+
+**Substantive word count: about 15,300 words** (about 14,100 without the
+`\latin{}` quotations; the three readings about 10,300). This was counted by a
+re-implementation of the iteration-0 method, excluding the map and comparison
+tables, and exact agreement with the earlier count is not claimed. The finished
+PDF is 34 physical pages. The comparison now runs onto a short page before the
+Scriptural Date and Location appendix, which starts a new page.
+
+### Author proof and checks
+
+`make doc` settles at 34 pages. These all pass: `check-proper-components
+--phase artifacts --edition research`, `check-generation-metadata`,
+`check-web-edition`, and every `check-content-preflight` check for the research
+edition, including provenance-matches-run against this run. This is still
+author verification. The shared-timestamp three-document build and the
+independent visual review remain to be done.
