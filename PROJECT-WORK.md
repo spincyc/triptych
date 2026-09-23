@@ -23,7 +23,15 @@ The macro is also a PDF render input, so the fix belongs on the converter
 side; no reviewed PDF's bytes may change. The regenerated editions' release
 bindings need a fresh operator approval.
 
-**In progress.**
+The maintainer also decided on 2026-09-23 to set the dossier's spanned note
+rows as full-width blocks beneath their row, and to stop the site stylesheet
+clipping a dossier's Date column at phone width. The first is in the converter;
+the second is a stylesheet change.
+
+**In progress.** The converter change is merged (`0df032e15`) and its five
+regenerated editions passed an independent review. The review's blocking
+converter finding, that a commented-out note would be published, is being
+fixed. The stylesheet change is being made.
 
 ## Locus-pattern rebinding sweep, 2026-09-23
 
