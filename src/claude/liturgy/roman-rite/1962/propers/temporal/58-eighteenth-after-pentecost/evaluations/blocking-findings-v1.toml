@@ -50,11 +50,11 @@ run_id = "71b6f89518984232"
 workflow = "proper-study"
 workflow_version = 6
 stage = "synthesis-review"
-iteration = 0
-disposition = "CHANGES_REQUIRED"
-standing = 3
+iteration = 1
+disposition = "PASS"
+standing = 0
 accepted_count = 0
-advisory_count = 12
+advisory_count = 9
 observation_count = 2
 
 [[stages]]
@@ -83,42 +83,15 @@ observation_count = 0
 
 [[stages]]
 stage = "synthesis-review"
-iteration = 0
-disposition = "CHANGES_REQUIRED"
+iteration = 1
+disposition = "PASS"
 run_id = "71b6f89518984232"
 workflow = "proper-study"
 workflow_version = 6
-standing = 3
+standing = 0
 accepted_count = 0
-advisory_count = 4
+advisory_count = 1
 observation_count = 0
-
-[[findings]]
-stage = "synthesis-review"
-id = "SYN-001"
-severity = "blocking"
-location = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/10-commentary.tex lines 354-368 (PDF p.10: 'The Communion's Tollite hostias divides its witnesses over what the sacrifices are, and the division runs between the second and third readings' ... 'On that reading the third reading rests' ... 'On that reading the second rests'), against the same file's heading at line 265 and line 268 (PDF p.8: '\"Such power to men\": the one disagreement between two readings'; 'Here, and here only, two readings follow different judgements') and sections/concise/04-themes.tex lines 135-138 (PDF p.4: 'at one point, the crowd's praise at the end of the Gospel, two of them part')"
-problem = "The concise contradicts itself about where the readings part. The Themes and the commentary's fifth unit tell the reader three times that the crowd's praise at Mt 9:8 is the one point where two readings follow different judgements. Two pages later the Communion paragraph says the witnesses 'divide' over the hostiae and that 'the division runs between the second and third readings', each reading resting on one side. A reader cannot tell whether there are one or two contested points between readings. The accepted study does not say this. Its comparison (sections/50-comparison.tex) names Mt 9:8 as the one disagreement between two readings. research/interpretations.md 4.3 says the remaining differences are 'differences of governing emphasis, not incompatibilities' and that 'the one contest between witnesses that two readings carry differently is Chrysostom's and Hilary's at v. 8'. The second reading (sections/30-authority-on-earth.tex) presents the Communion witnesses as compatible: 'The continuation holds both together', and Bellarmine gives both. The concise author's own audit lists 'the contrite heart against the priests' sacrifice at Ps 95:8' among the disagreements inside single readings. So compression has dramatised a complementary emphasis into a dispute, on the point the contract most asks the concise to get right: which alternatives actually conflict."
-required_result = "Rewrite the Communion paragraph's framing sentence and its two 'On that reading ... rests' clauses. Present the two identifications of the hostiae as compatible emphases, not a division that runs between the readings: the contrite heart (Augustine, Cassiodorus), which the third reading uses, and the Church's sacrifice offered by its priests (Theodoret, the expositions under Athanasius's name, Bellarmine), which the second uses. Bellarmine and the continuation already hold both, and the paragraph can say so. Keep the witnesses and quotations as they stand, and keep Mt 9:8 as the only place where two readings follow contrary judgements, as the Themes, the fifth heading and 'Here, and here only' state. No new source claim is needed."
-repair_target = "synthesis"
-
-[[findings]]
-stage = "synthesis-review"
-id = "SYN-002"
-severity = "blocking"
-location = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/10-commentary.tex lines 403-407, 'Where the Mass sends its people', third paragraph (PDF p.10): 'for Aquinas, Ambrosiaster and Cornelius a Lapide it is a promise of perseverance, \\latin{sine crimine} being \\latin{sine peccato mortali}'"
-problem = "Compression has spread one author's Latin gloss to three. In the concise, the absolute clause 'sine crimine being sine peccato mortali' attaches to all three names, so the reader takes the italic Latin as the shared words of Aquinas, Ambrosiaster and a Lapide. The gloss is Aquinas's alone. research/scope.md (the six witnesses at v. 8) gives Aquinas's 'sine crimine is id est, sine peccato mortali'. Ambrosiaster's words are 'inviolati usque ad futurum judicium erunt', and a Lapide reads the verse as addressed 'toti Ecclesiae, in qua plerique erant sancti et inculpati'. The accepted study keeps the attribution exact: 'For Aquinas sine crimine means sine peccato mortali, and the verse is a promise of perseverance, as it is for Ambrosiaster and Cornelius a Lapide' (sections/40-nothing-of-our-own.tex). The concise's scope note also says a Lapide 'is summarised rather than quoted', and this clause in effect quotes Latin under his name."
-required_result = "Attribute the gloss to Aquinas alone and keep Ambrosiaster and a Lapide as readers of a promise. For example: 'for Aquinas, for whom sine crimine is sine peccato mortali, it is a promise of perseverance, as it is for Ambrosiaster and Cornelius a Lapide'. Leave the rest of the paragraph unchanged."
-repair_target = "synthesis"
-
-[[findings]]
-stage = "synthesis-review"
-id = "SYN-003"
-severity = "blocking"
-location = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/03-date-location.tex lines 88-89, Gospel dossier explanatory row (PDF p.2): 'The same Matthew article reports the Protestant and liberal critics of its day as widely divided.' Compare the reviewed home, sections/80-date-location.tex lines 110-112: '... as widely divided, from shortly before the fall of Jerusalem to well into the second century.'"
-problem = "Compression dropped the one critical-horizon qualification the Gospel dossier carries. Page 2 of the concise prints six early Date alternatives for Matthew, from c. A.D. 38-45 to c. A.D. 64-67 and c. A.D. 50, and then says only that the critics are 'widely divided'. It no longer says where they fall. The reader cannot tell that the critical dates the same source reports run later than every traditional figure shown. The Catholic Encyclopedia's 'Gospel of St. Matthew', tracked at its locus, gives Protestant and liberal datings from about 60 to about 130-34. The accepted study prints that span in words. The 1962 dossier rule, which the three-document profile applies to the concise page 2, requires the principal critical horizon in the explanatory row ('its presence there is required rather than tolerated'). The synthesis-review criteria ask whether compression removed a qualification, and here it did. The sheet has room: in the settled build the table ends well above the foot of page 2."
-required_result = "Restore the span in the Gospel dossier's explanatory row in the study's wording, 'from shortly before the fall of Jerusalem to well into the second century', or an equivalent without numerals, so it stays within the chronology checker's rule on dates outside cells. Rebuild, and confirm that the chronology sheet still begins and ends on physical page 2 and that the later page positions hold."
-repair_target = "synthesis"
 
 [[advisories]]
 stage = "research-review"
@@ -186,35 +159,11 @@ required_result = "Keep the a Lapide reading and Schuster's sentence on the exch
 
 [[advisories]]
 stage = "synthesis-review"
-id = "SYN-004"
+id = "SYN-008"
 severity = "advisory"
-location = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/10-commentary.tex: lines 155-156 (PDF p.7) 'That is the continuation's reading of the lesson on this Sunday, and the second reading uses it as such'; lines 290-291 (p.9) 'the join of that praise to the Epistle's Gratias ago is the editor's, not Hilary's'; lines 293-294 (p.9) 'The second reading reports Chrysostom's judgement first and Hilary's after it'; lines 317-318 (p.9) 'which is why the second reading does not make the altar the place where that power absolves'"
-problem = "Four sentences in the commentary body narrate the discipline rather than simply complying with it. They tell the reader that a commentator is used only as his own reading, that a join is editorial synthesis and not a Father's, how the expansive study orders its report, and that a reading declines an inference. guidance/editorial.md ('State the finding, not the process that produced it') names these forms, which the house-voice screen does not catch. The accepted study mostly avoids them: its third reading says 'Read so, the Gospel closes as the Epistle opens' with no editor's-join disclaimer. Four sentences in about 4,700 words is a light habit rather than a pervasive one, and none misleads."
-required_result = "Recast each sentence so its subject is the witness or the text, keeping every attribution. For example: 'The continuation reads the gifts, after the Ember ordinations, as ...'; 'Hilary's crowd glorifies God for what men have received, and the third reading hears in that praise the thanksgiving with which the Epistle opens'; drop the account of the study's ordering; and 'The continuation places that power in the keys and in Penance, not at the altar'."
-
-[[advisories]]
-stage = "synthesis-review"
-id = "SYN-005"
-severity = "advisory"
-location = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/04-themes.tex lines 48-49 (PDF p.3): 'and the Sunday itself follows the September Ember Days'"
-problem = "Compression turned a book-order and 2026 fact into a general statement. The study says the Mass stands in the Missal 'immediately after the Mass of the Ember Saturday of September' and that 'In 2026 it falls on 27 September, the Sunday after the September Ember Days' (sections/00-opening.tex). Under the 1960 rubrics the September Ember Days follow the third Sunday of September, and this Sunday ranges from mid-September to mid-October. So it immediately follows the Ember Days only in some years. The surrounding sentences, on Schuster and the Würzburg list, make the intended sense clear, and nothing rests on the generalisation."
-required_result = "Restore the qualifier: 'in the Missal the Sunday's Mass follows those of the September Ember Days', or 'this year the Sunday follows the September Ember Days'."
-
-[[advisories]]
-stage = "synthesis-review"
-id = "SYN-006"
-severity = "advisory"
-location = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/10-commentary.tex lines 250-257, 'Whose faith, and who was carried', last paragraph (PDF p.8): 'The Collect says outright what the Gospel shows. ... Berno of Reichenau explains the prayer from the Communion that follows it'"
-problem = "Berno expounded a Mass with another Gospel (research/interpretations.md, D11 boundary). The profile allows citing him only for a shared element, and never in support of a connection between that element and Mt 9:1-8. The concise cites him accurately for the Collect read from the Communion, but it places that citation in a paragraph whose opening sentence joins the Collect to the Gospel. The accepted study's paragraph begins 'The Collect says outright what the Epistle implies' instead. The placement can make Berno read as support for the editor's Collect-Gospel join. His words do not touch the Gospel, and the attribution itself is exact."
-required_result = "Keep Berno's reading out of a paragraph whose claim is the Collect-Gospel join. Either restore the study's Epistle framing for the sentences that cite Berno and Schuster, or move them to a separate sentence or paragraph on the Collect and Communion, so no reader takes them as support for the Gospel connection."
-
-[[advisories]]
-stage = "synthesis-review"
-id = "SYN-007"
-severity = "advisory"
-location = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/90-apparatus.tex lines 24-26 (PDF p.11): 'The map and the dossier reprint the study's, with the dates, relation labels, alternatives and unresolved states exactly as the generated chronology record gives them.'"
-problem = "The scope note says the concise map and dossier 'reprint' the study's. The Date cells are the same generated projection, but the map's descriptions are reworded (for example the Secret row), and the dossier's explanatory rows are condensed to fit one page. The author's own audit says so ('The explanatory rows are compressed from the study's appendix'), and SYN-003 shows the condensing lost a qualification. A reader told the sheet is a reprint has no reason to consult the study's fuller rows."
-required_result = "State what is actually shared: the Date cells, relation labels, alternatives and unresolved states are the generated record's, as in the study, and the map and the dossier's explanatory rows condense the study's."
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/04-themes.tex lines 8-9 (PDF p.3, the opening thesis: 'and confesses in its single prayer that without God we cannot please God'), with lines 37-38 (p.3: 'It is the Mass's only oration.')"
+problem = "The first sentence of the Themes says the Mass has a 'single prayer', but the same paragraph closes on 'a prayer to be made worthy of what has been received' (the Postcommunion). The page-1 map also lists the Secret and Postcommunion as prayers, and page 4 says the Mass 'ends its prayers with thanks'. The study's rubrical sense is exact: 'The Mass has one Collect' and 'a single oration of each kind' (sections/00-opening.tex). 'Only oration' is also the study's own usage (sections/05-appointed-texts.tex, 50-comparison.tex), and the page-1 note 'one oration of each kind' explains it. But 'single prayer' in plain English says something false, and an adult lay reader meets it in the thesis sentence. No argument rests on it, and the Collect is plainly the prayer meant."
+required_result = "Name the Collect in the thesis, for example 'and confesses in its Collect that without God we cannot please God' or 'in its one Collect'. For the same reason, line 38 could read 'It is the Mass's only collect'. Leave the rest of the paragraph unchanged."
 
 [[observations]]
 stage = "research-review"
