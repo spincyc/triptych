@@ -1,6 +1,30 @@
 schema_version = 1
 
 [[deliverables]]
+id = "locus-pattern-rebinding-2026-09-23"
+owner = "PROJECT-WORK.md"
+promise = "After the Claude 1962 Eighteenth Sunday run publishes, widen the locus_pattern of work.cassiodorus.expositio-psalmorum and work.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas to admit the artifacts registered under them, and carry every reviewed binding that cites either work, in every leaf, through the resulting fingerprint change in one recorded sweep (maintainer decision, 2026-09-23)."
+state = "planned"
+
+  [[deliverables.requirements]]
+  id = "patterns-admit-registered-artifacts"
+  criterion = "Both work records' locus_pattern admit the loci of every artifact registered under them, and a test fails if a registered artifact of either work has no expressible locus."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "tools/source-library"]
+
+  [[deliverables.requirements]]
+  id = "bindings-carried-through"
+  criterion = "Every binding in every leaf that cites either work or its descendants is re-fingerprinted and verified to resolve, free-text section references are converted to loci where the widened pattern now allows, tools/source-library validate passes, and the sweep's file list and before and after fingerprints are recorded."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "release-bindings-reapproved"
+  criterion = "Any release binding the sweep leaves stale is re-recorded only with a fresh operator approval note, since an approval signs specific bytes."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "Makefile"]
+
+[[deliverables]]
 id = "chronology-per-passage-dates-2026-09-23"
 owner = "PROJECT-WORK.md"
 promise = "Resolve escalation STU-005 as the maintainer decided on 2026-09-23: a page-2 dossier row for an element whose appointed passages carry different dates may state each passage's own date, labelled by its locus and drawn only from the generated chronology record, so that every appointed passage is dated as the 1962 profile requires. Lands after the Claude 1962 Eighteenth Sunday run publishes."

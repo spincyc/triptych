@@ -7,6 +7,24 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-09-22.
 
+## Locus-pattern rebinding sweep, 2026-09-23
+
+<!-- promised-deliverable: locus-pattern-rebinding-2026-09-23 -->
+
+The Eighteenth Sunday research found that two work records declare a
+`locus_pattern` narrower than the artifacts registered under them:
+`work.cassiodorus.expositio-psalmorum` admits only Pss 16, 24, 64 and 88, and
+`work.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas` has the
+same kind of gap. No valid locus can be written for most of their holdings, so
+bindings name sections in free text. Widening a pattern changes the record,
+which moves its source fingerprint and every reviewed binding pinned to it
+across published leaves. The maintainer decided on 2026-09-23 to fix both in
+one recorded rebinding sweep after that run publishes.
+
+**Planned.** The Eighteenth Sunday leaf's own Cassiodorus and a Lapide
+bindings are sealed into its run until then. A release rebind that the sweep
+needs requires a fresh operator approval.
+
 ## Per-passage dossier dates, 2026-09-23
 
 <!-- promised-deliverable: chronology-per-passage-dates-2026-09-23 -->
