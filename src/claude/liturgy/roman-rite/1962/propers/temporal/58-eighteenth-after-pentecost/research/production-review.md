@@ -858,3 +858,123 @@ by trimming the quotations repeated in its loci paragraph and compressing two
 sentences, and nothing was set smaller. The proof shows no clipping,
 collision, missing text, blank page or heading-only page. This is an author
 proof inspection, not the independent visual evaluation.
+
+### Iteration 1: repair of the homily review
+
+Revised 23 September 2026 at derive-homily iteration 1, after the homily review
+returned one blocking finding and six advisories. The changes are in the two
+homily components, the shared generation record and this entry. No research
+record, study component, concise component or manifest entry was edited.
+
+- HOM-001 (`sections/homily/10-homily.tex`, the Communion movement): the
+  sentence "The one gift that is not borrowed is the humble admission that we
+  need everything" is withdrawn. It answered the homily's own question by
+  making humility the one present we bring that God did not give. That
+  contradicts the Collect's *sine te*, which the homily expounds, and it
+  departs from the study, which says the Communion's *hostiae* are "not
+  something the worshipper owns and hands over". A new paragraph follows the
+  two Augustine quotations and is set apart from them. It uses the study's
+  formulation: the sacrifice the verse asks for is not something we own and
+  hand over; it is the one present that claims nothing as its own and costs
+  nothing but pride. It then quotes Paul's question to the same Corinthians,
+  "What hast thou that thou hast not received?" (1 Cor 4:7, which the study
+  quotes after Schuster on the Collect, re-read here in the tracked Douay
+  verse table). It says that our confession and our humble heart are God's
+  gifts too, which we bring back to him and which he is pleased to call a
+  present. The rest of the speech was then read against the same rule, and two
+  more sentences were changed. Of the paralytic's faith the speech now says
+  that "if he had any, that too was given him". Of the penitent it says that
+  he brings only his sins and his sorrow for them, "and the sorrow too is
+  God's gift". No act that pleases God (faith, sorrow, confession or
+  humility) is now presented as something not given. The note says that these
+  statements apply the Collect and 1 Cor 4:7, are the homily's own, and are
+  not Augustine's gloss.
+
+The standing advisories were cleared in the same files:
+
+- HOM-002: the penitent now brings "nothing to pay with: only his sins and
+  his sorrow for them". The week's first response says the same: "go to
+  confession, with your sins and your sorrow for them, and nothing to pay
+  with".
+- HOM-003: Hilary's gift is now given "to men, to all of us who receive
+  them, through his word". A hearer cannot take it as the power of those who
+  absolve.
+- HOM-004: "The Gospel ends with commands" now reads "Christ's last words to
+  the man are commands". Aquinas's triad is complete, and its third answer,
+  *quia ire non poterat, dixit, Et ambula*, was read in the tracked Venice
+  optical text at lines 16508–16511. It is added to the note's loci.
+- HOM-005: the opening's "this whole Mass is gathered around him" now reads
+  "the rest of this Mass can be heard around him".
+- HOM-006: the note says that three disagreements are spoken. It names the
+  third: Chrysostom against Aquinas, with Ambrosiaster and Cornelius a Lapide,
+  on whether 1 Cor 1:8 accuses or promises.
+- HOM-007: the note's route sentence names each author with his work. Ambrose
+  on Luke, and Hilary and Aquinas on Matthew, were re-read; Jerome on Matthew
+  and Aquinas on First Corinthians are reported as the study reads them.
+
+To keep the speech near its length, three settled sentences that the repairs
+did not need were removed. They are the opening's "Saint Matthew gives us not
+one word of his", the Corinthian party names after 1:10, and "That deserves a
+moment's honesty". Two clauses were shortened. The note's loci and
+References follow the Scripture now spoken: 1 Cor 1:4–10 and 4:7, no longer
+1:12. The note was tightened in wording only, so that the note, the
+References, the timestamp and the colophon share the third page again.
+
+**Spoken word count at iteration 1: 1,519 words**, by the same rule as at
+iteration 0, which recounts the iteration-0 text as 1,448. At 120 to 130 words
+a minute that is 11.7 to 12.7 minutes. This is at the upper edge of the
+profile's approximately 10–12 minutes, and slightly beyond it at the slower
+rate. The figure is arithmetic on the word count and not a timed delivery:
+nobody has spoken these words, and no rehearsal was audible. The revised prose
+was read through in full again, silently, for sense and for the line on grace
+from the Collect to the close.
+
+#### Upstream observation reported for the homily's cold reviewer
+
+- The expansive study's `sections/40-nothing-of-our-own.tex` (the quietism
+  subsection) has the same gap that HOM-004 found in the homily. It announces
+  Aquinas's three disabilities and gives two of his answers. The third answer
+  is in no research record. The homily's third answer was taken from the
+  tracked Venice text and not from the study. Neither the study nor the
+  research was edited.
+
+#### Author proof and checks
+
+The shared generation record carries the iteration-1 repair in this stage's
+contribution and the revision timestamp `2026-09-23T15:35:00Z`. The expansive
+and concise studies were rebuilt at that timestamp. They are unchanged at 34
+and 12 physical pages, with clean logs. The concise study's settled auxiliary
+file is still SHA-256
+`462a8f9e960cdda5fdf5b065a768e40e967e02010a8442e00b75d1e6b21f8528`.
+
+`make doc DOC=liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-homily PROVIDER=claude`
+settles with no overfull or underfull box, no undefined reference, no LaTeX
+warning and no rerun request. The PDF has 3 physical pages, letter size, Latin
+Modern Roman and Mono only, all embedded, subsetted and Unicode-mapped.
+Deleting the PDF, the auxiliary file and the log and building again
+reproduced the same bytes. The component content check with presentation and
+format passes. So does every homily `check-content-preflight` check,
+including references-used and provenance-matches-run against this run, and
+so do the component artifacts check and `check-generation-metadata`.
+
+The settled proof is SHA-256
+`62a1014c221118c3f432069eecba1147615d723dcfebb25b062d5e52eb2d4bb7`. Its
+auxiliary file is SHA-256
+`96da8bd61cc21463cd3eda0260cb058d26e765e456536a181a79f8efa1798486`. The
+expansive and concise studies rebuilt at the same timestamp are SHA-256
+`5dd437b0355d8fb1d20896f6e0a4d4dd31eeba738e2fa8f91adf4c990560821b` and
+`ea145b8e60cc2c651bf78f417cdfbcef68ea91582a76bbd334f56e7f05a3a161`.
+
+The author read the rasters of all three pages:
+
+- The speech fills pages 1 and 2 in two balanced columns under the full-width
+  title. It ends near the foot of page 2, and its five wider spaces mark the
+  six movements.
+- The note, the References, the revision timestamp and the rights colophon
+  share page 3.
+
+A first layout of this revision put the timestamp and colophon on a fourth
+page. The note's wording was tightened, and nothing was set smaller. The
+proof shows no clipping, collision, missing text, blank page or heading-only
+page. This is an author proof inspection, not the independent visual
+evaluation.
