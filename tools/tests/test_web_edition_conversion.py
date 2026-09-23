@@ -46,6 +46,10 @@ PROPER_TITLE = (
     r"Pentecosten}, is a Sunday of the second class."
 )
 
+# Pandoc pads narrow cells to align the columns; tests compare with runs of
+# spaces collapsed, since the padding is not content.
+DOSSIER_HEADER = "| **Proper** | **Citation** | **Location** | **Date** |\n|"
+
 
 @unittest.skipUnless(HAS_PANDOC, "pandoc is not installed")
 class WebEditionConversionTests(unittest.TestCase):
@@ -884,6 +888,22 @@ class WebEditionConversionTests(unittest.TestCase):
             str(raised.exception),
         )
 
+    def convert_shared_dossier(self, body: str, *, shared: bool = True) -> str:
+        """Convert a schema-2 leaf under the real shared proper format."""
+        options = dict(
+            preamble=r"\input{studies/subject/propers-format}",
+            files={"propers-format.tex": (ROOT / "src/common/propers-format.tex").read_text(
+                encoding="utf-8")},
+            proper=True, proper_schema=2, element_keys=("collect",),
+        )
+        if not shared:
+            return self.convert(body, **options)
+        # The graph gate has its own tests; here it accepts the synthetic leaf.
+        with mock.patch("_proper_components.include_graph",
+                        side_effect=lambda main, leaf, root: {
+                            path.resolve() for path in leaf.rglob("*.tex")}):
+            return self.convert(body, format_contract="propers-format-v1", **options)
+
     @unittest.skipUnless(importlib.util.find_spec("markdown"), "Python Markdown is not installed")
     def test_shared_format_dossier_notes_are_set_full_width_beneath_their_row(self) -> None:
         body = (
@@ -900,20 +920,9 @@ class WebEditionConversionTests(unittest.TestCase):
             r"\dossierprose{The last note, after which no table resumes.}" "\n"
             r"\end{dossiertable}"
         )
-        options = dict(
-            preamble=r"\input{studies/subject/propers-format}",
-            files={"propers-format.tex": (ROOT / "src/common/propers-format.tex").read_text(
-                encoding="utf-8")},
-            proper=True, proper_schema=2, element_keys=("collect",),
-        )
-        # The graph gate has its own tests; here it accepts the synthetic leaf.
-        with mock.patch("_proper_components.include_graph",
-                        side_effect=lambda main, leaf, root: {
-                            path.resolve() for path in leaf.rglob("*.tex")}):
-            markdown = self.convert(body, format_contract="propers-format-v1", **options)
-        # Pandoc pads narrow cells to align the columns; the padding is not content.
+        markdown = self.convert_shared_dossier(body)
         flat = re.sub(r" {2,}", " ", markdown)
-        header = "| **Proper** | **Citation** | **Location** | **Date** |\n|"
+        header = DOSSIER_HEADER
         self.assertIn(
             "| Collect | Ps 1:1 | Nowhere named | Undated |\n\n"
             "*Narrated event: none recorded.*\n\n"
@@ -930,11 +939,56 @@ class WebEditionConversionTests(unittest.TestCase):
         rendered = site["render_page"]("web/test/studies/subject.md", markdown, "subject.html", True, {})
         self.assertIn("</table>\n<p><em>Narrated event: none recorded.</em></p>", rendered)
         # A leaf that defines its own dossier keeps the padded-row handling.
-        legacy = self.convert(body, **options)
+        legacy = self.convert_shared_dossier(body, shared=False)
         self.assertRegex(
             legacy, r"(?m)^\| A note the print sets across all four columns\. +\|(?: +\|){3}$"
         )
         self.assertEqual(re.sub(r" {2,}", " ", legacy).count(header), 1)
+
+    def test_commented_out_dossier_notes_never_reach_the_output(self) -> None:
+        table = (
+            r"\begin{dossiertable}" "\n"
+            r"Collect & Ps 1:1 & Nowhere named & Undated\\ % a row's aside" "\n"
+            r"% \dossierprose{A withdrawn note.}" "\n"
+            r"  %\dossierevent{A withdrawn event.}" "\n"
+            r"% \dossierprose{A withdrawn note" "\n"
+            r"% across two lines.}" "\n"
+            r"\dossierprose{A live note keeps its 50\% % and loses this aside" "\n"
+            r"and every word after it.}" "\n"
+            r"\midrule" "\n"
+            r"Gospel & Mt 1:1 & Bethlehem & Dated\\" "\n"
+            r"\end{dossiertable}"
+        )
+        # A commented-out opening must not pair with the live table's end.
+        for opening in ("", "% \\begin{dossiertable} A withdrawn table opening.\n"):
+            body = r"\subsection{Prayer}\label{proper-collect} Prayer." "\n\n" + opening + table
+            with self.subTest(opening=opening):
+                flat = re.sub(r" {2,}", " ", self.convert_shared_dossier(body))
+                self.assertNotIn("withdrawn", flat)
+                self.assertNotIn("aside", flat)
+                self.assertIn(
+                    "| Collect | Ps 1:1 | Nowhere named | Undated |\n\n"
+                    "A live note keeps its 50% and every word after it.\n\n" + DOSSIER_HEADER,
+                    flat,
+                )
+                self.assertIn("| Gospel | Mt 1:1 | Bethlehem | Dated |\n", flat)
+                self.assertEqual(flat.count(DOSSIER_HEADER), 2)
+
+    def test_dossier_segment_of_only_comments_or_page_control_is_not_published(self) -> None:
+        for trailer in ("% A closing remark.", r"\newpage", "\\newpage\n% A closing remark.",
+                        r"\clearpage", r"\Needspace{4\baselineskip}"):
+            body = (
+                r"\subsection{Prayer}\label{proper-collect} Prayer." "\n\n"
+                r"\begin{dossiertable}" "\n"
+                r"Collect & Ps 1:1 & Nowhere named & Undated\\" "\n"
+                r"\dossierprose{The last note.}" "\n"
+                + trailer + "\n"
+                r"\end{dossiertable}"
+            )
+            with self.subTest(trailer=trailer):
+                flat = re.sub(r" {2,}", " ", self.convert_shared_dossier(body))
+                self.assertIn("The last note.\n\n**Last revised", flat)
+                self.assertEqual(flat.count(DOSSIER_HEADER), 1)
 
     def test_long_form_heading_and_anchor_fidelity(self) -> None:
         count = 120
@@ -1209,6 +1263,29 @@ class WebEditionAuditTests(unittest.TestCase):
         self.assertEqual(
             DRIVER.audit_output(body, self.minimal_markdown() + "\n**Title**\n\nEdition\n"), []
         )
+
+    def test_header_only_table_is_reported(self) -> None:
+        for table in ("| **A** | **B** |\n|:--|:--|\n\nNext.\n",
+                      "> | **A** | **B** |\n> |:--|:--|\n",
+                      "| **A** | **B** |\n|:--|:--|\n"):
+            with self.subTest(table=table):
+                failures = DRIVER.audit_output("Prose.", self.minimal_markdown() + "\n" + table)
+                self.assertIn("1 table(s) written with a header row and no body row", failures)
+
+    def test_tex_comments_are_stripped_as_tex_and_pandoc_read_them(self) -> None:
+        for text, expected in (
+            ("50\\% kept", "50\\% kept"),
+            ("row\\\\% gone", "row\\\\"),
+            ("\\url{https://example.invalid/a%20b} % gone", "\\url{https://example.invalid/a%20b} "),
+            ("a\n% whole line\nb", "a\nb"),
+            ("a % trailing\nb", "a \nb"),
+        ):
+            with self.subTest(text=text):
+                self.assertEqual(DRIVER.strip_tex_comments(text), expected)
+                masked = DRIVER.mask_tex_comments(text)
+                self.assertEqual(len(masked), len(text))
+                self.assertNotIn("gone", masked)
+                self.assertNotIn("whole", masked)
 
     def test_faithful_output_passes(self) -> None:
         self.assertEqual(DRIVER.audit_output("Prose.", self.minimal_markdown()), [])
