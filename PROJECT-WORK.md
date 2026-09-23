@@ -7,6 +7,24 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-09-22.
 
+## Complete web title blocks, 2026-09-23
+
+<!-- promised-deliverable: web-title-block-2026-09-23 -->
+
+Web review of the Eighteenth Sunday edition (WEB-001) found that pandoc cannot
+expand the optional-field tests in `\propertitle` (`src/common/propers-format.tex`).
+Every proper web edition therefore silently loses two of its four title lines,
+the liturgical day in Latin and the Missal/section line. Readers lose nothing,
+because both strings recur in the heading and first sentence. The maintainer
+decided on 2026-09-23 to fix the converter, add an audit, and regenerate and
+re-review every affected installed edition.
+
+The macro is also a PDF render input, so the fix belongs on the converter
+side; no reviewed PDF's bytes may change. The regenerated editions' release
+bindings need a fresh operator approval.
+
+**In progress.**
+
 ## Locus-pattern rebinding sweep, 2026-09-23
 
 <!-- promised-deliverable: locus-pattern-rebinding-2026-09-23 -->
