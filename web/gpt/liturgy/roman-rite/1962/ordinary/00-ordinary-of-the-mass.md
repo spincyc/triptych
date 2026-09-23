@@ -12,95 +12,26 @@
 
 The Order has genuine joints. Its large arcs are acts before they are topics: a body crosses a threshold and cries for mercy; praise opens common prayer and Scripture becomes the Church’s voice; created gifts and offerers are placed under judgment and grace; thanksgiving enters the Canon; the sacramental Body is broken without division and received; several inherited endings return the worshipper to the world.
 
-<table style="width:90%;">
-<colgroup>
-<col style="width: 22%" />
-<col style="width: 68%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p>Arc</p></th>
-<th style="text-align: left;">Governing movement</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Threshold and gathering cry</p></td>
-<td style="text-align: left;">Procession, an exiled psalm, reciprocal confession, ascent, kiss, relics, incense, the Introit, and the Kyrie bring an ordered ecclesial body to the altar and keep it there in need.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Praise, word, and faith</p></td>
-<td style="text-align: left;">Gloria, greeting, and Collect open common prayer; lesson, interlection chants, Gospel, and Creed move from hearing to confession.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Gifts and offerers</p></td>
-<td style="text-align: left;">Bread and mixed wine are received as created gifts, the offerers name their poverty, incense maps the worshipping body, washing submits it to judgment, and the Secret carries the offering into thanksgiving.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Thanksgiving and Canon</p></td>
-<td style="text-align: left;">Dialogue and Preface give a reason for praise; earth joins the angels; one sustained Roman prayer names communion, consecrates by Christ’s words, remembers, offers, intercedes, and returns creation to the Father through the Son.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Communion</p></td>
-<td style="text-align: left;">Filial prayer, fraction, the Lamb’s peace, preparation, reception, purification, proper chant, and Postcommunion unfold what it means to receive the undivided Christ.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Four endings</p></td>
-<td style="text-align: left;">Public dismissal, private submission of the service, blessing, and the Johannine Prologue are successive historical strata, not one originally composed finale.</td>
-</tr>
-</tbody>
-</table>
+| **Arc** | Governing movement |
+|:----------------|:-----------------------------------------------|
+| **Threshold and gathering cry** | Procession, an exiled psalm, reciprocal confession, ascent, kiss, relics, incense, the Introit, and the Kyrie bring an ordered ecclesial body to the altar and keep it there in need. |
+| **Praise, word, and faith** | Gloria, greeting, and Collect open common prayer; lesson, interlection chants, Gospel, and Creed move from hearing to confession. |
+| **Gifts and offerers** | Bread and mixed wine are received as created gifts, the offerers name their poverty, incense maps the worshipping body, washing submits it to judgment, and the Secret carries the offering into thanksgiving. |
+| **Thanksgiving and Canon** | Dialogue and Preface give a reason for praise; earth joins the angels; one sustained Roman prayer names communion, consecrates by Christ’s words, remembers, offers, intercedes, and returns creation to the Father through the Son. |
+| **Communion** | Filial prayer, fraction, the Lamb’s peace, preparation, reception, purification, proper chant, and Postcommunion unfold what it means to receive the undivided Christ. |
+| **Four endings** | Public dismissal, private submission of the service, blessing, and the Johannine Prologue are successive historical strata, not one originally composed finale. |
 
 ### A score, not a single spoken line
 
 At Low Mass one priestly recitation carries much of the complete textual order, with the server or faithful making the appointed responses. Sung and Solemn forms distribute the same celebration across celebrant, deacon, subdeacon, schola, servers, and people. Their actions can overlap:
 
-<table style="width:90%;">
-<colgroup>
-<col style="width: 18%" />
-<col style="width: 34%" />
-<col style="width: 38%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Moment</p></td>
-<td style="text-align: left;">One ritual track</td>
-<td style="text-align: left;">A concurrent track</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Entrance</p></td>
-<td style="text-align: left;">The procession and ministers approach the sanctuary.</td>
-<td style="text-align: left;">The schola’s Introit gives the day its first public scriptural voice; altar prayers may continue after the celebrant arrives.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Readings</p></td>
-<td style="text-align: left;">Ministers proclaim the appointed lesson and Gospel in differentiated ceremonial.</td>
-<td style="text-align: left;">The celebrant separately reads the interlection chants at the Missal; General Rubric 473 prevents him from duplicating the ministerial proclamation.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Sanctus and Canon</p></td>
-<td style="text-align: left;">The celebrant enters the Canon quietly.</td>
-<td style="text-align: left;">The schola may still be unfolding the Sanctus and Benedictus in chant.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Communion</p></td>
-<td style="text-align: left;">Distribution extends sacramental reception through the body of worshippers.</td>
-<td style="text-align: left;">The proper Communion chant accompanies that action even though the celebrant’s recitation has its own position.</td>
-</tr>
-</tbody>
-</table>
+|  |  |  |
+|:-------------|:------------------------|:--------------------------|
+| **Moment** | One ritual track | A concurrent track |
+| **Entrance** | The procession and ministers approach the sanctuary. | The schola’s Introit gives the day its first public scriptural voice; altar prayers may continue after the celebrant arrives. |
+| **Readings** | Ministers proclaim the appointed lesson and Gospel in differentiated ceremonial. | The celebrant separately reads the interlection chants at the Missal; General Rubric 473 prevents him from duplicating the ministerial proclamation. |
+| **Sanctus and Canon** | The celebrant enters the Canon quietly. | The schola may still be unfolding the Sanctus and Benedictus in chant. |
+| **Communion** | Distribution extends sacramental reception through the body of worshippers. | The proper Communion chant accompanies that action even though the celebrant’s recitation has its own position. |
 
 This simultaneity is not disorder. It prevents the book’s priest-centered printed sequence from being mistaken for the whole phenomenology of a Solemn Mass, and it prevents the ceremonial distribution of roles from being mistaken for several independent liturgies.
 
@@ -960,39 +891,13 @@ The historical account runs from apostolic action and the earliest structural wi
 
 ### Five layers that must not be confused
 
-<table style="width:92%;">
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 73%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Received order</p></td>
-<td style="text-align: left;">The Latin text, sequence, minister, gesture, audibility, and conditions attested by the 1962 Missal.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Biblical and doctrinal reality</p></td>
-<td style="text-align: left;">What Scripture and the Church’s teaching establish about sacrifice, memorial, real presence, priesthood, Communion, and ecclesial worship.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Historical stratum</p></td>
-<td style="text-align: left;">The period and route by which a text or gesture entered the Roman order, stated with the uncertainty allowed by the evidence.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Received spiritual interpretation</p></td>
-<td style="text-align: left;">Patristic, medieval, or later Catholic readings that genuinely illuminate the rite, even when they are not its first compositional explanation.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Editorial synthesis</p></td>
-<td style="text-align: left;">This study’s account of how movements relate. Such synthesis is offered for testing and never placed in an authority’s mouth.</td>
-</tr>
-</tbody>
-</table>
+|  |  |
+|:--------------|:---------------------------------------------------|
+| **Received order** | The Latin text, sequence, minister, gesture, audibility, and conditions attested by the 1962 Missal. |
+| **Biblical and doctrinal reality** | What Scripture and the Church’s teaching establish about sacrifice, memorial, real presence, priesthood, Communion, and ecclesial worship. |
+| **Historical stratum** | The period and route by which a text or gesture entered the Roman order, stated with the uncertainty allowed by the evidence. |
+| **Received spiritual interpretation** | Patristic, medieval, or later Catholic readings that genuinely illuminate the rite, even when they are not its first compositional explanation. |
+| **Editorial synthesis** | This study’s account of how movements relate. Such synthesis is offered for testing and never placed in an authority’s mouth. |
 
 The distinction protects two truths at once. The Mass has a divinely instituted sacramental nucleus: Christ gave the Church his Body and Blood under bread and wine and commanded the apostolic ministry to do this in his memorial. Its complete Roman ceremonial form also developed historically under ecclesial authority. Organic growth does not make every medieval prayer apostolic; historical addition does not make the received rite arbitrary or doctrinally mute. Pius XII describes the liturgy as the public worship of the whole Mystical Body and also as a living reality that develops while the Church guards faith and orders worship (*Mediator Dei* 20–23, 47–59).
 

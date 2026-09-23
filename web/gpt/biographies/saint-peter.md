@@ -370,59 +370,14 @@ The Neronian persecution after the fire of Rome in July 64 supplies the most pla
 
 ### The principal horizons
 
-<table style="width:92%;">
-<colgroup>
-<col style="width: 18%" />
-<col style="width: 31%" />
-<col style="width: 43%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p><strong>Horizon</strong></p></th>
-<th style="text-align: left;"><strong>Principal witness</strong></th>
-<th style="text-align: left;"><strong>What it can establish</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Late 20s–early 30s</p></td>
-<td style="text-align: left;">Gospels; 1 Cor 15:3–8</td>
-<td style="text-align: left;">Peter’s place among Jesus’ disciples, his failure in the Passion, and his primacy among named Resurrection witnesses.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>30s–40s</p></td>
-<td style="text-align: left;">Acts 1–12; Gal 1:18–24</td>
-<td style="text-align: left;">Public leadership in Jerusalem and Judea, mission beyond Jerusalem, and Paul’s fifteen-day visit with Cephas.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Later 40s–50s</p></td>
-<td style="text-align: left;">Gal 2; Acts 15; 1 Cor 1 and 9</td>
-<td style="text-align: left;">Peter among the recognized pillars, mission associated with the circumcised, the Antioch conflict, a mobile ministry, and an accompanied or married apostle.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>64–68</p></td>
-<td style="text-align: left;">1 Clem. 5; Tacitus, <em>Ann.</em> 15.44; later Roman witnesses</td>
-<td style="text-align: left;">A probable martyrdom in Nero’s Rome. The sources converge more strongly on place and martyr status than on date and manner.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Late first–third century</p></td>
-<td style="text-align: left;">1 Peter; Ignatius; Irenaeus; Gaius; Tertullian; Origen as preserved by Eusebius</td>
-<td style="text-align: left;">Roman association, the consolidation of apostolic memory, a Vatican memorial, and progressively more detailed accounts of death.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Fourth century onward</p></td>
-<td style="text-align: left;">Calendars, basilicas, liturgies, apocryphal reception, medieval localization</td>
-<td style="text-align: left;">Public cult and material commemoration; also the growth of details that require separate historical grading.</td>
-</tr>
-</tbody>
-</table>
+| **Horizon** | **Principal witness** | **What it can establish** |
+|:-------------|:----------------------|:------------------------------|
+| **Late 20s–early 30s** | Gospels; 1 Cor 15:3–8 | Peter’s place among Jesus’ disciples, his failure in the Passion, and his primacy among named Resurrection witnesses. |
+| **30s–40s** | Acts 1–12; Gal 1:18–24 | Public leadership in Jerusalem and Judea, mission beyond Jerusalem, and Paul’s fifteen-day visit with Cephas. |
+| **Later 40s–50s** | Gal 2; Acts 15; 1 Cor 1 and 9 | Peter among the recognized pillars, mission associated with the circumcised, the Antioch conflict, a mobile ministry, and an accompanied or married apostle. |
+| **64–68** | 1 Clem. 5; Tacitus, *Ann.* 15.44; later Roman witnesses | A probable martyrdom in Nero’s Rome. The sources converge more strongly on place and martyr status than on date and manner. |
+| **Late first–third century** | 1 Peter; Ignatius; Irenaeus; Gaius; Tertullian; Origen as preserved by Eusebius | Roman association, the consolidation of apostolic memory, a Vatican memorial, and progressively more detailed accounts of death. |
+| **Fourth century onward** | Calendars, basilicas, liturgies, apocryphal reception, medieval localization | Public cult and material commemoration; also the growth of details that require separate historical grading. |
 
 The horizons overlap. First Peter, for example, is a canonical text that locates its sender in “Babylon” and transmits a Petrine voice, but its date and direct authorship are disputed. The Vatican memorial is material evidence for what Roman Christians of the second century believed, not an independent biometric identification. First Clement is earlier than the surviving monument but frustratingly terse. Responsible chronology allows those pieces to reinforce one another without forcing any one piece to say more than it does.
 

@@ -212,65 +212,15 @@ Thirteen New Testament letters bear Paul’s name; Hebrews circulated in close a
 
 Broad critical agreement treats seven letters as directly Pauline. Dates and places below are responsible ranges, not colophons preserved in the earliest text.
 
-<table style="width:92%;">
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 22%" />
-<col style="width: 53%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p><strong>Letter</strong></p></th>
-<th style="text-align: left;"><strong>Probable setting</strong></th>
-<th style="text-align: left;"><strong>Biographical contribution and limit</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>1 Thessalonians</p></td>
-<td style="text-align: left;">c. 49–51, probably Corinth</td>
-<td style="text-align: left;">Paul, Silvanus, and Timothy; recent mission, manual labor, persecution, affection, Timothy’s return, hope for deceased believers. Pastoral reassurance, not an itinerary.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Galatians</p></td>
-<td style="text-align: left;">c. 48–55; destination and sequence disputed</td>
-<td style="text-align: left;">Persecution, revelation, Arabia, Damascus, visits to Cephas and pillars, Titus, Barnabas, Antioch conflict, Galatian illness. Polemical self-defense shapes selection.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>1 Corinthians</p></td>
-<td style="text-align: left;">c. 53–55, Ephesus</td>
-<td style="text-align: left;">Work and apostolic rights, Cephas and Apollos, Chloe’s report, Stephanas, moral and liturgical crises, spiritual gifts, Resurrection, collection, travel plans. Community questions are only partly recoverable.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>2 Corinthians</p></td>
-<td style="text-align: left;">c. 55–56, Macedonia; unity debated</td>
-<td style="text-align: left;">Suffering, weakness, visions, thorn, escape from Damascus, painful relations, Titus, rivals, collection. Some scholars propose several letters combined; final-form sequence remains the published witness.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Philippians</p></td>
-<td style="text-align: left;">c. 54–62; Ephesus, Caesarea, or Rome proposed</td>
-<td style="text-align: left;">Imprisonment, possible death, gift partnership, Timothy, Epaphroditus, Euodia and Syntyche, Jewish identity, Christ-centered self-understanding. Prison location and possible compositional layers disputed.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Philemon</p></td>
-<td style="text-align: left;">c. 54–62; prison location disputed</td>
-<td style="text-align: left;">Paul, Timothy, Philemon, Apphia, Archippus, Onesimus, Mark and other co-workers; appeal within a slave household. Outcome is not narrated.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Romans</p></td>
-<td style="text-align: left;">c. 56–58, probably Corinth/Cenchreae context</td>
-<td style="text-align: left;">Mature mission retrospect, east-to-west horizon, Jerusalem collection, plans for Rome and Spain, Phoebe, Prisca, Aquila, Junia, and a large network. A plan is not proof of completed travel.</td>
-</tr>
-</tbody>
-</table>
+| **Letter** | **Probable setting** | **Biographical contribution and limit** |
+|:------------|:---------------|:-------------------------------------|
+| **1 Thessalonians** | c. 49–51, probably Corinth | Paul, Silvanus, and Timothy; recent mission, manual labor, persecution, affection, Timothy’s return, hope for deceased believers. Pastoral reassurance, not an itinerary. |
+| **Galatians** | c. 48–55; destination and sequence disputed | Persecution, revelation, Arabia, Damascus, visits to Cephas and pillars, Titus, Barnabas, Antioch conflict, Galatian illness. Polemical self-defense shapes selection. |
+| **1 Corinthians** | c. 53–55, Ephesus | Work and apostolic rights, Cephas and Apollos, Chloe’s report, Stephanas, moral and liturgical crises, spiritual gifts, Resurrection, collection, travel plans. Community questions are only partly recoverable. |
+| **2 Corinthians** | c. 55–56, Macedonia; unity debated | Suffering, weakness, visions, thorn, escape from Damascus, painful relations, Titus, rivals, collection. Some scholars propose several letters combined; final-form sequence remains the published witness. |
+| **Philippians** | c. 54–62; Ephesus, Caesarea, or Rome proposed | Imprisonment, possible death, gift partnership, Timothy, Epaphroditus, Euodia and Syntyche, Jewish identity, Christ-centered self-understanding. Prison location and possible compositional layers disputed. |
+| **Philemon** | c. 54–62; prison location disputed | Paul, Timothy, Philemon, Apphia, Archippus, Onesimus, Mark and other co-workers; appeal within a slave household. Outcome is not narrated. |
+| **Romans** | c. 56–58, probably Corinth/Cenchreae context | Mature mission retrospect, east-to-west horizon, Jerusalem collection, plans for Rome and Spain, Phoebe, Prisca, Aquila, Junia, and a large network. A plan is not proof of completed travel. |
 
 “Directly Pauline” does not mean solitary composition. Sosthenes, Timothy, and Silvanus appear as co-senders. Romans 16:22 names Tertius as the person who wrote the letter, showing dictation or secretarial production; Galatians draws attention to Paul’s own large-letter handwriting near the close. Letters were performed aloud and carried by trusted people. Their “voice” is Paul’s within a collaborative ancient practice.
 
@@ -576,71 +526,16 @@ Acts narrates arrest in Jerusalem, custody under Felix and Festus, appeal to Cae
 
 ### The principal horizons
 
-<table style="width:92%;">
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 31%" />
-<col style="width: 44%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p><strong>Horizon</strong></p></th>
-<th style="text-align: left;"><strong>Principal witness</strong></th>
-<th style="text-align: left;"><strong>What it can establish</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Before the call</p></td>
-<td style="text-align: left;">Phil 3:4–6; Gal 1:13–14; Rom 11:1; Acts 7–9, 22, 26</td>
-<td style="text-align: left;">Jewish and Pharisaic identity, zeal, persecution, and—in Acts—Tarsian origin, Jerusalem education, and participation in the Stephen sequence.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Early-to-mid 30s</p></td>
-<td style="text-align: left;">Gal 1:11–24; 1 Cor 9:1; 15:8–10; Acts 9, 22, 26</td>
-<td style="text-align: left;">Revelation and call by the risen Christ, cessation of persecution, mission to the nations, Arabia and Damascus, baptism and Ananias in Acts, then a brief visit to Cephas.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Later 30s–40s</p></td>
-<td style="text-align: left;">Gal 1:21–2:14; Acts 9:26–15:41</td>
-<td style="text-align: left;">Work in Syria and Cilicia; relationship with Barnabas and Antioch; Jerusalem recognition; Gentile inclusion; conflict with Peter; expanding mission. Correlation remains disputed.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>c. 49–57</p></td>
-<td style="text-align: left;">Undisputed letters; Acts 16–20; Gallio inscription</td>
-<td style="text-align: left;">Communities in Galatia, Macedonia, Achaia, and Asia; letters, co-workers, conflict, collection for Jerusalem, sufferings, and plans. This is the best-documented period.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Later 50s–early 60s</p></td>
-<td style="text-align: left;">Rom 15–16; Acts 20–28</td>
-<td style="text-align: left;">Journey toward Jerusalem, arrest and hearings, voyage, Malta, arrival and two-year Roman custody. Acts supplies the narrative after Romans and ends open.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>64–68</p></td>
-<td style="text-align: left;">1 Clem. 5; Ignatius, <em>Rom.</em> 4; later Roman witnesses</td>
-<td style="text-align: left;">Probable martyrdom in Nero’s Rome. The convergence is stronger for Roman death than for release, Spain, exact year, trial, or manner.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Late first–third century, conventional</p></td>
-<td style="text-align: left;">1 Clement; disputed Pauline letters; Acts; Ignatius; Irenaeus; Gaius; Tertullian; Origen/Eusebius; apocryphal acts</td>
-<td style="text-align: left;">A received witness sequence for the Pauline corpus and Roman martyr memory; precise witness dates were not independently audited here.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Later reception</p></td>
-<td style="text-align: left;">Inspected basilica page, USCCB 2026 calendar entry, and 2009 papal report; other calendar, art, patronage, relic, and local-site leads uncollated</td>
-<td style="text-align: left;">The named controls establish a shrine, one current U.S. solemnity, and a reported test result; they do not validate the uncollated leads.</td>
-</tr>
-</tbody>
-</table>
+| **Horizon** | **Principal witness** | **What it can establish** |
+|:------------|:----------------------|:------------------------------|
+| **Before the call** | Phil 3:4–6; Gal 1:13–14; Rom 11:1; Acts 7–9, 22, 26 | Jewish and Pharisaic identity, zeal, persecution, and—in Acts—Tarsian origin, Jerusalem education, and participation in the Stephen sequence. |
+| **Early-to-mid 30s** | Gal 1:11–24; 1 Cor 9:1; 15:8–10; Acts 9, 22, 26 | Revelation and call by the risen Christ, cessation of persecution, mission to the nations, Arabia and Damascus, baptism and Ananias in Acts, then a brief visit to Cephas. |
+| **Later 30s–40s** | Gal 1:21–2:14; Acts 9:26–15:41 | Work in Syria and Cilicia; relationship with Barnabas and Antioch; Jerusalem recognition; Gentile inclusion; conflict with Peter; expanding mission. Correlation remains disputed. |
+| **c. 49–57** | Undisputed letters; Acts 16–20; Gallio inscription | Communities in Galatia, Macedonia, Achaia, and Asia; letters, co-workers, conflict, collection for Jerusalem, sufferings, and plans. This is the best-documented period. |
+| **Later 50s–early 60s** | Rom 15–16; Acts 20–28 | Journey toward Jerusalem, arrest and hearings, voyage, Malta, arrival and two-year Roman custody. Acts supplies the narrative after Romans and ends open. |
+| **64–68** | 1 Clem. 5; Ignatius, *Rom.* 4; later Roman witnesses | Probable martyrdom in Nero’s Rome. The convergence is stronger for Roman death than for release, Spain, exact year, trial, or manner. |
+| **Late first–third century, conventional** | 1 Clement; disputed Pauline letters; Acts; Ignatius; Irenaeus; Gaius; Tertullian; Origen/Eusebius; apocryphal acts | A received witness sequence for the Pauline corpus and Roman martyr memory; precise witness dates were not independently audited here. |
+| **Later reception** | Inspected basilica page, USCCB 2026 calendar entry, and 2009 papal report; other calendar, art, patronage, relic, and local-site leads uncollated | The named controls establish a shrine, one current U.S. solemnity, and a reported test result; they do not validate the uncollated leads. |
 
 ### The three-journey map and its limits
 

@@ -26,47 +26,12 @@ Rubric 270 states the ordinary relation: Mass should agree with the Office of th
 
 ### The four controlling layers
 
-<table style="width:92%;">
-<colgroup>
-<col style="width: 18%" />
-<col style="width: 27%" />
-<col style="width: 47%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p>Layer</p></th>
-<th style="text-align: left;">Principal source</th>
-<th style="text-align: left;">What it decides</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Calendar</p></td>
-<td style="text-align: left;">Universal calendar plus the applicable diocesan, local, church, and religious calendars</td>
-<td style="text-align: left;">Which temporal, sanctoral, proper, vigil, octave, and Saturday observances are candidates.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Precedence</p></td>
-<td style="text-align: left;">General Rubrics 4–114, especially rubric 91</td>
-<td style="text-align: left;">Which candidate supplies the Office and Mass of the day, and whether another is transferred, reposed, commemorated, or omitted.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Mass category</p></td>
-<td style="text-align: left;">General Rubrics of the Missal 269–423 and a particular formulary rubric</td>
-<td style="text-align: left;">Whether the celebration uses the Mass of the Office, a festive, votive, Requiem, ritual, or externally solemn Mass.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Assembly</p></td>
-<td style="text-align: left;">General Rubrics 424–516; <em>Ritus servandus</em>; <em>Ordo Missae</em>; <em>Canon Missae</em>; selected formulary</td>
-<td style="text-align: left;">Which texts are said, in what order, with what seasonal forms, prayers, Preface, Canon insert, dismissal, and Last Gospel.</td>
-</tr>
-</tbody>
-</table>
+| **Layer** | Principal source | What it decides |
+|:-------------|:-------------------|:--------------------------------|
+| **Calendar** | Universal calendar plus the applicable diocesan, local, church, and religious calendars | Which temporal, sanctoral, proper, vigil, octave, and Saturday observances are candidates. |
+| **Precedence** | General Rubrics 4–114, especially rubric 91 | Which candidate supplies the Office and Mass of the day, and whether another is transferred, reposed, commemorated, or omitted. |
+| **Mass category** | General Rubrics of the Missal 269–423 and a particular formulary rubric | Whether the celebration uses the Mass of the Office, a festive, votive, Requiem, ritual, or externally solemn Mass. |
+| **Assembly** | General Rubrics 424–516; *Ritus servandus*; *Ordo Missae*; *Canon Missae*; selected formulary | Which texts are said, in what order, with what seasonal forms, prayers, Preface, Canon insert, dismissal, and Last Gospel. |
 
 A particular rubric can qualify a general rule. The Nuptial Mass, Ember Saturday, Palm Sunday, Paschal Vigil, and Requiem formularies cannot be reconstructed safely from a generic ten-proper template. Read every heading and red direction attached to the selected formulary before declaring the assembly complete.
 
@@ -144,67 +109,14 @@ The algorithm is reproducible, but its inputs are not universally printed in one
 
 Rubrics 4–8 define a liturgical day and divide days into four classes. The later chapters distribute those classes differently among the kinds of day:
 
-<table style="width:92%;">
-<colgroup>
-<col style="width: 18%" />
-<col style="width: 17%" />
-<col style="width: 36%" />
-<col style="width: 21%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p>Kind of day</p></th>
-<th style="text-align: left;">Classes available</th>
-<th style="text-align: left;">Examples of the governing distinctions</th>
-<th style="text-align: left;">Rubrics</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Sunday</p></td>
-<td style="text-align: left;">I, II</td>
-<td style="text-align: left;">Advent, Lent, Passiontide, Easter, Low Sunday, Pentecost are I; others are II.</td>
-<td style="text-align: left;">9–20</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Feria</p></td>
-<td style="text-align: left;">I, II, III, IV</td>
-<td style="text-align: left;">Ash Wednesday and Holy Week ferias; December 17–23 and Ember days; ordinary Lenten ferias; ordinary weekdays.</td>
-<td style="text-align: left;">21–27</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Vigil</p></td>
-<td style="text-align: left;">I, II, III</td>
-<td style="text-align: left;">Christmas and Pentecost; Ascension, Assumption, St John Baptist, Peter and Paul; St Lawrence.</td>
-<td style="text-align: left;">28–34</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Feast</p></td>
-<td style="text-align: left;">I, II, III</td>
-<td style="text-align: left;">Mysteries, Mary, angels, saints, patrons, titles, dedications, and proper feasts according to their calendars.</td>
-<td style="text-align: left;">35–63</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Octave</p></td>
-<td style="text-align: left;">I, II</td>
-<td style="text-align: left;">Only Easter and Pentecost octaves are I; Christmas is II, with its octave day I.</td>
-<td style="text-align: left;">64–70</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Our Lady on Saturday</p></td>
-<td style="text-align: left;">IV</td>
-<td style="text-align: left;">Replaces an otherwise IV-class Saturday feria as the Office of the day.</td>
-<td style="text-align: left;">78–79</td>
-</tr>
-</tbody>
-</table>
+| **Kind of day** | Classes available | Examples of the governing distinctions | Rubrics |
+|:-------------|:------------|:-------------------------|:---------------|
+| **Sunday** | I, II | Advent, Lent, Passiontide, Easter, Low Sunday, Pentecost are I; others are II. | 9–20 |
+| **Feria** | I, II, III, IV | Ash Wednesday and Holy Week ferias; December 17–23 and Ember days; ordinary Lenten ferias; ordinary weekdays. | 21–27 |
+| **Vigil** | I, II, III | Christmas and Pentecost; Ascension, Assumption, St John Baptist, Peter and Paul; St Lawrence. | 28–34 |
+| **Feast** | I, II, III | Mysteries, Mary, angels, saints, patrons, titles, dedications, and proper feasts according to their calendars. | 35–63 |
+| **Octave** | I, II | Only Easter and Pentecost octaves are I; Christmas is II, with its octave day I. | 64–70 |
+| **Our Lady on Saturday** | IV | Replaces an otherwise IV-class Saturday feria as the Office of the day. | 78–79 |
 
 There is no IV-class feast in this system. A phrase such as “a fourth-class feast of Saint N.” signals either loose usage or contamination from another scheme. There are IV-class ferias, the IV-class Office of Our Lady on Saturday, and IV-class categories of votive and Requiem Mass.
 
@@ -212,81 +124,16 @@ There is no IV-class feast in this system. A phrase such as “a fourth-class fe
 
 The class attached to a votive or Requiem Mass describes the strength of a permission and the manner of its celebration; it does not reclassify the calendar day.
 
-<table style="width:92%;">
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 26%" />
-<col style="width: 40%" />
-<col style="width: 10%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p>Mass class</p></th>
-<th style="text-align: left;">Days ordinarily admitting it</th>
-<th style="text-align: left;">Leading examples and qualifications</th>
-<th style="text-align: left;">Rubrics</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Votive I</p></td>
-<td style="text-align: left;">All except the specifically excluded precedence positions 1–8, subject to particular exceptions</td>
-<td style="text-align: left;">Dedication during consecration; principal Congress Mass; extraordinary celebration in song.</td>
-<td style="text-align: left;">328–340</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Votive II</p></td>
-<td style="text-align: left;">Liturgical days II, III, IV</td>
-<td style="text-align: left;">Rogations; external solemnity; grave public cause; Nuptial Mass, though prohibited on Sundays; specified ritual or public occasions.</td>
-<td style="text-align: left;">341–383</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Votive III</p></td>
-<td style="text-align: left;">Liturgical days III, IV</td>
-<td style="text-align: left;">First Thursday or Saturday Eternal High Priest; First Friday Sacred Heart; First Saturday Immaculate Heart; Congress priests.</td>
-<td style="text-align: left;">384–386</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Votive IV</p></td>
-<td style="text-align: left;">Liturgical days IV only</td>
-<td style="text-align: left;">Any otherwise permitted votive with a just cause; reduced privileges.</td>
-<td style="text-align: left;">387–389</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Requiem I</p></td>
-<td style="text-align: left;">Its proper prohibition list controls</td>
-<td style="text-align: left;">All Souls Masses and one funeral Mass directly joined to the funeral.</td>
-<td style="text-align: left;">402–409</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Requiem II</p></td>
-<td style="text-align: left;">No I-class day and no Sunday</td>
-<td style="text-align: left;">Day of death, after notice of death, final burial.</td>
-<td style="text-align: left;">410–414</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Requiem III</p></td>
-<td style="text-align: left;">Liturgical days III, IV</td>
-<td style="text-align: left;">Third, seventh, thirtieth day; anniversary; cemetery; within the eight-day period counted inclusively from All Souls.</td>
-<td style="text-align: left;">415–422</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Requiem IV</p></td>
-<td style="text-align: left;">IV-class ferias outside Christmas time</td>
-<td style="text-align: left;">Other daily Masses for the dead.</td>
-<td style="text-align: left;">423</td>
-</tr>
-</tbody>
-</table>
+| **Mass class** | Days ordinarily admitting it | Leading examples and qualifications | Rubrics |
+|:-----------|:------------------|:---------------------------|:-------|
+| **Votive I** | All except the specifically excluded precedence positions 1–8, subject to particular exceptions | Dedication during consecration; principal Congress Mass; extraordinary celebration in song. | 328–340 |
+| **Votive II** | Liturgical days II, III, IV | Rogations; external solemnity; grave public cause; Nuptial Mass, though prohibited on Sundays; specified ritual or public occasions. | 341–383 |
+| **Votive III** | Liturgical days III, IV | First Thursday or Saturday Eternal High Priest; First Friday Sacred Heart; First Saturday Immaculate Heart; Congress priests. | 384–386 |
+| **Votive IV** | Liturgical days IV only | Any otherwise permitted votive with a just cause; reduced privileges. | 387–389 |
+| **Requiem I** | Its proper prohibition list controls | All Souls Masses and one funeral Mass directly joined to the funeral. | 402–409 |
+| **Requiem II** | No I-class day and no Sunday | Day of death, after notice of death, final burial. | 410–414 |
+| **Requiem III** | Liturgical days III, IV | Third, seventh, thirtieth day; anniversary; cemetery; within the eight-day period counted inclusively from All Souls. | 415–422 |
+| **Requiem IV** | IV-class ferias outside Christmas time | Other daily Masses for the dead. | 423 |
 
 Thus a class III Sacred Heart votive on a class III Lenten feria remains a votive Mass celebrated on a class III day. Its admission does not turn the Lenten feria into a feast or cause its privileged commemoration to vanish.
 
@@ -383,47 +230,12 @@ The table answers which day wins. It does not, by itself, answer what happens to
 
 Rubrics 92–94 define occurrence and say that the lower day can be omitted, commemorated, transferred, or reposed as later rules direct.
 
-<table style="width:92%;">
-<colgroup>
-<col style="width: 18%" />
-<col style="width: 31%" />
-<col style="width: 43%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p>Consequence</p></th>
-<th style="text-align: left;">Meaning</th>
-<th style="text-align: left;">Controlling distinction</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Omission</p></td>
-<td style="text-align: left;">Nothing of the impeded item is used that day or later.</td>
-<td style="text-align: left;">Express omissions include a vigil on any Sunday or I-class feast (33), and the lower of two celebrations of the same Divine Person or saint (95, 112).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Commemoration</p></td>
-<td style="text-align: left;">The impeded day contributes its assigned prayers under the numerical and Mass-form limits.</td>
-<td style="text-align: left;">Privileged versus ordinary status under 106–114 is decisive.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Accidental transfer</p></td>
-<td style="text-align: left;">An accidentally impeded feast is moved in that year.</td>
-<td style="text-align: left;">General right belongs only to I-class feasts (95–99), with special seats for the Annunciation and All Souls.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Perpetual reposition</p></td>
-<td style="text-align: left;">A perpetually impeded calendar entry is assigned a stable alternative day.</td>
-<td style="text-align: left;">Applies to I- and II-class feasts and qualifying particular III-class feasts under 100–102; it is not an annual improvisation.</td>
-</tr>
-</tbody>
-</table>
+| **Consequence** | Meaning | Controlling distinction |
+|:-------------|:----------------------|:------------------------------|
+| **Omission** | Nothing of the impeded item is used that day or later. | Express omissions include a vigil on any Sunday or I-class feast (33), and the lower of two celebrations of the same Divine Person or saint (95, 112). |
+| **Commemoration** | The impeded day contributes its assigned prayers under the numerical and Mass-form limits. | Privileged versus ordinary status under 106–114 is decisive. |
+| **Accidental transfer** | An accidentally impeded feast is moved in that year. | General right belongs only to I-class feasts (95–99), with special seats for the Annunciation and All Souls. |
+| **Perpetual reposition** | A perpetually impeded calendar entry is assigned a stable alternative day. | Applies to I- and II-class feasts and qualifying particular III-class feasts under 100–102; it is not an annual improvisation. |
 
 Rubric 94 keeps a date-fixed commemoration on its own date. If the feast with which it was printed or associated is transferred or reposed, the commemoration does not travel with that feast; it is made on its own date when the rubrics admit it, or is omitted there.
 
@@ -449,47 +261,12 @@ Rubrics 106–110 distinguish:
 
 Privileged commemorations are made at Lauds and Vespers and in every Mass. Ordinary commemorations are made at Lauds, the conventual Mass, and all Low Masses, but not in a nonconventual sung Mass (rubric 108). This difference can produce two correct parish formularies on the same morning: the Low Mass contains an ordinary saint’s commemoration while the later nonconventual sung Sunday Mass does not.
 
-<table style="width:92%;">
-<colgroup>
-<col style="width: 24%" />
-<col style="width: 56%" />
-<col style="width: 12%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p>Celebrated day or Mass</p></th>
-<th style="text-align: left;">Maximum commemorations admitted</th>
-<th style="text-align: left;">Rubric</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>I-class day; I-class votive; nonconventual sung Mass</p></td>
-<td style="text-align: left;">One privileged commemoration only.</td>
-<td style="text-align: left;">111a, 434a</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>II-class Sunday</p></td>
-<td style="text-align: left;">One II-class feast; it is omitted if a privileged commemoration must be made.</td>
-<td style="text-align: left;">111b, 434b</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Other II-class day or II-class votive</p></td>
-<td style="text-align: left;">One, privileged or ordinary.</td>
-<td style="text-align: left;">111c, 434c</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>III- or IV-class day; III- or IV-class votive</p></td>
-<td style="text-align: left;">Two. Other prescribed or imposed prayers still count toward the absolute prayer limit.</td>
-<td style="text-align: left;">111d, 434d–435</td>
-</tr>
-</tbody>
-</table>
+| **Celebrated day or Mass** | Maximum commemorations admitted | Rubric |
+|:-----------------|:---------------------------------------|:---------|
+| **I-class day; I-class votive; nonconventual sung Mass** | One privileged commemoration only. | 111a, 434a |
+| **II-class Sunday** | One II-class feast; it is omitted if a privileged commemoration must be made. | 111b, 434b |
+| **Other II-class day or II-class votive** | One, privileged or ordinary. | 111c, 434c |
+| **III- or IV-class day; III- or IV-class votive** | Two. Other prescribed or imposed prayers still count toward the absolute prayer limit. | 111d, 434d–435 |
 
 The Mass prayer count never exceeds three: the Mass Collect plus at most two additional prayers (rubrics 433–435). A prayer joined under one conclusion still counts with the Mass Collect under rubric 446.
 
@@ -545,59 +322,12 @@ If the votive honors the same Divine Person, Mary, or saint as an occurring I- o
 
 ### Votive-class privileges
 
-<table style="width:92%;">
-<colgroup>
-<col style="width: 13%" />
-<col style="width: 18%" />
-<col style="width: 17%" />
-<col style="width: 19%" />
-<col style="width: 25%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p>Class</p></th>
-<th style="text-align: left;">Admitted days</th>
-<th style="text-align: left;">Gloria / Creed</th>
-<th style="text-align: left;">Prayers</th>
-<th style="text-align: left;">Further rule</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>I</p></td>
-<td style="text-align: left;">All except table positions 1–8, unless a particular rule says otherwise</td>
-<td style="text-align: left;">Both</td>
-<td style="text-align: left;">Privileged commemorations only; no imposed collect</td>
-<td style="text-align: left;">Solemn tone when sung; impeded votive prayer can be joined under one conclusion under 330c.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>II</p></td>
-<td style="text-align: left;">Days II–IV</td>
-<td style="text-align: left;">Gloria unless violet; no Creed unless an occurring Sunday or octave independently requires it</td>
-<td style="text-align: left;">One commemoration; no imposed collect</td>
-<td style="text-align: left;">Solemn tone; particular cases in 345–383.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>III</p></td>
-<td style="text-align: left;">Days III–IV</td>
-<td style="text-align: left;">Gloria; never Creed</td>
-<td style="text-align: left;">Two commemorations, or one plus an imposed collect</td>
-<td style="text-align: left;">Solemn tone; only the enumerated cases in 385 plus Congress permission.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>IV</p></td>
-<td style="text-align: left;">Days IV only</td>
-<td style="text-align: left;">No Gloria except angels on any day and Mary on Saturday; no Creed</td>
-<td style="text-align: left;">Up to two additional prayers within the absolute limit</td>
-<td style="text-align: left;">Just cause required; ferial tone when sung.</td>
-</tr>
-</tbody>
-</table>
+| **Class** | Admitted days | Gloria / Creed | Prayers | Further rule |
+|:---------|:------------|:------------|:-------------|:-----------------|
+| **I** | All except table positions 1–8, unless a particular rule says otherwise | Both | Privileged commemorations only; no imposed collect | Solemn tone when sung; impeded votive prayer can be joined under one conclusion under 330c. |
+| **II** | Days II–IV | Gloria unless violet; no Creed unless an occurring Sunday or octave independently requires it | One commemoration; no imposed collect | Solemn tone; particular cases in 345–383. |
+| **III** | Days III–IV | Gloria; never Creed | Two commemorations, or one plus an imposed collect | Solemn tone; only the enumerated cases in 385 plus Congress permission. |
+| **IV** | Days IV only | No Gloria except angels on any day and Mary on Saturday; no Creed | Up to two additional prayers within the absolute limit | Just cause required; ferial tone when sung. |
 
 *Rubric locus:* 328–330, 341–344, 384–389, 431–432, 475–476.
 
@@ -757,46 +487,11 @@ The date of a devotion does not itself replace the Mass of the day. Rubric 385 c
 
 ### The three permissions
 
-<table style="width:92%;">
-<colgroup>
-<col style="width: 21%" />
-<col style="width: 23%" />
-<col style="width: 28%" />
-<col style="width: 20%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p>Request</p></th>
-<th style="text-align: left;">Number and formulary</th>
-<th style="text-align: left;">Required public setting</th>
-<th style="text-align: left;">Admitted day</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>First Thursday or first Saturday</p></td>
-<td style="text-align: left;">One Mass of Jesus Christ, Supreme and Eternal Priest</td>
-<td style="text-align: left;">Church or oratory where special exercises for sanctification of the clergy are actually held that day</td>
-<td style="text-align: left;">Liturgical day III or IV</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>First Friday</p></td>
-<td style="text-align: left;">Two Masses of the Most Sacred Heart of Jesus</td>
-<td style="text-align: left;">Church or oratory where special exercises in honor of the Sacred Heart are actually held that day</td>
-<td style="text-align: left;">Liturgical day III or IV</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>First Saturday</p></td>
-<td style="text-align: left;">One Mass of the Immaculate Heart of the Blessed Virgin Mary</td>
-<td style="text-align: left;">Church or oratory where special exercises in honor of the Immaculate Heart are actually held that day</td>
-<td style="text-align: left;">Liturgical day III or IV</td>
-</tr>
-</tbody>
-</table>
+| **Request** | Number and formulary | Required public setting | Admitted day |
+|:---------------|:----------------|:-------------------|:--------------|
+| **First Thursday or first Saturday** | One Mass of Jesus Christ, Supreme and Eternal Priest | Church or oratory where special exercises for sanctification of the clergy are actually held that day | Liturgical day III or IV |
+| **First Friday** | Two Masses of the Most Sacred Heart of Jesus | Church or oratory where special exercises in honor of the Sacred Heart are actually held that day | Liturgical day III or IV |
+| **First Saturday** | One Mass of the Immaculate Heart of the Blessed Virgin Mary | Church or oratory where special exercises in honor of the Immaculate Heart are actually held that day | Liturgical day III or IV |
 
 “Two Masses” is a ceiling and permission attached to the church or oratory, not a command that a second Mass be added and not a privilege for every Mass there. The Priest and Immaculate Heart permissions are each for one Mass. Exercises must occur that day in the stated place; the private devotion of celebrant or congregation does not satisfy the text merely by intention.
 
@@ -854,53 +549,12 @@ A request attributed to private revelation, devotional literature, a confraterni
 
 All Souls Masses agree with the Office; every other Requiem is outside its order (rubric 390). No commemoration of the current Office is made in a Requiem (391). Every Requiem, *even a funeral Mass*, is first subject to rubric 393: it is prohibited during exposition of the Blessed Sacrament and in the specified one-Mass conflicts with a required conventual Mass, the Mass following candle or ash blessing, or a required Rogation action. The class-specific rules below add to, rather than replace, that gate.
 
-<table style="width:92%;">
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 28%" />
-<col style="width: 42%" />
-<col style="width: 8%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p>Class</p></th>
-<th style="text-align: left;">Included Mass</th>
-<th style="text-align: left;">Admission rule</th>
-<th style="text-align: left;">Rubrics</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>I</p></td>
-<td style="text-align: left;">All Souls; one funeral Mass directly connected to a funeral</td>
-<td style="text-align: left;">Subject to 393. All Souls follows its day. Funeral Mass then follows the specific rules in 406–407, not the general votive table.</td>
-<td style="text-align: left;">402–409</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>II</p></td>
-<td style="text-align: left;">Day of death; after notice; final burial</td>
-<td style="text-align: left;">Subject to 393; must be applied for that deceased; prohibited on every I-class day and every Sunday.</td>
-<td style="text-align: left;">410–414</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>III</p></td>
-<td style="text-align: left;">Third, seventh, thirtieth day; anniversary; cemetery; within the eight-day period counted inclusively from All Souls</td>
-<td style="text-align: left;">Subject to 393; prohibited on I- and II-class days; each subsection supplies its formularies and transfer possibilities.</td>
-<td style="text-align: left;">415–422</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>IV</p></td>
-<td style="text-align: left;">Other daily Requiems</td>
-<td style="text-align: left;">Subject to 393; IV-class ferias only, outside Christmas time; should genuinely be applied for the dead.</td>
-<td style="text-align: left;">423</td>
-</tr>
-</tbody>
-</table>
+| **Class** | Included Mass | Admission rule | Rubrics |
+|:----------|:-------------------|:-----------------------------|:------|
+| **I** | All Souls; one funeral Mass directly connected to a funeral | Subject to 393. All Souls follows its day. Funeral Mass then follows the specific rules in 406–407, not the general votive table. | 402–409 |
+| **II** | Day of death; after notice; final burial | Subject to 393; must be applied for that deceased; prohibited on every I-class day and every Sunday. | 410–414 |
+| **III** | Third, seventh, thirtieth day; anniversary; cemetery; within the eight-day period counted inclusively from All Souls | Subject to 393; prohibited on I- and II-class days; each subsection supplies its formularies and transfer possibilities. | 415–422 |
+| **IV** | Other daily Requiems | Subject to 393; IV-class ferias only, outside Christmas time; should genuinely be applied for the dead. | 423 |
 
 ### All Souls
 
@@ -1791,56 +1445,15 @@ Complete this worksheet in order. A blank source field is a reason to stop; it i
 
 ### A. Establish the governing calendar
 
-<table style="width:92%;">
-<colgroup>
-<col style="width: 28%" />
-<col style="width: 64%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p>Field</p></th>
-<th style="text-align: left;">Entry to record</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Civil date and place</p></td>
-<td style="text-align: left;">Date; church or oratory; diocese; nation; religious institute if applicable.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Controlling books</p></td>
-<td style="text-align: left;">1962 typical Missal; universal calendar; approved national, diocesan, religious, and church supplement; current Ordo used only for the question it actually answers.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Temporal candidates</p></td>
-<td style="text-align: left;">Sunday or feria, season, week, vigil, octave day, Ember or Rogation status.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Sanctoral candidates</p></td>
-<td style="text-align: left;">Universal feast; each sourced proper feast; title, dedication, patron, founder, or indult basis.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Each candidate’s rank</p></td>
-<td style="text-align: left;">Kind of day; class; exact position among the twenty-eight; internal movable/fixed or proper ordering where required.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Winner and exception</p></td>
-<td style="text-align: left;">Winning position; any Sunday, octave, Christmas, vigil, or named exception that qualifies the table.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Each loser’s result</p></td>
-<td style="text-align: left;">Omitted, ordinary or privileged commemoration, accidentally transferred, or perpetually reposed; exact rubric for each result.</td>
-</tr>
-</tbody>
-</table>
+| **Field** | Entry to record |
+|:--------------------|:---------------------------------------------|
+| **Civil date and place** | Date; church or oratory; diocese; nation; religious institute if applicable. |
+| **Controlling books** | 1962 typical Missal; universal calendar; approved national, diocesan, religious, and church supplement; current Ordo used only for the question it actually answers. |
+| **Temporal candidates** | Sunday or feria, season, week, vigil, octave day, Ember or Rogation status. |
+| **Sanctoral candidates** | Universal feast; each sourced proper feast; title, dedication, patron, founder, or indult basis. |
+| **Each candidate’s rank** | Kind of day; class; exact position among the twenty-eight; internal movable/fixed or proper ordering where required. |
+| **Winner and exception** | Winning position; any Sunday, octave, Christmas, vigil, or named exception that qualifies the table. |
+| **Each loser’s result** | Omitted, ordinary or privileged commemoration, accidentally transferred, or perpetually reposed; exact rubric for each result. |
 
 ### B. Classify the Mass actually requested
 
@@ -1852,52 +1465,44 @@ Complete this worksheet in order. A blank source field is a reason to stop; it i
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p>Question</p></th>
+<th style="text-align: left;"><strong>Question</strong></th>
 <th style="text-align: left;">Evidence</th>
 <th style="text-align: left;">Decision</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Mass of Office?</p></td>
+<td style="text-align: left;"><strong>Mass of Office?</strong></td>
 <td style="text-align: left;">Rubrics 269–300; complete proper or prior-Sunday/resumed construction</td>
 <td style="text-align: left;"><hr /></td>
 </tr>
 <tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Festive Mass?</p></td>
+<td style="text-align: left;"><strong>Festive Mass?</strong></td>
 <td style="text-align: left;">Actual feast or commemoration in the calendar; rubrics 301–305</td>
 <td style="text-align: left;"><hr /></td>
 </tr>
 <tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Votive class?</p></td>
+<td style="text-align: left;"><strong>Votive class?</strong></td>
 <td style="text-align: left;">Exact enumerated purpose, authorization, place, exercises, number, and day-class prohibition; 306–389</td>
 <td style="text-align: left;"><hr /></td>
 </tr>
 <tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>External solemnity?</p></td>
+<td style="text-align: left;"><strong>External solemnity?</strong></td>
 <td style="text-align: left;">Right by rubric 358 or produced indult; permissible date and Mass count; 356–361</td>
 <td style="text-align: left;"><hr /></td>
 </tr>
 <tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Requiem kind?</p></td>
+<td style="text-align: left;"><strong>Requiem kind?</strong></td>
 <td style="text-align: left;">All Souls, funeral, death-day, anniversary, cemetery, eight-day, or daily; application and prohibition; 390–423</td>
 <td style="text-align: left;"><hr /></td>
 </tr>
 <tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Ritual setting?</p></td>
+<td style="text-align: left;"><strong>Ritual setting?</strong></td>
 <td style="text-align: left;">Governing Roman Ritual or Pontifical, inseparability, blessing or procession, and one-Mass obligation</td>
 <td style="text-align: left;"><hr /></td>
 </tr>
 <tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Present authority?</p></td>
+<td style="text-align: left;"><strong>Present authority?</strong></td>
 <td style="text-align: left;">Competent current law and permission, kept distinct from the 1962 textual calculation</td>
 <td style="text-align: left;"><hr /></td>
 </tr>

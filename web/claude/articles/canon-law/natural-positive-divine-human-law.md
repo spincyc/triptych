@@ -158,74 +158,13 @@ One more asymmetry matters juridically. Within human positive law, the Church’
 
 The table below states the scheme as the remainder of this article will use it. It is a summary of the sources already quoted, with the canonical consequences that sections 8–10 will verify canon by canon; the “exemplary loci” column names where each row’s claims are documented in this article.
 
-<table style="width:91%;">
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 15%" />
-<col style="width: 17%" />
-<col style="width: 15%" />
-<col style="width: 17%" />
-<col style="width: 14%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p><strong>Kind of law</strong></p></th>
-<th style="text-align: left;"><strong>Author / source</strong></th>
-<th style="text-align: left;"><strong>How instituted and promulgated</strong></th>
-<th style="text-align: left;"><strong>Mutability</strong></th>
-<th style="text-align: left;"><strong>Dispensability / custom</strong></th>
-<th style="text-align: left;"><strong>Exemplary loci</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Eternal law</p></td>
-<td style="text-align: left;">God; the plan of divine wisdom directing all acts and movements</td>
-<td style="text-align: left;">Not promulgated to us as a text; known only in its participations</td>
-<td style="text-align: left;">Immutable</td>
-<td style="text-align: left;">Not a working juridical category; ground of all obligation</td>
-<td style="text-align: left;">ST I-II 91.1; 93.1; 93.3</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Natural law</p></td>
-<td style="text-align: left;">God, legislating through the constitution of the rational creature; participation of the eternal law</td>
-<td style="text-align: left;">Promulgated by being instilled in human minds, naturally knowable; formulated progressively by reason</td>
-<td style="text-align: left;">First principles wholly immutable; secondary precepts stable <em>ut in pluribus</em>; changeable by addition only</td>
-<td style="text-align: left;">Not dispensable by any human authority; no custom against it obtains force of law</td>
-<td style="text-align: left;">ST I-II 90.4 ad 1; 91.2; 94.2, 4–6; 97.3 ad 1; CIC cc. 24 §1, 199 1°, 1163 §2</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Divine positive law</p></td>
-<td style="text-align: left;">God, revealing in history (Old Law, New Law)</td>
-<td style="text-align: left;">Given by divine acts and words; entrusted to the Church to guard and declare</td>
-<td style="text-align: left;">Old Law’s ceremonial and judicial precepts superseded within the one divine economy; New Law permanent</td>
-<td style="text-align: left;">Not dispensable by the Church; the Church declares, does not constitute, its requirements</td>
-<td style="text-align: left;">ST I-II 91.4–5; CIC cc. 748 §1, 750, 1075 §1, 1163 §2</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Human law: ecclesiastical</p></td>
-<td style="text-align: left;">The Church’s competent legislative authority</td>
-<td style="text-align: left;">Enacted and promulgated (cc. 7–8) or arising by legitimately observed custom approved by the legislator</td>
-<td style="text-align: left;">Amendable, abrogable, subject to desuetude by contrary custom</td>
-<td style="text-align: left;">Merely ecclesiastical law dispensable for a just cause within limits (cc. 85–93); custom <em>contra legem</em> possible (cc. 24–26)</td>
-<td style="text-align: left;">CIC cc. 11, 23–28, 85–93; ST I-II 95.1–2</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Human law: civil</p></td>
-<td style="text-align: left;">The civil community’s legislative authority</td>
-<td style="text-align: left;">Enacted, promulgated, or customary in the civil order</td>
-<td style="text-align: left;">Amendable by its own order</td>
-<td style="text-align: left;">Canon law defers to it in defined matters, <em>quatenus iuri divino non sint contrariae</em></td>
-<td style="text-align: left;">CIC cc. 22, 98 §2, 1290; ST I-II 95.4; 96.1–4</td>
-</tr>
-</tbody>
-</table>
+| **Kind of law** | **Author / source** | **How instituted and promulgated** | **Mutability** | **Dispensability / custom** | **Exemplary loci** |
+|:--------|:-----------|:------------|:----------|:------------|:----------|
+| **Eternal law** | God; the plan of divine wisdom directing all acts and movements | Not promulgated to us as a text; known only in its participations | Immutable | Not a working juridical category; ground of all obligation | ST I-II 91.1; 93.1; 93.3 |
+| **Natural law** | God, legislating through the constitution of the rational creature; participation of the eternal law | Promulgated by being instilled in human minds, naturally knowable; formulated progressively by reason | First principles wholly immutable; secondary precepts stable *ut in pluribus*; changeable by addition only | Not dispensable by any human authority; no custom against it obtains force of law | ST I-II 90.4 ad 1; 91.2; 94.2, 4–6; 97.3 ad 1; CIC cc. 24 §1, 199 1°, 1163 §2 |
+| **Divine positive law** | God, revealing in history (Old Law, New Law) | Given by divine acts and words; entrusted to the Church to guard and declare | Old Law’s ceremonial and judicial precepts superseded within the one divine economy; New Law permanent | Not dispensable by the Church; the Church declares, does not constitute, its requirements | ST I-II 91.4–5; CIC cc. 748 §1, 750, 1075 §1, 1163 §2 |
+| **Human law: ecclesiastical** | The Church’s competent legislative authority | Enacted and promulgated (cc. 7–8) or arising by legitimately observed custom approved by the legislator | Amendable, abrogable, subject to desuetude by contrary custom | Merely ecclesiastical law dispensable for a just cause within limits (cc. 85–93); custom *contra legem* possible (cc. 24–26) | CIC cc. 11, 23–28, 85–93; ST I-II 95.1–2 |
+| **Human law: civil** | The civil community’s legislative authority | Enacted, promulgated, or customary in the civil order | Amendable by its own order | Canon law defers to it in defined matters, *quatenus iuri divino non sint contrariae* | CIC cc. 22, 98 §2, 1290; ST I-II 95.4; 96.1–4 |
 
 Three consequences of the map, stated now and tested against the Code in what follows. First, *the boundary of dispensation and custom is the boundary of authorship*: what the Church did not author she cannot relax or watch lapse; what she authored she can. Second, *the same written canon can carry more than one kind of law*: a canon may restate divine law in one paragraph and determine it ecclesiastically in the next (c. 1075 is the textbook case), so the classification attaches to the norm carried, not to the ink. Third, *“positive” is not a synonym for “arbitrary”*: positive determinations bind in conscience when just, precisely because determination is one of the two modes of derivation from the natural law—though they bind, as q. 95 a. 2 says, with a force that is the enactment’s own.
 

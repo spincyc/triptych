@@ -236,61 +236,16 @@ Now begins the centre and high point of the whole celebration, namely the Euchar
 
 The Instruction then distinguishes eight principal elements of which the Eucharistic Prayer consists, and this enumeration is the analytical spine of everything that follows.[^47]
 
-<table style="width:96%;">
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 80%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p><strong>Element</strong></p></th>
-<th style="text-align: left;"><strong>What <em>IGMR</em> 79 says it does</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>a. Thanksgiving</p></td>
-<td style="text-align: left;">Expressed especially in the Preface: the priest, in the name of the whole holy people, glorifies God the Father and gives him thanks for the whole work of salvation or for some particular aspect of it, according to the day, feast, or season.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>b. Acclamation</p></td>
-<td style="text-align: left;">The whole congregation, joining itself to the heavenly powers, sings the <em>Sanctus</em>; this acclamation constitutes part of the Eucharistic Prayer itself and is uttered by all the people with the priest.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>c. Epiclesis</p></td>
-<td style="text-align: left;">By particular invocations the Church implores the power of the Holy Spirit, that the gifts offered by human hands may be consecrated, that is, become the Body and Blood of Christ, and that the spotless victim to be received in Communion may be for the salvation of those who will partake of it.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>d. Institution narrative and consecration</p></td>
-<td style="text-align: left;">By the words and actions of Christ that sacrifice is carried out which Christ himself instituted at the Last Supper, when he offered his Body and Blood under the species of bread and wine, gave them to his Apostles to eat and drink, and left them the command to perpetuate the same mystery.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>e. Anamnesis</p></td>
-<td style="text-align: left;">Fulfilling the command received from Christ the Lord through the Apostles, the Church keeps the memorial of Christ himself, recalling especially his blessed passion, glorious resurrection, and ascension into heaven.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>f. Oblation</p></td>
-<td style="text-align: left;">In this very memorial the Church, and in particular the Church here and now gathered, offers the spotless victim to the Father in the Holy Spirit. The Church intends that the faithful should offer not only the spotless victim but also learn to offer their very selves, and day by day be consummated, through Christ the Mediator, into unity with God and with one another, so that at last God may be all in all.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>g. Intercessions</p></td>
-<td style="text-align: left;">These express that the Eucharist is celebrated in communion with the whole Church, both heavenly and earthly, and that the offering is made for her and for all her members, living and dead, who have been called to share in the redemption and salvation acquired by the Body and Blood of Christ.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>h. Final doxology</p></td>
-<td style="text-align: left;">The glorification of God is expressed and is confirmed and concluded by the people’s acclamation <em>Amen</em>.</td>
-</tr>
-</tbody>
-</table>
+| **Element** | **What *IGMR* 79 says it does** |
+|:------------|:--------------------------------------------------------|
+| **a. Thanksgiving** | Expressed especially in the Preface: the priest, in the name of the whole holy people, glorifies God the Father and gives him thanks for the whole work of salvation or for some particular aspect of it, according to the day, feast, or season. |
+| **b. Acclamation** | The whole congregation, joining itself to the heavenly powers, sings the *Sanctus*; this acclamation constitutes part of the Eucharistic Prayer itself and is uttered by all the people with the priest. |
+| **c. Epiclesis** | By particular invocations the Church implores the power of the Holy Spirit, that the gifts offered by human hands may be consecrated, that is, become the Body and Blood of Christ, and that the spotless victim to be received in Communion may be for the salvation of those who will partake of it. |
+| **d. Institution narrative and consecration** | By the words and actions of Christ that sacrifice is carried out which Christ himself instituted at the Last Supper, when he offered his Body and Blood under the species of bread and wine, gave them to his Apostles to eat and drink, and left them the command to perpetuate the same mystery. |
+| **e. Anamnesis** | Fulfilling the command received from Christ the Lord through the Apostles, the Church keeps the memorial of Christ himself, recalling especially his blessed passion, glorious resurrection, and ascension into heaven. |
+| **f. Oblation** | In this very memorial the Church, and in particular the Church here and now gathered, offers the spotless victim to the Father in the Holy Spirit. The Church intends that the faithful should offer not only the spotless victim but also learn to offer their very selves, and day by day be consummated, through Christ the Mediator, into unity with God and with one another, so that at last God may be all in all. |
+| **g. Intercessions** | These express that the Eucharist is celebrated in communion with the whole Church, both heavenly and earthly, and that the offering is made for her and for all her members, living and dead, who have been called to share in the redemption and salvation acquired by the Body and Blood of Christ. |
+| **h. Final doxology** | The glorification of God is expressed and is confirmed and concluded by the people’s acclamation *Amen*. |
 
 Element (f) is where the whole doctrine of the assembly’s participation is concentrated, and it should be read with care. The faithful truly offer the spotless victim — *immaculatam hostiam offerant* — and they are to learn to offer themselves as well. Neither clause makes the assembly a collective celebrant, and the Instruction elsewhere reserves the Eucharistic Prayer to the priest and requires the rest to listen in silence. The claim is that the offering of the Church is one offering, made by the priest acting in the person of Christ the Head and by the baptized in their own manner; the reformed rite states this more explicitly than its predecessor did, and it is a statement of received doctrine rather than a novelty.
 

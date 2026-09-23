@@ -91,7 +91,13 @@ postconciliar `\dossierevent` put "2-4" before every narrated event and
 dossier note, so the audit now refuses a span pandoc kept without
 attributes; a starred row end, `\\*[-0.06em]` in the postconciliar
 `\unitphase`, set its length before the next row's first cell;
-`\endnote` disappears with its citations; an `enumitem`
+a column prefix broken by a paragraph break, `\raggedright` after
+`\bfseries` or a blank line after `\endfoot`, set each cell as an empty
+bold paragraph with its text unbolded after it and forced the table into
+HTML, so the converter's table filter now restores the cell as TeX sets
+it, leaves a collapsed `\multicolumn` span its own face because a span
+replaces its column's prefix, writes bold inside bold once, and the audit
+refuses empty or nested bold; `\endnote` disappears with its citations; an `enumitem`
 option list takes every `\item` label with it; a comment between a
 `\newenvironment`'s groups hides the definition from the audit; an
 edition conditional written inline, `\ifdefined\TriptychSynthesisEdition

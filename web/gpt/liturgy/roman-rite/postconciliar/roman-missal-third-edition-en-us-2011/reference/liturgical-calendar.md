@@ -40,61 +40,16 @@ The Proper of Time supplies Sundays, seasons, and celebrations whose dates are f
 
 ### Ranks used in this reference
 
-<table style="width:92%;">
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 73%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p>Rank or status</p></th>
-<th style="text-align: left;">Meaning in the inventory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Solemnity</p></td>
-<td style="text-align: left;">Highest ordinary rank; normally has First Vespers and proper presidential texts. Precedence still depends on the table of liturgical days.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Feast</p></td>
-<td style="text-align: left;">Celebrated within the day; displaces an ordinary weekday but yields to higher days.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Memorial</p></td>
-<td style="text-align: left;">Obligatory unless displaced or reduced under the norms. In Advent from 17–24 December, the Christmas octave, and Lent, a memorial occurring on a weekday may be observed only in the restricted manner allowed for a commemoration.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Optional memorial</p></td>
-<td style="text-align: left;">May be celebrated when the day and pastoral judgment permit. If several optional memorials are listed, one may be chosen; they are not cumulative obligations.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Restricted commemoration</p></td>
-<td style="text-align: left;">The limited observance of a memorial permitted by the norms on certain privileged weekdays; not a separate general-calendar rank parallel to a memorial.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>All Souls commemoration</p></td>
-<td style="text-align: left;">The sui generis observance on 2 November, placed at position 3 in the table of liturgical days. It is not the restricted memorial mechanism and precedes an Ordinary Time Sunday.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Required day of prayer</p></td>
-<td style="text-align: left;">A nationally inscribed observance carrying a liturgical requirement without becoming a solemnity, feast, or memorial; the day actually occurring still governs the permitted formulary.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Optional special day</p></td>
-<td style="text-align: left;">A nationally supplied civic or pastoral option whose use depends on the Missal’s permissions and the day actually occurring; it does not displace a higher day.</td>
-</tr>
-</tbody>
-</table>
+| **Rank or status** | Meaning in the inventory |
+|:--------------|:---------------------------------------------------|
+| **Solemnity** | Highest ordinary rank; normally has First Vespers and proper presidential texts. Precedence still depends on the table of liturgical days. |
+| **Feast** | Celebrated within the day; displaces an ordinary weekday but yields to higher days. |
+| **Memorial** | Obligatory unless displaced or reduced under the norms. In Advent from 17–24 December, the Christmas octave, and Lent, a memorial occurring on a weekday may be observed only in the restricted manner allowed for a commemoration. |
+| **Optional memorial** | May be celebrated when the day and pastoral judgment permit. If several optional memorials are listed, one may be chosen; they are not cumulative obligations. |
+| **Restricted commemoration** | The limited observance of a memorial permitted by the norms on certain privileged weekdays; not a separate general-calendar rank parallel to a memorial. |
+| **All Souls commemoration** | The sui generis observance on 2 November, placed at position 3 in the table of liturgical days. It is not the restricted memorial mechanism and precedes an Ordinary Time Sunday. |
+| **Required day of prayer** | A nationally inscribed observance carrying a liturgical requirement without becoming a solemnity, feast, or memorial; the day actually occurring still governs the permitted formulary. |
+| **Optional special day** | A nationally supplied civic or pastoral option whose use depends on the Missal’s permissions and the day actually occurring; it does not displace a higher day. |
 
 All unqualified entries in the 2002 Latin calendar are optional memorials by that calendar’s own note. The tables therefore write the rank out rather than relying on typography. The rank belongs to the celebration, not to every possible local observance of the same saint.
 
@@ -431,51 +386,14 @@ This table contains the national layer approved for all dioceses of the United S
 
 ### Territorial placement and transfer rules
 
-<table style="width:92%;">
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 67%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p>Celebration</p></th>
-<th style="text-align: left;">Rule in the United States</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Epiphany</p></td>
-<td style="text-align: left;">Celebrated on the Sunday between 2 and 8 January. If that Sunday is 7 or 8 January, the Baptism of the Lord is celebrated the following Monday.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Ascension</p></td>
-<td style="text-align: left;">Retained on Thursday in the ecclesiastical provinces of Boston, Hartford, New York, Omaha, and Philadelphia. In the other U.S. provinces it is transferred to the Seventh Sunday of Easter. This province-by-province implementation must be checked in the annual Ordo.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Most Holy Body and Blood of Christ</p></td>
-<td style="text-align: left;">Transferred from the Thursday after Trinity to the Sunday after Trinity throughout the United States.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Day of Prayer</p></td>
-<td style="text-align: left;">The 22 January observance moves to Monday 23 January when 22 January is Sunday. In that occurrence, the optional memorials of St Vincent and St Marianne Cope are omitted.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Immaculate Conception</p></td>
-<td style="text-align: left;">When 8 December is impeded by a Sunday of Advent, the solemnity is transferred under the universal norms. Holy-day obligation is a distinct canonical question; current U.S. implementation must be checked in the annual calendar and current complementary norms rather than inferred from this rank table.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Thanksgiving</p></td>
-<td style="text-align: left;">Always the fourth Thursday of November, not a fixed numerical date. The observance does not displace a higher-ranking day.</td>
-</tr>
-</tbody>
-</table>
+| **Celebration** | Rule in the United States |
+|:------------------|:-----------------------------------------------|
+| **Epiphany** | Celebrated on the Sunday between 2 and 8 January. If that Sunday is 7 or 8 January, the Baptism of the Lord is celebrated the following Monday. |
+| **Ascension** | Retained on Thursday in the ecclesiastical provinces of Boston, Hartford, New York, Omaha, and Philadelphia. In the other U.S. provinces it is transferred to the Seventh Sunday of Easter. This province-by-province implementation must be checked in the annual Ordo. |
+| **Most Holy Body and Blood of Christ** | Transferred from the Thursday after Trinity to the Sunday after Trinity throughout the United States. |
+| **Day of Prayer** | The 22 January observance moves to Monday 23 January when 22 January is Sunday. In that occurrence, the optional memorials of St Vincent and St Marianne Cope are omitted. |
+| **Immaculate Conception** | When 8 December is impeded by a Sunday of Advent, the solemnity is transferred under the universal norms. Holy-day obligation is a distinct canonical question; current U.S. implementation must be checked in the annual calendar and current complementary norms rather than inferred from this rank table. |
+| **Thanksgiving** | Always the fourth Thursday of November, not a fixed numerical date. The observance does not displace a higher-ranking day. |
 
 ### What is optional
 

@@ -12,47 +12,12 @@
 
 The General Instruction names two principal parts, the Liturgy of the Word and the Liturgy of the Eucharist, so closely joined that they form one act of worship. It also names rites that open and conclude the celebration (GIRM 28). This is more exact than either a two-part diagram that makes gathering and dismissal disappear or a four-part diagram that gives all divisions identical weight. The opening serves the double liturgy; the conclusion releases the body constituted and fed by it.
 
-<table style="width:91%;">
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 30%" />
-<col style="width: 42%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p>Arc</p></th>
-<th style="text-align: left;">Received purpose</th>
-<th style="text-align: left;">Governing motion</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Introductory Rites</p></td>
-<td style="text-align: left;">The gathered faithful become a communion and are disposed to hear the Word and celebrate the Eucharist.</td>
-<td style="text-align: left;">Procession converges on the altar; veneration identifies the sacrificial table; Trinitarian signing and ordained greeting disclose the assembly; penitence or baptismal remembrance, praise, and collected prayer make it ready.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Liturgy of the Word</p></td>
-<td style="text-align: left;">God speaks to his people; Christ proclaims his Gospel; the people answer in faith and intercession.</td>
-<td style="text-align: left;">Scriptural proclamation and inspired response intensify toward the Gospel; homily serves the proclaimed mysteries; Creed and Universal Prayer turn hearing toward confession and priestly concern for the world.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Liturgy of the Eucharist</p></td>
-<td style="text-align: left;">The Church prepares gifts, gives thanks and offers in Christ, and receives the sacrificial banquet.</td>
-<td style="text-align: left;">Created gifts and ecclesial alms approach the altar; the great prayer addresses the Father through the Son in the Spirit; the one sacrifice is sacramentally made present; fraction and Communion make one body from many.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Concluding Rites</p></td>
-<td style="text-align: left;">The blessed assembly is dismissed to Christian witness and service.</td>
-<td style="text-align: left;">Necessary temporal speech is bounded; blessing descends; dismissal sends; final veneration returns ministers to the altar before departure.</td>
-</tr>
-</tbody>
-</table>
+| **Arc** | Received purpose | Governing motion |
+|:-------------|:---------------------|:-----------------------------|
+| **Introductory Rites** | The gathered faithful become a communion and are disposed to hear the Word and celebrate the Eucharist. | Procession converges on the altar; veneration identifies the sacrificial table; Trinitarian signing and ordained greeting disclose the assembly; penitence or baptismal remembrance, praise, and collected prayer make it ready. |
+| **Liturgy of the Word** | God speaks to his people; Christ proclaims his Gospel; the people answer in faith and intercession. | Scriptural proclamation and inspired response intensify toward the Gospel; homily serves the proclaimed mysteries; Creed and Universal Prayer turn hearing toward confession and priestly concern for the world. |
+| **Liturgy of the Eucharist** | The Church prepares gifts, gives thanks and offers in Christ, and receives the sacrificial banquet. | Created gifts and ecclesial alms approach the altar; the great prayer addresses the Father through the Son in the Spirit; the one sacrifice is sacramentally made present; fraction and Communion make one body from many. |
+| **Concluding Rites** | The blessed assembly is dismissed to Christian witness and service. | Necessary temporal speech is bounded; blessing descends; dismissal sends; final veneration returns ministers to the altar before departure. |
 
 The assembly does not enact a chronological biblical drama or move through classroom topics. In this sacramental action it passes from gathering to hearing, then to thankful offering, sacrificial memorial, reception, and mission. That motion proclaims, remembers, and makes sacramentally operative the whole economy of salvation.
 
@@ -60,53 +25,13 @@ The assembly does not enact a chronological biblical drama or move through class
 
 The printed Order often looks like alternating blocks of speech. Celebration reveals a more complex score. A chant may accompany a procession. The Priest may pray quietly while a ministry continues. An action can carry the rite while no one supplies explanatory words. Silence is prescribed at several qualitatively different points. The following tracks are simultaneous aspects of one order rather than competing programs:
 
-<table style="width:91%;">
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 36%" />
-<col style="width: 39%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p>Track</p></th>
-<th style="text-align: left;">What it contributes</th>
-<th style="text-align: left;">Representative instances</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Spatial</p></td>
-<td style="text-align: left;">Direction, approach, placement, procession, elevation, distribution, and departure.</td>
-<td style="text-align: left;">Entrance to altar; Gospel procession to ambo; gifts to altar; Communion procession from many places toward one gift.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Vocal</p></td>
-<td style="text-align: left;">Proclamation, presidency, dialogue, acclamation, chant, and private preparation.</td>
-<td style="text-align: left;">Readings are proclaimed; the assembly answers; the Priest voices the Eucharistic Prayer; quiet prayers dispose ministers rather than add another public rite.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Bodily</p></td>
-<td style="text-align: left;">Standing, sitting, kneeling, bowing, signing, kissing, washing, exchanging peace, and receiving.</td>
-<td style="text-align: left;">Postures differentiate attentive hearing, common prayer, adoration, and reception without functioning as a universal symbolic code detached from rubrics.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Material</p></td>
-<td style="text-align: left;">Book, ambo, altar, cross, candles, incense, bread, wine, water, vessels, and alms.</td>
-<td style="text-align: left;">Things do not illustrate a verbal script from outside; they enter the action according to their sacramental or ministerial purpose.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Silent</p></td>
-<td style="text-align: left;">Recollection, appropriation, listening, adoration, and thanksgiving.</td>
-<td style="text-align: left;">Silence before penitential confession differs from silence after a reading, the concentrated silence of the Eucharistic Prayer, and contemplation after Communion.</td>
-</tr>
-</tbody>
-</table>
+| **Track** | What it contributes | Representative instances |
+|:-----------|:-------------------------|:---------------------------|
+| **Spatial** | Direction, approach, placement, procession, elevation, distribution, and departure. | Entrance to altar; Gospel procession to ambo; gifts to altar; Communion procession from many places toward one gift. |
+| **Vocal** | Proclamation, presidency, dialogue, acclamation, chant, and private preparation. | Readings are proclaimed; the assembly answers; the Priest voices the Eucharistic Prayer; quiet prayers dispose ministers rather than add another public rite. |
+| **Bodily** | Standing, sitting, kneeling, bowing, signing, kissing, washing, exchanging peace, and receiving. | Postures differentiate attentive hearing, common prayer, adoration, and reception without functioning as a universal symbolic code detached from rubrics. |
+| **Material** | Book, ambo, altar, cross, candles, incense, bread, wine, water, vessels, and alms. | Things do not illustrate a verbal script from outside; they enter the action according to their sacramental or ministerial purpose. |
+| **Silent** | Recollection, appropriation, listening, adoration, and thanksgiving. | Silence before penitential confession differs from silence after a reading, the concentrated silence of the Eucharistic Prayer, and contemplation after Communion. |
 
 This score corrects a common misunderstanding of participation. Participation does not become more active as silence decreases or as more people speak at once. Listening to a reading, answering an acclamation, uniting oneself to the presidential prayer, singing in procession, and receiving the consecrated gift are different acts. Their unity depends on ordered differentiation.
 
@@ -120,126 +45,31 @@ No center is self-sufficient. Presidency without assembly becomes performance; a
 
 Each large arc has a threshold, but the thresholds do not reset the celebration.
 
-<table style="width:91%;">
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 68%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>From arrival to liturgy</p></td>
-<td style="text-align: left;">The Entrance is already ritual action. Its chant begins common praise, its procession orders ministries, and its destination is the altar. The sign of the Cross and greeting do not start a second time; they articulate the identity of those who have arrived.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>From gathering to Word</p></td>
-<td style="text-align: left;">The Collect closes the Introductory Rites by gathering silent prayer. Sitting for the first reading changes bodily mode, while the prayer just ratified and the altar just venerated remain part of the action’s horizon.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>From Word to Eucharist</p></td>
-<td style="text-align: left;">The Universal Prayer extends heard faith toward the world. Preparation of the altar and gifts is therefore not an intermission. Matter for the sacrament, gifts for the poor and Church, ministerial action, and song move confessed faith toward thanksgiving.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>From preparation to great prayer</p></td>
-<td style="text-align: left;">The Prayer over the Offerings seals preparation. The Preface dialogue then makes the change of register unmistakable: the whole assembly assents as the Priest begins the Church’s great thanksgiving to the Father.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>From prayer to Communion</p></td>
-<td style="text-align: left;">The Great Amen ratifies the Eucharistic Prayer. The Lord’s Prayer does not begin an unrelated devotion; it prepares the sacrificial family for peace, fraction, and Communion.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>From Communion to mission</p></td>
-<td style="text-align: left;">Silence or praise allows reception to become thanksgiving; the proper Prayer after Communion asks for enduring fruit. Only then do blessing and dismissal turn sacramental incorporation outward.</td>
-</tr>
-</tbody>
-</table>
+|  |  |
+|:----------------|:-----------------------------------------------|
+| **From arrival to liturgy** | The Entrance is already ritual action. Its chant begins common praise, its procession orders ministries, and its destination is the altar. The sign of the Cross and greeting do not start a second time; they articulate the identity of those who have arrived. |
+| **From gathering to Word** | The Collect closes the Introductory Rites by gathering silent prayer. Sitting for the first reading changes bodily mode, while the prayer just ratified and the altar just venerated remain part of the action’s horizon. |
+| **From Word to Eucharist** | The Universal Prayer extends heard faith toward the world. Preparation of the altar and gifts is therefore not an intermission. Matter for the sacrament, gifts for the poor and Church, ministerial action, and song move confessed faith toward thanksgiving. |
+| **From preparation to great prayer** | The Prayer over the Offerings seals preparation. The Preface dialogue then makes the change of register unmistakable: the whole assembly assents as the Priest begins the Church’s great thanksgiving to the Father. |
+| **From prayer to Communion** | The Great Amen ratifies the Eucharistic Prayer. The Lord’s Prayer does not begin an unrelated devotion; it prepares the sacrificial family for peace, fraction, and Communion. |
+| **From Communion to mission** | Silence or praise allows reception to become thanksgiving; the proper Prayer after Communion asks for enduring fruit. Only then do blessing and dismissal turn sacramental incorporation outward. |
 
 ### The tree of received variation
 
 One of the Order’s defining structural facts is authorized plurality. A diagram that prints only the most common parish sequence hides real parts of the book. A diagram that places every alternative in series invents a rite nobody celebrates. The following decision points govern the exposition:
 
-<table style="width:91%;">
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 34%" />
-<col style="width: 38%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p>Decision</p></th>
-<th style="text-align: left;">Received alternatives</th>
-<th style="text-align: left;">Structural consequence</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Penitential threshold</p></td>
-<td style="text-align: left;">Forms A, B, or C; Sunday blessing and sprinkling of water may replace the act; some combined rites omit or reshape the opening.</td>
-<td style="text-align: left;">Kyrie follows Forms A and B, is ordinarily integrated into Form C, and does not simply accumulate after sprinkling.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Festal praise</p></td>
-<td style="text-align: left;">Gloria is prescribed on stated Sundays, solemnities, feasts, and particular solemn celebrations; it is otherwise omitted.</td>
-<td style="text-align: left;">Its absence is not a textual deletion supplied at will; liturgical time changes the threshold’s affect and scale.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Word</p></td>
-<td style="text-align: left;">Proper readings, Psalm, and acclamation vary; second reading, Sequence, homily, and Creed follow their own conditions; Apostles’ Creed may replace the Niceno-Constantinopolitan form in the allowed circumstances.</td>
-<td style="text-align: left;">Sunday, solemnity, feast, and weekday structures cannot be flattened into one invariant reading count.</td>
-</tr>
-</tbody>
-</table>
+| **Decision** | Received alternatives | Structural consequence |
+|:-------------|:------------------------|:--------------------------|
+| **Penitential threshold** | Forms A, B, or C; Sunday blessing and sprinkling of water may replace the act; some combined rites omit or reshape the opening. | Kyrie follows Forms A and B, is ordinarily integrated into Form C, and does not simply accumulate after sprinkling. |
+| **Festal praise** | Gloria is prescribed on stated Sundays, solemnities, feasts, and particular solemn celebrations; it is otherwise omitted. | Its absence is not a textual deletion supplied at will; liturgical time changes the threshold’s affect and scale. |
+| **Word** | Proper readings, Psalm, and acclamation vary; second reading, Sequence, homily, and Creed follow their own conditions; Apostles’ Creed may replace the Niceno-Constantinopolitan form in the allowed circumstances. | Sunday, solemnity, feast, and weekday structures cannot be flattened into one invariant reading count. |
 
-<table style="width:91%;">
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 34%" />
-<col style="width: 38%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p>Decision</p></th>
-<th style="text-align: left;">Received alternatives</th>
-<th style="text-align: left;">Structural consequence</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Gifts and ceremonial</p></td>
-<td style="text-align: left;">Procession of gifts is praiseworthy rather than mechanically required; chant, incense, and distribution of ministries vary within law.</td>
-<td style="text-align: left;">The stable preparation remains intelligible without treating its fullest ceremonial as mandatory or its simpler form as deficient.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Great thanksgiving</p></td>
-<td style="text-align: left;">One approved Eucharistic Prayer is selected; its Preface, proper inserts, selection rules, and permitted formularies govern it.</td>
-<td style="text-align: left;">The four principal prayers, two for Reconciliation, four forms for Various Needs, and three separately approved, restricted U.S. children’s prayers are complete alternatives, not a library of interchangeable paragraphs.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Peace and Communion</p></td>
-<td style="text-align: left;">The invitation to exchange peace and the exchange itself are conditioned; Communion may be under one or both species; ministries and territorial posture vary.</td>
-<td style="text-align: left;">Ecclesial peace and sacramental Communion remain stable realities even when a permitted sign or mode differs.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Conclusion</p></td>
-<td style="text-align: left;">Simple blessing, solemn blessing, or Prayer over the People as permitted; one of the four approved dismissal formulas.</td>
-<td style="text-align: left;">An enriched conclusion is an alternative development of the same sending, not an additional fifth arc.</td>
-</tr>
-</tbody>
-</table>
+| **Decision** | Received alternatives | Structural consequence |
+|:-------------|:------------------------|:--------------------------|
+| **Gifts and ceremonial** | Procession of gifts is praiseworthy rather than mechanically required; chant, incense, and distribution of ministries vary within law. | The stable preparation remains intelligible without treating its fullest ceremonial as mandatory or its simpler form as deficient. |
+| **Great thanksgiving** | One approved Eucharistic Prayer is selected; its Preface, proper inserts, selection rules, and permitted formularies govern it. | The four principal prayers, two for Reconciliation, four forms for Various Needs, and three separately approved, restricted U.S. children’s prayers are complete alternatives, not a library of interchangeable paragraphs. |
+| **Peace and Communion** | The invitation to exchange peace and the exchange itself are conditioned; Communion may be under one or both species; ministries and territorial posture vary. | Ecclesial peace and sacramental Communion remain stable realities even when a permitted sign or mode differs. |
+| **Conclusion** | Simple blessing, solemn blessing, or Prayer over the People as permitted; one of the four approved dismissal formulas. | An enriched conclusion is an alternative development of the same sending, not an additional fifth arc. |
 
 Options require obedience as much as fixed texts do. A lawful choice is not raw material for a new hybrid; the choosing minister remains inside the book’s grammar. Conversely, an option does not become suspect merely because another is older, longer, or more familiar. The historical and theological question is what each approved form actually does and under what conditions the Church supplies it.
 
@@ -1719,59 +1549,14 @@ Mission therefore begins before the dismissal and becomes explicit there. The as
 
 The completed sequence can be read as a pattern of conversion:
 
-<table style="width:91%;">
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 34%" />
-<col style="width: 37%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p>Liturgical motion</p></th>
-<th style="text-align: left;">Gift received</th>
-<th style="text-align: left;">Life demanded</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Gathering and penitence</p></td>
-<td style="text-align: left;">Ecclesial identity and mercy precede self-assertion.</td>
-<td style="text-align: left;">Reconciliation, humility, and fidelity to the visible Church.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Hearing and confession</p></td>
-<td style="text-align: left;">God addresses before the Church answers.</td>
-<td style="text-align: left;">Scriptural obedience, doctrinal faith, and intercession beyond private interest.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Preparation and offering</p></td>
-<td style="text-align: left;">Creation, labor, and possessions are received as gifts.</td>
-<td style="text-align: left;">Thanksgiving, care for the poor, purity of intention, and self-oblation.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Eucharistic Prayer</p></td>
-<td style="text-align: left;">Christ’s Pasch is sacramentally made present and offered.</td>
-<td style="text-align: left;">Union with his filial obedience, praise of the Father, and docility to the Spirit.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Fraction and Communion</p></td>
-<td style="text-align: left;">The undivided Christ gives himself and makes one Body from many.</td>
-<td style="text-align: left;">Ecclesial unity, worthy reception, mutual charity, and hope of resurrection.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Blessing and dismissal</p></td>
-<td style="text-align: left;">Grace accompanies the people into temporal life.</td>
-<td style="text-align: left;">Witness, service, proclamation, peace, and perseverance toward the Kingdom.</td>
-</tr>
-</tbody>
-</table>
+| **Liturgical motion** | Gift received | Life demanded |
+|:--------------|:------------------------|:--------------------------|
+| **Gathering and penitence** | Ecclesial identity and mercy precede self-assertion. | Reconciliation, humility, and fidelity to the visible Church. |
+| **Hearing and confession** | God addresses before the Church answers. | Scriptural obedience, doctrinal faith, and intercession beyond private interest. |
+| **Preparation and offering** | Creation, labor, and possessions are received as gifts. | Thanksgiving, care for the poor, purity of intention, and self-oblation. |
+| **Eucharistic Prayer** | Christ’s Pasch is sacramentally made present and offered. | Union with his filial obedience, praise of the Father, and docility to the Spirit. |
+| **Fraction and Communion** | The undivided Christ gives himself and makes one Body from many. | Ecclesial unity, worthy reception, mutual charity, and hope of resurrection. |
+| **Blessing and dismissal** | Grace accompanies the people into temporal life. | Witness, service, proclamation, peace, and perseverance toward the Kingdom. |
 
 The table is synthesis, not a second rubric. No liturgical movement guarantees its moral fruit mechanically, and no participant’s interior state can be inferred from external exactness alone. Sacraments act by Christ’s promise; fruitful reception calls for faith, repentance, and disposition. The Church’s objective worship and the person’s conversion are distinguished so that they can truly meet.
 
@@ -1805,39 +1590,13 @@ This precision matters. The Latin typical edition, an approved English edition, 
 
 The history of the Mass is especially vulnerable to attractive compression. An ancient analogue becomes an alleged source; an early source receives a familiar author; a twentieth-century composition is called a restored primitive text; a present option becomes a universal ancient norm. The following distinctions govern every chapter:
 
-<table style="width:91%;">
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 71%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Received rite</p></td>
-<td style="text-align: left;">What the identified Missal, General Instruction, Lectionary, or competent decree actually orders: speaker, addressee, sequence, gesture, posture, audible mode, and condition.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Scriptural and doctrinal judgment</p></td>
-<td style="text-align: left;">What Scripture in context and the Church’s authoritative teaching establish about proclamation, sacrifice, memorial, ordained and baptismal priesthood, presence, Communion, and ecclesial worship.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Historical claim</p></td>
-<td style="text-align: left;">The earliest secure witness, a probable range, a terminus before which a form is attested, or a documented modern act of composition or reform. Retrospective attribution is labeled rather than repeated as fact.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Received interpretation</p></td>
-<td style="text-align: left;">A patristic, medieval, or later Catholic reading that truly illuminates a movement even when it is not the movement’s genetic source. Jerusalem, Antioch, Milan, North Africa, and Rome may illuminate one another without being made one local genealogy.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Editorial synthesis</p></td>
-<td style="text-align: left;">This study’s proposed relation among movements and sources. It may be reasonable and fruitful; it does not become a rubric, a patristic consensus, or a teaching of the Magisterium by being printed beside them.</td>
-</tr>
-</tbody>
-</table>
+|  |  |
+|:--------------|:-------------------------------------------------|
+| **Received rite** | What the identified Missal, General Instruction, Lectionary, or competent decree actually orders: speaker, addressee, sequence, gesture, posture, audible mode, and condition. |
+| **Scriptural and doctrinal judgment** | What Scripture in context and the Church’s authoritative teaching establish about proclamation, sacrifice, memorial, ordained and baptismal priesthood, presence, Communion, and ecclesial worship. |
+| **Historical claim** | The earliest secure witness, a probable range, a terminus before which a form is attested, or a documented modern act of composition or reform. Retrospective attribution is labeled rather than repeated as fact. |
+| **Received interpretation** | A patristic, medieval, or later Catholic reading that truly illuminates a movement even when it is not the movement’s genetic source. Jerusalem, Antioch, Milan, North Africa, and Rome may illuminate one another without being made one local genealogy. |
+| **Editorial synthesis** | This study’s proposed relation among movements and sources. It may be reasonable and fruitful; it does not become a rubric, a patristic consensus, or a teaching of the Magisterium by being printed beside them. |
 
 The distinctions permit a richer account, not a thinner one. Justin Martyr can witness to a second-century Sunday pattern of readings, exhortation, intercession, gifts, thanksgiving, assent, Communion, and care for the needy without proving that his community used the 2008 sequence. The *Didache* can witness to confession before the Lord’s Day assembly and to Eucharistic thanksgiving without becoming the direct source of a present penitential form. The church order traditionally called the *Apostolic Tradition* can illuminate ancient anaphoral structures while its date, composite redaction, provenance, and traditional attribution to Hippolytus remain disputed. Cyril’s mystagogical catecheses can interpret an Eastern fourth-century sequence without proving the ancestry of every Roman gesture. Restraint makes these witnesses more, not less, useful.
 

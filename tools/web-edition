@@ -70,6 +70,110 @@ PROPER_STUDY_MARKDOWN_DIALECT = (
     "-bracketed_spans-raw_attribute-superscript"
 )
 WEB_TOC_SENTINEL = "TRIPTYCHWEBTOCMARKER"
+# The shim writes this after a collapsed \multicolumn cell's text, so the table
+# filter below knows the cell for a span; the filter deletes it. At the end of
+# the cell it cannot split a paragraph that the text opens with a declaration.
+SPAN_CELL_MARK = "TRIPTYCHSPANCELL"
+# Pandoc replays a column prefix such as >{\bfseries\raggedright} into every
+# cell of its column, and a paragraph break inside the replay -- \raggedright
+# after a font switch, or a blank line between rows -- ends the switch there:
+# the cell became an empty bold paragraph, then its text unbolded, and the
+# table fell back to HTML. The filter restores the cell as TeX sets it: the
+# empty paragraph goes and its formatting wraps the text that followed. A cell
+# the shim collapsed from \multicolumn keeps only its own formatting, because a
+# \multicolumn replaces its column's prefix. Bold inside bold in a cell, which a
+# \textbf header in a bold column makes, is set once.
+TABLE_FILTER = """
+local MARK = "@MARK@"
+local FORMATS = {Strong = true, Emph = true, SmallCaps = true, Underline = true}
+
+local function empty_chain(block)
+  if (block.t ~= "Para" and block.t ~= "Plain") or #block.content ~= 1 then return nil end
+  local chain, inline = {}, block.content[1]
+  while FORMATS[inline.t] do
+    table.insert(chain, inline.t)
+    if #inline.content == 0 then return chain end
+    if #inline.content ~= 1 then return nil end
+    inline = inline.content[1]
+  end
+  return nil
+end
+
+local function unmark(inlines)
+  local last = inlines[#inlines]
+  if last == nil then return false end
+  if FORMATS[last.t] then return unmark(last.content) end
+  if last.t ~= "Str" or last.text:sub(-#MARK) ~= MARK then return false end
+  last.text = last.text:sub(1, -#MARK - 1)
+  if last.text == "" then
+    inlines:remove(#inlines)
+    local previous = inlines[#inlines]
+    if previous and (previous.t == "Space" or previous.t == "SoftBreak") then
+      inlines:remove(#inlines)
+    end
+  end
+  return true
+end
+
+local function flatten(element)
+  local out = pandoc.Inlines{}
+  for _, inline in ipairs(element.content) do
+    if inline.t == "Strong" then out:extend(inline.content) else out:insert(inline) end
+  end
+  element.content = out
+  return element
+end
+
+local function repair(cell)
+  local blocks = cell.contents
+  local span = false
+  local last = blocks[#blocks]
+  if last and (last.t == "Para" or last.t == "Plain") then
+    span = unmark(last.content)
+    if span and #last.content == 0 then blocks:remove(#blocks) end
+  end
+  local chain = #blocks > 1 and empty_chain(blocks[1])
+  if chain then
+    local rest = pandoc.Blocks{}
+    for index = 2, #blocks do
+      if blocks[index].t ~= "Para" and blocks[index].t ~= "Plain" then rest = nil break end
+      rest:insert(blocks[index])
+    end
+    if rest then
+      if not span then
+        for _, block in ipairs(rest) do
+          local content = block.content
+          for index = #chain, 1, -1 do content = pandoc.Inlines{pandoc[chain[index]](content)} end
+          block.content = content
+        end
+      end
+      if #rest == 1 then rest[1] = pandoc.Plain(rest[1].content) end
+      blocks = rest
+    end
+  end
+  cell.contents = blocks:walk({Strong = flatten})
+end
+
+local function rows(list)
+  for _, row in ipairs(list) do
+    for _, cell in ipairs(row.cells) do repair(cell) end
+  end
+end
+
+return {
+  {
+    Table = function(tbl)
+      rows(tbl.head.rows)
+      for _, body in ipairs(tbl.bodies) do
+        rows(body.head)
+        rows(body.body)
+      end
+      rows(tbl.foot.rows)
+      return tbl
+    end,
+  },
+}
+""".replace("@MARK@", SPAN_CELL_MARK)
 
 UNNUMBERED_HEADING_ATTRIBUTE_RE = re.compile(
     r"^(#{1,6} .+?) \{#([^{} ]+) \.unnumbered\}$", re.MULTILINE
@@ -1230,6 +1334,16 @@ def audit_output(
         failures.append("raw LaTeX left in output: " + " ".join(residual))
     # A span with no attribute is a LaTeX argument pandoc kept but could not
     # place, such as a partial rule's column range; the reader sees it as text.
+    if SPAN_CELL_MARK in markdown:
+        failures.append("collapsed-span mark left in output")
+    # An emphasis around nothing, or bold written inside bold, is what a column
+    # prefix broken by a paragraph break leaves behind.
+    empty = len(re.findall(r"<(strong|em)>\s*</\1>", markdown))
+    if empty:
+        failures.append(f"{empty} empty emphasis element(s) left in output")
+    nested = len(re.findall(r"\*\*\*\*(?=[^\s*|])|<strong><strong>", markdown))
+    if nested:
+        failures.append(f"{nested} bold-inside-bold run(s) left in output")
     stray = re.findall(r"<span>([^<]*)</span>", markdown)
     if stray:
         failures.append("unattributed span(s) left in output: " + "; ".join(sorted(set(stray))))
@@ -1355,7 +1469,11 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     failures = undefined_uses(sources, defined_names(shim_text + locals_text))
     if failures:
         raise ConversionError("\n".join(failures))
-    with tempfile.NamedTemporaryFile("w", suffix=".tex", encoding="utf-8") as handle:
+    with tempfile.NamedTemporaryFile(
+        "w", suffix=".lua", encoding="utf-8"
+    ) as table_filter, tempfile.NamedTemporaryFile("w", suffix=".tex", encoding="utf-8") as handle:
+        table_filter.write(TABLE_FILTER)
+        table_filter.flush()
         handle.write(
             f"{shim_text}\n{locals_text}\n"
             f"\\begin{{document}}\n{body}\n\\end{{document}}\n"
@@ -1371,7 +1489,8 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
             else MARKDOWN_DIALECT
         )
         command = ["pandoc", "-f", "latex", "-t", dialect, "--wrap=none",
-                   "--shift-heading-level-by=1", handle.name]
+                   "--shift-heading-level-by=1", f"--lua-filter={table_filter.name}",
+                   handle.name]
         result = subprocess.run(command, capture_output=True, text=True)
     if result.returncode != 0:
         raise ConversionError(f"pandoc failed:\n{result.stderr.strip()}")

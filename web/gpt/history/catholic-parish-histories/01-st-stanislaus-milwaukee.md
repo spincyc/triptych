@@ -384,188 +384,41 @@ Historical and mutable online records were checked through 19 July 2026. Current
 
 The ledger distinguishes construction, alteration, reported damage, and planned work. A date in the first column identifies the best-supported project period, not a claim that every component was completed that year.
 
-<table style="width:92%;">
-<colgroup>
-<col style="width: 15%" />
-<col style="width: 43%" />
-<col style="width: 34%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><strong><strong>Date</strong></strong></th>
-<th style="text-align: left;"><strong>Building act or physical state</strong></th>
-<th style="text-align: left;"><strong>Evidence and qualification</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong><strong>Date</strong></strong></td>
-<td style="text-align: left;"><strong>Building act or physical state</strong></td>
-<td style="text-align: left;"><strong>Evidence and qualification</strong></td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>1866</p></td>
-<td style="text-align: left;">Thirty families acquired and adapted a small brick church formerly used by Saint Stephen’s Lutheran congregation at the northwest corner of Grove—now South Fifth—and Mineral Streets.</td>
-<td style="text-align: left;">Gregory (1931), the National Register nomination, state inventory, and parish history agree on reuse. This was the first parish church, not the present Mitchell Street building.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Early 1870s</strong></td>
-<td style="text-align: left;">The parish acquired the Fifth-and-Mitchell site and financed a much larger church, remembered through a thirty-dollar family assessment and borrowing.</td>
-<td style="text-align: left;">Parish and later press accounts supply the assessment. No subscription ledger, deed, loan instrument, or final project cost was examined.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>July 1872</strong></td>
-<td style="text-align: left;">Cornerstone laid for the present church, designed by Leonard A. Schmidtner.</td>
-<td style="text-align: left;">HABS, Wisconsin AHI HI27246, Gregory, National Register nomination, and parish history converge. Later titles and biographical stories about Schmidtner are less secure than the building attribution.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">A portion of the cream-brick, twin-towered church was dedicated and entered use.</td>
-<td style="text-align: left;">Gregory and institutional histories use 1873 as dedication or completion; HABS shows that essential work continued later.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>1870s</strong></td>
-<td style="text-align: left;">Early parish instruction acquired dedicated school space; Gregory dates a schoolhouse to 1878, while parish accounts give 1873 and other sources attach earlier dates to instruction.</td>
-<td style="text-align: left;">The discrepancy likely separates teaching, organization, and building, but no checked record resolves the sequence.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–94</strong></td>
-<td style="text-align: left;">Principal later church campaign: sanctuary built out, roof covered with copper, organ installed, and interior painted.</td>
-<td style="text-align: left;">HABS WIS-159 is the controlling physical-history source. The range prevents the 1873 dedication from being mistaken for final completion.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Henry Messmer designed a substantial renovation valued in the state inventory at $17,000.</td>
-<td style="text-align: left;">Wisconsin AHI HI27246. The checked digital record does not itemize every component.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–95</strong></td>
-<td style="text-align: left;">Interior brick walls were progressively faced with Wisconsin marble; four large bells were installed in the towers according to the detailed parish history.</td>
-<td style="text-align: left;">Parish history gives 1894 and 1895 for marble stages and 1894 for the bells. A 2018 feature gives 1882 for the bells; no foundry record was checked.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–1913</strong></td>
-<td style="text-align: left;">Gothic Revival entrance surround, revised tower-window archivolts, side buttresses with apostle statues, crossing flèche, marble altars, pulpit, and further interior elaboration.</td>
-<td style="text-align: left;">HABS records the campaign but cannot divide all work by year. Later style labels describe layers, not one original scheme.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Late 19th–early 20th c.</strong></td>
-<td style="text-align: left;">Successive school, convent, rectory, and service buildings turned the site into a working campus.</td>
-<td style="text-align: left;">Historic images, Gregory, HABS, parish history, and the National Register nomination establish a changing complex. A complete parcel-by-parcel chronology remains unavailable.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">The principal four-story school front at 1669 South Fifth Street was built to plans by Herbst and Kuenzli, dated 16 February 1926; an older rear portion remained.</td>
-<td style="text-align: left;">Wisconsin AHI HI118139 and the National Register nomination control the date and architect. The institutional phrase “early 1930s” is not used as the construction date.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Early 1930s</strong></td>
-<td style="text-align: left;">Church and parish buildings were redecorated or renovated during the Depression.</td>
-<td style="text-align: left;">The parish history supplies the broad campaign. It does not identify every contract, room, or cost.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–47</strong></td>
-<td style="text-align: left;">Saint Stanislaus High School opened in September 1932 with seventy-two freshmen; a 1946 report counted four hundred students from thirty-seven parishes; the state inventory records a 1947 change to the later Notre Dame High School name.</td>
-<td style="text-align: left;">Contemporary <em>Milwaukee Sentinel</em> report preserved by Marquette University and Wisconsin AHI HI118139. Enrollment figures are dated snapshots; educational expansion is not conflated with construction of the 1926 school front.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Twin towers tuckpointed; deteriorated dome structures removed and reconstructed in aluminum-covered steel, gilded with 23-carat gold leaf; crosses, clocks, and clock mechanisms renewed.</td>
-<td style="text-align: left;">The ICKSP parish history gives the detailed 1960 sequence and September lifting of the towers. State and later records associate the golden domes more broadly with the early 1960s or 1966 centennial.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Fire damaged the left side altar and caused smoke damage throughout the church, delaying interior work.</td>
-<td style="text-align: left;">Detailed institutional history. No fire-department report or insurance record was located.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>/64</strong></td>
-<td style="text-align: left;">Earlier stained-glass windows removed because of reported deterioration and security concerns; inch-thick dalle de verre glazing installed.</td>
-<td style="text-align: left;">The City of Milwaukee survey says 1962; institutional history says 1964. No checked permit or contract resolves the date. Contractor and later press accounts document fragments from removed glass but not a complete survival.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–64</strong></td>
-<td style="text-align: left;">Rectory comprehensively remade with modern interior arrangements and a concrete or limestone-facing treatment; ambulatory and chapel connected rectory and church.</td>
-<td style="text-align: left;">Parish history, National Register nomination, and later reporting agree on a major project but differ over remodeling versus replacement. “Remade” preserves that uncertainty.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Roman travertine added to remaining interior walls; high altar dismantled or incorporated into a freestanding altar; pulpit moved; most communion rail removed; sanctuary extended into nave; baptismal font moved to new chapel.</td>
-<td style="text-align: left;">Institutional history supplies the sequence. Later sources sometimes describe all changes generically as “postconciliar,” but the dated campaign had maintenance, safety, centennial, artistic, and liturgical dimensions.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Mid-1960s</strong></td>
-<td style="text-align: left;">Exterior mosaic shrine of Our Lady of Częstochowa installed as a parish-centennial and Polish-Christian-millennium memorial.</td>
-<td style="text-align: left;">Institutional history. Its promotional size superlative was not independently measured.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>onward</strong></td>
-<td style="text-align: left;">Freestanding altar removed; high altar reconstructed; sanctuary location and floor recovered; marble communion rail and choir stalls introduced; historic furnishings and vestments returned to use.</td>
-<td style="text-align: left;">ICKSP history and 2016 <em>Catholic Herald</em> reporting. Components accrued in phases; the checked record does not support one single completion day or exact return to an untouched original state.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–12</strong></td>
-<td style="text-align: left;">Organ pipes cleaned and regulated; action, bellows, and control system rebuilt; another console installed.</td>
-<td style="text-align: left;">Detailed ICKSP parish history. No organ-builder contract or opus record was found in the checked set.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–14</strong></td>
-<td style="text-align: left;">Priests’ sacristy restored, including inlaid wood floor and cabinetry; 1960s chapel adapted as server sacristy, reserve-tabernacle location, and storage.</td>
-<td style="text-align: left;">ICKSP parish history. The reported relic collection is a custodial use, not a building-ownership claim.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>/15–21</strong></td>
-<td style="text-align: left;">Historic fragments and other visual evidence informed a new stained-glass program; sanctuary, nave, rose, choir-loft, confessional, and baptistery windows installed in phases, replacing dalle de verre.</td>
-<td style="text-align: left;">ICKSP history and restoration page, Conrad Schmitt portfolio, and 2016 reporting. Sources differ on discovery year; the institutional history dates completion to 2021.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Interior repainted from historical evidence; concealed marble cleaned and restored; rebuilt main altar consecrated during the parish’s 150th-anniversary weekend.</td>
-<td style="text-align: left;">ICKSP history and anniversary record; <em>Catholic Herald</em> documents design research and phased fundraising. Consecration is a liturgical act distinct from the oratory’s disputed erection date.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–18</strong></td>
-<td style="text-align: left;">Choir loft redesigned; cabinetry, furniture, and new stairs added.</td>
-<td style="text-align: left;">ICKSP parish history. This is distinct from the 2011–12 organ mechanism work.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–19</strong></td>
-<td style="text-align: left;">Tower domes removed and rebuilt in copper; exterior brick cleaned and tuckpointed; roofs repaired; historically patterned wood doors installed; gardens, walks, and stairs renewed.</td>
-<td style="text-align: left;">ICKSP history and Chrystine Elle Hanus’s roofing-trade account, which dates the roofing project from December 2018 to December 2019. Copper replaced the failing 1960 aluminum-covered structures.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>/20</strong></td>
-<td style="text-align: left;">New energy-efficient chandeliers installed in designs intended to harmonize with the church; restored rectory rooms displayed as complete by 2020.</td>
-<td style="text-align: left;">ICKSP prose dates chandelier installation to 2019 while a caption says 2020; the same history captions the restored rectory library 2020.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Scheduled maintenance found the striking ends of all four great bell clappers worn flat; replacement clappers restored tone and volume, and the originals were displayed in the Marian courtyard.</td>
-<td style="text-align: left;">Saint Stanislaus parish bulletin, 29 July–6 August 2023. The replaceable striking parts were renewed; the nineteenth-century bells themselves remained in service.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>March 2024</strong></td>
-<td style="text-align: left;">Parish and oratory announced planned acquisition and renovation of two attached buildings across Fifth and Historic Mitchell for classrooms, meeting rooms, and parking, with an estimated twelve-to-eighteen-month construction period.</td>
-<td style="text-align: left;">ICKSP announcement. It establishes intent, proposed scope, and an anonymous gift; later city records separately establish acquisition and approvals.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>September 2024 snapshot</strong></td>
-<td style="text-align: left;">Archdiocesan Love One Another campaign page still identified grounds irrigation and exterior lighting as parish priorities.</td>
-<td style="text-align: left;">Dated campaign record, not a total restoration budget. Its figures do not establish the aggregate cost of work since 2008.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>October 2024</strong></td>
-<td style="text-align: left;">St Stanislaus Properties LLC purchased the 501–505 West Historic Mitchell Street parcel for $875,000.</td>
-<td style="text-align: left;">City of Milwaukee assessor record, tax key 4620625000. The property record establishes the transaction and ownership name, not the internal relationship of the LLC to the parish or completion of renovations.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Jul.–Sept. 2025</strong></td>
-<td style="text-align: left;">City bodies approved replacement brick facing within the historic district and a special use for a religious assembly hall.</td>
-<td style="text-align: left;">Historic Preservation Commission record and Board of Zoning Appeals minutes. The special-use approval required permits and occupancy certificates within one year; approval is not proof that rehabilitation or occupancy was complete by the cutoff.</td>
-</tr>
-</tbody>
-</table>
+| **Date** | **Building act or physical state** | **Evidence and qualification** |
+|:-----------|:------------------------------|:------------------------|
+| **Date** | **Building act or physical state** | **Evidence and qualification** |
+| **1866** | Thirty families acquired and adapted a small brick church formerly used by Saint Stephen’s Lutheran congregation at the northwest corner of Grove—now South Fifth—and Mineral Streets. | Gregory (1931), the National Register nomination, state inventory, and parish history agree on reuse. This was the first parish church, not the present Mitchell Street building. |
+| **Early 1870s** | The parish acquired the Fifth-and-Mitchell site and financed a much larger church, remembered through a thirty-dollar family assessment and borrowing. | Parish and later press accounts supply the assessment. No subscription ledger, deed, loan instrument, or final project cost was examined. |
+| **July 1872** | Cornerstone laid for the present church, designed by Leonard A. Schmidtner. | HABS, Wisconsin AHI HI27246, Gregory, National Register nomination, and parish history converge. Later titles and biographical stories about Schmidtner are less secure than the building attribution. |
+|  | A portion of the cream-brick, twin-towered church was dedicated and entered use. | Gregory and institutional histories use 1873 as dedication or completion; HABS shows that essential work continued later. |
+| **1870s** | Early parish instruction acquired dedicated school space; Gregory dates a schoolhouse to 1878, while parish accounts give 1873 and other sources attach earlier dates to instruction. | The discrepancy likely separates teaching, organization, and building, but no checked record resolves the sequence. |
+| **–94** | Principal later church campaign: sanctuary built out, roof covered with copper, organ installed, and interior painted. | HABS WIS-159 is the controlling physical-history source. The range prevents the 1873 dedication from being mistaken for final completion. |
+|  | Henry Messmer designed a substantial renovation valued in the state inventory at $17,000. | Wisconsin AHI HI27246. The checked digital record does not itemize every component. |
+| **–95** | Interior brick walls were progressively faced with Wisconsin marble; four large bells were installed in the towers according to the detailed parish history. | Parish history gives 1894 and 1895 for marble stages and 1894 for the bells. A 2018 feature gives 1882 for the bells; no foundry record was checked. |
+| **–1913** | Gothic Revival entrance surround, revised tower-window archivolts, side buttresses with apostle statues, crossing flèche, marble altars, pulpit, and further interior elaboration. | HABS records the campaign but cannot divide all work by year. Later style labels describe layers, not one original scheme. |
+| **Late 19th–early 20th c.** | Successive school, convent, rectory, and service buildings turned the site into a working campus. | Historic images, Gregory, HABS, parish history, and the National Register nomination establish a changing complex. A complete parcel-by-parcel chronology remains unavailable. |
+|  | The principal four-story school front at 1669 South Fifth Street was built to plans by Herbst and Kuenzli, dated 16 February 1926; an older rear portion remained. | Wisconsin AHI HI118139 and the National Register nomination control the date and architect. The institutional phrase “early 1930s” is not used as the construction date. |
+| **Early 1930s** | Church and parish buildings were redecorated or renovated during the Depression. | The parish history supplies the broad campaign. It does not identify every contract, room, or cost. |
+| **–47** | Saint Stanislaus High School opened in September 1932 with seventy-two freshmen; a 1946 report counted four hundred students from thirty-seven parishes; the state inventory records a 1947 change to the later Notre Dame High School name. | Contemporary *Milwaukee Sentinel* report preserved by Marquette University and Wisconsin AHI HI118139. Enrollment figures are dated snapshots; educational expansion is not conflated with construction of the 1926 school front. |
+|  | Twin towers tuckpointed; deteriorated dome structures removed and reconstructed in aluminum-covered steel, gilded with 23-carat gold leaf; crosses, clocks, and clock mechanisms renewed. | The ICKSP parish history gives the detailed 1960 sequence and September lifting of the towers. State and later records associate the golden domes more broadly with the early 1960s or 1966 centennial. |
+|  | Fire damaged the left side altar and caused smoke damage throughout the church, delaying interior work. | Detailed institutional history. No fire-department report or insurance record was located. |
+| **/64** | Earlier stained-glass windows removed because of reported deterioration and security concerns; inch-thick dalle de verre glazing installed. | The City of Milwaukee survey says 1962; institutional history says 1964. No checked permit or contract resolves the date. Contractor and later press accounts document fragments from removed glass but not a complete survival. |
+| **–64** | Rectory comprehensively remade with modern interior arrangements and a concrete or limestone-facing treatment; ambulatory and chapel connected rectory and church. | Parish history, National Register nomination, and later reporting agree on a major project but differ over remodeling versus replacement. “Remade” preserves that uncertainty. |
+|  | Roman travertine added to remaining interior walls; high altar dismantled or incorporated into a freestanding altar; pulpit moved; most communion rail removed; sanctuary extended into nave; baptismal font moved to new chapel. | Institutional history supplies the sequence. Later sources sometimes describe all changes generically as “postconciliar,” but the dated campaign had maintenance, safety, centennial, artistic, and liturgical dimensions. |
+| **Mid-1960s** | Exterior mosaic shrine of Our Lady of Częstochowa installed as a parish-centennial and Polish-Christian-millennium memorial. | Institutional history. Its promotional size superlative was not independently measured. |
+| **onward** | Freestanding altar removed; high altar reconstructed; sanctuary location and floor recovered; marble communion rail and choir stalls introduced; historic furnishings and vestments returned to use. | ICKSP history and 2016 *Catholic Herald* reporting. Components accrued in phases; the checked record does not support one single completion day or exact return to an untouched original state. |
+| **–12** | Organ pipes cleaned and regulated; action, bellows, and control system rebuilt; another console installed. | Detailed ICKSP parish history. No organ-builder contract or opus record was found in the checked set. |
+| **–14** | Priests’ sacristy restored, including inlaid wood floor and cabinetry; 1960s chapel adapted as server sacristy, reserve-tabernacle location, and storage. | ICKSP parish history. The reported relic collection is a custodial use, not a building-ownership claim. |
+| **/15–21** | Historic fragments and other visual evidence informed a new stained-glass program; sanctuary, nave, rose, choir-loft, confessional, and baptistery windows installed in phases, replacing dalle de verre. | ICKSP history and restoration page, Conrad Schmitt portfolio, and 2016 reporting. Sources differ on discovery year; the institutional history dates completion to 2021. |
+|  | Interior repainted from historical evidence; concealed marble cleaned and restored; rebuilt main altar consecrated during the parish’s 150th-anniversary weekend. | ICKSP history and anniversary record; *Catholic Herald* documents design research and phased fundraising. Consecration is a liturgical act distinct from the oratory’s disputed erection date. |
+| **–18** | Choir loft redesigned; cabinetry, furniture, and new stairs added. | ICKSP parish history. This is distinct from the 2011–12 organ mechanism work. |
+| **–19** | Tower domes removed and rebuilt in copper; exterior brick cleaned and tuckpointed; roofs repaired; historically patterned wood doors installed; gardens, walks, and stairs renewed. | ICKSP history and Chrystine Elle Hanus’s roofing-trade account, which dates the roofing project from December 2018 to December 2019. Copper replaced the failing 1960 aluminum-covered structures. |
+| **/20** | New energy-efficient chandeliers installed in designs intended to harmonize with the church; restored rectory rooms displayed as complete by 2020. | ICKSP prose dates chandelier installation to 2019 while a caption says 2020; the same history captions the restored rectory library 2020. |
+|  | Scheduled maintenance found the striking ends of all four great bell clappers worn flat; replacement clappers restored tone and volume, and the originals were displayed in the Marian courtyard. | Saint Stanislaus parish bulletin, 29 July–6 August 2023. The replaceable striking parts were renewed; the nineteenth-century bells themselves remained in service. |
+| **March 2024** | Parish and oratory announced planned acquisition and renovation of two attached buildings across Fifth and Historic Mitchell for classrooms, meeting rooms, and parking, with an estimated twelve-to-eighteen-month construction period. | ICKSP announcement. It establishes intent, proposed scope, and an anonymous gift; later city records separately establish acquisition and approvals. |
+| **September 2024 snapshot** | Archdiocesan Love One Another campaign page still identified grounds irrigation and exterior lighting as parish priorities. | Dated campaign record, not a total restoration budget. Its figures do not establish the aggregate cost of work since 2008. |
+| **October 2024** | St Stanislaus Properties LLC purchased the 501–505 West Historic Mitchell Street parcel for $875,000. | City of Milwaukee assessor record, tax key 4620625000. The property record establishes the transaction and ownership name, not the internal relationship of the LLC to the parish or completion of renovations. |
+| **Jul.–Sept. 2025** | City bodies approved replacement brick facing within the historic district and a special use for a religious assembly hall. | Historic Preservation Commission record and Board of Zoning Appeals minutes. The special-use approval required permits and occupancy certificates within one year; approval is not proof that rehabilitation or occupancy was complete by the cutoff. |
 
 ## Historical List of Pastors
 
@@ -573,187 +426,35 @@ This is the most complete succession recoverable from the checked public record,
 
 The compact loci below resolve through the linked references: **KUL**, the Catholic University of Lublin heritage history’s account of the 1866 organizer and first pastor; **MP**, the Saint Stanislaus succession paragraphs in the Milwaukee Polonia retrospective; **IPH**, the pastor chronology in the Institute’s “History of St. Stanislaus”; and **OCD**, the Saint Stanislaus parish entry in the named annual *Official Catholic Directory* edition. **CH18**, **AM20**, and **ICH** identify the 2018 *Catholic Herald* account, the 2020 archdiocesan handbook Saint Stanislaus entry, and the Institute’s current Milwaukee clergy block.
 
-<table style="width:91%;">
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 24%" />
-<col style="width: 20%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><strong><strong>Period or witness</strong></strong></th>
-<th style="text-align: left;"><strong>Name or status</strong></th>
-<th style="text-align: left;"><strong>Office / affiliation</strong></th>
-<th style="text-align: left;"><strong>Evidence and qualification</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong><strong>Period or witness</strong></strong></td>
-<td style="text-align: left;"><strong>Name or status</strong></td>
-<td style="text-align: left;"><strong>Office / affiliation</strong></td>
-<td style="text-align: left;"><strong>Evidence and qualification</strong></td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>1866–ca. 1867</p></td>
-<td style="text-align: left;">Rev. T. Węglikowski</td>
-<td style="text-align: left;">First pastor</td>
-<td style="text-align: left;">KUL explicitly names him first pastor; MP supplies the approximate period. No appointment act was located.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Ca. 1867–68</strong></td>
-<td style="text-align: left;">Rev. Bonaventure (Bonawentura) Buczyński</td>
-<td style="text-align: left;">Pastor</td>
-<td style="text-align: left;">MP places him after Węglikowski; KUL associates him with the 1866 organization, while John G. Gregory, vol. 2, p. 902, independently reports that organizing began under him in 1863. Neither supplies an appointment act.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Ca. 1868–70</strong></td>
-<td style="text-align: left;">Rev. J. Jaster</td>
-<td style="text-align: left;">Pastor</td>
-<td style="text-align: left;">MP, early succession paragraphs. Retrospective evidence only; no appointment act was located.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–75</strong></td>
-<td style="text-align: left;">Rev. John Rodowicz</td>
-<td style="text-align: left;">Pastor</td>
-<td style="text-align: left;">MP, early succession paragraphs. Exact appointment and departure dates were not independently verified.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–76</strong></td>
-<td style="text-align: left;">Rev. Xavier (Ksawery) Kralczyński</td>
-<td style="text-align: left;">Pastor</td>
-<td style="text-align: left;">MP, early succession paragraphs. The name and dates vary in English-language renderings.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–ca. 1883</strong></td>
-<td style="text-align: left;">Rev. Hyacinth (Jacek) Gulski</td>
-<td style="text-align: left;">Pastor</td>
-<td style="text-align: left;">MP, early succession paragraphs. Exact appointment and departure dates were not independently verified.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Ca. 1883–1894</strong></td>
-<td style="text-align: left;">Rev. Hipolit (Hippolyt) Górski</td>
-<td style="text-align: left;">Pastor</td>
-<td style="text-align: left;">MP supplies the retrospective period; OCD 1890, Saint Stanislaus entry, printed p. 82, scan n107, lists H. Gorski first.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Retrospective succession from 1895; checked directory witnesses 1897 and 1912</strong></td>
-<td style="text-align: left;">Rev. Paul Szulerecki</td>
-<td style="text-align: left;">Pastor</td>
-<td style="text-align: left;">MP calls him the eighth pastor beginning in 1895; OCD 1897, Saint Stanislaus entry, printed p. 65, scan n150, and OCD 1912, printed p. 98, scan n209, list P. Szulerecki first. The sources do not supply a checked departure boundary.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Rev. Anthony Lex, J.U.D.</td>
-<td style="text-align: left;">Administrator</td>
-<td style="text-align: left;">OCD 1913, Saint Stanislaus entry, printed p. 99, scan n210, explicitly prints “adm.”</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Checked directory witness 1914; 1915 search-text alignment</strong></td>
-<td style="text-align: left;">Most Rev. Edward Kozlowski, D.D.</td>
-<td style="text-align: left;">Pastor and auxiliary bishop</td>
-<td style="text-align: left;">OCD 1914, Saint Stanislaus entry, printed p. 101, scan n226, lists Bishop Kozlowski first; IPH identifies him as pastor. Search text aligns the 1915 entry, whose target image was not reliably located.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Checked directory witnesses 1916, 1934, and 1935</strong></td>
-<td style="text-align: left;">Rev. Louis Jurasinski</td>
-<td style="text-align: left;">First-listed priest; pastor in retrospective succession</td>
-<td style="text-align: left;">OCD 1916, printed p. 99, scan n234; OCD 1934, printed p. 98, scan n161; and OCD 1935, printed p. 76, scan n135, list him first. MP supplies the pastor title. No appointment decree or continuous annual series was inspected.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Checked directory witnesses 1936 and 1940; 1939 search-text lead</strong></td>
-<td style="text-align: left;">Rt. Rev. Msgr. Michael J. Wenta</td>
-<td style="text-align: left;">First-listed priest; pastor in retrospective succession</td>
-<td style="text-align: left;">OCD 1936, printed p. 77, scan n138, and OCD 1940, printed p. 108, scan n185, list him first. MP supplies the pastor title. Search text aligns 1939, but its target image was not reliably located; no exact appointment boundary is assigned.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Directory witnesses 1941 and 1957</strong></td>
-<td style="text-align: left;">Rt. Rev. Msgr. Bernard M. Kobelinski</td>
-<td style="text-align: left;">First-listed priest; pastor in retrospective succession</td>
-<td style="text-align: left;">OCD 1941, printed p. 112, scan n199, and OCD 1957, printed p. 127, scan n290, list him first; MP supplies the pastor title. The 1958 edition instead records a transition.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>transition witness</strong></td>
-<td style="text-align: left;">Rev. Edward F. Czajkowski</td>
-<td style="text-align: left;">First-listed priest; office not printed</td>
-<td style="text-align: left;">OCD 1958, Saint Stanislaus entry, printed p. 131, scan n296, lists Czajkowski first and Raymond A. Punda second. IPH says Punda became pastor in 1958, so the edition remains a transition snapshot rather than a contradictory tenure.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>IPH succession in 1958; checked directory witnesses 1960 and 1979</strong></td>
-<td style="text-align: left;">Rt. Rev. Msgr. Raymond A. Punda</td>
-<td style="text-align: left;">Pastor</td>
-<td style="text-align: left;">IPH gives the 1958 succession; OCD 1960, printed p. 135, scan n278, and OCD 1979, printed p. 527, scan n592, list Punda first. These are not an inspected appointment-and-departure pair.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Checked directory witnesses 1980 and 1987</strong></td>
-<td style="text-align: left;">Rev. James R. Czachowski</td>
-<td style="text-align: left;">First-listed priest; office not printed</td>
-<td style="text-align: left;">OCD 1980, printed p. 534, scan n601, and OCD 1987, printed p. 535, scan n622, are the checked Saint Stanislaus witnesses. The precise appointment date, canonical office, and intervening continuity were not recovered.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Checked directory witness 1988; 1989 search-text alignment</strong></td>
-<td style="text-align: left;">Rev. George M. Rebatzki</td>
-<td style="text-align: left;">First-listed priest; office not printed</td>
-<td style="text-align: left;">OCD 1988, printed p. 542, scan n641, lists him first. Search text aligns 1989, but its target image was not reliably located.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Checked directory witnesses 1990 and 1996</strong></td>
-<td style="text-align: left;">Rev. LeRoy A. Petta</td>
-<td style="text-align: left;">First-listed priest; office not printed</td>
-<td style="text-align: left;">OCD 1990, printed p. 574, scan n669, and OCD 1996, printed p. 666, scan n897, are the checked Saint Stanislaus witnesses. Intervening continuity is not inferred, and the 1997 entry was not recovered for reliable checking.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Unresolved interval</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">OCD 1997 search: no usable Saint Stanislaus entry recovered.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Checked directory witness 1998; 1999–2000 search-text alignment</strong></td>
-<td style="text-align: left;">Unassigned</td>
-<td style="text-align: left;">Directory status</td>
-<td style="text-align: left;">OCD 1998, printed p. 692, scan n845, prints “Unassigned.” Search text aligns that status in 1999–2000, but the target images were not reliably located. The word does not imply an absence of visiting or sacramental ministry.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–03</strong></td>
-<td style="text-align: left;">Unresolved interval</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">OCD 2001–03 search: no usable Saint Stanislaus entries recovered.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>unverified finding-aid lead</strong></td>
-<td style="text-align: left;">Rev. Ronald E. Kotecki</td>
-<td style="text-align: left;">Administrator in search text</td>
-<td style="text-align: left;">OCD 2004 searchable text prints “Admin.,” but the target image was not reliably located. This is retained as a lead, not a verified roster year.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Checked directory witness 2005; 2006 search-text alignment</strong></td>
-<td style="text-align: left;">Rev. Luis Pacecho-Sanchez (printed form)</td>
-<td style="text-align: left;">Administrator</td>
-<td style="text-align: left;">OCD 2005, printed p. 759, scan n924, prints “Luis Pacecho-Sanchez, Admin.” The unverified 2006 search text instead prints “Pacheco-Sanchez”; without a second checked source, that apparent correction remains a lead rather than the roster’s primary name.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–08 unverified finding-aid lead</strong></td>
-<td style="text-align: left;">Rev. Anthony Cirignani, O.F.M.</td>
-<td style="text-align: left;">First-listed priest in search text; office not printed</td>
-<td style="text-align: left;">OCD 2007–08 searchable text names Cirignani. The images were not reliably located, and the lead overlaps the announced 2007 transfer to Institute care; no parish office or verified roster year is assigned.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–11 unverified finding-aid lead; reported overlap in 2011</strong></td>
-<td style="text-align: left;">Rev. Canon Olivier Meney</td>
-<td style="text-align: left;">First-listed priest in search text; Institute of Christ the King Sovereign Priest</td>
-<td style="text-align: left;">OCD 2009–11 searchable text names Meney but the images were not reliably located. The 2011 lead overlaps the later report that Jayr began serving that year, so publication lag or an intra-year change remains possible.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Reported since 2011; current at cutoff</strong></td>
-<td style="text-align: left;">Rev. Canon Benoı̂t Jayr</td>
-<td style="text-align: left;">Parish administrator and oratory rector; Institute of Christ the King Sovereign Priest</td>
-<td style="text-align: left;">CH18 reports service since 2011; AM20 and ICH explicitly give the paired offices. The unverified 2011 Meney search-text lead prevents assignment of a handoff day.</td>
-</tr>
-</tbody>
-</table>
+| **Period or witness** | **Name or status** | **Office / affiliation** | **Evidence and qualification** |
+|:----------|:-----------------|:--------------|:-----------------------|
+| **Period or witness** | **Name or status** | **Office / affiliation** | **Evidence and qualification** |
+| **1866–ca. 1867** | Rev. T. Węglikowski | First pastor | KUL explicitly names him first pastor; MP supplies the approximate period. No appointment act was located. |
+| **Ca. 1867–68** | Rev. Bonaventure (Bonawentura) Buczyński | Pastor | MP places him after Węglikowski; KUL associates him with the 1866 organization, while John G. Gregory, vol. 2, p. 902, independently reports that organizing began under him in 1863. Neither supplies an appointment act. |
+| **Ca. 1868–70** | Rev. J. Jaster | Pastor | MP, early succession paragraphs. Retrospective evidence only; no appointment act was located. |
+| **–75** | Rev. John Rodowicz | Pastor | MP, early succession paragraphs. Exact appointment and departure dates were not independently verified. |
+| **–76** | Rev. Xavier (Ksawery) Kralczyński | Pastor | MP, early succession paragraphs. The name and dates vary in English-language renderings. |
+| **–ca. 1883** | Rev. Hyacinth (Jacek) Gulski | Pastor | MP, early succession paragraphs. Exact appointment and departure dates were not independently verified. |
+| **Ca. 1883–1894** | Rev. Hipolit (Hippolyt) Górski | Pastor | MP supplies the retrospective period; OCD 1890, Saint Stanislaus entry, printed p. 82, scan n107, lists H. Gorski first. |
+| **Retrospective succession from 1895; checked directory witnesses 1897 and 1912** | Rev. Paul Szulerecki | Pastor | MP calls him the eighth pastor beginning in 1895; OCD 1897, Saint Stanislaus entry, printed p. 65, scan n150, and OCD 1912, printed p. 98, scan n209, list P. Szulerecki first. The sources do not supply a checked departure boundary. |
+|  | Rev. Anthony Lex, J.U.D. | Administrator | OCD 1913, Saint Stanislaus entry, printed p. 99, scan n210, explicitly prints “adm.” |
+| **Checked directory witness 1914; 1915 search-text alignment** | Most Rev. Edward Kozlowski, D.D. | Pastor and auxiliary bishop | OCD 1914, Saint Stanislaus entry, printed p. 101, scan n226, lists Bishop Kozlowski first; IPH identifies him as pastor. Search text aligns the 1915 entry, whose target image was not reliably located. |
+| **Checked directory witnesses 1916, 1934, and 1935** | Rev. Louis Jurasinski | First-listed priest; pastor in retrospective succession | OCD 1916, printed p. 99, scan n234; OCD 1934, printed p. 98, scan n161; and OCD 1935, printed p. 76, scan n135, list him first. MP supplies the pastor title. No appointment decree or continuous annual series was inspected. |
+| **Checked directory witnesses 1936 and 1940; 1939 search-text lead** | Rt. Rev. Msgr. Michael J. Wenta | First-listed priest; pastor in retrospective succession | OCD 1936, printed p. 77, scan n138, and OCD 1940, printed p. 108, scan n185, list him first. MP supplies the pastor title. Search text aligns 1939, but its target image was not reliably located; no exact appointment boundary is assigned. |
+| **Directory witnesses 1941 and 1957** | Rt. Rev. Msgr. Bernard M. Kobelinski | First-listed priest; pastor in retrospective succession | OCD 1941, printed p. 112, scan n199, and OCD 1957, printed p. 127, scan n290, list him first; MP supplies the pastor title. The 1958 edition instead records a transition. |
+| **transition witness** | Rev. Edward F. Czajkowski | First-listed priest; office not printed | OCD 1958, Saint Stanislaus entry, printed p. 131, scan n296, lists Czajkowski first and Raymond A. Punda second. IPH says Punda became pastor in 1958, so the edition remains a transition snapshot rather than a contradictory tenure. |
+| **IPH succession in 1958; checked directory witnesses 1960 and 1979** | Rt. Rev. Msgr. Raymond A. Punda | Pastor | IPH gives the 1958 succession; OCD 1960, printed p. 135, scan n278, and OCD 1979, printed p. 527, scan n592, list Punda first. These are not an inspected appointment-and-departure pair. |
+| **Checked directory witnesses 1980 and 1987** | Rev. James R. Czachowski | First-listed priest; office not printed | OCD 1980, printed p. 534, scan n601, and OCD 1987, printed p. 535, scan n622, are the checked Saint Stanislaus witnesses. The precise appointment date, canonical office, and intervening continuity were not recovered. |
+| **Checked directory witness 1988; 1989 search-text alignment** | Rev. George M. Rebatzki | First-listed priest; office not printed | OCD 1988, printed p. 542, scan n641, lists him first. Search text aligns 1989, but its target image was not reliably located. |
+| **Checked directory witnesses 1990 and 1996** | Rev. LeRoy A. Petta | First-listed priest; office not printed | OCD 1990, printed p. 574, scan n669, and OCD 1996, printed p. 666, scan n897, are the checked Saint Stanislaus witnesses. Intervening continuity is not inferred, and the 1997 entry was not recovered for reliable checking. |
+|  | Unresolved interval | — | OCD 1997 search: no usable Saint Stanislaus entry recovered. |
+| **Checked directory witness 1998; 1999–2000 search-text alignment** | Unassigned | Directory status | OCD 1998, printed p. 692, scan n845, prints “Unassigned.” Search text aligns that status in 1999–2000, but the target images were not reliably located. The word does not imply an absence of visiting or sacramental ministry. |
+| **–03** | Unresolved interval | — | OCD 2001–03 search: no usable Saint Stanislaus entries recovered. |
+| **unverified finding-aid lead** | Rev. Ronald E. Kotecki | Administrator in search text | OCD 2004 searchable text prints “Admin.,” but the target image was not reliably located. This is retained as a lead, not a verified roster year. |
+| **Checked directory witness 2005; 2006 search-text alignment** | Rev. Luis Pacecho-Sanchez (printed form) | Administrator | OCD 2005, printed p. 759, scan n924, prints “Luis Pacecho-Sanchez, Admin.” The unverified 2006 search text instead prints “Pacheco-Sanchez”; without a second checked source, that apparent correction remains a lead rather than the roster’s primary name. |
+| **–08 unverified finding-aid lead** | Rev. Anthony Cirignani, O.F.M. | First-listed priest in search text; office not printed | OCD 2007–08 searchable text names Cirignani. The images were not reliably located, and the lead overlaps the announced 2007 transfer to Institute care; no parish office or verified roster year is assigned. |
+| **–11 unverified finding-aid lead; reported overlap in 2011** | Rev. Canon Olivier Meney | First-listed priest in search text; Institute of Christ the King Sovereign Priest | OCD 2009–11 searchable text names Meney but the images were not reliably located. The 2011 lead overlaps the later report that Jayr began serving that year, so publication lag or an intra-year change remains possible. |
+| **Reported since 2011; current at cutoff** | Rev. Canon Benoı̂t Jayr | Parish administrator and oratory rector; Institute of Christ the King Sovereign Priest | CH18 reports service since 2011; AM20 and ICH explicitly give the paired offices. The unverified 2011 Meney search-text lead prevents assignment of a handoff day. |
 
 A later Milwaukee Polonia retrospective calls Rev. Joseph Chylewski pastor during Father Szulerecki’s incapacity. The 1913 directory instead names Anthony Lex administrator, while the checked 1914 directory places Chylewski after Bishop Kozlowski and unverified 1915 search text aligns that order. Without an appointment act or parish clergy ledger, Chylewski is not entered here as a confirmed pastor. Likewise, first position in a directory entry is evidence only of first-listed public status in that edition; it is not silently converted into a canonical title where the edition prints none.
 
@@ -761,293 +462,62 @@ A later Milwaukee Polonia retrospective calls Rev. Joseph Chylewski pastor duri
 
 The final column distinguishes a recorded event from the later witness that reports it. Approximate ranges and disputed dates remain explicit.
 
-<table style="width:91%;">
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 48%" />
-<col style="width: 27%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><strong><strong>Date</strong></strong></th>
-<th style="text-align: left;"><strong>Event or development</strong></th>
-<th style="text-align: left;"><strong>Witness and boundary</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong><strong>Date</strong></strong></td>
-<td style="text-align: left;"><strong>Event or development</strong></td>
-<td style="text-align: left;"><strong>Witness and boundary</strong></td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>1840s–60s</p></td>
-<td style="text-align: left;">Polish-speaking migrants, many from Prussian-ruled Polish lands, enter Milwaukee’s industrial and service economy; South Side settlement grows.</td>
-<td style="text-align: left;">Archdiocese, UWM, National Register, and Portal Polonii syntheses; regional origins were plural.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Organizing of a Polish Catholic congregation is reported as begun under Father Buczinski.</td>
-<td style="text-align: left;">Gregory’s 1931 city history, p. 902; later official histories use 1866 for formal foundation.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Thirty families formally organize Saint Stanislaus, acquire a former Lutheran brick church at Fifth and Mineral, and establish Milwaukee’s first Polish parish.</td>
-<td style="text-align: left;">Official, preservation, and later historical accounts converge; no founding minutes were checked.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–78</strong></td>
-<td style="text-align: left;">Polish parish instruction begins and receives dedicated school space.</td>
-<td style="text-align: left;">Sources attach 1866, 1867, 1872, or 1873 to instruction and 1873 or 1878 to a schoolhouse; exact sequence unresolved.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Saint Hedwig becomes Milwaukee’s second Polish parish, serving a constituency for whom Saint Stanislaus was distant.</td>
-<td style="text-align: left;">Gregory, UWM, and Portal Polonii; first clear daughter-parish phase.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>July 1872</strong></td>
-<td style="text-align: left;">Cornerstone laid for the present Saint Stanislaus Church at Fifth and Mitchell.</td>
-<td style="text-align: left;">HABS, AHI, Gregory, National Register, and parish history.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">A portion of the present church is dedicated and placed in use.</td>
-<td style="text-align: left;">Gregory and institutional memory; principal construction continues in 1884–94.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>1870s</strong></td>
-<td style="text-align: left;">Kashubian fishing settlement develops on Jones Island, with many families connected sacramentally to Saint Stanislaus.</td>
-<td style="text-align: left;">Archdiocesan and Milwaukee Polonia histories; island and parish foundations are not identical events.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Parish history reports 96 marriages, 589 baptisms, and 520 confirmations in the year.</td>
-<td style="text-align: left;">Institutional retrospective; definitions and original registers were not audited.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Saint Hyacinth is organized as Polish settlement expands on the South Side.</td>
-<td style="text-align: left;">UWM and contextual parish histories; evidence of Saint Stanislaus’s generative rather than merely centralized role.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–94</strong></td>
-<td style="text-align: left;">Principal later construction completes sanctuary, copper roof, organ, and painted interior.</td>
-<td style="text-align: left;">HABS physical history; demonstrates why 1873 is a use date, not a universal completion date.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Henry Messmer designs $17,000 in renovations.</td>
-<td style="text-align: left;">Wisconsin AHI HI27246; digital record gives value without full schedule.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–5 May 1886</strong></td>
-<td style="text-align: left;">Polish workers gather at Saint Stanislaus before marching toward the Bay View rolling mill; militia fire the next day kills seven people.</td>
-<td style="text-align: left;">John Gurda account hosted by Wisconsin Labor History Society; gathering place does not establish parish sponsorship of the strike.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Saint Vincent de Paul and Saint Josaphat are among the Polish congregations formed as settlement spread.</td>
-<td style="text-align: left;">UWM and Polish-parish histories; daughter institutions had their own founders and later histories.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–95</strong></td>
-<td style="text-align: left;">Four great bells and successive marble work mark a major interior and tower campaign.</td>
-<td style="text-align: left;">Detailed parish history; one 2018 feature dates bells to 1882, so installation year remains source-dependent.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–1913</strong></td>
-<td style="text-align: left;">Entrances, tower windows, buttresses and apostle statues, crossing flèche, marble altars, pulpit, and decoration reshape church exterior and interior.</td>
-<td style="text-align: left;">HABS; individual years within the range cannot all be recovered.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–15</strong></td>
-<td style="text-align: left;">Auxiliary Bishop Edward Kozłowski is associated with Saint Stanislaus during his brief Milwaukee episcopate.</td>
-<td style="text-align: left;">Later Polish institutional history; a full episcopal-residence and event chronology was not reconstructed.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Present principal school front built to plans by Herbst and Kuenzli dated 16 February.</td>
-<td style="text-align: left;">Wisconsin AHI HI118139 and National Register nomination; controls over an “early 1930s” parish recollection.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">John G. Gregory publishes a city history preserving the 1863 organization, reused first church, 1873 dedication, and 1878 schoolhouse chronology.</td>
-<td style="text-align: left;">Near-contemporary synthesis, not a founding document.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Saint Stanislaus High School opens with seventy-two freshmen, boys and girls, and grows into a regional South Side Catholic school.</td>
-<td style="text-align: left;">A 1946 <em>Milwaukee Sentinel</em> retrospective preserved by Marquette University; school-program history is distinct from the 1926 building date.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">A parish diamond-jubilee memorial volume is produced.</td>
-<td style="text-align: left;">HABS cites the volume; it was not examined in full here.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">The state inventory records the school’s name change to Notre Dame High School.</td>
-<td style="text-align: left;">Wisconsin AHI HI118139; the building had already housed secondary instruction since 1932.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>1950s–60s</strong></td>
-<td style="text-align: left;">Expressway clearance and postwar suburban mobility disrupt South Side residence and accelerate Polish dispersal from the old parish neighborhood.</td>
-<td style="text-align: left;">National Register context, Portal Polonii, and later reporting; no annual parish census was found.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Raymond A. Punda becomes pastor and prepares an extensive centennial renovation.</td>
-<td style="text-align: left;">Institutional history.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Towers and domes rebuilt, gilded, and reset; clocks and masonry renewed.</td>
-<td style="text-align: left;">Detailed institutional chronology; other inventories use broader early-1960s or 1966 dating.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Fire damages a side altar and smokes the church interior.</td>
-<td style="text-align: left;">Institutional history; no fire report checked.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>/64</strong></td>
-<td style="text-align: left;">Old stained glass is removed and dalle de verre installed.</td>
-<td style="text-align: left;">The City of Milwaukee survey says 1962; institutional history says 1964; no checked permit or contract resolves the difference.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–64</strong></td>
-<td style="text-align: left;">Rectory remade; ambulatory and chapel join it to church.</td>
-<td style="text-align: left;">Parish and preservation records; remodeling-versus-replacement language remains unsettled.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–66</strong></td>
-<td style="text-align: left;">Travertine, freestanding altar, relocated pulpit and font, reduced rail, extended sanctuary, and Częstochowa mosaic complete the centennial-era remaking.</td>
-<td style="text-align: left;">Institutional history; the campaign combined maintenance, safety, commemorative, artistic, and liturgical judgments.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">A 31-page parish centennial history is produced.</td>
-<td style="text-align: left;">Notre Dame Archives catalogs the volume; it was not examined in full here.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>1970s–80s</strong></td>
-<td style="text-align: left;">Parish numbers decline and the building’s future becomes uncertain.</td>
-<td style="text-align: left;">Institutional history and later journalism; no complete quantitative series located.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Reported 1988</strong></td>
-<td style="text-align: left;">Notre Dame High School closes; the building later remains in consolidated Catholic elementary-school use.</td>
-<td style="text-align: left;">OnMilwaukee retrospective and National Register nomination; no school-board or archdiocesan closing act checked.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Reported 2003</strong></td>
-<td style="text-align: left;">Sale of the church is described as under archdiocesan consideration.</td>
-<td style="text-align: left;">OnMilwaukee oral-history feature; not supported here by a contemporaneous sale file.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>October 2007</strong></td>
-<td style="text-align: left;">ICKSP announces Archbishop Timothy Dolan’s invitation to serve the traditional-Latin-Mass apostolate in Milwaukee, with Sunday Mass at Saint Stanislaus to begin in Advent.</td>
-<td style="text-align: left;">Contemporary institutional announcement; it records invitation and planned ministry, not transfer of title.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–08</strong></td>
-<td style="text-align: left;">Parish placed in the Institute’s care; institutional history dates erection of Saint Stanislaus Oratory to 2008; restoration begins.</td>
-<td style="text-align: left;">ICKSP history. A 2018 feature instead gives 2016 for canonical establishment; no decree located.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>onward</strong></td>
-<td style="text-align: left;">Sanctuary and high altar reconstructed, floor and rail renewed, and historic liturgical furnishings recovered in phases.</td>
-<td style="text-align: left;">ICKSP and <em>Catholic Herald</em>; no single completion date.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–12</strong></td>
-<td style="text-align: left;">Organ restored.</td>
-<td style="text-align: left;">Institutional history; scope detailed in building ledger.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–14</strong></td>
-<td style="text-align: left;">Sacristy and former connecting chapel restored and adapted for current service.</td>
-<td style="text-align: left;">Institutional history.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>/15–21</strong></td>
-<td style="text-align: left;">Reconstructed stained-glass windows installed in phases using historical evidence and surviving fragments.</td>
-<td style="text-align: left;">Parish, contractor, and press records disagree slightly on discovery date; completion reported in 2021.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Interior decorative and marble restoration advances; 24–25 September sesquicentennial observances include Benediction with Archbishop Jerome Listecki and a pontifical Mass with Auxiliary Bishop Joseph Perry, who consecrates the rebuilt main altar.</td>
-<td style="text-align: left;">Contemporary ICKSP anniversary account; parish anniversary, not church-building sesquicentennial or oratory-erection proof.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–18</strong></td>
-<td style="text-align: left;">Choir loft redesigned and renewed.</td>
-<td style="text-align: left;">Institutional history.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>November 2018</strong></td>
-<td style="text-align: left;">West Mitchell Street Commercial Historic District entered in the National Register; church, school, and rectory are contributing resources.</td>
-<td style="text-align: left;">Wisconsin AHI and National Register record. District contribution is not an individual National Register listing for the church.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>December 2018–December 2019</strong></td>
-<td style="text-align: left;">Copper-dome and roof campaign proceeds with masonry, doors, and site restoration.</td>
-<td style="text-align: left;">Professional roofing account and institutional history.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–21</strong></td>
-<td style="text-align: left;">Chandeliers, rectory interiors, and final stained-glass phases complete major visible portions of the program.</td>
-<td style="text-align: left;">Institutional history; ongoing maintenance means restoration has no final terminal date.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>November 2022</strong></td>
-<td style="text-align: left;">Saint Stanislaus observes the 150th anniversary of the present church’s 1872 building campaign.</td>
-<td style="text-align: left;">ICKSP event notice; distinct from the parish’s 150th anniversary in 2016.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>July–August 2023</strong></td>
-<td style="text-align: left;">All four great bells receive replacement clappers after scheduled maintenance finds the original striking ends worn flat; the original clappers are retained for display.</td>
-<td style="text-align: left;">Contemporary parish bulletin; maintenance of working bells, not replacement of the bells.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>October 2023</strong></td>
-<td style="text-align: left;">Auxiliary Bishop Jeffrey Haines confirms seventy-eight young faithful at the oratory.</td>
-<td style="text-align: left;">Contemporary ICKSP report; a sacramental event and activity snapshot, not a resident-parish census.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>March 2024</strong></td>
-<td style="text-align: left;">Parish and oratory announce planned acquisition and renovation of two nearby buildings for classrooms, meetings, and parking.</td>
-<td style="text-align: left;">Institutional announcement; later public records establish purchase and approvals, but not completed renovation.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>September 2024</strong></td>
-<td style="text-align: left;">Love One Another page reports $11,705 pledged against a $36,183 parish goal and names irrigation and exterior lighting needs.</td>
-<td style="text-align: left;">Dated archdiocesan campaign snapshot; not a total restoration cost.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>October 2024</strong></td>
-<td style="text-align: left;">St Stanislaus Properties LLC purchases 501–505 West Historic Mitchell Street for $875,000.</td>
-<td style="text-align: left;">City assessor transaction record; proves acquisition, not finished rehabilitation or occupancy.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>July / 11 September 2025</strong></td>
-<td style="text-align: left;">Historic Preservation Commission approves replacement brick facing; Board of Zoning Appeals grants special use as a religious assembly hall subject to permits and occupancy certificates.</td>
-<td style="text-align: left;">Official city records. These are rehabilitation and use approvals, not a completion certificate.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>May / 4 June 2026</strong></td>
-<td style="text-align: left;">Twenty-five children receive first Communion; hundreds participate in Corpus Christi Mass and a five-block procession to Saint Anthony.</td>
-<td style="text-align: left;">Contemporary ICKSP event reports; evidence of recurrent use and regional community, not proof of neighborhood demographic reversal.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>July 2026</strong></td>
-<td style="text-align: left;">Historical and mutable-status cutoff.</td>
-<td style="text-align: left;">Current schedule, staff, public status, campaign, and expansion evidence checked to this date; independent specialist review remains outstanding.</td>
-</tr>
-</tbody>
-</table>
+| **Date** | **Event or development** | **Witness and boundary** |
+|:-----------|:---------------------------------|:-------------------|
+| **Date** | **Event or development** | **Witness and boundary** |
+| **1840s–60s** | Polish-speaking migrants, many from Prussian-ruled Polish lands, enter Milwaukee’s industrial and service economy; South Side settlement grows. | Archdiocese, UWM, National Register, and Portal Polonii syntheses; regional origins were plural. |
+|  | Organizing of a Polish Catholic congregation is reported as begun under Father Buczinski. | Gregory’s 1931 city history, p. 902; later official histories use 1866 for formal foundation. |
+|  | Thirty families formally organize Saint Stanislaus, acquire a former Lutheran brick church at Fifth and Mineral, and establish Milwaukee’s first Polish parish. | Official, preservation, and later historical accounts converge; no founding minutes were checked. |
+| **–78** | Polish parish instruction begins and receives dedicated school space. | Sources attach 1866, 1867, 1872, or 1873 to instruction and 1873 or 1878 to a schoolhouse; exact sequence unresolved. |
+|  | Saint Hedwig becomes Milwaukee’s second Polish parish, serving a constituency for whom Saint Stanislaus was distant. | Gregory, UWM, and Portal Polonii; first clear daughter-parish phase. |
+| **July 1872** | Cornerstone laid for the present Saint Stanislaus Church at Fifth and Mitchell. | HABS, AHI, Gregory, National Register, and parish history. |
+|  | A portion of the present church is dedicated and placed in use. | Gregory and institutional memory; principal construction continues in 1884–94. |
+| **1870s** | Kashubian fishing settlement develops on Jones Island, with many families connected sacramentally to Saint Stanislaus. | Archdiocesan and Milwaukee Polonia histories; island and parish foundations are not identical events. |
+|  | Parish history reports 96 marriages, 589 baptisms, and 520 confirmations in the year. | Institutional retrospective; definitions and original registers were not audited. |
+|  | Saint Hyacinth is organized as Polish settlement expands on the South Side. | UWM and contextual parish histories; evidence of Saint Stanislaus’s generative rather than merely centralized role. |
+| **–94** | Principal later construction completes sanctuary, copper roof, organ, and painted interior. | HABS physical history; demonstrates why 1873 is a use date, not a universal completion date. |
+|  | Henry Messmer designs $17,000 in renovations. | Wisconsin AHI HI27246; digital record gives value without full schedule. |
+| **–5 May 1886** | Polish workers gather at Saint Stanislaus before marching toward the Bay View rolling mill; militia fire the next day kills seven people. | John Gurda account hosted by Wisconsin Labor History Society; gathering place does not establish parish sponsorship of the strike. |
+|  | Saint Vincent de Paul and Saint Josaphat are among the Polish congregations formed as settlement spread. | UWM and Polish-parish histories; daughter institutions had their own founders and later histories. |
+| **–95** | Four great bells and successive marble work mark a major interior and tower campaign. | Detailed parish history; one 2018 feature dates bells to 1882, so installation year remains source-dependent. |
+| **–1913** | Entrances, tower windows, buttresses and apostle statues, crossing flèche, marble altars, pulpit, and decoration reshape church exterior and interior. | HABS; individual years within the range cannot all be recovered. |
+| **–15** | Auxiliary Bishop Edward Kozłowski is associated with Saint Stanislaus during his brief Milwaukee episcopate. | Later Polish institutional history; a full episcopal-residence and event chronology was not reconstructed. |
+|  | Present principal school front built to plans by Herbst and Kuenzli dated 16 February. | Wisconsin AHI HI118139 and National Register nomination; controls over an “early 1930s” parish recollection. |
+|  | John G. Gregory publishes a city history preserving the 1863 organization, reused first church, 1873 dedication, and 1878 schoolhouse chronology. | Near-contemporary synthesis, not a founding document. |
+|  | Saint Stanislaus High School opens with seventy-two freshmen, boys and girls, and grows into a regional South Side Catholic school. | A 1946 *Milwaukee Sentinel* retrospective preserved by Marquette University; school-program history is distinct from the 1926 building date. |
+|  | A parish diamond-jubilee memorial volume is produced. | HABS cites the volume; it was not examined in full here. |
+|  | The state inventory records the school’s name change to Notre Dame High School. | Wisconsin AHI HI118139; the building had already housed secondary instruction since 1932. |
+| **1950s–60s** | Expressway clearance and postwar suburban mobility disrupt South Side residence and accelerate Polish dispersal from the old parish neighborhood. | National Register context, Portal Polonii, and later reporting; no annual parish census was found. |
+|  | Raymond A. Punda becomes pastor and prepares an extensive centennial renovation. | Institutional history. |
+|  | Towers and domes rebuilt, gilded, and reset; clocks and masonry renewed. | Detailed institutional chronology; other inventories use broader early-1960s or 1966 dating. |
+|  | Fire damages a side altar and smokes the church interior. | Institutional history; no fire report checked. |
+| **/64** | Old stained glass is removed and dalle de verre installed. | The City of Milwaukee survey says 1962; institutional history says 1964; no checked permit or contract resolves the difference. |
+| **–64** | Rectory remade; ambulatory and chapel join it to church. | Parish and preservation records; remodeling-versus-replacement language remains unsettled. |
+| **–66** | Travertine, freestanding altar, relocated pulpit and font, reduced rail, extended sanctuary, and Częstochowa mosaic complete the centennial-era remaking. | Institutional history; the campaign combined maintenance, safety, commemorative, artistic, and liturgical judgments. |
+|  | A 31-page parish centennial history is produced. | Notre Dame Archives catalogs the volume; it was not examined in full here. |
+| **1970s–80s** | Parish numbers decline and the building’s future becomes uncertain. | Institutional history and later journalism; no complete quantitative series located. |
+| **Reported 1988** | Notre Dame High School closes; the building later remains in consolidated Catholic elementary-school use. | OnMilwaukee retrospective and National Register nomination; no school-board or archdiocesan closing act checked. |
+| **Reported 2003** | Sale of the church is described as under archdiocesan consideration. | OnMilwaukee oral-history feature; not supported here by a contemporaneous sale file. |
+| **October 2007** | ICKSP announces Archbishop Timothy Dolan’s invitation to serve the traditional-Latin-Mass apostolate in Milwaukee, with Sunday Mass at Saint Stanislaus to begin in Advent. | Contemporary institutional announcement; it records invitation and planned ministry, not transfer of title. |
+| **–08** | Parish placed in the Institute’s care; institutional history dates erection of Saint Stanislaus Oratory to 2008; restoration begins. | ICKSP history. A 2018 feature instead gives 2016 for canonical establishment; no decree located. |
+| **onward** | Sanctuary and high altar reconstructed, floor and rail renewed, and historic liturgical furnishings recovered in phases. | ICKSP and *Catholic Herald*; no single completion date. |
+| **–12** | Organ restored. | Institutional history; scope detailed in building ledger. |
+| **–14** | Sacristy and former connecting chapel restored and adapted for current service. | Institutional history. |
+| **/15–21** | Reconstructed stained-glass windows installed in phases using historical evidence and surviving fragments. | Parish, contractor, and press records disagree slightly on discovery date; completion reported in 2021. |
+|  | Interior decorative and marble restoration advances; 24–25 September sesquicentennial observances include Benediction with Archbishop Jerome Listecki and a pontifical Mass with Auxiliary Bishop Joseph Perry, who consecrates the rebuilt main altar. | Contemporary ICKSP anniversary account; parish anniversary, not church-building sesquicentennial or oratory-erection proof. |
+| **–18** | Choir loft redesigned and renewed. | Institutional history. |
+| **November 2018** | West Mitchell Street Commercial Historic District entered in the National Register; church, school, and rectory are contributing resources. | Wisconsin AHI and National Register record. District contribution is not an individual National Register listing for the church. |
+| **December 2018–December 2019** | Copper-dome and roof campaign proceeds with masonry, doors, and site restoration. | Professional roofing account and institutional history. |
+| **–21** | Chandeliers, rectory interiors, and final stained-glass phases complete major visible portions of the program. | Institutional history; ongoing maintenance means restoration has no final terminal date. |
+| **November 2022** | Saint Stanislaus observes the 150th anniversary of the present church’s 1872 building campaign. | ICKSP event notice; distinct from the parish’s 150th anniversary in 2016. |
+| **July–August 2023** | All four great bells receive replacement clappers after scheduled maintenance finds the original striking ends worn flat; the original clappers are retained for display. | Contemporary parish bulletin; maintenance of working bells, not replacement of the bells. |
+| **October 2023** | Auxiliary Bishop Jeffrey Haines confirms seventy-eight young faithful at the oratory. | Contemporary ICKSP report; a sacramental event and activity snapshot, not a resident-parish census. |
+| **March 2024** | Parish and oratory announce planned acquisition and renovation of two nearby buildings for classrooms, meetings, and parking. | Institutional announcement; later public records establish purchase and approvals, but not completed renovation. |
+| **September 2024** | Love One Another page reports $11,705 pledged against a $36,183 parish goal and names irrigation and exterior lighting needs. | Dated archdiocesan campaign snapshot; not a total restoration cost. |
+| **October 2024** | St Stanislaus Properties LLC purchases 501–505 West Historic Mitchell Street for $875,000. | City assessor transaction record; proves acquisition, not finished rehabilitation or occupancy. |
+| **July / 11 September 2025** | Historic Preservation Commission approves replacement brick facing; Board of Zoning Appeals grants special use as a religious assembly hall subject to permits and occupancy certificates. | Official city records. These are rehabilitation and use approvals, not a completion certificate. |
+| **May / 4 June 2026** | Twenty-five children receive first Communion; hundreds participate in Corpus Christi Mass and a five-block procession to Saint Anthony. | Contemporary ICKSP event reports; evidence of recurrent use and regional community, not proof of neighborhood demographic reversal. |
+| **July 2026** | Historical and mutable-status cutoff. | Current schedule, staff, public status, campaign, and expansion evidence checked to this date; independent specialist review remains outstanding. |
 
 ## References
 

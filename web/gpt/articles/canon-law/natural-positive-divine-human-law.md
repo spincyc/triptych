@@ -690,279 +690,54 @@ Law reaches its end through responsible persons acting within communities. Natur
 
 The chronology below aligns conceptual developments with the institutions in which they acquired practical force. Its entries mark changes of vocabulary, jurisdiction, and legal form rather than stages in a single linear theory.
 
-<table style="width:92%;">
-<colgroup>
-<col style="width: 12%" />
-<col style="width: 24%" />
-<col style="width: 56%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p><strong>Date</strong></p></th>
-<th style="text-align: left;"><strong>Witness or development</strong></th>
-<th style="text-align: left;"><strong>Contribution and limit</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>c. 441 BC</p></td>
-<td style="text-align: left;">Sophocles, <em>Antigone</em></td>
-<td style="text-align: left;">Dramatizes conflict between a ruler’s decree and an unwritten divine norm; it is not a systematic natural-law treatise.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>4th c. BC</p></td>
-<td style="text-align: left;">Plato and Aristotle</td>
-<td style="text-align: left;">Distinguish nature and convention, analyze rational order and political justice, and explain equity as reasoned correction where a general formulation fails in an unforeseen case.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>3rd–1st c. BC</p></td>
-<td style="text-align: left;">Stoicism and Cicero</td>
-<td style="text-align: left;">Relate common reason, nature, divine governance, and the human community; Cicero uses right reason to judge enacted rules.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>2nd c. BC–3rd c. AD</p></td>
-<td style="text-align: left;">Roman jurists and magistrates</td>
-<td style="text-align: left;">Develop civil, gentium, natural, praetorian, written, and unwritten law together with status, action, proof, and remedy. The surviving texts preserve several taxonomies.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>1st c.</p></td>
-<td style="text-align: left;">New Testament and Acts 15</td>
-<td style="text-align: left;">Place natural moral knowledge, covenant fulfilled in Christ, civil obedience, ecclesial authority, and God’s prior claim in one scriptural field. Acts 15 shows authority, dispute, discernment, written communication, reception, and differentiated obligations.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>1st–3rd c.</p></td>
-<td style="text-align: left;">Early ecclesial communities</td>
-<td style="text-align: left;">Govern worship, ministry, admission, discipline, charity, and reconciliation before imperial recognition through apostolic, episcopal, conciliar, customary, and penitential forms.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>4th–6th c.</p></td>
-<td style="text-align: left;">Christian empire, Augustine, and Gelasius</td>
-<td style="text-align: left;">Civil and ecclesiastical action acquire new points of cooperation and conflict. Augustine relates temporal peace to eternal justice and later defends coercive correction; Gelasius distinguishes royal and episcopal offices.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>533–535</p></td>
-<td style="text-align: left;">Justinianic compilation and Novel 6</td>
-<td style="text-align: left;">Consolidate heterogeneous Roman law and present imperial and sacerdotal gifts as requiring concord. Justinian’s legislation remains imperial law, not an ecclesiastical code.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>7th–10th c.</p></td>
-<td style="text-align: left;">Trullo, nomocanonical collections, and regional collections</td>
-<td style="text-align: left;">Conciliar canons, imperial laws concerning ecclesial affairs, patristic sources, and local reception develop in distinct Eastern and Western institutional settings.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>11th–12th c.</p></td>
-<td style="text-align: left;">Reform, schools, and Roman-law recovery</td>
-<td style="text-align: left;">Conflicts over office and ecclesiastical liberty, renewed civilian learning, papal adjudication, and new collections create demand for systematic source reconciliation.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>c. 1140</p></td>
-<td style="text-align: left;">Gratian and the decretists</td>
-<td style="text-align: left;">Place scriptural, patristic, conciliar, papal, customary, and Roman-derived texts into juristic concord; later teachers refine the relations among nature, revelation, custom, and ecclesiastical determination.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>1234 and after</p></td>
-<td style="text-align: left;"><em>Liber Extra</em>, decretalists, and courts</td>
-<td style="text-align: left;">Papal decretals, learned commentary, and Romano-canonical procedure make source hierarchy, jurisdiction, proof, and remedy operational within the <em>ius commune</em>.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>13th c.</p></td>
-<td style="text-align: left;">Aquinas and mature scholasticism</td>
-<td style="text-align: left;">Coordinate eternal, natural, human, and revealed divine law; distinguish conclusion from determination; and analyze injustice, custom, change, dispensation, and equity.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>15th–16th c.</p></td>
-<td style="text-align: left;">Salamanca, conquest, and Valladolid</td>
-<td style="text-align: left;">Apply natural law, <em>ius gentium</em>, rights, jurisdiction, and evangelization to Indigenous peoples and imperial claims. The debates expose both critical resources and contested assumptions.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>1545–1612</p></td>
-<td style="text-align: left;">Trent and Suárez</td>
-<td style="text-align: left;">Trent distinguishes ecclesiastical competence from its changeable disciplinary specifications. Suárez synthesizes lawgiver, obligation, promulgation, natural and human law, custom, privilege, and revealed law.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>16th–18th c.</p></td>
-<td style="text-align: left;">Reformation and confessionalization</td>
-<td style="text-align: left;">Territorial religious settlements, war, toleration, migration, sovereignty, and colonial rule reorganize civil and ecclesiastical jurisdiction. Toleration develops before equal individual religious liberty.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>18th–19th c.</p></td>
-<td style="text-align: left;">State consolidation and codification</td>
-<td style="text-align: left;">National codes and administrative institutions seek unified, accessible law and reduce reliance on the plural sources of the learned <em>ius commune</em>. Codification can serve natural-law projects and is not identical to legal positivism.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>19th–20th c.</p></td>
-<td style="text-align: left;">Austin, Kelsen, Hart, and their critics</td>
-<td style="text-align: left;">Distinct positivist theories identify law through commands, norm-validity, or social rules without treating legal validity as proof of justice. Fuller and Radbruch test legality and the problem of extreme injustice from different premises.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>1864–1888</p></td>
-<td style="text-align: left;">Pius IX and Leo XIII</td>
-<td style="text-align: left;">Oppose religious indifferentism and state moral autonomy, defend ecclesiastical independence, and articulate concord between distinct powers within a confessional horizon.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>1917</p></td>
-<td style="text-align: left;">First Latin code</td>
-<td style="text-align: left;">Systematizes Latin discipline while preserving unincorporated natural and divine-positive law under c. 6, no. 6. It is superseded by the 1983 CIC.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>1929</p></td>
-<td style="text-align: left;">Lateran Treaty</td>
-<td style="text-align: left;">Recognizes Holy See sovereignty and creates Vatican City State as a territorial guarantee of independence.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>1937–1948</p></td>
-<td style="text-align: left;">Totalitarian crisis and postwar rights</td>
-<td style="text-align: left;">Papal teaching opposes racial and state absolutism; Radbruch addresses extreme statutory injustice; the Universal Declaration expresses common rights and duties in a positive international instrument that was declaratory rather than a treaty.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>1953</p></td>
-<td style="text-align: left;">Pius XII, <em>Ci riesce</em></td>
-<td style="text-align: left;">Permits non-repression of error for a higher common good; the toleration analysis precedes Vatican II’s dignity-grounded civil right.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>1963–1965</p></td>
-<td style="text-align: left;"><em>Pacem in terris</em> and Vatican II</td>
-<td style="text-align: left;">Place reciprocal personal rights and duties, public authority, temporal autonomy, Church–political cooperation, and civil religious immunity within one moral and juridical account.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>1983</p></td>
-<td style="text-align: left;">CIC</td>
-<td style="text-align: left;">The current Latin code, as amended, governs subjects, divine-law limits, civil-law reception, authority, procedure, and remedies.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>1990–1991</p></td>
-<td style="text-align: left;">CCEO</td>
-<td style="text-align: left;">The CCEO provides common law for all and only the Eastern Catholic Churches, preserving distinct sources, institutions, and synodal structures.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>1993–2009</p></td>
-<td style="text-align: left;"><em>Veritatis splendor</em> and the ITC study</td>
-<td style="text-align: left;">Clarify rational participation, embodiment, moral object, and contemporary natural-law method. The ITC document is expert theology rather than an act of the Magisterium.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>2022–2026</p></td>
-<td style="text-align: left;">Curial, canonical, and Vatican legislation</td>
-<td style="text-align: left;">Revises curial structure, penal law, tribunal law, competencies, Vatican constitutional law, and Roman particular law. The changes demonstrate why current research requires an amendment overlay beyond base codes.</td>
-</tr>
-</tbody>
-</table>
+| **Date** | **Witness or development** | **Contribution and limit** |
+|:---------|:-----------------|:---------------------------------------|
+| **c. 441 BC** | Sophocles, *Antigone* | Dramatizes conflict between a ruler’s decree and an unwritten divine norm; it is not a systematic natural-law treatise. |
+| **4th c. BC** | Plato and Aristotle | Distinguish nature and convention, analyze rational order and political justice, and explain equity as reasoned correction where a general formulation fails in an unforeseen case. |
+| **3rd–1st c. BC** | Stoicism and Cicero | Relate common reason, nature, divine governance, and the human community; Cicero uses right reason to judge enacted rules. |
+| **2nd c. BC–3rd c. AD** | Roman jurists and magistrates | Develop civil, gentium, natural, praetorian, written, and unwritten law together with status, action, proof, and remedy. The surviving texts preserve several taxonomies. |
+| **1st c.** | New Testament and Acts 15 | Place natural moral knowledge, covenant fulfilled in Christ, civil obedience, ecclesial authority, and God’s prior claim in one scriptural field. Acts 15 shows authority, dispute, discernment, written communication, reception, and differentiated obligations. |
+| **1st–3rd c.** | Early ecclesial communities | Govern worship, ministry, admission, discipline, charity, and reconciliation before imperial recognition through apostolic, episcopal, conciliar, customary, and penitential forms. |
+| **4th–6th c.** | Christian empire, Augustine, and Gelasius | Civil and ecclesiastical action acquire new points of cooperation and conflict. Augustine relates temporal peace to eternal justice and later defends coercive correction; Gelasius distinguishes royal and episcopal offices. |
+| **533–535** | Justinianic compilation and Novel 6 | Consolidate heterogeneous Roman law and present imperial and sacerdotal gifts as requiring concord. Justinian’s legislation remains imperial law, not an ecclesiastical code. |
+| **7th–10th c.** | Trullo, nomocanonical collections, and regional collections | Conciliar canons, imperial laws concerning ecclesial affairs, patristic sources, and local reception develop in distinct Eastern and Western institutional settings. |
+| **11th–12th c.** | Reform, schools, and Roman-law recovery | Conflicts over office and ecclesiastical liberty, renewed civilian learning, papal adjudication, and new collections create demand for systematic source reconciliation. |
+| **c. 1140** | Gratian and the decretists | Place scriptural, patristic, conciliar, papal, customary, and Roman-derived texts into juristic concord; later teachers refine the relations among nature, revelation, custom, and ecclesiastical determination. |
+| **1234 and after** | *Liber Extra*, decretalists, and courts | Papal decretals, learned commentary, and Romano-canonical procedure make source hierarchy, jurisdiction, proof, and remedy operational within the *ius commune*. |
+| **13th c.** | Aquinas and mature scholasticism | Coordinate eternal, natural, human, and revealed divine law; distinguish conclusion from determination; and analyze injustice, custom, change, dispensation, and equity. |
+| **15th–16th c.** | Salamanca, conquest, and Valladolid | Apply natural law, *ius gentium*, rights, jurisdiction, and evangelization to Indigenous peoples and imperial claims. The debates expose both critical resources and contested assumptions. |
+| **1545–1612** | Trent and Suárez | Trent distinguishes ecclesiastical competence from its changeable disciplinary specifications. Suárez synthesizes lawgiver, obligation, promulgation, natural and human law, custom, privilege, and revealed law. |
+| **16th–18th c.** | Reformation and confessionalization | Territorial religious settlements, war, toleration, migration, sovereignty, and colonial rule reorganize civil and ecclesiastical jurisdiction. Toleration develops before equal individual religious liberty. |
+| **18th–19th c.** | State consolidation and codification | National codes and administrative institutions seek unified, accessible law and reduce reliance on the plural sources of the learned *ius commune*. Codification can serve natural-law projects and is not identical to legal positivism. |
+| **19th–20th c.** | Austin, Kelsen, Hart, and their critics | Distinct positivist theories identify law through commands, norm-validity, or social rules without treating legal validity as proof of justice. Fuller and Radbruch test legality and the problem of extreme injustice from different premises. |
+| **1864–1888** | Pius IX and Leo XIII | Oppose religious indifferentism and state moral autonomy, defend ecclesiastical independence, and articulate concord between distinct powers within a confessional horizon. |
+| **1917** | First Latin code | Systematizes Latin discipline while preserving unincorporated natural and divine-positive law under c. 6, no. 6. It is superseded by the 1983 CIC. |
+| **1929** | Lateran Treaty | Recognizes Holy See sovereignty and creates Vatican City State as a territorial guarantee of independence. |
+| **1937–1948** | Totalitarian crisis and postwar rights | Papal teaching opposes racial and state absolutism; Radbruch addresses extreme statutory injustice; the Universal Declaration expresses common rights and duties in a positive international instrument that was declaratory rather than a treaty. |
+| **1953** | Pius XII, *Ci riesce* | Permits non-repression of error for a higher common good; the toleration analysis precedes Vatican II’s dignity-grounded civil right. |
+| **1963–1965** | *Pacem in terris* and Vatican II | Place reciprocal personal rights and duties, public authority, temporal autonomy, Church–political cooperation, and civil religious immunity within one moral and juridical account. |
+| **1983** | CIC | The current Latin code, as amended, governs subjects, divine-law limits, civil-law reception, authority, procedure, and remedies. |
+| **1990–1991** | CCEO | The CCEO provides common law for all and only the Eastern Catholic Churches, preserving distinct sources, institutions, and synodal structures. |
+| **1993–2009** | *Veritatis splendor* and the ITC study | Clarify rational participation, embodiment, moral object, and contemporary natural-law method. The ITC document is expert theology rather than an act of the Magisterium. |
+| **2022–2026** | Curial, canonical, and Vatican legislation | Revises curial structure, penal law, tribunal law, competencies, Vatican constitutional law, and Roman particular law. The changes demonstrate why current research requires an amendment overlay beyond base codes. |
 
 ## Disciplinary Survey
 
 The natural/positive and divine/human distinctions sit at the intersection of inquiries with different objects and bodies of evidence. Jurisprudence asks about normativity and validity; theology about creation, revelation, and the Church; history about changing concepts and institutions; canon and civil law about operative sources, subjects, and effects; moral theology about the act to be chosen. Their contributions are complementary but not interchangeable. The survey below states the positive work each field performs in the argument.
 
-<table style="width:92%;">
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 35%" />
-<col style="width: 38%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p><strong>Field</strong></p></th>
-<th style="text-align: left;"><strong>Characteristic object and sources</strong></th>
-<th style="text-align: left;"><strong>Distinctive contribution</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Philosophy of law and jurisprudence</p></td>
-<td style="text-align: left;">Concepts and arguments concerning practical reason, authority, justice, rights, social sources, legal validity, and the character of rules and institutions.</td>
-<td style="text-align: left;">Clarifies rival natural-law and positivist accounts and the possible relations between juridical validity and moral obligation.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Moral theology and ethics</p></td>
-<td style="text-align: left;">The chosen act, moral object, intention, circumstances, virtue, conscience, cooperation, scandal, culpability, and restitution.</td>
-<td style="text-align: left;">Determines the structure of practical moral judgment and the duties that remain when legal permissions, commands, or sanctions diverge.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Biblical and dogmatic theology</p></td>
-<td style="text-align: left;">Scripture and Tradition on creation, covenant, sin, grace, the Old and New Law, the Church’s constitution, and the natural and supernatural ends of persons.</td>
-<td style="text-align: left;">Establishes the content and addressees of revealed claims and their relation to natural moral knowledge and ecclesial authority.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Intellectual and institutional history</p></td>
-<td style="text-align: left;">Texts, transmission, controversies, offices, courts, jurisdictions, and patterns of reception in their chronological settings.</td>
-<td style="text-align: left;">Reconstructs how inherited terms acquired different meanings and how abstract classifications became operative in institutions.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Roman law and the civil-law tradition</p></td>
-<td style="text-align: left;">Juristic texts and practice concerning <em>ius</em>, <em>lex</em>, status, sources, interpretation, actions, proof, and remedies.</td>
-<td style="text-align: left;">Supplies the legal vocabulary and institutional techniques later received, transformed, or contested in canon and civil law.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Canon law</p></td>
-<td style="text-align: left;">Divine-law propositions as received in the Church, legislation, custom, administrative acts, offices, rights, procedure, penalties, and remedies in the Latin and Eastern traditions.</td>
-<td style="text-align: left;">Determines ecclesiastical subjects, competence, applicability, juridical effects, and the forums capable of authoritative action.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Civil, constitutional, and administrative law</p></td>
-<td style="text-align: left;">Constitutions, statutes, regulations, judgments, administrative action, rights, liability, and public remedies within a defined polity.</td>
-<td style="text-align: left;">Establishes the state’s operative claims upon persons and institutions and the legal means by which those claims are enforced or challenged.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Public international and concordat law</p></td>
-<td style="text-align: left;">International personality, treaties, immunities, diplomatic practice, ratification, and domestic implementation.</td>
-<td style="text-align: left;">Explains the juridical coordination of the Holy See and states without assimilating international, canonical, and domestic legal effects.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Conflict of laws and legal pluralism</p></td>
-<td style="text-align: left;">Jurisdiction, applicable law, status, recognition, parallel proceedings, and the coexistence of state, ecclesial, customary, and associational orders.</td>
-<td style="text-align: left;">Analyzes concurrence among orders and the mechanisms by which one system recognizes, receives, or declines another’s determination.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Procedure, evidence, and remedies</p></td>
-<td style="text-align: left;">Pleading, proof, presumptions, notice, hearing, judgment, appeal, recourse, limitation periods, and forms of relief.</td>
-<td style="text-align: left;">Connects substantive claims to institutional findings and specifies which rights or duties can receive external effect in a forum.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Comparative law and legal sociology</p></td>
-<td style="text-align: left;">Cross-system comparison and empirical study of institutions, enforcement, professional practice, and lived normativity.</td>
-<td style="text-align: left;">Tests claims of uniqueness or universality and discloses the distance that can arise between formal sources and institutional practice.</td>
-</tr>
-</tbody>
-</table>
+| **Field** | **Characteristic object and sources** | **Distinctive contribution** |
+|:-------------|:------------------------|:--------------------------|
+| **Philosophy of law and jurisprudence** | Concepts and arguments concerning practical reason, authority, justice, rights, social sources, legal validity, and the character of rules and institutions. | Clarifies rival natural-law and positivist accounts and the possible relations between juridical validity and moral obligation. |
+| **Moral theology and ethics** | The chosen act, moral object, intention, circumstances, virtue, conscience, cooperation, scandal, culpability, and restitution. | Determines the structure of practical moral judgment and the duties that remain when legal permissions, commands, or sanctions diverge. |
+| **Biblical and dogmatic theology** | Scripture and Tradition on creation, covenant, sin, grace, the Old and New Law, the Church’s constitution, and the natural and supernatural ends of persons. | Establishes the content and addressees of revealed claims and their relation to natural moral knowledge and ecclesial authority. |
+| **Intellectual and institutional history** | Texts, transmission, controversies, offices, courts, jurisdictions, and patterns of reception in their chronological settings. | Reconstructs how inherited terms acquired different meanings and how abstract classifications became operative in institutions. |
+| **Roman law and the civil-law tradition** | Juristic texts and practice concerning *ius*, *lex*, status, sources, interpretation, actions, proof, and remedies. | Supplies the legal vocabulary and institutional techniques later received, transformed, or contested in canon and civil law. |
+| **Canon law** | Divine-law propositions as received in the Church, legislation, custom, administrative acts, offices, rights, procedure, penalties, and remedies in the Latin and Eastern traditions. | Determines ecclesiastical subjects, competence, applicability, juridical effects, and the forums capable of authoritative action. |
+| **Civil, constitutional, and administrative law** | Constitutions, statutes, regulations, judgments, administrative action, rights, liability, and public remedies within a defined polity. | Establishes the state’s operative claims upon persons and institutions and the legal means by which those claims are enforced or challenged. |
+| **Public international and concordat law** | International personality, treaties, immunities, diplomatic practice, ratification, and domestic implementation. | Explains the juridical coordination of the Holy See and states without assimilating international, canonical, and domestic legal effects. |
+| **Conflict of laws and legal pluralism** | Jurisdiction, applicable law, status, recognition, parallel proceedings, and the coexistence of state, ecclesial, customary, and associational orders. | Analyzes concurrence among orders and the mechanisms by which one system recognizes, receives, or declines another’s determination. |
+| **Procedure, evidence, and remedies** | Pleading, proof, presumptions, notice, hearing, judgment, appeal, recourse, limitation periods, and forms of relief. | Connects substantive claims to institutional findings and specifies which rights or duties can receive external effect in a forum. |
+| **Comparative law and legal sociology** | Cross-system comparison and empirical study of institutions, enforcement, professional practice, and lived normativity. | Tests claims of uniqueness or universality and discloses the distance that can arise between formal sources and institutional practice. |
 
 No field provides a neutral metalanguage in which all the others disappear. The central problem instead requires a sequence of field-specific judgments followed by a practical synthesis: historical meaning is established historically, revealed content theologically, positive effect juridically, and the morality of the person’s act through practical reason informed by the relevant truths and relations. The later chapters preserve that division of labor while showing where its conclusions meet.
 

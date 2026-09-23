@@ -1018,9 +1018,88 @@ class WebEditionConversionTests(unittest.TestCase):
         )
         self.assertNotIn("2-4", markdown)
         self.assertNotIn("<span>", markdown)
-        self.assertIn("<em>Narrated event</em>", markdown)
+        self.assertIn("| *Narrated event* |", markdown)
         self.assertIn("Wilderness of Ziph", markdown)
         self.assertIn("The superscription assigns the psalm to David.", markdown)
+
+    def convert_exposition(self, body: str) -> str:
+        """Convert under the real shared postconciliar exposition format."""
+        shared = ("liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/"
+                  "propers/shared/exposition-format.tex")
+        return self.convert(
+            body, preamble=r"\input{studies/subject/exposition-format}",
+            files={"exposition-format.tex": (ROOT / "src/claude" / shared).read_text(
+                encoding="utf-8")},
+        )
+
+    def test_bold_first_column_of_a_four_senses_table_stays_bold_and_whole(self) -> None:
+        # >{\bfseries\raggedright} made every first cell an empty bold paragraph,
+        # then its text unbolded, and the table fell back to HTML.
+        markdown = self.convert_exposition(
+            "\\begin{foursenses}\n"
+            r"Literal & Divine power is the ground of divine leniency.\\" "\n"
+            r"Allegorical & The Lord supplies his own allegory.\\" "\n"
+            "\\end{foursenses}"
+        )
+        self.assertNotIn("<table", markdown)
+        self.assertNotIn("<strong></strong>", markdown)
+        self.assertNotIn("****", markdown)
+        self.assertRegex(markdown, r"(?m)^\| \*\*Sense\*\* +\| \*\*Synthesis\*\* +\|$")
+        self.assertRegex(markdown, r"(?m)^\| \*\*Literal\*\* +\| Divine power is the ground")
+        self.assertRegex(markdown, r"(?m)^\| \*\*Allegorical\*\* +\| The Lord supplies")
+
+    def test_dossier_first_column_is_bold_but_its_spans_keep_their_own_face(self) -> None:
+        # A \multicolumn cell replaces its column's prefix: the narrated-event
+        # label stays italic and the note plain, while the unit is bold.
+        markdown = self.convert_exposition(
+            "\\begin{dossiertable}\n"
+            r"\dossierrow{Entrance Antiphon}{Psalm 54:6}{Jerusalem}{Uncertain}" "\n"
+            r"\dossierevent{1 Samuel 23:19}{Wilderness of Ziph}{Reign of Saul}" "\n"
+            r"\dossiernote{The superscription assigns the psalm to David.}" "\n\n"
+            r"\dossierrow{Second Reading}{Romans 8:26--27}{Corinth}{c.\ AD 56--58}" "\n"
+            r"\dossiernote{Undisputed Pauline authorship.}" "\n"
+            "\\end{dossiertable}"
+        )
+        self.assertNotIn("<table", markdown)
+        self.assertNotIn("<strong></strong>", markdown)
+        self.assertNotIn(DRIVER.SPAN_CELL_MARK, markdown)
+        self.assertRegex(markdown, r"(?m)^\| \*\*Textual unit / alternative\*\* +\|")
+        self.assertRegex(markdown, r"(?m)^\| \*\*Entrance Antiphon\*\* +\| Psalm 54:6 +\|")
+        self.assertRegex(markdown, r"(?m)^\| \*\*Second Reading\*\* +\| Romans 8:26")
+        self.assertRegex(markdown, r"(?m)^\| \*Narrated event\* +\| 1 Samuel 23:19 +\|")
+        self.assertRegex(markdown, r"(?m)^\| The superscription assigns the psalm to David\. +\|")
+        self.assertRegex(markdown, r"(?m)^\| Undisputed Pauline authorship\. +\|")
+
+    def test_blank_line_after_the_foot_does_not_unbold_a_bold_column(self) -> None:
+        # The parish ledgers leave a blank line after \endfoot; pandoc read it
+        # inside the first row's replayed \bfseries and split that cell.
+        markdown = self.convert(
+            "\\begin{longtable}{>{\\bfseries\\RaggedRight\\arraybackslash}p{0.2\\linewidth}"
+            ">{\\RaggedRight\\arraybackslash}p{0.6\\linewidth}}\n"
+            "\\toprule\n" r"\textbf{Date} & \textbf{Event}\\" "\n\\midrule\n\\endhead\n"
+            "\\bottomrule\n\\endfoot\n\n"
+            r"Before the settler town & Homelands.\\" "\n\n"
+            r"In the next decade & A mission.\\" "\n"
+            "\\end{longtable}"
+        )
+        self.assertNotIn("<table", markdown)
+        self.assertNotIn("<strong></strong>", markdown)
+        self.assertNotIn("****", markdown)
+        self.assertRegex(markdown, r"(?m)^\| \*\*Date\*\* +\| \*\*Event\*\* +\|$")
+        self.assertRegex(markdown, r"(?m)^\| \*\*Before the settler town\*\* +\| Homelands\. +\|$")
+        self.assertRegex(markdown, r"(?m)^\| \*\*In the next decade\*\* +\| A mission\. +\|$")
+
+    def test_span_opening_with_a_declaration_stays_one_plain_cell(self) -> None:
+        # The span mark follows the cell's text, so a span that opens with
+        # \raggedright, as a legacy dossier note does, is not split by it.
+        markdown = self.convert(
+            "\\begin{longtable}{p{0.2\\linewidth}p{0.6\\linewidth}}\n"
+            r"Unit & Citation\\" "\n"
+            r"\multicolumn{2}{p{0.9\linewidth}}{\raggedright\scriptsize A spanning note.}\\" "\n"
+            "\\end{longtable}"
+        )
+        self.assertNotIn("<table", markdown)
+        self.assertRegex(markdown, r"(?m)^\| A spanning note\. +\| +\|$")
 
     def test_starred_row_end_inside_a_carried_row_macro_leaks_no_spacing(self) -> None:
         # \unitphase ends its phase row with \\*[-0.06em]; pandoc set the star
@@ -1338,6 +1417,17 @@ class WebEditionAuditTests(unittest.TestCase):
                 self.assertEqual(len(masked), len(text))
                 self.assertNotIn("gone", masked)
                 self.assertNotIn("whole", masked)
+
+    def test_empty_or_nested_bold_and_a_leftover_span_mark_are_reported(self) -> None:
+        failures = DRIVER.audit_output(
+            "Prose.",
+            self.minimal_markdown()
+            + "\n<td><p><strong></strong></p>\n<p>Literal</p></td>\n\n| ****Sense**** | x |\n"
+            + "\nText" + DRIVER.SPAN_CELL_MARK + "\n",
+        )
+        self.assertIn("1 empty emphasis element(s) left in output", failures)
+        self.assertIn("1 bold-inside-bold run(s) left in output", failures)
+        self.assertIn("collapsed-span mark left in output", failures)
 
     def test_unattributed_span_is_reported(self) -> None:
         failures = DRIVER.audit_output(

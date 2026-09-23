@@ -1474,67 +1474,14 @@ This chronology is event-based. A movement can appear more than once because ref
 
 Stable keys use five object namespaces plus a catalogue-occurrence namespace. In the lists below, a printed era prefix plus the displayed slug forms the full key: for example, under `HC.D.PAT`, `ARIANISM` means `HC.D.PAT.ARIANISM`. The disposition abbreviations are <span class="smallcaps">d</span>=`DOSSIER`, a dedicated four-field dossier; <span class="smallcaps">r</span>=`ROUTED`, treatment within a named combined dossier; <span class="smallcaps">p</span>=`ERROR`, a proposition- or error-level dossier that retains the act’s own grade; <span class="smallcaps">n</span>=`NOTICE`; <span class="smallcaps">a</span>=`ALIAS`; <span class="smallcaps">c</span>=`CONTEXT`; and <span class="smallcaps">x</span>=`EXCLUDE`. A completion code describes the form of treatment, not personal culpability or an automatic declaration that every attributed sentence was heretical.
 
-<table style="width:46%;">
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 13%" />
-<col style="width: 16%" />
-<col />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><p><strong></strong></p>
-<p>Class</p></th>
-<th style="text-align: left;">Stable prefix</th>
-<th style="text-align: left;">Present count</th>
-<th style="text-align: left;">Meaning in this survey</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Normalized heads</p></td>
-<td style="text-align: left;"><code>HC.D</code></td>
-<td style="text-align: left;">125</td>
-<td style="text-align: left;">Sixty-nine <span class="smallcaps">d</span>, eleven <span class="smallcaps">r</span>, and forty-five <span class="smallcaps">p</span>. These are not 125 official declarations of named heresy.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Source notices</p></td>
-<td style="text-align: left;"><code>HC.N</code></td>
-<td style="text-align: left;">55</td>
-<td style="text-align: left;">Completed, visibly source-limited records for obscure, opponent-only, late, or doubtful labels; all <span class="smallcaps">n</span>.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Aliases/subgroups</p></td>
-<td style="text-align: left;"><code>HC.A</code></td>
-<td style="text-align: left;">34</td>
-<td style="text-align: left;">Routing entries; all <span class="smallcaps">a</span> and never independent counts.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Contexts</p></td>
-<td style="text-align: left;"><code>HC.C</code></td>
-<td style="text-align: left;">26</td>
-<td style="text-align: left;">Historical or interpretive boundary entries; the four Philastrian topical ranges are completed as catalogue context, not adjudged movements.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Explicit exclusions</p></td>
-<td style="text-align: left;"><code>HC.X</code></td>
-<td style="text-align: left;">25</td>
-<td style="text-align: left;">Reasoned boundary decisions; all <span class="smallcaps">x</span>.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Catalogue occurrences</p></td>
-<td style="text-align: left;"><code>HC.CAT</code></td>
-<td style="text-align: left;">427</td>
-<td style="text-align: left;">The numbered positions in Epiphanius 1–80, Philastrius 1–156, Augustine 1–88, and John Damascene 1–103. They crosswalk to the five classes above and are not 427 independent groups or witnesses.</td>
-</tr>
-</tbody>
-</table>
+| **Class** | Stable prefix | Present count | Meaning in this survey |
+|:------------|:---------|:-----------|:-|
+| **Normalized heads** | `HC.D` | 125 | Sixty-nine <span class="smallcaps">d</span>, eleven <span class="smallcaps">r</span>, and forty-five <span class="smallcaps">p</span>. These are not 125 official declarations of named heresy. |
+| **Source notices** | `HC.N` | 55 | Completed, visibly source-limited records for obscure, opponent-only, late, or doubtful labels; all <span class="smallcaps">n</span>. |
+| **Aliases/subgroups** | `HC.A` | 34 | Routing entries; all <span class="smallcaps">a</span> and never independent counts. |
+| **Contexts** | `HC.C` | 26 | Historical or interpretive boundary entries; the four Philastrian topical ranges are completed as catalogue context, not adjudged movements. |
+| **Explicit exclusions** | `HC.X` | 25 | Reasoned boundary decisions; all <span class="smallcaps">x</span>. |
+| **Catalogue occurrences** | `HC.CAT` | 427 | The numbered positions in Epiphanius 1–80, Philastrius 1–156, Augustine 1–88, and John Damascene 1–103. They crosswalk to the five classes above and are not 427 independent groups or witnesses. |
 
 Counts describe the bounded inventory fixed on 16 July 2026. A future corpus expansion may add keys, but an existing key is not silently recycled. Dependent catalogues are source occurrences, not corroborating witnesses merely because a name appears again.
 

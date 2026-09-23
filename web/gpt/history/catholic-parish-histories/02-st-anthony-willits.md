@@ -307,123 +307,28 @@ Historical and mutable online records were checked through 21 July 2026. Staff, 
 
 The ledger keeps pastoral status and physical evidence together because the familiar foundation dates cannot be understood from either alone. A date records the best-supported threshold or witness; it does not claim that every canonical, pastoral, or architectural change occurred at once.
 
-<table style="width:92%;">
-<colgroup>
-<col style="width: 15%" />
-<col style="width: 43%" />
-<col style="width: 34%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><strong><strong>Date</strong></strong></th>
-<th style="text-align: left;"><strong>Status or physical evidence</strong></th>
-<th style="text-align: left;"><strong>Source and qualification</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong><strong>Date</strong></strong></td>
-<td style="text-align: left;"><strong>Status or physical evidence</strong></td>
-<td style="text-align: left;"><strong>Source and qualification</strong></td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Before the settler town</p></td>
-<td style="text-align: left;">The Willits and Sherwood Valley geography lies within Native homelands; Round Valley is Yuki homeland and the present home of a confederation of Native peoples.</td>
-<td style="text-align: left;">Tribal self-descriptions control this historical coordinate. It is not a parish-status or construction date, but it prevents the Catholic institutional timeline from being mistaken for the beginning of the place’s history.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">The checked <em>Official Catholic Directory</em> entry for Ukiah names Father William O’Grady, the Hopland mission, and the state-asylum station, but not Willits. Father Sebastian Brennan came to Mendocino County that September and initially served Fort Bragg and the area north.</td>
-<td style="text-align: left;">Original directory page, printed p. 172, and Brennan authority record. The omission bounds what this directory reports; it does not disprove an unlisted visit, Mass, household, or local initiative. Brennan’s county arrival is not a Willits assignment.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Willits appears as one of two missions under Ukiah rector Father F. B. Duffy; Hopland is the other. No patron name, church description, local minister, or founding date is supplied.</td>
-<td style="text-align: left;">Original directory page, printed p. 182. This is the earliest verified Willits listing in the directory sequence searched, not proof of the first Catholic activity.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–11</strong></td>
-<td style="text-align: left;">The 1910 directory supplies the first verified Saint Anthony name for the Willits mission. The 1911 entry again names Saint Anthony’s and places it within an Ukiah circuit that includes Hopland and numerous stations.</td>
-<td style="text-align: left;">Annual-directory entries; the 1911 circuit appears on printed p. 214. Patronal identity is established by 1910, but neither edition supplies a local rector, construction account, or erection decree.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>April 1921</strong></td>
-<td style="text-align: left;">A cataloged photographic print identifies an exterior as Saint Anthony’s Church, Willits.</td>
-<td style="text-align: left;">Irish Capuchin Archives, IE CA WA/4/3/17. The dated object establishes a named church by this date. No image is reproduced, and the catalog record alone does not establish architect, construction start, dedication, address, ownership, or survival of present fabric.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–25 attribution</strong></td>
-<td style="text-align: left;">Father Raphael Quinn served as pastor at Ukiah from 1922; his archival authority record credits him with responsibility for building Saint Anthony’s Parish Church at Willits.</td>
-<td style="text-align: left;">Later Irish Capuchin authority record. Because a named church is already photographed in 1921, “building” cannot safely be reduced to first construction from bare ground; replacement, enlargement, completion, or retrospective project credit remain possible.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">A Willits deputation sought a priest during Archbishop Edward J. Hanna’s Ukiah visit. Father Joseph Fenelon reports that Hanna appealed to him and that he appointed Father Ambrose Brunton, enabling regular Sunday Mass at Willits. The year’s directory still prints Saint Anthony’s as an Ukiah mission.</td>
-<td style="text-align: left;">Fenelon letter, IE CA WA/1/4/10, and 1923 directory, printed p. 201. Strong evidence for a resident pastoral turn; neither witness available here is an erection decree.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Circa 1924</strong></td>
-<td style="text-align: left;">A cataloged photograph identifies Saint Anthony’s Rectory next to the church on the bell-tower side.</td>
-<td style="text-align: left;">Irish Capuchin Archives, IE CA WA/4/3/18. The annotation establishes a residence and spatial relationship, but supplies no street address, construction date, deed, plan, or proof of continuity with a present building.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–25</strong></td>
-<td style="text-align: left;">The 1924 directory gives a separate entry for Saint Anthony with Father Ambrose Brunton as rector. The 1925 edition repeats the entry, printing the forms “Willitts” and “Rev. Ambrose Brenton, O.M.Cap.” Ukiah no longer includes Willits among its missions.</td>
-<td style="text-align: left;">entry, printed p. 210, and 1925 original page, printed p. 214. The 1925 spellings appear in print; the Capuchin authority record controls Brunton’s identity. A separate listing is important institutional evidence but is not substituted for an unlocated canonical decree.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–29</strong></td>
-<td style="text-align: left;">Father Sebastian Brennan was posted to Willits in October 1928. A 1929 Willits subseries preserves two cataloged items: a golden-jubilee record concerning Brennan and a parish-status and financial statement for Saint Anthony’s Church.</td>
-<td style="text-align: left;">Brennan authority record and Irish Capuchin Archives, IE CA WA/7/14. The item titles prove that such records survive; their unexamined contents are not used to supply finances, status terms, attendance, or building facts.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Saint Anthony appears as “(1923)” with Father Celestine Quinlan, O.M.Cap., as pastor. Covelo, Sherwood, and Laytonville are listed as stations using the directory’s reservation labels.</td>
-<td style="text-align: left;">Original directory page, printed p. 233. The entry controls the directory’s status, date, minister, and administrative geography, not the voices, participation, or experience of Native communities.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Circa 1943–47</strong></td>
-<td style="text-align: left;">Father Alban Cullen ministered at Saint Anthony’s.</td>
-<td style="text-align: left;">Irish Capuchin authority record. The approximate assignment is not expanded into an undocumented roster or project history.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>June 1954–1957</strong></td>
-<td style="text-align: left;">Father Isidore Kennedy was appointed pastor at Willits and later transferred to Saint Mary’s, Ukiah.</td>
-<td style="text-align: left;">Irish Capuchin authority record. The precise appointment date is biographical evidence; no corresponding appointment decree was examined.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">The directory lists Saint Anthony “(1923),” Father Alban Cullen, O.F.M.Cap., and post-office box 267. It does not print attached stations beneath the Willits entry.</td>
-<td style="text-align: left;">Original directory page, printed p. 253. Nonappearance of stations in this edition does not prove that all outreach or Covelo ministry had ceased.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>January / 21 February 1962; 1963</strong></td>
-<td style="text-align: left;">Official diocesan summaries distinguish establishment of the Diocese of Santa Rosa on 13 January from official creation on 21 February, from territory of the Archdiocese of San Francisco and Diocese of Sacramento. The 1963 directory places Willits in the new diocese, again as Saint Anthony “(1923),” with Father Celestine Quinlan, O.F.M.Cap.; its religious-order list includes Saint Anthony among Irish Capuchin houses.</td>
-<td style="text-align: left;">Diocese of Santa Rosa official history and 1963 directory, printed p. 712. Jurisdictional transfer is established; no parish-specific property or personnel transition is inferred.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–70</strong></td>
-<td style="text-align: left;">The 1968 directory lists Capuchin Father Celestine Quinlan. The 1969 entry lists diocesan Father Michael A. Culligan and names “Covelo, Queen of Peace” as Saint Anthony’s mission; the 1970 entry repeats the relationship and prints 61 West San Francisco Avenue.</td>
-<td style="text-align: left;">Successive directory snapshots. They bound a personnel and public-directory transition and the named Covelo relationship; they do not prove the effective date or terms of a formal Capuchin withdrawal, diocesan appointment, mission erection, or property handoff.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–98 checked snapshots; finding leads through 2000</strong></td>
-<td style="text-align: left;">Checked directory pages yield a source-qualified personnel skeleton from Father Van Sile through Fathers Lamoureux, Hanratty, Walsh, Sumpter, Nichols, and Logan after Father Culligan.</td>
-<td style="text-align: left;">Publication-year witnesses, not a complete appointment-decree succession. Other annual search text is unverified alignment; the 1976–77 entries survive only as damaged fragments and priest-index corroboration, 1994 contains a reported overlap, and the 1997 entry was unusable. The same corpus does not yield a building campaign sequence, continuous station itinerary, or parcel history.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>/ 2026</strong></td>
-<td style="text-align: left;">The 2024 diocesan directory and live Parish Finder say “Established 1923.” The 2026 directory says “Established 1903.” Both identify the current Willits address and connect the parish with Our Lady Queen of Peace Mission in Covelo.</td>
-<td style="text-align: left;">Current official diocesan witnesses. The revised date is preserved as a conflict, not treated as self-authenticating proof of a specified 1903 act.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>July 2026</strong></td>
-<td style="text-align: left;">Saint Anthony publicly presents English and Spanish Sunday worship in Willits; its website and diocesan records describe Our Lady Queen of Peace in Covelo as part of or attached to Saint Anthony.</td>
-<td style="text-align: left;">Parish website, liturgy page, diocesan Parish Finder, and directories. Current use and linkage are established only at the cutoff; no uninterrupted identity of schedule, constituency, station category, or building fabric is presumed.</td>
-</tr>
-</tbody>
-</table>
+| **Date** | **Status or physical evidence** | **Source and qualification** |
+|:-----------|:------------------------------|:------------------------|
+| **Date** | **Status or physical evidence** | **Source and qualification** |
+| **Before the settler town** | The Willits and Sherwood Valley geography lies within Native homelands; Round Valley is Yuki homeland and the present home of a confederation of Native peoples. | Tribal self-descriptions control this historical coordinate. It is not a parish-status or construction date, but it prevents the Catholic institutional timeline from being mistaken for the beginning of the place’s history. |
+|  | The checked *Official Catholic Directory* entry for Ukiah names Father William O’Grady, the Hopland mission, and the state-asylum station, but not Willits. Father Sebastian Brennan came to Mendocino County that September and initially served Fort Bragg and the area north. | Original directory page, printed p. 172, and Brennan authority record. The omission bounds what this directory reports; it does not disprove an unlisted visit, Mass, household, or local initiative. Brennan’s county arrival is not a Willits assignment. |
+|  | Willits appears as one of two missions under Ukiah rector Father F. B. Duffy; Hopland is the other. No patron name, church description, local minister, or founding date is supplied. | Original directory page, printed p. 182. This is the earliest verified Willits listing in the directory sequence searched, not proof of the first Catholic activity. |
+| **–11** | The 1910 directory supplies the first verified Saint Anthony name for the Willits mission. The 1911 entry again names Saint Anthony’s and places it within an Ukiah circuit that includes Hopland and numerous stations. | Annual-directory entries; the 1911 circuit appears on printed p. 214. Patronal identity is established by 1910, but neither edition supplies a local rector, construction account, or erection decree. |
+| **April 1921** | A cataloged photographic print identifies an exterior as Saint Anthony’s Church, Willits. | Irish Capuchin Archives, IE CA WA/4/3/17. The dated object establishes a named church by this date. No image is reproduced, and the catalog record alone does not establish architect, construction start, dedication, address, ownership, or survival of present fabric. |
+| **–25 attribution** | Father Raphael Quinn served as pastor at Ukiah from 1922; his archival authority record credits him with responsibility for building Saint Anthony’s Parish Church at Willits. | Later Irish Capuchin authority record. Because a named church is already photographed in 1921, “building” cannot safely be reduced to first construction from bare ground; replacement, enlargement, completion, or retrospective project credit remain possible. |
+|  | A Willits deputation sought a priest during Archbishop Edward J. Hanna’s Ukiah visit. Father Joseph Fenelon reports that Hanna appealed to him and that he appointed Father Ambrose Brunton, enabling regular Sunday Mass at Willits. The year’s directory still prints Saint Anthony’s as an Ukiah mission. | Fenelon letter, IE CA WA/1/4/10, and 1923 directory, printed p. 201. Strong evidence for a resident pastoral turn; neither witness available here is an erection decree. |
+| **Circa 1924** | A cataloged photograph identifies Saint Anthony’s Rectory next to the church on the bell-tower side. | Irish Capuchin Archives, IE CA WA/4/3/18. The annotation establishes a residence and spatial relationship, but supplies no street address, construction date, deed, plan, or proof of continuity with a present building. |
+| **–25** | The 1924 directory gives a separate entry for Saint Anthony with Father Ambrose Brunton as rector. The 1925 edition repeats the entry, printing the forms “Willitts” and “Rev. Ambrose Brenton, O.M.Cap.” Ukiah no longer includes Willits among its missions. | entry, printed p. 210, and 1925 original page, printed p. 214. The 1925 spellings appear in print; the Capuchin authority record controls Brunton’s identity. A separate listing is important institutional evidence but is not substituted for an unlocated canonical decree. |
+| **–29** | Father Sebastian Brennan was posted to Willits in October 1928. A 1929 Willits subseries preserves two cataloged items: a golden-jubilee record concerning Brennan and a parish-status and financial statement for Saint Anthony’s Church. | Brennan authority record and Irish Capuchin Archives, IE CA WA/7/14. The item titles prove that such records survive; their unexamined contents are not used to supply finances, status terms, attendance, or building facts. |
+|  | Saint Anthony appears as “(1923)” with Father Celestine Quinlan, O.M.Cap., as pastor. Covelo, Sherwood, and Laytonville are listed as stations using the directory’s reservation labels. | Original directory page, printed p. 233. The entry controls the directory’s status, date, minister, and administrative geography, not the voices, participation, or experience of Native communities. |
+| **Circa 1943–47** | Father Alban Cullen ministered at Saint Anthony’s. | Irish Capuchin authority record. The approximate assignment is not expanded into an undocumented roster or project history. |
+| **June 1954–1957** | Father Isidore Kennedy was appointed pastor at Willits and later transferred to Saint Mary’s, Ukiah. | Irish Capuchin authority record. The precise appointment date is biographical evidence; no corresponding appointment decree was examined. |
+|  | The directory lists Saint Anthony “(1923),” Father Alban Cullen, O.F.M.Cap., and post-office box 267. It does not print attached stations beneath the Willits entry. | Original directory page, printed p. 253. Nonappearance of stations in this edition does not prove that all outreach or Covelo ministry had ceased. |
+| **January / 21 February 1962; 1963** | Official diocesan summaries distinguish establishment of the Diocese of Santa Rosa on 13 January from official creation on 21 February, from territory of the Archdiocese of San Francisco and Diocese of Sacramento. The 1963 directory places Willits in the new diocese, again as Saint Anthony “(1923),” with Father Celestine Quinlan, O.F.M.Cap.; its religious-order list includes Saint Anthony among Irish Capuchin houses. | Diocese of Santa Rosa official history and 1963 directory, printed p. 712. Jurisdictional transfer is established; no parish-specific property or personnel transition is inferred. |
+| **–70** | The 1968 directory lists Capuchin Father Celestine Quinlan. The 1969 entry lists diocesan Father Michael A. Culligan and names “Covelo, Queen of Peace” as Saint Anthony’s mission; the 1970 entry repeats the relationship and prints 61 West San Francisco Avenue. | Successive directory snapshots. They bound a personnel and public-directory transition and the named Covelo relationship; they do not prove the effective date or terms of a formal Capuchin withdrawal, diocesan appointment, mission erection, or property handoff. |
+| **–98 checked snapshots; finding leads through 2000** | Checked directory pages yield a source-qualified personnel skeleton from Father Van Sile through Fathers Lamoureux, Hanratty, Walsh, Sumpter, Nichols, and Logan after Father Culligan. | Publication-year witnesses, not a complete appointment-decree succession. Other annual search text is unverified alignment; the 1976–77 entries survive only as damaged fragments and priest-index corroboration, 1994 contains a reported overlap, and the 1997 entry was unusable. The same corpus does not yield a building campaign sequence, continuous station itinerary, or parcel history. |
+| **/ 2026** | The 2024 diocesan directory and live Parish Finder say “Established 1923.” The 2026 directory says “Established 1903.” Both identify the current Willits address and connect the parish with Our Lady Queen of Peace Mission in Covelo. | Current official diocesan witnesses. The revised date is preserved as a conflict, not treated as self-authenticating proof of a specified 1903 act. |
+| **July 2026** | Saint Anthony publicly presents English and Spanish Sunday worship in Willits; its website and diocesan records describe Our Lady Queen of Peace in Covelo as part of or attached to Saint Anthony. | Parish website, liturgy page, diocesan Parish Finder, and directories. Current use and linkage are established only at the cutoff; no uninterrupted identity of schedule, constituency, station category, or building fabric is presumed. |
 
 ## Historical List of Pastors
 
@@ -433,157 +338,30 @@ Before resident ministry began in 1923, Saint Anthony was a mission of Saint Mar
 
 In the table, **OCD** means the Willits parish entry in the named annual *Official Catholic Directory*. **ICA** means the linked Irish Capuchin Archives authority record for the named friar; archival file numbers are printed where a file rather than an authority record controls. **NCC 2016**, **SR 2024**, and **SR 2026** mean the April 2016 diocesan appointment notice, p. 2, and the Willits entries on pp. 55 and 54 of the two Diocese of Santa Rosa directories. The references give the direct link for every key and annual series.
 
-<table style="width:91%;">
-<colgroup>
-<col style="width: 15%" />
-<col style="width: 23%" />
-<col style="width: 20%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><strong><strong>Period or witness</strong></strong></th>
-<th style="text-align: left;"><strong>Name or status</strong></th>
-<th style="text-align: left;"><strong>Office / affiliation</strong></th>
-<th style="text-align: left;"><strong>Evidence and qualification</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong><strong>Period or witness</strong></strong></td>
-<td style="text-align: left;"><strong>Name or status</strong></td>
-<td style="text-align: left;"><strong>Office / affiliation</strong></td>
-<td style="text-align: left;"><strong>Evidence and qualification</strong></td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Appointed June 1923; checked directory witnesses 1924–25</p></td>
-<td style="text-align: left;">Rev. Ambrose Brunton, O.F.M.Cap.</td>
-<td style="text-align: left;">First Irish Capuchin pastor; directory rector</td>
-<td style="text-align: left;">Fenelon letter, IE CA WA/1/4/10; Brunton ICA; OCD 1924, printed p. 210; and OCD 1925, printed p. 214, scan n369. Search text aligns his listing through 1928, when the archive records his successor’s posting; the 1925 edition prints “Brenton.”</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Posted Oct. 1928; directory search-text alignment 1929–34</strong></td>
-<td style="text-align: left;">Rev. Sebastian Brennan, O.F.M.Cap.</td>
-<td style="text-align: left;">Capuchin priest posted to Willits; search text prints rector</td>
-<td style="text-align: left;">Brennan ICA gives the posting. OCD 1929–34 search text aligns the Willits listing but was not admitted as original-page verification. His 1903 arrival elsewhere in the county was not a Willits pastorate.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Checked directory witness 1935; archive reports a 1936 return to Ireland</strong></td>
-<td style="text-align: left;">Rev. Finbarr O’Callaghan, O.F.M.Cap.</td>
-<td style="text-align: left;">Directory rector; archive-described pastor</td>
-<td style="text-align: left;">O’Callaghan ICA; OCD 1935, Willits entry, printed p. 171, scan n230. Search text for the 1936 entry was not reliably recovered; the archive record, not OCR, supports the return to Ireland and does not move his Willits service back to his 1924 United States arrival.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Listed 1937</strong></td>
-<td style="text-align: left;">Rev. Urban Riordan, O.M.Cap.</td>
-<td style="text-align: left;">Directory rector</td>
-<td style="text-align: left;">OCD 1937, Willits entry, printed p. 184, scan n243. Exact appointment dates were not recovered.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Checked directory witnesses 1938 and 1941; search-text alignment through 1943</strong></td>
-<td style="text-align: left;">Rev. Celestine Quinlan, O.M./O.F.M.Cap.</td>
-<td style="text-align: left;">Directory rector / pastor</td>
-<td style="text-align: left;">OCD 1938, printed p. 218, scan n269, and OCD 1941, printed p. 233, scan n320, are original-page witnesses. Search text aligns Quinlan in the intervening sequence and names Sylvan Murphy administrator in 1940, but those uninspected images support no verified office or exact duration here.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Checked directory witness 1944; search-text alignment through 1948</strong></td>
-<td style="text-align: left;">Rev. Donatus Ahern, O.F.M.Cap.</td>
-<td style="text-align: left;">Directory pastor</td>
-<td style="text-align: left;">OCD 1944, Willits entry, printed p. 265, scan n360, is the original-page witness; search text aligns his name through 1948. Cullen ICA says Cullen ministered at Willits circa 1943–47, but does not displace the checked directory pastor.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Checked directory witness 1949; appointed pastor 17 June 1954; search-text alignment 1951–56</strong></td>
-<td style="text-align: left;">Rev. Isidore Kennedy, O.F.M.Cap.</td>
-<td style="text-align: left;">Priest named in entry; pastor from archival appointment date</td>
-<td style="text-align: left;">Kennedy ICA gives the exact appointment; OCD 1949, Willits entry, printed p. 201, scan n342, is the checked earlier witness. Search text aligns his name in 1951–56; those leads are not converted into an earlier pastorate. The 1950 edition was unavailable.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Listed 1957</strong></td>
-<td style="text-align: left;">Rev. Celestine Quinlan, O.F.M.Cap.</td>
-<td style="text-align: left;">Priest named in parish entry</td>
-<td style="text-align: left;">OCD 1957, Willits entry, printed p. 242, scan n405. A single annual witness; no unsupported canonical title or exact handoff date is supplied.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Checked directory witnesses 1958 and 1960; search-text alignment 1961–62</strong></td>
-<td style="text-align: left;">Rev. Alban Cullen, O.F.M.Cap.</td>
-<td style="text-align: left;">Priest named in parish entry</td>
-<td style="text-align: left;">Cullen ICA; OCD 1958, printed p. 246, scan n411, and OCD 1960, printed p. 253, scan n396, are the checked witnesses. Search text aligns 1961–62. The 1959 edition was unavailable; his earlier ministry is not converted into an earlier pastorate.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Checked directory witnesses 1963 and 1968</strong></td>
-<td style="text-align: left;">Rev. Celestine Quinlan, O.F.M.Cap.</td>
-<td style="text-align: left;">Priest named in parish entry</td>
-<td style="text-align: left;">OCD 1963, printed p. 712, scan n845, and OCD 1968, printed p. 783, scan n898. Search text aligns the intervening editions, but no continuous appointment record or withdrawal act was located.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Checked directory witnesses 1969 and 1970; search-text alignment 1971–73</strong></td>
-<td style="text-align: left;">Rev. Michael A. Culligan</td>
-<td style="text-align: left;">Diocesan priest named in parish entry</td>
-<td style="text-align: left;">OCD 1969, Willits entry, printed p. 793, scan n898, and OCD 1970, printed p. 801, scan n892, are original-page witnesses. The first marks the personnel shift and names Queen of Peace; the second repeats the mission and adds the present street address. Later search text is only alignment, and no handoff day is fixed.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Checked directory witness 1974; later search-text and fragment alignment through 1979</strong></td>
-<td style="text-align: left;">Rev. Norman Van Sile</td>
-<td style="text-align: left;">Priest named in parish entry</td>
-<td style="text-align: left;">OCD 1974, Willits entry, printed p. 814, scan n897, is the original-page witness. Search text aligns 1975 and 1978–79; damaged 1976–77 fragments and priest indexes corroborate his name but none of those later years is represented as a checked parish image.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Checked directory witness 1980; search-text alignment 1981</strong></td>
-<td style="text-align: left;">Rev. Roger A. Lamoureux</td>
-<td style="text-align: left;">Priest named in parish entry</td>
-<td style="text-align: left;">OCD 1980, Willits entry, printed p. 880, scan n947, is the original-page witness; search text aligns 1981. Exact appointment and departure dates were not recovered.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Checked directory witness 1982; search-text alignment 1983</strong></td>
-<td style="text-align: left;">Rev. Brendan G. Hanratty</td>
-<td style="text-align: left;">Priest named in parish entry</td>
-<td style="text-align: left;">OCD 1982, Willits entry, printed p. 886, scan n979, is the original-page witness; search text aligns 1983. Exact appointment and departure dates were not recovered.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Checked directory witness 1984; search-text alignment through 1992</strong></td>
-<td style="text-align: left;">Rev. Msgr. James E. Walsh</td>
-<td style="text-align: left;">Priest named in parish entry</td>
-<td style="text-align: left;">OCD 1984, Willits entry, printed p. 811, scan n870, is the original-page witness; search text aligns his name through 1992. The checked edition prints “Rev. Msgr. James Walsh”; later search text adds the middle initial.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Checked directory witness 1993; search-text alignment and transition lead in 1994</strong></td>
-<td style="text-align: left;">Rev. Gary Sumpter</td>
-<td style="text-align: left;">Administrator; directory code “(SPK)”</td>
-<td style="text-align: left;">OCD 1993, Willits entry, printed p. 971, scan n1112, is the original-page office witness; 1994 search text aligns it. The abbreviation was not expanded without a checked key. That lead overlaps the official memorial’s report that Nichols began serving in 1994; no handoff day is inferred.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Began in 1994; checked directory witness 1995; search-text alignment 1996</strong></td>
-<td style="text-align: left;">Rev. Louis J. Nichols</td>
-<td style="text-align: left;">Administrator; directory code “(SY)”</td>
-<td style="text-align: left;">Diocese of Santa Rosa, “In Memoriam: Father Louis J. Nichols”; OCD 1995, Willits entry, printed p. 1027, scan n1190, is the original-page office witness; search text aligns 1996. The abbreviation was not expanded without a checked key. The 1994 overlap remains explicit; no exact beginning day or end date was recovered.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Unresolved interval</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">OCD 1997 search: the Willits text was not usable, so no predecessor or successor boundary is inferred.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Checked directory witness 1998; search-text alignment 1999–2000</strong></td>
-<td style="text-align: left;">Rev. Gary W. Logan</td>
-<td style="text-align: left;">Administrator</td>
-<td style="text-align: left;">OCD 1998, Willits entry, printed p. 1137, scan n1292, is the original-page office witness; search text aligns 1999–2000. The evidence does not establish whether he began during the unresolved 1997 interval.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–17 Mar. 2016</strong></td>
-<td style="text-align: left;">Documentary gap</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">OCD post-2000 access check and diocesan/parish public-record searches did not yield a reliable succession. The gap is not evidence that the parish lacked ministry.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Effective 18 Mar. 2016; current at cutoff</strong></td>
-<td style="text-align: left;">Rev. Arogyaiah (Aaron) Bandanadam, M.F.</td>
-<td style="text-align: left;">Parochial administrator, later pastor</td>
-<td style="text-align: left;">NCC 2016, p. 2, gives the effective appointment; SR 2024, p. 55, says parochial administrator; SR 2026, p. 54, and the parish home page identify him as pastor.</td>
-</tr>
-</tbody>
-</table>
+| **Period or witness** | **Name or status** | **Office / affiliation** | **Evidence and qualification** |
+|:-----------|:----------------|:--------------|:-----------------------|
+| **Period or witness** | **Name or status** | **Office / affiliation** | **Evidence and qualification** |
+| **Appointed June 1923; checked directory witnesses 1924–25** | Rev. Ambrose Brunton, O.F.M.Cap. | First Irish Capuchin pastor; directory rector | Fenelon letter, IE CA WA/1/4/10; Brunton ICA; OCD 1924, printed p. 210; and OCD 1925, printed p. 214, scan n369. Search text aligns his listing through 1928, when the archive records his successor’s posting; the 1925 edition prints “Brenton.” |
+| **Posted Oct. 1928; directory search-text alignment 1929–34** | Rev. Sebastian Brennan, O.F.M.Cap. | Capuchin priest posted to Willits; search text prints rector | Brennan ICA gives the posting. OCD 1929–34 search text aligns the Willits listing but was not admitted as original-page verification. His 1903 arrival elsewhere in the county was not a Willits pastorate. |
+| **Checked directory witness 1935; archive reports a 1936 return to Ireland** | Rev. Finbarr O’Callaghan, O.F.M.Cap. | Directory rector; archive-described pastor | O’Callaghan ICA; OCD 1935, Willits entry, printed p. 171, scan n230. Search text for the 1936 entry was not reliably recovered; the archive record, not OCR, supports the return to Ireland and does not move his Willits service back to his 1924 United States arrival. |
+| **Listed 1937** | Rev. Urban Riordan, O.M.Cap. | Directory rector | OCD 1937, Willits entry, printed p. 184, scan n243. Exact appointment dates were not recovered. |
+| **Checked directory witnesses 1938 and 1941; search-text alignment through 1943** | Rev. Celestine Quinlan, O.M./O.F.M.Cap. | Directory rector / pastor | OCD 1938, printed p. 218, scan n269, and OCD 1941, printed p. 233, scan n320, are original-page witnesses. Search text aligns Quinlan in the intervening sequence and names Sylvan Murphy administrator in 1940, but those uninspected images support no verified office or exact duration here. |
+| **Checked directory witness 1944; search-text alignment through 1948** | Rev. Donatus Ahern, O.F.M.Cap. | Directory pastor | OCD 1944, Willits entry, printed p. 265, scan n360, is the original-page witness; search text aligns his name through 1948. Cullen ICA says Cullen ministered at Willits circa 1943–47, but does not displace the checked directory pastor. |
+| **Checked directory witness 1949; appointed pastor 17 June 1954; search-text alignment 1951–56** | Rev. Isidore Kennedy, O.F.M.Cap. | Priest named in entry; pastor from archival appointment date | Kennedy ICA gives the exact appointment; OCD 1949, Willits entry, printed p. 201, scan n342, is the checked earlier witness. Search text aligns his name in 1951–56; those leads are not converted into an earlier pastorate. The 1950 edition was unavailable. |
+| **Listed 1957** | Rev. Celestine Quinlan, O.F.M.Cap. | Priest named in parish entry | OCD 1957, Willits entry, printed p. 242, scan n405. A single annual witness; no unsupported canonical title or exact handoff date is supplied. |
+| **Checked directory witnesses 1958 and 1960; search-text alignment 1961–62** | Rev. Alban Cullen, O.F.M.Cap. | Priest named in parish entry | Cullen ICA; OCD 1958, printed p. 246, scan n411, and OCD 1960, printed p. 253, scan n396, are the checked witnesses. Search text aligns 1961–62. The 1959 edition was unavailable; his earlier ministry is not converted into an earlier pastorate. |
+| **Checked directory witnesses 1963 and 1968** | Rev. Celestine Quinlan, O.F.M.Cap. | Priest named in parish entry | OCD 1963, printed p. 712, scan n845, and OCD 1968, printed p. 783, scan n898. Search text aligns the intervening editions, but no continuous appointment record or withdrawal act was located. |
+| **Checked directory witnesses 1969 and 1970; search-text alignment 1971–73** | Rev. Michael A. Culligan | Diocesan priest named in parish entry | OCD 1969, Willits entry, printed p. 793, scan n898, and OCD 1970, printed p. 801, scan n892, are original-page witnesses. The first marks the personnel shift and names Queen of Peace; the second repeats the mission and adds the present street address. Later search text is only alignment, and no handoff day is fixed. |
+| **Checked directory witness 1974; later search-text and fragment alignment through 1979** | Rev. Norman Van Sile | Priest named in parish entry | OCD 1974, Willits entry, printed p. 814, scan n897, is the original-page witness. Search text aligns 1975 and 1978–79; damaged 1976–77 fragments and priest indexes corroborate his name but none of those later years is represented as a checked parish image. |
+| **Checked directory witness 1980; search-text alignment 1981** | Rev. Roger A. Lamoureux | Priest named in parish entry | OCD 1980, Willits entry, printed p. 880, scan n947, is the original-page witness; search text aligns 1981. Exact appointment and departure dates were not recovered. |
+| **Checked directory witness 1982; search-text alignment 1983** | Rev. Brendan G. Hanratty | Priest named in parish entry | OCD 1982, Willits entry, printed p. 886, scan n979, is the original-page witness; search text aligns 1983. Exact appointment and departure dates were not recovered. |
+| **Checked directory witness 1984; search-text alignment through 1992** | Rev. Msgr. James E. Walsh | Priest named in parish entry | OCD 1984, Willits entry, printed p. 811, scan n870, is the original-page witness; search text aligns his name through 1992. The checked edition prints “Rev. Msgr. James Walsh”; later search text adds the middle initial. |
+| **Checked directory witness 1993; search-text alignment and transition lead in 1994** | Rev. Gary Sumpter | Administrator; directory code “(SPK)” | OCD 1993, Willits entry, printed p. 971, scan n1112, is the original-page office witness; 1994 search text aligns it. The abbreviation was not expanded without a checked key. That lead overlaps the official memorial’s report that Nichols began serving in 1994; no handoff day is inferred. |
+| **Began in 1994; checked directory witness 1995; search-text alignment 1996** | Rev. Louis J. Nichols | Administrator; directory code “(SY)” | Diocese of Santa Rosa, “In Memoriam: Father Louis J. Nichols”; OCD 1995, Willits entry, printed p. 1027, scan n1190, is the original-page office witness; search text aligns 1996. The abbreviation was not expanded without a checked key. The 1994 overlap remains explicit; no exact beginning day or end date was recovered. |
+|  | Unresolved interval | — | OCD 1997 search: the Willits text was not usable, so no predecessor or successor boundary is inferred. |
+| **Checked directory witness 1998; search-text alignment 1999–2000** | Rev. Gary W. Logan | Administrator | OCD 1998, Willits entry, printed p. 1137, scan n1292, is the original-page office witness; search text aligns 1999–2000. The evidence does not establish whether he began during the unresolved 1997 interval. |
+| **–17 Mar. 2016** | Documentary gap | — | OCD post-2000 access check and diocesan/parish public-record searches did not yield a reliable succession. The gap is not evidence that the parish lacked ministry. |
+| **Effective 18 Mar. 2016; current at cutoff** | Rev. Arogyaiah (Aaron) Bandanadam, M.F. | Parochial administrator, later pastor | NCC 2016, p. 2, gives the effective appointment; SR 2024, p. 55, says parochial administrator; SR 2026, p. 54, and the parish home page identify him as pastor. |
 
 The roster is fullest for years covered by the national directory and thinnest after 2000. It does not erase four important limits: the Kennedy appointment record conflicts with his earlier directory appearance; Cullen’s documented ministry in the 1940s does not make him the checked directory pastor; the 1940 Murphy-administrator result remains an unverified search-text lead; and the public record searched here leaves 2001 through 17 March 2016 unresolved.
 
@@ -591,183 +369,40 @@ The roster is fullest for years covered by the national directory and thinnest a
 
 The final column identifies the surviving witness and the limit on what it establishes. “Mission,” “station,” “rector,” and “pastor” reproduce or summarize dated institutional usage; they are not retroactive canonical judgments.
 
-<table style="width:91%;">
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 48%" />
-<col style="width: 27%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><strong><strong>Date</strong></strong></th>
-<th style="text-align: left;"><strong>Event or development</strong></th>
-<th style="text-align: left;"><strong>Witness and boundary</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong><strong>Date</strong></strong></td>
-<td style="text-align: left;"><strong>Event or development</strong></td>
-<td style="text-align: left;"><strong>Witness and boundary</strong></td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><strong></strong></p>
-<p>Since time immemorial</p></td>
-<td style="text-align: left;">The Sherwood Valley Band locates its rancheria within aboriginal homelands used and occupied since time immemorial; Round Valley is identified as the heart of Yuki territory.</td>
-<td style="text-align: left;">Tribal self-descriptions. These are prior historical coordinates, not prologue to settlement or parish history.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>/ 1856</strong></td>
-<td style="text-align: left;">The Sherwood Valley Band identifies itself as successor in interest to the Mendocino Indian Reservation established by an 1853 act; the Round Valley Indian Tribes date the beginning of the Round Valley Reservation system to the Nome Cult Farm in 1856 and recount forced relocation.</td>
-<td style="text-align: left;">Official tribal histories. They control the context needed to interpret later Catholic “reservation” labels; this study does not independently reconstruct federal Indian policy.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>1850s–88</strong></td>
-<td style="text-align: left;">Settler ranching, industry, and a town economy develop in Little Lake Valley; Willits incorporates in 1888.</td>
-<td style="text-align: left;">City and county planning histories. Their broad historical summaries do not replace tribal accounts or a specialized local history.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Early 1900s</strong></td>
-<td style="text-align: left;">Railroad and timber activity accelerate Willits’s growth and regional connections.</td>
-<td style="text-align: left;">Mendocino County and City of Willits planning records. The temporal proximity to Catholic mission listing does not prove that transport growth caused the mission.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">The annual Catholic directory does not list Willits beneath Ukiah. Father Sebastian Brennan arrives in Mendocino County but initially serves Fort Bragg and points north.</td>
-<td style="text-align: left;">original directory page and Brennan authority record. Neither supports the claim that Brennan founded or took charge of Willits that year.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Willits is printed as a mission of Ukiah, with Hopland; Father F. B. Duffy is the Ukiah rector.</td>
-<td style="text-align: left;">directory, printed p. 182. Earliest verified directory appearance, not an asserted first Mass.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Sherwood Valley Rancheria is established by Secretarial Order.</td>
-<td style="text-align: left;">Sherwood Valley Band history. A tribal institutional date, not a Catholic station date.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–11</strong></td>
-<td style="text-align: left;">The mission is named Saint Anthony’s by the 1910 directory; the 1911 edition again uses the patronal name and maps a broad Ukiah circuit extending through inland settlements and reservations.</td>
-<td style="text-align: left;">Willits entry and 1911 directory, printed p. 214. Patronal continuity is secure; local residence and building are not yet established by these entries.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Irish Capuchins accept the Mendocino mission previously served by English Capuchins.</td>
-<td style="text-align: left;">transfer memorandum and later Capuchin archival descriptions. County transfer is distinct from establishment of resident ministry at Willits.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>April 1921</strong></td>
-<td style="text-align: left;">A photographic print records the exterior of a building identified as Saint Anthony’s Church, Willits.</td>
-<td style="text-align: left;">Irish Capuchin Archives, IE CA WA/4/3/17. Secure terminus by which the named church existed; construction and dedication dates remain unknown.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Father Raphael Quinn becomes pastor at Ukiah and is later credited with responsibility for building Saint Anthony’s Parish Church in Willits.</td>
-<td style="text-align: left;">Quinn authority record. The credit must be read with the 1921 photograph and cannot alone establish first construction.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>directory year</strong></td>
-<td style="text-align: left;">Saint Anthony’s, Willits, remains listed as a mission of Saint Mary’s, Ukiah. Covelo, Guideville, Lake Leonard, Laytonville, and five “Indian Reservations” appear among Ukiah’s stations.</td>
-<td style="text-align: left;">directory, printed p. 201. Administrative map only; frequency and local reception are unknown.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">A Willits deputation renews its request for a priest during Archbishop Hanna’s Ukiah visit; Hanna appeals to Father Joseph Fenelon, who appoints Father Ambrose Brunton. Fenelon expects Willits and Hopland to receive Sunday Mass.</td>
-<td style="text-align: left;">Fenelon letter, IE CA WA/1/4/10. Contemporary appointment evidence, but not a parish-erection decree.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Circa 1924</strong></td>
-<td style="text-align: left;">A photograph records a Saint Anthony rectory adjacent to the church. Father Finbarr O’Callaghan transfers to the United States mission, but the checked evidence does not yet place him at Willits.</td>
-<td style="text-align: left;">Irish Capuchin photo catalog, IE CA WA/4/3/18, and O’Callaghan authority record. His later Willits pastorate is supported separately by the checked 1935 directory and his archival 1936 return.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–25</strong></td>
-<td style="text-align: left;">Willits receives a separate directory entry for Saint Anthony with Father Ambrose Brunton as rector; the next edition repeats it, printing the surname “Brenton.”</td>
-<td style="text-align: left;">directory, printed p. 210, and 1925 directory, printed p. 214. Separate listing is not equated automatically with a recovered canonical act.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>October 1928</strong></td>
-<td style="text-align: left;">Father Sebastian Brennan is posted to Willits.</td>
-<td style="text-align: left;">Brennan authority record. His 1903 Mendocino arrival and his 1928 Willits assignment are deliberately separated.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">A Willits archival subseries records Brennan’s golden jubilee and a parish-status and financial statement for Saint Anthony’s.</td>
-<td style="text-align: left;">Irish Capuchin Archives, IE CA WA/7/14. Catalog-level witness; contents were not mined for unverified details.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>checked directory year; 1936 archival endpoint</strong></td>
-<td style="text-align: left;">Father Finbarr O’Callaghan is listed as rector at Willits in the checked 1935 entry; his authority record says he served there as pastor and returned to Ireland in 1936.</td>
-<td style="text-align: left;">directory, printed p. 171, and O’Callaghan authority record. The record does not move his Willits service back to his 1924 United States arrival; unreliable 1936 search recovery supplies no directory claim.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Saint Anthony “(1923)” is listed with Father Celestine Quinlan as pastor and Covelo, Sherwood, and Laytonville as stations bearing reservation descriptors.</td>
-<td style="text-align: left;">directory, printed p. 233. Evidence of Catholic administrative reach, not of Indigenous response.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Circa 1943–47</strong></td>
-<td style="text-align: left;">Father Alban Cullen ministers at Saint Anthony’s.</td>
-<td style="text-align: left;">Cullen authority record. Approximate biographical range.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>June 1954–1957</strong></td>
-<td style="text-align: left;">Father Isidore Kennedy serves as pastor at Willits, then transfers to Ukiah.</td>
-<td style="text-align: left;">Kennedy authority record. Its exact appointment date conflicts with his earlier directory appearances and is preserved beside, not substituted for, the annual sequence.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">Saint Anthony “(1923)” is listed under the Archdiocese of San Francisco with Father Alban Cullen and post-office box 267.</td>
-<td style="text-align: left;">directory, printed p. 253. A dated personnel and establishment-label snapshot.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>January / 21 February 1962</strong></td>
-<td style="text-align: left;">Pope John XXIII establishes the Diocese of Santa Rosa in January; the diocese is officially created in February from portions of the Archdiocese of San Francisco and Diocese of Sacramento, bringing Mendocino County into the new jurisdiction.</td>
-<td style="text-align: left;">Diocese of Santa Rosa “Past Bishops,” history, and description pages. Jurisdictional event; no uninspected papal act or Willits-specific property act is inferred.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">The first checked post-erection directory places Saint Anthony “(1923)” in the Diocese of Santa Rosa with Father Celestine Quinlan; the Irish Capuchin listing includes Willits.</td>
-<td style="text-align: left;">directory, printed p. 712. Continuity across diocesan transfer, not proof that every administrative arrangement remained unchanged.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–69</strong></td>
-<td style="text-align: left;">The 1968 directory still lists Capuchin Father Celestine Quinlan. The 1969 entry names diocesan Father Michael A. Culligan and, for the first time located in this study, “Covelo, Queen of Peace” as Saint Anthony’s mission.</td>
-<td style="text-align: left;">Successive directory snapshots. Consistent with a staffing handoff, but not proof of its formal act, exact effective date, terms, or property consequences.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">The directory repeats Father Culligan and Queen of Peace and supplies 61 West San Francisco Avenue as the Willits residence.</td>
-<td style="text-align: left;">Directory entry. First located publication of the present street address, not proof of when the parcel or building was acquired.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–98 checked directory snapshots</strong></td>
-<td style="text-align: left;">Checked transition pages identify Fathers Van Sile, Lamoureux, Hanratty, Walsh, Sumpter, Nichols, and Logan at particular publication years after Father Culligan.</td>
-<td style="text-align: left;">Directory images from 1974, 1980, 1982, 1984, 1993, 1995, and 1998. Intervening search text is only unverified alignment; the 1997 entry was unusable, and publication-year appearances and printed offices are not converted into exact appointment dates.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>–17 March 2016</strong></td>
-<td style="text-align: left;">No complete public succession was recovered for the interval before Father Aaron Bandanadam’s documented appointment as parochial administrator, effective 18 March 2016.</td>
-<td style="text-align: left;">Recorded archive gap and April 2016 diocesan personnel notice. The gap is not evidence of vacancy, and the later public record still does not supply a continuous building history or Covelo itinerary.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">The diocesan directory prints “Established 1923” and identifies Our Lady Queen of Peace Mission in Covelo. In November, a local report describes a Women’s Guild fundraising dinner for ninety diners, annual scholarships, the Our Lady of Guadalupe festival, and efforts to reconnect parish groups after pandemic disruption; a guild officer estimates roughly 150 families.</td>
-<td style="text-align: left;">diocesan directory, p. 55, and Mathew Caine in <em>Willits Weekly</em>, 14 November, pp. 3–4. The family number is an attributed estimate, not a parish census.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong></strong></td>
-<td style="text-align: left;">The diocesan directory changes the printed establishment label to “1903” while continuing to identify the Covelo mission. The live Parish Finder still says “Established 1923.”</td>
-<td style="text-align: left;">Two current official diocesan witnesses. The contradiction remains unresolved because no 1903 act or erection decree was located.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>July 2026</strong></td>
-<td style="text-align: left;">Historical and mutable-status cutoff. The parish publicly schedules English and Spanish Sunday Masses in Willits and identifies Our Lady Queen of Peace in Covelo as part of Saint Anthony.</td>
-<td style="text-align: left;">Parish and diocesan web pages. Current snapshot only; independent specialist review remains outstanding.</td>
-</tr>
-</tbody>
-</table>
+| **Date** | **Event or development** | **Witness and boundary** |
+|:-----------|:---------------------------------|:-------------------|
+| **Date** | **Event or development** | **Witness and boundary** |
+| **Since time immemorial** | The Sherwood Valley Band locates its rancheria within aboriginal homelands used and occupied since time immemorial; Round Valley is identified as the heart of Yuki territory. | Tribal self-descriptions. These are prior historical coordinates, not prologue to settlement or parish history. |
+| **/ 1856** | The Sherwood Valley Band identifies itself as successor in interest to the Mendocino Indian Reservation established by an 1853 act; the Round Valley Indian Tribes date the beginning of the Round Valley Reservation system to the Nome Cult Farm in 1856 and recount forced relocation. | Official tribal histories. They control the context needed to interpret later Catholic “reservation” labels; this study does not independently reconstruct federal Indian policy. |
+| **1850s–88** | Settler ranching, industry, and a town economy develop in Little Lake Valley; Willits incorporates in 1888. | City and county planning histories. Their broad historical summaries do not replace tribal accounts or a specialized local history. |
+| **Early 1900s** | Railroad and timber activity accelerate Willits’s growth and regional connections. | Mendocino County and City of Willits planning records. The temporal proximity to Catholic mission listing does not prove that transport growth caused the mission. |
+|  | The annual Catholic directory does not list Willits beneath Ukiah. Father Sebastian Brennan arrives in Mendocino County but initially serves Fort Bragg and points north. | original directory page and Brennan authority record. Neither supports the claim that Brennan founded or took charge of Willits that year. |
+|  | Willits is printed as a mission of Ukiah, with Hopland; Father F. B. Duffy is the Ukiah rector. | directory, printed p. 182. Earliest verified directory appearance, not an asserted first Mass. |
+|  | Sherwood Valley Rancheria is established by Secretarial Order. | Sherwood Valley Band history. A tribal institutional date, not a Catholic station date. |
+| **–11** | The mission is named Saint Anthony’s by the 1910 directory; the 1911 edition again uses the patronal name and maps a broad Ukiah circuit extending through inland settlements and reservations. | Willits entry and 1911 directory, printed p. 214. Patronal continuity is secure; local residence and building are not yet established by these entries. |
+|  | Irish Capuchins accept the Mendocino mission previously served by English Capuchins. | transfer memorandum and later Capuchin archival descriptions. County transfer is distinct from establishment of resident ministry at Willits. |
+| **April 1921** | A photographic print records the exterior of a building identified as Saint Anthony’s Church, Willits. | Irish Capuchin Archives, IE CA WA/4/3/17. Secure terminus by which the named church existed; construction and dedication dates remain unknown. |
+|  | Father Raphael Quinn becomes pastor at Ukiah and is later credited with responsibility for building Saint Anthony’s Parish Church in Willits. | Quinn authority record. The credit must be read with the 1921 photograph and cannot alone establish first construction. |
+| **directory year** | Saint Anthony’s, Willits, remains listed as a mission of Saint Mary’s, Ukiah. Covelo, Guideville, Lake Leonard, Laytonville, and five “Indian Reservations” appear among Ukiah’s stations. | directory, printed p. 201. Administrative map only; frequency and local reception are unknown. |
+|  | A Willits deputation renews its request for a priest during Archbishop Hanna’s Ukiah visit; Hanna appeals to Father Joseph Fenelon, who appoints Father Ambrose Brunton. Fenelon expects Willits and Hopland to receive Sunday Mass. | Fenelon letter, IE CA WA/1/4/10. Contemporary appointment evidence, but not a parish-erection decree. |
+| **Circa 1924** | A photograph records a Saint Anthony rectory adjacent to the church. Father Finbarr O’Callaghan transfers to the United States mission, but the checked evidence does not yet place him at Willits. | Irish Capuchin photo catalog, IE CA WA/4/3/18, and O’Callaghan authority record. His later Willits pastorate is supported separately by the checked 1935 directory and his archival 1936 return. |
+| **–25** | Willits receives a separate directory entry for Saint Anthony with Father Ambrose Brunton as rector; the next edition repeats it, printing the surname “Brenton.” | directory, printed p. 210, and 1925 directory, printed p. 214. Separate listing is not equated automatically with a recovered canonical act. |
+| **October 1928** | Father Sebastian Brennan is posted to Willits. | Brennan authority record. His 1903 Mendocino arrival and his 1928 Willits assignment are deliberately separated. |
+|  | A Willits archival subseries records Brennan’s golden jubilee and a parish-status and financial statement for Saint Anthony’s. | Irish Capuchin Archives, IE CA WA/7/14. Catalog-level witness; contents were not mined for unverified details. |
+| **checked directory year; 1936 archival endpoint** | Father Finbarr O’Callaghan is listed as rector at Willits in the checked 1935 entry; his authority record says he served there as pastor and returned to Ireland in 1936. | directory, printed p. 171, and O’Callaghan authority record. The record does not move his Willits service back to his 1924 United States arrival; unreliable 1936 search recovery supplies no directory claim. |
+|  | Saint Anthony “(1923)” is listed with Father Celestine Quinlan as pastor and Covelo, Sherwood, and Laytonville as stations bearing reservation descriptors. | directory, printed p. 233. Evidence of Catholic administrative reach, not of Indigenous response. |
+| **Circa 1943–47** | Father Alban Cullen ministers at Saint Anthony’s. | Cullen authority record. Approximate biographical range. |
+| **June 1954–1957** | Father Isidore Kennedy serves as pastor at Willits, then transfers to Ukiah. | Kennedy authority record. Its exact appointment date conflicts with his earlier directory appearances and is preserved beside, not substituted for, the annual sequence. |
+|  | Saint Anthony “(1923)” is listed under the Archdiocese of San Francisco with Father Alban Cullen and post-office box 267. | directory, printed p. 253. A dated personnel and establishment-label snapshot. |
+| **January / 21 February 1962** | Pope John XXIII establishes the Diocese of Santa Rosa in January; the diocese is officially created in February from portions of the Archdiocese of San Francisco and Diocese of Sacramento, bringing Mendocino County into the new jurisdiction. | Diocese of Santa Rosa “Past Bishops,” history, and description pages. Jurisdictional event; no uninspected papal act or Willits-specific property act is inferred. |
+|  | The first checked post-erection directory places Saint Anthony “(1923)” in the Diocese of Santa Rosa with Father Celestine Quinlan; the Irish Capuchin listing includes Willits. | directory, printed p. 712. Continuity across diocesan transfer, not proof that every administrative arrangement remained unchanged. |
+| **–69** | The 1968 directory still lists Capuchin Father Celestine Quinlan. The 1969 entry names diocesan Father Michael A. Culligan and, for the first time located in this study, “Covelo, Queen of Peace” as Saint Anthony’s mission. | Successive directory snapshots. Consistent with a staffing handoff, but not proof of its formal act, exact effective date, terms, or property consequences. |
+|  | The directory repeats Father Culligan and Queen of Peace and supplies 61 West San Francisco Avenue as the Willits residence. | Directory entry. First located publication of the present street address, not proof of when the parcel or building was acquired. |
+| **–98 checked directory snapshots** | Checked transition pages identify Fathers Van Sile, Lamoureux, Hanratty, Walsh, Sumpter, Nichols, and Logan at particular publication years after Father Culligan. | Directory images from 1974, 1980, 1982, 1984, 1993, 1995, and 1998. Intervening search text is only unverified alignment; the 1997 entry was unusable, and publication-year appearances and printed offices are not converted into exact appointment dates. |
+| **–17 March 2016** | No complete public succession was recovered for the interval before Father Aaron Bandanadam’s documented appointment as parochial administrator, effective 18 March 2016. | Recorded archive gap and April 2016 diocesan personnel notice. The gap is not evidence of vacancy, and the later public record still does not supply a continuous building history or Covelo itinerary. |
+|  | The diocesan directory prints “Established 1923” and identifies Our Lady Queen of Peace Mission in Covelo. In November, a local report describes a Women’s Guild fundraising dinner for ninety diners, annual scholarships, the Our Lady of Guadalupe festival, and efforts to reconnect parish groups after pandemic disruption; a guild officer estimates roughly 150 families. | diocesan directory, p. 55, and Mathew Caine in *Willits Weekly*, 14 November, pp. 3–4. The family number is an attributed estimate, not a parish census. |
+|  | The diocesan directory changes the printed establishment label to “1903” while continuing to identify the Covelo mission. The live Parish Finder still says “Established 1923.” | Two current official diocesan witnesses. The contradiction remains unresolved because no 1903 act or erection decree was located. |
+| **July 2026** | Historical and mutable-status cutoff. The parish publicly schedules English and Spanish Sunday Masses in Willits and identifies Our Lady Queen of Peace in Covelo as part of Saint Anthony. | Parish and diocesan web pages. Current snapshot only; independent specialist review remains outstanding. |
 
 ## References
 
