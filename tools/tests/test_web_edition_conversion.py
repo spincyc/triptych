@@ -34,6 +34,17 @@ REPEAT_CONTRIBUTION = (
 OTHER_CONTRIBUTION = (
     r"\AIModelContribution{other-model}{effort=low}{Test CLI 1.1; API workspace}"
 )
+# A proper title block whose Latin line recurs in the opening prose, as it does
+# in the leaves: a search of the whole edition cannot see that line dropped.
+PROPER_TITLE = (
+    r"\propertitle{The Eighteenth Sunday after Pentecost}" "\n"
+    r"{Dominica decima octava post Pentecosten}" "\n"
+    r"{Missale Romanum 1962 \quad\textperiodcentered\quad Proper of Time}" "\n"
+    r"{Peace for the city:\\" "\n"
+    r"a study of the proper in three readings}" "\n\n"
+    r"The Eighteenth Sunday after Pentecost, \latin{Dominica decima octava post "
+    r"Pentecosten}, is a Sunday of the second class."
+)
 
 
 @unittest.skipUnless(HAS_PANDOC, "pandoc is not installed")
@@ -43,6 +54,7 @@ class WebEditionConversionTests(unittest.TestCase):
         *, files: dict[str, str] | None = None, proper: bool = False,
         element_keys: tuple[str, ...] = (),
         proper_schema: int | None = None,
+        format_contract: str | None = None,
         title: str = "Subject",
     ) -> str:
         """Convert a synthetic single-section leaf and return its Markdown."""
@@ -53,6 +65,7 @@ class WebEditionConversionTests(unittest.TestCase):
             if proper:
                 (leaf / "proper-components.toml").write_text(
                     (f"schema = {proper_schema}\n" if proper_schema is not None else "")
+                    + (f"format_contract = {format_contract!r}\n" if format_contract else "")
                     + f"element_keys = {list(element_keys)!r}\n", encoding="utf-8"
                 )
             for name, text in (files or {}).items():
@@ -815,6 +828,114 @@ class WebEditionConversionTests(unittest.TestCase):
         self.assertIn(r"unknown macro \dubiousclaim", message)
         self.assertIn("main.tex", message)
 
+    def convert_proper_title(self, body: str, *, shim: Path | None = None) -> str:
+        """Convert under the real print \\propertitle, which the shim must override."""
+        files = {"propers-format.tex": (ROOT / "src/common/propers-format.tex").read_text(
+            encoding="utf-8")}
+        preamble = r"\input{studies/subject/propers-format}"
+        if shim is None:
+            return self.convert(body, preamble=preamble, files=files)
+        with mock.patch.object(DRIVER, "SHIM", shim):
+            return self.convert(body, preamble=preamble, files=files)
+
+    def test_proper_title_sets_all_four_fields_in_print_order(self) -> None:
+        markdown = self.convert_proper_title(PROPER_TITLE)
+        self.assertIn(
+            "**The Eighteenth Sunday after Pentecost**\n\n"
+            "Dominica decima octava post Pentecosten\n\n"
+            "Missale Romanum 1962 · Proper of Time\n\n"
+            "Peace for the city:<br>\na study of the proper in three readings\n\n"
+            "The Eighteenth Sunday after Pentecost, ",
+            markdown,
+        )
+
+    def test_proper_title_omits_an_empty_optional_field(self) -> None:
+        for fields in (("Title", "Subtitle", "", "Occasion"),
+                       ("Title", "Subtitle", "Edition", ""),
+                       ("Title", "", "", "")):
+            with self.subTest(fields=fields):
+                markdown = self.convert_proper_title(
+                    r"\propertitle" + "".join("{" + field + "}" for field in fields)
+                    + "\n\nProse."
+                )
+                self.assertIn(
+                    "\n\n".join(["**Title**", *filter(None, fields[1:]), "Prose."]) + "\n",
+                    markdown,
+                )
+
+    def test_print_title_definition_pandoc_cannot_expand_is_refused(self) -> None:
+        # Without the shim's definition, the print macro's empty-field tests
+        # govern, and pandoc drops the second and third lines without a warning.
+        shim_text, removed = re.subn(
+            r"(?m)^\\newcommand\{\\propertitle\}.*\n", "",
+            DRIVER.SHIM.read_text(encoding="utf-8"),
+        )
+        self.assertEqual(removed, 1)
+        with tempfile.TemporaryDirectory() as temporary:
+            shim = Path(temporary) / "web-shim.tex"
+            shim.write_text(shim_text, encoding="utf-8")
+            with self.assertRaises(DRIVER.ConversionError) as raised:
+                self.convert_proper_title(PROPER_TITLE, shim=shim)
+        self.assertIn(
+            r"\propertitle title block not set as its 4 declared line(s) in order "
+            "(expected 1, found 0): line(s) absent: "
+            "Dominica decima octava post Pentecosten; "
+            r"Missale Romanum 1962 \quad·\quad Proper of Time",
+            str(raised.exception),
+        )
+
+    @unittest.skipUnless(importlib.util.find_spec("markdown"), "Python Markdown is not installed")
+    def test_shared_format_dossier_notes_are_set_full_width_beneath_their_row(self) -> None:
+        body = (
+            r"\subsection{Prayer}\label{proper-collect} Prayer." "\n\n"
+            r"\begin{dossiertable}" "\n"
+            r"Collect & Ps 1:1 & Nowhere named & Undated\\" "\n"
+            r"\cmidrule(lr){1-4}" "\n"
+            r"\dossierevent{Narrated event: none recorded.}" "\n"
+            r"\cmidrule(lr){1-4}" "\n"
+            r"\dossierprose{A note the print sets across all four columns.}" "\n"
+            r"\midrule" "\n"
+            r"Gospel & Mt 1:1 & Bethlehem & Dated\\" "\n"
+            r"\cmidrule(lr){1-4}" "\n"
+            r"\dossierprose{The last note, after which no table resumes.}" "\n"
+            r"\end{dossiertable}"
+        )
+        options = dict(
+            preamble=r"\input{studies/subject/propers-format}",
+            files={"propers-format.tex": (ROOT / "src/common/propers-format.tex").read_text(
+                encoding="utf-8")},
+            proper=True, proper_schema=2, element_keys=("collect",),
+        )
+        # The graph gate has its own tests; here it accepts the synthetic leaf.
+        with mock.patch("_proper_components.include_graph",
+                        side_effect=lambda main, leaf, root: {
+                            path.resolve() for path in leaf.rglob("*.tex")}):
+            markdown = self.convert(body, format_contract="propers-format-v1", **options)
+        # Pandoc pads narrow cells to align the columns; the padding is not content.
+        flat = re.sub(r" {2,}", " ", markdown)
+        header = "| **Proper** | **Citation** | **Location** | **Date** |\n|"
+        self.assertIn(
+            "| Collect | Ps 1:1 | Nowhere named | Undated |\n\n"
+            "*Narrated event: none recorded.*\n\n"
+            "A note the print sets across all four columns.\n\n" + header,
+            flat,
+        )
+        self.assertIn(
+            "| Gospel | Mt 1:1 | Bethlehem | Dated |\n\n"
+            "The last note, after which no table resumes.\n\n**Last revised",
+            flat,
+        )
+        self.assertEqual(flat.count(header), 2)
+        site = runpy.run_path(str(ROOT / "tools/public-alpha"))
+        rendered = site["render_page"]("web/test/studies/subject.md", markdown, "subject.html", True, {})
+        self.assertIn("</table>\n<p><em>Narrated event: none recorded.</em></p>", rendered)
+        # A leaf that defines its own dossier keeps the padded-row handling.
+        legacy = self.convert(body, **options)
+        self.assertRegex(
+            legacy, r"(?m)^\| A note the print sets across all four columns\. +\|(?: +\|){3}$"
+        )
+        self.assertEqual(re.sub(r" {2,}", " ", legacy).count(header), 1)
+
     def test_long_form_heading_and_anchor_fidelity(self) -> None:
         count = 120
         body = "\n".join(
@@ -1031,6 +1152,62 @@ class WebEditionAuditTests(unittest.TestCase):
         self.assertEqual(
             DRIVER.table_count(r"\begin{historytimeline}\end{historytimeline}", definitions),
             1,
+        )
+
+    def test_dropped_title_line_is_reported_though_its_words_recur_in_prose(self) -> None:
+        body = (
+            r"\propertitle{The Eighteenth Sunday after Pentecost}"
+            r"{Dominica decima octava post Pentecosten}"
+            r"{Missale Romanum 1962 · Proper of Time}{Peace for the city:\\ a study}"
+            "\n\nThe Eighteenth Sunday after Pentecost, "
+            r"\latin{Dominica decima octava post Pentecosten}, is a Sunday."
+        )
+        prose = (
+            "\nThe Eighteenth Sunday after Pentecost, *Dominica decima octava "
+            "post Pentecosten*, is a Sunday.\n"
+        )
+        failures = DRIVER.audit_output(
+            body,
+            self.minimal_markdown()
+            + "\n**The Eighteenth Sunday after Pentecost**\n\n"
+            "Peace for the city:<br>\na study\n" + prose,
+        )
+        self.assertIn(
+            r"\propertitle title block not set as its 4 declared line(s) in order "
+            "(expected 1, found 0): line(s) absent: "
+            "Dominica decima octava post Pentecosten; "
+            "Missale Romanum 1962 · Proper of Time",
+            failures,
+        )
+        failures = DRIVER.audit_output(
+            body,
+            self.minimal_markdown()
+            + "\n**The Eighteenth Sunday after Pentecost**\n\n"
+            "Dominica decima octava post Pentecosten\n\n"
+            "Missale Romanum 1962 · Proper of Time\n\n"
+            "Peace for the city:<br>\na study\n" + prose,
+        )
+        self.assertEqual(failures, [])
+
+    def test_reordered_or_merged_title_lines_are_reported(self) -> None:
+        body = r"\weektitle{Ninth Sunday}{\latin{Dominica Nona} · II classis}{Missale, pp.~388--389}"
+        for output in (
+            "\n*Dominica Nona* · II classis\n\n**Ninth Sunday**\n\nMissale, pp. 388–389\n",
+            "\n**Ninth Sunday** *Dominica Nona* · II classis\n\nMissale, pp. 388–389\n",
+        ):
+            with self.subTest(output=output):
+                failures = DRIVER.audit_output(body, self.minimal_markdown() + output)
+                self.assertTrue(any(
+                    failure.startswith(r"\weektitle title block not set as its 3 declared")
+                    for failure in failures
+                ), failures)
+        faithful = "\n**Ninth Sunday**\n\n*Dominica Nona* · II classis\n\nMissale, pp. 388–389\n"
+        self.assertEqual(DRIVER.audit_output(body, self.minimal_markdown() + faithful), [])
+
+    def test_empty_optional_title_field_expects_no_line(self) -> None:
+        body = r"\propertitle{Title}{}{Edition}{}"
+        self.assertEqual(
+            DRIVER.audit_output(body, self.minimal_markdown() + "\n**Title**\n\nEdition\n"), []
         )
 
     def test_faithful_output_passes(self) -> None:

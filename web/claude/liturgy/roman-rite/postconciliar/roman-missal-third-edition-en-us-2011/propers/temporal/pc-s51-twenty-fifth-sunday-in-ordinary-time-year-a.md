@@ -5,6 +5,10 @@
 **The Twenty-fifth Sunday in Ordinary Time<br>
 Year A**
 
+Dominica XXV “per annum”
+
+Roman Missal, Third Edition · Lectionary for Mass, no. 133
+
 The labourers in the vineyard and the goodness of the householder:<br>
 a study of the proper in three interpretations
 
@@ -440,24 +444,56 @@ Each passage the Mass reads or sings from Scripture, and each biblical basis an 
 | **Textual unit** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
 | Entrance Antiphon, identified basis | Ps 37 (36):39–40 | No place named in the verses | **Composition**: Before c. 165 B.C. |
-| The official ICEL Antiphonary identifies these verses as the basis of the composed antiphon; the Missal itself prints no locator. The relation is identified basis, not adaptation. The date is the Psalter’s common critical composition bound, not a date for this psalm or for the antiphon. |  |  |  |
+
+The official ICEL Antiphonary identifies these verses as the basis of the composed antiphon; the Missal itself prints no locator. The relation is identified basis, not adaptation. The date is the Psalter’s common critical composition bound, not a date for this psalm or for the antiphon.
+
+| **Textual unit** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
 | Communion Antiphon, first option | Ps 119 (118):4–5 | No place named in the verses | **Composition**: Before c. 165 B.C. |
-| The opening strophe of the alphabetical psalm of the law; the verses name no author and no place, and no traditional date is held for them. The date is the common critical composition bound in the NABRE Psalms introduction, not a precise date for this psalm or for the Psalter’s assembly. |  |  |  |
+
+The opening strophe of the alphabetical psalm of the law; the verses name no author and no place, and no traditional date is held for them. The date is the common critical composition bound in the NABRE Psalms introduction, not a precise date for this psalm or for the Psalter’s assembly.
+
+| **Textual unit** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
 | Responsorial Psalm | Ps 145 (144):2–3, 8–9, 17–18; response v. 18a | No place named | **Composition**: Before c. 165 B.C. |
-| Headed in the Douay–Rheims “Praise, for David himself” (v. 1): an attribution by title, with no traditional date attached. An alphabetical hymn to “God my king”. The date is the Psalter’s critical boundary only. |  |  |  |
+
+Headed in the Douay–Rheims “Praise, for David himself” (v. 1): an attribution by title, with no traditional date attached. An alphabetical hymn to “God my king”. The date is the Psalter’s critical boundary only.
+
+| **Textual unit** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
 | First Reading | Isa 55:6–9 | Traditional ministry: Juda and Jerusalem (1:1); critical horizon: Babylonian exile; writing site unestablished | **Traditional attribution**: Isaias (ministry in Souvay’s traditional account), B.C. 740–701. **Prophecy given**: Toward the end of the Babylonian exile. |
-| Traditional attribution: the prophet Isaias; the range shown is the era the *Catholic Encyclopedia* (1910) gives his ministry, from the closing year of Ozias to the apparent date of his latest prophecies. The article’s tentative collection hypothesis concerns chapters 1–35, not this chapter or the whole book. It treats chapters 54–55 under the heading “Second Isaias” and reports the contention of most modern non-Catholic scholars that those chapters come from an author “living towards the close of the Babylonian Captivity”, against which it sets the Pontifical Biblical Commission’s decision of 28 June 1908. The separate critical horizon comes from the introduction to Isaiah in the New American Bible Revised Edition (NABRE), which generally attributes chapters 40–55 to an anonymous poet prophesying toward the end of the Babylonian exile. That is a horizon for the prophecy, not a date for the writing or final assembly of the book. The exile is the prophetic horizon, not proof of an exact place of writing. |  |  |  |
+
+Traditional attribution: the prophet Isaias; the range shown is the era the *Catholic Encyclopedia* (1910) gives his ministry, from the closing year of Ozias to the apparent date of his latest prophecies. The article’s tentative collection hypothesis concerns chapters 1–35, not this chapter or the whole book. It treats chapters 54–55 under the heading “Second Isaias” and reports the contention of most modern non-Catholic scholars that those chapters come from an author “living towards the close of the Babylonian Captivity”, against which it sets the Pontifical Biblical Commission’s decision of 28 June 1908. The separate critical horizon comes from the introduction to Isaiah in the New American Bible Revised Edition (NABRE), which generally attributes chapters 40–55 to an anonymous poet prophesying toward the end of the Babylonian exile. That is a horizon for the prophecy, not a date for the writing or final assembly of the book. The exile is the prophetic horizon, not proof of an exact place of writing.
+
+| **Textual unit** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
 | Gospel | Mt 20:1–16a | Spoken to the disciples on the way to Jerusalem, after Peter’s question (19:27) and before the third prediction of the Passion (20:17–19) | **Event** – Narrated event date unresolved. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Comparison (catholic-critical-v1) – Composition** – composition-only: The Greek Gospel of Matthew in the NABRE introduction, Post-A.D. 70 date. |
-| *Narrated event: a parable of Jesus, told within the journey that ends at Jerusalem (20:17–18).* |  |  |  |
-| Traditional attribution: St Matthew the Apostle. The Date column keeps as disputed alternatives the figures the *Catholic Encyclopedia* reports (1911, 1912): its article on the Gospel opens its discussion of the date with the words “Ancient ecclesiastical writers are at variance” and says that in its own day “opinion is rather divided”. The alternatives are not of equal standing in their own sources: about A.D. 38–45 reckons from the Ascension; about A.D. 40–42 rests on a tradition of the apostles’ dispersal that the article itself calls “admittedly not too reliable”; A.D. 40–45 is the article’s report of Catholic opinion in its own day; about A.D. 60–68 is conditional on a later definitive departure of the apostles; about A.D. 64–67 rests on a text of Irenaeus whose difficulties of interpretation, the article says, prevent any positive conclusion; and the single year printed last is said in the article on the New Testament of the original text of Matthew, which its author holds to have been Aramaic, the Greek rendering being left undated. The principal modern critical account in the NABRE introduction gives a “post-A.D. 70 date”, “probably at least a decade later”, without an upper bound. Its account is probabilistic. Jacquier’s “Destination of the Gospel” reports publication in Judea for converted Jews; NABRE describes an unknown author and proposes Antioch in Syria as a plausible location for Jewish and Gentile Christians. The writing place is distinct from the parable’s scene. |  |  |  |
+
+*Narrated event: a parable of Jesus, told within the journey that ends at Jerusalem (20:17–18).*
+
+Traditional attribution: St Matthew the Apostle. The Date column keeps as disputed alternatives the figures the *Catholic Encyclopedia* reports (1911, 1912): its article on the Gospel opens its discussion of the date with the words “Ancient ecclesiastical writers are at variance” and says that in its own day “opinion is rather divided”. The alternatives are not of equal standing in their own sources: about A.D. 38–45 reckons from the Ascension; about A.D. 40–42 rests on a tradition of the apostles’ dispersal that the article itself calls “admittedly not too reliable”; A.D. 40–45 is the article’s report of Catholic opinion in its own day; about A.D. 60–68 is conditional on a later definitive departure of the apostles; about A.D. 64–67 rests on a text of Irenaeus whose difficulties of interpretation, the article says, prevent any positive conclusion; and the single year printed last is said in the article on the New Testament of the original text of Matthew, which its author holds to have been Aramaic, the Greek rendering being left undated. The principal modern critical account in the NABRE introduction gives a “post-A.D. 70 date”, “probably at least a decade later”, without an upper bound. Its account is probabilistic. Jacquier’s “Destination of the Gospel” reports publication in Judea for converted Jews; NABRE describes an unknown author and proposes Antioch in Syria as a plausible location for Jewish and Gentile Christians. The writing place is distinct from the parable’s scene.
+
+| **Textual unit** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
 | Communion Antiphon, second option | Jn 10:14 | Spoken to the Pharisees after the healing of the man born blind (9:40–10:6) | **Composition** – disputed: c. A.D. 90–100; A.D. 96–100. |
-| *Narrated event: the discourse of the good shepherd.* |  |  |  |
-| Traditional attribution: St John the Apostle. The *Catholic Encyclopedia* gives the first range shown for “the Johannine writings” (1912) and the second as “the general opinion” for the Gospel, after conceding that “we possess no certain historical information” (1910). In “Circumstances of the composition”, Fonck reports Ephesus as the writing place and Christians of Asia Minor as the first readers, not as the discourse’s setting. The Missal adapts the verse by adding *dicit Dominus* and the noun *oves*. |  |  |  |
+
+*Narrated event: the discourse of the good shepherd.*
+
+Traditional attribution: St John the Apostle. The *Catholic Encyclopedia* gives the first range shown for “the Johannine writings” (1912) and the second as “the general opinion” for the Gospel, after conceding that “we possess no certain historical information” (1910). In “Circumstances of the composition”, Fonck reports Ephesus as the writing place and Christians of Asia Minor as the first readers, not as the discourse’s setting. The Missal adapts the verse by adding *dicit Dominus* and the noun *oves*.
+
+| **Textual unit** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
 | Alleluia verse (its basis) | cf. Acts 16:14b, an adaptation | Event: Philippi, “the chief city of part of Macedonia, a colony” (16:12), by the riverside on the sabbath (16:13) | **Event** – disputed: A.D. 50–53; c. A.D. 51–54. **Composition**: c. A.D. 64. |
-| *Narrated event: the conversion of Lydia during St Paul’s second missionary journey (Acts 15:36–18:22).* |  |  |  |
-| Traditional attribution: St Luke. The two event ranges are those the *Catholic Encyclopedia* gives for the second journey in its articles on St Paul (1911) and on biblical chronology (1908); the former places Philippi in that journey without naming Lydia. The composition date is the one its article on Acts (1907) calls most probable for the completion of the book during Paul’s Roman captivity, a different setting from Philippi. Acts addresses Theophilus (1:1) without locating him. The liturgical verse is a petition formed on Luke’s narrative sentence and is not itself a verse of Scripture. |  |  |  |
+
+*Narrated event: the conversion of Lydia during St Paul’s second missionary journey (Acts 15:36–18:22).*
+
+Traditional attribution: St Luke. The two event ranges are those the *Catholic Encyclopedia* gives for the second journey in its articles on St Paul (1911) and on biblical chronology (1908); the former places Philippi in that journey without naming Lydia. The composition date is the one its article on Acts (1907) calls most probable for the completion of the book during Paul’s Roman captivity, a different setting from Philippi. Acts addresses Theophilus (1:1) without locating him. The liturgical verse is a petition formed on Luke’s narrative sentence and is not itself a verse of Scripture.
+
+| **Textual unit** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
 | Second Reading | Phil 1:20c–24, 27a | Paul in bonds (1:7, 13), at Rome in the received account; to “all the saints in Christ Jesus who are at Philippi” (1:1) | **Composition** – disputed: A.D. 61; A.D. 62–64. |
-| Traditional attribution: St Paul, writing from captivity. The first figure is the year the *Catholic Encyclopedia*’s chronology of St Paul gives the captivity letters, within the Roman captivity (1911); the second is the range its article on the letter gives for Paul “at Rome” (1911), where it adds that critics disagree whether the letter falls early or late in the Roman sojourn and that its author holds for late. |  |  |  |
+
+Traditional attribution: St Paul, writing from captivity. The first figure is the year the *Catholic Encyclopedia*’s chronology of St Paul gives the captivity letters, within the Roman captivity (1911); the second is the range its article on the letter gives for Paul “at Rome” (1911), where it adds that critics disagree whether the letter falls early or late in the Roman sojourn and that its author holds for late.
 
 ## Appendix: Liturgical Resolution {#sec:liturgical-resolution}
 

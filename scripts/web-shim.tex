@@ -80,6 +80,13 @@
 \newcommand{\pcweektitle}[3]{\textbf{#1}\par\textit{#2}\par #3\par}
 \newcommand{\pcresolutionappendix}{\section*{Appendix: Liturgical Resolution}}
 \newcommand{\recitationday}[2]{\section{Day #1: #2}}
+% The proper title block of src/common/propers-format.tex sets each optional
+% field only when \if\relax\detokenize{#n}\relax finds it non-empty.  Pandoc
+% cannot expand that test, so it silently dropped the second and third lines
+% of every proper title.  Each field is its own paragraph here, in print
+% order; an empty one is an empty paragraph, which pandoc writes as nothing,
+% exactly as the print test omits it.  Type size is print furniture.
+\newcommand{\propertitle}[4]{{\bfseries #1\par}{#2\par}{#3\par}{#4\par}}
 \newcommand{\recitationcompaniontitle}[4]{%
   \textbf{#1}\par\textit{#2}\par Daily Prayer Book\par
   Condensed recitation companion to \textit{#3}. The full guide governs the

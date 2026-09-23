@@ -193,6 +193,18 @@ REGISTER_ASSIGNMENT_RE = re.compile(r"\\Urlmuskip\s*=[^\\\n]*(?:\\relax)?")
 LIST_OPTION_RE = re.compile(
     r"(\\begin\s*\{(?:itemize|enumerate|description)\})\s*\[[^\[\]]*\]"
 )
+# The shared proper format sets each dossier note as one \multicolumn row across
+# the whole table: \dossierprose, and \dossierevent in italic. Each is lifted out
+# beneath its row and the table resumes under its own header; the decision and
+# its scope are recorded with the \multicolumn handling in guidance/web-editions.md.
+DOSSIER_TABLE_RE = re.compile(
+    r"\\begin\{((?:concise)?dossiertable)\}(.*?)\\end\{\1\}", re.DOTALL
+)
+DOSSIER_NOTE_FORMS = (("dossierprose", "{}"), ("dossierevent", r"\textit{{{}}}"))
+EMPTY_DOSSIER_RE = re.compile(
+    r"\\begin\{((?:concise)?dossiertable)\}(?:\s|\\(?:top|mid|bottom)rule\b)*"
+    r"\\end\{\1\}"
+)
 # Pandoc can leave fenced-div syntax inside a block quote.  The site's
 # Python-Markdown renderer does not enable fenced divs, so either form would
 # become reader-visible punctuation.
@@ -686,6 +698,68 @@ def bracketed_shortfalls(
     return failures
 
 
+# A title macro sets each argument as a line of its own, in argument order.
+# Pandoc could not expand the empty-field tests in \propertitle and dropped its
+# second and third lines from every proper title block, while the words of both
+# still stood in the opening prose, so no search of the whole edition could see
+# the loss. Each call's non-empty fields must arrive as that many consecutive
+# output blocks, in the same order.
+TITLE_MACROS = {"propertitle": 4, "weektitle": 3, "pcweektitle": 3}
+TITLE_TOKEN_RE = re.compile(r"[^\W_]+")
+
+
+def title_tokens(text: str) -> tuple[str, ...]:
+    """The casefolded words and numbers of one title line."""
+    return tuple(token.casefold() for token in TITLE_TOKEN_RE.findall(text))
+
+
+def title_shortfalls(body: str, markdown: str) -> list[str]:
+    """Name every title block whose declared lines the output does not set."""
+    failures: list[str] = []
+    expected: Counter[tuple[tuple[str, ...], ...]] = Counter()
+    shown: dict[tuple[tuple[str, ...], ...], tuple[str, list[str]]] = {}
+    for name, count in sorted(TITLE_MACROS.items()):
+        for match in re.finditer(re.escape("\\" + name) + r"(?![A-Za-z@])", body):
+            if DEFINITION_HEAD_RE.search(body, max(0, match.start() - 40), match.start()):
+                continue
+            cursor, fields = match.end(), []
+            try:
+                for _ in range(count):
+                    field, cursor = brace_group(body, cursor)
+                    fields.append(field)
+            except ConversionError:
+                failures.append(f"cannot read the fields of a \\{name} call")
+                continue
+            declared = [
+                (re.sub(r"\s+", " ", field).strip(), tokens)
+                for field in fields
+                if (tokens := title_tokens(CONTROL_WORD_RE.sub(
+                    " ", COMMENT_RE.sub("", field).replace("\\\\", " "))))
+            ]
+            lines = tuple(tokens for _, tokens in declared)
+            if lines:
+                expected[lines] += 1
+                shown.setdefault(lines, (name, [text for text, _ in declared]))
+    text = MARKDOWN_TARGET_RE.sub("]", MARKDOWN_TAG_RE.sub(" ", markdown))
+    blocks = [
+        tokens for tokens in map(title_tokens, BLOCK_SPLIT_RE.split(text)) if tokens
+    ]
+    for lines, wanted in expected.items():
+        found = sum(
+            tuple(blocks[start : start + len(lines)]) == lines
+            for start in range(len(blocks) - len(lines) + 1)
+        )
+        if found < wanted:
+            name, texts = shown[lines]
+            absent = [text for text, tokens in zip(texts, lines) if tokens not in blocks]
+            failures.append(
+                f"\\{name} title block not set as its {len(lines)} declared "
+                f"line(s) in order (expected {wanted}, found {found})"
+                + (": line(s) absent: " + "; ".join(absent) if absent else "")
+            )
+    return failures
+
+
 def deduplicate_contributions(body: str) -> str:
     """Keep contribution declarations inert in the reader-facing web edition."""
     out, index, previous = [], 0, None
@@ -704,6 +778,24 @@ def deduplicate_contributions(body: str) -> str:
         index = cursor
     out.append(body[index:])
     return "".join(out)
+
+
+def lift_dossier_notes(body: str) -> str:
+    """Set each spanned dossier note beneath its row; the table resumes after it."""
+    def split(match: re.Match[str]) -> str:
+        name, rows = match.groups()
+        for macro, form in DOSSIER_NOTE_FORMS:
+            rows = replace_grouped_macro(
+                rows, macro, 1,
+                lambda arguments, form=form: (
+                    f"\n\\end{{{name}}}\n\n{form.format(arguments[0].strip())}"
+                    f"\n\n\\begin{{{name}}}\n"
+                ),
+            )
+        # A segment left with no row of its own, between two notes or after
+        # the last, would be a header over nothing.
+        return EMPTY_DOSSIER_RE.sub("", f"\\begin{{{name}}}{rows}\\end{{{name}}}")
+    return DOSSIER_TABLE_RE.sub(split, body)
 
 
 def strip_layout_macros(body: str) -> str:
@@ -986,6 +1078,7 @@ def audit_output(
 ) -> list[str]:
     """Compare critical macro payloads in the LaTeX body against the Markdown."""
     failures = bracketed_shortfalls(body, markdown, bracketed or {})
+    failures.extend(title_shortfalls(body, markdown))
     # A table pandoc could not write as a pipe table becomes an HTML table; a
     # table it dropped becomes neither.  A repeated-header longtable may split
     # into several tables, so only a shortfall is a loss.
@@ -1173,6 +1266,9 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     body = ALIGNMENT_FIXUP_RE.sub("", body)
     body = strip_layout_macros(body)
     body = LIST_OPTION_RE.sub(r"\1", body)
+    # The dossier names are the shared format's; a leaf's own dossier is not lifted.
+    if semantic_graph is not None:
+        body = lift_dossier_notes(body)
     body = deduplicate_contributions(body)
     if r"\TriptychRightsNotice" not in body:
         body += "\n\\TriptychRightsNotice\n"

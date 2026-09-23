@@ -92,24 +92,37 @@ option list takes every `\item` label with it; a comment between a
 edition conditional written inline, `\ifdefined\TriptychSynthesisEdition
 … \else … \fi{}`, was spliced with the newlines that surrounded it and
 so cut its sentence in two at a paragraph break, which the paragraph
-audit now catches by its shape; and a macro whose text opens with a
+audit now catches by its shape; a macro whose text opens with a
 bracket, `\notread{…}` setting the unappointed half of a verse, was read by
 pandoc as the optional argument of the `\nopagebreak` ending the quotation
 environment before it and deleted with it, so every such macro now reaches
 pandoc behind an empty group and the audit requires each call's words in
-the output. When you meet a new one, add the audit
+the output; and pandoc cannot expand the `\if\relax\detokenize{#n}\relax`
+test with which `\propertitle` omits an empty field, so every proper title
+block lost its second and third lines while their words still stood in the
+opening prose. The shim now sets each field as a line of its own, and the
+audit requires the non-empty fields of every title macro as consecutive
+blocks in source order. When you meet a new one, add the audit
 that catches it, not just the fix. A macro the shim does not define and
 the audit does not know stops the conversion by design — extend the shim
 rather than dropping the leaf.
 
 Two handlings are deliberate rather than repaired, and a reviewer meets
 the decision here rather than the bare defect. A `\multicolumn` span
-keeps its contents but not its span: Markdown has no cell span, so a
-full-width note is written into the row's first cell and the row is
-padded with empty cells to the table's width. The note is therefore
-readable but stands under a column header that does not govern it, and
-the alternative — lifting it out as a paragraph beside the table — would
-separate it from the row it annotates. And a `<` inside quoted matter is
+keeps its contents but not its span, because neither Markdown nor the
+site's renderer has a cell span. In the dossier of the shared proper
+format — `\dossierprose` and `\dossierevent` in a `dossiertable`, in a
+leaf declaring `format_contract = "propers-format-v1"` — each note is set
+as a paragraph directly beneath the row it annotates, and the table
+resumes after it under its own header row, as a longtable repeats its
+header on each page. The maintainer decided this on 2026-09-23: written
+into the first cell of a padded row, those notes stood in the table's
+narrowest column, and the Eighteenth Sunday's dossier ran about 8,900 px
+tall at 1280 px wide, against about 3,900 px lifted out. Everywhere else,
+including a leaf that defines its own dossier, a full-width note is still
+written into the row's first cell and the row is padded with empty cells
+to the table's width, readable but under a column header that does not
+govern it. And a `<` inside quoted matter is
 written `\<`, which the site's Python-Markdown does not consume, so the
 backslash reaches the reader; the escape set the converter emits is
 pandoc's, and narrowing it to the site's is a change to every tracked

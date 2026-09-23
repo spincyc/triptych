@@ -4,6 +4,10 @@
 
 **The Seventeenth Sunday after Pentecost**
 
+Dominica decima septima post Pentecosten
+
+Missale Romanum 1962 · Proper of Time
+
 The whole heart, the one Lord, and the plea for mercy:<br>
 a study of the proper in three readings
 
@@ -486,20 +490,46 @@ Each passage the Mass reads or sings from Scripture, once, in canonical order; b
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
 | Gradual | Ps 32:6, 12 (Heb. 33) | No place named | **Composition**: Before c. 165 B.C. |
-| Titled *Psalmus David*, “A psalm for David” (v. 1): an attribution by title, with no traditional era held for this psalm in the chronology record. A hymn of the just to God’s creating word (vv. 1–9) and to the nation he chose (v. 12). The date is the modern critical boundary for the whole Psalter, within which no single psalm can be dated securely. |  |  |  |
+
+Titled *Psalmus David*, “A psalm for David” (v. 1): an attribution by title, with no traditional era held for this psalm in the chronology record. A hymn of the just to God’s creating word (vv. 1–9) and to the nation he chose (v. 12). The date is the modern critical boundary for the whole Psalter, within which no single psalm can be dated securely.
+
+| **Proper** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
 | Communion | Ps 75:12–13 (Heb. 76) | Judea and Sion named as God’s dwelling (vv. 2–3) | **Composition**: Before c. 165 B.C. |
-| Titled “a psalm for Asaph: a canticle to the Assyrians” (v. 1), with no date or era attached. God broke the weapons of war in Sion and rose to judgment “to save all the meek of the earth” (vv. 4, 10). The date is the Psalter’s critical boundary only. |  |  |  |
+
+Titled “a psalm for Asaph: a canticle to the Assyrians” (v. 1), with no date or era attached. God broke the weapons of war in Sion and rose to judgment “to save all the meek of the earth” (vv. 4, 10). The date is the Psalter’s critical boundary only.
+
+| **Proper** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
 | Alleluia | Ps 101:2 (Heb. 102) | Sion named in the psalm’s turn to hope (vv. 14, 17) | **Composition**: Before c. 165 B.C. |
-| Titled “The prayer of the poor man, when he was anxious” (v. 1); no author named, no traditional date held. The fifth penitential psalm, moving from lament to the rebuilding of Sion. The date is the Psalter’s critical boundary only. |  |  |  |
+
+Titled “The prayer of the poor man, when he was anxious” (v. 1); no author named, no traditional date held. The fifth penitential psalm, moving from lament to the rebuilding of Sion. The date is the Psalter’s critical boundary only.
+
+| **Proper** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
 | Introit | Ps 118:1, 124, 137 (Heb. 119) | No place named | **Composition**: Before c. 165 B.C. |
-| An alphabetical psalm in praise of God’s law, with no title beyond *Alleluia*; no author named, no traditional date held. The date is the Psalter’s critical boundary only. |  |  |  |
+
+An alphabetical psalm in praise of God’s law, with no title beyond *Alleluia*; no author named, no traditional date held. The date is the Psalter’s critical boundary only.
+
+| **Proper** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
 | Offertory | Dan 9:17–19, compiled | Daniel at the court of Babylon; for the Jews of his own time and after. Event: the kingdom of the Chaldeans, first year of Darius the Mede (9:1); prayer for the desolate sanctuary of Jerusalem (9:17) | **Historical setting**: Duration: all these nations shall serve the king of Babylon seventy years. **Composition**: B.C. 570–536. |
-| Traditional attribution: Daniel the prophet, in the Exile, telling his own prayer (“I, Daniel”, 9:2) when he understood from Jeremias that the seventy years of desolation were ending. The 1908 *Catholic Encyclopedia* article that holds the traditional date sets against it a more recent critical theory, widely accepted by scholars of its time, that an unknown later author composed the book; no date is given for that position here. The same article’s grounds for the traditional position give the place and the hearers: only “a resident in Babylon” could have written the book’s details, and Daniel, “owing to his position at the court of Babylon”, wrote “for the comfort of the Jews of his time and of subsequent ages”. For the later author it supposes, the article names no place of writing at all. |  |  |  |
+
+Traditional attribution: Daniel the prophet, in the Exile, telling his own prayer (“I, Daniel”, 9:2) when he understood from Jeremias that the seventy years of desolation were ending. The 1908 *Catholic Encyclopedia* article that holds the traditional date sets against it a more recent critical theory, widely accepted by scholars of its time, that an unknown later author composed the book; no date is given for that position here. The same article’s grounds for the traditional position give the place and the hearers: only “a resident in Babylon” could have written the book’s details, and Daniel, “owing to his position at the court of Babylon”, wrote “for the comfort of the Jews of his time and of subsequent ages”. For the later author it supposes, the article names no place of writing at all.
+
+| **Proper** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
 | Gospel | Mt 22:34–46 | Matthew in Judea, before he left Jerusalem; to the Jews who had believed. Event: the Temple, Jerusalem (21:23) | **Event** – Narrated event date unresolved. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Comparison (catholic-critical-v1) – Composition** – composition-only: The Greek Gospel of Matthew in the NABRE introduction, Post-A.D. 70 date. |
-| *Narrated event: the last of Christ’s controversies in the Temple (21:23–22:46), before the Passion is foretold “after two days” (26:1–2).* |  |  |  |
-| Traditional attribution: St Matthew the Apostle, whom the Missal’s heading names (*secundum Matthaeum*); the Date column keeps the traditional ranges of the *Catholic Encyclopedia* (1911, 1912) as disputed alternatives, not equally established estimates. Jacquier’s c. A.D. 38–45 counts eight or fifteen years after the Ascension with early writers; c. A.D. 40–42 follows an apostolic dispersal tradition he calls “admittedly not too reliable”; A.D. 40–45 reports the Catholic critics of his own day. His c. A.D. 60–68 depends on a later proposed apostolic departure; his c. A.D. 64–67 rests on Irenaeus’s statement about Peter and Paul at Rome, whose difficulties of interpretation prevent a positive conclusion. Durand’s c. A.D. 50 concerns the Aramaic original alone; he leaves the Greek rendering undated. Outside its date section Jacquier’s article gives the first hearers and the place of writing: the ecclesiastical writers “agree in declaring that St. Matthew wrote his Gospel for the Jews”; Origen holds that it was “published for Jews converted to the Faith”; Jerome, summarizing tradition, that Matthew “published his Gospel in Judea and in the Hebrew language, principally for those among the Jews who believed in Jesus”; the article has him write “before his departure from Jerusalem”. One qualification it quotes without adopting: Zahn thinks the book meant rather for Jews not yet Christians. The NABRE introduction’s critical account concerns the Greek Gospel: after A.D. 70, probably at least a decade later, with the overall account presented as probable. It describes an anonymous evangelist using Mark and other traditions, and Jewish and Gentile Christian readers. Antioch in Roman Syria is a plausible suggestion, not an established writing-place. The Temple above locates the controversy the Gospel narrates, not the writing of the Gospel; the corpus gives that encounter no date. |  |  |  |
+
+*Narrated event: the last of Christ’s controversies in the Temple (21:23–22:46), before the Passion is foretold “after two days” (26:1–2).*
+
+Traditional attribution: St Matthew the Apostle, whom the Missal’s heading names (*secundum Matthaeum*); the Date column keeps the traditional ranges of the *Catholic Encyclopedia* (1911, 1912) as disputed alternatives, not equally established estimates. Jacquier’s c. A.D. 38–45 counts eight or fifteen years after the Ascension with early writers; c. A.D. 40–42 follows an apostolic dispersal tradition he calls “admittedly not too reliable”; A.D. 40–45 reports the Catholic critics of his own day. His c. A.D. 60–68 depends on a later proposed apostolic departure; his c. A.D. 64–67 rests on Irenaeus’s statement about Peter and Paul at Rome, whose difficulties of interpretation prevent a positive conclusion. Durand’s c. A.D. 50 concerns the Aramaic original alone; he leaves the Greek rendering undated. Outside its date section Jacquier’s article gives the first hearers and the place of writing: the ecclesiastical writers “agree in declaring that St. Matthew wrote his Gospel for the Jews”; Origen holds that it was “published for Jews converted to the Faith”; Jerome, summarizing tradition, that Matthew “published his Gospel in Judea and in the Hebrew language, principally for those among the Jews who believed in Jesus”; the article has him write “before his departure from Jerusalem”. One qualification it quotes without adopting: Zahn thinks the book meant rather for Jews not yet Christians. The NABRE introduction’s critical account concerns the Greek Gospel: after A.D. 70, probably at least a decade later, with the overall account presented as probable. It describes an anonymous evangelist using Mark and other traditions, and Jewish and Gentile Christian readers. Antioch in Roman Syria is a plausible suggestion, not an established writing-place. The Temple above locates the controversy the Gospel narrates, not the writing of the Gospel; the corpus gives that encounter no date.
+
+| **Proper** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
 | Epistle | Eph 4:1–6 | Paul, “a prisoner in the Lord” (4:1), at Rome or Caesarea; to the saints at Ephesus (1:1) | **Composition** – disputed: A.D. 58–63; A.D. 61. |
-| Traditional attribution: St Paul, in a letter of his captivity; the *Catholic Encyclopedia* dates the captivity letters within the range shown, leaving Rome or Caesarea open (1909), and its chronology of St Paul gives Ephesians the single year shown (1911). The first hearers are the church at Ephesus, gentiles once “afar off” and now “made nigh” (2:11–18). Most liberal critics since Schleiermacher have denied the letter to Paul (so the 1909 article); no date is given for that position here. That article also holds the words “at Ephesus” in 1:1 to be no part of the primitive text, and reads the letter as a circular to churches Paul had not visited, probably in Asia Minor; the address above is the received biblical text, not a settled identification of the first recipients. |  |  |  |
+
+Traditional attribution: St Paul, in a letter of his captivity; the *Catholic Encyclopedia* dates the captivity letters within the range shown, leaving Rome or Caesarea open (1909), and its chronology of St Paul gives Ephesians the single year shown (1911). The first hearers are the church at Ephesus, gentiles once “afar off” and now “made nigh” (2:11–18). Most liberal critics since Schleiermacher have denied the letter to Paul (so the 1909 article); no date is given for that position here. That article also holds the words “at Ephesus” in 1:1 to be no part of the primitive text, and reads the letter as a circular to churches Paul had not visited, probably in Asia Minor; the address above is the received biblical text, not a settled identification of the first recipients.
 
 ## Appendix: Scope and Qualifications {#sec:scope}
 

@@ -4,6 +4,10 @@
 
 **Twenty-fifth Sunday in Ordinary Time, Year A**
 
+The Gift We Share
+
+Roman Missal, Third Edition · United States, 2011
+
 20 September 2026
 
 The first workers have received everything promised to them. What wounds them is the sight of someone else receiving it too. Their complaint brings a difficult question into the center of this Sunday: can we rejoice in a goodness that refuses to become our private advantage? The landowner’s generosity exposes the difference between loving a gift and loving the superiority we think it gives us.
@@ -388,24 +392,56 @@ Each passage the Mass reads or sings from Scripture, once, in canonical order; b
 | **Textual unit** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
 | Entrance (its basis) | Ps 37 (36):39–40 | No place named in the verses | **Composition**: Before c. 165 B.C. |
-| The composed antiphon *Salus populi ego sum* is treated through its identified biblical basis, Psalm 37:39–40, rather than as a verbatim extract or a historical event. These verses specify no author, place or occasion. No traditional date is held for them. The NABRE Psalms introduction supplies the common pre-Maccabean composition bound, not a precise date for this psalm or the Psalter’s assembly. |  |  |  |
+
+The composed antiphon *Salus populi ego sum* is treated through its identified biblical basis, Psalm 37:39–40, rather than as a verbatim extract or a historical event. These verses specify no author, place or occasion. No traditional date is held for them. The NABRE Psalms introduction supplies the common pre-Maccabean composition bound, not a precise date for this psalm or the Psalter’s assembly.
+
+| **Textual unit** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
 | Communion, Psalm option | Ps 119 (118):4–5 | No place named in the verses | **Composition**: Before c. 165 B.C. |
-| The opening petition of the great alphabetical psalm of the law: a command received, followed by the wish that one’s ways be directed to keep it. No author is named and no traditional date is held; the date shown is the Psalter’s common critical composition bound (NABRE, Psalms introduction). This is one of the Missal’s two alternative Communion texts for the day. |  |  |  |
+
+The opening petition of the great alphabetical psalm of the law: a command received, followed by the wish that one’s ways be directed to keep it. No author is named and no traditional date is held; the date shown is the Psalter’s common critical composition bound (NABRE, Psalms introduction). This is one of the Missal’s two alternative Communion texts for the day.
+
+| **Textual unit** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
 | Responsorial Psalm | Ps 145 (144):2–3, 8–9, 17–18; response v. 18a | No place named | **Composition**: Before c. 165 B.C. |
-| An alphabetical hymn to “God my king”, headed in the Douay–Rheims “Praise, for David himself” (v. 1): an attribution by title, with no traditional date attached. The response is taken from v. 18a. The date shown is the common composition bound in the NABRE Psalms introduction, which does not securely date an individual psalm. Neither the title nor these verses locates the writing. |  |  |  |
+
+An alphabetical hymn to “God my king”, headed in the Douay–Rheims “Praise, for David himself” (v. 1): an attribution by title, with no traditional date attached. The response is taken from v. 18a. The date shown is the common composition bound in the NABRE Psalms introduction, which does not securely date an individual psalm. Neither the title nor these verses locates the writing.
+
+| **Textual unit** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
 | First Reading | Isa 55:6–9 | Traditional ministry: Juda and Jerusalem (1:1); critical horizon: Babylonian exile; writing place unestablished | **Traditional attribution**: Isaias (ministry in Souvay’s traditional account), B.C. 740–701. **Prophecy given**: Toward the end of the Babylonian exile. |
-| The two printed relations answer different questions and are not to be merged. The first is the inherited attribution of the book to the prophet Isaias: the range shown, 740–701 B.C., bounds his ministry in the *Catholic Encyclopedia*’s traditional account (Souvay, 1910, “Life”), from the closing year of Ozias to the apparent latest prophecy, not his death. It does not date this chapter’s writing; Souvay’s tentative collection hypothesis concerns chapters 1–35. The second is the critical horizon of the prophetic activity: the official NABRE introduction generally attributes chapters 40–55 to an anonymous poet prophesying toward the end of the Babylonian exile. The prophecy addresses restoration from exile (Souvay, “Second Isaias”); that horizon is not a date for the writing or final assembly of the book, nor proof of a particular writing site. |  |  |  |
+
+The two printed relations answer different questions and are not to be merged. The first is the inherited attribution of the book to the prophet Isaias: the range shown, 740–701 B.C., bounds his ministry in the *Catholic Encyclopedia*’s traditional account (Souvay, 1910, “Life”), from the closing year of Ozias to the apparent latest prophecy, not his death. It does not date this chapter’s writing; Souvay’s tentative collection hypothesis concerns chapters 1–35. The second is the critical horizon of the prophetic activity: the official NABRE introduction generally attributes chapters 40–55 to an anonymous poet prophesying toward the end of the Babylonian exile. The prophecy addresses restoration from exile (Souvay, “Second Isaias”); that horizon is not a date for the writing or final assembly of the book, nor proof of a particular writing site.
+
+| **Textual unit** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
 | Gospel | Mt 20:1–16a | Spoken to the disciples on the journey toward Jerusalem, after Peter’s question (19:27) | **Event** – Narrated event date unresolved. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Comparison (catholic-critical-v1) – Composition** – composition-only: The Greek Gospel of Matthew in the NABRE introduction, Post-A.D. 70 date. |
-| *Narrated event: a parable of Jesus, told within the journey that ends at Jerusalem, before the third prediction of the Passion (20:17–19); the chronology corpus holds no date for the narrated event.* |  |  |  |
-| Traditional attribution: St Matthew the Apostle. The printed figures are the disputed alternatives the *Catholic Encyclopedia* reports, and they are not of equal standing. About A.D. 38–45 comes from early ecclesiastical writers counting from the Ascension. About A.D. 40–42 rests on a tradition of the Apostles’ dispersal, which the 1911 article itself calls “admittedly not too reliable”. A.D. 40–45 is the range reported by its survey of the Catholic critics of its day. About A.D. 60–68 is a conditional reckoning that fixes the Apostles’ definitive departure later. About A.D. 64–67 rests on a text of Irenaeus whose difficulties of interpretation the article says prevent any positive conclusion. About A.D. 50 is Durand’s date (1912) for the Aramaic original only; of the Greek rendering, he writes, we know nothing definite. The NABRE introduction states the modern critical horizon concisely: the “post-A.D. 70 date”, “probably at least a decade later”, within its probabilistic account; no closing year is given. Jacquier’s “Destination” reports a Jewish-Christian audience and publication in Judea; the NABRE instead regards the author as unknown and Antioch in Syria as a plausible composition site for a community with Jewish and Gentile Christians. Neither writing location is the setting of Jesus’ parable. |  |  |  |
+
+*Narrated event: a parable of Jesus, told within the journey that ends at Jerusalem, before the third prediction of the Passion (20:17–19); the chronology corpus holds no date for the narrated event.*
+
+Traditional attribution: St Matthew the Apostle. The printed figures are the disputed alternatives the *Catholic Encyclopedia* reports, and they are not of equal standing. About A.D. 38–45 comes from early ecclesiastical writers counting from the Ascension. About A.D. 40–42 rests on a tradition of the Apostles’ dispersal, which the 1911 article itself calls “admittedly not too reliable”. A.D. 40–45 is the range reported by its survey of the Catholic critics of its day. About A.D. 60–68 is a conditional reckoning that fixes the Apostles’ definitive departure later. About A.D. 64–67 rests on a text of Irenaeus whose difficulties of interpretation the article says prevent any positive conclusion. About A.D. 50 is Durand’s date (1912) for the Aramaic original only; of the Greek rendering, he writes, we know nothing definite. The NABRE introduction states the modern critical horizon concisely: the “post-A.D. 70 date”, “probably at least a decade later”, within its probabilistic account; no closing year is given. Jacquier’s “Destination” reports a Jewish-Christian audience and publication in Judea; the NABRE instead regards the author as unknown and Antioch in Syria as a plausible composition site for a community with Jewish and Gentile Christians. Neither writing location is the setting of Jesus’ parable.
+
+| **Textual unit** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
 | Communion, John option | Jn 10:14 | Spoken to the Pharisees after the healing of the man born blind (9:40–10:6) | **Composition** – disputed: c. A.D. 90–100; A.D. 96–100. |
-| *Narrated event: the discourse of the good shepherd; no event date is held.* |  |  |  |
-| Traditional attribution: St John the Apostle. The two printed ranges are the received disputed alternatives reported by the *Catholic Encyclopedia*: Durand’s approximate range for the Johannine writings (1912) and Fonck’s “general opinion”, preceded by his admission that certain historical dating is unavailable (1910, “Circumstances of the composition”). Fonck reports Ephesus as the writing place and Christians in Asia Minor as the first readers; those are not the scene of Jesus’ discourse. The Missal adapts the verse. Christ’s knowledge of his sheep belongs to a discourse of self-offering, and this option stands as an alternative to the Psalm text in the one Communion slot, not as a rite consecutive to it. |  |  |  |
+
+*Narrated event: the discourse of the good shepherd; no event date is held.*
+
+Traditional attribution: St John the Apostle. The two printed ranges are the received disputed alternatives reported by the *Catholic Encyclopedia*: Durand’s approximate range for the Johannine writings (1912) and Fonck’s “general opinion”, preceded by his admission that certain historical dating is unavailable (1910, “Circumstances of the composition”). Fonck reports Ephesus as the writing place and Christians in Asia Minor as the first readers; those are not the scene of Jesus’ discourse. The Missal adapts the verse. Christ’s knowledge of his sheep belongs to a discourse of self-offering, and this option stands as an alternative to the Psalm text in the one Communion slot, not as a rite consecutive to it.
+
+| **Textual unit** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
 | Acclamation (its basis) | cf. Acts 16:14b, an adaptation | Event: Philippi in Macedonia, by the riverside on the sabbath (16:12–13) | **Event** – disputed: A.D. 50–53; c. A.D. 51–54. **Composition**: c. A.D. 64. |
-| *Narrated event: the conversion of Lydia during St Paul’s second missionary journey (Acts 15:36–18:22).* |  |  |  |
-| Traditional attribution: St Luke. The two printed event ranges are disputed alternatives the *Catholic Encyclopedia* gives for the second missionary journey in its articles on St Paul (1911) and on biblical chronology (1908); the composition figure is the date its article on Acts (1907) calls the most probable for the completion of the book. The mission’s date and the book’s composition are distinct relations. Breen’s probable composition setting is Paul’s Roman captivity, not Lydia’s Philippi; Acts addresses Theophilus (1:1), whose location is not supplied there. The liturgical verse adapts Luke’s narrative sentence into a petition for receptive hearing; it is not itself a verse of Scripture. |  |  |  |
+
+*Narrated event: the conversion of Lydia during St Paul’s second missionary journey (Acts 15:36–18:22).*
+
+Traditional attribution: St Luke. The two printed event ranges are disputed alternatives the *Catholic Encyclopedia* gives for the second missionary journey in its articles on St Paul (1911) and on biblical chronology (1908); the composition figure is the date its article on Acts (1907) calls the most probable for the completion of the book. The mission’s date and the book’s composition are distinct relations. Breen’s probable composition setting is Paul’s Roman captivity, not Lydia’s Philippi; Acts addresses Theophilus (1:1), whose location is not supplied there. The liturgical verse adapts Luke’s narrative sentence into a petition for receptive hearing; it is not itself a verse of Scripture.
+
+| **Textual unit** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
 | Second Reading | Phil 1:20c–24, 27a | Paul in bonds (1:7, 13), at Rome in the received chronology; to “all the saints in Christ Jesus who are at Philippi” (1:1) | **Composition** – disputed: A.D. 61; A.D. 62–64. |
-| Traditional attribution: St Paul, writing from imprisonment. The printed figures are disputed alternatives within the Roman captivity: the first is the year the *Catholic Encyclopedia*’s chronology of St Paul assigns the captivity letters (1911); the second, the range its article on the letter gives for Paul “at Rome” (1911), where critics are said to disagree whether the letter falls early or late in the Roman sojourn. The apostle’s present imprisonment frames his alternatives of continued service and being with Christ; his hoped-for departure is not a dated narrated event. |  |  |  |
+
+Traditional attribution: St Paul, writing from imprisonment. The printed figures are disputed alternatives within the Roman captivity: the first is the year the *Catholic Encyclopedia*’s chronology of St Paul assigns the captivity letters (1911); the second, the range its article on the letter gives for Paul “at Rome” (1911), where critics are said to disagree whether the letter falls early or late in the Roman sojourn. The apostle’s present imprisonment frames his alternatives of continued service and being with Christ; his hoped-for departure is not a dated narrated event.
 
 ## Appendix: Scope and Qualifications
 
