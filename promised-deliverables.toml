@@ -196,6 +196,12 @@ state = "in_progress"
   evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md", "guidance/liturgy/propers-three-documents.md"]
 
   [[deliverables.requirements]]
+  id = "chrysologus-acquired"
+  criterion = "After the Claude 1962 Eighteenth Sunday run publishes, a lawful public-domain edition of Peter Chrysologus's sermons (Migne PL 52) is registered with its containment row, and Sermo 50 De paralytico curato is mapped at Matthew 9:1-8 in the commentary index, so a sweep of that Gospel surfaces him (maintainer decision, 2026-09-23)."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "src/sources/inventories/research-staleness-v1.toml"]
+
+  [[deliverables.requirements]]
   id = "workflow-version-after-publication"
   criterion = "After the Claude 1962 Eighteenth Sunday run publishes, the reviewer sentence, the standing pointers and the mandatory authority check reach a new proper-study version (proposal step 7; decisions D5 and D6)."
   status = "open"

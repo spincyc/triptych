@@ -169,6 +169,18 @@ evidence = [
   "evaluations/blocking-findings-v1.toml STU-005",
 ]
 
+
+[[revision_due]]
+provider = "claude"
+leaf = "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"
+recorded_on = "2026-09-23"
+decision = "maintainer, 2026-09-23, on research-review advisory RES-032 of run 71b6f89518984232"
+correction = "Once Peter Chrysologus is registered, weigh his Sermo 50 De paralytico curato, a Doctor preaching this Gospel as the day's reading and siding with the bearers on whose faith Christ saw, in the research and the readings."
+evidence = [
+  "evaluations/blocking-findings-v1.toml RES-032",
+  "research/scope.md Rabanus (Joan. Chrysost.) passage traced to Chrysologus",
+]
+
 [[editions]]
 provider = "claude"
 leaf = "articles/canon-law/clerical-celibacy-chastity-and-continence"

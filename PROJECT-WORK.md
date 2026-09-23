@@ -308,8 +308,9 @@ Rebinding is an operator approval and has not been done.
   day's reading in Sermo 50, *De paralytico curato*. The library registers no
   Chrysologus, and the passage-commentary index maps him only at Luke 22, so
   no sweep could reach him. Research-review iteration 6 raised this as
-  RES-032 and an observation. Registering him and mapping him at Matthew 9
-  are sourcing follow-ups;
+  RES-032 and an observation. The maintainer decided on 2026-09-23 to acquire
+  him (PL 52) and map Sermo 50 at Matthew 9 after publication; the leaf
+  carries a revision obligation to weigh him;
 - Theophylact has no row in `author-standing-v1.toml`. The maintainer decided
   on 2026-09-23 to class him as an ecclesiastical writer, not as outside
   Catholic communion; add the row with his post-1054 see recorded. Theodoret
