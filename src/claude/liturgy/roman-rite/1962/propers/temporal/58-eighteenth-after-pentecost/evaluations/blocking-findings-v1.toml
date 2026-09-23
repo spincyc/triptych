@@ -49,13 +49,13 @@ provider = "claude"
 run_id = "71b6f89518984232"
 workflow = "proper-study"
 workflow_version = 6
-stage = "visual-review"
+stage = "web-review"
 iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 3
-advisory_count = 15
-observation_count = 3
+advisory_count = 16
+observation_count = 4
 
 [[stages]]
 stage = "homily-review"
@@ -115,6 +115,18 @@ workflow_version = 6
 standing = 0
 accepted_count = 2
 advisory_count = 3
+observation_count = 1
+
+[[stages]]
+stage = "web-review"
+iteration = 0
+disposition = "PASS"
+run_id = "71b6f89518984232"
+workflow = "proper-study"
+workflow_version = 6
+standing = 0
+accepted_count = 0
+advisory_count = 1
 observation_count = 1
 
 [[accepted]]
@@ -264,6 +276,14 @@ location = "58-eighteenth-after-pentecost-homily.pdf, physical pages 1-2, moveme
 problem = "The five \\bigskip breaks between the speech's movements render at unequal heights. The first, in the left column of page 1, stretches to about 42 pt; the others measure about 22-27 pt. multicols balances its flush columns by stretching that glue, so the first division looks like a larger section break than the rest."
 required_result = "Give the homily's movement breaks a uniform visible height, for example with ragged columns in the homily environment or fixed, non-stretching break spacing, so that all movements are divided alike."
 
+[[advisories]]
+stage = "web-review"
+id = "WEB-001"
+severity = "advisory"
+location = "build/web/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.md lines 5-8 (title block), against main.tex \\propertitle fields 2 and 3 and PDF p. 1"
+problem = "The PDF's title block has four lines: 'The Eighteenth Sunday after Pentecost', 'Dominica decima octava post Pentecosten', 'Missale Romanum 1962 · Proper of Time', and the occasion line. The web edition has only the first and the fourth. The loss happens in conversion. \\propertitle (src/common/propers-format.tex) guards each optional field with \\if\\relax\\detokenize{#n}\\relax\\else ... \\fi. Pandoc 3.10.2's LaTeX reader mis-expands that guard and silently drops fields 2 and 3; running the macro alone through pandoc reproduces the loss. No audit in tools/web-edition requires the title fields' words to appear in the output, so the conversion exits cleanly. Both strings recur in the H1 and in the first sentence of the opening, so the reader loses no fact, but the omission is undeclared. The same loss is already present in installed propers-format-v1 editions, e.g. web/claude/.../57-seventeenth-after-pentecost.md and web/gpt/.../57-seventeenth-after-pentecost.md."
+required_result = "The converter renders every non-empty \\propertitle field in the web title block. It could resolve the macro's arguments before pandoc, as it already does for the chronology helpers, or use a shim definition without the \\detokenize guard. An output audit requires each non-empty title field's words, so the loss cannot recur silently. The affected installed editions are regenerated and re-reviewed through their own workflow."
+
 [[observations]]
 stage = "research-review"
 location = "src/sources/commentary/passage-commentary-index.yaml, the only Peter Chrysologus row (passage 'Luke 22', lines 30819-30824)"
@@ -278,6 +298,11 @@ note = "The header still undercounts the re-entries. Research iteration 7 revise
 stage = "visual-review"
 location = "src/common/propers-format.tex, dossiertable and concisedossiertable, against guidance/liturgy/roman-1962-propers.md, 'Page 2: Scriptural date and location'"
 note = "The shared dossier tables use columns of .12/.15/.29/.44 linewidth, and the concise one sets 8.2 pt type. The 1962 profile specifies 0.14/0.18/0.35/0.16 and \\footnotesize. In this document both sheets remain legible and complete, but the profile text and the shared style disagree on the measurements."
+
+[[observations]]
+stage = "web-review"
+location = "build/web/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.md lines 479-496 (Scriptural Date and Location table)"
+note = "The dossier's full-width event and explanatory rows follow the documented \\multicolumn handling in guidance/web-editions.md: the contents go in the first cell and the row is padded. In the site's layout, that squeezes the long dossier prose into the narrow Proper column, and the table renders about 8,700 px tall in a 1280 px viewport. The documented rationale mentions only that the note stands under a column header that does not govern it, and says nothing of this effect."
 
 [[escalations]]
 stage = "study-review"
