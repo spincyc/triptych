@@ -15,7 +15,8 @@ import tomllib
 from pathlib import Path
 
 from _proper_components import (include_graph, lane_source_paths, validate_liturgical_family,
-                                presentation_contract, format_contract, pagination_aux_files)
+                                presentation_contract, format_contract, authority_contract,
+                                pagination_aux_files)
 from _corpus import active_tex, REVISION_RE, CONTRIBUTION_RE, PRODUCTION_RE, INHERITANCE_RE
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -493,7 +494,7 @@ def publication(root: Path, provider: str, document: str) -> None:
 
 def check(root: Path, provider: str, document: str, phase: str,
           edition: str | None, *, require_presentation: bool = False,
-          require_format: bool = False) -> None:
+          require_format: bool = False, require_authority: bool = False) -> None:
     scope(root, provider, document)
     leaf = leaf_path(root, provider, document)
     if phase == "scope":
@@ -510,6 +511,9 @@ def check(root: Path, provider: str, document: str, phase: str,
         return
     presentation_contract(manifest(leaf), required=require_presentation)
     format_contract(manifest(leaf), required=require_format)
+    # Declaration only: the component checker below tests each lane's carrying
+    # authors wherever the manifest declares the contract.
+    authority_contract(manifest(leaf), required=require_authority)
     if phase == "content":
         components(root, provider, document, "content", edition)
     elif phase == "artifacts":
@@ -530,6 +534,8 @@ def main() -> int:
                         help="require the current physical pagination contract (proper-study v3)")
     parser.add_argument("--require-format", action="store_true",
                         help="require the shared proper typography contract (proper-study v6)")
+    parser.add_argument("--require-authority", action="store_true",
+                        help="require the author-standing contract (proper-study v7)")
     parser.add_argument("--date", default="undated")
     parser.add_argument("--review", choices=("research", "study", "synthesis", "homily", "visual", "web"))
     parser.add_argument("--review-contract", choices=(RESEARCH_REVIEW_CONTRACT,),
@@ -554,7 +560,8 @@ def main() -> int:
             raise ValueError("check requires --phase")
         else:
             check(root, args.provider, args.document, args.phase, args.edition,
-                  require_presentation=args.require_presentation, require_format=args.require_format)
+                  require_presentation=args.require_presentation, require_format=args.require_format,
+                  require_authority=args.require_authority)
     except (OSError, ValueError, KeyError, subprocess.TimeoutExpired) as error:
         print(f"proper-study: {error}", file=sys.stderr)
         return 1

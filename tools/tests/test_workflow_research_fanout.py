@@ -504,14 +504,14 @@ class TopologyTests(unittest.TestCase):
             "closed, so the pipeline may never go back below that bump")
         manual = (ROOT / "workflows" / "OPERATOR.md").read_text(
             encoding="utf-8")
-        # Both pipelines, and anchored on the first statement in the file:
+        # Every pipeline, and anchored on the first statement in the file:
         # the changelog below it repeats this sentence for every historical
         # version, so a current-version sentence that stops matching does not
         # fail here -- it silently starts reading an old entry. It did: a
         # rewording to "at version 23, and `proper-finish` at version 2."
         # dropped the period this pattern needs and the test read 12 out of
         # the version-12 changelog entry.
-        for workflow_id in ("proper", "proper-finish"):
+        for workflow_id in ("proper", "proper-finish", "proper-study"):
             declared = json.loads(
                 (ROOT / "workflows" / "pipelines"
                  / f"{workflow_id}.json").read_text(encoding="utf-8")

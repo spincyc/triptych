@@ -8,7 +8,8 @@ The moral sense cannot substitute for the literal or anagogical sense. The
 interpretations must explain checked witnesses' reasoning rather than collect
 names, isolated quotations, or generic spiritual themes. Each interpretation
 must develop substantive, compatible contributions from at least two distinct
-Fathers or saints; a second name without contributing reasoning does not count.
+Fathers or saints, as the three-document profile defines them; a second name
+without contributing reasoning does not count.
 
 Check substantial depth, meaningful treatment of every element, accurate
 attribution and usable citations, honest source roles, actual agreement and

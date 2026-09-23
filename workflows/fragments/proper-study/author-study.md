@@ -5,7 +5,8 @@ research. Author the complete source-first study: substantive opening and map,
 lawful study texts or locators, detailed explanation of each appointed element,
 two to five coherent whole-formulary interpretations, each with its own four
 senses, and a short concluding comparison. Develop the actual exegetical moves
-of multiple checked Fathers or saints within each interpretation. Reader-first
+of multiple checked Fathers or saints, as the three-document profile defines
+them, within each interpretation. Reader-first
 titles describe what the readings find, not their technical manifest keys.
 
 Use `research/interpretations.md` as the evidence map. Preserve material
@@ -22,8 +23,12 @@ study preflight requires only research-mode files to exist yet. Record two to
 five `[[lanes]]` with all appointed element keys, four senses, substantive
 authors, source-audit paths, and the relevant interpretive-lane component keys.
 Declare the profile's `interpretive-pagination-v1` presentation contract and
-the future concise opening roles. Follow the checker and owning profile for
-exact fields. Each interpretive lane
+the future concise opening roles. Declare
+`authority_contract = "authority-standing-v1"` and give each lane
+`carrying_authors`: the authors, drawn from its `authors` and named as
+`src/sources/inventories/author-standing-v1.toml` names them, whose standing
+lets them carry the reading. Follow the checker and owning profile for exact
+fields. Each interpretive lane
 is a separate component. Keep shared source ownership and references explicit.
 
 Import `common/preamble` then `common/propers-format` literally and declare

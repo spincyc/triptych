@@ -9,7 +9,9 @@ It produces the expansive study, concise `-synthesis` companion and standalone
 available for legacy schema-1 work. The current three-document contract
 restores the established first four pages for the concise companion, while
 its remaining argument and the expansive study follow their distinct roles. Read
-`guidance/liturgy/propers-three-documents.md` for the owning standard.
+`guidance/liturgy/propers-three-documents.md` for the owning standard. The
+`proper-study` workflow is at version 7. The version paragraphs below say what
+each bump changed.
 
 The driver grammar is unchanged:
 
@@ -126,6 +128,40 @@ same-owner research may be reused only after its new boundary is independently
 checked. The postconciliar chronology path consumes explicit verified
 appointments from its own edition tree and independently queries the neutral
 chronology corpus; it does not borrow the 1962 resolver or its dates.
+
+Version 6 (commit `79bf799fb`) made the shared typography contract mandatory
+through `--require-format` and was not recorded here when it landed.
+
+Version 7 lands the workflow half of the liturgical-commentator decisions of
+2026-09-22, recorded in `guidance/liturgy/liturgical-commentators-plan-2026-09-22.md`
+(D1, D2 and D5; proposal step 7). It waited for the Claude 1962 Eighteenth
+Sunday run, seeded under version 6, to publish. The research reviewer now
+confirms, for every liturgical commentator used, the element comparison, that
+his locus supports only elements his Mass shares with this formulary, and that
+his recorded standing permits the role he plays. The four fragments that state
+the two-author rule now say "Fathers or saints, as the three-document profile
+defines them", so every packet points to the profile's definition: the Blessed
+count beside a Father or canonized saint, and a Venerable or an ecclesiastical
+writer never counts. The authority contract that step 6 made opt-in is now
+mandatory. Each `scripts/_proper_study.py check` from `study-preflight` onward
+passes `--require-authority`, which refuses a manifest that does not declare
+`authority_contract = "authority-standing-v1"`, and the component checker then
+tests each lane's `carrying_authors` against
+`src/sources/inventories/author-standing-v1.toml`. `author-study` is told to
+declare the contract and each lane's carrying authors.
+
+The proposal put that flag on `research-preflight`. It sits at
+`study-preflight` instead, because `proper-components.toml` does not exist
+until `author-study` writes it. No earlier stage is told to write it, the
+research phase of `_proper_study.py check` never reads it, and the research
+seal does not cover it, so a research-phase requirement would refuse every new
+leaf. The research reviewer's standing check is the judgment before prose; the
+gate is the mechanical check at the first point the declaration can be read,
+and every later content, artifact and publication gate repeats it, as they
+repeat the presentation and format contracts. These changes move the workflow
+digest, so a version-6 run cannot advance under them: complete it, or seed a
+new run. Published leaves are not re-gated; `check-proper-components`
+validates their manifests under the contracts they declare.
 
 ## Overview
 

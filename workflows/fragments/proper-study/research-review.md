@@ -18,12 +18,15 @@ verified owner, never another family's calendar or a neighboring Sunday's data.
 Confirm that all controlling chronology evidence enters the research seal.
 
 Test every proposed interpretation as a complete argument, supported by
-substantive contributions from at least two distinct Fathers or saints. A
-name-count alone does not demonstrate agreement. Are its authors'
-controlling claims compatible? Does each appointed element actually contribute?
-Are its four senses distinct and textually grounded? Do the two to five
-readings differ materially without invented conflict? Are the Fathers' own
-claims kept distinct from the editor's complete-Mass synthesis? For a
+substantive contributions from at least two distinct Fathers or saints, as the
+three-document profile defines them. A name-count alone does not demonstrate
+agreement. Are its authors' controlling claims compatible? Does each appointed
+element actually contribute? Are its four senses distinct and textually
+grounded? Do the two to five readings differ materially without invented
+conflict? Are the Fathers' own claims kept distinct from the editor's
+complete-Mass synthesis? For every liturgical commentator used, confirm the
+element comparison, that his locus supports only elements his Mass shares with
+this formulary, and that his recorded standing permits the role he plays. For a
 postconciliar Ordinary Time target, does the evidence respect independent
 semi-continuous courses and shared Missal prayers? For a 1962 target, does every
 such claim instead rest on evidence from that rite's own appointments and

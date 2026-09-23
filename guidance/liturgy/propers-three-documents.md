@@ -509,6 +509,16 @@ existing source-audit paths, component keys, all four senses, and coverage of
 every appointed element. The checker verifies records and include reachability;
 it does not prove theological agreement or quality merely from declared keys.
 
+New `proper-study` runs, from version 7, also declare
+`authority_contract = "authority-standing-v1"`. Each lane then names in
+`carrying_authors` the members of its `authors` who carry the reading. The
+checker resolves them through `src/sources/inventories/author-standing-v1.toml`
+and requires two distinct persons whose standing lets them carry it, at least
+one a Father or a canonized saint, as
+[Liturgical commentators](#liturgical-commentators) defines them. It proves
+standing, not that both make a developed contribution; reviewers judge that.
+Manifests accepted without the declaration keep their original validation.
+
 Cold reviewers decide those semantic questions. Acceptance requires real
 source support, coherent and distinct interpretations, truthful comparisons,
 four senses for each interpretation, meaningful whole-formulary coverage,

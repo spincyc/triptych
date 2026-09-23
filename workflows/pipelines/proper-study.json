@@ -1,6 +1,6 @@
 {
   "id": "proper-study",
-  "version": 6,
+  "version": 7,
   "description": "Source-first proper study, concise study and standalone homily, with independent reviews",
   "default_effort": "high",
   "document_argument": "proper",
@@ -170,7 +170,7 @@
       "checks": [
         {
           "id": "component-contract",
-          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition research --require-presentation --require-format",
+          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition research --require-presentation --require-format --require-authority",
           "required_result": "The schema-2 component graph must faithfully describe this edition and its complete interpretive lanes."
         },
         {
@@ -301,7 +301,7 @@
       "checks": [
         {
           "id": "component-contract",
-          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition synthesis --require-presentation --require-format",
+          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition synthesis --require-presentation --require-format --require-authority",
           "required_result": "The schema-2 component graph must faithfully describe this edition and its complete interpretive lanes."
         },
         {
@@ -436,7 +436,7 @@
       "checks": [
         {
           "id": "component-contract",
-          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition homily --require-presentation --require-format",
+          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition homily --require-presentation --require-format --require-authority",
           "required_result": "The schema-2 component graph must faithfully describe this edition and its complete interpretive lanes."
         },
         {
@@ -575,7 +575,7 @@
       "checks": [
         {
           "id": "reviewed-artifact-snapshot",
-          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase artifacts --require-presentation --require-format",
+          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase artifacts --require-presentation --require-format --require-authority",
           "required_result": "All three settled PDFs, their metadata, declared components and recorded render inputs must match the review snapshot."
         }
       ],
@@ -742,7 +742,7 @@
       "checks": [
         {
           "id": "three-document-publication",
-          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase publication --require-presentation --require-format",
+          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase publication --require-presentation --require-format --require-authority",
           "required_result": "All three installed PDFs must match their reviewed bytes; canonical web, exact release IDs and owning catalog must match this provider and family."
         },
         {

@@ -1,9 +1,11 @@
 """Three-edition ownership and staged structural checks, with legacy isolation."""
 from __future__ import annotations
 
+import contextlib
 import copy
 import importlib.machinery
 import importlib.util
+import io
 import json
 import shutil
 import subprocess
@@ -433,6 +435,81 @@ class AuthorityContractTests(unittest.TestCase):
             for lane in tomllib.loads(manifest.read_text()).get("lanes", []):
                 for author in lane["authors"]:
                     self.assertIsNotNone(registry.for_name(author), f"{manifest}: {author}")
+
+
+class AuthorityGateTests(unittest.TestCase):
+    """proper-study v7 makes the contract mandatory at the gates that read the manifest."""
+
+    def setUp(self):
+        (ROOT / ".scratch/components").mkdir(parents=True, exist_ok=True)
+        self.tmp = tempfile.TemporaryDirectory(dir=ROOT / ".scratch/components")
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+        self.data, self.path, self.provider = fixture(self.root)
+        registry = self.root / components.AUTHORITY_REGISTRY
+        registry.parent.mkdir(parents=True)
+        registry.write_text(REGISTRY)
+        # The gate shells out to the real component checker, pointed at this root.
+        (self.root / "tools").symlink_to(ROOT / "tools")
+        save(self.data, self.path)
+
+    def comply(self, carrying):
+        self.data["authority_contract"] = components.AUTHORITY_CONTRACT
+        for lane in self.data["lanes"]:
+            lane["authors"] = sorted(set(lane["authors"]) | set(carrying))
+            lane["carrying_authors"] = list(carrying)
+        save(self.data, self.path)
+
+    def gate(self, *flags):
+        """The study-preflight command line, run through the real argument parser."""
+        import _proper_study as study
+
+        argv = ["_proper_study.py", "check", "--root", str(self.root), "--provider", "gpt",
+                "--document", "proper", "--phase", "content", "--edition", "research", *flags]
+        errors = io.StringIO()
+        with mock.patch.object(study, "scope"), mock.patch.object(sys, "argv", argv), \
+                contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(errors):
+            return study.main(), errors.getvalue()
+
+    def test_a_manifest_without_the_contract_fails_the_gate(self):
+        code, errors = self.gate("--require-authority")
+        self.assertEqual(code, 1)
+        self.assertIn("authority_contract must be", errors)
+
+    def test_without_the_flag_a_historical_manifest_still_passes(self):
+        self.assertEqual(self.gate(), (0, ""))
+
+    def test_a_compliant_manifest_passes_the_gate(self):
+        self.comply(["Augustine", "Thomas Aquinas"])
+        self.assertEqual(self.gate("--require-authority"), (0, ""))
+
+    def test_the_gate_tests_standing_and_not_only_the_declaration(self):
+        self.comply(["Augustine", "Rupert of Deutz"])
+        code, errors = self.gate("--require-authority")
+        self.assertEqual(code, 1)
+        self.assertIn("only a Father, a canonized saint or one of the Blessed", errors)
+
+    def test_every_gate_after_the_manifest_exists_requires_the_contract(self):
+        """`author-study` writes the manifest, so research preflight cannot require it.
+
+        The proposal of 2026-09-22 put the flag on `research-preflight`; a new
+        leaf has no `proper-components.toml` there, and the research phase never
+        reads one, so the requirement starts at `study-preflight` and every later
+        content, artifact and publication gate repeats it.
+        """
+        pipeline = json.loads((ROOT / "workflows/pipelines/proper-study.json").read_text())
+        self.assertGreaterEqual(pipeline["version"], 7)
+        checks = {check["command"].split("--phase ")[1].split()[0] + ":" + stage["id"]: check["command"]
+                  for stage in pipeline["stages"] for check in stage.get("checks", [])
+                  if "scripts/_proper_study.py check" in check["command"]}
+        required = {key for key, command in checks.items() if "--require-authority" in command}
+        self.assertEqual(required, {"content:study-preflight", "content:synthesis-preflight",
+                                    "content:homily-preflight", "artifacts:artifact-gates",
+                                    "publication:publication-gates"})
+        self.assertEqual(set(checks) - required, {"scope:scope-gate", "research:research-preflight"})
+        order = [stage["id"] for stage in pipeline["stages"]]
+        self.assertLess(order.index("author-study"), order.index("study-preflight"))
+        self.assertLess(order.index("research-preflight"), order.index("author-study"))
 
 
 if __name__ == "__main__":

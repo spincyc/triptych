@@ -259,7 +259,7 @@ class ProperFormatTests(unittest.TestCase):
 
     def test_current_workflow_requires_both_contracts(self):
         pipeline = json.loads((ROOT / "workflows/pipelines/proper-study.json").read_text())
-        self.assertEqual(pipeline["version"], 6)
+        self.assertGreaterEqual(pipeline["version"], 6)
         checks = [check["command"] for stage in pipeline["stages"]
                   for check in stage.get("checks", [])
                   if "--require-presentation" in check["command"]]

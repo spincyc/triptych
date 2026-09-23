@@ -94,6 +94,13 @@ published leaves for that imprint finds more than seven, and the set it names
 differs. Recount the affected leaves from the tracked files before marking any
 of them stale; do not take the proposal's list as the set.
 
+**Correction to §5.2(e) and step 7, 2026-09-23.** The mandatory authority
+check does not go on `research-preflight`. `proper-components.toml` is first
+written by `author-study`, after that gate, so `--require-authority` starts at
+`study-preflight` and every later content, artifact and publication gate
+repeats it. `workflows/OPERATOR.md`, under `proper-study` version 7, records
+the reasoning.
+
 ---
 
 ## The proposal as reviewed

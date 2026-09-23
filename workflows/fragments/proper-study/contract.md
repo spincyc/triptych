@@ -35,7 +35,8 @@ evidence independently, and use only material for this run's own family.
 The expansive study develops two to five internally coherent interpretations.
 Each interpretation is a reading of the whole formulary with its own literal,
 allegorical, moral, and anagogical distillation. Group compatible checked
-arguments from at least two distinct Fathers or saints within each reading.
+arguments from at least two distinct Fathers or saints, as the three-document
+profile defines them, within each reading.
 Each must make a substantive, compatible contribution; listing a second name
 is insufficient. Never attribute an
 editorial whole-Mass construction to a Father who only comments on one verse.
