@@ -285,7 +285,8 @@ tools/tpt harvest ask --corpus src/sources/commentary/mass-commentary-corpus.yam
 ```
 
 These figures were measured after the first six runs and are kept because the
-corroboration analysis below rests on them. **The ledger now holds 13 runs**;
+corroboration analysis below rests on them. **The ledger held 13 runs until
+2026-09-23, when three single-passage runs on Matthew 9 made it 16**;
 re-derive rather than quoting the table.
 
 | Quantity, as at 6 runs | Value |

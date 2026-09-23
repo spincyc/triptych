@@ -62,7 +62,7 @@ EXAMPLES = {
         Example(
             "tools/harvest propers --top 3",
             (
-                "# 3 works across 562 passages, 13 runs",
+                "# 3 works across 562 passages, 16 runs",
                 "  430  Augustine of Hippo — Enarrationes in Psalmos  conf 1.00  130 passages",
                 "  1471  Denis the Carthusian — Enarrationes in universam Bibliam  conf 1.00  561 passages",
                 "  1349  Nicholas of Lyra — Postilla litteralis super totam Bibliam  conf 1.00  562 passages",
@@ -71,7 +71,7 @@ EXAMPLES = {
         Example(
             "tools/harvest propers --top 2 --format json",
             (
-                "{\"harvest_runs\":13,\"passages_harvested\":562,\"v\":1,\"works\":[{\"author\":\"Augustine of Hippo\",\"confi... [+9029 chars]",
+                "{\"harvest_runs\":16,\"passages_harvested\":562,\"v\":1,\"works\":[{\"author\":\"Augustine of Hippo\",\"confi... [+9029 chars]",
             ),
         ),
     ),
@@ -149,21 +149,21 @@ EXAMPLES = {
         Example(
             "tools/harvest aliases",
             (
-                "derived_groups: 540",
-                "reviewed: 38",
+                "derived_groups: 543",
+                "reviewed: 39",
                 "status: current",
-                "titles: 4854",
-                "tracked_groups: 540",
+                "titles: 4886",
+                "tracked_groups: 543",
             ),
             "read-only: compares the derived grouping with the tracked table",
         ),
         Example(
             "tools/harvest aliases --rebuild --alias-table build/example-harvest/aliases.yaml --audited-on 2026-07-31",
             (
-                "groups: 540",
-                "reviewed: 38",
+                "groups: 543",
+                "reviewed: 39",
                 "status: rebuilt",
-                "titles: 4854",
+                "titles: 4886",
             ),
             "WRITES the alias table. --alias-table here is an untracked copy; the default rewrites tracked src/sources/commentary/work-aliases.yaml",
         ),
@@ -191,12 +191,12 @@ EXAMPLES = {
         Example(
             "tools/harvest promote --audited-on 2026-07-31 --dry-run --index src/sources/commentary/passage-commentary-index.yaml",
             (
-                "distinct_works: 579",
+                "distinct_works: 581",
                 "index: src/sources/commentary/passage-commentary-index.yaml",
                 "numbering: vulgate",
                 "numbering_unrecorded: 2",
                 "passages: 562",
-                "runs: 13",
+                "runs: 16",
                 "status: dry-run",
                 "works: 9083",
             ),
@@ -205,12 +205,12 @@ EXAMPLES = {
         Example(
             "tools/harvest promote --audited-on 2026-07-31 --index build/example-discovery.yaml",
             (
-                "distinct_works: 579",
+                "distinct_works: 581",
                 "index: build/example-discovery.yaml",
                 "numbering: vulgate",
                 "numbering_unrecorded: 2",
                 "passages: 562",
-                "runs: 13",
+                "runs: 16",
                 "status: promoted",
                 "works: 9083",
             ),

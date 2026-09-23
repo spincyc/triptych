@@ -14,8 +14,8 @@
 # asserts a new alias ages the table and `harvest promote` refuses until the
 # new grouping has been looked at.
 schema: triptych-commentary-work-aliases/v1
-derived_on: '2026-08-27'
-evidence_sha256: 6a9af2d38d5a14ee58440b8d3e3de175305e377e1284a355f6f999b57f9497ba
+derived_on: '2026-09-23'
+evidence_sha256: 506ced533d1151fd6c61e71b41dd2438db776cb9c03539790c4738a6adea59c3
 review:
   ambiguous_titles:
   - author: Peter Lombard
@@ -212,6 +212,13 @@ review:
     reason: The Historia Scholastica is one continuous history over the whole biblical narrative;
       its group holds the Exodus and Daniel books. The part cannot name the whole, and the
       group already carries the whole's name.
+  - author: Peter Chrysologus
+    instead_of: Sermons
+    title: Sermones
+    reason: The Luke 21 lead was promoted as Sermones; three 2026-09-23 runs on Matthew 9
+      gave the English Sermons with Sermones as its alias, and the most-used name would have
+      renamed the promoted lead. Migne PL 52 prints the collection as S. Petri Chrysologi
+      Sermones and the library's work record carries that title, so the group keeps it.
   - author: Procopius of Gaza
     instead_of: Commentary on Genesis
     title: Commentarii in Octateuchum
@@ -320,8 +327,8 @@ groups:
   - super lucam
 - author: Albert the Great
   work: Super Matthaeum
-  uses: 72
-  attested_by: 6
+  uses: 74
+  attested_by: 8
   titles:
   - commentarii in evangelium matthaei
   - commentarii in matthaeum
@@ -351,7 +358,6 @@ groups:
   uses: 49
   attested_by: 5
   titles:
-  - albertus magnus
   - albertus magnus, in amos
   - commentarii in amos prophetam
   - commentarii in duodecim prophetas minores
@@ -511,6 +517,14 @@ groups:
   - commentarii in threnos
   - commentary on lamentations
   - postilla super threnos
+- author: Albertus Magnus
+  work: Super Matthaeum
+  uses: 1
+  attested_by: 1
+  titles:
+  - commentary on matthew
+  - enarrationes in matthaeum
+  - super matthaeum
 - author: Alcuin of York
   work: Interrogationes et responsiones in Genesim
   uses: 159
@@ -1119,8 +1133,8 @@ groups:
   - tractatus in iohannem
 - author: Augustine of Hippo
   work: De consensu evangelistarum
-  uses: 40
-  attested_by: 6
+  uses: 43
+  attested_by: 9
   titles:
   - de consensu evangelistarum
   - de consensu evangelistarum libri quattuor
@@ -1129,6 +1143,7 @@ groups:
   - on the agreement of the evangelists
   - on the harmony of the gospels
   - the harmony of the evangelists
+  - the harmony of the gospels
 - author: Augustine of Hippo
   work: Expositio quarundam propositionum ex epistula ad Romanos
   uses: 27
@@ -1390,6 +1405,14 @@ groups:
   - expositio super epistolas catholicas
   - in epistolas septem catholicas
   - in epistulas vii catholicas
+- author: Bede
+  work: Homilies on the Gospels
+  uses: 3
+  attested_by: 3
+  titles:
+  - homiliae evangelii
+  - homiliarum evangelii libri ii
+  - homilies on the gospels
 - author: Bede
   work: Expositio Apocalypseos
   uses: 2
@@ -1801,8 +1824,8 @@ groups:
   - in genesim
 - author: Bruno of Segni
   work: Commentaria in Matthaeum
-  uses: 19
-  attested_by: 4
+  uses: 22
+  attested_by: 7
   titles:
   - commentaria in matthaeum
   - commentarius in evangelium matthaei
@@ -2029,8 +2052,8 @@ groups:
   - complexiones in epistulas et acta apostolorum et apocalypsin
 - author: Christian of Stavelot
   work: Expositio in Matthaeum evangelistam
-  uses: 3
-  attested_by: 3
+  uses: 4
+  attested_by: 4
   titles:
   - christian druthmar
   - christianus druthmarus, expositio in matthaeum
@@ -2060,8 +2083,8 @@ groups:
   - outlines on the catholic epistles
 - author: Cornelius a Lapide
   work: Commentaria in Scripturam Sacram
-  uses: 1330
-  attested_by: 10
+  uses: 1333
+  attested_by: 13
   titles:
   - commentaria in acta apostolorum
   - commentaria in acta apostolorum, epistolas canonicas et apocalypsin
@@ -2086,6 +2109,7 @@ groups:
   - commentaria in jeremiam
   - commentaria in jeremiam prophetam
   - commentaria in librum iob
+  - commentaria in matthaeum
   - commentaria in numeros
   - commentaria in omnes divi pauli epistolas
   - commentaria in pentateuchum
@@ -2192,6 +2216,7 @@ groups:
   - commentarius in primum librum regum
   - commentarius in proverbia
   - commentarius in quartum librum regum
+  - commentarius in quatuor evangelia
   - commentarius in sapientiam
   - commentarius in scripturam sacram
   - commentarius in secundam epistolam ad corinthios
@@ -2298,6 +2323,16 @@ groups:
   - the great commentary
   - the great commentary of cornelius a lapide
   - the great commentary on matthew
+  - the great commentary on the gospels
+- author: Cornelius Jansenius of Ghent
+  work: Commentariorum in suam Concordiam ac totam historiam evangelicam
+  uses: 2
+  attested_by: 2
+  titles:
+  - commentariorum in suam concordiam ac totam historiam evangelicam
+  - concordia evangelica
+  - concordia evangelica commentary
+  - tetrateuchus
 - author: Cyprian of Carthage
   work: De dominica oratione
   uses: 1
@@ -2482,8 +2517,8 @@ groups:
   - on the paralytic at bethesda
 - author: Denis the Carthusian
   work: Enarrationes in universam Bibliam
-  uses: 1236
-  attested_by: 10
+  uses: 1238
+  attested_by: 12
   titles:
   - commentaria in actus apostolorum
   - commentaria in amos
@@ -2603,6 +2638,7 @@ groups:
   - commentary on revelation
   - commentary on romans
   - commentary on sirach
+  - commentary on the four gospels
   - commentary on the gospel of john
   - commentary on the minor prophets
   - commentary on the psalter
@@ -2614,6 +2650,7 @@ groups:
   - denys the carthusian, enarrationes in pentateuchum
   - denys van rijkel
   - dionysius cartusianus
+  - dionysius cartusianus in matthaeum
   - dionysius cartusianus on the psalms
   - dionysius cartusianus, commentaria in acta
   - dionysius cartusianus, commentaria in danielem
@@ -2628,6 +2665,7 @@ groups:
   - dionysius cartusianus, commentarius in genesim
   - dionysius cartusianus, commentary on genesis
   - dionysius cartusianus, commentary on job
+  - dionysius cartusianus, commentary on matthew
   - dionysius cartusianus, enarratio in davidicum psalterium
   - dionysius cartusianus, enarrationes
   - dionysius cartusianus, enarrationes in duodecim prophetas minores
@@ -3026,20 +3064,21 @@ groups:
   - commentary on psalms 1-50
   - commentary on psalms 1-51
 - author: Dionysius the Carthusian
+  work: Enarratio in Evangelium secundum Matthaeum
+  uses: 2
+  attested_by: 2
+  titles:
+  - commentaria in evangelium matthaei
+  - commentary on matthew
+  - denys the carthusian, commentary on matthew
+  - enarratio in evangelium secundum matthaeum
+- author: Dionysius the Carthusian
   work: Enarratio in Acta Apostolorum
   uses: 1
   attested_by: 1
   titles:
   - denys the carthusian, commentary on acts
   - enarratio in acta apostolorum
-- author: Dionysius the Carthusian
-  work: Enarratio in Evangelium secundum Matthaeum
-  uses: 1
-  attested_by: 1
-  titles:
-  - commentaria in evangelium matthaei
-  - denys the carthusian, commentary on matthew
-  - enarratio in evangelium secundum matthaeum
 - author: Edward Bouverie Pusey
   work: The Minor Prophets, with a Commentary Explanatory and Practical
   uses: 5
@@ -3157,8 +3196,8 @@ groups:
   - expositio in psalterium
 - author: Euthymius Zigabenus
   work: Commentarius in quatuor Evangelia
-  uses: 64
-  attested_by: 4
+  uses: 67
+  attested_by: 7
   titles:
   - commentarii in quatuor evangelia (in ioannem)
   - commentarius in evangelium matthaei
@@ -3170,6 +3209,7 @@ groups:
   - commentary on the gospel of john
   - enarrationes in quatuor evangelia
   - expositio in matthaeum
+  - interpretatio evangelii matthaei
 - author: Euthymius Zigabenus
   work: Commentarius in Matthaeum
   uses: 1
@@ -3782,12 +3822,14 @@ groups:
   - tractatus super psalmos
 - author: Hilary of Poitiers
   work: Commentarius in Matthaeum
-  uses: 82
-  attested_by: 6
+  uses: 85
+  attested_by: 9
   titles:
+  - commentarius in evangelium matthaei
   - commentarius in matthaeum
   - commentary on matthew
   - in evangelium matthaei commentarius
+  - in matthaeum
   - in matthaeum commentarius
   - tractatus in evangelium matthaei
   - tractatus in matthaeum
@@ -3845,8 +3887,8 @@ groups:
   - in salomonis ecclesiasten homiliae xix
 - author: Hugh of Saint-Cher
   work: Postillae in universa Biblia
-  uses: 1320
-  attested_by: 10
+  uses: 1322
+  attested_by: 12
   titles:
   - hugo cardinalis
   - hugo cardinalis, opera omnia in universum vetus et novum testamentum
@@ -3942,6 +3984,7 @@ groups:
   - postilla super iob
   - postilla super isaiam
   - postilla super jeremiam
+  - postilla super matthaeum
   - postilla super michaeam
   - postilla super osee
   - postilla super psalmos
@@ -3950,6 +3993,7 @@ groups:
   - 'postilla super totam bibliam: genesis'
   - postilla super zachariam
   - postillae
+  - postillae in bibliam
   - postillae in genesim
   - postillae in isaiam
   - postillae in leviticum
@@ -4320,11 +4364,12 @@ groups:
   - in isaiam prophetam
 - author: Jerome
   work: Commentariorum in Matthaeum Libri IV
-  uses: 83
-  attested_by: 6
+  uses: 86
+  attested_by: 9
   titles:
   - commentarii in evangelium matthaei
   - commentarii in matthaeum
+  - commentariorum in evangelium matthaei libri quattuor
   - commentariorum in matheum libri iv
   - commentariorum in matthaeum libri iv
   - commentary on matthew
@@ -4683,8 +4728,8 @@ groups:
   - in psalmos homiliae
 - author: John Chrysostom
   work: Homiliae in Matthaeum
-  uses: 84
-  attested_by: 6
+  uses: 87
+  attested_by: 9
   titles:
   - commentarius in matthaeum
   - commentary on matthew
@@ -5082,12 +5127,13 @@ groups:
   - practical observations on job
 - author: Juan de Maldonado
   work: Commentarii in quatuor Evangelistas
-  uses: 4
-  attested_by: 3
+  uses: 6
+  attested_by: 5
   titles:
   - commentarii in evangelium matthaei
   - commentarii in quatuor evangelistas
   - commentary on the four gospels
+  - maldonatus on the gospels
   - maldonatus, commentary on matthew
   - maldonatus, commentary on the four gospels
   - maldonatus, commentary on the holy gospels
@@ -5119,8 +5165,8 @@ groups:
   - pineda on job
 - author: Juan Maldonado
   work: Commentarii in quatuor Evangelistas
-  uses: 174
-  attested_by: 4
+  uses: 175
+  attested_by: 5
   titles:
   - commentarii in quatuor evangelia
   - commentarii in quatuor evangelistas
@@ -5132,6 +5178,7 @@ groups:
   - commentarius in lucam
   - commentarius in marcum
   - commentarius in matthaeum
+  - commentary on the four evangelists
   - commentary on the four gospels
   - commentary on the gospel of john
   - commentary on the gospel of luke
@@ -5142,6 +5189,7 @@ groups:
   - in lucam commentarius
   - in marcum commentarius
   - in matthaeum commentarius
+  - maldonatus on the gospels
   - maldonatus, commentarii in evangelia
   - maldonatus, commentarii in quatuor evangelia
   - maldonatus, commentary on matthew
@@ -5383,8 +5431,8 @@ groups:
   - ghislerius, in ieremiam prophetam commentarii, item in baruch et threnos
 - author: Nicholas of Lyra
   work: Postilla litteralis super totam Bibliam
-  uses: 1727
-  attested_by: 10
+  uses: 1730
+  attested_by: 13
   titles:
   - biblia sacra cum glossa ordinaria et postilla nicolai lyrani
   - glossa ordinaria cum postilla nicolai de lyra
@@ -5826,25 +5874,20 @@ groups:
     zu daniel'
 - author: Paschasius Radbertus
   work: Expositio in Matheo libri XII
-  uses: 72
-  attested_by: 6
+  uses: 84
+  attested_by: 9
   titles:
   - commentaria in matthaeum
   - commentarius in matthaeum
   - commentary on matthew
   - commentary on the gospel of matthew
   - expositio in evangelium matthaei
+  - expositio in matheo
   - expositio in matheo libri xii
   - expositio in matthaeum
+  - expositio in matthaeum libri xii
   - in matthaeum libri duodecim
   - in matthaeum libri xii
-- author: Paschasius Radbertus
-  work: Expositio in Matheo
-  uses: 9
-  attested_by: 1
-  titles:
-  - expositio in matheo
-  - expositio in matthaeum libri xii
 - author: Paschasius Radbertus
   work: Expositio in Lamentationes Hieremiae
   uses: 3
@@ -5855,6 +5898,14 @@ groups:
   - expositio in threnos
   - in threnos hieremiae
   - in threnos sive lamentationes hieremiae libri quinque
+- author: Peter Chrysologus
+  work: Sermones
+  uses: 4
+  attested_by: 3
+  titles:
+  - collectio feliciana
+  - sermones
+  - sermons
 - author: Peter Comestor
   work: Historia Scholastica
   uses: 59
@@ -6091,8 +6142,8 @@ groups:
   - expositio in epistolas pauli
 - author: Rabanus Maurus
   work: Commentariorum in Matthaeum libri VIII
-  uses: 81
-  attested_by: 6
+  uses: 84
+  attested_by: 9
   titles:
   - commentaria in matthaeum
   - commentariorum in matthaeum libri octo
@@ -6995,6 +7046,20 @@ groups:
   - explanation of the gospel of luke
   - expositio in lucam
 - author: Theophylact of Ohrid
+  work: Enarratio in Evangelium Matthaei
+  uses: 58
+  attested_by: 8
+  titles:
+  - commentarius in evangelium matthaei
+  - commentarius in evangelium sancti matthaei
+  - commentarius in matthaeum
+  - commentary on matthew
+  - commentary on the gospel of matthew
+  - enarratio in evangelium matthaei
+  - explanation of the gospel according to matthew
+  - explanation of the gospel of matthew
+  - expositio in matthaeum
+- author: Theophylact of Ohrid
   work: Expositio in epistolas sancti Pauli
   uses: 57
   attested_by: 1
@@ -7016,19 +7081,6 @@ groups:
   - explanation of the gospel of john
   - expositio in ioannem
   - expositio in ioannis evangelium
-- author: Theophylact of Ohrid
-  work: Enarratio in Evangelium Matthaei
-  uses: 55
-  attested_by: 5
-  titles:
-  - commentarius in evangelium matthaei
-  - commentarius in evangelium sancti matthaei
-  - commentarius in matthaeum
-  - commentary on matthew
-  - commentary on the gospel of matthew
-  - enarratio in evangelium matthaei
-  - explanation of the gospel of matthew
-  - expositio in matthaeum
 - author: Theophylact of Ohrid
   work: Enarratio in Evangelium Marci
   uses: 43
@@ -7127,8 +7179,8 @@ groups:
   - expositio in prophetas minores
 - author: Thomas Aquinas
   work: Catena aurea in quatuor Evangelia
-  uses: 251
-  attested_by: 6
+  uses: 254
+  attested_by: 9
   titles:
   - catena aurea
   - catena aurea in ioannem
@@ -7138,6 +7190,7 @@ groups:
   - catena aurea in matthaeum
   - catena aurea in quattuor evangelia
   - catena aurea in quatuor evangelia
+  - catena aurea on matthew
   - catena aurea on the gospel of john
   - catena in ioannem
   - catena in matthaeum
@@ -7330,8 +7383,8 @@ groups:
   - super isaiam
 - author: Thomas Aquinas
   work: Super Evangelium S. Matthaei lectura
-  uses: 81
-  attested_by: 6
+  uses: 84
+  attested_by: 9
   titles:
   - commentary on matthew
   - commentary on the gospel of matthew
@@ -7339,6 +7392,7 @@ groups:
   - expositio in matthaeum
   - in matthaeum evangelistam expositio
   - in matthaeum expositio
+  - lectura super evangelium matthaei
   - lectura super matthaeum
   - super evangelium s. matthaei lectura
   - super evangelium sancti matthaei lectura
