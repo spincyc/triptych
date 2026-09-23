@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
 audited_on = "2026-09-04"
-publication_snapshot = "sha256:a9470fd7a991417c6f3903b44c1ae2036350a26f29e9349f28b6572986d4fc70"
-classification_snapshot = "sha256:c567ddd43b6f8251ab8e7e7615d4ecc1a1a29a6f7ca3bc4d199f0b7130be26c4"
+publication_snapshot = "sha256:f30aeb2862b15776352514bf4000781a63df1e7bf3286044967e3627ae006043"
+classification_snapshot = "sha256:424831c2a921075042045c13591de2364e95f7032cfe7a3f956f5436a92fb5bc"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -155,6 +155,10 @@ source_categories = ["finding-aid", "historical-primary", "institutional-current
 [[classifications]]
 document = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "patristic", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
 document = "liturgy/roman-rite/1962/reference/assembling-the-mass"

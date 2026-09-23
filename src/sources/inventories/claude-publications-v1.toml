@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-09-22"
+audited_on = "2026-09-23"
 discovery_rule = "src/claude/**/main.tex"
-publication_count = 54
-source_surface_file_count = 1322
-snapshot = "sha256:34334998e82c93592c0f335b54ad38f135422d37a5a24322df48ae90c65571b7"
+publication_count = 55
+source_surface_file_count = 1356
+snapshot = "sha256:78a16d818283bd2dda15cc18ac3046eb675d8edec5eaf44da7b44c813a6f1379"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -484,6 +484,17 @@ inventory_state = "sources-categorized"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
+relationship = "local"
+
+[[documents]]
+id = "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"
+main = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "patristic", "scholastic", "scripture", "secondary"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"
 relationship = "local"
 
 [[documents]]
@@ -6178,6 +6189,210 @@ path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after
 sha256 = "2f0ad6f617fce6b39c1f7222cf87d5649e3ab9472dde923d009444cf05225274"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/evaluations/blocking-findings-v1.toml"
+sha256 = "558cf412f088343e4089532a1478035c9bce6dc609f3eaba8f66a5106e8e0279"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/format.tex"
+sha256 = "ed4f1c1b7417b3db61b68ee80cfd6525a0615f7db0e779507341af2d9b467d40"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/homily.tex"
+sha256 = "3a53497186904dc7866a2ffeba31b66c489a5118dee2b87fce409cec1aad31c8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/main.tex"
+sha256 = "64b5f648732be9ccc852c27083b122c7386b29ccab8a9d417ac1cb922166e195"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/proper-components.toml"
+sha256 = "0564b3153b718fc62763f4fe34bd1a371190ebf389248287547701e462f27827"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/propers/retrieved.txt"
+sha256 = "b0110f719336ec5790c3f56d86f0cd985673e0e4f65f6505bf1eb05a29aed890"
+kind = "local-evidence-payload"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/propers/verified.md"
+sha256 = "77ad3bcf08310015b0e6c931543bdb2dc8dbea3777b03d50a2a35376bd882678"
+kind = "proper-verification"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/chronology-annotations.tex"
+sha256 = "86fea692e6d8fe62f844f6096d68772a17d2975d626ff70cbbbf3ff11e1db174"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/chronology.toml"
+sha256 = "412c2fc1a4af6874a41c4ff53576fc55852d0510cfe89953b81ee75a26d518b5"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/context.md"
+sha256 = "25b69a9ad894f6c1b03d0ab1d9dc0a63d486a2d383b1ef83212b6d6ae160fdf9"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/interpretations.md"
+sha256 = "87e81a52c178eacdfe5288313ea2e199a6f31ccac6328057d6805a9e477f14d2"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/production-review.md"
+sha256 = "a4c47ccb80b78343a486aa216baea93fa4d04d8d84665fbd0b4ddb2e679aa088"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/review-dependencies.toml"
+sha256 = "a9d9cdaab82766bb3919d5923f1d403e4949673c37c82979ebb4e81777824cd3"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/scope.md"
+sha256 = "e780789a2dae59580e853edf9ccb7a451936727fe994ee391825c2a0f2df7535"
+kind = "research-scope"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/source-bindings.toml"
+sha256 = "8f54e73a3dde16b8d610ed5b030d077a2d0695a8a226757e73adbdccc0363b7c"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/00-opening.tex"
+sha256 = "9c6d183d22f681ea747605f5b864617694b48eeef0055e50eed405c1e964a187"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/05-appointed-texts.tex"
+sha256 = "33adc690ed9cc705a3ecade8bdd9c9649190a43d90886ad4492a802edc8695f8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/10-each-element.tex"
+sha256 = "3483cfa4ce4d442a36ce4c0f8e17b39396ffc4802d2a36752dfae74e5811dcbe"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/20-peace-of-the-house.tex"
+sha256 = "7f6d0ee93952d269e8431ad9a9ba9bda4c0cca2a14d6c7ff0f49c653818a2b9e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/30-authority-on-earth.tex"
+sha256 = "3ec11e2aaabca2ea8960574d4314d41c9c4c01bdb09c52124a994ef61b0fc607"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/40-nothing-of-our-own.tex"
+sha256 = "3bc196a6bde7d76f1e8312ed8552683ca03493fc7bde94a172b5057ce617567c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/50-comparison.tex"
+sha256 = "9ad2f901d080bfe15602bbc52cb43147fbdaaffa578f12324777335ae6c58451"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/80-date-location.tex"
+sha256 = "964f0e661fcaaddc542fb5e16624b59bb4d9b6ba0b9713f8811d6a1c05d07eb9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/90-apparatus.tex"
+sha256 = "3aabe708ac6ce0457931c1ad81b4e0e04da8aa1b04fe0231f772fdfc9aa8ad49"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/01-inventory.tex"
+sha256 = "18de32b71cc676c8c7288e4469d020aafbb2d655f25e6704a43fdaf1a68491c3"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/02-overview.tex"
+sha256 = "60ffe47a6cda88e67cea91b6c4dae3006f41a1333e7e978b575423ef7246afaa"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/03-date-location.tex"
+sha256 = "849d2137ba3574b288deb4028755b6a5be1deb16839a98207c952f64714b2cec"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/04-themes.tex"
+sha256 = "b77fd9732b5398c50d5a4b7c0cc45a24d7020b6bff1bd50ad6fe15aaade89d47"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/10-commentary.tex"
+sha256 = "dc1212f0f13ec8ce97727eb72515abb447cd09502355203a5a4336fe69e619ab"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/90-apparatus.tex"
+sha256 = "f28b57bf8690336174ca8a61108664b714efd9292fab4e540c6f76a40803d878"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/10-homily.tex"
+sha256 = "179f66fbcbcaeb1f5e3fb56784a3d3a75873959f0fa409cbd7fe434c45aa21bc"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/90-note.tex"
+sha256 = "8ff638be4537cab1ea4b07c93d984c609da043d52f3186f95f6094cd95ad39ff"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/synthesis.tex"
+sha256 = "560120318bef81f4514cd01c2b8a64ba2929febee6b18d475ebb99ca75e552b8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/web-edition.toml"
+sha256 = "1e4a172f709bfcbef59996002efe8b763d8325f21992966bf6f80271d01adf15"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/format.tex"

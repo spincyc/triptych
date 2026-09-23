@@ -115,15 +115,18 @@ reception of the compilation, and records that no Father reads Mt 9:8 so.
   leaf's contribution declarations must say so (requirement
   `claude-model-provenance`).
 
-**Release rebind approved, not yet applied.** On 2026-09-23 the driver asked
-for the release-rebind approval. It covers the bindings left stale by this
-production's source projections, the commentator and containment tooling, and
-the opt-in authority contract. The maintainer answered, verbatim, "approved".
-It is applied at `publication-gates`, after `install-publication` has written
-the release record, installed PDFs and web edition, so that the authorization
-signs final bytes. The steps are `make refresh-release-bindings`, filtered with
-`ONLY` if anything unrelated is uncommitted, then `make approve-release` with a
-note quoting that answer.
+**Release rebind approved and applied; authorization record pending.** On
+2026-09-23 the maintainer answered the driver's request for release-rebind
+approval, verbatim, "approved". After `install-publication`, the 16 stale
+bindings were re-recorded with `make refresh-release-bindings ADOPT=1`, with
+`ONLY` scoped to exactly those paths. They were `scripts/_proper_components.py`,
+the source index and 14 edition projections, all this production's own work,
+and `check-release-bindings` now reports 0 stale. `make approve-release`,
+which writes the dated authorization into `release/`, refused in this
+workspace. It requires every corpus publication's installed PDF, and this
+clone holds only this production's. The note quoting the maintainer's answer
+is to be recorded with `approve-release` where the whole corpus is installed,
+before deployment.
 
 All three documents are accepted:
 

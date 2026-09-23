@@ -1727,7 +1727,7 @@ release attachment, announcement, or promotion.
 | `library/novus-ordo-liturgy.md` | `a362eb7e63aa24dd2c9d0bdbe27d2647ec073042c6e0cd0158eec8226821abab` |
 | `library/prayer.md` | `052c883da951a6089c0f1da44b9554653adcb440ead314cc36c350297d7ddb20` |
 | `library/scripture.md` | `739ced41934e834916f3c33e831c616708eaa4f7ba7f863e2ec9299cc4878570` |
-| `library/traditional-latin-mass.md` | `600a19f218ccc961223794ca87ef6a9b0c7b37558fe3e4ae7520f0f708ace15c` |
+| `library/traditional-latin-mass.md` | `2f35162ee05838d521ad05c2f470b0be7688b2924a3b3191d07d859f6f22b7ec` |
 | `pdf/reading-plans/narrative-spine-full-account-douay-rheims.pdf` | `cfd84b8ea305e3e4d033209964f982720e853b9419604c6a9f12770d53e7d117` |
 | `pdf/reading-plans/narrative-spine-full-account-king-james-version.pdf` | `746e90d1e15ed79f31eaf2283461bcd7007a0513faae2501522dcf914bbe31d4` |
 | `pdf/reading-plans/narrative-spine-landmarks-douay-rheims.pdf` | `f63fdea277cf4a259885ab174520264b80e685d4d647a24ff27591ef8a008259` |
@@ -1741,7 +1741,7 @@ release attachment, announcement, or promotion.
 | `release/public-alpha/layout.html` | `141bac1edad42e3661b823c26fda76328ce07b74ff1db6df1f53bcf581284c88` |
 | `requirements-public-alpha.txt` | `59bd4c5252324612c6ce5a27f4a4ba4e62aa4cc76bc3d974a29b45491c97c762` |
 | `scripts/_markdown_render.py` | `be0ffcd9d3d0b789f633be2938c07c9076d44d72eb3b6c5eb65b93307e6fa648` |
-| `scripts/_proper_components.py` | `258fedb3d41f47be102fb992ba31c248870d04c4ca82dd3cbbfd1538cefab803` |
+| `scripts/_proper_components.py` | `2dacab9ea25c6649d5b1269258e85f466021211acca909b19dc40049b76406ca` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-manifest.toml` | `901834175d4ee543b15248928a473b96cff89d38ed1be74ed8be9d453daff4fe` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-candle-v2-alpha.png` | `973f7cc89692ff07b3dd598d5c148eadcd72a1fe2e7f7206599f6953bee3088a` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-sanctuary-lamp-v2-alpha.png` | `c30ac4b8b384ff1816043b48ddaea78cfb255a3791a3b7c13c55c7ce3ba191d4` |
@@ -14084,7 +14084,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-4.json` | `7f1956b102a7b765dc36210f5557ad25f07d075c8edcc87a3acc85cd3a03473d` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-5.json` | `61abb15daa555ada778b2eeb6137cbc6114102586c9cc2a27d5e4863521de0e3` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-6.json` | `54408d9f5e1c8b684850b05976d6e3ac9ee3b88b6194c37c7e1cf83d52256d28` |
-| `src/web/data/structure/documents/corpus.json` | `5e59375f72bb913b519e3a29f10fad7d072166abff4858d5b14ee18b8be957fb` |
+| `src/web/data/structure/documents/corpus.json` | `6769eb4cc3a64ffcb45d66ecde3655b61567291b9ba3302acd03f5c39dee1f12` |
 | `src/web/data/structure/ordinary/index.json` | `b248eefcc0b073e43dd4c0d168007cd8d09fc5f28bd2fc633d98e2f4ba9e4846` |
 | `src/web/data/structure/ordinary/postconciliar.json` | `7714e4f1c328e4adad95afb3387e81b0cc44731977bfe5866a2ae2a2a597c2b6` |
 | `src/web/data/structure/ordinary/roman-1962.json` | `2c707b7d0ac3b61602533a57a26989042af43358e1d1dc7ca58aee286b827341` |
@@ -19820,6 +19820,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/cassiodorus/expositio-psalmorum/1958-latin-adriaen-ccsl98-turnhout-1958.json` | `d92396aa0a0cc2c270e8b6f6212272935c0f8ade080a5e1be92d183ccbaba12d` |
 | `src/web/data/structure/sources/editions/cassiodorus/expositio-psalmorum/2026-latin-corpus-corporum-monumenta-web-2026-07-28.json` | `e4862e26325ea77fb5706ef3a4ec543d807bce0c4af4b363e57b16aa2b37934e` |
 | `src/web/data/structure/sources/editions/cassiodorus/expositio-psalmorum/2026-latin-corpus-corporum-monumenta-web-2026-09-05.json` | `00c2fff105250434140ef2d5b712cdf85eb4762e2e7ef1221864349c3918ccf6` |
+| `src/web/data/structure/sources/editions/cassiodorus/expositio-psalmorum/2026-latin-corpus-corporum-monumenta-web-2026-09-22.json` | `820253910d0f52b47458daabfd63021a7bdf420a525aa7202e0d4c5e29d82484` |
 | `src/web/data/structure/sources/editions/cassiodorus/expositio-psalmorum/2026-latin-migne-wikisource-web-2026-07-28.json` | `625edd47c7e7334adec055b9a051c02f1cff36d8b1d89802956c8f2329fee61e` |
 | `src/web/data/structure/sources/editions/cassiodorus/expositio-psalmorum/2026-latin-migne-wikisource-web-2026-09-05.json` | `766674c17222a8bed1145bad12dc540510cfa9e920ded224a18b1982b8a5a2dd` |
 | `src/web/data/structure/sources/editions/catholic-church/caeremoniale-episcoporum/1948-marietti-third-after-typical-1948.json` | `f9a66aa97e049c4d8ffa2c448ec0a766fe2377d7e131af74e277832ad18e70cc` |
@@ -20040,6 +20041,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/friedrich-nietzsche/menschliches-allzumenschliches/2026-gutenberg-ebook-7207.json` | `b32b21b3587d182f33f0cc95f7154c0c4e87d877eae20f4df7eb8bef6d381645` |
 | `src/web/data/structure/sources/editions/friedrich-wilhelm-hermann-wasserschleben/die-bussordnungen-der-abendlaendischen-kirche/1851-halle-graeger-1851.json` | `a02b614fe71fc7350aaadd3ec08f7e3a7554e82ca844d622905fde409c3154bd` |
 | `src/web/data/structure/sources/editions/fssp-france/ordo-du-mois/2026-2026-09-17-web.json` | `3ad260e1257877476e8740138910f22982d9d56d999b7ffef695438bf4110fbb` |
+| `src/web/data/structure/sources/editions/fssp-france/ordo-du-mois/2026-2026-09-22-web.json` | `494f3ccfad2cf18c03d28dd2021dc348c3a1d7155791a15c1a97586da9386411` |
 | `src/web/data/structure/sources/editions/g-k-chesterton/orthodoxy/1927-london-week-end-library-1927.json` | `2e34ea0bc39deb76f4b0a641f3ab7d961cda35a04315e1bc9f316a8191b95066` |
 | `src/web/data/structure/sources/editions/g-k-chesterton/orthodoxy/2026-gutenberg-ebook-16769.json` | `9f5c7713383a1bcb87a76bb93ab12130eb88413d8e05c05aacc49ec6523154d7` |
 | `src/web/data/structure/sources/editions/galileo-galilei/opere-edizione-nazionale/1890-volume-11.json` | `7fd22a06ac35bd34adf7acb1947a34c5d58bae4a8a424a81c4fe5a31191cd3ed` |
@@ -20160,10 +20162,12 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/holy-see/universae-ecclesiae/2026-english-vatican-web-2026-07-26.json` | `d1ff562a1c2a325747a419779c38fe4fa6099ab6cdf387cee3b8b8a989f8e4f5` |
 | `src/web/data/structure/sources/editions/holy-see/variationes-et-additiones-missalis-romani-2008/2008-latin-notitiae-503-504.json` | `c97505baa93aa013f5ca0cdbee38408b1225f945a3b3de535f3c519c0b163293` |
 | `src/web/data/structure/sources/editions/honorius-augustodunensis/gemma-animae/1854-1854-migne-pl-172.json` | `e8cc802df74599c2c7512989bbddc14090cb0404d69cf12568074029a0671c6c` |
+| `src/web/data/structure/sources/editions/honorius-augustodunensis/gemma-animae/1895-1895-garnier-migne-pl-172.json` | `b861aa84208875f1c96bb0fd53da0194717230d68c16b886ecfc318970f76664` |
 | `src/web/data/structure/sources/editions/hugh-of-saint-cher/postilla-in-totam-bibliam/2026-2026-09-05-morard-gloss-e.json` | `c19b677822b1ee498b9141888caaa7f93f625f7d0b53c0bd60462984e307b5fc` |
 | `src/web/data/structure/sources/editions/hymns-ancient-and-modern-proprietors/hymns-ancient-and-modern/1890-london-complete-edition-1890.json` | `6e2a66bb4e9359882e33562346eb01e35dd883b80fdad75f4b3d9882847e54d6` |
 | `src/web/data/structure/sources/editions/i-roubaud/verite-sur-le-secret-de-melanie/1882-louvain-lefever-1882-archive-web.json` | `00110cb77d8dbd54632a5428c582ecade3542114da73ea340ee05625e25fd83f` |
 | `src/web/data/structure/sources/editions/icrsp-france/ordo/2026-2026-09-17-web.json` | `31c385f8a41c9d3cfa70319116418d9b8ce508711f633b427250b7041786fc29` |
+| `src/web/data/structure/sources/editions/icrsp-france/ordo/2026-2026-09-22-web.json` | `473d8803727e301abe5608c18703fd8f036cc6c2babef69024c737065e9f8888` |
 | `src/web/data/structure/sources/editions/ignatius-of-antioch/letter-to-the-smyrnaeans/1887-roberts-donaldson-anf1-1887.json` | `d64886759127fd62f5e9d304eaf658ea48f2847b9d0ee0cd2b3915916b819994` |
 | `src/web/data/structure/sources/editions/ildefonso-schuster/the-sacramentary/1927-burns-oates-washbourne-english-1927.json` | `30efc18fd780e9cd07d3aafbc6ae1eabff191ef5731ccd0a4e0aa2edaa42733c` |
 | `src/web/data/structure/sources/editions/institute-for-new-testament-textual-research/editio-critica-maior-mark/2021-intf-2021-digital-2026-07-28.json` | `9f1d7b7ce20661111731d695916c2e4d8f1e08e1ee3486234c220a3148d16cb6` |
@@ -20178,6 +20182,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/jacques-goar/euchologion-graecorum/1647-paris-1647.json` | `c808100ccd04bc125cb6526bce3cd82c41c338d7a5f6f452827f9971c3e1b0f7` |
 | `src/web/data/structure/sources/editions/jacques-paul-migne/patrologia-graeca-volume-29/1860-1860-paris.json` | `7a89dccdc5144cdb88dfa1eb512df86615cb32fa625d6dcdf89fa4d850098924` |
 | `src/web/data/structure/sources/editions/jacques-paul-migne/patrologia-latina-volume-105/1864-paris-1864.json` | `107a92bab39dbbd35794bdbe92ca163c1a20f946341d6534b4beb0d39aae5b35` |
+| `src/web/data/structure/sources/editions/jacques-paul-migne/patrologia-latina-volume-107/1864-1864-paris.json` | `16b710ce1925593588085ffd5a605d40d0a6738bfb0992ad20f1718182e0fee6` |
 | `src/web/data/structure/sources/editions/jacques-paul-migne/patrologia-latina-volume-24/1865-1865-paris.json` | `690bc93859d3460cb56947f4a3d0df07d4cb790277c4f2daf54f0f6d2b4b1f60` |
 | `src/web/data/structure/sources/editions/jacques-paul-migne/patrologia-latina-volume-26/1845-paris-1845.json` | `903013406bb600d28ee7b0d56a618814c3b236af6f7e8a92f1b8527d79676905` |
 | `src/web/data/structure/sources/editions/jacques-paul-migne/patrologia-latina-volume-30/1846-paris-1846.json` | `1931c65f423ee9d2ae1794672e3e51f911a8772130cd847d6b271163cb0dfd4c` |
@@ -20185,6 +20190,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/jacques-paul-migne/patrologia-latina-volume-56/1850-paris-1850.json` | `373b3d9c58511f048f042cd8b74d26e25bee19e302a2afdd1b5459aa02f60c2f` |
 | `src/web/data/structure/sources/editions/jacques-paul-migne/patrologia-latina-volume-70/1865-1865-paris.json` | `8baaa1d854a6738897dc6be0e4a8b79b305e9da9d779442895f908882d9e8abd` |
 | `src/web/data/structure/sources/editions/jacques-paul-migne/patrologia-latina-volume-78/undated-latin-migne-pl-78.json` | `4cc1e5615e2786d12ef83d66bca0d9733368213842546597db7777fabce81b8b` |
+| `src/web/data/structure/sources/editions/jacques-paul-migne/patrologia-latina-volume-9/1844-1844-paris.json` | `1ac62daaad32a69190f44071b2f6851be4b89aed60a347f6aed6f32c3a0c8791` |
 | `src/web/data/structure/sources/editions/jacques-paul-migne/patrologia-latina-volume-92/1862-1862-paris.json` | `a8c8c1580258d438ae78a6ebd7d727859a31c66187b3cf72b0fc9af1a99aa568` |
 | `src/web/data/structure/sources/editions/james-joyce/ulysses/2026-gutenberg-ebook-4300.json` | `231dafbc763979f68b7c69482bcee36c3ac7d81f0ea78910692984548116af28` |
 | `src/web/data/structure/sources/editions/james-tauber/morphgnt-sblgnt/2024-2024-version-6.12-aaed91e.json` | `fb6b39104d6aafd8fc7188a6483e5ca0b4dadda56a700b97b4127b248c5f2d29` |
@@ -20412,11 +20418,19 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/priestly-fraternity-of-saint-peter/act-of-foundation-1988/2026-english-fssp-web-2026-07-26.json` | `24ab8d27ad4085a4744367f1f1492fb2e233df1dcfdabb1faddb59203081e8b5` |
 | `src/web/data/structure/sources/editions/priestly-fraternity-of-saint-peter/constitutions/2026-excerpt-part-i-english-fssp-web-2026-07-26.json` | `526219b3bfc4ddfb2ae967c9e359cf78728ef051e4171db25c7ba0b0ac8abd4c` |
 | `src/web/data/structure/sources/editions/priestly-fraternity-of-saint-peter/declaration-of-founders-1988/2026-english-fssp-web-2026-07-26.json` | `052eb56a0b2ac5a569427e4edf1c403e5eea0d0b0ad818a906d0e60490031156` |
+| `src/web/data/structure/sources/editions/prosper-gueranger/the-liturgical-year/1879-english-duffy-1879-volume-10.json` | `bfc41d956610094695312732bba452bced65a4e8a37aa95fe23acd49765aa38f` |
+| `src/web/data/structure/sources/editions/prosper-gueranger/the-liturgical-year/1883-english-duffy-1883-volume-11.json` | `165508e0a4b198355804499ea337a77b1d332ca894e59aa454e1e47590a2c86a` |
+| `src/web/data/structure/sources/editions/prosper-gueranger/the-liturgical-year/1890-english-duffy-1890-volume-12.json` | `58f04ddb30c041b5b6590d824773c612904d759f635bbc4b4e4b1cee15e0766b` |
 | `src/web/data/structure/sources/editions/prosper-gueranger/the-liturgical-year/1900-english-volume-10.json` | `d72238545a5c2660f2de18e5464c5d19302190f1387e3098335632b2ca065532` |
 | `src/web/data/structure/sources/editions/prosper-gueranger/the-liturgical-year/1901-english-volume-13.json` | `11ec34fd5d80f8a67ede8d285cb6033500017c5c79ac39fb0b97c17f842fc194` |
 | `src/web/data/structure/sources/editions/prosper-gueranger/the-liturgical-year/1903-english-volume-15.json` | `a3cdb5594c2bc81090e953bba4c37a8ecadbff2b7fc28ef58b3c42a6b612e5b9` |
 | `src/web/data/structure/sources/editions/prosper-gueranger/the-liturgical-year/1909-english-duffy-1900-volume-11.json` | `9921d3585484ea09b0d72aab518cb5cc6ecb521489f6acf9211a156102e779ca` |
+| `src/web/data/structure/sources/editions/prosper-gueranger/the-liturgical-year/1909-french-oudin-1909-volume-15.json` | `aac64c451a67baac63f13de50ea43fbb6ac59e550b56c60638c6ae5a6e141caa` |
 | `src/web/data/structure/sources/editions/prosper-gueranger/the-liturgical-year/1910-english-volume-14.json` | `fa0af3dbe19d0adc44af419edef757878a8bcd08148e334a5e3ae55bd820e9e4` |
+| `src/web/data/structure/sources/editions/prosper-gueranger/the-liturgical-year/1911-french-oudin-1911-volume-10.json` | `d7c6b2a033677bd3b7724dae734312e465084184ba380d962c07a4c0c4dadbec` |
+| `src/web/data/structure/sources/editions/prosper-gueranger/the-liturgical-year/1911-french-oudin-1911-volume-11.json` | `cd02a576c6b0abdbae4a92c4acd8b07bf3bec58baf8b516808f21d156af82858` |
+| `src/web/data/structure/sources/editions/prosper-gueranger/the-liturgical-year/1911-french-oudin-1911-volume-12.json` | `8e7ec10f98833406007eec2986e6593d5bd07a7ac78ef426fce0c652244a4c84` |
+| `src/web/data/structure/sources/editions/prosper-gueranger/the-liturgical-year/1913-french-oudin-1913-volume-13.json` | `a66937eac08930cbcadac555b37e4c994e8a2a34f6af57b682033c0402389a01` |
 | `src/web/data/structure/sources/editions/protestant-episcopal-church-in-the-united-states-of-america/book-of-common-prayer/1867-mohawk-williams-new-york-1867.json` | `56e1e597970911082faea578664c82b0dd6163a5b57ba1f974e2bb0c72eed00b` |
 | `src/web/data/structure/sources/editions/r-and-k-wood/catholic-picture-dictionary-buskins-illustration/1948-garden-city-1948-commons-file.json` | `e131e5913f5337d4e7c64a38faa26682a2e2c6c002aa2522310de88630dda513` |
 | `src/web/data/structure/sources/editions/rashi/perush-al-ha-torah/1929-rosenbaum-silbermann-1929.json` | `94ce4ff3b0615579db4f34f73503120596f1aa3303a24815da588d0570aadfd9` |
@@ -20638,7 +20652,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/william-williams/guide-me-o-thou-great-jehovah/2026-hymnal-of-praise-1913-hymnary-web-2026-07-29.json` | `0c387edabb7fcde38b30186316a98931754e5184bea07b1c3f437c3192f8e195` |
 | `src/web/data/structure/sources/editions/world-health-organization/icd-11-clinical-descriptions-and-diagnostic-requirements/2024-english-who-2024.json` | `97b5a08dc7e0a83a6c4da5990e21e8fcc2e4356d569903f09b8b97d34f1672aa` |
 | `src/web/data/structure/sources/editions/world-intellectual-property-organization/wipo-lex-berne-contracting-parties/2026-web-2026-08-01.json` | `ffaf08c0f47cd6ab1d4761546a9e290ce69420b185c891d67395fcc17d5d9d5e` |
-| `src/web/data/structure/sources/index.json` | `2a48e0c931b69901a71792e2475a674b26b6dfae56d670fc56661745b249f8d8` |
+| `src/web/data/structure/sources/index.json` | `7fac14c8ab5b64085d8485d1063ca3bd2f44fcab569ad9fa7604442d009320e5` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.1.json` | `bf80df77e273500e8769a0a0613d4bb907a736fafce970a0e62804eda1219c58` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.10.json` | `14700390dab93606af7e6e934d457e2ed524f13977f64bb6ede3f04daea4521d` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.100.json` | `c9b31161f4c7f56ea4c89bfaa550e47bc6327f5b8db9f685dc5bf2a4d73d1de2` |
@@ -23737,6 +23751,7 @@ release attachment, announcement, or promotion.
 | `web/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.md` | `14d57401e484749d9c5d729fb034c30be9fa811dd64435f7efb154e8a217d3fd` |
 | `web/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.md` | `f55376c8aa734c0a8942e77db47baf7ea13badc2166431045b051e4624dd0c17` |
 | `web/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md` | `d9009d445a8e438ffe603e4dd063535f5795db790cb2b7ca6688b5ed6c3df830` |
+| `web/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.md` | `12acf5ccdbe373e848bf5fc5657e7e45387ab6316f5284e6f2622cd706ace915` |
 | `web/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.md` | `314a8a502f986f88f94d836341b4bcfe9d631972be5c56b8d6e746a2fc7bb8db` |
 | `web/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.md` | `52d7cf33cf8e7e9da39171e66582a64cf249d6ccae0419bc8d6d558130a0b04e` |
 | `web/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice.md` | `1c657ac2ad531ce52d4e33816a9052820916f30158442d5af885e8d0668ce351` |

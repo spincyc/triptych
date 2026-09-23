@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it.",
  "counted": {
-  "documents": 196,
-  "issues": 224,
-  "pages": 6281,
+  "documents": 197,
+  "issues": 227,
+  "pages": 6315,
   "titles_unrecorded": 0,
-  "works": 142
+  "works": 143
  },
  "models": [
   {
@@ -38,12 +38,16 @@
   },
   {
    "documents": 1,
+   "id": "claude-opus-5-5[1m]"
+  },
+  {
+   "documents": 1,
    "id": "gpt-6-astra"
   }
  ],
  "providers": [
   {
-   "documents": 54,
+   "documents": 55,
    "id": "claude",
    "label": "Claude"
   },
@@ -77,7 +81,7 @@
   },
   {
    "id": "liturgy",
-   "works": 50
+   "works": 51
   },
   {
    "id": "theology",
@@ -6368,6 +6372,71 @@
     }
    ],
    "leaf": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+   "section": "liturgy"
+  },
+  {
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
+   "editions": [
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": 12,
+       "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-synthesis.pdf",
+       "subject": "Concise study of the 1962 Missale Romanum proper for the Eighteenth Sunday after Pentecost: the appointed elements, four overview senses, the scriptural dossier, the movement of the formulary, and a commentary comparing three readings of the whole Mass",
+       "title": "Eighteenth Sunday after Pentecost: A Concise Study of the Proper in the 1962 Roman Missal"
+      },
+      {
+       "kind": "homily",
+       "pages": 3,
+       "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-homily.pdf",
+       "subject": "A homily for an adult parish assembly on the 1962 Missale Romanum proper for the Eighteenth Sunday after Pentecost, 27 September 2026: the paralytic carried and forgiven, the power on earth to forgive, the Epistle's thanks for grace given, and the Collect that confesses we cannot please God without him",
+       "title": "Eighteenth Sunday after Pentecost: The Man Who Was Carried"
+      }
+     ],
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "effort=high; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code agent (author-study stage of proper-study v6, iteration 0: the expansive study of the canonical leaf from the reviewed research records, comprising the opening and element map, the appointed Latin with its public-domain English, the element-by-element settings, three whole-formulary readings each with its own four senses, the comparison, the Scriptural Date and Location appendix on the generated chronology projection, the scope appendix and References; the schema-2 component manifest with its future concise and homily components and presentation roles; the leaf-local format and web-edition records; the production audit entry; and author proof checks; at iteration 1, the repair of the carried study-review findings on the comparison, the Chrysostom attributions at 1 Cor 1:7--8, the third reading's anagogical sense and the Introit dossier, and the revision of every reading to the re-entered research on Hilary, Ambrose, Bede, Augustine and the liturgical commentators; at iteration 2, the repair of the comparison's shared ground and its account of the disagreement over the crowd's praise at Mt 9:8, the third reading's use of Hilary at that verse, and standing advisories on the Hilary, Augustine and liturgical-commentator citations; at iteration 3, after the re-entered research record was aligned with the study, the correction of St Ambrose's judgement of the onlookers' fear at Luke's parallel in the second reading and the comparison, and of the Gradual's Sextuplex placings); unexposed: client version and server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "effort=high; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code agent (derive-synthesis stage of proper-study v6, iteration 0: the concise study derived from the accepted expansive study, comprising its entrypoint and six synthesis components, the map of the appointed elements and four overview senses on the first page, the Scriptural Date and Location sheet on the generated chronology projection, the two-page Themes and Movement, the integrated commentary comparing the three readings, and its scope note and References; the production audit entry; and author proof checks; at iteration 1, the repair of the synthesis-review findings on the Communion's two compatible identifications of the sacrifices, the attribution of the gloss on sine crimine to Aquinas alone, and the critical span restored to the Gospel's dossier row, with standing advisories on the commentary's voice, the Sunday's place after the Ember Days, the Collect paragraph's framing and the scope note's account of the dossier); unexposed: client version and server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "effort=high; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code agent (derive-homily stage of proper-study v6, iteration 0: the homily derived from the two accepted studies for an adult parish assembly on 27 September 2026, comprising its entrypoint, the spoken body on the man carried and forgiven, the Collect's sine te, the Epistle's thanks for grace given, the power on earth to forgive and the Communion and Postcommunion, and the terminal note on sources and delivery with its References; the production audit entry; and author proof checks; at iteration 1, the repair of the homily-review finding on the Communion movement, so that the humble and contrite heart is the one present that claims nothing as its own while remaining God's gift, and the line on grace holds from the Collect to the close, with standing advisories on the penitent's contrition, whose gift Hilary's praise names at Mt 9:8, the Gospel's closing commands and Aquinas's three troubles, the framing of the Mass around the paralytic, and the note's count of disagreements and its routes); unexposed: client version and server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "claude-opus-5-5[1m]"
+     ],
+     "pages": 34,
+     "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.pdf",
+     "produced": {
+      "run_id": "71b6f89518984232",
+      "seed_commit": "fa5355745b5e973584f047a7f59a20ad22676d64",
+      "workflow_digest": "a965af881c1e4110b6e4698001b4f06b9a688a93a1f1652c292d15002afe1768",
+      "workflow_id": "proper-study",
+      "workflow_version": "6"
+     },
+     "provider": "claude",
+     "reviewed": "2026-09-22",
+     "revised": "2026-09-23T15:35:00Z",
+     "status": "alpha",
+     "subject": "Expansive study of the 1962 Missale Romanum proper for the Eighteenth Sunday after Pentecost: appointed texts, each element in its setting, three readings of the whole formulary with their four senses, and a comparison",
+     "title": "Eighteenth Sunday after Pentecost: A Study of the Proper in the 1962 Roman Missal",
+     "title_source": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/main.tex",
+     "web": "web/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.html"
+    }
+   ],
+   "leaf": "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost",
    "section": "liturgy"
   },
   {
