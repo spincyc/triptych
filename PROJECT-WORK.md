@@ -112,6 +112,11 @@ Introit joins Ecclus 36:18 to Ps 121:1, and no locus-specific date for a
 mixed-source element can reach the dossier. Only a change to the tool or the
 guidance can settle it; the leaf says the text is dated twice without giving
 the dates.
+On 2026-09-23 the maintainer decided that such an element's dossier row may
+state each passage's own date, labelled by its locus and drawn only from the
+generated record (deliverable `chronology-per-passage-dates-2026-09-23`). The
+change lands after this run publishes, and the leaf carries a revision
+obligation to date the Introit's Ecclesiasticus text.
 
 **Pre-existing test failure, unrelated and not repaired.**
 `tools.tests.test_roman_1962_finding_aid` fails 66 != 663 in

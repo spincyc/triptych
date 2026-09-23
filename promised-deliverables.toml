@@ -1,6 +1,30 @@
 schema_version = 1
 
 [[deliverables]]
+id = "chronology-per-passage-dates-2026-09-23"
+owner = "PROJECT-WORK.md"
+promise = "Resolve escalation STU-005 as the maintainer decided on 2026-09-23: a page-2 dossier row for an element whose appointed passages carry different dates may state each passage's own date, labelled by its locus and drawn only from the generated chronology record, so that every appointed passage is dated as the 1962 profile requires. Lands after the Claude 1962 Eighteenth Sunday run publishes."
+state = "planned"
+
+  [[deliverables.requirements]]
+  id = "checker-admits-per-passage-dates"
+  criterion = "tools/check-content-preflight chronology-claims-supported accepts, in a mixed-source element's explanatory row, a date for one of its passages when the text names that passage's locus and the date matches that locus's generated answer, and still refuses any date not drawn from the record; tests cover acceptance, a wrong date and an unlabelled date."
+  status = "open"
+  evidence = ["tools/check-content-preflight", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "guidance-states-per-passage-dates"
+  criterion = "guidance/scripture-chronology.md section 14.1 and the page-2 rule of guidance/liturgy/roman-1962-propers.md state the per-passage form, each in its owning file."
+  status = "open"
+  evidence = ["guidance/scripture-chronology.md", "guidance/liturgy/roman-1962-propers.md"]
+
+  [[deliverables.requirements]]
+  id = "eighteenth-sunday-introit-dated"
+  criterion = "At the Eighteenth Sunday leaf's first revision, its Introit dossier rows in the expansive and concise studies give Ecclus 36:18 its generated date beside Ps 121:1's."
+  status = "open"
+  evidence = ["src/sources/inventories/research-staleness-v1.toml"]
+
+[[deliverables]]
 id = "claude-1962-eighteenth-three-documents-2026-09-22"
 owner = "PROJECT-WORK.md"
 promise = "Drive the proper-study workflow for provider claude on the 1962 Eighteenth Sunday after Pentecost for Sunday 2026-09-27 through terminal acceptance: expansive study, concise study and standalone homily with fresh cold reviews, every workflow cycle and host intervention documented, and every contributing model declared exactly."

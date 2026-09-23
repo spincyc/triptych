@@ -156,6 +156,19 @@ evidence = [
   "evaluations/blocking-findings-v1.toml HOM-010",
 ]
 
+
+[[revision_due]]
+provider = "claude"
+leaf = "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"
+recorded_on = "2026-09-23"
+decision = "maintainer, 2026-09-23, resolving escalation STU-005 (deliverable chronology-per-passage-dates-2026-09-23)"
+correction = "Once the chronology checker admits per-passage dates, give the Introit's Ecclus 36:18 its generated date beside Ps 121:1 in the page-2 dossier of both studies, in place of the statement that the passages are dated separately."
+evidence = [
+  "sections/80-date-location.tex Introit row",
+  "sections/concise/03-date-location.tex Introit row",
+  "evaluations/blocking-findings-v1.toml STU-005",
+]
+
 [[editions]]
 provider = "claude"
 leaf = "articles/canon-law/clerical-celibacy-chastity-and-continence"
