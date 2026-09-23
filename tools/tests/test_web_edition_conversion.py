@@ -1022,6 +1022,26 @@ class WebEditionConversionTests(unittest.TestCase):
         self.assertIn("Wilderness of Ziph", markdown)
         self.assertIn("The superscription assigns the psalm to David.", markdown)
 
+    def test_starred_row_end_inside_a_carried_row_macro_leaks_no_spacing(self) -> None:
+        # \unitphase ends its phase row with \\*[-0.06em]; pandoc set the star
+        # and the length as the text opening the next row.
+        shared = ("liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/"
+                  "propers/shared/exposition-format.tex")
+        markdown = self.convert(
+            "\\begin{unitstable}\n"
+            r"\unitphase{Introductory Rites}" "\n"
+            r"\unitrow{Entrance Antiphon}{Psalm 54:6, 8.}" "\n"
+            r"\unitrow{Collect}{Proper to Week XVI.}" "\n"
+            "\\end{unitstable}",
+            preamble=r"\input{studies/subject/exposition-format}",
+            files={"exposition-format.tex": (ROOT / "src/claude" / shared).read_text(
+                encoding="utf-8")},
+        )
+        self.assertNotIn("0.06em", markdown)
+        self.assertNotRegex(markdown, r"(?m)^\| \\")
+        self.assertIn("**Introductory Rites**", markdown)
+        self.assertRegex(markdown, r"(?m)^\| Entrance Antiphon +\| Psalm 54:6, 8\. +\|$")
+
     def test_long_form_heading_and_anchor_fidelity(self) -> None:
         count = 120
         body = "\n".join(

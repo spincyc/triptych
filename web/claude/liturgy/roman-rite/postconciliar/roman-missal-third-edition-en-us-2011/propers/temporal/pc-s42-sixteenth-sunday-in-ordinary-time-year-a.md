@@ -11,28 +11,28 @@ Formula `PC-S40-A` ⋅ Lectionary 106
 | **Textual unit** | **Text / citation** |
 |:-----------------|:------------------------------------------------|
 | **Introductory Rites** |  |
-| \[-0.06em\] Entrance Antiphon | Psalm 54:6, 8 (Vulgate 53:6, 8). Sung entrance chant may instead be another text authorized under the four options in force for the dioceses of the United States. |
+| Entrance Antiphon | Psalm 54:6, 8 (Vulgate 53:6, 8). Sung entrance chant may instead be another text authorized under the four options in force for the dioceses of the United States. |
 | Gloria | Required, the day being a Sunday in Ordinary Time; the text is of the Order of Mass, not of this formulary. |
 | Collect | Proper to Week XVI: *Propitiare, Domine, famulis tuis … spe, fide et caritate ferventes … vigili custodia perseverent*. |
 | **Liturgy of the Word** |  |
-| \[-0.06em\] First Reading | Wisdom 12:13, 16–19. Verses 14–15 are not appointed. |
+| First Reading | Wisdom 12:13, 16–19. Verses 14–15 are not appointed. |
 | Responsorial Psalm | Psalm 86:5–6, 9–10, 15–16, with the response drawn from 86:5a. One response path is printed; no alternative refrain is appointed for the day. |
 | Second Reading | Romans 8:26–27. |
 | Gospel Acclamation | Alleluia with a verse adapted from Matthew 11:25 (printed *Cf.*): revelation of the mysteries of the kingdom to the little ones. |
 | Gospel | Longer form Matthew 13:24–43 *or* shorter form Matthew 13:24–30. The forms are alternatives; only one is proclaimed. |
 | Creed | Required, the day being a Sunday; the text is of the Order of Mass. |
 | **Liturgy of the Eucharist** |  |
-| \[-0.06em\] Offertory chant | No antiphon is supplied by this Missal for the preparation of the gifts; any music is locally chosen. |
+| Offertory chant | No antiphon is supplied by this Missal for the preparation of the gifts; any music is locally chosen. |
 | Prayer over the Offerings | Proper to Week XVI: *Deus, qui legalium differentiam hostiarum unius sacrificii perfectione sanxisti … sicut munera Abel*. |
 | Preface | No proper Preface. One of the Prefaces of the Sundays in Ordinary Time is used unless the Eucharistic Prayer chosen carries its own. |
 | Eucharistic Prayer | No proper insert is appointed for this formulary. |
 | **Communion Rite** |  |
-| \[-0.06em\] Communion Antiphon, first | Psalm 111:4–5 (Vulgate 110:4–5): the memorial of wonders; food given to those who fear the Lord. |
+| Communion Antiphon, first | Psalm 111:4–5 (Vulgate 110:4–5): the memorial of wonders; food given to those who fear the Lord. |
 | Communion Antiphon, second | Revelation 3:20: the knock at the door and the promised supper. |
 | Communion chant | Either printed antiphon, or another text authorized under the four options in force for the dioceses of the United States. |
 | Prayer after Communion | Proper to Week XVI: *Populo tuo … fac ad novitatem vitae de vetustate transire*. |
 | **Concluding Rites** |  |
-| \[-0.06em\] Dismissal | No text proper to this formulary; the Order of Mass supplies the blessing and dismissal formulas. |
+| Dismissal | No text proper to this formulary; the Order of Mass supplies the blessing and dismissal formulas. |
 
 <table style="width:93%;">
 <colgroup>

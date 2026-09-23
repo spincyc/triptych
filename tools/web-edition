@@ -190,6 +190,11 @@ ALIGNMENT_FIXUP_RE = re.compile(r"\\arraybackslash\s*")
 # from the leaf's carried definitions as well as its body: a rule inside a row
 # macro such as \dossierevent reached the reader as "2-4" before a dossier note.
 PARTIAL_RULE_RE = re.compile(r"\\cmidrule\s*(?:\([a-zA-Z]*\))?\s*(?:\{[^{}]*\})?")
+# A starred row end, \\*[len], only forbids a page break after the row, but
+# pandoc read the star and the length as the next row's text: "\[-0.06em\]"
+# opened each phase's first unit in the postconciliar inventory, from inside
+# the carried \unitphase definition. The star has no web counterpart.
+STARRED_ROW_END_RE = re.compile(r"\\\\\*")
 # Register assignments carry no text and are not brace-argument macros.
 REGISTER_ASSIGNMENT_RE = re.compile(r"\\Urlmuskip\s*=[^\\\n]*(?:\\relax)?")
 # pandoc's reader drops an enumitem option list and every \item label with it.
@@ -1339,7 +1344,9 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         ALIGNMENT_FIXUP_RE.sub("", SHIM.read_text(encoding="utf-8"))
     )
     locals_text, locals_bracketed = guard_opening_brackets(ALIGNMENT_FIXUP_RE.sub(
-        "", PARTIAL_RULE_RE.sub("", LIST_OPTION_RE.sub(r"\1", local_definitions(preamble)))
+        "", STARRED_ROW_END_RE.sub(r"\\\\", PARTIAL_RULE_RE.sub(
+            "", LIST_OPTION_RE.sub(r"\1", local_definitions(preamble))
+        ))
     ))
     body, bracketed = guard_opening_brackets(body)
     # The shim wins conflicts, so its replacement text is the one to expect.

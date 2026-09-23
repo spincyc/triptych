@@ -11,22 +11,22 @@ Year A · Lectionary no. 109 · Ordinary Time Week XVII formulary
 | **Textual unit** | **Text / citation** |
 |:-----------------|:------------------------------------------------|
 | **Introductory Rites** |  |
-| \[-0.06em\] Entrance Antiphon | *Cf.* Ps 67:6–7, 36 (Vulgate/Septuagint numbering; Ps 68 Hebrew). Latin incipit *Deus in loco sancto suo*. An approved entrance chant may be used instead. |
+| Entrance Antiphon | *Cf.* Ps 67:6–7, 36 (Vulgate/Septuagint numbering; Ps 68 Hebrew). Latin incipit *Deus in loco sancto suo*. An approved entrance chant may be used instead. |
 | Penitential Act | No proper text. On a Sunday the blessing and sprinkling of water may replace it; that rite has its own texts. |
 | Collect | *Protéctor in te sperántium, Deus*. One text, shared by Years A, B and C. |
 | **Liturgy of the Word** |  |
-| \[-0.06em\] First Reading | 1 Kings 3:5, 7–12. Verse 6 falls inside the span and is not proclaimed. |
+| First Reading | 1 Kings 3:5, 7–12. Verse 6 falls inside the span and is not proclaimed. |
 | Responsorial Psalm | Ps 119:57, 72, 76–77, 127–128, 129–130; response *Cf.* Ps 119:97a. Verses from six of the psalm’s twenty-two alphabetic stanzas; the refrain from a seventh. |
 | Second Reading | Romans 8:28–30. |
 | Gospel Acclamation | *Cf.* Matthew 11:25, set between the Alleluia. |
 | Gospel | Matthew 13:44–52, *or* the shorter form Matthew 13:44–46. Only one is proclaimed. |
 | **Liturgy of the Eucharist** |  |
-| \[-0.06em\] Offertory chant | No Missal antiphon. Any chant used is a local selection. |
+| Offertory chant | No Missal antiphon. Any chant used is a local selection. |
 | Prayer over the Offerings | *Súscipe, quǽsumus, Dómine, múnera*. Shared by Years A, B and C. |
 | Preface | None proper. A Preface of Sundays in Ordinary Time is used unless the Eucharistic Prayer chosen carries its own. |
 | Eucharistic Prayer | No proper insert. The choice is coupled to the Preface decision above. |
 | **Communion Rites** |  |
-| \[-0.06em\] Communion Antiphon | Either Ps 102:2 (Vulgate/Septuagint; Ps 103 Hebrew), *Bénedic, ánima mea, Dómino*; *or* Matthew 5:7–8, *Beáti misericórdes*. The Missal prints them as a closed pair. |
+| Communion Antiphon | Either Ps 102:2 (Vulgate/Septuagint; Ps 103 Hebrew), *Bénedic, ánima mea, Dómino*; *or* Matthew 5:7–8, *Beáti misericórdes*. The Missal prints them as a closed pair. |
 | Prayer after Communion | *Súmpsimus, Dómine, divínum sacraméntum*. Shared by Years A, B and C. |
 
 <table style="width:93%;">
@@ -236,16 +236,16 @@ Year A · Lectionary no. 109 · Ordinary Time Week XVII formulary
 | **Textual unit** | **Text / citation** |
 |:-----------------|:------------------------------------------------|
 | **Introductory Rites** |  |
-| \[-0.06em\] Entrance Antiphon | *Cf.* Ps 67:6–7, 36 (modern 68); *Deus in loco sancto suo*; God provides a dwelling and strength. |
+| Entrance Antiphon | *Cf.* Ps 67:6–7, 36 (modern 68); *Deus in loco sancto suo*; God provides a dwelling and strength. |
 | Collect | *Protéctor in te sperántium, Deus*; protection and guidance in using passing goods while adhering to those that endure. |
 | **Liturgy of the Word** |  |
-| \[-0.06em\] First Reading | 1 Kings 3:5, 7–12; Solomon asks for a hearing heart able to judge the entrusted people and distinguish good from evil. |
+| First Reading | 1 Kings 3:5, 7–12; Solomon asks for a hearing heart able to judge the entrusted people and distinguish good from evil. |
 | Responsorial Psalm | Ps 119:57, 72, 76–77, 127–130; response *cf.* v. 97a; instruction is loved above wealth and asked to give light. |
 | Second Reading | Romans 8:28–30; divine purpose amid groaning tends toward conformity to the firstborn Son. |
 | Gospel Acclamation | *Cf.* Matthew 11:25; the Father’s revelation is received by the little ones. |
 | Gospel | Long: Matthew 13:44–52, treasure, pearl, net, sorting, and the instructed scribe. Short: Matthew 13:44–46, treasure and pearl only. |
 | **Liturgy of the Eucharist** |  |
-| \[-0.06em\] Prayer over the Offerings | *Súscipe, quǽsumus, Dómine, múnera*; bounty first received is offered back, with present sanctification sought. |
+| Prayer over the Offerings | *Súscipe, quǽsumus, Dómine, múnera*; bounty first received is offered back, with present sanctification sought. |
 | Communion Antiphon A | Ps 102:2 (modern 103); bless the Lord and do not forget his benefits. |
 | Communion Antiphon B | Matthew 5:7–8; mercy and purity of heart retain their distinct promises. |
 | Prayer after Communion | *Súmpsimus, Dómine, divínum sacraméntum*; the perpetual memorial of the Passion is ordered toward saving fruit. |

@@ -89,7 +89,9 @@ numbers vanish from a citation; `\cmidrule` leaks its span into the
 following row, including from inside a leaf's own row macro, where the
 postconciliar `\dossierevent` put "2-4" before every narrated event and
 dossier note, so the audit now refuses a span pandoc kept without
-attributes; `\endnote` disappears with its citations; an `enumitem`
+attributes; a starred row end, `\\*[-0.06em]` in the postconciliar
+`\unitphase`, set its length before the next row's first cell;
+`\endnote` disappears with its citations; an `enumitem`
 option list takes every `\item` label with it; a comment between a
 `\newenvironment`'s groups hides the definition from the audit; an
 edition conditional written inline, `\ifdefined\TriptychSynthesisEdition
