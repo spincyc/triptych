@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections import Counter
 import importlib.machinery
 import importlib.util
 from importlib.metadata import PackageNotFoundError
@@ -1201,6 +1202,63 @@ class WebEditionConversionTests(unittest.TestCase):
                 )
                 self.assertRegex(markdown, rf"(?m)^\| {re.escape(expected)} +\| +\|$")
 
+    TWO_TABLES = (
+        "\\begin{longtable}{ll}\n" r"\textbf{Year} & \textbf{Act}\\" "\n\\endfirsthead\n"
+        r"1851 & A letter\\" "\n\\end{longtable}\n\n"
+        "Prose between the tables.\n\n"
+        "\\begin{longtable}{ll}\n" r"\textbf{Date} & \textbf{Event}\\" "\n\\endhead\n"
+        r"1903 & A mission\\" "\n\\end{longtable}"
+    )
+
+    def test_continuation_head_drop_stays_within_one_table(self) -> None:
+        # The first table has \endfirsthead and no \endhead of its own; the
+        # drop once ran on to the second table's \endhead and deleted both
+        # tables' rows, the prose between them and the second table's head.
+        markdown = self.convert(self.TWO_TABLES)
+        for text in ("1851", "A letter", "Prose between the tables.", "**Date**", "1903", "A mission"):
+            self.assertIn(text, markdown)
+        self.assertEqual(DRIVER.drop_continuation_heads(self.TWO_TABLES), self.TWO_TABLES)
+
+    def test_continuation_head_written_before_the_first_head_is_dropped(self) -> None:
+        markdown = self.convert(
+            "\\begin{longtable}{ll}\n"
+            r"\multicolumn{2}{l}{\textit{Acts, continued}}\\" "\n"
+            r"\textbf{Date} & \textbf{Act}\\" "\n\\endhead\n"
+            r"\textbf{Date} & \textbf{Act}\\" "\n\\endfirsthead\n"
+            r"1851 & A letter\\" "\n\\end{longtable}"
+        )
+        self.assertNotIn("continued", markdown)
+        self.assertEqual(markdown.count("**Date**"), 1)
+        self.assertRegex(markdown, r"(?m)^\|:-+\|:-+\|\n\| 1851 +\| A letter +\|$")
+
+    def test_table_without_a_continuation_head_is_left_untouched(self) -> None:
+        for table in (
+            "\\begin{longtable}{ll}\nA & B\\\\\n\\endhead\n1 & x\\\\\n\\end{longtable}",
+            "\\begin{longtable}{ll}\nA & B\\\\\n\\endfirsthead\n1 & x\\\\\n\\end{longtable}",
+        ):
+            with self.subTest(table=table):
+                self.assertEqual(DRIVER.drop_continuation_heads(table), table)
+
+    def test_an_unbounded_continuation_drop_is_refused_by_the_audit(self) -> None:
+        # The audit reads the body before the converter's own rewriting, so the
+        # rows an over-reaching drop deletes are missed and the edition refused.
+        def unbounded(text: str) -> str:
+            return re.sub(r"\\endfirsthead\b.*?\\endhead\b", r"\\endhead", text, flags=re.DOTALL)
+        with mock.patch.object(DRIVER, "drop_continuation_heads", side_effect=unbounded):
+            with self.assertRaises(DRIVER.ConversionError) as raised:
+                self.convert(self.TWO_TABLES)
+        self.assertIn("table cell opening(s) lost in conversion", str(raised.exception))
+        self.assertIn("'1851' (expected 1, found 0)", str(raised.exception))
+
+    def test_text_dashes_are_set_as_characters(self) -> None:
+        # Pandoc dropped \textemdash and \textendash, and the number after them.
+        markdown = self.convert(
+            r"From 1884\textendash 94; in 1903\textemdash 1904 too; x\textemdash{} y."
+            "\n\n\\begin{longtable}{ll}\n" r"\textendash 5 & A\\" "\n\\end{longtable}"
+        )
+        self.assertIn("From 1884\N{EN DASH}94; in 1903\N{EM DASH}1904 too; x\N{EM DASH} y.", markdown)
+        self.assertRegex(markdown, "(?m)^\\| \N{EN DASH}5 +\\| A +\\|$")
+
     def test_a_number_lost_by_an_unguarded_trigger_stops_the_conversion(self) -> None:
         # With the triggers left in place, the row-opening audit refuses.
         with mock.patch.object(DRIVER, "terminate_swallowers", side_effect=lambda text: text):
@@ -1623,6 +1681,61 @@ class WebEditionAuditTests(unittest.TestCase):
         self.assertEqual(lost, ["'13jan' (expected 1, found 0)"])
         self.assertEqual(DRIVER.lost_cell_openings(
             body, "| 13 Jan | A |\n|:-|:-|\n| 13 January 1960 | B |\n| 2.1 | C |\n", ""), [])
+
+    def test_an_opening_that_is_the_whole_cell_must_match_exactly(self) -> None:
+        body = "\\begin{longtable}{ll}\n1 & A\\\\\n\\rg{12} & B\\\\\n\\end{longtable}"
+        # "1" lost; the "12" of a skipped cell must not stand in for it.
+        self.assertEqual(
+            DRIVER.lost_cell_openings(body, "|  | A |\n|:-|:-|\n| 12 | B |\n", ""),
+            ["'1' (expected 1, found 0)"],
+        )
+        self.assertEqual(DRIVER.lost_cell_openings(body, "| 1 | A |\n|:-|:-|\n| 12 | B |\n", ""), [])
+
+    def test_a_cell_after_a_closed_row_command_is_audited(self) -> None:
+        body = "\\begin{longtable}{ll}\n\\newpage{} Gospel & Mt 9\\\\\n\\addlinespace{}1903 & x\\\\\n\\end{longtable}"
+        cells, _, _ = DRIVER.table_source_openings(body, "")
+        self.assertEqual(cells[("gospel", True)], 1)
+        self.assertEqual(cells[("1903", True)], 1)
+        self.assertEqual(
+            DRIVER.lost_cell_openings(body, "|  | Mt 9 |\n|:-|:-|\n| 1903 | x |\n", ""),
+            ["'gospel' (expected 1, found 0)"],
+        )
+
+    def test_a_table_built_by_a_command_is_audited_where_it_is_used(self) -> None:
+        body = ("\\newcommand{\\acts}{\\begin{tabular}{ll}1903 & x\\\\\\end{tabular}}\n"
+                "\\acts\n\n\\acts\n")
+        cells, _, _ = DRIVER.table_source_openings(body, "")
+        self.assertEqual(cells[("1903", True)], 2)
+        self.assertEqual(
+            DRIVER.lost_cell_openings(body, "| 1903 | x |\n|:-|:-|\n\n| x | x |\n|:-|:-|\n", ""),
+            ["'1903' (expected 2, found 1)"],
+        )
+        unused = "\\newcommand{\\acts}{\\begin{tabular}{ll}1903 & x\\\\\\end{tabular}}\nProse.\n"
+        self.assertEqual(DRIVER.table_source_openings(unused, "")[0], Counter())
+
+    def test_audit_does_not_misread_comments_macros_notes_or_nested_tables(self) -> None:
+        definitions = (
+            "\\newcommand{\\daterow}[2]{{% the date column\n#1} & #2\\\\\n"
+            "% 1850 & withdrawn\\\\\n}\n"
+            "\\newcommand{\\ibid}{\\textit{Ibid.}}"
+        )
+        body = (
+            "\\begin{longtable}{ll}\n\\daterow{1851}{A letter}\n"
+            "\\ibid\\ p.~3 & x\\\\\n"
+            "\\endnote{A source.}1903 & y\\\\\n"
+            "Outer & \\begin{tabular}{l}1\\\\ 2\\end{tabular}\\\\\n"
+            "\\end{longtable}"
+        )
+        cells, _, _ = DRIVER.table_source_openings(body, definitions)
+        self.assertEqual(sorted(cells), sorted([
+            ("1851", True), ("aletter", True), ("ibidp3", True), ("x", True), ("1903", True),
+            ("y", True), ("outer", True), ("1", True), ("2", True),
+        ]))
+        markdown = (
+            "| 1851 | A letter |\n|:-|:-|\n| *Ibid.* p. 3 | x |\n| 1903[^1] | y |\n"
+            "| Outer | <table><tr><td>1</td></tr><tr><td>2</td></tr></table> |\n"
+        )
+        self.assertEqual(DRIVER.lost_cell_openings(body, markdown, definitions), [])
 
     def test_repeated_header_is_reported_but_not_a_matching_data_row(self) -> None:
         header = "| **Date** | **Event** |\n|:-|:-|\n"

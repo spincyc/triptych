@@ -339,8 +339,7 @@ ROW_COMMAND_RE = re.compile(
 NUMBER_SWALLOWER_RE = re.compile(
     r"\\(RaggedRight|RaggedLeft|Centering|centering|raggedleft|allowbreak"
     r"|ignorespaces|indent|noindent|linebreak|nobreak|mdseries|normalfont|rmfamily"
-    r"|sffamily|ttfamily|upshape|null|protect|relax|sloppy|space|textbar|textemdash"
-    r"|textendash|negthinspace)(?![A-Za-z@])(\[[^\[\]]*\])?[ \t]*(?:\n[ \t]*)?(?=[0-9#])"
+    r"|sffamily|ttfamily|upshape|null|protect|relax|sloppy|space|textbar|negthinspace)(?![A-Za-z@])(\[[^\[\]]*\])?[ \t]*(?:\n[ \t]*)?(?=[0-9#])"
 )
 
 
@@ -420,12 +419,72 @@ def terminate_swallowers(text: str) -> str:
 # first for its opening page and a continuation head that print repeats after
 # each page break. Pandoc set both, so the header row published twice, the
 # second copy as the first body row. The web has no page break to continue
-# across, so only the first head is kept.
-CONTINUATION_HEAD_RE = re.compile(r"\\endfirsthead\b.*?\\endhead\b", re.DOTALL)
+# across, so only the first head is kept. Each longtable is handled alone --
+# from its column spec to its \end{longtable}, or to the close of the
+# definition group that holds its opening -- and in either order of the two
+# heads; a table with no continuation head is left untouched.
+HEAD_MARKER_RE = re.compile(r"\\(endfirsthead|endhead|endfoot|endlastfoot)(?![A-Za-z@])")
+LONGTABLE_BEGIN_RE = re.compile(r"\\begin\s*\{longtable\}")
+
+
+def table_rows_extent(text: str, start: int, name: str = "longtable") -> int:
+    """Where the rows of a table opening at start end: its \\end, or its group's close."""
+    closing, depth, index = "\\end{" + name + "}", 0, start
+    while index < len(text):
+        if depth == 0 and text.startswith(closing, index):
+            return index
+        character = text[index]
+        if character == "\\":
+            index += 2
+            continue
+        if character == "{":
+            depth += 1
+        elif character == "}":
+            if depth == 0:
+                return index
+            depth -= 1
+        index += 1
+    return len(text)
+
+
+def continuation_head(rows: str) -> tuple[int, int, int, int] | None:
+    """Offsets of a table's continuation head and of its \\endfirsthead marker.
+
+    Returns (start, end) of the rows that close with \\endhead, marker included,
+    and (start, end) of the \\endfirsthead marker, or None unless the table has
+    exactly one of each.
+    """
+    markers = list(HEAD_MARKER_RE.finditer(rows))
+    firsts = [marker for marker in markers if marker.group(1) == "endfirsthead"]
+    heads = [marker for marker in markers if marker.group(1) == "endhead"]
+    if len(firsts) != 1 or len(heads) != 1:
+        return None
+    before = [marker for marker in markers if marker.end() <= heads[0].start()]
+    start = before[-1].end() if before else 0
+    return start, heads[0].end(), firsts[0].start(), firsts[0].end()
 
 
 def drop_continuation_heads(text: str) -> str:
-    return CONTINUATION_HEAD_RE.sub(r"\\endhead", text)
+    masked = mask_tex_comments(text)
+    edits = []
+    for match in LONGTABLE_BEGIN_RE.finditer(masked):
+        cursor = skip_gap(masked, match.end())
+        try:
+            if masked[cursor : cursor + 1] == "[":
+                cursor = masked.index("]", cursor) + 1
+            _, cursor = brace_group(masked, cursor)
+        except (ConversionError, ValueError):
+            continue
+        end = table_rows_extent(masked, cursor)
+        found = continuation_head(masked[cursor:end])
+        if found is None:
+            continue
+        head_start, head_end, first_start, first_end = (cursor + offset for offset in found)
+        edits.append((head_start, head_end, ""))
+        edits.append((first_start, first_end, "\\endhead"))
+    for start, end, replacement in sorted(edits, reverse=True):
+        text = text[:start] + replacement + text[end:]
+    return text
 
 
 # pandoc reads \cmidrule's trim spec and span, and \cline's span, as cell text
@@ -1220,6 +1279,16 @@ PRE_CONVERSION_BREAKS_RE = re.compile(
 PERIOD_CENTERED_RE = re.compile(
     r"\\textperiodcentered(?![A-Za-z])(?:\s*\{\}|\s*)"
 )
+# Pandoc drops \textemdash and \textendash outright, and the number after either
+# with them: "1884\textendash 94" published as "1884". They are set as the
+# characters themselves, with the same reading of a following space as above.
+TEXT_DASH_RE = re.compile(r"\\text(em|en)dash(?![A-Za-z])(?:\s*\{\}|\s*)")
+
+
+def set_text_dashes(text: str) -> str:
+    return TEXT_DASH_RE.sub(
+        lambda match: "\N{EM DASH}" if match.group(1) == "em" else "\N{EN DASH}", text
+    )
 # Pandoc reads a `[` that follows many control words as that command's optional
 # argument and throws it away with the command: \par, \noindent, \nopagebreak,
 # \quad and \relax among them, none of which TeX gives such an argument, or only
@@ -1364,26 +1433,43 @@ def normalize_audit_text(text: str) -> str:
 # The row-opening audit. Pandoc's number-swallowing has many triggers, so the
 # audit does not name them: it reads what each table cell of the source opens
 # with and requires the output to hold a table cell that opens the same way.
-# The source side: every table environment of the body, built-in or a
-# wrapper the leaf or shim defines, is split into rows at \\ and into cells at
-# &, after expanding the row macros (definitions that contain & or \\) that
-# build its rows. A cell's opening is the first sixteen letters and digits of
-# the literal text it starts with, read through text-bearing commands and past
-# layout ones; a cell that opens with anything the audit cannot predict -- a
-# reference, math, an accent command, an unknown macro with an argument -- is
-# not audited, so the audit cannot misfire on it. The output side: every
-# pipe-table and HTML-table cell, reduced the same way. Each opening must be
-# matched by as many output cells as the source has cells opening with it.
+#
+# The source side is the body as assembled, before any of the converter's own
+# rewriting, so no rewriting can hide a loss from it. Comments are stripped
+# from the body and from every definition. Commands the body or the leaf
+# defines are expanded where a table is built from them, and so are the row
+# macros (definitions that contain & or \\) that build rows. Each table, of any
+# environment the shim, the leaf or the body defines, is read alone to its own
+# \end or its group's close; a nested table leaves its enclosing cell
+# unpredictable and is read as its own table; a longtable's continuation head
+# is set aside as the web sets it aside. Rows split at \\ and cells at &.
+#
+# A cell's opening is the first sixteen letters and digits of the literal text
+# it starts with, read through text-bearing commands and the leaf's own macros
+# and past layout, including any command closed with an empty group. A cell
+# that opens with anything the audit cannot predict -- math, a reference, an
+# accent or letter command, an unknown command with an argument -- is skipped,
+# so the audit cannot misfire on it. A cell whose opening is its whole text
+# must be matched exactly: "1" is not found in "12".
+#
+# The output side is every pipe-table and HTML-table cell reduced the same
+# way, footnote references removed. Each opening needs its own output cell;
+# exact openings are matched first, then prefixes from the longest down. In a
+# leaf of the shared proper format, a dossier note is lifted out of its table,
+# so its opening must instead open a paragraph.
 BUILTIN_TABLES = {"longtable": 1, "tabular": 1, "tabularx": 2, "tabular*": 2, "array": 1}
 OPENING_TEXT_COMMANDS = frozenset(
     """
     textbf textit emph textsc textsl textup textmd textrm textsf texttt textnormal
     underline latin Latin CanonLatin work term Term rubric incipit bid mbox
-    textsuperscript textsubscript
+    textsuperscript textsubscript nolinkurl path hyperref
     """.split()
 )
 OPENING_SKIP_COMMANDS = {"label": 1, "index": 1, "hspace": 1, "vspace": 1, "phantom": 1,
-                         "footnote": 1, "endnote": 1, "rule": 2, "hypertarget": 1}
+                         "footnote": 1, "endnote": 1, "rule": 2, "hypertarget": 1,
+                         "noalign": 1}
+# Commands that set a letter of their own: the opening cannot be predicted.
+OPENING_LETTER_COMMANDS = frozenset("aa AA ae AE oe OE ss o O l L i j".split())
 OPENING_SPACE_SYMBOLS = frozenset(" ,;:!@/-&%#_$")
 OPENING_LENGTH = 16
 # A row end's optional spacing argument, as TeX reads it: across spaces and one
@@ -1392,6 +1478,14 @@ OPENING_LENGTH = 16
 ROW_END_RE = re.compile(
     r"\\\\\*?(?:[ \t]*(?:\n[ \t]*)?\[[^\[\]]*\])?|\\tabularnewline(?![A-Za-z@])"
 )
+CELL_LAYOUT_RE = re.compile(
+    r"\\(?:toprule|midrule|bottomrule|hline|endhead|endfirsthead|endfoot|endlastfoot"
+    r"|addlinespace|newpage|pagebreak|clearpage|smallskip|medskip|bigskip|nopagebreak"
+    r"|phantomsection)(?![A-Za-z@])(?:\s*\[[^\[\]]*\])?(?:\{\})?"
+    r"|\\noalign\s*\{[^{}]*\}|" + PARTIAL_RULE_RE.pattern
+)
+LIFTED_NOTES = ("dossierprose", "dossierevent")
+Macro = tuple[int, str | None, str]
 
 
 def table_environments(definitions: str) -> dict[str, int]:
@@ -1412,47 +1506,85 @@ def table_environments(definitions: str) -> dict[str, int]:
     return environments
 
 
-def row_macros(definitions: str) -> dict[str, tuple[int, str | None, str]]:
-    macros = {}
-    for match in COMMAND_DEFINITION_RE.finditer(definitions):
+def command_definitions(
+    text: str, macros: dict[str, Macro] | None = None
+) -> tuple[dict[str, Macro], str]:
+    """The commands the text defines, and the text with the definitions cut out.
+
+    As in pandoc, the first definition of a name stands and only \\renewcommand
+    replaces it, so the shim, read first, wins over a leaf's own definition.
+    """
+    macros, cuts = dict(macros or {}), []
+    for match in COMMAND_DEFINITION_RE.finditer(text):
         try:
-            count, default, body, _ = command_signature(definitions, match.end())
+            count, default, body, opening = command_signature(text, match.end())
+            _, end = brace_group(text, opening)
         except (ConversionError, ValueError):
             continue
-        if "&" in body or "\\\\" in body:
-            macros[match.group(1) or match.group(2)] = (count, default, body)
-    return macros
+        name = match.group(1) or match.group(2)
+        if name not in macros or match.group(0).startswith("\\renew"):
+            macros[name] = (count, default, body)
+        cuts.append((match.start(), end))
+    # An environment defined in the body holds its table's opening rows, which
+    # the audit reads where the environment is used, not where it is defined.
+    for match in re.finditer(r"\\(?:new|renew)environment\*?\s*\{[^{}]*\}", text):
+        cursor = match.end()
+        try:
+            for groups in range(2):
+                cursor = skip_gap(text, cursor)
+                while text[cursor : cursor + 1] == "[":
+                    cursor = skip_gap(text, text.index("]", cursor) + 1)
+                _, cursor = brace_group(text, cursor)
+        except (ConversionError, ValueError):
+            continue
+        cuts.append((match.start(), cursor))
+    out, index = [], 0
+    for start, end in sorted(cuts):
+        if start < index:
+            continue
+        out.append(text[index:start])
+        index = end
+    out.append(text[index:])
+    return macros, "".join(out)
 
 
-def expand_row_macros(text: str, macros: dict[str, tuple[int, str | None, str]]) -> str:
+def macro_call(text: str, start: int, macro: Macro) -> tuple[str, int] | None:
+    """Expand the call whose arguments begin at start: (expansion, end)."""
+    count, default, replacement = macro
+    cursor, arguments = start, []
+    try:
+        for position in range(count):
+            gap = skip_gap(text, cursor)
+            if position == 0 and default is not None:
+                if text[gap : gap + 1] == "[":
+                    close = text.index("]", gap)
+                    arguments.append(text[gap + 1 : close])
+                    cursor = close + 1
+                else:
+                    arguments.append(default)
+                continue
+            argument, cursor = brace_group(text, cursor)
+            arguments.append(argument)
+    except (ConversionError, ValueError):
+        return None
+    for number, argument in enumerate(arguments, start=1):
+        replacement = replacement.replace(f"#{number}", argument)
+    return replacement, cursor
+
+
+def expand_macros(text: str, macros: dict[str, Macro]) -> str:
     for _ in range(3):
         before = text
-        for name, (count, default, replacement) in macros.items():
+        for name, macro in macros.items():
             out, index = [], 0
             for match in re.finditer(re.escape("\\" + name) + r"(?![A-Za-z@])", text):
                 if match.start() < index:
                     continue
-                cursor, arguments = match.end(), []
-                try:
-                    for position in range(count):
-                        gap = skip_gap(text, cursor)
-                        if position == 0 and default is not None:
-                            if text[gap : gap + 1] == "[":
-                                close = text.index("]", gap)
-                                arguments.append(text[gap + 1 : close])
-                                cursor = close + 1
-                            else:
-                                arguments.append(default)
-                            continue
-                        argument, cursor = brace_group(text, cursor)
-                        arguments.append(argument)
-                except (ConversionError, ValueError):
+                call = macro_call(text, match.end(), macro)
+                if call is None:
                     continue
-                expansion = replacement
-                for number, argument in enumerate(arguments, start=1):
-                    expansion = expansion.replace(f"#{number}", argument)
-                out.append(text[index : match.start()] + expansion)
-                index = cursor
+                out.append(text[index : match.start()] + call[0])
+                index = call[1]
             out.append(text[index:])
             text = "".join(out)
         if text == before:
@@ -1486,12 +1618,15 @@ def split_top_level(text: str, separator: re.Pattern[str]) -> list[str]:
     return pieces
 
 
-def cell_opening(cell: str) -> str | None:
-    """The alphanumeric opening of a source cell, or None where unpredictable."""
-    text, run = cell, []
-    while True:
+def cell_opening(cell: str, macros: dict[str, Macro] | None = None) -> tuple[str | None, bool, str]:
+    """A source cell's opening, whether that is its whole text, and a skip reason."""
+    macros = macros or {}
+    text = cell
+    for _ in range(64):
         text = text.lstrip()
-        if text[:1] in ("{", "}"):
+        if not text:
+            return None, False, "empty"
+        if text[0] in "{}":
             text = text[1:]
             continue
         if text.startswith("\\multicolumn"):
@@ -1500,16 +1635,23 @@ def cell_opening(cell: str) -> str | None:
                 _, cursor = brace_group(text, cursor)
                 content, cursor = brace_group(text, cursor)
             except ConversionError:
-                return None
+                return None, False, "unreadable span"
             text = content + text[cursor:]
             continue
         word = re.match(r"\\([A-Za-z@]+)\*?", text)
         if word:
             name, after = word.group(1), text[word.end():]
-            if name in OPENING_TEXT_COMMANDS and after.lstrip().startswith("{"):
-                content, cursor = brace_group(text, word.end())
-                text = content + text[cursor:]
+            if after.startswith("{}"):
+                text = after[2:]
                 continue
+            if name in OPENING_TEXT_COMMANDS:
+                cursor = skip_gap(text, word.end())
+                if text[cursor : cursor + 1] == "[" and "]" in text[cursor:]:
+                    cursor = text.index("]", cursor) + 1
+                if text[cursor:].lstrip().startswith("{"):
+                    content, cursor = brace_group(text, cursor)
+                    text = content + text[cursor:]
+                    continue
             if name in OPENING_SKIP_COMMANDS:
                 cursor = word.end()
                 try:
@@ -1519,23 +1661,38 @@ def cell_opening(cell: str) -> str | None:
                     for _ in range(OPENING_SKIP_COMMANDS[name]):
                         _, cursor = brace_group(text, cursor)
                 except (ConversionError, ValueError):
-                    return None
+                    return None, False, "unreadable command"
                 text = text[cursor:]
                 continue
+            if name in macros:
+                call = macro_call(text, word.end(), macros[name])
+                if call is None:
+                    return None, False, "unreadable macro"
+                text = call[0] + text[call[1]:]
+                continue
+            if name in OPENING_LETTER_COMMANDS:
+                return None, False, "letter command"
+            if name.startswith("if") or name in ("csname", "expandafter", "else", "fi"):
+                return None, False, "computed or conditional text"
             if after.lstrip().startswith(("{", "[")):
-                return None
-            text = after
+                return None, False, "command with an argument"
+            # A register assignment such as \\hyphenchar\\font=45 sets no text.
+            text = re.sub(r"^\s*=\s*-?[0-9.]+(?:\s*(?:pt|em|ex|mm|cm|in|bp|sp)(?![A-Za-z]))?",
+                          "", after)
             continue
         if text.startswith("\\"):
             if text[1:2] in OPENING_SPACE_SYMBOLS:
                 text = text[2:]
                 continue
-            return None
+            return None, False, "accent or symbol"
         break
     if text.startswith("$"):
-        return None
-    index = 0
-    while index < len(text) and len(run) < OPENING_LENGTH * 4:
+        return None, False, "math or nested table"
+    run, index, whole = [], 0, False
+    while True:
+        if index >= len(text):
+            whole = True
+            break
         character = text[index]
         if character == "\\":
             word = re.match(r"\\([A-Za-z@]+)\*?", text[index:])
@@ -1554,17 +1711,27 @@ def cell_opening(cell: str) -> str | None:
         run.append(character)
         index += 1
     opening = "".join(ch for ch in "".join(run).casefold() if ch.isalnum())
-    return opening[:OPENING_LENGTH] or None
+    if not opening:
+        return None, False, "no letters or digits"
+    return opening[:OPENING_LENGTH], whole and len(opening) <= OPENING_LENGTH, ""
 
 
-def source_cell_openings(body: str, definitions: str) -> Counter[str]:
-    openings: Counter[str] = Counter()
-    environments = table_environments(definitions)
-    macros = row_macros(definitions)
-    begin_re = re.compile(
-        r"\\begin\s*\{(" + "|".join(re.escape(name) for name in environments) + r")\}"
-    )
-    text = strip_tex_comments(body)
+def table_source_openings(
+    body: str, definitions: str, lifted_notes: bool = False
+) -> tuple[Counter[tuple[str, bool]], Counter[str], Counter[str]]:
+    """Cell openings, lifted-note openings, and skipped cells by reason."""
+    cells: Counter[tuple[str, bool]] = Counter()
+    paragraphs: Counter[str] = Counter()
+    skipped: Counter[str] = Counter()
+    defined, _ = command_definitions(strip_tex_comments(definitions))
+    macros, text = command_definitions(strip_tex_comments(body), defined)
+    environments = table_environments(strip_tex_comments(definitions) + "\n" + strip_tex_comments(body))
+    names = "|".join(re.escape(name) for name in environments)
+    begin_re = re.compile(r"\\begin\s*\{(" + names + r")\}")
+    builders = {name: macro for name, macro in macros.items() if begin_re.search(macro[2])}
+    rows_macros = {name: macro for name, macro in macros.items()
+                   if "&" in macro[2] or "\\\\" in macro[2]}
+    text = expand_macros(text, builders)
     for match in begin_re.finditer(text):
         name, cursor = match.group(1), match.end()
         try:
@@ -1574,22 +1741,53 @@ def source_cell_openings(body: str, definitions: str) -> Counter[str]:
             for _ in range(environments[name]):
                 _, cursor = brace_group(text, cursor)
         except (ConversionError, ValueError):
+            skipped["unreadable table"] += 1
             continue
-        end = text.find("\\end{" + name + "}", cursor)
-        if end < 0:
-            continue
-        region = expand_row_macros(text[cursor:end], macros)
+        region = text[cursor : table_rows_extent(text, cursor, name)]
+        # A nested table is read as its own table; its enclosing cell is not.
+        nested = []
+        for inner in begin_re.finditer(region):
+            if nested and inner.start() < nested[-1][1]:
+                continue
+            closing = "\\end{" + inner.group(1) + "}"
+            finish = region.find(closing, inner.end())
+            nested.append((inner.start(), len(region) if finish < 0 else finish + len(closing)))
+        for start, finish in reversed(nested):
+            region = region[:start] + "$" + region[finish:]
+        if lifted_notes and name == "dossiertable":
+            for note in LIFTED_NOTES:
+                def lift(arguments: list[str]) -> str:
+                    opening, _, reason = cell_opening(arguments[0], macros)
+                    if opening:
+                        paragraphs[opening] += 1
+                    else:
+                        skipped[reason] += 1
+                    return ""
+                region = replace_grouped_macro(region, note, 1, lift)
+        region = expand_macros(region, rows_macros)
+        if name == "longtable":
+            found = continuation_head(region)
+            if found is not None:
+                region = region[: found[0]] + region[found[1] :]
         for row in split_top_level(region, ROW_END_RE):
             for cell in split_top_level(row, re.compile(r"&")):
-                cell = re.sub(
-                    r"\\(?:toprule|midrule|bottomrule|hline|endhead|endfirsthead|endfoot"
-                    r"|endlastfoot)(?![A-Za-z@])(?:\s*\[[^\[\]]*\])?|\\noalign\s*\{[^{}]*\}",
-                    " ", cell,
-                )
-                opening = cell_opening(cell)
+                opening, whole, reason = cell_opening(CELL_LAYOUT_RE.sub(" ", cell), macros)
                 if opening:
-                    openings[opening] += 1
-    return openings
+                    cells[(opening, whole)] += 1
+                elif reason != "empty":
+                    skipped[reason] += 1
+    return cells, paragraphs, skipped
+
+
+FOOTNOTE_REFERENCE_RE = re.compile(
+    r"\[\^[^\]]*\]|<a\b[^>]*\bfootnote-ref\b[^>]*>.*?</a>", re.DOTALL
+)
+
+
+def reduced(text: str) -> str:
+    text = FOOTNOTE_REFERENCE_RE.sub("", text)
+    text = MARKDOWN_TAG_RE.sub("", MARKDOWN_TARGET_RE.sub("]", text))
+    return "".join(ch for ch in text.casefold() if ch.isalnum())
 
 
 def output_cell_openings(markdown: str) -> list[str]:
@@ -1599,32 +1797,41 @@ def output_cell_openings(markdown: str) -> list[str]:
         if line.startswith("|") and not OUTPUT_TABLE_RE.match(line):
             cells.extend(re.split(r"(?<!\\)\|", line.strip())[1:-1])
     cells.extend(re.findall(r"<t[dh]\b[^>]*>(.*?)</t[dh]>", markdown, re.DOTALL))
-    return [
-        "".join(ch for ch in MARKDOWN_TAG_RE.sub("", MARKDOWN_TARGET_RE.sub("]", cell)).casefold()
-                if ch.isalnum())
-        for cell in cells
-    ]
+    return [reduced(cell) for cell in cells]
 
 
-def lost_cell_openings(body: str, markdown: str, definitions: str) -> list[str]:
-    """Match source openings to output cells, each output cell used once.
+def output_paragraph_openings(markdown: str) -> list[str]:
+    blocks = BLOCK_SPLIT_RE.split(re.sub(r"<table\b.*?</table>", "", markdown, flags=re.DOTALL))
+    return [reduced(block) for block in blocks
+            if block.strip() and not block.lstrip().startswith(("|", "#"))]
 
-    Longer openings are matched first: "13 January 1960" must not let "13 Jan",
-    whose number was lost, count its cell as its own.
-    """
-    unused = output_cell_openings(markdown)
+
+def match_openings(wanted: Counter[tuple[str, bool]], unused: list[str | None]) -> list[str]:
     lost = []
-    wanted = source_cell_openings(body, definitions)
-    for opening in sorted(wanted, key=lambda key: (-len(key), key)):
+    order = sorted(wanted, key=lambda key: (not key[1], -len(key[0]), key[0]))
+    for opening, whole in order:
         found = 0
         for index, cell in enumerate(unused):
-            if found == wanted[opening]:
+            if found == wanted[(opening, whole)]:
                 break
-            if cell is not None and cell.startswith(opening):
+            if cell is not None and (cell == opening if whole else cell.startswith(opening)):
                 unused[index] = None
                 found += 1
-        if found < wanted[opening]:
-            lost.append(f"{opening!r} (expected {wanted[opening]}, found {found})")
+        if found < wanted[(opening, whole)]:
+            lost.append(f"{opening!r} (expected {wanted[(opening, whole)]}, found {found})")
+    return lost
+
+
+def lost_cell_openings(
+    body: str, markdown: str, definitions: str, lifted_notes: bool = False
+) -> list[str]:
+    """Source openings no output cell (or, for a lifted note, paragraph) holds."""
+    cells, paragraphs, _ = table_source_openings(body, definitions, lifted_notes)
+    lost = match_openings(cells, list(output_cell_openings(markdown)))
+    lost += match_openings(
+        Counter({(opening, False): count for opening, count in paragraphs.items()}),
+        list(output_paragraph_openings(markdown)),
+    )
     return sorted(lost)
 
 
@@ -1660,8 +1867,14 @@ def audit_output(
     required_anchors: set[str] | None = None,
     bracketed: dict[str, BracketedCommand] | None = None,
     definitions: str = "",
+    source_body: str | None = None,
+    lifted_notes: bool = False,
 ) -> list[str]:
-    """Compare critical macro payloads in the LaTeX body against the Markdown."""
+    """Compare critical macro payloads in the LaTeX body against the Markdown.
+
+    The row-opening audit reads `source_body`, the body before the converter's
+    own rewriting, where one is given.
+    """
     failures = bracketed_shortfalls(body, markdown, bracketed or {})
     failures.extend(title_shortfalls(body, markdown))
     # A table pandoc could not write as a pipe table becomes an HTML table; a
@@ -1694,7 +1907,9 @@ def audit_output(
     repeated = repeated_headers(markdown)
     if repeated:
         failures.append(f"{repeated} table(s) repeat their header row as their first body row")
-    lost = lost_cell_openings(body, markdown, definitions)
+    lost = lost_cell_openings(
+        body if source_body is None else source_body, markdown, definitions, lifted_notes
+    )
     if lost:
         failures.append("table cell opening(s) lost in conversion: " + "; ".join(lost))
     divs = FENCED_DIV_RE.findall(markdown)
@@ -1836,6 +2051,8 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     preamble = assemble(head, provider, preamble_sources, proper=proper)
     sources: dict[Path, str] = {main: tail}
     body = assemble(tail, provider, sources, proper=proper)
+    # The row-opening audit reads the body as assembled, before any rewriting.
+    assembled_body = body
     if semantic_graph is not None:
         assembled_graph = {main.resolve(), *preamble_sources, *sources}
         if assembled_graph != semantic_graph:
@@ -1861,7 +2078,7 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
             required_anchors = {f"proper-{key}" for key in keys}
         else:
             body = anchor_appointed_elements(body, set(components.get("element_keys", [])))
-    body = PERIOD_CENTERED_RE.sub("\N{MIDDLE DOT}", body)
+    body = set_text_dashes(PERIOD_CENTERED_RE.sub("\N{MIDDLE DOT}", body))
     body = PRE_CONVERSION_BREAKS_RE.sub("", body)
     body, chronology_annotations = expand_chronology_annotations(body, preamble)
     title, subtitle = pdf_metadata(preamble)
@@ -1895,12 +2112,12 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         if failures:
             raise ConversionError("\n".join(failures))
     shim_text, shim_bracketed = guard_opening_brackets(
-        terminate_swallowers(fix_column_specs(SHIM.read_text(encoding="utf-8")))
+        terminate_swallowers(fix_column_specs(set_text_dashes(SHIM.read_text(encoding="utf-8"))))
     )
     locals_text, locals_bracketed = guard_opening_brackets(drop_continuation_heads(
         terminate_swallowers(fix_column_specs(
             STARRED_ROW_END_RE.sub(r"\\\\", PARTIAL_RULE_RE.sub(
-                "", LIST_OPTION_RE.sub(r"\1", local_definitions(preamble))
+                "", LIST_OPTION_RE.sub(r"\1", set_text_dashes(local_definitions(preamble)))
             ))
         ))
     ))
@@ -1985,7 +2202,9 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         rendered_anchors,
         required_anchors,
         bracketed,
-        shim_text + "\n" + locals_text,
+        SHIM.read_text(encoding="utf-8") + "\n" + local_definitions(preamble),
+        assembled_body,
+        semantic_graph is not None,
     )
     if failures:
         raise ConversionError("\n".join(failures))

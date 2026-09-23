@@ -101,11 +101,15 @@ dates, years and ranks: a column prefix now keeps only the declarations
 pandoc renders (weight, shape, size) and `\raggedright`, at any brace
 depth; row-level page and spacing commands are closed with an empty group;
 the rest are closed where a number or a macro parameter follows; and the
-row-opening audit refuses an edition in which any source table cell's
-opening is missing from the output's cells, so a variant nobody has met yet
-fails loudly; a longtable declaring `\endfirsthead` and `\endhead`
-published its header twice, the continuation head as the first body row,
-so only the first head is kept and the audit refuses a first body row that
+row-opening audit, reading the body as assembled before the converter
+rewrites any of it, refuses an edition in which any source table cell's
+opening is missing from the output's cells, so neither a variant nobody has
+met yet nor the converter's own rewriting can lose one silently; pandoc
+drops `\textemdash` and `\textendash` with the number after them, so they
+are set as the characters; a longtable declaring `\endfirsthead` and
+`\endhead` published its header twice, the continuation head as the first
+body row, so only the first head is kept, each longtable read alone and in
+either order of its heads, and the audit refuses a first body row that
 repeats its header; a `\multicolumn` span lost the face its own spec
 declares until that face was carried into it; `\cline` leaked its span as
 `\cmidrule` did; a column prefix broken by a paragraph break, `\raggedright` after
