@@ -1179,7 +1179,9 @@ def check_provenance_matches_run(
 # reader-facing projection against that answer. `chronology-claims-supported`
 # holds the Date cells against the same answer or checked projection, and
 # refuses a date printed outside either route at all — the half that catches a
-# recalled figure, since a well-formed year reads exactly like a right one.
+# recalled figure, since a well-formed year reads exactly like a right one. A
+# dossier row's per-passage date (`PER_PASSAGE_DATE`) is the one other route,
+# held to the answer at the passage its label names.
 #
 # THE CONTRACT BINDS FROM `proper` VERSION 17 and from the first
 # `proper-finish` workflow, and the leaf itself says which workflow version
@@ -1365,6 +1367,230 @@ def _date_signature(value: str) -> tuple[str, str, tuple[int, ...]] | None:
     else:
         relation = "exact"
     return (era_key, relation, years) if years else None
+
+
+# A PER-PASSAGE DATE, the one form in which a dossier's explanatory row may
+# date one of its passages rather than the whole element (maintainer decision,
+# 2026-09-23, escalation STU-005). The Date cell prints only what holds at
+# every locus the element appoints, so an Introit joining Ecclus 36:18 to
+# Ps 121:1 has no element-wide date at all; its row may instead say
+#
+#     Ecclus~36:18: 190--170~B.C. or c.~280~B.C.; Ps~121:1: before c.~165~B.C.
+#
+# A citation, a colon, and the date straight after it; further answers for the
+# same passage follow as `or <date>`. The label is a claim about a locus, so it
+# is held to that locus and nowhere else: the date must be one the generated
+# record gives at every verse the label names, the label must name the row's
+# own verses, and a label no citation grammar reads is refused rather than
+# ignored. The date carries its whole relation — `before c. 165 B.C.` is a
+# boundary here, where the edition-wide scan reads only `c. 165 B.C.`.
+PASSAGE_BOOK = r"(?:[1-4]\s*)?[A-Z][A-Za-z]*\.?"
+PASSAGE_POINT = r"[0-9]+(?::[0-9]+)?[a-z]?"
+PASSAGE_EXTENT = rf"{PASSAGE_POINT}(?:\s*(?:-{{1,2}}|–|—)\s*{PASSAGE_POINT})?"
+PASSAGE_VERSES = (
+    rf"[0-9]+:[0-9]+[a-z]?(?:\s*(?:-{{1,2}}|–|—)\s*{PASSAGE_POINT})?"
+    rf"(?:\s*,\s*{PASSAGE_EXTENT})*"
+)
+PASSAGE_DATE = (
+    rf"(?i:(?:(?:before|after|about)\s+|post-|pre-)?(?:c\.\s*)?"
+    rf"(?:{ERA}\s*{YEAR_OR_SPAN}|{YEAR_OR_SPAN}\s*{ERA}))"
+)
+PER_PASSAGE_DATE = re.compile(
+    rf"(?<![A-Za-z0-9])(?P<citation>{PASSAGE_BOOK}\s+{PASSAGE_VERSES})"
+    rf"\s*:\s*(?P<dates>{PASSAGE_DATE}(?:\s*,?\s+or\s+{PASSAGE_DATE})*)"
+)
+ONE_PASSAGE_DATE = re.compile(PASSAGE_DATE)
+DOSSIER_PROSE = "dossierprose"
+
+
+def _untied(text: str) -> str:
+    """TeX spacing commands as spaces of the same length, so offsets hold."""
+    return TIE.sub(lambda match: " " * len(match.group(0)), text)
+
+
+def _blank(text: str, start: int, stop: int) -> str:
+    """`text` with `[start, stop)` replaced by spaces, line breaks kept."""
+    return text[:start] + re.sub(r"[^\n]", " ", text[start:stop]) + text[stop:]
+
+
+def _passage_loci(citation: str) -> tuple[str, ...]:
+    """The corpus loci a per-passage label names, or ValueError saying why.
+
+    The verses are read by `tools/citations`, the grammar every appointment
+    is encoded with, and become loci through the same wiring that built the
+    record, so a label and the record cannot spell one verse two ways. The
+    book may be spelled as that grammar knows it (`Mt`, `1 Cor`, `Sir`) or as
+    the corpus's own token (`Ecclus`, `Matt`, `1Cor`); where both read the
+    same spelling as different books (`1 Kings`), it names neither.
+    """
+    import _proper_chronology_inputs  # noqa: PLC0415
+
+    wiring = _wiring()
+    grammar = _proper_chronology_inputs._citations()
+    text = " ".join(DASH.sub("-", citation).split())
+    text = re.sub(r"\s*-\s*", "-", re.sub(r"\s*,\s*", ", ", text))
+    split = re.match(r"((?:[1-4]\s*)?[A-Za-z]+)\.?\s+(.+)", text)
+    if split is None:
+        raise ValueError("no book and verse")
+    book, verses = split.groups()
+    by_token = {token: name for name, token in wiring._tokens().items()}
+    readings = set()
+    try:
+        readings.add(wiring._tokens()[grammar.canonical_book(book)])
+    except (KeyError, grammar.CitationError):
+        pass
+    if re.sub(r"\s+", "", book) in by_token:
+        readings.add(re.sub(r"\s+", "", book))
+    if not readings:
+        raise ValueError(f"no book is spelled {book!r}")
+    if len(readings) > 1:
+        raise ValueError(
+            f"{book!r} is {' and '.join(sorted(readings))} at once; spell the "
+            f"book so that only one of them reads it")
+    token = readings.pop()
+    try:
+        passage = grammar.parse_citation(f"{by_token[token]} {verses}")
+    except grammar.CitationError as exc:
+        raise ValueError(str(exc)) from None
+    return tuple(dict.fromkeys(wiring._loci_of(passage, citation)))
+
+
+def _claim_signatures(claim) -> set[tuple[str, str, tuple[int, ...]]]:
+    """Every era signature the record authorizes for one claim."""
+    return {
+        signature
+        for value in (claim.label, _wiring().concise_display_label(claim))
+        if (signature := _date_signature(value)) is not None
+    }
+
+
+def _per_passage_dates(
+    text: str,
+    cells: list[tuple[list[str], int, int]],
+    found,
+    comparisons: dict[str, list],
+    name: Path,
+) -> tuple[list[str], str, int]:
+    """Hold each dossier row's per-passage dates to the passage they name.
+
+    A row is the `\\dossierprose` explanation after an element's
+    `\\chronodate` cell, and it answers for the elements that cell names.
+    Returns the refusals, `text` with every date judged here blanked so the
+    edition-wide scan does not judge it a second time against the whole
+    formulary, and how many labelled dates passed.
+    """
+    problems: list[str] = []
+    passed = 0
+    starts = [
+        (at, [key.strip() for key in args[0].split(",") if key.strip()])
+        for args, at, _stop in cells
+    ]
+    for _args, at, stop in _macro_calls(text, DOSSIER_PROSE, 1):
+        owners = [keys for cell_at, keys in starts if cell_at < at]
+        if not owners:
+            continue
+        keys = owners[-1]
+        elements = [e for e in map(found.element, keys) if e is not None]
+        row_loci = tuple(dict.fromkeys(
+            locus for element in elements for locus in element.loci))
+        if not row_loci:
+            continue
+        held = [
+            (claim, frozenset(reach.locus for reach in claim.reaches))
+            for element in elements
+            for claim in (*element.claims, *comparisons.get(element.key, ()))
+        ]
+        row_wide = {
+            signature for claim, reach in held if reach >= set(row_loci)
+            for signature in _claim_signatures(claim)
+        }
+        open_brace = text.index("{", at + len(DOSSIER_PROSE) + 1)
+        base = open_brace + 1
+        content = _untied(text[base:stop - 1])
+        row = ", ".join(keys)
+        judged: list[tuple[int, int]] = []
+
+        def line_of(offset: int) -> int:
+            return text.count("\n", 0, base + offset) + 1
+
+        for match in PER_PASSAGE_DATE.finditer(content):
+            judged.append((match.start(), match.end()))
+            citation = " ".join(match.group("citation").split())
+            where = f"{name}:{line_of(match.start())}"
+            try:
+                loci = _passage_loci(citation)
+            except ValueError as exc:
+                problems.append(
+                    f"{where}: per-passage date label {citation!r} names no "
+                    f"passage ({exc}). A row dates one of its passages as "
+                    "`<citation>: <date>`, the book spelled as tools/citations "
+                    "or the chronology corpus spells it: "
+                    "guidance/scripture-chronology.md section 14.1.")
+                continue
+            outside = [locus for locus in loci if locus not in row_loci]
+            if outside:
+                problems.append(
+                    f"{where}: per-passage date label {citation!r} names "
+                    f"{', '.join(outside)}, which the {row} row does not "
+                    f"appoint (it appoints {', '.join(row_loci)}); a row "
+                    "dates only its own passages.")
+                continue
+            answer = [claim for claim, reach in held if reach >= set(loci)]
+            allowed = {
+                signature for claim in answer
+                for signature in _claim_signatures(claim)
+            }
+            for date in ONE_PASSAGE_DATE.finditer(match.group("dates")):
+                printed = _normalized_label(date.group(0))
+                signature = _date_signature(printed)
+                if signature in allowed:
+                    passed += 1
+                    continue
+                elsewhere = sorted({
+                    locus for claim, reach in held
+                    if signature in _claim_signatures(claim)
+                    for locus in reach
+                } - set(loci))
+                holds = sorted({
+                    _wiring().concise_display_label(claim) for claim in answer
+                })
+                because = (
+                    f"the record gives it at {', '.join(elsewhere)}, not at "
+                    f"{', '.join(loci)}" if elsewhere else
+                    f"at {', '.join(loci)} the record gives "
+                    f"{holds or 'no date'}")
+                problems.append(
+                    f"{where}: per-passage date {citation}: {printed!r} is not "
+                    f"the generated record's answer for that passage; "
+                    f"{because}. A per-passage date is the one the record "
+                    "holds for the passage its label names: "
+                    "guidance/scripture-chronology.md section 14.1.")
+        for match in MANUAL_CHRONOLOGY_DATE.finditer(content):
+            if any(match.start() < stop_ and match.end() > start_
+                   for start_, stop_ in judged):
+                continue
+            signature = _date_signature(match.group(0))
+            if signature is None or signature in row_wide:
+                continue
+            partial = sorted({
+                locus for claim, reach in held
+                if signature in _claim_signatures(claim) for locus in reach
+            })
+            if not partial:
+                continue
+            judged.append((match.start(), match.end()))
+            printed = _normalized_label(match.group(0))
+            problems.append(
+                f"{name}:{line_of(match.start())}: {printed!r} in the {row} "
+                f"row is the generated record's answer only at "
+                f"{', '.join(partial)}, not at every passage the row appoints "
+                f"({', '.join(row_loci)}), and carries no locus label. Write "
+                f"it as `<citation>: {printed}` naming that passage, or refer "
+                "to the displayed date: guidance/scripture-chronology.md "
+                "section 14.1.")
+        for start_, stop_ in judged:
+            text = _blank(text, base + start_, base + stop_)
+    return problems, text, passed
 
 
 def _annotation_macro_definitions(leaf: Path, generated: Path) -> list[str]:
@@ -1851,6 +2077,12 @@ def check_chronology_claims_supported(leaf: Path, root: Path,
     same era and explicit years as a claim in the generated default answer or
     a declared profile comparison. This narrow scan does not treat every prose
     number as chronology; verse, volume and page numbers remain outside it.
+
+    A dossier row's explanation may instead date one of its own passages as
+    `<citation>: <date>` (`PER_PASSAGE_DATE`). That date is held to the
+    record's answer at the verses the label names, never to the formulary at
+    large, and in a row whose passages answer differently a date true of only
+    some of them is refused unless it carries that label.
     """
     required, macros, why = _chronology_scope(leaf, edition)
     if edition == LEAF_EDITION and three_document_study(leaf) and macros:
@@ -1915,6 +2147,13 @@ def check_chronology_claims_supported(leaf: Path, root: Path,
     cells_seen = 0
     claims_seen = 0
     annotations_seen = 0
+    passages_seen = 0
+    production = _stated_production(leaf)
+    manual_prose_bound = bool(getattr(found, "comparison_dependencies", ())) or (
+        production is not None
+        and production[0] == "proper-study"
+        and production[1] >= 6
+    )
 
     def hold(
         args: list[str],
@@ -2060,6 +2299,14 @@ def check_chronology_claims_supported(leaf: Path, root: Path,
                     f"this cell from the chronology corpus or it does not "
                     f"reach it; a figure with no claim behind it is "
                     f"indistinguishable on the page from one with.")
+        # Per-passage dates are judged against the passage their label names
+        # and then blanked, so the edition-wide scan below cannot pass a
+        # mislabelled one merely because some other element holds its figure.
+        if manual_prose_bound:
+            passage_problems, text, passed = _per_passage_dates(
+                text, cells, found, comparisons, name)
+            problems.extend(passage_problems)
+            passages_seen += passed
         # A claim standing outside a date cell is still a claim about the
         # corpus's contents, so it is held to the same rule against the whole
         # formulary. The cells are cut out first rather than compared by
@@ -2086,12 +2333,6 @@ def check_chronology_claims_supported(leaf: Path, root: Path,
             key=lambda item: item[1], reverse=True,
         ):
             prose_only = prose_only[:at] + " " + prose_only[stop:]
-        production = _stated_production(leaf)
-        manual_prose_bound = bool(getattr(found, "comparison_dependencies", ())) or (
-            production is not None
-            and production[0] == "proper-study"
-            and production[1] >= 6
-        )
         for match in (MANUAL_CHRONOLOGY_DATE.finditer(prose_only)
                       if manual_prose_bound else ()):
             printed_date = match.group(0)
@@ -2192,11 +2433,14 @@ def check_chronology_claims_supported(leaf: Path, root: Path,
             f"{claims_seen} chronology claims and no date cell, every claim "
             f"asserted by the corpus ({scope})"
         )
+    passages = (
+        f"; {passages_seen} per-passage dates, each the record's answer for "
+        f"the passage it names" if passages_seen else "")
     return problems, (
         f"{cells_seen} date cells, {annotations_seen} generated annotations, "
         f"and {claims_seen} direct chronology claims, every "
         f"claim asserted by the corpus at the element it is printed for, no "
-        f"figure printed outside one ({scope})"
+        f"figure printed outside one ({scope}){passages}"
     )
 
 

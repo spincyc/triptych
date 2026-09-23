@@ -1377,6 +1377,30 @@ it does not import the 1962 calendar, source owner, or research judgments.
   the generated default answer and every declared comparison refuses even when
   it sits outside a Date cell. Prefer referring to “the displayed range” over
   repeating a generated date when the number adds no explanatory value.
+- **A per-passage date** is the one route by which a locus-specific answer
+  reaches the page (maintainer decision, 2026-09-23, escalation STU-005). An
+  element whose appointed passages answer differently has no element-wide
+  date, and the explanatory row of its dossier — the `\dossierprose` after its
+  `\chronodate` cell — may date each passage as `<citation>: <date>`:
+  `Ecclus~36:18: 190--170~B.C. or c.~280~B.C.; Ps~121:1: before c.~165~B.C.`
+  The citation stands immediately before the colon and the date immediately
+  after it; further answers for the same passage follow as `or <date>`, and
+  each date keeps its relation word (`before`, `after`, `c.`). The book is
+  spelled as `tools/citations` reads it or as the corpus's locus token
+  (`Ecclus`, `1Cor`); a spelling the two read as different books (`1 Kings`)
+  names neither. Psalms take the record's Vulgate numbering.
+  `chronology-claims-supported` accepts the date only when the generated
+  record gives it — by source label or generated display, with the same era,
+  relation and years — at every verse the label names, and those verses are
+  the row's own. It refuses a date the record does not give there, one it
+  gives only at another of the row's passages, a label that names no passage
+  or a verse outside its row, and, in a row whose passages answer
+  differently, an unlabelled date true of only some of them. Outside a
+  dossier row the form has no standing and meets the era-qualified scan
+  above. The Date cell is unchanged and still carries only its generated
+  annotation. The 1962
+  [page-2 rule](liturgy/roman-1962-propers.md#page-2-scriptural-date-and-location)
+  says when a dossier uses the form.
 
 The second refusal is the one that answers "it does not invent one". A date is
 a well-formed integer, so a wrong one reads exactly like a right one, and no

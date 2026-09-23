@@ -16,16 +16,21 @@ SPEC = importlib.util.spec_from_loader(LOADER.name, LOADER)
 PREFLIGHT = importlib.util.module_from_spec(SPEC)
 LOADER.exec_module(PREFLIGHT)
 DOCUMENT = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"
+EIGHTEENTH = "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"
 
 
-class StudyPreflightTests(unittest.TestCase):
+class StudyLeaf:
+    """A schema-2 study leaf in a scratch tree that reads the real corpus."""
+
+    document = DOCUMENT
+
     def setUp(self):
         scratch = ROOT / ".scratch/preflight"
         scratch.mkdir(parents=True, exist_ok=True)
         self.temp = tempfile.TemporaryDirectory(dir=scratch)
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
-        self.leaf = self.root / "src/gpt" / DOCUMENT
+        self.leaf = self.root / "src/gpt" / self.document
         self.leaf.mkdir(parents=True)
         (self.leaf / "sections").mkdir()
         (self.leaf / "research").mkdir()
@@ -38,7 +43,7 @@ class StudyPreflightTests(unittest.TestCase):
                                ("synthesis", "synthesis.tex"),
                                ("homily", "homily.tex")):
             (self.leaf / entry).write_text(
-                f"\\input{{{DOCUMENT}/sections/{edition}}}\n")
+                f"\\input{{{self.document}/sections/{edition}}}\n")
             self.write(edition, "\\section*{Mercy}\nAugustine teaches mercy.\n")
         PREFLIGHT.flag_defined.cache_clear()
 
@@ -67,7 +72,7 @@ class StudyPreflightTests(unittest.TestCase):
         path.write_text(
             'schema = 1\n'
             'record_type = "proper-chronology-profile-comparisons"\n'
-            f'document = "{DOCUMENT}"\n\n'
+            f'document = "{self.document}"\n\n'
             '[[comparisons]]\n'
             'key = "critical-matthew-composition"\n'
             'element = "gospel"\n'
@@ -91,6 +96,8 @@ class StudyPreflightTests(unittest.TestCase):
                             "\\begin{document}\n" + path.read_text())
         return owner
 
+
+class StudyPreflightTests(StudyLeaf, unittest.TestCase):
     def test_current_schema_two_shared_inputs_are_not_leaf_prose(self):
         format_owner = self.shared_date_wrapper()
         preamble_owner = format_owner.parent / "preamble.tex"
@@ -493,6 +500,94 @@ class StudyPreflightTests(unittest.TestCase):
             'element_keys = ["introit"]'))
         with self.assertRaisesRegex(ValueError, "coverage"):
             self.check("relation-coverage")
+
+
+class PerPassageDateTests(StudyLeaf, unittest.TestCase):
+    """A dossier row dates each of its passages by locus, from the record.
+
+    The Eighteenth Sunday's Introit joins Ecclus 36:18 to Ps 121:1, and the
+    record holds no date at both, so its Date cell prints none. Its
+    explanatory row may date each passage under that passage's own label
+    (maintainer decision, 2026-09-23, escalation STU-005).
+    """
+
+    document = EIGHTEENTH
+
+    def setUp(self):
+        super().setUp()
+        self.write_provenance(version="6")
+        found = self.corpus()
+        wiring = PREFLIGHT._wiring()
+        (self.leaf / "research/chronology-annotations.tex").write_text(
+            wiring.render_annotations_tex(wiring.annotations(found)))
+
+    def row(self, prose, key="introit"):
+        self.write("research",
+                   f"\\chronodate{{{key}}}{{\\chronologyannotation{{{key}}}}}"
+                   f"\\\\\n\\dossierprose{{{prose}}}\n")
+        return self.check("chronology-claims-supported", "research")
+
+    def test_the_introit_passages_answer_differently(self):
+        introit = PREFLIGHT._corpus_answer(self.leaf, self.root).element("introit")
+        self.assertEqual(introit.loci, ("Ecclus.36.18", "Ps.121.1"))
+        self.assertEqual(introit.publication_claims, ())
+
+    def test_each_passage_dated_under_its_own_locus_passes(self):
+        problems, summary = self.row(
+            "Ecclus~36:18: 190--170~B.C. or c.~280~B.C.; "
+            "Ps~121:1: before c.~165~B.C.")
+        self.assertEqual(problems, [])
+        self.assertIn("3 per-passage dates", summary)
+
+    def test_a_date_the_record_does_not_give_the_passage_is_refused(self):
+        # A.D. 56 is the Epistle's element-wide date, which the edition-wide
+        # scan passes anywhere; under this label it is false.
+        for prose in ("Ecclus~36:18: 200--180~B.C.", "Ecclus~36:18: A.D.~56"):
+            with self.subTest(prose=prose):
+                problems, _ = self.row(prose)
+                self.assertIn("not the generated record's answer",
+                              " ".join(problems))
+
+    def test_a_date_under_the_other_passage_is_refused(self):
+        for prose, held_at in (
+            ("Ps~121:1: 190--170~B.C.", "Ecclus.36.18"),
+            ("Ecclus~36:18: before c.~165~B.C.", "Ps.121.1"),
+        ):
+            with self.subTest(prose=prose):
+                problems, _ = self.row(prose)
+                self.assertIn(f"the record gives it at {held_at}",
+                              " ".join(problems))
+
+    def test_an_unlabelled_passage_date_is_refused(self):
+        for prose in ("The book is dated 190--170~B.C.",
+                      "The book is dated c.~280~B.C."):
+            with self.subTest(prose=prose):
+                problems, _ = self.row(prose)
+                self.assertIn("carries no locus label", " ".join(problems))
+        # A figure true of no passage in the row keeps the edition-wide rule.
+        self.assertEqual(self.row("The Epistle's year is A.D.~56.")[0], [])
+
+    def test_a_label_must_name_one_of_the_rows_own_passages(self):
+        for prose, because in (
+            ("Ecclus~36:19: 190--170~B.C.", "does not appoint"),
+            ("Ex~24:4: 190--170~B.C.", "does not appoint"),
+            ("Foo~3:4: 190--170~B.C.", "names no passage"),
+        ):
+            with self.subTest(prose=prose):
+                problems, _ = self.row(prose)
+                self.assertIn(because, " ".join(problems))
+
+    def test_the_form_is_admitted_only_in_a_dossier_row(self):
+        self.write("research", "Ecclus~36:18: 190--170~B.C.\n")
+        problems, _ = self.check("chronology-claims-supported", "research")
+        self.assertIn("manual chronology date", " ".join(problems))
+
+    def test_a_uniform_element_keeps_its_element_wide_date(self):
+        self.assertEqual(self.row("The table gives A.D.~56.", "epistle")[0], [])
+        self.assertIn("manual chronology date",
+                      " ".join(self.row("The table gives A.D.~58.", "epistle")[0]))
+        self.assertEqual(
+            self.row("Ps~121:1, 7: before c.~165~B.C.", "gradual")[0], [])
 
 
 if __name__ == "__main__":

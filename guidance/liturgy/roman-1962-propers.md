@@ -327,6 +327,18 @@ Prophetic referents remain separately labeled. Preserve the corpus's
 alternatives, partial-locus limits and unresolved states rather than supplying
 an absent date from memory or a publication-local source.
 
+An element whose passages the record dates differently — an Introit joining
+Ecclesiasticus to a psalm verse — has no element-wide date, and its generated
+Date cell says so. The received date still belongs on the page: the element's
+explanatory row gives each of its passages the generated date the record holds
+for that passage, under that passage's label, with every alternative the
+record keeps there and the relation named in the sentence that carries it. The
+Date cell stays the generated annotation. Use only the per-passage form that
+[Scripture chronology §14.1](../scripture-chronology.md#141-the-propers-wired)
+defines and the checker holds to the record. This was decided on
+2026-09-23, when the Eighteenth Sunday's Introit, Ecclus 36:18 with Ps 121:1,
+could otherwise print no date for Ecclesiasticus at all.
+
 `check-content-preflight` checks record and annotation currency and refuses
 unsupported claims, omitted appointed Scripture, and Date cells that bypass
 their generated annotations. It also checks era-qualified dates throughout the
