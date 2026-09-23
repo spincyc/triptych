@@ -128,6 +128,16 @@ backslash reaches the reader; the escape set the converter emits is
 pandoc's, and narrowing it to the site's is a change to every tracked
 edition that carries one.
 
+The site presents a dossier's tables without clipping any column, as the
+maintainer also decided on 2026-09-23: an ordinary four-column table at desktop
+widths, and at the stylesheet's 760px breakpoint each row set as two lines of
+two, unit and citation over location and date, beneath a header block of the
+same shape. `release/public-alpha/assets/site.css` finds the dossier by its
+section heading's id, `sec:date-location` or the plain heading's slug
+`scriptural-date-and-location`, and `tools/tests/test_public_alpha.py` holds
+every edition to those ids, so a converter change to that heading moves the
+stylesheet with it.
+
 ## Componentized proper guides
 
 When a proper profile authorizes `proper-components.toml`, the canonical

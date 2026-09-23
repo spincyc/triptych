@@ -1254,6 +1254,43 @@ class PublicAlphaTest(unittest.TestCase):
             r"\.page-shell\.reading dt\s*\{[^}]*font-weight:\s*700;",
         )
 
+    def test_every_dossier_heading_has_an_id_the_narrow_dossier_rule_names(self) -> None:
+        """Keep each proper dossier within reach of its phone-width layout.
+
+        The maintainer decided on 2026-09-23 that no column of a Scriptural
+        Date and Location dossier may go behind a sideways scroll at phone
+        width. site.css sets the dossier's rows as two lines of two for that,
+        and finds the dossier by the id of the h2 that opens its section,
+        because a Markdown table cannot carry a class. A dossier heading
+        rendered with any other id, or at another level, would fall back to
+        the scrolling table without a word, so this refuses one.
+        """
+        css = (
+            REPOSITORY_ROOT / "release/public-alpha/assets/site.css"
+        ).read_text(encoding="utf-8")
+        ids = set(re.findall(r'h2\[id="([^"]+)"\]', css))
+        self.assertEqual(ids, {"sec:date-location", "scriptural-date-and-location"})
+        narrow = css[css.index("@media (max-width: 760px)"):]
+        self.assertRegex(narrow, r"~ h2 ~ table\) tr \{[^}]*display: grid;")
+        headings = 0
+        for path in sorted((REPOSITORY_ROOT / "web").rglob("*.md")):
+            text = path.read_text(encoding="utf-8")
+            if not re.search(r"^#+\s+Scriptural Date and Location\b", text, flags=re.M | re.I):
+                continue
+            rendered = self.tool.render_markdown(text, REPOSITORY_ROOT)
+            found = re.findall(
+                r"<(h\d)\b[^>]*?(?:\sid=\"([^\"]*)\")?[^>]*>\s*Scriptural Date and Location\s*</\1>",
+                rendered,
+                flags=re.I,
+            )
+            with self.subTest(edition=path.relative_to(REPOSITORY_ROOT).as_posix()):
+                self.assertEqual(len(found), 1)
+                level, heading_id = found[0]
+                self.assertEqual(level, "h2")
+                self.assertIn(heading_id, ids)
+            headings += 1
+        self.assertGreater(headings, 0)
+
     def test_temporary_release_requires_request_time_controls(self) -> None:
         self.authorize_current_inputs()
         authorization = self.manifest["authorizations"]["test-authorization"]

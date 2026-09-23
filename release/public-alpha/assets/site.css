@@ -262,6 +262,20 @@ nav a { color: var(--ink); text-decoration: none; }
 .page-shell.page-browser { max-width: 60rem; }
 .page-shell.reading table { display: block; width: max-content; max-width: 100%; overflow-x: auto; }
 
+/* A proper study's Scriptural Date and Location dossier: four columns (Proper
+   or Textual unit, Citation, Location, Date) that a reader needs side by side,
+   so no column of it may go behind a sideways scroll — the maintainer's
+   decision of 2026-09-23. It is found by its section heading, whose id is the
+   converter's `sec:date-location` label or the slug of the plain heading, and
+   it ends at the next h2; test_public_alpha holds every edition to those ids.
+   Wide, it is an ordinary table: its longest words need about 570px at most,
+   which every width above the 760px query affords, and a block that scrolls
+   let one edition's fixed 87% width clip its Date column at desktop widths.
+   Narrow, see the 760px query. */
+.page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ h2 ~ table) {
+  display: table;
+}
+
 h1, h2, h3, h4, h5, h6 { line-height: 1.2; text-wrap: balance; }
 h1 { margin-top: 0; font-size: clamp(2.1rem, 7vw, 4.1rem); font-weight: 400; letter-spacing: -0.025em; }
 h2 { margin-top: 2.4rem; padding-top: 0.25rem; font-size: clamp(1.45rem, 4vw, 2rem); color: var(--rubric-dark); }
@@ -573,6 +587,44 @@ a.footnote-backref { text-decoration: none; }
   .site-footer a { display: inline-block; padding-block: 0.35rem; }
   .page-shell { margin-top: 0; border-left: 0; border-right: 0; border-radius: 0; box-shadow: none; }
   table { display: block; overflow-x: auto; }
+  /* The dossier's four columns need up to about 570px of unbreakable words,
+     against 342px of measure at a 390px phone, so each row is set as two lines
+     of two: its unit and citation over its location and date, beneath a header
+     block laid out the same way. A padded note row (a note in the first cell,
+     the rest empty) spans both. The cells stay table cells, so each keeps its
+     header. */
+  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ h2 ~ table) {
+    display: block;
+    width: auto;
+    overflow: visible;
+  }
+  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ h2 ~ table) :is(thead, tbody) {
+    display: block;
+  }
+  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ h2 ~ table) tr {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border: 1px solid var(--section-line, var(--line));
+  }
+  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ h2 ~ table) :is(tr + tr, thead + tbody tr:first-child) {
+    border-top: 0;
+  }
+  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ h2 ~ table) :is(th, td) {
+    padding: 0.6rem 0.7rem;
+    border: 0;
+  }
+  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ h2 ~ table) :is(th, td):nth-child(even) {
+    border-left: 1px solid var(--section-line, var(--line));
+  }
+  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ h2 ~ table) :is(th, td):nth-child(n + 3) {
+    border-top: 1px solid var(--section-line, var(--line));
+  }
+  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ h2 ~ table) tr:has(> :nth-child(2):empty):has(> :nth-child(3):empty):has(> :nth-child(4):empty) > :first-child {
+    grid-column: 1 / -1;
+  }
+  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ h2 ~ table) tr:has(> :nth-child(2):empty):has(> :nth-child(3):empty):has(> :nth-child(4):empty) > :empty {
+    display: none;
+  }
   /* A long unbreakable run — a URL in the third-party notices, a query string
      in a worked example — otherwise widens the document and sets every line of
      prose scrolling sideways. */
