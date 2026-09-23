@@ -91,12 +91,24 @@ postconciliar `\dossierevent` put "2-4" before every narrated event and
 dossier note, so the audit now refuses a span pandoc kept without
 attributes; a starred row end, `\\*[-0.06em]` in the postconciliar
 `\unitphase`, set its length before the next row's first cell, and a
-body row ending `\\*` set its star there; `\RaggedRight`, `\RaggedLeft`,
-`\Centering`, `\centering` or `\raggedleft` closing a column prefix took
-the number opening each cell of that column, so the parish ledgers, the
-institute timelines, the assembling reference and the 1962 calendar lost
-their dates, years and ranks until those declarations were dropped from
-every prefix; a column prefix broken by a paragraph break, `\raggedright` after
+body row ending `\\*` set its star there; pandoc takes the number
+opening a cell, or following a command in running text, as an argument of
+many commands it otherwise ignores -- `\RaggedRight`, `\centering`,
+`\noindent`, `\relax`, `\normalfont`, `\ttfamily`, `\newpage`, `\endfoot`
+and more -- so the parish ledgers, the institute timelines, the assembling
+reference, both 1962 calendars and the la Salette and Guadalupe acts lost
+dates, years and ranks: a column prefix now keeps only the declarations
+pandoc renders (weight, shape, size) and `\raggedright`, at any brace
+depth; row-level page and spacing commands are closed with an empty group;
+the rest are closed where a number or a macro parameter follows; and the
+row-opening audit refuses an edition in which any source table cell's
+opening is missing from the output's cells, so a variant nobody has met yet
+fails loudly; a longtable declaring `\endfirsthead` and `\endhead`
+published its header twice, the continuation head as the first body row,
+so only the first head is kept and the audit refuses a first body row that
+repeats its header; a `\multicolumn` span lost the face its own spec
+declares until that face was carried into it; `\cline` leaked its span as
+`\cmidrule` did; a column prefix broken by a paragraph break, `\raggedright` after
 `\bfseries` or a blank line after `\endfoot`, set each cell as an empty
 bold paragraph with its text unbolded after it and forced the table into
 HTML, so the converter's table filter now restores the cell as TeX sets

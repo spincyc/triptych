@@ -1089,6 +1089,126 @@ class WebEditionConversionTests(unittest.TestCase):
         self.assertRegex(markdown, r"(?m)^\| \*\*Before the settler town\*\* +\| Homelands\. +\|$")
         self.assertRegex(markdown, r"(?m)^\| \*\*In the next decade\*\* +\| A mission\. +\|$")
 
+    def numbered_rows(self, before_rows: str, spec: str = r"p{0.2\linewidth}p{0.6\linewidth}",
+                      preamble: str = "", environment: str | None = None) -> str:
+        """Convert a head, then `before_rows`, then a dated row and a bare year."""
+        rows = (
+            before_rows + "\n"
+            r"2 July, declaration of intention & Separation stated.\\" "\n"
+            r"1996 & The first apostolate.\\" "\n"
+        )
+        if environment:
+            body = f"\\begin{{{environment}}}\n" + rows + f"\\end{{{environment}}}"
+        else:
+            body = ("\\begin{longtable}{" + spec + "}\n"
+                    r"\textbf{Date} & \textbf{Event}\\" "\n\\endhead\n" + rows + "\\end{longtable}")
+        return self.convert(body, preamble=preamble)
+
+    def assert_numbered_rows(self, markdown: str, mark: str = "") -> None:
+        mark = re.escape(mark)
+        self.assertRegex(markdown, rf"(?m)^\| {mark}2 July, declaration of intention{mark} +\| "
+                                   r"Separation stated\. +\|$")
+        self.assertRegex(markdown, rf"(?m)^\| {mark}1996{mark} +\| The first apostolate\. +\|$")
+
+    def test_row_after_a_row_level_command_keeps_its_leading_number(self) -> None:
+        # Pandoc took the number opening the first row after each of these as
+        # the command's argument: "2 July" published as "July".
+        for command in (r"\bottomrule" "\n" r"\endfoot", r"\bottomrule" "\n" r"\endlastfoot",
+                        r"\addlinespace[0.3em]", r"\addlinespace", r"\newpage", r"\pagebreak",
+                        r"\clearpage", r"\smallskip", r"\relax", r"\phantomsection"):
+            with self.subTest(command=command):
+                self.assert_numbered_rows(self.numbered_rows(command))
+
+    def test_row_after_a_table_wrapper_ending_in_endfoot_keeps_its_leading_number(self) -> None:
+        # The la Salette acts table ends its definition with \endfoot, so the
+        # body's first row followed it unseen: "1851, 3 July" published as ", 3 July".
+        markdown = self.convert(
+            "\\begin{actstable}\n" r"1851, 3 July & Melanie writes her secret.\\" "\n"
+            r"1852, 24 Aug. & A rescript.\\" "\n\\end{actstable}",
+            preamble=(
+                r"\newenvironment{actstable}{\footnotesize\begin{longtable}"
+                r"{>{\raggedright\arraybackslash}p{0.2\linewidth}"
+                r">{\raggedright\arraybackslash}p{0.6\linewidth}}"
+                "\n\\toprule\n" r"\textbf{Date} & \textbf{Act}\\" "\n\\midrule\n\\endhead\n"
+                "\\bottomrule\n\\endfoot}{\\end{longtable}}"
+            ),
+        )
+        self.assertRegex(markdown, r"(?m)^\| 1851, 3 July +\| Melanie writes her secret\. +\|$")
+        self.assertRegex(markdown, r"(?m)^\| 1852, 24 Aug\. +\| A rescript\. +\|$")
+
+    def test_prefix_keeps_only_what_pandoc_renders_and_the_opening_number(self) -> None:
+        for prefix, mark in (
+            (r"\sloppy", ""), (r"\noindent", ""), (r"\normalfont", ""), (r"\ttfamily", ""),
+            (r"\sffamily", ""), (r"\upshape", ""), (r"\mdseries", ""),
+            (r"\small\selectfont", ""), (r"\fontsize{8}{9}\selectfont", ""),
+            (r"\hspace{\dimexpr{0pt}}\RaggedRight", ""), (r"\bfseries\sloppy", "**"),
+        ):
+            with self.subTest(prefix=prefix):
+                self.assert_numbered_rows(
+                    self.numbered_rows("", spec=">{" + prefix + r"\arraybackslash}"
+                                                "p{0.2\\linewidth}p{0.6\\linewidth}"),
+                    mark,
+                )
+
+    def test_alignment_inside_a_cell_keeps_the_number_after_it(self) -> None:
+        markdown = self.convert(
+            "\\begin{longtable}{p{0.2\\linewidth}p{0.6\\linewidth}}\n"
+            r"Established & \centering 1903 by the directory\\" "\n"
+            "\\end{longtable}"
+        )
+        self.assertRegex(markdown, r"(?m)^\| Established +\| 1903 by the directory +\|$")
+
+    def test_cline_leaks_no_column_range(self) -> None:
+        markdown = self.convert(
+            "\\begin{longtable}{p{0.2\\linewidth}p{0.6\\linewidth}}\n"
+            r"First & row\\" "\n\\cline{1-2}\n" r"Second & row\\" "\n"
+            "\\end{longtable}"
+        )
+        self.assertNotIn("1-2", markdown)
+        self.assertRegex(markdown, r"(?m)^\| Second +\| row +\|$")
+
+    def test_continuation_head_is_not_published(self) -> None:
+        markdown = self.convert(
+            "\\begin{longtable}{>{\\bfseries}p{0.2\\linewidth}p{0.6\\linewidth}}\n"
+            "\\toprule\n" r"\textbf{Date} & \textbf{Event}\\" "\n\\midrule\n\\endfirsthead\n"
+            "\\toprule\n" r"\textbf{Date} & \textbf{Event}\\" "\n"
+            r"\multicolumn{2}{l}{\textit{Timeline, continued}}\\" "\n\\midrule\n\\endhead\n"
+            "\\bottomrule\n\\endfoot\n"
+            r"1873 & A church dedicated.\\" "\n"
+            "\\end{longtable}"
+        )
+        self.assertEqual(len(re.findall(r"(?m)^\| \*\*Date\*\* +\| \*\*Event\*\* +\|$", markdown)), 1)
+        self.assertNotIn("continued", markdown)
+        self.assertRegex(markdown, r"(?m)^\|:-+\|:-+\|\n\| \*\*1873\*\* +\| A church dedicated\. +\|$")
+
+    def test_span_takes_the_face_its_own_spec_declares(self) -> None:
+        # The shim keeps a \multicolumn's text but not its spec, so the face the
+        # spec declared was lost; it is carried into the span, and a span in a
+        # bold column still takes only its own face.
+        for column, span, expected in (
+            ("p{0.3\\linewidth}", r"\multicolumn{2}{>{\bfseries}l}{Span heading}", "**Span heading**"),
+            ("p{0.3\\linewidth}", r"\multicolumn{2}{>{\itshape\raggedright\arraybackslash}l}{Span heading}",
+             "*Span heading*"),
+            ("p{0.3\\linewidth}", r"\multicolumn{2}{l}{Span heading}", "Span heading"),
+            (">{\\bfseries}p{0.3\\linewidth}", r"\multicolumn{2}{l}{Span heading}", "Span heading"),
+            (">{\\bfseries}p{0.3\\linewidth}", r"\multicolumn{2}{>{\itshape}l}{Span heading}",
+             "*Span heading*"),
+        ):
+            with self.subTest(column=column, span=span):
+                markdown = self.convert(
+                    "\\begin{longtable}{" + column + "p{0.5\\linewidth}}\n"
+                    r"Unit & Text\\" "\n" + span + r"\\" "\n\\end{longtable}"
+                )
+                self.assertRegex(markdown, rf"(?m)^\| {re.escape(expected)} +\| +\|$")
+
+    def test_a_number_lost_by_an_unguarded_trigger_stops_the_conversion(self) -> None:
+        # With the triggers left in place, the row-opening audit refuses.
+        with mock.patch.object(DRIVER, "terminate_swallowers", side_effect=lambda text: text):
+            with self.assertRaises(DRIVER.ConversionError) as raised:
+                self.numbered_rows(r"\bottomrule" "\n" r"\endfoot")
+        self.assertIn("table cell opening(s) lost in conversion: '2julydeclaration' "
+                      "(expected 1, found 0)", str(raised.exception))
+
     def test_alignment_ending_a_column_prefix_keeps_a_leading_date_and_year(self) -> None:
         # Pandoc read each of these, closing a column prefix, as taking the
         # number that opens a cell: "18 July 1988" became "July 1988" and a
@@ -1475,14 +1595,46 @@ class WebEditionAuditTests(unittest.TestCase):
             with self.subTest(declaration=declaration):
                 self.assertEqual(
                     DRIVER.fix_column_specs(
-                        ">{\\bfseries" + declaration + "\\arraybackslash}p{0.2\\linewidth}"),
-                    ">{\\bfseries}p{0.2\\linewidth}",
+                        "\\begin{longtable}{>{\\bfseries" + declaration
+                        + "\\arraybackslash}p{0.2\\linewidth}}"),
+                    "\\begin{longtable}{>{\\bfseries}p{0.2\\linewidth}}",
                 )
         # \raggedright deletes nothing; the table filter repairs the cell it splits.
         self.assertEqual(
-            DRIVER.fix_column_specs(r">{\bfseries\raggedright\arraybackslash}p{1cm}"),
-            r">{\bfseries\raggedright}p{1cm}",
+            DRIVER.fix_column_specs(r"\begin{tabular}{>{\bfseries\raggedright\arraybackslash}p{1cm}}"),
+            r"\begin{tabular}{>{\bfseries\raggedright}p{1cm}}",
         )
+
+    def test_column_spec_keeps_only_rendered_declarations_at_any_depth(self) -> None:
+        self.assertEqual(
+            DRIVER.fix_column_specs(
+                r"\begin{longtable}{>{\hspace{\dimexpr{0pt}}\RaggedRight\bfseries}p{2cm}"
+                r">{\ttfamily\fontsize{8}{9}\selectfont\small}l}"
+            ),
+            r"\begin{longtable}{>{\bfseries}p{2cm}>{\small}l}",
+        )
+
+    def test_lost_cell_opening_is_reported_longest_opening_first(self) -> None:
+        body = ("\\begin{longtable}{ll}\n"
+                r"13 Jan & A\\" "\n" r"13 January 1960 & B\\" "\n"
+                r"\ref{sec:x} & C\\" "\n\\end{longtable}")
+        lost = DRIVER.lost_cell_openings(
+            body, "| Jan | A |\n|:-|:-|\n| 13 January 1960 | B |\n| 2.1 | C |\n", "")
+        self.assertEqual(lost, ["'13jan' (expected 1, found 0)"])
+        self.assertEqual(DRIVER.lost_cell_openings(
+            body, "| 13 Jan | A |\n|:-|:-|\n| 13 January 1960 | B |\n| 2.1 | C |\n", ""), [])
+
+    def test_repeated_header_is_reported_but_not_a_matching_data_row(self) -> None:
+        header = "| **Date** | **Event** |\n|:-|:-|\n"
+        self.assertEqual(DRIVER.repeated_headers(header + "| **Date** | **Event** |\n| 1 | x |\n"), 1)
+        self.assertEqual(DRIVER.repeated_headers(header + "| Date | Event |\n"), 0)
+        self.assertEqual(DRIVER.repeated_headers("|  |  |\n|:-|:-|\n|  |  |\n"), 0)
+        self.assertEqual(DRIVER.repeated_headers(
+            "<table>\n<thead>\n<tr>\n<th><strong>Date</strong></th>\n</tr>\n</thead>\n<tbody>\n"
+            "<tr>\n<td><strong>Date</strong></td>\n</tr>\n</tbody>\n</table>\n"), 1)
+        failures = DRIVER.audit_output(
+            "Prose.", self.minimal_markdown() + "\n" + header + "| **Date** | **Event** |\n")
+        self.assertIn("1 table(s) repeat their header row as their first body row", failures)
 
     def test_empty_or_nested_bold_and_a_leftover_span_mark_are_reported(self) -> None:
         failures = DRIVER.audit_output(

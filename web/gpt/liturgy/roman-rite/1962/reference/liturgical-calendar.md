@@ -56,7 +56,6 @@ The Temporale is generated rather than copied onto fixed civil dates. Let Easter
 
 | **Observance** | **Position** | **Class** | **Calendar note** |
 |:-------------------------|:-------------|:---------|:-----------------|
-| **Observance** | **Position** | **Class** | **Calendar note** |
 | First Sunday of Advent | fourth Sunday before Christmas | I | Begins the liturgical year. |
 | Holy Name of Jesus | Sunday from Jan. 2 through Jan. 5; otherwise Jan. 2 | II | Fixed by a Sunday/date rule. |
 | Holy Family | first Sunday after Epiphany | II | Fixed by a Sunday rule. |
@@ -123,7 +122,6 @@ The following is the universal fixed calendar printed in the 1962 typical Missal
 
 | **Date** | **Celebration or observance** | **Class** |
 |:---------|:------------------------------------------------|:-------|
-| **Date** | **Celebration or observance** | **Class** |
 | **January** |  |  |
 | Jan. 1 | *Octava Nativitatis Domini* | I |
 | Jan. 5 | Comm. *S. Telesphori Papae et Martyris* | Comm. |
@@ -261,7 +259,6 @@ In a leap year Saint Matthias is celebrated on February 25 and Saint Gabriel on 
 
 | **Date** | **Celebration or observance** | **Class** |
 |:---------|:------------------------------------------------|:-------|
-| **Date** | **Celebration or observance** | **Class** |
 | **July** |  |  |
 | July 1 | *Pretiosissimi Sanguinis Domini Nostri Iesu Christi* | I |
 | July 2 | *In Visitatione Beatae Mariae Virginis*; comm. *Ss. Processi et Martiniani Martyrum* | II |
@@ -430,7 +427,6 @@ A Desclée appendix titled *Proper Feasts Kept in the Dioceses of the United Sta
 
 | **Date** | **Proper celebration** | **Class** | **Witness locus** |
 |:----------|:-------------------------------|:-------|:----------------|
-| **Date** | **Proper celebration** | **Class** | **Witness locus** |
 | Feb. 5 | Saint Philip of Jesus, Martyr | III | printed p. 18; PDF p. 56 |
 | Mar. 22 | Saint Isidore the Farm-Laborer, Confessor | III | printed p. 25; PDF p. 63 |
 | Apr. 27 | Saint Turibius of Mogrovejo, Bishop and Confessor | III | printed p. 31; PDF p. 69 |
@@ -484,7 +480,6 @@ This is the decree’s complete annex. Titles below follow the Holy See’s publ
 
 | **Month** | **Protected dates and feasts** |
 |:-----------|:------------------------------------------------------|
-| **Month** | **Protected dates and feasts** |
 | January | 17, St. Anthony, Abbot; 20, Ss. Fabian and Sebastian; 21, St. Agnes; 24, St. Timothy; 25, Conversion of St. Paul; 26, St. Polycarp; 27, St. John Chrysostom; 29, St. Francis de Sales; 31, St. John Bosco. |
 | February | 1, St. Ignatius; 5, St. Agatha; 6, St. Titus. |
 | March | 6, Ss. Perpetua and Felicity; 7, St. Thomas Aquinas; 9, St. Frances of Rome; 12, St. Gregory I; 21, St. Benedict; 24, St. Gabriel the Archangel. |
@@ -530,8 +525,7 @@ This timeline selects changes that altered the calendar’s architecture, preced
 
 | **Date** | **Act or book** | **Substantive effect** |
 |:---------|:-------------------|:-------------------------------------|
-| **Date** | **Act or book** | **Substantive effect** |
-|  | Pius V, *Quod a nobis*; reformed Roman Breviary | Revised and standardized the calendar as embedded in the Roman Office, while defining the books and uses to which the reform applied. |
+| 1568 | Pius V, *Quod a nobis*; reformed Roman Breviary | Revised and standardized the calendar as embedded in the Roman Office, while defining the books and uses to which the reform applied. |
 | 1570 | Pius V, *Quo primum*; *Missale Romanum* | Published the corresponding Roman Missal and its annual Temporale–Sanctorale structure for broad use under the bull’s stated conditions. |
 | 1604 and 1634 | Typical Missal editions under Clement VIII and Urban VIII | Revised the post-Tridentine Missal and continued the authoritative editorial development of its calendar and rubrics. |
 | 1911–1913 | Pius X, *Divino afflatu*; new rubrics and calendar adjustments | Reordered the weekly psalter and precedence, curtailed the habitual displacement of ferial offices, and coordinated later calendar changes with the new system. |

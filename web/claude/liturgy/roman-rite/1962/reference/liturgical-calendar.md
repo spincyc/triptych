@@ -130,7 +130,6 @@ nn. 41–46 then enumerate exhaustively which proper feasts enter a particular 
 
 | **Owner** | **Proper feast** | **Class** |
 |:--------------------|:--------------------------------|:----------|
-| **Owner** | **Proper feast** | **Class** |
 | Nation, region or province, whether ecclesiastical or civil (n. 42) | principal Patron duly constituted | I |
 |  | secondary Patron duly constituted | II |
 | Diocese or other territory under a local Ordinary (n. 43) | principal Patron duly constituted | I |
@@ -168,7 +167,6 @@ The code does not describe the seasons; it delimits them, and it does so in term
 
 | **Season** | **Span** | **Locus** |
 |:-----------------|:-----------------------------------------|:-----|
-| **Season** | **Span** | **Locus** |
 | Advent | From First Vespers of the First Sunday of Advent to None inclusive of the vigil of the Nativity | 71 |
 | Christmastide (*tempus natalicium*) | From First Vespers of the Nativity to 13 January inclusive, comprising: | 72 |
 | *of the Nativity* | from First Vespers of the Nativity to None inclusive of 5 January | 72 a |
@@ -533,8 +531,7 @@ Read from the printed calendar pages, the universal calendar of 1962 contains fi
 
 | **Date** | **Entry as printed** |
 |:-|:----------------------------------------------|
-| **Date** | **Entry as printed** |
-| January | *Octava Nativitatis Domini* |
+| 1 January | *Octava Nativitatis Domini* |
 | 6 January | *In Epiphania Domini* |
 | 19 March | *S. Ioseph, Sponsi B. Mariae Virg., Conf. et Eccl. univ. Patroni* |
 | 25 March | *Annuntiatio B. Mariae Virg.* |
@@ -559,8 +556,7 @@ The II class layer is larger and structurally more varied, because it contains f
 
 | **Date** | **Entry** | **Date** | **Entry** |
 |:-|:--------------------------|:-|:----------------------|
-| **Date** | **Entry** | **Date** | **Entry** |
-| Jan | *In Commemoratione Baptismatis D. N. I. C.* | 14 Aug | *Vigilia* (of the Assumption) |
+| 13 Jan | *In Commemoratione Baptismatis D. N. I. C.* | 14 Aug | *Vigilia* (of the Assumption) |
 | 2 Feb | *In Purificatione B. Mariae Virg.* | 16 Aug | *S. Ioachim, Patris B. Mariae Virg., Conf.* |
 | 22 Feb | *Cathedrae S. Petri Ap.* | 22 Aug | *Immaculati Cordis B. Mariae Virg.* |
 | 24 Feb | *S. Matthiae Ap.* | 24 Aug | *S. Bartholomaei Ap.* |
@@ -637,7 +633,6 @@ n. 91 introduces the table with the exclusivity clause already quoted, and then
 
 | ***Tabella dierum liturgicorum secundum ordinem praecedentiae disposita* (n. 91)** |  |
 |-:|:------------------------------------------------------------|
-| *Table of precedence, continued* |  |
 | *Liturgical days of the I class* |  |
 | 1 | The feast of the Nativity of the Lord, the Sunday of the Resurrection, and the Sunday of Pentecost (I class with an octave). |
 | 2 | The Sacred Triduum. |
@@ -749,7 +744,6 @@ n. 111 is the counting rule, and it is the single provision by which the 1960 r
 
 | **Liturgical day** | **Commemorations admitted** |
 |:-------------------------------|:----------------------------------|
-| **Liturgical day** | **Commemorations admitted** |
 | I class days, and sung Masses that are not conventual | One privileged commemoration only, and no other |
 | Sundays of the II class | One only, namely of a II class feast — and even that is omitted if a privileged commemoration must be made |
 | Other II class days | One only, either one privileged or one ordinary |
@@ -809,7 +803,6 @@ Every date below was computed from the Gregorian computus by the method of Secti
 
 | **Anchor** | **Date** | **Note** |
 |:-------------------------|:------------------|:---------------------|
-| **Anchor** | **Date** | **Note** |
 | Epiphany | Saturday 6 January |  |
 | Sundays after the Epiphany | 7, 14, 21, 28 January; 4, 11 February | All six occur; *E* = 6 |
 | Most Holy Name of Jesus | Tuesday 2 January | No Sunday falls 2–5 January |
@@ -850,7 +843,6 @@ Every date below was computed from the Gregorian computus by the method of Secti
 
 | **Anchor** | **Date** | **Note** |
 |:-------------------------|:------------------|:---------------------|
-| **Anchor** | **Date** | **Note** |
 | Most Holy Name of Jesus | Wednesday 2 January | No Sunday falls 2–5 January |
 | Epiphany | Sunday 6 January |  |
 | Sundays after the Epiphany | 13 January only | *E* = 1 |
@@ -898,7 +890,6 @@ The Second Sunday after the Epiphany occurred nowhere in 2008. It was impeded in
 
 | **Anchor** | **Date** | **Note** |
 |:-------------------------|:------------------|:---------------------|
-| **Anchor** | **Date** | **Note** |
 | Most Holy Name of Jesus | Sunday 4 January | Falls within 2–5 January |
 | Epiphany | Tuesday 6 January |  |
 | Sundays after the Epiphany | 11, 18, 25 January | *E* = 3 |
@@ -936,7 +927,6 @@ The Second Sunday after the Epiphany occurred nowhere in 2008. It was impeded in
 
 | **Anchor** | **Date** | **Note** |
 |:-------------------------|:------------------|:---------------------|
-| **Anchor** | **Date** | **Note** |
 | Most Holy Name of Jesus | Sunday 3 January |  |
 | Epiphany | Wednesday 6 January |  |
 | Sundays after the Epiphany | 10, 17 January | *E* = 2 |
@@ -1096,8 +1086,7 @@ The following are the dated acts that bear on the calendar and rubrics printed i
 
 | **Date** | **Act** | **Bearing on the calendar** |
 |:------------|:------------------------|:-----------------------------|
-| **Date** | **Act** | **Bearing on the calendar** |
-| July 1570 | Pius V, bull *Quo primum tempore*; printed in the 1962 Missal’s front matter, dated *pridie idus iulii* 1570, with a notarial note of publication on 19 July 1570 | Imposes the restored Missal and forbids addition to or subtraction from it; the base act the 1962 book still prints |
+| 14 July 1570 | Pius V, bull *Quo primum tempore*; printed in the 1962 Missal’s front matter, dated *pridie idus iulii* 1570, with a notarial note of publication on 19 July 1570 | Imposes the restored Missal and forbids addition to or subtraction from it; the base act the 1962 book still prints |
 | 7 July 1604 | Clement VIII, brief printed in the same front matter, dated *die VII iulii MDCIV* | Prohibits corrupted printings and requires conformity to the exemplar issued under Pius V |
 | 2 September 1634 | Urban VIII, brief printed in the same front matter, dated *die secunda septembris MDCXXXIV* | Continues the same discipline of printing and licensing |
 | Named, not dated, in the sources read | Pius X, bull *Divino afflatu*, under whose norm the *Additiones et Variationes in rubricis Breviarii et Missalis Romani* were made | *Rubricarum instructum* n. 2 abrogates those *Additiones et Variationes* from 1 January 1961. The 1962 Missal does not reprint the bull, in accordance with n. 5 of the same motu proprio |

@@ -40,7 +40,7 @@ The acts this study located, in order, with their exact objects.[^2]
 
 | **Date** | **Authority** | **Act** | **Exact object** |
 |:--------|:---------------|:-------------------|:----------------------|
-|  | City of Mexico (civic and diocesan) | Sworn patronage | Our Lady of Guadalupe taken as patroness of the republic; attested retrospectively by Pius X |
+| 1737 | City of Mexico (civic and diocesan) | Sworn patronage | Our Lady of Guadalupe taken as patroness of the republic; attested retrospectively by Pius X |
 | 1754 | Benedict XIV | Confirmation of the patronage, with a proper Office and Mass | The patronage confirmed by papal authority; the incipit and the Latin text are discussed at §8.2 with a recorded limit |
 | 8 February 1887 | Leo XIII | Brief conceding the coronation | The canonical coronation of the image (act not located; §8.3) |
 | 15 July 1892 | Sacred Congregation of Rites | Rescript **Mexicana**, on the placing of statues | Permits statues of Zumárraga and of Juan Diego in the collegiate church but not on the altar; describes Juan Diego as one “to whom the Virgin Mother of God **fertur apparuisse**” |
@@ -306,7 +306,7 @@ The modern cause is late, and the chronology matters because much of the controv
 
 | **Date** | **Authority** | **Act** | **Exact object** |
 |:--------|:---------------|:-------------------|:----------------------|
-|  | Chapter of the Guadalupe collegiate church | *Informaciones jurídicas* | Depositions gathered in support of a petition to Rome for a proper Office and Mass |
+| 1666 | Chapter of the Guadalupe collegiate church | *Informaciones jurídicas* | Depositions gathered in support of a petition to Rome for a proper Office and Mass |
 | 15 June 1981 | Mexican Episcopal Conference | Formal request | Petition for the canonization of Juan Diego |
 | 11 February 1984 | Archdiocese of Mexico | Diocesan tribunal constituted | The diocesan phase of the cause; 98 sessions |
 | 23 March 1986 | Archdiocese of Mexico | Diocesan phase closed | Documentation transmitted to Rome |

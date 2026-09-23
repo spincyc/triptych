@@ -854,7 +854,6 @@ No worldwide ecclesiastical register defines “moderate renown.” This appendi
 
 | **Name or title** | **Claimed date(s)** | **Place and recipient(s)** | **Located local / papal status as of 13 July 2026** |
 |:----------|:--------|:------------|:-----------------------------|
-| **Name or title** | **Claimed date(s)** | **Place and recipient(s)** | **Located local / papal status as of 13 July 2026** |
 | Our Lady of the Pillar | ca. AD 40, by tradition | Zaragoza, Spain; Apostle James | John Paul II received it expressly as a very ancient local tradition and a symbol of apostolic faith. No contemporary record or modern event decree claimed. |
 | Our Lady of the Snows | 5 August, mid-fourth century, by tradition | Rome; a Roman couple and Pope Liberius | Foundation tradition officially commemorated at the Papal Basilica of Saint Mary Major and within its dedication observance. No supernatural-origin decree claimed; the present basilica is principally fifth-century. |
 | Our Lady of Walsingham | 1061, by tradition | Walsingham, England; Richeldis de Faverches | Catholic national shrine and, since 2024, feast in England. Official liturgical material notes that construction a century later is historically more likely; no event decree claimed. |

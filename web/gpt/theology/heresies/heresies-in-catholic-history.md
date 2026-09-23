@@ -1330,7 +1330,6 @@ This chronology is event-based. A movement can appear more than once because ref
 
 | **Date** | **Place / authority** | **Object** | **Response and positive doctrine** | **Aftermath / evidence** |
 |:-----|:---------|:---------------|:------------------|:---------------|
-| **Date** | **Place / authority** | **Object** | **Response and positive doctrine** | **Aftermath / evidence** |
 | c. 49 | Jerusalem; apostles and elders | Claim that Gentile converts require circumcision and the Mosaic law for salvation | Acts 15 rejects that necessity and gives limited communion requirements; Galatians locates justification and covenant membership in Christ. | Foundational apostolic doctrinal judgment; grade A. |
 | c. 107 | Smyrna/Rome; Ignatius of Antioch | Teachers who made Christ’s flesh and suffering an appearance | Ignatius insists that Jesus was truly born, ate, suffered, died, and rose, and binds Eucharistic and ecclesial communion to that confession. | Early episcopal refutation; target school uncertain; grade B/C. |
 | c. 144 | Rome; presbyterate | Marcion’s rival god, edited canon, and docetic Christ | Marcion was excluded from the Roman community; Justin, Irenaeus, and Tertullian answered him by the one Creator, one economy, and apostolic Scriptures. | No extant Roman proposition decree; a durable Marcionite church followed; grade C. |
@@ -1397,7 +1396,6 @@ This chronology is event-based. A movement can appear more than once because ref
 
 | **Date** | **Place / authority** | **Object** | **Response and positive doctrine** | **Aftermath / evidence** |
 |:-----|:---------|:---------------|:------------------|:---------------|
-| **Date** | **Place / authority** | **Object** | **Response and positive doctrine** | **Aftermath / evidence** |
 | 1520 | Rome; Leo X | Forty-one propositions from Martin Luther’s works | *Exsurge Domine* condemns the propositions collectively as heretical, scandalous, false, offensive, seductive, or contrary to Catholic truth and requires retraction. | The act does not assign an individual grade to every proposition; Luther burns it; grade A. |
 | 1521 | Rome/Worms; Leo X and Charles V\* | Luther’s refusal to retract | *Decet Romanum Pontificem* declares excommunication; the Edict of Worms imposes imperial outlawry\*. | Ecclesial penalty and civil enforcement remain distinct; confessional separation expands; grade A. |
 | 1525 | Toledo; Spanish Inquisition | Forty-eight propositions judicially attributed to Alumbrados, *dexados*, or *perfectos* | An edict of faith states and qualifies the allegations individually, addressing abandonment, prayer, sacraments, moral effort, and claims of impeccability. | Inquisitorial construction, not one movement’s confession or a universal papal definition; later individual sentences followed; grade B. |
@@ -1545,12 +1543,6 @@ These fifty-five records complete the treatment of labels too thin for full doss
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align: left;"><strong>Stable key / label</strong></td>
-<td style="text-align: left;"><strong>Attributed proposition or object</strong></td>
-<td style="text-align: left;"><strong>Attestation or response</strong></td>
-<td style="text-align: left;"><strong>Aftermath and evidence limit</strong></td>
-</tr>
 <tr>
 <td style="text-align: left;"><p><code>HC.N.EARLY.NICOLAITANS</code></p>
 <p>Nicolaitans</p></td>

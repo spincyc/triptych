@@ -386,7 +386,6 @@ The ledger distinguishes construction, alteration, reported damage, and planned 
 
 | **Date** | **Building act or physical state** | **Evidence and qualification** |
 |:-----------|:------------------------------|:------------------------|
-| **Date** | **Building act or physical state** | **Evidence and qualification** |
 | **1866** | Thirty families acquired and adapted a small brick church formerly used by Saint Stephen’s Lutheran congregation at the northwest corner of Grove—now South Fifth—and Mineral Streets. | Gregory (1931), the National Register nomination, state inventory, and parish history agree on reuse. This was the first parish church, not the present Mitchell Street building. |
 | **Early 1870s** | The parish acquired the Fifth-and-Mitchell site and financed a much larger church, remembered through a thirty-dollar family assessment and borrowing. | Parish and later press accounts supply the assessment. No subscription ledger, deed, loan instrument, or final project cost was examined. |
 | **July 1872** | Cornerstone laid for the present church, designed by Leonard A. Schmidtner. | HABS, Wisconsin AHI HI27246, Gregory, National Register nomination, and parish history converge. Later titles and biographical stories about Schmidtner are less secure than the building attribution. |
@@ -428,7 +427,6 @@ The compact loci below resolve through the linked references: **KUL**, the Catho
 
 | **Period or witness** | **Name or status** | **Office / affiliation** | **Evidence and qualification** |
 |:----------|:-----------------|:--------------|:-----------------------|
-| **Period or witness** | **Name or status** | **Office / affiliation** | **Evidence and qualification** |
 | **1866–ca. 1867** | Rev. T. Węglikowski | First pastor | KUL explicitly names him first pastor; MP supplies the approximate period. No appointment act was located. |
 | **Ca. 1867–68** | Rev. Bonaventure (Bonawentura) Buczyński | Pastor | MP places him after Węglikowski; KUL associates him with the 1866 organization, while John G. Gregory, vol. 2, p. 902, independently reports that organizing began under him in 1863. Neither supplies an appointment act. |
 | **Ca. 1868–70** | Rev. J. Jaster | Pastor | MP, early succession paragraphs. Retrospective evidence only; no appointment act was located. |
@@ -464,7 +462,6 @@ The final column distinguishes a recorded event from the later witness that repo
 
 | **Date** | **Event or development** | **Witness and boundary** |
 |:-----------|:---------------------------------|:-------------------|
-| **Date** | **Event or development** | **Witness and boundary** |
 | **1840s–60s** | Polish-speaking migrants, many from Prussian-ruled Polish lands, enter Milwaukee’s industrial and service economy; South Side settlement grows. | Archdiocese, UWM, National Register, and Portal Polonii syntheses; regional origins were plural. |
 | **1863** | Organizing of a Polish Catholic congregation is reported as begun under Father Buczinski. | Gregory’s 1931 city history, p. 902; later official histories use 1866 for formal foundation. |
 | **1866** | Thirty families formally organize Saint Stanislaus, acquire a former Lutheran brick church at Fifth and Mineral, and establish Milwaukee’s first Polish parish. | Official, preservation, and later historical accounts converge; no founding minutes were checked. |

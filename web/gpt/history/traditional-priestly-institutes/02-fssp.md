@@ -42,8 +42,7 @@ No single date exhausts the foundation. Between 2 July and 18 October 1988, five
 
 | **Date and act** | **What it did** | **What it did not yet do** |
 |:------------|:------------------------|:----------------------------|
-| **Date and act** | **What it did** | **What it did not yet do** |
-| **July, declaration of intention** | Stated separation from the unauthorized consecrations, fidelity to the pope, and desire for recognized priestly formation and older worship. | It was not an erection decree or final membership roll. |
+| **2 July, declaration of intention** | Stated separation from the unauthorized consecrations, fidelity to the pope, and desire for recognized priestly formation and older worship. | It was not an erection decree or final membership roll. |
 | **18 July, act of foundation at Hauterive** | Constituted a projected clerical society under canons 731–746, named it, identified statutory continuity and revision, and petitioned the Holy See. | A private foundation act could not by itself grant pontifical-right status. |
 | **22 July, PCED declaration** | Acknowledged receipt, recognized Bisig’s election, and declared the Commission ready to erect the body after review and experimental approval of statutes. | Readiness and recognition of leadership were not the final erection. |
 | **10 September, liturgical decree** | Granted use of the 1962 Missal, Ritual, Pontifical, and Breviary in the body’s churches and oratories, with local consent elsewhere except private Masses. | It did not erase local authority or substitute for the fuller government established in October. |
@@ -387,7 +386,6 @@ The FSSP, SSPX, and ICKSP are often grouped because they use older Roman books a
 
 | **Question** | **FSSP** | **Required distinction** |
 |:-------------|:--------------------------|:-------------------------|
-| **Question** | **FSSP** | **Required distinction** |
 | **Origin** | Former SSPX members founded a new body after rejecting the unauthorized 1988 consecrations. | TPI-01 treats the SSPX’s longer independent conflict; the FSSP is not its later regularization. |
 | **Status** | Clerical society of apostolic life of pontifical right under approved constitutions. | The series label does not grant this classification to every volume’s subject. |
 | **Bishops** | Has no bishops proper to the society; ordinations depend on bishops acting with mandate and authorization. | Older episcopal rites do not require a parallel FSSP hierarchy. |
@@ -506,8 +504,7 @@ This source-audited historical study was checked through 16 July 2026. It distin
 
 | **Date** | **Event or act** | **Witness and boundary** |
 |:-----------|:---------------------------------|:-------------------|
-| **Date** | **Event or act** | **Witness and boundary** |
-| **June 1988** | Lefebvre and de Castro Mayer consecrate four SSPX bishops at Écône without pontifical mandate. | Holy See acts; full conflict in TPI-01. |
+| **30 June 1988** | Lefebvre and de Castro Mayer consecrate four SSPX bishops at Écône without pontifical mandate. | Holy See acts; full conflict in TPI-01. |
 | **2 July 1988** | Future FSSP founders issue a declaration of intention rejecting the illicit consecrations and seeking recognized life under the Roman Pontiff with older worship. John Paul II issues *Ecclesia Dei adflicta*. | Separate founder and papal primary acts; declaration does not erect the society. |
 | **18 July 1988** | Clerics sign the Act of Foundation at Hauterive and petition for a clerical society of apostolic life under canons 731–746. | FSSP-hosted French-source act; signature categories qualified. |
 | **22 July 1988** | PCED acknowledges the act, recognizes Bisig’s election, and states readiness to erect the society after review. | FSSP-hosted German-source Roman declaration; not final erection. |

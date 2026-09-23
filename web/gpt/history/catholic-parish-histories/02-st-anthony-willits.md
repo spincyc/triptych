@@ -309,7 +309,6 @@ The ledger keeps pastoral status and physical evidence together because the fami
 
 | **Date** | **Status or physical evidence** | **Source and qualification** |
 |:-----------|:------------------------------|:------------------------|
-| **Date** | **Status or physical evidence** | **Source and qualification** |
 | **Before the settler town** | The Willits and Sherwood Valley geography lies within Native homelands; Round Valley is Yuki homeland and the present home of a confederation of Native peoples. | Tribal self-descriptions control this historical coordinate. It is not a parish-status or construction date, but it prevents the Catholic institutional timeline from being mistaken for the beginning of the place’s history. |
 | **1903** | The checked *Official Catholic Directory* entry for Ukiah names Father William O’Grady, the Hopland mission, and the state-asylum station, but not Willits. Father Sebastian Brennan came to Mendocino County that September and initially served Fort Bragg and the area north. | Original directory page, printed p. 172, and Brennan authority record. The omission bounds what this directory reports; it does not disprove an unlisted visit, Mass, household, or local initiative. Brennan’s county arrival is not a Willits assignment. |
 | **1906** | Willits appears as one of two missions under Ukiah rector Father F. B. Duffy; Hopland is the other. No patron name, church description, local minister, or founding date is supplied. | Original directory page, printed p. 182. This is the earliest verified Willits listing in the directory sequence searched, not proof of the first Catholic activity. |
@@ -340,7 +339,6 @@ In the table, **OCD** means the Willits parish entry in the named annual *Offici
 
 | **Period or witness** | **Name or status** | **Office / affiliation** | **Evidence and qualification** |
 |:-----------|:----------------|:--------------|:-----------------------|
-| **Period or witness** | **Name or status** | **Office / affiliation** | **Evidence and qualification** |
 | **Appointed June 1923; checked directory witnesses 1924–25** | Rev. Ambrose Brunton, O.F.M.Cap. | First Irish Capuchin pastor; directory rector | Fenelon letter, IE CA WA/1/4/10; Brunton ICA; OCD 1924, printed p. 210; and OCD 1925, printed p. 214, scan n369. Search text aligns his listing through 1928, when the archive records his successor’s posting; the 1925 edition prints “Brenton.” |
 | **Posted Oct. 1928; directory search-text alignment 1929–34** | Rev. Sebastian Brennan, O.F.M.Cap. | Capuchin priest posted to Willits; search text prints rector | Brennan ICA gives the posting. OCD 1929–34 search text aligns the Willits listing but was not admitted as original-page verification. His 1903 arrival elsewhere in the county was not a Willits pastorate. |
 | **Checked directory witness 1935; archive reports a 1936 return to Ireland** | Rev. Finbarr O’Callaghan, O.F.M.Cap. | Directory rector; archive-described pastor | O’Callaghan ICA; OCD 1935, Willits entry, printed p. 171, scan n230. Search text for the 1936 entry was not reliably recovered; the archive record, not OCR, supports the return to Ireland and does not move his Willits service back to his 1924 United States arrival. |
@@ -371,7 +369,6 @@ The final column identifies the surviving witness and the limit on what it estab
 
 | **Date** | **Event or development** | **Witness and boundary** |
 |:-----------|:---------------------------------|:-------------------|
-| **Date** | **Event or development** | **Witness and boundary** |
 | **Since time immemorial** | The Sherwood Valley Band locates its rancheria within aboriginal homelands used and occupied since time immemorial; Round Valley is identified as the heart of Yuki territory. | Tribal self-descriptions. These are prior historical coordinates, not prologue to settlement or parish history. |
 | **1853 / 1856** | The Sherwood Valley Band identifies itself as successor in interest to the Mendocino Indian Reservation established by an 1853 act; the Round Valley Indian Tribes date the beginning of the Round Valley Reservation system to the Nome Cult Farm in 1856 and recount forced relocation. | Official tribal histories. They control the context needed to interpret later Catholic “reservation” labels; this study does not independently reconstruct federal Indian policy. |
 | **1850s–88** | Settler ranching, industry, and a town economy develop in Little Lake Valley; Willits incorporates in 1888. | City and county planning histories. Their broad historical summaries do not replace tribal accounts or a specialized local history. |

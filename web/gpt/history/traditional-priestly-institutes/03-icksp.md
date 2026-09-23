@@ -575,8 +575,7 @@ This source-audited historical study was checked through 17 July 2026. It distin
 
 | **Date** | **Event or act** | **Witness and boundary** |
 |:-----------|:---------------------------------|:-------------------|
-| **Date** | **Event or act** | **Witness and boundary** |
-| **August 1963** | Priests meet around Étienne Catta at Chiché; the initiative develops into the Opus Sacerdotale in 1964. | Jacquemin historical study; background, not ICKSP foundation. |
+| **5 August 1963** | Priests meet around Étienne Catta at Chiché; the initiative develops into the Opus Sacerdotale in 1964. | Jacquemin historical study; background, not ICKSP foundation. |
 | **24 June 1979** | John Paul II ordains eighty-eight priests in Saint Peter’s Basilica. The ICKSP identifies Wach and Mora among them. | Vatican event record plus institutional identification; Vatican pages contain no roster. |
 | **1980s** | Wach works in a Roman and French priestly context while candidates seek traditional formation; the community project takes form. | Later institutional histories; exact agreements and chronology incomplete. |
 | **Late 1980s** | An emerging group passes through a French setting associated with the Opus Sacerdotale. | Institutional memory and Jacquemin; exact location unresolved and no original residence or formation act checked. |

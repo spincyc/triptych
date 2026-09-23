@@ -284,7 +284,7 @@ Between 1851 and 1879 a second body of text appeared, attributed by Mélanie Cal
 
 | **Date** | **Authority and act** | **Object established** | **Witness used** |
 |:--------|:-----------------|:-------------------------|:-------------|
-| , 3 July | Mélanie, by order of the Bishop of Grenoble, at the Providence at Corenc, before Dausse and Taxis | Writes her secret for the first time: three large pages at one sitting, signed unread, addressed to Pius IX | Zola letter, 24 May 1880 |
+| 1851, 3 July | Mélanie, by order of the Bishop of Grenoble, at the Providence at Corenc, before Dausse and Taxis | Writes her secret for the first time: three large pages at one sitting, signed unread, addressed to Pius IX | Zola letter, 24 May 1880 |
 | 1851, 4 July | Mélanie, at the bishop’s house, Grenoble | Copies the secret out again to distinguish *two dates* of events not to occur at the same period | Zola letter, 24 May 1880 |
 | 1851, 18 July | Gérin, curé of the cathedral, and Rousselot, honorary vicar-general | Deliver to Pius IX the bishop’s letters and the two children’s sealed secrets | *Pilgrimage* 1852, pp. 28–29; Zola letter |
 | 1860 | A director of Mélanie at Marseille | Obtains a manuscript of her secret | Zola letter, 24 May 1880 |
@@ -734,7 +734,7 @@ Within months of the foundation, Rome attached to the new shrine the ordinary ap
 
 | **Date** | **Authority and act** | **Object established** | **Witness used** |
 |:--------|:-----------------|:-------------------------|:-------------|
-| , 24 Aug. | Rescript | The high altar of the sanctuary of La Salette declared privileged in perpetuity | *Vie de M. Rousselot* (1866), pp. 138–139 |
+| 1852, 24 Aug. | Rescript | The high altar of the sanctuary of La Salette declared privileged in perpetuity | *Vie de M. Rousselot* (1866), pp. 138–139 |
 | 1852, 26 Aug. | Rescript | Permission for all priests going to La Salette to say the votive Mass of Our Lady on any day of the year, excepting the great feasts and privileged ferias | **ibid.** |
 | 1852, 26 Aug. | Brief | Indulgences for members of the confraternity of La Salette (plenary on entry, at the hour of death, and once a year on the confraternity’s principal feast; seven years and seven quarantines four times a year; sixty days for each work of piety or charity) | **ibid.** |
 | 1852, 3 Sept. | Brief | Plenary indulgence once a year for all who visit the church of Notre-Dame de La Salette | **ibid.** |
@@ -851,7 +851,7 @@ The inventory below is the whole dossier read in one column: every act this stud
 
 | **Date** | **Authority and act** | **Object established** | **Witness used** |
 |:--------|:-----------------|:-------------------------|:-------------|
-| , 19 Sept. | Bishop of Grenoble, doctrinal mandement | That the apparition of 19 September 1846 to two shepherd children bears all the marks of truth and that the faithful have grounds for believing it indubitable and certain; cult authorized; devotional publications reserved; public contest forbidden in the diocese | Sanctuary transcription; DDF 2024 citation; Ullathorne 1854; Rousselot 1854 (It.) |
+| 1851, 19 Sept. | Bishop of Grenoble, doctrinal mandement | That the apparition of 19 September 1846 to two shepherd children bears all the marks of truth and that the faithful have grounds for believing it indubitable and certain; cult authorized; devotional publications reserved; public contest forbidden in the diocese | Sanctuary transcription; DDF 2024 citation; Ullathorne 1854; Rousselot 1854 (It.) |
 | 1852, 1 May | Bishop of Grenoble, mandement | The Missionaries of Our Lady of La Salette instituted; the sanctuary and hospice undertaken | Institute’s published text |
 | 1852, Aug.–Dec. | Pius IX, rescripts, briefs, indult | Privileged altar, votive Mass, indulgences, faculties, archconfraternity, and the 19 September diocesan solemnization: acts of cult, of their own period’s discipline | *Vie de M. Rousselot* (1866) |
 | 1877, 12 May | Sacred Congregation of Rites | That the Apostolic See had neither approved nor condemned the apparitions, but permitted them as piously believable by merely human faith; images and sodalities permitted; a first-class feast with octave and special litanies of the apparition refused | *ASS* 11 (1878) 512–514 |
