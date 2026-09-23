@@ -415,6 +415,27 @@ class PublicAlphaTest(unittest.TestCase):
             '<th scope="col">Focus</th></tr></thead></table>',
         )
 
+    def test_empty_table_head_is_dropped_but_a_head_with_text_is_kept(self) -> None:
+        empty = (
+            "<table>\n<thead>\n<tr>\n<th style=\"text-align: left;\"></th>\n<th>&nbsp;</th>\n"
+            "</tr>\n</thead>\n<tbody>\n<tr>\n<td>a</td>\n<td>b</td>\n</tr>\n</tbody>\n</table>"
+        )
+        self.assertEqual(
+            self.tool.drop_empty_table_heads(empty),
+            "<table>\n<tbody>\n<tr>\n<td>a</td>\n<td>b</td>\n</tr>\n</tbody>\n</table>",
+        )
+        for head in ("<th>Name</th><th></th>", "<th></th><th><strong>Focus</strong></th>"):
+            with self.subTest(head=head):
+                html = f"<table><thead><tr>{head}</tr></thead><tbody><tr><td>a</td><td>b</td></tr></tbody></table>"
+                self.assertEqual(self.tool.drop_empty_table_heads(html), html)
+        page = self.tool.render_page(
+            "web/test/studies/subject.md",
+            "# Subject\n\n|  |  |\n|:--|:--|\n| a | b |\n\n| **Date** | **Event** |\n|:--|:--|\n| 1873 | x |\n",
+            "web/test/studies/subject.html", True, {},
+        )
+        self.assertEqual(page.count("<thead>"), 1)
+        self.assertIn("<strong>Date</strong>", page)
+
     def test_fenced_block_becomes_preformatted_text(self) -> None:
         import markdown
 

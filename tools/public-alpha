@@ -3283,6 +3283,20 @@ def breadcrumb(source_relative: str, output_relative: str) -> str:
     )
 
 
+# A headerless source table reaches Markdown under an empty header row, which
+# pipe-table syntax cannot leave out, and the page set that row as an empty
+# coloured band: two of them in each GPT Ordinary. A head whose every cell is
+# empty carries nothing, so it is dropped; a head with text in any cell stays.
+EMPTY_TABLE_HEAD_RE = re.compile(
+    r"<thead>\s*<tr>(?:\s*<th\b[^>]*>(?:\s|&nbsp;|&#160;)*</th>)+\s*</tr>\s*</thead>\s*"
+)
+
+
+def drop_empty_table_heads(rendered_html: str) -> str:
+    """Remove table heads whose cells are all empty."""
+    return EMPTY_TABLE_HEAD_RE.sub("", rendered_html)
+
+
 def add_table_header_scopes(rendered_html: str) -> str:
     """Identify Markdown table headers as column headers for assistive tech."""
     return re.sub(
@@ -3348,9 +3362,9 @@ def render_page(
     authorization: dict,
 ) -> str:
     try:
-        content = add_table_header_scopes(render_markdown(
+        content = add_table_header_scopes(drop_empty_table_heads(render_markdown(
             page_body_markdown(source_relative, markdown_text), ROOT,
-        ))
+        )))
     except MarkdownRenderError as exc:
         raise ReleaseError(str(exc)) from exc
     reject_unrendered_code_fences(source_relative, content)
