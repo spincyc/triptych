@@ -71,7 +71,7 @@
 
 schema = "triptych-source-containment/v1"
 record_type = "source-containment"
-audited_on = "2026-09-22"
+audited_on = "2026-09-23"
 numbering = "vulgate"
 
 [shapes]
@@ -3200,3 +3200,157 @@ author = "Rabanus Maurus"
 title = "Liber de computo"
 locator = "from col. 669"
 basis = "Work description."
+
+# ---------------------------------------------------------------------------
+# Whole Migne volume layers entered 2026-09-23 with their first registration
+#
+# Patrologia Latina 52 was acquired for Peter Chrysologus's Sermo 50, De
+# paralytico curato, on Matthew 9:1-8, and Patrologia Latina 57 for Bruno
+# Bruni's admonition on the same text, which that volume prints as Maximus of
+# Turin's Homilia CVIII. Each layer is filed under the constituent it was
+# acquired for, on the pattern of the PL 172 Gemma animae layer above. Each
+# entry's constituents were read off the volume's own Elenchus on a registered
+# page image, because the layers damage the Elenchus's column figures.
+# ---------------------------------------------------------------------------
+
+[[containers]]
+id = "artifact.peter-chrysologus.sermones.1894-garnier-migne-pl-52.ia-djvu-ocr-098e5136"
+manifest_sha256 = "ead8a0577a04d7d0eff4c62880c786fcf3a9590dee3601ae611ad10920f9a454"
+status = "resolved"
+basis = "The volume's own 'ELENCHUS AUCTORUM ET OPERUM QUI IN HOC TOMO LII CONTINENTUR', read in full with its column figures on leaf n9 (artifact.peter-chrysologus.sermones.1894-garnier-migne-pl-52.ia-leaf-n9-41b1bb3a), which the layer carries at lines 354-477 with its figures damaged; the series and volume title pages, read on leaves n6 and n8, name the same three authors. Editorial apparatus the Elenchus also lists is not entered as constituents: Sebastiano Pauli's Praefatio (col. 9), Dominicus Mita's Praefatio with a life of Chrysologus (41), Schoenemann's two Notitiae (87, 839), Sirmond's Epistola de hac editione (681), the Testimonia on Valerian (685) and on Nicetas (843), the Monitum of the Patrologia's editors (837), Pietro Braida's Praefatio (837) and the Indices (1135)."
+
+[[containers.constituents]]
+author = "Peter Chrysologus"
+title = "Sermones"
+work_id = "work.peter-chrysologus.sermones"
+whole = true
+locator = "'S. Petri Chrysologi Sermones' from col. 183, as the Elenchus lists it; Sermo 50, De paralytico curato, at cols. 339C-342B, physical lines 25730-25968"
+basis = "The owning edition; the Elenchus; the volume title page's 'EDITIO ANTE OMNES COMPLETA, SERMONIBUS TUM EX SANCTO AUGUSTINO, TUM EX LUCA DACHERIO DESUMPTIS ... LOCUPLETATA' (leaf n8), which is the printing's own claim to print the collection entire. The commentary index names the work so."
+
+[[containers.constituents]]
+author = "Peter Chrysologus"
+title = "Epistola ad Eutychen"
+locator = "within the Prolegomena, read and discussed at cols. 23 and 71, as the Elenchus lists it"
+basis = "The Elenchus: 'Prolegomena, in quibus (col. 23 et 71) legitur et ad crisim vocatur epistola Petri Chrysologi ad Eutychem, quam nonnulli contendunt in concilio Chalcedonensi lectam fuisse.'"
+
+[[containers.constituents]]
+author = "Agnellus of Ravenna"
+title = "Liber pontificalis ecclesiae Ravennatis: Vita S. Petri Chrysologi"
+locator = "the life of Chrysologus only, from col. 13, with Benedetto Bacchini's observations and the variants of the Vallicelliana manuscript"
+basis = "The Elenchus ('Vita S. Petri Chrysologi, ex Libro Pontificali Agnelli, cum observationibus Benedicti Bacchinii', col. 13) and the Vita's heading on leaf n12 ('Ex Libro Pontificali Agnelli, qui et Andreas')."
+
+[[containers.constituents]]
+author = "Martin Castillo"
+title = "Vita altera S. Petri Chrysologi"
+locator = "col. 27, as the Elenchus lists it"
+basis = "The Elenchus: 'Vita altera, auctore Martino Castillo.'"
+
+[[containers.constituents]]
+author = "Jos. A. Amadesi"
+title = "Dissertatio de Metropoli ecclesiastica Ravennatensi"
+locator = "col. 91, as the Elenchus lists it"
+basis = "The Elenchus: 'Jos. A. Amadesii Dissertatio de Metropoli ecclesiastica Ravennatensi.' The volume title page names 'DISSERTATIONE JOS. AMADESII DE METROPOLI ECCLESIASTICA RAVENNATENSI'."
+
+[[containers.constituents]]
+author = "Valerian of Cimiez"
+title = "Homiliae"
+locator = "'S. Valeriani Homiliae' from col. 691, as the Elenchus lists it"
+basis = "The Elenchus, under 'S. VALERIANUS CEMELIENSIS EPISCOPUS'; the volume title page's 'SANCTORUM VALERIANI ET NICETAE, CEMELIENSIS ET AQUILEIENSIS EPISCOPORUM SCRIPTA UNIVERSA'."
+
+[[containers.constituents]]
+author = "Valerian of Cimiez"
+title = "Epistola ad monachos"
+locator = "col. 755, as the Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Theophilus Raynaudus (Théophile Raynaud)"
+title = "Apologia pro S. Valeriano"
+locator = "col. 757, as the Elenchus lists it"
+basis = "The Elenchus: 'Apologia pro S. Valeriano, auctore Theophilo Raynaudo.'"
+
+[[containers.constituents]]
+author = "Anonymous"
+title = "Officium S. Nicetae"
+locator = "col. 845, as the Elenchus lists it"
+basis = "The Elenchus, which names no author for the office."
+
+[[containers.constituents]]
+author = "Nicetas, bishop of Aquileia, as this volume names him"
+title = "Liber de ratione fidei"
+locator = "col. 847, as the Elenchus lists it"
+basis = "The Elenchus, under 'S. NICETAS AQUILEIENSIS EPISCOPUS'. The ascription is recorded as the volume makes it: the same Elenchus lists Pietro Braida's dissertation arguing that the writings printed under the name Nicetas belong to Nicetas of Aquileia, against J. P. Zabeus, who assigned them to 'Nicetas Dacorum episcopus'. Nothing here settles it."
+
+[[containers.constituents]]
+author = "Nicetas, bishop of Aquileia, as this volume names him"
+title = "De Spiritus sancti potentia"
+locator = "col. 853, as the Elenchus lists it"
+basis = "The Elenchus; the ascription as for Liber de ratione fidei."
+
+[[containers.constituents]]
+author = "Nicetas, bishop of Aquileia, as this volume names him"
+title = "De diversis appellationibus D. N. Jesu Christo convenientibus"
+locator = "col. 863, as the Elenchus lists it"
+basis = "The Elenchus; the ascription as for Liber de ratione fidei."
+
+[[containers.constituents]]
+author = "Nicetas, bishop of Aquileia, as this volume names him"
+title = "Explanatio Symboli ad Competentes"
+locator = "col. 865, as the Elenchus lists it"
+basis = "The Elenchus; the ascription as for Liber de ratione fidei."
+
+[[containers.constituents]]
+author = "Nicetas, bishop of Aquileia, as this volume names him"
+title = "Fragmenta sex"
+locator = "col. 873, as the Elenchus lists it"
+basis = "The Elenchus; the ascription as for Liber de ratione fidei."
+
+[[containers.constituents]]
+author = "Pietro Braida"
+title = "Dissertatio de scriptis sub nomine Nicetae editis"
+locator = "col. 875, as the Elenchus lists it"
+basis = "The Elenchus: 'Petri Braidae Dissertatio, in qua totus est ut probet, scripta sub nomine Nicetae edita Nicetae Aquileiensi adjudicanda esse'. The title here is descriptive; the Elenchus gives none shorter."
+
+[[containers.constituents]]
+author = "Chapter of Aquileia"
+title = "Vetera monumenta duo"
+locator = "col. 1135, as the Elenchus lists it"
+basis = "The Elenchus: 'Vetera monumenta duo Capituli Aquileiensis.'"
+
+[[containers]]
+id = "artifact.maximus-of-turin.homiliae.1862-migne-pl-57.ia-djvu-ocr-acb74efb"
+manifest_sha256 = "897a86904b2f3eedb046e96dbee276b4745136c50b5b64b80811c537e4d733eb"
+status = "resolved"
+basis = "The volume's own 'ELENCHUS OPERUM QUAE IN HOC TOMO LVII CONTINENTUR', read in full with its column figures on leaf n7 (artifact.maximus-of-turin.homiliae.1862-migne-pl-57.ia-leaf-n7-576793e9), which the layer carries at lines 263-318; the title pages, read on leaves n4 and n6, name Maximus of Turin alone. Editorial apparatus the Elenchus also lists is not entered as constituents: Bruno Bruni's Praefatio (col. 15), the Vita S. Maximi (127), the Testimonia (161), Schoenemann's Notitia (177), the Specimen codicum (213) and the Index Rerum (957)."
+
+[[containers.constituents]]
+author = "Maximus of Turin"
+title = "Homiliae"
+work_id = "work.maximus-of-turin.homiliae"
+whole = true
+locator = "'Homiliae CXVIII, in quatuor classes distributae' from col. 221 to the Sermones at col. 529; Homilia CVIII at cols. 501-506, physical lines 32106-32376"
+basis = "The owning edition, whose work is Bruni's collection of that name; the Elenchus."
+
+[[containers.constituents]]
+author = "Maximus of Turin"
+title = "Sermones"
+locator = "'Sermones CXVI, in tres classes distributi' from col. 529 (de tempore 529, de sanctis 643, de diversis 687), as the Elenchus lists them"
+basis = "The Elenchus. Named as the commentary index names its Maximus lead. Whether that lead means Bruni's class of this name or Maximus's sermons however another edition gathers them is not established: this volume also prints pieces under his name as Homiliae (col. 221) and in its appendix of doubtful works (col. 849)."
+
+[[containers.constituents]]
+author = "Maximus of Turin"
+title = "Tractatus"
+locator = "'Tractatus VI' from col. 771: De Baptismo I-III (771), Contra Paganos (781), Contra Judaeos (793), Expositiones de capitulis Evangeliorum (807), as the Elenchus lists them"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Maximus of Turin, as ascribed in Bruni's appendix of doubtful works"
+title = "Opera dubia"
+locator = "'Appendix complectens Opera dubia': Sermones (col. 849), Homiliae (915), Epistolae (921), as the Elenchus lists them"
+basis = "The Elenchus, whose own heading marks these pieces doubtful."
+
+[[containers.constituents]]
+author = "Pius VI"
+title = "Epistola dedicatoria Victorio Amedeo Sardiniae regi"
+locator = "col. 9, as the Elenchus lists it"
+basis = "The Elenchus: 'Pii Papae VI, Victorio Amedeo, Sardiniae regi, Epistola dedicatoria.'"

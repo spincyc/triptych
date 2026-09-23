@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.maximus-of-turin.homiliae.1862-migne-pl-57.ia-djvu-ocr-acb74efb"
+edition_id = "edition.maximus-of-turin.homiliae.1862-migne-pl-57"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The printing reproduced here was published at Paris in 1862, before 1931, and is in the public domain in the United States: the repository's own rights reading, recorded at guidance/missals.md section 5 against Cornell's public-domain chart current at 1 January 2026, is that a work first published abroad before 1931 is in the public domain with no term running. The Internet Archive's optical character recognition of a public-domain printing is a mechanical transcription that adds no original authorship, is served without a copyright claim asserted over it, and carries none of the host's markup, navigation or apparatus; a search of the whole file finds no 'Google' and no 'usage guidelines' string. The bytes are retained because guidance/sources.md makes retention the project-wide default and none of its three exemptions reaches this file: it may lawfully be republished, it is not restricted, and at 3.57 MB it is well within what this library already retains."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/patrologiaecur57mign/patrologiaecur57mign_djvu.txt"
+provenance = "Internet Archive optical character recognition text layer of the whole volume, fetched whole with curl over HTTPS on 2026-09-23 into a scratch repository outside this checkout, hashed there, and moved here unaltered. The item's metadata API declares 3,567,003 bytes, sha1 419ab108cbbcbf1c75bed0f70a46e1f6845fc03c and md5 97f1d825fc176804f4a56bf75dc165e9, and the fetched file matches all three. An item patrologiaecursu0057mign, on the pattern of the Patrologia Latina 52 item, does not exist. The Internet Archive advanced searches 'title:(patrologiae) AND volume:57' and 'identifier:patrologiaecursu0057*' returned this item beside patrologiaecursu0057mign_x6o0, patrologiaecursu0057adal and four other items whose metadata names volume 57. This one was taken; its title pages, read afterwards, confirm Patrologia Latina 57, and its layer reaches the Homilia CVIII admonition. The other items were not examined beyond their metadata. No transformation of any kind was applied, and no model stood anywhere between the server and the hash."
+retrieved = "2026-09-23"
+sha256 = "acb74efb7afa349363d797fb5ff07cfb86cbf46f5a74e600cf6fafdee7536679"
+byte_size = 3567003
+path = "src/sources/works/maximus-of-turin/homiliae/editions/1862-migne-pl-57/artifacts/ia-djvu-ocr-acb74efb/patrologiaecur57mign_djvu.txt"
+encoding = "utf-8"
+indexable = true
+notes = "Extent as retrieved and measured: complete uncorrected OCR of Migne, Patrologia Latina vol. 57 (Maximus of Turin, in Bruno Bruni's edition; Paris: Migne, 1862), whole volume, 70,917 LF-terminated lines, opening with the Internet Archive's digitization line (University of Toronto, 2011) and ending with the printing's closing 'FINIS TOMI QUINQUAGESIMI SEPTIMI', damaged in the recognition. The volume's own Elenchus stands at lines 263-318 and is read on leaf n7; the containment inventory enters the works it lists. Homilia CVIII, with its admonition, stands at lines 32106-32376. Uncorrected optical recognition: a locating and searching layer, not a text of record; the series title page's year, printed 1862, is read here as '1863', and a reading quoted from this layer is collated against a page image first."

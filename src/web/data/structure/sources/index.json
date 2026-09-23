@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 2784,
-  "editions": 1006,
-  "passages": 5184,
-  "readable": 3059,
-  "works": 728
+  "artifacts": 2797,
+  "editions": 1008,
+  "passages": 5186,
+  "readable": 3061,
+  "works": 730
  },
  "facets": {
   "authors": [
@@ -978,6 +978,10 @@
     "works": 1
    },
    {
+    "id": "Maximus of Turin, bishop of Turin, as Bruno Bruni's edition ascribes them",
+    "works": 1
+   },
+   {
     "id": "Meir Leibush ben Yehiel Michel Wisser (Malbim)",
     "works": 1
    },
@@ -1111,6 +1115,10 @@
    },
    {
     "id": "Peter (Pierre) Pernin, missionary priest",
+    "works": 1
+   },
+   {
+    "id": "Peter Chrysologus, bishop of Ravenna",
     "works": 1
    },
    {
@@ -1820,6 +1828,10 @@
     "works": 4
    },
    {
+    "id": "sermon-collection",
+    "works": 4
+   },
+   {
     "id": "spiritual-treatise",
     "works": 4
    },
@@ -2057,10 +2069,6 @@
    },
    {
     "id": "sermon",
-    "works": 2
-   },
-   {
-    "id": "sermon-collection",
     "works": 2
    },
    {
@@ -3006,7 +3014,7 @@
     "id": "en"
    },
    {
-    "editions": 298,
+    "editions": 300,
     "id": "la"
    },
    {
@@ -3132,7 +3140,7 @@
     "label": "18th century"
    },
    {
-    "editions": 176,
+    "editions": 178,
     "id": "1800",
     "label": "19th century"
    },
@@ -3149,8 +3157,8 @@
   ],
   "rights": [
    {
-    "artifacts": 1559,
-    "editions": 351,
+    "artifacts": 1572,
+    "editions": 353,
     "id": "public-domain"
    },
    {
@@ -17219,6 +17227,35 @@
   },
   {
    "alternate_titles": [
+    "Homiliae CXVIII",
+    "S. Maximi episcopi Taurinensis Homiliae"
+   ],
+   "author": "Maximus of Turin, bishop of Turin, as Bruno Bruni's edition ascribes them",
+   "category": "sermon-collection",
+   "directory": "editions/maximus-of-turin/homiliae/",
+   "editions": [
+    {
+     "date": "1862",
+     "file": "1862-1862-migne-pl-57.json",
+     "id": "edition.maximus-of-turin.homiliae.1862-migne-pl-57",
+     "language": "la",
+     "passages": 1,
+     "readable": 1,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "S. Maximi episcopi Taurinensis Homiliae, in Migne's Patrologia Latina volume 57 (Paris, 1862)",
+     "year": 1862
+    }
+   ],
+   "id": "work.maximus-of-turin.homiliae",
+   "languages": [
+    "la"
+   ],
+   "title": "Homiliae"
+  },
+  {
+   "alternate_titles": [
     "Malbim on the Torah",
     "Malbim on Genesis"
    ],
@@ -18358,6 +18395,35 @@
     "en"
    ],
    "title": "The Finger of God Is There! / Le doigt de Dieu est la!"
+  },
+  {
+   "alternate_titles": [
+    "S. Petri Chrysologi Sermones",
+    "Sermons"
+   ],
+   "author": "Peter Chrysologus, bishop of Ravenna",
+   "category": "sermon-collection",
+   "directory": "editions/peter-chrysologus/sermones/",
+   "editions": [
+    {
+     "date": "1894",
+     "file": "1894-1894-garnier-migne-pl-52.json",
+     "id": "edition.peter-chrysologus.sermones.1894-garnier-migne-pl-52",
+     "language": "la",
+     "passages": 1,
+     "readable": 1,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "S. Petri Chrysologi Sermones, in Migne's Patrologia Latina volume 52 (Paris: Garnier, 1894)",
+     "year": 1894
+    }
+   ],
+   "id": "work.peter-chrysologus.sermones",
+   "languages": [
+    "la"
+   ],
+   "title": "Sermones"
   },
   {
    "alternate_titles": [],
