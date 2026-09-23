@@ -21,7 +21,7 @@ synthesis_label = "Synthesis PDF"
 homily_label = "Homily PDF"
 
 # Physical-page roles of the concise companion's fixed opening
-# (guidance/liturgy/propers-three-documents.md), all to be written by the
+# (guidance/liturgy/propers-three-documents.md), all written by the
 # concise author. The reviewed home of the chronology they print is the study's
 # terminal Scriptural Date and Location appendix (component
 # scriptural-date-location). That appendix is research-only because the
@@ -120,7 +120,7 @@ depends_on = []
 element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
 references = ["propers/verified.md", "research/scope.md", "research/interpretations.md", "research/source-bindings.toml"]
 
-# --- Concise study (synthesis.tex), to be written by the concise author --------
+# --- Concise study (synthesis.tex), written by the concise author -------------
 
 [[components]]
 key = "concise-inventory"

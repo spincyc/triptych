@@ -451,3 +451,152 @@ carry the changes (9, 18, 28 and 29) and the final page, which holds the
 revision timestamp and colophon, were also inspected at full size. This is
 still author verification. The shared-timestamp three-document build and the independent
 visual review remain to be done.
+
+## Derive-synthesis
+
+Authored 23 September 2026 in `proper-study` v6, run `71b6f89518984232`, seeded
+at commit `fa5355745b5e973584f047a7f59a20ad22676d64`, at derive-synthesis
+iteration 0, after study review passed at its iteration 3. The concise
+companion is *The Eighteenth Sunday after Pentecost: A Concise Study of the
+Proper in the 1962 Roman Missal*, built from `synthesis.tex` and derived from
+the accepted expansive study of this same leaf. No research record and no
+component of the study was edited for it. The manifest changed only in two
+comments, which had described the concise components as still to be written.
+
+The six synthesis components were written at this stage:
+
+- `concise-inventory` (`sections/concise/01-inventory.tex`): the map of the ten
+  appointed elements in the order of the Mass, with a rubrical note that the
+  Mass is of the second class, has one oration of each kind, no optional element
+  and no commemoration (so Saints Cosmas and Damian give way), and takes the
+  Trinity Preface by rubric.
+- `concise-overview` (`sections/concise/02-overview.tex`): exactly four overview
+  rows, drawn from the three readings' own senses and from
+  `research/interpretations.md` § 4.4. They orient the reader and do not replace
+  each reading's own four senses.
+- `concise-date-location` (`sections/concise/03-date-location.tex`): the
+  Scriptural Date and Location sheet. It imports the generated chronology
+  annotations once and carries one `\chronodate` cell for each of the seven
+  appointed Scriptures, in the study's canonical order. The dates, relation
+  labels, disputed alternatives and unresolved states are the study's own,
+  unchanged. The explanatory rows are compressed from the study's appendix so
+  that the sheet occupies one physical page.
+- `concise-themes` (`sections/concise/04-themes.tex`): *The Propers: Themes and
+  Movement*, two pages. It opens with a direct thesis and follows the formulary
+  from *Da pacem* to *perficias*, with the transmission facts the study reports.
+  It then names three habits of the whole (the house; the visible given for the
+  invisible; nothing self-made) and the three readings and how they relate.
+- `concise-commentary` (`sections/concise/10-commentary.tex`): *The Propers:
+  Detailed Commentary*, six cross-proper questions, each drawing on several
+  elements and setting the readings' answers beside one another. Which house
+  and which city (Introit, Gradual, Alleluia, Communion, the Gospel's city).
+  What peace is and what threatens it (Gradual versicle, Epistle). Power on
+  earth (Gospel). Whose faith, and who was carried (Gospel, Alleluia, Collect).
+  "Such power to men", the one disagreement between two readings (Gospel,
+  v. 8). The altar, the exchange and the courts (Offertory, Secret, Communion).
+  Where the Mass sends its people (Gospel, Epistle v. 8, Postcommunion).
+- `concise-apparatus` (`sections/concise/90-apparatus.tex`): the scope note and
+  the References for the sources this companion actually uses.
+
+Every reading's controlling claim is preserved. So are the shared ground the
+study's comparison states and the one disagreement that runs between two
+readings: Chrysostom's inadequate confession, with Ambrose's severer judgement
+kept as his own, against Hilary's fitting honour at Mt 9:8. The second reading
+takes its sense of that verse from Schuster, and the third takes Hilary's side.
+The four places of the ministerial sense are named: Ambrose's gloss on the
+scribes' question (V.13), Aquinas at v. 6, Schuster's third sense of v. 8, and
+the continuation with the keys and Penance. The statement that no Father read
+here takes v. 8 of the ministry stands. The disagreements inside single readings are all kept:
+
+- Chrysostom against Jerome on the town, with the town left undecided;
+- Jerome and Ambrose against Chrysostom on whose faith, with Aquinas declining;
+- the Greek against the Latin readers of Ps 121, with Bellarmine and Schuster
+  holding both in order;
+- the three senses of *virtus* and the towers at Ps 121:7;
+- Augustine's lemma against the Missal's;
+- Jerome's *forsan* against Aquinas on why the sins came first;
+- accusation against promise at 1 Cor 1:8;
+- the contrite heart against the priests' sacrifice at Ps 95:8.
+
+The compression set aside the study's liturgical commentators on the Introit
+(Rupert, Durandus, Honorius, Sicard) and on the chants of the return from
+exile, St Anthony of Padua, Theophylact, Augustine's Donatist setting, the
+first reading's objection that the chants were chosen word by word, and the
+Frankish lectionaries' other placements. Nothing in the concise argument turns
+on them, and the study carries each. Every quotation printed is one the
+reviewed study prints, at the same locus. This was checked mechanically: each
+quoted English and Latin span of the concise components was searched in the
+study's components. The only spans the search did not find verbatim were the
+Missal's own Latin, which the study prints with accents, and one heading.
+
+**Substantive word count: 6,218 words** (5,595 with the content of the
+`\latin{}` quotations removed). The count covers the two argumentative
+components: the themes section, 1,585 (1,475), and the commentary, 4,633
+(4,120). It strips comments, headings, zref labels and control words, then
+counts whitespace-separated tokens that carry a letter or digit. It excludes
+the map, the overview rows, the dossier sheet, the scope note and the
+References. The finished PDF is 12 physical pages, inside the 10–12-page
+requirement.
+
+The shared generation record now carries a contribution for this stage and the
+revision timestamp `2026-09-23T14:30:00Z`. The expansive study was rebuilt at
+that timestamp and is unchanged at 34 pages with a clean log.
+
+### Upstream observations reported for the cold reviewer
+
+- `research/interpretations.md` § 4.4, the Anagogical note for the page-1
+  overview, groups Aquinas under "the way back to paradise" (standing advisory
+  RES-035). The overview keeps each witness's own word: paradise for Hilary and
+  Ambrose, the house of eternity for Aquinas.
+- `research/interpretations.md` § 2.4 Literal still places the healing "At
+  Capernaum" (standing advisory STU-023). The concise study follows the
+  reviewed study and leaves the town undecided.
+- No missing argument or source was found. The study, its dossier appendix and
+  the research records answered every point the concise prose needed.
+
+### Author proof and checks
+
+`make doc DOC=liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-synthesis PROVIDER=claude`
+settles with no overfull or underfull box, no undefined reference, no LaTeX
+warning and no rerun request. The PDF has 12 pages, letter size, Latin Modern
+Roman and Mono only, all embedded and subsetted. The document info carries the
+entrypoint's title and subject.
+
+The settled auxiliary file records the physical pages that the presentation
+contract fixes:
+
+- the inventory and overview markers, and all four sense markers, on page 1;
+- chronology start and end on page 2;
+- themes start on page 3 and themes end on page 4;
+- commentary start on page 5.
+
+These all pass: `tools/check-proper-components --phase artifacts --edition
+synthesis`; `scripts/_proper_study.py check --phase content --edition synthesis
+--require-presentation --require-format`; every `check-content-preflight` check
+the synthesis gate names (references-used, identifiers-resolve, bindings-valid,
+restricted-not-reproduced, relation-coverage, unquoted-not-quoted,
+structural-meta-labels, house-voice, the three chronology checks, and
+provenance-matches-run against this run); and `check-generation-metadata`.
+
+The settled proof is
+`build/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-synthesis.pdf`,
+SHA-256 `08cd1bae08f752b1c17d799194280e25967679a0d4a5923e4d318e4c4de6d403`, at
+the revision timestamp `2026-09-23T14:30:00Z`. Its auxiliary file is SHA-256
+`462a8f9e960cdda5fdf5b065a768e40e967e02010a8442e00b75d1e6b21f8528`. The
+expansive study rebuilt at the same timestamp is SHA-256
+`c7af8fe21fe2005cf81a9897e8c2870202c800acd699bf96b0394e7bf4d3f248`. Copies of
+both PDFs are kept beneath this stage's own artifact directory in the run, with
+the synthesis auxiliary file, log, extracted text, checks, and their digests.
+The page rasters are in a child directory of their own.
+
+The author read the contact sheet of all twelve pages and the individual
+rasters of pages 1, 2, 4 and 12. Layout revision removed a spill of the
+Anagogical row onto page 2, which had also pushed the whole document to 13
+pages. It also filled the second thematic page, which had been about a fifth
+empty. The proof shows no clipping, collision, missing text, blank page or
+heading-only page. The map and the four overview rows rule to the same measure
+on page 1. The dossier stands whole on page 2. The themes section fills pages 3
+and 4. The revision timestamp and the rights colophon share the last page with
+the end of the References. This is an author proof inspection, not the
+independent visual evaluation, which follows the shared-timestamp
+three-document build.
