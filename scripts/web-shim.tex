@@ -11,7 +11,9 @@
 % ---------------------------------------------------------------- page furniture
 % Pagination and vertical-space control has no web counterpart.
 \newcommand{\sectionguard}{}
-\newcommand{\Needspace}[1]{}
+% \Needspace* is the strict form. A one-argument \newcommand took its star
+% as the argument and published the length; the s specifier absorbs it.
+\NewDocumentCommand{\Needspace}{s m}{}
 \newcommand{\theendnotes}{}
 \newcommand{\AIInheritedGenerationMetadata}[1]{}
 

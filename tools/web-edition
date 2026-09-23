@@ -120,6 +120,7 @@ DEFINITION_RE = re.compile(
     r"|\\(?:new|renew)environment\*?\s*\{([A-Za-z@]+\*?)\}"
     r"|\\newtcolorbox\s*\{([A-Za-z@]+)\}"
     r"|\\(?:def|let)\s*\\([A-Za-z@]+)"
+    r"|\\(?:New|Renew|Provide|Declare)DocumentCommand\s*\{?\\([A-Za-z@]+)\}?"
 )
 # A control symbol such as \\ or \& must be consumed whole, or its second
 # character would be read as the start of a macro name.
@@ -208,7 +209,7 @@ EMPTY_DOSSIER_RE = re.compile(
     r"\\begin\{((?:concise)?dossiertable)\}(?:\s"
     r"|\\(?:toprule|midrule|bottomrule|hline)(?![A-Za-z@])"
     r"|\\(?:addlinespace|newpage|clearpage|pagebreak|nopagebreak)(?![A-Za-z@])(?:\[[^\]]*\])?"
-    r"|\\(?:[Nn]eedspace|enlargethispage\*?)\s*\{[^{}]*\})*"
+    r"|\\(?:[Nn]eedspace|enlargethispage)\*?\s*\{[^{}]*\})*"
     r"\\end\{\1\}"
 )
 # A TeX comment, honouring \% and \\. Pandoc reads a % inside \url, \href's

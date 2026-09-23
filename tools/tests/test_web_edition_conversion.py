@@ -158,6 +158,15 @@ class WebEditionConversionTests(unittest.TestCase):
             self.assertNotIn(f"]({locator})", markdown)
         self.assertNotIn(r"\path", markdown)
 
+    def test_needspace_publishes_nothing_in_either_form(self) -> None:
+        # A one-argument shim took the star of \Needspace* as its argument and
+        # published the length, here "7".
+        markdown = self.convert(
+            r"Before \Needspace*{7\baselineskip} middle \Needspace{4\baselineskip} end."
+        )
+        self.assertIn("\nBefore middle end.\n", markdown)
+        self.assertNotIn("baselineskip", markdown)
+
     def test_path_allows_whitespace_before_its_braced_locator(self) -> None:
         markdown = self.convert("See \\path \n {research/scope.md}.")
         self.assertIn("`research/scope.md`", markdown)
@@ -976,7 +985,8 @@ class WebEditionConversionTests(unittest.TestCase):
 
     def test_dossier_segment_of_only_comments_or_page_control_is_not_published(self) -> None:
         for trailer in ("% A closing remark.", r"\newpage", "\\newpage\n% A closing remark.",
-                        r"\clearpage", r"\Needspace{4\baselineskip}"):
+                        r"\clearpage", r"\Needspace{4\baselineskip}",
+                        r"\Needspace*{4\baselineskip}"):
             body = (
                 r"\subsection{Prayer}\label{proper-collect} Prayer." "\n\n"
                 r"\begin{dossiertable}" "\n"
