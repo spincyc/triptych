@@ -144,6 +144,18 @@ evidence = [
   "sections/99-references.tex:40-42 Prosper Guéranger, ... vol.~XI (Dublin: Duffy, 1900), pp.~307--326",
 ]
 
+
+[[revision_due]]
+provider = "claude"
+leaf = "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"
+recorded_on = "2026-09-23"
+decision = "maintainer, 2026-09-23, on homily-review advisory HOM-010 of run 71b6f89518984232"
+correction = "At the leaf's first revision, the homily names Christ's Paschal mystery and the Eucharist in the preacher's own voice, as the three-document profile asks, rather than only inside quoted Fathers, and says what 'what we have received' is."
+evidence = [
+  "sections/homily/10-homily.tex:107-124 the Paschal mystery and the Eucharist appear only inside quotations",
+  "evaluations/blocking-findings-v1.toml HOM-010",
+]
+
 [[editions]]
 provider = "claude"
 leaf = "articles/canon-law/clerical-celibacy-chastity-and-continence"
