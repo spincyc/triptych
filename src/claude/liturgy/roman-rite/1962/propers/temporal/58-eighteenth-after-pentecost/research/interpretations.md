@@ -95,7 +95,8 @@ Two further boundaries apply throughout and are not repeated at each occurrence:
    says outright that we cannot please God without God; and the man in the middle
    of the Gospel does nothing but get carried. Chrysostom on 1 Corinthians and
    Augustine on Ps 95, with Jerome and Chrysostom in open disagreement about
-   whose faith healed the paralytic.
+   whose faith healed the paralytic, and Hilary, against Chrysostom, on what the
+   crowd's praise at the Gospel's end is worth.
 
 They are complementary, not rival: the first reads the formulary's chants, the
 second its sacrificial centre, the third its grammar of grace. § 4 says exactly
@@ -264,12 +265,11 @@ allegory stands beside any literal identification and does not compete with one
 - `gradual` — respond: the destination again; verse: the material of the wall,
   which Augustine identifies as charity.
 - `alleluia` — the second wall arriving from the nations.
-- `gospel` — the city entered by boat; the paralytic's healing as the crowd's
-  first, inadequate glorification of God (Chrysostom). *Editorial synthesis:*
-  the movement from *civitátem suam* to the chants' *domus Domini* is the editor's
-  join. It rests on Hilary's allegorical identification (PL 9, col. 960) and on
-  nothing Chrysostom or Augustine says. Hilary himself reads the crowd's praise
-  otherwise than Chrysostom does, as honour fittingly rendered (§ 2.5).
+- `gospel` — the city entered by boat. *Editorial synthesis:* the movement from
+  *civitátem suam* to the chants' *domus Domini* is the editor's join. It rests
+  on Hilary's allegorical identification (PL 9, col. 960) and on nothing
+  Chrysostom or Augustine says. This reading does not use the Gospel's last
+  verse, where Chrysostom and Hilary judge the crowd's praise differently (§ 4.3).
 - `offertory` — Moses sanctifying an altar *in conspéctu filiórum Israël*: the
   people are present to their own sacrifice. *Textual observation:* that closing
   phrase is the one clause of the antiphon that stands verbatim in Exodus 24, at
@@ -446,8 +446,37 @@ ministry has patristic warrant at this pericope.** It glosses the question of
 v. 3's parallel, and it is not a reading of v. 8. **What Ambrose says of the
 command to rise is not penitential.** At V.14, on Lk 5:24, the bed is the human
 body, which is bidden to be lifted (*humanum jubetur corpus attolli*), the bed of
-pain that becomes a bed of rest, and going home is *ad paradisum redire*. He says
+pain that becomes a bed of rest, and going home is *ad paradisum redire … ea est
+enim vera domus, quae hominem prima suscepit: non jure amissa, sed fraude*. He says
 nothing of contrition or satisfaction; those are Aquinas's terms, above.
+
+**Hilary, *In Matth.* VIII §§ 7–8 (PL 9, cols. 961–962), at his own locus**, read
+on the page images, with the wording below checked in the tracked PL 9 text layer
+(`research/scope.md` § 3.5). This reading uses him
+twice, and for two different things.
+- **§ 7, on vv. 6–7, for the anagogical sense.** Christ adds *Tolle lectum tuum,
+  et vade in domum tuam* so that the whole work may be set out in order: *Primum
+  remissionem tribuit peccati, dehinc virtutem resurrectionis ostendit, tum
+  sublatione lectuli infirmitatem ac dolorem corporibus docuit afuturum, postremo
+  reditu in domum propriam iter in paradisum credentibus esse redhibendum, ex quo
+  Adam parens universorum peccati labe dissolutus excesserat.* The return home is
+  the way into paradise, which Adam left, given back to believers. With Ambrose's
+  *vera domus* (V.14) and Aquinas's *domum aeternitatis* (*Super Matth.* IX), it is
+  what this reading's anagogical sense rests on (§ 2.4). The three are read at
+  three loci, and the joining of them to the Gradual's *domum Dómini* is the
+  editor's (§ 2.3).
+- **§ 8, on v. 8, only to fix who the men of the verse are.** *Conclusa sunt omnia
+  suo ordine, et cessante jam desperationis timore honor Deo redditur, quod tantam
+  dederit hominibus potestatem: sed soli hoc Christo erat debitum, soli de
+  communione paternae substantiae haec agere erat familiare … sed delati Deo
+  honoris hinc causa est, quod potestas hominibus ac via data sit per verbum ejus,
+  et peccatorum remissionis, et corporum resurrectionis, et reversionis in coelum.*
+  The power was Christ's alone; the men for whom God is glorified are those who
+  **receive** forgiveness, not those who minister it. This reading reports
+  Chrysostom's judgement of the crowd first and Hilary's after it, takes its own
+  sense of the verse from neither (that sense is Schuster's, below), and cites
+  Hilary for this one point. It does not take his side of the difference with
+  Chrysostom; the third reading does (§§ 3.2, 4.3).
 
 **On the Communion's verse, three witnesses read *Tollite hostias* of the
 Church's sacrifice offered by its priests** (`research/scope.md` § 3.8):
@@ -531,18 +560,26 @@ which of them it uses.
   himself; the antiphon asks and does not claim.
 - `collect` — the one oration of a second-class Sunday, and it is a petition that
   God's mercy do the directing: the authority in question is not ours.
-- `epistle` — the forgiveness is not the end: *qui et confirmábit vos usque in
-  finem sine crímine, in die advéntus*. Chrysostom: "not only the beginnings must
-  be good, but the end also."
+- `epistle` — thanks for gifts given *in Christo Iesu*, and for *testimónium
+  Christi* confirmed among the Corinthians (v. 6). The continuation of *The
+  Liturgical Year*, reading the Mass after the September Ember ordinations, hears
+  in those gifts *the powers conferred by the imposition of the bishop's hands on
+  the ministers of the Church* (vol. XI, p. 394). The continuator's words. This
+  reading does not take v. 8's *confirmábit vos usque in finem* for its
+  anagogical sense; that verse anchors the third reading's (§ 3.4).
 - `gradual` — *in domum Dómini íbimus*: the man is sent home (*vade in domum
   tuam*), and the Church goes to God's house. *Editorial synthesis:* the verbal
   echo between *domum tuam* and *domum Dómini* is real in the Latin and is the
-  editor's to use; no checked witness draws it, though Aquinas reads *vade in domum
-  tuam* as *in domum aeternitatis, vel in conscientiam propriam* (*Super Matth.*
-  IX), which the editor may set beside the chant under Aquinas's name.
-- `alleluia` — *Timébunt gentes*: the crowd feared and glorified God, and
-  Chrysostom says their fear was not yet faith. The Alleluia widens the same
-  reaction to the nations.
+  editor's to use; no checked witness draws it. Three witnesses read the Gospel's
+  *domum tuam* at their own loci, and the editor may set each beside the chant
+  under his own name: Aquinas, *in domum aeternitatis, vel in conscientiam
+  propriam* (*Super Matth.* IX); Ambrose, *ad paradisum redire … ea est enim vera
+  domus* (*Exp. in Lc.* V.14, on Lk 5:24); and Hilary, the return home as the way
+  into paradise given back to believers (*In Matth.* VIII § 7, PL 9, col. 961).
+- `alleluia` — *Timébunt gentes*: the Alleluia widens to the nations the fear of
+  the crowds who saw the paralytic walk, *timuérunt*. *Editorial synthesis:* the
+  verbal join is the editor's; no checked witness draws it, and the row assigns
+  the crowd's fear no Father's judgement (for those judgements, § 4.3).
 - `gospel` — the centre, treated above.
 - `offertory` — Moses sanctifies an altar, offers holocausts, immolates victims,
   and makes an evening sacrifice; the Mass says this over its own gifts. *Bound on
@@ -562,8 +599,11 @@ which of them it uses.
   is named as a present-tense effect (*éfficis*), not a memory.
 - `communion` — *Tóllite hóstias, et introíte*: the victims are brought in, not
   left outside.
-- `postcommunion` — *dignos nos eius participatióne perfícias*: the forgiven man
-  is not yet finished; perfection is asked for after communion, not claimed.
+- `postcommunion` — *sacro múnere vegetáti*: a present effect claimed for what
+  the communicants have received, as the Secret's *éfficis* claims one for the
+  rite; and still a petition that they be made worthy of it. The petition's
+  *perfícias* is not this reading's anagogical anchor; it is the third
+  reading's (§ 3.4).
 
 ### 2.4 The four senses
 
@@ -571,9 +611,16 @@ which of them it uses.
   forgiven, and then told to rise, so that the second, verifiable command may
   prove the first, unverifiable one; and at Sinai Moses builds and consecrates an
   altar and offers the sacrifice that seals a covenant.
-- **Allegorical.** The altar Moses sanctified is a figure of the one where the
-  blood of the New Testament is poured "for the remission of sins" (Chrysostom on
-  Hebrews 9); the authority claimed at Capernaum is exercised there.
+- **Allegorical.** The one who forgives is God, as *fili* beside Luke's *homo*
+  shows (Augustine), and he has the authority as his own (Chrysostom). The altar
+  Moses sanctified is a figure of the one where the blood of the New Testament is
+  poured "for the remission of sins" (Chrysostom on Hebrews 9), and its blood is
+  the type of the blood Christ named in instituting the Eucharist (a Lapide). The
+  power shown in his own city is exercised in the Church by way of ministry and
+  not of authority (Aquinas at v. 6), and the crowd's praise, in its symbolical
+  and prophetic sense, foretells its communication to the apostles and their
+  successors (Schuster at v. 8, on this Mass). No Father's reading of v. 8 enters
+  this sense (§ 2.5).
 - **Moral.** The sinner's part is to be brought, to be laid down, and then to obey
   the one command he is given — *surge, tolle lectum tuum* — carrying what once
   carried him. Bede, *In Lucam* II on the parallel verse (PL 92, cols. 388D–389A),
@@ -584,9 +631,18 @@ which of them it uses.
   satisfactionem.* (**The Catena's "Rabanus", *lectum tollere est carnem a
   terrenis desideriis ad voluptatem spiritus attollere*, is not in PL 107 and is
   withdrawn** — `research/scope.md` § 3.5.)
-- **Anagogical.** The forgiveness given now is confirmation *usque in finem sine
-  crímine*, and its term is *dies advéntus Dómini nostri Iesu Christi*. The Mass
-  does not end the matter; it opens it toward the day.
+- **Anagogical.** The power is exercised *in terra*, and the forgiven man is sent
+  home. Hilary reads the command as the last step of the cure's order: the
+  remission of sins, the power of resurrection, the end of the body's weakness and
+  pain, and last the way into paradise, which Adam left, given back to believers
+  (*In Matth.* VIII § 7, PL 9, col. 961). Ambrose calls that home the true one,
+  which first received man and was lost not by right but by fraud (*Exp. in Lc.*
+  V.14); Aquinas calls it the house of eternity (*Super Matth.* IX). Forgiveness
+  given at a place on earth is the first step of the way home. **This sense does
+  not use 1 Cor 1:8 or the Postcommunion's *perfícias*; both anchor the third
+  reading's anagogical sense only (§ 3.4).** An earlier version of this record
+  gave this reading 1 Cor 1:8's *usque in finem … in die advéntus* as its
+  anagogical sense; that is withdrawn.
 
 ### 2.5 Strongest difficulty and alternative
 
@@ -608,7 +664,12 @@ not its ministers. (An earlier version of this record gave Hilary's reading as
 lectura, and Hilary names the remission of sins first; the sentence is
 withdrawn.) Hilary also parts from Chrysostom about the crowd: he calls the honour
 it renders fitting, *conclusa sunt omnia suo ordine*, where Chrysostom calls it an
-inadequate confession.
+inadequate confession. This reading reports the two in that order, Chrysostom
+first, and takes neither side: its own sense of v. 8 is Schuster's, and it cites
+Hilary only for the point just made, that the men of the verse receive
+forgiveness and do not minister it. The third reading takes Hilary's side, and
+§ 4.3 records the difference as the one disagreement that runs between two
+readings.
 
 **What the other witnesses do support, and where.** The ministerial sense is not
 the editor's invention. It stands in one Father, glossing the scribes' question at
@@ -620,8 +681,10 @@ them is it a Father's reading of v. 8 (`research/scope.md` §§ 3.5, 3.11, 4.3):
   quoque … quibus dimittendi tribuit potestatem*. Bede repeats it on Lk 5:21, and
   Rabanus prints it at Mt 9:3. A Father and Doctor, but in a parenthesis on the
   scribes' question, and not on v. 8. At the parallel of v. 8 (V.15, on
-  Lk 5:25–26) he says only that the onlookers *divini operis miracula malunt timere
-  quam credere*; Luke's verse has no *potestatem talem hominibus*.
+  Lk 5:25–26) the onlookers are unbelievers who *divini operis miracula malunt
+  timere quam credere*, and he identifies those who fear with those who
+  calumniated (*Et ideo isti, quia non diligebant, calumniabantur*); Luke's verse
+  has no *potestatem talem hominibus*, and he says nothing of power given to men.
 - **Aquinas at v. 6**, at his own locus: the Apostles have the power to forgive
   *per viam administrationis, non auctoritatis*. A Doctor, a different verse — the
   verse this reading already turns on — and a statement made to keep the
@@ -720,9 +783,18 @@ clause, keeps taking the gifts out of the Corinthians' hands:
 - On the praises: "not even did this praise belong to them, but to the grace of
   God. For that they had remission of sins, and were justified, this was of the
   Gift from above."
-- And the sting in the last verse: *He shall confirm you … unreprovable* is "also
-  covertly accusing them: for, to say, He shall confirm, and the word unreprovable
-  marks them out as still wavering."
+- On *waiting for the revelation* (v. 7; § 6 of the homily in the NPNF delivery):
+  Paul "terrifies them by mention of the fearful judgment-seat, and thus implying
+  that not only the beginnings must be good, but the end also. For with all these
+  gifts … we must be mindful of that Day: and there is need of many labors to be
+  able to come unto the end … Therefore there is need of patience." **These
+  sentences are said of v. 7, not of v. 8**, and the record uses them only there
+  (§ 3.5).
+- And the sting in the last verse (v. 8; § 7): *He shall confirm you …
+  unreprovable* is "also covertly accusing them: for, to say, He shall confirm,
+  and the word unreprovable marks them out as still wavering." **This covert
+  accusation is Chrysostom's whole reading of v. 8.** He does not read the verse
+  as a promise; Aquinas, Ambrosiaster and a Lapide do (`research/scope.md` § 4.7).
 
 **Augustine, *Enarr. in Ps.* 95 § 9**, on the Communion's own first clause, gives
 the one thing a creature can bring: "O heathen, if you will enter into His courts,
@@ -775,6 +847,34 @@ states what the formulary does with it. Aquinas, at the same verse, will not
 choose: *Curat aliquando Dominus aliquem propter fidem suam: aliquando propter
 preces suas, et aliorum* (Venice 1745, p. 121).
 
+**Hilary, *In Matth.* VIII §§ 5 and 8 (PL 9, cols. 960–962), at his own locus**,
+read on the page images, with the § 8 wording checked in the tracked PL 9 text
+layer (`research/scope.md` § 3.5). § 5 gives this reading its allegory of the
+nations (§ 3.4). **§ 8, on Mt 9:8, gives it the Gospel's end, and here the reading
+takes Hilary's side against Chrysostom.** The crowd's fear belongs to the order
+of the mystery (*Magni enim timoris res est, non dimissis a Christo peccatis in
+mortem resolvi*), and then: *Conclusa sunt omnia suo ordine, et cessante jam
+desperationis timore honor Deo redditur, quod tantam dederit hominibus
+potestatem: sed soli hoc Christo erat debitum, soli de communione paternae
+substantiae haec agere erat familiare. Non ergo hoc venit in admirationem, quod
+posset ista … alioquin laus de uno homine, non de pluribus exstitisset: sed delati
+Deo honoris hinc causa est, quod potestas hominibus ac via data sit per verbum
+ejus, et peccatorum remissionis, et corporum resurrectionis, et reversionis in
+coelum.* The honour is fitting, and it is paid not for what one man could do —
+then the praise would have been of one man and not of many — but because a power
+and a way have been given to men through Christ's word: of the remission of sins,
+of the resurrection of bodies, and of the return to heaven. The men are the many
+who receive, not those who minister. (Note (f): the older editions read *hac via*,
+four manuscripts *ac via*.) **Chrysostom hears the same praise otherwise**, as a
+confession that fell short of who Christ is (*Hom. in Matth.* 29, 2), and the
+reading must report his judgement beside Hilary's, not suppress it (§ 4.3).
+
+*Editorial synthesis:* read with Hilary, the Gospel closes as the Epistle opens,
+with God glorified for what men have been given, and the thanksgiving then stands
+at both ends of the Mass. That join is the editor's. Hilary comments on Mt 9:8 and
+says nothing of 1 Cor 1:4 or of this Mass; no checked witness sets the crowd's
+praise beside Paul's *Grátias ago*.
+
 **Theodoret and Aquinas on 1 Cor 1:4, and they sharpen the reading.** Theodoret
 says Paul, about to accuse, first tends their hearing, *and* that what he says is
 not false, *ἐπὶ γὰρ ταῖς δοθείσαις αὐτοῖς εὐχαρίστησε τῷ Θεῷ δωρεαῖς* — he gave
@@ -820,7 +920,14 @@ Blessed, reads this Mass whole (`research/scope.md` § 3.11).
   is received.
 - `alleluia` — the nations fear the Name because God has built Sion, not because
   they found him (Augustine, Enarr. in Ps. 101 § 16).
-- `gospel` — the paralytic, and the dispute about his faith.
+- `gospel` — the paralytic, and the dispute about his faith (Jerome and Ambrose
+  against Chrysostom, Aquinas declining to choose). At v. 8, the crowd's praise as
+  fitting honour paid to God for what men have been given through Christ's word,
+  the power and the way of the remission of sins, the resurrection of bodies and
+  the return to heaven (Hilary, *In Matth.* VIII § 8, PL 9, cols. 961–962);
+  Chrysostom judges the same praise a confession that fell short, and the reading
+  says so. *Editorial synthesis:* the join of the Gospel's end to the Epistle's
+  opening thanksgiving is the editor's (§ 3.2).
 - `offertory` — Moses does the sanctifying, the offering and the immolating; the
   antiphon's every finite verb has Moses as its subject, and the people only
   stand by, *in conspéctu filiórum Israël*. *Textual observation:* that is a fact
@@ -854,10 +961,19 @@ Blessed, reads this Mass whole (`research/scope.md` § 3.11).
   of the Collect is to let oneself be carried: the paralysed soul, in Jerome's own
   tropology, is *a perfecto doctore offertur curanda Domino* — offered by someone
   else — rather than arriving under its own power.
-- **Anagogical.** What is asked for at the end is perfection, not completion:
-  *dignos nos eius participatióne perfícias*, and *confirmábit vos usque in finem
-  sine crímine, in die advéntus*. Chrysostom: "not only the beginnings must be
-  good, but the end also … therefore there is need of patience."
+- **Anagogical.** The end is given as the beginning was. The Corinthians, for
+  whose grace Paul thanks God as a thing already given, wait for the revelation of
+  Christ, *qui et confirmábit vos usque in finem sine crímine, in die advéntus
+  Dómini nostri Iesu Christi* (1 Cor 1:8). Whether the verse promises (Aquinas:
+  *sine crimine*, *sine peccato mortali*) or covertly accuses (Chrysostom, *Hom.
+  in 1 Cor.* 2, § 7), the confirming is Christ's and not theirs. And the last
+  prayer of the Mass asks God himself to make the communicants worthy of their
+  share, *ut dignos nos eius participatióne perfícias*: even the fitness for what
+  is given at the end is asked of him. **1 Cor 1:8 and *perfícias* anchor this
+  reading's anagogical sense only.** (An earlier version of this sense read
+  "perfection, not completion" and set beside v. 8 Chrysostom's "not only the
+  beginnings must be good, but the end also". That sentence is his comment on
+  v. 7, in § 6 of the homily, and it is withdrawn from this sense.)
 
 ### 3.5 Strongest difficulty and alternative
 
@@ -865,8 +981,13 @@ Blessed, reads this Mass whole (`research/scope.md` § 3.11).
 itself refuses that. Three of its ten elements ask something of the hearer:
 *dignis móribus assequámur* (Secret), *Tóllite hóstias, et introíte* (Communion),
 and the Gospel's own *surge, tolle lectum tuum, et vade*. Chrysostom, the
-reading's principal witness, says in the same homily that "there is need of many
-labors to be able to come unto the end."
+reading's principal witness, says as much in the same homily. On the lection's
+*waiting for the revelation of our Lord Jesus Christ* (1 Cor 1:7; *Hom. in
+1 Cor.* 2, § 6) he says that Paul terrifies them with the judgment-seat,
+"implying that not only the beginnings must be good, but the end also", and that
+"there is need of many labors to be able to come unto the end." Both sentences
+are on v. 7. His reading of v. 8 is the covert accusation of § 7 (§ 3.2), and
+the record does not set these sentences beside that verse.
 
 **The answer this reading gives.** The Collect does not say we cannot please God;
 it says we cannot please him *without him* — *sine te*. The distinction is in the
@@ -891,6 +1012,14 @@ may bring. Jerome agrees with both on the proposition and disagrees with
 Chrysostom on the case. The reading is therefore built on an agreement that
 survives a real dispute inside it, which is why the dispute is kept in the open
 rather than resolved.
+
+At the Gospel's end the reading parts from its own principal witness. It takes
+Hilary's judgement of the crowd's praise, fitting honour for a gift men have
+received, over Chrysostom's, a confession that fell short (§ 3.2). Chrysostom on
+Matthew and Chrysostom on 1 Corinthians are different loci, and taking Hilary at
+Mt 9:8 costs the reading nothing it takes from Chrysostom on the Epistle. But the
+choice is a choice between two Fathers, it is reported as one, and the second
+reading, which reports Chrysostom first, does not make it (§ 4.3).
 
 ---
 
@@ -921,7 +1050,7 @@ rather than resolved.
 | --- | --- | --- | --- |
 | What is the Mass about? | a city being built | a power being exercised | a gift being acknowledged |
 | Which element governs? | `gradual` (and the doubled Ps 121:1) | `gospel` | `collect` |
-| What is the Gospel for? | the boat and the city (Hilary, *In Matth.* VIII § 4, PL 9) | the centre and the proof | the man who did nothing |
+| What is the Gospel for? | the boat and the city (Hilary, *In Matth.* VIII § 4, PL 9) | the centre and the proof | the man who did nothing; and the crowd's praise as thanks for a gift (Hilary, *In Matth.* VIII § 8, PL 9) |
 | What is the Offertory for? | the people standing by their own sacrifice | the altar where remission is worked | the antiphon whose verbs are all Moses' |
 | What is *pax*? | the city's strength: charity for Augustine and Cassiodorus, the firmness peace confers for Hilary | not addressed directly | not addressed directly |
 | Principal witness | Augustine on three psalms, with Cassiodorus on all three and Hilary's *Tractatus* on Ps 121 | Chrysostom on Matthew and Hebrews, with Aquinas on Mt 9:6 | Chrysostom on 1 Corinthians, with Theodoret and Aquinas beside him |
@@ -930,8 +1059,9 @@ rather than resolved.
 ### 4.3 How they relate
 
 They are not rivals about the same question, and the study should say so rather
-than stage a contest. They are three different governing emphases over one set of
-texts, and each explains something the others leave alone: the first is the only
+than stage a contest where there is none; the one point at which two of them part
+over a Father's reading is stated below. They are three different governing
+emphases over one set of texts, and each explains something the others leave alone: the first is the only
 one that accounts for why Ps 121:1 is appointed twice; the second is the only one
 that gives a meaning to the placing, in the 1962 book as in the 1862, of a Mosaic
 altar at the offering of *this* Gospel — a placing whose age this record does not
@@ -939,24 +1069,33 @@ establish in either direction (`research/scope.md` § 10.16; the evidence of oth
 placements is scope-record material, § 2.7, and does not enter the readings); the
 third is the only one that accounts for the thanksgiving at both ends.
 
-**Where they agree, and it is worth saying because it looks like a disagreement.**
-All three treat *qui dedit potestátem talem homínibus* the same way. § 2.3's
-alleluia row and § 2.5 both follow Chrysostom in reading the crowd's words as an
-inadequate confession, and § 2.5 says in terms that no checked Father takes v. 8
-as the ministerial power. It lets the reading take the ministerial sense only where
-its witnesses put it, and under their names: first in one Father, Ambrose, who
-glosses the scribes' question of Lk 5:21 (the parallel of v. 3) in his comment on
-Lk 5:23 (*Exp. in Lc.* V.13) and does not read v. 8 so; then Aquinas at v. 6; then
-Bl. Schuster at v. 8 and the continuation of *The Liturgical Year*, both on this
-Mass. § 1 gives the verse no weight either. The one author eligible under the
-profile's standing rule who reads v. 8 of the ministry is Schuster; the continuation
-also applies v. 8's words, allegorically, to the Church's power of remitting sins
-(p. 405). Schuster gives the crowd's subjective judgement first, as Chrysostom
-does, then the hypostatic union, and the ministry third, so even he does not set
-the readings against each other. `authority-on-earth`'s hinge is **Mt 9:6**,
-*potestátem in terra dimitténdi peccáta* — the sentence § 2.1 quotes — and not
-Mt 9:8. Nothing in this record sets one reading against another about the Gospel's
-last verse, and a study that staged that contest would be inventing it.
+**The Gospel's last verse: what each reading does with it.** *Qui dedit
+potestátem talem homínibus* is used differently by the three readings, and the
+record states how.
+- `peace-of-the-house` does not use v. 8 (§ 1.3).
+- `authority-on-earth` reports Chrysostom's judgement of the crowd first (an
+  inadequate confession) and Hilary's after it (fitting honour, *conclusa sunt
+  omnia suo ordine*), and takes its own sense of the verse from neither: that
+  sense is Bl. Schuster's, on this Mass, the third of his three (§ 2.2). It cites
+  Hilary (*In Matth.* VIII § 8, PL 9, cols. 961–962) only to show that the men of
+  the verse are those who receive forgiveness and not those who minister it
+  (§§ 2.2, 2.5). Its hinge is **Mt 9:6**, *potestátem in terra dimitténdi
+  peccáta*, the sentence § 2.1 quotes, and no Father's reading of v. 8 carries its
+  ministerial sense: that sense stands where § 2.5 puts it, under those names.
+- `nothing-of-our-own` takes Hilary's side: the crowd's praise is honour fittingly
+  paid to God for what the many have received through Christ's word (§ 3.2). Its
+  join of the Gospel's end to the Epistle's opening thanksgiving is the editor's.
+
+**So the difference between Chrysostom and Hilary at v. 8 is the one disagreement
+that runs between two readings**: the second reports Chrysostom's judgement first
+and does not adopt Hilary's; the third adopts Hilary's. Neither reading turns v. 8
+into a Father's warrant for the ministry, and no reading may; the contest the
+study states is between Chrysostom's and Hilary's judgements of the crowd, and
+nothing more. **An earlier version of this section said that all three readings
+treat the verse the same way, that none turns on it, and that a study staging a
+contest over it would be inventing one. Those three statements are withdrawn**:
+they were true of this record's readings before the third reading took Hilary at
+v. 8, and they are not true of the readings as the study now gives them.
 
 **The Gospel's city: compatible uses, not a conflict.** An earlier version of this
 section held that `peace-of-the-house` "needs the city left open" and
@@ -975,7 +1114,8 @@ the three readings use the clause in compatible ways:
 
 No witness sets these uses against each other, and the study must not.
 
-**Where the real disagreements stand: each inside the reading that carries it.**
+**Where the real disagreements stand: three inside the reading that carries each,
+and one between two readings.**
 - **Which town**: Chrysostom's Capernaum ("that which had Him continually inhabiting
   it") against Jerome's Nazareth (*Civitatem ejus non aliam intelligimus quam
   Nazareth*, PL 26, col. 54). Augustine and Aquinas harmonise towards Capernaum.
@@ -987,26 +1127,36 @@ No witness sets these uses against each other, and the study must not.
 - **What Ps 121 is about**: Chrysostom's and Theodoret's earthly Jerusalem rebuilt
   against the Latins' heavenly city. This dispute sits inside `peace-of-the-house`
   (§ 1.2; `research/scope.md` § 4.6).
-- **What the crowd's reaction at v. 8 is**: Chrysostom's inadequate confession
-  against Hilary's honour fittingly rendered. Ambrose, at the parallel (*Exp. in
-  Lc.* V.15, on Lk 5:25–26), stands with Chrysostom's negative judgement on the fear:
-  *Spectant surgentem increduli … et divini operis miracula malunt timere quam
-  credere. Nam si credidissent, non timuissent utique, sed dilexissent* — and he
-  identifies those who fear with those who calumniated. Luke's verse has no *power
-  to men*, and Ambrose says nothing of it (`research/scope.md` § 4.3). None of the
-  three reads the verse of ministers, and none of the three readings turns on it
-  (above).
+- **What the crowd's reaction at v. 8 is — the one that runs between two
+  readings**: Chrysostom's inadequate confession (the crowd "still creep upon the
+  earth", and Christ does not rebuke them but raises their thoughts) against
+  Hilary's honour fittingly rendered for a gift men have received. The second
+  reading reports Chrysostom first and does not take Hilary's side; the third
+  takes it (above). **Ambrose, at the parallel (*Exp. in Lc.* V.15, on
+  Lk 5:25–26), judges the fear more severely than Chrysostom, and his judgement is
+  not Chrysostom's**: *Spectant surgentem increduli … et divini operis miracula
+  malunt timere quam credere. Nam si credidissent, non timuissent utique, sed
+  dilexissent … Et ideo isti, quia non diligebant, calumniabantur.* Those who fear
+  are the unbelieving, who would rather fear than believe, and he identifies them
+  with those who calumniated. Chrysostom's crowd glorify God and fall short;
+  Ambrose's fearers are the calumniators. His judgement is negative, as
+  Chrysostom's is, and on that much he stands against Hilary; he may not be
+  reported as judging the crowd "in the same way" as Chrysostom. Luke's verse has
+  no *power to men*, and Ambrose says nothing of it (`research/scope.md` § 4.3).
+  None of the three Fathers reads the verse of ministers.
 
 Where the readings' *answers* part is set out in the table at § 4.2: what the Mass
 is about, which element governs, what the Gospel and the Offertory are for. Those
 are differences of governing emphasis, not incompatibilities. None of them is a
-contest between witnesses, and the study should not stage one.
+contest between witnesses, and the study should not stage one; the one contest
+between witnesses that two readings carry differently is Chrysostom's and
+Hilary's at v. 8, above.
 
 ### 4.4 Notes for the concise study's page-1 overview
 
 The four-row overview on physical page 1 is a brief orientation for the reader and
-does not replace any lane's own four senses. Drawn from what all three readings
-share:
+does not replace any lane's own four senses. Drawn from the three readings, each
+row naming what they give without assigning one reading's anchor to another:
 
 - **Literal** — Israel asks for peace and sings its way up to the house of the
   Lord; Paul thanks God for gifts a divided church did not earn; a paralysed man
@@ -1018,9 +1168,11 @@ share:
 - **Moral** — what we have was given, and the one present we may bring is a
   contrite heart; peace is charity, and charity kills the old self; the forgiven
   man carries what carried him.
-- **Anagogical** — the entry given here is into the courts; the city, the day of
-  the Lord's coming, and the perfection asked for after communion are all still
-  ahead.
+- **Anagogical** — the entry given here is into the courts, and the city is still
+  ahead (the first reading); the forgiven man's way home is the way back to
+  paradise (the second, with Hilary, Ambrose and Aquinas); the confirming to the
+  end, on the day of the Lord's coming, and the being made worthy asked for after
+  communion are God's to give (the third, from 1 Cor 1:8 and *perfícias*).
 
 ### 4.5 Notes for the homily
 
@@ -1030,7 +1182,12 @@ its two anchors — the Collect's *without thee we cannot please thee* and the m
 who is carried — are the two things in this Mass a hearer will remember. It can
 take one element from each of the others without incoherence: the Gospel's *power
 on earth* (why the forgiveness happens here and not in private), and the
-Communion's courts (where the Mass is going). It must not attribute a ministerial
+Communion's courts (where the Mass is going). If it hears the crowd's praise at
+the Gospel's end as thanks for a gift, that is Hilary's reading (*In Matth.* VIII
+§ 8), and Chrysostom's differs; the join of that praise to the Epistle's *Grátias
+ago* is the editor's, not Hilary's. If it quotes Chrysostom's "not only the
+beginnings must be good, but the end also", the sentence is on 1 Cor 1:7, not on
+v. 8, whose reading in Chrysostom is a covert accusation. It must not attribute a ministerial
 reading of Mt 9:8 to any Father, since none checked gives one; if it speaks of the
 Church's ministry of forgiveness it must do so as Aquinas does at v. 6 — ministry
 beneath Christ's authority — or as Bl. Ildefonso Schuster reads v. 8 on this Mass,
