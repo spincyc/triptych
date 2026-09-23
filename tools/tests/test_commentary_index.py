@@ -222,9 +222,92 @@ class ReviewedNameTests(unittest.TestCase):
     def test_every_tracked_entry_states_its_reason(self) -> None:
         """The idiom the review block keeps: no judgement without a reason."""
         review = (harvest._load(ALIASES).get("review") or {})
-        for entry in review.get("canonical_titles") or []:
-            with self.subTest(title=entry.get("title")):
-                self.assertTrue(str(entry.get("reason") or "").strip())
+        for field in ("canonical_titles", "same_authors"):
+            for entry in review.get(field) or []:
+                with self.subTest(field=field, entry=entry.get("title") or entry.get("also")):
+                    self.assertTrue(str(entry.get("reason") or "").strip())
+
+
+def _run(run_id: str, author: str, title: str, aliases: list[str]) -> dict:
+    return {
+        "run_id": run_id,
+        "passages": {
+            "Matthew 9": [
+                {"author": author, "title": title, "role": "doctor",
+                 "death_year": 1280, "aliases": aliases}
+            ]
+        },
+    }
+
+
+class SameAuthorTests(unittest.TestCase):
+    """`review.same_authors`: one person under two spellings is one author.
+
+    Grouping is per author, so Albertus Magnus and Albert the Great were two
+    authors, and the one commentary took two places in the Matthew 9 row.
+    """
+
+    REVIEW = {
+        "same_authors": [
+            {"author": "Albert the Great", "also": "Albertus Magnus", "reason": "one person"}
+        ]
+    }
+    RUNS = [
+        _run("r1", "Albert the Great", "Super Matthaeum", ["Commentary on Matthew"]),
+        _run("r2", "Albertus Magnus", "Super Matthaeum", ["Enarrationes in Matthaeum"]),
+    ]
+
+    def test_a_declared_spelling_joins_its_person(self) -> None:
+        groups, _ = harvest._derive_groups(self.RUNS, self.REVIEW)
+        self.assertEqual(len(groups), 1)
+        self.assertEqual(groups[0]["author"], "Albert the Great")
+        self.assertEqual(
+            groups[0]["titles"],
+            ["commentary on matthew", "enarrationes in matthaeum", "super matthaeum"],
+        )
+
+    def test_without_the_entry_they_stay_two(self) -> None:
+        groups, _ = harvest._derive_groups(self.RUNS, {})
+        self.assertEqual(sorted(g["author"] for g in groups), ["Albert the Great", "Albertus Magnus"])
+
+    def test_the_digest_covers_the_claims_not_the_review(self) -> None:
+        """A review entry must not age the table; only a new claim does."""
+        self.assertEqual(
+            harvest._derive_groups(self.RUNS, self.REVIEW)[1],
+            harvest._derive_groups(self.RUNS, {})[1],
+        )
+
+    def test_key_and_answers_read_the_spelling_as_its_person(self) -> None:
+        registry = harvest._Registry(authors=harvest._same_authors(self.REVIEW))
+        work = {"author": "Albertus Magnus", "title": "Lectura nova", "role": "doctor"}
+        self.assertEqual(harvest._key(dict(work), registry), ("albert the great", "lectura nova"))
+        answered = harvest._locus_answers(
+            {"passages": {"Matthew 9": [work]}}, harvest._Registry(authors=registry.authors)
+        )
+        (found,) = answered["Matthew 9"].values()
+        self.assertEqual(found["work"]["author"], "Albert the Great")
+
+    def test_an_entry_without_a_reason_is_refused(self) -> None:
+        with self.assertRaises(ValueError):
+            harvest._same_authors(
+                {"same_authors": [{"author": "A", "also": "B", "reason": ""}]}
+            )
+
+    def test_a_chain_is_refused(self) -> None:
+        with self.assertRaises(ValueError) as caught:
+            harvest._same_authors(
+                {"same_authors": [
+                    {"author": "A", "also": "B", "reason": "x"},
+                    {"author": "B", "also": "C", "reason": "x"},
+                ]}
+            )
+        self.assertIn("both kept and folded", str(caught.exception))
+
+    def test_an_entry_no_run_reaches_is_refused(self) -> None:
+        review = {"same_authors": [{"author": "Albert the Great", "also": "Albertus", "reason": "x"}]}
+        with self.assertRaises(ValueError) as caught:
+            harvest._derive_groups(self.RUNS, review)
+        self.assertIn("no run names", str(caught.exception))
 
 
 class KeyExtentTests(unittest.TestCase):

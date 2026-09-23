@@ -3,7 +3,8 @@
 # Derived by `tools/tpt harvest aliases --rebuild` from the alias claims the
 # harvest runs themselves made, not hand-typed: `groups` is the connected
 # components of the "these names are the same work" graph, per author, and is
-# regenerated whole. `review` is the part that cannot be derived, because
+# regenerated whole; `review.same_authors` says which author spellings are one
+# person. `review` is the part that cannot be derived, because
 # whether a group is one work is a judgement about the works; each entry
 # carries the reason it was made. Loading validates that no title reaches two
 # groups, that no name declared ambiguous still groups a work, that no chain of
@@ -264,6 +265,26 @@ review:
     instead_of: 'Commentarii in Pentateuchum: In Leviticum'
     title: Commentarii illustres in quinque Mosaicos libros
     reason: Leviticus and Numbers under the name of Leviticus.
+  same_authors:
+  - author: Albert the Great
+    also: Albertus Magnus
+    reason: One person, named in Latin. A 2026-09-23 run on Matthew 9 gave Albertus Magnus
+      with death year 1280 and the title Super Matthaeum, which Albert the Great's own group
+      already holds; the other two runs that day named him Albert the Great for the same commentary.
+      Read as two authors, the one commentary took two places in the Matthew 9 row.
+  - author: Juan Maldonado
+    also: Juan de Maldonado
+    reason: One person, Maldonatus, the Jesuit who died in 1583. Every run naming Juan de
+      Maldonado gives death year 1583 and the Commentarii in quatuor Evangelistas that Juan
+      Maldonado's group is named for, at Matthew 9, Matthew 12 and John 5, where the same
+      commentary stood twice.
+  - author: Denis the Carthusian
+    also: Dionysius the Carthusian
+    reason: One person, Denys van Leeuwen, named in Latin. Every run naming Dionysius the
+      Carthusian gives death year 1471, as every run naming Denis does, and one of its names
+      for the Matthew commentary is Denys the Carthusian's own. It stood beside Denis at Matthew
+      9, Matthew 12 and Acts 19. Whether a per-book Enarratio and the whole Enarrationes are
+      one work is not settled here; only the person is.
 groups:
 - author: Adam Clarke
   work: The Holy Bible with a Commentary and Critical Notes
@@ -312,6 +333,19 @@ groups:
   - postilla super isaiam
   - super isaiam
 - author: Albert the Great
+  work: Super Matthaeum
+  uses: 75
+  attested_by: 9
+  titles:
+  - commentarii in evangelium matthaei
+  - commentarii in matthaeum
+  - commentary on matthew
+  - commentary on the gospel of matthew
+  - enarrationes in evangelium matthaei
+  - enarrationes in matthaeum
+  - postilla super matthaeum
+  - super matthaeum
+- author: Albert the Great
   work: Super Lucam
   uses: 74
   attested_by: 3
@@ -325,19 +359,6 @@ groups:
   - expositio in lucam
   - postilla super lucam
   - super lucam
-- author: Albert the Great
-  work: Super Matthaeum
-  uses: 74
-  attested_by: 8
-  titles:
-  - commentarii in evangelium matthaei
-  - commentarii in matthaeum
-  - commentary on matthew
-  - commentary on the gospel of matthew
-  - enarrationes in evangelium matthaei
-  - enarrationes in matthaeum
-  - postilla super matthaeum
-  - super matthaeum
 - author: Albert the Great
   work: Super Iohannem
   uses: 56
@@ -517,14 +538,6 @@ groups:
   - commentarii in threnos
   - commentary on lamentations
   - postilla super threnos
-- author: Albertus Magnus
-  work: Super Matthaeum
-  uses: 1
-  attested_by: 1
-  titles:
-  - commentary on matthew
-  - enarrationes in matthaeum
-  - super matthaeum
 - author: Alcuin of York
   work: Interrogationes et responsiones in Genesim
   uses: 159
@@ -2517,8 +2530,8 @@ groups:
   - on the paralytic at bethesda
 - author: Denis the Carthusian
   work: Enarrationes in universam Bibliam
-  uses: 1238
-  attested_by: 12
+  uses: 1241
+  attested_by: 13
   titles:
   - commentaria in actus apostolorum
   - commentaria in amos
@@ -2647,6 +2660,8 @@ groups:
   - commentary on zechariah
   - commentary on zephaniah
   - denys the carthusian
+  - denys the carthusian, commentary on acts
+  - denys the carthusian, commentary on matthew
   - denys the carthusian, enarrationes in pentateuchum
   - denys van rijkel
   - dionysius cartusianus
@@ -3063,22 +3078,6 @@ groups:
   - commentarii in psalmos
   - commentary on psalms 1-50
   - commentary on psalms 1-51
-- author: Dionysius the Carthusian
-  work: Enarratio in Evangelium secundum Matthaeum
-  uses: 2
-  attested_by: 2
-  titles:
-  - commentaria in evangelium matthaei
-  - commentary on matthew
-  - denys the carthusian, commentary on matthew
-  - enarratio in evangelium secundum matthaeum
-- author: Dionysius the Carthusian
-  work: Enarratio in Acta Apostolorum
-  uses: 1
-  attested_by: 1
-  titles:
-  - denys the carthusian, commentary on acts
-  - enarratio in acta apostolorum
 - author: Edward Bouverie Pusey
   work: The Minor Prophets, with a Commentary Explanatory and Practical
   uses: 5
@@ -5125,26 +5124,6 @@ groups:
   - caryl on job
   - exposition of job
   - practical observations on job
-- author: Juan de Maldonado
-  work: Commentarii in quatuor Evangelistas
-  uses: 6
-  attested_by: 5
-  titles:
-  - commentarii in evangelium matthaei
-  - commentarii in quatuor evangelistas
-  - commentary on the four gospels
-  - maldonatus on the gospels
-  - maldonatus, commentary on matthew
-  - maldonatus, commentary on the four gospels
-  - maldonatus, commentary on the holy gospels
-  - maldonatus, in ioannem
-- author: Juan de Maldonado
-  work: Commentarii in quatuor evangelistas (In Ioannem)
-  uses: 1
-  attested_by: 1
-  titles:
-  - commentarii in quatuor evangelistas (in ioannem)
-  - maldonatus, commentary on the gospel of john
 - author: Juan de Mariana
   work: Scholia in Vetus et Novum Testamentum
   uses: 3
@@ -5165,9 +5144,10 @@ groups:
   - pineda on job
 - author: Juan Maldonado
   work: Commentarii in quatuor Evangelistas
-  uses: 175
-  attested_by: 5
+  uses: 181
+  attested_by: 9
   titles:
+  - commentarii in evangelium matthaei
   - commentarii in quatuor evangelia
   - commentarii in quatuor evangelistas
   - 'commentarii in quatuor evangelistas: in ioannem'
@@ -5194,6 +5174,8 @@ groups:
   - maldonatus, commentarii in quatuor evangelia
   - maldonatus, commentary on matthew
   - maldonatus, commentary on the four gospels
+  - maldonatus, commentary on the holy gospels
+  - maldonatus, in ioannem
 - author: Juan Maldonado
   work: 'Commentarii in prophetas quatuor: Ieremiam, Baruch, Ezechielem et Danielem'
   uses: 5
@@ -5223,6 +5205,13 @@ groups:
   - 'commentarii in prophetas quatuor: jeremiam, baruch, ezechielem, danielem'
   - maldonatus, commentarii in jeremiam
   - maldonatus, in jeremiam
+- author: Juan Maldonado
+  work: Commentarii in quatuor evangelistas (In Ioannem)
+  uses: 1
+  attested_by: 1
+  titles:
+  - commentarii in quatuor evangelistas (in ioannem)
+  - maldonatus, commentary on the gospel of john
 - author: Juan Maldonado
   work: 'Maldonatus, Commentarii in prophetas IV: Ieremiam, Baruch, Ezechielem, Danielem'
   uses: 1

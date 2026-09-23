@@ -149,21 +149,21 @@ EXAMPLES = {
         Example(
             "tools/harvest aliases",
             (
-                "derived_groups: 543",
-                "reviewed: 39",
+                "derived_groups: 539",
+                "reviewed: 42",
                 "status: current",
-                "titles: 4886",
-                "tracked_groups: 543",
+                "titles: 4874",
+                "tracked_groups: 539",
             ),
             "read-only: compares the derived grouping with the tracked table",
         ),
         Example(
             "tools/harvest aliases --rebuild --alias-table build/example-harvest/aliases.yaml --audited-on 2026-07-31",
             (
-                "groups: 543",
-                "reviewed: 39",
+                "groups: 539",
+                "reviewed: 42",
                 "status: rebuilt",
-                "titles: 4886",
+                "titles: 4874",
             ),
             "WRITES the alias table. --alias-table here is an untracked copy; the default rewrites tracked src/sources/commentary/work-aliases.yaml",
         ),
@@ -191,28 +191,28 @@ EXAMPLES = {
         Example(
             "tools/harvest promote --audited-on 2026-07-31 --dry-run --index src/sources/commentary/passage-commentary-index.yaml",
             (
-                "distinct_works: 581",
+                "distinct_works: 577",
                 "index: src/sources/commentary/passage-commentary-index.yaml",
                 "numbering: vulgate",
                 "numbering_unrecorded: 2",
                 "passages: 562",
                 "runs: 16",
                 "status: dry-run",
-                "works: 9083",
+                "works: 9077",
             ),
             "read-only first: --dry-run reports what promotion would write and writes nothing",
         ),
         Example(
             "tools/harvest promote --audited-on 2026-07-31 --index build/example-discovery.yaml",
             (
-                "distinct_works: 581",
+                "distinct_works: 577",
                 "index: build/example-discovery.yaml",
                 "numbering: vulgate",
                 "numbering_unrecorded: 2",
                 "passages: 562",
                 "runs: 16",
                 "status: promoted",
-                "works: 9083",
+                "works: 9077",
             ),
             "WRITES the discovery index. --index here is untracked; the default rewrites tracked src/sources/commentary/passage-commentary-index.yaml",
         ),
@@ -394,6 +394,11 @@ def _locus_answers(run: dict, aliases: dict) -> dict[str, dict]:
         for locus in _chapter_loci(passage):
             bucket = answered.setdefault(locus, {})
             for rank, work in enumerate(works):
+                # A declared spelling is reported as the person it names, so a
+                # work no group holds is not printed under the other name.
+                written = _person(work, aliases)[1]
+                if written != str(work.get("author") or "").strip():
+                    work = {**work, "author": written}
                 found = bucket.setdefault(_key(work, aliases), {"work": work, "best": rank})
                 found["best"] = min(found["best"], rank)
     return answered
@@ -978,6 +983,61 @@ def _review_rules(review: dict) -> tuple[set, set, set]:
     return ambiguous, pairs("not_aliases"), pairs("also_aliases")
 
 
+def _same_authors(review: dict) -> dict[str, tuple[str, str]]:
+    """Author spellings the reviewer has declared to name one person.
+
+    Maps each folded variant to the folded and written spelling it is read as.
+    Runs name Albert the Great as Albertus Magnus and Maldonatus as Juan de
+    Maldonado, and grouping is per author, so one person split in two splits
+    every work he wrote: each half scores below what the work earned and both
+    halves take a place in the index. Two names joined by resemblance is how
+    two people become one, so each join is a reviewed row with its reason, as
+    `fragment-loci.yaml`'s `author_aliases` are. A spelling folded twice, or a
+    kept spelling that is itself folded, is refused rather than resolved.
+    """
+    folded: dict[str, tuple[str, str]] = {}
+    for index, entry in enumerate(review.get("same_authors") or []):
+        where = f"review.same_authors[{index}]"
+        if not isinstance(entry, dict) or set(entry) != {"author", "also", "reason"}:
+            raise ValueError(f"{where}: needs exactly author, also and reason")
+        author, also = str(entry["author"] or "").strip(), str(entry["also"] or "").strip()
+        if not author or not also or not str(entry["reason"] or "").strip():
+            raise ValueError(f"{where}: author, also and reason must all be stated")
+        if _fold(author) == _fold(also):
+            raise ValueError(f"{where}: {also!r} is the spelling it would be read as")
+        if _fold(also) in folded:
+            raise ValueError(f"{where}: {also!r} is folded twice")
+        folded[_fold(also)] = (_fold(author), author)
+    chained = sorted({kept for kept, _ in folded.values()} & set(folded))
+    if chained:
+        raise ValueError(
+            f"review.same_authors: {', '.join(chained)} is both kept and folded; "
+            "name each person by one kept spelling"
+        )
+    return folded
+
+
+def _fold_people(
+    edges: dict, used: dict, spelling: dict, same: dict[str, tuple[str, str]]
+) -> tuple[dict, dict, dict]:
+    """The alias evidence with every declared spelling read as its person."""
+    def person(author: str) -> str:
+        return same[author][0] if author in same else author
+
+    folded_edges: dict[tuple[str, str, str], set[str]] = defaultdict(set)
+    for (author, one, two), asserting in edges.items():
+        folded_edges[(person(author), one, two)] |= asserting
+    folded_used: dict[tuple[str, str], int] = defaultdict(int)
+    for (author, title), count in used.items():
+        folded_used[(person(author), title)] += count
+    folded_spelling: dict[tuple[str, str], str] = {
+        (kept, ""): written for kept, written in same.values()
+    }
+    for (author, title), written in spelling.items():
+        folded_spelling.setdefault((person(author), title), written)
+    return folded_edges, folded_used, folded_spelling
+
+
 def _reviewed_names(review: dict) -> dict[tuple[str, str], str]:
     """The name a reviewer settled on a group, keyed by a title the group holds.
 
@@ -1134,7 +1194,19 @@ def _check_titles_cover_the_work(
 
 def _derive_groups(runs: list[dict], review: dict) -> tuple[list[dict], str]:
     """Connected components of the asserted-alias graph, per author."""
-    edges, used, spelling = _alias_evidence(runs)
+    raw_edges, used, spelling = _alias_evidence(runs)
+    same = _same_authors(review)
+    named = {author for author, _ in used}
+    unseen = sorted(
+        {name for variant, (kept, _) in same.items() for name in (variant, kept)}
+        - named
+    )
+    if unseen:
+        raise ValueError(
+            "review.same_authors: no run names " + ", ".join(repr(n) for n in unseen)
+            + "; an entry the ledger does not reach would go on looking honoured"
+        )
+    edges, used, spelling = _fold_people(raw_edges, used, spelling, same)
     ambiguous, denied, asserted = _review_rules(review)
     linked: dict[tuple[str, str], set[str]] = defaultdict(set)
     parent: dict[tuple[str, str], tuple[str, str]] = {}
@@ -1185,7 +1257,9 @@ def _derive_groups(runs: list[dict], review: dict) -> tuple[list[dict], str]:
         )
     _name_groups(groups, review)
     groups.sort(key=lambda g: (g["author"].casefold(), -g["uses"], g["work"].casefold()))
-    return groups, _evidence_digest(edges)
+    # The digest covers the claims as the runs made them, so a review entry
+    # never ages the table; only a new claim does.
+    return groups, _evidence_digest(raw_edges)
 
 
 def _alias_registry(path: Path, runs: list[dict]) -> dict:
@@ -1197,14 +1271,20 @@ def _alias_registry(path: Path, runs: list[dict]) -> dict:
     """
     document = _load(path)
     if not document:
-        return {"present": False, "registry": {}, "display": {}, "stale": False, "groups": 0}
+        return {"present": False, "registry": _Registry(), "display": {}, "stale": False, "groups": 0}
     if document.get("schema") != ALIAS_SCHEMA:
         raise ValueError(f"{path}: schema must be {ALIAS_SCHEMA}, got {document.get('schema')!r}")
-    registry: dict[tuple[str, str], tuple[str, str]] = {}
+    same = _same_authors(document.get("review") or {})
+    registry = _Registry(authors=same)
     display: dict[tuple[str, str], tuple[str, str]] = {}
     for index, group in enumerate(document.get("groups") or []):
         where = f"{path}: groups[{index}]"
         author = _fold(group.get("author"))
+        if author in same:
+            raise ValueError(
+                f"{where}: {group.get('author')!r} is declared the same person as "
+                f"{same[author][1]!r}; rebuild the table so the group is filed under one name"
+            )
         work = str(group.get("work") or "").strip()
         titles = [_fold(t) for t in group.get("titles") or []]
         if not author or not work:
@@ -1275,7 +1355,7 @@ def _seed_registry(
             "the work-alias table no longer covers the ledger's alias claims; "
             "rebuild it with `harvest aliases --rebuild` and review the diff before promoting"
         )
-    return dict(table["registry"]), dict(table["display"])
+    return _Registry(table["registry"], authors=table["registry"].authors), dict(table["display"])
 
 
 def run_aliases(arguments: argparse.Namespace) -> dict:
@@ -1323,7 +1403,8 @@ _ALIAS_HEADER = """\
 # Derived by `tools/tpt harvest aliases --rebuild` from the alias claims the
 # harvest runs themselves made, not hand-typed: `groups` is the connected
 # components of the "these names are the same work" graph, per author, and is
-# regenerated whole. `review` is the part that cannot be derived, because
+# regenerated whole; `review.same_authors` says which author spellings are one
+# person. `review` is the part that cannot be derived, because
 # whether a group is one work is a judgement about the works; each entry
 # carries the reason it was made. Loading validates that no title reaches two
 # groups, that no name declared ambiguous still groups a work, that no chain of
@@ -1334,6 +1415,27 @@ _ALIAS_HEADER = """\
 # asserts a new alias ages the table and `harvest promote` refuses until the
 # new grouping has been looked at.
 """
+
+
+class _Registry(dict):
+    """The alias registry, carrying the reviewed author spellings `_key` folds.
+
+    A dict of (author, title) to the group it belongs to, as before; the
+    `authors` it carries are `review.same_authors`, so every verb that keys a
+    work through the registry reads a declared spelling as its person without
+    a second argument threaded through each of them.
+    """
+
+    def __init__(self, *args, authors: dict[str, tuple[str, str]] | None = None, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.authors = dict(authors or {})
+
+
+def _person(work: dict, registry: dict | None) -> tuple[str, str]:
+    """The folded author a work is keyed under, and how that person is written."""
+    author = _fold(work.get("author"))
+    folded = (getattr(registry, "authors", None) or {}).get(author)
+    return folded if folded else (author, str(work.get("author") or "").strip())
 
 
 def _key(work: dict, registry: dict[tuple[str, str], tuple[str, str]] | None = None):
@@ -1348,7 +1450,7 @@ def _key(work: dict, registry: dict[tuple[str, str], tuple[str, str]] | None = N
     the run in hand, which is first-come and so depends on the order the ledger
     is walked; the table exists to leave nothing for that path to decide.
     """
-    author = str(work.get("author", "")).casefold().strip()
+    author = _person(work, registry)[0]
     if registry is not None:
         for title in _titles(work):
             if (author, title) in registry:

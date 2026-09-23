@@ -247,6 +247,15 @@ What cannot be derived is whether a group is one work, so the table carries a
   *Commentarioli in Psalmos* and *Tractatus in Psalmos* are two works, not one.
 - `also_aliases` adds a join no run happened to assert, needed where denying an
   edge orphans a name that reached its group only through it.
+- `same_authors` declares that two author spellings name one person
+  (`author`, the spelling kept; `also`, the one read as it). Grouping is per
+  author, so Albertus Magnus beside Albert the Great split one commentary into
+  two index entries at Matthew 9. The join folds before grouping and before
+  keying, in every verb, and leaves the evidence digest alone, so a review
+  entry never ages the table. It refuses an entry with no reason, a chain, a
+  spelling folded twice, and a name no run uses. It joins people, never works:
+  whether a per-book title and a whole-work title are one work stays a
+  grouping question.
 - `canonical_titles` names a group by the whole work rather than by the part.
   Derivation takes the most-used title, so Aquinas's one commentary over ten
   Pauline epistles was named *Super Epistolam ad Romanos lectura* — Romans is

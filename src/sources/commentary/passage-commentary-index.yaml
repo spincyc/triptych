@@ -5724,6 +5724,12 @@ passages:
     role: ecclesiastical-writer
     confidence: 1.0
     runs: 3
+  - author: Denis the Carthusian
+    title: Enarrationes in universam Bibliam
+    date: '1471'
+    role: ecclesiastical-writer
+    confidence: 1.0
+    runs: 3
   - author: Desiderius Erasmus
     title: Paraphrasis in Acta Apostolorum
     date: '1536'
@@ -5766,12 +5772,6 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.6667
     runs: 3
-  - author: Denis the Carthusian
-    title: Enarrationes in universam Bibliam
-    date: '1471'
-    role: ecclesiastical-writer
-    confidence: 0.6667
-    runs: 3
   - author: Thomas Cajetan
     title: Commentary on the Acts of the Apostles
     date: '1534'
@@ -5799,12 +5799,6 @@ passages:
   - author: Didymus the Blind
     title: Fragments on the Acts of the Apostles
     date: '398'
-    role: ecclesiastical-writer
-    confidence: 0.3333
-    runs: 3
-  - author: Dionysius the Carthusian
-    title: Enarratio in Acta Apostolorum
-    date: '1471'
     role: ecclesiastical-writer
     confidence: 0.3333
     runs: 3
@@ -27917,7 +27911,7 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.6667
     runs: 3
-  - author: Juan de Maldonado
+  - author: Juan Maldonado
     title: Commentarii in quatuor Evangelistas
     date: '1583'
     role: ecclesiastical-writer
@@ -27948,7 +27942,7 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.3333
     runs: 3
-  - author: Juan de Maldonado
+  - author: Juan Maldonado
     title: Commentarii in quatuor evangelistas (In Ioannem)
     date: '1583'
     role: ecclesiastical-writer
@@ -33582,6 +33576,12 @@ passages:
     role: church-father
     confidence: 1.0
     runs: 3
+  - author: Denis the Carthusian
+    title: Enarrationes in universam Bibliam
+    date: '1471'
+    role: ecclesiastical-writer
+    confidence: 1.0
+    runs: 3
   - author: Hilary of Poitiers
     title: Commentarius in Matthaeum
     date: '367'
@@ -33598,6 +33598,12 @@ passages:
     title: Homiliae in Matthaeum
     date: '407'
     role: church-father
+    confidence: 1.0
+    runs: 3
+  - author: Juan Maldonado
+    title: Commentarii in quatuor Evangelistas
+    date: '1583'
+    role: ecclesiastical-writer
     confidence: 1.0
     runs: 3
   - author: Nicholas of Lyra
@@ -33654,12 +33660,6 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.6667
     runs: 3
-  - author: Denis the Carthusian
-    title: Enarrationes in universam Bibliam
-    date: '1471'
-    role: ecclesiastical-writer
-    confidence: 0.6667
-    runs: 3
   - author: Euthymius Zigabenus
     title: Commentarius in quatuor Evangelia
     date: '1122'
@@ -33672,33 +33672,15 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.6667
     runs: 3
-  - author: Juan de Maldonado
-    title: Commentarii in quatuor Evangelistas
-    date: '1583'
-    role: ecclesiastical-writer
-    confidence: 0.6667
-    runs: 3
   - author: Origen
     title: Commentarium in Matthaeum
     date: '254'
     role: ecclesiastical-writer
     confidence: 0.6667
     runs: 3
-  - author: Dionysius the Carthusian
-    title: Enarratio in Evangelium secundum Matthaeum
-    date: '1471'
-    role: ecclesiastical-writer
-    confidence: 0.3333
-    runs: 3
   - author: Euthymius Zigabenus
     title: Commentarius in Matthaeum
     date: '1122'
-    role: ecclesiastical-writer
-    confidence: 0.3333
-    runs: 3
-  - author: Juan Maldonado
-    title: Commentarii in quatuor Evangelistas
-    date: '1583'
     role: ecclesiastical-writer
     confidence: 0.3333
     runs: 3
@@ -36346,6 +36328,24 @@ passages:
     role: doctor
     confidence: 1.0
     runs: 6
+  - author: Albert the Great
+    title: Super Matthaeum
+    date: '1280'
+    role: doctor
+    confidence: 0.8333
+    runs: 6
+  - author: Denis the Carthusian
+    title: Enarrationes in universam Bibliam
+    date: '1471'
+    role: saintly
+    confidence: 0.8333
+    runs: 6
+  - author: Juan Maldonado
+    title: Commentarii in quatuor Evangelistas
+    date: '1583'
+    role: saintly
+    confidence: 0.8333
+    runs: 6
   - author: Theophylact of Ohrid
     title: Enarratio in Evangelium Matthaei
     date: '1107'
@@ -36358,22 +36358,10 @@ passages:
     role: doctor
     confidence: 0.8333
     runs: 6
-  - author: Albert the Great
-    title: Super Matthaeum
-    date: '1280'
-    role: doctor
-    confidence: 0.6667
-    runs: 6
   - author: Bruno of Segni
     title: Commentaria in Matthaeum
     date: '1123'
     role: saint
-    confidence: 0.6667
-    runs: 6
-  - author: Denis the Carthusian
-    title: Enarrationes in universam Bibliam
-    date: '1471'
-    role: saintly
     confidence: 0.6667
     runs: 6
   - author: Hugh of Saint-Cher
@@ -36400,12 +36388,6 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.5
     runs: 6
-  - author: Juan Maldonado
-    title: Commentarii in quatuor Evangelistas
-    date: '1583'
-    role: saintly
-    confidence: 0.5
-    runs: 6
   - author: Peter Chrysologus
     title: Sermones
     date: '450'
@@ -36424,18 +36406,6 @@ passages:
     role: ecclesiastical-writer
     confidence: 0.3333
     runs: 6
-  - author: Juan de Maldonado
-    title: Commentarii in quatuor Evangelistas
-    date: '1583'
-    role: ecclesiastical-writer
-    confidence: 0.3333
-    runs: 6
-  - author: Albertus Magnus
-    title: Super Matthaeum
-    date: '1280'
-    role: doctor
-    confidence: 0.1667
-    runs: 6
   - author: Christian of Stavelot
     title: Expositio in Matthaeum evangelistam
     date: '880'
@@ -36446,12 +36416,6 @@ passages:
     title: Enarrationes in omnes libros sacrae Scripturae
     date: '1471'
     role: saintly
-    confidence: 0.1667
-    runs: 6
-  - author: Dionysius the Carthusian
-    title: Enarratio in Evangelium secundum Matthaeum
-    date: '1471'
-    role: ecclesiastical-writer
     confidence: 0.1667
     runs: 6
   - author: Walafrid Strabo
