@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/homily.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "HOM-001",
+      "note": "The withdrawn sentence is replaced by a separate paragraph after the Augustine quotations. It says the hostiae are not something we own and hand over but the one present that claims nothing as its own and costs nothing but pride, quotes 1 Cor 4:7 (the verse the study quotes after Schuster, re-read in the tracked Douay table), and says our confession and humble heart are his gifts, brought back to him. The paralytic's faith ('if he had any, that too was given him') and the penitent's sorrow ('the sorrow too is God's gift') were brought under the same rule. The note says these statements apply the Collect and 1 Cor 4:7 and are not Augustine's gloss.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "derive-homily",
+  "summary": "Repaired HOM-001. The Communion sentence that made humility the one present we bring that God did not give is gone. In its place is the study's formulation: the sacrifice is not something we own and hand over, but the one present that claims nothing as its own and costs nothing but pride. It is followed by Paul's 'What hast thou that thou hast not received?' (1 Cor 4:7) and the statement that our confession and humble heart are God's gifts too. The paralytic's faith and the penitent's sorrow are now also said to be given, so the line on grace holds from the Collect to the close. Advisories HOM-002 to HOM-007 were cleared in the same two homily components. The speech is 1,519 words (11.7 to 12.7 minutes at 120 to 130 words a minute, estimated from the count and not timed). The 3-page proof builds cleanly and reproducibly (SHA-256 62a1014c221118c3f432069eecba1147615d723dcfebb25b062d5e52eb2d4bb7), and every homily content, preflight, component and metadata check passes. The shared timestamp (2026-09-23T15:35:00Z), this stage's contribution and the production audit were updated. No research record or study component was edited. One upstream observation is recorded: the study's quietism subsection has the same two-of-three Aquinas gap."
+}

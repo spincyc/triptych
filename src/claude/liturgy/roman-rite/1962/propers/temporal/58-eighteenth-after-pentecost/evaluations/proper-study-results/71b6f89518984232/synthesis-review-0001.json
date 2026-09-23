@@ -1,0 +1,358 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "SYN-008",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/04-themes.tex lines 8-9 (PDF p.3, the opening thesis: 'and confesses in its single prayer that without God we cannot please God'), with lines 37-38 (p.3: 'It is the Mass's only oration.')",
+      "problem": "The first sentence of the Themes says the Mass has a 'single prayer', but the same paragraph closes on 'a prayer to be made worthy of what has been received' (the Postcommunion). The page-1 map also lists the Secret and Postcommunion as prayers, and page 4 says the Mass 'ends its prayers with thanks'. The study's rubrical sense is exact: 'The Mass has one Collect' and 'a single oration of each kind' (sections/00-opening.tex). 'Only oration' is also the study's own usage (sections/05-appointed-texts.tex, 50-comparison.tex), and the page-1 note 'one oration of each kind' explains it. But 'single prayer' in plain English says something false, and an adult lay reader meets it in the thesis sentence. No argument rests on it, and the Collect is plainly the prayer meant.",
+      "required_result": "Name the Collect in the thesis, for example 'and confesses in its Collect that without God we cannot please God' or 'in its one Collect'. For the same reason, line 38 could read 'It is the Mass's only collect'. Leave the rest of the paragraph unchanged.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 1,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/concise/01-inventory.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-inventory"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/concise/02-overview.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "concise-date-location",
+          "kind": "front-matter",
+          "path": "sections/concise/03-date-location.tex",
+          "references": [
+            "format.tex",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-overview"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/concise/04-themes.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-themes"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/concise/10-commentary.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/concise/90-apparatus.tex",
+          "references": [
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine",
+            "Hilary of Poitiers",
+            "John Chrysostom",
+            "Cassiodorus",
+            "Theodoret of Cyrus",
+            "Robert Bellarmine",
+            "Thomas Aquinas",
+            "Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Augustine",
+            "Hilary of Poitiers",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "peace-of-the-house"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "peace-of-the-house",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine",
+            "Jerome",
+            "Thomas Aquinas",
+            "Ildefonso Schuster",
+            "Ambrose",
+            "Hilary of Poitiers",
+            "Bede",
+            "Theodoret of Cyrus",
+            "Robert Bellarmine",
+            "Cornelius a Lapide",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Augustine",
+            "Thomas Aquinas",
+            "Ildefonso Schuster"
+          ],
+          "component_keys": [
+            "authority-on-earth"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "authority-on-earth",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine",
+            "Jerome",
+            "Ambrose",
+            "Thomas Aquinas",
+            "Theodoret of Cyrus",
+            "Cassiodorus",
+            "Hilary of Poitiers",
+            "Berno of Reichenau",
+            "Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Augustine",
+            "Jerome",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "nothing-of-our-own"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "nothing-of-our-own",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/format.tex": "ed4f1c1b7417b3db61b68ee80cfd6525a0615f7db0e779507341af2d9b467d40",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/propers/verified.md": "77ad3bcf08310015b0e6c931543bdb2dc8dbea3777b03d50a2a35376bd882678",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/chronology-annotations.tex": "86fea692e6d8fe62f844f6096d68772a17d2975d626ff70cbbbf3ff11e1db174",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/chronology.toml": "412c2fc1a4af6874a41c4ff53576fc55852d0510cfe89953b81ee75a26d518b5",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/interpretations.md": "87e81a52c178eacdfe5288313ea2e199a6f31ccac6328057d6805a9e477f14d2",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/scope.md": "e780789a2dae59580e853edf9ccb7a451936727fe994ee391825c2a0f2df7535",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/01-inventory.tex": "18de32b71cc676c8c7288e4469d020aafbb2d655f25e6704a43fdaf1a68491c3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/02-overview.tex": "60ffe47a6cda88e67cea91b6c4dae3006f41a1333e7e978b575423ef7246afaa",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/03-date-location.tex": "849d2137ba3574b288deb4028755b6a5be1deb16839a98207c952f64714b2cec",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/04-themes.tex": "b77fd9732b5398c50d5a4b7c0cc45a24d7020b6bff1bd50ad6fe15aaade89d47",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/10-commentary.tex": "dc1212f0f13ec8ce97727eb72515abb447cd09502355203a5a4336fe69e619ab",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/90-apparatus.tex": "f28b57bf8690336174ca8a61108664b714efd9292fab4e540c6f76a40803d878",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/synthesis.tex": "560120318bef81f4514cd01c2b8a64ba2929febee6b18d475ebb99ca75e552b8",
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+      "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "6",
+            "a965af881c1e4110b6e4698001b4f06b9a688a93a1f1652c292d15002afe1768",
+            "71b6f89518984232",
+            "fa5355745b5e973584f047a7f59a20ad22676d64",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "Reviewed the concise study of the 1962 Eighteenth Sunday after Pentecost (synthesis.tex and sections/concise/01-90). Every sealed hash matched. I read closely the files that moved this round (03-date-location, 04-themes, 10-commentary, 90-apparatus, generation-metadata, research/production-review.md) and the passages named by standing findings SYN-001 to SYN-007. I compared them with the accepted study (sections/00, 10, 30, 40, 50) and research/scope.md. Rebuilt in scratch, the concise settles at 12 physical pages with a clean log. Its PDF and aux are byte-identical to the author's recorded proof (c55f9eff..., 462a8f9e...). Inventory, overview and the four sense markers sit on p1, the chronology alone on p2, the themes on pp3-4 (both pages full), and the commentary starts on p5. The expansive study, rebuilt at the shared timestamp, matches its recorded hash (bcdf6c6b..., 34 pp). All three blocking findings are repaired. (1) The Communion's two identifications of the hostiae are now compatible emphases that Bellarmine and the continuation hold together. That leaves Mt 9:8 as the only place where two readings follow different judgements, matching the Themes, the fifth heading and the study's comparison. (2) The gloss sine peccato mortali is now Aquinas's alone; I checked Ambrosiaster's and a Lapide's own wording in scope.md. (3) The Gospel dossier gives back the critics' span in words, and the sheet still fits on page 2. The four advisories are cleared and every attribution survives the rewording. The Collect paragraph now opens on the Epistle, so Berno no longer stands under a Collect-Gospel claim. With the study-ordering sentence dropped, the Mt 9:8 unit still makes the contest clear: Schuster's ministers against Hilary's receivers of forgiveness. All 181 quoted Latin and English spans of 12 or more characters in the moved files appear in the study or the appointed texts. One new advisory: 'its single prayer' in the thesis that opens the Themes. Limits: this round I opened no patristic source beyond the tracked records. Page 1 and the unchanged passages rest on iteration 0's review. Visual composition is left to the visual evaluation. Verdict: PASS."
+}

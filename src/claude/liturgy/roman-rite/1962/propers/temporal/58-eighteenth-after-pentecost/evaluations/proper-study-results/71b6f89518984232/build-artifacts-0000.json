@@ -1,0 +1,7 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/artifacts.json",
+  "disposition": "PASS",
+  "iteration": 0,
+  "stage": "build-artifacts",
+  "summary": "I deleted the old outputs and rebuilt all three documents with make doc. They reproduced the author proofs byte for byte: the study is 34 pages (5dd437b0...821b), the concise study 12 pages (ea145b8e...a161) and the homily 3 pages (62a1014c...4bb7). The logs are clean, all fonts are embedded Latin Modern, and the settled zref markers put the map and four senses on page 1, the chronology on page 2, the themes on pages 3-4 and the commentary from page 5. No source or layout edit was made. I recorded the snapshot in research/artifacts.json (sha256 ca2b4f83...39f5), put the rasters under build/tpt-runs/71b6f89518984232/artifacts/build-artifacts-0000/rasters and added a Build-artifacts section to research/production-review.md. It flags study pages 22 and 29, short section ends, for the visual reviewer."
+}

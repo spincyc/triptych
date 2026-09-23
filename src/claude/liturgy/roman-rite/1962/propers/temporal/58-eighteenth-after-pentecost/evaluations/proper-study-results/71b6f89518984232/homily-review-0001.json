@@ -1,0 +1,284 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "HOM-008",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/10-homily.tex lines 66-69: 'Once laid down, says Chrysostom, he \"gives himself up to the power of the healer.\"' followed directly by 'Then the first word: \"Be of good heart, son, thy sins are forgiven thee.\"'",
+      "problem": "The quotation is exact, but its occasion has moved. In Homily 29 the sentence stands in section 2 (tracked CCEL NPNF1-10 text, lines 18568-18575), after the scribes reason within themselves. There Chrysostom says that the sick man, who had come to be healed and was forgiven instead, might have complained: 'One thing I came to have healed, and amendest Thou another?' 'But now he for his part utters no such word, but gives himself up to the power of the healer.' The homily sets the sentence at the moment the man is laid down and then says 'Then the first word'. A listener therefore takes Chrysostom's remark as said of the man before Christ spoke to him. The reviewed study anchors it correctly (sections/40-nothing-of-our-own.tex lines 134-136: 'when the scribes murmur, the one who might have complained is silent'). The man's surrender is Chrysostom's and no doctrine changes, so this does not block. But a Father's sentence is given a setting he did not give it.",
+      "required_result": "Put the quotation where Chrysostom puts it: after the word of forgiveness, as the silence of a man given what he had not come for. Alternatively, drop 'Once laid down' and the sequence it implies. Chrysostom's own point also serves the homily's opening line, 'He is forgiven before he has asked for anything'.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-009",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/10-homily.tex lines 64-66: 'Whatever faith he had brought him exactly as far as he was carried, and if he had any, that too was given him.'",
+      "problem": "Heard once, the opening words parse as 'whatever faith he had brought him', a pluperfect in which 'he' is the one who brought. The listener reaches the real main verb only after the clause has already gone wrong. This sentence carries the movement's conclusion, the ground both sides of the whose-faith dispute grant, so it is the one a hearer most needs to recover. 'Exactly as far as' also claims a measured equivalence the sources do not state. The reviewed study says 'it brought him only as far as he was carried' (sections/40-nothing-of-our-own.tex lines 150-151).",
+      "required_result": "Recast the sentence so that it can be understood on one hearing, for example: 'Whatever faith he had, it brought him only as far as he was carried; and if he had any, that too was given him.'",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-010",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/10-homily.tex lines 107-124, the fifth movement (the Postcommunion's 'this holy sacrifice ... what we have received' and the Communion's 'Bring up sacrifices, and come into his courts'), read against the speech as a whole.",
+      "problem": "The three-documents profile makes the Homiletic Directory's orientation govern the homily's movement: the readings and prayers lead through Christ's Paschal mystery to Eucharistic participation and daily life (guidance/liturgy/propers-three-documents.md, 'The homily'). The daily-life leg is concrete and well made. The other two exist only inside quotations. The speech never names Christ's death or resurrection; the only resurrection in it is the general one in Hilary's list. It never names the altar, the Eucharist or the Lord's Body, and 'Communion' occurs only as the name of the chant. The Postcommunion is quoted for its thanks and its plea, but the assembly, which is about to receive it, is never told what 'what we have received' is. The Communion movement answers 'what are we to bring?' with the humble heart and never says what is given back at this altar. The homily's own line, 'the end is given as the beginning was', would carry this without strain. No hearer is misled and the movement toward the courts is real, so this does not block.",
+      "required_result": "Within the fifth movement, replacing words rather than adding to a speech already at the top of its length: say plainly that what the Postcommunion thanks God for is the Lord's own sacrifice, received at this altar, and let the assembly hear its own approach to Communion in the verse's 'come into his courts'. Where it serves the argument, let one sentence ground the forgiveness spoken 'on earth' in Christ's Passion and Resurrection. Credit neither statement to a Father.",
+      "severity": "advisory"
+    },
+    {
+      "accepted_because": "The two answers the study gives are exact, and the reading's claim does not rest on the third. The study has passed its own review. Adding the clause would re-enter an accepted upstream owner, which reruns the concise study, the homily and every dependent review, all for one missing clause. A reader of the study misses a completed triad but is told nothing false.",
+      "id": "HOM-011",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/40-nothing-of-our-own.tex lines 242-246 (the expansive study, 'Not quietism'): 'The sick man had three disabilities: he lay in bed, he was carried by others, and he could not walk; so Christ says Surge to the one who lay, and quia portabatur, praecepit ut portaret ...'",
+      "problem": "The homily author reported this upstream gap in research/production-review.md ('Upstream observation reported for the homily's cold reviewer'), and I confirmed it. The study announces Aquinas's three disabilities and gives two of his three answers. The third, 'quia ire non poterat, dixit, Et ambula', stands in the controlling facsimile. I read it on the page image of the Venice 1745 PDF p. 140 (printed p. 122; SHA-256 adb333e0...85de8 matched). The homily now gives all three, so the homily and the study differ on this one point. Neither misquotes.",
+      "required_result": "If the study is re-entered for any other reason, complete the triad in this sentence with the third answer. Record the locus in research/scope.md 3.5 and research/interpretations.md 3.4, beside the portabatur clause that RES-034 already names.",
+      "severity": "accepted"
+    }
+  ],
+  "iteration": 1,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine",
+            "Hilary of Poitiers",
+            "John Chrysostom",
+            "Cassiodorus",
+            "Theodoret of Cyrus",
+            "Robert Bellarmine",
+            "Thomas Aquinas",
+            "Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Augustine",
+            "Hilary of Poitiers",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "peace-of-the-house"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "peace-of-the-house",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine",
+            "Jerome",
+            "Thomas Aquinas",
+            "Ildefonso Schuster",
+            "Ambrose",
+            "Hilary of Poitiers",
+            "Bede",
+            "Theodoret of Cyrus",
+            "Robert Bellarmine",
+            "Cornelius a Lapide",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Augustine",
+            "Thomas Aquinas",
+            "Ildefonso Schuster"
+          ],
+          "component_keys": [
+            "authority-on-earth"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "authority-on-earth",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine",
+            "Jerome",
+            "Ambrose",
+            "Thomas Aquinas",
+            "Theodoret of Cyrus",
+            "Cassiodorus",
+            "Hilary of Poitiers",
+            "Berno of Reichenau",
+            "Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Augustine",
+            "Jerome",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "nothing-of-our-own"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "nothing-of-our-own",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/format.tex": "ed4f1c1b7417b3db61b68ee80cfd6525a0615f7db0e779507341af2d9b467d40",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/homily.tex": "3a53497186904dc7866a2ffeba31b66c489a5118dee2b87fce409cec1aad31c8",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/interpretations.md": "87e81a52c178eacdfe5288313ea2e199a6f31ccac6328057d6805a9e477f14d2",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/scope.md": "e780789a2dae59580e853edf9ccb7a451936727fe994ee391825c2a0f2df7535",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/10-homily.tex": "179f66fbcbcaeb1f5e3fb56784a3d3a75873959f0fa409cbd7fe434c45aa21bc",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/90-note.tex": "8ff638be4537cab1ea4b07c93d984c609da043d52f3186f95f6094cd95ad39ff",
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+      "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "6",
+            "a965af881c1e4110b6e4698001b4f06b9a688a93a1f1652c292d15002afe1768",
+            "71b6f89518984232",
+            "fa5355745b5e973584f047a7f59a20ad22676d64",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Reviewed the homily 'The Eighteenth Sunday after Pentecost: The Man Who Was Carried' (homily.tex; sections/homily/10-homily.tex and 90-note.tex; generation-metadata.tex; the derive-homily entries of research/production-review.md) against the three-documents and 1962 profiles, the reviewed third and second readings, research/interpretations.md 4.5, and the exact source loci. All sealed input hashes matched, and the settled proof is 62a1014c...4bb7, 3 pages, as the audit records. The speech makes one clear exegetical argument: without God we cannot please God, heard through the Collect's sine te, the Epistle's thanks for gifts given, the man who was carried and forgiven on earth, and the Communion and Postcommunion. It keeps the three disagreements the study keeps, and it moves to three practicable responses and to hope. It is speakable verbatim, with no apparatus, anecdote, clerical identity or composed prayer, and it keeps every bound in interpretations 4.5. HOM-001 (blocking) and advisories HOM-002 to HOM-007 from iteration 0 are all cleared. Checked independently: every Douay verse, and the Cummiskey Collect and Postcommunion, in their tracked tables; Chrysostom on Matthew 29 in the tracked CCEL text (sections 1 and 2 as the note assigns them); Augustine on Ps 95, 9 in the tracked CCEL text; Chrysostom on 1 Cor, homily 2, in a fresh New Advent fetch (SHA-256 66bffe29...5858, the digest the research reviewer recorded); Ambrose V.11 in the tracked transcription; Hilary VIII.8 in the tracked PL 9 layer; Aquinas on Matthew c. 9, including the full triad, on the page image of the controlling Venice 1745 facsimile (adb333e0... matched); and Jerome at PL 26 cols. 54-55 on the page images of the controlling scan (0d889bd6... matched). Spoken word count recounted at 1,519, which is 11.7 to 12.7 minutes at 120 to 130 words a minute: at the upper edge of the default and acceptable. No timed delivery is claimed, and none is certified here. Limits: Ambrose was checked in the transcription only, not on page images; Aquinas on 1 Cor (restricted) was not re-read. Verdict: PASS. Three advisories (the relocated Chrysostom sentence, one garden-path sentence, and a thin Paschal and Eucharistic leg) and one accepted upstream study gap."
+}

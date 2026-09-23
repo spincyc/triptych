@@ -115,6 +115,21 @@ reception of the compilation, and records that no Father reads Mt 9:8 so.
   leaf's contribution declarations must say so (requirement
   `claude-model-provenance`).
 
+**Done: ACCEPTED.** Run `71b6f89518984232` reached ACCEPTED at
+`publication-gates` on 2026-09-23. One escalation stands, STU-005, which the
+maintainer resolved as deliverable `chronology-per-passage-dates-2026-09-23`.
+The three PDFs (34, 12 and 3 pages) are installed byte-identical to their
+reviewed hashes, and the canonical web edition is installed. The release
+records and the Traditional Latin Mass catalog row are written.
+
+The run's evidence is archived in the leaf under
+`evaluations/proper-study-results/71b6f89518984232/`: 57 results, 57
+packets, three interventions, the seed and terminal records, and
+`record.md`. The driver's account of all ten cycles, the host interventions
+and the model provenance is in
+[CYCLES.md](workflows/reviews/claude-1962-58-production-2026-09-23/CYCLES.md).
+Nothing is pushed.
+
 **Release rebind approved and applied; authorization record pending.** On
 2026-09-23 the maintainer answered the driver's request for release-rebind
 approval, verbatim, "approved". After `install-publication`, the 16 stale

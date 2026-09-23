@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v6
+WORKFLOW_DIGEST: a965af881c1e4110b6e4698001b4f06b9a688a93a1f1652c292d15002afe1768
+RUN_ID: 71b6f89518984232
+COMMIT: fa5355745b5e973584f047a7f59a20ad22676d64
+STAGE: research-preflight
+ITERATION: 4
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-09-27","proper":"liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost","provider":"claude","research_handoff":"none"}
+DOCUMENT_ROOT: src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: []
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STU-001",
+      "note": "Research now reads Hilary at PL 9 cols. 958-962 and Rabanus at PL 107 cols. 870-873 on page images, and records both at their own loci. It marks each departure of the Catena and the lectura, and it withdraws the premise that Hilary's reading needs the town left open (scope 4.1, interpretations 4.3). The study-side attributions are for the authoring rerun to carry.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 5,
+  "stage": "research",
+  "summary": "Registered Migne PL 9 (1844) and PL 107 (1864) from the Internet Archive. Each has a tracked whole-volume text layer, a remote whole scan (hash-matched) and a tracked three-page facsimile excerpt, plus containment entries and bindings. On the page images this pass read Hilary, In Matth. VIII sections 1-8 (PL 9, cols. 958-962), and Rabanus on Mt 9:1-8 (PL 107, cols. 870-873). The results are recorded at their own loci in research/scope.md (sections 3, 3.5, 4.1-4.4, 5.2, 6.3, 10) and research/interpretations.md (boundary note, 1.2, 1.3, 2.2, 2.4, 2.5, 3.2, 3.4, 4.2, 4.3), with every place the Catena and Aquinas's lectura depart from them marked. The departures confirmed: the lectura's ut fiant filii Dei is Aquinas's summary, since Hilary names remission, resurrection and return to heaven; the sola fides clause is section 6, on v. 3, spliced into section 5 by the Catena; the city that rejects Christ is the Gerasene town as the figure of the Jewish people and the law; and the reading is Deo civitas, not Dei. The premise that Hilary's allegory needs the town left open is withdrawn against his section 4 and Augustine II.25.58, which puts the healing at Capernaum. The Catena's Rabanus wording is not in PL 107, where Rabanus's v. 6 sense is Bede's In Lucam II. The Catena's 'Jerome' precatores sentence is Ambrose, Exp. in Lc. V.10, and Ambrose V.13, on the parallel of v. 3, gives a Father's ministerial clause, now recorded in section 4.3. Remaining limits: SC 254 was not reached, so Hilary is read in the Maurist text; Ambrose and Bede were read in transcriptions, not on page images; the leaf is still absent from claude-publications-v1.toml, and the homily entrypoint is missing, both from before this pass; and the source-family-migration catalog snapshot is now stale and needs its ledger review."
+}

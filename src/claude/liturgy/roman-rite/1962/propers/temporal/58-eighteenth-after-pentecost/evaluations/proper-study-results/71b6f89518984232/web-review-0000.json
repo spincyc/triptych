@@ -1,0 +1,31 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "WEB-001",
+      "location": "build/web/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.md lines 5-8 (title block), against main.tex \\propertitle fields 2 and 3 and PDF p. 1",
+      "problem": "The PDF's title block has four lines: 'The Eighteenth Sunday after Pentecost', 'Dominica decima octava post Pentecosten', 'Missale Romanum 1962 \u00b7 Proper of Time', and the occasion line. The web edition has only the first and the fourth. The loss happens in conversion. \\propertitle (src/common/propers-format.tex) guards each optional field with \\if\\relax\\detokenize{#n}\\relax\\else ... \\fi. Pandoc 3.10.2's LaTeX reader mis-expands that guard and silently drops fields 2 and 3; running the macro alone through pandoc reproduces the loss. No audit in tools/web-edition requires the title fields' words to appear in the output, so the conversion exits cleanly. Both strings recur in the H1 and in the first sentence of the opening, so the reader loses no fact, but the omission is undeclared. The same loss is already present in installed propers-format-v1 editions, e.g. web/claude/.../57-seventeenth-after-pentecost.md and web/gpt/.../57-seventeenth-after-pentecost.md.",
+      "required_result": "The converter renders every non-empty \\propertitle field in the web title block. It could resolve the macro's arguments before pandoc, as it already does for the chronology helpers, or use a shim definition without the \\detokenize guard. An output audit requires each non-empty title field's words, so the loss cannot recur silently. The affected installed editions are regenerated and re-reviewed through their own workflow.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "build/web/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.md lines 479-496 (Scriptural Date and Location table)",
+      "note": "The dossier's full-width event and explanatory rows follow the documented \\multicolumn handling in guidance/web-editions.md: the contents go in the first cell and the row is padded. In the site's layout, that squeezes the long dossier prose into the narrow Proper column, and the table renders about 8,700 px tall in a 1280 px viewport. The documented rationale mentions only that the note stands under a column header that does not govern it, and says nothing of this effect."
+    }
+  ],
+  "review_inputs": {
+    "document": "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost",
+    "files": {},
+    "provider": "claude",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.md": "12acf5ccdbe373e848bf5fc5657e7e45387ab6316f5284e6f2622cd706ace915"
+    }
+  },
+  "stage": "web-review",
+  "summary": "Reviewed the canonical web conversion build/web/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.md. Its conversion hash is sha256 12acf5ccdbe373e848bf5fc5657e7e45387ab6316f5284e6f2622cd706ace915, as recorded in research/web-artifact.json. The same hash is in REVIEW_INPUTS, and tools/web-edition regenerated the file byte for byte from the current sources. I compared it with the reviewed research PDF (sha256 5dd437b0355d8fb1d20896f6e0a4d4dd31eeba738e2fa8f91adf4c990560821b, 34 pp.) and with the canonical TeX. A word-by-word comparison with the PDF's extracted text found every part of the PDF in the web edition: the opening and element map, the ten appointed texts with their Latin, English and source labels, the element-by-element settings, the three readings each with its own four senses, the comparison, the Scriptural Date and Location dossiers with their generated Date cells, the scope appendix, the References, the revision timestamp and the rights colophon. The only differences are table linearization, the H1 and description line that the converter takes from the PDF metadata, and two lines of the title block (advisory WEB-001). The headings run cleanly from H1 to H2 to H3, with all ten proper-* anchors, the three lane-* anchors and the sec:* anchors, and a table of contents limited to H2 whose links all resolve. Under the site's locked Markdown renderer and CSS, the three tables, the three four-senses definition lists, the blockquotes with small-caps labels, the versicle sign and the superscript verse numbers all render correctly. I found no TeX debris, trailing whitespace, or model or run metadata. The five external URLs respond, and the two New Advent targets were confirmed by their titles. Limits: I judged presentation in headless Chromium using the site's own render_page and site.css in a local wrapper, not an installed public-preview build, because the candidate is not yet under web/. I took screenshots of selected regions at 1280 px and 390 px wide. The PDF comparison rests on extracted text plus the reviewed rasters of pp. 1, 3, 4, 30 and 31. Verdict: PASS. There is no blocking defect; one advisory and one observation are recorded."
+}

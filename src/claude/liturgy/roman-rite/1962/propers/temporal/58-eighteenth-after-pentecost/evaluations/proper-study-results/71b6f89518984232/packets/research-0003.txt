@@ -1,0 +1,648 @@
+WORKFLOW: proper-study v6
+WORKFLOW_DIGEST: a965af881c1e4110b6e4698001b4f06b9a688a93a1f1652c292d15002afe1768
+RUN_ID: 71b6f89518984232
+COMMIT: fa5355745b5e973584f047a7f59a20ad22676d64
+STAGE: research
+ITERATION: 3
+EXECUTION: single
+EFFORT: high
+ARGS: {"audience":"adult parish assembly","date":"2026-09-27","proper":"liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost","provider":"claude","research_handoff":"none"}
+DOCUMENT_ROOT: src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost
+PRIOR_FINDINGS: [{"id":"RES-001","location":"research/scope.md section 5.2 ('Still not reached, and why': the psalm-commentator paragraph and 'The later and Doctoral reception of the two large lections'), with sections 3.2-3.6, 3.8, 10.2 and 10.13; research/review-dependencies.toml closing paragraph (the index queries run); research/source-bindings.toml","problem":"The re-entry again records as unregistered or unreached some direct and later witnesses that this library registers, several of them in files tracked in this checkout. (a) Bellarmine, Explanatio in Psalmos: artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1 is storage = tracked (text.txt, SHA-256 357551e1..., 'All 150 Psalm chapters'). It carries Psalm 95 at physical line 3413, Psalm 101 at 3565 and Psalm 121 at 4535. At Ps 121:1 it reads the joy first of the return from captivity and then of the heavenly house. At 121:7 it reads secure walls that ensure peace. (b) Chrysostom, Expositio in Ps. 121: the registered whole-volume PG 55 layer artifact.john-chrysostom.expositio-in-psalmos.migne-pg-55-paris.ia-djvu-ocr-d9b83186 (re-fetched 2026-09-22; 9,609,040 bytes, SHA-256 d9b83186... matched) prints its heading '\u0395\u0399\u03a3 \u03a4\u1ff8\u039d \u03a1\u039a\u0391' \u03a8\u0391\u039b\u039c\u039f\u039d' at line 45635, the v. 1 lemma at 45636 and v. 7 ('\u0393\u03b5\u03bd\u03ad\u03c3\u03b8\u03c9 \u03b4\u1f74 \u03b5\u1f30\u03c1\u03ae\u03bd\u03b7 \u1f10\u03bd \u03c4\u1fc7 \u03b4\u03c5\u03bd\u03ac\u03bc\u03b5\u03b9 \u03c3\u03bf\u03c5 ... \u039a\u03b1\u1f76 \u03b5\u1f50\u03b8\u03b7\u03bd\u03af\u03b1 \u1f10\u03bd \u03c4\u03b1\u1fd6\u03c2 \u03c0\u03c5\u03c1\u03b3\u03bf\u03b2\u03ac\u03c1\u03b5\u03c3\u03af \u03c3\u03bf\u03c5') at 45881-45887. This is direct Greek exegesis that reads the psalm of the city rebuilt after the captivity. (c) Theodoret, Interpretatio in Psalmos: artifact.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.wikimedia-pdf-72ee8714 is the whole PG 80 facsimile. Registered passages at Ps 87 (cols. 1567-1573) and Ps 103 (cols. 1693-1707) already fix its column arithmetic. Section 3.6 itself says Theodoret 'is held for the Psalms'. (d) Theodoret on the Epistle: the registered whole-volume PG 82 layer artifact.theodoret-of-cyrus.interpretatio-epistolae-ad-galatas.1864-migne-pg82-paris.ia-djvu-ocr-db2067fd (re-fetched, SHA-256 db2067fd... matched) carries the heading of his commentary on 1 Corinthians at line 16372, v. 4 at 16583 and v. 8 at 16773. Section 3.6 says he is held 'for the Psalms and Galatians only'. (e) Aquinas's lectura on Matthew: artifact.thomas-aquinas.opera-editio-altera-veneta-tomus-3.venice-bettinelli-1745.ia-djvu-ocr-10aa155e is tracked (SHA-256 10aa155e... matched). Its work record says it holds 'Aquinas's lectures on Matthew and on John'. Caput IX opens at line 16227, and the exposition of Mt 9:1-8 runs to about 16540. It includes a penitential tropology ('Surge, a peccato per contritionem; tolle lectum, per satisfactionem ... vade in domum tuam, in domum aeternitatis, vel in conscientiam propriam', from 16514). It also reports Hilary on v. 8: 'Qui dedit talem potestatem hominibus, ut fiant filii Dei', with Jn 1:12 (16535). Yet sections 3.5 and 10.13 say the library holds Aquinas 'not for the Matthew lectura' and record the Gospel's later reception as a negative 'bounded by the registered library'. (f) The index was queried only for Sirach 36, Exodus 24, Ps 121:1, Mt 9:1 and 1 Cor 1:4 (review-dependencies.toml). For Ps 95:8 and Ps 101:16 it also returns Athanasius (whose whole PG 27 layer ...ia-djvu-ocr-969a381f is registered), Arnobius the Younger, Prosper, Alcuin, Gregory the Great on the penitential psalms, Jerome's Tractatus and Euthymius. None of these is named. The section 5.2 psalm list, drawn from Ps 121:1 alone, is presented as covering all three psalms. The Mt 9:1 list in sections 3.5 and 5.2 omits Theophylact, Bruno of Segni and the Glossa ordinaria, which the same query returns. As a result, section 5.2's 'none has a registered artifact for the psalms this formulary appoints' is false, and so are section 3.6's Theodoret statement and the Gospel negative of sections 3.5 and 10.13. The psalm rows carry no Greek and no later reception, although a tracked Doctor and two registered Greek Fathers cover them. Section 10.2's agreement that 'the psalms are read of it and not of a place' is stated without the two readers now in hand (Chrysostom, Bellarmine) who read Ps 121 first of the earthly city. This is the defect RES-001 named: a registered or tracked witness recorded as out of reach. It also leaves the profile's Greek-and-Latin sampling unmet for the four psalm-borne elements, where the Greek is registered.","repair_target":"research","required_result":"Sweep by artifact coverage and not only by work record. Run the index for every appointed locus, at least Ps 95:8, Ps 101:16, Ps 121:1, Ps 121:7, Mt 9:1, 1 Cor 1:4 and Ex 24:4. For each lead, check whether a registered collected-volume or whole-volume artifact contains it. At minimum, read and record in section 3 (with bindings): Chrysostom on Ps 121 in PG 55; Bellarmine on Pss 95, 101 and 121 in the tracked text; and Aquinas on Mt 9:1-8 in the tracked Venice 1745 layer. For Theodoret (PG 80 on Pss 95, 101 and 121; PG 82 on 1 Cor 1:4-8) and for Athanasius (PG 27 on Pss 95 and 101), either read them or name each as a registered route deliberately not used, with the reason. Preserve any material disagreement they carry, notably the historical reading of Ps 121 against the Latin allegorical one. Correct sections 3.5, 3.6, 5.2, 10.2 and 10.13 and every statement that the library holds none of these. Make each lead list match what the index actually returns for the locus it names.","severity":"blocking"},{"id":"RES-009","location":"research/scope.md section 6.3 (the Augustine rows and 'Registered routes that exist and were deliberately not used'), section 5.2 ('How this section is now kept'), sections 5.1.7 and 10.12; research/source-bindings.toml, context of the wikisource-part-11-latin-text binding","problem":"Section 5.2 now claims that section 6.3 'names, per reception witness, which registered route was tried and what it gave, including the three where a registered route exists and was deliberately not used'. For the witness the first reading leans on hardest, it does not. The library registers Migne's own printing of Augustine on Pss 80-150: artifact.jacques-paul-migne.patrologia-latina-volume-37.paris-1845.internet-archive-google-pdf-afe6878f (whole-volume facsimile, 48,479,761 bytes; the work record reads 'containing the second part of Augustine's Enarrationes in Psalmos, Psalms 80-150'). Registered records already fix its column-to-page rule: segment ...latin-migne-pl37-paris-1845.psalm-88-columns-1139-1140 at PDF p. 63, and the tracked two-page derivative at PDF pp. 248 (cols. 1509-1510) and 431 (cols. 1875-1876). It is the only registered route to Augustine's own Latin on Ps 121, the psalm the formulary appoints three times, and to Migne's print of him on Pss 95 and 101. It is named nowhere in the leaf. Section 6.3 and the part-11 binding say instead that Augustine on the Introit verse and the Gradual 'stands on the English routes alone'. The library also registers augustinus.it Latin deliveries of both sermons on Ps 101 (artifact.augustine.enarrationes-in-psalmos.latin-augustinus-it-web-2026-09-05.augustinus-it-ps101-i-9c30d781 and -ii-71f61f8e), which are likewise unnamed. Section 5.1.7 settles Augustine's Ps 95:9 lemma on the web transcription alone. Yet for Cassiodorus the same record found it necessary to confirm the transcription against Migne's own print, and for Augustine that print is registered. The per-witness route account that RES-009 required is therefore still incomplete, and section 5.2's claim for it is unsupported.","repair_target":"research","required_result":"Name PL 37 in section 6.3 for Augustine on Pss 95, 101 and 121. Either read Augustine's Latin there (at minimum Ps 121 sections 2 and 12, and Ps 95 section 10 for the atrio lemma) and bind it, or record PL 37 as a registered route deliberately not used, with the reason. Name the augustinus.it Ps 101 routes the same way. Remove the 'English routes alone' statement from section 6.3 and the binding unless it is still true afterwards. Make the claims in sections 5.2 and 10.12 about the completeness of the second sweep true of what was actually tried.","severity":"blocking"},{"id":"RES-017","location":"research/scope.md section 5.2 (the paragraph 'The Ordines and the medieval liturgical commentators'), with sections 2 and 4.3; research/interpretations.md sections 2.5, 4.3 and 4.5","problem":"The record names Rupert of Deutz's De divinis officiis as registered and declines to open it 'deliberately', because 'nothing in \u00a7 3 or \u00a7 4 turns on it, and \u00a7 2.5 forbids the compilation claim it would bear on'. The artifact is tracked in this checkout: artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.ia-djvu-ocr-2e2ca850, SHA-256 2e2ca850... matched. At physical lines 23433-23486 (Caput XVIII, 'Dominica, decima octava post Pentecosten') it expounds this Sunday's Mass as his books gave it. The Mass he expounds has the same Introit Da pacem, Epistle 1 Cor 1, Gradual Fiat pax, Communion Tollite hostias and Offertory Sanctificavit Moses. The Offertory carries its verses: 'Videns Moses, procidens adoravit, dicens: Obsecro, Domine, dimitte peccata populi tui'. But the Gospel is that of the chair of Moses (Mt 23). Caput XIX (heading at 23488) gives the paralytic of Mt 9 to the Nineteenth Sunday. He reads Da pacem as 'peccata dimitte. Pax enim Dei, peccatorum remissio est', and Fiat pax in virtute tua as 'remissio peccatorum in Spiritu sancto tuo'. He reads the Offertory's Moses as the pastor's model of intercession for the people's sins. At the Nineteenth Sunday he reads fidem illorum as the prelates offering the paralytic by prayer. The tracked continuation of Gueranger's The Liturgical Year, vol. XI (artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2), has a chapter on this Sunday at PDF pp. 414-424. It covers Dominica vacat after the September ordinations, the interruption of the Ephesians epistles, and Rupert's other Gospel with its harmony with the Moses Offertory. It reads the Gospel as 'the prerogative which these same men have of forgiving sins'. The three-document contract names exactly this kind of witness, 'a named liturgical commentator [who] expounds the Mass of the day as his books gave it', as documented reception of the compilation. It lists 'a commentator whose Mass had another Gospel' among the compilation facts to record. The omission changes claims in the record. Scope section 4.3 and interpretations sections 2.5 and 4.5 tell the study that no checked witness supports the ministerial or priestly sense and that it must be presented as the editor's. Interpretations section 4.3 says authority-on-earth is 'the only one that accounts for why a Mosaic altar stands at the offering of this Gospel', although the registered commentator's Mass paired that Offertory with another Gospel. And scope section 2 records where the chant-set and the oration-set stood but not where the Gospel stood.","repair_target":"research","required_result":"Read Rupert, De div. off. XII.18-19, in the tracked PL 170 layer, quoting only what the volume's page images confirm, as that artifact's own note requires. Read the Eighteenth-Sunday chapter of the tracked Gueranger vol. XI. Record the Gospel placement his books show in scope section 2, and record his readings in sections 3-4. Label them documented reception of the compilation, kept distinct from patristic exegesis of the passages, and bind both sources. Replace the section 5.2 rationale for leaving Rupert unopened. Then restate interpretations sections 2.5, 4.3 and 4.5 (and scope section 4.3) so that what they say no witness supports is true of the witnesses now checked. Attribute any use of the liturgical commentators to them and not to the Fathers.","severity":"blocking"},{"id":"RES-018","location":"propers/verified.md, section 6 'Gospel \u2014 marginal no. 1674', paragraph 'Against the Clementine' (the orthography list)","problem":"The paragraph says vv. 2-8 agree word for word 'with `Jesus` for `Iesus`, `jacentem` for `iac\u00e9ntem`, `filius` for `F\u00edlius`'. The bound Clementine does not read filius. Both src/sources/bibles/clementine-vulgate/chapters/Matt/9.json and row 'Matt 9 6' of the bound artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-47-matthew-2d02758d read 'Ut autem sciatis, quia Filius hominis habet potestatem'. Lower-case filius is the 1862 Pustet's reading, which this record's own 1862 table prints ('quia filius h\u00f3minis'). This is the same misattribution of an 1862 reading to the Clementine that the paragraph's own correction diagnoses for the stray comma at v. 5 (RES-011). It survives in the same sentence of the text-control record, which says both witnesses were re-read on 2026-09-22.","repair_target":"research","required_result":"Re-collate the paragraph's orthography list token by token against the bound Clementine artifact. Remove the filius/F\u00edlius item (at v. 6 the two differ only by the Missal's accent), so that every difference stated is one the bound witness actually carries.","severity":"blocking"}]
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"RES-006","location":"research/interpretations.md section 2.2 (Augustine, De cons. evang.; Chrysostom, Hom. in Matth. 29 and Hom. in Heb. 16); research/scope.md sections 3.5, 3.7 and the closing paragraph of 6.3","problem":"Several quotations still do not print what the cited page prints, although section 6.3 now says every quotation was checked and every such change removed. (i) interpretations section 2.2 quotes 'These sins were said to be forgiven to the **man** ...'. This is the very instance RES-006 named. NPNF (New Advent 1602225 and the tracked CCEL NPNF1-6 at line 12689) prints 'For these sins were [thus said to be] forgiven to the \"man,\"'. The quotation presents the translator's supplement as Augustine's words and adds unmarked bold. (ii) scope section 3.7 and interpretations section 2.2 quote 'Because those ordinances were not a perfect purification', where New Advent 240216 prints 'those [ordinances]'. (iii) scope section 3.5 and interpretations section 2.2 quote 'for it belongs to God only to know men's secrets', where the homily reads 'But that it belongs to God only to know men's secrets, hear what says the prophet'. (iv) interpretations section 2.2 splices '... but He healed first', where the text reads 'but He takes His occasion from them; and He healed first'.","required_result":"Quote each passage as the cited delivery prints it. Keep translator brackets, mark omissions with ellipses and mark any emphasis as added. Correct the closing statement of section 6.3 to what was actually checked.","severity":"advisory"},{"id":"RES-019","location":"research/scope.md section 3.2 (Hilary, sections 2 and 5) and section 6.3 (the reception-witness limits paragraph and 'Every quotation in this record was checked...'); research/interpretations.md section 1.2 (Hilary)","problem":"The Hilary Latin is quoted in italics as though transcribed from the registered CSEL 22 layer. On several pages of this tractatus, however, the layer's recognition is badly damaged: physical lines 29660-29665, for example, read 'Sfd (|ui;i unum ecclesiie c(ir|tus est. iicn (iu;i(l;iin C(ir|Mtium ...'. The quoted wording is therefore an undeclared reconstruction. Section 6.3 describes the layer as 'good in the body text' and names the a Lapide Latin as the one quotation that is not a transcription. The reconstruction is mostly right but misreads twice, as the page images of the same Internet Archive item show (shilariiepiscopi22hilauoft leaves n600 = CSEL 22 p. 571 and n602 = p. 573, fetched 2026-09-22). Section 2 prints 'sed illam liberam et caelestem Hierusalem, quia eadem et Sion est', not 'quae eadem' (scope section 3.2 and interpretations section 1.2). Section 5 prints 'tunc sancta Hierusalem, quia Hierusalem aedificatur ut ciuitas', not 'dum' (scope section 3.2). Both change Hilary's connective. The section 5 body sentence and the section 14 sentence on p. 579 are read correctly.","required_result":"Check every Hilary quotation against the CSEL 22 page images (pp. 570-573 and 578-579) and correct 'quae' and 'dum' to 'quia'. Either declare the Latin as normalised from a damaged layer or cite the page image as the reading's control. Correct section 6.3's description of the layer and its statement that the a Lapide Latin is the only quotation that is not a transcription.","severity":"advisory"},{"id":"RES-020","location":"research/source-bindings.toml, fifth locus of the Old Gelasian binding; research/scope.md section 6.3 (PL 70 row) and the PL 70 binding context","problem":"(i) The Gelasian binding still lists 'physical line 11485, the Exsultet, the second occurrence of the phrase ueneranda commercia'. RES-012 corrected this receipt in scope section 5.1.6. In the re-fetched layer (SHA-256 039123ca... matched), line 11485 reads 'resurrectionis vexilla\u00ae suscepit*' and the phrase stands at 11487. (ii) Scope section 6.3 places Migne's 'Vers. 8. Afferte Domino gloriam nomini ejus; tollite hostias' at physical line 52499 of the PL 70 layer. In the re-fetched layer (SHA-256 d777c4c6... matched) it stands at 52502; line 52499 reads 'dati $unt? et non e$t inventu$ qni daret honorem Deo^'.","required_result":"Set the Gelasian locus to 11487 and the PL 70 v. 8 lemma to 52502 in every record that states them.","severity":"advisory"}]
+
+
+--- FRAGMENT: common/agent-brief.md ---
+# Agent Brief
+
+You are a fresh AI worker in a deterministic guidance workflow. You receive
+exactly one guidance packet. You do not decide what task comes next, what
+criteria to apply, or whether your work is accepted. The workflow engine owns
+all of that.
+
+## Your constraints
+
+1. You receive one packet. Do not ask for additional instructions beyond what
+   the packet contains.
+2. You must produce a structured JSON result at a path the parent driver
+   specifies. The result schema depends on the stage type.
+3. Do not paraphrase, summarize, or reinterpret the packet. Execute it.
+4. Your packet's header states the run you are part of and the ground you
+   work on. `DOCUMENT_ROOT` is the resolved path of the thing under work: use
+   it, and do not assemble a path from `ARGS` yourself. A document of the same
+   name exists under more than one provider directory, and a lane that built
+   the path from the arguments swept the wrong provider's copy to completion
+   before anything caught it. Where the header names `REPAIR_TARGETS`, those
+   are the repair owners this run admits, whatever a later fragment lists.
+5. If you are a reviser, the packet contains PRIOR_FINDINGS from the
+   evaluator. Address each blocking finding. Do not relitigate accepted work.
+   A CARRIED_FINDINGS header, where it is not empty, holds blocking findings
+   raised in an earlier evaluation against work this stage owns, which reached
+   no owner then because a different owner was repaired first. They still
+   stand and they are addressed to you. Treat them exactly as PRIOR_FINDINGS,
+   and say in your summary what you did with each. An ADVISORY_FINDINGS
+   header is neither: it holds findings the evaluation chose not to block on,
+   which gate nothing and are owed no disposition. Clear what you can of them
+   while you are in those files and leave the rest.
+6. If you are an evaluator, return structured findings with stable IDs. Do
+   not rediscover what mechanical gates already checked.
+7. Your prose, layout, and scholarly choices may vary. The guidance sequence
+   itself is deterministic; your output is not required to be.
+8. Preserve the existing repository model: the canonical proper leaf owns the
+   prose and research. The synthesis artifact is derived from it. Do not
+   create a second synthesis-only prose authority.
+9. Follow guidance/ for what constitutes a correct Triptych artifact. The
+   workflow system tells you the sequence of work; guidance/ tells you what
+   correct means.
+10. You are the whole of your dispatch. Do not spawn sub-agents, helpers, or
+    lanes of your own: the workflow declares every agent that runs and gives
+    each exactly one packet, and an agent that fans out inside itself is a
+    dispatch the run did not record. One lane that did so produced some
+    2,600 lines of helper output, exhausted the host's budget, and took its
+    four sibling lanes down with it mid-flight. Read, verify, and write in
+    this context yourself.
+
+--- FRAGMENT: common/result-format.md ---
+# Result Format
+
+Your structured result must be valid JSON. The required schema depends on
+your stage type.
+
+## Name the packet you are answering
+
+Every result must repeat, exactly, the `STAGE` and `ITERATION` values from
+this packet's header:
+
+```json
+{
+  "stage": "<the STAGE line of this packet>",
+  "iteration": <the ITERATION line of this packet, as a number>
+}
+```
+
+The engine rejects a result that names any other packet. That is how it tells
+your work from a result submitted for a different stage, or from an earlier
+result resubmitted.
+
+## Name your lane, when this packet is a lane packet
+
+If this packet's header carries `LANE` and `LANE_INDEX` lines, you are one
+lane of a fan-out stage. Your result must also repeat, exactly:
+
+```json
+{
+  "lane": "<the LANE line of this packet>",
+  "lane_packet_hash": "<the lane_packet_hash the parent driver gave you>"
+}
+```
+
+The parent driver states your lane's `lane_packet_hash` when it dispatches
+you; it is the digest of this packet's exact bytes, and echoing it is how the
+engine tells your result from one written against a packet it has replaced.
+The engine rejects a lane result that names another lane, or a packet hash
+other than the one it emitted for your lane. Report only on the criteria your
+lane fragment gives you. Do not answer for another lane, and do not merge your
+findings with anyone else's: `tpt` joins the lanes itself, in the order the
+workflow declares.
+
+## Worker (linear or revision) stages
+
+```json
+{
+  "stage": "author-proper",
+  "iteration": 0,
+  "disposition": "PASS",
+  "summary": "One or two sentences describing what you did.",
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost/main.tex"
+}
+```
+
+Use `disposition: "PASS"` when you completed the stage's work. If you could
+not complete it, use `disposition: "BLOCKED"` with a `summary` naming what
+stopped you: the run stops there. Do not report `PASS` for work you did not
+do; the engine has no other way to tell the difference.
+
+### Say what happened to each finding you were given
+
+Some stages owe the engine a repair report and some cannot give one. The
+pipeline decides, with `reports_repairs` on the stage, and your own stage
+fragment tells you whether yours is one. **Where it is, and your packet's
+`PRIOR_FINDINGS` header carries blocking findings, a `PASS` result must also
+carry `finding_dispositions`.** One entry per forwarded finding, and no result
+without it advances:
+
+```json
+{
+  "finding_dispositions": [
+    {"id": "CON-CIT-003", "outcome": "repaired"},
+    {"id": "CON-PRO-001", "outcome": "not-repaired",
+     "note": "Why it could not be cleared, in a sentence."}
+  ]
+}
+```
+
+- `id` is the finding id **exactly as `PRIOR_FINDINGS` gives it**. You are
+  not minting these; you are answering the ones you were handed.
+- `outcome` is `repaired` or `not-repaired`. There is no third value.
+- `note` is optional to the engine and needed in practice on a
+  `not-repaired`: it is what the run quotes back when a stage blocks, and an
+  unrepaired finding with no note tells the next reader nothing.
+
+What the engine enforces, on a stage that reports and was given findings:
+
+- **Every forwarded blocking finding appears exactly once.** Leaving one out
+  is refused, and so is naming one twice. A dropped finding reads exactly
+  like a repaired one, and the iteration budget would score an abandoned
+  defect as progress.
+- **A finding the engine did not forward you is refused.** The set it holds
+  you to is the blocking ids it recorded when it routed them into your stage,
+  which is what `PRIOR_FINDINGS` states: one more or one fewer is refused.
+- **`CARRIED_FINDINGS` is not part of this report.** Where your packet has
+  that header it holds findings you must still address — they are yours and
+  unaddressed — but they reached you from an earlier transition and the
+  engine does not expect them here.
+- **`ADVISORY_FINDINGS` is not part of this report either, and naming one is
+  refused.** That header holds findings the evaluation did *not* block on.
+  They gate nothing and spend no iteration budget. Clear the ones you can
+  while you are already in those files — that is why they are handed to you —
+  and leave the rest. You owe the engine no account of them, and an entry for
+  one is rejected exactly as a finding the engine never forwarded is.
+
+Two things the engine does not check, and you should still get right. A
+stage handed no blocking findings has nothing to report and the engine
+returns before reading the field, so a report volunteered there is accepted
+and silently ignored — a first authoring pass is not a failed repair. And the
+shape check is by schema, not by stage, so a worker-shape stage that does not
+report may carry the field without being refused. Neither reaches the budget.
+Return the field when you were given findings and told to account for them,
+and not otherwise.
+
+The declaration is per stage because two stages receive blocking findings and
+cannot answer for them. A fan-out `research` re-entry returns a result the
+engine composed by joining its lanes: no agent wrote it, and no lane can speak
+for the whole. `research-synthesis` returns an evaluator shape. Neither may
+carry the field at all — their schemas do not define it, and the engine
+refuses a result that carries it.
+
+`not-repaired` is a legitimate outcome and reporting it is not a failure. It
+does not by itself block the run and it is not held against you; it is the
+honest answer whenever you attempted a finding and are not confident you
+cleared it. Where your stage reports, this is the only channel through which
+the engine learns whether repair is working — the evaluator cannot supply it,
+because re-reading a changed document it sees defects and not the history of
+attempts on them. A production's central defect survived three rounds for
+exactly that reason: each round reported it repaired, and the run spent its
+budget re-finding it.
+
+## Research lane stages
+
+A read-only research lane returns evidence, not prose and not an artifact:
+
+```json
+{
+  "stage": "research",
+  "iteration": 0,
+  "lane": "scripture-context",
+  "lane_packet_hash": "the lane_packet_hash the parent driver gave you",
+  "disposition": "PASS",
+  "summary": "One or two sentences on what you swept and what you found.",
+  "findings": [
+    {
+      "id": "SCR-001",
+      "claim": "What you are asserting, in one sentence.",
+      "evidence": ["Each source named precisely enough to be checked."],
+      "notes": "Uncertainty, disagreement, negative results, evidence state."
+    }
+  ]
+}
+```
+
+Every finding carries all four of `id`, `claim`, `evidence`, and `notes`.
+`evidence` is a list of strings. A sweep that found nothing is itself a
+finding: record the negative result rather than omitting it.
+
+A research lane has only two dispositions. `PASS` means you did your lane's
+sweep and these are its results, whether or not it found much. `BLOCKED` means
+you could not do the sweep at all, and the run stops there. There is no
+`CHANGES_REQUIRED` for a research lane; the engine rejects one.
+
+`tpt` joins every lane itself and forwards the joined findings, each
+tagged with the lane that raised it, into the next stage's packet. Do not
+write anything into the repository, and do not answer for another lane.
+
+## Evaluator stages
+
+```json
+{
+  "stage": "content-evaluation",
+  "iteration": 0,
+  "disposition": "PASS" | "CHANGES_REQUIRED" | "BLOCKED",
+  "summary": "One or two sentences.",
+  "findings": [
+    {
+      "id": "VIS-001",
+      "severity": "blocking",
+      "location": "page 4",
+      "problem": "Description of the issue.",
+      "required_result": "What the reviser must produce to resolve this finding."
+    }
+  ]
+}
+```
+
+- `PASS`: no blocking findings. The workflow advances. A `PASS` that still
+  carries one is refused, because nothing downstream can resolve it.
+- `CHANGES_REQUIRED`: blocking findings present. The workflow enters a
+  bounded loop back to the stage that owns the repair — a reviser, or an
+  earlier stage that must run again. Findings are forwarded verbatim to it.
+  A `CHANGES_REQUIRED` carrying no blocking finding is refused: it asks for a
+  change while naming none.
+- `BLOCKED`: a finding cannot be resolved by revision. The workflow stops.
+
+Finding IDs must be stable across iterations (e.g., `VIS-001` refers to the
+same issue every time it appears). Use the prefix your own stage fragment
+gives you; `CON-` for content evaluation and `VIS-` for visual evaluation are
+two of them, and a stage that names another means it.
+
+Only `blocking` severity findings trigger revision. `accepted` and `advisory`
+findings are recorded but do not block.
+
+### An advisory is a verdict, not a waiting room
+
+**Severity is decided once, on the evidence, at the iteration you first see
+the defect. It is not a queue position.** If a defect would justify blocking
+the run at any iteration, it is `blocking` the first time you report it. If it
+would not, it is `advisory` and it stays advisory for the life of the run.
+
+Raising as `blocking` an id you filed as `advisory` in an earlier iteration is
+the failure this rule exists to stop, and it is forbidden. Nothing about the
+defect changed between the two reports; only your patience did. What the
+practice actually does is hide the true size of the repair from the run:
+the blocking count falls round after round while the backlog behind it does
+not, so the iteration budget is spent draining a queue the engine cannot see.
+
+This is not hypothetical. In run `e4aebcbd941b6b1a`, **19 of 62 blocking
+findings — 31% — were the same lane's own advisories from a previous round,
+promoted a mean of 1.1 rounds later.** One lane filed four advisories at
+iteration 0 and raised those exact four as blocking at iteration 1; another
+filed four at iteration 4 and raised those exact four at iteration 5. The
+production's blocking counts read 18, 12, 10, 8, 7, 5, 7 and looked like
+convergence. They were slices off a backlog that refilled itself every round,
+and the run reached its absolute ceiling with the document in good shape.
+
+So: report the defect at the severity it deserves, immediately. A round that
+honestly returns twelve blocking findings converges; a round that returns four
+and warehouses eight does not. Do not soften a real defect to advisory because
+the round already carries several — the count is not a budget you are spending.
+
+Where a defect genuinely does not merit blocking, an advisory now reaches the
+reviser anyway: the `content-revision` packet carries the standing advisories
+under `ADVISORY_FINDINGS`, and the reviser clears what it can without the
+finding ever gating the run. An advisory is no longer a channel that reaches
+nobody, so there is no longer any reason to promote one to be heard.
+
+### `accepted`: true, and not worth a repair round
+
+Blocking and advisory were the only two answers a lane had for a real defect,
+and neither says the thing a careful reader most often wants to say: *this is
+true, I checked it, and repairing it would cost the document more than the
+defect costs the reader.* Forced to choose, lanes blocked. One lane wrote in
+its own report that it doubted a one-clause rewording deserved to block and
+raised it blocking anyway, because it read the rule above as forbidding
+anything else. That is a round spent on a clause.
+
+So there is a fourth severity:
+
+```json
+"severity": "accepted",
+"accepted_because": "the guide states the bound correctly two lines later; moving it costs a paragraph of settled prose to save a reader nothing"
+```
+
+Use it when **all** of these hold. The defect is real and you have checked it.
+Repairing it would touch settled prose, or move pagination, or trade one true
+sentence for another. And a reader who never learns of it is not misled.
+
+`accepted` carries no `repair_target` — accepting a defect is deciding it needs
+no owner, and the engine refuses a finding that claims both. It does not block,
+does not spend the iteration budget, and does not stop acceptance.
+
+**An accepted finding binds the rest of the run.** The engine refuses a later
+round that raises the same id as blocking, whichever evaluator you are and
+whether or not anything of yours reaches a tracked file. Where the stage is
+the one the pipeline declares as recording standing findings, your verdict is
+also written to `<document_root>/evaluations/blocking-findings-v1.toml` under
+`[[accepted]]` with your reason, and the advisories beside it under
+`[[advisories]]`. That is the point of it: the judgement outlives the round
+that made it, so the next cold read of the same passage meets the decision
+instead of the bare defect. Where the stage is not one of those — on the
+propers pipelines `visual-evaluation` and `web-evaluation` are not, and no
+recording stage runs after them — the judgement binds this run and stops
+there. It is held in the run directory under `build/`, which is gitignored,
+which `make clean` and a workspace tidy delete, and which no later run reads:
+what you accepted is a decision this run will honour and not a record the leaf
+carries forward.
+
+If you believe an earlier round accepted something it should not have, do not
+raise it blocking. Escalate it: a disagreement about what is worth repairing is
+a question for a person, and the escalation route is how one reaches them.
+
+### Reading `REVIEW_SCOPE`
+
+An evaluation packet after the first carries `REVIEW_SCOPE`: the leaf-relative
+files that changed since this stage last read the document. An empty list means
+nothing changed.
+
+Read the whole document the first time. After that, **read what moved, and read
+the passages your own standing findings name.** You are not being asked to skim
+the rest; you are being asked not to re-derive fresh blocking findings from
+settled prose that no reviser has been near.
+
+This is not a formality. A run of this pipeline blocked with its document in
+good shape after eight consecutive evaluations, eight failures, one repeated
+finding, and not one round in which the reviser failed to repair what it was
+given. Seven of the eight rounds found something new and true in prose nobody
+had touched, because a cold reader of a dense document at maximum effort never
+runs out of true things to say. The document was converging. The review was
+not terminating, and it cost some nine million subagent tokens to discover.
+
+A blocking finding against a file outside `REVIEW_SCOPE`, whose id is not
+already standing, must carry:
+
+```json
+"out_of_scope_reason": "unchanged in itself, but the sentence it depends on moved in sections/90-scope.tex this round, and its claim is now false"
+```
+
+Say what makes it true now and what kept it from being raised before. The
+engine refuses a blocking finding of that shape without one, and refuses the
+whole submission with it — on a fan-out stage that is every lane's work — so
+supply the field or choose a different severity. It is not a ban: a defect
+really can become true because another file changed, and that sentence is all
+that is asked of you.
+
+### Five fields on every finding, whatever its severity
+
+**Every finding carries `id`, `severity`, `location`, `problem` and
+`required_result`. All five, on every finding, at every severity.** There is
+no reduced shape for a finding that does not block. `required_result` in
+particular is required on an `advisory` and on an `escalation` exactly as it
+is on a `blocking` finding, and the engine refuses a result that omits it.
+
+That is a rule about the report and also about the thinking behind it. A
+finding that cannot say what would satisfy it has not identified a defect: it
+has recorded a misgiving. An advisory saying only that a passage "could be
+stronger" leaves the next reader nothing to act on and nothing to close, so
+the field is demanded of it. For an advisory, `required_result` states what
+would resolve it if anyone chose to act on it; for an escalation, it states
+what the maintainer is being asked to decide. Neither is a promise that the
+run will do the work.
+
+The refusal is total. A malformed finding fails the whole result, and on a
+fan-out stage the whole submission — every lane's result is refused, not only
+the one that carried it, and the run is untouched. One advisory missing
+`required_result` has cost a five-lane submission a full round trip.
+
+Two fields, and only two, depend on severity:
+
+| Field | When it is required |
+| --- | --- |
+| `id` | always |
+| `severity` | always |
+| `location` | always |
+| `problem` | always |
+| `required_result` | always — `blocking`, `accepted`, `advisory` and `escalation` alike |
+| `repair_target` | `blocking` only |
+| `accepted_because` | `accepted` only |
+| `escalated_to` | `escalation` only |
+| `out_of_scope_reason` | a `blocking` finding outside `REVIEW_SCOPE` whose id is not already standing |
+
+`repair_target` is carried only where your stage's own fragment says the
+stage routes repairs by owner, and only on a blocking finding. It is refused
+on an escalation, because an escalation is precisely a defect no stage in
+this run may repair and naming an owner would make it a blocking finding
+wearing a severity that exempts it. An advisory does not carry it.
+`escalated_to` belongs to an escalation and only to a stage whose fragment
+admits that severity.
+
+Nothing else on a finding varies with severity. If your stage's fragment
+gives you a field this table does not name, it is that fragment's to explain.
+
+### `observations`: something real that your criteria do not reach
+
+An evaluator result may also carry observations:
+
+```json
+{
+  "observations": [
+    {"location": "sections/50-interpretive.tex P4",
+     "note": "carries no 'what the element-by-element reading misses' field"}
+  ]
+}
+```
+
+Both `location` and `note` are required on each entry, and there are no
+other fields. An observation has **no severity, no `required_result`, and no
+`repair_target`**: it routes nothing, blocks nothing, spends no iteration
+budget, and stops no acceptance. `location` names the file and the place in
+it to the same standard a finding's does. `note` states what you saw, in a
+sentence.
+
+It exists so that a real sighting a lane's own criteria do not reach reaches
+the run at all, instead of dying in the lane's hand-back prose. `tpt` joins
+observations in canonical lane order exactly as it joins findings and tags
+each with the lane that raised it. Where the stage is the one the pipeline
+declares as recording standing findings, they are written beside the blocking
+findings into a tracked file in the document's own tree, which outlives the
+run — a record for a person to read; no later run reads it back.
+
+An observation is not a lesser finding and not a shortcut. If your own
+criteria reach the defect, raise it as a finding under them; if your stage's
+fragment names the class as another lane's, leave it to that lane rather than
+observing it. And a kind of thing that keeps arriving as an observation is a
+missing criterion in some lane's fragment, not a fact about the document —
+say so in the `note` when you think you have found one.
+
+Only stages whose schema defines observations may return them; the engine
+refuses the field from a stage that does not, and your own fragment says
+whether yours is one. A worker stage and a research lane have none.
+
+A stage that also writes an artifact returns `artifact_path` alongside these
+fields on a `PASS`, exactly as a worker stage does. Its own fragment says so
+where that applies.
+
+## Naming who repairs a blocking finding
+
+Some evaluator stages route a repair by owner. Where the stage's own fragment
+says so, every **blocking** finding must also carry:
+
+```json
+{
+  "repair_target": "research" | "brief" | "authoring"
+}
+```
+
+- `research`: the evidence is not there, and getting it needs a fresh sweep.
+- `brief`: the evidence is there and the research brief states it wrongly, or
+  drops a bound the brief itself recorded. No retrieval is required.
+- `authoring`: the brief is adequate; the canonical leaf's prose, structure,
+  or use of citations is not.
+
+The stage's own fragment names the values it admits and how to tell them
+apart; a stage that routes by owner may declare fewer than these three.
+
+`tpt` reads the field and chooses the repair route itself, in the order the
+workflow declares its routes, so one blocking finding naming the earlier owner
+sends the whole run that way. You are not choosing the route and neither is
+the driver: you are stating who owns the defect. The set of values is closed,
+and the engine rejects a blocking finding that omits the field or names
+anything outside it. Advisory findings do not carry it.
+
+## Gate stages
+
+Gates are run by `tpt` directly. No AI worker result is needed. The parent
+driver runs `tpt ... advance <run-id> --run-gate`.
+
+## Fail closed
+
+A malformed or missing result, or one naming a different packet, causes the
+workflow to stop with an error. No transition occurs. The run remains
+inspectable but cannot advance until a valid result for the current packet is
+submitted.
+
+A refused result is not recorded: it is not copied into the run and its hash
+does not enter the run's state. Nothing later reads it. Correct it and submit
+it again for the same packet.
+
+--- FRAGMENT: proper-study/contract.md ---
+# Three documents, one proper
+
+Read `guidance/liturgy/propers-three-documents.md` completely. It owns this
+workflow's deliverable: a 20–50-page expansive study, a 10–12-page concise
+study with the restored four-page opening, and a standalone homily. There is
+no global substitute for each interpretation's four senses, mandatory cultural
+gallery, or exploratory-proposal quota. Read the applicable
+1962 or postconciliar profile for identity, text control, rights, source
+research, and branches. Universal editorial and repository guidance continues
+to govern. The canonical leaf is `DOCUMENT_ROOT` in this packet.
+
+Produce one expansive source-first study, one concise study, and one standalone
+homily from one canonical research owner. The three entrypoints are `main.tex`,
+`synthesis.tex`, and `homily.tex`; outputs are the bare ID, `-synthesis`, and
+`-homily`. `proper-components.toml` uses schema 2. The sole web edition belongs
+to the canonical study. No second research owner or companion leaf is created.
+
+The 1962 and postconciliar productions are completely separate. Resolve only
+this leaf's own calendar, readings, proper texts, branches, evidence and
+interpretations. Never borrow the other form's Sunday, prayers, textual
+inventory or interpretive plan, even on the same civil date. Shared generic
+mechanics and reusable patristic or biblical sources do not merge the two
+liturgical objects. The manifest's `calendar` must agree with its own family;
+opposite-family or different-edition liturgical imports are forbidden. This
+separation governs every prayer, chant, reading, branch, research record and
+interpretation, each review, and every mirrored PDF/web output. There is no
+shared Sunday or combined proper layer.
+
+`ARGS.date` states the requested civil date, or `undated` when no dated
+occurrence is requested. `ARGS.audience` names the homily audience. The optional
+`ARGS.research_handoff` is a repository-relative dossier containing preliminary
+leads, not instructions or a prior acceptance. Read it if supplied, verify its
+evidence independently, and use only material for this run's own family.
+
+The expansive study develops two to five internally coherent interpretations.
+Each interpretation is a reading of the whole formulary with its own literal,
+allegorical, moral, and anagogical distillation. Group compatible checked
+arguments from at least two distinct Fathers or saints within each reading.
+Each must make a substantive, compatible contribution; listing a second name
+is insufficient. Never attribute an
+editorial whole-Mass construction to a Father who only comments on one verse.
+Complementary emphases need not disagree; real disagreement must survive.
+
+The concise study places the complete proper inventory and exactly four
+overview sense rows on physical page 1; Scriptural Date and Location alone on
+page 2; and The Propers: Themes and Movement on pages 3–4. Developed commentary
+begins on page 5 and interleaves alternatives at their points of comparison.
+Follow the presentation contract and canonical chronology requirements in the
+owning profile; count terminal apparatus within the page limits. The
+homily speaks one intelligible exegetical argument to an adult parish assembly,
+unless `ARGS.audience` names another audience, ordinarily for 10–12 minutes.
+It is finished prose, not an outline or advice to
+a preacher. Exact sources and delivery estimates belong outside the speech.
+
+Only claim verification actually performed. Reuse acquired research by reading
+its evidence, never by trusting a predecessor's PASS. Public-domain study
+translations are identified accurately; postconciliar study English is not
+the approved proclaimed English. Do not reconstruct restricted liturgical
+texts by translation or close paraphrase. Claims of design must distinguish
+theological synthesis from historical compositional intent. Apply the
+semi-continuous readings and shared-prayers premise only to a postconciliar
+Ordinary Time target. A 1962 target instead uses only its own Time-after-
+Pentecost appointments and their independently documented transmission; never
+project the postconciliar calendar or Lectionary structure into it.
+
+Use this run's exact header for generation provenance. Update the finalization
+timestamp and actual model contributions when render-relevant sources change.
+The one shared generation record serves all three artifacts. Keep research
+findings in `research/scope.md`, interpretation reasoning in
+`research/interpretations.md`, and completed production/review facts in
+`research/production-review.md`. Do not put machine paths or invented review
+events in tracked records. Scratch work belongs in the driver's assigned area.
+
+Author stages may repair only their declared owner. An upstream defect found
+while deriving or building is reported for the following reviewer; never
+silently revise an already reviewed upstream document. Research, study,
+synthesis, homily, artifact, and publication defects have separate repair
+targets. Reentering an upstream owner reruns every dependent document and review.
+Where the packet carries blocking findings, return one honest
+`finding_dispositions` entry per forwarded finding.
+
+Every dispatch is a fresh worker at the packet's declared effort. Do not spawn
+nested agents. Reviewers receive no authoring conversation, author's defense,
+or desired verdict. Follow the exact packet and return the structured result.
+
+--- FRAGMENT: proper-study/research.md ---
+# Establish the evidence and defensible interpretations
+
+Read and verify `research/context.md`; correct a contextual error from evidence.
+Complete the governing edition's source records, rights audit, and every
+appointed element's bounded reception search. Read complete biblical contexts,
+direct patristic exegesis, and relevant medieval or later saintly reception.
+Register or reuse exact sources lawfully and keep valid
+`research/source-bindings.toml`. A source absent from the reusable library may
+still be cited accurately in ordinary bibliography; never invent a binding ID.
+
+Write `research/scope.md` with precise checked loci, witness roles, material
+disagreements, negative searches, unresolved leads, rights, and evidence bounds.
+Write `research/interpretations.md` with two to five proposed coherent readings:
+each one's controlling claim, compatible authors and their reasoning, a
+contribution from every appointed element, its four senses, important limits,
+and concrete comparison with the other readings. Distinguish verified author
+interpretation from the editor's whole-formulary synthesis. If fewer than two
+defensible readings emerge, research again rather than invent a second one.
+
+Preserve real disputes and identify complementary differences honestly. The
+goal is source-first interpretive depth, not a quota of names. Missing support
+requires the proportionate second search the editorial standard specifies.
+Prepare the concise study's required page-2 chronology through the canonical
+`proper-chronology` record and annotations commands. Use this family's own
+verified appointments and the owning adapter; preserve partial-verse and
+adaptation limits, alternatives, event/composition distinctions and absent
+dates. Follow the chronology profile for postconciliar appointment query inputs.
+Declare and inspect the controlling chronology source owners in this research
+boundary. A prior date-free study's approval does not cover new date claims.
+Provide those claims a reviewed home in the expansive study as well, such as
+a same-owner terminal historical appendix. Complete these records before
+drafting reader-facing study prose. A fresh research reviewer follows.
+
+On reentry, address all research-owned findings and update every affected
+source or interpretation record. Downstream authoring and reviews will rerun.
+Return the actual records written and concrete remaining limitations.
+
+Before cold review, write `research/review-dependencies.toml` with a `paths`
+array of repository-relative source files or directories that this research
+reads outside its leaf. Include the canonical same-family shared Missal owner
+for postconciliar work and any controlling same-family registry records. An
+empty array is valid when all evidence is local or already bound by source ID.
+The engine also seals the leaf's entire `research/`, `propers/`, and `instance/`
+evidence, excluding mutable production/review receipts, and the exact ancestry
+and available payload bytes of every registered binding. The reviewer verifies
+that this dependency declaration includes all controlling external evidence.

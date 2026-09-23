@@ -1,0 +1,66 @@
+# Actual engine results
+
+Workflow `proper-study`, version 6, digest `a965af881c1e4110b6e4698001b4f06b9a688a93a1f1652c292d15002afe1768`.
+Run `71b6f89518984232`; seed commit `fa5355745b5e973584f047a7f59a20ad22676d64`. Terminal disposition **ACCEPTED**.
+
+The JSON files are exact engine-retained result bytes, copied after the run reached its terminal disposition. A stage's PASS records only its own completed work; publication acceptance is the terminal gate's. The engine supplies any `review_inputs` seal; workers do not author it. The interventions are the driver's records of host facts the packets do not carry, and the driver's account of every cycle is in `workflows/reviews/claude-1962-58-production-2026-09-23/CYCLES.md`.
+
+| Stage | Iteration | Disposition | Packet SHA-256 | Accepted result SHA-256 |
+| --- | ---: | --- | --- | --- |
+| scope-gate | 0 | PASS | `6015be81c4ad07a97e300ab4150ddaa86fe294a2de776bb6bac19d36421b12d3` | `c2c5dc73384dcaa82e6a0b0b6d655a49fd9f0d8345607513add762f6826c4e2d` |
+| resolve-context | 0 | PASS | `326d1ac920507e3708695e5abb8daba25e0e738eff80c00863ada5382b6e83cc` | `9d1895b9435d84d9b5dd7a129b722457bb17e52ebc1ab41896cb756eec4bfef5` |
+| research | 0 | PASS | `621a126bf3cfe683ff6879bdd9aa80191c00e947d6b248a986c4d6babd2ef65e` | `6eb92583e0602103eeb645c9a2024c86db63208a8ef71cfaf9cfc3a17e1bed0b` |
+| research-preflight | 0 | PASS | `39fd7e665455b0538a387f762d17c829d08cca6bc55700acc4c5bb786a53bc37` | `d9c4c5d71ce61eb0186e720a8b7c42807d1ab40d1053516f4841a9f45c9468f1` |
+| research-review | 0 | CHANGES_REQUIRED | `62c434026cd141c2a4b82ffebb618113bad5c368bd3cd6a5c773ad8525eeec51` | `8590019de61a430a18af7f1d3ae58d8e0ca2eef36724faec3aaccaabd3e42d49` |
+| research | 1 | PASS | `e755cedc2b0b633168dcf65a6d70c05b2c7df941d096cad516f3bf396d944e43` | `857ccea52b1cc827bad34728d6bc7066cf50e2b926bc8d4dfe44c7bf3be260c1` |
+| research-preflight | 1 | PASS | `57b34704b90976079c5e4331aabb6c43fb6b17859821d1b3e778c17de6ea88dd` | `3d41e3743c4cd6ecf837fcb791516f7a053ba74c59eeb7aa7a2100847f40b2c9` |
+| research-review | 1 | CHANGES_REQUIRED | `0176eef3c58d0cda8c1976933e48b6cd142374f9912ccf0ba6bfcc0bb19c72c9` | `8c0ea783909a99c2b320764ca748221c46ddf782c90c48d4e55c11acfa37f85b` |
+| research | 2 | PASS | `e04239a6b01feffff8b755247902a3f67c526067db13f5be4091f1f04361e905` | `5abd032b78910f2029eee9ac9496e2e742f9d53fa2f08b8621128065737ec850` |
+| research-preflight | 2 | PASS | `749ba8b0ff9f4f8f49e2bee5c4a3b676e1be7e08e89d1fcd8cda8f4f37bfd4d1` | `4826841d9cf1db8e180ed8cb4eba89546e06958edef59f53b3bd0b25143da4b9` |
+| research-review | 2 | CHANGES_REQUIRED | `3b52101364155ce67e967fc9cbf7df0cbb67d9f56b2aa0681a5c5bea893f4a37` | `83f70c84a6f4ed02c4cdbf9bd4851916337ca4982199b23183431d266f905893` |
+| research | 3 | PASS | `23094273cc0716f3d0d6f5389e033867b73f37f799048e3180ba11fe12285468` | `a44a3c4b2fc49cdec1d503d5d38122aa789d07047378d214e94d8ff510b1ec5c` |
+| research-preflight | 3 | PASS | `35e8b336b453f7c371e93ad1a4237c7ce2a0a8cf19e0280c04efdeeebd70add8` | `393e6dd007262b9fe6ed5110a41f98e20f390d80902c760e27d7615b35658411` |
+| research-review | 3 | CHANGES_REQUIRED | `0128e6b32b5fe3c6aa14b8f0a14819d2e679ef6d453d772c21834e802c83ca43` | `a17a97b79650b2495e5c10e27d6d4632a185d856b22201dbd27cd10485fba091` |
+| research | 4 | PASS | `86ec745dc731620bfd5cfd03fc86ad3633334db3eb254b5a836e03ad3dcb924d` | `c62fc37d808008e885286de2a1ca232f13ca3d1ed4dd00cc09124c35914cfc22` |
+| research-preflight | 4 | PASS | `f2e573ba16dcb543c9a5ef85098092264b8c74523f081ec3a3e923c26e639355` | `e382c2437a356bac8bb1e7bbe2abb89025f1f1778ef020b24b0d340e52d90be4` |
+| research-review | 4 | PASS | `71b19add13b6c298622c7751fa311a80f99f6ccb2bd2ede3ec7c98566f865e4f` | `a3abf70e7dd4cdf35f95e3f17b2441d7142723823e8bc1ffee4841d78c7f9310` |
+| author-study | 0 | PASS | `897e2a24846d39ff82cbe764bfb594ccb243a15744966ed348ac813facaeaeb5` | `38b26eae29c5b966efb1618048e63076113102e2f483a19e5627b47775161d97` |
+| study-preflight | 0 | PASS | `1fb6a35ea8adc95e58784827ccbfcca67aee1d694b7fede7f30189cee8092063` | `db4f430efb6baf21bb53a26e3ace3bc17674c5b6c4e65d8af259ee8366a0f0ae` |
+| study-review | 0 | CHANGES_REQUIRED | `14372f3ec55ce518638e27ad2c96f084c08a7f587b310b8795d5d6c09a37e754` | `75943890f4e404266673b8bea254719910ed2d74592dd642a50631f48fe7aa27` |
+| research | 5 | PASS | `55629389266e6a1324b8cc034f30139375666acd52c865e9352f70537309967f` | `a9f3bef2483471c7ff871ad2f19c455542c19403115fad0e656b5c51bcac8d77` |
+| research-preflight | 5 | PASS | `f86334a99c2945731953a2dd333c4d80a06a8e81d8ddee753989506b6bd08284` | `769a66e16d28e40df0a0ca78672fea9ff1b89c00983acdbd6462bb42368eaf02` |
+| research-review | 5 | CHANGES_REQUIRED | `883a3aad0355a021c36cfe4acca975a991975e3b89a491cffb3a18ac5001ea0d` | `0fe649ca85ff94b1c9d6b67f573f750092d2ef1852061f2bd96fa6b55d7fd9e0` |
+| research | 6 | PASS | `602ad103fcc38283886512eb4d53f26217191539f3256189a92cfd4be0a3058d` | `3583e3f04df7e8f670a5b94f6fc73bbcd88e4cc874785bf9e3d1967c8e958413` |
+| research-preflight | 6 | PASS | `6bb425fe9dfb0511bd5b03f4cdc6fdb1571b855e06f41702e779c1815935b78f` | `7edd6e80380e70fceb8b522e04ddb69743d306381335dd7ad77caa1686e1958f` |
+| research-review | 6 | PASS | `56c89d31c600136b130dcd780cbbae248c466172d0d09f9de040ef3d53465e5b` | `15eb756238b6d43e003600c6cb8e4cafb3ee5a6865220bb7628a95245aa84238` |
+| author-study | 1 | PASS | `92405aef3b0d8541279d2595b3ba46448df7b729b52d192aec4c9b76222abb45` | `172bc613f7ffb34df04f889582644fd3bb6dd7a44b2592c6b9ecf60aadcb6b76` |
+| study-preflight | 1 | PASS | `98e4fc600b40fbf0e57bc45b18e91bd7fcf43d189dfc770f66a5fb89e0bd0273` | `64cc916498497445157cff08a5427e9162b4d673fa3d872e7e211df5c9e04202` |
+| study-review | 1 | CHANGES_REQUIRED | `4e634f17cc2795524f834cab491c72e41f24247d0b65135744d2a9518de1afab` | `8153475a350004df539c68c32d7fb2679405b953b1d923b646139503d9812cac` |
+| author-study | 2 | PASS | `436a23770d93887966392cb34b88b428b86868760bea50acec044d398edd28fe` | `a3419bf965405ff880c8a5e89fa32059e9af56dc97099736d29336055c04f2e2` |
+| study-preflight | 2 | PASS | `78dcc4410293526cabdfcd24e242790f69c5c07a93eff02a6d588d9f390bbaf1` | `fa1f37edf322caf9a8086d37c76932f39c21fd61b9e8cb561d319d286391c9bd` |
+| study-review | 2 | CHANGES_REQUIRED | `aba3cf1b4f9a49436a5b1bfc8384e7c73354d97aed5b3a3c5377e077368bdbb3` | `6dfb0c0d8ea5500cc46d9c247fb12238a6522c5c75f2745c485e5f436baef0ab` |
+| research | 7 | PASS | `c42d9547d2914758d301fe234dc5c8842f0d29f20c50fe89d039c58325f7215a` | `c19aaef76427aceb7eee012b3e6fae990740b267d696ea4cbee1d27cc027af90` |
+| research-preflight | 7 | PASS | `3a8fff3e11346d7965f210d92d49cd4d14cb5ed155907e07837da5d6d01bda52` | `217c0cba6e71fb628ca02ce72d00570b572ecbaf806110a7859fd2f44275e7ba` |
+| research-review | 7 | PASS | `6a70c363917998e89103c8a150af75df82e856b1245da8ea40b0c6d80320f0d5` | `eb6f7f8cef95aa299edbd28a1c0c7a047105bfd3761356418b53dce6bebf41b6` |
+| author-study | 3 | PASS | `e8987019971127b2ce16627c4196ec63d1156a22b6df13d22c2a5684570a5c15` | `35a50555a6cd965fa96d4c496db839af0a7ecc7d2c64635c6afa4e10f16dfd9c` |
+| study-preflight | 3 | PASS | `04081156ce4a608dd2011f6e05a50e1767a918e9d99b683befa8d6331ac44e75` | `d2e347b6068fe56c569ec03f02e85d8a024348a190dcc3b30b097603c418c8b8` |
+| study-review | 3 | PASS | `32bbe9f91f4ef2745963405fe6b8504e6e3cb857973e384fd7b160a21fbd468c` | `8f728498e9e7e05378be598f451c7338987584df24df457829a88d12559a7176` |
+| derive-synthesis | 0 | PASS | `dce7cb82d1c4c25f31cb847160fe2abc6036c479d25b6f31d7e2eb4e7f4664c0` | `cbb1e19d5cfb5e22588c31fb597c14de43922a57f3870737d9364bb278bbb574` |
+| synthesis-preflight | 0 | PASS | `ab3b4cdd3436bce17ae2962b0a491b1106ef7c16c9091d7eeacbefef59083453` | `67b87db41056e0690c03027475a5706f18334b8a627effc6e088c72dc2725ad3` |
+| synthesis-review | 0 | CHANGES_REQUIRED | `0b14618e1630516a2aa2288bd7e88394494d1fa4bd6270d551a320fccdb9de03` | `d5e3f47706dcf190bf8bc0bf45c0d0d79f0ab1e6b35b9fe9ffaa23db1726f693` |
+| derive-synthesis | 1 | PASS | `0406d558723d6d5262dd2133ed079349ef7f279a158462e1bca200c6424422ae` | `c665791d0273e93c100b17540f5beda3406596767f6879137b58dddc74e456fe` |
+| synthesis-preflight | 1 | PASS | `e3a473053435019e0a2014ca3ed6976438ca0574f32f9f39d7c79a0aeee820fb` | `6e1973b0386d22a673b2f14206bbd01007c3c41624ed78abd9fac4f7055f4055` |
+| synthesis-review | 1 | PASS | `b9599bd4ad0b7456a96d712de5dffaeb9dd8195fe67c8219d4b4c0fa5839d644` | `d8ad05ddf15cf3893a4571a62950d86fa3a15d256aca57264bb0bd7214cdb5ad` |
+| derive-homily | 0 | PASS | `e23cb93153642001a9f2d1374b9460de69f24367417dbe4361c2a7df64b4f8aa` | `ccc0c8ad9f12eb978173a39a03ea7750b532a3ef899a41684b786474b3b019f8` |
+| homily-preflight | 0 | PASS | `26fa08a81e2ad968bf98439d39dedfe7b7b84c0de8b44634599d11dd3bc24b94` | `38c3abc374b62eb01fe47799b263dc88821ecda5d4aac8a36d1adbda83d9b628` |
+| homily-review | 0 | CHANGES_REQUIRED | `9dd78591afb3593461b55a556f65fe9c75b177927613a0df17868f975c4d4121` | `25d5890926b8b24c0d821c82ca695528f7e6498f5433f5d2b445e130288b0a83` |
+| derive-homily | 1 | PASS | `c49aea428857ae55f11f17dea70a9dcac22a3d7bb1f3f70fdbe3ca580de90900` | `9f5b30e5e399a7e551aeb7b9c87abf1c4801f4f945200932f76d02ee857e65fa` |
+| homily-preflight | 1 | PASS | `cf0cc3b4cf45ded6ca7dc8c264217a2a6fc9fd485b272833ca8a24fb56eaf944` | `dd64e18d636bf105c5b251444195d128462ca7f80ffb809f123598fc42bea5de` |
+| homily-review | 1 | PASS | `ad42b6cc74044cf84afee63b50677eceb7e2d88bf6e3224f5d2893e254b89606` | `c4d9e5019eb36d6b9150a587dce20e57d69a4f49d2085d0f9dd2dd13d29ec8ed` |
+| build-artifacts | 0 | PASS | `06c86068d9d8873de84abb48f59b84d9c55358c946f7c6cfe95b7d228e8fcfda` | `138ec91e191ce3fdc32965fde278104d78a7ee9195b077603755a3d52540dae4` |
+| artifact-gates | 0 | PASS | `efb3b6ab99111e5ef2328c4e7296bb57d15785b245abfd1337e7e9226515037b` | `97af5c9c6c70bfc4459030f6b4c4d3ef1c5d44f458a9759ff4ab5fcbb5607d3c` |
+| visual-review | 0 | PASS | `fc1eeed2e2521d2fd485d281ace2a0fd3cf16e8e209e03840719c0e7cec5c09e` | `1012d991b0e7606b3761a8c4377ce0a64431784e2535e2f305cddaf593ea22e9` |
+| generate-web | 0 | PASS | `c4a1148eeb2b4d3276cd4f74219abeb3c2ed0937742c83dc16174a607b1a3e89` | `81c038cf5afdd2fd7e2d75227553c86e85d6413870f9619fd0097491b3564882` |
+| web-review | 0 | PASS | `a9ce27e8ec02b50d9cb9d3007423cefc5ce4c8e590f0b0b9fd37c3cec1b483c4` | `4c4ff15c60090500d29f5326300c25551e25fa0382bda142e3b67dbcbcb96eb1` |
+| install-publication | 0 | PASS | `b661339f85047676981138cef21a7f851fa5ff84318fa0c18adc2cacfeaf1cfb` | `2eb1b0cb67d3bb176a29791eb70e361d6b2b74675277d23cf9d4ee4ef51b1e84` |
+| publication-gates | 0 | PASS | `2634f29302eb21488e858b2e67eab7a9452a11b07ec26a180b756e226480ef45` | `87e27f47187bceefeff0205ab007611fe381e50491f82a337afa2b2f1cdd7d2a` |

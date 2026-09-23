@@ -1,0 +1,305 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "HOM-001",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/10-homily.tex lines 120-121, the close of the Communion movement: 'The one gift that is not borrowed is the humble admission that we need everything.'",
+      "problem": "This sentence answers the homily's own central question ('if without God we can do nothing pleasing to God, what are we to bring?', lines 116-117), and it answers it by contradicting the premise. It says the one present that pleases God (Augustine's 'Confession is a present unto God') is the one thing we have that God did not give us. That undoes the Collect the homily expounds as its thesis ('Without God himself, we cannot please God', lines 29-30, repeated at line 147). It is also the proposition the Church rejects: the Second Council of Orange (529), canon 6, condemns anyone who 'does not agree that it is a gift of grace itself that we are obedient and humble', citing 1 Cor 4:7. That is the verse Schuster quotes on this very Collect in the reviewed study (sections/40-nothing-of-our-own.tex lines 90-95). The sentence departs from its sources as well. The reviewed reading says the Communion's hostiae are 'not something the worshipper owns and hands over' (study lines 187-188; research/interpretations.md 3.2, 'not a demand for something we own'). Augustine's own context at Enarr. in Ps. 95 sections 8-9 is 'Ascribe them not unto yourselves'. And because the sentence follows directly on the two Augustine quotations, a listener will take the gloss as Augustine's. An adult parish would hear, at the climax of a homily on grace, that humility is the one thing we supply without God.",
+      "repair_target": "homily",
+      "required_result": "Rewrite the sentence, and anything that depends on it, so that the humble and contrite heart is the one present that claims nothing as its own and costs nothing but pride, while remaining itself God's gift. Follow the reviewed study's formulation. The homily's line on grace must then hold from the Collect to the close without exception: no act that pleases God, including confession, humility or the paralytic's faith, is presented as something we have that was not given.",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-002",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/10-homily.tex lines 93-95 ('the penitent, like the man on the bed, brings nothing to it but what needs forgiving') and line 135 ('go to confession, and bring nothing but the truth').",
+      "problem": "Both sentences say what the penitent brings to the sacrament of Penance and leave out contrition. The Council of Trent (Session XIV, chapter 3 and canon 4) names contrition among the penitent's own acts in the sacrament. Aquinas's tropology at this very verse, recorded in the research (research/scope.md 3.5), makes the command penitential: 'Surge, a peccato per contritionem'. The evident intent is that the penitent brings nothing that earns absolution, and that is orthodox; the Communion movement's contrite heart partly supplies what is missing. Read literally, though, the analogy with a man who (on Jerome's reading) brought no faith of his own implies that nothing is asked of the penitent but his sins.",
+      "required_result": "Rephrase so that the point is 'nothing that earns it' and not 'nothing at all' beyond sins. For example, the penitent brings nothing to it but his sins and his sorrow for them, or brings nothing that could buy what is given. Keep the week's first response consistent with that.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-003",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/10-homily.tex lines 92-105: the Penance application ('The authority stays Christ's; the ministry is exercised by men. So in the sacrament of Penance ...'), followed at once by Mt 9:8 ('such power to men') and Hilary ('a power and a way have been given to men through his word, for the forgiveness of sins ...').",
+      "problem": "The homily's own ministerial application (credited to no Father in the note) runs straight into the crowd's 'such power to men' and Hilary's 'power ... given to men ... for the forgiveness of sins'. The word 'men' appears in the ministerial sense first, so a listener primed by it can hear Hilary approving the priest's power of absolution at v. 8. The research bars exactly that attribution: research/interpretations.md 2.5, 4.3 and 4.5 hold that no Father reads v. 8 ministerially, and that Hilary's men are those who receive forgiveness, not those who minister it. The intervening Chrysostom sentence and Hilary's list (resurrection, return to heaven) make the right hearing the more likely one, so this does not block. But the three-documents profile forbids manufacturing a Father's approval of the editor's application, and the 1962 profile forbids implying support by proximity.",
+      "required_result": "Make the spoken Hilary sentence say whose gift it is, for example 'given to men, to all of us who receive it, through his word', or otherwise separate Hilary's reading from the Penance application. No hearer should be able to take Hilary as a witness to the ministry of absolution at Mt 9:8.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-004",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/10-homily.tex lines 125-131, the opening of the sixth movement: 'The Gospel ends with commands ...' and Aquinas's 'three troubles'.",
+      "problem": "Two small oral inaccuracies in one paragraph. (1) 'The Gospel ends with commands' is not so: the pericope ends at Mt 9:8 with the crowd's fear and praise, which the homily itself says twice ('At the end the whole multitude glorifies God', line 15; 'ends with thanks for a gift', lines 103-105). An attentive listener meets the contradiction. (2) The homily announces Aquinas's three troubles (lay in bed, carried by others, could not walk) but gives only two of his answers. The third, quia ire non poterat, dixit, Et ambula (Venice 1745 layer, lines 16508-16511), is dropped, so a hearer counting to three is left waiting.",
+      "required_result": "Say instead that Christ's last words in this Gospel, or his words to the man, are commands. Either complete Aquinas's triad accurately, or announce only the two troubles the homily answers.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-005",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/10-homily.tex line 21: 'Keep that man in view, because this whole Mass is gathered around him.'",
+      "problem": "'Is gathered around him' implies an arranger: someone gathered the Mass around the paralytic. The whole-formulary reading, however, is the editor's synthesis over a compilation (propers-three-documents.md, 'The formulary is a compilation'). Research/scope.md 2.7 shows that the Gospel and Epistle stood elsewhere in the lists and in the commentators' books. The 1962 profile's evidence rule is satisfied only by not asserting such an arrangement. The claim is also broader than the homily's own use: the Introit, Gradual, Alleluia, Offertory and Secret are not heard around him at all (note, lines 37-38). This is homiletic framing, not a stated compositional thesis, so it does not block.",
+      "required_result": "Recast the sentence as the hearer's reading and not as a fact about how the Mass was made. For example: 'because the rest of this Mass can be heard around him', or 'because today I want to hear this Mass with him at its centre'.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-006",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/90-note.tex lines 33-36: 'Two disagreements the study keeps are spoken: Jerome and Ambrose against Chrysostom on whose faith Christ saw, and Chrysostom against Hilary on the crowd's praise at Mt 9:8.'",
+      "problem": "The speech voices three of the study's disagreements, not two. The third is Chrysostom against Aquinas on 1 Cor 1:8 ('Chrysostom hears a warning in it; Saint Thomas hears a promise', homily lines 144-145), which the study keeps at sections/40-nothing-of-our-own.tex lines 59-67. The production audit describes the speech correctly; the note, which is the reader-facing record of the speech's relation to the reviewed readings, undercounts.",
+      "required_result": "State that three disagreements are spoken, and name the third: Chrysostom against Aquinas, with Ambrosiaster and a Lapide, on whether 1 Cor 1:8 accuses or promises.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-007",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/90-note.tex lines 48-52: 'Ambrose, Hilary and Aquinas on Matthew were re-read ... and Jerome and Aquinas on First Corinthians are reported as the study reads them.'",
+      "problem": "The route sentence misdescribes two works. Ambrose is read on Luke (Expositio in Lucam V.11, as the note's own loci say at lines 63-65), not on Matthew. And 'Jerome and Aquinas on First Corinthians' reads as Jerome on First Corinthians, whereas the homily cites Jerome only on Matthew (Commentarii in Matthaeum I, on 9:1-2). The production audit lists the same routes correctly: re-read were Ambrose on Luke V.11, Hilary VIII.8, and Aquinas on Matthew; not re-read were Jerome on Mt 9:1-2 and Aquinas on 1 Cor.",
+      "required_result": "Rephrase the route sentence so that each author is named with his actual work: Ambrose on Luke, Hilary and Aquinas on Matthew re-read; Jerome on Matthew and Aquinas on First Corinthians reported as the study reads them.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine",
+            "Hilary of Poitiers",
+            "John Chrysostom",
+            "Cassiodorus",
+            "Theodoret of Cyrus",
+            "Robert Bellarmine",
+            "Thomas Aquinas",
+            "Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Augustine",
+            "Hilary of Poitiers",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "peace-of-the-house"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "peace-of-the-house",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine",
+            "Jerome",
+            "Thomas Aquinas",
+            "Ildefonso Schuster",
+            "Ambrose",
+            "Hilary of Poitiers",
+            "Bede",
+            "Theodoret of Cyrus",
+            "Robert Bellarmine",
+            "Cornelius a Lapide",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Augustine",
+            "Thomas Aquinas",
+            "Ildefonso Schuster"
+          ],
+          "component_keys": [
+            "authority-on-earth"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "authority-on-earth",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine",
+            "Jerome",
+            "Ambrose",
+            "Thomas Aquinas",
+            "Theodoret of Cyrus",
+            "Cassiodorus",
+            "Hilary of Poitiers",
+            "Berno of Reichenau",
+            "Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Augustine",
+            "Jerome",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "nothing-of-our-own"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "nothing-of-our-own",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/format.tex": "ed4f1c1b7417b3db61b68ee80cfd6525a0615f7db0e779507341af2d9b467d40",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/homily.tex": "3a53497186904dc7866a2ffeba31b66c489a5118dee2b87fce409cec1aad31c8",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/interpretations.md": "87e81a52c178eacdfe5288313ea2e199a6f31ccac6328057d6805a9e477f14d2",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/scope.md": "e780789a2dae59580e853edf9ccb7a451936727fe994ee391825c2a0f2df7535",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/10-homily.tex": "44dafd2b5b7963b283bc6dbee48dcc498e2f01dfc9ac4270ac9d63a5c3e4f086",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/90-note.tex": "dea90e5123a0495d1490e502dc183d4e288c81c86925c3a6a3ef5c05995425ab",
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+      "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "6",
+            "a965af881c1e4110b6e4698001b4f06b9a688a93a1f1652c292d15002afe1768",
+            "71b6f89518984232",
+            "fa5355745b5e973584f047a7f59a20ad22676d64",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Reviewed the homily 'The Eighteenth Sunday after Pentecost: The Man Who Was Carried' (homily.tex; spoken body sections/homily/10-homily.tex; note sections/homily/90-note.tex), reading it continuously as speech and then against the reviewed study and the research. It is a strong, specific, speakable homily. One clear exegetical line runs through it: the Collect's sine te, the Epistle's thanks for gifts given, the carried paralytic, power on earth to forgive, and thanks at both ends. It has good oral pedagogy, a practicable threefold response, a return to the opening image, and hope. It contains no anecdote, clerical persona, composed prayer or visible apparatus. Verified independently: the spoken word count (1,448, matching the note; 11.1-12.1 minutes at 120-130 wpm is arithmetic, not a timed delivery), and every Douay-Rheims verse in the tracked table. The Cummiskey Collect and Postcommunion match the tracked payload lines 164-166. Chrysostom Hom. in Matth. 29 sections 1-2 were checked in the tracked CCEL NPNF1-10 text, and Hom. in 1 Cor. 2 sections 1, 3 and 7 on New Advent, fetched for this review because no local route exists. Also checked: Augustine Enarr. in Ps. 95 section 9 (CCEL NPNF1-8), Ambrose Exp. in Lc. V.11 (tracked PL 15 transcription), and Aquinas Super Matth. c. 9 (Venice 1745 layer: per viam administrationis; tria habebat infirmus ... quia portabatur, praecepit ut portaret). Jerome PL 26 and Hilary PL 9 VIII.8 were checked through the image-read quotations in research/scope.md 3.5, and the Missal loci nos. 1669-1678 against propers/verified.md. Verdict: CHANGES_REQUIRED. One blocking theological defect: the sentence calling the humble admission 'the one gift that is not borrowed' contradicts the Collect the homily expounds and Orange II canon 6. There are also six advisories: contrition omitted from the Penance sentences; Hilary heard by proximity as a witness to absolution; 'The Gospel ends with commands' and an incomplete triad; 'this whole Mass is gathered around him'; and two inaccuracies in the note. Limits: no page images were opened by this reviewer, and no timed delivery exists."
+}

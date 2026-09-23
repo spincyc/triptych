@@ -52,7 +52,7 @@ state = "planned"
 id = "claude-1962-eighteenth-three-documents-2026-09-22"
 owner = "PROJECT-WORK.md"
 promise = "Drive the proper-study workflow for provider claude on the 1962 Eighteenth Sunday after Pentecost for Sunday 2026-09-27 through terminal acceptance: expansive study, concise study and standalone homily with fresh cold reviews, every workflow cycle and host intervention documented, and every contributing model declared exactly."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "claude-authorization"
@@ -66,20 +66,27 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-run-accepted"
   criterion = "A proper-study v6 run for provider claude, identity liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost, date 2026-09-27, audience adult parish assembly, reaches ACCEPTED with every review a fresh worker; the reviewed PDFs and the canonical web edition are installed with exact reviewed bytes and the owning leaf archives the run evidence."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", "guidance/liturgy/propers-production-plan.md"]
+  status = "pass"
+  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/evaluations/proper-study-results/71b6f89518984232/record.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/evaluations/proper-study-results/71b6f89518984232/terminal-status.json", "web/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.md", "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.json"]
+  check = "contains"
+  path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/evaluations/proper-study-results/71b6f89518984232/terminal-status.json"
+  needle = "ACCEPTED"
 
   [[deliverables.requirements]]
   id = "claude-cycles-documented"
   criterion = "Every repair cycle the run entered and every host intervention (effort not pinnable for the first six agent stages; the driver restart and relaunched reviewer; the change of model mid-run) is recorded in a tracked record with its stage, iteration, cause, repair and outcome."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/claude-1962-58-production-2026-09-23/CYCLES.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/evaluations/proper-study-results/71b6f89518984232/record.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/evaluations/proper-study-results/71b6f89518984232/interventions/0002.json"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "claude-model-provenance"
   criterion = "The leaf's generation metadata declares each contributing model exactly and separately, as guidance/editorial.md requires, including that the context and research stages through research-review iteration 1 ran as claude-opus-5[1m] and later stages as claude-opus-5-5[1m], or a tracked record states why a stage's contribution is not declared."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", "guidance/editorial.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/claude-1962-58-production-2026-09-23/CYCLES.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/generation-metadata.tex"]
+  check = "contains"
+  path = "workflows/reviews/claude-1962-58-production-2026-09-23/CYCLES.md"
+  needle = "**Model provenance.**"
 
 [[deliverables]]
 id = "commentary-holdings-through-containers-2026-09-22"

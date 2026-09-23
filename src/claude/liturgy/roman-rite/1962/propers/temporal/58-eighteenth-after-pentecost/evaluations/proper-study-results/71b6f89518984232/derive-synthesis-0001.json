@@ -1,0 +1,24 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/synthesis.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "SYN-001",
+      "note": "The Communion paragraph's framing sentence and both 'On that reading ... rests' clauses were rewritten so the two identifications do not exclude each other: the third reading hears the heart (Augustine, Cassiodorus) and the second the priests' sacrifice (Theodoret, Ps.-Athanasius). Bellarmine gives both and the continuation holds both. Witnesses and quotations are unchanged, and the audit's list of disagreements no longer carries Ps 95:8.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "SYN-002",
+      "note": "Now reads 'for Aquinas, for whom sine crimine is sine peccato mortali, it is a promise of perseverance, as it is for Ambrosiaster and Cornelius a Lapide'.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "SYN-003",
+      "note": "Restored 'from shortly before the fall of Jerusalem to well into the second century' in the Gospel's explanatory row. The chronology-claims-supported check passes, the chronology start and end markers are both on page 2, and the later positions hold.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "derive-synthesis",
+  "summary": "Repaired the three blocking synthesis-review findings in the concise components. The Communion's two identifications of the hostiae are now compatible emphases that Bellarmine and the continuation hold together, so Mt 9:8 stays the only point where readings conflict. The sine crimine gloss is Aquinas's alone. The Gospel dossier row regains the critical span in the study's words. Advisories SYN-004 to SYN-007 were also cleared. The shared timestamp (2026-09-23T14:53:00Z), the stage contribution and the production audit were updated. The rebuilt proof is 12 pages with every zref marker on its contracted page (1/1/2/3-4/5), a clean log, and all 15 component, content and preflight checks passing. Proof PDF SHA-256 c55f9eff3bf44abdbbae874df2a118073f608236cadc505ff67a0a8e3135ecc1; aux, log, text, checks, digests and rasters are retained under build/tpt-runs/71b6f89518984232/artifacts/derive-synthesis-0001/."
+}

@@ -1,0 +1,103 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "accepted_because": "The page is the natural end of the study's body before a terminal appendix that properly opens on a fresh page. It is readable and misleads no one. Repair would mean either cutting settled, reviewed prose or dropping the forced break, which re-flows the two-page dossier around its own deliberate \\newpage. Either way the pagination moves and dependent reviews rerun, for a gain of one mostly empty page in 34.",
+      "id": "VIS-001",
+      "location": "58-eighteenth-after-pentecost.pdf, physical page 29 (end of 'The Three Readings Compared'; sections/50-comparison.tex before the \\clearpage in main.tex)",
+      "problem": "Page 29 is a sparse closing page: about eight lines (three short paragraphs, ~150 words, ~18% of the text block) end the comparison, and the rest of the page is blank because main.tex forces the Scriptural Date and Location appendix onto page 30.",
+      "required_result": "If the study is reopened for another reason, end the comparison without a near-empty closing page, either by letting its last paragraphs set on page 28 or by starting the appendix on the same page, without enlarging type or padding.",
+      "severity": "accepted"
+    },
+    {
+      "accepted_because": "The header repeats correctly, so the carried row reads unambiguously. Keeping the table whole would push all seven rows to page 28 and leave half of page 27 empty, trading one layout flaw for a worse one.",
+      "id": "VIS-002",
+      "location": "58-eighteenth-after-pentecost.pdf, physical pages 27-28, comparison table in 'The Three Readings Compared' (sections/50-comparison.tex)",
+      "problem": "The seven-row comparison table breaks after six rows, so its last row, 'Where it is weakest', stands alone on page 28 under the repeated header.",
+      "required_result": "If the study is reopened, set the comparison table so that it does not carry a single row onto the following page, without leaving a larger gap on page 27.",
+      "severity": "accepted"
+    },
+    {
+      "id": "VIS-003",
+      "location": "58-eighteenth-after-pentecost.pdf, physical page 30, introductory sentence above the dossier table (sections/80-date-location.tex, lines 3-6)",
+      "problem": "The second line of the introductory sentence ('and critical horizon.') sets about 1.7 pt above the dossier's top rule, so the rule reads as an underline. Only the lack of descenders in that line prevents an actual collision.",
+      "required_result": "Separate the introductory sentence from the table's top rule by ordinary vertical space in the leaf component, so that no line of the note can touch or appear to underline the rule. Do not change shared table dimensions.",
+      "severity": "advisory"
+    },
+    {
+      "id": "VIS-004",
+      "location": "58-eighteenth-after-pentecost.pdf, physical page 27 and repeated header on page 28, comparison table header (sections/50-comparison.tex line 30; comparisontable in src/common/propers-format.tex)",
+      "problem": "The bold header 'Power on earth to forgive' fills its whole column, leaving only about 7 pt before 'Thanks at both ends'. At a glance the two headers read as one run-on phrase.",
+      "required_result": "Make the column headers visibly distinct, for example with a shorter lane label in the header or a wider inter-column gutter in the shared table style, so that no header abuts its neighbour.",
+      "severity": "advisory"
+    },
+    {
+      "id": "VIS-005",
+      "location": "58-eighteenth-after-pentecost-homily.pdf, physical pages 1-2, movement breaks in the two-column speech (sections/homily/10-homily.tex \\bigskip breaks; properhomily in src/common/propers-homily.tex)",
+      "problem": "The five \\bigskip breaks between the speech's movements render at unequal heights. The first, in the left column of page 1, stretches to about 42 pt; the others measure about 22-27 pt. multicols balances its flush columns by stretching that glue, so the first division looks like a larger section break than the rest.",
+      "required_result": "Give the homily's movement breaks a uniform visible height, for example with ragged columns in the homily environment or fixed, non-stretching break spacing, so that all movements are divided alike.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "src/common/propers-format.tex, dossiertable and concisedossiertable, against guidance/liturgy/roman-1962-propers.md, 'Page 2: Scriptural date and location'",
+      "note": "The shared dossier tables use columns of .12/.15/.29/.44 linewidth, and the concise one sets 8.2 pt type. The 1962 profile specifies 0.14/0.18/0.35/0.16 and \\footnotesize. In this document both sheets remain legible and complete, but the profile text and the shared style disagree on the measurements."
+    }
+  ],
+  "review_inputs": {
+    "artifacts": {
+      "document": "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost",
+      "pagination_evidence": {
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-synthesis.aux": "462a8f9e960cdda5fdf5b065a768e40e967e02010a8442e00b75d1e6b21f8528",
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-synthesis.log": "616a78dadf49c70bb927251b323c6bc76e4dec6ecc07db2efbbbfd0cd4397afc",
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.aux": "1b4b9eb18cf6af9a247303aca3d045c27557527c738fd92013fc24265ac66328",
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.log": "34d4e74d2bb62ad16c2f6f4a41f1a6019058041559abb25a66755d48c81e081e"
+      },
+      "pdfs": {
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-homily.pdf": "62a1014c221118c3f432069eecba1147615d723dcfebb25b062d5e52eb2d4bb7",
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-synthesis.pdf": "ea145b8e60cc2c651bf78f417cdfbcef68ea91582a76bbd334f56e7f05a3a161",
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.pdf": "5dd437b0355d8fb1d20896f6e0a4d4dd31eeba738e2fa8f91adf4c990560821b"
+      },
+      "provider": "claude",
+      "render_inputs": {
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/format.tex": "ed4f1c1b7417b3db61b68ee80cfd6525a0615f7db0e779507341af2d9b467d40",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/generation-metadata.tex": "bb40bcc706eaf60bb9c165f2e125472169ccf4aa9ebc41c1298e826e745b3bbf",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/homily.tex": "3a53497186904dc7866a2ffeba31b66c489a5118dee2b87fce409cec1aad31c8",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/main.tex": "64b5f648732be9ccc852c27083b122c7386b29ccab8a9d417ac1cb922166e195",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/proper-components.toml": "0564b3153b718fc62763f4fe34bd1a371190ebf389248287547701e462f27827",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/chronology-annotations.tex": "86fea692e6d8fe62f844f6096d68772a17d2975d626ff70cbbbf3ff11e1db174",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/00-opening.tex": "9c6d183d22f681ea747605f5b864617694b48eeef0055e50eed405c1e964a187",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/05-appointed-texts.tex": "33adc690ed9cc705a3ecade8bdd9c9649190a43d90886ad4492a802edc8695f8",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/10-each-element.tex": "3483cfa4ce4d442a36ce4c0f8e17b39396ffc4802d2a36752dfae74e5811dcbe",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/20-peace-of-the-house.tex": "7f6d0ee93952d269e8431ad9a9ba9bda4c0cca2a14d6c7ff0f49c653818a2b9e",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/30-authority-on-earth.tex": "3ec11e2aaabca2ea8960574d4314d41c9c4c01bdb09c52124a994ef61b0fc607",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/40-nothing-of-our-own.tex": "3bc196a6bde7d76f1e8312ed8552683ca03493fc7bde94a172b5057ce617567c",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/50-comparison.tex": "9ad2f901d080bfe15602bbc52cb43147fbdaaffa578f12324777335ae6c58451",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/80-date-location.tex": "964f0e661fcaaddc542fb5e16624b59bb4d9b6ba0b9713f8811d6a1c05d07eb9",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/90-apparatus.tex": "3aabe708ac6ce0457931c1ad81b4e0e04da8aa1b04fe0231f772fdfc9aa8ad49",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/01-inventory.tex": "18de32b71cc676c8c7288e4469d020aafbb2d655f25e6704a43fdaf1a68491c3",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/02-overview.tex": "60ffe47a6cda88e67cea91b6c4dae3006f41a1333e7e978b575423ef7246afaa",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/03-date-location.tex": "849d2137ba3574b288deb4028755b6a5be1deb16839a98207c952f64714b2cec",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/04-themes.tex": "b77fd9732b5398c50d5a4b7c0cc45a24d7020b6bff1bd50ad6fe15aaade89d47",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/10-commentary.tex": "dc1212f0f13ec8ce97727eb72515abb447cd09502355203a5a4336fe69e619ab",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/90-apparatus.tex": "f28b57bf8690336174ca8a61108664b714efd9292fab4e540c6f76a40803d878",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/10-homily.tex": "179f66fbcbcaeb1f5e3fb56784a3d3a75873959f0fa409cbd7fe434c45aa21bc",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/90-note.tex": "8ff638be4537cab1ea4b07c93d984c609da043d52f3186f95f6094cd95ad39ff",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/synthesis.tex": "560120318bef81f4514cd01c2b8a64ba2929febee6b18d475ebb99ca75e552b8",
+        "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+        "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+        "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+      },
+      "schema": 1
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost",
+    "files": {},
+    "provider": "claude",
+    "review": "visual",
+    "schema": 1
+  },
+  "stage": "visual-review",
+  "summary": "Independent visual review of all three sealed PDFs, every page inspected at full raster: build/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.pdf (sha256 5dd437b0355d8fb1d20896f6e0a4d4dd31eeba738e2fa8f91adf4c990560821b; expansive study, 34 pages, pages 1-34 inspected); 58-eighteenth-after-pentecost-synthesis.pdf (sha256 ea145b8e60cc2c651bf78f417cdfbcef68ea91582a76bbd334f56e7f05a3a161; concise study, 12 pages, pages 1-12 inspected); 58-eighteenth-after-pentecost-homily.pdf (sha256 62a1014c221118c3f432069eecba1147615d723dcfebb25b062d5e52eb2d4bb7; homily, 3 pages, pages 1-3 inspected). Evidence checked: every hash in research/artifacts.json matches disk, covering the PDFs, the four aux/log pagination files and all 27 render inputs; the build-artifacts-0000 contact sheets and 200-dpi page rasters, whose review-cache pdf_sha256 equals each sealed PDF and whose PNG hashes all verify; my own 300-dpi renders of study pp. 27, 30-31 and concise p. 2; per-page ink-extent, gap, rule and colour measurements; pdffonts; pdfinfo; and the logs. Results: all fonts are embedded Latin Modern Type 1, the class is 11pt (size11.clo), margins are 0.75 in on US letter, and every page is monochrome. The logs have no overfull or underfull boxes, undefined references or rerun requests. Settled zref markers put inventory, overview and the four sense rows on physical page 1, chronology on 2, themes on 3-4 and commentary starting on 5, and the pages match. The concise page 1 carries the complete ten-element map plus exactly four sense rows. Page 2 holds the complete seven-passage dossier alone, in canonical order and legible. Pages 3-4 are substantive argument. From page 5 the commentary visibly interleaves the three readings. The study (34 pp.) and concise study (12 pp.) are in range. Neither study has columns. Each of the three study lanes opens on a fresh page with a descriptive heading and ends with the same Literal/Allegorical/Moral/Anagogical block. The homily has a full-width title, a two-column ragged-right speech with no loci inside it, and its note on sources, references, timestamp and colophon full-width on a separate final page. Running heads and folios are consistent. The compact rights colophon sits unclipped on each final page and creates no spill page. No clipping, overlap or table breakage was found. Two accepted and three advisory layout weaknesses are recorded; none blocks. Limits: screen rasters and measurements only, with no printed proof and no assistive-technology test. Content accuracy is outside this review. This is not a formatting migration, so text-preservation evidence does not apply. Verdict: PASS."
+}

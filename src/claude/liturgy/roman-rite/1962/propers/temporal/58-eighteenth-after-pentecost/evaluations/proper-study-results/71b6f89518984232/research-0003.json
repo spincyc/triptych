@@ -1,0 +1,29 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "note": "Index run for all eight appointed loci and every lead checked against work records and registered collected/whole volumes; Chrysostom (PG 55 cols. 347-351), Bellarmine (Pss 95, 101, 121), Aquinas on Mt 9:1-8 (Venice 1745, page images), Theodoret (PG 80 on Pss 95, 101, 121 and Quaest. in Exod.; PG 82 on 1 Cor 1:4-8) and the PG 27 Expositiones read and bound; the historical Greek reading of Ps 121 preserved against the Latin allegorical one (scope 4.6); scope 3.5, 3.6, 5.2, 10.2 and 10.13 corrected and every per-locus lead list now matches the index output.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-009",
+      "note": "PL 37 read on its page images for Ps 121 sections 2 and 12, Ps 95 sections 9-10 and Ps 101 sermo I sections 16-17 and bound; it corrects Augustine's Ps 121:1 lemma (Jucundatus sum in his qui dixerunt mihi) and shows he does expound the towers at Ps 121:7, which the NPNF English abridges. augustinus.it Ps 101 sermo I read and bound, sermo II named as deliberately not used (does not reach v. 16; its record note is wrong). 'English routes alone' removed from the binding; scope 5.1.7, 5.2, 6.3 and 10.12 restated to what was actually tried.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-017",
+      "note": "Rupert, De div. off. XII.18-19, read on PL 170 page images (leaves n168-n169) and Gueranger vol. XI pp. 393-409 read and checked on page images; both bound. New scope 2.7 records Rupert's Gospel placement (chair of Moses at the Eighteenth, the paralytic at the Nineteenth with the 1962 Nineteenth's chants and Epistle) and the Offertory's former verses; new scope 3.11 records their readings labelled as documented reception of the compilation; the 5.2 rationale replaced; scope 4.3 and interpretations 2.5, 4.3 and 4.5 restated so the ministerial sense is attributed to Aquinas at Mt 9:6, the priestly reading of Ps 95:8, and the liturgical commentators, and to no Father at Mt 9:8.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-018",
+      "note": "Re-collated vv. 2-8 token by token against the bound Clementine artifact rows Matt 9 2-8; the filius/Filius item removed (the Clementine reads Filius, differing only by the accent), leaving Jesus/Iesus and jacentem/iacentem and the two points of pointing, with the misattribution explained as the 1862's reading.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 3,
+  "stage": "research",
+  "summary": "Second research re-entry: re-swept the registered library by artifact coverage (commentary-work-index run for Ps 95:8, Ps 101:16, Ps 121:1, Ps 121:7, Mt 9:1, 1 Cor 1:4, Ex 24:4, Sir 36:18; collected and whole volumes checked for every lead), read and bound Chrysostom (PG 55) and Theodoret (PG 80) on Ps 121, Theodoret and the PG 27 Expositiones on Pss 95/101, Theodoret (PG 82) and Aquinas on 1 Cor 1:4-8, Bellarmine on all three psalms, Augustine's Latin in PL 37 and augustinus.it, Aquinas's lectura on Mt 9:1-8, a Lapide on Ex 24:4-8, and Rupert of Deutz and Gueranger as documented reception of the compilation; rewrote research/scope.md (new 2.7, 3.11, 4.6, 4.7; rewritten 3.2-3.8, 4.1-4.5, 5.2, 6.3, 9, 10), research/interpretations.md (boundaries, 1.2, 1.5, 1.6, 2.2, 2.3, 2.5, 3.2, 3.5, 4.2, 4.3, 4.5), research/source-bindings.toml (13 new bindings, corrected contexts; library validates), research/review-dependencies.toml (index queries), and propers/verified.md section 6. Remaining limits: Hilary on Matthew still reported only through Aquinas; a Lapide (Pentateuch and Pauline) read in optical layers only; Bellarmine quoted from the abridged 1866 English transcription without the facsimile; PL 78 and PL 105 recorded as unverified leads; the new page images read are unregistered (digests in scope 6.3); no Father reads Mt 9:8 of the ministry."
+}

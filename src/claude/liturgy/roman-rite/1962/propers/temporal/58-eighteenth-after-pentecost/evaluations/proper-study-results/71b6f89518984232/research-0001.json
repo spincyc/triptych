@@ -1,0 +1,29 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "note": "Every named route was tried and served. (a) Cassiodorus: Ps 101 read in the already-tracked file (sectiones 21-23, no network); Pss 95 and 121 fetched from the address the registered edition's own rumpfid rule gives and registered under a new dated edition latin-corpus-corporum-monumenta-web-2026-09-22 with their Latin retained, the derivation first verified by re-deriving the tracked Ps 101 file byte for byte. (b) Jerome: the 63 MB PL 26 scan fetched, SHA-256 matched, Mt 9:1-8 read on the page images of PDF pp. 32-33 (the scan has no text layer); two departures of the Catena's Jerome lemma from PL 26 recorded. (c) Hilary: CSEL 22 OCR fetched and matched, tractatus in Ps. CXXI read whole at physical lines 29495-30011. (d) Hesbert bound corrected: the registered gregorien.info chant page and AMS day 819 re-fetched and digest-matched, the unregistered AMS day 823 read live, and section 2.3 now records this Sunday's whole chant-set with manuscript sigla. Sections 3.2-3.5, 3.8, 5.2, 6.2, 6.3, 10.1, 10.2 and 10.5 rewritten to the state the sweep reaches; five new reception bindings and two chant-database bindings added.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-002",
+      "note": "Section 4.3's claimed Mt 9:8 conflict is gone. Section 4 now states that all three readings treat qui dedit potestatem talem hominibus alike and that authority-on-earth's hinge is Mt 9:6 as section 2.1 gives it, and replaces the invented conflict with a real one the readings genuinely inherit in opposite directions: peace-of-the-house needs civitatem suam left open (Hilary's Dei civitas fidelium plebs est) while authority-on-earth needs it located, its two witnesses pinning the town and disagreeing about which. Section 4.1's Collect claim is reconciled with section 4.2 by distinguishing shared dependence from government. Section 4.2's weakness cell and principal-witness cell were adjusted to match.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-003",
+      "note": "src/sources/inventories/roman-1962-proper-translations-v1.toml is now declared in research/review-dependencies.toml with a comment saying why. A new scope.md section 9.1 quotes the four pentecost-18 rows and their quarantine condition and answers it row by row: for the Collect, Secret and Postcommunion the condition is met by the tracked public-domain artifact and the bound passage at payload lines 164-166, so those rows are stale and are reported to the file's owner unedited; for the Offertory the condition is not met, no tracked English of the antiphon exists, and nothing downstream may publish one. The English route of the study is unchanged and stated with its basis.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-004",
+      "note": "Registered edition.fssp-france.ordo-du-mois.web-2026-09-22 and edition.icrsp-france.ordo.web-2026-09-22 with an artifact and a 2026-09-27 passage each, and bound both passages, so the dated occurrence evidence is inside the research seal. One deviation from the finding's first branch, stated in scope.md section 8.1: the registration could not be made from the responses whose digests context.md records, because those bytes are gone and are not re-obtainable. This stage measured why rather than assuming it - two FSSP responses minutes apart differ by 57,725 bytes at a per-response WordPress placeholder token and two ICRSP responses by 110 bytes at a per-response CSP nonce - so the records were written from this stage's own fetched and hashed responses, each artifact record and binding says the digest identifies one response and is not re-obtainable, and section 8.1 also states what the occurrence claim rests on in order and what a downstream document may and may not say. Both dated entries were re-read and independently confirm the identity, the second class and the colour, the ICRSP entry naming the Mass by its Introit incipit Da pacem.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "research",
+  "summary": "Re-entered the research owner and repaired all four blocking findings from evidence: swept the registered source library before recording any negative, reading Jerome at PL 26 cols. 53-56 on the registered Migne scan, Hilary's CSEL 22 Tractatus in Ps. CXXI, Cassiodorus on Pss 95, 101 and 121, and the registered gregorien.info Sextuplex material, then registered what the library did not hold (a dated Cassiodorus edition with two remote deliveries and two tracked Latin derivatives, and dated FSSP and ICRSP Ordo editions, artifacts and 2026-09-27 passages), added nine bindings, restated interpretations.md section 4 so the readings are compared as sections 1-3 actually argue them, declared the roman-1962 translations overlay in review-dependencies.toml and answered its four pentecost-18 rows in scope.md section 9.1, and cleared all four standing advisories. source-library validate, source-inventory check, source-family-migration check and check-content-preflight bindings-valid all pass; the only make check-sources failure is the inherited check-document-catalogue error for a leaf whose main.tex is still an authoring stub."
+}

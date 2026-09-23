@@ -1,0 +1,29 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "note": "Theophylact read on 1 Cor 1:4-8 in the PG 124 layer and on page images n282-n283 (Latin and every Greek word), bound, and recorded in 3.6 and 4.7 (with the bracketed Cod. Arundel passage identified as Migne's supplement); 'John only is held' corrected in 3.5, 3.6 and 5.2; 5.2 now lists the actual registered whole-volume set taken from the artifact records; every 'no registered route'/'only ... is held' statement in 3.1, 3.5, 3.6, 3.7 and 5.2 re-checked against artifact provenance and extent (Augustine 'none of the Quaestiones' corrected; PL 26, PL 170 and PG 12 contents checked; Ambrosiaster found and read).",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-021",
+      "note": "Durandus/Honorius 'no registered route' withdrawn; Schuster III pp. 167-170, Durandus VI.135-136, Sicard VIII.18-19, Honorius IV.84-86 (1895 PL 172 layer) and Berno V read on page images, the Micrologus in the layer, all bound; 2.7 and 3.11 record each with element comparison and standing; scope 4.3, 4.5, 10.3, 10.15 and interpretations 2.2, 2.5, 4.2, 4.3, 4.5 restated to include Schuster's v. 8 reading of the 1962 Mass and the commentators who read the Mass otherwise.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-022",
+      "note": "Every reading from vol. XI is now attributed to the continuation of Gueranger's Liturgical Year (1909) in scope.md, interpretations.md and the binding context; Gueranger is named as author of no sentence; the continuator is named Fromage only with the standing registry's sources and the French preface signature this stage checked.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-023",
+      "note": "All 'the 1962 book's'/'not immemorial'/'not ancient' assertions removed from interpretations 2.3 and 4.3; the Wuerzburg epistle and gospel lists, the Murbach comes and the Liber Comitis read at their loci on page images (Liber Comitis in the layer) and reported as placements only in scope 2.7; interpretations 4.5 and new scope 10.16 bound the study to assert the pairing's age in neither direction; 'in many Churches of the west' restored in 2.7.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 4,
+  "stage": "research",
+  "summary": "Third research re-entry. Records written: research/scope.md (header, 2.7 rewritten with the Wuerzburg epistle and gospel lists, the Murbach comes, the Liber Comitis and the seven commentators' headings and Gospels; 3.1, 3.5, 3.6, 3.7 re-checked against artifact provenance and extent, with Theophylact on 1 Cor 1:4-8 from PG 124 read on page images, Ambrosiaster and St Anthony's Sunday sermon added, the PL 30 commentary and PL 26 Breviarium recorded as located leads; 3.11 rewritten for Bl. Schuster, the continuation of The Liturgical Year, Rupert, Durandus, Honorius, Sicard, Berno and the Micrologus; 4.2, 4.3, 4.5-4.7, 5.1.7, 5.2 with the actual registered whole-volume set, 6.3, 9 and 10.3/10.12/10.13/10.15 restated and 10.16 added), research/interpretations.md (boundaries, 1.2, 2.2, 2.3 offertory row, 2.5, 3.2, 4.2, 4.3, 4.5), research/source-bindings.toml (Gueranger binding recast as the continuation; twelve new bindings; source-library validate passes) and research/review-dependencies.toml (formulary-loci, containment and author-standing inventories declared). The research preflight check passes. Remaining limitations: the registered Schuster facsimile PDF returned HTTP 500 and the same scan's JP2 page images were read instead; Ambrosiaster was read on a later delivery whose digest does not match the registered artifact and is unbound; the Micrologus and PL 30 were read in layers only; St Anthony is summarised, not quotable (restricted translation); Fromage's authorship of the continuation rests on the standing registry's BnF sources plus the 'Fr. L. F.' signature this stage read; no manuscript, Hesbert or Ordo Romanus was opened; Hilary on Matthew, Rabanus, Albert, Lyra, Denis and the other index leads without records remain unreached."
+}

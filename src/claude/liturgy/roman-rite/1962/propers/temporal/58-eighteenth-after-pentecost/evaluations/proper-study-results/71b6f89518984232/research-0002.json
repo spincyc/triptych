@@ -1,0 +1,29 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-009",
+      "note": "Verified every claim in the finding against the library, then swept further. artifact.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-09-05.newadvent-1801102-adb31091 is bound. Seven further bindings added: the tracked CCEL NPNF1-8 whole-Enarrationes English (which covers Pss 95, 101 AND 121 and which the finding did not name), both tracked Latin Enarrationes parts, the two CCEL segments for Chrysostom Hom. 29 and De cons. evang. II.xxv, PL 70 (fetched 2026-09-22, SHA-256 d777c4c6 and 5,244,841 bytes matched), and the tracked a Lapide Pauline optical layer. Section 6.3 no longer asserts the library registers none of these: it now carries a per-witness route table with what each gave, a table of three registered routes deliberately not used with reasons (CCSL 98, restricted and unneeded once PL 70 settled Migne; NPNF1-12 and NPNF1-14, remote facsimile page images with no registered text layer), and a registration-state column on the delivery table. PL 70 confirms Migne's own atrio sancto at Ps 95:9 and the Ps 101:16, 121:1 and 121:7 lemmata, so the old bound that the Corpus Corporum files could settle nothing about Migne is withdrawn as to Migne and kept as to Adriaen. Section 5.1.7 now states Augustine's own Latin lemma and what it does and does not settle. All eight bindings validate and all the new records and payloads are inside the research seal.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-010",
+      "note": "Section 4.4's Jerome clause is restated from PL 26, col. 55 with his own juxta tropologiam sentence (anima ... a perfecto doctore offertur curanda Domino) and a following paragraph that names precatores explicitly as the Catena aurea's wording which PL 26 does not carry at this pericope, cross-referenced to sections 3.5(b) and 10.1 and to the correction already standing in research/interpretations.md section 3.2.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-011",
+      "note": "Re-collated Mt 9:5 against both the tracked chapter file and the bound artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-47-matthew-2d02758d: both read 'Quid est facilius dicere: Dimittuntur tibi peccata tua: an dicere: Surge, et ambula?' The non-existent comma after facilius is removed, the Missal's 'peccata tua;' against the Clementine's 'peccata tua:' is recorded as the second real difference, the count is corrected from three points to two, and the Clementine binding's own context is corrected to match. The stray comma is identified in the record's own 1862 table, where the Pustet does print 'Quid est facilius, dicere'.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-012",
+      "note": "Re-fetched the Gelasian layer (SHA-256 039123ca...684d84, 1,098,845 bytes, matched) and replayed both probes. 'dignis moribus' returns exactly one hit, physical line 12598; line 21574 reads 'Jjgjjg moribus et mentibus' and is invisible to that probe, and section 5.1.6 now says so and names 'moribus et mentibus' as the probe that does find it. The Exsultet occurrence of 'ueneranda commercia' is corrected to physical line 11487, with line 11485's actual text given; the Book III occurrence of the Secret is named at 21570.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 2,
+  "stage": "research",
+  "summary": "Swept the registered source library a second time for the reception witnesses this study actually quotes, not only for the leads recorded as unreached, and found registered routes for five of the eight deliveries section 6.3 had called unregistered: the tracked CCEL NPNF1-8 English of all three Augustine psalm expositions, the registered New Advent page for Enarr. in Ps. 101, the tracked Migne Latin for Pss 95 and 101, and the tracked CCEL NPNF1-10 and NPNF1-6 texts for Chrysostom on Matthew and Augustine's harmony; all were opened, all agree at every locus quoted, and eight new bindings now carry them plus Migne's own PL 70 (fetched, digest matched) and Cornelius a Lapide on 1 Cor 1:4-8. Section 6.3 was rewritten per witness, section 5.1.7 now states Augustine's own Latin lemma in atrio sancto ejus, section 4.4 restates Jerome's tropology from PL 26 and marks precatores as the Catena's, propers/verified.md section 6 was re-collated against the bound Clementine, and the two section 5.1.6 search receipts were corrected against the re-fetched Gelasian layer."
+}

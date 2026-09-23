@@ -1,0 +1,6 @@
+{
+  "encoded": false,
+  "stage": "resolve-context",
+  "text": "Host cannot dispatch at the packet's declared EFFORT. The Claude Code harness exposes no per-dispatch reasoning effort; a subagent inherits the driver session's level unless its agent definition pins one. The three pinned-effort definitions recovered in workflows/reviews/claude-loop-recovery-2026-09-19/pinned-effort-agents/ were copied into the workspace root .claude/agents/ during this session, but the harness loads agent definitions at session start, so dispatching to tpt-high was refused with 'Agent type not found'. Every stage of this run is therefore dispatched as a general-purpose subagent at the driver session's level, which may sit above a stage that declares high and at or below one that declares xhigh or max. No stage is dispatched below its declared level. The installed definitions will take effect for any driver session started from the workspace root hereafter.",
+  "timestamp": "2026-09-22T13:42:31Z"
+}

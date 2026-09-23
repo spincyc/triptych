@@ -1,0 +1,386 @@
+{
+  "awaiting_result_for": null,
+  "current_stage": "ACCEPTED",
+  "disposition": "ACCEPTED",
+  "escalations": [
+    {
+      "escalated_to": "tools/check-content-preflight (chronology-claims-supported) and guidance/scripture-chronology.md section 14.1, against the page-2 dossier rule of guidance/liturgy/roman-1962-propers.md ('Page 2: Scriptural date and location')",
+      "finding": {
+        "escalated_to": "tools/check-content-preflight (chronology-claims-supported) and guidance/scripture-chronology.md section 14.1, against the page-2 dossier rule of guidance/liturgy/roman-1962-propers.md ('Page 2: Scriptural date and location')",
+        "id": "STU-005",
+        "location": "sections/80-date-location.tex, Introit dossier explanatory row ('The chronology record answers the element's two loci separately. At the antiphon's verse, Ecclus 36:18, it dates the composition of the Book of Ecclesiasticus twice, with a preferred interval and an alternate approximate year ...'); sections/90-apparatus.tex, 'Chronology'; tools/check-content-preflight, check_chronology_claims_supported (the construction of 'supported' and 'supported_date_signatures')",
+        "problem": "The study has done what the tooling allows on STU-005. The Introit row now says the record answers the element's two loci separately, and the scope appendix no longer says 'no single answer'. But the reader is still told that the record dates Ecclesiasticus 'twice' without being told the dates. research/chronology.toml, element 'introit', has publication_status 'nonuniform' and empty publication_claims. It holds two claims at Ecclus.36.18 alone, both composition.book-of-ecclesiasticus under catholic-traditional-v1: 'between 190 and 170 B.C.' (preferred) and 'about 280 B.C.' (alternate). The 1962 profile requires the dossier to foreground the traditional Catholic chronology, 'including an actual conventional date or range wherever the received chronology supplies one'. guidance/scripture-chronology.md section 14.1 keeps every locus-specific answer in the record 'for audit', and forbids only presenting a partial-locus date 'as common to the whole cell'. The checker is stricter. check-content-preflight --check chronology-claims-supported builds its supported set solely from element.publication_claims and declared profile comparisons. Section 14.1 and the comparison validator refuse a comparison claim that does not hold at every locus of the element. So no route exists by which a locus-scoped date for a nonuniform element can reach explanatory dossier prose. I verified this in the checker's code. No stage of this run may change the checker or the guidance. The same gap will meet the concise page 2, and any 1962 formulary whose antiphon and psalm verse come from different books.",
+        "required_result": "The maintainer decides whether dossier explanatory prose may print a nonuniform element's locus-specific chronology label, naming the locus it applies to. Two ways would do it: admit per-locus claims to the supported set when the prose names the locus, or allow a locus-scoped profile comparison. If it may, the Introit row prints 'between 190 and 170 B.C.' (preferred) and 'about 280 B.C.' (alternate) at Ecclus 36:18, with their source. If it may not, the maintainer confirms that the present wording meets the 1962 dossier rule for nonuniform elements, and the profile says so.",
+        "severity": "escalation"
+      },
+      "iteration": 1,
+      "stage": "study-review"
+    }
+  ],
+  "iteration": 57,
+  "packet_hash": "2634f29302eb21488e858b2e67eab7a9452a11b07ec26a180b756e226480ef45",
+  "packet_path": "build/tpt-runs/71b6f89518984232/packets/publication-gates-0000.txt",
+  "packets_emitted": 57,
+  "repo_commit": "fa5355745b5e973584f047a7f59a20ad22676d64",
+  "results_received": 57,
+  "run_id": "71b6f89518984232",
+  "stage_failures": {
+    "artifact-gates": 0,
+    "homily-preflight": 0,
+    "homily-review": 0,
+    "publication-gates": 0,
+    "research-preflight": 0,
+    "research-review": 0,
+    "scope-gate": 0,
+    "study-preflight": 0,
+    "study-review": 0,
+    "synthesis-preflight": 0,
+    "synthesis-review": 0,
+    "visual-review": 0,
+    "web-review": 0
+  },
+  "stage_iterations": {
+    "artifact-gates": 1,
+    "author-study": 4,
+    "build-artifacts": 1,
+    "derive-homily": 2,
+    "derive-synthesis": 2,
+    "generate-web": 1,
+    "homily-preflight": 2,
+    "homily-review": 2,
+    "install-publication": 1,
+    "publication-gates": 1,
+    "research": 8,
+    "research-preflight": 8,
+    "research-review": 8,
+    "resolve-context": 1,
+    "scope-gate": 1,
+    "study-preflight": 4,
+    "study-review": 4,
+    "synthesis-preflight": 2,
+    "synthesis-review": 2,
+    "visual-review": 1,
+    "web-review": 1
+  },
+  "stage_novel": {
+    "artifact-gates": 0,
+    "homily-preflight": 0,
+    "homily-review": 0,
+    "publication-gates": 0,
+    "research-preflight": 0,
+    "research-review": 0,
+    "scope-gate": 0,
+    "study-preflight": 0,
+    "study-review": 0,
+    "synthesis-preflight": 0,
+    "synthesis-review": 0,
+    "visual-review": 0,
+    "web-review": 0
+  },
+  "stage_repeats": {
+    "artifact-gates": 0,
+    "homily-preflight": 0,
+    "homily-review": 0,
+    "publication-gates": 0,
+    "research-preflight": 0,
+    "research-review": 0,
+    "scope-gate": 0,
+    "study-preflight": 0,
+    "study-review": 0,
+    "synthesis-preflight": 0,
+    "synthesis-review": 0,
+    "visual-review": 0,
+    "web-review": 0
+  },
+  "standing_findings": [],
+  "transitions": [
+    {
+      "disposition": "PASS",
+      "from": "scope-gate",
+      "to": "resolve-context"
+    },
+    {
+      "disposition": "PASS",
+      "from": "resolve-context",
+      "to": "research"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research",
+      "to": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-preflight",
+      "to": "research-review"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "from": "research-review",
+      "to": "research"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research",
+      "to": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-preflight",
+      "to": "research-review"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "from": "research-review",
+      "to": "research"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research",
+      "to": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-preflight",
+      "to": "research-review"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "from": "research-review",
+      "to": "research"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research",
+      "to": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-preflight",
+      "to": "research-review"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "from": "research-review",
+      "to": "research"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research",
+      "to": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-preflight",
+      "to": "research-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-review",
+      "to": "author-study"
+    },
+    {
+      "disposition": "PASS",
+      "from": "author-study",
+      "to": "study-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "study-preflight",
+      "to": "study-review"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "from": "study-review",
+      "to": "research"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research",
+      "to": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-preflight",
+      "to": "research-review"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "from": "research-review",
+      "to": "research"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research",
+      "to": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-preflight",
+      "to": "research-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-review",
+      "to": "author-study"
+    },
+    {
+      "disposition": "PASS",
+      "from": "author-study",
+      "to": "study-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "study-preflight",
+      "to": "study-review"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "from": "study-review",
+      "to": "author-study"
+    },
+    {
+      "disposition": "PASS",
+      "from": "author-study",
+      "to": "study-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "study-preflight",
+      "to": "study-review"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "from": "study-review",
+      "to": "research"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research",
+      "to": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-preflight",
+      "to": "research-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-review",
+      "to": "author-study"
+    },
+    {
+      "disposition": "PASS",
+      "from": "author-study",
+      "to": "study-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "study-preflight",
+      "to": "study-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "study-review",
+      "to": "derive-synthesis"
+    },
+    {
+      "disposition": "PASS",
+      "from": "derive-synthesis",
+      "to": "synthesis-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "synthesis-preflight",
+      "to": "synthesis-review"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "from": "synthesis-review",
+      "to": "derive-synthesis"
+    },
+    {
+      "disposition": "PASS",
+      "from": "derive-synthesis",
+      "to": "synthesis-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "synthesis-preflight",
+      "to": "synthesis-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "synthesis-review",
+      "to": "derive-homily"
+    },
+    {
+      "disposition": "PASS",
+      "from": "derive-homily",
+      "to": "homily-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "homily-preflight",
+      "to": "homily-review"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "from": "homily-review",
+      "to": "derive-homily"
+    },
+    {
+      "disposition": "PASS",
+      "from": "derive-homily",
+      "to": "homily-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "homily-preflight",
+      "to": "homily-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "homily-review",
+      "to": "build-artifacts"
+    },
+    {
+      "disposition": "PASS",
+      "from": "build-artifacts",
+      "to": "artifact-gates"
+    },
+    {
+      "disposition": "PASS",
+      "from": "artifact-gates",
+      "to": "visual-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "visual-review",
+      "to": "generate-web"
+    },
+    {
+      "disposition": "PASS",
+      "from": "generate-web",
+      "to": "web-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "web-review",
+      "to": "install-publication"
+    },
+    {
+      "disposition": "PASS",
+      "from": "install-publication",
+      "to": "publication-gates"
+    },
+    {
+      "disposition": "PASS",
+      "from": "publication-gates",
+      "to": "ACCEPTED"
+    }
+  ],
+  "workflow_digest": "a965af881c1e4110b6e4698001b4f06b9a688a93a1f1652c292d15002afe1768",
+  "workflow_id": "proper-study",
+  "workflow_version": 6
+}

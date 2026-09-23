@@ -1,0 +1,459 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "STU-020",
+      "location": "research/interpretations.md: 4.3, the paragraph 'Where they agree, and it is worth saying because it looks like a disagreement' (lines 943-959: 'All three treat qui dedit potestatem talem hominibus the same way ... 1 gives the verse no weight either ... a study that staged that contest would be inventing it') and the last bullet of 'Where the real disagreements stand' (line 997: 'none of the three readings turns on it'); 3.2 and the 3.3 gospel row (line 823), which carry no Hilary at Mt 9:8; 3.4 Anagogical (lines 857-860); 2.4 Anagogical (line 587); 2.3 epistle row (lines 534-536). Contradicted by sections/40-nothing-of-our-own.tex (subsection 'The man who was carried', last paragraph, and the Anagogical item), sections/30-authority-on-earth.tex (Anagogical item) and sections/50-comparison.tex (first paragraph, and the paragraph 'One disagreement runs between two readings').",
+      "out_of_scope_reason": "research/interpretations.md is unchanged this round, but what makes its 4.3 false moved in sections/40-nothing-of-our-own.tex and sections/50-comparison.tex, both in REVIEW_SCOPE. Until this round the comparison said, as 4.3 does, that no reading sets one use of v. 8 against another. STU-014 also left open a route (b), withdrawing Hilary from the third reading, that would have made 4.3 true again. The contradiction became fixed only when this round's revision took route (a), and the in-scope research/production-review.md reports it this round for routing. The research owner must now re-enter for 4.3. The same pass should carry into the record the anagogical senses and the Chrysostom verse attachment that the iteration-1 repairs to the study (STU-003, STU-004) left behind. Those repairs went to the study stage, which may not edit the record, and that drift was never routed.",
+      "problem": "The manifest declares this record as every reading's source and as the reference of the concise overview, themes and commentary and of the homily body. It no longer records the readings the study gives, and it contradicts them on three points. (1) Mt 9:8. This round the study took route (a) of STU-014. The third reading now takes Hilary's side on the crowd's praise. I read In Matth. VIII.8 (PL 9, cols. 961-962) in the tracked layer db389fea: 'Conclusa sunt omnia suo ordine ... alioquin laus de uno homine, non de pluribus exstitisset: sed delati Deo honoris hinc causa est, quod potestas hominibus ac via data sit per verbum ejus ...'. The comparison now names the Chrysostom-Hilary difference as the one disagreement that runs between two readings. Record 4.3 says the opposite: all three readings treat the verse the same way, none turns on it, and 'a study that staged that contest would be inventing it'. Record 3 lists no Hilary at v. 8 among the third reading's witnesses. (2) The anagogical senses. Since the iteration-1 repair of STU-004, the study grounds the second reading's anagogical sense in Hilary VIII.7, Ambrose (Exp. in Lc. V.14) and Aquinas's domus aeternitatis. It grounds the third reading's in 1 Cor 1:8, where the confirming is Christ's on either reading, and in the Postcommunion's perficias. 1 Cor 1:8 is an anchor of the third reading only. Record 2.4 still gives the second reading 1 Cor 1:8, and record 3.4 still gives the third reading 'perfection, not completion'. (3) Record 2.3 (the epistle row) and record 3.4 set Chrysostom's 'not only the beginnings must be good, but the end also' beside v. 8's 'confirmabit vos usque in finem'. I re-fetched the New Advent delivery of Hom. in 1 Cor. 2; its SHA-256, 66bffe29...5858, matches research/scope.md 6.3. In it the sentence stands in section 6, on v. 7 ('Waiting for the revelation'). Chrysostom's reading of v. 8 is covert accusation (section 7), as the record's own 3.2 and scope 4.7 say. STU-003 removed this misplacement from the study, but it survives in the record. The contract requires research/interpretations.md to record each interpretation's four senses and the differences within and between interpretations. The concise and homily authors are pointed to this record, and its 4.5 points the homily to the third reading, whose 3.4 carries the misplaced quotation. As things stand, those authors would work from a record that denies the disagreement the reviewed study states, gives superseded senses, and attaches a Chrysostom sentence to the wrong verse. The author-study stage may not edit the record; it reported the 4.3 drift for routing in research/production-review.md this round. The study's own prose needs no change for this finding.",
+      "repair_target": "research",
+      "required_result": "Research re-enters and brings research/interpretations.md into line with the study as reviewed. This needs no new retrieval and changes no evidence. (a) In 3.2 and the 3.3 gospel row, record Hilary, In Matth. VIII.8 (PL 9, cols. 961-962), as a witness of the third reading at Mt 9:8, with its locus and wording. Label the join of the Gospel's end to the Epistle's opening as editorial synthesis. (b) In 4.3, withdraw three statements: 'All three treat qui dedit potestatem talem hominibus the same way', 'a study that staged that contest would be inventing it' and 'none of the three readings turns on it'. State what the study states. The first reading does not use v. 8. The second reports Chrysostom first and Hilary after, takes its own sense of the verse from Schuster, and cites Hilary only to show that the men of the verse receive forgiveness and do not minister it. The third takes Hilary's side. Record the Chrysostom-Hilary difference as the one disagreement that runs between two readings. (c) Restate the anagogical senses of 2.4 and 3.4 as the study gives them, with 1 Cor 1:8 and perficias as anchors of the third reading only. (d) In 2.3 and 3.4, attach Chrysostom's 'not only the beginnings must be good, but the end also' and 'need of many labors' to 1 Cor 1:7 (Hom. in 1 Cor. 2, section 6), and give his reading of v. 8 only as covert accusation (section 7). Alternatively, take those sentences out of the v. 8 context. Research review then confirms the record against the study.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-021",
+      "location": "sections/30-authority-on-earth.tex, subsection 'What the crowd said', the sentence 'St Ambrose, at Luke's parallel, judges the onlookers' fear in the same way: divini operis miracula malunt timere quam credere ... (Expositio in Lucam V.15)'; sections/50-comparison.tex, paragraph 'One disagreement runs between two readings', the sentence 'Ambrose, at Luke's parallel, judges the onlookers' fear in the same way.'",
+      "problem": "I read Exp. in Lc. V.15 in the tracked transcription (ambrose-luke5-raw.txt, SHA-256 fde2303a..., line 35). There the people who fear are unbelievers, and Ambrose identifies them with the calumniators: 'Spectant surgentem increduli ... et divini operis miracula malunt timere quam credere. Nam si credidissent, non timuissent utique, sed dilexissent ... Et ideo isti, quia non diligebant, calumniabantur.' He then turns to the scribes' evil thoughts and the leprosy in the hearts of the Jews. Chrysostom's crowd are glorifying God. Their confession falls short, and Christ 'does not rebuke them but raises their thoughts', as the study itself reports. research/scope.md 4.3 records Ambrose's identification of the fearers with the calumniators. 'In the same way' drops it, and it puts Ambrose on Chrysostom's side of the comparison's one between-reading disagreement with more agreement than his text supports. The direction of the judgement, negative, is right, so this does not block.",
+      "required_result": "In both places, say that Ambrose judges the fear more severely: in V.15 those who fear are the unbelieving, who would rather fear than believe, and he identifies them with those who calumniated. Do not present his judgement as Chrysostom's. Alternatively, drop Ambrose from the comparison's statement of the Chrysostom-Hilary difference.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-022",
+      "location": "sections/10-each-element.tex, Gradual subsection, last paragraph ('The gregorien.info database reports the chant at this Sunday in the six manuscripts of the Antiphonale Missarum Sextuplex: by its report, Laetatus sum is the Gradual of the Eighteenth Sunday after Pentecost in four of them, beside this Sunday's Introit, Offertory and Communion.')",
+      "problem": "research/scope.md 2.3 sets out what the database's day 823 prints for this Sunday. Laetatus sum stands in R B K S; the Offertory and Communion stand in R B K S; the Da pacem Introit stands only in R B K. M has another Gradual, and C does not appear. So the first clause reads as if the database reported the chant at this Sunday in all six books, and the next clause corrects that to four. 'Beside this Sunday's Introit' also does not hold for Senlis. This sentence is this round's repair of STU-011. It attributes correctly, but it states the placings loosely.",
+      "required_result": "Say that the database's report for this Sunday gives Laetatus sum as the Gradual in four of the six books (Rheinau, Mont-Blandin, Corbie, Senlis), with this Sunday's Offertory and Communion in the same four and its Introit in three of them. Alternatively, drop the Introit from the 'beside' clause and the 'six manuscripts' framing from the first clause.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 2,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "format.tex",
+            "research/context.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "appointed-texts",
+          "kind": "appointed-text",
+          "path": "sections/05-appointed-texts.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "appointed-texts"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "each-element",
+          "kind": "proper-treatment",
+          "path": "sections/10-each-element.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "peace-of-the-house",
+          "kind": "interpretive-lane",
+          "path": "sections/20-peace-of-the-house.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "authority-on-earth",
+          "kind": "interpretive-lane",
+          "path": "sections/30-authority-on-earth.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "nothing-of-our-own",
+          "kind": "interpretive-lane",
+          "path": "sections/40-nothing-of-our-own.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "peace-of-the-house",
+            "authority-on-earth",
+            "nothing-of-our-own"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "scriptural-date-location",
+          "kind": "front-matter",
+          "path": "sections/80-date-location.tex",
+          "references": [
+            "format.tex",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine",
+            "Hilary of Poitiers",
+            "John Chrysostom",
+            "Cassiodorus",
+            "Theodoret of Cyrus",
+            "Robert Bellarmine",
+            "Thomas Aquinas",
+            "Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Augustine",
+            "Hilary of Poitiers",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "peace-of-the-house"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "peace-of-the-house",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine",
+            "Jerome",
+            "Thomas Aquinas",
+            "Ildefonso Schuster",
+            "Ambrose",
+            "Hilary of Poitiers",
+            "Bede",
+            "Theodoret of Cyrus",
+            "Robert Bellarmine",
+            "Cornelius a Lapide",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Augustine",
+            "Thomas Aquinas",
+            "Ildefonso Schuster"
+          ],
+          "component_keys": [
+            "authority-on-earth"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "authority-on-earth",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine",
+            "Jerome",
+            "Ambrose",
+            "Thomas Aquinas",
+            "Theodoret of Cyrus",
+            "Cassiodorus",
+            "Hilary of Poitiers",
+            "Berno of Reichenau",
+            "Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Augustine",
+            "Jerome",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "nothing-of-our-own"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "nothing-of-our-own",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/format.tex": "ed4f1c1b7417b3db61b68ee80cfd6525a0615f7db0e779507341af2d9b467d40",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/main.tex": "64b5f648732be9ccc852c27083b122c7386b29ccab8a9d417ac1cb922166e195",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/propers/verified.md": "77ad3bcf08310015b0e6c931543bdb2dc8dbea3777b03d50a2a35376bd882678",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/chronology-annotations.tex": "86fea692e6d8fe62f844f6096d68772a17d2975d626ff70cbbbf3ff11e1db174",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/chronology.toml": "412c2fc1a4af6874a41c4ff53576fc55852d0510cfe89953b81ee75a26d518b5",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/context.md": "25b69a9ad894f6c1b03d0ab1d9dc0a63d486a2d383b1ef83212b6d6ae160fdf9",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/interpretations.md": "bf779ef9a73d48a7c458df7ecf3178127979ba31520b69137a724d8694e9979a",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/scope.md": "e780789a2dae59580e853edf9ccb7a451936727fe994ee391825c2a0f2df7535",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/source-bindings.toml": "8f54e73a3dde16b8d610ed5b030d077a2d0695a8a226757e73adbdccc0363b7c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/00-opening.tex": "9c6d183d22f681ea747605f5b864617694b48eeef0055e50eed405c1e964a187",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/05-appointed-texts.tex": "33adc690ed9cc705a3ecade8bdd9c9649190a43d90886ad4492a802edc8695f8",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/10-each-element.tex": "1acfeff3c0ec55c1a2f202a9a58b14532a59f6a8148d7bfaef3a9940a3f83087",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/20-peace-of-the-house.tex": "7f6d0ee93952d269e8431ad9a9ba9bda4c0cca2a14d6c7ff0f49c653818a2b9e",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/30-authority-on-earth.tex": "f29ebe585d64a0de7947569c3420482e6f5eaae9093637d0e2e532cfb22a7ec0",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/40-nothing-of-our-own.tex": "3bc196a6bde7d76f1e8312ed8552683ca03493fc7bde94a172b5057ce617567c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/50-comparison.tex": "226f0d6efa7842313a83274ed119a308effb9b4db3447fca24f489328f887a59",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/80-date-location.tex": "964f0e661fcaaddc542fb5e16624b59bb4d9b6ba0b9713f8811d6a1c05d07eb9",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/90-apparatus.tex": "3aabe708ac6ce0457931c1ad81b4e0e04da8aa1b04fe0231f772fdfc9aa8ad49",
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+      "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "6",
+            "a965af881c1e4110b6e4698001b4f06b9a688a93a1f1652c292d15002afe1768",
+            "71b6f89518984232",
+            "fa5355745b5e973584f047a7f59a20ad22676d64",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Cold review of the expansive study liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost (main.tex). I read it whole with its research records and rebuilt it in scratch: 34 physical pages, clean log. The iteration-2 revision clears STU-014 and advisories STU-010, STU-011 and STU-015 to STU-019. I checked its quotations against tracked or hash-matched witnesses: Hilary, In Matth. VIII.4-8 (PL 9 layer db389fea); Ambrose, Exp. in Lc. V.11-15; Aquinas, Super Matth. c. 9; Chrysostom (NPNF1-10, and New Advent 220102 and 240216, re-fetched with hashes matching research/scope.md 6.3); Augustine (NPNF1-8 and 1-6); Schuster; the continuation; and Cassiodorus. Jerome, Theodoret, the PG 27 expositions and the CSEL 22 Hilary were taken from the research records and not reopened on page images. CHANGES_REQUIRED: the study's prose is sound and needs no change for the blocking finding. But research/interpretations.md, the lanes' declared source and the reference of the concise and homily components, now contradicts the study on Mt 9:8. It also carries superseded anagogical senses and keeps Chrysostom's 1 Cor 1:7 sentence at v. 8. That is one research-owned blocking finding, STU-020, beside two study advisories. The STU-005 chronology escalation stands unchanged."
+}
