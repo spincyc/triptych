@@ -67,9 +67,15 @@ which moves its source fingerprint and every reviewed binding pinned to it
 across published leaves. The maintainer decided on 2026-09-23 to fix both in
 one recorded rebinding sweep after that run publishes.
 
-**Planned.** The Eighteenth Sunday leaf's own Cassiodorus and a Lapide
-bindings are sealed into its run until then. A release rebind that the sweep
-needs requires a fresh operator approval.
+**Done.** In `285c96b35` both patterns admit every registered artifact's loci.
+Cassiodorus now admits all 150 psalms, because the registered index names
+them all, so registering a further psalm will not force another sweep. A
+Lapide admits Romans to Galatians, the epistles the tracked volume carries. A
+new test fails if any registered holding of either work has no expressible
+locus. The sweep re-fingerprinted 25 bindings in 9 leaves of both providers
+and added 30 loci, each verified in its source. No release binding went stale
+and no staleness verdict changed. Historical run receipts that pin the old
+digests were left as history.
 
 ## Per-passage dossier dates, 2026-09-23
 

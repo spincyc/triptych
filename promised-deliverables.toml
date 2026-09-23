@@ -62,6 +62,12 @@ state = "in_progress"
   evidence = ["PROJECT-WORK.md", "tools/web-edition"]
 
   [[deliverables.requirements]]
+  id = "leading-numbers-restored"
+  criterion = "Maintainer decision of 2026-09-23: the converter no longer lets an alignment declaration at the end of a column prefix swallow the number that opens each cell; the fix carries tests; the 7 installed web editions missing dates and numbers the PDFs print are regenerated, each diff proven to restore only source text, and independently reviewed; no PDF render input changes."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "tools/web-edition"]
+
+  [[deliverables.requirements]]
   id = "web-bindings-reapproved"
   criterion = "The release bindings of the regenerated editions are re-recorded only after a fresh operator approval, with ONLY scoped to them."
   status = "open"
@@ -71,25 +77,29 @@ state = "in_progress"
 id = "locus-pattern-rebinding-2026-09-23"
 owner = "PROJECT-WORK.md"
 promise = "After the Claude 1962 Eighteenth Sunday run publishes, widen the locus_pattern of work.cassiodorus.expositio-psalmorum and work.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas to admit the artifacts registered under them, and carry every reviewed binding that cites either work, in every leaf, through the resulting fingerprint change in one recorded sweep (maintainer decision, 2026-09-23)."
-state = "planned"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "patterns-admit-registered-artifacts"
   criterion = "Both work records' locus_pattern admit the loci of every artifact registered under them, and a test fails if a registered artifact of either work has no expressible locus."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", "tools/source-library"]
+  status = "pass"
+  evidence = ["tools/tests/test_source_locus_patterns.py", "src/sources/works/cassiodorus/expositio-psalmorum/work.toml"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "bindings-carried-through"
   criterion = "Every binding in every leaf that cites either work or its descendants is re-fingerprinted and verified to resolve, free-text section references are converted to loci where the widened pattern now allows, tools/source-library validate passes, and the sweep's file list and before and after fingerprints are recorded."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/source-bindings.toml", "PROJECT-WORK.md"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "release-bindings-reapproved"
   criterion = "Any release binding the sweep leaves stale is re-recorded only with a fresh operator approval note, since an approval signs specific bytes."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", "Makefile"]
+  status = "waived"
+  waiver_reason = "The sweep left no release binding stale: release-bindings status was byte-identical before and after it, so there was nothing to re-record and no approval to seek."
+  waiver_authority = "coordinator finding, 2026-09-23, recorded for the maintainer; the requirement was conditional on a stale binding"
+  evidence = ["PROJECT-WORK.md"]
 
 [[deliverables]]
 id = "chronology-per-passage-dates-2026-09-23"
