@@ -181,34 +181,34 @@ Rubric 91 says that precedence is governed solely by its table, with other title
 
 | Pos. | Class | Liturgical day | Assembly consequence or caution |
 |:----|:-----|:---------------------------|:----------------------------|
-|  | I | Nativity of the Lord, Easter Sunday, Pentecost Sunday, each with its octave status | Highest named celebrations; their formularies and proper Canon material govern. |
-|  | I | Sacred Triduum | Follow the unique formularies and rites; ordinary Mass-category permissions do not reconstruct them. |
-|  | I | Epiphany, Ascension, Trinity, Corpus Christi, Sacred Heart, Christ the King | Named feasts of the Lord above all remaining I-class items. |
-|  | I | Immaculate Conception and Assumption | The Immaculate Conception expressly prevails over an Advent Sunday under rubric 15. |
-|  | I | Christmas Vigil and octave day | Distinguish the Vigil from a merely anticipated celebration; the octave day is January 1. |
-|  | I | Sundays of Advent, Lent, and Passiontide, and Low Sunday | These Sundays defeat ordinary I-class feasts; a feast of the Lord or the Immaculate Conception requires its express rule. |
-|  | I | Ash Wednesday; Monday, Tuesday, Wednesday of Holy Week | These ferias prevail over every feast and admit only the privileged commemoration allowed by their rules. |
-|  | I | All Souls, while yielding to an occurring Sunday | If Sunday occurs, rubric 96b transfers All Souls to Monday as its proper seat. |
-|  | I | Pentecost Vigil | A unique I-class vigil, below All Souls but above octave days and remaining feasts. |
-|  | I | Days within the Easter and Pentecost octaves | They precede other universal and proper I-class feasts; an impeded I-class feast is transferred. |
-|  | I | Other universal I-class feasts | Includes universal celebrations not named above. |
-|  | I | Proper I-class feasts | Principal patrons; cathedral dedication; local principal patron; dedication and title of the church; religious title, canonized founder, and principal patron, as rubrics 42–46 specify. |
-|  | I | Indulted I-class feasts, movable before fixed | An actual indult and its scope must be produced. |
-|  | II | II-class feasts of the Lord, movable before fixed | On a II-class Sunday they replace it with all rights, without Sunday commemoration (rubric 16a). |
-|  | II | II-class Sundays | They precede other universal II-class feasts, but yield to the Lord exception and superior I-class positions. |
-|  | II | Universal II-class feasts not of the Lord | A saint here loses to a II-class Sunday; a universal feast here can precede an Ember feria at position 18. |
-|  | II | Days within the Christmas octave | Subject to the special Christmas-octave arrangement in rubrics 68–70. |
-|  | II | December 17–23 ferias and Ember Days of Advent, Lent, and September | They precede proper II-class feasts but follow universal II-class feasts. |
-|  | II | Proper II-class feasts | Secondary patrons and the other proper entries listed in the table. |
-|  | II | Indulted II-class feasts, movable before fixed | Source the grant; “local custom” does not establish this row. |
-|  | II | II-class vigils | When impeded by a higher II-class item they are commemorated; on any Sunday or I-class feast they are omitted under rubric 33. |
-|  | III | Lenten and Passiontide ferias from Thursday after Ash Wednesday through Saturday before Palm Sunday, excluding Ember Days | They precede every III-class feast. |
-|  | III | Particular III-class feasts | Certain diocesan, church, and religious saints and indulted particular feasts, in the table’s internal order. |
-|  | III | Universal III-class feasts, movable before fixed | They precede early Advent ferias and III-class vigils. |
-|  | III | Advent ferias through December 16, excluding Ember Days | They yield to III-class feasts but are privilegedly commemorated. |
-|  | III | III-class vigils | St Lawrence’s vigil; it yields to higher III-class positions but is then commemorated unless rubric 33 omits it. |
-|  | IV | Office of Our Lady on Saturday | Applies only when an otherwise IV-class Saturday feria occurs under rubric 78. |
-|  | IV | IV-class ferias | Lowest calendar position, but not a license for any requested Mass without its own permission. |
+| 1 | I | Nativity of the Lord, Easter Sunday, Pentecost Sunday, each with its octave status | Highest named celebrations; their formularies and proper Canon material govern. |
+| 2 | I | Sacred Triduum | Follow the unique formularies and rites; ordinary Mass-category permissions do not reconstruct them. |
+| 3 | I | Epiphany, Ascension, Trinity, Corpus Christi, Sacred Heart, Christ the King | Named feasts of the Lord above all remaining I-class items. |
+| 4 | I | Immaculate Conception and Assumption | The Immaculate Conception expressly prevails over an Advent Sunday under rubric 15. |
+| 5 | I | Christmas Vigil and octave day | Distinguish the Vigil from a merely anticipated celebration; the octave day is January 1. |
+| 6 | I | Sundays of Advent, Lent, and Passiontide, and Low Sunday | These Sundays defeat ordinary I-class feasts; a feast of the Lord or the Immaculate Conception requires its express rule. |
+| 7 | I | Ash Wednesday; Monday, Tuesday, Wednesday of Holy Week | These ferias prevail over every feast and admit only the privileged commemoration allowed by their rules. |
+| 8 | I | All Souls, while yielding to an occurring Sunday | If Sunday occurs, rubric 96b transfers All Souls to Monday as its proper seat. |
+| 9 | I | Pentecost Vigil | A unique I-class vigil, below All Souls but above octave days and remaining feasts. |
+| 10 | I | Days within the Easter and Pentecost octaves | They precede other universal and proper I-class feasts; an impeded I-class feast is transferred. |
+| 11 | I | Other universal I-class feasts | Includes universal celebrations not named above. |
+| 12 | I | Proper I-class feasts | Principal patrons; cathedral dedication; local principal patron; dedication and title of the church; religious title, canonized founder, and principal patron, as rubrics 42–46 specify. |
+| 13 | I | Indulted I-class feasts, movable before fixed | An actual indult and its scope must be produced. |
+| 14 | II | II-class feasts of the Lord, movable before fixed | On a II-class Sunday they replace it with all rights, without Sunday commemoration (rubric 16a). |
+| 15 | II | II-class Sundays | They precede other universal II-class feasts, but yield to the Lord exception and superior I-class positions. |
+| 16 | II | Universal II-class feasts not of the Lord | A saint here loses to a II-class Sunday; a universal feast here can precede an Ember feria at position 18. |
+| 17 | II | Days within the Christmas octave | Subject to the special Christmas-octave arrangement in rubrics 68–70. |
+| 18 | II | December 17–23 ferias and Ember Days of Advent, Lent, and September | They precede proper II-class feasts but follow universal II-class feasts. |
+| 19 | II | Proper II-class feasts | Secondary patrons and the other proper entries listed in the table. |
+| 20 | II | Indulted II-class feasts, movable before fixed | Source the grant; “local custom” does not establish this row. |
+| 21 | II | II-class vigils | When impeded by a higher II-class item they are commemorated; on any Sunday or I-class feast they are omitted under rubric 33. |
+| 22 | III | Lenten and Passiontide ferias from Thursday after Ash Wednesday through Saturday before Palm Sunday, excluding Ember Days | They precede every III-class feast. |
+| 23 | III | Particular III-class feasts | Certain diocesan, church, and religious saints and indulted particular feasts, in the table’s internal order. |
+| 24 | III | Universal III-class feasts, movable before fixed | They precede early Advent ferias and III-class vigils. |
+| 25 | III | Advent ferias through December 16, excluding Ember Days | They yield to III-class feasts but are privilegedly commemorated. |
+| 26 | III | III-class vigils | St Lawrence’s vigil; it yields to higher III-class positions but is then commemorated unless rubric 33 omits it. |
+| 27 | IV | Office of Our Lady on Saturday | Applies only when an otherwise IV-class Saturday feria occurs under rubric 78. |
+| 28 | IV | IV-class ferias | Lowest calendar position, but not a license for any requested Mass without its own permission. |
 
 ### Sunday rules that qualify the table
 
@@ -353,32 +353,32 @@ The following worksheet begins with the admitted Mass already established. “St
 
 | No. | Moment | Source layer | Assembly decision |
 |:----|:-------------|:-----------------|:-----------------------------|
-|  | Entrance and preparation | *Ritus servandus*; *Ordo Missae* | Ministers, approach, chalice and Missal placement, and sung or Low execution follow the stable rite and ceremonial conditions. |
-|  | Sign, *Introibo*, Psalm 42 | Stable Order | Psalm 42 is omitted in Masses of the season from Passion Sunday through Holy Thursday and in Requiems; the whole preparation has further omissions after specified processions (424–425). |
-|  | Confession and absolution prayers | Stable Order | Retained unless a particular preceding rite triggers rubric 424’s full omission. |
-|  | Ascent, altar kiss, incense | Stable Order; form of Mass | Incense belongs to Solemn Mass and may be used in sung Mass under 426; prayers remain governed by the *Ordo*. |
-|  | Introit | Formulary | Take its antiphon and verse; repeat as directed. Omit its *Gloria Patri* in seasonal Passiontide Masses and Requiems; apply Paschal Alleluias (427–429). |
-|  | Kyrie | Stable Ordinary | Ninefold pattern under 430; music changes its execution, not its place. |
-|  | Gloria | Day and Mass-category rules | Determine from 431–432; never infer it merely because the printed feast page contains one. |
-|  | Greeting and Collects | Formulary plus commemorations | Say the Mass Collect, then admitted commemorations and other prayers in order, never exceeding the limits in 433–465. |
-|  | Lessons | Formulary; special-day rubrics | Take the appointed Epistle or lessons. Ember and other multi-lesson Masses obey 467–468, including the distinction between conventual/ordination and other Masses. |
-|  | Gradual, Alleluia, Tract, Sequence | Formulary plus season | Use the appointed combination. Sequences are omitted in votive Masses; *Dies irae* follows 399 (469–470). |
-|  | Gospel preparation | Stable Order; ministerial form | *Munda cor*, blessing, lights, incense, and movement differ with ministers under the *Ritus servandus*. |
-|  | Gospel and homily | Formulary; stable frame | Use the selected Gospel. Rubric 474 commends a brief homily especially on Sundays and holy days; another priest’s homily suspends rather than overlaps the Mass. |
-|  | Creed | Day and Mass-category rules | Apply 475–476. A commemoration never causes it; an occurring Sunday can require it even in a permitted II-class votive. |
-|  | Offertory antiphon | Formulary plus season | Use the appointed antiphon; apply Paschal or Septuagesima treatment in 477–478. |
-|  | Offering through *Orate, fratres* | Stable Order | Host, chalice, incense if used, Lavabo, and offering prayers remain stable, with Requiem variants in their proper place. |
-|  | Secrets | Same prayer set as Collects | Repeat the admitted prayers in the same number and order, silently, under 480–481. |
-|  | Preface | Proper, seasonal, or Common | First use a Preface proper to the Mass; otherwise use the governing seasonal Preface; otherwise the Common Preface (482–499). A commemoration never supplies a Preface. |
-|  | Sanctus and Canon | Stable Ordinary and Canon | Use the Roman Canon. Insert only the proper *Communicantes*, *Hanc igitur*, or *Qui pridie* directed by the day or formulary (500–501). |
-|  | Pater through Agnus Dei | Stable Order with category variants | Requiem changes to the Agnus Dei, peace, and other texts come from its rite; ritual additions such as nuptial prayers occur only where printed. |
-|  | Celebrant’s Communion and faithful | Stable Order; ritual conditions | Distribution ordinarily follows the celebrant’s Precious Blood; rubrics 502–503 govern the 1962 form. |
-|  | Communion antiphon | Formulary plus season | Use the appointed antiphon and Paschal Alleluia rule in 504. |
-|  | Postcommunions | Same prayer set as Collects | Repeat the opening prayer set in the same number, mode, and order (505). |
-|  | Prayer over the people | Lenten/Passion ferial overlay | Add after the final Postcommunion in ferial Masses of Lent and Passiontide outside the Triduum, even after three Postcommunions (506). |
-|  | Dismissal | Day and following action | Normally *Ite, missa est*; *Benedicamus Domino* where 507a directs; *Requiescant in pace* in Requiems; Paschal octave Alleluias where directed. |
-|  | *Placeat* and blessing | Stable Order plus dismissal result | Blessing is omitted after *Benedicamus Domino* and *Requiescant in pace* (508), and ritual blessings may intervene where printed. |
-|  | Last Gospel | Stable default plus exceptions | John 1 is normal. Palm Sunday has its stated proper Gospel; 510 omits it in listed Masses and actions, including a Requiem followed by absolution at the bier. |
+| 1 | Entrance and preparation | *Ritus servandus*; *Ordo Missae* | Ministers, approach, chalice and Missal placement, and sung or Low execution follow the stable rite and ceremonial conditions. |
+| 2 | Sign, *Introibo*, Psalm 42 | Stable Order | Psalm 42 is omitted in Masses of the season from Passion Sunday through Holy Thursday and in Requiems; the whole preparation has further omissions after specified processions (424–425). |
+| 3 | Confession and absolution prayers | Stable Order | Retained unless a particular preceding rite triggers rubric 424’s full omission. |
+| 4 | Ascent, altar kiss, incense | Stable Order; form of Mass | Incense belongs to Solemn Mass and may be used in sung Mass under 426; prayers remain governed by the *Ordo*. |
+| 5 | Introit | Formulary | Take its antiphon and verse; repeat as directed. Omit its *Gloria Patri* in seasonal Passiontide Masses and Requiems; apply Paschal Alleluias (427–429). |
+| 6 | Kyrie | Stable Ordinary | Ninefold pattern under 430; music changes its execution, not its place. |
+| 7 | Gloria | Day and Mass-category rules | Determine from 431–432; never infer it merely because the printed feast page contains one. |
+| 8 | Greeting and Collects | Formulary plus commemorations | Say the Mass Collect, then admitted commemorations and other prayers in order, never exceeding the limits in 433–465. |
+| 9 | Lessons | Formulary; special-day rubrics | Take the appointed Epistle or lessons. Ember and other multi-lesson Masses obey 467–468, including the distinction between conventual/ordination and other Masses. |
+| 10 | Gradual, Alleluia, Tract, Sequence | Formulary plus season | Use the appointed combination. Sequences are omitted in votive Masses; *Dies irae* follows 399 (469–470). |
+| 11 | Gospel preparation | Stable Order; ministerial form | *Munda cor*, blessing, lights, incense, and movement differ with ministers under the *Ritus servandus*. |
+| 12 | Gospel and homily | Formulary; stable frame | Use the selected Gospel. Rubric 474 commends a brief homily especially on Sundays and holy days; another priest’s homily suspends rather than overlaps the Mass. |
+| 13 | Creed | Day and Mass-category rules | Apply 475–476. A commemoration never causes it; an occurring Sunday can require it even in a permitted II-class votive. |
+| 14 | Offertory antiphon | Formulary plus season | Use the appointed antiphon; apply Paschal or Septuagesima treatment in 477–478. |
+| 15 | Offering through *Orate, fratres* | Stable Order | Host, chalice, incense if used, Lavabo, and offering prayers remain stable, with Requiem variants in their proper place. |
+| 16 | Secrets | Same prayer set as Collects | Repeat the admitted prayers in the same number and order, silently, under 480–481. |
+| 17 | Preface | Proper, seasonal, or Common | First use a Preface proper to the Mass; otherwise use the governing seasonal Preface; otherwise the Common Preface (482–499). A commemoration never supplies a Preface. |
+| 18 | Sanctus and Canon | Stable Ordinary and Canon | Use the Roman Canon. Insert only the proper *Communicantes*, *Hanc igitur*, or *Qui pridie* directed by the day or formulary (500–501). |
+| 19 | Pater through Agnus Dei | Stable Order with category variants | Requiem changes to the Agnus Dei, peace, and other texts come from its rite; ritual additions such as nuptial prayers occur only where printed. |
+| 20 | Celebrant’s Communion and faithful | Stable Order; ritual conditions | Distribution ordinarily follows the celebrant’s Precious Blood; rubrics 502–503 govern the 1962 form. |
+| 21 | Communion antiphon | Formulary plus season | Use the appointed antiphon and Paschal Alleluia rule in 504. |
+| 22 | Postcommunions | Same prayer set as Collects | Repeat the opening prayer set in the same number, mode, and order (505). |
+| 23 | Prayer over the people | Lenten/Passion ferial overlay | Add after the final Postcommunion in ferial Masses of Lent and Passiontide outside the Triduum, even after three Postcommunions (506). |
+| 24 | Dismissal | Day and following action | Normally *Ite, missa est*; *Benedicamus Domino* where 507a directs; *Requiescant in pace* in Requiems; Paschal octave Alleluias where directed. |
+| 25 | *Placeat* and blessing | Stable Order plus dismissal result | Blessing is omitted after *Benedicamus Domino* and *Requiescant in pace* (508), and ritual blessings may intervene where printed. |
+| 26 | Last Gospel | Stable default plus exceptions | John 1 is normal. Palm Sunday has its stated proper Gospel; 510 omits it in listed Masses and actions, including a Requiem followed by absolution at the bier. |
 
 ### Completing a partial sanctoral formulary
 
@@ -445,9 +445,9 @@ The Collect set determines the Secret and Postcommunion sets. A simple worksheet
 
 | Order | Opening | Offertory | After Communion |
 |:-------|:-----------------|:-----------------|:-----------------|
-|  | Mass Collect | Mass Secret | Mass Postcommunion |
-|  | First admitted commemoration | Its Secret | Its Postcommunion |
-|  | Second admitted commemoration or other prayer | Its Secret | Its Postcommunion |
+| 1 | Mass Collect | Mass Secret | Mass Postcommunion |
+| 2 | First admitted commemoration | Its Secret | Its Postcommunion |
+| 3 | Second admitted commemoration or other prayer | Its Secret | Its Postcommunion |
 
 A prayer joined under one conclusion is written on the same conclusion line but remains governed by rubrics 444–446. The Nuptial Collect, ritual prayer, papal or episcopal anniversary prayer, missionary prayer, imposed prayer, and free votive prayer each have their own admission rule; they are not interchangeable “extra collects.”
 
@@ -1536,19 +1536,19 @@ Complete this worksheet in order. A blank source field is a reason to stop; it i
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">1</td>
 <td style="text-align: left;"><hr /></td>
 <td style="text-align: left;"><hr /></td>
 <td style="text-align: left;"><hr /></td>
 </tr>
 <tr>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">2</td>
 <td style="text-align: left;"><hr /></td>
 <td style="text-align: left;"><hr /></td>
 <td style="text-align: left;"><hr /></td>
 </tr>
 <tr>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">3</td>
 <td style="text-align: left;"><hr /></td>
 <td style="text-align: left;"><hr /></td>
 <td style="text-align: left;"><hr /></td>

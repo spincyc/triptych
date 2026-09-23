@@ -70,9 +70,10 @@ PROPER_STUDY_MARKDOWN_DIALECT = (
     "-bracketed_spans-raw_attribute-superscript"
 )
 WEB_TOC_SENTINEL = "TRIPTYCHWEBTOCMARKER"
-# The shim writes this after a collapsed \multicolumn cell's text, so the table
-# filter below knows the cell for a span; the filter deletes it. At the end of
-# the cell it cannot split a paragraph that the text opens with a declaration.
+# The shim writes this before a collapsed \multicolumn cell's text. Whatever
+# formatting pandoc then finds wrapped around the mark came from the column's
+# prefix, which a \multicolumn replaces, so the table filter below unwraps it
+# and deletes the mark.
 SPAN_CELL_MARK = "TRIPTYCHSPANCELL"
 # Pandoc replays a column prefix such as >{\bfseries\raggedright} into every
 # cell of its column, and a paragraph break inside the replay -- \raggedright
@@ -80,9 +81,9 @@ SPAN_CELL_MARK = "TRIPTYCHSPANCELL"
 # the cell became an empty bold paragraph, then its text unbolded, and the
 # table fell back to HTML. The filter restores the cell as TeX sets it: the
 # empty paragraph goes and its formatting wraps the text that followed. A cell
-# the shim collapsed from \multicolumn keeps only its own formatting, because a
-# \multicolumn replaces its column's prefix. Bold inside bold in a cell, which a
-# \textbf header in a bold column makes, is set once.
+# the shim collapsed from \multicolumn keeps only its own formatting. Bold
+# inside bold in a cell, which a \textbf header in a bold column makes, is set
+# once.
 TABLE_FILTER = """
 local MARK = "@MARK@"
 local FORMATS = {Strong = true, Emph = true, SmallCaps = true, Underline = true}
@@ -99,18 +100,27 @@ local function empty_chain(block)
   return nil
 end
 
-local function unmark(inlines)
-  local last = inlines[#inlines]
-  if last == nil then return false end
-  if FORMATS[last.t] then return unmark(last.content) end
-  if last.t ~= "Str" or last.text:sub(-#MARK) ~= MARK then return false end
-  last.text = last.text:sub(1, -#MARK - 1)
-  if last.text == "" then
-    inlines:remove(#inlines)
-    local previous = inlines[#inlines]
-    if previous and (previous.t == "Space" or previous.t == "SoftBreak") then
-      inlines:remove(#inlines)
-    end
+-- Delete the span mark opening a block and unwrap the formatting around it.
+local function unmark(block)
+  if block.t ~= "Para" and block.t ~= "Plain" then return false end
+  local chain, list = {}, block.content
+  while #list > 0 and FORMATS[list[1].t] do
+    table.insert(chain, list[1])
+    list = list[1].content
+  end
+  local first = list[1]
+  if first == nil or first.t ~= "Str" or first.text:sub(1, #MARK) ~= MARK then return false end
+  first.text = first.text:sub(#MARK + 1)
+  if first.text == "" then
+    list:remove(1)
+    if list[1] and (list[1].t == "Space" or list[1].t == "SoftBreak") then list:remove(1) end
+  end
+  for index = #chain, 1, -1 do
+    local parent = index == 1 and block.content or chain[index - 1].content
+    local merged = pandoc.Inlines{}
+    merged:extend(chain[index].content)
+    for position = 2, #parent do merged:insert(parent[position]) end
+    if index == 1 then block.content = merged else chain[index - 1].content = merged end
   end
   return true
 end
@@ -125,31 +135,39 @@ local function flatten(element)
 end
 
 local function repair(cell)
-  local blocks = cell.contents
-  local span = false
-  local last = blocks[#blocks]
-  if last and (last.t == "Para" or last.t == "Plain") then
-    span = unmark(last.content)
-    if span and #last.content == 0 then blocks:remove(#blocks) end
+  local blocks, changed, span = cell.contents, false, false
+  for _, block in ipairs(blocks) do
+    if unmark(block) then
+      span = true
+      break
+    end
   end
-  local chain = #blocks > 1 and empty_chain(blocks[1])
-  if chain then
-    local rest = pandoc.Blocks{}
-    for index = 2, #blocks do
+  if span then
+    local kept = pandoc.Blocks{}
+    for _, block in ipairs(blocks) do
+      local text = block.t ~= "Para" and block.t ~= "Plain"
+        or (#block.content > 0 and empty_chain(block) == nil)
+      if text then kept:insert(block) end
+    end
+    blocks, changed = kept, true
+  else
+    local chain = #blocks > 1 and empty_chain(blocks[1]) or nil
+    local rest = chain and pandoc.Blocks{} or nil
+    for index = 2, (rest and #blocks or 0) do
       if blocks[index].t ~= "Para" and blocks[index].t ~= "Plain" then rest = nil break end
       rest:insert(blocks[index])
     end
     if rest then
-      if not span then
-        for _, block in ipairs(rest) do
-          local content = block.content
-          for index = #chain, 1, -1 do content = pandoc.Inlines{pandoc[chain[index]](content)} end
-          block.content = content
-        end
+      for _, block in ipairs(rest) do
+        local content = block.content
+        for index = #chain, 1, -1 do content = pandoc.Inlines{pandoc[chain[index]](content)} end
+        block.content = content
       end
-      if #rest == 1 then rest[1] = pandoc.Plain(rest[1].content) end
-      blocks = rest
+      blocks, changed = rest, true
     end
+  end
+  if changed and #blocks == 1 and blocks[1].t == "Para" then
+    blocks[1] = pandoc.Plain(blocks[1].content)
   end
   cell.contents = blocks:walk({Strong = flatten})
 end
@@ -289,6 +307,26 @@ LAYOUT_MACRO_RE = re.compile(r"\\(?:titleformat|titlespacing)\*?")
 # \arraybackslash swallow the token after it: a citation like "1 Pet. 5:6"
 # silently loses its book number.  The macro only restores \\ inside a p column.
 ALIGNMENT_FIXUP_RE = re.compile(r"\\arraybackslash\s*")
+# Pandoc reads \RaggedRight, \RaggedLeft, \Centering, \centering or \raggedleft
+# closing a column prefix as taking the number that opens each cell: "18 July"
+# published as "July" and "1903" as nothing, in the parish ledgers, the
+# institute timelines and the calendars. Alignment in a prefix only shapes
+# line breaking on paper, so these declarations are dropped from every
+# prefix. \raggedright deletes nothing; where it breaks a bold prefix instead,
+# the table filter repairs the cell.
+COLUMN_PREFIX_RE = re.compile(r">(\s*)\{((?:[^{}]|\{[^{}]*\})*)\}")
+PREFIX_ALIGNMENT_RE = re.compile(
+    r"\\(?:raggedleft|centering|RaggedRight|RaggedLeft|Centering)(?![A-Za-z@])\s*"
+)
+
+
+def fix_column_specs(text: str) -> str:
+    """Drop the column-prefix commands pandoc misreads."""
+    return COLUMN_PREFIX_RE.sub(
+        lambda match: ">" + match.group(1) + "{"
+        + PREFIX_ALIGNMENT_RE.sub("", match.group(2)) + "}",
+        ALIGNMENT_FIXUP_RE.sub("", text),
+    )
 # pandoc reads \cmidrule's trim spec and span as cell text and leaks them into
 # the following row.  A partial rule carries no text, so it is dropped whole,
 # from the leaf's carried definitions as well as its body: a rule inside a row
@@ -297,7 +335,8 @@ PARTIAL_RULE_RE = re.compile(r"\\cmidrule\s*(?:\([a-zA-Z]*\))?\s*(?:\{[^{}]*\})?
 # A starred row end, \\*[len], only forbids a page break after the row, but
 # pandoc read the star and the length as the next row's text: "\[-0.06em\]"
 # opened each phase's first unit in the postconciliar inventory, from inside
-# the carried \unitphase definition. The star has no web counterpart.
+# the carried \unitphase definition, and a body row ending \\* put a star
+# before the next row's first cell. The star has no web counterpart.
 STARRED_ROW_END_RE = re.compile(r"\\\\\*")
 # Register assignments carry no text and are not brace-argument macros.
 REGISTER_ASSIGNMENT_RE = re.compile(r"\\Urlmuskip\s*=[^\\\n]*(?:\\relax)?")
@@ -1441,7 +1480,7 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         body = body.replace(r"\tableofcontents", "")
     body = REGISTER_ASSIGNMENT_RE.sub("", body)
     body = PARTIAL_RULE_RE.sub("", body)
-    body = ALIGNMENT_FIXUP_RE.sub("", body)
+    body = STARRED_ROW_END_RE.sub(r"\\\\", fix_column_specs(body))
     body = strip_layout_macros(body)
     body = LIST_OPTION_RE.sub(r"\1", body)
     # The dossier names are the shared format's; a leaf's own dossier is not lifted.
@@ -1455,10 +1494,10 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         if failures:
             raise ConversionError("\n".join(failures))
     shim_text, shim_bracketed = guard_opening_brackets(
-        ALIGNMENT_FIXUP_RE.sub("", SHIM.read_text(encoding="utf-8"))
+        fix_column_specs(SHIM.read_text(encoding="utf-8"))
     )
-    locals_text, locals_bracketed = guard_opening_brackets(ALIGNMENT_FIXUP_RE.sub(
-        "", STARRED_ROW_END_RE.sub(r"\\\\", PARTIAL_RULE_RE.sub(
+    locals_text, locals_bracketed = guard_opening_brackets(fix_column_specs(
+        STARRED_ROW_END_RE.sub(r"\\\\", PARTIAL_RULE_RE.sub(
             "", LIST_OPTION_RE.sub(r"\1", local_definitions(preamble))
         ))
     ))

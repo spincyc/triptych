@@ -1089,6 +1089,57 @@ class WebEditionConversionTests(unittest.TestCase):
         self.assertRegex(markdown, r"(?m)^\| \*\*Before the settler town\*\* +\| Homelands\. +\|$")
         self.assertRegex(markdown, r"(?m)^\| \*\*In the next decade\*\* +\| A mission\. +\|$")
 
+    def test_alignment_ending_a_column_prefix_keeps_a_leading_date_and_year(self) -> None:
+        # Pandoc read each of these, closing a column prefix, as taking the
+        # number that opens a cell: "18 July 1988" became "July 1988" and a
+        # bare "1996" an empty cell.
+        # \RaggedLeft is dropped from a prefix the same way (see the unit test
+        # below), but no leaf uses it and the unknown-macro gate stops one that
+        # would, so it cannot reach pandoc to be exercised here.
+        for declaration in (r"\RaggedRight", r"\Centering", r"\centering", r"\raggedleft"):
+            for font, mark in (("", ""), (r"\bfseries", "**")):
+                with self.subTest(declaration=declaration, font=font):
+                    markdown = self.convert(
+                        "\\begin{longtable}{>{" + font + declaration + "\\arraybackslash}"
+                        "p{0.2\\linewidth}p{0.6\\linewidth}}\n"
+                        r"18 July 1988 & The act of foundation.\\" "\n"
+                        r"1996 & The first apostolate.\\" "\n"
+                        "\\end{longtable}"
+                    )
+                    self.assertRegex(
+                        markdown, rf"(?m)^\| {re.escape(mark)}18 July 1988{re.escape(mark)} +\| "
+                        r"The act of foundation\. +\|$")
+                    self.assertRegex(
+                        markdown, rf"(?m)^\| {re.escape(mark)}1996{re.escape(mark)} +\| "
+                        r"The first apostolate\. +\|$")
+
+    def test_starred_row_end_in_the_body_leaks_no_star(self) -> None:
+        markdown = self.convert(
+            "\\begin{longtable}{p{0.2\\linewidth}p{0.6\\linewidth}}\n"
+            r"Diocese & anniversary of the dedication of the cathedral\\*" "\n"
+            r" & secondary Patron duly constituted\\" "\n"
+            "\\end{longtable}"
+        )
+        self.assertNotIn(r"\*", markdown)
+        self.assertRegex(markdown, r"(?m)^\| +\| secondary Patron duly constituted +\|$")
+
+    def test_unsplit_span_in_a_bold_column_keeps_only_its_own_face(self) -> None:
+        # A \multicolumn replaces its column's prefix even where the prefix did
+        # not split the cell: the label stays italic, the note plain, and a span
+        # set in bold of its own stays bold.
+        markdown = self.convert(
+            "\\begin{longtable}{>{\\bfseries}p{0.2\\linewidth}p{0.6\\linewidth}}\n"
+            r"Offertory & Ps 95:8\\" "\n"
+            r"\multicolumn{1}{r}{\textit{Narrated event}} & Sinai\\" "\n"
+            r"\multicolumn{2}{l}{A note set across both columns.}\\" "\n"
+            r"\multicolumn{2}{l}{\textbf{Liturgy of the Word}}\\" "\n"
+            "\\end{longtable}"
+        )
+        self.assertRegex(markdown, r"(?m)^\| \*\*Offertory\*\* +\| Ps 95:8 +\|$")
+        self.assertRegex(markdown, r"(?m)^\| \*Narrated event\* +\| Sinai +\|$")
+        self.assertRegex(markdown, r"(?m)^\| A note set across both columns\. +\| +\|$")
+        self.assertRegex(markdown, r"(?m)^\| \*\*Liturgy of the Word\*\* +\| +\|$")
+
     def test_span_opening_with_a_declaration_stays_one_plain_cell(self) -> None:
         # The span mark follows the cell's text, so a span that opens with
         # \raggedright, as a legacy dossier note does, is not split by it.
@@ -1417,6 +1468,21 @@ class WebEditionAuditTests(unittest.TestCase):
                 self.assertEqual(len(masked), len(text))
                 self.assertNotIn("gone", masked)
                 self.assertNotIn("whole", masked)
+
+    def test_every_alignment_declaration_leaves_a_column_prefix_except_raggedright(self) -> None:
+        for declaration in (r"\RaggedRight", r"\RaggedLeft", r"\Centering",
+                            r"\centering", r"\raggedleft"):
+            with self.subTest(declaration=declaration):
+                self.assertEqual(
+                    DRIVER.fix_column_specs(
+                        ">{\\bfseries" + declaration + "\\arraybackslash}p{0.2\\linewidth}"),
+                    ">{\\bfseries}p{0.2\\linewidth}",
+                )
+        # \raggedright deletes nothing; the table filter repairs the cell it splits.
+        self.assertEqual(
+            DRIVER.fix_column_specs(r">{\bfseries\raggedright\arraybackslash}p{1cm}"),
+            r">{\bfseries\raggedright}p{1cm}",
+        )
 
     def test_empty_or_nested_bold_and_a_leftover_span_mark_are_reported(self) -> None:
         failures = DRIVER.audit_output(

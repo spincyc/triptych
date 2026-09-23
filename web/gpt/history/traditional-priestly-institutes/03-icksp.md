@@ -577,32 +577,32 @@ This source-audited historical study was checked through 17 July 2026. It distin
 |:-----------|:---------------------------------|:-------------------|
 | **Date** | **Event or act** | **Witness and boundary** |
 | **August 1963** | Priests meet around Étienne Catta at Chiché; the initiative develops into the Opus Sacerdotale in 1964. | Jacquemin historical study; background, not ICKSP foundation. |
-| **June 1979** | John Paul II ordains eighty-eight priests in Saint Peter’s Basilica. The ICKSP identifies Wach and Mora among them. | Vatican event record plus institutional identification; Vatican pages contain no roster. |
+| **24 June 1979** | John Paul II ordains eighty-eight priests in Saint Peter’s Basilica. The ICKSP identifies Wach and Mora among them. | Vatican event record plus institutional identification; Vatican pages contain no roster. |
 | **1980s** | Wach works in a Roman and French priestly context while candidates seek traditional formation; the community project takes form. | Later institutional histories; exact agreements and chronology incomplete. |
 | **Late 1980s** | An emerging group passes through a French setting associated with the Opus Sacerdotale. | Institutional memory and Jacquemin; exact location unresolved and no original residence or formation act checked. |
-| **September 1990** | The Institute reports diocesan erection by Bishop Obamba at Mouila, Gabon, and Wach’s appointment as vicar general. | Repeated institutional history; original diocesan acts not located. |
+| **1 September 1990** | The Institute reports diocesan erection by Bishop Obamba at Mouila, Gabon, and Wach’s appointment as vicar general. | Repeated institutional history; original diocesan acts not located. |
 | **Early 1990s** | Gricigliano near Florence becomes motherhouse and international seminary under Archbishop Piovanelli’s reception. | Institutional history; original Florence act and property conditions not checked. |
-|  | The Institute dates its first United States apostolate to an invitation from Bishop Raymond Burke at La Crosse. | United States institutional timeline. |
+| **1996** | The Institute dates its first United States apostolate to an invitation from Bishop Raymond Burke at La Crosse. | United States institutional timeline. |
 | **January 2001 / 2004** | Sister pages date the women’s beginning or canonical establishment differently. | Conflicting institutional retrospectives; original act not found. |
-|  | Cardinal Francis George invites the Institute to the future Shrine of Christ the King in Chicago. | Institutional history; later restoration history bounded. |
-| **July 2007** | Benedict XVI issues *Summorum Pontificum*, broadening the general 1962-Missal regime and PCED competence. | Official papal act; not ICKSP erection. |
-| **October 2008** | PCED N. 181/2008 erects the ICKSP as a society of apostolic life of pontifical right, approves constitutions for five years, and names Wach for a renewable six-year term. | Official hosted Latin scan; controlling male-society act. |
-| **October 2008** | PCED N. 182/2008 separately erects the Sister Adorers as a public association of faithful for three years and approves constitutions for that term. | Official hosted Latin scan; not society-of-apostolic-life status. |
-|  | The Institute announces an ongoing ordinary apostolic visitation ordered by PCED and led by Archbishop François Bacqué with Luc-Thomas Somme. | Institutional notice; original mandate and report not located. |
-| **/ 28 February 2016** | Fire severely damages the Chicago shrine; the archdiocese later deeds the building and land to the Institute for stabilization and restoration. | Institutional timeline plus official archdiocesan property release. |
-| **January / 2 February 2016** | The Institute reports definitive Holy See approval of its constitutions; former visitor Bacqué directly confirms the approval and identifies CDF incorporating PCED as the competent office. | Institutional notice and Bacqué’s signed contemporary sermon; full act and constitutions not public. |
-| **January 2019** | Francis decommissions PCED and transfers its functions to the Congregation for the Doctrine of the Faith. | Official papal act; not suppression of the Institute. |
-|  | An ICKSP General Chapter elects Wach superior general for six years under constitution article 20. | Institutional election announcement; exact date and full chapter acts not checked. |
-| **July 2021** | Francis issues *Traditionis custodes*; former-PCED societies move under the consecrated-life dicastery. | Official papal act. |
-| **January / 1 August 2022** | Chicago’s general implementation policy takes effect; public Masses are later suspended at the shrine. | Official local policy and current ICKSP page; no checked individual decree resolves cause or complete scope. |
-| **September 2023** | Worcester publishes a decree establishing Saint Paul Oratory at Warren amid later ICKSP service. | Official diocesan decree listing; local reception, not universal faculty. |
-| **–30 September 2023** | *Le Parisien* publishes a four-part investigation into alleged governance, formation, expenditure, and ecclesial-culture concerns. | Journalism with earlier Wach response; no public Holy See disposition located. |
-| **June 2024** | Francis receives Wach and entourage on the forty-fifth anniversary of his ordination. | Press Office confirms occurrence; ICKSP reports private content. |
+| **2004** | Cardinal Francis George invites the Institute to the future Shrine of Christ the King in Chicago. | Institutional history; later restoration history bounded. |
+| **7 July 2007** | Benedict XVI issues *Summorum Pontificum*, broadening the general 1962-Missal regime and PCED competence. | Official papal act; not ICKSP erection. |
+| **7 October 2008** | PCED N. 181/2008 erects the ICKSP as a society of apostolic life of pontifical right, approves constitutions for five years, and names Wach for a renewable six-year term. | Official hosted Latin scan; controlling male-society act. |
+| **7 October 2008** | PCED N. 182/2008 separately erects the Sister Adorers as a public association of faithful for three years and approves constitutions for that term. | Official hosted Latin scan; not society-of-apostolic-life status. |
+| **2014** | The Institute announces an ongoing ordinary apostolic visitation ordered by PCED and led by Archbishop François Bacqué with Luc-Thomas Somme. | Institutional notice; original mandate and report not located. |
+| **2015 / 28 February 2016** | Fire severely damages the Chicago shrine; the archdiocese later deeds the building and land to the Institute for stabilization and restoration. | Institutional timeline plus official archdiocesan property release. |
+| **29 January / 2 February 2016** | The Institute reports definitive Holy See approval of its constitutions; former visitor Bacqué directly confirms the approval and identifies CDF incorporating PCED as the competent office. | Institutional notice and Bacqué’s signed contemporary sermon; full act and constitutions not public. |
+| **17 January 2019** | Francis decommissions PCED and transfers its functions to the Congregation for the Doctrine of the Faith. | Official papal act; not suppression of the Institute. |
+| **2020** | An ICKSP General Chapter elects Wach superior general for six years under constitution article 20. | Institutional election announcement; exact date and full chapter acts not checked. |
+| **16 July 2021** | Francis issues *Traditionis custodes*; former-PCED societies move under the consecrated-life dicastery. | Official papal act. |
+| **25 January / 1 August 2022** | Chicago’s general implementation policy takes effect; public Masses are later suspended at the shrine. | Official local policy and current ICKSP page; no checked individual decree resolves cause or complete scope. |
+| **14 September 2023** | Worcester publishes a decree establishing Saint Paul Oratory at Warren amid later ICKSP service. | Official diocesan decree listing; local reception, not universal faculty. |
+| **29–30 September 2023** | *Le Parisien* publishes a four-part investigation into alleged governance, formation, expenditure, and ecclesial-culture concerns. | Journalism with earlier Wach response; no public Holy See disposition located. |
+| **24 June 2024** | Francis receives Wach and entourage on the forty-fifth anniversary of his ordination. | Press Office confirms occurrence; ICKSP reports private content. |
 | **June 2025** | The Diocese of Syracuse receives an ICKSP priest and brother at Saint Mary of the Assumption Shrine, Oswego. | Official diocesan assignment notice; continuing status checked in July 2026. |
-| **September 2025** | An ICKSP canon becomes rector of Epiphany of Our Lord Shrine, Tampa, on presentation by the provincial. | Official Diocese of Saint Petersburg appointment. |
-| **March 2026** | *The Pillar* publishes former-Sister allegations and the superior’s responses; former candidates report a planned Vatican visitation. | Journalism; no public Vatican mandate, start, report, or outcome checked. |
-|  | International calendar reports more than 130 priests, about 100 seminarians, about 20 oblates, and more than 70 Sisters. | Rounded institutional self-report; groups kept distinct. |
-| **July 2026** | Evidence and mutable-status cutoff. | No published universal ICKSP exemption or public adjudication of the reported concerns located. |
+| **1 September 2025** | An ICKSP canon becomes rector of Epiphany of Our Lord Shrine, Tampa, on presentation by the provincial. | Official Diocese of Saint Petersburg appointment. |
+| **12 March 2026** | *The Pillar* publishes former-Sister allegations and the superior’s responses; former candidates report a planned Vatican visitation. | Journalism; no public Vatican mandate, start, report, or outcome checked. |
+| **2026** | International calendar reports more than 130 priests, about 100 seminarians, about 20 oblates, and more than 70 Sisters. | Rounded institutional self-report; groups kept distinct. |
+| **17 July 2026** | Evidence and mutable-status cutoff. | No published universal ICKSP exemption or public adjudication of the reported concerns located. |
 
 ## References
 
