@@ -68,6 +68,12 @@ state = "in_progress"
   evidence = ["PROJECT-WORK.md", "tools/web-edition"]
 
   [[deliverables.requirements]]
+  id = "duplicated-longtable-head"
+  criterion = "Maintainer decision of 2026-09-23: a longtable that declares both endfirsthead and endhead publishes its header row once on the web, not again as its first body row; the fix carries a test and an audit; the 8 affected installed editions are regenerated, each diff proven to remove only the duplicated row, and independently reviewed; no PDF render input changes."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "tools/web-edition"]
+
+  [[deliverables.requirements]]
   id = "web-bindings-reapproved"
   criterion = "The release bindings of the regenerated editions are re-recorded only after a fresh operator approval, with ONLY scoped to them."
   status = "open"
