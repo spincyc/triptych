@@ -374,3 +374,80 @@ Scriptural Date and Location appendix, which starts a new page.
 edition, including provenance-matches-run against this run. This is still
 author verification. The shared-timestamp three-document build and the
 independent visual review remain to be done.
+
+## Author-study, iteration 3
+
+Revised 23 September 2026 in the same run, at author-study iteration 3. Study
+review iteration 2 returned one blocking finding, STU-020, and routed it to
+research: `research/interpretations.md` no longer recorded the readings the
+study gives. Research re-entered at its iteration 7 and revised only that
+record. Research review passed at its iteration 7. This stage reruns as a
+dependent of that repair and was forwarded no blocking finding. The entries
+above are kept as the record of the earlier passes. Where the iteration-2 entry
+says that Chrysostom, "with Ambrose at V.15", hears an inadequate confession,
+this entry supersedes it.
+
+### The study against the revised record
+
+The study was read against the revised record on every point STU-020 named. On
+v. 8, the first reading does not use the verse. The second reports Chrysostom
+first and Hilary after, takes its own sense of the verse from Schuster, and
+cites Hilary only to show that the men of the verse receive forgiveness and do
+not minister it. The third takes Hilary's side. In the anagogical senses, the
+second reading rests on Hilary VIII.7, Ambrose V.14 and Aquinas's *domum
+aeternitatis*, and 1 Cor 1:8 and *perficias* anchor the third reading only.
+Chrysostom's "not only the beginnings must be good, but the end also" and "need
+of many labors" stand on 1 Cor 1:7 (§ 6). His reading of v. 8 is covert
+accusation (§ 7). The record now agrees with the study on all of these points,
+and none of that prose was changed.
+
+In one place the revised record now contradicts the study. Record § 4.3 says
+that Ambrose at V.15 "may not be reported as judging the crowd 'in the same
+way' as Chrysostom". The study said exactly that in two places, which the
+standing study-review advisory STU-021 had named. Both places are repaired.
+
+### Standing advisories cleared
+
+- STU-021: in the second reading ("What the crowd said") and in the comparison,
+  Ambrose now judges the fear more severely than Chrysostom. At V.15 those who
+  watch the man rise are unbelievers, *Spectant surgentem increduli*, who
+  *divini operis miracula malunt timere quam credere*. Had they believed they
+  would have loved, and *quia non diligebant, calumniabantur*. The second
+  reading says that Chrysostom's crowd glorify God and fall short, while
+  Ambrose's fearers are the calumniators. The comparison says that his
+  judgement is negative, as Chrysostom's is, but his own. The wording was
+  checked in the tracked transcription `ambrose-luke5-raw.txt`, whose SHA-256
+  `fde2303a…6330ac52` was re-computed for this stage, at the line carrying
+  §§ 13–17.
+- STU-022: the Gradual paragraph now says what `research/scope.md` § 2.3
+  reports of the database's day 823. *Laetatus sum* is the Gradual in four of
+  the six books (Rheinau, Mont-Blandin, Corbie, Senlis). The Offertory and
+  Communion stand in the same four, and the Introit in three of them.
+
+The research-review advisories RES-031 to RES-036 are addressed to research
+records, which this stage does not edit. The study does not repeat the defect
+any of them names. RES-034 records that three loci the study quotes are
+carried by no research record: the continuation's pp. 395 and 408–409, and
+Aquinas's *quia portabatur, praecepit ut portaret*. Research review read all
+three and found them accurate. The iteration-0 entry above discloses the
+Aquinas sentence as this stage's own check.
+
+**Substantive word count: about 15,400 words** (about 14,200 without the
+`\latin{}` quotations; the three readings about 10,300). The count follows the
+iteration-2 method, excluding the map and comparison tables. As at iteration 2,
+exact agreement with the iteration-0 count is not claimed. The finished PDF is
+34 physical pages. As before, the comparison ends on a short page before the
+Scriptural Date and Location appendix, which starts a new page.
+
+### Author proof and checks
+
+`make doc` settles at 34 pages. The log has no undefined reference, rerun
+request, or overfull or underfull box. These all pass: `check-proper-components
+--phase artifacts --edition research`, `check-generation-metadata`,
+`check-web-edition`, and every `check-content-preflight` check for the research
+edition, including provenance-matches-run against this run. Every page was
+inspected on the contact sheets prepared by `tools/pdf-review`. The pages that
+carry the changes (9, 18, 28 and 29) and the final page, which holds the
+revision timestamp and colophon, were also inspected at full size. This is
+still author verification. The shared-timestamp three-document build and the independent
+visual review remain to be done.
