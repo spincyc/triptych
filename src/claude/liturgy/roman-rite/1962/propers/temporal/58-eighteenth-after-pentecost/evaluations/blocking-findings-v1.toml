@@ -49,10 +49,10 @@ provider = "claude"
 run_id = "71b6f89518984232"
 workflow = "proper-study"
 workflow_version = 6
-stage = "research-review"
-iteration = 7
+stage = "study-review"
+iteration = 3
 disposition = "PASS"
-standing = 1
+standing = 0
 accepted_count = 0
 advisory_count = 8
 observation_count = 2
@@ -71,24 +71,15 @@ observation_count = 2
 
 [[stages]]
 stage = "study-review"
-iteration = 2
-disposition = "CHANGES_REQUIRED"
+iteration = 3
+disposition = "PASS"
 run_id = "71b6f89518984232"
 workflow = "proper-study"
 workflow_version = 6
-standing = 1
+standing = 0
 accepted_count = 0
 advisory_count = 2
 observation_count = 0
-
-[[findings]]
-stage = "study-review"
-id = "STU-020"
-severity = "blocking"
-location = "research/interpretations.md: 4.3, the paragraph 'Where they agree, and it is worth saying because it looks like a disagreement' (lines 943-959: 'All three treat qui dedit potestatem talem hominibus the same way ... 1 gives the verse no weight either ... a study that staged that contest would be inventing it') and the last bullet of 'Where the real disagreements stand' (line 997: 'none of the three readings turns on it'); 3.2 and the 3.3 gospel row (line 823), which carry no Hilary at Mt 9:8; 3.4 Anagogical (lines 857-860); 2.4 Anagogical (line 587); 2.3 epistle row (lines 534-536). Contradicted by sections/40-nothing-of-our-own.tex (subsection 'The man who was carried', last paragraph, and the Anagogical item), sections/30-authority-on-earth.tex (Anagogical item) and sections/50-comparison.tex (first paragraph, and the paragraph 'One disagreement runs between two readings')."
-problem = "The manifest declares this record as every reading's source and as the reference of the concise overview, themes and commentary and of the homily body. It no longer records the readings the study gives, and it contradicts them on three points. (1) Mt 9:8. This round the study took route (a) of STU-014. The third reading now takes Hilary's side on the crowd's praise. I read In Matth. VIII.8 (PL 9, cols. 961-962) in the tracked layer db389fea: 'Conclusa sunt omnia suo ordine ... alioquin laus de uno homine, non de pluribus exstitisset: sed delati Deo honoris hinc causa est, quod potestas hominibus ac via data sit per verbum ejus ...'. The comparison now names the Chrysostom-Hilary difference as the one disagreement that runs between two readings. Record 4.3 says the opposite: all three readings treat the verse the same way, none turns on it, and 'a study that staged that contest would be inventing it'. Record 3 lists no Hilary at v. 8 among the third reading's witnesses. (2) The anagogical senses. Since the iteration-1 repair of STU-004, the study grounds the second reading's anagogical sense in Hilary VIII.7, Ambrose (Exp. in Lc. V.14) and Aquinas's domus aeternitatis. It grounds the third reading's in 1 Cor 1:8, where the confirming is Christ's on either reading, and in the Postcommunion's perficias. 1 Cor 1:8 is an anchor of the third reading only. Record 2.4 still gives the second reading 1 Cor 1:8, and record 3.4 still gives the third reading 'perfection, not completion'. (3) Record 2.3 (the epistle row) and record 3.4 set Chrysostom's 'not only the beginnings must be good, but the end also' beside v. 8's 'confirmabit vos usque in finem'. I re-fetched the New Advent delivery of Hom. in 1 Cor. 2; its SHA-256, 66bffe29...5858, matches research/scope.md 6.3. In it the sentence stands in section 6, on v. 7 ('Waiting for the revelation'). Chrysostom's reading of v. 8 is covert accusation (section 7), as the record's own 3.2 and scope 4.7 say. STU-003 removed this misplacement from the study, but it survives in the record. The contract requires research/interpretations.md to record each interpretation's four senses and the differences within and between interpretations. The concise and homily authors are pointed to this record, and its 4.5 points the homily to the third reading, whose 3.4 carries the misplaced quotation. As things stand, those authors would work from a record that denies the disagreement the reviewed study states, gives superseded senses, and attaches a Chrysostom sentence to the wrong verse. The author-study stage may not edit the record; it reported the 4.3 drift for routing in research/production-review.md this round. The study's own prose needs no change for this finding."
-required_result = "Research re-enters and brings research/interpretations.md into line with the study as reviewed. This needs no new retrieval and changes no evidence. (a) In 3.2 and the 3.3 gospel row, record Hilary, In Matth. VIII.8 (PL 9, cols. 961-962), as a witness of the third reading at Mt 9:8, with its locus and wording. Label the join of the Gospel's end to the Epistle's opening as editorial synthesis. (b) In 4.3, withdraw three statements: 'All three treat qui dedit potestatem talem hominibus the same way', 'a study that staged that contest would be inventing it' and 'none of the three readings turns on it'. State what the study states. The first reading does not use v. 8. The second reports Chrysostom first and Hilary after, takes its own sense of the verse from Schuster, and cites Hilary only to show that the men of the verse receive forgiveness and do not minister it. The third takes Hilary's side. Record the Chrysostom-Hilary difference as the one disagreement that runs between two readings. (c) Restate the anagogical senses of 2.4 and 3.4 as the study gives them, with 1 Cor 1:8 and perficias as anchors of the third reading only. (d) In 2.3 and 3.4, attach Chrysostom's 'not only the beginnings must be good, but the end also' and 'need of many labors' to 1 Cor 1:7 (Hom. in 1 Cor. 2, section 6), and give his reading of v. 8 only as covert accusation (section 7). Alternatively, take those sentences out of the v. 8 context. Research review then confirms the record against the study."
-repair_target = "research"
 
 [[advisories]]
 stage = "research-review"
@@ -140,19 +131,19 @@ required_result = "Replace the bold sentence and its sequel with section 7 as it
 
 [[advisories]]
 stage = "study-review"
-id = "STU-021"
+id = "STU-023"
 severity = "advisory"
-location = "sections/30-authority-on-earth.tex, subsection 'What the crowd said', the sentence 'St Ambrose, at Luke's parallel, judges the onlookers' fear in the same way: divini operis miracula malunt timere quam credere ... (Expositio in Lucam V.15)'; sections/50-comparison.tex, paragraph 'One disagreement runs between two readings', the sentence 'Ambrose, at Luke's parallel, judges the onlookers' fear in the same way.'"
-problem = "I read Exp. in Lc. V.15 in the tracked transcription (ambrose-luke5-raw.txt, SHA-256 fde2303a..., line 35). There the people who fear are unbelievers, and Ambrose identifies them with the calumniators: 'Spectant surgentem increduli ... et divini operis miracula malunt timere quam credere. Nam si credidissent, non timuissent utique, sed dilexissent ... Et ideo isti, quia non diligebant, calumniabantur.' He then turns to the scribes' evil thoughts and the leprosy in the hearts of the Jews. Chrysostom's crowd are glorifying God. Their confession falls short, and Christ 'does not rebuke them but raises their thoughts', as the study itself reports. research/scope.md 4.3 records Ambrose's identification of the fearers with the calumniators. 'In the same way' drops it, and it puts Ambrose on Chrysostom's side of the comparison's one between-reading disagreement with more agreement than his text supports. The direction of the judgement, negative, is right, so this does not block."
-required_result = "In both places, say that Ambrose judges the fear more severely: in V.15 those who fear are the unbelieving, who would rather fear than believe, and he identifies them with those who calumniated. Do not present his judgement as Chrysostom's. Alternatively, drop Ambrose from the comparison's statement of the Chrysostom-Hilary difference."
+location = "research/interpretations.md, 2.4 The four senses, Literal: 'At Capernaum a paralysed man is carried to Jesus' (line 610). Also 1.2, the paragraph on Hilary on the Gospel: 'This is the one checked witness that reads the Gospel's civitatem suam as a city in the sense the chants mean' (lines 249-250); and 1.3, the gospel row: 'It rests on Hilary's allegorical identification ... and on nothing Chrysostom or Augustine says' (lines 268-271)."
+problem = "These sentences are not among the points STU-020 named, and they still diverge from the study and from the record's own 4.3. (1) The second reading's literal sense in the record decides the town. The record's 4.3 says instead that the Chrysostom (Capernaum) and Jerome (Nazareth) dispute 'sits inside authority-on-earth ... and the reading should report it there without deciding it'. The study does that. Its Literal item reads 'Jesus, come to his own city', and it says 'Chrysostom and Jerome disagree about the town, and nothing in the text settles it'. The wording has stood since research iteration 3 (commit 964d8999f). The concise overview, themes and commentary components name this record as a reference. A concise author who takes the second reading's literal sense from 2.4 could print a decided town that the reviewed study leaves open. (2) 1.2 and 1.3 rest the first reading's city allegory on Hilary alone. The study's first reading sets Aquinas beside him ('scilicet in civitatem gentium, quae sibi datae sunt', Super Matth. c. 9) and concludes 'Read with Hilary and Aquinas ...'. The record's own 4.3 cites the same lecture. Neither divergence misleads a reader of the study, which is correct on both points."
+required_result = "In 2.4 Literal, replace 'At Capernaum' with 'In his own city', or name both towns with their witnesses as 4.3 does. In 1.2, qualify 'the one checked witness' (for example, 'the one Father'). In 1.3, add Aquinas, Super Matth. IX, 'in civitatem gentium, quae sibi datae sunt', beside Hilary as a second allegorical witness the first reading uses."
 
 [[advisories]]
 stage = "study-review"
-id = "STU-022"
+id = "STU-024"
 severity = "advisory"
-location = "sections/10-each-element.tex, Gradual subsection, last paragraph ('The gregorien.info database reports the chant at this Sunday in the six manuscripts of the Antiphonale Missarum Sextuplex: by its report, Laetatus sum is the Gradual of the Eighteenth Sunday after Pentecost in four of them, beside this Sunday's Introit, Offertory and Communion.')"
-problem = "research/scope.md 2.3 sets out what the database's day 823 prints for this Sunday. Laetatus sum stands in R B K S; the Offertory and Communion stand in R B K S; the Da pacem Introit stands only in R B K. M has another Gradual, and C does not appear. So the first clause reads as if the database reported the chant at this Sunday in all six books, and the next clause corrects that to four. 'Beside this Sunday's Introit' also does not hold for Senlis. This sentence is this round's repair of STU-011. It attributes correctly, but it states the placings loosely."
-required_result = "Say that the database's report for this Sunday gives Laetatus sum as the Gradual in four of the six books (Rheinau, Mont-Blandin, Corbie, Senlis), with this Sunday's Offertory and Communion in the same four and its Introit in three of them. Alternatively, drop the Introit from the 'beside' clause and the 'six manuscripts' framing from the first clause."
+location = "sections/10-each-element.tex, Offertory subsection, last paragraph ('Cornelius a Lapide, commenting on Ex 24:4--8, reads the twelve tituli as the share of the twelve tribes ...'), and Secret subsection ('Schuster explains the exchange: ``whilst we offer him our gifts he, in his turn, bestows on us the gift of himself'''). Against these: sections/30-authority-on-earth.tex, 'Moses at the altar, and the blood of the covenant', second paragraph ('Cornelius a Lapide, commenting on Exodus~24 itself, reads the twelve tituli as the twelve tribes' share ...'), and 'The exchange and the courts', first paragraph ('Schuster explains the exchange: ...')."
+problem = "The contract asks the expansive study to give each substantial argument one fullest home. Two sentences appear twice, once in the element-by-element section and again in the second reading. The a Lapide sentence (the twelve tituli, the firstborn as priests before Aaron, the covenant blood as the type of the blood Christ named at the institution) is nearly word for word the same in both places. Schuster's sentence on the exchange repeats with the same lead-in, 'Schuster explains the exchange'. Schuster's regret that the Offertory has lost its verses is also given twice, in different words. The repetition is not used to reach the page minimum, and it misleads no one, so it does not block. It does make the reader read the same argument twice. The repeated account of Augustine's harmonisation of 'his own city' in the element section, the second reading and the comparison is excluded from this finding, because STU-002 required it in more than one place."
+required_result = "Keep the a Lapide reading and Schuster's sentence on the exchange in the second reading, where they carry its argument. Reduce the element section's Offertory and Secret to their textual and liturgical setting, with at most a one-clause pointer to the second reading. Give Schuster's regret over the lost Offertory verses one home."
 
 [[observations]]
 stage = "research-review"
