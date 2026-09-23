@@ -50,23 +50,23 @@ run_id = "71b6f89518984232"
 workflow = "proper-study"
 workflow_version = 6
 stage = "homily-review"
-iteration = 0
-disposition = "CHANGES_REQUIRED"
-standing = 1
-accepted_count = 0
-advisory_count = 15
+iteration = 1
+disposition = "PASS"
+standing = 0
+accepted_count = 1
+advisory_count = 12
 observation_count = 2
 
 [[stages]]
 stage = "homily-review"
-iteration = 0
-disposition = "CHANGES_REQUIRED"
+iteration = 1
+disposition = "PASS"
 run_id = "71b6f89518984232"
 workflow = "proper-study"
 workflow_version = 6
-standing = 1
-accepted_count = 0
-advisory_count = 6
+standing = 0
+accepted_count = 1
+advisory_count = 3
 observation_count = 0
 
 [[stages]]
@@ -105,62 +105,38 @@ accepted_count = 0
 advisory_count = 1
 observation_count = 0
 
-[[findings]]
+[[accepted]]
 stage = "homily-review"
-id = "HOM-001"
-severity = "blocking"
-location = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/10-homily.tex lines 120-121, the close of the Communion movement: 'The one gift that is not borrowed is the humble admission that we need everything.'"
-problem = "This sentence answers the homily's own central question ('if without God we can do nothing pleasing to God, what are we to bring?', lines 116-117), and it answers it by contradicting the premise. It says the one present that pleases God (Augustine's 'Confession is a present unto God') is the one thing we have that God did not give us. That undoes the Collect the homily expounds as its thesis ('Without God himself, we cannot please God', lines 29-30, repeated at line 147). It is also the proposition the Church rejects: the Second Council of Orange (529), canon 6, condemns anyone who 'does not agree that it is a gift of grace itself that we are obedient and humble', citing 1 Cor 4:7. That is the verse Schuster quotes on this very Collect in the reviewed study (sections/40-nothing-of-our-own.tex lines 90-95). The sentence departs from its sources as well. The reviewed reading says the Communion's hostiae are 'not something the worshipper owns and hands over' (study lines 187-188; research/interpretations.md 3.2, 'not a demand for something we own'). Augustine's own context at Enarr. in Ps. 95 sections 8-9 is 'Ascribe them not unto yourselves'. And because the sentence follows directly on the two Augustine quotations, a listener will take the gloss as Augustine's. An adult parish would hear, at the climax of a homily on grace, that humility is the one thing we supply without God."
-required_result = "Rewrite the sentence, and anything that depends on it, so that the humble and contrite heart is the one present that claims nothing as its own and costs nothing but pride, while remaining itself God's gift. Follow the reviewed study's formulation. The homily's line on grace must then hold from the Collect to the close without exception: no act that pleases God, including confession, humility or the paralytic's faith, is presented as something we have that was not given."
-repair_target = "homily"
+id = "HOM-011"
+severity = "accepted"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/40-nothing-of-our-own.tex lines 242-246 (the expansive study, 'Not quietism'): 'The sick man had three disabilities: he lay in bed, he was carried by others, and he could not walk; so Christ says Surge to the one who lay, and quia portabatur, praecepit ut portaret ...'"
+problem = "The homily author reported this upstream gap in research/production-review.md ('Upstream observation reported for the homily's cold reviewer'), and I confirmed it. The study announces Aquinas's three disabilities and gives two of his three answers. The third, 'quia ire non poterat, dixit, Et ambula', stands in the controlling facsimile. I read it on the page image of the Venice 1745 PDF p. 140 (printed p. 122; SHA-256 adb333e0...85de8 matched). The homily now gives all three, so the homily and the study differ on this one point. Neither misquotes."
+required_result = "If the study is re-entered for any other reason, complete the triad in this sentence with the third answer. Record the locus in research/scope.md 3.5 and research/interpretations.md 3.4, beside the portabatur clause that RES-034 already names."
+accepted_because = "The two answers the study gives are exact, and the reading's claim does not rest on the third. The study has passed its own review. Adding the clause would re-enter an accepted upstream owner, which reruns the concise study, the homily and every dependent review, all for one missing clause. A reader of the study misses a completed triad but is told nothing false."
 
 [[advisories]]
 stage = "homily-review"
-id = "HOM-002"
+id = "HOM-008"
 severity = "advisory"
-location = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/10-homily.tex lines 93-95 ('the penitent, like the man on the bed, brings nothing to it but what needs forgiving') and line 135 ('go to confession, and bring nothing but the truth')."
-problem = "Both sentences say what the penitent brings to the sacrament of Penance and leave out contrition. The Council of Trent (Session XIV, chapter 3 and canon 4) names contrition among the penitent's own acts in the sacrament. Aquinas's tropology at this very verse, recorded in the research (research/scope.md 3.5), makes the command penitential: 'Surge, a peccato per contritionem'. The evident intent is that the penitent brings nothing that earns absolution, and that is orthodox; the Communion movement's contrite heart partly supplies what is missing. Read literally, though, the analogy with a man who (on Jerome's reading) brought no faith of his own implies that nothing is asked of the penitent but his sins."
-required_result = "Rephrase so that the point is 'nothing that earns it' and not 'nothing at all' beyond sins. For example, the penitent brings nothing to it but his sins and his sorrow for them, or brings nothing that could buy what is given. Keep the week's first response consistent with that."
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/10-homily.tex lines 66-69: 'Once laid down, says Chrysostom, he \"gives himself up to the power of the healer.\"' followed directly by 'Then the first word: \"Be of good heart, son, thy sins are forgiven thee.\"'"
+problem = "The quotation is exact, but its occasion has moved. In Homily 29 the sentence stands in section 2 (tracked CCEL NPNF1-10 text, lines 18568-18575), after the scribes reason within themselves. There Chrysostom says that the sick man, who had come to be healed and was forgiven instead, might have complained: 'One thing I came to have healed, and amendest Thou another?' 'But now he for his part utters no such word, but gives himself up to the power of the healer.' The homily sets the sentence at the moment the man is laid down and then says 'Then the first word'. A listener therefore takes Chrysostom's remark as said of the man before Christ spoke to him. The reviewed study anchors it correctly (sections/40-nothing-of-our-own.tex lines 134-136: 'when the scribes murmur, the one who might have complained is silent'). The man's surrender is Chrysostom's and no doctrine changes, so this does not block. But a Father's sentence is given a setting he did not give it."
+required_result = "Put the quotation where Chrysostom puts it: after the word of forgiveness, as the silence of a man given what he had not come for. Alternatively, drop 'Once laid down' and the sequence it implies. Chrysostom's own point also serves the homily's opening line, 'He is forgiven before he has asked for anything'."
 
 [[advisories]]
 stage = "homily-review"
-id = "HOM-003"
+id = "HOM-009"
 severity = "advisory"
-location = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/10-homily.tex lines 92-105: the Penance application ('The authority stays Christ's; the ministry is exercised by men. So in the sacrament of Penance ...'), followed at once by Mt 9:8 ('such power to men') and Hilary ('a power and a way have been given to men through his word, for the forgiveness of sins ...')."
-problem = "The homily's own ministerial application (credited to no Father in the note) runs straight into the crowd's 'such power to men' and Hilary's 'power ... given to men ... for the forgiveness of sins'. The word 'men' appears in the ministerial sense first, so a listener primed by it can hear Hilary approving the priest's power of absolution at v. 8. The research bars exactly that attribution: research/interpretations.md 2.5, 4.3 and 4.5 hold that no Father reads v. 8 ministerially, and that Hilary's men are those who receive forgiveness, not those who minister it. The intervening Chrysostom sentence and Hilary's list (resurrection, return to heaven) make the right hearing the more likely one, so this does not block. But the three-documents profile forbids manufacturing a Father's approval of the editor's application, and the 1962 profile forbids implying support by proximity."
-required_result = "Make the spoken Hilary sentence say whose gift it is, for example 'given to men, to all of us who receive it, through his word', or otherwise separate Hilary's reading from the Penance application. No hearer should be able to take Hilary as a witness to the ministry of absolution at Mt 9:8."
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/10-homily.tex lines 64-66: 'Whatever faith he had brought him exactly as far as he was carried, and if he had any, that too was given him.'"
+problem = "Heard once, the opening words parse as 'whatever faith he had brought him', a pluperfect in which 'he' is the one who brought. The listener reaches the real main verb only after the clause has already gone wrong. This sentence carries the movement's conclusion, the ground both sides of the whose-faith dispute grant, so it is the one a hearer most needs to recover. 'Exactly as far as' also claims a measured equivalence the sources do not state. The reviewed study says 'it brought him only as far as he was carried' (sections/40-nothing-of-our-own.tex lines 150-151)."
+required_result = "Recast the sentence so that it can be understood on one hearing, for example: 'Whatever faith he had, it brought him only as far as he was carried; and if he had any, that too was given him.'"
 
 [[advisories]]
 stage = "homily-review"
-id = "HOM-004"
+id = "HOM-010"
 severity = "advisory"
-location = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/10-homily.tex lines 125-131, the opening of the sixth movement: 'The Gospel ends with commands ...' and Aquinas's 'three troubles'."
-problem = "Two small oral inaccuracies in one paragraph. (1) 'The Gospel ends with commands' is not so: the pericope ends at Mt 9:8 with the crowd's fear and praise, which the homily itself says twice ('At the end the whole multitude glorifies God', line 15; 'ends with thanks for a gift', lines 103-105). An attentive listener meets the contradiction. (2) The homily announces Aquinas's three troubles (lay in bed, carried by others, could not walk) but gives only two of his answers. The third, quia ire non poterat, dixit, Et ambula (Venice 1745 layer, lines 16508-16511), is dropped, so a hearer counting to three is left waiting."
-required_result = "Say instead that Christ's last words in this Gospel, or his words to the man, are commands. Either complete Aquinas's triad accurately, or announce only the two troubles the homily answers."
-
-[[advisories]]
-stage = "homily-review"
-id = "HOM-005"
-severity = "advisory"
-location = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/10-homily.tex line 21: 'Keep that man in view, because this whole Mass is gathered around him.'"
-problem = "'Is gathered around him' implies an arranger: someone gathered the Mass around the paralytic. The whole-formulary reading, however, is the editor's synthesis over a compilation (propers-three-documents.md, 'The formulary is a compilation'). Research/scope.md 2.7 shows that the Gospel and Epistle stood elsewhere in the lists and in the commentators' books. The 1962 profile's evidence rule is satisfied only by not asserting such an arrangement. The claim is also broader than the homily's own use: the Introit, Gradual, Alleluia, Offertory and Secret are not heard around him at all (note, lines 37-38). This is homiletic framing, not a stated compositional thesis, so it does not block."
-required_result = "Recast the sentence as the hearer's reading and not as a fact about how the Mass was made. For example: 'because the rest of this Mass can be heard around him', or 'because today I want to hear this Mass with him at its centre'."
-
-[[advisories]]
-stage = "homily-review"
-id = "HOM-006"
-severity = "advisory"
-location = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/90-note.tex lines 33-36: 'Two disagreements the study keeps are spoken: Jerome and Ambrose against Chrysostom on whose faith Christ saw, and Chrysostom against Hilary on the crowd's praise at Mt 9:8.'"
-problem = "The speech voices three of the study's disagreements, not two. The third is Chrysostom against Aquinas on 1 Cor 1:8 ('Chrysostom hears a warning in it; Saint Thomas hears a promise', homily lines 144-145), which the study keeps at sections/40-nothing-of-our-own.tex lines 59-67. The production audit describes the speech correctly; the note, which is the reader-facing record of the speech's relation to the reviewed readings, undercounts."
-required_result = "State that three disagreements are spoken, and name the third: Chrysostom against Aquinas, with Ambrosiaster and a Lapide, on whether 1 Cor 1:8 accuses or promises."
-
-[[advisories]]
-stage = "homily-review"
-id = "HOM-007"
-severity = "advisory"
-location = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/90-note.tex lines 48-52: 'Ambrose, Hilary and Aquinas on Matthew were re-read ... and Jerome and Aquinas on First Corinthians are reported as the study reads them.'"
-problem = "The route sentence misdescribes two works. Ambrose is read on Luke (Expositio in Lucam V.11, as the note's own loci say at lines 63-65), not on Matthew. And 'Jerome and Aquinas on First Corinthians' reads as Jerome on First Corinthians, whereas the homily cites Jerome only on Matthew (Commentarii in Matthaeum I, on 9:1-2). The production audit lists the same routes correctly: re-read were Ambrose on Luke V.11, Hilary VIII.8, and Aquinas on Matthew; not re-read were Jerome on Mt 9:1-2 and Aquinas on 1 Cor."
-required_result = "Rephrase the route sentence so that each author is named with his actual work: Ambrose on Luke, Hilary and Aquinas on Matthew re-read; Jerome on Matthew and Aquinas on First Corinthians reported as the study reads them."
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/homily/10-homily.tex lines 107-124, the fifth movement (the Postcommunion's 'this holy sacrifice ... what we have received' and the Communion's 'Bring up sacrifices, and come into his courts'), read against the speech as a whole."
+problem = "The three-documents profile makes the Homiletic Directory's orientation govern the homily's movement: the readings and prayers lead through Christ's Paschal mystery to Eucharistic participation and daily life (guidance/liturgy/propers-three-documents.md, 'The homily'). The daily-life leg is concrete and well made. The other two exist only inside quotations. The speech never names Christ's death or resurrection; the only resurrection in it is the general one in Hilary's list. It never names the altar, the Eucharist or the Lord's Body, and 'Communion' occurs only as the name of the chant. The Postcommunion is quoted for its thanks and its plea, but the assembly, which is about to receive it, is never told what 'what we have received' is. The Communion movement answers 'what are we to bring?' with the humble heart and never says what is given back at this altar. The homily's own line, 'the end is given as the beginning was', would carry this without strain. No hearer is misled and the movement toward the courts is real, so this does not block."
+required_result = "Within the fifth movement, replacing words rather than adding to a speech already at the top of its length: say plainly that what the Postcommunion thanks God for is the Lord's own sacrifice, received at this altar, and let the assembly hear its own approach to Communion in the verse's 'come into his courts'. Where it serves the argument, let one sentence ground the forgiveness spoken 'on earth' in Christ's Passion and Resurrection. Credit neither statement to a Father."
 
 [[advisories]]
 stage = "research-review"
