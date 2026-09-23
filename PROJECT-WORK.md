@@ -50,8 +50,28 @@ width, 454 of 603 at 390 px, which is the roadmap's open Reader table-cell
 reflow obligation. The PC-S42 and PC-S43 dossiers show a pre-existing
 converter span leak.
 
-**Open.** The release bindings of the five editions and `site.css` await a
-fresh operator approval.
+**Further converter repairs, 2026-09-23, each decided by the maintainer and
+independently reviewed to PASS:**
+
+- the PC-S42/43 span and spacing junk;
+- the first-column empty-bold defect, repaired corpus-wide through a pandoc
+  table filter;
+- leading dates and numbers restored: 253 in six GPT editions, then 12 more
+  after `\endfoot` and similar commands in five editions;
+- duplicated longtable heads, 31 rows in 8 editions;
+- a span's own face;
+- the empty header band, dropped by the site renderer.
+
+A lasting audit (`lost_cell_openings`) reads the assembled source before the
+converter rewrites it. It fails the conversion if any table cell's opening is
+lost, and covers 22,079 cells with 176 justified skips. The final review
+judged the converter fit to release. Its two latent advisories (WEB-R-012
+audit edge cases, WEB-R-013 blank-line handling after text dashes) are being
+fixed. No PDF render input changed at any step.
+
+**Open.** A fresh operator approval is needed for the release bindings these
+batches left stale: the regenerated web editions, `site.css`,
+`tools/public-alpha`, `corpus.json` and the catalogue and source projections.
 
 ## Locus-pattern rebinding sweep, 2026-09-23
 

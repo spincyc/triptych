@@ -52,38 +52,52 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "pc-s42-s43-span-leak"
   criterion = "Maintainer decision of 2026-09-23: the converter span leak that puts a stray '2-4' span prefix and an empty bold paragraph into the dossier note rows of the Claude PC-S42 and PC-S43 web editions is fixed with a test, both editions are regenerated, and an independent reviewer confirms each diff removes only the junk; no PDF render input changes."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", "tools/web-edition"]
+  status = "pass"
+  evidence = ["tools/web-edition", "tools/tests/test_web_edition_conversion.py", "PROJECT-WORK.md"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "first-column-prefix-empty-bold"
   criterion = "Maintainer decision of 2026-09-23: the converter no longer turns a first-column prefix such as bfseries-raggedright into an empty bold paragraph with unbolded text; the fix carries tests; every affected installed edition of both providers is regenerated, any leak the resulting pipe-table conversion exposes in PC-S42/43 is cleaned, and an independent reviewer confirms each diff is only the intended repair; no PDF render input changes."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", "tools/web-edition"]
+  status = "pass"
+  evidence = ["tools/web-edition", "tools/tests/test_web_edition_conversion.py", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "tools/web-edition"
+  needle = "TABLE_FILTER"
 
   [[deliverables.requirements]]
   id = "leading-numbers-restored"
   criterion = "Maintainer decision of 2026-09-23: the converter no longer lets an alignment declaration at the end of a column prefix swallow the number that opens each cell; the fix carries tests; the 7 installed web editions missing dates and numbers the PDFs print are regenerated, each diff proven to restore only source text, and independently reviewed; no PDF render input changes."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", "tools/web-edition"]
+  status = "pass"
+  evidence = ["tools/web-edition", "tools/tests/test_web_edition_conversion.py", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "tools/web-edition"
+  needle = "lost_cell_openings"
 
   [[deliverables.requirements]]
   id = "duplicated-longtable-head"
   criterion = "Maintainer decision of 2026-09-23: a longtable that declares both endfirsthead and endhead publishes its header row once on the web, not again as its first body row; the fix carries a test and an audit; the 8 affected installed editions are regenerated, each diff proven to remove only the duplicated row, and independently reviewed; no PDF render input changes."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", "tools/web-edition"]
+  status = "pass"
+  evidence = ["tools/web-edition", "tools/tests/test_web_edition_conversion.py", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "tools/web-edition"
+  needle = "drop_continuation_heads"
 
   [[deliverables.requirements]]
   id = "span-own-face"
   criterion = "Maintainer decision of 2026-09-23 (review advisory WEB-R-008): a web edition's collapsed multicolumn span carries the font declarations of its own column spec (bold, italic, small capitals), with a test; any affected edition is regenerated and reviewed; no PDF render input changes."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", "scripts/web-shim.tex"]
+  status = "pass"
+  evidence = ["tools/web-edition", "tools/tests/test_web_edition_conversion.py", "PROJECT-WORK.md"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "empty-header-band"
   criterion = "Maintainer decision of 2026-09-23: a headerless table's entirely empty header row is not shown as an empty coloured band on the site, with a test, verified by rendering at 390 px and 1280 px, without hiding any header that has text."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["tools/public-alpha", "tools/tests/test_public_alpha.py", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "tools/public-alpha"
+  needle = "drop_empty_table_heads"
 
   [[deliverables.requirements]]
   id = "web-bindings-reapproved"
