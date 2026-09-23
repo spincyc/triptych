@@ -93,14 +93,14 @@ Year A · Lectionary no. 109 · Ordinary Time Week XVII formulary
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p><span>2-4</span> <em>Narrated event</em></p></td>
+<p><em>Narrated event</em></p></td>
 <td style="text-align: left;">The dream at Gibeon</td>
 <td style="text-align: left;">The high place at Gibeon, about ten km north-west of Jerusalem</td>
 <td style="text-align: left;">Early in Solomon’s reign, conventionally about 970–960 BC</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p><span>2-4</span> The book names no author. Jewish tradition credits Jeremiah; modern accounts generally place Kings within a longer Deuteronomistic history reaching its present shape in or after the exile, with earlier court and annalistic material behind it. Neither reconstruction is a premise here. The audience of the finished book is a people who have lost the monarchy and are asked to judge it. Verse 6, Solomon’s recital of God’s mercy to David, falls inside the appointed span but is not proclaimed.</p></td>
+<p>The book names no author. Jewish tradition credits Jeremiah; modern accounts generally place Kings within a longer Deuteronomistic history reaching its present shape in or after the exile, with earlier court and annalistic material behind it. Neither reconstruction is a premise here. The audience of the finished book is a people who have lost the monarchy and are asked to judge it. Verse 6, Solomon’s recital of God’s mercy to David, falls inside the appointed span but is not proclaimed.</p></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
@@ -156,14 +156,14 @@ Year A · Lectionary no. 109 · Ordinary Time Week XVII formulary
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p><span>2-4</span> <em>Narrated event</em></p></td>
+<p><em>Narrated event</em></p></td>
 <td style="text-align: left;">Two of the Beatitudes</td>
 <td style="text-align: left;">A mountainside in Galilee, before a crowd and the disciples</td>
 <td style="text-align: left;">Within the Galilean ministry</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p><span>2-4</span> Ancient tradition, reported by Papias through Eusebius, names Matthew the apostle and a Semitic-language original; the canonical Greek text’s relation to that report is disputed. The two beatitudes are adjacent but distinct sayings, and the antiphon quotes them without their surrounding series.</p></td>
+<p>Ancient tradition, reported by Papias through Eusebius, names Matthew the apostle and a Semitic-language original; the canonical Greek text’s relation to that report is disputed. The two beatitudes are adjacent but distinct sayings, and the antiphon quotes them without their surrounding series.</p></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
@@ -177,14 +177,14 @@ Year A · Lectionary no. 109 · Ordinary Time Week XVII formulary
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p><span>2-4</span> <em>Narrated event</em></p></td>
+<p><em>Narrated event</em></p></td>
 <td style="text-align: left;">Jesus’s thanksgiving to the Father</td>
 <td style="text-align: left;">Galilee, after the woes on the unrepentant towns</td>
 <td style="text-align: left;">Within the Galilean ministry</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p><span>2-4</span> The acclamation abbreviates and adapts the verse; it does not proclaim it whole, and Matthew 11 is a distinct scene from Matthew 13. The Latin of this verse and of the appointed Ps 118:130 share the word <em>parvuli</em>, the little ones to whom understanding is given.</p></td>
+<p>The acclamation abbreviates and adapts the verse; it does not proclaim it whole, and Matthew 11 is a distinct scene from Matthew 13. The Latin of this verse and of the appointed Ps 118:130 share the word <em>parvuli</em>, the little ones to whom understanding is given.</p></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
@@ -198,14 +198,14 @@ Year A · Lectionary no. 109 · Ordinary Time Week XVII formulary
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p><span>2-4</span> <em>Narrated event</em></p></td>
+<p><em>Narrated event</em></p></td>
 <td style="text-align: left;">Close of the parable discourse</td>
 <td style="text-align: left;">By the Sea of Galilee, then indoors with the disciples</td>
 <td style="text-align: left;">Within the Galilean ministry</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p><span>2-4</span> Matthew’s third discourse begins in a boat before crowds and continues in a house with the disciples alone; the treasure, pearl, net and scribe belong to the indoor portion. The short form ends with the purchase of the pearl; the long form alone reaches the shore, the separation and the householder’s new and old.</p></td>
+<p>Matthew’s third discourse begins in a boat before crowds and continues in a house with the disciples alone; the treasure, pearl, net and scribe belong to the indoor portion. The short form ends with the purchase of the pearl; the long form alone reaches the shore, the separation and the householder’s new and old.</p></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>

@@ -99,14 +99,14 @@ Formula `PC-S40-A` ⋅ Lectionary 106
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p><span>2-4</span> <em>Narrated event</em></p></td>
+<p><em>Narrated event</em></p></td>
 <td style="text-align: left;">1 Samuel 23:19; 26:1</td>
 <td style="text-align: left;">Wilderness of Ziph, Judean hill country south-east of Hebron</td>
 <td style="text-align: left;">Reign of Saul, traditionally eleventh century BC</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p><span>2-4</span> The superscription assigns the psalm to David when the Ziphites betrayed his hiding place; inherited attribution is not a dated autograph, and historical judgment leaves author and date open. The two half-verses the Missal prints stand at the psalm’s turn from danger to willing sacrifice. The Missal cites the psalm as 53 in the Vulgate series; the same text is numbered 54 in the Hebrew series used by the United States Lectionary.</p></td>
+<p>The superscription assigns the psalm to David when the Ziphites betrayed his hiding place; inherited attribution is not a dated autograph, and historical judgment leaves author and date open. The two half-verses the Missal prints stand at the psalm’s turn from danger to willing sacrifice. The Missal cites the psalm as 53 in the Vulgate series; the same text is numbered 54 in the Hebrew series used by the United States Lectionary.</p></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
@@ -149,14 +149,14 @@ Formula `PC-S40-A` ⋅ Lectionary 106
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p><span>2-4</span> <em>Narrated event</em></p></td>
+<p><em>Narrated event</em></p></td>
 <td style="text-align: left;">Wisdom 12:3–11</td>
 <td style="text-align: left;">The land of Canaan, in the book’s retrospect on its earlier inhabitants</td>
 <td style="text-align: left;">Israel’s occupation of the land, in the book’s own frame</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p><span>2-4</span> The book speaks in the persona of Solomon and is preserved only in Greek; Catholic canons receive it, and it is not in the Hebrew Bible. The appointed verses belong to a defence of God’s slowness against Canaan; the Lectionary omits verses 14–15, which deny that any king or tyrant may call God to account and state that God’s justice is the reason he governs justly.</p></td>
+<p>The book speaks in the persona of Solomon and is preserved only in Greek; Catholic canons receive it, and it is not in the Hebrew Bible. The appointed verses belong to a defence of God’s slowness against Canaan; the Lectionary omits verses 14–15, which deny that any king or tyrant may call God to account and state that God’s justice is the reason he governs justly.</p></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
@@ -184,14 +184,14 @@ Formula `PC-S40-A` ⋅ Lectionary 106
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p><span>2-4</span> <em>Narrated event</em></p></td>
+<p><em>Narrated event</em></p></td>
 <td style="text-align: left;">Matthew 13:1, 36</td>
 <td style="text-align: left;">Beside the Sea of Galilee, then indoors in a house—two distinct settings inside one appointed passage</td>
 <td style="text-align: left;">Galilean ministry, c. AD 28–30</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p><span>2-4</span> The longer form crosses from public parable to private explanation; the shorter form stops inside the first parable and never leaves the shore. At 13:35 Matthew cites Psalm 78:2 (Vulgate 77:2) as fulfilled; that quotation is part of Matthew’s argument and is not separately appointed.</p></td>
+<p>The longer form crosses from public parable to private explanation; the shorter form stops inside the first parable and never leaves the shore. At 13:35 Matthew cites Psalm 78:2 (Vulgate 77:2) as fulfilled; that quotation is part of Matthew’s argument and is not separately appointed.</p></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>

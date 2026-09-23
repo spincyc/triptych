@@ -186,7 +186,9 @@ LAYOUT_MACRO_RE = re.compile(r"\\(?:titleformat|titlespacing)\*?")
 # silently loses its book number.  The macro only restores \\ inside a p column.
 ALIGNMENT_FIXUP_RE = re.compile(r"\\arraybackslash\s*")
 # pandoc reads \cmidrule's trim spec and span as cell text and leaks them into
-# the following row.  A partial rule carries no text, so it is dropped whole.
+# the following row.  A partial rule carries no text, so it is dropped whole,
+# from the leaf's carried definitions as well as its body: a rule inside a row
+# macro such as \dossierevent reached the reader as "2-4" before a dossier note.
 PARTIAL_RULE_RE = re.compile(r"\\cmidrule\s*(?:\([a-zA-Z]*\))?\s*(?:\{[^{}]*\})?")
 # Register assignments carry no text and are not brace-argument macros.
 REGISTER_ASSIGNMENT_RE = re.compile(r"\\Urlmuskip\s*=[^\\\n]*(?:\\relax)?")
@@ -1221,6 +1223,11 @@ def audit_output(
     residual = sorted(set(re.findall(r"\\[A-Za-z@]{2,}", MATH_RE.sub(" ", markdown))))
     if residual:
         failures.append("raw LaTeX left in output: " + " ".join(residual))
+    # A span with no attribute is a LaTeX argument pandoc kept but could not
+    # place, such as a partial rule's column range; the reader sees it as text.
+    stray = re.findall(r"<span>([^<]*)</span>", markdown)
+    if stray:
+        failures.append("unattributed span(s) left in output: " + "; ".join(sorted(set(stray))))
     raw_chronology = sorted(set(RAW_CHRONOLOGY_TOKEN_RE.findall(markdown)))
     if raw_chronology:
         failures.append(
@@ -1332,7 +1339,7 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         ALIGNMENT_FIXUP_RE.sub("", SHIM.read_text(encoding="utf-8"))
     )
     locals_text, locals_bracketed = guard_opening_brackets(ALIGNMENT_FIXUP_RE.sub(
-        "", LIST_OPTION_RE.sub(r"\1", local_definitions(preamble))
+        "", PARTIAL_RULE_RE.sub("", LIST_OPTION_RE.sub(r"\1", local_definitions(preamble)))
     ))
     body, bracketed = guard_opening_brackets(body)
     # The shim wins conflicts, so its replacement text is the one to expect.

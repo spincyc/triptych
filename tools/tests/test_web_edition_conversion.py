@@ -1000,6 +1000,28 @@ class WebEditionConversionTests(unittest.TestCase):
                 self.assertIn("The last note.\n\n**Last revised", flat)
                 self.assertEqual(flat.count(DOSSIER_HEADER), 1)
 
+    def test_partial_rule_inside_a_carried_row_macro_leaks_no_column_range(self) -> None:
+        # The postconciliar exposition format bounds its narrated-event row with
+        # \cmidrule(lr){2-4} inside the \dossierevent definition, where the
+        # body's rule fixup never reached it: "2-4" led the event and note rows.
+        shared = ("liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/"
+                  "propers/shared/exposition-format.tex")
+        markdown = self.convert(
+            "\\begin{dossiertable}\n"
+            r"\dossierrow{Entrance Antiphon}{Psalm 54:6}{Jerusalem}{Uncertain}" "\n"
+            r"\dossierevent{1 Samuel 23:19}{Wilderness of Ziph}{Reign of Saul}" "\n"
+            r"\dossiernote{The superscription assigns the psalm to David.}" "\n"
+            "\\end{dossiertable}",
+            preamble=r"\input{studies/subject/exposition-format}",
+            files={"exposition-format.tex": (ROOT / "src/claude" / shared).read_text(
+                encoding="utf-8")},
+        )
+        self.assertNotIn("2-4", markdown)
+        self.assertNotIn("<span>", markdown)
+        self.assertIn("<em>Narrated event</em>", markdown)
+        self.assertIn("Wilderness of Ziph", markdown)
+        self.assertIn("The superscription assigns the psalm to David.", markdown)
+
     def test_long_form_heading_and_anchor_fidelity(self) -> None:
         count = 120
         body = "\n".join(
@@ -1296,6 +1318,16 @@ class WebEditionAuditTests(unittest.TestCase):
                 self.assertEqual(len(masked), len(text))
                 self.assertNotIn("gone", masked)
                 self.assertNotIn("whole", masked)
+
+    def test_unattributed_span_is_reported(self) -> None:
+        failures = DRIVER.audit_output(
+            "Prose.",
+            self.minimal_markdown() + "\n<p><span>2-4</span> <em>Narrated event</em></p>\n",
+        )
+        self.assertIn("unattributed span(s) left in output: 2-4", failures)
+        self.assertEqual(DRIVER.audit_output(
+            "Prose.", self.minimal_markdown() + '\n<span class="smallcaps">Memorial</span>\n'
+        ), [])
 
     def test_faithful_output_passes(self) -> None:
         self.assertEqual(DRIVER.audit_output("Prose.", self.minimal_markdown()), [])
