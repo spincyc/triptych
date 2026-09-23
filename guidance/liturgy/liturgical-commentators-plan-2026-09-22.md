@@ -95,7 +95,9 @@ Eighteenth Sunday run. Recorded so a later session does not re-derive them.
   support what his checked locus says and is never one of a reading's two
   authors. The Catholic Encyclopedia's "Exegesis, Biblical" article lists him among
   "adherents of the Greek Schism"; his registry row records that sentence as
-  contrary evidence beside the settled standing.
+  contrary evidence beside the settled standing. The maintainer reaffirmed the
+  settlement on 2026-09-23 with that sentence and the corrected Catena count
+  before him; they are not new evidence for reopening it.
 
 **Erratum to the proposal.** §0, §1.3 and D7 count seven published leaves that
 credit the continuation to Guéranger with a corrected imprint. A search of the
