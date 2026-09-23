@@ -58,19 +58,23 @@ state = "planned"
 id = "chronology-per-passage-dates-2026-09-23"
 owner = "PROJECT-WORK.md"
 promise = "Resolve escalation STU-005 as the maintainer decided on 2026-09-23: a page-2 dossier row for an element whose appointed passages carry different dates may state each passage's own date, labelled by its locus and drawn only from the generated chronology record, so that every appointed passage is dated as the 1962 profile requires. Lands after the Claude 1962 Eighteenth Sunday run publishes."
-state = "planned"
+state = "in_progress"
 
   [[deliverables.requirements]]
   id = "checker-admits-per-passage-dates"
   criterion = "tools/check-content-preflight chronology-claims-supported accepts, in a mixed-source element's explanatory row, a date for one of its passages when the text names that passage's locus and the date matches that locus's generated answer, and still refuses any date not drawn from the record; tests cover acceptance, a wrong date and an unlabelled date."
-  status = "open"
-  evidence = ["tools/check-content-preflight", "PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["tools/check-content-preflight", "tools/tests/test_content_preflight_study.py"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "guidance-states-per-passage-dates"
   criterion = "guidance/scripture-chronology.md section 14.1 and the page-2 rule of guidance/liturgy/roman-1962-propers.md state the per-passage form, each in its owning file."
-  status = "open"
+  status = "pass"
   evidence = ["guidance/scripture-chronology.md", "guidance/liturgy/roman-1962-propers.md"]
+  check = "contains"
+  path = "guidance/scripture-chronology.md"
+  needle = "`<citation>: <date>`"
 
   [[deliverables.requirements]]
   id = "eighteenth-sunday-introit-dated"
@@ -190,8 +194,11 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "formulary-loci"
   criterion = "src/sources/commentary/formulary-loci.yaml records commentators' Mass loci element by element with each commentator's own Sunday label as data, including the continuation credited to Lucien Fromage, validated on the sources gate (proposal step 2; decisions D4 and D7)."
-  status = "open"
-  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"]
+  status = "pass"
+  evidence = ["src/sources/commentary/formulary-loci.yaml", "src/sources/inventories/author-standing-v1.toml", "tools/tests/test_formulary.py"]
+  check = "contains"
+  path = "src/sources/commentary/formulary-loci.yaml"
+  needle = "english-duffy-1883-volume-11"
 
   [[deliverables.requirements]]
   id = "formulary-discovery"
@@ -253,8 +260,11 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "lectionary-history-rule-after-publication"
   criterion = "After the Claude 1962 Eighteenth Sunday run publishes, the three-document profile states decision D12: lectionary and sacramentary history of the formulary's own texts may appear only in the expansive study, never in the concise study or homily, and another Sunday's Mass contents stay in research records."
-  status = "open"
-  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md", "guidance/liturgy/propers-three-documents.md"]
+  status = "pass"
+  evidence = ["guidance/liturgy/propers-three-documents.md", "guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"]
+  check = "contains"
+  path = "guidance/liturgy/propers-three-documents.md"
+  needle = "early lectionary and sacramentary"
 
   [[deliverables.requirements]]
   id = "chrysologus-acquired"
@@ -265,8 +275,11 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "workflow-version-after-publication"
   criterion = "After the Claude 1962 Eighteenth Sunday run publishes, the reviewer sentence, the standing pointers and the mandatory authority check reach a new proper-study version (proposal step 7; decisions D5 and D6)."
-  status = "open"
-  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md", "workflows/pipelines/proper-study.json"]
+  status = "pass"
+  evidence = ["workflows/pipelines/proper-study.json", "workflows/OPERATOR.md", "scripts/_proper_study.py", "tools/tests/test_proper_components_v2.py"]
+  check = "contains"
+  path = "workflows/pipelines/proper-study.json"
+  needle = "\"version\": 7,"
 
   [[deliverables.requirements]]
   id = "continuation-attribution-staleness"

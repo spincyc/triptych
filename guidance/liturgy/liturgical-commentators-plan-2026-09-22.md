@@ -82,11 +82,14 @@ Eighteenth Sunday run. Recorded so a later session does not re-derive them.
   authors; both remain usable as supporting witnesses. Every published lane
   already has two Fathers or saints without them.
 - **Theophylact of Ohrid is an ecclesiastical writer, not a writer outside
-  Catholic communion under D3.** His Western reception is long (Aquinas draws
-  on him throughout the *Catena aurea*), and his Pauline commentary is not
+  Catholic communion under D3.** His Western reception is long (the *Catena
+  aurea* names him over a thousand times on Mark, Luke and John, though never
+  in its Matthew volume), and his Pauline commentary is not
   schismatic polemic. His row records his post-1054 Byzantine see. He may
   support what his checked locus says and is never one of a reading's two
-  authors.
+  authors. The Catholic Encyclopedia's "Exegesis, Biblical" article lists him among
+  "adherents of the Greek Schism"; his registry row records that sentence as
+  contrary evidence beside the settled standing.
 
 **Erratum to the proposal.** §0, §1.3 and D7 count seven published leaves that
 credit the continuation to Guéranger with a corrected imprint. A search of the

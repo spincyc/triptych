@@ -345,30 +345,38 @@ Rebinding is an operator approval and has not been done.
 - The opt-in authority contract is in `scripts/_proper_components.py`. A
   manifest that does not opt in is audited exactly as before.
 
-**Deferred until the Eighteenth Sunday run publishes.** These change
-`formulary-loci.yaml` or `author-standing-v1.toml`, which that run now seals:
+**Landed after the Eighteenth Sunday run published (2026-09-23).**
 
-- commentator-code commit 3, which adds the other Sundays' loci and tightens
-  element matching (branch `wt/commentator-code`);
-- two data corrections: the 1883 English volume XI is now registered, and the
-  Fromage row should give the vol. XI preface year as 1882, read on the page
-  image.
-- the Honorius IV.85 row in `formulary-loci.yaml` omits the Alleluia and
-  Offertory, which IV.85 names (raised as an observation in research-review
-  iteration 4);
-- Rabanus has no row in `author-standing-v1.toml`; PL 107 heads him "B.",
-  Blessed (research-review iteration 5, RES-029);
-- Peter Chrysologus, a Doctor, preaches the Eighteenth Sunday's Gospel as the
-  day's reading in Sermo 50, *De paralytico curato*. The library registers no
-  Chrysologus, and the passage-commentary index maps him only at Luke 22, so
-  no sweep could reach him. Research-review iteration 6 raised this as
-  RES-032 and an observation. The maintainer decided on 2026-09-23 to acquire
-  him (PL 52) and map Sermo 50 at Matthew 9 after publication; the leaf
-  carries a revision obligation to weigh him;
-- Theophylact has no row in `author-standing-v1.toml`. The maintainer decided
-  on 2026-09-23 to class him as an ecclesiastical writer, not as outside
-  Catholic communion; add the row with his post-1054 see recorded. Theodoret
-  and Cassiodorus stay ecclesiastical writers.
+- The commentator lane added the other Sundays' loci and tightened element
+  matching, and corrected three wrong page ranges and an Amalarius week order
+  at source.
+- The 1883 English vol. XI is now noted as registered, and Fromage's vol. XI
+  preface is dated 27 October 1882, read on the facsimile.
+- The Honorius IV.85 row now names its Gradual, Alleluia and Offertory.
+- Standing rows were added for Theophylact (ecclesiastical writer, per the
+  settlement), Ambrose (Father) and Cornelius a Lapide (ecclesiastical
+  writer). The published Eighteenth Sunday leaf named Ambrose and a Lapide
+  without rows, so a standing test was failing at the base.
+- Rabanus Maurus was added as an ecclesiastical writer: the Catholic
+  Encyclopedia styles him Blessed from Mabillon, the Bollandists and a local
+  cultus, but no beatification or confirmation of cultus was found, and the
+  Roman Martyrology (1902, 1914) omits him. That keeps him out of D1's
+  Blessed category pending the maintainer's view.
+- D12 is in the three-document profile.
+- `proper-study` is at version 7, which requires the authority contract from
+  `study-preflight` onward. That is the first gate at which the component
+  manifest exists, so research-preflight would refuse every new leaf.
+- Per-passage dossier dates (STU-005) are in the checker and guidance, and
+  all 44 published leaves still pass the three chronology checks.
+- The synthesis-gate census test was updated for the eighteenth manifest leaf.
+
+**Still to land:**
+
+- Chrysologus (PL 52) and his index mapping, in progress;
+- the complete web title blocks and full-width dossier notes, in progress;
+- the locus-pattern rebinding sweep;
+- a fresh operator approval for the release bindings these leave stale.
+  `corpus.json` is stale from the version-7 digest.
 
 **Open.** These may land now:
 
