@@ -1151,9 +1151,13 @@ Catena, or Aquinas's lectura, departs from them. The Catena is still quoted in
     *aliorum merito ignoscit aliis … aliis relaxat errata*. It must not be cited as
     Chrysostom's. The rest of the passage (*Audit veniam et tacet paralyticus …
     Merito Christus offerentium fidem respicit, et vecordiam sic jacentis
-    respicit*) was not found in Bede's *In Lucam* and is not traced here; it takes
-    the side opposite to Chrysostom's own in *Hom. in Matth.* 29, where the sick
-    man shared the faith (§ 4.2).
+    respicit*, through *ante curaretur quam corpus*) was not found in Bede's *In
+    Lucam*. **It is Peter Chrysologus, Sermo 50, *De paralytico curato*, PL 52,
+    col. 341A**, a text also printed as Maximus of Turin's Homilia CVIII in PL 57
+    (identified at the first revision, 2026-09-23; see the Chrysologus entry
+    below). Rabanus reads *respicit* where both Migne printings of the sermon read
+    *non respicit*. The passage takes the side opposite to Chrysostom's own in
+    *Hom. in Matth.* 29, where the sick man shared the faith (§ 4.2).
   - v. 3 (col. 871), inside a passage headed *(Hieron.)*: *Sed, licet nescientes,
     verum dicebant, quia nemo dimittere peccata, nisi Deus, potest: qui per eos
     quoque dimittit, quibus dimittendi dedit potestatem.* That sentence stands in
@@ -1187,8 +1191,16 @@ Catena, or Aquinas's lectura, departs from them. The Catena is still quoted in
 - **The Catena's other lemmata at this pericope.** Beyond Hilary and Rabanus, the
   Catena carries "Ioannes episcopus" (*Quantum valet apud Deum fides propria, apud
   quem sic valuit aliena …*) and the *Glossa* on whether *ut sciatis* is Christ's
-  words or the Evangelist's. Neither is checked at its own locus, and nothing here
-  rests on them. **Its "Jerome" tropology is two authors.** The first clause,
+  words or the Evangelist's. **The "Ioannes episcopus" lemma is the compilation
+  Rabanus prints under *(Joan. Chrysost.)***, as research review RES-032 found.
+  Its opening words, as recorded here, answer to Bede's sentence at the head of
+  that passage (*Intuendum sane quantum propria cujusque fides apud Deum valeat,
+  ubi tantum valuit aliena*), and that sentence is not in Sermo 50. Rabanus's
+  passage then continues into Sermo 50 (above). The lemma's further wording was
+  not re-read at the first revision, because the library registers the *Catena
+  aurea* on Luke only, so whether it too continues into Sermo 50 is the review's
+  finding and not a reading made here. The *Glossa* is not checked at its own
+  locus. Nothing here rests on either lemma. **Its "Jerome" tropology is two authors.** The first clause,
   *iuxta tropologiam … a perfecto doctore domino offertur curanda*, is Jerome's
   (PL 26, col. 55). What follows, *unusquisque enim aeger petendae salutis
   precatores debet adhibere, per quos actuum nostrorum clauda vestigia verbi
@@ -1226,6 +1238,65 @@ Catena, or Aquinas's lectura, departs from them. The Catena is still quoted in
     onlookers' fear is unbelief's, and those who fear are those who calumniated.
     Luke's verse has no *potestatem talem hominibus*, and he says nothing of it
     (§ 4.3). The range read now runs V.10–15.
+- **Direct, a Father and Doctor, ascription disputed: Peter Chrysologus**, Sermo
+  50, *De paralytico curato*, **PL 52 (Paris: Garnier, 1894), cols. 339C–342B**.
+  Added at the leaf's first revision (2026-09-23), after the library registered
+  it. Read in the passage record's checked transcription (SHA-256 recomputed and
+  matched, `bce4087b…0adc01f`), and at every sentence used below on the tracked
+  page images of leaves n171 and n172 (digests recomputed and matched). The
+  author-standing registry records Chrysologus as a Father, and a Doctor since
+  1729. The sermon preaches Mt 9:1–8 as the day's reading: *Christum in humanis
+  actibus divina gessisse mysteria … lectio hodierna monstravit* (col. 339C).
+  - **The ascription is disputed and is not settled here.** Migne's PL 57 (1862)
+    prints the same text as Maximus of Turin's Homilia CVIII (cols. 501–506). The
+    editor's admonition, read on the page image of leaf n254, reports that part
+    of the homily is read in the Roman Breviary on the Eighteenth Sunday after
+    Pentecost under Chrysologus's name, *pars hujus homiliae legitur in dominica
+    18 post Pentecosten sub nomine S. Petri Chrysologi*. It reports Pauli's
+    ascription to Chrysologus (Venice, 1750) and Combefis's before it. It names
+    Vatican codex 6451 for John Chrysostom, Monte Cassino codex 102 for Severian,
+    and Vatican 4222 and Laurentianus 36 Plut. XVII for Maximus. The editor
+    declines to impugn the received ascription. Neither the Breviary nor any of
+    those manuscripts is held or was checked, and no modern critical edition of
+    either author (CCSL 24 for Chrysologus) was consulted.
+  - v. 2, **whose faith (col. 341A)**. The paralytic's silence tells against him:
+    *Audit veniam, et tacet paralyticus, nec ullam respondet gratiam, quia plus
+    corporis quam animae tendebat ad curam*. He hears the pardon, keeps silent and
+    returns no thanks, because he wanted the cure of his body more than of his
+    soul. Then: *Merito Christus offerentium fidem non respicit, et vecordiam
+    respicit sic jacentis, ut fidei alienae suffragio paralytici anima ante
+    curaretur quam corpus*. And the lesson: *Cernitis in hoc loco, fratres, Deum
+    non quaerere insipientium voluntates, non spectare ignorantium fidem, non
+    infirmorum stulta desideria perscrutari, sed ad alterius fidem subvenire, quod
+    per solam gratiam conferebat*. God does not look for the will of the foolish
+    or the faith of the ignorant, but helps at another's faith, giving by grace
+    alone. **The sermon takes Jerome's and Ambrose's side** (§ 4.2), and it reads
+    the silence opposite to Chrysostom, for whom the man "gives himself up to the
+    power of the healer".
+  - **A reading not settled here.** Both Migne printings read *offerentium fidem
+    non respicit* (PL 52, col. 341; PL 57, col. 504). Rabanus, printing the
+    sentence at PL 107, col. 871, reads *respicit*, and PL 52's own note b reads
+    *Offerentium fidem respexit Jesus*. Without the *non*, the sentence agrees
+    with *fidei alienae suffragio* and with *ad alterius fidem subvenire*; with
+    it, the main clause contradicts them. No reading is chosen here. The study
+    quotes only the *ut* clause, *fidei alienae suffragio*, which does not
+    depend on it, and the *Cernitis* sentence, which is not affected. Note b goes
+    on to judge that the paralytic had faith too (*paralytico fiduciam non
+    defuisse vero simile est*). That is the editor's note, not the sermon. PL 57
+    (col. 504, leaf n255) gives the three quoted places in the same words; its
+    notes report Vatican 6451's *sed alterius fidei subvenire*.
+  - v. 6 (col. 342B): *Tolle lectum tuum. Hoc est, porta portantem, omnes muta
+    vices*, carry the one who carried you. This is the same turn Aquinas gives
+    the command (*quia portabatur, praecepit ut portaret*, Venice 1745, p. 122).
+    It is recorded here and is not used in the study. The sermon's close, *ne
+    Christiana fide curatus, in viis Judaicae perfidiae jam moreris* (col. 342B),
+    is not used.
+  - **How the study uses it.** One paragraph of the third reading's "The man who
+    was carried", beside Jerome and Ambrose, quotes the three places above from
+    PL 52. It states the double printing and the dispute, and gives the Breviary
+    only as Maximus's editor's report. Because the ascription is disputed,
+    Chrysologus is named among the reading's authors in `proper-components.toml`
+    but not among its carrying authors.
 - **Direct, later, a Doctor: Thomas Aquinas**, *Super Evangelium S. Matthaei
   lectura*, caput IX, on Mt 9:1–8, **read on the page images** of the registered
   Venice 1745 facsimile, *Opera*, tomus III, printed pp. 120–122 = PDF pp. 138–140
@@ -1345,7 +1416,11 @@ Catena, or Aquinas's lectura, departs from them. The Catena is still quoted in
     for what they say of Mt 9, without naming the Sunday (§ 2.7).
 - **No Father of the Gospel's is now reported only by another.** Hilary's
   *Commentarius* VIII, which earlier passes recorded as unreached, is read above
-  at PL 9, and Ambrose on Luke's paralytic has been added beside him. The
+  at PL 9, and Ambrose on Luke's paralytic has been added beside him. At the first
+  revision Chrysologus's Sermo 50 was read at PL 52 (above), and the sequel
+  Rabanus prints under *(Joan. Chrysost.)* is traced to it. One lemma is still
+  reported rather than read: the Catena's "Ioannes episcopus", identified above
+  with Rabanus's compilation but not re-read beyond its opening words. The
   Catena and the lectura are kept only to show where they depart from their
   authors. SC 254 (Doignon), the modern critical edition, was not reached, so
   Hilary is read in the Maurist text as Migne reprints it (§ 5.2).
@@ -2201,8 +2276,19 @@ aliis relaxat errata*. He turns it into counsel: *adhibe precatores, adhibe
 Ecclesiam quae pro te precetur*. Bede builds his own sentence on it (*aliorumque
 merito, aliis laxarentur errata*, *In Lucam* II, PL 92, cols. 387D–388A), and
 Rabanus prints Bede's sentence at Mt 9:2 under the siglum *(Joan. Chrysost.)*,
-followed by *Merito Christus offerentium fidem respicit* (PL 107, col. 871; § 3.5):
-the siglum notwithstanding, the passage takes Jerome's side and not Chrysostom's. Hilary (PL 9, cols. 959–960) says only *pro fidei
+followed by a passage of Peter Chrysologus's Sermo 50 (PL 52, col. 341A) that he
+reads *Merito Christus offerentium fidem respicit* (PL 107, col. 871; § 3.5):
+the siglum notwithstanding, the passage takes Jerome's side and not Chrysostom's.
+**Chrysologus, read at his own locus at the first revision (2026-09-23)**, takes
+that side in his own words, preaching this Gospel as the day's reading: the
+paralytic's soul was healed *fidei alienae suffragio*, and *Deum non quaerere
+insipientium voluntates, non spectare ignorantium fidem … sed ad alterius fidem
+subvenire, quod per solam gratiam conferebat*. He reads the man's silence against
+him (*Audit veniam, et tacet paralyticus, nec ullam respondet gratiam*), where
+Chrysostom reads it as surrender to the healer. The same text is printed as
+Maximus of Turin's Homilia CVIII, so the ascription is disputed, and the
+*non respicit* that both Migne printings carry in the sentence's main clause is
+unsettled (§ 3.5). Hilary (PL 9, cols. 959–960) says only *pro fidei
 merito* (§ 3; absent from three manuscripts) without saying whose faith. In his
 allegory the bearers are **angels** (*Angelis ministrantibus curandus offertur*).
 He does not take part in the Jerome–Chrysostom question. The Catena's
@@ -2997,6 +3083,14 @@ binding in `research/source-bindings.toml`.
 | Ambrose, *Exp. in Lc.* V.10–15 | `artifact.ambrose.expositio-evangelii-secundum-lucam.latin-migne-wikisource-book-5.wikisource-book-5-fde2303a` (tracked, SHA-256 recomputed and matched `fde2303a…0ac52`) | PL 15, cols. 1357–1359 by the transcription's markers (V.15 added on the fifth re-entry); a transcription, not image-collated |
 | Augustine, *De cons. evang.* II.25.58, re-read | the registered segment over the tracked CCEL NPNF1-6 text (above and § 3.5) | lines 12700–12791, for § 4.1's withdrawn premise |
 
+**Registered after publication and read at the first revision (2026-09-23).**
+Each has a binding in `research/source-bindings.toml`.
+
+| Witness | Identity | What was read |
+| --- | --- | --- |
+| Peter Chrysologus, Sermo 50, *De paralytico curato* (ascription disputed) | `passage.peter-chrysologus.sermones.1894-garnier-migne-pl-52.sermo-50` over its checked transcription `…sermo-50-checked-text-bce4087b` (tracked, SHA-256 recomputed and matched `bce4087b…0adc01f`); page images `…ia-leaf-n171-e5985cda` and `…ia-leaf-n172-eb5cba74` (tracked, digests recomputed and matched) | the whole sermon in the transcription; on the images, cols. 339C (heading, title, *lectio hodierna*), 341A–B (the three places the study quotes, the *non respicit* reading and note b) and 342B (*porta portantem*) |
+| Maximus of Turin, Homilia CVIII | `passage.maximus-of-turin.homiliae.1862-migne-pl-57.homilia-108`; page images `…ia-leaf-n254-f90f1bac` and `…ia-leaf-n255-b904b518` | the heading and the whole admonition on the ascription, PL 57, cols. 501–502 (leaf n254); and on leaf n255 (tracked, digest recomputed and matched), col. 504A–B, the three places the study quotes from PL 52, which stand here in the same words, with *non respicit*; the homily was not otherwise collated |
+
 **Two defects in the library, found while binding and reported rather than
 fixed.** `work.cassiodorus.expositio-psalmorum` declares `locus_pattern =
 '(?:16|24|64|88)\.…'` — four psalm numbers — while the library registers
@@ -3628,8 +3722,20 @@ and no English is composed or paraphrased anywhere.
      prints at Mt 9:2 under *(Joan. Chrysost.)* (PL 107, col. 871) opens with
      Bede's sentence** (*Intuendum sane … aliorumque merito aliis relaxarentur
      errata*; *In Lucam* II, PL 92, cols. 387D–388A, built on Ambrose V.11) and must
-     not be cited as Chrysostom's; its sequel, *Merito Christus offerentium fidem
-     respicit*, is untraced and takes Jerome's side, not Chrysostom's.
+     not be cited as Chrysostom's. Its sequel is **Peter Chrysologus, Sermo 50**
+     (PL 52, col. 341A), which Rabanus reads *offerentium fidem respicit* where
+     both Migne printings of the sermon read *non respicit*; it takes Jerome's
+     side, not Chrysostom's. Cite the sermon from PL 52, not through Rabanus, and
+     never under Chrysostom's name.
+   - **Chrysologus, Sermo 50** (first revision, 2026-09-23; § 3.5): the study may
+     quote *Audit veniam, et tacet paralyticus …*, the clause *fidei alienae
+     suffragio …*, and *Deum non quaerere insipientium voluntates … quod per
+     solam gratiam conferebat*, from PL 52, col. 341. Wherever it cites the
+     sermon it says that the same text is printed as Maximus of Turin's Homilia
+     CVIII and that its author is disputed. It gives the Breviary's use of the
+     sermon on this Sunday only as the report of Maximus's editor (PL 57,
+     cols. 501–502). **Do not quote the main clause *offerentium fidem non
+     respicit***, whose reading is unsettled.
    - **Aquinas's tropology of v. 6** (*Surge, a peccato per contritionem; tolle
      lectum, per satisfactionem … in domum aeternitatis, vel in conscientiam
      propriam*, Venice 1745, p. 122) is Aquinas's and must never be printed under
