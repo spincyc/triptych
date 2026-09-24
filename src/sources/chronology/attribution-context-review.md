@@ -137,7 +137,9 @@ all 507 earlier cases; its only added cases are this temporal claim and binding.
 A fresh checkout may need `git fetch origin
 c1dee9fc0ddfea3ea06d951c7ad25d05b75b0341` before running the two historical
 manifest tests. The fetch restores the comparison input; it does not change
-the workspace branch or the manifest's base.
+the workspace branch or the manifest's base. That fetch is no longer needed:
+the builder now pins the same base by its post-rewrite name, `8e26a1769`, which
+every clone of this history has.
 
 All content-preflight checks pass for GPT 54–56. The source, inventory,
 publication catalogue and release-binding checks are recorded in the owning

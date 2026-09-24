@@ -90,7 +90,15 @@ CHRONOLOGY = "src/sources/chronology"
 # has been rebased onto some other revision cannot present its own header as
 # evidence that it is current. See the module docstring for what happened when
 # it could.
-BASE_REVISION = "c1dee9fc0ddfea3ea06d951c7ad25d05b75b0341"
+#
+# It is the same commit the correction ledger and the review notes call
+# c1dee9fc0, under the name it has had since the history rewrite of 2026-09-04
+# (`guidance/repository.md`): removing `pdf/` from every commit renamed every
+# commit, and c1dee9fc0 is reachable from no ref after it. The identification
+# is by output, not by date: the tracked manifest re-derives byte for byte
+# against 8e26a1769 and differs against its parent and against the next commit
+# to touch the chronology corpus.
+BASE_REVISION = "8e26a1769133255e04a9619a40e47886f402ce8f"
 HOWLETT = "artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04"
 SLOET = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c"
 
