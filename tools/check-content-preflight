@@ -532,6 +532,12 @@ def anchors(item: str) -> set[str]:
     identified by the capitalised words it does have: until 2026-09-24 such
     an entry was skipped, and "Internet Archive, 1962 missal item and OCR
     finding aid" passed in GPT 44, 45 and 46, whose bodies never name it.
+    Such an entry is cited only when the body uses every one of those words
+    (`weak_anchors` says which entries these are): one common word is not a
+    name, and GPT M01 passed the same Internet Archive entry on "archive"
+    alone, from "National Archives" in its gallery. An entry with no
+    capitalised word of four letters or more has no anchor at all and is not
+    judged.
     """
     found, weak = set(), set()
     for word in NAME.findall(prose(item)):
@@ -544,6 +550,15 @@ def anchors(item: str) -> set[str]:
         else:
             found.add(folded)
     return found or weak
+
+
+def weak_anchors(item: str) -> bool:
+    """Whether the entry's anchors are only common or generic words."""
+    names = anchors(item)
+    return bool(names) and all(
+        name in COMMON or name in GENERIC
+        or POSSESSIVE.sub("", name) in GENERIC
+        for name in names)
 
 
 # --- The checks ------------------------------------------------------------
@@ -569,8 +584,9 @@ def check_references_used(leaf: Path, root: Path,
         names = anchors(item)
         if not names:
             continue
-        if not any(re.search(r"\b" + re.escape(name), used)
-                   for name in names):
+        hits = [bool(re.search(r"\b" + re.escape(name), used))
+                for name in names]
+        if not (all(hits) if weak_anchors(item) else any(hits)):
             unused.append("References entry is cited nowhere in the body: "
                           + " ".join(prose(item).split())[:120])
     return unused, (f"{len(items)} entries, every one used in the body")

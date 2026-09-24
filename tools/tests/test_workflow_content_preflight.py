@@ -587,6 +587,19 @@ evidence = ["source-grounded-synthesis"]
         result = self.probe("references-used")
         self.assertEqual(result.returncode, 0, result.stderr)
 
+    def test_references_used_wants_every_word_of_a_common_word_entry(self):
+        """One common word is not a name.
+
+        GPT M01's gallery cites the National Archives, and its Internet
+        Archive entry passed on "archive" alone.
+        """
+        self.write_leaf(extra=self.COMMON_ENTRY,
+                        body="The National Archives hold the register.")
+        result = self.probe("references-used")
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("cited nowhere in the body: Internet Archive",
+                      result.stderr)
+
     # --- restricted-not-reproduced --------------------------------------
 
     def test_restricted_refuses_a_restricted_translation_control(self):
