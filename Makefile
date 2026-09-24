@@ -1485,11 +1485,19 @@ $(BUILD_ROOT)/%-homily.pdf: $(COMMON_SOURCES) | $(BUILD_ROOT)/.metadata/%-homily
 			'$(PROVIDER)' '$*-homily' "$$pdf_hash" "$$validator_hash" \
 			> '$(BUILD_ROOT)/.metadata/$*-homily.ok'
 
+# A proper leaf's research edition keeps the same fixed pages as its synthesis
+# companion, so it gets the same settled-aux check. Without it Claude leaf 54's
+# research edition sat with its themes on page 4 for weeks and nothing failed.
+# The checker, not this rule, reads the manifest and exempts a legacy order;
+# a document without a manifest is not a proper leaf and is never checked.
 $(BUILD_ROOT)/%.pdf: $(SOURCE_ROOT)/%/main.tex $(COMMON_SOURCES) | $(BUILD_ROOT)/.metadata/%.source-check
 	@mkdir -p $(@D)
 	@mkdir -p '$(BUILD_ROOT)/.metadata/$(dir $*)'
 	@rm -f -- '$(BUILD_ROOT)/.metadata/$*.ok'
 	@$(call PDFLATEX_TO_FIXED_POINT,$(notdir $*),$*/main.tex,$(BUILD_ROOT)/$*)
+	$(if $(wildcard $(SOURCE_ROOT)/$*/proper-components.toml),@$(PROPER_COMPONENT_CHECKER) \
+		--provider '$(PROVIDER)' --document '$*' \
+		--edition research --aux '$(BUILD_ROOT)/$*.aux')
 	@case '$*' in \
 		curriculums/ecclesiastical-latin/*) \
 			$(PYTHON) $(CURRICULUM_STRUCTURE_CHECKER) \

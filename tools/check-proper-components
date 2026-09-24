@@ -13,7 +13,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from _tooling import Example, with_examples  # noqa: E402
-from _proper_components import audit_v2, outputs as proper_outputs, relative_id  # noqa: E402
+from _proper_components import (  # noqa: E402
+    audit_v2, liturgical_family, outputs as proper_outputs, relative_id,
+)
 
 # Captured transcripts, never composed; see scripts/_tooling.py.
 EXAMPLES = {
@@ -70,6 +72,8 @@ LABELS = (
 # order displaced by a constant, which is exactly what a page-1 overflow
 # produces; one did, and it was caught by a worker reading page numbers.
 BRIEF_START_PAGE = 3
+# The one value of a schema-1 manifest's optional reader_order field.
+LEGACY_READER_ORDER = "legacy"
 
 
 def safe_file(leaf: Path, value: object, field: str) -> Path:
@@ -98,6 +102,7 @@ def parse_manifest(path: Path) -> dict:
     data = tomllib.loads(path.read_text(encoding="utf-8"))
     if data.get("schema") not in {1, 2} or data.get("record_type") != "proper-components":
         raise ValueError("manifest requires schema = 1 or 2 and record_type = 'proper-components'")
+    validate_reader_order(data)
     if data["schema"] == 2:
         proper_outputs(data)
         return data
@@ -301,7 +306,61 @@ def aux_page(text: str, label: str) -> int:
     return int(match.group(1))
 
 
-def validate_brief_pages(aux: Path) -> None:
+def has_integrated_commentary(data: dict) -> bool:
+    components = data.get("components")
+    return isinstance(components, list) and any(
+        isinstance(component, dict)
+        and component.get("kind") == "integrated-commentary"
+        for component in components
+    )
+
+
+def validate_reader_order(data: dict) -> None:
+    """A declared legacy order belongs only to a legacy-shaped schema-1 manifest."""
+    if "reader_order" not in data:
+        return
+    if data.get("schema") != 1 or data["reader_order"] != LEGACY_READER_ORDER:
+        raise ValueError(
+            f"reader_order may only be {LEGACY_READER_ORDER!r}, in a schema-1 manifest"
+        )
+    if has_integrated_commentary(data):
+        raise ValueError(
+            "reader_order = 'legacy' is refused beside an integrated-commentary: "
+            "that manifest has had the revision that ends the legacy order"
+        )
+
+
+def legacy_reader_order(data: dict) -> str | None:
+    """Why a manifest's research edition keeps an order older than the fixed one.
+
+    The 1962 profile's Component architecture requires new and substantially
+    revised guides to declare exactly one synthesis-only integrated-commentary
+    and keeps "legacy manifests" valid until their next substantive revision.
+    Its Reader-Facing Order names 49-ninth-after-pentecost, which front-loads
+    the formulary ahead of the thematic movement, as legacy under that rule.
+    So a 1962 schema-1 manifest without an integrated-commentary is legacy by
+    its own data. The postconciliar profile has no integrated commentary, so
+    its schema-1 manifests all look alike, and one that front-loads its
+    formulary is legacy only if it says so with reader_order = 'legacy'.
+    """
+    if data.get("schema") != 1 or has_integrated_commentary(data):
+        return None
+    if liturgical_family(data.get("document", "")) == "roman-1962":
+        return "1962 schema-1 manifest without integrated-commentary"
+    if data.get("reader_order") == LEGACY_READER_ORDER:
+        return "declared reader_order = 'legacy'"
+    return None
+
+
+def validate_brief_pages(aux: Path, *, fixed_start: bool = True) -> None:
+    """Prove the brief synthesis fills exactly two pages and starts on page 3.
+
+    The research edition and the synthesis companion carry the same markers
+    and the same pages: both proper profiles put pages 1 and 2 first, the
+    brief synthesis on pages 3-4 and reader-order position 4 on page 5. A
+    legacy research edition is exempt from the start page, never from the
+    two-page extent.
+    """
     text = aux.read_text(encoding="utf-8", errors="replace")
     start, end, following = (aux_page(text, label) for label in LABELS)
     if end != start + 1 or following != start + 2:
@@ -309,7 +368,7 @@ def validate_brief_pages(aux: Path) -> None:
             "brief synthesis must occupy exactly two physical pages: "
             f"start={start}, end={end}, next={following}"
         )
-    if start != BRIEF_START_PAGE:
+    if fixed_start and start != BRIEF_START_PAGE:
         raise ValueError(
             "brief synthesis must begin on page "
             f"{BRIEF_START_PAGE}, as the profile fixes it, not page {start}: "
@@ -355,11 +414,24 @@ def main() -> int:
                            edition=args.edition, build_root=args.build_root)
         except (OSError, ValueError, tomllib.TOMLDecodeError) as exc:
             errors.append(f"{path}: {exc}")
+    notes = []
     if args.aux:
         try:
-            if not (args.document and parse_manifest(paths[0])["schema"] == 2):
-                validate_brief_pages(args.aux)
-        except (OSError, ValueError) as exc:
+            manifest = parse_manifest(paths[0]) if args.document else None
+            if manifest is None or manifest["schema"] != 2:
+                # Only the research edition carries the formulary and sweep a
+                # legacy order front-loads; its companion keeps page 3.
+                legacy = (legacy_reader_order(manifest)
+                          if manifest is not None and args.edition == "research"
+                          else None)
+                validate_brief_pages(args.aux, fixed_start=legacy is None)
+                if legacy:
+                    notes.append(
+                        f"{args.document}: legacy reader order ({legacy}); "
+                        "research brief synthesis checked for its two-page "
+                        f"extent, not its page-{BRIEF_START_PAGE} start."
+                    )
+        except (OSError, ValueError, tomllib.TOMLDecodeError) as exc:
             errors.append(str(exc))
     if errors:
         for error in errors:
@@ -372,6 +444,8 @@ def main() -> int:
                 if (args.list_derived or getattr(args, f"list_{mode}")) and mode in data["outputs"]:
                     print(data["outputs"][mode])
         return 0
+    for note in notes:
+        print(note)
     print(f"Proper component manifests valid: {len(paths)}.")
     return 0
 

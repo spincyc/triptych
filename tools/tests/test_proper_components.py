@@ -2,6 +2,10 @@ from __future__ import annotations
 
 import importlib.machinery
 import importlib.util
+import os
+import shutil
+import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -15,60 +19,83 @@ module = importlib.util.module_from_spec(spec)
 loader.exec_module(module)
 
 
-class ProperComponentTests(unittest.TestCase):
-    def component_tree(self, directory: str, *, appointed_modes: str = '["research"]',
-                       treatment_modes: str = '["research"]',
-                       integrated_modes: str = '["synthesis"]',
-                       swap_tail: bool = False):
-        provider = Path(directory) / "src" / "gpt"
-        leaf = provider / "proper"
-        leaf.mkdir(parents=True)
-        for name in (
-            "main.tex", "synthesis.tex", "appointed.tex", "treatment.tex",
-            "brief.tex", "integrated.tex", "grounded.tex", "exploratory.tex",
-            "notable.tex", "terminal.tex", "brief-refs.tex",
-        ):
-            (leaf / name).write_text("% fixture\n", encoding="utf-8")
-        components = [
-            ("appointed", "appointed-text", "appointed.tex", appointed_modes),
-            ("treatment", "proper-treatment", "treatment.tex", treatment_modes),
-            ("brief", "brief-synthesis", "brief.tex", '["research", "synthesis"]'),
-            ("integrated", "integrated-commentary", "integrated.tex",
-             integrated_modes),
-            ("grounded", "source-grounded-synthesis", "grounded.tex",
-             '["research", "synthesis"]'),
-            ("notable", "notable-quotable", "notable.tex",
-             '["research", "synthesis"]'),
-            ("exploratory", "exploratory-synthesis", "exploratory.tex",
-             '["research", "synthesis"]'),
-            ("terminal", "terminal-apparatus", "terminal.tex",
-             '["research", "synthesis"]'),
-        ]
-        if swap_tail:
-            components[5], components[6] = components[6], components[5]
-        blocks = []
-        for key, kind, path, modes in components:
-            references = '["brief-refs.tex"]' if key == "brief" else "[]"
-            blocks.append(
-                f'[[components]]\nkey = "{key}"\nkind = "{kind}"\n'
-                f'path = "{path}"\nmodes = {modes}\ndepends_on = []\n'
-                f'element_keys = ["introit", "gospel"]\nreferences = {references}\n'
-            )
-        manifest = (
-            'schema = 1\nrecord_type = "proper-components"\ndocument = "proper"\n'
-            'entrypoint = "main.tex"\nsynthesis_entrypoint = "synthesis.tex"\n'
-            'appointed_text_completeness = "complete"\n'
-            'element_keys = ["introit", "gospel"]\n'
-            '[outputs]\nresearch = "proper"\nsynthesis = "proper-synthesis"\n'
-            'web = "proper"\ncanonical_label = "Full PDF"\n'
-            'synthesis_label = "Synthesis PDF"\n\n' + "\n".join(blocks) +
-            '\n[[relations]]\nkey = "opening-to-gospel"\n'
-            'element_keys = ["introit", "gospel"]\n'
-            'evidence = ["source-grounded-synthesis"]\n'
+def write_component_tree(provider: Path, *, document: str = "proper",
+                         appointed_modes: str = '["research"]',
+                         treatment_modes: str = '["research"]',
+                         integrated_modes: str = '["synthesis"]',
+                         integrated: bool = True, swap_tail: bool = False,
+                         extra: str = "") -> Path:
+    """Write a valid schema-1 leaf at provider/document; return its manifest."""
+    leaf = provider / document
+    leaf.mkdir(parents=True)
+    for name in (
+        "main.tex", "synthesis.tex", "appointed.tex", "treatment.tex",
+        "brief.tex", "integrated.tex", "grounded.tex", "exploratory.tex",
+        "notable.tex", "terminal.tex", "brief-refs.tex",
+    ):
+        (leaf / name).write_text("% fixture\n", encoding="utf-8")
+    components = [
+        ("appointed", "appointed-text", "appointed.tex", appointed_modes),
+        ("treatment", "proper-treatment", "treatment.tex", treatment_modes),
+        ("brief", "brief-synthesis", "brief.tex", '["research", "synthesis"]'),
+        ("integrated", "integrated-commentary", "integrated.tex",
+         integrated_modes),
+        ("grounded", "source-grounded-synthesis", "grounded.tex",
+         '["research", "synthesis"]'),
+        ("notable", "notable-quotable", "notable.tex",
+         '["research", "synthesis"]'),
+        ("exploratory", "exploratory-synthesis", "exploratory.tex",
+         '["research", "synthesis"]'),
+        ("terminal", "terminal-apparatus", "terminal.tex",
+         '["research", "synthesis"]'),
+    ]
+    if not integrated:
+        components = [item for item in components if item[0] != "integrated"]
+    if swap_tail:
+        keys = [item[0] for item in components]
+        notable, exploratory = keys.index("notable"), keys.index("exploratory")
+        components[notable], components[exploratory] = (
+            components[exploratory], components[notable]
         )
-        path = leaf / "proper-components.toml"
-        path.write_text(manifest, encoding="utf-8")
-        return path, provider
+    blocks = []
+    for key, kind, path, modes in components:
+        references = '["brief-refs.tex"]' if key == "brief" else "[]"
+        blocks.append(
+            f'[[components]]\nkey = "{key}"\nkind = "{kind}"\n'
+            f'path = "{path}"\nmodes = {modes}\ndepends_on = []\n'
+            f'element_keys = ["introit", "gospel"]\nreferences = {references}\n'
+        )
+    manifest = (
+        f'schema = 1\nrecord_type = "proper-components"\ndocument = "{document}"\n'
+        'entrypoint = "main.tex"\nsynthesis_entrypoint = "synthesis.tex"\n'
+        'appointed_text_completeness = "complete"\n' + extra +
+        'element_keys = ["introit", "gospel"]\n'
+        f'[outputs]\nresearch = "{document}"\nsynthesis = "{document}-synthesis"\n'
+        f'web = "{document}"\ncanonical_label = "Full PDF"\n'
+        'synthesis_label = "Synthesis PDF"\n\n' + "\n".join(blocks) +
+        '\n[[relations]]\nkey = "opening-to-gospel"\n'
+        'element_keys = ["introit", "gospel"]\n'
+        'evidence = ["source-grounded-synthesis"]\n'
+    )
+    path = leaf / "proper-components.toml"
+    path.write_text(manifest, encoding="utf-8")
+    return path
+
+
+def write_aux(path: Path, start: int, end: int, following: int) -> Path:
+    path.write_text(
+        f"\\newlabel{{triptych:brief-synthesis:start}}{{{{}}{{{start}}}}}\n"
+        f"\\newlabel{{triptych:brief-synthesis:end}}{{{{}}{{{end}}}}}\n"
+        f"\\newlabel{{triptych:brief-synthesis:next}}{{{{}}{{{following}}}}}\n",
+        encoding="utf-8",
+    )
+    return path
+
+
+class ProperComponentTests(unittest.TestCase):
+    def component_tree(self, directory: str, **options):
+        provider = Path(directory) / "src" / "gpt"
+        return write_component_tree(provider, **options), provider
 
     def test_manifest_enforces_agreed_mode_boundary(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -169,6 +196,191 @@ class ProperComponentTests(unittest.TestCase):
             )
             with self.assertRaisesRegex(ValueError, "exactly two"):
                 module.validate_brief_pages(aux)
+
+
+CURRENT_1962 = "liturgy/roman-rite/1962/propers/temporal/proper"
+LEGACY_1962 = "liturgy/roman-rite/1962/propers/temporal/legacy"
+POSTCONCILIAR = ("liturgy/roman-rite/postconciliar/"
+                 "roman-missal-third-edition-en-us-2011/propers/temporal/proper")
+
+
+class ResearchEditionPageTests(unittest.TestCase):
+    """The expansive study keeps the concise study's fixed pages 1-5.
+
+    Both 1962 and postconciliar profiles put the brief synthesis on pages 3-4
+    of the research edition as well as its companion, so the same markers and
+    the same start page apply. Only a legacy research edition, named by its
+    own manifest, keeps an older order; even it keeps the two-page extent.
+    """
+
+    def setUp(self):
+        self.temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temporary.cleanup)
+        self.root = Path(self.temporary.name)
+        self.provider = self.root / "src" / "gpt"
+
+    def check(self, document: str, pages: tuple[int, int, int],
+              edition: str = "research") -> subprocess.CompletedProcess[str]:
+        aux = write_aux(self.root / "guide.aux", *pages)
+        return subprocess.run(
+            [sys.executable, str(PATH), "--root", str(self.root), "--provider", "gpt",
+             "--document", document, "--edition", edition, "--aux", str(aux)],
+            capture_output=True, text=True, check=False,
+        )
+
+    def test_displaced_research_edition_is_refused(self):
+        write_component_tree(self.provider, document=CURRENT_1962)
+        result = self.check(CURRENT_1962, (4, 5, 6))
+        self.assertEqual(result.returncode, 1, result.stdout)
+        self.assertIn("begin on page 3", result.stderr)
+
+    def test_research_edition_on_its_fixed_pages_passes(self):
+        write_component_tree(self.provider, document=CURRENT_1962)
+        result = self.check(CURRENT_1962, (3, 4, 5))
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertNotIn("legacy", result.stdout)
+
+    def test_legacy_1962_manifest_exempts_its_research_start_page(self):
+        # A 1962 schema-1 manifest without integrated-commentary is the
+        # profile's legacy manifest; 49-ninth-after-pentecost is one.
+        write_component_tree(self.provider, document=LEGACY_1962,
+                             integrated=False, swap_tail=True)
+        result = self.check(LEGACY_1962, (17, 18, 19))
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("legacy reader order", result.stdout)
+
+    def test_legacy_exemption_keeps_the_two_page_extent(self):
+        write_component_tree(self.provider, document=LEGACY_1962, integrated=False)
+        result = self.check(LEGACY_1962, (17, 19, 20))
+        self.assertEqual(result.returncode, 1, result.stdout)
+        self.assertIn("exactly two", result.stderr)
+
+    def test_legacy_exemption_does_not_reach_the_synthesis_companion(self):
+        write_component_tree(self.provider, document=LEGACY_1962, integrated=False)
+        result = self.check(LEGACY_1962, (17, 18, 19), edition="synthesis")
+        self.assertEqual(result.returncode, 1, result.stdout)
+        self.assertIn("begin on page 3", result.stderr)
+
+    def test_undeclared_postconciliar_manifest_is_held_to_page_3(self):
+        # Postconciliar schema-1 manifests have no integrated commentary, so
+        # that absence marks nothing and cannot exempt one.
+        write_component_tree(self.provider, document=POSTCONCILIAR, integrated=False)
+        result = self.check(POSTCONCILIAR, (7, 8, 9))
+        self.assertEqual(result.returncode, 1, result.stdout)
+        self.assertIn("begin on page 3", result.stderr)
+
+    def test_declared_legacy_order_exempts_its_research_start_page(self):
+        write_component_tree(self.provider, document=POSTCONCILIAR, integrated=False,
+                             extra='reader_order = "legacy"\n')
+        result = self.check(POSTCONCILIAR, (7, 8, 9))
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("declared reader_order", result.stdout)
+
+    def test_revised_manifest_cannot_declare_a_legacy_order(self):
+        path = write_component_tree(self.provider, document=CURRENT_1962,
+                                    extra='reader_order = "legacy"\n')
+        with self.assertRaisesRegex(ValueError, "integrated-commentary"):
+            module.audit_manifest(path, self.provider)
+
+    def test_reader_order_has_one_value(self):
+        path = write_component_tree(self.provider, document=POSTCONCILIAR,
+                                    integrated=False, extra='reader_order = "modern"\n')
+        with self.assertRaisesRegex(ValueError, "reader_order"):
+            module.audit_manifest(path, self.provider)
+
+
+FAKE_PDFLATEX = r"""#!/bin/sh
+output_directory=
+job_name=
+for argument do
+    case "$argument" in
+        -output-directory=*) output_directory=${argument#*=} ;;
+        -jobname=*) job_name=${argument#*=} ;;
+    esac
+done
+mkdir -p "$output_directory"
+printf '%%PDF-1.5 fixture %s\n' "$job_name" > "$output_directory/$job_name.pdf"
+set -- $MAKE_TEST_BRIEF_PAGES
+{
+    printf '\\newlabel{triptych:brief-synthesis:start}{{}{%s}}\n' "$1"
+    printf '\\newlabel{triptych:brief-synthesis:end}{{}{%s}}\n' "$2"
+    printf '\\newlabel{triptych:brief-synthesis:next}{{}{%s}}\n' "$3"
+} > "$output_directory/$job_name.aux"
+"""
+
+
+class ResearchBuildTests(unittest.TestCase):
+    """The real Makefile research rule, with TeX and metadata stubbed out."""
+
+    def setUp(self):
+        self.temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temporary.cleanup)
+        self.root = Path(self.temporary.name)
+        shutil.copy2(ROOT / "Makefile", self.root / "Makefile")
+        (self.root / "tools").mkdir()
+        (self.root / "scripts").mkdir()
+        # Copies, not links: the checker finds its repository from its own path.
+        shutil.copy2(PATH, self.root / "tools/check-proper-components")
+        for name in ("_proper_components.py", "_tooling.py"):
+            shutil.copy2(ROOT / "scripts" / name, self.root / "scripts" / name)
+        self.executable("tools/tpt", "#!/usr/bin/env python3\n"
+                        "import os, sys\n"
+                        "root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\n"
+                        "target = os.path.join(root, 'tools', sys.argv[1])\n"
+                        "if not os.path.exists(target):\n"
+                        "    raise SystemExit(127)\n"
+                        "os.execv(target, [target] + sys.argv[2:])\n")
+        self.executable("tools/check-generation-metadata", "#!/bin/sh\nexit 0\n")
+        for name in ("pdftotext", "pdfinfo"):
+            self.executable(f"bin/{name}", "#!/bin/sh\nexit 0\n")
+        pdflatex = self.executable("bin/fake-pdflatex", FAKE_PDFLATEX)
+        self.provider = self.root / "src" / "gpt"
+        self.environment = dict(os.environ, PDFLATEX=str(pdflatex),
+                                PATH=f"{self.root / 'bin'}:{os.environ['PATH']}")
+
+    def executable(self, relative: str, text: str) -> Path:
+        path = self.root / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text, encoding="utf-8")
+        path.chmod(0o755)
+        return path
+
+    def build(self, document: str, pages: tuple[int, int, int]) -> subprocess.CompletedProcess[str]:
+        return subprocess.run(
+            ["make", "--no-print-directory", f"build/gpt/{document}.pdf"],
+            cwd=self.root, env=dict(self.environment,
+                                    MAKE_TEST_BRIEF_PAGES=" ".join(map(str, pages))),
+            capture_output=True, text=True, check=False,
+        )
+
+    def test_displaced_research_edition_fails_its_build(self):
+        write_component_tree(self.provider, document=CURRENT_1962)
+        result = self.build(CURRENT_1962, (4, 5, 6))
+        self.assertNotEqual(result.returncode, 0, result.stdout)
+        self.assertIn("begin on page 3", result.stderr)
+        self.assertFalse((self.root / f"build/gpt/{CURRENT_1962}.pdf").exists())
+
+    def test_research_edition_on_its_fixed_pages_builds(self):
+        write_component_tree(self.provider, document=CURRENT_1962)
+        result = self.build(CURRENT_1962, (3, 4, 5))
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("Proper component manifests valid: 1.", result.stdout)
+        self.assertTrue((self.root / f"build/gpt/.metadata/{CURRENT_1962}.ok").is_file())
+
+    def test_legacy_research_edition_builds_by_exemption(self):
+        write_component_tree(self.provider, document=LEGACY_1962, integrated=False)
+        result = self.build(LEGACY_1962, (17, 18, 19))
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("legacy reader order", result.stdout)
+
+    def test_document_without_manifest_is_never_checked(self):
+        article = self.provider / "articles/faith/essay"
+        article.mkdir(parents=True)
+        (article / "main.tex").write_text("% article\n", encoding="utf-8")
+        result = self.build("articles/faith/essay", (4, 5, 6))
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertNotIn("Proper component", result.stdout + result.stderr)
+        self.assertTrue((self.root / "build/gpt/articles/faith/essay.pdf").is_file())
 
 
 if __name__ == "__main__":
