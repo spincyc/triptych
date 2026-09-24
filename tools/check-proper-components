@@ -24,7 +24,7 @@ EXAMPLES = {
         Example(
             "tools/check-proper-components",
             (
-                "Proper component manifests valid: 12.",
+                "Proper component manifests valid: 14.",
             ),
         ),
         Example(
@@ -33,7 +33,7 @@ EXAMPLES = {
                 "liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost-synthesis",
                 "liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost-synthesis",
                 "liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost-synthesis",
-                "... 9 more lines",
+                "... 11 more lines",
             ),
             "prints the synthesis leaf ids instead of the count",
         ),
