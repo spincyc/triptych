@@ -784,5 +784,231 @@ class TruncationTests(unittest.TestCase):
         self.assertGreater(capped["truncated"]["total"], 1)
         self.assertNotIn("truncated", run("--max-results", "0"))
 
+
+SERMO_50 = "passage.peter-chrysologus.sermones.1894-garnier-migne-pl-52.sermo-50"
+BASIL_1 = (
+    "passage.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895."
+    "basil-hexaemeron-1"
+)
+AD_LITTERAM_4 = "passage.augustine.de-genesi-ad-litteram.migne-pl-34.liber-4"
+
+
+_DISCOVERED: dict[tuple[str, ...], str] = {}
+
+
+def discover(*arguments: str) -> str:
+    """The tool's own output, run once per argument list."""
+    import subprocess
+
+    if arguments not in _DISCOVERED:
+        _DISCOVERED[arguments] = subprocess.run(
+            [str(ROOT / "tools" / "commentary-work-index"), "discover", *arguments],
+            capture_output=True, text=True, check=True, cwd=ROOT,
+        ).stdout
+    return _DISCOVERED[arguments]
+
+
+def discovered(passage: str, *extra: str) -> dict:
+    import json
+
+    return json.loads(
+        discover("--passage", passage, "--max-results", "0", "--json", *extra)
+    )["discoveries"][0]
+
+
+def lead(entry: dict, author: str, title: str) -> dict:
+    found = [w for w in entry["works"] if (w["author"], w["title"]) == (author, title)]
+    if len(found) != 1:
+        raise AssertionError(f"{author} -- {title}: {len(found)} leads, expected one")
+    return found[0]
+
+
+class HeldFragmentTests(unittest.TestCase):
+    """A held fragment answers at the verse; the harvest stays on the chapter.
+
+    guidance/catena.md §11. The index stores chapters and must never gain a
+    verse key (Rule 5, §3), so a lead reached through its chapter says so. A
+    sweep of Matthew 9:1-8 was told only that Chrysologus's *Sermones* matched
+    on the chapter, while the library held Sermo 50 on 9:1-7, printed and
+    collated; the fragment showed only as a `fragment-edge` join.
+    """
+
+    def test_sermo_50_is_reported_on_the_verses_it_expounds(self) -> None:
+        chrysologus = lead(discovered("Matthew 9:1-8"), "Peter Chrysologus", "Sermones")
+        # The harvest's claim is left as it was: it learned the chapter only.
+        self.assertEqual(chrysologus["matched"], "chapter")
+        self.assertEqual(chrysologus["matched_loci"], ["Matthew 9"])
+        self.assertEqual(
+            chrysologus["held_fragments"],
+            [{
+                "passage_id": SERMO_50,
+                "work_id": "work.peter-chrysologus.sermones",
+                "extent": "Matthew 9:1-9:7",
+                "numbering": "vulgate",
+                "matched": "verses",
+                # 9:8 is the crowds' glorifying of God, which the sermon never
+                # reaches; the fragment covers some of the verses cited.
+                "passage": "partial",
+            }],
+        )
+
+    def test_the_text_and_yaml_carry_the_same_verse_match(self) -> None:
+        import re
+
+        import yaml
+
+        text = discover("--passage", "Matthew 9:1-8", "--max-results", "0", "--plain")
+        # The lead's own lines: from its heading to the next numbered lead.
+        block = re.split(r"\n +\d+\. ", text.split("Peter Chrysologus -- Sermones", 1)[1])[0]
+        self.assertIn("matched on the chapter, not the verses cited: Matthew 9\n", block)
+        self.assertIn(
+            "held fragment overlapping the verses cited: Matthew 9:1-9:7, "
+            f"covering some of them; {SERMO_50}\n",
+            block,
+        )
+        document = yaml.safe_load(
+            discover("--passage", "Matthew 9:1-8", "--max-results", "0", "--yaml")
+        )
+        chrysologus = lead(document["discoveries"][0], "Peter Chrysologus", "Sermones")
+        self.assertEqual(
+            [(row["passage_id"], row["extent"], row["matched"]) for row in chrysologus["held_fragments"]],
+            [(SERMO_50, "Matthew 9:1-9:7", "verses")],
+        )
+
+    def test_basils_first_homily_is_reported_at_genesis_1_1(self) -> None:
+        """Both of the harvest's names for the Hexaemeron join the one library work."""
+        entry = discovered("Genesis 1:1")
+        for author in ("Basil the Great", "Basil of Caesarea"):
+            basil = lead(entry, author, "Homiliae in Hexaemeron")
+            self.assertEqual(basil["matched"], "chapter")
+            rows = {row["passage_id"]: row for row in basil["held_fragments"]}
+            self.assertEqual(rows[BASIL_1]["extent"], "Genesis 1:1")
+            self.assertEqual(rows[BASIL_1]["passage"], "inside")
+            # Homily II begins at 1:2 and must not ride along on the chapter.
+            self.assertTrue(all(row["extent"] == "Genesis 1:1" for row in rows.values()))
+        self.assertIn(
+            f"held fragment overlapping the verses cited: Genesis 1:1, covering all of them; {BASIL_1}",
+            discover("--passage", "Genesis 1:1", "--max-results", "0", "--plain"),
+        )
+
+    def test_a_range_the_fragment_stops_short_of_claims_no_verse_match(self) -> None:
+        """Sermo 50 ends at 9:7. The verse after it shares its chapter, not its extent."""
+        short = discovered("Matthew 9:8-13")
+        chrysologus = lead(short, "Peter Chrysologus", "Sermones")
+        self.assertEqual(chrysologus["matched"], "chapter")
+        self.assertNotIn("held_fragments", chrysologus)
+        self.assertNotIn(
+            SERMO_50, [row["passage_id"] for row in short.get("fragments_without_lead", [])]
+        )
+        # One verse back, the boundary is inside the extent and is claimed.
+        seam = lead(discovered("Matthew 9:7-8"), "Peter Chrysologus", "Sermones")
+        self.assertEqual([row["passage_id"] for row in seam["held_fragments"]], [SERMO_50])
+
+    def test_an_extent_across_a_chapter_is_found_from_either_side_and_shown_whole(self) -> None:
+        """Rule 6: De Genesi ad litteram IV runs 1:5-2:3 and is never cut at the seam."""
+        for passage, reach in (("Genesis 2:1-3", "inside"), ("Genesis 1:5", "inside"),
+                               ("Genesis 1:31-2:1", "inside"), ("Genesis 2:3-4", "partial")):
+            entry = discovered(passage)
+            rows = [
+                row
+                for work in entry["works"]
+                for row in work.get("held_fragments", [])
+            ] + entry.get("fragments_without_lead", [])
+            found = {row["passage_id"]: row for row in rows}
+            self.assertIn(AD_LITTERAM_4, found, passage)
+            self.assertEqual(found[AD_LITTERAM_4]["extent"], "Genesis 1:5-2:3", passage)
+            self.assertEqual(found[AD_LITTERAM_4]["passage"], reach, passage)
+        self.assertNotIn(
+            AD_LITTERAM_4,
+            [row["passage_id"] for work in discovered("Genesis 2:4")["works"]
+             for row in work.get("held_fragments", [])],
+        )
+
+    def test_a_held_fragment_no_lead_joins_is_still_listed(self) -> None:
+        """The harvest names no Angelomus on Genesis 1; the library holds him at 1:1."""
+        entry = discovered("Genesis 1:1")
+        self.assertNotIn(
+            "Angelomus of Luxeuil", [work["author"] for work in entry["works"]]
+        )
+        unplaced = {row["passage_id"]: row for row in entry["fragments_without_lead"]}
+        angelomus = unplaced["passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.1-1"]
+        self.assertEqual(
+            (angelomus["extent"], angelomus["matched"], angelomus["lead"]),
+            ("Genesis 1:1", "verses", "none"),
+        )
+
+    def test_a_fragment_whose_lead_is_cut_says_so(self) -> None:
+        import json
+
+        entry = json.loads(discover(
+            "--passage", "Matthew 9:1-8", "--max-results", "1", "--json"
+        ))["discoveries"][0]
+        self.assertNotIn("Peter Chrysologus", [work["author"] for work in entry["works"]])
+        self.assertEqual(
+            [(row["passage_id"], row["lead"]) for row in entry["fragments_without_lead"]],
+            [(SERMO_50, "below-cap")],
+        )
+
+
+class FragmentNumberingTests(unittest.TestCase):
+    """Rule 3: a fragment's extent is Vulgate, and a Hebrew citation is converted to meet it."""
+
+    def setUp(self) -> None:
+        import json
+        import tempfile
+        import types
+
+        import _containment
+
+        directory = tempfile.TemporaryDirectory()
+        self.addCleanup(directory.cleanup)
+        root = Path(directory.name)
+        index = (
+            root / "src/sources/works/catholic-church/vulgata-clementina/editions/"
+            "ebible-latvuc/artifacts/book-index-fcad78c2/book-index.tsv"
+        )
+        index.parent.mkdir(parents=True)
+        index.write_text(
+            "ordinal\ttoken\tfile\ttestament\tdouay_title\tmodern_name\t"
+            "missal_latin_abbreviation\talternate_names\n"
+            "19\tPs\t19-psalms.tsv\told\tThe Book of Psalms\tPsalms\tPs.\tPs.\n",
+            encoding="utf-8",
+        )
+        for chapter, verses in ((49, 23), (50, 21)):
+            path = root / f"src/sources/bibles/clementine-vulgate/chapters/Ps/{chapter}.json"
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(json.dumps(
+                {"verses": {str(n): "text" for n in range(1, verses + 1)}}
+            ), encoding="utf-8")
+        edges = root / "src/sources/commentary/fragment-loci.yaml"
+        edges.parent.mkdir(parents=True)
+        edges.write_text(
+            "schema: triptych-commentary-fragment-loci/v1\n"
+            "numbering: vulgate\n"
+            "fragments:\n"
+            "- passage_id: passage.miserere\n"
+            "  work_id: work.someone.expositio\n"
+            "  numbering: vulgate\n"
+            "  extent: {token: Ps, first_chapter: 50, first_verse: 3,"
+            " last_chapter: 50, last_verse: 4}\n",
+            encoding="utf-8",
+        )
+        self.fragments = work_index.HeldFragments(
+            types.SimpleNamespace(root=root, books=_containment.Canon(root))
+        )
+        self.citations = work_index._load_citations_tool()
+
+    def found(self, citation: str, numbering: str) -> list[str]:
+        record = work_index._parse_passage_value(self.citations, citation)[0]
+        return [row["passage_id"] for row in self.fragments.overlapping(record, numbering)]
+
+    def test_the_hebrew_miserere_meets_the_vulgate_extent(self) -> None:
+        self.assertEqual(self.found("Psalm 51:3", "hebrew"), ["passage.miserere"])
+        self.assertEqual(self.found("Psalm 50:3", "vulgate"), ["passage.miserere"])
+
+    def test_the_same_number_in_the_other_system_is_another_psalm(self) -> None:
+        self.assertEqual(self.found("Psalm 50:3", "hebrew"), [])
+
+
 if __name__ == "__main__":
     unittest.main()

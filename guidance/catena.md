@@ -589,6 +589,30 @@ extent in canonical numbering, tested against the passage (`inside`,
 it and the index already attests the reach. `outside` is a result, not a miss:
 PL 37 holds Augustine on Psalms 80–150 and says nothing of Psalm 20.
 
+**The harvest answers at the chapter; a held fragment answers at the verse.**
+A sweep of Matthew 9:1–8 was told only that Chrysologus's *Sermones* matched on
+the chapter, while Sermo 50 on 9:1–7 sat in the library, collated. The lead's
+line, *matched on the chapter, not the verses cited*, is the harvest's claim
+(§3) and stays as it is. Beside it `discover` prints the fragment's own claim:
+every fragment in `fragment-loci.yaml` whose extent overlaps the verses cited,
+as *held fragment overlapping the verses cited*, with its passage id, its whole
+extent (Rule 6), and whether it covers all the verses cited or some
+(`held_fragments`, `passage` `inside` or `partial`). The citation is converted
+into the fragment's numbering before the test (Rule 3), and the test is the one
+the container rows use.
+
+A fragment stands under every lead shown whose holdings join its work. One that
+no lead shown joins is still listed, after the leads
+(`fragments_without_lead`). Rule 2 makes the fragment, not the harvest's
+confidence, the evidence that a work is present at a locus, and Rule 14 lets
+nothing stand in for `discover`, so a held text the harvest never named at a
+passage must not be dropped from the one lookup a sweep may use. Each such row
+says why no lead carries it: its work is a lead below the cap, or no lead
+listed for the passage joins it. The second is an absence from the joins,
+bounded as below. The library holds Angelomus, Remigius and *De civitate Dei*
+at Genesis 1:1, and the harvest names none of them on Genesis 1
+[verified 2026-09-23].
+
 **"None registered" is an absence from the joins**, and as narrow as
 `guidance/sources.md` requires every negative claim to be. A lead reaches the
 library by an index `work_id`, an `identities` row in the inventory, a

@@ -34,6 +34,14 @@ anthology is reported held, and a work nothing joins is reported as having no
 registered holding, with the bound of that absence stated. `containment`
 validates that inventory; `make check-sources` runs it.
 
+`discover` also lists every held fragment whose own extent overlaps the verses
+cited. The index learned chapters and says so for each lead ("matched on the
+chapter"). A fragment's extent in `src/sources/commentary/fragment-loci.yaml` is
+the printing's own statement of the verses it expounds, so it can answer at the
+verse where the index cannot. It stands under each lead shown that joins its
+work, and after the leads when none does. `guidance/catena.md` §11 states the
+rule.
+
 `formulary` finds the liturgical commentaries keyed to a Mass. A commentator
 heads his chapter with his own Sunday number, and the numbers drift from any
 calendar's, so the verb never matches on the number: it compares the elements
@@ -68,6 +76,7 @@ from typing import Any, NamedTuple
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 import _calendars
+import _catena
 import _containment
 import _coverage
 import _formulary
@@ -116,7 +125,7 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index discover --passage 'Psalm 24:1-3' --numbering vulgate --max-results 2 --json",
             (
-                "{\"cited_numbering\":\"vulgate\",\"discoveries\":[{\"cited\":\"Psalm 24:1-3\",\"passage\":\"Psalms 24:1-24:3\"... [+22535 chars]",
+                "{\"cited_numbering\":\"vulgate\",\"discoveries\":[{\"cited\":\"Psalm 24:1-3\",\"passage\":\"Psalms 24:1-24:3\"... [+22795 chars]",
             ),
         ),
         Example(
@@ -1228,7 +1237,6 @@ def _render_payload(
             works = item.get("works", [])
             if not works:
                 print("  - no mapped commentaries yet")
-                continue
             for index, work in enumerate(works, start=1):
                 print(
                     f"  {index:>2}. {work.get('author')} — {work.get('title')}"
@@ -1239,6 +1247,10 @@ def _render_payload(
                 if work.get("matched") == "chapter":
                     loci = ", ".join(work.get("matched_loci") or [])
                     print(f"      matched on the chapter, not the verses cited: {loci}")
+                # The harvest's line above stays as it is: a held fragment is
+                # a second claim, from the text, and is printed as one.
+                for row in work.get("held_fragments") or []:
+                    print(f"      {FRAGMENT_LABEL}: {_fragment_words(row)}")
                 if work.get("source_hint"):
                     print(f"      source hint: {work['source_hint']}")
                 if work.get("holdings") is not None:
@@ -1248,6 +1260,14 @@ def _render_payload(
                 for work in works
             ):
                 print(f"  none registered: {_containment.NONE_NOTE}")
+            unplaced = item.get("fragments_without_lead") or []
+            if unplaced:
+                print("  held fragments overlapping the verses cited, under no lead shown:")
+            for row in unplaced:
+                print(
+                    f"    {_fragment_words(row)} ({row['work_id']}: "
+                    f"{row['author']} — {row['title']}); {FRAGMENT_LEADS[row['lead']]}"
+                )
         return None
 
     if payload.get("schema") == _containment.REPORT_SCHEMA:
@@ -1622,6 +1642,161 @@ def _psalm_target(discovery: Discovery) -> str:
     return discovery.numbering
 
 
+# A held fragment is matched on the verses, and says how far it reaches into
+# them. The words come from the containment's verdicts because the test does:
+# `Canon.coverage` decides whether a container reaches a passage and whether a
+# fragment does, so the two cannot answer that question differently.
+FRAGMENT_LABEL = "held fragment overlapping the verses cited"
+FRAGMENT_REACH = {
+    _containment.INSIDE: "covering all of them",
+    _containment.PARTIALLY: "covering some of them",
+}
+# Why a fragment stands under no lead shown. Neither is a claim about the
+# harvest beyond the joins: "none" is as narrow as `holdings: none registered`.
+FRAGMENT_LEADS = {
+    "below-cap": "its work is a lead below the --max-results cap",
+    "none": "no lead listed for this passage joins its work",
+}
+
+
+def _fragment_words(row: dict[str, Any]) -> str:
+    return f"{row['extent']}, {FRAGMENT_REACH[row['passage']]}; {row['passage_id']}"
+
+
+class HeldFragments:
+    """Every held fragment (L3) whose own extent overlaps a passage asked about.
+
+    The index (L1) is keyed by chapter and stays so (guidance/catena.md
+    Rule 5 and §3): it never learned which verses a work addresses, so a lead
+    reached through its chapter says so. A fragment's extent in
+    `fragment-loci.yaml` is the printing's own statement of the verses it
+    expounds, in the numbering the row declares (Rule 3), so it can answer at
+    the verse. The extent is tested whole and printed whole, however many
+    chapters it crosses (Rule 6).
+
+    Read from the library root the holdings are read from, for the reason
+    `run_discover` gives: the index is an input a caller may substitute, the
+    library is not.
+    """
+
+    def __init__(self, holdings: _containment.Holdings) -> None:
+        self.books = holdings.books
+        path = holdings.root / _catena.EDGES_RELATIVE
+        data = _calendars.read_yaml(path) if path.is_file() else {}
+        if not isinstance(data, dict):
+            data = {}
+        if data and data.get("schema") != _catena.SCHEMA:
+            raise ValueError(
+                f"{_catena.EDGES_RELATIVE.as_posix()} declares schema "
+                f"{data.get('schema')!r}, expected {_catena.SCHEMA!r}"
+            )
+        self.numbering = _coerce_str(data.get("numbering"))
+        names = {book["token"]: name for name, book in self.books.books.items()}
+        self.rows: list[tuple[_containment.Span, dict[str, Any]]] = []
+        for fragment in data.get("fragments") or []:
+            if not isinstance(fragment, dict):
+                continue
+            # `catena check` refuses a malformed extent; one that reaches here
+            # anyway is left out rather than guessed at.
+            extent = _catena._extent(fragment.get("extent"))
+            if extent is None or extent.token not in names:
+                continue
+            book = names[extent.token]
+            first = _containment.Point(extent.first_chapter, extent.first_verse)
+            last = _containment.Point(extent.last_chapter, extent.last_verse)
+            record = {
+                "book": book,
+                "ranges": [{"begin": first._asdict(), "end": last._asdict()}],
+            }
+            self.rows.append(
+                (
+                    _containment.Span(book, first, last),
+                    {
+                        "passage_id": _coerce_str(fragment.get("passage_id")),
+                        "work_id": _coerce_str(fragment.get("work_id")),
+                        "extent": _normalize_ref_from_record(record),
+                        "numbering": _coerce_str(fragment.get("numbering")) or self.numbering,
+                    },
+                )
+            )
+
+    def overlapping(self, record: dict[str, Any], cited_in: str) -> list[dict[str, Any]]:
+        """The fragments whose extent shares a verse with `record`, in extent order.
+
+        `record` is the passage as cited and `cited_in` the system it is
+        written in. It is converted into each fragment's own numbering before
+        the test, so a Hebrew psalm citation meets a Vulgate extent as the same
+        psalm and never as the same number.
+        """
+        asked: dict[str, list[_containment.Span]] = {}
+        found: list[tuple[_containment.Span, dict[str, Any]]] = []
+        for span, row in self.rows:
+            system = row["numbering"]
+            if system not in asked:
+                try:
+                    asked[system] = (
+                        self.books.passage_spans(
+                            _canonical_passage(record, cited_in, target=system)
+                        )
+                        if system in NUMBERING_SYSTEMS
+                        else []
+                    )
+                except NumberingError:
+                    asked[system] = []
+            reach = self.books.coverage([span], asked[system])
+            if reach in FRAGMENT_REACH:
+                found.append((span, {**row, "matched": "verses", "passage": reach}))
+        found.sort(key=lambda item: (item[0].begin, item[0].end, item[1]["passage_id"]))
+        return [row for _, row in found]
+
+
+def _place_fragments(
+    shown: list[dict[str, Any]],
+    cut: list[dict[str, Any]],
+    fragments: list[dict[str, Any]],
+    holdings: _containment.Holdings,
+) -> list[dict[str, Any]]:
+    """Put each fragment under every lead shown whose holdings join its work.
+
+    Returns the fragments no lead shown carries, each saying why. A fragment
+    whose work no lead joins is listed all the same: Rule 2 makes the held text,
+    not the index's confidence, the evidence of presence at a locus, and Rule
+    14 lets nothing stand in for `discover`, so leaving it out would hide held
+    commentary on the very verses from the one lookup a sweep may use.
+    """
+    placed: set[str] = set()
+    for work in shown:
+        joined = {
+            record["work_id"] for record in (work.get("holdings") or {}).get("direct") or []
+        }
+        own = [row for row in fragments if row["work_id"] in joined]
+        if own:
+            work["held_fragments"] = own
+            placed.update(row["passage_id"] for row in own)
+    rest = [row for row in fragments if row["passage_id"] not in placed]
+    if not rest:
+        return []
+    below: set[str] = set()
+    for work in cut:
+        below.update(
+            holdings.library_works(
+                work.get("author") or "", work.get("title") or "", work.get("work_id")
+            )
+        )
+    unplaced = []
+    for row in rest:
+        library = holdings.library["works"].get(row["work_id"]) or {}
+        unplaced.append(
+            {
+                **row,
+                "author": library.get("responsible", ""),
+                "title": library.get("title", ""),
+                "lead": "below-cap" if row["work_id"] in below else "none",
+            }
+        )
+    return unplaced
+
+
 def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
     discovery = _load_discovery(args.discovery)
     target = _psalm_target(discovery)
@@ -1644,6 +1819,7 @@ def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
     # Holdings are read from the repository's own library whatever --discovery
     # names: the index is an input a caller may substitute, the library is not.
     holdings = _containment.Holdings()
+    fragments = HeldFragments(holdings)
     for passage in passages:
         try:
             records = _parse_passage_value(citations, passage)
@@ -1680,11 +1856,14 @@ def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
             raise ValueError(f"invalid passage {named}: {error}") from error
 
         try:
-            ref, works, refused, total = _lookup_works(
-                discovery, citations, canonical, args.max_results
+            # Uncapped, then cut here: a held fragment whose lead the cap cuts
+            # is still listed, and says that is why no lead shown carries it.
+            ref, every, refused, total = _lookup_works(
+                discovery, citations, canonical, 0
             )
         except Exception as error:
             raise ValueError(f"invalid passage {named}: {error}") from error
+        works = every[: args.max_results] if args.max_results > 0 else every
 
         # A lead is not the end of a sweep: the next question is whether the
         # work is held, and a work held only inside a container was reported
@@ -1699,10 +1878,22 @@ def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
             work["holdings"] = holdings.for_work(
                 work.get("author") or "", work.get("title") or "", work.get("work_id"), asked
             )
+        # The index answers no finer than the chapter, and a lead reached through
+        # it keeps saying so. What the library holds of the verses themselves is
+        # a separate claim, from the text, and travels as one
+        # (guidance/catena.md §11).
+        unplaced = _place_fragments(
+            listed,
+            every[len(works):],
+            fragments.overlapping(record, args.numbering or target),
+            holdings,
+        )
         entry: dict[str, Any] = {
             "passage": ref,
             "works": listed,
         }
+        if unplaced:
+            entry["fragments_without_lead"] = unplaced
         if refused:
             entry["refused_loci"] = refused
         # A capped list is not the passage's whole list. Saying so is what
@@ -1734,6 +1925,16 @@ def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
             "inventory": _containment.INVENTORY_RELATIVE.as_posix(),
             "joins": list(_containment.JOINS),
             "none_means": _containment.NONE_NOTE,
+        },
+        # What a verse-level match is, so it cannot be read as the index's.
+        "fragments_basis": {
+            "edges": _catena.EDGES_RELATIVE.as_posix(),
+            "numbering": fragments.numbering,
+            "means": (
+                "a held fragment whose own extent, as its printing states it, "
+                "overlaps the verses cited; a lead's matched: chapter is the "
+                "index's claim and is left as it is"
+            ),
         },
     }
 
