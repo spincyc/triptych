@@ -56,7 +56,7 @@ PC-S41-A
 | *Narrated event* | Matt. 13:36, 44–52 | A house in the Sea-of-Galilee teaching region; town unrecorded | Galilean ministry, conventionally c. AD 28 |
 | The short branch proclaims treasure and pearl only. The long branch also proclaims the net, final sorting, the disciples’ response, and the trained householder’s new and old treasures. The Gospel’s compositional audience must not be confused with the house and ministry region inside the narrative (Matthew introduction and 13, *NABRE*). |  |  |  |
 | **Second Reading** | Rom. 8:28–30 | Corinth in Achaia, to established house churches at Rome | c. AD 56–58 |
-| Paul writes near the end of his eastern mission to a Roman community he did not found, comprising believers from Jewish and Gentile backgrounds. These verses stand within groaning, Spirit-aided prayer, suffering, and inseparable divine love; the semi-continuous reading is not an explanation of Matthew’s treasure or net (Romans introduction and 8, *NABRE*). |  |  |  |
+| Paul writes near the end of his eastern mission to a Roman community he did not found, comprising believers from Jewish and Gentile backgrounds. These verses stand within groaning, Spirit-aided prayer, suffering, and inseparable divine love; the Lectionary reads them semi-continuously (Romans introduction and 8, *NABRE*). |  |  |  |
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
@@ -74,7 +74,7 @@ PC-S41-A
 >
 > **4. Return — Offerings; Communion; final prayer.** Goods first received return to God; memory of divine benefits and of the Passion seeks fruit in mercy, purity, and salvation.
 
-The stages are a reading of the sequence: 1, 2, and 4 keep its ritual order; 3 sets semi-continuous Romans apart. The long and short Gospels are alternatives, as are the two Communion Antiphons.
+Read in four stages, the sequence keeps its ritual order in 1, 2, and 4, while 3 sets semi-continuous Romans apart. The long and short Gospels are alternatives, as are the two Communion Antiphons.
 
 ### 1. Gathered strength becomes a listening heart (*Entrance; Collect; First Reading*)
 
@@ -149,7 +149,7 @@ The Prayer over the Offerings asks God to receive gifts that first come from div
 
 Psalm 119 repeatedly turns value into prayer: the Lord is the singer’s portion; instruction exceeds gold and silver; commands are loved above fine gold; their unfolding gives light. The refrain’s love of the law is not abstract admiration but a sustained appetite formed by meditation, mercy, and obedience.
 
-Ambrose’s *Exposition of Psalm 118* VIII, 2–4 asks how rare it is to say that the Lord is one’s portion without reserving mastery to wealth or appetite. In IX, 21–22 he treats the law above gold and silver as preference proved in action and relates the words of God’s mouth to words of eternal life. Augustine keeps the appointed loci’s portion, love of law, covenant mercy, wonder, and understanding together; Bellarmine likewise connects valuation and the request for light. The later selection’s separated stanzas answer to verse 97a. Ambrose’s, Augustine’s, and Bellarmine’s Christian reading stays anchored in the Psalm’s Israelite Torah meditation.
+Ambrose’s *Exposition of Psalm 118* VIII, 2–4 asks how rare it is to say that the Lord is one’s portion without reserving mastery to wealth or appetite. In IX, 21–22 he treats the law above gold and silver as preference proved in action and relates the words of God’s mouth to words of eternal life. Augustine keeps the appointed loci’s portion, love of law, covenant mercy, wonder, and understanding together; Bellarmine likewise connects valuation and the request for light. None of them expounds the later selection as a unit; its separated stanzas answer to verse 97a, and the Psalm’s Israelite Torah meditation remains the literal context for their Christian reading.
 
 The two parables intensify valuation. One person encounters treasure and acts in joy; the merchant searches and recognizes one pearl of great price. Chrysostom’s *Homily 47 on Matthew* emphasizes the Kingdom’s hidden worth and the single-minded response it evokes. The differences remain: discovery and search, field and market, treasure and pearl are not one psychology.
 
@@ -201,7 +201,7 @@ The alternatives are exclusive, and either can illuminate the final prayer’s c
 
 > **Text boundary**
 >
-> The controlling U.S. Missal and Lectionary English is protected and is not reproduced here. The complete ordered inventory below gives lawful Latin incipits for the orations and antiphons, public-domain scriptural loci, and concise descriptions sufficient to identify every branch; the descriptions are a study aid, not a substitute for the approved liturgical books.
+> The controlling U.S. Missal and Lectionary English is protected and is not reproduced. The complete ordered inventory below gives lawful Latin incipits for the orations and antiphons, public-domain scriptural loci, and concise descriptions sufficient to identify every branch; the descriptions are a study aid, not a substitute for the approved liturgical books.
 
 | **Textual unit** | **Text / citation** |
 |:-----------------|:-----------------------------------------------|
@@ -349,6 +349,6 @@ The offerings prayer returns gifts already received from divine bounty, so the E
 
 - Margaret Murray Robertson, [*Christie Redfern’s Troubles*](https://www.gutenberg.org/files/21226/21226-h/21226-h.htm) (1866), ch. XVII; Romans 8:28 within a narrative dispute over trust and suffering. Public domain in the United States.
 
-**Last revised (UTC):** 2026-09-24T15:20:22Z
+**Last revised (UTC):** 2026-09-24T16:45:48Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
