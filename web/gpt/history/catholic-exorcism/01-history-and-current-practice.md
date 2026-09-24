@@ -12,9 +12,7 @@
 
 ## The first rule is about the person
 
-> **Governing thesis**
->
-> Catholic exorcism did not develop as a secret technology for specialists. It developed where several obligations meet: proclaim Christ’s victory, distinguish kinds of prayer and authority, test historical claims against their witnesses, separate spiritual judgment from medical diagnosis, and protect a suffering person from credulity as well as disbelief.
+Catholic exorcism did not develop as a secret technology for specialists. It developed where several obligations meet: proclaim Christ’s victory, distinguish kinds of prayer and authority, test historical claims against their witnesses, separate spiritual judgment from medical diagnosis, and protect a suffering person from credulity as well as disbelief.
 
 The first epigraph is fiction, not a technical account of curses, evidence that they work, or permission to experiment with them. Its distinction between the powers invoked and the reliability of an operator’s words instead refuses the fantasy that hostile spiritual agency would be a mechanism mastered by a formula. Catholic teaching neither makes the devil an equal opposite of God nor turns evil into an occult technology.
 
@@ -2205,7 +2203,7 @@ Gene Wolfe, *The Devil in a Forest*, first Orb edition (New York: Orb/Tom Dohert
 
 Francis Young, *A History of Exorcism in Catholic Christianity* (Palgrave Macmillan, 2016), used critically as historical reconstruction. World Health Organization, *Clinical Descriptions and Diagnostic Requirements for ICD-11 Mental, Behavioural and Neurodevelopmental Disorders* (2024), used only within the bounded clinical discussion recorded in the source audit. United Kingdom Department for Education, *National action plan to tackle child abuse linked to faith or belief* (2012), used only for its England-specific safeguarding evidence.
 
-**Last revised (UTC):** 2026-07-29T19:14:52Z
+**Last revised (UTC):** 2026-09-24T14:59:29Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

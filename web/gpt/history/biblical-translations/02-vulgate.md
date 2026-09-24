@@ -4,9 +4,7 @@
 
 ## The Object Is a History, Not a Single Translation
 
-> **Governing thesis**
->
-> The name “Vulgate” does not describe one translation made at one moment by one man. It names a Latin biblical tradition whose principal ingredients include pre-Jerome Latin translations, Jerome’s conservative revision of the Gospels, several Greek- and Hebrew-based Old Testament projects, an anonymous revision of much of the remaining New Testament, and centuries of copying, correction, printing, and institutional reception. The historical task is therefore to identify which act, book, witness, or edition is meant each time the name is used.
+The name “Vulgate” does not describe one translation made at one moment by one man. It names a Latin biblical tradition whose principal ingredients include pre-Jerome Latin translations, Jerome’s conservative revision of the Gospels, several Greek- and Hebrew-based Old Testament projects, an anonymous revision of much of the remaining New Testament, and centuries of copying, correction, printing, and institutional reception. The historical task is therefore to identify which act, book, witness, or edition is meant each time the name is used.
 
 The familiar compressed account—Pope Damasus commissioned Jerome to translate the Bible, Jerome completed the Vulgate, and the Church thereafter used his text—contains real persons and events but joins them too tightly. Damasus is connected securely with Jerome’s revision of the four Gospels in Rome in 382–384. Jerome later undertook several Old Testament projects, first with Greek Hexaplaric materials and then, book by book, with Hebrew sources. Yet the later Latin Bible also retained books and readings that Jerome did not translate, while the reviser of Acts, the Epistles, and Revelation remains unnamed. No surviving manuscript is Jerome’s complete authorial copy. The text called Vulgate emerged as those different materials were transmitted together and gradually preferred in the Latin West (Jerome, *Praefatio in Evangelia*; Houghton 2016, 31–43).
 
@@ -596,6 +594,6 @@ Dates before print often describe a range or the earliest secure attestation rat
 
 - Weber, Robert, and Roger Gryson, eds. *Biblia Sacra iuxta vulgatam versionem*. 5th revised edition. Stuttgart: Deutsche Bibelgesellschaft, 2007.
 
-**Last revised (UTC):** 2026-07-19T03:44:17Z
+**Last revised (UTC):** 2026-09-24T14:59:29Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
