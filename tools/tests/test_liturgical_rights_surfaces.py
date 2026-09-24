@@ -699,6 +699,20 @@ def artifact_manifests(works_root: Path = WORKS_ROOT) -> list[tuple[Path, dict]]
     return list(_read_artifact_manifests(works_root))
 
 
+@functools.lru_cache(maxsize=4)
+def _read_segment_records(works_root: Path) -> tuple[tuple[Path, dict], ...]:
+    """Parse every segment record once per run; read-only like the manifests."""
+    return tuple(
+        (path, tomllib.loads(path.read_text(encoding="utf-8")))
+        for path in sorted(works_root.glob("**/editions/*/segments/*.toml"))
+    )
+
+
+def segment_records(works_root: Path = WORKS_ROOT) -> list[tuple[Path, dict]]:
+    """Segments give an edition evidence through another work's container."""
+    return list(_read_segment_records(works_root))
+
+
 def protected_artifact_manifests(
     works_root: Path = WORKS_ROOT,
 ) -> list[tuple[Path, dict]]:
@@ -713,6 +727,7 @@ def protected_artifact_manifests(
 def protected_artifact_identities(
     protected: list[tuple[Path, dict]],
     all_records: list[tuple[Path, dict]] | None = None,
+    segments: list[tuple[Path, dict]] | None = None,
 ) -> set[str]:
     """Artifact ids plus editions for which every artifact is protected.
 
@@ -720,17 +735,38 @@ def protected_artifact_identities(
     permissions page, so one protected sibling must not poison that edition.
     Conversely, a new FDLC-style edition made entirely of unresolved remote
     PDFs is protected even when a projection records only its edition id.
+
+    An edition whose evidence is a segment of another work's container artifact
+    owns no artifact of its own, but it is still an edition of its work: it
+    counts with its container's rights, so a public-domain constituent edition
+    keeps its work from being judged fully protected. A segment whose container
+    cannot be found counts as protected. Segments default to the tracked
+    library only when the artifact records do too.
     """
+    records = all_records or artifact_manifests()
+    if segments is None:
+        segments = [] if all_records else segment_records()
     artifact_ids = {
         str(record.get("id") or "")
         for _, record in protected
         if str(record.get("id") or "")
     }
+    artifacts_by_id = {
+        str(record.get("id") or ""): record
+        for _, record in records
+        if str(record.get("id") or "")
+    }
     all_by_edition: dict[str, list[dict]] = defaultdict(list)
-    for _, record in all_records or artifact_manifests():
+    for _, record in records:
         edition_id = str(record.get("edition_id") or "")
         if edition_id:
             all_by_edition[edition_id].append(record)
+    for _, segment in segments:
+        edition_id = str(segment.get("edition_id") or "")
+        if edition_id:
+            all_by_edition[edition_id].append(
+                artifacts_by_id.get(str(segment.get("artifact_id") or ""), {})
+            )
     fully_protected_editions = {
         edition_id
         for edition_id, artifacts in all_by_edition.items()
@@ -741,9 +777,13 @@ def protected_artifact_identities(
         )
     }
     editions_by_work: dict[str, set[str]] = defaultdict(set)
-    for path, record in all_records or artifact_manifests():
+    owners = [
+        *((path.parents[2], record) for path, record in records),
+        *((path.parents[1], segment) for path, segment in segments),
+    ]
+    for edition_dir, record in owners:
         edition_id = str(record.get("edition_id") or "")
-        edition_path = path.parents[2] / "edition.toml"
+        edition_path = edition_dir / "edition.toml"
         if not edition_id or not edition_path.is_file():
             continue
         edition = tomllib.loads(edition_path.read_text(encoding="utf-8"))
@@ -3407,6 +3447,112 @@ class RightsMutationBoundary(unittest.TestCase):
             any("protected witness identity" in one for one in identity_failures),
             identity_failures,
         )
+
+    def test_segment_edition_counts_toward_its_work_with_its_container_rights(
+        self,
+    ) -> None:
+        """A public-domain constituent edition clears its work; others do not."""
+
+        def write(path: Path, body: str) -> None:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(textwrap.dedent(body), encoding="utf-8")
+
+        def edition(root: Path, edition_id: str, work_id: str) -> None:
+            write(
+                root / "edition.toml",
+                f"""\
+                schema = 1
+                record_type = "edition"
+                id = "{edition_id}"
+                work_id = "{work_id}"
+                """,
+            )
+
+        def artifact(root: Path, artifact_id: str, edition_id: str, rights: str) -> None:
+            write(
+                root / "artifacts" / artifact_id.rsplit(".", 1)[-1] / "artifact.toml",
+                f"""\
+                schema = 2
+                record_type = "artifact"
+                id = "{artifact_id}"
+                edition_id = "{edition_id}"
+                storage = "remote"
+                rights_status = "{rights}"
+                """,
+            )
+
+        def segment(root: Path, edition_id: str, artifact_id: str) -> None:
+            write(
+                root / "segments" / "complete-work.toml",
+                f"""\
+                schema = 2
+                record_type = "segment"
+                id = "segment.{edition_id}.complete-work"
+                edition_id = "{edition_id}"
+                artifact_id = "{artifact_id}"
+                """,
+            )
+
+        with self.scratch_directory() as temporary:
+            works = Path(temporary) / "works"
+            volumes = works / "synthetic" / "volume" / "editions"
+            edition(volumes / "open", "edition.synthetic.volume.open", "work.synthetic.volume")
+            artifact(
+                volumes / "open",
+                "artifact.synthetic.volume.open-text",
+                "edition.synthetic.volume.open",
+                "public-domain",
+            )
+            edition(volumes / "closed", "edition.synthetic.volume.closed", "work.synthetic.volume")
+            artifact(
+                volumes / "closed",
+                "artifact.synthetic.volume.closed-text",
+                "edition.synthetic.volume.closed",
+                "restricted",
+            )
+            for name, container in (
+                ("cleared", "artifact.synthetic.volume.open-text"),
+                ("closed", "artifact.synthetic.volume.closed-text"),
+                ("dangling", "artifact.synthetic.volume.missing"),
+            ):
+                editions = works / "synthetic" / name / "editions"
+                edition(
+                    editions / "host",
+                    f"edition.synthetic.{name}.host",
+                    f"work.synthetic.{name}",
+                )
+                artifact(
+                    editions / "host",
+                    f"artifact.synthetic.{name}.host-page",
+                    f"edition.synthetic.{name}.host",
+                    "restricted",
+                )
+                edition(
+                    editions / "constituent",
+                    f"edition.synthetic.{name}.constituent",
+                    f"work.synthetic.{name}",
+                )
+                segment(
+                    editions / "constituent",
+                    f"edition.synthetic.{name}.constituent",
+                    container,
+                )
+            records = artifact_manifests(works)
+            protected = protected_artifact_manifests(works)
+            segments = segment_records(works)
+            self.assertEqual(len(segments), 3)
+            identities = protected_artifact_identities(protected, records, segments)
+            without_segments = protected_artifact_identities(protected, records, [])
+
+        self.assertNotIn("work.synthetic.cleared", identities)
+        self.assertNotIn("edition.synthetic.cleared.constituent", identities)
+        self.assertIn("edition.synthetic.cleared.host", identities)
+        self.assertIn("artifact.synthetic.cleared.host-page", identities)
+        self.assertIn("work.synthetic.cleared", without_segments)
+        for name in ("closed", "dangling"):
+            with self.subTest(work=name):
+                self.assertIn(f"work.synthetic.{name}", identities)
+                self.assertIn(f"edition.synthetic.{name}.constituent", identities)
 
     def test_manifest_discovery_catches_new_source_and_download_payloads(self) -> None:
         with self.scratch_directory() as temporary:
