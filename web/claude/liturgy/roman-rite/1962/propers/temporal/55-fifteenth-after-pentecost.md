@@ -282,7 +282,7 @@ In the margins of Ottobonianus 313 the chant series and the oration series run t
 
 The gregorien.info index of the six earliest Mass antiphonaries Hesbert collected already places this Introit, Gradual and Offertory at *Dominica XV post Pentecosten*, AMS 187, but gives that Mass the Communion *Qui manducat carnem meam* and no fixed Alleluia at all; *Panis quem ego dedero* stands there at the Fourteenth Sunday. **So against that record the move runs one way: the Communion this Mass sings stands at the Fourteenth Sunday in AMS, and the Communion AMS gives the Fifteenth has not taken its place at the 1962 Fourteenth.** Within the tracked registry that Sunday sings *Primum quaerite* at Mt. 6:33, while the 1962 book’s own *Qui manducat meam carnem*, Jn. 6:57, stands at the Ninth Sunday. Every antiphonary figure here is the gregorien.info database’s report of Hesbert’s printed pages.
 
-Guéranger’s 1909 volume shows the formulary before the 1960 change, printing the three seasonal orations by cross-reference — “The other Collects, as on page 120” at printed p. 345, “The other Secrets, as on page 130” and “The other Postcommunions, as on page 131” at p. 355 — and names the day “the Sunday of the widow of Naim.” He prints at p. 356, under Vespers, the Magnificat antiphon *Propheta magnus surrexit in nobis, et quia Deus visitavit plebem suam*; that antiphon is his book’s. Schuster’s three pages name no station church for this Sunday.
+Dom Lucien Fromage’s 1909 volume of the continuation of Guéranger’s *The Liturgical Year* shows the formulary before the 1960 change, printing the three seasonal orations by cross-reference — “The other Collects, as on page 120” at printed p. 345, “The other Secrets, as on page 130” and “The other Postcommunions, as on page 131” at p. 355 — and names the day “the Sunday of the widow of Naim.” He prints at p. 356, under Vespers, the Magnificat antiphon *Propheta magnus surrexit in nobis, et quia Deus visitavit plebem suam*; that antiphon is his book’s. Schuster’s three pages name no station church for this Sunday.
 
 ### Introit <span class="nodecor">(*Int.*)</span>
 
@@ -406,7 +406,7 @@ Gregory the Great has nothing on this pericope. Within Luke 7 every heading of h
 >
 > Anthony’s sermon on the widow of Naim is his *Dominica XVI post Pentecosten*, which opens *Evangelium in decima sexta dominica post Pentecosten: Ibat Iesus in civitatem quae vocatur Naim* and pairs the pericope with Eph. 3:13–21; his *Dominica XV* opens *Nemo potest duobus dominis servire*. A citation made by matching the ordinal would name the wrong sermon silently.
 
-The same pericope is appointed at the Thursday of the fourth week of Lent in the tracked registry, where the Missal pairs it with 4 Kings 4:25–38, Eliseus and the Sunamitess’s son; Schuster and Guéranger both name that Lenten Thursday independently, and the Pustet 1862 does not print this Sunday’s Gospel at all but cross-references it there.
+The same pericope is appointed at the Thursday of the fourth week of Lent in the tracked registry, where the Missal pairs it with 4 Kings 4:25–38, Eliseus and the Sunamitess’s son; Schuster and Fromage both name that Lenten Thursday independently, and the Pustet 1862 does not print this Sunday’s Gospel at all but cross-references it there.
 
 ### Offertory <span class="nodecor">(*Off.*)</span>
 
@@ -644,7 +644,7 @@ Every negative below is the answer one corpus gave to one query, and a different
 
 - No Bible witness and no patristic or Greek lemma collated here reads *super omnem terram* at Ps. 94:3 or *miserere mihi* at Ps. 85:3. Both readings stand in the optical layers of the three older Missals read for the preexisting-material check, which are neither Bible text nor patristic lemma. Nothing in Swete answers the Introit’s added *ad me*, which Cassiodorus’s Latin lemma nonetheless carries.
 
-- The Communion’s *dédero* and *sǽculi* answer nothing in the Greek, and no English witness examined — the tracked Douay, the Keating of 1806, the Cummiskey of 1861, the Lasance of 1945, Guéranger’s 1909 volume — renders either distinctly.
+- The Communion’s *dédero* and *sǽculi* answer nothing in the Greek, and no English witness examined — the tracked Douay, the Keating of 1806, the Cummiskey of 1861, the Lasance of 1945, Fromage’s 1909 continuation of Guéranger — renders either distinctly.
 
 - *Naim* occurs once in the whole tracked Clementine, and *propheta magnus* only at Ecclus. 48:25 and Lk. 7:16.
 
@@ -696,7 +696,7 @@ The research behind this guide was carried out in one production and its audit r
 
 - Ildefonso Schuster, *The Sacramentary*, vol. III (London: Burns Oates & Washbourne, 1927), printed pp. 139–141, for the Lawrence reckoning, the Lenten identities of the Gradual, the Offertory and the Communion, and the absence of a station. Read on page images of the registered scan.
 
-- Prosper Guéranger, *The Liturgical Year: Time after Pentecost* vol. II, second edition, translated by Dom Laurence Shepherd (Stanbrook Abbey, Worcester; London: Burns & Oates, R. & T. Washbourne, Art & Book Company; United States: Benziger Bros., 1909), printed pp. 344–356: the name “the Sunday of the widow of Naim,” the three seasonal orations by cross-reference, and the Magnificat antiphon at Vespers. Read in the digitisation’s own embedded text layer.
+- The continuation of Prosper Guéranger, *The Liturgical Year: Time after Pentecost* (Dom Lucien Fromage), vol. II, second edition, translated by Dom Laurence Shepherd (Stanbrook Abbey, Worcester; London: Burns & Oates, R. & T. Washbourne, Art & Book Company; United States: Benziger Bros., 1909), printed pp. 344–356: the name “the Sunday of the widow of Naim,” the three seasonal orations by cross-reference, and the Magnificat antiphon at Vespers. Read in the digitisation’s own embedded text layer.
 
 - *Variationes in Breviario et Missali Romano*, cap. IV n. 18, *Orationes pro diversitate Temporum abolentur*, *Acta Apostolicae Sedis* 52 (1960), printed p. 709, with the *Rubricae generales* n. 18 at printed p. 599 distinguished from it. Read on a rendering of the Holy See’s own scan.
 
@@ -766,6 +766,6 @@ The research behind this guide was carried out in one production and its audit r
 
 - United Kingdom, House of Commons, Official Report, “National Scheme of Family Allowances,” HC Deb 23 June 1942, vol. 380, cc1853–944, at c1895; read in Parliament’s own historic Hansard digitisation as continuous text with column anchors, and not collated against the printed bound volume.
 
-**Last revised (UTC):** 2026-09-10T19:03:16Z
+**Last revised (UTC):** 2026-09-24T02:53:19Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
