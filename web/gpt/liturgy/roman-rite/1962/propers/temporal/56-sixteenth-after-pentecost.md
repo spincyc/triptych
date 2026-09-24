@@ -362,7 +362,7 @@ The Epistle has already asked for Christ’s dwelling in hearts and comprehensio
 
 The chant sings the opening of Psalm 97:1, with the explicit final *Dóminus*; the saving right hand and holy arm belong to the verse’s continuation. The whole psalm makes Israel’s salvation visible before the nations, then calls singers, instruments, sea, rivers and mountains into praise before the Lord’s equitable judgement. The wonders summon a common response. Isaias 52:7–10 likewise joins salvation seen by the ends of the earth with the holy arm and the nations; Simeon’s canticle in Luke 2:28–32 gives salvation seen, Gentile revelation and Israel’s glory their Christological expression.
 
-Augustine interprets new song as new life in Christ and the peace of the Church. He then distinguishes bodily recovery from inward healing for God while expounding the rest of verse 1. His immediate Gospel allusion is the raising at Nain in Luke 7, not this Sunday’s cure in Luke 14. His argument holds for both: wonderful bodily acts call for a life renewed in its relation to God. <span class="nodecor">(*Enarrationes* 97, abridged NPNF “Psalm XCVIII,” §1.)</span>
+Augustine interprets new song as new life in Christ and the peace of the Church. He then distinguishes bodily recovery from inward healing for God while expounding the rest of verse 1. His immediate Gospel allusion is the raising at Nain in Luke 7, not this Sunday’s cure in Luke 14. His argument is general: wonderful bodily acts call for a life renewed in its relation to God. <span class="nodecor">(*Enarrationes* 97, abridged NPNF “Psalm XCVIII,” §1.)</span>
 
 Theodoret connects the song’s newness with the Savior’s new manner of worship and life, and the wonders with acts beyond human expectation. Bellarmine draws those wonders through the Incarnation, healings, Resurrection, Ascension and mission. His treatment of the unappointed right hand and arm emphasizes victory through humility, obedience and the Cross. In the Mass, the acclamation precedes a Gospel where Christ heals and corrects ambition: both mercy and humility belong to the life that praises his works. <span class="nodecor">(Theodoret, PG 80, 1657C–1658D; Bellarmine, p. 306.)</span>
 
@@ -546,9 +546,9 @@ Jesus asks who would not rescue “an ox fall into a pit” even on the Sabbath 
 
 **Fruit.** Renewal need not imitate chronological youth. An aging Christian can discover new reasons for praise through the very history of help that makes the present plea possible.
 
-**What the element-by-element reading misses.** Separate exposition leaves new song, old-age prayer and sacramental renewal as parallel themes, not their coexistence in one present worshipper.
+**What the element-by-element reading misses.** Separate exposition leaves new song, old-age prayer and sacramental renewal as parallel themes and misses their coexistence in one present worshipper.
 
-**Precedent result.** Not located in the checked corpus: 328 English and Latin proper studies, Anthony’s *Dominica XVI* and *XVII post Pentecosten*, Basilica del Santo Latin web edition, and the *Liturgical Year* continuation’s complete Sixteenth-Sunday chapter. The nearest age and song passages did not develop this combined interpretation; unsearched psalm homilies, poetry, music and sermon collections remain outside that result.
+**Precedent result.** Not located in the checked corpus: the 328-file English and Latin proper-study snapshot, Anthony’s *Dominica XVI* and *XVII post Pentecosten*, Basilica del Santo Latin web edition, and the *Liturgical Year* continuation’s complete Sixteenth-Sunday chapter. The nearest age and song passages did not develop this combined interpretation; unsearched psalm homilies, poetry, music and sermon collections remain outside that result.
 
 **Strongest limit.** The chants do not identify their historical speakers as one person. Spiritual renewal promises no reversal of biological aging, and the bounded precedent result supports no claim of universal novelty or priority.
 
@@ -626,6 +626,6 @@ The Latin’s publication basis is its independently witnessed public-domain ant
 
 Online research witnesses were accessed on 5 September 2026; chronology retains its separately recorded corpus source states.
 
-**Last revised (UTC):** 2026-09-24T15:34:09Z
+**Last revised (UTC):** 2026-09-24T17:01:32Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
