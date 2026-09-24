@@ -165,7 +165,16 @@ class Mame1922WitnessTests(unittest.TestCase):
         structure = json.loads(STRUCTURE_EDITION.read_text(encoding="utf-8"))
 
         self.assertEqual(structure["edition"]["id"], EDITION_ID)
-        self.assertEqual(len(structure["passages"]), 5)
+        # Four passages were registered with the witness on 2026-08-27
+        # (598e6da6e) and a fifth on 2026-08-28 (f96727106). The 1962 Latin
+        # witness backfill of 2026-09-03/04 added forty (694129798, ba31b45d0,
+        # 7ceab2f2a, 8e8b5575b) and 3c886a866 rebuilt the projection over them.
+        tracked = sorted(PASSAGES.glob("*.toml"))
+        self.assertEqual(len(tracked), 45)
+        self.assertEqual(
+            sorted(passage["id"] for passage in structure["passages"]),
+            sorted(load(path)["id"] for path in tracked),
+        )
         self.assertEqual(
             {passage["artifact_id"] for passage in structure["passages"]},
             {ARTIFACT_ID},
