@@ -54,8 +54,8 @@ EXAMPLES = {
         Example(
             "tools/public-alpha check",
             (
-                "public-alpha policy valid: 208 publications (206 alpha, 2 hold)",
-                "perpetual authorization active: no-project-initiated-promotion; effective from 2026-07-30T10:46:57-05:00 (America/Chicago)",
+                "public-alpha policy valid: ... [+36 chars]",
+                "perpetual authorization active: no-project-initiated-promotion; effective from ... [+43 chars]",
             ),
         ),
         Example(
@@ -75,15 +75,15 @@ EXAMPLES = {
                 "  \"notice\": \"PREPARATION ONLY — NOT AN APPROVAL OR AUTHORIZATION. These hashes report current files and do not... [+281 chars]",
                 "  \"pdfs\": [",
                 "    {",
-                "... 88659 more lines",
+                "... 89702 more lines",
             ),
             "prepare prints a candidate hash inventory only; it records no approval and changes no release file",
         ),
         Example(
             "tools/public-alpha check",
             (
-                "public-alpha policy valid: 208 publications (206 alpha, 2 hold)",
-                "perpetual authorization active: no-project-initiated-promotion; effective from 2026-07-30T10:46:57-05:00 (America/Chicago)",
+                "public-alpha policy valid: ... [+36 chars]",
+                "perpetual authorization active: no-project-initiated-promotion; effective from ... [+43 chars]",
             ),
             "read the policy first: `check` is the gate `prepare` reports against",
         ),
@@ -92,8 +92,8 @@ EXAMPLES = {
         Example(
             "tools/public-alpha check",
             (
-                "public-alpha policy valid: 208 publications (206 alpha, 2 hold)",
-                "perpetual authorization active: no-project-initiated-promotion; effective from 2026-07-30T10:46:57-05:00 (America/Chicago)",
+                "public-alpha policy valid: ... [+36 chars]",
+                "perpetual authorization active: no-project-initiated-promotion; effective from ... [+43 chars]",
             ),
             "read-only first: `check` validates the policy `build` renders from",
         ),

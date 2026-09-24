@@ -23740,7 +23740,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.visitatione-beatae-mariae-virginis-secret.json` | `8d37bcfd80e14d1980f3ff2d4b3f20e519da9e5c72783ce07ce5125b17247739` |
 | `src/web/data/structure/sources/text/passage.westcott-and-hort.the-new-testament-in-the-original-greek.introduction-and-appendix-1882.appendix-p71-lk-24.12.json` | `199d42eced334a709244d53f41cafdd57ee93cd352aad1273287b48ce5ba6bf7` |
 | `src/web/data/structure/sources/text/passage.william-smith.dictionary-of-greek-and-roman-antiquities.1875-lacuscurtius-web-2026-07-25.sv-mantele.json` | `5e9590fc1d25d8018dc0fc12d78e539d017b66527b2857a5ba554aa026979736` |
-| `tools/public-alpha` | `b0405df609ea851c0efe4f73f231f9dd87e61c4119a4511f7cc703ab28a427f7` |
+| `tools/public-alpha` | `f95e36bb4c9c650f315ee78b2c1d8dc2c1a67f954fdb0e4f1aeb14623986649a` |
 | `web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.md` | `6349355c26491b0292f854a8ac2da3fceba601432e92770d3db57c3821bca039` |
 | `web/claude/articles/canon-law/natural-positive-divine-human-law.md` | `75a6f9e454d09e5597d3089f0397eb30310d36790a048599e4f19ff3448a301b` |
 | `web/claude/articles/faith/against-the-instrumentalists.md` | `309ab5bf2c00ce7ad98bec3200025af2bb88f5a0717e353e89547ef88a3e4be1` |
