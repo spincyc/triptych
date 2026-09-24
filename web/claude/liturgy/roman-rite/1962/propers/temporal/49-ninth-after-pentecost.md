@@ -57,7 +57,7 @@ Seven passages are directly appointed. Each has one dossier: a four-field summar
 
 ## The Appointed Formulary in Full
 
-Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prints it: the Latin of the Vatican *editio typica* exactly as the controlling facsimile has it, each element under its own printed heading, scriptural reference and marginal number, and beneath it the English of an identified public-domain witness. These texts stand here complete, as only the canonical full research edition prints them.
+Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prints it: the Latin of the Vatican *editio typica* exactly as the controlling facsimile has it, each element under its own printed heading, scriptural reference and marginal number, and beneath it the English of an identified public-domain witness. All ten texts stand complete below.
 
 **Formulary.** *DOMINICA NONA post Pentecosten*, *II classis*, printed pp. 388–389, marginal nos. 1522–1531. Green follows the general rubrics for Sundays after Pentecost and is not printed on those pages. The formulary begins immediately after the Postcommunion of the Eighth Sunday (no. 1521) and ends immediately before the heading *DOMINICA DECIMA post Pentecosten* (no. 1532). Nothing between those boundaries is omitted here. It appoints no Tract, Sequence, second oration, blessing or ritual text, and no second Collect, Secret or Postcommunion.
 
@@ -206,7 +206,7 @@ Two of these are worth more than a footnote. The Clementine Vulgate reads *míll
 
 #### Ten places where the appointed text is not the Bible’s text
 
-The more consequential collation is against the Clementine Vulgate itself. Ten divergences were verified directly, and each is a fact of the printed text, not an inference. All ten are gathered once, in the table below, and each recurs later at the element where it bears on an argument. Because an argument about wording cannot be conducted in translation, the Latin stands on the page here.
+The more consequential collation is against the Clementine Vulgate itself. At ten places, verified directly, the printed missal and the printed Vulgate read differently. All ten are gathered once, in the table below, and each recurs later at the element where it bears on an argument. Because an argument about wording cannot be conducted in translation, the Latin stands on the page here.
 
 | **Proper and locus** | **Appointed text** | **Clementine Vulgate** |
 |:--------------|:------------------------|:--------------------------|
@@ -274,7 +274,7 @@ Two features of the Latin are worth holding, and neither survives into the 1861 
 
 That is why this Collect reads so pointedly in front of this Epistle. The wilderness generation of 1 Corinthians 10 did not lack petitions; Numbers 11 is a narrative of granted requests. The Epistle’s “that we should not covet evil things” is its way of saying what the Collect asks God to prevent.
 
-*No commentary on the wording located.* No patristic or medieval commentary on this oration’s wording was located; composed Roman collects of this type carry no ancient commentary tradition comparable to that on the Scriptures. The analysis above is therefore editorial synthesis from the printed Latin, its punctuation, and its juxtaposition, with no located commentary behind it.
+*No commentary on the wording located.* No patristic or medieval commentary on this oration’s wording was located; composed Roman collects of this type carry no ancient commentary tradition comparable to that on the Scriptures. The printed Latin, its punctuation, and its juxtaposition are therefore the whole basis of the analysis above, and no located commentary stands behind it.
 
 ### Epistle <span class="nodecor">(*Ep.*)</span>
 
@@ -304,7 +304,7 @@ That is why this Collect reads so pointedly in front of this Epistle. The wilder
 
 > **Correction 1: the commentary on this chapter is Peter of Tarantaise, not Aquinas** The exposition of 1 Corinthians 10 that circulates inside the Thomistic corpus is not St. Thomas’s. Corpus Thomisticum’s editorial note states *A capite vero X amissa est lectura, ac lacuna repleta ex commentario Petri de Tarantasia breviato forte a Nicholao de Gorran*, and Fabian Larcher’s English translation prints the bracket “\[CHAPTERS 7:15—10:33 (nos. 347–581) supplied by Peter of Tarantaise\]” in place of the text. Cited as Aquinas at a Marietti number, this material is a text his editors flag as someone else’s. What the passage actually contains is worth having on its own terms: at v. 12 it draws four things out of the verse — the multitude of those falling, the uncertainty of those standing, the necessity of caution, the ease of ruin — and at v. 13 gives *proventum* a moral condition: those do not burst in the furnace *qui non habent ventum superbiae*. **Correction 2 travels with it:** its maxim *Augustinus: propter Christum pati humana tentatio est* is verbatim Ambrosiaster, quoted just above; it is a gloss-transmission misattribution, not a saying of Augustine.
 
-*Augustine on v. 13.* Two loci were verified in which Augustine uses v. 13, and both are doctrinal reuse rather than exegesis of the pericope: *De sancta virginitate* 47, where untested strength is made a ground of humility — the virgin cannot know whether a married woman is already able to suffer what she is merely spared, since *infirmitas eius temptatione non interrogatur* — and *De bono viduitatis* 17, where the verse is turned against those who make prayer superfluous by claiming the will suffices. Note that his lemma reads *exitum*, not the Vulgate’s *provéntum*. No Augustinian citation of v. 12 was found in the works searched; the *Enarrationes* and *Sermones* were not exhaustively searched for it, so a citation there remains possible.
+*Augustine on v. 13.* Two loci were verified in which Augustine uses v. 13, and both are doctrinal reuse rather than exegesis of the pericope: *De sancta virginitate* 47, where untested strength is made a ground of humility — the virgin cannot know whether a married woman is already able to suffer what she is merely spared, since *infirmitas eius temptatione non interrogatur* — and *De bono viduitatis* 17, where the verse is turned against those who make prayer superfluous by claiming the will suffices. His lemma reads *exitum*, not the Vulgate’s *provéntum*. No Augustinian citation of v. 12 was found in the works searched; the *Enarrationes* and *Sermones* were not exhaustively searched for it, so a citation remains possible.
 
 **The verse the twentieth century mislearned.** Verse 13 says four things, and popular usage keeps only a garbled third. It says that the testing which has taken hold of the Corinthians is *humána* — on human scale, the common lot. It says the ground of confidence is God’s fidelity, not the hearer’s capacity: *fidélis autem Deus est*. It says God will not permit a testing *supra id quod potéstis* — and *potéstis* is plural throughout, addressed to a community, not to an isolated sufferer, a fact the Douay’s “you” cannot show and the modern reader’s “you” actively hides. And it says that God *makes* something with the testing, a *provéntum*: an outcome, an issue, a way through, which is supplied rather than found. The Douay renders it “issue.” What the verse does not say is that every affliction has been measured to what one person can privately bear.
 
@@ -395,7 +395,7 @@ The striking fact about the patristic handling of the den of thieves is how cons
 | Origen, *Hom. in Lucam* 38 | Presses the letter: Jesus expels only *sellers*, not buyers, and the only creature named is the dove | The dove is the Holy Spirit; therefore to sell doves is to teach the revealed mysteries for a fee |
 | St. Gregory, *Hom. in Ev.* 39, §§2, 6–7 | *ruina populi maxime ex culpa sacerdotum fuit* — the ruin of the people came chiefly from the fault of the priests. The *spelunca latronum* is bribery in the Temple: those who did not pay were persecuted in the body, those who did were killed in the spirit | Explicitly those “who confer the imposition of hands for a fee”; then, at §6, the *vita religiosorum* that sells justice, and at §7 the conscience of any believer that plots harm to a neighbour |
 
-Three facts qualify that table, and each corrects a common claim.
+Three facts qualify that table, and each corrects a claim readily made.
 
 **Ambrose is not commenting on Luke here.** His lemma at §18 is Matthew 21:12 and at §§20–21 John 2:15; he never expounds Luke’s wording. More important, Ambrose has no exegesis of Luke 19:41–44 anywhere: neither in the *Expositio*, which goes straight from the triumphal entry at §16 to the Temple at §17, nor elsewhere in his corpus. He also never quotes *domus orationis* or *spelunca latronum*. The passage is Book IX, not Book X, where it is sometimes placed.
 
@@ -411,7 +411,7 @@ Three facts qualify that table, and each corrects a common claim.
 
 #### What the *Catena aurea* shows about the shape of the tradition
 
-The *Catena* divides the pericope at v. 44 and assembles thirteen excerpts for vv. 41–44 and fifteen for vv. 45–48. Gregory supplies six of the first thirteen and five of the second fifteen, and in both lections he supplies the closing tropology; the Greeks — Origen, Cyril, Eusebius, Theophylact — carry the literal and historical sense. Ambrose, Bede and Augustine appear only in the Temple half, which independently corroborates the three findings above. The compilation is a map of reception, not a witness: the 1843 Oxford edition’s preface warns that for St. Luke the Greek citations reached Aquinas through translations made for him which often gave “not always the very words … but frequently only the sense.”
+The *Catena* divides the pericope at v. 44 and assembles thirteen excerpts for vv. 41–44 and fifteen for vv. 45–48. Gregory supplies six of the first thirteen and five of the second fifteen, and in both lections he supplies the closing tropology; the Greeks — Origen, Cyril, Eusebius, Theophylact — carry the literal and historical sense. Ambrose, Bede and Augustine appear only in the Temple half, which independently corroborates the three facts above. The compilation is a map of reception, not a witness: the 1843 Oxford edition’s preface warns that for St. Luke the Greek citations reached Aquinas through translations made for him which often gave “not always the very words … but frequently only the sense.”
 
 #### The reception’s real danger, and the Church’s own correction
 
@@ -425,7 +425,7 @@ That reading has since been named and rejected by the Church’s own organs, and
 | *Notes on the Correct Way to Present the Jews and Judaism* (1985), VI.1 | “The history of Israel did not end in 70 A.D.” and “We must rid ourselves of the traditional idea of a people *punished*, preserved as a *living argument* for Christian apologetic” | Names precisely the reading the older devotional commentary embodies, and rejects it |
 | Pontifical Biblical Commission, *The Jewish People and Their Sacred Scriptures in the Christian Bible* (2001/2002), §§51, 53, 74 | §51: he “tearfully foresees” the ruin. §53: “The divine sanction will be the same as in Jeremiah’s time,” followed at once by “as in Jeremiah’s time — God is not satisfied merely to punish, he also offers pardon.” §74: Luke shows Jesus weeping over Jerusalem (19:41–44) and disregarding his own sufferings for the women and children of that city (23:28–31); “universalism does not mean being anti-Jewish” | Supplies the controlling analogy: Jeremiah. The pattern is intra-covenantal prophetic warning, which is exactly what Jeremiah 7 — the text Christ quotes — already was |
 
-None of this edits the Fathers. The pericope’s own quotations settle the register. Christ indicts the Temple with Jeremiah’s Temple Sermon, and Jeremiah was a prophet of Israel speaking inside Israel about Israel’s own sanctuary. The Epistle read ten minutes earlier has already said whose correction the whole thing is: *ad correptiónem nostram* — “for our correction.”
+The pericope’s own quotations settle the register. Christ indicts the Temple with Jeremiah’s Temple Sermon, and Jeremiah was a prophet of Israel speaking inside Israel about Israel’s own sanctuary. The Epistle read ten minutes earlier has already said whose correction the whole thing is: *ad correptiónem nostram* — “for our correction.”
 
 #### The last clause
 
@@ -481,7 +481,7 @@ The rubric *Præfatio de Ssma Trinitate* — the Preface of the Most Holy Trinit
 >
 > He that eateth my flesh and drinketh my blood abideth in me: and I in him.
 
-**Where the registered English does not answer the Latin.** The antiphon closes *dicit Dóminus*, which is not part of the Johannine verse and therefore not in the Douay. It is the liturgy’s own attribution formula, added so that a first-person sentence can be sung by a choir without the singers claiming it.
+**Where the registered English does not answer the Latin.** The antiphon closes *dicit Dóminus*, which is not part of the Johannine verse and therefore not in the Douay. It is the liturgy’s own attribution formula, and with it a first-person sentence is sung as the Lord’s, not the singers’.
 
 The antiphon also reads *et ego in eo* where the Clementine Vulgate reads *et ego in illo*. Both were checked directly against the Clementine text of John 6:57, and the difference is invisible in English: “and I in him” either way.
 
@@ -515,7 +515,7 @@ Two things about the pairing repay attention. First, the two objects match the t
 
 This formulary reads two catastrophes — a wilderness generation that fell, and a city that did not recognize its visitation — onto the people standing in the church now, and then hands those people the one thing that makes such a reading survivable: a memorial in which the work of redemption is carried on, and an eating that makes an abiding. The warning and the remedy are not two Sundays. They are one act.
 
-The order in which the book prints the ten texts is itself the argument. Read as four stages:
+Read in the order the book prints them, the ten texts make an argument in four stages:
 
 1.  Help confessed, then desire re-formed. <span class="nodecor">(*Int.*)</span>, <span class="nodecor">(*Coll.*)</span>
 
@@ -537,7 +537,7 @@ The Collect then does something equally pointed with the grammar of petition. It
 
 The Epistle is a list of ruins: craving; an idol feast quoted verbatim from Exodus 32:6; fornication with three and twenty thousand dead in one day; testing answered by serpents; murmuring answered by the destroyer. Then comes the hinge on which the whole Sunday turns. Paul will not let the list remain history: “Now all these things happened to them in figure: and they are written for our correction, upon whom the ends of the world are come.” These things were written for *our* correction — and therefore “Wherefore, he that thinketh himself to stand, let him take heed lest he fall.”
 
-This is the interpretive key the formulary supplies for itself. Whatever else the day’s Gospel does, the Church has already declared, in the lesson read immediately before it, that the catastrophes she reads out are aimed at the people hearing them. The lesson then closes on the promise that God is faithful and will not allow a testing beyond capacity but will make with the testing an *provéntum* — the Douay’s “issue,” an outcome, a way through — so that they can bear it.
+That verse is the key to the rest of the formulary. Whatever else the day’s Gospel does, the Church has already declared, in the lesson read immediately before it, that the catastrophes she reads out are aimed at the people hearing them. The lesson then closes on the promise that God is faithful and will not allow a testing beyond capacity but will make with the testing an *provéntum* — the Douay’s “issue,” an outcome, a way through — so that they can bear it.
 
 The Gradual answers the sentence about self-estimate not with a rebuke but with a name: “O Lord, our Lord, how admirable is thy name in the whole earth!” Its verse completes the same biblical verse — “For thy magnificence is elevated above the heavens” — so that the whole chant is one verse divided at its own caesura, and that caesura is a *quóniam*: a reason. The man just told not to trust his own standing is handed something else to stand on.
 
@@ -569,7 +569,7 @@ The Epistle and Gospel make catastrophe present without making catastrophe the l
 
 The orations carry that public warning into worship without reducing worship to moral illustration. The Secret says that the sacrifice’s memorial enacts redemption’s work; the Communion names mutual abiding; the Postcommunion asks one sacramental participation to purify persons and unite the body. Thomas, Augustine, the Second Vatican Council, and the Sunday commentary converge on a theological grammar: the once-for-all Passion bears sacramental fruit, fruitful reception is ecclesial, and unity cannot be detached from conversion.
 
-The movement, read across the formulary, runs thus. Received help reforms desire; remembered failure chastens presumption; visitation comes through lament, correction, and teaching; the memorial gives what warning alone cannot produce—abiding in Christ as a purified and united body. The Trinity Preface directs this entire movement toward doxology. That movement is the editor’s reading, drawn from the appointed sequence and the checked reception; it adds no proper and carries no magisterial authority.
+Read in sequence, the texts make one movement. Received help reforms desire; remembered failure chastens presumption; visitation comes through lament, correction, and teaching; the memorial gives what warning alone cannot produce—abiding in Christ as a purified and united body. The Trinity Preface directs this entire movement toward doxology.
 
 ## The Propers: Interpretive Possibilities
 
@@ -639,7 +639,7 @@ The movement, read across the formulary, runs thus. Received help reforms desire
 
 ## The Propers: Notable and Quotable
 
-Three verified afterlives of wording from the scriptural propers, each one a use that moves the phrase into a register its author did not occupy. Straight exegesis, devotional reuse, and bare quotation stand in the commentary above, not here. Two of the three come from the same four words of the Gospel, and that concentration is itself the finding: of everything the appointed texts contain, *spelúncam latrónum* is what English took, kept, and turned loose.
+Three verified afterlives of wording from the scriptural propers, each one a use that moves the phrase into a register its author did not occupy. None of them is exegesis, devotional reuse, or bare quotation. Two of the three come from the same four words of the Gospel, and the concentration is telling: of everything the appointed texts contain, *spelúncam latrónum* is what English took, kept, and turned loose.
 
 > **Epistle, 1 Cor. 10:12 — a wordplay cut into a Norwich floor, 1704**
 >
@@ -659,7 +659,7 @@ Three verified afterlives of wording from the scriptural propers, each one a use
 >
 > **The turn.** This is a double reversal, which sets it apart from a hundred sermons on financial greed. Bierce first performs the expected secularisation — Christ’s charge against the Temple becomes the standard charge against the stock exchange, complete with a temple standing in for a market. Then he takes it back: the phrase, he says, is not a moral judgment at all but a consolation, and what it consoles is failed avarice. The accusation that once cleared a sanctuary is redescribed as the liturgy of people who wish they had got in. Bierce then extends the joke by citing Andrew Carnegie’s own denunciation of brokers as parasites.
 >
-> **Rights and limit.** *The Devil’s Dictionary* was published in 1911 and is in the public domain in the United States. The verbal link is to the Douay–Rheims and King James wording “den of thieves”; Bierce does not cite Luke, and the dependence is on the naturalised English idiom rather than on this pericope specifically. Note also that the money-changers usually invoked alongside this phrase are *not* in the appointed Gospel: Luke names only sellers and buyers, and the tables belong to Mark, Matthew and John.
+> **Rights and limit.** *The Devil’s Dictionary* was published in 1911 and is in the public domain in the United States. The verbal link is to the Douay–Rheims and King James wording “den of thieves”; Bierce does not cite Luke, and the dependence is on the naturalised English idiom rather than on this pericope specifically. The money-changers usually invoked alongside this phrase are *not* in the appointed Gospel: Luke names only sellers and buyers, and the tables belong to Mark, Matthew and John.
 
 > **Gospel, Lk. 19:46 — a translator smuggles the Temple into Molière’s Paris, 1908**
 >
@@ -779,6 +779,6 @@ Only sources actually used above, with loci sufficient to check the claims made 
 
 - Molière, *Le Misanthrope* (1666), Act V, in the French of the Louandre edition (<https://fr.wikisource.org/wiki/Le_Misanthrope>) and in the English of Curtis Hidden Page (1908), <https://en.wikisource.org/wiki/The_Misanthrope_(Moli%C3%A8re)>.
 
-**Last revised (UTC):** 2026-09-24T15:30:54Z
+**Last revised (UTC):** 2026-09-24T16:52:08Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
