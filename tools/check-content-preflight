@@ -84,14 +84,15 @@ EXAMPLES = {
             "one check at a time, which is how a workflow gate runs them",
         ),
         Example(
-            "tools/check-content-preflight --provider gpt --document "
-            "liturgy/roman-rite/1962/propers/temporal/"
-            "44-fourth-after-pentecost --check references-used",
+            "tools/check-content-preflight --root "
+            "tools/tests/fixtures/content-preflight --provider gpt "
+            "--document probe --check references-used",
             (
-                "check-content-preflight error: references-used: References entry is cited nowhere in the body: Internet Archive, 1962 missal item and OCR aid ; retrieval and checksums: .",
+                "check-content-preflight error: references-used: References entry is cited nowhere in the body: Prosper Guéranger, The Liturgical Year , vol.~II.",
             ),
             "exits 1; this is the refusal the content-preflight gate is "
-            "built on",
+            "built on, shown over a synthetic leaf because the 2026-09-24 "
+            "audit removed every unused entry from the published leaves",
         ),
         Example(
             "tools/check-content-preflight --provider claude --document "
@@ -132,17 +133,18 @@ EXAMPLES = {
             "reader-facing voice check, including its marked exploratory proposals",
         ),
         Example(
-            "tools/check-content-preflight --provider gpt --document "
-            "liturgy/roman-rite/1962/propers/temporal/"
-            "52-twelfth-after-pentecost --check proposal-fields",
+            "tools/check-content-preflight --root "
+            "tools/tests/fixtures/content-preflight --provider gpt "
+            "--document probe --check proposal-fields",
             (
-                "check-content-preflight error: proposal-fields: sections/50-interpretive.tex: the proposal 'Ministry begins where the traveller leaves' states no field for what the ordinary element-by-element reading misses;... [+264 chars]",
-                "... 4 more lines",
+                "check-content-preflight error: proposal-fields: main.tex: the proposal \"The Introit's address and the Collect's petition\" states no field for what the ordinary element-by-element reading misses; it carries ['Anchors', 'Mechanism', 'Fruit', 'What this proposal adds', 'Disconfirming condition']... [+190 chars]",
             ),
             "exits 1; the profile requires anchors plus four fields for "
             "every exploratory proposal and a substituted heading reads on the page exactly "
             "like the field it replaced, which is how one such substitution "
-            "survived four AI sweeps of the same section",
+            "survived four AI sweeps of the same section; shown over a "
+            "synthetic leaf because the 2026-09-24 audit wrote the missing "
+            "field into every published proposal",
         ),
         Example(
             "tools/check-content-preflight --list",
