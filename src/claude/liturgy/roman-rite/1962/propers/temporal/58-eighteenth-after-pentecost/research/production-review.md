@@ -1443,7 +1443,7 @@ finding follows.
 | VIS-004 | Fixed | `sections/50-comparison.tex`: the header "Power on earth to forgive" became "Power to forgive". Pp. 27–28 inspected; each header now has clear space before the next. The shared table style is untouched. |
 | VIS-005 | Fixed | `sections/homily/10-homily.tex` opens with multicol's `\raggedcolumns`, so each column's foot takes a `\vfil` instead of stretching the movement breaks. Homily pp. 1–2 inspected; the five breaks are one height, and the log has no underfull or overfull box. The shared homily environment is untouched. |
 | VIS-001, VIS-002 (accepted; conditional on reopening) | No longer arise | P. 29 now carries 23 lines of the comparison's close rather than about eight. The comparison table breaks after three rows with its header repeated, so no single row stands alone. |
-| Research-review observation: the scope header undercounts the re-entries | Fixed | `research/scope.md` header now records research iteration 7 (`c2c54133a`), which revised `research/interpretations.md` alone for STU-020. Of the other three observations, the web edition's squeezed dossier rows were resolved upstream (commit `0df032e15` sets each dossier note as a paragraph beneath its row); the commentary index's missing Chrysologus row at Mt 9 and the shared dossier measurements belong to records this leaf does not own and are left to their owners. |
+| Research-review observation: the scope header undercounts the re-entries | Fixed | `research/scope.md` header now records research iteration 7 (`c2c54133a`), which revised `research/interpretations.md` alone for STU-020. Of the other three observations, the web edition's squeezed dossier rows were resolved upstream (commit `0df032e15` sets each dossier note as a paragraph beneath its row); the shared dossier measurements belong to records this leaf does not own and are left to their owners. The first observation, that the index lists Chrysologus only at Luke 22, no longer holds: its Matthew 9 row names his *Sermones* (commit `3cc830e86`), and `discover --passage "Mt 9:1" --max-results 0` reports his held fragment, Sermo 50, at Mt 9:1–7 (rechecked in the third pass, which corrected an earlier line here that called the row missing). |
 | WEB-001 | Already resolved | Converter commit `0df032e15` restored the title fields; the current web edition carries all four title lines. |
 
 **Homily length.** The profile asks for approximately 10–12 minutes at an
@@ -1527,3 +1527,112 @@ inherited, not caused here. Stale for the coordinator, as before: the web
 edition's release binding, this leaf's entry in `corpus.json` (two new
 contributions and the timestamp), and fourteen of this leaf's files in the
 Claude publication inventory.
+
+### Third pass: D12 in the concise study, the index at Matthew 9, portable receipts
+
+**D12.** The three-document profile keeps the history of a formulary's texts in
+early lectionary and sacramentary lists out of the concise study and the
+homily; the leaf is reopened, so the grandfathering for this paragraph alone no
+longer shields it. `sections/concise/04-themes.tex` loses five passages. Each
+is carried in the expansive study already:
+
+- the Collect's Old Gelasian and Gregorian placement, carried in
+  `sections/10-each-element.tex`, the Collect;
+- the Würzburg gospel and epistle lists, with Schuster's *Tertia post natale
+  Sancti Cypriani* and the Ember-Saturday vigil and the Ephesians course of the
+  neighbouring Sundays, carried in `00-opening.tex` and in `10-each-element.tex`,
+  the Epistle and the Gospel;
+- the Sextuplex chant witnesses, carried in `10-each-element.tex`, the Gradual
+  and the Alleluia;
+- "as the Pustet Missal of 1862 already does" at the Communion, carried in
+  `05-appointed-texts.tex` and `10-each-element.tex`;
+- the Old Gelasian's two Postcommunion placements, carried in
+  `10-each-element.tex`, the Postcommunion.
+
+Nothing had to be moved into the expansive study. The freed space holds
+textual observations the expansive study already makes, so the themes still
+fill physical pages 3 and 4:
+
+- the Introit's *sustinentibus te*;
+- the Collect's single petition, and the Mass's other petitions of the same
+  kind;
+- the Epistle's passives, "is given", "are made rich", "was confirmed";
+- the two psalms as songs of the house;
+- the Offertory's verbs, all of which have Moses as subject;
+- the Secret's indicative and subjunctive;
+- the Communion's two commands in order;
+- the Postcommunion's thanks before its petition.
+
+The concise scope note no longer names the sacramentary, chant and lectionary
+witnesses. It points to the expansive study. The Wilson, Hesbert and Morin
+entries leave its References. The homily carried none of this history.
+Concise pp. 3–4 were inspected: page 3 is full and page 4 is filled to within
+a few lines of its foot, as before. By the homily rule, the themes went from
+1,580 words to 1,621.
+
+**The index at Matthew 9.** The second pass wrote that the commentary index had
+no Chrysologus row at Mt 9. That was wrong when written. The index's Matthew 9
+row names his *Sermones* (commit `3cc830e86`), and `commentary-work-index
+discover --passage "Mt 9:1" --max-results 0` reports his held fragment, Sermo 50,
+at Mt 9:1–7. The observation line above is corrected. `research/scope.md` § 3.5
+now notes that the re-run returns twenty-four rows with Chrysologus among them.
+
+**The shared dossier measurements.** This leaf changes neither file; the
+detail is reported to the coordinator. The 1962 profile,
+`guidance/liturgy/roman-1962-propers.md` line 301, gives these values. The
+shared format, `src/common/propers-format.tex` lines 103–124, sets these:
+
+| Setting | Profile | `dossiertable` | `concisedossiertable` |
+| --- | --- | --- | --- |
+| Type size | `\footnotesize` | `\footnotesize` | 8.2 on 9.15 pt |
+| Columns | 0.14, 0.18, 0.35 and 0.16 `\linewidth` | .12, .15, .29, and .44 `\linewidth` less 6 `\tabcolsep` | the same as `dossiertable` |
+| `\arraystretch` | 1.02 | 1.02 | .96 |
+| `\LTpre` | 0.15em | .15em | .1em |
+| `\LTpost` | 0 | 0 | 0 |
+| Explanatory row | 0.92 `\linewidth` | `\linewidth` | `\linewidth` |
+| Space after the row | 0.1em | .1em | .1em |
+
+The row widths come from `\dossierprose` and `\dossierevent`, lines 123–124.
+The type size, stretch and `\LTpre` of the concise table are set at lines
+114–116.
+
+**Receipts.** `research/artifacts.json` was re-recorded in receipt schema 2
+(`b41ad8202`), which no longer digests the `.log` files. `research/web-artifact.json`
+was re-recorded for the regenerated web edition. The research edition's build
+now runs the settled-aux page check (`f23cd5fbc`), and all three editions pass it.
+
+**Checks after the third pass.** All three outputs were built and installed
+with `make doc` and `make install-doc`. Each build ran the settled-aux page
+check and exits 0. The installed bytes equal the build.
+
+| Output | Pages | Bytes | SHA-256 (build and installed) |
+| --- | ---: | ---: | --- |
+| `58-eighteenth-after-pentecost.pdf` | 34 | 569,016 | `5fa472e4359a8bc3c8a8923284b182920cf58ef2a1e7dd9e869c42e14d72658c` |
+| `58-eighteenth-after-pentecost-synthesis.pdf` | 12 | 459,514 | `b45ea4908cdf3e5e906470ab8bdb92a37f766da31f9b4a3cc1105cd0a7d719b7` |
+| `58-eighteenth-after-pentecost-homily.pdf` | 3 | 275,105 | `482c117d47e1a69be0086cf664a85d9d470c5f7d8a4cbc06d08e84042e43165b` |
+
+The web edition is 133,361 bytes, SHA-256
+`34b1dc60438a875e366028550c247d1bd079efad9c0a6b2036630759c3c19fb1`. Only its
+timestamp changed, because the concise study has no web edition. These exit 0:
+
+- `_proper_study.py check` in phases `content`, `artifacts` and `publication`,
+  each with `--require-presentation --require-format --require-authority`;
+- the settled-aux page check for each of the three editions;
+- `check-generation-metadata` on each PDF;
+- `check-content-preflight` on all four editions; the concise study's
+  References are now 23 entries, each used;
+- both chronology currency checks;
+- `make check-web-editions-current` and `check-web-edition`;
+- `public-alpha check --provider claude --document <leaf>`;
+- `source-library validate`, `make check-source-reader` and
+  `make check-commentator-inventories`.
+
+The 15 test modules run in the second pass now all pass: 610 tests, with
+`test_house_voice` passing at this base. Stale, as at the base, for the
+coordinator:
+
+- the web edition's release binding, one of 12 stale bindings at base and
+  after;
+- this leaf's entry in `corpus.json`;
+- the Claude publication inventory, where 15 of the 59 errors are this leaf's,
+  against 14 of 58 at the base.

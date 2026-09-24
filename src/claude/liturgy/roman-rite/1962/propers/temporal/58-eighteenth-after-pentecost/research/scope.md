@@ -1380,8 +1380,13 @@ Catena, or Aquinas's lectura, departs from them. The Catena is still quoted in
 - **Later and Doctoral reception: what the index returns and what the library
   holds.** `tools/commentary-work-index discover --passage "Mt 9:1"`, run again
   on 2026-09-22, returns nineteen rows, all matched at chapter granularity, on
-  Matthew 9 and not on the verses. With the registration state of each, found by
-  work record **and** by the registered collected and whole volumes:
+  Matthew 9 and not on the verses. (Re-run at the leaf's first revision on
+  2026-09-23 with `--max-results 0`, it returns twenty-four. The index's
+  Matthew 9 row now names Peter Chrysologus's *Sermones* (commit `3cc830e86`),
+  and `discover` reports his held fragment, Sermo 50, at Mt 9:1–7, the
+  sermon read below; the rows listed here are the 2026-09-22 sweep's.) With
+  the registration state of each, found by work record **and** by the
+  registered collected and whole volumes:
   - **Read**: Jerome, *Commentariorum in Matthaeum* (PL 26); Chrysostom, *Homiliae
     in Matthaeum*; Thomas Aquinas, *Super Evangelium S. Matthaei lectura* (Venice
     1745, above); **Hilary, *Commentarius in Matthaeum* (PL 9), and Rabanus

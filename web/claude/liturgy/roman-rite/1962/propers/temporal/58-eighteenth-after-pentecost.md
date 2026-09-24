@@ -640,6 +640,6 @@ Traditional attribution: St Paul, with Sosthenes named beside him (1:1). The *Ca
 
 - Fraternité Saint-Pierre (France), *Ordo du mois*, entry for 27 September 2026; Institut du Christ Roi Souverain Prêtre (France), *Ordo*, entry for 27 September 2026.
 
-**Last revised (UTC):** 2026-09-24T03:34:17Z
+**Last revised (UTC):** 2026-09-24T03:53:05Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
