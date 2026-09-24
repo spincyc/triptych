@@ -26,13 +26,13 @@ Year A · Lectionary no. 109 · Ordinary Time Week XVII formulary
 | Preface | None proper. A Preface of Sundays in Ordinary Time is used unless the Eucharistic Prayer chosen carries its own. |
 | Eucharistic Prayer | No proper insert. The choice is coupled to the Preface decision above. |
 | **Communion Rites** |  |
-| Communion Antiphon | Either Ps 102:2 (Vulgate/Septuagint; Ps 103 Hebrew), *Bénedic, ánima mea, Dómino*; *or* Matthew 5:7–8, *Beáti misericórdes*. The Missal prints them as a closed pair. |
+| Communion Antiphon | Either Ps 102:2 (Vulgate/Septuagint; Ps 103 Hebrew), *Bénedic, ánima mea, Dómino*; *or* Matthew 5:7–8, *Beáti misericórdes*. The Missal prints them as alternatives; an approved chant may be used instead. |
 | Prayer after Communion | *Súmpsimus, Dómine, divínum sacraméntum*. Shared by Years A, B and C. |
 
 | **Sense** | **Synthesis** |
 |:----------|:-------------------------------------------------------|
 | **Literal** | A young king, newly succeeded and calling himself a child, is offered whatever he will ask and asks instead for a heart able to hear and to judge; the psalm’s speaker prefers instruction to gold; Paul tells Roman believers that God works toward good for those who love him and has purposed their conformity to his Son; and Jesus, closing a discourse in parables, likens the kingdom to a buried treasure, one costly pearl, a net taking fish of every kind, and a trained scribe who produces new things and old. |
-| **Allegorical** | The Latin tradition identified the hidden treasure variously as Christ concealed in the flesh (Hilary), as the sense hidden under the letter of Scripture (Origen, Jerome), as heavenly desire hidden in ascetical discipline (Gregory the Great), and as sacred doctrine within the Church (Aquinas, who reports the first three without adjudicating). These are competing figures, and the disagreement is reported rather than resolved. |
+| **Allegorical** | The Latin tradition identified the hidden treasure variously as Christ concealed in the flesh (Hilary), as the sense hidden under the letter of Scripture (Origen, Jerome), as heavenly desire hidden in ascetical discipline (Gregory the Great), and as sacred doctrine within the Church (Aquinas, who reports the first three without adjudicating). These are competing figures, and none of the witnesses named settles among them. |
 | **Moral** | The petitions turn value into conduct: the Collect asks that passing goods be so used now that what abides may already be held, and the Prayer over the Offerings returns what came from God’s own bounty. Solomon’s refusal of long life, riches and his enemies’ lives is the reading’s own contrast, and the psalm’s ranking of the commandments above gold and topaz is the assembly’s answer to it. |
 | **Anagogical** | Only the longer Gospel form reaches the shore, the sorting and the furnace; the shorter ends in joy and purchase. Romans carries its chain of verbs through to *glorified*, a past tense for what is not yet seen, and the Prayer after Communion names the sacrament a perpetual memorial of the Passion ordered to salvation. What is hoped for is adherence to what remains, not the securing of a possession. |
 
@@ -63,7 +63,7 @@ Year A · Lectionary no. 109 · Ordinary Time Week XVII formulary
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
-This formulary has two independent architectures laid over one another. The Missal’s texts for Week XVII are shared by Years A, B and C and were not composed for these readings; the Lectionary’s Year A texts pair one Old Testament scene with one Gospel while the apostolic course runs on its own. What the two architectures happen to share is a single question, asked in three registers: what is worth wanting. Solomon is told to name whatever he wishes; the psalmist ranks instruction against bullion; a finder and a merchant liquidate everything for one object; and the Collect asks for the skill of using what passes without losing hold of what remains.
+This formulary has two independent architectures laid over one another. The Missal’s texts for Week XVII are shared by Years A, B and C; the Lectionary’s Year A texts pair one Old Testament scene with one Gospel while the apostolic course runs on its own. What the two architectures share is a single question, asked in three registers: what is worth wanting. Solomon is told to name whatever he wishes; the psalmist ranks instruction against bullion; a finder and a merchant liquidate everything for one object; and the Collect asks for the skill of using what passes without losing hold of what remains.
 
 | **Stage** | **What the appointed texts actually do** |
 |:-----------------|:------------------------------------------------|
@@ -76,31 +76,31 @@ This formulary has two independent architectures laid over one another. The Miss
 
 The General Introduction to the Lectionary makes the Old Testament reading of an Ordinary Time Sunday harmonize with the Gospel. Here the correlation is unusually exact and unusually asymmetrical. Solomon must choose in advance, in the dark, with nothing yet in hand; the man in the field and the merchant choose after the fact, with the object already found. Both stories end in a transfer of property, but Solomon’s costs him nothing and the finders’ costs them everything.
 
-The pairing therefore sets two shapes of wisdom side by side rather than illustrating one. The first reading praises a petition; the Gospel praises a purchase. What joins them is a governed refusal: Solomon does not ask for long life, riches, or his enemies’ lives, and the finders do not keep what they had. The Lectionary’s own arrangement licenses hearing these together. It does not license reading Solomon as an early merchant or the merchant as a wise king.
+The pairing therefore sets two shapes of wisdom side by side rather than illustrating one. The first reading praises a petition; the Gospel praises a purchase. What joins them is a governed refusal: Solomon does not ask for long life, riches, or his enemies’ lives, and the finders do not keep what they had. The Lectionary’s own arrangement sets these side by side; it does not make Solomon an early merchant or the merchant a wise king.
 
 ### Responsorial: the psalm as the reading’s own answer
 
 Psalm 119 is not a third reading. It is the assembly’s reply, and the verses chosen make that reply pointed. Two of the five strophes rank divine instruction above precious metal, which is the same comparison Solomon’s refusal makes narratively; the last strophe asks for the light and understanding that Solomon was given. The refrain, drawn from a stanza the sung verses otherwise skip, states love of the commandments as the disposition under which all of this is heard.
 
-Two limits bound that reply. The psalm’s own horizon is Israel’s delight in *torah*, and it keeps that horizon when Christians sing it. And the sung text is a selection from six of the psalm’s twenty-two stanzas: no ancient commentator expounded these particular verses as a unit, because the unit did not exist before the modern Lectionary made it.
+The psalm’s own horizon is Israel’s delight in *torah*, and it keeps that horizon when Christians sing it. And the sung text is a selection from six of the psalm’s twenty-two stanzas: no ancient commentator expounded these particular verses as a unit, because the unit did not exist before the modern Lectionary made it.
 
 ### Semi-continuous and independent: Romans keeps its own course
 
-Romans 8:28–30 arrives on this Sunday because the apostolic course has reached it, not because it explains a parable. Reading it as the theological key to the treasure would misdescribe the Lectionary and, worse, would make Paul’s clause about God’s purpose sound like a rule about property. The passage does its own work: it grounds confidence in God’s initiative and ends in a chain of verbs whose last term, *glorified*, is written in a past tense for something not yet seen.
+Romans 8:28–30 arrives on this Sunday because the apostolic course has reached it; the Lectionary does not correlate it with the parable, and Paul’s clause about God’s purpose is no rule about property. The passage does its own work: it grounds confidence in God’s initiative and ends in a chain of verbs whose last term, *glorified*, is written in a past tense for something not yet seen.
 
-Its proximity to the Gospel is still audible, though the relation is one of observation, not design. Both texts move from something hidden to something possessed; both refuse to make the outcome a human achievement alone. Where they differ is decisive and should not be blurred: the parables describe a person acting, and Paul describes God purposing.
+Its proximity to the Gospel is still audible. Both texts move from something hidden to something possessed; both refuse to make the outcome a human achievement alone. Where they differ is decisive: the parables describe a person acting, and Paul describes God purposing.
 
 ### Shared euchology: the Missal’s grammar of passing and abiding
 
-The three orations are Year-neutral, and no source consulted attests a compositional link between them and Lectionary no. 109. What can be shown is that the Collect’s closing petition uses a distinctive Latin idiom of this typical edition: a contrast between goods that pass and things that abide, asking that the second be held *already*, now. The same idiom appears in the Missal’s Advent Post-Communion prayer, where the faithful are described as walking among passing things. The Collect is therefore not eccentric; it speaks the book’s own eschatological dialect.
+The three orations are Year-neutral. The Collect’s closing petition uses a distinctive Latin idiom of this typical edition: a contrast between goods that pass and things that abide, asking that the second be held *already*, now. The same idiom appears in the Missal’s Advent Post-Communion prayer, where the faithful are described as walking among passing things. The Collect is therefore not eccentric; it speaks the book’s own eschatological dialect.
 
-That dialect meets the readings without being bent to them. The Prayer over the Offerings describes the gifts as drawn from God’s bounty before they were offered, which is precisely what the man in the field cannot say about his treasure. The Prayer after Communion names the sacrament a perpetual memorial of the Passion, supplying the one costly purchase that the Gospel’s two buyers only image.
+That dialect meets the readings on its own terms. The Prayer over the Offerings describes the gifts as drawn from God’s bounty before they were offered, which is precisely what the man in the field cannot say about his treasure. The Prayer after Communion names the sacrament a perpetual memorial of the Passion, supplying the one costly purchase that the Gospel’s two buyers only image.
 
 ### Branches: what is actually heard depends on two choices
 
 Two authorized alternatives change the celebration materially, and neither is resolved by the books. If the shorter Gospel is chosen, the assembly hears value, joy and total expenditure, and hears nothing of the net, the furnace, the question “Have ye understood all these things?”, or the scribe with new and old. The wording is the public-domain Douay-Rheims, a study translation, not the proclaimed Lectionary text. If the longer form is chosen, the movement acquires an end that no buyer controls. Preaching that imports the net into a celebration that did not proclaim it reports something that did not happen.
 
-The Communion antiphons are likewise a closed either/or. One recalls benefits received and forbids forgetting; the other names mercy and clean-heartedness with their promised ends. The first closes the circuit of gift and memory opened by the Prayer over the Offerings; the second supplies a moral test for those who have just been fed. Both are lawful, and the books leave the choice open.
+The Communion antiphons are likewise alternatives, and an approved chant may replace either. One recalls benefits received and forbids forgetting; the other names mercy and clean-heartedness with their promised ends. The first closes the circuit of gift and memory opened by the Prayer over the Offerings; the second supplies a moral test for those who have just been fed. Both are lawful, and the books leave the choice open.
 
 Two further variables lie outside the proper texts, though both change the celebration. The blessing and sprinkling of water may replace the Penitential Act on a Sunday, bringing texts of its own that belong to the Order of Mass and not to this formulary. And because Week XVII supplies no Preface of its own, both the Preface and the Eucharistic Prayer are chosen locally, as a coupled pair: some Eucharistic Prayers bring their own Preface and so settle the question, while others leave it open. The proper texts and their relations stand however either choice falls.
 
@@ -112,11 +112,11 @@ If the whole formulary is heard together, its movement is from a question about 
 
 ## The Propers: Detailed Commentary
 
-Every claim below about the Latin Missal was checked in the exact 2002 typical edition identified in the appendix. Protected wording is not reproduced: the orations are described and cited by incipit, short Latin phrases appear only where an argument turns on them, and where scriptural wording is quoted the version is the public-domain Douay-Rheims, named as such, never the copyrighted Lectionary text actually proclaimed in the United States.
+The Latin Missal cited below is the 2002 typical edition identified in the appendix. Protected wording is not reproduced: the orations are described and cited by incipit, short Latin phrases appear only where an argument turns on them, and where scriptural wording is quoted the version is the public-domain Douay-Rheims, named as such, never the copyrighted Lectionary text actually proclaimed in the United States.
 
 ### Entrance Antiphon: a spliced text older than either Vulgate
 
-The Missal marks the antiphon *Cf.* Ps 67:6–7, 36, and the abbreviation is doing real work. Three separate clauses are joined: the closing words of v. 6, which place God in his holy place; the opening of v. 7, which describes him settling people together in a house; and the second half of v. 36, which gives might and strength to his people. The intervening material – God as father of orphans and judge of widows, the release of prisoners, the rebellious who dwell in tombs – is not sung. The result is a composed text about presence, gathering and strength, and it should not be treated as a proclamation of Psalm 67.
+The Missal marks the antiphon *Cf.* Ps 67:6–7, 36, and the abbreviation is doing real work. Three separate clauses are joined: the closing words of v. 6, which place God in his holy place; the opening of v. 7, which describes him settling people together in a house; and the second half of v. 36, which gives might and strength to his people. The intervening material – God as father of orphans and judge of widows, the release of prisoners, the rebellious who dwell in tombs – is not sung. The result is a composed text about presence, gathering and strength, not a proclamation of Psalm 67.
 
 The middle clause is the interesting one. The Missal reads *unánimes in domo*, “those of one mind.” Neither standard Latin Bible agrees.
 
@@ -126,17 +126,17 @@ The middle clause is the interesting one. The Missal reads *unánimes in domo*, 
 | Clementine Vulgate (Ps 67:7) | *Deus qui inhabitare facit unius moris in domo* | God settles those of one custom in a house |
 | *Nova Vulgata* (Ps 68:7) | *Deus, qui inhabitare facit desolatos in domo* | God settles the desolate in a house |
 
-The divergence is not a printing error. The identical wording, with the identical citation, stands as the Introit of the Eleventh Sunday after Pentecost in the pre-conciliar Missal, which means the postconciliar book kept the chant repertory’s ancient Latin psalter form rather than conforming the antiphon to either critical recension. The bishops’ official *Antiphonary* keys this antiphon to a page of the *Graduale Romanum*, which is consistent with that account; no *Graduale* page was collated for this antiphon, and the pre-conciliar comparison rests on a community transcription rather than a collated printing, so the derivation stands as the best-supported explanation of a verified difference rather than as a collated fact.
+The divergence is not a printing error. The identical wording, with the identical citation, stands as the Introit of the Eleventh Sunday after Pentecost in the pre-conciliar Missal, which means the postconciliar book kept the chant repertory’s ancient Latin psalter form rather than conforming the antiphon to either critical recension. The bishops’ official *Antiphonary* keys this antiphon to a page of the *Graduale Romanum*, which is consistent with that account; no *Graduale* page was collated for this antiphon, and the pre-conciliar comparison rests on a community transcription rather than a collated printing, so no collated witness yet confirms the derivation, which remains the best-supported explanation of a verified difference.
 
-Two further facts about this antiphon are worth having. First, the same text, under the same *Cf.* citation, is the Entrance antiphon of the Ritual Mass for the Dedication of a Church in the same typical edition. The antiphon is thus, within this book’s own usage, a text about a building becoming a household. Second, Augustine had already read the verse that way. Expounding Psalm 68 (Vulgate 67), he refuses to let “his holy place” name a location: as though someone were asking in what place God is, the psalm answers by describing the like-minded dwelling in a house, so that we should not seek him apart from ourselves (*Enarrationes in Psalmos* 68, §6). His comment on the final verse, the one that supplies the antiphon’s third clause, reads the promised strength as the power by which death is destroyed (§40). Neither remark was written about this antiphon, which did not then exist in this form; they are direct exegesis of the source verses, and they show that the antiphon’s ecclesial register is not a modern imposition.
+Two further facts bear on this antiphon. First, the same text, under the same *Cf.* citation, is the Entrance antiphon of the Ritual Mass for the Dedication of a Church in the same typical edition. The antiphon is thus, within this book’s own usage, a text about a building becoming a household. Second, Augustine had already read the verse that way. Expounding Psalm 68 (Vulgate 67), he refuses to let “his holy place” name a location: as though someone were asking in what place God is, the psalm answers by describing the like-minded dwelling in a house, so that we should not seek him apart from ourselves (*Enarrationes in Psalmos* 68, §6). His comment on the final verse, the one that supplies the antiphon’s third clause, reads the promised strength as the power by which death is destroyed (§40). Augustine wrote both remarks on the source verses, before the antiphon existed in this form, and they show that its ecclesial register is not a modern imposition.
 
 ### Collect: a revised petition in the Missal’s own idiom
 
 The Collect opens by addressing God as protector of those who hope in him, adds the relative clause that without him nothing is strong and nothing holy, asks that mercy be multiplied, and then states the purpose: that under God as ruler and guide the petitioners may so use passing goods now as already to be able to cling to those that abide.
 
-Three observations, each checkable.
+The prayer’s wording shows three things.
 
-**The address is formulaic, not proper.** The invocation *Protéctor in te sperántium, Deus* opens two different prayers in the 2002 Missal. Besides this Collect it begins an optional Prayer over the People appointed for Thursday of the Fourth Week of Lent, which continues quite differently, asking blessing, protection and perseverance in love. No argument may treat the address as a signature of this Sunday.
+**The address is formulaic, not proper.** The invocation *Protéctor in te sperántium, Deus* opens two different prayers in the 2002 Missal. Besides this Collect it begins an optional Prayer over the People appointed for Thursday of the Fourth Week of Lent, which continues quite differently, asking blessing, protection and perseverance in love. The address is therefore no signature of this Sunday.
 
 **The petition was rewritten in the reform.** The pre-conciliar Collect of the Third Sunday after Pentecost shares the whole first half word for word and then diverges:
 
@@ -145,7 +145,7 @@ Three observations, each checkable.
 | Pre-conciliar (Third Sunday after Pentecost) | *… sic transeámus per bona temporália, ut non amittámus ætérna* – so pass through temporal goods that we do not lose the eternal. |
 | *Missale Romanum* 2002, Week XVII | *… sic bonis transeúntibus nunc utámur, ut iam possímus inhærére mansúris* – so use passing goods now that we may already be able to cling to those that abide. |
 
-Four changes are substantive. The goods are no longer “temporal” but “passing,” which is a description of their duration rather than of their order. The verb of relation to them changes from passing *through* to *using*. The eschatological verb changes from not losing to clinging. And two adverbs are added, *now* and *already*, which move the petition’s horizon into the present. The revised prayer asks for a competence exercised in time, not merely for a safe transit through it. The pre-conciliar side of this comparison rests on a community transcription rather than a collated printing, so the finding is strong but not fully collated.
+Four changes are substantive. The goods are no longer “temporal” but “passing,” which is a description of their duration rather than of their order. The verb of relation to them changes from passing *through* to *using*. The eschatological verb changes from not losing to clinging. And two adverbs are added, *now* and *already*, which move the petition’s horizon into the present. The revised prayer asks for a competence exercised in time, not merely for a safe transit through it. The pre-conciliar side of this comparison rests on a community transcription rather than a collated printing.
 
 **The closing idiom is the book’s own.** The exact phrase *inhærére mansúris* occurs eight times in the 2002 Missal. Seven are the Post-Communion prayer of the First Sunday of Advent, repeated on the Mondays and Thursdays of the Advent weeks, where it is paired with a description of the faithful as walking *inter prætereúntia*, among passing things. The eighth is this Collect, which is the only place the phrase *bonis transeúntibus* occurs at all. The passing/abiding contrast is therefore a shared redactional dialect of this typical edition, and the Collect is its Ordinary Time instance.
 
@@ -165,7 +165,7 @@ The scene is Solomon’s night at Gibeon, “the great high place,” early in a
 | vv. 13–14, immediately after | God adds riches and glory unasked, and makes long life conditional on walking in his ways. | The reading ends on the granting of the wise heart. The reward that follows the refusal of reward, and the condition attached to long life, are not proclaimed. |
 | vv. 16–28, later in the chapter | The judgment between the two women and the living child. | The famous demonstration is absent. Anything a homily draws from “the judgment of Solomon” is drawing on a text that was not read. |
 
-Verse 3 has already noted that Solomon sacrificed and burnt incense in the high places, and the narrator says so as a qualification, not a compliment. The book will end with Solomon’s apostasy and the kingdom’s division. Neither fact is proclaimed today, and neither should be suppressed: the man who asks so well is the same man the book will judge, and the request is not a character reference.
+Verse 3 has already noted that Solomon sacrificed and burnt incense in the high places, and the narrator says so as a qualification, not a compliment. The book will end with Solomon’s apostasy and the kingdom’s division. Neither fact is proclaimed today, and both stand in the book: the man who asks so well is the same man the book will judge, and the request is not a character reference.
 
 #### One phrase, three languages
 
@@ -182,21 +182,21 @@ What God grants is described differently again: at v. 12 the Latin gives *cor s
 
 #### Reception: Ambrose and Augustine
 
-Ambrose’s treatment in *On the Duties of the Clergy* II.8 is the standard patristic locus, and it needs a precise description. The chapter is not about Gibeon at all: it is about *counsel* as the third thing that commends a man to others, and its thesis is that good advice requires prudence and justice together, since “prudence cannot exist without justice” (§43). Ambrose then narrates the judgment between the two women (§§44–45), calls Solomon’s penetration of the hidden maternal affection divine (§46), and divides the achievement: it was wisdom “to distinguish between secret heart-thoughts, to draw the truth from hidden springs,” and justice that the false claimant should not take another’s child (§47). Only in that section’s closing clause does the appointed verse appear, and it appears as the judgment’s ground: Solomon “had asked for wisdom, so that a prudent heart might be given him to hear and to judge with justice.” Ambrose therefore does receive the appointed verse directly, but backwards, from the scene the Lectionary does not appoint.
+Ambrose’s treatment in *On the Duties of the Clergy* II.8 is the standard patristic locus, though the chapter is not about Gibeon at all: it is about *counsel* as the third thing that commends a man to others, and its thesis is that good advice requires prudence and justice together, since “prudence cannot exist without justice” (§43). Ambrose then narrates the judgment between the two women (§§44–45), calls Solomon’s penetration of the hidden maternal affection divine (§46), and divides the achievement: it was wisdom “to distinguish between secret heart-thoughts, to draw the truth from hidden springs,” and justice that the false claimant should not take another’s child (§47). Only in that section’s closing clause does the appointed verse appear, and it appears as the judgment’s ground: Solomon “had asked for wisdom, so that a prudent heart might be given him to hear and to judge with justice.” Ambrose therefore does receive the appointed verse directly, but backwards, from the scene the Lectionary does not appoint.
 
-Augustine’s Solomon is a different figure again, and worth setting beside Ambrose’s because it cuts the other way. In the *City of God* Solomon is a type who fails to resemble what he typifies: whoever thinks Nathan’s promise was fulfilled in him “greatly errs,” since one need only look at the house of Solomon “full of strange women worshipping false gods” (XVII.8). And the diagnosis in XVII.20 is exact about the appointed scene’s aftermath: “This man, after good beginnings, made a bad end. For indeed prosperity, which wears out the minds of the wise, hurt him more than that wisdom profited him.” The man who asks so well is not thereby safe, and the book that records the request also records the ruin.
+Augustine’s Solomon is a different figure again, and he cuts the other way. In the *City of God* Solomon is a type who fails to resemble what he typifies: whoever thinks Nathan’s promise was fulfilled in him “greatly errs,” since one need only look at the house of Solomon “full of strange women worshipping false gods” (XVII.8). And the diagnosis in XVII.20 is exact about the appointed scene’s aftermath: “This man, after good beginnings, made a bad end. For indeed prosperity, which wears out the minds of the wise, hurt him more than that wisdom profited him.” The man who asks so well is not thereby safe, and the book that records the request also records the ruin.
 
-#### Where the expected witnesses are silent
+#### Where the expected witnesses fall short
 
-Where a witness would be expected and is absent, the absence matters: a homilist who assumes the tradition is full of this text will misjudge what it can bear.
+Where a witness would be expected and is absent, the absence matters: the tradition is thinner on this text than its fame suggests.
 
-Gregory the Great’s *Pastoral Rule* is the obvious candidate: a whole treatise on the government of souls, written by a man who had been a prefect. Reading all four books, Solomon appears sixteen times, every time as the tag attached to a quotation from Proverbs, Ecclesiastes or Sirach, and Gibeon does not appear at all. The nearest approach is Book III’s warning that Solomon, granted such wisdom, fell because no discipline of tribulation guarded it – the grant presupposed, the petition never invoked.
+Gregory the Great’s *Pastoral Rule* is the obvious candidate: a whole treatise on the government of souls, written by a man who had been a prefect. In all four books Solomon appears sixteen times, every time as the tag attached to a quotation from Proverbs, Ecclesiastes or Sirach, and Gibeon does not appear at all. The nearest approach is Book III’s warning that Solomon, granted such wisdom, fell because no discipline of tribulation guarded it – the grant presupposed, the petition never invoked.
 
 Cassian’s second *Conference*, the classic treatise on discretion, likewise never cites the request. Its royal exempla are failures: Saul, who preferred his own offering to obedience, and Ahab, who preferred his own clemency to a divine command. The tradition’s foundational text on discernment was built on kings who lacked it rather than on the king who asked for it.
 
-Aquinas is the third. Reading the whole of *Summa theologiæ* II-II q. 45 on the gift of wisdom, q. 47 on prudence, and q. 83 on prayer, and I-II q. 68 on the gifts of the Spirit, none contains any reference to Solomon or to 3 Kings 3. The absence is most striking at q. 83, a. 6, where Aquinas holds that temporal things may lawfully be desired “not indeed principally, by placing our end therein, but as helps whereby we are assisted in tending towards beatitude” – which is precisely the logic of Solomon’s refusal, argued instead from Augustine. The convergence is real and the dependence is not evidenced. The silence holds for those four questions and says nothing of the whole Thomistic corpus.
+Aquinas is the third. The whole of *Summa theologiæ* II-II q. 45 on the gift of wisdom, q. 47 on prudence, and q. 83 on prayer, and I-II q. 68 on the gifts of the Spirit, contains no reference to Solomon or to 3 Kings 3. The absence is most striking at q. 83, a. 6, where Aquinas holds that temporal things may lawfully be desired “not indeed principally, by placing our end therein, but as helps whereby we are assisted in tending towards beatitude” – which is precisely the logic of Solomon’s refusal, argued instead from Augustine. The convergence is real and the dependence is not evidenced. The silence holds for those four questions and says nothing of the whole Thomistic corpus.
 
-The fourth is modern, and it stands in the gallery below: what Benedict XVI did with this verse in a national parliament changes the text’s register rather than expounding it.
+The fourth is modern: Benedict XVI, in a national parliament, changed this verse’s register rather than expounding it (see *Notable and Quotable*).
 
 ### Responsorial Psalm: Ps 119:57, 72, 76–77, 127–128, 129–130
 
@@ -217,9 +217,9 @@ Three features of the selection are objective and consequential. It is discontin
 
 #### Two Fathers who found the psalm hard
 
-Both of the great Latin expositors of Psalm 118 leave a record of the difficulty, and both leave a remark about the appointed verses that is worth having.
+Both of the great Latin expositors of Psalm 118 leave a record of the difficulty, and both remark on the appointed verses.
 
-Augustine expounded every other psalm before this one, and his preface says why: he deferred it “not so much on account of its well-known length as on account of its depth, knowable to few.” He adds the reason that difficulty is not the usual kind: with other obscure psalms the obscurity at least shows itself, whereas this one “presents such a surface that it is believed to need a reader and a hearer, not an expositor.” Anyone tempted to treat the responsorial psalm as the day’s easy element has been warned by the man who wrote thirty-two sermons on it.
+Augustine expounded every other psalm before this one, and his preface says why: he deferred it “not so much on account of its well-known length as on account of its depth, knowable to few.” He adds the reason that difficulty is not the usual kind: with other obscure psalms the obscurity at least shows itself, whereas this one “presents such a surface that it is believed to need a reader and a hearer, not an expositor.” The man who wrote thirty-two sermons on it found it anything but easy.
 
 Ambrose supplies something more particular. Opening the section that begins at the first of our appointed verses, he records a dispute about where that verse belongs: most codices attach v. 57 to the *end* of the seventh letter, but the Greek psalter corrected against the Hebrew shows it opens the eighth. The Lectionary’s first sung verse therefore sits on a seam already contested in the fourth century.
 
@@ -239,13 +239,13 @@ Two of these bear directly on the day. The comment on v. 72 supplies the psalm�
 
 Ambrose reaches the same two verses by a different route, and his register is social rather than epistemological. On v. 57 he asks how rare on earth is the man who can say that the Lord is his portion, and answers with a portrait: one whom lust does not inflame, avarice does not goad, ambition does not lay low, envy does not waste – a man “born for God, not for himself.” He then works through the Levite, who has no earthly inheritance because God is his portion, to Peter at the Beautiful Gate, whose “silver and gold I have none” becomes the psalm verse’s proof: this is my portion, and my portion is Christ. On v. 72 he is blunter still. Not everyone says that the law is better than thousands of gold and silver, “indeed it is a rare man who says it”; Peter said it and proved it by the effect. And Ambrose then names who cannot: not the miser brooding on buried gold, and not the moneyed man who ransacks his daily profits, piles up wealth, lays snares for legacies, and keeps tireless vigil at a sick man’s bedside. The legacy-hunter of Roman satire has walked into a psalm commentary, and he is there because the verse is about a ranking of loves that a whole way of life contradicts.
 
-The psalm’s own horizon must be kept. These are the words of an Israelite whose delight is in *torah*, and Christian reception does not annul that literal sense. The Old Testament is proclaimed in this liturgy as Scripture in its own right, not as a cipher awaiting decryption, and the two Fathers quoted above both treat it that way even where their conclusions are Christological.
+The psalm keeps its own horizon. These are the words of an Israelite whose delight is in *torah*, and Christian reception does not annul that literal sense. The Old Testament is proclaimed in this liturgy as Scripture in its own right, not as a cipher awaiting decryption, and the two Fathers quoted above both treat it that way even where their conclusions are Christological.
 
 ### Second Reading: Romans 8:28–30
 
 #### An independent strand, and why that matters here
 
-Romans is read semi-continuously through these Sundays. This pericope arrives because the course has reached it, not because it interprets Solomon or the parables, and the *General Introduction to the Lectionary* says as much about the apostolic course in Ordinary Time. Treating it as the theological key to the treasure would misdescribe the Lectionary; worse, it would make a sentence about God’s purpose sound like a rule about property.
+Romans is read semi-continuously through these Sundays. This pericope arrives because the course has reached it, and the *General Introduction to the Lectionary* says as much about the apostolic course in Ordinary Time: the Lectionary does not correlate it with Solomon or the parables, and it is no theological key to the treasure. A sentence about God’s purpose is not a rule about property.
 
 Within Romans the verses sit at a hinge. Chapter 8 has moved from life in the Spirit through the groaning of creation to the Spirit’s intercession in prayer, and after v. 30 turns into the assurance that nothing separates us from the love of God. What is proclaimed is the middle term, and the frame on either side is not.
 
@@ -253,7 +253,7 @@ Within Romans the verses sit at a hinge. Chapter 8 has moved from life in the S
 
 In the public-domain Douay-Rheims: “And we know that to them that love God, all things work together unto good, to such as, according to his purpose, are called to be saints. For whom he foreknew, he also predestinated to be made conformable to the image of his Son; that he might be the firstborn amongst many brethren. And whom he predestinated, them he also called. And whom he called, them he also justified. And whom he justified, them he also glorified.”
 
-The Latin behind the whole Western reception is: *diligéntibus Deum ómnia cooperántur in bonum* – “all things work together unto good.” In that construction the grammatical subject is *all things*, not God. A minority of Greek witnesses supply *ho theos* explicitly, so that God is the one who makes all things work together; modern critical editions note the variant, and the common modern English renderings that make God the subject of the verb reflect it. Nothing doctrinal turns on the choice – the surrounding clause about purpose and calling supplies the divine agency either way – but a preacher should know that the version in the hand may be resolving a textual question rather than translating an unambiguous sentence.
+The Latin behind the whole Western reception is: *diligéntibus Deum ómnia cooperántur in bonum* – “all things work together unto good.” In that construction the grammatical subject is *all things*, not God. A minority of Greek witnesses supply *ho theos* explicitly, so that God is the one who makes all things work together; modern critical editions note the variant, and the common modern English renderings that make God the subject of the verb reflect it. Nothing doctrinal turns on the choice – the surrounding clause about purpose and calling supplies the divine agency either way – but the version in a reader’s hand may be resolving a textual question rather than translating an unambiguous sentence.
 
 Four words carry the argument. *Praescivit*, foreknew, translating *proegnō*; *praedestinavit*, marked out beforehand, translating *proōrisen*, literally “bounded in advance”; *conformes*, conformed, from *symmorphous*, sharing a form; and *primogenitus*, firstborn, from *prōtotokos*. The chain is not a description of a mechanism. It is a set of five past-tense verbs, the last of which – *glorified* – describes something no reader has yet seen.
 
@@ -267,9 +267,9 @@ The tradition’s fault line is not where popular accounts put it. It does not r
 | The purpose is *God’s* | Augustine, *On the Predestination of the Saints* 32 and 34, distinguishing a general calling from the certain calling of those called according to God’s purpose. | “God elected believers; but He chose them that they might be so, not because they were already so.” Foreknowledge, on this account, cannot be the reason of predestination. |
 | The purpose is God’s, and the syntax of v. 29 is itself at stake | Aquinas, *Super Romanos*, cap. 8, lect. 6, siding with Augustine and naming the alternative construal explicitly. | The foreseen-merits reading requires joining *to be made conformable* to *foreknew* rather than to *predestinated*. Aquinas prefers the other construal, so that conformity is the term of predestination and not its reason. |
 
-Two things should be said about this table, and both are uncomfortable for partisans.
+Two facts about this table are uncomfortable for partisans.
 
-First, Augustine changed his mind, and said so. Before his episcopate he had written, in an exposition of propositions from Romans, that God “chose the faith, in the foreknowledge that He would choose that very person whom He foreknew would believe in Him.” That is close in substance to what Chrysostom would later argue. Augustine quotes his own earlier sentence, names it as error, and repudiates it (*On the Predestination of the Saints* 7). Describing his own work for Simplician on Romans 9 he wrote the line that records the reversal: in solving that question “I laboured indeed on behalf of the free choice of the human will, but God’s grace overcame” (*ibid.* 8). Anyone who cites Augustine against Chrysostom should know that the early Augustine was closer to Chrysostom than to himself.
+First, Augustine changed his mind, and said so. Before his episcopate he had written, in an exposition of propositions from Romans, that God “chose the faith, in the foreknowledge that He would choose that very person whom He foreknew would believe in Him.” That is close in substance to what Chrysostom would later argue. Augustine quotes his own earlier sentence, names it as error, and repudiates it (*On the Predestination of the Saints* 7). Describing his own work for Simplician on Romans 9 he wrote the line that records the reversal: in solving that question “I laboured indeed on behalf of the free choice of the human will, but God’s grace overcame” (*ibid.* 8). The early Augustine, so often cited against Chrysostom, stood closer to Chrysostom than to his later self.
 
 Second, Chrysostom’s argument in *Homily 15* is narrower than it is usually reported to be. He does not there expound *foreknew* as foreknowledge of a foreseen choice; his whole weight falls on *purpose*, and his comment on the rest is doxological – what the Only-begotten is by nature, these have become by grace. The explicit appeal to foreknowledge of the soul’s worth comes in the next homily, on Romans 9; the two are often merged into a position neither states.
 
@@ -283,29 +283,29 @@ In the *Summa* his account is tighter still. Predestination “is not anything i
 
 #### The boundaries the Church has actually drawn
 
-Three markers are worth having, and their limits matter as much as their content.
+The Church has drawn three markers, and their limits matter as much as their content.
 
 *Orange II (529)* condemned the view that the beginning of faith and the very desire for faith belong to us by nature rather than grace (can. 5), and its Conclusion states with abhorrence that no one is foreordained to evil by God’s power – closing the semi-Pelagian and the double-predestinarian exits at once.
 
-*Trent, Session VI (1547)* forbids presuming that one is certainly among the predestined, since apart from special revelation it cannot be known whom God has chosen (ch. 12); forbids claiming absolute certainty of final perseverance while requiring firm hope (ch. 13); and condemns, in canon 17, the claim that grace of justification is given only to the predestined while others are called but “by the divine power, predestined unto evil.” A negative finding is worth recording: Romans 8:28–30 is not cited anywhere in that decree.
+*Trent, Session VI (1547)* forbids presuming that one is certainly among the predestined, since apart from special revelation it cannot be known whom God has chosen (ch. 12); forbids claiming absolute certainty of final perseverance while requiring firm hope (ch. 13); and condemns, in canon 17, the claim that grace of justification is given only to the predestined while others are called but “by the divine power, predestined unto evil.” Romans 8:28–30 is not cited anywhere in that decree.
 
-*The Congregatio de auxiliis* was the most serious attempt to settle the underlying dispute, and it did not settle it. After some eighty-five conferences held before two popes, Paul V’s decree of 5 September 1607 allowed each party to defend its own doctrine, forbade either to censure the other, and directed both to await a decision of the Apostolic See that has never been given. Presenting either the Bañezian or the Molinist account as *the* Catholic position asserts more than the Church does.
+*The Congregatio de auxiliis* was the most serious attempt to settle the underlying dispute, and it did not settle it. After some eighty-five conferences held before two popes, Paul V’s decree of 5 September 1607 allowed each party to defend its own doctrine, forbade either to censure the other, and directed both to await a decision of the Apostolic See that has never been given. Neither the Bañezian nor the Molinist account is thereby *the* Catholic position.
 
-The *Catechism* accordingly speaks with deliberate reserve, and its one thematic sentence on the word is the natural place for a reader to stand: because to God all moments of time are present in their immediacy, when he establishes his eternal plan of predestination “he includes in it each person’s free response to his grace” (600). Romans 8:28 is quoted directly at 313, where the constant witness of the saints is offered as its confirmation; Romans 8:28–30 is quoted in full at 2012, opening the treatment of the universal call to holiness, and cited at 1821 as a ground of hope coupled at once with the caution about perseverance.
+The *Catechism* accordingly speaks with deliberate reserve in its one thematic sentence on the word: because to God all moments of time are present in their immediacy, when he establishes his eternal plan of predestination “he includes in it each person’s free response to his grace” (600). Romans 8:28 is quoted directly at 313, where the constant witness of the saints is offered as its confirmation; Romans 8:28–30 is quoted in full at 2012, opening the treatment of the universal call to holiness, and cited at 1821 as a ground of hope coupled at once with the caution about perseverance.
 
-#### Conformity, and the limit that must not be crossed
+#### Conformity, and what the verse does not say
 
 The passage’s centre of gravity is not selection but shape: *conformed to the image of his Son*. Aquinas identifies this conformity with adoptive sonship, and notes that the Son who is *unigenitus* by eternal generation becomes *primogenitus* by the conferral of grace on others. The Second Vatican Council states the same thing anthropologically: the Christian, “conformed to the likeness of that Son Who is the firstborn of many brothers,” receives the first-fruits of the Spirit and so becomes capable of the new law of love (*Gaudium et spes* 22, which cites this verse in its notes).
 
-One pastoral limit governs this claim. Romans 8:28 says that God works toward good for those who love him amid all things. It does not say that all things are good. The *Catechism*, having granted that God draws greater goods even from the greatest moral evil ever committed, adds the sentence that must travel with the verse: “But for all that, evil never becomes a good” (312), and states plainly that God is in no way, directly or indirectly, the cause of moral evil (311). Nothing here licenses telling an injured person that the injury was for the best, pressing anyone toward reconciliation without safety, discouraging lament, or displacing medical care, reporting, restitution, and civil or ecclesiastical justice.
+Romans 8:28 says that God works toward good for those who love him amid all things. It does not say that all things are good. The *Catechism*, having granted that God draws greater goods even from the greatest moral evil ever committed, adds the sentence that belongs with the verse: “But for all that, evil never becomes a good” (312), and states plainly that God is in no way, directly or indirectly, the cause of moral evil (311). Neither the verse nor the *Catechism* licenses telling an injured person that the injury was for the best, pressing anyone toward reconciliation without safety, discouraging lament, or displacing medical care, reporting, restitution, and civil or ecclesiastical justice.
 
 ### Gospel Acclamation: *Cf.* Matthew 11:25
 
-The acclamation is an adaptation, marked *Cf.*, of Jesus’s thanksgiving that the Father has hidden these things from the wise and prudent and revealed them to little ones. It belongs to a different scene from the parable discourse and should not be relocated into it; Chrysostom treats the source verse in his thirty-eighth homily on Matthew as thanksgiving over revelation given to the humble, and Aquinas comments on it at *Super Matthaeum*, cap. XI.
+The acclamation is an adaptation, marked *Cf.*, of Jesus’s thanksgiving that the Father has hidden these things from the wise and prudent and revealed them to little ones. It belongs to a different scene from the parable discourse, in Matthew 11 and not 13; Chrysostom treats the source verse in his thirty-eighth homily on Matthew as thanksgiving over revelation given to the humble, and Aquinas comments on it at *Super Matthaeum*, cap. XI.
 
-The Latin makes a link that the English loses. The acclamation’s *parvulis* – little ones – is the same word that closes the last appointed psalm verse, where the unfolding of God’s words *intellectum dat parvulis*, gives understanding to little ones. Within the Latin liturgical books, then, the psalm asks for exactly what the acclamation says has been given. The link is verbal and Latin: nothing shows that the Lectionary intended it, and it does not hold in the Hebrew and Greek behind the two texts.
+The Latin makes a link that the English loses. The acclamation’s *parvulis* – little ones – is the same word that closes the last appointed psalm verse, where the unfolding of God’s words *intellectum dat parvulis*, gives understanding to little ones. Within the Latin liturgical books, then, the psalm asks for exactly what the acclamation says has been given. The link is verbal and Latin, and it does not hold in the Hebrew and Greek behind the two texts.
 
-Revelation “to little ones” has two limits: it is not a commendation of ignorance, and it is not a warrant for treating docility as a reason to withhold explanation from anyone.
+Revelation “to little ones” is not a commendation of ignorance, and not a warrant for treating docility as a reason to withhold explanation from anyone.
 
 ### Gospel: Matthew 13:44–52, with the shorter form 13:44–46
 
@@ -313,7 +313,7 @@ Revelation “to little ones” has two limits: it is not a commendation of igno
 
 Matthew’s third great discourse begins with Jesus seated in a boat and the crowds on the shore (13:1–2). At 13:36 he leaves them and enters a house, and everything appointed today is spoken indoors to the disciples alone. That change of audience is not decoration: the sower, the tares, the mustard seed and the leaven were public, while the treasure, the pearl, the net and the scribe are addressed to people who have already had an explanation and are then asked whether they understood.
 
-Two authorized forms exist, and the difference between them is one of ending rather than length: the longer runs to the close of the discourse’s teaching, the shorter stops after the pearl. Both receive commentary below, and neither is the norm.
+Two authorized forms exist, and the difference between them is one of ending rather than length: the longer runs to the close of the discourse’s teaching, the shorter stops after the pearl, and the Lectionary prints them as alternatives.
 
 #### The text, in a public-domain version
 
@@ -342,13 +342,13 @@ The detail most often lost is that the merchant seeks *good* pearls, plural, bef
 
 Gregory does something else entirely: for him the pearl is the sweetness of the heavenly life, whose brightness alone shines in the mind so that everything earthly looks deformed beside it. Augustine treats the plural-to-singular movement as a grammatical puzzle with three possible solutions, and then supplies the sentence no one else reaches: whichever the pearl is, its price is ourselves. Aquinas registers the divergence explicitly – Chrysostom and Jerome expound it of evangelical doctrine, Gregory of heavenly glory, Augustine in three ways – and adds that the pearl is called *one* because virtues are many while truth is one.
 
-#### The net, and what it does not license
+#### The net, and whose sorting it is
 
 Only the longer form proclaims the net, and its interpreters split again on what the net *is*. For Origen and Jerome it is Scripture, Old and New woven into one mesh; for Gregory it is the Church, entrusted to fishermen and gathering wise and foolish, free and slave, rich and poor; for Hilary it is Christ’s own preaching. Aquinas allows either doctrine or Church and fixes the point as universality against particularity: the Law was given to one nation, the evangelical law gathers all.
 
 Two witnesses distinguish the net from the earlier parable of the tares, and they draw the line differently. Chrysostom distinguishes by the *ground* of ruin: the tares perished for choosing wicked doctrines, the inattentive hearers of the sower for negligence, and the bad fish for wickedness of life – and these last are the most wretched, because they had attained knowledge. Aquinas distinguishes by *position*: the net covers good and bad not cut off from the Church, whereas the tares are those cut off by diversity of dogmas. Gregory adds the observation that keeps the image from fatalism: caught fish cannot change what they are, but we are caught bad and changed into good, so the time to think about it is during the catching and not on the shore.
 
-The pastoral limit follows from the text itself. The separation is performed by angels at the end of the age. Nothing in the parable, and nothing in this reception, authorises identifying a living person as a bad fish, treating anyone as already sorted, or converting an eschatological image into a warrant for exclusion.
+The separation is performed by angels at the end of the age. Nothing in the parable, and nothing in its reception, authorises identifying a living person as a bad fish, treating anyone as already sorted, or converting an eschatological image into a warrant for exclusion.
 
 #### New things and old: the one place Gregory dissents
 
@@ -356,17 +356,17 @@ Matthew 13:52 was read by Chrysostom, Origen, Jerome, Hilary and Augustine as a 
 
 Gregory alone rejects the two-Testament reading as insufficient, and his reason is exegetical rather than doctrinal. If new and old simply meant the two Testaments, he argues, we should have to deny that Abraham was learned, since he announced the words of neither; and we could not compare Moses to the instructed householder, since he taught the Old but did not utter the sayings of the New. Excluded from that understanding, he says, we are called to another: the *old* is that the human race should descend to punishment for sin, the *new* that through the Mediator’s coming one may enter the kingdom. The householder is then the preacher, who must know how to speak new things about the sweetness of the kingdom and old things about the terror of punishment, so that penalties may frighten those whom rewards do not attract. This is a homiletic doctrine rather than a canonical hermeneutic, and it is a real disagreement rather than a variation of emphasis.
 
-Two observations of Augustine’s are worth keeping beside it. Preaching on the verse he insists on conservation: the old things “are not taken away, but laid up in a treasury,” and one who brings forth only the new or only the old is not the instructed scribe, because what is brought out of the old is illustrated by the new (*Sermon* 74, formerly numbered 24 on the New Testament, §5). And in the *City of God* he notices the word order – “He did not say old and new” – and explains it as following the order of merit rather than the order of time (XX.4).
+Two observations of Augustine’s stand beside it. Preaching on the verse he insists on conservation: the old things “are not taken away, but laid up in a treasury,” and one who brings forth only the new or only the old is not the instructed scribe, because what is brought out of the old is illustrated by the new (*Sermon* 74, formerly numbered 24 on the New Testament, §5). And in the *City of God* he notices the word order – “He did not say old and new” – and explains it as following the order of merit rather than the order of time (XX.4).
 
 #### Aquinas twice on the same verse
 
-Two Thomistic treatments of Matthew 13:44 exist and they pull in opposite directions, which is instructive.
+Two Thomistic treatments of Matthew 13:44 exist, and they pull in opposite directions.
 
 In the Matthew commentary Aquinas is thoroughly allegorical. He organises the three images by the dignity each displays – the treasure shows the abundance of evangelical doctrine, the pearl its beauty, the net its universality – and he glosses “selleth all” as *contemnit*, despises, rather than as literal liquidation, with the purchase understood as acquiring good company or the spiritual leisure one lacked.
 
 In the *Summa*, by contrast, Matthew 13:44 appears exactly once, and not in any question about poverty, the counsels, or religious life. It appears in the treatment of theft, where Aquinas is distinguishing kinds of found property: gems on the seashore belong to the finder, and so does treasure long buried and belonging to nobody, “except that according to civil law the finder is bound to give half to the owner of the land. Hence in the parable of the Gospel it is said of the finder of the treasure hidden in a field that he bought the field, as though he purposed thus to acquire the right of possessing the whole treasure” (II-II, q. 66, a. 5, ad 2). The parable is cited as evidence about treasure trove, and it thereby explains the narrative detail every allegorist has to work around: the man buys the field because buying the field is how one lawfully gets the treasure.
 
-The *Summa* is silent on the pearl. Searching the Latin of its four parts found no citation of Matthew 13:45–46 anywhere, and the question on religious poverty argues instead from Matthew 19:21. The silence holds for the *Summa* as searched, not for the whole Thomistic corpus; the *Supplementum* was not included.
+The *Summa* is silent on the pearl. The Latin of its four parts contains no citation of Matthew 13:45–46, and the question on religious poverty argues instead from Matthew 19:21. The silence holds for those four parts, not for the *Supplementum*, which was not searched, or the whole Thomistic corpus.
 
 #### What each authorized form actually proclaims
 
@@ -381,7 +381,7 @@ The short form is authorized and complete as proclaimed, not a deficient version
 
 The prayer asks God to accept the gifts *which we bring from your own bounty*, and then makes a double petition: that these sacred mysteries, by the working power of grace, may both sanctify the offerers in the conduct of the present life and lead them to everlasting joys.
 
-The governing phrase is checkable and worth checking. *De tua largitáte* – “from your bounty” – is exactly the phrase the priest has just used, twice, over the bread and over the chalice: blessed are you, Lord God of all creation, for through your goodness we have received this bread, this wine, which earth has given and human hands have made. Four occurrences of the phrase stand in the 2002 Missal’s two printings of the Order of Mass, and the Week XVII Prayer over the Offerings picks it up at the moment those gifts are placed on the altar. The oration is therefore not making a new claim; it is repeating, in the collect form, what the preparation rite has just said, and doing so at the point where the assembly might otherwise imagine it is giving something of its own.
+The governing phrase is the preparation rite’s own. *De tua largitáte* – “from your bounty” – is exactly the phrase the priest has just used, twice, over the bread and over the chalice: blessed are you, Lord God of all creation, for through your goodness we have received this bread, this wine, which earth has given and human hands have made. Four occurrences of the phrase stand in the 2002 Missal’s two printings of the Order of Mass, and the Week XVII Prayer over the Offerings picks it up at the moment those gifts are placed on the altar. The oration is therefore not making a new claim; it is repeating, in the collect form, what the preparation rite has just said, and doing so at the point where the assembly might otherwise imagine it is giving something of its own.
 
 That is a real correction to a possible misreading of the day’s Gospel. The two buyers in the parable dispose of property they own. The Prayer over the Offerings says the Church cannot: what it hands over was already a gift. The two statements are not in conflict – the parable is about the cost of the kingdom to a purchaser, the prayer about the origin of what is offered – but the liturgy has placed them within a few minutes of each other, and hearing both is more truthful than hearing either alone. *Sacrosanctum concilium* 48 asks precisely this of the faithful: that they learn to offer themselves along with the immaculate victim.
 
@@ -391,16 +391,16 @@ Week XVII has no proper Preface and no proper Eucharistic Prayer insert, so two
 
 The consequence is modest but real: the Prefaces of Sundays in Ordinary Time differ in what they say, and none is appointed to these readings. Whatever is heard between the Prayer over the Offerings and the Sanctus is a lawful choice, not a proper text, and the proper texts and their relations stand whichever was made.
 
-### Communion Antiphon: a closed pair, unresolved
+### Communion Antiphon: two alternatives, unresolved
 
-The Missal prints two antiphons joined by *Vel*, and one is sung. They pull in different directions, and the difference matters because it changes what the communicant is given to say.
+The Missal prints two antiphons joined by *Vel*, and one is sung unless an approved chant replaces both. They pull in different directions, and the difference matters because it changes what the communicant is given to say.
 
 | **Alternative** | **What it does** | **Direct reception at an exact locus** |
 |:-------------|:-----------------------|:---------------------------|
 | A. Ps 102:2 (Vulgate; Ps 103 Hebrew) | The soul is addressed and told to bless and not to forget the recompenses. It is a command against amnesia, placed at the moment of reception. | Augustine, *Enarrationes in Psalmos* 103, §2, presses the noun: they are called recompenses, not awards, “for something else was due, and what was not due has been paid.” The verse is about gratuity, not merit. |
 | B. Matthew 5:7–8 | Two adjacent beatitudes, mercy and clean-heartedness, each with its promise. It is a moral test, placed at the same moment. | Augustine, *On the Lord’s Sermon on the Mount* I.2.7–8: the merciful are blessed who relieve the miserable, “for it is paid back to them”; and a pure heart is a *single* heart, since God is seen with the heart and not with the outward eyes. |
 
-Either antiphon may be sung; which one is, the books leave open. Both fit the day without having been chosen for it: A closes a circuit the Prayer over the Offerings opened, since a congregation told that its gifts came from God’s bounty is told at Communion not to forget the recompenses; B supplies the disposition that the first reading’s request and the Gospel’s sorting both imply, without naming anyone. One further connection has a narrow reach. In the same work Augustine correlates the beatitudes with the gifts of the Spirit, assigning *counsel* to the merciful and *understanding* to the clean of heart (I.4.11–12) – the two gifts a reader of the first reading would name for Solomon’s request. The correspondence is Augustine’s, made about the Beatitudes and not about this antiphon; it illuminates the antiphon without commenting on it.
+Either antiphon may be sung; which one is, the books leave open. Both fit the day: A closes a circuit the Prayer over the Offerings opened, since a congregation told that its gifts came from God’s bounty is told at Communion not to forget the recompenses; B supplies the disposition that the first reading’s request and the Gospel’s sorting both imply, without naming anyone. One further connection has a narrow reach. In the same work Augustine correlates the beatitudes with the gifts of the Spirit, assigning *counsel* to the merciful and *understanding* to the clean of heart (I.4.11–12) – the two gifts closest to Solomon’s request in the first reading. The correspondence is Augustine’s, made about the Beatitudes and not about this antiphon; it illuminates the antiphon without commenting on it.
 
 ### Prayer after Communion: the one purchase the parables only picture
 
@@ -408,11 +408,11 @@ The prayer states what has just been received – a divine sacrament, the *perpe
 
 The phrase *passiónis Fílii tui memoriále perpétuum* occurs once in the 2002 Missal, here. Its content is the Council’s: at the Last Supper Christ instituted the eucharistic sacrifice of his Body and Blood to perpetuate the sacrifice of the Cross through the centuries and to entrust to the Church “a memorial of His death and resurrection” (*Sacrosanctum concilium* 47). What the oration adds is the attribution of motive – the gift was given out of a love the prayer refuses to measure – and the petition that it be efficacious for salvation rather than merely commemorated.
 
-Set beside the day’s Gospel this produces a genuine inversion, grounded in the texts and saying nothing about how the Missal was composed. In the parables a man finds a treasure and pays everything he has for it. In the Prayer after Communion the assembly has just received, without price, the memorial of a Passion in which someone else paid. Augustine’s answer to the pearl’s cost – that the price is ourselves, “not because it is worth only that much, but because we cannot give more” – sits exactly on the seam between the two, and the Church has always read the sacrament as the place where that inadequate price is accepted.
+Set beside the day’s Gospel this produces a genuine inversion. In the parables a man finds a treasure and pays everything he has for it. In the Prayer after Communion the assembly has just received, without price, the memorial of a Passion in which someone else paid. Augustine’s answer to the pearl’s cost – that the price is ourselves, “not because it is worth only that much, but because we cannot give more” – sits exactly on the seam between the two, and the Church has always read the sacrament as the place where that inadequate price is accepted.
 
-### How far the euchology and the readings may be said to meet
+### Where the euchology and the readings meet
 
-The three orations are shared by Years A, B and C and are not shown by any evidence consulted to have been composed with Lectionary no. 109 in view. The relations below therefore rest on the texts themselves, not on an official correlation.
+The three orations are shared by Years A, B and C, and the relations below rest on the texts themselves, not on an official correlation.
 
 | **Point of contact** | **Euchological text** | **Appointed reading** |
 |:-------------|:-----------------------|:---------------------------|
@@ -420,13 +420,13 @@ The three orations are shared by Years A, B and C and are not shown by any evide
 | Origin of what is offered | Prayer over the Offerings: the gifts come from God’s own bounty. | Solomon receives what he asks and also what he does not ask; Romans grounds everything in a divine purpose. |
 | What is finally received | Prayer after Communion: the perpetual memorial of the Passion, given out of ineffable love. | Romans ends in *glorified*; the long Gospel form ends in a sorting no purchaser controls. |
 
-Two apparent contacts do *not* hold. The Collect’s ruler-and-guide language is not a comment on Solomon’s kingship: it is addressed to God about the petitioners, not about a monarch. And the Entrance antiphon’s “house” is not the field of the parable; they are different images from different books that happen to fall on the same day.
+Two apparent contacts do *not* hold. The Collect’s ruler-and-guide language is not a comment on Solomon’s kingship: it is addressed to God about the petitioners, not about a monarch. And the Entrance antiphon’s “house” is not the field of the parable; they are different images from different books.
 
 ## The Appointed Texts: Rights-Limited Study Sheet
 
 > **Publication boundary**
 >
-> The approved U.S. Missal and Lectionary English is protected and is not reproduced. This is the complete ordered inventory: lawful Latin incipits, public-domain biblical loci, exact alternatives, and descriptions identifying the appointed matter without replacing the liturgical books.
+> The approved U.S. Missal and Lectionary English is protected and is not reproduced. Below stands every appointed unit in order: lawful Latin incipits, public-domain biblical loci, exact alternatives, and descriptions identifying the appointed matter without replacing the liturgical books.
 
 | **Textual unit** | **Text / citation** |
 |:-----------------|:------------------------------------------------|
@@ -459,16 +459,16 @@ The Lectionary warrants hearing the Old Testament reading with the Gospel but do
 
 Romans 8 is appointed semi-continuously, not as commentary on the treasure. Its frame is groaning, weak prayer, suffering, and inseparable love. Augustine, Chrysostom, and Aquinas resist making creaturely evil good by definition. The promised good is conformity to the Son. Divine providence can draw saving fruit through suffering while harm remains condemnable and protection, lament, medicine, reporting, restitution, and justice remain intact.
 
-### Bounty returned and alternatives preserved
+### Bounty returned, and one branch heard
 
-The offering prayer says the gifts first came from divine bounty, preventing the Eucharist from becoming a purchase parallel to the merchant’s. Communion follows one branch: remembered benefits from Psalm 102, or mercy and purity from Matthew 5. The final prayer names the sacrament as perpetual memorial of the Passion and asks for saving fruit. The long Gospel contributes net, judgment, and the new-and-old scribe; the short Gospel does not. Gift, valuation, action, memory, and judgment can be held together only while the authorized branches remain distinct.
+The offering prayer says the gifts first came from divine bounty, preventing the Eucharist from becoming a purchase parallel to the merchant’s. Communion follows one branch: remembered benefits from Psalm 102, or mercy and purity from Matthew 5. The final prayer names the sacrament as perpetual memorial of the Passion and asks for saving fruit. The long Gospel contributes net, judgment, and the new-and-old scribe; the short Gospel does not. A celebration holds gift, valuation, action, memory and judgment together only through the branches it actually proclaims.
 
-| **Movement** | **Primary anchors** | **Reception** | **Limit** |
+| **Movement** | **Primary anchors** | **Reception** | **Counterweight** |
 |:-----------|:----------------|:-----------------|:-------------------|
 | Received discernment | Entrance; Collect; 1 Kings 3 | Ambrose; Benedict XVI | Wisdom received is not fidelity guaranteed. |
 | Reordered value | Psalm 119; Matthew 13 | Chrysostom; Francis | Grace is not purchased. |
 | Filial hope | Romans 8; acclamation | Augustine; Chrysostom; Aquinas | Evil is not made good. |
-| Eucharistic return | Offerings; Communion A/B; final prayer | Psalm and beatitude reception | Alternatives remain distinct. |
+| Eucharistic return | Offerings; Communion A/B; final prayer | Psalm and beatitude reception | One antiphon, not both. |
 
 ## The Propers: Notable and Quotable
 
@@ -526,9 +526,9 @@ Tyrrell takes the verse’s Latin tag for his title and, in this meditation, for
 
 ### Two resemblances without dependence
 
-The English word *dragnet* in its police sense does not qualify. The standard etymology derives it from *drag* plus *net*, attests the fishing sense from the 1540s, a figurative sense from the 1640s, and the police sense by 1894, with no biblical dependence recorded; and the word predates by centuries the translations that use it at Matthew 13:47, where older English versions read simply “net.” The two nets are cousins through the fishing trade, not through Matthew.
+The English word *dragnet* in its police sense is not Matthew’s. The standard etymology derives it from *drag* plus *net*, attests the fishing sense from the 1540s, a figurative sense from the 1640s, and the police sense by 1894, with no biblical dependence recorded; and the word predates by centuries the translations that use it at Matthew 13:47, where older English versions read simply “net.” The two nets are cousins through the fishing trade, not through Matthew.
 
-*Candide* fails for a comparable reason. Voltaire’s “best of all possible worlds” parodies a metaphysical thesis, not a Pauline verse, and he names the target: Pangloss, unrepentant after being hanged and dissected, cannot retract because Leibniz could never be wrong. The resemblance to Romans 8:28 is structural, not citational.
+*Candide* is not Paul’s, for a comparable reason. Voltaire’s “best of all possible worlds” parodies a metaphysical thesis, not a Pauline verse, and he names the target: Pangloss, unrepentant after being hanged and dissected, cannot retract because Leibniz could never be wrong. The resemblance to Romans 8:28 is structural, not citational.
 
 ## The Propers: Interpretive Possibilities
 
@@ -550,9 +550,9 @@ The English word *dragnet* in its police sense does not qualify. The standard et
 
 **Anchors.** The pre-conciliar Collect’s petition to *pass through* temporal goods so as not to *lose* the eternal; the 2002 Collect’s petition so to *use* passing goods now as already to *cling* to what abides; and the Gospel’s two verbs, *sells* and *buys*.
 
-**Mechanism.** The older prayer’s grammar is locomotive: goods are a terrain one crosses, and the danger is loss in transit. The revised prayer’s grammar is transactional and relational: goods are something one *uses*, and the goal is adherence. That is exactly the grammar the parables require, because the man in the field and the merchant do not pass through their possessions; they convert them. Whatever the redactors intended, the revised Collect is the only text in the formulary whose verbs match the Gospel’s.
+**Mechanism.** The older prayer’s grammar is locomotive: goods are a terrain one crosses, and the danger is loss in transit. The revised prayer’s grammar is transactional and relational: goods are something one *uses*, and the goal is adherence. That is exactly the grammar the parables require, because the man in the field and the merchant do not pass through their possessions; they convert them. The revised Collect is the only text in the formulary whose verbs match the Gospel’s.
 
-**What the element-by-element reading misses.** A commentary that treats the Collect as a Year-neutral prayer with a generic eschatological point has no way to notice that its revision moved it, verb by verb, toward the kind of action the Gospel narrates.
+**What the element-by-element reading misses.** Taken as a Year-neutral prayer with a generic eschatological point, the Collect gives no sign that its revision moved it, verb by verb, toward the kind of action the Gospel narrates.
 
 **Precedent.** *Not located in the checked corpus.* The comparison of the two Collects rests on their texts, set out at the Collect; joining it to the Gospel’s verbs is the proposal.
 
@@ -562,7 +562,7 @@ The English word *dragnet* in its police sense does not qualify. The standard et
 
 **Anchors.** The Entrance antiphon, which in this same Missal is also the Entrance antiphon for the Dedication of a Church; Augustine’s reading of its middle clause, that God’s holy place is not a location but the like-minded dwelling together; and Matthew 13:44, where a man acquires ground.
 
-**Mechanism.** The celebration opens with a text the book itself uses when a building is consecrated, and whose subject is God settling people in a house. Twenty minutes later it narrates a man acquiring a field in order to own what is buried in it. Two acquisitions are therefore staged in one rite, and they run in opposite directions: in the first, people are the thing settled and God is the agent; in the second, ground is the thing acquired and a person is the agent. The rite does not resolve the tension, and a homily that noticed it would have a way of talking about property that neither sanctifies nor denounces it.
+**Mechanism.** The celebration opens with a text the book itself uses when a building is consecrated, and whose subject is God settling people in a house. Twenty minutes later it narrates a man acquiring a field in order to own what is buried in it. Two acquisitions are therefore staged in one rite, and they run in opposite directions: in the first, people are the thing settled and God is the agent; in the second, ground is the thing acquired and a person is the agent. The rite does not resolve the tension, and the tension itself offers a way of talking about property that neither sanctifies nor denounces it.
 
 **What the element-by-element reading misses.** The antiphon is normally treated as a gathering text and the parable as a stewardship text, so the fact that both are about *getting a place* passes unnoticed.
 
@@ -600,7 +600,7 @@ The English word *dragnet* in its police sense does not qualify. The standard et
 
 **Mechanism.** The Lectionary cuts the first reading one verse before its reward; a community choosing the short Gospel cuts the discourse before its judgment. The assembly then hears two stories that both end at the moment of decision, with neither consequence disclosed. That is not a defect but a describable shape, and it is the shape in which the day’s Collect makes most sense: a prayer for the right use of passing goods is said by people who do not yet know how the story ends.
 
-**What the element-by-element reading misses.** Omissions are usually noted one at a time, as facts about boundaries. Treated together they make a positive claim: this celebration is arranged around decisions whose outcomes it declines to display. That is worth noticing, because a preacher who sees it has something specific to say about why a prayer for the right use of passing goods belongs on this Sunday rather than a prayer for perseverance or for reward.
+**What the element-by-element reading misses.** Omissions are usually noted one at a time, as facts about boundaries. Treated together they make a positive claim: this celebration is arranged around decisions whose outcomes it declines to display. That shape says something specific about why a prayer for the right use of passing goods belongs on this Sunday rather than a prayer for perseverance or for reward.
 
 **Precedent.** *Not located in the checked corpus.* Ancient commentators expound continuous texts and do not discuss modern Lectionary boundaries at all, so no witness could have made this observation.
 
@@ -637,13 +637,13 @@ The English word *dragnet* in its police sense does not qualify. The standard et
 | eucharistic-prayer-iv-with-preface | GIRM 365(d) | conditional | Preface; Eucharistic Prayer | Unresolved; if Prayer IV is chosen its own Preface is inseparable, so no Sunday Preface is used |
 | entrance-or-communion-chant-substitution | GIRM 48 and 87 | permitted | Entrance Antiphon; Communion Antiphon | Unresolved; an approved chant may replace the Missal antiphon |
 
-The two Gospel branches are mutually exclusive, and so are the two Communion antiphons. The Preface and Eucharistic Prayer branches are coupled rather than independent, because the choice of Eucharistic Prayer can itself settle the Preface. No branch here creates a formula key, and none is resolved by this guide.
+The two Gospel branches are mutually exclusive, and so are the two Communion antiphons. The Preface and Eucharistic Prayer branches are coupled rather than independent, because the choice of Eucharistic Prayer can itself settle the Preface. No branch here creates a formula key, and every one stays unresolved.
 
 ### What the following weekdays are, and are not
 
 The Sunday’s Year A readings, Gloria, Creed and Sunday Preface are not carried into the week that follows; the national calendar assigns those ferias the independent Cycle II course, Monday 27 July no. 401 through Thursday 30 July no. 404, with the Memorial of Saints Martha, Mary and Lazarus on the Wednesday. Two consequences are easily misread.
 
-First, in 2026 the Thursday’s ferial Gospel is Matthew 13:47–53, the net and the scribe with new and old. If the shorter Sunday form was chosen, that material is proclaimed four days later – but it arrives by the weekday course, not as a completion of Sunday. Two independent arrangements happen to meet; nothing was designed to fill the gap.
+First, in 2026 the Thursday’s ferial Gospel is Matthew 13:47–53, the net and the scribe with new and old. If the shorter Sunday form was chosen, that material is proclaimed four days later – but it arrives by the weekday course, not as a completion of Sunday. Two independent arrangements meet there.
 
 Second, the Week XVII Missal formulary is *available* on an eligible Ordinary Time feria under the Missal’s rubrics and GIRM 363, and such use would be a recorded local selection. Availability is not appointment, and it imports no Sunday reading, no Gloria, no Creed and no Sunday Preface.
 
@@ -792,6 +792,6 @@ Only sources actually used are listed. Where an online witness was read, the del
 
 - “Dragnet,” *Online Etymology Dictionary*, for the negative result reported in the gallery.
 
-**Last revised (UTC):** 2026-09-24T13:44:24Z
+**Last revised (UTC):** 2026-09-24T16:27:04Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
