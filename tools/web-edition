@@ -17,6 +17,7 @@ import sys
 import tempfile
 import tomllib
 from pathlib import Path
+from typing import NamedTuple
 from urllib.parse import unquote
 # Shared CLI helpers live outside tools/ so that tmt's registry scan, which
 # requires every file in tools/ to be a registered tool, stays clean.
@@ -242,7 +243,7 @@ DEFINITION_RE = re.compile(
     r"\\(?:new|renew|provide)command\*?\s*\{?\\([A-Za-z@]+)\}?"
     r"|\\(?:new|renew)environment\*?\s*\{([A-Za-z@]+\*?)\}"
     r"|\\newtcolorbox\s*\{([A-Za-z@]+)\}"
-    r"|\\(?:def|let)\s*\\([A-Za-z@]+)"
+    r"|\\(?:[gex]?def|let)\s*\\([A-Za-z@]+)"
     r"|\\(?:New|Renew|Provide|Declare)DocumentCommand\s*\{?\\([A-Za-z@]+)\}?"
 )
 # A control symbol such as \\ or \& must be consumed whole, or its second
@@ -901,32 +902,411 @@ def expand_chronology_annotations(
     return replace_grouped_macro(body, "chronologyannotation", 1, resolve), expected
 
 
-def local_definitions(preamble: str) -> str:
-    """Carry the leaf's own presentation macros through; the shim wins conflicts."""
-    kept, index = [], 0
-    while (match := DEFINE_RE.search(preamble, index)) is not None:
-        # \newcommand takes a name and a body; \newenvironment takes a name and
-        # both delimiters.  Optional [n] arguments may sit between them, and the
-        # corpus wraps definitions across lines.
-        wanted = 3 if "environment" in match.group(0) else 2
-        cursor, parts, mandatory = match.end(), [], 0
-        try:
-            while mandatory < wanted:
-                cursor = skip_gap(preamble, cursor)
-                if preamble[cursor : cursor + 1] == "[":
-                    close = preamble.index("]", cursor) + 1
-                    parts.append(preamble[cursor:close])
-                    cursor = close
-                    continue
-                body, cursor = brace_group(preamble, cursor)
-                parts.append("{" + body + "}")
-                mandatory += 1
-        except (ConversionError, ValueError):
-            index = match.end()
+# TeX's own assignments -- \def, its global and expanding forms, and \let --
+# after any prefix, read in document order with the LaTeX definitions. What is
+# modelled, what is refused and what is left alone is recorded once, in the
+# Fidelity section of guidance/web-editions.md.
+ASSIGNMENT_RE = re.compile(
+    r"(?:\\(?:global|long|protected|outer|expandafter)(?![A-Za-z@])\s*)*"
+    r"\\(def|gdef|edef|xdef|let)(?![A-Za-z@])"
+)
+DEFINITION_START_RE = re.compile(ASSIGNMENT_RE.pattern + "|" + DEFINE_RE.pattern)
+ASSIGNMENTS = frozenset("def gdef edef xdef let".split())
+# The switches that select an entrypoint's edition. The converter selects the
+# web branch of every edition conditional itself, so a switch is never carried.
+EDITION_SWITCHES = frozenset(("TriptychPrintEdition", "TriptychSynthesisEdition"))
+# Group boundaries, and every other control sequence consumed whole so that
+# none of its letters is read as a brace.
+SCOPE_TOKEN_RE = re.compile(
+    r"\\(?:begingroup|bgroup|endgroup|egroup)(?![A-Za-z@])"
+    r"|\\(?:begin|end)\s*\{[^{}]*\}"
+    r"|\\[A-Za-z@]+|\\.|[{}]",
+    re.DOTALL,
+)
+CONTROL_SEQUENCE_RE = re.compile(r"\\([A-Za-z@]+)|\\(.)", re.DOTALL)
+EXPANDAFTER_RE = re.compile(r"\s*\\expandafter(?![A-Za-z@])")
+# Every control sequence a text uses, control symbols included.
+USE_RE = re.compile(r"\\([A-Za-z@]+|.)", re.DOTALL)
+OPENING_SCOPES = frozenset(("{", "\\begingroup", "\\bgroup"))
+CLOSING_SCOPES = frozenset(("}", "\\endgroup", "\\egroup"))
+
+
+class Definition(NamedTuple):
+    """One definition as TeX reads it, with what the converter can model of it."""
+
+    start: int
+    end: int
+    # def gdef edef xdef let newcommand renewcommand providecommand environment
+    command: str
+    # The control sequence assigned; None when it cannot be read.
+    name: str | None
+    # A modelled replacement: argument count, optional default and text.
+    macro: "Macro | None"
+    # The control sequence a \let copies.
+    source: str | None
+    glob: bool
+    # Why TeX's assignment cannot be modelled; empty when it can.
+    problem: str
+    # The offsets the converter carries: a LaTeX definition's head and groups,
+    # joined without the gaps between them, as it always has carried them; an
+    # assignment's name onward, carried behind a bare \def or \let, since
+    # pandoc reads no prefix after \global and none matters at the top level.
+    pieces: tuple[tuple[int, int], ...]
+    # Offset of the replacement text's opening brace, or -1.
+    opening: int
+
+
+def control_sequence(text: str, cursor: int) -> tuple[str | None, int, bool]:
+    """The control sequence at cursor: its name, its end, and whether it is computed."""
+    cursor = skip_gap(text, cursor)
+    if text.startswith("\\csname", cursor) and not re.match(r"[A-Za-z@]", text[cursor + 7 : cursor + 8]):
+        close = text.find("\\endcsname", cursor)
+        if close < 0:
+            return None, cursor, True
+        literal = text[cursor + 7 : close].strip()
+        name = literal if literal and not re.search(r"[\\#{}\s]", literal) else None
+        return name, close + len("\\endcsname"), True
+    word = CONTROL_SEQUENCE_RE.match(text, cursor)
+    if word is None:
+        return None, cursor, False
+    return word.group(1) or word.group(2), word.end(), False
+
+
+def read_latex_definition(text: str, match: re.Match[str]) -> Definition | None:
+    head = match.group(0)
+    command = re.match(r"\\([a-z]+)", head).group(1)
+    # \newcommand takes a name and a body; \newenvironment takes a name and both
+    # delimiters. Optional [n] arguments may sit between them, and the corpus
+    # wraps definitions across lines.
+    wanted = 3 if "environment" in command else 2
+    cursor, pieces, mandatory = match.end(), [(match.start(), match.end())], 0
+    try:
+        while mandatory < wanted:
+            cursor = skip_gap(text, cursor)
+            if text[cursor : cursor + 1] == "[":
+                close = text.index("]", cursor) + 1
+                pieces.append((cursor, close))
+                cursor = close
+                continue
+            _, end = brace_group(text, cursor)
+            pieces.append((cursor, end))
+            cursor = end
+            mandatory += 1
+    except (ConversionError, ValueError):
+        pieces = []
+    if "environment" in command:
+        if not pieces:
+            return None
+        return Definition(match.start(), cursor, "environment", None, None, None, False, "",
+                          tuple(pieces), -1)
+    # A name written without braces is read, but has never been carried.
+    named = COMMAND_DEFINITION_RE.match(text, match.start())
+    if named is None:
+        return None
+    try:
+        count, default, body, opening = command_signature(text, named.end())
+        _, end = brace_group(text, opening)
+    except (ConversionError, ValueError):
+        if not pieces:
+            return None
+        return Definition(match.start(), cursor, command, named.group(1) or named.group(2), None,
+                          None, False, "", tuple(pieces), -1)
+    # Where the converter's own reading succeeded, its extent is the one carried.
+    return Definition(match.start(), cursor if pieces else end, command,
+                      named.group(1) or named.group(2), (count, default, body), None, False,
+                      "", tuple(pieces), opening)
+
+
+def read_definition(text: str, match: re.Match[str]) -> Definition | None:
+    """The definition DEFINITION_START_RE found at match, or None if unreadable."""
+    primitive = match.group(1)
+    if primitive is None:
+        return read_latex_definition(text, match)
+    prefixes = re.findall(r"\\([A-Za-z@]+)", match.group(0))[:-1]
+    glob = primitive in ("gdef", "xdef") or "global" in prefixes
+    computed = "expandafter" in prefixes
+    cursor = match.end()
+    while (expandafter := EXPANDAFTER_RE.match(text, cursor)) is not None:
+        computed, cursor = True, expandafter.end()
+    named = skip_gap(text, cursor)
+    name, cursor, csname = control_sequence(text, named)
+    computed = computed or csname
+    if name is None and not computed:
+        return None
+    if primitive == "let":
+        cursor = skip_gap(text, cursor)
+        if text[cursor : cursor + 1] == "=":
+            cursor = skip_gap(text, cursor + 1)
+        source, after, computed_source = control_sequence(text, cursor)
+        if source is None and not computed_source:
+            # A \let to a character token assigns no macro at all.
+            if cursor >= len(text):
+                return None
+            problem = "makes it equal to a character"
+            after = cursor + 1
+        elif computed or computed_source:
+            problem = "assigns or copies a control sequence computed by \\expandafter or \\csname"
+        else:
+            problem = ""
+        return Definition(match.start(), after, "let", name, None, source, glob, problem,
+                          ((named, after),), -1)
+    brace = text.find("{", cursor)
+    if brace < 0 or "}" in text[cursor:brace]:
+        return None
+    parameters = text[cursor:brace]
+    try:
+        body, end = brace_group(text, brace)
+    except ConversionError:
+        return None
+    numbers = re.fullmatch(r"\s*((?:#[1-9])*)", parameters)
+    count = len(numbers.group(1)) // 2 if numbers else 0
+    if primitive in ("edef", "xdef"):
+        problem = f"expands its replacement text when it is defined (\\{primitive})"
+    elif computed:
+        problem = "assigns a control sequence computed by \\expandafter or \\csname"
+    elif numbers is None or numbers.group(1) != "".join(f"#{n}" for n in range(1, count + 1)):
+        problem = "has a delimited parameter text"
+    else:
+        problem = ""
+    macro = None if problem else (count, None, body)
+    return Definition(match.start(), end, primitive, name, macro, None, glob, problem,
+                      ((named, end),), brace)
+
+
+def walk_definitions(text: str):
+    """The definitions and group boundaries of a TeX text, in document order.
+
+    Yields ("definition", definition) for each definition read whole, and
+    ("open", end) or ("close", end) at each group boundary. A definition's own
+    groups lie inside its extent, so a definition within another's replacement
+    text is never yielded: it is an assignment the outer macro makes when it
+    runs, and pandoc makes it then. The text must have its comments masked or
+    stripped.
+    """
+    index, pending, exhausted = 0, None, False
+    while True:
+        if not exhausted and (pending is None or pending.start() < index):
+            pending = DEFINITION_START_RE.search(text, index)
+            exhausted = pending is None
+        token = SCOPE_TOKEN_RE.search(text, index)
+        if pending is not None and (token is None or pending.start() <= token.start()):
+            definition = read_definition(text, pending)
+            if definition is None:
+                index, pending = pending.end(), None
+                continue
+            yield "definition", definition
+            index, pending = definition.end, None
             continue
-        kept.append(match.group(0) + "".join(parts))
-        index = cursor
+        if token is None:
+            return
+        index, value = token.end(), token.group()
+        if value in OPENING_SCOPES or re.match(r"\\begin\s*\{", value):
+            yield "open", index
+        elif value in CLOSING_SCOPES or re.match(r"\\end\s*\{", value):
+            yield "close", index
+
+
+class MacroTable:
+    """The macros in force, as TeX's assignments leave them, with their scopes."""
+
+    def __init__(self, macros: "dict[str, Macro] | None" = None) -> None:
+        self.macros: dict[str, Macro] = dict(macros or {})
+        # Where each name's definition came from: shim, leaf, or assignment
+        # (a \def or \let in the leaf).
+        self.origins: dict[str, str] = {}
+        self.frames: list[dict[str, tuple["Macro | None", str | None]]] = []
+
+    def assign(self, name: str, macro: "Macro | None", origin: str, glob: bool) -> None:
+        if glob:
+            # TeX keeps a global assignment when the groups around it close.
+            for frame in self.frames:
+                frame.pop(name, None)
+        elif self.frames and name not in self.frames[-1]:
+            self.frames[-1][name] = (self.macros.get(name), self.origins.get(name))
+        if macro is None:
+            self.macros.pop(name, None)
+            self.origins.pop(name, None)
+        else:
+            self.macros[name], self.origins[name] = macro, origin
+
+    def open(self) -> None:
+        self.frames.append({})
+
+    def close(self) -> bool:
+        """End the innermost group; whether that restored anything."""
+        if not self.frames:
+            return False
+        saved = self.frames.pop()
+        for name, (macro, origin) in saved.items():
+            if macro is None:
+                self.macros.pop(name, None)
+                self.origins.pop(name, None)
+            else:
+                self.macros[name], self.origins[name] = macro, origin or "leaf"
+        return bool(saved)
+
+    def apply(self, definition: Definition, problem: str, origin: str) -> None:
+        """Assign as TeX does -- and, where TeX would stop, as pandoc does."""
+        name, command = definition.name, definition.command
+        if command == "environment" or name is None:
+            return
+        if command in ("newcommand", "providecommand"):
+            # Pandoc keeps the first; TeX stops at a second \newcommand.
+            if name not in self.macros and definition.macro is not None:
+                self.assign(name, definition.macro, origin, False)
+        elif command == "renewcommand":
+            if definition.macro is not None:
+                self.assign(name, definition.macro, origin, False)
+        elif command == "let":
+            copied = None if problem else self.macros.get(definition.source or "")
+            self.assign(name, copied, "assignment" if origin == "leaf" else origin, definition.glob)
+        else:
+            self.assign(name, None if problem else definition.macro,
+                        "assignment" if origin == "leaf" else origin, definition.glob)
+
+
+def shown_definition(text: str) -> str:
+    shown = re.sub(r"\s+", " ", text).strip()
+    return shown if len(shown) <= 80 else shown[:77] + "..."
+
+
+def fold_definitions(
+    text: str,
+    table: MacroTable,
+    *,
+    scoped: bool,
+    origin: str = "leaf",
+    uses: Counter[str] | None = None,
+    refusals: list[str] | None = None,
+    boundaries: list[str] | None = None,
+) -> list[tuple[str, "dict[str, Macro]"]]:
+    """Apply a text's definitions to table in order; return the text in segments.
+
+    Each segment is a run of the text, its definitions cut out, with the macros
+    in force over it; a new segment begins wherever they change, and
+    boundaries, if given, is told what changed them. Scoped, a
+    group's local assignments end with it, as in a document body. Unscoped, as
+    in a preamble, every LaTeX definition stands wherever it is written, as the
+    converter has always carried it, and a \\def or \\let inside a group is not
+    modelled. With refusals, each assignment the converter cannot model is
+    named there when the name it assigns is known or used (see uses).
+    """
+    segments: list[tuple[str, dict[str, Macro]]] = []
+    pieces: list[str] = []
+    index, depth = 0, 0
+
+    def change(before: dict[str, Macro], cause: str) -> None:
+        if table.macros != before:
+            segments.append(("".join(pieces), before))
+            pieces.clear()
+            if boundaries is not None:
+                boundaries.append(cause)
+
+    for kind, value in walk_definitions(text):
+        if kind == "open":
+            pieces.append(text[index:value])
+            index, depth = value, depth + 1
+            if scoped:
+                table.open()
+            continue
+        if kind == "close":
+            pieces.append(text[index:value])
+            index, depth = value, max(0, depth - 1)
+            if scoped and table.frames and table.frames[-1]:
+                before = dict(table.macros)
+                table.close()
+                change(before, "the end of a group holding a definition")
+            elif scoped:
+                table.close()
+            continue
+        definition = value
+        pieces.append(text[index : definition.start])
+        index = definition.end
+        name, problem = definition.name, definition.problem
+        assignment = definition.command in ASSIGNMENTS
+        if assignment and not problem and depth and not scoped:
+            problem = "stands inside a group or a deferred argument of the preamble"
+        if (definition.command == "let" and not problem
+                and definition.source not in table.macros):
+            problem = (f"makes \\{name} equal to \\{definition.source}, a primitive or "
+                       "built-in that no carried definition gives")
+        if refusals is not None and origin == "leaf":
+            shown = shown_definition(text[definition.start : definition.end])
+            own = Counter(USE_RE.findall(text[definition.start : definition.end]))
+            used = name is not None and (uses or Counter())[name] > own[name]
+            if assignment and name is None:
+                refusals.append(f"cannot model {shown}: the control sequence it assigns "
+                                "cannot be named")
+            elif assignment and table.origins.get(name) == "shim":
+                refusals.append(
+                    f"cannot model {shown}: \\{name} is defined by the web shim, and the "
+                    "converter cannot tell whether the shim's web definition or this "
+                    "redefinition should stand")
+            elif assignment and problem and (name in table.macros or used):
+                refusals.append(f"cannot model {shown}: it {problem}")
+            elif (definition.command == "newcommand"
+                  and table.origins.get(name) == "assignment"):
+                refusals.append(
+                    f"{shown}: \\{name} is already defined by \\def or \\let, so TeX "
+                    f"stops with \"Command \\{name} already defined\"")
+        before = dict(table.macros)
+        table.apply(definition, problem, origin)
+        change(before, shown_definition(text[definition.start : definition.end]))
+    pieces.append(text[index:])
+    segments.append(("".join(pieces), dict(table.macros)))
+    return segments
+
+
+def carried(definition: Definition, depth: int) -> bool:
+    """Whether the converter hands pandoc a preamble definition."""
+    if definition.command not in ASSIGNMENTS:
+        return bool(definition.pieces)
+    if depth or definition.name is None or definition.name in EDITION_SWITCHES:
+        return False
+    return not definition.problem
+
+
+def local_definitions(preamble: str) -> str:
+    """Carry the leaf's own definitions through, in document order.
+
+    LaTeX definitions are carried as they always have been. A \\def, \\gdef or
+    \\let is carried where it can be modelled; pandoc assigns it as TeX does,
+    the last assignment standing. A \\let is carried whatever control sequence
+    it copies: where that is not a macro the converter knows,
+    `definition_refusals` refuses the leaf if the name matters, and pandoc
+    copies it harmlessly if not.
+    """
+    masked = mask_tex_comments(preamble)
+    kept, depth = [], 0
+    for kind, value in walk_definitions(masked):
+        if kind == "open":
+            depth += 1
+        elif kind == "close":
+            depth = max(0, depth - 1)
+        elif carried(value, depth):
+            carried_text = "".join(preamble[start:end] for start, end in value.pieces)
+            if value.command in ASSIGNMENTS:
+                carried_text = ("\\let" if value.command == "let" else "\\def") + carried_text
+            kept.append(carried_text)
     return "\n".join(kept)
+
+
+def definition_refusals(shim: str, preamble: str, body: str) -> list[str]:
+    """Name every assignment TeX makes that the converter cannot carry or model.
+
+    The shim's definitions come first, then the preamble's, unscoped, then the
+    body's, scoped, each in document order. A name matters if the converter
+    knows it as a macro at that point or any web-active text uses it outside
+    the definition itself.
+    """
+    shim, preamble = mask_tex_comments(shim), mask_tex_comments(preamble)
+    body = TITLEPAGE_RE.sub("", strip_tex_comments(body))
+    uses = Counter(USE_RE.findall(shim + "\n" + preamble + "\n" + body))
+    table, refusals = MacroTable(), []
+    fold_definitions(shim, table, scoped=False, origin="shim")
+    fold_definitions(preamble, table, scoped=False, uses=uses, refusals=refusals)
+    fold_definitions(body, table, scoped=True, uses=uses, refusals=refusals)
+    return refusals
 
 
 # A bracket-opening command's argument count, optional default and replacement.
@@ -957,7 +1337,7 @@ def guard_opening_brackets(
     Returns the guarded definitions and, for the audit, each such command's
     argument count, optional default and replacement text.
     """
-    out, index, guarded = [], 0, {}
+    openings, guarded = [], {}
     for match in COMMAND_DEFINITION_RE.finditer(definitions):
         try:
             count, default, body, opening = command_signature(definitions, match.end())
@@ -966,9 +1346,19 @@ def guard_opening_brackets(
         if not body.lstrip().startswith("["):
             continue
         guarded[match.group(1) or match.group(2)] = (count, default, body)
-        opening += 1
-        out.append(definitions[index:opening] + "{}")
-        index = opening
+        openings.append(opening)
+    # A modelled \def or \gdef is carried as written, and guarded the same way.
+    for match in ASSIGNMENT_RE.finditer(definitions):
+        definition = read_definition(definitions, match)
+        if (definition is None or definition.macro is None
+                or not definition.macro[2].lstrip().startswith("[")):
+            continue
+        guarded[definition.name] = definition.macro
+        openings.append(definition.opening)
+    out, index = [], 0
+    for opening in sorted(set(openings)):
+        out.append(definitions[index : opening + 1] + "{}")
+        index = opening + 1
     out.append(definitions[index:])
     return "".join(out), guarded
 
@@ -1311,7 +1701,9 @@ COMMAND_DEFINITION_RE = re.compile(
     r"\\(?:new|renew|provide)command\*?\s*"
     r"(?:\{\s*\\([A-Za-z@]+)\s*\}|\\([A-Za-z@]+))"
 )
-DEFINITION_HEAD_RE = re.compile(r"\\(?:new|renew|provide)command\*?\s*\{?\s*\Z")
+DEFINITION_HEAD_RE = re.compile(
+    r"\\(?:new|renew|provide)command\*?\s*\{?\s*\Z|\\(?:[gex]?def|let)\s*\Z"
+)
 
 
 def strip_contentless_breaks(markdown: str) -> str:
@@ -1517,41 +1909,15 @@ def command_definitions(
 ) -> tuple[dict[str, Macro], str]:
     """The commands the text defines, and the text with the definitions cut out.
 
-    As in pandoc, the first definition of a name stands and only \\renewcommand
-    replaces it, so the shim, read first, wins over a leaf's own definition.
+    The definitions are read in document order, unscoped, as `fold_definitions`
+    reads a preamble. As in pandoc, \\newcommand and \\providecommand define
+    only a name not yet defined, so the shim, read first, wins over a leaf's
+    own \\newcommand; \\renewcommand, \\def, \\gdef and \\let replace it,
+    and the last assignment stands, as in TeX.
     """
-    macros, cuts = dict(macros or {}), []
-    for match in COMMAND_DEFINITION_RE.finditer(text):
-        try:
-            count, default, body, opening = command_signature(text, match.end())
-            _, end = brace_group(text, opening)
-        except (ConversionError, ValueError):
-            continue
-        name = match.group(1) or match.group(2)
-        if name not in macros or match.group(0).startswith("\\renew"):
-            macros[name] = (count, default, body)
-        cuts.append((match.start(), end))
-    # An environment defined in the body holds its table's opening rows, which
-    # the audit reads where the environment is used, not where it is defined.
-    for match in re.finditer(r"\\(?:new|renew)environment\*?\s*\{[^{}]*\}", text):
-        cursor = match.end()
-        try:
-            for groups in range(2):
-                cursor = skip_gap(text, cursor)
-                while text[cursor : cursor + 1] == "[":
-                    cursor = skip_gap(text, text.index("]", cursor) + 1)
-                _, cursor = brace_group(text, cursor)
-        except (ConversionError, ValueError):
-            continue
-        cuts.append((match.start(), cursor))
-    out, index = [], 0
-    for start, end in sorted(cuts):
-        if start < index:
-            continue
-        out.append(text[index:start])
-        index = end
-    out.append(text[index:])
-    return macros, "".join(out)
+    table = MacroTable(macros)
+    segments = fold_definitions(text, table, scoped=False)
+    return table.macros, "".join(segment for segment, _ in segments)
 
 
 def macro_call(text: str, start: int, macro: Macro) -> tuple[str, int] | None:
@@ -1632,6 +1998,9 @@ def cell_opening(cell: str, macros: dict[str, Macro] | None = None) -> tuple[str
         text = text.lstrip()
         if not text:
             return None, False, "empty"
+        # A definition in a cell is refused, not read as the cell's text.
+        if DEFINITION_START_RE.match(text):
+            return None, False, "definition"
         if text[0] in "{}":
             text = text[1:]
             continue
@@ -1732,24 +2101,57 @@ def cell_opening(cell: str, macros: dict[str, Macro] | None = None) -> tuple[str
 
 
 def table_source_openings(
-    body: str, definitions: str, lifted_notes: bool = False
+    body: str, definitions: str, lifted_notes: bool = False,
+    assignments: list[str] | None = None,
 ) -> tuple[Counter[tuple[str, bool]], Counter[str], Counter[str]]:
-    """Cell openings, lifted-note openings, and skipped cells by reason."""
+    """Cell openings, lifted-note openings, and skipped cells by reason.
+
+    The body's definitions are read in document order, each local one ending
+    with its group, and every table is read with the macros in force where it
+    stands. With assignments, each definition inside a table is named there.
+    """
     cells: Counter[tuple[str, bool]] = Counter()
     paragraphs: Counter[str] = Counter()
     skipped: Counter[str] = Counter()
     defined, _ = command_definitions(strip_tex_comments(definitions))
-    macros, text = command_definitions(strip_tex_comments(body), defined)
     environments = table_environments(strip_tex_comments(definitions) + "\n" + strip_tex_comments(body))
     names = "|".join(re.escape(name) for name in environments)
     begin_re = re.compile(r"\\begin\s*\{(" + names + r")\}")
     # A command that opens or closes a table is expanded where it is used, so a
     # table opened by one command and closed by another ends at its closer.
     end_re = re.compile(r"\\end\s*\{(" + names + r")\}")
+    # The converter drops the title page, and so does the audit.
+    boundaries: list[str] = []
+    segments = fold_definitions(
+        TITLEPAGE_RE.sub("", strip_tex_comments(body)), MacroTable(defined), scoped=True,
+        boundaries=boundaries,
+    )
+    for position, (text, macros) in enumerate(segments):
+        tables = table_openings_in(
+            text, macros, environments, begin_re, end_re, lifted_notes,
+            boundaries[position] if position < len(boundaries) else None, assignments,
+        )
+        cells.update(tables[0])
+        paragraphs.update(tables[1])
+        skipped.update(tables[2])
+    return cells, paragraphs, skipped
+
+
+def table_openings_in(
+    text: str, macros: dict[str, Macro], environments: dict[str, int],
+    begin_re: re.Pattern[str], end_re: re.Pattern[str], lifted_notes: bool,
+    boundary: str | None, assignments: list[str] | None,
+) -> tuple[Counter[tuple[str, bool]], Counter[str], Counter[str]]:
+    """The openings of the tables in one run of text over which no macro changes.
+
+    boundary names the definition that ends the run, if one does; a table still
+    open there has that definition inside it.
+    """
+    cells: Counter[tuple[str, bool]] = Counter()
+    paragraphs: Counter[str] = Counter()
+    skipped: Counter[str] = Counter()
     builders = {name: macro for name, macro in macros.items()
                 if begin_re.search(macro[2]) or end_re.search(macro[2])}
-    # The converter drops the title page, and so does the audit.
-    text = TITLEPAGE_RE.sub("", text)
     rows_macros = {name: macro for name, macro in macros.items()
                    if "&" in macro[2] or "\\\\" in macro[2]}
     text = expand_macros(text, builders)
@@ -1764,7 +2166,10 @@ def table_source_openings(
         except (ConversionError, ValueError):
             skipped["unreadable table"] += 1
             continue
-        region = text[cursor : table_rows_extent(text, cursor, name)]
+        extent = table_rows_extent(text, cursor, name)
+        if boundary is not None and extent == len(text) and assignments is not None:
+            assignments.append(f"{boundary} (in a {name})")
+        region = text[cursor:extent]
         # A nested table is read as its own table; its enclosing cell is not.
         nested = []
         for inner in begin_re.finditer(region):
@@ -1792,6 +2197,8 @@ def table_source_openings(
                 region = region[: found[0]] + region[found[1] :]
         for row in split_top_level(region, ROW_END_RE):
             for cell in split_top_level(row, re.compile(r"&")):
+                if assignments is not None and DEFINITION_START_RE.search(cell):
+                    assignments.append(shown_definition(cell))
                 opening, whole, reason = cell_opening(CELL_LAYOUT_RE.sub(" ", cell), macros)
                 if opening:
                     cells[(opening, whole)] += 1
@@ -1844,10 +2251,11 @@ def match_openings(wanted: Counter[tuple[str, bool]], unused: list[str | None]) 
 
 
 def lost_cell_openings(
-    body: str, markdown: str, definitions: str, lifted_notes: bool = False
+    body: str, markdown: str, definitions: str, lifted_notes: bool = False,
+    assignments: list[str] | None = None,
 ) -> list[str]:
     """Source openings no output cell (or, for a lifted note, paragraph) holds."""
-    cells, paragraphs, _ = table_source_openings(body, definitions, lifted_notes)
+    cells, paragraphs, _ = table_source_openings(body, definitions, lifted_notes, assignments)
     lost = match_openings(cells, list(output_cell_openings(markdown)))
     lost += match_openings(
         Counter({(opening, False): count for opening, count in paragraphs.items()}),
@@ -1928,11 +2336,18 @@ def audit_output(
     repeated = repeated_headers(markdown)
     if repeated:
         failures.append(f"{repeated} table(s) repeat their header row as their first body row")
+    assignments: list[str] = []
     lost = lost_cell_openings(
-        body if source_body is None else source_body, markdown, definitions, lifted_notes
+        body if source_body is None else source_body, markdown, definitions, lifted_notes,
+        assignments,
     )
     if lost:
         failures.append("table cell opening(s) lost in conversion: " + "; ".join(lost))
+    if assignments:
+        failures.append(
+            f"{len(assignments)} definition(s) inside a table, which TeX confines to "
+            "its cell and pandoc neither confines nor sets as a table: " + "; ".join(assignments)
+        )
     divs = FENCED_DIV_RE.findall(markdown)
     if divs:
         failures.append(f"{len(divs)} unconverted fenced-div delimiter(s) left in output")
@@ -2147,6 +2562,7 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     bracketed.update(locals_bracketed)
     bracketed.update(shim_bracketed)
     failures = undefined_uses(sources, defined_names(shim_text + locals_text))
+    failures.extend(definition_refusals(SHIM.read_text(encoding="utf-8"), preamble, assembled_body))
     if failures:
         raise ConversionError("\n".join(failures))
     with tempfile.NamedTemporaryFile(

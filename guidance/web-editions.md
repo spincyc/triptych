@@ -141,6 +141,30 @@ that catches it, not just the fix. A macro the shim does not define and
 the audit does not know stops the conversion by design — extend the shim
 rather than dropping the leaf.
 
+A leaf's definitions reach pandoc and the row-opening audit in document order,
+the last assignment to a name standing, as in TeX. A `\def` that followed a
+`\newcommand` was once left behind, so the edition set the `\newcommand`'s
+text where the PDF sets the `\def`'s, and the audit, reading the same
+definitions, agreed with it. `\def` and `\gdef` whose parameters are plain
+`#1`…`#n`, and `\let` to a macro the converter knows, are now carried and
+modelled — in the body, within their groups — and `\providecommand` defines
+only a name not yet defined. What cannot be modelled is refused, never
+rendered, whenever the name it assigns is one the converter knows or one any
+web-active text uses: `\edef` and `\xdef`, a delimited parameter text, a name
+computed by `\expandafter` or `\csname`, `\let` to a primitive or built-in,
+and an assignment inside a preamble group or deferred argument. Also refused
+are any assignment to a name the web shim defines, since the converter cannot
+tell whether the shim's web definition or the leaf's should stand; a
+`\newcommand` of a name a `\def` or `\let` already holds, which stops TeX; and
+any definition inside a table cell, which TeX confines to its cell and pandoc
+neither confines nor sets as a table. An assignment to a name nothing uses,
+such as the url package's `\UrlBreaks` in the Aquinas life, is left as it
+was, and an edition switch such as `\TriptychPrintEdition` is never carried,
+because the converter selects the web branch itself. An assignment a macro
+makes when it runs is pandoc's to make, and the audit does not follow it: a
+table cell that depends on one is audited against the earlier definition, and
+so refused rather than passed.
+
 Two handlings are deliberate rather than repaired, and a reviewer meets
 the decision here rather than the bare defect. A `\multicolumn` span
 keeps its contents but not its span, because neither Markdown nor the

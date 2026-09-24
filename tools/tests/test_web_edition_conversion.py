@@ -50,6 +50,8 @@ PROPER_TITLE = (
 # Pandoc pads narrow cells to align the columns; tests compare with runs of
 # spaces collapsed, since the padding is not content.
 DOSSIER_HEADER = "| **Proper** | **Citation** | **Location** | **Date** |\n|"
+# A table cell opening with a macro that a leaf defines and redefines.
+DEF_TABLE = "\\begin{tabular}{ll}\n\\yr{} row & x\\\\\n\\end{tabular}"
 
 
 @unittest.skipUnless(HAS_PANDOC, "pandoc is not installed")
@@ -1397,6 +1399,87 @@ class WebEditionConversionTests(unittest.TestCase):
             len(re.findall(r"\]\(#sec:part-\d+\)", markdown)),
             count,
         )
+
+    def test_a_def_after_a_newcommand_sets_what_tex_sets(self) -> None:
+        # The \def once never reached pandoc, so the edition set "Alpha row"
+        # where the PDF sets "Beta row", and the audit, reading the same
+        # definitions, agreed with it.
+        preamble = "\\newcommand{\\yr}{Alpha}\n\\def\\yr{Beta}"
+        markdown = self.convert(DEF_TABLE + "\n\n\\yr{} in prose.", preamble=preamble)
+        self.assertRegex(markdown, r"\|\s*Beta row\s*\|")
+        self.assertIn("Beta in prose.", markdown)
+        self.assertNotIn("Alpha", markdown)
+        self.assertEqual(
+            DRIVER.lost_cell_openings(
+                DEF_TABLE, "| Alpha row | x |\n|:-|:-|\n", DRIVER.local_definitions(preamble)
+            ),
+            ["'betarow' (expected 1, found 0)"],
+        )
+
+    def test_definitions_around_a_def_follow_tex_order(self) -> None:
+        for preamble, expected in (
+            ("\\def\\yr{Beta}", "Beta"),
+            ("\\def\\yr{Beta}\n\\providecommand{\\yr}{Alpha}", "Beta"),
+            ("\\newcommand{\\yr}{Alpha}\n\\def\\yr{Beta}\n\\providecommand{\\yr}{Gamma}", "Beta"),
+            ("\\newcommand{\\yr}{Alpha}\n\\def\\yr{Beta}\n\\renewcommand{\\yr}{Gamma}", "Gamma"),
+            ("\\newcommand{\\yr}{Alpha}\n\\global\\long\\def\\yr#1#2{#2 #1}", "Beta Alpha"),
+            # \let copies the macro as it stands, not as it is later redefined.
+            ("\\newcommand{\\zz}{Zeta}\n\\newcommand{\\yr}{Alpha}\n\\let\\yr=\\zz\n"
+             "\\renewcommand{\\zz}{Q}", "Zeta"),
+        ):
+            body = DEF_TABLE.replace("\\yr{}", "\\yr{Alpha}{Beta}") if "#2" in preamble else DEF_TABLE
+            with self.subTest(preamble=preamble):
+                self.assertRegex(self.convert(body, preamble=preamble), rf"\|\s*{expected} row\s*\|")
+        # The reverse of a \def after a \newcommand stops TeX.
+        with self.assertRaisesRegex(
+            DRIVER.ConversionError, r'TeX stops with "Command \\yr already defined"'
+        ):
+            self.convert(DEF_TABLE, preamble="\\def\\yr{Beta}\n\\newcommand{\\yr}{Alpha}")
+        # An edition switch is the entrypoint's, never the web's.
+        carried = DRIVER.local_definitions("\\def\\TriptychPrintEdition{}\n\\def\\yr{Beta}")
+        self.assertEqual(carried, "\\def\\yr{Beta}")
+
+    def test_a_redefinition_in_the_body_governs_only_what_follows_it(self) -> None:
+        body = (
+            "\\newcommand{\\yr}{Alpha}\n" + DEF_TABLE.replace("row", "one")
+            + "\n\n{\\def\\yr{Gamma}\\yr{} in a group.}\n\n" + DEF_TABLE.replace("row", "two")
+            + "\n\n\\def\\yr{Beta}\n" + DEF_TABLE
+        )
+        markdown = self.convert(body)
+        for cell in ("Alpha one", "Alpha two", "Beta row"):
+            self.assertRegex(markdown, rf"\|\s*{cell}\s*\|")
+        self.assertIn("Gamma in a group.", markdown)
+
+    def test_a_definition_inside_a_table_cell_is_refused(self) -> None:
+        # TeX confines it to its cell. Pandoc does not: bare, it could not set
+        # the table at all; braced, the cell reached the reader empty.
+        preamble = "\\newcommand{\\yr}{Alpha}\n\\newcommand{\\myrow}[1]{\\def\\yr{#1}\\yr{} row & x\\\\}"
+        for body in (
+            "\\begin{tabular}{ll}\n\\def\\yr{Beta}\\yr{} row & \\yr{} two\\\\\n\\end{tabular}",
+            "\\begin{tabular}{ll}\n{\\def\\yr{Beta}\\yr{} row} & \\yr{} two\\\\\n\\end{tabular}",
+            "\\begin{tabular}{ll}\n\\myrow{Beta}\n\\yr{} two & x\\\\\n\\end{tabular}",
+        ):
+            with self.subTest(body=body), self.assertRaisesRegex(
+                DRIVER.ConversionError, r"1 definition\(s\) inside a table.*\\def\\yr\{Beta\}"
+            ):
+                self.convert(body, preamble=preamble)
+
+    def test_an_assignment_the_converter_cannot_model_is_refused(self) -> None:
+        for assignment, reason in (
+            ("\\edef\\yr{Beta}", "expands its replacement text when it is defined"),
+            ("\\def\\yr#1.{Beta #1}", "has a delimited parameter text"),
+            ("\\let\\yr\\relax", r"makes \\yr equal to \\relax, a primitive or built-in"),
+            ("\\expandafter\\def\\csname yr\\endcsname{Beta}", "computed by"),
+            ("\\AtBeginDocument{\\def\\yr{Beta}}", "inside a group or a deferred argument"),
+            ("\\def\\latin#1{Beta #1}", "defined by the web shim"),
+        ):
+            with self.subTest(assignment=assignment), self.assertRaisesRegex(
+                DRIVER.ConversionError, "cannot model .*" + reason
+            ):
+                self.convert(DEF_TABLE, preamble="\\newcommand{\\yr}{Alpha}\n" + assignment)
+        # A form that assigns nothing any web-active text uses changes nothing.
+        markdown = self.convert("Prose.", preamble="\\edef\\unused{x}\n\\let\\alsounused\\relax")
+        self.assertIn("Prose.", markdown)
 
 
 class WebEditionAuditTests(unittest.TestCase):
