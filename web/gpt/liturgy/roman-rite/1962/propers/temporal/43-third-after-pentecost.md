@@ -6,7 +6,7 @@
 
 *Dominica Tertia Post Pentecosten*
 
-TLM propers: the endangered sinner sought, strengthened, and welcomed into joy
+1962 Roman Missal propers: the endangered sinner sought, strengthened, and welcomed into joy
 
 | **Proper** | **1962 Missal text / reference** | **Scriptural axis** | **Connection** |
 |:-----------|:-----------------|:-------------|:-----------------------|
@@ -186,7 +186,7 @@ First Peter 5:6–11 contains a tightly ordered sequence. Humility places the Ch
 
 > **St. Augustine — on Psalm 54:23**
 >
-> In *Exposition on Psalm 54* (Psalm 55 in modern numbering), 23, Augustine directly explains the Gradual’s *Iacta cogitatum tuum*. The burden is not handed to another fragile human being as though that person were the final support; the self and its care are entrusted to the Creator who made and sustains it. First Peter’s adjacent command echoes the same verse; applying Augustine’s exposition to it is a reading, since he does not comment on the Epistle.
+> In *Exposition on Psalm 54* (Psalm 55 in modern numbering), 23, Augustine directly explains the Gradual’s *Iacta cogitatum tuum*. The burden is not handed to another fragile human being as though that person were the final support; the self and its care are entrusted to the Creator who made and sustains it. First Peter’s adjacent command echoes the same verse; applying Augustine’s exposition to it is a reading; Augustine does not comment on the Epistle.
 
 The other appointed psalms add three points that the Gradual alone does not supply. Augustine’s Psalm 24 exposition lets the solitary and poor speaker lift the soul without claiming self-sufficiency: shame is refused through trust, while affliction and sins remain confessed. On Psalm 7 he treats the just Judge’s patience as preserving medicine and makes received righteousness, not autonomous merit, the ground of confidence. On Psalm 9 he joins knowledge of God’s name to seeking, proclamation from Sion, divine remembrance of blood, and the poor person’s cry. Thus Introit, Alleluia, and Offertory move from exposed need through patient judgment into praise that remembers other sufferers.
 
@@ -331,6 +331,6 @@ The Communion repeats Luke 15:10 rather than choosing an unrelated sacramental v
 
 - Septuagint/Vulgate titles and chapter context: [Psalm 7](https://www.newadvent.org/bible/psa007.htm), [Psalm 9/10](https://www.newadvent.org/bible/psa009.htm), [Psalm 24 (modern 25)](https://www.newadvent.org/bible/psa024.htm), [Psalm 54 (modern 55)](https://www.newadvent.org/bible/psa054.htm), [Luke 15](https://www.newadvent.org/bible/luk015.htm), and [1 Peter 5](https://www.newadvent.org/bible/1pe005.htm); contextual transcription aid, consulted 2026-07-10.
 
-**Last revised (UTC):** 2026-09-24T15:21:04Z
+**Last revised (UTC):** 2026-09-24T16:47:15Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
