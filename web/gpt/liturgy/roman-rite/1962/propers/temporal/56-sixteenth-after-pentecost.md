@@ -404,7 +404,7 @@ The chant assembles three clauses: remembrance of God’s justice alone, instruc
 
 Augustine interprets God’s justice alone as the renunciation of self-grounded righteousness. Youth means conversion received without prior deserving; old age means continued need for the grace that began the life. God remains indispensable after teaching the way. Augustine extends the ages both to the person persevering to the last breath and the Church enduring to the world’s end. <span class="nodecor">(*Enarrationes* 70, abridged NPNF “Psalm LXXI,” §§18–21.)</span>
 
-Theodoret gives a different corporate subject to the ages: the people schooled through Moses and the oldness of the law, followed by testimony to the Church from the nations. His relation to Hebrews 8:13 belongs to that exposition. The PG edition brackets some additions; the Christian-grace comparison in its brackets cannot be treated as undifferentiated text. Bellarmine instead develops David’s personal remembrance of God’s help and testimony through the Psalms, with divine power taking precedence over human counsel and strength. <span class="nodecor">(Theodoret, PG 80, 1423B–1426C; Bellarmine, pp. 212–213.)</span>
+Theodoret gives a different corporate subject to the ages: the people schooled through Moses and the oldness of the law, followed by testimony to the Church from the nations. His relation to Hebrews 8:13 belongs to that exposition. The PG edition brackets some additions, and the Christian-grace comparison is one of them, set apart from the surrounding text. Bellarmine instead develops David’s personal remembrance of God’s help and testimony through the Psalms, with divine power taking precedence over human counsel and strength. <span class="nodecor">(Theodoret, PG 80, 1423B–1426C; Bellarmine, pp. 212–213.)</span>
 
 The psalm narrates no Eucharistic meal. Its Communion placement makes remembrance and dependence the voice of those receiving the sacrament, and the *Liturgical Year* continuation reads its thanksgiving toward fruitfulness. Schuster identifies the same Communion verses on Thursday after the Fourth Sunday in Lent. The old-age prayer remains fitting after a divine gift: remembrance does not make the giver unnecessary. <span class="nodecor">(*Liturgical Year*, pp. 370–371; Schuster III, pp. 143–144.)</span>
 
@@ -428,7 +428,7 @@ The Gospel’s inviter can confer honor, while its guests must relinquish their 
 
 ### Interior growth bears a common form
 
-Christ’s dwelling in hearts is joined in Ephesians to all the saints and the Church. The Gradual brings nations and kings before Sion’s divine builder, and the Alleluia turns wonders into public praise. The *Liturgical Year* continuation’s indwelling–Sion–praise relation thus develops a communal movement already present in the texts. Augustine’s present Church-building and future judgement and Theodoret’s restoration exceeding its first observers give that movement distinct theological articulations. Charity’s growth is shared without making the heart, city and Church interchangeable objects. <span class="nodecor">(*Liturgical Year*, pp. 359,363; Augustine, *Enarrationes* 101, abridged NPNF “Psalm CII,” §§16–18; Theodoret, PG 80, 1679B–1682B.)</span>
+Christ’s dwelling in hearts is joined in Ephesians to all the saints and the Church. The Gradual brings nations and kings before Sion’s divine builder, and the Alleluia turns wonders into public praise. The *Liturgical Year* continuation’s indwelling–Sion–praise relation thus develops a communal movement already present in the texts. Augustine’s present Church-building and future judgement and Theodoret’s restoration exceeding its first observers give that movement distinct theological articulations. Charity’s growth is shared, though heart, city and Church are different objects. <span class="nodecor">(*Liturgical Year*, pp. 359,363; Augustine, *Enarrationes* 101, abridged NPNF “Psalm CII,” §§16–18; Theodoret, PG 80, 1679B–1682B.)</span>
 
 ### Purification concerns embodied persons
 
@@ -456,7 +456,7 @@ Paul asks comprehension of “the breadth and length and height and depth,” th
 
 The Gospel’s “Friend, go up higher” and final humiliation–exaltation saying become social satire in Percy Fitzgerald’s *Fatal Zero*. A fictional narrator remembers the dean preaching on “Go up higher,” then watches him seek a place beside a lord and interprets his humility as a hope for promotion. The scriptural language becomes an accusation against status-seeking, but the narrator also admits that his judgement may be unfair. These are a character’s judgements, not events established in a real dean’s biography. <span class="nodecor">(*All the Year Round*, new series I, 16 January 1869, p. 163, left column, paragraph beginning “Of course he had not heard of my fall in the world.”)</span>
 
-The journal’s conductor was Charles Dickens; the story was Fitzgerald’s. Dickens himself identifies its author in his letter to Mrs James T. Fields of 16 December 1868. The attribution matters to the joke’s literary setting, rather than making the journal’s running head its author’s name. <span class="nodecor">(Dickens, *Letters*, ed. Mamie Dickens and Georgina Hogarth, III, 1882, that letter; Gutenberg eBook 25854.)</span>
+The journal’s conductor was Charles Dickens; the story was Fitzgerald’s. Dickens himself identifies its author in his letter to Mrs James T. Fields of 16 December 1868. Fitzgerald’s authorship gives the joke its literary setting; the journal’s running head names its conductor, not the story’s author. <span class="nodecor">(Dickens, *Letters*, ed. Mamie Dickens and Georgina Hogarth, III, 1882, that letter; Gutenberg eBook 25854.)</span>
 
 ### An ox the Senate should leave in the ditch
 
@@ -472,7 +472,7 @@ Jesus asks who would not rescue “an ox fall into a pit” even on the Sabbath 
 
 **Anchors.** Gospel, Luke 14:2–4: the dropsical man and his cure; Epistle, Eph. 3:19–20: divine fullness and abundant power; Secret: cleansing for participation.
 
-**Mechanism.** Bodily swelling and being filled through a gift offer sharply different images of enlargement. Placed beside the Secret’s cleansing, their contrast can become an examination of desire: accumulation may enlarge a claim to importance, while charity enlarges a capacity to receive and give. Ambrose’s spiritual account of fleshly excess in Luke 14 supplies one received point of comparison; the three-element relation is the proposal. <span class="nodecor">(Ambrose, *Expositio in Lucam* VII.195.)</span>
+**Mechanism.** Bodily swelling and being filled through a gift offer sharply different images of enlargement. Placed beside the Secret’s cleansing, their contrast can become an examination of desire: accumulation may enlarge a claim to importance, while charity enlarges a capacity to receive and give. Ambrose’s spiritual account of fleshly excess in Luke 14 supplies one received point of comparison; no checked precedent supplies the three-element relation. <span class="nodecor">(Ambrose, *Expositio in Lucam* VII.195.)</span>
 
 **Fruit.** A worshipper may ask what kind of growth a desired good enables. Receiving charity gives a different account of plenitude from collecting reasons to occupy the first place.
 
@@ -626,6 +626,6 @@ The Latin’s publication basis is its independently witnessed public-domain ant
 
 Online research witnesses were accessed on 5 September 2026; chronology retains its separately recorded corpus source states.
 
-**Last revised (UTC):** 2026-09-09T14:36:51Z
+**Last revised (UTC):** 2026-09-24T13:52:07Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
