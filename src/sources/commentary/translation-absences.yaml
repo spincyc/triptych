@@ -47,17 +47,21 @@ question: >-
   this project may publish, and if not, why not
 
 method: >-
-  Catalogue research only. No source text was retrieved, and nothing here was
-  transcribed: the question is whether a translation exists and may be
-  republished, which is answered from catalogue metadata, publisher pages and
-  tables of contents. Each work was searched under the aliases recorded on its
+  For the Genesis rows, written 2026-08-01: catalogue research only. No source
+  text was retrieved, and nothing here was transcribed: the question is
+  whether a translation exists and may be republished, which is answered from
+  catalogue metadata, publisher pages and tables of contents. Each work was searched under the aliases recorded on its
   row rather than under the one name a question happened to use, because a work
   held under a name nobody searched produces a FALSE ABSENCE, and a false
-  absence in this file is what would license someone to fill it.
+  absence in this file is what would license someone to fill it. The Peter
+  Chrysologus row, written 2026-09-23, carries its own evidence and bound: that
+  survey had free-text web search, and it read public-domain page images and
+  text layers to establish what a volume contains. Nothing from them was
+  transcribed here or retained.
 
 bound: >-
-  Free-text web search was unavailable for this pass, so the evidence is
-  structured catalogue queries — Open Library's and the Internet Archive's JSON
+  Free-text web search was unavailable for the 2026-08-01 pass, so the
+  evidence is structured catalogue queries — Open Library's and the Internet Archive's JSON
   APIs, CCEL's tables of contents, tertullian.org's patristic-translation index,
   and Wikipedia's per-author translation bibliographies. HathiTrust returned 403
   and Google Books 429, and neither was successfully queried. HathiTrust
@@ -309,19 +313,126 @@ absences:
 
 - work_id: work.peter-chrysologus.sermones
   language: en
-  finding: not-surveyed
+  finding: partial-public-domain
   checked_on: 2026-09-23
   reason: >-
-    Nobody has looked. The sermons entered the catena on 2026-09-23 with Sermo
-    50, on Matthew 9, and the pass that wrote the rows above covered only the
-    works then held on Genesis. No catalogue was searched for an English
-    translation of the Sermones or of this sermon, so nothing is established
-    here about whether one exists or whether it may be republished.
+    The only complete English of Sermon 50 located is William B. Palardy's,
+    "Sermon 50: On the Paralytic", pages 193-197 of St. Peter Chrysologus:
+    Selected Sermons, Volume 2, Fathers of the Church 109 (Catholic University
+    of America Press, 2004), which is in copyright. The Sermones reach English
+    as a whole only across that series' three volumes, all in copyright: George
+    E. Ganss's volume 17 (1953), whose copyright was renewed in 1981 and which
+    does not include Sermon 50, and Palardy's volumes 109 (2004) and 110 (2005).
+  partial: >-
+    Two public-domain Englishes carry parts of Sermon 50, and together they are
+    not the sermon. The Marquess of Bute's translation of the Roman Breviary
+    (Edinburgh, 1879), volume 2 page 781, prints the three Matins lessons of the
+    Eighteenth Sunday after Pentecost: the sermon's opening as the Breviary
+    abridges it, about a quarter of the sermon, on Matthew 9:1 alone. The
+    Oxford Catena Aurea on St. Matthew (1841), pages 332-335, prints five short
+    excerpts under Chrysologus's name, cut and reworded by the compiler.
+    Neither carries the sermon's answer to the Pharisees, that forgiving sins
+    shows Christ to be God. Both are recorded here and not landed.
+  nineteenth_century: >-
+    Two partial renderings and no whole one, both read on the Internet Archive
+    on 2026-09-23. (1) Bute, The Roman Breviary (Edinburgh: Blackwood, 1879),
+    volume 2, page 781, read on the page image (identifier
+    romanbrev02cath, leaf n410; text layer sha1
+    e65f54e4acf9ef8ab076d8946ee8914fe27cc1a9): under "Eighteenth Lord's Day
+    after Pentecost", "Homily by St. Peter Chrysologus, Archbishop [of
+    Ravenna.] (Sermon 50.)", Seventh to Ninth Lessons. Set against the PL 52
+    passage record, the lessons render transcription lines 1 to 9, the Gospel
+    verse that closes line 14, and line 15. They leave out lines 10 to 13 and
+    the rest of 14, and they stop before the paralytic is brought (line 16). By
+    count that is 216 of the transcription's 825 Latin words, with scripture
+    references in brackets excluded. The 1908 new edition prints the same English
+    (volume 4, Autumn, pages 331-332; romanbreviaryref04cath, read on its text
+    layer only, sha1 9f4efe151ced7e201ccaa48987b5795a3cdf81b0). Both are British
+    publications before 1931, and Bute died in 1900. (2) Catena Aurea:
+    Commentary on the Four Gospels, volume 1, St. Matthew, part 1 (Oxford: J.
+    H. Parker, 1841), pages 332-335, read on the text layer of
+    catenaaureacomme01thom (sha1 529df37bacee919b42e63c3f04493f2f80f1d9b8) and on
+    the page image of page 332 (leaf n355), whose margin reads "Chrysol. Serm.
+    50." Five excerpts headed "Chrysologus" answer lines 15, 17-18, 35-36, 13
+    and 20-21, in that order, abridged and reworded. The second opens with a
+    sentence PL 52's text lacks, "Of how great power with God must a man's own
+    faith be", and it reads "Christ therefore with good reason accepts the
+    faith of those that bare him", which is the reading without the "non" that
+    PL 52 prints (see the passage record). The source library registers the
+    Catena Aurea on Luke only. Gueranger's Liturgical Year, Time after Pentecost
+    volume 2 (English, 1900; V11TheLiturgicalYear), treats the Eighteenth
+    Sunday without quoting Chrysologus.
+  evidence: >-
+    Searched 2026-09-23 with free-text web search and fetch. CONTENTS, from
+    Project MUSE's chapter listings (muse.jhu.edu/book/20970, 20969 and 20968):
+    Fathers of the Church 17, Saint Peter Chrysologus: Selected Sermons and
+    Saint Valerian: Homilies, translated by George E. Ganss (New York: Fathers
+    of the Church, 1953; Catholic University of America Press reissue, 2004),
+    has fifty-nine sermons between 1 and 170, including 47 and 57 but not 50.
+    Volume 109, Selected Sermons, Volume 2, translated by William B. Palardy
+    (2004; paperback 2014), has "SERMON 50: On the Paralytic", pages 193-197.
+    Volume 110, Volume 3 (2005), runs from 72a to 179. David Vincent Meconi's
+    Peter Chrysologus (Routledge, The Early Church Fathers, 2021) is a selection
+    without 50, according to the publisher's contents. RIGHTS: volume 17 was
+    registered as A83733 on 16 March 1953, "© on translation; Fathers of the
+    Church, inc." (Catalog of Copyright Entries 1953, Books, January-June, in
+    NYPL's transcription). It was renewed as RE0000082909 on 6 February 1981 by
+    George E. Ganss as author, according to the Copyright Office's public
+    records search and NYPL's cce-renewals data, so it runs to the end of 2048.
+    HathiTrust's two copies (uc1.b3464754, cub.p106320902004) are "ic" under
+    its automatic bibliographic rule, reason "bib", "non-US bib date1 >= 1931",
+    because the record's 008 carries place code "xx". That is a default and not
+    a copyright review. Volume 109 is registered as TX0006065935 (1 November
+    2004, claimant Catholic University of America Press), and volume 110 as
+    TX0006884405. The Internet Archive holds volumes 17 and 110 as lending-only
+    scans.
+  bound: >-
+    Stanford's Copyright Renewal Database answered only with a JavaScript bot
+    challenge and was not queried. The renewal evidence is the Copyright
+    Office's own public-records search, and NYPL's transcriptions of the Catalog
+    of Copyright Entries (renewals 1950-1991, registrations 1949-1977), which
+    are OCR-derived and not exhaustive. HathiTrust's volumes API answered, but
+    its full-text search refused with 403 and Google Books with 429, so no book
+    was searched in full text. Only Sermon 50 was surveyed for public-domain
+    English. Bute's Breviary and the Catena carry other Chrysologus sermons,
+    which were not counted. The Hours of the Divine Office in English and
+    Latin, volume 3, August to Advent (Collegeville: Liturgical Press, 1963-64),
+    would carry at most the same three lessons. Its contents were not seen, and
+    no registration or renewal of it was found. Boniface Ramsey's The Sermons of
+    St. Maximus of Turin, Ancient Christian Writers 50 (1989), is in copyright,
+    and it was not checked for this text under Maximus's name.
+  aliases_searched:
+  - Sermones
+  - S. Petri Chrysologi Sermones
+  - Sermons
+  - Selected Sermons
+  - Petrus Chrysologus
+  - Peter Chrysologus
+  - Chrysologus
+  - Patrologia Latina 52
+  - De paralytico curato
+  - Sermo 50
+  - Sermon 50
+  - On the Paralytic
+  - Eighteenth Sunday after Pentecost
+  - Roman Breviary
+  - Catena Aurea
+  - Maximus of Turin, Homilia 108
   overturned_by: >-
-    A catalogue survey on the method above, searched under the work record's
-    alternate titles, Petrus Chrysologus, Patrologia Latina 52 and the sermon's
-    own title, De paralytico curato, recording what English exists and its
-    rights.
+    First, seeing inside M. F. Toal's The Sunday Sermons of the Great Fathers,
+    volume 4 (Chicago: Regnery; London: Longmans, 1963), whose Eighteenth
+    Sunday after Pentecost may print the whole sermon. Every copy found is
+    lending-only, and HathiTrust's record holds volumes 1 to 3 only. No renewal of any
+    Toal volume was found in the Copyright Office's records or in NYPL's
+    renewal transcriptions, under his name, under the series title, or under
+    its first title, Patristic Homilies on the Gospels (1955). But Mercier Press
+    of Cork also issued that first volume, so a restored foreign copyright is
+    not excluded. Nothing is established until the volume and the place of its
+    first publication are read. Second, Joseph A. Nelson's Roman Breviary in
+    English, Autumn (New York: Benziger, 1950; registered as A42022, 9 March
+    1950, "© on translation"), for which no renewal was found either. If it
+    prints the Eighteenth Sunday's lessons, it is a second English of the same
+    quarter of the sermon that Bute gives, and not more of it.
 
 # Public-domain English that EXISTS beside what is already held. Recorded
 # because a route found and not taken is worth more written down than
