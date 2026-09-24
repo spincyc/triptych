@@ -276,7 +276,7 @@ The consequential collation is not between the two 1962 books but between the ap
 | 10\. <span class="nodecor">(*Off.*)</span> Ps. 29:3 | *Dómine, clamávi ad te* | *Dómine Deus meus, clamávi ad te* |
 | 11\. <span class="nodecor">(*Comm.*)</span> Prov. 3:9–10 | *de primítiis frugum tuárum … torculária redundábunt* | *de primítiis ómnium frugum tuárum da ei … torculária tua redundábunt* |
 
-The matches complete that table, and they weigh as much as the divergences. The Alleluia’s first verse (Ps. 80:2) and the Offertory’s first verse (Ps. 29:2) match the Clementine word for word; so do the Gospel from v. 32 onward and the Epistle from v. 2 to the cut in v. 10, orthography aside. One further question stays open rather than counted as a divergence: at Mk. 7:34 the missal and the 1862 Pustet print *suspíciens in cælum*, while the two Clementine transcriptions consulted print *suscípiens*. Those two transcriptions may not be independent of each other, and no printed Clementine facsimile was collated for the verse, so the reading remains unsettled.
+The matches complete that table, and they weigh as much as the divergences. The Alleluia’s first verse (Ps. 80:2) and the Offertory’s first verse (Ps. 29:2) match the Clementine word for word; so do the Gospel from v. 32 onward and the Epistle from v. 2 to the cut in v. 10, orthography aside. One further question stays open rather than counted as a divergence: at Mk. 7:34 the missal and the 1862 Pustet print *suspíciens in cælum*, while the two Clementine transcriptions consulted print *suscípiens*. Those two transcriptions may not be independent of each other, and no printed Clementine facsimile was collated for the verse, so the Clementine’s reading there remains unsettled.
 
 #### Three consequences of the collation for reception
 
@@ -524,7 +524,7 @@ The appointed wording, the documented historical orientation of the texts, and t
 
 ## The Propers: Notable and Quotable
 
-Four verified afterlives of wording from the scriptural propers, each a use that moves the phrase into a register its author did not occupy. None of them is exegesis, devotional reuse, or bare quotation. Two of the four come from one Aramaic word, and the concentration is telling: of everything on these three missal pages, *Ephphetha* is what the world took and put to other work.
+Four verified afterlives of wording from the scriptural propers, each a use that moves the phrase into a register its author did not occupy. Two of the four come from one Aramaic word, and the concentration is telling: of everything on these three missal pages, *Ephphetha* is what the world took and put to other work.
 
 > **Epistle, 1 Cor. 15:8 — William Morris makes an apostle’s apology into an aesthete’s manifesto, 1868**
 >
@@ -764,6 +764,6 @@ Only sources actually used above, with loci sufficient to check the claims made 
 
 - “Ephphatha Guild Services,” *The Scranton Tribune*, 14 November 1895, p. 3, in *Chronicling America*; Council of Organizations Serving the Deaf, *Council Membership Directory 1969*, ERIC document ED032704, <https://eric.ed.gov/?id=ED032704>.
 
-**Last revised (UTC):** 2026-09-24T16:52:08Z
+**Last revised (UTC):** 2026-09-24T17:05:09Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
