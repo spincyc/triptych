@@ -184,6 +184,10 @@ Widening is not a loosening — a commentary on a chapter is what was asked for
 and what was recorded — but it is broader than the citation that reached it,
 and a reader deciding whether to open the book is owed the difference between
 "commented on these verses" and "commented on the chapter they are in".
+The verse-level answer comes from the library, not from this index: a held
+fragment whose extent overlaps the verses asked is reported beside the
+chapter match (`held_fragments`), or on its own when no lead carries it.
+`guidance/catena.md` §11 owns that rule.
 
 ## Ranking
 
