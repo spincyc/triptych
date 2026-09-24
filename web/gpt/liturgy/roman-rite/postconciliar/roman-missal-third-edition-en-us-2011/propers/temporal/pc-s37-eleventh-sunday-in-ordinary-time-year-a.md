@@ -58,9 +58,9 @@ PC-S35-A
 
 ## The Propers: Themes and Movement
 
-> **Governing account: a people received, reconciled, and sent**
+> **A people received, reconciled, and sent**
 >
-> The Lectionary joins Israel’s covenant vocation to Christ’s compassionate commissioning of the Twelve, while Romans supplies an independent apostolic proclamation of reconciliation. The Missal frames this hearing with grace for action, bodily and spiritual renewal, and sacramental unity; the resulting architecture is source-grounded synthesis, not a claim that every text was composed for Year A.
+> The Lectionary joins Israel’s covenant vocation to Christ’s compassionate commissioning of the Twelve, while Romans supplies an independent apostolic proclamation of reconciliation. The Missal frames this hearing with grace for action, bodily and spiritual renewal, and sacramental unity; the movement rests on the liturgy’s placing of these texts together, and none was composed for Year A.
 
 **Called by grace → gathered as God’s people → sent from Christ’s compassion → renewed in Communion**
 
@@ -78,11 +78,11 @@ Jesus’ compassion sees crowds as harassed and abandoned, then commands prayer 
 
 ### 4. Offering becomes renewal and unity (*Prayer over Offerings, Communion, Prayer after Communion*)
 
-The Prayer over the Offerings holds body and mind together: ordinary food sustains creaturely life and Sacrament renews it. Communion may voice desire for God’s house or Christ’s prayer for unity. The concluding prayer names unity as both sign and effect. These shared Week XI texts can frame Year A mission, but they were not proved historically designed for its readings.
+The Prayer over the Offerings holds body and mind together: ordinary food sustains creaturely life and Sacrament renews it. Communion may voice desire for God’s house or Christ’s prayer for unity. The concluding prayer names unity as both sign and effect. These Week XI texts can frame Year A mission, though every Sunday cycle shares them.
 
-> **Guardrails**
+> **Israel, ministry, and Romans**
 >
-> **Israel:** Covenant vocation and the initial mission remain within Israel’s salvation history. **Ministry:** gratuitous grace does not deny lawful material support, but it forbids treating divine gifts as personal property. **Relationship:** Romans remains an independent semi-continuous strand rather than evidence of a single compositional plan.
+> **Israel:** Covenant vocation and the initial mission remain within Israel’s salvation history. **Ministry:** gratuitous grace does not deny lawful material support, but it forbids treating divine gifts as personal property. **Relationship:** Romans remains an independent semi-continuous strand, read in its own course.
 
 ### Theological and Spiritual Synthesis
 
@@ -92,7 +92,7 @@ That gift calls for prayer, obedient labor, gratuitous service, and action susta
 
 | **Dimension** | **Appointed anchors** | **Source-grounded synthesis** | **Limit** |
 |:-----------|:----------------|:-----------------|:-------------------|
-| Christological | Rom. 5:6–11; Matt. 9:36–10:8; Mark 1:15 | Christ reconciles enemies before they can merit it, sees the crowds with compassion, and remains the Lord who sends workers into his harvest. Mission participates in his prior gift. | Romans is a semi-continuous strand; the table does not claim that the human authors or formulary compiler designed one literary sequence. |
+| Christological | Rom. 5:6–11; Matt. 9:36–10:8; Mark 1:15 | Christ reconciles enemies before they can merit it, sees the crowds with compassion, and remains the Lord who sends workers into his harvest. Mission participates in his prior gift. | Romans is a semi-continuous strand, and the anchors are separate books joined by liturgical compilation, not one literary sequence. |
 | Ecclesial | Exod. 19:2–6a; Ps. 100; Gospel; Communion B; Prayer after Communion | A people first borne by God receives covenant vocation, apostolic mission, and sacramental unity rather than producing or possessing them. | Exodus’s narrated election remains the historical horizon, and the John 17 Communion antiphon is an unselected alternative. |
 | Sacramental | Prayer over Offerings; Communion A/B; Prayer after Communion | Created nourishment and sacramental renewal join, according to the Communion path, desire for God’s dwelling or Christ’s prayer for unity; the final prayer names unity as sign and effect. | Communion A and B are documented but unselected; the Week XI orations serve every Sunday cycle, and sacramental renewal promises no automatic bodily cure. |
 | Moral and eschatological | Entrance; Collect; Gospel; Romans; Communion A | Dependence becomes prayer, grace-enabled action, gratuitous service, and hope of salvation through Christ’s risen life and final dwelling with God. | Communion A is unselected; “without cost” rejects ownership and exploitation of grace, not lawful support for ministry, and present mission is not yet perfected communion. |
@@ -101,9 +101,9 @@ That gift calls for prayer, obedient labor, gratuitous service, and action susta
 
 ### The petitioning assembly (*Entrance, Collect*)
 
-Psalm 27 lets need and desire occupy the same prayer: the threatened speaker asks for God’s hearing and help while seeking one thing, life in God’s presence. At the Entrance only the plea is appointed; the house-of-God verse belongs to Communion option A. Their common psalm creates a genuine textual arc without proving that both branches were enacted.
+Psalm 27 lets need and desire occupy the same prayer: the threatened speaker asks for God’s hearing and help while seeking one thing, life in God’s presence. At the Entrance only the plea is appointed; the house-of-God verse belongs to Communion option A. Their common psalm creates a genuine textual arc across the two branches.
 
-Augustine’s *Exposition on Psalm 27* receives the prayer as the voice of Christ’s body learning not to confuse delayed relief with divine abandonment. His treatment keeps petition and worship together: the suppliant asks to be heard, but the desired good is finally the Lord himself rather than merely escape from enemies. This is direct reception of the psalm, not evidence that Augustine knew either modern antiphon assignment. It does, however, discipline the guide’s arc. Entrance and Communion A are not two unrelated snippets: the cry for help and the desire to dwell belong to one scriptural act of confidence. Because Communion A remains an unselected branch, that fuller arc is available rather than enacted by default.
+Augustine’s *Exposition on Psalm 27* receives the prayer as the voice of Christ’s body learning not to confuse delayed relief with divine abandonment. His treatment keeps petition and worship together: the suppliant asks to be heard, but the desired good is finally the Lord himself rather than merely escape from enemies. His reception of the psalm is direct, and it predates both modern antiphon assignments. It nonetheless shapes the arc the two antiphons trace. Entrance and Communion A are not two unrelated snippets: the cry for help and the desire to dwell belong to one scriptural act of confidence. Because Communion A remains an unselected branch, that fuller arc is available rather than enacted by default.
 
 The Collect’s Latin identity places God himself as the strength of those who hope in him. Its anthropology is neither pessimistic nor voluntarist. Human willing and acting are real, but frail; grace enables the creature to intend and perform what pleases God.
 
@@ -111,11 +111,11 @@ The Collect’s Latin identity places God himself as the strength of those who h
 
 Exodus 19 follows liberation and precedes ratification. Israel is not selected because it achieved holiness; God first carried and gathered the people. “Possession,” “kingdom of priests,” and “holy nation” therefore name gift and task together. Catholic reception applies this vocabulary to the Church in Christ, while Exodus continues to name Israel’s election within its own covenant history.
 
-The syntax of the oracle is conditional without being transactional. God’s prior action—bringing Israel out and bearing the people—precedes the summons to hear and keep covenant. The people’s priestly and holy identity is consequently received within a relationship God initiated, not purchased as a reward; it is a vocation for the sake of a world already named as his possession. The appointed boundary ends before the people’s response and the covenant rite; the guide therefore may describe the vocation announced, but not pretend that 19:2–6a contains the whole Sinai event.
+The syntax of the oracle is conditional without being transactional. God’s prior action—bringing Israel out and bearing the people—precedes the summons to hear and keep covenant. The people’s priestly and holy identity is consequently received within a relationship God initiated, not purchased as a reward; it is a vocation for the sake of a world already named as his possession. The appointed boundary ends before the people’s response and the covenant rite: 19:2–6a announces the vocation but does not contain the whole Sinai event.
 
-Augustine’s *Letter 55*, section 30, does not expound every phrase of Exodus 19:2–6a. It instead receives Sinai in a chronology from Passover to the giving of the Law and sets that fifty-day pattern beside Christian Pentecost and the gift of the Spirit. That is illuminating reuse: it shows how a Latin Father placed the covenant scene within a Paschal–Pentecostal economy; Exodus itself supplies the narrated election. Searches of the major accessible English Greek- and Latin-Father collections and Latin lead corpora did not yield a comparably sustained early exposition of the exact appointed verses. The absence is recorded rather than filled by assigning later ecclesial language to an unnamed Father.
+Augustine’s *Letter 55*, section 30, does not expound every phrase of Exodus 19:2–6a. It instead receives Sinai in a chronology from Passover to the giving of the Law and sets that fifty-day pattern beside Christian Pentecost and the gift of the Spirit. That is illuminating reuse: it shows how a Latin Father placed the covenant scene within a Paschal–Pentecostal economy; Exodus itself supplies the narrated election. The major accessible English Greek- and Latin-Father collections and Latin lead corpora yield no comparably sustained early exposition of the exact appointed verses, so no Father’s exposition stands behind the later ecclesial language.
 
-The *Apostolic Constitutions* II.25 also reuses the priestly-people vocabulary in describing an ordered Christian assembly. Its church-order setting is valuable evidence of early ecclesial appropriation but not direct Exodus commentary. Together with Augustine, it records reception while leaving the material negative result for a sustained treatment of the exact appointed unit visible.
+The *Apostolic Constitutions* II.25 also reuses the priestly-people vocabulary in describing an ordered Christian assembly. Its church-order setting is valuable evidence of early ecclesial appropriation but not direct Exodus commentary. Together with Augustine, it records reception of the vocabulary; neither treats the exact appointed unit at length.
 
 Psalm 100 turns the covenant declaration into congregational response. The sheep do not make their shepherd, and the people do not create their own belonging. Yet service is active and joyful. The psalm holds together creaturehood, covenant identity, worship, and enduring divine fidelity.
 
@@ -137,13 +137,13 @@ Chrysostom makes the anti-mercenary point without denying support. The apostles 
 
 Romans 5 does not function as a hidden allegory of Exodus or the Twelve. Paul intensifies humanity’s condition: weak, ungodly, sinful, and hostile. Christ’s death does not answer human worthiness but creates reconciliation. Chrysostom’s direct exposition emphasizes the sequence from enemies reconciled through death to a stronger hope of salvation through Christ’s living power.
 
-Aquinas’s *Commentary on Romans* V, lectio 2, reads the appointed movement as an argument from the harder gift to the assured completion: if God reconciled enemies through the Son’s death, salvation through his life is not a weaker hope. He distinguishes the successive descriptions of the beneficiaries without turning them into classes of people whom the Church may rank. Augustine, arguing against Pelagian accounts in *Against Two Letters of the Pelagians* IV.8, presses Romans 5:10–12 to show that reconciliation presupposes an enmity caused by sin and a grace not generated by unaided nature. His polemical setting is later and narrower than Paul’s letter, but the use is direct and the control is valuable: the passage cannot be made a celebration of latent human sufficiency.
+Aquinas’s *Commentary on Romans* V, lectio 2, reads the appointed movement as an argument from the harder gift to the assured completion: if God reconciled enemies through the Son’s death, salvation through his life is not a weaker hope. He distinguishes the successive descriptions of the beneficiaries without turning them into classes of people whom the Church may rank. Augustine, arguing against Pelagian accounts in *Against Two Letters of the Pelagians* IV.8, presses Romans 5:10–12 to show that reconciliation presupposes an enmity caused by sin and a grace not generated by unaided nature. His polemical setting is later and narrower than Paul’s letter, but the use is direct, and it bars any reading of the passage as a celebration of latent human sufficiency.
 
-The final phrase about rejoicing in God through Christ prevents reconciliation from becoming only a legal change described from outside. Gift establishes a relationship in which the reconciled may glory in the giver. Yet the appointed verses stop before Paul’s Adam–Christ comparison. The guide can state the death-to-life argument and gratuitous reconciliation without importing Romans 5:12–21.
+The final phrase about rejoicing in God through Christ prevents reconciliation from becoming only a legal change described from outside. Gift establishes a relationship in which the reconciled may glory in the giver. Yet the appointed verses stop before Paul’s Adam–Christ comparison, and their death-to-life argument and gratuitous reconciliation stand without Romans 5:12–21.
 
-Chrysostom and Aquinas also preserve the argument’s temporal force. Paul does not say merely that God might love enemies after they improve: the death occurs while the beneficiaries are weak and hostile. The later “much more” is not confidence in their unaided constancy but confidence in the living Christ whose reconciling act has already crossed the greater distance. Augustine’s anti-Pelagian use makes the same priority polemically, though the guide need not adopt every contour of that controversy to hear Paul’s sequence. Missioners formed by this reading cannot divide the field into those already worthy of grace and those beyond it. They themselves stand inside the category Christ’s act has changed.
+Chrysostom and Aquinas also preserve the argument’s temporal force. Paul does not say merely that God might love enemies after they improve: the death occurs while the beneficiaries are weak and hostile. The later “much more” is not confidence in their unaided constancy but confidence in the living Christ whose reconciling act has already crossed the greater distance. Augustine’s anti-Pelagian use makes the same priority polemically, though Paul’s sequence does not carry every contour of that controversy. Missioners formed by this reading cannot divide the field into those already worthy of grace and those beyond it. They themselves stand inside the category Christ’s act has changed.
 
-This strand changes the spiritual posture of mission without pretending to explain why the Lectionary paired every text. Workers are first beneficiaries. “Without cost” can therefore be heard under Romans’ priority of gift as a source-grounded synthesis: the Church gives what she did not originate, to persons she may not classify as deserving or undeserving.
+This strand changes the spiritual posture of mission, though the Lectionary reads it in its own course rather than pairing it with the Gospel. Workers are first beneficiaries. “Without cost” can therefore be heard under Romans’ priority of gift as a source-grounded synthesis: the Church gives what she did not originate, to persons she may not classify as deserving or undeserving.
 
 ### Kingdom acclamation (*Acclamation*)
 
@@ -157,7 +157,7 @@ The Prayer over the Offerings compares the created nourishment of bodily nature 
 
 Communion option A continues Psalm 27’s movement from plea to dwelling. Option B takes Christ’s prayer that his disciples be one. The Prayer after Communion makes unity more than sentiment: reception signifies it and petitions its effect. Division cannot be healed by suppressing truth or justice, and sacramental reception is not magic; nevertheless, unity is God’s gift before it becomes the Church’s ethical work.
 
-For option A, Augustine’s psalm exposition makes the sought dwelling a stable orientation of desire, not an escape into sacred space that leaves conduct untouched. For option B, Chrysostom’s *Homily 81 on John* reads John 17:11 within Jesus’ departure: the disciples remain in the world, Christ is glorified in them, and their preservation depends on the Father. Augustine’s *Tractate 110 on John* directly treats the prayer’s later unity language and carefully refuses to make created ecclesial unity identical with the consubstantial unity of Father and Son. The Church’s unity is real gift and participation, not absorption or uniformity. These receptions belong only to their respective appointed alternatives and do not prove which antiphon was used on the dated occurrence.
+For option A, Augustine’s psalm exposition makes the sought dwelling a stable orientation of desire, not an escape into sacred space that leaves conduct untouched. For option B, Chrysostom’s *Homily 81 on John* reads John 17:11 within Jesus’ departure: the disciples remain in the world, Christ is glorified in them, and their preservation depends on the Father. Augustine’s *Tractate 110 on John* directly treats the prayer’s later unity language and carefully refuses to make created ecclesial unity identical with the consubstantial unity of Father and Son. The Church’s unity is real gift and participation, not absorption or uniformity. These receptions belong only to their respective appointed alternatives; which antiphon the dated occurrence used is unresolved.
 
 The appointed John verse asks preservation in the Father’s name before it states the purpose “that they may be one.” Unity is therefore received under divine keeping, not manufactured by minimizing difference or conflict. Chrysostom’s attention to disciples remaining in the world also excludes a merely inward unity detached from mission and danger. Augustine’s later-verse distinction supplies a doctrinal boundary: the analogy to Father and Son makes ecclesial communion demanding, but creatures do not become one substance. The Prayer after Communion can ask for unity as sacramental effect precisely because the Gospel branch has first located it in God’s action.
 
@@ -194,7 +194,7 @@ The appointed John verse asks preservation in the Father’s name before it stat
 | Formula and occurrence | `PC-S35-A`; Sunday Mass for the Eleventh Sunday in Ordinary Time; 14 June 2026; green. |
 | Books and territory | *Roman Missal, Third Edition*, English for the United States (implemented 2011), and U.S. *Lectionary for Mass*, Second Typical Edition, Volume I, no. 91. |
 | Calendar and cycle | General Roman Calendar as implemented in the United States; Sunday Year A. |
-| Formulary and textual scope | Ordinary Time Week XI. Its shared audit owns the Missal formulary; this leaf owns the dated Year A composition and its two Communion-antiphon alternatives. |
+| Formulary and textual scope | Ordinary Time Week XI. The Missal formulary belongs to the shared Week XI audit; the dated Year A composition and its two Communion-antiphon alternatives belong to the leaf composition audit. |
 
 ### Branch Resolution
 
@@ -237,6 +237,6 @@ The appointed John verse asks preservation in the Father’s name before it stat
 
 - Bible SuperSearch, [*Universal Client*, repository readme at revision 041936](https://sourceforge.net/p/biblesuper/ui-standalone/ci/master/tree/), GPL and commercial-use notice, checked 2026-07-19.
 
-**Last revised (UTC):** 2026-07-21T15:25:48Z
+**Last revised (UTC):** 2026-09-24T13:43:19Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
