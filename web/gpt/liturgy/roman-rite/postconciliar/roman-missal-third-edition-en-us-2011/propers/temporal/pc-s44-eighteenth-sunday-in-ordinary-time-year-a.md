@@ -163,7 +163,7 @@ The final prayer speaks after reception: heavenly refreshment is already gift, w
 
 > **Text boundary**
 >
-> The controlling U.S. Missal and Lectionary English is protected and is not reproduced here. The citations and Latin incipits identify every proper; descriptions are original summaries. Public-domain study translations, where consulted, are not the English proclaimed at Mass.
+> The controlling U.S. Missal and Lectionary English is protected and is not reproduced. The citations and Latin incipits identify every proper; descriptions are original summaries. Public-domain study translations, where consulted, are not the English proclaimed at Mass.
 
 | **Textual unit** | **Text / citation** |
 |:-----------------|:-----------------------------------------------|
@@ -360,6 +360,6 @@ The feeding ends in visible abundance, but Romans locates security in inseparabl
 
 - Matthew Arnold, [*Dover Beach*](https://anthology.lib.virginia.edu/exist/apps/LiC/work/Arnold/arnold-dover-beach.xml), lines 29–37, in *New Poems* (Macmillan, 1867), Literature in Context first-edition transcription.
 
-**Last revised (UTC):** 2026-09-24T15:20:22Z
+**Last revised (UTC):** 2026-09-24T16:45:48Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
