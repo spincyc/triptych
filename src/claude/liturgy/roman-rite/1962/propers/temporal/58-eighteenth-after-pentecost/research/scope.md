@@ -3263,7 +3263,7 @@ respond, and is inventoried once.
 
 | Element | Publication status | What the one displayable cell says |
 | --- | --- | --- |
-| `introit` | `nonuniform` | **No date may be printed.** Its two loci have chronology, but no one assertion covers both, so an element-wide cell would be a locus-specific claim wearing an element's name. |
+| `introit` | `nonuniform` | **No date may be printed in the cell.** Its two loci have chronology, but no one assertion covers both, so an element-wide cell would be a locus-specific claim wearing an element's name. Since the first revision (2026-09-23) the explanatory row dates each passage instead (§ 7.4). |
 | `epistle` | `composition-only` | Composition, disputed: A.D. 56; A.D. 57 |
 | `gradual` | `composition-only` | Composition: before c. 165 B.C. |
 | `alleluia` | `composition-only` | Composition: before c. 165 B.C. |
@@ -3302,10 +3302,22 @@ Two things the inspection settles, and a study must not soften:
 
 ### 7.4 Limits the page-2 dossier must preserve
 
-1. **The Introit has no date cell.** It is `nonuniform`, and the concise study must
-   print the corpus's absence rather than borrow the Gradual's psalm boundary or
+1. **The Introit has no element-wide date.** It is `nonuniform`, and its Date cell
+   prints the corpus's absence rather than borrow the Gradual's psalm boundary or
    the Ecclesiasticus interval. The cause is structural: the antiphon is cited to
    Ecclesiasticus and the verse to a psalm, and they have different answers.
+   **Since the first revision (2026-09-23)**, the explanatory row of both studies
+   dates each passage in the per-passage form of `guidance/scripture-chronology.md`
+   § 14.1, which the maintainer's decision on STU-005 admits. Ecclus 36:18 carries
+   both claims the record holds there for the composition of the Book of
+   Ecclesiasticus under `catholic-traditional-v1`: *between 190 and 170 B.C.*,
+   preferred, and *about 280 B.C.*, alternate, both from the *Catholic
+   Encyclopedia*'s "Ecclesiasticus". Ps 121:1 carries the Psalter's critical
+   composition boundary under `catholic-critical-v1`, *before the Maccabean
+   period, around 165 B.C.* The page prints the generated concise displays of
+   those claims, not the raw labels. `research/production-review.md` gives the
+   command that printed them, and `chronology-claims-supported` holds each to the
+   record at the locus its label names. The Date cell is unchanged.
 2. **The Gospel has no narrated-event date.** The corpus answers `composition-only`
    for Mt 9:1–8 and returns no event date for the healing at Capernaum. The dossier
    must say that the corpus does not date the episode, and must keep composition
