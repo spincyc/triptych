@@ -1092,7 +1092,12 @@ class FixtureTests(unittest.TestCase):
         results = node_call({"op": "fixture-validate", "fixtures": mutations})
         self.assertTrue(all(not result["ok"] for result in results))
 
-        unavailable = fixture_named("propers-roman-1962-advent-1")
+        # A real event whose Latin is still withheld: the postconciliar Advent I
+        # Collect. The 1962 Advent I orations have been held since 3f86eed68.
+        unavailable = fixture_named("day-postconciliar-2026-11-29")
+        self.assertEqual(
+            unavailable["expected"]["events"][1]["selected"]["reason"], "latin-withheld"
+        )
         unavailable_mutations = []
         for mutation in (
             {"held": True},
@@ -2258,46 +2263,64 @@ class ParityTests(unittest.TestCase):
             self.assertEqual(actual["explicitAbsences"], expected["explicitAbsences"], name)
 
     def test_inherited_pre_1955_propers_are_partial_not_complete(self) -> None:
-        request = copy.deepcopy(
-            fixture_named("propers-roman-1962-advent-1")["requested"]
-        )
-        request["edition"] = {"id": "roman-pre-1955"}
+        recension = {
+            "kind": "partial-recension",
+            "recensionStatus": "structural-only",
+            "domain": "propers",
+            "domainState": "none",
+            "sourceCalendar": "roman-1962",
+            "inheritanceStatus": "uncollated",
+        }
 
-        result = node_call({
-            "op": "adapt-fixture",
-            "fixture": {"requested": request},
-        })
-        formulary = next(
-            row for row in result["coverage"]
-            if row["scope"] == "formulary:advent-1"
-        )
-        self.assertEqual(formulary, {
+        def coverage(key: str, kind: str) -> dict:
+            request = copy.deepcopy(
+                fixture_named("propers-roman-1962-advent-1")["requested"]
+            )
+            request["edition"] = {"id": "roman-pre-1955"}
+            request["formulary"] = {"id": key, "type": kind}
+            result = node_call({
+                "op": "adapt-fixture",
+                "fixture": {"requested": request},
+            })
+            self.assertFalse(any(
+                row.get("scope") == "formulary:" + key
+                and row.get("completeness") == "complete"
+                for row in result["coverage"]
+            ))
+            return {row["scope"]: row for row in result["coverage"]}
+
+        # Advent I's three orations are held under roman-1962 since 3f86eed68.
+        # The pre-1955 projection inherits them uncollated, so the recension
+        # gate in `_proper_latin.publication_records` withholds all three:
+        # no proper-body claim remains and the Latin is reported withheld.
+        advent = coverage("advent-1", "seasonal")
+        self.assertEqual(advent.get("formulary:advent-1"), {
             "state": "supported",
             "scope": "formulary:advent-1",
             "completeness": "partial",
-            "reasons": [{
-                "kind": "partial-recension",
-                "recensionStatus": "structural-only",
-                "domain": "propers",
-                "domainState": "none",
-                "sourceCalendar": "roman-1962",
-                "inheritanceStatus": "uncollated",
-            }, {
+            "reasons": [recension],
+        })
+        self.assertEqual(advent.get("proper-original:la"), {
+            "state": "unavailable",
+            "scope": "proper-original:la",
+            "reasons": [{"kind": "text-withheld", "count": 3}],
+        })
+
+        # St John Vianney's own Collect stays rights-withheld 1962 matter, so
+        # its proper-body claim is inherited beside the recension reason.
+        key = "s-ioannis-mariae-vianney-confessoris"
+        vianney = coverage(key, "sanctoral")
+        self.assertEqual(vianney.get("formulary:" + key), {
+            "state": "supported",
+            "scope": "formulary:" + key,
+            "completeness": "partial",
+            "reasons": [recension, {
                 "kind": "text-not-held",
-                "count": 3,
+                "count": 1,
                 "repositoryTerm": "proper-body",
-                "claims": [
-                    {"proper": "Collect", "cycle": None},
-                    {"proper": "Secret", "cycle": None},
-                    {"proper": "Postcommunion", "cycle": None},
-                ],
+                "claims": [{"proper": "Collect", "cycle": None}],
             }],
         })
-        self.assertFalse(any(
-            row.get("scope") == "formulary:advent-1"
-            and row.get("completeness") == "complete"
-            for row in result["coverage"]
-        ))
 
     def test_propers_cycles_are_structured_not_merged_or_order_selected(self) -> None:
         fixture = fixture_named("propers-postconciliar-transfiguration-cycles")
@@ -2918,6 +2941,13 @@ class ParityTests(unittest.TestCase):
     def test_cli_parity_rejects_bible_lectionary_reference_and_text_drift(self) -> None:
         fixture = fixture_named("day-roman-1962-2026-08-02")
         request = copy.deepcopy(fixture["requested"])
+        # A day carrying a withheld Latin body to drift: St John Vianney's own
+        # Collect is rights-withheld 1962 matter. The 2 August Sunday's orations
+        # have been held since 3f86eed68, so that day no longer carries one.
+        request["civilDate"] = "2026-08-08"
+        request["selectedReadableFormulary"] = {
+            "id": "s-ioannis-mariae-vianney-confessoris"
+        }
         request["requestedMode"] = "missal"
         request["options"]["ordinary"] = True
         run = subprocess.run(
