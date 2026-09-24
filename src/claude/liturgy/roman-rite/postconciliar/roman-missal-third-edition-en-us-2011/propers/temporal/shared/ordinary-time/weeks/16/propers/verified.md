@@ -1,7 +1,7 @@
 # Ordinary Time, Week XVI — Canonical Missal Formulary Audit
 
 **Owner:** the Missal formulary of Ordinary Time Week XVI in the Roman Missal, Third Edition, for Use in the Dioceses of the United States of America (English, implemented 2011-11-27), whose Latin base is the *Missale Romanum*, editio typica tertia, reimpressio emendata (2008).
-**Sunday consumer:** `PC-S40` (Sixteenth Sunday in Ordinary Time), all cycles. This record is not a publication leaf.
+**Sunday consumer:** `PC-S42` (Sixteenth Sunday in Ordinary Time), all cycles. This record is not a publication leaf.
 **Registry control:** [stable postconciliar proper registry](../../../../../../../../../../../../../guidance/liturgy/postconciliar-propers-registry.md). Edition dispositions are recorded in [this edition-locale's formula dispositions](../../../../../../registry/formula-dispositions.md).
 **Collated:** 2026-07-25.
 
