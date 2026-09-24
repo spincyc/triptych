@@ -53,7 +53,7 @@ TLM propers: received help, chastened standing, visitation through tears, and Eu
 
 ## The Appointed Formulary in Full
 
-This sheet prints the complete proper of *DOMINICA NONA post Pentecosten*, *II classis*, from the 1962 Vatican typical Missal, printed pp. 388–389. Latin was collated in the study leaf’s `propers/verified.md`. Scriptural English is the public-domain Douay–Rheims revised by Challoner; the orations use the anonymous public-domain 1861 Cummiskey hand missal. Neither English witness is an official translation of the 1962 book. A mismatch is identified rather than silently repaired.
+This sheet prints the complete proper of *DOMINICA NONA post Pentecosten*, *II classis*, from the 1962 Vatican typical Missal, printed pp. 388–389. Latin was collated in the study leaf’s `propers/verified.md`. Scriptural English is the public-domain Douay–Rheims revised by Challoner; the orations use the anonymous public-domain 1861 Cummiskey hand missal. Neither English witness is an official translation of the 1962 book. Where either departs from the missal’s Latin, it is printed as it stands and the departure is named where it occurs.
 
 ### 1. Introit
 
@@ -187,7 +187,7 @@ Psalm 58 (59) returns the same dependence before the Gospel. Its title recalls S
 
 ### Sacramental privilege under judgment (*Ep., Grad.*)
 
-The lesson begins in the middle of Paul’s answer about idol-associated meals. In 1 Corinthians 10:1–5 the sea and cloud, spiritual food and drink, and Christ the rock make Israel’s history urgently relevant to baptized Christians. Verses 6–10 then move through craving (Num. 11), the idol feast (Exod. 32:6), sexual sin (Num. 25), testing and serpents (Num. 21), and murmuring with the destroyer. The missal prints Paul’s twenty-three thousand at verse 8; Numbers 25:9 gives twenty-four thousand. Aquinas discusses the inherited difference, but neither the guide nor the liturgy needs to manufacture a harmonization.
+The lesson begins in the middle of Paul’s answer about idol-associated meals. In 1 Corinthians 10:1–5 the sea and cloud, spiritual food and drink, and Christ the rock make Israel’s history urgently relevant to baptized Christians. Verses 6–10 then move through craving (Num. 11), the idol feast (Exod. 32:6), sexual sin (Num. 25), testing and serpents (Num. 21), and murmuring with the destroyer. The missal prints Paul’s twenty-three thousand at verse 8; Numbers 25:9 gives twenty-four thousand. Aquinas discusses the inherited difference, and the lesson keeps Paul’s figure.
 
 The argumentative center is addressed to “us.” The events truly occurred, Paul says, and were written for Christian correction; the person who thinks he stands is the one commanded to take heed. Chrysostom’s *Homily 23 on First Corinthians* treats the catalogue as a deliberate dismantling of Corinthian complacency. Aquinas, *Super I Corinthios* X, lect. 2, distinguishes sins of heart, deed, and speech within Israel’s real history. Romans 9 and 11 name Israel’s gifts, covenants, promises, and calling while warning Gentile Christians against boasting.
 
@@ -227,7 +227,7 @@ Heard after Luke, the Offertory prevents two reductions. Judgment cannot mean de
 
 The Secret’s syntax is causal. The Church asks worthily to frequent the mysteries *because*, whenever the memorial of this sacrifice is celebrated, the work of redemption is enacted. Its strongest reception is direct and traceable. In *Summa theologiae* III, q. 83, a. 2, objection 5 quotes this Sunday’s opening clause; Thomas’s answer rejects the objection’s inference that frequency means many celebrations by one priest in a day and instead explains daily celebration by the daily need for the once-for-all Passion’s fruit and perpetual memorial. The event in Christ the head occurred once; its fruit reaches the faithful sacramentally.
 
-Jordi Pinell’s textual history distinguishes the appointed 1962 wording from older witnesses. The Veronese has *frequentata mysteria* and *exeritur*; the Old Gelasian reshapes the petition toward *frequentare*, the mixed Gregorian tradition receives it, and *digne* appears in the mid-eleventh-century Rossianum. Pinell argues that the older verb presents redemption’s work becoming manifest and operative in Christian life, probably within a Paschal setting. That historical proposal illuminates the prayer’s depth but does not correct or silently replace the 1962 *exercetur*.
+Jordi Pinell’s textual history distinguishes the appointed 1962 wording from older witnesses. The Veronese has *frequentata mysteria* and *exeritur*; the Old Gelasian reshapes the petition toward *frequentare*, the mixed Gregorian tradition receives it, and *digne* appears in the mid-eleventh-century Rossianum. Pinell argues that the older verb presents redemption’s work becoming manifest and operative in Christian life, probably within a Paschal setting. That historical proposal illuminates the prayer’s depth, and the 1962 Missal still reads *exercetur*.
 
 The Second Vatican Council then makes the prayer programmatic. *Sacrosanctum Concilium* 2 quotes *opus nostrae Redemptionis exercetur*, and its first footnote explicitly identifies the Secret of the Ninth Sunday after Pentecost. *Presbyterorum ordinis* 13 reuses the clause as *opus nostrae redemptionis continuo exercetur* for Eucharistic sacrifice and again names this Sunday in its note; the added *continuo* means that this is not a verbatim repetition. Most decisively for the complete formulary, *Lumen gentium* 3 says that whenever the sacrifice of the Cross is celebrated on the altar, redemption’s work is enacted; its next sentence says the Eucharistic bread represents and effects the unity of the faithful who are one body, citing 1 Corinthians 10:17. This is clear verbal reuse of the prayer’s clause and a magisterial joining of sacrifice to unity. Unlike the other two acts, however, *Lumen gentium* does not identify this Sunday in a note, so the verbal relation must not be presented as separately documented source attribution.
 
@@ -254,7 +254,7 @@ Later Roman reception makes the Postcommunion’s two petitions mutually interpr
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
-> **Governing thesis: presumed standing yields to received abiding**
+> **Presumed standing yields to received abiding**
 >
 > God helps the threatened and reforms desire; Paul turns sacramental privilege into a warning against self-reliance; Christ visits Jerusalem through tears and prophetic correction; the Eucharistic memorial gives the abiding, purification, and one-body unity that human standing cannot secure.
 
@@ -266,7 +266,7 @@ Later Roman reception makes the Postcommunion’s two petitions mutually interpr
 
 4.  **Abide as one:** memorial bears fruit in a body.
 
-*Reading order.* The stages follow the appointed sequence. The cited sources ground each stage, but none of their authors designed the complete formulary or arranged it in these stages.
+The stages follow the appointed sequence. The cited sources ground each stage, but none of their authors designed the complete formulary or arranged it in these stages.
 
 ### Help reaches the petitioner by reforming desire (*Int., Coll., All.*)
 
@@ -282,7 +282,7 @@ Ambrosiaster sharpens the social force of “thinks he stands.” He applies it 
 
 > **The canonical hinge beyond the printed lesson**
 >
-> The missal stops at 1 Corinthians 10:13, but Paul’s argument does not. “Therefore” leads to flight from idolatry, then to the Eucharistic cup and bread and the conclusion that the many are one body because they share one bread (10:14–17). The Sunday later sets the self-estimate *qui se existimat stare* beside Communion’s received relation *in me manet, et ego in eo*. That contrast and the movement to unity are consonant with Paul’s argument, though they remain a Roman arrangement read synthetically, not a recovered compiler’s explanation.
+> The missal stops at 1 Corinthians 10:13, but Paul’s argument does not. “Therefore” leads to flight from idolatry, then to the Eucharistic cup and bread and the conclusion that the many are one body because they share one bread (10:14–17). The Sunday later sets the self-estimate *qui se existimat stare* beside Communion’s received relation *in me manet, et ego in eo*. That contrast and the movement to unity are consonant with Paul’s argument; the arrangement that sets them together is Roman, and no explanation of it by a compiler has been recovered.
 
 ### Visitation arrives as tears, correction, and teaching (*Gosp., Off.*)
 
@@ -397,6 +397,6 @@ The complete source-grounded movement is therefore: help received, desire reform
 
 - Harry Graham, [*The Mother of Parliaments*](https://www.gutenberg.org/cache/epub/41304/pg41304-images.html) (London: Methuen, 1910), Judge Jenkins episode checked in Project Gutenberg ebook 41304; public domain in the United States.
 
-**Last revised (UTC):** 2026-09-24T12:23:21Z
+**Last revised (UTC):** 2026-09-24T13:03:08Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
