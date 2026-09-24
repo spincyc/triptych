@@ -82,7 +82,7 @@ The Prayer over the Offerings holds body and mind together: ordinary food sustai
 
 > **Israel, ministry, and Romans**
 >
-> **Israel:** Covenant vocation and the initial mission remain within Israel’s salvation history. **Ministry:** gratuitous grace does not deny lawful material support, but it forbids treating divine gifts as personal property. **Relationship:** Romans remains an independent semi-continuous strand, read in its own course.
+> **Israel:** Covenant vocation and the initial mission remain within Israel’s salvation history. **Ministry:** gratuitous grace does not deny lawful material support, but it forbids treating divine gifts as personal property. **Relationship:** Romans remains an independent semi-continuous strand.
 
 ### Theological and Spiritual Synthesis
 
@@ -92,7 +92,7 @@ That gift calls for prayer, obedient labor, gratuitous service, and action susta
 
 | **Dimension** | **Appointed anchors** | **Source-grounded synthesis** | **Limit** |
 |:-----------|:----------------|:-----------------|:-------------------|
-| Christological | Rom. 5:6–11; Matt. 9:36–10:8; Mark 1:15 | Christ reconciles enemies before they can merit it, sees the crowds with compassion, and remains the Lord who sends workers into his harvest. Mission participates in his prior gift. | Romans is a semi-continuous strand, and the anchors are separate books joined by liturgical compilation. |
+| Christological | Rom. 5:6–11; Matt. 9:36–10:8; Mark 1:15 | Christ reconciles enemies before they can merit it, sees the crowds with compassion, and remains the Lord who sends workers into his harvest. Mission participates in his prior gift. | Romans is a semi-continuous strand. |
 | Ecclesial | Exod. 19:2–6a; Ps. 100; Gospel; Communion B; Prayer after Communion | A people first borne by God receives covenant vocation, apostolic mission, and sacramental unity rather than producing or possessing them. | Exodus’s narrated election remains the historical horizon, and the John 17 Communion antiphon is an unselected alternative. |
 | Sacramental | Prayer over Offerings; Communion A/B; Prayer after Communion | Created nourishment and sacramental renewal join, according to the Communion path, desire for God’s dwelling or Christ’s prayer for unity; the final prayer names unity as sign and effect. | Communion A and B are documented but unselected; the Week XI orations serve every Sunday cycle, and sacramental renewal promises no automatic bodily cure. |
 | Moral and eschatological | Entrance; Collect; Gospel; Romans; Communion A | Dependence becomes prayer, grace-enabled action, gratuitous service, and hope of salvation through Christ’s risen life and final dwelling with God. | Communion A is unselected; “without cost” rejects ownership and exploitation of grace, not lawful support for ministry, and present mission is not yet perfected communion. |
@@ -103,7 +103,7 @@ That gift calls for prayer, obedient labor, gratuitous service, and action susta
 
 Psalm 27 lets need and desire occupy the same prayer: the threatened speaker asks for God’s hearing and help while seeking one thing, life in God’s presence. At the Entrance only the plea is appointed; the house-of-God verse belongs to Communion option A. Their common psalm creates a genuine textual arc across the Entrance and Communion A.
 
-Augustine’s *Exposition on Psalm 27* receives the prayer as the voice of Christ’s body learning not to confuse delayed relief with divine abandonment. His treatment keeps petition and worship together: the suppliant asks to be heard, but the desired good is finally the Lord himself rather than merely escape from enemies. His reception of the psalm is direct, and it predates both modern antiphon assignments. It still bears on the arc the two antiphons trace. Entrance and Communion A are not two unrelated snippets: the cry for help and the desire to dwell belong to one scriptural act of confidence. Because Communion A remains an unselected branch, that fuller arc is available rather than enacted by default.
+Augustine’s *Exposition on Psalm 27* receives the prayer as the voice of Christ’s body learning not to confuse delayed relief with divine abandonment. His treatment keeps petition and worship together: the suppliant asks to be heard, but the desired good is finally the Lord himself rather than merely escape from enemies. His reception of the psalm is direct and bears on the arc the two antiphons trace. Entrance and Communion A are not two unrelated snippets: the cry for help and the desire to dwell belong to one scriptural act of confidence. Because Communion A remains an unselected branch, that fuller arc is available rather than enacted by default.
 
 The Collect’s Latin identity places God himself as the strength of those who hope in him. Its anthropology is neither pessimistic nor voluntarist. Human willing and acting are real, but frail; grace enables the creature to intend and perform what pleases God.
 
@@ -113,9 +113,9 @@ Exodus 19 follows liberation and precedes ratification. Israel is not selected b
 
 The syntax of the oracle is conditional without being transactional. God’s prior action—bringing Israel out and bearing the people—precedes the summons to hear and keep covenant. The people’s priestly and holy identity is consequently received within a relationship God initiated, not purchased as a reward; it is a vocation for the sake of a world already named as his possession. The appointed boundary ends before the people’s response and the covenant rite: 19:2–6a announces the vocation but does not contain the whole Sinai event.
 
-Augustine’s *Letter 55*, section 30, does not expound every phrase of Exodus 19:2–6a. It instead receives Sinai in a chronology from Passover to the giving of the Law and sets that fifty-day pattern beside Christian Pentecost and the gift of the Spirit. Augustine’s chronology illuminates without expounding: it shows how a Latin Father placed the covenant scene within a Paschal–Pentecostal economy, while the narrated election is Exodus’s own. The major accessible English Greek- and Latin-Father collections and Latin lead corpora yield no comparably sustained early exposition of the exact appointed verses, and none of the Fathers read in them supplies an exposition behind the later ecclesial language.
+Augustine’s *Letter 55*, section 30, does not expound every phrase of Exodus 19:2–6a. It instead receives Sinai in a chronology from Passover to the giving of the Law and sets that fifty-day pattern beside Christian Pentecost and the gift of the Spirit. Augustine’s chronology illuminates without expounding: it places the covenant scene within a Paschal–Pentecostal economy, while the narrated election is Exodus’s own. The major accessible English Greek- and Latin-Father collections and Latin lead corpora yield no comparably sustained early exposition of the exact appointed verses, and none of the Fathers read in them supplies an exposition behind the later ecclesial language.
 
-The *Apostolic Constitutions* II.25 also reuses the priestly-people vocabulary in describing an ordered Christian assembly. Its church-order setting attests early ecclesial appropriation but does not comment on Exodus directly. Together with Augustine’s chronology, it records reception; neither treats the exact appointed unit at length.
+The *Apostolic Constitutions* II.25 also reuses the priestly-people vocabulary in describing an ordered Christian assembly. The work attests early ecclesial appropriation but does not comment on Exodus directly. Together with Augustine’s chronology, it records reception; neither treats the exact appointed unit at length.
 
 Psalm 100 turns the covenant declaration into congregational response. The sheep do not make their shepherd, and the people do not create their own belonging. Yet service is active and joyful. The psalm holds together creaturehood, covenant identity, worship, and enduring divine fidelity.
 
@@ -143,7 +143,7 @@ The final phrase about rejoicing in God through Christ prevents reconciliation f
 
 Chrysostom and Aquinas also preserve the argument’s temporal force. Paul does not say merely that God might love enemies after they improve: the death occurs while the beneficiaries are weak and hostile. The later “much more” is not confidence in their unaided constancy but confidence in the living Christ whose reconciling act has already crossed the greater distance. Augustine’s anti-Pelagian use makes the same priority polemically, though Paul’s sequence does not carry every contour of that controversy. Missioners formed by this reading cannot divide the field into those already worthy of grace and those beyond it. They themselves stand inside the category Christ’s act has changed.
 
-This strand changes the spiritual posture of mission, though the Lectionary reads it in its own course rather than pairing it with the Gospel. Workers are first beneficiaries. “Without cost” can therefore be heard under Romans’ priority of gift as a source-grounded synthesis: the Church gives what she did not originate, to persons she may not classify as deserving or undeserving.
+This strand changes the spiritual posture of mission. Workers are first beneficiaries. “Without cost” can therefore be heard under Romans’ priority of gift as a source-grounded synthesis: the Church gives what she did not originate, to persons she may not classify as deserving or undeserving.
 
 ### Kingdom acclamation (*Acclamation*)
 
@@ -237,6 +237,6 @@ The appointed John verse asks preservation in the Father’s name before it stat
 
 - Bible SuperSearch, [*Universal Client*, repository readme at revision 041936](https://sourceforge.net/p/biblesuper/ui-standalone/ci/master/tree/), GPL and commercial-use notice, checked 2026-07-19.
 
-**Last revised (UTC):** 2026-09-24T15:07:17Z
+**Last revised (UTC):** 2026-09-24T16:34:06Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
