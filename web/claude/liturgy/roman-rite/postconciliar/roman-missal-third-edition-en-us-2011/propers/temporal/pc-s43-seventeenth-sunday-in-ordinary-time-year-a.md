@@ -63,7 +63,7 @@ Year A · Lectionary no. 109 · Ordinary Time Week XVII formulary
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
-This formulary has two independent architectures laid over one another. The Missal’s texts for Week XVII are shared by Years A, B and C; the Lectionary’s Year A texts pair one Old Testament scene with one Gospel while the apostolic course runs on its own. What the two architectures share is a single question, asked in three registers: what is worth wanting. Solomon is told to name whatever he wishes; the psalmist ranks instruction against bullion; a finder and a merchant liquidate everything for one object; and the Collect asks for the skill of using what passes without losing hold of what remains.
+This formulary has two independent architectures laid over one another. The Missal’s texts for Week XVII are shared by Years A, B and C; the Lectionary’s Year A texts pair one Old Testament scene with one Gospel while the apostolic course runs on its own. Heard together, the two architectures pose a single question in three registers: what is worth wanting. Solomon is told to name whatever he wishes; the psalmist ranks instruction against bullion; a finder and a merchant liquidate everything for one object; and the Collect asks for the skill of using what passes without losing hold of what remains.
 
 | **Stage** | **What the appointed texts actually do** |
 |:-----------------|:------------------------------------------------|
@@ -134,7 +134,7 @@ Two further facts bear on this antiphon. First, the same text, under the same *C
 
 The Collect opens by addressing God as protector of those who hope in him, adds the relative clause that without him nothing is strong and nothing holy, asks that mercy be multiplied, and then states the purpose: that under God as ruler and guide the petitioners may so use passing goods now as already to be able to cling to those that abide.
 
-The prayer’s wording shows three things.
+Three facts bear on the prayer.
 
 **The address is formulaic, not proper.** The invocation *Protéctor in te sperántium, Deus* opens two different prayers in the 2002 Missal. Besides this Collect it begins an optional Prayer over the People appointed for Thursday of the Fourth Week of Lent, which continues quite differently, asking blessing, protection and perseverance in love. The address is therefore no signature of this Sunday.
 
@@ -188,7 +188,7 @@ Augustine’s Solomon is a different figure again, and he cuts the other way. In
 
 #### Where the expected witnesses fall short
 
-Where a witness would be expected and is absent, the absence matters: the tradition is thinner on this text than its fame suggests.
+Where a witness would be expected and is absent, the absence matters: the checked witnesses are thinner on this text than its fame suggests.
 
 Gregory the Great’s *Pastoral Rule* is the obvious candidate: a whole treatise on the government of souls, written by a man who had been a prefect. In all four books Solomon appears sixteen times, every time as the tag attached to a quotation from Proverbs, Ecclesiastes or Sirach, and Gibeon does not appear at all. The nearest approach is Book III’s warning that Solomon, granted such wisdom, fell because no discipline of tribulation guarded it – the grant presupposed, the petition never invoked.
 
@@ -245,7 +245,7 @@ The psalm keeps its own horizon. These are the words of an Israelite whose delig
 
 #### An independent strand, and why that matters here
 
-Romans is read semi-continuously through these Sundays. This pericope arrives because the course has reached it, and the *General Introduction to the Lectionary* says as much about the apostolic course in Ordinary Time: the Lectionary does not correlate it with Solomon or the parables, and it is no theological key to the treasure. A sentence about God’s purpose is not a rule about property.
+Romans is read semi-continuously through these Sundays. This pericope arrives because the course has reached it, and the *General Introduction to the Lectionary* says as much about the apostolic course in Ordinary Time: the Lectionary does not correlate it with Solomon or the parables. Nor is it a theological key to the treasure; a sentence about God’s purpose is not a rule about property.
 
 Within Romans the verses sit at a hinge. Chapter 8 has moved from life in the Spirit through the groaning of creation to the Spirit’s intercession in prayer, and after v. 30 turns into the assurance that nothing separates us from the love of God. What is proclaimed is the middle term, and the frame on either side is not.
 
@@ -269,7 +269,7 @@ The tradition’s fault line is not where popular accounts put it. It does not r
 
 Two facts about this table are uncomfortable for partisans.
 
-First, Augustine changed his mind, and said so. Before his episcopate he had written, in an exposition of propositions from Romans, that God “chose the faith, in the foreknowledge that He would choose that very person whom He foreknew would believe in Him.” That is close in substance to what Chrysostom would later argue. Augustine quotes his own earlier sentence, names it as error, and repudiates it (*On the Predestination of the Saints* 7). Describing his own work for Simplician on Romans 9 he wrote the line that records the reversal: in solving that question “I laboured indeed on behalf of the free choice of the human will, but God’s grace overcame” (*ibid.* 8). The early Augustine, so often cited against Chrysostom, stood closer to Chrysostom than to his later self.
+First, Augustine changed his mind, and said so. Before his episcopate he had written, in an exposition of propositions from Romans, that God “chose the faith, in the foreknowledge that He would choose that very person whom He foreknew would believe in Him.” That is close in substance to what Chrysostom would later argue. Augustine quotes his own earlier sentence, names it as error, and repudiates it (*On the Predestination of the Saints* 7). Describing his own work for Simplician on Romans 9 he wrote the line that records the reversal: in solving that question “I laboured indeed on behalf of the free choice of the human will, but God’s grace overcame” (*ibid.* 8). The early Augustine stood closer to Chrysostom than to his later self.
 
 Second, Chrysostom’s argument in *Homily 15* is narrower than it is usually reported to be. He does not there expound *foreknew* as foreknowledge of a foreseen choice; his whole weight falls on *purpose*, and his comment on the rest is doxological – what the Only-begotten is by nature, these have become by grace. The explicit appeal to foreknowledge of the soul’s worth comes in the next homily, on Romans 9; the two are often merged into a position neither states.
 
@@ -348,7 +348,7 @@ Only the longer form proclaims the net, and its interpreters split again on what
 
 Two witnesses distinguish the net from the earlier parable of the tares, and they draw the line differently. Chrysostom distinguishes by the *ground* of ruin: the tares perished for choosing wicked doctrines, the inattentive hearers of the sower for negligence, and the bad fish for wickedness of life – and these last are the most wretched, because they had attained knowledge. Aquinas distinguishes by *position*: the net covers good and bad not cut off from the Church, whereas the tares are those cut off by diversity of dogmas. Gregory adds the observation that keeps the image from fatalism: caught fish cannot change what they are, but we are caught bad and changed into good, so the time to think about it is during the catching and not on the shore.
 
-The separation is performed by angels at the end of the age. Nothing in the parable, and nothing in its reception, authorises identifying a living person as a bad fish, treating anyone as already sorted, or converting an eschatological image into a warrant for exclusion.
+The separation is performed by angels at the end of the age. Nothing in the parable, and nothing in the checked reception, authorises identifying a living person as a bad fish, treating anyone as already sorted, or converting an eschatological image into a warrant for exclusion.
 
 #### New things and old: the one place Gregory dissents
 
@@ -792,6 +792,6 @@ Only sources actually used are listed. Where an online witness was read, the del
 
 - “Dragnet,” *Online Etymology Dictionary*, for the negative result reported in the gallery.
 
-**Last revised (UTC):** 2026-09-24T16:27:04Z
+**Last revised (UTC):** 2026-09-24T17:00:16Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
