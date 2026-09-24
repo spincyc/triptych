@@ -57,7 +57,7 @@ TLM propers: the endangered sinner sought, strengthened, and welcomed into joy
 **1. Behold need** → **2. Entrust and resist** → **3. Seek and restore** → **4. Offer and rejoice**<br>
 *Introit–Collect* *Epistle–Alleluia* *Gospel* *Offertory–Postcommunion*
 
-These four stages draw on the appointed wording and the reception identified below; no cited witness comments on the complete Roman formulary.
+Beholding need, entrusting care, seeking the lost, and offering in joy form one reading of the appointed wording and its cited reception; no cited witness comments on the complete Roman formulary.
 
 ### Merciful regard receives truthful need (*Int., Coll.*)
 
@@ -94,7 +94,7 @@ These four stages draw on the appointed wording and the reception identified bel
 | **Liturgical moment** | **Established movement** | **Decisive reading** |
 |:-------------|:------------------------|:----------------------------|
 | **Offertory — trust** | Psalm 9 turns those who know God’s name toward trust, praise in Zion, and remembrance of the afflicted. | The found person does not become self-enclosed; received mercy opens an ecclesial voice toward other sufferers. |
-| **Secret — sanctification** | Personal *Respice in me* becomes ecclesial *Respice … munera*; gifts are to be received for believers’ salvation with enduring sanctification. | Irenaeus and Cyril of Jerusalem illuminate oblation and sanctified reception without supplying authorship for the Roman prayer. |
+| **Secret — sanctification** | Personal *Respice in me* becomes ecclesial *Respice … munera*; gifts are to be received for believers’ salvation with enduring sanctification. | Irenaeus and Cyril of Jerusalem illuminate oblation and sanctified reception; neither comments on the Roman prayer. |
 | **Communion — shared joy** | Luke 15:10 places angelic joy over one repenting sinner on the communicants’ lips. | Cyril and Gregory require the hearer to rejoice at another’s restoration; sacramental joy remains joined to repentance. |
 | **Postcommunion — continuing effect** | Holy things already received are asked to vivify and prepare the cleansed for everlasting mercy. | Reception is neither a trophy nor a self-completing act; divine gift continues as purification, life, and preparation. |
 
@@ -184,13 +184,13 @@ First Peter 5:6–11 contains a tightly ordered sequence. Humility places the Ch
 | Resist, steadfast in faith | The same sufferings are borne throughout the brotherhood | Isolated heroism or surrender to fear | The Offertory turns the recovered person toward trust, seeking, praise, and the poor. |
 | Endure in hope | The God of all grace will perfect and establish | Treating present affliction as the final word | The Postcommunion asks that holy things give life and prepare for everlasting mercy. |
 
-> **St. Augustine — same-psalm exegesis**
+> **St. Augustine — on Psalm 54:23**
 >
-> In *Exposition on Psalm 54* (Psalm 55 in modern numbering), 23, Augustine directly explains the Gradual’s *Iacta cogitatum tuum*. The burden is not handed to another fragile human being as though that person were the final support; the self and its care are entrusted to the Creator who made and sustains it. First Peter’s adjacent command echoes the same verse, but Augustine’s exposition does not comment on the Epistle.
+> In *Exposition on Psalm 54* (Psalm 55 in modern numbering), 23, Augustine directly explains the Gradual’s *Iacta cogitatum tuum*. The burden is not handed to another fragile human being as though that person were the final support; the self and its care are entrusted to the Creator who made and sustains it. First Peter’s adjacent command echoes the same verse; applying Augustine’s exposition to it is a reading, since he does not comment on the Epistle.
 
-The other appointed psalms add three controls that the Gradual alone cannot supply. Augustine’s Psalm 24 exposition lets the solitary and poor speaker lift the soul without claiming self-sufficiency: shame is refused through trust, while affliction and sins remain confessed. On Psalm 7 he treats the just Judge’s patience as preserving medicine and makes received righteousness, not autonomous merit, the ground of confidence. On Psalm 9 he joins knowledge of God’s name to seeking, proclamation from Sion, divine remembrance of blood, and the poor person’s cry. Thus Introit, Alleluia, and Offertory move from exposed need through patient judgment into praise that remembers other sufferers.
+The other appointed psalms add three points that the Gradual alone does not supply. Augustine’s Psalm 24 exposition lets the solitary and poor speaker lift the soul without claiming self-sufficiency: shame is refused through trust, while affliction and sins remain confessed. On Psalm 7 he treats the just Judge’s patience as preserving medicine and makes received righteousness, not autonomous merit, the ground of confidence. On Psalm 9 he joins knowledge of God’s name to seeking, proclamation from Sion, divine remembrance of blood, and the poor person’s cry. Thus Introit, Alleluia, and Offertory move from exposed need through patient judgment into praise that remembers other sufferers.
 
-Anthony of Padua later preached the same Gospel and Epistle as one three-part concordance. Publicans approach, the Shepherd carries, and the woman lights the house; humility, vigilance, and God’s final strengthening answer those movements from 1 Peter. His most useful move is to make the lamp’s clay, wick, oil, and flame a searching discipline of frailty, penance, mercy, and divine love. Gregory and Ambrose expound Christ and Church more directly; Anthony shows how their received images became medieval examination of conscience without reducing the lost coin to private self-rescue.
+Anthony of Padua later preached the same Gospel and Epistle as one three-part concordance. Publicans approach, the Shepherd carries, and the woman lights the house; humility, vigilance, and God’s final strengthening answer those movements from 1 Peter. His most distinctive move is to make the lamp’s clay, wick, oil, and flame a searching discipline of frailty, penance, mercy, and divine love. Gregory and Ambrose expound Christ and Church more directly; Anthony shows how their received images became medieval examination of conscience without reducing the lost coin to private self-rescue.
 
 > **Tertullian — patience is pursuit**
 >
@@ -214,13 +214,13 @@ The Collect is not a generic request for protection. Its clauses distinguish the
 
 > **Neither contempt nor captivity**
 >
-> The Collect calls temporal things good, excluding contempt for creation; because they are traversed under God’s rule toward eternal goods, it also excludes captivity to them. The later gifts and holy things continue this itinerary within the one formulary; no checked witness links their composition.
+> The Collect calls temporal things good, excluding contempt for creation; because they are traversed under God’s rule toward eternal goods, it also excludes captivity to them. Read within the one formulary, the later gifts and holy things continue this itinerary.
 
 ### Gifts looked upon, believers sanctified (*Int., Coll., Sec., Postcomm.*)
 
 > **The Secret’s Latin and English witnesses**
 >
-> The 1962 Latin runs from *Respice, Domine* to its printed endpoint at *in unitate*. The identified 1925 Lefebvre English is a historical translation witness with its own abbreviated conclusion, “Through our Lord.” The two therefore end differently, each as printed; `propers/verified.md` holds their complete received wording and exact boundaries.
+> The 1962 Latin runs from *Respice, Domine* to its printed endpoint at *in unitate*. Lefebvre’s historical English of 1925 has its own abbreviated conclusion, “Through our Lord.” The two therefore end differently, each as printed.
 
 | **Latin hinge** | **Grammatical force** | **Place in the Sunday’s movement** |
 |:-------------|:------------------------|:----------------------------|
@@ -236,7 +236,7 @@ The Collect is not a generic request for protection. Its clauses distinguish the
 
 > **St. Cyril of Jerusalem — sanctified gifts and holy reception**
 >
-> *Mystagogical Catechesis* 5 (Catechetical Lecture 23), especially 7 and 19–21, describes the invocation of the Holy Spirit upon the gifts, the proclamation of holy things for the holy, and the communicant’s reverent reception. Cyril’s is direct mystagogical teaching from a different local rite, and it attests nothing about the Roman prayer’s authorship. It illuminates why sanctification and reception belong together without making reception automatic or morally indifferent.
+> *Mystagogical Catechesis* 5 (Catechetical Lecture 23), especially 7 and 19–21, describes the invocation of the Holy Spirit upon the gifts, the proclamation of holy things for the holy, and the communicant’s reverent reception. Cyril’s mystagogy belongs to a different local rite and does not address the Roman prayer. It illuminates why sanctification and reception belong together without making reception automatic or morally indifferent.
 
 > **Four verbal threads through the formulary**
 >
@@ -331,6 +331,6 @@ The Communion repeats Luke 15:10 rather than choosing an unrelated sacramental v
 
 - Septuagint/Vulgate titles and chapter context: [Psalm 7](https://www.newadvent.org/bible/psa007.htm), [Psalm 9/10](https://www.newadvent.org/bible/psa009.htm), [Psalm 24 (modern 25)](https://www.newadvent.org/bible/psa024.htm), [Psalm 54 (modern 55)](https://www.newadvent.org/bible/psa054.htm), [Luke 15](https://www.newadvent.org/bible/luk015.htm), and [1 Peter 5](https://www.newadvent.org/bible/1pe005.htm); contextual transcription aid, consulted 2026-07-10.
 
-**Last revised (UTC):** 2026-09-24T13:48:58Z
+**Last revised (UTC):** 2026-09-24T15:21:04Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
