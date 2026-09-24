@@ -4,9 +4,7 @@
 
 ## The Order as One Paschal Action
 
-> **Governing thesis**
->
-> The postconciliar Roman Order of Mass is not a shortened older order with vernacular speech laid over it. It is a received liturgical form with its own joints, ministries, silences, processions, variable texts, and branches. Its two principal liturgies—Word and Eucharist—form one act of worship; the Introductory and Concluding Rites gather that act and send its participants from it. A responsible mystagogy must therefore interpret each movement according to its own ritual grammar while showing how hearing, thanksgiving, sacrifice, sacramental presence, Communion, and mission belong to the one Paschal action of Christ and his Church.
+The postconciliar Roman Order of Mass is not a shortened older order with vernacular speech laid over it. It is a received liturgical form with its own joints, ministries, silences, processions, variable texts, and branches. Its two principal liturgies—Word and Eucharist—form one act of worship; the Introductory and Concluding Rites gather that act and send its participants from it. A responsible mystagogy must therefore interpret each movement according to its own ritual grammar while showing how hearing, thanksgiving, sacrifice, sacramental presence, Communion, and mission belong to the one Paschal action of Christ and his Church.
 
 ## How the Postconciliar Order Moves
 
@@ -1880,6 +1878,6 @@ The edition boundary is the final historical discipline. A local musical custom,
 
 - Robert F. Taft, *Beyond East and West: Problems in Liturgical Understanding*, 2nd ed. (Rome: Pontifical Oriental Institute, 1997), for comparative method that respects local traditions and resists using Eastern structures as unqualified Roman genealogy.
 
-**Last revised (UTC):** 2026-07-24T00:26:52Z
+**Last revised (UTC):** 2026-09-24T14:59:29Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
