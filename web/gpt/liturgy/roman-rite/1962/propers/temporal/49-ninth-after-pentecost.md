@@ -241,7 +241,7 @@ The Communion supplies the mode of participation: eating Christ’s flesh and dr
 
 The Postcommunion states the test with unusual economy: communion in the sacrament is asked to confer purification and bestow unity. Personal cleansing that entrenches division contradicts the prayer’s direction; institutional unity without conversion empties its first petition. The printed Trinity Preface keeps the action doxological, while the Pauline continuation keeps it one-bodied. The formulary thus ends not with the confidence of one who thinks he stands, but with received abiding whose fruit must become both a purified person and a united Church.
 
-Guéranger offers direct historical reception of this complete liturgical close. He calls the Communion the mystery of divine union and identifies in the Postcommunion both the sanctification of each member and the unity of the social body (*The Liturgical Year*, Time after Pentecost II, pp. 255–256).
+Dom Lucien Fromage, continuing Guéranger’s *The Liturgical Year*, offers direct historical reception of this complete liturgical close. He calls the Communion the mystery of divine union and identifies in the Postcommunion both the sanctification of each member and the unity of the social body (*The Liturgical Year*, Time after Pentecost II, pp. 255–256).
 
 Later Roman reception makes the Postcommunion’s two petitions mutually interpretive. A 1970 Prayer over the Offerings for Christian unity borrows *purificationem conferat* from this ancient prayer. Innocent Smith traces the reuse alongside *Lumen gentium* 15, where the Church’s purification and renewal serve a clearer sign of Christ and restored unity. This is later reception, not evidence for the 1962 compiler’s intent. Chant reception gives the Communion the same relational emphasis: Johner notes that a falling fourth on *in me manet* is answered by a rising fourth on *ego in eo*.
 
@@ -294,7 +294,7 @@ Origen’s *Homily 38 on Luke* sees Christ’s tears enact the beatitude of mour
 
 The Secret says that whenever the sacrifice’s memorial is celebrated, redemption’s work is enacted. Thomas directly quotes this Secret while distinguishing the once-for-all Passion from daily participation in its fruit; Vatican II twice identifies the prayer as its source. *Lumen gentium* immediately joins that action to Eucharistic unity in 1 Corinthians 10:17. John names the gift as mutual abiding; the Postcommunion asks its fruit as purification and unity.
 
-Origen ends the same Gospel homily by summoning hearers to the Savior’s banquet, the bread of life, and Christ’s flesh and blood. Bede follows his Luke 19 exposition with a Paschal synthesis that moves from Christ’s reception and Temple teaching through the gift of his Body and Blood to the Passion. Origen and Bede thus cross from visitation to Eucharistic reception, without proving why the Roman formulary was assembled. Guéranger’s direct commentary on this Sunday then calls Communion divine union and identifies the Postcommunion’s paired fruits as personal sanctification and the unity of the ecclesial body. The Trinity Preface directs the whole reception toward praise of the triune God.
+Origen ends the same Gospel homily by summoning hearers to the Savior’s banquet, the bread of life, and Christ’s flesh and blood. Bede follows his Luke 19 exposition with a Paschal synthesis that moves from Christ’s reception and Temple teaching through the gift of his Body and Blood to the Passion. Origen and Bede thus cross from visitation to Eucharistic reception, without proving why the Roman formulary was assembled. Dom Lucien Fromage’s direct commentary on this Sunday, in the continuation of Guéranger’s *The Liturgical Year*, then calls Communion divine union and identifies the Postcommunion’s paired fruits as personal sanctification and the unity of the ecclesial body. The Trinity Preface directs the whole reception toward praise of the triune God.
 
 | **Movement** | **Decisive gift** | **Controlling limit** |
 |:-------------|:------------------------|:----------------------------|
@@ -387,7 +387,7 @@ The complete source-grounded movement is therefore: help received, desire reform
 
 - Flavius Josephus, [*Jewish War* V.12.1–4](https://www.ccel.org/j/josephus/works/war-5.htm) and [VII.1.1](https://www.ccel.org/j/josephus/works/war-7.htm), William Whiston translation; bounded historical comparator for the AD 70 siege.
 
-- Prosper Guéranger, [*The Liturgical Year*: The Time after Pentecost](https://archive.org/details/liturgicalyear11gura), vol. II, trans. Laurence Shepherd (Dublin: James Duffy & Sons, 1883), pp. 255–256; direct commentary on the Communion and Postcommunion only.
+- The continuation of Prosper Guéranger, [*The Liturgical Year*: The Time after Pentecost](https://archive.org/details/liturgicalyear11gura) (Dom Lucien Fromage), vol. II, trans. Laurence Shepherd (Dublin: James Duffy & Sons, 1883), pp. 255–256; direct commentary on the Communion and Postcommunion only.
 
 - Dom Dominic Johner, [*The Chants of the Vatican Gradual*](https://archive.ccwatershed.org/media/pdfs/13/08/19/15-40-55_0.pdf) (Collegeville, MN: St. John’s Abbey Press, 1940), pp. 279–282; historical chant commentary, used as qualified reception rather than recovered compositional intent.
 
@@ -397,6 +397,6 @@ The complete source-grounded movement is therefore: help received, desire reform
 
 - Harry Graham, [*The Mother of Parliaments*](https://www.gutenberg.org/cache/epub/41304/pg41304-images.html) (London: Methuen, 1910), Judge Jenkins episode checked in Project Gutenberg ebook 41304; public domain in the United States.
 
-**Last revised (UTC):** 2026-07-26T20:01:14Z
+**Last revised (UTC):** 2026-09-24T02:53:19Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
