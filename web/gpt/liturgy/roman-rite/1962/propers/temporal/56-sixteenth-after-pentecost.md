@@ -122,13 +122,13 @@ Jesus’ parable leaves room for honor: the host may invite a guest higher. Its 
 
 Paul’s use of glory deepens this correction. He calls his afflictions the recipients’ glory, asks from the riches of God’s glory and ends by giving glory to God in the Church and Christ. Honor before dinner companions and doxological glory have different objects. Together they place human good within relations of gift: a host confers a place, an apostle suffers for others, and the Church praises the giver. Cyril likewise directs the guest beyond wealth and social display toward truthful self-knowledge and honor from God. <span class="nodecor">(Eph. 3:13,16,21; Cyril, Sermon CII, pp. 476–479.)</span>
 
-The Offertory keeps this humility close to a threatened life. Its repeated appeal asks help and the shame of those seeking the singer’s destruction. Humility can seek protection. The Communion’s remembrance of God’s justice gives grateful dependence a clear object, without making the sufferer responsible for an enemy’s harm. <span class="nodecor">(Ps. 39:14–15 and 70:16–18, appointed selections; Aquinas, *Super Psalmo* 39 n. 7.)</span> <span id="triptych:brief-synthesis:end" data-label="triptych:brief-synthesis:end"></span>
+The Offertory keeps this humility close to a threatened life. Its repeated appeal asks help and the shame of those seeking the singer’s destruction. Humility can seek protection. The Communion’s remembrance of God’s justice gives grateful dependence a clear object; the sufferer is not responsible for an enemy’s harm. <span class="nodecor">(Ps. 39:14–15 and 70:16–18, appointed selections; Aquinas, *Super Psalmo* 39 n. 7.)</span> <span id="triptych:brief-synthesis:end" data-label="triptych:brief-synthesis:end"></span>
 
 ### Christ’s inward dwelling gathers a people of praise
 
 Paul asks that Christ dwell in hearts, but the prayer never closes the heart upon itself. Comprehension is with all the saints; the doxology is in the Church. The surrounding epistle names Gentile co-inheritance and the common dwelling of God in the Spirit, then turns toward humility, patience and unity. Rooted charity grows through a life shared with others. <span class="nodecor">(Eph. 2:18–22; 3:6,17–21; 4:1–6.)</span>
 
-The Gradual’s Sion is God’s work of building, revealed before nations and kings. Augustine reads this as the Church gathered and built now before Christ’s glorious judgement. Theodoret begins with the restoration of the humbled city, then argues that the universal conversion promised in the psalm exceeds that return: the neighboring peoples’ wonder did not mean that all had believed. The restored city’s glory and the Church’s gathering thus remain distinct moments within his exposition. <span class="nodecor">(Augustine, *Enarrationes* 101, abridged NPNF “Psalm CII,” §§16–18; Theodoret, *Interpretatio*, PG 80, 1679B–1682B.)</span>
+The Gradual’s Sion is God’s work of building, revealed before nations and kings. Augustine reads this as the Church gathered and built now before Christ’s glorious judgement. Theodoret begins with the restoration of the humbled city, then argues that the universal conversion promised in the psalm exceeds that return: the neighboring peoples’ wonder did not mean that all had believed. Theodoret thus keeps the restored city’s glory and the Church’s gathering as distinct moments. <span class="nodecor">(Augustine, *Enarrationes* 101, abridged NPNF “Psalm CII,” §§16–18; Theodoret, *Interpretatio*, PG 80, 1679B–1682B.)</span>
 
 The Alleluia summons the new canticle because the Lord has done wonders. In the whole psalm, Israel’s salvation becomes visible to the nations and creation welcomes the Lord’s just judgement. Theodoret interprets the new song through the Savior’s new manner of worship and life; Bellarmine unfolds the wonders through Christ’s life and saving victory. Praise answers divine action and draws singers into its public acknowledgment. <span class="nodecor">(Ps. 97:1–9; Theodoret, PG 80, 1657C–1658D; Bellarmine, *Commentary*, p. 306.)</span>
 
@@ -276,7 +276,7 @@ The Missal opens with *In illo témpore*; Challoner retains Luke's biblical open
 >
 > Let them be confounded and ashamed together, that seek after my soul to take it away. Let them be turned backward and be ashamed that desire evils to me.
 
-The Latin chant selects the plea for help and the first enemy petition, then repeats its plea. It omits the opening request of verse 14 and the backward-turning continuation of verse 15; the English above quotes the full biblical verses for comparison.
+The Latin chant selects the plea for help and the first enemy petition, then repeats its plea. It omits the opening request of verse 14 and the backward-turning continuation of verse 15; the English above gives the full biblical verses for comparison.
 
 ### Secret — no. 1599 {#proper-secret}
 
@@ -304,7 +304,7 @@ The Latin chant selects the plea for help and the first enemy petition, then rep
 >
 > And unto old age and grey hairs: O God, forsake me not, Until I shew forth thy arm to all the generation that is to come: Thy power,
 
-The Latin chant takes the last clause of verse 16, the first of verse 17 and verse 18 only through the plea not to be forsaken. The rest of the English verses is biblical context, not an expanded Communion antiphon.
+The Latin chant takes the last clause of verse 16, the first of verse 17 and verse 18 only through the plea not to be forsaken. The rest of the English verses is biblical context outside the Communion antiphon.
 
 ### Postcommunion — no. 1601 {#proper-postcommunion}
 
@@ -328,7 +328,7 @@ Theodoret likewise sees humility compatible with abundance in righteousness. His
 
 ### Collect: grace before and after
 
-The Collect asks that grace always precede and follow, with constant attention to good works as its intended fruit. Its verbs describe a dependence that surrounds action rather than suspending it. Cummiskey’s historical English uses “prevent” for the preceding gift and then asks zeal in practice. The older English must be read with that movement of the Latin, not as a request that grace hinder the person.
+The Collect asks that grace always precede and follow, with constant attention to good works as its intended fruit. Its verbs describe a dependence that surrounds action rather than suspending it. Cummiskey’s historical English uses “prevent” for the preceding gift and then asks zeal in practice. Cummiskey’s “prevent” means “go before,” as *prævéniat* does, not “hinder.”
 
 The prayer has more than one place in the Gregorian tradition. Wilson prints it among evening or morning prayers, as the fifth *Alia* on p. 135, and again in the Sunday supplement on p. 174. The apparatus records a word-order variant in the former use. In supplement XXXV, Sunday XVII after Pentecost, it accompanies *Munda nos* and *Purifica*. The supplement’s ordinal and the different post-Pentecost reckoning in Wilson’s manuscripts belong to those witnesses. <span class="nodecor">(Wilson, *Gregorian Sacramentary*, pp. 133–135,174; introduction pp. xviii,xli.)</span>
 
@@ -362,7 +362,7 @@ The Epistle has already asked for Christ’s dwelling in hearts and comprehensio
 
 The chant sings the opening of Psalm 97:1, with the explicit final *Dóminus*; the saving right hand and holy arm belong to the verse’s continuation. The whole psalm makes Israel’s salvation visible before the nations, then calls singers, instruments, sea, rivers and mountains into praise before the Lord’s equitable judgement. The wonders summon a common response. Isaias 52:7–10 likewise joins salvation seen by the ends of the earth with the holy arm and the nations; Simeon’s canticle in Luke 2:28–32 gives salvation seen, Gentile revelation and Israel’s glory their Christological expression.
 
-Augustine interprets new song as new life in Christ and the peace of the Church. He then distinguishes bodily recovery from inward healing for God while expounding the rest of verse 1. His immediate Gospel allusion is the raising at Nain in Luke 7, not this Sunday’s cure in Luke 14. The difference leaves his argument clear: wonderful bodily acts call for a life renewed in its relation to God. <span class="nodecor">(*Enarrationes* 97, abridged NPNF “Psalm XCVIII,” §1.)</span>
+Augustine interprets new song as new life in Christ and the peace of the Church. He then distinguishes bodily recovery from inward healing for God while expounding the rest of verse 1. His immediate Gospel allusion is the raising at Nain in Luke 7, not this Sunday’s cure in Luke 14. His argument holds for both: wonderful bodily acts call for a life renewed in its relation to God. <span class="nodecor">(*Enarrationes* 97, abridged NPNF “Psalm XCVIII,” §1.)</span>
 
 Theodoret connects the song’s newness with the Savior’s new manner of worship and life, and the wonders with acts beyond human expectation. Bellarmine draws those wonders through the Incarnation, healings, Resurrection, Ascension and mission. His treatment of the unappointed right hand and arm emphasizes victory through humility, obedience and the Cross. In the Mass, the acclamation precedes a Gospel where Christ heals and corrects ambition: both mercy and humility belong to the life that praises his works. <span class="nodecor">(Theodoret, PG 80, 1657C–1658D; Bellarmine, p. 306.)</span>
 
@@ -374,7 +374,7 @@ The Missal and Clementine text use ass and ox. Cyril’s Payne Smith translation
 
 The meal’s second scene concerns guests who choose the first places. Jesus allows the inviter to confer a higher place and honor before the company. Proverbs 25:6–7 gives a close wisdom parallel; Luke 18:9–14 repeats the final reversal in a parable directed against self-trust and contempt. Luke 22:24–30 places the disciples’ competition for greatness beside Christ’s table-service. These passages reveal a humility deeper than avoiding an embarrassing seating mistake.
 
-Cyril grounds the low place in truthful self-knowledge. Wealth is transient, the body weak and mortal; the person who recognizes this can relinquish even honor he might claim without blame. Ambrose praises Christ’s gentle correction, in which persuasion reforms ambition. His preceding interpretation of dropsy as fleshly excess belongs to his spiritual exposition, not to a diagnosis of the man’s moral character. Ambrose then develops generosity to poor and disabled guests from verses 12–14, which lie beyond this Sunday’s Gospel. <span class="nodecor">(Cyril, Sermon CII, pp. 476–479; Ambrose, *Expositio in Lucam* VII.195, PL 15, 1752A–B, Latin web text.)</span>
+Cyril grounds the low place in truthful self-knowledge. Wealth is transient, the body weak and mortal; the person who recognizes this can relinquish even honor he might claim without blame. Ambrose praises Christ’s gentle correction, in which persuasion reforms ambition. Ambrose reads the dropsy spiritually as fleshly excess; Luke gives no cause of the man’s illness or account of his character. Ambrose then develops generosity to poor and disabled guests from verses 12–14, which lie beyond this Sunday’s Gospel. <span class="nodecor">(Cyril, Sermon CII, pp. 476–479; Ambrose, *Expositio in Lucam* VII.195, PL 15, 1752A–B, Latin web text.)</span>
 
 Francis de Sales’s last-place echo exposes an inward contradiction: performing lowliness in order to secure greater honor keeps ambition alive. He also refuses a false humility that declines divine gifts or interrupts charity. Benedict XVI reads the overlapping postconciliar Gospel through humanity’s need for redemption and the humility of Christ’s Cross, interpreting exaltation as nearness to the Lord. The latter address concerns Luke 14:1,7–14, not the present formulary’s whole selection. <span class="nodecor">(Francis de Sales, III.5; Benedict XVI, Angelus, 29 August 2010.)</span>
 
@@ -386,9 +386,9 @@ The chant repeats its opening plea around a request that those seeking the singe
 
 Augustine hears the suffering members appeal to their physician in the setting of Christ’s Passion. On the continuation about turning enemies backward, he develops conversion: those who tried to precede Christ can learn to follow him. That backward-turning clause is omitted by the chant. The chant still asks for the frustration and shame of a real destructive threat. <span class="nodecor">(*Enarrationes* 39, abridged NPNF “Psalm XL,” §§21–25.)</span>
 
-Theodoret gives the Church one voice that includes strong and weak members, and emphasizes the thwarting of persecutors’ intended harm. Aquinas understands divine regard as help to escape evil and to perform good. His alternatives for the enemy’s shame include both penitence and punishment under God’s justice. These readings preserve the seriousness of harm while entrusting its defeat to God. Their distinct explanations also prevent the prayer from becoming either a general mood of peace or permission for personal vengeance. <span class="nodecor">(Theodoret, PG 80, 1159A–1160D; Aquinas, *Super Psalmo* 39 nn. 6–7.)</span>
+Theodoret gives the Church one voice that includes strong and weak members, and emphasizes the thwarting of persecutors’ intended harm. Aquinas understands divine regard as help to escape evil and to perform good. His alternatives for the enemy’s shame include both penitence and punishment under God’s justice. These readings preserve the seriousness of harm while entrusting its defeat to God. In their distinct explanations the prayer is neither a general mood of peace nor permission for personal vengeance. <span class="nodecor">(Theodoret, PG 80, 1159A–1160D; Aquinas, *Super Psalmo* 39 nn. 6–7.)</span>
 
-The Offertory’s dependence belongs with the Introit and Communion, and its aid toward good with the Collect. Schuster calls its wording similar to the Offertory of Friday after the Second Sunday in Lent; his comparison is of similar text, not a demonstrated identity of every word. <span class="nodecor">(Schuster III, pp. 143–144.)</span>
+The Offertory’s dependence belongs with the Introit and Communion, and its aid toward good with the Collect. Schuster calls its wording similar to the Offertory of Friday after the Second Sunday in Lent; he does not call the two identical. <span class="nodecor">(Schuster III, pp. 143–144.)</span>
 
 ### Secret: cleansed for participation
 
@@ -454,7 +454,7 @@ Paul asks comprehension of “the breadth and length and height and depth,” th
 
 ### A dean who wants the higher place
 
-The Gospel’s “Friend, go up higher” and final humiliation–exaltation saying become social satire in Percy Fitzgerald’s *Fatal Zero*. A fictional narrator remembers the dean preaching on “Go up higher,” then watches him seek a place beside a lord and interprets his humility as a hope for promotion. The scriptural language becomes an accusation against status-seeking, but the narrator also admits that his judgement may be unfair. These are a character’s judgements, not events established in a real dean’s biography. <span class="nodecor">(*All the Year Round*, new series I, 16 January 1869, p. 163, left column, paragraph beginning “Of course he had not heard of my fall in the world.”)</span>
+The Gospel’s “Friend, go up higher” and final humiliation–exaltation saying become social satire in Percy Fitzgerald’s *Fatal Zero*. A fictional narrator remembers the dean preaching on “Go up higher,” then watches him seek a place beside a lord and interprets his humility as a hope for promotion. The scriptural language becomes an accusation against status-seeking, but the narrator also admits that his judgement may be unfair. The judgements are the fictional narrator’s, and the story establishes no event in a real dean’s life. <span class="nodecor">(*All the Year Round*, new series I, 16 January 1869, p. 163, left column, paragraph beginning “Of course he had not heard of my fall in the world.”)</span>
 
 The journal’s conductor was Charles Dickens; the story was Fitzgerald’s. Dickens himself identifies its author in his letter to Mrs James T. Fields of 16 December 1868. Fitzgerald’s authorship gives the joke its literary setting; the journal’s running head names its conductor, not the story’s author. <span class="nodecor">(Dickens, *Letters*, ed. Mamie Dickens and Georgina Hogarth, III, 1882, that letter; Gutenberg eBook 25854.)</span>
 
@@ -462,7 +462,7 @@ The journal’s conductor was Charles Dickens; the story was Fitzgerald’s. Dic
 
 Jesus asks who would not rescue “an ox fall into a pit” even on the Sabbath (Luke 14:5, Challoner). During a natural-gas pricing debate, Senator Riegle declared: “Sometimes you have to leave the ox in the ditch, if that is where it belongs.” He opposed treating a substantive dispute and the risk of higher consumer costs as merely an obstruction to Senate business. Rescue ceased to be the automatic good: the legislative predicament might properly remain unresolved. <span class="nodecor">(*Congressional Record—Senate*, 4 October 1977, p. 32287, right column.)</span>
 
-“Ditch” belongs to the later idiom; Challoner prints “pit.” Doug Batchelor explicitly links the idiom to Luke 14:5 in *How to Keep the Sabbath Holy*, p. 78 (2014). That modern witness establishes a consciously biblical use of the expression, not that Riegle had read Luke or intended an argument about Christ’s cure. The political reversal concerns legislative action.
+“Ditch” belongs to the later idiom; Challoner prints “pit.” Doug Batchelor explicitly links the idiom to Luke 14:5 in *How to Keep the Sabbath Holy*, p. 78 (2014). Batchelor’s book shows the idiom consciously tied to Luke 14:5; whether Riegle had read Luke is not established. The political reversal is Riegle’s own and concerns legislative action, not Christ’s cure.
 
 ## The Propers: Interpretive Possibilities
 
@@ -472,11 +472,11 @@ Jesus asks who would not rescue “an ox fall into a pit” even on the Sabbath 
 
 **Anchors.** Gospel, Luke 14:2–4: the dropsical man and his cure; Epistle, Eph. 3:19–20: divine fullness and abundant power; Secret: cleansing for participation.
 
-**Mechanism.** Bodily swelling and being filled through a gift offer sharply different images of enlargement. Placed beside the Secret’s cleansing, their contrast can become an examination of desire: accumulation may enlarge a claim to importance, while charity enlarges a capacity to receive and give. Ambrose’s spiritual account of fleshly excess in Luke 14 supplies one received point of comparison; no checked precedent supplies the three-element relation. <span class="nodecor">(Ambrose, *Expositio in Lucam* VII.195.)</span>
+**Mechanism.** Bodily swelling and being filled through a gift offer sharply different images of enlargement. Placed beside the Secret’s cleansing, their contrast can become an examination of desire: accumulation may enlarge a claim to importance, while charity enlarges a capacity to receive and give. Ambrose’s spiritual account of fleshly excess in Luke 14 supplies one received point of comparison; no checked precedent supplies this exact three-element relation. <span class="nodecor">(Ambrose, *Expositio in Lucam* VII.195.)</span>
 
 **Fruit.** A worshipper may ask what kind of growth a desired good enables. Receiving charity gives a different account of plenitude from collecting reasons to occupy the first place.
 
-**What the element-by-element reading misses.** The two images of fullness ordinarily remain in different passages; cleansing for participation makes their difference spiritually productive without turning them into synonyms.
+**What the element-by-element reading misses.** The two images of fullness ordinarily remain in different passages; cleansing for participation makes their difference spiritually productive; the two images are not synonyms.
 
 **Precedent result.** Near analogue located: the Eleventh-Sunday study’s “From unvoid grace to heavenly fullness,” and Anthony’s *Dominica XVII post Pentecosten*, §§8–12, Basilica del Santo Latin web edition. Anthony pairs this Gospel with Ephesians 4, not the present Epistle.
 
@@ -486,7 +486,7 @@ Jesus asks who would not rescue “an ox fall into a pit” even on the Sabbath 
 
 **Anchors.** Collect: grace preceding, following and always present; Communion, Ps. 70:17–18: youth and old age; Postcommunion: present and future help; Introit, Ps. 85:3: the all-day cry.
 
-**Mechanism.** These spans can be heard together as simultaneous horizons of dependence. A day’s petition belongs within a remembered life; grace needed for an action belongs with grace still needed afterward; bodily help now stands beside help hereafter. The spans illuminate each other without becoming stages on a single calendar.
+**Mechanism.** These spans can be heard together as simultaneous horizons of dependence. A day’s petition belongs within a remembered life; grace needed for an action belongs with grace still needed afterward; bodily help now stands beside help hereafter. The spans illuminate each other and are not stages on a single calendar.
 
 **Fruit.** Perseverance can include both today’s task and the tasks a changed life will bring. Memory becomes a resource for asking help in circumstances not yet encountered.
 
@@ -518,7 +518,7 @@ Jesus asks who would not rescue “an ox fall into a pit” even on the Sabbath 
 
 **Fruit.** Humility can be understood without contempt for one’s worth or resistance to God’s gifts. Kneeling and growth in charity need not compete, and accepting an honor can remain obedient to the giver rather than self-promoting.
 
-**What the element-by-element reading misses.** The different spatial expressions cross chant, prayer and parable. Together they disclose how lowliness and enlargement can belong to the same disposition without becoming one literal movement.
+**What the element-by-element reading misses.** The different spatial expressions cross chant, prayer and parable. Together they disclose how lowliness and enlargement can belong to the same disposition, though they are not one literal movement.
 
 **Precedent result.** Near analogue located: the Tenth-Sunday study’s “Downcast eyes can accompany a lifted soul” and the Fifteenth-Sunday study’s inclined ear and raised appeal.
 
@@ -530,7 +530,7 @@ Jesus asks who would not rescue “an ox fall into a pit” even on the Sabbath 
 
 **Mechanism.** The prayer’s requested judgement about another can stand beside the guest’s possible experience of correction. A person who rightly seeks deliverance can also relinquish pride. The change of direction concerns willingness to be corrected, not the substitution of self-accusation for protection.
 
-**Fruit.** Prayer against harm can remain truthful without becoming a certificate of personal superiority. The worshipper can ask that a threat fail while also accepting correction of an unrelated fault.
+**Fruit.** Prayer against harm can be truthful and still no certificate of personal superiority. The worshipper can ask that a threat fail while also accepting correction of an unrelated fault.
 
 **What the element-by-element reading misses.** Independent accounts leave the endangered singer and the ambitious guest apart. Their juxtaposition asks whether the praying self is prepared to receive the kind of moral correction he readily desires for another.
 
@@ -546,9 +546,9 @@ Jesus asks who would not rescue “an ox fall into a pit” even on the Sabbath 
 
 **Fruit.** Renewal need not imitate chronological youth. An aging Christian can discover new reasons for praise through the very history of help that makes the present plea possible.
 
-**What the element-by-element reading misses.** Separate exposition leaves new song, old-age prayer and sacramental renewal as parallel themes; the conjunction considers their coexistence in one present worshipper.
+**What the element-by-element reading misses.** Separate exposition leaves new song, old-age prayer and sacramental renewal as parallel themes, not their coexistence in one present worshipper.
 
-**Precedent result.** Not located in the checked corpus: the 328-file English and Latin proper-study snapshot, Anthony’s *Dominica XVI* and *XVII post Pentecosten*, Basilica del Santo Latin web edition, and the *Liturgical Year* continuation’s complete Sixteenth-Sunday chapter. The nearest age and song passages did not develop this combined interpretation; unsearched psalm homilies, poetry, music and sermon collections remain outside that result.
+**Precedent result.** Not located in the checked corpus: 328 English and Latin proper studies, Anthony’s *Dominica XVI* and *XVII post Pentecosten*, Basilica del Santo Latin web edition, and the *Liturgical Year* continuation’s complete Sixteenth-Sunday chapter. The nearest age and song passages did not develop this combined interpretation; unsearched psalm homilies, poetry, music and sermon collections remain outside that result.
 
 **Strongest limit.** The chants do not identify their historical speakers as one person. Spiritual renewal promises no reversal of biological aging, and the bounded precedent result supports no claim of universal novelty or priority.
 
@@ -626,6 +626,6 @@ The Latin’s publication basis is its independently witnessed public-domain ant
 
 Online research witnesses were accessed on 5 September 2026; chronology retains its separately recorded corpus source states.
 
-**Last revised (UTC):** 2026-09-24T13:52:07Z
+**Last revised (UTC):** 2026-09-24T15:34:09Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
