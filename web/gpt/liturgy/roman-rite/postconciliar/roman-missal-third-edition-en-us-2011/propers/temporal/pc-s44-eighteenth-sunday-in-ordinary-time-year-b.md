@@ -61,15 +61,15 @@ Manna arrives before Israel can name it. Psalm 78 retells that gift so another g
 
 ### Learning Christ
 
-Ephesians is semi-continuous, not selected as a historical commentary on John. Heard together, however, it guards against a merely acquisitive account of faith. To believe the one sent is to have learned Christ: the old person is put off, the mind renewed, and the new person put on. Chrysostom’s homily on Ephesians emphasizes that renewal reaches the governing faculty of life and appears in truthful conduct. The acclamation likewise refuses to isolate physical bread from the word proceeding from God.
+Ephesians is semi-continuous. Heard with John, however, it guards against a merely acquisitive account of faith. To believe the one sent is to have learned Christ: the old person is put off, the mind renewed, and the new person put on. Chrysostom’s homily on Ephesians emphasizes that renewal reaches the governing faculty of life and appears in truthful conduct. The acclamation likewise refuses to isolate physical bread from the word proceeding from God.
 
 ### Heavenly gift, enduring offering
 
-The Eucharistic units keep agency in the order of grace. The offerings prayer asks that gifts be sanctified and then turns the petition upon the offerers: they themselves are to become an enduring gift. Communion B repeats John 6:35 and closes the most direct bread sequence. Communion A instead names the heavenly bread of Wisdom 16, with its delight and sweetness. The final prayer calls the sacrament a heavenly gift and asks protection and worthiness for eternal redemption. Either enacted path joins provision to transformation, but the antiphons remain alternatives.
+The Eucharistic units keep agency in the order of grace. The offerings prayer asks that gifts be sanctified and then turns the petition upon the offerers: they themselves are to become an enduring gift. Communion B repeats John 6:35 and closes the most direct bread sequence. Communion A instead names the heavenly bread of Wisdom 16, with its delight and sweetness. The final prayer calls the sacrament a heavenly gift and asks protection and worthiness for eternal redemption. Either enacted path joins provision to transformation, but the antiphons are alternatives.
 
-The movement therefore runs in four stages:
+The movement can therefore be read in four stages:
 
-| **Stage** | **Textual movement** | **Reception** | **Also true** |
+| **Stage** | **Textual movement** | **Reception** | **Limit** |
 |:-----------|:----------------|:-----------------|:-------------------|
 | Need | Murmuring and searching disclose bodily hunger and disordered memory. | Chrysostom, *Homilies on John* 43–44 | Bodily need is not despised. |
 | Provision | Manna is given, remembered, and redirected toward the Father’s true bread. | Augustine on Psalm 77 and John 6 | Type and fulfillment are not made identical. |
@@ -80,7 +80,7 @@ The center of these texts is neither “earn the bread” nor “ignore earthly 
 
 > **How the readings are related**
 >
-> The First Reading and Gospel are officially correlated. The Psalm is responsorial, the acclamation acclamatory, and Ephesians belongs to the semi-continuous apostolic course. The Week XVIII prayers and antiphons serve all three years, and nothing in them establishes a design for Year B; they meet these readings in their wording and themes.
+> The First Reading and Gospel are officially correlated. The Psalm is responsorial, the acclamation acclamatory, and Ephesians belongs to the semi-continuous apostolic course. The Week XVIII prayers and antiphons serve all three years. Communion B repeats John 6:35; their other connections with these readings rest on shared wording and on synthesis.
 
 <span id="triptych:brief-synthesis:end" data-label="triptych:brief-synthesis:end"></span>
 
@@ -150,7 +150,7 @@ Exodus 16 begins with a congregation complaining against Moses and Aaron and re
 
 The question “What is this?” is not a decorative etymology. Israel receives before it can classify. Psalm 78 later names manna and “bread of angels,” but also places the gift inside a history of rebellion, testing, judgment, and mercy. The appointed responsorial verses select tradition, heavenly command, food, and arrival at God’s holy land. The whole psalm prevents nostalgia for a miracle detached from covenant fidelity.
 
-Augustine’s exposition of Psalm 77 reads manna christologically and ecclesially, but his spiritual reception does not cancel Exodus’s bodily hunger, daily gathering, or Israel’s own scriptural identity. Ambrose’s mystagogy similarly contrasts wilderness figure and Christ’s gift. These witnesses show a received Christian trajectory; they do not establish that every detail of Exodus was composed as an encoded Eucharistic rubric.
+Augustine’s exposition of Psalm 77 reads manna christologically and ecclesially, but his spiritual reception does not cancel Exodus’s bodily hunger, daily gathering, or Israel’s own scriptural identity. Ambrose’s mystagogy similarly contrasts wilderness figure and Christ’s gift. These witnesses show a received Christian trajectory.
 
 ### John’s crowd: right pursuit, disordered motive, deeper giver
 
@@ -162,11 +162,11 @@ Chrysostom’s Homilies 43–45 track these turns instead of beginning at the c
 
 ### Ephesians: the new person is corporate and ethical
 
-Ephesians 4 is semi-continuous and was not chosen to explain John 6. Its discontinuous lection is also visible: verse 17 is followed by verses 20–24, omitting the darkened understanding and hardened conduct of verses 18–19. The movement from former walk to learning Christ, renewed mind, and putting on the new person is ethical and ecclesial, not a contempt for the body or created world.
+Ephesians 4 is semi-continuous. Its discontinuous lection is also visible: verse 17 is followed by verses 20–24, omitting the darkened understanding and hardened conduct of verses 18–19. The movement from former walk to learning Christ, renewed mind, and putting on the new person is ethical and ecclesial, not a contempt for the body or created world.
 
 Chrysostom’s Homily 13 treats stripping and clothing as an actual change of conduct. Baptismal reception gives the imagery a sacramental home, but baptism does not make renewal automatic or solitary. The continuation of Ephesians names truth-telling, disciplined anger, honest labor capable of sharing, edifying speech, forgiveness, and imitation of God. “New person” therefore cannot be reduced to private interior freshness. It describes a life whose relations are being remade in Christ.
 
-Placed beside John, Ephesians overlaps with it in the liturgy without having been designed as its pair. Belief in the sent one and renewal of mind both resist appetite closed around immediate satisfaction. Yet Ephesians keeps its own corporate horizon and John his own sign-and-discourse sequence.
+Placed beside John, Ephesians overlaps with it in the liturgy. Belief in the sent one and renewal of mind both resist appetite closed around immediate satisfaction. Yet Ephesians keeps its own corporate horizon and John his own sign-and-discourse sequence.
 
 ### The acclamation and the two Communion endings
 
@@ -186,8 +186,8 @@ The hymn tradition’s “bread of heaven” language similarly moves the biblic
 |:-------------|:------------------------|:----------------------------|
 | Unknown gift to remembered manna | Psalm and patristic reception teach memory and typology. | Exodus keeps bodily hunger, complaint, daily measure, and testing. |
 | Past gift to present giver | John corrects source, motive, and object of desire. | John neither despises food nor reduces faith to appetite. |
-| Old walk to new person | Baptismal and moral reception hold identity and conduct together. | Ephesians is semi-continuous, not selected as a commentary on John. |
-| Gift received to persons offered | The Missal prayers frame communion as sanctification and transformation. | Communion alternatives remain mutually exclusive. |
+| Old walk to new person | Baptismal and moral reception hold identity and conduct together. | Ephesians is semi-continuous. |
+| Gift received to persons offered | The Missal prayers frame communion as sanctification and transformation. | Communion alternatives are mutually exclusive. |
 
 ## Source-Grounded Synthesis Across the Propers
 
@@ -201,13 +201,13 @@ Ephesians remains semi-continuous, yet it prevents the Sunday from becoming a th
 
 ### Bread, word, and heavenly gift
 
-The acclamation denies that bread alone constitutes life. John does not therefore make bread irrelevant: Jesus has fed the crowd, and his self-identification uses hunger to reveal a greater gift. The first Communion option receives Wisdom’s heavenly-bread image; the second repeats John’s bread-of-life saying. The final prayer describes reception as a heavenly gift ordered toward eternal redemption. These liturgical statements permit a eucharistic horizon for the whole, though not every use of bread in the readings is already an exhaustive sacramental definition.
+The acclamation denies that bread alone constitutes life. John does not therefore make bread irrelevant: Jesus has fed the crowd, and his self-identification uses hunger to reveal a greater gift. The first Communion option receives Wisdom’s heavenly-bread image; the second repeats John’s bread-of-life saying. The final prayer describes reception as a heavenly gift ordered toward eternal redemption. These liturgical statements permit a eucharistic horizon for the whole, without making every use of bread in the readings an exhaustive sacramental definition.
 
-### The alternative endings remain alternatives
+### Two alternative endings
 
-At Communion, John 6:35 creates the shortest direct return to the Gospel: Christ names himself as bread and promises an end to hunger and thirst for those who come and believe. Wisdom 16:20 instead returns to heavenly bread as delight adapted to the receiver. Both can lead into the final petition for protection and eternal redemption, but they do so differently. Both are printed options, and no celebration enacts them as one sequence.
+At Communion, John 6:35 creates the shortest direct return to the Gospel: Christ names himself as bread and promises an end to hunger and thirst for those who come and believe. Wisdom 16:20 instead returns to heavenly bread as delight adapted to the receiver. Both can lead into the final petition for protection and eternal redemption, but they do so differently. Both are printed options, mutually exclusive rather than one sequence.
 
-| **Movement** | **Primary anchors** | **Reception** | **Also true** |
+| **Movement** | **Primary anchors** | **Reception** | **Limit** |
 |:-----------|:----------------|:-----------------|:-------------------|
 | Gift and question | Exod. 16; Ps. 78; John 6 | Augustine; Chrysostom | Bodily hunger is real; the giver exceeds the gift. |
 | Belief and renewal | John 6; Eph. 4 | Chrysostom on John and Ephesians | The apostolic course remains semi-continuous. |
@@ -234,7 +234,7 @@ Exodus’s daily sufficiency, John’s correction of motive, and the offerings p
 
 ### Sweetness without possession
 
-Israel reduces Egypt to full pots; Psalm 78 repairs memory by retelling the gift; Wisdom’s Communion option names heavenly bread as delight and sweetness. Together they suggest that delight is received truthfully when it leads back to the giver instead of becoming nostalgia or possession. The relation depends on selection of that optional antiphon.
+Israel reduces Egypt to full pots; Psalm 78 repairs memory by retelling the gift; Wisdom’s Communion option names heavenly bread as delight and sweetness. Together they suggest that delight is received truthfully when it leads back to the giver instead of becoming nostalgia or possession. The relation is editorial and depends on selection of that optional antiphon.
 
 ### The new person as eucharistic consequence
 
@@ -293,6 +293,6 @@ The reception search concentrated on direct exposition: Chrysostom’s *Homilies
 
 - GIRM 46–90, 352–367; *General Introduction to the Lectionary* 65–69, 78–91, 93–110.
 
-**Last revised (UTC):** 2026-09-24T13:53:53Z
+**Last revised (UTC):** 2026-09-24T15:20:22Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
