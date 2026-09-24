@@ -441,6 +441,8 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 >
 > **Fruit:** Mercy needs durable ministries, not only a first responder. The Church receives care from Christ in order to continue it responsibly.
 >
+> **What the element-by-element reading misses:** Read one at a time, Paul’s fitness for ministry, the innkeeper’s charge, and the Postcommunion’s petition stay apart; together they show care received from Christ and continued by durable ministry.
+>
 > **Precedent result:** **Near analogue located.** Ambrose 7.82–84, Augustine *Questions on the Gospels* 2.19, and Bede identify the inn and its keeper ecclesially; none joins Paul’s sufficiency or this Postcommunion.
 >
 > **Limit:** No minister or institution may identify itself simply with the Samaritan; ecclesial allegory remains subject to the literal command of mercy.
@@ -452,6 +454,8 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 > **Mechanism:** The Church runs toward God’s promises; Moses invokes the oath to the patriarchs; the Samaritan promises to return and repay further expense.
 >
 > **Fruit:** Christian hope may be read not as escape from wounded history but as fidelity that sustains costly care within it.
+>
+> **What the element-by-element reading misses:** Read one at a time, the Collect’s promises, Moses’ appeal to the oath, and the Samaritan’s promise to return stay apart; together they let hope be read as fidelity that sustains costly care.
 >
 > **Precedent result:** **Near analogue located.** Origen, *Homily on Luke* 34.3, reports an elder’s eschatological reading of the return; Ambrose, *Exposition of Luke* 7.83, and Bede, PL 92, 470D, also receive that return eschatologically. These enumerated witnesses do not join all three promise forms.
 >
@@ -465,6 +469,8 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 >
 > **Fruit:** Compassion becomes a temporal discipline: attention must survive the first emotion, the first expense, and the first liturgical moment.
 >
+> **What the element-by-element reading misses:** Read one at a time, the Gradual’s “always,” the Alleluia’s day and night, and the Samaritan’s next day stay apart; together they give compassion a duration that outlasts its first emotion, expense, and liturgical moment.
+>
 > **Precedent result:** **Near analogue located.** Bellarmine treats the Gradual’s “always” as continuing praise; Eusebius reads the Alleluia’s day and night as Christ’s continuous prayer and oblation; Origen’s elder, Ambrose VII.83, and Bede PL 92, 470D receive the Samaritan’s return. None of these enumerated witnesses joins the three-part duration.
 >
 > **Limit:** The words arise in different literary units; they do not create a schedule, and urgency in the Introit remains as important as duration.
@@ -477,6 +483,8 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 >
 > **Fruit:** Mercy may resist the self-protecting move from “whom must I love?” to the smallest defensible obligation.
 >
+> **What the element-by-element reading misses:** Read one at a time, the parable and the Secret stay apart; together they answer a question that seeks the limit of love with expenditure beyond the initial sum and pardon lavished.
+>
 > **Precedent result:** **Near analogue located.** The enumerated Gospel commentators stress universal neighbour-love and the innkeeper’s further expense; none of them joins the Secret’s gerund.
 >
 > **Limit:** Christian generosity requires prudence, justice, vocation, and finite stewardship; *Fratelli tutti* 79–82 does not erase these goods.
@@ -488,6 +496,8 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 > **Mechanism:** Oil and wine treat wounds; Psalm 103 praises bread, wine, and oil as providential gifts; holy participation gives life and protection.
 >
 > **Fruit:** Bodily works of mercy and sacramental communion can be held together without turning either into a decorative metaphor.
+>
+> **What the element-by-element reading misses:** Read one at a time, the parable’s remedies, the psalm’s gifts, and the Postcommunion’s holy participation stay apart; together they hold bodily care and sacramental communion side by side.
 >
 > **Precedent result:** **Near analogue located.** Origen, *Homily on Luke* 34.7–9, explicitly cites Psalm 103 while reading the Samaritan’s oil, wine, day-and-night care, and inn; Augustine and Cassiodorus receive Psalm 103 sacramentally. The conjunction with this Postcommunion is editorial.
 >
@@ -559,6 +569,6 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 
 - *United States ex rel. Knauff v. Shaughnessy*, 338 U.S. 537, 548, 550 (1950) (Frankfurter, J., dissenting).
 
-**Last revised (UTC):** 2026-08-21T11:18:32Z
+**Last revised (UTC):** 2026-09-24T12:57:14Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
