@@ -1,0 +1,26 @@
+inventory_schema = 1
+record_type = "publication-source-inventory"
+provider = "gpt"
+audited_on = "2026-07-31"
+discovery_rule = "src/gpt/**/main.tex"
+publication_count = 1
+source_surface_file_count = 1
+snapshot = "sha256:0e349a6904a3c8e4470ecb669895ca7ed1a01e4423effb87cc0dbc858c16392a"
+owners = []
+
+[[documents]]
+id = "probe"
+main = "src/gpt/probe/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "probe"
+relationship = "local"
+
+[[files]]
+path = "src/gpt/probe/main.tex"
+sha256 = "317164592c68bbc9d9a69cfe6237e834ffa78476ade65d2f73cbd5d7557a9d1a"
+kind = "publication-main"
+owners = ["probe"]

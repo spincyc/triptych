@@ -83,7 +83,7 @@ SCRATCH: dict[str, tuple[str, ...]] = {
         "build/example-sanctuary",
         "build/example-empty-objects",
     ),
-    "source-family-migration": ("build/example-migration.toml",),
+    "source-family-migration": ("build/example-migration",),
     "source-inventory": ("build/example-inventory.toml", "build/example-review.toml"),
     "typeset-bible": ("build/example-typeset",),
     "web-edition": ("build/example-web-edition",),
@@ -115,6 +115,18 @@ PREPARE: dict[str, tuple[object, ...]] = {
         ),
     ),
     "render-sanctuary-dictionary": (("mkdir", "build/example-empty-objects"),),
+    # bootstrap and refresh write a ledger, and may not be dated before the
+    # inventory and classification review it pins. Against the real records
+    # that date lapsed at every re-audit, so the examples run with --root on
+    # a scratch copy of a synthetic repository whose records are never
+    # re-audited, and write the ledger inside the copy.
+    "source-family-migration": (
+        (
+            "copy",
+            "tools/tests/fixtures/source-family-migration",
+            "build/example-migration",
+        ),
+    ),
     # The capture records the second run, which is the one that reports
     # `unchanged`; a first render into an empty tree writes instead.
     "typeset-bible": (

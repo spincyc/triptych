@@ -50,34 +50,32 @@ EXAMPLES = {
     ),
     "bootstrap": (
         Example(
-            "tools/source-family-migration bootstrap build/example-migration.toml --audited-on 2026-08-27",
+            "tools/source-family-migration --root build/example-migration bootstrap ledger.toml --audited-on 2026-08-27",
             (
-                "source-family-migration error: --audited-on cannot predate the inventory or classification review",
             ),
-            "WRITES the named file; the output path is positional, so a scratch path keeps the tracked ledger untouched. The date may not predate the inventory or the classification review, so re-auditing either one lapses this example and the date here has to move with it",
+            "WRITES the named file. --root is a scratch copy of the synthetic repository in tools/tests/fixtures/source-family-migration (copy it to build/example-migration first), and the positional output path is rooted there, so no tracked ledger is touched. The date may not predate the inventory or the classification review; the fixture's are dated 2026-07-31 and never re-audited, so this date cannot lapse the way it did against the real ones",
         ),
         Example(
-            "tools/source-family-migration bootstrap build/example-migration.toml --audited-on 2026-08-27",
+            "tools/source-family-migration --root build/example-migration bootstrap ledger.toml --audited-on 2026-08-27",
             (
-                "source-family-migration error: --audited-on cannot predate the inventory or classification review",
+                "source-family-migration error: <repo>/build/example-migration/ledger.toml: already exists; use refresh",
             ),
             "the same command again: bootstrap refuses an existing ledger rather than overwriting a reviewed one",
         ),
     ),
     "refresh": (
         Example(
-            "tools/source-family-migration check",
+            "tools/source-family-migration --root build/example-migration check ledger.toml",
             (
-                "source-family-migration valid: families=0 review_units=153 screened=0 pending=153 trace_records=0 atomic_citation_coverage=false",
+                "source-family-migration valid: families=0 review_units=1 screened=0 pending=1 trace_records=0 atomic_citation_coverage=false",
             ),
-            "read-only first: `check` says what state a refresh would start from",
+            "read-only first: `check` says what state a refresh would start from, here the ledger bootstrap wrote above",
         ),
         Example(
-            "tools/source-family-migration refresh build/example-migration.toml --audited-on 2026-08-27",
+            "tools/source-family-migration --root build/example-migration refresh ledger.toml --audited-on 2026-08-27",
             (
-                "source-family-migration error: <repo>/build/example-migration.toml: cannot capture refresh input: [Errno 2] No such file or directory: '<repo>/build/example-migration.toml'",
             ),
-            "WRITES the named ledger. With no positional argument it rewrites the tracked one",
+            "WRITES the named ledger; here it rewrites the one bootstrap wrote above. With no positional argument it rewrites the tracked ledger under --root",
         ),
     ),
 }
