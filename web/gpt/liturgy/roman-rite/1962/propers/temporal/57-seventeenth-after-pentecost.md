@@ -29,7 +29,7 @@ Three readings unfold that belonging. The first follows the healing of divided d
 | Communion | Ps. 75:12–13: vows paid and gifts brought to the Lord who humbles princes. |
 | Postcommunion | Sacred mysteries heal vices and bring an eternal remedy. |
 
-The Sunday is of the second class in the 1962 Missal. For the universal calendar on 20 September 2026 it is the Seventeenth Sunday after Pentecost; the ordinary commemoration of SS. Eustace and Companions is omitted. The three prayers and seven scriptural elements above constitute the proper under study. The texts follow, then the explanation of each element and the three sustained readings.[^1]
+The Sunday is of the second class in the 1962 Missal. For the universal calendar on 20 September 2026 it is the Seventeenth Sunday after Pentecost; the ordinary commemoration of SS. Eustace and Companions is omitted. The proper consists of the three prayers and seven scriptural elements above, whose texts follow with an explanation of each element and three sustained readings.[^1]
 
 [TOC]
 
@@ -111,7 +111,7 @@ Dan. 9:17–19 supplies context. The Latin chant introduces Daniel and rearrang
 
 **Cummiskey 1861.** We humbly beseech thy Majesty, O Lord, that the sacred mysteries we celebrate may cleanse us from all past offences, and from those we may hereafter be guilty of. Thro’.
 
-The Trinity Preface is appointed; its full text is outside this proper-text reproduction. The historical English concerning future offences is explained in the commentary.
+The Trinity Preface is appointed; its full text is not among the proper texts given here. Cummiskey’s phrase on future offences can sound like advance forgiveness (see the Secret’s commentary).
 
 ### Communion {#proper-communion}
 
@@ -139,7 +139,7 @@ Bellarmine makes the requested teaching practical. At Psalm 118:124, God teaches
 
 ### Collect: an undivided allegiance
 
-The Collect asks for two connected gifts: to avoid diabolical contagion and to follow God alone with a pure mind. Its plural subject is God’s people. Purity here serves an allegiance shared by persons whose lives can be corrupted; it is not a claim that belonging to the people has already made them immune. The prayer seeks freedom to follow, not merely distance from an external danger. Its first word, *Da*, makes the whole movement a gift sought from the Lord.
+The Collect asks for two connected gifts: to avoid diabolical contagion and to follow God alone with a pure mind. Its plural subject is God’s people. Purity here serves an allegiance shared by persons whose lives can be corrupted; the prayer does not say that belonging to the people has already made them immune. The prayer seeks freedom to follow, not merely distance from an external danger. Its first word, *Da*, makes the whole movement a gift sought from the Lord.
 
 Thomas’s account of Ephesians 4 illuminates the social reach of this purity. Pride, anger, impatience, and disordered zeal work against peace. A mind divided by those impulses can defend religious positions while injuring the people it professes to serve. The Collect’s request therefore has consequences for speech, correction, and endurance. Thomas is expounding the Epistle, not this prayer; his analysis gives concrete moral content to its plea for a purified following of God.[^4]
 
@@ -161,15 +161,15 @@ Bellarmine begins with the heavens as God’s creation and explains Word and Spi
 
 The Alleluia takes the opening petition of Psalm 101. The complete psalm moves from the loneliness and frailty of an afflicted person to the restoration of Sion and the gathering of peoples to serve the Lord. The short chant gives the assembly that voice of need before the Gospel. Praise and supplication coexist: the refrain acclaims God while the verse asks to be heard.
 
-Augustine asks who can speak the psalm’s poverty. Christ assumed poverty for us, and his body includes penitent members whose sorrow can be heard in the one voice of Christ and the Church. Personal sin belongs to the members, not to their sinless Head. This distinction allows the afflicted Christian to pray within Christ’s body without pretending that every sentence describes Jesus’ personal experience in the same way. Bellarmine, attending to the opening petition, emphasizes that even effective prayer needs grace. The cry is already a work of the mercy it seeks.[^8]
+Augustine asks who can speak the psalm’s poverty. Christ assumed poverty for us, and his body includes penitent members whose sorrow can be heard in the one voice of Christ and the Church. Personal sin belongs to the members, not to their sinless Head. With this distinction the afflicted Christian can pray within Christ’s body, though not every sentence describes Jesus’ personal experience in the same way. Bellarmine, attending to the opening petition, emphasizes that even effective prayer needs grace. The cry is already a work of the mercy it seeks.[^8]
 
 ### Gospel: the law of love and David’s Lord
 
 Matthew 22 places this exchange after disputes about tribute and resurrection. A lawyer tests Jesus by asking which command is great in the law. Jesus answers with love of God in the whole heart, soul, and mind, and adds love of neighbor as oneself. The two commands sustain the law and the prophets. The second is like the first without becoming identical to it: God is loved as God, and the neighbor is loved as a fellow person whose good cannot be detached from that highest love.
 
-Chrysostom reasons that the commands entail each other. Love of God takes form in obedience, and obedience includes care for the neighbor; hatred cannot coexist peacefully with a claim to fulfill the first command. Augustine develops the direction of love: the whole self is ordered toward God, and the neighbor is loved in relation to that same good. His account includes every human being, even an enemy, and recognizes Christ himself as neighbor through his mercy toward us. The neighbor is never reduced to a useful instrument of the believer’s advancement.[^9]
+Chrysostom reasons that the commands entail each other. Love of God takes form in obedience, and obedience includes care for the neighbor; hatred cannot coexist peacefully with a claim to fulfill the first command. Augustine develops the direction of love: the whole self is ordered toward God, and the neighbor is loved in relation to that same good. His account includes every human being, even an enemy, and recognizes Christ himself as neighbor through his mercy toward us. In his account the neighbor is never a useful instrument of the believer’s advancement.[^9]
 
-The lawyer’s motive receives more than one explanation. Chrysostom, comparing Mark, says the answer improved him. Augustine allows either such improvement or an initial testing undertaken with caution rather than malice. Neither account supplies a warrant to diagnose the inward state of every hearer. Matthew describes a test; Christ’s response gives the testing person the truth he needs.[^10]
+The lawyer’s motive receives more than one explanation. Chrysostom, comparing Mark, says the answer improved him. Augustine allows either such improvement or an initial testing undertaken with caution rather than malice. Neither Father diagnoses the inward state of every hearer. Matthew describes a test; Christ’s response gives the testing person the truth he needs.[^10]
 
 Jesus then becomes the questioner. He asks whose son the Christ is and receives the answer “David’s.” Psalm 109:1 supplies the difficulty: David calls him Lord and speaks of his seat at God’s right hand. Chrysostom insists that Jesus does not deny Davidic descent. He exposes the inadequacy of treating the Christ as merely human. David’s Lord is also David’s son. The Gospel ends without the opponents answering, and with further testing silenced. The commandment cannot be detached from this revelation of its teacher: the Lord claims a whole-hearted love whose meaning he himself discloses.
 
@@ -181,7 +181,7 @@ Jerome explains the request concerning the sanctuary as an appeal that God’s p
 
 ### Secret: past wounds and future danger
 
-The Secret addresses divine majesty in supplication and asks that the holy things being enacted free the people from offenses past and future. Cummiskey’s historical English can sound as though later sins were forgiven in advance. Thomas’s account of sacramental preservation gives the necessary distinction. The Eucharist strengthens spiritual life by union with Christ and resists hostile powers through Christ’s Passion. Its protection does not remove human freedom or the possibility of later sin. The petition concerns healing and preservation, not permission to act against the grace received.[^12]
+The Secret addresses divine majesty in supplication and asks that the holy things being enacted free the people from offenses past and future. Cummiskey’s historical English can sound as though later sins were forgiven in advance. Thomas’s account of sacramental preservation draws the distinction. The Eucharist strengthens spiritual life by union with Christ and resists hostile powers through Christ’s Passion. Its protection does not remove human freedom or the possibility of later sin. The petition concerns healing and preservation, not permission to act against the grace received.[^12]
 
 The phrase describing what “we enact” joins prayer to the present holy action. The people ask that participation reach their history and their future conduct. Sin is not merely an obstacle left outside the church door. It is a wound brought to divine mercy, with the desire that the action now celebrated strengthen a different manner of life.
 
@@ -199,7 +199,7 @@ The last prayer asks that sacred mysteries cure vices and procure an eternal rem
 
 A whole heart is more than a heart stirred by a strong religious feeling. In the Gospel it names the undivided direction of a person’s love, reaching thought, desire, and action. Augustine explains the command as leaving no part of the self outside its relation to God. Even love of oneself finds its proper order there. A person who loves himself as though he were his own final good misunderstands what is good for him; love becomes rightly ordered when it seeks the God in whom its good is found. The neighbor belongs within that ordering, because the good sought for oneself is also to be sought for another.[^15]
 
-That account exposes a difficulty. A hearer may recognize the order of love, approve it, and still discover reluctance when an actual neighbor makes a claim. The Gospel’s scope exceeds the ease of liking pleasant people or enjoying worship when untroubled. The appointed prayers answer this difficulty without making the command smaller. The Collect asks God to free the people from corruption and give a pure following; the Secret asks the holy action to reach past offenses and future dangers; the Postcommunion asks for the cure of vices. What is demanded in the Gospel is sought as healing throughout the Mass.
+That account exposes a difficulty. A hearer may recognize the order of love, approve it, and still discover reluctance when an actual neighbor makes a claim. The Gospel’s scope exceeds the ease of liking pleasant people or enjoying worship when untroubled. The appointed prayers answer this difficulty, and the command loses nothing. The Collect asks God to free the people from corruption and give a pure following; the Secret asks the holy action to reach past offenses and future dangers; the Postcommunion asks for the cure of vices. What is demanded in the Gospel is sought as healing throughout the Mass.
 
 ### Mercy teaches more than the correct answer
 
@@ -207,7 +207,7 @@ Augustine’s reading of the Introit’s mercy verse identifies the decisive dep
 
 Bellarmine draws out the difference between knowledge alone and practical love. Teaching at verse 124 includes the conviction and affection that make observance desirable. This is especially searching beside the lawyer’s question. One can know that love is the greatest command and use that knowledge to gain superiority over someone else. Then the correct answer has not yet become the life it describes. God’s teaching reaches further than the acquisition of a sentence: it makes that sentence a rule for the speaker’s own conduct.[^17]
 
-The Introit’s first words prevent mercy from becoming evasion. God is just, and his judgment is right. To ask for mercy is therefore to relinquish the attempt to make one’s wrong right by argument. The servant’s need can be admitted without despair because the judge is addressed as the giver of mercy. The accompanying verse’s blessed walkers show the desired outcome. The worshipper is not praying to remain indefinitely at the point of failure; he asks to join a way of life that can be walked.
+In the Introit’s first words mercy is no evasion. God is just, and his judgment is right. To ask for mercy is therefore to relinquish the attempt to make one’s wrong right by argument. The servant’s need can be admitted without despair because the judge is addressed as the giver of mercy. The accompanying verse’s blessed walkers show the desired outcome. The worshipper is not praying to remain indefinitely at the point of failure; he asks to join a way of life that can be walked.
 
 The Collect carries that movement into allegiance. A pure mind follows God alone because competing masters corrupt its direction. This does not divide human life into sacred occasions that belong to God and ordinary occasions in which another rule applies. The Gospel names the whole self; Paul’s virtues name its ordinary conduct. A desire to appear devout can coexist with impatient treatment of another person, but the texts do not allow that coexistence to remain comfortable.
 
@@ -219,11 +219,11 @@ Augustine’s treatment of neighbor intensifies the test by including the enemy.
 
 The Epistle shows how that love becomes visible when goodwill is tested. Humility gives up the need to be superior; meekness restrains the impulse to hurt; patience bears a burden over time; charity keeps endurance directed toward the other’s good. None requires delight in another person’s faults. Thomas says that bearing with someone includes correction at a suitable time. The difference between patient charity and negligent agreement is the good one seeks for the other. Correction loses that purpose when it becomes revenge; patience loses it when it becomes indifference.[^20]
 
-This makes healing observable without reducing it to a performance. A concrete fruit might be refusing the humiliating remark one is capable of making, telling a needed truth without contempt, or continuing a responsibility after enthusiasm has waned. These are applications of Paul’s virtues, not promises of immediate emotional ease. A person can act in charity while still needing healing in desire. The prayer and the practice belong to the same conversion.
+Healing thus becomes observable, though it is not a performance. A concrete fruit might be refusing the humiliating remark one is capable of making, telling a needed truth without contempt, or continuing a responsibility after enthusiasm has waned. These acts practise Paul’s virtues, and Paul’s virtues promise no immediate emotional ease. A person can act in charity while still needing healing in desire. The prayer and the practice belong to the same conversion.
 
 ### The Lord who gives what he asks
 
-The second half of the Gospel prevents the first from being reduced to advice from an impressive moral teacher. Chrysostom reads Jesus’ question as a disclosure of divinity: Davidic descent is affirmed, while the reduction of Christ to a merely human descendant is overturned by David’s own confession. The Lord is not absent while the hearer tries to fulfill his command. The one to whom love is owed enters the question of how love is given.[^21]
+The second half of the Gospel shows the first to be more than advice from an impressive moral teacher. Chrysostom reads Jesus’ question as a disclosure of divinity: Davidic descent is affirmed, while the reduction of Christ to a merely human descendant is overturned by David’s own confession. The Lord is not absent while the hearer tries to fulfill his command. The one to whom love is owed enters the question of how love is given.[^21]
 
 The Gradual supplies a fitting image of dependence. The heavens stand by the Word, and their strength comes through the Spirit. Augustine identifies spiritual heavens in the righteous, established by that same Word rather than by themselves. The image does not make human obedience unreal. Firmness is real precisely as a received firmness. The blessed people of the first verse likewise exists by election before it can offer itself as an achievement.[^22]
 
@@ -231,7 +231,7 @@ The Alleluia allows a needy heart to speak instead of waiting until its need has
 
 Thomas locates the efficacy of the Eucharist in Christ and his Passion. Spiritual nourishment is not the power of an encouraging idea alone. The sacrament sustains and increases the life of grace because Christ is its source. That teaching illuminates the Secret’s request concerning the holy action and the Postcommunion’s language of cure. The mysteries do what the wounded person cannot achieve by merely condemning his own wound.[^24]
 
-Yet preservation does not abolish freedom. Thomas explicitly allows the possibility of later sin. The Secret cannot be read as immunity from responsibility, and reception cannot be made a guarantee that no serious refusal will follow. The Communion’s demand for vows to be paid gives the healed person a task, while its feared Lord denies him mastery over judgment. Augustine’s account joins the command to God’s enabling help: fidelity is required, and reliance on one’s unaided strength will fail.[^25]
+Yet preservation does not abolish freedom. Thomas explicitly allows the possibility of later sin. The Secret asks for no immunity from responsibility, and reception is no guarantee that no serious refusal will follow. The Communion’s demand for vows to be paid gives the healed person a task, while its feared Lord denies him mastery over judgment. Augustine’s account joins the command to God’s enabling help: fidelity is required, and reliance on one’s unaided strength will fail.[^25]
 
 ### The four senses of healed charity
 
@@ -263,13 +263,13 @@ Chrysostom’s exposition of Ephesians 4:3 gives the Spirit an active role in jo
 
 The next homily widens the body across place and time. The faithful now living, those who have lived, and those who will live belong to the one body; Chrysostom includes those who pleased God before Christ’s coming through their relation to him. The congregation is therefore not the whole measure of the Church. Its present quarrels are set within a communion that exceeds its local memory. No member can make the body equivalent to the people he happens to recognize.[^28]
 
-Chrysostom also offers several ways to understand the one spirit, including the received Spirit and the concord or zeal of those joined together. These are related explanations, not interchangeable definitions. The divine giver and the common disposition of his people remain distinguishable. That distinction guards the claim of unity from a dangerous shortcut: a group’s intense shared enthusiasm does not by itself prove that its purpose is holy.
+Chrysostom also offers several ways to understand the one spirit, including the received Spirit and the concord or zeal of those joined together. His explanations are related, not interchangeable definitions. In his account the divine giver and the common disposition of his people are distinct, so a group’s intense shared enthusiasm does not by itself prove that its purpose is holy.
 
 Thomas makes the difference explicit in his account of spiritual unity. People can unite in evil; the unity sought by the apostle is ordered to a good end. Pride, anger, impatience, and misplaced zeal damage it, while charity seeks correction at the fitting time. Thus peace is neither the silence of people afraid to speak nor cooperation in something wrong. It is common life under a good that all are called to receive.[^29]
 
 ### One people under one Lord
 
-Thomas compares the Church’s unity to that of a city: one ruler, one law, common signs, and a common end. The apostle’s Lord, faith, baptism, and Father supply the corresponding order. Faith can name what is believed as well as the habit of believing; baptism is a common sacramental sign whose validity does not depend on a minister’s personal holiness. A person’s confidence in belonging therefore cannot be reduced to admiration for a particular leader. The shared gifts have an objective source beyond the qualities of the people who administer or receive them.[^30]
+Thomas compares the Church’s unity to that of a city: one ruler, one law, common signs, and a common end. The apostle’s Lord, faith, baptism, and Father supply the corresponding order. Faith can name what is believed as well as the habit of believing; baptism is a common sacramental sign whose validity does not depend on a minister’s personal holiness. A person’s confidence in belonging therefore rests on more than admiration for a particular leader. The shared gifts have an objective source beyond the qualities of the people who administer or receive them.[^30]
 
 The Gospel identifies that ruler more fully. David’s son does not stand only within an earthly genealogy; David himself calls him Lord. Chrysostom’s argument leaves the descent intact while opening the hearer to Christ’s divine dignity. The Church’s one Lord therefore exceeds every teacher, officeholder, and circle of admirers. The community cannot possess him as a badge distinguishing its members from people it despises. His first command requires whole-hearted love of God, and its like requires love of the neighbor. Lordship governs the use of religious knowledge as well as the content of that knowledge.[^31]
 
@@ -289,7 +289,7 @@ The Secret and Postcommunion continue this plural prayer. The holy action is ask
 
 ### Common truth and different gifts
 
-The Communion gathers gift-bearers around the Lord. Augustine asks what it means to stand around a center that is common to all. Truth is not someone’s private possession, to be used to draw hearers into a faction. Those who recognize its common source offer in humility. The image is not a claim that all opinions are equally true. It concerns the ownership a proud person falsely claims over truth and the people whom truth should serve.[^35]
+The Communion gathers gift-bearers around the Lord. Augustine asks what it means to stand around a center that is common to all. Truth is not someone’s private possession, to be used to draw hearers into a faction. Those who recognize its common source offer in humility. Augustine’s image does not make all opinions equally true. It concerns the ownership a proud person falsely claims over truth and the people whom truth should serve.[^35]
 
 The next verse humbles princes. Augustine reads their spirit as pride and turns the demand for rule toward governance of one’s own body. Bellarmine retains the concrete subjection of kings’ lives to God. Neither local influence nor earthly sovereignty is the final measure of worth. The community’s center belongs to the Lord, who judges its most powerful members as surely as its weakest.
 
@@ -299,7 +299,7 @@ Within that common subjection, different ministries remain real. Chrysostom argu
 
 Literal.
 
-: Israel’s elected people, the afflicted psalmist, Daniel’s community, Paul’s addressees, and Jesus’ interlocutors have distinct settings. Their words include communal calling, real supplication, creation praise, and concrete commands. The liturgical assembly receives these different voices without making their historical speakers identical.
+: Israel’s elected people, the afflicted psalmist, Daniel’s community, Paul’s addressees, and Jesus’ interlocutors have distinct settings. Their words include communal calling, real supplication, creation praise, and concrete commands. The liturgical assembly receives these different voices; their historical speakers are not identical.
 
 Allegorical.
 
@@ -317,7 +317,7 @@ Anagogical.
 
 The person who enters confessing God’s justice is later commanded to pay what has been vowed. Between those moments the Mass asks for purification, proclaims love and lordship, intercedes for a people, and enacts mysteries that heal. This movement places religious speech under the claim of fidelity. What is acknowledged, requested, and offered must reach conduct. At the same time, the final prayer asks for a remedy: a faithful life is the fruit of mercy, never a substitute offered in order to make mercy unnecessary.
 
-Augustine’s exposition of Psalm 75 supplies a demanding account of that movement. Confession establishes peace with God when the sinner ceases defending what God condemns. Remembering the mercy already received keeps the renewed person from treating renewal as a forgotten event. Vows then require payment, and payment requires God’s help. Jerome’s reading of Daniel adds intercession and perseverance in prayer; Thomas explains why the holy action has power to nourish the life it calls forth. Together they show how worship can become continuing fidelity.[^38]
+Augustine’s exposition of Psalm 75 supplies a demanding account of that movement. Confession establishes peace with God when the sinner ceases defending what God condemns. The renewed person who remembers the mercy already received does not treat renewal as a forgotten event. Vows then require payment, and payment requires God’s help. Jerome’s reading of Daniel adds intercession and perseverance in prayer; Thomas explains why the holy action has power to nourish the life it calls forth. Together they show how worship can become continuing fidelity.[^38]
 
 ### Confession releases the defense of self
 
@@ -327,7 +327,7 @@ The Introit puts that truth at the threshold. The servant acknowledges justice a
 
 Paul’s prisoner voice tests the sincerity of that change. Worthy walking takes the unglamorous forms of humility, meekness, patience, and mutual endurance. A person may prefer a conspicuous religious offering to the quiet task of bearing another’s inconvenience. The Epistle makes the latter part of the former’s truth. A gift laid before God does not authorize contempt for the person beside the giver. The shared Lord and baptism name a relation that persists beyond the moment of offering.
 
-The Gradual places the giver within a prior gift. The people is chosen, the heavens are established by the Word, and their strength is the Spirit’s work. Praise therefore begins in reception. Bellarmine’s account of inseparable Trinitarian action leaves no opening for the worshipper to imagine that his offering initiates divine generosity. Augustine’s spiritual heavens likewise stand through the Word. The offering returns a received life to its source.[^40]
+The Gradual places the giver within a prior gift. The people is chosen, the heavens are established by the Word, and their strength is the Spirit’s work. Praise therefore begins in reception. In Bellarmine’s account of inseparable Trinitarian action, the worshipper’s offering does not initiate divine generosity. Augustine’s spiritual heavens likewise stand through the Word. The offering returns a received life to its source.[^40]
 
 ### The Lord addresses the giver
 
@@ -345,13 +345,13 @@ Jerome explains the sanctuary petition through promised restoration. Daniel seek
 
 At verse 20 Jerome offers the alternatives of personal confession as one of the people and humble identification with their guilt. Both make Daniel’s solidarity active. He speaks for the people before God; he does not merely deliver a verdict upon them from a safe distance. At verse 21 Jerome interprets the mention of evening sacrifice through prayer persevering from morning to evening. The appeal continues; the holy person’s attention is not exhausted by one eloquent sentence.[^43]
 
-That endurance has a moral analogue in the Epistle. To carry another in prayer while refusing every cost of patient charity would divide intercession from the good it seeks. A concrete application is to ask mercy for someone with whom one must also speak truthfully, then to seek a fitting time and manner for that speech. Thomas’s account of charitable correction allows both endurance and action. Prayer does not have to become an alternative to a necessary conversation, and the conversation does not have to become an exercise in punishment.[^44]
+That endurance has a moral analogue in the Epistle. To carry another in prayer while refusing every cost of patient charity would divide intercession from the good it seeks. Asking mercy for someone with whom one must also speak truthfully, then seeking a fitting time and manner for that speech, is one concrete form of it. Thomas’s account of charitable correction allows both endurance and action. Prayer does not have to become an alternative to a necessary conversation, and the conversation does not have to become an exercise in punishment.[^44]
 
 ### The holy action heals the one who offers
 
 The Secret refuses to leave the meaning of offering at the level of sincere intention. It asks that the sacred things enacted free the people from offenses past and future. Thomas locates sacramental efficacy in Christ present and in his Passion, and explains its mode through nourishment. Food does more than remind a hungry person that eating would be desirable; it sustains life. So the sacramental action gives grace and strengthens the charity whose practice the Gospel commands.[^45]
 
-The analogy also explains why preservation and subsequent freedom can coexist. Nourishment strengthens a living person without turning him into someone incapable of later harming himself. Thomas’s explicit account of free will prevents the future-directed petition from becoming advance absolution.
+The analogy also explains why preservation and subsequent freedom can coexist. Nourishment strengthens a living person without turning him into someone incapable of later harming himself. In Thomas’s explicit account of free will, the future-directed petition is no advance absolution.
 
 The faithful ask to be guarded and strengthened, and their later choices remain consequential. The holy action reaches the future by giving life to be lived, not by making future conduct irrelevant.[^46]
 
@@ -361,9 +361,9 @@ Augustine’s discussion of remembrance in Psalm 75 gives continuity to that lif
 
 At Communion the command to vow and pay brings speech to its test. Augustine distinguishes obligations common to Christians from particular vows freely undertaken. Ordinary fidelity is not reserved to people with a special religious commitment: refusal of hatred, pride, and dishonesty belongs to all. Particular commitments add their own demands, and the mere excellence of an undertaking does not excuse conduct that contradicts charity. His comparison of a humble married person and a proud consecrated virgin makes the point sharply: the higher profession does not make pride holy.[^48]
 
-This distinction permits an application without imposing a new private vow on every hearer. The present question may be how to honor an existing responsibility, speak honestly, carry out a promised service, or stop using another’s fault as permission for one’s own. A more dramatic promise can sometimes distract from the duty already at hand. Augustine’s warning concerns both making and fulfilling commitments; his encouragement rests on the help of the Lord to whom the commitment is made.
+Augustine’s distinction imposes no new private vow on every hearer. The present question may be how to honor an existing responsibility, speak honestly, carry out a promised service, or stop using another’s fault as permission for one’s own. A more dramatic promise can sometimes distract from the duty already at hand. Augustine’s warning concerns both making and fulfilling commitments; his encouragement rests on the help of the Lord to whom the commitment is made.
 
-The feared sovereign of the final chant prevents this fidelity from being reduced to an agreeable self-image. Bellarmine reads God’s power over rulers concretely; Augustine finds pride stripped of its false sovereignty and urges mastery over one’s own bodily conduct. Gifts do not purchase exemption from judgment. Those around the Lord offer in humility because the truth and the Lord at their center are common, not possessions their influence can control.[^49]
+Before the feared sovereign of the final chant, this fidelity is more than an agreeable self-image. Bellarmine reads God’s power over rulers concretely; Augustine finds pride stripped of its false sovereignty and urges mastery over one’s own bodily conduct. Gifts do not purchase exemption from judgment. Those around the Lord offer in humility because the truth and the Lord at their center are common, not possessions their influence can control.[^49]
 
 ### The four senses of faithful offering
 
@@ -389,9 +389,9 @@ The three readings agree that Christ’s lordship gives love its object and meas
 
 The same proper consequently carries a different weight in each. The Introit exposes dependence on mercy, places a singular servant among blessed walkers, and begins the abandonment of self-defense. The Gospel heals the separation of love from obedience, places the body under its one Lord, and addresses the giver whose offering cannot reserve the rest of life. The Communion makes healing accountable, gathers humble gift-bearers around a common center, and demands that commitments be fulfilled. The Postcommunion joins all three: vices are cured in persons, the prayer is made together, and the desired fruit lasts beyond the action just celebrated.
 
-The witnesses also differ in ways that enrich those questions. Bellarmine’s created heavens and Augustine’s spiritual heavens give different levels of meaning to the Gradual. Chrysostom’s Spirit-given union and Thomas’s ordered city emphasize vitality and structure. Jerome’s alternatives concerning Daniel’s confession preserve the difference between personal fault and representative solidarity. Bellarmine’s Lord over mortal kings and Augustine’s Lord over pride prevent judgment from becoming exclusively public or exclusively inward. These are not rival accounts of three different Masses. They show how the one formulary reaches the heart, the common body, and the life offered through worship.
+The witnesses also differ in ways that enrich those questions. Bellarmine’s created heavens and Augustine’s spiritual heavens give different levels of meaning to the Gradual. Chrysostom’s Spirit-given union and Thomas’s ordered city emphasize vitality and structure. Jerome’s alternatives concerning Daniel’s confession preserve the difference between personal fault and representative solidarity. Bellarmine’s Lord over mortal kings and Augustine’s Lord over pride make judgment both public and inward. These are not rival accounts of three different Masses. They show how the one formulary reaches the heart, the common body, and the life offered through worship.
 
-The last word belongs to the petition for an eternal remedy. Love’s present work is neither dismissed as impossible nor declared already finished. A people that asks to be healed can practice patient charity without pretending that its members have no wounds. A person who confesses the Lord can offer a faithful life without claiming that fidelity is self-created. The Mass commands, gives, judges, and heals within one approach to God.
+The last word belongs to the petition for an eternal remedy. The petition treats love’s present work as neither impossible nor already finished. A people that asks to be healed can practice patient charity without pretending that its members have no wounds. A person who confesses the Lord can offer a faithful life without claiming that fidelity is self-created. The Mass commands, gives, judges, and heals within one approach to God.
 
 ## Scriptural Date and Location
 
@@ -483,7 +483,7 @@ The source research received an independent workflow review before authoring. Th
 
 14. *New American Bible Revised Edition*, introductions to [Psalms](https://bible.usccb.org/bible/psalms/0) (superscriptions and broad chronological limit) and [Matthew](https://bible.usccb.org/bible/matthew/0) (the separately identified post-A.D. 70 critical boundary and its probabilistic qualification), official USCCB web edition, inspected 21 September 2026. Protected introductions summarized, not reproduced.
 
-**Last revised (UTC):** 2026-09-24T13:55:15Z
+**Last revised (UTC):** 2026-09-24T16:27:05Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
@@ -509,7 +509,7 @@ The source research received an independent workflow review before authoring. Th
 
 [^11]: Jerome, *Commentaria in Danielem*, book II, on Dan. 9:17,18,20; Latin in Migne, PL 25, retained transcription, paragraph containing vv. 13–21.
 
-[^12]: Thomas, *Summa theologiae*, III, q. 79, a. 6, corpus and ad 1; English Dominican translation in the registered Gutenberg Tertia edition.
+[^12]: Thomas, *Summa theologiae*, III, q. 79, a. 6, corpus and ad 1; English Dominican translation in the Gutenberg Tertia electronic edition.
 
 [^13]: Augustine, *Psalms*, Ps. 75, paragraphs 11–13; Bellarmine, *Psalms*, Ps. 75, commentary on vv. 11–12 (Vulgate vv. 12–13).
 
