@@ -1,6 +1,6 @@
 # Eighteenth Sunday in Ordinary Time, Year C — Research Scope
 
-**Formula:** `PC-S42-C`
+**Formula:** `PC-S44-C`
 **Occurrence witness:** 2025-08-03
 **Lectionary:** U.S. no. 114
 **Last updated:** 2026-07-29

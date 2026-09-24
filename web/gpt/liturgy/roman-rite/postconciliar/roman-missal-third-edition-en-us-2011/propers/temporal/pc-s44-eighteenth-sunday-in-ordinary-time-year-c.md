@@ -1,12 +1,12 @@
 # Eighteenth Sunday in Ordinary Time: Year C (Research Edition)
 
-*Source-audited proper exposition, PC-S42-C*
+*Source-audited proper exposition, PC-S44-C*
 
 **Eighteenth Sunday in Ordinary Time**
 
 *Year C*
 
-PC-S42-C
+PC-S44-C
 
 | **Textual unit** | **Text / citation** |
 |:-----------------|:-----------------------------------------------|
@@ -242,7 +242,7 @@ The barns store food, while either Communion alternative presents food as divine
 
 | **Field** | **Resolved liturgical instance** |
 |:----------------|:-------------------------------------------------|
-| Celebration | Eighteenth Sunday in Ordinary Time, Year C; ‘PC-S42-C’. |
+| Celebration | Eighteenth Sunday in Ordinary Time, Year C; ‘PC-S44-C’. |
 | Books | Roman Missal, Third Edition for the United States; U.S. Lectionary no. 114. |
 | Owner | Week XVIII shared formulary owner. |
 | Occurrence | Recurring Year C formula; 3 August 2025 is the checked official occurrence witness. |
@@ -282,6 +282,6 @@ This source-first guide treats the recurring U.S. Year C formula, not a parish r
 
 - Charles Ives, *Psalm 90* (1923–24).
 
-**Last revised (UTC):** 2026-09-24T17:09:32Z
+**Last revised (UTC):** 2026-09-24T18:04:15Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
