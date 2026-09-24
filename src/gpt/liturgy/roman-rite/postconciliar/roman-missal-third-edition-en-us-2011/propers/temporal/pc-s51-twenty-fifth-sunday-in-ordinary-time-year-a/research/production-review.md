@@ -1311,3 +1311,30 @@ study findings about the second themes page. Their owning stages repaired the
 issues and the downstream cold reviews reran before final build, web review,
 installation and terminal acceptance. The archive does not claim a commit,
 push, deployment or human delivery.
+
+## Post-acceptance house-voice revision — 24 September 2026
+
+On 24 September 2026 the maintainer decided to audit every proper leaf of both
+providers for the house-voice defect in `guidance/editorial.md` and to repair
+what the audit found, with independent review; that decision is the express
+provider authority `guidance/staleness.md` requires, for those rewrites only.
+Three passes changed this leaf's reader-facing prose after the terminal
+acceptance recorded above: the audit (`55a9e1e07`), the fixes the independent
+review returned (`81a466fee`), and the fixes its re-check returned
+(`05354b31d`). Sentences whose subject was the study, its apparatus or its own
+caution were rewritten with a text, a witness or a fact as subject; clauses
+disclaiming a compiler's intention were deleted; the prayer notes now say what
+each prayer asks; and the study-text and English-gap notes keep every rights
+and gap fact with the text as subject. The homily's spoken body is unchanged
+at 1,288 words.
+
+Every pass rebuilt and installed all three editions through Make with their
+component, page-position, printed-order and metadata checks passing, kept the
+page counts (20, 10 and 3) and every fixed page, regenerated the web edition,
+added a generation-metadata contribution, and re-snapshotted
+`research/artifacts.json` (schema 2) and `research/web-artifact.json`.
+`scripts/_proper_study.py check --phase artifacts` and `--phase publication`
+pass with `--require-presentation --require-format`. The review seals quoted
+above therefore describe the bytes accepted on 22 September; the current bytes
+are those the receipts record. Their release bindings are refreshed only by
+operator approval.

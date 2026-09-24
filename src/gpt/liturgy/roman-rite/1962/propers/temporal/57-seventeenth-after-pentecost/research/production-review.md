@@ -1388,3 +1388,30 @@ the terminal engine state, and exact terminal status and replay outputs. Fresh
 status and replay commands reproduce those terminal records; replay reports
 `recorded_file_intact: true`. This archive records the failed global gate and
 its real repair rather than presenting a synthetic straight-line success.
+
+## Post-acceptance house-voice revision — 24 September 2026
+
+On 24 September 2026 the maintainer decided to audit every proper leaf of both
+providers for the house-voice defect in `guidance/editorial.md` and to repair
+what the audit found, with independent review; that decision is the express
+provider authority `guidance/staleness.md` requires, for those rewrites only.
+Three passes changed this leaf's reader-facing prose after the terminal
+acceptance recorded above: the audit (`6690338ad`), the fixes the independent
+review returned (`30cea606b`), and the fixes its re-check returned
+(`cb1de59b3`). Sentences whose subject was the study, its apparatus or its own
+caution were rewritten with a text, a witness or a fact as subject; clauses
+disclaiming a compiler's intention were deleted; and each witness's words were
+kept his while the editor's inferences were marked as the editor's. Every
+difference, negative result, bound, denominator, rights basis and attribution
+stands. No homily file changed; its spoken text still counts 1,283 words.
+
+Every pass rebuilt and installed all three editions through Make with their
+component, page-position, printed-order and metadata checks passing, kept the
+page counts (22, 10 and 3) and every fixed page, regenerated the web edition,
+added a generation-metadata contribution, and re-snapshotted
+`research/artifacts.json` (schema 2) and `research/web-artifact.json`.
+`scripts/_proper_study.py check --phase artifacts` and `--phase publication`
+pass with `--require-presentation --require-format`. The review seals quoted
+above therefore describe the bytes accepted on 22 September; the current bytes
+are those the receipts record. Their release bindings are refreshed only by
+operator approval.
