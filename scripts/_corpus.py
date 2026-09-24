@@ -162,9 +162,9 @@ class Production:
     the run was bound to. ``install_commit`` states where the produced artifact
     actually entered the tree, which for a run of any length is a later commit.
 
-    The 187 install commits already in the corpus were backfilled from history
-    rather than recorded by the run that installed them, so the derivation is
-    written here in full and is reproducible from any checkout of this history:
+    The install commits in the corpus were backfilled from history rather than
+    recorded by the run that installed them, on 2026-09-01 by the commit now
+    named 595d47be3, and the derivation is written here in full:
 
         git log --follow --diff-filter=AM --format=%H -1 -- pdf/<leaf>.pdf
 
@@ -172,16 +172,36 @@ class Production:
 
     Three clauses and each is load-bearing. ``--follow`` crosses the renames
     the installed PDFs have been through — `185fb2324` renamed `doc/` to
-    `pdf/`, and `6d9b74ad9` and `d7fe32ba2` renumbered the propers registries.
+    `pdf/`, and `6d9b74ad9` and `d7fe32ba2` renumbered the propers registries
+    (55f3aba72, 9e94cde27 and 6ae23bc48 in the history since the rewrite).
     ``--diff-filter=AM`` is what keeps those three commits from being the
     answer: a pure rename touches the path without installing anything, and the
     commit that installed a PDF is the last one that added or modified its
-    bytes. ``-1`` takes that latest install. Run against every document in the
-    corpus this reproduces all 187 recorded values and no other rule tried
-    reproduces any of them.
+    bytes. ``-1`` takes that latest install. Run at the backfill commit it
+    reproduced every recorded value, 187 then and 186 since 4d84f142e gave the
+    GPT Fourteenth Sunday a production record with no install commit.
+
+    It cannot run in this history. The owner-authorized rewrite of 2026-09-04
+    (`guidance/repository.md`) removed `pdf/` and `doc/` from every commit and
+    renamed every commit, so the paths it walks were never tracked here and
+    each recorded value is a commit name from before the rewrite, which this
+    history does not hold. It was run against a clone of the pre-rewrite
+    history on 2026-09-23. The results are pinned in
+    `tools/tests/fixtures/generation-metadata/pre-rewrite-install-commits.json`,
+    which the tests hold the corpus to. Setting `TRIPTYCH_PRE_REWRITE_HISTORY`
+    to such a clone reruns the derivation against it.
+
+    That run also found eleven values stale. The Ecclesiastical Latin units
+    whose recorded value is 01fcbfda2 were reinstalled by a8d1720b2 (598e6da6e
+    here) on a branch the backfill had not yet merged. The merge that brought
+    those bytes in, 22ba03d94 (83341def6 here), left the records naming the
+    earlier install. They are reported and not corrected; the pins say which
+    they are.
 
     A leaf whose PDF is not installed has no install commit and records
-    `unknown`; there is nothing to derive and nothing is invented.
+    `unknown`; there is nothing to derive and nothing is invented. Nothing
+    installed since the rewrite can be given one either, because installed
+    PDFs are no longer tracked.
     """
 
     workflow_id: str | None

@@ -940,20 +940,86 @@ class RecordedOriginAgainstRunEvidenceTests(unittest.TestCase):
                 )
 
 
+PRE_REWRITE_PINS = (
+    ROOT / "tools" / "tests" / "fixtures" / "generation-metadata"
+    / "pre-rewrite-install-commits.json"
+)
+# Names a clone holding the history from before the rewrite of 2026-09-04, in
+# which `pdf/` and `doc/` are still tracked. Only such a history can rerun the
+# derivation; this one cannot, and says so rather than failing.
+PRE_REWRITE_HISTORY = "TRIPTYCH_PRE_REWRITE_HISTORY"
+
+
+def installs_in(history: Path, revision: str) -> dict[str, list[str]]:
+    """Every commit that added or modified each installed PDF, latest first.
+
+    The rule in `scripts/_corpus.py`, replayed in a single pass over the history
+    of `pdf/` and `doc/` at `revision`, resolving renames itself, so that holding
+    every record to it costs one `git log` rather than one per document.
+
+    `--diff-filter=AMR` keeps renames in the stream so the walk can follow a
+    path back through them, and only `A` and `M` entries are recorded as
+    installs: a pure rename moves a path without installing anything, which is
+    exactly the distinction that decides this derivation. Three commits in that
+    history are pure renames of the whole tree — `doc/` to `pdf/`, and two
+    renumberings of the propers registries — and without it every document in
+    the corpus would name one of them.
+    """
+    result = subprocess.run(
+        ["git", "-C", str(history), "log", "--format=C %H", "--name-status",
+         "--diff-filter=AMR", "-M", revision, "--", "pdf/", "doc/"],
+        capture_output=True, text=True, check=False,
+    )
+    if result.returncode:
+        raise AssertionError(
+            f"git log over {history} at {revision} failed: "
+            f"{result.stderr.strip()}"
+        )
+    # Walked newest first, so `alias` maps the name a path had at this point
+    # in history to the name it has at `revision`.
+    alias: dict[str, str] = {}
+    installs: dict[str, list[str]] = {}
+    commit = None
+    for line in result.stdout.splitlines():
+        if line.startswith("C "):
+            commit = line[2:].strip()
+            continue
+        if not line.strip():
+            continue
+        parts = line.split("\t")
+        if parts[0].startswith("R"):
+            old, new = parts[1], parts[2]
+            alias[old] = alias.pop(new, new)
+        else:
+            path = parts[1]
+            installs.setdefault(alias.get(path, path), []).append(commit)
+    return installs
+
+
 @unittest.skipUnless(shutil.which("git"), "git is required")
 class InstallCommitDerivationTests(unittest.TestCase):
     """The backfilled install commits, and the rule that produced them.
 
-    187 of them were derived from history rather than recorded by the run that
-    installed the artifact, and a derivation nobody can rerun is a derivation
-    nobody can check. The rule is written out in `scripts/_corpus.py` beside
-    the field it produces:
+    They were derived from the history of `pdf/` rather than recorded by the
+    run that installed each artifact, and a derivation nobody can rerun is a
+    derivation nobody can check. The rule is written out in
+    `scripts/_corpus.py` beside the field it produces:
 
         git log --follow --diff-filter=AM --format=%H -1 -- pdf/<...>.pdf
 
-    which this replays in a single pass over the history of `pdf/` and `doc/`,
-    resolving renames itself, so that holding 187 records to it costs one `git
-    log` rather than 187 of them.
+    The rewrite of 2026-09-04 took that history away: `pdf/` and `doc/` were
+    removed from every commit and every commit was renamed, so this history
+    holds neither the paths the rule walks nor the commits the records name.
+    The rule was therefore run on 2026-09-23 against a clone of the pre-rewrite
+    history, and its answers are pinned in `PRE_REWRITE_PINS` with the
+    revisions they were taken at. It was run at two revisions: the newest
+    pre-rewrite main commit that clone holds, which is what the record claims
+    (the latest install), and the backfill commit, which is what the values
+    were derived at.
+
+    In this history the corpus is held to the pins. The derivation itself
+    reruns only when `TRIPTYCH_PRE_REWRITE_HISTORY` names a pre-rewrite
+    clone.
     """
 
     @classmethod
@@ -962,74 +1028,145 @@ class InstallCommitDerivationTests(unittest.TestCase):
         import _corpus  # noqa: PLC0415
 
         cls.corpus = _corpus
-        cls.installs = cls._installs()
-
-    @classmethod
-    def _installs(cls) -> dict[str, list[str]]:
-        """Every commit that added or modified each installed PDF, latest first.
-
-        `--diff-filter=AMR` keeps renames in the stream so the walk can follow
-        a path back through them, and only `A` and `M` entries are recorded as
-        installs: a pure rename moves a path without installing anything, which
-        is exactly the distinction that decides this derivation. Three commits
-        in this history are pure renames of the whole tree — `doc/` to `pdf/`,
-        and two renumberings of the propers registries — and without it every
-        document in the corpus would name one of them.
-        """
-        result = subprocess.run(
-            ["git", "log", "--format=C %H", "--name-status",
-             "--diff-filter=AMR", "-M", "--", "pdf/", "doc/"],
-            cwd=ROOT, capture_output=True, text=True, check=False,
-        )
-        if result.returncode:
-            raise unittest.SkipTest(f"git log failed: {result.stderr.strip()}")
-        # Walked newest first, so `alias` maps the name a path had at this
-        # point in history to the name it has today.
-        alias: dict[str, str] = {}
-        installs: dict[str, list[str]] = {}
-        commit = None
-        for line in result.stdout.splitlines():
-            if line.startswith("C "):
-                commit = line[2:].strip()
-                continue
-            if not line.strip():
-                continue
-            parts = line.split("\t")
-            if parts[0].startswith("R"):
-                old, new = parts[1], parts[2]
-                alias[old] = alias.pop(new, new)
-            else:
-                path = parts[1]
-                installs.setdefault(alias.get(path, path), []).append(commit)
-        return installs
+        cls.pins = json.loads(PRE_REWRITE_PINS.read_text(encoding="utf-8"))
+        cls.documents = {}
+        cls.recorded = {}
+        for document in _corpus.documents(extents=False):
+            key = f"{document.provider}/{document.leaf}"
+            pdf = next(
+                (issue.pdf for issue in document.issues
+                 if issue.kind == _corpus.FULL and issue.pdf),
+                None,
+            )
+            cls.documents[key] = pdf
+            produced = document.provenance.produced
+            if produced is not None and produced.install_commit:
+                cls.recorded[key] = produced.install_commit
 
     def test_the_rule_is_written_where_the_field_is_defined(self) -> None:
         rule = (ROOT / "scripts" / "_corpus.py").read_text(encoding="utf-8")
         self.assertIn("--diff-filter=AM", rule)
         self.assertIn("--follow", rule)
+        self.assertIn(PRE_REWRITE_PINS.relative_to(ROOT).as_posix(), rule)
+        self.assertIn(PRE_REWRITE_HISTORY, rule)
+
+    def test_no_install_commit_is_recorded_that_was_not_derived(self) -> None:
+        """Nothing new appears, and `unknown` stays unknown.
+
+        No history since the rewrite can derive an install commit, so a value
+        a record gains now was not derived by anything; and a record may carry
+        only a value the pre-rewrite history derived for that same document at
+        that same path.
+        """
+        pinned = self.pins["documents"]
+        self.assertTrue(self.recorded, "no record carries an install commit")
+        for key, value in sorted(self.recorded.items()):
+            with self.subTest(document=key):
+                self.assertTrue(
+                    key in pinned,
+                    f"{key}: an install commit no pre-rewrite derivation produced; "
+                    "installed PDFs are not tracked since 2026-09-04, so a "
+                    "record written since has nothing to name and states "
+                    "`unknown`",
+                )
+                pin = pinned[key]
+                self.assertEqual(self.documents[key], pin["pdf"])
+                self.assertIn(
+                    value, {pin["at_backfill"], pin["latest_install"]},
+                    "the recorded value is not one the pre-rewrite history "
+                    "derived for this document",
+                )
 
     def test_every_recorded_install_commit_is_that_pdf_s_latest_install(self) -> None:
-        checked = 0
-        for document in self.corpus.documents(extents=False):
-            produced = document.provenance.produced
-            if produced is None or not produced.install_commit:
-                continue
-            pdf = next(
-                (issue.pdf for issue in document.issues
-                 if issue.kind == self.corpus.FULL and issue.pdf),
-                None,
-            )
-            with self.subTest(document=f"{document.provider}/{document.leaf}"):
-                self.assertIsNotNone(
-                    pdf,
-                    "an install commit states where an installed artifact "
-                    "entered the tree, so there must be one",
+        """What the field claims: the last commit that installed these bytes."""
+        main = self.pins["revisions"]["main"]["commit"]
+        for key, value in sorted(self.recorded.items()):
+            pin = self.pins["documents"].get(key)
+            if pin is None:
+                continue  # refused by the test above, not twice
+            with self.subTest(document=key):
+                self.assertEqual(
+                    value, pin["latest_install"],
+                    f"the latest install at pre-rewrite main {main[:9]} is "
+                    f"{pin['latest_install'][:9]}, not the recorded "
+                    f"{value[:9]}. {self.pins['finding']}",
                 )
-                history = self.installs.get(pdf, [])
-                self.assertTrue(history, f"no install of {pdf} is in history")
-                self.assertEqual(produced.install_commit, history[0])
-            checked += 1
-        self.assertEqual(checked, 187)
+
+    def test_every_pin_is_a_document_here_and_a_commit_this_history_renamed(
+        self,
+    ) -> None:
+        """The pins are pre-rewrite names, each tied to its name here."""
+        for key, pin in self.pins["documents"].items():
+            with self.subTest(document=key):
+                self.assertTrue(key in self.documents, f"a pin for no document: {key}")
+        named = {
+            commit
+            for pin in self.pins["documents"].values()
+            for commit in (pin["at_backfill"], pin["latest_install"])
+        } | {
+            revision["commit"]
+            for revision in self.pins["revisions"].values()
+        }
+        self.assertLessEqual(named, set(self.pins["commits"]))
+        for commit, entry in self.pins["commits"].items():
+            with self.subTest(commit=commit):
+                shown = subprocess.run(
+                    ["git", "log", "-1", "--format=%s%x00%aI",
+                     entry["post_rewrite"]],
+                    cwd=ROOT, capture_output=True, text=True, check=False,
+                )
+                self.assertEqual(
+                    shown.returncode, 0,
+                    f"{entry['post_rewrite']} is not in this history",
+                )
+                self.assertEqual(
+                    shown.stdout.strip().split("\0"),
+                    [entry["subject"], entry["author_date"]],
+                )
+
+    def test_the_pins_are_what_the_pre_rewrite_history_derives(self) -> None:
+        """The derivation, rerun, where a history that can run it is named."""
+        named = os.environ.get(PRE_REWRITE_HISTORY)
+        if not named:
+            self.skipTest(
+                f"set {PRE_REWRITE_HISTORY} to a clone holding the history "
+                "from before the 2026-09-04 rewrite to rerun the install-"
+                "commit derivation; this history lost pdf/ and doc/ in that "
+                "rewrite, so here the corpus is held to the pins instead"
+            )
+        history = Path(named)
+        for role, field in (("main", "latest_install"),
+                            ("backfill", "at_backfill")):
+            revision = self.pins["revisions"][role]["commit"]
+            with self.subTest(revision=role):
+                present = subprocess.run(
+                    ["git", "-C", str(history), "cat-file", "-e",
+                     f"{revision}^{{commit}}"],
+                    capture_output=True, check=False,
+                )
+                self.assertEqual(
+                    present.returncode, 0,
+                    f"{history} does not hold {revision}, so it is not the "
+                    "pre-rewrite history",
+                )
+                installs = installs_in(history, revision)
+                for key, pin in self.pins["documents"].items():
+                    with self.subTest(document=key):
+                        history_of = installs.get(pin["pdf"], [])
+                        self.assertTrue(
+                            history_of, f"no install of {pin['pdf']}")
+                        self.assertEqual(history_of[0], pin[field])
+            for commit, entry in self.pins["commits"].items():
+                with self.subTest(commit=commit):
+                    shown = subprocess.run(
+                        ["git", "-C", str(history), "log", "-1",
+                         "--format=%s%x00%aI", commit],
+                        capture_output=True, text=True, check=False,
+                    )
+                    self.assertEqual(
+                        shown.stdout.strip().split("\0"),
+                        [entry["subject"], entry["author_date"]],
+                    )
 
 
 @unittest.skipUnless(

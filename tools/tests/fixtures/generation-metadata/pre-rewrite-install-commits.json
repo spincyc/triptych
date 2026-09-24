@@ -1,0 +1,1031 @@
+{
+  "schema": 1,
+  "verified_on": "2026-09-23",
+  "history": "a clone of this repository holding the history from before the owner-authorized rewrite of 2026-09-04, in which pdf/ and doc/ are still tracked",
+  "derivation": "git log --follow --diff-filter=AM --format=%H -1 <revision> -- <pdf>",
+  "revisions": {
+    "main": {
+      "commit": "c8d27a7a5212f797b52ee14a57abffe179ae5fa7",
+      "role": "the newest pre-rewrite main commit that history holds; latest_install is the derivation at it. The thirteen commits after it up to the rewrite (2ed8f4214..a94664026 here) change no provider or shared TeX source."
+    },
+    "backfill": {
+      "commit": "a3ee46661f9e11f5ceda2fc72ca6f55500aa902b",
+      "role": "the commit that backfilled the recorded values; at_backfill is the derivation at it, and it reproduces every recorded value"
+    }
+  },
+  "finding": "Where at_backfill and latest_install differ, the recorded value is the backfill's and is stale at main. The eleven are Ecclesiastical Latin units that a8d1720b2 reinstalled on origin/main while the backfill ran on impl/proper-54-production; the merge 22ba03d94 (83341def6 here) brought those bytes in and left the records naming 01fcbfda2. Reported for a maintainer decision; the recorded metadata is not changed.",
+  "commits": {
+    "01fcbfda26917a4028d256f7a5d20a50cc847005": {
+      "post_rewrite": "ff95f25d2dffaece42afb1a6a81de9a5cd92067f",
+      "subject": "Complete publication and source audit tranche",
+      "author_date": "2026-07-29T06:28:02-05:00"
+    },
+    "22ba03d94062ced13af40883d83f3a04bdeca22a": {
+      "post_rewrite": "83341def645dce020f85809b6aa8e4ff9b659d1b",
+      "subject": "Reconcile the production line with origin/main",
+      "author_date": "2026-09-02T14:03:50-05:00"
+    },
+    "2b9233978bcd8e798467bffaccf699b96031d97a": {
+      "post_rewrite": "e4d868f99fdd0ab7af188ff48413971ac3bf331f",
+      "subject": "Restore distinct Ark editions and redraw the GPT plates",
+      "author_date": "2026-08-16T11:12:07-05:00"
+    },
+    "3a90988fcd882bd784785396ee3b18dbe6517fc3": {
+      "post_rewrite": "6bc82ed8e0cb9d1dd5183c0c282b5b5f52fcc091",
+      "subject": "Hard-review five Codex papers",
+      "author_date": "2026-07-29T10:10:53-05:00"
+    },
+    "55ed511c34c8984e70e910d8e256fa111ecc026b": {
+      "post_rewrite": "43a5ec803a0f1367ac462e41d52038e7b886631d",
+      "subject": "Normalize shared Unitatis redintegratio source reuse",
+      "author_date": "2026-07-24T09:19:06-05:00"
+    },
+    "657ff02570e6d58844738ce44e90b209c0768bdc": {
+      "post_rewrite": "7f48d08f074b73a0389c25d4cfdf569e73d098d6",
+      "subject": "Keep rights notices on final content pages",
+      "author_date": "2026-07-19T03:49:23-05:00"
+    },
+    "69841c232397c171487f906f9f5c6cd59369e6af": {
+      "post_rewrite": "5f889a9504f65b40b64b21d8ec9909cfa53a6ca3",
+      "subject": "Redevelop deficient GPT research studies",
+      "author_date": "2026-07-29T13:27:33-05:00"
+    },
+    "698eeffaf148a283cd0f3c74640aa90a66e33f4d": {
+      "post_rewrite": "0f007d69808ce3aa6bbbcfb81752acca016b2e81",
+      "subject": "Withdraw a false rights claim, and the artifact that was fifty years misdated",
+      "author_date": "2026-08-02T00:30:16-05:00"
+    },
+    "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d": {
+      "post_rewrite": "6e495cdb2da1e3a93b8b27458b34ec9596c22032",
+      "subject": "Apply approved staleness corrections",
+      "author_date": "2026-07-29T09:29:44-05:00"
+    },
+    "a3ee46661f9e11f5ceda2fc72ca6f55500aa902b": {
+      "post_rewrite": "595d47be3aa32d45d61739244ce2e47e505048e8",
+      "subject": "Record what produced each document, and say so where it is read",
+      "author_date": "2026-09-01T18:21:45-05:00"
+    },
+    "a8d1720b2c2c23242fc70d7a7e32a8738ab0c774": {
+      "post_rewrite": "598e6da6e031ab405e825ceaa51c2acc5aaeebd0",
+      "subject": "Complete recovered Missal remediation",
+      "author_date": "2026-08-27T23:48:08-05:00"
+    },
+    "b3b507986321a056b3a02616cab978a798bbaceb": {
+      "post_rewrite": "8ca9d40d48de571eb369f56622e2f44fe2c93f76",
+      "subject": "Deepen GPT Pentecost guides 25-27",
+      "author_date": "2026-08-21T10:29:08-05:00"
+    },
+    "b4b86b826817c4c154632760164c19cf2797347a": {
+      "post_rewrite": "5e52c8150c3d6945a95328c9385dc24ebbc55003",
+      "subject": "Finalize GPT document presentation",
+      "author_date": "2026-07-29T15:03:07-05:00"
+    },
+    "bee1d32dca8250883f27851a1589b6d4418df9d6": {
+      "post_rewrite": "b29187b7fa2686b99413b50f1b15326f7a1ef0fc",
+      "subject": "Redistill the Tenth Sunday synthesis",
+      "author_date": "2026-07-29T15:32:50-05:00"
+    },
+    "c8d27a7a5212f797b52ee14a57abffe179ae5fa7": {
+      "post_rewrite": "2ed8f42149231efe9fcc4e3764b579147c50f899",
+      "subject": "Preserve full-fidelity PDF review rasters",
+      "author_date": "2026-09-04T07:44:22-05:00"
+    },
+    "e216aad993d4853a1e93c34377eb935368069f97": {
+      "post_rewrite": "ffc9d0117905574143f927bca8d1a9d63aaeccc2",
+      "subject": "Publish the Claude Eleventh through Thirteenth Sundays after Pentecost",
+      "author_date": "2026-08-20T05:25:01-05:00"
+    }
+  },
+  "documents": {
+    "claude/articles/canon-law/clerical-celibacy-chastity-and-continence": {
+      "pdf": "pdf/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/articles/canon-law/natural-positive-divine-human-law": {
+      "pdf": "pdf/claude/articles/canon-law/natural-positive-divine-human-law.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/articles/faith/against-the-instrumentalists": {
+      "pdf": "pdf/claude/articles/faith/against-the-instrumentalists.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/articles/faith/at-the-end-of-every-why": {
+      "pdf": "pdf/claude/articles/faith/at-the-end-of-every-why.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/articles/faith/council-missal-and-crisis": {
+      "pdf": "pdf/claude/articles/faith/council-missal-and-crisis.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/articles/faith/four-last-things-01-death": {
+      "pdf": "pdf/claude/articles/faith/four-last-things-01-death.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/articles/faith/four-last-things-02-judgment": {
+      "pdf": "pdf/claude/articles/faith/four-last-things-02-judgment.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/articles/faith/four-last-things-03-hell": {
+      "pdf": "pdf/claude/articles/faith/four-last-things-03-hell.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/articles/faith/four-last-things-04-heaven": {
+      "pdf": "pdf/claude/articles/faith/four-last-things-04-heaven.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/articles/faith/freemasonry-and-the-catholic-church": {
+      "pdf": "pdf/claude/articles/faith/freemasonry-and-the-catholic-church.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/articles/faith/in-defense-of-the-particular": {
+      "pdf": "pdf/claude/articles/faith/in-defense-of-the-particular.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/articles/faith/ontological-vertigo": {
+      "pdf": "pdf/claude/articles/faith/ontological-vertigo.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/articles/faith/the-due-return": {
+      "pdf": "pdf/claude/articles/faith/the-due-return.pdf",
+      "at_backfill": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d",
+      "latest_install": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d"
+    },
+    "claude/articles/faith/trustful-surrender-to-divine-providence": {
+      "pdf": "pdf/claude/articles/faith/trustful-surrender-to-divine-providence.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/articles/scripture/abraham-and-the-daylight-stars": {
+      "pdf": "pdf/claude/articles/scripture/abraham-and-the-daylight-stars.pdf",
+      "at_backfill": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d",
+      "latest_install": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d"
+    },
+    "claude/articles/scripture/the-linen-cloths-at-the-empty-tomb": {
+      "pdf": "pdf/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/biographies/origen": {
+      "pdf": "pdf/claude/biographies/origen.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/biographies/saint-augustine-of-hippo": {
+      "pdf": "pdf/claude/biographies/saint-augustine-of-hippo.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/biographies/saint-jerome": {
+      "pdf": "pdf/claude/biographies/saint-jerome.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/biographies/saint-paul": {
+      "pdf": "pdf/claude/biographies/saint-paul.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/biographies/saint-peter": {
+      "pdf": "pdf/claude/biographies/saint-peter.pdf",
+      "at_backfill": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d",
+      "latest_install": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d"
+    },
+    "claude/biographies/saint-robert-bellarmine": {
+      "pdf": "pdf/claude/biographies/saint-robert-bellarmine.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/biographies/saint-thomas-aquinas": {
+      "pdf": "pdf/claude/biographies/saint-thomas-aquinas.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/biographies/tertullian": {
+      "pdf": "pdf/claude/biographies/tertullian.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/history/biblical-translations/01-septuagint": {
+      "pdf": "pdf/claude/history/biblical-translations/01-septuagint.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/history/biblical-translations/02-vulgate": {
+      "pdf": "pdf/claude/history/biblical-translations/02-vulgate.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/history/traditional-priestly-institutes/01-sspx": {
+      "pdf": "pdf/claude/history/traditional-priestly-institutes/01-sspx.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/history/traditional-priestly-institutes/02-fssp": {
+      "pdf": "pdf/claude/history/traditional-priestly-institutes/02-fssp.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass": {
+      "pdf": "pdf/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost": {
+      "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost.pdf",
+      "at_backfill": "698eeffaf148a283cd0f3c74640aa90a66e33f4d",
+      "latest_install": "698eeffaf148a283cd0f3c74640aa90a66e33f4d"
+    },
+    "claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost": {
+      "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost.pdf",
+      "at_backfill": "698eeffaf148a283cd0f3c74640aa90a66e33f4d",
+      "latest_install": "698eeffaf148a283cd0f3c74640aa90a66e33f4d"
+    },
+    "claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost": {
+      "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf",
+      "at_backfill": "e216aad993d4853a1e93c34377eb935368069f97",
+      "latest_install": "e216aad993d4853a1e93c34377eb935368069f97"
+    },
+    "claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost": {
+      "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf",
+      "at_backfill": "e216aad993d4853a1e93c34377eb935368069f97",
+      "latest_install": "e216aad993d4853a1e93c34377eb935368069f97"
+    },
+    "claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost": {
+      "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf",
+      "at_backfill": "e216aad993d4853a1e93c34377eb935368069f97",
+      "latest_install": "e216aad993d4853a1e93c34377eb935368069f97"
+    },
+    "claude/liturgy/roman-rite/1962/reference/assembling-the-mass": {
+      "pdf": "pdf/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/liturgy/roman-rite/1962/reference/liturgical-calendar": {
+      "pdf": "pdf/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice": {
+      "pdf": "pdf/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass": {
+      "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a": {
+      "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a": {
+      "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar": {
+      "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/theology/mariology/ark-of-the-covenant": {
+      "pdf": "pdf/claude/theology/mariology/ark-of-the-covenant.pdf",
+      "at_backfill": "2b9233978bcd8e798467bffaccf699b96031d97a",
+      "latest_install": "2b9233978bcd8e798467bffaccf699b96031d97a"
+    },
+    "claude/theology/mariology/champion": {
+      "pdf": "pdf/claude/theology/mariology/champion.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/theology/mariology/fatima": {
+      "pdf": "pdf/claude/theology/mariology/fatima.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/theology/mariology/guadalupe": {
+      "pdf": "pdf/claude/theology/mariology/guadalupe.pdf",
+      "at_backfill": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d",
+      "latest_install": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d"
+    },
+    "claude/theology/mariology/la-salette": {
+      "pdf": "pdf/claude/theology/mariology/la-salette.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/theology/mariology/lourdes": {
+      "pdf": "pdf/claude/theology/mariology/lourdes.pdf",
+      "at_backfill": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d",
+      "latest_install": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d"
+    },
+    "claude/theology/mariology/marian-dogmas": {
+      "pdf": "pdf/claude/theology/mariology/marian-dogmas.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "claude/theology/mariology/rosary": {
+      "pdf": "pdf/claude/theology/mariology/rosary.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/articles/canon-law/clerical-celibacy-chastity-and-continence": {
+      "pdf": "pdf/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/articles/canon-law/natural-positive-divine-human-law": {
+      "pdf": "pdf/gpt/articles/canon-law/natural-positive-divine-human-law.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/articles/faith/against-the-instrumentalists": {
+      "pdf": "pdf/gpt/articles/faith/against-the-instrumentalists.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/articles/faith/at-the-end-of-every-why": {
+      "pdf": "pdf/gpt/articles/faith/at-the-end-of-every-why.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/articles/faith/catholic-doctrinal-authority": {
+      "pdf": "pdf/gpt/articles/faith/catholic-doctrinal-authority.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/articles/faith/council-missal-and-crisis": {
+      "pdf": "pdf/gpt/articles/faith/council-missal-and-crisis.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/articles/faith/four-last-things-01-death": {
+      "pdf": "pdf/gpt/articles/faith/four-last-things-01-death.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/articles/faith/four-last-things-02-judgment": {
+      "pdf": "pdf/gpt/articles/faith/four-last-things-02-judgment.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/articles/faith/four-last-things-03-hell": {
+      "pdf": "pdf/gpt/articles/faith/four-last-things-03-hell.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/articles/faith/four-last-things-04-heaven": {
+      "pdf": "pdf/gpt/articles/faith/four-last-things-04-heaven.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/articles/faith/freemasonry-and-the-catholic-church": {
+      "pdf": "pdf/gpt/articles/faith/freemasonry-and-the-catholic-church.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/articles/faith/in-defense-of-the-particular": {
+      "pdf": "pdf/gpt/articles/faith/in-defense-of-the-particular.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/articles/faith/last-supper-calvary-and-the-mass": {
+      "pdf": "pdf/gpt/articles/faith/last-supper-calvary-and-the-mass.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/articles/faith/ontological-vertigo": {
+      "pdf": "pdf/gpt/articles/faith/ontological-vertigo.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/articles/faith/the-due-return": {
+      "pdf": "pdf/gpt/articles/faith/the-due-return.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/articles/faith/trustful-surrender-to-divine-providence": {
+      "pdf": "pdf/gpt/articles/faith/trustful-surrender-to-divine-providence.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/articles/scripture/abraham-and-the-daylight-stars": {
+      "pdf": "pdf/gpt/articles/scripture/abraham-and-the-daylight-stars.pdf",
+      "at_backfill": "b4b86b826817c4c154632760164c19cf2797347a",
+      "latest_install": "b4b86b826817c4c154632760164c19cf2797347a"
+    },
+    "gpt/articles/scripture/john-6-bread-from-heaven": {
+      "pdf": "pdf/gpt/articles/scripture/john-6-bread-from-heaven.pdf",
+      "at_backfill": "3a90988fcd882bd784785396ee3b18dbe6517fc3",
+      "latest_install": "3a90988fcd882bd784785396ee3b18dbe6517fc3"
+    },
+    "gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb": {
+      "pdf": "pdf/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb.pdf",
+      "at_backfill": "3a90988fcd882bd784785396ee3b18dbe6517fc3",
+      "latest_install": "3a90988fcd882bd784785396ee3b18dbe6517fc3"
+    },
+    "gpt/biographies/origen": {
+      "pdf": "pdf/gpt/biographies/origen.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/biographies/saint-augustine-of-hippo": {
+      "pdf": "pdf/gpt/biographies/saint-augustine-of-hippo.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/biographies/saint-jerome": {
+      "pdf": "pdf/gpt/biographies/saint-jerome.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/biographies/saint-paul": {
+      "pdf": "pdf/gpt/biographies/saint-paul.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/biographies/saint-peter": {
+      "pdf": "pdf/gpt/biographies/saint-peter.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/biographies/saint-robert-bellarmine": {
+      "pdf": "pdf/gpt/biographies/saint-robert-bellarmine.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/biographies/saint-thomas-aquinas": {
+      "pdf": "pdf/gpt/biographies/saint-thomas-aquinas.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/biographies/tertullian": {
+      "pdf": "pdf/gpt/biographies/tertullian.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/00-course-guide": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/00-course-guide.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/00-memory-workbook": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/00-memory-workbook.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/00-reference-grammar": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/00-reference-grammar.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "a8d1720b2c2c23242fc70d7a7e32a8738ab0c774"
+    },
+    "gpt/curriculums/ecclesiastical-latin/01-foundations/02-noun-systems": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/02-noun-systems.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "a8d1720b2c2c23242fc70d7a7e32a8738ab0c774"
+    },
+    "gpt/curriculums/ecclesiastical-latin/01-foundations/03-nouns-and-adjectives": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/03-nouns-and-adjectives.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "a8d1720b2c2c23242fc70d7a7e32a8738ab0c774"
+    },
+    "gpt/curriculums/ecclesiastical-latin/01-foundations/04-being-and-present-action": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/04-being-and-present-action.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "a8d1720b2c2c23242fc70d7a7e32a8738ab0c774"
+    },
+    "gpt/curriculums/ecclesiastical-latin/01-foundations/05-perfect-passive-and-deponents": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/05-perfect-passive-and-deponents.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "a8d1720b2c2c23242fc70d7a7e32a8738ab0c774"
+    },
+    "gpt/curriculums/ecclesiastical-latin/01-foundations/06-pronouns-prepositions-and-reading": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/06-pronouns-prepositions-and-reading.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "a8d1720b2c2c23242fc70d7a7e32a8738ab0c774"
+    },
+    "gpt/curriculums/ecclesiastical-latin/02-core-grammar/07-reference-comparison-and-number": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/07-reference-comparison-and-number.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "a8d1720b2c2c23242fc70d7a7e32a8738ab0c774"
+    },
+    "gpt/curriculums/ecclesiastical-latin/02-core-grammar/08-infinitives-participles-and-absolutes": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/08-infinitives-participles-and-absolutes.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/02-core-grammar/09-subjunctive-system-purpose-result": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/09-subjunctive-system-purpose-result.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "a8d1720b2c2c23242fc70d7a7e32a8738ab0c774"
+    },
+    "gpt/curriculums/ecclesiastical-latin/02-core-grammar/10-circumstance-conditions-characteristic": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/10-circumstance-conditions-characteristic.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "a8d1720b2c2c23242fc70d7a7e32a8738ab0c774"
+    },
+    "gpt/curriculums/ecclesiastical-latin/02-core-grammar/11-commands-wishes-verbal-nouns": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/11-commands-wishes-verbal-nouns.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "a8d1720b2c2c23242fc70d7a7e32a8738ab0c774"
+    },
+    "gpt/curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "a8d1720b2c2c23242fc70d7a7e32a8738ab0c774"
+    },
+    "gpt/curriculums/ecclesiastical-latin/03-missal-reading/13-reader-method-and-ordinary": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/13-reader-method-and-ordinary.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/03-missal-reading/14-orations-and-petitions": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/14-orations-and-petitions.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/03-missal-reading/15-lessons-epistles-and-gospels": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/15-lessons-epistles-and-gospels.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/03-missal-reading/17-temporal-sanctoral-and-commons": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/17-temporal-sanctoral-and-commons.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/03-missal-reading/18-holy-week-requiem-and-complete-mass": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/18-holy-week-requiem-and-complete-mass.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-imitation": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-imitation.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/01-textual-prosody": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/01-textual-prosody.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/02-hexameter": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/02-hexameter.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/03-elegiac-verse": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/03-elegiac-verse.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/04-lyric-meters": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/04-lyric-meters.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/05-christian-poetics": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/05-christian-poetics.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-and-sequences": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-and-sequences.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/07-poetic-commentary": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/07-poetic-commentary.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/08-verse-composition": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/08-verse-composition.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/05-stage-assessments/01-foundations": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/01-foundations.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/05-stage-assessments/02-core-grammar": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/02-core-grammar.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced": {
+      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/devotions/novenas/00-ascension-to-pentecost": {
+      "pdf": "pdf/gpt/devotions/novenas/00-ascension-to-pentecost.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/devotions/novenas/00-ascension-to-pentecost-daily-prayer": {
+      "pdf": "pdf/gpt/devotions/novenas/00-ascension-to-pentecost-daily-prayer.pdf",
+      "at_backfill": "657ff02570e6d58844738ce44e90b209c0768bdc",
+      "latest_install": "657ff02570e6d58844738ce44e90b209c0768bdc"
+    },
+    "gpt/devotions/novenas/10-our-lady-of-mount-carmel": {
+      "pdf": "pdf/gpt/devotions/novenas/10-our-lady-of-mount-carmel.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer": {
+      "pdf": "pdf/gpt/devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer.pdf",
+      "at_backfill": "657ff02570e6d58844738ce44e90b209c0768bdc",
+      "latest_install": "657ff02570e6d58844738ce44e90b209c0768bdc"
+    },
+    "gpt/history/biblical-translations/01-septuagint": {
+      "pdf": "pdf/gpt/history/biblical-translations/01-septuagint.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/history/biblical-translations/02-vulgate": {
+      "pdf": "pdf/gpt/history/biblical-translations/02-vulgate.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/history/catholic-exorcism/01-history-and-current-practice": {
+      "pdf": "pdf/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf",
+      "at_backfill": "b4b86b826817c4c154632760164c19cf2797347a",
+      "latest_install": "b4b86b826817c4c154632760164c19cf2797347a"
+    },
+    "gpt/history/catholic-parish-histories/01-st-stanislaus-milwaukee": {
+      "pdf": "pdf/gpt/history/catholic-parish-histories/01-st-stanislaus-milwaukee.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/history/catholic-parish-histories/02-st-anthony-willits": {
+      "pdf": "pdf/gpt/history/catholic-parish-histories/02-st-anthony-willits.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/history/traditional-priestly-institutes/01-sspx": {
+      "pdf": "pdf/gpt/history/traditional-priestly-institutes/01-sspx.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/history/traditional-priestly-institutes/02-fssp": {
+      "pdf": "pdf/gpt/history/traditional-priestly-institutes/02-fssp.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/history/traditional-priestly-institutes/03-icksp": {
+      "pdf": "pdf/gpt/history/traditional-priestly-institutes/03-icksp.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf",
+      "at_backfill": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d",
+      "latest_install": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d"
+    },
+    "gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/1962/propers/temporal/41-second-after-pentecost": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/41-second-after-pentecost.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/1962/propers/temporal/43-third-after-pentecost": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/43-third-after-pentecost.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/1962/propers/temporal/44-fourth-after-pentecost": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/44-fourth-after-pentecost.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/1962/propers/temporal/45-fifth-after-pentecost": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/45-fifth-after-pentecost.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/1962/propers/temporal/46-sixth-after-pentecost": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/46-sixth-after-pentecost.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/1962/propers/temporal/47-seventh-after-pentecost": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/47-seventh-after-pentecost.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost.pdf",
+      "at_backfill": "bee1d32dca8250883f27851a1589b6d4418df9d6",
+      "latest_install": "bee1d32dca8250883f27851a1589b6d4418df9d6"
+    },
+    "gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf",
+      "at_backfill": "b3b507986321a056b3a02616cab978a798bbaceb",
+      "latest_install": "b3b507986321a056b3a02616cab978a798bbaceb"
+    },
+    "gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf",
+      "at_backfill": "b3b507986321a056b3a02616cab978a798bbaceb",
+      "latest_install": "b3b507986321a056b3a02616cab978a798bbaceb"
+    },
+    "gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf",
+      "at_backfill": "b3b507986321a056b3a02616cab978a798bbaceb",
+      "latest_install": "b3b507986321a056b3a02616cab978a798bbaceb"
+    },
+    "gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass.pdf",
+      "at_backfill": "b4b86b826817c4c154632760164c19cf2797347a",
+      "latest_install": "b4b86b826817c4c154632760164c19cf2797347a"
+    },
+    "gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards.pdf",
+      "at_backfill": "b4b86b826817c4c154632760164c19cf2797347a",
+      "latest_install": "b4b86b826817c4c154632760164c19cf2797347a"
+    },
+    "gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual.pdf",
+      "at_backfill": "b4b86b826817c4c154632760164c19cf2797347a",
+      "latest_install": "b4b86b826817c4c154632760164c19cf2797347a"
+    },
+    "gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf",
+      "at_backfill": "b4b86b826817c4c154632760164c19cf2797347a",
+      "latest_install": "b4b86b826817c4c154632760164c19cf2797347a"
+    },
+    "gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf",
+      "at_backfill": "b4b86b826817c4c154632760164c19cf2797347a",
+      "latest_install": "b4b86b826817c4c154632760164c19cf2797347a"
+    },
+    "gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf",
+      "at_backfill": "b4b86b826817c4c154632760164c19cf2797347a",
+      "latest_install": "b4b86b826817c4c154632760164c19cf2797347a"
+    },
+    "gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf",
+      "at_backfill": "b4b86b826817c4c154632760164c19cf2797347a",
+      "latest_install": "b4b86b826817c4c154632760164c19cf2797347a"
+    },
+    "gpt/liturgy/roman-rite/1962/reference/assembling-the-mass": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/1962/reference/liturgical-calendar": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.pdf",
+      "at_backfill": "b4b86b826817c4c154632760164c19cf2797347a",
+      "latest_install": "b4b86b826817c4c154632760164c19cf2797347a"
+    },
+    "gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf",
+      "at_backfill": "b4b86b826817c4c154632760164c19cf2797347a",
+      "latest_install": "b4b86b826817c4c154632760164c19cf2797347a"
+    },
+    "gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf",
+      "at_backfill": "b4b86b826817c4c154632760164c19cf2797347a",
+      "latest_install": "b4b86b826817c4c154632760164c19cf2797347a"
+    },
+    "gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.pdf",
+      "at_backfill": "b4b86b826817c4c154632760164c19cf2797347a",
+      "latest_install": "b4b86b826817c4c154632760164c19cf2797347a"
+    },
+    "gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf",
+      "at_backfill": "b4b86b826817c4c154632760164c19cf2797347a",
+      "latest_install": "b4b86b826817c4c154632760164c19cf2797347a"
+    },
+    "gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.pdf",
+      "at_backfill": "b4b86b826817c4c154632760164c19cf2797347a",
+      "latest_install": "b4b86b826817c4c154632760164c19cf2797347a"
+    },
+    "gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s27-most-holy-body-and-blood-of-christ-year-a": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s27-most-holy-body-and-blood-of-christ-year-a.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-eleventh-sunday-in-ordinary-time-year-a": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-eleventh-sunday-in-ordinary-time-year-a.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-twelfth-sunday-in-ordinary-time-year-a": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-twelfth-sunday-in-ordinary-time-year-a.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-thirteenth-sunday-in-ordinary-time-year-a": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-thirteenth-sunday-in-ordinary-time-year-a.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-fourteenth-sunday-in-ordinary-time-year-a": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-fourteenth-sunday-in-ordinary-time-year-a.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-fifteenth-sunday-in-ordinary-time-year-a": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-fifteenth-sunday-in-ordinary-time-year-a.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a.pdf",
+      "at_backfill": "69841c232397c171487f906f9f5c6cd59369e6af",
+      "latest_install": "69841c232397c171487f906f9f5c6cd59369e6af"
+    },
+    "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.pdf",
+      "at_backfill": "69841c232397c171487f906f9f5c6cd59369e6af",
+      "latest_install": "69841c232397c171487f906f9f5c6cd59369e6af"
+    },
+    "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.pdf",
+      "at_backfill": "69841c232397c171487f906f9f5c6cd59369e6af",
+      "latest_install": "69841c232397c171487f906f9f5c6cd59369e6af"
+    },
+    "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar": {
+      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/theology/heresies/heresies-in-catholic-history": {
+      "pdf": "pdf/gpt/theology/heresies/heresies-in-catholic-history.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/theology/mariology/angelus": {
+      "pdf": "pdf/gpt/theology/mariology/angelus.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/theology/mariology/apparitions": {
+      "pdf": "pdf/gpt/theology/mariology/apparitions.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/theology/mariology/ark-of-the-covenant": {
+      "pdf": "pdf/gpt/theology/mariology/ark-of-the-covenant.pdf",
+      "at_backfill": "2b9233978bcd8e798467bffaccf699b96031d97a",
+      "latest_install": "2b9233978bcd8e798467bffaccf699b96031d97a"
+    },
+    "gpt/theology/mariology/champion": {
+      "pdf": "pdf/gpt/theology/mariology/champion.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/theology/mariology/doctrinal-authority": {
+      "pdf": "pdf/gpt/theology/mariology/doctrinal-authority.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/theology/mariology/fatima": {
+      "pdf": "pdf/gpt/theology/mariology/fatima.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/theology/mariology/guadalupe": {
+      "pdf": "pdf/gpt/theology/mariology/guadalupe.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/theology/mariology/la-salette": {
+      "pdf": "pdf/gpt/theology/mariology/la-salette.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/theology/mariology/lourdes": {
+      "pdf": "pdf/gpt/theology/mariology/lourdes.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/theology/mariology/marian-dogmas": {
+      "pdf": "pdf/gpt/theology/mariology/marian-dogmas.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/theology/mariology/regina-coeli": {
+      "pdf": "pdf/gpt/theology/mariology/regina-coeli.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/theology/mariology/rosary": {
+      "pdf": "pdf/gpt/theology/mariology/rosary.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/theology/sacraments": {
+      "pdf": "pdf/gpt/theology/sacraments.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    },
+    "gpt/theology/sacraments-at-a-glance": {
+      "pdf": "pdf/gpt/theology/sacraments-at-a-glance.pdf",
+      "at_backfill": "55ed511c34c8984e70e910d8e256fa111ecc026b",
+      "latest_install": "55ed511c34c8984e70e910d8e256fa111ecc026b"
+    },
+    "gpt/theology/virtues": {
+      "pdf": "pdf/gpt/theology/virtues.pdf",
+      "at_backfill": "01fcbfda26917a4028d256f7a5d20a50cc847005",
+      "latest_install": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+    }
+  }
+}
