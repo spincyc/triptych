@@ -89,6 +89,14 @@ release approval.
   them over the tree archived at `860d6d902`, and new tests hold the live
   corpus to no refusals. The check-content-preflight example transcripts run
   over a synthetic probe leaf.
+- Example transcripts: `make check-examples` diverged on 42 of 254 at the
+  start (44 at `860d6d902`); every divergence was read and recaptured as
+  count or state drift, with no regression found, and it now diverges on
+  none. The source-family-migration bootstrap and refresh examples run over a
+  fixture again, as their captions say; the public-alpha check transcripts
+  record their count and effective-date lines cut short, so a publication or
+  approval no longer breaks them; the scripture-chronology guidance shows the
+  current coverage output.
 - Derived records refreshed (both publication inventories, the document
   catalogue, the source-family migration ledger); the production records of
   Claude 57, 58, pc-s51 and GPT 57, pc-s51 record the post-acceptance passes.
@@ -96,8 +104,11 @@ release approval.
   (Recommended)" (`81b6c2e2d`), and the release, selecting "Approve the
   release (Recommended)" with the note "Approve the release of the corpus as
   it stands on 2026-09-24, after the house-voice audit, the approved GPT
-  repairs and the open-issue resolution." (`84b3ac694`).
-  `check-release-bindings` reports 0 stale.
+  repairs and the open-issue resolution." (`84b3ac694`). The public-alpha
+  transcript fix changed a release-bound file, so on the maintainer's further
+  approval ("Yes, all four steps (Recommended)") that one binding was
+  re-recorded and the approval re-run with the same note (`131518382`,
+  `aa217f4fc`). `check-release-bindings` reports 0 stale.
 
 **Coordinator rulings a maintainer may want to revisit.**
 
