@@ -204,6 +204,18 @@ Colossians remains semi-continuous. Its overlap is nevertheless textually strong
 
 The Gospel’s closing contrast does not supply an accounting formula. “Rich toward God” is defined narratively by its opposite: a life reduced to self-address, abundance, storage, and postponed enjoyment. Read with the acclamation and either Communion alternative, the contrast can be heard as receptive poverty, sharing rather than enclosure, and life received as gift. It does not authorize contempt for creation, romanticize involuntary poverty, or excuse neglect of dependents.
 
+## The Propers: Notable and Quotable
+
+- The 2014 *Homiletic Directory* 145–149 identifies the rich fool with this Sunday and explains the Old Testament–Gospel harmony while preserving the Apostle’s semi-continuous course.
+
+- Francis’s Angelus of 4 August 2019 redirects the inheritance dispute toward wealth’s power to enslave and the obligation to share.
+
+- Basil’s homily *I Will Pull Down My Barns*, especially §7 (PG 31, 276B–277A), turns surplus into a question of stewardship toward the poor; this is direct ancient reception, not Luke’s narrated circumstance.
+
+- Rembrandt’s 1627 *Parable of the Rich Man* relocates the barns into a nocturnal scene of solitary money-accounting (Gemäldegalerie Berlin, inv. 828 D).
+
+- Charles Ives’s *Psalm 90* (1923–24) gives musical afterlife to the psalm’s petition to number our days; score and recordings are not reproduced.
+
 ## The Propers: Interpretive Possibilities
 
 > **Editorial status**
@@ -225,18 +237,6 @@ Qoheleth’s unnamed successor, Luke’s disputing brothers, and Colossians’ r
 ### Food that cannot be hoarded
 
 The barns store food, while either Communion alternative presents food as divine gift or Christ himself. The sacramental movement may turn possession toward reception and communion. It must not collapse Eucharistic theology into an economic metaphor.
-
-## The Propers: Notable and Quotable
-
-- The 2014 *Homiletic Directory* 145–149 identifies the rich fool with this Sunday and explains the Old Testament–Gospel harmony while preserving the Apostle’s semi-continuous course.
-
-- Francis’s Angelus of 4 August 2019 redirects the inheritance dispute toward wealth’s power to enslave and the obligation to share.
-
-- Basil’s homily *I Will Pull Down My Barns*, especially §7 (PG 31, 276B–277A), turns surplus into a question of stewardship toward the poor; this is direct ancient reception, not Luke’s narrated circumstance.
-
-- Rembrandt’s 1627 *Parable of the Rich Man* relocates the barns into a nocturnal scene of solitary money-accounting (Gemäldegalerie Berlin, inv. 828 D).
-
-- Charles Ives’s *Psalm 90* (1923–24) gives musical afterlife to the psalm’s petition to number our days; score and recordings are not reproduced.
 
 ## Appendix: Liturgical Resolution
 
@@ -276,6 +276,6 @@ This source-first guide treats the recurring U.S. Year C formula, not a parish r
 
 - Dicastery for Divine Worship, *Homiletic Directory* 145–149.
 
-**Last revised (UTC):** 2026-07-29T18:04:07Z
+**Last revised (UTC):** 2026-09-24T11:41:39Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
