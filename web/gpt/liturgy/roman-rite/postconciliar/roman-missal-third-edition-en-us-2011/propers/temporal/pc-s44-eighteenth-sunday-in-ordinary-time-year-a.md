@@ -1,12 +1,12 @@
 # Eighteenth Sunday in Ordinary Time: Year A (Research Edition)
 
-*Source-audited proper exposition, PC-S42-A*
+*Source-audited proper exposition, PC-S44-A*
 
 **Eighteenth Sunday in Ordinary Time**
 
 *Year A*
 
-PC-S42-A
+PC-S44-A
 
 | **Textual unit** | **Text / citation** |
 |:-----------------|:-----------------------------------------------|
@@ -326,7 +326,7 @@ The feeding ends in visible abundance, but Romans locates security in inseparabl
 
 | **Field** | **Resolved liturgical instance** |
 |:----------------|:-------------------------------------------------|
-| Formula and occurrence | `PC-S42-A`; Eighteenth Sunday in Ordinary Time; 2 August 2026; green. |
+| Formula and occurrence | `PC-S44-A`; Eighteenth Sunday in Ordinary Time; 2 August 2026; green. |
 | Books and territory | *Roman Missal, Third Edition*, English for the United States, and U.S. *Lectionary for Mass*, Second Typical Edition, Volume I, no. 112. |
 | Calendar and cycle | General Roman Calendar as implemented in the dioceses of the United States; Sunday Year A. |
 | Formulary ownership | Ordinary Time Week XVIII owner; this leaf owns the Year A Lectionary composition and dated occurrence, not the reusable Missal formulary. |
@@ -360,6 +360,6 @@ The feeding ends in visible abundance, but Romans locates security in inseparabl
 
 - Matthew Arnold, [*Dover Beach*](https://anthology.lib.virginia.edu/exist/apps/LiC/work/Arnold/arnold-dover-beach.xml), lines 29–37, in *New Poems* (Macmillan, 1867), Literature in Context first-edition transcription.
 
-**Last revised (UTC):** 2026-09-24T16:45:48Z
+**Last revised (UTC):** 2026-09-24T18:04:15Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

@@ -1,4 +1,4 @@
-# Research Scope — PC-S42-A
+# Research Scope — PC-S44-A
 
 **As of:** 2026-07-29
 

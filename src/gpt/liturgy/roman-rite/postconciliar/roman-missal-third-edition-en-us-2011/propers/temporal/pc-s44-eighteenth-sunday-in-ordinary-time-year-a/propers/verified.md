@@ -1,4 +1,4 @@
-# PC-S42-A — Leaf Composition Audit
+# PC-S44-A — Leaf Composition Audit
 
 **Owner:** `../shared/ordinary-time/weeks/18/propers/verified.md`
 **Collated:** 2026-07-28

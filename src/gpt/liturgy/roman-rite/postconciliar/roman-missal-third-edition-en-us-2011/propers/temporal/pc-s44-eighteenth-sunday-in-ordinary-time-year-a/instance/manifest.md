@@ -1,4 +1,4 @@
-# Liturgical Instance — PC-S42-A
+# Liturgical Instance — PC-S44-A
 
 **Publication slug:** `pc-s44-eighteenth-sunday-in-ordinary-time-year-a`
 **Resolved occurrence:** Sunday, 2026-08-02
@@ -8,7 +8,7 @@
 
 | Field | Resolution |
 | --- | --- |
-| Parent / formula | `PC-S42` / `PC-S42-A` |
+| Parent / formula | `PC-S44` / `PC-S44-A` |
 | Registry | `guidance/liturgy/postconciliar-propers-registry.md`; edition formula dispositions and 2026 occurrence record |
 | Celebration | Eighteenth Sunday in Ordinary Time |
 | Rank / season / color | Sunday in Ordinary Time / Ordinary Time / green |
