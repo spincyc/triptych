@@ -483,7 +483,7 @@ The source research received an independent workflow review before authoring. Th
 
 14. *New American Bible Revised Edition*, introductions to [Psalms](https://bible.usccb.org/bible/psalms/0) (superscriptions and broad chronological limit) and [Matthew](https://bible.usccb.org/bible/matthew/0) (the separately identified post-A.D. 70 critical boundary and its probabilistic qualification), official USCCB web edition, inspected 21 September 2026. Protected introductions summarized, not reproduced.
 
-**Last revised (UTC):** 2026-09-22T00:08:03Z
+**Last revised (UTC):** 2026-09-24T13:55:15Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
