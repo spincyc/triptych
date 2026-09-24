@@ -10,7 +10,9 @@ class ReaderFacingReleaseStateGuidanceTest(unittest.TestCase):
     return (ROOT / path).read_text(encoding="utf-8")
 
   def test_universal_policy_keeps_release_state_out_of_reader_editions(self):
-    editorial = self.read("guidance/editorial.md")
+    # Compared as prose, not as line layout: a7c2cede0 rewrapped the paragraph
+    # holding the safety sentence without changing a word of it.
+    editorial = " ".join(self.read("guidance/editorial.md").split())
     self.assertIn(
       "Internal release and distribution states such as `alpha`, `hold`, "
       "`review`,",
