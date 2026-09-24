@@ -1590,23 +1590,23 @@ universe distinct-scripture-content
 verses 37171
 runs 1964
 status attestation-only 1792
-status attribution-only 0
-status composition-only 22692
-status dated 12687
+status attribution-only 898
+status composition-only 21476
+status dated 13005
 status not-alignable 0
 status research-pending 0
 status textually-distinct 0
 status undated-in-tradition 0
-relation composition 27692
+relation composition 26400
 relation final-formation 1249
 relation historical-setting 2934
 relation narrated-event 7977
-relation prophecy-given 1801
+relation prophecy-given 2134
 relation prophetic-referent 297
 relation retrospective-event 413
 relation superscription-setting 277
 relation textual-attestation 2489
-relation traditional-attribution 102
+relation traditional-attribution 1394
 relation utterance 1476
 system greek 1356
 system vulgate 35809
@@ -1617,8 +1617,8 @@ universe-limitation note missing_dates and --require-date apply only to loci enu
 unenumerable-system nab this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
 unenumerable-system nova-vulgata this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
 unenumerable-system septuagint this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
-multiple-relations 8884
-event-assertions 12687
+multiple-relations 9202
+event-assertions 13005
 alternatives 14378
 ```
 
@@ -1632,23 +1632,23 @@ universe supported-scripture-addresses
 verses 42587
 runs 2308
 status attestation-only 1796
-status attribution-only 0
-status composition-only 26418
-status dated 14373
+status attribution-only 898
+status composition-only 25202
+status dated 14691
 status not-alignable 0
 status research-pending 0
 status textually-distinct 0
 status undated-in-tradition 0
-relation composition 33104
+relation composition 31812
 relation final-formation 1249
 relation historical-setting 4191
 relation narrated-event 7991
-relation prophecy-given 1801
+relation prophecy-given 2134
 relation prophetic-referent 532
 relation retrospective-event 488
 relation superscription-setting 553
 relation textual-attestation 2493
-relation traditional-attribution 204
+relation traditional-attribution 1496
 relation utterance 1528
 system greek 2156
 system hebrew 2528
@@ -1660,8 +1660,8 @@ universe-limitation note missing_dates and --require-date apply only to loci enu
 unenumerable-system nab this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
 unenumerable-system nova-vulgata this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
 unenumerable-system septuagint this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
-multiple-relations 10613
-event-assertions 14373
+multiple-relations 10931
+event-assertions 14691
 alternatives 14834
 ```
 
