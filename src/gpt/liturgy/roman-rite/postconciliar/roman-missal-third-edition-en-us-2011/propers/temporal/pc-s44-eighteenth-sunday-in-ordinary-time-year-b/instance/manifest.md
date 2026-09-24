@@ -1,9 +1,9 @@
-# Liturgical Instance — PC-S42-B
+# Liturgical Instance — PC-S44-B
 
 | Field | Resolution |
 | --- | --- |
 | Publication slug | `pc-s44-eighteenth-sunday-in-ordinary-time-year-b` |
-| Parent / formula | `PC-S42` / `PC-S42-B` |
+| Parent / formula | `PC-S44` / `PC-S44-B` |
 | Stable registry | `guidance/liturgy/postconciliar-propers-registry.md` |
 | Edition registry | `../../../registry/formula-dispositions.md` |
 | Celebration | Eighteenth Sunday in Ordinary Time |

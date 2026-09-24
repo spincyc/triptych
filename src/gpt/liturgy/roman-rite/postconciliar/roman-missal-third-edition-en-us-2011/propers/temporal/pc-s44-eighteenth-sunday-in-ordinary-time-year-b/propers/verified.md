@@ -1,6 +1,6 @@
-# PC-S42-B — Leaf Composition Audit
+# PC-S44-B — Leaf Composition Audit
 
-**Formula:** `PC-S42-B`
+**Formula:** `PC-S44-B`
 **Lectionary:** U.S. no. 113
 **Collated:** 2026-07-28
 
