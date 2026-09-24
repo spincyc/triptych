@@ -114,7 +114,7 @@ The witnesses also keep distinct what later Christian speech can too easily coll
 
 ### A room, a promise, and a received messenger (*First Reading, Psalm, Gospel*)
 
-The Shunammite’s hospitality is concrete and sustained: food, recognition, household consultation, and a small furnished room. The appointed omissions move from her welcome to Elisha’s question about recompense and the servant’s observation that she has no son. The promise is gift, not payment produced by a technique. The larger narrative, in which the son later dies and is restored, intensifies the story’s dependence on God beyond the selected verses.
+The Shunammite’s hospitality is concrete and sustained: food, recognition, household consultation, and a small furnished room. The appointed omissions move from her welcome to Elisha’s question about recompense and the servant’s observation that she has no son. The promise is gift, not payment produced by a technique. The larger narrative, in which the son later dies and is restored, intensifies the story’s dependence on God beyond the excerpt.
 
 The narrative’s details make discernment part of hospitality. The woman recognizes Elisha as a holy man through repeated encounter; she consults her husband; the room contains only what continuing welcome requires. Her practice is generous but ordered, neither spectacle nor indiscriminate access. When Elisha asks what might be done for her, she first answers from the security of her own people. Gehazi, not the woman, identifies childlessness. The promise therefore does not appear as the price she named for service.
 
@@ -124,7 +124,7 @@ Origen’s material preserved in *Philocalia* XXVI names Elisha’s very small c
 
 Origen’s use bears particularly on the promised son. He cites the sparse room to show that fidelity cannot be measured by external abundance; the later gift therefore cannot be converted into a universal contract of material return. The Shunammite’s welcome is good before any recompense is named, and its goodness does not depend on forecasting the narrative’s miracle.
 
-Augustine’s *On the Soul and Its Origin* III.7 discusses only the later revival scene at 4:34, rejecting the claim that Elisha’s breath became the child’s soul. That is illuminating reuse of the sequel, not exegesis of the appointed unit. The reception is thus mixed rather than blank: identifiable Greek and Latin reception exists for the room and material support, but none of the witnesses found in the corpora searched gives a continuous exposition of the whole selected narrative or its modern correlation with Matthew.
+Augustine’s *On the Soul and Its Origin* III.7 discusses only the later revival scene at 4:34, rejecting the claim that Elisha’s breath became the child’s soul. That is illuminating reuse of the sequel, not exegesis of the appointed unit. The reception is thus mixed rather than blank: identifiable Greek and Latin reception exists for the room and material support, but none of the witnesses found in the corpora searched gives a continuous exposition of the whole selected narrative.
 
 Psalm 89 praises mercy forever, confesses a covenant, blesses those who know the festal cry, and identifies God as strength and shield. Yet the full psalm later laments apparent collapse of the Davidic promise. The response is therefore praise with eschatological tension, not evidence that covenant life is free of contradiction or grief.
 
@@ -248,6 +248,6 @@ The Prayer after Communion names the Eucharistic gift as the offered and receive
 
 - Edith Wharton, [“A Cup of Cold Water”](https://www.gutenberg.org/cache/epub/9190/pg9190-images.html), in *The Greater Inclination* (New York: Charles Scribner’s Sons, 1899), Project Gutenberg eBook 9190; story and U.S. public-domain status checked 2026-07-19.
 
-**Last revised (UTC):** 2026-09-24T15:07:17Z
+**Last revised (UTC):** 2026-09-24T16:34:06Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
