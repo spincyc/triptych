@@ -38,7 +38,11 @@ const STATES = Object.freeze({
   postRead: '#date=2026-11-29&missal=postconciliar&bible=douay-rheims&orations=la&mass=advent-1&ordinary=0&ordinary-lang=en&eucharistic-prayer=ep-ii',
   postMissal: '#date=2026-11-29&missal=postconciliar&bible=douay-rheims&orations=la&mass=advent-1&ordinary=1&ordinary-lang=en&rubrics=1&eucharistic-prayer=ep-ii',
   postWhy: '#date=2026-11-29&missal=postconciliar&bible=douay-rheims&orations=la&mass=advent-1&ordinary=1&ordinary-lang=en&rubrics=1&why=1&eucharistic-prayer=ep-ii',
-  partial: '#date=2026-01-01&missal=roman-1962&bible=douay-rheims&orations=la&mass=octava-nativitatis-domini&ordinary=1&ordinary-lang=en&rubrics=1',
+  // A day whose appointed Latin is still withheld: St John Vianney's own Collect
+  // is rights-withheld 1962 matter. It was the Octave of Christmas until the
+  // Latin backfill published those orations (3f86eed68 and its sanctoral
+  // sequels), after which that day reports only the uncollated Ordinary.
+  partial: '#date=2026-08-08&missal=roman-1962&bible=douay-rheims&orations=la&mass=s-ioannis-mariae-vianney-confessoris&ordinary=1&ordinary-lang=en&rubrics=1',
   territorialEpiphany: '#date=2026-01-04&missal=postconciliar&bible=douay-rheims&orations=la&ordinary=0&why=0',
   territorialEpiphanyWhy: '#date=2026-01-04&missal=postconciliar&bible=douay-rheims&orations=la&ordinary=0&why=1',
   propers: '#missal=roman-1962&type=seasonal&mass=advent-1&bible=douay-rheims&orations=la',
