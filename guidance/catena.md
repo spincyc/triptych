@@ -708,3 +708,81 @@ A match is a finding aid. It does not show what the commentator says of the
 shared elements, and a study still reads the locus and binds it. This section
 governs finding commentators. How a study weighs or uses what it finds is not
 decided here.
+
+---
+
+## 13. One text under two names: parallels
+
+A sermon that circulated under several fathers' names can reach this library
+twice. Two editors each print it among their own father's works, and each
+printing becomes a passage record, correctly. Hung twice, the chain would show
+one voice as two witnesses, under two authors and two dates, and a reader would
+take a single text for agreement between two fathers.
+
+The case that raised it. Migne's Patrologia Latina 52 prints *De paralytico
+curato* as Peter Chrysologus's Sermo 50, and Patrologia Latina 57 prints the
+same text as Maximus of Turin's Homilia CVIII. PL 57's admonition on the homily
+reports the evidence [sourced]:
+
+- the Roman Breviary reads part of it under Chrysologus's name on the
+  Eighteenth Sunday after Pentecost;
+- Pauli's Venice edition of 1750 ascribed it to Chrysologus, as Combefis had
+  done long before;
+- the manuscripts name John Chrysostom (Vatican 6451), Severian (Monte Cassino
+  102) and Maximus (Vatican 4222 and Laurentianus 36 Plut. XVII);
+- the editor, Bruni, declines to impugn the commonly received ascription, even
+  as he prints the homily among Maximus's.
+
+Both passage records carry that evidence in their `notes`. The Breviary lesson
+and the manuscripts are not held here.
+
+Decided by the maintainer on 2026-09-23:
+
+> **Rule 15.** When the library holds one text under two or more disputed
+> attributions, the catena hangs it **once**, under the attribution the
+> liturgical books and the received tradition use. The dispute stays in the
+> apparatus of the row that is hung. The other records stay unmapped and
+> cross-referenced.
+
+Each clause is made checkable, and each way of doing so was a choice:
+
+- **"The same text" is declared, never guessed.** Records are one text only
+  where a `parallels` entry in `src/sources/commentary/fragment-loci.yaml` says
+  so. The entry names every record that carries the text, and its
+  `identity_basis` cites where the identity is shown: a shared incipit, a
+  shared reading, an editor's admonition. No likeness of incipit, locus or
+  wording is joined automatically; §11 gives the reason: a join made by
+  resemblance is how two works become one. An undeclared duplicate is
+  therefore not caught, and hangs twice until someone declares it.
+- **The received attribution is chosen in a fixed order.** First come the
+  liturgical books: the name under which the Breviary or the Missal reads the
+  text. Here that is Chrysologus, in the Matins lessons of the Eighteenth
+  Sunday after Pentecost. Where the books are silent, the received ascription
+  as the editions report it decides. That includes an editor who prints the
+  text under another name and reports the received one, as PL 57's does. The
+  entry's `received_basis` states the ground. This decides where the text **hangs**, not who wrote it.
+  Rule 7 still forbids the page to settle that silently.
+- **The dispute is visible on the hung row.** That row's `text_date_basis` or
+  `basis` must name every other record of the parallel by its passage id. Both
+  fields travel with the fragment's words to the page. A row that stops naming
+  the other claimants fails the check rather than falling silent.
+- **The other records are unmapped, not removed.** They stay passage records,
+  with their editions and their notes. They take no row under `fragments` and
+  none under `blocked`, since a blocked row also places a record on the page.
+  The `parallels` entry is their cross-reference to the row that is hung. The
+  cross-reference lives there, beside the records, and not in a source record,
+  for the reason §7 gives: editing a record moves its `source_fingerprint`.
+
+`catena check` refuses four breaches of the rule:
+
+- a record not hung that stands under `fragments` or `blocked`;
+- a parallel whose hung record is not a fragment;
+- a parallel naming a passage the library does not hold;
+- a hung row whose `text_date_basis` and `basis` do not name every other
+  record.
+
+It also refuses an entry too malformed to be asked those questions: fewer than
+two distinct records, a hung record that is not one of them, an empty basis, or
+a record declared in two parallels. The Chrysologus row names
+`passage.maximus-of-turin.homiliae.1862-migne-pl-57.homilia-108` in its
+`text_date_basis`, and Homilia CVIII has no row.

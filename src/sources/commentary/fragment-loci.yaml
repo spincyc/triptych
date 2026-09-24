@@ -33,6 +33,8 @@
 #           carry `composed` — and each such row says which it is.
 #   Rule 8  `catena check` refuses a fragment whose work-alias group has a
 #           canonical title naming a book the group does not everywhere name.
+#   Rule 15 one text held under two or more disputed attributions is declared
+#           in `parallels` below and hung once, under the received one.
 #
 # The author is derived and never stored: it is the `responsible` of the
 # work record `work_id` names. `work_alias.author` is half of the key into
@@ -70,6 +72,39 @@ author_aliases:
 schema: triptych-commentary-fragment-loci/v1
 updated: '2026-09-23'
 numbering: vulgate
+# ONE TEXT UNDER TWO NAMES (Rule 15). Where the library holds one text as two or
+# more passage records under disputed attributions, the catena hangs it once,
+# under the attribution the liturgical books and the received tradition use.
+# An entry is the declaration that the records carry one text. That identity is
+# never inferred from resemblance. `passage_ids` lists every record of the
+# text. `hung` is the one with a row under `fragments`, and `received_basis`
+# says why it is the received one: the liturgical books first, then the
+# received ascription as the editions report it. `identity_basis` cites where
+# the records are shown to be one text. The records not hung keep no row here
+# or under `blocked`, and this entry is their cross-reference. The hung row
+# carries the dispute: its `text_date_basis` or `basis` names every other record
+# by id. `catena check` refuses an entry that breaks any of these.
+parallels:
+- passage_ids:
+  - passage.peter-chrysologus.sermones.1894-garnier-migne-pl-52.sermo-50
+  - passage.maximus-of-turin.homiliae.1862-migne-pl-57.homilia-108
+  hung: passage.peter-chrysologus.sermones.1894-garnier-migne-pl-52.sermo-50
+  received_basis: 'Peter Chrysologus. The liturgical books: the admonition PL 57 prints before
+    the homily (leaf n254) reports that the Roman Breviary reads part of it on the Eighteenth
+    Sunday after Pentecost ''sub nomine S. Petri Chrysologi''. The editions: that admonition
+    also reports that Pauli''s Venice edition of 1750 ascribed it to him, as Combefis had long
+    before, and its editor declines to impugn the commonly received ascription (''communiter
+    receptam non audeam impugnare sententiam'') while reporting manuscripts that name John
+    Chrysostom (Vat. 6451), Severian (Monte Cassino 102) and Maximus (Vat. 4222, Laur. 36 Plut.
+    XVII). PL 52 prints it as Chrysologus''s Sermo 50. The Breviary lesson and the manuscripts
+    are not held here; these are the admonition''s statements.'
+  identity_basis: 'Both printings open ''Christum in humanis actibus divina gessisse mysteria'',
+    PL 52 in col. 339 (leaf n171) and PL 57 in col. 502 (leaf n254), and both read ''Merito
+    Christus offerentium fidem non respicit'', PL 52 in col. 341 and PL 57 in col. 504 (leaf
+    n255). PL 57''s admonition on Homilia CVIII ties it to Chrysologus: it reports the Breviary
+    reading it under his name and Pauli''s 1750 edition of Chrysologus ascribing it to him. The
+    two printings are not collated as a whole. The notes of both passage records carry the
+    evidence.'
 fragments:
 - passage_id: passage.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-1
   work_id: work.basil-of-caesarea.homiliae-in-hexaemeron

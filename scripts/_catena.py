@@ -111,6 +111,23 @@ FRAGMENT_FIELDS = {
 # exactly when the work states no `composed` year; see `validate`. Both are
 # refused when they merely restate what is already stated elsewhere.
 OPTIONAL_FRAGMENT_FIELDS = {"constituent_of", "text_date", "text_date_basis"}
+
+# Rule 15. One text the library holds under two or more disputed attributions
+# is declared once, in `parallels`, and hung once, under the attribution the
+# liturgical books and the received tradition use. `received_basis` says why
+# that member is hung; `identity_basis` says where the texts are shown to be one.
+PARALLEL_FIELDS = {"passage_ids", "hung", "received_basis", "identity_basis"}
+
+# Where a hung row's apparatus must carry the dispute: the two fields that reach
+# the page with the fragment's words (`CARRIED_WITH_TEXT`, as `basis` and
+# `date_basis`).
+DISPUTE_FIELDS = ("text_date_basis", "basis")
+
+# A passage id as it stands in prose. Ids are lowercase and end on a letter or
+# a digit, so a sentence's closing period is not read as part of one, and
+# `...homilia-10` is not found inside `...homilia-108`.
+PASSAGE_REFERENCE = re.compile(r"passage\.[a-z0-9._-]*[a-z0-9]")
+
 EXTENT_FIELDS = {
     "token",
     "first_chapter",
@@ -942,6 +959,7 @@ def validate(root: Path = ROOT) -> list[str]:
         errors.extend(_passage_errors(sources, label, passage_id, work_id, fragment))
 
     errors.extend(_blocked_errors(sources, data, where, seen))
+    errors.extend(_parallel_errors(sources, data, where))
     errors.extend(_solved_case_errors(data, where, seen))
     errors.extend(
         _absence_errors(
@@ -1005,6 +1023,111 @@ def _blocked_errors(
                     f"{label} names {passage_id}, which is also rendered above; a "
                     f"fragment is blocked or held, never both"
                 )
+    return errors
+
+
+def _parallel_errors(sources: Sources, data: dict[str, Any], where: str) -> list[str]:
+    """Rule 15: one text under several disputed names is hung once, and says so.
+
+    PL 52 prints De paralytico curato as Chrysologus's Sermo 50 and PL 57 prints
+    the same text as Maximus of Turin's Homilia CVIII. Hung twice, the chain
+    would show one voice as two witnesses. So the identity is declared rather
+    than guessed, one member is hung under the received attribution, the
+    others stay passage records with no row, and the hung row's own apparatus
+    names them, so the page cannot fall silent about the other claimants.
+
+    Four refusals carry the rule: a member not hung that stands in `fragments`
+    (or in `blocked`, which also places it on the page); a hung member that is
+    not a fragment; a member the library does not hold; and a hung row whose
+    `text_date_basis` and `basis` do not name every other member by id. The
+    rest refuse an entry too malformed for those four to be asked of it.
+    """
+    errors: list[str] = []
+    rows = {
+        str(fragment.get("passage_id")): fragment
+        for fragment in data.get("fragments") or ()
+        if isinstance(fragment, dict)
+    }
+    withheld = {
+        str(passage_id)
+        for entry in data.get("blocked") or ()
+        if isinstance(entry, dict) and isinstance(entry.get("passage_ids"), list)
+        for passage_id in entry["passage_ids"]
+    }
+    declared_in: dict[str, int] = {}
+    for ordinal, entry in enumerate(data.get("parallels") or (), start=1):
+        label = f"{where}: parallels[{ordinal}]"
+        if not isinstance(entry, dict) or set(entry) != PARALLEL_FIELDS:
+            errors.append(
+                f"{label} needs passage_ids, hung, received_basis and identity_basis"
+            )
+            continue
+        for field in ("received_basis", "identity_basis"):
+            if not str(entry.get(field) or "").strip():
+                errors.append(f"{label} needs its {field}")
+        members = entry.get("passage_ids")
+        if (
+            not isinstance(members, list)
+            or len(members) < 2
+            or len({str(one) for one in members}) != len(members)
+        ):
+            errors.append(
+                f"{label} needs two or more distinct passage_ids; one record under "
+                f"one name is not a parallel"
+            )
+            continue
+        members = [str(one) for one in members]
+        for passage_id in members:
+            if passage_id not in sources.passages:
+                errors.append(
+                    f"{label} names {passage_id}, which is not a passage record in "
+                    f"the source library"
+                )
+            if passage_id in declared_in:
+                errors.append(
+                    f"{label} names {passage_id}, which parallels[{declared_in[passage_id]}] "
+                    f"already names; one text is declared once"
+                )
+            else:
+                declared_in[passage_id] = ordinal
+
+        hung = str(entry.get("hung") or "")
+        if hung not in members:
+            errors.append(
+                f"{label} hangs {hung or '(nothing)'}, which is not one of its passage_ids"
+            )
+            continue
+        others = [one for one in members if one != hung]
+        for passage_id in others:
+            if passage_id in rows:
+                errors.append(
+                    f"{label}: {passage_id} is also hung as a fragment, so one text "
+                    f"stands twice under two names; {hung} is hung and the others "
+                    f"stay unmapped (Rule 15)"
+                )
+            if passage_id in withheld:
+                errors.append(
+                    f"{label}: {passage_id} also stands in blocked, which places it "
+                    f"on the page; {hung} is hung and the others stay unmapped (Rule 15)"
+                )
+        row = rows.get(hung)
+        if row is None:
+            errors.append(
+                f"{label} hangs {hung}, which is not a fragment above; the received "
+                f"attribution is the one the catena renders (Rule 15)"
+            )
+            continue
+        named = set(
+            PASSAGE_REFERENCE.findall(
+                " ".join(str(row.get(field) or "") for field in DISPUTE_FIELDS)
+            )
+        )
+        silent = [one for one in others if one not in named]
+        if silent:
+            errors.append(
+                f"{label}: the row for {hung} does not carry the dispute; its "
+                f"{' and '.join(DISPUTE_FIELDS)} name no {', '.join(silent)} (Rule 15)"
+            )
     return errors
 
 

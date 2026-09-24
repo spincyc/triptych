@@ -8,6 +8,7 @@ happens to hold today.
 """
 from __future__ import annotations
 
+import copy
 import importlib.machinery
 import importlib.util
 import json
@@ -1093,6 +1094,218 @@ class BlockedTests(CatenaFixture):
         ]
         path.write_text(yaml.safe_dump(data, sort_keys=False), encoding="utf-8")
         self.assertIn("blocked or held, never both", " ".join(self.errors()))
+
+
+class ParallelTests(CatenaFixture):
+    """Rule 15: one text held under two disputed names is hung once.
+
+    Reduced from the case that raised it. PL 52 prints De paralytico curato as
+    Chrysologus's Sermo 50 and PL 57 prints the same text as Maximus of Turin's
+    Homilia CVIII. Here 11.7 stands for the first and 11.8 for the second. They
+    share an edition because nothing in the rule turns on the edition, and a
+    second work would bring its own alias, voice and absence rows into a fixture
+    about something else. Each refusal is asserted as the ONLY fault in its
+    fixture, so no test can pass on a neighbouring error.
+    """
+
+    HUNG = "passage.augustine.de-civitate-dei.dods-1871.11.7"
+    OTHER = "passage.augustine.de-civitate-dei.dods-1871.11.8"
+    THIRD = "passage.augustine.de-civitate-dei.dods-1871.11.9"
+    UNKNOWN = "passage.nowhere.sermones.sermo-1"
+    EXTENT = {
+        "token": "Gen",
+        "first_chapter": 1,
+        "first_verse": 3,
+        "last_chapter": 1,
+        "last_verse": 5,
+    }
+
+    def setUp(self) -> None:
+        super().setUp()
+        for locus in ("11.8", "11.9"):
+            self.write(
+                "src/sources/works/augustine/de-civitate-dei/editions/dods-1871/"
+                f"passages/{locus}.toml",
+                f"""
+                schema = 1
+                record_type = "passage"
+                id = "passage.augustine.de-civitate-dei.dods-1871.{locus}"
+                edition_id = "edition.augustine.de-civitate-dei.dods-1871"
+                artifact_id = "artifact.augustine.de-civitate-dei.dods-1871.body"
+                locus = "{locus}"
+                states = ["cataloged", "acquired", "inspected"]
+                context = "The same words printed under another name."
+                text = "And first of all, indeed, light was made by the word of God."
+                """,
+            )
+
+    def disputed(self, *others: str) -> str:
+        return (
+            "Books XI-XIV were issued about 417, if the text is his; "
+            + " and ".join(others)
+            + " prints it under another name."
+        )
+
+    def parallel(self, passage_ids: list[str] | None = None, **fields: object) -> dict:
+        entry: dict[str, object] = {
+            "passage_ids": passage_ids or [self.HUNG, self.OTHER],
+            "hung": self.HUNG,
+            "received_basis": "The Breviary reads it under his name.",
+            "identity_basis": "Both printings open with the same words.",
+        }
+        entry.update(fields)
+        return entry
+
+    def row(self, passage_id: str) -> dict:
+        return {
+            "passage_id": passage_id,
+            "work_id": "work.augustine.de-civitate-dei",
+            "work_alias": {"author": "Augustine of Hippo", "work": "De civitate Dei"},
+            "text_date": 417,
+            "text_date_basis": "Books XI-XIV were issued about 417.",
+            "numbering": "vulgate",
+            "extent": dict(self.EXTENT),
+            "basis": "The excerpt expounds the making of light.",
+        }
+
+    def declare(
+        self,
+        *parallels: dict,
+        also_hung: tuple[dict, ...] = (),
+        blocked: tuple[dict, ...] = (),
+        **hung_row: object,
+    ) -> None:
+        import yaml
+
+        hung_row.setdefault("text_date_basis", self.disputed(self.OTHER))
+        self.write_edges(**hung_row)
+        path = self.root / "src/sources/commentary/fragment-loci.yaml"
+        data = yaml.safe_load(path.read_text(encoding="utf-8"))
+        data["fragments"].extend(also_hung)
+        if blocked:
+            data["blocked"] = list(blocked)
+        data["parallels"] = list(parallels)
+        path.write_text(yaml.safe_dump(data, sort_keys=False), encoding="utf-8")
+
+    def only(self, needle: str) -> None:
+        errors = self.errors()
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn(needle, errors[0])
+
+    def test_one_text_hung_once_under_its_received_name_validates(self) -> None:
+        self.declare(self.parallel())
+        self.assertEqual(self.errors(), [])
+        with self.subTest("the dispute carried in basis, closing a sentence"):
+            self.declare(
+                self.parallel(),
+                text_date_basis="Books XI-XIV were issued about 417.",
+                basis=f"The excerpt expounds the making of light. It also stands as {self.OTHER}.",
+            )
+            self.assertEqual(self.errors(), [])
+
+    def test_an_unhung_member_hung_as_a_fragment_is_refused(self) -> None:
+        self.declare(self.parallel(), also_hung=(self.row(self.OTHER),))
+        self.only(f"{self.OTHER} is also hung as a fragment")
+        with self.subTest("placed on the page as blocked"):
+            self.declare(
+                self.parallel(),
+                blocked=(
+                    {
+                        "passage_ids": [self.OTHER],
+                        "work_alias": {
+                            "author": "Augustine of Hippo",
+                            "work": "De civitate Dei",
+                        },
+                        "numbering": "vulgate",
+                        "extent": dict(self.EXTENT),
+                        "reason": "A reason.",
+                        "fix": "A fix.",
+                    },
+                ),
+            )
+            self.only(f"{self.OTHER} also stands in blocked")
+
+    def test_a_parallel_whose_hung_member_is_not_a_fragment_is_refused(self) -> None:
+        self.declare(self.parallel([self.OTHER, self.THIRD], hung=self.OTHER))
+        self.only(f"hangs {self.OTHER}, which is not a fragment above")
+
+    def test_a_parallel_naming_an_unknown_passage_is_refused(self) -> None:
+        self.declare(
+            self.parallel([self.HUNG, self.UNKNOWN]),
+            text_date_basis=self.disputed(self.UNKNOWN),
+        )
+        self.only(f"names {self.UNKNOWN}, which is not a passage record")
+
+    def test_a_hung_row_that_does_not_carry_the_dispute_is_refused(self) -> None:
+        self.declare(self.parallel(), text_date_basis="Books XI-XIV were issued about 417.")
+        self.only("does not carry the dispute")
+        with self.subTest("a longer id is not the id"):
+            self.declare(self.parallel(), text_date_basis=self.disputed(self.OTHER + "0"))
+            self.only("does not carry the dispute")
+
+    def test_an_entry_too_malformed_to_ask_is_refused(self) -> None:
+        cases = (
+            ("one record", (self.parallel([self.HUNG]),), "two or more distinct passage_ids"),
+            (
+                "one record twice",
+                (self.parallel([self.HUNG, self.HUNG]),),
+                "two or more distinct passage_ids",
+            ),
+            (
+                "hung outside its members",
+                (self.parallel(hung=self.THIRD),),
+                "which is not one of its passage_ids",
+            ),
+            ("no identity basis", (self.parallel(identity_basis=" "),), "needs its identity_basis"),
+            (
+                "an unknown field",
+                (self.parallel(note="x"),),
+                "needs passage_ids, hung, received_basis and identity_basis",
+            ),
+            (
+                "one record in two parallels",
+                (self.parallel(), self.parallel([self.HUNG, self.THIRD])),
+                "which parallels[1] already names",
+            ),
+        )
+        for name, parallels, needle in cases:
+            with self.subTest(name):
+                self.declare(*parallels, text_date_basis=self.disputed(self.OTHER, self.THIRD))
+                self.only(needle)
+
+
+class ParallelCorpusTests(unittest.TestCase):
+    """Rule 15 against the repository's own edge, on the case that raised it."""
+
+    SERMO = "passage.peter-chrysologus.sermones.1894-garnier-migne-pl-52.sermo-50"
+    HOMILIA = "passage.maximus-of-turin.homiliae.1862-migne-pl-57.homilia-108"
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.data = _catena.load_edges(ROOT)
+        cls.sources = _catena.load_sources(ROOT)
+
+    def test_sermo_50_is_hung_once_under_chrysologus(self) -> None:
+        entries = [
+            entry
+            for entry in self.data.get("parallels") or ()
+            if self.SERMO in entry["passage_ids"]
+        ]
+        self.assertEqual(len(entries), 1)
+        self.assertEqual(entries[0]["hung"], self.SERMO)
+        self.assertIn(self.HOMILIA, entries[0]["passage_ids"])
+        hung = {fragment["passage_id"] for fragment in self.data["fragments"]}
+        self.assertIn(self.SERMO, hung)
+        self.assertNotIn(self.HOMILIA, hung)
+        self.assertEqual(_catena._parallel_errors(self.sources, self.data, "edge"), [])
+
+    def test_the_sermo_50_row_is_refused_once_it_stops_naming_homilia_108(self) -> None:
+        data = copy.deepcopy(self.data)
+        row = next(one for one in data["fragments"] if one["passage_id"] == self.SERMO)
+        row["text_date_basis"] = row["text_date_basis"].replace(self.HOMILIA, "PL 57")
+        errors = _catena._parallel_errors(self.sources, data, "edge")
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn("does not carry the dispute", errors[0])
 
 
 class LeadTests(CatenaFixture):
