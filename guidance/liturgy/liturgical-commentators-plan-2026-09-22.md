@@ -112,6 +112,19 @@ written by `author-study`, after that gate, so `--require-authority` starts at
 repeats it. `workflows/OPERATOR.md`, under `proper-study` version 7, records
 the reasoning.
 
+**One text under two names, decided 2026-09-23.** Sermo 50, De paralytico
+curato, is printed as Chrysologus's in PL 52 and as Maximus of Turin's
+Homilia CVIII in PL 57, and the manuscripts PL 57 reports also name
+Chrysostom and Severian. No rule covered such a text, and the maintainer was
+offered three options: hang it once, hang it under both names, or leave it
+unruled. The maintainer chose to hang it **once**, under the attribution the
+liturgical books and the received tradition use. The dispute stays in the
+apparatus, and the other record stays unmapped and cross-referenced. The
+decision is `guidance/catena.md` Rule 15, and `catena check` enforces it
+through the `parallels` section of `src/sources/commentary/fragment-loci.yaml`.
+Hanging the text under both names was declined because the same words would
+then stand twice in one chain under two authors.
+
 ---
 
 ## The proposal as reviewed
