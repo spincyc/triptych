@@ -77,6 +77,20 @@ EXPECTED_PUBLISHER_LEAF_PDFS = 170
 EXPECTED_REGISTERED_PARENT_PDFS = 17
 EXPECTED_RESTRICTED_DERIVATIVES = 17
 EXPECTED_REMOTE_INDEXES = 1
+# Antiphonary passage records by file stem, with the evidence states each one
+# establishes. The first five were registered and verified with the grant on
+# 2026-08-21 (d3ed8158c). The Twenty-Fifth Sunday record was added by the
+# pc-s51 research checkpoint of 2026-09-19 (fd892980c): it records citation loci
+# only, transcribes no text, and was inspected, not verified.
+VERIFIED_STATES = ["cataloged", "acquired", "inspected", "verified"]
+EXPECTED_ANTIPHONARY_PASSAGE_STATES = {
+    "blessing-of-a-chalice-and-paten": VERIFIED_STATES,
+    "copyright-notices": VERIFIED_STATES,
+    "foreword": VERIFIED_STATES,
+    "ordinary-time-twenty-fifth-sunday": ["cataloged", "acquired", "inspected"],
+    "palm-sunday-procession-antiphons": VERIFIED_STATES,
+    "palm-sunday-simple-entrance-antiphon": VERIFIED_STATES,
+}
 REQUIRED_BASIS_STATEMENTS = (
     "does not clear any liturgical text or publisher file for publication from the current tree",
     "public Git repository, source browser, static data bundle, CLI, PDF, or download surface",
@@ -328,7 +342,10 @@ class IcelAndCbcewPdfRightsTests(unittest.TestCase):
         antiphonary_passages = sorted(
             (ANTIPHONARY_ROOT / "passages").glob("*.toml")
         )
-        self.assertEqual(len(antiphonary_passages), 5)
+        self.assertEqual(
+            [path.stem for path in antiphonary_passages],
+            sorted(EXPECTED_ANTIPHONARY_PASSAGE_STATES),
+        )
         for path in antiphonary_passages:
             with self.subTest(passage=path.stem):
                 passage = load_toml(path)
@@ -337,7 +354,11 @@ class IcelAndCbcewPdfRightsTests(unittest.TestCase):
                     "artifact.catholic-church.missale-romanum."
                     "2010-english-icel-antiphonary.antiphonary-pdf",
                 )
-                self.assertIn("verified", passage["states"])
+                self.assertEqual(
+                    passage["states"],
+                    EXPECTED_ANTIPHONARY_PASSAGE_STATES[path.stem],
+                )
+                self.assertNotIn("text", passage)
 
     def test_source_reader_projection_preserves_the_file_layer(self) -> None:
         antiphonary = json.loads(ANTIPHONARY_PROJECTION.read_text(encoding="utf-8"))
@@ -351,7 +372,16 @@ class IcelAndCbcewPdfRightsTests(unittest.TestCase):
             collections.Counter(row["rights"] for row in cbcew["artifacts"]),
             collections.Counter({"restricted": 28, "unresolved": 1}),
         )
-        self.assertEqual(len(antiphonary["passages"]), 5)
+        self.assertEqual(
+            sorted(
+                passage["id"].removeprefix(
+                    "passage.catholic-church.missale-romanum."
+                    "2010-english-icel-antiphonary."
+                )
+                for passage in antiphonary["passages"]
+            ),
+            sorted(EXPECTED_ANTIPHONARY_PASSAGE_STATES),
+        )
         for passage in antiphonary["passages"]:
             with self.subTest(passage=passage["id"]):
                 self.assertFalse(passage["readable"])
