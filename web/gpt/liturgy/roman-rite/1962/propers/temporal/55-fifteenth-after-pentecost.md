@@ -317,7 +317,7 @@ Theodoret begins from David’s prayer and Hezekiah’s trust. Human nature is p
 
 The Collect makes continuing mercy the agent of cleansing and fortification. Its reason is the Church’s inability to stand safely without God; its conclusion asks perpetual governance through God’s gift. Stability thus requires continuing divine action. The Epistle gives that preserved life its communal tasks, and the Postcommunion asks the gift to work within bodies and minds.
 
-The prayer already belongs to a group with *Tua nos* and *Mentes nostras* in Wilson’s Gelasian III.xi, p. 230, and Gregorian supplement XXXIIII, p. 174. Their headings and chant associations change from witness to witness (see Source-Grounded Synthesis). Schuster’s account of the Collect likewise joins the Church’s dependence to divine governance (III, p. 139). The prayer asks both purification from what corrupts and strengthening for what lies ahead; that second petition prepares the Secret’s explicit plea for protection.
+The prayer already belongs to a group with *Tua nos* and *Mentes nostras* in Wilson’s Gelasian III.xi, p. 230, and Gregorian supplement XXXIIII, p. 174. Their headings and chant associations change from witness to witness. Schuster’s account of the Collect likewise joins the Church’s dependence to divine governance (III, p. 139). The prayer asks both purification from what corrupts and strengthening for what lies ahead; that second petition prepares the Secret’s explicit plea for protection.
 
 ### The law of Christ makes correction a work of charity (*Ep.*)
 
@@ -481,7 +481,7 @@ Luke says, “And he gave him to his mother” (American 1899 Challoner, 7:15). 
 
 **Mechanism.** Need and response become perceptible in different forms. The servant requests a hearing, while the widow’s grief is seen before a request is narrated. Touch interrupts the procession; restored speech and shared praise become audible. These acts suggest attention capable of receiving more than a verbally stated request.
 
-**What separate treatment misses.** How mercy attends to need that is not only spoken: prayer, perception and concrete assistance enter the same encounter. Thanksgiving beside unreported words is a different question (the second proposal).
+**What separate treatment misses.** Mercy here attends to need that is not only spoken: prayer, perception and concrete assistance enter the same encounter. Thanksgiving beside the restored son’s unreported words is a different question.
 
 **Fruit.** Compassion may begin by noticing a person’s situation, continue through appropriate action, and leave room for that person’s own voice and the community’s thanksgiving. Embodied attention and prayer join here, and each keeps its own form.
 
@@ -551,6 +551,6 @@ The recorded source checks and this guide’s interpretation confer no imprimatu
 
 Web witnesses were accessed 5 September 2026; appointed-text and chronology checks retain their separate recorded dates.
 
-**Last revised (UTC):** 2026-09-24T15:25:58Z
+**Last revised (UTC):** 2026-09-24T16:57:53Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
