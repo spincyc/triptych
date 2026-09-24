@@ -61,28 +61,54 @@ Year A · Lectionary no. 109 · Ordinary Time Week XVII formulary
 | **Second Reading** | Romans 8:28–30 | Written from Corinth, or its port Cenchreae, to believers at Rome | About AD 56–58 |
 | Authorship by Paul is undisputed; Tertius names himself as the scribe at 16:22. The Roman congregations included Jewish and gentile believers whom Paul had not yet met. These verses stand inside a long argument that runs from present suffering to the assurance that nothing separates from God’s love; that frame is not proclaimed with them. |  |  |  |
 
-## The Appointed Texts: Rights-Limited Study Sheet
+## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
-> **Publication boundary**
->
-> The approved U.S. Missal and Lectionary English is protected and is not reproduced. This is the complete ordered inventory: lawful Latin incipits, public-domain biblical loci, exact alternatives, and descriptions identifying the appointed matter without replacing the liturgical books.
+This formulary has two independent architectures laid over one another. The Missal’s texts for Week XVII are shared by Years A, B and C and were not composed for these readings; the Lectionary’s Year A texts pair one Old Testament scene with one Gospel while the apostolic course runs on its own. What the two architectures happen to share is a single question, asked in three registers: what is worth wanting. Solomon is told to name whatever he wishes; the psalmist ranks instruction against bullion; a finder and a merchant liquidate everything for one object; and the Collect asks for the skill of using what passes without losing hold of what remains.
 
-| **Textual unit** | **Text / citation** |
+| **Stage** | **What the appointed texts actually do** |
 |:-----------------|:------------------------------------------------|
-| **Introductory Rites** |  |
-| Entrance Antiphon | *Cf.* Ps 67:6–7, 36 (modern 68); *Deus in loco sancto suo*; God provides a dwelling and strength. |
-| Collect | *Protéctor in te sperántium, Deus*; protection and guidance in using passing goods while adhering to those that endure. |
-| **Liturgy of the Word** |  |
-| First Reading | 1 Kings 3:5, 7–12; Solomon asks for a hearing heart able to judge the entrusted people and distinguish good from evil. |
-| Responsorial Psalm | Ps 119:57, 72, 76–77, 127–130; response *cf.* v. 97a; instruction is loved above wealth and asked to give light. |
-| Second Reading | Romans 8:28–30; divine purpose amid groaning tends toward conformity to the firstborn Son. |
-| Gospel Acclamation | *Cf.* Matthew 11:25; the Father’s revelation is received by the little ones. |
-| Gospel | Long: Matthew 13:44–52, treasure, pearl, net, sorting, and the instructed scribe. Short: Matthew 13:44–46, treasure and pearl only. |
-| **Liturgy of the Eucharist** |  |
-| Prayer over the Offerings | *Súscipe, quǽsumus, Dómine, múnera*; bounty first received is offered back, with present sanctification sought. |
-| Communion Antiphon A | Ps 102:2 (modern 103); bless the Lord and do not forget his benefits. |
-| Communion Antiphon B | Matthew 5:7–8; mercy and purity of heart retain their distinct promises. |
-| Prayer after Communion | *Súmpsimus, Dómine, divínum sacraméntum*; the perpetual memorial of the Passion is ordered toward saving fruit. |
+| 1\. Gathering | The Entrance antiphon names God in his holy place and as the one who settles those of one mind in a house, then asks nothing; the Collect turns immediately to petition, and its single request concerns the right use of goods. |
+| 2\. Asking and ranking | The first reading gives a request that refuses three obvious goods and receives a fourth; the responsorial psalm answers by ranking the commandments above gold and topaz and asking for understanding. |
+| 3\. Finding and spending | The Gospel replaces asking with finding. Two men sell everything, and in the long form a net and a shore add a sorting that no purchaser controls. |
+| 4\. Returning | The Prayer over the Offerings hands back what came from God’s bounty; the Communion antiphon either recalls benefits or names mercy and clean-heartedness; the Prayer after Communion calls the sacrament a perpetual memorial of the Passion. |
+
+### Officially correlated: a request answered by a discovery
+
+The General Introduction to the Lectionary makes the Old Testament reading of an Ordinary Time Sunday harmonize with the Gospel. Here the correlation is unusually exact and unusually asymmetrical. Solomon must choose in advance, in the dark, with nothing yet in hand; the man in the field and the merchant choose after the fact, with the object already found. Both stories end in a transfer of property, but Solomon’s costs him nothing and the finders’ costs them everything.
+
+The pairing therefore sets two shapes of wisdom side by side rather than illustrating one. The first reading praises a petition; the Gospel praises a purchase. What joins them is a governed refusal: Solomon does not ask for long life, riches, or his enemies’ lives, and the finders do not keep what they had. The Lectionary’s own arrangement licenses hearing these together. It does not license reading Solomon as an early merchant or the merchant as a wise king.
+
+### Responsorial: the psalm as the reading’s own answer
+
+Psalm 119 is not a third reading. It is the assembly’s reply, and the verses chosen make that reply pointed. Two of the five strophes rank divine instruction above precious metal, which is the same comparison Solomon’s refusal makes narratively; the last strophe asks for the light and understanding that Solomon was given. The refrain, drawn from a stanza the sung verses otherwise skip, states love of the commandments as the disposition under which all of this is heard.
+
+Two limits belong here. The psalm’s own horizon is Israel’s delight in *torah*, and it keeps that horizon when Christians sing it. And the sung text is a selection from six of the psalm’s twenty-two stanzas: no ancient commentator expounded these particular verses as a unit, because the unit did not exist before the modern Lectionary made it.
+
+### Semi-continuous and independent: Romans keeps its own course
+
+Romans 8:28–30 arrives on this Sunday because the apostolic course has reached it, not because it explains a parable. Reading it as the theological key to the treasure would misdescribe the Lectionary and, worse, would make Paul’s clause about God’s purpose sound like a rule about property. The passage does its own work: it grounds confidence in God’s initiative and ends in a chain of verbs whose last term, *glorified*, is written in a past tense for something not yet seen.
+
+Its proximity to the Gospel is still audible, and may be heard, provided the relation is named as observation rather than design. Both texts move from something hidden to something possessed; both refuse to make the outcome a human achievement alone. Where they differ is decisive and should not be blurred: the parables describe a person acting, and Paul describes God purposing.
+
+### Shared euchology: the Missal’s grammar of passing and abiding
+
+The three orations are Year-neutral, and this guide claims no compositional link between them and Lectionary no. 109. What can be shown is that the Collect’s closing petition uses a distinctive Latin idiom of this typical edition: a contrast between goods that pass and things that abide, asking that the second be held *already*, now. The same idiom appears in the Missal’s Advent Post-Communion prayer, where the faithful are described as walking among passing things. The Collect is therefore not eccentric; it speaks the book’s own eschatological dialect.
+
+That dialect meets the readings without being bent to them. The Prayer over the Offerings describes the gifts as drawn from God’s bounty before they were offered, which is precisely what the man in the field cannot say about his treasure. The Prayer after Communion names the sacrament a perpetual memorial of the Passion, supplying the one costly purchase that the Gospel’s two buyers only image.
+
+### Branches: what is actually heard depends on two choices
+
+Two authorized alternatives change the celebration materially, and neither is resolved by the books. If the shorter Gospel is chosen, the assembly hears value, joy and total expenditure, and hears nothing of the net, the furnace, the question “have you understood?”, or the scribe with new and old. If the longer form is chosen, the movement acquires an end that no buyer controls. Preaching that imports the net into a celebration that did not proclaim it reports something that did not happen.
+
+The Communion antiphons are likewise a closed either/or. One recalls benefits received and forbids forgetting; the other names mercy and clean-heartedness with their promised ends. The first closes the circuit of gift and memory opened by the Prayer over the Offerings; the second supplies a moral test for those who have just been fed. Both are lawful; neither is presumed here.
+
+Two further variables lie outside the proper texts and are named only so that they are not mistaken for them. The blessing and sprinkling of water may replace the Penitential Act on a Sunday, bringing texts of its own that belong to the Order of Mass and not to this formulary. And because Week XVII supplies no Preface of its own, both the Preface and the Eucharistic Prayer are chosen locally, as a coupled pair: some Eucharistic Prayers bring their own Preface and so settle the question, while others leave it open. Nothing in this guide’s argument depends on how either choice falls.
+
+### The shape, stated once
+
+If the whole formulary is heard together, its movement is from a question about worth to an act of receiving. It begins by naming a God who gathers rather than a God who demands; it asks, in the Collect, for competence with things that do not last; it hears a king refuse the three goods any king would want and a psalm rank instruction over bullion; it watches two strangers spend everything on one object; and it ends by receiving, without payment, the memorial of a purchase made by someone else. The formulary never resolves the tension between spending everything and being given everything. It stages both, in that order, and leaves the assembly holding the second. <span id="triptych:brief-synthesis:end" data-label="triptych:brief-synthesis:end"></span>
+
+<span id="triptych:brief-synthesis:next" data-label="triptych:brief-synthesis:next"></span>
 
 ## Each Proper in Full
 
@@ -396,54 +422,28 @@ The three orations are shared by Years A, B and C and are not shown by any evide
 
 Two contacts should *not* be claimed. The Collect’s ruler-and-guide language is not a comment on Solomon’s kingship: it is addressed to God about the petitioners, not about a monarch. And the Entrance antiphon’s “house” is not the field of the parable; they are different images from different books that happen to fall on the same day.
 
-## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
+## The Appointed Texts: Rights-Limited Study Sheet
 
-This formulary has two independent architectures laid over one another. The Missal’s texts for Week XVII are shared by Years A, B and C and were not composed for these readings; the Lectionary’s Year A texts pair one Old Testament scene with one Gospel while the apostolic course runs on its own. What the two architectures happen to share is a single question, asked in three registers: what is worth wanting. Solomon is told to name whatever he wishes; the psalmist ranks instruction against bullion; a finder and a merchant liquidate everything for one object; and the Collect asks for the skill of using what passes without losing hold of what remains.
+> **Publication boundary**
+>
+> The approved U.S. Missal and Lectionary English is protected and is not reproduced. This is the complete ordered inventory: lawful Latin incipits, public-domain biblical loci, exact alternatives, and descriptions identifying the appointed matter without replacing the liturgical books.
 
-| **Stage** | **What the appointed texts actually do** |
+| **Textual unit** | **Text / citation** |
 |:-----------------|:------------------------------------------------|
-| 1\. Gathering | The Entrance antiphon names God in his holy place and as the one who settles those of one mind in a house, then asks nothing; the Collect turns immediately to petition, and its single request concerns the right use of goods. |
-| 2\. Asking and ranking | The first reading gives a request that refuses three obvious goods and receives a fourth; the responsorial psalm answers by ranking the commandments above gold and topaz and asking for understanding. |
-| 3\. Finding and spending | The Gospel replaces asking with finding. Two men sell everything, and in the long form a net and a shore add a sorting that no purchaser controls. |
-| 4\. Returning | The Prayer over the Offerings hands back what came from God’s bounty; the Communion antiphon either recalls benefits or names mercy and clean-heartedness; the Prayer after Communion calls the sacrament a perpetual memorial of the Passion. |
-
-### Officially correlated: a request answered by a discovery
-
-The General Introduction to the Lectionary makes the Old Testament reading of an Ordinary Time Sunday harmonize with the Gospel. Here the correlation is unusually exact and unusually asymmetrical. Solomon must choose in advance, in the dark, with nothing yet in hand; the man in the field and the merchant choose after the fact, with the object already found. Both stories end in a transfer of property, but Solomon’s costs him nothing and the finders’ costs them everything.
-
-The pairing therefore sets two shapes of wisdom side by side rather than illustrating one. The first reading praises a petition; the Gospel praises a purchase. What joins them is a governed refusal: Solomon does not ask for long life, riches, or his enemies’ lives, and the finders do not keep what they had. The Lectionary’s own arrangement licenses hearing these together. It does not license reading Solomon as an early merchant or the merchant as a wise king.
-
-### Responsorial: the psalm as the reading’s own answer
-
-Psalm 119 is not a third reading. It is the assembly’s reply, and the verses chosen make that reply pointed. Two of the five strophes rank divine instruction above precious metal, which is the same comparison Solomon’s refusal makes narratively; the last strophe asks for the light and understanding that Solomon was given. The refrain, drawn from a stanza the sung verses otherwise skip, states love of the commandments as the disposition under which all of this is heard.
-
-Two limits belong here. The psalm’s own horizon is Israel’s delight in *torah*, and it keeps that horizon when Christians sing it. And the sung text is a selection from six of the psalm’s twenty-two stanzas: no ancient commentator expounded these particular verses as a unit, because the unit did not exist before the modern Lectionary made it.
-
-### Semi-continuous and independent: Romans keeps its own course
-
-Romans 8:28–30 arrives on this Sunday because the apostolic course has reached it, not because it explains a parable. Reading it as the theological key to the treasure would misdescribe the Lectionary and, worse, would make Paul’s clause about God’s purpose sound like a rule about property. The passage does its own work: it grounds confidence in God’s initiative and ends in a chain of verbs whose last term, *glorified*, is written in a past tense for something not yet seen.
-
-Its proximity to the Gospel is still audible, and may be heard, provided the relation is named as observation rather than design. Both texts move from something hidden to something possessed; both refuse to make the outcome a human achievement alone. Where they differ is decisive and should not be blurred: the parables describe a person acting, and Paul describes God purposing.
-
-### Shared euchology: the Missal’s grammar of passing and abiding
-
-The three orations are Year-neutral, and this guide claims no compositional link between them and Lectionary no. 109. What can be shown is that the Collect’s closing petition uses a distinctive Latin idiom of this typical edition: a contrast between goods that pass and things that abide, asking that the second be held *already*, now. The same idiom appears in the Missal’s Advent Post-Communion prayer, where the faithful are described as walking among passing things. The Collect is therefore not eccentric; it speaks the book’s own eschatological dialect.
-
-That dialect meets the readings without being bent to them. The Prayer over the Offerings describes the gifts as drawn from God’s bounty before they were offered, which is precisely what the man in the field cannot say about his treasure. The Prayer after Communion names the sacrament a perpetual memorial of the Passion, supplying the one costly purchase that the Gospel’s two buyers only image.
-
-### Branches: what is actually heard depends on two choices
-
-Two authorized alternatives change the celebration materially, and neither is resolved by the books. If the shorter Gospel is chosen, the assembly hears value, joy and total expenditure, and hears nothing of the net, the furnace, the question “have you understood?”, or the scribe with new and old. If the longer form is chosen, the movement acquires an end that no buyer controls. Preaching that imports the net into a celebration that did not proclaim it reports something that did not happen.
-
-The Communion antiphons are likewise a closed either/or. One recalls benefits received and forbids forgetting; the other names mercy and clean-heartedness with their promised ends. The first closes the circuit of gift and memory opened by the Prayer over the Offerings; the second supplies a moral test for those who have just been fed. Both are lawful; neither is presumed here.
-
-Two further variables lie outside the proper texts and are named only so that they are not mistaken for them. The blessing and sprinkling of water may replace the Penitential Act on a Sunday, bringing texts of its own that belong to the Order of Mass and not to this formulary. And because Week XVII supplies no Preface of its own, both the Preface and the Eucharistic Prayer are chosen locally, as a coupled pair: some Eucharistic Prayers bring their own Preface and so settle the question, while others leave it open. Nothing in this guide’s argument depends on how either choice falls.
-
-### The shape, stated once
-
-If the whole formulary is heard together, its movement is from a question about worth to an act of receiving. It begins by naming a God who gathers rather than a God who demands; it asks, in the Collect, for competence with things that do not last; it hears a king refuse the three goods any king would want and a psalm rank instruction over bullion; it watches two strangers spend everything on one object; and it ends by receiving, without payment, the memorial of a purchase made by someone else. The formulary never resolves the tension between spending everything and being given everything. It stages both, in that order, and leaves the assembly holding the second. <span id="triptych:brief-synthesis:end" data-label="triptych:brief-synthesis:end"></span>
-
-<span id="triptych:brief-synthesis:next" data-label="triptych:brief-synthesis:next"></span>
+| **Introductory Rites** |  |
+| Entrance Antiphon | *Cf.* Ps 67:6–7, 36 (modern 68); *Deus in loco sancto suo*; God provides a dwelling and strength. |
+| Collect | *Protéctor in te sperántium, Deus*; protection and guidance in using passing goods while adhering to those that endure. |
+| **Liturgy of the Word** |  |
+| First Reading | 1 Kings 3:5, 7–12; Solomon asks for a hearing heart able to judge the entrusted people and distinguish good from evil. |
+| Responsorial Psalm | Ps 119:57, 72, 76–77, 127–130; response *cf.* v. 97a; instruction is loved above wealth and asked to give light. |
+| Second Reading | Romans 8:28–30; divine purpose amid groaning tends toward conformity to the firstborn Son. |
+| Gospel Acclamation | *Cf.* Matthew 11:25; the Father’s revelation is received by the little ones. |
+| Gospel | Long: Matthew 13:44–52, treasure, pearl, net, sorting, and the instructed scribe. Short: Matthew 13:44–46, treasure and pearl only. |
+| **Liturgy of the Eucharist** |  |
+| Prayer over the Offerings | *Súscipe, quǽsumus, Dómine, múnera*; bounty first received is offered back, with present sanctification sought. |
+| Communion Antiphon A | Ps 102:2 (modern 103); bless the Lord and do not forget his benefits. |
+| Communion Antiphon B | Matthew 5:7–8; mercy and purity of heart retain their distinct promises. |
+| Prayer after Communion | *Súmpsimus, Dómine, divínum sacraméntum*; the perpetual memorial of the Passion is ordered toward saving fruit. |
 
 ## Source-Grounded Synthesis Across the Propers
 
@@ -792,6 +792,6 @@ Only sources actually used are listed. Where an online witness was read, the del
 
 - “Dragnet,” *Online Etymology Dictionary*, for the negative result reported in the gallery.
 
-**Last revised (UTC):** 2026-07-27T12:03:33Z
+**Last revised (UTC):** 2026-09-24T03:56:50Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
