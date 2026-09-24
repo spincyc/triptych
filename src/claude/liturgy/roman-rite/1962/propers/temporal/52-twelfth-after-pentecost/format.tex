@@ -93,8 +93,7 @@ of research and share one set of source records.}
 
 % Governing thesis for the thematic movement. Substantive content, permitted
 % to open the body of its own section.
-\newcommand{\movementthesis}[1]{%
-  \begin{studybox}{Governing thesis}#1\end{studybox}}
+\newcommand{\movementthesis}[1]{#1\par}
 
 % The exploratory-proposal notice and the proposals themselves. Every proposal
 % renders its anchors, mechanism, fruit, and controlling limit as labelled
@@ -134,12 +133,12 @@ of research and share one set of source records.}
 \endhead}
 {\bottomrule\end{longtable}}
 
-% Attributions the guide corrects: the claim a reasonable guide could make,
-% what the checked sources actually show, and the proper the evidence sits at.
+% Attributions the sources do not bear out: the claim as usually made, what
+% the checked sources actually show, and the proper the evidence sits at.
 \newenvironment{correctionstable}
 {\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.26\linewidth}>{\raggedright\arraybackslash}p{0.52\linewidth}>{\raggedright\arraybackslash}p{0.12\linewidth}}
 \toprule
-\textbf{A claim a guide could make} & \textbf{What the checked sources show} & \textbf{Proper}\\
+\textbf{The claim as usually made} & \textbf{What the checked sources show} & \textbf{Proper}\\
 \midrule
 \endhead}
 {\bottomrule\end{longtable}}
