@@ -93,7 +93,7 @@ The appointed acclamation is an adaptation addressed to the Lord and is not repr
 
 ### Matthew 20:1–16a {#proper-gospel}
 
-The study excerpt stops after the first–last reversal. The additional many-called, few-chosen clause in the historical witness lies outside the appointed boundary.
+The appointed reading stops after the first–last reversal; the many-called, few-chosen clause that follows in the historical witness lies outside it.
 
 <sup>1</sup> The kingdom of heaven is like to an householder, who went out early in the morning to hire labourers into his vineyard.
 
@@ -145,7 +145,7 @@ The study excerpt stops after the first–last reversal. The additional many-cal
 
 ### Prayer after Communion {#proper-after-communion}
 
-*Quos tuis, Domine*. Roman Missal, Twenty-fifth Sunday in Ordinary Time, Prayer after Communion. The complete prayer is not reproduced. The commentary considers its petition for continuing help and the fruit of redemption in conduct.
+*Quos tuis, Domine*. Roman Missal, Twenty-fifth Sunday in Ordinary Time, Prayer after Communion. The complete prayer is not reproduced. Its petition for continuing help and the fruit of redemption in conduct are considered below.
 
 ## Hearing the appointed texts in their setting
 
@@ -189,7 +189,7 @@ Aquinas distinguishes the attraction toward God from charity’s concern for the
 
 ### The acclamation: an opened heart attends
 
-The acclamation adapts Acts 16:14b. Acts narrates the Lord opening Lydia’s heart to attend to Paul’s message; the liturgical text turns that event into the assembly’s request for receptive hearing. The narrative’s subject and the acclamation’s direct address are therefore distinct. The verses printed for study give the narrative source, not a replacement acclamation.
+The acclamation adapts Acts 16:14b. Acts narrates the Lord opening Lydia’s heart to attend to Paul’s message; the liturgical text turns that event into the assembly’s request for receptive hearing. The narrative’s subject and the acclamation’s direct address are therefore distinct. Acts 16:14 is the acclamation’s narrative source, not the acclamation itself.
 
 Chrysostom holds together what Acts holds together: the Lord’s action and Lydia’s attention. Her response becomes concrete in baptism and hospitality. An opened heart is not an inert heart. Augustine, citing the same verse in *On the Predestination of the Saints*, argues that the very beginning of faith is a divine gift, as prayer for opened hearts acknowledges. His concern is the origin of faith; Chrysostom emphasizes the hearer’s willing response. In both accounts, hearing needs grace and bears fruit in action.[^10]
 
@@ -209,7 +209,7 @@ The Prayer over the Offerings joins the people’s gifts and confessed faith to 
 
 The first Communion option, Psalm 119:4–5, joins the command to observe God’s precepts with the desire for ways made firm in that observance. Augustine hears dependence in the grammatical movement from command to wish: God must be asked for the ability to do what he commands. In the fuller Latin exposition, the speaker is a member of Christ or the whole body. Hearing is to become doing. Bellarmine likewise rejects confidence in unaided strength at verses 5–7. This is obedience prayed for by those receiving God’s gift, not a claim to have earned the gift by flawless obedience.[^12]
 
-If John 10:14 is chosen instead, Christ’s knowledge of his sheep and their knowledge of him stand within the discourse of the Shepherd who gives his life. Augustine explains how Christ enters hearts through the preaching of Christ. The preacher is not the purchaser of the flock: Christ bought it with his Blood. At the Eucharistic table, receiving his Body and Blood summons members to give themselves for their brethren. The sacramental connection is explicit in Augustine’s argument; it is not drawn merely from the presence of shepherd imagery.[^13]
+If John 10:14 is chosen instead, Christ’s knowledge of his sheep and their knowledge of him stand within the discourse of the Shepherd who gives his life. Augustine explains how Christ enters hearts through the preaching of Christ. The preacher is not the purchaser of the flock: Christ bought it with his Blood. At the Eucharistic table, receiving his Body and Blood summons members to give themselves for their brethren. The sacramental connection is explicit in Augustine’s argument; it does not rest merely on the presence of shepherd imagery.[^13]
 
 The Prayer after Communion asks for continuing help so that redemption bears fruit in sacramental life and conduct. It gives the whole movement an unfinished moral horizon: reception has occurred, but the life corresponding to it still lies before the assembly. The opening confidence in divine help returns as dependence after the gift. The final petition does not send the workers away to establish their independence; it sends recipients toward the charity that the Collect named at the beginning.
 
@@ -231,7 +231,7 @@ The answer is exact because the complaint is comparative. If another person rece
 
 Aquinas’s reading of Isaiah gives that moral distortion its prophetic counterpart. Human beings can imagine justice principally through revenge; God summons the sinner into abundant mercy. The height of God’s thoughts judges that retaliatory measure. Yet Isaiah’s sinner must actually forsake an old way and old thoughts. Mercy does not honor the old life by leaving it unchanged. It makes return possible and gives return a trustworthy destination. Jerome’s insistence on the stability of God’s promise strengthens the same confidence: the sinner need not calculate whether God’s willingness to pardon will prove as erratic as human intentions.[^16]
 
-Chrysostom’s account of the complaint protects this reading from a false conclusion about heaven. The saved do not continue envying one another there. The narrative makes the gift’s surprising fullness visible; it is not a portrait of perfected charity secretly remaining jealous. Augustine’s common denarius and Chrysostom’s refusal of heavenly envy agree on the good offered to latecomers, although the latter explains the narrative device differently. The promise is communion in God’s goodness, not a permanent system of resentful comparison.[^17]
+Chrysostom’s account of the complaint closes the way to a false conclusion about heaven. The saved do not continue envying one another there. The narrative makes the gift’s surprising fullness visible; it is not a portrait of perfected charity secretly remaining jealous. Augustine’s common denarius and Chrysostom’s refusal of heavenly envy agree on the good offered to latecomers, although the latter explains the narrative device differently. The promise is communion in God’s goodness, not a permanent system of resentful comparison.[^17]
 
 ### The heart receives, and the member gives
 
@@ -279,7 +279,7 @@ Isaiah supplies the verbs this response needs. Seeking God requires forsaking on
 
 Chrysostom’s refusal of heavenly envy is central here. He reasons from the saints’ charity: those who give their lives for sinners in this life will rejoice when those sinners enjoy salvation. The Gospel complaint therefore dramatizes the greatness of the latecomer’s gift. It is not an invitation to imagine resentment as an unavoidable feature of even the holiest community. Present envy can be healed because the promised communion is free of it.[^23]
 
-His interpretation also distinguishes the equal wage from the closing first–last maxim. Inside the parable the early workers still receive the agreed payment; the others are unexpectedly made equal. The maxim can point beyond that equality toward an actual reversal, where someone who began well neglects virtue and someone formerly sunk in vice advances. Chrysostom permits a hint concerning Jews in this latter discussion as well as changes among believers. His primary personal-age reading is not an explicit polemic rejecting every Jewish–Gentile application. His received Gospel lemma includes the many-called clause beyond today’s endpoint, so the full scope of his argument must be distinguished from the shorter appointed text.[^24]
+His interpretation also distinguishes the equal wage from the closing first–last maxim. Inside the parable the early workers still receive the agreed payment; the others are unexpectedly made equal. The maxim can point beyond that equality toward an actual reversal, where someone who began well neglects virtue and someone formerly sunk in vice advances. Chrysostom permits a hint concerning Jews in this latter discussion as well as changes among believers. His primary personal-age reading is not an explicit polemic rejecting every Jewish–Gentile application. His received Gospel lemma includes the many-called clause beyond today’s endpoint, so the full scope of his argument reaches beyond the end of the shorter appointed text.[^24]
 
 The practical consequence is neither complacency nor competition. A person does not imitate Christ by becoming satisfied that someone else is doing worse. Chrysostom’s sermon turns from the parable to care for conduct, almsgiving, and the choice of examples. The negligence of a rich neighbor excuses nothing. Christ and those who do good are the examples that can produce humility and diligence. This is a more demanding freedom than the relief of being ahead of somebody: it removes the convenient comparison by which neglect disguises itself as adequacy.[^25]
 
@@ -347,7 +347,7 @@ That is a substantive addition to Gregory’s historical horizon. Gregory explai
 
 The acclamation’s source in Lydia makes the corporate movement visible at household scale. The Lord opens a heart, the message is attended to, and hospitality welcomes the messengers. A universal Church is gathered through particular persons and concrete acts of reception. Paul’s willingness to remain supports that same gathering over time. In Aquinas’s exposition, conduct worthy of the Gospel extends into concord and cooperation in the clauses following the appointed 27a. Those contextual clauses show the communal direction of the sentence without becoming additional Sunday verses.[^35]
 
-Isaiah’s requirement to abandon an old way challenges inherited membership as surely as it challenges a new convert. The psalm’s mercy and nearness give every generation the same reason to return. The Entrance’s faithful Lord remains the helper of his people through affliction; the Collect’s law of love binds personal devotion to responsibility for a neighbor. These elements keep the historical reading from becoming a diagram in which the listener’s only task is to locate an era. The question is whether this member is doing the vineyard’s work now.
+Isaiah’s requirement to abandon an old way challenges inherited membership as surely as it challenges a new convert. The psalm’s mercy and nearness give every generation the same reason to return. The Entrance’s faithful Lord remains the helper of his people through affliction; the Collect’s law of love binds personal devotion to responsibility for a neighbor. These elements keep Gregory’s history of the ages from becoming a diagram in which the listener’s only task is to locate an era. The question is whether this member is doing the vineyard’s work now.
 
 ### A common table and two Communion voices
 
@@ -381,7 +381,7 @@ The three readings share a refusal to make God poorer when another receives his 
 
 The first reading most fully answers the objection that equal generosity makes labor pointless: the labor is part of God’s cultivation, and charity becomes fruitful in the person who receives. The second most fully addresses despair and presumption: late conversion can be complete, yet delay is not promised another opportunity. The third most fully addresses possessiveness about the Church: its earlier and later members belong to a Lord whose field is larger than any generation. Together they turn the complaint about another’s portion toward gratitude, conversion, and responsibility.
 
-The distinct explanations of payment order remain important. Augustine stresses one endless life and a common resurrection; Chrysostom makes the complaint magnify an unexpectedly full gift and distinguishes that equality from the maxim’s reversal; Gregory interprets the older fathers’ delay through Christ’s opening of paradise.
+The Fathers explain the payment order differently. Augustine stresses one endless life and a common resurrection; Chrysostom makes the complaint magnify an unexpectedly full gift and distinguishes that equality from the maxim’s reversal; Gregory interprets the older fathers’ delay through Christ’s opening of paradise.
 
 The connections among the appointed elements extend beyond a sequence of separate lessons. The opened heart before the Gospel and the requested obedience at Communion describe a response dependent on divine help. Paul’s labor for others and Augustine’s account of the Eucharistic table show charity receiving a gift and becoming self-gift. The Collect and final prayer enclose that movement with love sought and redemption lived. The Psalm Communion emphasizes enabled fidelity; the John Communion emphasizes belonging to the self-giving Shepherd. The end is neither an account settled in one’s favor nor a higher place secured against a neighbor. It is a life increasingly able to rejoice in the good it shares.
 
@@ -491,7 +491,7 @@ NPNF denotes *Nicene and Post-Nicene Fathers*, first series; ANF denotes *Ante-N
 
 15. USCCB, *New American Bible, Revised Edition*, introductions to [Isaiah](https://bible.usccb.org/bible/isaiah/0), [Psalms](https://bible.usccb.org/bible/psalms/0), and [Matthew](https://bible.usccb.org/bible/matthew/0); complete introduction bodies inspected in the registered 21 September 2026 web state. Protected texts; historical orientation only.
 
-**Last revised (UTC):** 2026-09-22T03:05:25Z
+**Last revised (UTC):** 2026-09-24T14:04:37Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
