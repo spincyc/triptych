@@ -353,8 +353,14 @@ class WithheldPassageTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         passages = json.loads(EDITION_FILE.read_text(encoding="utf-8"))["passages"]
-        cls.readable = passages[3]
-        cls.withheld = passages[4]
+        # The pair is found by what it is, not by position: a passage added
+        # earlier in the edition shifts every index after it.
+        withheld_at = next(
+            index for index in range(1, len(passages))
+            if passages[index - 1]["readable"] and not passages[index]["readable"]
+        )
+        cls.readable = passages[withheld_at - 1]
+        cls.withheld = passages[withheld_at]
         # The premise of the scenario, asserted rather than assumed: without
         # these two neighbours being what they are the race is not provoked.
         assert cls.readable["readable"] and cls.readable["words"] > 100
@@ -369,9 +375,9 @@ class WithheldPassageTests(unittest.TestCase):
                  "url": page("sources", fragment="#edition=" + IRENAEUS)},
                 {"do": "wait", "until": "document.getElementById('passage-select')",
                  "label": "the reader"},
-                {"do": "eval", "expression": SELECT_PASSAGE % 3},
+                {"do": "eval", "expression": SELECT_PASSAGE % (withheld_at - 1)},
                 {"do": "sleep", "ms": 300},
-                {"do": "eval", "expression": SELECT_PASSAGE % 4},
+                {"do": "eval", "expression": SELECT_PASSAGE % withheld_at},
                 {"do": "eval", "name": "at_once", "expression": BODY_STATE},
                 {"do": "sleep", "ms": 3500},
                 {"do": "eval", "name": "settled", "expression": BODY_STATE},
