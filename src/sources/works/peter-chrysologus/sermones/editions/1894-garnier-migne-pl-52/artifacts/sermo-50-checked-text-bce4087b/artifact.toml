@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.peter-chrysologus.sermones.1894-garnier-migne-pl-52.sermo-50-checked-text-bce4087b"
+edition_id = "edition.peter-chrysologus.sermones.1894-garnier-migne-pl-52"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces one sermon as Migne's Patrologia Latina 52 prints it at Paris in 1894, before 1931, which is in the public domain in the United States on the repository's own rights reading recorded at guidance/missals.md section 5. The transcription repairs recognition damage against the printing's own page images and adds no original authorship; it carries no Internet Archive markup and none of Migne's editorial notes."
+rights_jurisdiction = "United States"
+provenance = "Triptych transcription made on 2026-09-23 from the hashed Internet Archive text layer of Patrologia Latina 52, every word of it read against the registered page images of cols. 339-342 (leaves n171 and n172, artifact.peter-chrysologus.sermones.1894-garnier-migne-pl-52.ia-leaf-n171-e5985cda and artifact.peter-chrysologus.sermones.1894-garnier-migne-pl-52.ia-leaf-n172-eb5cba74), which govern wherever the two differ."
+retrieved = "2026-09-23"
+sha256 = "bce4087b25ad339035b6918473593a2f6a23d423d6a35a97843450d1a0adc01f"
+byte_size = 6459
+path = "src/sources/works/peter-chrysologus/sermones/editions/1894-garnier-migne-pl-52/artifacts/sermo-50-checked-text-bce4087b/chrysologus-sermo-50.txt"
+derived_from = "artifact.peter-chrysologus.sermones.1894-garnier-migne-pl-52.ia-djvu-ocr-098e5136"
+transformation = "Take the sermon's text from the hashed optical character recognition and correct it against the page images of PL 52:339C-342B, which govern; write one sentence per LF-terminated UTF-8 line, prefixed by a braced Migne column locator for the column the sentence begins in; preserve the printing's wording, spelling, capitalization and punctuation, including its evident misprints, while rejoining line-end hyphenation, writing the ligatures ae and oe as two letters as the printing distinguishes them, and closing up the space the printing sets before question marks, colons and semicolons; keep the scriptural references the printing sets in the text; omit the heading and title, footnote signs, the editorial footnotes, running heads, and column numbers and letters."
+indexable = true
+encoding = "utf-8"
+notes = "Collated 2026-09-23. Misprints kept as printed, each read on the page image: 'augustiavit' and 'fugurat' in col. 340; 'Rescipiens', 'descipit' and 'repicit' in col. 341; 'caepit civitatis' in the sentence that twice sets 'coepit', and 'caelestem portum' after 'coelestem patriam' and 'coelesti', all in col. 340; '(Matth. XI)' for the walking on the sea in col. 340; 'nam dixisset' without 'cum' in col. 341; and 'Vade, inquit. in domum tuam' with a full stop after 'inquit' in col. 342. 'Non respicit' in col. 341 is the printing's reading; its note b and the Rabanus variant are recorded on the passage. The italic ligature in 'Pharisaei' in col. 341 is read as ae. Where the text layer differs from the page it is only by recognition damage, run-together words and a misplaced line: it reads 'cum sero per' for 'cum semper', 'Aescipiens' for 'Rescipiens', 'Pili' for 'Fili' and 'surreail' for 'surrexit', and it carries the first line of col. 340, 'pentes undas sicco vestigio, velut montium concava,', at its line 25693, beside the close of Sermo 49."

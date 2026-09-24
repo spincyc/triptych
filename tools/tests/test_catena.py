@@ -438,6 +438,41 @@ class RightsTests(CatenaFixture):
         )
         self.assertIn("has no locator", " ".join(self.errors()))
 
+    def test_a_fragment_whose_passage_carries_no_text_is_refused(self) -> None:
+        """Rule 1: a fragment the page cannot show the words of does not render.
+
+        Everything else about it is sound — a locator, an edition, a
+        public-domain artifact, a date and an extent — which is exactly why
+        nothing else refused it: Sermo 50 reached Matthew 9 as a fragment that
+        opened onto nothing.
+        """
+        self.assertEqual(self.errors(), [])
+        for empty in ('', 'text = ""', 'text = "   "'):
+            with self.subTest(text=empty or "(absent)"):
+                self.write(
+                    "src/sources/works/augustine/de-civitate-dei/editions/dods-1871/"
+                    "passages/11.7.toml",
+                    f"""
+                    schema = 1
+                    record_type = "passage"
+                    id = "passage.augustine.de-civitate-dei.dods-1871.11.7"
+                    edition_id = "edition.augustine.de-civitate-dei.dods-1871"
+                    artifact_id = "artifact.augustine.de-civitate-dei.dods-1871.body"
+                    locus = "11.7"
+                    states = ["cataloged", "acquired", "inspected"]
+                    context = "The nature of the first days."
+                    {empty}
+                    """,
+                )
+                errors = self.errors()
+                self.assertEqual(
+                    [one for one in errors if "has no text" in one],
+                    errors,
+                    "the missing text is the only fault in this fixture",
+                )
+                self.assertEqual(len(errors), 1)
+                self.assertIn("passage.augustine.de-civitate-dei.dods-1871.11.7", errors[0])
+
 
 class VoiceTests(CatenaFixture):
     """Whose words a fragment carries, and the two signals that must agree.

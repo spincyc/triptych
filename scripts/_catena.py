@@ -1119,6 +1119,15 @@ def _passage_errors(
         return errors
     if not str(passage.get("locator") or passage.get("locus") or "").strip():
         errors.append(f"{label} has no locator, so a reader cannot check it")
+    # Rule 1 renders L3, and L3 is the words. A passage with no `text` still
+    # derives an author, a date and an extent, so it rendered as a fragment
+    # that opens onto nothing: Sermo 50 reached Matthew 9 that way.
+    if not str(passage.get("text") or "").strip():
+        errors.append(
+            f"{label} has no text: its passage record carries no transcription, "
+            f"so the page would show a fragment with nothing in it (Rule 1); "
+            f"collate the passage's text before hanging it on the edge"
+        )
 
     edition_id = str(passage.get("edition_id") or "")
     segment_id = passage.get("segment_id")
