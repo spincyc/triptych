@@ -50,18 +50,18 @@ TLM propers: the endangered sinner sought, strengthened, and welcomed into joy
 
 ## The Propers: Themes and Movement
 
-> **Governing thesis: mercy finds, forms, and gathers**
+> **Mercy finds, forms, and gathers**
 >
 > The propers disclose neither indulgence without conversion nor vigilance without trust. God’s merciful gaze receives confessed need; his care makes humble resistance possible; Christ seeks until the lost is found and calls heaven to rejoice over repentance; the recovered person then enters the Church’s praise, offering, sanctification, and hope of everlasting mercy. Divine initiative remains first throughout, while repentance, resistance, offering, and reception remain real human acts.
 
 **1. Behold need** → **2. Entrust and resist** → **3. Seek and restore** → **4. Offer and rejoice**<br>
 *Introit–Collect* *Epistle–Alleluia* *Gospel* *Offertory–Postcommunion*
 
-*Reading order.* This four-stage sequence is a source-grounded synopsis of the appointed wording and the identified reception below; no cited witness is presented as author of the complete Roman formulary.
+These four stages draw on the appointed wording and the reception identified below; no cited witness comments on the complete Roman formulary.
 
 ### Merciful regard receives truthful need (*Int., Coll.*)
 
-| **Appointed claim** | **Decisive witness** | **Boundary** |
+| **Appointed claim** | **Decisive witness** | **Precise sense** |
 |:-------------|:------------------------|:----------------------------|
 | **Affliction is disclosed** | The Introit’s Davidic lament asks God to look upon solitude, poverty, labor, and sin; its psalm verse first raises the soul in trust. | Mercy does not require a fictitious innocence. Need and guilt are brought into God’s presence rather than hidden. |
 | **Dependence becomes pilgrimage** | The Collect confesses that nothing is strong or holy without God and asks his rule and guidance through temporal goods toward eternal goods. | Temporal creation is traversed under grace, not despised as though it were evil. |
@@ -78,12 +78,12 @@ TLM propers: the endangered sinner sought, strengthened, and welcomed into joy
 
 ### Search restores without bypassing repentance (*Gosp.*)
 
-| **Witness** | **Searcher and lost** | **Saving movement** | **Control** |
+| **Witness** | **Searcher and lost** | **Saving movement** | **Precise sense** |
 |:-----------|:----------------|:-----------------|:-------------------|
 | St. Cyril | Christ receives sinners who approach while accusers make mercy itself an accusation. | The physician uses nearness and table fellowship for healing, repentance, and joy. | Christ does not participate in their disorder; welcome has conversion as its end. |
 | St. Gregory | The Shepherd bears fallen humanity, and divine Wisdom lights and sweeps for the obscured image. | Incarnation searches; the shoulders bear; conscience is exposed; heaven rejoices. | The one and ninety-nine are theological figures, not demographic arithmetic. |
 | St. Ambrose | The shoulders become the Cross; the woman can signify the Church seeking the sovereign’s coin. | Humanity lost in Adam is gathered in Christ, and ecclesial proclamation searches for the King’s likeness. | Personal repentance belongs within common restoration; neither is erased by the other. |
-| St. Gregory of Nyssa | The lamp becomes illumined reason and the house the interior life. | Ascetical self-search uncovers a royal image obscured, not annihilated, by disorder. | This is reuse of the parable, not Luke’s narrated subject or Gregory the Great’s identical reading. |
+| St. Gregory of Nyssa | The lamp becomes illumined reason and the house the interior life. | Ascetical self-search uncovers a royal image obscured, not annihilated, by disorder. | Gregory of Nyssa reuses the parable for a subject other than Luke’s, and his reading is not Gregory the Great’s. |
 
 > **The two parables protect two truths**
 >
@@ -91,14 +91,14 @@ TLM propers: the endangered sinner sought, strengthened, and welcomed into joy
 
 ### Recovered life enters common offering and joy (*Off., Sec., Comm., Postcomm.*)
 
-| **Liturgical moment** | **Established movement** | **Source-grounded control** |
+| **Liturgical moment** | **Established movement** | **Decisive reading** |
 |:-------------|:------------------------|:----------------------------|
 | **Offertory — trust** | Psalm 9 turns those who know God’s name toward trust, praise in Zion, and remembrance of the afflicted. | The found person does not become self-enclosed; received mercy opens an ecclesial voice toward other sufferers. |
 | **Secret — sanctification** | Personal *Respice in me* becomes ecclesial *Respice … munera*; gifts are to be received for believers’ salvation with enduring sanctification. | Irenaeus and Cyril of Jerusalem illuminate oblation and sanctified reception without supplying authorship for the Roman prayer. |
 | **Communion — shared joy** | Luke 15:10 places angelic joy over one repenting sinner on the communicants’ lips. | Cyril and Gregory require the hearer to rejoice at another’s restoration; sacramental joy remains joined to repentance. |
 | **Postcommunion — continuing effect** | Holy things already received are asked to vivify and prepare the cleansed for everlasting mercy. | Reception is neither a trophy nor a self-completing act; divine gift continues as purification, life, and preparation. |
 
-> **Four guardrails — recoverable at a glance**
+> **Mercy, grace, dignity, and reception**
 >
 > - **Mercy is not indifference.** Luke’s joy is joy over repentance under the just and patient Judge.
 >
@@ -114,11 +114,11 @@ TLM propers: the endangered sinner sought, strengthened, and welcomed into joy
 
 Luke first names the conflict: publicans and sinners draw near to hear Jesus, while Pharisees and scribes murmur because he receives and eats with them. The parables answer an accusation about Christ’s table-fellowship. They therefore reveal both the seeker’s character and the hearer’s possible resistance.
 
-| **Witness** | **Direct locus** | **Exegetical emphasis** | **Boundary to retain** |
+| **Witness** | **Direct locus** | **Exegetical emphasis** | **Precise sense** |
 |:-----------|:----------------|:-----------------|:-------------------|
 | St. Cyril of Alexandria | *Commentary on Luke*, Homily 106, on Luke 15:1–10 | Christ receives those who approach because he is the saving physician. The accusers make mercy itself an accusation; Christ answers by requiring them to share the joy caused by repentance. | Cyril does not turn welcome into approval of sin. The movement is approach, healing, repentance, and joy. |
 | St. Gregory the Great | *Forty Gospel Homilies*, Homily 34 | True justice pities; false justice disdains. Converted sinners may love with unusual ardor because memory of their wandering intensifies gratitude. | Gregory expressly avoids making every penitent superior to every person who remained just. His contrast diagnoses dispositions, not a mechanical ranking. |
-| Tertullian | *On Patience*, 12, receiving Luke 15 | Divine patience goes after one sheep and bears it; impatience would have despised the one for the sake of the many. Patience is active pursuit, not mere delay. | This is an early ascetical reception of the parable, not commentary on the Alleluia or on this Roman formulary. |
+| Tertullian | *On Patience*, 12, receiving Luke 15 | Divine patience goes after one sheep and bears it; impatience would have despised the one for the sake of the many. Patience is active pursuit, not mere delay. | Tertullian receives the parable early and ascetically; he comments neither on the Alleluia nor on this Roman formulary. |
 
 > **At the contested table**
 >
@@ -139,7 +139,7 @@ The first parable is deliberately disproportionate: one is missing, and the seek
 | One body in Adam and Christ | Ambrose can speak of the single sheep corporately: humanity was lost in Adam and is gathered in Christ. | Personal repentance belongs inside a common human wound and a common ecclesial restoration. Individual concern and corporate salvation are not rivals. |
 | Friends and neighbors | Gregory identifies the rejoicing circle with the angelic hosts; Ambrose likewise places restored humanity amid heavenly joy. | The Communion antiphon is not decorative sentiment. Eucharistic assembly rehearses the communion into which the sinner is carried. |
 
-> **How to handle the numbers**
+> **The hundred, the ninety-nine, and the one**
 >
 > The Fathers’ hundred and ninety-nine are theological figures of fullness and angelic communion, not a census of saved and lost persons. Nor does one sinner make salvation private: Luke’s singular protects the irreducible value of the person, while Gregory and Ambrose show the one human nature borne home in Christ. Ambrose’s larger reading of the sheep, coin, and son as a threefold remedy associates carrying, searching, and receiving with one saving work rather than three rival agents.
 
@@ -153,7 +153,7 @@ The second parable repeats the sequence—loss, initiative, finding, convoked jo
 | St. Ambrose, *Luke* VII.211–212 | The woman can signify the Church actively searching with the lamp. | The drachma bears the sovereign’s image and belongs to the Church’s treasure. Human dignity is received, not self-minted. | Ecclesial proclamation seeks what belongs to the King and summons the recovered person toward the Father. |
 | St. Gregory of Nyssa, *On Virginity*, 12 | The lamp becomes reason illumined for an inward search; the house is the person’s interior life. | The royal image has been covered by the accumulated dirt of disordered life, not annihilated. | The soul searches its faculties, uncovers the image, and calls the ordered powers of the soul to rejoice. |
 
-*Source status.* Gregory and Ambrose expound Luke 15 directly. Gregory of Nyssa reuses the parable in an ascetical account of self-knowledge. The three readings are compatible levels of reception, but they should not be collapsed: divine Wisdom, the Church, and the searching soul are not interchangeable subjects in the Fathers’ arguments.
+Gregory and Ambrose expound Luke 15 directly. Gregory of Nyssa reuses the parable in an ascetical account of self-knowledge. The three readings work at compatible levels and remain distinct: divine Wisdom, the Church, and the searching soul are not interchangeable subjects in the Fathers’ arguments.
 
 > **Outside and inside**
 >
@@ -186,7 +186,7 @@ First Peter 5:6–11 contains a tightly ordered sequence. Humility places the Ch
 
 > **St. Augustine — same-psalm exegesis**
 >
-> In *Exposition on Psalm 54* (the page headed Psalm 55 in modern numbering), 23, Augustine directly explains the Gradual’s *Iacta cogitatum tuum*. The burden is not handed to another fragile human being as though that person were the final support; the self and its care are entrusted to the Creator who made and sustains it. Applying that exposition to 1 Peter’s adjacent command is a documented scriptural resonance, not Augustine’s commentary on the Epistle.
+> In *Exposition on Psalm 54* (Psalm 55 in modern numbering), 23, Augustine directly explains the Gradual’s *Iacta cogitatum tuum*. The burden is not handed to another fragile human being as though that person were the final support; the self and its care are entrusted to the Creator who made and sustains it. First Peter’s adjacent command echoes the same verse, but Augustine’s exposition does not comment on the Epistle.
 
 The other appointed psalms add three controls that the Gradual alone cannot supply. Augustine’s Psalm 24 exposition lets the solitary and poor speaker lift the soul without claiming self-sufficiency: shame is refused through trust, while affliction and sins remain confessed. On Psalm 7 he treats the just Judge’s patience as preserving medicine and makes received righteousness, not autonomous merit, the ground of confidence. On Psalm 9 he joins knowledge of God’s name to seeking, proclamation from Sion, divine remembrance of blood, and the poor person’s cry. Thus Introit, Alleluia, and Offertory move from exposed need through patient judgment into praise that remembers other sufferers.
 
@@ -212,15 +212,15 @@ The Collect is not a generic request for protection. Its clauses distinguish the
 | *per bona temporalia* | The prayer asks to pass through temporal *goods*, not through things redescribed as evil. | The Offertory’s praise and the Secret’s gifts can belong to faithful passage; created goods are used without becoming the final good. |
 | *ut non amittamus aeterna* | The negative final clause fixes the danger: eternal goods may be lost. | The Postcommunion’s everlasting mercy names the horizon toward which present reception must prepare the faithful. |
 
-> **A double boundary**
+> **Neither contempt nor captivity**
 >
-> The Collect calls temporal things good, excluding contempt for creation; because they are traversed under God’s rule toward eternal goods, it also excludes captivity to them. Linking this itinerary to later gifts and holy things is an intra-formulary reading, not a compositional claim.
+> The Collect calls temporal things good, excluding contempt for creation; because they are traversed under God’s rule toward eternal goods, it also excludes captivity to them. The later gifts and holy things continue this itinerary within the one formulary; no checked witness links their composition.
 
 ### Gifts looked upon, believers sanctified (*Int., Coll., Sec., Postcomm.*)
 
-> **Textual control**
+> **The Secret’s Latin and English witnesses**
 >
-> The analysis follows the 1962 Latin from *Respice, Domine* through its printed endpoint at *in unitate*. The identified 1925 Lefebvre English is a historical translation witness with its own abbreviated conclusion, “Through our Lord.” Neither witness is expanded or silently harmonized; their complete received wording and exact boundaries are preserved in `propers/verified.md` rather than repeated here.
+> The 1962 Latin runs from *Respice, Domine* to its printed endpoint at *in unitate*. The identified 1925 Lefebvre English is a historical translation witness with its own abbreviated conclusion, “Through our Lord.” The two therefore end differently, each as printed; `propers/verified.md` holds their complete received wording and exact boundaries.
 
 | **Latin hinge** | **Grammatical force** | **Place in the Sunday’s movement** |
 |:-------------|:------------------------|:----------------------------|
@@ -230,13 +230,13 @@ The Collect is not a generic request for protection. Its clauses distinguish the
 | *perpetua sanctificatione* | An ablative naming the enduring sanctification with which reception is joined | Sanctification is divine action, not a quality the gifts or offerers manufacture independently. |
 | *sumenda concede* | The gerundive agrees with *munera*: grant the gifts to be received | *sumenda* anticipates the Postcommunion’s *sumpta*: what is petitioned before the canon is confessed after reception. |
 
-> **St. Irenaeus — doctrinal illumination of oblation and reception**
+> **St. Irenaeus — oblation and reception**
 >
-> *Against Heresies* IV.18.1–5 teaches that the Church offers from God’s own creation, that acceptance glorifies the offerer rather than supplying a divine need, and that Eucharistic bread receives a heavenly reality. Bodies nourished by it are therefore not destined for annihilation but for resurrection. Irenaeus does not comment on this Secret; he supplies doctrinal control for its movement from ecclesial gifts to sanctification and salvation.
+> *Against Heresies* IV.18.1–5 teaches that the Church offers from God’s own creation, that acceptance glorifies the offerer rather than supplying a divine need, and that Eucharistic bread receives a heavenly reality. Bodies nourished by it are therefore not destined for annihilation but for resurrection. Irenaeus does not comment on this Secret; his doctrine frames its movement from ecclesial gifts to sanctification and salvation.
 
 > **St. Cyril of Jerusalem — sanctified gifts and holy reception**
 >
-> *Mystagogical Catechesis* 5 (Catechetical Lecture 23), especially 7 and 19–21, describes the invocation of the Holy Spirit upon the gifts, the proclamation of holy things for the holy, and the communicant’s reverent reception. This is direct mystagogical teaching from a different local rite, not evidence for the Roman prayer’s authorship. It illuminates why sanctification and reception belong together without making reception automatic or morally indifferent.
+> *Mystagogical Catechesis* 5 (Catechetical Lecture 23), especially 7 and 19–21, describes the invocation of the Holy Spirit upon the gifts, the proclamation of holy things for the holy, and the communicant’s reverent reception. Cyril’s is direct mystagogical teaching from a different local rite, and it attests nothing about the Roman prayer’s authorship. It illuminates why sanctification and reception belong together without making reception automatic or morally indifferent.
 
 > **Four verbal threads through the formulary**
 >
@@ -331,6 +331,6 @@ The Communion repeats Luke 15:10 rather than choosing an unrelated sacramental v
 
 - Septuagint/Vulgate titles and chapter context: [Psalm 7](https://www.newadvent.org/bible/psa007.htm), [Psalm 9/10](https://www.newadvent.org/bible/psa009.htm), [Psalm 24 (modern 25)](https://www.newadvent.org/bible/psa024.htm), [Psalm 54 (modern 55)](https://www.newadvent.org/bible/psa054.htm), [Luke 15](https://www.newadvent.org/bible/luk015.htm), and [1 Peter 5](https://www.newadvent.org/bible/1pe005.htm); contextual transcription aid, consulted 2026-07-10.
 
-**Last revised (UTC):** 2026-07-19T17:21:47Z
+**Last revised (UTC):** 2026-09-24T13:48:58Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
