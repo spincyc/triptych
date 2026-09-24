@@ -100,10 +100,16 @@
 \newenvironment{afterlife}[1]{\begin{massbox}{#1}\small}{\end{massbox}}
 \newcommand{\afield}[2]{\par\textbf{#1:} #2}
 
-% The governing thesis is substantive content and may open the body.
-\newcommand{\studythesis}[1]{%
-  \begin{studybox}{Governing thesis}#1\end{studybox}}
+% The thesis is substantive content and may open the body. It stands in a
+% plain studybox titled by what the thesis says, never by a label for the
+% writing's own machinery; the \studythesis macro that printed such a label is
+% withdrawn.
 
 % Exploratory proposal. The heading itself carries the claim class, so the
 % body needs no repeated disclaimer.
 \newenvironment{proposal}[1]{\begin{studybox}{#1}\small}{\end{studybox}}
+% One named field of a proposal. It prints exactly what a bold run-in label
+% followed by a full stop printed before; marking the fields lets the
+% house-voice screen tell the exploratory notice and the limit fields, which
+% it protects, from the proposals, which it reads.
+\newcommand{\pfield}[2]{\par\textbf{#1.} #2}
