@@ -65,7 +65,7 @@ Psalm 90 turns mortality into petition. The assembly asks not for the abolition 
 
 ### 3. A life reoriented in Christ
 
-Colossians is a semi-continuous apostolic strand, not proof of a designed commentary on Luke. Yet its language creates a strong textual overlay: greed is idolatry, the old person is put away, and life is hidden with Christ.
+Colossians is a semi-continuous apostolic strand, read in course and not selected to comment on Luke. Yet its language creates a strong textual overlay: greed is idolatry, the old person is put away, and life is hidden with Christ.
 
 ### 4. Gift, offering, and communion
 
@@ -89,7 +89,7 @@ The first reading’s *hevel* is programmatic, but the selected case is precise:
 
 ### Colossians
 
-Chrysostom’s Homilies 7–8 directly cover the appointed chapter. He insists that seeking above is grounded in union with the risen Christ, not flight from embodied responsibility. The verbs also have a temporal shape: the faithful have put on the new person and are being renewed. Greed is not merely one social vice among others in the list; the letter calls it idolatry because desire can give created goods the allegiance due to God. The omission of vv. 6–8 must remain visible: wrath, anger, malice, slander, and shameful speech belong to the immediate context even though they are not proclaimed.
+Chrysostom’s Homilies 7–8 directly cover the appointed chapter. He insists that seeking above is grounded in union with the risen Christ, not flight from embodied responsibility. The verbs also have a temporal shape: the faithful have put on the new person and are being renewed. Greed is not merely one social vice among others in the list; the letter calls it idolatry because desire can give created goods the allegiance due to God. The cut omits vv. 6–8, whose wrath, anger, malice, slander, and shameful speech belong to the immediate context even though they are not proclaimed.
 
 ### Acclamation and Gospel
 
@@ -111,7 +111,7 @@ The appointed cut is deliberately discontinuous. Its opening superlative announc
 
 ### Psalm 90
 
-Human life returns to dust and passes like grass. The image moves within a prayer addressed to the God who outlasts the generations: mortality becomes a request for a wise heart, returning mercy, morning gladness, and stability for the work of human hands. The last petition therefore prevents the first reading from being heard as a command to abandon work. The official occurrence page prints a response whose words derive from Ps. 95:8 while marking it “(1)” beneath Psalm 90. This guide records the source discrepancy and does not silently identify the response with Ps. 90:1.
+Human life returns to dust and passes like grass. The image moves within a prayer addressed to the God who outlasts the generations: mortality becomes a request for a wise heart, returning mercy, morning gladness, and stability for the work of human hands. The last petition therefore prevents the first reading from being heard as a command to abandon work. The official occurrence page prints a response whose words derive from Ps. 95:8 while marking it “(1)” beneath Psalm 90; the response is not Ps. 90:1.
 
 ### Colossians 3:1–5, 9–11
 
@@ -123,7 +123,7 @@ The acclamation blesses poverty of spirit and promises the Kingdom. In the Gospe
 
 ### Missal formulary
 
-The Week XVIII owner controls the Entrance, three orations, and two Communion-antiphon alternatives. Their protected English is not reconstructed here; the Latin incipits and scriptural loci on page one identify them.
+The Entrance, three orations, and two Communion-antiphon alternatives belong to the shared Week XVIII formulary. Their protected English is not reconstructed here; the Latin incipits and scriptural loci on page one identify them.
 
 ## Comparative Reception and Theological Dossier
 
@@ -276,6 +276,6 @@ This source-first guide treats the recurring U.S. Year C formula, not a parish r
 
 - Dicastery for Divine Worship, *Homiletic Directory* 145–149.
 
-**Last revised (UTC):** 2026-09-24T12:30:42Z
+**Last revised (UTC):** 2026-09-24T13:12:25Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
