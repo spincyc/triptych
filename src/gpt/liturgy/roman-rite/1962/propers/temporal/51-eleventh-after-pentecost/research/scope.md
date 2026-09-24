@@ -189,3 +189,27 @@ for clipping, sparse spill, and unstable flow. Both variants compiled after
 source freeze; their AUX-aware component, metadata, source-library,
 web-declaration, web-conversion, and log gates passed. No PDF or web output was
 installed.
+
+## Other Masses (2026-09-24)
+
+On 2026-09-24 the maintainer approved applying D11 and D12 of the liturgical
+commentators plan (guidance/liturgy/propers-three-documents.md, "Liturgical
+commentators" and "The formulary is a compilation") to this leaf.
+Reader-facing prose no longer describes another Mass; the facts stay in this
+record:
+
+- Honorius, *Gemma animae* IV.65, reads a Sunday sharing this Introit,
+  Collect, Epistle, Gradual, Offertory, and Communion but having Luke 18 and
+  another Alleluia; at IV.68 he treats Mark 7 with another Epistle and chant
+  field (above, "Historical layers"). The studies cite him only for what he
+  says of shared elements.
+- Saint Anthony's `Dominica XII` sermon on Mark 7 belongs to another Sunday
+  numbering with 2 Corinthians 3 as Epistle (above). The studies cite it for
+  what it says of Mark 7 and the Secret.
+- The Hadrianum Gregorian's Sunday XII set carries another chant field (above,
+  "Historical layers").
+
+The history of this formulary's own orations in the sacramentaries now stands
+in the full edition only: the source-grounded synthesis's "Historical layers
+and received unity" subsection is printed in the research edition and omitted
+from the synthesis edition, which carries none of that history.
