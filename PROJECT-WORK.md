@@ -83,9 +83,24 @@ earlier `\newcommand` would render the first definition. The audit agrees
 with that output, so it would not catch it. No source in the corpus does
 this, and a macro defined only by `\def` is still refused as unknown.
 
-**Open.** A fresh operator approval is needed for the release bindings these
-batches left stale: the regenerated web editions, `site.css`,
-`tools/public-alpha`, `corpus.json` and the catalogue and source projections.
+**Release rebind approved and applied; authorization record pending.** On
+2026-09-23 the maintainer answered the request for this batch's rebind
+approval, verbatim, "Approve all 49 (Recommended)". The 49 stale or
+unrecorded bindings were re-recorded with `make refresh-release-bindings
+ADOPT=1`, with `ONLY` scoped to exactly those paths:
+
+- 34 regenerated web editions;
+- `site.css` and `tools/public-alpha`;
+- `corpus.json` and the source index;
+- 11 Catena projections;
+- 4 newly adopted source projections for Chrysologus Sermo 50 and Maximus
+  of Turin Homily 108.
+
+The rights table mirror followed. `check-release-bindings` now reports 0
+stale. `make approve-release` refused in this workspace again, for want of
+other publications' installed PDFs. The note quoting the maintainer's
+answer is to be recorded with `approve-release` where the whole corpus is
+installed, before deployment.
 
 ## Locus-pattern rebinding sweep, 2026-09-23
 
