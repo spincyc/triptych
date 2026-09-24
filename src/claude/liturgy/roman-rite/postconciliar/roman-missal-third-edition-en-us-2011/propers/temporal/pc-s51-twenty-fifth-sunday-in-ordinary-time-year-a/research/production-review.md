@@ -1165,3 +1165,60 @@ Generation metadata was not refreshed with an invented model identity or
 review event; finalization belongs to the coordinator. No installed PDF or web
 edition, release inventory, Git index, commit or push was changed by this
 consumer repair.
+
+## House-voice audit, review fixes and re-check, 24 September 2026 (outside the workflow)
+
+On 2026-09-24 the maintainer decided to audit every proper leaf of both
+providers for the house-voice defect of `guidance/editorial.md` and to repair
+what the audit finds, with independent review afterwards. That decision is the
+provider authority for the three passes below and for nothing else.
+
+**Audit (`6baabe283`).** A full read of the three documents found sentences
+that took the study, its pages or its own interpretations as grammatical
+subject, or narrated the study's attribution discipline. There were eighteen:
+sixteen in the expansive study and two in the concise commentary. Each was
+rewritten with a text, a witness or a fact as subject:
+- the opening's roadmap;
+- the settings' introduction and the note on Augustine's tractate 47;
+- the cross-references between the interpretations;
+- the three statements of where the Missal's texts take their places;
+- Paul's place as the editor's;
+- the third interpretation's second step and its difficulties;
+- the comparison's "made on" and "belongs beside".
+
+The homily needed no change.
+
+**Review fixes (`abe9e50a0`).**
+- F18: in four places the Missal's texts "take their places … by their own
+  wording; the placing is the editor's, not a commentator's".
+- F4: the opening reads "What each interpretation's witnesses say of their own
+  passages supplies it", and four senses of its own close each.
+- F19: "The second difficulty is one of evidence, and it concerns the furthest
+  step alone" is restored.
+- "as has been seen" is deleted.
+- The settings' introduction and "The three interpretations below" are
+  rewritten.
+- Under the compiler-intent addendum, two clauses are deleted with their points
+  kept: "The Missal's own texts were not written for this Gospel", and "no
+  connection claims that the formulary was composed to make it" in both scope
+  appendices.
+
+**Re-check fix (this pass).** The first interpretation's "The Missal's own
+texts, prayed with the readings of all three years, serve this Gospel …" had
+lost its "here". It now reads "In this interpretation the Missal's own texts …
+serve this Gospel …", so the placing stays the editor's and does not read as a
+property of the texts.
+
+**Checks.**
+- In each pass all three editions were built with `make doc` and installed
+  with `make install-doc`, and the settled-aux component and metadata checks
+  pass.
+- Pages are unchanged at 31, 10 and 4.
+- Word diffs against the parent's builds show only the listed changes and the
+  timestamp, and the changed pages were inspected at 70 dpi.
+- `check-content-preflight` output is byte-identical before and after on all
+  four editions.
+- The web edition is regenerated, and `make check-web-editions-current` passes.
+- The receipts are re-snapshotted, and `_proper_study.py check` passes in
+  content, artifacts and publication with `--require-presentation
+  --require-format`.
