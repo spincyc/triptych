@@ -218,7 +218,7 @@ At Communion, John 6:35 creates the shortest direct return to the Gospel: Chris
 
 - **“Manna of Females” (*First Reading; Responsorial Psalm*)** William Dent’s 1784 satirical etching *Catlap for Ever, or the Smuggler’s Downfall* puts the phrase into William Pitt’s speech about reduced tea duties. Wilderness food becomes cheap tea in an argument about taxation, smuggling, gin, windows, coal, and candles. The British Museum record controls the object, inscription, and political setting; the satire illuminates an economic afterlife of “manna,” not the meaning of Exodus.
 
-- **“Operation Manna” (*First Reading; Responsorial Psalm*)** The Allied food drops over the occupied Netherlands in 1945 turned the biblical name into an operational title. The named relation was material rather than decorative: food came from aircraft to people suffering in the Dutch famine. The NOS liberation-year dossier explicitly explains the biblical naming and preserves the danger, organization, and human labor behind the aid. The comparison must not recast war relief as an unmediated miracle.
+- **“Operation Manna” (*First Reading; Responsorial Psalm*)** The Allied food drops over the occupied Netherlands in 1945 turned the biblical name into an operational title. The named relation was material rather than decorative: food came from aircraft to people suffering in the Dutch famine. The NOS liberation-year dossier “Als manna uit de hemel: voedsel gedropt in Nederland” explicitly explains the biblical naming and preserves the danger, organization, and human labor behind the aid. The comparison must not recast war relief as an unmediated miracle.
 
 - **“Bread of heaven, feed me” (*Gospel; Communion B*)** William Williams’s pilgrimage hymn *Guide Me, O Thou Great Jehovah*, in Peter Williams’s English tradition, gathers wilderness guidance, living water, bread from heaven, death, and arrival in Canaan into a singer’s petition. A 1913 public-domain hymnal witness was checked. The hymn therefore shows Exodus and Johannine imagery becoming congregational prayer; it is not direct exegesis of John 6 or evidence that the Communion option was selected.
 
@@ -293,6 +293,6 @@ The reception search concentrated on direct exposition: Chrysostom’s *Homilies
 
 - GIRM 46–90, 352–367; *General Introduction to the Lectionary* 65–69, 78–91, 93–110.
 
-**Last revised (UTC):** 2026-09-24T11:41:39Z
+**Last revised (UTC):** 2026-09-24T13:14:46Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
