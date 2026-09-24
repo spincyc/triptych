@@ -17,7 +17,7 @@ Apply these priorities in order:
 1. **Identify the instance.** Fix the edition, language, territory, calendar, date when needed, formula key or other governing identity, source owner, cycle, form, ritual context, and branch universe before drafting.
 2. **Collate the complete target.** Verify every appointed and permitted textual unit against the identified books; never combine editions, territories, cycles, calendars, or option paths into a synthetic formulary.
 3. **Preserve source roles.** Keep the reusable Missal or Ritual Mass owner distinct from the cycle- or occurrence-specific leaf; keep verified text, documented history and reception, source-grounded synthesis, and editorial proposal distinct.
-4. **Serve the reader's flow.** Open with the texts and synthesis. Put resolution mechanics and all work-wide edition, jurisdiction, chronology, geography, search, rights, limitation, currentness, and review apparatus in the terminal appendices.
+4. **Serve the reader's flow.** Open with the textual inventory and synthesis, in the [reader-facing order](#reader-facing-order). Put resolution mechanics and all work-wide edition, jurisdiction, chronology, geography, search, rights, limitation, currentness, and review apparatus in the terminal appendices.
 5. **Fail closed.** Do not infer a key, slug, cycle split, edition disposition, occurrence, textual option, or local enactment. Record unresolved states in the tracked records and qualify only the claims they affect.
 
 ## Identity, registry, and ownership
@@ -113,16 +113,20 @@ bindings, and component-scoped references. Each synthesis relation joins at
 least two element keys and declares controlled evidence classes. No component
 included in one mode may depend on a component omitted from that mode.
 
-The research edition contains the existing pages 1 and 2; every lawfully
-reproducible appointed text; `Each Proper in Full` with the bounded reception
-sweep; exactly two pages of `The Propers: Themes and Movement`; unbounded
-`Source-Grounded Synthesis Across the Propers`; unbounded `Interpretive
-Possibilities Across the Propers`; notable quotations; and
-terminal apparatus. The synthesis companion retains pages 1 and 2, brief
-synthesis, the complete source-grounded synthesis, the complete exploratory
-synthesis, notable quotations, and terminal apparatus. It omits both the
-appointed-text component and the per-element sweep. It remains subject to the
-copyright limits below.
+The two editions differ in which components they contain, never in the order
+those components appear. Sequence is stated once, in [Reader-facing
+order](#reader-facing-order) below; this paragraph states membership only and
+lists components in that order rather than establishing one.
+
+The research edition contains every component: pages 1 and 2; exactly two
+pages of `The Propers: Themes and Movement`; the element-by-element `The
+Propers: Detailed Commentary`, carrying the bounded reception sweep for each
+textual unit; every lawfully reproducible appointed text; the unbounded
+`Source-Grounded Synthesis Across the Propers`; `The Propers: Notable and
+Quotable`; the unbounded `The Propers: Interpretive Possibilities`; and
+terminal apparatus. The synthesis companion omits exactly two of them — the
+element-by-element commentary and the appointed text — and puts nothing in
+their place. It remains subject to the copyright limits below.
 
 Because rights prevent this canonical edition from reproducing every
 controlling appointed text in full, its catalog label is `Research PDF`;
@@ -199,23 +203,39 @@ Use these controlled branch statuses in the tracked records: `required`, `appoin
 
 ## Reader-facing order
 
-Use this macro-order:
+This list is the profile's single statement of reader sequence. No other
+passage here, in a manifest, in a workflow, or in a leaf restates it; where
+another passage needs the order, it links here. Use this macro-order:
 
 1. compact title block naming only the celebration and the formula, cycle, or form needed to identify the object;
 2. unheaded two-column textual-variable-parts inventory in actual liturgical order;
 3. unheaded four-senses table;
 4. physical page 2 alone: `Scriptural Date and Location`;
 5. exactly two pages of `The Propers: Themes and Movement`;
-6. unbounded `The Propers: Detailed Commentary`;
-7. required `The Propers: Notable and Quotable`;
-8. required `The Propers: Interpretive Possibilities`, with one global editorial or AI disclosure;
-9. any required `Sacramental Appendix`;
-10. fresh-page `Appendix: Liturgical Resolution`;
-11. `Appendix: Scope and Qualifications`;
-12. `References`; and
-13. terminal imported `Generation Metadata`.
+6. unbounded `The Propers: Detailed Commentary`, the element-by-element sweep, research edition only;
+7. every lawfully reproducible appointed text, research edition only;
+8. unbounded `Source-Grounded Synthesis Across the Propers`;
+9. required `The Propers: Notable and Quotable`;
+10. required `The Propers: Interpretive Possibilities`, with one global editorial or AI disclosure;
+11. any required `Sacramental Appendix`;
+12. fresh-page `Appendix: Liturgical Resolution`;
+13. `Appendix: Scope and Qualifications`;
+14. `References`; and
+15. terminal imported `Generation Metadata`.
 
-For an ordinary Sunday or solemnity, the title, complete inventory, and four-senses table occupy page 1. The date/location sheet begins and ends at forced page boundaries and is the only content on physical page 2. `Themes and Movement` begins on page 3 and fills exactly two substantive, readable pages without a repeated heading or continuation label. `Detailed Commentary` begins on page 5 and has no upper limit. Do not use padding, artificial whitespace, omitted material, or hidden qualifications to meet a page boundary; use compact but readable tabular design only where the complete page-2 inventory requires it.
+Positions 6 and 7 follow the thematic movement and never precede it: a guide
+that front-loads either ahead of it is non-conforming. The thematic movement has
+come before the commentary in this list since 2026-07-16, and it has held pages
+3 and 4 since 2026-07-18. The component list that [Component
+architecture](#component-architecture) used to carry put the appointed text and
+the sweep first. On 2026-07-27, 5988f9dfd followed that list and moved the
+thematic movement of both pc-s43 leaves to pages 17 and 7. On 2026-09-23,
+604c636fa and e1dec510f moved it back to pages 3 and 4. Every leaf that
+carries positions 6 and 7 prints them in that order. Positions 7 and 8 are
+absent from leaves authored before the component architecture, which remain
+valid until their next substantive revision.
+
+For an ordinary Sunday or solemnity, the title, complete inventory, and four-senses table occupy page 1. The date/location sheet begins and ends at forced page boundaries and is the only content on physical page 2. `Themes and Movement` begins on page 3 and fills exactly two substantive, readable pages without a repeated heading or continuation label. The edition's next position begins on page 5. In the research edition that is `Detailed Commentary`, which has no upper limit. The synthesis companion omits positions 6 and 7, so there it is `Source-Grounded Synthesis Across the Propers`. Do not use padding, artificial whitespace, omitted material, or hidden qualifications to meet a page boundary; use compact but readable tabular design only where the complete page-2 inventory requires it.
 
 The page-2 sheet is the sole exception to terminal historical apparatus. It carries passage-specific composition and narrated-event orientation, not edition verification, jurisdiction, rights, source status, search method, currentness, review state, or other global qualification. Liturgical resolution and scope remain terminal before `References`. Keep only a claim-local qualification beside the claim it changes.
 
@@ -329,7 +349,7 @@ For each new or substantially revised guide:
 6. assemble the page-2 date/location sheet and terminal apparatus and refresh structured metadata; and
 7. build, inspect every page and branch table, and install only the reviewed PDF.
 
-A guide is profile-final only when its registry identity, slug, path, owner, edition disposition, and occurrence are resolved; its shared owner exists at the registry-fixed path, alone carries the formulary evidence, and is declared as an explicit build edge, while the leaf restates none of it; its cycle letter and any weekday numeral were resolved independently under [calendar computation](calendar-computation.md) and confirmed against a dated official witness; its owner and leaf audits are complete; all authorized branches and textual units are accounted for; its claims and relationships are classified; its passage-by-passage matrix documents bounded searches of the major relevant Greek and Latin patristic and later saintly corpora, checked loci, witness roles, and negative results; its detailed commentary proves breadth and depth for every appointed passage; its notable-and-quotable section has three to five source- and locus-identified, non-obvious cultural, humorous, ironic, idiomatic, literary, political, institutional, visual, scientific, commercial, or comparable reuses of wording from the scriptural propers, with every verbal relation, contextual turn, branch, right, payoff, limit, and material negative result audited and no patristic excerpt or bare title, motto, artwork, or musical setting used as padding; its interpretive section contains four to six non-recapitulatory, multi-element proposals, each stating its connecting mechanism, its fruit, what the ordinary element-by-element reading misses, and its strongest material limit, and its research scope records each proposal's anchors, mechanism, nearest located precedent or analogue, search boundary, and controlling limit without claiming universal novelty; page 2 contains only the complete one-page date/location sheet, pages 3--4 contain the thematic movement, detailed commentary begins on page 5, and every later boundary conforms; work-wide qualifications appear only in the terminal scope appendix; rights and source records conform; every shared dependency is explicit and rebuilt; and build, metadata, log, and visual checks pass.
+A guide is profile-final only when its registry identity, slug, path, owner, edition disposition, and occurrence are resolved; its shared owner exists at the registry-fixed path, alone carries the formulary evidence, and is declared as an explicit build edge, while the leaf restates none of it; its cycle letter and any weekday numeral were resolved independently under [calendar computation](calendar-computation.md) and confirmed against a dated official witness; its owner and leaf audits are complete; all authorized branches and textual units are accounted for; its claims and relationships are classified; its passage-by-passage matrix documents bounded searches of the major relevant Greek and Latin patristic and later saintly corpora, checked loci, witness roles, and negative results; its detailed commentary proves breadth and depth for every appointed passage; its notable-and-quotable section has three to five source- and locus-identified, non-obvious cultural, humorous, ironic, idiomatic, literary, political, institutional, visual, scientific, commercial, or comparable reuses of wording from the scriptural propers, with every verbal relation, contextual turn, branch, right, payoff, limit, and material negative result audited and no patristic excerpt or bare title, motto, artwork, or musical setting used as padding; its interpretive section contains four to six non-recapitulatory, multi-element proposals, each stating its connecting mechanism, its fruit, what the ordinary element-by-element reading misses, and its strongest material limit, and its research scope records each proposal's anchors, mechanism, nearest located precedent or analogue, search boundary, and controlling limit without claiming universal novelty; page 2 contains only the complete one-page date/location sheet, pages 3--4 contain the thematic movement, the edition's next reader-order position begins on page 5, and every later boundary conforms; work-wide qualifications appear only in the terminal scope appendix; rights and source records conform; every shared dependency is explicit and rebuilt; and build, metadata, log, and visual checks pass.
 
 Do not call an edition-locale collection complete until every stable-registry target has a sourced disposition, all edition splits and conditional targets are evaluated, all weekday fallbacks are evaluated, and the replacement and local-overlay matrix is resolved. Absence in one civil year is an occurrence result, not a target disposition.
 
