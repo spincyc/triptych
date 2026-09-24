@@ -191,3 +191,15 @@ built through settled passes and visually reviewed page by page; component,
 source, metadata, web, and log gates passed. These are internal source and
 production facts, not ecclesiastical approval or an installed-publication
 claim.
+
+## Sacramentary history and other Masses (2026-09-24)
+
+On 2026-09-24 the maintainer approved applying D11 and D12 of the liturgical
+commentators plan (guidance/liturgy/propers-three-documents.md) to this
+leaf. The source-grounded synthesis's sentence on the orations' Verona,
+Old Gelasian and Hadrianum witnesses now prints in the full edition only; the
+synthesis edition carries no sacramentary history. The full edition's
+element sections keep the history of this formulary's own orations
+(Collect, Secret, Postcommunion), which D12 permits there. No reader-facing
+passage in this leaf describes another Mass's Gospel or chants; Schuster, the
+one commentator on the assembled Mass, reads this formulary.

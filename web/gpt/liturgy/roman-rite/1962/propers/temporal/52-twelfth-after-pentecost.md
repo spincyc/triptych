@@ -95,7 +95,7 @@ Eusebius accordingly passes from the vine to the true Vine, from bread to the my
 
 The Postcommunion names the fruits for which communicants pray. Participation in the holy mystery is to vivify; it is to grant expiation and protection. Ignatius calls the Eucharist medicine of immortality. Aquinas, *ST* III, q. 79, aa. 1–2, 4, 6, 8, explains that Communion nourishes the life of grace, remits venial sin, strengthens against future sin, unites the faithful to Christ and one another, and pledges glory; fruitfulness flowers in worthy reception. The Mass therefore closes where its Gospel command can be obeyed. Those found half-dead are borne by Christ; those vivified by his mystery become bearers of another’s burden. Those who received pardon intercede for sinners. Those fed from God’s works spend themselves in mercy. And those guarded through the night run toward the promise of eternal life, awaiting the Samaritan’s return.
 
-> **From cry to neighbor.** Cry for the help without which no course can begin; receive the Spirit who writes charity within; bless God through day and night; enter Christ’s intercession and offering; receive sacramental life and go to become a neighbor. These five acts are a reading of the received Roman formulary, whose elements came from distinct historical sources.
+> **From cry to neighbor.** Cry for the help without which no course can begin; receive the Spirit who writes charity within; bless God through day and night; enter Christ’s intercession and offering; receive sacramental life and go to become a neighbor. Read in these five acts, the received Roman formulary joins elements that came from distinct historical sources.
 
 <span id="triptych:brief-synthesis:end" data-label="triptych:brief-synthesis:end"></span>
 
@@ -353,7 +353,7 @@ The final prayer consequently seals every movement of the Mass. The Introit’s 
 
 ### A received Roman unity through historical layers
 
-The formulary’s texts have separate histories. The Verona collection preserves shorter cognate forms of the Collect and Postcommunion; the Old Gelasian places the three orations together with variants; the Hadrianum no. XXXI gives their later lexical family; the psalm chants and lessons have their own scriptural and liturgical histories. The 1962 Missal sets these texts together for this Sunday, and Catholic reading contemplates their sequence. Schuster’s direct commentary on the assembled formulary (III, pp. 128–131) reads Collect and Epistle, Moses and the Secret, and Communion and Postcommunion as mutually illuminating.
+The formulary’s texts have separate histories. The Verona collection preserves shorter cognate forms of the Collect and Postcommunion; the Old Gelasian places the three orations together with variants; the Hadrianum no. XXXI gives their later lexical family; the psalm chants and lessons have their own scriptural and liturgical histories. The 1962 Missal sets these texts together for this Sunday. Schuster’s direct commentary on the assembled formulary (III, pp. 128–131) reads Collect and Epistle, Moses and the Secret, and Communion and Postcommunion as mutually illuminating.
 
 The history and the unity therefore stand together: the received unity is real, and the Church’s stable act of proclamation, offering, and Communion can make texts from several periods speak together in the traditional senses of Scripture.
 
@@ -455,7 +455,7 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 >
 > **Fruit:** Christian hope may be read not as escape from wounded history but as fidelity that sustains costly care within it.
 >
-> **What the element-by-element reading misses:** The promises differ in kind (destination, covenant ground, guaranty); so distinguished, hope sustains costly care now, not only at the road’s end.
+> **What the element-by-element reading misses:** The promises differ in kind (destination, covenant ground, guaranty); so distinguished, hope can sustain costly care now, not only at the road’s end.
 >
 > **Precedent result:** **Near analogue located.** Origen, *Homily on Luke* 34.3, reports an elder’s eschatological reading of the return; Ambrose, *Exposition of Luke* 7.83, and Bede, PL 92, 470D, also receive that return eschatologically. These enumerated witnesses do not join all three promise forms.
 >
@@ -469,7 +469,7 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 >
 > **Fruit:** Compassion becomes a temporal discipline: attention must survive the first emotion, the first expense, and the first liturgical moment.
 >
-> **What the element-by-element reading misses:** The Gradual’s “always” and the Alleluia’s day and night measure prayer, the Samaritan’s next day measures care; joined, they lend care the duration of prayer, which outlasts its first emotion, expense, and liturgical moment.
+> **What the element-by-element reading misses:** The Gradual’s “always” and the Alleluia’s day and night measure prayer, the Samaritan’s next day measures care; joined, they lend care the duration of prayer, so that care outlasts its first emotion, expense, and liturgical moment.
 >
 > **Precedent result:** **Near analogue located.** Bellarmine treats the Gradual’s “always” as continuing praise; Eusebius reads the Alleluia’s day and night as Christ’s continuous prayer and oblation; Origen’s elder, Ambrose VII.83, and Bede PL 92, 470D receive the Samaritan’s return. None of these enumerated witnesses joins the three-part duration.
 >
@@ -569,6 +569,6 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 
 - *United States ex rel. Knauff v. Shaughnessy*, 338 U.S. 537, 548, 550 (1950) (Frankfurter, J., dissenting).
 
-**Last revised (UTC):** 2026-09-24T16:27:53Z
+**Last revised (UTC):** 2026-09-24T17:12:13Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
