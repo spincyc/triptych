@@ -86,6 +86,17 @@ lessons and Honorius IV.84's Alleluia, and corrected the slips the review's
 advisories named; and it brought the study-facing permissions into line with the
 profile's *Liturgical commentators* rule (decision D11). §§ 2.7, 3.5, 3.11, 4.2,
 4.3, 4.6, 6.3 and 10 carry the result.
+**Revised after publication, 23 September 2026.** The leaf's first revision
+was made outside the `proper-study` workflow, on the three revision obligations
+the maintainer recorded that day (HOM-010, STU-005 and RES-032). It changes this
+record only where those obligations reach it. Peter Chrysologus's Sermo 50, which
+the library registered after the run published, is read at its own locus and
+identified as the sequel Rabanus prints under *(Joan. Chrysost.)* (§§ 3.5, 4.2,
+6.3, 10). § 7 records the per-passage Introit dates that the maintainer's
+decision on STU-005 now admits. The staged account above and below remains the
+history of run `71b6f89518984232`. `research/production-review.md` records the
+revision and the review it still needs.
+
 `ARGS.research_handoff` is `none`; no handoff dossier was supplied. Nothing below
 is taken from the other provider's leaves, from any postconciliar record, or from
 this provider's neighbouring Sundays, except where a neighbouring Sunday's printed

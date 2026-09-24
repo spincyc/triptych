@@ -1219,3 +1219,199 @@ acceptance, and nothing has been committed.
 - `make check-release-bindings` exits nonzero. It reports only the sixteen
   bindings named above, none of which this stage wrote. All three of this
   stage's paths are bound exactly.
+
+## First revision, 23 September 2026 (outside the workflow)
+
+### What this revision is, and why it was made directly
+
+This is the leaf's first revision after publication. It discharges the three
+revision obligations the maintainer recorded on 23 September 2026 in
+`src/sources/inventories/research-staleness-v1.toml`: HOM-010 for the homily,
+STU-005 for the dossier date, and RES-032 for Chrysologus. It changes nothing
+else. The workflow has no mode for revising an accepted leaf. `proper-study`
+seeds a new production and runs every review again, and it is meant for new
+and substantially revised guides. Three bounded corrections are neither. So
+the revision was made directly, under the profile's rules. It follows the
+precedent of the Seventeenth Sunday's dated dossier correction
+(`57-seventeenth-after-pentecost/research/chronology-revision-2026-09-21.md`,
+commit `6caf8946d`). That precedent edited under the profile, recorded the
+revision in the leaf's own research records, and claimed no workflow
+acceptance for it.
+
+The archived run `71b6f89518984232` under `evaluations/proper-study-results/`
+is unchanged, and so is `evaluations/blocking-findings-v1.toml`. Only an
+evaluation writes that file, and it still lists HOM-010, STU-005 and RES-032
+as the run left them. The generation provenance still names the run, and the
+new contribution record says that the provenance identifies the historical
+production, not acceptance of this revision. The revision timestamp,
+`2026-09-24T03:02:51Z`, is UTC; the revision was made on 23 September local
+time.
+
+### HOM-010: the Eucharist and the Paschal mystery in the preacher's own voice
+
+`sections/homily/10-homily.tex`, the fifth movement's last paragraph. Two
+sentences were taken out: "So the sacrifice this verse asks for is not
+something we own and hand over", and the clause "we bring them back to him".
+Three sentences were written in the preacher's own voice. The first hears the
+assembly's own approach to Communion in the Communion's "come into his
+courts": "We carry them into his courts when we come up to this altar". The
+second and third say what the Postcommunion's "what we have received" is:
+"the holy sacrifice that last prayer thanks him for", "Christ himself, his
+Body given up on the Cross and his Blood poured out for the forgiveness of
+sins, the Lord who died and rose again". The words "what we have received"
+are the 1861 Cummiskey English already quoted in the movement. None of this is
+credited to a Father. It is the Church's faith, and it agrees with the second
+reading, which joins the altar to the blood shed "for the remission of sins".
+The optional fourth-movement sentence that HOM-010 offered was not added. The
+fifth movement's "Blood poured out for the forgiveness of sins" already
+grounds the forgiveness in the Passion, and the speech was at the top of its
+length.
+
+**Spoken word count: 1,562 words**, up from 1,519. The count uses the rule
+recorded at iteration 0, which reproduces both earlier figures: 1,448 for
+iteration 0 and 1,519 for iteration 1. At 120 to 130 words a minute that is
+12.0 to 13.0 minutes, a little beyond the profile's approximately 10–12 at the
+slower rate. The figure is arithmetic and not a timed delivery. The whole
+revised speech was read through silently for sense and for the join from the
+fifth movement into the sixth. The homily note's "Length and pace" carries
+the new figure. Its "Relation to the reviewed readings" paragraph was not
+extended: an added clause pushed the rights colophon onto a fourth page, so
+the relation of the new sentences is recorded here instead, as the profile's
+"terminal note or audit" allows.
+
+### STU-005: the Introit's per-passage dates
+
+`sections/80-date-location.tex` (expansive) and
+`sections/concise/03-date-location.tex` (concise), in the Introit's
+`\dossierprose` row. The statement that the record answers the two loci
+separately was replaced by the dates, in the per-passage form of
+`guidance/scripture-chronology.md` § 14.1:
+`Ecclus~36:18: B.C.~190--170 or c.~B.C.~280` and
+`Ps~121:1: before c.~165~B.C.`. Each carries its relation (composition), its
+profile and its source in the same sentence. The Date cell is unchanged and
+still prints the generated annotation.
+
+The dates are the generated concise displays of the claims in
+`research/chronology.toml`, printed by the wiring's own projection:
+
+    cd scripts && python3 -c 'import _proper_chronology as w; d = w.dossier("liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost", provider="claude"); [print(",".join(r.locus for r in c.reaches), c.disposition, c.profile, c.label, "=>", w.concise_display_label(c)) for e in d.elements if e.key == "introit" for c in e.claims]'
+
+That prints `Ecclus.36.18 preferred catholic-traditional-v1 between 190 and 170
+B.C. => B.C. 190–170`, `Ecclus.36.18 alternate catholic-traditional-v1 about
+280 B.C. => c. B.C. 280` and `Ps.121.1 preferred catholic-critical-v1 before
+the Maccabean period, around 165 B.C.; … => Before c. 165 B.C.`. The raw labels
+agree with `tools/tpt scripture-chronology query Ecclus.36.18` and `… Ps.121.1`.
+`tools/tpt proper-chronology record --check` and `annotations --check` both
+still pass, so the record and the annotation file are current and were not
+rewritten. `check-content-preflight --check chronology-claims-supported`
+reports 3 per-passage dates in each study, each the record's answer for the
+passage it names. As a negative test, the concise row was altered on a scratch
+copy to `c. B.C. 290` and to a psalm label carrying the Ecclesiasticus
+interval. The checker refused both, naming the record's answers at
+Ecclus.36.18 as `['B.C. 190–170', 'c. B.C. 280']`, and the file was restored
+byte for byte.
+
+### RES-032: Peter Chrysologus, Sermo 50
+
+The research record now carries the sermon. In `research/scope.md`: the
+revision note at the head; in § 3.5 the Rabanus v. 2 bullet, the Catena's
+other lemmata, a new Chrysologus entry and the "No Father … reported only by
+another" bullet; § 4.2; § 6.3; and § 10 item 1. In
+`research/interpretations.md`: § 3.2 and the `gospel` bullet of § 3.3. In
+`research/source-bindings.toml`: the PL 107 facsimile binding's context, and
+six new bindings. Those are the Sermo 50 passage, the PL 52 leaves n171 and
+n172, the Maximus Homilia CVIII passage, and the PL 57 leaves n254 and n255.
+Every page image was hashed and matched before it was read. The places quoted
+were read on the images: col. 339C, cols. 341A–B and col. 342B in PL 52, and
+the admonition and col. 504 in PL 57. The sequel that the record had called
+untraced, the text Rabanus prints under *(Joan. Chrysost.)* at PL 107,
+col. 871, is identified as Sermo 50. The Catena's "Ioannes episcopus" lemma
+was not re-read. Its recorded opening words answer to Bede's sentence at the
+head of that same compilation, which is not in Sermo 50, so the review's
+identification of the lemma with the sermon is recorded as the review's
+finding.
+
+In the expansive study, `sections/40-nothing-of-our-own.tex` gains one
+paragraph after St Ambrose in "The man who was carried". It says that the
+sermon takes the bearers' side and reads the man's silence against him. It
+quotes *Audit veniam …*, *fidei alienae suffragio* and *Deum non quaerere …
+quod per solam gratiam conferebat* from PL 52, col. 341. It states that Migne
+prints the text both as Chrysologus's Sermo 50 and as Maximus of Turin's
+Homilia CVIII, and that its author is disputed. It gives the Breviary's use on
+this Sunday only as Maximus's editor reports it. The main clause *offerentium
+fidem non respicit*, whose reading is unsettled, is not quoted. The References
+gain one entry, and the scope appendix gains one clause on how the sermon was
+read. D11 does not reach the sermon, because it preaches this formulary's
+Gospel. `proper-components.toml` adds "Peter Chrysologus" to the third lane's
+`authors` but not to `carrying_authors`, because the ascription is disputed.
+The concise study and the homily do not use him. The concise study may
+introduce no source-dependent claim of its own, and the homily's account of
+whose faith Christ saw needs no further witness.
+
+### Substantive word counts and rendered pages
+
+By the homily rule, the third reading grows by 177 words, the scope appendix
+and References by 27, and the expansive dossier falls by 6. The concise
+dossier falls by 1.
+
+| Output | Pages | Bytes | SHA-256 (build and installed) |
+| --- | ---: | ---: | --- |
+| `58-eighteenth-after-pentecost.pdf` | 34 | 569,432 | `72bd8bdc19439c860eae6d3ca0575d0c70377ebe9fccf347e8fb76916b7f4e2c` |
+| `58-eighteenth-after-pentecost-synthesis.pdf` | 12 | 477,495 | `30b61281ed3af6e1e9c7f6b6faf9f824c943b9fbe3cb3832193d2b6a8aed5859` |
+| `58-eighteenth-after-pentecost-homily.pdf` | 3 | 275,779 | `89bd3573383b01a1437e85c90a2f9b9dd2a0509eed9770218e8db537a19a195b` |
+
+The web edition is `web/claude/…/58-eighteenth-after-pentecost.md`: 133,869
+bytes, SHA-256
+`a18360d8d60b13309c0821015f98a7e25f53d5e0fdc71b6f7466cf68b560f8aa`. It is
+byte-identical to the fresh conversion, and its diff against the previous
+edition is exactly the four changed passages and the timestamp.
+
+The new paragraph moves the study's comparison table from a break after six
+rows to a break after three, with the header repeated. It also fills the
+formerly sparse page 29 to about two fifths. These are the pages of accepted
+findings VIS-002 and VIS-001. The scope clause and the Reference entry were
+shortened until the rights colophon stood again on page 34 rather than alone
+on page 35. The concise page 2 still holds the whole dossier, and the homily
+still ends on page 3. Every changed page was inspected on rasters from
+`tools/tpt pdf-review`: study pp. 24–25, 27–30 and 32–34, concise p. 2, and
+homily pp. 2–3. The logs of all three builds show no overfull or underfull
+box, no undefined reference and no rerun warning, and every font is embedded.
+
+### Checks run
+
+- `make doc`, then `make install-doc`, for all three outputs. The installed
+  bytes equal the build.
+- `_proper_study.py check --phase content`, `artifacts` and `publication` with
+  `--require-presentation --require-format` exit 0. So does `content` with
+  `--require-authority`.
+- `check-proper-components --phase artifacts` exits 0: it checks the concise
+  physical-page markers.
+- `check-generation-metadata` exits 0 on each PDF.
+- `check-content-preflight` exits 0 on `leaf`, `research`, `synthesis` and
+  `homily`, with 89 bindings valid.
+- `make check-web-editions-current` exits 0, as does `check-web-edition`.
+- `public-alpha check --provider claude --document <leaf>` exits 0.
+- `source-library validate` exits 0, and `make check-source-reader` reports
+  the projection current.
+
+The two build receipts, `research/artifacts.json` and
+`research/web-artifact.json`, were rewritten by `_proper_study.py snapshot`
+and `snapshot-web`. They record these bytes and approve nothing. The
+`.log` hashes in `artifacts.json` include this checkout's path, so another
+checkout will report the snapshot as differing until it rebuilds, as the
+original receipt already did here.
+
+### What this revision still needs
+
+The acceptance of run `71b6f89518984232` does not cover these bytes. Still
+needed are an independent content review of the changed research and of the
+three documents, a visual review of the changed pages, and a web review.
+Three shared derived files are stale and belong to the coordinator: the
+document catalogue `src/web/data/structure/documents/corpus.json`, where this
+leaf's entry gains the new contribution and timestamp; the release binding of
+the web edition; and the Claude publication inventory, which is stale for ten
+of this leaf's files. The revision obligations in the research-staleness
+ledger and the deliverable requirement `eighteenth-sunday-introit-dated` are
+the coordinator's to clear. The other standing advisories are untouched,
+among them HOM-008, HOM-009, HOM-011, RES-031, RES-033 to RES-036 and
+VIS-003 to VIS-005.
