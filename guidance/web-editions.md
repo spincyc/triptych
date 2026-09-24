@@ -165,6 +165,17 @@ makes when it runs is pandoc's to make, and the audit does not follow it: a
 table cell that depends on one is audited against the earlier definition, and
 so refused rather than passed.
 
+Three differences from TeX remain, and they are left because none can reach a
+published edition silently:
+- A second `\newcommand` of a name keeps the first definition. TeX stops the
+  PDF build at that line, so no installed leaf can carry one.
+- A `\newcommand` inside a preamble group is carried as if at top level. A
+  later use outside the group is undefined to TeX and stops the build. A use
+  inside the group gets the same text either way.
+- An unbraced `\renewcommand\name` is not carried. The one case,
+  `\subsubsection` in Claude 55's `format.tex`, restyles a heading, and the
+  web edition renders headings itself.
+
 Two handlings are deliberate rather than repaired, and a reviewer meets
 the decision here rather than the bare defect. A `\multicolumn` span
 keeps its contents but not its span, because neither Markdown nor the
