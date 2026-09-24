@@ -39,7 +39,7 @@ The Scripture below is the public-domain Douay–Rheims Challoner study translat
 
 ### Entrance and Collect {#proper-entrance}
 
-**Entrance:** *Salus populi ego sum*. Roman Missal, Twenty-fifth Sunday in Ordinary Time; ICEL Antiphonary, printed p. 79. The composed antiphon is not reproduced here. Psalm 37:39–40 (Douay–Rheims 36:39–40) is its identified underlying scriptural basis, not the full antiphon’s text.
+**Entrance:** *Salus populi ego sum*. Roman Missal, Twenty-fifth Sunday in Ordinary Time; ICEL Antiphonary, printed p. 79. The composed antiphon is not reproduced. Psalm 37:39–40 (Douay–Rheims 36:39–40) is its identified underlying scriptural basis, not the full antiphon’s text.
 
 <span id="proper-collect" data-label="proper-collect"></span> **Collect:** *Deus, qui sacrae legis*. Roman Missal, same Sunday, Collect. The complete prayer is not reproduced; it names a law of love, asks for obedience, and looks to an eternal end.
 
@@ -87,7 +87,7 @@ The opening is an excerpt within verse 20; verses 25–26 and the continuation o
 
 ### Gospel acclamation: Cf. Acts 16:14b {#proper-acclamation}
 
-The appointed acclamation is an adaptation addressed to the Lord and is not reproduced. Its underlying narrative is Acts 16:14, printed here solely as contextual Scripture:
+The appointed acclamation is an adaptation addressed to the Lord and is not reproduced. Its underlying narrative, Acts 16:14, follows solely as contextual Scripture:
 
 <sup>14</sup> And a certain woman named Lydia, a seller of purple, of the city of Thyatira, one that worshipped God, did hear: whose heart the Lord opened to attend to those things which were said by Paul.
 
@@ -491,7 +491,7 @@ NPNF denotes *Nicene and Post-Nicene Fathers*, first series; ANF denotes *Ante-N
 
 15. USCCB, *New American Bible, Revised Edition*, introductions to [Isaiah](https://bible.usccb.org/bible/isaiah/0), [Psalms](https://bible.usccb.org/bible/psalms/0), and [Matthew](https://bible.usccb.org/bible/matthew/0); complete introduction bodies inspected in the registered 21 September 2026 web state. Protected texts; historical orientation only.
 
-**Last revised (UTC):** 2026-09-24T15:20:22Z
+**Last revised (UTC):** 2026-09-24T16:45:48Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
