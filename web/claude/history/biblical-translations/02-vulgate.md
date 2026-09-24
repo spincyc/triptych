@@ -8,9 +8,7 @@
 
 This account asks how that composite came to be, and what happened to it. Who made the Latin Bible’s parts, on whose authority, from what sources, and against what resistance? How did a contested novelty become the common Bible of the Latin West? And what exactly did the Church’s official acts—Trent’s “authentic” decree, the papal editions of 1590 and 1592, the *Nova Vulgata* of 1979—do and not do to the text?
 
-> **Governing thesis**
->
-> The Vulgate is not one act but a tradition. Its parts have different makers, dates, source languages, and methods: a documented papal prompting covers, at most, Jerome’s conservative Gospel revision of 382–384; the rest of the New Testament was revised by an unknown hand; the Old Testament is Jerome’s Hebrew-based project, begun and defended against serious contemporary opposition; the deuterocanonical books entered half-revised or untouched, against the drift of Jerome’s own canon prefaces. “The Vulgate” as a bounded, named, authoritative edition is a product of medieval use and early-modern authority—and each later edition, from the Clementine to the *Nova Vulgata*, answers its own question and must not be read back into Jerome’s study in Bethlehem.
+The Vulgate is not one act but a tradition. Its parts have different makers, dates, source languages, and methods: a documented papal prompting covers, at most, Jerome’s conservative Gospel revision of 382–384; the rest of the New Testament was revised by an unknown hand; the Old Testament is Jerome’s Hebrew-based project, begun and defended against serious contemporary opposition; the deuterocanonical books entered half-revised or untouched, against the drift of Jerome’s own canon prefaces. “The Vulgate” as a bounded, named, authoritative edition is a product of medieval use and early-modern authority—and each later edition, from the Clementine to the *Nova Vulgata*, answers its own question and must not be read back into Jerome’s study in Bethlehem.
 
 The method is evidence-first. Jerome’s prefaces and letters are participant documents, read for what they claim and when; Augustine’s letters carry the contemporary opposition; Rufinus carries the polemic; manuscripts witness what was actually copied; official acts establish their own object and no more; and modern critical scholarship reconstructs what no ancient source states, with its attributions kept visible. Work-wide bounds, terminology, and the evidence classes used throughout are stated in the terminal appendix.
 
@@ -263,7 +261,7 @@ All web sources were accessed and checked on 2026-07-24; the quoted witnesses we
 
 - Survey and finding-aid articles consulted for bounded facts with their limits recorded in the source audit: the Roman Psalter attribution debate (De Bruyne 1930; Goins 2014; Norris 2017, as surveyed at en.wikipedia.org, “Latin Psalters”); the Sixtine–Clementine difference counts (James 1600; Vercellone; Metzger; Aland, as surveyed at en.wikipedia.org, “Sixto-Clementine Vulgate”); the Benedictine edition’s volume record (public catalog listings). Finding aids only; no such page is treated as a checked witness to wording.
 
-**Last revised (UTC):** 2026-07-25T04:15:59Z
+**Last revised (UTC):** 2026-09-24T14:59:29Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

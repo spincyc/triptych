@@ -8,9 +8,7 @@
 
 This account asks what actually happened. How did a Greek Torah come to be made in Ptolemaic Alexandria? How did one translation event grow into a corpus covering the whole Hebrew Bible and more? Why do the Greek and Hebrew Bibles differ, and what do those differences witness? And how did Jews, Christians, and finally modern editors successively adopt, revise, abandon, defend, and reconstruct these texts?
 
-> **Governing thesis**
->
-> The Septuagint is not one thing. The name covers, by turns, a third-century B.C. Greek translation of the Torah made in Alexandria; a book-by-book accumulation of later translations and Greek compositions; a first-century Jewish and Christian working Bible; a fourth-century Christian manuscript corpus; and a modern editorial reconstruction. The origin legend attached to the name is itself a historical object with a traceable growth, from a sober collaborative procedure in its earliest telling to a miracle of seventy identical texts in its latest. The history must therefore be told as several linked acts, with each witness kept at its own date.
+The Septuagint is not one thing. The name covers, by turns, a third-century B.C. Greek translation of the Torah made in Alexandria; a book-by-book accumulation of later translations and Greek compositions; a first-century Jewish and Christian working Bible; a fourth-century Christian manuscript corpus; and a modern editorial reconstruction. The origin legend attached to the name is itself a historical object with a traceable growth, from a sober collaborative procedure in its earliest telling to a miracle of seventy identical texts in its latest. The history must therefore be told as several linked acts, with each witness kept at its own date.
 
 The method is evidence-first. The earliest continuous origin narrative, the *Letter of Aristeas*, is read at its own date and for its own purposes, not as a transcript of events; papyri and scrolls from Egypt and the Judean Desert speak as artifacts; Philo, Josephus, the rabbis, and the Fathers are dated witnesses to what their communities believed and did; official acts, from the Council of Trent to *Dei Verbum*, establish their own object and no more. Modern scholarship reconstructs, and its live disagreements are preserved rather than resolved by fiat. Work-wide bounds, terminology, and the evidence classes used throughout are stated in the terminal appendix.
 
@@ -273,7 +271,7 @@ All web sources were accessed and checked on 2026-07-24. Citations in the text u
 
 - *A New English Translation of the Septuagint* (NETS), ed. A. Pietersma and B. G. Wright (New York: Oxford University Press, 2007; corrected printings 2009, 2014, 2021), electronic edition pages at the University of Pennsylvania (<http://ccat.sas.upenn.edu/nets/edition/>); copyright IOSCS; nothing reproduced.
 
-**Last revised (UTC):** 2026-07-24T23:18:11Z
+**Last revised (UTC):** 2026-09-24T14:59:29Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
