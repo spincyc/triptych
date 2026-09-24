@@ -167,7 +167,7 @@ Augustine asks who can speak the psalm’s poverty. Christ assumed poverty for u
 
 Matthew 22 places this exchange after disputes about tribute and resurrection. A lawyer tests Jesus by asking which command is great in the law. Jesus answers with love of God in the whole heart, soul, and mind, and adds love of neighbor as oneself. The two commands sustain the law and the prophets. The second is like the first without becoming identical to it: God is loved as God, and the neighbor is loved as a fellow person whose good cannot be detached from that highest love.
 
-Chrysostom reasons that the commands entail each other. Love of God takes form in obedience, and obedience includes care for the neighbor; hatred cannot coexist peacefully with a claim to fulfill the first command. Augustine develops the direction of love: the whole self is ordered toward God, and the neighbor is loved in relation to that same good. His account includes every human being, even an enemy, and recognizes Christ himself as neighbor through his mercy toward us. In his account the neighbor is never a useful instrument of the believer’s advancement.[^9]
+Chrysostom reasons that the commands entail each other. Love of God takes form in obedience, and obedience includes care for the neighbor; hatred cannot coexist peacefully with a claim to fulfill the first command. Augustine develops the direction of love: the whole self is ordered toward God, and the neighbor is loved in relation to that same good. His account includes every human being, even an enemy, and recognizes Christ himself as neighbor through his mercy toward us. The neighbor is never a useful instrument of the believer’s advancement.[^9]
 
 The lawyer’s motive receives more than one explanation. Chrysostom, comparing Mark, says the answer improved him. Augustine allows either such improvement or an initial testing undertaken with caution rather than malice. Neither Father diagnoses the inward state of every hearer. Matthew describes a test; Christ’s response gives the testing person the truth he needs.[^10]
 
@@ -203,7 +203,7 @@ That account exposes a difficulty. A hearer may recognize the order of love, app
 
 ### Mercy teaches more than the correct answer
 
-Augustine’s reading of the Introit’s mercy verse identifies the decisive dependence. The psalmist does not ask to be treated according to his own righteousness. He asks God to teach the righteousness by which God makes persons righteous. The same psalm is full of promised obedience, so its petitions cannot mean that obedience is unnecessary. Rather, the willing servant continually receives the light and strength by which he serves. Augustine’s next paragraph insists that understanding must continue to be received: a former illumination does not render the present person independent of the source of light.[^16]
+Augustine reads the Introit’s mercy verse as a confession of dependence. The psalmist does not ask to be treated according to his own righteousness. He asks God to teach the righteousness by which God makes persons righteous. The same psalm is full of promised obedience, so its petitions cannot mean that obedience is unnecessary. Rather, the willing servant continually receives the light and strength by which he serves. Augustine’s next paragraph insists that understanding must continue to be received: a former illumination does not render the present person independent of the source of light.[^16]
 
 Bellarmine draws out the difference between knowledge alone and practical love. Teaching at verse 124 includes the conviction and affection that make observance desirable. This is especially searching beside the lawyer’s question. One can know that love is the greatest command and use that knowledge to gain superiority over someone else. Then the correct answer has not yet become the life it describes. God’s teaching reaches further than the acquisition of a sentence: it makes that sentence a rule for the speaker’s own conduct.[^17]
 
@@ -263,7 +263,7 @@ Chrysostom’s exposition of Ephesians 4:3 gives the Spirit an active role in jo
 
 The next homily widens the body across place and time. The faithful now living, those who have lived, and those who will live belong to the one body; Chrysostom includes those who pleased God before Christ’s coming through their relation to him. The congregation is therefore not the whole measure of the Church. Its present quarrels are set within a communion that exceeds its local memory. No member can make the body equivalent to the people he happens to recognize.[^28]
 
-Chrysostom also offers several ways to understand the one spirit, including the received Spirit and the concord or zeal of those joined together. His explanations are related, not interchangeable definitions. In his account the divine giver and the common disposition of his people are distinct, so a group’s intense shared enthusiasm does not by itself prove that its purpose is holy.
+Chrysostom also offers several ways to understand the one spirit, including the received Spirit and the concord or zeal of those joined together. His explanations are related, not interchangeable definitions. The divine giver is thus distinct from the common disposition of his people, and a group’s intense shared enthusiasm does not by itself prove that its purpose is holy.
 
 Thomas makes the difference explicit in his account of spiritual unity. People can unite in evil; the unity sought by the apostle is ordered to a good end. Pride, anger, impatience, and misplaced zeal damage it, while charity seeks correction at the fitting time. Thus peace is neither the silence of people afraid to speak nor cooperation in something wrong. It is common life under a good that all are called to receive.[^29]
 
@@ -327,7 +327,7 @@ The Introit puts that truth at the threshold. The servant acknowledges justice a
 
 Paul’s prisoner voice tests the sincerity of that change. Worthy walking takes the unglamorous forms of humility, meekness, patience, and mutual endurance. A person may prefer a conspicuous religious offering to the quiet task of bearing another’s inconvenience. The Epistle makes the latter part of the former’s truth. A gift laid before God does not authorize contempt for the person beside the giver. The shared Lord and baptism name a relation that persists beyond the moment of offering.
 
-The Gradual places the giver within a prior gift. The people is chosen, the heavens are established by the Word, and their strength is the Spirit’s work. Praise therefore begins in reception. In Bellarmine’s account of inseparable Trinitarian action, the worshipper’s offering does not initiate divine generosity. Augustine’s spiritual heavens likewise stand through the Word. The offering returns a received life to its source.[^40]
+The Gradual places the giver within a prior gift. The people is chosen, the heavens are established by the Word, and their strength is the Spirit’s work. Praise therefore begins in reception. Bellarmine explains that work through inseparable Trinitarian action; the worshipper’s offering therefore does not initiate divine generosity. Augustine’s spiritual heavens likewise stand through the Word. The offering returns a received life to its source.[^40]
 
 ### The Lord addresses the giver
 
@@ -345,13 +345,13 @@ Jerome explains the sanctuary petition through promised restoration. Daniel seek
 
 At verse 20 Jerome offers the alternatives of personal confession as one of the people and humble identification with their guilt. Both make Daniel’s solidarity active. He speaks for the people before God; he does not merely deliver a verdict upon them from a safe distance. At verse 21 Jerome interprets the mention of evening sacrifice through prayer persevering from morning to evening. The appeal continues; the holy person’s attention is not exhausted by one eloquent sentence.[^43]
 
-That endurance has a moral analogue in the Epistle. To carry another in prayer while refusing every cost of patient charity would divide intercession from the good it seeks. Asking mercy for someone with whom one must also speak truthfully, then seeking a fitting time and manner for that speech, is one concrete form of it. Thomas’s account of charitable correction allows both endurance and action. Prayer does not have to become an alternative to a necessary conversation, and the conversation does not have to become an exercise in punishment.[^44]
+That endurance has a moral analogue in the Epistle. To carry another in prayer while refusing every cost of patient charity would divide intercession from the good it seeks. Asking mercy for someone with whom one must also speak truthfully, then seeking a fitting time and manner for that speech, is one concrete form of intercession joined to patient charity. Thomas’s account of charitable correction allows both endurance and action. Prayer does not have to become an alternative to a necessary conversation, and the conversation does not have to become an exercise in punishment.[^44]
 
 ### The holy action heals the one who offers
 
 The Secret refuses to leave the meaning of offering at the level of sincere intention. It asks that the sacred things enacted free the people from offenses past and future. Thomas locates sacramental efficacy in Christ present and in his Passion, and explains its mode through nourishment. Food does more than remind a hungry person that eating would be desirable; it sustains life. So the sacramental action gives grace and strengthens the charity whose practice the Gospel commands.[^45]
 
-The analogy also explains why preservation and subsequent freedom can coexist. Nourishment strengthens a living person without turning him into someone incapable of later harming himself. In Thomas’s explicit account of free will, the future-directed petition is no advance absolution.
+The analogy also explains why preservation and subsequent freedom can coexist. Nourishment strengthens a living person without turning him into someone incapable of later harming himself. Thomas explicitly retains free will; the future-directed petition is therefore no advance absolution.
 
 The faithful ask to be guarded and strengthened, and their later choices remain consequential. The holy action reaches the future by giving life to be lived, not by making future conduct irrelevant.[^46]
 
@@ -483,7 +483,7 @@ The source research received an independent workflow review before authoring. Th
 
 14. *New American Bible Revised Edition*, introductions to [Psalms](https://bible.usccb.org/bible/psalms/0) (superscriptions and broad chronological limit) and [Matthew](https://bible.usccb.org/bible/matthew/0) (the separately identified post-A.D. 70 critical boundary and its probabilistic qualification), official USCCB web edition, inspected 21 September 2026. Protected introductions summarized, not reproduced.
 
-**Last revised (UTC):** 2026-09-24T16:27:05Z
+**Last revised (UTC):** 2026-09-24T17:05:02Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
