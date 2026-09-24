@@ -673,11 +673,131 @@ evidence = ["source-grounded-synthesis"]
         self.assertIn("gueranger", result.stderr)
         self.assertEqual(self.probe("references-used").returncode, 0)
 
-    def test_a_missing_manifest_is_a_refusal_and_not_a_vacuous_pass(self):
-        (self.leaf / "proper-components.toml").unlink()
-        result = self.probe("relation-coverage")
+    # --- A numbered References heading ------------------------------------
+
+    def number_the_headings(self):
+        """Every `\\section*` made `\\section`, as claude/48 prints them."""
+        main = self.leaf / "main.tex"
+        main.write_text(main.read_text(encoding="utf-8")
+                        .replace("\\section*{", "\\section{"),
+                        encoding="utf-8")
+
+    def test_a_numbered_references_heading_is_read(self):
+        """claude/48 numbers every section, `\\section{References}` among them.
+
+        A starred-only pattern read that leaf as printing no References at
+        all and refused it twice, once in each check that reads the section,
+        although all twenty-three of its entries are used and none is declared
+        unquoted.
+        """
+        self.number_the_headings()
+        result = self.probe("references-used")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("2 entries, every one used in the body", result.stdout)
+        result = self.probe("unquoted-not-quoted")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("1 sources declared unquoted", result.stdout)
+
+    def test_an_unused_entry_under_a_numbered_heading_is_still_refused(self):
+        """Reading the heading must not stop the check from judging entries."""
+        self.write_leaf(extra=(
+            "\\item Francis Blomefield, \\work{An Essay towards a "
+            "Topographical History of the County of Norfolk}, vol.~4.\n"))
+        self.number_the_headings()
+        result = self.probe("references-used")
         self.assertEqual(result.returncode, 1)
-        self.assertIn("no proper-components.toml", result.stderr)
+        self.assertIn("cited nowhere in the body", result.stderr)
+        self.assertIn("Blomefield", result.stderr,
+                      "the refusal names the entry it refused")
+        self.assertNotIn("prints no References section", result.stderr)
+
+    def test_a_contradicted_attribution_under_a_numbered_heading(self):
+        self.write_leaf(translation=(
+            "English: Guéranger, \\work{The Liturgical Year}, p.~224"))
+        self.number_the_headings()
+        result = self.probe("unquoted-not-quoted")
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("References declare unquoted", result.stderr)
+        self.assertIn("gueranger", result.stderr)
+
+    def test_proposals_under_a_numbered_heading_are_read(self):
+        """The same leaf numbers `The Propers: Interpretive Possibilities`.
+
+        A starred-only pattern reported its proposals out of scope, as though
+        the leaf declared none, so a missing field went unread.
+        """
+        (self.leaf / "main.tex").write_text(
+            (self.leaf / "main.tex").read_text(encoding="utf-8")
+            + "\n\\section{The Propers: Interpretive Possibilities}\n"
+            "Everything below is exploratory editorial and AI proposal.\n\n"
+            "\\begin{proposal}{The Introit and the Collect}\n"
+            "\\pfield{Anchors}{Introit and Collect.}\n"
+            "\\pfield{Mechanism}{One address, made twice.}\n"
+            "\\pfield{Fruit}{The day's prayer is read as a single act.}\n"
+            "\\pfield{Strongest limit}{The Collect is older.}\n"
+            "\\end{proposal}\n",
+            encoding="utf-8")
+        result = self.probe("proposal-fields")
+        self.assertEqual(result.returncode, 1, result.stdout)
+        self.assertIn("what the ordinary element-by-element reading misses",
+                      result.stderr)
+
+    # --- relation-coverage and the leaves that predate the manifest -------
+
+    def test_a_leaf_that_predates_the_manifest_is_out_of_scope(self):
+        """Legacy, not defective, and said outright rather than passed.
+
+        Both proper profiles hold that leaves authored before the component
+        architecture remain valid until their next substantive revision.
+        Every published leaf with no manifest states `unknown` for the
+        production that made it; the probe is tried that way and with no
+        record at all.
+        """
+        (self.leaf / "proper-components.toml").unlink()
+        for stated in (None, ("unknown", "unknown")):
+            with self.subTest(stated=stated):
+                if stated:
+                    self.write_production(*stated)
+                result = self.probe("relation-coverage")
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertTrue(result.stdout.startswith(
+                    "relation-coverage: not in scope: the leaf states no "
+                    "recognized provenance record and carries no "
+                    "proper-components.toml, so it predates the component "
+                    "manifest"), result.stdout)
+
+    def test_a_missing_manifest_is_a_refusal_when_the_production_writes_one(
+            self):
+        """Not a vacuous pass: every production workflow writes a manifest.
+
+        A run that forgot to write one states its own workflow and version,
+        and `provenance-matches-run` holds that statement to the run.
+        """
+        (self.leaf / "proper-components.toml").unlink()
+        for workflow in ("proper", "proper-finish", "proper-study"):
+            with self.subTest(workflow=workflow):
+                self.write_production(workflow, 1)
+                result = self.probe("relation-coverage")
+                self.assertEqual(result.returncode, 1, result.stdout)
+                self.assertIn("carries no proper-components.toml",
+                              result.stderr)
+
+    def test_a_coverage_gap_is_refused_whatever_the_leaf_states(self):
+        """The legacy exemption is for a leaf with no manifest, and no other.
+
+        A leaf that carries a manifest is checked exactly as before, even when
+        it states no production -- as every schema-1 leaf of the first
+        production era does.
+        """
+        self.write_manifest(['"introit"', '"collect"', '"gospel"'])
+        for stated in (None, ("unknown", "unknown"), ("proper", 24)):
+            with self.subTest(stated=stated):
+                if stated:
+                    self.write_production(*stated)
+                result = self.probe("relation-coverage")
+                self.assertEqual(result.returncode, 1, result.stdout)
+                self.assertIn("probe-relation", result.stderr)
+                self.assertIn("'gospel'", result.stderr)
 
     def test_current_proper_shape_is_refused_as_a_box_title(self):
         """The Proper 55 regression shape, copied into a synthetic leaf."""
@@ -980,6 +1100,58 @@ class ProseCheckTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("not in scope", result.stdout)
         self.assertIn("marks no proposal", result.stdout)
+
+
+class LegacyLeafTests(unittest.TestCase):
+    """The published leaves that predate the manifest, or number their headings.
+
+    Each rule is held over the synthetic probe in `CheckBehaviourTests`; what
+    is held here is that the corpus leaves those rules were written for are
+    read, and not refused for their age or their heading style.
+    """
+
+    NUMBERED = ("claude", "liturgy/roman-rite/1962/propers/temporal/"
+                          "48-eighth-after-pentecost")
+
+    def run_check(self, provider, document, check):
+        return subprocess.run(
+            [str(ROOT / "tools" / TOOL), "--provider", provider,
+             "--document", document, "--check", check],
+            capture_output=True, text=True, cwd=ROOT)
+
+    @unittest.skipUnless(
+        (ROOT / "src" / NUMBERED[0] / NUMBERED[1]).is_dir(),
+        "the numbered-heading leaf is not in the tree")
+    def test_the_numbered_leaf_s_references_and_proposals_are_read(self):
+        checks = ("references-used", "unquoted-not-quoted", "proposal-fields")
+        for check, result in zip(checks, gather(
+                lambda check: self.run_check(*self.NUMBERED, check), checks)):
+            with self.subTest(check=check):
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertNotIn("not in scope", result.stdout)
+
+    def test_every_leaf_without_a_manifest_is_out_of_scope(self):
+        """Every proper leaf of both providers and both calendar families.
+
+        Every one of them states no recognized production, so each is legacy
+        under its profile. A leaf that stated a production and carried no
+        manifest would be refused here, and would be a real defect.
+        """
+        leaves = [
+            (provider, leaf.relative_to(ROOT / "src" / provider).as_posix())
+            for provider in ("claude", "gpt")
+            for main in sorted((ROOT / "src" / provider / "liturgy").glob(
+                "roman-rite/**/propers/*/*/main.tex"))
+            for leaf in (main.parent,)
+            if not (leaf / "proper-components.toml").is_file()
+        ]
+        results = gather(
+            lambda leaf: self.run_check(*leaf, "relation-coverage"), leaves)
+        for (provider, document), result in zip(leaves, results):
+            with self.subTest(leaf=f"{provider}/{document}"):
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertIn("relation-coverage: not in scope: ",
+                              result.stdout)
 
 
 class ProvenanceCheckTests(unittest.TestCase):

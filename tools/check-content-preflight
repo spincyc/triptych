@@ -435,8 +435,15 @@ def fold(text: str) -> str:
                    if unicodedata.category(ch) != "Mn").lower()
 
 
-REFERENCES = re.compile(r"\\section\*\{References\}")
-SECTION = re.compile(r"\\section\*\{")
+# A References heading is starred or numbered, and the corpus prints both:
+# `\section*{References}` almost everywhere, and `\section{References}` in
+# `claude/48-eighth-after-pentecost`, whose every section is numbered. A
+# pattern for the starred form alone read that leaf as printing no References
+# at all, and refused it for a section it plainly carries. No leaf uses a
+# short-title or aliased form. The section ends at the next `\section`,
+# starred or not, for the same reason.
+REFERENCES = re.compile(r"\\section\*?\{References\}")
+SECTION = re.compile(r"\\section\*?\{")
 
 
 def split_leaf(leaf: Path,
@@ -611,6 +618,53 @@ EVIDENCE_UNIT = {
     "exploratory-proposal": "exploratory-synthesis",
 }
 
+MANIFEST = "proper-components.toml"
+
+# The component manifest binds from the FIRST version of every production
+# workflow: `proper` and `proper-finish` gate on `check-proper-components` from
+# their v1, and `proper-study` on `component-contract` from its v1. A leaf that
+# states none of them and carries no manifest was authored before the component
+# architecture, and both proper profiles say what that makes it:
+# `guidance/liturgy/roman-1962-propers.md` has new and substantially revised
+# guides "authored once in a canonical leaf with `proper-components.toml`",
+# and "legacy leaves authored before the component architecture ... remain
+# valid until their next substantive revision";
+# `guidance/liturgy/postconciliar-propers.md` says the same of its own. Such a
+# leaf has no relations to cover, so it is reported out of scope, as the
+# chronology and structural contracts report the leaves that predate them.
+#
+# Keyed on the stated production and not on the manifest's absence alone, so
+# that a run which forgot to write one is still refused: its leaf states the
+# run's workflow and version, and `provenance-matches-run` holds that statement
+# against the run in the same gate.
+COMPONENTS_FROM_VERSION = {
+    "proper": 1,
+    "proper-finish": 1,
+    "proper-study": 1,
+}
+
+
+def _components_scope(leaf: Path) -> tuple[bool, str]:
+    """`(manifest required, why)` for a leaf that carries no manifest."""
+    production = _stated_production(leaf)
+    workflow, version = production if production is not None else (None, None)
+    threshold = COMPONENTS_FROM_VERSION.get(workflow) if workflow else None
+    if threshold is not None and version is not None and version >= threshold:
+        return True, (f"the leaf states {workflow} v{version}, and every "
+                      f"production of that workflow writes a component "
+                      f"manifest")
+    thresholds = " or ".join(f"{name} v{minimum}" for name, minimum
+                             in COMPONENTS_FROM_VERSION.items())
+    if production is None:
+        stated = "no recognized provenance record"
+        because = "so it predates the component manifest, which binds"
+    else:
+        stated = f"{workflow} v{version}"
+        because = ("which is not a production this contract binds; the "
+                   "component manifest binds")
+    return False, (f"the leaf states {stated} and carries no {MANIFEST}, "
+                   f"{because} from {thresholds}")
+
 
 def check_relation_coverage(leaf: Path, root: Path,
                            edition: str = LEAF_EDITION
@@ -623,10 +677,17 @@ def check_relation_coverage(leaf: Path, root: Path,
     element the relation joins, or the manifest asserts a join in a unit that
     does not admit to reading one of its parts. The drift is invisible in
     either table alone.
+
+    A leaf that predates the component manifest is out of scope and says so;
+    `_components_scope` gives the rule and the profile text behind it. A leaf
+    whose production writes a manifest and which carries none is refused.
     """
-    manifest = leaf / "proper-components.toml"
+    manifest = leaf / MANIFEST
     if not manifest.is_file():
-        return (["the leaf carries no proper-components.toml"], "")
+        required, why = _components_scope(leaf)
+        if not required:
+            return [], f"not in scope: {why}"
+        return ([f"{why}, but the leaf carries no {MANIFEST}"], "")
     data = tomllib.loads(manifest.read_text(encoding="utf-8"))
     if data.get("schema") == 2:
         from _proper_components import audit_v2
@@ -2596,8 +2657,11 @@ def check_house_voice(leaf: Path, root: Path,
 
 
 INTERPRETIVE = "The Propers: Interpretive Possibilities"
+# Starred or numbered, as `REFERENCES` is: `claude/48-eighth-after-pentecost`
+# numbers this heading too, and a starred-only pattern reported its six marked
+# proposals out of scope as though the leaf declared none.
 INTERPRETIVE_SECTION = re.compile(
-    r"\\section\*\{" + re.escape(INTERPRETIVE) + r"\}")
+    r"\\section\*?\{" + re.escape(INTERPRETIVE) + r"\}")
 PROPOSAL_OPEN = re.compile(r"\\begin\{proposal\}[ \t\n]*")
 PROPOSAL_CLOSE = "\\end{proposal}"
 PROPOSAL_FIELD = re.compile(r"\\pfield\{([^{}]*)\}")
@@ -2701,8 +2765,8 @@ def check_proposal_fields(leaf: Path, root: Path,
             break
     if section is None:
         return [], (f"not in scope: the leaf typesets no "
-                    f"\\section*{{{INTERPRETIVE}}}, so it declares no "
-                    f"exploratory proposal to hold fields against")
+                    f"\\section{{{INTERPRETIVE}}}, starred or numbered, so it "
+                    f"declares no exploratory proposal to hold fields against")
     path, whole, offset = section
     text = whole[offset:]
     where = path.relative_to(leaf).as_posix()

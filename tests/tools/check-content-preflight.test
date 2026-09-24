@@ -336,6 +336,26 @@ reject_probe --check references-used
 probe --check relation-coverage >/dev/null ||
 	fail "an unused reference broke a check that is not about references"
 
+# A numbered heading is a References heading too: claude/48 prints
+# `\section{References}`, and a starred-only pattern refused that leaf for
+# printing none. The same unused entry is still refused under it, for being
+# unused.
+number_headings() {
+	sed 's/\\section\*{/\\section{/g' "$tree/src/claude/probe/main.tex" \
+		>"$sandbox/numbered.tex"
+	cp "$sandbox/numbered.tex" "$tree/src/claude/probe/main.tex"
+}
+number_headings
+reject_probe --check references-used
+probe --check references-used 2>&1 | grep -q "cited nowhere in the body" ||
+	fail "an unused entry under a numbered References heading was not named"
+write_leaf "$good_translation" "$good_id"
+number_headings
+probe --check references-used >/dev/null ||
+	fail "a numbered References heading was not read"
+probe --check unquoted-not-quoted >/dev/null ||
+	fail "a numbered References heading was not read for declarations"
+
 # identifiers-resolve: an identifier the source library does not register.
 write_leaf "$good_translation" "edition.no-such-house.no-such-book.1861"
 reject_probe --check identifiers-resolve
@@ -483,14 +503,6 @@ add_proposal "What the ordinary reading misses" open
 reject_probe --check proposal-fields
 write_leaf "$good_translation" "$good_id"
 
-# A leaf with no manifest at all cannot have its relations checked, and says
-# so rather than passing over nothing.
-write_leaf "$good_translation" "$good_id"
-write_manifest "$good_relation"
-rm "$tree/src/claude/probe/proper-components.toml"
-reject_probe --check relation-coverage
-write_manifest "$good_relation"
-
 # provenance-matches-run: the leaf's record of what produced it, against the
 # run producing it. Five facts, and any one of them wrong is a refusal.
 run_digest="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
@@ -581,6 +593,34 @@ write_provenance proper 23
 probe --check structural-meta-labels >/dev/null ||
 	fail "the structural rule was applied before its binding version"
 rm "$tree/src/claude/probe/generation-metadata.tex"
+
+# --- relation-coverage and the leaves that predate the manifest ------------
+#
+# A leaf that states no production and carries no manifest was authored before
+# the component architecture, which both proper profiles hold valid until its
+# next substantive revision: it is out of scope, and says so. Every production
+# workflow writes a manifest from its v1, so a leaf stating one and carrying
+# none is refused; and a leaf that carries a manifest is checked whatever it
+# states.
+write_leaf "$good_translation" "$good_id"
+rm "$tree/src/claude/probe/proper-components.toml"
+probe --check relation-coverage >"$sandbox/legacy.txt" ||
+	fail "a leaf that predates the manifest was refused for lacking one"
+grep -q '^relation-coverage: not in scope: ' "$sandbox/legacy.txt" ||
+	fail "a leaf that predates the manifest was passed without saying why"
+write_provenance unknown unknown unknown unknown unknown
+probe --check relation-coverage >/dev/null ||
+	fail "a leaf stating an unknown production was refused for its age"
+for workflow in proper proper-finish proper-study; do
+	write_provenance "$workflow" 1
+	reject_probe --check relation-coverage
+done
+write_manifest '"introit", "collect", "gospel"'
+write_provenance unknown unknown unknown unknown unknown
+reject_probe --check relation-coverage
+rm "$tree/src/claude/probe/generation-metadata.tex"
+reject_probe --check relation-coverage
+write_manifest "$good_relation"
 
 # --- The chronology contract, over a real formulary ------------------------
 #
