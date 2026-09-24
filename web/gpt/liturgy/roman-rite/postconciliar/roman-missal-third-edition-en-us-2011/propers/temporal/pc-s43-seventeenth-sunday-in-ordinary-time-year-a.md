@@ -165,7 +165,7 @@ Origen’s *Commentary on Matthew* X treats the trained scribe and the relation 
 
 Aquinas’s own *Super Matthaeum* XIII, lect. 4 arranges the closing parables as dimensions of Gospel teaching: abundance in the treasure, beauty or charity in the pearl, and universal reach in the net, whose shore-side sorting qualifies the present gathering. At verse 52 he turns Jesus’ question about understanding toward teaching office: the instructed scribe draws new and old from sacred doctrine’s treasury and, as Christ’s notary, writes the commands first in his own heart and then in others. Aquinas’s *Catena aurea* places Chrysostom’s fearful net after treasure and pearl so that hearers do not rely on preaching or bare faith without a corresponding life. These are medieval syntheses, not proof of Matthew’s compositional design, and Aquinas is not made the author of the Catena’s patristic extracts. Matthew’s own image calls both stores treasure.
 
-The short form ends before all of this. A celebration choosing Matthew 13:44–46 does not proclaim net, angels, furnace, understanding, or the scribe. This guide may document those as an authorized alternative, but preaching claims must follow the branch actually proclaimed.
+The short form ends before all of this. A celebration choosing Matthew 13:44–46 does not proclaim net, angels, furnace, understanding, or the scribe. These belong to the long form, an authorized alternative, and preaching claims must follow the branch actually proclaimed.
 
 ### Called toward the Son amid groaning (*Second Reading*)
 
@@ -349,6 +349,6 @@ The offerings prayer returns gifts already received from divine bounty, so the E
 
 - Margaret Murray Robertson, [*Christie Redfern’s Troubles*](https://www.gutenberg.org/files/21226/21226-h/21226-h.htm) (1866), ch. XVII; Romans 8:28 within a narrative dispute over trust and suffering. Public domain in the United States.
 
-**Last revised (UTC):** 2026-09-24T11:46:11Z
+**Last revised (UTC):** 2026-09-24T12:27:34Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
