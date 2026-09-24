@@ -1636,3 +1636,49 @@ coordinator:
 - this leaf's entry in `corpus.json`;
 - the Claude publication inventory, where 15 of the 59 errors are this leaf's,
   against 14 of 58 at the base.
+
+### Fourth pass: six findings of the independent review
+
+An independent review of the whole revision returned six non-blocking items.
+Each is fixed.
+
+| Item | Where | Before → after |
+| --- | --- | --- |
+| 1 | `sections/homily/10-homily.tex` | "the Gospel that began with a man who contributed nothing" → "the Gospel that began with a man who was carried". The old wording stated Jerome's side as fact against the homily's own "we need not settle their argument", and denied the man any cooperation. The count is unchanged at 1,438 words, 11.1 to 12.0 minutes, so the note stands. |
+| 2 | `sections/40-nothing-of-our-own.tex`; `sections/90-apparatus.tex` (References) | "as Maximus of Turin's Homilia CVIII" → "as St Maximus of Turin's Homilia CVIII"; "St Peter Chrysologus or Maximus of Turin" → "St Peter Chrysologus or St Maximus of Turin". Both now carry the honorific the Roman Martyrology gives him (25 June). |
+| 3 | `research/interpretations.md` § 3.2; `research/scope.md` § 3.5 and § 4.2 | "A Father and Doctor, preaching this Gospel …" → "The sermon received as Chrysologus's, a Father and Doctor, preaches this Gospel … who wrote it is not decided here". The § 3.5 heading "Direct, a Father and Doctor, ascription disputed: Peter Chrysologus" → "Direct, ascription disputed: the sermon received as Peter Chrysologus's (a Father and Doctor)". In § 4.2, "takes that side in his own words" → "takes that side, its preacher preaching this Gospel". Pronouns that assumed his authorship now read "the preacher" or "the sermon", as Catena Rule 15 hangs the text without deciding who wrote it. |
+| 4 | `research/source-bindings.toml`, the Ambrose *Exp. in Lc.* V.10–15 binding | The context's "nothing of contrition or satisfaction, which is Aquinas's tropology and not Ambrose's" is replaced by V.14 as scope § 3.5 gives it: the bed washed nightly with tears (Ps 6:7), *lectus doloris … cruciatu jacebat*, the bed of rest, the return to paradise, and the fence that *per contritionem … per satisfactionem …* is Aquinas's and no Father's. `source-library validate` and `bindings-valid` pass. The fingerprint does not cover the context. |
+| 5 | `sections/concise/03-date-location.tex`, Introit row | "that article's dates for the book" → "that article's dates for the book's composition"; "the Psalter's boundary given with the Gradual" → "the Psalter's critical composition boundary, given with the Gradual". Page 2 still holds the whole dossier. |
+| 6 | `sections/concise/90-apparatus.tex` | "the early sacramentaries, chant books and lectionaries" → "the early sacramentaries and lectionaries". D12 names only those lists, and the themes keep the Offertory's lost verses. |
+
+**Checks after the fourth pass.** All three outputs were built and installed
+through `make install-doc`. Each build ran the settled-aux page check, and the
+installed bytes equal the build:
+
+| Output | Pages | SHA-256 |
+| --- | ---: | --- |
+| study | 34 | `722ab1a620902cd68632e2d70e1ddfff9c72f79720280646d5631ea6f9b6cb06` |
+| concise study | 12 | `6b1f018ff83828a0c2e60937696cc30a411212f3cec169702ecfd25e0599f096` |
+| homily | 3 | `36d7e29ac4913a16b1428ba3a44b4875a2eb8afbbc064d413534956d2a324b5d` |
+
+The web edition is `7fe2263e011351315a594f0532f3e1e276183966d618249e25b9acc4f180064e`.
+These pass:
+
+- `_proper_study.py check` in `content`, `artifacts` and `publication`, with
+  all three `--require` flags, the receipts being re-snapshotted in schema 2;
+- the settled-aux check for each edition;
+- `check-generation-metadata`;
+- `check-content-preflight` on four editions;
+- both chronology currency checks;
+- `make check-web-editions-current` and `check-web-edition`;
+- `source-library validate`, `make check-source-reader` and
+  `make check-commentator-inventories`;
+- the 15 test modules, now 622 tests.
+
+`public-alpha check --provider claude --document <leaf>` fails at this base
+with or without these changes. The source edition
+`…/the-liturgical-year/1900-english-volume-10.json`, which the authorization
+names, no longer exists after `f82f5ecc6` re-dated that edition. That is
+another lane's to repair. Stale for the coordinator, as before: this leaf's
+web binding (1 of 16 stale), its `corpus.json` entry, and 15 of its files in
+the Claude publication inventory.
