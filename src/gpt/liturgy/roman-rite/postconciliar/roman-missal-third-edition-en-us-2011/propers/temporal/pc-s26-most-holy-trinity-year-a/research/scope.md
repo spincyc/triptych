@@ -1,4 +1,4 @@
-# PC-S58-A — Research Scope
+# PC-S26-A — Research Scope
 
 **Last updated:** 2026-07-19
 **Jurisdiction and as-of date:** dioceses of the United States of America; calendar, rubrics, and editions checked through 2026-07-15
@@ -8,7 +8,7 @@ This audit records the scholarship behind the Year A guide to the Most Holy Trin
 
 ## Question, editions, and exclusions
 
-The project asks what an advanced lay reader should know before participating in this one U.S. Roman-rite Sunday formula: its appointed layers, biblical settings, inherited reception, doctrinal controls, liturgical movement, lawful branches, and unresolved local choices. The guide is keyed to `PC-S58-A`, the 2008 emended Latin third typical edition, the U.S. English Roman Missal implemented in 2011, U.S. Lectionary Volume I no. 164, the General Roman Calendar as adapted nationally, and the civil occurrence 2026-05-31.
+The project asks what an advanced lay reader should know before participating in this one U.S. Roman-rite Sunday formula: its appointed layers, biblical settings, inherited reception, doctrinal controls, liturgical movement, lawful branches, and unresolved local choices. The guide is keyed to `PC-S26-A`, the 2008 emended Latin third typical edition, the U.S. English Roman Missal implemented in 2011, U.S. Lectionary Volume I no. 164, the General Roman Calendar as adapted nationally, and the civil occurrence 2026-05-31.
 
 The guide does not reconstruct a parish enactment; provide a worship aid; reproduce complete Missal or Lectionary texts; resolve diocesan or church-proper precedence; choose music, Penitential Act or sprinkling rite, intercessions, or Eucharistic Prayer; or provide a general treatise on the Trinity or Order of Mass. It treats ordinary structural units only where their status changes the formula.
 

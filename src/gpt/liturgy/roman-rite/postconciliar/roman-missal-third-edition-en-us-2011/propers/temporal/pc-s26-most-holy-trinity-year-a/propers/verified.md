@@ -1,13 +1,13 @@
-# PC-S58-A — Composition and Lectionary Audit
+# PC-S26-A — Composition and Lectionary Audit
 
 **Full slug:** `pc-s26-most-holy-trinity-year-a`
-**Parent:** `PC-S58`
-**Canonical Missal owner:** [`PC-S58` formulary audit](../../shared/formularies/pc-s58-most-holy-trinity/propers/verified.md)
+**Parent:** `PC-S26`
+**Canonical Missal owner:** [`PC-S26` formulary audit](../../shared/formularies/pc-s58-most-holy-trinity/propers/verified.md)
 **Last collated:** 2026-07-15
 
 ## Target and source layers
 
-- **Formula key:** `PC-S58-A`.
+- **Formula key:** `PC-S26-A`.
 - **Occurrence resolved:** The Most Holy Trinity, Sunday, 2026-05-31, for the dioceses of the United States of America.
 - **Sunday cycle:** A. **Weekday cycle:** not applicable to the Sunday target; adjacent 2026 weekdays use Cycle II independently.
 - **Missal:** *Missale Romanum*, editio typica tertia, reimpressio emendata (2008), with the U.S. English *Roman Missal, Third Edition* implemented 2011-11-27. The shared owner records the complete reusable formulary audit.
@@ -49,7 +49,7 @@ The Gloria and Creed are required structural units, not proper-text rows. The Pr
 | `communion-chant-selection` | GIRM 87 | locally selected | Communion music execution; does not erase the Missal antiphon layer | Unresolved |
 | `eucharistic-prayer-selection` | GIRM 365 and each Eucharistic Prayer's rubric | permitted | Eucharistic Prayer; no proper insert | Selection unresolved; Eucharistic Prayer IV excluded by the proper Preface |
 
-No alternative readings, shorter forms, psalm-response alternatives, sequence, proper Eucharistic Prayer insert, procession, or proper concluding formula belongs to `PC-S58-A`.
+No alternative readings, shorter forms, psalm-response alternatives, sequence, proper Eucharistic Prayer insert, procession, or proper concluding formula belongs to `PC-S26-A`.
 
 ## Occurrence and weekday disposition
 
