@@ -21,6 +21,8 @@ line number stops testing anything the moment the leaf is edited.
 
 from __future__ import annotations
 
+import shutil
+import subprocess
 import sys
 import unittest
 from pathlib import Path
@@ -30,8 +32,43 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from _house_voice import exempt, house_voice, prose, unscreened  # noqa: E402
 
-SPECIMEN = (ROOT / "src/claude/liturgy/roman-rite/1962/propers/temporal"
-            / "54-fourteenth-after-pentecost")
+SPECIMEN = ("src/claude/liturgy/roman-rite/1962/propers/temporal"
+            "/54-fourteenth-after-pentecost")
+# The specimen is the leaf as the evaluation iterations left it, read from the
+# commit that measured the numbers `TheSpecimenLeaf` asserts, and not the
+# working tree. The live leaf went on through its production run in b94beb9f1
+# ("Carry the Fourteenth Sunday through a full production run to its content
+# loop"), which repaired all twenty loci; from then on a class reading the tree
+# found nothing, and its quotation check passed over an empty list.
+SPECIMEN_COMMIT = "6b601e3e06af21ea0094dbc838b83c37ca9bd69f"
+
+
+def specimen_sections() -> dict[str, str]:
+    """Every section of the specimen at `SPECIMEN_COMMIT`, by leaf path.
+
+    A checkout without git history skips; a history that has lost the commit
+    fails, because it would otherwise measure nothing and say so in green.
+    """
+    git = ["git", "-C", str(ROOT)]
+    if shutil.which("git") is None or subprocess.run(
+            [*git, "rev-parse", "--git-dir"], capture_output=True).returncode:
+        raise unittest.SkipTest("the specimen is read from git history")
+    listed = subprocess.run(
+        [*git, "ls-tree", "-r", "--name-only", SPECIMEN_COMMIT, "--",
+         f"{SPECIMEN}/sections"],
+        capture_output=True, text=True)
+    paths = [path for path in listed.stdout.splitlines()
+             if path.endswith(".tex")]
+    if listed.returncode or not paths:
+        raise AssertionError(
+            f"the specimen's sections are not at {SPECIMEN_COMMIT}: "
+            f"{listed.stderr.strip()}")
+    return {
+        path.removeprefix(f"{SPECIMEN}/"): subprocess.run(
+            [*git, "show", f"{SPECIMEN_COMMIT}:{path}"],
+            capture_output=True, text=True, check=True).stdout
+        for path in sorted(paths)
+    }
 
 
 def refused(text: str) -> list[str]:
@@ -680,12 +717,11 @@ class TheQuotationIsTheFilesOwnWords(unittest.TestCase):
             self.assertIn("library's", quotation)
 
 
-@unittest.skipUnless(SPECIMEN.is_dir(), "the specimen leaf is not in the tree")
 class TheSpecimenLeaf(unittest.TestCase):
-    """The live leaf the three evaluation iterations were spent on.
+    """The leaf the three evaluation iterations were spent on, as they left it.
 
-    Its earlier iterations' loci are repaired and the last iteration's are
-    not, so it carries both classes at once. The numbers below are the
+    At `SPECIMEN_COMMIT` its earlier iterations' loci are repaired and the
+    last iteration's are not, so it carries both classes at once. The numbers below are the
     screen's measured signal on real prose; they are asserted so that a
     change to a rule has to say what it cost.
     """
@@ -722,10 +758,9 @@ class TheSpecimenLeaf(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        cls.sources = specimen_sections()
         cls.found = []
-        for path in sorted(SPECIMEN.glob("sections/**/*.tex")):
-            where = path.relative_to(SPECIMEN).as_posix()
-            source = path.read_text(encoding="utf-8")
+        for where, source in cls.sources.items():
             for line, saw, quotation in house_voice(source):
                 cls.found.append((where, line, saw, quotation))
 
@@ -796,10 +831,9 @@ class TheSpecimenLeaf(unittest.TestCase):
 
     def test_every_quotation_is_a_string_from_the_leaf(self):
         """The refusal a reviser acts on names words that are in the file."""
-        collapsed = {}
-        for path in sorted(SPECIMEN.glob("sections/**/*.tex")):
-            collapsed[path.relative_to(SPECIMEN).as_posix()] = " ".join(
-                path.read_text(encoding="utf-8").split())
+        collapsed = {where: " ".join(source.split())
+                     for where, source in self.sources.items()}
+        self.assertTrue(self.found, "a check over no quotation checks nothing")
         for where, line, _saw, quotation in self.found:
             with self.subTest(locus=f"{where}:{line}"):
                 self.assertIn(quotation, collapsed[where])

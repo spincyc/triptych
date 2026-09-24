@@ -119,9 +119,26 @@ for check in $prose_checks; do
 	run_tool --provider gpt --document "$clean" --check "$check" >/dev/null ||
 		fail "$check refused the leaf it is supposed to accept"
 done
-reject --provider claude \
-	--document liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost \
-	--check house-voice
+# The house-voice refusal is held over the Claude Fourteenth Sunday as the
+# evaluation iterations left it, at the commit whose measurements
+# `tools/tests/test_house_voice.py` asserts over the same specimen. The live
+# leaf was carried through its production run afterwards (b94beb9f1), which
+# repaired every locus, and it now passes: a refusal pinned to a live leaf
+# lasts only until that leaf is revised. The reason is checked as well as the
+# exit, so a copy the tool could not read cannot stand in for a refusal.
+specimen="$sandbox/specimen"
+specimen_leaf="liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"
+mkdir -p "$specimen"
+git -C "$repo" archive 6b601e3e06af21ea0094dbc838b83c37ca9bd69f \
+	-- "src/claude/$specimen_leaf" >"$sandbox/specimen.tar" ||
+	fail "the house-voice specimen's commit is not in this history"
+tar -x -f "$sandbox/specimen.tar" -C "$specimen"
+if run_tool --root "$specimen" --provider claude --document "$specimen_leaf" \
+	--check house-voice >/dev/null 2>"$sandbox/specimen.err"; then
+	fail "house-voice accepted the leaf it is supposed to refuse"
+fi
+grep -q 'Rewrite the sentence so its subject' "$sandbox/specimen.err" ||
+	fail "house-voice refused the specimen for a reason that is not the voice"
 reject --provider gpt \
 	--document liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost \
 	--check proposal-fields
@@ -647,8 +664,17 @@ bound --check chronology-record-current >/dev/null ||
 sed -i.bak 's/{proper}{17}/{proper}{24}/' \
 	"$chrono/src/gpt/$fourteenth/generation-metadata.tex"
 rm -f "$chrono/src/gpt/$fourteenth/generation-metadata.tex.bak"
-printf '%s\n' '\newcommand{\chronodate}[2]{#2}' >> \
-	"$chrono/src/gpt/$fourteenth/format.tex"
+# Since it was republished (4d84f142e) the leaf carries its own Date-cell
+# wrapper and its own generated projection. The contract wants exactly one
+# wrapper, so it is supplied only when the copy lacks it; and the refusal
+# below is of a leaf with no projection yet, so the copy's is removed first.
+# Otherwise the fixture made two wrappers, or passed a projection the
+# generator had not written, and neither says anything about the check.
+grep -qF '\newcommand{\chronodate}[2]{#2}' \
+	"$chrono/src/gpt/$fourteenth/format.tex" ||
+	printf '%s\n' '\newcommand{\chronodate}[2]{#2}' >> \
+		"$chrono/src/gpt/$fourteenth/format.tex"
+rm -f "$chrono/src/gpt/$fourteenth/research/chronology-annotations.tex"
 reject_bound --check chronology-annotations-current
 "$tool" proper-chronology annotations --root "$chrono" --provider gpt \
 	--document "$fourteenth" --write >/dev/null ||
