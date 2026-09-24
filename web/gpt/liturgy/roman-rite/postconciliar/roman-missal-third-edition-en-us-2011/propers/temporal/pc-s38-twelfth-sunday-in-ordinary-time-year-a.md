@@ -1,12 +1,12 @@
 # Twelfth Sunday in Ordinary Time: Year A
 
-*Source-audited proper exposition, PC-S36-A*
+*Source-audited proper exposition, PC-S38-A*
 
 **Twelfth Sunday in Ordinary Time**
 
 *Year A*
 
-PC-S36-A
+PC-S38-A
 
 | **Textual unit** | **Text / citation** |
 |:-----------------|:-----------------------------------------------|
@@ -194,7 +194,7 @@ Cyril of Jerusalem’s *Catechetical Lecture 10*, section 5, receives the same s
 
 | **Field** | **Resolved liturgical instance** |
 |:----------------|:-------------------------------------------------|
-| Formula and occurrence | `PC-S36-A`; Sunday Mass for the Twelfth Sunday in Ordinary Time; 21 June 2026; green. |
+| Formula and occurrence | `PC-S38-A`; Sunday Mass for the Twelfth Sunday in Ordinary Time; 21 June 2026; green. |
 | Books and territory | *Roman Missal, Third Edition*, English for the United States (implemented 2011), and U.S. *Lectionary for Mass*, Second Typical Edition, Volume I, no. 94. |
 | Calendar and cycle | U.S. implementation of the General Roman Calendar; Sunday Year A. |
 | Formulary and textual scope | Ordinary Time Week XII. The Missal formulary belongs to the shared Week XII audit; the dated Year A composition and its two Communion-antiphon alternatives belong to the leaf composition audit. |
@@ -238,6 +238,6 @@ Cyril of Jerusalem’s *Catechetical Lecture 10*, section 5, receives the same s
 
 - Kim Albrecht with Doublelucky Productions, [*The Hairs of Your Head Are Numbered*](https://www.kimalbrecht.com/item/hairs-of-your-head/), project and performances, 2017–2018; and Albrecht, [artist statement](https://www.kimalbrecht.com/about/), checked 2026-07-19.
 
-**Last revised (UTC):** 2026-09-24T16:34:06Z
+**Last revised (UTC):** 2026-09-24T18:04:15Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

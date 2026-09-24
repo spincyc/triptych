@@ -1,4 +1,4 @@
-# Liturgical Instance — PC-S36-A
+# Liturgical Instance — PC-S38-A
 
 **Publication slug:** `pc-s38-twelfth-sunday-in-ordinary-time-year-a`
 **Resolved occurrence:** Sunday, 2026-06-21
@@ -8,7 +8,7 @@
 
 | Field | Resolution |
 | --- | --- |
-| Parent / permanent formula key | `PC-S36` / `PC-S36-A` |
+| Parent / permanent formula key | `PC-S38` / `PC-S38-A` |
 | Registry controls | `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md) |
 | Celebration | Twelfth Sunday in Ordinary Time |
 | Rank, season, color | Sunday in Ordinary Time; green |

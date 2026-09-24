@@ -1,8 +1,8 @@
-# PC-S36-A — Leaf Composition Audit
+# PC-S38-A — Leaf Composition Audit
 
-**Formula:** `PC-S36-A`
+**Formula:** `PC-S38-A`
 **Slug:** `pc-s38-twelfth-sunday-in-ordinary-time-year-a`
-**Parent:** `PC-S36`
+**Parent:** `PC-S38`
 **Lectionary:** U.S. no. 94
 **Occurrence checked:** 2026-06-21
 **Last collated:** 2026-07-15
