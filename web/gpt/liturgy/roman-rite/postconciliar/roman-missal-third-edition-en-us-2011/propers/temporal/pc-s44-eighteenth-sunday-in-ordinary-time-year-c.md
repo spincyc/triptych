@@ -97,7 +97,7 @@ Luke first distinguishes two audiences: Jesus answers the petitioner by refusing
 
 ### The shared formulary in this Year C instance
 
-The canonical Week XVIII owner, not this leaf, controls the Missal collation, provenance, element boundaries, and rights record. For this liturgical instance its received sequence places the Year C readings between an Entrance antiphon, Collect, Prayer over the Offerings, one of two Communion-antiphon alternatives, and the Prayer after Communion. The leaf makes only a relationship observation: the prayers’ grammar of divine guidance, sanctification, gift, and aid resists the rich man’s self-enclosed grammar of “my” goods and “my” barns. That juxtaposition is not a claim about why the shared Week XVIII formulary was composed or assigned. No evidence establishes which Communion antiphon or chant was enacted in a generic recurring Year C occurrence.
+The Missal texts are those of the Week XVIII formulary, and their collation, provenance, element boundaries, and rights record belong not to this Year C instance but to that formulary, which Years A, B, and C share. For this liturgical instance its received sequence places the Year C readings between an Entrance antiphon, Collect, Prayer over the Offerings, one of two Communion-antiphon alternatives, and the Prayer after Communion. Set beside the Gospel, the prayers’ grammar of divine guidance, sanctification, gift, and aid resists the rich man’s self-enclosed grammar of “my” goods and “my” barns. No evidence ties the composition or assignment of the shared Week XVIII formulary to Luke’s parable. No evidence establishes which Communion antiphon or chant was enacted in a generic recurring Year C occurrence.
 
 ## The Appointed Texts: Rights-Limited Study Sheet
 
@@ -145,7 +145,7 @@ Psalm 90 answers neither with accumulation nor abandonment. Human beings return
 
 Augustine receives the psalm within Christian hope, reading mortality, conversion, mercy, and established work through an ecclesial and Christological horizon. His numerical constructions are historical reception, not definitions of the psalm’s Hebrew. The most important liturgical effect is simpler: mortality does not make work worthless. It makes wisdom, mercy, and divine establishment necessary.
 
-The official occurrence page’s response-marker discrepancy must remain visible. The response words come from Psalm 95:8, not Psalm 90:1. Its imperative “today” intensifies the numbered-days petition, but the guide does not silently correct a protected book it has not collated at typography level.
+The official occurrence page marks the response “(1)” beneath Psalm 90, but the response words come from Psalm 95:8, not Psalm 90:1. Their imperative “today” intensifies the numbered-days petition. The printed U.S. Lectionary, a protected book, has not been collated at typography level, so whether it carries the same marker is unverified.
 
 ### The rich fool: grammar, audience, and social absence
 
@@ -276,6 +276,6 @@ This source-first guide treats the recurring U.S. Year C formula, not a parish r
 
 - Dicastery for Divine Worship, *Homiletic Directory* 145–149.
 
-**Last revised (UTC):** 2026-09-24T11:41:39Z
+**Last revised (UTC):** 2026-09-24T12:30:42Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
