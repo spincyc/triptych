@@ -174,7 +174,7 @@ The Prayer after Communion names the Eucharistic gift as the offered and receive
 
 ## The Propers: Notable and Quotable
 
-- **“Take up his cross” — from discipleship to lawn-mowing. (*Gospel*)** The English idiom “a cross to bear” now names any stubborn burden or trial. It can remain grave, but dictionaries also illustrate deliberately light uses. A saying about allegiance unto suffering has become elastic enough to dignify an oversized weekly lawn.
+- **“Take up his cross” — from discipleship to lawn-mowing. (*Gospel*)** The English idiom “a cross to bear” now names any stubborn burden or trial. It can remain grave, but Ammer’s *American Heritage Dictionary of Idioms* also illustrates deliberately light uses. A saying about allegiance unto suffering has become elastic enough to dignify an oversized weekly lawn.
 
 - **“Let us arrange a little room on the roof” — the Prophet’s Chamber. (*First Reading*)** At Trewint in Cornwall, Digory Isbell read the Shunammite’s story and resolved to imitate it. He added two rooms for John Wesley and itinerant preachers; the upper room held the biblical bed, table, stool, and candlestick. A prophet’s lodging became an architectural institution for the next travelling preacher.
 
@@ -248,6 +248,6 @@ The Prayer after Communion names the Eucharistic gift as the offered and receive
 
 - Edith Wharton, [“A Cup of Cold Water”](https://www.gutenberg.org/cache/epub/9190/pg9190-images.html), in *The Greater Inclination* (New York: Charles Scribner’s Sons, 1899), Project Gutenberg eBook 9190; story and U.S. public-domain status checked 2026-07-19.
 
-**Last revised (UTC):** 2026-09-24T16:34:06Z
+**Last revised (UTC):** 2026-09-24T17:01:28Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
