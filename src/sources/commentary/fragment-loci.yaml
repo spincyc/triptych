@@ -62,8 +62,13 @@ author_aliases:
   harvest: Basil the Great
   reason: One person. The library names bishops by see and the harvest took the epithet the runs
     used. Both name the Cappadocian who died in 379.
+- source_library: Peter Chrysologus, bishop of Ravenna
+  harvest: Peter Chrysologus
+  reason: One person. The library's work record names him with his see, as the volume title page of
+    Migne's Patrologia Latina 52 does ('SANCTI PETRI CHRYSOLOGI ARCHIEPISCOPI RAVENNATIS'), and the
+    harvest names him without it. Both name the bishop of Ravenna whose sermons that volume prints.
 schema: triptych-commentary-fragment-loci/v1
-updated: '2026-08-01'
+updated: '2026-09-23'
 numbering: vulgate
 fragments:
 - passage_id: passage.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-1
@@ -20729,3 +20734,41 @@ fragments:
     in the third, fifth and sixth, 3:8 to 3:12 and 3:21 in the seventh, 3:13 to 3:19 in the eighth,
     3:14 and 3:16 in the ninth, 3:16 to 3:19 in the tenth, and 3:24 in the first. Its recollections
     of Genesis 2:9 to 2:25 are back-references to the homily before it and do not widen the extent.'
+- passage_id: passage.peter-chrysologus.sermones.1894-garnier-migne-pl-52.sermo-50
+  work_id: work.peter-chrysologus.sermones
+  work_alias:
+    author: Peter Chrysologus
+    work: Sermones
+  text_date: 450
+  text_date_basis: 'Not a composition date. This is the second case the header admits, in the form
+    `composed_year` in scripts/_catena.py describes: work.peter-chrysologus.sermones carries `composed`
+    as ''saec. V'', because no closer dating of the collection or of this sermon is established, and
+    a century gives the chain no year to order by, so the fragment must say what dates it. 450 is
+    the year Migne''s Patrologia Latina 52 prints for Chrysologus over its volume title page and Elenchus
+    (''SAECULUM V. ANNUS 450.'', leaves n8 and n9), which the work record''s composed_basis quotes,
+    and the year of his death in the Catholic Encyclopedia as src/sources/inventories/author-standing-v1.toml
+    cites it. If the sermon is his, it was preached by then. That ascription is disputed, and this
+    date rests on it (Rule 7): Patrologia Latina 57 prints the same text as Maximus of Turin''s Homilia
+    CVIII, and its editor reports manuscripts naming John Chrysostom, Severian and Maximus while declining
+    to impugn the received ascription to Chrysologus. The evidence stands on this passage record and
+    on passage.maximus-of-turin.homiliae.1862-migne-pl-57.homilia-108. Nothing here settles it.'
+  numbering: vulgate
+  extent:
+    token: Matt
+    first_chapter: 9
+    first_verse: 1
+    last_chapter: 9
+    last_verse: 7
+  basis: 'The sermon takes its text as the day''s reading (''lectio hodierna monstravit'') and opens
+    on ''Ascendit, inquit, in naviculam, et transfretavit, et venit in civitatem suam'', which the
+    printing cites ''(Matth. IX, 1)'' in col. 339 (leaf n171). It expounds that verse spiritually
+    and then says ''nunc ipsius historiae ordinem prosequamur'' and walks the pericope in order: the
+    paralytic offered on his bed and ''Confide, fili: dimittuntur tibi peccata tua'' (9:2) and ''Hic
+    blasphemat'' (9:3) in col. 341, then ''Et cum vidisset, inquit, Jesus cogitationes eorum'' through
+    ''et surrexit et abiit in domum suam'' (9:4-7) in col. 342 (leaf n172). It closes on ''Tolle lectum
+    tuum'' and ''Vade in domum tuam'', and Sermo 51 follows. The crowds'' fear and their glorifying
+    of God in 9:8 are nowhere quoted or expounded, so the extent stops at 9:7, although the Gospel
+    the 1962 calendar reads on the Eighteenth Sunday after Pentecost runs to 9:8. The Pharisees''
+    ''quis enim potest peccata remittere nisi solus Deus?'' is not Matthew''s wording; Mark 2:7 and
+    Luke 5:21 carry the question, and the sermon uses it inside its argument without expounding either
+    Gospel. Read on the page images; the text layer is not collated.'

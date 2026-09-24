@@ -2,8 +2,25 @@
  "blocked": [],
  "chapter": 9,
  "chapters": 28,
- "fragments": [],
- "languages": [],
+ "fragments": [
+  {
+   "extent": {
+    "first_chapter": 9,
+    "first_verse": 1,
+    "last_chapter": 9,
+    "last_verse": 7,
+    "token": "Matt"
+   },
+   "id": "passage.peter-chrysologus.sermones.1894-garnier-migne-pl-52.sermo-50",
+   "locator": "50",
+   "review": "inspected",
+   "source": "0",
+   "text_words": 0
+  }
+ ],
+ "languages": [
+  "la"
+ ],
  "leads": [
   {
    "author": "Albert the Great",
@@ -129,7 +146,21 @@
  "name": "Matthew",
  "numbering": "vulgate",
  "refusals": {},
- "sources": {},
+ "sources": {
+  "0": {
+   "author": "Peter Chrysologus, bishop of Ravenna",
+   "container": "",
+   "date": 450,
+   "edition": "S. Petri Chrysologi Sermones, in Migne's Patrologia Latina volume 52 (Paris: Garnier, 1894)",
+   "edition_published": "Parisiis: apud Garnier fratres, editores et J.-P. Migne successores, in via dicta Avenue du Maine, 208, 1894. Patrologiae Latinae tomus LII: SS. Petrus Chrysologus, Valerianus et Nicetas. Sancti Petri Chrysologi archiepiscopi Ravennatis opera omnia, recusa ad castigatissimam recensionem Sebastiani Pauli. The copy scanned is the one the Internet Archive holds in its claremont_school_of_theology collection as item patrologiaecursu0052mign.",
+   "language": "la",
+   "rights": "public-domain",
+   "translators": [],
+   "voice": "original",
+   "work": "Sermones",
+   "work_id": "work.peter-chrysologus.sermones"
+  }
+ },
  "text_prefix": "structure/catena/text/",
  "token": "Matt"
 }
