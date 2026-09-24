@@ -71,14 +71,28 @@ run_tool query Ecclus.44.1 --system greek --json \
 # refuses and still says why; the chronology axis now says what §9 says of any
 # locus nobody has researched. That is the third gate on this branch found
 # asserting a defect rather than a contract.
-run_tool query EsthGr.1.1 --system greek --json \
-	| grep -q '"chronology_status":"research-pending"' || {
+#
+# The example moved in ddad16a35, and the contract did not. That commit made
+# the query refuse an address the tracked witness does not print, and the
+# tracked Greek Esther begins at chapter 10, so EsthGr.1.1 is no longer a
+# native locus at all; and the research phase has since been carried to
+# completion, so no printed locus answers `research-pending` any more
+# (`test_no_verse_of_the_vulgate_answers_research_pending`). EsthGr.15.10 is
+# printed, holds its own chronology, and still cannot be carried to one
+# Vulgate verse: both axes answer, each with its own word.
+run_tool query EsthGr.15.10 --system greek --json \
+	| grep -q '"chronology_status":"attestation-only"' || {
 	echo "a native locus answered something other than a chronology status" >&2
 	exit 1
 }
-run_tool query EsthGr.1.1 --system greek --json \
+run_tool query EsthGr.15.10 --system greek --json \
 	| grep -q '"status":"textually-distinct"' || {
 	echo "the mapping refusal stopped being reported on the mapping axis" >&2
+	exit 1
+}
+run_tool query EsthGr.1.1 --system greek --json \
+	| grep -q '"chronology_status":"not-alignable"' || {
+	echo "an address the tracked Greek witness does not print was answered" >&2
 	exit 1
 }
 # It still exits non-zero, because the caller got no chronology.
