@@ -50,7 +50,7 @@
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
-> **Governing thesis**
+> **Covenant fidelity becomes gift in Christ**
 >
 > God’s covenant fidelity becomes gift in Christ, and grace creates its own living answer. The poor plead a promise they did not make; faith receives Christ’s word, hope walks before sight, and charity returns to the Giver in thanksgiving. At the altar that return enters Christ’s propitiatory oblation; in Communion the promised Seed gives himself as heavenly bread. The Mass ends by sending the nourished pilgrim forward toward redemption’s eternal fullness.
 
@@ -100,7 +100,7 @@ The Gospel ends with a command rather than repose: *Surge, vade*. Bede, Bonavent
 
 ## The Appointed Propers in Full
 
-The Latin below is the complete recurring formulary between marginal nos. 1562 and 1571 in the 1962 Vatican typical Missal, printed pp. 393–394. It was visually checked against the identified CMAA facsimile; the surviving pre-1962 text is reproduced as received, without modernization. Scriptural English is the public-domain Douay–Rheims/Challoner; the Collect, Secret, and Postcommunion are the public-domain English of the Cummiskey hand missal (Philadelphia, 1861). Neither historical English witness is official 1962 liturgical text. Where a chant differs from the Clementine text translated by the Douay, the gap is disclosed rather than filled by an editorial translation.
+The Latin below is the complete recurring formulary between marginal nos. 1562 and 1571 in the 1962 Vatican typical Missal, printed pp. 393–394. It matches the identified CMAA facsimile, and its surviving pre-1962 text keeps its received, unmodernized form. Scriptural English is the public-domain Douay–Rheims/Challoner; the Collect, Secret, and Postcommunion are the public-domain English of the Cummiskey hand missal (Philadelphia, 1861). Neither historical English witness is official 1962 liturgical text. Where a chant differs from the Clementine text the Douay translates, the Douay has no English for the difference, and the gap is named at the element.
 
 ### Introit (*Int.*)
 
@@ -124,7 +124,7 @@ The Latin below is the complete recurring formulary between marginal nos. 1562 
 >
 > O Almighty and eternal God, grant us an increase of faith, hope, and charity; and, that we may deserve what thou promisest, make us love what thou commandest. Thro’.
 
-**Witness boundary.** The English does not separately render *ássequi*, “to attain.” The commentary therefore reasons from the Latin when it distinguishes loving the command from attaining the promise.
+**Witness boundary.** The English does not separately render *ássequi*, “to attain.” The distinction between loving the command and attaining the promise therefore rests on the Latin.
 
 ### Epistle (*Ep.*)
 
@@ -150,7 +150,7 @@ The Latin below is the complete recurring formulary between marginal nos. 1562 
 >
 > Have regard to thy covenant … and forget not to the end the souls of thy poor. ℣. Arise, O God, judge thy own cause: remember thy reproaches with which the foolish man hath reproached thee all the day.
 
-**Witness boundary.** The closing *memor esto oppróbrii servórum tuórum* is not the Clementine’s Ps. 73:22b; it corresponds verbally, apart from the vocative, to Ps. 88:51. The Missal nevertheless cites Ps. 73. The Douay is not altered to hide that boundary.
+**Witness boundary.** The closing *memor esto oppróbrii servórum tuórum* is not the Clementine’s Ps. 73:22b; it corresponds verbally, apart from the vocative, to Ps. 88:51. The Missal nevertheless cites Ps. 73. The Douay gives Ps. 73:22’s own words.
 
 ### Alleluia (*All.*)
 
@@ -190,7 +190,7 @@ The Latin below is the complete recurring formulary between marginal nos. 1562 
 >
 > But I have put my trust in thee, O Lord: I said: Thou art my God. My lots are in thy hands. Deliver me out of the hands of my enemies; and from them that persecute me.
 
-**Witness boundary.** The Missal sings *témpora mea*, “my times,” where the Clementine reads *sortes meæ*, translated “my lots.” This Vulgate Ps. 30:15–16 is Ps. 31:15–16 when the title is numbered as verse 1, as in the NABRE, and Ps. 31:14–15 when the title is unnumbered. No editorial English replaces the registered witness.
+**Witness boundary.** The Missal sings *témpora mea*, “my times,” where the Clementine reads *sortes meæ*, translated “my lots.” This Vulgate Ps. 30:15–16 is Ps. 31:15–16 when the title is numbered as verse 1, as in the NABRE, and Ps. 31:14–15 when the title is unnumbered. The Douay’s English therefore keeps “my lots.”
 
 ### Secret (*Sec.*)
 
@@ -216,7 +216,7 @@ The Latin below is the complete recurring formulary between marginal nos. 1562 
 >
 > Instead of which things, thou didst feed thy people with the food of angels, and gavest them bread from heaven, prepared without labour; having in it all that is delicious, and the sweetness of every taste.
 
-**Witness boundary.** The antiphon adapts rather than quotes the verse: it addresses God in the first person plural, changes the verb, omits “prepared without labour,” and recasts both closing phrases. The complete biblical verse is therefore printed without manufacturing an English chant text.
+**Witness boundary.** The antiphon adapts rather than quotes the verse: it addresses God in the first person plural, changes the verb, omits “prepared without labour,” and recasts both closing phrases. The Douay therefore gives the complete biblical verse and has no English for the chant’s form.
 
 ### Postcommunion (*Postcomm.*)
 
@@ -228,7 +228,7 @@ The Latin below is the complete recurring formulary between marginal nos. 1562 
 >
 > May these heavenly mysteries, O Lord, which we have received, advance our eternal redemption. Thro’.
 
-**Witness boundary.** In the Latin the communicants are the subject of *proficiámus*, and *augméntum* repeats the Collect’s noun. The historical English changes the grammatical subject and leaves the repeated noun implicit; the commentary follows the Latin.
+**Witness boundary.** In the Latin the communicants are the subject of *proficiámus*, and *augméntum* repeats the Collect’s noun. The historical English changes the grammatical subject and leaves the repeated noun implicit; the Latin keeps both.
 
 ### Introit: the desolated people plead God’s own covenant (*Int.*)
 
@@ -276,11 +276,11 @@ The other propers make Paul’s order visible. The Psalm’s poor plead covenant
 
 ### Gradual: the servants’ reproach enters the cause of the Anointed (*Grad.*)
 
-The Gradual repeats Psalm 73:20a, 19b, and 22a, but its last clause is verbally Psalm 88:51a: *memor esto oppróbrii servórum tuórum*. The printed Missal reference remains Psalm 73. This is not an error to normalize away; it is the chant’s received centonization. Unlike the Introit’s *ne derelínquas*, the Gradual uses/reverts to the Psalter’s *ne obliviscáris*. Its repeated *Réspice* now follows Paul’s account of Abraham’s covenant and prepares Luke’s *quos ut vidit*: the Church asks God to look, and the Gospel shows the incarnate Lord’s gaze becoming mercy in act.
+The Gradual repeats Psalm 73:20a, 19b, and 22a, but its last clause is verbally Psalm 88:51a: *memor esto oppróbrii servórum tuórum*. The printed Missal reference remains Psalm 73. This is no error but the chant’s received centonization. Unlike the Introit’s *ne derelínquas*, the Gradual uses/reverts to the Psalter’s *ne obliviscáris*. Its repeated *Réspice* now follows Paul’s account of Abraham’s covenant and prepares Luke’s *quos ut vidit*: the Church asks God to look, and the Gospel shows the incarnate Lord’s gaze becoming mercy in act.
 
 The Psalm 88 insertion interprets the cause being judged. That psalm laments the apparent collapse of the Davidic covenant; its next verse names enemies reproaching the footsteps of God’s Anointed, *vestigia Christi tui*. Augustine reads the servants’ reproach as suffering borne by Christians because of Christ; Cassiodorus says persecutors made the Christian name itself a crime. The chant therefore moves from reproach uttered against God in Psalm 73 to reproach borne by God’s servants in Psalm 88. The Church’s cause is God’s because she belongs to the Anointed and carries his name.
 
-The continuation of Guéranger’s *The Liturgical Year* (Dom Lucien Fromage), reporting Rupert of Deutz, explicitly joins the repeated covenant plea to the Abrahamic promise proclaimed in Galatians. This is documented liturgical reception, though not proof of the formulary’s original compilation. The ritual placement is nevertheless powerful: after Scripture has enclosed all under sin, the assembly does not plead self-exemption. It asks the one God to remember covenant, poor, servants, and Anointed before Christ looks upon the ten who cry for mercy.
+The continuation of Guéranger’s *The Liturgical Year* (Dom Lucien Fromage), reporting Rupert of Deutz, explicitly joins the repeated covenant plea to the Abrahamic promise proclaimed in Galatians. The link is Rupert’s, as Fromage reports it, not an account of the formulary’s original compilation. The ritual placement is nevertheless powerful: after Scripture has enclosed all under sin, the assembly does not plead self-exemption. It asks the one God to remember covenant, poor, servants, and Anointed before Christ looks upon the ten who cry for mercy.
 
 ### Alleluia: the eternal refuge receives passing generations (*All.*)
 
@@ -362,7 +362,7 @@ The complete formulary converges here. Covenant fidelity sends heavenly bread; t
 
 ### Postcommunion: recipients advance in redemption’s fruit (*Postcomm.*)
 
-The prayer begins with reception accomplished: *Sumptis cæléstibus sacraméntis*. Its principal verb remains future-facing, *proficiámus*. The communicants, not the mysteries, are the grammatical subject. Old Gelasian variants between *proficiat*, *proficiant*, and the received first person plural explain why the subject must be stated; Cummiskey’s historical English, which changes that relation, cannot control the Latin.
+The prayer begins with reception accomplished: *Sumptis cæléstibus sacraméntis*. Its principal verb remains future-facing, *proficiámus*. The communicants, not the mysteries, are the grammatical subject. Old Gelasian variants between *proficiat*, *proficiant*, and the received first person plural show that the subject varied in transmission; Cummiskey’s historical English changes that relation, which the Latin does not.
 
 *Ad redemptiónis aetérnae augméntum* does not imply deficiency in Christ’s objective redemption. The increase belongs to grace’s fruit and to the pilgrim’s participation. Aquinas says Eucharistic food sustains, increases, repairs, and delights spiritual life; actual reception augments grace and perfects life through union with God (*ST* III, q. 79, a. 1 and ad 1). The sacrament does not introduce the wayfarer immediately into glory but gives the power to arrive and is therefore viaticum (a. 2 ad 1).
 
@@ -411,7 +411,7 @@ At the end, the line of interpretation remains one: covenant mercy elicits a cry
 
 ## Source-Grounded Cross-Proper Synthesis
 
-> These relations have named textual or reception witnesses. They do not depend on attributing the final formulary to one compiler. The exploratory proposals in the following section remain separately classified.
+> Named textual or reception witnesses carry each of these relations, and none of the relations depends on a single compiler of the final formulary. The exploratory proposals follow in a section of their own.
 
 ### Psalm 73’s covenant and Galatians’ Abrahamic promise (*Int., Ep., Grad.*)
 
@@ -459,41 +459,41 @@ Jerome provides a direct verbal bridge between the psalm chants. Explaining the 
 
 The Offertory brings that universal horizon into personal confession. Its *témpora mea* is an ancient Roman-Psalter reading, directly expounded by Cassiodorus of Christ’s human times under the Father’s power. Theodoret and Aquinas record both times and lots; Augustine’s exposition of lots develops grace, election, and the undivided Church. Together the witnesses present providence as neither chance nor fatalism: the believer acts and offers within an order whose final sovereignty belongs to God.
 
-The Postcommunion names the direction of those changing times. Recipients ask to advance toward eternal redemption. Jerome’s Psalm 89 exposition moves from numbered days to resurrection and God establishing human work; Augustine locates abiding refuge in eternity. The source-grounded synthesis is therefore anagogical: changing hours, sacramental growth, and successive generations are drawn into the eternal life in which grace’s work is established.
+The Postcommunion names the direction of those changing times. Recipients ask to advance toward eternal redemption. Jerome’s Psalm 89 exposition moves from numbered days to resurrection and God establishing human work; Augustine locates abiding refuge in eternity. These witnesses therefore converge anagogically: changing hours, sacramental growth, and successive generations are drawn into the eternal life in which grace’s work is established.
 
 ### Historical transmission: two inherited streams become one received formulary
 
-The checked Gregorian edition prevents a fictitious single-origin story. Wilson’s p. 172 note records Ottobonianus 313’s marginal incipits *Respice*, *Respice*, *In te speravi*, and *Panem de caelo* for Sunday XII, while the three received orations stand at Sunday XIV on p. 173 with different cues. Gellone likewise places the oration incipits at Sunday XIV; Savona has all three prayers under Sunday XIII. Verona and Old Gelasian witnesses distribute them differently.
+Wilson’s Gregorian edition records more than one origin. Wilson’s p. 172 note records Ottobonianus 313’s marginal incipits *Respice*, *Respice*, *In te speravi*, and *Panem de caelo* for Sunday XII, while the three received orations stand at Sunday XIV on p. 173 with different cues. Gellone likewise places the oration incipits at Sunday XIV; Savona has all three prayers under Sunday XIII. Verona and Old Gelasian witnesses distribute them differently.
 
-The evidence proves transmission, adaptation, and eventual convergence, not a ninth-century Mass already containing all ten 1962 elements. This historical plurality strengthens rather than weakens the theological task. The received Roman formulary is a genuine liturgical whole, while every cross-proper claim must still be earned from text and reception rather than assigned to an unverified compiler.
+The evidence proves transmission, adaptation, and eventual convergence, not a ninth-century Mass already containing all ten 1962 elements. This historical plurality strengthens rather than weakens the formulary’s theology. The received Roman formulary is a genuine liturgical whole, and each cross-proper relation rests on text and reception, not on an unverified compiler.
 
 ## The Propers: Notable and Quotable
 
-> These four cases passed a strict afterlife audit: the appointed wording, or a clearly identified biblical form behind it, enters a later non-exegetical register with a documentable change of function. Straight sermons, devotional reuse, musical settings, and bare mottoes were excluded. Dependence on the Missal is claimed only where it can be shown; textual convergence is named as such.
+> In each of these four cases the appointed wording, or a clearly identified biblical form behind it, enters a later non-exegetical register with a documentable change of function; none is a straight sermon, devotional reuse, musical setting, or bare motto. Where dependence on the Missal is not shown, the relation is textual convergence.
 
 ### A sung plea becomes a bull, a satire, and a bonfire (*Int., Grad.*)
 
 Leo X opened the bull *Exsurge Domine*, dated 15 June 1520, with the psalmic cry *Exsurge, Domine, et iudica causam tuam*. The lament asking God to defend his own cause had become the juridical opening of proceedings against Martin Luther. Ulrich von Hutten then republished the bull with mocking annotations and sent the derisive edition to Luther; Luther publicly burned the bull with books of canon law in December 1520. One phrase therefore passes through prayer, papal juridical act, humanist satire, and symbolic destruction.
 
-**Control.** The bull quotes the psalmic/liturgical form, not this Mass as a source. Its continuation follows the psalm rather than the Gradual’s inter-psalm ending. The incident is described, not recruited for either side of a confessional polemic.
+**Source and dependence.** The bull quotes the psalmic/liturgical form, not this Mass as a source. Its continuation follows the psalm rather than the Gradual’s inter-psalm ending. The incident is history, not an argument for either side of a confessional polemic.
 
 ### Bread from heaven in Joyce’s compromised Benediction (*Comm.*)
 
 In the “Nausicaa” episode of James Joyce’s *Ulysses*, the Benediction versicle *Panem de coelo praestitisti eis* is read amid distracted talk, commercial detail, and Bloom’s voyeuristic attention. The language of bread bearing every delight becomes an ironized liturgical soundtrack to fractured and profane appetites. Joyce depends on the Benediction form heard after *Tantum ergo*, not on the Communion antiphon’s adapted *dedísti nobis*.
 
-**Control.** The case concerns the wider liturgical life of Wisdom 16:20. The different pronoun and verb identify the route of dependence and prevent a false claim that Joyce quotes this Sunday’s proper.
+**Source and dependence.** The case concerns the wider liturgical life of Wisdom 16:20. The different pronoun and verb identify the route of dependence: Joyce does not quote this Sunday’s proper.
 
 ### A rare Latin phrase frames Nestroy family history (*All.*)
 
 The archived official program of the 32nd International Nestroy Conversations (Schwechat, 1–5 July 2006) announced Otmar Nestroy’s forum contribution *Familiäres oder: A generatione et progenie aus dem Hause Nestroy*. The abstract describes twenty-two family documents from 1828 to 1939, including baptismal, marriage, and death certificates and family letters. Thus the Latin words that also occur in this Alleluia frame a scholarly genealogical presentation with an exact and striking verbal echo.
 
-**Control.** The archived program supplies title, speaker, duration, and occasion; the separate abstract supplies content. Neither names the Psalm, Roman Psalter, or Missal, so biblical dependence and comic intention are not claimed. Only the title is reproduced under an unclear modern rights status.
+**Source and dependence.** The archived program supplies title, speaker, duration, and occasion; the separate abstract supplies content. Neither names the Psalm, Roman Psalter, or Missal, so neither shows biblical dependence or comic intention. Only the title is reproduced under an unclear modern rights status.
 
 ### Werfel’s homeless times seek a Father’s hand (*Off.*)
 
 Franz Werfel titled a 1935 poem *Tempora mea in manibus tuis*. The title reorders the same four words as the Offertory. Friedrich Buchmayr situates the poem in May 1935 under the pressure of homelessness: the speaker loosens claims of possession by kin, nation, and even self, and seeks the Father’s hand. The hunted psalmist’s trust thus becomes the title and governing address of a modern Jewish writer deeply engaged with Catholic Christianity while confronting dislocation.
 
-**Control.** The biblical allusion is certain; dependence on this Missal proper is not. Werfel died in 1945 and the poem remains jurisdiction-sensitive, so only its Latin title is given and the modern poem is paraphrased.
+**Source and dependence.** The biblical allusion is certain; dependence on this Missal proper is not. Werfel died in 1945 and the poem remains jurisdiction-sensitive, so only its Latin title is given and the modern poem is paraphrased.
 
 ## The Propers: Interpretive Possibilities
 
@@ -503,7 +503,7 @@ Franz Werfel titled a 1935 poem *Tempora mea in manibus tuis*. The title reorder
 
 **A petitioning voice becomes a thankful voice. (*Int., Gosp.*)** *Classification: near analogue located.* The Introit asks that God not forget the voices of those seeking him; the ten raise one voice for mercy; the one who sees his cleansing returns with a great voice to glorify God. The verbal movement can train prayer to return as thanksgiving. Theophylact moves from the lepers’ raised supplication to the returned Samaritan: the Catena’s Latin has plural *voces benignas*, “kindly voices” (CLC17d5.11), while the Greek column speaks in the singular of a “voice of gratitude” (PG 123, 989C4–8). Albert moves from petition to the Samaritan’s loud praise. Neither checked Luke locus joins Psalm 73’s seekers to the Gospel voices; that cross-proper identification remains editorial. Gratitude is not a price paid for cure.
 
-**Manna becomes first-person thanksgiving. (*Gosp., Comm.*)** *Classification: precedent located.* Wisdom speaks of bread given to Israel as “them”; the antiphon addresses God with *dedísti nobis, Dómine*. Heard after the stranger returns to give thanks, the grammatical adaptation can become the assembly’s answer: a people receives Israel’s manna memory as gift rather than possession. Fromage moves directly from the Samaritan Gentile’s thanks to the Gentile faithful singing this Communion, contrasting the new-Testament Bread with manna (XI, pp. 324–325). He does not analyze the exact *illis*–*nobis* adaptation; that sharpening remains editorial. The move may never erase Israel, appropriate its history against the Jewish people, or imply that only Christians can give thanks.
+**Manna becomes first-person thanksgiving. (*Gosp., Comm.*)** *Classification: precedent located.* Wisdom speaks of bread given to Israel as “them”; the antiphon addresses God with *dedísti nobis, Dómine*. Heard after the stranger returns to give thanks, the grammatical adaptation can become the assembly’s answer: a people receives Israel’s manna memory as gift rather than possession. Fromage moves directly from the Samaritan Gentile’s thanks to the Gentile faithful singing this Communion, contrasting the new-Testament Bread with manna (XI, pp. 324–325). He does not analyze the exact *illis*–*nobis* adaptation, and no checked witness does. The move may never erase Israel, appropriate its history against the Jewish people, or imply that only Christians can give thanks.
 
 **Obedience precedes sight and remains unfinished. (*Coll., Gosp., Postcomm.*)** *Classification: near analogue located.* The Collect asks love of what God commands; the lepers are cleansed while carrying out Jesus’ command; the Postcommunion asks continuing advance after sacramental reception. Fromage expounds all three within this Sunday; Schuster treats the same formulary, Bonaventure connects the Gospel’s saving word with growing faith, hope, and charity, and Francis emphasizes walking before the cure appears. None states this three-stage interpretation. Obedience is not a technique that compels a miracle, and illness or delayed healing cannot be blamed upon insufficient faith.
 
@@ -581,6 +581,6 @@ Franz Werfel titled a 1935 poem *Tempora mea in manibus tuis*. The title reorder
 
 - Cultural afterlives: Leo X, [*Exsurge Domine*](https://la.wikisource.org/wiki/Exsurge_Domine) (15 June 1520); Ulrich von Hutten’s annotated satire and Martin Luther’s letter to Spalatin of 10 December 1520 in Preserved Smith, trans., *Luther’s Correspondence*, vol. I (Philadelphia, 1913), pp. 414–415; James Joyce, [*Ulysses*](https://www.gutenberg.org/ebooks/4300) (1922), “Nausicaa,” with the *Rituale Romanum* Benediction versicle cited above; 32nd International Nestroy Conversations, [archived official program](https://web.archive.org/web/20260412025114id_/https://nestroy-archiv.at/forschung/nestroy-gespraeche/nestroy-gespraeche-2006/) (Schwechat, 1–5 July 2006), Monday forum, Otmar Nestroy, *Familiäres oder: A generatione et progenie aus dem Hause Nestroy*, with the [archived abstract](https://web.archive.org/web/20260209051747id_/https://nestroy-archiv.at/forschung/nestroy-gespraeche/nestroy-gespraeche-2006/nestroy-gespraeche-2006-referate/) on twenty-two family documents from 1828–1939; Franz Werfel, “Tempora mea in manibus tuis” (May 1935), in *Schlaf und Erwachen*, reprinted in *Das lyrische Werk*, p. 456, [German National Library contents](https://d-nb.info/458619736/04); Friedrich Buchmayr, “Franz Werfel: Heimatlosigkeit und Heimat,” [*Chilufim* 2 (2007)](https://www.plus.ac.at/wp-content/uploads/2021/02/1165209.pdf), pp. 67–69.
 
-**Last revised (UTC):** 2026-09-24T02:53:19Z
+**Last revised (UTC):** 2026-09-24T14:10:49Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
