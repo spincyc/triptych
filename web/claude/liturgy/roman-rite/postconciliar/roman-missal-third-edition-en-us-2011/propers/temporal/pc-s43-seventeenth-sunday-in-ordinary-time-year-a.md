@@ -110,7 +110,7 @@ If the whole formulary is heard together, its movement is from a question about 
 
 <span id="triptych:brief-synthesis:next" data-label="triptych:brief-synthesis:next"></span>
 
-## Each Proper in Full
+## The Propers: Detailed Commentary
 
 Every claim below about the Latin Missal was checked in the exact 2002 typical edition identified in the appendix. Protected wording is not reproduced: the orations are described and cited by incipit, short Latin phrases appear only where an argument turns on them, and where scriptural wording is quoted the version is the public-domain Douay-Rheims, named as such, never the copyrighted Lectionary text actually proclaimed in the United States.
 
@@ -530,7 +530,7 @@ The English word *dragnet* in its police sense does not qualify. The standard et
 
 *Candide* fails for a comparable reason. Voltaire’s “best of all possible worlds” parodies a metaphysical thesis, not a Pauline verse, and he names the target: Pangloss, unrepentant after being hanged and dissected, cannot retract because Leibniz could never be wrong. The resemblance to Romans 8:28 is structural, not citational.
 
-## Interpretive Possibilities Across the Propers
+## The Propers: Interpretive Possibilities
 
 **Disclosure, once, for the whole section.** Everything below is an editorial proposal generated in the course of preparing this guide by an AI system. None of it is attributed to any authority cited, none of it claims to state what the Missal’s redactors or the Lectionary’s compilers intended, and none of it is offered as a historical or doctrinal conclusion. Each proposal names its anchors, states its mechanism, says what the ordinary element-by-element reading misses, and ends with the strongest limit or disconfirming condition known to the editor. A targeted precedent search was run for each conjunction over the corpus named in the scope appendix; the result is recorded in each entry and audited in the research record. A negative result there is bounded and correctable, never a claim that a connection is unknown.
 
@@ -792,6 +792,6 @@ Only sources actually used are listed. Where an online witness was read, the del
 
 - “Dragnet,” *Online Etymology Dictionary*, for the negative result reported in the gallery.
 
-**Last revised (UTC):** 2026-09-24T04:33:02Z
+**Last revised (UTC):** 2026-09-24T11:51:09Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
