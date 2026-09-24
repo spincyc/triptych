@@ -484,7 +484,7 @@ The lesson ends on a verb of imprisonment, and every checked witness takes care 
 
 The chant’s phrase is the verse’s crux, and the checked witnesses divide over whether it counts generations or names two of them.
 
-> **St. Augustine, *Enarrationes in Psalmos* 89** Augustine begins by taking the title seriously and then denying its plain sense. Moses “minister Testamenti Veteris, et propheta Testamenti Novi”; but “non enim credendum est ab ipso omnino Moyse istum psalmum fuisse conscriptum, qui ullis eius litteris inditus non est … sed alicuius significationis gratia tam magni meriti servi Dei nomen adhibitum est.” The Oxford English: “it is not to be believed that this Psalm was entirely the composition of that Moses … but the name of the great servant of God is used for the sake of some intimation.” A fifth-century bishop states, in public, the distinction between traditional ascription and authorship that every modern dating of the psalm still has to draw.
+> **St. Augustine, *Enarrationes in Psalmos* 89** Augustine begins by taking the title seriously and then denying its plain sense. Moses “minister Testamenti Veteris, et propheta Testamenti Novi”; but “non enim credendum est ab ipso omnino Moyse istum psalmum fuisse conscriptum, qui ullis eius litteris inditus non est … sed alicuius significationis gratia tam magni meriti servi Dei nomen adhibitum est.” The Oxford English: “it is not to be believed that this Psalm was entirely the composition of that Moses … but the name of the great servant of God is used for the sake of some intimation.” A fifth-century bishop states, in public, the distinction between traditional ascription and authorship that still governs the dating of this psalm.
 >
 > Then the reading that makes this chant belong to this Sunday. His lemma is *in generatione et generatione*, and he offers two senses: “sive in omni generatione, *sive in duabus generationibus, vetere et nova*; quia … minister fuit ille Testamenti pertinentis ad generationem veterem, et Propheta Testamenti pertinentis ad generationem novam. Cuius Testamenti sponsor, sponsusque coniugii … ait ipse Iesus: *Si crederetis Moysi, crederetis et mihi*” (Jn. 5:46). On the second reading the Alleluia is not a general comfort at all: it says that the refuge held across *both covenants* — which is the Epistle’s thesis sung in one line, on the Sunday that argues it.
 >
@@ -896,6 +896,6 @@ Only sources actually used above, with loci sufficient to check the claims made 
 
 - Robert Browning, “Rabbi Ben Ezra,” stanza 1, in *Dramatis Personæ* (London: Chapman & Hall, 1864).
 
-**Last revised (UTC):** 2026-09-24T13:27:05Z
+**Last revised (UTC):** 2026-09-24T13:44:24Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
