@@ -47,8 +47,12 @@ Two further boundaries apply throughout and are not repeated at each occurrence:
   Guéranger's *Liturgical Year* on the 1962 Mass itself; Rupert of Deutz, Durandus,
   Honorius, Sicard and Berno on Masses that had another Gospel — are documented
   reception of the compilation, not exegesis of its passages. The five medieval
-  Masses share this one's Introit, Gradual, Offertory antiphon and Communion, and
-  its Epistle in all but Berno, who names none; Honorius and Durandus give another
+  Masses share this one's Introit, Gradual and Offertory antiphon, and its Epistle
+  in all but Berno, who names none. Four of the five name this Communion; Sicard
+  names the Offertory and Communion together only by their sense (*in offerenda et
+  communione invitat et monet populum revertentem … altaria erigere et hostias
+  immolare*, *Mitrale* VIII.18), which the locus inventory does not identify as
+  *Tollite hostias*. Honorius and Durandus give another
   Alleluia, and Rupert and Berno give Offertory verses the 1962 does not sing
   (`research/scope.md` §§ 2.7, 3.11). Each commentator is named as what he is
   wherever he is used. **Under the profile's *Liturgical commentators* rule (D11), a commentator
@@ -246,8 +250,10 @@ speciem*: the law that does not receive the Gospels. *A qua repudiatus, in
 civitatem suam revertitur … Deo civitas fidelium plebs est. In hanc igitur navi, id
 est Ecclesia, vectus introiit.* Rejected by the city of the law, he goes back to his
 own city, and to God the city is the people of the faithful. He enters it by the
-boat, which is the Church. This is the one checked witness that reads the Gospel's
-*civitátem suam* as a city in the sense the chants mean. Two cautions. The Maurist
+boat, which is the Church. He is the one Father who reads the Gospel's
+*civitátem suam* as a city in the sense the chants mean; Aquinas, at his own locus,
+reads it allegorically too, *scilicet in civitatem gentium, quae sibi datae sunt*,
+with Ps 2:8 (*Super Matth.* IX, Venice 1745, p. 121). Two cautions. The Maurist
 text reads *Deo civitas*, and *Dei civitas* is the older editions' reading, which
 the Catena carries (PL 9, col. 960, note h). And Hilary names no town, so his
 allegory stands beside any literal identification and does not compete with one
@@ -267,7 +273,9 @@ allegory stands beside any literal identification and does not compete with one
 - `alleluia` — the second wall arriving from the nations.
 - `gospel` — the city entered by boat. *Editorial synthesis:* the movement from
   *civitátem suam* to the chants' *domus Domini* is the editor's join. It rests
-  on Hilary's allegorical identification (PL 9, col. 960) and on nothing
+  on Hilary's allegorical identification (PL 9, col. 960), with Aquinas's *in
+  civitatem gentium, quae sibi datae sunt* (*Super Matth.* IX, Venice 1745,
+  p. 121) as a second allegorical witness the first reading uses, and on nothing
   Chrysostom or Augustine says. This reading does not use the Gospel's last
   verse, where Chrysostom and Hilary judge the crowd's praise differently (§ 4.3).
 - `offertory` — Moses sanctifying an altar *in conspéctu filiórum Israël*: the
@@ -444,11 +452,19 @@ Rabanus prints it at Mt 9:3 (PL 107, col. 871). **This is the one Father, and a
 Doctor, in whom this reading's step from Christ's authority to the Church's
 ministry has patristic warrant at this pericope.** It glosses the question of
 v. 3's parallel, and it is not a reading of v. 8. **What Ambrose says of the
-command to rise is not penitential.** At V.14, on Lk 5:24, the bed is the human
-body, which is bidden to be lifted (*humanum jubetur corpus attolli*), the bed of
-pain that becomes a bed of rest, and going home is *ad paradisum redire … ea est
-enim vera domus, quae hominem prima suscepit: non jure amissa, sed fraude*. He says
-nothing of contrition or satisfaction; those are Aquinas's terms, above.
+command to rise, at V.14 on Lk 5:24**, is this. The bed is the human body, which
+is bidden to be lifted (*humanum jubetur corpus attolli*). It is the bed David
+washes every night with his tears (*Lavabo per singulas noctes lectum meum*,
+Ps 6:7). It is *lectus doloris, in quo anima nostra gravi conscientiae aegra
+cruciatu jacebat*, the bed of pain on which our soul lay sick in the heavy
+torment of conscience. For one who lives by Christ's precepts it becomes a bed
+of rest. And going home is *ad paradisum redire … ea est enim vera domus, quae
+hominem prima suscepit: non jure amissa, sed fraude*. That is penitential
+imagery. What Ambrose does not have is the scholastic scheme: *per contritionem
+… per satisfactionem … in domum aeternitatis, vel in conscientiam propriam* is
+Aquinas's, above, and no Father's. (An earlier version of this paragraph said
+that what Ambrose says of the command "is not penitential"; research review
+RES-031 found that V.14 does not bear it, and it is withdrawn.)
 
 **Hilary, *In Matth.* VIII §§ 7–8 (PL 9, cols. 961–962), at his own locus**, read
 on the page images, with the wording below checked in the tracked PL 9 text layer
@@ -598,7 +614,12 @@ which of them it uses.
   partícipes éfficis*: the exchange is what the Offertory's altar is for, and it
   is named as a present-tense effect (*éfficis*), not a memory.
 - `communion` — *Tóllite hóstias, et introíte*: the victims are brought in, not
-  left outside.
+  left outside. The continuation of *The Liturgical Year* (Dom Lucien Fromage;
+  vol. XI, pp. 408–409) holds the priest's sacrifice and the people's together:
+  the Communion *is addressed to the priests, and, at the same time, to us all*,
+  and bids those who follow the priest into the court bring, *that they may be
+  united to the divine Host, other victims, that is ourselves*
+  (`research/scope.md` § 3.11).
 - `postcommunion` — *sacro múnere vegetáti*: a present effect claimed for what
   the communicants have received, as the Secret's *éfficis* claims one for the
   rite; and still a petition that they be made worthy of it. The petition's
@@ -607,7 +628,8 @@ which of them it uses.
 
 ### 2.4 The four senses
 
-- **Literal.** At Capernaum a paralysed man is carried to Jesus, told his sins are
+- **Literal.** In his own city (Capernaum for Chrysostom, Nazareth for Jerome;
+  § 4.3 leaves the town undecided) a paralysed man is carried to Jesus, told his sins are
   forgiven, and then told to rise, so that the second, verifiable command may
   prove the first, unverifiable one; and at Sinai Moses builds and consecrates an
   altar and offers the sacrifice that seals a covenant.
@@ -628,7 +650,9 @@ which of them it uses.
   est, ipsam quoque carnem per continentiae frena correptam, spe coelestium
   praemiorum deliciis privare terrenis*. Aquinas, at his own locus, makes the
   command penitential: *Surge, a peccato per contritionem; tolle lectum, per
-  satisfactionem.* (**The Catena's "Rabanus", *lectum tollere est carnem a
+  satisfactionem.* The continuation (vol. XI, pp. 408–409) gives the Communion
+  its moral: those who enter the courts bring with the priest's Victim *other
+  victims, that is ourselves*. (**The Catena's "Rabanus", *lectum tollere est carnem a
   terrenis desideriis ad voluptatem spiritus attollere*, is not in PL 107 and is
   withdrawn** — `research/scope.md` § 3.5.)
 - **Anagogical.** The power is exercised *in terra*, and the forgiven man is sent
@@ -790,11 +814,16 @@ clause, keeps taking the gifts out of the Corinthians' hands:
   able to come unto the end … Therefore there is need of patience." **These
   sentences are said of v. 7, not of v. 8**, and the record uses them only there
   (§ 3.5).
-- And the sting in the last verse (v. 8; § 7): *He shall confirm you …
-  unreprovable* is "also covertly accusing them: for, to say, He shall confirm,
-  and the word unreprovable marks them out as still wavering." **This covert
-  accusation is Chrysostom's whole reading of v. 8.** He does not read the verse
-  as a promise; Aquinas, Ambrosiaster and a Lapide do (`research/scope.md` § 4.7).
+- And the sting in the last verse (v. 8; § 7). Chrysostom first says the verse
+  seems to court them, "but the saying is free from all flattery; for he knows
+  also how to press them home", and then that Paul "is also covertly accusing
+  them: for, to say, He shall confirm, and the word unreprovable marks them out as
+  still wavering, and liable to reproof" (New Advent delivery, re-fetched at the
+  first revision and matched, `66bffe29…5858`). He gives the verse no promissory
+  exposition, which Aquinas, Ambrosiaster and a Lapide do (`research/scope.md`
+  § 4.7). (An earlier version called the covert accusation "Chrysostom's whole
+  reading of v. 8"; RES-036 found that it drops the first sentence and the force
+  of "also", and it is withdrawn.)
 
 **Augustine, *Enarr. in Ps.* 95 § 9**, on the Communion's own first clause, gives
 the one thing a creature can bring: "O heathen, if you will enter into His courts,
@@ -925,7 +954,10 @@ commentators read the Collect exactly as this reading does. Berno of Reichenau
 (PL 142, col. 1070) explains it from the Communion: *quia Deo nec in sacrificio, nec
 in oblatione hostiarum sine ejus adjutorio placere possumus, nec in atria ejus
 introire … merito sacerdos ex sua et nostra voce Deum deprecatur, dicens: Dirigat
-corda nostra*. Bl. Ildefonso Schuster, on the 1962 Mass (*The Sacramentary* III,
+corda nostra*. The continuation of *The Liturgical Year* introduces the Collect
+with *The surest way to obtain grace is to be ever humbly acknowledging to our God
+our deep conviction that, of ourselves, we cannot please His divine Majesty*
+(vol. XI, p. 395; `research/scope.md` § 3.11). Bl. Ildefonso Schuster, on the 1962 Mass (*The Sacramentary* III,
 p. 168): *All the good which we do is the work of grace, it is a gift received from
 God*, with *quid gloriaris, quasi non acceperis?* Berno is cited for the Collect
 and the Communion only, the elements his Mass shares with this one; his Mass's
@@ -984,7 +1016,10 @@ Blessed, reads this Mass whole (`research/scope.md` § 3.11).
   strength of mind — are exactly the ones Paul lists as given. The practical form
   of the Collect is to let oneself be carried: the paralysed soul, in Jerome's own
   tropology, is *a perfecto doctore offertur curanda Domino* — offered by someone
-  else — rather than arriving under its own power.
+  else — rather than arriving under its own power. And the one who was carried is
+  told to carry: *Tria habebat infirmus … quia portabatur, praecepit ut portaret …
+  quia ire non poterat, dixit, Et ambula* (Aquinas, *Super Matth.* IX, Venice
+  1745, p. 122; `research/scope.md` § 3.5).
 - **Anagogical.** The end is given as the beginning was. The Corinthians, for
   whose grace Paul thanks God as a thing already given, wait for the revelation of
   Christ, *qui et confirmábit vos usque in finem sine crímine, in die advéntus
@@ -1194,7 +1229,8 @@ row naming what they give without assigning one reading's anchor to another:
   man carries what carried him.
 - **Anagogical** — the entry given here is into the courts, and the city is still
   ahead (the first reading); the forgiven man's way home is the way back to
-  paradise (the second, with Hilary, Ambrose and Aquinas); the confirming to the
+  paradise (Hilary, Ambrose) and to the house of eternity (Aquinas), in the second;
+  the confirming to the
   end, on the day of the Lord's coming, and the being made worthy asked for after
   communion are God's to give (the third, from 1 Cor 1:8 and *perfícias*).
 

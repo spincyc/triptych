@@ -75,7 +75,9 @@ that the fourth pass's insertion of an Ambrose paragraph into
 Mt 9:6 (*per contritionem … per satisfactionem … in domum aeternitatis*) reading
 as Ambrose's. The sentence is restored to Aquinas by name, § 2.2 now gives Ambrose
 only what *Exp. in Lc.* V.10–15 says (his own reading of the command, V.14, is the
-body lifted and the return to paradise), and §§ 2.2, 2.5 and 3.2 of that record and
+body as the bed washed with the tears of Ps 6:7, the bed of pain become a bed of
+rest, and the return to paradise; the first revision of 2026-09-23 restored the
+penitential half of that description, RES-031), and §§ 2.2, 2.5 and 3.2 of that record and
 §§ 3.5, 4.2 and 4.3 here were re-read for any other sentence the insertions had
 moved under another author; the only other was § 3.2's "refuses exactly that",
 now naming Jerome and Ambrose. The pass also read Ambrose V.15 and re-read, on the
@@ -86,6 +88,11 @@ lessons and Honorius IV.84's Alleluia, and corrected the slips the review's
 advisories named; and it brought the study-facing permissions into line with the
 profile's *Liturgical commentators* rule (decision D11). §§ 2.7, 3.5, 3.11, 4.2,
 4.3, 4.6, 6.3 and 10 carry the result.
+**Research iteration 7 (2026-09-23)**, after study review STU-020, revised
+`research/interpretations.md` alone, aligning it with the accepted study; this
+record was not changed at that iteration (commit `c2c54133a`; recorded here at
+the first revision on a research-review observation).
+
 **Revised after publication, 23 September 2026.** The leaf's first revision
 was made outside the `proper-study` workflow, on the three revision obligations
 the maintainer recorded that day (HOM-010, STU-005 and RES-032). It changes this
@@ -569,8 +576,13 @@ What this adds to § 2.5, as documented fact and within its bound:
 - In the books the lists and five of the seven commentators witness, the paralytic
   of Mt 9 stood apart from this Sunday's Epistle — in the two Frankish *comites*
   and in all five commentators' books, one Sunday later than in the 1962 — and this
-  Sunday's Introit, Gradual, Offertory antiphon and Communion, with its Epistle in
-  all but Berno, who names none, stood with a Gospel from Mt 22 or Mt 23; Honorius
+  Sunday's Introit, Gradual and Offertory antiphon, with its Epistle in all but
+  Berno, who names none, and its Communion in four of the five, stood with a Gospel
+  from Mt 22 or Mt 23. Sicard names the Offertory and Communion together only by
+  their sense (*in offerenda et communione invitat et monet populum revertentem …
+  altaria erigere et hostias immolare*), which the locus inventory does not
+  identify as *Tollite hostias*, so `commentary-work-index formulary` lists the
+  communion among the elements he does not name (RES-033). Honorius
   and Durandus give another Alleluia, *Laudate Dominum*. So the
   Gospel, like the orations and the chants, travelled separately from the rest of
   the formulary. Schuster and the continuation read the 1962's pairing, and the
@@ -1236,11 +1248,18 @@ Catena, or Aquinas's lectura, departs from them. The Catena is still quoted in
     dimittit, quibus dimittendi tribuit potestatem); tamen multo divinius est
     resurrectionem donare corporibus* (§ 4.3).
   - V.14, on v. 24: the bed is the human body, bidden to be lifted (*quid est
-    aliud, nisi quia humanum jubetur corpus attolli?*), a bed of pain become a bed
-    of rest; *domum suam repetere, hoc est, ad paradisum redire censetur; ea est
-    enim vera domus, quae hominem prima suscepit: non jure amissa, sed fraude.* No
-    contrition or satisfaction: the penitential tropology of the command is
-    Aquinas's (below), not Ambrose's.
+    aliud, nisi quia humanum jubetur corpus attolli?*); it is the bed David washes
+    nightly with his tears (*Lavabo per singulas noctes lectum meum*, Ps 6:7); it
+    is *lectus doloris, in quo anima nostra gravi conscientiae aegra cruciatu
+    jacebat*, the bed of pain on which the soul lay in the torment of conscience;
+    for one who keeps Christ's precepts it is a bed of rest; and *domum suam
+    repetere, hoc est, ad paradisum redire censetur; ea est enim vera domus, quae
+    hominem prima suscepit: non jure amissa, sed fraude.* The imagery is
+    penitential. The scholastic scheme is not Ambrose's: *per contritionem … per
+    satisfactionem … in domum aeternitatis, vel in conscientiam propriam* is
+    Aquinas's (below) and no Father's. (An earlier version called the tropology
+    "Aquinas's, not Ambrose's"; RES-031 found that V.14 does not bear the
+    negative, and it is withdrawn at the leaf's first revision.)
   - V.15, under the lemma *(Vers. 25.)*, on Lk 5:25–26, the parallel of Mt 9:7–8:
     *Nec mora ulla sanitatis intervenit … Spectant surgentem increduli, mirantur
     abeuntem: et divini operis miracula malunt timere quam credere. Nam si
@@ -1340,6 +1359,13 @@ Catena, or Aquinas's lectura, departs from them. The Catena is still quoted in
     dicendum, quod ipsi habebant per viam administrationis, non auctoritatis*** —
     the Apostles too had the power to forgive sins, by way of ministry and not of
     authority. § 4.3 turns on it.
+  - v. 6, the command's three parts (p. 122; optical layer, physical lines
+    16507–16512, read at the first revision; the page image of PDF p. 140 was read
+    by homily review, HOM-011): *Tria habebat infirmus. Iacebat in lecto,
+    portabatur ab aliis, ire non poterat. Quia ergo iacebat, dicit, Surge: quia
+    portabatur, praecepit ut portaret, Tolle lectum tuum: quia ire non poterat,
+    dixit, Et ambula.* The study's third reading and moral sense, and the homily,
+    use all three answers (RES-034, HOM-011).
   - v. 6, the tropology: *Similiter peccatori in peccato iacenti dicitur, Surge,
     a peccato per contritionem; tolle lectum, per satisfactionem … et vade in
     domum tuam, in domum aeternitatis, vel in conscientiam propriam.*
@@ -1881,6 +1907,12 @@ Catena, or Aquinas's lectura, departs from them. The Catena is still quoted in
 - The Secret's *uníus summæ divinitátis partícipes* and the appointed Trinity
   Preface stand together on the printed page. That they do is a fact;
   what to make of it is the editor's, and `research/interpretations.md` says so.
+- **Liturgical reception of the Collect** (§ 3.11): Berno reads it from the
+  Communion; Schuster, on the 1962 Mass, as a lesson in humility; and the
+  continuation introduces it with *The surest way to obtain grace is to be ever
+  humbly acknowledging to our God our deep conviction that, of ourselves, we cannot
+  please His divine Majesty* (vol. XI, p. 395, PDF p. 416, read on the page),
+  which the third reading's Collect subsection quotes (RES-034).
 
 ### 3.10 The Trinity Preface (appointed by rubric)
 
@@ -2000,6 +2032,9 @@ wrote none of the volume read here, is a Servant of God.
     parts of the Mass are *most appropriate to the prerogatives of the new
     priesthood*;
   - the Introit's prophets as *the pastors, whom the Church sends* (pp. 394–395);
+  - before the Collect: *The surest way to obtain grace is to be ever humbly
+    acknowledging to our God our deep conviction that, of ourselves, we cannot
+    please His divine Majesty* (p. 395, PDF p. 416, read on the page; RES-034);
   - the Gradual's house as heaven and also *the temple in which we are now
     assembled, and into which we are introduced by … His priests* (p. 401);
   - Rupert's other Gospel and its harmony with the Moses Offertory (pp. 402–403,
@@ -2020,7 +2055,15 @@ wrote none of the volume read here, is a Servant of God.
   - the Offertory's Moses as *the type of those faithful prophets mentioned in the
     Introit … the model of those true leaders of God's people, who devote themselves
     in order to procure mercy and peace for those whom they guide* (p. 406), with the
-    ancient verses in full (pp. 407–408).
+    ancient verses in full (pp. 407–408);
+  - the Communion (pp. 408–409, PDF pp. 429–430, read on the pages; RES-034):
+    *The Communion-anthem is addressed to the priests, and, at the same time, to us
+    all: for if the priest offers the Victim, which is the holiest that can be, we
+    should not think of accompanying him into the court of our God, without
+    bringing up, that they may be united to the divine Host, other victims, that is
+    ourselves. It is God's injunction: Thou shalt not appear empty before me!* (with
+    a footnote to Ex 23:15). The second reading's Communion subsection and moral
+    sense quote it under the continuator's name.
 
 **The commentators whose Mass had another Gospel.** Each is cited here only for the
 elements his Mass shares with this formulary, and for Mt 9 only where his book puts
@@ -3156,7 +3199,7 @@ of this stage as unreached, or not named at all. Each is bound in
 | Aquinas, *Super I ad Corinthios* | `artifact.thomas-aquinas.super-i-ad-corinthios.latin-corpusthomisticum-web-2026-07-26.c1c-html-8be5b71c`, re-fetched 2026-09-22 and matched (`8be5b71c…a8c7c`), `restricted` | Cap. 1 lect. 1 on vv. 4–8 in locally parsed text; quoted only in short phrases |
 | Cornelius a Lapide, *Commentaria in Pentateuchum* | `artifact.cornelius-a-lapide.commentaria-in-pentateuchum.antwerp-1700.ia-djvu-ocr-d1f91f40`, 7,195,178 bytes, SHA-256 `d1f91f40…dac470`, fetched and matched 2026-09-22, `remote` | Lines 79014–79245, Ex 24:4–8. **Layer only; no page image opened**, so § 3.7 normalises and says so, and transcribes nothing the layer garbles |
 | Rupert of Deutz, *De divinis officiis* XII.18–19 | `artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.ia-djvu-ocr-2e2ca850`, **tracked**, SHA-256 `2e2ca850…ed376` matched | Lines 23431–23519 to locate; every word quoted read on the page images, leaves n168 (cols. 325–326) and n169 (cols. 327–328), as the artifact's own note requires |
-| The continuation of Guéranger's *The Liturgical Year*, vol. XI (written in the early 1880s; English printing of 1909; not Guéranger's words, § 3.11) | `artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2`, **tracked**, SHA-256 `95ba98e2…92690` matched | The chapter on this Sunday, printed pp. 393–409 = PDF pp. 414–430, in the text layer; every sentence quoted checked on the rendered pages (PDF pp. 414, 415, 422, 423, 424, 426, 427); on the third re-entry p. 393 re-read for its footnotes 1–2 (Berno, Micrologus) and p. 402 for *in many Churches of the west* |
+| The continuation of Guéranger's *The Liturgical Year*, vol. XI (written in the early 1880s; English printing of 1909; not Guéranger's words, § 3.11) | `artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2`, **tracked**, SHA-256 `95ba98e2…92690` matched | The chapter on this Sunday, printed pp. 393–409 = PDF pp. 414–430, in the text layer; every sentence quoted checked on the rendered pages (PDF pp. 414, 415, 416, 422, 423, 424, 426, 427, 429, 430; pp. 416, 429 and 430 added at the first revision, RES-034); on the third re-entry p. 393 re-read for its footnotes 1–2 (Berno, Micrologus) and p. 402 for *in many Churches of the west* |
 
 **Unregistered page images read on the second re-entry**, fetched on 2026-09-22
 from `https://archive.org/download/<item>/page/n<leaf>.jpg`, retained nowhere,
@@ -3751,7 +3794,10 @@ and no English is composed or paraphrased anywhere.
      lectum, per satisfactionem … in domum aeternitatis, vel in conscientiam
      propriam*, Venice 1745, p. 122) is Aquinas's and must never be printed under
      Ambrose's or any Father's name. Ambrose's own reading of the command
-     (*Exp. in Lc.* V.14) is the body lifted and the return to paradise.
+     (*Exp. in Lc.* V.14) is penitential in its own imagery: the body as the bed,
+     washed nightly with the tears of Ps 6:7; the bed of pain on which the soul
+     lay in the torment of conscience; the bed of rest for one who keeps Christ's
+     precepts; and the return to paradise, the true home lost by fraud.
    - **The Catena's "Jerome" *precatores* sentence is Ambrose's**, *Exp. in Lc.*
      V.10 (§ 4.4).
    - SC 254 was not reached. Hilary is read in the Maurist text as PL 9 prints it.
@@ -3914,8 +3960,11 @@ and no English is composed or paraphrased anywhere.
     the scope record: the Würzburg gospel list puts Mt 9:1–8 at the third Sunday
     after St Cyprian, the name Schuster gives this Sunday; the Murbach comes and the
     *Liber Comitis* put 1 Cor 1:4 with Mt 22 and Mt 9 with Eph 4:23; five registered
-    commentators give Masses that share this Introit, Gradual, Offertory antiphon
-    and Communion, and this Epistle in all but Berno, who names none, a Gospel from
+    commentators give Masses that share this Introit, Gradual and Offertory
+    antiphon, this Communion in four of the five (Sicard names the Offertory and
+    Communion together only by their sense, which the locus inventory does not
+    identify as *Tollite hostias*), and this Epistle in all but Berno, who names
+    none, a Gospel from
     Mt 22 or Mt 23, two of them naming both as the use of different churches, and
     Honorius and Durandus another Alleluia; the continuation dates the
     chair-of-Moses Gospel to *the thirteenth century, in many Churches of the west*.
