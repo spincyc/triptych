@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import copy
 import json
+import re
 import shutil
 import subprocess
 import tempfile
@@ -213,12 +214,94 @@ class PaginationTests(unittest.TestCase):
         self.assertEqual(len(gates), 5)
         self.assertTrue(all("--require-presentation" in command for command in gates))
 
-    def test_aux_and_log_are_bound_into_visual_snapshot(self):
+    def rebuild(self, root, clock):
+        """Rewrite what a pdfTeX run in `root` rewrites beside unchanged PDFs and aux."""
+        leaf = root / self.leaf.relative_to(self.root)
+        for mode in components.MODES:
+            base = root / "build/gpt" / self.data["outputs"][mode]
+            base.with_suffix(".log").write_text(
+                "This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) "
+                f"(preloaded format=pdflatex 2026.9.10)  23 SEP 2026 {clock}\n"
+                f"({base.with_suffix('.aux')})\n"
+                f" {17 * len(str(root))} string characters out of 5470807\n"
+                f"Output written on {base.with_suffix('.pdf')} (10 pages, 16 bytes).\n")
+            base.with_suffix(".fls").write_text(
+                f"PWD {root / 'src/gpt'}\nINPUT {leaf / components.ENTRYPOINTS[mode]}\n")
+
+    def second_checkout(self):
+        """The same tree at a different, longer absolute path, rebuilt there."""
+        temporary = tempfile.TemporaryDirectory(dir=self.root.parent)
+        self.addCleanup(temporary.cleanup)
+        other = Path(temporary.name) / "second-checkout"
+        shutil.copytree(self.root, other, symlinks=True)
+        self.rebuild(other, "23:59")
+        return other
+
+    def verify(self, root):
+        # The receipt comparison alone: the component and metadata gates run as
+        # subprocesses against real PDFs and are exercised elsewhere.
+        with patch.object(study, "components"), patch.object(study, "run"):
+            study.artifacts(root, "gpt", "proper")
+
+    def test_aux_is_bound_into_visual_snapshot_and_log_is_not(self):
         before = study.artifact_state(self.root, "gpt", "proper")
-        self.assertEqual(len(before["pagination_evidence"]), 4)
+        self.assertEqual(before["schema"], 2)
+        self.assertEqual(sorted(before["pagination_evidence"]),
+                         ["build/gpt/proper-synthesis.aux", "build/gpt/proper.aux"])
+        self.rebuild(self.root, "23:59")
+        self.assertEqual(before, study.artifact_state(self.root, "gpt", "proper"))
         path = self.build / "proper-synthesis.aux"
         path.write_text(path.read_text() + "\nChanged build evidence")
         self.assertNotEqual(before, study.artifact_state(self.root, "gpt", "proper"))
+
+    def test_receipt_verifies_after_a_rebuild_and_in_a_second_checkout(self):
+        self.rebuild(self.root, "22:19")
+        study.snapshot(self.root, "gpt", "proper")
+        self.assertNotIn(str(self.root), (self.leaf / study.RECEIPT).read_text())
+        self.verify(self.root)
+        # Byte-identical PDFs rebuilt a minute later in the same checkout.
+        self.rebuild(self.root, "22:20")
+        self.verify(self.root)
+        other = self.second_checkout()
+        self.assertNotEqual((self.build / "proper-synthesis.log").read_bytes(),
+                            (other / "build/gpt/proper-synthesis.log").read_bytes())
+        self.verify(other)
+
+    def test_changed_page_structure_is_still_refused_in_a_second_checkout(self):
+        self.rebuild(self.root, "22:19")
+        study.snapshot(self.root, "gpt", "proper")
+        other = self.second_checkout()
+        self.verify(other)
+        # The study's own aux: pages the component gate does not read, which
+        # only the receipt binds to the reviewed build.
+        aux = other / "build/gpt/proper.aux"
+        original = aux.read_text()
+        aux.write_text(original.replace("\\abspage{5}", "\\abspage{6}"))
+        with self.assertRaisesRegex(ValueError, r"differ from the snapshot .*\(pagination_evidence\)$"):
+            self.verify(other)
+        aux.write_text(original)
+        (other / "build/gpt/proper-synthesis.pdf").write_bytes(b"%PDF-1.7\nreflowed fixture")
+        with self.assertRaisesRegex(ValueError, r"differ from the snapshot .*\(pdfs\)$"):
+            self.verify(other)
+
+    def test_schema_one_receipt_is_refused_with_a_resnapshot_instruction(self):
+        self.rebuild(self.root, "22:19")
+        # The receipt schema 1 wrote: the same fields plus both .log digests.
+        state = study.artifact_state(self.root, "gpt", "proper")
+        state["schema"] = 1
+        for name in ("proper", "proper-synthesis"):
+            log = self.build / (name + ".log")
+            state["pagination_evidence"][str(log.relative_to(self.root))] = study.digest(log)
+        receipt = self.leaf / study.RECEIPT
+        receipt.write_text(json.dumps(state, indent=2, sort_keys=True) + "\n")
+        command = "python3 scripts/_proper_study.py snapshot --provider gpt --document proper"
+        for root in (self.root, self.second_checkout()):
+            with self.subTest(root=root), self.assertRaisesRegex(
+                    ValueError, r"receipt schema 1: schema 1 digested the TeX \.log.*"
+                    + re.escape("re-snapshot with `" + command + "`")):
+                self.verify(root)
+        study.snapshot(self.root, "gpt", "proper")
+        self.verify(self.root)
 
     def test_child_aux_labels_are_checked_and_every_child_byte_is_sealed(self):
         aux = self.build / "proper-synthesis.aux"

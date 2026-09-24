@@ -58,6 +58,16 @@ and available payloads, plus external owners declared in
 `research/review-dependencies.toml`. Reviewers check that declaration's coverage.
 Only pure generation timestamp/contribution furniture may evolve between prose
 reviews; stable run provenance and all final render bytes remain sealed.
+
+`research/artifacts.json` is receipt schema 2 from 2026-09-23. Schema 1 also
+digested each edition's TeX `.log`. The log records the build's time and
+absolute paths, so a schema-1 receipt verified only in the checkout and pdfTeX
+run that wrote it. Schema 2 binds the PDFs, the render inputs, and the `.aux`
+graphs that carry the physical-page markers. The gates still read the `.log` for
+settled references. The artifact gate refuses a schema-1 receipt and prints the
+`snapshot` command that replaces it. The visual-review seal embeds this receipt.
+A run whose visual review was sealed under schema 1 therefore returns to build
+and visual review at its terminal gate.
 The v3 research-review command explicitly selects
 `--review-contract proper-study-v3`, requiring canonical chronology records and separately sealing
 their computation code and applicable identity registry even before a new

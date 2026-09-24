@@ -22,6 +22,8 @@ from _corpus import active_tex, REVISION_RE, CONTRIBUTION_RE, PRODUCTION_RE, INH
 ROOT = Path(__file__).resolve().parents[1]
 EDITIONS = {"research": "", "synthesis": "-synthesis", "homily": "-homily"}
 RECEIPT = "research/artifacts.json"
+# Schema 2 (2026-09-23) stopped digesting the TeX .log; see artifact_state().
+RECEIPT_SCHEMA = 2
 WEB_RECEIPT = "research/web-artifact.json"
 RESEARCH_REVIEW_CONTRACT = "proper-study-v3"
 # Computation is a separate seal dimension from the source owners declared by
@@ -168,19 +170,35 @@ def render_inputs(root: Path, provider: str, document: str) -> dict[str, str]:
 
 
 def artifact_state(root: Path, provider: str, document: str) -> dict:
+    """The build receipt: what snapshot records and the visual seal binds.
+
+    Under the presentation contract, `pagination_evidence` binds the study's
+    and the concise edition's .aux graphs. Their zref labels carry the
+    physical-page markers that the component gate checks, so the gate judges
+    the same marker evidence that accompanied the reviewed PDFs. The .aux holds
+    no path or clock, so identical builds give identical bytes in any checkout.
+
+    The TeX .log is still read by the gate, which refuses unsettled references,
+    but it is not digested. Schema 1 digested it. That tied a receipt to one
+    pdfTeX run in one checkout: the log records the start minute, the TeX
+    version, and absolute build and texmf paths wrapped at 79 columns, and its
+    memory statistics count characters of those paths. Normalizing the root
+    would not remove these. The only part of the log that bears on pagination is
+    the settledness check, and that has one value whenever the gate passes, so a
+    digest of it would prove nothing.
+    """
     files = {}
     for mode, suffix in EDITIONS.items():
         path = root / "build" / provider / f"{document}{suffix}.pdf"
         if not path.is_file():
             raise ValueError(f"missing {mode} PDF: {path.relative_to(root)}")
         files[str(path.relative_to(root))] = digest(path)
-    result = {"schema": 1, "provider": provider, "document": document,
+    result = {"schema": RECEIPT_SCHEMA, "provider": provider, "document": document,
               "pdfs": files, "render_inputs": render_inputs(root, provider, document)}
     if presentation_contract(manifest(leaf_path(root, provider, document))):
         evidence = set()
         for mode in ("research", "synthesis"):
             base = root / "build" / provider / f"{document}{EDITIONS[mode]}"
-            evidence.add(base.with_suffix(".log"))
             evidence.update(pagination_aux_files(base.with_suffix(".aux")))
         result["pagination_evidence"] = {
             str(path.relative_to(root)): digest(path) for path in sorted(evidence)}
@@ -439,8 +457,21 @@ def artifacts(root: Path, provider: str, document: str) -> None:
     leaf = leaf_path(root, provider, document)
     components(root, provider, document, "artifacts")
     recorded = json.loads((leaf / RECEIPT).read_text())
-    if recorded != artifact_state(root, provider, document):
-        raise ValueError("built PDFs or render inputs differ from the snapshot prepared for visual review")
+    schema = recorded.get("schema") if isinstance(recorded, dict) else None
+    if schema != RECEIPT_SCHEMA:
+        reason = ("schema 1 digested the TeX .log, which carries the build's time and "
+                  "absolute checkout paths, so it verifies only where it was built"
+                  if schema == 1 else f"schema {RECEIPT_SCHEMA} is required")
+        raise ValueError(
+            f"{RECEIPT} is receipt schema {schema!r}: {reason}. Rebuild all three PDFs, then "
+            f"re-snapshot with `python3 scripts/_proper_study.py snapshot --provider {provider} "
+            f"--document {document}`. A new receipt records bytes; it does not renew a review")
+    current = artifact_state(root, provider, document)
+    if recorded != current:
+        differing = sorted(key for key in recorded.keys() | current.keys()
+                           if recorded.get(key) != current.get(key))
+        raise ValueError("built PDFs or render inputs differ from the snapshot prepared for "
+                         "visual review (" + ", ".join(differing) + ")")
     for suffix in EDITIONS.values():
         output = f"{document}{suffix}"
         run(root, sys.executable, str(root / "tools/check-generation-metadata"),
