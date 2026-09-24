@@ -1,8 +1,8 @@
-# PC-S41-A — Leaf Composition Audit
+# PC-S43-A — Leaf Composition Audit
 
-**Formula:** `PC-S41-A`
+**Formula:** `PC-S43-A`
 **Slug:** `pc-s43-seventeenth-sunday-in-ordinary-time-year-a`
-**Parent:** `PC-S41`
+**Parent:** `PC-S43`
 **Lectionary:** U.S. no. 109
 **Occurrence checked:** 2026-07-26
 **Last collated:** 2026-07-20
@@ -53,7 +53,7 @@
 | `communion-chant-selection` | GIRM 87 and U.S. norms | locally selected | Communion music and use of either printed antiphon | Unresolved |
 | `offertory-chant-selection` | GIRM 74 and approved local practice | locally selected | Offertory music | Unresolved; no Missal Offertory exists |
 
-The omitted Memorial of Saints Joachim and Anne is an occurrence result, not an authorized branch inside `PC-S41-A`. It supplies no commemoration, transfer, prayer, reading, or title to the Sunday leaf.
+The omitted Memorial of Saints Joachim and Anne is an occurrence result, not an authorized branch inside `PC-S43-A`. It supplies no commemoration, transfer, prayer, reading, or title to the Sunday leaf.
 
 ## Relationship classification
 

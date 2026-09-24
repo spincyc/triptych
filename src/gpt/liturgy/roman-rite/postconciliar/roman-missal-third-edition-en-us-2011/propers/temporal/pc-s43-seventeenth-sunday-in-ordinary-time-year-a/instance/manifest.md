@@ -1,4 +1,4 @@
-# Liturgical Instance — PC-S41-A
+# Liturgical Instance — PC-S43-A
 
 **Publication slug:** `pc-s43-seventeenth-sunday-in-ordinary-time-year-a`
 **Resolved occurrence:** Sunday, 2026-07-26
@@ -8,7 +8,7 @@
 
 | Field | Resolution |
 | --- | --- |
-| Parent / permanent formula key | `PC-S41` / `PC-S41-A` |
+| Parent / permanent formula key | `PC-S43` / `PC-S43-A` |
 | Registry controls | `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md) |
 | Celebration | Seventeenth Sunday in Ordinary Time |
 | Rank, season, color | Sunday in Ordinary Time; green |

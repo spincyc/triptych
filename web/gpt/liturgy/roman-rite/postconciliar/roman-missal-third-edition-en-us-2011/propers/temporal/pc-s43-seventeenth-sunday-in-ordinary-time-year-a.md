@@ -1,12 +1,12 @@
 # Seventeenth Sunday in Ordinary Time: Year A (Research Edition)
 
-*Source-audited proper exposition, PC-S41-A*
+*Source-audited proper exposition, PC-S43-A*
 
 **Seventeenth Sunday in Ordinary Time**
 
 *Year A*
 
-PC-S41-A
+PC-S43-A
 
 | **Textual unit** | **Text / citation** |
 |:-----------------|:-----------------------------------------------|
@@ -276,7 +276,7 @@ The offerings prayer returns gifts already received from divine bounty, so the E
 | **Field** | **Resolved liturgical instance** |
 |:----------------|:-------------------------------------------------|
 | Celebration | Seventeenth Sunday in Ordinary Time; Sunday rank; green. |
-| Parent and formula | `PC-S41`; `PC-S41-A`; canonical Year A target; dated U.S. occurrence 2026-07-26. |
+| Parent and formula | `PC-S43`; `PC-S43-A`; canonical Year A target; dated U.S. occurrence 2026-07-26. |
 | Books | U.S. *Roman Missal, Third Edition* (implemented 2011), Week XVII owner; U.S. *Lectionary for Mass*, Second Typical Edition, Volume I, no. 109. |
 | Calendar scope | General Roman Calendar as implemented for the United States; national scope. |
 | Occurrence | The universal memorial of Saints Joachim and Anne is omitted without commemoration or transfer; unknown local proper solemnities remain outside this national resolution. |
@@ -301,7 +301,7 @@ The offerings prayer returns gifts already received from divine bounty, so the E
 
 ## Appendix: Scope and Qualifications
 
-> This study treats formula PC-S41-A in the U.S. implementation current through 2026-07-21; unknown local proper solemnities remain outside its national scope. Protected English liturgical texts are paraphrased, with only citations and short Latin incipits reproduced. Direct 2008 page images, named U.S. altar-book collation, work-specific rights review, liturgical-text permission, and independent guide review remain outstanding. Branch evidence and collation are recorded in `instance/manifest.md` and `propers/verified.md`; source judgments, reception searches, negative results, and editorial proposals remain in `research/scope.md`.
+> This study treats formula PC-S43-A in the U.S. implementation current through 2026-07-21; unknown local proper solemnities remain outside its national scope. Protected English liturgical texts are paraphrased, with only citations and short Latin incipits reproduced. Direct 2008 page images, named U.S. altar-book collation, work-specific rights review, liturgical-text permission, and independent guide review remain outstanding. Branch evidence and collation are recorded in `instance/manifest.md` and `propers/verified.md`; source judgments, reception searches, negative results, and editorial proposals remain in `research/scope.md`.
 
 ## References
 
@@ -349,6 +349,6 @@ The offerings prayer returns gifts already received from divine bounty, so the E
 
 - Margaret Murray Robertson, [*Christie Redfern’s Troubles*](https://www.gutenberg.org/files/21226/21226-h/21226-h.htm) (1866), ch. XVII; Romans 8:28 within a narrative dispute over trust and suffering. Public domain in the United States.
 
-**Last revised (UTC):** 2026-09-24T16:45:48Z
+**Last revised (UTC):** 2026-09-24T18:04:15Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
