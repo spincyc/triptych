@@ -1,6 +1,6 @@
 # Thirteenth Sunday in Ordinary Time, Year A — Research Scope
 
-**Formula:** `PC-S37-A`
+**Formula:** `PC-S39-A`
 **Occurrence:** 2026-06-28
 **Last updated:** 2026-07-19
 **Registry controls:** `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md)

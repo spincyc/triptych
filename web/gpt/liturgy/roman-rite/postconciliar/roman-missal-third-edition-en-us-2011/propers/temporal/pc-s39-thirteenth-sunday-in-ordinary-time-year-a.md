@@ -1,12 +1,12 @@
 # Thirteenth Sunday in Ordinary Time: Year A
 
-*Source-audited proper exposition, PC-S37-A*
+*Source-audited proper exposition, PC-S39-A*
 
 **Thirteenth Sunday in Ordinary Time**
 
 *Year A*
 
-PC-S37-A
+PC-S39-A
 
 | **Textual unit** | **Text / citation** |
 |:-----------------|:-----------------------------------------------|
@@ -200,7 +200,7 @@ The Prayer after Communion names the Eucharistic gift as the offered and receive
 
 | **Field** | **Resolved liturgical instance** |
 |:----------------|:-------------------------------------------------|
-| Formula and occurrence | `PC-S37-A`; Sunday Mass for the Thirteenth Sunday in Ordinary Time; 28 June 2026; green. |
+| Formula and occurrence | `PC-S39-A`; Sunday Mass for the Thirteenth Sunday in Ordinary Time; 28 June 2026; green. |
 | Books and territory | *Roman Missal, Third Edition*, English for the United States (implemented 2011), and U.S. *Lectionary for Mass*, Second Typical Edition, Volume I, no. 97. |
 | Calendar and cycle | U.S. implementation of the General Roman Calendar; Sunday Year A. |
 | Formulary and textual scope | Ordinary Time Week XIII. The Missal formulary belongs to the shared Week XIII audit; the dated Year A composition and its two Communion-antiphon alternatives belong to the leaf composition audit. |
@@ -248,6 +248,6 @@ The Prayer after Communion names the Eucharistic gift as the offered and receive
 
 - Edith Wharton, [“A Cup of Cold Water”](https://www.gutenberg.org/cache/epub/9190/pg9190-images.html), in *The Greater Inclination* (New York: Charles Scribner’s Sons, 1899), Project Gutenberg eBook 9190; story and U.S. public-domain status checked 2026-07-19.
 
-**Last revised (UTC):** 2026-09-24T17:01:28Z
+**Last revised (UTC):** 2026-09-24T18:04:15Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
