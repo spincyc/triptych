@@ -411,7 +411,7 @@ Three facts qualify that table, and each corrects a claim readily made.
 
 #### What the *Catena aurea* shows about the shape of the tradition
 
-The *Catena* divides the pericope at v. 44 and assembles thirteen excerpts for vv. 41–44 and fifteen for vv. 45–48. Gregory supplies six of the first thirteen and five of the second fifteen, and in both lections he supplies the closing tropology; the Greeks — Origen, Cyril, Eusebius, Theophylact — carry the literal and historical sense. Ambrose, Bede and Augustine appear only in the Temple half, which independently corroborates the three facts above. The compilation is a map of reception, not a witness: the 1843 Oxford edition’s preface warns that for St. Luke the Greek citations reached Aquinas through translations made for him which often gave “not always the very words … but frequently only the sense.”
+The *Catena* divides the pericope at v. 44 and assembles thirteen excerpts for vv. 41–44 and fifteen for vv. 45–48. Gregory supplies six of the first thirteen and five of the second fifteen, and in both lections he supplies the closing tropology; the Greeks — Origen, Cyril, Eusebius, Theophylact — carry the literal and historical sense. Ambrose, Bede and Augustine appear only in the Temple half, which independently corroborates what is shown above for each of them. The compilation is a map of reception, not a witness: the 1843 Oxford edition’s preface warns that for St. Luke the Greek citations reached Aquinas through translations made for him which often gave “not always the very words … but frequently only the sense.”
 
 #### The reception’s real danger, and the Church’s own correction
 
@@ -537,7 +537,7 @@ The Collect then does something equally pointed with the grammar of petition. It
 
 The Epistle is a list of ruins: craving; an idol feast quoted verbatim from Exodus 32:6; fornication with three and twenty thousand dead in one day; testing answered by serpents; murmuring answered by the destroyer. Then comes the hinge on which the whole Sunday turns. Paul will not let the list remain history: “Now all these things happened to them in figure: and they are written for our correction, upon whom the ends of the world are come.” These things were written for *our* correction — and therefore “Wherefore, he that thinketh himself to stand, let him take heed lest he fall.”
 
-That verse is the key to the rest of the formulary. Whatever else the day’s Gospel does, the Church has already declared, in the lesson read immediately before it, that the catastrophes she reads out are aimed at the people hearing them. The lesson then closes on the promise that God is faithful and will not allow a testing beyond capacity but will make with the testing an *provéntum* — the Douay’s “issue,” an outcome, a way through — so that they can bear it.
+That hinge is the key to the rest of the formulary. Whatever else the day’s Gospel does, the Church has already declared, in the lesson read immediately before it, that the catastrophes she reads out are aimed at the people hearing them. The lesson then closes on the promise that God is faithful and will not allow a testing beyond capacity but will make with the testing an *provéntum* — the Douay’s “issue,” an outcome, a way through — so that they can bear it.
 
 The Gradual answers the sentence about self-estimate not with a rebuke but with a name: “O Lord, our Lord, how admirable is thy name in the whole earth!” Its verse completes the same biblical verse — “For thy magnificence is elevated above the heavens” — so that the whole chant is one verse divided at its own caesura, and that caesura is a *quóniam*: a reason. The man just told not to trust his own standing is handed something else to stand on.
 
@@ -639,7 +639,7 @@ Read in sequence, the texts make one movement. Received help reforms desire; rem
 
 ## The Propers: Notable and Quotable
 
-Three verified afterlives of wording from the scriptural propers, each one a use that moves the phrase into a register its author did not occupy. None of them is exegesis, devotional reuse, or bare quotation. Two of the three come from the same four words of the Gospel, and the concentration is telling: of everything the appointed texts contain, *spelúncam latrónum* is what English took, kept, and turned loose.
+Three verified afterlives of wording from the scriptural propers, each one a use that moves the phrase into a register its author did not occupy. Two of the three come from the same four words of the Gospel, and the concentration is telling: of everything the appointed texts contain, *spelúncam latrónum* is what English took, kept, and turned loose.
 
 > **Epistle, 1 Cor. 10:12 — a wordplay cut into a Norwich floor, 1704**
 >
@@ -779,6 +779,6 @@ Only sources actually used above, with loci sufficient to check the claims made 
 
 - Molière, *Le Misanthrope* (1666), Act V, in the French of the Louandre edition (<https://fr.wikisource.org/wiki/Le_Misanthrope>) and in the English of Curtis Hidden Page (1908), <https://en.wikisource.org/wiki/The_Misanthrope_(Moli%C3%A8re)>.
 
-**Last revised (UTC):** 2026-09-24T16:52:08Z
+**Last revised (UTC):** 2026-09-24T17:05:09Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
