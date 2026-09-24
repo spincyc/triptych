@@ -225,7 +225,7 @@ The world’s breadth does not dissolve the person. One servant prays, one mothe
 
 ### The Appointed Propers in Full
 
-The Latin below is the complete recurring formulary at marginal nos. 1582–1591 in the 1962 Vatican typical Missal, printed pp. 396–397. Scriptural citations use the Vulgate numbering printed in the Missal. Three elements materially adapt their biblical source forms.
+The Latin below is the complete recurring formulary at marginal nos. 1582–1591 in the 1962 Vatican typical Missal, printed pp. 396–397. The Vulgate numbering printed in the Missal governs the scriptural citations. Three elements materially adapt their biblical source forms.
 
 #### Introit (*Int.*) {#introit}
 
@@ -551,6 +551,6 @@ The recorded source checks and this guide’s interpretation confer no imprimatu
 
 Web witnesses were accessed 5 September 2026; appointed-text and chronology checks retain their separate recorded dates.
 
-**Last revised (UTC):** 2026-09-09T14:39:24Z
+**Last revised (UTC):** 2026-09-24T13:48:54Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
