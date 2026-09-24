@@ -35,13 +35,13 @@ Three readings of the whole formulary develop that movement. Augustine’s accou
 
 ## Study texts and liturgical locators
 
-The Scripture below is the public-domain Douay–Rheims Challoner study translation, as transmitted in the registered Gutenberg delivery. It is **not the approved English proclaimed at Mass**; the U.S. Lectionary controls that text. Historical spelling and wording are retained. Verse numbers mark the biblical sources. The three readings follow today’s appointed cuts; contextual Scripture is identified separately.
+The Scripture below is the public-domain Douay–Rheims Challoner study translation, as transmitted in the registered Gutenberg delivery. It is **not the approved English proclaimed at Mass**; the U.S. Lectionary controls that text. The spelling and wording are those of the historical witness. Verse numbers mark the biblical sources. The three readings follow today’s appointed cuts; contextual Scripture is identified separately.
 
 ### Entrance and Collect {#proper-entrance}
 
 **Entrance:** *Salus populi ego sum*. Roman Missal, Twenty-fifth Sunday in Ordinary Time; ICEL Antiphonary, printed p. 79. The composed antiphon is not reproduced here. Psalm 37:39–40 (Douay–Rheims 36:39–40) is its identified underlying scriptural basis, not the full antiphon’s text.
 
-<span id="proper-collect" data-label="proper-collect"></span> **Collect:** *Deus, qui sacrae legis*. Roman Missal, same Sunday, Collect. The complete prayer is not reproduced; its law of love, petition for obedience, and eternal end are explained in the next section.
+<span id="proper-collect" data-label="proper-collect"></span> **Collect:** *Deus, qui sacrae legis*. Roman Missal, same Sunday, Collect. The complete prayer is not reproduced; it names a law of love, asks for obedience, and looks to an eternal end.
 
 ### Isaiah 55:6–9 {#proper-first-reading}
 
@@ -129,7 +129,7 @@ The appointed reading stops after the first–last reversal; the many-called, fe
 
 ### Prayer over the Offerings {#proper-offerings}
 
-*Munera, quaesumus, Domine*. Roman Missal, Twenty-fifth Sunday in Ordinary Time, Prayer over the Offerings. The complete prayer is not reproduced. Its relation between the people’s offerings, faith, and sacramental participation is treated below.
+*Munera, quaesumus, Domine*. Roman Missal, Twenty-fifth Sunday in Ordinary Time, Prayer over the Offerings. The complete prayer is not reproduced. It relates the people’s offerings and faith to sacramental participation.
 
 ### Communion: Psalm 119:4–5, or John 10:14 {#proper-communion-ps119}
 
@@ -145,7 +145,7 @@ The appointed reading stops after the first–last reversal; the many-called, fe
 
 ### Prayer after Communion {#proper-after-communion}
 
-*Quos tuis, Domine*. Roman Missal, Twenty-fifth Sunday in Ordinary Time, Prayer after Communion. The complete prayer is not reproduced. Its petition for continuing help and the fruit of redemption in conduct are considered below.
+*Quos tuis, Domine*. Roman Missal, Twenty-fifth Sunday in Ordinary Time, Prayer after Communion. The complete prayer is not reproduced. It asks continuing help so that redemption bears fruit in sacramental life and conduct.
 
 ## Hearing the appointed texts in their setting
 
@@ -205,7 +205,7 @@ Today’s Gospel ends at Matthew 20:16a. The traditional Douay–Rheims text and
 
 ### Offerings, Communion, and the life that follows
 
-The Prayer over the Offerings joins the people’s gifts and confessed faith to sacramental participation. The preceding Word has addressed listeners; the Eucharistic movement now concerns receiving what faith confesses. The relation to the vineyard is theological: God’s gift does not terminate in a satisfying explanation of generosity. It gathers recipients into the mystery of Christ’s self-giving. No checked Father comments on this particular prayer in the sources used here; Augustine’s Eucharistic teaching illuminates its place in the whole Mass.
+The Prayer over the Offerings joins the people’s gifts and confessed faith to sacramental participation. The preceding Word has addressed listeners; the Eucharistic movement now concerns receiving what faith confesses. The relation to the vineyard is theological: God’s gift does not terminate in a satisfying explanation of generosity. It gathers recipients into the mystery of Christ’s self-giving. No Father among the sources checked comments on this particular prayer; Augustine’s Eucharistic teaching illuminates its place in the whole Mass.
 
 The first Communion option, Psalm 119:4–5, joins the command to observe God’s precepts with the desire for ways made firm in that observance. Augustine hears dependence in the grammatical movement from command to wish: God must be asked for the ability to do what he commands. In the fuller Latin exposition, the speaker is a member of Christ or the whole body. Hearing is to become doing. Bellarmine likewise rejects confidence in unaided strength at verses 5–7. This is obedience prayed for by those receiving God’s gift, not a claim to have earned the gift by flawless obedience.[^12]
 
@@ -347,7 +347,7 @@ That is a substantive addition to Gregory’s historical horizon. Gregory explai
 
 The acclamation’s source in Lydia makes the corporate movement visible at household scale. The Lord opens a heart, the message is attended to, and hospitality welcomes the messengers. A universal Church is gathered through particular persons and concrete acts of reception. Paul’s willingness to remain supports that same gathering over time. In Aquinas’s exposition, conduct worthy of the Gospel extends into concord and cooperation in the clauses following the appointed 27a. Those contextual clauses show the communal direction of the sentence without becoming additional Sunday verses.[^35]
 
-Isaiah’s requirement to abandon an old way challenges inherited membership as surely as it challenges a new convert. The psalm’s mercy and nearness give every generation the same reason to return. The Entrance’s faithful Lord remains the helper of his people through affliction; the Collect’s law of love binds personal devotion to responsibility for a neighbor. These elements keep Gregory’s history of the ages from becoming a diagram in which the listener’s only task is to locate an era. The question is whether this member is doing the vineyard’s work now.
+Isaiah’s requirement to abandon an old way challenges inherited membership as surely as it challenges a new convert. The psalm’s mercy and nearness give every generation the same reason to return. The Entrance’s faithful Lord remains the helper of his people through affliction; the Collect’s law of love binds personal devotion to responsibility for a neighbor. These elements keep the historical reading from becoming a diagram in which the listener’s only task is to locate an era. The question is whether this member is doing the vineyard’s work now.
 
 ### A common table and two Communion voices
 
@@ -373,7 +373,7 @@ Moral.
 
 Anagogical.
 
-: Earlier and later generations are ordered toward the same kingdom. Gregory’s account of paradise opened by Christ and Augustine’s common resurrection remain distinct explanations of the waiting. The Collect’s eternal life, Paul’s desire for Christ, enduring praise, and the Shepherd’s pasture converge on the joy of a gathered people whose last arrivals are welcomed.
+: Earlier and later generations are ordered toward the same kingdom. Gregory’s account of paradise opened by Christ and Augustine’s common resurrection are distinct explanations of the waiting. The Collect’s eternal life, Paul’s desire for Christ, enduring praise, and the Shepherd’s pasture converge on the joy of a gathered people whose last arrivals are welcomed.
 
 ## What changes when the readings are heard together
 
@@ -491,13 +491,13 @@ NPNF denotes *Nicene and Post-Nicene Fathers*, first series; ANF denotes *Ante-N
 
 15. USCCB, *New American Bible, Revised Edition*, introductions to [Isaiah](https://bible.usccb.org/bible/isaiah/0), [Psalms](https://bible.usccb.org/bible/psalms/0), and [Matthew](https://bible.usccb.org/bible/matthew/0); complete introduction bodies inspected in the registered 21 September 2026 web state. Protected texts; historical orientation only.
 
-**Last revised (UTC):** 2026-09-24T14:04:37Z
+**Last revised (UTC):** 2026-09-24T15:20:22Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
 [^1]: Augustine, *Exposition of Psalm 36*, third exposition, §§14–16; English NPNF I.8, Psalm 37, “On the Third Part of the Psalm.” Bellarmine, *Commentary on the Psalms*, Psalm 36 on vv. 30–40, treats the final verses briefly as a recapitulation.
 
-[^2]: Aquinas, *Super Epistolam ad Philippenses* 1, lecture 3, in *In omnes D. Pauli Apostoli epistolas commentaria*, II (Liège: Dessain, 1857), pp. 371–372. This illuminates the Collect; it is not an exposition of the prayer’s composition.
+[^2]: Aquinas, *Super Epistolam ad Philippenses* 1, lecture 3, in *In omnes D. Pauli Apostoli epistolas commentaria*, II (Liège: Dessain, 1857), pp. 371–372. This illuminates the Collect.
 
 [^3]: Aquinas, *Expositio super Isaiam ad litteram*, chapter 55, *Opera omnia*, XIV (Parma: Fiaccadori, 1863), pp. 556–557.
 
