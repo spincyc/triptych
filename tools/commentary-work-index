@@ -225,16 +225,16 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index standing",
             (
-                "author standing: 30 persons · father 10 · doctor 2 · saint 2 · blessed 1 · servant-of-god 1 · ecclesiastical-writer 13 · non-catholic 1",
-                "  liturgical commentaries with a row: 11 of 11 · published lane authors with a row: 19 of 19",
+                "author standing: 31 persons · father 11 · doctor 2 · saint 2 · blessed 1 · servant-of-god 1 · ecclesiastical-writer 13 · non-catholic 1",
+                "  liturgical commentaries with a row: 11 of 11 · published lane authors with a row: 20 of 20",
             ),
             "validates the registry; coverage is reported, never failed",
         ),
         Example(
             "tools/commentary-work-index standing --person theodoret-of-cyrus",
             (
-                "author standing: 30 persons · father 10 · doctor 2 · saint 2 · blessed 1 · servant-of-god 1 · ecclesiastical-writer 13 · non-catholic 1",
-                "  liturgical commentaries with a row: 11 of 11 · published lane authors with a row: 19 of 19",
+                "author standing: 31 persons · father 11 · doctor 2 · saint 2 · blessed 1 · servant-of-god 1 · ecclesiastical-writer 13 · non-catholic 1",
+                "  liturgical commentaries with a row: 11 of 11 · published lane authors with a row: 20 of 20",
                 "",
                 "  Theodoret of Cyrus (theodoret-of-cyrus), died about 457: ecclesiastical-writer",
                 "    basis: Bishop of Cyrus, born at Antioch about 393, died about 457 (Catholic Encyclopedia, 'Theodoret'). The Catholic Encyclopedia's 'Second Council of Constantinople' calls him and Theodore of Mopsuestia 'ecclesiastical writers'. No cultus is recorded. The liturgical-commentators plan of 2026-09-22 listed him as a Father 'by patrological convention'; the sources read here do not bear that out.",
