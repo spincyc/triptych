@@ -179,7 +179,7 @@ Alternative B takes Revelation 3:20 from the address to Laodicea. The familiar k
 
 Victorinus of Pettau’s surviving *Commentary on the Apocalypse* treats the Laodicean rebuke but does not furnish a separate exposition of verse 20 in the received English text. It can corroborate the corporate setting and summons from lukewarmness to repentance, not a detailed Eucharistic interpretation of the knock. Liturgical appointment makes the verse apt for Communion, while Victorinus keeps its admonitory context in view.
 
-Ambrose receives the verse directly in *Exposition of the Christian Faith* IV.19–23. He hears Christ standing at the door of the soul and joins the image to the beloved’s knock in the Song and the Psalm’s gates lifted for the King of glory. Jerome, *Letter 22* 26, and Cassian, *Institutes* V.19–20, likewise use the verse to press prompt interior response rather than delayed conversion. These witnesses wrote long before the Communion antiphon, yet they already receive the knock as Christ’s summons to open, enter fellowship, and overcome the habits that bar the door.
+Ambrose receives the verse directly in *Exposition of the Christian Faith* IV.19–23. He hears Christ standing at the door of the soul and joins the image to the beloved’s knock in the Song and the Psalm’s gates lifted for the King of glory. Jerome, *Letter 22* 26, and Cassian, *Institutes* V.19–20, likewise use the verse to press prompt interior response rather than delayed conversion. These witnesses receive the knock as Christ’s summons to open, enter fellowship, and overcome the habits that bar the door.
 
 The two antiphons remain distinct textual paths: one proceeds through remembered wonders and provision, the other through rebuke, repentance, and promised fellowship. The Prayer after Communion asks that the people imbued with heavenly mysteries pass from oldness into new life. “New” does not mean contempt for creation or memory; it names Paschal transformation of persons and conduct.
 
@@ -283,6 +283,6 @@ The two antiphons remain distinct textual paths: one proceeds through remembered
 
 - Museum of Oxford, [“The Light of the World”](https://moxdigiexhibits.omeka.net/exhibits/show/oxford-re-formed/item/1110), catalogue record for William Holman Hunt’s 1851–1853 painting, its Revelation 3:20 source, symbolic door, reception, and image rights.
 
-**Last revised (UTC):** 2026-09-24T15:07:17Z
+**Last revised (UTC):** 2026-09-24T16:34:06Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
