@@ -19,11 +19,9 @@
 \newcommand{\work}[1]{\textit{#1}}
 \newcommand{\term}[1]{\textit{#1}}
 
-% The governing thesis is substantive content and may open the body.
-\newcommand{\studythesis}[1]{%
-  \begin{studybox}{Governing thesis}
-  #1
-  \end{studybox}}
+% The thesis opens the body directly as prose: no box and no label, as the
+% reader-first rule of guidance/editorial.md requires.
+\newcommand{\studythesis}[1]{#1\par}
 
 % Operative-text block: the exact wording of a competent ecclesiastical act,
 % with its authority, date, and witness in the frame title. The framed border

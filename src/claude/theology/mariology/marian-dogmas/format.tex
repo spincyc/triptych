@@ -19,11 +19,9 @@
 \newcommand{\work}[1]{\textit{#1}}
 \newcommand{\term}[1]{\textit{#1}}
 
-% The governing thesis is substantive content and may open the body.
-\newcommand{\dogmathesis}[1]{%
-  \begin{studybox}{Governing thesis}
-  #1
-  \end{studybox}}
+% The thesis opens the body directly as prose: no box and no label, as the
+% reader-first rule of guidance/editorial.md requires.
+\newcommand{\dogmathesis}[1]{#1\par}
 
 % Defined-text block: the exact definitory formula with its authority, date,
 % and locus in the frame title. The framed border marks quoted source text

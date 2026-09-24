@@ -30,11 +30,9 @@
   \tableofcontents
   \endgroup}
 
-% The governing thesis is substantive content and may open the body.
-\newcommand{\studythesis}[1]{%
-  \begin{studybox}{Governing thesis}
-  #1
-  \end{studybox}}
+% The thesis opens the body directly as prose: no box and no label, as the
+% reader-first rule of guidance/editorial.md requires.
+\newcommand{\studythesis}[1]{#1\par}
 
 % Labelled project-synthesis block: this study's own judgment, set apart from
 % quoted witness text and given its own visible field name at each use, so that

@@ -8,9 +8,7 @@ The Rosary of the Blessed Virgin Mary is a form of vocal and meditative prayer i
 
 Two boundaries govern everything in this reference. First, the Rosary is a pious exercise of the faithful—in the Catechism’s classification, an expression of Marian devotion and of meditative prayer—and not an act of the liturgy: Paul VI taught that liturgical celebration and the Rosary “must be neither set in opposition to one another nor considered as being identical,” and that it is a mistake to recite the Rosary during the celebration of the liturgy.[^2] Second, although the Rosary is Marian in its mode, its content is Christ. John Paul II opens *Rosarium Virginis Mariae* with both facts: the Rosary “gradually took form in the second millennium under the guidance of the Spirit of God,” and, “though clearly Marian in character, is at heart a Christocentric prayer … a prayer of great significance, destined to bring forth a harvest of holiness.”[^3]
 
-> **Governing thesis**
->
-> The Rosary is a contemplative pious exercise in which the vocal repetition of the Church’s simplest received prayers carries a sustained meditation on the mysteries of Christ in the company of his Mother. Its warrant is not a documented founding miracle but the Gospel substance of its formulas, centuries of ecclesial reception, and a continuous line of papal teaching. “To recite the Rosary,” wrote John Paul II, “is nothing other than to contemplate with Mary the face of Christ.” Mary’s place in it is the created, maternal, subordinate cooperation the Church confesses: honoring her differs essentially from the adoration given to God, and everything granted through her intercession flows from the one mediation of Christ.[^4]
+The Rosary is a contemplative pious exercise in which the vocal repetition of the Church’s simplest received prayers carries a sustained meditation on the mysteries of Christ in the company of his Mother. Its warrant is not a documented founding miracle but the Gospel substance of its formulas, centuries of ecclesial reception, and a continuous line of papal teaching. “To recite the Rosary,” wrote John Paul II, “is nothing other than to contemplate with Mary the face of Christ.” Mary’s place in it is the created, maternal, subordinate cooperation the Church confesses: honoring her differs essentially from the adoration given to God, and everything granted through her intercession flows from the one mediation of Christ.[^4]
 
 ### The elements and their provenance
 
@@ -604,7 +602,7 @@ Quoted at the individual mysteries as early readings of the same scriptural even
 
 The prayer texts reproduced from these two witnesses are received prayers of the Church, not project-owned expression.
 
-**Last revised (UTC):** 2026-07-25T19:22:50Z
+**Last revised (UTC):** 2026-09-24T14:59:29Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
