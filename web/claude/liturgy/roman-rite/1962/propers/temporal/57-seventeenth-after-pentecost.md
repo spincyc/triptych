@@ -370,7 +370,7 @@ The Postcommunion adds nothing distinctive to this reading. Its address is to th
 
 The Secret addresses the Father’s *maiestas*. Its words name neither the Son nor the Spirit, and it concludes, like the other two orations, through the Son who lives and reigns with the Father in the unity of the Holy Spirit. Its first word meets the Preface the Missal directs immediately after it, whose last clause adores *in maiestáte … æquálitas*. That adjacency belongs to every Sunday of the second class that uses this Preface. The Preface itself is the confession this Mass makes, and it gathers what the Gospel and the Epistle have shown. In the 1861 English: “Who together with thy only begotten Son and the Holy Ghost, art one God, and one Lord not in a singularity of one Person, but in a Trinity of one substance … So that in the confession of the true and eternal Deity, we adore a distinction in the Persons, an unity in the essence, and an equality in the Majesty.”
 
-### The difficulties this confession must carry
+### Three texts that resist, and two that hold
 
 Three texts resist being made simple witnesses of the Trinity. The distribution of Eph 4:6 among the Persons rests on Jerome and on Aquinas’s appropriation; Chrysostom and Theodoret read the verse of the one God and Father, and Chrysostom’s support for the Son comes by argument, not by distribution. The Christological Alleluia is Augustine’s and is contested by Cassiodorus. The Offertory’s Christological weight lies in verses that the 1962 antiphon does not sing; the older verses and the medieval commentators supply it. The Preface, finally, is the ordinary Sunday Preface of the season and speaks for every such Sunday. What remains firm is the Gospel’s second half, on which the Fathers are unanimous, and the Gradual’s versicle, on which Irenaeus, Basil, Augustine, Cassiodorus, Aquinas and Bellarmine agree in hearing the one God who creates by his Word and his Spirit.
 
@@ -633,6 +633,6 @@ Traditional attribution: St Paul, in a letter of his captivity; the *Catholic En
 
 - Fraternité Saint-Pierre (France), *Ordo du mois*, entry for 20 September 2026; Institut du Christ Roi Souverain Prêtre (France), *Ordo*, entry for 20 September 2026.
 
-**Last revised (UTC):** 2026-09-24T13:47:37Z
+**Last revised (UTC):** 2026-09-24T14:10:58Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
