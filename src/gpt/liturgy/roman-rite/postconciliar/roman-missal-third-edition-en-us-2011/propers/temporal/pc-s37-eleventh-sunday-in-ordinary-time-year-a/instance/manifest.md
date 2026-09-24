@@ -1,4 +1,4 @@
-# Liturgical Instance — PC-S35-A
+# Liturgical Instance — PC-S37-A
 
 **Publication slug:** `pc-s37-eleventh-sunday-in-ordinary-time-year-a`
 **Resolved occurrence:** Sunday, 2026-06-14
@@ -8,7 +8,7 @@
 
 | Field | Resolution |
 | --- | --- |
-| Parent / permanent formula key | `PC-S35` / `PC-S35-A` |
+| Parent / permanent formula key | `PC-S37` / `PC-S37-A` |
 | Registry controls | `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md) |
 | Celebration | Eleventh Sunday in Ordinary Time |
 | Rank, season, color | Sunday in Ordinary Time; green |

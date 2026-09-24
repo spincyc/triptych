@@ -1,12 +1,12 @@
 # Eleventh Sunday in Ordinary Time: Year A
 
-*Source-audited proper exposition, PC-S35-A*
+*Source-audited proper exposition, PC-S37-A*
 
 **Eleventh Sunday in Ordinary Time**
 
 *Year A*
 
-PC-S35-A
+PC-S37-A
 
 | **Textual unit** | **Text / citation** |
 |:-----------------|:-----------------------------------------------|
@@ -191,7 +191,7 @@ The appointed John verse asks preservation in the Father’s name before it stat
 
 | **Field** | **Resolved liturgical instance** |
 |:----------------|:-------------------------------------------------|
-| Formula and occurrence | `PC-S35-A`; Sunday Mass for the Eleventh Sunday in Ordinary Time; 14 June 2026; green. |
+| Formula and occurrence | `PC-S37-A`; Sunday Mass for the Eleventh Sunday in Ordinary Time; 14 June 2026; green. |
 | Books and territory | *Roman Missal, Third Edition*, English for the United States (implemented 2011), and U.S. *Lectionary for Mass*, Second Typical Edition, Volume I, no. 91. |
 | Calendar and cycle | General Roman Calendar as implemented in the United States; Sunday Year A. |
 | Formulary and textual scope | Ordinary Time Week XI. The Missal formulary belongs to the shared Week XI audit; the dated Year A composition and its two Communion-antiphon alternatives belong to the leaf composition audit. |
@@ -237,6 +237,6 @@ The appointed John verse asks preservation in the Father’s name before it stat
 
 - Bible SuperSearch, [*Universal Client*, repository readme at revision 041936](https://sourceforge.net/p/biblesuper/ui-standalone/ci/master/tree/), GPL and commercial-use notice, checked 2026-07-19.
 
-**Last revised (UTC):** 2026-09-24T16:34:06Z
+**Last revised (UTC):** 2026-09-24T18:04:15Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
