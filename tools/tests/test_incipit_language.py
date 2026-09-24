@@ -89,5 +89,50 @@ class IncipitOnlyMaterialTest(unittest.TestCase):
         self.assertIsNone(_calendars.incipit_only_of(proper, "en"))
 
 
+class DeliberateAbsenceLanguageTest(unittest.TestCase):
+    """An `untranslated` record decides its own language and no other."""
+
+    def setUp(self):
+        self.proper = {
+            "name": "Collect",
+            "source": "composed",
+            "text": "Corpus Latinum",
+            "untranslated": [{"lang": "en", "state": "unavailable"}],
+        }
+
+    def test_recorded_language_reads_as_a_decision(self):
+        self.assertEqual(
+            _calendars.texts_of(self.proper, "en"),
+            [
+                (
+                    "Corpus Latinum",
+                    "",
+                    "no en recorded, deliberately; see the untranslated ledger",
+                )
+            ],
+        )
+
+    def test_unrecorded_language_is_not_called_deliberate(self):
+        # Advent I's Latin exposed this once it was published: `--lang fr`
+        # reported French as deliberately untranslated on the strength of an
+        # English record.
+        self.assertEqual(
+            _calendars.texts_of(self.proper, "fr"),
+            [("Corpus Latinum", "", "no fr translation recorded; showing Latin")],
+        )
+
+    def test_pre_typed_shapes_still_read_as_decisions(self):
+        # A bare `True` names no language, so it stands for the one asked
+        # about; a lone mapping is one record. Neither may raise or lapse.
+        deliberate = "no en recorded, deliberately; see the untranslated ledger"
+        for recorded in (True, {"lang": "en", "state": "unavailable"}):
+            with self.subTest(recorded=recorded):
+                proper = {**self.proper, "untranslated": recorded}
+                self.assertEqual(
+                    _calendars.texts_of(proper, "en"),
+                    [("Corpus Latinum", "", deliberate)],
+                )
+
+
 if __name__ == "__main__":
     unittest.main()

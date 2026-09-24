@@ -2015,8 +2015,19 @@ def texts_of(
         # A proper nobody has reached and one deliberately left without English
         # print the same Latin, and only one of them is work outstanding. The
         # `untranslated` ledger records which is which and the reason; say so
-        # rather than let a settled decision read as a gap.
-        if proper.get("untranslated") and not witness:
+        # rather than let a settled decision read as a gap. A record decides
+        # only its own language: an English one says nothing about French.
+        # The pre-typed shapes are read as `whole_unit_untranslated` in
+        # `tools/mass-propers` reads them: a bare `True` names no language and
+        # stands for the one asked about, and a lone mapping is one record.
+        recorded = proper.get("untranslated")
+        if isinstance(recorded, dict):
+            recorded = [recorded]
+        deliberate = recorded is True or any(
+            isinstance(record, dict) and record.get("lang") == lang
+            for record in recorded or []
+        )
+        if deliberate and not witness:
             note = f"no {lang} recorded, deliberately; see the untranslated ledger"
         else:
             note = f"no {lang} translation{scope} recorded; showing Latin"
