@@ -6,7 +6,7 @@
 
 *DOMINICA NONA post Pentecosten*
 
-TLM propers: received help, chastened standing, visitation through tears, and Eucharistic abiding in one body
+1962 Roman Missal propers: received help, chastened standing, visitation through tears, and Eucharistic abiding in one body
 
 | **Proper** | **1962 Missal text / reference** | **Scriptural axis** | **Connection** |
 |:-----------|:-----------------|:-------------|:-----------------------|
@@ -177,7 +177,7 @@ Psalm 53 (54) begins with threatened prayer, not retrospective calm. Its title p
 
 The Collect specifies what such dependence does to desire. Its grammar does not ask God first to satisfy the petitioners and afterward to approve their wants. It asks him to make them request what pleases him so that what they desire may rightly be granted. Augustine’s *Letter 130 to Proba*, §§ 15–18 and 21–29, does not comment on the prayer but illuminates its doctrine: the Lord’s Prayer gathers desire into Christ’s form, delay enlarges capacity for the gift, and refusal of a harmful temporal request may itself be mercy. The Collect thus seeks conversion of the desiring subject, not a guarantee for every sincere request.
 
-Psalm 58 (59) returns the same dependence before the Gospel. Its title recalls Saul’s agents watching David’s house (1 Sam. 19:11), so the peril is literal before it is metaphorical. Theodoret first calls the petition just because it seeks release from attackers who wage an unjust war. Bellarmine similarly begins with David and then widens the prayer to any just person in mortal danger; Augustine redirects it toward pride, spiritual enemies, and temptation. Taken together, the three readings are complementary: they hold the historical sufferer, legitimate protection, divine judgment, and responsible action in one view.
+Psalm 58 (59) returns the same dependence before the Gospel. Its title recalls Saul’s agents watching David’s house (1 Sam. 19:11), so the peril is literal before it is metaphorical. Theodoret first calls the petition just because it seeks release from attackers who wage an unjust war. Bellarmine similarly begins with David and then widens the prayer to any just person in mortal danger; Augustine redirects it toward pride, spiritual enemies, and temptation. Taken together, the three readings are complementary: they hold the historical sufferer, legitimate protection, and divine judgment in one view.
 
 | **Appointed movement** | **Interpretive force** | **Precise sense** |
 |:-------------|:------------------------|:----------------------------|
@@ -266,7 +266,7 @@ Later Roman reception makes the Postcommunion’s two petitions mutually interpr
 
 4.  **Abide as one:** memorial bears fruit in a body.
 
-The four stages are a reading of the appointed sequence, and each rests on the witnesses cited within it.
+Read in these four stages, the appointed sequence moves from received help to abiding as one, and the witnesses cited within each stage ground it.
 
 ### Help reaches the petitioner by reforming desire (*Int., Coll., All.*)
 
@@ -337,7 +337,7 @@ The complete source-grounded movement is therefore: help received, desire reform
 
 - **Gospel, Luke 19:44 — Washburn “A” Mill memorial, Minneapolis.** Documentation for the mill records the 1878 flour-dust explosion and a memorial inscription adapting “not one stone upon another.” Siege language is redirected to industrial catastrophe and public remembrance.
 
-- **Gospel, Luke 19:46 — Harry Graham, *The Mother of Parliaments* (1910).** Graham recounts Judge David Jenkins calling the House of Commons a “den of thieves” during seventeenth-century political conflict. A prophetic Temple accusation becomes a dangerous parliamentary insult; the anecdote is political afterlife, not an argument for Jenkins’s cause.
+- **Gospel, Luke 19:46 — Harry Graham, *The Mother of Parliaments* (1910).** Graham recounts Judge David Jenkins calling the House of Commons a “den of thieves” during seventeenth-century political conflict. A prophetic Temple accusation becomes a dangerous parliamentary insult, and Graham’s anecdote carries it into political afterlife.
 
 ## Appendix: Scope and Qualifications
 
@@ -397,6 +397,6 @@ The complete source-grounded movement is therefore: help received, desire reform
 
 - Harry Graham, [*The Mother of Parliaments*](https://www.gutenberg.org/cache/epub/41304/pg41304-images.html) (London: Methuen, 1910), Judge Jenkins episode checked in Project Gutenberg ebook 41304; public domain in the United States.
 
-**Last revised (UTC):** 2026-09-24T15:21:21Z
+**Last revised (UTC):** 2026-09-24T16:55:50Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
