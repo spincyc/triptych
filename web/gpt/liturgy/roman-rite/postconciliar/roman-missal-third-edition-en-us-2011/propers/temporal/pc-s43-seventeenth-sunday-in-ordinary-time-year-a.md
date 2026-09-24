@@ -58,28 +58,64 @@ PC-S41-A
 | **Second Reading** | Rom. 8:28–30 | Corinth in Achaia, to established house churches at Rome | c. AD 56–58 |
 | Paul writes near the end of his eastern mission to a Roman community he did not found, comprising believers from Jewish and Gentile backgrounds. These verses stand within groaning, Spirit-aided prayer, suffering, and inseparable divine love; the semi-continuous reading is not an explanation of Matthew’s treasure or net (Romans introduction and 8, *NABRE*). |  |  |  |
 
-## The Appointed Texts: Rights-Limited Study Sheet
+## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
-> **Text boundary**
+> **Governing account**
 >
-> The controlling U.S. Missal and Lectionary English is protected and is not reproduced here. This sheet gives the complete ordered inventory, lawful Latin incipits for the orations and antiphons, public-domain scriptural loci, and concise descriptions sufficient to identify every branch. It is a study aid, not a substitute for the approved liturgical books.
+> This formulary does not reduce to one slogan. Its correlated strand joins Solomon’s listening heart, the Psalm’s valuation of divine instruction, and Jesus’ treasure and pearl: wisdom learns what is worth choosing. Romans contributes a semi-continuous word about God’s purpose amid suffering, not a hidden key to the parables. The proper chants and prayers gather the assembly, order passing goods, return received bounty, and ask that sacramental memory become saving love.
 
-| **Textual unit** | **Text / citation** |
-|:-----------------|:-----------------------------------------------|
-| **Introductory Rites** |  |
-| Entrance Antiphon | *Cf.* Ps. 67:6–7, 36 (modern 68); *Deus in loco sancto suo*; God gives the forsaken a dwelling and strengthens his people. |
-| Collect | *Protector in te sperantium, Deus*; God is asked to protect, govern, and guide his people so that passing goods are used without losing those that endure. |
-| **Liturgy of the Word** |  |
-| First Reading | 1 Kgs. 3:5, 7–12; Solomon asks for a listening heart capable of discerning good and evil for the people entrusted to him. |
-| Responsorial Psalm | Ps. 119:57, 72, 76–77, 127–130, with response from v. 97a; divine instruction is preferred to wealth and asked to give understanding. |
-| Second Reading | Rom. 8:28–30; within suffering and Spirit-aided prayer, divine purpose tends toward conformity to the Son. |
-| Gospel Acclamation | *Cf.* Matt. 11:25; the Father reveals the mysteries of the Kingdom to the little ones. |
-| Gospel | Long branch: Matt. 13:44–52, treasure, pearl, net, sorting, and the instructed householder. Short branch: Matt. 13:44–46, treasure and pearl only. |
-| **Liturgy of the Eucharist** |  |
-| Prayer over Offerings | *Suscipe, quaesumus, Domine, munera*; gifts received from divine bounty are returned, with a petition that the mysteries sanctify present life. |
-| Communion Antiphon A | Ps. 102:2 (modern 103); the soul blesses the Lord and refuses to forget his benefits. |
-| Communion Antiphon B | Matt. 5:7–8; the merciful and the clean of heart are named with their distinct promises. |
-| Prayer after Communion | *Sumpsimus, Domine, divinum sacramentum*; the sacrament is confessed as the perpetual memorial of the Son’s Passion and its saving fruit is sought. |
+> **Four-stage movement at a glance**
+>
+> **1. Hear — Entrance; Collect; First Reading.** God gathers and strengthens a people; Solomon confesses inadequacy and asks for judgment that listens.
+>
+> **2. Revalue — Psalm; Gospel.** Instruction exceeds gold; treasure and pearl expose the Kingdom’s incomparable worth and awaken joyful, decisive response.
+>
+> **3. Conform — Romans; Acclamation.** God’s initiative meets a groaning people and directs them toward the Son; revelation remains gift rather than self-mastery.
+>
+> **4. Return — Offerings; Communion; final prayer.** Goods first received return to God; memory of divine benefits and of the Passion seeks fruit in mercy, purity, and salvation.
+
+*Reading order.* Stages 1, 2, and 4 correlate appointed texts with ritual sequence; stage 3 keeps Romans semi-continuous. Gospel and Communion alternatives are documented, not combined.
+
+### 1. Gathered strength becomes a listening heart (*Entrance; Collect; First Reading*)
+
+The Entrance does not begin with an isolated chooser. Its adapted Psalm first pictures God defending the vulnerable, making a dwelling for the forsaken, and giving strength to a people. The Collect then identifies the source of any strength or holiness and asks God to protect, govern, and guide. Choice is therefore ecclesial and dependent before it is heroic: the assembly is gathered into a household and taught to receive direction.
+
+Solomon gives this dependence political and moral weight. He asks for a heart capable of hearing so that judgment can distinguish good from evil for an entrusted people. Benedict XVI’s Angelus for this same Sunday (2011) reads that heart as a conscience attentive to truth and therefore answerable to justice and peace, especially in government. Ambrose earlier links hearing to just judgment. Neither witness makes office self-authenticating: the king’s later failures keep received wisdom under the continuing need for fidelity, counsel, and correction.
+
+**The Collect’s biblical grammar.** Ferraro’s study in *Notitiae* traces its titles of protector, ruler, and guide through the Psalms, John 15, and the Exodus tradition. He reads the prayer’s passing and enduring goods in an eschatological horizon without cancelling human work or creation’s value. As a signed study in the Dicastery’s journal, it supplies researched illumination rather than a magisterial decree. The Collect orders created goods through communion with Christ; it does not declare them unreal or unholy.
+
+### 2. Instruction schools desire for the Kingdom (*Responsorial Psalm; Gospel branches*)
+
+The Responsorial Psalm makes the prayer for wisdom habitual. The Lord is portion; instruction is valued above silver and gold; mercy is requested; commands are loved; the unfolding word gives understanding. Ambrose’s *Exposition of Psalm 118* lingers over both comparisons: the Lord as portion displaces rival mastery, and the law above gold describes a willingness to prefer God’s word to gain. His Christian preaching receives an Israelite Torah psalm; it does not turn Torah into a failed foil for grace.
+
+Treasure and pearl convert valuation into action. The first figure unexpectedly finds; the merchant deliberately searches. Both recognize a worth that reorganizes every other possession, while only the treasure scene explicitly names joy. Francis’s Angelus for this Sunday (2014) preserves that difference between sudden discovery and long search and describes encounter with Christ as giving new meaning even to toil and suffering. Chrysostom likewise stresses gain rather than reluctant loss. They reorder created goods without pricing grace or condemning creation.
+
+### 3. Providence gives suffering a filial form (*Second Reading; Acclamation*)
+
+Romans enters from the Sunday cycle rather than from a demonstrated compositional pairing with Matthew. Its immediate context is creation’s groaning, believers’ weakness, and the Spirit’s aid in prayer; its continuation names affliction, persecution, hunger, peril, and death. The promised good is therefore neither uninterrupted comfort nor an assurance that faithful people will prosper. Paul defines the movement by conformity to the Son, the firstborn within a communion of siblings.
+
+Chrysostom reads adversity as material God can turn toward good without calling adversity good in itself. Aquinas similarly distinguishes an evil suffered from the virtues and final good that providence can draw through it. The Council’s *Gaudium et spes* 22 places Christian suffering within conformity to the incarnate and risen Christ, where life and death receive paschal meaning. The *Catechism* (nn. 311–312) supplies the necessary moral boundary: God is not the cause of moral evil, and the good drawn from evil never converts evil into good.
+
+> **What the reading can and cannot promise**
+>
+> The reading gives hope that divine love can work within suffering toward communion with Christ. It does not tell a harmed person that abuse or injustice was secretly good, require passivity, or displace safety, lament, medicine, reporting, restitution, or justice. The acclamation adds teachable humility from Matthew 11; it is a distinct adaptation, not Paul’s definition of predestination.
+
+### 4. Received gifts return as memory, mercy, and memorial (*Prayer over Offerings; Communion A/B; Prayer after Communion*)
+
+The Prayer over the Offerings completes the parables’ value movement without turning sacrifice into purchase. The gifts presented already come from divine bounty; the petition asks that the mysteries sanctify present conduct. What is possessed is received, offered, and transformed. This prayer is the common Week XVII formulary, so its resonance with Year A is a liturgical conjunction, not proof that it was composed for these readings.
+
+Communion A commands the soul to bless and remember divine benefits. Communion B instead joins mercy and purity of heart, keeping their distinct promises of mercy and vision. The final prayer gathers either path into the perpetual memorial of the Son’s Passion and asks that the gift of love advance salvation. Memory is therefore active gratitude, and reception seeks moral and ecclesial fruit; neither alternative may be silently blended with the other or treated as mechanically effective apart from grace-enabled response.
+
+| **Dimension** | **Appointed anchors** | **Source-grounded synthesis** | **Limit** |
+|:-----------|:----------------|:-----------------|:-------------------|
+| Discernment | Entrance; Collect; 1 Kgs. 3 | Gathered strength becomes a hearing heart ordered toward justice. | Office and intelligence do not guarantee fidelity. |
+| Value and joy | Ps. 119; Matt. 13 | Instruction, treasure, and pearl disclose a good exceeding gold. | Grace is not bought; creation is not despised. |
+| Filial purpose | Rom. 8; acclamation | Providence works amid groaning toward conformity to the Son. | Evil remains evil; no fatalism or prosperity promise. |
+| Sacramental fruit | Offerings; Communion A/B; final prayer | Received bounty returns as offering, gratitude or mercy, and memorial. | Branches stay distinct; fruit is not mechanical. |
+
+<span id="triptych:brief-synthesis:end" data-label="triptych:brief-synthesis:end"></span>
+
+<span id="triptych:brief-synthesis:next" data-label="triptych:brief-synthesis:next"></span>
 
 ## Each Proper in Full
 
@@ -161,64 +197,28 @@ Communion B joins two adjacent beatitudes without making them one merit formula.
 
 The alternatives remain distinct. Either can illuminate the final prayer’s confession of the perpetual memorial of the Son’s Passion and its petition that divine love advance salvation. Its fruit is gift calling for lived response, neither mechanical nor self-achieved.
 
-## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
+## The Appointed Texts: Rights-Limited Study Sheet
 
-> **Governing account**
+> **Text boundary**
 >
-> This formulary does not reduce to one slogan. Its correlated strand joins Solomon’s listening heart, the Psalm’s valuation of divine instruction, and Jesus’ treasure and pearl: wisdom learns what is worth choosing. Romans contributes a semi-continuous word about God’s purpose amid suffering, not a hidden key to the parables. The proper chants and prayers gather the assembly, order passing goods, return received bounty, and ask that sacramental memory become saving love.
+> The controlling U.S. Missal and Lectionary English is protected and is not reproduced here. This sheet gives the complete ordered inventory, lawful Latin incipits for the orations and antiphons, public-domain scriptural loci, and concise descriptions sufficient to identify every branch. It is a study aid, not a substitute for the approved liturgical books.
 
-> **Four-stage movement at a glance**
->
-> **1. Hear — Entrance; Collect; First Reading.** God gathers and strengthens a people; Solomon confesses inadequacy and asks for judgment that listens.
->
-> **2. Revalue — Psalm; Gospel.** Instruction exceeds gold; treasure and pearl expose the Kingdom’s incomparable worth and awaken joyful, decisive response.
->
-> **3. Conform — Romans; Acclamation.** God’s initiative meets a groaning people and directs them toward the Son; revelation remains gift rather than self-mastery.
->
-> **4. Return — Offerings; Communion; final prayer.** Goods first received return to God; memory of divine benefits and of the Passion seeks fruit in mercy, purity, and salvation.
-
-*Reading order.* Stages 1, 2, and 4 correlate appointed texts with ritual sequence; stage 3 keeps Romans semi-continuous. Gospel and Communion alternatives are documented, not combined.
-
-### 1. Gathered strength becomes a listening heart (*Entrance; Collect; First Reading*)
-
-The Entrance does not begin with an isolated chooser. Its adapted Psalm first pictures God defending the vulnerable, making a dwelling for the forsaken, and giving strength to a people. The Collect then identifies the source of any strength or holiness and asks God to protect, govern, and guide. Choice is therefore ecclesial and dependent before it is heroic: the assembly is gathered into a household and taught to receive direction.
-
-Solomon gives this dependence political and moral weight. He asks for a heart capable of hearing so that judgment can distinguish good from evil for an entrusted people. Benedict XVI’s Angelus for this same Sunday (2011) reads that heart as a conscience attentive to truth and therefore answerable to justice and peace, especially in government. Ambrose earlier links hearing to just judgment. Neither witness makes office self-authenticating: the king’s later failures keep received wisdom under the continuing need for fidelity, counsel, and correction.
-
-**The Collect’s biblical grammar.** Ferraro’s study in *Notitiae* traces its titles of protector, ruler, and guide through the Psalms, John 15, and the Exodus tradition. He reads the prayer’s passing and enduring goods in an eschatological horizon without cancelling human work or creation’s value. As a signed study in the Dicastery’s journal, it supplies researched illumination rather than a magisterial decree. The Collect orders created goods through communion with Christ; it does not declare them unreal or unholy.
-
-### 2. Instruction schools desire for the Kingdom (*Responsorial Psalm; Gospel branches*)
-
-The Responsorial Psalm makes the prayer for wisdom habitual. The Lord is portion; instruction is valued above silver and gold; mercy is requested; commands are loved; the unfolding word gives understanding. Ambrose’s *Exposition of Psalm 118* lingers over both comparisons: the Lord as portion displaces rival mastery, and the law above gold describes a willingness to prefer God’s word to gain. His Christian preaching receives an Israelite Torah psalm; it does not turn Torah into a failed foil for grace.
-
-Treasure and pearl convert valuation into action. The first figure unexpectedly finds; the merchant deliberately searches. Both recognize a worth that reorganizes every other possession, while only the treasure scene explicitly names joy. Francis’s Angelus for this Sunday (2014) preserves that difference between sudden discovery and long search and describes encounter with Christ as giving new meaning even to toil and suffering. Chrysostom likewise stresses gain rather than reluctant loss. They reorder created goods without pricing grace or condemning creation.
-
-### 3. Providence gives suffering a filial form (*Second Reading; Acclamation*)
-
-Romans enters from the Sunday cycle rather than from a demonstrated compositional pairing with Matthew. Its immediate context is creation’s groaning, believers’ weakness, and the Spirit’s aid in prayer; its continuation names affliction, persecution, hunger, peril, and death. The promised good is therefore neither uninterrupted comfort nor an assurance that faithful people will prosper. Paul defines the movement by conformity to the Son, the firstborn within a communion of siblings.
-
-Chrysostom reads adversity as material God can turn toward good without calling adversity good in itself. Aquinas similarly distinguishes an evil suffered from the virtues and final good that providence can draw through it. The Council’s *Gaudium et spes* 22 places Christian suffering within conformity to the incarnate and risen Christ, where life and death receive paschal meaning. The *Catechism* (nn. 311–312) supplies the necessary moral boundary: God is not the cause of moral evil, and the good drawn from evil never converts evil into good.
-
-> **What the reading can and cannot promise**
->
-> The reading gives hope that divine love can work within suffering toward communion with Christ. It does not tell a harmed person that abuse or injustice was secretly good, require passivity, or displace safety, lament, medicine, reporting, restitution, or justice. The acclamation adds teachable humility from Matthew 11; it is a distinct adaptation, not Paul’s definition of predestination.
-
-### 4. Received gifts return as memory, mercy, and memorial (*Prayer over Offerings; Communion A/B; Prayer after Communion*)
-
-The Prayer over the Offerings completes the parables’ value movement without turning sacrifice into purchase. The gifts presented already come from divine bounty; the petition asks that the mysteries sanctify present conduct. What is possessed is received, offered, and transformed. This prayer is the common Week XVII formulary, so its resonance with Year A is a liturgical conjunction, not proof that it was composed for these readings.
-
-Communion A commands the soul to bless and remember divine benefits. Communion B instead joins mercy and purity of heart, keeping their distinct promises of mercy and vision. The final prayer gathers either path into the perpetual memorial of the Son’s Passion and asks that the gift of love advance salvation. Memory is therefore active gratitude, and reception seeks moral and ecclesial fruit; neither alternative may be silently blended with the other or treated as mechanically effective apart from grace-enabled response.
-
-| **Dimension** | **Appointed anchors** | **Source-grounded synthesis** | **Limit** |
-|:-----------|:----------------|:-----------------|:-------------------|
-| Discernment | Entrance; Collect; 1 Kgs. 3 | Gathered strength becomes a hearing heart ordered toward justice. | Office and intelligence do not guarantee fidelity. |
-| Value and joy | Ps. 119; Matt. 13 | Instruction, treasure, and pearl disclose a good exceeding gold. | Grace is not bought; creation is not despised. |
-| Filial purpose | Rom. 8; acclamation | Providence works amid groaning toward conformity to the Son. | Evil remains evil; no fatalism or prosperity promise. |
-| Sacramental fruit | Offerings; Communion A/B; final prayer | Received bounty returns as offering, gratitude or mercy, and memorial. | Branches stay distinct; fruit is not mechanical. |
-
-<span id="triptych:brief-synthesis:end" data-label="triptych:brief-synthesis:end"></span>
-
-<span id="triptych:brief-synthesis:next" data-label="triptych:brief-synthesis:next"></span>
+| **Textual unit** | **Text / citation** |
+|:-----------------|:-----------------------------------------------|
+| **Introductory Rites** |  |
+| Entrance Antiphon | *Cf.* Ps. 67:6–7, 36 (modern 68); *Deus in loco sancto suo*; God gives the forsaken a dwelling and strengthens his people. |
+| Collect | *Protector in te sperantium, Deus*; God is asked to protect, govern, and guide his people so that passing goods are used without losing those that endure. |
+| **Liturgy of the Word** |  |
+| First Reading | 1 Kgs. 3:5, 7–12; Solomon asks for a listening heart capable of discerning good and evil for the people entrusted to him. |
+| Responsorial Psalm | Ps. 119:57, 72, 76–77, 127–130, with response from v. 97a; divine instruction is preferred to wealth and asked to give understanding. |
+| Second Reading | Rom. 8:28–30; within suffering and Spirit-aided prayer, divine purpose tends toward conformity to the Son. |
+| Gospel Acclamation | *Cf.* Matt. 11:25; the Father reveals the mysteries of the Kingdom to the little ones. |
+| Gospel | Long branch: Matt. 13:44–52, treasure, pearl, net, sorting, and the instructed householder. Short branch: Matt. 13:44–46, treasure and pearl only. |
+| **Liturgy of the Eucharist** |  |
+| Prayer over Offerings | *Suscipe, quaesumus, Domine, munera*; gifts received from divine bounty are returned, with a petition that the mysteries sanctify present life. |
+| Communion Antiphon A | Ps. 102:2 (modern 103); the soul blesses the Lord and refuses to forget his benefits. |
+| Communion Antiphon B | Matt. 5:7–8; the merciful and the clean of heart are named with their distinct promises. |
+| Prayer after Communion | *Sumpsimus, Domine, divinum sacramentum*; the sacrament is confessed as the perpetual memorial of the Son’s Passion and its saving fruit is sought. |
 
 ## Source-Grounded Synthesis Across the Propers
 
@@ -349,6 +349,6 @@ The offerings prayer returns gifts already received from divine bounty, so the E
 
 - Margaret Murray Robertson, [*Christie Redfern’s Troubles*](https://www.gutenberg.org/files/21226/21226-h/21226-h.htm) (1866), ch. XVII; Romans 8:28 within a narrative dispute over trust and suffering. Public domain in the United States.
 
-**Last revised (UTC):** 2026-07-27T12:03:33Z
+**Last revised (UTC):** 2026-09-24T03:56:50Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
