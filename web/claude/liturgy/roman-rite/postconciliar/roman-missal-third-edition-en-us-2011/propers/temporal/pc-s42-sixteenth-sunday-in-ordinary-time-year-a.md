@@ -236,7 +236,7 @@ The shorter form ends at the harvest instruction. An assembly that hears it rece
 
 The Latin formulary stands in the third typical edition of the *Missale Romanum* (Typis Vaticanis, 2002) under the heading *Dominica XVI “per annum”*, printed pages 465–466, and the heading, the two Communion alternatives, the Latin incipits, and the element boundaries are that edition’s. The 2008 emended reprint is the Latin base of the United States English edition; the Congregation’s official list of variations for that reprint names, under *Tempus per annum*, only pages 457 and 471, so no listed change falls on this formulary—though the reprint’s own pages, where any purely typographic difference would stand, remain uncollated.
 
-The English of the Roman Missal, Third Edition, for the dioceses of the United States is under copyright and is not reproduced here. No named United States altar book was collated. The orations appear below in their Latin, with their structure and an original summary of each, and never in a substitute translation. The same limit governs the readings: the Lectionary’s English is protected, so scriptural wording quoted in this guide is taken from the public-domain Douay–Rheims (Challoner) version and is named as such wherever it appears. Douay–Rheims numbers the psalms with the Vulgate; the Lectionary numbers them with the Hebrew. Both numbers are given at each first use.
+The English of the Roman Missal, Third Edition, for the dioceses of the United States is under copyright and is not reproduced here. No named United States altar book was collated. The Prayer over the Offerings appears below complete, on its public-domain witness; the Collect and the Prayer after Communion appear by incipit and the phrases the analysis turns on, each with an original summary, and never in a substitute translation. The same limit governs the readings: the Lectionary’s English is protected, so scriptural wording quoted in this guide is taken from the public-domain Douay–Rheims (Challoner) version and is named as such wherever it appears. Douay–Rheims numbers the psalms with the Vulgate; the Lectionary numbers them with the Hebrew. Both numbers are given at each first use.
 
 ### Entrance Antiphon: Psalm 54:6, 8
 
@@ -390,9 +390,9 @@ The second antiphon carries its context with it whether or not the context is he
 
 ### Prayer after Communion
 
-*Populo tuo, quaesumus, Domine, adesto propitius …* The prayer asks God’s favourable presence for the people he has steeped in the heavenly mysteries, *quem mysteriis caelestibus imbuisti*, and asks that he make them pass from oldness into newness of life.
+*Populo tuo …* The prayer asks God’s favourable presence for the people he has steeped in the heavenly mysteries, *quem mysteriis caelestibus imbuisti*, and asks that he make them pass from oldness into newness of life.
 
-The verb *imbuere* means to steep, to saturate, and also to instruct: the people have been soaked in the heavenly mysteries and taught by them at once. The petition then asks for a passage—*transire*—out of oldness into newness of life, *fac ad novitatem vitae de vetustate transire*, the Pauline pair of Romans 6:4 and Ephesians 4:22–24. Read after the longer Gospel, the prayer asks for exactly the change that the parable says cannot be enforced from outside: the weeds are not converted by uprooting, and the Church’s own request at the end of the Mass is that its people be moved from old to new by God. The connection is the editor’s, and it holds equally under either Gospel form.
+The verb *imbuere* means to steep, to saturate, and also to instruct: the people have been soaked in the heavenly mysteries and taught by them at once. The petition then asks for a passage—*transire*—out of oldness into newness of life, *ad novitatem vitae*, the Pauline pair of Romans 6:4 and Ephesians 4:22–24. Read after the longer Gospel, the prayer asks for exactly the change that the parable says cannot be enforced from outside: the weeds are not converted by uprooting, and the Church’s own request at the end of the Mass is that its people be moved from old to new by God. The connection is the editor’s, and it holds equally under either Gospel form.
 
 ### How the layers meet
 
@@ -409,7 +409,7 @@ The verb *imbuere* means to steep, to saturate, and also to instruct: the people
 
 ## The Propers: Notable and Quotable
 
-Four later uses redirect wording from this Sunday’s appointed Scripture, each a phrase from the Gospel—present in both the longer and the shorter form—turned to another purpose. Straight exegesis of these phrases stands in the commentary above, and none of the four is devotional reception. Each later text is public domain and is cited at its locus.
+Four later uses redirect wording from this Sunday’s appointed Scripture, each a phrase from the Gospel—present in both the longer and the shorter form—turned to another purpose. Straight exegesis of these phrases stands in the commentary above, and none of the four is devotional reception. Each later text is public domain in the United States and is cited at its locus.
 
 ### “Patiently bear with the wheat and the tares” becomes a rule of manners
 
@@ -554,7 +554,7 @@ These are limits on what this guide may lawfully contain, and they are also limi
 | **Material** | **Ceiling accepted here** |
 |:-----------------|:------------------------------------------------|
 | English Roman Missal (ICEL translation, confirmed for the dioceses of the United States, 2011) | Under copyright. No oration, antiphon, or other English Missal text is reproduced, in whole or in part, anywhere in this guide. Prayers are identified by their Latin incipits and analysed through original summaries. Nothing here may be used as a translation or as an approved liturgical text. |
-| Latin *Missale Romanum*, third typical edition (2002; 2008 emended reprint) | Not freely reproducible in bulk. Short Latin incipits and argument-bearing phrases are quoted. Of the three orations only the Prayer over the Offerings is printed complete, on the wording of its public-domain witness, the Supplement to the Gregorian Sacramentary in H. A. Wilson’s edition (Henry Bradshaw Society 49, 1915), p. 171, which the 2002 text follows word for word but for spelling and punctuation; the Collect and the Prayer after Communion are given by incipit and phrase only. What was actually verified is the 2002 text at pages 465–466, read at pages 280–281 of the exact registered digital reproduction. The 2008 reprint’s own pages were not inspected; the official variation list was checked instead and names no change to this formulary. |
+| Latin *Missale Romanum*, third typical edition (2002; 2008 emended reprint) | Not freely reproducible in bulk. Short Latin incipits and argument-bearing phrases are quoted. Of the three orations only the Prayer over the Offerings is printed complete, on the wording of its public-domain witness, the Supplement to the Gregorian Sacramentary in H. A. Wilson’s edition (Henry Bradshaw Society 49, 1915; public domain in the United States), p. 171, which the 2002 text follows word for word but for spelling and punctuation; the Collect and the Prayer after Communion are given by incipit and phrase only. What was actually verified is the 2002 text at pages 465–466, read at pages 280–281 of the exact registered digital reproduction. The 2008 reprint’s own pages were not inspected; the official variation list was checked instead and names no change to this formulary. |
 | Lectionary for Mass (United States, second typical edition) | Under copyright. No Lectionary wording is reproduced. Citations, boundaries, response locus, and branch structure are given; scriptural wording quoted in this guide comes from the public-domain Douay–Rheims (Challoner) version, always named, and differs from what is proclaimed. |
 | No named United States altar book was collated | The publisher-specific English printings were not inspected. Any claim depending on the exact English wording of an oration is therefore outside this guide’s evidence, and no such claim is made. |
 | Official texts of the Holy See quoted here | The General Instruction, the General Introduction to the Lectionary, the Universal Norms, and *Dignitatis humanae* are quoted in short excerpts with attribution; they retain their own rights and are not relicensed by this repository. |
@@ -582,7 +582,7 @@ Completed: source research and same-day verification of every witness quoted; cl
 
 - *Missale Romanum*, editio typica tertia (Typis Vaticanis, 2002), *Tempus per annum*, introductory rubrics 1–6 and *Dominica XVI “per annum”* (printed pp. 465–466), with the *Dominica XXVI* Collect (artifact p. 289) and the Roman Canon’s *Supra quae*. Read in the exact digital reproduction registered in this repository’s source library, SHA-256 `0b458944…5523d7`, <https://media.musicasacra.com/books/latin_missal2002.pdf>.
 
-- H. A. Wilson, ed., *The Gregorian Sacramentary under Charles the Great*, Henry Bradshaw Society 49 (London, 1915), p. 171 (artifact p. 229), the Supplement’s *Super oblata* *Deus qui legalium differentiam hostiarum*; public domain, registered in this repository’s source library as a tracked facsimile.
+- H. A. Wilson, ed., *The Gregorian Sacramentary under Charles the Great*, Henry Bradshaw Society 49 (London, 1915), p. 171 (artifact p. 229), the Supplement’s *Super oblata* *Deus qui legalium differentiam hostiarum*; public domain in the United States, registered in this repository’s source library as a tracked facsimile.
 
 - Congregation for Divine Worship and the Discipline of the Sacraments, “Variationes et additiones in reimpressione emendata ‘Missalis Romani’, editionis typicae tertiae,” *Notitiae* 44 (2008), pp. 368–387, <https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2000/notitiae-44-(2008)/Notitiae-503-504-2008.pdf>.
 
@@ -636,6 +636,6 @@ Completed: source research and same-day verification of every witness quoted; cl
 
 - *Easton’s Bible Dictionary* (1897), s.v. “Tares,” <https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/R-Z>; *Chambers’s Twentieth Century Dictionary* (1908), s.v. “Darnel,” <https://en.wikisource.org/wiki/Chambers%27s_Twentieth_Century_Dictionary_1908/D_Defect>.
 
-**Last revised (UTC):** 2026-09-24T16:46:32Z
+**Last revised (UTC):** 2026-09-24T17:17:38Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
