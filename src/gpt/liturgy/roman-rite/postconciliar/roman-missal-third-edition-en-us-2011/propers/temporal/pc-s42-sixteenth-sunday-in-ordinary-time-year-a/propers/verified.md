@@ -1,8 +1,8 @@
-# PC-S40-A — Leaf Composition Audit
+# PC-S42-A — Leaf Composition Audit
 
-**Formula:** `PC-S40-A`
+**Formula:** `PC-S42-A`
 **Slug:** `pc-s42-sixteenth-sunday-in-ordinary-time-year-a`
-**Parent:** `PC-S40`
+**Parent:** `PC-S42`
 **Lectionary:** U.S. no. 106
 **Occurrence checked:** 2026-07-19
 **Last collated:** 2026-07-15
