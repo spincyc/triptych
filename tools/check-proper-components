@@ -400,6 +400,17 @@ def validate_brief_pages(aux: Path, *, fixed_start: bool = True) -> None:
         )
 
 
+def built_pdf(aux: Path) -> Path:
+    """The PDF the aux file was written beside, which a named build must have."""
+    pdf = aux.with_suffix(".pdf")
+    if not pdf.is_file():
+        raise ValueError(
+            f"no built PDF beside {aux}: a named document's printed order is "
+            "checked on the PDF its aux file belongs to"
+        )
+    return pdf
+
+
 def pdf_text(pdf: Path) -> str:
     result = subprocess.run(
         ["pdftotext", "-enc", "UTF-8", str(pdf), "-"],
@@ -483,8 +494,18 @@ def main() -> int:
                 # legacy order front-loads; its companion keeps page 3.
                 research = args.edition == "research"
                 validate_brief_pages(args.aux, fixed_start=not (legacy and research))
-                if legacy is None:
-                    validate_tail_order(pdf_text(args.aux.with_suffix(".pdf")))
+                if manifest is None:
+                    # Without --document there is no manifest to take a legacy
+                    # status from, so the printed order cannot be judged. Every
+                    # build names its document; say so rather than pass quietly.
+                    print(
+                        "proper-component warning: --aux without --document checks "
+                        "the brief-synthesis pages only; the printed order of Notable "
+                        "and Quotable and Interpretive Possibilities is not checked",
+                        file=sys.stderr,
+                    )
+                elif legacy is None:
+                    validate_tail_order(pdf_text(built_pdf(args.aux)))
                 else:
                     extent = (
                         "research brief synthesis checked for its two-page "

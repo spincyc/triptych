@@ -387,6 +387,26 @@ class ResearchEditionPageTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("declared reader_order", result.stdout)
 
+    def test_named_document_without_its_pdf_is_refused(self):
+        # A build names its document, so a missing PDF is an error, not a skip.
+        write_component_tree(self.provider, document=CURRENT_1962)
+        result = self.check(CURRENT_1962, (3, 4, 5), tail=None)
+        self.assertEqual(result.returncode, 1, result.stdout)
+        self.assertIn("no built PDF beside", result.stderr)
+
+    def test_aux_without_document_says_the_order_is_unchecked(self):
+        # With no manifest there is no legacy status to apply, so only the
+        # pages are checked, and the tool says so.
+        aux = write_aux(self.root / "guide.aux", 3, 4, 5)
+        result = subprocess.run(
+            [sys.executable, str(PATH), "--root", str(self.root), "--provider", "gpt",
+             "--aux", str(aux)],
+            capture_output=True, text=True, check=False, env=self.environment,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("printed order", result.stderr)
+        self.assertIn("is not checked", result.stderr)
+
     def test_revised_manifest_cannot_declare_a_legacy_order(self):
         path = write_component_tree(self.provider, document=CURRENT_1962,
                                     extra='reader_order = "legacy"\n')

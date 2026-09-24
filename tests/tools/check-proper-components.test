@@ -125,6 +125,11 @@ cat >"$sandbox/good.aux" <<'AUX'
 \newlabel{triptych:brief-synthesis:end}{{1}{4}}
 \newlabel{triptych:brief-synthesis:next}{{1}{5}}
 AUX
-run_tool --aux "$sandbox/good.aux" >/dev/null
+run_tool --aux "$sandbox/good.aux" >/dev/null 2>"$sandbox/good.err"
+
+# Without --document there is no manifest, so the printed order of the gallery
+# and the proposals cannot be judged. The tool must say it did not check it.
+grep -q 'is not checked' "$sandbox/good.err" ||
+	fail "--aux without --document passed without saying the printed order was unchecked"
 
 echo ok
