@@ -1,4 +1,4 @@
-# PC-S59-A — Liturgical-Instance Manifest
+# PC-S27-A — Liturgical-Instance Manifest
 
 **Resolved through:** 2026-07-15
 **Occurrence studied:** Sunday, 2026-06-07
@@ -8,11 +8,11 @@
 
 | Field | Resolution |
 | --- | --- |
-| Permanent parent | `PC-S59` — The Most Holy Body and Blood of Christ |
-| Formula key | `PC-S59-A` |
+| Permanent parent | `PC-S27` — The Most Holy Body and Blood of Christ |
+| Formula key | `PC-S27-A` |
 | Registry controls | `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md) |
 | Full publication slug | `pc-s27-most-holy-body-and-blood-of-christ-year-a` |
-| Canonical formulary owner | [`PC-S59` shared Missal audit](../../shared/formularies/pc-s59-most-holy-body-and-blood-of-christ/propers/verified.md) |
+| Canonical formulary owner | [`PC-S27` shared Missal audit](../../shared/formularies/pc-s59-most-holy-body-and-blood-of-christ/propers/verified.md) |
 | Celebration and rank | The Most Holy Body and Blood of Christ; solemnity of the Lord |
 | Season and color | Ordinary Time; white |
 | Civil occurrence | Sunday, 2026-06-07, the Sunday after Trinity Sunday in the United States |
@@ -84,7 +84,7 @@ The branches above are alternatives, not one synthetic enactment. The canonical 
 
 ## Weekday spillover
 
-The transferred solemnity occupies the Sunday on which the Tenth Sunday in Ordinary Time would otherwise fall. It does not erase Week X. Monday, 2026-06-08, continues the independent Ordinary Time weekday sequence in Week X and Weekday Cycle II; it does not reuse Year A's Sunday readings, the Corpus Christi Gloria or Creed, or either Eucharistic Preface merely because the Sunday solemnity preceded it. The Thursday-after-Trinity formula is not duplicated as a separate target: occurrence on Thursday or its U.S. transfer to Sunday uses the same `PC-S59-A` target, with the competent calendar resolving the day.
+The transferred solemnity occupies the Sunday on which the Tenth Sunday in Ordinary Time would otherwise fall. It does not erase Week X. Monday, 2026-06-08, continues the independent Ordinary Time weekday sequence in Week X and Weekday Cycle II; it does not reuse Year A's Sunday readings, the Corpus Christi Gloria or Creed, or either Eucharistic Preface merely because the Sunday solemnity preceded it. The Thursday-after-Trinity formula is not duplicated as a separate target: occurrence on Thursday or its U.S. transfer to Sunday uses the same `PC-S27-A` target, with the competent calendar resolving the day.
 
 ## Rights and review state
 

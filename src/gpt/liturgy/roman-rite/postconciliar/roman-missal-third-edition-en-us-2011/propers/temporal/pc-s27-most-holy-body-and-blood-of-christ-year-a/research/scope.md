@@ -1,4 +1,4 @@
-# PC-S59-A — Research Scope
+# PC-S27-A — Research Scope
 
 **Last updated:** 2026-07-19
 **Jurisdiction and as-of date:** dioceses of the United States of America; calendar, rubrics, and editions checked through 2026-07-15
@@ -8,7 +8,7 @@ This audit records the scholarship behind the Year A guide to the Most Holy Body
 
 ## Question, editions, and exclusions
 
-The project asks what an advanced lay reader should know before participating in this one U.S. Roman-rite Sunday formula: its appointed layers, biblical settings, Eucharistic reception, doctrinal controls, liturgical movement, lawful alternatives, and unresolved local choices. It is keyed to `PC-S59-A`, the 2008 emended Latin third typical edition, the U.S. English Roman Missal implemented in 2011, U.S. Lectionary Volume I no. 167, and the 2026 U.S. Sunday transfer.
+The project asks what an advanced lay reader should know before participating in this one U.S. Roman-rite Sunday formula: its appointed layers, biblical settings, Eucharistic reception, doctrinal controls, liturgical movement, lawful alternatives, and unresolved local choices. It is keyed to `PC-S27-A`, the 2008 emended Latin third typical edition, the U.S. English Roman Missal implemented in 2011, U.S. Lectionary Volume I no. 167, and the 2026 U.S. Sunday transfer.
 
 The guide does not reproduce a Missal, Lectionary, sequence, procession book, or worship aid; reconstruct a parish enactment; settle diocesan or church-proper precedence; choose either Responsorial Psalm response, sequence form, Preface, music, Penitential Act or sprinkling rite, Eucharistic Prayer, or procession; or replace pastoral teaching on worthy reception. A Eucharistic procession is treated as a conditional ritual after Mass, not an automatic component of the formula.
 

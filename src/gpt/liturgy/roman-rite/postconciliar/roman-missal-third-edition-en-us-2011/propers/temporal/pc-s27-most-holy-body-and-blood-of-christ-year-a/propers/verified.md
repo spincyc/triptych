@@ -1,13 +1,13 @@
-# PC-S59-A — Composition and Lectionary Audit
+# PC-S27-A — Composition and Lectionary Audit
 
 **Full slug:** `pc-s27-most-holy-body-and-blood-of-christ-year-a`
-**Parent:** `PC-S59`
-**Canonical Missal owner:** [`PC-S59` formulary audit](../../shared/formularies/pc-s59-most-holy-body-and-blood-of-christ/propers/verified.md)
+**Parent:** `PC-S27`
+**Canonical Missal owner:** [`PC-S27` formulary audit](../../shared/formularies/pc-s59-most-holy-body-and-blood-of-christ/propers/verified.md)
 **Last collated:** 2026-07-16
 
 ## Target and source layers
 
-- **Formula key:** `PC-S59-A`.
+- **Formula key:** `PC-S27-A`.
 - **Occurrence resolved:** The Most Holy Body and Blood of Christ, Sunday, 2026-06-07, for the dioceses of the United States of America.
 - **Transfer:** Universal proper day Thursday after Trinity; transferred in the United States to the following Sunday under the competent calendar.
 - **Sunday cycle:** A. **Weekday cycle:** not applicable to the Sunday target; adjacent 2026 weekdays use Cycle II independently.
