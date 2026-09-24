@@ -282,7 +282,10 @@ corpus was checked; `49-ninth-after-pentecost`, the only leaf in either
 provider that front-loads the formulary, is legacy under this profile's own
 rule and is not the model. Positions 4 and 6 are absent from legacy leaves
 authored before the component architecture, which remain valid until their
-next substantive revision.
+next substantive revision. Position 7 comes before position 8:
+`tools/check-proper-components` refuses a built edition that prints them the
+other way round, unless its manifest is legacy under that tool's
+`legacy_reader_order`, as both `49-ninth-after-pentecost` manifests are.
 
 The page-2 sheet is the sole exception to terminal historical apparatus. Do not front-load any other chronology, status panel, research boundary, date range, source survey, or general qualification. Put work-wide bounds and qualifications in the terminal appendices. Keep a qualification beside a claim only when it materially changes that claim.
 

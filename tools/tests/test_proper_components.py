@@ -92,6 +92,32 @@ def write_aux(path: Path, start: int, end: int, following: int) -> Path:
     return path
 
 
+NOTABLE = "The Propers: Notable and Quotable"
+EXPLORATORY = "The Propers: Interpretive Possibilities"
+TAILS = {"NI": (NOTABLE, EXPLORATORY), "IN": (EXPLORATORY, NOTABLE)}
+
+# Stands in for poppler: the fixture "PDF" is already its own text.
+FAKE_PDFTOTEXT = """#!/bin/sh
+for argument do
+    case "$argument" in
+        *.pdf) exec cat "$argument" ;;
+    esac
+done
+exit 1
+"""
+
+
+def write_pdf_text(path: Path, tail: str = "NI") -> Path:
+    """Write the text a built edition's PDF yields, with its tail in that order."""
+    first, second = TAILS[tail]
+    path.write_text(
+        "\fThe Propers: Themes and Movement\nBody.\n"
+        f"\f{first}\nBody.\n{second}\nBody.\n\fReferences\n",
+        encoding="utf-8",
+    )
+    return path
+
+
 class ProperComponentTests(unittest.TestCase):
     def component_tree(self, directory: str, **options):
         provider = Path(directory) / "src" / "gpt"
@@ -198,6 +224,35 @@ class ProperComponentTests(unittest.TestCase):
                 module.validate_brief_pages(aux)
 
 
+
+class PrintedTailOrderTests(unittest.TestCase):
+    """Both profiles print Notable and Quotable before Interpretive Possibilities."""
+
+    def test_reader_order_passes(self):
+        module.validate_tail_order(f"{NOTABLE}\nBody.\n{EXPLORATORY}\n")
+
+    def test_reversed_tail_is_refused(self):
+        with self.assertRaisesRegex(ValueError, "Notable and Quotable first"):
+            module.validate_tail_order(f"{EXPLORATORY}\nBody.\n{NOTABLE}\n")
+
+    def test_heading_after_a_page_break_is_found(self):
+        # pdftotext opens each page with a form feed.
+        with self.assertRaisesRegex(ValueError, "Notable and Quotable first"):
+            module.validate_tail_order(
+                "\fInterpretive Possibilities Across the Propers\nBody.\n"
+                f"\f{NOTABLE}\n"
+            )
+
+    def test_a_mention_in_prose_is_not_a_heading(self):
+        module.validate_tail_order(
+            "See The Propers: Interpretive Possibilities below.\n"
+            f"{NOTABLE}\n{EXPLORATORY}\n"
+        )
+
+    def test_missing_heading_is_refused(self):
+        with self.assertRaisesRegex(ValueError, "no Notable and Quotable heading"):
+            module.validate_tail_order(f"{EXPLORATORY}\n")
+
 CURRENT_1962 = "liturgy/roman-rite/1962/propers/temporal/proper"
 LEGACY_1962 = "liturgy/roman-rite/1962/propers/temporal/legacy"
 POSTCONCILIAR = ("liturgy/roman-rite/postconciliar/"
@@ -218,14 +273,23 @@ class ResearchEditionPageTests(unittest.TestCase):
         self.addCleanup(self.temporary.cleanup)
         self.root = Path(self.temporary.name)
         self.provider = self.root / "src" / "gpt"
+        stub = self.root / "bin" / "pdftotext"
+        stub.parent.mkdir()
+        stub.write_text(FAKE_PDFTOTEXT, encoding="utf-8")
+        stub.chmod(0o755)
+        self.environment = dict(os.environ,
+                                PATH=f"{stub.parent}:{os.environ['PATH']}")
 
     def check(self, document: str, pages: tuple[int, int, int],
-              edition: str = "research") -> subprocess.CompletedProcess[str]:
+              edition: str = "research", tail: str | None = "NI",
+              ) -> subprocess.CompletedProcess[str]:
         aux = write_aux(self.root / "guide.aux", *pages)
+        if tail is not None:
+            write_pdf_text(aux.with_suffix(".pdf"), tail)
         return subprocess.run(
             [sys.executable, str(PATH), "--root", str(self.root), "--provider", "gpt",
              "--document", document, "--edition", edition, "--aux", str(aux)],
-            capture_output=True, text=True, check=False,
+            capture_output=True, text=True, check=False, env=self.environment,
         )
 
     def test_displaced_research_edition_is_refused(self):
@@ -276,6 +340,53 @@ class ResearchEditionPageTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("declared reader_order", result.stdout)
 
+    def test_research_edition_printing_interpretive_first_is_refused(self):
+        write_component_tree(self.provider, document=CURRENT_1962)
+        result = self.check(CURRENT_1962, (3, 4, 5), tail="IN")
+        self.assertEqual(result.returncode, 1, result.stdout)
+        self.assertIn("Notable and Quotable first", result.stderr)
+
+    def test_synthesis_companion_printing_interpretive_first_is_refused(self):
+        write_component_tree(self.provider, document=CURRENT_1962)
+        result = self.check(CURRENT_1962, (3, 4, 5), edition="synthesis", tail="IN")
+        self.assertEqual(result.returncode, 1, result.stdout)
+        self.assertIn("Notable and Quotable first", result.stderr)
+
+    def test_edition_without_the_gallery_heading_is_refused(self):
+        write_component_tree(self.provider, document=CURRENT_1962)
+        pdf = self.root / "guide.pdf"
+        pdf.write_text(f"{EXPLORATORY}\n", encoding="utf-8")
+        result = self.check(CURRENT_1962, (3, 4, 5), tail=None)
+        self.assertEqual(result.returncode, 1, result.stdout)
+        self.assertIn("no Notable and Quotable heading", result.stderr)
+
+    def test_undeclared_postconciliar_manifest_is_held_to_the_printed_tail(self):
+        # gpt pc-s44 years B and C: postconciliar schema 1, nothing declared.
+        write_component_tree(self.provider, document=POSTCONCILIAR, integrated=False,
+                             swap_tail=True)
+        for edition in ("research", "synthesis"):
+            with self.subTest(edition=edition):
+                result = self.check(POSTCONCILIAR, (3, 4, 5), edition=edition, tail="IN")
+                self.assertEqual(result.returncode, 1, result.stdout)
+                self.assertIn("Notable and Quotable first", result.stderr)
+
+    def test_legacy_manifest_keeps_its_tail_in_both_editions(self):
+        # Both 49s print Interpretive Possibilities first in both editions.
+        write_component_tree(self.provider, document=LEGACY_1962,
+                             integrated=False, swap_tail=True)
+        for edition in ("research", "synthesis"):
+            with self.subTest(edition=edition):
+                result = self.check(LEGACY_1962, (3, 4, 5), edition=edition, tail="IN")
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertIn("not held ahead of Interpretive", result.stdout)
+
+    def test_declared_legacy_order_exempts_its_tail(self):
+        write_component_tree(self.provider, document=POSTCONCILIAR, integrated=False,
+                             extra='reader_order = "legacy"\n')
+        result = self.check(POSTCONCILIAR, (3, 4, 5), edition="synthesis", tail="IN")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("declared reader_order", result.stdout)
+
     def test_revised_manifest_cannot_declare_a_legacy_order(self):
         path = write_component_tree(self.provider, document=CURRENT_1962,
                                     extra='reader_order = "legacy"\n')
@@ -300,6 +411,10 @@ for argument do
 done
 mkdir -p "$output_directory"
 printf '%%PDF-1.5 fixture %s\n' "$job_name" > "$output_directory/$job_name.pdf"
+case "${MAKE_TEST_TAIL:-NI}" in
+    NI) printf 'The Propers: Notable and Quotable\nThe Propers: Interpretive Possibilities\n' ;;
+    IN) printf 'The Propers: Interpretive Possibilities\nThe Propers: Notable and Quotable\n' ;;
+esac >> "$output_directory/$job_name.pdf"
 set -- $MAKE_TEST_BRIEF_PAGES
 {
     printf '\\newlabel{triptych:brief-synthesis:start}{{}{%s}}\n' "$1"
@@ -331,8 +446,8 @@ class ResearchBuildTests(unittest.TestCase):
                         "    raise SystemExit(127)\n"
                         "os.execv(target, [target] + sys.argv[2:])\n")
         self.executable("tools/check-generation-metadata", "#!/bin/sh\nexit 0\n")
-        for name in ("pdftotext", "pdfinfo"):
-            self.executable(f"bin/{name}", "#!/bin/sh\nexit 0\n")
+        self.executable("bin/pdfinfo", "#!/bin/sh\nexit 0\n")
+        self.executable("bin/pdftotext", FAKE_PDFTOTEXT)
         pdflatex = self.executable("bin/fake-pdflatex", FAKE_PDFLATEX)
         self.provider = self.root / "src" / "gpt"
         self.environment = dict(os.environ, PDFLATEX=str(pdflatex),
@@ -345,11 +460,13 @@ class ResearchBuildTests(unittest.TestCase):
         path.chmod(0o755)
         return path
 
-    def build(self, document: str, pages: tuple[int, int, int]) -> subprocess.CompletedProcess[str]:
+    def build(self, document: str, pages: tuple[int, int, int],
+              tail: str = "NI") -> subprocess.CompletedProcess[str]:
         return subprocess.run(
             ["make", "--no-print-directory", f"build/gpt/{document}.pdf"],
             cwd=self.root, env=dict(self.environment,
-                                    MAKE_TEST_BRIEF_PAGES=" ".join(map(str, pages))),
+                                    MAKE_TEST_BRIEF_PAGES=" ".join(map(str, pages)),
+                                    MAKE_TEST_TAIL=tail),
             capture_output=True, text=True, check=False,
         )
 
@@ -366,6 +483,13 @@ class ResearchBuildTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("Proper component manifests valid: 1.", result.stdout)
         self.assertTrue((self.root / f"build/gpt/.metadata/{CURRENT_1962}.ok").is_file())
+
+    def test_research_edition_printing_interpretive_first_fails_its_build(self):
+        write_component_tree(self.provider, document=CURRENT_1962)
+        result = self.build(CURRENT_1962, (3, 4, 5), tail="IN")
+        self.assertNotEqual(result.returncode, 0, result.stdout)
+        self.assertIn("Notable and Quotable first", result.stderr)
+        self.assertFalse((self.root / f"build/gpt/{CURRENT_1962}.pdf").exists())
 
     def test_legacy_research_edition_builds_by_exemption(self):
         write_component_tree(self.provider, document=LEGACY_1962, integrated=False)

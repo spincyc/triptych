@@ -470,6 +470,66 @@ The offering prayer says the gifts first came from divine bounty, preventing the
 | Filial hope | Romans 8; acclamation | Augustine; Chrysostom; Aquinas | Evil is not made good. |
 | Eucharistic return | Offerings; Communion A/B; final prayer | Psalm and beatitude reception | Alternatives remain distinct. |
 
+## The Propers: Notable and Quotable
+
+Five later uses of wording from today’s appointed Scripture, each verified in a primary text at the locus given, and each chosen because it *changes* what the words are doing rather than merely repeating them.
+
+### 1. A royal petition becomes a constitutional argument
+
+**Trigger:** 1 Kings 3:9, the request for a hearing heart to discern between good and evil.
+
+**Later use:** Benedict XVI, address to the German Bundestag, Reichstag Building, Berlin, 22 September 2011, published under the title *The Listening Heart: Reflections on the Foundations of Law*.
+
+The address takes the appointed verse as its whole frame. Having noted that Solomon asks for a listening heart in order to govern and to discern between good and evil, it turns the question on the legislature in front of it: what would *we* ask for? and answers that there is ultimately nothing else to wish for but a listening heart, “the capacity to discern between good and evil, and thus to establish true law, to serve justice and peace.”
+
+**The turn.** A private night-vision granted to a hereditary monarch is converted into a criterion for elected legislators in a secular parliament, and thence into an argument that positive law is answerable to something it does not create. The verse stops being about Solomon and becomes a question addressed to majority rule. There is also a philological turn that only the German original shows: the phrase used throughout is *ein hörendes Herz*, a literal calque of the Hebrew idiom, which steps past the Latin *cor docile* that had carried this verse through the Western tradition. The address recovers the hearing heart from behind the teachable one. *Rights note:* this is a modern protected text, quoted only in the short phrases required.
+
+### 2. The pearl becomes an illegitimate child, and then a joke on a minister
+
+**Trigger:** Matthew 13:46, the one pearl of great price bought with everything the merchant had.
+
+**Later use:** Nathaniel Hawthorne, *The Scarlet Letter* (1850), chapters 6 and 8.
+
+Hawthorne uses the phrase twice, and the second use depends on the first. In chapter 6 Hester names her daughter “Pearl,” the narrator explains, “as being of great price,—purchased with all she had,—her mother’s only treasure!” In chapter 8 the Reverend Mr Wilson, examining the child, tells her with great solemnity that she must take heed to instruction “that so, in due season, thou mayest wear in thy bosom the pearl of great price” – and the child, who by the novel’s own metaphor already *is* that pearl, refuses to answer him and escapes through the window.
+
+**The turn.** The Gospel’s figure for the supreme worth of the kingdom is first transferred to a child conceived in adultery and priced in a mother’s ruin, and then put back in a clergyman’s mouth as devotional boilerplate addressed to the very object it has been made to name. The second occurrence is the sharper: the phrase is used piously by a man who cannot see what is standing in front of him.
+
+### 3. The pearl is not bought but spent
+
+**Trigger:** Matthew 13:45–46, the merchant who sells all and buys.
+
+**Later use:** Henry van Dyke, *The Story of the Other Wise Man*, chapter 5, titled “A Pearl of Great Price” (first published 1895; consulted in the Harper printing).
+
+Artaban, a fourth magus, spends three decades and two of his three jewels on works of mercy that keep him from reaching the King. In the last chapter he surrenders the pearl to ransom a girl from slavery: “This is thy ransom, daughter! It is the last of my treasures which I kept for the King.” Dying, he hears the sentence from Matthew 25 about what is done to the least.
+
+**The turn.** The parable’s logic is reversed. In Matthew the pearl is acquired and everything else spent; in van Dyke the pearl is *spent*, and what is acquired is the King – by a transaction the wise man believes has ruined his quest. The story argues that the parable’s arithmetic runs in the other direction too, and it says so by taking Matthew’s phrase for its chapter title.
+
+### 4. Providence as the punchline of a farce
+
+**Trigger:** Romans 8:28, that to those who love God all things work together unto good.
+
+**Later use:** P. G. Wodehouse, “A Sea of Troubles,” in *The Man with Two Left Feet* (1917).
+
+Mr Meggs, a dyspeptic hypochondriac, has written farewell letters, given them to his typist to post, changed his mind, chased her through the town, and been arrested on suspicion of murder before the misunderstanding is cleared up. At exactly this point the narrator interposes the verse as a one-sentence paragraph: “All things work together for good.” Next morning Mr Meggs wakes stiff and cured: the unaccustomed exercise has fixed his digestion.
+
+**The turn.** Paul’s clause about divine purpose amid suffering is applied, deadpan and without comment, to an accidental cardiovascular benefit obtained during an attempted felony. The joke works only because the reader recognises the register the sentence has been lifted out of, and it is a good-natured rather than a hostile use – which is precisely why it shows how portable the verse had become in ordinary English by 1917.
+
+### 5. The trained scribe becomes a rule of ecclesiastical controversy
+
+**Trigger:** Matthew 13:52, the householder who brings forth new things and old.
+
+**Later use:** George Tyrrell, S.J., *Nova et Vetera: Informal Meditations for Times of Spiritual Dryness* (Longmans, Green, 2nd impression 1898), meditation CCXXXII, headed “Novelties,” p. 269.
+
+Tyrrell takes the verse’s Latin tag for his title and, in this meditation, for a thesis about argument. He begins with a reading note – “Many seem to think there is here a full stop, but there is not” – and then turns the householder’s two treasures into a test that both parties in a church quarrel fail: “He who despises either the old or the new is no *scriba doctus in regno cælorum*; he knows but one half of that kingdom, its ‘conservative’ aspect, or its ‘liberal’ aspect.” He states the principle flatly: “A thing is not true because old, or false because new, or false because it is old, or true because it is new. Yet in the practice of controversy all these propositions are denied repeatedly.”
+
+**The turn.** In Matthew the verse describes a competent teacher; in Tyrrell it becomes a weapon against party spirit, and the register shifts from formation to polemic. The circumstances sharpen it: the book carried an *imprimatur* from the Archbishop of Westminster, and its author was dismissed from the Society of Jesus in 1906 and excommunicated in 1907. A verse about holding old and new together became the motto of a man the Church would shortly judge to have failed at exactly that. The entry records a reception and takes no position on the Modernist controversy.
+
+### Two leads the gallery rejects
+
+The English word *dragnet* in its police sense does not qualify. The standard etymology derives it from *drag* plus *net*, attests the fishing sense from the 1540s, a figurative sense from the 1640s, and the police sense by 1894, with no biblical dependence recorded; and the word predates by centuries the translations that use it at Matthew 13:47, where older English versions read simply “net.” The two nets are cousins through the fishing trade, not through Matthew.
+
+*Candide* fails for a comparable reason. Voltaire’s “best of all possible worlds” parodies a metaphysical thesis, not a Pauline verse, and he names the target: Pangloss, unrepentant after being hanged and dissected, cannot retract because Leibniz could never be wrong. The resemblance to Romans 8:28 is structural, not citational.
+
 ## Interpretive Possibilities Across the Propers
 
 **Disclosure, once, for the whole section.** Everything below is an editorial proposal generated in the course of preparing this guide by an AI system. None of it is attributed to any authority cited, none of it claims to state what the Missal’s redactors or the Lectionary’s compilers intended, and none of it is offered as a historical or doctrinal conclusion. Each proposal names its anchors, states its mechanism, says what the ordinary element-by-element reading misses, and ends with the strongest limit or disconfirming condition known to the editor. A targeted precedent search was run for each conjunction over the corpus named in the scope appendix; the result is recorded in each entry and audited in the research record. A negative result there is bounded and correctable, never a claim that a connection is unknown.
@@ -545,66 +605,6 @@ The offering prayer says the gifts first came from divine bounty, preventing the
 **Precedent.** *Not located in the checked corpus.* Ancient commentators expound continuous texts and do not discuss modern Lectionary boundaries at all, so no witness could have made this observation.
 
 **Controlling limit.** The two omissions are not parallel in authority: one is fixed by the appointed pericope and the other is a local choice among two authorized forms. If the long Gospel is proclaimed, half the proposal disappears – and the celebration then hears a judgment that the first reading’s own ending, still unread, does not supply.
-
-## The Propers: Notable and Quotable
-
-Five later uses of wording from today’s appointed Scripture, each verified in a primary text at the locus given, and each chosen because it *changes* what the words are doing rather than merely repeating them.
-
-### 1. A royal petition becomes a constitutional argument
-
-**Trigger:** 1 Kings 3:9, the request for a hearing heart to discern between good and evil.
-
-**Later use:** Benedict XVI, address to the German Bundestag, Reichstag Building, Berlin, 22 September 2011, published under the title *The Listening Heart: Reflections on the Foundations of Law*.
-
-The address takes the appointed verse as its whole frame. Having noted that Solomon asks for a listening heart in order to govern and to discern between good and evil, it turns the question on the legislature in front of it: what would *we* ask for? and answers that there is ultimately nothing else to wish for but a listening heart, “the capacity to discern between good and evil, and thus to establish true law, to serve justice and peace.”
-
-**The turn.** A private night-vision granted to a hereditary monarch is converted into a criterion for elected legislators in a secular parliament, and thence into an argument that positive law is answerable to something it does not create. The verse stops being about Solomon and becomes a question addressed to majority rule. There is also a philological turn that only the German original shows: the phrase used throughout is *ein hörendes Herz*, a literal calque of the Hebrew idiom, which steps past the Latin *cor docile* that had carried this verse through the Western tradition. The address recovers the hearing heart from behind the teachable one. *Rights note:* this is a modern protected text, quoted only in the short phrases required.
-
-### 2. The pearl becomes an illegitimate child, and then a joke on a minister
-
-**Trigger:** Matthew 13:46, the one pearl of great price bought with everything the merchant had.
-
-**Later use:** Nathaniel Hawthorne, *The Scarlet Letter* (1850), chapters 6 and 8.
-
-Hawthorne uses the phrase twice, and the second use depends on the first. In chapter 6 Hester names her daughter “Pearl,” the narrator explains, “as being of great price,—purchased with all she had,—her mother’s only treasure!” In chapter 8 the Reverend Mr Wilson, examining the child, tells her with great solemnity that she must take heed to instruction “that so, in due season, thou mayest wear in thy bosom the pearl of great price” – and the child, who by the novel’s own metaphor already *is* that pearl, refuses to answer him and escapes through the window.
-
-**The turn.** The Gospel’s figure for the supreme worth of the kingdom is first transferred to a child conceived in adultery and priced in a mother’s ruin, and then put back in a clergyman’s mouth as devotional boilerplate addressed to the very object it has been made to name. The second occurrence is the sharper: the phrase is used piously by a man who cannot see what is standing in front of him.
-
-### 3. The pearl is not bought but spent
-
-**Trigger:** Matthew 13:45–46, the merchant who sells all and buys.
-
-**Later use:** Henry van Dyke, *The Story of the Other Wise Man*, chapter 5, titled “A Pearl of Great Price” (first published 1895; consulted in the Harper printing).
-
-Artaban, a fourth magus, spends three decades and two of his three jewels on works of mercy that keep him from reaching the King. In the last chapter he surrenders the pearl to ransom a girl from slavery: “This is thy ransom, daughter! It is the last of my treasures which I kept for the King.” Dying, he hears the sentence from Matthew 25 about what is done to the least.
-
-**The turn.** The parable’s logic is reversed. In Matthew the pearl is acquired and everything else spent; in van Dyke the pearl is *spent*, and what is acquired is the King – by a transaction the wise man believes has ruined his quest. The story argues that the parable’s arithmetic runs in the other direction too, and it says so by taking Matthew’s phrase for its chapter title.
-
-### 4. Providence as the punchline of a farce
-
-**Trigger:** Romans 8:28, that to those who love God all things work together unto good.
-
-**Later use:** P. G. Wodehouse, “A Sea of Troubles,” in *The Man with Two Left Feet* (1917).
-
-Mr Meggs, a dyspeptic hypochondriac, has written farewell letters, given them to his typist to post, changed his mind, chased her through the town, and been arrested on suspicion of murder before the misunderstanding is cleared up. At exactly this point the narrator interposes the verse as a one-sentence paragraph: “All things work together for good.” Next morning Mr Meggs wakes stiff and cured: the unaccustomed exercise has fixed his digestion.
-
-**The turn.** Paul’s clause about divine purpose amid suffering is applied, deadpan and without comment, to an accidental cardiovascular benefit obtained during an attempted felony. The joke works only because the reader recognises the register the sentence has been lifted out of, and it is a good-natured rather than a hostile use – which is precisely why it shows how portable the verse had become in ordinary English by 1917.
-
-### 5. The trained scribe becomes a rule of ecclesiastical controversy
-
-**Trigger:** Matthew 13:52, the householder who brings forth new things and old.
-
-**Later use:** George Tyrrell, S.J., *Nova et Vetera: Informal Meditations for Times of Spiritual Dryness* (Longmans, Green, 2nd impression 1898), meditation CCXXXII, headed “Novelties,” p. 269.
-
-Tyrrell takes the verse’s Latin tag for his title and, in this meditation, for a thesis about argument. He begins with a reading note – “Many seem to think there is here a full stop, but there is not” – and then turns the householder’s two treasures into a test that both parties in a church quarrel fail: “He who despises either the old or the new is no *scriba doctus in regno cælorum*; he knows but one half of that kingdom, its ‘conservative’ aspect, or its ‘liberal’ aspect.” He states the principle flatly: “A thing is not true because old, or false because new, or false because it is old, or true because it is new. Yet in the practice of controversy all these propositions are denied repeatedly.”
-
-**The turn.** In Matthew the verse describes a competent teacher; in Tyrrell it becomes a weapon against party spirit, and the register shifts from formation to polemic. The circumstances sharpen it: the book carried an *imprimatur* from the Archbishop of Westminster, and its author was dismissed from the Society of Jesus in 1906 and excommunicated in 1907. A verse about holding old and new together became the motto of a man the Church would shortly judge to have failed at exactly that. The entry records a reception and takes no position on the Modernist controversy.
-
-### Two leads the gallery rejects
-
-The English word *dragnet* in its police sense does not qualify. The standard etymology derives it from *drag* plus *net*, attests the fishing sense from the 1540s, a figurative sense from the 1640s, and the police sense by 1894, with no biblical dependence recorded; and the word predates by centuries the translations that use it at Matthew 13:47, where older English versions read simply “net.” The two nets are cousins through the fishing trade, not through Matthew.
-
-*Candide* fails for a comparable reason. Voltaire’s “best of all possible worlds” parodies a metaphysical thesis, not a Pauline verse, and he names the target: Pangloss, unrepentant after being hanged and dissected, cannot retract because Leibniz could never be wrong. The resemblance to Romans 8:28 is structural, not citational.
 
 ## Appendix: Liturgical Resolution
 
@@ -792,6 +792,6 @@ Only sources actually used are listed. Where an online witness was read, the del
 
 - “Dragnet,” *Online Etymology Dictionary*, for the negative result reported in the gallery.
 
-**Last revised (UTC):** 2026-09-24T03:56:50Z
+**Last revised (UTC):** 2026-09-24T04:26:05Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import re
+import subprocess
 import sys
 import tomllib
 from pathlib import Path
@@ -74,6 +75,16 @@ LABELS = (
 BRIEF_START_PAGE = 3
 # The one value of a schema-1 manifest's optional reader_order field.
 LEGACY_READER_ORDER = "legacy"
+# Both profiles' Reader-Facing Order puts the notable gallery before the
+# exploratory proposals. The two headings are matched as whole lines of the
+# built PDF's text, because the manifest's component list is not what a leaf
+# prints (see audit_manifest). "Across the Propers" is the exploratory
+# heading both pc-s43 leaves took from the component list that 5988f9dfd
+# followed.
+NOTABLE_HEADING = re.compile(r"(?:The Propers: )?Notable and Quotable")
+EXPLORATORY_HEADING = re.compile(
+    r"(?:The Propers: )?Interpretive Possibilities(?: Across the Propers)?"
+)
 
 
 def safe_file(leaf: Path, value: object, field: str) -> Path:
@@ -264,14 +275,20 @@ def audit_manifest(path: Path, provider_root: Path, *, phase: str = "content",
     if integrated:
         ordered.insert(1, "integrated-commentary")
     positions = [kinds.index(kind) for kind in ordered]
-    # The profile's Reader-Facing Order puts notable before exploratory.
-    # Legacy manifests retain the opposite tail order until substantive revision.
-    legacy_positions = positions[:-2] + positions[-2:][::-1]
-    if positions != sorted(positions) and legacy_positions != sorted(positions):
+    # The final two may be listed either way here. Most schema-1 manifests
+    # list exploratory before notable, the order of the component list the
+    # profiles once carried, while their leaves print notable first, as the
+    # Reader-Facing Order requires. Refusing the list would refuse leaves that
+    # print correctly, and in the scope phase would empty the Makefile's
+    # --list-synthesis. The printed order is proved at build time instead, by
+    # validate_tail_order.
+    reversed_tail = positions[:-2] + positions[-2:][::-1]
+    if positions != sorted(positions) and reversed_tail != sorted(positions):
         raise ValueError(
             "component order must be brief synthesis, integrated commentary, "
-            "source-grounded synthesis, notable and quotable, then exploratory "
-            "synthesis (legacy manifests may reverse the final two)"
+            "source-grounded synthesis, then notable and quotable and "
+            "exploratory synthesis in either order (the build checks the "
+            "printed order)"
         )
 
     relations = data.get("relations")
@@ -342,6 +359,12 @@ def legacy_reader_order(data: dict) -> str | None:
     its own data. The postconciliar profile has no integrated commentary, so
     its schema-1 manifests all look alike, and one that front-loads its
     formulary is legacy only if it says so with reader_order = 'legacy'.
+
+    A legacy manifest keeps the whole older order, and that includes putting
+    Interpretive Possibilities before Notable and Quotable. Both 49s print
+    them that way in both editions. The page-3 exemption reaches only the
+    research edition, because every legacy synthesis companion keeps page 3.
+    The tail exemption reaches both editions.
     """
     if data.get("schema") != 1 or has_integrated_commentary(data):
         return None
@@ -374,6 +397,42 @@ def validate_brief_pages(aux: Path, *, fixed_start: bool = True) -> None:
             f"{BRIEF_START_PAGE}, as the profile fixes it, not page {start}: "
             "the reader order is displaced, most often by page 1 or page 2 "
             "overflowing"
+        )
+
+
+def pdf_text(pdf: Path) -> str:
+    result = subprocess.run(
+        ["pdftotext", "-enc", "UTF-8", str(pdf), "-"],
+        capture_output=True, text=True, timeout=120, check=False,
+    )
+    if result.returncode:
+        raise ValueError(f"pdftotext failed for {pdf}: {result.stderr.strip()}")
+    return result.stdout
+
+
+def validate_tail_order(text: str) -> None:
+    """Prove a built PDF prints Notable and Quotable before Interpretive Possibilities.
+
+    Both proper profiles' Reader-Facing Order fixes that sequence. The text
+    is pdftotext output; a heading is the first line that is nothing but the
+    heading, and a page break's form feed does not hide one. A PDF that
+    prints either heading nowhere fails, because a schema-1 manifest
+    requires both components.
+    """
+    lines = [line.strip() for line in text.replace("\f", "\n").splitlines()]
+    first = {}
+    for name, pattern in (("Notable and Quotable", NOTABLE_HEADING),
+                          ("Interpretive Possibilities", EXPLORATORY_HEADING)):
+        first[name] = next(
+            (index for index, line in enumerate(lines) if pattern.fullmatch(line)),
+            None,
+        )
+        if first[name] is None:
+            raise ValueError(f"PDF prints no {name} heading on a line of its own")
+    if first["Interpretive Possibilities"] < first["Notable and Quotable"]:
+        raise ValueError(
+            "PDF prints Interpretive Possibilities before Notable and Quotable; "
+            "the profile's Reader-Facing Order puts Notable and Quotable first"
         )
 
 
@@ -419,17 +478,23 @@ def main() -> int:
         try:
             manifest = parse_manifest(paths[0]) if args.document else None
             if manifest is None or manifest["schema"] != 2:
+                legacy = legacy_reader_order(manifest) if manifest is not None else None
                 # Only the research edition carries the formulary and sweep a
                 # legacy order front-loads; its companion keeps page 3.
-                legacy = (legacy_reader_order(manifest)
-                          if manifest is not None and args.edition == "research"
-                          else None)
-                validate_brief_pages(args.aux, fixed_start=legacy is None)
-                if legacy:
+                research = args.edition == "research"
+                validate_brief_pages(args.aux, fixed_start=not (legacy and research))
+                if legacy is None:
+                    validate_tail_order(pdf_text(args.aux.with_suffix(".pdf")))
+                else:
+                    extent = (
+                        "research brief synthesis checked for its two-page "
+                        f"extent, not its page-{BRIEF_START_PAGE} start; "
+                        if research else ""
+                    )
                     notes.append(
                         f"{args.document}: legacy reader order ({legacy}); "
-                        "research brief synthesis checked for its two-page "
-                        f"extent, not its page-{BRIEF_START_PAGE} start."
+                        f"{extent}Notable and Quotable not held ahead of "
+                        "Interpretive Possibilities."
                     )
         except (OSError, ValueError, tomllib.TOMLDecodeError) as exc:
             errors.append(str(exc))

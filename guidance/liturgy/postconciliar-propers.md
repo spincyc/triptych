@@ -235,6 +235,15 @@ carries positions 6 and 7 prints them in that order. Positions 7 and 8 are
 absent from leaves authored before the component architecture, which remain
 valid until their next substantive revision.
 
+Position 9 comes before position 10. Both profiles' order lists have put the
+gallery before the exploratory proposals since the gallery was added on
+2026-07-18 (a94191985). The component list of 2026-07-26 reversed the two,
+and both pc-s43 leaves printed them that way from 5988f9dfd until 2026-09-23.
+That reversal was an error in the component list and never an allowed
+alternative. `tools/check-proper-components` refuses a built edition that
+prints position 10 first, unless its manifest is legacy under that tool's
+`legacy_reader_order`.
+
 For an ordinary Sunday or solemnity, the title, complete inventory, and four-senses table occupy page 1. The date/location sheet begins and ends at forced page boundaries and is the only content on physical page 2. `Themes and Movement` begins on page 3 and fills exactly two substantive, readable pages without a repeated heading or continuation label. The edition's next position begins on page 5. In the research edition that is `Detailed Commentary`, which has no upper limit. The synthesis companion omits positions 6 and 7, so there it is `Source-Grounded Synthesis Across the Propers`. Do not use padding, artificial whitespace, omitted material, or hidden qualifications to meet a page boundary; use compact but readable tabular design only where the complete page-2 inventory requires it.
 
 The page-2 sheet is the sole exception to terminal historical apparatus. It carries passage-specific composition and narrated-event orientation, not edition verification, jurisdiction, rights, source status, search method, currentness, review state, or other global qualification. Liturgical resolution and scope remain terminal before `References`. Keep only a claim-local qualification beside the claim it changes.

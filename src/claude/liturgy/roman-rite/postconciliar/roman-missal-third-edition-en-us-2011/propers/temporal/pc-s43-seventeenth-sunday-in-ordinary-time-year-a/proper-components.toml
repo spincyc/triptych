@@ -59,21 +59,21 @@ depends_on = ["brief-synthesis"]
 references = ["research/source-bindings.toml"]
 
 [[components]]
-key = "exploratory-synthesis"
-kind = "exploratory-synthesis"
-path = "sections/50-interpretive-possibilities.tex"
-modes = ["research", "synthesis"]
-element_keys = ["collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-long", "gospel-short", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
-depends_on = ["source-grounded-synthesis"]
-references = []
-
-[[components]]
 key = "notable-and-quotable"
 kind = "notable-quotable"
 path = "sections/40-notable-and-quotable.tex"
 modes = ["research", "synthesis"]
 element_keys = ["first-reading", "responsorial-psalm", "second-reading", "gospel-long", "gospel-short"]
-depends_on = ["exploratory-synthesis"]
+depends_on = ["source-grounded-synthesis"]
+references = []
+
+[[components]]
+key = "exploratory-synthesis"
+kind = "exploratory-synthesis"
+path = "sections/50-interpretive-possibilities.tex"
+modes = ["research", "synthesis"]
+element_keys = ["collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-long", "gospel-short", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+depends_on = ["notable-and-quotable"]
 references = []
 
 [[components]]
@@ -82,7 +82,7 @@ kind = "terminal-apparatus"
 path = "main.tex"
 modes = ["research", "synthesis"]
 element_keys = []
-depends_on = ["notable-and-quotable"]
+depends_on = ["exploratory-synthesis"]
 references = ["research/source-bindings.toml"]
 
 [[relations]]

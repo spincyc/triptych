@@ -245,6 +245,14 @@ The offerings prayer returns gifts already received from divine bounty, so the E
 | Filial providence | Rom. 8; Matt. 11 acclamation | Chrysostom; Aquinas; Vatican II | Evil remains evil; protection and justice remain duties. |
 | Memorial bearing fruit | Offerings; Communion A/B; final prayer | Augustine; Bellarmine; beatitude reception | Alternatives stay distinct and sacramental fruit is not mechanical. |
 
+## The Propers: Notable and Quotable
+
+- **Matthew 13:45–46, both Gospel branches — Nathaniel Hawthorne, *The Scarlet Letter* (1850).** Hester’s language of a pearl “of great price” redirects the Gospel image toward the child understood as her costly and only treasure amid Puritan shame and exclusion. The chapter marks the purchase logic; the novel’s moral world is not made an interpretation of Matthew.
+
+- **Matthew 13:45–46, both Gospel branches — *The Pearl of Great Price*.** Franklin D. Richards’s 1851 compilation and its later institutional reception turn the Gospel phrase into the title of a scriptural anthology. An official study manual explains the title dependence. This entry documents reception without adjudicating the collection’s religious claims.
+
+- **Romans 8:28, independent Second Reading — Margaret Murray Robertson, *Christie Redfern’s Troubles* (1866).** A chapter titled “The Secret of Peace” places the verse inside a dispute over trust, passivity, suffering, and who may rightly claim the promise. Narrative argument, not an isolated citation, supplies the transformation; the novel remains reception evidence rather than doctrinal authority.
+
 ## Interpretive Possibilities Across the Propers
 
 *These exploratory proposals arose in an AI-assisted editorial process. They are attributed to none of the cited authorities and claim no historical compositional intent. Each states its anchors and limits.*
@@ -260,14 +268,6 @@ The offerings prayer returns gifts already received from divine bounty, so the E
 **House, siblings, and net form an ecclesial test. (*Entrance; Second Reading; long Gospel; Communion B*)** A united dwelling, the firstborn among many siblings, a net of every kind, and mercy with purity form a proposed sequence of gathering, formation, and judgment. Existing reception illuminates these images separately; their sequence here remains editorial. Its fruit is hospitality joined to integrity and humble accountability. The net and Communion B are unresolved branch-dependent anchors; final separation belongs to God.
 
 **Memory loosens possession. (*Communion A; Prayer over Offerings; Gosp.; Prayer after Communion*)** The summons not to forget benefits, the return of received bounty, the Gospel’s selling, and the Passion memorial suggest a movement from gratitude through stewardship toward self-gift. The checked witnesses illuminate the separate motions without establishing this single liturgical chain. Its fruit is grateful use rather than anxious possession or forgetful consumption. Communion A remains unresolved, and the proposal condemns neither property, contracts, saving, nor provision for dependents.
-
-## The Propers: Notable and Quotable
-
-- **Matthew 13:45–46, both Gospel branches — Nathaniel Hawthorne, *The Scarlet Letter* (1850).** Hester’s language of a pearl “of great price” redirects the Gospel image toward the child understood as her costly and only treasure amid Puritan shame and exclusion. The chapter marks the purchase logic; the novel’s moral world is not made an interpretation of Matthew.
-
-- **Matthew 13:45–46, both Gospel branches — *The Pearl of Great Price*.** Franklin D. Richards’s 1851 compilation and its later institutional reception turn the Gospel phrase into the title of a scriptural anthology. An official study manual explains the title dependence. This entry documents reception without adjudicating the collection’s religious claims.
-
-- **Romans 8:28, independent Second Reading — Margaret Murray Robertson, *Christie Redfern’s Troubles* (1866).** A chapter titled “The Secret of Peace” places the verse inside a dispute over trust, passivity, suffering, and who may rightly claim the promise. Narrative argument, not an isolated citation, supplies the transformation; the novel remains reception evidence rather than doctrinal authority.
 
 ## Appendix: Liturgical Resolution
 
@@ -349,6 +349,6 @@ The offerings prayer returns gifts already received from divine bounty, so the E
 
 - Margaret Murray Robertson, [*Christie Redfern’s Troubles*](https://www.gutenberg.org/files/21226/21226-h/21226-h.htm) (1866), ch. XVII; Romans 8:28 within a narrative dispute over trust and suffering. Public domain in the United States.
 
-**Last revised (UTC):** 2026-09-24T03:56:50Z
+**Last revised (UTC):** 2026-09-24T04:26:05Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
