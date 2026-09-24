@@ -779,6 +779,6 @@ Only sources actually used above, with loci sufficient to check the claims made 
 
 - Giovanni Pierluigi da Palestrina, *Precatus est Moyses*, 5vv, in *Offertoria totius anni* (Rome: Francesco Coattino, 1593), under the rubric *Dominica XII post Pentecosten*; Orlande de Lassus, *Precatus est Moyses*, LV 858, in *Sämtliche Werke* vol. 3 (Leipzig: Breitkopf & Härtel, 1895), pp. 23–25. *Cited for their existence and publication facts only.*
 
-**Last revised (UTC):** 2026-09-24T13:37:11Z
+**Last revised (UTC):** 2026-09-24T13:44:24Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
