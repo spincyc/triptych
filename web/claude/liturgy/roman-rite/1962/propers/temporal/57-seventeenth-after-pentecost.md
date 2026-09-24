@@ -446,7 +446,7 @@ Literal.
 
 Allegorical.
 
-: The poor man who prays is Christ praying in his afflicted members (Augustine) or every poor one of Christ interceding for the whole world (Cassiodorus). The desolate sanctuary and the people called by God’s name are the Church in her trials; Schuster, offering it as his own suggestion, hears the antiphon as the prayer of Rome under the Lombards. Daniel’s answered prayer opens onto the time of Christ’s coming, as Jerome reads it with the prophecy that followed; the 1962 antiphon itself ends at the petitions.
+: The poor man who prays is Christ praying in his afflicted members (Augustine) or every poor one of Christ interceding for the whole world (Cassiodorus). The desolate sanctuary and the people called by God’s name are the Church in her trials; Schuster, offering it as his own suggestion, hears the antiphon as the prayer of Rome under the Lombards. Daniel’s answered prayer opens onto the prophecy of the seventy weeks (9:24–27), whose computations Jerome sets out without choosing among them; the 1962 antiphon itself ends at the petitions.
 
 Moral.
 
@@ -625,6 +625,6 @@ Traditional attribution: St Paul, in a letter of his captivity; the *Catholic En
 
 - Fraternité Saint-Pierre (France), *Ordo du mois*, entry for 20 September 2026; Institut du Christ Roi Souverain Prêtre (France), *Ordo*, entry for 20 September 2026.
 
-**Last revised (UTC):** 2026-09-24T16:46:32Z
+**Last revised (UTC):** 2026-09-24T17:17:38Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

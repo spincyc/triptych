@@ -3217,3 +3217,28 @@ component and metadata checks pass.
 - The receipts are re-snapshotted, and `_proper_study.py check` passes in
   content, artifacts and publication with `--require-presentation
   --require-format`.
+
+**Re-check fixes (a later pass the same day).** The re-check of this pass left
+five findings.
+
+1. The concise themes said the Offertory's petitions "stop short of" the reason
+   in Dan 9:18. That verse lies inside the 9:17–19 the antiphon condenses, so
+   the sentence now reads "leave out". This matches the expansive study's
+   "just outside the antiphon".
+2. The third reading's allegorical sense had come to rest the prophecy of
+   Christ's coming on Jerome alone. `research/scope.md` § 4.7 records that
+   Jerome sets out the computations without judging between them. The sentence
+   now reads "opens onto the prophecy of the seventy weeks (9:24–27), whose
+   computations Jerome sets out without choosing among them".
+3. The concise themes now name the Preface as the expansive study does: "the
+   confession this Mass makes before the Canon".
+4. The homily note's "What joins them is not an editorial device but
+   Chrysostom's reading" now reads "Saint John Chrysostom's reading of the
+   Gospel's two halves … joins them".
+5. In the same note, "is editorial, and no Father is credited with it" now
+   reads "is the editor's, not a Father's".
+
+A D12 ruling was received with the findings. The 1962 Missal's own course,
+the Epistle sequence and the Missal's ordering of the Matthew pericopes, is a
+fact of this book about this formulary's texts and stays where it is. The
+pages are unchanged at 31, 10 and 3, and the concise themes still end on page 4.
