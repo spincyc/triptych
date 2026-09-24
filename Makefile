@@ -1019,17 +1019,18 @@ check-browser-static:
 check-browser-gate:
 	@node tools/tests/corpus_browser_gate.mjs
 
-# The four reader harnesses drive real Chromium over the preview build, and
+# The five reader harnesses drive real Chromium over the preview build, and
 # until this target existed nothing ran them: the suite only syntax-checked
 # them, so they were read as broken for months when what they wanted was a
-# build. Three address `build/public-alpha/preview` as their data root, so
+# build. All five address `build/public-alpha/preview` as their data root, so
 # without `public-preview` every request 404s and the failure wears the costume
 # of a code defect — "Timed out waiting for ... readiness". Hence the
 # prerequisite. Outside `check` for the same reasons as `check-browser-gate`,
-# and because it takes two minutes rather than half a second. Three harnesses
-# exit non-zero on a real finding about absence and coverage notices, so this
-# holds them to a recorded pass floor rather than to a zero exit; raising the
-# floor is the point of it.
+# and because it takes two minutes rather than half a second. The contract is
+# exact and all-green: `ASSERTION_COUNTS` in `test_browser_harnesses.py` names
+# every harness's assertion count, and each must pass all of them with a zero
+# exit and no console, request or HTTP problem. A partial pass fails, and so
+# does an assertion added or removed without changing that count.
 check-browser-harnesses: public-preview
 	@TRIPTYCH_BROWSER_HARNESSES=1 $(PYTHON) -m unittest discover -s tools/tests -p 'test_browser_harnesses.py'
 
