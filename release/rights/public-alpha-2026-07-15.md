@@ -1515,6 +1515,29 @@ work-specific research records remains operative. This approval does
 not authorize a push, deployment, tag, history rewrite, public
 release attachment, announcement, or promotion.
 
+## Supplemental exact-current-snapshot clearance — 24 September 2026
+
+At `2026-09-24T15:12:08-05:00` in `America/Chicago`, the maintainer instructed:
+“Approve the release of the corpus as it stands on 2026-09-24, after the house-voice audit, the approved GPT repairs and the open-issue resolution.” This is recorded as perpetual worldwide
+exact-current-snapshot distribution authorization under the existing
+represented authority in this record. The sole condition remains
+`no-project-initiated-promotion`.
+
+The approval binds all 225 exact installed public-alpha
+PDF snapshots, records 2 publication(s) on hold, and binds
+all 22139 exact recognized
+artifact-affecting reader-site inputs inventoried below, which were
+compared against the renderer's recognized set and their current
+bytes before this approval was recorded. It is an
+exact-byte distribution clearance only: it does not represent
+completion of any outstanding work-specific rights, source,
+collation, specialist, or ecclesiastical review, and no imprimatur,
+nihil obstat, or ecclesiastical approval is claimed. Every
+limitation in the prior supplements, release README, catalogs, and
+work-specific research records remains operative. This approval does
+not authorize a push, deployment, tag, history rewrite, public
+release attachment, announcement, or promotion.
+
 ## Exact approved snapshots
 
 | Publication ID | SHA-256 |
