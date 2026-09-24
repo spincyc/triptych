@@ -485,9 +485,12 @@ though the 1962 Gospel does.
 Reporting overlapping held fragments as verse matches is an open design
 question and is not changed here.
 
-This leaves stale 3 Catena projections and 3 source projections for this
-edition and passage, and they await operator approval. No English
-translation survey has been made for the Sermones.
+The maintainer approved the rebind this left stale, verbatim, "Approve all
+6 (Recommended)". The 3 Catena projections and 3 source projections for this
+edition and passage were re-recorded with `ONLY` scoped to exactly those
+paths. `check-release-bindings` reports 0 stale, and the `approve-release`
+note is pending with the rest. No English translation survey has been made
+for the Sermones.
 
 **Open.** These may land now:
 
