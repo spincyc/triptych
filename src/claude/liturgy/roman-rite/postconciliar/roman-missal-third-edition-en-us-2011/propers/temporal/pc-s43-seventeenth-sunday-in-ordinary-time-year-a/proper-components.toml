@@ -23,12 +23,12 @@ depends_on = []
 references = []
 
 [[components]]
-key = "appointed-text"
-kind = "appointed-text"
-path = "sections/05-appointed-text.tex"
-modes = ["research"]
+key = "brief-synthesis"
+kind = "brief-synthesis"
+path = "sections/20-themes-and-movement.tex"
+modes = ["research", "synthesis"]
 element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel-long", "gospel-short", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
-depends_on = []
+depends_on = ["orientation"]
 references = []
 
 [[components]]
@@ -41,12 +41,12 @@ depends_on = []
 references = ["research/source-bindings.toml"]
 
 [[components]]
-key = "brief-synthesis"
-kind = "brief-synthesis"
-path = "sections/20-themes-and-movement.tex"
-modes = ["research", "synthesis"]
+key = "appointed-text"
+kind = "appointed-text"
+path = "sections/05-appointed-text.tex"
+modes = ["research"]
 element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel-long", "gospel-short", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
-depends_on = ["orientation"]
+depends_on = []
 references = []
 
 [[components]]
