@@ -339,3 +339,23 @@ declaration, logs, rasters, and contact sheets, and reviewed page by page.
 Installation, catalog and release binding, deployed-web review, and live-route
 verification remain integrating-session tasks rather than facts asserted by
 this research record.
+
+## Sacramentary history and other Masses (2026-09-24)
+
+On 2026-09-24 the maintainer approved applying D11 and D12 of the liturgical
+commentators plan (guidance/liturgy/propers-three-documents.md) to this leaf.
+
+- The history of this formulary's own texts in the sacramentaries now prints
+  in the full edition only: the source-grounded synthesis's "Historical
+  transmission" subsection and its expanded Old Gelasian Collect recension
+  paragraph are omitted from the synthesis edition, as are the Feltoe,
+  Wilson, Gellone and Savona References entries that only they and the full
+  edition's element sections cite. The full edition keeps them.
+- What another Sunday's Mass contained stays here: the Gregorian supplement's
+  Sunday XIV oration set carries other chant cues than this formulary's
+  (Wilson, p. 173; see "Historical transmission" above). The reader-facing
+  "with different cues" / "with other cues" clauses are removed.
+- Anthony of Padua's sermon on these texts stands under his medieval
+  `Dominica XII post Pentecosten`, a Sunday numbering that differs from the
+  1962 formulary's; the References entry keeps the locus without narrating
+  the difference.
