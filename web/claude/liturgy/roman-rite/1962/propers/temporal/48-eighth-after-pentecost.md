@@ -88,7 +88,7 @@ The Alleluia then returns to the Introit’s psalm and to its city. Structurally
 
 Luke 16:1–9 is the hardest text in the temporal cycle to preach and the Mass does nothing to soften it. A steward is denounced, told to produce his accounts, and dismissed in advance; he cannot dig and will not beg; he discounts his master’s debtors’ bills to buy their hospitality; and *laudávit dóminus víllicum iniquitátis, quia prudénter fecísset*. The lection then closes on the sentence that has divided commentators since the second century: make friends of the *mammóna iniquitátis*, so that when you fail they may receive you into everlasting dwellings. Immediately after that sentence the book prints **Credo**.
 
-Two boundaries do interpretive work here, and both are the missal’s, not the evangelist’s. The pericope begins at verse 1, so the parable arrives detached from the three parables of the lost that precede it in Luke 15 and from the crowd of publicans and sinners drawn there. And it ends at verse 9, so the qualifying sayings of verses 10–13 — fidelity in little, the unjust mammon, and finally *non potéstis Deo servíre et mammonæ* — are not read. What the congregation hears is the commendation and the counsel, without the warning that follows them. The tradition has not agreed on what to make of that.
+Two boundaries do interpretive work here, and both are the missal’s, not the evangelist’s. The pericope begins at verse 1, so the parable arrives detached from the three parables of the lost that precede it in Luke 15 and from the crowd of publicans and sinners drawn there. And it ends at verse 9, so the qualifying sayings of verses 10–13 — fidelity in little, the unjust mammon, and finally *non potéstis Deo servíre et mammonæ* — are not read. What the congregation hears is the commendation and the counsel, without the warning that follows them. The tradition divides over what to make of that.
 
 ### 5. The return: humility, offering, and a tasted end <span class="nodecor">(*Off., Sec., Comm., Postcomm.*)</span>
 
@@ -366,7 +366,7 @@ Read against the Communion the sequence is exact: taste, then see, then feel the
 
 ### The Latin the book actually prints
 
-Wherever the appointed wording departs from the Clementine Vulgate, both readings stand below as their books print them. The Communion antiphon does not appear, because it has none: it is the one appointed scriptural proper whose Latin agrees with the Clementine word for word, differing only in punctuation.
+Wherever the appointed wording departs from the Clementine Vulgate, each book’s reading stands as that book prints it. The Communion antiphon does not appear, because it has none: it is the one appointed scriptural proper whose Latin agrees with the Clementine word for word, differing only in punctuation.
 
 | **Proper** | **As printed in 1962** | **Clementine Vulgate** | **Difference** |
 |:---------|:---------------------|:---------------------|:-------------|
@@ -609,7 +609,7 @@ Only sources actually used for a published claim are listed. Loci are given at t
 
 - United Kingdom, House of Commons, Representation of the People (No. 2) Bill, 3 February 1931, HC Deb vol. 247, cc. 1662–1664. Historic Hansard, <https://api.parliament.uk/historic-hansard/commons/1931/feb/03/representation-of-the-people-no-2-bill>, read 2026-07-25. Parliamentary copyright; quoted under the Open Parliament Licence.
 
-**Last revised (UTC):** 2026-09-24T15:40:05Z
+**Last revised (UTC):** 2026-09-24T16:57:47Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
