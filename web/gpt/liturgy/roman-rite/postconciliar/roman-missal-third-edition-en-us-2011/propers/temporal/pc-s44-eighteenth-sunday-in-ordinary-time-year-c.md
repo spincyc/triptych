@@ -73,9 +73,9 @@ The shared prayers situate human action inside divine creation, guidance, sancti
 
 The movement is therefore not from labor to passivity, nor from property to its indiscriminate rejection. It is from the illusion of ownership as ultimate security to work and stewardship received under God.
 
-Augustine reads the psalm’s return to dust, numbered days, mercy, and work of hands as a Christian school of humility and hope. Chrysostom reads Colossians’ “above” as life with Christ rather than spatial escapism, and presses the old/new-person contrast into transformed conduct. Augustine’s Gospel sermon and Ambrose’s treatment of withheld grain make greed socially visible, while their added reconstructions are not projected back into Luke.
+Augustine reads the psalm’s return to dust, numbered days, mercy, and work of hands as a Christian school of humility and hope. Chrysostom reads Colossians’ “above” as life with Christ rather than spatial escapism, and presses the old/new-person contrast into transformed conduct. Augustine’s Gospel sermon and Ambrose’s treatment of withheld grain make greed socially visible, while their added reconstructions are their own, not Luke’s.
 
-The acclamation’s poverty of spirit concerns humble dependence; it must not erase the material and economic force of the Gospel warning or romanticize involuntary poverty. Francis’s 2019 Angelus makes the enduring pastoral application concrete in inheritance conflict, enslavement to possessions, sharing, and the legacy a life leaves.
+The acclamation’s poverty of spirit concerns humble dependence; it neither erases the material and economic force of the Gospel warning nor romanticizes involuntary poverty. Francis’s 2019 Angelus makes the enduring pastoral application concrete in inheritance conflict, enslavement to possessions, sharing, and the legacy a life leaves.
 
 Prudent provision, agriculture, saving, retirement planning, ownership, and care for dependents are not condemned as such. The controlling question is whether goods serve responsible love or become the imagined ground of life and the rival of God. <span id="triptych:brief-synthesis:end" data-label="triptych:brief-synthesis:end"></span>
 
@@ -85,7 +85,7 @@ Prudent provision, agriculture, saving, retirement planning, ownership, and care
 
 ### Qoheleth and the Psalm
 
-The first reading’s *hevel* is programmatic, but the selected case is precise: wisdom and skill do not let the laborer govern the successor, and anxiety reaches into the night. Luke will repeat both the transfer problem and the fatal night. Psalm 90 does not answer by declaring work useless. It moves from creaturely brevity to a wise heart and ends by asking God twice to establish human work. Augustine’s exposition follows the psalm’s received Christian horizon from dust and passing generations toward mercy and work established in God. His numerical and Christological readings are reception, not lexical definitions of the Hebrew psalm.
+The first reading’s *hevel* is programmatic, but the selected case is precise: wisdom and skill do not let the laborer govern the successor, and anxiety reaches into the night. Luke will repeat both the transfer problem and the fatal night. Psalm 90 does not answer by declaring work useless. It moves from creaturely brevity to a wise heart and ends by asking God twice to establish human work. Augustine’s exposition follows the psalm’s received Christian horizon from dust and passing generations toward mercy and work established in God. His numerical and Christological readings are his own, not lexical definitions of the Hebrew psalm.
 
 ### Colossians
 
@@ -93,7 +93,7 @@ Chrysostom’s Homilies 7–8 directly cover the appointed chapter. He insists t
 
 ### Acclamation and Gospel
 
-Luke first distinguishes two audiences: Jesus answers the petitioner by refusing the requested judicial role, then warns the crowd. Augustine’s Sermon 57 (Benedictine 107), §§2–6, preserves that movement from disputed inheritance to greed, barns, and death. His statement that the petitioner had a good civil case is a homiletic reconstruction, not a fact supplied by Luke. Ambrose, *On Duties* III.6.41–44, relocates the larger barns into a famine-and-grain argument. Basil’s *I Will Pull Down My Barns* makes the stored surplus a claim of the hungry and unclothed. Both are powerful social receptions; neither is the narrated circumstance of Luke’s landowner. Francis’s Angelus of 4 August 2019 returns to the scene’s pastoral sequence: family division, wealth’s false promise of security, enslavement to possessions, and the contrary practice of sharing.
+Luke first distinguishes two audiences: Jesus answers the petitioner by refusing the requested judicial role, then warns the crowd. Augustine’s Sermon 57 (Benedictine 107), §§2–6, preserves that movement from disputed inheritance to greed, barns, and death. His statement that the petitioner had a good civil case is a homiletic reconstruction, not a fact supplied by Luke. Ambrose, *On Duties* III.6.41–44, relocates the larger barns into a famine-and-grain argument. Basil’s *I Will Pull Down My Barns* makes the stored surplus a claim of the hungry and unclothed. Both press the parable powerfully into social argument; neither is the narrated circumstance of Luke’s landowner. Francis’s Angelus of 4 August 2019 returns to the scene’s pastoral sequence: family division, wealth’s false promise of security, enslavement to possessions, and the contrary practice of sharing.
 
 ### The shared formulary in this Year C instance
 
@@ -127,23 +127,23 @@ The Entrance, three orations, and two Communion-antiphon alternatives belong to 
 
 ## Comparative Reception and Theological Dossier
 
-> **The question beneath the packet**
+> **The question beneath the readings**
 >
-> Year C does not ask whether work, property, planning, or enjoyment are evil. It asks what they can bear. Qoheleth tests labor against succession and death; the psalm asks for wisdom and established work; Luke tests abundance against the same night; Colossians locates life in the risen Christ. Reception is useful only when it preserves those distinctions.
+> Year C does not ask whether work, property, planning, or enjoyment are evil. It asks what they can bear. Qoheleth tests labor against succession and death; the psalm asks for wisdom and established work; Luke tests abundance against the same night; Colossians locates life in the risen Christ. Those distinctions are the measure of every later reading.
 
 ### *Hevel*: not nothingness, but the failure of mastery
 
 The first reading joins Ecclesiastes 1:2 to 2:21–23. That discontinuity creates a thesis-and-case relation: the superlative *hevel* saying is followed by a worker who has used wisdom, knowledge, and skill yet must leave the result to someone who did not labor for it. Anxiety reaches into the night. The problem is not simply that the successor might be foolish; the worker cannot make achievement a permanent possession or control what happens after death.
 
-“Vanity” has a long Christian afterlife, but it can mislead if heard only as moral disgust or ontological worthlessness. Breath, vapor, transience, and enigma better expose the limit at issue. Qoheleth elsewhere recognizes received enjoyment as gift; this cut therefore should not be made to condemn work or created pleasure absolutely. It condemns their conscription as guarantees against mortality.
+“Vanity” has a long Christian afterlife, but it can mislead if heard only as moral disgust or ontological worthlessness. Breath, vapor, transience, and enigma better expose the limit at issue. Qoheleth elsewhere recognizes received enjoyment as gift; this cut therefore does not condemn work or created pleasure absolutely. It condemns their conscription as guarantees against mortality.
 
-The discontinuous lection also creates a risk: the refrain can swallow the specific labor argument. A responsible reading keeps both. Everything cannot be mastered, and here the concrete proof is work transferred beyond the worker’s control.
+The discontinuous lection also creates a risk: the refrain can swallow the specific labor argument. The lection holds both: everything cannot be mastered, and here the concrete proof is work transferred beyond the worker’s control.
 
 ### Psalm 90: numbering days without despising work
 
 Psalm 90 answers neither with accumulation nor abandonment. Human beings return to dust; generations pass before God like a watch in the night; life resembles grass. Yet the prayer asks for a wise heart, returning mercy, morning satisfaction, gladness proportioned to affliction, divine favor, and twice for the work of human hands to be established.
 
-Augustine receives the psalm within Christian hope, reading mortality, conversion, mercy, and established work through an ecclesial and Christological horizon. His numerical constructions are historical reception, not definitions of the psalm’s Hebrew. The most important liturgical effect is simpler: mortality does not make work worthless. It makes wisdom, mercy, and divine establishment necessary.
+Augustine receives the psalm within Christian hope, reading mortality, conversion, mercy, and established work through an ecclesial and Christological horizon. His numerical constructions are his own, not definitions of the psalm’s Hebrew. The most important liturgical effect is simpler: mortality does not make work worthless. It makes wisdom, mercy, and divine establishment necessary.
 
 The official occurrence page marks the response “(1)” beneath Psalm 90, but the response words come from Psalm 95:8, not Psalm 90:1. Their imperative “today” intensifies the numbered-days petition. The printed U.S. Lectionary, a protected book, has not been collated at typography level, so whether it carries the same marker is unverified.
 
@@ -153,7 +153,7 @@ Luke distinguishes an inheritance petitioner, Jesus’ answer to him, the crowd 
 
 God’s address reverses the imagined timetable. “Many years” becomes “this night”; the soul commanded to rest becomes a life demanded; the goods possessed become goods transferred to an unnamed other. The parable does not condemn barns as buildings or prudence as a virtue. It exposes a plan closed to relation, accountability, mortality, and God.
 
-Augustine’s sermon preserves the movement from inheritance to greed and death but adds a judgment about the petitioner’s civil case that Luke does not supply. Ambrose relocates the barns into a famine and grain-withholding argument. Basil’s homily makes surplus morally answerable to the hungry and unclothed. These social readings disclose a genuine implication of self-enclosed abundance, but their reconstructed settings must not be smuggled back into Luke’s unnamed harvest.
+Augustine’s sermon preserves the movement from inheritance to greed and death but adds a judgment about the petitioner’s civil case that Luke does not supply. Ambrose relocates the barns into a famine and grain-withholding argument. Basil’s homily makes surplus morally answerable to the hungry and unclothed. These social readings disclose a genuine implication of self-enclosed abundance, but their reconstructed settings are theirs, not Luke’s unnamed harvest.
 
 Francis’s 2019 Angelus offers a modern pastoral reception with unusually close attention to the text’s sequence: inheritance quarrels, accumulated goods, imagined years, the interruption of “this night,” enslavement to possessions, and sharing. He explicitly says material goods are goods and necessary means, while denying them the capacity to ground life.
 
@@ -167,19 +167,19 @@ The renewed person is also social. Greek and Jew, circumcised and uncircumcised,
 
 ### Poverty of spirit, sharing, and the danger of romanticizing need
 
-The Gospel acclamation gives an authorized liturgical lens: poverty of spirit and the kingdom. It cannot be reduced to involuntary material deprivation or used to bless conditions that deny food, housing, wages, or protection. Neither may “spiritual” poverty be used to erase the Gospel’s material warning. The beatitude names humble receptivity before God; Luke tests whether actual goods are enclosed within the self.
+The Gospel acclamation gives an authorized liturgical lens: poverty of spirit and the kingdom. It is not involuntary material deprivation, and it blesses no condition that denies food, housing, wages, or protection. Nor does “spiritual” poverty erase the Gospel’s material warning. The beatitude names humble receptivity before God; Luke tests whether actual goods are enclosed within the self.
 
 The two Communion alternatives sharpen this relation differently. Wisdom’s heavenly food makes nourishment gift; John’s bread of life makes the giver personally central. Against the barns, either ending makes food receptive and relational. Yet the alternatives remain alternatives, and neither proves an economic policy from the Missal.
 
 ### Changed-register reception: image and music
 
-Rembrandt’s 1627 *Parable of the Rich Man* abandons field and barn for a nocturnal interior where a solitary figure examines coins by artificial light. The changed setting interprets the parable through bookkeeping, attention, and isolation. It is an artistic afterlife, not evidence about first-century storage.
+Rembrandt’s 1627 *Parable of the Rich Man* abandons field and barn for a nocturnal interior where a solitary figure examines coins by artificial light. The changed setting interprets the parable through bookkeeping, attention, and isolation. The interior is Rembrandt’s, not a record of first-century storage.
 
 Charles Ives’s *Psalm 90* carries the psalm into modern concert and choral practice, juxtaposing human frailty, divine eternity, and the establishment of work through musical recurrence and massed sound. Again the change of register matters: a score can make temporal contrast audible but cannot adjudicate the psalm’s authorship or Hebrew semantics.
 
 The 2014 *Homiletic Directory* supplies an official reception of another kind. It identifies the rich fool within Luke’s Year C mercy-and-warning course, explains why Old Testament and Gospel are correlated, and preserves the apostolic reading’s independent semi-continuous path. That structural discipline is itself a correction to homilies that force every reading into a single historical theme.
 
-| **Tension** | **Responsible synthesis** | **Misuse excluded** |
+| **Tension** | **Resolution** | **Distortion** |
 |:-------------|:------------------------|:----------------------------|
 | Work and death | Work is real good received under mortality and divine judgment. | Nihilism, idleness, or treating productivity as immortality. |
 | Property and gift | Goods can serve honest life, dependents, solidarity, and the poor. | Absolute condemnation of ownership or self-enclosed accumulation. |
@@ -194,11 +194,11 @@ The official Old Testament–Gospel correlation is unusually close: labor passes
 
 ### Mortality without futility
 
-The Psalm refuses both self-sufficiency and despair. Human beings return to dust, yet mercy is sought and work may be established by God. This is the decisive distinction between the readings: work is not rejected, but received under creaturely limits and divine judgment. In this Year C occurrence, the shared formulary’s language of guidance, sanctification, heavenly gift, and continuing aid reinforces that distinction. This is a leaf-level juxtaposition, not a restatement of the owner’s collation or a claim of shared-formulary selection intent.
+The Psalm refuses both self-sufficiency and despair. Human beings return to dust, yet mercy is sought and work may be established by God. This is the decisive distinction between the readings: work is not rejected, but received under creaturely limits and divine judgment. In this Year C occurrence, the shared formulary’s language of guidance, sanctification, heavenly gift, and continuing aid reinforces that distinction. The formulary serves all three years, and no evidence ties its selection to these readings.
 
 ### The independent apostolic course
 
-Colossians remains semi-continuous. Its overlap is nevertheless textually strong: greed becomes idolatry, earthly fixation yields to life hidden with Christ, and the possessive self of the parable is answered by a renewed humanity in which Christ is all and in all. The union is liturgical and canonical rather than historical evidence that the epistle was selected to explain Luke.
+Colossians remains semi-continuous. Its overlap is nevertheless textually strong: greed becomes idolatry, earthly fixation yields to life hidden with Christ, and the possessive self of the parable is answered by a renewed humanity in which Christ is all and in all. The union is liturgical and canonical: the epistle was not selected to explain Luke.
 
 ### Rich toward God
 
@@ -210,7 +210,7 @@ The Gospel’s closing contrast does not supply an accounting formula. “Rich t
 
 - Francis’s Angelus of 4 August 2019 redirects the inheritance dispute toward wealth’s power to enslave and the obligation to share.
 
-- Basil’s homily *I Will Pull Down My Barns*, especially §7 (PG 31, 276B–277A), turns surplus into a question of stewardship toward the poor; this is direct ancient reception, not Luke’s narrated circumstance.
+- Basil’s homily *I Will Pull Down My Barns*, especially §7 (PG 31, 276B–277A), an ancient sermon on this very passage, turns surplus into a question of stewardship toward the poor; that question is Basil’s, not Luke’s narrated circumstance.
 
 - Rembrandt’s 1627 *Parable of the Rich Man* relocates the barns into a nocturnal scene of solitary money-accounting (Gemäldegalerie Berlin, inv. 828 D).
 
@@ -276,6 +276,6 @@ This source-first guide treats the recurring U.S. Year C formula, not a parish r
 
 - Dicastery for Divine Worship, *Homiletic Directory* 145–149.
 
-**Last revised (UTC):** 2026-09-24T13:12:25Z
+**Last revised (UTC):** 2026-09-24T13:56:59Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
