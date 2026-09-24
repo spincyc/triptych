@@ -217,11 +217,22 @@ async function evaluate(cdp, expression) {
 }
 
 async function waitFor(cdp, expression, label, attempts = 300) {
+  // A reload or navigation replaces the document under the expression, and
+  // until the new one has parsed, an element it names is null. That is "not
+  // yet", as day_reader_choices_browser.mjs already treats it; under load it
+  // was refusing the whole class. The last error is kept, so an expression
+  // that can never evaluate still fails, and says why.
+  let last = null;
   for (let attempt = 0; attempt < attempts; attempt += 1) {
-    if (await evaluate(cdp, 'Boolean(' + expression + ')')) return;
+    try {
+      if (await evaluate(cdp, 'Boolean(' + expression + ')')) return;
+    } catch (error) {
+      last = error;
+    }
     await sleep(50);
   }
-  throw new Error('Timed out waiting for ' + label);
+  throw new Error('Timed out waiting for ' + label +
+    (last ? ' (last error: ' + last.message + ')' : ''));
 }
 
 async function run() {
