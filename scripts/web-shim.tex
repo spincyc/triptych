@@ -116,10 +116,13 @@
 
 % ------------------------------------------------------------- box-shaped macros
 \newcommand{\witnesslimit}[1]{\begin{studyframe}#1\end{studyframe}}
-\newcommand{\historythesis}[1]{\begin{studybox}{Governing thesis}#1\end{studybox}}
-\newcommand{\studythesis}[1]{\begin{studybox}{Governing thesis}#1\end{studybox}}
-\newcommand{\dogmathesis}[1]{\begin{studybox}{Governing thesis}#1\end{studybox}}
-\newcommand{\rosarythesis}[1]{\begin{studybox}{Governing thesis}#1\end{studybox}}
+% A thesis opens its section as prose, with no box and no label, as the
+% reader-first rule of guidance/editorial.md requires and as every leaf that
+% defines these names now sets it in print.
+\newcommand{\historythesis}[1]{#1\par}
+\newcommand{\studythesis}[1]{#1\par}
+\newcommand{\dogmathesis}[1]{#1\par}
+\newcommand{\rosarythesis}[1]{#1\par}
 \newcommand{\novenaidentity}[1]{\begin{studybox}{Identity and use}#1\end{studybox}}
 \newcommand{\novenaexamination}[1]{\begin{studybox}{Examination and response}#1\end{studybox}}
 \newcommand{\claimcheck}[2]{\begin{studybox}{Claim check: #1}#2\end{studybox}}
