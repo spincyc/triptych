@@ -1757,3 +1757,40 @@ homily editions, each output byte-identical to its output before the pass;
 `artifacts` and `publication` with all three `--require` flags, the receipts
 re-snapshotted. Stale for the coordinator, as before: this leaf's web binding,
 its `corpus.json` entry, and its files in the Claude publication inventory.
+
+### Sixth pass (house-voice review fixes)
+
+The independent review of the fifth pass returned these findings for this leaf.
+The table below gives each fix.
+
+| Finding | Where | Before → after |
+| --- | --- | --- |
+| F4 | `sections/00-opening.tex` | "What the Fathers and saints taught … supplies each; every element … enters each; and its own … senses close it. What the three hold in common … comes last, in a short comparison." → "The Fathers and saints who taught about the particular texts supply all three, every element of the formulary has a place in each, and four senses of its own … close each reading. The three share more than they divide." |
+| remaining | `sections/05-appointed-texts.tex` | "no English is printed for it here" → "so it stands without English" |
+| F6 | `sections/20-peace-of-the-house.tex` | "The return from exile is therefore the literal sense …" → "In this reading the return from exile is therefore the literal sense …" |
+| F10 | `sections/20-peace-of-the-house.tex` | "Three of their propositions do not depend on that setting" → "The three of their propositions on which this reading rests stand without that setting" |
+| sweep | `sections/20-peace-of-the-house.tex` | "four texts, each chosen for a word" → "four texts, joined by the words". The old wording ascribed a reason to the choice of the chants (compiler-intent addendum). |
+| F8 | `sections/30-authority-on-earth.tex` | "… comes from the Fathers." → "… comes from the Fathers read here." |
+| remaining | `sections/30-authority-on-earth.tex` | "This reading takes them as a statement about where the power is exercised, and hears the Mass's altar as a place on earth." → "In this reading they state where the power is exercised, and the Mass's altar is a place on earth." |
+| F7 | `sections/40-nothing-of-our-own.tex`; `sections/concise/10-commentary.tex` | "the confession that without God we cannot please him would become quietism" → "a reading governed by the confession that without God we cannot please him would become quietism" |
+| remaining | `sections/concise/04-themes.tex` | "They meet below at the points where they answer the same question." → "… and they answer several of the same questions differently, the crowd's praise at the end of the Gospel among them, where two of them part over whose judgement of it to follow." |
+
+A final full read found nothing more that the rule reaches. Sentences in which
+a reading states what it holds about the texts, and the comparison's account
+of each reading's anchor, are allowed forms and were left as they stand.
+
+**Checks after the sixth pass.** All three outputs were built and installed
+through `make install-doc`. The installed bytes equal the build, the
+settled-aux and metadata checks pass, and the page counts are unchanged.
+
+| Output | Pages | SHA-256 |
+| --- | ---: | --- |
+| study | 34 | `c97450cb077e5daa42dcf64759fbb30a3d1640d9a80d967c8b6c4a12510b843f` |
+| concise study | 12 | `bda6d57bec3a5aad1e2ac333e7b1f3358bd7b683f2d660e49a6604eb494b5776` |
+| homily | 3 | `64dfff8e74d040d2b39ce4449abfe798a09d20c9866cab302e6fc1d8415947e6` |
+
+- `check-content-preflight` output is byte-identical to the base on all four
+  editions.
+- The web edition is regenerated and `make check-web-editions-current` passes.
+- `_proper_study.py check` passes in content, artifacts and publication with
+  all three `--require` flags, and the receipts are re-snapshotted.
