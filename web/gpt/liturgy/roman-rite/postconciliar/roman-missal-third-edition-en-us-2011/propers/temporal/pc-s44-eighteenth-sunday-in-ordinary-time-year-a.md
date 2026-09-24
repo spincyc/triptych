@@ -60,7 +60,7 @@ PC-S42-A
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
-> **Governing account: gift received becomes gift distributed**
+> **Gift received becomes gift distributed**
 >
 > Isaiah’s unpriced invitation and Psalm 145’s open hand form the officially correlated approach to Matthew’s feeding narrative: need is acknowledged, Christ receives the crowd, the disciples place their insufficiency in his hands, and all eat. Romans remains a semi-continuous strand, strengthening confidence in the love from which neither suffering nor any creature can separate those in Christ. The Week XVIII prayers frame the movement as restoration, sanctification, self-offering, heavenly refreshment, and final redemption.
 
@@ -82,7 +82,7 @@ Jesus takes, blesses, breaks, and gives the loaves to the disciples for the crow
 
 Romans does not deny tribulation; it denies tribulation the power to sever God’s love in Christ. Either Communion antiphon can conclude the Sunday: Wisdom recalls heavenly nourishment, or John names Christ as bread of life. The final prayer asks that heavenly refreshment be protected through time and ordered to eternal redemption.
 
-> **Controlling limits**
+> **Scarcity, abuse, and the shared texts**
 >
 > The miracle is neither a promise that every present scarcity will disappear nor permission to spiritualize material hunger. Romans cannot be used to keep anyone in abuse or danger. Communion alternatives remain mutually exclusive unless an actual celebration establishes one. The shared Week XVIII prayers were not composed for Year A’s readings.
 
@@ -92,7 +92,7 @@ The appointed texts present divine generosity as personal action rather than ano
 
 The sequence also orders distinct kinds of hunger without confusing them. Isaiah binds nourishment to hearing and covenant; Matthew insists upon bodily compassion; Romans names a love stronger than affliction; the Communion alternatives turn toward heavenly bread and Christ himself; the final prayer reaches eternal redemption. Christian hope neither reduces salvation to present sufficiency nor escapes present bodies. It receives from Christ in order to share, and shares while awaiting the fullness only God can give.
 
-| **Movement** | **Primary anchors** | **Checked reception** | **Controlling limit** |
+| **Movement** | **Primary anchors** | **Reception** | **Also true** |
 |:-----------|:----------------|:-----------------|:-------------------|
 | Free invitation | Isa. 55; Entrance | Isaiah’s exilic covenant horizon; Augustine on gratuitous grace | “Without price” does not abolish justice, labor, or prudent stewardship. |
 | Open-handed compassion | Ps. 145; Matt. 14 | Chrysostom on Christ training the disciples through insufficiency | The miracle does not guarantee the removal of every scarcity on demand. |
@@ -107,11 +107,11 @@ The sequence also orders distinct kinds of hunger without confusing them. Isaiah
 
 ### Urgency, thirst, and the covenant that cannot be bought (*Entrance, First Reading*)
 
-Psalm 69 gives the entrance no ornamental calm. It is a compressed reprise of Psalm 39:14–18 (modern 40): enemies, shame, rejoicing seekers, and the speaker’s poverty surround the appointed pleas for haste. The antiphon therefore teaches petition from acknowledged dependence, not generalized anxiety. Augustine’s exposition distinguishes the poor speaker who expects help from the self-sufficient person who imagines that he possesses his own riches. That reception illuminates the antiphon without establishing why it was assigned to Week XVIII.
+Psalm 69 gives the entrance no ornamental calm. It is a compressed reprise of Psalm 39:14–18 (modern 40): enemies, shame, rejoicing seekers, and the speaker’s poverty surround the appointed pleas for haste. The antiphon therefore teaches petition from acknowledged dependence, not generalized anxiety. Augustine’s exposition distinguishes the poor speaker who expects help from the self-sufficient person who imagines that he possesses his own riches. That exposition illuminates the antiphon but says nothing of its assignment to Week XVIII.
 
 Isaiah 55 answers need in another register. Its imperatives accumulate: come, buy without payment, eat, listen, incline the ear, and return. The paradoxical “buying” exposes the failure of ordinary exchange to measure the covenant gift. The promised result is not merely satiety but life and an everlasting covenant, with the reliable mercies pledged to David now opened toward the nations in vv. 4–5. The passage closes Isaiah 40–55’s summons to an exilic or early-restoration audience; it is public covenant renewal, not a timeless advertisement for comfort.
 
-Patristic reception repeatedly treats “without money” as a grammar of grace: the gift cannot be purchased by prior merit. Yet the text still commands hearing and conversion, and its food imagery does not cancel the social obligations surrounding real hunger. The Entrance and Isaiah may thus be heard as petition and generous answer. That juxtaposition is a textual observation; the Missal antiphon was not historically selected for Year A’s Gospel.
+Patristic reception repeatedly treats “without money” as a grammar of grace: the gift cannot be purchased by prior merit. Yet the text still commands hearing and conversion, and its food imagery does not cancel the social obligations surrounding real hunger. The Entrance and Isaiah may thus be heard as petition and generous answer, though the Missal antiphon, shared by all three years, was not historically selected for Year A’s Gospel.
 
 ### The open hand and the whole psalm (*Responsorial Psalm*)
 
@@ -125,7 +125,7 @@ Matthew places the feeding immediately after Herod’s banquet and John the Bapt
 
 Chrysostom’s *Homily 49 on Matthew* follows the narrative’s pedagogy closely. Christ first permits the disciples to disclose the shortage, then requires them to bring what they have. He could feed without material means, but uses loaves so that the disciples learn both his power and their office. Looking heavenward and blessing answers any suspicion that the Son acts in rivalry with the Father. Distribution through the disciples makes them witnesses rather than spectators, while the fragments are gathered so that abundance does not become waste. Chrysostom reads the twelve baskets as evidence carried away by the Twelve, not merely a decorative number.
 
-Matthew’s literary contrast sharpens the scene. Herod’s preceding banquet ends with a prophet’s head carried on a platter; Jesus’ wilderness meal begins in compassion, heals the sick, and leaves every guest satisfied. One ruler’s feast consumes a life, while the true king gives life. This is a narrative contrast within Matthew, not proof that every detail was composed as a direct antitype.
+Matthew’s literary contrast sharpens the scene. Herod’s preceding banquet ends with a prophet’s head carried on a platter; Jesus’ wilderness meal begins in compassion, heals the sick, and leaves every guest satisfied. One ruler’s feast consumes a life, while the true king gives life. The contrast lies in Matthew’s sequence of scenes, and it does not make every detail of one meal a direct antitype of the other.
 
 The narrative carries Eucharistic resonance through taking, blessing, breaking, and giving, and the Church has long received it typologically. Yet the historical meal remains bodily mercy, and Matthew’s wording does not license a simplistic identity between miracle and sacrament. The crowd’s hunger must not be spiritualized away; Eucharistic reading should deepen, not replace, concern for food insecurity.
 
@@ -141,7 +141,7 @@ The Lectionary omits v. 36 but the argument presupposes it: the psalmic voice n
 
 This is hope without moral laundering: suffering may become the field of fidelity, but evil is not made good and perpetrators are not excused. The passage cannot demand passive exposure to abuse, displace practical protection, or promise that every temporal loss will be reversed.
 
-Romans is semi-continuous in Ordinary Time. Its relation to the feeding narrative is canonical and pastoral rather than an officially correlated selection. It can strengthen trust when resources fail, but it should not be made into proof that every shortage will be miraculously reversed.
+Romans is semi-continuous in Ordinary Time. Its relation to the feeding narrative is canonical and pastoral rather than an officially correlated selection. It can strengthen trust when resources fail, but it does not promise that every shortage will be miraculously reversed.
 
 ### Restored creatures become an enduring offering (*Collect, Prayer over Offerings*)
 
@@ -155,7 +155,7 @@ Wisdom 16 rereads manna inside a contrast between Israel’s education and the j
 
 John 6:35 answers a crowd still asking for bread: Christ identifies himself, not merely a further gift, as the bread of life. Coming and believing are parallel responses to his person. Augustine’s Johannine preaching insists that the sign must lead beyond filled stomachs to Christ, while Aquinas’ commentary distinguishes the bodily sign, faith’s approach, and sacramental reception without making them interchangeable. Communion B thus presses toward the giver whom the sign announces.
 
-These are genuine alternatives, not two halves of one enacted antiphon. Wisdom emphasizes the giver’s pedagogy in Israel’s history; John emphasizes coming and believing in the Son. Matthew 14 supplies neither antiphon and must not be silently rewritten as John 6.
+These are genuine alternatives, not two halves of one enacted antiphon. Wisdom emphasizes the giver’s pedagogy in Israel’s history; John emphasizes coming and believing in the Son. Matthew 14 supplies neither antiphon, and its feeding is not John 6’s discourse.
 
 The final prayer speaks after reception: heavenly refreshment is already gift, while continuing protection and worthiness for eternal redemption remain petitions. Sacramental reception is therefore neither bare remembrance nor automatic completion. It begins and sustains a life dependent upon grace.
 
@@ -218,17 +218,17 @@ Which when Jesus had heard, he retired from thence by a boat, into a desert plac
 
 ## Comparative Reception and Theological Dossier
 
-> **Method**
+> **How the texts relate**
 >
-> The Old Testament and Gospel are officially correlated; Romans is semi-continuous; the Week XVIII Missal formulary is shared by all three cycles. The witnesses below illuminate appointed units without being made authors of the complete Year A packet. Historical setting, patristic reception, sacramental resonance, and present application remain distinct.
+> The Old Testament and Gospel are officially correlated; Romans is semi-continuous; the Week XVIII Missal formulary is shared by all three cycles. The witnesses below illuminate appointed units; none of them treats the complete Year A formulary. Historical setting, patristic reception, sacramental resonance, and present application are distinct questions.
 
 ### Isaiah’s market without a price
 
 Isaiah 55:1–3 addresses thirst, hunger, failed expenditure, hearing, life, and an everlasting covenant. The sequence of imperatives matters. The hearer is not offered an inexpensive commodity but summoned away from spending on what does not satisfy and toward attentive reception of God’s word. The Davidic covenant in verse 3 prevents the invitation from becoming a free-floating maxim about personal fulfillment. It is restoration speech addressed to a people whose future depends upon divine fidelity.
 
-Ancient Christian reception commonly extends the water, wine, milk, and bread images toward baptism, instruction, wisdom, and the Eucharist. Those readings are strongest when they preserve Isaiah’s first claim: God gives life and renews covenant. They become weaker when every image is forced to signify one sacrament in one-to-one fashion. Augustine’s theology of gratuitous grace is a near theological analogue rather than a direct commentary on the appointed cut. The text’s own economic verbs also retain moral force. “Without money” does not praise exploitation or deny the cost of human labor; it denies that divine covenant life can be purchased.
+Ancient Christian reception commonly extends the water, wine, milk, and bread images toward baptism, instruction, wisdom, and the Eucharist. Those readings are strongest when they preserve Isaiah’s first claim: God gives life and renews covenant. They become weaker when every image is forced to signify one sacrament in one-to-one fashion. Augustine’s theology of gratuitous grace comes near the passage without commenting on the appointed cut. The text’s own economic verbs also retain moral force. “Without money” does not praise exploitation or deny the cost of human labor; it denies that divine covenant life can be purchased.
 
-Thoreau’s explicit reuse in *Walden* demonstrates how far the question can travel. He redirects Isaiah’s language toward nineteenth-century American consumption and lives spent acquiring unnecessary things. That is genuine verbal reception in a changed register, but Thoreau’s economic program is not therefore the prophet’s historical message.
+Thoreau’s explicit reuse in *Walden* demonstrates how far the question can travel. He redirects Isaiah’s language toward nineteenth-century American consumption and lives spent acquiring unnecessary things. Thoreau reuses the prophet’s words in a changed register, but his economic program is not therefore the prophet’s historical message.
 
 ### The open hand and the social field of praise
 
@@ -244,28 +244,28 @@ The feeding follows Matthew’s account of John the Baptist’s death. Herod’s
 
 Chrysostom’s Homily 49 follows the disciples’ education closely. Their insufficiency is disclosed rather than mocked; Christ could feed without them, yet makes them ministers and has fragments gathered. His reading supports providence, discipline, service, and avoidance of waste. It does not authorize the claim that the disciples secretly possessed enough, or that the miracle was only an exercise in induced sharing. Nor does Matthew identify this meal with the Eucharist. The verbs of taking, blessing, breaking, and giving create an intelligible Eucharistic reception horizon, while the narrated action remains a wilderness feeding of bodily hungry people.
 
-The twelve baskets have generated Israel-and-apostles readings, but the text itself first establishes abundance after universal satisfaction. Symbolic reception should not erase the practical command to gather what remains.
+The twelve baskets have generated Israel-and-apostles readings, but the text itself first establishes abundance after universal satisfaction. The practical command to gather what remains stands beside any symbolic reading.
 
 ### Romans: inseparability amid—not exemption from—affliction
 
-Romans 8:35, 37–39 is discontinuous in proclamation: verse 36’s scriptural citation about being killed all day is omitted. The wider argument must remain in view. Tribulation, distress, persecution, famine, nakedness, peril, and sword are not imaginary; the claim is that none can separate those in Christ from divine love. “More than conquerors” therefore does not mean invulnerable, socially dominant, or exempt from grief.
+Romans 8:35, 37–39 is discontinuous in proclamation: verse 36’s scriptural citation about being killed all day is omitted. The omitted verse still belongs to Paul’s argument. Tribulation, distress, persecution, famine, nakedness, peril, and sword are not imaginary; the claim is that none can separate those in Christ from divine love. “More than conquerors” therefore does not mean invulnerable, socially dominant, or exempt from grief.
 
 Chrysostom emphasizes Paul’s catalogue as proof of love tested in suffering, not a celebration of pain. Aquinas distinguishes the threatening forces while locating security in God’s initiative. The passage cannot require a person to remain in abuse, refuse medicine, conceal crime, or avoid lawful protection. Its hope concerns communion with God through real affliction, not the moral neutralization of perpetrators or dangerous conditions.
 
-Arnold’s *Dover Beach* creates a revealing changed-register inversion. Its accumulating “neither/nor” world lacks certitude, peace, and help for pain, so fidelity contracts toward two lovers. Romans’ catalogue also moves through negations, but reaches the expansive prior love of God in Christ. The formal echo is illuminating even though conscious borrowing has not been established.
+Arnold’s *Dover Beach* creates a revealing changed-register inversion. Its accumulating “neither/nor” world lacks certitude, peace, and help for pain, so fidelity contracts toward two lovers. Romans’ catalogue also moves through negations, but reaches the expansive prior love of God in Christ. The formal echo is illuminating, though nothing in the poem attests conscious borrowing.
 
 ### One liturgy, several kinds of nourishment
 
-The packet should not be reduced to “bread” as a single undifferentiated symbol. Isaiah joins nourishment to hearing and covenant; the psalm praises the creator’s timely provision; Matthew narrates bodily feeding through compassionate action; the acclamation says life exceeds bread alone; Communion A receives wilderness food through Wisdom; Communion B names Christ as bread of life. The distinctions are the theology.
+The Sunday’s texts do not reduce to “bread” as a single undifferentiated symbol. Isaiah joins nourishment to hearing and covenant; the psalm praises the creator’s timely provision; Matthew narrates bodily feeding through compassionate action; the acclamation says life exceeds bread alone; Communion A receives wilderness food through Wisdom; Communion B names Christ as bread of life. The distinctions are the theology.
 
-The shared Week XVIII prayers add another grammar. Created persons require restoration and preservation; gifts require sanctification; worshippers ask to become an enduring offering; communicants receive a heavenly gift and seek continuing protection. The two Communion antiphons remain alternatives. If Wisdom is used, manna-reception stands at the ending; if John is used, Christ’s self-identification stands there. A guide may explain both branches but may not combine them into an enacted text without evidence of the actual selection.
+The shared Week XVIII prayers add another grammar. Created persons require restoration and preservation; gifts require sanctification; worshippers ask to become an enduring offering; communicants receive a heavenly gift and seek continuing protection. The two Communion antiphons remain alternatives. If Wisdom is used, manna-reception stands at the ending; if John is used, Christ’s self-identification stands there. Each ending has its own sense, and only a celebration’s actual selection makes one of them the enacted text.
 
-| **Convergence** | **Deepened claim** | **Guardrail** |
+| **Convergence** | **Deepened meaning** | **Also true** |
 |:-------------|:------------------------|:----------------------------|
 | Invitation, expectation, compassion | Divine giving precedes and enables human response. | Gratuitous gift does not erase labor, justice, or organized care. |
-| Loaves, word, and heavenly bread | Bodily and spiritual hungers are held together without identity. | Neither spiritualize material need nor reduce salvation to present sufficiency. |
+| Loaves, word, and heavenly bread | Bodily and spiritual hungers are held together without identity. | Material need stays material, and salvation exceeds present sufficiency. |
 | Distribution and self-offering | Disciples and worshippers become agents within a gift they did not originate. | Service confers no divine ownership or permission to coerce. |
-| Affliction and inseparable love | Hope persists inside named dangers. | Never use Romans to demand endurance of preventable harm. |
+| Affliction and inseparable love | Hope persists inside named dangers. | Romans demands no endurance of preventable harm. |
 
 ## Source-Grounded Synthesis Across the Propers
 
@@ -279,26 +279,26 @@ Isaiah orders the thirsty to hear so that they may live. The acclamation teaches
 
 ### Christ gives through servants
 
-The disciples do not produce abundance, yet the crowd receives through their hands. Chrysostom’s direct reception emphasizes this pedagogy: Christ reveals insufficiency, takes the gift, and makes the disciples ministers of his provision. The offerings prayer supplies a liturgical analogue rather than historical proof of selection—God sanctifies gifts and makes the offerers an enduring offering.
+The disciples do not produce abundance, yet the crowd receives through their hands. Chrysostom’s direct reception emphasizes this pedagogy: Christ reveals insufficiency, takes the gift, and makes the disciples ministers of his provision. The offerings prayer, shared by all three years and with no historical link to Year A, supplies a liturgical analogue: God sanctifies gifts and makes the offerers an enduring offering.
 
 ### Love stronger than affliction
 
-Romans stands independently of the Isaiah–Matthew correlation. It contributes no theory that famine or peril is unreal; rather, no suffering or cosmic power can defeat God’s love in Christ. Joined cautiously to the final prayer, it directs present refreshment toward enduring protection and eternal redemption. Hope is not confidence in uninterrupted supply but confidence that no creature can finally sever communion with God.
+Romans stands independently of the Isaiah–Matthew correlation. It contributes no theory that famine or peril is unreal; rather, no suffering or cosmic power can defeat God’s love in Christ. Beside the final prayer, it directs present refreshment toward enduring protection and eternal redemption. Hope is not confidence in uninterrupted supply but confidence that no creature can finally sever communion with God.
 
-| **Relation** | **Elements** | **Classification** | **Limit** |
+| **Relation** | **Elements** | **Classification** | **Also true** |
 |:-----------|:----------------|:-----------------|:-------------------|
 | Free nourishment | Isaiah; Gospel | Officially correlated | The relation does not turn grace into a prosperity guarantee. |
 | Open hand and feeding | Psalm; Gospel | Responsorial and textual observation | Psalmic kingship includes justice for the vulnerable, not consumption alone. |
 | Word and bread | Acclamation; Gospel | Acclamatory and source-grounded synthesis | Bodily hunger remains morally serious. |
-| Suffering and communion | Romans; final prayer | Semi-continuous plus source-grounded synthesis | No designed cycle-specific relation is claimed. |
+| Suffering and communion | Romans; final prayer | Semi-continuous plus source-grounded synthesis | Romans is semi-continuous and the prayer serves all three years. |
 
 ## The Propers: Notable and Quotable
 
-- **“Why do you spend your money for that which is not bread?” (*First Reading*)** Henry David Thoreau’s *Walden*, “Economy,” invokes Isaiah’s question while attacking lives consumed by unnecessary expenditure. A prophetic summons to covenant nourishment becomes an ironic instrument of American economic criticism. The verbal dependence is explicit; Thoreau’s program is not treated as Isaiah’s own.
+- **“Why do you spend your money for that which is not bread?” (*First Reading*)** Henry David Thoreau’s *Walden*, “Economy,” invokes Isaiah’s question while attacking lives consumed by unnecessary expenditure. A prophetic summons to covenant nourishment becomes an ironic instrument of American economic criticism. The verbal dependence is explicit; Thoreau’s program is his own, not Isaiah’s.
 
-- **“Five loaves and two fish” (*Gospel*)** The anonymous 1783 political etching *The Loaves and Fishes* turns the feeding image into satire: ministers crowd around loaves and fish that signify offices, rewards, and access to patronage. Provision for a multitude becomes appetite for government place. The checked print establishes the visual and titular reuse of the Gospel tradition, but it does not identify Matthew rather than another Synoptic feeding account as its exclusive source.
+- **“Five loaves and two fish” (*Gospel*)** The anonymous 1783 political etching *The Loaves and Fishes* turns the feeding image into satire: ministers crowd around loaves and fish that signify offices, rewards, and access to patronage. Provision for a multitude becomes appetite for government place. The print reuses the Gospel tradition in image and title, but it does not identify Matthew rather than another Synoptic feeding account as its exclusive source.
 
-- **“Neither death, nor life” (*Second Reading*)** Matthew Arnold’s *Dover Beach*, lines 29–37, answers a world without secure consolation by asking two lovers to be true to one another, then builds its own accumulating “neither” and “nor” catalogue around love, light, certitude, peace, and help for pain. Its form and vocabulary make a striking changed-register echo of Romans 8’s catalogue of forces unable to separate believers from divine love. The checked first-edition transcription supports comparison, not a claim that Arnold consciously borrowed this passage.
+- **“Neither death, nor life” (*Second Reading*)** Matthew Arnold’s *Dover Beach*, lines 29–37, answers a world without secure consolation by asking two lovers to be true to one another, then builds its own accumulating “neither” and “nor” catalogue around love, light, certitude, peace, and help for pain. Its form and vocabulary make a striking changed-register echo of Romans 8’s catalogue of forces unable to separate believers from divine love. The first-edition text bears the comparison but does not attest that Arnold consciously borrowed this passage.
 
 ## The Propers: Interpretive Possibilities
 
@@ -314,7 +314,7 @@ Psalm 145 attributes satisfaction to God’s hand; Matthew places blessed bread 
 
 ### The two Communion branches disclose different answers to hunger (*Communion A; Communion B; Gospel*)
 
-Wisdom’s branch looks backward to manna interpreted as heavenly pedagogy; John’s branch centers desire on Christ himself. Compared without conflation, they offer historical remembrance and personal encounter as distinct conclusions to Matthew’s meal. The fruit is a richer account of eucharistic hunger. The branches remain mutually exclusive in enactment, John 6 is not Matthew 14, and no claim is made that one antiphon was selected in 2026.
+Wisdom’s branch looks backward to manna interpreted as heavenly pedagogy; John’s branch centers desire on Christ himself. Side by side, they offer historical remembrance and personal encounter as distinct conclusions to Matthew’s meal. The fruit is a richer account of eucharistic hunger. The branches remain mutually exclusive in enactment, John 6 is not Matthew 14, and no claim is made that one antiphon was selected in 2026.
 
 ### Inseparability can free charity from outcome control (*Second Reading; Gospel; Prayer after Communion*)
 
@@ -360,6 +360,6 @@ The feeding ends in visible abundance, but Romans locates security in inseparabl
 
 - Matthew Arnold, [*Dover Beach*](https://anthology.lib.virginia.edu/exist/apps/LiC/work/Arnold/arnold-dover-beach.xml), lines 29–37, in *New Poems* (Macmillan, 1867), Literature in Context first-edition transcription.
 
-**Last revised (UTC):** 2026-07-29T18:04:07Z
+**Last revised (UTC):** 2026-09-24T13:50:01Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
