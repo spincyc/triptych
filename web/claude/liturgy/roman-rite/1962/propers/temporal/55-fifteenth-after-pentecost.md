@@ -282,7 +282,7 @@ In the margins of Ottobonianus 313 the chant series and the oration series run t
 
 The gregorien.info index of the six earliest Mass antiphonaries Hesbert collected already places this Introit, Gradual and Offertory at *Dominica XV post Pentecosten*, AMS 187, but gives that Mass the Communion *Qui manducat carnem meam* and no fixed Alleluia at all; *Panis quem ego dedero* stands there at the Fourteenth Sunday. **So against that record the move runs one way: the Communion this Mass sings stands at the Fourteenth Sunday in AMS, and the Communion AMS gives the Fifteenth has not taken its place at the 1962 Fourteenth.** Within the tracked registry that Sunday sings *Primum quaerite* at Mt. 6:33, while the 1962 book’s own *Qui manducat meam carnem*, Jn. 6:57, stands at the Ninth Sunday. Every antiphonary figure here is the gregorien.info database’s report of Hesbert’s printed pages.
 
-Dom Lucien Fromage’s 1909 volume of the continuation of Guéranger’s *The Liturgical Year* shows the formulary before the 1960 change, printing the three seasonal orations by cross-reference — “The other Collects, as on page 120” at printed p. 345, “The other Secrets, as on page 130” and “The other Postcommunions, as on page 131” at p. 355 — and names the day “the Sunday of the widow of Naim.” He prints at p. 356, under Vespers, the Magnificat antiphon *Propheta magnus surrexit in nobis, et quia Deus visitavit plebem suam*; that antiphon is his book’s. Schuster’s three pages name no station church for this Sunday.
+The 1909 printing of Dom Lucien Fromage’s continuation of Guéranger’s *The Liturgical Year* shows the formulary before the 1960 change, printing the three seasonal orations by cross-reference — “The other Collects, as on page 120” at printed p. 345, “The other Secrets, as on page 130” and “The other Postcommunions, as on page 131” at p. 355 — and names the day “the Sunday of the widow of Naim.” He prints at p. 356, under Vespers, the Magnificat antiphon *Propheta magnus surrexit in nobis, et quia Deus visitavit plebem suam*; that antiphon is his book’s. Schuster’s three pages name no station church for this Sunday.
 
 ### Introit <span class="nodecor">(*Int.*)</span>
 
@@ -644,7 +644,7 @@ Every negative below is the answer one corpus gave to one query, and a different
 
 - No Bible witness and no patristic or Greek lemma collated here reads *super omnem terram* at Ps. 94:3 or *miserere mihi* at Ps. 85:3. Both readings stand in the optical layers of the three older Missals read for the preexisting-material check, which are neither Bible text nor patristic lemma. Nothing in Swete answers the Introit’s added *ad me*, which Cassiodorus’s Latin lemma nonetheless carries.
 
-- The Communion’s *dédero* and *sǽculi* answer nothing in the Greek, and no English witness examined — the tracked Douay, the Keating of 1806, the Cummiskey of 1861, the Lasance of 1945, Fromage’s 1909 continuation of Guéranger — renders either distinctly.
+- The Communion’s *dédero* and *sǽculi* answer nothing in the Greek, and no English witness examined — the tracked Douay, the Keating of 1806, the Cummiskey of 1861, the Lasance of 1945, Shepherd’s English of Fromage’s continuation of Guéranger as printed in 1909 — renders either distinctly.
 
 - *Naim* occurs once in the whole tracked Clementine, and *propheta magnus* only at Ecclus. 48:25 and Lk. 7:16.
 
@@ -766,6 +766,6 @@ The research behind this guide was carried out in one production and its audit r
 
 - United Kingdom, House of Commons, Official Report, “National Scheme of Family Allowances,” HC Deb 23 June 1942, vol. 380, cc1853–944, at c1895; read in Parliament’s own historic Hansard digitisation as continuous text with column anchors, and not collated against the printed bound volume.
 
-**Last revised (UTC):** 2026-09-24T02:53:19Z
+**Last revised (UTC):** 2026-09-24T03:45:30Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

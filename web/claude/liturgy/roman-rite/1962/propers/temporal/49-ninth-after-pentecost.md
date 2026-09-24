@@ -369,7 +369,7 @@ Christ’s Temple saying joins two texts that pull in different directions, and 
 | Isaiah 56:7 | *quia domus mea domus orationis vocabitur cunctis populis* | The climax of an oracle of *inclusion*: the eunuch is promised a name better than sons and daughters, and the foreigner who holds fast to the Lord is promised that his sacrifices will be accepted on the altar. What follows immediately (56:9–12) is a savage indictment of Israel’s own leaders — blind watchmen, dumb dogs, each turned to his own gain |
 | Jeremiah 7:11 | *Numquid ergo spelunca latronum facta est domus ista, in qua invocatum est nomen meum* | The Temple Sermon, preached in the gate of the Lord’s house against the belief that the sanctuary confers immunity: *Nolite confidere in verbis mendacii, dicentes: Templum Domini, templum Domini*. The charge sheet is theft, murder, adultery, perjury and Baal; the threat is that God will do to this house as he did to Shiloh |
 
-Set together, the two quotations say something precise: the house whose vocation is to gather all peoples has been made into the place where the guilty feel safe. And Luke quotes the first of them *short*. Mark 11:17 keeps *omnibus gentibus*; Luke does not, and the Douay’s “My house is the house of prayer” shows the shortened form as plainly as the Latin does. The Roman Office of Guéranger’s day restored the fuller form in its Magnificat antiphon for this Sunday — *domus orationis est cunctis gentibus* — which is a liturgical conflation of Luke with Mark and Isaiah and must not be cited as Luke’s text.
+Set together, the two quotations say something precise: the house whose vocation is to gather all peoples has been made into the place where the guilty feel safe. And Luke quotes the first of them *short*. Mark 11:17 keeps *omnibus gentibus*; Luke does not, and the Douay’s “My house is the house of prayer” shows the shortened form as plainly as the Latin does. The Roman Office, as the continuation of Guéranger’s *The Liturgical Year* (Dom Lucien Fromage) prints it, restores the fuller form in its Magnificat antiphon for this Sunday — *domus orationis est cunctis gentibus* — which is a liturgical conflation of Luke with Mark and Isaiah and must not be cited as Luke’s text.
 
 #### The tears
 
@@ -781,6 +781,6 @@ Only sources actually used above, with loci sufficient to check the claims made 
 
 - Molière, *Le Misanthrope* (1666), Act V, in the French of the Louandre edition (<https://fr.wikisource.org/wiki/Le_Misanthrope>) and in the English of Curtis Hidden Page (1908), <https://en.wikisource.org/wiki/The_Misanthrope_(Moli%C3%A8re)>.
 
-**Last revised (UTC):** 2026-09-24T02:53:19Z
+**Last revised (UTC):** 2026-09-24T03:45:30Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

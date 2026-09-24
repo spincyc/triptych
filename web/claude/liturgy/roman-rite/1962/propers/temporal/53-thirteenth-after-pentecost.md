@@ -824,7 +824,7 @@ Only sources actually used above, with loci sufficient to check the claims made 
 
 - *The Book of Common Prayer* (1549), the collect of the Fourteenth Sunday after Trinity; *The First Prayer-Book of Edward VI, compared with the successive revisions* (Oxford: Parker, 1877), pp. 174–175; Francis Procter and Walter Howard Frere, *A New History of the Book of Common Prayer* (London: Macmillan, 1901), pp. 553–554; and A. Harford Pearson (tr.), *The Sarum Missal in English* (London, 1884), pp. 241–242.
 
-- The continuation of Prosper Guéranger, *The Liturgical Year* … *Time after Pentecost* (Dom Lucien Fromage), vol. II (vol. 11 of the English set), tr. Laurence Shepherd, 2nd ed. (Stanbrook Abbey; London: Burns & Oates, 1909), pp. 307–326, and vol. I, pp. 272 and 303. <https://archive.org/details/V11TheLiturgicalYear>. *Cited as a witness to devotional and liturgical reception, including its own supersessionist framings, which are attributed to Fromage and not endorsed; it supplies no English printed in this guide.*
+- The continuation of Prosper Guéranger, *The Liturgical Year* … *Time after Pentecost* (Dom Lucien Fromage), vol. II (vol. 11 of the English set), tr. Laurence Shepherd, 2nd ed. (Stanbrook Abbey; London: Burns & Oates, 1909), pp. 307–326; and vol. I (vol. 10 of the English set), 2nd ed. (Stanbrook Abbey; London: Burns & Oates; Dublin: James Duffy & Co., 1901), pp. 272 and 303. <https://archive.org/details/V11TheLiturgicalYear>. *Cited as a witness to devotional and liturgical reception, including its own supersessionist framings, which are attributed to Fromage and not endorsed; it supplies no English printed in this guide.*
 
 - Ildefonso Schuster, *The Sacramentary (Liber Sacramentorum)*, vol. III (London: Burns Oates & Washbourne, 1927), pp. 132–135. Public domain in the United States; quoted in short compass.
 
@@ -898,6 +898,6 @@ Only sources actually used above, with loci sufficient to check the claims made 
 
 - Robert Browning, “Rabbi Ben Ezra,” stanza 1, in *Dramatis Personæ* (London: Chapman & Hall, 1864).
 
-**Last revised (UTC):** 2026-09-24T02:53:19Z
+**Last revised (UTC):** 2026-09-24T03:45:30Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
