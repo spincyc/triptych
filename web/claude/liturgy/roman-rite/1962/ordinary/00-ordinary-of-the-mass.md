@@ -8,9 +8,7 @@
 
 Roman Rite ⋅ *Missale Romanum*, Vatican typical edition of 1962 ⋅ Latin ⋅ collated against the Church Music Association of America facsimile
 
-> **Governing thesis**
->
-> The Roman Ordinary is not merely a frame around the propers but the stable textual and ritual sequence within which the Eucharistic sacrifice is celebrated. Everything that changes from day to day — introit, collect, lesson, gospel, offertory, secret, communion, postcommunion — is applied to a single action whose text does not change: an approach made in penitence, a praise that is not the celebrant’s own composition, a confession of faith received from a council, an offering made in anticipation of what has not yet happened, a thanksgiving that opens into the Canon, and a Canon whose grammar is that of a Roman petition placed before the Father through the Son. The 1962 book distinguishes this sequence typographically: the Ordinary is printed once, in the middle of the volume, with its own continuous numbering, and the forms over the bread and chalice are set in larger type than anything else in the missal.
+The Roman Ordinary is not merely a frame around the propers but the stable textual and ritual sequence within which the Eucharistic sacrifice is celebrated. Everything that changes from day to day — introit, collect, lesson, gospel, offertory, secret, communion, postcommunion — is applied to a single action whose text does not change: an approach made in penitence, a praise that is not the celebrant’s own composition, a confession of faith received from a council, an offering made in anticipation of what has not yet happened, a thanksgiving that opens into the Canon, and a Canon whose grammar is that of a Roman petition placed before the Father through the Son. The 1962 book distinguishes this sequence typographically: the Ordinary is printed once, in the middle of the volume, with its own continuous numbering, and the forms over the bread and chalice are set in larger type than anything else in the missal.
 
 ## What the 1962 book actually prints, and where
 
@@ -914,7 +912,7 @@ Each entry names the edition actually used and the exact loci this study read. W
 
 Adrian Fortescue, **The Mass: A Study of the Roman Liturgy** (London and New York: Longmans, Green and Co., 1922). Read at the page images of printed pp. 172 (Gregory the Great and the Canon; Benedict XIV’s dictum), 227 (the prayers at the foot of the altar; the medieval uses; the papal chapel and *sancta sanctorum*), 232 and 234 (the *Kyrie* and Gregory’s letter to John of Syracuse), 288 (the Creed at Rome in 1014, with the dissenting authorities), 305 (the offertory prayers, the mixed chalice, and *immaculatam hostiam* as “an anticipation of the consecration”), 387 (the *Agnus Dei* and Sergius I) and 394 (the last Gospel before and after 1570). Fortescue died in 1923 and this printing carries no revision by a later hand; his own footnotes preserve the disagreements among the authorities he cites, and those disagreements are reported here rather than resolved. His datings rest on manuscript arguments this study has not examined and are attributed to him throughout.
 
-**Last revised (UTC):** 2026-07-27T15:22:42Z
+**Last revised (UTC):** 2026-09-24T14:59:29Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

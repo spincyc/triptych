@@ -55,9 +55,9 @@
 % A short checked quotation from an identified historical or doctrinal source.
 \newenvironment{witnesscard}[1]{\begin{sourcecard}{#1}\small}{\end{sourcecard}}
 
-% The governing thesis is substantive content and may open the body.
-\newcommand{\studythesis}[1]{%
-  \begin{studybox}{Governing thesis}#1\end{studybox}}
+% The thesis opens the body directly as prose: no box and no label, as the
+% reader-first rule of guidance/editorial.md requires.
+\newcommand{\studythesis}[1]{#1\par}
 
 % A labelled editorial block. The heading carries the claim class, so the
 % body needs no repeated disclaimer.
