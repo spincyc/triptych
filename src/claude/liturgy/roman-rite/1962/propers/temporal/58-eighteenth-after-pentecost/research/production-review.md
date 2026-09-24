@@ -1267,7 +1267,8 @@ fifth movement's "Blood poured out for the forgiveness of sins" already
 grounds the forgiveness in the Passion, and the speech was at the top of its
 length.
 
-**Spoken word count: 1,562 words**, up from 1,519. The count uses the rule
+**Spoken word count after HOM-010: 1,562 words**, up from 1,519 (the second
+pass below trims the speech to 1,438). The count uses the rule
 recorded at iteration 0, which reproduces both earlier figures: 1,448 for
 iteration 0 and 1,519 for iteration 1. At 120 to 130 words a minute that is
 12.0 to 13.0 minutes, a little beyond the profile's approximately 10–12 at the
@@ -1360,6 +1361,8 @@ dossier falls by 1.
 | `58-eighteenth-after-pentecost-synthesis.pdf` | 12 | 477,495 | `30b61281ed3af6e1e9c7f6b6faf9f824c943b9fbe3cb3832193d2b6a8aed5859` |
 | `58-eighteenth-after-pentecost-homily.pdf` | 3 | 275,779 | `89bd3573383b01a1437e85c90a2f9b9dd2a0509eed9770218e8db537a19a195b` |
 
+These were the bytes of the first pass. The second pass below supersedes them.
+
 The web edition is `web/claude/…/58-eighteenth-after-pentecost.md`: 133,869
 bytes, SHA-256
 `a18360d8d60b13309c0821015f98a7e25f53d5e0fdc71b6f7466cf68b560f8aa`. It is
@@ -1412,6 +1415,115 @@ leaf's entry gains the new contribution and timestamp; the release binding of
 the web edition; and the Claude publication inventory, which is stale for ten
 of this leaf's files. The revision obligations in the research-staleness
 ledger and the deliverable requirement `eighteenth-sunday-introit-dated` are
-the coordinator's to clear. The other standing advisories are untouched,
-among them HOM-008, HOM-009, HOM-011, RES-031, RES-033 to RES-036 and
-VIS-003 to VIS-005.
+the coordinator's to clear. The standing findings are disposed of in the
+second pass below.
+
+### Second pass: the run's standing findings resolved
+
+On the maintainer's request that every known open issue be resolved, the same
+revision took up the findings standing in `evaluations/blocking-findings-v1.toml`.
+That file is left as the evaluations wrote it. Each finding was read in full, and
+each cited source layer was re-read here before the text moved. One line per
+finding follows.
+
+| Finding | Disposition | Where, and what changed or why |
+| --- | --- | --- |
+| HOM-008 | Fixed | Homily, third movement. Before: "Once laid down, says Chrysostom, he ``gives himself up to the power of the healer.''", set before the first word. After, following the word of forgiveness: "He came to be healed and is forgiven instead; he might have complained, Chrysostom says, but he says nothing, and ``gives himself up to the power of the healer.''" Re-read in the tracked CCEL NPNF1-10 text (`adb8f1c9`), Hom. 29 § 2, where the sentence answers "One thing I came to have healed, and amendest Thou another?" after the scribes' murmur. |
+| HOM-009 | Fixed | Homily, same movement. Before: "Whatever faith he had brought him exactly as far as he was carried, and if he had any, that too was given him." After: "Whatever faith he had, it brought him only as far as he was carried; and if he had any, that too was given him." |
+| HOM-011 (accepted; its condition, re-entry of the study, is met) | Fixed | `sections/40-nothing-of-our-own.tex`, "Not quietism": the triad is completed with *quia ire non poterat, dixit, Et ambula*, "because he could not walk, he said, Walk". Read in the Venice 1745 optical layer (`10aa155e`), physical lines 16507–16512; homily review read the page image, PDF p. 140. Recorded in `research/scope.md` § 3.5 and `research/interpretations.md` § 3.4. |
+| RES-031 | Fixed | In four places: interpretations § 2.2; scope § 3.5 (V.14 bullet); scope § 10 item 1 (the Aquinas bullet); and the scope header's fifth re-entry. Ambrose, *Exp. in Lc.* V.14, was re-read in the tracked transcription (`fde2303a`). It has the body as the bed washed nightly with tears (Ps 6:7), *lectus doloris, in quo anima nostra gravi conscientiae aegra cruciatu jacebat*, the bed of rest, and the return to paradise. "Is not penitential" and "Aquinas's …, not Ambrose's" are withdrawn. The fence stays: *per contritionem … per satisfactionem … in domum aeternitatis, vel in conscientiam propriam* is Aquinas's and no Father's. |
+| RES-033 | Fixed | In three places: interpretations, "Two further boundaries"; scope § 2.7; scope § 10 item 16. Each now says four of the five name this Communion, and that Sicard names the Offertory and Communion together only by their sense. `commentary-work-index formulary --calendar roman-1962 --mass pentecost-18` lists communion among Sicard's unnamed elements. His *Mitrale* VIII.18 layer (`ea9fd813`, lines 29685–29728) reads *in offerenda et communione invitat et monet populum revertentem, ad instar Moysi, altaria erigere et hostias immolare*. |
+| RES-034 | Fixed | The continuation's vol. XI (`95ba98e2`) was read on its rendered pages. Pp. 408–409 (PDF pp. 429–430), *other victims, that is ourselves*, are recorded in scope § 3.11 and in interpretations § 2.3 (communion) and § 2.4 (Moral), under the continuator's name. P. 395 (PDF p. 416), the sentence before the Collect, is recorded in scope §§ 3.9 and 3.11 and interpretations § 3.2. Aquinas's *quia portabatur, praecepit ut portaret* is recorded in scope § 3.5 and interpretations § 3.4. PDF pp. 416, 429 and 430 are added to the § 6.3 register row, and `vol-xi-p-395` to the binding's loci. |
+| RES-035 | Fixed | Interpretations § 4.4, the anagogical note. Before: "the way back to paradise (the second, with Hilary, Ambrose and Aquinas)". After: "the way back to paradise (Hilary, Ambrose) and to the house of eternity (Aquinas), in the second". The concise overview already kept them apart. |
+| RES-036 | Fixed | Interpretations § 3.2, Chrysostom on 1 Cor 1:8. New Advent's `220102.htm` was re-fetched, and its SHA-256 matched the recorded `66bffe29…5858`. § 7 reads "Here he seems to court them, but the saying is free from all flattery; for he knows also how to press them home … But he is also covertly accusing them". "This covert accusation is Chrysostom's whole reading of v. 8" is withdrawn, and § 7 is given as it stands. |
+| STU-023 | Fixed | Interpretations, three changes. § 2.4 Literal: "At Capernaum" became "In his own city (Capernaum for Chrysostom, Nazareth for Jerome; § 4.3 leaves the town undecided)". § 1.2: "the one checked witness" became "the one Father", with Aquinas added. § 1.3: Aquinas is added as the second allegorical witness. His *scilicet in civitatem gentium, quae sibi datae sunt* is at Venice layer lines 16345–16346. |
+| STU-024 | Fixed | `sections/10-each-element.tex`. In the Offertory, Schuster's regret over the lost verses and the a Lapide and Chrysostom-on-Hebrews paragraph are removed, leaving one clause: "and the covenant blood of the chapter it cites is taken up in the second reading". In the Secret, Schuster's sentence on the exchange became "What the exchange is, the second reading takes up." The a Lapide reading, the exchange and Schuster's regret now each have one home, in the second reading. |
+| SYN-008 (not in the coordinator's list; leaf-local and open) | Fixed | `sections/concise/04-themes.tex`: "confesses in its single prayer" became "confesses in its Collect", and "the Mass's only oration" became "the Mass's only collect". |
+| VIS-003 | Fixed | `sections/80-date-location.tex`: a `\medskip` after the introductory sentence. Study p. 30 inspected; the line no longer sits on the rule. The shared table style is untouched. |
+| VIS-004 | Fixed | `sections/50-comparison.tex`: the header "Power on earth to forgive" became "Power to forgive". Pp. 27–28 inspected; each header now has clear space before the next. The shared table style is untouched. |
+| VIS-005 | Fixed | `sections/homily/10-homily.tex` opens with multicol's `\raggedcolumns`, so each column's foot takes a `\vfil` instead of stretching the movement breaks. Homily pp. 1–2 inspected; the five breaks are one height, and the log has no underfull or overfull box. The shared homily environment is untouched. |
+| VIS-001, VIS-002 (accepted; conditional on reopening) | No longer arise | P. 29 now carries 23 lines of the comparison's close rather than about eight. The comparison table breaks after three rows with its header repeated, so no single row stands alone. |
+| Research-review observation: the scope header undercounts the re-entries | Fixed | `research/scope.md` header now records research iteration 7 (`c2c54133a`), which revised `research/interpretations.md` alone for STU-020. Of the other three observations, the web edition's squeezed dossier rows were resolved upstream (commit `0df032e15` sets each dossier note as a paragraph beneath its row); the commentary index's missing Chrysologus row at Mt 9 and the shared dossier measurements belong to records this leaf does not own and are left to their owners. |
+| WEB-001 | Already resolved | Converter commit `0df032e15` restored the title fields; the current web edition carries all four title lines. |
+
+**Homily length.** The profile asks for approximately 10–12 minutes at an
+unhurried pace and names no rate. The leaf's note uses 120 to 130 words a
+minute. The speech is now **1,438 words**, 11.1 to 12.0 minutes at those rates,
+within the range at both. It was 1,562 after HOM-010. The cuts are in the
+homily's own wording, except that Chrysostom's second question, "Whence is it
+that you are puffed up?", is no longer quoted; no quotation's wording was
+altered. They are:
+- the Collect's "the prayer said just before the Epistle";
+- in the Chrysostom-on-Corinthians paragraph, that second question, with two
+  sentences compressed;
+- "perhaps even my faithfulness in coming here week after week";
+- "The first costs nothing to say; nobody can check it. The second anyone can
+  check at once.";
+- a sentence of the Aquinas authority paragraph, compressed;
+- "greater than all men";
+- "The bed that carried him, he now carries.";
+- "Do not leave your sins to your feelings".
+
+HOM-010's sentences are unchanged. The note carries the new figure. The count
+rule is the one recorded at iteration 0.
+
+**Maximus of Turin.** `src/sources/inventories/author-standing-v1.toml` gains
+one row for him, standing `father`. It rests on three sources read here: the
+*Catholic Encyclopedia*'s "St. Maximus of Turin" (vol. 10, 1911); its "Fathers
+of the Church", in the sentence that also grounds Chrysologus; and the Roman
+Martyrology in the English of the 1914 Roman edition (Baltimore, 1916), whose
+25 June entry reads "At Turin, the birthday of St. Maximus, bishop and
+confessor, most celebrated for his learning and sanctity". `commentary-work-index
+standing` passes with 31 persons, and `tools.tests.test_author_standing` passes.
+
+**Word counts of this pass, by the homily rule.**
+- Element section: −96.
+- Third reading: +15.
+- Comparison: −2.
+- Concise themes: −1.
+- Homily: −124.
+
+**Rendered pages after the second pass.** Printed pages: study 34, concise
+study 12, homily 3. The pages whose text or layout moved are study pp. 10–11,
+26–28 and 30, concise p. 3, and homily pp. 1–2. Each was inspected on rasters
+from `tools/tpt pdf-review`, together with study pp. 29 and 34. The final
+hashes are in the commit that installs them and in `research/artifacts.json`.
+
+**Checks after the second pass.** All three outputs were rebuilt with
+`make doc` and installed with `make install-doc`; the installed bytes equal
+the build.
+
+| Output | Pages | Bytes | SHA-256 (build and installed) |
+| --- | ---: | ---: | --- |
+| `58-eighteenth-after-pentecost.pdf` | 34 | 569,016 | `c75624211f7b9fb26eeddd385fcec71201f89b10d210f3b801e9bbd510ed55e3` |
+| `58-eighteenth-after-pentecost-synthesis.pdf` | 12 | 477,472 | `27b5f2270afcbd079b077d3560b1982338e239edd829e766e6b3e7fe1d90f7ec` |
+| `58-eighteenth-after-pentecost-homily.pdf` | 3 | 275,105 | `eba6268e7ddc1160728975b616093fe6caf0e60c675a2ef747246f1b398d71a5` |
+
+The web edition is 133,361 bytes, SHA-256
+`e90a3c6362c11e17470b0f03fcfb019359b2227512d29e4c850eb935287af07c`, identical to
+the fresh conversion. These exit 0:
+
+- `_proper_study.py check` in phases `content`, `artifacts` and `publication`
+  with `--require-presentation --require-format`, and `content` with
+  `--require-authority`;
+- `check-proper-components --phase artifacts`;
+- `check-generation-metadata` on each PDF;
+- `check-content-preflight` on all four editions, with 89 bindings and 3
+  per-passage dates in each study;
+- `proper-chronology record --check` and `annotations --check`;
+- `make check-web-editions-current` and `check-web-edition`;
+- `public-alpha check --provider claude --document <leaf>`;
+- `source-library validate`, `make check-source-reader` and
+  `make check-commentator-inventories`.
+
+The logs show no overfull or underfull box, no undefined reference and no
+rerun warning.
+
+The same 13 test modules as at the start pass: 492 tests. Two modules were
+added this pass. `test_formulary` passes. `test_house_voice` fails three tests
+of `TheSpecimenLeaf`, which reads the Fourteenth Sunday leaf. Neither that leaf
+nor `tools/` nor `scripts/` differs from base `f5a3be5f4`, so the failure is
+inherited, not caused here. Stale for the coordinator, as before: the web
+edition's release binding, this leaf's entry in `corpus.json` (two new
+contributions and the timestamp), and fourteen of this leaf's files in the
+Claude publication inventory.
