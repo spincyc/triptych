@@ -85,26 +85,28 @@ answer the Latin.} #1\par}
 \newenvironment{afterlife}[1]{%
   \begin{massbox}{#1}\small}{\end{massbox}}
 
-% Two-tier page-2 dossier table. This sheet makes two departures from the
+% Two-tier page-2 dossier table. This sheet makes three departures from the
 % profile's fixed page-2 measurements and the note below \dossierprose states
-% both together with the escape clause that licenses them. The first is the
+% them together with the escape clause that licenses them. The first is the
 % summary-tier column widths set here. The profile fixes them at
 % 0.14 / 0.18 / 0.35 / 0.16\linewidth; this table sets
-% 0.13 / 0.17 / 0.24 / 0.29\linewidth, the four still totalling 0.83 as the
+% 0.11 / 0.15 / 0.19 / 0.38\linewidth, the four still totalling 0.83 as the
 % profile's do. The movement is into Date, because the corpus answers the
 % Gospel and the Communion with six composition claims apiece and the Epistle
-% with five, and the generated annotation prints them in one cell. Location
+% with five, the Offertory and Alleluia also carry a traditional-attribution
+% group, and the generated annotation prints them in one cell. Location
 % gives up the most, its detail belonging to the explanatory row beneath. The
 % summary tier keeps \footnotesize, \arraystretch, \LTpre and \LTpost exactly
 % as the profile sets them. An earlier form of this sheet set
 % 0.13 / 0.16 / 0.22 / 0.32, when the Date cell printed every source label in
-% full; the generated projection now prints the corpus's concise display
-% labels, which is what allows two of the four widths back toward the profile.
+% full, and then 0.13 / 0.17 / 0.24 / 0.29 once the projection printed the
+% corpus's concise display labels. The traditional-attribution relation
+% lengthened three Date cells again, and the present widths answer that.
 \newenvironment{dossiertable}
 {\footnotesize
  \renewcommand{\arraystretch}{1.02}%
  \setlength{\LTpre}{0.15em}\setlength{\LTpost}{0pt}%
- \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.17\linewidth}>{\raggedright\arraybackslash}p{0.24\linewidth}>{\raggedright\arraybackslash}p{0.29\linewidth}@{}}
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.11\linewidth}>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.19\linewidth}>{\raggedright\arraybackslash}p{0.38\linewidth}@{}}
  \toprule
  \textbf{Proper} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\
  \midrule
@@ -125,12 +127,12 @@ answer the Latin.} #1\par}
 
 % Full-width explanatory and event rows inside a dossier.
 %
-% Measurement note. TWO of the profile's fixed page-2 measurements are varied on
-% this sheet, and these are both of them:
+% Measurement note. THREE of the profile's fixed page-2 measurements are varied
+% on this sheet, and these are all of them:
 %
 %   D1. Summary-tier column widths, set above at \dossiertable. Profile
 %       0.14 / 0.18 / 0.35 / 0.16\linewidth; here
-%       0.13 / 0.17 / 0.24 / 0.29\linewidth.
+%       0.11 / 0.15 / 0.19 / 0.38\linewidth.
 %   D2. Spanning-row font size. The profile sets the table in \footnotesize and
 %       specifies no separate size for the spanning row, so the profile's value
 %       for that row is \footnotesize --- 9pt on 11pt leading under the 11pt
@@ -138,8 +140,9 @@ answer the Latin.} #1\par}
 %       a reduction of about 27 percent in glyph size and 35 percent in
 %       leading, a little below \scriptsize. This is a large departure and is
 %       recorded as one.
+%   D3. Spanning-row width. Profile 0.92\linewidth; here 0.93\linewidth.
 %
-% The profile provides for both and states the condition: change its fixed
+% The profile provides for all three and states the condition: change its fixed
 % measurements only when the complete inventory cannot remain legible after the
 % hierarchy and the evidence have been preserved, and never spill, omit
 % evidence, or move apparatus here from elsewhere. That is this sheet's case.
@@ -149,23 +152,25 @@ answer the Latin.} #1\par}
 % commentator's own reconstruction -- and a longtable row cannot break, so the
 % sheet either fits whole or starts a second page the profile forbids.
 %
-% A THIRD departure of the earlier revision is withdrawn at this one: the
-% spanning explanatory and event rows are back at the profile's 0.92\linewidth,
-% from 0.98. D1 and D2 are both smaller than they were --- the widths move from
-% 0.13 / 0.16 / 0.22 / 0.32 and the type size from \fontsize{6.4}{6.9} --- and
-% the reason all three could be relaxed together is the chronology projection,
-% whose concise display labels replaced the full source labels the Date cell
-% used to print.
+% An earlier revision set the spanning rows at 0.98\linewidth, the widths at
+% 0.13 / 0.16 / 0.22 / 0.32 and the type size at \fontsize{6.4}{6.9}; the
+% chronology projection's concise display labels let all three relax, and the
+% spanning rows went back to 0.92. The traditional-attribution relation of
+% 2026-09-09 then lengthened the Offertory, Alleluia and Gospel Date cells and
+% the Offertory explanation, and the Epistle's dossier no longer fitted on
+% page 2. The widths of D1 alone cannot absorb it, since Citation and Location
+% then set the height of their rows, so D3 returns at 0.93, a hundredth of the
+% line and far short of the earlier 0.98.
 %
 % What the profile fixes and this sheet leaves alone: the two-tier hierarchy,
 % the four summary fields, the \footnotesize summary tier, \arraystretch 1.02,
 % \LTpre 0.15em, \LTpost 0pt, the 0.1em breathing space ending ordinary dossier
 % rows, \cmidrule(lr){1-4} within a dossier with \midrule only between complete
 % dossiers, the italic event row set between two \cmidrule(lr){1-4} rules ahead
-% of its explanation, and the 0.92\linewidth spanning-row width.
+% of its explanation.
 \newcommand{\dossierrowsize}{\fontsize{6.6}{7.2}\selectfont}
-\newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{0.92\linewidth}@{}}{#1}\\[0.1em]}
-\newcommand{\dossierevent}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{0.92\linewidth}@{}}{\textit{#1}}\\}
+\newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{0.93\linewidth}@{}}{#1}\\[0.1em]}
+\newcommand{\dossierevent}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{0.93\linewidth}@{}}{\textit{#1}}\\}
 
 % Divergence table used in the commentary: appointed form against the Bible
 % text the guide's English is quoted from.

@@ -37,7 +37,7 @@
 Six passages are appointed; the Communion adapts a verse inside the Gospel, so seven liturgical elements appear below. Psalms carry the missal’s Vulgate number, the common modern number in parentheses.
 
 | **Proper** | **Citation** | **Location** | **Date** |
-|:---------|:------------|:-----------------|:--------------------|
+|:--------|:-----------|:-------------|:--------------------------|
 | Offertory | Ps. 33:8–9a (Eng. 34:7–8) | Title: before Achimelech, 1 Kings 21 | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Superscription setting**: A.M. 2944. **Composition**: Before c. 165 B.C. |
 | Corbett’s “usual chronology” supplies the Davidic regnal frame (*Catholic Encyclopedia*, IV, p. 642); the escape precedes David’s accession. The superscription anchors the psalm to a named escape, *Davidi, cum immutavit vultum suum coram Achimelech*, cross-referenced in the Douay to “\[1 Kings 21.\],” modern **1 Samuel 21**. **The title and the chapter name different men.** The title names Achimelech; in the chapter Achimelech stands at Nobe and the change of countenance falls before **Achis, king of Geth**, and the Catholic Public Domain Version prints *Abimelech* at the title. The superscription-setting date above is the edition’s own uninitialled marginal note, attributed to Ussher, and it dates what the superscription points to and not the writing of the psalm; the composition claim beside it is a whole-Psalter latest boundary, declining in its own words to date any individual psalm securely. |  |  |  |
 | Introit | Ps. 83:10–11a, 2–3a (Eng. 84:9–10a, 84:1–2a) | Sons of Core; movement toward the temple | **Composition**: Between the days of Isaias and the return from exile. |
@@ -1292,6 +1292,6 @@ Only sources actually used in the canonical edition, with loci sufficient to che
 
 - *State v. Tracy*, 294 Mo. 372, 390 (1922); *State v. Whiteaker*, 118 Or. 656, 661, 247 Pac. 1077 (argued 2 July, decided 20 July 1926); *State ex rel. Garrett v. McPeters*, 256 Ala. 555, 556, 56 So. 2d 102 (1951), Brown J. dissenting. *Same corpus, rights and state as the other opinions; **all three read whole in static transcriptions with star pagination and none collated against a page image.** **The printed heading of 118 Or. 656 settles the Whiteaker date**, argument and decision being different events that two databases record differently. **The *McPeters* passage is a dissent and not the judgment**, and **who or what the “J. Rufus Wallingford” of *Whiteaker* was is not established here**, the court supplying the name and no gloss. The remaining members of that family were seen in search metadata only and none is quoted above.*
 
-**Last revised (UTC):** 2026-09-24T02:53:19Z
+**Last revised (UTC):** 2026-09-24T02:55:39Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
