@@ -2424,12 +2424,10 @@ class PublicDataBoundary(unittest.TestCase):
         )
         failures = []
         textual = 0
-        archives = 0
         pdftotext = shutil.which("pdftotext")
         for path in paths:
             suffix = path.suffix.casefold()
             if suffix == ".zip":
-                archives += 1
                 failures.extend(
                     archive_protected_findings(
                         path,
@@ -2478,7 +2476,12 @@ class PublicDataBoundary(unittest.TestCase):
                         )
                     )
         self.assertGreater(textual, 0, "the tracked handoff corpus had no UTF-8 text")
-        self.assertGreater(archives, 0, "the tracked handoff corpus had no archives")
+        # No handoff ZIP is tracked any longer. The 25 duplicate archives went
+        # with the owner-authorized history rewrite of 2026-09-04 recorded in
+        # guidance/repository.md (a94664026), so a count of them cannot be
+        # required. A ZIP tracked again is still opened and scanned above, and
+        # test_handoff_archive_mutation_rejects_every_opaque_member proves that
+        # scan fails on a synthetic archive.
         assert_no_findings(
             self,
             failures,
