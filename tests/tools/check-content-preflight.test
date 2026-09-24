@@ -45,23 +45,24 @@ sort -c "$sandbox/first.txt" || fail "--list is not in sorted order"
 # are documents the whole evaluation loop has already accepted, so a structural
 # check that refuses one is refusing correct work.
 #
-# Two checks are held out of this loop, and the reason is a finding rather than
-# an exemption. `house-voice` and `proposal-fields` screen reader-facing prose
-# against `guidance/editorial.md` and the profile, and the corpus does not
-# currently satisfy either: house-voice refuses eight of the twelve leaves and
-# proposal-fields two, published ones among them. Every refusal inspected is a
-# form the guidance names by example -- retrieval mechanics printed in the body
-# of published leaf 52, five proposals in gpt leaf 52 that state no "what the
-# element-by-element reading misses" field at all -- so the honest reading is
-# that these checks found a habit the evaluation loop never screened for, not
-# that they are wrong. Which way that gets settled is the maintainer's, and
-# recorded in PROJECT-WORK.md. Until it is, asserting that they pass the corpus
-# would assert something false, and dropping them from the tool would lose what
-# they found.
+# Two checks are held out of this loop, and the reason was a finding rather
+# than an exemption. `house-voice` and `proposal-fields` screen reader-facing
+# prose against `guidance/editorial.md` and the profile, and when they were
+# written the corpus satisfied neither: house-voice refused eight of the twelve
+# leaves and proposal-fields two, published ones among them. Every refusal
+# inspected was a form the guidance names by example -- retrieval mechanics
+# printed in the body of published leaf 52, five proposals in gpt leaf 52 that
+# stated no "what the element-by-element reading misses" field at all -- so the
+# honest reading was that these checks found a habit the evaluation loop never
+# screened for, not that they were wrong. PROJECT-WORK.md left the question to
+# the maintainer, who settled it for the checks: the 2026-09-24 audit repaired
+# every leaf of both providers, and both now pass every published leaf, which
+# tools/tests/test_workflow_content_preflight.py asserts leaf by leaf.
 #
-# Being held out of the corpus loop is exactly why each of them gets the pair
-# this file promises, over the synthetic probe leaf further down: a corpus
-# count moves whenever a leaf is edited, and a rule change has to face a test.
+# They stay out of this loop because a corpus count moves whenever a leaf is
+# edited and a rule change has to face a test: each of them gets the pair this
+# file promises over the synthetic probe leaf further down, and its refusal of
+# a real specimen below, held at the commit that still carried it.
 prose_checks="house-voice proposal-fields"
 
 structural_checks() {
@@ -139,9 +140,24 @@ if run_tool --root "$specimen" --provider claude --document "$specimen_leaf" \
 fi
 grep -q 'Rewrite the sentence so its subject' "$sandbox/specimen.err" ||
 	fail "house-voice refused the specimen for a reason that is not the voice"
-reject --provider gpt \
-	--document liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost \
-	--check proposal-fields
+# The proposal-fields refusal is held the same way, over the GPT Twelfth Sunday
+# at the commit the 2026-09-24 audit started from: all five of its proposals
+# then stated no "misses" field. The audit wrote the field into each
+# (e11d8b618), and the live leaf now passes.
+proposals="$sandbox/proposals"
+proposals_leaf="liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost"
+mkdir -p "$proposals"
+git -C "$repo" archive 860d6d902704beb507744a0d0f4e86ff19affa31 \
+	-- "src/gpt/$proposals_leaf" >"$sandbox/proposals.tar" ||
+	fail "the proposal-fields specimen's commit is not in this history"
+tar -x -f "$sandbox/proposals.tar" -C "$proposals"
+if run_tool --root "$proposals" --provider gpt --document "$proposals_leaf" \
+	--check proposal-fields >/dev/null 2>"$sandbox/proposals.err"; then
+	fail "proposal-fields accepted the leaf it is supposed to refuse"
+fi
+grep -q 'states no field for what the ordinary element-by-element reading misses' \
+	"$sandbox/proposals.err" ||
+	fail "proposal-fields refused the specimen for a reason that is not the missing field"
 
 # --- A synthetic leaf, so each refusal can be produced one at a time -------
 
