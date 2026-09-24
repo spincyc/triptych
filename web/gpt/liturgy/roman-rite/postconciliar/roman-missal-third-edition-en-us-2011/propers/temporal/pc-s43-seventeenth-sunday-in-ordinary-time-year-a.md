@@ -60,11 +60,11 @@ PC-S41-A
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
-> **Governing account**
+> **Wisdom learns what is worth choosing**
 >
 > This formulary does not reduce to one slogan. Its correlated strand joins Solomon’s listening heart, the Psalm’s valuation of divine instruction, and Jesus’ treasure and pearl: wisdom learns what is worth choosing. Romans contributes a semi-continuous word about God’s purpose amid suffering, not a hidden key to the parables. The proper chants and prayers gather the assembly, order passing goods, return received bounty, and ask that sacramental memory become saving love.
 
-> **Four-stage movement at a glance**
+> **Hear, revalue, conform, return**
 >
 > **1. Hear — Entrance; Collect; First Reading.** God gathers and strengthens a people; Solomon confesses inadequacy and asks for judgment that listens.
 >
@@ -74,7 +74,7 @@ PC-S41-A
 >
 > **4. Return — Offerings; Communion; final prayer.** Goods first received return to God; memory of divine benefits and of the Passion seeks fruit in mercy, purity, and salvation.
 
-*Reading order.* Stages 1, 2, and 4 correlate appointed texts with ritual sequence; stage 3 keeps Romans semi-continuous. Gospel and Communion alternatives are documented, not combined.
+The texts of stages 1, 2, and 4 come in ritual sequence; Romans, in stage 3, is semi-continuous. The long and short Gospels are alternatives, as are the two Communion Antiphons.
 
 ### 1. Gathered strength becomes a listening heart (*Entrance; Collect; First Reading*)
 
@@ -82,7 +82,7 @@ The Entrance does not begin with an isolated chooser. Its adapted Psalm first pi
 
 Solomon gives this dependence political and moral weight. He asks for a heart capable of hearing so that judgment can distinguish good from evil for an entrusted people. Benedict XVI’s Angelus for this same Sunday (2011) reads that heart as a conscience attentive to truth and therefore answerable to justice and peace, especially in government. Ambrose earlier links hearing to just judgment. Neither witness makes office self-authenticating: the king’s later failures keep received wisdom under the continuing need for fidelity, counsel, and correction.
 
-**The Collect’s biblical grammar.** Ferraro’s study in *Notitiae* traces its titles of protector, ruler, and guide through the Psalms, John 15, and the Exodus tradition. He reads the prayer’s passing and enduring goods in an eschatological horizon without cancelling human work or creation’s value. As a signed study in the Dicastery’s journal, it supplies researched illumination rather than a magisterial decree. The Collect orders created goods through communion with Christ; it does not declare them unreal or unholy.
+**The Collect’s biblical grammar.** Ferraro’s study in *Notitiae* traces its titles of protector, ruler, and guide through the Psalms, John 15, and the Exodus tradition. He reads the prayer’s passing and enduring goods in an eschatological horizon without cancelling human work or creation’s value. It is a signed study in the Dicastery’s journal, not a magisterial decree. The Collect orders created goods through communion with Christ; it does not declare them unreal or unholy.
 
 ### 2. Instruction schools desire for the Kingdom (*Responsorial Psalm; Gospel branches*)
 
@@ -92,11 +92,11 @@ Treasure and pearl convert valuation into action. The first figure unexpectedly 
 
 ### 3. Providence gives suffering a filial form (*Second Reading; Acclamation*)
 
-Romans enters from the Sunday cycle rather than from a demonstrated compositional pairing with Matthew. Its immediate context is creation’s groaning, believers’ weakness, and the Spirit’s aid in prayer; its continuation names affliction, persecution, hunger, peril, and death. The promised good is therefore neither uninterrupted comfort nor an assurance that faithful people will prosper. Paul defines the movement by conformity to the Son, the firstborn within a communion of siblings.
+Romans enters from the Sunday cycle’s semi-continuous course and was not selected to explain Matthew. Its immediate context is creation’s groaning, believers’ weakness, and the Spirit’s aid in prayer; its continuation names affliction, persecution, hunger, peril, and death. The promised good is therefore neither uninterrupted comfort nor an assurance that faithful people will prosper. Paul defines the movement by conformity to the Son, the firstborn within a communion of siblings.
 
 Chrysostom reads adversity as material God can turn toward good without calling adversity good in itself. Aquinas similarly distinguishes an evil suffered from the virtues and final good that providence can draw through it. The Council’s *Gaudium et spes* 22 places Christian suffering within conformity to the incarnate and risen Christ, where life and death receive paschal meaning. The *Catechism* (nn. 311–312) supplies the necessary moral boundary: God is not the cause of moral evil, and the good drawn from evil never converts evil into good.
 
-> **What the reading can and cannot promise**
+> **Hope within suffering**
 >
 > The reading gives hope that divine love can work within suffering toward communion with Christ. It does not tell a harmed person that abuse or injustice was secretly good, require passivity, or displace safety, lament, medicine, reporting, restitution, or justice. The acclamation adds teachable humility from Matthew 11; it is a distinct adaptation, not Paul’s definition of predestination.
 
@@ -106,7 +106,7 @@ The Prayer over the Offerings completes the parables’ value movement without t
 
 Communion A commands the soul to bless and remember divine benefits. Communion B instead joins mercy and purity of heart, keeping their distinct promises of mercy and vision. The final prayer gathers either path into the perpetual memorial of the Son’s Passion and asks that the gift of love advance salvation. Memory is therefore active gratitude, and reception seeks moral and ecclesial fruit; the two alternatives stay distinct, and neither bears that fruit apart from grace-enabled response.
 
-| **Dimension** | **Appointed anchors** | **Source-grounded synthesis** | **Limit** |
+| **Dimension** | **Appointed anchors** | **Movement** | **Also true** |
 |:-----------|:----------------|:-----------------|:-------------------|
 | Discernment | Entrance; Collect; 1 Kgs. 3 | Gathered strength becomes a hearing heart ordered toward justice. | Office and intelligence do not guarantee fidelity. |
 | Value and joy | Ps. 119; Matt. 13 | Instruction, treasure, and pearl disclose a good exceeding gold. | Grace is not bought; creation is not despised. |
@@ -125,15 +125,15 @@ The lectionary preserves Solomon’s confession of youth and inexperience, the p
 
 Ambrose cites the requested prudent heart in *On the Duties of the Clergy* II.8, 44–49 as a heart able to hear and judge justly, then develops the later judgment between two mothers. He illuminates the union of prudence and justice; the appointed pericope itself, not Ambrose, supplies the contrast with riches and longevity.
 
-Benedict XVI’s Angelus on this exact Sunday in 2011 moves from Solomon’s hearing heart to conscience: listening to truth enables the distinction of good and evil and places governing responsibility under justice and peace. This is a documented modern liturgical reception, not an alternate translation of 1 Kings. It sharpens the reading’s public consequence without reducing biblical heart-language to one later technical term.
+Benedict XVI’s Angelus on this exact Sunday in 2011 moves from Solomon’s hearing heart to conscience: listening to truth enables the distinction of good and evil and places governing responsibility under justice and peace. Conscience is Benedict’s word for that heart, not an alternate translation of 1 Kings; his address sharpens the reading’s public consequence without reducing biblical heart-language to one later technical term.
 
 The broader canonical story supplies the indispensable limit. The king who asks well can later accumulate wealth, wives, and divided allegiance. Wisdom received is not fidelity guaranteed. The Collect’s repeated dependence—God as protector, ruler, and guide—keeps discernment from becoming self-certifying expertise.
 
-Giuseppe Ferraro’s biblical commentary on this Collect in *Notitiae* traces protector to Vulgate Psalm 17, dependence to the vine discourse of John 15, ruler and guide to biblical governance and Exodus, and the passing/enduring contrast to 1 Corinthians 7. Ferraro explicitly refuses the inference that detachment cancels work within the world: created undertakings receive durable value in communion with Christ. The article is a signed study in the Dicastery’s journal, not a magisterial ruling or proof of the prayer’s original compositional sources.
+Giuseppe Ferraro’s biblical commentary on this Collect in *Notitiae* traces protector to Vulgate Psalm 17, dependence to the vine discourse of John 15, ruler and guide to biblical governance and Exodus, and the passing/enduring contrast to 1 Corinthians 7. Ferraro explicitly refuses the inference that detachment cancels work within the world: created undertakings receive durable value in communion with Christ. The article is a signed study in the Dicastery’s journal, not a magisterial ruling, and its biblical parallels do not establish the prayer’s original compositional sources.
 
 Peter Comestor’s medieval *Historia scholastica* retells the dream while preserving the distinction between Solomon’s request and God’s additional gifts. It witnesses to the episode’s long pedagogical life but is not an independent source for the ancient event. Later historical and devotional commentators likewise admire the request while the canonical sequel controls idealization.
 
-| **Movement** | **Claim** | **Limit** |
+| **Movement** | **Meaning** | **Also true** |
 |:-------------|:------------------------|:----------------------------|
 | **Confess inadequacy** | Office does not create the wisdom it requires. | Humility does not excuse refusal to learn or decide. |
 | **Ask for a hearing heart** | Discernment serves justice for a concrete people. | It is not intuition exempt from evidence, counsel, or law. |
@@ -143,7 +143,7 @@ Peter Comestor’s medieval *Historia scholastica* retells the dream while prese
 
 The Entrance adapts clauses from Psalm 67 rather than proclaiming a continuous span. The whole processional hymn praises God’s coming, defense of the vulnerable, gift of a household, and strength for the people. Augustine treats divine presence, gathering, and strength as gifts rather than human possession (*Exposition on Psalm 68*, 6, 8, 40); Bellarmine later receives the same movement within ecclesial praise.
 
-The Prayer over the Offerings asks God to receive gifts that first come from divine bounty and to make the mysteries sanctify present conduct. The ritual movement is reception, return, and transformation: the assembly does not purchase grace with its own property. This shared Week XVII prayer may illuminate the Gospel’s relinquishment, but it was not proved to have been composed for Year A or Lectionary 109. There is no Missal Offertory antiphon, and the actual music used remains unknown.
+The Prayer over the Offerings asks God to receive gifts that first come from divine bounty and to make the mysteries sanctify present conduct. The ritual movement is reception, return, and transformation: the assembly does not purchase grace with its own property. This shared Week XVII prayer may illuminate the Gospel’s relinquishment, but no evidence ties its composition to Year A or Lectionary 109. There is no Missal Offertory antiphon, and the actual music used remains unknown.
 
 ### Instruction, treasure, and pearl (*Responsorial Psalm; Gospel branches*)
 
@@ -153,7 +153,7 @@ Ambrose’s *Exposition of Psalm 118* VIII, 2–4 asks how rare it is to say tha
 
 The two parables intensify valuation. One person encounters treasure and acts in joy; the merchant searches and recognizes one pearl of great price. Chrysostom’s *Homily 47 on Matthew* emphasizes the Kingdom’s hidden worth and the single-minded response it evokes. The differences remain: discovery and search, field and market, treasure and pearl are not one psychology.
 
-Francis’s Angelus for this exact Sunday in 2014 also preserves the difference between unexpected discovery and sustained search, then reads encounter with Christ as reorienting an entire life and giving meaning even to toil, suffering, and death. His 2020 Angelus holds grace and human willingness together: the Kingdom is not achieved by price, yet grace calls for an active welcome. These homilies witness to contemporary liturgical reception; they do not settle Matthew’s first-century compositional history.
+Francis’s Angelus for this exact Sunday in 2014 also preserves the difference between unexpected discovery and sustained search, then reads encounter with Christ as reorienting an entire life and giving meaning even to toil, suffering, and death. His 2020 Angelus holds grace and human willingness together: the Kingdom is not achieved by price, yet grace calls for an active welcome. These are contemporary homilies on this Sunday’s readings, and they do not settle Matthew’s first-century compositional history.
 
 Joy does not purchase the Kingdom. In both images the incomparable discovery reorganizes possession; the price imagery cannot make salvation a commodity. Nor can “selling all” be abstracted into irresponsible disposal of dependents’ goods or contempt for material creation. The Psalm itself values instruction through a material comparison without calling gold evil.
 
@@ -179,15 +179,15 @@ The Second Vatican Council places this conformity in a paschal horizon: Christ m
 
 Haydock’s later compilation makes complementary moves. At verse 28, “purpose” is God’s will rather than a human plan. At verse 29, conformity includes suffering with Christ, following his teaching, and imitating his life; the notes join special grace to free cooperation and warn against prying into secret election. At verse 30 they name faith, hope, love, and penance in justification and do not infer final perseverance from every justified state. Divine initiative therefore does not erase agency or authorize assigning a living person a certain final status.
 
-The reading is semi-continuous. Its “purpose” should not be casually equated with Solomon’s administrative vocation or the merchant’s search. Liturgical juxtaposition can ask what sort of good governs discernment; it cannot claim Matthew’s treasure decodes Paul’s predestination.
+The reading is semi-continuous. Its “purpose” is God’s, not Solomon’s administrative vocation or the merchant’s search. Set side by side in the liturgy, the readings raise the question of what sort of good governs discernment, but Matthew’s treasure does not decode Paul’s predestination.
 
-> **A pastoral misuse refused**
+> **Trust that does not bless evil**
 >
 > The reading does not tell a harmed person that abuse, catastrophe, or injustice was secretly good, nor that protest or protection resists Providence. Christian hope says God can work within what creatures do wickedly and conform sufferers to Christ without blessing evil. Immediate safety, lament, justice, medicine, and communal aid remain compatible with trust.
 
 ### Revelation received by the humble (*Acclamation*)
 
-The acclamation adapts rather than reproduces Jesus’ thanksgiving in Matthew 11:25. Chrysostom’s *Homily 38* says the contrast does not condemn genuine learning; it exposes self-sufficient resistance and praises those who receive revelation without pretension. Aquinas likewise distinguishes the proud posture from teachable littleness. That humility fits Solomon’s request but is not identical with royal discernment, and Matthew 11 is not relocated into the Matthew 13 scene.
+The acclamation adapts rather than reproduces Jesus’ thanksgiving in Matthew 11:25. Chrysostom’s *Homily 38* says the contrast does not condemn genuine learning; it exposes self-sufficient resistance and praises those who receive revelation without pretension. Aquinas likewise distinguishes the proud posture from teachable littleness. That humility fits Solomon’s request but is not identical with royal discernment, and Matthew 11 belongs to a different scene from Matthew 13.
 
 ### Two Communion paths and one final petition (*Communion A; Communion B; Prayer after Communion*)
 
@@ -224,7 +224,7 @@ The alternatives remain distinct. Either can illuminate the final prayer’s con
 
 ### A liturgy of received judgment
 
-Across the appointed sequence, judgment begins as a gift before it becomes an act. God gathers and strengthens a household in the Entrance; the Collect asks to be governed and guided; Solomon confesses that office has not supplied the heart his office requires. Ambrose and Benedict XVI receive that heart as listening ordered toward justice, while Solomon’s later history prevents the gift from becoming a claim of personal infallibility. The Psalm then makes discernment habitual by ranking divine instruction above wealth and asking that the unfolding word give understanding. This movement is supported by the texts and their checked reception: dependence, hearing, valuation, and action belong together.
+Across the appointed sequence, judgment begins as a gift before it becomes an act. God gathers and strengthens a household in the Entrance; the Collect asks to be governed and guided; Solomon confesses that office has not supplied the heart his office requires. Ambrose and Benedict XVI receive that heart as listening ordered toward justice, while Solomon’s later history prevents the gift from becoming a claim of personal infallibility. The Psalm then makes discernment habitual by ranking divine instruction above wealth and asking that the unfolding word give understanding. The texts and their reception hold dependence, hearing, valuation, and action together.
 
 ### Worth disclosed in different modes
 
@@ -236,9 +236,9 @@ Romans remains a semi-continuous strand. Its immediate frame is creation’s gro
 
 ### The branch-sensitive eucharistic conclusion
 
-The offerings prayer returns gifts already received from divine bounty, so the Eucharistic movement is not a purchase parallel to the merchant’s. At Communion the actual celebration follows one of two paths: remembered benefits from Psalm 102, or mercy and purity of heart from Matthew 5. The final prayer can gather either path because it names the sacrament as the perpetual memorial of the Passion and asks that divine love advance salvation. The source-grounded whole is therefore received gift becoming discerning, grateful, merciful life. The long Gospel adds final sorting and the householder’s new and old treasures; the short Gospel does not. Any synthesis must preserve that enacted difference.
+The offerings prayer returns gifts already received from divine bounty, so the Eucharistic movement is not a purchase parallel to the merchant’s. At Communion the actual celebration follows one of two paths: remembered benefits from Psalm 102, or mercy and purity of heart from Matthew 5. The final prayer can gather either path because it names the sacrament as the perpetual memorial of the Passion and asks that divine love advance salvation. Taken whole, the sequence is therefore received gift becoming discerning, grateful, merciful life. The long Gospel adds final sorting and the householder’s new and old treasures; the short Gospel does not, and the whole differs with the form proclaimed.
 
-| **Movement** | **Primary anchors** | **Checked reception** | **Controlling limit** |
+| **Movement** | **Primary anchors** | **Reception** | **Also true** |
 |:-----------|:----------------|:-----------------|:-------------------|
 | Gathered dependence | Entrance; Collect; 1 Kgs. 3 | Ambrose; Benedict XVI; Ferraro | Gifted wisdom remains answerable to truth, counsel, law, and fidelity. |
 | Reordered worth | Ps. 119; Matt. 13 | Ambrose; Chrysostom; Francis | Grace is not bought and creation is not despised. |
@@ -349,6 +349,6 @@ The offerings prayer returns gifts already received from divine bounty, so the E
 
 - Margaret Murray Robertson, [*Christie Redfern’s Troubles*](https://www.gutenberg.org/files/21226/21226-h/21226-h.htm) (1866), ch. XVII; Romans 8:28 within a narrative dispute over trust and suffering. Public domain in the United States.
 
-**Last revised (UTC):** 2026-09-24T13:09:32Z
+**Last revised (UTC):** 2026-09-24T13:45:47Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
