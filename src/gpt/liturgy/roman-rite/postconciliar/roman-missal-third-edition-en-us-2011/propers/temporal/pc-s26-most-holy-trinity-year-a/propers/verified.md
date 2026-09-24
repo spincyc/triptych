@@ -2,7 +2,7 @@
 
 **Full slug:** `pc-s26-most-holy-trinity-year-a`
 **Parent:** `PC-S26`
-**Canonical Missal owner:** [`PC-S26` formulary audit](../../shared/formularies/pc-s58-most-holy-trinity/propers/verified.md)
+**Canonical Missal owner:** [`PC-S26` formulary audit](../../shared/formularies/pc-s26-most-holy-trinity/propers/verified.md)
 **Last collated:** 2026-07-15
 
 ## Target and source layers

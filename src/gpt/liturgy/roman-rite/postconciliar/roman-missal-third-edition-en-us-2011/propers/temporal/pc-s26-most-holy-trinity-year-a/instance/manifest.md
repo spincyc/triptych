@@ -12,7 +12,7 @@
 | Formula key | `PC-S26-A` |
 | Registry controls | `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md) |
 | Full publication slug | `pc-s26-most-holy-trinity-year-a` |
-| Canonical formulary owner | [`PC-S26` shared Missal audit](../../shared/formularies/pc-s58-most-holy-trinity/propers/verified.md) |
+| Canonical formulary owner | [`PC-S26` shared Missal audit](../../shared/formularies/pc-s26-most-holy-trinity/propers/verified.md) |
 | Celebration and rank | The Most Holy Trinity; solemnity of the Lord |
 | Season and color | Ordinary Time; white |
 | Civil occurrence | Sunday, 2026-05-31, the Sunday after Pentecost |

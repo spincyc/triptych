@@ -2,7 +2,7 @@
 
 **Full slug:** `pc-s27-most-holy-body-and-blood-of-christ-year-a`
 **Parent:** `PC-S27`
-**Canonical Missal owner:** [`PC-S27` formulary audit](../../shared/formularies/pc-s59-most-holy-body-and-blood-of-christ/propers/verified.md)
+**Canonical Missal owner:** [`PC-S27` formulary audit](../../shared/formularies/pc-s27-most-holy-body-and-blood-of-christ/propers/verified.md)
 **Last collated:** 2026-07-16
 
 ## Target and source layers

@@ -4,7 +4,7 @@
 **Jurisdiction and as-of date:** dioceses of the United States of America; calendar, rubrics, and editions checked through 2026-07-15
 **Registry controls:** `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md)
 
-This audit records the scholarship behind the Year A guide to the Most Holy Body and Blood of Christ on its U.S.-transferred Sunday, 2026-06-07. Formula identity and occurrence resolution remain in the [instance manifest](../instance/manifest.md); the ordered target composition remains in the [leaf audit](../propers/verified.md); reusable Missal evidence remains in the [canonical formulary-owner audit](../../shared/formularies/pc-s59-most-holy-body-and-blood-of-christ/propers/verified.md). Verified appointment, historical judgment, documented reception, source-grounded synthesis, and original proposal remain distinct.
+This audit records the scholarship behind the Year A guide to the Most Holy Body and Blood of Christ on its U.S.-transferred Sunday, 2026-06-07. Formula identity and occurrence resolution remain in the [instance manifest](../instance/manifest.md); the ordered target composition remains in the [leaf audit](../propers/verified.md); reusable Missal evidence remains in the [canonical formulary-owner audit](../../shared/formularies/pc-s27-most-holy-body-and-blood-of-christ/propers/verified.md). Verified appointment, historical judgment, documented reception, source-grounded synthesis, and original proposal remain distinct.
 
 ## Question, editions, and exclusions
 

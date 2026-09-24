@@ -4,7 +4,7 @@
 **Jurisdiction and as-of date:** dioceses of the United States of America; calendar, rubrics, and editions checked through 2026-07-15
 **Registry controls:** `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md)
 
-This audit records the scholarship behind the Year A guide to the Most Holy Trinity on 2026-05-31. Formula identity and occurrence resolution remain in the [instance manifest](../instance/manifest.md); the exact ordered composition remains in the [leaf audit](../propers/verified.md); reusable Missal evidence remains in the [canonical formulary-owner audit](../../shared/formularies/pc-s58-most-holy-trinity/propers/verified.md). This record distinguishes verified appointments, historical judgment, documented reception, source-grounded synthesis, and original proposals.
+This audit records the scholarship behind the Year A guide to the Most Holy Trinity on 2026-05-31. Formula identity and occurrence resolution remain in the [instance manifest](../instance/manifest.md); the exact ordered composition remains in the [leaf audit](../propers/verified.md); reusable Missal evidence remains in the [canonical formulary-owner audit](../../shared/formularies/pc-s26-most-holy-trinity/propers/verified.md). This record distinguishes verified appointments, historical judgment, documented reception, source-grounded synthesis, and original proposals.
 
 ## Question, editions, and exclusions
 
