@@ -1,6 +1,39 @@
 schema_version = 1
 
 [[deliverables]]
+id = "open-issue-resolution-2026-09-24"
+owner = "PROJECT-WORK.md"
+promise = "On the maintainer's instruction of 2026-09-24 (\"push ; resolve all known open issues ; then push again\"), resolve every known open issue on the branch: discharge the research revision obligations, the D7 credits, the catena and discovery questions and the Eighteenth Sunday revision; audit every proper leaf of both providers for the house-voice defect and repair what the audit finds, with independent review of every repair; make the GPT repairs outside house voice the maintainer approved item by item, each independently reviewed; reconcile the tests and example transcripts with the repaired corpus; refresh every derived record; and re-record the release bindings and the release approval only on the maintainer's explicit approval."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "house-voice-audit-repaired-and-reviewed"
+  criterion = "Every proper leaf of both providers is audited and repaired under guidance/editorial.md with no bound, negative result, denominator, rights basis or attribution lost, each repair is re-checked by an independent reviewer until nothing blocking remains, and a test holds the live corpus to no house-voice or proposal-fields refusal while the detections keep running over the archived pre-repair tree."
+  status = "pass"
+  evidence = ["tools/tests/test_workflow_content_preflight.py", "tools/tests/_audited_corpus.py", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "tools/tests/test_workflow_content_preflight.py"
+  needle = "test_neither_prose_check_refuses_a_published_leaf"
+
+  [[deliverables.requirements]]
+  id = "gpt-repairs-reviewed"
+  criterion = "The GPT repairs the maintainer approved on 2026-09-24 outside house voice (GPT 50's composed English and References, the pc-s26 rights failure, the pre-renumbering identities with the owner directories, D11 and D12 in GPT 50-53, the TLM labels, the unused and missing References entries) are made and independently reviewed, with every blocking review finding repaired."
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-eleventh-sunday-in-ordinary-time-year-a/main.tex", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/formularies/pc-s26-most-holy-trinity/propers/verified.md", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-eleventh-sunday-in-ordinary-time-year-a/main.tex"
+  needle = "PC-S37-A"
+
+  [[deliverables.requirements]]
+  id = "release-rebound-and-approved"
+  criterion = "The release bindings the work left stale are re-recorded and the release approval recorded only with the maintainer's explicit approval of 2026-09-24, and check-release-bindings reports 0 stale."
+  status = "pass"
+  evidence = ["release/public-alpha.json", "release/rights/public-alpha-2026-07-15.md"]
+  check = "contains"
+  path = "release/rights/public-alpha-2026-07-15.md"
+  needle = "Supplemental exact-current-snapshot clearance — 24 September 2026"
+
+[[deliverables]]
 id = "web-title-block-2026-09-23"
 owner = "PROJECT-WORK.md"
 promise = "Resolve web-review advisory WEB-001 as the maintainer decided on 2026-09-23: the web converter renders every non-empty title field of the shared proper title macro, an audit fails when a declared title line is missing from a web edition, and every affected installed proper web edition of both providers is regenerated and independently re-reviewed, with its release bindings re-recorded only on a fresh operator approval. No reviewed PDF's bytes may change."

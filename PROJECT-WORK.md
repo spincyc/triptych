@@ -5,7 +5,125 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-09-22.
+Last reconciled: 2026-09-24.
+
+## Open-issue resolution and the corpus house-voice audit, 2026-09-24
+
+<!-- promised-deliverable: open-issue-resolution-2026-09-24 -->
+
+The maintainer instructed on 2026-09-24: "push ; resolve all known open
+issues ; then push again". The branch was pushed at `f5a3be5f4`; everything
+below landed after it, and the second push follows this record. Where a fix
+touched a GPT leaf, the maintainer gave the express authority
+`guidance/staleness.md` requires, item by item, on 2026-09-24; each commit
+body names its authority.
+
+**Decisions the maintainer took for this work, 2026-09-24.** Include GPT 49,
+50 and 53 in the D7 correction; hang the Chrysologus/Maximus text once under
+its received name (catena Rule 15); repair both pc-s43 leaves; re-record the
+GPT receipts; keep the Roger Pearse artifact as metadata only; correct all 11
+Latin install commits; three GPT conform repairs; GPT house voice and
+manifests; the four GPT content-check failures; the same-form sentences;
+audit the whole corpus of proper leaves of both providers for house voice,
+with independent review; remove the Governing thesis label from both
+providers; six GPT repairs outside house voice (GPT 50's composed English
+line and its References, the pc-s26 rights failure, the pc-s26/27
+identities, D11/D12 in GPT 50–53, the "TLM propers:" subtitles); the unused
+References entries; the remaining pre-renumbering identities (GPT pc-s37 to
+pc-s44 A/B/C) with the Trinity and Corpus Christi owner directories; GPT 45
+and 46's Internet Archive entries; the release rebind of 72 bindings; and the
+release approval.
+
+**Landed.**
+
+- The 13 `revision_due` obligations in the research-staleness ledger were
+  discharged (`c408cf346`); Guéranger's English volume X is dated 1901, second
+  edition (`f82f5ecc6`).
+- D7: the Time after Pentecost volumes are credited to Fromage and the English
+  to Shepherd in ten leaves, reviewed.
+- The Claude 1962 Eighteenth Sunday (58) went through four revision passes
+  and then the house-voice audit's passes, each reviewed; its receipts verify
+  with `--require-authority`.
+- Catena: Rule 15 (one text under disputed names is hung once, under the
+  received name) with the Maximus parallel recorded; `discover` reports held
+  fragments on the verses asked; a fragment's passage must carry text. The
+  English survey of the Sermones is recorded.
+- Tooling: portable schema-2 receipts; the research-edition page check and
+  the printed-order check in the build; preflight reads numbered References
+  headings and scopes relation-coverage to manifest leaves; `references-used`
+  no longer counts generic words, no longer skips common-word entries, and
+  wants every word of such an entry (`c95a45ad0`, `3696567f7`); the Makefile's
+  postconciliar owner edges name the current leaves again, so an owner
+  `verified.md` is once more a prerequisite of its leaf (`f41606a5a`; dead
+  since the 2026-08-22 renumbering).
+- The Governing thesis label is gone from every document of both providers
+  and from the web shim.
+- **The corpus house-voice audit.** Every proper leaf of both providers (44
+  leaves) was read in full by one of nine audit lanes and repaired under
+  `guidance/editorial.md`: sentences whose subject was the guide, its
+  apparatus or its own caution now take a text, a witness or a fact as
+  subject; clauses disclaiming a compiler's, designer's or selector's intent
+  were deleted (the coordinator's addendum; proposal limit fields and the
+  exploratory notice exempt); every difference, negative result, bound,
+  denominator, rights basis and attribution stands. Each lane was reviewed
+  independently and re-checked after every fix round until nothing blocking
+  remained; reviewers repeatedly caught widened negatives, hedges turned into
+  claims, and the editor's synthesis credited to a witness, and each was
+  repaired. `house-voice` and `proposal-fields` now refuse no published leaf.
+- **GPT repairs outside house voice**, each independently reviewed: GPT 50
+  quotes the Douay's first clause and states the gap instead of composing
+  English, and its References carry the sources it cites; D11 and D12 applied
+  in GPT 50–53 (other Masses and the formularies' list history kept in
+  research records; the formularies' own sacramentary history in the full
+  edition only); pc-s26's Catechism card is in the guide's own words;
+  identities corrected in pc-s26, pc-s27, pc-s37 to pc-s44 A/B/C and Claude
+  pc-s42 and pc-s43, with both registries, week owners and the renamed
+  pc-s26/pc-s27 owner directories; "1962 Roman Missal" replaces "TLM" in ten
+  subtitles and M01's table; unused References cited where used or removed
+  (GPT 43–48, M01, pc-s26, pc-s27, pc-s39–42); pc-s44 C lists Basil,
+  Rembrandt and Ives.
+- Claude pc-s42 prints its Prayer over the Offerings on the public-domain
+  Wilson 1915 witness and reduces the other two orations to incipit and the
+  phrases analysed (policy §8.2); Claude 57 applies D11 and D12.
+- Tests: those that used the corpus's old defects as live specimens now run
+  them over the tree archived at `860d6d902`, and new tests hold the live
+  corpus to no refusals. The check-content-preflight example transcripts run
+  over a synthetic probe leaf.
+- Derived records refreshed (both publication inventories, the document
+  catalogue, the source-family migration ledger); the production records of
+  Claude 57, 58, pc-s51 and GPT 57, pc-s51 record the post-acceptance passes.
+- The maintainer approved the rebind verbatim, "Approve all 72
+  (Recommended)" (`81b6c2e2d`), and the release, selecting "Approve the
+  release (Recommended)" with the note "Approve the release of the corpus as
+  it stands on 2026-09-24, after the house-voice audit, the approved GPT
+  repairs and the open-issue resolution." (`84b3ac694`).
+  `check-release-bindings` reports 0 stale.
+
+**Coordinator rulings a maintainer may want to revisit.**
+
+- D12's "what another Sunday's Mass contained stays in the research records"
+  was read as early-list history; the 1962 Missal's own Epistle course and
+  its ordering of the Matthew pericopes stay in reader-facing prose.
+- Table columns headed "Limit" or "Boundary", the sacrament summaries' "Do
+  not confuse" boxes, and the scope appendices' "Question and thesis
+  boundary" subheadings were ruled permitted contrast or boundary labels.
+- Dated records keep the identities they had when written: the 2026-07-29
+  staleness reviews, the loaves-and-fishes artifact note of 2026-07-28, and
+  pc-s44 B's reconciliation record.
+- Interior page breaks may reflow within a section when pages 1–4 and every
+  section start hold and nothing is damaged.
+
+**Left standing.**
+
+- Claude 49's synthesis page 4 is 67% full; this predates the audit and no
+  faithful fill was found.
+- `references-used` cannot tell GPT 50's Greek Orthodox entry from the
+  Gospel's own words ("Publican", "Pharisee"), and does not judge an entry
+  with no capitalised word.
+- The research-staleness ledger's fingerprints for the edited `research/`
+  records are not refreshed; staleness checking is suspended.
+- Several commit subjects of the identity lane read "pC-s37" for "pc-s37";
+  history is not rewritten.
 
 ## Complete web title blocks, 2026-09-23
 
@@ -491,6 +609,12 @@ edition and passage were re-recorded with `ONLY` scoped to exactly those
 paths. `check-release-bindings` reports 0 stale, and the `approve-release`
 note is pending with the rest. No English translation survey has been made
 for the Sermones.
+
+*Status 2026-09-24:* the Maximus parallel is hung once under the received name
+(catena Rule 15, `120cdfdaa`); `discover` now reports held fragments on the
+verses asked (`508436ba2`); the English survey of the Sermones is recorded
+(`50def76e4`); the D7 recount is done and ten leaves corrected; and the
+`approve-release` note is recorded (`84b3ac694`).
 
 **Open.** These may land now:
 
@@ -1819,6 +1943,10 @@ against that. It now checks both pipelines and tolerates line wrapping.
 Both pipelines are bumped: `proper` 22 to 23, `proper-finish` 1 to 2.
 
 ### Left standing, and worth a maintainer's decision
+
+*Resolved 2026-09-24:* the corpus house-voice audit repaired every leaf this
+check refused, GPT 52's proposals state the missing field, and neither check
+refuses a published leaf (see the 2026-09-24 section).
 
 `house-voice` refuses 8 of 12 leaves, and that number did not move when the
 false positives were removed -- the eight are the same eight. Every remaining
