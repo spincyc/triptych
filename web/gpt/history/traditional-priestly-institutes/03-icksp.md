@@ -4,9 +4,7 @@
 
 ## An Independent Institutional Line
 
-> **Governing thesis**
->
-> The Institute of Christ the King Sovereign Priest did not arise by leaving the Society of Saint Pius X, and it was not formed as a later copy of the Priestly Fraternity of Saint Peter. Its recoverable line runs instead through Roman and Genoese formation, a bounded association with the French Opus Sacerdotale, diocesan recognition and missionary work at Mouila in Gabon, and a seminary and motherhouse at Gricigliano near Florence. The Institute made this geographically dispersed origin durable by joining priestly formation, solemn older Roman worship, common life modeled on canons, Salesian spirituality, diocesan invitations, and general government. Pontifical-right erection in 2008 and definitive constitutional approval reported in 2016 stabilized that form without removing either Roman supervision or the authority of bishops over local apostolates.
+The Institute of Christ the King Sovereign Priest did not arise by leaving the Society of Saint Pius X, and it was not formed as a later copy of the Priestly Fraternity of Saint Peter. Its recoverable line runs instead through Roman and Genoese formation, a bounded association with the French Opus Sacerdotale, diocesan recognition and missionary work at Mouila in Gabon, and a seminary and motherhouse at Gricigliano near Florence. The Institute made this geographically dispersed origin durable by joining priestly formation, solemn older Roman worship, common life modeled on canons, Salesian spirituality, diocesan invitations, and general government. Pontifical-right erection in 2008 and definitive constitutional approval reported in 2016 stabilized that form without removing either Roman supervision or the authority of bishops over local apostolates.
 
 The Institute is therefore not adequately described as a network of locations where the 1962 Missal is celebrated. It forms candidates, incorporates members, maintains a common rule and central government, assigns priests and non-priest oblates, and accepts pastoral works from bishops. The seminary and motherhouse at Gricigliano supply a common culture across countries. The associated Sister Adorers and the lay Society of the Sacred Heart share elements of spirituality while retaining identities that cannot be collapsed into the male society.
 
@@ -679,6 +677,6 @@ Gilles Wach. [Public message to Vincent Mongaillard.](https://www.icrsp.org/conf
 
 *The Pillar*. [“Women Await Vatican to Investigate Religious Community.”](https://www.pillarcatholic.com/p/you-just-feel-so-defeated-women-await) 12 March 2026. Reporting on former-Sister accounts, superior’s responses, an unpublished internal review, and a reported plan for independent visitation.
 
-**Last revised (UTC):** 2026-07-19T03:44:17Z
+**Last revised (UTC):** 2026-09-24T14:59:29Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

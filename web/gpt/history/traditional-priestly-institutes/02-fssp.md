@@ -4,9 +4,7 @@
 
 ## The Object Is a Canonically Embedded Institution
 
-> **Governing thesis**
->
-> The Priestly Fraternity of Saint Peter is best understood neither as a canonically approved continuation of the Society of Saint Pius X nor as a mere provider of an older liturgy. It arose from a precise refusal of the unauthorized episcopal consecrations of 1988 and received a new juridical identity from the Holy See. Its history is the effort to make two commitments durable at once: communion and obedience within the Church’s ordinary structures, and a corporate priestly life centered on the Roman liturgical books in force in 1962. Its growth depended on seminaries, common life, general government, and invitations from diocesan bishops. Its recurrent crises arose where universal liturgical discipline, local episcopal authority, Roman supervision, and the Fraternity’s approved patrimony met.
+The Priestly Fraternity of Saint Peter is best understood neither as a canonically approved continuation of the Society of Saint Pius X nor as a mere provider of an older liturgy. It arose from a precise refusal of the unauthorized episcopal consecrations of 1988 and received a new juridical identity from the Holy See. Its history is the effort to make two commitments durable at once: communion and obedience within the Church’s ordinary structures, and a corporate priestly life centered on the Roman liturgical books in force in 1962. Its growth depended on seminaries, common life, general government, and invitations from diocesan bishops. Its recurrent crises arose where universal liturgical discipline, local episcopal authority, Roman supervision, and the Fraternity’s approved patrimony met.
 
 The object is therefore an institution, not a preference. The FSSP trains and incardinates clergy, erects houses with episcopal consent, assigns members, conducts apostolates entrusted by bishops, and governs itself under constitutions approved by the Holy See. Its older liturgical use is at the center of that life, but it is not the whole canonical form. A society of apostolic life is constituted by persons, mission, common life, proper law, and government; a faculty to use particular books does not by itself create any of those things.
 
@@ -606,6 +604,6 @@ Vatican News. [“Vatican Orders Apostolic Visitation.”](https://www.vaticanne
 
 Dawid Pietras, FSSP. [“The Rightful Autonomy of the Priestly Fraternity of Saint Peter (Can. 586, 732 CIC/83), Part I.”](https://doi.org/10.21697/pk.2026.69.1.07) *Prawo Kanoniczne* 69/1 (2026): 165–186. Open access, CC BY-ND 4.0; participant-canonist analysis used by paraphrase.
 
-**Last revised (UTC):** 2026-07-19T03:44:17Z
+**Last revised (UTC):** 2026-09-24T14:59:29Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
