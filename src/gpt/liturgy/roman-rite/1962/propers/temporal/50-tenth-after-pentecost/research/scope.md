@@ -173,3 +173,43 @@ SHA-256
 The reviewed full PDF, synthesis PDF, and canonical web edition were installed
 with exact byte identity to those candidates. This is internal source and
 production review, not official liturgical or ecclesiastical approval.
+
+## Other Masses and Communion English (2026-09-24)
+
+On 2026-09-24 the maintainer approved applying D11 and D12 of the liturgical
+commentators plan (guidance/liturgy/propers-three-documents.md, "Liturgical
+commentators" and "The formulary is a compilation") and the
+no-composed-English rule to this leaf. Reader-facing prose no longer names
+another Mass that shares or carries this formulary's texts. The facts stay
+here and in the element records:
+
+- Offertory: the 1962 Missal appoints the same `Ad te, Domine, levavi animam
+  meam` at the Offertory of the First Sunday of Advent, and the Third Sunday
+  after Pentecost uses Ps 24:1 as the psalm verse of an Introit drawn chiefly
+  from vv. 16 and 18 (`offertory-redevelopment-2026-07-28.md`).
+- Collect: the 1970 and 2002 Roman Missals assign the prayer, with `gratiam`,
+  to the Twenty-sixth Sunday in Ordinary Time (`collect-redevelopment.md`;
+  binding `passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xxvi-per-annum`).
+- Communion: Hesbert's *Antiphonale Missarum Sextuplex* no. 38 is Thursday
+  after Ash Wednesday (`communion-redevelopment.md`). The expansive study keeps
+  the chant's second early assignment without naming that Mass.
+- Gospel: Anthony of Padua's sermon stands under his historically numbered
+  Eleventh Sunday after Pentecost, with another Introit and Epistle; the
+  Byzantine Sunday of the Publican and Pharisee opens the Triodion
+  (`gospel-redevelopment.md`). The study cites Anthony and the Byzantine texts
+  only for what they say of Luke 18.
+- The expansive study keeps the history of this formulary's own orations in
+  the sacramentaries (Collect, Secret, Postcommunion); the synthesis edition
+  carries none of it.
+
+The Communion commentary's English line, an adaptation of the Douay verse,
+was withdrawn; the study now quotes the Douay's corresponding words and states
+the English gap for the antiphon's form, as the appointed-text sheet does.
+
+References completed on the same date from the element records and bindings:
+Cassiodorus (PL 70 via Latin Wikisource for Pss 16 and 24, Corpus Corporum for
+Ps 64, PL 70 for Ps 50), Bellarmine (O'Sullivan, Duffy, 1866), Tertullian
+(Holmes, ANF 3, 1885), Jerome, *Letter 106* §8 (Metlen, JEGP 36, 1937),
+Mohlberg-Eizenhöfer-Siffrin (1960), and the *Catechism* (USCCB, 2019). The
+element records give no edition for Hesbert's *Antiphonale Missarum Sextuplex*
+or for the *Rule of Benedict* ch. 7, which are cited by work and locus only.

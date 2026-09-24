@@ -6,7 +6,7 @@
 
 *DOMINICA DECIMA post Pentecosten*
 
-TLM propers: mercy, diverse gifts, humble prayer, entrusted offering, and sustaining help
+1962 Roman Missal propers: mercy, diverse gifts, humble prayer, entrusted offering, and sustaining help
 
 | **Proper** | **1962 Missal text / reference** | **Scriptural axis** | **Connection** |
 |:-----------|:-----------------|:-------------|:-----------------------|
@@ -64,7 +64,7 @@ TLM propers: mercy, diverse gifts, humble prayer, entrusted offering, and sustai
 
 4.  **Mercy remains active:** offering and Communion deepen dependence.
 
-These four conversions are a reading of the whole Mass, not four stops in the order of the propers. The chants, lessons, and orations restate and qualify one another until the assembly’s cry, gifts, judgment, offering, and hope can no longer be possessed as evidence of superiority, and the cited witnesses ground each conversion.
+Read as four conversions rather than four stops in the order of the propers, the chants, lessons, and orations restate and qualify one another until the assembly’s cry, gifts, judgment, offering, and hope can no longer be possessed as evidence of superiority, and the cited witnesses ground each conversion.
 
 ### The end of self-certified standing
 
@@ -189,7 +189,7 @@ The Latin below is collated against the 1962 Vatican typical Missal, printed pp.
 
 > **Douay–Rheims/Challoner, Ps. 50:21**
 >
-> Then shalt thou accept the sacrifice of justice, oblations and whole burnt offerings: then shall they lay calves upon thy altar.
+> Then shalt thou accept the sacrifice of justice, oblations and whole burnt offerings: then shall they lay calves upon thy altar. The English prints the complete source verse; the chant omits both “then” clauses and the calves and adds *Domine*, and the Douay has no English for the antiphon’s form.
 
 ### Postcommunion (*Postcomm.*)
 
@@ -219,9 +219,9 @@ The Collect advances in three movements. First it confesses what divine power is
 
 Thomas Aquinas receives the prayer’s axiom directly in the *Summa theologiae*. He teaches that mercy is especially attributed to God, that it belongs to supreme power, and that its effect extends to participation in the divine good (II–II, q. 30, a. 4, ad 3). His commentary on the *Sentences* supplies the more juridically precise account: God can remit punishment and give beyond what is owed by his own authority, subject to no higher power (IV, d. 46, q. 2, a. 1, qc. 3, ad 1). Thomas adds an important limit there: considered in the substance of pardoning, the act manifests goodness above all. The prayer therefore does not oppose power and goodness; it identifies merciful restoration as the characteristic exercise of power that is wholly God’s.
 
-The transmission record differs from the 1962 text in wording and assignment. The Old Gelasian, Book III, section VI, no. 1198, transmits the prayer within an *Item alia missa* set, but reads *gratiam* where the 1962 Missal reads *misericordiam*. Checked transmission records, not Deshusses’s protected edition itself, report the same three-prayer set at SupG 1159–1161 under *Dominica XI post octabas Pentecosten*. It is supplementary material, not the core Hadrianum. These witnesses establish transmission, a textual variant, and a historically different assignment. They do not prove personal authorship by Gelasius or Gregory, the date of composition, or a common origin for every element of the later 1962 formulary.
+The transmission record differs from the 1962 text in wording and assignment. The Old Gelasian, Book III, section VI, no. 1198, transmits the prayer within an *Item alia missa* set, but reads *gratiam* where the 1962 Missal reads *misericordiam*. Checked transmission records, not Deshusses’s protected edition itself, report the same three-prayer set at SupG 1159–1161 under *Dominica XI post octabas Pentecosten*. It is supplementary material, not the core Hadrianum. These witnesses establish transmission, a textual variant, and a historically different assignment. They do not prove personal authorship by Gelasius or Gregory or the date of composition.
 
-Later Roman reception keeps the theological claim alive without explaining its original placement on this Sunday. The postconciliar Missal assigns the Collect, again with *gratiam*, to the Twenty-sixth Sunday in Ordinary Time. The *Catechism of the Catholic Church* 270 and 277 connects this merciful omnipotence with forgiveness, conversion from sin, and restoration to friendship by grace. *Misericordiae vultus* 6 likewise cites Thomas and the ancient prayer to insist that mercy is not weakness but the disclosure of divine omnipotence. These receptions carry the axiom with authority but leave its place in the 1962 sequence unexplained.
+Later Roman reception keeps the theological claim alive. The *Catechism of the Catholic Church* 270 and 277 connects this merciful omnipotence with forgiveness, conversion from sin, and restoration to friendship by grace. *Misericordiae vultus* 6 likewise cites Thomas and the ancient prayer to insist that mercy is not weakness but the disclosure of divine omnipotence. These receptions carry the axiom with authority.
 
 ### Charisms ordered to confession, service, and the common good (*Ep.*)
 
@@ -270,9 +270,9 @@ Three Greek details sharpen rather than settle the reading. The phrase *pros hea
 
 Tertullian reads the scene against Marcion to insist that the same Creator who condemns pride justifies the humble petitioner (*Adversus Marcionem* IV.36). Augustine, *Sermon 115.2–3* (the same sermon numbered 65 in an older English series), distinguishes the Pharisee’s self-praise and accusation from the publican’s confession and pardon; his anti-Pelagian application does not make spoken self-accusation automatically efficacious. Cyril’s *Sermon 120 on Luke* likewise contrasts boastful comparison with embodied confession and leaves justification as God’s act.
 
-Later reception develops different consequences without collapsing them. Chrysostom uses the parable at *On the Statues* 3.8 to show that fasting without the accompanying life of virtue is fruitless, and at 3.13 to show that even a true charge does not license detraction. The *Rule of Benedict* 7 places the publican’s lowered gaze and breast-beating near the summit of humility, but does not make posture self-validating. Anthony of Padua’s historically numbered Eleventh Sunday after Pentecost interprets Luke 18 with a different Introit and Epistle, so his sermon speaks to the Gospel, not to this complete 1962 formulary.
+Later reception develops different consequences without collapsing them. Chrysostom uses the parable at *On the Statues* 3.8 to show that fasting without the accompanying life of virtue is fruitless, and at 3.13 to show that even a true charge does not license detraction. The *Rule of Benedict* 7 places the publican’s lowered gaze and breast-beating near the summit of humility, but does not make posture self-validating. Anthony of Padua’s sermon on Luke 18 expands the publican’s posture into penitential instruction.
 
-The Byzantine Sunday of the Publican and Pharisee gives the parable a distinct liturgical afterlife at the opening of the Triodion and preparation for Lent. Its liturgical use praises humility while refusing the inference that good works themselves are evil. This reception neither derives from nor explains the Roman Sunday. No checked source established the familiar Jesus Prayer as a simple historical development from Luke 18:13; the two share wording, not a demonstrated origin.
+Byzantine liturgical reception also praises the publican’s humility while refusing the inference that good works themselves are evil. No checked source established the familiar Jesus Prayer as a simple historical development from Luke 18:13; the two share wording, not a demonstrated origin.
 
 ### The soul lifted by trust and waiting (*Off.*)
 
@@ -284,23 +284,23 @@ Cassiodorus first describes the Church’s plea not to appear contemptible befor
 
 Heard immediately after Luke’s parable, the chant makes a precise distinction possible. The publican refuses the Pharisee’s upward comparison and will not raise his eyes, yet his prayer is wholly directed to God; the psalmist lifts the soul, yet continues to wait, learn, and ask forgiveness. Lowered eyes and a lifted soul are thus textually compatible because the decisive contrast is not down versus up but self-trust versus Godward dependence. The relation is demonstrable in the appointed words, though Luke does not gloss the psalm.
 
-The 1962 Missal appoints the same *Ad te, Domine, levavi animam meam* at the Offertory of the First Sunday of Advent. There the chant accompanies the Church’s liturgical beginning and expectation; here it follows the publican’s plea and precedes a Secret asking that offered gifts become remedies. The verified reuse shows that Roman reception can place one psalmic act of trust in more than one formulary. The Third Sunday after Pentecost also returns to the opening as the psalm verse of an Introit formed chiefly from vv. 16 and 18, placing trust beside loneliness, affliction, sin, and mercy. These reuses do not make the Tenth Sunday an Advent celebration, establish which use came first, or supply a historical explanation for any assignment.
-
 ### The Secret: an offering God makes medicinal (*Sec.*)
 
 The Secret’s grammar assigns both the offering and its saving effect to God. Dedicated sacrifices are rendered to him because he granted them to be brought for the honor of his name; he is then petitioned to make those same gifts remedies for the offerers. Gift and giver remain distinct, but neither the offering nor its fruit is self-authenticating. The prayer does not say that an offering earns mercy, specify the remedy’s mode, or make sacrifice a merely subjective devotion.
 
 Nikolaus Gihr quotes the complete Secret in his account of the Mass’s value and efficacy. He uses its movement—honor rendered to God and remedy granted to human beings—as theological evidence for the sacrificial act’s Godward and human fruits. Gihr quotes the prayer directly but does not comment on it word by word. Gihr’s surrounding fourfold account of praise, thanksgiving, propitiation, and petition is his own; the Secret does not enumerate those four categories.
 
-The prayer is also older than its 1962 placement. Old Gelasian Book III, section VI transmits it in the same three-prayer set as the Collect and Postcommunion; the Gregorian supplement, SupG 1159–1161, later transmits that set under a historically offset post-Pentecost Sunday heading. These witnesses establish transmission, not authorship by Gelasius or Gregory, the date of composition, or the reason for the modern Sunday assignment. No close ancient, patristic, or Doctoral commentary on the Secret was located in the checked corpus.
+The prayer is also older than its 1962 placement. Old Gelasian Book III, section VI transmits it in the same three-prayer set as the Collect and Postcommunion; the Gregorian supplement, SupG 1159–1161, later transmits that set under a historically offset post-Pentecost Sunday heading. These witnesses establish transmission, not authorship by Gelasius or Gregory or the date of composition. No close ancient, patristic, or Doctoral commentary on the Secret was located in the checked corpus.
 
 ### Sacrifice received, not self-certified (*Comm.*)
 
-The Communion adapts rather than reproduces Psalm 50:21. It omits both of the source verse’s “then” clauses and the calves, retains sacrifice, oblations, holocausts, and God’s altar, and adds the vocative *Dómine*. Its English therefore follows the appointed chant, not the omitted biblical wording:
+The Communion adapts rather than reproduces Psalm 50:21. It omits both of the source verse’s “then” clauses and the calves, retains sacrifice, oblations, holocausts, and God’s altar, and adds the vocative *Dómine*. The Douay–Rheims corresponds to the antiphon only in part:
 
 > *Acceptábis sacrifícium iustítiæ, oblatiónes et holocáusta, super altáre tuum, Dómine.*
 >
-> *Thou shalt accept a sacrifice of justice, oblations and whole burnt offerings, upon thy altar, O Lord.*
+> Douay–Rheims, Ps. 50:21: “… shalt thou accept the sacrifice of justice, oblations and whole burnt offerings … upon thy altar.”
+
+The Douay has no English for the antiphon’s form: its verse keeps both “then” clauses and the calves and has no vocative.
 
 The antiphon’s brevity does not sever it from the Miserere. Confession, cleansing, the contrite and humbled heart, God’s gracious dealing with Zion, and the rebuilding of Jerusalem lead to the psalm’s expectation of accepted sacrifice. The word *acceptábis* keeps the decisive judgment with God: neither the Pharisee’s inventory nor the worshipper’s offering certifies itself.
 
@@ -308,7 +308,7 @@ Augustine comments on the source verse in *Enarratio in Psalmum 50* §23, not §
 
 Aquinas, commenting directly on the same final verse, preserves more than one referent. He relates it to Christ’s self-offering and those who offer themselves for Christ; to works of justice and mercy and the complete self-gift of the perfect; and to praise in the heavenly Jerusalem. Theodoret reads the close historically instead, taking it as prayer for the city’s restored prosperity, rebuilt walls, and worship according to the Law. Both comment on the psalm rather than the Roman antiphon, and neither makes the verse a direct commentary on Eucharistic Communion. Its placement during Communion, not these exegetes, sets the verse beside the Eucharist.
 
-The text also appears to have a Mass-chant life wider than this Sunday. Hesbert’s catalog, a bibliographic report unverified against the chant manuscripts themselves, lists the Communion at both Thursday after Ash Wednesday (no. 38) and the Tenth Sunday after Pentecost (no. 182) across several early witnesses. Uncollated, that report points to more than one early medieval Mass assignment; it does not establish which assignment came first, why either was made, or the age of the melody in its later Mode IV form.
+The text also appears to have a Mass-chant life wider than this Sunday. Hesbert’s catalog, a bibliographic report unverified against the chant manuscripts themselves, lists the Communion at the Tenth Sunday after Pentecost (no. 182) across several early witnesses and at one other early Mass. Uncollated, that report points to more than one early medieval Mass assignment; it does not establish which assignment came first or the age of the melody in its later Mode IV form.
 
 ### Sacramental renewal sustained by divine help (*Postcomm.*)
 
@@ -316,7 +316,7 @@ The Postcommunion asks that God not leave without his aids those whom he continu
 
 Direct liturgical commentators develop this compact petition in distinct ways. Dom Lucien Fromage, continuing Guéranger’s *The Liturgical Year*, says that the sacrament repairs the losses caused by human misery, then identifies the requested aids as further graces needed to preserve and increase the soul’s received treasure. Schuster compares bodily food’s restoration of spent forces with spiritual nourishment’s repair of the soul’s losses; he treats continuing help as necessary for eternal life and for the preservation of Eucharistic fruit. Miguel Nicolau, treating Communion and the life of grace, cites the prayer while explaining Eucharistic restoration of spiritual strength diminished by venial sin and weakness. Each reading is its author’s theology of the oration; *reparare* alone supplies none of these meanings.
 
-The prayer has a longer and more mobile history than its present Sunday placement. The Old Gelasian prints it twice in adjacent formularies (III.V, no. 1197, and III.VI, no. 1200), without assigning either occurrence to the Tenth Sunday after Pentecost. Mohlberg’s diplomatic text has *distituas* in both occurrences; Wilson normalizes *destituas* and judges the first occurrence probably inserted through scribal error. La Fontaine’s modern synthesis reports later Gellone/Gregorian-supplement, Vilabertran, Alemannic, and Ambrosian assignments; their detailed variants and calendar assignments rest on his report rather than on all the underlying editions. The evidence supports durable, portable transmission, not authorship, an original date, or the reason for the Roman prayer’s eventual Pentecost-X location.
+The prayer has a longer and more mobile history than its present Sunday placement. The Old Gelasian prints it twice in adjacent formularies (III.V, no. 1197, and III.VI, no. 1200), without assigning either occurrence to the Tenth Sunday after Pentecost. Mohlberg’s diplomatic text has *distituas* in both occurrences; Wilson normalizes *destituas* and judges the first occurrence probably inserted through scribal error. La Fontaine’s modern synthesis reports later Gellone/Gregorian-supplement, Vilabertran, Alemannic, and Ambrosian assignments; their detailed variants and calendar assignments rest on his report rather than on all the underlying editions. The evidence supports durable, portable transmission, not authorship or an original date.
 
 ## Comparative Reception Dossier
 
@@ -352,7 +352,7 @@ The breadth of reception also exposes what the passage does not settle. It does 
 
 Luke supplies the audience and vice before the parable: some trust in themselves that they are just and despise the rest. The Pharisee’s acts are not invented crimes. Fasting and tithing can be genuine disciplines; their placement inside comparison makes them a ground of self-reliance and contempt. The publican supplies no counter-inventory. Distance, lowered eyes, the struck breast, and the request for propitiating mercy form a petition, but God’s verdict—not the gestures taken by themselves—is decisive.
 
-Tertullian uses the contrast against Marcion to defend the continuity of humility and judgment rather than to condemn Israel. Augustine’s *Sermon* 115 contrasts self-praise joined to accusation with confession that opens toward pardon. Cyril of Alexandria observes how the Pharisee’s comparison corrupts what might otherwise have been praiseworthy. Chrysostom deploys the text twice in one homily: first to show that fasting without its fitting moral fruits is sterile, and later to show that a true allegation does not grant permission to revile. Anthony of Padua expands the publican’s posture into penitential instruction in a different Sunday arrangement.
+Tertullian uses the contrast against Marcion to defend the continuity of humility and judgment rather than to condemn Israel. Augustine’s *Sermon* 115 contrasts self-praise joined to accusation with confession that opens toward pardon. Cyril of Alexandria observes how the Pharisee’s comparison corrupts what might otherwise have been praiseworthy. Chrysostom deploys the text twice in one homily: first to show that fasting without its fitting moral fruits is sterile, and later to show that a true allegation does not grant permission to revile. Anthony of Padua expands the publican’s posture into penitential instruction.
 
 Comparison discloses a shared center and real diversity. Augustine emphasizes grace and pardon; Cyril analyzes boastful comparison; Chrysostom tests fasting and speech; Anthony develops posture and penitence. The parable is not an anti-Jewish type, a denunciation of disciplined religion, a romanticization of wrongdoing, or a technique for manufacturing humility. Its target is the attempt to use religious performance and another person’s degradation as proof of one’s standing before God.
 
@@ -364,7 +364,7 @@ That plurality helps interpret the orations. The Secret asks that already dedica
 
 The whole sequence therefore corrects two opposite errors. One would make interior humility a substitute for ecclesial worship and concrete service. The other would make worship, gifts, or disciplines evidence that acceptance has already been secured. The Mass retains cry, running, charism, fasting, tithing, offering, sacrament, and aid, but orders all of them beneath mercy received from God and toward benefit beyond the self.
 
-The witnesses of this dossier give different things. The Fathers’ expositions of the psalms and of Luke give ecclesial, Christological, ascetical, and moral readings at identifiable loci, without fixing one exclusive historical sense or licensing anyone to assign the psalms’ enemies to contemporaries. Aquinas and the medieval commentators analyze mercy, prayer, charism, sacrifice, and ordered agency, and no scholastic distinction exhausts the texts. The sacramentaries and Missals give wording, variants, sequence, assignment, and liturgical function; a book’s traditional name does not establish its prayers’ authorship, and a prayer’s presence in a book does not show its local performance. *Lumen gentium*, *Apostolicam actuositatem*, the *Catechism*, and *Misericordiae vultus* order charisms to communion and make mercy visible in the Church without replacing the appointed texts, rubrics, or historical witnesses.
+The witnesses of this dossier give different things. The Fathers’ expositions of the psalms and of Luke give ecclesial, Christological, ascetical, and moral readings at identifiable loci, without fixing one exclusive historical sense or licensing anyone to assign the psalms’ enemies to contemporaries. Aquinas and the medieval commentators analyze mercy, prayer, charism, sacrifice, and ordered agency, without showing that any scholastic distinction exhausts the texts. The sacramentaries and Missals give wording, variants, sequence, assignment, and liturgical function; a book’s traditional name does not establish its prayers’ authorship, and a prayer’s presence in a book does not show its local performance. *Lumen gentium*, *Apostolicam actuositatem*, the *Catechism*, and *Misericordiae vultus* order charisms to communion and make mercy visible in the Church without replacing the appointed texts, rubrics, or historical witnesses.
 
 ## Source-Grounded Synthesis Across the Propers
 
@@ -420,9 +420,13 @@ The result is ecclesial as well as personal. The common-benefit criterion, Zion�
 
 - H. A. Wilson, ed., [*The Gelasian Sacramentary*](https://archive.org/details/gelasiansacrame00gelagoog) (Oxford, 1894), Book III, sections V–VI, pp. 227–228; Leo La Fontaine, [*The Historical Deveopment \[sic\] of the Postcommunion Collects*](https://scholar.csl.edu/stm/370/) (1967), p. 59, for the bounded modern transmission synthesis. Deshusses’s SupG numbering is reported through checked transmission records, not represented as direct inspection of his protected edition.
 
+- Leo Cunibert Mohlberg, Leo Eizenhöfer, and Petrus Siffrin, eds., [*Liber sacramentorum Romanae aeclesiae ordinis anni circuli (Sacramentarium Gelasianum)*](https://archive.org/details/mohlberg1960libersacramentorum), Rerum Ecclesiasticarum Documenta, Series Maior, Fontes IV (Rome: Herder, 1960), nos. 1197 and 1200, pp. 178–179.
+
 - St. Augustine, [*Exposition on Psalm 55*](https://www.newadvent.org/fathers/1801055.htm), §§16–19, 23–24; [Psalm 17](https://www.newadvent.org/fathers/1801017.htm), §§2, 8; [Psalm 65](https://www.newadvent.org/fathers/1801065.htm), §§3–5; [Psalm 25](https://www.newadvent.org/fathers/1801025.htm), §§1–11, 15–22; [Psalm 51](https://www.newadvent.org/fathers/1801051.htm), §§21–23.
 
 - Theodoret of Cyrus, *Interpretatio in Psalmos*, PG 80, cols. 968–969, 1033–1037, 1252–1256, 1277–1284, and 1345–1349; direct Greek loci checked.
+
+- Cassiodorus, *Expositio Psalmorum*, Psalms 16 (§§8, 14), 24, 50, and 64, Latin text of PL 70: Psalms [16](https://la.wikisource.org/wiki/Expositio_in_Psalterium/16) and [24](https://la.wikisource.org/wiki/Expositio_in_Psalterium/24) in the Latin Wikisource transcription, Psalm [64](https://www.monumenta.ch/latein/text.php?rumpfid=Cassiodorus%2C+Expositio+in+Psalterium%2C+2%2C+++64) in the Corpus Corporum text.
 
 - St. John Chrysostom, [*Homily 29 on First Corinthians*](https://www.newadvent.org/fathers/220129.htm); [*Homily 3 on the Statues*](https://www.newadvent.org/fathers/190103.htm), §§8, 13.
 
@@ -430,24 +434,36 @@ The result is ecclesial as well as personal. The common-benefit criterion, Zion�
 
 - St. Thomas Aquinas, [*Super I ad Corinthios* XII](https://www.corpusthomisticum.org/c1r.html); [*Summa theologiae* II–II, q. 30, a. 4, ad 3](https://aquinas.cc/la/en/~ST.II-II.Q30.A4); *Super Sententias* IV, d. 46, q. 2, a. 1, qc. 3, ad 1; *Super Psalmos* 16, nos. 1, 3; 24, nos. 1–3; 50, no. 87290.
 
+- St. Robert Bellarmine, [*Commentary on the Book of Psalms*](https://upload.wikimedia.org/wikipedia/commons/9/9d/Commentaryonbook0000bell.pdf), trans. John O’Sullivan (Dublin and London: James Duffy, 1866), Psalms 24, 50, 54, and 64, scan pp. 68–72, 165–171, 174–178, and 197–200.
+
+- St. Jerome, [*Letter 106 to Sunnia and Frithila*](https://www.tertullian.org/fathers/jerome_letter_106_to_sunnia_and_frithila_02_trans.htm), §8, trans. Michael Metlen, *Journal of English and Germanic Philology* 36 (1937): 515–542; facts only are reported.
+
 - Nikolaus Gihr, [*The Holy Sacrifice of the Mass*](https://archive.org/details/TheHolySacrificeOfTheMass), 2nd ed. (St. Louis: B. Herder, 1902), p. 134 n. 2; direct reception of the Secret.
 
 - The continuation of Prosper Guéranger, [*The Liturgical Year*](https://archive.org/details/V11TheLiturgicalYear/page/n303/mode/2up) (Dom Lucien Fromage), vol. XI (Stanbrook Abbey; London: Burns & Oates, 1909), p. 271; Ildefonso Schuster, [*Liber Sacramentorum*](https://archive.org/details/LiberSacramentorum), vol. III (London, 1927), p. 123; Miguel Nicolau, [“La comunión y la vida de la gracia,”](https://repositorio.sandamaso.es/bitstream/123456789/10164/1/RET-58-1%20%282%29.pdf) *Revista Española de Teología* 18 (1958): 35–59, at 42; direct reception of the Postcommunion.
 
 - Leo La Fontaine, [*The Historical Deveopment \[sic\] of the Postcommunion Collects*](https://scholar.csl.edu/stm/370/) (S.T.M. thesis, Concordia Seminary, 1967), p. 59; transmission history.
 
+- René-Jean Hesbert, *Antiphonale Missarum Sextuplex*, nos. 38 and 182; catalog report, not collated against the manuscripts.
+
 - St. Augustine, [*Sermon 115*](https://www.augustinus.it/latino/discorsi/discorso_150_testo.htm), §§2–3 (older English New Testament-series [Sermon 65](https://www.newadvent.org/fathers/160365.htm)); St. Cyril of Alexandria, [*Commentary on Luke*, Sermon 120](https://www.tertullian.org/fathers/cyril_on_luke_11_sermons_110_123.htm).
 
-- St. Anthony of Padua, [*Eleventh Sunday after Pentecost*](https://www.santantonio.org/en/node/798), §§3–14; its Sunday numbering and accompanying propers differ from the 1962 formulary.
+- Tertullian, [*Against Marcion*](https://www.newadvent.org/fathers/03124.htm) IV.36, trans. Peter Holmes, *Ante-Nicene Fathers* 3 (1885).
+
+- St. Anthony of Padua, [*Eleventh Sunday after Pentecost*](https://www.santantonio.org/en/node/798), §§3–14, on Luke 18:9–14.
+
+- *The Rule of St. Benedict*, ch. 7.
 
 - Greek Orthodox Archdiocese, [Triodion orientation](https://www.goarch.org/triodion); Orthodox Church in America, [Sunday of the Publican and Pharisee](https://www.oca.org/liturgics/outlines/publican-and-the-pharisee-with-leavetaking-of-the-meeting-of-the-lord); distinct Byzantine reception.
 
 - Second Vatican Council, [*Lumen gentium* 12](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html); [*Apostolicam actuositatem* 3](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19651118_apostolicam-actuositatem_en.html); Pope Francis, [*Misericordiae vultus* 6](https://www.vatican.va/content/francesco/en/bulls/documents/papa-francesco_bolla_20150411_misericordiae-vultus.html).
 
+- *Catechism of the Catholic Church*, 2nd ed. (Washington, DC: United States Conference of Catholic Bishops, 2019), §§270, 277.
+
 - Peter J. Green, [“Diversities of Gifts, but the Same Spirit,”](https://doi.org/10.1046/j.1467-9884.2003.02060.x) *JRSS Series D* 52.4 (2003): 423–438; Robert Burns, [“Holy Willie’s Prayer,”](https://www.gutenberg.org/ebooks/18500) composed 1785, in James Cunningham, ed., *The Complete Works of Robert Burns*.
 
 - Martin Luther King Jr., [“Pride Versus Humility: The Parable of the Pharisee and the Publican,”](https://kinginstitute.stanford.edu/king-papers/documents/pride-versus-humility-parable-pharisee-and-publican-sermon-dexter-avenue) Dexter Avenue sermon manuscript, probably 25 September 1955.
 
-**Last revised (UTC):** 2026-09-24T15:35:15Z
+**Last revised (UTC):** 2026-09-24T17:03:41Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
