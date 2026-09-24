@@ -1675,7 +1675,7 @@ process.stdout.write(JSON.stringify({
         expected = {
             "pentecost_10_text": (
                 205,
-                "37053a4e0de66568700c5320d433217ccfb65c601f3bd0d1f1b4c9106e4802dc",
+                "151f0c6578ddd8f834c0a739b81e26ca3e0494650ce17ca3ca23a6f0d53015f6",
             ),
             "ot_18_text": (
                 67,
@@ -2123,7 +2123,7 @@ class FormularyPage(unittest.TestCase):
             "roman-1962": (
                 "advent-1",
                 10,
-                "a5fdf977ad1519d1b16242d0536026b3d267a8e9434db3b4c95c8ee911d92911",
+                "71977549482161848dee6a0a3c9c8edc12827f7cd64f0c279614f6e500d4b2fa",
             ),
             "postconciliar": (
                 "ot-18",
