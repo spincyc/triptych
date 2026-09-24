@@ -248,7 +248,7 @@ Israel asks “What is this?”; the Johannine crowd asks what work and sign it 
 
 | **Field** | **Resolved liturgical instance** |
 |:----------------|:-------------------------------------------------|
-| Formula | ‘PC-S44-B‘, Eighteenth Sunday in Ordinary Time, Year B. |
+| Formula | `PC-S44-B`, Eighteenth Sunday in Ordinary Time, Year B. |
 | Missal owner | ‘temporal/shared/ordinary-time/weeks/18/propers/verified.md‘. |
 | Lectionary | U.S. *Lectionary for Mass*, Second Typical Edition, Volume I, no. 113. |
 | Cycle | Recurring Year B reference. The official 4 August 2024 occurrence page was checked as a structural witness; no civil-date occurrence is claimed by this leaf. |
@@ -293,6 +293,6 @@ The reception search concentrated on direct exposition: Chrysostom’s *Homilies
 
 - GIRM 46–90, 352–367; *General Introduction to the Lectionary* 65–69, 78–91, 93–110.
 
-**Last revised (UTC):** 2026-09-24T18:04:15Z
+**Last revised (UTC):** 2026-09-24T19:07:20Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
