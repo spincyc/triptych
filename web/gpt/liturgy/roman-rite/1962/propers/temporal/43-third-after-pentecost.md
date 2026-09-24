@@ -295,8 +295,6 @@ The Communion repeats Luke 15:10 rather than choosing an unrelated sacramental v
 
 - Dom Gaspar Lefebvre, O.S.B., *Daily Missal with Vespers for Sundays and Feasts* (St. Andrew’s Abbey / E. M. Lohmann Co., 1925), p. 1062, [scan](https://archive.ccwatershed.org/media/pdfs/21/02/16/05-35-23_0.pdf); governing historical English witness only for the Secret; accessed 2026-07-14. United States public domain by publication date; no current approval or worldwide status is claimed.
 
-- Internet Archive, [secondary image witness](https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin) and [OCR locating aid](https://archive.org/download/MissaleRomanum1962RomanMissalColorLatin/Missale-Romanum-1962-Roman-Missal-color-latin_djvu.txt); neither governs a reading. Witness differences and checksums: `propers/verified.md`. Secret index: [Corpus Orationum](https://usuarium.elte.hu/corpusorationum/5085).
-
 - Holy Scripture: Psalms 7, 9–10, 24, and 54 in full; Luke 9:51–19:27, especially 13–15; 1 Peter in full, especially 1:1, 5:1–14. Psalm numbering follows the Vulgate and missal.
 
 - St. Cyril of Alexandria, *Commentary on Luke*, Homily 106, [R. Payne Smith English](https://www.tertullian.org/fathers/cyril_on_luke_10_sermons_99_109.htm); direct exegesis, paraphrased; accessed 2026-07-10.
@@ -331,6 +329,6 @@ The Communion repeats Luke 15:10 rather than choosing an unrelated sacramental v
 
 - Septuagint/Vulgate titles and chapter context: [Psalm 7](https://www.newadvent.org/bible/psa007.htm), [Psalm 9/10](https://www.newadvent.org/bible/psa009.htm), [Psalm 24 (modern 25)](https://www.newadvent.org/bible/psa024.htm), [Psalm 54 (modern 55)](https://www.newadvent.org/bible/psa054.htm), [Luke 15](https://www.newadvent.org/bible/luk015.htm), and [1 Peter 5](https://www.newadvent.org/bible/1pe005.htm); contextual transcription aid, consulted 2026-07-10.
 
-**Last revised (UTC):** 2026-09-24T16:47:15Z
+**Last revised (UTC):** 2026-09-24T18:45:21Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
