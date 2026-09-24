@@ -56,11 +56,11 @@ PC-S40-A
 
 ## The Propers: Themes and Movement
 
-> **Governing account**
+> **Patience that rests on mastery**
 >
 > The correlated strand joins Wisdom’s lenient sovereign to the householder who refuses a destructive early purge: patience rests on mastery and remains ordered to judgment. Romans adds a distinct interior strand in which the Spirit helps weak prayer, while the Prayer over the Offerings, Communion alternatives, and final prayer gather diverse gifts into the one sacrifice and ask that heavenly mysteries carry the people into new life.
 
-> **Four-stage movement at a glance**
+> **Grace, patience, prayer, sacrifice**
 >
 > **1. Sustained under grace — Entrance; Collect.** God sustains the assembly and increases hope, faith, and charity.
 >
@@ -105,7 +105,7 @@ Romans places this patience within prayer. Human weakness is acknowledged, and t
 
 Psalm 54’s confession of sustaining help is not cheerful detachment from danger. The full psalm knows terror, violent city life, and betrayed friendship. Appointed at the Entrance, its trust is costly: God upholds the speaker who cannot secure the world. The accompanying resolve to offer and praise makes worship response rather than leverage.
 
-Augustine’s exposition follows the Vulgate/LXX Psalm 53 and locates the help “within,” in the conscience formed toward God rather than in visible success. He then reads the promised voluntary sacrifice as praise offered because God is good, not as flattery exchanged for prosperity. This is a useful ancient control on the adapted Entrance: divine support is present before danger is resolved, and praise is not a technique for forcing the desired outcome.
+Augustine’s exposition follows the Vulgate/LXX Psalm 53 and locates the help “within,” in the conscience formed toward God rather than in visible success. He then reads the promised voluntary sacrifice as praise offered because God is good, not as flattery exchanged for prosperity. His reading bears on the adapted Entrance: divine support is present before danger is resolved, and praise is not a technique for forcing the desired outcome.
 
 The Collect asks God to look favorably upon servants and multiply gifts of grace. Hope, faith, and charity are not interchangeable moods; they are theological virtues whose object and source are God. Vigilance over the commands therefore follows gift. The prayer avoids both self-generated virtue and grace imagined as exemption from obedience.
 
@@ -121,7 +121,7 @@ Salvian’s *On the Governance of God* II quotes Wisdom 12:15 and 18 while argui
 
 The sequence Augustine–Gregory–Salvian–Aquinas also exposes a limit. “Judge with clemency” cannot simply be copied from divine to human power without accounting for creaturely ignorance, office, law, and the duty to protect. The Fathers and Doctor offer analogies of unperturbed judgment and filial governance, not a warrant for officials to claim God’s mastery of every heart and consequence.
 
-The omitted verses matter. Lectionary 106 moves from the assertion that no higher tribunal audits God directly to the power–justice relation, leaving 12:14–15 outside proclamation. Commentary may know that wider argument but may not claim the assembly heard every step.
+The omitted verses matter. Lectionary 106 moves from the assertion that no higher tribunal audits God directly to the power–justice relation, leaving 12:14–15 outside proclamation. That wider argument informs the reading, but the assembly does not hear every step.
 
 Psalm 86 transforms teaching into prayer. The servant appeals to a God who is good, forgiving, merciful, gracious, patient, and faithful, while confessing that all nations will worship him. Mercy reaches the servant and all nations. The response asks the Judge described by Wisdom to act according to his revealed character.
 
@@ -141,23 +141,23 @@ Aquinas’s account of created causes within Providence, read with the Catechism
 
 ### The short and long Gospel paths (*Acclamation; long Gospel; short Gospel*)
 
-The acclamation adapts Matthew 11:25 and welcomes the Kingdom discourse through receptive littleness. It does not say that mature learning is evil; it blesses revelation as gift rather than possession. Its narrative source is earlier than Matthew 13 and should not be relocated to the house where Jesus later explains the weeds.
+The acclamation adapts Matthew 11:25 and welcomes the Kingdom discourse through receptive littleness. It does not say that mature learning is evil; it blesses revelation as gift rather than possession. Its narrative source is earlier than Matthew 13 and lies outside the house where Jesus later explains the weeds.
 
 Chrysostom’s *Homily 38 on Matthew* directly treats this thanksgiving. “Wise and prudent” names self-sufficient resistance, not the disciplines of learning, while “little ones” receive because they do not pretend to stand above gift. The adapted acclamation therefore asks for teachability before a parable that will frustrate premature certainty; it cannot be weaponized against scholarship, careful safeguarding, or the Church’s duty to discern.
 
 The short Gospel tells a complete parable. Good seed is sown; an enemy introduces weeds; servants discover the mixture and propose removal; the master forbids it because wheat could be uprooted; both remain until harvest, when distinct destinations are assigned. Patience protects the good while preserving separation at the proper time.
 
-Chrysostom’s *Homily 46 on Matthew* distinguishes this parable from the preceding sower. Here the seed has taken root and a counter-sowing imitates it; evil works by mixture and counterfeit rather than creation. He reads the prohibition against uprooting as a ban on killing persons for error and notes the danger that wheat will fall with the weeds. His homily still permits checking falsehood and defending truth. It therefore supports patient hope and the guide’s safeguarding control together, not an undifferentiated policy of institutional inaction.
+Chrysostom’s *Homily 46 on Matthew* distinguishes this parable from the preceding sower. Here the seed has taken root and a counter-sowing imitates it; evil works by mixture and counterfeit rather than creation. He reads the prohibition against uprooting as a ban on killing persons for error and notes the danger that wheat will fall with the weeds. His homily still permits checking falsehood and defending truth. It therefore supports both patient hope and safeguarding, not an undifferentiated policy of institutional inaction.
 
 The long form adds two different growth images. Mustard begins almost invisibly and becomes capacious; leaven works hidden within a large quantity of dough. Matthew then explains Jesus’ parabolic speech with an internal Psalm citation and moves from crowd to house. Jesus identifies sower, field, seed, enemy, harvest, and harvesters, and culminates in the removal of evil and the righteous shining in the Father’s kingdom.
 
 The same Chrysostom homily reads the apostles in the mustard and leaven: few and outwardly weak, they are entrusted with a word capable of reaching the whole. That missionary reception belongs only to the long branch. It also keeps “hidden growth” from becoming an excuse for doing nothing; the leaven is hidden because it is working.
 
-Origen’s surviving Greek *Commentary on Matthew*, Book X, begins its sustained treatment at the private explanation in 13:36. He notices the spatial movement from crowd to house and reads sleeping as failure to keep watch while hostile teaching is sown among good conceptions. Unlike a modern botanical decoding, his account is a spiritual-intellectual diagnosis of counterfeit doctrine. Its value is branch-specific: Origen cannot be cited as though a short-form congregation heard the house, enemy, devil, or interpretive key.
+Origen’s surviving Greek *Commentary on Matthew*, Book X, begins its sustained treatment at the private explanation in 13:36. He notices the spatial movement from crowd to house and reads sleeping as failure to keep watch while hostile teaching is sown among good conceptions. Unlike a modern botanical decoding, his account is a spiritual-intellectual diagnosis of counterfeit doctrine. His reading is branch-specific: a short-form congregation does not hear the house, enemy, devil, or interpretive key.
 
 Chrysostom’s *Homily 47* follows the explanation to judgment. The Son owns the field, sends the angels, removes causes of sin, and brings the righteous into the Father’s kingdom. Patience is thus bounded by eschatology: delayed separation is neither denial that evil is evil nor assurance that mixture is permanent.
 
-Those additions materially change what is heard. A short-form homily may use canonical context but should not announce that the congregation just heard the devil, angels, fiery furnace, or shining righteous named; it did not. Conversely, the short form’s delayed harvest must not be used to suppress the long form’s final judgment within Christian doctrine.
+Those additions materially change what is heard. A short-form congregation does not hear the devil, angels, fiery furnace, or shining righteous named, though canonical context still bears on the parable. Conversely, the short form’s delayed harvest does not suppress the long form’s final judgment within Christian doctrine.
 
 > **Patience is not a safeguarding policy**
 >
@@ -177,7 +177,7 @@ Augustine’s exposition of the Vulgate/LXX Psalm 110 reads God’s memorial and
 
 Alternative B takes Revelation 3:20 from the address to Laodicea. The familiar knock is not first a sentimental image of an isolated individual. The risen Christ rebukes a self-satisfied church, commands zeal and repentance, then promises shared table fellowship. At Communion this branch joins invitation to conversion; sacramental approach cannot be detached from hearing the one who knocks.
 
-Victorinus of Pettau’s surviving *Commentary on the Apocalypse* treats the Laodicean rebuke but does not furnish a separate exposition of verse 20 in the received English text. It can corroborate the corporate setting and summons from lukewarmness to repentance, not a detailed Eucharistic interpretation of the knock. Recording that limit matters: liturgical appointment makes the verse apt for Communion, while the ancient witness keeps its admonitory context visible.
+Victorinus of Pettau’s surviving *Commentary on the Apocalypse* treats the Laodicean rebuke but does not furnish a separate exposition of verse 20 in the received English text. It can corroborate the corporate setting and summons from lukewarmness to repentance, not a detailed Eucharistic interpretation of the knock. The limit matters: liturgical appointment makes the verse apt for Communion, while the ancient witness keeps its admonitory context visible.
 
 Ambrose supplies direct reception in *Exposition of the Christian Faith* IV.19–23. He hears Christ standing at the door of the soul and joins the image to the beloved’s knock in the Song and the Psalm’s gates lifted for the King of glory. Jerome, *Letter 22* 26, and Cassian, *Institutes* V.19–20, likewise use the verse to press prompt interior response rather than delayed conversion. These witnesses are not commentaries on a later Communion antiphon, but they close the exegetical gap: the knock was already received as Christ’s summons to open, enter fellowship, and overcome the habits that bar the door.
 
@@ -203,7 +203,7 @@ The two antiphons remain distinct textual paths: one proceeds through remembered
 
 **The one sacrifice interrupts the manufacture of scapegoats. (*First Reading; Gospel; Prayer over Offerings*)** Wisdom’s strength gives hope of repentance; the householder protects wheat from uprooting; the offering prayer gathers many sacrifices into one perfect sacrifice for all. Together they forbid purification that offers expendable persons to communal fear or unity. Separate reading misses Christ’s sacrifice judging scapegoating as false liturgy. Its fruit is a test for polarization, self-protection, and punitive spectacle that retains accountability. The exact conjunction was not located in the checked corpus. Not every sanction is scapegoating: discipline, restricted access, restitution, civil justice, and final judgment remain.
 
-**The Communion alternatives carry different clocks into new life. (*Communion A; Communion B; Prayer after Communion*)** Communion A, if appointed, remembers wonders and food; Communion B hears Christ’s present knock amid the Laodicean rebuke and anticipates table fellowship; the final prayer seeks new life. Compared without conflation, memory makes past fidelity operative while interruption breaks complacency. Separate reading misses how each governs “new.” Its fruit is examination of what must be remembered and what summons is resisted. No exact conjunction was located. The branches are mutually alternative and unresolved; memory is not nostalgia, interruption is not rejection of tradition, and neither selection may be inferred.
+**The Communion alternatives carry different clocks into new life. (*Communion A; Communion B; Prayer after Communion*)** Communion A, if appointed, remembers wonders and food; Communion B hears Christ’s present knock amid the Laodicean rebuke and anticipates table fellowship; the final prayer seeks new life. Compared as alternatives, memory makes past fidelity operative while interruption breaks complacency. Separate reading misses how each governs “new.” Its fruit is examination of what must be remembered and what summons is resisted. No exact conjunction was located. The branches are mutually alternative and unresolved; memory is not nostalgia, interruption is not rejection of tradition, and neither selection may be inferred.
 
 **Divine power refuses a single tempo. (*First Reading; Second Reading; long Gospel*)** Wisdom locates mastery in leniency; the long Gospel spans delayed harvest, hidden growth, and leaven; Romans places aid within weakness and groaning. Together, power restrains, waits, grows, permeates, and intercedes. Separate reading may call patience inactive, growth merely gradual, or groaning deficient; the conjunction rejects speed and spectacle as measures. Its fruit is leadership distinguishing urgency from panic and quiet efficacy from passivity. Tertullian and official weeds preaching are near analogues, not this pattern. Mustard and leaven are long-form only; delay may be vicious, and charity may require immediate protection.
 
@@ -283,6 +283,6 @@ The two antiphons remain distinct textual paths: one proceeds through remembered
 
 - Museum of Oxford, [“The Light of the World”](https://moxdigiexhibits.omeka.net/exhibits/show/oxford-re-formed/item/1110), catalogue record for William Holman Hunt’s 1851–1853 painting, its Revelation 3:20 source, symbolic door, reception, and image rights.
 
-**Last revised (UTC):** 2026-07-21T15:25:48Z
+**Last revised (UTC):** 2026-09-24T13:43:19Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
