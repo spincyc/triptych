@@ -191,12 +191,13 @@ class Production:
     which the tests hold the corpus to. Setting `TRIPTYCH_PRE_REWRITE_HISTORY`
     to such a clone reruns the derivation against it.
 
-    That run also found eleven values stale. The Ecclesiastical Latin units
-    whose recorded value is 01fcbfda2 were reinstalled by a8d1720b2 (598e6da6e
-    here) on a branch the backfill had not yet merged. The merge that brought
-    those bytes in, 22ba03d94 (83341def6 here), left the records naming the
-    earlier install. They are reported and not corrected; the pins say which
-    they are.
+    That run also found eleven values stale. Eleven Ecclesiastical Latin units
+    recorded 01fcbfda2 but had been reinstalled by a8d1720b2 (598e6da6e here)
+    on a branch the backfill had not yet merged. The merge that brought those
+    bytes in, 22ba03d94 (83341def6 here), left the records naming the earlier
+    install. On the maintainer's authority of 2026-09-23 those eleven now
+    record a8d1720b2. The value is not printed, so their PDFs are unchanged.
+    The pins keep both derivations.
 
     A leaf whose PDF is not installed has no install commit and records
     `unknown`; there is nothing to derive and nothing is invented. Nothing

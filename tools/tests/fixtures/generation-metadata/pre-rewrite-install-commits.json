@@ -13,7 +13,7 @@
       "role": "the commit that backfilled the recorded values; at_backfill is the derivation at it, and it reproduces every recorded value"
     }
   },
-  "finding": "Where at_backfill and latest_install differ, the recorded value is the backfill's and is stale at main. The eleven are Ecclesiastical Latin units that a8d1720b2 reinstalled on origin/main while the backfill ran on impl/proper-54-production; the merge 22ba03d94 (83341def6 here) brought those bytes in and left the records naming 01fcbfda2. Reported for a maintainer decision; the recorded metadata is not changed.",
+  "finding": "Where at_backfill and latest_install differ, the backfill recorded the earlier value, which is stale at main. The eleven are Ecclesiastical Latin units that a8d1720b2 reinstalled on origin/main while the backfill ran on impl/proper-54-production; the merge 22ba03d94 (83341def6 here) brought those bytes in and left the records naming 01fcbfda2. On 2026-09-23 the maintainer authorized correcting those eleven records to latest_install, and they now record it.",
   "commits": {
     "01fcbfda26917a4028d256f7a5d20a50cc847005": {
       "post_rewrite": "ff95f25d2dffaece42afb1a6a81de9a5cd92067f",
