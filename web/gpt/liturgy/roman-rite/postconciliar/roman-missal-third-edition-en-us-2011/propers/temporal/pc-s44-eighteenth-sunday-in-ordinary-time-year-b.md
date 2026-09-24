@@ -67,20 +67,20 @@ Ephesians is semi-continuous, not selected as a historical commentary on John. H
 
 The Eucharistic units keep agency in the order of grace. The offerings prayer asks that gifts be sanctified and then turns the petition upon the offerers: they themselves are to become an enduring gift. Communion B repeats John 6:35 and closes the most direct bread sequence. Communion A instead names the heavenly bread of Wisdom 16, with its delight and sweetness. The final prayer calls the sacrament a heavenly gift and asks protection and worthiness for eternal redemption. Either enacted path joins provision to transformation, but the antiphons remain alternatives.
 
-The movement can therefore be scanned in four stages:
+The movement therefore runs in four stages:
 
-| **Stage** | **Textual movement** | **Reception control** | **Limit** |
+| **Stage** | **Textual movement** | **Reception** | **Also true** |
 |:-----------|:----------------|:-----------------|:-------------------|
 | Need | Murmuring and searching disclose bodily hunger and disordered memory. | Chrysostom, *Homilies on John* 43–44 | Bodily need is not despised. |
 | Provision | Manna is given, remembered, and redirected toward the Father’s true bread. | Augustine on Psalm 77 and John 6 | Type and fulfillment are not made identical. |
 | Renewal | Belief in the sent Son entails putting off the old person and putting on the new. | Chrysostom, *Homily on Ephesians* 13 | The apostolic reading remains semi-continuous. |
 | Communion | Heavenly bread is received; the offerers ask to become an enduring gift and to reach eternal redemption. | Ambrose, *On the Mysteries* 8 | Sacramental transformation is petitioned, not presumed. |
 
-The source-grounded center is neither “earn the bread” nor “ignore earthly hunger.” Exodus shows gratuitous provision accompanied by a daily discipline; John distinguishes the perishing from the enduring while naming the Son as giver and gift; Ephesians describes the life shaped by learning him. The Collect’s restoration-and-preservation grammar and the offerings prayer’s enduring-gift petition give the bread sequence an ecclesial consequence: those whom God restores are asked to become what they offer.
+The center of these texts is neither “earn the bread” nor “ignore earthly hunger.” Exodus shows gratuitous provision accompanied by a daily discipline; John distinguishes the perishing from the enduring while naming the Son as giver and gift; Ephesians describes the life shaped by learning him. The Collect’s restoration-and-preservation grammar and the offerings prayer’s enduring-gift petition give the bread sequence an ecclesial consequence: those whom God restores are asked to become what they offer.
 
-> **Relationship control**
+> **How the readings are related**
 >
-> The First Reading and Gospel are officially correlated. The Psalm is responsorial, the acclamation acclamatory, and Ephesians belongs to the semi-continuous apostolic course. Connections to the Week XVIII prayers and antiphons are textual observations and source-grounded synthesis, not claims about historical selection intent.
+> The First Reading and Gospel are officially correlated. The Psalm is responsorial, the acclamation acclamatory, and Ephesians belongs to the semi-continuous apostolic course. The Week XVIII prayers and antiphons serve all three years, and nothing in them establishes a design for Year B; they meet these readings in their wording and themes.
 
 <span id="triptych:brief-synthesis:end" data-label="triptych:brief-synthesis:end"></span>
 
@@ -98,11 +98,11 @@ Exodus 16 holds complaint, provision, and testing together. The people remember 
 
 ### Ephesians: the form of renewed reception
 
-The omitted vv. 18–19 must not be silently supplied as though proclaimed. Within the letter, however, the selection belongs to a larger contrast between gentile futility and life learned in Christ. “Put off” and “put on” are not cosmetic metaphors: Chrysostom’s *Homily on Ephesians* 13 treats renewal of the mind as transformation expressed in conduct. The newness is created “according to God,” so renewal is received before it is performed; it nonetheless issues in justice and holiness of truth.
+Verses 18–19, which the selection omits, are not proclaimed. Within the letter, however, the selection belongs to a larger contrast between gentile futility and life learned in Christ. “Put off” and “put on” are not cosmetic metaphors: Chrysostom’s *Homily on Ephesians* 13 treats renewal of the mind as transformation expressed in conduct. The newness is created “according to God,” so renewal is received before it is performed; it nonetheless issues in justice and holiness of truth.
 
 ### John 6: seeking, working, believing
 
-John’s scene follows the feeding and crossing. In Homilies 43–45 on John, Chrysostom tracks the passage in sequence: vv. 24–25 show the crowd’s pursuit; vv. 26–27 expose satisfaction with loaves and redirect labor toward enduring food; vv. 28–35 answer the demand for work and signs by centering belief in the sent Son and the Father’s gift. His moral insistence on purified motive should not become disdain for the hungry. Jesus has fed the crowd; the correction concerns what they perceive in the sign.
+John’s scene follows the feeding and crossing. In Homilies 43–45 on John, Chrysostom tracks the passage in sequence: vv. 24–25 show the crowd’s pursuit; vv. 26–27 expose satisfaction with loaves and redirect labor toward enduring food; vv. 28–35 answer the demand for work and signs by centering belief in the sent Son and the Father’s gift. His moral insistence on purified motive is no disdain for the hungry. Jesus has fed the crowd; the correction concerns what they perceive in the sign.
 
 Augustine’s *Tractate on John* 25.8–14 likewise distinguishes seeking Christ for temporal advantage from coming to him in faith. His reading of eating as believing clarifies the discourse’s movement without exhausting its sacramental reception. The crowd cites manna as a demand for another sign; Jesus shifts the grammar from ancestral past to the Father’s present giving. Verse 35 identifies bread with the speaker: coming and believing parallel hunger and thirst.
 
@@ -162,17 +162,17 @@ Chrysostom’s Homilies 43–45 track these turns instead of beginning at the c
 
 ### Ephesians: the new person is corporate and ethical
 
-Ephesians 4 is semi-continuous and must not be presented as though chosen to explain John 6. Its discontinuous lection is also visible: verse 17 is followed by verses 20–24, omitting the darkened understanding and hardened conduct of verses 18–19. The movement from former walk to learning Christ, renewed mind, and putting on the new person is ethical and ecclesial, not a contempt for the body or created world.
+Ephesians 4 is semi-continuous and was not chosen to explain John 6. Its discontinuous lection is also visible: verse 17 is followed by verses 20–24, omitting the darkened understanding and hardened conduct of verses 18–19. The movement from former walk to learning Christ, renewed mind, and putting on the new person is ethical and ecclesial, not a contempt for the body or created world.
 
 Chrysostom’s Homily 13 treats stripping and clothing as an actual change of conduct. Baptismal reception gives the imagery a sacramental home, but baptism does not make renewal automatic or solitary. The continuation of Ephesians names truth-telling, disciplined anger, honest labor capable of sharing, edifying speech, forgiveness, and imitation of God. “New person” therefore cannot be reduced to private interior freshness. It describes a life whose relations are being remade in Christ.
 
-Placed beside John, the texts form a legitimate liturgical overlay rather than an editorially designed pair. Belief in the sent one and renewal of mind both resist appetite closed around immediate satisfaction. Yet Ephesians must keep its own corporate horizon and John his own sign-and-discourse sequence.
+Placed beside John, Ephesians overlaps with it in the liturgy without having been designed as its pair. Belief in the sent one and renewal of mind both resist appetite closed around immediate satisfaction. Yet Ephesians keeps its own corporate horizon and John his own sign-and-discourse sequence.
 
 ### The acclamation and the two Communion endings
 
 The acclamation quotes the Deuteronomic confession that human life is not sustained by bread alone but by every word from God. In Matthew’s temptation narrative that confession refuses to make sonship a demand for self-serving spectacle. On this Sunday it does not deny Exodus bread; it prevents bread from being detached from the giver’s word and covenant.
 
-Communion A and B then create genuinely different endings. Wisdom 16 receives wilderness provision as heavenly food accommodated to the eater’s desire. John 6:35 returns exactly to the Gospel’s climax. Ambrose’s Eucharistic catechesis and Aquinas’s John commentary illuminate both trajectories, but no generic recurring celebration establishes which text was used. The guide therefore studies both without printing a composite.
+Communion A and B then create genuinely different endings. Wisdom 16 receives wilderness provision as heavenly food accommodated to the eater’s desire. John 6:35 returns exactly to the Gospel’s climax. Ambrose’s Eucharistic catechesis and Aquinas’s John commentary illuminate both trajectories, but no generic recurring celebration establishes which text was used, and the two form no composite.
 
 The Week XVIII offerings prayer adds a decisive personal transformation: the gifts are sanctified and the worshippers ask to become an enduring offering. The prayer after Communion asks that recipients of the heavenly gift be protected and made worthy of eternal redemption. Bread imagery thus reaches its liturgical goal not in possession of a sacred object but in a people renewed, protected, and ordered toward communion.
 
@@ -180,12 +180,12 @@ The Week XVIII offerings prayer adds a decisive personal transformation: the gif
 
 The manna tradition changed material register in medieval and early modern visual culture. The Cloisters stained-glass panel *Gathering Manna* (1497–99) makes collection, differentiated figures, and carried portions visible in a church window. Allori’s 1595–96 tapestry design joins manna and the tablets within an elaborate civic-ecclesial commission. Neither object explains Exodus, but each shows how provision became a public visual memory.
 
-The hymn tradition’s “bread of heaven” language similarly moves the biblical image into congregational petition. Such reception is valuable only when named as reception: it cannot be quoted backward as the sense of Exodus’s Hebrew question or of John’s crowd. Visual and musical afterlives make the history of Christian hearing broader; they do not replace exegesis.
+The hymn tradition’s “bread of heaven” language similarly moves the biblical image into congregational petition. That hymn language is petition, not the sense of Exodus’s Hebrew question or of John’s crowd. Visual and musical afterlives make the history of Christian hearing broader without supplying the texts’ sense.
 
-| **Textual movement** | **Reception gain** | **Limit** |
+| **Textual movement** | **Reception gain** | **Also true** |
 |:-------------|:------------------------|:----------------------------|
-| Unknown gift to remembered manna | Psalm and patristic reception teach memory and typology. | Do not erase bodily hunger, complaint, daily measure, or testing. |
-| Past gift to present giver | John corrects source, motive, and object of desire. | Do not despise food or reduce faith to appetite. |
+| Unknown gift to remembered manna | Psalm and patristic reception teach memory and typology. | Exodus keeps bodily hunger, complaint, daily measure, and testing. |
+| Past gift to present giver | John corrects source, motive, and object of desire. | John neither despises food nor reduces faith to appetite. |
 | Old walk to new person | Baptismal and moral reception hold identity and conduct together. | Ephesians is semi-continuous, not selected as a commentary on John. |
 | Gift received to persons offered | The Missal prayers frame communion as sanctification and transformation. | Communion alternatives remain mutually exclusive. |
 
@@ -201,26 +201,26 @@ Ephesians remains semi-continuous, yet it prevents the Sunday from becoming a th
 
 ### Bread, word, and heavenly gift
 
-The acclamation denies that bread alone constitutes life. John does not therefore make bread irrelevant: Jesus has fed the crowd, and his self-identification uses hunger to reveal a greater gift. The first Communion option receives Wisdom’s heavenly-bread image; the second repeats John’s bread-of-life saying. The final prayer describes reception as a heavenly gift ordered toward eternal redemption. These liturgical statements permit a eucharistic horizon for the whole, while the commentary avoids claiming that every use of bread in the readings is already an exhaustive sacramental definition.
+The acclamation denies that bread alone constitutes life. John does not therefore make bread irrelevant: Jesus has fed the crowd, and his self-identification uses hunger to reveal a greater gift. The first Communion option receives Wisdom’s heavenly-bread image; the second repeats John’s bread-of-life saying. The final prayer describes reception as a heavenly gift ordered toward eternal redemption. These liturgical statements permit a eucharistic horizon for the whole, though not every use of bread in the readings is already an exhaustive sacramental definition.
 
 ### The alternative endings remain alternatives
 
-At Communion, John 6:35 creates the shortest direct return to the Gospel: Christ names himself as bread and promises an end to hunger and thirst for those who come and believe. Wisdom 16:20 instead returns to heavenly bread as delight adapted to the receiver. Both can lead into the final petition for protection and eternal redemption, but they do so differently. A preparation guide may describe both printed options; it may not narrate them as one enacted sequence.
+At Communion, John 6:35 creates the shortest direct return to the Gospel: Christ names himself as bread and promises an end to hunger and thirst for those who come and believe. Wisdom 16:20 instead returns to heavenly bread as delight adapted to the receiver. Both can lead into the final petition for protection and eternal redemption, but they do so differently. Both are printed options, and no celebration enacts them as one sequence.
 
-| **Movement** | **Primary anchors** | **Checked reception** | **Controlling limit** |
+| **Movement** | **Primary anchors** | **Reception** | **Also true** |
 |:-----------|:----------------|:-----------------|:-------------------|
 | Gift and question | Exod. 16; Ps. 78; John 6 | Augustine; Chrysostom | Bodily hunger is real; the giver exceeds the gift. |
 | Belief and renewal | John 6; Eph. 4 | Chrysostom on John and Ephesians | The apostolic course remains semi-continuous. |
 | Bread and heavenly gift | Matt. 4; John 6; Communion A/B; final prayer | Augustine; Ambrose | Typology does not erase textual distinctions. |
-| Wisdom or direct return | Communion A/B; final prayer | Wisdom and Johannine reception | The alternatives are not combined. |
+| Wisdom or direct return | Communion A/B; final prayer | Wisdom and Johannine reception | The alternatives are exclusive. |
 
 ## The Propers: Notable and Quotable
 
 - **“Manna of Females” (*First Reading; Responsorial Psalm*)** William Dent’s 1784 satirical etching *Catlap for Ever, or the Smuggler’s Downfall* puts the phrase into William Pitt’s speech about reduced tea duties. Wilderness food becomes cheap tea in an argument about taxation, smuggling, gin, windows, coal, and candles. The British Museum record controls the object, inscription, and political setting; the satire illuminates an economic afterlife of “manna,” not the meaning of Exodus.
 
-- **“Operation Manna” (*First Reading; Responsorial Psalm*)** The Allied food drops over the occupied Netherlands in 1945 turned the biblical name into an operational title. The named relation was material rather than decorative: food came from aircraft to people suffering in the Dutch famine. The NOS liberation-year dossier “Als manna uit de hemel: voedsel gedropt in Nederland” explicitly explains the biblical naming and preserves the danger, organization, and human labor behind the aid. The comparison must not recast war relief as an unmediated miracle.
+- **“Operation Manna” (*First Reading; Responsorial Psalm*)** The Allied food drops over the occupied Netherlands in 1945 turned the biblical name into an operational title. The named relation was material rather than decorative: food came from aircraft to people suffering in the Dutch famine. The NOS liberation-year dossier “Als manna uit de hemel: voedsel gedropt in Nederland” explicitly explains the biblical naming and preserves the danger, organization, and human labor behind the aid. The relief, for all its biblical name, was no unmediated miracle.
 
-- **“Bread of heaven, feed me” (*Gospel; Communion B*)** William Williams’s pilgrimage hymn *Guide Me, O Thou Great Jehovah*, in Peter Williams’s English tradition, gathers wilderness guidance, living water, bread from heaven, death, and arrival in Canaan into a singer’s petition. A 1913 public-domain hymnal witness was checked. The hymn therefore shows Exodus and Johannine imagery becoming congregational prayer; it is not direct exegesis of John 6 or evidence that the Communion option was selected.
+- **“Bread of heaven, feed me” (*Gospel; Communion B*)** William Williams’s pilgrimage hymn *Guide Me, O Thou Great Jehovah*, in Peter Williams’s English tradition, gathers wilderness guidance, living water, bread from heaven, death, and arrival in Canaan into a singer’s petition, and a 1913 public-domain hymnal carries it. The hymn shows Exodus and Johannine imagery becoming congregational prayer; it is not direct exegesis of John 6 or evidence that the Communion option was selected.
 
 ## The Propers: Interpretive Possibilities
 
@@ -234,7 +234,7 @@ Exodus’s daily sufficiency, John’s correction of motive, and the offerings p
 
 ### Sweetness without possession
 
-Israel reduces Egypt to full pots; Psalm 78 repairs memory by retelling the gift; Wisdom’s Communion option names heavenly bread as delight and sweetness. Together they suggest that delight is received truthfully when it leads back to the giver instead of becoming nostalgia or possession. The relation is editorial and depends on selection of that optional antiphon.
+Israel reduces Egypt to full pots; Psalm 78 repairs memory by retelling the gift; Wisdom’s Communion option names heavenly bread as delight and sweetness. Together they suggest that delight is received truthfully when it leads back to the giver instead of becoming nostalgia or possession. The relation depends on selection of that optional antiphon.
 
 ### The new person as eucharistic consequence
 
@@ -293,6 +293,6 @@ The reception search concentrated on direct exposition: Chrysostom’s *Homilies
 
 - GIRM 46–90, 352–367; *General Introduction to the Lectionary* 65–69, 78–91, 93–110.
 
-**Last revised (UTC):** 2026-09-24T13:14:46Z
+**Last revised (UTC):** 2026-09-24T13:53:53Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
