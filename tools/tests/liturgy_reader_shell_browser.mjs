@@ -256,7 +256,21 @@ async function runAssertions(cdp, base) {
   });
 
   await test('rights-limited Read states retain subordinate diagnostic notices', async () => {
-    let value = await evaluate(cdp, `(() => ({
+    // The default 1962 Day has no limitation left to disclose: its fixture has
+    // recorded every Pentecost X text as held since the Latin backfill landed
+    // those orations (3f86eed68), so its Read carries no notice at all.
+    let value = await evaluate(cdp, `({
+      hidden: document.querySelector('#reader-coverage').hidden,
+      meta: document.querySelector('#reader-meta').textContent
+    })`);
+    assert.equal(value.hidden, true);
+    assert.equal(/bound M1|explicitly selected|No blocking notices|contract/i.test(value.meta), false);
+    assert.match(value.meta, /1962 Roman Missal · Universal · Douay–Rheims · Latin orations/);
+
+    // The postconciliar Advent I Day still withholds its three orations' Latin,
+    // so it is the rights-limited Read whose notice must stay subordinate.
+    await navigate(cdp, url(base, 'day-postconciliar', 'persistent'));
+    value = await evaluate(cdp, `(() => ({
       hidden: document.querySelector('#reader-coverage').hidden,
       text: document.querySelector('#reader-coverage').textContent,
       meta: document.querySelector('#reader-meta').textContent,
@@ -265,7 +279,7 @@ async function runAssertions(cdp, base) {
     assert.equal(value.hidden, false);
     assert.match(value.text, /partial or unavailable/i);
     assert.equal(/bound M1|explicitly selected|No blocking notices|contract/i.test(value.meta), false);
-    assert.match(value.meta, /1962 Roman Missal · Universal · Douay–Rheims · Latin orations/);
+    assert.match(value.meta, /Postconciliar Roman Missal · Universal · Douay–Rheims · Latin orations/);
     assert.ok(value.firstTop < 340, `first content remains at ${value.firstTop}px`);
 
     await navigate(cdp, url(base, 'unavailable', 'persistent'));
