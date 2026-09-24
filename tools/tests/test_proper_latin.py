@@ -46,6 +46,29 @@ EDITORIAL_PROJECTION = (
 )
 
 
+def registered_artifact(artifact_id: str) -> dict:
+    """One source-library artifact record, read from its canonical path."""
+    _, work_owner, work, edition, artifact = artifact_id.split(".")
+    record = tomllib.loads(
+        (
+            ROOT
+            / "src/sources/works"
+            / work_owner
+            / work
+            / "editions"
+            / edition
+            / "artifacts"
+            / artifact
+            / "artifact.toml"
+        ).read_text(encoding="utf-8")
+    )
+    if record.get("id") != artifact_id:
+        raise AssertionError(
+            f"{artifact_id}: artifact record names {record.get('id')!r}"
+        )
+    return record
+
+
 def load_tool(name: str):
     return SourceFileLoader(
         f"test_{name.replace('-', '_')}", str(ROOT / "tools" / name)
@@ -252,6 +275,7 @@ class ProductionLedgerTests(unittest.TestCase):
         }
 
         used_projection_editions = set()
+        supplemented = []
         for calendar, key, row in permitted:
             with self.subTest(calendar=calendar, key=key):
                 matches = [
@@ -277,7 +301,7 @@ class ProductionLedgerTests(unittest.TestCase):
                 # rather than one fixed id; the public-domain witness beside it
                 # is still pinned exactly.
                 ids = row["publication_source_ids"]
-                self.assertEqual(2, len(ids), ids)
+                self.assertGreaterEqual(len(ids), 2, ids)
                 self.assertTrue(
                     ids[0].startswith(
                         "artifact.triptych.roman-1962-latin-proper-editorial-"
@@ -290,6 +314,24 @@ class ProductionLedgerTests(unittest.TestCase):
                 # 1922 Mame as its antecedent rather than as corroboration --
                 # Holy Family, granted 1893 and universal 1921, is the case.
                 self.assertIn(ids[1], spec["publication_source_ids"], ids[1])
+                # Anything after the pinned witness is a further registered
+                # artifact of that SAME public-domain printing, never a new
+                # basis. The pentecost-16 Postcommunion is the case: its 1862
+                # text layer drops `et` at a line break, so the printed page
+                # itself (Internet Archive leaf n426, retrieved 2026-09-05) was
+                # registered and named beside the text layer in 1529f6bef to
+                # close that gap.
+                witness = registered_artifact(ids[1])
+                for extra in ids[2:]:
+                    supplement = registered_artifact(extra)
+                    self.assertEqual(
+                        witness["edition_id"], supplement["edition_id"], extra
+                    )
+                    self.assertEqual(
+                        "public-domain", supplement["rights_status"], extra
+                    )
+                if ids[2:]:
+                    supplemented.append((key, ids[2:]))
                 # Sanctoral recoveries came first; the seasonal ones name a
                 # temporal- passage of the same target edition.
                 self.assertTrue(
@@ -299,6 +341,9 @@ class ProductionLedgerTests(unittest.TestCase):
                     )
                 )
         self.assertEqual(set(projection_specs), used_projection_editions)
+        # The same kind of tripwire as the permitted count: a further witness
+        # beside the pinned one is rare, so each is a visible edit here.
+        self.assertEqual(1, len(supplemented), supplemented)
 
         work = tomllib.loads((EDITORIAL_PROJECTION / "work.toml").read_text())
         self.assertEqual("Triptych contributors", work["responsible"])
