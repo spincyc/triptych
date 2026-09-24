@@ -44,13 +44,13 @@ EXAMPLES = {
         Example(
             "tools/check-generation-metadata",
             (
-                "Generation metadata valid: 134 canonical record(s), 6 inherited record(s).",
+                "Generation metadata valid: 136 canonical record(s), 6 inherited record(s).",
             ),
         ),
         Example(
             "tools/check-generation-metadata --provider claude",
             (
-                "Generation metadata valid: 50 canonical record(s), 0 inherited record(s).",
+                "Generation metadata valid: 55 canonical record(s), 0 inherited record(s).",
             ),
             "one provider's leaves only",
         ),
