@@ -237,7 +237,7 @@ Augustine’s exposition happens to cover five of the six appointed groups direc
 
 Two of these bear directly on the day. The comment on v. 72 supplies the psalm’s own answer to the first reading: the ranking of instruction over bullion is not asceticism about money but a competition between loves, which is exactly what the Gospel’s two buyers demonstrate in action. And the comment on v. 130 lands on the same Latin word as the Gospel acclamation. The psalm says that God’s words give understanding to *parvuli*; the acclamation says the Father has revealed these things to *parvuli*. Augustine’s gloss – the humble and weak, made little rather than great – is the bridge, and it was written about the psalm, not about the pairing.
 
-Ambrose reaches the same two verses by a different route, and his register is social rather than epistemological. On v. 57 he asks how rare on earth is the man who can say that the Lord is his portion, and answers with a portrait: one whom lust does not inflame, avarice does not goad, ambition does not lay low, envy does not waste – a man “born for God, not for himself.” He then works through the Levite, who has no earthly inheritance because God is his portion, to Peter at the Beautiful Gate, whose “silver and gold have I none” becomes the psalm verse’s proof: this is my portion, and my portion is Christ. On v. 72 he is blunter still. Not everyone says that the law is better than thousands of gold and silver, “indeed it is a rare man who says it”; Peter said it and proved it by the effect. And Ambrose then names who cannot: not the miser brooding on buried gold, and not the moneyed man who ransacks his daily profits, piles up wealth, lays snares for legacies, and keeps tireless vigil at a sick man’s bedside. The legacy-hunter of Roman satire has walked into a psalm commentary, and he is there because the verse is about a ranking of loves that a whole way of life contradicts.
+Ambrose reaches the same two verses by a different route, and his register is social rather than epistemological. On v. 57 he asks how rare on earth is the man who can say that the Lord is his portion, and answers with a portrait: one whom lust does not inflame, avarice does not goad, ambition does not lay low, envy does not waste – a man “born for God, not for himself.” He then works through the Levite, who has no earthly inheritance because God is his portion, to Peter at the Beautiful Gate, whose “silver and gold I have none” becomes the psalm verse’s proof: this is my portion, and my portion is Christ. On v. 72 he is blunter still. Not everyone says that the law is better than thousands of gold and silver, “indeed it is a rare man who says it”; Peter said it and proved it by the effect. And Ambrose then names who cannot: not the miser brooding on buried gold, and not the moneyed man who ransacks his daily profits, piles up wealth, lays snares for legacies, and keeps tireless vigil at a sick man’s bedside. The legacy-hunter of Roman satire has walked into a psalm commentary, and he is there because the verse is about a ranking of loves that a whole way of life contradicts.
 
 The psalm’s own horizon must be kept. These are the words of an Israelite whose delight is in *torah*, and Christian reception does not annul that literal sense. The Old Testament is proclaimed in this liturgy as Scripture in its own right, not as a cipher awaiting decryption, and the two Fathers quoted above both treat it that way even where their conclusions are Christological.
 
@@ -253,7 +253,7 @@ Within Romans the verses sit at a hinge. Chapter 8 has moved from life in the S
 
 In the public-domain Douay-Rheims: “And we know that to them that love God, all things work together unto good, to such as, according to his purpose, are called to be saints. For whom he foreknew, he also predestinated to be made conformable to the image of his Son; that he might be the firstborn amongst many brethren. And whom he predestinated, them he also called. And whom he called, them he also justified. And whom he justified, them he also glorified.”
 
-The Latin behind the whole Western reception is: *diligéntibus Deum ómnia cooperántur in bonum* – “all things work together unto good.” In that construction the grammatical subject is *all things*, not God. A minority of Greek witnesses supply *ho theos* explicitly, so that God is the one who makes all things work together; modern critical editions note the variant, and the common English rendering “God makes all things work for good” reflects it. Nothing doctrinal turns on the choice – the surrounding clause about purpose and calling supplies the divine agency either way – but a preacher should know that the version in the hand may be resolving a textual question rather than translating an unambiguous sentence.
+The Latin behind the whole Western reception is: *diligéntibus Deum ómnia cooperántur in bonum* – “all things work together unto good.” In that construction the grammatical subject is *all things*, not God. A minority of Greek witnesses supply *ho theos* explicitly, so that God is the one who makes all things work together; modern critical editions note the variant, and the common modern English renderings that make God the subject of the verb reflect it. Nothing doctrinal turns on the choice – the surrounding clause about purpose and calling supplies the divine agency either way – but a preacher should know that the version in the hand may be resolving a textual question rather than translating an unambiguous sentence.
 
 Four words carry the argument. *Praescivit*, foreknew, translating *proegnō*; *praedestinavit*, marked out beforehand, translating *proōrisen*, literally “bounded in advance”; *conformes*, conformed, from *symmorphous*, sharing a form; and *primogenitus*, firstborn, from *prōtotokos*. The chain is not a description of a mechanism. It is a set of five past-tense verbs, the last of which – *glorified* – describes something no reader has yet seen.
 
@@ -265,7 +265,7 @@ The tradition’s fault line is not where popular accounts put it. It does not r
 |:-------------|:-----------------------|:---------------------------|
 | The purpose is the purpose of *those called* | Chrysostom, *Homily 15 on Romans*, expressly to answer the question why, if calling sufficed, not all are saved: the calling was not forced, all were called, not all obeyed. | Election presupposes something in the called. In *Homily 16*, on Romans 9, he speaks of an election made according to foreknowledge, God knowing which soul is worthy of being saved. |
 | The purpose is *God’s* | Augustine, *On the Predestination of the Saints* 32 and 34, distinguishing a general calling from the certain calling of those called according to God’s purpose. | “God elected believers; but He chose them that they might be so, not because they were already so.” Foreknowledge, on this account, cannot be the reason of predestination. |
-| The purpose is God’s, and the syntax of v. 29 is itself at stake | Aquinas, *Super Romanos*, cap. 8, lect. 6, siding with Augustine and naming the alternative construal explicitly. | The foreseen-merits reading requires reading “whom he foreknew *to be conformed*, these he predestined.” Aquinas prefers the other construal, so that conformity is the term of predestination and not its reason. |
+| The purpose is God’s, and the syntax of v. 29 is itself at stake | Aquinas, *Super Romanos*, cap. 8, lect. 6, siding with Augustine and naming the alternative construal explicitly. | The foreseen-merits reading requires joining *to be made conformable* to *foreknew* rather than to *predestinated*. Aquinas prefers the other construal, so that conformity is the term of predestination and not its reason. |
 
 Two things should be said about this table, and both are uncomfortable for partisans.
 
@@ -362,7 +362,7 @@ Two observations of Augustine’s are worth keeping beside it. Preaching on the 
 
 Two Thomistic treatments of Matthew 13:44 exist and they pull in opposite directions, which is instructive.
 
-In the Matthew commentary Aquinas is thoroughly allegorical. He organises the three images by the dignity each displays – the treasure shows the abundance of evangelical doctrine, the pearl its beauty, the net its universality – and he glosses “sells all” as *contemnit*, despises, rather than as literal liquidation, with the purchase understood as acquiring good company or the spiritual leisure one lacked.
+In the Matthew commentary Aquinas is thoroughly allegorical. He organises the three images by the dignity each displays – the treasure shows the abundance of evangelical doctrine, the pearl its beauty, the net its universality – and he glosses “selleth all” as *contemnit*, despises, rather than as literal liquidation, with the purchase understood as acquiring good company or the spiritual leisure one lacked.
 
 In the *Summa*, by contrast, Matthew 13:44 appears exactly once, and not in any question about poverty, the counsels, or religious life. It appears in the treatment of theft, where Aquinas is distinguishing kinds of found property: gems on the seashore belong to the finder, and so does treasure long buried and belonging to nobody, “except that according to civil law the finder is bound to give half to the owner of the land. Hence in the parable of the Gospel it is said of the finder of the treasure hidden in a field that he bought the field, as though he purposed thus to acquire the right of possessing the whole treasure” (II-II, q. 66, a. 5, ad 2). The parable is cited as evidence about treasure trove, and it thereby explains the narrative detail every allegorist has to work around: the man buys the field because buying the field is how one lawfully gets the treasure.
 
@@ -373,7 +373,7 @@ A bounded negative belongs beside this. Searching the Latin of the *Summa*’s f
 | **Branch** | **What is heard** | **What is not heard** |
 |:-------------|:-----------------------|:---------------------------|
 | Long form, 13:44–52 | Value, joy, total expenditure, purchase; then the net, the shore, the sorting by angels, the furnace, the question about understanding, and the scribe with new and old. | Nothing of the appointed pericope is withheld. |
-| Short form, 13:44–46 | Value, joy, total expenditure, purchase. The reading ends on the merchant’s completed transaction. | The net, the eschatological separation, the question “have you understood?”, and the whole saying about the trained scribe. |
+| Short form, 13:44–46 | Value, joy, total expenditure, purchase. The reading ends on the merchant’s completed transaction. | The net, the eschatological separation, the question “Have ye understood all these things?”, and the whole saying about the trained scribe. |
 
 The short form is authorized and complete as proclaimed, not a deficient version of the long one. But a difference of ending changes what the celebration says, and preaching that reaches for the dragnet or the householder’s treasury when the shorter form was read describes a text the assembly did not hear.
 
@@ -506,7 +506,7 @@ Artaban, a fourth magus, spends three decades and two of his three jewels on wor
 
 ### 4. Providence as the punchline of a farce
 
-**Trigger:** Romans 8:28, that to those who love God all things work together unto good.
+**Trigger:** Romans 8:28, that to them that love God all things work together unto good.
 
 **Later use:** P. G. Wodehouse, “A Sea of Troubles,” in *The Man with Two Left Feet* (1917).
 
@@ -574,7 +574,7 @@ The English word *dragnet* in its police sense does not qualify. The standard et
 
 **Anchors.** Romans 8:29–30, five verbs in a row whose subject is God – foreknew, predestined, called, justified, glorified; Matthew 13:44–46, a run of verbs whose subject is a man – found, hid, rejoiced, went, sold, bought; and the Prayer after Communion, in which what is received is a memorial of a Passion given out of another’s love.
 
-**Mechanism.** The assembly hears two complete and internally consistent chains of action, one entirely divine and one entirely human, and hears nothing that reconciles them; the candidate reconciling clause in Romans, “to those who love God,” is the very phrase over which Chrysostom and Augustine divide. The formulary’s own answer, if it has one, is enacted rather than argued: at Communion something is received that was bought by someone else and handed over without price.
+**Mechanism.** The assembly hears two complete and internally consistent chains of action, one entirely divine and one entirely human, and hears nothing that reconciles them; the candidate reconciling clause in Romans, “to them that love God,” is the very phrase over which Chrysostom and Augustine divide. The formulary’s own answer, if it has one, is enacted rather than argued: at Communion something is received that was bought by someone else and handed over without price.
 
 **What the element-by-element reading misses.** Read separately, Romans looks like doctrine and the parables like ethics; read as two verb-chains meeting at the Communion rite, the problem of grace and action becomes a shape in the liturgy rather than a footnote.
 
@@ -792,6 +792,6 @@ Only sources actually used are listed. Where an online witness was read, the del
 
 - “Dragnet,” *Online Etymology Dictionary*, for the negative result reported in the gallery.
 
-**Last revised (UTC):** 2026-09-24T11:51:09Z
+**Last revised (UTC):** 2026-09-24T11:56:15Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
