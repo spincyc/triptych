@@ -98,7 +98,7 @@ That dialect meets the readings without being bent to them. The Prayer over the 
 
 ### Branches: what is actually heard depends on two choices
 
-Two authorized alternatives change the celebration materially, and neither is resolved by the books. If the shorter Gospel is chosen, the assembly hears value, joy and total expenditure, and hears nothing of the net, the furnace, the question “have you understood?”, or the scribe with new and old. If the longer form is chosen, the movement acquires an end that no buyer controls. Preaching that imports the net into a celebration that did not proclaim it reports something that did not happen.
+Two authorized alternatives change the celebration materially, and neither is resolved by the books. If the shorter Gospel is chosen, the assembly hears value, joy and total expenditure, and hears nothing of the net, the furnace, the question “Have ye understood all these things?”, or the scribe with new and old. The wording is the public-domain Douay-Rheims, a study translation, not the proclaimed Lectionary text. If the longer form is chosen, the movement acquires an end that no buyer controls. Preaching that imports the net into a celebration that did not proclaim it reports something that did not happen.
 
 The Communion antiphons are likewise a closed either/or. One recalls benefits received and forbids forgetting; the other names mercy and clean-heartedness with their promised ends. The first closes the circuit of gift and memory opened by the Prayer over the Offerings; the second supplies a moral test for those who have just been fed. Both are lawful; neither is presumed here.
 
@@ -792,6 +792,6 @@ Only sources actually used are listed. Where an online witness was read, the del
 
 - “Dragnet,” *Online Etymology Dictionary*, for the negative result reported in the gallery.
 
-**Last revised (UTC):** 2026-09-24T04:26:05Z
+**Last revised (UTC):** 2026-09-24T04:33:02Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
