@@ -39,6 +39,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from _audited_corpus import AUDITED_COMMIT, audited_tree  # noqa: E402
 from _parallel import gather  # noqa: E402
 
 from _workflow import (  # noqa: E402
@@ -90,9 +91,11 @@ CHRONOLOGY_CHECKS = ("chronology-record-current",
 # The two that read the reader-facing prose rather than the records under it.
 # They are named apart because they were written after this corpus was, and
 # what they find in it is a fact about the corpus rather than about them:
-# `house-voice` refuses eight of the twelve leaves that carry a manifest,
-# every refusal a form `guidance/editorial.md` names, and `proposal-fields`
-# refuses two. `ProseCheckTests` below records exactly which and at what.
+# `house-voice` once refused eight of the twelve leaves that carried a
+# manifest, every refusal a form `guidance/editorial.md` names, and
+# `proposal-fields` two. The 2026-09-24 audit repaired every one, so the
+# published leaves now pass both; `ProseCheckTests` below records that, and
+# holds each detection over the corpus as the audit found it.
 PROSE_CHECKS = ("house-voice", "proposal-fields")
 # This check is also tree-only and version-bound. It is named separately
 # because it binds at two production entry points: `proper` v24 and
@@ -117,10 +120,11 @@ RUN_PLACEHOLDERS = {
 # passes, in the provider the rest of the workflow suite drives runs against.
 # Found by suffix rather than written down, for the reason `DOC` gives: the
 # corpus renumbers. It is NOT `DOC`, which is the ninth Sunday: that leaf
-# carries two real `house-voice` loci -- "Their architecture is this guide's
+# carried two real `house-voice` loci -- "Their architecture is this guide's
 # source-grounded synthesis" and "Complete English verses are shown so the
-# project does not manufacture its own stitched translation" -- and a test may
-# not rewrite a published leaf to get a check past it.
+# project does not manufacture its own stitched translation" -- until the
+# 2026-09-24 audit repaired them (e8217e665), and a test may not rewrite a
+# published leaf to get a check past it.
 PROVIDER_ROOT = ROOT / "src" / "gpt"
 
 
@@ -933,28 +937,45 @@ class ProseCheckTests(unittest.TestCase):
     left standing. What is held here is the tool: which published leaves it
     refuses, which it passes, and what it says when it cannot read a leaf at
     all.
+
+    Its refusals are held over the corpus as the 2026-09-24 house-voice audit
+    found it, at `AUDITED_COMMIT` (see tools/tests/_audited_corpus.py). The
+    specimens were live leaves until that audit repaired them: pinned to the
+    tree, the refusal tests failed on the repair, and the quotation test,
+    looping over refusals that no longer came, passed while checking nothing.
     """
 
-    # These pins record the corpus, so they move when the corpus does. The
-    # leaf both once named, claude/54, has had both habits repaired out of it;
-    # a pin left on a repaired leaf tests nothing and fails on the repair.
+    # Two leaves of the audited tree. Pins to live leaves moved as the corpus
+    # was repaired -- claude/54 carried both habits first -- and on 2026-09-24
+    # there was no live leaf left to move them to.
     SPECIMEN = ("claude", "liturgy/roman-rite/1962/propers/temporal/"
                           "51-eleventh-after-pentecost")
     PROPOSAL_SPECIMEN = ("gpt", "liturgy/roman-rite/1962/propers/temporal/"
                                 "52-twelfth-after-pentecost")
+    # A leaf of the audited tree that both refuses and has a section the
+    # house-voice screen cannot read. gpt/54 was this until its voice was
+    # repaired; the audit repaired gpt/49 (e8217e665).
+    UNSCREENED_SPECIMEN = ("gpt", "liturgy/roman-rite/1962/propers/temporal/"
+                                  "49-ninth-after-pentecost")
 
-    def run_check(self, provider, document, check):
+    @classmethod
+    def setUpClass(cls):
+        cls.audited = audited_tree(cls)
+
+    def run_check(self, provider, document, check, root=None):
         return subprocess.run(
-            [str(ROOT / "tools" / TOOL), "--provider", provider,
-             "--document", document, "--check", check],
+            [str(ROOT / "tools" / TOOL),
+             *(["--root", str(root)] if root is not None else []),
+             "--provider", provider, "--document", document,
+             "--check", check],
             capture_output=True, text=True, cwd=ROOT)
 
-    def leaves(self):
+    def leaves(self, root=ROOT):
         for provider in ("claude", "gpt"):
-            root = ROOT / "src" / provider / "liturgy/roman-rite/1962/propers"
-            for manifest in sorted(root.glob("*/*/proper-components.toml")):
+            base = root / "src" / provider / "liturgy/roman-rite/1962/propers"
+            for manifest in sorted(base.glob("*/*/proper-components.toml")):
                 yield provider, manifest.parent.relative_to(
-                    ROOT / "src" / provider).as_posix()
+                    root / "src" / provider).as_posix()
 
     def test_house_voice_passes_a_leaf_that_keeps_the_voice(self):
         provider, document = PUBLISHED
@@ -962,20 +983,44 @@ class ProseCheckTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("no sentence taking the guide", result.stdout)
 
+    def test_neither_prose_check_refuses_a_published_leaf(self):
+        """Which published leaves carry either habit: none, since 2026-09-24.
+
+        The house-voice count fell as leaves were repaired -- eight over
+        claude/54, gpt/54 and the specimen of the day, then six -- and the
+        2026-09-24 audit repaired the last six, and gpt/52's five proposals
+        that stated no "what the element-by-element reading misses" field
+        (e11d8b618). The list is held empty rather than dropped, so a leaf that
+        takes either habit up again is a failure here and not a new count.
+        """
+        leaves = list(self.leaves())
+        self.assertTrue(leaves, "found no published leaf: checked nothing")
+        jobs = [(provider, document, check) for check in PROSE_CHECKS
+                for provider, document in leaves]
+        results = gather(lambda job: self.run_check(*job), jobs)
+        refused = {check: [] for check in PROSE_CHECKS}
+        for (provider, document, check), result in zip(jobs, results):
+            if result.returncode:
+                refused[check].append(
+                    f"{provider}/{document.rsplit('/', 1)[-1]}")
+        self.assertEqual(refused, {check: [] for check in PROSE_CHECKS})
+
     def test_house_voice_refuses_the_corpus_it_was_written_against(self):
-        """Which published leaves carry it, recorded rather than assumed.
+        """Which leaves carried it when the audit began, recorded.
 
         A check written from one leaf's defects could be measuring that leaf.
         Five of the six leaves refused here are not the specimen and two are
         in the other provider, and every refusal is a form the guidance names,
-        so the habit is the corpus's and not the specimen's. The count falls
-        as leaves are repaired -- it was eight over claude/54, gpt/54 and the
-        specimen of the day -- which is the number doing its job, not drifting.
+        so the habit was the corpus's and not the specimen's. Measured over
+        the published tree until the 2026-09-24 audit repaired all six; over
+        the audited tree now, so that the finding stays a test rather than a
+        claim in a docstring.
         """
         refused = sorted(
             f"{provider}/{document.rsplit('/', 1)[-1]}"
-            for provider, document in self.leaves()
-            if self.run_check(provider, document, "house-voice").returncode)
+            for provider, document in self.leaves(self.audited)
+            if self.run_check(provider, document, "house-voice",
+                              self.audited).returncode)
         self.assertEqual(len(refused), 6, refused)
         self.assertIn("claude/52-twelfth-after-pentecost", refused)
         self.assertEqual(
@@ -983,13 +1028,9 @@ class ProseCheckTests(unittest.TestCase):
             ["gpt/49-ninth-after-pentecost",
              "gpt/51-eleventh-after-pentecost"])
 
-    @unittest.skipUnless(
-        (ROOT / "src/claude/liturgy/roman-rite/1962/propers/temporal"
-                "/51-eleventh-after-pentecost").is_dir(),
-        "the specimen leaf is not in the tree")
     def test_house_voice_names_the_file_and_the_line_and_the_repair(self):
-        """The refusal a reviser is handed, over a leaf that still carries it."""
-        result = self.run_check(*self.SPECIMEN, "house-voice")
+        """The refusal a reviser is handed, over a leaf that carries it."""
+        result = self.run_check(*self.SPECIMEN, "house-voice", self.audited)
         self.assertEqual(result.returncode, 1)
         lines = [line for line in result.stderr.splitlines()
                  if line.startswith(f"{ERROR}house-voice: ")
@@ -1008,10 +1049,6 @@ class ProseCheckTests(unittest.TestCase):
                              "the screen never opens the appendix and cannot "
                              "say what is in it")
 
-    @unittest.skipUnless(
-        (ROOT / "src/claude/liturgy/roman-rite/1962/propers/temporal"
-                "/51-eleventh-after-pentecost").is_dir(),
-        "the specimen leaf is not in the tree")
     def test_house_voice_quotes_a_string_that_is_in_the_file(self):
         """A refusal a worker cannot search for is a refusal it guesses at.
 
@@ -1019,8 +1056,9 @@ class ProseCheckTests(unittest.TestCase):
         characters either side of the match, so it began and ended mid-word
         and carried spaces where the markup had been.
         """
-        result = self.run_check(*self.SPECIMEN, "house-voice")
-        leaf = ROOT / "src" / self.SPECIMEN[0] / self.SPECIMEN[1]
+        result = self.run_check(*self.SPECIMEN, "house-voice", self.audited)
+        leaf = self.audited / "src" / self.SPECIMEN[0] / self.SPECIMEN[1]
+        quoted = 0
         for line in result.stderr.splitlines():
             if (not line.startswith(f"{ERROR}house-voice: ")
                     or "not screened:" in line):
@@ -1033,6 +1071,8 @@ class ProseCheckTests(unittest.TestCase):
                 (leaf / where).read_text(encoding="utf-8").split())
             with self.subTest(locus=where):
                 self.assertIn(quotation, source)
+            quoted += 1
+        self.assertEqual(quoted, 20, "a loop over no refusals checks nothing")
 
     def test_house_voice_says_which_sections_it_could_not_read(self):
         """Six of the twelve leaves drop the field markup entirely.
@@ -1060,11 +1100,11 @@ class ProseCheckTests(unittest.TestCase):
         refusal that already exists and never makes one.
 
         Pinned to gpt/54 until that leaf's voice was repaired and it stopped
-        refusing at all; gpt/49 is a leaf that still does both.
+        refusing at all, then to gpt/49, which did both until the 2026-09-24
+        audit repaired it; held over gpt/49 as the audit found it.
         """
-        result = self.run_check(
-            "gpt", "liturgy/roman-rite/1962/propers/temporal/"
-                   "49-ninth-after-pentecost", "house-voice")
+        result = self.run_check(*self.UNSCREENED_SPECIMEN, "house-voice",
+                                self.audited)
         self.assertEqual(result.returncode, 1)
         self.assertIn("not screened", result.stderr)
         self.assertIn("still has to be read by hand", result.stderr)
@@ -1087,20 +1127,18 @@ class ProseCheckTests(unittest.TestCase):
                 self.assertEqual(result.returncode, 0, result.stderr)
                 self.assertIn("5 exploratory proposals", result.stdout)
 
-    @unittest.skipUnless(
-        (ROOT / "src/gpt/liturgy/roman-rite/1962/propers/temporal"
-                "/52-twelfth-after-pentecost").is_dir(),
-        "the proposal specimen leaf is not in the tree")
     def test_proposal_fields_catches_the_field_no_lane_owned(self):
         """Five proposals of one leaf, and no lane owned the field.
 
         The claude/54 proposal this was pinned to -- one of six, missing the
         field four sweeps had read past -- has been repaired. The habit had
-        not been: the last leaf in the corpus still carrying it drops the same
-        field from every proposal it states, which is the same finding at a
-        different scale.
+        not been: the last leaf in the corpus still carrying it dropped the
+        same field from every proposal it stated, which is the same finding at
+        a different scale. The 2026-09-24 audit wrote that field into all five
+        (e11d8b618), so the leaf is held as the audit found it.
         """
-        result = self.run_check(*self.PROPOSAL_SPECIMEN, "proposal-fields")
+        result = self.run_check(*self.PROPOSAL_SPECIMEN, "proposal-fields",
+                                self.audited)
         self.assertEqual(result.returncode, 1)
         self.assertIn("Ministry begins where the traveller leaves",
                       result.stderr)
