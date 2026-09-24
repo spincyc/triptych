@@ -98,10 +98,9 @@ apparatus from the same source leaf.}
 \newenvironment{witnessnote}{\begin{studyframe}\small}{\end{studyframe}}
 \newcommand{\wlocus}[1]{\textbf{#1}\quad}
 
-% Governing thesis for the thematic movement. Substantive content, permitted
-% to open the body of its own section.
-\newcommand{\movementthesis}[1]{%
-  \begin{studybox}{Governing thesis}#1\end{studybox}}
+% The thesis of the thematic movement, which opens that section directly as
+% prose: no box and no label, as the profile's reader-first rule requires.
+\newcommand{\movementthesis}[1]{#1\par}
 
 % The exploratory-proposal notice and the proposals themselves. Every proposal
 % renders its anchors, mechanism, fruit, and controlling limit as labelled
