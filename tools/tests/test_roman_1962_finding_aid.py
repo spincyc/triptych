@@ -661,11 +661,18 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
             for row in self.base["untranslated"]
             if isinstance(row.get("reason"), dict)
         }
-        self.assertEqual(len(source_established), 663)
-        self.assertEqual(len(expected), 734)
+        # The Latin backfill f523fde12..0616ee0dd ("Widen the backfill past the
+        # Temporale" through "Finish the sanctoral: every composed oration in
+        # the 1962 calendar is decided") gave 597 of the 663 source-established
+        # slots their Latin. Their English rows keep `no-exemplar`, since no
+        # English exemplar was bound, and so move from the source-established
+        # set to the quarantined no-exemplar rows beside the two that already
+        # had Latin: 663 -> 66, 734 -> 137, 362 -> 959 and 2 -> 599.
+        self.assertEqual(len(source_established), 66)
+        self.assertEqual(len(expected), 137)
         self.assertTrue(expected.issubset(typed))
         quarantined = set(typed) - expected
-        self.assertEqual(len(quarantined), 362)
+        self.assertEqual(len(quarantined), 959)
         self.assertEqual(
             {
                 (
@@ -686,7 +693,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                 for identity in quarantined
             },
             {
-                ("no-exemplar", None): 2,
+                ("no-exemplar", None): 599,
                 ("rights-withheld", CUMMISKEY_SOURCE): 348,
                 ("witness-gap", CUMMISKEY_SOURCE): 12,
             },
