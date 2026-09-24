@@ -756,8 +756,9 @@ Each clause is made checkable, and each way of doing so was a choice:
   therefore not caught, and hangs twice until someone declares it.
 - **The received attribution is chosen in a fixed order.** First come the
   liturgical books: the name under which the Breviary or the Missal reads the
-  text. Here that is Chrysologus, in the Matins lessons of the Eighteenth
-  Sunday after Pentecost. Where the books are silent, the received ascription
+  text. Here that is Chrysologus: PL 57's admonition reports that the Roman
+  Breviary reads part of the sermon on the Eighteenth Sunday after Pentecost
+  under his name [sourced]. Where the books are silent, the received ascription
   as the editions report it decides. That includes an editor who prints the
   text under another name and reports the received one, as PL 57's does. The
   entry's `received_basis` states the ground. This decides where the text **hangs**, not who wrote it.
