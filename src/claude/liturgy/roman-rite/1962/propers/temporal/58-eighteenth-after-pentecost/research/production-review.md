@@ -1682,3 +1682,78 @@ names, no longer exists after `f82f5ecc6` re-dated that edition. That is
 another lane's to repair. Stale for the coordinator, as before: this leaf's
 web binding (1 of 16 stale), its `corpus.json` entry, and 15 of its files in
 the Claude publication inventory.
+
+### Fifth pass (house-voice audit)
+
+On 2026-09-24 the maintainer decided to audit every proper leaf of both
+providers for the house-voice defect of `guidance/editorial.md` and to repair
+what the audit finds, with independent review afterwards. That decision is the
+provider authority for these rewrites and nothing else. Every reader-facing
+file of the three documents was read in full. A sentence was changed when it
+took the study, its table or its own readings as grammatical subject in a
+qualifying or self-describing role, or narrated the study's own discipline;
+a heading was changed when it labelled the argument's rhetorical machinery.
+Each change puts a source, a text, a witness or a fact in the subject and
+keeps every difference, bound and attribution the sentence carried.
+
+| Item | Where | Before → after |
+| --- | --- | --- |
+| 1 | `sections/00-opening.tex` | "The three readings of the formulary that follow take up these questions in turn." → "These questions, taken in turn, give the three readings of the formulary that follow." |
+| 2 | `sections/00-opening.tex` | "Each is built from what the Fathers and saints taught about the particular texts; each is carried through every element of the formulary; and each closes with its own literal, allegorical, moral and anagogical senses. A short comparison then shows what the three hold in common and where their answers part." → "What the Fathers and saints taught about the particular texts supplies each; every element of the formulary enters each; and its own literal, allegorical, moral and anagogical senses close it. What the three hold in common, and where their answers part, comes last, in a short comparison." |
+| 3 | `sections/10-each-element.tex`, Secret | "What the exchange is, the second reading takes up." → "What the exchange is belongs to the second reading." |
+| 4 | `sections/20-peace-of-the-house.tex`, heading | "The earthly city rebuilt, and the strongest objection" → "The earthly city rebuilt, the Donatists and the four chants" |
+| 5 | `sections/20-peace-of-the-house.tex` | "The reading therefore takes the return from exile as the literal sense of the Gradual and the heavenly city of Augustine, Hilary and Cassiodorus as its allegorical sense." → "The return from exile is therefore the literal sense of the Gradual, and the heavenly city of Augustine, Hilary and Cassiodorus its allegorical sense." Bellarmine and Schuster, who hold both in that order, follow as before. |
+| 6 | `sections/20-peace-of-the-house.tex` | "The propositions this reading takes from them stand without that setting:" → "Three of their propositions do not depend on that setting:" The three it lists are unchanged. |
+| 7 | `sections/30-authority-on-earth.tex` | "Then Aquinas raises the objection this reading must face." → "Then Aquinas raises the objection on which this reading turns." |
+| 8 | `sections/30-authority-on-earth.tex` | "The strongest objection to this reading is that its most obvious form cannot be attributed to the Fathers." → "The weightiest evidence against this reading's most obvious form comes from the Fathers." The bounded negative that follows, "Of the Fathers read here, none reads verse 8 in that way", is unchanged. |
+| 9 | `sections/30-authority-on-earth.tex` | "and the reading joins the altar to the Gospel's power only through that blood." → "and through that blood alone the altar meets the Gospel's power." |
+| 10 | `sections/40-nothing-of-our-own.tex` | "Pressed too far, this reading would become quietism" → "Pressed too far, the confession that without God we cannot please him would become quietism" |
+| 11 | `sections/50-comparison.tex` | "and each reading has to find room for it: the first because … the second because … the third because …" → "and it has a place in each reading: in the first because … in the second because … in the third because …" |
+| 12 | `sections/50-comparison.tex` | "And none of the three takes a sense of the Church's ministry from a Father's reading of the crowd's praise at the end of the Gospel." → "And no Father read here takes a sense of the Church's ministry from the crowd's praise at the end of the Gospel." The negative is the one `sections/30-authority-on-earth.tex` states and `research/scope.md` § 4.3 records. |
+| 13 | `sections/50-comparison.tex` | "The readings are complementary emphases, not rival doctrines." → "No doctrine of one reading is denied by another; they differ in emphasis." |
+| 14 | `sections/50-comparison.tex` | "The second reading reports Chrysostom's judgement first and Hilary's after it, and draws its own sense of the verse from neither: that sense it takes from Schuster. It cites Hilary to show that …" → "In the second reading Chrysostom's judgement comes first and Hilary's after it, and the reading's own sense of the verse is neither Father's but Schuster's; Hilary shows there that …" |
+| 15 | `sections/50-comparison.tex` | "Where the readings' own answers part is set out in the table above: what the Mass is about, …" → "The readings' own answers part, in the table above, on what the Mass is about, …" |
+| 16 | `sections/concise/04-themes.tex` | "Three readings of the whole Mass follow from these texts, and the expansive study develops each at length." → "…, each developed at length in the expansive study." |
+| 17 | `sections/concise/04-themes.tex` | "They are complementary emphases, three governing questions …" → "They differ in emphasis, as three governing questions …"; "The commentary that follows takes them up together, at the points where they answer the same question." → "They meet below at the points where they answer the same question." |
+| 18 | `sections/concise/10-commentary.tex` | "The first reading takes the same order:" → "In the first reading the order is the same:" |
+| 19 | `sections/concise/10-commentary.tex` | "and neither reading needs it settled:" → "and nothing in either reading waits on it:" |
+| 20 | `sections/concise/10-commentary.tex` | "the objection the second reading must face:" → "the objection on which the second reading turns:" |
+| 21 | `sections/concise/10-commentary.tex` | "The other two readings each find room for the Collect: the first because …, the second because …" → "The Collect has a place in the other two readings as well: in the first because …, in the second because …" |
+| 22 | `sections/concise/10-commentary.tex` | "The second reading takes its own sense of the verse from neither Father." → "Neither Father gives the second reading its own sense of the verse." |
+| 23 | `sections/concise/10-commentary.tex` | "The ministerial sense stands in four places, and the second reading names them." → "The second reading's ministerial sense stands in four places." The four places follow unchanged. |
+| 24 | `sections/concise/10-commentary.tex` | "The second reading joins the altar to the Gospel's power only through that blood." → "In the second reading the altar meets the Gospel's power through that blood alone." |
+| 25 | `sections/concise/10-commentary.tex` | "Pressed too far, the third reading would become quietism" → "Pressed too far, the confession that without God we cannot please him would become quietism" |
+
+The homily needed no change; its count stands at 1,438 words and the note
+stands. Left as they were: the scope appendices, the References, the page-2
+sheet and the expansive study's date sheet, and the homily's note, which are
+terminal or profile-required apparatus; sentences whose subject is already a
+witness or a text, among them "The three agree on what matters to this
+reading", "What the witnesses support together is this",
+"This reading takes them as a statement about where the power is exercised",
+and the comparison's descriptions of what each reading hears; and the
+headings "The other elements in this reading" and "``Such power to men'':
+the one disagreement between two readings", which name content.
+
+**Checks after the fifth pass.** All three outputs were built with `make doc`
+and installed with `make install-doc`; each build ran the settled-aux page
+check and the metadata check, and the installed bytes equal the build. Pages
+are unchanged (34, 12, 3); the concise themes still end on physical page 4
+and its commentary opens page 5. LaTeX logs carry no warning, as at the base.
+Whole-document word diffs against baseline builds of the parent commit show
+only the items above and the timestamp, and every changed page was inspected
+at 70 dpi.
+
+| Output | Pages | SHA-256 |
+| --- | ---: | --- |
+| study | 34 | `6197e975dbbd5baee796e40e0e877ba4e8e9cc68db3d18830ba15d9e7e4e7ae8` |
+| concise study | 12 | `f83a500b740d608de7fe4943accf78a00fc062065fe99cb9486e73b54b19e5db` |
+| homily | 3 | `c671311fd26ad2f335941c874592f61d09fc8640908ee2ec4d2a7203eb1258eb` |
+
+The web edition is `e282cf8a731935edd9dbeef13510ebe9a6353e5a047d3816feb7a6d69210a7b5`.
+These pass: `check-content-preflight` on the leaf, research, synthesis and
+homily editions, each output byte-identical to its output before the pass;
+`make check-web-editions-current`; and `_proper_study.py check` in `content`,
+`artifacts` and `publication` with all three `--require` flags, the receipts
+re-snapshotted. Stale for the coordinator, as before: this leaf's web binding,
+its `corpus.json` entry, and its files in the Claude publication inventory.
