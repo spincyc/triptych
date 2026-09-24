@@ -453,13 +453,20 @@ Rebinding is an operator approval and has not been done.
   all 44 published leaves still pass the three chronology checks.
 - The synthesis-gate census test was updated for the eighteenth manifest leaf.
 
-**Still to land:**
+**Landed since, on 2026-09-23:**
 
-- Chrysologus (PL 52) and his index mapping, in progress;
-- the complete web title blocks and full-width dossier notes, in progress;
+- Chrysologus's Sermones in PL 52, and the parallel Maximus Homilia CVIII in
+  PL 57, registered with their containment rows (9e56f0a1d);
+- the complete web title blocks, the full-width dossier notes and the
+  further converter repairs;
 - the locus-pattern rebinding sweep;
-- a fresh operator approval for the release bindings these leave stale.
-  `corpus.json` is stale from the version-7 digest.
+- the operator-approved rebind of the 49 bindings these left stale,
+  `corpus.json` among them. The authorization record is pending as noted
+  above.
+
+**Still to land:** the verse-level fragment edge that maps Sermo 50 at
+Matthew 9:1-8. It is in progress. Until it lands, `discover` finds Chrysologus
+held but matched only on the chapter.
 
 **Open.** These may land now:
 
