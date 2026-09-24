@@ -53,15 +53,15 @@ PC-S38-A
 
 ## The Propers: Themes and Movement
 
-> **Governing account**
+> **A king whose strength is humble**
 >
 > The officially correlated strand presents one royal paradox: God’s reign arrives in a king whose strength is humble and whose yoke gives rest. Beside it, Romans continues its own apostolic course, locating Christian freedom in the Spirit who raises bodies and puts sinful deeds to death, while the offering and Communion texts carry these themes toward purification, salvation, and enduring praise.
 
-> **Four-stage movement at a glance**
+> **Mercy, meekness, Spirit, praise**
 >
 > **1. Gathered by mercy — Entrance; Collect.** Temple mercy and the Son’s humility gather and raise a fallen people.
 >
-> **2. The humble King speaks — First Reading; Psalm; Acclamation; Gospel.** Peaceful rule and filial revelation form the officially correlated strand without erasing each text’s history.
+> **2. The humble King speaks — First Reading; Psalm; Acclamation; Gospel.** Peaceful rule and filial revelation form the officially correlated strand, and each text keeps its own history.
 >
 > **3. Freedom under the Spirit — Second Reading.** Paul’s semi-continuous strand calls hearers to Spirit-enabled mortification and bodily hope.
 >
@@ -69,7 +69,7 @@ PC-S38-A
 
 ### 1. Mercy gathers those who cannot raise themselves (*Entrance; Collect*)
 
-The Entrance begins with received mercy rather than religious achievement. Its Temple setting makes the gathering ecclesial, while praise reaches beyond one sanctuary. The Collect then attributes the world’s raising to the Son’s humility. These texts establish dependence before the readings specify kingship, Spirit, and discipleship; because they belong to Week XIV in every cycle, the relation is liturgical juxtaposition, not proved historical design.
+The Entrance begins with received mercy rather than religious achievement. Its Temple setting makes the gathering ecclesial, while praise reaches beyond one sanctuary. The Collect then attributes the world’s raising to the Son’s humility. These texts establish dependence before the readings specify kingship, Spirit, and discipleship; because they belong to Week XIV in every cycle, the relation is liturgical juxtaposition, not common composition.
 
 ### 2. Royal power takes the form of meekness (*First Reading; Psalm; Acclamation; Gospel*)
 
@@ -77,7 +77,7 @@ Zechariah removes the normal machinery of conquest from the king’s arrival: hu
 
 ### 3. Rest and mortification are not rivals (*Second Reading; Gospel*)
 
-Romans remains a semi-continuous strand, yet it prevents sentimental readings of rest. The Spirit’s indwelling generates obligation: evil deeds are to be put to death. Chrysostom and Augustine insist that this mortification concerns disordered action rather than hatred of the created body. The Gospel’s light yoke likewise names obedient discipleship, not inactivity. Liturgical co-occurrence permits this qualified comparison without claiming that Paul was selected to explain Matthew.
+Romans remains a semi-continuous strand, yet it prevents sentimental readings of rest. The Spirit’s indwelling generates obligation: evil deeds are to be put to death. Chrysostom and Augustine insist that this mortification concerns disordered action rather than hatred of the created body. The Gospel’s light yoke likewise names obedient discipleship, not inactivity. Their liturgical co-occurrence supports this comparison, while Paul’s text arrives by its own semi-continuous course.
 
 ### 4. Gift becomes purified life and enduring praise (*Prayer over Offerings; Communion; Prayer after Communion*)
 
@@ -91,9 +91,9 @@ Romans gives this discipleship an interior and bodily depth. The Spirit who rais
 
 | **Dimension** | **Appointed anchors** | **Source-grounded synthesis** | **Limit** |
 |:-----------|:----------------|:-----------------|:-------------------|
-| Christological | Zech. 9:9–10; Ps. 145; Matt. 11:25–30 | Jesus discloses the peaceful King’s power as filial revelation, meekness, and a yoke fitted by the Son who knows the Father. | The Lectionary officially correlates Zechariah and Matthew; it does not prove one historical composition, and Zion remains the oracle’s own horizon. |
+| Christological | Zech. 9:9–10; Ps. 145; Matt. 11:25–30 | Jesus discloses the peaceful King’s power as filial revelation, meekness, and a yoke fitted by the Son who knows the Father. | The Lectionary officially correlates Zechariah and Matthew, two separately composed books, and Zion remains the oracle’s own horizon. |
 | Pneumatological and anthropological | Rom. 8:9, 11–13 | The indwelling Spirit joins belonging to Christ, mortification of sinful deeds, and hope for the life of mortal bodies. | Romans remains semi-continuous; flesh is not bodily substance, and the proclamation omits verse 10. |
-| Ecclesial and sacramental | Entrance; Collect; Prayer over Offerings; Communion A/B; Prayer after Communion | A people gathered by mercy is raised through the Son’s humility, purified in offering, fed through a real alternative Communion path, and ordered toward salvation and praise. | The Week XIV orations serve A/B/C, the Communion choice is unresolved, and no whole-formulary historical design is claimed. |
+| Ecclesial and sacramental | Entrance; Collect; Prayer over Offerings; Communion A/B; Prayer after Communion | A people gathered by mercy is raised through the Son’s humility, purified in offering, fed through a real alternative Communion path, and ordered toward salvation and praise. | The Week XIV orations serve A/B/C, the Communion choice is unresolved, and the whole formulary is a liturgical compilation. |
 | Moral and eschatological | Gospel; Second Reading; Psalm; final prayer | Receptive littleness, meek strength, and Spirit-enabled obedience tend toward universal peace, bodily resurrection, salvation, and enduring praise. | Christ’s yoke does not commend passivity before abuse, and promised rest is not present exemption from duty or suffering. |
 
 ## The Propers: Detailed Commentary
@@ -116,7 +116,7 @@ Justin Martyr’s *Dialogue with Trypho*, chapter 53, directly adduces Zechariah
 
 Cyril of Jerusalem’s *Catechetical Lecture 12*, section 10, uses the humble king and the covenant language later in the chapter as recognizable signs of Christ. Chrysostom’s *Homily 66 on Matthew* contrasts the entering king with rulers surrounded by chariots and guards, drawing moral attention to his meekness. Clement of Alexandria also receives the oracle in *Paedagogus* I. These Greek witnesses differ in genre—apology, commentary, catechesis, homily, moral instruction—but converge on a kingship whose recognizable form is humility. Their convergence supports Christological reception; it does not prove that every phrase had only one pre-Christian referent.
 
-Their differences are as informative as their agreement. Justin argues from fulfillment, Origen presses the relation between the entry and the disarmament of verse 10, Cyril forms catechumens through prophetic signs, and Chrysostom draws the king’s manner into moral vision. No single witness exhausts the oracle. Read cumulatively, they make it harder to detach Christological fulfillment from peace to the nations or to retain the animal while forgetting the abolished weapons. The modern pairing with Matthew 11 continues this received focus on meek kingship without claiming that the Fathers commented on Lectionary 100.
+Their differences are as informative as their agreement. Justin argues from fulfillment, Origen presses the relation between the entry and the disarmament of verse 10, Cyril forms catechumens through prophetic signs, and Chrysostom draws the king’s manner into moral vision. No single witness exhausts the oracle. Read cumulatively, they make it harder to detach Christological fulfillment from peace to the nations or to retain the animal while forgetting the abolished weapons. The modern pairing with Matthew 11 continues this received focus on meek kingship, though the Fathers wrote long before Lectionary 100.
 
 The oracle addresses Zion and gives voice to Israel’s hope. Matthew’s passion narrative explicitly receives the entry image elsewhere, while this Sunday pairs the oracle with Jesus’ self-identification as meek. That liturgical correlation warrants Christological fulfillment while the first reading retains its original communal horizon.
 
@@ -130,11 +130,11 @@ Romans 8:9 locates Christian existence by indwelling: belonging to Christ is ins
 
 Verses 12–13 then announce an obligation without returning to self-salvation. Hearers are debtors, but not to disordered flesh as a ruling power. They must put evil deeds to death *by the Spirit*. Chrysostom’s direct exposition treats the warning as real while distinguishing sinful deeds from bodily substance. Augustine likewise keeps divine aid and human action together. Grace neither ratifies passivity nor turns obedience into autonomous achievement.
 
-Chrysostom’s *Homily 13 on Romans* treats the Spirit’s indwelling and the promise that the Spirit who raised Christ will vivify mortal bodies. Resurrection hope confirms embodiment rather than canceling it. *Homily 14* then reads the debt and warning of verses 12–13 as a call to mortify evil actions, not to hate the body’s created nature. The two homilies together fit the reading’s divided boundary better than citing the second alone.
+Chrysostom’s *Homily 13 on Romans* treats the Spirit’s indwelling and the promise that the Spirit who raised Christ will vivify mortal bodies. Resurrection hope confirms embodiment rather than canceling it. *Homily 14* then reads the debt and warning of verses 12–13 as a call to mortify evil actions, not to hate the body’s created nature. Together the two homilies cover the reading’s divided boundary, which the second alone does not.
 
 Augustine’s *Sermon 156*, sections 6–15, argues from the same command that human action is real because it is enabled: “by the Spirit” excludes both fatalistic passivity and proud self-sufficiency. Aquinas’s *Commentary on Romans* VIII, lectio 3, gives a medieval analysis of the debt, mortification, Spirit-led action, and the filial movement that follows just beyond the appointed verses. The latter context may explain the direction of Paul’s argument, but the assembly did not hear verses 14–17 in this proclamation. These direct Latin and Greek receptions agree on the main boundary: the “flesh” to which Christians owe nothing is disordered rule and sinful deed, not the body promised resurrection.
 
-The Lectionary’s omission of verse 10 must remain visible. It creates a proclamation moving from Spirit-defined identity directly to resurrection and obligation. Commentary may consult the complete chapter, but it may not silently insert an unappointed verse or imply that worshippers heard it.
+The Lectionary omits verse 10, creating a proclamation that moves from Spirit-defined identity directly to resurrection and obligation. The complete chapter informs the reading, but worshippers do not hear the unappointed verse.
 
 ### Revelation to the little and the yoke of the Son (*Acclamation; Gospel*)
 
@@ -146,9 +146,9 @@ The Gospel’s center is relational before it is therapeutic. The Son receives a
 
 Chrysostom insists on the unique reciprocity of Father and Son and then follows the turn toward invitation: the one making the high Christological claim summons all who labor and are burdened, not a spiritually accomplished class. The same homily refuses to make the yoke effortless in the sense of having no labor; it is good and light because disciples learn meekness and humility from this teacher and are aided under his rule. The passage’s “all” therefore joins universality to a definite relation with the Son.
 
-Augustine’s *Sermon 19 on the New Testament* (Benedictine Sermon 69) centers the invitation on humility as the deep foundation by which human frailty is healed rather than flattered. In *Confessions* VII.21 he illuminatingly reuses Matthew 11:25–29 to contrast ideas found in Platonist books with the way of the humble Christ: intellectual ascent alone did not give him the face, tears, and healing of the incarnate mediator. This autobiographical reception should not be made a verdict on all philosophy, but it sharply distinguishes Christian rest from a technique of mental elevation.
+Augustine’s *Sermon 19 on the New Testament* (Benedictine Sermon 69) centers the invitation on humility as the deep foundation by which human frailty is healed rather than flattered. In *Confessions* VII.21 he illuminatingly reuses Matthew 11:25–29 to contrast ideas found in Platonist books with the way of the humble Christ: intellectual ascent alone did not give him the face, tears, and healing of the incarnate mediator. This autobiographical reception is no verdict on all philosophy, but it sharply distinguishes Christian rest from a technique of mental elevation.
 
-Aquinas’s *Catena Aurea* on Matthew 11:25–30 is retained narrowly as evidence of a medieval compilation practice that arranged inherited excerpts verse by verse. Its embedded fragments were not independently traced here to their underlying editions and loci, so they remain research leads and supply no patristic claim in this guide. The substantive direct reception rests instead on the independently checked Chrysostom homily and Augustine sermon. This control prevents a convenient catena from multiplying apparent authorities beyond the evidence actually verified.
+Aquinas’s *Catena Aurea* on Matthew 11:25–30 attests only a medieval compilation practice that arranged inherited excerpts verse by verse. Its embedded fragments, untraced to their underlying editions and loci, ground no patristic claim. The substantive direct reception rests on the Chrysostom homily and Augustine sermon, each checked at its own locus, so the catena adds no authority beyond the evidence verified.
 
 This reception history also clarifies the Gospel’s internal order. Thanksgiving in verses 25–26 is addressed to the Father; the Son’s unique knowledge and power to reveal are stated in verse 27; only then does the universal invitation sound in verses 28–30. Humility is consequently not a method for bypassing Christology, and rest is not offered by an anonymous wisdom teacher. The meek heart belongs to the Son who reveals the Father. Conversely, the high claim of mutual knowledge does not terminate in exclusion: it opens into “come to me” for all who labor. Patristic doctrinal reading and ascetical application are strongest when neither half is allowed to swallow the other.
 
@@ -158,13 +158,13 @@ The yoke image prevents an interpretation of rest as absence of claim. A yoke jo
 
 Ambrose’s *Exposition of the Christian Faith* V.167 receives the yoke as a glorious subjection borne in humility and gentleness. Leo the Great, in *Letter 14*, applies the meek and humble Master to ecclesial leadership, warning pastors against placing unbearable burdens on those they govern. These are illuminating doctrinal and pastoral reuses, not verse-by-verse Gospel commentaries. Their applications expose a test internal to the text: an authority claiming Christ’s yoke while multiplying crushing burdens contradicts the teacher whose heart defines that yoke.
 
-> **Direct reception and its boundary**
+> **Witnesses to each strand**
 >
-> The retained witnesses directly treat every principal scriptural strand: Augustine on Psalms 48, 145, and 34; Justin, Origen, Cyril, Clement, and Chrysostom on Zechariah’s king; Chrysostom, Augustine, and Aquinas on Romans 8; and Chrysostom and Augustine on Matthew 11. Ambrose, Leo, and Augustine’s *Confessions* are labeled illuminating reuse. Aquinas’s *Catena* is evidence only of medieval compilation practice; its untraced embedded fragments remain leads. None comments on the complete modern formulary or proves one historical compositional design.
+> Direct witnesses treat every principal scriptural strand: Augustine on Psalms 48, 145, and 34; Justin, Origen, Cyril, Clement, and Chrysostom on Zechariah’s king; Chrysostom, Augustine, and Aquinas on Romans 8; and Chrysostom and Augustine on Matthew 11. Ambrose, Leo, and Augustine’s *Confessions* offer illuminating reuse. Aquinas’s *Catena* attests only medieval compilation practice, and its embedded fragments are untraced. None comments on the complete modern formulary, which is a liturgical compilation.
 
 ### Purification and heavenly conduct (*Prayer over Offerings*)
 
-The Prayer over the Offerings moves from a dedicated oblation to purification and heavenly conduct. It does not identify the gifts with moral effort or make purification the congregation’s purchase. God receives the Church’s offering within Christ’s action and is asked to transform those who offer. Because the prayer is common to A/B/C, relating it to the meek yoke is a later synthesis rather than a Lectionary claim.
+The Prayer over the Offerings moves from a dedicated oblation to purification and heavenly conduct. It does not identify the gifts with moral effort or make purification the congregation’s purchase. God receives the Church’s offering within Christ’s action and is asked to transform those who offer. Because the prayer is common to A/B/C, its bearing on the meek yoke comes from its place beside this Gospel, not from any Lectionary correlation.
 
 ### Two Communion paths and one final petition (*Communion A; Communion B; Prayer after Communion*)
 
@@ -196,7 +196,7 @@ The Prayer after Communion asks that recipients filled with great gifts receive 
 
 **The one raised from collapse is entrusted with a fitted weight. (*Responsorial Psalm; Gospel; Communion B*)** Psalm 145 raises the bowed; the Gospel gives rest, then Christ’s yoke; Communion B repeats the summons only if selected. The mechanism moves from rescue through restored capacity to freely borne, shared discipline. Separate reading misses rehabilitated agency; its fruit resists earned worth and permanent infantilization. The branch remains unresolved; invoking the yoke to preserve abuse, deny medical or legal relief, rush trauma recovery, or disguise a manipulator’s burden as divine command rules the proposal out.
 
-**Two Communion branches propose two ways of learning the good. (*Gospel; Communion A; Communion B; Prayer after Communion*)** The Gospel says “learn”; A, if chosen, answers by tasting and seeing; B, if chosen, repeats “come”; the final prayer tests knowledge in continuing praise. Comparison without blending reveals participation and reiterated call—branch architecture missed separately. Cyprian’s yoke–tasting juxtaposition is a near analogue, not this liturgical argument. The fruit is learning verified in durable life. Neither branch makes feeling grace’s measure, guarantees worthy reception, or licenses both antiphons for one undocumented celebration.
+**Two Communion branches propose two ways of learning the good. (*Gospel; Communion A; Communion B; Prayer after Communion*)** The Gospel says “learn”; A, if chosen, answers by tasting and seeing; B, if chosen, repeats “come”; the final prayer tests knowledge in continuing praise. Compared as alternatives, the two branches reveal participation and reiterated call—branch architecture missed separately. Cyprian’s yoke–tasting juxtaposition is a near analogue, not this liturgical argument. The fruit is learning verified in durable life. Neither branch makes feeling grace’s measure, guarantees worthy reception, or licenses both antiphons for one undocumented celebration.
 
 ## Appendix: Liturgical Resolution
 
@@ -266,6 +266,6 @@ The Prayer after Communion asks that recipients filled with great gifts receive 
 
 - *Catechism of the Catholic Church* 541–550, [the Kingdom present in Christ and disclosed in his ministry](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_3/paragraph_3_the_mysteries_of_christs_public_life.html); doctrinal illumination, not direct commentary on the Week XIV formulary.
 
-**Last revised (UTC):** 2026-07-21T15:25:48Z
+**Last revised (UTC):** 2026-09-24T13:43:19Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
