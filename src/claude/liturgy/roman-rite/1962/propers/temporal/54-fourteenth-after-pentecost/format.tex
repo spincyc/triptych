@@ -86,18 +86,23 @@ answer the Latin.} #1\par}
   \begin{massbox}{#1}\small}{\end{massbox}}
 
 % Two-tier page-2 dossier table. This sheet makes three departures from the
-% profile's fixed page-2 measurements and the note below \dossierprose states
-% them together with the escape clause that licenses them. The first is the
-% summary-tier column widths set here. The profile fixes them at
+% baseline page-2 measurements it was built on, and the note below
+% \dossierprose states them together with the escape clause that licenses
+% them. The baseline is historical. The 1962 profile stated these figures
+% until 2026-09-23 (a9086b3da) and now states none: it names the dossiertable
+% and concisedossiertable environments of src/common/propers-format.tex as
+% the owner of the measurements. This schema-1 leaf does not import that file
+% and keeps its own table here. The first departure is the summary-tier column
+% widths set here. The baseline set them at
 % 0.14 / 0.18 / 0.35 / 0.16\linewidth; this table sets
 % 0.11 / 0.15 / 0.19 / 0.38\linewidth, the four still totalling 0.83 as the
-% profile's do. The movement is into Date, because the corpus answers the
+% baseline's did. The movement is into Date, because the corpus answers the
 % Gospel and the Communion with six composition claims apiece and the Epistle
 % with five, the Offertory and Alleluia also carry a traditional-attribution
 % group, and the generated annotation prints them in one cell. Location
 % gives up the most, its detail belonging to the explanatory row beneath. The
 % summary tier keeps \footnotesize, \arraystretch, \LTpre and \LTpost exactly
-% as the profile sets them. An earlier form of this sheet set
+% as the baseline set them. An earlier form of this sheet set
 % 0.13 / 0.16 / 0.22 / 0.32, when the Date cell printed every source label in
 % full, and then 0.13 / 0.17 / 0.24 / 0.29 once the projection printed the
 % corpus's concise display labels. The traditional-attribution relation
@@ -127,22 +132,23 @@ answer the Latin.} #1\par}
 
 % Full-width explanatory and event rows inside a dossier.
 %
-% Measurement note. THREE of the profile's fixed page-2 measurements are varied
-% on this sheet, and these are all of them:
+% Measurement note. THREE of the baseline page-2 measurements (historical; see
+% the note above \dossiertable) are varied on this sheet, and these are all of
+% them:
 %
-%   D1. Summary-tier column widths, set above at \dossiertable. Profile
+%   D1. Summary-tier column widths, set above at \dossiertable. Baseline
 %       0.14 / 0.18 / 0.35 / 0.16\linewidth; here
 %       0.11 / 0.15 / 0.19 / 0.38\linewidth.
-%   D2. Spanning-row font size. The profile sets the table in \footnotesize and
-%       specifies no separate size for the spanning row, so the profile's value
+%   D2. Spanning-row font size. The baseline set the table in \footnotesize
+%       and specified no separate size for the spanning row, so its value
 %       for that row is \footnotesize --- 9pt on 11pt leading under the 11pt
 %       base class in src/common/preamble.tex. Here it is \fontsize{6.6}{7.2}:
 %       a reduction of about 27 percent in glyph size and 35 percent in
 %       leading, a little below \scriptsize. This is a large departure and is
 %       recorded as one.
-%   D3. Spanning-row width. Profile 0.92\linewidth; here 0.93\linewidth.
+%   D3. Spanning-row width. Baseline 0.92\linewidth; here 0.93\linewidth.
 %
-% The profile provides for all three and states the condition: change its fixed
+% The profile provides for all three and still states the condition: change
 % measurements only when the complete inventory cannot remain legible after the
 % hierarchy and the evidence have been preserved, and never spill, omit
 % evidence, or move apparatus here from elsewhere. That is this sheet's case.
@@ -162,7 +168,8 @@ answer the Latin.} #1\par}
 % then set the height of their rows, so D3 returns at 0.93, a hundredth of the
 % line and far short of the earlier 0.98.
 %
-% What the profile fixes and this sheet leaves alone: the two-tier hierarchy,
+% What the profile's hierarchy and the baseline fix, and this sheet leaves
+% alone: the two-tier hierarchy,
 % the four summary fields, the \footnotesize summary tier, \arraystretch 1.02,
 % \LTpre 0.15em, \LTpost 0pt, the 0.1em breathing space ending ordinary dossier
 % rows, \cmidrule(lr){1-4} within a dossier with \midrule only between complete
