@@ -21,7 +21,7 @@
 
 | Field | Resolution |
 | --- | --- |
-| Rite | Roman Rite, postconciliar (Ordinary Form) |
+| Rite | Roman Rite, postconciliar (Roman Missal, third edition) |
 | Missal | *Roman Missal, Third Edition, for Use in the Dioceses of the United States of America*, English, implemented 27 November 2011 |
 | Latin base of that Missal | *Missale Romanum*, editio typica tertia, reimpressio emendata (2008), itself the emended reprint of the 2002 typical edition |
 | Lectionary | *Lectionary for Mass for Use in the Dioceses of the United States of America*, Second Typical Edition, Volume I, no. 109 |
