@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-09-24"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:4a5c655c230be0712481807a3d3fe8d86649c8558c32c4ce7d7d90ccb493ce4c"
+inventory_snapshot = "sha256:612534cde1e3938a2acb20ccfd7ad03e543b28f1ebbc9653c4ea5e8828f26332"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:5d88f73b583375616ceb31514f89bd452f0882b47b94acaa649341505cf6d7e1"
 canonical_catalog_snapshot = "sha256:ff35ff9a2e333829fdb500517debe8c70bba266dc12d402b4d3c25bc3e362c44"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:3b7b7f212d805f6363fca838a9aae7052bd89b763677de23874ab2fb8c293a7f"
+snapshot = "sha256:be464fa8d1cbd969fcea477ee80e8b17e00658d22239058cc136ce9f6a356290"
 families = []
 
 [[review_units]]
@@ -398,7 +398,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass"
-surface_snapshot = "sha256:e4aeaea76db2d33e3bf8292ad35b43e24adc7aaeec04ecb87eb242a2a077c8f0"
+surface_snapshot = "sha256:0090f43bed4cd995ec8780b4f04d22cc91c0c9cb6cf7ba269576827236a6d69e"
 review_state = "pending"
 
 [[review_units]]
@@ -623,7 +623,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b"
-surface_snapshot = "sha256:e262bb73b9d5803c6769fbfc7cadc6a59733373554d572acb19c90a14cbfd7f6"
+surface_snapshot = "sha256:6af06695a449840e650fd2c8d654374fd97c217707746387c8ceb276f6f76a1f"
 review_state = "pending"
 
 [[review_units]]

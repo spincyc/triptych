@@ -4562,6 +4562,11 @@
        "model": "claude-opus-5-5[1m]",
        "qualifiers": "unexposed: reasoning-effort and sampling configuration",
        "runtime": "Anthropic Claude Code agent (naming repair of 2026-09-24, under the maintainer's approval of that date of item 6 of six GPT non-voice repairs and the instruction to resolve all known open issues: the page-1 table's column heading TLM text / reference renamed 1962 Missal text / reference, as guidance/editorial.md keeps the Traditional Latin Mass abbreviation out of labels and as the other GPT 1962 leaves print it; no other prose changed); Claude Code CLI 2.1.280; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent (approved repair of 2026-09-24: the Internet Archive References entry (1962 missal item and OCR locating aid), which no statement of the guide draws on, removed; propers/verified.md keeps the retrieval record; no other prose changed); Claude Code CLI 2.1.280; unexposed: server revision"
       }
      ],
      "eligibility": "conditional",
@@ -4578,7 +4583,7 @@
      "provider": "gpt",
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
-     "revised": "2026-09-24T16:54:26Z",
+     "revised": "2026-09-24T19:07:20Z",
      "status": "alpha",
      "subject": "Exposition of the common 1962 Nuptial Mass propers",
      "title": "Nuptial Mass: Missa votiva pro sponsis",
@@ -10387,6 +10392,11 @@
        "model": "claude-opus-5-5[1m]",
        "qualifiers": "unexposed: reasoning-effort and sampling configuration",
        "runtime": "Anthropic Claude Code agent (approved repairs of 2026-09-24, under the maintainer's authorization of that date: the pre-renumbering identities PC-S42-B and PC-S42 corrected to PC-S44-B and PC-S44, as the 2026-08-22 registry renumbering assigns, in the PDF subjects of both editions, the title block, the resolution appendix, the manifest, the leaf audit and the research scope; no other prose changed); Claude Code CLI 2.1.280; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent (approved repair of 2026-09-24: the Formula row's identity PC-S44-B set in typewriter type instead of between backticks, which printed a wrong closing quote; no other prose changed); Claude Code CLI 2.1.280; unexposed: server revision"
       }
      ],
      "eligibility": "eligible",
@@ -10401,7 +10411,7 @@
      },
      "provider": "gpt",
      "reviewed": "2026-09-24",
-     "revised": "2026-09-24T18:04:15Z",
+     "revised": "2026-09-24T19:07:20Z",
      "status": "alpha",
      "subject": "Source-audited proper exposition, PC-S44-B",
      "title": "Eighteenth Sunday in Ordinary Time: Year B (Research Edition)",
