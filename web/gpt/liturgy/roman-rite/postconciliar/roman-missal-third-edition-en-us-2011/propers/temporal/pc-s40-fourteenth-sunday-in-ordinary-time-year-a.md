@@ -222,7 +222,7 @@ The Prayer after Communion asks that recipients filled with great gifts receive 
 
 ## Appendix: Scope and Qualifications
 
-> **Formula.** Lectionary 100, both Psalm responses, both Communion alternatives, and the Week XIV orations and antiphons were audited; the bishops’ *Antiphonary* corroborates the antiphon assignments. **Historical study.** Every directly appointed scriptural passage and marked adaptation appears in canonical order, with Matthew’s composition separated from the narrated event. **Reception.** A passage-by-passage search retained direct Greek, Latin, and medieval witnesses for the appointed psalms, Zechariah 9, Romans 8, and Matthew 11, including Justin, Origen, Cyril, Clement, Chrysostom, Augustine, and Aquinas; Ambrose and Leo are explicitly marked as illuminating reuse. No witness is made commentator on the complete modern formulary. **Rights.** Only citations, short incipits, and original summaries appear. **Outstanding.** 2008 page-image typography and layout, full U.S. altar-book English-oration collation, and independent theological review; this working guide is not publication-final. **Audit trail.** `instance/manifest.md`; `propers/verified.md`; `../shared/ordinary-time/weeks/14/propers/verified.md`; `research/scope.md`.
+> **Formula.** Lectionary 100, both Psalm responses, both Communion alternatives, and the Week XIV orations and antiphons were audited; the England and Wales bishops’ *Antiphonary* corroborates the antiphon assignments. **Historical study.** Every directly appointed scriptural passage and marked adaptation appears in canonical order, with Matthew’s composition separated from the narrated event. **Reception.** A passage-by-passage search retained direct Greek, Latin, and medieval witnesses for the appointed psalms, Zechariah 9, Romans 8, and Matthew 11, including Justin, Origen, Cyril, Clement, Chrysostom, Augustine, and Aquinas; Ambrose and Leo are explicitly marked as illuminating reuse. No witness is made commentator on the complete modern formulary. **Rights.** Only citations, short incipits, and original summaries appear. **Outstanding.** 2008 page-image typography and layout, full U.S. altar-book English-oration collation, and independent theological review; this working guide is not publication-final. **Audit trail.** `instance/manifest.md`; `propers/verified.md`; `../shared/ordinary-time/weeks/14/propers/verified.md`; `research/scope.md`.
 
 ## References
 
@@ -232,7 +232,7 @@ The Prayer after Communion asks that recipients filled with great gifts receive 
 
 - United States Conference of Catholic Bishops, [*2026 Liturgical Calendar*](https://www.usccb.org/resources/2026cal.pdf) and [Lectionary 100 occurrence page](https://bible.usccb.org/bible/readings/070526.cfm), checked 2026-07-15.
 
-- Bishops’ official [*Antiphonary*](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf), p. 74, corroborating the ICEL antiphon assignments; protected wording is not reproduced.
+- Bishops’ Conference of England and Wales, official [*Antiphonary*](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf), p. 74, corroborating the ICEL antiphon assignments; protected wording is not reproduced.
 
 - Holy See, [*General Instruction of the Roman Missal*](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html), especially 46–90; approved [*General Introduction to the Lectionary*](https://www.liturgyoffice.org.uk/Resources/GIRM/Documents/Lectionary.pdf), especially 65–69, 78–91, and 93–110.
 
@@ -266,6 +266,6 @@ The Prayer after Communion asks that recipients filled with great gifts receive 
 
 - *Catechism of the Catholic Church* 541–550, [the Kingdom present in Christ and disclosed in his ministry](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_3/paragraph_3_the_mysteries_of_christs_public_life.html); doctrinal illumination, not direct commentary on the Week XIV formulary.
 
-**Last revised (UTC):** 2026-09-24T18:04:15Z
+**Last revised (UTC):** 2026-09-24T18:19:55Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
