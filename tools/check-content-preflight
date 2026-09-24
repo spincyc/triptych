@@ -86,12 +86,9 @@ EXAMPLES = {
         Example(
             "tools/check-content-preflight --provider gpt --document "
             "liturgy/roman-rite/1962/propers/temporal/"
-            "47-seventh-after-pentecost --check references-used",
+            "44-fourth-after-pentecost --check references-used",
             (
-                "check-content-preflight error: references-used: References "
-                "entry is cited nowhere in the body: Internet Archive, "
-                "Missale Romanum (1962) item and OCR locating aid , accessed "
-                "2026-07-10; exact retrieval data, checksum",
+                "check-content-preflight error: references-used: References entry is cited nowhere in the body: Internet Archive, 1962 missal item and OCR aid ; retrieval and checksums: .",
             ),
             "exits 1; this is the refusal the content-preflight gate is "
             "built on",
@@ -497,6 +494,27 @@ saint sant santo santa work works item
 NAME = re.compile(r"[A-Z\u00c0-\u00dd][A-Za-z\u00c0-\u00ff'\u2019-]{3,}")
 
 
+# Words a proper guide prints in its own prose whatever it cites: the names
+# of the Mass's parts, of its calendar, and of a title's shape. A References
+# entry that shares only these with the body has not been cited by them.
+# Kept apart from COMMON, which the rights check also reads, because this
+# list is about what a guide's prose always says, not about source ids. It
+# was found by review on 2026-09-24: the synthesis editions of GPT 50 and 51
+# passed two Gelasian and Gregorian sacramentary entries and a thesis on the
+# Postcommunion collects as used, on "Book", "Historical", "Postcommunion",
+# "Sunday" and "Pentecost" alone, while naming none of those works; and GPT
+# 43 passed an Internet Archive and Corpus Orationum entry on "Witness",
+# which is these guides' own word for any source.
+GENERIC = frozenset("""
+introit collect collects epistle gradual alleluia tract sequence gospel
+offertory secret secrets preface communion postcommunion antiphon antiphons
+sunday sundays pentecost advent lent easter week ordinary feast solemnity
+book historical history exact great church mass witness witnesses
+""".split())
+
+POSSESSIVE = re.compile(r"['\u2019]s$")
+
+
 def anchors(item: str) -> set[str]:
     """The capitalised words that identify a References entry.
 
@@ -506,13 +524,24 @@ def anchors(item: str) -> set[str]:
     References and nowhere else. So identity here is the set of distinctive
     proper words the entry uses, and an entry counts as cited when the body
     uses any one of them.
+
+    Words in COMMON or GENERIC do not identify an entry while it has a
+    distinctive word. An entry that has none is still an entry, and is
+    identified by the capitalised words it does have: until 2026-09-24 such
+    an entry was skipped, and "Internet Archive, 1962 missal item and OCR
+    finding aid" passed in GPT 44, 45 and 46, whose bodies never name it.
     """
-    found = set()
+    found, weak = set(), set()
     for word in NAME.findall(prose(item)):
         folded = fold(word)
-        if len(folded) >= 4 and folded not in COMMON:
+        if len(folded) < 4:
+            continue
+        if (folded in COMMON or folded in GENERIC
+                or POSSESSIVE.sub("", folded) in GENERIC):
+            weak.add(folded)
+        else:
             found.add(folded)
-    return found
+    return found or weak
 
 
 # --- The checks ------------------------------------------------------------

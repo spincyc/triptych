@@ -411,11 +411,11 @@ class CheckBehaviourTests(unittest.TestCase):
     GOOD_TRANSLATION = "English: Douay--Rheims (Challoner), Ps. 8:2"
     GOOD_ID = "work.catholic-church.missale-romanum"
 
-    def write_leaf(self, translation=None, identifier=None, extra=""):
+    def write_leaf(self, translation=None, identifier=None, extra="", body=""):
         (self.leaf / "main.tex").write_text(f"""\\section*{{Commentary}}
 Augustine, \\work{{Enarrationes in Psalmos}} 8, is read at the Introit.
 Guéranger is summarised for the devotional reception only.
-
+{body}
 \\begin{{namedtranslation}}{{{translation or self.GOOD_TRANSLATION}}}
 O Lord our Lord, how admirable is thy name.
 \\end{{namedtranslation}}
@@ -540,6 +540,48 @@ evidence = ["source-grounded-synthesis"]
             with self.subTest(check=other):
                 self.assertEqual(self.probe(other).returncode, 0,
                                  "one defect refused one check")
+
+    # A guide's own prose names the Mass's parts and its calendar whatever it
+    # cites. GPT 50 and 51's synthesis editions passed three entries they
+    # never name on "Book", "Historical", "Postcommunion" and "Sunday".
+    GENERIC_ENTRY = ("\\item H.~Q. Zebedee, \\work{The Historical Book of "
+                     "the Sunday Postcommunion}, p.~3.\n")
+    GENERIC_BODY = ("The Sunday Postcommunion closes the Mass, and the "
+                    "Historical Book of the feast is not named.")
+
+    def test_references_used_is_not_satisfied_by_generic_words(self):
+        self.write_leaf(extra=self.GENERIC_ENTRY, body=self.GENERIC_BODY)
+        result = self.probe("references-used")
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("cited nowhere in the body", result.stderr)
+        self.assertIn("Zebedee", result.stderr,
+                      "the refusal names the entry it refused")
+
+    def test_references_used_still_accepts_an_entry_named_in_the_body(self):
+        self.write_leaf(extra=self.GENERIC_ENTRY,
+                        body=self.GENERIC_BODY + " Zebedee dates it.")
+        result = self.probe("references-used")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("3 entries, every one used in the body", result.stdout)
+
+    # An entry made only of words the check treats as common used to be
+    # skipped; four GPT leaves printed an Internet Archive entry their bodies
+    # never name, and it passed.
+    COMMON_ENTRY = ("\\item Internet Archive, \\sourceurl{https://archive.org/"
+                    "details/probe}{1962 missal item} and OCR aid.\n")
+
+    def test_references_used_refuses_an_entry_of_common_words_only(self):
+        self.write_leaf(extra=self.COMMON_ENTRY)
+        result = self.probe("references-used")
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("cited nowhere in the body: Internet Archive",
+                      result.stderr)
+
+    def test_references_used_accepts_a_common_word_entry_the_body_names(self):
+        self.write_leaf(extra=self.COMMON_ENTRY,
+                        body="The Internet Archive scan located the page.")
+        result = self.probe("references-used")
+        self.assertEqual(result.returncode, 0, result.stderr)
 
     # --- restricted-not-reproduced --------------------------------------
 
