@@ -2976,30 +2976,36 @@ class CliBoundary(unittest.TestCase):
                 {"Collect", "Secret", "Postcommunion"},
                 True,
             ),
+            # The collated-non-exact case. It was the Dedication Common's
+            # Gradual and Alleluia until 2026-09-04, when the 1922 Mame
+            # carried them word for word and they were published; Vianney's
+            # Collect is the one collated-non-exact row still withheld, its
+            # hand-missal witness reading `beatum` where the target reads
+            # `sanctum` (test_proper_latin pins that row's state).
             (
-                "mass-propers Pustet Common",
+                "mass-propers Vianney",
                 (
                     "mass-propers",
                     "show",
                     "--calendar",
                     "roman-1962",
                     "--mass",
-                    "commune-dedicationis-ecclesiae",
+                    "s-ioannis-mariae-vianney-confessoris",
                     "--lang",
                     "la",
                     "--format",
                     "json",
                 ),
-                {"Gradual", "Alleluia (Tempore paschali)"},
+                {"Collect"},
                 False,
             ),
             (
-                "mass-today Pustet Common",
+                "mass-today Vianney",
                 (
                     "mass-today",
                     "show",
                     "--date",
-                    "2027-11-18",
+                    "2028-08-08",
                     "--calendar",
                     "roman-1962",
                     "--lang",
@@ -3007,7 +3013,7 @@ class CliBoundary(unittest.TestCase):
                     "--format",
                     "json",
                 ),
-                {"Gradual", "Alleluia (Tempore paschali)"},
+                {"Collect"},
                 True,
             ),
         )
