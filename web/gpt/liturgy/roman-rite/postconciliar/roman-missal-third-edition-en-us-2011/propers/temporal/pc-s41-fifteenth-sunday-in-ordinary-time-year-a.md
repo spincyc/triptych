@@ -1,12 +1,12 @@
 # Fifteenth Sunday in Ordinary Time: Year A
 
-*Source-audited proper exposition, PC-S39-A*
+*Source-audited proper exposition, PC-S41-A*
 
 **Fifteenth Sunday in Ordinary Time**
 
 *Year A*
 
-PC-S39-A
+PC-S41-A
 
 | **Textual unit** | **Text / citation** |
 |:-----------------|:-----------------------------------------------|
@@ -219,7 +219,7 @@ The Prayer after Communion asks that receiving gifts and frequenting the mystery
 | **Field** | **Resolved liturgical instance** |
 |:----------------|:-------------------------------------------------|
 | Celebration | Fifteenth Sunday in Ordinary Time; Sunday rank; green. |
-| Formula | `PC-S39-A`; canonical Year A target; dated U.S. occurrence 2026-07-12. |
+| Formula | `PC-S41-A`; canonical Year A target; dated U.S. occurrence 2026-07-12. |
 | Books | U.S. *Roman Missal, Third Edition* (implemented 2011), Week XV owner, its antiphon assignments corroborated in the bishops’ *Antiphonary*; U.S. *Lectionary for Mass*, Second Typical Edition, Volume I, no. 103. |
 | Calendar scope | General Roman Calendar as implemented for the United States; national scope. |
 | Cycle | Sunday Year A. |
@@ -286,6 +286,6 @@ The Prayer after Communion asks that receiving gifts and frequenting the mystery
 
 - *Catechism of the Catholic Church* 541–550, [the Kingdom and its parables](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_3/paragraph_3_the_mysteries_of_christs_public_life.html); doctrinal context, not direct formula commentary.
 
-**Last revised (UTC):** 2026-09-24T17:06:49Z
+**Last revised (UTC):** 2026-09-24T18:04:15Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

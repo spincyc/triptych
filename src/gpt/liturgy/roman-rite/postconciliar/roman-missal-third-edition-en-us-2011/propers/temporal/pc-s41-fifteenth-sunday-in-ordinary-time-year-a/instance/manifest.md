@@ -1,4 +1,4 @@
-# Liturgical Instance — PC-S39-A
+# Liturgical Instance — PC-S41-A
 
 **Publication slug:** `pc-s41-fifteenth-sunday-in-ordinary-time-year-a`
 **Resolved occurrence:** Sunday, 2026-07-12
@@ -8,7 +8,7 @@
 
 | Field | Resolution |
 | --- | --- |
-| Parent / permanent formula key | `PC-S39` / `PC-S39-A` |
+| Parent / permanent formula key | `PC-S41` / `PC-S41-A` |
 | Registry controls | `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md) |
 | Celebration | Fifteenth Sunday in Ordinary Time |
 | Rank, season, color | Sunday in Ordinary Time; green |
