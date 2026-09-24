@@ -49,6 +49,7 @@ PIPELINE_NAMES = ("proper.json", "proper-finish.json")
 sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from _audited_corpus import audited_tree  # noqa: E402
 from _parallel import gather  # noqa: E402
 from _workflow import PROGRAM, _substitute_args  # noqa: E402
 
@@ -133,21 +134,25 @@ def order(name: str) -> list[str]:
     return [stage["id"] for stage in pipeline(name)["stages"]]
 
 
-def manifest_leaves() -> list[tuple[str, str]]:
+def manifest_leaves(root: Path = ROOT) -> list[tuple[str, str]]:
     """Every 1962 propers leaf the manifest era produced, both providers."""
     return [
-        (provider, found.parent.relative_to(ROOT / "src" / provider).as_posix())
+        (provider, found.parent.relative_to(root / "src" / provider).as_posix())
         for provider in ("claude", "gpt")
         for found in sorted(
-            (ROOT / "src" / provider / "liturgy/roman-rite/1962/propers")
+            (root / "src" / provider / "liturgy/roman-rite/1962/propers")
             .glob("*/*/proper-components.toml"))
     ]
 
 
 def run_check(provider: str, document: str, check: str,
-              edition: str | None = None) -> subprocess.CompletedProcess:
-    command = [str(PREFLIGHT), "--provider", provider,
-               "--document", document, "--check", check]
+              edition: str | None = None,
+              root: Path | None = None) -> subprocess.CompletedProcess:
+    command = [str(PREFLIGHT)]
+    if root is not None:
+        command += ["--root", str(root)]
+    command += ["--provider", provider, "--document", document,
+                "--check", check]
     if edition is not None:
         command += ["--edition", edition]
     return subprocess.run(command, capture_output=True, text=True, cwd=ROOT)
@@ -571,7 +576,16 @@ class EditionResolverTests(unittest.TestCase):
 
 
 class EditionScopeTests(unittest.TestCase):
-    """What each edition reads, over the corpus rather than over a fixture."""
+    """What each edition reads, over the corpus rather than over a fixture.
+
+    What a refusal names is held over the corpus as the 2026-09-24 house-voice
+    audit found it (tools/tests/_audited_corpus.py): the audit repaired every
+    leaf the gate refused, so the published tree has no refusal left to read.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        cls.audited = audited_tree(cls)
 
     def test_the_leaf_scope_reads_what_both_editions_read(self):
         for provider, document in manifest_leaves():
@@ -615,14 +629,16 @@ class EditionScopeTests(unittest.TestCase):
         neither of which the companion prints. At synthesis scope it names
         the companion's own integrated commentary and one shared file, which
         are `derivation` and `seam`, the two things its reviser may repair.
+
+        The 2026-09-24 audit repaired those sentences (fd53bccbb and after),
+        so the leaf is held as the audit found it.
         """
         document = ("liturgy/roman-rite/1962/propers/temporal/"
                     "53-thirteenth-after-pentecost")
-        leaf = ROOT / "src" / "claude" / document
-        if not leaf.is_dir():
-            self.skipTest("the specimen leaf is not in the tree")
-        canonical = run_check("claude", document, "house-voice", "canonical")
-        companion = run_check("claude", document, "house-voice", "synthesis")
+        canonical = run_check("claude", document, "house-voice", "canonical",
+                              self.audited)
+        companion = run_check("claude", document, "house-voice", "synthesis",
+                              self.audited)
         self.assertEqual(canonical.returncode, 1)
         self.assertEqual(companion.returncode, 1)
         self.assertIn("sections/05-appointed-text.tex", canonical.stderr)
@@ -631,34 +647,54 @@ class EditionScopeTests(unittest.TestCase):
         self.assertIn("sections/synthesis/20-integrated-commentary.tex",
                       companion.stderr)
 
+    def named_files(self, root, checks):
+        """Each leaf file a synthesis-scope refusal names, and if it prints.
+
+        Any file of the leaf counts, not only one the companion prints: a
+        line was once examined only when it began with a printed file, so a
+        refusal naming a canonical-only file was never examined at all.
+        """
+        named = []
+        for provider, document in manifest_leaves(root):
+            leaf = root / "src" / provider / document
+            files = {path.relative_to(leaf).as_posix()
+                     for path in TOOL_MODULE.leaf_tex(leaf)}
+            printed = {path.relative_to(leaf).as_posix()
+                       for path in TOOL_MODULE.leaf_tex(leaf, "synthesis")}
+            results = gather(
+                lambda check: run_check(provider, document, check,
+                                        "synthesis", root),
+                checks)
+            for check, result in zip(checks, results):
+                for line in result.stderr.splitlines():
+                    if not line.startswith(ERROR):
+                        continue
+                    where = line.split(": ", 2)[-1].split(":", 1)[0]
+                    if where in files:
+                        named.append((short(provider, document), check,
+                                      where, where in printed))
+        return named
+
     def test_a_refusal_names_only_files_the_companion_prints(self):
         """Held over every leaf the gate refuses, not over one.
 
         A reviser handed a file its edition does not typeset has been handed
         a repair it may not make, and reporting it unrepaired three times
         blocks the run.
+
+        The 2026-09-24 audit repaired every leaf the gate refused, so over the
+        published tree this reads no refusal at all. It is held there, and
+        over the two prose checks on the audited tree, where 19 refusal lines
+        across six leaves name a leaf file.
         """
-        for provider, document in manifest_leaves():
-            leaf = ROOT / "src" / provider / document
-            printed = {path.relative_to(leaf).as_posix()
-                       for path in TOOL_MODULE.leaf_tex(leaf, "synthesis")}
-            results = gather(
-                lambda check: run_check(provider, document, check,
-                                        "synthesis"),
-                GATE_CHECKS)
-            for check, result in zip(GATE_CHECKS, results):
-                for line in result.stderr.splitlines():
-                    if not line.startswith(ERROR):
-                        continue
-                    said = line.split(": ", 2)[-1]
-                    for named in printed:
-                        if said.startswith(named):
-                            break
-                    else:
-                        continue
-                    with self.subTest(leaf=short(provider, document),
-                                      check=check):
-                        self.assertIn(said.split(":", 1)[0], printed)
+        live = self.named_files(ROOT, GATE_CHECKS)
+        audited = self.named_files(self.audited,
+                                   ("house-voice", "proposal-fields"))
+        self.assertEqual(len(audited), 19,
+                         "a loop over no refusals checks nothing")
+        for leaf, check, where, printed in live + audited:
+            with self.subTest(leaf=leaf, check=check, file=where):
+                self.assertTrue(printed)
 
     def test_the_edition_is_named_in_what_the_tool_prints(self):
         """A gate log says which document it judged.
@@ -684,9 +720,18 @@ class CorpusTests(unittest.TestCase):
     stop; and a gate that refused a leaf its own canonical preflight accepts
     would be a new bar raised on work already published under the old one.
     Both are measured here, over every leaf the manifest era produced.
+
+    The 2026-09-24 house-voice audit repaired every leaf the gate refused, so
+    what the gate was built for is measured over the corpus as that audit
+    found it (tools/tests/_audited_corpus.py), and the published tree is held
+    to the repaired state beside it.
     """
 
     maxDiff = None
+
+    @classmethod
+    def setUpClass(cls):
+        cls.audited = audited_tree(cls)
 
     # Every check content-preflight runs at leaf scope except the one that
     # needs a run's identity, which no published leaf can satisfy outside the
@@ -705,31 +750,28 @@ class CorpusTests(unittest.TestCase):
                        for job, result in zip(jobs, results)
                        if result.returncode})
 
-    def test_the_gate_refuses_six_of_the_eighteen_manifest_leaves(self):
+    def test_the_gate_refuses_none_of_the_eighteen_manifest_leaves(self):
         """Which, recorded, so that a change in the number is a decision.
-
-        Every one of the six is a leaf `content-preflight` refuses as well,
-        and five of the six are refused for `house-voice` in prose written
-        before either screen existed.
 
         The census stood at fifteen, then seventeen, and is now eighteen, and
         each addition is recorded here rather than left to fail as an
         inherited red: the GPT Seventeenth Sunday after Pentecost, the Claude
         Seventeenth Sunday produced by run `1e02dc05f2df9940`, and the Claude
-        Eighteenth Sunday produced by run `71b6f89518984232`. None is refused,
-        so the list below is unchanged — which is the assertion this test
-        exists for, and which the stale count had been failing before it could
-        run.
+        Eighteenth Sunday produced by run `71b6f89518984232`. None of the
+        three was refused.
+
+        Until 2026-09-24 the gate refused six: claude/49, 51, 52 and 53 and
+        gpt/49, each for `house-voice` in prose written before either screen
+        existed, and gpt/52 for `proposal-fields`; every one was a leaf
+        `content-preflight` refused as well. That day's audit repaired all six
+        (from e8217e665; gpt/52 in e11d8b618), so the list is now empty, and
+        held empty: a leaf the gate refuses again is a decision, not a drift.
+        The six are still refused over the audited tree; see
+        `test_the_companion_only_prose_the_gate_was_built_for` and
+        `EditionScopeTests`.
         """
         self.assertEqual(len(manifest_leaves()), 18)
-        self.assertEqual(
-            self.refused(GATE_CHECKS, "synthesis"),
-            ["claude/49-ninth-after-pentecost",
-             "claude/51-eleventh-after-pentecost",
-             "claude/52-twelfth-after-pentecost",
-             "claude/53-thirteenth-after-pentecost",
-             "gpt/49-ninth-after-pentecost",
-             "gpt/52-twelfth-after-pentecost"])
+        self.assertEqual(self.refused(GATE_CHECKS, "synthesis"), [])
 
     def test_the_gate_refuses_no_leaf_the_canonical_gate_accepts(self):
         """The bar this adds is not a new bar.
@@ -745,8 +787,29 @@ class CorpusTests(unittest.TestCase):
             gate <= canonical_gate,
             f"refused by the new gate alone: {sorted(gate - canonical_gate)}")
 
+    def companion_only_sites(self, root):
+        """House-voice refusals in files only the companion prints, by leaf."""
+        sites = {}
+        for provider, document in manifest_leaves(root):
+            leaf = root / "src" / provider / document
+            if not (leaf / "synthesis.tex").is_file():
+                continue
+            only = {path.relative_to(leaf).as_posix()
+                    for path in set(TOOL_MODULE.leaf_tex(leaf, "synthesis"))
+                    - set(TOOL_MODULE.leaf_tex(leaf, "canonical"))}
+            result = run_check(provider, document, "house-voice", "synthesis",
+                               root)
+            found = sum(
+                1 for line in result.stderr.splitlines()
+                if line.startswith(f"{ERROR}house-voice (synthesis edition): ")
+                and "not screened:" not in line
+                and line.split(": ", 2)[-1].split(":", 1)[0] in only)
+            if found:
+                sites[short(provider, document)] = found
+        return sites
+
     def test_the_companion_only_prose_the_gate_was_built_for(self):
-        """The three leaves whose companion-owned files carry the class.
+        """The three leaves whose companion-owned files carried the class.
 
         Measured over the files only the companion prints, and taken from the
         `\\input` graph rather than from a directory name. That is the whole
@@ -755,29 +818,27 @@ class CorpusTests(unittest.TestCase):
         a sweep of `sections/synthesis/` misses four of these and the leaf
         they are in, while the thirteenth Sunday in the other provider inputs
         a file from `sections/synthesis/` into its *canonical* edition. The
-        remaining twelve leaves' companion files carry none of the class,
+        remaining fifteen leaves' companion files carried none of the class,
         which is why it belongs in a gate loop and not in the evaluation
         behind it.
+
+        Measured over the published tree until the 2026-09-24 audit repaired
+        all nine sites; over the tree as the audit found it now, where the
+        eighteen leaves are the same eighteen.
         """
-        sites = {}
-        for provider, document in manifest_leaves():
-            leaf = ROOT / "src" / provider / document
-            if not (leaf / "synthesis.tex").is_file():
-                continue
-            only = {path.relative_to(leaf).as_posix()
-                    for path in set(TOOL_MODULE.leaf_tex(leaf, "synthesis"))
-                    - set(TOOL_MODULE.leaf_tex(leaf, "canonical"))}
-            result = run_check(provider, document, "house-voice", "synthesis")
-            found = sum(
-                1 for line in result.stderr.splitlines()
-                if line.startswith(f"{ERROR}house-voice (synthesis edition): ")
-                and "not screened:" not in line
-                and line.split(": ", 2)[-1].split(":", 1)[0] in only)
-            if found:
-                sites[short(provider, document)] = found
-        self.assertEqual(sites, {"claude/51-eleventh-after-pentecost": 4,
-                                 "claude/52-twelfth-after-pentecost": 3,
-                                 "claude/53-thirteenth-after-pentecost": 2})
+        self.assertEqual(len(manifest_leaves(self.audited)), 18)
+        self.assertEqual(self.companion_only_sites(self.audited),
+                         {"claude/51-eleventh-after-pentecost": 4,
+                          "claude/52-twelfth-after-pentecost": 3,
+                          "claude/53-thirteenth-after-pentecost": 2})
+
+    def test_no_published_companion_carries_the_class(self):
+        """None of the eighteen, since the 2026-09-24 audit.
+
+        Held empty rather than dropped, so a companion that takes the habit up
+        again is a failure here and not a new count.
+        """
+        self.assertEqual(self.companion_only_sites(ROOT), {})
 
 
 if __name__ == "__main__":
