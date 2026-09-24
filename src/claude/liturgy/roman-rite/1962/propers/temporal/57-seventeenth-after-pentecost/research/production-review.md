@@ -3119,3 +3119,101 @@ web editions match current sources).
 
 These are this stage's own runs of the gate commands, not an acceptance. The
 terminal program gate decides acceptance, and nothing here has been committed.
+
+## House-voice audit and review fixes, 24 September 2026 (outside the workflow)
+
+On 2026-09-24 the maintainer decided to audit every proper leaf of both
+providers for the house-voice defect and to repair what the audit finds, with
+independent review afterwards. The audit's rewrites are recorded in commits
+`bd223d6a9` and `b3c384e4d`. This pass fixes the independent review's findings
+on them and, because the leaf is now reopened, applies the three-document
+profile's *Liturgical commentators* rule (D11) and its lectionary- and
+sacramentary-list rule (D12), which were not applied when this leaf was first
+reviewed.
+
+**Review findings.**
+- Cassiodorus is an ecclesiastical writer in `author-standing-v1.toml`, not a
+  Father. So "Neither Father yields to the other" now reads "The two are not
+  reconciled", and the Alleluia setting's "The Fathers divide" now reads "The
+  psalm's two principal witnesses divide".
+- The comparison and the concise commentary say of Trent's chapter that it
+  "has no place in the second reading, which hears …".
+- The readings "differ in emphasis more than in what they identify".
+- The opening now gives each reading "four senses of its own".
+- These were rewritten again: the settings' introduction and closing
+  subsection, with "as these settings show" deleted, and the concise themes'
+  closing.
+
+**D11: liturgical commentators.** Rupert of Deutz and William Durandus
+expounded an office of this Sunday whose Gospel was Luke 14.
+`research/scope.md` § 2.4 records their elements.
+- Removed from the reader-facing prose:
+  - their other Gospel, and the Gospel's move in the year;
+  - the Offertory's older verses and the reasons for its choice (Fromage,
+    Tommasi, Durandus on Michaelmas);
+  - Rupert's and Durandus's reading of the Offertory's answer;
+  - the subsection "The medieval office of humility, and its other Gospel",
+    with Rupert's banquet mercy in the reading's anagogical sense;
+  - "Rupert and Durandus" in the comparison;
+  - Rupert in the concise overview, commentary, scope note and References;
+  - Rupert and the continuation in the concise References.
+- What stays:
+  - Durandus's gloss on the Introit's *rectum iudicium*, the judgment *quo Deus
+    exaltat humiles, et superbos deprimit*. It is now beside Bellarmine in the
+    third reading, with the difference between them.
+  - Durandus's reading of this Gospel's second half, at his own locus
+    (*Rationale* VI.135). The Sunday on which he read it is not narrated.
+- The expansive scope appendix keeps its one permitted clause, reworded:
+  "William Durandus, whose office of this Sunday had another Gospel, is cited
+  for the Introit and, where his books read it, for this Gospel." The Luke
+  14:9–11 locus leaves both Douay entries.
+
+**D12: list history.** The concise themes lose the formulary's early-list
+history: the Old Gelasian placing of the Collect and its *corde*, the earliest
+graduals, and the Frankish Gelasians and Supplement. They also lose
+"reached the day by different roads", "the chants that have stood at this
+Sunday longest" and "the texts gathered around them were not written for them".
+The expansive study carries all of it in `10-each-element.tex` and
+`40-just-judge-merciful-hearer.tex`. The concise scope note now points to the
+expansive study for the sacramentary and chant witnesses, and the Wilson and
+Hesbert entries leave the concise References. The homily carried none of this.
+
+**Holding page 4.** The concise themes still fill physical pages 3 and 4. The
+space freed there is filled from observations the expansive study already
+makes:
+- Ps 118:135's *illumina*;
+- the Collect's *sectari*;
+- the Epistle's *Fratres*, doxology and verse 7;
+- the Alleluia psalm's turn to Sion;
+- the Offertory's 9:7 and 9:18;
+- the Communion psalm's v. 10;
+- the Preface's *unus es Deus*.
+
+**Homily count.** The spoken body is 1,416 words. The note says 1,416, and that
+is correct. The mentions of 1,429 earlier in this record predate the
+restyling commit `6caf8946d` of 21 September. That commit shortened the Creed,
+Offertory and Communion sentences, and the spoken body went from 1,429 words
+to 1,416, counted the same way. Those mentions are corrected here and not
+rewritten. The homily note's route sentence now has the antiphon, not the
+homily, as its subject. No word of the spoken body changed.
+
+**Checks.** All three editions were built with `make doc` and installed with
+`make install-doc`. The installed bytes equal the build, and the settled-aux
+component and metadata checks pass.
+
+| Edition | Pages | SHA-256 |
+| --- | --- | --- |
+| Study | 31 | `5c90ed75d4b8231f4b2b5461576d8f9df7a9ebbc6432fe2bc986f94810459b12` |
+| Concise study | 10 | `c73b383a66b1617ebb7ceed9bb05d4b1d5add0f3ed47da12085694ed7346ffef` |
+| Homily | 3 | `324fe5e6e63b4fcaf71e2729da1437328639b0cd6749980dbdfd04f087dcba64` |
+
+- Every changed page was inspected at 70 dpi. The concise themes still end on
+  page 4, and the commentary opens page 5.
+- `check-content-preflight` passes on all four editions. references-used now
+  counts 63 entries and structural-meta-labels 87 headings, because Rupert,
+  the continuation's concise entry, the Wilson/Hesbert concise entry and one
+  heading were removed.
+- The web edition is regenerated and `make check-web-editions-current` passes.
+- The receipts are re-snapshotted, and `_proper_study.py check` passes in
+  content, artifacts and publication with `--require-presentation
+  --require-format`.
