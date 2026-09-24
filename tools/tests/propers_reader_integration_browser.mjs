@@ -276,6 +276,7 @@ const STATES = Object.freeze({
   alternativeUnsupported: hash({ missal: 'postconciliar', type: 'christological', mass: 'transfiguration-lord', bible: 'douay-rheims', orations: 'la', alternative: 'first-reading-alternative' }),
   alternative: hash({ missal: 'postconciliar', type: 'marian', mass: 'visitation-blessed-virgin-mary', bible: 'douay-rheims', orations: 'la' }),
   partial: hash({ missal: 'roman-1962', type: 'christological', mass: 'octava-nativitatis-domini', bible: 'douay-rheims', orations: 'la' }),
+  withheld: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 's-ioannis-mariae-vianney-confessoris', bible: 'douay-rheims', orations: 'la' }),
   missing: hash({ missal: 'roman-1962', bible: 'douay-rheims', orations: 'la' }),
   postMissing: hash({ missal: 'postconciliar', bible: 'douay-rheims', orations: 'la' }),
   invalid: hash({ missal: 'not-a-missal', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'la' }),
@@ -466,8 +467,12 @@ async function assertions(cdp, base) {
     const value = await snapshot(cdp);
     assert.equal(value.title, 'First Sunday of Advent', JSON.stringify(value));
     assert.equal(value.outcome, 'ready');
-    assert.equal(value.noticeHidden, false);
-    assert.match(value.notice, /Proper text is unavailable/i);
+    // Every 1962 Advent I text is held since the Latin backfill published its
+    // orations (3f86eed68), so the calm deep link has no coverage to report.
+    // The typed notice is held to a formulary still withheld, below.
+    assert.equal(value.noticeHidden, true);
+    assert.deepEqual(value.semantic.coverage.map(row => [row.scope, row.completeness]),
+      [['formulary:advent-1', 'complete']]);
     assert.equal(value.semantic.resolved.formulary, 'advent-1');
     assert.equal(value.semantic.events.length, 10);
     assert.equal(await evaluate(cdp, 'location.pathname'), CURRENT);
@@ -495,6 +500,18 @@ async function assertions(cdp, base) {
       detailsLazy: measured.detailsBuilds === 0,
       selectedStructureLoadCount: measured.loadCounts['structure/propers/roman-1962.json']
     };
+
+    // Typed material coverage, after the measurement above so that it counts
+    // only the deep link: St John Vianney's own Collect is rights-withheld 1962
+    // matter, so its Latin is reported unavailable over a partial formulary.
+    await candidate(cdp, base, STATES.withheld);
+    const withheld = await snapshot(cdp);
+    assert.equal(withheld.outcome, 'ready');
+    assert.equal(withheld.noticeHidden, false);
+    assert.match(withheld.notice, /Proper text is unavailable/i);
+    assert.deepEqual(withheld.semantic.coverage.map(row => [row.scope, row.state]),
+      [['formulary:s-ioannis-mariae-vianney-confessoris', 'supported'],
+        ['proper-original:la', 'unavailable']]);
   });
 
   await check('form without exact formulary fails closed and is not canonicalized into Browse', async () => {
@@ -764,6 +781,11 @@ async function assertions(cdp, base) {
 
   await check('current and candidate Roman texts, citations, and order match exactly', async () => {
     const wanted = await snapshot(cdp);
+    // The candidate's resource count is measured by the deep-link check; when
+    // that check failed early this read a null and threw a TypeError that hid
+    // its cause.
+    assert.ok(performanceReport,
+      'the deep-link check did not record the candidate measurements compared here');
     await current(cdp, base, STATES.roman);
     performanceReport.currentRouteResourceCount = await evaluate(cdp,
       `performance.getEntriesByType('resource').length`);
