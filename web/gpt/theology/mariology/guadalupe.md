@@ -4,9 +4,7 @@
 
 ## What the Church Receives—and What History Can Say
 
-> **Governing thesis**
->
-> Guadalupe should be received neither as a bundle of fragile internet marvels nor as a national legend emptied of theological truth. It is an exceptionally strong Catholic tradition in which Mary’s maternal presence, an Indigenous messenger, a sacred image, and a request for a house of encounter have been received by Popes, liturgy, saintly cult, pilgrimage, and the faith of peoples. Historical criticism serves that reception when it identifies what each source can bear and refuses to make devotion depend on evidence it does not possess.
+Guadalupe should be received neither as a bundle of fragile internet marvels nor as a national legend emptied of theological truth. It is an exceptionally strong Catholic tradition in which Mary’s maternal presence, an Indigenous messenger, a sacred image, and a request for a house of encounter have been received by Popes, liturgy, saintly cult, pilgrimage, and the faith of peoples. Historical criticism serves that reception when it identifies what each source can bear and refuses to make devotion depend on evidence it does not possess.
 
 The familiar account is luminous and compact. In December 1531 the Virgin Mary reportedly met the Indigenous Christian Juan Diego at Tepeyac, spoke to him with maternal tenderness, asked that a sacred house be built, healed his uncle, gave winter flowers as a sign, and left her image upon his mantle before Bishop Juan de Zumárraga. The story has shaped Mexico and the Americas, entered papal teaching and continental liturgy, and formed a language of dignity, evangelization, protection, and communion.
 
@@ -831,6 +829,6 @@ Limited photography and examinations generate disputed claims about eyes, fibers
 
 5.  The material object, its dated reproductions, and published conservation and art-historical descriptions. No direct access, sampling, imaging, or new experiment was performed for this monograph. Technical claims therefore remain bounded by the methods and access of their actual reports.
 
-**Last revised (UTC):** 2026-07-28T00:46:54Z
+**Last revised (UTC):** 2026-09-24T14:59:29Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

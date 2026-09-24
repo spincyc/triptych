@@ -4,9 +4,7 @@
 
 ## What the Church Has Judged—and What This Study Is Doing
 
-> **Governing thesis**
->
-> Fátima is best understood neither as a codebook placed beside the Gospel nor as a picturesque residue of Portuguese folk religion. It is a historically embodied, ecclesially discerned private revelation whose durable force lies in its return to the Gospel: adore God, receive Christ, pray, repent, intercede, repair what sin has wounded, and refuse the fatalism by which violence pretends to be destiny.
+Fátima is best understood neither as a codebook placed beside the Gospel nor as a picturesque residue of Portuguese folk religion. It is a historically embodied, ecclesially discerned private revelation whose durable force lies in its return to the Gospel: adore God, receive Christ, pray, repent, intercede, repair what sin has wounded, and refuse the fatalism by which violence pretends to be destiny.
 
 The modern reader usually approaches Fátima through a compressed sequence: three shepherd children, a dancing sun, a secret about Russia, and a papal consecration. Every item belongs to the story, but compression can falsify the whole. The six encounters unfolded between May and October 1917. Near-event interviews began while they were still occurring. The detailed account familiar today is largely Lúcia’s later memoir work. The competent bishop judged the six visions worthy of belief in 1930. The first two parts of the secret were written in 1941; the third in 1944; the Holy See published the third and interpreted the whole in 2000. Pontevedra and Tuy are later experiences within a wider Fátima family, not extra pages hidden inside the 1930 decree.
 
@@ -820,6 +818,6 @@ This appendix distinguishes event dates, writing dates, judgments, and later rec
 
 2.  Adélio Fernando Abreu, introduction to the 2013 critical selection above. Used for the documentary project’s scale, early-interview sequence, war-statement discrepancy, commission process, and national reception.
 
-**Last revised (UTC):** 2026-07-28T00:38:03Z
+**Last revised (UTC):** 2026-09-24T14:59:29Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

@@ -14,10 +14,9 @@
 \titleformat{\subsection}
   {\large\bfseries}{\thesubsection}{0.55em}{}
 
-\newcommand{\fatimathesis}[1]{%
-  \begin{studybox}{Governing thesis}
-  #1
-  \end{studybox}}
+% The thesis opens the body directly as prose: no box and no label, as the
+% reader-first rule of guidance/editorial.md requires.
+\newcommand{\fatimathesis}[1]{#1\par}
 
 \newcommand{\sourceboundary}[3]{%
   \begin{studyframe}

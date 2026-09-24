@@ -4,9 +4,7 @@
 
 ## What the Church Judged—and What It Did Not
 
-> **Governing thesis**
->
-> La Salette is most securely received where its public message is most evangelical: return to God, honor the Lord’s Day, cease profaning Christ’s name, pray faithfully, do penance, receive material want as a summons to solidarity rather than as a weapon against sufferers, and carry the Gospel of reconciliation to all God’s people. The positive Grenoble judgment concerns the reported 1846 event and authorized cult. It does not authenticate every later prophecy attributed to either witness, make Mélanie Calvat’s expanded 1879 text part of the public message, or convert a private revelation into an article of faith.
+La Salette is most securely received where its public message is most evangelical: return to God, honor the Lord’s Day, cease profaning Christ’s name, pray faithfully, do penance, receive material want as a summons to solidarity rather than as a weapon against sufferers, and carry the Gospel of reconciliation to all God’s people. The positive Grenoble judgment concerns the reported 1846 event and authorized cult. It does not authenticate every later prophecy attributed to either witness, make Mélanie Calvat’s expanded 1879 text part of the public message, or convert a private revelation into an article of faith.
 
 La Salette is unusually vulnerable to category error. A single reported encounter produced a public discourse, two separately spoken private communications, many early witness records, sealed manuscripts five years later, later rewritings, a positive diocesan judgment, an authorized shrine and religious institute, several Roman restrictions on secret literature, and a worldwide spirituality of reconciliation. These are related realities. They are not one undifferentiated “apparition text.”
 
@@ -664,9 +662,7 @@ Preachers should identify the reported character of the message, state the freed
 
 No fundraising appeal, political campaign, healing claim, or new visionary receives credibility merely by attaching “La Salette” to itself. The title is not a transferable license. Under the 2024 norms, new alleged phenomena require competent ecclesial discernment; private promoters cannot inherit an old judgment.
 
-> **Governing thesis**
->
-> The mature fruit of La Salette is not possession of a secret but restored attention: attention to Christ crucified and risen, to worship, to the holy Name, to daily prayer, to bread and those who lack it, to sin’s real consequences, to mercy’s open condition, and to the Church’s ministry of reconciliation. The shepherds’ mission ends where the Church’s begins—not by forgetting the witnesses, but by freeing their testimony from the burden of becoming a second Gospel.
+The mature fruit of La Salette is not possession of a secret but restored attention: attention to Christ crucified and risen, to worship, to the holy Name, to daily prayer, to bread and those who lack it, to sin’s real consequences, to mercy’s open condition, and to the Church’s ministry of reconciliation. The shepherds’ mission ends where the Church’s begins—not by forgetting the witnesses, but by freeing their testimony from the burden of becoming a second Gospel.
 
 ## Ecclesial Status, Corpus, and Method
 
@@ -952,6 +948,6 @@ DDF index, Holy See acts, Diocese, Shrine, public-message sources, and current r
 
 4.  Laurent Gruaz, “Maximin Giraud, le berger de La Salette: de l’Apparition de la Vierge aux soldats du Pape,” *Chrétiens et sociétés* 17 (2011), 151–172, DOI 10.4000/chretienssocietes.2827. Used for Maximin’s documented 1865 service.
 
-**Last revised (UTC):** 2026-07-28T00:57:41Z
+**Last revised (UTC):** 2026-09-24T14:59:29Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

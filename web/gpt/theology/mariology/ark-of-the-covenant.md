@@ -10,9 +10,7 @@ The journey does not end when the music stops. The Ark enters David’s tent, th
 
 This is not the biography of a magical object. The Ark cannot compel victory, hold God captive, or protect disobedience from judgment. It is the God-appointed meeting-place of the covenant, the throne-sign beneath the cherubim, and the sacred footstool of the One whom even the highest heaven cannot contain (Exod 25:22; 1 Sam 4:4; 2 Sam 6:2; 1 Kgs 8:27). Again and again its road teaches the same severe and liberating truth: divine Presence is gift before it is possession. It may be received in obedient worship; it may not be seized, managed, or recruited for a human project.
 
-> **Governing thesis**
->
-> Christ is not a later sacred sign alongside the old Ark. He is the incarnate Son, the mediator of the New Covenant, and the definitive Presence of God among us. Mary is the living Ark because she freely receives and truly bears him as her Son. Her glory is therefore wholly Christological: the dignity of the bearer comes from the identity of the One borne.
+Christ is not a later sacred sign alongside the old Ark. He is the incarnate Son, the mediator of the New Covenant, and the definitive Presence of God among us. Mary is the living Ark because she freely receives and truly bears him as her Son. Her glory is therefore wholly Christological: the dignity of the bearer comes from the identity of the One borne.
 
 The old road must first be traveled on its own terms. Only then can Luke’s quiet road into Judah disclose its full wonder. The evangelist never places the noun “Ark” beside Mary’s name. Instead, he lets Israel’s Scriptures ring: the overshadowing Presence, the journey through the hill country, entrance into a house, the wondering question, the leap of joy, blessing, and the three months. The Church receives that convergence confidently, not because one isolated word works as a cipher, but because the one divine economy reaches its living center in the Word made flesh.
 
@@ -442,9 +440,7 @@ The witnesses do not all prove the same proposition. Ephrem, Epiphanius, Maximus
 
 The living Ark does not enter the New Covenant as an object deposited in a vault. Mary is a free believer, a mother, and a wife. Jesus is not sacred cargo but the eternal Son made man. Joseph is not stationed outside a taboo: he is addressed as “son of David,” commanded to receive Mary as his wife, and entrusted with a real father’s service toward her Son. Under their roof reverence becomes covenantal communion—obedience, fidelity, work, protection, tenderness, and the complete gift of self.
 
-> **Governing thesis**
->
-> Mary and Joseph’s marriage was wholly true and wholly virginal. Its continence was not fear of Mary’s body, contempt for conjugal love, or a merely legal arrangement. It was the Spirit-given form of their mutual spousal gift and common vocation around the incarnate Son.
+Mary and Joseph’s marriage was wholly true and wholly virginal. Its continence was not fear of Mary’s body, contempt for conjugal love, or a merely legal arrangement. It was the Spirit-given form of their mutual spousal gift and common vocation around the incarnate Son.
 
 ### “Joseph, son of David, do not fear”
 
@@ -1018,6 +1014,6 @@ This publication is intended for study, catechesis, meditation, and adult format
 
 Modern translations, critical editions, scholarship, and spiritual works retain their own rights. Quotations are short, attributed, and controlled by the research audit. Repository-held public-domain Bible witnesses remain public domain. The map and graphite plates are project-created composites. For map `ARK-MAP-001`, the source-first physical base `artwork/ark-journey-cartographic-graphite-v3.png` is deterministically derived from cited Natural Earth vectors and Terrain Tiles; the independently authored `artwork/ark-journey-vector-map.tex` carries every biblical station, route, label, confidence class, and Old/New-overlay claim. The five generated Ark and sanctuary images are interpretive illustrations whose commanded, attested, uncertain, and unrecovered features are controlled by live captions and the text equivalent. The exact external-input identities, generation prompts, received-output identities, transformations, admission decisions, and consumer-review history belong to `research/map-provenance.md` and `research/ark-diagram-audit.md`. No map pixel or generated pixel is treated as biblical or archaeological evidence; underlying Scripture, geographic facts, archaeological records, and cited works remain distinct. The work claims neither ecclesiastical approval nor independent specialist review.
 
-**Last revised (UTC):** 2026-08-16T15:38:51Z
+**Last revised (UTC):** 2026-09-24T14:59:29Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

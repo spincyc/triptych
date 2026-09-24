@@ -4,9 +4,7 @@
 
 ## A Marian Prayer Whose Center Is Christ
 
-> **Governing thesis**
->
-> The Rosary is a contemplative school of the Gospel: the Church remembers the mysteries of Christ in communion with Mary, receives their grace, and is conformed by the Holy Spirit to the Son for the glory of the Father. Its Marian form does not place Mary beside Christ as another source of salvation. It asks the Mother who first believed, pondered, obeyed, suffered, and rejoiced with him to teach the Church to look upon him.
+The Rosary is a contemplative school of the Gospel: the Church remembers the mysteries of Christ in communion with Mary, receives their grace, and is conformed by the Holy Spirit to the Son for the glory of the Father. Its Marian form does not place Mary beside Christ as another source of salvation. It asks the Mother who first believed, pondered, obeyed, suffered, and rejoiced with him to teach the Church to look upon him.
 
 St. John Paul II calls the Rosary a “compendium of the Gospel” and at once explains the sense in which that expression is true: its center of gravity is Christ; its characteristic repetition gives praise to Christ through the angelic greeting; and its sequence follows the saving events of his life (*Rosarium Virginis Mariae* \[RVM\] 1, 18). The Rosary is therefore neither a miniature replacement for Scripture nor a parallel revelation. It is an ecclesial method of dwelling upon the one public Revelation completed in Jesus Christ.
 
@@ -778,6 +776,6 @@ These Fathers are witnesses to the mysteries and their reception, not authors of
 
 - Rita George Tvrtković, “Our Lady of Victory or Our Lady of Beauty?: The Virgin Mary in Early Modern Dominican and Jesuit Approaches to Islam,” *Journal of Jesuit Studies* 7 (2020), 403–416, especially 405: [peer-reviewed PDF](https://brill.com/view/journals/jjs/7/3/article-p403_403.pdf). Used to corroborate Alain’s fifteenth-century Dominic linkage and Sprenger’s 1475 Cologne confraternity.
 
-**Last revised (UTC):** 2026-07-23T21:12:55Z
+**Last revised (UTC):** 2026-09-24T14:59:29Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

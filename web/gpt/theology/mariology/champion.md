@@ -4,9 +4,7 @@
 
 ## What the Church Has Judged—and What This Study Is Doing
 
-> **Governing thesis**
->
-> Champion is not chiefly a story about a protected building. It is a source-layered account of a laywoman summoned to help children know the Christian faith, pray, receive the sacraments, and turn to Christ. The competent bishop’s 2010 judgment gives the reported apparitions a real but non-obligatory credibility. That judgment neither enlarges public Revelation nor converts every later narrative detail, favor, healing, or memory of the 1871 fire into a declared miracle.
+Champion is not chiefly a story about a protected building. It is a source-layered account of a laywoman summoned to help children know the Christian faith, pray, receive the sacraments, and turn to Christ. The competent bishop’s 2010 judgment gives the reported apparitions a real but non-obligatory credibility. That judgment neither enlarges public Revelation nor converts every later narrative detail, favor, healing, or memory of the 1871 fire into a declared miracle.
 
 The received story is easily compressed into a misleading sequence: the Virgin appeared, gave Adele Brise a message, and later saved her chapel from the Peshtigo Fire. Each clause needs qualification. The fullest dialogue is preserved in a later local narrative, not in a contemporaneous transcript. The earliest published witnesses preserve a shorter catechetical commission and disagree with the later account on chronology and visual detail. Peter Pernin’s 1874 appendix is early evidence for the site’s preservation, but he was not present at Champion during the fire and expressly refused to pronounce the preservation miraculous. Bishop David L. Ricken’s decree of 8 December 2010 positively judged the events, apparitions, and locutions given to Adele in October 1859; its operative clause did not separately declare the fire, any healing, or any favor a miracle.
 
@@ -946,6 +944,6 @@ Starr did not witness the apparitions. Pernin’s “eye-witness” title applie
 
 2.  Diocese of Green Bay, *Our Promise to Protect* (current posted policy), especially printed pp. 4–5 and 12 on reporting by school and faith-formation personnel: [official policy PDF](https://www.gbdioc.org/wp-content/uploads/2025/03/Our-Promise-to-Protect-2020.pdf). Cited only for present pastoral application, not as a historical source for 1859.
 
-**Last revised (UTC):** 2026-07-21T15:25:48Z
+**Last revised (UTC):** 2026-09-24T14:59:29Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

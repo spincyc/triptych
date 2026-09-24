@@ -4,9 +4,7 @@
 
 ## Four Dogmas within the One Mystery of Christ
 
-> **Governing thesis**
->
-> The Marian dogmas do not disclose an independent economy of salvation running beside Christ. They confess what the triune God has done in and for one created woman because the eternal Son truly became man from her, redeemed her by his merits, associated her freely and maternally with his mission, and brought her to the bodily glory promised to his Church. Every Marian “yes” is first God’s gift; every Marian privilege manifests the sufficiency of Christ; every authentic Marian devotion ends in worship of Father, Son, and Holy Spirit.
+The Marian dogmas do not disclose an independent economy of salvation running beside Christ. They confess what the triune God has done in and for one created woman because the eternal Son truly became man from her, redeemed her by his merits, associated her freely and maternally with his mission, and brought her to the bodily glory promised to his Church. Every Marian “yes” is first God’s gift; every Marian privilege manifests the sufficiency of Christ; every authentic Marian devotion ends in worship of Father, Son, and Holy Spirit.
 
 Catholic theology commonly identifies four Marian dogmas: Mary is truly Mother of God; she is ever-virgin; she was preserved from original sin from the first instant of her conception; and, when her earthly course was complete, she was assumed body and soul into heavenly glory. Calling all four *dogmas* does not mean that each entered the Church’s confession in the same way or received an identical kind of defining act. Divine motherhood was solemnly secured in the Church’s Christological judgments at Ephesus and Chalcedon. Perpetual virginity belongs to ancient creedal, conciliar, liturgical, and universal teaching and received especially exact expression in the Lateran Synod of 649. The Immaculate Conception and Assumption were defined by solemn papal judgments in 1854 and 1950. Their unity is real; their histories and precise dogmatic objects remain distinct.
 
@@ -482,9 +480,7 @@ Category discipline is not minimalism. A typology can illuminate Scripture witho
 
 ## Mary’s Cooperation: Co-redemptrix, Mediatrix, and Advocate
 
-> **Governing thesis**
->
-> Mary’s cooperation in salvation is real because grace perfects created freedom and because God willed the Incarnation to include her maternal consent, discipleship, and charity. It is wholly received because Christ alone accomplishes redemption as the incarnate Son and one perfect mediator. The current Magisterium therefore commends precise language of maternal cooperation and intercession, judges “Co-redemptrix” always inappropriate, limits “Mediatrix” to a distant and subordinate analogy, and receives “Advocate” only as maternal intercession within—never against—Christ’s mediation.
+Mary’s cooperation in salvation is real because grace perfects created freedom and because God willed the Incarnation to include her maternal consent, discipleship, and charity. It is wholly received because Christ alone accomplishes redemption as the incarnate Son and one perfect mediator. The current Magisterium therefore commends precise language of maternal cooperation and intercession, judges “Co-redemptrix” always inappropriate, limits “Mediatrix” to a distant and subordinate analogy, and receives “Advocate” only as maternal intercession within—never against—Christ’s mediation.
 
 This chapter begins with doctrine rather than vocabulary. A title cannot rescue a defective account, and rejecting an ambiguous title need not deny the reality its advocates intended to protect. The governing sources are 1 Timothy 2:5–6; Vatican II, LG 56, 58, and 60–62; CCC 967–970; and the Dicastery for the Doctrine of the Faith’s doctrinal note *Mater Populi Fidelis* (4 November 2025), approved by Pope Leo XIV. MPF explicitly distinguishes legitimate Marian cooperation from formulas that compromise the unique mediation of Christ.
 
@@ -819,6 +815,6 @@ Independent human Mariological, dogmatic, patristic, conciliar-historical, medie
 
 - St. Bernard of Clairvaux, Epistle 174 to the canons of Lyons, and Eadmer, *Tractatus de conceptione sanctae Mariae*, are used to locate opposed medieval stages in the conception controversy; their views are neither presented as magisterial judgments nor collapsed into the later definition.
 
-**Last revised (UTC):** 2026-07-21T15:25:48Z
+**Last revised (UTC):** 2026-09-24T14:59:29Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
