@@ -1794,3 +1794,25 @@ settled-aux and metadata checks pass, and the page counts are unchanged.
 - The web edition is regenerated and `make check-web-editions-current` passes.
 - `_proper_study.py check` passes in content, artifacts and publication with
   all three `--require` flags, and the receipts are re-snapshotted.
+
+### Seventh pass (house-voice re-check fixes)
+
+The re-check of the sixth pass left two findings.
+
+- **Item 1.** The first reading's third objection read "four texts, joined by
+  the words *pacem*, *domum*, *gentes*, *hostias*", but four different words
+  cannot join the texts. It now reads "four texts, each with its own word,
+  *pacem* …".
+- **Item 2.** The same subsection counted "A second difficulty" and "A third
+  objection" from a first it never named. Its opening sentence now names the
+  first: "The first difficulty is that the Gradual's psalm, on which this
+  reading leans most, has another reading among its Greek interpreters". The
+  third now reads "A third difficulty is the objection that …", so the count
+  holds.
+
+No prose of the concise study or the homily changed. All three editions were
+rebuilt and installed for the new revision timestamp, and their page counts
+are unchanged at 34, 12 and 3. The study's changed pages 15–16 were inspected.
+The content check, the artifacts and publication checks with all three
+`--require` flags, and the web edition were rerun, and the receipts were
+re-snapshotted.
