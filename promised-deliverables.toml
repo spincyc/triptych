@@ -256,7 +256,7 @@ state = "complete"
 id = "liturgical-commentators-2026-09-22"
 owner = "PROJECT-WORK.md"
 promise = "Work out and implement how Triptych sources, stores, keys and includes appropriately authoritative liturgical commentators such as Gueranger's The Liturgical Year: author standing, Mass-keyed discovery robust to Sunday-label drift, first-priority acquisitions, and the inclusion rule, under the maintainer's decisions of 2026-09-22."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "maintainer-decisions-recorded"
@@ -352,8 +352,12 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "chrysologus-acquired"
   criterion = "After the Claude 1962 Eighteenth Sunday run publishes, a lawful public-domain edition of Peter Chrysologus's sermons (Migne PL 52) is registered with its containment row, and Sermo 50 De paralytico curato is mapped at Matthew 9:1-8 in the commentary index, so a sweep of that Gospel surfaces him (maintainer decision, 2026-09-23)."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", "src/sources/inventories/research-staleness-v1.toml"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "src/sources/inventories/source-containment-v1.toml", "src/sources/commentary/fragment-loci.yaml", "src/sources/works/peter-chrysologus/sermones/editions/1894-garnier-migne-pl-52/passages/sermo-50.toml"]
+  note = "The fragment edge stores the sermon's natural extent, Matthew 9:1-7, under catena Rule 5: it never quotes or expounds 9:8. The chapter row in passage-commentary-index.yaml and the edge together make a sweep of Matthew 9:1-8 surface him as held, with the Sermo 50 locator. On the maintainer's decision the text is collated, verified by a second reader and published in the Catena."
+  check = "contains"
+  path = "src/sources/commentary/fragment-loci.yaml"
+  needle = "passage.peter-chrysologus.sermones.1894-garnier-migne-pl-52.sermo-50"
 
   [[deliverables.requirements]]
   id = "workflow-version-after-publication"

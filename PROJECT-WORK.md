@@ -464,9 +464,30 @@ Rebinding is an operator approval and has not been done.
   `corpus.json` among them. The authorization record is pending as noted
   above.
 
-**Still to land:** the verse-level fragment edge that maps Sermo 50 at
-Matthew 9:1-8. It is in progress. Until it lands, `discover` finds Chrysologus
-held but matched only on the chapter.
+**Sermo 50 in the Catena, 2026-09-23.** On the maintainer's decision to
+collate and publish, Sermo 50 is on the Catena edge at its natural extent,
+Matthew 9:1-7 (Rule 5). It quotes and expounds 9:1-7 and never reaches 9:8,
+though the 1962 Gospel does.
+
+- Its text, 834 words, is a checked transcription from the PL 52 page images,
+  kept separately because the Archive text layer is too damaged for exact
+  segments.
+- A second reader collated it word by word against the images and found no
+  discrepancy. It also caught a misquotation in the leaf n172 note, now
+  corrected.
+- `catena check` now refuses any fragment whose passage carries no text.
+- The same text printed as Maximus of Turin's Homilia CVIII is not mapped.
+  No guidance settles how one text held under two attributions is shown.
+  The evidence stands on both passage records.
+
+`discover` still labels Chrysologus "matched on the chapter", with a
+`fragment-edge` join. The label comes only from the chapter-keyed index.
+Reporting overlapping held fragments as verse matches is an open design
+question and is not changed here.
+
+This leaves stale 3 Catena projections and 3 source projections for this
+edition and passage, and they await operator approval. No English
+translation survey has been made for the Sermones.
 
 **Open.** These may land now:
 
