@@ -12,7 +12,7 @@ protected U.S. Missal and Lectionary English. Stable component, textual-unit,
 and relation keys are recorded in `proper-components.toml`. No independent
 specialist review is newly claimed.
 
-**Formula:** `PC-S41-A` · **Occurrence:** Sunday 26 July 2026 · **Lectionary:** no. 109
+**Formula:** `PC-S43-A` · **Occurrence:** Sunday 26 July 2026 · **Lectionary:** no. 109
 **Provider:** Anthropic Claude
 **As of:** 2026-07-25
 **Registry controls:** `guidance/liturgy/postconciliar-propers-registry.md`; the edition's [formula dispositions](../../../registry/formula-dispositions.md) and [2026 occurrences](../../../registry/occurrences-2026.md)

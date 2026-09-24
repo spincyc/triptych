@@ -1,4 +1,4 @@
-# Liturgical Instance Manifest — `PC-S41-A`
+# Liturgical Instance Manifest — `PC-S43-A`
 
 **Full publication slug:** `pc-s43-seventeenth-sunday-in-ordinary-time-year-a`
 **Provider:** Anthropic Claude
@@ -8,14 +8,14 @@
 
 | Field | Resolution | Control |
 | --- | --- | --- |
-| Stable registry | Postconciliar proper registry, `guidance/liturgy/postconciliar-propers-registry.md` | Parent `PC-S41`, required slug stem `pc-s41-seventeenth-sunday-in-ordinary-time` |
-| Permanent parent ID | `PC-S41` | Seventeenth Sunday in Ordinary Time |
-| Permanent formula key | `PC-S41-A` | The parent's registered A/B/C shape; the registry assigns Lectionary nos. 109, 110, 111 to A, B, C |
+| Stable registry | Postconciliar proper registry, `guidance/liturgy/postconciliar-propers-registry.md` | Parent `PC-S43`, required slug stem `pc-s43-seventeenth-sunday-in-ordinary-time` |
+| Permanent parent ID | `PC-S43` | Seventeenth Sunday in Ordinary Time |
+| Permanent formula key | `PC-S43-A` | The parent's registered A/B/C shape; the registry assigns Lectionary nos. 109, 110, 111 to A, B, C |
 | Full publication slug | `pc-s43-seventeenth-sunday-in-ordinary-time-year-a` | Stem plus the `-year-a` cycle suffix; no branch or occurrence suffix is admitted |
 | Edition registry | [`propers/registry/`](../../../registry/README.md) for this edition-locale | [Formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrences](../../../registry/occurrences-2026.md) |
-| Canonical formulary owner | [Ordinary Time Week XVII](../../shared/ordinary-time/weeks/17/propers/verified.md) | Registry rule: `PC-S26`–`PC-S57` are owned by `weeks/02`–`weeks/33` |
+| Canonical formulary owner | [Ordinary Time Week XVII](../../shared/ordinary-time/weeks/17/propers/verified.md) | Registry rule: `PC-S28`–`PC-S59` are owned by `weeks/02`–`weeks/33` |
 | Calendar family | `temporal` | Registry path rule for `PC-S` leaves |
-| Registry count check | Lectionary no. `64 + 3 × (41 − 26) + 0 = 109` | Matches the registry table and the official occurrence page |
+| Registry count check | Lectionary no. `64 + 3 × (43 − 28) + 0 = 109` | Matches the registry table and the official occurrence page |
 
 ## Governing books and jurisdiction
 

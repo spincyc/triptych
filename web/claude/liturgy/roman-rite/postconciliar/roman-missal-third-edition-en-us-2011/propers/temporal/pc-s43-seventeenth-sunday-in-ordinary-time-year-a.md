@@ -1,6 +1,6 @@
 # Seventeenth Sunday in Ordinary Time, Year A (Research Edition)
 
-*Source-first guide to the textual variable parts of PC-S41-A in the Roman Missal, Third Edition, for the dioceses of the United States of America, with Lectionary 109, its reception history, and the rights limits of the record*
+*Source-first guide to the textual variable parts of PC-S43-A in the Roman Missal, Third Edition, for the dioceses of the United States of America, with Lectionary 109, its reception history, and the rights limits of the record*
 
 **Seventeenth Sunday in Ordinary Time**
 
@@ -612,7 +612,7 @@ The English word *dragnet* in its police sense is not Matthew’s. The standard 
 |:-----------------|:------------------------------------------------|
 | Celebration | Seventeenth Sunday in Ordinary Time |
 | Rank, season, colour | Sunday in Ordinary Time; Ordinary Time; green |
-| Parent and formula key | PC-S41; PC-S41-A |
+| Parent and formula key | PC-S43; PC-S43-A |
 | Form | The single appointed Sunday Mass; this parent has no Vigil or Day distinction |
 | Sunday cycle | Year A, in the liturgical year running 30 November 2025 to 22 November 2026 |
 | Independent weekday cycle | Cycle II, resolved separately and never inferred from the Sunday letter |
@@ -622,7 +622,7 @@ The English word *dragnet* in its police sense is not Matthew’s. The standard 
 | Other controlling books | *General Instruction of the Roman Missal*, United States edition of 2011 with the 2021 emendations; the Missal’s *Tempus per annum* rubrics |
 | Calendar and territory | General Roman Calendar as implemented nationally; USCCB *Liturgical Calendar for the Dioceses of the United States of America* for 2026. Diocesan, religious, parish, titular, dedication and patronal calendars are not resolved |
 | Formulary owner | Ordinary Time Week XVII, the shared Missal record for this collection. Its orations and antiphons are shared by Years A, B and C; this leaf owns only the Year A composition |
-| Production coverage | One target, PC-S41-A. The B and C targets under this parent are not treated |
+| Production coverage | One target, PC-S43-A. The B and C targets under this parent are not treated |
 
 ### Branches actually available on this Sunday
 
@@ -653,7 +653,7 @@ Second, the Week XVII Missal formulary is *available* on an eligible Ordinary Ti
 
 ### What this guide covers, and what it does not
 
-It covers one formula target, PC-S41-A, in one edition-locale, for one civil date. It does not cover the Year B or Year C targets under the same parent, any other Sunday or weekday, or any Ritual, Votive or Various Needs Mass. The Missal formulary belongs to the shared Week XVII owner and is common to all three cycles.
+It covers one formula target, PC-S43-A, in one edition-locale, for one civil date. It does not cover the Year B or Year C targets under the same parent, any other Sunday or weekday, or any Ritual, Votive or Various Needs Mass. The Missal formulary belongs to the shared Week XVII owner and is common to all three cycles.
 
 The calendar resolution is national: diocesan, religious, parish, titular, dedication and patronal calendars were not consulted and could modify this celebration in a particular church. Four textual branches remain unresolved and are listed in the resolution appendix; the guide states what each would produce and asserts none.
 
@@ -792,6 +792,6 @@ Only sources actually used are listed. Where an online witness was read, the del
 
 - “Dragnet,” *Online Etymology Dictionary*, for the negative result reported in the gallery.
 
-**Last revised (UTC):** 2026-09-24T17:00:16Z
+**Last revised (UTC):** 2026-09-24T18:04:15Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

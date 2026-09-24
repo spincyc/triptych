@@ -1,6 +1,6 @@
-# `PC-S41-A` — Target Composition Audit
+# `PC-S43-A` — Target Composition Audit
 
-**Formula:** `PC-S41-A` · **Occurrence:** Sunday 26 July 2026 · **Lectionary:** no. 109
+**Formula:** `PC-S43-A` · **Occurrence:** Sunday 26 July 2026 · **Lectionary:** no. 109
 **Canonical formulary owner:** [Ordinary Time Week XVII](../../shared/ordinary-time/weeks/17/propers/verified.md)
 **Identity control:** [instance manifest](../instance/manifest.md)
 **Collated:** 2026-07-25 · **Provider:** Anthropic Claude

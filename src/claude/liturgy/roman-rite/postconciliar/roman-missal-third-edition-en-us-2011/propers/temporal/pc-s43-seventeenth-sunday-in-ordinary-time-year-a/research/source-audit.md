@@ -1,4 +1,4 @@
-# `PC-S41-A` — Source Audit
+# `PC-S43-A` — Source Audit
 
 **Provider:** Anthropic Claude · **Audited:** 2026-07-25
 **Machine-readable companion:** [`source-bindings.toml`](source-bindings.toml) · **Method and limits:** [`scope.md`](scope.md)
