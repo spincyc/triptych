@@ -7,7 +7,7 @@ source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.
 loci = ["Dominica XVI per annum, printed pp. 465-466"]
 role = "direct-witness"
 states = ["cataloged"]
-context = "The Missal formulary treated by this leaf. The authoring agent read the registered artifact publication-locally on 2026-07-25 at its pages 280-281 and recorded the heading, the antiphon citations with their Vulgate numbering, the three orations, and both Communion alternatives; the retrieved bytes hashed to the value recorded in the artifact manifest. The publication reproduces no complete oration in Latin and no protected English wording at all. This binding records the dependence without claiming to have replayed any central fingerprint; the publication-local reading recorded in research/source-audit.md is the verification ceiling asserted here."
+context = "The Missal formulary treated by this leaf. The authoring agent read the registered artifact publication-locally on 2026-07-25 at its pages 280-281 and recorded the heading, the antiphon citations with their Vulgate numbering, the three orations, and both Communion alternatives; the retrieved bytes hashed to the value recorded in the artifact manifest. The publication prints one complete oration in Latin, the Prayer over the Offerings, on the wording of its public-domain witness (the Wilson 1915 binding below), gives the Collect and the Prayer after Communion by incipit and phrase only, and reproduces no protected English wording at all. This binding records the dependence without claiming to have replayed any central fingerprint; the publication-local reading recorded in research/source-audit.md is the verification ceiling asserted here."
 
 [[bindings]]
 source_id = "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
@@ -78,3 +78,11 @@ loci = ["20.9"]
 role = "textual-control"
 states = ["cataloged"]
 context = "The Latin of XX.9 was read publication-locally on 2026-07-25 in the repository's tracked CSEL 40 TEI artifact to control the English quotation; the phrases quoted in the guide (de isto ergo regno eius, quod est hic ecclesia; ergo et nunc ecclesia regnum Christi est regnumque caelorum; nec tamen cum illo regnant zizania, quamuis in ecclesia cum tritico crescant) were read there. The transcription carries OCR defects elsewhere on the same pages, and only clean phrases were quoted."
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7"
+loci = ["printed p. 171 = PDF p. 229, section XXVI, Super oblata Deus qui legalium differentiam hostiarum"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:b6b2f002fa1d0aecd709fb76d2379c4470e563def3d4c752cad2a2d1b1d6ffb0"
+context = "Public-domain witness for the wording of the Week XVI Prayer over the Offerings, which the guide prints complete. The tracked payload's SHA-256 was recomputed (96fd93c7...8681) and matched; printed p. 171 was read on page images rendered at 200 and 400 dpi on 2026-09-24. The Super oblata of the Supplement's section XXVI agrees word for word with the 2002 text the guide prints, differing only in orthography (deuotis, tue) and punctuation. The Collect and the Prayer after Communion have no registered public-domain witness here and are printed by incipit and phrase only."
