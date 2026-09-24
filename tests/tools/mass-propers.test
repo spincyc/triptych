@@ -18,8 +18,7 @@ cd "$sandbox"
 
 # The reading view names the mass, its edition, and every proper slot.
 out="$(run_tool --calendar roman-1962 --mass advent-1)"
-for want in "First Sunday of Advent" "Missale Romanum" "Introit" "Collect" \
-	"Latin text unavailable"; do
+for want in "First Sunday of Advent" "Missale Romanum" "Introit" "Collect"; do
 	case "$out" in
 	*"$want"*) ;;
 	*) echo "reading view is missing $want" >&2; exit 1 ;;
@@ -28,6 +27,24 @@ done
 case "$out" in
 *"publication basis"*|*"publication_status"*|*"publication_basis"*)
 	echo "reading view leaked Latin publication audit metadata" >&2
+	exit 1
+	;;
+esac
+
+# A withheld Latin body is a typed absence in the reading view, and its audit
+# stays out of it. Advent I was the example until its orations were published on
+# 2026-09-03; St Anthony's Collect is withheld in exactly the state Advent I's
+# was, because the 1962 adds `atque Doctoris` (he was made a Doctor in 1946) and
+# no pre-1931 witness can carry it.
+anthony="$(run_tool --calendar roman-1962 \
+	--mass s-antonii-padua-confessoris-ecclesiae-doctoris)"
+case "$anthony" in
+*"Latin text unavailable"*) ;;
+*) echo "reading view is missing Latin text unavailable" >&2; exit 1 ;;
+esac
+case "$anthony" in
+*"publication basis"*|*"publication_status"*|*"publication_basis"*)
+	echo "reading view leaked withheld Latin publication audit metadata" >&2
 	exit 1
 	;;
 esac
@@ -80,10 +97,19 @@ esac
 
 # A historical English lead without exact publication binding is a typed
 # unavailable translation, never a payload reachable through the reading view.
+# Advent I's Latin is published, so the restriction is the whole note and it
+# must not also claim the Latin is unavailable.
 english="$(run_tool --calendar roman-1962 --mass advent-1 --lang en)"
 case "$english" in
-*"en translation unavailable: rights restricted; Latin text unavailable"*) ;;
+*"(en translation unavailable: rights restricted)"*) ;;
 *) echo "withheld historical English did not report unavailability" >&2; exit 1 ;;
+esac
+# Where the Latin is withheld as well, the note says both facts.
+anthony_english="$(run_tool --calendar roman-1962 \
+	--mass s-antonii-padua-confessoris-ecclesiae-doctoris --lang en)"
+case "$anthony_english" in
+*"en translation unavailable: rights restricted; Latin text unavailable"*) ;;
+*) echo "withheld English over withheld Latin did not report both" >&2; exit 1 ;;
 esac
 case "$english" in
 *"Exert, we beseech thee, O Lord, thy power, and come"*)
