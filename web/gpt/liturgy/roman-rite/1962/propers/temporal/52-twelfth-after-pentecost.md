@@ -51,7 +51,7 @@
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
-> **Governing thesis**
+> **From the helpless cry to the life of love**
 >
 > The formulary moves from the cry of one who cannot save himself to the life of one made able to love. God gives the beginning, power, pattern, pardon, and food of Christian service: the Spirit writes the good command within; Christ the Samaritan draws near to fallen humanity; his mercy creates a merciful people; his intercession carries sinners to the altar; and his sacramental gift vivifies those sent to do likewise. Grace does not leave the human act behind. It heals, elevates, and completes it.
 
@@ -95,7 +95,7 @@ Eusebius accordingly passes from the vine to the true Vine, from bread to the my
 
 The Postcommunion names the fruits for which communicants pray. Participation in the holy mystery is to vivify; it is to grant expiation and protection. Ignatius calls the Eucharist medicine of immortality. Aquinas, *ST* III, q. 79, aa. 1–2, 4, 6, 8, explains that Communion nourishes the life of grace, remits venial sin, strengthens against future sin, unites the faithful to Christ and one another, and pledges glory; fruitfulness flowers in worthy reception. The Mass therefore closes where its Gospel command can be obeyed. Those found half-dead are borne by Christ; those vivified by his mystery become bearers of another’s burden. Those who received pardon intercede for sinners. Those fed from God’s works spend themselves in mercy. And those guarded through the night run toward the promise of eternal life, awaiting the Samaritan’s return.
 
-> **Movement in five acts.** Cry for the help without which no course can begin; receive the Spirit who writes charity within; bless God through day and night; enter Christ’s intercession and offering; receive sacramental life and go to become a neighbor. This synthesis contemplates the received Roman formulary as a genuine liturgical whole while respecting the distinct historical sources from which its elements came.
+> **From cry to neighbor.** Cry for the help without which no course can begin; receive the Spirit who writes charity within; bless God through day and night; enter Christ’s intercession and offering; receive sacramental life and go to become a neighbor. The received Roman formulary is a genuine liturgical whole, though its elements came from distinct historical sources.
 
 <span id="triptych:brief-synthesis:end" data-label="triptych:brief-synthesis:end"></span>
 
@@ -105,7 +105,7 @@ The Postcommunion names the fruits for which communicants pray. Participation in
 
 ## The Appointed Formulary in Full
 
-The Latin below is the complete recurring formulary collated against the 1962 Vatican typical Missal, printed pp. 392–393. Scriptural English is the registered public-domain Douay–Rheims/Challoner text; the three orations use the anonymous public-domain English in the Cummiskey hand missal of 1861. A witness gap is declared instead of composing a translation when the chant is an adaptation rather than a continuous Vulgate extract.
+The Latin below is the complete recurring formulary collated against the 1962 Vatican typical Missal, printed pp. 392–393. Scriptural English is the registered public-domain Douay–Rheims/Challoner text; the three orations use the anonymous public-domain English in the Cummiskey hand missal of 1861. Where the chant adapts rather than extracts the Vulgate, the Douay has no exact English for it, and the gap is named at the element.
 
 ### Introit <span class="nodecor">(*Int.*)</span>
 
@@ -117,7 +117,7 @@ The Latin below is the complete recurring formulary collated against the 1962 Va
 >
 > O God, come to my assistance; O Lord, make haste to help me. Let them be confounded and ashamed that seek my soul: Let them be turned backward, and blush for shame that desire evils to me: Let them be presently turned away blushing for shame that say to me: ’Tis well, ’tis well.
 >
-> **Witness boundary.** The Douay follows the Gallican/Vulgate text and therefore has no counterpart for the chant’s added *inimíci mei*; its “desire evils” answers *volunt mihi mala*, not the chant’s *cógitant mihi mala*. No editorial English was supplied for either difference.
+> **Witness boundary.** The Douay follows the Gallican/Vulgate text and therefore has no counterpart for the chant’s added *inimíci mei*; its “desire evils” answers *volunt mihi mala*, not the chant’s *cógitant mihi mala*. The Douay thus has no English for either difference.
 
 ### Collect <span class="nodecor">(*Coll.*)</span>
 
@@ -175,7 +175,7 @@ The Latin below is the complete recurring formulary collated against the 1962 Va
 >
 > And turning to his disciples, he said: Blessed are the eyes that see the things which you see. For I say to you that many prophets and kings have desired to see the things that you see and have not seen them; and to hear the things that you hear and have not heard them. And behold a certain lawyer stood up, tempting him and saying, Master, what must I do to possess eternal life? But he said to him: What is written in the law? How readest thou? He answering, said: Thou shalt love the Lord thy God with thy whole heart and with thy whole soul and with all thy strength and with all thy mind: and thy neighbour as thyself. And he said to him: Thou hast answered right. This do: and thou shalt live. But he willing to justify himself, said to Jesus: And who is my neighbour? And Jesus answering, said: A certain man went down from Jerusalem to Jericho and fell among robbers, who also stripped him and having wounded him went away, leaving him half dead. And it chanced, that a certain priest went down the same way: and seeing him, passed by. In like manner also a Levite, when he was near the place and saw him, passed by. But a certain Samaritan, being on his journey, came near him: and seeing him, was moved with compassion: And going up to him, bound up his wounds, pouring in oil and wine: and setting him upon his own beast, brought him to an inn and took care of him. And the next day he took out two pence and gave to the host and said: Take care of him; and whatsoever thou shalt spend over and above, I, at my return, will repay thee. Which of these three, in thy opinion, was neighbour to him that fell among the robbers? But he said: He that shewed mercy to him. And Jesus said to him: Go, and do thou in like manner.
 >
-> **Witness boundary.** The Missal replaces Luke’s opening narrative frame, “And turning to his disciples, he said,” with its liturgical incipit, *In illo témpore: Dixit Iesus discípulis suis*. The historical English verse is printed intact rather than silently edited.
+> **Witness boundary.** The Missal replaces Luke’s opening narrative frame, “And turning to his disciples, he said,” with its liturgical incipit, *In illo témpore: Dixit Iesus discípulis suis*. The Douay English keeps Luke’s own frame.
 
 ### Offertory <span class="nodecor">(*Off.*)</span>
 
@@ -187,7 +187,7 @@ The Latin below is the complete recurring formulary collated against the 1962 Va
 >
 > But Moses besought the Lord his God, saying: Why, O Lord, is thy indignation enkindled against thy people, whom thou hast brought out of the land of Egypt, with great power, and with a mighty hand? Let not the Egyptians say, I beseech thee: He craftily brought them out, that he might kill them in the mountains, and destroy them from the earth: let thy anger cease, and be appeased upon the wickedness of thy people. Remember Abraham, Isaac, and Israel, thy servants, to whom thou sworest by thy own self, saying: I will multiply your seed as the stars of heaven: and this whole land that I have spoken of, I will give to your seed, and you shall possess it for ever: And the Lord was appeased from doing the evil which he had spoken against his people.
 >
-> **Witness boundary.** The chant condenses, rearranges, and replaces phrases in these verses: it names Jacob rather than Israel, inserts the land flowing with milk and honey, and follows an Old-Latin/Septuagint-shaped close. The Douay supplies the continuous Vulgate context, not an exact English translation of the chant; no composite English was created.
+> **Witness boundary.** The chant condenses, rearranges, and replaces phrases in these verses: it names Jacob rather than Israel, inserts the land flowing with milk and honey, and follows an Old-Latin/Septuagint-shaped close. The Douay supplies the continuous Vulgate context, not an exact English translation of the chant, whose composite form has no English of its own.
 
 ### Secret <span class="nodecor">(*Sec.*)</span>
 
@@ -211,7 +211,7 @@ The Latin below is the complete recurring formulary collated against the 1962 Va
 >
 > Thou waterest the hills from thy upper rooms: the earth shall be filled with the fruit of thy works: Bringing forth grass for cattle, and herb for the service of men. That thou mayst bring bread out of the earth: And that wine may cheer the heart of man. That he may make the face cheerful with oil: and that bread may strengthen man’s heart.
 >
-> **Witness boundary.** The chant begins at verse 13’s second clause, inverts its order, adds *Dómine*, omits the first half of verse 14, and then continues through verse 15. The complete historical English verses are therefore printed without an editorial splice.
+> **Witness boundary.** The chant begins at verse 13’s second clause, inverts its order, adds *Dómine*, omits the first half of verse 14, and then continues through verse 15. The Douay therefore gives the complete verses, with no English for the chant’s spliced order.
 
 ### Postcommunion <span class="nodecor">(*Postcomm.*)</span>
 
@@ -225,7 +225,7 @@ The Latin below is the complete recurring formulary collated against the 1962 Va
 
 ### The complete appointed text
 
-The preceding formulary is part of this canonical full edition. Its Latin is the image-collated text rather than normalized Bible Latin: the Introit retains *inimíci mei* and *cógitant*; the Alleluia retains the comma after *Dómine*; the Gospel retains the comma after *iumentum suum*; and the Offertory and Communion preserve their received adaptations. The English witnesses are printed without silently repairing those differences.
+The preceding formulary is part of this canonical full edition. Its Latin is the image-collated text rather than normalized Bible Latin: the Introit retains *inimíci mei* and *cógitant*; the Alleluia retains the comma after *Dómine*; the Gospel retains the comma after *iumentum suum*; and the Offertory and Communion preserve their received adaptations. The English witnesses do not carry those differences.
 
 ### Introit: the whole Christ cries for immediate help <span class="nodecor">(*Int.*)</span>
 
@@ -277,7 +277,7 @@ Within the Mass the Gradual is the answer to the Epistle. Paul refuses *quasi ex
 
 Psalm 87 begins by naming God as salvation and then descends through affliction, abandonment, the pit, wrath, and darkness. Its received heading assigns the instruction to Heman the Ezrahite, or in another Catholic line to David speaking in his name. Haydock relates Heman to the early monarchy and presents the whole psalm as agreeing to Christ in his Passion, death, and burial. The first verse already contains the mystery: prayer continues by day and by night, not because sorrow is denied but because the afflicted one still says *Deus salútis meæ*.
 
-Augustine, *Enarratio in Psalmum* 87.1–2, hears Christ speak in the Passion and his body pray in him. Day and night also signify prosperity and adversity; the Church offers one prayer through both. Cassiodorus continues this Christological-ecclesial reading, and Bellarmine places its historical fullness in Gethsemane and Good Friday. The darkness is therefore taken into the Son’s obedient prayer. It is not permitted to define the final relation between suffering and God apart from the crucified Christ.
+Augustine, *Enarratio in Psalmum* 87.1–2, hears Christ speak in the Passion and his body pray in him. Day and night also signify prosperity and adversity; the Church offers one prayer through both. Cassiodorus continues this Christological-ecclesial reading, and Bellarmine places its historical fullness in Gethsemane and Good Friday. The darkness is therefore taken into the Son’s obedient prayer. It does not define the final relation between suffering and God apart from the crucified Christ.
 
 Eusebius (PG 23, 1052–1056) reads Psalm 86’s proclamation of birth in Sion followed by Psalm 87’s descent toward death as an incarnational sequence. Day and night become the incarnate Lord’s continual prayer and oblation. Theodoret (PG 80, 1567–1573) hears Israel in calamity and, through Israel, the sorrows of fallen humanity. These senses enlarge the Church’s voice: Christ prays, Israel laments, humanity cries, and the baptized pray as Christ’s members.
 
@@ -305,7 +305,7 @@ Anagogically, the lawyer’s first desire is not discarded: eternal life is the 
 
 Exodus 32 must be heard across the covenant narrative. Israel has received deliverance, the commandments, blood of covenant, and the promise of God’s presence. While Moses remains on the mountain, the people fashion the calf. God reveals the apostasy to Moses and announces judgment; the very revelation raises the intercessor. Moses appeals not to Israel’s innocence but to the divine work already begun, God’s name among the nations, and the oath to Abraham, Isaac, and Jacob. Mercy preserves the people so that covenantal presence may be restored in Exodus 33–34, although sin still bears judgment and discipline.
 
-The Offertory’s received Latin is an ancient witness in its own right. It condenses Exod. 32:11–14, incorporates matter from v. 12, names Jacob where the Clementine Vulgate has Israel, substitutes the land flowing with milk and honey for the stars-and-land wording, and ends with *placátus factus est Dóminus de malignitáte, quam dixit fácere pópulo suo*. Augustine’s Old-Latin lemma in *Quaestiones in Heptateuchum* II.143 independently transmits the same construction. The Church therefore sings the text she received rather than silently normalizing it to the later Vulgate.
+The Offertory’s received Latin is an ancient witness in its own right. It condenses Exod. 32:11–14, incorporates matter from v. 12, names Jacob where the Clementine Vulgate has Israel, substitutes the land flowing with milk and honey for the stars-and-land wording, and ends with *placátus factus est Dóminus de malignitáte, quam dixit fácere pópulo suo*. Augustine’s Old-Latin lemma in *Quaestiones in Heptateuchum* II.143 independently transmits the same construction. The Church therefore sings the text she received, not its later Vulgate form.
 
 Patristic exegesis enters the divine-human drama without reducing it. In questions II.143, 147, and 149–151 Augustine explains that the threatened “evil” is penal judgment, never moral evil in God; the eternal will includes the temporal signs and creaturely prayers through which providence works. His *City of God* XV.25 names divine anger as just action, not a perturbation of the immutable divine life. Theodoret, *Questions on Exodus* 67–68, likewise reads the anthropomorphic language according to divine constancy. Question 68 preserves the moral seriousness of the sequence: mercy delays and preserves, while correction and accountability remain.
 
@@ -317,7 +317,7 @@ The complete formulary makes the type fruitful in four senses. Literally, Israel
 
 ### Secret: the true propitiatory offering glorifies God’s name <span class="nodecor">(*Sec.*)</span>
 
-The Secret asks God to look favorably upon the offerings: *Hóstias, quǽsumus, Dómine, propítius inténde*. The ensuing *ut* clause gives their Godward end. The grammatical subject of *dent* is still *hóstiae*; *nobis indulgéntiam largiéndo* describes how they give honor to God’s name—by granting pardon to us. *Largiendo*, an ablative gerund, does not grammatically make God its immediate subject, although all efficacy and pardon come from him. Cummiskey’s 1861 English changes both order and agency, so it remains a historical translation, not a syntactic control for the Latin.
+The Secret asks God to look favorably upon the offerings: *Hóstias, quǽsumus, Dómine, propítius inténde*. The ensuing *ut* clause gives their Godward end. The grammatical subject of *dent* is still *hóstiae*; *nobis indulgéntiam largiéndo* describes how they give honor to God’s name—by granting pardon to us. *Largiendo*, an ablative gerund, does not grammatically make God its immediate subject, although all efficacy and pardon come from him. Cummiskey’s 1861 English changes both order and agency, and the syntax traced above is the Latin’s alone.
 
 The prayer is attested in differing forms. The Old Gelasian Book III, no. VIII joins the three orations and records the *largiaris*/*largiendo* variation. The Hadrianum’s *Dominica XIII post Pentecosten*, no. XXXI (Wilson, p. 173), gives the later set with *largiendo*; the 1962 Missal retains that reading. Schuster (III, pp. 128–131, especially p. 131) reads indulgence as the central favor to which the formulary’s benefits are ordered. In its received form, the prayer offers a compact sacrificial theology: the Church offers, God regards propitiously, pardon is truly granted, and the divine name receives honor.
 
@@ -355,7 +355,7 @@ The final prayer consequently seals every movement of the Mass. The Introit’s 
 
 The formulary did not arrive all at once from one recoverable author. The Verona collection preserves shorter cognate forms of the Collect and Postcommunion; the Old Gelasian places the three orations together with variants; the Hadrianum no. XXXI gives their later lexical family; the psalm chants and lessons have their own scriptural and liturgical histories. Yet the historical layers do not make the 1962 Roman arrangement theologically inert. Once the Church has received these texts together for this Sunday, their liturgical sequence is itself a legitimate object of Catholic contemplation. Schuster’s direct commentary on the assembled formulary (III, pp. 128–131) provides a traditional precedent: he reads Collect and Epistle, Moses and the Secret, and Communion and Postcommunion as mutually illuminating.
 
-This study therefore distinguishes two sound claims. It does not attribute the ten-element design to one ancient compiler without evidence. It does affirm a real received unity: the Church’s stable act of proclamation, offering, and Communion can make texts from several periods speak together in the traditional senses of Scripture.
+The history and the unity therefore stand together. No witness checked assigns the ten-element design to one ancient compiler, and the received unity is real: the Church’s stable act of proclamation, offering, and Communion can make texts from several periods speak together in the traditional senses of Scripture.
 
 ### Gift does not abolish action; it makes action Christian
 
@@ -403,7 +403,7 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 >
 > **Later use and locus.** Lord Atkin’s speech in *Donoghue v Stevenson*, \[1932\] A.C. 562 at 580, moves from the command to love one’s neighbour to a restricted legal duty of care and asks: “Who then, in law, is my neighbour?”
 >
-> **The turn and its limit.** Jesus refuses the lawyer’s attempt to delimit a class and asks who became neighbour by mercy. Tort law must do the thing the parable resists: specify foreseeability and legal proximity. Atkin turns a self-justifying question into a rule for liability; the civil rule is not presented as the Gospel’s whole moral demand.
+> **The turn.** Jesus refuses the lawyer’s attempt to delimit a class and asks who became neighbour by mercy. Tort law must do the thing the parable resists: specify foreseeability and legal proximity. Atkin turns a self-justifying question into a rule for liability; the civil rule is not the Gospel’s whole moral demand.
 
 > **The Jerusalem–Jericho road becomes an experiment — Darley and Batson (1973)**
 >
@@ -411,7 +411,7 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 >
 > **Later use and locus.** John M. Darley and C. Daniel Batson, “From Jerusalem to Jericho: A Study of Situational and Dispositional Variables in Helping Behavior,” *Journal of Personality and Social Psychology* 27.1 (1973), 100–108, sent seminarians past a slumped confederate while varying hurry and talk topic. The discussion reports that some “literally stepped over the victim” while going to speak on the parable (p. 107).
 >
-> **The turn and its limit.** A narrative about seeing and passing becomes an experimental protocol. The assigned talk topic was not a significant predictor of helping, while time pressure had a marked effect. The staged emergency and small seminary sample do not exhaust mercy or prove the motives of the parable’s priest and Levite.
+> **The turn.** A narrative about seeing and passing becomes an experimental protocol. The assigned talk topic was not a significant predictor of helping, while time pressure had a marked effect. The staged emergency and small seminary sample do not exhaust mercy or prove the motives of the parable’s priest and Levite.
 
 > **The killing letter exposes a marriage contract — Thomas Hardy (1896)**
 >
@@ -419,7 +419,7 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 >
 > **Later use and locus.** Thomas Hardy places 2 Cor. 3:6 on the title page of the 1896 book edition of *Jude the Obscure*. In Part VI, ch. VIII (ch. 50 in the linked edition), Jude tells Sue inside a church that their return to socially sanctioned marriages is acting by the letter, and repeats “the letter killeth!”
 >
-> **The turn and its limit.** Paul’s contrast between covenant ministries becomes an indictment of civil and ecclesial marriage convention; the epigraph also makes the phrase a key for the novel’s conflict between legal form and lived attachment. Jude is a conflicted fictional speaker, not Hardy’s unqualified doctrinal voice, and the novel’s use is not Paul’s exegetical meaning.
+> **The turn.** Paul’s contrast between covenant ministries becomes an indictment of civil and ecclesial marriage convention; the epigraph also makes the phrase a key for the novel’s conflict between legal form and lived attachment. Jude is a conflicted fictional speaker, not Hardy’s unqualified doctrinal voice, and the novel’s use is not Paul’s exegetical meaning.
 
 > **Paul becomes a canon of statutory construction — Justice Frankfurter (1950)**
 >
@@ -427,7 +427,7 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 >
 > **Later use and locus.** Justice Felix Frankfurter’s dissent in *United States ex rel. Knauff v. Shaughnessy*, 338 U.S. 537, 548, 550 (1950), applies the phrase to Acts of Congress and invokes it while construing the War Brides Act in the case of an excluded soldier’s wife.
 >
-> **The turn and its limit.** A Pauline claim about letter and Spirit is naturalized as an interpretive maxim: statutory purpose should control a harsh literal application. The dissent does not cite the verse and supplies no covenant exegesis. Its force depends on an English idiom descended from Paul, not on identity between apostolic ministry and judicial method.
+> **The turn.** A Pauline claim about letter and Spirit is naturalized as an interpretive maxim: statutory purpose should control a harsh literal application. The dissent does not cite the verse and supplies no covenant exegesis. Its force depends on an English idiom descended from Paul, not on identity between apostolic ministry and judicial method.
 
 ## The Propers: Interpretive Possibilities
 
@@ -499,7 +499,7 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 >
 > **What the element-by-element reading misses:** Read one at a time, the parable’s remedies, the psalm’s gifts, and the Postcommunion’s holy participation stay apart; together they hold bodily care and sacramental communion side by side.
 >
-> **Precedent result:** **Near analogue located.** Origen, *Homily on Luke* 34.7–9, explicitly cites Psalm 103 while reading the Samaritan’s oil, wine, day-and-night care, and inn; Augustine and Cassiodorus receive Psalm 103 sacramentally. The conjunction with this Postcommunion is editorial.
+> **Precedent result:** **Near analogue located.** Origen, *Homily on Luke* 34.7–9, explicitly cites Psalm 103 while reading the Samaritan’s oil, wine, day-and-night care, and inn; Augustine and Cassiodorus receive Psalm 103 sacramentally. None of them joins this Postcommunion.
 >
 > **Limit:** The psalm’s literal created goods and the parable’s practical care must not be dissolved into Eucharistic allegory.
 
@@ -569,6 +569,6 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 
 - *United States ex rel. Knauff v. Shaughnessy*, 338 U.S. 537, 548, 550 (1950) (Frankfurter, J., dissenting).
 
-**Last revised (UTC):** 2026-09-24T12:57:14Z
+**Last revised (UTC):** 2026-09-24T14:06:04Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
