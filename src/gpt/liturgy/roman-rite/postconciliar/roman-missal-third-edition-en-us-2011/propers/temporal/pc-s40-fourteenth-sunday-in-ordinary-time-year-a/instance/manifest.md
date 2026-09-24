@@ -1,4 +1,4 @@
-# Liturgical Instance — PC-S38-A
+# Liturgical Instance — PC-S40-A
 
 **Publication slug:** `pc-s40-fourteenth-sunday-in-ordinary-time-year-a`
 **Resolved occurrence:** Sunday, 2026-07-05
@@ -8,7 +8,7 @@
 
 | Field | Resolution |
 | --- | --- |
-| Parent / permanent formula key | `PC-S38` / `PC-S38-A` |
+| Parent / permanent formula key | `PC-S40` / `PC-S40-A` |
 | Registry controls | `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md) |
 | Celebration | Fourteenth Sunday in Ordinary Time |
 | Rank, season, color | Sunday in Ordinary Time; green |

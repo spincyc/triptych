@@ -1,12 +1,12 @@
 # Fourteenth Sunday in Ordinary Time: Year A
 
-*Source-audited proper exposition, PC-S38-A*
+*Source-audited proper exposition, PC-S40-A*
 
 **Fourteenth Sunday in Ordinary Time**
 
 *Year A*
 
-PC-S38-A
+PC-S40-A
 
 | **Textual unit** | **Text / citation** |
 |:-----------------|:-----------------------------------------------|
@@ -205,7 +205,7 @@ The Prayer after Communion asks that recipients filled with great gifts receive 
 | **Field** | **Resolved liturgical instance** |
 |:----------------|:-------------------------------------------------|
 | Celebration | Fourteenth Sunday in Ordinary Time; Sunday rank; green. |
-| Formula | `PC-S38-A`; canonical Year A target; dated U.S. occurrence 2026-07-05. |
+| Formula | `PC-S40-A`; canonical Year A target; dated U.S. occurrence 2026-07-05. |
 | Books | U.S. *Roman Missal, Third Edition* (implemented 2011), Week XIV owner; U.S. *Lectionary for Mass*, Second Typical Edition, Volume I, no. 100. |
 | Calendar scope | General Roman Calendar as implemented for the United States; national scope. |
 | Cycle | Sunday Year A. |
@@ -266,6 +266,6 @@ The Prayer after Communion asks that recipients filled with great gifts receive 
 
 - *Catechism of the Catholic Church* 541–550, [the Kingdom present in Christ and disclosed in his ministry](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_3/paragraph_3_the_mysteries_of_christs_public_life.html); doctrinal illumination, not direct commentary on the Week XIV formulary.
 
-**Last revised (UTC):** 2026-09-24T17:03:12Z
+**Last revised (UTC):** 2026-09-24T18:04:15Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

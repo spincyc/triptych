@@ -1,8 +1,8 @@
-# PC-S38-A — Leaf Composition Audit
+# PC-S40-A — Leaf Composition Audit
 
-**Formula:** `PC-S38-A`
+**Formula:** `PC-S40-A`
 **Slug:** `pc-s40-fourteenth-sunday-in-ordinary-time-year-a`
-**Parent:** `PC-S38`
+**Parent:** `PC-S40`
 **Lectionary:** U.S. no. 100
 **Occurrence checked:** 2026-07-05
 **Last collated:** 2026-07-15
