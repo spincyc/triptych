@@ -95,7 +95,7 @@ Eusebius accordingly passes from the vine to the true Vine, from bread to the my
 
 The Postcommunion names the fruits for which communicants pray. Participation in the holy mystery is to vivify; it is to grant expiation and protection. Ignatius calls the Eucharist medicine of immortality. Aquinas, *ST* III, q. 79, aa. 1–2, 4, 6, 8, explains that Communion nourishes the life of grace, remits venial sin, strengthens against future sin, unites the faithful to Christ and one another, and pledges glory; fruitfulness flowers in worthy reception. The Mass therefore closes where its Gospel command can be obeyed. Those found half-dead are borne by Christ; those vivified by his mystery become bearers of another’s burden. Those who received pardon intercede for sinners. Those fed from God’s works spend themselves in mercy. And those guarded through the night run toward the promise of eternal life, awaiting the Samaritan’s return.
 
-> **From cry to neighbor.** Cry for the help without which no course can begin; receive the Spirit who writes charity within; bless God through day and night; enter Christ’s intercession and offering; receive sacramental life and go to become a neighbor. The received Roman formulary is a genuine liturgical whole, though its elements came from distinct historical sources.
+> **From cry to neighbor.** Cry for the help without which no course can begin; receive the Spirit who writes charity within; bless God through day and night; enter Christ’s intercession and offering; receive sacramental life and go to become a neighbor. These five acts are a reading of the received Roman formulary, whose elements came from distinct historical sources.
 
 <span id="triptych:brief-synthesis:end" data-label="triptych:brief-synthesis:end"></span>
 
@@ -225,7 +225,7 @@ The Latin below is the complete recurring formulary collated against the 1962 Va
 
 ### The complete appointed text
 
-The preceding formulary is part of this canonical full edition. Its Latin is the image-collated text rather than normalized Bible Latin: the Introit retains *inimíci mei* and *cógitant*; the Alleluia retains the comma after *Dómine*; the Gospel retains the comma after *iumentum suum*; and the Offertory and Communion preserve their received adaptations. The English witnesses do not carry those differences.
+The formulary printed above gives its Latin as collated from the facsimile images, not as normalized Bible Latin: the Introit retains *inimíci mei* and *cógitant*; the Alleluia retains the comma after *Dómine*; the Gospel retains the comma after *iumentum suum*; and the Offertory and Communion preserve their received adaptations. The English witnesses do not carry those differences.
 
 ### Introit: the whole Christ cries for immediate help <span class="nodecor">(*Int.*)</span>
 
@@ -303,7 +303,7 @@ Anagogically, the lawyer’s first desire is not discarded: eternal life is the 
 
 ### Offertory: Moses’ intercession enters Christ’s self-offering <span class="nodecor">(*Off.*)</span>
 
-Exodus 32 must be heard across the covenant narrative. Israel has received deliverance, the commandments, blood of covenant, and the promise of God’s presence. While Moses remains on the mountain, the people fashion the calf. God reveals the apostasy to Moses and announces judgment; the very revelation raises the intercessor. Moses appeals not to Israel’s innocence but to the divine work already begun, God’s name among the nations, and the oath to Abraham, Isaac, and Jacob. Mercy preserves the people so that covenantal presence may be restored in Exodus 33–34, although sin still bears judgment and discipline.
+Exodus 32 stands within the covenant narrative. Israel has received deliverance, the commandments, blood of covenant, and the promise of God’s presence. While Moses remains on the mountain, the people fashion the calf. God reveals the apostasy to Moses and announces judgment; the very revelation raises the intercessor. Moses appeals not to Israel’s innocence but to the divine work already begun, God’s name among the nations, and the oath to Abraham, Isaac, and Jacob. Mercy preserves the people so that covenantal presence may be restored in Exodus 33–34, although sin still bears judgment and discipline.
 
 The Offertory’s received Latin is an ancient witness in its own right. It condenses Exod. 32:11–14, incorporates matter from v. 12, names Jacob where the Clementine Vulgate has Israel, substitutes the land flowing with milk and honey for the stars-and-land wording, and ends with *placátus factus est Dóminus de malignitáte, quam dixit fácere pópulo suo*. Augustine’s Old-Latin lemma in *Quaestiones in Heptateuchum* II.143 independently transmits the same construction. The Church therefore sings the text she received, not its later Vulgate form.
 
@@ -323,9 +323,9 @@ The prayer is attested in differing forms. The Old Gelasian Book III, no. VIII 
 
 The ancient witnesses explain how creaturely offering belongs within Christ’s gift. Justin, *Dialogue with Trypho* 116–117, sees Malachi’s pure offering fulfilled in the Eucharistic prayers and thanksgiving of Christians. Irenaeus, *Against Heresies* IV.17.5–18.6, insists that the Church offers created bread and wine in freedom and gratitude, confessing the Creator while receiving the firstfruits sanctified. Cyril of Jerusalem, *Mystagogical Catechesis* V.8–10, presents the Eucharistic sacrifice as the memorial of Christ’s offering within which the Church intercedes for all. Augustine, *City of God* X.5–6, 20, defines true sacrifice as the work that unites us to God and finds its perfect form in Christ, priest and offering, with the Church his body offered in him.
 
-Trent, Session XXII, ch. 2, gives the prayer’s doctrinal register: the Mass is a true and proper propitiatory sacrifice. The victim and priest are the same Christ as on Calvary; the manner of offering is sacramental and unbloody; by this oblation God truly grants grace and the gift of repentance and pardons crimes and sins. Therefore the Secret’s positive claim must be allowed its full weight. These offerings, taken into Christ’s action, really are the Church’s sacrificial means of asking pardon and honoring the Father. They do not rival the Cross or add another redemption; they make sacramentally present the one sacrifice from which every pardon flows.
+Trent, Session XXII, ch. 2, gives the prayer’s doctrinal register: the Mass is a true and proper propitiatory sacrifice. The victim and priest are the same Christ as on Calvary; the manner of offering is sacramental and unbloody; by this oblation God truly grants grace and the gift of repentance and pardons crimes and sins. The Secret’s positive claim therefore carries its full weight. These offerings, taken into Christ’s action, really are the Church’s sacrificial means of asking pardon and honoring the Father. They do not rival the Cross or add another redemption; they make sacramentally present the one sacrifice from which every pardon flows.
 
-The cross-proper sequence is now clear. Moses has pleaded a prior promise for a guilty people. At the altar, his typical intercession enters the prayer of Christ and his body. The self-justifying lawyer has been answered by mercy; the Secret teaches the worshipper to seek justification as pardon before offering obedience as glory. And because pardon gives honor to God’s name, mercy does not terminate in the recipient. It returns as praise, sacrificial thanksgiving, and the neighbor-love commanded in the Gospel.
+Across the propers, Moses has pleaded a prior promise for a guilty people. At the altar, his typical intercession enters the prayer of Christ and his body. The self-justifying lawyer has been answered by mercy; the Secret teaches the worshipper to seek justification as pardon before offering obedience as glory. And because pardon gives honor to God’s name, mercy does not terminate in the recipient. It returns as praise, sacrificial thanksgiving, and the neighbor-love commanded in the Gospel.
 
 ### Communion: providence flowers into sacramental abundance <span class="nodecor">(*Comm.*)</span>
 
@@ -353,9 +353,9 @@ The final prayer consequently seals every movement of the Mass. The Introit’s 
 
 ### A received Roman unity through historical layers
 
-The formulary did not arrive all at once from one recoverable author. The Verona collection preserves shorter cognate forms of the Collect and Postcommunion; the Old Gelasian places the three orations together with variants; the Hadrianum no. XXXI gives their later lexical family; the psalm chants and lessons have their own scriptural and liturgical histories. Yet the historical layers do not make the 1962 Roman arrangement theologically inert. Once the Church has received these texts together for this Sunday, their liturgical sequence is itself a legitimate object of Catholic contemplation. Schuster’s direct commentary on the assembled formulary (III, pp. 128–131) provides a traditional precedent: he reads Collect and Epistle, Moses and the Secret, and Communion and Postcommunion as mutually illuminating.
+The formulary’s texts have separate histories. The Verona collection preserves shorter cognate forms of the Collect and Postcommunion; the Old Gelasian places the three orations together with variants; the Hadrianum no. XXXI gives their later lexical family; the psalm chants and lessons have their own scriptural and liturgical histories. The 1962 Missal sets these texts together for this Sunday, and Catholic reading contemplates their sequence. Schuster’s direct commentary on the assembled formulary (III, pp. 128–131) reads Collect and Epistle, Moses and the Secret, and Communion and Postcommunion as mutually illuminating.
 
-The history and the unity therefore stand together. No witness checked assigns the ten-element design to one ancient compiler, and the received unity is real: the Church’s stable act of proclamation, offering, and Communion can make texts from several periods speak together in the traditional senses of Scripture.
+The history and the unity therefore stand together: the received unity is real, and the Church’s stable act of proclamation, offering, and Communion can make texts from several periods speak together in the traditional senses of Scripture.
 
 ### Gift does not abolish action; it makes action Christian
 
@@ -441,7 +441,7 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 >
 > **Fruit:** Mercy needs durable ministries, not only a first responder. The Church receives care from Christ in order to continue it responsibly.
 >
-> **What the element-by-element reading misses:** Read one at a time, Paul’s fitness for ministry, the innkeeper’s charge, and the Postcommunion’s petition stay apart; together they show care received from Christ and continued by durable ministry.
+> **What the element-by-element reading misses:** Paul’s fitness is a fitness for the kind of continuing charge the innkeeper receives, so the ministry the Epistle names becomes the care that outlasts a first rescue; the Postcommunion’s *vivíficet* and *tríbuat* themselves encode no such duration.
 >
 > **Precedent result:** **Near analogue located.** Ambrose 7.82–84, Augustine *Questions on the Gospels* 2.19, and Bede identify the inn and its keeper ecclesially; none joins Paul’s sufficiency or this Postcommunion.
 >
@@ -455,7 +455,7 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 >
 > **Fruit:** Christian hope may be read not as escape from wounded history but as fidelity that sustains costly care within it.
 >
-> **What the element-by-element reading misses:** Read one at a time, the Collect’s promises, Moses’ appeal to the oath, and the Samaritan’s promise to return stay apart; together they let hope be read as fidelity that sustains costly care.
+> **What the element-by-element reading misses:** The promises differ in kind (destination, covenant ground, guaranty); so distinguished, hope sustains costly care now, not only at the road’s end.
 >
 > **Precedent result:** **Near analogue located.** Origen, *Homily on Luke* 34.3, reports an elder’s eschatological reading of the return; Ambrose, *Exposition of Luke* 7.83, and Bede, PL 92, 470D, also receive that return eschatologically. These enumerated witnesses do not join all three promise forms.
 >
@@ -469,7 +469,7 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 >
 > **Fruit:** Compassion becomes a temporal discipline: attention must survive the first emotion, the first expense, and the first liturgical moment.
 >
-> **What the element-by-element reading misses:** Read one at a time, the Gradual’s “always,” the Alleluia’s day and night, and the Samaritan’s next day stay apart; together they give compassion a duration that outlasts its first emotion, expense, and liturgical moment.
+> **What the element-by-element reading misses:** The Gradual’s “always” and the Alleluia’s day and night measure prayer, the Samaritan’s next day measures care; joined, they lend care the duration of prayer, which outlasts its first emotion, expense, and liturgical moment.
 >
 > **Precedent result:** **Near analogue located.** Bellarmine treats the Gradual’s “always” as continuing praise; Eusebius reads the Alleluia’s day and night as Christ’s continuous prayer and oblation; Origen’s elder, Ambrose VII.83, and Bede PL 92, 470D receive the Samaritan’s return. None of these enumerated witnesses joins the three-part duration.
 >
@@ -483,7 +483,7 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 >
 > **Fruit:** Mercy may resist the self-protecting move from “whom must I love?” to the smallest defensible obligation.
 >
-> **What the element-by-element reading misses:** Read one at a time, the parable and the Secret stay apart; together they answer a question that seeks the limit of love with expenditure beyond the initial sum and pardon lavished.
+> **What the element-by-element reading misses:** The lawyer’s bounded *quis* meets two open measures, the innkeeper’s *quodcúmque* and the Secret’s lavished pardon, so a question about love’s minimum is answered with expenditure and pardon beyond any initial sum.
 >
 > **Precedent result:** **Near analogue located.** The enumerated Gospel commentators stress universal neighbour-love and the innkeeper’s further expense; none of them joins the Secret’s gerund.
 >
@@ -497,7 +497,7 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 >
 > **Fruit:** Bodily works of mercy and sacramental communion can be held together without turning either into a decorative metaphor.
 >
-> **What the element-by-element reading misses:** Read one at a time, the parable’s remedies, the psalm’s gifts, and the Postcommunion’s holy participation stay apart; together they hold bodily care and sacramental communion side by side.
+> **What the element-by-element reading misses:** The oil and wine the Samaritan pours return in the Communion’s bread, wine, and oil, and the Postcommunion asks life and defense of the holy participation; the shared nouns set bodily care and sacramental communion side by side.
 >
 > **Precedent result:** **Near analogue located.** Origen, *Homily on Luke* 34.7–9, explicitly cites Psalm 103 while reading the Samaritan’s oil, wine, day-and-night care, and inn; Augustine and Cassiodorus receive Psalm 103 sacramentally. None of them joins this Postcommunion.
 >
@@ -569,6 +569,6 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 
 - *United States ex rel. Knauff v. Shaughnessy*, 338 U.S. 537, 548, 550 (1950) (Frankfurter, J., dissenting).
 
-**Last revised (UTC):** 2026-09-24T14:06:04Z
+**Last revised (UTC):** 2026-09-24T16:27:53Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
