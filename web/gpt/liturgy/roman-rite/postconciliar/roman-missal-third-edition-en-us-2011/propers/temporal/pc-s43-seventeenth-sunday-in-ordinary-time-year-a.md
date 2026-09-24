@@ -117,7 +117,7 @@ Communion A commands the soul to bless and remember divine benefits. Communion B
 
 <span id="triptych:brief-synthesis:next" data-label="triptych:brief-synthesis:next"></span>
 
-## Each Proper in Full
+## The Propers: Detailed Commentary
 
 ### Solomon asks to hear before he judges (*First Reading; Collect*)
 
@@ -253,7 +253,7 @@ The offerings prayer returns gifts already received from divine bounty, so the E
 
 - **Romans 8:28, independent Second Reading — Margaret Murray Robertson, *Christie Redfern’s Troubles* (1866).** A chapter titled “The Secret of Peace” places the verse inside a dispute over trust, passivity, suffering, and who may rightly claim the promise. Narrative argument, not an isolated citation, supplies the transformation; the novel remains reception evidence rather than doctrinal authority.
 
-## Interpretive Possibilities Across the Propers
+## The Propers: Interpretive Possibilities
 
 *These exploratory proposals arose in an AI-assisted editorial process. They are attributed to none of the cited authorities and claim no historical compositional intent. Each states its anchors and limits.*
 
@@ -349,6 +349,6 @@ The offerings prayer returns gifts already received from divine bounty, so the E
 
 - Margaret Murray Robertson, [*Christie Redfern’s Troubles*](https://www.gutenberg.org/files/21226/21226-h/21226-h.htm) (1866), ch. XVII; Romans 8:28 within a narrative dispute over trust and suffering. Public domain in the United States.
 
-**Last revised (UTC):** 2026-09-24T04:26:05Z
+**Last revised (UTC):** 2026-09-24T11:46:11Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
