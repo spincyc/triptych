@@ -213,3 +213,16 @@ Ps 64, PL 70 for Ps 50), Bellarmine (O'Sullivan, Duffy, 1866), Tertullian
 Mohlberg-Eizenhöfer-Siffrin (1960), and the *Catechism* (USCCB, 2019). The
 element records give no edition for Hesbert's *Antiphonale Missarum Sextuplex*
 or for the *Rule of Benedict* ch. 7, which are cited by work and locus only.
+
+Second repair of the Communion English (2026-09-24, after independent
+review): the commentary now quotes only the Douay's first clause of Ps 50:21
+("Then shalt thou accept the sacrifice of justice, oblations and whole burnt
+offerings") and states that the antiphon's `super altare tuum` comes from the
+verse's second clause, which the Douay renders "then shall they lay calves
+upon thy altar". An elided quotation joining the two clauses would rebuild the
+chant's splice in Douay words. The antiphon omits both `tunc`s and the
+calves; it keeps most of the first clause. (`communion-redevelopment.md`
+keeps its earlier "both then clauses" wording as a dated record.) In the
+same repair, the synthesis edition's References drop the Wilson/La Fontaine,
+standalone La Fontaine and Byzantine entries, which only the full edition
+cites; and the Bellarmine Psalm 54 pages follow the passage record (175-178).

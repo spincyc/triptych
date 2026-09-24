@@ -117,7 +117,9 @@ The Latin below is collated against the 1962 Vatican typical Missal, printed pp.
 
 > **Douay–Rheims/Challoner, Ps. 54:17–19, 20, 23, 2**
 >
-> But I have cried to God: and the Lord will save me. Evening and morning, and at noon I will speak and declare: and he shall hear my voice. God shall hear, and the Eternal shall humble them. He hath redeemed my soul in peace from them that draw near to me. Cast thy care upon the Lord, and he shall sustain thee. Hear, O God, my prayer, and despise not my supplication. The English prints the complete source verse 19; the Latin chant appoints only its final clause, *ab his qui appropinquant mihi*.
+> But I have cried to God: and the Lord will save me. Evening and morning, and at noon I will speak and declare: and he shall hear my voice. God shall hear, and the Eternal shall humble them. He hath redeemed my soul in peace from them that draw near to me. Cast thy care upon the Lord, and he shall sustain thee. Hear, O God, my prayer, and despise not my supplication.
+
+**Witness boundary.** The English prints all of verse 19; the chant keeps only *ab his qui appropinquant mihi*.
 
 ### Collect (*Coll.*)
 
@@ -189,7 +191,9 @@ The Latin below is collated against the 1962 Vatican typical Missal, printed pp.
 
 > **Douay–Rheims/Challoner, Ps. 50:21**
 >
-> Then shalt thou accept the sacrifice of justice, oblations and whole burnt offerings: then shall they lay calves upon thy altar. The English prints the complete source verse; the chant omits both “then” clauses and the calves and adds *Domine*, and the Douay has no English for the antiphon’s form.
+> Then shalt thou accept the sacrifice of justice, oblations and whole burnt offerings: then shall they lay calves upon thy altar.
+
+**Witness boundary.** The English prints the complete source verse; the chant omits both “then”s and the calves and adds *Domine*, and the Douay has no English for the antiphon’s form.
 
 ### Postcommunion (*Postcomm.*)
 
@@ -294,13 +298,13 @@ The prayer is also older than its 1962 placement. Old Gelasian Book III, sectio
 
 ### Sacrifice received, not self-certified (*Comm.*)
 
-The Communion adapts rather than reproduces Psalm 50:21. It omits both of the source verse’s “then” clauses and the calves, retains sacrifice, oblations, holocausts, and God’s altar, and adds the vocative *Dómine*. The Douay–Rheims corresponds to the antiphon only in part:
+The Communion adapts rather than reproduces Psalm 50:21. It omits both of the source verse’s “then”s and the calves, retains sacrifice, oblations, holocausts, and God’s altar, and adds the vocative *Dómine*. The Douay–Rheims corresponds only to the verse’s first clause:
 
 > *Acceptábis sacrifícium iustítiæ, oblatiónes et holocáusta, super altáre tuum, Dómine.*
 >
-> Douay–Rheims, Ps. 50:21: “… shalt thou accept the sacrifice of justice, oblations and whole burnt offerings … upon thy altar.”
+> Douay–Rheims, Ps. 50:21: “Then shalt thou accept the sacrifice of justice, oblations and whole burnt offerings.”
 
-The Douay has no English for the antiphon’s form: its verse keeps both “then” clauses and the calves and has no vocative.
+The antiphon’s *super altáre tuum* comes from the verse’s second clause, which the Douay renders “then shall they lay calves upon thy altar.” The Douay has no English for the antiphon’s form.
 
 The antiphon’s brevity does not sever it from the Miserere. Confession, cleansing, the contrite and humbled heart, God’s gracious dealing with Zion, and the rebuilding of Jerusalem lead to the psalm’s expectation of accepted sacrifice. The word *acceptábis* keeps the decisive judgment with God: neither the Pharisee’s inventory nor the worshipper’s offering certifies itself.
 
@@ -434,7 +438,7 @@ The result is ecclesial as well as personal. The common-benefit criterion, Zion�
 
 - St. Thomas Aquinas, [*Super I ad Corinthios* XII](https://www.corpusthomisticum.org/c1r.html); [*Summa theologiae* II–II, q. 30, a. 4, ad 3](https://aquinas.cc/la/en/~ST.II-II.Q30.A4); *Super Sententias* IV, d. 46, q. 2, a. 1, qc. 3, ad 1; *Super Psalmos* 16, nos. 1, 3; 24, nos. 1–3; 50, no. 87290.
 
-- St. Robert Bellarmine, [*Commentary on the Book of Psalms*](https://upload.wikimedia.org/wikipedia/commons/9/9d/Commentaryonbook0000bell.pdf), trans. John O’Sullivan (Dublin and London: James Duffy, 1866), Psalms 24, 50, 54, and 64, scan pp. 68–72, 165–171, 174–178, and 197–200.
+- St. Robert Bellarmine, [*Commentary on the Book of Psalms*](https://upload.wikimedia.org/wikipedia/commons/9/9d/Commentaryonbook0000bell.pdf), trans. John O’Sullivan (Dublin and London: James Duffy, 1866), Psalms 24, 50, 54, and 64, scan pp. 68–72, 165–171, 175–178, and 197–200.
 
 - St. Jerome, [*Letter 106 to Sunnia and Frithila*](https://www.tertullian.org/fathers/jerome_letter_106_to_sunnia_and_frithila_02_trans.htm), §8, trans. Michael Metlen, *Journal of English and Germanic Philology* 36 (1937): 515–542; facts only are reported.
 
@@ -464,6 +468,6 @@ The result is ecclesial as well as personal. The common-benefit criterion, Zion�
 
 - Martin Luther King Jr., [“Pride Versus Humility: The Parable of the Pharisee and the Publican,”](https://kinginstitute.stanford.edu/king-papers/documents/pride-versus-humility-parable-pharisee-and-publican-sermon-dexter-avenue) Dexter Avenue sermon manuscript, probably 25 September 1955.
 
-**Last revised (UTC):** 2026-09-24T17:03:41Z
+**Last revised (UTC):** 2026-09-24T18:05:04Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
