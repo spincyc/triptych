@@ -65,7 +65,7 @@ Psalm 90 turns mortality into petition. The assembly asks not for the abolition 
 
 ### 3. A life reoriented in Christ
 
-Colossians is a semi-continuous apostolic strand, read in course and not selected to comment on Luke. Yet its language creates a strong textual overlay: greed is idolatry, the old person is put away, and life is hidden with Christ.
+Colossians is a semi-continuous apostolic strand, read in course. Yet its language creates a strong textual overlay: greed is idolatry, the old person is put away, and life is hidden with Christ.
 
 ### 4. Gift, offering, and communion
 
@@ -95,9 +95,9 @@ Chrysostom’s Homilies 7–8 directly cover the appointed chapter. He insists t
 
 Luke first distinguishes two audiences: Jesus answers the petitioner by refusing the requested judicial role, then warns the crowd. Augustine’s Sermon 57 (Benedictine 107), §§2–6, preserves that movement from disputed inheritance to greed, barns, and death. His statement that the petitioner had a good civil case is a homiletic reconstruction, not a fact supplied by Luke. Ambrose, *On Duties* III.6.41–44, relocates the larger barns into a famine-and-grain argument. Basil’s *I Will Pull Down My Barns* makes the stored surplus a claim of the hungry and unclothed. Both press the parable powerfully into social argument; neither is the narrated circumstance of Luke’s landowner. Francis’s Angelus of 4 August 2019 returns to the scene’s pastoral sequence: family division, wealth’s false promise of security, enslavement to possessions, and the contrary practice of sharing.
 
-### The shared formulary in this Year C instance
+### The shared formulary in Year C
 
-The Missal texts are those of the Week XVIII formulary, and their collation, provenance, element boundaries, and rights record belong not to this Year C instance but to that formulary, which Years A, B, and C share. For this liturgical instance its received sequence places the Year C readings between an Entrance antiphon, Collect, Prayer over the Offerings, one of two Communion-antiphon alternatives, and the Prayer after Communion. Set beside the Gospel, the prayers’ grammar of divine guidance, sanctification, gift, and aid resists the rich man’s self-enclosed grammar of “my” goods and “my” barns. No evidence ties the composition or assignment of the shared Week XVIII formulary to Luke’s parable. No evidence establishes which Communion antiphon or chant was enacted in a generic recurring Year C occurrence.
+The Missal texts are those of the Week XVIII formulary, which Years A, B, and C share. In Year C the formulary’s received sequence places these readings between an Entrance antiphon, Collect, Prayer over the Offerings, one of two Communion-antiphon alternatives, and the Prayer after Communion. Set beside the Gospel, the prayers’ grammar of divine guidance, sanctification, gift, and aid resists the rich man’s self-enclosed grammar of “my” goods and “my” barns. The formulary is appointed for the week in every year, not for Luke’s parable alone. No evidence establishes which Communion antiphon or chant was enacted in a generic recurring Year C occurrence.
 
 ## The Appointed Texts: Rights-Limited Study Sheet
 
@@ -123,7 +123,7 @@ The acclamation blesses poverty of spirit and promises the Kingdom. In the Gospe
 
 ### Missal formulary
 
-The Entrance, three orations, and two Communion-antiphon alternatives belong to the shared Week XVIII formulary. Their protected English is not reconstructed here; the Latin incipits and scriptural loci on page one identify them.
+The Entrance, three orations, and two Communion-antiphon alternatives belong to the shared Week XVIII formulary. Their protected English is not reconstructed; their Latin incipits and scriptural loci, printed on page one, identify them.
 
 ## Comparative Reception and Theological Dossier
 
@@ -161,15 +161,15 @@ Francis’s 2019 Angelus offers a modern pastoral reception with unusually close
 
 Colossians is not the product of official Old Testament–Gospel correlation. Its semi-continuous course nevertheless creates a powerful canonical overlay. Those raised with Christ seek things above because their life is hidden with him and will appear with him. The lection then names greed as idolatry and moves, after omitted verses, to stripping off the old person, renewal in the creator’s image, and a humanity in which Christ is all and in all.
 
-Chrysostom refuses a spatial escapism: “above” directs life toward Christ and therefore changes conduct. The immediate omitted verses name anger, malice, slander, and abusive speech; their absence from proclamation cannot make them irrelevant to interpretation. Greed is idolatry not because matter is evil but because desire grants a created good the allegiance and security owed to God.
+Chrysostom refuses a spatial escapism: “above” directs life toward Christ and therefore changes conduct. The immediate omitted verses name anger, malice, slander, and abusive speech; unproclaimed, they still belong to the passage’s context. Greed is idolatry not because matter is evil but because desire grants a created good the allegiance and security owed to God.
 
 The renewed person is also social. Greek and Jew, circumcised and uncircumcised, barbarian, Scythian, slave, and free cannot serve as rival grounds of worth in the new humanity. This answers the rich man’s isolated possessive grammar more deeply than a private counsel to feel detached.
 
 ### Poverty of spirit, sharing, and the danger of romanticizing need
 
-The Gospel acclamation gives an authorized liturgical lens: poverty of spirit and the kingdom. It is not involuntary material deprivation, and it blesses no condition that denies food, housing, wages, or protection. Nor does “spiritual” poverty erase the Gospel’s material warning. The beatitude names humble receptivity before God; Luke tests whether actual goods are enclosed within the self.
+The Gospel acclamation gives an authorized liturgical lens: poverty of spirit and the kingdom. It is not reducible to involuntary material deprivation, and it blesses no condition that denies food, housing, wages, or protection. Nor does “spiritual” poverty erase the Gospel’s material warning. The beatitude names humble receptivity before God; Luke tests whether actual goods are enclosed within the self.
 
-The two Communion alternatives sharpen this relation differently. Wisdom’s heavenly food makes nourishment gift; John’s bread of life makes the giver personally central. Against the barns, either ending makes food receptive and relational. Yet the alternatives remain alternatives, and neither proves an economic policy from the Missal.
+The two Communion alternatives sharpen this relation differently. Wisdom’s heavenly food makes nourishment gift; John’s bread of life makes the giver personally central. Against the barns, either ending makes food receptive and relational. Yet the two are alternatives, and neither proves an economic policy from the Missal.
 
 ### Changed-register reception: image and music
 
@@ -194,11 +194,11 @@ The official Old Testament–Gospel correlation is unusually close: labor passes
 
 ### Mortality without futility
 
-The Psalm refuses both self-sufficiency and despair. Human beings return to dust, yet mercy is sought and work may be established by God. This is the decisive distinction between the readings: work is not rejected, but received under creaturely limits and divine judgment. In this Year C occurrence, the shared formulary’s language of guidance, sanctification, heavenly gift, and continuing aid reinforces that distinction. The formulary serves all three years, and no evidence ties its selection to these readings.
+The Psalm refuses both self-sufficiency and despair. Human beings return to dust, yet mercy is sought and work may be established by God. This is the decisive distinction between the readings: work is not rejected, but received under creaturely limits and divine judgment. In this Year C occurrence, the shared formulary’s language of guidance, sanctification, heavenly gift, and continuing aid reinforces that distinction. The formulary serves all three years, not these readings alone.
 
 ### The independent apostolic course
 
-Colossians remains semi-continuous. Its overlap is nevertheless textually strong: greed becomes idolatry, earthly fixation yields to life hidden with Christ, and the possessive self of the parable is answered by a renewed humanity in which Christ is all and in all. The union is liturgical and canonical: the epistle was not selected to explain Luke.
+Colossians remains semi-continuous. Its overlap is nevertheless textually strong: greed becomes idolatry, earthly fixation yields to life hidden with Christ, and the possessive self of the parable is answered by a renewed humanity in which Christ is all and in all. The union is liturgical and canonical.
 
 ### Rich toward God
 
@@ -276,6 +276,6 @@ This source-first guide treats the recurring U.S. Year C formula, not a parish r
 
 - Dicastery for Divine Worship, *Homiletic Directory* 145–149.
 
-**Last revised (UTC):** 2026-09-24T13:56:59Z
+**Last revised (UTC):** 2026-09-24T15:20:22Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
