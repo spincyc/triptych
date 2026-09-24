@@ -64,7 +64,7 @@ TLM propers: light, travail, Christ’s word, and the merciful compelling of reb
 | **Appointed claim** | **Decisive witness** | **Precise sense** |
 |:-------------|:------------------------|:----------------------------|
 | **Light amid conflict** | Augustine, *Psalm 26*, 1–3, joins divine illumination and salvation to courage under assault. | Confidence rests in God; the psalm does not call danger imaginary. |
-| **A course directed** | The Collect’s subject is *mundi cursus*, a world in motion; God’s order is the requested source of peace. Augustine, *City of God* XIX.13, calls the peace of all things the tranquility of order. | His definition illuminates the prayer but is not direct commentary on it; peace is not simply comfort or political quiet. |
+| **A course directed** | The Collect’s subject is *mundi cursus*, a world in motion; God’s order is the requested source of peace. Augustine, *City of God* XIX.13, calls the peace of all things the tranquility of order. | His definition illuminates the prayer, though he does not comment on it; peace is not simply comfort or political quiet. |
 | **Travail under hope** | Chrysostom, *Romans* 14, reads creation’s groaning as travail tending toward newness and the body’s irreversible freedom from corruption. | Travail is not yet birth; firstfruits are not final possession. |
 
 ### Mercy, judgment, and command meet truthful need (*Grad., All., Gosp.*)
@@ -103,7 +103,7 @@ TLM propers: light, travail, Christ’s word, and the merciful compelling of reb
 
 > **Three related divine works**
 >
-> The world’s *cursus* is asked to be *directed* by God’s order; rebellious wills are the object of his merciful *compelling*; the received mysteries are the subject of *purifying* and *protecting*. Governance, conversion, and sacramental effect are therefore related divine works, not interchangeable descriptions. The boat and net belong to Luke’s narrative, and neither image translates the orations.
+> The world’s *cursus* is asked to be *directed* by God’s order; rebellious wills are the object of his merciful *compelling*; the received mysteries are the subject of *purifying* and *protecting*. Governance, conversion, and sacramental effect are therefore related divine works, not interchangeable descriptions. The boat and net belong to Luke’s narrative; any link between them and these works is exploratory, and neither image translates the orations.
 
 ## The Propers: Detailed Commentary
 
@@ -114,7 +114,7 @@ These four texts do not repeat one mood. The Introit makes confession through as
 | **Proper** | **Textual form** | **Complete-context depth** | **Inherited reading** |
 |:-----------|:----------------|:-----------------|:-------------------|
 | Introit | The Lord *is* light, salvation, and defender; “whom?” and “from whom?” deny the enemy the final power to name reality. | Psalm 26 moves from threatened confidence toward one desire: God’s dwelling, presence, and patient waiting. The appointed army verse intensifies danger rather than pretending it absent. | Augustine, *Psalm 26*, 1–3, directly reads received illumination and salvation as the ground of courage under assault. He does not turn confidence into immunity from persecution. |
-| Collect | One petition coordinates two subjects and effects: the world’s moving *cursus* is to be directed peacefully by God’s order, and God’s Church is to rejoice in tranquil devotion. | The prayer asks neither that history stop nor that ecclesial joy be detached from the world’s continuing motion. Its peace is received direction, not mere stillness. | Augustine, *City of God* XIX.13, supplies related illumination by naming peace the tranquility of order and distinguishing temporal peace from final peace; no secure direct commentary on this Collect was located. |
+| Collect | One petition coordinates two subjects and effects: the world’s moving *cursus* is to be directed peacefully by God’s order, and God’s Church is to rejoice in tranquil devotion. | The prayer asks neither that history stop nor that ecclesial joy be detached from the world’s continuing motion. Its peace is received direction, not mere stillness. | Augustine, *City of God* XIX.13, names peace the tranquility of order and distinguishes temporal peace from final peace; the checked witnesses supply no secure direct commentary on this Collect. |
 | Gradual | The proper first joins *Propitius esto* to the nations’ question, then returns in the versicle to *Adiuva nos* and *libera nos*. Pardon, God’s name, help, and deliverance remain one communal plea. | Psalm 78 speaks after Jerusalem and the Temple have been devastated. The hostile question “Where is their God?” threatens the nations with despair as well as Israel with shame. | Augustine, *Psalm 78*, 12–13, directly calls God the healer, holds grace and the helped person’s action together, and reads concern for the nations within the petition. |
 | Alleluia | Enthroned equity and refuge for the poor are acclaimed in one verse rather than balanced as rival divine attributes. | Psalm 9 moves through judgment of oppressors toward the poor person’s refuge and hope in God’s name; refuge belongs inside just judgment, not outside it. | Augustine, *Psalm 9*, 6 and 9–10, directly distinguishes God’s knowledge of hearts from human judgment and locates refuge in him. Neither the psalm nor Augustine identifies the throne with Christ’s boat-seat. |
 
@@ -159,13 +159,13 @@ Augustine reads Luke 5 beside John 21 without denying either event’s literal h
 
 The contrast guards both directions: abundance cannot certify every person or structure, and strain cannot refute Christ’s agency. Purity and completion belong to the shore still awaited.
 
-St. Anthony of Padua’s sermon for the Fifth Sunday after Pentecost supplies a later medieval reception of the same catch. He repeatedly returns to Peter’s *in verbo tuo*: nets cast on the preacher’s own word catch nothing or only the praise-seeking croak of a frog, while fruit received on Christ’s word must be attributed to grace. At Peter’s knees he holds fear over sin together with hope in the Redeemer’s mercy, then treats leaving all as freedom for following. Cyril emphasizes the Lord’s continuing gift, Ambrose the apostolic and ecclesial depths of the boat, and Anthony the preacher’s temptation to appropriate the catch; together they give abundance an ascetical as well as ecclesial test.
+St. Anthony of Padua’s medieval sermon for the Fifth Sunday after Pentecost preaches on the same catch. He repeatedly returns to Peter’s *in verbo tuo*: nets cast on the preacher’s own word catch nothing or only the praise-seeking croak of a frog, while fruit received on Christ’s word must be attributed to grace. At Peter’s knees he holds fear over sin together with hope in the Redeemer’s mercy, then treats leaving all as freedom for following. Cyril emphasizes the Lord’s continuing gift, Ambrose the apostolic and ecclesial depths of the boat, and Anthony the preacher’s temptation to appropriate the catch; together they give abundance an ascetical as well as ecclesial test.
 
 ### The offered petition is for wakeful interior sight (*Off.*)
 
 Psalm 12 moves from delay and sorrow through a plea for illuminated eyes to trust in mercy. The Offertory appoints the petition, not a boast about achieved clarity.
 
-> **St. Augustine — direct exposition of Psalm 12:4–5**
+> **St. Augustine — on Psalm 12:4–5**
 >
 > In sections 3–6 Augustine identifies the enemy as the devil or entrenched carnal habit. The eyes are the eyes of the heart, liable to a pleasurable eclipse through sin; sleep in death names the danger of losing faith’s light. Even steadfastness is attributed to God’s mercy, so the petition opposes both despair and self-reliance.
 
@@ -173,7 +173,7 @@ At Offertory the gift-bearer still asks to see, remain awake, and escape the ene
 
 ### The Secret asks acceptance and merciful compulsion (*Sec.*)
 
-The complete prayer stands in the hand missal and the collation record; its decisive clauses are these.
+Three clauses carry the Secret’s argument; the hand missal prints the complete prayer.
 
 | **Latin hinge** | **Grammatical force** | **Theological pressure** |
 |:-------------|:------------------------|:----------------------------|
@@ -185,7 +185,7 @@ The complete prayer stands in the hand missal and the collation record; its deci
 >
 > The prayer coordinates two petitions: accept the oblations and be favorable; mercifully compel rebellious wills toward God. It does *not* identify the wills as the oblations. Their relation within one prayer is liturgically suggestive, but the Latin does not say “the will as interior offering.”
 
-Augustine’s *Confessions* VIII.5 and 8–12 narrates a will divided through entrenched habit without dividing the person into alien substances. *Grace and Free Will* 31–33 says that God gives what he commands by helping the commanded person obey; grace initiates willing and cooperates in action. Chrysostom, on Philippians 2:12–13, likewise joins God’s working of willing and action to exhortation, effort, and obedience. These sources illuminate the doctrine at stake; none is direct commentary on this Secret.
+Augustine’s *Confessions* VIII.5 and 8–12 narrates a will divided through entrenched habit without dividing the person into alien substances. *Grace and Free Will* 31–33 says that God gives what he commands by helping the commanded person obey; grace initiates willing and cooperates in action. Chrysostom, on Philippians 2:12–13, likewise joins God’s working of willing and action to exhortation, effort, and obedience. These sources illuminate the doctrine at stake; none comments on this Secret.
 
 ### Refuge received, purification still requested (*Comm., Postcomm.*)
 
@@ -259,6 +259,6 @@ The Postcommunion preserves the same dependence after reception. The mysteries a
 
 - Traditional orientation: New Advent Bible titles for Psalms [9](https://www.newadvent.org/bible/psa009.htm), [12](https://www.newadvent.org/bible/psa012.htm), [17](https://www.newadvent.org/bible/psa017.htm), [26](https://www.newadvent.org/bible/psa026.htm), [78](https://www.newadvent.org/bible/psa078.htm); *Catholic Encyclopedia*, [“Psalms”](https://www.newadvent.org/cathen/12533a.htm), [“King David”](https://www.newadvent.org/cathen/04642b.htm), [“Luke”](https://www.newadvent.org/cathen/09420a.htm), [“Chronology of Jesus”](https://www.newadvent.org/cathen/08377a.htm), [“Genesareth”](https://www.newadvent.org/cathen/06413a.htm); accessed 2026-07-10.
 
-**Last revised (UTC):** 2026-09-24T13:51:53Z
+**Last revised (UTC):** 2026-09-24T15:21:04Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
