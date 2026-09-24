@@ -133,7 +133,7 @@ This sheet prints the complete proper of *DOMINICA NONA post Pentecosten*, *II c
 >
 > **The justices of the Lord are right, rejoicing hearts:** the commandment of the Lord is lightsome, enlightening the eyes. The fear of the Lord is holy, enduring for ever and ever: **the judgments of the Lord** are true, justified in themselves. More to be desired than gold and many precious stones: and **sweeter than honey and the honeycomb.** **For thy servant keepeth them,** and in keeping them there is a great reward.
 
-**Witness boundary.** The Latin antiphon is a cento assembled from four fragments, not one continuous biblical sentence. Complete English verses are shown so the project does not manufacture its own stitched translation.
+**Witness boundary.** The Latin antiphon is a cento assembled from four fragments, not one continuous biblical sentence. The Douay–Rheims translates the psalm continuously and has no stitched English for the cento, so its complete verses stand above with the four fragments emphasized.
 
 ### 8. Secret
 
@@ -266,7 +266,7 @@ Later Roman reception makes the Postcommunion’s two petitions mutually interpr
 
 4.  **Abide as one:** memorial bears fruit in a body.
 
-*Reading order.* The stages follow the appointed sequence. Their architecture is this guide’s source-grounded synthesis; no cited author is presented as the designer of the complete formulary.
+*Reading order.* The stages follow the appointed sequence. The cited sources ground each stage, but none of their authors designed the complete formulary or arranged it in these stages.
 
 ### Help reaches the petitioner by reforming desire (*Int., Coll., All.*)
 
@@ -397,6 +397,6 @@ The complete source-grounded movement is therefore: help received, desire reform
 
 - Harry Graham, [*The Mother of Parliaments*](https://www.gutenberg.org/cache/epub/41304/pg41304-images.html) (London: Methuen, 1910), Judge Jenkins episode checked in Project Gutenberg ebook 41304; public domain in the United States.
 
-**Last revised (UTC):** 2026-09-24T02:53:19Z
+**Last revised (UTC):** 2026-09-24T12:23:21Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
