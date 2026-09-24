@@ -388,7 +388,7 @@ Augustine distinguishes undergoing contrary desire from carrying it to completio
 
 Aquinas distinguishes fruit acquired as an end from fruit produced in action. Here the Spirit produces delightful acts of virtue. Relative to future beatitude those acts are like flowers; their present sweetness resembles medicine whose pleasantness serves health. Charity begins the ordering of the virtues, and their delight serves a further good. His next lecture gives vigils, fasting and labor as bodily discipline while expressly forbidding the destruction of bodily nature (*Super Galatas* V, lect. 6 \[87779\], lect. 7 \[87780\], Latin, Turin 1953 text).
 
-The appointed Vulgate and Douay enumerate twelve fruit terms. Michael W. Holmes’s SBLGNT v1.2 at Gal. 5:22–23 enumerates nine. Chrysostom expounds nine; Aquinas and Anthony expound the received twelve-term Latin list. The checked editions establish the difference but do not explain its manuscript history. Paul’s warning concerns those who practice the named vices, while the Spirit’s fruit gives the life the law does not condemn.
+The appointed Vulgate and Douay enumerate twelve fruit terms. Michael W. Holmes’s SBLGNT v1.2 at Gal. 5:22–23 enumerates nine. Chrysostom’s Greek text has nine; Aquinas and Anthony expound the received twelve-term Latin list. The checked editions establish the difference but do not explain its manuscript history. Paul’s warning concerns those who practice the named vices, while the Spirit’s fruit gives the life the law does not condemn.
 
 Anthony relates the twelve fruits to the cleansed Samaritan’s grateful return: unity, humility, poverty and acknowledgment of mercy shape fruitful penitence. His distinction between continence and chastity depends on that twelve-term Latin list. The sermon labeled Fourteenth Sunday has Luke 17 and *Inclina Domine*, so Anthony is expounding this Epistle in a different formulary (Sunday XIV §§15–18, trans. Spilsbury). The kingdom excluded by Paul’s warning is the kingdom positively sought in the Gospel and Communion.
 
@@ -608,7 +608,7 @@ A student who has delayed his reading anticipates the April examinations, an unc
 
 **Anchors.** Matthew 6:27 asks who can *adícere* a cubit to stature through anxious thought; 6:33 promises *adiciéntur*, repeated at Communion. The Collect confesses mortal instability without God.
 
-**Mechanism.** The paired forms of addition contrast the reach of anxious human agency with the Father’s provision. The contrast concerns who can give, not the end to which gifts are directed (P3).
+**Mechanism.** The paired forms of addition contrast the reach of anxious human agency with the Father’s provision. The contrast concerns who can give, not the end to which gifts are directed.
 
 **Fruit.** Work within creaturely responsibility and receive what cannot be produced by worry as gift.
 
@@ -688,6 +688,6 @@ The online witnesses cited below for SBLGNT, the Authorized Version, Augustine, 
 
 - Local exploratory precedents: the earlier GPT and Claude guides to this Fourteenth Sunday, especially their *Interpretive Possibilities* and *Source-Grounded Synthesis*; GPT’s Eighth Sunday proposal on tasting and conversion. Exact file and proposal loci are recorded under PRE-002–010 in `research/scope.md`. These are editorial precedents, not historical authorities for the formulary.
 
-**Last revised (UTC):** 2026-09-24T15:15:03Z
+**Last revised (UTC):** 2026-09-24T16:53:25Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
