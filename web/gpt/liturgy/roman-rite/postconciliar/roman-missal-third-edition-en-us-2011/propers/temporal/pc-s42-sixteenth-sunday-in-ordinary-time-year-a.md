@@ -215,7 +215,7 @@ The two antiphons remain distinct textual paths: one proceeds through remembered
 |:----------------|:-------------------------------------------------|
 | Celebration | Sixteenth Sunday in Ordinary Time; Sunday rank; green. |
 | Formula | `PC-S40-A`; canonical Year A target; dated U.S. occurrence 2026-07-19. |
-| Books | U.S. *Roman Missal, Third Edition* (implemented 2011), Week XVI owner; U.S. *Lectionary for Mass*, Second Typical Edition, Volume I, no. 106. |
+| Books | U.S. *Roman Missal, Third Edition* (implemented 2011), Week XVI owner, its antiphon assignments corroborated in the bishops’ *Antiphonary*; U.S. *Lectionary for Mass*, Second Typical Edition, Volume I, no. 106. |
 | Calendar scope | General Roman Calendar as implemented for the United States; national scope. |
 | Cycle | Sunday Year A. |
 | Textual branches | Long or short Gospel and two Communion Antiphons. |
@@ -283,6 +283,6 @@ The two antiphons remain distinct textual paths: one proceeds through remembered
 
 - Museum of Oxford, [“The Light of the World”](https://moxdigiexhibits.omeka.net/exhibits/show/oxford-re-formed/item/1110), catalogue record for William Holman Hunt’s 1851–1853 painting, its Revelation 3:20 source, symbolic door, reception, and image rights.
 
-**Last revised (UTC):** 2026-09-24T16:34:06Z
+**Last revised (UTC):** 2026-09-24T17:06:57Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
