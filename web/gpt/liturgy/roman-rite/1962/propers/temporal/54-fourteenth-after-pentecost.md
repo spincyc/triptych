@@ -504,7 +504,7 @@ Nkrumah makes the Convention People’s Party’s demand for independence the co
 
 **Later wording.** “I toil not, neither do I spin” (Joseph L. Mankiewicz, *All About Eve*, revised final screenplay, April 5, 1950, p. 3, scene 5, “CLOSE ADDISON,” opening voice-over).
 
-Addison DeWitt describes the critic’s relation to the theatre by placing himself outside the labor of its makers and performers. His surrounding insect imagery makes the exemption parasitic and potentially harmful. The lilies’ creaturely dependence becomes a cultivated profession of detached power. The screenplay’s first person and *toil* reshape the familiar English saying. This locus belongs to the dated script, not to a verified point in the finished film; Matthew’s lily saying also has a parallel in Luke 12.
+Addison DeWitt describes the critic’s relation to the theatre by placing himself outside the labor of its makers and performers. His surrounding insect imagery makes the exemption parasitic and potentially harmful. The lilies’ creaturely dependence becomes a cultivated profession of detached power. The screenplay’s first person and *toil* reshape the familiar English saying. The dated script attests these words, and the finished film was not checked for them. Matthew’s lily saying also has a parallel in Luke 12.
 
 ### Two masters become incompatible political principles (*Gosp.*)
 
@@ -520,7 +520,7 @@ Lincoln opposes the Declaration’s equality principle to the proposed right to 
 
 **Later wording.** “They toil not, neither do they spin.” (John Keats, *Ode on Indolence*, epigraph; text in G. Kim Blank, *Mapping Keats’s Progress*, ed. 3.27, University of Victoria).
 
-The epigraph frames a poem in which Love, Ambition, and Poetry pass before the speaker. Stanzas III–IV, lines 25–40, name those figures and prefer indolence to their claims; stanza VI, lines 51–60, dismisses the visions while Poetry’s attraction remains. The lilies’ release from labor becomes a wish for freedom from demands upon the self, including artistic striving. The carefully made poem sustains that tension rather than simply renouncing poetry. Its epigraph follows the familiar Authorized Version wording; the saying’s Lukan parallel remains relevant.
+The epigraph frames a poem in which Love, Ambition, and Poetry pass before the speaker. Stanzas III–IV, lines 25–40, name those figures and prefer indolence to their claims; stanza VI, lines 51–60, dismisses the visions while Poetry’s attraction remains. The lilies’ release from labor becomes a wish for freedom from demands upon the self, including artistic striving. The carefully made poem sustains that tension rather than simply renouncing poetry. Its epigraph follows the familiar Authorized Version wording, and the saying also has a Lukan parallel.
 
 ### Spinning becomes an examination result (*Gosp.*)
 
@@ -544,7 +544,7 @@ A student who has delayed his reading anticipates the April examinations, an unc
 
 **What the element-by-element reading misses.** The juxtaposition answers a possible apparent contradiction between mistrusting princes and welcoming an angel. Both can serve dependence on the Lord.
 
-**Precedent.** Earlier GPT work on this proper and Claude’s proposal P5 supply local precedents. An external near analogue is located in Augustine’s Psalm 117.4: good humans and angels help through God. His Psalm 33, second exposition, §10, separately identifies the angel with Christ. Neither locus joins these chants to Matthew’s two-master saying.
+**Precedent.** Local precedents occur in earlier GPT work on this proper and in Claude’s proposal P5. An external near analogue is located in Augustine’s Psalm 117.4: good humans and angels help through God. His Psalm 33, second exposition, §10, separately identifies the angel with Christ. Neither locus joins these chants to Matthew’s two-master saying.
 
 **Strongest limit.** The angel’s received identifications differ, and the proposal cannot turn every mediator into the same kind of being or office. The complete three-element arrangement remains an exploratory joining.
 
@@ -558,7 +558,7 @@ A student who has delayed his reading anticipates the April examinations, an unc
 
 **What the element-by-element reading misses.** The desired courts and the surrounding camp become complementary spatial images: a destination and protection on the way.
 
-**Precedent.** Earlier GPT work on this proper supplies a local precedent. External near analogues occur in Augustine’s Psalm 83.8, where God is the house’s wall, and in his Psalm 33, second exposition, §10, on the protecting angel. These passages do not explicitly combine the courts and camp or connect them with Matthew’s anxiety discourse.
+**Precedent.** A local precedent occurs in earlier GPT work on this proper. External near analogues occur in Augustine’s Psalm 83.8, where God is the house’s wall, and in his Psalm 33, second exposition, §10, on the protecting angel. These passages do not explicitly combine the courts and camp or connect them with Matthew’s anxiety discourse.
 
 **Strongest limit.** Protection is not physical immunity. The metaphor cannot promise that a believer will escape poverty, attack, or death, and the proposed spatial joining remains exploratory.
 
@@ -572,7 +572,7 @@ A student who has delayed his reading anticipates the April examinations, an unc
 
 **What the element-by-element reading misses.** The repeated promise of addition acquires a destination from prayers that do not use its verb.
 
-**Precedent.** Earlier GPT work on this proper supplies a local precedent. An external near analogue is located in Augustine, *De sermone Domini*, II.17.58: the divine physician gives or withholds with perpetual rest in view. That passage does not join the Gospel to these Collect and Postcommunion petitions.
+**Precedent.** A local precedent occurs in earlier GPT work on this proper. An external near analogue is located in Augustine, *De sermone Domini*, II.17.58: the divine physician gives or withholds with perpetual rest in view. That passage does not join the Gospel to these Collect and Postcommunion petitions.
 
 **Strongest limit.** Matthew’s added things have the stated antecedent of food, drink, and clothing. The proposal cannot expand them into every wanted good or make earthly prosperity proof of saving direction.
 
@@ -688,6 +688,6 @@ The online witnesses cited below for SBLGNT, the Authorized Version, Augustine, 
 
 - Local exploratory precedents: the earlier GPT and Claude guides to this Fourteenth Sunday, especially their *Interpretive Possibilities* and *Source-Grounded Synthesis*; GPT’s Eighth Sunday proposal on tasting and conversion. Exact file and proposal loci are recorded under PRE-002–010 in `research/scope.md`. These are editorial precedents, not historical authorities for the formulary.
 
-**Last revised (UTC):** 2026-09-09T14:36:51Z
+**Last revised (UTC):** 2026-09-24T13:45:21Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
