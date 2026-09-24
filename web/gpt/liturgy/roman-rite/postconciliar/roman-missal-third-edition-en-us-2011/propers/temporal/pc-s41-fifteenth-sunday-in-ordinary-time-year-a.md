@@ -83,7 +83,7 @@ Isaiah’s word is effective because it is sent by God, not because the earth co
 
 ### 3. Firstfruits do not abolish groaning (*Second Reading*)
 
-Romans belongs to its own sequence. Paul does not say that present suffering is unreal or that believers already possess bodily consummation. Creation waits, labors, and hopes; Spirit-bearing Christians groan too. Chrysostom’s direct exposition preserves the passage’s personification and its movement toward incorruption. Any agricultural resonance with Isaiah and Matthew is secondary: the Lectionary appoints Romans here in its own course.
+Romans belongs to its own sequence. Paul does not say that present suffering is unreal or that believers already possess bodily consummation. Creation waits, labors, and hopes; Spirit-bearing Christians groan too. Chrysostom’s direct exposition preserves the passage’s personification and its movement toward incorruption.
 
 ### 4. Repetition serves rooted transformation (*Prayer over Offerings; Communion; Prayer after Communion*)
 
@@ -120,7 +120,7 @@ Isaiah 55 compares two effective descents. Rain and snow do not return before wa
 
 The Syriac witness Aphrahat quotes Isaiah 55:10–11 in *Demonstration VIII*, first to insist that the divine word actually completes its mission and later within an argument about resurrection. His Christological and eschatological reuse is not a continuous exposition of Isaiah’s exilic oracle, but it shows how early reception heard more than successful information-transfer: the word descends, acts in embodied history, and returns with its work accomplished. In its literal sense the oracle first addresses displaced Judah; Christian reception reads the same promise on a wider horizon.
 
-Aphrahat’s two uses also disclose an interpretive discipline. In section 6 the oracle establishes divine reliability; in section 15 it participates in a network of resurrection promises. The same verse can therefore bear more than one ecclesial use without being made infinitely plastic. Its controlling feature remains the sent word’s effective return. That feature links promise, Incarnation, proclamation, and final fulfillment, while the actual Lectionary pairing with Matthew is still an ecclesial appointment rather than Aphrahat’s argument.
+Aphrahat’s two uses also disclose an interpretive discipline. In section 6 the oracle establishes divine reliability; in section 15 it participates in a network of resurrection promises. The same verse can therefore bear more than one ecclesial use without being made infinitely plastic. Its controlling feature remains the sent word’s effective return. That feature links promise, Incarnation, proclamation, and final fulfillment.
 
 Psalm 65 supplies a liturgical answer in the world of creatures. God visits land, fills watercourses, breaks clods, softens earth, and blesses yield. Human sowing is not denied, but the Psalm’s praise begins with divine visitation. The response, marked Luke 8:8, overlays the image of fruitful soil; that marker does not turn Luke into the Mass’s Gospel or authorize replacing Matthew’s distinct form.
 
@@ -156,7 +156,7 @@ Both Gospel forms proclaim the same parable. The sower casts broadly; three fail
 
 Chrysostom’s *Homily 44 on Matthew* directly treats the public parable. He calls Christ the sower, doctrine the seed, and human souls the land, stressing the sower’s unsparing breadth: the same good seed is not rationed according to a prior judgment about who looks promising. Failure therefore cannot be blamed upon a defective word, while the act of sowing itself refuses despair about apparently resistant ground. *Homily 45* then follows the long form into the disciples’ question, Isaiah’s hard-hearing oracle, and the differing yields. Chrysostom treats thirty, sixty, and a hundred as real fruit at different measures, not as one quota below which grace is absent.
 
-Cyril’s parallel Lukan sermon adds a counterweight. He applies the soils vigorously to hardheartedness, untested enthusiasm, persecution, and the growth of worldly anxiety, but concludes by urging sterile ground to awake and become cultivated. Their moral diagnosis therefore names responses, not fixed classes of persons. Both Cyril and Chrysostom preach movement, perseverance, and cultivation; neither gives a modern minister warrant to infer a person’s entire spiritual condition from disability, education, poverty, trauma, or one visible failure.
+Cyril’s parallel Lukan sermon adds a counterweight. He applies the soils vigorously to hardheartedness, untested enthusiasm, persecution, and the growth of worldly anxiety, but concludes by urging sterile ground to awake and become cultivated. Cyril’s moral diagnosis therefore names responses, not fixed classes of persons. Both Cyril and Chrysostom preach movement, perseverance, and cultivation; neither gives a modern minister warrant to infer a person’s entire spiritual condition from disability, education, poverty, trauma, or one visible failure.
 
 Origen offers a further, deliberately indirect reception in *On First Principles* III.1.17. Answering an objection about unequal timing in divine instruction, he compares God to a husbandman who may delay sowing rocky ground until the seed can take secure root rather than spring up superficially. Origen does not comment continuously on Matthew 13 here; he reuses its agrarian logic to defend patient divine pedagogy. The proposal is more speculative than Chrysostom’s homily, yet it supplies a valuable pastoral possibility: delay need not mean abandonment, and apparently resistant ground need not be declared incapable of future cultivation.
 
@@ -286,6 +286,6 @@ The Prayer after Communion asks that receiving gifts and frequenting the mystery
 
 - *Catechism of the Catholic Church* 541–550, [the Kingdom and its parables](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_3/paragraph_3_the_mysteries_of_christs_public_life.html); doctrinal context, not direct formula commentary.
 
-**Last revised (UTC):** 2026-09-24T15:07:17Z
+**Last revised (UTC):** 2026-09-24T16:34:06Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
