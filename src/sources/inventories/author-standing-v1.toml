@@ -521,3 +521,29 @@ basis_sources = [
 ]
 confession = "Catholic"
 notes = "The commentary index's `role` is a model's lead data and tags him `saintly` on the Matthew rows promoted 2026-09-23, because promotion takes the role of the earliest run's attribution; 78 of the ledger's 87 attributions to him say `saint`. This row is his standing."
+
+# ---------------------------------------------------------------------------
+# Authors named by a published proper study at its revision, 2026-09-23
+#
+# Added at the first revision of the Claude 1962 Eighteenth Sunday leaf, whose
+# study now names Maximus of Turin as the author under whom Patrologia Latina
+# 57 prints the sermon it quotes from Chrysologus's Sermo 50. The three sources
+# were fetched whole with curl on 2026-09-23 and read locally; New Advent's
+# letter index for M located the article.
+# ---------------------------------------------------------------------------
+
+[[persons]]
+id = "maximus-of-turin"
+namespaces = ["maximus-of-turin"]
+name = "Maximus of Turin"
+names = ["Maximus of Turin", "St Maximus of Turin", "Maximus Taurinensis"]
+died = "shortly after 465, by the cited article; the Roman Martyrology gives his feast day and no year"
+standing = "father"
+standing_basis = "First known bishop of Turin, 'b. probably in Rhaetia, about 380; d. shortly after 465', present at the synod of Milan in 451 and at the synod of Rome in 465; 'His name is in the Roman martyrology on 25 June, and the city of Turin honours him as its patron' (Catholic Encyclopedia, 'St. Maximus of Turin', vol. 10, 1911). The Roman Martyrology, in the English translation of the edition printed at Rome in 1914 (Baltimore: John Murphy, 1916), reads at the twenty-fifth day of June: 'At Turin, the birthday of St. Maximus, bishop and confessor, most celebrated for his learning and sanctity.' Among the Fathers whose preaching the Catholic Encyclopedia's 'Fathers of the Church' characterizes ('from the neat phrases of Maximus of Turin, and the ponderous rhythms of Leo the Great. The eloquence of these Fathers need not be here described'), the same sentence that grounds Chrysologus's row. A Father by this file's precedence, and a saint by the ancient cultus the Martyrology records; not a Doctor."
+basis_sources = [
+  "https://www.newadvent.org/cathen/10081a.htm",
+  "https://www.newadvent.org/cathen/06001a.htm",
+  "https://archive.org/download/romanmartyrology00cathuoft/romanmartyrology00cathuoft_djvu.txt",
+]
+confession = "Catholic"
+notes = "The Catholic Encyclopedia's article says of Bruni's edition that 'Many writings, however, which Bruni ascribes to Maximus are of doubtful origin', and its appendix carries writings of uncertain authorship. Homilia CVIII of that edition is the text Patrologia Latina 52 prints as Peter Chrysologus's Sermo 50; its ascription is recorded on passage.maximus-of-turin.homiliae.1862-migne-pl-57.homilia-108 and passage.peter-chrysologus.sermones.1894-garnier-migne-pl-52.sermo-50 and is not settled here. This row states who Maximus is, not that he wrote that homily."
