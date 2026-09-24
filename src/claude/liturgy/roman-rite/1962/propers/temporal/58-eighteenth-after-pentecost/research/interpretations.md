@@ -867,25 +867,27 @@ healing was moved by faith that was not the sick man's. The text is a
 transcription, not image-collated, and it is on Luke.
 
 **Peter Chrysologus, Sermo 50, *De paralytico curato* (PL 52, col. 341), added at
-the leaf's first revision (2026-09-23)** (`research/scope.md` §§ 3.5, 4.2). A
-Father and Doctor, preaching this Gospel as the day's reading, takes the same
-side and presses it further. The paralytic's soul was healed
+the leaf's first revision (2026-09-23)** (`research/scope.md` §§ 3.5, 4.2). The
+sermon received as Chrysologus's, a Father and Doctor, preaches this Gospel as
+the day's reading, takes the same side and presses it further; who wrote it is
+not decided here. The paralytic's soul was healed
 *fidei alienae suffragio*, by the suffrage of another's faith, and the preacher
 draws the lesson: *Deum non quaerere insipientium voluntates, non spectare
 ignorantium fidem … sed ad alterius fidem subvenire, quod per solam gratiam
 conferebat*. God does not look for the will of the foolish or the faith of the
-ignorant; he helps at another's faith, giving by grace alone. He even reads the
-man's silence against him: *Audit veniam, et tacet paralyticus, nec ullam
+ignorant; he helps at another's faith, giving by grace alone. The preacher even
+reads the man's silence against him: *Audit veniam, et tacet paralyticus, nec ullam
 respondet gratiam, quia plus corporis quam animae tendebat ad curam*. That is the
 reverse of Chrysostom's reading of the same silence, and it gives this reading
-its sharpest form: the man brought not even thanks. Three limits hold wherever he
-is cited. The same text is printed as Maximus of Turin's Homilia CVIII (PL 57),
+its sharpest form: the man brought not even thanks. Three limits hold wherever the
+sermon is cited. The same text is printed as Maximus of Turin's Homilia CVIII (PL 57),
 and its ascription is disputed. The Roman Breviary's reading of part of it on
 this Sunday under Chrysologus's name is known here only from Maximus's editor.
 And the main clause *offerentium fidem non respicit*, whose *non* Rabanus lacks,
-is unsettled and is not quoted. He supports the reading's claim beside Jerome and
-Ambrose and does not carry it, because of the dispute over who wrote the sermon.
-The study uses him in one paragraph of "The man who was carried". His *porta
+is unsettled and is not quoted. The sermon supports the reading's claim beside
+Jerome and Ambrose, and Chrysologus does not carry it, because of the dispute over
+who wrote the sermon. The study uses it in one paragraph of "The man who was
+carried". Its *porta
 portantem* at *Tolle lectum tuum* (col. 342), the same turn Aquinas gives the
 command, is recorded and not used.
 

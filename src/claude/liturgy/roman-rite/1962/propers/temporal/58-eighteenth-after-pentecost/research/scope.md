@@ -1268,8 +1268,8 @@ Catena, or Aquinas's lectura, departs from them. The Catena is still quoted in
     onlookers' fear is unbelief's, and those who fear are those who calumniated.
     Luke's verse has no *potestatem talem hominibus*, and he says nothing of it
     (§ 4.3). The range read now runs V.10–15.
-- **Direct, a Father and Doctor, ascription disputed: Peter Chrysologus**, Sermo
-  50, *De paralytico curato*, **PL 52 (Paris: Garnier, 1894), cols. 339C–342B**.
+- **Direct, ascription disputed: the sermon received as Peter Chrysologus's**
+  (a Father and Doctor), Sermo 50, *De paralytico curato*, **PL 52 (Paris: Garnier, 1894), cols. 339C–342B**.
   Added at the leaf's first revision (2026-09-23), after the library registered
   it. Read in the passage record's checked transcription (SHA-256 recomputed and
   matched, `bce4087b…0adc01f`), and at every sentence used below on the tracked
@@ -2338,11 +2338,12 @@ Rabanus prints Bede's sentence at Mt 9:2 under the siglum *(Joan. Chrysost.)*,
 followed by a passage of Peter Chrysologus's Sermo 50 (PL 52, col. 341A) that he
 reads *Merito Christus offerentium fidem respicit* (PL 107, col. 871; § 3.5):
 the siglum notwithstanding, the passage takes Jerome's side and not Chrysostom's.
-**Chrysologus, read at his own locus at the first revision (2026-09-23)**, takes
-that side in his own words, preaching this Gospel as the day's reading: the
+**The sermon received as Chrysologus's, read at its own locus at the first
+revision (2026-09-23)**, takes that side, its preacher preaching this Gospel as
+the day's reading: the
 paralytic's soul was healed *fidei alienae suffragio*, and *Deum non quaerere
 insipientium voluntates, non spectare ignorantium fidem … sed ad alterius fidem
-subvenire, quod per solam gratiam conferebat*. He reads the man's silence against
+subvenire, quod per solam gratiam conferebat*. The preacher reads the man's silence against
 him (*Audit veniam, et tacet paralyticus, nec ullam respondet gratiam*), where
 Chrysostom reads it as surrender to the healer. The same text is printed as
 Maximus of Turin's Homilia CVIII, so the ascription is disputed, and the
