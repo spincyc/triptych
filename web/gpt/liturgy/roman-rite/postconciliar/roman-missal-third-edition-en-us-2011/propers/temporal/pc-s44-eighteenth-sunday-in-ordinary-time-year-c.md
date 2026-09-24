@@ -272,10 +272,16 @@ This source-first guide treats the recurring U.S. Year C formula, not a parish r
 
 - Ambrose, *On Duties* III.6.41–44.
 
+- Basil, *I Will Pull Down My Barns*, §7 (PG 31, 276B–277A).
+
 - Francis, Angelus, 4 August 2019.
 
 - Dicastery for Divine Worship, *Homiletic Directory* 145–149.
 
-**Last revised (UTC):** 2026-09-24T15:20:22Z
+- Rembrandt, *Parable of the Rich Man*, 1627, Gemäldegalerie Berlin, inv. 828 D.
+
+- Charles Ives, *Psalm 90* (1923–24).
+
+**Last revised (UTC):** 2026-09-24T17:09:32Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
