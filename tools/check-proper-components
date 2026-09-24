@@ -76,15 +76,13 @@ BRIEF_START_PAGE = 3
 # The one value of a schema-1 manifest's optional reader_order field.
 LEGACY_READER_ORDER = "legacy"
 # Both profiles' Reader-Facing Order puts the notable gallery before the
-# exploratory proposals. The two headings are matched as whole lines of the
-# built PDF's text, because the manifest's component list is not what a leaf
-# prints (see audit_manifest). "Across the Propers" is the exploratory
-# heading both pc-s43 leaves took from the component list that 5988f9dfd
-# followed.
-NOTABLE_HEADING = re.compile(r"(?:The Propers: )?Notable and Quotable")
-EXPLORATORY_HEADING = re.compile(
-    r"(?:The Propers: )?Interpretive Possibilities(?: Across the Propers)?"
-)
+# exploratory proposals, under these exact headings. They are matched as whole
+# lines of the built PDF's text, because the manifest's component list is not
+# what a leaf prints (see audit_manifest). Every schema-1 leaf prints both
+# names; the two pc-s43 leaves printed "Interpretive Possibilities Across the
+# Propers" until 87f8784d1 and 342cd1bd3.
+NOTABLE_HEADING = re.compile(re.escape("The Propers: Notable and Quotable"))
+EXPLORATORY_HEADING = re.compile(re.escape("The Propers: Interpretive Possibilities"))
 
 
 def safe_file(leaf: Path, value: object, field: str) -> Path:

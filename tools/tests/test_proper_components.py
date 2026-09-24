@@ -238,9 +238,14 @@ class PrintedTailOrderTests(unittest.TestCase):
     def test_heading_after_a_page_break_is_found(self):
         # pdftotext opens each page with a form feed.
         with self.assertRaisesRegex(ValueError, "Notable and Quotable first"):
+            module.validate_tail_order(f"\f{EXPLORATORY}\nBody.\n\f{NOTABLE}\n")
+
+    def test_only_the_profile_headings_count(self):
+        # The component list's old name for the exploratory section is not
+        # the profile's heading, so a PDF printing it has no such heading.
+        with self.assertRaisesRegex(ValueError, "no Interpretive Possibilities heading"):
             module.validate_tail_order(
-                "\fInterpretive Possibilities Across the Propers\nBody.\n"
-                f"\f{NOTABLE}\n"
+                f"{NOTABLE}\nInterpretive Possibilities Across the Propers\n"
             )
 
     def test_a_mention_in_prose_is_not_a_heading(self):
