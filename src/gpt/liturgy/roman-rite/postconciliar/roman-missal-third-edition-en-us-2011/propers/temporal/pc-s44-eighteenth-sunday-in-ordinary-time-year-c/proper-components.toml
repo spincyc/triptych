@@ -54,7 +54,7 @@ key = "source-grounded-synthesis"
 kind = "source-grounded-synthesis"
 path = "sections/35-source-grounded-synthesis.tex"
 modes = ["research", "synthesis"]
-element_keys = ["first-reading", "responsorial-psalm", "second-reading", "gospel", "collect", "prayer-over-offerings", "prayer-after-communion"]
+element_keys = ["first-reading", "responsorial-psalm", "second-reading", "gospel", "collect", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
 depends_on = ["brief-synthesis"]
 references = ["research/source-bindings.toml"]
 
@@ -98,4 +98,4 @@ evidence = ["textual-observation", "source-grounded-synthesis"]
 [[relations]]
 key = "gift-offering-and-communion"
 element_keys = ["collect", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
-evidence = ["textual-observation", "exploratory-proposal"]
+evidence = ["textual-observation", "source-grounded-synthesis"]
