@@ -151,7 +151,7 @@ Four changes are substantive. The goods are no longer “temporal” but “pass
 
 What the prayer asks for has an obvious patristic name. Augustine’s *On Christian Doctrine* opens by dividing things into those to be enjoyed and those to be used, and defines the terms exactly: to enjoy is to rest in a thing for its own sake; to use is to employ what is at one’s disposal to obtain what one loves (I.3–4). The Collect asks for that competence and then names its term with a different verb again: not *frui* but *inhærere*, to cling. The distinction matters pastorally. A prayer that asked only to “use” the world could be heard as instrumentalism; the added verb of adherence names a relation to God that is not itself a use.
 
-Read against the readings, for which it was not composed, the Collect states in petition what the first reading states as narrative and the Gospel as action. It asks for the disposition that makes such rankings possible, and locates it not in the petitioner’s strength but under a ruler and a guide.
+Read against this year’s readings, though it serves all three years alike, the Collect states in petition what the first reading states as narrative and the Gospel as action. It asks for the disposition that makes such rankings possible, and locates it not in the petitioner’s strength but under a ruler and a guide.
 
 ### First Reading: 1 Kings 3:5, 7–12
 
@@ -792,6 +792,6 @@ Only sources actually used are listed. Where an online witness was read, the del
 
 - “Dragnet,” *Online Etymology Dictionary*, for the negative result reported in the gallery.
 
-**Last revised (UTC):** 2026-09-24T13:33:40Z
+**Last revised (UTC):** 2026-09-24T13:40:59Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
