@@ -1,4 +1,4 @@
-# PC-S40-A — Liturgical Instance Manifest
+# PC-S42-A — Liturgical Instance Manifest
 
 This is the authoritative identity and resolution record for the publication leaf `pc-s42-sixteenth-sunday-in-ordinary-time-year-a`.
 
@@ -8,8 +8,8 @@ This is the authoritative identity and resolution record for the publication lea
 | --- | --- |
 | Stable registry | [`guidance/liturgy/postconciliar-propers-registry.md`](../../../../../../../../../../guidance/liturgy/postconciliar-propers-registry.md), adopted without modification |
 | Edition-locale registry | [`propers/registry/`](../../../registry/README.md) of this edition-locale. This leaf's disposition is recorded in [formula dispositions](../../../registry/formula-dispositions.md) and its date in the [2026 occurrence record](../../../registry/occurrences-2026.md). It asserts no edition-specific delta and adds no key, slug, position, or count; every target not listed in that registry remains unassessed. |
-| Permanent parent | `PC-S40` — Sixteenth Sunday in Ordinary Time |
-| Formula key | `PC-S40-A` |
+| Permanent parent | `PC-S42` — Sixteenth Sunday in Ordinary Time |
+| Formula key | `PC-S42-A` |
 | Full publication slug | `pc-s42-sixteenth-sunday-in-ordinary-time-year-a` |
 | Canonical formulary owner | [Ordinary Time, Week XVI](../../shared/ordinary-time/weeks/16/propers/verified.md) in this provider tree. Exactly one owner; this leaf does not duplicate protected owner wording. |
 | Missal edition | Roman Missal, Third Edition, for Use in the Dioceses of the United States of America; English; confirmed 2010, implemented 2011-11-27. Latin base: *Missale Romanum*, editio typica tertia, reimpressio emendata (2008). |

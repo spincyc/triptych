@@ -1,4 +1,4 @@
-# Source Audit — PC-S40-A (Claude edition)
+# Source Audit — PC-S42-A (Claude edition)
 
 Every witness below was fetched and read by the authoring agent on **2026-07-25**, except the Wilson 1915 row, read on 2026-09-24. "Verified" means the wording or fact was read at the identified witness on that date. It does not claim collation against a printed critical edition or a page-image facsimile except where stated. No verification event recorded here is inferred; each corresponds to an actual retrieval and reading.
 

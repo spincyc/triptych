@@ -1,7 +1,7 @@
 # Sixteenth Sunday in Ordinary Time, Year A — Research Scope
 
 **Provider:** Anthropic Claude.
-**Formula:** `PC-S40-A` **Occurrence:** 2026-07-19 **Record updated:** 2026-07-25
+**Formula:** `PC-S42-A` **Occurrence:** 2026-07-19 **Record updated:** 2026-07-25
 **Controls:** [instance manifest](../instance/manifest.md) for identity and unresolved selections; [leaf composition audit](../propers/verified.md) for boundaries and branches; [Week XVI owner](../../shared/ordinary-time/weeks/16/propers/verified.md) for the reusable Missal evidence; [source audit](source-audit.md) for the verification event log; [`source-bindings.toml`](source-bindings.toml) for registered-source dependence.
 
 This record preserves the operational scholarship displaced from the publication. It is not a diary and contains no reasoning transcript.

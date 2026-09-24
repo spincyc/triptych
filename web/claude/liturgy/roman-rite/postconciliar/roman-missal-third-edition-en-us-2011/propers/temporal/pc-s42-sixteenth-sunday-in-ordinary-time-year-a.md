@@ -1,12 +1,12 @@
 # Sixteenth Sunday in Ordinary Time, Year A
 
-*Source-first guide to the textual variable parts of PC-S40-A in the Roman Missal, Third Edition, for the dioceses of the United States of America, with the Lectionary 106 readings, their reception, and the rights limits of the record*
+*Source-first guide to the textual variable parts of PC-S42-A in the Roman Missal, Third Edition, for the dioceses of the United States of America, with the Lectionary 106 readings, their reception, and the rights limits of the record*
 
 **Sixteenth Sunday in Ordinary Time**
 
 Year A
 
-Formula `PC-S40-A` ⋅ Lectionary 106
+Formula `PC-S42-A` ⋅ Lectionary 106
 
 | **Textual unit** | **Text / citation** |
 |:-----------------|:------------------------------------------------|
@@ -514,7 +514,7 @@ The six proposals below are original editorial syntheses produced with AI assist
 | Celebration | Sixteenth Sunday in Ordinary Time |
 | Rank and precedence | Sunday in Ordinary Time; rank 6 in the Table of Liturgical Days of the Universal Norms on the Liturgical Year and the Calendar. It yields only to the celebrations ranked above it, none of which occurred on this date. |
 | Season and colour | Ordinary Time, Week XVI; green |
-| Registry identity | Stable parent `PC-S40`; formula key `PC-S40-A`; full publication slug `pc-s42-sixteenth-sunday-in-ordinary-time-year-a` |
+| Registry identity | Stable parent `PC-S42`; formula key `PC-S42-A`; full publication slug `pc-s42-sixteenth-sunday-in-ordinary-time-year-a` |
 | Form and coverage | One Mass form; Year A coverage only. Years B and C are separate targets and are not treated here. |
 | Occurrence | Sunday, 19 July 2026, in the dioceses of the United States of America. The national liturgical calendar for 2026 lists no competing celebration on that date, and the Sunday is celebrated. |
 | Governing edition-locale | Roman Missal, Third Edition, for Use in the Dioceses of the United States of America (English, implemented 27 November 2011), whose Latin base is the *Missale Romanum*, third typical edition, in its 2008 emended reprint |
@@ -636,6 +636,6 @@ Completed: source research and same-day verification of every witness quoted; cl
 
 - *Easton’s Bible Dictionary* (1897), s.v. “Tares,” <https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/R-Z>; *Chambers’s Twentieth Century Dictionary* (1908), s.v. “Darnel,” <https://en.wikisource.org/wiki/Chambers%27s_Twentieth_Century_Dictionary_1908/D_Defect>.
 
-**Last revised (UTC):** 2026-09-24T17:17:38Z
+**Last revised (UTC):** 2026-09-24T18:04:15Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

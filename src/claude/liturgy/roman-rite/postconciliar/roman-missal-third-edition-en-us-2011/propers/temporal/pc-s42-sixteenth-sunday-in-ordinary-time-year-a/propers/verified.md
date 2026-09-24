@@ -1,6 +1,6 @@
-# PC-S40-A — Leaf Composition Audit
+# PC-S42-A — Leaf Composition Audit
 
-**Formula:** `PC-S40-A` **Slug:** `pc-s42-sixteenth-sunday-in-ordinary-time-year-a` **Parent:** `PC-S40`
+**Formula:** `PC-S42-A` **Slug:** `pc-s42-sixteenth-sunday-in-ordinary-time-year-a` **Parent:** `PC-S42`
 **Lectionary:** United States no. 106 **Occurrence checked:** 2026-07-19 **Collated:** 2026-07-25
 
 Identity and resolution are controlled by [the instance manifest](../instance/manifest.md); the reusable Missal evidence by [the Week XVI owner](../../shared/ordinary-time/weeks/16/propers/verified.md); the research audit by [`research/scope.md`](../research/scope.md).
