@@ -1,6 +1,6 @@
 # Ordinary Time Week XIII — Canonical Formulary Audit
 
-**Owner:** Ordinary Time Week 13, consumed on Sunday by `PC-S37`
+**Owner:** Ordinary Time Week 13, consumed on Sunday by `PC-S39`
 **Registry control:** `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../../../../registry/formula-dispositions.md)
 **Last collated:** 2026-07-15
 

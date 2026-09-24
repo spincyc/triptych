@@ -1,6 +1,6 @@
 # Ordinary Time Week XVII — Canonical Formulary Audit
 
-**Owner:** Ordinary Time Week 17, consumed on Sunday by `PC-S41`
+**Owner:** Ordinary Time Week 17, consumed on Sunday by `PC-S43`
 **Registry control:** `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../../../../registry/formula-dispositions.md)
 **Last collated:** 2026-07-20
 
