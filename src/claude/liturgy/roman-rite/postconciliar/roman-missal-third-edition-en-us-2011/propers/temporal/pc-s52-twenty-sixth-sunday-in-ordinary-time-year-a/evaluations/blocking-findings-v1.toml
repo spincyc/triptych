@@ -49,13 +49,13 @@ provider = "claude"
 run_id = "ed9acebf389f8706"
 workflow = "proper-study"
 workflow_version = 7
-stage = "homily-review"
+stage = "visual-review"
 iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 19
-observation_count = 0
+advisory_count = 20
+observation_count = 1
 
 [[stages]]
 stage = "homily-review"
@@ -104,6 +104,18 @@ standing = 0
 accepted_count = 0
 advisory_count = 4
 observation_count = 0
+
+[[stages]]
+stage = "visual-review"
+iteration = 0
+disposition = "PASS"
+run_id = "ed9acebf389f8706"
+workflow = "proper-study"
+workflow_version = 7
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 1
 
 [[advisories]]
 stage = "homily-review"
@@ -256,3 +268,16 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/concise/90-apparatus.tex, 'Relation to the expansive study' (lines 18-26: 'Every claim here is drawn from the canonical study ...'; 'The second page reprints the study's dossier') and References, Douay-Rheims item (line 118)"
 problem = "The apparatus says every claim is drawn from the canonical study. In several places, though, the companion departs from the study's wording and follows research/scope.md where the study review left standing advisories. Examples: Aquinas answers an objection drawn from Ezekiel 18:21, where the study has 'With Ezekiel 18:21 he answers'. The identification Hilary tests is named as not Jerome's, Chrysostom's or Aquinas's. Jerome calls the Lord's sentence on the vineyard just. Gregory is credited with love, not obedience. Each departure is correct and supported by the research record, but a reader who traces one of these claims to the study will find it put differently. The apparatus also says page 2 'reprints' the study's dossier. In fact it condenses the Location cells and explanatory rows, and prints only the generated Date cells unchanged. Finally, the References' Douay-Rheims locus list leaves out Psalm 94:8, which page 7 quotes in Douay-Rheims English ('To day if you shall hear his voice')."
 required_result = "Say that the companion is drawn from the canonical study and its research records, and that where the study's wording carries a standing review advisory it follows research/scope.md. Say that page 2 condenses the study's dossier while printing the generated Date cells, relation labels, alternatives and unresolved states unchanged. Add Ps 94:8 to the Douay-Rheims loci in the References."
+
+[[advisories]]
+stage = "visual-review"
+id = "VIS-001"
+severity = "advisory"
+location = "Expansive study PDF, physical pages 27-28, Scriptural Date and Location table, Gospel (Mt 21:28-32) dossier (source: sections/80-date-location.tex, the gospel rows)"
+problem = "The longtable breaks inside the Gospel dossier. Its summary row and italic narrated-event row end page 27, and its full-width explanatory row ('Traditional attribution: St Matthew the Apostle ... These are dates of the book, not of the saying') opens page 28 under the repeated header, cut off from the Date cell it qualifies. Page 28 then ends at about 55% of its height before the required fresh page for Appendix: Liturgical Resolution, so the whole dossier would fit there. The explanatory row names its passage and the header repeats, so a reader can recover the link and is not misled. This is a break in the two-tier dossier hierarchy, not a loss of content."
+required_result = "If the study is reopened for any reason, keep each dossier's summary, event and explanatory rows together with ordinary non-breaking row ends or page-break hints in sections/80-date-location.tex, so that the Gospel dossier moves whole to page 28 and the table breaks only between complete dossiers. Do not change shared table dimensions."
+
+[[observations]]
+stage = "visual-review"
+location = "Expansive study PDF p. 27 and concise study PDF p. 2, First Reading and Entrance Antiphon Date cells (generated research/chronology-annotations.tex)"
+note = "The generated annotation prints the source labels bare after the relation words, which reads awkwardly: 'Historical setting: Preferred In the eighth year of his reign' has a capital 'In' mid-phrase, and 'Prophecy given: Duration: From Ezek. xxix, 17 it appears ...' and 'Historical setting: Duration: all these nations shall serve ...' carry a doubled label and an unquoted source sentence. A leaf may not hand-edit these cells, so any fix belongs to the chronology projection's formatting (for example quoting or lower-casing the source label), which is outside this run's repair owners."

@@ -559,3 +559,171 @@ No upstream defect was met while deriving. The research-record points the
 concise stage reported (the STU-001, STU-007 and STU-008 wording that
 `research/interpretations.md` still carries, and RES-008 and RES-009) remain
 at record level; the homily uses none of the passages they concern.
+
+## Build-artifacts
+
+Completed 25 September 2026 in `proper-study` v7, run `ed9acebf389f8706`,
+seeded at commit `8f5a1fa0fec4b255f89e124503b541bba816ecf5`, at iteration 0. No
+blocking, carried or advisory finding was forwarded to the stage.
+
+### What was built, and what was not changed
+
+The author proofs of all three outputs, with their auxiliary files, logs,
+contents file and metadata stamps, were moved out of the build tree, and each
+output was then built from nothing with `make doc DOC=<output-id>
+PROVIDER=claude`: the bare document ID, `-synthesis` and `-homily`. Each build
+settled in two passes and passed the Makefile's declared-input, component and
+metadata verification. No layout repair was needed and none was made. No
+render-relevant source, accepted prose, evidence record, component declaration,
+`format.tex` or generation declaration was edited by this stage, so the shared
+generation record stands as the homily stage left it, at revision timestamp
+2026-09-25T14:25:45Z with its three contributions; a stage that changes no
+render source adds none. The only tracked files this stage wrote are this entry
+and the snapshot receipt `research/artifacts.json`.
+
+| Output | Pages | Bytes | SHA-256 |
+| --- | ---: | ---: | --- |
+| research | 33 | 568469 | `cbdec17636a338b03f5dbbffaec2a0162724358d0a3b074bcb286aca988e8fb2` |
+| synthesis | 12 | 446519 | `106d21c0ac77cb1dfdd303f2e6ba224702fb24fc81d03823611f00ddad3b1261` |
+| homily | 4 | 285990 | `2e2391674df899ed5e86558609da28d1c63ffefa112cb765b1a495f105b24a7e` |
+
+The PDFs stand at the mirrored `build/claude/` paths of the three output IDs.
+All three reproduce, byte for byte, the builds the derive-homily entry records
+at the same timestamp, and so do the auxiliary files of the study and of the
+concise study; the concise auxiliary file keeps the digest the derive-synthesis
+entry records (`32e4311cdf39e4b9e6967ca91e4a72a5ac0e474012fd2e91fa2cbb8c2aa8042a`).
+Against the proofs the three reviews accepted, the homily is the same file; the
+extracted text of the study (reviewed proof
+`5286565dc141b221aa38b33c58a751717ae43217dcd3507fc0c0c6b1117d68cc`) and of the
+concise study (reviewed proof
+`c212ae5296b5677ef0e00321584428f899464d39174799affd903e4450e9983b`) differs from
+it only in the revision-timestamp line. The study is inside the 20–50-page
+requirement and the concise study inside the 10–12-page requirement.
+
+### Logs, structure, fonts and extraction
+
+- **Logs.** The three settled logs carry no fatal error, no LaTeX, package or
+  pdfTeX warning, no undefined reference or citation, no overfull or underfull
+  box, no missing character, no font substitution and no rerun request. The
+  first pass of the study and of the concise study carries the ordinary
+  longtable notice that column widths have changed and the notice that labels
+  may have changed, which the second pass clears; they stand in the build
+  transcripts and not in the settled logs. Apart from their first line, the
+  settled logs are identical to those of the author proofs.
+- **Physical pages of the concise opening.** The settled auxiliary file records,
+  by `\abspage`: inventory start and end, overview start and end and the four
+  sense markers on page 1; chronology start and end on page 2; themes start on
+  page 3 and end on page 4; commentary start on page 5. The printed folio equals
+  the physical page at every marker, so no counter reset stands in for a page.
+  `tools/check-proper-components --phase artifacts` passes for each edition and
+  for the leaf as a whole, and its content phase passes for the concise edition
+  against the settled auxiliary file.
+- **Contents.** Every entry of the study's contents page names the page on which
+  its heading is printed.
+- **Structure.** `pdfinfo`, `pdffonts` and `pdftotext -layout` exited 0 for
+  every PDF, and Ghostscript parsing with `-q -dNOPAUSE -dBATCH
+  -sDEVICE=nullpage -dPDFSTOPONERROR` exited 0 with no diagnostic on each. Every
+  page of every PDF is letter size; each file is PDF 1.7, unencrypted and
+  untagged, carries its title and subject, a modification date equal to the
+  tracked revision, no creation date and no trailer ID, and contains no raster
+  image. qpdf, mutool and pypdf are not installed here, so no check by them is
+  claimed.
+- **Fonts.** The study lists 17 font resources, the concise study 16 and the
+  homily 11, all Latin Modern Roman (regular, bold, italic and caps) and Latin
+  Modern Mono. Every one is Type 1, embedded, subsetted and Unicode-mapped.
+- **Extraction.** Each extracted text was read through in full. The three have
+  33, 12 and 4 nonempty pages and 22,004, 9,765 and 3,060 words; none contains
+  a replacement character or an unresolved `??`; each shows the revision
+  timestamp exactly once; and none shows a workflow digest, run ID, seed commit,
+  model identity or machine path. Reading order is intact in the maps, the
+  four-sense rows, both dossier sheets, the comparison table, the branch table
+  and the References. Verse-numbered Scripture blocks extract with a blank line
+  after their first line, and a few lines extract with widened spaces (in the
+  psalm block after the bracketed clause of v. 4, and in the homily's second
+  column); the page rasters show ordinary spacing at both places, so these are
+  effects of the layout extractor.
+- **Size.** About 16.8, 36.3 and 69.8 KiB a page; all three are below the 1 MiB
+  and 75 KiB-a-page review triggers.
+
+### Snapshot, gate check and rasters
+
+`python3 scripts/_proper_study.py snapshot --provider claude --document
+<canonical-id>` wrote `research/artifacts.json`: the three PDF digests above, 28
+render inputs (the leaf's TeX sources, its component manifest, the generated
+chronology annotations and the shared preamble, proper format and homily
+format) and two pagination-evidence files, the settled auxiliary files of the
+study and of the concise study. Every recorded digest was recomputed
+independently and matches. `python3 scripts/_proper_study.py check --provider
+claude --document <canonical-id> --date 2026-09-27 --phase artifacts
+--require-presentation --require-format --require-authority`, the artifact
+gate's own command, then exited 0, as did `tools/check-generation-metadata`
+against each rendered PDF. The four accepted content seals (research at its
+iteration 1, study, synthesis and homily) were recomputed with
+`scripts/_proper_study.py seal`, before and after this entry was written, and
+each equals the evidence scope its accepted review recorded. Nothing was
+rebuilt after the snapshot.
+
+`tools/tpt pdf-review --output
+build/tpt-runs/ed9acebf389f8706/artifacts/build-artifacts-0000/rasters` with the
+three PDFs exited 0 and wrote 49 page rasters, 49 thumbnails and four contact
+sheets, with a receipt that binds them to the three PDF digests above. That
+directory holds only the helper's output. The sibling `proof/` directory holds
+exact copies of the three PDFs, their settled logs and auxiliary files, the
+study's contents file, the three build transcripts, the digests of the author
+proofs that were moved aside, the PDF-information, font, Ghostscript and
+extraction outputs, the marker lines, the check outputs, a copy of the snapshot
+and a `SHA256SUMS` over all of it.
+
+The four contact sheets, and pages 1, 5, 25, 28, 29, 32 and 33 of the study,
+pages 1 and 2 of the concise study and pages 1 and 2 of the homily at full
+size, were opened to confirm that the build is whole: no page is blank,
+clipped or overprinted, no table opened runs past the measure, the concise map and
+four rows stand together on page 1, the dossier stands whole on page 2, and
+each final page carries the References' end, the timestamp and the rights
+colophon together. That is a build check and not the visual review. No
+page-by-page visual acceptance is claimed, and no PDF was installed.
+
+### For the visual reviewer
+
+No semantic defect was met while reading the extracted texts. The points below
+are matters of presentation that the build cannot settle and this stage did not
+alter, since every one lies in a source that a content review has sealed or in
+the shared format.
+
+1. The study's Scriptural Date and Location sheet runs from page 27 to page 28,
+   and the Gospel's dossier is divided at the break: its summary and narrated
+   event rows end page 27, and its explanatory row opens page 28 under the
+   repeated column heads. Page 28 is then a little over half full before the
+   Liturgical Resolution appendix opens on a fresh page.
+2. Page 1 of the study carries the title block and the contents, with about the
+   lower third of the page empty; page 33 carries the last three groups of
+   References, the timestamp and the rights colophon, and is about half full.
+3. The generated Date cells of the first reading, on page 2 of the concise
+   study and page 27 of the study, read "Historical setting: Preferred In the
+   eighth year of his reign; alternatives A.M. 3405, B.C. 597." and "Prophecy
+   given: Duration: From Ezek. xxix, 17 …", and the Entrance Antiphon's reads
+   "Historical setting: Duration: all these nations shall serve the king of
+   Babylon seventy years." These are the chronology projection's own labels,
+   printed unchanged as the profile requires; how they read is for the
+   reviewer to judge and, if needed, for the research owner.
+4. In the Date cells a qualifier is parted from its figure at a line end: "c."
+   from "A.D. 40–42" in the Gospel's composition list on concise page 2, and
+   "c. A.D." from "64–67" in the same list on study page 27; "A.D." from
+   "96–100" in the Alleluia verse's (concise page 2, study page 28).
+5. The running head names the section that begins on a page, so a page that
+   opens with the tail of the preceding section carries the next section's name
+   (study pages 7, 12, 16, 21, 25, 27, 30 and 31; concise page 11). The final page
+   of each document carries no running head and no folio, which is the shared
+   colophon's behaviour and not this leaf's.
+6. The URL of the bishops' conference's page of readings breaks after
+   `https:` in the study's References (page 32).
+7. The homily's first page ends on the pronoun "I" of "I will not", which
+   continues at the head of page 2's first column. The speech ends at the foot
+   of page 2, before the forced break to the note, and the note's final page
+   is under half full.
+
+### Limits that remain
+
+Those of the three preceding entries and of `research/scope.md` stand
+unchanged. Structural checking rests on Poppler and Ghostscript alone. The
+snapshot records bytes and declared inputs and is not a claim of review.
