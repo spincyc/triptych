@@ -94,6 +94,8 @@ Direct sessions have standing authority to create ordinary coherent commits for 
 
 A Claude session works in its own full checkout on its own branch, never in a
 checkout another agent holds, and commits there as ordinary implementation.
+Any branch an agent pushes is named as `guidance/repository.md` § Branches
+requires.
 
 On 2026-08-08 the maintainer granted one narrower standing authority: **a bug
 fix found against `main` may be merged to `main` and pushed, provided the merge

@@ -56,11 +56,12 @@ authorized a history rewrite the same day: `pdf/` apart from
 removed from every reachable commit with `git filter-repo`, the 25 duplicate
 handoff archives under
 `build/agent-handoffs/` were removed with them, and 79 superseded working
-branches were dropped. The pack fell from 1.14 GiB to 394 MiB and a fresh
+branches were to be dropped; that drop never reached origin, and they stayed
+until the 2026-09-24 tidy recorded under Branches below. The pack fell from 1.14 GiB to 394 MiB and a fresh
 checkout from 2,093 MB to 1,067 MB. The fifteen `evidence/*` branches were
 deliberately kept: sixteen of the twenty-five archives existed nowhere else,
 and dropping those branches would have destroyed 803 files of review evidence.
-The 79 that went carried about 9 MiB of objects reachable from nowhere else,
+The 79 carried about 9 MiB of objects reachable from nowhere else,
 and the verified bundle of the pre-rewrite history, taken before any of this
 ran, is the record of them and of everything else the rewrite removed. This was
 a one-time, owner-authorized act recorded here so that it is not repeated
@@ -633,6 +634,48 @@ surface before pushing. A push to `origin/main` triggers Pages after the
 source is already public; a failed workflow does not retract it and must be
 diagnosed and corrected in a later coherent checkpoint. Keep uncleared
 experiments and `hold` material off public refs.
+
+### Branches
+
+Origin carries `main` and three other kinds of ref, and nothing else. A name
+says who is doing what, so it can be predicted before the branch exists and
+found after it is gone.
+
+| Ref | Holds | Lifetime |
+| --- | --- | --- |
+| `main` | integrated work; a push deploys | permanent |
+| `feature/<agent>/<area>/<topic>` | one line of work by one agent | until merged into `main` or archived |
+| `evidence/<topic>` | review evidence that exists nowhere else; never merged | permanent |
+| tag `archive/<former-branch>` | tip of a superseded or abandoned line whose commits exist nowhere else | permanent |
+
+- `<agent>` is the tool doing the work — `claude`, `codex`, `droid` — or
+  `maintainer`. `<area>` is the part of the project: `propers`, `catena`,
+  `browser`, `bible`, `missal`, `sources`, `theology`, `pictographic`,
+  `metaphysics`, `tpt`, `repo`; add one only when none fits. `<topic>` is one
+  or more lowercase kebab-case components, such as `tlm/54` or `homily`.
+- `wt <agent> triptych/<agent>/<area>/<topic>` creates the workspace, its
+  clones, and this branch. Name the workspace, not the branch.
+- Leaves only. Git cannot hold `feature/claude/propers/tlm` beside
+  `feature/claude/propers/tlm/54`, so no name is a prefix of another. When one
+  topic needs several branches — an implementation and its independent review,
+  or two replays — make each a leaf under the topic (`…/<topic>/impl`,
+  `…/<topic>/review`), never a numbered sibling such as `-v2` … `-v16`.
+- A correction round is new commits on the same branch. A review names the
+  exact commit it reviewed; that SHA, not a version suffix, identifies the
+  snapshot.
+- Once merged into `main`, delete the branch on origin. A line superseded or
+  abandoned with commits nowhere else becomes tag `archive/<branch>` before
+  its branch is deleted; one with nothing unique is simply deleted.
+- Clones made before the 2026-09-05 rewrite carry the old history. Never push
+  from one; clone again.
+
+On 2026-09-24 origin was brought to this shape. Of 104 branches, 17 stayed
+(`main`, the fifteen `evidence/*` branches, and one active propers branch);
+three unfinished lines moved to `feature/claude/pictographic/low-mass`,
+`feature/droid/metaphysics/reading-metaphysics`, and
+`feature/droid/browser/catena-omnia-b0-b1`; 29 superseded lines became
+`archive/*` tags; and 55 branches already merged or contained elsewhere were
+deleted.
 
 **Several agents share one working copy, and therefore one git index.** `git add`
 stages into that shared index, and a bare `git commit` commits all of it —
