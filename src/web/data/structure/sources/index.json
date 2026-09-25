@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 2798,
-  "editions": 1008,
-  "passages": 5186,
+  "artifacts": 2812,
+  "editions": 1011,
+  "passages": 5194,
   "readable": 3061,
-  "works": 730
+  "works": 731
  },
  "facets": {
   "authors": [
@@ -803,7 +803,7 @@
    },
    {
     "id": "Jerome",
-    "works": 8
+    "works": 9
    },
    {
     "id": "Jerome K. Jerome",
@@ -1673,7 +1673,7 @@
   "categories": [
    {
     "id": "biblical-commentary",
-    "works": 46
+    "works": 47
    },
    {
     "id": "patristic-translation-anthology",
@@ -3010,11 +3010,11 @@
   ],
   "languages": [
    {
-    "editions": 536,
+    "editions": 537,
     "id": "en"
    },
    {
-    "editions": 300,
+    "editions": 302,
     "id": "la"
    },
    {
@@ -3140,7 +3140,7 @@
     "label": "18th century"
    },
    {
-    "editions": 178,
+    "editions": 180,
     "id": "1800",
     "label": "19th century"
    },
@@ -3150,20 +3150,20 @@
     "label": "20th century"
    },
    {
-    "editions": 548,
+    "editions": 549,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 1573,
-    "editions": 353,
+    "artifacts": 1583,
+    "editions": 355,
     "id": "public-domain"
    },
    {
-    "artifacts": 724,
-    "editions": 363,
+    "artifacts": 728,
+    "editions": 364,
     "id": "restricted"
    },
    {
@@ -7847,7 +7847,7 @@
      "file": "2002-vatican-typica-tertia-2002.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002",
      "language": "la",
-     "passages": 31,
+     "passages": 32,
      "readable": 0,
      "rights": [
       "restricted"
@@ -7884,7 +7884,7 @@
      "file": "2010-2010-english-icel-antiphonary.json",
      "id": "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary",
      "language": "en",
-     "passages": 6,
+     "passages": 7,
      "readable": 0,
      "rights": [
       "restricted"
@@ -7985,7 +7985,7 @@
      "file": "1981-latin-editio-typica-altera-1981.json",
      "id": "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
      "language": "la",
-     "passages": 20,
+     "passages": 22,
      "readable": 0,
      "rights": [
       "restricted"
@@ -15099,6 +15099,19 @@
    "editions": [
     {
      "date": "1845",
+     "file": "1845-1845-migne-pl-25-paris.json",
+     "id": "edition.jerome.commentaria-in-danielem.migne-pl-25-paris-1845",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Commentariorum in Danielem prophetam liber unus, in S. Eusebii Hieronymi Opera omnia, tomi quintus et sextus (Patrologiae cursus completus, Series Latina 25)",
+     "year": 1845
+    },
+    {
+     "date": "1845",
      "file": "1845-1845-migne-pl-25-wikisource.json",
      "id": "edition.jerome.commentaria-in-danielem.migne-pl-25-wikisource-1845",
      "language": "la",
@@ -15176,6 +15189,38 @@
     "la"
    ],
    "title": "Commentariorum in Evangelium Matthaei ad Eusebium libri quattuor"
+  },
+  {
+   "alternate_titles": [
+    "Commentarii in Hiezechielem",
+    "Commentaria in Ezechielem",
+    "In Ezechielem",
+    "In Hiezechielem",
+    "Commentary on Ezekiel"
+   ],
+   "author": "Jerome",
+   "category": "biblical-commentary",
+   "directory": "editions/jerome/commentarii-in-hiezechielem/",
+   "editions": [
+    {
+     "date": "1845",
+     "file": "1845-1845-migne-pl-25-paris.json",
+     "id": "edition.jerome.commentarii-in-hiezechielem.migne-pl-25-paris-1845",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Commentariorum in Ezechielem libri XIV, in S. Eusebii Hieronymi Opera omnia, tomi quintus et sextus (Patrologiae cursus completus, Series Latina 25)",
+     "year": 1845
+    }
+   ],
+   "id": "work.jerome.commentarii-in-hiezechielem",
+   "languages": [
+    "la"
+   ],
+   "title": "Commentariorum in Hiezechielem prophetam libri quattuordecim"
   },
   {
    "alternate_titles": [
@@ -26168,6 +26213,19 @@
      ],
      "title": "Daily Readings page for 20 September 2026, Twenty-fifth Sunday in Ordinary Time, web state of 19 September 2026",
      "year": 2026
+    },
+    {
+     "date": "2026-09-24",
+     "file": "2026-2026-09-24-page-for-2026-09-27.json",
+     "id": "edition.united-states-conference-of-catholic-bishops.daily-readings.2026-09-27-web-2026-09-24",
+     "language": "en",
+     "passages": 2,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Daily Readings page for 27 September 2026, Twenty-sixth Sunday in Ordinary Time, web state of 24 September 2026",
+     "year": 2026
     }
    ],
    "id": "work.united-states-conference-of-catholic-bishops.daily-readings",
@@ -26352,7 +26410,7 @@
      "file": "2026-2026.json",
      "id": "edition.united-states-conference-of-catholic-bishops.liturgical-calendar-dioceses-united-states.2026",
      "language": "en",
-     "passages": 5,
+     "passages": 7,
      "readable": 0,
      "rights": [
       "restricted"
