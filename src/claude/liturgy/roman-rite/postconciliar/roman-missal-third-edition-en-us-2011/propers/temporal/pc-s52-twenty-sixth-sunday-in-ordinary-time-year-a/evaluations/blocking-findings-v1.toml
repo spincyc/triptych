@@ -49,12 +49,24 @@ provider = "claude"
 run_id = "ed9acebf389f8706"
 workflow = "proper-study"
 workflow_version = 7
-stage = "synthesis-review"
+stage = "homily-review"
 iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 16
+advisory_count = 19
+observation_count = 0
+
+[[stages]]
+stage = "homily-review"
+iteration = 0
+disposition = "PASS"
+run_id = "ed9acebf389f8706"
+workflow = "proper-study"
+workflow_version = 7
+standing = 0
+accepted_count = 0
+advisory_count = 3
 observation_count = 0
 
 [[stages]]
@@ -92,6 +104,30 @@ standing = 0
 accepted_count = 0
 advisory_count = 4
 observation_count = 0
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-001"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/homily/10-homily.tex, third movement (lines 79-105, 'So which son are we?' to 'how long your life will be') and fifth movement (lines 142-152, 'Augustine, reading a proverb' to 'you have the second son')"
+problem = "The body carries 14 direct patristic quotations (about 247 words) and two unquoted reports, in 1,530 words. Every one is exact and to the point, and the preacher's own voice carries the argument, so this is not a lecture assembled from quotations. The load is uneven, though. The third movement names a Father six times in about 320 words: Aquinas, Chrysostom, Augustine three times, Aquinas again. In the fifth, four Augustine quotations in NPNF's archaic English ('thou', 'doth', 'thereat') come within about 130 words. At those two points a listener meets a new named authority roughly every second sentence, and it happens just where the homily turns from exegesis to application."
+required_result = "If acted on: in each of those two movements, let two or three patristic voices carry the point and give the rest to the preacher's own words. Keep the quotations that later lines echo: Chrysostom's 'Why wast thou absent so long a time?', the raven's 'To-morrow', and the table of the ruler. For example, voice the wanderer of Enarr. 24.5 or one of the three In ep. Ioh. 5.12 sentences in the preacher's own words. The argument and the six-movement structure should not change."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-002"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/homily/10-homily.tex, lines 128-132 ('Blessed Ildefonso Schuster ... ``a~condescension and powerful energy \\ldots\\ such as the creation of the world itself never once called for'''')"
+problem = "Schuster's 'condescension' is spoken with no gloss. Schuster (Sacramentary III, p. 121) means God's stooping down into the abyss to draw the sinner out. To a present-day parish ear, though, 'condescension' first means a patronizing attitude, close to the opposite. The earlier 'came down to where we were' helps, but it comes five sentences before. The ellipsis also drops Schuster's hedge 'so to speak', which marks the phrase as figurative."
+required_result = "If acted on: give the word a brief plain gloss in the preacher's own voice, outside the quotation marks. For example, say that he calls it a stooping down, a 'condescension', or tie it to 'came down' right beside the quotation. The quoted words stay exactly as in the 1927 English."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-003"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/homily/90-note.tex, lines 56-63 (the list of 'connections ... the homily's own'); with sections/homily/10-homily.tex lines 67-69 and 90-94"
+problem = "The note sets out to list the joins that no Father makes, and it leaves two out. (1) Jerome's rule is followed at once by 'Not by his first word'. That applies it to the sons' answers, which is the leaf's own join (research/interpretations.md, Reading 1 controlling claim). Jerome's sentence on Ezek 18:24 (PL 25, col. 180) speaks of old sins and old justices, not of a first word. Because Jerome is reported without quotation marks, only 'in one sentence' marks where his words end and the preacher's begin. (2) Chrysostom's 'God is not as man ...' is presented as 'what today's psalm asks'. Chrysostom does not connect his words to Psalm 24:7. A reader of the note could take either join to be the Father's."
+required_result = "If acted on: add both joins to the note's list of the homily's own connections: Jerome's rule read of the sons' first word, and Chrysostom's saying set beside the psalm verse. Optionally, make the turn to the preacher's application audible in the speech, for example 'For the two sons, that means: not by the first word ...'."
 
 [[advisories]]
 stage = "research-review"

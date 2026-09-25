@@ -402,3 +402,160 @@ independent visual review remain to be done.
 2. No other upstream defect was met while deriving. The study's three
    interpretations, element settings, comparison and dossier answered every
    question the concise argument put to them.
+
+## Derive-homily
+
+Authored 25 September 2026 in `proper-study` v7, run `ed9acebf389f8706`, seeded
+at commit `8f5a1fa0fec4b255f89e124503b541bba816ecf5`, at iteration 0. No
+blocking, carried or advisory finding was forwarded to the stage. The homily is
+*The Twenty-sixth Sunday in Ordinary Time, Year A: Afterwards He Went*, built
+from `homily.tex`, for an adult parish assembly at the occurrence of 27
+September 2026, and derived from the expansive study and the concise study as
+their independent reviews accepted them at iteration 0. No research evidence
+record, no study or concise component, `main.tex`, `synthesis.tex`,
+`format.tex`, `web-edition.toml` or `proper-components.toml` was edited: the
+two homily components were already declared, with the homily mode alone.
+
+### What was written
+
+- `homily.tex`: `common/preamble`, `common/propers-format` and
+  `common/propers-homily` imported literally in that order, then the leaf's
+  running-head fields; the full-width shared title (the Sunday, the subtitle
+  *Afterwards He Went*, the Missal, Lectionary no. 136 and the date); one
+  `properhomily` environment enclosing only the literal import of the spoken
+  component; the terminal note after the environment's closing page break;
+  the generation record and the rights colophon. No local font, geometry,
+  title or column setting.
+- `homily-body` (`sections/homily/10-homily.tex`): the spoken body, six
+  movements divided by five vertical spaces. The two sons and the question in
+  the temple, with the word *afterwards* that the story uses of the first son
+  and Jesus turns on his hearers; the prophet's answer to the exiles'
+  complaint; which son we are, and the raven's tomorrow; the Son who obeyed
+  unto death, and the Collect; the offering, the second Communion antiphon and
+  the Prayer after Communion; and one practicable response, which returns to
+  the father's opening command.
+- `homily-note` (`sections/homily/90-note.tex`): *Note on Sources and
+  Delivery* (audience and occasion, length and pace, relation to the reviewed
+  interpretations, the joins that are the homily's own, what is left to the
+  studies, the route of each quoted text, exact loci) and the References.
+
+### The argument and its relation to the studies
+
+The argument preached is the first interpretation, `turning` (*Afterward He
+Repented: Each Is Judged Where He Is Found*). God judges each where he is
+found, so no one may despair of turning or rest on his past, and the turning
+is urgent because no one is promised tomorrow. Jerome on Ezekiel 18
+(*unusquisque in quo invenietur*), Chrysostom (*Hom. in Matt.* 67.3–4),
+Aquinas (*Super Matt.* c. 21) and Augustine (*Sermo* 82.14; *Enarr.* 24.5;
+*In ep. Ioh.* 5.12) carry it. It is joined to the third, `obedient-son`, for
+the second reading (Chrysostom, *Hom. in Phil.* 7; Augustine, *Tract.* 55.7),
+the Collect (Schuster, *Sacramentary* III, pp. 121–122) and the table of the
+ruler (*Tract.* 84.1). From the second, `two-peoples`, the homily takes only
+the parable's hearers as Matthew names them, Chrysostom's "go before you" as a
+hope held out to them, and Aquinas's application of the second son to clerics
+and religious. The study's comparison calls the first two complementary and
+the third different in kind. All three put the deed before the word, and the
+combination preached asserts nothing any of them denies. The two-peoples
+identification is not preached; the application is directed to the baptized.
+
+Each Father is credited only with what he says of his own passage. The joins
+no Father makes are listed in the note as the homily's own: the Amen of the
+baptized as the second son's answer; the Son of Philippians 2 set beside the
+two sons; the gifts as the turned heart taken into the Son's offering; the
+Collect's power in mercy read in the lowly God's descent; Augustine's "Thou
+hast the name, and hast not the deeds" set beside the second son; the Prayer
+after Communion as the mending of a turning begun; and Aquinas's "today" read
+with Augustine's "tomorrow". Left to the studies: Jerome and Aquinas on lapsed
+good works (the homily makes only the claim both hold); Hilary's reversal and
+the divided text of Matthew 21:31; Augustine and Aquinas on John 10:26 and the
+Alleluia verse; the Entrance Antiphon; the first Communion antiphon with
+Augustine's citation of Ezekiel 18:22; and the sacramentary history of two
+orations.
+
+Branch limits. Philippians 2:3 and 2:5 stand in both forms of the second
+reading; 2:6–8 are quoted as what Paul goes on to write, not as words the
+assembly has heard, so the words hold whichever form is read. The second
+Communion antiphon is named as one of the two the Missal gives.
+
+The study review's standing advisories touch nothing the homily uses: Aquinas
+on Ezekiel 18:21 (STU-001), the Psalm 17 lemma (STU-002), Hilary (STU-004,
+STU-005), Jerome's sentence on Israel and the two-peoples joins (STU-006,
+STU-007, STU-008), Gregory (STU-009) and Ezekiel 18:25's opening (STU-010)
+do not appear; the research advisories RES-008 and RES-009 concern John 10:26
+and Augustine on Psalm 17, neither of which is preached.
+
+### Evidence read at this stage
+
+No evidence-dependent claim was added. Every quotation is a whole or an
+unbroken part of one the studies print, and each English quotation was read
+again at its locus in the tracked text: the Douay–Rheims verse files at Ezek
+1:1–3, 18:2, 18:22–27, Ps 24:4–10, Mt 21:23–32, Phil 2:1–11 and 1 Jn
+3:16–18; NPNF 1/10 at *Hom. in Matt.* 67.2–4; NPNF 1/13 at *Hom. in Phil.* 7;
+NPNF 1/6 at *Sermo* 82.14; NPNF 1/7 at *Tract.* 55.7 and 84.1 and *In ep.
+Ioh.* 5.12; NPNF 1/8 at *Enarr.* 24.4–10; and Schuster's OCR at the Collect. Jerome and Aquinas's lectures on Matthew are
+reported without quotation marks in English that renders the Latin the study
+prints; that Latin was read on page images at the research stage and was not
+re-read here. All the loci are bound in `research/source-bindings.toml`.
+
+### Counts, pace and rehearsal
+
+**Spoken words: 1,530**, counted as whitespace-separated tokens of the body
+with TeX comments, `\bigskip`, quotation marks and ellipsis commands removed.
+At 130 words a minute that is about 11¾ minutes, at 125 a little over 12, and
+at 120 about 12¾. This is an estimate from the count; no speaker delivered
+the words and no delivery was timed. The prose was rehearsed for sense,
+sentence length and oral clarity by reading it through in full, silently and
+not aloud: on the way the draft of 2,092 words was cut to its present length,
+a Chrysostom sentence that misattributed his "hope" to the publicans was
+replaced by his exact words, the raven's sentence was placed in its true order
+in *Sermo* 82.14, the proverb of Ezekiel 18:2 was located "in the land of
+Israel" as the text has it, and Aquinas's application was made restrictive
+("clerics and religious who profess and do not do").
+
+### Author proof and checks
+
+`make doc` for the `-homily` output settles with no overfull or underfull box,
+no LaTeX or pdfTeX warning, no undefined reference and no rerun request. The
+proof is
+`build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-homily.pdf`:
+4 physical pages, letter size, SHA-256
+`2e2391674df899ed5e86558609da28d1c63ffefa112cb765b1a495f105b24a7e`, at revision
+timestamp 2026-09-25T14:25:45Z; removing the PDF and building again from
+unchanged sources reproduced the same bytes. The title and both columns of the
+spoken body fill pages 1 and 2; the note begins page 3 after the environment's
+page break; the References, the revision timestamp and the rights colophon
+share page 4. All font resources are embedded Latin Modern Type 1, and the
+document information carries the title, the subject and the tracked
+modification date.
+
+`tools/check-proper-components --phase artifacts --edition homily` passes, and
+so do `python3 scripts/_proper_study.py check … --phase content --edition
+homily --require-presentation --require-format --require-authority`, the
+twelve `check-content-preflight` checks with `--edition homily`
+(provenance-matches-run with this run's header; references-used: 9 entries,
+every one used; house-voice: 3 reader-facing files, none flagged) and
+`tools/check-generation-metadata` against the source and all three rendered
+PDFs. Every page was inspected at full size on rasters made with `tools/tpt
+pdf-review`.
+
+The shared generation record carries a contribution for this stage and the
+revision timestamp above. Both studies were rebuilt at that timestamp: the
+expansive study, 33 pages, SHA-256
+`cbdec17636a338b03f5dbbffaec2a0162724358d0a3b074bcb286aca988e8fb2`, and the
+concise study, 12 pages, SHA-256
+`106d21c0ac77cb1dfdd303f2e6ba224702fb24fc81d03823611f00ddad3b1261`; the
+extracted text of each is identical to its accepted proof except for the
+timestamp line, and the artifacts check passes for both. The proof, its
+auxiliary file, log and extracted text, the build, preflight, artifact and
+metadata logs, the counting script and the word count are kept with their
+digests under the run's `artifacts/derive-homily-0000/proof/`, and the page
+rasters and contact sheet in the dedicated child `rasters/`. This is author
+verification; the independent homily review, the shared-timestamp
+three-document build and the independent visual review remain to be done.
+
+### For the cold reviewer, about upstream records
+
+No upstream defect was met while deriving. The research-record points the
+concise stage reported (the STU-001, STU-007 and STU-008 wording that
+`research/interpretations.md` still carries, and RES-008 and RES-009) remain
+at record level; the homily uses none of the passages they concern.
