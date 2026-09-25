@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.united-states-conference-of-catholic-bishops.daily-readings.2026-09-27-web-2026-09-24.usccb-html-a7a104b8"
+edition_id = "edition.united-states-conference-of-catholic-bishops.daily-readings.2026-09-27-web-2026-09-24"
+artifact_type = "official-html-page"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The page's own notice reserves the rights in the Lectionary text to the Confraternity of Christian Doctrine and forbids reproduction, distribution or display in any medium without written permission. The bytes are identified and hashed and no payload is retained."
+source_url = "https://bible.usccb.org/bible/readings/092726.cfm"
+provenance = "Exact HTML response acquired whole with curl over verified TLS from the publisher on 2026-09-24, at the research re-entry of PC-S52-A, and hashed before it was read. A second request made immediately afterwards was refused with HTTP 403. Nothing in the retrieval path passed through a model."
+retrieved = "2026-09-24"
+sha256 = "a7a104b8883f265b1fd58d79396ba41295c262915ca3053709329daa3a8ad493"
+byte_size = 59014
+indexable = false
+notes = "The response has the same byte length as the state registered earlier the same day (59,014 bytes, SHA-256 a220529b...) and a different SHA-256, so it is registered as its own dated state rather than re-pinned; the difference was not located because the earlier bytes are not retained. It carries the same headings, Lectionary number and citations as that state's passage record. Access limitation: the restricted proclaimed English is not retained; a reader without the network has the description in this edition's passage records."

@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.jacques-paul-migne.patrologia-latina-volume-37.paris-1845.columns-1539-1542-facsimile-b0d97092"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-37.paris-1845"
+artifact_type = "facsimile-excerpt"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The 1845 Paris printing is in the public domain in the United States: the repository's own rights reading, recorded at guidance/missals.md section 5, is that a work first published abroad before 1931 is in the public domain with no term running. The scan is a Google digitization delivered by the Internet Archive. A mechanical digitization of a public-domain printing adds no original authorship of its own. No modern editorial text is added by this retention."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/patrologiaecurs234unkngoog/patrologiaecurs234unkngoog.pdf"
+provenance = "Mechanical page extraction from the registered complete scan, which was fetched whole over verified TLS on 2026-09-24 and matched its registered SHA-256 afe6878f... and 48,479,761 bytes before any page was read. Both pages were read in images extracted from their embedded scans."
+retrieved = "2026-09-24"
+sha256 = "b0d970927b874322b75c5670c2cac2ca8a7d13713f6d5357a5d13f75ae07778e"
+byte_size = 580613
+page_count = 2
+indexable = false
+derived_from = "artifact.jacques-paul-migne.patrologia-latina-volume-37.paris-1845.internet-archive-google-pdf-afe6878f"
+transformation = "pdfseparate for parent PDF pages 263 and 264, then pdfunite in that order; no raster editing, textual rewriting or OCR correction."
+path = "src/sources/works/jacques-paul-migne/patrologia-latina-volume-37/editions/paris-1845/artifacts/columns-1539-1542-facsimile-b0d97092/pl-37-1845-columns-1539-1542.pdf"
+notes = "Two pages only: parent PDF pages 263 (columns 1539-1540) and 264 (columns 1541-1542). They carry Augustine, Enarratio in Psalmum CXVIII, the end of sermo XIV and sermo XV sections 1-2 on verses 49-50, which open the letter Zain. The pages were located by column arithmetic from the registered facsimile of this edition (PDF page 248 = columns 1509-1510). All other parent pages are omitted; the parent stays remote for its measured size."

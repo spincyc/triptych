@@ -1,0 +1,86 @@
+# Blocking findings standing against this publication, the
+# verdicts its evaluation lanes reached, and the observations
+# they recorded outside their own criteria. Written by tpt after
+# each evaluation of this leaf.
+#
+# One record, several stages. Every entry names the stage that
+# raised it, [[stages]] says what each stage last said, and an
+# evaluation replaces its own stage's entries and leaves every
+# other stage's alone -- so what the content evaluation found
+# still stands here after the synthesis evaluation has spoken. A
+# stage that looked and found nothing leaves an empty list
+# rather than no entry: "evaluated, nothing stands" and
+# "nobody has looked" are different facts, per stage.
+#
+# The keys directly below these comments describe the write that
+# last touched this file, and count every stage's entries
+# together. They are its summary line. What a given stage found
+# is in that stage's [[stages]] entry and in the entries naming
+# it -- reading the top-level stage as the record's one stage is
+# the mistake this schema exists to stop.
+#
+# It exists because a run's own results live under build/, which
+# is ignored, which `make clean` and `wt tidy` delete without
+# asking, and which nothing preserves between productions.
+#
+# Nothing reads this back into a run. Carrying findings from one
+# production into the next wants doing where the run's identity
+# can cover it -- a committed record, or this file's hash in the
+# run id and the acceptance audit -- and until then this is a
+# record for people.
+#
+# Escalations -- defects in artifacts no stage of the run may
+# write: guidance, the source library, the tools, the workflow --
+# are written here too, from the run's whole ledger, so that the
+# decision they ask of a maintainer outlives the run directory.
+#
+# Accepted findings are true defects a lane judged not worth a
+# repair round, with the reason it judged so. Advisories are
+# defects that did not merit blocking. Both are here because a
+# verdict that dies with the run is met again by the next cold
+# read as though nobody had ever weighed it, and weighed again --
+# which is how a document in good shape spends a whole iteration
+# budget. A later evaluation reads these before it raises.
+
+standing_findings_schema = 4
+record_type = "standing-blocking-findings"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"
+provider = "claude"
+run_id = "ed9acebf389f8706"
+workflow = "proper-study"
+workflow_version = 7
+stage = "research-review"
+iteration = 1
+disposition = "PASS"
+standing = 0
+accepted_count = 0
+advisory_count = 2
+observation_count = 0
+
+[[stages]]
+stage = "research-review"
+iteration = 1
+disposition = "PASS"
+run_id = "ed9acebf389f8706"
+workflow = "proper-study"
+workflow_version = 7
+standing = 0
+accepted_count = 0
+advisory_count = 2
+observation_count = 0
+
+[[advisories]]
+stage = "research-review"
+id = "RES-008"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/research/scope.md section 3.5 (Aquinas row: 'On 10:26 he first glosses the exclusion as Augustine does'; the paragraph after the table: 'Augustine and Aquinas agree that hearing is believing and obeying and that following is imitation' and 'Aquinas keeps the gloss') and section 7, fourth row ('Aquinas: the same gloss'); src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/research/interpretations.md Reading 2 `two-peoples`, Author evidence row 'Thomas Aquinas, Super Ioannem c. 10 lect. 5 (p. 668)' ('He first glosses 10:26 as Augustine does') and paragraph 'A second difference' ('Aquinas keeps the same gloss')"
+problem = "Augustine, In Ioh. ev. tract. 48.4 (tracked NPNF series 1 vol. 7, physical lines 21499-21514), says those addressed at John 10:26 were 'predestined to everlasting destruction'. Aquinas, re-read in this review on the page image of Venice 1745 t. III p. 668, glosses: 'scilicet praedestinati ad credendum, sed praesciti ad aeternum interitum', that is, not predestined to believe, and foreknown to eternal ruin. The records call this 'the same gloss' and say Aquinas glosses 'as Augustine does', which merges predestination to destruction with foreknowledge of ruin. A study must not merge the two when it attributes a position to a Doctor. The same paragraph of scope 3.5 says both authors agree that 'hearing is believing and obeying and that following is imitation'. Tract. 48.4-5 says only that the sheep are sheep 'through believing' and 'in following the Shepherd'. 'Praeceptis meis obediendo' and 'imitatio ad Christum' are Aquinas's words on p. 668, not Augustine's. The records also disagree with each other: interpretations.md, Reading 2, `gospel-acclamation` cell, already describes Aquinas's gloss correctly as 'foreknowledge of ruin'."
+required_result = "Replace 'as Augustine does' and 'the same gloss' with what each author says: Augustine (NPNF), predestined to everlasting destruction; Aquinas, not predestined to believe and foreknown (praesciti) to eternal ruin. Say that both read the exclusion as reprobation only if that is the point intended. In scope 3.5, attribute the 'obeying' gloss of hearing and the 'imitation' gloss of following to Aquinas alone, and leave Augustine with believing and following."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-009"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/research/interpretations.md Reading 3 `obedient-son`, Element contributions row `first-reading` ('Augustine: God makes whole the humble who confess their sins and humbles those who seek their own righteousness; the way of the Lord is the way of humility'), and Comparison row 'What is \"the way of the Lord\"?', `obedient-son` cell ('The way of humility, which the froward call froward (Augustine)')"
+problem = "Enarr. in Ps. 17.27-28 (tracked NPNF, 'Psalm XVIII') says that the froward say 'The way of the Lord is not right', and that what seems froward to them is 'that Thou wilt make them whole that confess their sins'. God humbles those who seek to establish their own righteousness. Augustine does not call the Lord's way 'the way of humility'. That phrase is the leaf's condensation of his point, and both cells put his name after it. This is the kind of attribution RES-002 removed from four other cells. A study drawing on either cell could credit Augustine with a formula he does not use."
+required_result = "Attribute to Augustine only his own claim: the froward call God's way not right because God makes whole the humble who confess their sins and humbles the proud. Mark 'the way of humility' as the leaf's condensation, or remove it."

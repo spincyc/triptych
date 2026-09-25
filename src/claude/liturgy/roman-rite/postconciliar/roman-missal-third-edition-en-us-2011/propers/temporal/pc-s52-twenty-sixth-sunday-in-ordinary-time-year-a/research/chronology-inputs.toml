@@ -1,0 +1,121 @@
+# Appointment-query input for tools/tpt proper-chronology. It carries citations
+# and ownership only. It authors no date and is not a chronology source.
+# Citations are those of instance/manifest.md and propers/verified.md; Missal
+# elements are owned by the Week XXVI shared owner, Lectionary elements by this
+# leaf. Each printed ref keeps the numbering of the witness that prints it.
+#
+# - Responsorial psalm: Hebrew numbering, the printed form of the United States
+#   witnesses (Psalm 25; the Latin Ordo prints Ps 24, 4bc-5), converted by the
+#   canonical concordance. The Ordo's "4bc" is the Hebrew v. 4 whole, so the
+#   Hebrew query is closed at whole verses; the response is v. 6a.
+# - Entrance antiphon: the Missal's own locator, Dan 3, 31.29.30.43.42, in the
+#   order printed. Vulgate numbering is the only numbering that has these verses
+#   of the Greek addition to Daniel 3 (the Prayer of Azariah); an
+#   Aramaic-numbered Daniel 3:29-31 is a different text. The Missal prints no
+#   Cf., but the owner's finding 1 shows a composite adaptation, so the
+#   relationship is recorded as adaptation, not appointed wording.
+# - Communion antiphon A: the Missal's printed Vulgate locator with its Cf.
+#   (2002 Latin "Cf. Ps 118, 49-50"; ICEL excerpt "Cf. Ps 118: 49-50"); Hebrew
+#   Psalm 119:49-50. The United States Lectionary does not print the antiphon.
+# - The two forms of the second reading are separate element keys, as the
+#   manifest keeps them; so are the two Communion antiphons.
+schema = 1
+record_type = "proper-chronology-inputs"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"
+calendar = "postconciliar"
+formula = "PC-S52-A"
+shared_owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/26/propers/verified.md"
+
+[[elements]]
+key = "entrance-antiphon"
+name = "Entrance Antiphon"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/26/propers/verified.md"
+citations = [
+  { ref = "Daniel 3:31, 29, 30, 43, 42", citation = "Daniel 3:31, 29, 30, 43, 42", system = "vulgate", kind = "adaptation" },
+]
+
+[[elements]]
+key = "collect"
+name = "Collect"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/26/propers/verified.md"
+citations = []
+non_scriptural_reason = "Composed oration with no scriptural locator; its vocabulary of sparing and mercy is a loose echo of no one verse, which the page-2 rule excludes."
+
+[[elements]]
+key = "first-reading"
+name = "First Reading"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Ezekiel 18:25-28", citation = "Ezekiel 18:25-28", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "responsorial-psalm"
+name = "Responsorial Psalm"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Psalm 25:4-5, 6-7, 8-9", citation = "Psalm 25:4-5, 6-7, 8-9", system = "hebrew", kind = "appointed" },
+  { ref = "Psalm 25:6a", citation = "Psalm 25:6a", system = "hebrew", kind = "response" },
+]
+
+[[elements]]
+key = "second-reading-long"
+name = "Second Reading (longer form)"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Philippians 2:1-11", citation = "Philippians 2:1-11", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "second-reading-short"
+name = "Second Reading (shorter form)"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Philippians 2:1-5", citation = "Philippians 2:1-5", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "gospel-acclamation"
+name = "Alleluia Verse"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "John 10:27", citation = "John 10:27", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "gospel"
+name = "Gospel"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Matthew 21:28-32", citation = "Matthew 21:28-32", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "prayer-over-offerings"
+name = "Prayer over the Offerings"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/26/propers/verified.md"
+citations = []
+non_scriptural_reason = "Composed oration with no scriptural locator."
+
+[[elements]]
+key = "communion-antiphon-a"
+name = "Communion Antiphon (first)"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/26/propers/verified.md"
+citations = [
+  { ref = "Cf. Psalm 118:49-50", citation = "Psalm 118:49-50", system = "vulgate", kind = "adaptation" },
+]
+
+[[elements]]
+key = "communion-antiphon-b"
+name = "Communion Antiphon (alternative)"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/26/propers/verified.md"
+citations = [
+  { ref = "1 John 3:16", citation = "1 John 3:16", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "prayer-after-communion"
+name = "Prayer after Communion"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/26/propers/verified.md"
+citations = []
+non_scriptural_reason = "Composed oration with no scriptural locator. The words coheredes and compatimur also stand together in Romans 8:17, and mortem annuntiando recalls 1 Corinthians 11:26; these are loose echoes the Missal does not cite, which the page-2 rule excludes."
