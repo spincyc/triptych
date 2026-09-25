@@ -1,6 +1,36 @@
 schema_version = 1
 
 [[deliverables]]
+id = "known-issues-after-pc-s52-2026-09-25"
+owner = "PROJECT-WORK.md"
+promise = "Fix the known issues left by the Claude pc-s51 and pc-s52 productions within Claude-owned and provider-neutral records, with independent review, and push: the pc-s52 leaf's standing review advisories and research-record lag; the upstream record defects its context stage found; and the pc-s51 run's unrepaired leads and research-record lag."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "pc-s52-advisories-resolved"
+  criterion = "Each standing advisory of the pc-s52 leaf (STU-001 to STU-010, SYN-001 to SYN-004, HOM-001 to HOM-003, VIS-001) is repaired or declined with a recorded reason; the research records agree with the published study where STU-001, STU-007, STU-008, RES-008 and RES-009 found them lagging; the three PDFs and the web edition are rebuilt, gated, independently reviewed and installed."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "upstream-record-defects"
+  criterion = "The 2002 Missal Dominica XXVI passage locator, the September Spanish-titles page reference and the PC-S51-A occurrence row that repeats it, and the ot-26 calendar-index entry are corrected against their artifacts and independently reviewed; no GPT leaf file changes."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "pc-s51-leads-and-records"
+  criterion = "The pc-s51 run's unverified leads (the Week 25 finding-aid Communion antiphon psalm number, the older Claude registry rows' keys) are verified and corrected where wrong, and the pc-s51 research records agree with its published study at the points its run recorded as lagging; independently reviewed."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "known-issues-pushed"
+  criterion = "The repairs reach origin/main by fast-forward after the deploy gates pass, and the Pages run and changed live routes are verified."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "claude-postconciliar-twenty-sixth-three-documents-2026-09-24"
 owner = "PROJECT-WORK.md"
 promise = "Drive the proper-study workflow for provider claude on the postconciliar Twenty-Sixth Sunday in Ordinary Time, Year A, for Sunday 2026-09-27 through terminal acceptance: expansive study, concise study and standalone homily with fresh cold reviews, every workflow cycle and host intervention documented, and every contributing model declared exactly. Correct the postconciliar calendar's Twenty-Fifth Sunday cell, whose Claude links read as the ChatGPT edition's."

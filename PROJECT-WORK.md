@@ -5,7 +5,20 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-09-24.
+Last reconciled: 2026-09-25.
+
+## Known issues after the Twenty-sixth Sunday, 2026-09-25
+
+<!-- promised-deliverable: known-issues-after-pc-s52-2026-09-25 -->
+
+The maintainer instructed on 2026-09-25: "fix known issues ; push". In scope:
+the pc-s52 leaf's standing advisories and research-record lag, the upstream
+record defects its context stage found, and the pc-s51 run's unrepaired leads
+and research-record lag. Two known tool defects would regenerate GPT
+publications and wait for the maintainer's express authority: the web
+converter merging adjacent quotation blocks (WEB-001), and the chronology
+annotation printing a capitalized source label after its disposition word
+("Preferred In the eighth year of his reign").
 
 ## Claude postconciliar Twenty-Sixth Sunday three documents, 2026-09-24
 
