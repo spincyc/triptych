@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it.",
  "counted": {
-  "documents": 197,
-  "issues": 227,
-  "pages": 6311,
+  "documents": 198,
+  "issues": 230,
+  "pages": 6344,
   "titles_unrecorded": 0,
-  "works": 143
+  "works": 144
  },
  "models": [
   {
@@ -13,7 +13,7 @@
    "id": "GPT-5-based Codex agent"
   },
   {
-   "documents": 84,
+   "documents": 85,
    "id": "claude-opus-5-5[1m]"
   },
   {
@@ -47,7 +47,7 @@
  ],
  "providers": [
   {
-   "documents": 55,
+   "documents": 56,
    "id": "claude",
    "label": "Claude"
   },
@@ -81,7 +81,7 @@
   },
   {
    "id": "liturgy",
-   "works": 51
+   "works": 52
   },
   {
    "id": "theology",
@@ -10695,6 +10695,71 @@
     }
    ],
    "leaf": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+   "section": "liturgy"
+  },
+  {
+   "catalog": "library/novus-ordo-liturgy.md",
+   "catalog_page": "library/novus-ordo-liturgy.html",
+   "editions": [
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": 12,
+       "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+       "subject": "Concise study of the proper of the Twenty-sixth Sunday in Ordinary Time, Year A, in the Roman Missal, Third Edition, for the dioceses of the United States of America, with Lectionary no. 136: the appointed elements, four overview senses, the scriptural dossier, the movement of the formulary, and a commentary comparing three interpretations of the whole Mass",
+       "title": "Twenty-sixth Sunday in Ordinary Time, Year A: A Concise Study of the Proper in the Roman Missal, Third Edition"
+      },
+      {
+       "kind": "homily",
+       "pages": 4,
+       "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-homily.pdf",
+       "subject": "A homily for an adult parish assembly on the proper of the Twenty-sixth Sunday in Ordinary Time, Year A, in the Roman Missal, Third Edition, for the dioceses of the United States of America, with Lectionary no. 136, 27 September 2026: the two sons and the word afterwards, the prophet's answer to the exiles' complaint, the promise that will not wait for tomorrow, the Son who obeyed unto death, and the prayers and Communion of the Mass",
+       "title": "Twenty-sixth Sunday in Ordinary Time, Year A: Afterwards He Went"
+      }
+     ],
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "packet-declared-effort=high; unexposed: host-dispatched effort, which the run's intervention record says is inherited from the driver session; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code agent (author-study stage of proper-study v7, iteration 0: the expansive study of the canonical leaf from the reviewed research records, comprising the opening and the twelve-row map of the appointed elements, with both forms of the second reading and both Communion antiphons as alternatives; the appointed Scripture in the public-domain Douay--Rheims with every partial or doubtful verse marked, and the orations and the two adapted antiphons by Latin incipit and description beside their identified scriptural sources; the element-by-element settings, including the textual state of Matthew 21:29--31; three whole-formulary interpretations, each with its own four senses and named difficulty; the comparison; the terminal Scriptural Date and Location sheet on the generated chronology projection; the Liturgical Resolution and Scope appendices and the References; the schema-2 component manifest with its authority-standing lanes, its future concise and homily components and its presentation roles; the leaf-local format, the web-edition record and the production audit entry; and the author proof checks); Claude Code CLI 2.1.282; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "packet-declared-effort=high; unexposed: host-dispatched effort, which the run's intervention record says is inherited from the driver session; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code agent (derive-synthesis stage of proper-study v7, iteration 0: the concise study of the same canonical leaf, derived from the expansive study as its independent review accepted it, with no new evidence-dependent claim and no change to the research evidence records, any study component, the shared or leaf format or any manifest declaration, comprising the concise entrypoint; the page-one map of the twelve appointed elements, both forms of the second reading and both Communion antiphons shown as alternatives, with the standing notice on the study English; exactly four overview rows whose parenthetical names stand only beside what each author says of his own passage; the one-page Scriptural Date and Location sheet on the generated chronology projection, its dates, relation labels, alternatives and unresolved states unchanged; two pages of The Propers: Themes and Movement; a commentary of six cross-proper questions interleaving the three interpretations, closed by a comparison of where they agree and where their four senses part; the scope note and the References for the sources the companion uses; the production audit entry; and the author proof checks); Claude Code CLI 2.1.282; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "packet-declared-effort=high; unexposed: host-dispatched effort, which the run's intervention record says is inherited from the driver session; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code agent (derive-homily stage of proper-study v7, iteration 0: the homily of the same canonical leaf for an adult parish assembly, derived from the two accepted studies with no new evidence-dependent claim and no change to any research record, study or concise component, the shared or leaf format or any manifest declaration, comprising the homily entrypoint with the full-width shared title and the two-column properhomily environment enclosing only the spoken component; the spoken body of 1,530 words preaching the first interpretation joined to the third, with the second interpretation's literal hearers and Chrysostom's hope, the Douay--Rheims named once as the study English, the orations described and not quoted, and Philippians 2:6--8 quoted as what Paul goes on to write so that the words hold under either form of the second reading; the terminal note on audience, length and pace, the relation to the reviewed interpretations, the joins that are the homily's own, what is left to the studies, the route of each quoted text and the exact loci, with the References; the production audit entry; and the author proof checks); Claude Code CLI 2.1.282; unexposed: server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "claude-opus-5-5[1m]"
+     ],
+     "pages": 33,
+     "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a.pdf",
+     "produced": {
+      "run_id": "ed9acebf389f8706",
+      "seed_commit": "8f5a1fa0fec4b255f89e124503b541bba816ecf5",
+      "workflow_digest": "9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38",
+      "workflow_id": "proper-study",
+      "workflow_version": "7"
+     },
+     "provider": "claude",
+     "reviewed": "2026-09-25",
+     "revised": "2026-09-25T14:25:45Z",
+     "status": "alpha",
+     "subject": "Expansive study of the proper of the Twenty-sixth Sunday in Ordinary Time, Year A, in the Roman Missal, Third Edition, for the dioceses of the United States of America, with Lectionary no. 136: appointed texts, each element in its setting, three interpretations of the whole formulary with their four senses, and a comparison",
+     "title": "Twenty-sixth Sunday in Ordinary Time, Year A: A Study of the Proper in the Roman Missal, Third Edition",
+     "title_source": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/main.tex",
+     "web": "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a.html"
+    }
+   ],
+   "leaf": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a",
    "section": "liturgy"
   },
   {

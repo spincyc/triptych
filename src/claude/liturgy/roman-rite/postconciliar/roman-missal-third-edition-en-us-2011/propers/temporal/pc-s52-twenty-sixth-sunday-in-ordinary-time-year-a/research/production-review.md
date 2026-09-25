@@ -727,3 +727,239 @@ the shared format.
 Those of the three preceding entries and of `research/scope.md` stand
 unchanged. Structural checking rests on Poppler and Ghostscript alone. The
 snapshot records bytes and declared inputs and is not a claim of review.
+
+## Install-publication
+
+Completed 25 September 2026 in `proper-study` v7, run `ed9acebf389f8706`,
+seeded at commit `8f5a1fa0fec4b255f89e124503b541bba816ecf5`, at iteration 0. No
+blocking, carried or advisory finding was forwarded to the stage. Nothing was
+committed; the installed web edition is staged and nothing else is.
+
+### Reviews completed before installation
+
+The run's own retained results record these review and gate outcomes; nothing
+below is inferred from an author's account.
+
+| Stage and iteration | Result | Findings |
+| --- | --- | --- |
+| scope-gate 0 | PASS | none |
+| research-preflight 0 | PASS | none |
+| research-review 0 | CHANGES_REQUIRED | 1 blocking (RES-001), 6 advisory |
+| research 1 | PASS | RES-001 reported repaired |
+| research-preflight 1 | PASS | none |
+| research-review 1 | PASS | 2 advisory (RES-008, RES-009) |
+| study-preflight 0 | PASS | none |
+| study-review 0 | PASS | 10 advisory |
+| synthesis-preflight 0 | PASS | none |
+| synthesis-review 0 | PASS | 4 advisory |
+| homily-preflight 0 | PASS | none |
+| homily-review 0 | PASS | 3 advisory |
+| artifact-gates 0 | PASS | none |
+| visual-review 0 | PASS | 1 advisory (VIS-001), 1 observation |
+| web-review 0 | PASS | 1 advisory (WEB-001) |
+
+Before anything was installed, each accepted seal was recomputed with
+`scripts/_proper_study.py seal`: research (review contract `proper-study-v3`,
+against research-review iteration 1), study, synthesis, homily, visual and web.
+Each equals the evidence scope its accepted result records, so no reviewed
+source, artifact or conversion has moved since its review. The seals were
+recomputed again after this entry was written, with the same result.
+
+### PDFs
+
+Before installation `python3 scripts/_proper_study.py check --provider claude
+--document <canonical-id> --date 2026-09-27 --phase artifacts
+--require-presentation --require-format --require-authority` exited 0, so
+`research/artifacts.json` still described the built bytes, their 28 render
+inputs and the two pagination-evidence files exactly as the visual review
+sealed them. The three PDFs were then installed one at a time with the normal
+recipe, its declared dependencies and checks, and nothing suppressed: no `-o`,
+no `-t`, no touched timestamp, and no edit to an accepted source or to the
+revision timestamp.
+
+```sh
+make install-doc DOC=<canonical-id> PROVIDER=claude
+make install-doc DOC=<canonical-id>-synthesis PROVIDER=claude
+make install-doc DOC=<canonical-id>-homily PROVIDER=claude
+```
+
+Make found all three build PDFs current and retypeset none of them. It ran the
+tool check, the source check and the generation-metadata verification each
+install depends on, and then copied the bytes. The build PDFs, logs and
+auxiliary files keep their build-stage modification times, and the artifact
+check above still exits 0 after installation.
+
+| Output | Pages | Bytes | SHA-256 (accepted, build and installed) |
+| --- | ---: | ---: | --- |
+| research | 33 | 568469 | `cbdec17636a338b03f5dbbffaec2a0162724358d0a3b074bcb286aca988e8fb2` |
+| synthesis | 12 | 446519 | `106d21c0ac77cb1dfdd303f2e6ba224702fb24fc81d03823611f00ddad3b1261` |
+| homily | 4 | 285990 | `2e2391674df899ed5e86558609da28d1c63ffefa112cb765b1a495f105b24a7e` |
+
+Each installed file at `pdf/claude/<output-id>.pdf` and each build file hashes
+to the value the visual review sealed, and `cmp` finds each pair identical. No
+hash differs, so no artifact defect is reported and no review boundary is
+reopened.
+
+### Web edition
+
+The reviewed conversion `build/web/claude/<canonical-id>.md` was copied byte for
+byte to `web/claude/<canonical-id>.md`: 131,592 bytes, SHA-256
+`f4803b29f75a2af149ea4af6a689b36a905504b37e5d138d15f5c939ae78c3a2`, equal to
+`research/web-artifact.json` and to the web review's seal, and `cmp` clean. The
+file was staged, so `git ls-files --error-unmatch` proves it is tracked. Only
+this one file was installed, not the provider-wide `install-web-editions`
+target. No synthesis or homily web leaf exists, and the canonical study remains
+the sole web authority. This record carries no Generate-web entry; the
+conversion facts cited here are the generate-web result the run retains and
+its receipt.
+
+### Release records and catalog
+
+No release record for these outputs existed, so none was overwritten. Three
+were created with `make add-publication ID=<output-id>
+CATALOG=library/novus-ordo-liturgy.md PROVIDER=claude STATUS=alpha`, one for
+each PDF. Each names schema version 1, its own exact output ID, the
+postconciliar catalog `library/novus-ordo-liturgy.md`, status `alpha` and the
+standing authorization `perpetual-public-repository-2026`.
+
+In `library/novus-ordo-liturgy.md` the existing row for the Twenty-sixth Sunday
+in Ordinary Time is the only row changed, and in it only the Year A cell, which
+said `Planned`. It now links, in the order of the manifest's output labels, the
+Research PDF, the Synthesis PDF, the Homily PDF and then the web page. No other
+provider has an edition of this Sunday, but `release/public-alpha.json` names
+`gpt` as primary provider, and a non-primary provider's links standing alone
+in a cycle cell must name their provider; so the labels are `Claude Research
+PDF`, `Claude Synthesis PDF`, `Claude Homily PDF` and `Read Claude`. The B and
+C cells, every other row and every other provider's entries are untouched, and
+no companion row was added. The one canonical marker added is
+`claude:<canonical-id>`, prefixed under the same primary-provider rule, placed
+after the other Claude markers.
+
+### Derived catalogue, release bindings and source inventory
+
+`tools/tpt document-library structure` regenerated
+`src/web/data/structure/documents/corpus.json` against the installed PDFs. The
+only change is a new work for this leaf carrying the Claude edition, its two
+companions, the web page, the three contribution records of the generation
+record and this run's `produced` identity. With it the aggregate counts moved
+from 143 to 144 works, 197 to 198 documents, 227 to 230 issues and 6,311 to
+6,344 pages, and the Claude model and provider tallies and the liturgy work
+count each rose by one. No other work's entry changed; the tool kept the
+recorded extent of the one Claude edition, the Fourteenth Sunday after
+Pentecost with its synthesis, that has no installed PDF in this working tree.
+
+The release refresh was limited, under the scoped-refresh rule, to the three
+reader-facing paths this stage changed: `make refresh-release-bindings ADOPT=1
+ONLY="library/novus-ordo-liturgy.md
+src/web/data/structure/documents/corpus.json web/claude/<canonical-id>.md"`.
+It made five changes: the new web edition adopted, the catalog page and the
+projection re-recorded, and the rights table and its digest rewritten.
+`make check-release-bindings` had named exactly those three paths beforehand,
+so no concurrent or unrelated change was adopted.
+
+`make check-publication-inventories` refused the tree as it stood. The Claude
+publication inventory listed neither this leaf, its source-bearing files nor
+the Week XXVI owner's `propers/verified.md`, and it held superseded digests for
+the edition registry's `README.md`, `formula-dispositions.md` and
+`occurrences-2026.md`, which this production's research checkpoint changed.
+`tools/source-inventory refresh` rewrote the inventory from the current tree,
+and nothing else moved: 55 to 56 publications and 1,414 to 1,451
+source-bearing files. The new publication entered the classification review as
+`unresolved`. Its categories were then set from the leaf's own 102 bindings
+and the sources its References name, and applied with `tools/source-inventory
+classify`:
+
+- `scripture`: the Douay–Rheims and Clementine Vulgate verse texts, the Nova
+  Vulgata, and the SBL Greek New Testament with its apparatus;
+- `liturgical`: the Missale Romanum 2002, its rubrics of Ordinary Time and
+  universal norms, the 2008 variation list, the Ordo lectionum Missae, the
+  Lectionary, the General Instruction, the Antiphonary, and the Verona,
+  Gelasian and Gregorian sacramentaries;
+- `magisterial`: *Nostra aetate* 4, the bound the research sets on presenting
+  the `two-peoples` identification;
+- `patristic`: Chrysostom, Jerome, Hilary, Augustine and Gregory;
+- `scholastic`: Aquinas and Bellarmine;
+- `historical-primary`: the Migne, CSEL, Venice, Liège, Leonine and nineteenth-
+  and early twentieth-century sacramentary volumes read in facsimile or OCR;
+- `institutional-current`: the USCCB 2026 liturgical calendar, its readings
+  page for 27 September 2026 and its NABRE introduction to the Psalms;
+- `secondary`: Schuster, the Catholic Encyclopedia and Haydock's note;
+- `finding-aid`: the postconciliar propers index and the calendar tools that
+  `research/context.md` uses only as finding aids;
+- `repository-internal`: the shared chronology corpus and the generated
+  chronology records.
+
+`canon-law` is deliberately absent: the records use no code of canon law, and
+the liturgical law the leaf does use is printed in the Missal and recorded as
+`liturgical`. No classical, prayer-devotional, archival or dataset source
+occurs. The inventory records the digest of this entry, so it was refreshed
+again after the entry was written; that second refresh changed only this
+file's digest and the inventory snapshot.
+
+### Publication-gate evidence
+
+Each check of the terminal publication gate was run in this working tree after
+the work above, and each exits 0:
+
+- `python3 scripts/_proper_study.py check --provider claude --document
+  <canonical-id> --date 2026-09-27 --phase publication --require-presentation
+  --require-format --require-authority`. It covers build and installed byte
+  identity for all three outputs, the exact release IDs and owning catalog, one
+  catalog row linking all three PDFs and the canonical web page with every
+  label naming its provider, exactly one canonical marker, the web receipt and
+  the installed edition against the reviewed conversion, the Markdown tracked,
+  no companion web authority, and `check-web-edition`.
+- `make check-release-bindings`: 0 stale bindings.
+- `tools/tpt public-alpha check --provider claude --document <canonical-id>`:
+  scoped policy valid for the three outputs; global source, release and
+  authorization records valid for 230 publications.
+- `tools/tpt document-library check --provider claude --document
+  <canonical-id>` and `tools/tpt document-library structure --check`.
+- `make check-web-editions-current`: tracked web editions match current
+  sources.
+
+`make check-publication-inventories`, with the source graph it depends on, also
+exits 0. These are this stage's own runs of the gate commands and not an
+acceptance. The terminal program gate decides acceptance.
+
+### Upstream defects reported, not repaired here
+
+`make check-sources` and `make check-deployment-sources` fail in this tree, and
+not on anything this stage wrote. Both failures come from the source records
+this production's research checkpoint registered without regenerating what is
+derived from them.
+
+1. `tools/source-reader structure --check` reports that the tracked browser
+   projection `src/web/data/structure/sources` has drifted from the source
+   records. Regenerating it into a scratch directory shows fourteen
+   differences, every one a record that checkpoint registered or extended: the
+   General Instruction's 2011 edition, the Missale Romanum 2002, the 2010 ICEL
+   Antiphonary, the Ordo lectionum Missae 1981, Hilary in CSEL 22, Migne PL 9,
+   26 and 37, the Venice Aquinas, the USCCB 2026 liturgical calendar, two new
+   editions (Jerome *In Danielem* in PL 25 and the whole *Commentarii in
+   Hiezechielem* work), the new readings-page edition for 27 September 2026,
+   and the projection index. `tools/source-reader structure`, with the release
+   bindings then refreshed for exactly those projection paths, clears it.
+2. `tools/tpt source-family-migration check` reports the ledger's pinned
+   `canonical_catalog_snapshot` stale. The catalogue it pins covers only the
+   work, edition, artifact, passage, segment and corpus records under
+   `src/sources/`, none of which this stage touched. At the seed commit it
+   still equals the pinned value; at the research checkpoint it moves. The
+   ledger pins the ChatGPT publication inventory, not the Claude one this
+   stage refreshed. Re-pinning it is a ledger review the source guidance
+   reserves to its own step (`--accept-canonical-catalog` after the family
+   review), not publication wiring.
+
+Both belong to the research owner and to shared source data outside this
+leaf's publication wiring, and neither is a member of the terminal publication
+gate, whose checks all pass. Both gate deployment until they are cleared.
+
+### Limits that remain
+
+Those of the earlier entries, of `research/scope.md` and of the standing
+advisories stand unchanged. The public-alpha check is scoped to this leaf's
+three outputs and is not a deployment verification. The Claude publication
+inventory records the current digest of every source-bearing file in the leaf,
+this record and the standing-findings file among them, so a later write into
+the leaf, such as an archive of this run, makes that inventory stale until it
+is refreshed again.
