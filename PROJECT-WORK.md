@@ -25,7 +25,9 @@ is why the Claude install of 2026-09-19 left them bare; the proper-study
 publication gate now refuses a misattributed cycle cell or provider column, and
 `guidance/repository.md` states the rule. The three deploy gates passed on a
 detached checkout of that commit whose ignored `pdf/` held the deployed PDFs,
-since this clone builds none; the fix changes no PDF input.
+since this clone builds none; the fix changes no PDF input. Pages run 36085272743
+deployed it with conclusion success, and the live calendar route's Year A cell
+now links each labelled edition to its own provider's path.
 
 **Production.** Authorized in the
 [production plan](guidance/liturgy/propers-production-plan.md); not yet seeded.

@@ -45,8 +45,11 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "pc-s51-catalog-live"
   criterion = "The catalog correction reaches origin/main by fast-forward after the three deploy gates pass locally, and the triggered Pages run and the live postconciliar calendar route are verified."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
+  check = "contains"
+  path = "PROJECT-WORK.md"
+  needle = "Pages run 36085272743"
 
 [[deliverables]]
 id = "open-issue-resolution-2026-09-24"
