@@ -49,12 +49,12 @@ provider = "claude"
 run_id = "ed9acebf389f8706"
 workflow = "proper-study"
 workflow_version = 7
-stage = "research-review"
-iteration = 1
+stage = "study-review"
+iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 2
+advisory_count = 12
 observation_count = 0
 
 [[stages]]
@@ -67,6 +67,18 @@ workflow_version = 7
 standing = 0
 accepted_count = 0
 advisory_count = 2
+observation_count = 0
+
+[[stages]]
+stage = "study-review"
+iteration = 0
+disposition = "PASS"
+run_id = "ed9acebf389f8706"
+workflow = "proper-study"
+workflow_version = 7
+standing = 0
+accepted_count = 0
+advisory_count = 10
 observation_count = 0
 
 [[advisories]]
@@ -84,3 +96,83 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/research/interpretations.md Reading 3 `obedient-son`, Element contributions row `first-reading` ('Augustine: God makes whole the humble who confess their sins and humbles those who seek their own righteousness; the way of the Lord is the way of humility'), and Comparison row 'What is \"the way of the Lord\"?', `obedient-son` cell ('The way of humility, which the froward call froward (Augustine)')"
 problem = "Enarr. in Ps. 17.27-28 (tracked NPNF, 'Psalm XVIII') says that the froward say 'The way of the Lord is not right', and that what seems froward to them is 'that Thou wilt make them whole that confess their sins'. God humbles those who seek to establish their own righteousness. Augustine does not call the Lord's way 'the way of humility'. That phrase is the leaf's condensation of his point, and both cells put his name after it. This is the kind of attribution RES-002 removed from four other cells. A study drawing on either cell could credit Augustine with a formula he does not use."
 required_result = "Attribute to Augustine only his own claim: the froward call God's way not right because God makes whole the humble who confess their sins and humbles the proud. Mark 'the way of humility' as the leaf's condensation, or remove it."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-001"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/20-afterward-he-repented.tex, subsection 'Old sins and old justices', second paragraph (lines 138-145: 'Aquinas uses the chapter twice more, for both halves of the law ... With Ezekiel 18:21 he answers the objection that penance need last only a moment')"
+problem = "In Summa theologiae III q. 84 a. 8, Ezekiel 18:21 is the authority of objection 1, which argues that penance need not be prolonged because the penitent is forgiven at once. Aquinas's reply does not cite Ezekiel. It grants that forgiveness comes in the first instant and adds that the penitent must persevere (tracked Dominican English, Gutenberg text, lines 48211-48215 and 48252-48256). research/scope.md 3.2 records this correctly ('Ezekiel 18:21 in q. 84 a. 8 obj. 1, answered'). The prose instead has Aquinas 'use' Ezekiel 18:21, and has him use it to argue for perseverance. That gives the objection's authority to the reply."
+required_result = "Say that Aquinas answers an objection drawn from Ezekiel 18:21: he grants that the penitent is forgiven at once and adds that penance must persevere. Reword 'uses the chapter twice more' so that only the sed contra of III q. 86 a. 1 (Ezekiel 18:22) counts as Aquinas's own appeal to the chapter here."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-002"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/30-the-publicans-go-before-you.tex, subsection 'The way the house of Israel calls unequal', line 134 ('the psalm verse ``with the froward thou wilt be froward''')"
+problem = "The quoted words match neither translation the study uses. The tracked NPNF exposition Augustine is cited from reads 'And with the froward Thou shalt be froward' (NPNF 1/8, Psalm XVIII.27). The Douay-Rheims of Psalm 17:27 reads 'with the perverse thou wilt be perverted'. The words sit in quotation marks as the psalm verse, but no witness has them."
+required_result = "Quote the NPNF lemma exactly ('with the froward Thou shalt be froward') or the Douay-Rheims verse exactly, or paraphrase it without quotation marks."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-003"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/20-afterward-he-repented.tex ('A law given to sinners in the way'; 'The Missal's texts in this reading'); sections/30-the-publicans-go-before-you.tex ('The way the house of Israel calls unequal'; 'The Missal's texts in this reading'); sections/40-the-mind-of-christ-jesus.tex (opening paragraph; 'Paul's appeal'; 'The son who said no and went'; 'The life laid down, at the table'; 'The Missal's prayers in this reading'); sections/10-each-element.tex ('The confession from the furnace'; 'The Collect')"
+problem = "The same quotations appear in full, with the same English gloss, in two or three places. Aquinas's 'nullus est sic bonus ... aliquid boni' is in lanes 1 and 3. Augustine's 'Do not too soon despair of thyself ... nourish it' is in lanes 1 and 3. Bellarmine's 'first softens and subdues the proud and the obstinate' is in lanes 1 and 3. Chrysostom's close of Hom. in Phil. 5 with Romans 2:13 is in lanes 1 and 3. Gregory's 'ea charitate qua pro ovibus morior' is in lanes 2 and 3. Augustine's Enarr. 17.27-28 ('make them whole that confess their sins'; 'ignorant of God's righteousness') is in lanes 2 and 3. Schuster's 'descends into it to draw forth the sinner' is in section 10 and twice in lane 3. Jerome's Daniel lesson and 'ex persona populi' are each in section 10 and again in a lane. The profile asks that each substantial argument have one fullest home. The study is well above its length floor, so this is not padding to reach a minimum. It still makes the reader read the same sentences several times, and it blurs how the lanes differ."
+required_result = "Give each repeated quotation one fullest home, normally section 10 or the lane whose argument it chiefly serves. Elsewhere, keep only the part that bears on that lane's own argument and point back to the fullest home in a clause, rather than reprinting the Latin and its gloss."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-004"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/30-the-publicans-go-before-you.tex, subsection 'Hilary: the sons the other way round', lines 163-165 ('obediens professione, licet non efficiens in tempore; quia fides sola iustificat ... because faith alone justifies')"
+problem = "Hilary's 'fides sola iustificat' is printed and glossed 'faith alone justifies', with no word on its sense in his argument. In PL 9, cols. 1041-1042, the phrase explains why the publicans who believed John count as obedient before they could do the Gospel's work, which came only after the Passion. A reader of a Catholic study who meets the formula bare may take it in its later confessional sense. The study is otherwise careful about doctrinal precision."
+required_result = "Add a clause stating Hilary's sense: the publicans' faith in John's preaching is counted as the obedience they could not yet perform in the Gospel's works. No doctrinal comparison beyond that is needed."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-005"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/30-the-publicans-go-before-you.tex, subsection 'Hilary: the sons the other way round', lines 145-151 ('he begins from the difficulty that the ordinary identification meets')"
+problem = "'The ordinary identification' is never defined. Hilary's difficulty (PL 9, col. 1039, section 11, 'quis filius senior, quis iunior') tests reading the elder son as Israel and the younger as the nations. That is not Jerome's, Chrysostom's or Aquinas's reading, all of which make the repenting first son the nations. Coming straight after the lane's own identification, the phrase lets a reader take Hilary's objection as a rebuttal of Jerome's reading, which it does not touch."
+required_result = "Name the identification Hilary tests (elder son Israel, younger son the nations), and say or make plain that it differs from the one the lane's carrying authors give."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-006"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/30-the-publicans-go-before-you.tex, subsection 'The way the house of Israel calls unequal', lines 114-119 ('Jerome writes a hard sentence of his own ... and he calls the sentence just')"
+problem = "'Sentence' is used twice in two different senses: first for Jerome's own hard sentence of text ('Usque hodie Israel blasphemat Deum'), then for the Lord's judicial sentence, which Jerome calls just ('Domini autem iusta sententia, ut ... alios in vineam suam mittat agricolas', PL 25, col. 181). As written, 'he calls the sentence just' can be read as Jerome, or the study, endorsing the charge that Israel blasphemes. This is the passage the Nostra aetate bound governs most closely."
+required_result = "Say plainly that Jerome calls the Lord's sentence just, namely that the vineyard be given to other husbandmen. Keep it distinct from Jerome's own sentence on Israel, which stays attributed to him."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-007"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/30-the-publicans-go-before-you.tex, subsection 'The Missal's texts in this reading': Entrance Antiphon join (lines 251-253, 'Heard beside the parable, it is the late truth the second son owed: a people that promised and did not obey confesses that God's judgments on it were true') and Prayer after Communion join (lines 289-293, 'Jerome's second son killed the son and thought himself heir; the heirs of this prayer are those who share the Son's sufferings')"
+problem = "research/scope.md 3.11 and interpretations.md bound the two-peoples reading under Nostra aetate 4. The identification is to be reported as the Fathers' and 'never in the leaf's own voice', and no people is to be presented as charged with the Passion or as rejected. Both joins are the leaf's own. The Prayer after Communion join uses Jerome's charge that the Jewish people killed the heir as the foil for the prayer's heirs. That builds a disinheritance contrast in the editor's voice on exactly the charge the Declaration says is not to be laid on the Jews. The Entrance Antiphon join makes 'a people that promised and did not obey', the lane's second son, owe a confession of God's judgments on it. Each sentence is hedged and the lane's 'How the reading is handed on' section states the bound, so neither sentence outright presents the Jewish people as rejected. They are, however, the leaf's own applications of the identification, and they are what the concise study and the homily would inherit."
+required_result = "Re-anchor both joins so that the leaf's own voice does not apply the identification. Examples: rest the Prayer after Communion's heirship on Romans 8:17 and on the prayer's own condition, sharing Christ's sufferings, without Jerome's charge as its foil; or tie any foil to the parable's own addressees, the chief priests and Pharisees of Mt 21:45. Frame the Entrance Antiphon as the confession owed by anyone who promised and did not go, which is also how the lane's moral sense directs the reading, to the baptized."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-008"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/30-the-publicans-go-before-you.tex, subsection 'The four senses of this interpretation', Anagogical item (lines 327-331: 'a new heart for Israel and for the nations (Jerome, on Ezekiel)')"
+problem = "Jerome's 'Cor novum Israelis, est credere in eum quem prius negaverat. Cor novum gentium, est idola derelinquere' (PL 25, col. 181, on Ezek 18:31) is about conversion in the present: believing, and leaving idols. It is not about final fulfilment. Filing it under the anagogical sense and naming Jerome gives him an eschatological claim he does not make here, and it blurs the distinction the profile draws between the moral and the anagogical senses."
+required_result = "Move Jerome's new heart to the moral or allegorical row, or mark its eschatological extension as the editor's. Give the anagogical row only final-fulfilment content: Gregory's election 'ad aeternam vitam' and, under the longer form, Philippians 2:10-11."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-009"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/40-the-mind-of-christ-jesus.tex, subsection 'The life laid down, at the table', lines 177-181 ('The Son's obedience and his love for the sheep are, in Gregory's sentence, one act')"
+problem = "Gregory's sentence (Hom. in Evang. 14.4, 'ea charitate qua pro ovibus morior quantum Patrem diligam ostendo') joins the Son's love for the Father to his death for the sheep. 'Obedience' is not Gregory's word. interpretations.md records the row as 'The Son's love for the Father shown in dying for the sheep'. Crediting Gregory with 'obedience' puts the lane's controlling term into his mouth. This is the kind of attribution RES-009 warned against."
+required_result = "Attribute to Gregory only love for the Father shown in dying for the sheep. If the lane wants that love to be the obedience of Philippians 2:8, mark the identification as the editor's."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-010"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/10-each-element.tex, subsection 'Ezekiel 18: the exiles' proverb and the Lord's way', lines 110-112 ('The Ordo prefixes the prophetic formula Haec dicit Dominus to v. 25, which in the text opens not with the Lord's words but with the people's')"
+problem = "Ezekiel 18:25 opens with the Lord's own words, 'Et dixistis' / 'And you have said', which report the people's complaint that follows. Saying that the verse 'opens not with the Lord's words but with the people's' misdescribes the text. The underlying point is sound: the formula stands before a verse that begins by quoting the people's complaint."
+required_result = "Reword so that v. 25 is described accurately, for example: 'which in the text begins by reporting the people's complaint'."

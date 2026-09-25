@@ -1,0 +1,258 @@
+schema = 2
+format_contract = "propers-format-v1"
+authority_contract = "authority-standing-v1"
+record_type = "proper-components"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"
+calendar = "postconciliar"
+entrypoint = "main.tex"
+synthesis_entrypoint = "synthesis.tex"
+homily_entrypoint = "homily.tex"
+appointed_text_completeness = "rights-limited"
+presentation_contract = "interpretive-pagination-v1"
+# The twelve keys of instance/manifest.md and propers/verified.md, in
+# liturgical order. The two forms of the second reading and the two Communion
+# antiphons are closed alternatives and keep separate keys, as the chronology
+# record does.
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading-long", "second-reading-short", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+
+[outputs]
+research = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"
+synthesis = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-synthesis"
+homily = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-homily"
+web = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"
+canonical_label = "Research PDF"
+synthesis_label = "Synthesis PDF"
+homily_label = "Homily PDF"
+
+# Physical-page roles of the concise companion's fixed opening
+# (guidance/liturgy/propers-three-documents.md), all to be written by the
+# concise author. The reviewed home of the chronology they print is the
+# study's terminal Scriptural Date and Location appendix (component
+# scriptural-date-location), which imports nothing itself: the research
+# entrypoint imports the generated chronology definitions once in its
+# preamble, and the concise page-2 owner imports them for the synthesis
+# edition.
+[presentation]
+inventory = "concise-inventory"
+overview = "concise-overview"
+chronology = "concise-date-location"
+themes = "concise-themes"
+commentary = "concise-commentary"
+
+# --- Research study (main.tex) ------------------------------------------------
+
+[[components]]
+key = "opening"
+kind = "front-matter"
+path = "sections/00-opening.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading-long", "second-reading-short", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+references = ["format.tex", "research/context.md", "research/scope.md"]
+
+[[components]]
+key = "appointed-texts"
+kind = "appointed-text"
+path = "sections/05-appointed-texts.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading-long", "second-reading-short", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+references = ["format.tex", "propers/verified.md", "research/context.md"]
+
+[[components]]
+key = "each-element"
+kind = "proper-treatment"
+path = "sections/10-each-element.tex"
+modes = ["research"]
+depends_on = ["appointed-texts"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading-long", "second-reading-short", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+references = ["format.tex", "propers/verified.md", "research/context.md", "research/scope.md"]
+
+[[components]]
+key = "afterward-he-repented"
+kind = "interpretive-lane"
+path = "sections/20-afterward-he-repented.tex"
+modes = ["research"]
+depends_on = ["each-element"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading-long", "second-reading-short", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+references = ["format.tex", "research/interpretations.md", "research/scope.md"]
+
+[[components]]
+key = "the-publicans-go-before-you"
+kind = "interpretive-lane"
+path = "sections/30-the-publicans-go-before-you.tex"
+modes = ["research"]
+depends_on = ["each-element"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading-long", "second-reading-short", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+references = ["format.tex", "research/interpretations.md", "research/scope.md"]
+
+[[components]]
+key = "the-mind-of-christ-jesus"
+kind = "interpretive-lane"
+path = "sections/40-the-mind-of-christ-jesus.tex"
+modes = ["research"]
+depends_on = ["each-element"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading-long", "second-reading-short", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+references = ["format.tex", "research/interpretations.md", "research/scope.md"]
+
+[[components]]
+key = "comparison"
+kind = "front-matter"
+path = "sections/50-comparison.tex"
+modes = ["research"]
+depends_on = ["afterward-he-repented", "the-publicans-go-before-you", "the-mind-of-christ-jesus"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading-long", "second-reading-short", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+references = ["format.tex", "research/interpretations.md"]
+
+# The study's terminal historical appendix: the reviewed home of the
+# chronology the concise page 2 will reprint. The three orations carry no
+# biblical date and no key here.
+[[components]]
+key = "scriptural-date-location"
+kind = "front-matter"
+path = "sections/80-date-location.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["entrance-antiphon", "first-reading", "responsorial-psalm", "second-reading-long", "second-reading-short", "gospel-acclamation", "gospel", "communion-antiphon-a", "communion-antiphon-b"]
+references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml", "research/scope.md"]
+
+[[components]]
+key = "liturgical-resolution"
+kind = "terminal-apparatus"
+path = "sections/85-liturgical-resolution.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading-long", "second-reading-short", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+references = ["format.tex", "instance/manifest.md", "research/context.md"]
+
+[[components]]
+key = "study-apparatus"
+kind = "terminal-apparatus"
+path = "sections/90-apparatus.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading-long", "second-reading-short", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+references = ["propers/verified.md", "research/scope.md", "research/interpretations.md", "research/source-bindings.toml"]
+
+# --- Concise study (synthesis.tex), written at the derive-synthesis stage ------
+
+[[components]]
+key = "concise-inventory"
+kind = "front-matter"
+path = "sections/concise/01-inventory.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading-long", "second-reading-short", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+references = ["format.tex", "propers/verified.md"]
+
+[[components]]
+key = "concise-overview"
+kind = "front-matter"
+path = "sections/concise/02-overview.tex"
+modes = ["synthesis"]
+depends_on = ["concise-inventory"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading-long", "second-reading-short", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+references = ["format.tex", "research/interpretations.md"]
+
+[[components]]
+key = "concise-date-location"
+kind = "front-matter"
+path = "sections/concise/03-date-location.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["entrance-antiphon", "first-reading", "responsorial-psalm", "second-reading-long", "second-reading-short", "gospel-acclamation", "gospel", "communion-antiphon-a", "communion-antiphon-b"]
+references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml"]
+
+[[components]]
+key = "concise-themes"
+kind = "front-matter"
+path = "sections/concise/04-themes.tex"
+modes = ["synthesis"]
+depends_on = ["concise-overview"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading-long", "second-reading-short", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+references = ["format.tex", "research/interpretations.md"]
+
+[[components]]
+key = "concise-commentary"
+kind = "integrated-commentary"
+path = "sections/concise/10-commentary.tex"
+modes = ["synthesis"]
+depends_on = ["concise-themes"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading-long", "second-reading-short", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+references = ["format.tex", "research/interpretations.md", "research/scope.md"]
+
+[[components]]
+key = "concise-apparatus"
+kind = "terminal-apparatus"
+path = "sections/concise/90-apparatus.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading-long", "second-reading-short", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+references = ["research/scope.md"]
+
+# --- Homily (homily.tex), written at the derive-homily stage -------------------
+
+[[components]]
+key = "homily-body"
+kind = "homily"
+path = "sections/homily/10-homily.tex"
+modes = ["homily"]
+depends_on = []
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading-long", "second-reading-short", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+references = ["format.tex", "research/interpretations.md"]
+
+[[components]]
+key = "homily-note"
+kind = "terminal-apparatus"
+path = "sections/homily/90-note.tex"
+modes = ["homily"]
+depends_on = ["homily-body"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading-long", "second-reading-short", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+references = ["research/interpretations.md", "research/scope.md"]
+
+# --- Interpretive readings of the whole formulary ------------------------------
+#
+# Lane keys are those of research/interpretations.md. `authors` names every
+# Father, Doctor or saint whose own exegesis the lane's section develops;
+# `carrying_authors` names those the research record says carry the reading,
+# as src/sources/inventories/author-standing-v1.toml names them.
+#
+# turning: Robert Bellarmine (on Psalm 24 and Psalm 129) and Ildefonso Schuster
+# (on the Entrance Antiphon and the Collect) support and carry nothing.
+#
+# two-peoples: Augustine is developed for Psalm 24, for Ezekiel 18:25 (where he
+# names no people) and, on John 10:26, as the contrary position to the
+# reading's hope for the second son; Gregory the Great for the one fold of
+# John 10:16; Hilary of Poitiers for his contrary identification of the sons,
+# set beside the reading's claim. None of the three carries it.
+#
+# obedient-son: Hilary (on Psalm 118:50), Gregory (on John 10:15), Robert
+# Bellarmine (on Psalm 24:9) and Ildefonso Schuster (on the Collect) support
+# and carry nothing.
+
+[[lanes]]
+key = "turning"
+authors = ["Jerome", "John Chrysostom", "Augustine", "Thomas Aquinas", "Robert Bellarmine", "Ildefonso Schuster"]
+carrying_authors = ["Jerome", "John Chrysostom", "Augustine", "Thomas Aquinas"]
+sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading-long", "second-reading-short", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+component_keys = ["afterward-he-repented"]
+
+[[lanes]]
+key = "two-peoples"
+authors = ["Jerome", "John Chrysostom", "Thomas Aquinas", "Augustine", "Gregory the Great", "Hilary of Poitiers"]
+carrying_authors = ["Jerome", "John Chrysostom", "Thomas Aquinas"]
+sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading-long", "second-reading-short", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+component_keys = ["the-publicans-go-before-you"]
+
+[[lanes]]
+key = "obedient-son"
+authors = ["John Chrysostom", "Thomas Aquinas", "Augustine", "Hilary of Poitiers", "Gregory the Great", "Robert Bellarmine", "Ildefonso Schuster"]
+carrying_authors = ["John Chrysostom", "Thomas Aquinas", "Augustine"]
+sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading-long", "second-reading-short", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+component_keys = ["the-mind-of-christ-jesus"]
