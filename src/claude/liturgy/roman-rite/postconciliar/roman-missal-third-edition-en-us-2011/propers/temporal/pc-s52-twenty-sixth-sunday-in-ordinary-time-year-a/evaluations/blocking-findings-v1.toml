@@ -49,12 +49,12 @@ provider = "claude"
 run_id = "ed9acebf389f8706"
 workflow = "proper-study"
 workflow_version = 7
-stage = "visual-review"
+stage = "web-review"
 iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 20
+advisory_count = 21
 observation_count = 1
 
 [[stages]]
@@ -116,6 +116,18 @@ standing = 0
 accepted_count = 0
 advisory_count = 1
 observation_count = 1
+
+[[stages]]
+stage = "web-review"
+iteration = 0
+disposition = "PASS"
+run_id = "ed9acebf389f8706"
+workflow = "proper-study"
+workflow_version = 7
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
 
 [[advisories]]
 stage = "homily-review"
@@ -276,6 +288,14 @@ severity = "advisory"
 location = "Expansive study PDF, physical pages 27-28, Scriptural Date and Location table, Gospel (Mt 21:28-32) dossier (source: sections/80-date-location.tex, the gospel rows)"
 problem = "The longtable breaks inside the Gospel dossier. Its summary row and italic narrated-event row end page 27, and its full-width explanatory row ('Traditional attribution: St Matthew the Apostle ... These are dates of the book, not of the saying') opens page 28 under the repeated header, cut off from the Date cell it qualifies. Page 28 then ends at about 55% of its height before the required fresh page for Appendix: Liturgical Resolution, so the whole dossier would fit there. The explanatory row names its passage and the header repeats, so a reader can recover the link and is not misled. This is a break in the two-tier dossier hierarchy, not a loss of content."
 required_result = "If the study is reopened for any reason, keep each dossier's summary, event and explanatory rows together with ordinary non-breaking row ends or page-break hints in sections/80-date-location.tex, so that the Gospel dossier moves whole to page 28 and the table breaks only between complete dossiers. Do not change shared table dimensions."
+
+[[advisories]]
+stage = "web-review"
+id = "WEB-001"
+severity = "advisory"
+location = "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a.md lines 82-92, The Appointed Texts > Responsorial Psalm (source: sections/05-appointed-texts.tex lines 93-115, two consecutive englishwitness environments)"
+problem = "The converter writes the response witness (Ps 24:6, first half) and the psalm witness (Ps 24:4-9) as two blockquotes separated only by a blank line. Python-Markdown merges them into one <blockquote>, so the site shows a single shaded quotation box where the PDF sets two separate quotation blocks. Both small-caps labels and all the text survive, and the second label still marks where the second witness begins, so no reader is misled. The difference is the loss of the semantic and visual division between two distinct quotations. The already-tracked pc-s51 edition shows the same behaviour, so the cause is in the converter."
+required_result = "If the converter is revised, emit consecutive quotation environments as distinct blockquotes, for example by placing a non-rendering separator such as an HTML comment between them. The Responsorial Psalm's response and psalm would then render as two quotation blocks, as in the PDF, and the audit should check that each englishwitness maps to exactly one blockquote."
 
 [[observations]]
 stage = "visual-review"
