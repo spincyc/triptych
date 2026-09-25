@@ -7,6 +7,29 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-09-24.
 
+## Claude postconciliar Twenty-Sixth Sunday three documents, 2026-09-24
+
+<!-- promised-deliverable: claude-postconciliar-twenty-sixth-three-documents-2026-09-24 -->
+
+The maintainer asked on 2026-09-24 for the Claude three-document production
+of the postconciliar Mass of Sunday 27 September 2026, the Twenty-Sixth Sunday
+in Ordinary Time, Year A (`liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a`), driven through the `proper-study` workflow,
+and for the web table of the previous Sunday to be corrected.
+
+**Catalog correction landed** (`ba4e08822`, fast-forwarded to `main`). The
+postconciliar calendar's Twenty-Fifth Sunday Year A cell carried the ChatGPT
+edition's links with bare labels followed by the Claude edition's, so the
+Claude links read as the ChatGPT edition's. The ChatGPT labels now name their
+provider. The install stage may change only its own provider's entries, which
+is why the Claude install of 2026-09-19 left them bare; the proper-study
+publication gate now refuses a misattributed cycle cell or provider column, and
+`guidance/repository.md` states the rule. The three deploy gates passed on a
+detached checkout of that commit whose ignored `pdf/` held the deployed PDFs,
+since this clone builds none; the fix changes no PDF input.
+
+**Production.** Authorized in the
+[production plan](guidance/liturgy/propers-production-plan.md); not yet seeded.
+
 ## Open-issue resolution and the corpus house-voice audit, 2026-09-24
 
 <!-- promised-deliverable: open-issue-resolution-2026-09-24 -->

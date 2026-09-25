@@ -1,6 +1,54 @@
 schema_version = 1
 
 [[deliverables]]
+id = "claude-postconciliar-twenty-sixth-three-documents-2026-09-24"
+owner = "PROJECT-WORK.md"
+promise = "Drive the proper-study workflow for provider claude on the postconciliar Twenty-Sixth Sunday in Ordinary Time, Year A, for Sunday 2026-09-27 through terminal acceptance: expansive study, concise study and standalone homily with fresh cold reviews, every workflow cycle and host intervention documented, and every contributing model declared exactly. Correct the postconciliar calendar's Twenty-Fifth Sunday cell, whose Claude links read as the ChatGPT edition's."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "claude-pc-s52-authorization"
+  criterion = "The exact provider and identity authorization is recorded in the production plan before the run is seeded, and the Claude leaf is authored independently of any other leaf."
+  status = "pass"
+  evidence = ["guidance/liturgy/propers-production-plan.md"]
+  check = "contains"
+  path = "guidance/liturgy/propers-production-plan.md"
+  needle = "- Authorized 2026-09-24: provider `claude`, identity `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a`."
+
+  [[deliverables.requirements]]
+  id = "claude-pc-s52-run-accepted"
+  criterion = "A proper-study run for provider claude, identity liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a, date 2026-09-27, audience adult parish assembly, reaches ACCEPTED with every review a fresh worker; the three reviewed PDFs and the canonical web edition are installed with exact reviewed bytes and the owning leaf archives the run evidence."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-pc-s52-cycles-documented"
+  criterion = "Every repair cycle the run entered and every host intervention is recorded in a tracked record with its stage, iteration, cause, repair and outcome."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-pc-s52-model-provenance"
+  criterion = "The leaf's generation metadata declares each contributing model exactly and separately, as guidance/editorial.md requires, or a tracked record states why a stage's contribution is not declared."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "pc-s51-catalog-provider-labels"
+  criterion = "The postconciliar calendar's Twenty-Fifth Sunday Year A cell names the provider of every link, the proper-study publication gate refuses a cycle cell or provider column that misattributes a provider's links, and a test pins the rule."
+  status = "pass"
+  evidence = ["library/novus-ordo-liturgy.md", "scripts/_proper_study.py", "tools/tests/test_workflow_proper_study.py"]
+  check = "contains"
+  path = "library/novus-ordo-liturgy.md"
+  needle = "[GPT Research PDF](../pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf)"
+
+  [[deliverables.requirements]]
+  id = "pc-s51-catalog-live"
+  criterion = "The catalog correction reaches origin/main by fast-forward after the three deploy gates pass locally, and the triggered Pages run and the live postconciliar calendar route are verified."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "open-issue-resolution-2026-09-24"
 owner = "PROJECT-WORK.md"
 promise = "On the maintainer's instruction of 2026-09-24 (\"push ; resolve all known open issues ; then push again\"), resolve every known open issue on the branch: discharge the research revision obligations, the D7 credits, the catena and discovery questions and the Eighteenth Sunday revision; audit every proper leaf of both providers for the house-voice defect and repair what the audit finds, with independent review of every repair; make the GPT repairs outside house voice the maintainer approved item by item, each independently reviewed; reconcile the tests and example transcripts with the repaired corpus; refresh every derived record; and re-record the release bindings and the release approval only on the maintainer's explicit approval."
