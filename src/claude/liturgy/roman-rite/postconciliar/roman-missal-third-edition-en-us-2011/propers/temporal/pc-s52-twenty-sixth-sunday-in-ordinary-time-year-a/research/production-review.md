@@ -189,3 +189,216 @@ manuscript of Matthew was examined; no commentary on the Prayer over the
 Offerings or the Prayer after Communion was found; and the named corpora of
 scope section 4 were not opened, so no priority, dependence or common view is
 asserted.
+
+## Derive-synthesis
+
+Authored 25 September 2026 in `proper-study` v7, run `ed9acebf389f8706`, seeded
+at commit `8f5a1fa0fec4b255f89e124503b541bba816ecf5`, at iteration 0. No
+blocking, carried or advisory finding was forwarded to the stage. The concise
+companion is *The Twenty-sixth Sunday in Ordinary Time, Year A: A Concise Study
+of the Proper in the Roman Missal, Third Edition*, built from `synthesis.tex`
+and derived from the expansive study as its independent review accepted it at
+iteration 0. No research evidence record, no component of the study,
+`main.tex`, `format.tex`, `web-edition.toml` or `proper-components.toml` was
+edited: the six concise components and the five presentation roles were
+already declared, with the synthesis mode alone, and the presentation
+environments the opening needs are the shared format's.
+
+### What was written
+
+- `synthesis.tex`, the concise entrypoint: a compact title block naming the
+  Sunday, the Missal and Lectionary no. 136, with no cover and no contents page
+  before the fixed opening, and literal unconditional imports of the six
+  components, the generation record and the rights colophon.
+- `concise-inventory` (`sections/concise/01-inventory.tex`): the map of the
+  twelve appointed elements in the order of the Mass, both forms of the second
+  reading and both Communion antiphons in rows of their own and marked as
+  options, the orations by Latin incipit and description, and beneath it a
+  note that the two pairs are alternatives and the standing notice that the
+  Scripture printed is the Douay–Rheims (Challoner) and not the Lectionary's
+  approved English.
+- `concise-overview` (`sections/concise/02-overview.tex`): exactly four rows,
+  Literal, Allegorical, Moral and Anagogical. Every parenthetical name stands
+  beside what that author says of his own passage, and the rows that draw on
+  a passage other than the one they speak of name it (Ezekiel, the psalm,
+  1 John 3, John 10:16, Philippians). The anagogical row carries only
+  final-fulfilment content.
+- `concise-date-location` (`sections/concise/03-date-location.tex`): the
+  Scriptural Date and Location sheet. It imports the generated chronology
+  annotations once and carries one `\chronodate` cell for each of the nine
+  element keys, in the study's canonical order of eight dossiers; the dates,
+  relation labels, disputed alternatives and the Gospel's unresolved
+  narrated-event state are the generated projection, unchanged. The Location
+  cells and the explanatory rows are compressed from the study's appendix, and
+  each still separates inherited attribution, the setting answer, the
+  composition answer and the narrated event, and says what each date does not
+  date. No date is written by hand.
+- `concise-themes` (`sections/concise/04-themes.tex`): *The Propers: Themes and
+  Movement*, two pages that open on a thesis, give a four-stage scan of the
+  formulary, the two books, the three relations the liturgical books state and
+  the *Ordo*'s three titles, follow the Mass from the Entrance Antiphon to the
+  Prayer after Communion in four units, and close by introducing the three
+  interpretations. No paragraph exceeds 120 words.
+- `concise-commentary` (`sections/concise/10-commentary.tex`): *The Propers:
+  Detailed Commentary*, six cross-proper questions and a closing comparison:
+  who the two sons are (persons, peoples, and Hilary's reversal with its
+  textual basis); the way of the Lord, level in both directions (Jerome's two
+  understandings of Ezekiel 18, the *Nostra aetate* bound, Augustine on the
+  complaint); despair, delay and perseverance (Chrysostom, Augustine, Aquinas,
+  the psalm, and the first interpretation's difficulties); the sheep who hear
+  and those who are not his sheep (the Alleluia verse and John 10:26, Aquinas
+  against Augustine, and the second interpretation's difficulties); word and
+  deed, the son who went and the Son who obeyed (the second reading in both
+  forms and the third interpretation's difficulties); the Missal's prayers and
+  the table (Entrance Antiphon, Collect, Prayer over the Offerings, both
+  Communion antiphons, Prayer after Communion); and where the three
+  interpretations agree and where their four senses part, with the three real
+  disputes.
+- `concise-apparatus` (`sections/concise/90-apparatus.tex`): the scope note and
+  the References for the sources this companion uses.
+
+### What compression kept and what it set aside
+
+All three controlling claims are stated in the themes section and developed in
+the commentary, each with its strongest difficulty beside it: for the first,
+the parable's first hearers and Jerome's extension of Ezekiel to the last
+judgment; for the second, Hilary's reversal and the divided text, the literal
+addressees, and Augustine as the contrary position on John 10:26; for the
+third, that no witness joins Philippians 2 to the parable or to Ezekiel, that
+Christ is not only an example, and that under the shorter form only the appeal
+and the name of Christ's mind remain. The differences the study carries are
+kept where the argument turns on them: Hilary against Jerome, Chrysostom and
+Aquinas on the sons, with Jerome's *Novissimus* and his "true copies";
+Augustine and Aquinas on John 10:26, each in his own terms; Jerome and Aquinas
+on the justices of one who falls away, as a development and not a disagreement
+about Ezekiel; and what Jerome, Chrysostom and Aquinas each draw from the
+identification of the peoples. The first two interpretations are called
+complementary and the third different in kind, as the study calls them. The
+one join a witness makes (Augustine citing Ezekiel 18:22 on Psalm 118:49) is
+attributed to him, and every other join is marked as the editor's. The
+identification of the second son with the Jewish people is reported only as
+Jerome's, Chrysostom's and Aquinas's, beside *Nostra aetate* 4 and the limits
+the Fathers' own texts carry, and its moral application goes to the baptized.
+
+Set aside, and still in the expansive study: Jerome's note that the Hebrews do
+not read the prayer of Azarias; Jerome's frugal and prodigal sons and
+the psalm heard as the prayer of "the Christian People turned unto God";
+Augustine on Psalm 24:9 and Bellarmine on Psalm 24:8–9, 118:49–50 and
+129:4–5; Chrysostom's Judas and Matthew and his "when we glorify Him rightly";
+Augustine on the death of the cross (*Tract.* 36.4); Aquinas on obedience
+giving merit and on the first transgression, on the inward call and Jeremias
+31:19, and his *Summa* II-II q. 30 a. 4; Schuster's "descends into it"; the
+Greek apparatus of Matthew 21:29–31 and Vallarsi's note; the older psalter
+reading *Memento*; and several illustrations. The early history of the Collect
+and the Prayer after Communion in the sacramentaries, and the Masses from which
+Schuster's comments come, are not mentioned, as the profile requires of a
+concise study. The References were cut to match: the *Notitiae* list, the
+*Antiphonary*, the *Nova Vulgata*, the SBL Greek text, the sacramentary
+editions and Aquinas's II-II are absent, and the remaining entries name only
+the loci the companion uses.
+
+No evidence-dependent claim was added. Every quotation is a whole or an
+unbroken part of a quotation the study prints, or of the record the study
+cites for it, and the loci are the study's. The English glosses of Latin,
+including those of the *Ordo*'s three titles, are the editor's renderings of
+the Latin beside them.
+
+The standing advisories of the study review are the study's to repair, and
+the companion does not inherit the defects they name. Aquinas is said to
+answer the objection drawn from Ezekiel 18:21, and only 18:22 is his authority
+(STU-001). The verse of Psalm 17 is described, not quoted (STU-002). A
+quotation stands once in the commentary (STU-003). Hilary's *fides sola
+iustificat* is not printed; his *obediens professione, licet non efficiens in
+tempore* is, with its gloss (STU-004). The identification Hilary tests is named
+and said not to be the carrying authors' (STU-005). Jerome is said to call just
+the Lord's sentence that the vineyard go to other husbandmen, distinct from
+his own sentence on Israel (STU-006). In the second interpretation the Entrance
+Antiphon is only a confession spoken in the person of a people, as Jerome
+says, and the Prayer after Communion names its heirs by the condition Romans
+8:17 sets, without Jerome's charge as a foil (STU-007). Jerome's new heart
+stands in no anagogical row (STU-008). Gregory is credited only with love for
+the Father shown in dying for the sheep (STU-009). Ezekiel 18:25 is quoted as
+the complaint the Lord reports (STU-010). The research-review advisories RES-008
+and RES-009 are observed as the study observes them.
+
+### Counts
+
+**Substantive word count: 6,209 words** (5,914 with the content of the
+`\latin{}` spans removed): themes 1,363 and commentary 4,846. The count
+converts the two argumentative components through Pandoc's LaTeX reader to its
+document tree with comments stripped and the leaf's inline commands declared
+first, removes headings and tables, writes plain text and counts
+whitespace-separated words; the four-item stage list of the themes section is
+counted, and the map, the overview rows, the dossier sheet, the scope note and
+the References are excluded. The same script gives the study's three
+interpretations 3,151, 3,502 and 2,760 words and its element settings 3,306,
+the last the figure this record states for them. Against the study's 14,401
+words the companion's argument is a little over two fifths. The whole PDF
+extracts to 9,765 words with `pdftotext -layout`.
+
+### Author proof and checks
+
+`make doc` for the `-synthesis` output settles with no overfull or underfull
+box, no LaTeX or pdfTeX warning, no undefined reference and no rerun request.
+The proof is
+`build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-synthesis.pdf`:
+12 physical pages, inside the 10–12-page requirement, letter size, SHA-256
+`c212ae5296b5677ef0e00321584428f899464d39174799affd903e4450e9983b`, at revision
+timestamp 2026-09-25T13:43:57Z; removing the PDF and building again from
+unchanged sources reproduced the same bytes. All sixteen font resources are
+Latin Modern Type 1, embedded, subsetted and Unicode-mapped, and the document
+information carries the title, the subject and the tracked modification date.
+
+The settled auxiliary file (SHA-256
+`32e4311cdf39e4b9e6967ca91e4a72a5ac0e474012fd2e91fa2cbb8c2aa8042a`) records the
+physical pages the presentation contract fixes: inventory start and end,
+overview start and end and the four sense markers on page 1; chronology start
+and end on page 2; themes start on page 3 and end on page 4; commentary start
+on page 5. `tools/check-proper-components --phase artifacts --edition
+synthesis` passes, and so do `python3 scripts/_proper_study.py check … --phase
+content --edition synthesis --require-presentation --require-format
+--require-authority`, the twelve `check-content-preflight` checks the
+synthesis gate names, run by hand with this run's header, and
+`tools/check-generation-metadata` against the source and against both
+rendered PDFs.
+
+Every page was inspected at full size. The map and the four rows stand
+together on page 1 with a few lines to spare; the dossier stands whole on page
+2 with about four lines to spare; the themes section fills page 3 and ends two
+lines short of the foot of page 4; the commentary runs from page 5 to the top
+of page 11, where the scope note begins; and the References, the revision
+timestamp and the rights colophon share page 12 with room left. On the way
+the first build ran to thirteen pages, the anagogical row having been pushed to
+page 2: the map's rows were shortened to two lines each where they could be,
+the themes paragraphs were split and trimmed to 120 words, and three sentences
+of the commentary were set aside to leave room on the last page.
+
+The shared generation record carries a contribution for this stage and the
+revision timestamp above. The expansive study was rebuilt at that timestamp:
+33 pages, SHA-256
+`64f8baa65fdcacc9e909127b67873d261ad8dda345e5d07a6d23856a154d1ba4`, its
+extracted text identical to the accepted proof except for the timestamp line,
+and its artifacts check passes. The proof, its auxiliary file, log and
+extracted text, the build, preflight, artifact and metadata logs, the marker
+pages and the counting script are kept with their digests under the run's
+`artifacts/derive-synthesis-0000/proof/`, and the page rasters and contact
+sheet made with `tools/tpt pdf-review` in the dedicated child `rasters/`. This
+is author verification; the shared-timestamp three-document build and the
+independent visual review remain to be done.
+
+### For the cold reviewer, about upstream records
+
+1. The concise components declare `research/interpretations.md` and
+   `research/scope.md` as references. Those records still carry, at record
+   level, three of the points the study review raised against the study:
+   `interpretations.md` Reading 2 places the Entrance Antiphon as "the second
+   son's belated truth" and the Prayer after Communion beside Jerome's heir
+   (STU-007), and puts Jerome's new heart in its anagogical row (STU-008); and
+   its Reading 1 author row has Aquinas use Ezekiel 18:21 for perseverance
+   (STU-001), which `scope.md` 3.2 records correctly. RES-008 and RES-009 also
+   remain open there. The companion follows the corrected reading at each
+   point and not the record. Nothing was repaired, because the records are the
+   research stage's.
+2. No other upstream defect was met while deriving. The study's three
+   interpretations, element settings, comparison and dossier answered every
+   question the concise argument put to them.

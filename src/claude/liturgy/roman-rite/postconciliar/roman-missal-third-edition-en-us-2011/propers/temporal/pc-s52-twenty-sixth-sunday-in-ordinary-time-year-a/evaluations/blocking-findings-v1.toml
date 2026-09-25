@@ -49,12 +49,12 @@ provider = "claude"
 run_id = "ed9acebf389f8706"
 workflow = "proper-study"
 workflow_version = 7
-stage = "study-review"
+stage = "synthesis-review"
 iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 12
+advisory_count = 16
 observation_count = 0
 
 [[stages]]
@@ -79,6 +79,18 @@ workflow_version = 7
 standing = 0
 accepted_count = 0
 advisory_count = 10
+observation_count = 0
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 0
+disposition = "PASS"
+run_id = "ed9acebf389f8706"
+workflow = "proper-study"
+workflow_version = 7
+standing = 0
+accepted_count = 0
+advisory_count = 4
 observation_count = 0
 
 [[advisories]]
@@ -176,3 +188,35 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/10-each-element.tex, subsection 'Ezekiel 18: the exiles' proverb and the Lord's way', lines 110-112 ('The Ordo prefixes the prophetic formula Haec dicit Dominus to v. 25, which in the text opens not with the Lord's words but with the people's')"
 problem = "Ezekiel 18:25 opens with the Lord's own words, 'Et dixistis' / 'And you have said', which report the people's complaint that follows. Saying that the verse 'opens not with the Lord's words but with the people's' misdescribes the text. The underlying point is sound: the formula stands before a verse that begins by quoting the people's complaint."
 required_result = "Reword so that v. 25 is described accurately, for example: 'which in the text begins by reporting the people's complaint'."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-001"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/concise/02-overview.tex, Allegorical row (lines 68-74: 'Or they are those who profess themselves just and sinners who do penance, and the father's \"to day\" is a whole life (Aquinas)'); sections/concise/10-commentary.tex, 'Where the three interpretations agree and part', second paragraph (lines 410-415: 'the allegorical sense is where they part: the sons are those who profess justice and sinners who do penance ... (Aquinas)')"
+problem = "The concise study states the first interpretation's (`turning`) allegorical sense as Aquinas's identification of the sons with those who profess themselves just and sinners who do penance. That is not how the accepted study (sections/20-afterward-he-repented.tex, four senses) or research/interpretations.md (Reading 1, Four senses) distils it. There the allegorical sense is the father as God calling by an inward inspiration through the 'to day' of a whole life (Aquinas, on Matthew), together with the leaf's marked joins: Christ as the voice that calls 'today', and God's forgiving power receiving the penitent into the flock (Jerome). The persons identification is the reading's answer to 'Who are the two sons?' in the comparison. It concerns the life of conversion, which the three-document profile assigns to the moral sense; the allegorical sense is the texts' fulfilment in Christ and his body. So, in the one place where the concise study says the interpretations 'part' in the allegorical sense, the first interpretation's allegory has no Christological or ecclesial content, and a moral classification stands in its slot. The sources are still attributed correctly, and the other two interpretations' allegorical senses match the study."
+required_result = "Give the first interpretation's allegorical sense as the study distils it, within the page-1 bar on original proposals. For example: the father is God, who calls by an inward inspiration, and his 'to day' is the whole of a life (Aquinas, on Matthew); God's power is shown most in freely forgiving (Aquinas, on the Collect). Mark any join as the editor's where it appears in the commentary. Move the identification of the sons with the professed just and penitent sinners to where it belongs: the moral row, or the commentary's comparison of who the sons are. Alternatively, reword the closing paragraph so that it compares the interpretations' identifications of the sons and no longer calls that comparison their allegorical senses."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-002"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/concise/02-overview.tex, Allegorical row (lines 72-74, 'Christ is the Son who obeyed and so honoured the Father (Chrysostom), the lowly God who found proud man (Augustine)') and Anagogical row (lines 86-87, 'Exaltation follows humility (Aquinas, on Philippians)'); sections/concise/10-commentary.tex, closing section, lines 413-415 and 422-424"
+problem = "The postconciliar profile requires the page-1 overview rows to preserve branch limits. research/interpretations.md marks every contribution resting on Philippians 2:6-11 '(longer form only)'. The Literal row and the knee-bowing clause carry that mark. Two clauses that also rest on 2:6-11 do not. The first is Chrysostom's obedient Son, Hom. in Phil. 7 on 2:8, with Augustine's 'lowly God', which the research record marks as longer-form-only in its use of 2:6-8. The second is 'Exaltation follows humility (Aquinas, on Philippians)', which is lect. 3 on 2:9-11. The accepted study's anagogical sense also cites Hilary on the servant's lowliness (Ps 118:50), a Communion antiphon locus that holds under either form. The concise row drops Hilary, so under the shorter form the exaltation clause rests only on verses that are not read, and nothing says so. The apparatus's global statement, and the commentary's marks elsewhere, soften this, so a reader is not seriously misled."
+required_result = "Mark the Chrysostom/Augustine clause of the Allegorical row and the Aquinas exaltation clause of the Anagogical row as holding where the longer form is read, and do the same in the closing comparison. Alternatively, restore Hilary on the servant's lowliness (Ps 118:50) beside Aquinas, so that the exaltation clause keeps a witness that holds under both forms."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-003"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/concise/90-apparatus.tex, 'Text and English' paragraph (lines 28-47); compare sections/concise/01-inventory.tex line 45-46 ('every other element is required') and sections/90-apparatus.tex, 'Text control'"
+problem = "The study's scope appendix lists three open textual questions. One is whether the United States strophe includes the last clause of Psalm 25:5. Another is whether the United States Lectionary admits another Alleluia verse from a common set on these Sundays. The third is the manuscript evidence for Matthew 21:29-31. It also says that which Latin text the Entrance Antiphon's wording follows is not established. propers/verified.md, 'Outstanding', keeps the acclamation question open. The concise scope note keeps only 'No manuscript was examined'. Meanwhile page 1 says that every element other than the two alternatives is required, and the commentary gives each interpretation's reading of John 10:27 as the acclamation. Compression has dropped an unresolved qualification that bears on the acclamation, though the likely effect on a reader is small."
+required_result = "In the concise scope note's 'Text and English' paragraph, add one sentence carrying the study's open questions: whether the United States strophe includes the last clause of Psalm 25:5, whether another Alleluia verse from a common set may replace John 10:27, and that the Latin source of the Entrance Antiphon's wording is not established."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-004"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/concise/90-apparatus.tex, 'Relation to the expansive study' (lines 18-26: 'Every claim here is drawn from the canonical study ...'; 'The second page reprints the study's dossier') and References, Douay-Rheims item (line 118)"
+problem = "The apparatus says every claim is drawn from the canonical study. In several places, though, the companion departs from the study's wording and follows research/scope.md where the study review left standing advisories. Examples: Aquinas answers an objection drawn from Ezekiel 18:21, where the study has 'With Ezekiel 18:21 he answers'. The identification Hilary tests is named as not Jerome's, Chrysostom's or Aquinas's. Jerome calls the Lord's sentence on the vineyard just. Gregory is credited with love, not obedience. Each departure is correct and supported by the research record, but a reader who traces one of these claims to the study will find it put differently. The apparatus also says page 2 'reprints' the study's dossier. In fact it condenses the Location cells and explanatory rows, and prints only the generated Date cells unchanged. Finally, the References' Douay-Rheims locus list leaves out Psalm 94:8, which page 7 quotes in Douay-Rheims English ('To day if you shall hear his voice')."
+required_result = "Say that the companion is drawn from the canonical study and its research records, and that where the study's wording carries a standing review advisory it follows research/scope.md. Say that page 2 condenses the study's dossier while printing the generated Date cells, relation labels, alternatives and unresolved states unchanged. Add Ps 94:8 to the Douay-Rheims loci in the References."
