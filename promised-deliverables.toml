@@ -18,18 +18,31 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-pc-s52-run-accepted"
   criterion = "A proper-study run for provider claude, identity liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a, date 2026-09-27, audience adult parish assembly, reaches ACCEPTED with every review a fresh worker; the three reviewed PDFs and the canonical web edition are installed with exact reviewed bytes and the owning leaf archives the run evidence."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/record.md", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/terminal-status.json", "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a.md", "release/publications/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a.json"]
+  check = "contains"
+  path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/terminal-status.json"
+  needle = "ACCEPTED"
 
   [[deliverables.requirements]]
   id = "claude-pc-s52-cycles-documented"
   criterion = "Every repair cycle the run entered and every host intervention is recorded in a tracked record with its stage, iteration, cause, repair and outcome."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/claude-pc-s52-production-2026-09-25/CYCLES.md", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/interventions/0001.json"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "claude-pc-s52-model-provenance"
   criterion = "The leaf's generation metadata declares each contributing model exactly and separately, as guidance/editorial.md requires, or a tracked record states why a stage's contribution is not declared."
+  status = "pass"
+  evidence = ["src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/generation-metadata.tex", "workflows/reviews/claude-pc-s52-production-2026-09-25/CYCLES.md"]
+  check = "contains"
+  path = "workflows/reviews/claude-pc-s52-production-2026-09-25/CYCLES.md"
+  needle = "**Model provenance.**"
+
+  [[deliverables.requirements]]
+  id = "claude-pc-s52-main-and-pages"
+  criterion = "The publication reaches origin/main by fast-forward after the three deploy gates pass locally, and the triggered Pages run and the three PDF routes, the web route and the calendar cell are verified live."
   status = "open"
   evidence = ["PROJECT-WORK.md"]
 

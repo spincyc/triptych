@@ -1,0 +1,387 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "SYN-001",
+      "location": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/concise/02-overview.tex, Allegorical row (lines 68-74: 'Or they are those who profess themselves just and sinners who do penance, and the father's \"to day\" is a whole life (Aquinas)'); sections/concise/10-commentary.tex, 'Where the three interpretations agree and part', second paragraph (lines 410-415: 'the allegorical sense is where they part: the sons are those who profess justice and sinners who do penance ... (Aquinas)')",
+      "problem": "The concise study states the first interpretation's (`turning`) allegorical sense as Aquinas's identification of the sons with those who profess themselves just and sinners who do penance. That is not how the accepted study (sections/20-afterward-he-repented.tex, four senses) or research/interpretations.md (Reading 1, Four senses) distils it. There the allegorical sense is the father as God calling by an inward inspiration through the 'to day' of a whole life (Aquinas, on Matthew), together with the leaf's marked joins: Christ as the voice that calls 'today', and God's forgiving power receiving the penitent into the flock (Jerome). The persons identification is the reading's answer to 'Who are the two sons?' in the comparison. It concerns the life of conversion, which the three-document profile assigns to the moral sense; the allegorical sense is the texts' fulfilment in Christ and his body. So, in the one place where the concise study says the interpretations 'part' in the allegorical sense, the first interpretation's allegory has no Christological or ecclesial content, and a moral classification stands in its slot. The sources are still attributed correctly, and the other two interpretations' allegorical senses match the study.",
+      "required_result": "Give the first interpretation's allegorical sense as the study distils it, within the page-1 bar on original proposals. For example: the father is God, who calls by an inward inspiration, and his 'to day' is the whole of a life (Aquinas, on Matthew); God's power is shown most in freely forgiving (Aquinas, on the Collect). Mark any join as the editor's where it appears in the commentary. Move the identification of the sons with the professed just and penitent sinners to where it belongs: the moral row, or the commentary's comparison of who the sons are. Alternatively, reword the closing paragraph so that it compares the interpretations' identifications of the sons and no longer calls that comparison their allegorical senses.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-002",
+      "location": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/concise/02-overview.tex, Allegorical row (lines 72-74, 'Christ is the Son who obeyed and so honoured the Father (Chrysostom), the lowly God who found proud man (Augustine)') and Anagogical row (lines 86-87, 'Exaltation follows humility (Aquinas, on Philippians)'); sections/concise/10-commentary.tex, closing section, lines 413-415 and 422-424",
+      "problem": "The postconciliar profile requires the page-1 overview rows to preserve branch limits. research/interpretations.md marks every contribution resting on Philippians 2:6-11 '(longer form only)'. The Literal row and the knee-bowing clause carry that mark. Two clauses that also rest on 2:6-11 do not. The first is Chrysostom's obedient Son, Hom. in Phil. 7 on 2:8, with Augustine's 'lowly God', which the research record marks as longer-form-only in its use of 2:6-8. The second is 'Exaltation follows humility (Aquinas, on Philippians)', which is lect. 3 on 2:9-11. The accepted study's anagogical sense also cites Hilary on the servant's lowliness (Ps 118:50), a Communion antiphon locus that holds under either form. The concise row drops Hilary, so under the shorter form the exaltation clause rests only on verses that are not read, and nothing says so. The apparatus's global statement, and the commentary's marks elsewhere, soften this, so a reader is not seriously misled.",
+      "required_result": "Mark the Chrysostom/Augustine clause of the Allegorical row and the Aquinas exaltation clause of the Anagogical row as holding where the longer form is read, and do the same in the closing comparison. Alternatively, restore Hilary on the servant's lowliness (Ps 118:50) beside Aquinas, so that the exaltation clause keeps a witness that holds under both forms.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-003",
+      "location": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/concise/90-apparatus.tex, 'Text and English' paragraph (lines 28-47); compare sections/concise/01-inventory.tex line 45-46 ('every other element is required') and sections/90-apparatus.tex, 'Text control'",
+      "problem": "The study's scope appendix lists three open textual questions. One is whether the United States strophe includes the last clause of Psalm 25:5. Another is whether the United States Lectionary admits another Alleluia verse from a common set on these Sundays. The third is the manuscript evidence for Matthew 21:29-31. It also says that which Latin text the Entrance Antiphon's wording follows is not established. propers/verified.md, 'Outstanding', keeps the acclamation question open. The concise scope note keeps only 'No manuscript was examined'. Meanwhile page 1 says that every element other than the two alternatives is required, and the commentary gives each interpretation's reading of John 10:27 as the acclamation. Compression has dropped an unresolved qualification that bears on the acclamation, though the likely effect on a reader is small.",
+      "required_result": "In the concise scope note's 'Text and English' paragraph, add one sentence carrying the study's open questions: whether the United States strophe includes the last clause of Psalm 25:5, whether another Alleluia verse from a common set may replace John 10:27, and that the Latin source of the Entrance Antiphon's wording is not established.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-004",
+      "location": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/concise/90-apparatus.tex, 'Relation to the expansive study' (lines 18-26: 'Every claim here is drawn from the canonical study ...'; 'The second page reprints the study's dossier') and References, Douay-Rheims item (line 118)",
+      "problem": "The apparatus says every claim is drawn from the canonical study. In several places, though, the companion departs from the study's wording and follows research/scope.md where the study review left standing advisories. Examples: Aquinas answers an objection drawn from Ezekiel 18:21, where the study has 'With Ezekiel 18:21 he answers'. The identification Hilary tests is named as not Jerome's, Chrysostom's or Aquinas's. Jerome calls the Lord's sentence on the vineyard just. Gregory is credited with love, not obedience. Each departure is correct and supported by the research record, but a reader who traces one of these claims to the study will find it put differently. The apparatus also says page 2 'reprints' the study's dossier. In fact it condenses the Location cells and explanatory rows, and prints only the generated Date cells unchanged. Finally, the References' Douay-Rheims locus list leaves out Psalm 94:8, which page 7 quotes in Douay-Rheims English ('To day if you shall hear his voice').",
+      "required_result": "Say that the companion is drawn from the canonical study and its research records, and that where the study's wording carries a standing review advisory it follows research/scope.md. Say that page 2 condenses the study's dossier while printing the generated Date cells, relation labels, alternatives and unresolved states unchanged. Add Ps 94:8 to the Douay-Rheims loci in the References.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/concise/01-inventory.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-inventory"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/concise/02-overview.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "gospel-acclamation",
+            "gospel",
+            "communion-antiphon-a",
+            "communion-antiphon-b"
+          ],
+          "key": "concise-date-location",
+          "kind": "front-matter",
+          "path": "sections/concise/03-date-location.tex",
+          "references": [
+            "format.tex",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-overview"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/concise/04-themes.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-themes"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/concise/10-commentary.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/concise/90-apparatus.tex",
+          "references": [
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a",
+      "element_keys": [
+        "entrance-antiphon",
+        "collect",
+        "first-reading",
+        "responsorial-psalm",
+        "second-reading-long",
+        "second-reading-short",
+        "gospel-acclamation",
+        "gospel",
+        "prayer-over-offerings",
+        "communion-antiphon-a",
+        "communion-antiphon-b",
+        "prayer-after-communion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Augustine",
+            "Thomas Aquinas",
+            "Robert Bellarmine",
+            "Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Augustine",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "afterward-he-repented"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "turning",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Augustine",
+            "Gregory the Great",
+            "Hilary of Poitiers"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "the-publicans-go-before-you"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "two-peoples",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Augustine",
+            "Hilary of Poitiers",
+            "Gregory the Great",
+            "Robert Bellarmine",
+            "Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Augustine"
+          ],
+          "component_keys": [
+            "the-mind-of-christ-jesus"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "obedient-son",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a",
+    "files": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/format.tex": "b3d5440008fe417157961b693a84abfa71acc0fea0357dee6ae56c35f541566c",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/propers/verified.md": "17e8a79f4c0a8572a14f3948d6976cc7e19c68f284e447f400d827429e5ae3ba",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex": "ab1a6d84317d4a1374a8c213c7210dd410f75b96f4941d245744bcbaded14e44",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/research/chronology.toml": "ddf6820dc0f77bc0c235b211952f9fcf22258f1f842a3596cc4099afcec21f3d",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/research/interpretations.md": "f085dbf2b28a4518499d16b48cba7ebcc41d25bf688d74bfb18639dc005703cb",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/research/scope.md": "3fcb3ae81a16e872df0068842808816a87a111389f1aeb04090e6c724ca974b3",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/concise/01-inventory.tex": "df3dfc964bc0f384ab09ea17e4203914c9ca64c4a1fcf54c98d4b6386badd670",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/concise/02-overview.tex": "e05a88bc071d7a770012da05889d331e3be6b17a90010fd82ce8895b9e09148c",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/concise/03-date-location.tex": "06838fc9931c52b9144cb306204caea051a815ae6e36eeeb2ef43b4e2a701077",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/concise/04-themes.tex": "0abde2fc2e8c08de7157fb35bdfbd8243d325fb8bb08c1c09c8a6714c7939414",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/concise/10-commentary.tex": "de093f0581872945be514fd12c5a7cad74d759d709e7e3915d82cebccd486626",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/concise/90-apparatus.tex": "6b1f0432bd31d90bcfab8567fb055fa75f464278921c9f22610813adf95d80ce",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/synthesis.tex": "c02563ebb3c3ac5eb75aa068b58086e821b48bfd6e0f148b78879be80df41d3d",
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+      "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "7",
+            "9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38",
+            "ed9acebf389f8706",
+            "8f5a1fa0fec4b255f89e124503b541bba816ecf5",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "Cold review of the concise study of the Claude postconciliar Twenty-sixth Sunday in Ordinary Time, Year A (synthesis.tex and sections/concise/01-90). The verdict is PASS, with four advisories and no blocking finding. What I checked: every sealed input matched its REVIEW_INPUTS hash. I rebuilt the PDF independently in my lane's scratch directory, and it settled in two passes. It is byte-identical to build/.../pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-synthesis.pdf (SHA-256 c212ae5296b5677ef0e00321584428f899464d39174799affd903e4450e9983b) and runs to 12 physical pages. The zref abspage markers put the inventory, the overview and the four sense rows on page 1, the chronology on page 2, the themes on pages 3-4 and the commentary from page 5. tools/check-proper-components passes both the content check (with the rebuilt .aux) and the artifacts check. The log is clean, and every font is embedded Latin Modern. I inspected all twelve pages. The first four pages carry what they claim. Page 1 has all twelve elements with the options named as options, then exactly four sense rows. Page 2 holds the one-page dossier alone, in canonical order, on the generated \\chronodate cells. Pages 3-4 are two full pages of argued movement with a direct thesis. From page 5, six cross-proper questions interleave the three interpretations. I compared it with the accepted study (sections 00, 10, 20, 30, 40, 50, 80 and 90), research/interpretations.md, scope.md, propers/verified.md and the standing study advisories. Every controlling claim is present. The material differences are kept: Hilary's reversal with its textual basis, Augustine and Aquinas on John 10:26, and Jerome and Aquinas on lapsed merit. The three interpretations are compared without staged conflict. The two-peoples reading is attributed and bounded by Nostra aetate 4, and none of the STU-007 joins is used. Where the study has a standing advisory, the concise text follows research/scope.md instead (STU-001, 002, 004, 005, 006, 008, 009 and 010). Every \\latin span appears verbatim in the research or study records. I checked the English quotations in the tracked texts: NPNF vols. 6, 7, 8, 10 and 13, the Dominican Summa, O'Sullivan's Bellarmine, the 1927 Schuster OCR, Gregory's Latin, and the Catholic Encyclopedia articles behind the dossier prose. I read Jerome, In Hiezechielem, PL 25 col. 181 (vv. 26-31) on the page image and Hilary, PL 9 cols. 1039-1042 in the OCR. Neither the pages nor the rereading of the sources turned up a new unsupported claim, an upgraded one, or a misattribution. Limits: I did not re-read the Aquinas Venice Latin or Jerome, PL 26 on page images. I matched them to the research transcriptions, which the earlier reviews re-read. I checked the English of Nostra aetate against the known text, because no artifact is retained. No printed United States Lectionary was available, as the research records already state. The advisories cover the first interpretation's allegorical sense, branch marks in the overview rows, open textual questions left out of the scope note, and the accuracy of the apparatus."
+}

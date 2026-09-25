@@ -4,8 +4,8 @@ provider = "claude"
 audited_on = "2026-09-25"
 discovery_rule = "src/claude/**/main.tex"
 publication_count = 56
-source_surface_file_count = 1451
-snapshot = "sha256:a00530edb36af103d8a4f0d00e5a4b8785730b98ae34dbe1bfe74667c1896bdf"
+source_surface_file_count = 1476
+snapshot = "sha256:28cae6885953fcabb23a614bcae08a4e9c960a4449002080ded08c42aa485375"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -8007,6 +8007,156 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 [[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/blocking-findings-v1.toml"
 sha256 = "8861da1d6b6f13fbd8acc0614fa10fd9aae72553d699cf6695e74aa82e49ed7c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/artifact-gates-0000.txt"
+sha256 = "4575a522bf8deb96e653311205727910ee07ddc4cd7b66535066784c22c07196"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/author-study-0000.txt"
+sha256 = "66ca90d1863b67b2dc4262403e2684dc7fc6eca2ae12f1050daf88043d99ea7a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/build-artifacts-0000.txt"
+sha256 = "28f14d5f4f54b2f1da85ceb87e4c780687f4c728aaafcef16bdde33d103b5d65"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/derive-homily-0000.txt"
+sha256 = "e8a6f23d2777c8a7f9d3132761454b3a79e72aa0266034be8bc73ed45dcf37c3"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/derive-synthesis-0000.txt"
+sha256 = "ae7398c24352d564b0df8570325e1b3fabc71771ffdfbaf44eb2d98a1f7dc165"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/generate-web-0000.txt"
+sha256 = "093aa569516ab146d18b62672ce5d4e10cf17b3df2f638e0dfbb9f460cb93281"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/homily-preflight-0000.txt"
+sha256 = "cf157b821cf3544411ea25a494f127ac919b14827b3818d3bba499837d847e41"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/homily-review-0000.txt"
+sha256 = "342d27bf3899929489f14054bab4f6974766ff9cb68d5d0e3a11f5fcb1c1c19c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/install-publication-0000.txt"
+sha256 = "4ca0e7e0941d68c5483b38b53a6dbc344e4163f0f171a819d29dbbf79a1b5f1a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/publication-gates-0000.txt"
+sha256 = "8a272a372c51d79279b606d26ff1cfee466ebac1fc9fd24250ec24a1d1d6811d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/research-0000.txt"
+sha256 = "8da6d901ceb34f55883c15fcc5426a5bdb06a86818e13faa4959946af2ab8220"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/research-0001.txt"
+sha256 = "544d4a639171f0cfc041dc3be8bb5d8706e369e66dfbe61e128dbaf2d90d9c34"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/research-preflight-0000.txt"
+sha256 = "1ae2d1a0cd06fb59072a135a63e0647199697ed960b6b59c5a55f0ab457169a3"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/research-preflight-0001.txt"
+sha256 = "43ad1c91fcdd9dc59ea99ec6e9161c981907b048cc981f6f0fecb203abc7d7ed"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/research-review-0000.txt"
+sha256 = "acebcb9a224f0146a713d64c8046e6cf02aa555b84ce76f98669c8d02d9ce343"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/research-review-0001.txt"
+sha256 = "5a52f20a0a14694154f009bf9a200ab0654ac9d3ce478f78fce93e094aac8664"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/resolve-context-0000.txt"
+sha256 = "10c0f623ab32cf7e39f5d97c92c850d97c9ee2e7ad31d5f812dfe1b1431d5ea5"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/scope-gate-0000.txt"
+sha256 = "0feea89cfd5edbd4f10c0e328127c412af6f957db9ae12629c5796f252039af7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/study-preflight-0000.txt"
+sha256 = "634b54db713dc83915f45fab0468b53f6ab461d5c781c6bd17ef319e823cde03"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/study-review-0000.txt"
+sha256 = "12a760e0c5a2f9f500f527e3317861f3d879048c7056bd919f23482bc58d2350"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/synthesis-preflight-0000.txt"
+sha256 = "ff2de276f99f8c112f2773e50ed31205edef4c89970dec02251edfd23aef4e80"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/synthesis-review-0000.txt"
+sha256 = "413cc7c22e0c99adb59b1aa628628f19ea2f56d81fd2301cc73dfd726701bfc9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/visual-review-0000.txt"
+sha256 = "9e1179399580f0bc5ac236cb48640114ff3a854fbadb63570cb1db233010ee36"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/packets/web-review-0000.txt"
+sha256 = "712589c43a44345ce6d98553b43c393cd835de0f31015af44130c87dd426252f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/ed9acebf389f8706/record.md"
+sha256 = "4eca5cb191e4757cc797d259683b5d41ebe5ace02efe7994c68cc2d92f2e61c0"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a"]
 

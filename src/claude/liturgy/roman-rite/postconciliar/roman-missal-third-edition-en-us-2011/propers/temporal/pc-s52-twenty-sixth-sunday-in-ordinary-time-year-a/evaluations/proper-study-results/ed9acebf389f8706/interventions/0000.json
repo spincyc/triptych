@@ -1,0 +1,6 @@
+{
+  "encoded": false,
+  "stage": "resolve-context",
+  "text": "Host effort deviation for this whole run: every agent stage is dispatched as a fresh Claude Code harness subagent with no inherited conversation, whose reasoning effort is inherited from the driver session. The harness exposes no per-dispatch effort control and no pinned-effort subagent definition (tpt-high, tpt-xhigh, tpt-max) is loaded in this session, so a stage's declared EFFORT cannot be enforced: stages run at the driver session's effort whatever they declare. The subagent model is inherited from the driver session, claude-opus-5-5[1m]. Packet bytes, workflow digest and declared efforts are unchanged.",
+  "timestamp": "2026-09-25T02:15:27Z"
+}

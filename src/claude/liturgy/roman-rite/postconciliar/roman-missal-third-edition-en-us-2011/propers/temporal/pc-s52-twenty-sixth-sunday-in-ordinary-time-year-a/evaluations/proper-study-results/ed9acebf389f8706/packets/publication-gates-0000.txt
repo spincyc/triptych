@@ -1,0 +1,16 @@
+WORKFLOW: proper-study v7
+WORKFLOW_DIGEST: 9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38
+RUN_ID: ed9acebf389f8706
+COMMIT: 8f5a1fa0fec4b255f89e124503b541bba816ecf5
+STAGE: publication-gates
+ITERATION: 0
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-09-27","proper":"liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a","provider":"claude","research_handoff":"none"}
+DOCUMENT_ROOT: src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a
+REPAIR_TARGETS: ["research","study","synthesis","homily","artifacts","publication"]
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: []
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

@@ -29,8 +29,25 @@ since this clone builds none; the fix changes no PDF input. Pages run 3608527274
 deployed it with conclusion success, and the live calendar route's Year A cell
 now links each labelled edition to its own provider's path.
 
-**Production.** Authorized in the
-[production plan](guidance/liturgy/propers-production-plan.md); not yet seeded.
+**Production accepted.** Run `ed9acebf389f8706` (`proper-study` v7), seeded
+at `8f5a1fa0f`, reached ACCEPTED on 2026-09-25 with no escalation: 24 packets,
+one cycle (research-review 0 found Augustine's "be ye sheep" reported as
+addressed to the unbelievers of John 10:26; research iteration 1 repaired it),
+and two host interventions (effort not pinnable; one worker stopped by the
+weekly usage limit before writing, rerun after the reset). The 33-page study,
+12-page concise study, 4-page homily and the canonical web edition are
+installed and wired; the run evidence is archived in the leaf and the driver's
+account is [CYCLES.md](workflows/reviews/claude-pc-s52-production-2026-09-25/CYCLES.md). Twenty-seven review advisories stand in the
+leaf's findings record; STU-002 and STU-010 are accuracy points for its first
+revision.
+
+**Not yet deployed.** The branch is pushed as
+`feature/claude/propers/novus-ordo/26`. Two things stand between it and
+`main`: the source-family migration ledger's catalogue pin is stale, so
+`make check-sources` fails, and the host's permission policy refused the
+re-pin as a check bypass; and the fast-forward of `main`, which deploys, is
+outside a Claude session's standing authority for anything but bug fixes and
+awaits the maintainer.
 
 ## Open-issue resolution and the corpus house-voice audit, 2026-09-24
 

@@ -1,0 +1,276 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "HOM-001",
+      "location": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/homily/10-homily.tex, third movement (lines 79-105, 'So which son are we?' to 'how long your life will be') and fifth movement (lines 142-152, 'Augustine, reading a proverb' to 'you have the second son')",
+      "problem": "The body carries 14 direct patristic quotations (about 247 words) and two unquoted reports, in 1,530 words. Every one is exact and to the point, and the preacher's own voice carries the argument, so this is not a lecture assembled from quotations. The load is uneven, though. The third movement names a Father six times in about 320 words: Aquinas, Chrysostom, Augustine three times, Aquinas again. In the fifth, four Augustine quotations in NPNF's archaic English ('thou', 'doth', 'thereat') come within about 130 words. At those two points a listener meets a new named authority roughly every second sentence, and it happens just where the homily turns from exegesis to application.",
+      "required_result": "If acted on: in each of those two movements, let two or three patristic voices carry the point and give the rest to the preacher's own words. Keep the quotations that later lines echo: Chrysostom's 'Why wast thou absent so long a time?', the raven's 'To-morrow', and the table of the ruler. For example, voice the wanderer of Enarr. 24.5 or one of the three In ep. Ioh. 5.12 sentences in the preacher's own words. The argument and the six-movement structure should not change.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-002",
+      "location": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/homily/10-homily.tex, lines 128-132 ('Blessed Ildefonso Schuster ... ``a~condescension and powerful energy \\ldots\\ such as the creation of the world itself never once called for'''')",
+      "problem": "Schuster's 'condescension' is spoken with no gloss. Schuster (Sacramentary III, p. 121) means God's stooping down into the abyss to draw the sinner out. To a present-day parish ear, though, 'condescension' first means a patronizing attitude, close to the opposite. The earlier 'came down to where we were' helps, but it comes five sentences before. The ellipsis also drops Schuster's hedge 'so to speak', which marks the phrase as figurative.",
+      "required_result": "If acted on: give the word a brief plain gloss in the preacher's own voice, outside the quotation marks. For example, say that he calls it a stooping down, a 'condescension', or tie it to 'came down' right beside the quotation. The quoted words stay exactly as in the 1927 English.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-003",
+      "location": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/homily/90-note.tex, lines 56-63 (the list of 'connections ... the homily's own'); with sections/homily/10-homily.tex lines 67-69 and 90-94",
+      "problem": "The note sets out to list the joins that no Father makes, and it leaves two out. (1) Jerome's rule is followed at once by 'Not by his first word'. That applies it to the sons' answers, which is the leaf's own join (research/interpretations.md, Reading 1 controlling claim). Jerome's sentence on Ezek 18:24 (PL 25, col. 180) speaks of old sins and old justices, not of a first word. Because Jerome is reported without quotation marks, only 'in one sentence' marks where his words end and the preacher's begin. (2) Chrysostom's 'God is not as man ...' is presented as 'what today's psalm asks'. Chrysostom does not connect his words to Psalm 24:7. A reader of the note could take either join to be the Father's.",
+      "required_result": "If acted on: add both joins to the note's list of the homily's own connections: Jerome's rule read of the sons' first word, and Chrysostom's saying set beside the psalm verse. Optionally, make the turn to the preacher's application audible in the speech, for example 'For the two sons, that means: not by the first word ...'.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a",
+      "element_keys": [
+        "entrance-antiphon",
+        "collect",
+        "first-reading",
+        "responsorial-psalm",
+        "second-reading-long",
+        "second-reading-short",
+        "gospel-acclamation",
+        "gospel",
+        "prayer-over-offerings",
+        "communion-antiphon-a",
+        "communion-antiphon-b",
+        "prayer-after-communion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Augustine",
+            "Thomas Aquinas",
+            "Robert Bellarmine",
+            "Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Augustine",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "afterward-he-repented"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "turning",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Augustine",
+            "Gregory the Great",
+            "Hilary of Poitiers"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "the-publicans-go-before-you"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "two-peoples",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Augustine",
+            "Hilary of Poitiers",
+            "Gregory the Great",
+            "Robert Bellarmine",
+            "Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Augustine"
+          ],
+          "component_keys": [
+            "the-mind-of-christ-jesus"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading-long",
+            "second-reading-short",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "obedient-son",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a",
+    "files": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/format.tex": "b3d5440008fe417157961b693a84abfa71acc0fea0357dee6ae56c35f541566c",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/homily.tex": "41d794574020fa1fa0a5dcd45a53f4cce316b134247bba8929fb6f5956636775",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/research/interpretations.md": "f085dbf2b28a4518499d16b48cba7ebcc41d25bf688d74bfb18639dc005703cb",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/research/scope.md": "3fcb3ae81a16e872df0068842808816a87a111389f1aeb04090e6c724ca974b3",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/homily/10-homily.tex": "c2b23d75d59edfd9d45ccc5d60bbc9e41d56a051be6ee0e4ba26402a0ab5248b",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/homily/90-note.tex": "11207674c770b1be16bf4b52be5c442d6b2e9908e7391e991d36b5a0d2007a66",
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+      "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "7",
+            "9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38",
+            "ed9acebf389f8706",
+            "8f5a1fa0fec4b255f89e124503b541bba816ecf5",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Reviewed the -homily output of PC-S52-A (homily.tex, sections/homily/10-homily.tex and 90-note.tex; every sealed input's SHA-256 matched REVIEW_INPUTS). First I read the spoken body straight through as a listener would hear it. It makes one exegetical argument, a compatible joining of the study's `turning` and `obedient-son` readings: God judges each as he is found; 'afterwards' stays open but must not be put off till tomorrow; the Son who said yes and went makes our turning possible and meets us at the altar. It uses the Gospel, Ezekiel, the psalm, Philippians under either form, the Collect, the Prayer over the Offerings, the Missal's second Communion option (1 John 3:16) and the Prayer after Communion. It moves from attention to conversion and hope and ends on a concrete response. It contains no anecdote, clerical identity, stage direction or composed prayer, and it keeps the Nostra aetate bound: the literal hearers are the chief priests and elders, and the moral application falls on the baptized. The pedagogy fits this Sunday: the word 'afterwards' (hystero in both Mt 21:29 and 21:32), the question 'which son are we?', the raven and the dove, and a return to the father's opening command. Mean sentence length is about 17 words and the longest is 43, so the body can be spoken as written. Evidence checked: every Douay-Rheims quotation against the tracked verse files (Mt 21:23-32, Ezek 1:1-3 and 18, Ps 24:4-9, Phil 2:1-11, 1 Jn 3:16-18); every English patristic quotation against the tracked text at the stated locus (NPNF Chrysostom Hom. in Matt. 67.3-4 and Hom. in Phil. 7; Augustine Sermo 82.14, Enarr. 24.5, Tract. in Ioh. 55.7 and 84.1, In ep. Ioh. 5.12; Schuster, Sacramentary III p. 121, in the tracked OCR). All are exact and in context. Jerome's 'Unusquisque ... in eo iudicabitur' was checked on the PL 25 col. 180 page image. Aquinas's 'Hodie, quasi per totum tempus vitae tuae', his clerics and religious, and 'duplex peccatum' were checked in the tracked Venice 1745 OCR (p. 275). I recounted the body at 1,530 spoken words, as the note states; at 120-130 words a minute that is about 11.8-12.8 minutes, and the note's pace arithmetic and its statement that no delivery was timed are truthful. The orations are described, not translated, and no Lectionary, NABRE or Missal English is quoted. The note's loci, routes and branch handling are accurate. Limits: I read the English against NPNF and the 1927 translation, not against the Greek or Latin originals; Aquinas was checked in uncorrected OCR, not on the page image; I timed no spoken delivery. Verdict: PASS. No blocking defect. Three advisories: patristic citation density in two movements, an unglossed 'condescension', and two of the homily's own joins missing from the note's list."
+}
