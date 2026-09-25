@@ -1,0 +1,46 @@
+{
+  "record_type": "deployment-verification",
+  "verified_on": "2026-09-25",
+  "commit": "c85b8a5d353b65e5b4c0d1c742f86ea95d4e4080",
+  "workflow_run": "https://github.com/spincyc/triptych/actions/runs/36172905361",
+  "workflow_conclusion": "success",
+  "publication": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a",
+  "provider": "claude",
+  "routes": [
+    {
+      "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a.pdf",
+      "http_status": 200,
+      "physical_pages": 33,
+      "sha256": "cbdec17636a338b03f5dbbffaec2a0162724358d0a3b074bcb286aca988e8fb2",
+      "compared_with": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a.pdf",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+      "http_status": 200,
+      "physical_pages": 12,
+      "sha256": "106d21c0ac77cb1dfdd303f2e6ba224702fb24fc81d03823611f00ddad3b1261",
+      "compared_with": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-homily.pdf",
+      "http_status": 200,
+      "physical_pages": 4,
+      "sha256": "2e2391674df899ed5e86558609da28d1c63ffefa112cb765b1a495f105b24a7e",
+      "compared_with": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-homily.pdf",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a.html",
+      "http_status": 200,
+      "sha256": "dae6f54637dafe2857baf2cb1902cd9a36338a98622b38e9059441d9e3f28c25",
+      "bytes": 152499
+    },
+    {
+      "url": "https://mystago.gy/library/novus-ordo-liturgy.html",
+      "http_status": 200,
+      "checked": "the Twenty-sixth Sunday Year A cell links the three Claude PDFs and the Claude web page under labels naming Claude; the Twenty-fifth Sunday cell names GPT and Claude on each link, each pointing to its own provider's path"
+    }
+  ]
+}

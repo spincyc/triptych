@@ -4,7 +4,7 @@ schema_version = 1
 id = "claude-postconciliar-twenty-sixth-three-documents-2026-09-24"
 owner = "PROJECT-WORK.md"
 promise = "Drive the proper-study workflow for provider claude on the postconciliar Twenty-Sixth Sunday in Ordinary Time, Year A, for Sunday 2026-09-27 through terminal acceptance: expansive study, concise study and standalone homily with fresh cold reviews, every workflow cycle and host intervention documented, and every contributing model declared exactly. Correct the postconciliar calendar's Twenty-Fifth Sunday cell, whose Claude links read as the ChatGPT edition's."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "claude-pc-s52-authorization"
@@ -43,8 +43,11 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-pc-s52-main-and-pages"
   criterion = "The publication reaches origin/main by fast-forward after the three deploy gates pass locally, and the triggered Pages run and the three PDF routes, the web route and the calendar cell are verified live."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/claude-pc-s52-production-2026-09-25/deployment-evidence.json"]
+  check = "contains"
+  path = "workflows/reviews/claude-pc-s52-production-2026-09-25/deployment-evidence.json"
+  needle = "\"workflow_conclusion\": \"success\""
 
   [[deliverables.requirements]]
   id = "pc-s51-catalog-provider-labels"

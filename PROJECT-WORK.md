@@ -41,13 +41,16 @@ account is [CYCLES.md](workflows/reviews/claude-pc-s52-production-2026-09-25/CYC
 leaf's findings record; STU-002 and STU-010 are accuracy points for its first
 revision.
 
-**Not yet deployed.** The branch is pushed as
-`feature/claude/propers/novus-ordo/26`. Two things stand between it and
-`main`: the source-family migration ledger's catalogue pin is stale, so
-`make check-sources` fails, and the host's permission policy refused the
-re-pin as a check bypass; and the fast-forward of `main`, which deploys, is
-outside a Claude session's standing authority for anything but bug fixes and
-awaits the maintainer.
+**Deployed.** On the maintainer's instruction of 2026-09-25 `main` was
+fast-forwarded to `c85b8a5d3` after the three deploy gates passed locally;
+Pages run 36172905361 concluded success, and the three live PDFs are
+byte-identical to the installed ones, with the web page and both calendar cells
+verified ([deployment evidence](workflows/reviews/claude-pc-s52-production-2026-09-25/deployment-evidence.json)).
+The source-family migration ledger's catalogue pin, left stale by this
+production's new source records, was re-pinned by the maintainer with
+`tools/source-family-migration refresh --audited-on 2026-09-25
+--accept-canonical-catalog` after the host refused it to the agent; `make
+check-sources` passes.
 
 ## Open-issue resolution and the corpus house-voice audit, 2026-09-24
 
