@@ -479,6 +479,57 @@ def artifacts(root: Path, provider: str, document: str) -> None:
             str(root / "build" / provider / f"{output}.pdf"))
 
 
+PROVIDER_LABELS = {"gpt": "GPT", "claude": "Claude"}
+PROVIDER_COLUMNS = {"ChatGPT": "gpt", "Claude": "claude"}
+CATALOG_LINK = re.compile(r"\[([^\]]*)\]\(\.\./(?:pdf|web)/([a-z]+)/[^)]*\)")
+
+
+def catalog_cell_providers(text: str, row: str, row_links: list[str], primary: str | None) -> None:
+    """Each catalog link must be recognizably its provider's.
+
+    A cell in a named provider column links that provider's editions only.
+    A cell whose column names no provider must say whose each link is: the
+    postconciliar calendar's cycle columns hold every provider's edition in
+    one cell. A bare label there reads as the primary provider's, so once a
+    second provider's links enter the cell, or a non-primary provider's links
+    stand alone in it, every label names its provider. On 2026-09-19 the Claude
+    Twenty-fifth Sunday links followed the ChatGPT edition's bare ones and read
+    as the same edition's.
+    """
+    lines = text.splitlines()
+    index = lines.index(row)
+    header = None
+    for above in range(index - 1, 0, -1):
+        if not lines[above].startswith("|"):
+            break
+        if re.fullmatch(r"\|(?:\s*:?-{3,}:?\s*\|)+", lines[above].strip()):
+            header = [part.strip() for part in lines[above - 1].strip().strip("|").split("|")]
+            break
+    cells = [part.strip() for part in row.strip().strip("|").split(" | ")]
+    for number, value in enumerate(cells):
+        if not any(link in value for link in row_links):
+            continue
+        column = header[number] if header and number < len(header) else None
+        links = CATALOG_LINK.findall(value)
+        if column in PROVIDER_COLUMNS:
+            for label, owner in links:
+                if owner != PROVIDER_COLUMNS[column]:
+                    raise ValueError(f"catalog column {column} links '{label}', "
+                                     f"another provider's edition")
+            return
+        providers = {owner for _, owner in links}
+        if providers <= {primary}:
+            return
+        for label, owner in links:
+            name = PROVIDER_LABELS.get(owner, owner)
+            if not re.search(rf"\b{re.escape(name)}\b", label):
+                raise ValueError(
+                    f"catalog cell under a cycle column links '{label}' without naming "
+                    f"{name}; qualify every label in the cell by its provider, as "
+                    "guidance/repository.md requires")
+        return
+
+
 def publication(root: Path, provider: str, document: str) -> None:
     catalog = scope(root, provider, document)
     artifacts(root, provider, document)
@@ -503,6 +554,7 @@ def publication(root: Path, provider: str, document: str) -> None:
     rows = [line for line in text.splitlines() if all(link in line for link in row_links)]
     if len(rows) != 1:
         raise ValueError("one catalog row must link all three PDFs and canonical web edition")
+    catalog_cell_providers(text, rows[0], row_links, release.get("provider"))
     publication_id = document if release.get("provider") == provider else f"{provider}:{document}"
     marker = f"<!-- triptych-publication-id: {publication_id} -->"
     if text.splitlines().count(marker) != 1:

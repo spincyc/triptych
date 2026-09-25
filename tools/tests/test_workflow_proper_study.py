@@ -629,6 +629,37 @@ class PublicationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "release record"):
             self.check()
 
+    def catalog_row(self, header: str | None, cells: list[str]) -> None:
+        catalog = self.root / self.catalog
+        marker = catalog.read_text().splitlines()[0]
+        table = [] if header is None else [header, "| " + " | ".join(["---"] * header.count(" | ")) + " |"]
+        catalog.write_text("\n".join([marker, "", *table, "| " + " | ".join(cells) + " |"]) + "\n")
+
+    def gpt_links(self, qualified: bool) -> str:
+        prefix = "GPT " if qualified else ""
+        links = [f"[{prefix}PDF](../pdf/gpt/{TLM}{suffix}.pdf)" for suffix in study.EDITIONS.values()]
+        links.append(f"[Read GPT](../web/gpt/{TLM}.html)" if qualified else f"[Read](../web/gpt/{TLM}.html)")
+        return " · ".join(links)
+
+    def test_bare_labels_beside_another_providers_links_fail(self):
+        claude = f"[Claude PDF](../pdf/claude/{TLM}.pdf) · [Read Claude](../web/claude/{TLM}.html)"
+        self.catalog_row("| Sunday | A | B | C |",
+                         ["**Sunday**", self.gpt_links(False) + " · " + claude, "Planned", "Planned"])
+        with self.assertRaisesRegex(ValueError, "without naming GPT"):
+            self.check()
+        self.catalog_row("| Sunday | A | B | C |",
+                         ["**Sunday**", self.gpt_links(True) + " · " + claude, "Planned", "Planned"])
+        self.check()
+
+    def test_a_provider_column_links_only_its_own_provider(self):
+        claude = f"[Read](../web/claude/{TLM}.html)"
+        header = "| ID | Sunday | ChatGPT | Claude |"
+        self.catalog_row(header, ["54", "**Sunday**", self.gpt_links(False) + " · " + claude, "Planned"])
+        with self.assertRaisesRegex(ValueError, "column ChatGPT links 'Read', another provider"):
+            self.check()
+        self.catalog_row(header, ["54", "**Sunday**", self.gpt_links(False), claude])
+        self.check()
+
     def test_changed_web_or_a_second_web_owner_fails(self):
         path = self.root / "web/gpt" / f"{TLM}.md"
         path.write_text("unreviewed installed web")

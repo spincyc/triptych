@@ -491,6 +491,16 @@ between the synthesis and web links. The canonical label remains `Research PDF`
 when appointed text is rights-limited. All three PDFs occupy the same owning
 catalog identity; their separate release records do not create extra rows.
 
+A postconciliar cycle cell names no provider, so a bare label in it reads as
+the primary provider's. Once a second provider's links enter a cycle cell, or
+a non-primary provider's links stand alone in one, every label in that cell
+names its provider: `GPT Synthesis PDF`, `Read Claude`. Qualifying a label
+already there changes no link and is part of wiring the new edition. A named
+`ChatGPT` or `Claude` column links only that provider's editions. The
+proper-study publication gate refuses either defect; on 2026-09-19 the Claude
+Twenty-fifth Sunday links were appended after the ChatGPT edition's bare ones
+and read as the same edition's.
+
 Show `Planned` when the identity has no installed artifact for that provider.
 The row still carries its stable-publication marker, which owns the canonical
 identity whether or not the canonical PDF is also linked; the companion

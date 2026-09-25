@@ -1770,7 +1770,7 @@ release attachment, announcement, or promotion.
 | `library/law-and-church-discipline.md` | `23c168cb77e2efd6735778a57500f1b1b287f785c1bc7baf57a461dd96a7a744` |
 | `library/liturgy.md` | `ceddcd0f3e4c3c164917299ad7fc4fcedea6552d835687f55747787dc338a334` |
 | `library/mariology.md` | `01b55285b49898753023f97480dd32577bed1174684bc257fbfdc84f1c73362e` |
-| `library/novus-ordo-liturgy.md` | `a362eb7e63aa24dd2c9d0bdbe27d2647ec073042c6e0cd0158eec8226821abab` |
+| `library/novus-ordo-liturgy.md` | `113815b45d59da22903e7b60f92ab06a18b604a32247d8ffab4eaa8e6eae3bec` |
 | `library/prayer.md` | `052c883da951a6089c0f1da44b9554653adcb440ead314cc36c350297d7ddb20` |
 | `library/scripture.md` | `739ced41934e834916f3c33e831c616708eaa4f7ba7f863e2ec9299cc4878570` |
 | `library/traditional-latin-mass.md` | `2f35162ee05838d521ad05c2f470b0be7688b2924a3b3191d07d859f6f22b7ec` |
