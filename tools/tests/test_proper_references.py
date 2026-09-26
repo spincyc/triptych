@@ -34,11 +34,19 @@ import unittest
 from importlib.machinery import SourceFileLoader
 from importlib.util import module_from_spec, spec_from_loader
 from pathlib import Path
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import _calendars  # noqa: E402
+from _psalms import (  # noqa: E402
+    NumberingError,
+    convert_point,
+    convert_range,
+    psalm_ceiling,
+    psalm_extent,
+)
 
 
 def load_tool(name: str):
@@ -795,6 +803,539 @@ class ResolveAppointedPassages(unittest.TestCase):
         self.assertEqual(set(resolved), appointed_refs)
         self.assertEqual(browser_refs, appointed_refs)
         self.assertTrue(all(row["text"] for row in resolved.values()))
+
+    def test_structure_reads_each_citation_under_its_own_numbering(self):
+        """The browser structure honours a proper's and a cycle's numbering.
+
+        `calendar_structure` once read every citation under the calendar's
+        declared numbering while the reading view read it under the proper's
+        own, so the two disagreed. The postconciliar file declares Hebrew; its
+        ot-26 Communion Antiphon, `Psalm 118:49-50` declared Vulgate, reached
+        the browser unresolved ("hebrew Psalm 118:49-50 is outside the
+        psalm"), and ot-25's `Psalm 118:4-5` resolved to Vulgate Psalm 117 --
+        the wrong words -- while `show` printed the right ones.
+
+        Every way a citation reaches a mass is held to the one rule: a proper
+        of its own, a mass-level `takes_from`, a proper-level `takes_from`, and
+        both reading courses, the Sunday `cycles` and the ferial
+        `weekday_cycles`.
+        """
+
+        def psalm(chapter: int, first: int, last: int) -> dict:
+            return {
+                "book": "Psalms",
+                "ranges": [
+                    {
+                        "begin": {"chapter": chapter, "verse": first},
+                        "end": {"chapter": chapter, "verse": last},
+                    }
+                ],
+                "ref": f"Psalm {chapter}:{first}-{last}",
+            }
+
+        day = {
+            "key": "day",
+            "name": "Day",
+            "season": "ordinary-time",
+            "registry": "day",
+            "propers": [
+                {
+                    "name": "Entrance Antiphon",
+                    "source": "scripture",
+                    "verses": [psalm(25, 1, 3)],
+                },
+                {
+                    "name": "Responsorial Psalm",
+                    "source": "scripture",
+                    "psalm_numbering": "vulgate",
+                    "cycles": {
+                        "A": {"verses": [psalm(24, 4, 5)]},
+                        "B": {
+                            "psalm_numbering": "hebrew",
+                            "verses": [psalm(25, 1, 3)],
+                        },
+                    },
+                },
+                {
+                    "name": "Gospel Acclamation",
+                    "source": "scripture",
+                    "psalm_numbering": "vulgate",
+                    "weekday_cycles": {
+                        "I": {"verses": [psalm(118, 1, 2)]},
+                        "II": {
+                            "psalm_numbering": "hebrew",
+                            "verses": [psalm(119, 1, 2)],
+                        },
+                    },
+                },
+                {
+                    "name": "Communion Antiphon",
+                    "source": "scripture",
+                    "psalm_numbering": "vulgate",
+                    "verses": [psalm(118, 49, 50)],
+                },
+            ],
+        }
+        borrower = {
+            "key": "borrower",
+            "name": "Borrower",
+            "season": "ordinary-time",
+            "registry": "borrower",
+            "takes_from": {"mass": "day"},
+        }
+        # A proper-level reference carries no numbering of its own; the text it
+        # names is read under the numbering of the proper that prints it.
+        partial = {
+            "key": "partial",
+            "name": "Partial",
+            "season": "ordinary-time",
+            "registry": "partial",
+            "propers": [{"name": "Communion Antiphon", "takes_from": {"mass": "day"}}],
+        }
+        source = {
+            "calendar": "synthetic",
+            "edition": "Synthetic source edition",
+            "edition_short": "Synthetic Missal",
+            "psalm_numbering": "hebrew",
+            "sections": {
+                "seasonal": {
+                    "kind": "seasonal",
+                    "masses": [day, borrower, partial],
+                }
+            },
+        }
+        tokens = {"Psalms": "Ps"}
+        with (
+            patch.object(propers_tool, "load_calendar", return_value=source),
+            patch.object(
+                propers_tool, "translation_overlay", return_value=({}, {}, [], {})
+            ),
+            patch.object(propers_tool, "publication_records", return_value=({}, [])),
+        ):
+            structure = propers_tool.calendar_structure(ROOT, "synthetic", tokens)
+
+        def loci(citation: dict) -> dict:
+            self.assertIsNone(citation["unresolved"], citation["ref"])
+            return {
+                system: [(row["chapter"], row["first"], row["last"]) for row in rows]
+                for system, rows in citation["loci"].items()
+            }
+
+        # (proper, course, cycle) -> the loci its one citation must reach.
+        wanted = {
+            # Declared Vulgate in a Hebrew file: the Vulgate's 118 is the
+            # Hebrew 119, which has the verses.
+            ("Communion Antiphon", None, None): {
+                "vulgate": [(118, 49, 50)],
+                "hebrew": [(119, 49, 50)],
+            },
+            # Declaring nothing, the proper inherits the calendar's.
+            ("Entrance Antiphon", None, None): {
+                "vulgate": [(24, 1, 3)],
+                "hebrew": [(25, 1, 3)],
+            },
+            # A cycle declaring nothing inherits its proper's ...
+            ("Responsorial Psalm", "cycles", "A"): {
+                "vulgate": [(24, 4, 5)],
+                "hebrew": [(25, 4, 5)],
+            },
+            # ... and one declaring its own keeps it.
+            ("Responsorial Psalm", "cycles", "B"): {
+                "vulgate": [(24, 1, 3)],
+                "hebrew": [(25, 1, 3)],
+            },
+            # The ferial course obeys the same rule as the Sunday one.
+            ("Gospel Acclamation", "weekday_cycles", "I"): {
+                "vulgate": [(118, 1, 2)],
+                "hebrew": [(119, 1, 2)],
+            },
+            ("Gospel Acclamation", "weekday_cycles", "II"): {
+                "vulgate": [(118, 1, 2)],
+                "hebrew": [(119, 1, 2)],
+            },
+        }
+        carried = {
+            "day": set(wanted),
+            "borrower": set(wanted),
+            "partial": {("Communion Antiphon", None, None)},
+        }
+        self.assertEqual(
+            {mass["key"] for mass in structure["masses"]}, set(carried)
+        )
+        for mass in structure["masses"]:
+            with self.subTest(mass=mass["key"]):
+                found = {}
+                for proper in mass["propers"]:
+                    if proper["citations"]:
+                        found[(proper["name"], None, None)] = proper["citations"]
+                    for course in propers_tool.CYCLE_KEYS:
+                        for cycle, owner in (proper.get(course) or {}).items():
+                            found[(proper["name"], course, cycle)] = owner[
+                                "citations"
+                            ]
+                self.assertEqual(set(found), carried[mass["key"]])
+                for slot, citations in found.items():
+                    self.assertEqual(len(citations), 1, slot)
+                    self.assertEqual(loci(citations[0]), wanted[slot], slot)
+
+        # The reading view's derivation is the rule; the structure must emit
+        # exactly what it names, citation for citation.
+        for mass in (day, borrower, partial):
+            expected = [
+                propers_tool.citation_structure(entry, numbering, tokens)
+                for _, proper, _ in propers_tool.appointed_propers(source, mass)
+                for entry, numbering in propers_tool.numbered_proper_entries(
+                    proper, source["psalm_numbering"]
+                )
+            ]
+            projected = next(
+                row for row in structure["masses"] if row["key"] == mass["key"]
+            )
+            emitted = [
+                citation
+                for proper in projected["propers"]
+                for owner in [
+                    proper,
+                    *[
+                        cycle_owner
+                        for course in propers_tool.CYCLE_KEYS
+                        for cycle_owner in (proper.get(course) or {}).values()
+                    ],
+                ]
+                for citation in owner["citations"]
+            ]
+            self.assertEqual(emitted, expected, mass["key"])
+
+    def test_structure_refuses_a_range_the_concordance_would_trim(self):
+        """A range past a psalm's tracked bound is refused, never shortened.
+
+        `convert_range` keeps only the verses the concordance numbers, and the
+        concordance was compiled from a printing that merges Vulgate 28:10-11
+        and 150:5-6, so it ends both psalms a verse early. Once the structure
+        pass read each citation under its own numbering, the postconciliar
+        christ-the-king Communion Antiphon, `Ps 28, 10-11` declared Vulgate,
+        was served as Hebrew 29:10 alone: 29:11, "Dominus benedicet populo suo
+        in pace", was gone and nothing said so. The Hebrew-declared
+        responsorial endpoint at 150:6 had been served one verse short the
+        same way, and so had the one at Hebrew 56:14, for a different reason:
+        that is no merge. Every tracked Vulgate witness prints Psalm 55 with
+        thirteen verses, the two systems divide the psalm's body differently,
+        and Hebrew 56:14 has no Vulgate verse of its own for a concordance to
+        name -- splitting the Douay's merged verses would not supply one. A
+        citation that cannot be converted whole is served unresolved, naming
+        the bound, with no loci at all.
+
+        Each range is built one verse past whatever bound the concordance
+        states, so the test holds the rule and not today's table.
+        """
+
+        def psalm(chapter: int, first: int, last: int) -> dict:
+            return {
+                "book": "Psalms",
+                "ranges": [
+                    {
+                        "begin": {"chapter": chapter, "verse": first},
+                        "end": {"chapter": chapter, "verse": last},
+                    }
+                ],
+                "ref": f"Psalm {chapter}:{first}-{last}",
+            }
+
+        past = {
+            # (proper, declared numbering, psalm): christ-the-king's shape,
+            # and the two Hebrew-declared responsorial endpoints.
+            ("Communion Antiphon", "vulgate", 28),
+            ("Responsorial Psalm", "hebrew", 150),
+            ("Psalm", "hebrew", 56),
+        }
+        propers = [
+            {
+                "name": name,
+                "source": "scripture",
+                "psalm_numbering": numbering,
+                "verses": [
+                    psalm(
+                        chapter,
+                        psalm_ceiling(chapter, numbering),
+                        psalm_ceiling(chapter, numbering) + 1,
+                    )
+                ],
+            }
+            for name, numbering, chapter in sorted(past)
+        ]
+        # The same psalm ending exactly at the bound still converts.
+        bound = psalm_ceiling(28, "vulgate")
+        propers.append(
+            {
+                "name": "Entrance Antiphon",
+                "source": "scripture",
+                "psalm_numbering": "vulgate",
+                "verses": [psalm(28, bound - 1, bound)],
+            }
+        )
+        day = {
+            "key": "day",
+            "name": "Day",
+            "season": "ordinary-time",
+            "registry": "day",
+            "propers": propers,
+        }
+        source = {
+            "calendar": "synthetic",
+            "edition": "Synthetic source edition",
+            "edition_short": "Synthetic Missal",
+            "psalm_numbering": "hebrew",
+            "sections": {"seasonal": {"kind": "seasonal", "masses": [day]}},
+        }
+        with (
+            patch.object(propers_tool, "load_calendar", return_value=source),
+            patch.object(
+                propers_tool, "translation_overlay", return_value=({}, {}, [], {})
+            ),
+            patch.object(propers_tool, "publication_records", return_value=({}, [])),
+        ):
+            structure = propers_tool.calendar_structure(
+                ROOT, "synthetic", {"Psalms": "Ps"}
+            )
+
+        served = {
+            row["name"]: row["citations"][0] for row in structure["masses"][0]["propers"]
+        }
+        for name, numbering, chapter in past:
+            with self.subTest(proper=name):
+                citation = served[name]
+                high = psalm_ceiling(chapter, numbering)
+                other = "hebrew" if numbering == "vulgate" else "vulgate"
+                self.assertEqual(citation["loci"], {})
+                self.assertEqual(
+                    citation["unresolved"],
+                    f"{numbering} Psalm {chapter}:{high}-{high + 1} runs past "
+                    f"verse {high}, where the tracked psalm concordance ends "
+                    f"{numbering} Psalm {chapter}, so converting it to {other} "
+                    f"would drop verse {high + 1}",
+                )
+        control = served["Entrance Antiphon"]
+        self.assertIsNone(control["unresolved"])
+        self.assertEqual(
+            control["loci"],
+            {
+                "vulgate": [{"chapter": 28, "first": bound - 1, "last": bound}],
+                "hebrew": [{"chapter": 29, "first": bound - 1, "last": bound}],
+            },
+        )
+
+    def test_structure_serves_a_whole_psalm_as_the_verses_it_is(self):
+        """A psalm cited whole is served as the verses it is in each numbering.
+
+        `convert_range` moves a range with an open end by its chapter number
+        alone and keeps what it knows to itself: for Vulgate Psalm 147 it
+        returns Hebrew 147 and the caveat "vulgate 147 is hebrew 147:12-20",
+        and `spans_in` threw the caveat away. So the 1962 palm-sunday
+        Procession Antiphon, `Psalm 147` declared Vulgate, was served as all of
+        Hebrew 147, and a Hebrew-numbered reader was given eleven verses of
+        Vulgate 146 before the nine cited. The check on served structure could
+        not see it, because it skipped every locus with an open end.
+
+        An open end is closed at its psalm's bound in the numbering it is read
+        under, and the closed range converts verse for verse like any other. A
+        converted piece that is the whole of its psalm is served whole, open at
+        both ends, as the citation was: the editions of one system still number
+        the same psalm differently -- the Clementine, the 1899 Douay and the
+        CPDV print Vulgate 147 as verses 1-9 where the concordance runs it
+        12-20, and every tracked witness but the Challoner Douay prints a sixth
+        verse of Psalm 150 that the concordance does not number. Any other
+        piece is served at the verses it converts to.
+        """
+
+        def whole(chapter: int) -> dict:
+            return {
+                "book": "Psalms",
+                "ranges": [
+                    {"begin": {"chapter": chapter}, "end": {"chapter": chapter}}
+                ],
+                "ref": f"Psalm {chapter}",
+            }
+
+        cited = {
+            "vulgate": [147, 46, 9],
+            "hebrew": [147, 150],
+        }
+        day = {
+            "key": "day",
+            "name": "Day",
+            "season": "ordinary-time",
+            "registry": "day",
+            "propers": [
+                {
+                    "name": f"Psalm ({numbering})",
+                    "source": "scripture",
+                    "psalm_numbering": numbering,
+                    "verses": [whole(chapter) for chapter in chapters],
+                }
+                for numbering, chapters in cited.items()
+            ],
+        }
+        source = {
+            "calendar": "synthetic",
+            "edition": "Synthetic source edition",
+            "edition_short": "Synthetic Missal",
+            "psalm_numbering": "hebrew",
+            "sections": {"seasonal": {"kind": "seasonal", "masses": [day]}},
+        }
+        with (
+            patch.object(propers_tool, "load_calendar", return_value=source),
+            patch.object(
+                propers_tool, "translation_overlay", return_value=({}, {}, [], {})
+            ),
+            patch.object(propers_tool, "publication_records", return_value=({}, [])),
+        ):
+            structure = propers_tool.calendar_structure(
+                ROOT, "synthetic", {"Psalms": "Ps"}
+            )
+
+        served = {
+            (row["name"], citation["ref"]): citation
+            for row in structure["masses"][0]["propers"]
+            for citation in row["citations"]
+        }
+        entire = (None, None)
+        wanted = {
+            # The worked case: Vulgate 147 is Hebrew 147:12-20, not Hebrew 147.
+            ("Psalm (vulgate)", "Psalm 147"): {
+                "vulgate": [(147, *entire)],
+                "hebrew": [(147, 12, 20)],
+            },
+            # A whole psalm that is a whole psalm in the other system stays
+            # whole, as it was served before.
+            ("Psalm (vulgate)", "Psalm 46"): {
+                "vulgate": [(46, *entire)],
+                "hebrew": [(47, *entire)],
+            },
+            # A psalm the other system divides is both of its halves, where it
+            # was once refused for want of a verse to choose between them.
+            ("Psalm (vulgate)", "Psalm 9"): {
+                "vulgate": [(9, *entire)],
+                "hebrew": [(9, *entire), (10, *entire)],
+            },
+            ("Psalm (hebrew)", "Psalm 147"): {
+                "hebrew": [(147, *entire)],
+                "vulgate": [(146, *entire), (147, *entire)],
+            },
+            # Not closed at the concordance's fifth verse, which would lose the
+            # sixth that the Clementine prints.
+            ("Psalm (hebrew)", "Psalm 150"): {
+                "hebrew": [(150, *entire)],
+                "vulgate": [(150, *entire)],
+            },
+        }
+        self.assertEqual(set(served), set(wanted))
+        for slot, loci in wanted.items():
+            with self.subTest(slot=slot):
+                citation = served[slot]
+                self.assertIsNone(citation["unresolved"], citation["unresolved"])
+                self.assertEqual(
+                    {
+                        system: [
+                            (row["chapter"], row["first"], row["last"])
+                            for row in rows
+                        ]
+                        for system, rows in citation["loci"].items()
+                    },
+                    loci,
+                )
+
+        # The check reads open ends too: handed what `convert_range` makes of
+        # the open range by itself, it names the difference instead of
+        # passing a whole psalm moved by its chapter number.
+        whole_147 = {"chapter": 147}
+        moved, _ = convert_range("Psalms", whole_147, whole_147, "vulgate", "hebrew")
+        self.assertEqual(
+            propers_tool.dropped_verses(
+                "Psalms", whole_147, whole_147, "vulgate", "hebrew", moved
+            ),
+            "vulgate Psalm 147:12-20 would convert to 20 verses in hebrew, not its 9",
+        )
+
+    def test_served_structure_converts_every_cited_verse(self):
+        """Every tracked structure file serves each psalm citation one set of verses.
+
+        The concordance maps verse to verse, so a psalm citation converted
+        whole covers the same verses in each system. Each side is read back
+        into Vulgate verses -- an open end filled from the psalm's bound in
+        its own system, a Hebrew verse moved through the concordance -- and
+        the two sides must be one set. A trimmed range covers fewer verses on
+        one side; a whole psalm moved by its chapter number covers others. The
+        1962 palm-sunday `Psalm 147`, served as all of Hebrew 147, was the
+        second kind, and this test once skipped it along with every other
+        open end.
+
+        The files are named, not globbed, so a missing one fails rather than
+        passing with nothing checked, and each must hold psalm citations.
+        """
+
+        def verses(rows: list[dict], system: str) -> set[tuple[int, int]]:
+            """The Vulgate verses one side's loci cover."""
+            covered: set[tuple[int, int]] = set()
+            for row in rows:
+                chapter = int(row["chapter"])
+                low, high = psalm_extent(chapter, system)
+                first = low if row["first"] is None else int(row["first"])
+                last = high if row["last"] is None else int(row["last"])
+                if first < low or last > high:
+                    raise NumberingError(
+                        f"{system} Psalm {chapter}:{first}-{last} leaves the "
+                        f"psalm's tracked verses {low}-{high}"
+                    )
+                for verse in range(first, last + 1):
+                    if system == "vulgate":
+                        covered.add((chapter, verse))
+                    else:
+                        moved, into, _ = convert_point(
+                            chapter, verse, "hebrew", "vulgate"
+                        )
+                        covered.add((moved, into))
+            return covered
+
+        def citations(node, where: str = ""):
+            if isinstance(node, dict):
+                if {"ref", "loci", "unresolved"} <= set(node):
+                    yield where, node
+                    return
+                where = node.get("key", where) if "propers" in node else where
+                for value in node.values():
+                    yield from citations(value, where)
+            elif isinstance(node, list):
+                for value in node:
+                    yield from citations(value, where)
+
+        tree = ROOT / "src/web/data/structure/propers"
+        expected = {"postconciliar", "roman-1962", "roman-pre-1955"}
+        index = json.loads((tree / "index.json").read_text(encoding="utf-8"))
+        self.assertEqual({row["id"] for row in index["missals"]}, expected)
+        self.assertEqual(
+            {path.stem for path in tree.glob("*.json")} - {"index"}, expected
+        )
+        for name in sorted(expected):
+            payload = json.loads((tree / f"{name}.json").read_text(encoding="utf-8"))
+            checked, uneven = 0, []
+            for mass, citation in citations(payload):
+                if citation.get("book") != "Psalms" or citation["unresolved"]:
+                    continue
+                checked += 1
+                loci = citation["loci"]
+                try:
+                    sides = {
+                        system: verses(loci[system], system)
+                        for system in ("vulgate", "hebrew")
+                    }
+                except NumberingError as error:
+                    uneven.append(f"{mass}: {citation['ref']}: {error}")
+                    continue
+                if sides["vulgate"] != sides["hebrew"]:
+                    uneven.append(f"{mass}: {citation['ref']} {loci}")
+            with self.subTest(file=name):
+                self.assertGreater(checked, 0)
+                self.assertEqual(uneven, [])
 
 
 class ResolveCommonSets(unittest.TestCase):

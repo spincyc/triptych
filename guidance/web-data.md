@@ -211,13 +211,39 @@ outside the repository along with its index and cannot reach the public tree.
 Every citation is resolved here, in both numbering systems, so that **no
 numbering logic ships to the browser**. A page reads its chosen translation's
 `numbering` and takes the loci already computed for it. Two variants, not one
-per translation: numbering is a property of the system, not of the edition.
+per translation: numbering is a property of the system, not of the edition. (Editions of one system can still print a psalm's verses differently — the Clementine, 1899 Douay and CPDV print Vulgate 147 as verses 1-9 where the concordance, following the Challoner Douay, numbers them 12-20 — which is why a citation is never converted into its own numbering.)
 
 A citation that cannot be converted carries the reason in `unresolved` and no
-loci at all. This is the load-bearing rule of the whole design. The eleven
-postconciliar antiphons that carry Vulgate numbers inside a Hebrew-declared
-file would otherwise resolve to real, wrong verses, and a page would render
-them confidently. A page that explains itself beats one that is quietly wrong.
+loci at all. This is the load-bearing rule of the whole design, and a
+conversion that would lose a cited verse is one that cannot be made. The
+christ-the-king Communion Antiphon, `Psalm 28:10-11` declared Vulgate, is the
+worked case: the tracked psalm concordance ends Psalm 28 at verse 10, because
+the printing it was compiled from merges 28:10-11, so converting the range gives
+Hebrew 29:10 alone — a real verse, one short, and a page would render it
+confidently. The structure pass refuses it instead and names the bound. It
+refuses the responsorial `Psalm 150:5-6` for the same merge, and
+`Psalm 56:13-14` because no Vulgate verse answers Hebrew 56:14 at all: every
+tracked Vulgate witness divides that psalm's body into fewer verses. A page
+that explains itself beats one that is quietly wrong.
+
+A psalm cited whole converts to the verses it is, not to a chapter number.
+Vulgate `Psalm 147`, the 1962 palm-sunday Procession Antiphon, is Hebrew
+147:12-20; served as Hebrew 147 it gave a Hebrew-numbered reader the eleven
+verses of Vulgate 146 first. The structure pass closes an open end at the
+psalm's concordance bound before converting and serves a piece that is a whole
+psalm as a whole psalm, open at both ends, because editions of one system
+number the same psalm differently: the Vulgate side of that antiphon stays
+`147` whole, which the Challoner Douay prints as verses 12-20 and the
+Clementine as 1-9.
+
+Each citation is read under its own numbering — its cycle's, else its
+proper's, else the calendar's — which is the rule `show` applies too. The eleven
+postconciliar antiphons that print Vulgate numbers inside the Hebrew-declared
+file declare `psalm_numbering: vulgate` on the proper and resolve to the verses
+they cite; a twelfth, christ-the-king's, is the refused range above. Until
+2026-09-25 the structure pass read all twelve under the calendar's numbering,
+and served eleven as unresolved for the wrong reason and ot-25's
+`Psalm 118:4-5` as the wrong psalm while `show` printed the right one.
 
 Cycle-varying propers keep each year's citations apart under `cycles`, because
 a merged list is one the browser cannot tell apart — and because merging them

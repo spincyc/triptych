@@ -27,6 +27,7 @@ from _psalms import (  # noqa: E402
     NumberingError,
     convert_range,
     convert_reference,
+    psalm_extent,
 )
 from _loci import range_to_loci  # noqa: E402
 from _proper_latin import (  # noqa: E402
@@ -119,7 +120,7 @@ EXAMPLES = {
                 "  -> build/example-propers/structure/propers/roman-pre-1955.json",
                 "  -> build/example-propers/structure/propers/index.json",
                 "  Latin withheld from publication: 1812",
-                "  refused: 34",
+                "  refused: 27",
             ),
             "WRITES one file per missal and the manifest naming them. --out here is untracked; the default writes tracked src/web/data",
         ),
@@ -1049,15 +1050,167 @@ def book_tokens() -> dict[str, str]:
         return {row["modern_name"]: row["token"] for row in csv.DictReader(handle, delimiter="\t")}
 
 
+def verse_runs(verses: list[int]) -> str:
+    """`verse 11`, `verses 11-12`, or `verses 1-9 and 20`, for a reason."""
+    runs: list[list[int]] = []
+    for verse in verses:
+        if runs and verse == runs[-1][1] + 1:
+            runs[-1][1] = verse
+        else:
+            runs.append([verse, verse])
+    named = [str(low) if low == high else f"{low}-{high}" for low, high in runs]
+    noun = "verse" if len(verses) == 1 else "verses"
+    return f"{noun} {' and '.join(named)}"
+
+
+def closed_at_bounds(
+    book: str, begin: dict, end: dict | None, system: str
+) -> tuple[dict, dict]:
+    """One psalm range with any open end closed at its psalm's bound in `system`.
+
+    An open end means "from the psalm's first verse" or "to its last", and the
+    first is not always 1: the concordance runs Vulgate 147 from 12 to 20.
+    `convert_range` does not close it. Given an open end it moves the chapter
+    number alone and returns what it knows as a caveat, so Vulgate `Psalm 147`,
+    which is Hebrew 147:12-20, came back as Hebrew 147 whole -- Vulgate 146's
+    eleven verses included -- and the caveat was dropped. Closed first, the
+    range converts verse for verse like any other and `dropped_verses` can
+    count it. A range across psalms, or outside the psalter, is returned as it
+    came, for `convert_range` to refuse.
+    """
+    end = end or begin
+    chapter = begin.get("chapter")
+    if book != PSALMS or chapter is None or end.get("chapter", chapter) != chapter:
+        return begin, end
+    extent = psalm_extent(int(chapter), system)
+    if extent is None:
+        return begin, end
+    low, high = extent
+    if begin.get("verse") is None:
+        begin = {**begin, "verse": low}
+    if end.get("verse") is None:
+        end = {**end, "chapter": chapter, "verse": high}
+    return begin, end
+
+
+def served_whole(piece: dict, system: str) -> dict:
+    """A converted piece that is the whole of its psalm, served as the psalm.
+
+    Only a range the citation left open comes through here: a whole psalm
+    cited whole is served whole, open at both ends, in the other system as
+    well. Closing it at the concordance's verses would be wrong in the editions
+    that number the psalm otherwise -- the Clementine, the 1899 Douay and the
+    CPDV print Vulgate 147 as verses 1-9, not 12-20, and every tracked witness
+    but the Challoner Douay prints a sixth verse of Psalm 150 that the
+    concordance does not number.
+    """
+    begin, end = piece.get("begin") or {}, piece.get("end") or {}
+    chapter = begin.get("chapter")
+    if chapter is None or end.get("chapter") != chapter:
+        return piece
+    if begin.get("part") or end.get("part"):
+        return piece
+    if (begin.get("verse"), end.get("verse")) != psalm_extent(int(chapter), system):
+        return piece
+    return {"begin": {"chapter": chapter}, "end": {"chapter": chapter}}
+
+
+def dropped_verses(
+    book: str, begin: dict, end: dict | None, source: str, target: str, pieces: list[dict]
+) -> str:
+    """Why converting one range to `target` would lose a verse it cites, or ''.
+
+    `convert_range` keeps only the verses the tracked concordance numbers, so a
+    range running past a psalm's bound there comes back shorter rather than
+    refused. The concordance was compiled from a printing that merges Vulgate
+    28:10-11 and 150:5-6, so `Psalm 28:10-11` declared Vulgate was served as
+    Hebrew 29:10 alone and `Psalm 150:5-6` declared Hebrew as Vulgate 150:5:
+    real verses, one short, with nothing on the page to say so. A range that
+    cannot be converted whole is not converted; the reason names the bound it
+    ran into.
+
+    Not every such bound is a merge. Hebrew `Psalm 56:13-14` is refused because
+    every tracked Vulgate witness prints Psalm 55 with thirteen verses: the two
+    systems divide the psalm's body differently, Hebrew 56:14 has no Vulgate
+    verse of its own, and splitting the Douay's merged verses would not supply
+    one.
+
+    An open end is counted as the verses it stands for: each side is closed at
+    its psalm's bound (`closed_at_bounds`) before the two are compared, so a
+    whole psalm moved by its chapter number alone does not pass for converted.
+
+    The check sits here rather than in `convert_range`, so that function's
+    other callers are unchanged; `guidance/propers-for-agents.md` ("What fails
+    silently") records that they still trim.
+    """
+    if book != PSALMS or source == target:
+        return ""
+    begin, end = closed_at_bounds(book, begin, end, source)
+    chapter, first, last = begin.get("chapter"), begin.get("verse"), end.get("verse")
+    if chapter is None or first is None or last is None:
+        return ""  # outside the psalter; convert_range refuses it itself
+    if end.get("chapter", chapter) != chapter:
+        return ""  # convert_range refuses a range across psalms itself
+    chapter, first, last = int(chapter), int(first), int(last)
+    cited = last - first + 1
+    served = 0
+    for piece in pieces:
+        opens, closes = closed_at_bounds(book, piece["begin"], piece["end"], target)
+        served += int(closes["verse"]) - int(opens["verse"]) + 1
+    if served == cited:
+        return ""
+    reference = f"{source} Psalm {chapter}:{first}-{last}"
+    if served > cited:
+        return f"{reference} would convert to {served} verses in {target}, not its {cited}"
+    extent = psalm_extent(chapter, source)
+    if extent is None:
+        return f"{reference} would convert to {served} of its {cited} verses in {target}"
+    low, high = extent
+    lost = [verse for verse in range(first, last + 1) if not low <= verse <= high]
+    bounds = []
+    if first < low:
+        bounds.append(f"begins before verse {low}, where the tracked psalm concordance "
+                      f"begins {source} Psalm {chapter}")
+    if last > high:
+        bounds.append(f"runs past verse {high}, where the tracked psalm concordance "
+                      f"ends {source} Psalm {chapter}")
+    if not bounds or not lost:
+        return f"{reference} would convert to {served} of its {cited} verses in {target}"
+    return (
+        f"{reference} {' and '.join(bounds)}, so converting it to {target} "
+        f"would drop {verse_runs(lost)}"
+    )
+
+
 def spans_in(entry: dict, source: str, target: str) -> list[dict]:
-    """One citation's ranges as explicit loci in `target` numbering."""
+    """One citation's ranges as explicit loci in `target` numbering.
+
+    A psalm range left open is closed at its psalm's bound before it is
+    converted, and each converted piece that is a whole psalm is served open
+    again (`closed_at_bounds`, `served_whole`): Vulgate `Psalm 147` is Hebrew
+    147:12-20, and Vulgate `Psalm 9` is Hebrew 9 and 10. Raises NumberingError
+    where a range cannot be converted whole; see `dropped_verses`.
+    """
     book = str(entry.get("book") or "")
     loci: list[dict] = []
     for span in entry.get("ranges") or []:
         if not isinstance(span, dict):
             continue
-        converted, _ = convert_range(book, span.get("begin") or {}, span.get("end"), source, target)
+        begin, end = span.get("begin") or {}, span.get("end")
+        opened = (
+            book == PSALMS
+            and source != target
+            and None in (begin.get("verse"), (end or begin).get("verse"))
+        )
+        if opened:
+            begin, end = closed_at_bounds(book, begin, end, source)
+        converted, _ = convert_range(book, begin, end, source, target)
+        lost = dropped_verses(book, begin, end, source, target, converted)
+        if lost:
+            raise NumberingError(lost)
         for piece in converted:
+            if opened:
+                piece = served_whole(piece, target)
             loci.extend(range_to_loci(piece.get("begin") or {}, piece.get("end") or {}))
     return loci
 
@@ -2531,9 +2684,17 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
                 STRUCTURE_SURFACES,
             )
 
+            # Each citation is read under its own numbering, by the one rule
+            # `numbered_proper_entries` states: a cycle's, else its proper's,
+            # else the calendar's. Reading every one under the calendar's sent
+            # a Vulgate-declared antiphon in the Hebrew-declaring postconciliar
+            # file to the wrong psalm, or to none, while `show` read it right.
+            inherited = carried.get("psalm_numbering") or source
+
             def cited(owner: dict) -> list[dict]:
+                numbering = owner.get("psalm_numbering") or inherited
                 return [
-                    citation_structure(entry, source, tokens)
+                    citation_structure(entry, numbering, tokens)
                     for entry in (owner.get("verses") or [])
                     if isinstance(entry, dict) and entry.get("ref")
                 ]
