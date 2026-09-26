@@ -1560,7 +1560,7 @@ introit
   Traditional attribution -- disputed: David (reign in the usual chronology), B.C. 1055-1015.
   Composition: Before c. 165 B.C.
 epistle
-  Composition: Preferred A.D. 58; alternatives A.D. 49-50, c. A.D. 53-54, A.D. 56, A.D. 57-58.
+  Composition: Preferred: A.D. 58; alternatives: A.D. 49-50, c. A.D. 53-54, A.D. 56, A.D. 57-58.
 gradual
   Composition: Before c. 165 B.C.
 alleluia

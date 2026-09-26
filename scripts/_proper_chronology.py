@@ -1284,7 +1284,13 @@ def _tex_comparison_claim(
 
 
 def _candidate_display(group: AnnotationGroup, render_claim) -> str:
-    """All candidates, compactly labelled when dispositions differ."""
+    """All candidates, compactly labelled when dispositions differ.
+
+    Each disposition word ends in a colon, so a source label that opens with a
+    capital or a clause of its own is never run into it ("Preferred: In the
+    eighth year of his reign; alternatives: A.M. 3405, B.C. 597"). The word
+    agrees in number with what follows it; the source labels are untouched.
+    """
     buckets = {
         disposition: [
             render_claim(claim)
@@ -1297,16 +1303,16 @@ def _candidate_display(group: AnnotationGroup, render_claim) -> str:
     if len(nonempty) == 1:
         return "; ".join(buckets[nonempty[0]])
 
-    segments: list[str] = []
-    labels = {
-        "preferred": "Preferred",
-        "alternate": "alternatives",
-        "disputed": "disputed",
+    labels = {  # (one value, several values)
+        "preferred": ("preferred", "preferred"),
+        "alternate": ("alternative", "alternatives"),
+        "disputed": ("disputed", "disputed"),
     }
-    for disposition in _chronology.DISPOSITIONS:
-        values = buckets[disposition]
-        if values:
-            segments.append(f"{labels[disposition]} {', '.join(values)}")
+    segments = [
+        f"{labels[name][len(buckets[name]) > 1]}: {', '.join(buckets[name])}"
+        for name in nonempty
+    ]
+    segments[0] = segments[0][:1].upper() + segments[0][1:]
     return "; ".join(segments)
 
 

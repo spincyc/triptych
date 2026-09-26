@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -728,6 +729,93 @@ class AnnotationProjectionTests(unittest.TestCase):
         self.assertEqual(setting["relation"], "superscription-setting")
         self.assertEqual(setting["status"], "preferred")
         self.assertEqual(len(setting["claims"]), 1)
+
+    def test_every_disposition_mix_reads_as_labelled_english(self) -> None:
+        """A disposition word never runs into the source label after it.
+
+        The old projection printed "Preferred In the eighth year of his
+        reign; alternatives A.M. 3405" -- a capital mid-phrase with no
+        punctuation. Each mix of dispositions is rendered here in both the
+        text view and the visible TeX a Date cell (and the web edition made
+        from it) displays; one-disposition groups keep their bare form.
+        """
+        def claim(disposition: str, display: str, label: str) -> chronology.AnnotationClaim:
+            return chronology.AnnotationClaim(
+                subject="fixture.subject", title="Fixture", relation="composition",
+                label=label, display_label=display, date=label, precision="relative",
+                disposition=disposition, profile="catholic-traditional-v1",
+                sources=("fixture",), reaches=(),
+            )
+
+        eighth = claim("preferred", "In the eighth year of his reign",
+                       "in the eighth year of his reign")
+        am = claim("alternate", "A.M. 3405", "A.M. 3405")
+        bc = claim("alternate", "B.C. 597", "597 B.C.")
+        first = claim("disputed", "A.D. 61", "61")
+        second = claim("disputed", "A.D. 62–64", "at Rome (A.D. 62-64)")
+        cases = {
+            (eighth, am, bc):
+                "Composition: Preferred: In the eighth year of his reign; "
+                "alternatives: A.M. 3405, B.C. 597.",
+            (eighth, am):
+                "Composition: Preferred: In the eighth year of his reign; "
+                "alternative: A.M. 3405.",
+            (am, first, second):
+                "Composition -- disputed: Alternative: A.M. 3405; "
+                "disputed: A.D. 61, A.D. 62–64.",
+            (eighth, first):
+                "Composition -- disputed: Preferred: In the eighth year of "
+                "his reign; disputed: A.D. 61.",
+            (eighth, am, first):
+                "Composition -- disputed: Preferred: In the eighth year of "
+                "his reign; alternative: A.M. 3405; disputed: A.D. 61.",
+            # One disposition: unlabelled, exactly as before.
+            (eighth,): "Composition: In the eighth year of his reign.",
+            (first, second): "Composition -- disputed: A.D. 61; A.D. 62–64.",
+        }
+        run_on = re.compile(r"\b(?:preferred|alternatives?|disputed)\b(?!:)", re.I)
+        for claims, expected in cases.items():
+            with self.subTest(dispositions=[c.disposition for c in claims]):
+                group = chronology.AnnotationGroup(
+                    relation="composition",
+                    status=chronology._group_status(claims),
+                    reason="", claims=claims,
+                )
+                self.assertEqual(chronology._group_display(group), expected)
+                self.assertIsNone(run_on.search(expected))
+
+                tex = chronology._tex_group(group)
+                for one in claims:  # the raw source label stays verbatim
+                    self.assertIn(
+                        f"{{{chronology.tex_escape(one.label)}}}"
+                        f"{{{chronology.tex_escape(one.display_label)}}}", tex
+                    )
+                visible = re.sub(r"\\chronologyannotationclaim(?:\{[^{}]*\}){5}"
+                                 r"\{([^{}]*)\}", r"\1", tex)
+                self.assertEqual(
+                    visible,
+                    rf"\chronologyannotationgroup{{composition}}{{{group.status}}}"
+                    "{" + chronology.tex_escape(expected).replace(
+                        "Composition", r"\textbf{Composition}", 1) + "}",
+                )
+
+        # The corpus's own mixed groups, as the 1962 leaves print them.
+        fifteenth = chronology.annotations(chronology.dossier(FIFTEENTH))
+        sixteenth = chronology.annotations(chronology.dossier(SIXTEENTH))
+        epistle = next(e for e in fifteenth.elements if e.key == "epistle")
+        communion = next(e for e in sixteenth.elements if e.key == "communion")
+        setting = next(g for g in communion.groups
+                       if g.relation == "superscription-setting")
+        self.assertEqual(
+            chronology._group_display(epistle.groups[0]),
+            "Composition: Preferred: A.D. 58; alternatives: A.D. 49–50, "
+            "c. A.D. 53–54, A.D. 56, A.D. 57–58.",
+        )
+        self.assertEqual(
+            chronology._group_display(setting),
+            "Superscription setting: Preferred: In the third year of the "
+            "reign of Joakim, king of Juda; alternative: A.M. 3398.",
+        )
 
     def test_write_and_check_hold_the_generated_tex_exactly(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
