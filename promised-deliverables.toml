@@ -4,7 +4,7 @@ schema_version = 1
 id = "known-issues-after-pc-s52-2026-09-25"
 owner = "PROJECT-WORK.md"
 promise = "Fix the known issues left by the Claude pc-s51 and pc-s52 productions within Claude-owned and provider-neutral records, with independent review, and push: the pc-s52 leaf's standing review advisories and research-record lag; the upstream record defects its context stage found; and the pc-s51 run's unrepaired leads and research-record lag."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "pc-s52-advisories-resolved"
@@ -45,8 +45,11 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "known-issues-pushed"
   criterion = "The repairs reach origin/main by fast-forward after the deploy gates pass, and the Pages run and changed live routes are verified."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
+  check = "contains"
+  path = "PROJECT-WORK.md"
+  needle = "Pages run 36241679098 concluded success"
 
 [[deliverables]]
 id = "claude-postconciliar-twenty-sixth-three-documents-2026-09-24"

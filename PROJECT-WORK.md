@@ -44,6 +44,15 @@ until nothing blocking remained):
   projection and inventories refreshed; the maintainer approved the rebind,
   "Approve all 45 (Recommended)".
 
+**Deployed.** `main` was fast-forwarded to `657619231` after
+`make check-sources`, `check-release-bindings`, `check-web-editions-current`
+and the three deploy gates passed; Pages run 36241679098 concluded success.
+Live, the three pc-s52 PDFs are byte-identical to the installed ones; the
+Claude 1962/55, GPT 1962/54 and pc-s52 web pages carry their quotation
+separators as separate blockquotes and read "Preferred:" with no
+"Preferred In" left; GPT 1962/55 reads "Preferred:". Claude 1962/54's web page
+is not live because that leaf is on hold, as before.
+
 **Test and example baseline.** Compared against `main` at `d5397e4ca` with the
 same installed PDFs: `make check-tests` failed 4 there and passes all of them
 here except `document-library.test`, which fails in both because one issue's
