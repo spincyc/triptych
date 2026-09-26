@@ -57,6 +57,19 @@ accepted_count = 0
 advisory_count = 21
 observation_count = 1
 
+# Post-acceptance revision, 2026-09-25. On the maintainer's request of that day
+# to fix the known issues, a revision outside the run recorded below checked
+# every entry against the witnesses it cites and wrote its disposition into
+# the entry by hand: `resolution` (repaired, or open where the owner is outside
+# this leaf), `resolution_date` and `resolution_note`. The engine's reader
+# keeps only the keys its writer writes, so a later evaluation that rewrites
+# this file drops them; research/production-review.md carries the same
+# dispositions durably. The keys above still describe the run's last write.
+# After that revision's independent re-review (advisories REV-A-001 to
+# REV-A-004, recorded in research/production-review.md, "Independent re-review
+# and second round"), a second round of the same day amended the notes of
+# SYN-001, SYN-002 and VIS-001 and of the observation.
+
 [[stages]]
 stage = "homily-review"
 iteration = 0
@@ -136,6 +149,9 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/homily/10-homily.tex, third movement (lines 79-105, 'So which son are we?' to 'how long your life will be') and fifth movement (lines 142-152, 'Augustine, reading a proverb' to 'you have the second son')"
 problem = "The body carries 14 direct patristic quotations (about 247 words) and two unquoted reports, in 1,530 words. Every one is exact and to the point, and the preacher's own voice carries the argument, so this is not a lecture assembled from quotations. The load is uneven, though. The third movement names a Father six times in about 320 words: Aquinas, Chrysostom, Augustine three times, Aquinas again. In the fifth, four Augustine quotations in NPNF's archaic English ('thou', 'doth', 'thereat') come within about 130 words. At those two points a listener meets a new named authority roughly every second sentence, and it happens just where the homily turns from exegesis to application."
 required_result = "If acted on: in each of those two movements, let two or three patristic voices carry the point and give the rest to the preacher's own words. Keep the quotations that later lines echo: Chrysostom's 'Why wast thou absent so long a time?', the raven's 'To-morrow', and the table of the ruler. For example, voice the wanderer of Enarr. 24.5 or one of the three In ep. Ioh. 5.12 sentences in the preacher's own words. The argument and the six-movement structure should not change."
+resolution = "repaired"
+resolution_date = "2026-09-25"
+resolution_note = "Verified: the third movement named a Father six times and the fifth set four archaic Augustine quotations within about 130 words. Augustine's wanderer (Enarr. in Ps. 24.5) is now voiced in the preacher's words without his name, and his 'If thou art not yet equal ...' (In ep. Ioh. 5.12) is reported without quotation marks; the quotations later lines echo are kept. The argument and the six movements are unchanged, and the note records both routes. Spoken body 1,553 words."
 
 [[advisories]]
 stage = "homily-review"
@@ -144,6 +160,9 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/homily/10-homily.tex, lines 128-132 ('Blessed Ildefonso Schuster ... ``a~condescension and powerful energy \\ldots\\ such as the creation of the world itself never once called for'''')"
 problem = "Schuster's 'condescension' is spoken with no gloss. Schuster (Sacramentary III, p. 121) means God's stooping down into the abyss to draw the sinner out. To a present-day parish ear, though, 'condescension' first means a patronizing attitude, close to the opposite. The earlier 'came down to where we were' helps, but it comes five sentences before. The ellipsis also drops Schuster's hedge 'so to speak', which marks the phrase as figurative."
 required_result = "If acted on: give the word a brief plain gloss in the preacher's own voice, outside the quotation marks. For example, say that he calls it a stooping down, a 'condescension', or tie it to 'came down' right beside the quotation. The quoted words stay exactly as in the 1927 English."
+resolution = "repaired"
+resolution_date = "2026-09-25"
+resolution_note = "Verified at Schuster, The Sacramentary III, p. 121, tracked OCR. The quotation now begins 'requires, so to speak, a condescension' and keeps 'on the part of God', and the next sentence glosses the word in the preacher's voice as a stooping down, God going down into the abyss to draw the sinner out, which is Schuster's own sense on that page."
 
 [[advisories]]
 stage = "homily-review"
@@ -152,6 +171,9 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/homily/90-note.tex, lines 56-63 (the list of 'connections ... the homily's own'); with sections/homily/10-homily.tex lines 67-69 and 90-94"
 problem = "The note sets out to list the joins that no Father makes, and it leaves two out. (1) Jerome's rule is followed at once by 'Not by his first word'. That applies it to the sons' answers, which is the leaf's own join (research/interpretations.md, Reading 1 controlling claim). Jerome's sentence on Ezek 18:24 (PL 25, col. 180) speaks of old sins and old justices, not of a first word. Because Jerome is reported without quotation marks, only 'in one sentence' marks where his words end and the preacher's begin. (2) Chrysostom's 'God is not as man ...' is presented as 'what today's psalm asks'. Chrysostom does not connect his words to Psalm 24:7. A reader of the note could take either join to be the Father's."
 required_result = "If acted on: add both joins to the note's list of the homily's own connections: Jerome's rule read of the sons' first word, and Chrysostom's saying set beside the psalm verse. Optionally, make the turn to the preacher's application audible in the speech, for example 'For the two sons, that means: not by the first word ...'."
+resolution = "repaired"
+resolution_date = "2026-09-25"
+resolution_note = "Verified against Jerome, PL 25, col. 180, and Chrysostom, Hom. in Matt. 67.4. Both joins are added to the note's list of the homily's own connections, and the speech now says 'And for the two sons, not by the first word', so the turn from Jerome's rule to the preacher's application is audible."
 
 [[advisories]]
 stage = "research-review"
@@ -160,6 +182,9 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/research/scope.md section 3.5 (Aquinas row: 'On 10:26 he first glosses the exclusion as Augustine does'; the paragraph after the table: 'Augustine and Aquinas agree that hearing is believing and obeying and that following is imitation' and 'Aquinas keeps the gloss') and section 7, fourth row ('Aquinas: the same gloss'); src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/research/interpretations.md Reading 2 `two-peoples`, Author evidence row 'Thomas Aquinas, Super Ioannem c. 10 lect. 5 (p. 668)' ('He first glosses 10:26 as Augustine does') and paragraph 'A second difference' ('Aquinas keeps the same gloss')"
 problem = "Augustine, In Ioh. ev. tract. 48.4 (tracked NPNF series 1 vol. 7, physical lines 21499-21514), says those addressed at John 10:26 were 'predestined to everlasting destruction'. Aquinas, re-read in this review on the page image of Venice 1745 t. III p. 668, glosses: 'scilicet praedestinati ad credendum, sed praesciti ad aeternum interitum', that is, not predestined to believe, and foreknown to eternal ruin. The records call this 'the same gloss' and say Aquinas glosses 'as Augustine does', which merges predestination to destruction with foreknowledge of ruin. A study must not merge the two when it attributes a position to a Doctor. The same paragraph of scope 3.5 says both authors agree that 'hearing is believing and obeying and that following is imitation'. Tract. 48.4-5 says only that the sheep are sheep 'through believing' and 'in following the Shepherd'. 'Praeceptis meis obediendo' and 'imitatio ad Christum' are Aquinas's words on p. 668, not Augustine's. The records also disagree with each other: interpretations.md, Reading 2, `gospel-acclamation` cell, already describes Aquinas's gloss correctly as 'foreknowledge of ruin'."
 required_result = "Replace 'as Augustine does' and 'the same gloss' with what each author says: Augustine (NPNF), predestined to everlasting destruction; Aquinas, not predestined to believe and foreknown (praesciti) to eternal ruin. Say that both read the exclusion as reprobation only if that is the point intended. In scope 3.5, attribute the 'obeying' gloss of hearing and the 'imitation' gloss of following to Aquinas alone, and leave Augustine with believing and following."
+resolution = "repaired"
+resolution_date = "2026-09-25"
+resolution_note = "Verified on the Venice 1745 page image, p. 668, and in NPNF 1/7, tract. 48.4. research/scope.md 3.5 and 7 and research/interpretations.md Reading 2 now report each gloss in its author's terms (Augustine: predestined to everlasting destruction; Aquinas: not predestined to believe, foreknown to eternal ruin) and give the 'obeying' and 'imitation' glosses to Aquinas alone. The three documents already did so and did not change for this finding."
 
 [[advisories]]
 stage = "research-review"
@@ -168,6 +193,9 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/research/interpretations.md Reading 3 `obedient-son`, Element contributions row `first-reading` ('Augustine: God makes whole the humble who confess their sins and humbles those who seek their own righteousness; the way of the Lord is the way of humility'), and Comparison row 'What is \"the way of the Lord\"?', `obedient-son` cell ('The way of humility, which the froward call froward (Augustine)')"
 problem = "Enarr. in Ps. 17.27-28 (tracked NPNF, 'Psalm XVIII') says that the froward say 'The way of the Lord is not right', and that what seems froward to them is 'that Thou wilt make them whole that confess their sins'. God humbles those who seek to establish their own righteousness. Augustine does not call the Lord's way 'the way of humility'. That phrase is the leaf's condensation of his point, and both cells put his name after it. This is the kind of attribution RES-002 removed from four other cells. A study drawing on either cell could credit Augustine with a formula he does not use."
 required_result = "Attribute to Augustine only his own claim: the froward call God's way not right because God makes whole the humble who confess their sins and humbles the proud. Mark 'the way of humility' as the leaf's condensation, or remove it."
+resolution = "repaired"
+resolution_date = "2026-09-25"
+resolution_note = "Verified in NPNF 1/8, Enarr. in Ps. 17.27-28. research/interpretations.md Reading 3, first-reading cell and comparison cell, now attribute to Augustine only his own claim and mark 'the way of humility' as the leaf's condensation. The three documents already did so."
 
 [[advisories]]
 stage = "study-review"
@@ -176,6 +204,9 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/20-afterward-he-repented.tex, subsection 'Old sins and old justices', second paragraph (lines 138-145: 'Aquinas uses the chapter twice more, for both halves of the law ... With Ezekiel 18:21 he answers the objection that penance need last only a moment')"
 problem = "In Summa theologiae III q. 84 a. 8, Ezekiel 18:21 is the authority of objection 1, which argues that penance need not be prolonged because the penitent is forgiven at once. Aquinas's reply does not cite Ezekiel. It grants that forgiveness comes in the first instant and adds that the penitent must persevere (tracked Dominican English, Gutenberg text, lines 48211-48215 and 48252-48256). research/scope.md 3.2 records this correctly ('Ezekiel 18:21 in q. 84 a. 8 obj. 1, answered'). The prose instead has Aquinas 'use' Ezekiel 18:21, and has him use it to argue for perseverance. That gives the objection's authority to the reply."
 required_result = "Say that Aquinas answers an objection drawn from Ezekiel 18:21: he grants that the penitent is forgiven at once and adds that penance must persevere. Reword 'uses the chapter twice more' so that only the sed contra of III q. 86 a. 1 (Ezekiel 18:22) counts as Aquinas's own appeal to the chapter here."
+resolution = "repaired"
+resolution_date = "2026-09-25"
+resolution_note = "Verified in the tracked Dominican English: Ezekiel 18:21 is the authority of III q. 84 a. 8 obj. 1 and the reply cites no Ezekiel; 18:22 is the sed contra of q. 86 a. 1. The study now reports the objection and Aquinas's answer, and counts only 18:22 as his own appeal; the concise study's wording and both References lists (obj. 1 and ad 1) follow, and research/interpretations.md Reading 1 is corrected. The homily does not use the point."
 
 [[advisories]]
 stage = "study-review"
@@ -184,6 +215,9 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/30-the-publicans-go-before-you.tex, subsection 'The way the house of Israel calls unequal', line 134 ('the psalm verse ``with the froward thou wilt be froward''')"
 problem = "The quoted words match neither translation the study uses. The tracked NPNF exposition Augustine is cited from reads 'And with the froward Thou shalt be froward' (NPNF 1/8, Psalm XVIII.27). The Douay-Rheims of Psalm 17:27 reads 'with the perverse thou wilt be perverted'. The words sit in quotation marks as the psalm verse, but no witness has them."
 required_result = "Quote the NPNF lemma exactly ('with the froward Thou shalt be froward') or the Douay-Rheims verse exactly, or paraphrase it without quotation marks."
+resolution = "repaired"
+resolution_date = "2026-09-25"
+resolution_note = "Verified: NPNF 1/8 reads 'And with the froward Thou shalt be froward'; the Douay-Rheims Ps 17:27 reads 'with the perverse thou wilt be perverted'. The study now quotes the NPNF lemma exactly and names it as Augustine's lemma of Psalm 17:27. The concise study paraphrases without quotation marks and did not change; the homily does not use the verse."
 
 [[advisories]]
 stage = "study-review"
@@ -192,6 +226,9 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/20-afterward-he-repented.tex ('A law given to sinners in the way'; 'The Missal's texts in this reading'); sections/30-the-publicans-go-before-you.tex ('The way the house of Israel calls unequal'; 'The Missal's texts in this reading'); sections/40-the-mind-of-christ-jesus.tex (opening paragraph; 'Paul's appeal'; 'The son who said no and went'; 'The life laid down, at the table'; 'The Missal's prayers in this reading'); sections/10-each-element.tex ('The confession from the furnace'; 'The Collect')"
 problem = "The same quotations appear in full, with the same English gloss, in two or three places. Aquinas's 'nullus est sic bonus ... aliquid boni' is in lanes 1 and 3. Augustine's 'Do not too soon despair of thyself ... nourish it' is in lanes 1 and 3. Bellarmine's 'first softens and subdues the proud and the obstinate' is in lanes 1 and 3. Chrysostom's close of Hom. in Phil. 5 with Romans 2:13 is in lanes 1 and 3. Gregory's 'ea charitate qua pro ovibus morior' is in lanes 2 and 3. Augustine's Enarr. 17.27-28 ('make them whole that confess their sins'; 'ignorant of God's righteousness') is in lanes 2 and 3. Schuster's 'descends into it to draw forth the sinner' is in section 10 and twice in lane 3. Jerome's Daniel lesson and 'ex persona populi' are each in section 10 and again in a lane. The profile asks that each substantial argument have one fullest home. The study is well above its length floor, so this is not padding to reach a minimum. It still makes the reader read the same sentences several times, and it blurs how the lanes differ."
 required_result = "Give each repeated quotation one fullest home, normally section 10 or the lane whose argument it chiefly serves. Elsewhere, keep only the part that bears on that lane's own argument and point back to the fullest home in a clause, rather than reprinting the Latin and its gloss."
+resolution = "repaired"
+resolution_date = "2026-09-25"
+resolution_note = "Verified for each listed repetition. Each quotation keeps one fullest home: section 10 for Schuster's 'descends into it' and Jerome on Daniel 3; the first interpretation for Bellarmine on Ps 24:9; the third for Aquinas's 'nullus est sic bonus', Augustine on 1 John 3:16, Chrysostom's close of Hom. in Phil. 5, Gregory's 'ea charitate' and Augustine on Ps 17:27-28. Elsewhere the point that bears on that interpretation stays, without reprinting the Latin or the English, with a pointer to the fullest home."
 
 [[advisories]]
 stage = "study-review"
@@ -200,6 +237,9 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/30-the-publicans-go-before-you.tex, subsection 'Hilary: the sons the other way round', lines 163-165 ('obediens professione, licet non efficiens in tempore; quia fides sola iustificat ... because faith alone justifies')"
 problem = "Hilary's 'fides sola iustificat' is printed and glossed 'faith alone justifies', with no word on its sense in his argument. In PL 9, cols. 1041-1042, the phrase explains why the publicans who believed John count as obedient before they could do the Gospel's work, which came only after the Passion. A reader of a Catholic study who meets the formula bare may take it in its later confessional sense. The study is otherwise careful about doctrinal precision."
 required_result = "Add a clause stating Hilary's sense: the publicans' faith in John's preaching is counted as the obedience they could not yet perform in the Gospel's works. No doctrinal comparison beyond that is needed."
+resolution = "repaired"
+resolution_date = "2026-09-25"
+resolution_note = "Verified in PL 9, col. 1041. A clause now states Hilary's sense: the publicans' faith in John's preaching is reckoned as the obedience they could not yet show in the Gospel's works, which waited on the Passion. research/scope.md 3.1 and research/interpretations.md record the same sense. The concise study and homily do not print the phrase."
 
 [[advisories]]
 stage = "study-review"
@@ -208,6 +248,9 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/30-the-publicans-go-before-you.tex, subsection 'Hilary: the sons the other way round', lines 145-151 ('he begins from the difficulty that the ordinary identification meets')"
 problem = "'The ordinary identification' is never defined. Hilary's difficulty (PL 9, col. 1039, section 11, 'quis filius senior, quis iunior') tests reading the elder son as Israel and the younger as the nations. That is not Jerome's, Chrysostom's or Aquinas's reading, all of which make the repenting first son the nations. Coming straight after the lane's own identification, the phrase lets a reader take Hilary's objection as a rebuttal of Jerome's reading, which it does not touch."
 required_result = "Name the identification Hilary tests (elder son Israel, younger son the nations), and say or make plain that it differs from the one the lane's carrying authors give."
+resolution = "repaired"
+resolution_date = "2026-09-25"
+resolution_note = "Verified in PL 9, col. 1039, section 11. The study now names the identification Hilary tests (elder son Israel, younger son the nations) and says it is not the one Jerome, Chrysostom and Aquinas give, as the concise study already did."
 
 [[advisories]]
 stage = "study-review"
@@ -216,6 +259,9 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/30-the-publicans-go-before-you.tex, subsection 'The way the house of Israel calls unequal', lines 114-119 ('Jerome writes a hard sentence of his own ... and he calls the sentence just')"
 problem = "'Sentence' is used twice in two different senses: first for Jerome's own hard sentence of text ('Usque hodie Israel blasphemat Deum'), then for the Lord's judicial sentence, which Jerome calls just ('Domini autem iusta sententia, ut ... alios in vineam suam mittat agricolas', PL 25, col. 181). As written, 'he calls the sentence just' can be read as Jerome, or the study, endorsing the charge that Israel blasphemes. This is the passage the Nostra aetate bound governs most closely."
 required_result = "Say plainly that Jerome calls the Lord's sentence just, namely that the vineyard be given to other husbandmen. Keep it distinct from Jerome's own sentence on Israel, which stays attributed to him."
+resolution = "repaired"
+resolution_date = "2026-09-25"
+resolution_note = "Verified on the PL 25, col. 181 page image: 'Domini autem iusta sententia, ut perditis colonis prioribus, alios in vineam suam mittat agricolas'. The study now says that what Jerome calls just is the Lord's sentence, quoting his words, distinct from his own sentence on Israel; research/scope.md 3.2 and research/interpretations.md follow. The concise study already said so."
 
 [[advisories]]
 stage = "study-review"
@@ -224,6 +270,9 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/30-the-publicans-go-before-you.tex, subsection 'The Missal's texts in this reading': Entrance Antiphon join (lines 251-253, 'Heard beside the parable, it is the late truth the second son owed: a people that promised and did not obey confesses that God's judgments on it were true') and Prayer after Communion join (lines 289-293, 'Jerome's second son killed the son and thought himself heir; the heirs of this prayer are those who share the Son's sufferings')"
 problem = "research/scope.md 3.11 and interpretations.md bound the two-peoples reading under Nostra aetate 4. The identification is to be reported as the Fathers' and 'never in the leaf's own voice', and no people is to be presented as charged with the Passion or as rejected. Both joins are the leaf's own. The Prayer after Communion join uses Jerome's charge that the Jewish people killed the heir as the foil for the prayer's heirs. That builds a disinheritance contrast in the editor's voice on exactly the charge the Declaration says is not to be laid on the Jews. The Entrance Antiphon join makes 'a people that promised and did not obey', the lane's second son, owe a confession of God's judgments on it. Each sentence is hedged and the lane's 'How the reading is handed on' section states the bound, so neither sentence outright presents the Jewish people as rejected. They are, however, the leaf's own applications of the identification, and they are what the concise study and the homily would inherit."
 required_result = "Re-anchor both joins so that the leaf's own voice does not apply the identification. Examples: rest the Prayer after Communion's heirship on Romans 8:17 and on the prayer's own condition, sharing Christ's sufferings, without Jerome's charge as its foil; or tie any foil to the parable's own addressees, the chief priests and Pharisees of Mt 21:45. Frame the Entrance Antiphon as the confession owed by anyone who promised and did not go, which is also how the lane's moral sense directs the reading, to the baptized."
+resolution = "repaired"
+resolution_date = "2026-09-25"
+resolution_note = "Verified against the bound of research/scope.md 3.11. The Entrance Antiphon join is now the confession owed by anyone who promised and did not go, made by the baptized as the reading's moral sense directs; the Prayer after Communion names its heirs by its own condition, the one Romans 8:17 sets, with Gregory's one fold, and no longer uses Jerome's charge as a foil. research/interpretations.md Reading 2 follows. The concise study and the homily already avoided both joins."
 
 [[advisories]]
 stage = "study-review"
@@ -232,6 +281,9 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/30-the-publicans-go-before-you.tex, subsection 'The four senses of this interpretation', Anagogical item (lines 327-331: 'a new heart for Israel and for the nations (Jerome, on Ezekiel)')"
 problem = "Jerome's 'Cor novum Israelis, est credere in eum quem prius negaverat. Cor novum gentium, est idola derelinquere' (PL 25, col. 181, on Ezek 18:31) is about conversion in the present: believing, and leaving idols. It is not about final fulfilment. Filing it under the anagogical sense and naming Jerome gives him an eschatological claim he does not make here, and it blurs the distinction the profile draws between the moral and the anagogical senses."
 required_result = "Move Jerome's new heart to the moral or allegorical row, or mark its eschatological extension as the editor's. Give the anagogical row only final-fulfilment content: Gregory's election 'ad aeternam vitam' and, under the longer form, Philippians 2:10-11."
+resolution = "repaired"
+resolution_date = "2026-09-25"
+resolution_note = "Verified on the PL 25, col. 181 page image: the new heart is believing and leaving idols, a present conversion. It now stands in the moral sense, as a call that can be understood of both peoples; the anagogical sense keeps only Gregory's one fold chosen 'for eternal life' and, under the longer form, Phil 2:10-11. research/interpretations.md follows."
 
 [[advisories]]
 stage = "study-review"
@@ -240,6 +292,9 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/40-the-mind-of-christ-jesus.tex, subsection 'The life laid down, at the table', lines 177-181 ('The Son's obedience and his love for the sheep are, in Gregory's sentence, one act')"
 problem = "Gregory's sentence (Hom. in Evang. 14.4, 'ea charitate qua pro ovibus morior quantum Patrem diligam ostendo') joins the Son's love for the Father to his death for the sheep. 'Obedience' is not Gregory's word. interpretations.md records the row as 'The Son's love for the Father shown in dying for the sheep'. Crediting Gregory with 'obedience' puts the lane's controlling term into his mouth. This is the kind of attribution RES-009 warned against."
 required_result = "Attribute to Gregory only love for the Father shown in dying for the sheep. If the lane wants that love to be the obedience of Philippians 2:8, mark the identification as the editor's."
+resolution = "repaired"
+resolution_date = "2026-09-25"
+resolution_note = "Verified in Gregory, Hom. in Evang. 14.4, tracked text: 'obedience' is not his word. The study now says that in Gregory's sentence the Son's love for the Father and his death for the sheep are one act, and marks the identification of that love with the obedience of Phil 2:8 as the editor's; research/interpretations.md records the same."
 
 [[advisories]]
 stage = "study-review"
@@ -248,6 +303,9 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/10-each-element.tex, subsection 'Ezekiel 18: the exiles' proverb and the Lord's way', lines 110-112 ('The Ordo prefixes the prophetic formula Haec dicit Dominus to v. 25, which in the text opens not with the Lord's words but with the people's')"
 problem = "Ezekiel 18:25 opens with the Lord's own words, 'Et dixistis' / 'And you have said', which report the people's complaint that follows. Saying that the verse 'opens not with the Lord's words but with the people's' misdescribes the text. The underlying point is sound: the formula stands before a verse that begins by quoting the people's complaint."
 required_result = "Reword so that v. 25 is described accurately, for example: 'which in the text begins by reporting the people's complaint'."
+resolution = "repaired"
+resolution_date = "2026-09-25"
+resolution_note = "Verified in the tracked Clementine ('Et dixistis') and Douay-Rheims ('And you have said') of Ezek 18:25. Section 10 now says the verse begins by reporting the people's complaint. The concise study and the homily already describe it so."
 
 [[advisories]]
 stage = "synthesis-review"
@@ -256,6 +314,9 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/concise/02-overview.tex, Allegorical row (lines 68-74: 'Or they are those who profess themselves just and sinners who do penance, and the father's \"to day\" is a whole life (Aquinas)'); sections/concise/10-commentary.tex, 'Where the three interpretations agree and part', second paragraph (lines 410-415: 'the allegorical sense is where they part: the sons are those who profess justice and sinners who do penance ... (Aquinas)')"
 problem = "The concise study states the first interpretation's (`turning`) allegorical sense as Aquinas's identification of the sons with those who profess themselves just and sinners who do penance. That is not how the accepted study (sections/20-afterward-he-repented.tex, four senses) or research/interpretations.md (Reading 1, Four senses) distils it. There the allegorical sense is the father as God calling by an inward inspiration through the 'to day' of a whole life (Aquinas, on Matthew), together with the leaf's marked joins: Christ as the voice that calls 'today', and God's forgiving power receiving the penitent into the flock (Jerome). The persons identification is the reading's answer to 'Who are the two sons?' in the comparison. It concerns the life of conversion, which the three-document profile assigns to the moral sense; the allegorical sense is the texts' fulfilment in Christ and his body. So, in the one place where the concise study says the interpretations 'part' in the allegorical sense, the first interpretation's allegory has no Christological or ecclesial content, and a moral classification stands in its slot. The sources are still attributed correctly, and the other two interpretations' allegorical senses match the study."
 required_result = "Give the first interpretation's allegorical sense as the study distils it, within the page-1 bar on original proposals. For example: the father is God, who calls by an inward inspiration, and his 'to day' is the whole of a life (Aquinas, on Matthew); God's power is shown most in freely forgiving (Aquinas, on the Collect). Mark any join as the editor's where it appears in the commentary. Move the identification of the sons with the professed just and penitent sinners to where it belongs: the moral row, or the commentary's comparison of who the sons are. Alternatively, reword the closing paragraph so that it compares the interpretations' identifications of the sons and no longer calls that comparison their allegorical senses."
+resolution = "repaired"
+resolution_date = "2026-09-25"
+resolution_note = "Verified against the study's and research/interpretations.md's four senses of the first interpretation. Page 1's allegorical row now gives Aquinas's father who calls by an inward inspiration, with the 'to day' of a whole life; the persons identification stays in the commentary's question of who the sons are. The closing comparison gives each interpretation's allegorical sense and marks the first's two joins as the editor's. The concise page markers are unchanged. Second round (REV-A-002, verified on the PL 25, col. 180 page image): the closing comparison now gives the penitent received into the flock to Jerome, on Ezekiel, and marks as the editor's only the joins, Christ as the voice calling that today and God's forgiving power as what receives him, as the study and research/interpretations.md do."
 
 [[advisories]]
 stage = "synthesis-review"
@@ -264,6 +325,9 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/concise/02-overview.tex, Allegorical row (lines 72-74, 'Christ is the Son who obeyed and so honoured the Father (Chrysostom), the lowly God who found proud man (Augustine)') and Anagogical row (lines 86-87, 'Exaltation follows humility (Aquinas, on Philippians)'); sections/concise/10-commentary.tex, closing section, lines 413-415 and 422-424"
 problem = "The postconciliar profile requires the page-1 overview rows to preserve branch limits. research/interpretations.md marks every contribution resting on Philippians 2:6-11 '(longer form only)'. The Literal row and the knee-bowing clause carry that mark. Two clauses that also rest on 2:6-11 do not. The first is Chrysostom's obedient Son, Hom. in Phil. 7 on 2:8, with Augustine's 'lowly God', which the research record marks as longer-form-only in its use of 2:6-8. The second is 'Exaltation follows humility (Aquinas, on Philippians)', which is lect. 3 on 2:9-11. The accepted study's anagogical sense also cites Hilary on the servant's lowliness (Ps 118:50), a Communion antiphon locus that holds under either form. The concise row drops Hilary, so under the shorter form the exaltation clause rests only on verses that are not read, and nothing says so. The apparatus's global statement, and the commentary's marks elsewhere, soften this, so a reader is not seriously misled."
 required_result = "Mark the Chrysostom/Augustine clause of the Allegorical row and the Aquinas exaltation clause of the Anagogical row as holding where the longer form is read, and do the same in the closing comparison. Alternatively, restore Hilary on the servant's lowliness (Ps 118:50) beside Aquinas, so that the exaltation clause keeps a witness that holds under both forms."
+resolution = "repaired"
+resolution_date = "2026-09-25"
+resolution_note = "Verified against the longer-form marks of research/interpretations.md. The concise allegorical and anagogical rows and the closing comparison now mark the clauses that rest on Phil 2:6-11, and Hilary on the servant's lowliness stands beside Aquinas. The same gap in the study's third interpretation (allegorical and anagogical senses) and in research/interpretations.md was repaired too. Second round (REV-A-001, verified on the CSEL 22, p. 419 page image): Hilary's locus is Ps 118:50, the first Communion antiphon, itself an alternative, so his clause is now marked as holding where that antiphon is chosen in all four places, and every other sense clause resting on one Communion antiphon is marked the same way in the concise rows and comparison, the study's first and third interpretations and research/interpretations.md."
 
 [[advisories]]
 stage = "synthesis-review"
@@ -272,6 +336,9 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/concise/90-apparatus.tex, 'Text and English' paragraph (lines 28-47); compare sections/concise/01-inventory.tex line 45-46 ('every other element is required') and sections/90-apparatus.tex, 'Text control'"
 problem = "The study's scope appendix lists three open textual questions. One is whether the United States strophe includes the last clause of Psalm 25:5. Another is whether the United States Lectionary admits another Alleluia verse from a common set on these Sundays. The third is the manuscript evidence for Matthew 21:29-31. It also says that which Latin text the Entrance Antiphon's wording follows is not established. propers/verified.md, 'Outstanding', keeps the acclamation question open. The concise scope note keeps only 'No manuscript was examined'. Meanwhile page 1 says that every element other than the two alternatives is required, and the commentary gives each interpretation's reading of John 10:27 as the acclamation. Compression has dropped an unresolved qualification that bears on the acclamation, though the likely effect on a reader is small."
 required_result = "In the concise scope note's 'Text and English' paragraph, add one sentence carrying the study's open questions: whether the United States strophe includes the last clause of Psalm 25:5, whether another Alleluia verse from a common set may replace John 10:27, and that the Latin source of the Entrance Antiphon's wording is not established."
+resolution = "repaired"
+resolution_date = "2026-09-25"
+resolution_note = "Verified in the study's 'Text control' and propers/verified.md, 'Outstanding'. The concise scope note now carries the three open points: the Latin source of the Entrance Antiphon's wording, the last clause of Psalm 25:5, and whether another Alleluia verse may replace John 10:27."
 
 [[advisories]]
 stage = "synthesis-review"
@@ -280,6 +347,9 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/sections/concise/90-apparatus.tex, 'Relation to the expansive study' (lines 18-26: 'Every claim here is drawn from the canonical study ...'; 'The second page reprints the study's dossier') and References, Douay-Rheims item (line 118)"
 problem = "The apparatus says every claim is drawn from the canonical study. In several places, though, the companion departs from the study's wording and follows research/scope.md where the study review left standing advisories. Examples: Aquinas answers an objection drawn from Ezekiel 18:21, where the study has 'With Ezekiel 18:21 he answers'. The identification Hilary tests is named as not Jerome's, Chrysostom's or Aquinas's. Jerome calls the Lord's sentence on the vineyard just. Gregory is credited with love, not obedience. Each departure is correct and supported by the research record, but a reader who traces one of these claims to the study will find it put differently. The apparatus also says page 2 'reprints' the study's dossier. In fact it condenses the Location cells and explanatory rows, and prints only the generated Date cells unchanged. Finally, the References' Douay-Rheims locus list leaves out Psalm 94:8, which page 7 quotes in Douay-Rheims English ('To day if you shall hear his voice')."
 required_result = "Say that the companion is drawn from the canonical study and its research records, and that where the study's wording carries a standing review advisory it follows research/scope.md. Say that page 2 condenses the study's dossier while printing the generated Date cells, relation labels, alternatives and unresolved states unchanged. Add Ps 94:8 to the Douay-Rheims loci in the References."
+resolution = "repaired"
+resolution_date = "2026-09-25"
+resolution_note = "Verified. The departures the finding lists were points where the study carried standing advisories; the study now agrees with the concise study at each, so the apparatus says the companion is drawn from the study and its research records without a follows-scope.md clause. Page 2 is now said to condense the dossier while printing the Date cells unchanged, and Ps 94:8 is added to the Douay-Rheims loci."
 
 [[advisories]]
 stage = "visual-review"
@@ -288,6 +358,9 @@ severity = "advisory"
 location = "Expansive study PDF, physical pages 27-28, Scriptural Date and Location table, Gospel (Mt 21:28-32) dossier (source: sections/80-date-location.tex, the gospel rows)"
 problem = "The longtable breaks inside the Gospel dossier. Its summary row and italic narrated-event row end page 27, and its full-width explanatory row ('Traditional attribution: St Matthew the Apostle ... These are dates of the book, not of the saying') opens page 28 under the repeated header, cut off from the Date cell it qualifies. Page 28 then ends at about 55% of its height before the required fresh page for Appendix: Liturgical Resolution, so the whole dossier would fit there. The explanatory row names its passage and the header repeats, so a reader can recover the link and is not misled. This is a break in the two-tier dossier hierarchy, not a loss of content."
 required_result = "If the study is reopened for any reason, keep each dossier's summary, event and explanatory rows together with ordinary non-breaking row ends or page-break hints in sections/80-date-location.tex, so that the Gospel dossier moves whole to page 28 and the table breaks only between complete dossiers. Do not change shared table dimensions."
+resolution = "repaired"
+resolution_date = "2026-09-25"
+resolution_note = "Verified on the rebuilt study: after this revision's reflow the Gospel dossier still split, at the partial rule under its narrated-event row. booktabs leaves a legal page break after every \\cmidrule, which a row-end \\nopagebreak cannot reach, so a longtable \\pagebreak hint at the \\midrule before the Gospel dossier in sections/80-date-location.tex sends it whole to page 28. The table now breaks only between complete dossiers, the study stays at 33 pages, and no shared table dimension changed. The concise dossier is a separate component; its pages 1, 2, 3-4 and 5 are unchanged. Second round: the marks it added were worded to keep each paragraph's line count, so the study still has 33 pages, every page from 16 begins and ends where it did, and the Date sheet on pages 27-28 still breaks only between whole dossiers."
 
 [[advisories]]
 stage = "web-review"
@@ -296,8 +369,14 @@ severity = "advisory"
 location = "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a.md lines 82-92, The Appointed Texts > Responsorial Psalm (source: sections/05-appointed-texts.tex lines 93-115, two consecutive englishwitness environments)"
 problem = "The converter writes the response witness (Ps 24:6, first half) and the psalm witness (Ps 24:4-9) as two blockquotes separated only by a blank line. Python-Markdown merges them into one <blockquote>, so the site shows a single shaded quotation box where the PDF sets two separate quotation blocks. Both small-caps labels and all the text survive, and the second label still marks where the second witness begins, so no reader is misled. The difference is the loss of the semantic and visual division between two distinct quotations. The already-tracked pc-s51 edition shows the same behaviour, so the cause is in the converter."
 required_result = "If the converter is revised, emit consecutive quotation environments as distinct blockquotes, for example by placing a non-rendering separator such as an HTML comment between them. The Responsorial Psalm's response and psalm would then render as two quotation blocks, as in the PDF, and the audit should check that each englishwitness maps to exactly one blockquote."
+resolution = "open"
+resolution_date = "2026-09-25"
+resolution_note = "Not repaired by this leaf revision: the defect is in the web converter (tools/web-edition), outside the leaf and shared with other publications. The maintainer's known-issues register holds it for express authority."
 
 [[observations]]
 stage = "visual-review"
 location = "Expansive study PDF p. 27 and concise study PDF p. 2, First Reading and Entrance Antiphon Date cells (generated research/chronology-annotations.tex)"
 note = "The generated annotation prints the source labels bare after the relation words, which reads awkwardly: 'Historical setting: Preferred In the eighth year of his reign' has a capital 'In' mid-phrase, and 'Prophecy given: Duration: From Ezek. xxix, 17 it appears ...' and 'Historical setting: Duration: all these nations shall serve ...' carry a doubled label and an unquoted source sentence. A leaf may not hand-edit these cells, so any fix belongs to the chronology projection's formatting (for example quoting or lower-casing the source label), which is outside this run's repair owners."
+resolution = "open"
+resolution_date = "2026-09-25"
+resolution_note = "Verified on the rebuilt study, p. 27, and concise study, p. 2. The cells are generated into research/chronology-annotations.tex and may not be hand-edited; the fix belongs to the chronology projection outside this leaf. Not repaired by this leaf revision. Second round: after the projection's disposition wording changed, the annotations were regenerated, and the First Reading cell now reads 'Preferred: In the eighth year of his reign; alternatives: A.M. 3405, B.C. 597.' The doubled 'Duration:' label and the unquoted source sentence in the Prophecy given and Entrance Antiphon cells remain, so the observation stays open."

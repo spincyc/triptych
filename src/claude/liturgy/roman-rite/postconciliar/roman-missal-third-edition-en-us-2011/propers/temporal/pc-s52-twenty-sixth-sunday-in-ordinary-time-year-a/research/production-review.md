@@ -963,3 +963,292 @@ inventory records the current digest of every source-bearing file in the leaf,
 this record and the standing-findings file among them, so a later write into
 the leaf, such as an archive of this run, makes that inventory stale until it
 is refreshed again.
+
+## Post-acceptance revision, 2026-09-25
+
+On 25 September 2026 the maintainer asked for the known issues to be fixed.
+For this leaf they are the advisories and the one observation that the cold
+reviews of run `ed9acebf389f8706` left standing in
+`evaluations/blocking-findings-v1.toml`, and the lag the derive-synthesis
+author reported in `research/interpretations.md` and `research/scope.md`. The
+revision was made outside the workflow, as one lane of a coordinated repair.
+Every finding was first checked against the tracked witness it cites, not
+taken on the reviewer's word. Each repair was carried into every document
+that states the same point. No witness, locus or source binding was added.
+`generation-metadata.tex` keeps the run's provenance record, carries a new
+revision timestamp and gains one contribution for each of the revision's two
+rounds; the second round is recorded under "Independent re-review and second
+round" below.
+
+### Findings and dispositions
+
+| Finding | Checked against | Disposition | What changed |
+| --- | --- | --- | --- |
+| RES-008 | Venice 1745 Aquinas, p. 668 (page image); NPNF 1/7, tract. 48.4 | repaired | `scope.md` 3.5 and 7 and `interpretations.md` Reading 2 give each gloss of John 10:26 in its author's terms. Augustine: predestined to everlasting destruction. Aquinas: not predestined to believe, foreknown (*praesciti*) to eternal ruin. The "obeying" and "imitation" glosses are Aquinas's alone. The documents already did this. |
+| RES-009 | NPNF 1/8, *Enarr.* 17.27–28 | repaired | `interpretations.md` Reading 3, first-reading and comparison cells: Augustine's own claim only; "the way of humility" marked as the leaf's condensation. |
+| STU-001 | Dominican *Summa*, III q. 84 a. 8 (obj. 1, ad 1), q. 86 a. 1 | repaired | Study: Ezekiel 18:21 is an objection that Aquinas answers; only 18:22 is his own appeal. Concise wording and both References lists (obj. 1 and ad 1) follow, and `interpretations.md` Reading 1 is corrected. |
+| STU-002 | NPNF 1/8 lemma; Douay–Rheims Ps 17:27 | repaired | Study quotes the NPNF lemma exactly, "And with the froward Thou shalt be froward", as Augustine's lemma of Psalm 17:27. The concise study already paraphrased it. |
+| STU-003 | the study's own text | repaired | Each repeated quotation keeps one fullest home. Section 10: Schuster's "descends into it", Jerome on Daniel 3. First interpretation: Bellarmine on Ps 24:9. Third interpretation: Aquinas's *nullus est sic bonus*, Augustine on 1 John 3:16, Chrysostom's close of *Hom. in Phil.* 5, Gregory's *ea charitate*, Augustine on Ps 17. Elsewhere the point stays, with a pointer and without the reprinted Latin or English. |
+| STU-004 | PL 9, col. 1041 | repaired | Study: a clause gives Hilary's sense of *fides sola iustificat*, the publicans' faith in John reckoned as the obedience they could not yet show in the Gospel's works. `scope.md` 3.1 and `interpretations.md` record the same. |
+| STU-005 | PL 9, col. 1039 (§ 11) | repaired | Study names the identification Hilary tests, elder son Israel and younger son the nations, and says it is not Jerome's, Chrysostom's or Aquinas's. |
+| STU-006 | PL 25, col. 181 (page image) | repaired | Study: what Jerome calls just is the Lord's sentence, *Domini autem iusta sententia*, that others be sent into the vineyard. His own sentence on Israel stays his. `scope.md` 3.2 and `interpretations.md` follow. |
+| STU-007 | `scope.md` 3.11; *Nostra aetate* 4 | repaired | Second interpretation. The Entrance Antiphon is the confession owed by anyone who promised and did not go, made by the baptized. The Prayer after Communion names its heirs by its own condition (Rom 8:17) beside Gregory's one fold, with no foil from Jerome. `interpretations.md` Reading 2 follows. |
+| STU-008 | PL 25, col. 181 (page image) | repaired | Jerome's new heart, a present conversion, moves to the second interpretation's moral sense. The anagogical sense keeps Gregory's fold chosen for eternal life and, in the longer form, Phil 2:10–11. `interpretations.md` follows. |
+| STU-009 | Gregory, *Hom. in Evang.* 14.4 (tracked text) | repaired | Study: Gregory joins the Son's love for the Father to his death for the sheep. Calling that love the obedience of Phil 2:8 is marked as the editor's. `interpretations.md` records the same. |
+| STU-010 | Clementine and Douay–Rheims Ezek 18:25 | repaired | Section 10: v. 25 "begins by reporting the people's complaint", *Et dixistis*, "And you have said". |
+| SYN-001 | study and `interpretations.md`, Reading 1 four senses | repaired | Concise page 1: the allegorical row gives Aquinas's father who calls by an inward inspiration through the "to day" of a whole life. The closing comparison gives each interpretation's allegorical sense and marks the first's joins as the editor's. |
+| SYN-002 | `interpretations.md` longer-form marks | repaired | Concise allegorical and anagogical rows and the closing comparison mark the clauses resting on Phil 2:6–11, with Hilary beside Aquinas. The same gap was repaired in the study's third interpretation and in `interpretations.md`. |
+| SYN-003 | study "Text control"; `propers/verified.md`, Outstanding | repaired | The concise scope note carries three open points: the Latin source of the Entrance Antiphon's wording, the last clause of Psalm 25:5, and the Alleluia-verse question. |
+| SYN-004 | study, concise pp. 2 and 7 | repaired | The study now agrees with the concise study at every point the finding lists, so the apparatus says the companion draws on the study and its research records. Page 2 is said to condense the dossier. Ps 94:8 is added to the Douay–Rheims loci. |
+| HOM-001 | the spoken body | repaired | Augustine's wanderer (*Enarr.* 24.5) is voiced in the preacher's words without his name, and "If thou art not yet equal ..." (*In ep. Ioh.* 5.12) is reported without quotation marks. The echoed quotations stay. The argument and the six movements are unchanged. |
+| HOM-002 | Schuster, *Sacramentary* III, p. 121 (tracked OCR) | repaired | The quotation now reads "requires, so to speak, a condescension and powerful energy on the part of God ...", glossed in the preacher's voice as a stooping down, God going down into the abyss to draw the sinner out. |
+| HOM-003 | PL 25, col. 180; *Hom. in Matt.* 67.4 | repaired | Both joins are added to the note's list. The speech says "And for the two sons, not by the first word". |
+| VIS-001 | the rebuilt study | repaired | Even after the reflow the Gospel dossier split, at the partial rule under its event row. booktabs leaves a legal break after each `\cmidrule` that a row-end `\nopagebreak` cannot reach. One longtable `\pagebreak` hint at the `\midrule` before the Gospel dossier sends it whole to page 28, and the table breaks only between whole dossiers. No shared dimension changed. |
+| WEB-001 | — | open | The fix is in the web converter, outside the leaf. It was not repaired here. |
+| Observation (Date-cell labels) | study p. 27, concise p. 2 | open | The cells are generated. The fix belongs to the chronology projection outside the leaf. It was not repaired here. |
+
+Two further corrections came with those repairs. Both References lists now
+cite III q. 84 a. 8 as "obj. 1 and ad 1". The homily note gives the routes of
+the two voices now spoken in the preacher's words.
+
+### Research records
+
+`research/interpretations.md` has a dated header note. Reading 1 reports the
+*Summa*'s Ezekiel 18:21 correctly. Reading 2 has Aquinas's gloss in his own
+terms, Hilary's sense of *fides sola iustificat*, and Jerome's *Domini autem
+iusta sententia*. Its Entrance Antiphon and Prayer after Communion cells no
+longer apply the identification in the leaf's voice, and Jerome's new heart
+is in its moral sense. Reading 3 has Augustine's claim without "the way of
+humility", Gregory without "obedience", and the longer-form marks in its
+allegorical and anagogical senses. The comparison cell is corrected.
+
+`research/scope.md` has a dated note in section 1. Section 3.1 gives Hilary's
+sense and section 3.2 Jerome's words on the Lord's sentence. Sections 3.5 and
+7 carry both glosses of John 10:26 in their own terms, with the "obeying" and
+"imitation" glosses given to Aquinas alone.
+
+`research/source-bindings.toml` changed only where another lane of the same
+repair re-pinned two bindings, `dominica-xxvi-per-annum-289-290` and
+`titulos-liturgicos-septiembre-artifact-page-58`, each with a dated re-check
+note in its context.
+
+### Counts
+
+The homily's spoken body is **1,553 words**, up from 1,530. The count uses
+the derive-homily stage's method: whitespace-separated tokens with comments,
+`\bigskip`, quotation marks and ellipses removed. That is about 12 minutes at
+130 words a minute, 12½ at 125 and just under 13 at 120. No delivery was
+timed.
+
+### Builds and inspection
+
+Each output was built with `make doc … PROVIDER=claude` at revision timestamp
+2026-09-25T20:35:45Z. Removing each PDF and building again reproduced the same
+bytes. No log has an overfull or underfull box, a LaTeX or pdfTeX warning, an
+undefined reference or a rerun request. Fonts are all embedded Latin Modern,
+and each PDF's modification date equals the tracked timestamp.
+
+| Edition | Pages | SHA-256 |
+| --- | --- | --- |
+| Study | 33 | `0c3814918da567340dd8ae34b0f2e075bf6783cb614c6274b031db9dad0445d1` |
+| Concise study | 12 | `7625e2f47553ca45d38ce5203bb61fea1647546252f4c2de74134474f05a4bc0` |
+| Homily | 4 | `760c3358b9080aa03c38641c58beac69d27a97999b6aa5a89e724bfc7c75edf5` |
+
+The concise auxiliary file puts the inventory, the overview and the four sense
+markers on physical page 1, the chronology on 2, the themes from 3 to 4, and
+the commentary start on 5.
+
+Every page whose text differs from the accepted build was rendered at 110 dpi
+and inspected:
+
+- study pp. 9, 14, 15, 18–25, 27, 28, 32 and 33;
+- concise pp. 1, 7, 10, 11 and 12;
+- homily pp. 1–4.
+
+The rights colophon still shares the last page of each PDF.
+
+### Gates
+
+The research phase, the content phase of `scripts/_proper_study.py check` for
+all three editions (with `--require-presentation --require-format
+--require-authority`) and `tools/check-proper-components` pass. So do
+`tools/check-generation-metadata` on the source and all three PDFs, and every
+`check-content-preflight` check the three preflight stages name except one.
+That one is `chronology-annotations-current`, which failed on all three
+editions at the end of this revision. It had passed earlier in the same
+revision, before an uncommitted change to the chronology projection from
+another lane of the same repair entered the working tree. That change is the
+Date-cell label fix, a colon after "Preferred" and "alternatives". This leaf's
+`research/chronology-annotations.tex` was left unchanged: regenerating it is
+outside this revision's scope. Regenerating it changes the First Reading's
+Date cell on study p. 27 and concise p. 2, and then needs a rebuild and a
+look at those pages.
+
+The artifacts phase refuses because `research/artifacts.json` still describes
+the accepted build ("built PDFs or render inputs differ from the snapshot").
+The receipt is re-snapshotted after independent review of this revision,
+which this revision does not supply.
+
+### Limits that remain
+
+The limits in `research/scope.md` and in the earlier entries stand. WEB-001
+and the Date-cell observation are open, as recorded above. The installed PDFs,
+the web edition and the publication records still describe the accepted build.
+
+### Independent re-review and second round
+
+An independent re-review of this revision, on the same day, passed it with no
+blocking finding and four advisories, REV-A-001 to REV-A-004. A second round,
+again outside the workflow and as one lane of the coordinated repair, checked
+each advisory against the witness it cites and applied all four. It also
+regenerated the leaf's chronology annotations, which the chronology
+projection's revised disposition wording had made stale. No witness, locus or
+source binding was added.
+
+**What review covers these sources.** The review seals that run
+`ed9acebf389f8706` accepted were taken over the sources as they stood at that
+run's acceptance. They do not cover the sources this revision changed:
+`research/interpretations.md`, `research/scope.md`,
+`research/chronology-annotations.tex` (rendered on study p. 27 and concise
+p. 2), `research/chronology.toml`, the re-pinned bindings of
+`research/source-bindings.toml`, and the rendered sections of all three
+documents. What covers them is the independent re-review of 25
+September 2026 for the first round, and that review's re-check for the second
+round's changes below. The re-check of the second round, on 25 September
+2026, found nothing blocking; its two advisories are recorded at the end of
+this entry.
+
+| Advisory | Checked against | Disposition | What changed |
+| --- | --- | --- | --- |
+| REV-A-001 | Hilary, *Tract. in Ps.* 118, Zain 2, CSEL 22, p. 419 (page image), on Ps 118:50, the first Communion antiphon | repaired | Hilary's clause on humility rewarded with glory is marked as holding where the first Communion antiphon is chosen: concise p. 1 anagogical row, the concise closing comparison, the third interpretation's anagogical sense, and `interpretations.md` Reading 3. Under the shorter form with the second antiphon no witness of the clause is read, and the marks now say so. The same mark is carried to every other sense clause that rests on one antiphon, below. |
+| REV-A-002 | Jerome, *In Hiezechielem* VI, PL 25, col. 180 A–B (page image): *sed in meum suscipiatur gregem, innovatione virtutis* | repaired | Concise closing comparison: "the penitent is received into the flock (Jerome, on Ezekiel)"; only "that Christ is the voice calling that today, and that God's power in forgiving receives him" are the editor's joins, as the study and `interpretations.md` Reading 1 already had it. |
+| REV-A-003 | the study's section Each Element in Its Setting (Jerome on Dan 3, PL 25, 509; Schuster, vol. 3, pp. 121–122) | repaired | The three pointers now read "quoted under 'Each Element in Its Setting'": first interpretation (Jerome's lesson from the furnace), second interpretation (Jerome on the three young men), third interpretation (Schuster on the Collect). The section is named in prose, not by `\ref`: the study's sections are unnumbered and no proper study uses `\ref`. |
+| REV-A-004 | this record | repaired | The paragraph above. |
+
+**The convention for sense rows.** A sense clause that rests on one of two
+appointed alternatives is marked with it: "where the longer form is read" (or
+"in the longer form") for Philippians 2:6–11, and "where the first (second)
+Communion antiphon is chosen" for a Communion antiphon; `interpretations.md`
+writes the marks as **(longer form only)** and **(Communion antiphon A only)**
+or **(B only)**. Sense rows are the concise overview rows, the concise closing
+comparison, each interpretation's four senses in the study, and the four-senses
+tables of `interpretations.md`. Applying it beside Hilary's clause marked:
+
+- the second-antiphon clause of the concise Moral row (Augustine on 1 John 3)
+  and of the closing comparison ("begin by giving to a brother in need");
+- in the first interpretation, the Moral clause "a Christian name without the
+  deeds profits nothing" (Augustine, *In ep. Ioh.* 5.12; second antiphon) and
+  the Anagogical clause on the servant's prayer (Augustine on Ps 118:49; first
+  antiphon), whose attribution, "(Augustine, on the Communion psalm)", became
+  "(Augustine)" beside the mark;
+- in the third interpretation, the Allegorical clause on the shepherd whose
+  body and blood are taken at the ruler's table and the Moral clause on giving
+  to a brother in need (both Augustine, second antiphon);
+- the same cells of `interpretations.md` Readings 1 and 3.
+
+The second interpretation's senses rest on no single antiphon (Gregory's one
+fold is read from John 10, the acclamation's chapter) and are unchanged. The
+homily already names the second antiphon as one of two ("One of the two verses
+the Missal gives for Communion today") and is unchanged.
+
+**Pagination.** The added marks would have lengthened the study by one page and
+split the Date sheet: the first round's page 27 is filled exactly, and the
+`\pagebreak` before the Gospel dossier (VIS-001) then left a near-empty page.
+The marks were therefore worded to keep each paragraph's line count, with these
+rewordings in the same sense rows, none of which changes a claim or an
+attribution:
+
+- study, third interpretation: "Where the longer form is read" became "In the
+  longer form" (Allegorical); "received at the ruler's table" became "taken",
+  Augustine's own verb; the two Aquinas clauses of the Moral sense share one
+  attribution; "the second antiphon" and "the first antiphon" follow "the
+  second Communion antiphon" in the item above; "with the one whose death they
+  proclaim" became "with him whose death they proclaim";
+- study, opening of the second interpretation: "a hope held out to those who
+  are behind" became "a hope for those behind", which returns the one line the
+  first interpretation's Moral mark adds on page 16;
+- concise p. 1 Allegorical row: "Where the longer form is read" became "In the
+  longer form", so that the inventory and all four sense rows stay on page 1;
+- concise closing comparison: "in the longer form" for the third
+  interpretation's allegorical sense and Aquinas's exaltation, and "of him
+  whose death is proclaimed", so that the paragraph ends on page 10 again.
+
+The study keeps 33 pages, and from page 16 every page begins and ends where it
+did in the first round's build; the concise study keeps 12 pages with its pages
+beginning where they did.
+
+**Chronology annotations.** `tools/proper-chronology annotations --provider
+claude --document <leaf> --write` rewrote `research/chronology-annotations.tex`.
+Its diff is two lines. One is the First Reading's Date cell, which now reads
+"Historical setting: Preferred: In the eighth year of his reign; alternatives:
+A.M. 3405, B.C. 597." The other is the appointment-dependency hash of
+`propers/temporal/shared/ordinary-time/weeks/26/propers/verified.md`, which
+another lane of the same repair changed in the working tree (its "Corrections
+of 2026-09-25"). `research/chronology.toml` pins the same file's earlier hash,
+so `tools/proper-chronology record --check` and the
+`chronology-record-current` preflight check refused until that record was
+rewritten. The coordinator of the repair rewrote it at 18:11 CDT with
+`tools/proper-chronology record --provider claude --document <leaf> --write`;
+its diff is that one dependency hash, and both checks now pass. The Date-cell observation stays open: the colon after
+"Preferred" and "alternatives" is in, but "Prophecy given: Duration: From
+Ezek. xxix, 17 ..." and "Historical setting: Duration: all these nations ..."
+still carry a doubled label and an unquoted source sentence.
+
+**Builds and inspection.** Each output was built with `make doc … PROVIDER=claude`
+at revision timestamp 2026-09-25T21:29:48Z, and removing each PDF and building
+again reproduced the same bytes. No log has an overfull or underfull box, a
+LaTeX or pdfTeX warning, an undefined reference or a rerun request; fonts are
+all embedded Latin Modern, and each PDF's modification date equals the tracked
+timestamp. These builds supersede those listed under "Builds and inspection"
+above.
+
+| Edition | Pages | SHA-256 |
+| --- | --- | --- |
+| Study | 33 | `fbfd59c8a99486b7e4d54b9d53690d34ac0d1eb173f3d8732eed20309152b360` |
+| Concise study | 12 | `7f212e50f82a33eec57fe3e2fb8a878ea5fb01cf4bf389ed343f2df74ac276a2` |
+| Homily | 4 | `1d0243a3b71ac7904f5f22269af2f8ece6dc3b072e122b08398838e1d7cf9646` |
+
+The concise auxiliary file puts the inventory, the overview and the four sense
+markers on physical page 1, the chronology on 2, the themes from 3 to 4, and
+the commentary start on 5. Every page whose text differs from the first
+round's build was rendered at 110 dpi and inspected: study pp. 14, 15, 16, 20,
+24, 25, 27 (Date sheet, First Reading cell), 28 (Date sheet, unchanged text)
+and 33 (timestamp); concise pp. 1, 2 (Date sheet), 10 and 12 (timestamp);
+homily p. 4 (timestamp). The Date sheet breaks only between whole dossiers,
+and the rights colophon still shares the last page of each PDF. The homily's
+spoken body is unchanged at 1,553 words.
+
+**Gates.** The content phase of `scripts/_proper_study.py check` for all three
+editions (with `--require-presentation --require-format --require-authority`),
+the research phase, `tools/check-proper-components`,
+`tools/check-generation-metadata` on the source and all three PDFs, and
+`tools/proper-chronology annotations --check` pass. So does every
+`check-content-preflight` check the three preflight stages name, among them
+`chronology-annotations-current` and `provenance-matches-run` with the run's
+own workflow, version, digest, run id and seed commit, except
+`chronology-record-current`, which refuses on all three editions for the
+reason given under "Chronology annotations". The artifacts phase refuses
+because `research/artifacts.json` still describes the accepted build ("built
+PDFs or render inputs differ from the snapshot"); the receipt is refreshed only
+after the re-check, which this round does not supply.
+
+### Re-check of the second round, 2026-09-25
+
+An independent re-check confirmed REV-A-001 to REV-A-004 resolved against
+CSEL 22 p. 419 and PL 25 col. 180 and found nothing blocking. Its two
+advisories:
+
+- RECHECK-A-001: two Moral clauses of the third interpretation rest on the
+  longer form and are not marked in the rendered study (sections/40,
+  Moral) and concise study (closing comparison): Aquinas's "obey against
+  your own inclination", his reading of Phil 2:8, and Chrysostom's "do not
+  glorify Christ rightly and live wrongly", *Hom. in Phil.* 7. The study body
+  already says that under the shorter form this interpretation keeps only
+  Paul's appeal. `interpretations.md` Reading 3 now marks both **(longer form
+  only)**. Marking them in the rendered documents needs another page-fitting
+  round and is left open for this leaf's next revision; until then the
+  convention above holds with these two exceptions.
+- RECHECK-A-002: this entry lagged the working tree (the `chronology.toml`
+  rewrite, the list of changed sources, "accepted" meaning the first round's
+  build). Corrected above.
+

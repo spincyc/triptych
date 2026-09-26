@@ -4,8 +4,15 @@ Research stage, 24 September 2026, revised at the research re-entry of the
 same date (iteration 1). The revision corrected the report of Augustine on
 John 10:26 in Reading 2, recorded *Nostra aetate* 4 as the bound on presenting
 that reading, and separated authors' words from the leaf's joins in several
-four-senses and comparison cells. Three readings of the whole formulary are
-proposed from the evidence in [`scope.md`](scope.md). Every locus cited here is
+four-senses and comparison cells. A post-acceptance revision of 25 September
+2026 brought this record into agreement with the corrected study at the
+points the cold reviews left standing (RES-008, RES-009, STU-001, STU-004,
+STU-006, STU-007, STU-008, STU-009 and the longer-form marks of SYN-002; see
+`production-review.md`). A further change of the same day, after that
+revision's independent re-review, marks each four-senses clause that rests on
+only one of the two Communion antiphons, as the longer-form clauses are marked
+(REV-A-001). Three readings of the whole formulary are proposed from the
+evidence in [`scope.md`](scope.md). Every locus cited here is
 described there with its tier, language, form and limits, and is bound in
 [`source-bindings.toml`](source-bindings.toml) or listed in scope section 5.
 Each author is entered only for what he says of his own passage.
@@ -98,7 +105,7 @@ finished in this life.
 | Augustine, *Sermo* 82.14 and 87.10–11 | Using Ezekiel 18:21–22: God has promised pardon on the day the wicked turns, "but who hath promised thee a to-morrow?"; the promise raises the despairing, and must not become a reason to delay | Supplies the urgency: the door that Ezekiel opens does not stay open by date |
 | Augustine, *Enarr. in Ps.* 24.8 | "The Lord is gracious, since even sinners and the ungodly He so pitied, as to forgive all that is past; but the Lord is upright too, who ... will require merits meet for the last judgment" | The same double movement, from the responsorial psalm's own verse |
 | Thomas Aquinas, *Super Matthaeum* c. 21 (Venice 1745, pp. 275–276) | Among his readings, the sons as "iusti, et peccatores", those who profess themselves just and those who do penance. "Hodie, quasi per totum tempus vitae tuae." "Primus non promisit, sed fecit; secundus promisit, sed non fecit", and the second sins twice, "peccatum inobedientiae, et transgressio voti". "Ille enim est pessimus qui de facto suo non poenitet" | States the claim from the Gospel, with the aggravation of the broken word |
-| Thomas Aquinas, *Summa theologiae* III q. 86 a. 1; q. 84 a. 8 ad 1; q. 89 aa. 4–5 | With Ezekiel 18:22, no sin of a wayfarer is beyond penance, for his will "is flexible to good and evil". With Ezekiel 18:21, the penitent "must persevere in his penance, lest he fall again into sin". With Ezekiel 18:24, deeds done in charity are deadened by mortal sin and revived by penance | Supplies both the openness of return and its unfinishedness; qualifies Jerome (below) |
+| Thomas Aquinas, *Summa theologiae* III q. 86 a. 1; q. 84 a. 8 obj. 1 and ad 1; q. 89 aa. 4–5 | With Ezekiel 18:22 (the sed contra of q. 86 a. 1), no sin of a wayfarer is beyond penance, for his will "is flexible to good and evil". Ezekiel 18:21 is the authority of an objection (q. 84 a. 8 obj. 1), that penance need not be prolonged because the penitent is forgiven at once; his reply cites no Ezekiel, grants forgiveness in the first instant and adds that the penitent "must persevere in his penance, lest he fall again into sin". With Ezekiel 18:24, deeds done in charity are deadened by mortal sin and revived by penance | Supplies both the openness of return and its unfinishedness; qualifies Jerome (below) |
 | Robert Bellarmine, *Explanatio* on Psalm 24:7–9 | God "remembers his mercy when he does not wish to remember our sins any longer"; the law is given "to sinners in the way, to persuade them to abandon the old path"; grace "first softens and subdues the proud and the obstinate" and then guides them | Supporting, from the psalm |
 
 **Agreement and a narrower difference.** Jerome, Chrysostom, Augustine and
@@ -131,8 +138,8 @@ Ezekiel asserts, and each position stays with its author.
 | --- | --- |
 | Literal | Ezekiel answers exiles who call God's way unfair: each lives or dies by the way he is found walking. Jesus tells of a son who refused and then went and a son who promised and did not, and says the publicans and harlots who believed John go before those who did not repent afterward |
 | Allegorical | Aquinas on Matthew 21 reads the man as God, who calls by interior inspiration, and his *Hodie* as "per totum tempus vitae tuae", the whole of a life. Joined here, as the leaf's composite, with Aquinas's reading of John 10:27, where the sheep hear Christ's voice with Psalm 94:8, *Hodie si vocem eius audieritis*: Christ is the voice that calls "today". God's power, shown chiefly in sparing (Aquinas on the Collect), is the mercy that receives the penitent into the flock: Jerome on Ezekiel 18:21–22, *in meum suscipiatur gregem*. Joining Aquinas's Collect to Jerome's flock is also the leaf's |
-| Moral | Do not despair of your past and do not rest on it; turn today; let the deed follow the word, for the worst is he who does not repent of what he has done (Aquinas) and a Christian name without deeds profits nothing (Augustine) |
-| Anagogical | "Unusquisque in quo invenietur, in eo iudicabitur": the last judgment finds each where he stands (Jerome), so the penitent must persevere in his penance (Aquinas), and the word in which God gave hope is fulfilled (Augustine on Psalm 118:49) |
+| Moral | Do not despair of your past and do not rest on it; turn today; let the deed follow the word, for the worst is he who does not repent of what he has done (Aquinas) and **(Communion antiphon B only)** a Christian name without deeds profits nothing (Augustine) |
+| Anagogical | "Unusquisque in quo invenietur, in eo iudicabitur": the last judgment finds each where he stands (Jerome), so the penitent must persevere in his penance (Aquinas); **(Communion antiphon A only)** the word in which God gave hope is fulfilled (Augustine on Psalm 118:49) |
 
 **Strongest difficulty.** The parable is spoken to the chief priests and
 elders about John (Matthew 21:23, 32), and Jerome, Chrysostom and Aquinas all
@@ -172,13 +179,13 @@ presented under the magisterial bound recorded below and in scope section
 | Author and locus | His claim about his own passage | How it bears the controlling claim |
 | --- | --- | --- |
 | Jerome, *Comm. in Matt.* III on 21:28–31 (PL 26, cols. 155–156) | "Primo dicitur Gentilium populo per naturalis legis notitiam: Vade, et operare in vinea mea"; the people "superbe respondit: Nolo", and "in adventu Salvatoris, acta poenitentia, operatus est in vinea Dei". "Secundus autem filius, populus Iudaeorum est, qui respondit Moysi: Omnia quaecumque dixerit Dominus faciemus ... et non ivit in vineam, quia, interfecto patrisfamilias filio, se putavit haeredem." He reports others who read sinners and the just | States the claim from the Gospel |
-| Jerome, *In Hiezechielem* VI on Ezekiel 18:26–31 (PL 25, col. 181) | "Iustus prius populus Israel, avertit se a iustitia sua, quia iustitiae reliquit auctorem ... Dei Filium denegando"; the nations, the impious, if they turn from idolatry, "vivificabit animam suam"; "Usque hodie Israel blasphemat Deum, cur populum suum reliquerit, et gentium assumpserit multitudinem", and the just sentence gives the vineyard to other husbandmen (Luke 20:16). Yet the call to turn "Potest autem et ad utrumque populum intelligi"; "Cor novum Israelis, est credere in eum quem prius negaverat" | States the claim from the first reading, with the door open to both peoples |
+| Jerome, *In Hiezechielem* VI on Ezekiel 18:26–31 (PL 25, col. 181) | "Iustus prius populus Israel, avertit se a iustitia sua, quia iustitiae reliquit auctorem ... Dei Filium denegando"; the nations, the impious, if they turn from idolatry, "vivificabit animam suam"; "Usque hodie Israel blasphemat Deum, cur populum suum reliquerit, et gentium assumpserit multitudinem", and the Lord's sentence, which Jerome calls just ("Domini autem iusta sententia"), gives the vineyard to other husbandmen (Luke 20:16); the justice he names is of the Lord's sentence, not of his own charge. Yet the call to turn "Potest autem et ad utrumque populum intelligi"; "Cor novum Israelis, est credere in eum quem prius negaverat" | States the claim from the first reading, with the door open to both peoples |
 | John Chrysostom, *Hom. in Matt.* 67.2–3 | "These two children declare what came to pass with respect to both the Gentiles and the Jews": the Gentiles "showed forth their obedience in their works"; the Jews, having said "All that the Lord shall speak, we will do", "in their works were disobedient" (Rom. 2:13). "Go before you" is "not as though these were following, but as having a hope, if they were willing" | Agrees on the identification and keeps the hope for the second son |
 | Thomas Aquinas, *Super Matthaeum* c. 21 (p. 275) | "Iste homo, Deus est; duo filii sunt duo populi"; "Primus est populus gentilium, qui incepit a Noe, sicut populus Iudaeorum ab Abraham"; the second son professes justice, as the people said "Omnia quaecumque praeceperit Dominus faciemus" | Agrees, as the first of three readings he gives |
 | Augustine, *Enarr. in Ps.* 17.27–28 | Those who say "The way of the Lord is not right" are the froward, to whom it seems froward that God makes whole those who confess their sins; he humbles those "ignorant of God's righteousness, and seek[ing] to establish their own" (Rom. 10:3) | Reads the first reading's complaint as that of the self-righteous against the mercy shown to penitents. He does not name a people here |
 | Augustine, *Enarr. in Ps.* 24.1 | "Christ speaks, but in the person of the Church ... the Christian People turned unto God" | The psalm as the prayer of the people that turned |
 | Augustine, *In Ioh. ev. tract.* 48.4 (**contrary position**) | Of those Jesus addressed at John 10:26: "What did He mean, then, in saying to them, 'Ye are not of my sheep'? That He saw them predestined to everlasting destruction, not won to eternal life by the price of His own blood." Between the verse and that gloss he exhorts his own congregation, who "have already learned above (in Lecture XLV.) who the sheep are": "be ye sheep. They are sheep through believing, sheep in following the Shepherd" | Does not carry the claim. On the verse before the acclamation he leaves those addressed no opening, and his "be ye sheep" is spoken to his hearers, not to them. He stands against this reading's hope for the second son (see "A second difference") |
-| Thomas Aquinas, *Super Ioannem* c. 10 lect. 5 (p. 668) | He first glosses 10:26 as Augustine does: "scilicet praedestinati ad credendum, sed praesciti ad aeternum interitum". Asked whether saying so drove the hearers to despair, he distinguishes. Common to that whole crowd was that they "non erant praeordinati a Deo ad tunc credendum"; particular to some was that they would believe later, "aliqui qui ex eis praeordinati erant ad credendum in posterum", as three thousand believed in one day (Acts 2). Spoken to a crowd, "quia nullus de se determinate hoc poterat suspicari", it took away no one's hope, as it would have if said to a determinate person | Qualified support: a later faith stays open for some of those addressed, within his reading of predestination. It is hope for persons in that crowd, not a call to a people as such |
+| Thomas Aquinas, *Super Ioannem* c. 10 lect. 5 (p. 668) | He glosses 10:26 in his own terms: "scilicet praedestinati ad credendum, sed praesciti ad aeternum interitum", not predestined to believe and foreknown to eternal ruin, where Augustine says predestined to everlasting destruction. Asked whether saying so drove the hearers to despair, he distinguishes. Common to that whole crowd was that they "non erant praeordinati a Deo ad tunc credendum"; particular to some was that they would believe later, "aliqui qui ex eis praeordinati erant ad credendum in posterum", as three thousand believed in one day (Acts 2). Spoken to a crowd, "quia nullus de se determinate hoc poterat suspicari", it took away no one's hope, as it would have if said to a determinate person | Qualified support: a later faith stays open for some of those addressed, within his reading of predestination. It is hope for persons in that crowd, not a call to a people as such |
 | Gregory the Great, *Hom. in Evang.* 14.4 | Of the other sheep of 10:16, the Gentiles, "qui ex gentili populo venimus": "Quasi enim ex duobus gregibus unum ovile efficit, quia Iudaicum et gentilem populum in sua fide coniungit" (Eph. 2:14), for "ad aeternam vitam ex utraque natione simplices eligit" | One fold of two peoples, from the chapter of the acclamation (10:16, in the Good Shepherd discourse before the Dedication scene of 10:22–30). His fold is made of those chosen from each people, joined in faith; he says nothing of 10:26 or of those who refused |
 
 **A real disagreement, to be preserved.** Hilary (*Comm. in Matt.* 21.11–15,
@@ -188,7 +195,10 @@ repented, is the people of the Pharisees, who after the resurrection repented
 and believed under the apostles; the younger, who promised and did not go, is
 the people of publicans and sinners, who believed John but could not yet do the
 Gospel's work, "obediens professione, licet non efficiens in tempore; quia
-fides sola iustificat". Jerome knows the same reading of v. 31 (*Novissimus*),
+fides sola iustificat". In his argument the phrase explains why the publicans
+count as obedient: their faith in John's preaching is reckoned as the
+obedience they could not yet show in the Gospel's works, which waited on the
+Passion (PL 9, col. 1041). Jerome knows the same reading of v. 31 (*Novissimus*),
 says true copies read *primum*, and explains *novissimus* as the Jews'
 evasion. The disagreement is real and textual as well as exegetical. Hilary is
 therefore **not** a carrying author of this reading; the studies must set his
@@ -201,9 +211,10 @@ view the later belief of some of the crowd then addressed.
 **A second difference.** On John 10:26, the verse before the acclamation,
 Augustine says those addressed were predestined to everlasting destruction.
 His "be ye sheep" in the same section is addressed to his own congregation,
-not to them. Aquinas keeps the same gloss (*praesciti ad aeternum interitum*),
-but, asking whether it drove its hearers to despair, distinguishes within the
-crowd. None were then preordained to believe; some were preordained to
+not to them. Aquinas reads the verse of reprobation too, in his own terms:
+not predestined to believe, and foreknown (*praesciti ad aeternum interitum*)
+to eternal ruin. Asking whether that drove its hearers to despair, he
+distinguishes within the crowd. None were then preordained to believe; some were preordained to
 believe later. The difference is narrower than a contradiction, since both
 read the saying of predestination, but it is real for this reading. Augustine
 closes to those addressed the hope that Aquinas keeps open for some of them.
@@ -230,7 +241,7 @@ direct the moral application to the baptized.
 
 | Element | Contribution to this reading | Class |
 | --- | --- | --- |
-| `entrance-antiphon` | A people confesses, in exile, that God judged truly because they sinned and did not obey his commandments. Jerome on Daniel 3:29: the three youths, who had not sinned, "ex persona populi loquuntur" | source-grounded synthesis from Jerome on the antiphon's source verse; reading the confession as the second son's belated truth is this leaf's |
+| `entrance-antiphon` | A people confesses, in exile, that God judged truly because they sinned and did not obey his commandments. Jerome on Daniel 3:29: the three youths, who had not sinned, "ex persona populi loquuntur". Beside the parable it is the confession owed by anyone who promised and did not go; as this reading's moral sense directs, the baptized make it | source-grounded synthesis from Jerome on the antiphon's source verse; the join to the parable is this leaf's and does not apply the identification of the peoples (study review STU-007) |
 | `collect` | That those running toward God's promises may share heavenly goods: the promises made to the fathers, now shared by those who came late | editorial or AI proposal |
 | `first-reading` | "The way of the Lord is not right" is the complaint of the house of Israel; Jerome reads the just who turns away as Israel denying the Son and the impious who turns as the nations; Augustine reads the complaint as that of those who seek their own righteousness | officially correlated; content from Jerome and Augustine |
 | `responsorial-psalm` | The psalm spoken by "the Christian People turned unto God", which cannot return from the far country "unless Thou meetest the wanderer" (Augustine, 24.1, 5); Jerome calls the two sons those of Luke's parable, the frugal and the prodigal | responsorial; content from Augustine; the link to Jerome's Lucan sons is this leaf's |
@@ -241,7 +252,7 @@ direct the moral application to the baptized.
 | `prayer-over-offerings` | The fount of every blessing opened: the blessing promised through the fathers reaching all | editorial or AI proposal |
 | `communion-antiphon-a` | The servant asks God to remember the word in which he gave hope. Hilary: every word of God in Scripture "in spem bonorum caelestium uocat", and hope must be shown "rebus ipsis", not in words only | source-grounded synthesis from Hilary on the verse; the application to the promise to Israel is this leaf's |
 | `communion-antiphon-b` | Christ laid down his life for us. Gregory, at John 10:15–16: the shepherd shows his love for the Father by dying for the sheep, of whom he makes one fold of two peoples | editorial or AI proposal, drawing on Gregory's reading of John 10, not of 1 John |
-| `prayer-after-communion` | The prayer asks that we be co-heirs in glory. Jerome says the second son thought himself heir after killing the son | editorial or AI proposal; the shared vocabulary of inheritance is a textual observation |
+| `prayer-after-communion` | The prayer asks that we be co-heirs in glory and names its heirs by a condition, sharing Christ's sufferings, the condition Romans 8:17 sets; the heirs are those of either people who share them, as Gregory's one fold is made of those chosen from each. Jerome's charge that the second son killed the heir is not its foil (study review STU-007) | editorial or AI proposal; the Romans vocabulary is a textual observation |
 
 ### Four senses
 
@@ -249,8 +260,8 @@ direct the moral application to the baptized.
 | --- | --- |
 | Literal | In the temple Jesus tells the chief priests and elders, who would not say whether John's baptism was from heaven, that publicans and harlots who believed John go before them; Ezekiel answers the house of Israel that God's way is right |
 | Allegorical | The first son is the nations, who refused and then believed, and the second the people who promised at Sinai and did not go (Jerome, Chrysostom, Aquinas). The psalm is prayed by "the Christian People turned unto God" (Augustine on Psalm 24, 1); that this people is the Church of the nations is the leaf's gloss |
-| Moral | The baptized can become the second son: Aquinas applies the parable to clerics and religious who profess and do not do. Those long inside must not resent those who come in, and must themselves go |
-| Anagogical | One fold and one shepherd, of two peoples (Gregory); Jerome's new heart for Israel and for the nations; **(longer form only):** every knee and every tongue confessing Jesus as Lord |
+| Moral | The baptized can become the second son: Aquinas applies the parable to clerics and religious who profess and do not do. Those long inside must not resent those who come in, and must themselves go. The call to a new heart can be understood of both peoples, each leaving its vices and turning to the one who can heal (Jerome on Ezekiel 18:31: present conversion, not final fulfilment) |
+| Anagogical | One fold and one shepherd, made of those chosen from each people and joined in faith, chosen "ad aeternam vitam" (Gregory); **(longer form only):** every knee and every tongue confessing Jesus as Lord |
 
 **Strongest difficulty.** Hilary's contrary identification and the textual
 variant show that the allegory is not the parable's plain sense, and the
@@ -292,7 +303,7 @@ Aquinas's word.
 | Thomas Aquinas, *Super Ioannem* c. 10 lect. 3 (p. 660) | The good shepherd's office is charity, and of the shepherd who lays down his bodily life for the flock "Christus nobis exemplum praebuit", with 1 John 3:16 | The same verse as Christ's example |
 | Thomas Aquinas, *Summa theologiae* I q. 25 a. 3 ad 3 | On the Collect: omnipotence is shown most in sparing and mercy, because God freely forgives and because thereby he leads men "ad participationem infiniti boni" | God's power shown most in the mercy that forgives and leads to the infinite good. The stooping is Schuster's "condescension", not Aquinas's word |
 | Augustine, *Enarr. in Ps.* 118 s. 15.2; Hilary, *Tract. in Ps.* 118, Zain 2 | Hope "data est humilibus", with Luke 14:11; the humbled one knows "humilitatem suam glorioso esse honoris praemio munerandam" | Humility exalted, from Communion antiphon A's own verse. Both read the humility of v. 50 chiefly as humiliation suffered |
-| Gregory the Great, *Hom. in Evang.* 14.4 | "ea charitate qua pro ovibus morior quantum Patrem diligam ostendo" | The Son's love for the Father shown in dying for the sheep; supporting |
+| Gregory the Great, *Hom. in Evang.* 14.4 | "ea charitate qua pro ovibus morior quantum Patrem diligam ostendo" | The Son's love for the Father shown in dying for the sheep; supporting. "Obedience" is not his word: that this love is the obedience of Philippians 2:8 is the leaf's joining |
 | Ildefonso Schuster, *Sacramentary* III, pp. 121–122 (supporting only) | In the Collect, the sinner's rehabilitation asks "a condescension" beyond creation: God "descends into" the abyss to draw the sinner out | Supporting, on the Collect |
 
 **Agreement.** Chrysostom, Aquinas and Augustine each state that Christ's
@@ -308,7 +319,7 @@ presented as such.
 | --- | --- | --- |
 | `entrance-antiphon` | The people ask God to give glory to his name (*da gloriam nomini tuo*, Daniel 3:43 in the Clementine as in the Missal); **(longer form only):** God gave Jesus the name above every name | editorial or AI proposal; the shared *nomen* is a textual observation |
 | `collect` | Omnipotence shown chiefly in sparing and mercy (Aquinas; Schuster's condescension); the petition that those who run toward the promises share heavenly goods, Aquinas's *participationem infiniti boni* | source-grounded synthesis from Aquinas and Schuster on the Collect; the link to the kenosis is this leaf's |
-| `first-reading` | "Is it my way that is not right?" (Douay–Rheims). Augustine: God makes whole the humble who confess their sins and humbles those who seek their own righteousness; the way of the Lord is the way of humility | officially correlated; content from Augustine on Ezekiel 18:25; the link to Philippians is this leaf's |
+| `first-reading` | "Is it my way that is not right?" (Douay–Rheims). Augustine: the froward call the Lord's way not right, because God makes whole the humble who confess their sins and humbles those who seek to establish their own righteousness. Calling it the way of humility is this leaf's condensation, not his phrase | officially correlated; content from Augustine on Ezekiel 18:25; the condensation and the link to Philippians are this leaf's |
 | `responsorial-psalm` | "He will guide the mild in judgment; he will teach the meek his ways." Augustine: those "that follow His will, and do not, in withstanding It, prefer their own"; Bellarmine: the proud first softened and humbled | responsorial; content from Augustine and Bellarmine |
 | `second-reading-long` | The controlling text, from Chrysostom, Aquinas and Augustine | source-grounded synthesis from Chrysostom, Aquinas and Augustine |
 | `second-reading-short` | Only the exhortation and *Hoc sentite* (the *Ordo*'s titulus): humility, and Christ's mind named but not narrated; Chrysostom, *Hom.* 5; Aquinas, lect. 1 | source-grounded synthesis from Chrysostom and Aquinas on vv. 1–5; under this form the reading loses its narrative centre |
@@ -324,9 +335,9 @@ presented as such.
 | Sense | Distillation |
 | --- | --- |
 | Literal | Paul asks the Philippians for one mind and humility, each regarding the others as better, and sets before them the mind of Christ Jesus; **(longer form only)** who, being in the form of God, emptied himself, obeyed unto death on a cross, and was exalted with the name above every name |
-| Allegorical | Christ is the Son who obeyed the Father and so honoured him (Chrysostom); the lowly God who finds proud man (Augustine); the shepherd who lays down his life, whose body and blood are received at the ruler's table (Augustine) |
-| Moral | Count others better than yourself by the image of God in them (Aquinas); obey against your own will; begin to lay down your life by giving of your goods (Augustine); do not live so as to insult him you rightly praise (Chrysostom) |
-| Anagogical | Exaltation follows humility (Aquinas; Hilary on humility's glory); co-heirs in glory with the one whose death is proclaimed; **(longer form only)** every knee bowing |
+| Allegorical | **(longer form only):** Christ is the Son who obeyed the Father and so honoured him (Chrysostom), the lowly God who finds proud man (Augustine). **(Communion antiphon B only):** Christ is also the shepherd who lays down his life, whose body and blood are received at the ruler's table (Augustine) |
+| Moral | Count others better than yourself by the image of God in them (Aquinas); **(longer form only)** obey against your own will (Aquinas, on Phil 2:8); **(Communion antiphon B only)** begin to lay down your life by giving of your goods (Augustine); **(longer form only)** do not live so as to insult him you rightly praise (Chrysostom, *Hom. in Phil.* 7) |
+| Anagogical | Exaltation follows humility (**(Communion antiphon A only)** Hilary on humility's glory; **(longer form only)** Aquinas on Philippians 2:9); co-heirs in glory with the one whose death is proclaimed; **(longer form only)** every knee bowing |
 
 **Strongest difficulty.** No author read joins Philippians 2 to either the
 parable or Ezekiel, and the second reading follows its own course; the
@@ -347,7 +358,7 @@ only the exhortation and its titulus.
 | Question | `turning` | `two-peoples` | `obedient-son` |
 | --- | --- | --- | --- |
 | Who are the two sons? | Sinners who do penance and those who profess justice (Aquinas; Jerome's report; Chrysostom's application) | The nations and the people of Sinai (Jerome, Chrysostom, Aquinas); Hilary reverses them | Not the reading's question; Christ as the obedient Son is the leaf's proposal |
-| What is "the way of the Lord"? | Judgment of the present state, both ways (Jerome) | God's receiving the nations, which Israel calls unequal (Jerome) | The way of humility, which the froward call froward (Augustine) |
+| What is "the way of the Lord"? | Judgment of the present state, both ways (Jerome) | God's receiving the nations, which Israel calls unequal (Jerome) | The way that heals the humble who confess and humbles the proud, which the froward call not right (Augustine); calling it a way of humility, and its likeness to Christ's path, are the leaf's |
 | Where is the weight? | Ezekiel 18:27–28 and Matthew 21:29, the tituli | Matthew 21:31–32 and Ezekiel 18:29 | Philippians 2:5–8 |
 | What does the Collect say? | God freely forgives (Aquinas) | Those who come late share the promises (the leaf's proposal) | God's power is shown most in sparing and mercy, leading men to share the infinite good (Aquinas); the sinner's rehabilitation asks a condescension beyond creation (Schuster). That this power "stoops" is the leaf's joining of the two |
 | What do the Communion antiphons say? | A: the promise remembered. Augustine: *Memento* asks God to fulfil his promise, and he cites Ezekiel 18:22 among Scripture's ways of speaking of God's forgetting. Bellarmine, on Psalm 129: God's promise of pardon to penitents. B: deeds, not the name (Augustine) | A: hope in the promise (Hilary). B: one flock (Gregory, from John 10) | A: hope for the humble (Augustine, Hilary). B: the life laid down, at the Eucharistic table (Augustine) |
