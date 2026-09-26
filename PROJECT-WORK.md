@@ -18,7 +18,69 @@ and research-record lag. Two known tool defects would regenerate GPT
 publications and wait for the maintainer's express authority: the web
 converter merging adjacent quotation blocks (WEB-001), and the chronology
 annotation printing a capitalized source label after its disposition word
-("Preferred In the eighth year of his reign").
+("Preferred In the eighth year of his reign"). The maintainer authorized both
+on 2026-09-25 ("Both (Recommended)"), and authorized editing GPT leaf 50's
+binding [13] for the Missal locator correction ("Authorize the GPT edit
+(Recommended)").
+
+**Landed** (each lane independently reviewed, and each fix round re-checked,
+until nothing blocking remained):
+
+- Source records and index (`097c14112`): the 2002 Missal Week XXVI locator
+  (pp. 289-290, not 302-303), the USCCB September titles page (printed 56,
+  artifact 58), the ot-25/ot-26 index entries, the pc-s51 research records.
+- Propers structure (`3101e4f50`): each citation read in its own psalm
+  numbering (twelve Vulgate-declared antiphons, ot-25 no longer Psalm 117),
+  no trimmed range served (four citations now unresolved with the bound named),
+  a whole psalm served as the verses it is (1962 palm-sunday Ps 147).
+- Chronology wording (`be16062df`): "Preferred: …; alternatives: …" in six
+  leaves of both providers.
+- pc-s52 revision (`3ba4f831a`): all 20 standing findings repaired, a second
+  round for the re-review's four advisories; installed PDFs byte-identical to
+  the re-checked builds.
+- Two tests that had failed on main since the pc-s52 publication (`4af067cb8`).
+- Web converter (`d33956978`): adjacent quotations kept apart in 40
+  editions (497 places); 41 editions regenerated, receipts, catalogue, source
+  projection and inventories refreshed; the maintainer approved the rebind,
+  "Approve all 45 (Recommended)".
+
+**Test and example baseline.** Compared against `main` at `d5397e4ca` with the
+same installed PDFs: `make check-tests` failed 4 there and passes all of them
+here except `document-library.test`, which fails in both because one issue's
+PDF is not installed in this clone; example replay diverged on 15 there and on
+the same 15 here once the index-bible transcripts were recaptured.
+
+**Left standing** (found during this work, not fixed; each needs its own lane):
+
+- The propers browser shows English Bibles that leave psalm titles unnumbered
+  (KJV, RV, WEB-C) one verse off wherever a psalm has a numbered heading:
+  357 of 977 resolved postconciliar psalm citations, 1,190 of 2,250 in 1962
+  (`lociFor` in src/web/browser/shared/browser-core.js applies no
+  `unnumber_titles` offset).
+- The browser ignores the Clementine's verse aliases (Ps 15:10-11, 42:4-6, the
+  Ps 115 renumbering), so Lent-2's responsorial psalm shows the wrong Latin.
+- The browser heading does not say which numbering a citation is written in.
+- `scripts/_formulary.py` and `tools/commentary-work-index` still read every
+  citation under the calendar's numbering; the tracked
+  `mass-commentary-corpus.yaml` keys ot-25's antiphon to Psalm 117 and lists
+  eleven Vulgate antiphons as unconvertible.
+- `index-bible` still trims Ps 150:6 in three Vulgate indexes and files the
+  Vulgate `Psalm 147` as all of Hebrew 147 in the KJV, RV and WEB-C indexes.
+- The psalm numbering table follows the Gutenberg Douay, which merges 28:10-11
+  and 150:5-6; four citations stay unresolved until it records them.
+- A half-open psalm range crossing numberings would be closed one verse short
+  at a merged bound (no tracked citation has that shape).
+- The CPDV psalm fragments end each psalm's last verse with the next psalm's
+  heading.
+- The two liturgical-calendar reference web pages render nested lists flat
+  (pandoc indents continuations by two spaces; the renderer needs four).
+- Date cells: "Duration:" doubled in single-disposition cells; 1962 Proper 11's
+  Communion narrated-event labels differ only in case.
+- pc-s52: two longer-form Moral clauses unmarked in the rendered study and
+  concise study (RECHECK-A-001).
+- Leads not verified: `ordo-missae.toml` gives artifact pp. 290-348, but the
+  Ordo Missae begins at p. 303; the index's recurring either/or basis wordings
+  and letter-on-Hebrew-25:4 loci are open collation items.
 
 ## Claude postconciliar Twenty-Sixth Sunday three documents, 2026-09-24
 

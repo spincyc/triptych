@@ -9,20 +9,38 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "pc-s52-advisories-resolved"
   criterion = "Each standing advisory of the pc-s52 leaf (STU-001 to STU-010, SYN-001 to SYN-004, HOM-001 to HOM-003, VIS-001) is repaired or declined with a recorded reason; the research records agree with the published study where STU-001, STU-007, STU-008, RES-008 and RES-009 found them lagging; the three PDFs and the web edition are rebuilt, gated, independently reviewed and installed."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/research/production-review.md", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/research/production-review.md"
+  needle = "Post-acceptance revision, 2026-09-25"
 
   [[deliverables.requirements]]
   id = "upstream-record-defects"
   criterion = "The 2002 Missal Dominica XXVI passage locator, the September Spanish-titles page reference and the PC-S51-A occurrence row that repeats it, and the ot-26 calendar-index entry are corrected against their artifacts and independently reviewed; no GPT leaf file changes."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/dominica-xxvi-per-annum.toml", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/dominica-xxvi-per-annum.toml"
+  needle = "[[289, 290]]"
 
   [[deliverables.requirements]]
   id = "pc-s51-leads-and-records"
   criterion = "The pc-s51 run's unverified leads (the Week 25 finding-aid Communion antiphon psalm number, the older Claude registry rows' keys) are verified and corrected where wrong, and the pc-s51 research records agree with its published study at the points its run recorded as lagging; independently reviewed."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/interpretations.md", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/interpretations.md"
+  needle = "On 25 September 2026, after publication, this record was brought into"
+
+  [[deliverables.requirements]]
+  id = "tool-fixes-authorized-2026-09-25"
+  criterion = "The web converter keeps adjacent quotations apart on the site, the chronology annotation labels each disposition in a mixed date cell, and the propers structure reads each citation in its own psalm numbering and never serves a trimmed or misnumbered psalm range; each with regression tests, regenerated outputs proven to change only as intended, and independent review."
+  status = "pass"
+  evidence = ["tools/web-edition", "scripts/_proper_chronology.py", "tools/mass-propers", "guidance/web-editions.md", "guidance/propers-for-agents.md"]
+  check = "contains"
+  path = "tools/web-edition"
+  needle = "end of quotation"
 
   [[deliverables.requirements]]
   id = "known-issues-pushed"
