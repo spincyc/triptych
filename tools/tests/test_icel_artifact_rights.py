@@ -88,6 +88,7 @@ EXPECTED_ANTIPHONARY_PASSAGE_STATES = {
     "copyright-notices": VERIFIED_STATES,
     "foreword": VERIFIED_STATES,
     "ordinary-time-twenty-fifth-sunday": ["cataloged", "acquired", "inspected"],
+    "ordinary-time-twenty-sixth-sunday": ["cataloged", "acquired", "inspected"],
     "palm-sunday-procession-antiphons": VERIFIED_STATES,
     "palm-sunday-simple-entrance-antiphon": VERIFIED_STATES,
 }
