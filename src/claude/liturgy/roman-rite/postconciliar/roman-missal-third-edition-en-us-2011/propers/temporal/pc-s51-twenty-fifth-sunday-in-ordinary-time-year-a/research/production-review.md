@@ -249,7 +249,7 @@ records are the research stage's.
    `conversion` author table, while its standing limits say nothing rests on the
    second sentence of Matthew 20:16. Gregory draws the two cautions of 19.6
    expressly from that sentence. The study reports them as drawn from a sentence
-   this Mass does not read.
+   this Mass does not read. (Resolved in `interpretations.md` on 2026-09-25.)
 2. The research record describes Aquinas on Matthew pp. 258–261 as read in OCR
    only. The retained facsimile bound for p. 262 contains those pages as images.
    The study keeps to paraphrase for them, as the record directs.
@@ -265,6 +265,7 @@ records are the research stage's.
    of where the willingness comes from. The study no longer follows that
    wording; it keeps what the record rightly requires, that the difference
    between the two readings of Acts 16:14 appear beside the step it qualifies.
+   (The record was brought into line with the study on 2026-09-25.)
 5. Met at iteration 1. The standing limits of `research/interpretations.md`
    and the scope record say that Chrysostom, Jerome, Gregory and Aquinas
    expound the second sentence of Matthew 20:16. On the page (PL 26, 142)

@@ -152,6 +152,31 @@ part letters are how the cantor knows where the strophe begins and ends, and the
 file's own `open_collation_items` had this open as "settle one notation at
 collation" since before the leads were written.
 """
+part_letters_note_2026_09_25 = """
+Dated 2026-09-25. It supersedes the second example in `part_letters_note` and
+leaves the count above standing as a record of what was done on 2026-08-01.
+That example, `Psalm 25:4-5` where the Ordo prints `Ps 24, 4bc-5ab`, is the First
+Sunday of Advent, year C, and the `4bc` written there, on the converted Hebrew
+verse, does not address the text the book's `4bc` addresses. The Ordo's letters name cola of the Vulgate's division of the
+verse it numbers, and `scripts/_psalms` converts only the verse number. In the
+tracked Clementine and Douay-Rheims, Ps 24:4 has three cola; the first, on the
+confusion of the wicked, is what the tracked King James Version prints as
+25:3b. So the Ordo's 4bc is the whole of Hebrew 25:4, and `4bc` written on Hebrew
+25:4 names only that verse's second colon and a third it does not have, where the
+Ordo means the whole verse.
+
+Four of the letter-only corrections of 2026-08-01 wrote `4bc` on Hebrew 25:4: the
+First Sunday of Advent year C, the First Sunday of Lent year B, the Third Sunday in
+Ordinary Time year B and the Twenty-sixth Sunday in Ordinary Time year A. The last
+was corrected on 2026-09-25 to `Psalm 25:4-5, 6-7, 8-9`, and the printed citation
+is kept in that Mass's notes. The other three, with the weekday occurrences, are
+listed in the calendar's `open_collation_items`. That entry also records why a
+per-cycle `psalm_numbering: vulgate`, which would keep the printed letter in
+`part`, was weighed and not used: the conversion carries the letter unchanged
+onto Hebrew 25:4. The note's first example, and every non-psalm letter, are
+untouched by this. No psalm letter other than those on Hebrew 25:4 was examined
+for the same shift.
+"""
 verse_selection_note = """
 Forty-nine changed which verses are appointed. The pattern is one thing and it is
 worth naming: **the leads reproduce the United States Lectionary, not the Ordo.**

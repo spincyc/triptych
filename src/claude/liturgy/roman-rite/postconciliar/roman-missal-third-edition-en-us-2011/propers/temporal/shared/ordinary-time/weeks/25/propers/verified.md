@@ -46,7 +46,7 @@ The two Communion antiphons are a genuine either/or in the Missal, printed with 
 ## Findings internal to this edition
 
 1. **The Entrance antiphon carries no scriptural locator.** The 2002 Latin prints *Ant. ad introitum* with no citation, and the ICEL excerpt prints none in its citation margin. The excerpt's compiler adds a bracketed remark that the antiphon "is based on" Ps 36[37]:39–40 and offers Ps 77[78]:1–7 (with a *Graduale Romanum* page pointer) or Ps 36[37]:27–40 as its psalm. That is the compiler's assignment, not the Missal's citation. The antiphon is therefore treated as a composed liturgical text with an identified scriptural basis still to be tested, not as a quotation of any verse.
-2. **Communion antiphon A is cited in Vulgate numbering.** The printed locator *Ps 118, 4-5* is Ps 119:4–5 in Hebrew numbering; the Douay–Rheims (Challoner) at Ps 118:4–5 corresponds to the antiphon's Latin clause for clause. The finding-aid index `src/sources/calendars/postconciliar/propers.yaml` carries the same digits, `Psalm 118:4-5`, under a file that declares Hebrew numbering, so `tools/tpt mass-propers show --mass ot-25 --bible douay-rheims` resolves it to Vulgate Ps 117:4–5, a different passage. The index entry's own note marks that antiphon as unread. This record controls: the appointment is Vulgate Ps 118:4–5, Hebrew Ps 119:4–5. The index belongs to its own owner and is unchanged here.
+2. **Communion antiphon A is cited in Vulgate numbering.** The printed locator *Ps 118, 4-5* is Ps 119:4–5 in Hebrew numbering; the Douay–Rheims (Challoner) at Ps 118:4–5 corresponds to the antiphon's Latin clause for clause. The finding-aid index `src/sources/calendars/postconciliar/propers.yaml` carries the same digits, `Psalm 118:4-5`, under a file that declares Hebrew numbering, so `tools/tpt mass-propers show --mass ot-25 --bible douay-rheims` resolves it to Vulgate Ps 117:4–5, a different passage. The index entry's own note marks that antiphon as unread. This record controls: the appointment is Vulgate Ps 118:4–5, Hebrew Ps 119:4–5. The index belongs to its own owner and is unchanged here. *(As of 2026-09-19. The index was corrected on 2026-09-25; see the dated correction below.)*
 3. **Both non-oration texts that speak in Christ's or God's voice add *dicit Dóminus*.** The Entrance antiphon and Communion antiphon B each carry the phrase; in antiphon B it stands inside a text otherwise printed without *Cf.*
 
 ## Variants, discrepancies, rights, and disposition
@@ -120,5 +120,22 @@ how far it was checked. None changes an element, a locator or a boundary above.
    no *tuae* and the short conclusion. The wording is otherwise the same as far
    as the damaged OCR shows. No facsimile was collated and no claim is made
    about the route between them.
+
+## Correction of 2026-09-25
+
+Finding 2 is kept as it was made on 2026-09-19; this note records what has
+changed since. On 2026-09-25 the `ot-25` entry of
+`src/sources/calendars/postconciliar/propers.yaml` was corrected. Communion
+antiphon A now declares Vulgate psalm numbering on the proper, so
+`tools/tpt mass-propers show --calendar postconciliar --mass ot-25 --bible douay-rheims`
+resolves `Psalm 118:4-5` to Douay–Rheims Ps 118:4–5, the antiphon's text, and
+no longer to Ps 117. The mass notes record both Communion antiphon citations
+as read that day in a page image of artifact p. 289: Ps 118, 4-5, without
+*Cf.*, and, after *Vel*, Io 10, 14. The two antiphons' either/or basis, which
+had called the first antiphon the second, now reads that the Missal prints
+two Communion antiphons, the second after *Vel*, and that *Tempus per annum*
+rubric 6 lets one or the other be chosen. Finding 2's description of the index
+is therefore history. The appointment it states, Vulgate Ps 118:4–5, Hebrew
+Ps 119:4–5, is unchanged.
 
 **Outstanding.** Direct inspection of 2008 reprint page images; publisher- and printing-specific collation of a named United States altar book; the textual source of the Entrance antiphon beyond the bounded test of addition 2, and collation of Schuster's printed page; the antecedents and redaction of the Collect and the Prayer over the Offerings, and facsimile collation of the Ambrosian occurrence of the Prayer after Communion; collation of the *Graduale Romanum* pages the excerpt points to; work-specific rights review; liturgical-text permission; and independent review of this audit.

@@ -287,7 +287,8 @@ this stage.
 
 - Complete the Week XXVI owner's collation: register a correctly located
   passage record for the 2002 artifact at physical PDF pp. 289–290 (the
-  existing record for *Dominica XXVI per annum* is mislocated; see below) and
+  existing record for *Dominica XXVI per annum* was mislocated when this was
+  written; see below) and
   one for the ICEL excerpt's printed p. 79 as it bears on this week; establish
   which Latin text the Entrance antiphon's wording follows; establish the
   antecedents and redaction of the three orations, beginning with the
@@ -301,7 +302,8 @@ this stage.
   colon letters; Communion antiphon A is Hebrew Psalm 119:49–50; and the
   Entrance antiphon's Daniel 3:29–31, 42–43 are verses of the Greek addition
   and must not be resolved against an Aramaic-numbered Daniel 3. The
-  finding-aid index's `Psalm 25:4bc-5` must not override the first.
+  finding-aid index's `Psalm 25:4bc-5` must not override the first. (As of
+  2026-09-24; the index now reads `Psalm 25:4-5`, corrected 2026-09-25.)
 - Decide how the adapted elements are displayed: the Entrance antiphon and
   Communion antiphon A by incipit, description and labelled scriptural source;
   the acclamation verse with its added speaker formula identified.
@@ -333,7 +335,8 @@ this stage.
   `src/sources/calendars/postconciliar/propers.yaml` and `rubrics.yaml`.
 - Two neighbouring library records were found inconsistent with their
   artifacts and were not relied on. They belong to their own owners and are
-  unchanged here. The registered passage for *Dominica XXVI per annum* gives
+  unchanged here. (As of 2026-09-24; both records were corrected on
+  2026-09-25.) The registered passage for *Dominica XXVI per annum* gives
   physical pages 302–303 and printed pp. 487–488, but in the hash-matched
   artifact those pages carry the end of Christ the King, the heading stands at
   physical p. 289, and the artifact's index leaves no Ordinary Time Sunday at

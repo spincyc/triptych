@@ -12,7 +12,7 @@ This non-publishable shared source owns the reusable Missal formulary for Week X
 
 | Layer | Witness | What this audit checked |
 | --- | --- | --- |
-| Latin typical text | *Missale Romanum*, editio typica tertia (Typis Vaticanis, 2002), heading *Dominica XXVI "per annum"* | Directly read on 2026-09-24 in the exact registered artifact `artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944`, SHA-256 `0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7` (3,333,382 bytes, matched before reading), physical PDF pp. 289–290, in rendered page images and in the text layer. The heading stands in the lower half of p. 289, immediately after the Prayer after Communion of Week XXV; the formulary ends on p. 290 immediately before the heading *Dominica XXVII "per annum"*. The complete formulary, its element order, its printed scriptural locators with their *Cf.* marks, its alternative Communion antiphon and each oration's conclusion were read in full. |
+| Latin typical text | *Missale Romanum*, editio typica tertia (Typis Vaticanis, 2002), heading *Dominica XXVI "per annum"* | Directly read on 2026-09-24 in the exact registered artifact `artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944`, SHA-256 `0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7` (3,333,382 bytes, matched before reading), physical PDF pp. 289–290, in rendered page images and in the text layer. The heading stands about halfway down p. 289 (corrected on 2026-09-25; see the dated corrections below), immediately after the Prayer after Communion of Week XXV; the formulary ends on p. 290 immediately before the heading *Dominica XXVII "per annum"*. The complete formulary, its element order, its printed scriptural locators with their *Cf.* marks, its alternative Communion antiphon and each oration's conclusion were read in full. |
 | 2008 emendation state | *Variationes et additiones in Missali Romano*, *Notitiae* 44 (2008), *Tempus per annum* subsection | Directly read on 2026-09-24 in the official Dicastery issue PDF, SHA-256 `74c8d1740284984d0f4d64b2223edf805dadfa55aec8a92f8cfba9ab901eca0f` (1,280,566 bytes, matched), physical PDF p. 53 (printed journal p. 371). The subsection has exactly two entries, at printed Missal pp. 457 and 471. In the 2002 artifact the first falls in the Prayer after Communion of Week VII and the second at the second Communion antiphon of Week XXI (physical p. 285); neither reading occurs in the Week XXVI formulary. |
 | Approved English antiphons | *Antiphonary: Excerpted from the Roman Missal* (ICEL, 2010), printed p. 79 | Directly read on 2026-09-24 in the registered PDF `artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf`, SHA-256 `e6b82741acc77fb5e0d7c887813f6f2652b4ec088abc8526f5c77320e9762aca` (1,120,199 bytes, matched), physical PDF p. 87, the same page as Week XXV. Its citation margin gives the Entrance antiphon as Dn 3: 31, 29, 30, 43, 42, Communion antiphon A as Cf. Ps 118: 49-50 and the second antiphon, under *Or:*, as 1 Jn 3: 16, agreeing with the Latin in every locator, in the one *Cf.*, and in the either/or structure. Its red sub-lines are the compiler's psalm assignments from the *Graduale Romanum*, not Missal text. No English wording is retained here. |
 | Governing rubrics | *Missale Romanum* 2002, *Tempus per annum* introductory rubrics 1–6 | Read on 2026-09-24 in the same artifact at physical PDF pp. 267–268 (registered passage `passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.rubricae-temporis-per-annum`). |
@@ -46,10 +46,10 @@ The two Communion antiphons are a genuine either/or in the Missal, printed with 
 ## Findings internal to this edition
 
 1. **The Entrance antiphon is a composite printed without *Cf.*** Its locator lists five verses out of order, 31, 29, 30, 43 and 42, all within the Prayer of Azariah that the Vulgate numbers as Daniel 3:24–90. Against the tracked Clementine Vulgate (`edition.catholic-church.vulgata-clementina.ebible-latvuc`) the Missal condenses v. 31's two parallel object clauses into one and adds *Dómine*; renders the confession of vv. 29–30 in different words, with *peccávimus tibi* and *mandátis tuis non obœdívimus* where the Clementine has *peccavimus … recedentes a te* and *præcepta tua non audivimus*; takes from v. 43 only the plea for glory to God's name; and takes from v. 42 only the plea for mercy, without its first clause and without *juxta mansuetudinem tuam*. The antiphon is therefore an adaptation, not a quotation, whatever the absence of *Cf.* It is not established here which Latin text the vocabulary of vv. 29–30 follows. The verse numbers are also a hazard. Bibles that print Daniel from the Aramaic alone, such as the tracked King James Version (30 verses in chapter 3), lack these verses entirely, and their Daniel 3:29–30 are a different text, the king's decree. Any tool resolving this locator must use the Vulgate or Greek Daniel numbering, or its equivalent Prayer of Azariah numbering.
-2. **Communion antiphon A is cited in Vulgate numbering and marked *Cf.*** The locator *Cf. Ps 118, 49-50* is Ps 119:49–50 in Hebrew numbering. Against the tracked Clementine the Missal reads *Meménto* for *Memor esto*, adds *Dómine*, and ends before the last clause of v. 50, on God's word giving life. The finding-aid index `src/sources/calendars/postconciliar/propers.yaml` declares Vulgate numbering for this entry and resolves it correctly, but it omits the *Cf.*, marks the antiphon as unread, and gives both antiphons the note that the Missal prints them after *Vel*, which is true only of the second. This record controls; the index belongs to its own owner and is unchanged here.
+2. **Communion antiphon A is cited in Vulgate numbering and marked *Cf.*** The locator *Cf. Ps 118, 49-50* is Ps 119:49–50 in Hebrew numbering. Against the tracked Clementine the Missal reads *Meménto* for *Memor esto*, adds *Dómine*, and ends before the last clause of v. 50, on God's word giving life. The finding-aid index `src/sources/calendars/postconciliar/propers.yaml` declares Vulgate numbering for this entry and resolves it correctly, but it omits the *Cf.*, marks the antiphon as unread, and gives both antiphons the note that the Missal prints them after *Vel*, which is true only of the second. This record controls; the index belongs to its own owner and is unchanged here. *(As of 2026-09-24. The index was corrected on 2026-09-25; see the dated corrections below.)*
 3. **Communion antiphon B agrees with the Clementine word for word.** Apart from punctuation, the Missal's text of 1 John 3:16 is the tracked Clementine's, including *Dei* after *caritatem*. It adds no *dicit Dominus* and needs no *Cf.* Whether the Nova Vulgata reads the same was not checked.
 4. **The conclusions differ by element.** The Collect has the long conclusion *Per Dominum*; the Prayer over the Offerings the short *Per Christum*; the Prayer after Communion, whose last clause speaks of the Son, *Qui vivit et regnat in sǽcula sæculórum*. These are recorded as printed.
-5. **The registered passage record for this formulary is mislocated.** `passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xxvi-per-annum` gives artifact pp. 302–303 and printed pp. 487–488. In the same hash-matched artifact pp. 302–303 carry the end of the Solemnity of Christ the King and the heading *Ordo Missæ*, and the artifact's own index puts the Most Holy Trinity at printed p. 485 and the Body and Blood of Christ at p. 489, so no Ordinary Time Sunday can stand at printed pp. 487–488. The Week XXVI heading is at physical p. 289. `tools/tpt source-library uses` shows the record bound only by another provider's 1962 leaf, as reception evidence for an oration. This audit relies on its own reading and not on that record, which belongs to its owner and is unchanged here.
+5. **The registered passage record for this formulary is mislocated.** `passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xxvi-per-annum` gives artifact pp. 302–303 and printed pp. 487–488. In the same hash-matched artifact pp. 302–303 carry the end of the Solemnity of Christ the King and the heading *Ordo Missæ*, and the artifact's own index puts the Most Holy Trinity at printed p. 485 and the Body and Blood of Christ at p. 489, so no Ordinary Time Sunday can stand at printed pp. 487–488. The Week XXVI heading is at physical p. 289. `tools/tpt source-library uses` shows the record bound only by another provider's 1962 leaf, as reception evidence for an oration. This audit relies on its own reading and not on that record, which belongs to its owner and is unchanged here. *(As of 2026-09-24. That record was corrected on 2026-09-25; see the dated corrections below.)*
 
 ## Variants, discrepancies, rights, and disposition
 
@@ -78,7 +78,8 @@ finding above.
    and the excerpt page has
    `passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.ordinary-time-twenty-sixth-sunday`.
    The mislocated record of finding 5 belongs to its consumer and is
-   unchanged; the new record names the difference in its notes.
+   unchanged; the new record names the difference in its notes. *(As of
+   2026-09-24; see the dated corrections below.)*
 2. **Collect: two early witnesses read.** The Collect stands word for word, as
    far as spelling and punctuation allow, in the Hadrianum edited by H. A.
    Wilson (1915), printed p. 172, under *Dominica .XI. post Pentecosten*, read
@@ -138,5 +139,34 @@ finding above.
    Missal innovation, and its word order agrees with Hilary's lemma. Which
    psalter the compilers followed was not determined; the *Nova Vulgata* was
    not consulted for this verse.
+
+## Corrections of 2026-09-25
+
+The statements of 2026-09-24 above are kept as they were made; these notes
+record what has changed since.
+
+1. **The heading's position.** The table of witnesses formerly placed the
+   Week XXVI heading in the lower half of physical p. 289. Measured on
+   2026-09-25 in the text layer of a further hash-matched copy of the 2002
+   artifact, it stands at y 378–397 of an 842-point page whose text runs from
+   y 107 to 745, which is about halfway down, just above the middle. The
+   table now says so. Nothing else on pp. 289–290 differs from the tables
+   above.
+2. **The finding-aid index (finding 2).** On 2026-09-25 the `ot-26` entry of
+   `src/sources/calendars/postconciliar/propers.yaml` was corrected. Its mass
+   notes now record the Entrance and both Communion antiphon citations as read
+   that day in page images of artifact pp. 289–290; Communion antiphon A
+   carries a note that the Missal prints its citation with *Cf.*; and both
+   antiphons' either/or basis now reads that the Missal prints two Communion
+   antiphons, the second after *Vel*, and that *Tempus per annum* rubric 6
+   lets one or the other be chosen. The `Vel` note stands only on the second.
+   Finding 2's description of the index is therefore history.
+3. **The mislocated passage record (finding 5, addition 1).** On 2026-09-25
+   `passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xxvi-per-annum`
+   was corrected to artifact pp. 289–290, with no printed page asserted, and
+   its one consumer's binding was re-pinned and re-checked. It and
+   `passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xxvi-per-annum-289-290`
+   now agree. Both are kept, because each is bound by a different consumer,
+   and each names the other.
 
 **Outstanding.** Direct inspection of 2008 reprint page images; publisher- and printing-specific collation of a named United States altar book; the Latin text the Entrance antiphon's vocabulary follows, and collation of Schuster's printed page; facsimile collation of the Old Gelasian and Verona occurrences; the source of the Prayer over the Offerings and of the 2002 ending of the Prayer after Communion; collation of the *Graduale Romanum* pages the excerpt points to; work-specific rights review; liturgical-text permission; and independent review of this audit.

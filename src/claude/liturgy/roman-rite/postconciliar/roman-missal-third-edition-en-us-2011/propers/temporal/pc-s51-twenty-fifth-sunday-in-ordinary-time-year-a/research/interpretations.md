@@ -14,6 +14,34 @@ recorded an editor's note on Jerome's unnamed predecessors as a lead, and it
 recast as description five places where English wording about the Entrance
 antiphon and two orations had stood in quotation marks.
 
+On 25 September 2026, after publication, this record was brought into
+agreement with the published study at the points where it lagged, each
+re-checked in the witness cited, and completed the same day after an
+independent review:
+
+- Chrysostom is no longer said to dispute Augustine on Acts 16:14, since he
+  argues there against no one. The `gift` reading's second difficulty, its
+  "real disagreement" and the comparison now describe a difference between
+  their readings of the verse.
+- Jerome is no longer said to expound the second sentence of Matthew 20:16. He
+  carries it in his lemma and quotes it again as the parable's end (PL 26,
+  142) without comment.
+- Jerome's report is no longer said to end the ninth hour at Christ's coming.
+  It gives the ninth hour to Moses and the prophets together ("nona, ipsum
+  Moysen et prophetas", PL 26, 141).
+- The statement that Chrysostom's rule on a parable's details "tells against"
+  an allegory of the hours is dropped from the `economy` reading's strongest
+  difficulty and from the comparison. He states the rule of the murmuring and
+  applies it again to the last-hired's excuse, not to the hours. That second
+  application (64.3) is recorded.
+- Aquinas's division of the hours at David and his reading of the last-hired's
+  excuse are added.
+- Gregory's two cautions at *Hom.* 19.6, entered in the `conversion` table, are
+  marked as drawn from the second sentence of Matthew 20:16, which the
+  standing limits below exclude, so that the reading does not rest on them.
+
+No reading, author or sense changed.
+
 ## How to read this record
 
 **What the authors say and what this leaf says are kept apart.** Each Father
@@ -40,9 +68,10 @@ this leaf's description, after the owner's summaries. None of it is the
 approved English or a translation of the Latin, and none of it may be quoted
 as the prayer's words; the few Latin words given in italics are the owner's.
 Latin is quoted under the normalization stated in scope section 3, which for
-Hilary writes *v* where CSEL prints *u*. Chrysostom, Jerome, Gregory and Aquinas expound
-the second sentence of Matthew 20:16, which this Mass does not appoint; nothing
-below rests on it. Several witnesses were read in English translation or, in
+Hilary writes *v* where CSEL prints *u*. Chrysostom, Gregory and Aquinas expound
+the second sentence of Matthew 20:16, which this Mass does not appoint; Jerome
+carries it in his lemma and repeats it as the parable's end (PL 26, 142) and
+gives it no comment of its own. Nothing below rests on it. Several witnesses were read in English translation or, in
 part, in OCR (scope section 3 says which), and none was collated with a modern
 critical text. The sweep is bounded (scope sections 1 and 4), so no reading may
 be called the tradition's, the earliest, or the common view.
@@ -72,14 +101,15 @@ first.
 | Gregory the Great, *Hom. in Evang.* 19.1, 3–4 | The vineyard is the universal Church "ab Abel iusto usque ad ultimum electum". Morning is Adam to Noah, the third hour Noah to Abraham, the sixth Abraham to Moses, the ninth Moses to the Lord's coming, the eleventh "ab adventu Domini usque ad finem mundi", in which the apostles were sent. The earlier workers are the Hebrew people; at the eleventh the Gentiles are called, who say no one hired them: "Nullus quippe ad eos patriarcha, nullus propheta venerat" (1). He also places himself and his hearers there: "Nos autem qui ad undecimam venimus … post Mediatoris adventum" (4). Those called at the end receive "eumdem denarium" that the first awaited with all their desire | Supplies the whole scheme. The last-hired are the Gentiles set against the Hebrew people and, equally, everyone who comes after Christ's advent |
 | Augustine, *Sermo* 87.5–6, 9 | Abel and Noah at the first hour, Abraham's age at the third, Moses and Aaron at the sixth, the prophets at the ninth, "all Christians" at the eleventh; all "will receive together with us the blessedness of the resurrection". The denarius "is life eternal, and in the life eternal all will be equal", though "through diversity of attainments the saints will shine, some more, some less". The householder's going out is Christ made known, from Pentecost onward, in every tongue | Agrees on the scheme and the one wage. Adds the equality–diversity distinction and the missionary sense of "going out" |
 | Jerome, *Comm. in Matt.* III on 20:1–16 (PL 26, 141 B–D) | He reports this reading as that of others ("Sunt qui hanc parabolam aliter edisserant") and then works with it: at the eleventh hour "apostolos et gentium populum, quibus omnes invident"; if the householder is unjust he is unjust to every hour in turn; "Omnis itaque retro vocatio gentibus invidet, et in Evangelii torquetur gratia". The closing saying means the Jews turned from head to tail and "nos de cauda" to head | An earlier witness to the scheme than Augustine or Gregory, who does not claim it as his own and names no one. The editor's note at the foot of col. 141 names Origen, and Hilary as drawing on him; that is an editor's statement and a lead, since neither was opened (scope section 3.1). Supplies the point that every earlier calling is in the same position toward the one after it |
-| Thomas Aquinas, *Super Matthaeum* c. 20 lect. 1 (Venice 1745, p. 262) | "Volo autem huic novissimo, idest gentili, dare sicut et tibi", with Romans 3:9. In the pages read only in OCR he gives the ages of the world beside the ages of a life and reports, from Hilary and Jerome, that the people of the Jews murmured against the Gentile's being made equal | Medieval Doctor. Agrees on the identification of the last with the Gentile and on the one wage |
+| Thomas Aquinas, *Super Matthaeum* c. 20 lect. 1 (Venice 1745, p. 262) | "Volo autem huic novissimo, idest gentili, dare sicut et tibi", with Romans 3:9. In the pages read only in OCR he gives the ages of the world beside the ages of a life, divides at David (the sixth hour from Abraham to David, the ninth from David to Christ), refers the excuse "No man hath hired us" to the Gentile people and holds them excused because they had not the prophets as the Jews had, with Psalm 147:20, and reports, from Hilary and Jerome, that the people of the Jews murmured against the Gentile's being made equal | Medieval Doctor. Agrees on the identification of the last with the Gentile and on the one wage |
 | Jerome, *In Isaiam* XV on 55:6–11 (PL 24, 553–555) | The prophet warns his own people after "turba gentilium" took up the mercies they refused. God's thoughts are not ours in this: it is not incredible to him "impium et iniquum posse salvari, vel populum Iudaeorum, vel omnes qui in gentibus nesciebant Deum". Let the people of the nations not disbelieve that after such crimes the impious "repente salvetur" | Reads the first reading's contrast of thoughts as the admission of Jew and Gentile alike to pardon. He does not mention the parable |
 
 **Agreement and a narrower difference.** Gregory, Augustine and Aquinas hold
 the controlling claim as their own, and Jerome transmits it. They divide the
-hours slightly differently (Gregory and Jerome's report begin with Adam and
-end the ninth hour at Christ's coming; Augustine begins with Abel and gives
-the ninth hour to the prophets). On the eleventh-hour workers they differ in
+hours slightly differently (Gregory and Jerome's report begin with Adam;
+Augustine begins with Abel; Gregory ends the ninth hour at Christ's coming,
+Augustine gives it to the prophets, Jerome's report to Moses and the prophets
+together, and Aquinas divides at David). On the eleventh-hour workers they differ in
 emphasis, not in identification: Gregory contrasts the Hebrew people with the
 Gentiles called at the eleventh hour (19.1) and also places all who come after
 the Mediator's advent there (19.4); Augustine says all Christians; Jerome's
@@ -113,11 +143,20 @@ calling's envy of the mercy shown to the next.
 | Moral | Those long in the Church do not resent those who arrive late, and do not reckon their years of service as a claim on God |
 | Anagogical | At the evening of the world all the just, from Abel on, receive together the one resurrection, differing in brightness and equal in life without end |
 
-**Strongest difficulty.** Chrysostom's rule that a parable's details are not
-to be pressed (64.3) tells against assigning each hour an epoch, and he gives
-no allegory of the hours as ages of the world. Jerome, the earliest witness
-read for the scheme, reports it as others' and prefers the ages of a life. The
-scheme's witnesses do not agree on its details. It stands as a received
+**Strongest difficulty.** Chrysostom lays down a rule that a parable's details
+are not to be inquired into curiously (64.3). He states it of the murmuring,
+and he invokes it a second time at the last-hired's excuse, "No man hath hired
+us": the words are the labourers' and not the householder's, who does not
+convict them because he means to win them over, and "He called all, as far as
+lay in Him, from the first" (64.3). He does not apply the rule to the hours, to which
+he gives his own meaning, the ages of a life, and he does not mention the
+reading of them as ages of the world. The second application meets this
+reading where it leans: Gregory takes the excuse as the Gentiles' true plea,
+that no patriarch or prophet had come to them (19.1), and Aquinas refers it
+to the Gentile people, excused because they had not the prophets. That is a
+real difference among the witnesses read, on one sentence of the parable.
+Jerome, the earliest witness read for the scheme, reports it as others' and
+prefers the ages of a life. The scheme's witnesses do not agree on its details. It stands as a received
 allegory, and the study should present it as one and not as the parable's
 plain sense.
 
@@ -139,7 +178,7 @@ long-absent.
 | Jerome, *Comm. in Matt.* III on 20:1–16 (PL 26, 141 A–B) | His own reading ("Mihi videntur"): Samuel, Jeremiah and John the Baptist at the first hour; those who served from puberty at the third; mature age at the sixth; declining at the ninth; extreme old age at the eleventh; "et tamen omnes pariter accipiunt praemium, licet diversus labor sit". The Lord ranks "non tempori … sed fidei" | Gives the claim's first half as his preferred sense of the hours |
 | Augustine, *Sermo* 87.7–11 | Infants at the first hour, boys at the third, men in their vigour at the sixth, the ageing at the ninth, the decrepit at the eleventh, all for the same denarius. But "no one has promised thee to-morrow": "certain as thou art of the reward, but uncertain of the day". Despair and perverse hope "are the death of souls" | Agrees, and supplies the argument against delay that the claim needs |
 | Augustine, *Enarr. in Ps.* 144.11 (PL 37, 1876) | On "patient and plenteous in mercy": God "vocat te nunc … exspectat donec resipiscas, et tu tardas!" He made the day of death uncertain in mercy | The same argument, made from the responsorial psalm's own verse |
-| Gregory the Great, *Hom. in Evang.* 19.2–3, 6 | Boyhood, youth, maturity, old age and decrepitude are the five hours. "Saltem in ultima aetate resipiscite." The thief came at the eleventh hour. No one should presume on himself, and no one should despair of a neighbour sunk in vice, "quia divinae misericordiae divitias ignorat" | Agrees; adds the thief and the rule about one's neighbour |
+| Gregory the Great, *Hom. in Evang.* 19.2–3, 6 | Boyhood, youth, maturity, old age and decrepitude are the five hours. "Saltem in ultima aetate resipiscite." The thief came at the eleventh hour. At 19.6 he draws two cautions from the second sentence of v. 16, "Quia enim multi vocati, sed pauci electi sunt": no one should presume on himself, and no one should despair of a neighbour sunk in vice, "quia divinae misericordiae divitias ignorat" | Agrees (19.2–3); adds the thief. The two cautions of 19.6 are his inference from a sentence this Mass does not appoint; they are recorded as his, and this reading does not rest on them |
 | Thomas Aquinas, *Super Matthaeum* c. 20 lect. 1 (OCR for this part) | Gives the life of a man as the second sense of the day, with childhood as its morning, and says some are given no occasion to return to God until old age | Medieval Doctor; agrees. Reported by paraphrase, since these pages were not read on the image |
 | Jerome, *In Isaiam* XV on 55:6–7 (PL 24, 553 B–C) | Seek "dum estis in corpore, dum datur locus poenitentiae"; seeking is not enough unless the impious leaves his former ways; God runs gladly to the son who returns after a long time | The first reading as a call to timely repentance |
 | Thomas Aquinas, *Super Isaiam* c. 55 | The fit time is "antequam adversitas vel mors veniat"; the *impius* sins against God and the *iniquus* against his neighbour; the fruit of return is manifold mercy | Agrees with Jerome; adds the two directions of sin |
@@ -194,8 +233,9 @@ further in two steps: the keeping of the commandments that leads to life is
 itself to be asked of God, and the first opening of the heart is God's gift.
 Hilary independently states the first step from Psalm 118:5, and Aquinas says
 the sheep are Christ's own "by predestination, calling and grace". The second
-step is Augustine's alone among the authors read, and Chrysostom disputes it
-(below). The study should attribute each step to those who state it.
+step is Augustine's alone among the authors read, and Chrysostom reads the same
+verse differently without arguing against anyone (below). The study should
+attribute each step to those who state it.
 
 ### Author evidence
 
@@ -222,19 +262,23 @@ it. The second step, that the first opening of the heart is gift, is
 Augustine's alone among the authors read; Bede, the one later author read on
 the verse, says nothing of the opening.
 
-**A real disagreement, to be preserved.** Chrysostom shares the reading's
-first half: the parable shows "that the whole is of His love to man" (64.4).
-He does not share Augustine's second step. On Lydia: "God opens the hearts
-that are willing … it was both God's doing and man's" (*Hom. in Acta* 35).
-Augustine on the same verse says she was so called that she might believe, and
-counts the beginning of faith a gift. That is a difference about one text,
-Acts 16:14, and it is not verbal. On the parable Chrysostom also says that God
+**A real difference of reading, to be preserved.** Chrysostom shares the
+reading's first half: the parable shows "that the whole is of His love to man"
+(64.4). He does not state Augustine's second step. On Lydia, as a preacher
+going through Luke's narrative: "God opens the hearts that are willing … it
+was both God's doing and man's" (*Hom. in Acta* 35). He does not say where the
+willingness comes from and argues there against no one; his concern is what
+the verse gives to God and what it gives to Lydia. Augustine on the same verse
+says she was so called that she might believe, and counts the beginning of
+faith a gift. That is a difference between their readings of one text, Acts
+16:14, and it is not verbal; the second step rests on Augustine's argument and
+on no agreement between the two. On the parable Chrysostom also says that God
 called all from the first and "the difference was made by the disposition of
 them that were called" (64.3); Augustine's *Sermo* 87 does not take up why
 some come late, and its sentence on the householder's secret counsel (87.8)
 is about the labourers' not knowing the wage. No position on lateness may be
 attributed to Augustine from that sermon. Chrysostom is therefore **not**
-listed as an author of this reading. The disagreement must appear in the
+listed as an author of this reading. The difference must appear in the
 studies beside the step it qualifies. This leaf does not adjudicate it.
 
 ### Element contributions (this leaf's synthesis)
@@ -266,8 +310,10 @@ studies beside the step it qualifies. This leaf does not adjudicate it.
 so the parable does not say that no one earns. Augustine keeps this ("to the
 first, it is a payment"), Aquinas keeps it (justice to one, mercy to the
 other), and at *Enarr.* 144.11 Augustine resolves it only by calling merits
-themselves gifts, which goes beyond the parable. Chrysostom's objection above
-is the second difficulty.
+themselves gifts, which goes beyond the parable. The second difficulty is one
+of evidence and concerns the second step alone: it rests on Augustine's
+argument, and Chrysostom, the other ancient author read on Acts 16:14, reads
+the verse differently, so no agreement between the two stands behind it.
 
 ---
 
@@ -281,7 +327,7 @@ is the second difficulty.
 | What is the murmuring? | The patriarchs' long wait (Gregory); each earlier calling's envy of the next (Jerome) | A device, not pressed (Chrysostom) | The evil eye: grief at goodness (Aquinas), envy of mercy shown to another (Jerome) |
 | How is Isaiah 55:8–9 read? | God's plan reaches the nations (Jerome) | The urgency belongs to vv. 6–7 (Jerome, Aquinas) | Mercy against requital (Aquinas) |
 | Principal authors | Gregory, Augustine, Aquinas; Jerome as reporter | Chrysostom, Jerome, Augustine, Gregory, Aquinas | Augustine, Gregory, Jerome, Aquinas, Hilary |
-| Chrysostom's place | He gives no allegory of the hours as ages of the world, and his rule on details tells against one; but he reads the saying of first and last (v. 16a) with reference to the Jews, and to believers who fall back or rise (64.4) | A principal author | Shares the first half, disputes Augustine's second step |
+| Chrysostom's place | He gives the hours no reference to the ages of the world. Where Gregory and Aquinas take the excuse "No man hath hired us" as the Gentiles' true plea, he holds that God called all from the first (64.3); but he reads the saying of first and last (v. 16a) with reference to the Jews, and to believers who fall back or rise (64.4) | A principal author | Shares the first half; reads Acts 16:14 differently from Augustine and does not state the second step |
 
 **What they share.** All three take the denarius as eternal life and the
 householder as God, and all three read the first reading's contrast of
@@ -291,10 +337,14 @@ thoughts as a statement about mercy.
 Augustine, Gregory and Aquinas hold both and say so (*Sermo* 87.7; *Hom.*
 19.2), and Jerome sets them side by side. They answer different questions and
 neither excludes the other. `gift` differs in kind, since it reads the parable
-from its ending and not from its hours, and it contains the one real dispute
-among the authors read, between Augustine and Chrysostom on Acts 16:14: whether
-the willingness God opens is itself his gift. A second real difference cuts
-across all three: whether "the last shall be first" states the parable's
+from its ending and not from its hours. Its furthest step rests on
+Augustine's argument, and he and Chrysostom read Acts 16:14 differently:
+Augustine counts the very beginning of faith a gift, while Chrysostom gives the
+opening to God and the attending to Lydia without saying where the
+willingness comes from. The difference touches that step and not the
+reading's centre. Within `economy`, Chrysostom's reading of the last-hired's
+excuse differs from Gregory's and Aquinas's (Reading 1). A further real
+difference cuts across all three: whether "the last shall be first" states the parable's
 equality (Augustine), a separate reversal (Chrysostom), or the key by which
 the whole parable is read (Jerome); Aquinas records the first two.
 

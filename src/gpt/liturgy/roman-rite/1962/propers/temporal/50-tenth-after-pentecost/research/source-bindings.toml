@@ -106,12 +106,12 @@ source_fingerprint = "sha256:f875d6b5c52191e63a4daed0807db1b8076f4dbb15a16a04cf9
 
 [[bindings]]
 source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xxvi-per-annum"
-loci = ["Dominica XXVI per annum, printed pp. 487-488"]
+loci = ["Dominica XXVI per annum"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected", "verified"]
-context = "The registered Latin formulary controls the bounded claim that the postconciliar Missal appoints the collect's gratiam form for the Twenty-Sixth Sunday in Ordinary Time."
-verified_on = "2026-07-28"
-source_fingerprint = "sha256:1ec1b89c8e12a7ddac676d073e9d4a8e7f443512560420b4522b59c00692e488"
+context = "The registered Latin formulary controls the bounded claim that the postconciliar Missal appoints the collect's gratiam form for the Twenty-Sixth Sunday in Ordinary Time. First verified on 2026-07-28. Re-pinned and re-checked on 2026-09-25, when the passage record was corrected from artifact pages 302-303 and printed pp. 487-488 to artifact pages 289-290 with no printed page asserted, and its context and notes were revised the same day. The bound claim holds: artifact page 289 of a copy matched to the registered SHA-256 reads multíplica super nos grátiam tuam in the Collect of Dominica XXVI per annum, and research/collect-redevelopment.md already cites artifact p. 289. The locus no longer carries the mistaken printed pages."
+verified_on = "2026-09-25"
+source_fingerprint = "sha256:1c26eddfd2f6a3679c4bbba133d51074c38e1b36e1b11cf5fc996f113db5c183"
 
 [[bindings]]
 source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"
