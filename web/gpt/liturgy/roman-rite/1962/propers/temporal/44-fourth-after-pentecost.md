@@ -101,6 +101,8 @@
 >
 > - **Grace does not abolish agency.** God commands, compels mercifully, purifies, and protects; the person obeys, follows, offers, and asks.
 
+<!-- end of quotation -->
+
 > **Three related divine works**
 >
 > The world’s *cursus* is asked to be *directed* by God’s order; rebellious wills are the object of his merciful *compelling*; the received mysteries are the subject of *purifying* and *protecting*. Governance, conversion, and sacramental effect are therefore related divine works, not interchangeable descriptions. The boat and net belong to Luke’s narrative; any link between them and these works is exploratory, and neither image translates the orations.

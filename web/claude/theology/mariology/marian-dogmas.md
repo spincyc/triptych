@@ -487,6 +487,8 @@ Each synopsis condenses the corresponding chapter without erasing its historical
 >
 > **Ecumenical position:** Common ground with the Orthodox and with the classical Reformation confessions; not in dispute among the communions surveyed in Chapter 9.
 
+<!-- end of quotation -->
+
 > **Synopsis — Perpetual Virginity (Aeiparthenos)**
 >
 > **Object:** Mary virgin in conceiving, in giving birth, and ever after: **ante partum**, **in partu**, **post partum**.
@@ -511,6 +513,8 @@ Each synopsis condenses the corresponding chapter without erasing its historical
 >
 > **Ecumenical position:** Held by the Orthodox; confessed in the *Smalcald Articles* (1537) among articles then not in dispute; variously held in later Reformation practice.
 
+<!-- end of quotation -->
+
 > **Synopsis — Immaculate Conception**
 >
 > **Object:** From the first instant of her conception Mary was preserved free from all stain of original sin, by singular grace, in view of Christ’s merits.
@@ -534,6 +538,8 @@ Each synopsis condenses the corresponding chapter without erasing its historical
 > **Exclusions and open questions:** Not the virginal conception of Jesus; personal sinlessness is a distinct teaching; no pre-Nicene witness states the formula, and the medieval difficulty is honest history; the 1858 Lourdes sentence is private revelation and adds nothing to the dogma.
 >
 > **Ecumenical position:** Rejected as an innovation by the Ecumenical Patriarchate’s encyclical of 1895; ARCIC (2005) finds the teaching “consonant with” Scripture while leaving required assent unresolved.
+
+<!-- end of quotation -->
 
 > **Synopsis — Assumption**
 >

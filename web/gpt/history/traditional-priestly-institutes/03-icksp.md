@@ -56,6 +56,8 @@ The bridge also prevents a misleading binary. The Institute was neither simply �
 >
 > **Limit:** No checked agreement, register, or erection act establishes the precise French chronology or location, or makes the Opus and ICKSP one continuous juridic body.
 
+<!-- end of quotation -->
+
 > **Claim check: “The Opus Sacerdotale founded the ICKSP.”**
 >
 > The relationship is historically important but the formula is too strong. The checked sources support association and inheritance; the ICKSP and the 2008 Roman decree identify Wach and Mora as founders, and no juridical succession instrument was located.
@@ -480,49 +482,73 @@ The Institute’s trajectory differs from TPI-01 and TPI-02. It did not emerge f
 >
 > No checked founding record supports that genealogy. Its line runs through Wach and Mora’s Roman formation, the Opus Sacerdotale connection, diocesan erection at Mouila, and Gricigliano. TPI-01 and TPI-02 supply comparison, not institutional ancestry.
 
+<!-- end of quotation -->
+
 > **Claim check: “The Vatican’s 1979 record names Wach and Mora among the ordinands.”**
 >
 > The Vatican confirms John Paul II’s ceremony and eighty-eight ordinands. The Institute identifies the future founders among them; the official homily and Angelus do not print a roster.
+
+<!-- end of quotation -->
 
 > **Claim check: “The Opus Sacerdotale and ICKSP are one continuous juridical body.”**
 >
 > Historical and institutional sources support association and inheritance, not a succession act. The Opus began in 1964; the 2008 decree names Wach and Mora as ICKSP founders.
 
+<!-- end of quotation -->
+
 > **Claim check: “The Institute was first founded in Italy.”**
 >
 > Gricigliano became the motherhouse and seminary, but institutional records date diocesan erection to Mouila, Gabon, on 1 September 1990. The original act remains a source gap.
+
+<!-- end of quotation -->
 
 > **Claim check: “Canonial form means every priest belongs to a cathedral chapter or an order of canons regular.”**
 >
 > N. 181/2008 says members live on the model of canons. The title, common life, and solemn worship are real; the comparison does not create those other canonical identities.
 
+<!-- end of quotation -->
+
 > **Claim check: “Pontifical right lets the Institute operate without diocesan bishops.”**
 >
 > Canons 733 and 738 preserve written episcopal consent for houses and local authority over public worship, care of souls, and apostolic works. The post-2021 location record makes that boundary visible.
+
+<!-- end of quotation -->
 
 > **Claim check: “All clerical oblates are canonical clerics.”**
 >
 > The Institute’s title describes its non-priest members; N. 181/2008 calls the early group lay oblates. Under canon 266, clerical status begins with diaconate, not minor orders or proximity to priestly life.
 
+<!-- end of quotation -->
+
 > **Claim check: “The Sister Adorers received the same 2008 status as the male society.”**
 >
 > The male Institute became a pontifical-right society of apostolic life under N. 181/2008. N. 182/2008 separately erected the women as a public association of faithful for three years; no later status act was located.
+
+<!-- end of quotation -->
 
 > **Claim check: “The 2014 visitation exonerated the Institute.”**
 >
 > An institutional notice records an ordinary apostolic visitation. The mandate, report, recommendations, and result are not public in the checked set; the 2016 approval notice does not supply a retrospective verdict.
 
+<!-- end of quotation -->
+
 > **Claim check: “The Institute has exactly 130 priests, 100 seminarians, 20 oblates, and 70 Sisters.”**
 >
 > The 2026 calendar says more than 130, about 100, about 20, and more than 70. These are rounded self-reports in four distinct categories, not audited exact totals.
+
+<!-- end of quotation -->
 
 > **Claim check: “The ICKSP has a published universal exemption from *Traditionis custodes*.”**
 >
 > No ICKSP-named universal faculty or exemption was located through the cutoff. The FSSP act in TPI-02 cannot be transferred by analogy, and the 2024 audience is not legislation.
 
+<!-- end of quotation -->
+
 > **Claim check: “Chicago proves that the Institute was expelled or suppressed.”**
 >
 > Its own page establishes suspension of public Masses from 1 August 2022. No checked decree establishes expulsion or universal suppression, and later dioceses received ICKSP ministry.
+
+<!-- end of quotation -->
 
 > **Claim check: “The public allegations prove misconduct, or institutional denial disproves them.”**
 >

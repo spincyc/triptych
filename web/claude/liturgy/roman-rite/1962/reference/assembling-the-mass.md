@@ -74,6 +74,8 @@ Two rules about Sundays do a great deal of work later:
 >
 > *Dominica celebratur suo die, iuxta rubricas. Officium et Missa dominicae impeditae nec anticipantur nec resumuntur.*
 
+<!-- end of quotation -->
+
 > **RG 17 (opening)**
 >
 > *Dominica excludit, per se, assignationem perpetuam festorum.*
@@ -337,6 +339,8 @@ Two prohibitions cut across all four classes:
 >
 > *Quaevis Missa votiva de mysteriis Domini, de B. Maria Virg. vel Sancto, prohibetur quoties occurrit dies liturgicus I vel II classis in quo fit Officium de eadem Persona. Tunc, loco Missae votivae, dicenda est Missa de Officio occurrenti. Occurrente vero die liturgico III vel IV classis, eligi potest aut Missa de Officio diei aut Missa votiva, exclusa alterius commemoratione.*
 
+<!-- end of quotation -->
+
 > **RGMR 326**
 >
 > *Quaevis Missa votiva prohibetur in ecclesiis unam tantum Missam habentibus: a) quoties urgeat onus Missae conventualis, cui per alium sacerdotem satisfieri nequeat, exceptis Missis votivis, quae certis diebus pro Missa conventuali dici possunt (n. 289) aut debent (nn. 290–294); b) die 2 februarii, si fiat benedictio candelarum; c) in Litaniis maioribus et minoribus, si dicenda sit Missa de Rogationibus (n. 346).*
@@ -455,6 +459,8 @@ RGMR 433 defines what an oration is for counting purposes: the oration of the M
 > **RGMR 434**
 >
 > *Numero orationum pro singulis diebus liturgicis statuto complectuntur tam oratio Missae et commemorationes quam aliae orationes sive a rubricis praescriptae sive ab Ordinario imperatae sive votivae. Proinde, post orationem Missae: a) in diebus liturgicis I classis, in Missis votivis I classis, et in Missis in cantu non conventualibus, nulla alia admittitur oratio, praeter orationem sub unica conclusione dicendam et unam commemorationem privilegiatam, salvo praescripto n. 333; b) in dominicis II classis, nulla alia admittitur oratio, praeter commemorationem festi II classis, quae tamen omittitur si commemoratio privilegiata facienda sit; c) in aliis diebus liturgicis II classis et in Missis votivis II classis una tantum alia admittitur oratio, scilicet aut una privilegiata aut una ordinaria; d) in diebus liturgicis III et IV classis et in Missis votivis III et IV classis duae tantum admittuntur orationes.*
+
+<!-- end of quotation -->
 
 > **RGMR 435**
 >
@@ -638,6 +644,8 @@ One rule is needed before the first case and is not printed in the Missal at all
 > 7.  Preface of the Holy Cross even so — the Common supplies no proper Preface, and RGMR 487 b makes the Holy Cross the seasonal Preface for *all* Masses from Passion Sunday to Wednesday of Holy Week that lack one.
 >
 > That variant is a derivation from the universal norms on a stated hypothesis. It is not a statement about any actual national calendar; the approved proper must be produced before it becomes an answer.
+
+<!-- end of quotation -->
 
 > **Case 1b. Friday 3 December 2027 — the same contest, reversed**
 >

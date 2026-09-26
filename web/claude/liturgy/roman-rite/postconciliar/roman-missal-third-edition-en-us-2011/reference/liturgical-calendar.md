@@ -369,6 +369,8 @@ The Missal preserves one liturgical act by which the year’s movable dates are 
 >
 > *Præter tempora propriam indolem habentia, triginta tres vel triginta quattuor supersunt hebdomadæ per anni circulum, in quibus non celebratur peculiaris mysterii Christi aspectus; sed potius ipsum mysterium Christi in sua plenitudine recolitur, præsertim vero diebus dominicis. Huiusmodi periodus, tempus “per annum” nuncupatur.*
 
+<!-- end of quotation -->
+
 > **Locus:** <span class="smallcaps">nualc</span> 44
 >
 > *Tempus “per annum” incipit feria II quæ sequitur dominicam post diem 6 ianuarii occurrentem et protrahitur usque ad feriam III ante Quadragesimam inclusive; iterum incipit feria II post dominicam Pentecostes et explicit ante I Vesperas dominicæ I Adventus.<br>
@@ -560,6 +562,8 @@ Three rules of hygiene follow, and they are the ones this reference has found mo
 > **Locus:** <span class="smallcaps">nualc</span> 48
 >
 > *Ordinatio celebrationis anni liturgici calendario regitur, quod est generale vel particulare, prouti statutum est in usum totius Ritus romani, vel in usum alicuius Ecclesiæ particularis vel familiæ religiosæ.*
+
+<!-- end of quotation -->
 
 > **Locus:** <span class="smallcaps">nualc</span> 49
 >
@@ -767,6 +771,8 @@ Section [5.3](#sec:tabella) reported the recomputation of the *Tabella temporar
 > - evidence about the 1969 first typical edition of the *Ordo lectionum Missae*. The 1981 decree of promulgation, protocol CD 240/81 of 21 January 1981, states as the first of the second edition’s five differences from the first that *Textus “Praenotandorum” auctus est* — the text of the Praenotanda has been enlarged. Whether nn. 103–104 and their footnotes stood in 1969 or entered in 1981 is therefore genuinely open, and the 1969 edition was not examined here; or
 >
 > - a general permission, in force in some territory, to join the readings of an omitted week to an adjacent week, which would dissolve the practical asymmetry even if the textual argument survived.
+
+<!-- end of quotation -->
 
 > **Project synthesis: the leap-year dates in the *Tabella temporaria***
 >

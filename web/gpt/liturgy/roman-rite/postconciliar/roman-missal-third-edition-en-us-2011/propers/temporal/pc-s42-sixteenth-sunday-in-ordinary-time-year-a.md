@@ -60,6 +60,8 @@ PC-S42-A
 >
 > The correlated strand joins Wisdom’s lenient sovereign to the householder who refuses a destructive early purge: patience rests on mastery and remains ordered to judgment. Romans adds a distinct interior strand in which the Spirit helps weak prayer, while the Prayer over the Offerings, Communion alternatives, and final prayer gather diverse gifts into the one sacrifice and ask that heavenly mysteries carry the people into new life.
 
+<!-- end of quotation -->
+
 > **Grace, patience, prayer, sacrifice**
 >
 > **1. Sustained under grace — Entrance; Collect.** God sustains the assembly and increases hope, faith, and charity.

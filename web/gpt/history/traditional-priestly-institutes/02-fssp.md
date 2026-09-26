@@ -405,45 +405,67 @@ The history is therefore not a morality tale in which canonical recognition remo
 >
 > The 2 July declaration is the programmatic beginning. The act of foundation is dated 18 July, the Commission stated readiness on 22 July, the liturgical faculty came on 10 September, and formal erection came on 18 October. Each date answers a different question.
 
+<!-- end of quotation -->
+
 > **Claim check: “Exactly twelve priests signed the foundation act.”**
 >
 > The displayed 18 July act has eleven priest signatories and a deacon, notes an absent priest considered a founder, and notes that one signer left before erection. Other records count the founding cohort differently. State the document and date instead of forcing the lists into one unexplained number.
+
+<!-- end of quotation -->
 
 > **Claim check: “The September decree formally erected the FSSP.”**
 >
 > It granted liturgical use and describes the nascent body in strong terms. Prot. No. 234/88 of 18 October is the instrument that formally says it erects the clerical society of apostolic life of pontifical right and specifies its government.
 
+<!-- end of quotation -->
+
 > **Claim check: “FSSP priests are religious who take vows.”**
 >
 > Canon 731 defines societies of apostolic life as resembling institutes of consecrated life while members do not take religious vows as such. Members pursue common life and obligations through incorporation and constitutions. Do not call the clerical society a religious order.
+
+<!-- end of quotation -->
 
 > **Claim check: “A pontifical-right society answers only to Rome.”**
 >
 > Its internal governance has direct relation to the Holy See, but houses require prior written episcopal consent and members remain subject to the diocesan bishop in public worship, care of souls, and apostolate.
 
+<!-- end of quotation -->
+
 > **Claim check: “The 1999 *Responsa* ordered the FSSP to celebrate the reformed Mass.”**
 >
 > The official text does not name the FSSP. It answers generic questions about priests of institutes with the 1962 faculty, specific service to reformed-book communities, superiors’ prohibitions, and concelebration. Its application helped precipitate a documented internal and Roman dispute.
+
+<!-- end of quotation -->
 
 > **Claim check: “The 2000 Chapter freely elected Devillers.”**
 >
 > The reproduced cardinal’s letter appointed him in an exceptional intervention; the chapter elected assistants and councillors, expressed concern, and announced recourse. Later chapters returned to public election of the superior general.
 
+<!-- end of quotation -->
+
 > **Claim check: “Definitive constitutions made later liturgical law irrelevant.”**
 >
 > Proper law protects the society’s patrimony but operates within higher law and competent papal governance. The 2007, 2019, 2021, and 2022 acts each changed or clarified part of the surrounding framework.
+
+<!-- end of quotation -->
 
 > **Claim check: “*Traditionis custodes* suppressed the FSSP.”**
 >
 > The act changed universal liturgical law and transferred competence over former PCED societies. It did not suppress the FSSP. Francis later issued a member-specific faculty for its older books.
 
+<!-- end of quotation -->
+
 > **Claim check: “The 2022 decree appears on the Vatican website and grants an unlimited exemption.”**
 >
 > The checked copy is published by the FSSP, not located in the Vatican or AAS indexes checked for this study. Its rendered operative text grants a broad faculty, includes location and local-consent conditions, and asks that *Traditionis custodes* be considered as far as possible.
 
+<!-- end of quotation -->
+
 > **Claim check: “The 2024 visitation proves either scandal or vindication.”**
 >
 > A Vatican report and FSSP communiqué describe an informational visitation within ordinary accompaniment of former PCED institutes. No public final report was located by the cutoff. Motive and result should not be invented.
+
+<!-- end of quotation -->
 
 > **Claim check: “The FSSP’s 8,776 Confraternity members are priests and seminarians.”**
 >

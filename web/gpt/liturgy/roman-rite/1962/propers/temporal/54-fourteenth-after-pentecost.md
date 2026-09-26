@@ -176,7 +176,7 @@ The antiphon abbreviates the Gospel’s final verse (Matt. 6:31–34), with no 
 
 **Location:** Paul to the churches of Galatia
 
-**Date:** **Composition**: Preferred A.D. 58; alternatives A.D. 49–50, c. A.D. 53–54, A.D. 56, A.D. 57–58.
+**Date:** **Composition**: Preferred: A.D. 58; alternatives: A.D. 49–50, c. A.D. 53–54, A.D. 56, A.D. 57–58.
 
 Paul defends freedom, Abrahamic promise and sonship against compulsory circumcision among converts formerly serving non-gods; the letter fixes no writing site or north/south identification (Gal. 1–6). The preferred “anno Christi 58” is reported in a Lapide’s proemium and *Argumentum*. The Encyclopedia’s “St. Paul” (vol. 11) supplies “(1 and 2 Corinthians; Galatians), 56”; “Epistle to the Galatians” (vol. 6) supplies the alternatives “A.D. 49-50,” “about A.D. 53, 54,” and “A.D. 57 or 58.”
 
@@ -238,6 +238,8 @@ The Latin below is the complete recurring formulary between marginal nos. 1572 
 >
 > *Protéctor noster, áspice, Deus, et réspice in fáciem Christi tui: quia mélior est dies una in átriis tuis super mília. <span class="nodecor">Ps. ibid., 2–3</span> Quam dilécta tabernácula tua, Dómine virtútum! concupíscit, et déficit ánima mea in átria Dómini. ℣. Glória Patri.*
 
+<!-- end of quotation -->
+
 > **Douay–Rheims/Challoner, Ps. 83:10–11a, 2–3a**
 >
 > Behold, O God our protector: and look on the face of thy Christ. For better is one day in thy courts above thousands. How lovely are thy tabernacles, O Lord of hosts! my soul longeth and fainteth for the courts of the Lord. ℣. *Glória Patri.*
@@ -249,6 +251,8 @@ The Latin below is the complete recurring formulary between marginal nos. 1572 
 > ***Oratio*; no. 1573**
 >
 > *Custódi, Dómine, quǽsumus, Ecclésiam tuam propitiatióne perpétua: et quia sine te lábitur humána mortálitas; tuis semper auxíliis et abstrahátur a nóxiis, et ad salutária dirigátur. Per Dóminum.*
+
+<!-- end of quotation -->
 
 > **Cummiskey hand missal (1861), Sunday XIV after Pentecost, Collect**
 >
@@ -264,6 +268,8 @@ The Latin below is the complete recurring formulary between marginal nos. 1572 
 >
 > Fratres: Spíritu ambuláte, et desidéria carnis non perficiétis. Caro enim concupíscit advérsus spíritum, spíritus autem advérsus carnem: hæc enim sibi ínvicem adversántur, ut non quæcúmque vultis, illa faciátis. Quod si spíritu ducímini, non estis sub lege. Manifésta sunt autem ópera carnis, quæ sunt fornicátio, immundítia, impudicítia, luxúria, idolórum sérvitus, venefícia, inimicítiæ, contentiónes, æmulatiónes, iræ, rixæ, dissensiónes, sectæ, invídiæ, homicídia, ebrietátes, comessatiónes, et his simília: quæ prædíco vobis, sicut prædíxi: quóniam, qui tália agunt, regnum Dei non consequéntur. Fructus autem Spíritus est: cáritas, gáudium, pax, patiéntia, benígnitas, bónitas, longanímitas, mansuetúdo, fides, modéstia, continéntia, cástitas. Advérsus huiúsmodi non est lex. Qui autem sunt Christi, carnem suam crucifixérunt cum vítiis et concupiscéntiis.
 
+<!-- end of quotation -->
+
 > **Douay–Rheims/Challoner, Gal. 5:16–24**
 >
 > I say then: Walk in the spirit: and you shall not fulfill the lusts of the flesh. For the flesh lusteth against the spirit: and the spirit against the flesh: For these are contrary one to another: so that you do not the things that you would. But if you are led by the spirit, you are not under the law. Now the works of the flesh are manifest: which are fornication, uncleanness, immodesty, luxury, Idolatry, witchcrafts, enmities, contentions, emulations, wraths, quarrels, dissensions, sects, Envies, murders, drunkenness, revellings, and such like. Of the which I foretell you, as I have foretold to you, that they who do such things shall not obtain the kingdom of God. But the fruit of the Spirit is, charity, joy, peace, patience, benignity, goodness, longanimity, Mildness, faith, modesty, continency, chastity. Against such there is no law. And they that are Christ’s have crucified their flesh, with the vices and concupiscences.
@@ -276,6 +282,8 @@ The Latin below is the complete recurring formulary between marginal nos. 1572 
 >
 > *Bonum est confidere in Dómino, quam confidere in hómine. ℣. Bonum est speráre in Dómino, quam speráre in princípibus.*
 
+<!-- end of quotation -->
+
 > **Douay–Rheims/Challoner, Ps. 117:8–9**
 >
 > It is good to confide in the Lord, rather than to have confidence in man. ℣. It is good to trust in the Lord, rather than to trust in princes.
@@ -285,6 +293,8 @@ The Latin below is the complete recurring formulary between marginal nos. 1572 
 > ***Psalmus 94:1*; no. 1576**
 >
 > *Allelúia, allelúia. ℣. Veníte, exsultémus Dómino, iubilémus Deo salutári nostro. Allelúia.*
+
+<!-- end of quotation -->
 
 > **Douay–Rheims/Challoner, Ps. 94:1**
 >
@@ -297,6 +307,8 @@ The Latin below is the complete recurring formulary between marginal nos. 1572 
 > *✠ Sequéntia sancti Evangélii secúndum Matthǽum.*
 >
 > In illo témpore: Dixit Iesus discípulis suis: Nemo potest duóbus dóminis servíre: aut enim unum ódio habébit, et álterum díliget: aut unum sustinébit, et álterum contémnet. Non potéstis Deo servíre, et mammónæ. Ideo dico vobis, ne sollíciti sitis ánimæ vestræ quid manducétis, neque córpori vestro quid induámini. Nonne ánima plus est quam esca: et corpus plus quam vestiméntum? Respícite volatília cæli, quóniam non serunt, neque metunt, neque cóngregant in hórrea: et Pater vester cæléstis pascit illa. Nonne vos magis pluris estis illis? Quis autem vestrum cógitans potest adícere ad statúram suam cúbitum unum? Et de vestiménto quid sollíciti estis? Consideráte lília agri quómodo crescunt: non labórant, neque nent. Dico autem vobis, quóniam nec Sálomon in omni glória sua coopértus est sicut unum ex istis. Si autem fænum agri, quod hódie est, et cras in clíbanum míttitur, Deus sic vestit: quanto magis vos módicæ fidei? Nolíte ergo sollíciti esse, dicéntes: Quid manducábimus, aut quid bibémus, aut quo operiémur? Hæc enim ómnia gentes inquírunt. Scit enim Pater vester, quia his ómnibus indigétis. Quǽrite ergo primum regnum Dei, et iustítiam eius: et hæc ómnia adiciéntur vobis.
+
+<!-- end of quotation -->
 
 > **Douay–Rheims/Challoner, Matt. 6:24–33**
 >
@@ -312,6 +324,8 @@ The Latin below is the complete recurring formulary between marginal nos. 1572 
 >
 > *Immíttet Angelus Dómini in circúitu timéntium eum, et erípiet eos: gustáte et vidéte, quóniam suávis est Dóminus.*
 
+<!-- end of quotation -->
+
 > **Douay–Rheims/Challoner, Ps. 33:8–9a**
 >
 > The angel of the Lord shall encamp round about them that fear him: and shall deliver them. O taste, and see that the Lord is sweet.
@@ -326,6 +340,8 @@ The Latin below is the complete recurring formulary between marginal nos. 1572 
 >
 > Præfatio de Ssma Trinitate.
 
+<!-- end of quotation -->
+
 > **Cummiskey hand missal (1861), Sunday XIV after Pentecost, Secret**
 >
 > Grant, we beseech thee, O Lord, that this victim of salvation may both cleanse us from our sins, and render thy Majesty propitious to us. Thro’.
@@ -338,6 +354,8 @@ The Latin below is the complete recurring formulary between marginal nos. 1572 
 >
 > *Primum quǽrite regnum Dei, et ómnia adiciéntur vobis, dicit Dóminus.*
 
+<!-- end of quotation -->
+
 > **Douay–Rheims/Challoner, Matt. 6:33**
 >
 > Seek ye therefore first the kingdom of God, and his justice, and all these things shall be added unto you.
@@ -349,6 +367,8 @@ The Latin below is the complete recurring formulary between marginal nos. 1572 
 > ***Postcommunio*; no. 1581**
 >
 > *Puríficent semper et múniant tua sacraménta nos, Deus: et ad perpétuæ ducant salvatiónis efféctum. Per Dóminum nostrum.*
+
+<!-- end of quotation -->
 
 > **Cummiskey hand missal (1861), Sunday XIV after Pentecost, Postcommunion**
 >

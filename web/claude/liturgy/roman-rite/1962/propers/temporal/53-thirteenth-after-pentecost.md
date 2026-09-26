@@ -114,6 +114,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *Réspice, Dómine, in testaméntum tuum, et ánimas páuperum tuórum ne derelínquas in finem: exsúrge, Dómine, et iúdica causam tuam, et ne obliviscáris voces quæréntium te. <span class="nodecor">Ps. ibid., 1</span> Ut quid, Deus, repulísti in finem: irátus est furor tuus super oves páscuæ tuæ? ℣. Glória Patri.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Ps. 73:20, 19, 22–23 printed whole, with the fragments the antiphon takes in bold, and Ps. 73:1**
 >
 > **v. 20** **Have regard to thy covenant:** for they that are the obscure of the earth have been filled with dwellings of iniquity. **v. 19** Deliver not up to beasts the souls that confess to thee: **and forget not to the end the souls of thy poor.** **v. 22** **Arise, O God, judge thy own cause:** remember thy reproaches with which the foolish man hath reproached thee all the day. **v. 23** **Forget not the voices of thy enemies:** the pride of them that hate thee ascendeth continually. *Ps.* O God, why hast thou cast us off unto the end: why is thy wrath enkindled against the sheep of thy pasture? ℣. *Glória Patri.*
@@ -125,6 +127,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 > ***Oratio* — marginal no. 1563**
 >
 > *Omnípotens sempitérne Deus, da nobis fidei, spei et caritátis augméntum: et, ut mereámur ássequi quod promíttis, fac nos amáre quod prǽcipis. Per Dóminum.*
+
+<!-- end of quotation -->
 
 > **English: Cummiskey (Philadelphia, 1861), Collect of this formulary, printed p. 423**
 >
@@ -138,6 +142,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *Fratres: Abrahæ dictæ sunt promissiónes, et sémini eius. Non dicit: Et semínibus, quasi in multis; sed quasi in uno: Et sémini tuo, qui est Christus. Hoc autem dico: testaméntum confirmátum a Deo, quæ post quadringéntos et trigínta annos facta est lex, non írritum facit ad evacuándam promissiónem. Nam si ex lege heréditas, iam non ex promissióne. Abrahæ autem per repromissiónem donávit Deus. Quid ígitur lex? Propter transgressiónes pósita est, donec veníret semen, cui promíserat, ordináta per Angelos in manu mediatóris. Mediátor autem uníus non est: Deus autem unus est. Lex ergo advérsus promíssa Dei? Absit. Si enim data esset lex, quæ posset vivificáre, vere ex lege esset iustítia. Sed conclúsit Scriptúra ómnia sub peccáto, ut promíssio ex fide Iesu Christi darétur credéntibus.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Gal. 3:16–22**
 >
 > To Abraham were the promises made and to his seed. He saith not: And to his seeds as of many. But as of one: And to thy seed, which is Christ. Now this I say: that the testament which was confirmed by God, the law which was made after four hundred and thirty years doth not disannul, to make the promise of no effect. For if the inheritance be of the law, it is no more of promise. But God gave it to Abraham by promise. Why then was the law? It was set because of transgressions, until the seed should come to whom he made the promise, being ordained by angels in the hand of a mediator. Now a mediator is not of one: but God is one. Was the law then against the promises of God: God forbid! For if there had been a law given which could give life, verily justice should have been by the law. But the scripture hath concluded all under sin, that the promise, by the faith of Jesus Christ, might be given to them that believe.
@@ -149,6 +155,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 > ***Graduale* — Ps. 73, 20, 19 et 22 — marginal no. 1565**
 >
 > *Réspice, Dómine, in testaméntum tuum: et ánimas páuperum tuórum ne obliviscáris in finem. ℣. Exsúrge, Dómine, et iúdica causam tuam: memor esto oppróbrii servórum tuórum.*
+
+<!-- end of quotation -->
 
 > **English: Douay–Rheims (Challoner), Ps. 73:20a and 19b as the Introit’s dossier prints them whole, and v. 22**
 >
@@ -162,6 +170,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *Allelúia, allelúia. ℣. <span class="nodecor">Ps. 89, 1</span> Dómine, refúgium factus es nobis a generatióne et progénie. Allelúia.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Ps. 89:1, between the chant’s own acclamations**
 >
 > Alleluia, alleluia. ℣. Lord, thou hast been our refuge from generation to generation. Alleluia.
@@ -173,6 +183,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 > ***✠ Sequéntia sancti Evangélii secúndum Lucam* — Luc. 17, 11-19 — marginal no. 1567**
 >
 > *In illo témpore: Dum iret Iesus in Ierúsalem, transíbat per médiam Samaríam et Galilǽam. Et cum ingrederétur quoddam castéllum, occurrérunt ei decem viri leprósi, qui stetérunt a longe; et levavérunt vocem dicéntes: Iesu præcéptor, miserére nostri. Quos ut vidit, dixit: Ite, osténdite vos sacerdótibus. Et factum est, dum irent, mundáti sunt. Unus autem ex illis, ut vidit quia mundátus est, regréssus est, cum magna voce magníficans Deum, et cécidit in fáciem ante pedes eius, grátias agens: et hic erat Samaritánus. Respóndens autem Iesus, dixit: Nonne decem mundáti sunt? et novem ubi sunt? Non est invéntus qui redíret, et daret glóriam Deo, nisi hic alienígena. Et ait illi: Surge, vade; quia fides tua te salvum fecit.*
+
+<!-- end of quotation -->
 
 > **English: Douay–Rheims (Challoner), Lk. 17:11–19**
 >
@@ -188,6 +200,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *In te sperávi, Dómine; dixi: Tu es Deus meus, in mánibus tuis témpora mea.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Ps. 30:15–16 in full, with the fragments the antiphon takes in bold**
 >
 > **v. 15** But **I have put my trust in thee, O Lord: I said: Thou art my God.** **v. 16** **My lots are in thy hands.** Deliver me out of the hands of my enemies; and from them that persecute me.
@@ -199,6 +213,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 > ***Secreta* — marginal no. 1569**
 >
 > *Propitiáre, Dómine, pópulo tuo, propitiáre munéribus: ut, hac oblatióne placátus, et indulgéntiam nobis tríbuas, et postuláta concédas. Per Dóminum nostrum.*
+
+<!-- end of quotation -->
 
 > **English: Cummiskey (Philadelphia, 1861), Secret of this formulary, printed p. 424**
 >
@@ -214,6 +230,8 @@ The Latin says *propitiáre* twice — once over the people, once over the gifts
 >
 > *Panem de cælo dedísti nobis, Dómine, habéntem omne delectaméntum, et omnem sapórem suavitátis.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Wis. 16:20 in full, with the phrases the antiphon reworks in bold**
 >
 > Instead of which things, thou didst feed thy people with the food of angels, and **gavest them bread from heaven,** prepared without labour; **having in it all that is delicious, and the sweetness of every taste.**
@@ -225,6 +243,8 @@ The Latin says *propitiáre* twice — once over the people, once over the gifts
 > ***Postcommunio* — marginal no. 1571**
 >
 > *Sumptis, Dómine, cæléstibus sacraméntis: ad redemptiónis ætérnæ, quæsumus, proficiámus augméntum. Per Dóminum.*
+
+<!-- end of quotation -->
 
 > **English: Cummiskey (Philadelphia, 1861), Postcommunion of this formulary, printed p. 425**
 >
@@ -328,6 +348,8 @@ The *Glossa ordinaria* hardens that reading into the schoolroom gloss. Its inter
 >
 > That is a flat contradiction of Augustine, Cassiodorus and the Glossa at the same clause. It is also of a piece with his reading of the psalm’s occasion: a Maccabean lament pleads a Sinai covenant about a land, and a psalm about AD 70 pleads the covenant that replaced it.
 
+<!-- end of quotation -->
+
 > **And the witness who says nothing** Theodoret does not gloss the word at all. His printed lemma at v. 20 is not *epiblepson eis ten diatheken sou* but *epiblepson eis ten diatheken ton doulon sou* — “look upon the covenant *of thy servants*” — and Migne’s own *Variae Lectiones* flag the intruded words as absent from both his codices, from the Hebrew and from the Septuagint. His entire note expounds the verse’s second half, about those who loved the darkness of ignorance. He says nothing whatever about what the covenant is: no Abraham, no Sinai, no new covenant. Migne’s facing Latin does not even render the word with the Introit’s noun; it prints *foedus*. The sharpest single contrast among the checked witnesses is therefore that the two Latin Fathers make v. 20 the hinge of the psalm and the Antiochene passes it without comment — with Bellarmine, a thousand years later, making it the hinge again and turning it the other way.
 
 **One divergence turns out not to be a divergence of the chant’s making.** The Introit closes *et ne obliviscáris voces quæréntium te*, the voices of them that seek thee, where the Clementine has *voces inimicorum tuorum*, the voices of thy enemies. That looks like the boldest liberty in the formulary — the prayer changing direction while keeping its words — and the psalm commentaries show that it is not a liberty at all. Augustine’s lemma reads *Ne obliviscaris vocem deprecantium te*, the voices of them that beseech thee, and he glosses them as those “ingemiscentium, et exspectantium iam quod promisisti de Novo Testamento.” Cassiodorus’s lemma is the chant’s exactly — *Ne obliviscaris voces quaerentium te* — glossed “ut inveniant quem quaerunt, et mereantur cernere quem expetunt.” And Theodoret’s Greek lemma is “the voice of thy suppliants,” with Migne’s apparatus setting out the whole textual situation in one line: the Hebrew has *thy enemies*, Aquila and Symmachus follow it, and the Septuagint has the suppliants. The Clementine’s reading is the Hebrew; the chant’s is the Septuagint, and it is what the Old Latin, Augustine, Cassiodorus and Theodoret all had in front of them. The electronic edition of the *Glossa ordinaria* on the Psalter states the same thing in the terms a chant historian would use: it records *inimicorum* as the Gallican reading and *querentium* as the Roman, citing Jerome’s letter to Sunnia and Fretela. That record is the Glossa’s apparatus, and no *Psalterium Romanum* witness was collated to confirm it; but it is the nearest thing among the checked witnesses to an identification of the psalter the Roman chant sings.
@@ -385,6 +407,8 @@ The lesson has two boundaries, and both matter. The opening address *Fratres:* i
 Paul’s argument turns on a singular noun: the promises were spoken to Abraham and to his seed, *et sémini eius*; God did not say *and to thy seeds*, as of many, but as of one, *et sémini tuo, qui est Christus*. The move is grammatical and has always looked vulnerable, since the Hebrew collective noun for seed is ordinarily singular in form whatever its reference. The Fathers who defend it defend it in two different ways, and the difference is not cosmetic.
 
 > **St. Jerome, *Commentarii in Epistulam ad Galatas*, lib. II** Jerome concedes the character of the argument and then defends its substance. Paul argues with the Galatians, he says, not with the reasoning he used to the Romans but with simpler arguments, “et pene de trivio” — almost off the street — which is why he prefaces *secundum hominem dico*. But the claim is materially true, and Jerome stakes his own reading on it: “Omnes Scripturas sensu ac memoria peragrans, numquam plurali numero semina scripta reperi.” Traversing all the Scriptures in sense and memory, he never found *semina* written in the plural. The nations were blessed not in Isaac or in the patriarchs but *in Christo Jesu*.
+
+<!-- end of quotation -->
 
 > **St. Augustine, *Expositio epistulae ad Galatas* §§23–25** Augustine’s seed is not quite Jerome’s. “Et ideo semen Abraham … Christum dicit Apostolus, hoc est omnes Christianos fide imitantes Abraham; quod ad singularitatem redigit commendando, quod non dictum est: Et seminibus, sed: Semini tuo, quia et una est fides.” The seed is Christ *with his members*, and the reason the singular holds is that the faith is one — an early instance of the *totus Christus* reading. Two sections later the same seed “populum significat.” Jerome’s seed is Christ singly; Augustine’s is Christ and all who imitate Abraham’s believing. Both are Christological readings, and they are not the same reading.
 
@@ -446,7 +470,11 @@ The lesson ends on a verb of imprisonment, and every checked witness takes care 
 
 > **The *Glossa ordinaria* — what the middle ages inherited** Checked in the electronic edition of the *Glossae Scripturae Sacrae*, keyed to the Rusch facsimile. It offers no fresh exegesis: it is a mosaic of Augustine and Ambrosiaster with Chrysostomic matter, a reuse witness, not a direct one. But it shows what a thirteenth-century reader met on the page. On v. 17 the marginal gloss records that the law “post multum tempus a promissione facta Abrahe … data est” and the interlinear draws the consequence sharply: if blessing were by the law, “frustra semini promisit et frustra semen ipsum venit … et Deus mendax.” On v. 22, “lex data est ut gratia quereretur” — Augustine almost verbatim — and “Data est ut egrum de morbo convincet qui sibi sanus videbatur.”
 
+<!-- end of quotation -->
+
 > **Where the lesson’s commentators stop, and one dispute that is not this one** Every ancient witness above except Ambrosiaster and Augustine runs on past v. 22 into the pedagogue; Ambrosiaster begins a fresh lemma at v. 23 and Augustine’s treatment is essentially self-contained within the lesson’s bounds. Separately: the celebrated Jerome–Augustine controversy over Galatians concerns **Gal 2:11–14**, Paul’s rebuke of Peter at Antioch, and nothing in that correspondence engages 3:16–22. It is background on how differently the two men read the letter, and no more.
+
+<!-- end of quotation -->
 
 > **Where the supersessionist sentences actually are** Several witnesses on this lesson write sentences about Israel that are harsher than Paul’s argument requires, and each belongs to its author, not to “the Fathers.” Jerome allegorises the twins of Genesis 38 and speaks of Israel’s hand polluted with the blood of the prophets and the Saviour. Ambrosiaster writes that the blessing “transitum fecit ad gentes” and that the Jews were blinded *aemulatione quadam*. Fromage, writing in the nineteenth century, is harsher than any of them — “his now dead Law,” “the superannuated … pretensions of the Synagogue.” None of these is the appointed lesson’s own claim. Paul’s conclusion in this pericope is that the law was not against the promises of God, *absit*, and that Scripture shut up all — *ómnia*, not one people — under sin.
 
@@ -522,7 +550,11 @@ Augustine is the origin of nearly everything the Latin West said about this peri
 
 > **St. Augustine, *Quaestiones Evangeliorum* II.40** Three further moves, each of which the tradition kept. *Why the priests*: the Jewish priesthood prefigures the royal priesthood of the Church, and doctrine and the sacraments are the Church’s province — Paul is sent to Ananias, Cornelius to Peter; and Cornelius’s household, receiving the Spirit before baptism, is cleansed *while going*, which is the seed of the whole later reading of *dum irent*. *The number*: nine is imperfection, standing outside the unity that ten signifies. *The Samaritan*: the name is interpreted *custos*, keeper, and this leper keeps the unity of the kingdom by giving back to God what he had received (Ps 58:10, *Fortitudinem meam ad te custodiam*). Augustine also writes here the sentence that its later transmission had to decide what to do with: “Et quia illi erant Iudaei, amisisse per superbiam declarati sunt regnum caelorum, ubi maxime unitas custoditur.”
 
+<!-- end of quotation -->
+
 > **St. Augustine, *Sermo* 176 — preached on this pericope** The same pericope in the pulpit, and the register changes completely: the sermon is anti-Pelagian. None in Adam’s mass is un-sick and none is healed without Christ’s grace; infants are carried to the physician on other people’s feet. “Doctrina inconstans, non habens unum colorem, mentis lepram significat” — but the application is now to the hearer’s own account of his amendment: “Noli tibi tribuere, ne sis inter novem qui gratias non egerunt.” Do not attribute it to yourself, lest you be among the nine who gave no thanks. The thankful one is the *alienigena* who signifies the Gentiles; “numerus ille Christo decimas dedit”; and the sermon’s hardest sentence is about the preacher and his congregation, not about anyone else: “Nostrum nihil, nisi peccatum quod habemus.” No public-domain English exists at this sermon — the standard modern translation is in copyright — so it is quoted here in Latin only.
+
+<!-- end of quotation -->
 
 > **St. Bede, *In Lucae Evangelium Expositio* V (PL 92, 542B–544D)** Bede’s chapter on this pericope is a proven mosaic, which is what a Latin commentator of the eighth century understood himself to be making. The leprosy-as-false-doctrine blocks, the Paul–Ananias and Cornelius material, the *custos* etymology and the nine-and-ten number theology are Augustine’s *Quaestiones* II.40, matched line for line. “Et bene, ut salventur, Iesum praeceptorem nominant…” is verbatim Gregory, *Moralia* V.11 n. 28, and the gloss on true thanksgiving reworks *Moralia* II.52 n. 82.
 >
@@ -544,6 +576,8 @@ The most consequential thing in this pericope’s reception is not an interpreta
 
 > **Pseudo-Augustine, *De vera et falsa poenitentia* c. 10 n. 25** An eleventh-century anonymous treatise transmitted among Augustine’s works and printed under *Auctor incertus* — the attribution matters because the text’s influence is enormous and its author is not Augustine. Two moves, in tension with each other and both retained by the tradition that inherited them. First, oral and personal confession is grounded on v. 14: “Praecepit enim Dominus mundandis, ut ostenderent ora sacerdotibus: docens corporali praesentia confitenda peccata, non per nuntium, non per scriptum manifestanda,” with the shame of confessing itself “partem habens remissionis.” Second, contrition precedes the keys: “Mundati enim sunt leprosi, dum ibant ostendere ora sacerdotibus, antequam ad eos pervenirent … Unde patet Deum ad cor respicere.” This treatise fed Gratian and Peter Lombard, and is the hinge by which this Sunday’s Gospel entered scholastic penance theology.
 
+<!-- end of quotation -->
+
 > **Bruno of Segni, *Commentaria in Lucam* II, cap. XVII, and *Homilia* C (PL 165)** Bruno reads the pericope twice, and states the *dum irent* theology at its sharpest. The ten are not heretics but *all sinners* — “Quid enim sunt decem viri leprosi, nisi omnes peccatores?” — ten being the number of totality; excommunication is the Church’s casting of lepers outside the camp. On the priests his reading is juridical, and it is the reading Trent’s theology of the sacrament would later need: they are sent “non ut sacerdotes eos mundarent, sed ut mundos eos esse judicarent” — not that the priests should cleanse them but that they should judge them clean. And then: “Facile est Domino peccata dimittere. Prius enim multoties peccatori debita remittuntur, quam veniat ad sacerdotem … quia cor contritum et humiliatum Deus non spernit.” God often remits before the penitent reaches the priest at all. Bruno also guards the reading against presumption in the other direction: cleansing is not election — “Multi enim sunt baptizati, multi a peccatorum lepra mundati, qui … in electorum numero non computabuntur.” His homily gives the fullest medieval engagement with the route: “Sed quid per Galilaeam, nisi Judaeos? Et quid per Samariam, nisi gentiles intelligamus? … Per medium autem illorum transibat Jesus, quia hos et illos vocabat,” and the *castellum* is the Church. He ends where Bede ended: “Fides igitur salvat, fides justificat, fides et interius et exterius hominem sanat.”
 
 Fromage carries the same chain into the nineteenth century and states its sacramental conclusion outright: “The lepers are made clean only while on their way to show themselves to the priests … That Law gave to the sons of Aaron the power, not of curing, but of discerning leprosy,” whereas the new priesthood’s judgments, “by pronouncing the sentence of absolution, are to effectually remove the leprosy of souls.” The chain is therefore continuous: Augustine’s Cornelius, Bede, the pseudo-Augustinian treatise, Bruno, the scholastic penance tradition, Fromage. This Sunday’s Gospel carries, in its reception, the doctrine of contrition and the keys.
@@ -551,6 +585,8 @@ Fromage carries the same chain into the nineteenth century and states its sacram
 #### Where Ambrose and Gregory left no exposition, and what that shows
 
 > **St. Ambrose has no exposition of this pericope** What exists is one transitional clause in *Expositio Evangelii secundum Lucam* VIII n. 32: “Post haec reprehenduntur ingrati: atque ita demum ad tractatum futuri venitur judicii.” After this the ungrateful are rebuked, and so at last one comes to the treatment of the coming judgment. That is all: books VIII–IX hold nothing else under the stems *lepr-*, *samari-*, *mundat-*, *alienigen-*, *decem*, *gratias* and *ingrat-*, and the *Catena aurea*’s single one-clause Ambrose excerpt shows that its compilers found no more.
+
+<!-- end of quotation -->
 
 > **St. Gregory the Great preached no homily on it — but is in its bloodstream** In all forty *Homiliae in Evangelia* and their preface the pericope appears only incidentally. Yet Gregory supplies, through the *Moralia in Iob* V.11 n. 28, the reading Bede transcribed and the Catena transmits under Bede’s name. There Job’s friends, who “mingle right things with perverse,” typify heretics reconciled by the Church’s preaching: “Quos bene in Evangelio illa decem leprosorum mundatio designat … Leprosi itaque haereticos exprimunt, quia dum rectis prava permiscent, colorem sanum maculis aspergunt. Unde et bene ut salventur, clamant, Iesu praeceptor.” A father who never preached on a pericope can still be one of its principal voices, by way of a commentator who read him.
 
@@ -588,7 +624,11 @@ This is the place where the reception pays for itself. Because the Clementine re
 >
 > One smaller thing his lemma does share with the chant: he reads *dixi: Tu es Deus meus*, in the antiphon’s word order, not the Clementine’s *Deus meus es tu*.
 
+<!-- end of quotation -->
+
 > **Cassiodorus’s lemma *is* the antiphon, and his exposition turns on its word** “Dixi, tu es Deus meus; in manibus tuis **tempora mea**.” The Offertory’s reading, word for word, including the word order. And the exposition cannot be transposed to *sortes*, because it hangs on time: for Cassiodorus the whole psalm is the voice of Christ — “per universum psalmum verba sunt Domini Salvatoris” — and here he speaks “a parte scilicet humanitatis assumptae, quae, sicut ait inferius, et tempori subiacebat et morti. Non enim, quemadmodum inimici putabant, eorum persecutione vitam suam finiendam esse commemorat, sed in potestate ponit Domini *tempora vitae suae*.” The assumed humanity was subject to time and to death; the times of his life are placed in the Father’s power, not in his enemies’. Nine verses earlier in the same psalm, on *In manus tuas commendo spiritum meum*, Cassiodorus had already noted that these are the words the Gospel text speaks from the cross. The hands into which the Church puts its times at the Offertory are, on his reading, the hands into which the dying Christ commends his spirit.
+
+<!-- end of quotation -->
 
 > **And a cardinal cites the missal itself as the witness for the word** The decisive note is Bellarmine’s, and it is one of the passages his English translator cut. On this verse he writes that *sortes* means the lots of life and death, which hang not on chance but on God’s hand; and then: “In hebraeo habetur, in manibus tuis *tempora* mea; & fortasse quod nunc legimus in graeco, *kleroi*, quod significat sortes, legendum esset, *kairoi*, quod significat tempora. nam non desunt antiquae versiones ex graeco, quae habeant, tempora mea. **Sic certè legitur in officio Missae non semel, & in Psalterio Ecclesiae S. Petri Romae.**” The Hebrew reads *my times*; the Greek word for lots should perhaps be read as the Greek word for times; ancient Latin versions made from the Greek have *tempora mea*; and — this is the sentence — it is certainly so read *more than once in the Office of the Mass, and in the Psalter of the Church of St Peter at Rome*. A seventeenth-century cardinal, asked where the reading comes from, points at the Mass propers themselves and at the psalter of the Vatican basilica. He adds that the sense is the same either way: “non viuam, nisi quamdiu tu volueris, neque moriar, nisi quando tu volueris.”
 >
@@ -672,6 +712,8 @@ Four verified afterlives of wording from the scriptural propers, each a use that
 >
 > **Rights and limit.** The bull’s Latin, Hutten’s title, and Smith’s 1913 English are public domain. The bull quotes the psalm, not the missal chant as such; what binds it to this Sunday is that chant and bull carry the same liturgical wording, *Dómine* against the Clementine’s *Deus*.
 
+<!-- end of quotation -->
+
 > **The same verse — the standard of the Spanish Inquisition**
 >
 > **Appointed phrase.** As above, *Exsúrge, Dómine, et iúdica causam tuam*.
@@ -682,6 +724,8 @@ Four verified afterlives of wording from the scriptural propers, each a use that
 >
 > **Rights and limit.** Engraving and inscription are public domain. The witness is Picart’s 1741 engraving — a Protestant-published ethnography — not a surviving banner; the engraving is nonetheless the standard citable witness for the standard.
 
+<!-- end of quotation -->
+
 > **Communion source-verse, Wis. 16:20 — Joyce scores a beach scene to the bread of heaven, 1922**
 >
 > **Appointed phrase.** *Panem de cælo* with the every-delight clause; the Communion sings *omne delectaméntum*, “all that is delicious.”
@@ -691,6 +735,8 @@ Four verified afterlives of wording from the scriptural propers, each a use that
 > **The turn.** The versicle drawn from this Sunday’s Communion verse — bread from heaven, having in it every delight — is run as liturgical soundtrack to profane appetite: Joyce lets the manna of every taste and the window-shopping of every taste interleave sentence by sentence, and the irony cuts both ways at once.
 >
 > **Rights and limit.** *Ulysses* (1922) is public domain in the United States. Joyce quotes the Benediction versicle form (*præstitísti eis*), not the missal Communion’s adapted *dedísti nobis*; the dependence route is the Benediction rite, which takes the same Wisdom verse this antiphon takes.
+
+<!-- end of quotation -->
 
 > **Offertory, Ps. 30:15–16 — Browning turns the surrendered times into Victorian optimism, 1864**
 >
@@ -708,6 +754,8 @@ Four verified afterlives of wording from the scriptural propers, each a use that
 >
 > Everything below is exploratory editorial and AI proposal. None of it is sourced historical intent, attributed teaching, or documented reception, and none of it should be quoted as any of those. Each proposal was tested against the corpus checked for this guide and against a targeted search for its own distinctive conjunction; the results of those searches, and each proposal’s controlling limit, are recorded in `research/scope.md`. Evidence, doctrine, and the literal sense of the appointed texts govern; where a proposal and a checked witness conflict, the witness wins.
 
+<!-- end of quotation -->
+
 > **Editorial proposal — The Gradual corrects the Introit’s verb, and the Epistle explains why it can**
 >
 > **Anchors:** Introit <span class="nodecor">(*Int.*)</span>, *ne derelínquas in finem*; Gradual <span class="nodecor">(*Grad.*)</span>, *ne obliviscáris in finem*; Epistle <span class="nodecor">(*Ep.*)</span>, *testaméntum confirmátum a Deo … non írritum facit*.
@@ -719,6 +767,8 @@ Four verified afterlives of wording from the scriptural propers, each a use that
 > **What the ordinary reading misses:** Element by element, the verbal variation between Introit and Gradual reads as chant-transmission noise, and most hand missals translate the two verbs identically.
 >
 > **Strongest limit:** The variation almost certainly *is* Old-Latin psalter transmission — no checked witness comments on it, and nothing documents a compiler choosing one verb against the other. The proposal reads the printed page, not any intention behind it.
+
+<!-- end of quotation -->
 
 > **Editorial proposal — The voices God is asked not to forget are the ten that cried and the one that came back**
 >
@@ -732,6 +782,8 @@ Four verified afterlives of wording from the scriptural propers, each a use that
 >
 > **Strongest limit:** The proposal must not be built on a supposed chant liberty, because there is none: the commentary shows that the seekers are the Septuagint’s reading and the enemies the Hebrew’s, that Augustine, Cassiodorus and Theodoret all had the seekers in front of them, and that Migne’s apparatus sets the whole textual situation out. So the wording carries no compiler’s intention at all — it is simply the psalter the Roman chant inherited. Beyond that, *vox* is among the commonest words in the psalter and the Gospels, and no checked witness joins these two texts.
 
+<!-- end of quotation -->
+
 > **Editorial proposal — Three clocks: the generations, the four hundred thirty years, and my times**
 >
 > **Anchors:** Alleluia <span class="nodecor">(*All.*)</span>, *refúgium … a generatióne et progénie*; Epistle <span class="nodecor">(*Ep.*)</span>, *post quadringéntos et trigínta annos*; Offertory <span class="nodecor">(*Off.*)</span>, *in mánibus tuis témpora mea*.
@@ -744,6 +796,8 @@ Four verified afterlives of wording from the scriptural propers, each a use that
 >
 > **Strongest limit:** No checked witness connects any two of these three texts through time-vocabulary, and the nearest thing to an analogue cuts only one way: Augustine, expounding the Alleluia’s verse, makes the refuge God’s *aeternitas* and what one flees to it from *temporis mutabilitas*, and Theodoret glosses the Offertory’s variant as the changes of circumstance — but neither joins the two chants, and neither mentions the four hundred and thirty years. *Témpora*, *anni* and *generatióne* share no root; the Offertory’s reading predates any pairing with this Epistle; and chant assignments are commonly musical and cyclical, not thematic.
 
+<!-- end of quotation -->
+
 > **Editorial proposal — The keeper the chants pray for appears in the Gospel as the man who came back**
 >
 > **Anchors:** Introit and Gradual <span class="nodecor">(*Int., Grad.*)</span>, the pleas *réspice … ne derelínquas … ne obliviscáris*; Gospel <span class="nodecor">(*Gosp.*)</span>, *et hic erat Samaritánus*, with Augustine’s documented etymology *Samaritanus = custos*, “keeper.”
@@ -755,6 +809,8 @@ Four verified afterlives of wording from the scriptural propers, each a use that
 > **What the ordinary reading misses:** The etymology is invisible in translation, and the office-wide *custos* reading rode on the Good Samaritan Gospel that this Sunday carried in an older arrangement — so the modern page shows no trace of either.
 >
 > **Strongest limit:** Augustine applies *custos* to this leper, but Rupert applied it to the *Good* Samaritan as Christ, a different pericope assigned to this Sunday only in a pre-Tridentine ordering; the transfer of that office-wide reading onto the 1962 chants is this proposal’s own act. Hebrew etymology of *Samaritanus* as “keeper” is itself a patristic reception, not a modern lexical judgment.
+
+<!-- end of quotation -->
 
 > **Editorial proposal — The two askings of *augméntum* bracket the nine who stopped**
 >

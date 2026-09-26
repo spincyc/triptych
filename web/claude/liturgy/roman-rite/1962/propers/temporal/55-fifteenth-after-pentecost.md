@@ -52,7 +52,7 @@ Seven distinct passages are directly appointed, one for each scriptural element;
 | Communion | Io. 6:52 (6:51 in the modern series) | The synagogue at Capharnaum (Jn. 6:60) | **Event**: A.D. 28. **Composition** – disputed: c. A.D. 90–100; A.D. 96–100. |
 | *Event: the Bread of Life discourse, spoken in the synagogue at Capharnaum on the day after the multiplication of the loaves and near the Pasch (Jn. 6:4, 6:22–24, 6:60).* |  |  |  |
 | The narrated occasion stands in the same Maas chronology as the Gospel’s; authorship, audience and place of writing in Fonck’s article on the Gospel of St John in volume VIII of *The Catholic Encyclopedia*. **The two datings of the composition differ**: Fonck’s article gives 96 or one of the succeeding years and Durand’s volume XIV article from the year 90 to 100 (approximately), and no modern critical date for the Fourth Gospel stands among the sources named here. **A numbering hazard reaches the citation and not the date**: the tracked Clementine and Douay number this clause 52 with the missal, the Greek Fathers and the translations from them 51. |  |  |  |
-| Epistle | Gal. 5:25–26; 6:1–10 | Galatia’s churches (Gal. 1:2); writing place undetermined | **Composition**: Preferred A.D. 58; alternatives A.D. 49–50, c. A.D. 53–54, A.D. 56, A.D. 57–58. |
+| Epistle | Gal. 5:25–26; 6:1–10 | Galatia’s churches (Gal. 1:2); writing place undetermined | **Composition**: Preferred: A.D. 58; alternatives: A.D. 49–50, c. A.D. 53–54, A.D. 56, A.D. 57–58. |
 | The letter names its own author and destination at Gal. 1:1–2. **Five datings stand within the tradition, spanning nine years, one preferred and four alternative.** The preferred is Cornelius a Lapide’s *anno Christi 58*, from the prooemium and the *Argumentum* of his *Commentaria in omnes divi Pauli epistolas* (Antwerp, 1614); the four alternatives stand in Aherne’s article on the Epistle to the Galatians in volume VI and Prat’s on St Paul in volume XI. **The spread is the tradition’s own disagreement**, and no modern critical date for Galatians stands among the sources named here. |  |  |  |
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
@@ -109,6 +109,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *Inclína, Dómine, aurem tuam ad me, et exáudi me: salvum fac servum tuum, Deus meus, sperántem in te: miserére mihi, Dómine, quóniam ad te clamávi tota die. <span class="nodecor">Ps. ibid., 4</span> Lætífica ánimam servi tui: quia ad te, Dómine, ánimam meam levávi. ℣. Glória Patri.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Ps. 85:1–4 printed whole, with the portions the chant sings in bold**
 >
 > **v. 1** A prayer for David himself. **Incline thy ear, O Lord, and hear me:** for I am needy and poor. **v. 2** Preserve my soul, for I am holy: **save thy servant, O my God, that trusteth in thee.** **v. 3** **Have mercy on me, O Lord, for I have cried to thee all the day.** *Ps.* **v. 4** **Give joy to the soul of thy servant, for to thee, O Lord, I have lifted up my soul.** ℣. *Glória Patri.*
@@ -120,6 +122,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 > ***Oratio* — marginal no. 1583**
 >
 > *Ecclésiam tuam, Dómine, miserátio continuáta mundet et múniat: et quia sine te non potest salva consístere; tuo semper múnere gubernétur. Per Dóminum.*
+
+<!-- end of quotation -->
 
 > **English: Cummiskey (Philadelphia, 1861), Collect of this formulary, printed p. 428**
 >
@@ -133,6 +137,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *Fratres: Si spíritu vívimus, spíritu et ambulémus. Non efficiámur inánis glóriæ cúpidi, ínvicem provocántes, ínvicem invidéntes. Fratres, et si præoccupátus fúerit homo in áliquo delícto, vos, qui spirituáles estis, huiúsmodi instrúite in spíritu lenitátis, consíderans teípsum, ne et tu tentéris. Alter altérius ónera portáte, et sic adimplébitis legem Christi. Nam si quis exístimat se áliquid esse, cum nihil sit, ipse se sedúcit. Opus autem suum probet unusquísque, et sic in semetípso tantum glóriam habébit, et non in áltero. Unusquísque enim onus suum portábit. Commúnicet autem is qui catechizátur verbo, ei qui se catechízat, in ómnibus bonis. Nolíte erráre: Deus non irridétur. Quæ enim semináverit homo, hæc et metet. Quóniam qui séminat in carne sua, de carne et metet corruptiónem: qui autem séminat in spíritu, de spíritu metet vitam ætérnam. Bonum autem faciéntes, non deficiámus: témpore enim suo metémus, non deficiéntes. Ergo dum tempus habémus, operémur bonum ad omnes, máxime autem ad domésticos fidei.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Gal. 5:25–26 and 6:1–10, printed whole**
 >
 > **5:25** If we live in the Spirit, let us also walk in the Spirit. **5:26** Let us not be made desirous of vain glory, provoking one another, envying one another. **6:1** Brethren, and if a man be overtaken in any fault, you, who are spiritual, instruct such a one in the spirit of meekness, considering thyself, lest thou also be tempted. **6:2** Bear ye one another’s burdens: and so you shall fulfil the law of Christ. **6:3** For if any man think himself to be some thing, whereas he is nothing, he deceiveth himself. **6:4** But let every one prove his own work: and so he shall have glory in himself only and not in another. **6:5** For every one shall bear his own burden. **6:6** And let him that is instructed in the word communicate to him that instructeth him, in all good things. **6:7** Be not deceived: God is not mocked. **6:8** For what things a man shall sow, those also shall he reap. For he that soweth in his flesh of the flesh also shall reap corruption. But he that soweth in the spirit of the spirit shall reap life everlasting. **6:9** And in doing good, let us not fail. For in due time we shall reap, not failing. **6:10** Therefore, whilst we have time, let us work good to all men, but especially to those who are of the household of the faith.
@@ -144,6 +150,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 > ***Graduale* — Ps. 91, 2-3 — marginal no. 1585**
 >
 > *Bonum est confitéri Dómino: et psállere nómini tuo, Altíssime. ℣. Ad annuntiándum mane misericórdiam tuam et veritátem tuam per noctem.*
+
+<!-- end of quotation -->
 
 > **English: Douay–Rheims (Challoner), Ps. 91:2–3**
 >
@@ -157,6 +165,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *Allelúia, allelúia. ℣. <span class="nodecor">Ps. 94, 3</span> Quóniam Deus magnus Dóminus, et Rex magnus super omnem terram. Allelúia.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Ps. 94:3 — the Bible verse the chant departs from**
 >
 > **v. 3** For the Lord is a great God, and a great King above all gods.
@@ -168,6 +178,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 > **✠ *Sequéntia sancti Evangélii secúndum Lucam.* — Luc. 7, 11-16 — marginal no. 1587**
 >
 > *In illo témpore: Ibat Iesus in civitátem, quæ vocátur Naim: et ibant cum eo discípuli eius, et turba copiósa. Cum autem appropinquáret portæ civitátis, ecce defúnctus efferebátur filius únicus matris suæ: et hæc vídua erat: et turba civitátis multa cum illa. Quam cum vidísset Dóminus, misericórdia motus super eam, dixit illi: Noli flere. Et accéssit, et tétigit lóculum. (Hi autem, qui portábant, stetérunt). Et ait: Aduléscens, tibi dico, surge. Et resédit qui erat mórtuus, et cœpit loqui. Et dedit illum matri suæ. Accépit autem omnes timor: et magnificábant Deum, dicéntes: Quia prophéta magnus surréxit in nobis: et quia Deus visitávit plebem suam.*
+
+<!-- end of quotation -->
 
 > **English: Douay–Rheims (Challoner), Lk. 7:11–16**
 >
@@ -181,6 +193,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *Exspéctans exspectávi Dóminum, et respéxit me: et exaudívit deprecatiónem meam: et immísit in os meum cánticum novum, hymnum Deo nostro.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Ps. 39:2–4 printed whole, with the portions the chant sings in bold**
 >
 > **v. 2** **With expectation I have waited for the Lord, and he was attentive to me.** **v. 3** **And he heard my prayers,** and brought me out of the pit of misery and the mire of dregs. And he set my feet upon a rock, and directed my steps. **v. 4** **And he put a new canticle into my mouth, a song to our God.** Many shall see, and shall fear: and they shall hope in the Lord.
@@ -192,6 +206,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 > ***Secreta* — marginal no. 1589**
 >
 > *Tua nos, Dómine, sacraménta custódiant: et contra diabólicos semper tueántur incúrsus. Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte.*
+
+<!-- end of quotation -->
 
 > **English: Cummiskey (Philadelphia, 1861), Secret of this formulary, printed p. 429**
 >
@@ -205,6 +221,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *Panis, quem ego dédero, caro mea est pro sǽculi vita.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Jn. 6:52 printed whole, with the portion the chant sings in bold**
 >
 > **v. 52** If any man eat of this bread, he shall live for ever: **and the bread that I will give is my flesh, for the life of the world.**
@@ -216,6 +234,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 > ***Postcommunio* — marginal no. 1591**
 >
 > *Mentes nostras et córpora possídeat, quǽsumus, Dómine, doni cæléstis operátio: ut non noster sensus in nobis, sed iúgiter eius prævéniat efféctus. Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte.*
+
+<!-- end of quotation -->
 
 > **English: Cummiskey (Philadelphia, 1861), Postcommunion of this formulary, printed p. 429**
 >
@@ -290,6 +310,8 @@ The antiphon is a three-segment centonisation: v. 1a as far as *exáudi me*, th
 
 > **Augustine, *Enarratio in Psalmum* 85 §§1–6 (PL 37, 1081–1090)** This is the locus classicus of the *totus Christus*, and the whole of the Introit’s reception runs through it. The Word is head of men and men his members, so that there is one Christ *qui et oret pro nobis, et oret in nobis, et oretur a nobis. Orat pro nobis, ut sacerdos noster; orat in nobis, ut caput nostrum, oratur a nobis, ut Deus noster*. *Inclina, Domine, aurem tuam* is therefore spoken *ex forma servi* and by the whole Body; *clamavi tota die* is not one day but *omni tempore … Unus homo usque in finem saeculi extenditur*; and the ground of the petition is that *Inclinat aurem, si tu non erigas cervicem: humiliato enim appropinquat; ab exaltato longe discedit* (§2). At v. 4 he turns the psalm verse into an exhortation: *Certe recte admonet membra sua ut sursum cor habeant … cor ut levetur, voluntatem mutat.*
 
+<!-- end of quotation -->
+
 > **Cassiodorus, *Expositio Psalmorum* on Ps. 85 (PL 70)** A second Latin witness stating the same reading in his own words: *Ex forma servi (sicut praefati sumus) Christus omnipotenti supplicat Patri … quod dicit: Inclina, ostendit quia se ad ipsum extendere non poterat humana conditio.* On *tota die*, *totius vitae tempus ostenditur, ut per multa tempora annorumque curricula quasi unius diei continuus clamor esse monstretur*. At v. 4 he reads the verse of the servant’s own part: *Iucundari petit animam suam fons hilaritatis et origo laetitiae, ab illa scilicet parte qua servus est.* His numbering runs level with the Vulgate’s here, Ps. 85 counting its inscription inside v. 1, so his *Vers. 1* is the Vulgate’s v. 1.
 
 **Neither commentator’s lemma is the antiphon’s at every point, and the difference reaches the citation.** Augustine’s v. 1 has no *ad me* and runs on into *quoniam egenus et inops ego sum*, the clause the cento does not sing and on which his §§2–3 hang; his v. 3 reads *Miserere mei* where the missal prints *mihi*; and his v. 4 reads *Iucunda* where the missal prints *Lætífica*, his §6 commenting on *iucunda*. Cassiodorus reads *ad me* and *Laetifica* with the missal but *miserere mei* against it. So the *ad me* the antiphon adds is older than the Missal and stands in a sixth-century Latin lemma, while *miserere mihi* stands in no Bible witness and in no patristic lemma opened here: Swete’s Greek at Ps. 85:1 has no pronoun answering *ad me*, and *eleeson me* at v. 3 is a bare accusative that cannot decide between a Latin genitive and a dative, so *mihi* for *mei* is a question of Latin construction and not of what the psalm says.
@@ -326,9 +348,15 @@ The lesson opens on a conclusion whose premises it does not print: Gal. 5:25 *S
 
 > **Jerome, *Commentariorum in Epistolam ad Galatas* lib. III, on Gal. 5:26–6:10 (PL 26, cols. 423–432)** At 5:26 he confesses that vainglory infects almsgiving, long prayer, the pallor of fasting, chastity in every state and martyrdom itself — *martyrium ipsum, si ideo fiat ut admirationi et laudi habeamur a fratribus, frustra sanguis effusus est* (col. 424). At 6:1 he observes that Paul calls the offender *homo* and does not call the corrector one, and that Paul wrote *ne et tu tenteris* and not *ne tu cadas*: *Vinci quippe vel vincere, nonnumquam in nostra est potestate: caeterum tentari, in potestate tentantis est* (col. 426). At 6:2 he grounds the burden on Ps. 37:5 and closes *Quae Christi lex est? Hoc est mandatum meum, ut diligatis invicem* (col. 427). **At 6:5 he reconciles the two burdens by moving one of them to the tribunal**: in this life we may help each other by prayers and counsel, but before the judgement seat *non Job, non Daniel, nec Noe rogare posse pro quoquam, sed unumquemque portare opus suum* (col. 429). At 6:6 he refutes Marcion’s reading of the verse as being about prayer; at 6:7 he ties *Deus non irridetur* to v. 6 against the disciple who pleads a failed harvest, *Excusatio verisimilis hominem potest utcumque placare, Deum non potest fallere* (col. 430); at 6:8 he answers the Encratite Julius Cassianus, who read sowing in the flesh as a condemnation of marriage; at 6:10 he makes the time of sowing the present life (col. 432). **His lemmata agree with the missal at the points that matter** — *Deus non irridetur*, *considerans teipsum* — and the Vulgate Galatians is his own revision, so his lemma and the appointed text are one text.
 
+<!-- end of quotation -->
+
 > **Augustine, *Expositio epistulae ad Galatas* §§52–61 (PL 35, 2145–2148)** Correction of a brother is for Augustine the one test of a spiritual man, and it may be undertaken only after examining one’s own conscience: *Nihil autem sic probat spiritalem virum quam peccati alieni tractatio*; *Numquam itaque alieni peccati obiurgandi suscipiendum est negotium, nisi cum internis interrogationibus examinantes nostram conscientiam liquido nobis coram Deo responderimus dilectione nos facere … Dilige et dic, quod voles* (§§56–57). At 6:2 the law of Christ is the law of charity, whence *Eadem igitur Scriptura et idem mandatum, cum bonis terrenis inhiantes premit servos, Testamentum Vetus; cum in bona aeterna flagrantes erigit liberos, Testamentum Novum vocatur* (§58). At 6:3–5 the burden nobody can share is the burden of conscience: *Non ergo laudatores nostri minuunt onera conscientiae nostrae; atque utinam non etiam accumulent* (§59). At 6:7–10, *Vident enim seminationem operum suorum, sed messem non vident … Bene autem seminare, id est bene operari, facilius est quam in eo perseverare* (§61). §52 distinguishes the two vices of 5:26, *aemulatio* healed by peace and *invidia* by meekness. **Augustine reads a pre-Vulgate Latin Galatians, and his lemmata differ from the missal’s at nearly every appointed verse**: *spiritu et sectemur* for *spíritu et ambulémus*, the two participles of 5:26 in reverse order, *in spiritu mansuetudinis intendens teipsum* for *in spíritu lenitátis, consíderans teípsum*, *et tunc in seipso* for *et sic in semetípso*, *proprium onus portabit* for *onus suum portábit*, *Deus non subsannatur* for *Deus non irridétur*, and *non infirmemur; proprio enim tempore metemus infatigabiles* for *non deficiámus: témpore enim suo metémus, non deficiéntes*. His §54 argument depends entirely on his own verb *sectemur*.
 
+<!-- end of quotation -->
+
 > **Chrysostom, *Commentary on the Epistle to the Galatians*, chapter 6 (PG 61, 673–680), in the nineteenth-century English of the Nicene and Post-Nicene Fathers** Chrysostom does not make the passage a discipline of the corrector’s conscience but an economy of complementary weaknesses inside one body. On 6:1: “He says not, in meekness, but, in a spirit of meekness, signifying thereby … that to be able to administer correction with mildness is a spiritual gift,” and he arraigns “the malice of the devil rather than the remissness of the soul.” At 6:2 the Church is a building whose stones hold different positions, and the verb is really “complete” — “make it up all of you in common, by the things wherein you bear with one another.” **At 6:6 he reads a deliberate institution rather than a rule about stipends**: Christ imposed on the teacher the necessity of requiring aid from his disciples, in order to repress his spirit. At 6:10 grace “invites both land and sea to the board of charity, only it shows a greater care for its own household.” His words are quoted in nineteenth-century English, so his distinction between “fulfil” and “complete” is his argument about the Greek.
+
+<!-- end of quotation -->
 
 > **Aquinas, *Super Epistolam ad Galatas lectura* cap. 6 lect. 1–2** Aquinas reads the lesson as an ordered instruction in how superiors treat inferiors (6:1), equals equals (6:2) and inferiors superiors (6:6). *Praeoccupatus* means overtaken by surprise and so the more deserving of pardon; *in aliquo* excludes the habitual sinner, against whom severity is right; and Paul wrote *instruite* and not *corrigite* because he speaks of men overtaken. He gives three modes of bearing another’s burden, the third of them *pro poena sibi debita satisfaciendo, orationibus et bonis operibus* — **a development beyond anything in Jerome, Augustine or Chrysostom on this verse, and his and not the tradition’s**. At 6:8 he reads the asymmetry of the possessives, and at 6:10 *dum tempus habemus, id est in hac vita, quae est tempus seminandi*. His second exposition of 6:7 is Jerome’s argument almost word for word, so the two are one continuous tradition and not two independent witnesses.
 
@@ -344,7 +372,11 @@ The chant sings the psalm’s exordium and stops. What it does not sing runs fro
 
 > **Augustine, *Enarratio in Psalmum* 91 §§1–4 (PL 37, 1171–1178)** The sabbath of the title is interior: *Intus est, in corde est sabbatum nostrum … Cui autem bona est conscientia, tranquillus est*, and against a merely bodily observance, *Melius est enim arare, quam saltare*. **Confessing is two-sided**, and this is the reading the Gradual’s first word carries: *In utraque re, et in peccato tuo, quia tu fecisti, et in bono facto, confitere Domino, quia ipse fecit*, with the excuses of Satan and of the stars each refused. *Psallere nomini tuo* is distinguished from singing — *Opus nostrum, psalterium nostrum est … Canta ore, psalle operibus* — and the singing seeks *gloriam Dei, non tuam; nomen ipsius, non tuum*, which is in praise exactly what the lesson forbids at Gal. 5:26. On the versicle: *Mane dicitur, quando nobis bene est: nox dicitur, quando tristitia tribulationis est … quando bene est, lauda misericordiam; quando male, lauda veritatem: quia peccata flagellat, non est iniquus.* His lemma matches the Gradual’s wording at both verses, including *Altissime*, differing only in the comma the 1962 book drops.
 
+<!-- end of quotation -->
+
 > **Cassiodorus, *Expositio Psalmorum* on Ps. 91 (PL 70)** The same two-sided confession stated in his own words: confession is of sins and of benefits, *nec meritorum nostrorum esse dicimus quod ipsius miseratione praestatur*; *Psallere enim significat piis operibus Domini mandata peragere, ut sicut psalterium de superioribus sonat, ita operatio nostra ad aures Divinitatis ascendat*. On the versicle: *Mane significat gaudium, nox autem cognoscitur indicare tristitiam … Per noctem vero, id est per tribulationem … veritatem ipsius similiter annuntiare debemus: quia merito patimur quod delictis gravantibus sustinemus.*
+
+<!-- end of quotation -->
 
 > **Hilary of Poitiers, *Tractatus de titulo psalmi XCI* §§1–3 (CSEL 22, pp. 339ff.)** **What survives of Hilary on this psalm is a tractate on its title, not a commentary on its verses**, and he has nothing on *Bonum est confitéri Dómino* or on *Ad annuntiándum mane misericórdiam tuam* — the two clauses the Gradual actually sings. What he argues is that the sabbath the title names cannot be the seventh day of Genesis, because the psalm says nothing about that rest: *nulla hic diei septimi requies, nullum humanorum operum otium decantatur*. The rest meant must therefore be sought at Ps. 94:11, and the Lord himself loosed the seventh-day sabbath when he said that the priests in the temple profane it and are blameless. Zingerle’s preface records the tractates on the titles of Pss. 9 and 91 as transmitted *solis codicibus Vr*. **The Latin quoted from Hilary is that of a poor optical layer of a scan of Zingerle’s edition**, whose running heads and apparatus are badly mangled and whose page sequence is unreliable.
 
@@ -357,6 +389,8 @@ Ps. 94 is a summons to worship in vv. 1–7 and an oracle of warning in vv. 8
 **No checked witness expounds the predicate this chant substitutes.** What is proper to this element is that the two expositions of Ps. 94:3 opened here are built on the word the chant removes, so that neither survives it; and the three composed orations have no expositor in any source opened here. The chant reads *et Rex magnus super omnem terram* where every Bible witness opened here reads *above all gods* — Swete’s *epi pantas tous theous*, the Clementine’s *super omnes deos*, the Douay’s “above all gods.”
 
 > **Augustine, *Enarratio in Psalmum* 94 §§5–6 (PL 37, 1217–1234)** Augustine’s lemma is *et rex magnus super omnes deos*, quoted three times in §§5–6 and again at the close of §6, and he builds two whole developments on the word the chant removes. First, with 1 Cor. 8:5–6 and Ps. 95:5, the gods of the nations are demons, over whom it would be small praise for God to be great: *Parum enim erat quia terribilis super omnia daemonia Deus: quid magnum, esse super omnia daemonia?* Second, the *gods* are men made gods by participation: *Hic accipe homines deos … Deos dixit participatione, non natura; gratia, qua voluit facere deos … Deus verus facit deos credentes in se.* **Neither development survives the chant’s substitution**, so both are exposition of Ps. 94:3 as the Latin Bible reads it and not of the Alleluia as sung. His §8 reading of the neighbouring *in manu eius fines terrae*, v. 4, of Christ joining two peoples is adjacent in sense to the chant’s wording and belongs to a verse the chant does not sing.
+
+<!-- end of quotation -->
 
 > **Cassiodorus, *Expositio Psalmorum* on Ps. 94 (PL 70)** On the same verse Cassiodorus also has *super omnes deos* and expounds the gods the same two ways: *Deos frequenter legimus ab hominibus confictos, ut Iovem, Martem, Saturnum … Legimus etiam deos, sanctos viros a Domino constitutos, ut est illud: Deus stetit in synagoga deorum.* So two Latin commentators expound this verse, and both expound the predicate the chant does not sing.
 
@@ -386,11 +420,19 @@ In the older chant record the verse is cued at eight places in the antiphonaries
 
 > **Ambrose, *Expositio Evangelii secundum Lucam* V.88–92 (CSEL 32 pars 4, pp. 216–218; PL 15, 1376B–1377A)** Three moves at once. **The widow is holy Church**, who *populum iuniorem a pompa funeris atque supremis sepulchri suarum reuocet ad uitam contemplatione lacrimarum, quae flere prohibetur eum cui resurrectio debeatur*, and ringed by the crowd of peoples she seems *plus … esse quam feminam* (§89). **The bier is wood, and because it is wood the dead man already has hope of rising**: *spem resurgendi habebat, quia ferebatur in ligno … ut esset indicio salutem populo per crucis patibulum refundendam* (§90). And the bearers who halt are the mortal fluxes of material nature — *cum uel ignis inmodicae cupiditatis exaestuat uel frigidus umor exundat uel pigra quadam corporis habitudine uigor habetatur animorum … hi sunt nostri funeris portitores*. At §§91–92, *quis iste est tumulus tuus nisi mali mores? tumulus tuus perfidia est, sepulchrum tuum guttur est* (Ps. 5:11), and *fleat pro te mater ecclesia, quae pro singulis tamquam pro unicis filiis uidua mater interuenit*. At VI.64, outside the pericope’s own place, he explains why this raising is public where Jairus’s daughter’s is private and reads the two as two peoples: *est etiam forma sapientiae in uiduae filio cito ecclesiam credituram, in archisynagogae filia credituros quidem Iudaeos, sed ex pluribus pauciores* — marked with *puto* and *est etiam forma*, offered as a reading and not as a demonstration.
 
+<!-- end of quotation -->
+
 > **Augustine, *Sermo* 98 (PL 38, 591–595)** **The three raisings are three grades of sin.** The girl inside the house is sin consented to in the heart; the young man carried out of the gate but not yet buried is sin gone out into the deed; Lazarus, buried under the stone, is sin hardened into habit — *Moles illa imposita sepulcro, ipsa est vis dura consuetudinis, qua premitur anima, nec surgere, nec respirare permittitur* (§5). The four-step analysis behind it stands at §6: *Prima est enim quasi titillatio delectationis in corde; secunda, consensio; tertium, factum; quarta, consuetudo.* At §2 the widowed mother is mother Church rejoicing at each raising; at §6 the loosing of Lazarus is the office given to the disciples while the raising stays Christ’s. **The sermon stops at v. 15**, one verse short of the appointed pericope, and nothing in it comments on v. 16.
+
+<!-- end of quotation -->
 
 > **Cyril of Alexandria, *Commentary on the Gospel of Saint Luke*, Sermon XXXVI (Payne Smith, Oxford 1859, vol. 1, pp. 132–135)** Christ comes uninvited: at Capharnaum he was present by invitation, but at Naim “He draws near without being invited. For no one summoned Him to restore the dead man to life, but He comes to do so of His own accord.” The Evangelist supplies two proofs of a real raising, that the dead man began to speak and that Christ gave him to his mother; the three raised are “a pledge of the hope prepared for us of a resurrection of the dead,” confirmed from Is. 26:19 and Ps. 103(104):29–30. **And the touching of the bier teaches the life-giving flesh**: it was done “that thou mightest learn that the holy body of Christ is effectual for the salvation of man. For the flesh of the Almighty Word is the body of life … For consider, that iron, when brought into contact with fire, produces the effects of fire,” so that it “annihilates the influence of death and corruption.” The words are an English translation of an ancient Syriac version of a Greek original that survives elsewhere only in catena fragments.
 
+<!-- end of quotation -->
+
 > **Bede, *In Lucae evangelium expositio* lib. II (PL 92, cols. 417–420)** Bede takes Augustine’s moral reading and works it through the pericope’s furniture. At v. 12 the dead man carried out is sin no longer hidden in the heart’s chamber but published abroad, *quasi per suae civitatis ostia propalantem*, and the widowed mother is mother Church, one perfect and immaculate virgin though gathered from many persons, *licet e multis collecta personis, una sit perfecta et immaculata virgo, mater Ecclesia*, each of the faithful her only son, with Gal. 4:19 quoted for her motherhood; the gate is one of the bodily senses, closing with *Obsecro, Domine Jesu, cunctas meae civitatis portas justitiae facias* (Ps. 117:19). Against Novatian, who *veramque matrem Ecclesiam … negat consolari debere*. At v. 14 the bier is *male secura desperati peccatoris conscientia* and its bearers *vel immunda desideria … vel lenocinia blandientium … venenata sociorum*; at v. 15 *Redditur matri, cum … per sacerdotalis decreta judicii communioni sociatur Ecclesiae*. **Bede is the only witness located who comments on v. 16**: *Quia Deus visitavit plebem suam. Non tantummodo verbum suum semel incorporando, sed etiam … semper in corda mittendo.* Two of his moves are his own and not Ambrose’s or Augustine’s: the anti-Novatianist application, and the reading of the restoration to the mother as sacramental reconciliation.
+
+<!-- end of quotation -->
 
 > **Gregory of Nyssa, *De hominis opificio* 25.6–11 (PG 44, 213–217), in the nineteenth-century English of the Nicene and Post-Nicene Fathers, second series vol. 5** The raising is fourth in a graded pedagogy by which Christ accustomed human weakness to believe in resurrection — the fever, the nobleman’s son, the ruler’s daughter, the young man on his way to the tomb, four-day Lazarus — and the widow’s only son is “the stock of her race, the shoot of its succession, the staff of her old age.”
 
@@ -416,7 +458,11 @@ The antiphon takes vv. 2, 3 and 4 of Ps. 39 and cuts the middle out of them: t
 
 > **Augustine, *Enarratio in Psalmum* 39 §§2–5 (PL 36, 433–450)** The dative is Augustine’s point, and his lemma is not the antiphon’s at either of its first two verbs, reading *Sustinens sustinui* for *Exspéctans exspectávi* and *attendit mihi* for *respéxit me*: *Ergo et cum malus esses, attendebat te, sed non attendebat tibi … Attendit mihi, inquit, id est, consolando attendit, ut mihi prodesset* (§2). The pit of misery — which the antiphon cuts — is *Profunditas iniquitatis, ex carnalibus concupiscentiis*, and the rock is Christ (§3). The new song is the song of the new man: *novus homo, dicat canticum novum: innovatus amet nova quibus renovatur … Dicimus ergo hymnum Deo nostro, et ipse hymnus liberat nos* (§4) — **his lemma reading *hymnum* with the antiphon and against the Clementine**. At §5 he answers the question of the psalm’s speaker outright: it is Christ, speaking now in the name of our Head and now of us who are his members. The exposition opens with a long anti-Donatist prologue at §1 that has nothing to do with the appointed verses.
 
+<!-- end of quotation -->
+
 > **Ambrose, *In Psalmum XXXIX enarratio* §§1–4 (PL 14, cols. 1109–1110)** **The doubled verb is the point**: the psalm announces the New Testament, and *non est perfecti exspectare, sed exspectasse; nemo enim nisi qui perseveraverit usque in finem, salvus erit* (§1) — the same Matt. 10:22 that Jerome and Augustine both reach for at the lesson’s *non deficiámus*. At §3, *immisisti in os meum canticum novum, quod est Novum Testamentum. Gaudentes iam canimus hymnum Deo nostro, quia novarum virtutum praecepta cognovimus; ut nostra omnia relinquamus, Christum sequentes, et nostros diligamus inimicos … Maledicentes ecce benedicimus.* His lemma carries the antiphon’s incipit and *hymnum*.
+
+<!-- end of quotation -->
 
 > **Cassiodorus, *Expositio Psalmorum* on Ps. 39 (PL 70)** **Cassiodorus’s lemma is the antiphon’s text word for word** — *Exspectans exspectavi Dominum, et respexit me: et exaudivit deprecationem meam* — and he reads *hymnum* for the Clementine’s *carmen*. The speaker is the Church: *Ecclesia catholica, quae fuerat de totius mundi partibus congreganda, patientiae virtutem praedicat.* On the doubling, *considerandus est hic sermo geminatus, quia superflua non est tam decora repetitio*; on the verb the Clementine does not have, *Respexit: quia praevenit omne bonum nostrum*; on the noun, *Deprecatio quoque significat frequentissimam precem*; and on *hymnum Deo nostro*, *Hymnus autem Graecus sermo est, id est, laus carminum lege composita. Et quoniam hymni erant quos idolis suis etiam gentilitas personabat, addidit, Deo nostro.*
 
@@ -436,11 +482,19 @@ The antiphon sings the exact clause at which the Bread of Life discourse turns f
 
 > **Augustine, *In Iohannis evangelium tractatus* 26 §§12–18 (PL 35, 1607–1616)** The tractate’s own printed heading is the antiphon’s verse in the Clementine’s wording, *Panis quem ego dabo, caro mea est pro mundi vita*. The eating that gives life is inward: *qui manducat intus, non foris; qui manducat in corde, non qui premit dente* (§12). Only the body of Christ lives by the Spirit of Christ: *De Spiritu Christi non vivit, nisi corpus Christi … O Sacramentum pietatis! o signum unitatis! o vinculum caritatis! Qui vult vivere, habet ubi vivat, habet unde vivat. Accedat, credat ut incorporetur, ut vivificetur* (§13). The *res* of the sacrament is *societatem corporis et membrorum suorum, quod est sancta Ecclesia*, and it is *omni homini ad vitam, nulli ad exitium* where the sacrament is *quibusdam ad vitam, quibusdam ad exitium* (§15); the species is made of many grains and many berries (§17). **His lemma is *dabo* and *pro mundi vita***, so this is exposition of the verse and not of the antiphon as sung.
 
+<!-- end of quotation -->
+
 > **Cyril of Alexandria, *Commentary on the Gospel according to S. John* IV.2 (Pusey, Library of the Fathers 43, Oxford 1874, vol. 1, pp. 409–412)** The chapter heading is the doctrine: *That the Holy Body of Christ is Life-giving*. The indwelling Word “transformed it into His Own proper good, that is life … rendered It life-giving, as Himself is by Nature,” with Jn. 17:19 read alongside and the heave-offering of Num. 15:18–21 as its figure. This is the same doctrine Cyril states at the Gospel’s bier, argued there from the touching and here from the Eucharist. The words are Pusey’s English of the Greek.
+
+<!-- end of quotation -->
 
 > **Chrysostom, *Homily* 46 *on the Gospel of John* (PG 59, 257–260), in nineteenth-century English** “By bread He means here either His saving doctrines and the faith which is in Him, or His own Body; for both nerve the soul.” On the appointed clause: “observe how little by little He led them up to Himself. Here He says that Himself gives, not the Father.” And on the quarrelling that follows it, “when questioning concerning the how comes in, there comes in with it unbelief.”
 
+<!-- end of quotation -->
+
 > **Aquinas, *Super Evangelium S. Ioannis lectura* cap. 6 lect. 6** The flesh is *organum divinitatis suae*, and the instrument acts by the power of the agent: *cum instrumentum agat virtute agentis … ita ut Damascenus dicit et caro virtute verbi adiuncti vivificat: unde Christus tactu suo sanabat infirmos*. **That last clause reaches the Gospel of this same Mass**, where Christ touches the bier. The bread is the sacrament of the Church’s unity because made of many grains; on the verb, *dicit dabo, quia nondum institutum erat hoc sacramentum*; *Non dicit autem carnem meam significat sed caro mea est*; and on *pro mundi vita*, *vita quam confert … quantum in se est, totius mundi*. **His gloss on the tense turns on the simple future and does not reach *dédero***, and his exposition of the universality of the effect does not reach *sǽculi* either.
+
+<!-- end of quotation -->
 
 > **Two numbering series meet at this antiphon**
 >
@@ -508,6 +562,8 @@ Five afterlives of wording from the scriptural propers, each a use that moves th
 >
 > **The turn.** In the lesson the verse is a warning inside a passage about supporting one’s catechist and doing good to the household of the faith. Here a federal bankruptcy court, having found that the president of a religious broadcasting corporation took excessive compensation from it, uses the verse as the pronouncement of civil liability: it does not illustrate the judgment, it delivers it, and the judge frames the borrowing as “conforming with the religious overture of this case.” The sentence a congregation hears read as exhortation becomes the state’s sanction against a preacher. The court quotes the Authorised Version exactly and names chapter and verse, so the dependence is explicit, and Bakker’s 1989 federal fraud conviction is a different case.
 
+<!-- end of quotation -->
+
 > **Epistle, Gal. 6:7–8 — the title and the mechanism of a 1917 War Office film**
 >
 > **Appointed text and locus.** Epistle, marginal no. 1584, printed p. 396: *Quæ enim semináverit homo, hæc et metet. Quóniam qui séminat in carne sua, de carne et metet corruptiónem.*
@@ -515,6 +571,8 @@ Five afterlives of wording from the scriptural propers, each a use that moves th
 > **Later work and locus.** *Whatsoever A Man Soweth* (1917), silent film, 35mm, black and white, 2256 feet; director, producer and writer Joseph Best; sponsor, the War Office. Catalogued by the British Film Institute at Screenonline film id 1358391, with a curatorial analysis signed Bryony Dixon; corroborated in the Wellcome Collection catalogue, work id `n4b7rac9`, which lists it as the 1917 title in a British Film Institute collection of British sex-education films.
 >
 > **The turn.** The title is the King James wording of Gal. 6:7 verbatim, truncated where the proverb is usually truncated, and the BFI’s own curator states that the title is biblical and the film built as a sermon: “As the biblical title suggests, it is essentially a straight sermon, a form that its target audience would have found familiar both from church at home and during their military service.” **The film enacts the next appointed verse.** The synopsis records a Canadian soldier accosted by a prostitute outside the National Gallery, taken round hospital wards “occupied by victims of venereal disease at every stage, including rotting legs and hands,” a school for the blind where “more than half the children there contracted blindness as a result of hereditary venereal disease,” and the soldier’s brother infecting his wife and finding their child born blind. Gal. 6:8’s *de carne et metet corruptiónem* is staged as clinical corruption of the flesh, and the BFI’s own clip title for the temptation sequence is “Sowing wild oats.” Paul’s warning about self-deception in the moral life becomes a state hygiene instrument for keeping soldiers fit for duty, with the reaping specified as syphilis, congenital blindness and a ruined family. The sponsorship is the BFI record’s own.
+
+<!-- end of quotation -->
 
 > **Offertory, Ps. 39:2 — the incipit as the title of a soldier’s poem, and the choir taking it back**
 >
@@ -524,6 +582,8 @@ Five afterlives of wording from the scriptural propers, each a use that moves th
 >
 > **The turn, twice.** Ps. 39:2 says the speaker waited and was answered; Sorley’s speaker is the one who does not wait — “From morn to midnight … I sin and chatter” — and the waiting is transferred to an inner shrine kept “Unlatched and lit” on the chance that God might “care / To enter or to tarry there,” with “Call Thou early, call Thou late” handing the initiative back. Sorley’s title, *Expectans expectavi*, sets the psalm’s confident perfect over a poem about not having been paying attention. The second turn is on top of the first: Wood’s 1919 anthem sets only the last two stanzas and is catalogued under their first line, so a poem whose point is a distracted young man is sung in choir as a straightforward act of devotion under a psalm title, with the confession cut. **Nothing in the poem or in its printing ties Sorley’s Latin to this Sunday’s Offertory rather than to the Psalter or the Vulgate at large**; the words are the same words, in the older spelling those three layers show, and they are the poem’s only Latin.
 
+<!-- end of quotation -->
+
 > **Offertory, Ps. 39:2–4 — the psalm closing a rock album, with the ending changed to a complaint**
 >
 > **Appointed text and locus.** Offertory, marginal no. 1588, printed p. 397. Douay–Rheims at Ps. 39:2–4: “With expectation I have waited for the Lord … and he put a new canticle into my mouth, a song to our God.”
@@ -531,6 +591,8 @@ Five afterlives of wording from the scriptural propers, each a use that moves th
 > **Later work and loci.** U2, *War*, Island Records ILPS 9733, released 28 February 1983 in the United Kingdom; track 10 of 10 is “40,” 2:35. The album’s opening track is “Sunday Bloody Sunday.” Bono describes the adaptation in his own introduction to *Selections from the Book of Psalms* (Pocket Canons, 1999): “lost for words and forty minutes of recording time left before the end of our studio time, we were still looking for a song to close our third album, War. We wanted to put something explicitly spiritual on the record to balance the politics and the romance of it … We thought about the psalms … ‘Psalm 40’ … ‘40’ became the closing song at U2 shows and on hundreds of occasions, literally hundreds of thousands of people … have shouted back the refrain, pinched from ‘Psalm 6’: “How long” (to sing this song)”.”
 >
 > **The turn.** Ps. 39(40) is a thanksgiving: the waiting is over, the cry has been heard, the new song is already in the mouth. The song keeps the thanksgiving and appends a question from a different psalm — Ps. 6:4, *usquequo*, “how long,” a lament — so it ends not in the new song but in the question, and the crowd rather than the band is left singing it. On a record whose first track is “Sunday Bloody Sunday” the unanswered question lands on the Troubles. **The overlap with the appointed wording is the waiting-and-being-heard clause and the new-song clause and not the whole song**: the song follows the Authorised Version of Ps. 40:1–3, while the antiphon is the Roman chant’s Latin, which departs from the Vulgate at three places here, keeps only the opening clause of v. 3 and cuts the rest of it — the pit, the rock and the established goings, which the song keeps — and v. 4b with it. The statement about the refrain’s origin and the crowd’s response is the adapter’s own testimony.
+
+<!-- end of quotation -->
 
 > **Epistle, Gal. 6:2 and 6:5 — the lesson’s own internal tension argued out in wartime Parliament**
 >
@@ -544,6 +606,8 @@ Five afterlives of wording from the scriptural propers, each a use that moves th
 
 > Everything below is exploratory editorial and AI proposal. None of it is sourced historical intent, attributed teaching or documented reception, and none of it should be quoted as any of those. Each proposal joins at least two precisely named appointed elements and ends on the strongest thing that stands against it. **No connection here is claimed to be unknown, unprecedented, first or authored by the model**; where a proposal and a checked witness conflict, the witness wins. The precedent search behind each, its corpus and its bounds, is recorded in `research/scope.md` and summarised in the terminal appendix.
 
+<!-- end of quotation -->
+
 > **Editorial proposal — P1. Incapacity stated twice in one Mass, once of the Church and once of the person**
 >
 > **Anchors:** Collect <span class="nodecor">(*Coll.*)</span>, *et quia sine te non potest salva consístere*; Epistle <span class="nodecor">(*Ep.*)</span>, Gal. 6:1 *consíderans teípsum, ne et tu tentéris* and Gal. 6:3 *Nam si quis exístimat se áliquid esse, cum nihil sit, ipse se sedúcit*
@@ -555,6 +619,8 @@ Five afterlives of wording from the scriptural propers, each a use that moves th
 > **What the element-by-element reading misses:** Read alone, the Collect is a conventional prayer for the Church and Gal. 6:1–3 is a rule of pastoral practice. Read together, the rule of practice is the Collect’s ecclesiology applied to one man, and the shared move is from an admission of nothing to an instruction about what to do next.
 >
 > **Strongest limit:** *Salva consístere* and *exístimat se áliquid esse* share no Latin root, so this is a doctrinal join throughout and not a word-play, and the shift from the ecclesial scale to the personal one is the proposal rather than an observation in the text. **Whether any checked expositor reads Gal. 6:3 ecclesially was not reached**, so the second half of the join has no reception behind it.
+
+<!-- end of quotation -->
 
 > **Editorial proposal — P2. The great King over all the earth, and the town he visits**
 >
@@ -568,6 +634,8 @@ Five afterlives of wording from the scriptural propers, each a use that moves th
 >
 > **Strongest limit:** Severe and threefold. **No checked witness expounds the chant’s predicate at all**: Augustine and Cassiodorus both read *super omnes deos* and build their expositions on the very word the chant removes, so the proposal has no reception behind its key phrase. Nothing shows the chant took the phrase from Ps. 46:3 rather than from a psalter not opened here, no psalter of the older type having been collated at all. And the reading is inherited chant wording, standing in the uncorrected optical layers of the Pustet 1862, the Venice 1570 and the 1604 *typica*, so nothing about a 1962 compiler may be claimed from it.
 
+<!-- end of quotation -->
+
 > **Editorial proposal — P3. The ear the Mass asks God to bend, and the visitation the crowd reports**
 >
 > **Anchors:** Introit <span class="nodecor">(*Int.*)</span>, *Inclína, Dómine, aurem tuam ad me*, with the missal’s own *ad me*; Gospel <span class="nodecor">(*Gosp.*)</span>, Lk. 7:16 *et quia Deus visitávit plebem suam*
@@ -580,6 +648,8 @@ Five afterlives of wording from the scriptural propers, each a use that moves th
 >
 > **Strongest limit:** The addition is inherited chant wording and not a 1962 act, so nothing about a compiler may be claimed; *inclina aurem* is common psalter idiom and its recurrence proves nothing on its own; and **the appointed Gospel gives *Deus visitávit plebem suam* to the crowd and not to the Evangelist**, so a reading that makes it Luke’s own verdict is an interpretation and not the text. Cassiodorus’s lemma does carry *ad me*, so the addition is older than the Missal.
 
+<!-- end of quotation -->
+
 > **Editorial proposal — P4. What the cuts withhold, the Mass says elsewhere**
 >
 > **Anchors:** Offertory <span class="nodecor">(*Off.*)</span>, ending at *hymnum Deo nostro*; Introit <span class="nodecor">(*Int.*)</span>, *sperántem in te* and the half-verses it passes over; Secret <span class="nodecor">(*Sec.*)</span>, *Tua nos, Dómine, sacraménta custódiant*
@@ -591,6 +661,8 @@ Five afterlives of wording from the scriptural propers, each a use that moves th
 > **What the element-by-element reading misses:** A cut is normally noticed only as an absence. Here the absences are answered elsewhere in the same Mass, which no element-by-element reading can see, because the answer is never in the element where the cut is.
 >
 > **Strongest limit:** **The unsung matter is not appointed text, and a proposal that leans on it presses verses the assembly does not hear.** *Custodíre* is also among the commonest verbs in the Roman euchology, so the Introit-and-Secret leg rests on a coincidence of a very ordinary word.
+
+<!-- end of quotation -->
 
 > **Editorial proposal — P5. Let us walk, and Jesus was going**
 >

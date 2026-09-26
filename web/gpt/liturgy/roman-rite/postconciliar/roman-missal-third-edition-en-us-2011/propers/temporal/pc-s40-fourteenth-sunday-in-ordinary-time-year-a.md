@@ -57,6 +57,8 @@ PC-S40-A
 >
 > The officially correlated strand presents one royal paradox: God’s reign arrives in a king whose strength is humble and whose yoke gives rest. Beside it, Romans continues its own apostolic course, locating Christian freedom in the Spirit who raises bodies and puts sinful deeds to death, while the offering and Communion texts carry these themes toward purification, salvation, and enduring praise.
 
+<!-- end of quotation -->
+
 > **Mercy, meekness, Spirit, praise**
 >
 > **1. Gathered by mercy — Entrance; Collect.** Temple mercy and the Son’s humility gather and raise a fallen people.

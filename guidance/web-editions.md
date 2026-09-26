@@ -131,7 +131,15 @@ bracket, `\notread{…}` setting the unappointed half of a verse, was read by
 pandoc as the optional argument of the `\nopagebreak` ending the quotation
 environment before it and deleted with it, so every such macro now reaches
 pandoc behind an empty group and the audit requires each call's words in
-the output; and pandoc cannot expand the `\if\relax\detokenize{#n}\relax`
+the output; two quotation environments in a row, such as a psalm's response
+and its verses, were written as two blockquotes with only a blank line
+between them, which the site's Python-Markdown reads as one quotation, and
+forty editions of both providers set as one what the PDF sets as two until
+2026-09-25, so a pandoc filter now writes `<!-- end of quotation -->` between
+any two adjacent quotations and the audit, rendering every edition with two
+or more quotations with the site's renderer, refuses one with more or fewer
+blockquotes than the quotations pandoc read;
+and pandoc cannot expand the `\if\relax\detokenize{#n}\relax`
 test with which `\propertitle` omits an empty field, so every proper title
 block lost its second and third lines while their words still stood in the
 opening prose. The shim now sets each field as a line of its own, and the

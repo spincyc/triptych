@@ -62,11 +62,15 @@ One may pray the Latin, the historical English, or another received form devotio
 >
 > **Doctrinal center:** Mary’s Easter joy answers the greeting first brought by Gabriel. Its source and object are God’s saving work in her risen Son.
 
+<!-- end of quotation -->
+
 > **Textual movement:** The Son borne and risen
 >
 > **Principal loci:** Luke 1:31–35; Matthew 28:5–7
 >
 > **Doctrinal center:** The one conceived and borne by Mary is the Lord who truly rises as he promised. Incarnation and Paschal Mystery belong to one economy of salvation.
+
+<!-- end of quotation -->
 
 > **Textual movement:** Prayer with and through Mary
 >

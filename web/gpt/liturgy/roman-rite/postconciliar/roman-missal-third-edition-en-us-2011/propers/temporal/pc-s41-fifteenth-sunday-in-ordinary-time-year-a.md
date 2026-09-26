@@ -63,6 +63,8 @@ PC-S41-A
 >
 > The Lectionary’s correlated strand moves from God’s effective word through watered earth to the sower and the varied reception of seed. Romans supplies a distinct apostolic horizon in which even those with firstfruits still groan while creation awaits liberation, while the offering, Communion, and final prayers ask that received gifts sanctify a people whose fruit matures through repeated participation.
 
+<!-- end of quotation -->
+
 > **Light, word, groaning, gift**
 >
 > **1. Light seeks wanderers — Entrance; Collect.** The just speaker hopes to behold, and truth calls Christians back to their name.

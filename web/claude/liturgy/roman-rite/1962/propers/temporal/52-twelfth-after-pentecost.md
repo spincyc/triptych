@@ -117,6 +117,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *Deus, in adiutórium meum inténde: Dómine, ad adiuvándum me festína: confundántur et revereántur inimíci mei, qui quærunt ánimam meam. <span class="nodecor">Ps. ibid., 4</span> Avertántur retrórsum, et erubéscant: qui cógitant mihi mala. ℣. Glória Patri.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Ps. 69:2–3 and 69:4**
 >
 > O God, come to my assistance; O Lord, make haste to help me. Let them be confounded and ashamed that seek my soul. *Ps.* Let them be turned backward, and blush for shame that desire evils to me. ℣. *Glória Patri.*
@@ -128,6 +130,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 > ***Oratio* — marginal no. 1553**
 >
 > *Omnípotens et miséricors Deus, de cuius múnere venit, ut tibi a fidélibus tuis digne et laudabíliter serviátur: tríbue, quǽsumus, nobis; ut ad promissiónes tuas sine offensióne currámus. Per Dóminum.*
+
+<!-- end of quotation -->
 
 > **English: Cummiskey 1861, Collect of this formulary, printed p. 420**
 >
@@ -141,6 +145,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *Fratres: Fidúciam talem habémus per Christum ad Deum: non quod sufficiéntes simus cogitáre áliquid a nobis, quasi ex nobis: sed sufficiéntia nostra ex Deo est: qui et idóneos nos fecit minístros novi testaménti: non líttera, sed spíritu: líttera enim occídit, spíritus autem vivíficat. Quod si ministrátio mortis, lítteris deformáta in lapídibus, fuit in glória; ita ut non possent inténdere fílii Israël in fáciem Móysi, propter glóriam vultus eius, quæ evacuátur: quómodo non magis ministrátio Spíritus erit in glória? Nam si ministrátio damnatiónis glória est: multo magis abúndat ministérium iustítiæ in glória.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), 2 Cor. 3:4–9**
 >
 > And such confidence we have, through Christ, towards God. Not that we are sufficient to think any thing of ourselves, as of ourselves: but our sufficiency is from God. Who also hath made us fit ministers of the new testament, not in the letter but in the spirit. For the letter killeth: but the spirit quickeneth. Now if the ministration of death, engraven with letters upon stones, was glorious (so that the children of Israel could not steadfastly behold the face of Moses, for the glory of his countenance), which is made void: How shall not the ministration of the spirit be rather in glory? For if the ministration of condemnation be glory, much more the ministration of justice aboundeth in glory.
@@ -153,6 +159,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *Benedícam Dóminum in omni témpore: semper laus eius in ore meo. ℣. In Dómino laudábitur ánima mea: áudiant mansuéti, et læténtur.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Ps. 33:2–3**
 >
 > I will bless the Lord at all times, his praise shall be always in my mouth. ℣. In the Lord shall my soul be praised: let the meek hear and rejoice.
@@ -162,6 +170,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 > **Allelúia — Ps. 87, 2 — marginal no. 1556**
 >
 > *Allelúia, allelúia. ℣. Dómine, Deus salútis meæ, in die clamávi et nocte coram te. Allelúia.*
+
+<!-- end of quotation -->
 
 > **English: Douay–Rheims (Challoner), Ps. 87:2**
 >
@@ -186,6 +196,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 > ***Antiphona ad Offertorium* — Exodi 32, 11, 13 et 14 — marginal no. 1558**
 >
 > *Precátus est Móyses in conspéctu Dómini Dei sui, et dixit: Quare, Dómine, irásceris in pópulo tuo? Parce iræ ánimæ tuæ: meménto Abraham, Isaac, et Iacob, quibus iurásti dare terram fluéntem lac et mel. Et placátus factus est Dóminus de malignitáte, quam dixit fácere pópulo suo.*
+
+<!-- end of quotation -->
 
 > **English: Douay–Rheims (Challoner), Ex. 32:11, 13 and 14, printed whole**
 >
@@ -217,6 +229,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *De fructu óperum tuórum, Dómine, satiábitur terra: ut edúcas panem de terra, et vinum lætíficet cor hóminis: ut exhílaret fáciem in óleo, et panis cor hóminis confírmet.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Ps. 103:13–15, printed whole**
 >
 > *v. 13.* Thou waterest the hills from thy upper rooms: the earth shall be filled with the fruit of thy works:
@@ -232,6 +246,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 > ***Postcommunio* — marginal no. 1561**
 >
 > *Vivíficet nos, quǽsumus, Dómine, huius participátio sancta mystérii: et páriter nobis expiatiónem tríbuat, et munímen. Per Dóminum.*
+
+<!-- end of quotation -->
 
 > **English: Cummiskey 1861, Postcommunion of this formulary, printed p. 423**
 >
@@ -315,13 +331,23 @@ The psalm itself is the psalter’s own doublet — its verses stand nearly verb
 
 > **St. Augustine, *Enarrationes in Psalmos* 69 (New Advent “Psalm 70”), §§1–4, 7** Preached on a martyrs’ feast, and built on the grain of wheat: “Thanks to the Grain of wheat, because He willed to die and to be multiplied … Many therefore members of Him, under one Head … are one man: and of the same, as of one man, the voice is ofttimes heard in the Psalms.” The cry for help is therefore never off duty — *opus enim habemus sempiterno adiutorio in isto saeculo* — “for need we have of an everlasting aid in this world. But when have we not?” On the antiphon’s second clause he hears Christ whole: “He is speaking that has said, Why do you persecute Me?” And on the verse he draws a precise historical line through the chant’s own verb: open persecution has passed, “now there has remained the malice of them *thinking*” — the enemies who once sought the soul now merely devise, *cogitant*. At §7 the speaker’s ground: “help I seek, always mine infirmity I confess.” English from the public-domain NPNF first series, vol. 8; Latin checked at the same sections.
 
+<!-- end of quotation -->
+
 > **Cassiodorus, *Expositio Psalmorum* 69 (PL 70, coll. 493–494)** The whole psalm is *ex persona martyrum*: after the Head narrated his Passion in Ps. 68, “after their Head the members likewise speak.” His gloss on the two opening verbs is the closest reading this verse has received: *inténde* asks God to *look favourably*, “since the Lord knows all things even when he is not asked”; *festína* is prayed “as though divine mercy were delaying, and by the delay of its coming the torments were growing heavier.” And he records what the verse had already become by the sixth century, citing Cassian by name and chapter: the most eloquent Cassian so celebrates this verse in his tenth Conference “that whatever monks undertake, they do not begin without a threefold repetition of this little verse” (*sine huius versiculi trina iteratione non inchoent*). Latin from the public-domain Migne text; the copyrighted ACW translation was not used.
+
+<!-- end of quotation -->
 
 > **St. John Cassian, *Conferences* X.10** The chapter Cassiodorus meant. Abba Isaac hands over this one verse as the formula of unceasing prayer: “it embraces all the feelings which can be implanted in human nature, and can be fitly and satisfactorily adapted to every condition, and all assaults … it contains the thought of one’s own weakness, confidence in the answer, and the assurance of a present and ever ready help”; it is to be prayed “in adversity that we may be delivered, in prosperity that we may be preserved and not puffed up.” English from the public-domain NPNF second series, vol. 11.
 
+<!-- end of quotation -->
+
 > **The Rule of St. Benedict, cc. 17–18 and 35** Cassian’s counsel became law. The Rule orders the Hours to open with this verse — c. 18: *In primis dicatur versu: Deus, in adiutorium meum inténde; Dómine, ad adiuvándum me festína* — and c. 35 sends even the kitchen rotation through it: the brother entering his week of service says this verse three times before all. From Benedict the verse passed to the whole Latin Office, where it opens every hour except Matins. The Twelfth Sunday’s Introit is thus the one place the 1962 Missal sings at Mass the sentence with which the Western Church has begun her prayer for fourteen centuries. Latin from the public-domain text; English cross-checked in the 1902 Verheyen translation.
 
+<!-- end of quotation -->
+
 > **Theodoret of Cyrus, *Interpretatio in Psalmos* 69 (PG 80, coll. 1415–1418) — Greek-tradition sample** The Antiochene counterweight: David composed the psalm fleeing Absalom, and “the memory of his sin stung him more sharply than his enemies did.” The opening plea he paraphrases without figure: many and various calamities engulf me; therefore I ask that help be given quickly. Migne’s apparatus at this verse carries a text-historical note the Introit’s singers have an interest in: the second clause, *Dómine, ad adiuvándum me festína*, is absent from the Septuagint’s two great codices and stands in the Hebrew, in Apollinaris — and in Augustine. Read in the registered facsimile of PG 80; Migne’s parallel Latin is quoted, and the copyrighted modern English translation was not consulted.
+
+<!-- end of quotation -->
 
 > **St. Robert Bellarmine, *Explanatio in Psalmos*, Ps. LXIX, tr. John O’Sullivan (Dublin, 1866), artifact p. 220** One compressed paragraph, aimed straight at the liturgical fact: “A verse celebrated in the Catholic Church, as all the divine offices commence with it. For though it is peculiarly applicable to Christ hanging on the cross, it may be used by all the faithful in any danger whatever … it is not only lawful, but expedient to repeat this verse very frequently.” Read on the registered facsimile of the 1866 edition.
 
@@ -349,11 +375,19 @@ The lesson makes two moves, and the second has had one of the great careers in t
 
 > **St. John Chrysostom, *Homilies on Second Corinthians* 6 (on 3:1–6) and 7 (on 3:7–18)** The Antiochene reading is forensic and sacramental at once. On sufficiency: Paul “refers and ascribes the whole to Him.” On the letter that kills: “In the Law, he that has sin is punished; here, he that has sins comes and is baptized and is made righteous … The Law, if it lay hold on a murderer, puts him to death; the Gospel, if it lay hold on a murderer, enlightens, and gives him life” — with the Sabbath stick-gatherer executed under the one and forgiven thousands under the other. On the two ministrations (Hom. 7): since the New Covenant’s glory cannot be shown to bodily eyes as Moses’ shining face could, Paul “by this logical inference established its superiority”; and the tables have changed material: “This table is of the flesh, and spirit, and righteousness, and remains; and unto all of us is it vouchsafed, not to one only, as to Moses.” English from the public-domain NPNF first series, vol. 12.
 
+<!-- end of quotation -->
+
 > **Ambrosiaster, *Commentaria in Epistolam ad Corinthios Secundam*, ad 3:6–9 (PL 17)** The oldest complete Latin commentary on Paul reads the verse juridically: *Litterae enim ad hoc datae sunt Moysi, ut contemnentes Legem occideret secundum jus naturae. Spiritus autem, id est, lex fidei quae non scribitur, sed animo continetur, vivificat reos mortis* — the letters were given to Moses precisely to execute despisers of the Law; the spirit is the unwritten law of faith, held in the soul, which brings the death-guilty to life. The comparison of vv. 7–9 he sums: *multum ergo interest inter legem et legem* — there is much between law and law — and glory is greater in salvation than in death. Latin verified in the public Migne transcription.
+
+<!-- end of quotation -->
 
 > **St. Augustine, *De doctrina christiana* III.5.9 and *De spiritu et littera* 4.6, 14.23–25, 19.34 — one Father, two readings, and his own ruling between them** In 396 Augustine read the verse as a rule of exegesis: to take figurative expressions literally is “a miserable slavery of the soul,” and “nothing is more fittingly called the death of the soul” than intelligence subjected to the flesh by the letter — Origen’s hermeneutic naturalised. In 412, against the Pelagians, he quoted that interpretation back and demoted it without retracting it: the verse is to be understood “not in that way only … but also, and indeed *especially*” (*eoque vel maxime*) of the law without grace — *doctrina quippe illa, qua mandatum accipimus continenter recteque vivendi, littera est occidens, nisi adsit vivificans spiritus*. The letter that kills is now the Decalogue itself: the command shows what to do and gives no power to do it, and by Romans 7 the bare precept occasions the sin it forbids. The treatise’s celebrated formula, verified in the Latin: *Lex ergo data est, ut gratia quaereretur: gratia data est, ut lex impleretur* — the law was given that grace might be sought; grace was given that the law might be fulfilled. English from the public-domain NPNF first series, vols. 2 and 5.
 
+<!-- end of quotation -->
+
 > **St. Thomas Aquinas, *Super II ad Corinthios*, cap. 3, lect. 1–2; *Summa theologiae* I-II q. 106 aa. 1–2** Aquinas supplies the mechanics and then the astonishing corollary. In the commentary the letter kills *occasionaliter*: *littera legis dat solam cognitionem peccati … non reprimit concupiscentiam, sed magis occasionaliter auget* — knowledge without healing of the cause. In the *Summa* he formalises Augustine’s definition — the letter is *quaelibet Scriptura extra homines existens, etiam moralium praeceptorum qualia continentur in Evangelio* — and draws the conclusion in the body of the article, verified verbatim: *unde etiam littera Evangelii occideret, nisi adesset interius gratia fidei sanans* — even the letter of the *Gospel* would kill, were the inward healing grace of faith not present. The New Law is *principaliter … ipsa gratia Spiritus Sancti*, the written Gospel only secondarily; the letter/spirit line no longer separates the Testaments but runs through every written norm whatsoever. Yet in cap. 3 of the commentary Aquinas never cites *De spiritu et littera* by name — the Augustinian doctrine arrives in the *Summa*, not where a reader would first look for it.
+
+<!-- end of quotation -->
 
 > **Origen, *De principiis* I.1.2; *Contra Celsum* VII.20 — the fountainhead; and St. Bernard, *Super Cantica* 7.5 — the domestication** Origen fixed the equation the young Augustine inherited: “by letter are meant bodily things, and by spirit intellectual things” (*De principiis* I.1.2, ANF); in *Contra Celsum* the verse dissolves the alleged contradiction of Moses and Christ at the spiritual level. Yet the great hermeneutical manifesto of *De principiis* IV grounds the spiritual sense on 1 Corinthians 2 and Proverbs 22, and does *not* quote this verse there. Eight centuries later the verse has become monastic table-talk about psalmody: *Mel in cera, devotio in littera est. Alioquin littera occidit, si absque spiritus condimento glutieris* — honey in the wax, devotion in the letter; otherwise the letter kills, if you swallow it without the seasoning of the spirit (Bernard, sermon 7 on the Canticle, Latin verified in the Migne text). The verse that named the covenants now seasons the choir office.
 
@@ -375,9 +409,15 @@ The chant matches the Clementine word for word, and the psalm it opens is an alp
 
 > **St. Basil the Great, *Homilia in Psalmum 33* (PG 29, coll. 349–356)** Basil hears the objection in the chant’s first clause and states it at full strength: the prophet “seems to promise the impossible. How can the praise of God be always in a man’s mouth? When he sleeps, he will surely be silent; and how shall the mouth of one eating or drinking produce praise?” His answer is the inner man’s mouth: *quoddam etiam esse hominis interni spirituale os atque intelligibile, quo nutritur, dum verbum vitae recipit, qui est panis, qui de coelo descendit* — there is a certain spiritual and intelligible mouth of the inner man, by which he is nourished when he receives the word of life, the bread that came down from heaven. And the “always” is fixed to affliction first: it is shameful to bless in prosperity and be silent in adversity; then rather are richer thanks owed. On *áudiant mansuéti*: since salvation came “without battle, by the mere change of countenance,” let the meek hear “that it is possible for the quiet to raise a trophy, and for non-combatants to be declared victors” — and “perhaps, prophetically, the meek are the disciples of Christ.” Latin from Migne’s parallel column, read in the registered scan of PG 29; no public-domain English of this homily exists, and the copyrighted FC translation was not used. Basil’s transmitted psalm homilies cover neither Ps. 69, nor 87, nor 103 — of this Sunday’s four psalms he preached only on the Gradual’s.
 
+<!-- end of quotation -->
+
 > **St. Augustine, *Enarrationes in Psalmos* 33, two sermons (New Advent “Psalm 34” carries only the second)** On the Gradual’s first verse: “So speaks Christ, so also let a Christian speak … both when He gives them, bless; and when He takes them away, bless. For it is He that gives, it is He that takes away: but Himself from him that blesses Him He takes not away” — Job’s grammar made a rule of praise. On the verse’s second clause: those who will not be praised *in the Lord* “are not humble, but fierce, rough, lifted up, proud. Gentle cattle would the Lord have; be the Lord’s *iumentum* … He sits upon you, He guides you.” English from the public-domain NPNF first series, vol. 8; the first sermon, untranslated there, was read in the Latin.
 
+<!-- end of quotation -->
+
 > **Cassiodorus, *Expositio Psalmorum* 33; and Theodoret, *Interpretatio* 33 (PG 80, coll. 1101–1109)** Cassiodorus answers the *quomodo semper?* morally: praise is always in the mouth of the just man “when whatever he thinks or speaks is such that no reproach can fasten on it … whatever we speak or carry in mind out of patience, charity, simplicity and the other virtues is rightly counted among God’s praises” — and blessing is owed *quando et adversa patimur, et collata felicitate gaudemus*. On the meek he draws a pointed exclusion: *non dixit, lege docti, non ieiunántes, non psalléntes, sed mansuéti* — not the law-learned, not the fasters, not the psalm-singers, but the meek are bidden rejoice. His conclusion to the whole psalm belongs beside this Mass: the psalm’s order is so complete — hymns first, then the people bidden approach Communion at *gustáte et vidéte* — *ut eum conscriptum putes temporibus Christianis*, “that you would think it written in Christian times.” Theodoret, for his part, glosses the Gradual’s first verse from David’s whole career — “fleeing or pursuing, in good fortune or ill, I hymn my Master” — and makes the meek the singer’s chorus: he will not weave the hymn alone, but shares the singing with those who share his meekness.
+
+<!-- end of quotation -->
 
 > **St. Robert Bellarmine, *Explanatio in Psalmos*, Ps. XXXIII, tr. O’Sullivan (1866), artifact pp. 100–105** “The word *always* does not mean every moment … but it means that he will do so in the proper time and place, to the end of his life; nay, more, as those Psalms will be sung to the end of time, David will thus, through others, ‘bless the Lord at all times.’ ” Bellarmine has, without knowing it, described the Gradual: the Church singing David’s *semper* for him is what the chant is. Read on the registered facsimile.
 
@@ -407,7 +447,11 @@ This is the thinner half of the reception: Ambrose’s Lucan commentary passes f
 
 > **St. Cyril of Alexandria, *Commentary on Luke*, Sermon 67, tr. R. Payne Smith (Oxford, 1859)** Cyril begins from the question a lector would ask: why does Christ bless the disciples *alone*, when a crowd stood there watching the same miracles? Because the blessing is not of eyewitness: “all the Jews saw Christ working with divine majesty, yet it would not be right to account them all as blessed.” What the blessed eyes see is what faith sees: “They saw that God the Word, Who was in the form of God the Father, had become flesh for our sakes.” The spectators had the spectacle; the disciples had the recognition.
 
+<!-- end of quotation -->
+
 > **St. John Chrysostom, *Homily 45 on Matthew* — on the parallel saying, Mt. 13:16–17** Chrysostom has no surviving Luke commentary, so his reading of the saying comes from the Matthean parallel. Two points. The disciples’ blessedness lies partly in their own act — “neither would they have been blessed, unless the well-doing had been their own” — and what the prophets desired was not information but presence: his coming, his miracles, his voice, his teaching. The ancients “beheld by faith only: but these by sight too.” English from the public-domain NPNF first series, vol. 10.
+
+<!-- end of quotation -->
 
 > **St. Bede, *In Lucae Evangelium Expositio* III, on Lk. 10:23–24 (PL 92, col. 467)** Bede supplies what Ambrose omitted, and sharpens it socially: not the eyes of the scribes and Pharisees, “who saw only the Lord’s body,” but *beáti óculi parvulórum* — the eyes of the little ones to whom the Son deigns to reveal himself and the Father. The “many kings” are for him the saints who ruled their own temptations — *reges magni, quia tentationum suarum motibus … regendo praeesse noverunt* — and the prophets saw indeed, but *per speculum et in aenigmate*. Latin verified in the Migne text.
 
@@ -416,6 +460,8 @@ This is the thinner half of the reception: Ambrose’s Lucan commentary passes f
 Luke says the *legisperítus* rose *tentans illum* — Douay “tempting him” — and asked what one must *do* to possess eternal life. Christ’s reply is a citation exam: *In lege quid scriptum est? quómodo legis?* The lawyer answers with the two commandments, and is told *Recte respondísti: hoc fac, et vives*. Only then, *volens iustificáre seípsum* — “willing to justify himself” — does he ask the question the parable will refuse to answer: *Et quis est meus próximus?*
 
 > **St. Cyril of Alexandria, *Commentary on Luke*, Sermon 68** Cyril reads the lawyer inside a documented campaign: talebearers had gone about Judaea saying Christ taught that Moses’ commandment was of no use, so the question is a trap laid for exactly that slander, and Christ springs it by making the lawyer answer from the Law himself. Praised, the man “breaks forth into pride, thinking that he had no neighbour” — and the parable is built to break precisely that: “a crown of love is being twined for him who loves his neighbour: and he proves to be a Samaritan. Nor is he rejected on this account.” Priesthood and Law-learning, Cyril concludes, are vain unless confirmed by works.
+
+<!-- end of quotation -->
 
 > **Origen, *Homily 34 on Luke*, in St. Jerome’s Latin** Before any allegory, Origen answers the lawyer’s question morally: the neighbour is whoever “keeps the precepts and prepares himself to be neighbour to every man who needs help” (*praeparare se, ut sit proximus omni homini qui auxilio indiget*), and the closing command is spoken *non tam doctori legis quam nobis quoque omnibus* — not so much to the doctor of the Law as to all of us. The literal sense stands on its own feet in the very homily that transmits the great allegory.
 
@@ -427,13 +473,23 @@ The allegorical reading is older than most summaries allow, and it did not begin
 
 > **Second century: St. Irenaeus, *Adversus haereses* III.17.3; Clement of Alexandria, *Quis dives salvetur* 28–29** Irenaeus, arguing about the Holy Spirit, already has the Lord as the one who compassionated the man fallen among thieves, bound his wounds, and gave “two royal denaria” bearing the image of the Father and the Son — entrusting the man to the Spirit. Clement asks of the neighbour who showed mercy: “Who else can it be but the Saviour Himself?” — who poured on our wounded souls the wine, “the blood of David’s vine,” and the oil of the Father’s compassion. Both English texts from the public-domain Ante-Nicene Fathers, vols. 1–2. The Samaritan-as-Christ reading is thus attested a full generation before Origen wrote.
 
+<!-- end of quotation -->
+
 > **Origen, *Homily 34 on Luke*, in St. Jerome’s Latin (PL 26)** Origen reports the whole scheme as received: “One of the elders, wishing to interpret the parable, said…” — *hominem qui descendit esse Adam; Jerusalem, paradisum; Jericho, mundum; latrones contrarias Fortitudines; sacerdotem, Legem; Levitem, prophetas; Samaritem, Christum … duos denarios, Patrem et Filium … stabularium, Ecclesiae praesidem*, and the promised return, the Saviour’s second coming. Origen corrects it even as he transmits it — not every man descends from Jerusalem to Jericho, so the scheme must not be forced on all — and adds two signatures of his own: the etymology (the Samaritan is the one *qui interpretatur custos*, the guardian, keyed to Jn. 8:48, where the Lord denies the demon and pointedly does not deny being a Samaritan — *sciebat enim se custodem*); and the two denarii as the knowledge of the Father and the Son, *quomodo Pater in Filio, et Filius in Patre sit*. Latin verified in the wikisource transcription of Jerome’s translation; the modern English translation (FC 94) is in copyright and is not quoted.
+
+<!-- end of quotation -->
 
 > **St. Ambrose, *Expositio evangelii secundum Lucam* VII, §§71–84 (PL 15, coll. 1717–1720)** Ambrose grounds the figure in history first — *haec simplicis historia veritatis est: quae si altius consideretur, admiranda signat mysteria* — and then re-mints the inherited scheme. Jericho is *figura istius mundi*, into which Adam descended from the heavenly Jerusalem, exiled not by a change of place but of conduct: *cui non loci, sed morum mutatio naturae suae fecit exsilium*. The robbers are *angeli noctis atque tenebrarum*, who can wound only after stripping the garments of spiritual grace. The Samaritan is read through the same etymology — *Samaritani etenim vocabulo custos significatur* — and identified by his descent: *Qui descendit de coelo*. Ambrose’s own coinage is the neighbouring: the guardian “became our neighbour by taking up our compassion” — *factus est compassionis nostrae susceptione finitimus, et misericordiae collatione vicinus*. The two denarii he re-reads as the two Testaments, *quae imaginem in se habent aeterni regis expressam, quorum pretio vulnera nostra curantur*; the innkeeper becomes St. Paul (*Stabularius itaque ille est qui dixit: Misit me Christus evangelizare*); the return is judgment day — *Beati quibus es debitor!* — and the conclusion is the sentence the whole tradition kept: *Non enim cognatio facit proximum, sed misericordia: quia misericordia secundum naturam* — kinship does not make the neighbour; mercy does, for mercy is according to nature.
 
+<!-- end of quotation -->
+
 > **St. Augustine, *Quaestiones Evangeliorum* II.19; *Sermo* 131.6; *De doctrina christiana* I.30** Augustine fixes the classic table, verified in the Latin: the man is Adam *in genere humano*; Jerusalem the heavenly city of peace; Jericho — his own touch, from the Hebrew — *luna interpretatur et significat mortalitatem nostram*, the moon that waxes, wanes and sets; the robbers the devil and his angels, who stripped the man of immortality and left him *semivivum* — half-alive because *ex parte qua potest intellegere et cognoscere Deum vivus est*; priest and Levite the *sacerdotium et ministerium Veteris Testamenti, quod non poterat prodesse ad salutem*; *Samaritanus custos interpretatur*; the binding is *cohibitio peccatorum*, the oil *consolatio spei bonae*, the wine *exhortatio ad operandum ferventissimo spiritu*; the beast the flesh of the Incarnation, and to be set on it *in ipsam incarnationem Christi credere*; the inn the Church that refreshes travellers returning to the eternal country; the two denarii the two precepts of charity, or the promise of this life and of the life to come; the innkeeper the Apostle. In *Sermo* 131 the same table turns anti-Pelagian and pastoral at once: the half-dead man is free will after the fall, baptism forgives all sins — *numquid quia deleta est iniquitas, finita est infirmitas?* — and the Church’s inn is where the cure *continues*: *adhuc curatur*, he is still under treatment; let no one exalt himself. And in *De doctrina christiana* I.30 Augustine draws the moral boundary of the whole figure: since no one was neighbour to the wounded man “except him who took pity upon him,” every man is to be counted our neighbour, and the Lord himself “wished also to be called our neighbour.”
 
+<!-- end of quotation -->
+
 > **St. Gregory the Great, *Moralia in Iob* XX (on Job 29:25); *Regula pastoralis* II.6; *Homiliae in Evangelia* II.18.2** Gregory never preached on this pericope — none of the forty Gospel homilies takes a lection from it — but he made the parable’s medicine into a rule of government: wine and oil are applied to the half-dead man’s wounds *ut per vinum mordeantur vulnera, per oleum foveantur* — so that everyone set over the healing of wounds must mix the bite of discipline with the softness of mercy: *miscenda est ergo lenitas cum severitate*. In the same tradition as Origen he keeps the etymology, and gives it its finest formulation, on Jn. 8:48: charged with having a demon and with being a Samaritan, the Lord denied the one and was silent about the other, *custos namque humani generis venerat* — for he had come as the guardian of the human race, and to deny the name would have been to deny the office.
+
+<!-- end of quotation -->
 
 > **St. Bede, *In Lucae Evangelium Expositio* III (PL 92, coll. 467–470)** Bede’s exposition is a mosaic of Augustine’s table and Ambrose’s phrases — whole clauses recur verbatim — and its one legislative sentence is his own, a rule Bede sets for any reading of the parable: the Lord framed the parable *ut omnem qui misericordiam faceret cuilibet proximum doceret*, and yet the same parable specially designates the Son of God; but we must not so interpret it *ut moralia mutuae fraternitatis instituta sub allegoriae regulis extenuare et auferre conemur* — the rules of allegory must not thin out or carry off the moral institutes of mutual brotherhood. Both senses stand, and at v. 36 he keeps them side by side: *iuxta litteram*, the Lord’s meaning is plain — no one is more a neighbour than the one who shows mercy; *sacratiore autem intellectu*, no one is more a neighbour *quam qui vulnera nostra curavit*. His own extensions: the denarii are handed over *altera die* because the risen Lord opened the Scriptures’ sense, and the innkeeper widens from Paul to all the Spirit-taught preachers.
 
@@ -457,7 +513,11 @@ One of the rare offertories that tells a story, and among the most admired piece
 
 > **St. Augustine, *Quaestiones in Heptateuchum* II, qq. 141–149 (on Ex. 32); *De civitate Dei* XV.25** The intercession scene drew from Augustine his most careful analysis of prayer that “changes God’s mind.” On v. 14: *malitiam hic poenam intellegi voluit* — the “evil” God is appeased of is penalty, not malice — *malus enim Deus non est; sed malis ingerit mala, quia iustus est*. On Moses’ astonishing offer at v. 32, the logic is a lawyer’s: he spoke it *securus*, safe, “so that the conclusion would follow from what came after: since God would not blot Moses from his book, he would forgive the people that sin.” Deepest of all, on *Sine me* — God’s “Let me alone” before Moses has said a word: by these words “God signified how much that people profited with him from being loved by such a man … so that we might be advised that, when our own merits weigh us down, we can be relieved before him by the merits of those he loves”; the sentence is spoken *ac si diceretur … dilectio tua in illos intercedit mihi* — as if to say, your love intercedes with me for them. God, he adds, “was loving them the more secretly while terrifying them aloud.” And the *City of God* supplies the rule for the whole scene: *ira Dei non perturbatio animi eius est, sed iudicium quo inrogatur poena peccato* — God’s anger is not a disturbance of his mind but the judgment by which penalty is imposed — and God does not repent as a man does, his sentence being as fixed as his foreknowledge is sure; Scripture speaks so “to terrify the proud and rouse the negligent.” Latin verified at the cited public editions.
 
+<!-- end of quotation -->
+
 > **St. Gregory the Great, *Moralia in Iob* IX.xvi.23 and XX.v.14** Gregory turns the scene into a doctrine of intercessory boldness: “Did not Moses resist God’s wrath, when standing up for the fallen people … by the oblation of his own death?” The saints “lift up themselves against Him, and the Divine Power arms them in alliance with Itself against Itself … He bears the supplicant’s contradiction which He inspires.” His reading of *Sine me* converges with Augustine’s from the other side: “What is it to say to His servant, Let Me alone; but to give him boldness to supplicate?” — the prohibition is the permission. In Book XX Moses is the pattern ruler, “mercy united with severity … he who begged for the life of all even with his own death.” English from the public-domain Library of the Fathers translation.
+
+<!-- end of quotation -->
 
 > **Tertullian, *Adversus Marcionem* II.26; St. John Chrysostom, *Homily 16 on Romans*** Tertullian is the witness who actually says what preachers often attribute to the whole tradition: Moses deprecating the Father’s wrath is a figure of Christ — the chapter presents “Christ, prefigured in the person of Moses as the deprecator of the Father, and the offerer of His own life for the salvation of the people,” and reads *Sine me* as spoken precisely “in order that by his entreaty, and by offering himself, he might hinder” the judgment — “that you might by such an instance learn how much privilege is vouchsafed with God to a faithful man.” Chrysostom, expounding Paul’s own anathema-wish, makes Moses the model of the intercessor whose daring is zeal for God’s honour: “as Moses seemed to be pleading for the Jews, yet was doing everything for God’s glory … so also does Paul.” English from the public-domain ANF vol. 3 and NPNF first series vol. 11. Johner’s liturgical commentary draws the same line under this very chant: Moses “is but a weak type of Christ and His redemptive work,” who did not only pray but gave himself, and “can show His wounds” — the offertory’s intercession completed at the altar it accompanies.
 
@@ -486,6 +546,8 @@ The antiphon’s path through those verses is exact and is declared by the missa
 The reception of these verses runs the full spectrum, from providence to sacrament. At the literal pole, Theodoret: God supplies rain so that the earth brings forth every kind of fruit — “bread to strengthen and nourish human nature, wine to gladden and make life sweeter, oil to nourish within and brighten without” — providence, and nothing else; and Bellarmine agrees (“ ‘wine may cheer the heart of man,’ intelligible enough”), drawing three morals: gratitude to the source of all supports of bodily life, wonder that the Father gave “even the luxuries,” and the duty of frugal meals and moderate drink. At the other pole stand the two Latin doctors the liturgy has, in effect, sided with by singing these verses here.
 
 > **St. Augustine, *Enarrationes in Psalmos* 103 (New Advent “Psalm 104”), Sermo 3, §§12–14** “That it may bring forth bread out of the earth. What bread? Christ. Out of what earth? From Peter, from Paul, from the other stewards of the truth … He is the bread who descended from heaven, that He might be brought forth out of the earth.” On the wine, the sober inebriation: “How excellent is Your cup which makes inebriate! … Be inebriated; yet beware, from what source” — an ebriety seen “in the holy love of righteousness” and in a mind estranged from earth toward heaven. On the oil: Christ is Christ from the chrism, “but He anoints over His whole Body,” so every comer receives the grace that gladdens the countenance. And on the psalm’s strange restriction — bread strengthening the *heart* — “as it were, he has forced us to understand what bread he was speaking of”: visible bread strengthens the stomach; there is another bread, *panis cordis*. English from the public-domain NPNF first series, vol. 8, checked against the Latin sermon divisions.
+
+<!-- end of quotation -->
 
 > **Cassiodorus, *Expositio Psalmorum* 103, ad vv. 14–15** The most explicitly sacramental witness among those checked. Lest anyone take the bread as common bread, Cassiodorus says, the psalm adds three things to be understood spiritually: *vinum laetificat cor hominis, cum sacratum fuerit in sanguinem Domini Christi* — wine gladdens the heart of man *when it has been consecrated into the blood of the Lord Christ* — “hence we are permitted to be inebriated, as it is written: and thy cup which inebriateth, how excellent it is … *ebrietas sobria, satietas felix*”; and the face is gladdened with oil *cum regale chrisma conficitur*, when the royal chrism is confected — that face of which it is said *Accedite ad eum et illuminamini*. The proof-text he reaches for is Ps. 33:6 — the Gradual’s own psalm, quoted inside the Communion’s: the two chants of this Mass were already cross-linked in a sixth-century commentary. On *panis cor hóminis confírmet* he makes the letter itself force the spirit: if you take it bodily, does bread strengthen only the heart and not the other members? Latin from the public Migne text; the copyrighted ACW translation was not used.
 
@@ -555,6 +617,8 @@ Four verified afterlives of wording from the scriptural propers, each one a use 
 >
 > **Rights and limit.** A 1932 United Kingdom judgment, freely quotable. Atkin’s verbal dependence is on the English Bible’s wording of this verse; he cites no evangelist, and the “restricted reply” is his own coinage.
 
+<!-- end of quotation -->
+
 > **Gospel, Lk. 10:30–32 — the seminarians step over the man in the road, 1973**
 >
 > **Appointed phrase.** *Homo quidam descendébat ab Ierúsalem in Iéricho*, Douay–Rheims “A certain man went down from Jerusalem to Jericho” — and the priest and Levite who, seeing him, “passed by.”
@@ -565,6 +629,8 @@ Four verified afterlives of wording from the scriptural propers, each one a use 
 >
 > **Rights and limit.** The article is under APA copyright; only the short sentences above are quoted, with citation. The study engages the parable’s narrative, and its title quotes the verse’s route exactly; the phrase “passed by on the other side” in its abstract is the King James idiom, where the Douay of vv. 31–32 has simply “passed by.”
 
+<!-- end of quotation -->
+
 > **Epistle, 2 Cor. 3:6 — Paul’s covenant contrast becomes a canon of statutory construction, 1950**
 >
 > **Appointed phrase.** *Líttera enim occídit*, Douay–Rheims “For the letter killeth.”
@@ -574,6 +640,8 @@ Four verified afterlives of wording from the scriptural propers, each one a use 
 > **The turn.** Paul’s sentence contrasts two covenants — the ministration engraved on stones and the ministration of the Spirit — and says nothing about how to read documents. English usage long ago re-cut it into a maxim of interpretation, letter against spirit, and Frankfurter completes the migration: the Apostle’s theology of the new testament is quoted as authority for construing an Act of Congress generously. That a dissent on behalf of an excluded immigrant wife reaches for a verse about a covenant of mercy is the kind of fit no one planned.
 >
 > **Rights and limit.** United States Reports text, public domain. The four quoted words are common to the Douay and the King James; Frankfurter cites no scripture reference, and the interpretive maxim he invokes is the naturalised idiom, not Paul’s argument, which concerns covenants, not construction.
+
+<!-- end of quotation -->
 
 > **Introit, Ps. 69:2 — the cry for help rides a ducal fanfare, 1610**
 >
@@ -591,6 +659,8 @@ Four verified afterlives of wording from the scriptural propers, each one a use 
 >
 > Everything below is exploratory editorial and AI proposal. None of it is sourced historical intent, attributed teaching, or documented reception, and none of it should be quoted as any of those. Each proposal was tested against the corpus checked for this guide and against a targeted search for its own distinctive conjunction; the anchors, the search boundary, the novelty result and the controlling limit of each are recorded in `research/scope.md`. Evidence, doctrine, and the literal sense of the appointed texts govern; where a proposal and a checked witness conflict, the witness wins. Bede’s rule binds here as everywhere in this guide: no allegory may thin out the moral command the parable ends with.
 
+<!-- end of quotation -->
+
 > **Editorial proposal — Half-dead is a diagnosis of exactly what the letter can reach**
 >
 > **Anchors:** Gospel <span class="nodecor">(*Gosp.*)</span>, *semivívo relícto* with Augustine’s gloss in *Quaestiones Evangeliorum* II.19 — half alive *ex parte qua potest intellegere et cognoscere Deum*; Epistle <span class="nodecor">(*Ep.*)</span>, *líttera enim occídit*, with Aquinas’s mechanism in *Super II ad Corinthios* c. 3, *littera legis dat solam cognitiónem peccáti*.
@@ -602,6 +672,8 @@ Four verified afterlives of wording from the scriptural propers, each one a use 
 > **What the ordinary element-by-element reading misses:** Read separately, Augustine’s *semivivum* is a remark about original sin and Aquinas’s *occasionaliter* is a remark about Romans 7. Neither witness has the other’s text in view, and the missal’s page gives no cue that the two diagnoses are the same diagnosis.
 >
 > **Strongest limit:** Augustine wrote in about 400 and Aquinas in the 1260s; they are not in conversation, and the shared line is drawn here, not by them. Augustine’s own point at *semivivum* is the survival of the *imago*, not the failure of written law, and the parable never says the wounded man had read anything. The proposal is a conjunction of two anthropologies, not evidence about either author’s intention or about the missal’s.
+
+<!-- end of quotation -->
 
 > **Editorial proposal — The road supplies two of the three medicines; the rail supplies all three**
 >
@@ -615,6 +687,8 @@ Four verified afterlives of wording from the scriptural propers, each one a use 
 >
 > **Strongest limit:** The orders differ — Luke has oil then wine, the antiphon wine then oil — and the psalm’s triad is agricultural, with no wound anywhere in it. Reading the Samaritan’s oil and wine as sacraments is old and common in devotional commentary on this Sunday, but no checked witness joins that reading to *this* antiphon, and Cassiodorus’s sacramental reading of the psalm was written with no parable in view. The pairing of these two chants with this Gospel is attested early in the Gregorian tradition, which proves association and not purpose.
 
+<!-- end of quotation -->
+
 > **Editorial proposal — The day’s danger is a verb of thinking, and it survives only in the chant’s psalter**
 >
 > **Anchors:** Introit <span class="nodecor">(*Int.*)</span>, *qui cógitant mihi mala*, the chant reading against the Clementine’s *qui volunt mihi mala*; Epistle <span class="nodecor">(*Ep.*)</span>, *non quod sufficiéntes simus cogitáre áliquid a nobis*; Gospel <span class="nodecor">(*Gosp.*)</span>, the lawyer who asks *volens iustificáre seípsum*.
@@ -627,6 +701,8 @@ Four verified afterlives of wording from the scriptural propers, each one a use 
 >
 > **Strongest limit:** The Latin words do not mean the same thing. *Cogitáre* at 2 Cor. 3:5 renders a verb of reckoning or accounting, and Paul is not describing malice; the Introit’s *cógitant* is hostile intent; and the lawyer’s own verbs are *tentans* and *iustificáre*, not *cogitáre* at all. The chant’s reading is a fact of Latin psalter history, not a choice made for this Sunday, and Augustine was expounding persecutors, not lawyers.
 
+<!-- end of quotation -->
+
 > **Editorial proposal — An unanswered cry, then someone else’s prayer with the answer printed in it**
 >
 > **Anchors:** Alleluia <span class="nodecor">(*All.*)</span>, Ps. 87:2, *in die clamávi et nocte coram te*, the opening of the one psalm that never brightens; Offertory <span class="nodecor">(*Off.*)</span>, *Precátus est Móyses in conspéctu Dómini*, ending *et placátus factus est Dóminus*.
@@ -638,6 +714,8 @@ Four verified afterlives of wording from the scriptural propers, each one a use 
 > **What the ordinary element-by-element reading misses:** The Alleluia is usually treated as a bright verse detached from a dark psalm, and the Offertory as a narrative chant admired for its melody. Their sequence carries an argument that neither carries alone.
 >
 > **Strongest limit:** Only Ps. 87’s opening confession is appointed, so the psalm’s darkness is not in the Mass at all — the reader supplies it from the psalter. *Coram te* and *in conspéctu Dómini* are different phrases, and Theodoret’s reading makes the lament exilic Israel’s rather than any individual’s. Augustine’s remark is on Exodus and has no chant in view, Alleluia verses are commonly assigned on musical and cyclical grounds, and no checked witness joins these two chants.
+
+<!-- end of quotation -->
 
 > **Editorial proposal — The office named by an etymology is asked for as an effect of Communion**
 >

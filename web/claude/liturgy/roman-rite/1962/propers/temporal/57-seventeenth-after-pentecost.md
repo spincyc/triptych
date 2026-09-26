@@ -48,6 +48,8 @@ Ps 118:137 and 124 (Heb. 119); verse Ps 118:1. Missal p. 398, no. 1602.
 
 > *Iustus es, Dómine, et rectum iudícium tuum: fac cum servo tuo secúndum misericórdiam tuam. <span class="nodecor">Ps. ibid., 1</span> Beáti immaculáti in via: qui ámbulant in lege Dómini. ℣. Glória Patri.*
 
+<!-- end of quotation -->
+
 > <span class="smallcaps">Douay–Rheims (Challoner), Ps 118:137, 124, 1</span>
 >
 > <sup>137</sup>Thou art just, O Lord: and thy judgment is right. <sup>124</sup>Deal with thy servant according to thy mercy: and teach me thy justifications. <sup>1</sup>Blessed are the undefiled in the way, who walk in the law of the Lord.
@@ -59,6 +61,8 @@ The antiphon joins verse 137 to the first half of verse 124; the words “and te
 *Oratio*. Missal p. 399, no. 1603.
 
 > *Da, quǽsumus, Dómine, pópulo tuo diabólica vitáre contágia: et te solum Deum pura mente sectári. Per Dóminum nostrum.*
+
+<!-- end of quotation -->
 
 > <span class="smallcaps">Cummiskey, The Roman Missal (1861), XVII Sunday after Pentecost, Collect</span>
 >
@@ -72,6 +76,8 @@ The Collect is the only oration of the Mass. The 1862 Missal adds a second and a
 
 > *Fratres: Obsecro vos ego vinctus in Dómino, ut digne ambulétis vocatióne, qua vocáti estis, cum omni humilitáte et mansuetúdine, cum patiéntia, supportántes ínvicem in caritáte, sollíciti serváre unitátem spíritus in vínculo pacis. Unum corpus, et unus spíritus, sicut vocáti estis in una spe vocatiónis vestræ. Unus Dóminus, una fides, unum baptísma. Unus Deus, et Pater ómnium, qui est super omnes, et per ómnia, et in ómnibus nobis. Qui est benedíctus in sǽcula sæculórum. Amen.*
 
+<!-- end of quotation -->
+
 > <span class="smallcaps">Douay–Rheims (Challoner), Eph 4:1–6</span>
 >
 > <sup>1</sup>I therefore, a prisoner in the Lord, beseech you that you walk worthy of the vocation in which you are called: <sup>2</sup>With all humility and mildness, with patience, supporting one another in charity. <sup>3</sup>Careful to keep the unity of the Spirit in the bond of peace. <sup>4</sup>One body and one Spirit: as you are called in one hope of your calling. <sup>5</sup>One Lord, one faith, one baptism. <sup>6</sup>One God and Father of all, who is above all, and through all, and in us all.
@@ -83,6 +89,8 @@ The Missal opens the lesson with *Fratres: Obsecro vos* where the Vulgate reads 
 Ps 32:12 and 6 (Heb. 33). Missal p. 399, no. 1605.
 
 > *Beáta gens, cuius est Dóminus Deus eórum: pópulus, quem elégit Dóminus in hereditátem sibi. ℣. Verbo Dómini cæli firmáti sunt: et spíritu oris eius omnis virtus eórum.*
+
+<!-- end of quotation -->
 
 > <span class="smallcaps">Douay–Rheims (Challoner), Ps 32:12, 6</span>
 >
@@ -96,6 +104,8 @@ Ps 101:2 (Heb. 102:2; 102:1 where the title is not numbered). Missal p. 399, n
 
 > *Allelúia, allelúia. ℣. <span class="nodecor">Ps. 101, 2</span> Dómine, exáudi oratiónem meam, et clamor meus ad te pervéniat. Allelúia.*
 
+<!-- end of quotation -->
+
 > <span class="smallcaps">Douay–Rheims (Challoner), Ps 101:2</span>
 >
 > Hear, O Lord, my prayer: and let my cry come to thee.
@@ -107,6 +117,8 @@ The Missal’s *perveniat* stands where the Clementine reads *veniat*.
 *Sequentia sancti Evangelii secundum Matthaeum*. Mt 22:34–46. Missal p. 399, no. 1607.
 
 > *In illo témpore: Accessérunt ad Iesum pharisǽi: et interrogávit eum unus ex eis legis doctor, tentans eum: Magíster, quod est mandátum magnum in lege? Ait illi Iesus: Díliges Dóminum Deum tuum ex toto corde tuo, et in tota ánima tua, et in tota mente tua. Hoc est máximum et primum mandátum. Secúndum autem símile est huic: Díliges próximum tuum sicut teípsum. In his duóbus mandátis univérsa lex pendet, et prophétæ. Congregátis autem pharisǽis, interrogávit eos Iesus, dicens: Quid vobis vidétur de Christo? cuius fílius est? Dicunt ei: David. Ait illis: Quómodo ergo David in spíritu vocat eum Dóminum, dicens: Dixit Dóminus Dómino meo, sede a dextris meis, donec ponam inimícos tuos scabéllum pedum tuórum? Si ergo David vocat eum Dóminum, quómodo fílius eius est? Et nemo póterat ei respondére verbum: neque ausus fuit quisquam ex illa die eum ámplius interrogáre.*
+
+<!-- end of quotation -->
 
 > <span class="smallcaps">Douay–Rheims (Challoner), Mt 22:34–46</span>
 >
@@ -120,6 +132,8 @@ The Missal’s opening, *In illo tempore: Accesserunt ad Iesum pharisaei*, stand
 
 > *Orávi Deum meum ego Dániel, dicens: Exáudi, Dómine, preces servi tui: illúmina fáciem tuam super sanctuárium tuum: et propítius inténde pópulum istum, super quem invocátum est nomen tuum, Deus.*
 
+<!-- end of quotation -->
+
 > <span class="smallcaps">Douay–Rheims (Challoner), Dan 9:17–19, the source verses</span>
 >
 > <sup>17</sup>Now, therefore, O our God, hear the supplication of thy servant, and his prayers: and shew thy face upon thy sanctuary, which is desolate, for thy own sake. <sup>18</sup>Incline, O my God, thy ear, and hear: open thy eyes, and see our desolation, and the city upon which thy name is called: for it is not for our justifications that we present our prayers before thy face, but for the multitude of thy tender mercies. <sup>19</sup>O Lord, hear: O Lord, be appeased: hearken, and do: delay not, for thy own sake, O my God: because thy name is invocated upon thy city, and upon thy people.
@@ -131,6 +145,8 @@ The antiphon is a compilation and not a continuous quotation, and no Douay verse
 *Secreta*. Missal p. 399, no. 1609.
 
 > *Maiestátem tuam, Dómine, supplíciter deprecámur: ut hæc sancta, quæ gérimus, et a prætéritis nos delíctis éxuant, et futúris. Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte.*
+
+<!-- end of quotation -->
 
 > <span class="smallcaps">Cummiskey, The Roman Missal (1861), XVII Sunday after Pentecost, Secret</span>
 >
@@ -144,6 +160,8 @@ Ps 75:12–13 (Heb. 76:12–13; 76:11–12 where the title is not numbered). Mi
 
 > *Vovéte et réddite Dómino Deo vestro, omnes, qui in circúitu eius affértis múnera: terríbili, et ei qui aufert spíritum príncipum: terríbili apud omnes reges terræ.*
 
+<!-- end of quotation -->
+
 > <span class="smallcaps">Douay–Rheims (Challoner), Ps 75:12–13</span>
 >
 > <sup>12</sup>Vow ye, and pay to the Lord your God: all you that are round about him bring presents. To him that is terrible, <sup>13</sup>Even to him who taketh away the spirit of princes: to the terrible with the kings of the earth.
@@ -155,6 +173,8 @@ The Missal reads *apud omnes reges terrae*; the Clementine, which the Douay tran
 *Postcommunio*. Missal p. 400, no. 1611.
 
 > *Sanctificatiónibus tuis, omnípotens Deus, et vítia nostra curéntur, et remédia nobis ætérna provéniant. Per Dóminum nostrum.*
+
+<!-- end of quotation -->
 
 > <span class="smallcaps">Cummiskey, The Roman Missal (1861), XVII Sunday after Pentecost, Postcommunion</span>
 >

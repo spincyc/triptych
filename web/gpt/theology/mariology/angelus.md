@@ -96,11 +96,15 @@ One may pray the Latin or the historical English devotionally; a group may alter
 >
 > **Doctrinal center:** The Father sends; the eternal Son assumes human nature; the Holy Spirit overshadows Mary. The prayer remembers God’s initiative, not an angel’s independent power.
 
+<!-- end of quotation -->
+
 > **Textual movement:** The handmaid’s consent
 >
 > **Principal loci:** Luke 1:38; *Lumen gentium* 56
 >
 > **Doctrinal center:** Mary receives the word in faith and freely gives the obedience God has graced her to give. Her fiat is real creaturely cooperation, neither divine causality nor passive use.
+
+<!-- end of quotation -->
 
 > **Textual movement:** The Word made flesh
 >

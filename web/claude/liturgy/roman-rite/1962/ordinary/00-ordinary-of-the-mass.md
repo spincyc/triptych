@@ -75,6 +75,8 @@ What follows is Psalm 42, verses 1 to 5, said alternately with the ministers, wi
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
+<!-- end of quotation -->
+
 > **Rubric printed at n. 1016, and *Rubricae generales Missalis romani* nn. 424–425**
 >
 > In Requiem Masses, and in Masses of the season from Passion Sunday to Maundy Thursday inclusive, the psalm *Iudica me, Deus* is omitted together with *Gloria Patri* and the repetition of the antiphon. The priest says *In nomine Patris*, *Introibo* and *Adiutorium*, and then makes the confession. The omission is therefore not a general Lenten rule: it begins at Passion Sunday, and n. 425 restricts it to Masses *de Tempore*, not to a saint’s Mass falling in that fortnight.
@@ -90,6 +92,8 @@ The omission of the psalm in Passiontide and at Requiems is the rite’s own com
 > **1016–1017 ⋅ *Adiutorium* and the *Confiteor***
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
+
+<!-- end of quotation -->
 
 > **English witness (Cummiskey 1861, p. xvi–xvii).**  “I confess to Almighty God, to blessed Mary, ever a Virgin, to blessed Michael the Archangel, to blessed John Baptist, to the holy Apostles Peter and Paul, to all the saints, and to you, Father, that I have sinned exceedingly in thought, word and deed, *through my fault, through my fault, through my most grievous fault*. Therefore I beseech the Blessed Mary, ever a virgin, Blessed Michael the Archangel, Blessed John Baptist, the holy Apostles Peter and Paul, and all the saints, and you, O Father, to pray to the Lord our God for me.” The 1861 book prints the servers’ form in full and abbreviates the priest’s to *Confiteor Deo omnipotenti, &c.*, because in a lay hand missal the form the reader hears twice is the one worth printing whole.
 
@@ -110,6 +114,8 @@ The priest then says *Oremus* aloud, goes up to the altar, and says two prayers 
 > **1022–1023 ⋅ *Aufer a nobis* and *Oramus te***
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
+
+<!-- end of quotation -->
 
 > **English witness (Cummiskey 1861, p. xviii).**  “Take away from us our iniquities, we beseech thee, O Lord, that we may be worthy to enter with pure minds into the Holy of holies. Thro’. Amen.” And: “We beseech thee O Lord by the merits of thy saints, whose relics are here, and of all the saints: that thou wouldst vouchsafe to forgive me all my sins. Amen.”
 
@@ -153,7 +159,11 @@ Fortescue reads the Roman form as the surviving response of a longer intercessio
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
+<!-- end of quotation -->
+
 > **English witness (Cummiskey 1861, p. xix).**  “Glory be to God on high, and on earth, peace to men of good will. We praise thee; we bless thee; we adore thee; we glorify thee. We give thee thanks for thy great glory, O Lord God, heavenly King, God the Father Almighty. O Lord Jesus Christ, the only begotten Son. O Lord God, Lamb of God, Son of the Father, who takest away the sins of the world have mercy on us. Who takest away the sins of the world receive our prayers. Who sittest at the right hand of the Father, have mercy on us. For thou only art holy. Thou only art the Lord. Thou only, O Jesus Christ, together with the H. Ghost, art most high in the glory of God the Father. Amen.”
+
+<!-- end of quotation -->
 
 > **How the book prints it, and when it is said**
 >
@@ -191,6 +201,8 @@ The last of these is the most striking rubric in the 1960 code, and it is easy t
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
+<!-- end of quotation -->
+
 > **1028 ⋅ At a Mass without sacred ministers**
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
@@ -207,9 +219,13 @@ After the Gospel the priest kisses the book and says *Per evangelica dicta delea
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
+<!-- end of quotation -->
+
 > **Gesture and occasion**
 >
 > The rubric printed with the text directs the priest to extend, raise and join his hands at the opening, to bow his head to the cross at *Deum* and again at *Iesum Christum*, to genuflect at *Et incarnatus est* and remain so until *Et homo factus est* has been said, and to sign himself from forehead to breast at *Et vitam venturi saeculi*. The Creed is printed, like the *Gloria*, first as chant incipits and then as text. General rubrics nn. 475–476 fix the occasions: it is said on every Sunday even when the Office yields to a feast, on first-class feasts and at first-class votive Masses, on second-class feasts of the Lord and of Our Lady, through the octaves of Christmas, Easter and Pentecost, and on the feasts of Apostles and Evangelists together with the Chair of Saint Peter and Saint Barnabas. It is not said at the chrism Mass or on Maundy Thursday, at the Easter Vigil, on other second-class feasts, at second-class votive Masses, at festive and votive Masses of the third and fourth class, on account of a commemoration, or at Requiems.
+
+<!-- end of quotation -->
 
 > **English witness (Cummiskey 1861, p. xxi–xxii).**  “I believe in one God, the Father Almighty, Maker of heaven and earth, and of all things visible and invisible. And in one Lord Jesus Christ, the only begotten Son of God, and born of the Father before all ages. God of God; Light of Light; true God of true God; begotten not made; consubstantial to the Father, by whom all things were made … And in the Holy Ghost, the Lord and Giver of life, who proceedeth from the Father and the Son; who, together with the Father and the Son, is adored and glorified; who spoke by the prophets. And one holy Catholic and apostolic Church. I confess one baptism for the remission of sins. And I expect the resurrection of the dead, and the life of the world to come. Amen.” The 1861 book sets *ET HOMO FACTUS EST* and “AND WAS MADE MAN” in capitals and footnotes them: “At these words the assistants kneel down to adore God for the ineffable mystery of the incarnation.”
 
@@ -233,6 +249,8 @@ After the Creed the priest kisses the altar, says *Dominus vobiscum* and *Oremus
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
+<!-- end of quotation -->
+
 > **English witness (Cummiskey 1861, p. xxiii).**  “Accept, O holy Father, almighty and eternal God, this unspotted Host, which I thy unworthy servant offer unto thee, my living and true God, for my innumerable sins, offences, and negligences, and for all here present; as also for all faithful Christians, both living and dead; that it may avail both me and them unto life everlasting. Amen.” Note that the 1861 translator renders *immaculatam Hostiam* “unspotted Host”: the English of that period reached for a sacrificial rather than a Marian word, and it is the better gloss on the Latin.
 
 Two things in the Latin ask for comment. The first is *immaculatam hostiam*, said over unconsecrated bread. Fortescue calls it “an anticipation of the consecration, a dramatic misplacement, of which all liturgies have examples”, and that is the fair description: the prayer speaks of the offering by the name it will bear at the end of the Canon rather than the name it bears now.[^4] It is not a claim that the host is already immaculate in the sense the Canon will give the word; *hostia* in Latin is simply a victim or offering, and *immaculata* answers the Levitical requirement that a victim be without blemish. But the choice of vocabulary is deliberate and the rite does not apologise for it.
@@ -244,6 +262,8 @@ The second is the range of intentions. This is the widest single sentence in the
 > **1031–1032 ⋅ *Deus, qui humanae substantiae* and *Offerimus tibi***
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
+
+<!-- end of quotation -->
 
 > **Where the water goes, and where it does not**
 >
@@ -271,6 +291,8 @@ At a solemn celebration the priest blesses incense and incenses the oblations an
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
+<!-- end of quotation -->
+
 > **The doxology again**
 >
 > *Gloria Patri* is omitted at the *Lavabo* in Requiem Masses and, in Masses of the season, in Passiontide — the third place in the same Mass where those two conditions suppress the same doxology. A reader who has followed the psalm at the foot of the altar and the introit will recognise the pattern by now: the 1962 rite withdraws the same formula at the same two seasons wherever it occurs.
@@ -291,6 +313,8 @@ The little demonstrative *et istorum* — “and of these” — refers to the r
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
+<!-- end of quotation -->
+
 > **Voice**
 >
 > The *Ritus servandus* directs that *Orate, fratres* be said with the voice somewhat raised and the rest continued secretly, so that in practice only the two words of the address are audible. After the response the priest says *Amen* in a low voice. He then subjoins the secret prayers with hands extended and without *Oremus*; general rubrics nn. 480–481 require as many secrets as there were collects, said secretly, the conclusion of the last being said secretly as far as *Per omnia saecula saeculorum*, which is sung or said aloud and leads straight into the preface.
@@ -310,6 +334,8 @@ The conclusion of the last secret is said silently as far as *Per omnia saecula 
 > **The preface dialogue, as printed at n. 1086**
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
+
+<!-- end of quotation -->
 
 > **Hands and voice, from the rubric at n. 1042**
 >
@@ -333,9 +359,13 @@ The book prints all of this twice over, first in chant notation — solemn tone 
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
+<!-- end of quotation -->
+
 > **The *Sanctus*, printed at the end of every preface**
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
+
+<!-- end of quotation -->
 
 > **English witness (Cummiskey 1861, p. xxviii).**  “It is truly meet and just, right and available to salvation, that we should always, and in all places, give thanks to thee, O holy Lord, Father Almighty, eternal God …” and, for the hymn: “Holy, holy, holy, Lord God of Sabaoth. Heaven and earth are full of thy glory. Hosanna in the highest. Blessed is he that cometh in the name of the Lord, Hosanna in the highest.”
 
@@ -378,6 +408,8 @@ The historical claim usually attached to the Canon should be stated with the sam
 > **1088 ⋅ *Te igitur***
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
+
+<!-- end of quotation -->
 
 > **English witness (Cummiskey 1861, p. xxxiii).**  “We therefore, humbly pray and beseech thee most merciful Father, thro’ Jesus Christ thy Son, our Lord, that thou wouldst vouchsafe to accept and bless these gifts, these presents, these holy unspotted sacrifices, which in the first place we offer thee for thy holy Catholic Church, to which vouchsafe to grant peace; as also to preserve, unite, and govern it throughout the world: together with thy servant N. our pope, N. our Bishop, as also all orthodox believers and professors of the catholic and apostolic Faith.”
 
@@ -449,9 +481,13 @@ The petition asks that the offering become Christ’s Body and Blood, but it doe
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
+<!-- end of quotation -->
+
 > **1103–1105 ⋅ *Simili modo***
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
+
+<!-- end of quotation -->
 
 > **English witness (Cummiskey 1861, p. xxxvi).**  The 1861 book sets the two forms in small capitals in both columns. For the first it prints “TAKE AND EAT YE ALL OF THIS. FOR THIS IS MY BODY.” The words themselves are the Church’s, not the translator’s; this is quoted here as a historical witness to how an English lay book of that date presented them, not as a version for use.
 
@@ -484,6 +520,8 @@ Then *de tuis donis ac datis*: from your own gifts and grants. The Church offers
 > *De sacramentis* IV, 6, 27 (*PL* 16, col. 464): *Ergo memores gloriosissimae ejus passionis, et ab inferis resurrectionis, et in coelum ascensionis, offerimus tibi hanc immaculatam hostiam, rationabilem hostiam, incruentam hostiam, hunc panem sanctum, et calicem vitae aeternae: et petimus et precamur, ut hanc oblationem suscipias in sublimi altari tuo per manus angelorum tuorum, sicut suscipere dignatus es munera pueri tui justi Abel, et sacrificium patriarchae nostri Abrahae, et quod tibi obtulit summus sacerdos Melchisedech.*
 >
 > Read at the page image. The correspondence is close enough to be structural and loose enough to forbid identification: *memores* with the same three genitives, *offerimus* with three adjectival phrases, *panem sanctum et calicem*, then the petition that the offering be taken up to the sublime altar by angelic hands, then Abel, Abraham and Melchisedech in that order. But the Milanese text has *incruentam* where Rome has *puram* and *sanctam*, has *per manus angelorum tuorum* plural where Rome has *per manus sancti Angeli tui* singular, and runs *Supra quae* and *Supplices* together as one petition. It establishes the antiquity of a pattern; it does not establish the antiquity of the Roman wording.
+
+<!-- end of quotation -->
 
 > **1107–1108 ⋅ *Supra quae* and *Supplices***
 >
@@ -539,6 +577,8 @@ With *Per omnia saecula saeculorum* at the end of the doxology the priest’s vo
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
+<!-- end of quotation -->
+
 > **English witness (Cummiskey 1861, p. xxxix).**  “Being instructed by thy saving precepts, and following thy divine directions, we presume to say: Our Father, who art in heaven, hallowed be thy name: thy kingdom come: thy will be done on earth, as it is in heaven: give us this day our daily bread; and forgive us our trespasses, as we forgive them that trespass against us. And lead us not into temptation: **R.** But deliver us from evil. **P.** Amen.”
 
 Three facts about how the 1962 book prints this text govern everything that can be said about it.
@@ -561,6 +601,8 @@ Fortescue records the tradition, which he takes from Gregory the Great’s own l
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
+<!-- end of quotation -->
+
 > **English witness (Cummiskey 1861, p. xxxix–xl).**  “Deliver us, we beseech thee, O Lord, from all evils, past, present, and to come; and by the intercession of the blessed and ever glorious Virgin Mary Mother of God, and of the holy apostles Peter and Paul, and of Andrew, and of all the saints, mercifully grant peace in our days: that thro’ the assistance of thy mercy, we may be always free from sin, and secure from all disturbance. Through the same Jesus Christ, thy Son our Lord, who with thee and the Holy Ghost liveth and reigneth, God. **P.** World without end. **R.** Amen.”
 
 *Libera nos* is an embolism: an insertion that takes the last petition of the Lord’s Prayer and unfolds it. *Sed libera nos a malo* has just been sung by the ministers; the priest begins *Libera nos, quaesumus Domine, ab omnibus malis* and specifies the evils as past, present and to come. The prayer is therefore not a new subject but a gloss, and this is why it is said silently: it is the priest continuing, under his breath, a sentence the church has just heard aloud.
@@ -573,6 +615,8 @@ The fraction happens inside this prayer, at its conclusion. The priest breaks th
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
+<!-- end of quotation -->
+
 > **English witness (Cummiskey 1861, p. xl).**  “May the peace of the Lord be always with you. **R.** And with thy spirit.” And, at the commingling: “May this mixture, and consecration of the body and blood of our Lord Jesus Christ, be to us that receive it effectual to eternal life. Amen.”
 
 The greeting is not *Dominus vobiscum* but *Pax Domini sit semper vobiscum*, and it is used once in the Mass, here. It is made with the particle of the Host held over the chalice, and three crosses are signed with it. The particle is then dropped into the chalice while the priest says *Haec commixtio*.
@@ -584,6 +628,8 @@ The commingling is one of the harder things in the Roman rite to state accuratel
 > **1120 ⋅ *Agnus Dei***
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
+
+<!-- end of quotation -->
 
 > **Posture, and the Requiem form**
 >
@@ -603,6 +649,8 @@ The address has already been used once in the same Mass, in the *Gloria* at *Qui
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
+<!-- end of quotation -->
+
 > **The Requiem exception**
 >
 > The missal prints, immediately after: *In Missis defunctorum non datur pax, neque dicitur praecedens oratio.* At a Requiem the peace is not given and this prayer is not said. The other two preparatory prayers are.
@@ -612,6 +660,8 @@ The first prayer is about the Church and not about the priest, which is why it i
 > **1123–1124 ⋅ *Domine Iesu Christe, Fili Dei vivi* and *Perceptio***
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
+
+<!-- end of quotation -->
 
 > **English witness (Cummiskey 1861, p. xli).**  “Lord Jesus Christ, Son of the living God, who, according to the will of thy Father, hast by thy death, thro’ the co-operation of the Holy Ghost, given life to the world, deliver me by this thy most sacred body and blood from all my iniquities, and from all evils; and make me always adhere to thy commandments, and never suffer me to be separated from thee …” And: “Let not the participation of thy body, O Lord Jesus Christ, which I, though unworthy, presume to receive, turn to my judgment and condemnation, but thro’ thy mercy, may it be a safeguard and remedy, both to soul and body …”
 
@@ -624,6 +674,8 @@ The trinitarian clauses at the end of the two prayers are worth a glance for wha
 > **1125–1127 ⋅ *Panem caelestem*, *Domine non sum dignus*, and the Body**
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
+
+<!-- end of quotation -->
 
 > **English witness (Cummiskey 1861, p. xlii).**  “Lord, I am not worthy that thou shouldst enter under my roof; say but the word, and my soul shall be healed.” And: “May the body of our Lord Jesus Christ preserve my soul to life everlasting. Amen.”
 
@@ -657,6 +709,8 @@ Two things follow and both should be said plainly. First, the Communion of the f
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
+<!-- end of quotation -->
+
 > **English witness (Cummiskey 1861, p. xliii).**  “May thy body, O Lord, which I have received, and thy blood which I have drank, cleave to my bowels; and grant that no stain of sin may remain in me, who have been fed with this pure and holy sacrament. Who livest and reignest, &c.”
 
 The first prayer is in the plural and the second in the singular, and the difference tracks the two ablutions: the first is said while the priest gathers any fragments and wipes the paten over the chalice, before the wine is poured; the second while he purifies his fingers. *Quod ore sumpsimus … pura mente capiamus* sets *ore* against *mente* and *sumere* against *capere*, and asks that what was taken by mouth be grasped by mind. *De munere temporali fiat nobis remedium sempiternum* is the same movement again: a gift given in time, a remedy that does not end.
@@ -675,7 +729,11 @@ The last eight numbers of the *Ordo Missae* are the shortest stretch of the book
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
+<!-- end of quotation -->
+
 > **English witness (Cummiskey 1861, p. xliv).**  “Ite missa est (vel) Benedicamus Domino. Go, you are dismissed, (or) let us bless the Lord. **R.** Deo gratias. **R.** Thanks be to God.” And, in Masses for the dead: “**P.** Requiescant in pace. **P.** May they rest in peace. **R.** Amen.”
+
+<!-- end of quotation -->
 
 > ***Rubricae generales Missalis romani* nn. 507–508**
 >
@@ -693,6 +751,8 @@ The missal then prints eight chant settings of *Ite, missa est* under n. 1134, 
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
+<!-- end of quotation -->
+
 > **English witness (Cummiskey 1861, p. xliv).**  “Let the performance of my homage be pleasing to thee, O holy Trinity; and grant that the sacrifice which I, tho’ unworthy, have offered up in the sight of thy Majesty, may be acceptable to thee, and thro’ thy mercy be a propitiation for me, and all those for whom it has been offered. Thro’ …” And the blessing: “May Almighty God, the Father, Son, and Holy Ghost, bless you. Amen.”
 
 *Placeat* is the priest’s last private prayer and it says something the public prayers of the Mass never say in the first person singular: that the sacrifice was offered by an unworthy man, and that its acceptability and its propitiatory effect are still being asked for after it has been offered and consumed. *Obsequium servitutis meae* — the homage of my service — is a formula of subjection, and the 1861 “the performance of my homage” catches its flatness. The prayer is said bowed, with joined hands on the altar, in the same posture as *Supplices te rogamus*.
@@ -705,7 +765,11 @@ The blessing is one blessing, and the missal makes a point of saying so: *semel 
 >
 > **Focused source locator.* The appointed unit is identified by this incipit and marginal number; only phrases required by the analysis below are quoted.*
 
+<!-- end of quotation -->
+
 > **English witness (Cummiskey 1861, p. xlv–xlvi).**  “IN the beginning was the Word, and the Word was with God, and the Word was God … And THE WORD WAS MADE FLESH, and dwelt among us; and we saw his glory, as it were the glory of the only begotten of the Father, full of grace and truth. **R.** Thanks be to God.” The 1861 book sets *ET VERBUM CARO FACTUM EST* and “AND THE WORD WAS MADE FLESH” in capitals, as it had set *ET HOMO FACTUS EST* in the Creed, and closes the Ordinary with a printer’s rule immediately after *Deo gratias*.
+
+<!-- end of quotation -->
 
 > **When it is not John, and when there is none: nn. 509–510**
 >

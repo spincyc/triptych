@@ -112,6 +112,8 @@ The Latin is collated against the Vatican 1962 typical Missal, printed pp. 390�
 >
 > *Psalmus.* Exsúrgat Deus, et dissipéntur inimíci eius: et fúgiant, qui odérunt eum, a fácie eius. *℣.* Glória Patri.
 
+<!-- end of quotation -->
+
 > **Douay–Rheims/Challoner, Ps. 67:6–7, 36; 2**
 >
 > Who is the father of orphans, and the judge of widows. God in his holy place: God who maketh men of one manner to dwell in a house: Who bringeth out them that were bound in strength; in like manner them that provoke, that dwell in sepulchres. God is wonderful in his saints: the God of Israel is he who will give power and strength to his people. Blessed be God. Let God arise, and let his enemies be scattered: and let them that hate him flee from before his face.
@@ -124,6 +126,8 @@ The Latin is collated against the Vatican 1962 typical Missal, printed pp. 390�
 >
 > *Omnípotens sempitérne Deus, qui, abundántia pietátis tuæ, et mérita súpplicum excédis et vota: effúnde super nos misericórdiam tuam; ut dimíttas quæ consciéntia métuit, et adícias quod orátio non præsúmit. Per Dóminum nostrum.*
 
+<!-- end of quotation -->
+
 > **Cummiskey hand missal (1861), Collect, p. 418**
 >
 > O Almighty and eternal God, who, in the abundance of thy goodness, exceedest both the merits and requests of thy suppliants; pour forth thy mercy upon us: and both pardon what our consciences dreadeth, and grant such blessings as we dare not presume to ask. Thro’.
@@ -133,6 +137,8 @@ The Latin is collated against the Vatican 1962 typical Missal, printed pp. 390�
 > ***Léctio Epístolæ beáti Pauli Apóstoli ad Corínthios.* *1 Cor. 15, 1-10***
 >
 > *Fratres: Notum vobis fácio Evangélium, quod prædicávi vobis, quod et accepístis, in quo et statis, per quod et salvámini: qua ratióne prædicáverim vobis, si tenétis, nisi frustra credidístis. Trádidi enim vobis in primis, quod et accépi: quóniam Christus mórtuus est pro peccátis nostris secúndum Scriptúras: et quia sepúltus est, et quia resurréxit tértia die secúndum Scriptúras: et quia visus est Cephæ, et post hoc úndecim. Deínde visus est plus quam quingéntis frátribus simul, ex quibus multi manent usque adhuc, quidam autem dormiérunt. Deínde visus est Iacóbo, deínde Apóstolis ómnibus: novíssime autem ómnium tamquam abortívo, visus est et mihi. Ego enim sum mínimus Apostolórum, qui non sum dignus vocári Apóstolus, quóniam persecútus sum Ecclésiam Dei. Grátia autem Dei sum id quod sum, et grátia eius in me vácua non fuit.*
+
+<!-- end of quotation -->
 
 > **Douay–Rheims/Challoner, 1 Cor. 15:1–10a**
 >
@@ -146,6 +152,8 @@ The Latin is collated against the Vatican 1962 typical Missal, printed pp. 390�
 >
 > *In Deo sperávit cor meum, et adiútus sum: et reflóruit caro mea, et ex voluntáte mea confitébor illi. *℣.* Ad te, Dómine, clamávi: Deus meus, ne síleas, ne discédas a me.*
 
+<!-- end of quotation -->
+
 > **Douay–Rheims/Challoner, Ps. 27:7, 1**
 >
 > The Lord is my helper and my protector: in him hath my heart confided, and I have been helped. And my flesh hath flourished again, and with my will I will give praise to him. A psalm for David himself. Unto thee will I cry, O Lord: O my God, be not thou silent to me: lest if thou be silent to me, I become like them that go down into the pit.
@@ -157,6 +165,8 @@ The Latin is collated against the Vatican 1962 typical Missal, printed pp. 390�
 > ***Psalmus 80:2–3***
 >
 > *Allelúia, allelúia. *℣.* Exsultáte Deo adiutóri nostro, iubiláte Deo Iacob: súmite psalmum iucúndum cum cíthara. Allelúia.*
+
+<!-- end of quotation -->
 
 > **Douay–Rheims/Challoner, Ps. 80:2–3**
 >
@@ -172,6 +182,8 @@ The Latin is collated against the Vatican 1962 typical Missal, printed pp. 390�
 >
 > *Credo.*
 
+<!-- end of quotation -->
+
 > **Douay–Rheims/Challoner, Mark 7:31–37**
 >
 > And again going out of the coasts of Tyre, he came by Sidon to the sea of Galilee, through the midst of the coasts of Decapolis. And they bring to him one deaf and dumb: and they besought him that he would lay his hand upon him. And taking him from the multitude apart, he put his fingers into his ears: and spitting, he touched his tongue. And looking up to heaven, he groaned and said to him: Ephpheta, which is, Be thou opened. And immediately his ears were opened and the string of his tongue was loosed and he spoke right. And he charged them that they should tell no man. But the more he charged them, so much the more a great deal did they publish it. And so much the more did they wonder, saying: He hath done all things well. He hath made both the deaf to hear and the dumb to speak.
@@ -183,6 +195,8 @@ The Latin is collated against the Vatican 1962 typical Missal, printed pp. 390�
 > ***Psalmus 29:2–3***
 >
 > *Exaltábo te, Dómine, quóniam suscepísti me, nec delectásti inimícos meos super me: Dómine, clamávi ad te, et sanásti me.*
+
+<!-- end of quotation -->
 
 > **Douay–Rheims/Challoner, Ps. 29:2–3**
 >
@@ -196,6 +210,8 @@ The Latin is collated against the Vatican 1962 typical Missal, printed pp. 390�
 >
 > *Réspice, Dómine, quǽsumus, nostram propítius servitútem: ut, quod offérimus, sit tibi munus accéptum, et sit nostræ fragilitátis subsídium. Per Dóminum.*
 
+<!-- end of quotation -->
+
 > **Cummiskey hand missal (1861), Secret, p. 420**
 >
 > Look down, O Lord, we beseech thee, on our homage: that the offerings we make may be acceptable to thee, and a help to our weakness. Thro’.
@@ -205,6 +221,8 @@ The Latin is collated against the Vatican 1962 typical Missal, printed pp. 390�
 > ***Proverbia 3:9–10***
 >
 > *Honóra Dóminum de tua substántia, et de primítiis frugum tuárum: et implebúntur hórrea tua saturitáte, et vino torculária redundábunt.*
+
+<!-- end of quotation -->
 
 > **Douay–Rheims/Challoner, Prov. 3:9–10**
 >
@@ -217,6 +235,8 @@ The Latin is collated against the Vatican 1962 typical Missal, printed pp. 390�
 > ***Postcommunio***
 >
 > *Sentiámus, quǽsumus, Dómine, tui perceptióne sacraménti, subsídium mentis et córporis: ut, in utróque salváti, cæléstis remédii plenitúdine gloriémur. Per Dóminum.*
+
+<!-- end of quotation -->
 
 > **Cummiskey hand missal (1861), Postcommunion, p. 420**
 >
@@ -384,6 +404,8 @@ These four afterlives move appointed wording into aesthetic, commercial, militar
 >
 > **Source and rights.** The 1868 first edition is public domain. Morris does not cite the Mass; his verbal source is the biblical English idiom shared by the Douay and King James traditions.
 
+<!-- end of quotation -->
+
 > **Gospel, Mark 7:34 — *Effeta* becomes a body deodorant**
 >
 > **Appointed phrase.** *Ephphetha, quod est adaperire* enters the Roman baptismal rite as *Ephpheta*; the rite then speaks of an “odor of sweetness.”
@@ -394,6 +416,8 @@ These four afterlives move appointed wording into aesthetic, commercial, militar
 >
 > **Source and rights.** The newspapers are public domain. The immediate source is the baptismal rite, which itself receives Mark 7; the advertisement shows no dependence on the Sunday Mass.
 
+<!-- end of quotation -->
+
 > **Introit verse, Ps. 67:2 — Cromwell at Dunbar**
 >
 > **Appointed phrase.** *Exsurgat Deus, et dissipentur inimici eius*; the Douay reads, “Let God arise, and let his enemies be scattered.”
@@ -403,6 +427,8 @@ These four afterlives move appointed wording into aesthetic, commercial, militar
 > **The turn.** A liturgical entrance verse becomes a battlefield victory-cry and later a political text for a revolutionary assembly. The speaker moves from petition to reading military success as the verse’s present fulfillment.
 >
 > **Source.** The wording reaches us through Hodgson’s recollection, published a century and a half after the battle; it is absent from Cromwell’s own letter written from Dunbar. The English is from the psalter/King James stream, not the Douay.
+
+<!-- end of quotation -->
 
 > **Gospel, Mark 7:34 — a healing command becomes an institutional surname**
 >

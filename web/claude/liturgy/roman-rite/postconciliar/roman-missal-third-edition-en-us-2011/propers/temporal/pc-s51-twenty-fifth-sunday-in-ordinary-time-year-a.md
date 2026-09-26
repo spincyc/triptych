@@ -76,6 +76,8 @@ Psalm 145 (144):2–3, 8–9, 17–18; the response is taken from v. 18a. Lecti
 >
 > The Lord is nigh unto all them that call upon him\[*: to all that call upon him in truth*\].
 
+<!-- end of quotation -->
+
 > <span class="smallcaps">Douay–Rheims (Challoner), Ps 144:2–3, 8–9, 17–18</span>
 >
 > <sup>2</sup>Every day will I bless thee: and I will praise thy name for ever; yea, for ever and ever. <sup>3</sup>Great is the Lord, and greatly to be praised: and of his greatness there is no end.

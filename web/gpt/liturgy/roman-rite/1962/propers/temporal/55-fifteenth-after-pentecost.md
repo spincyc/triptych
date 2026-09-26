@@ -167,7 +167,7 @@ John 6 joins manna, flesh given for life, refusal and Peter’s confession. The
 
 **Location:** Paul to the Galatian churches
 
-**Date:** **Composition**: Preferred A.D. 58; alternatives A.D. 49–50, c. A.D. 53–54, A.D. 56, A.D. 57–58.
+**Date:** **Composition**: Preferred: A.D. 58; alternatives: A.D. 49–50, c. A.D. 53–54, A.D. 56, A.D. 57–58.
 
 Paul joins grace, faith, freedom and the Spirit to charity (Gal. 1–6). A Lapide (1614), Galatians proemium/argumentum, holds the preferred position. The Catholic Encyclopedia VI (1909), “Epistle to the Galatians,” supplies the first, second and fourth alternatives; XI (1911), “St. Paul,” the third. Northern/southern Galatia, writing city, modern recipient geography, missionary stage and an independent modern critical date remain unadjudicated.
 

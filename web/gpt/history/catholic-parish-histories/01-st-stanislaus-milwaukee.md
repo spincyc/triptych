@@ -188,6 +188,8 @@ That distinction prepares the post-2007 history. Saint Stanislaus did not need t
 >
 > The checked sources support grave demographic and physical decline, an uncertain future, and recollection of a contemplated sale. They do not establish that the parish had been canonically suppressed or the church closed before 2007. Pastoral service continued; the later parish–oratory arrangement must be described as a new use and administration of a continuing inheritance, not a reopening after extinction.
 
+<!-- end of quotation -->
+
 > **Witness:** Archdiocese of Milwaukee histories for 1945–2018; City of Milwaukee Walker’s Point plan; Portal Polonii parish synthesis; ICKSP parish history and 2007 apostolate announcement; Catholic Herald, “Honoring Past with the New”; OnMilwaukee 2014 site history; West Mitchell Street National Register nomination.
 >
 > **What it establishes:** Suburban movement, freeway disruption, demographic succession, Catholic-school contraction, parish decline, and the maintenance burden together endangered the complex while worship continued.

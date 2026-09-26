@@ -263,6 +263,8 @@ Beneath the slab stands a massive stone sarcophagus (2.55 m long by 1.25 by 0.9
 
 > “A tiny hole was drilled in the sarcophagus, which in so many centuries had never been opened, in order to insert a special probe which revealed traces of a precious purple-coloured linen fabric, with a design in gold leaf, and a blue fabric with linen threads. Grains of red incense and protein and chalk substances were also found. In addition, minute fragments of bone were sent for carbon-14 testing by experts unaware of their provenance. The fragments proved to belong to someone who had lived between the first and second centuries. This would seem to confirm the unanimous and undisputed tradition which claims that these are the mortal remains of the Apostle Paul” (Homily, Basilica of St. Paul Outside-the-Walls, 28 June 2009).
 
+<!-- end of quotation -->
+
 > The evidential ceiling must be stated with the announcement. What the 2009 report establishes, at the reported level, is that the venerated sarcophagus contains ancient burial furnishings and human remains radiocarbon-consistent with a first–second-century death —i.e., that the tomb is not a medieval confection. Radiocarbon cannot identify a person; no full laboratory publication, calibration data, or osteological study was located by this research; and the pope’s own verb is “would seem to confirm.” The identification of the remains as Paul’s rests, exactly as before 2009, on the continuity of the site tradition from Gaius backward toward the burial—early, unrivaled, and unprovable. This study affirms the tradition at that ceiling and no higher.
 
 ## Legends and Later Images

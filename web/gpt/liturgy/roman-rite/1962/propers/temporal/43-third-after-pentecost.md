@@ -124,6 +124,8 @@ Luke first names the conflict: publicans and sinners draw near to hear Jesus, wh
 >
 > Cyril begins with the sinners’ willingness to hear and treats Christ’s nearness as medicinal: the Savior does not participate in their disorder but makes table-fellowship an occasion of rescue. Gregory addresses the opposite disposition, in which a reputation for exactness hardens into contempt. Read together, the witnesses distinguish welcome ordered to healing from both moral indifference and self-protective disdain.
 
+<!-- end of quotation -->
+
 > **Mercy has a definite shape**
 >
 > The Gospel does not oppose justice to indifference. The Shepherd finds; the sinner repents; heaven rejoices. Mercy’s initiative makes conversion possible, and conversion discloses rather than purchases mercy. The Pharisaic error is not zeal for holiness as such, but refusal of the holy joy proper to a sinner’s restoration.
@@ -196,6 +198,8 @@ Anthony of Padua later preached the same Gospel and Epistle as one three-part co
 >
 > *On Patience* 12 sets the patient Shepherd against the impatience that would despise one lost sheep. This corrects a passive reading of the Alleluia’s *patiens*: divine patience seeks, bears, and restores, while Christian patience remains sober and steadfast under the same God.
 
+<!-- end of quotation -->
+
 > **The predator is not the Sunday’s deepest actor**
 >
 > The devil seeks in order to consume; Christ seeks in order to carry home. Vigilance is urgent because danger is real, but hope is rational because the God of all grace has promised the last verbs: restore, strengthen, and establish.
@@ -234,9 +238,13 @@ The Collect is not a generic request for protection. Its clauses distinguish the
 >
 > *Against Heresies* IV.18.1–5 teaches that the Church offers from God’s own creation, that acceptance glorifies the offerer rather than supplying a divine need, and that Eucharistic bread receives a heavenly reality. Bodies nourished by it are therefore not destined for annihilation but for resurrection. Irenaeus does not comment on this Secret; his doctrine frames its movement from ecclesial gifts to sanctification and salvation.
 
+<!-- end of quotation -->
+
 > **St. Cyril of Jerusalem — sanctified gifts and holy reception**
 >
 > *Mystagogical Catechesis* 5 (Catechetical Lecture 23), especially 7 and 19–21, describes the invocation of the Holy Spirit upon the gifts, the proclamation of holy things for the holy, and the communicant’s reverent reception. Cyril’s mystagogy belongs to a different local rite and does not address the Roman prayer. It illuminates why sanctification and reception belong together without making reception automatic or morally indifferent.
+
+<!-- end of quotation -->
 
 > **Four verbal threads through the formulary**
 >

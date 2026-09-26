@@ -48,6 +48,8 @@ Antiphon cited Ecclus 36:18; verse Ps 121:1 (Heb. 122). Missal p. 410, no. 16
 
 > *Da pacem, Dómine, sustinéntibus te, ut prophétæ tui fidéles inveniántur: exáudi preces servi tui, et plebis tuæ Israël. <span class="nodecor">Ps. 121, 1</span> Lætátus sum in his, quæ dicta sunt mihi: in domum Dómini íbimus. ℣. Glória Patri.*
 
+<!-- end of quotation -->
+
 > <span class="smallcaps">Douay–Rheims (Challoner), Ps 121:1, the verse</span>
 >
 > I rejoiced at the things that were said to me: We shall go into the house of the Lord.
@@ -59,6 +61,8 @@ The antiphon is not the Vulgate’s verse, and no Douay verse carries it. It ask
 *Oratio*. Missal p. 410, no. 1670.
 
 > *Dírigat corda nostra, quǽsumus, Dómine, tuæ miseratiónis operátio: quia tibi sine te placére non póssumus. Per Dóminum.*
+
+<!-- end of quotation -->
 
 > <span class="smallcaps">Cummiskey, The Roman Missal (1861), XVIII Sunday after Pentecost, Collect</span>
 >
@@ -72,6 +76,8 @@ The Collect is the only oration of the Mass. The 1862 Missal adds a second and a
 
 > *Fratres: Grátias ago Deo meo semper pro vobis in grátia Dei, quæ data est vobis in Christo Iesu: quod in ómnibus dívites facti estis in illo, in omni verbo, et in omni sciéntia: sicut testimónium Christi confirmátum est in vobis: ita ut nihil vobis desit in ulla grátia, exspectántibus revelatiónem Dómini nostri Iesu Christi, qui et confirmábit vos usque in finem sine crímine, in die advéntus Dómini nostri Iesu Christi.*
 
+<!-- end of quotation -->
+
 > <span class="smallcaps">Douay–Rheims (Challoner), 1 Cor 1:4–8</span>
 >
 > <sup>4</sup>I give thanks to my God always for you, for the grace of God that is given you in Christ Jesus: <sup>5</sup>That in all things you are made rich in him, in all utterance and in all knowledge; <sup>6</sup>As the testimony of Christ was confirmed in you, <sup>7</sup>So that nothing is wanting to you in any grace, waiting for the manifestation of our Lord Jesus Christ. <sup>8</sup>Who also will confirm you unto the end without crime, in the day of the coming of our Lord Jesus Christ.
@@ -83,6 +89,8 @@ The address *Fratres* is the liturgy’s and has no Douay verse; thereafter the 
 Ps 121:1 and 7 (Heb. 122). Missal p. 410, no. 1672.
 
 > *Lætátus sum in his, quæ dicta sunt mihi: in domum Dómini íbimus. ℣. Fiat pax in virtúte tua: et abundántia in túrribus tuis.*
+
+<!-- end of quotation -->
 
 > <span class="smallcaps">Douay–Rheims (Challoner), Ps 121:1, 7</span>
 >
@@ -96,6 +104,8 @@ Ps 101:16 (Heb. 102:16; 102:15 where the title is not numbered). Missal p. 410
 
 > *Allelúia, allelúia. ℣. <span class="nodecor">Ps. 101, 16</span> Timébunt gentes nomen tuum, Dómine, et omnes reges terræ glóriam tuam. Allelúia.*
 
+<!-- end of quotation -->
+
 > <span class="smallcaps">Douay–Rheims (Challoner), Ps 101:16</span>
 >
 > And the Gentiles shall fear thy name, O Lord, and all the kings of the earth thy glory.
@@ -107,6 +117,8 @@ The Missal drops the Vulgate’s opening *Et*, which the Douay’s “And” tra
 *Sequentia sancti Evangelii secundum Matthaeum*. Mt 9:1–8. Missal pp. 410–411, no. 1674.
 
 > *In illo témpore: Ascéndens Iesus in navículam, transfretávit, et venit in civitátem suam. Et ecce offerébant ei paralýticum iacéntem in lecto. Et videns Iesus fidem illórum, dixit paralýtico: Confíde, fili, remittúntur tibi peccáta tua. Et ecce quidam de scribis dixérunt intra se: Hic blasphémat. Et cum vidísset Iesus cogitatiónes eórum, dixit: Ut quid cogitátis mala in córdibus vestris? Quid est facílius dícere: Dimittúntur tibi peccáta tua; an dícere: Surge, et ámbula? Ut autem sciátis, quia Fílius hóminis habet potestátem in terra dimitténdi peccáta, tunc ait paralýtico: Surge, tolle lectum tuum, et vade in domum tuam. Et surréxit, et ábiit in domum suam. Vidéntes autem turbæ timuérunt, et glorificavérunt Deum, qui dedit potestátem talem homínibus.*
+
+<!-- end of quotation -->
 
 > <span class="smallcaps">Douay–Rheims (Challoner), Mt 9:1–8</span>
 >
@@ -128,6 +140,8 @@ The antiphon is a compilation and not a quotation of the verses it cites, and no
 
 > *Deus, qui nos, per huius sacrifícii veneránda commércia, uníus summæ divinitátis partícipes éfficis: præsta, quǽsumus; ut, sicut tuam cognóscimus veritátem, sic eam dignis móribus assequámur. Per Dóminum.*
 
+<!-- end of quotation -->
+
 > <span class="smallcaps">Cummiskey, The Roman Missal (1861), XVIII Sunday after Pentecost, Secret</span>
 >
 > O God, who by the participation of this august sacrifice makest us partakers of the one supreme divine nature: grant, we beseech thee, that as we know thy truth, so we may shew it by a worthy conduct of life. Thro’.
@@ -140,6 +154,8 @@ Ps 95:8–9 (Heb. 96). Missal p. 411, no. 1677.
 
 > *Tóllite hóstias, et introíte in átria eius: adoráte Dóminum in aula sancta eius.*
 
+<!-- end of quotation -->
+
 > <span class="smallcaps">Douay–Rheims (Challoner), Ps 95:8b–9a</span>
 >
 > Bring up sacrifices, and come into his courts: Adore ye the Lord in his holy court.
@@ -151,6 +167,8 @@ The antiphon begins inside verse 8, leaving aside “Bring to the Lord glory unt
 *Postcommunio*. Missal p. 411, no. 1678.
 
 > *Grátias tibi reférimus, Dómine, sacro múnere vegetáti: tuam misericórdiam deprecántes; ut dignos nos eius participatióne perfícias. Per Dóminum.*
+
+<!-- end of quotation -->
 
 > <span class="smallcaps">Cummiskey, The Roman Missal (1861), XVIII Sunday after Pentecost, Postcommunion</span>
 >

@@ -487,6 +487,8 @@ Two readings are defensible on the text, and this reference gives both rather th
 > **Textual support.** The clause *Ultimo tamen loco semper ponitur ea quae in ordine est XXIV post Pentecosten* is unrestricted in its own terms: *semper* is not qualified by the enumerated cases, and the subject is identified by its place in the printed order, not by the ordinal of the Sunday. The formulary’s own title, *et ultima*, describes it as the Mass of the last Sunday. The clause *omissis, si opus sit, ceteris, quae aliquando locum habere non possunt* — the rest being omitted, if need be, which sometimes cannot have a place — reads naturally as covering whatever printed Mass finds no place, and in a twenty-three-Sunday year the Mass that finds no place is the Twenty-third.<br>
 > **Consequence.** The eschatological Gospel of the last Sunday, Matthew 24:15–35, is heard every year without exception.
 
+<!-- end of quotation -->
+
 > **Reading B: the count simply stops, and the Twenty-fourth Mass is omitted**
 >
 > **Claim.** In a year of twenty-three Sundays after Pentecost, the Sundays are celebrated in their printed order to the Twenty-third, which is the last; the Twenty-fourth formulary is not used that year.<br>

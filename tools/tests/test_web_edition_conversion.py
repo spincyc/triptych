@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from collections import Counter
+from html.parser import HTMLParser
 import importlib.machinery
 import importlib.util
 from importlib.metadata import PackageNotFoundError
@@ -52,6 +53,33 @@ PROPER_TITLE = (
 DOSSIER_HEADER = "| **Proper** | **Citation** | **Location** | **Date** |\n|"
 # A table cell opening with a macro that a leaf defines and redefines.
 DEF_TABLE = "\\begin{tabular}{ll}\n\\yr{} row & x\\\\\n\\end{tabular}"
+
+
+def quotation_texts(rendered: str) -> list[str]:
+    """Each blockquote's words, its nested quotations' included, in opening order."""
+
+    class Quotations(HTMLParser):
+        def __init__(self) -> None:
+            super().__init__()
+            self.texts: list[str] = []
+            self.open: list[int] = []
+
+        def handle_starttag(self, tag: str, attributes: list) -> None:
+            if tag == "blockquote":
+                self.open.append(len(self.texts))
+                self.texts.append("")
+
+        def handle_endtag(self, tag: str) -> None:
+            if tag == "blockquote":
+                self.open.pop()
+
+        def handle_data(self, data: str) -> None:
+            for index in self.open:
+                self.texts[index] += data
+
+    parser = Quotations()
+    parser.feed(rendered)
+    return [" ".join(text.split()) for text in parser.texts]
 
 
 @unittest.skipUnless(HAS_PANDOC, "pandoc is not installed")
@@ -621,6 +649,60 @@ class WebEditionConversionTests(unittest.TestCase):
         )
         self.assertIn("> **Operative text**", markdown)
         self.assertIn("> The quoted wording.", markdown)
+
+    @unittest.skipUnless(importlib.util.find_spec("markdown"), "Python Markdown is not installed")
+    def test_adjacent_quotations_stay_apart_on_the_site(self) -> None:
+        # A blank line alone between two blockquotes is one quotation to the
+        # site's Python-Markdown: a psalm's response and its verses, two
+        # quotations in the PDF, reached the reader as one. Rendered by the
+        # site itself, at the top level and inside a quotation and a note.
+        site = runpy.run_path(str(ROOT / "tools/public-alpha"))
+        pair = (
+            "\\begin{quotation}\nThe response.\n\\end{quotation}\n"
+            "\\begin{quotation}\nThe first verse.\n\nThe second verse.\n\\end{quotation}\n"
+        )
+        apart = ["The response.", "The first verse. The second verse."]
+        for body, expected in (
+            (pair, apart),
+            (
+                "\\begin{quote}\nOuter.\n" + pair + "\\end{quote}\n",
+                ["Outer. The response. The first verse. The second verse.", *apart],
+            ),
+            ("Claim.\\footnote{Cited.\n" + pair + "}\n", apart),
+        ):
+            with self.subTest(body=body):
+                markdown = self.convert(body)
+                rendered = site["render_page"](
+                    "web/test/studies/subject.md", markdown, "subject.html", True, {}
+                )
+                self.assertEqual(quotation_texts(rendered), expected)
+                self.assertEqual(markdown.count(DRIVER.QUOTATION_SEPARATOR), 1)
+
+    @unittest.skipUnless(importlib.util.find_spec("markdown"), "Python Markdown is not installed")
+    def test_quotations_the_site_would_merge_stop_the_conversion(self) -> None:
+        # Without its separator the filter still counts what pandoc read, and
+        # the audit, reading the page as the site renders it, refuses the merge.
+        unseparated = DRIVER.QUOTATION_FILTER.replace("{Blocks = separate},", "")
+        self.assertNotEqual(unseparated, DRIVER.QUOTATION_FILTER)
+        with mock.patch.object(DRIVER, "QUOTATION_FILTER", unseparated), \
+                self.assertRaises(DRIVER.ConversionError) as raised:
+            self.convert(
+                "\\begin{quote}\nOne.\n\\end{quote}\n\\begin{quote}\nTwo.\n\\end{quote}\n"
+            )
+        self.assertIn(
+            "2 source quotation(s) became 1 blockquote(s) on the site", str(raised.exception)
+        )
+
+    def test_quotation_audit_requires_the_site_renderer_dependency_lock(self) -> None:
+        # A leaf with fewer than two quotations has none to merge and is not
+        # rendered; one with two is, and never passes unrendered.
+        with mock.patch("_markdown_render.distribution_version", return_value="0.invalid"):
+            self.assertIn("> One.", self.convert("\\begin{quote}\nOne.\n\\end{quote}\n"))
+            with self.assertRaises(DRIVER.ConversionError) as raised:
+                self.convert(
+                    "\\begin{quote}\nOne.\n\\end{quote}\n\\begin{quote}\nTwo.\n\\end{quote}\n"
+                )
+        self.assertIn("site-rendered quotation audit failed", str(raised.exception))
 
     def test_model_and_qualifiers_remain_audit_only(self) -> None:
         markdown = self.convert(
@@ -1627,6 +1709,27 @@ class WebEditionAuditTests(unittest.TestCase):
             bracketed=bracketed,
         )
         self.assertEqual(failures, [])
+
+    @unittest.skipUnless(importlib.util.find_spec("markdown"), "Python Markdown is not installed")
+    def test_quotations_merged_on_the_site_are_reported(self) -> None:
+        merged = self.minimal_markdown() + "\n> The response.\n\n> The verses.\n"
+        self.assertIn(
+            "2 source quotation(s) became 1 blockquote(s) on the site",
+            DRIVER.audit_output("Prose.", merged, quotations=2),
+        )
+        apart = merged.replace(
+            "\n\n> The verses", f"\n\n{DRIVER.QUOTATION_SEPARATOR}\n\n> The verses"
+        )
+        self.assertEqual(DRIVER.audit_output("Prose.", apart, quotations=2), [])
+
+    def test_paragraph_audits_read_across_a_quotation_separator(self) -> None:
+        plain = "> One ends\n\n> without a stop.\n"
+        separated = plain.replace("\n\n", f"\n\n{DRIVER.QUOTATION_SEPARATOR}\n\n")
+        self.assertEqual(DRIVER.prose_blocks(separated), DRIVER.prose_blocks(plain))
+        self.assertEqual(
+            DRIVER.reflowed_sentences("One ends.", separated),
+            ["'One ends' then 'without a stop.'"],
+        )
 
     def test_dropped_table_is_reported(self) -> None:
         failures = DRIVER.audit_output("Prose.", self.minimal_markdown(), tables=2)

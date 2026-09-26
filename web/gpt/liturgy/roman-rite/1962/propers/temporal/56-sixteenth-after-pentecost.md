@@ -46,7 +46,7 @@ Corbett’s “usual chronology” supplies the Davidic regnal frame (*Catholic 
 
 **Location:** An aging speaker; Davidic and captivity settings remain distinct.
 
-**Date:** **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Superscription setting**: Preferred In the third year of the reign of Joakim, king of Juda; alternatives A.M. 3398. **Historical setting**: When he fled from the face of his son Absalom. **Composition**: Before c. 165 B.C.
+**Date:** **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Superscription setting**: Preferred: In the third year of the reign of Joakim, king of Juda; alternative: A.M. 3398. **Historical setting**: When he fled from the face of his son Absalom. **Composition**: Before c. 165 B.C.
 
 Youth, failing strength and future hearers frame Bellarmine’s Davidic reading; writing-place is unestablished. The composition bound is general; the alternate A.M. figure concerns the superscription, not the preferred historical setting. <span class="nodecor">(Ps. 70:1–24; Bellarmine, pp. 212–213; chronology sources in References.)</span>
 
@@ -156,6 +156,8 @@ The Latin follows the 1962 Missal, pp. 397–398, nos. 1592–1601, with its s
 >
 > Miserére mihi, Dómine, quóniam ad te clamávi tota die: quia tu, Dómine, suávis ac mitis es, et copiósus in misericórdia ómnibus invocántibus te. Ps. ibid., 1 Inclína, Dómine, aurem tuam mihi, et exáudi me: quóniam inops et pauper sum ego. ℣. Glória Patri.
 
+<!-- end of quotation -->
+
 > **Challoner — biblical locus**
 >
 > Have mercy on me, O Lord, for I have cried to thee all the day.
@@ -170,6 +172,8 @@ The Latin follows the 1962 Missal, pp. 397–398, nos. 1592–1601, with its s
 >
 > Tua nos, quǽsumus, Dómine, grátia semper et prævéniat et sequátur: ac bonis opéribus iúgiter præstet esse inténtos. Per Dóminum.
 
+<!-- end of quotation -->
+
 > **Cummiskey 1861 — Collect**
 >
 > May thy grace, O Lord, always prevent and follow us; and make us constantly zealous in the practice of good works. Thro’.
@@ -181,6 +185,8 @@ The Latin follows the 1962 Missal, pp. 397–398, nos. 1592–1601, with its s
 > Léctio Epístolæ beáti Pauli Apóstoli ad Ephésios.
 >
 > Fratres: Obsecro vos, ne deficiátis in tribulatiónibus meis pro vobis: quæ est glória vestra. Huius rei grátia flecto génua mea ad Patrem Dómini nostri Iesu Christi, ex quo omnis patérnitas in cælis et in terra nominátur, ut det vobis secúndum divítias glóriæ suæ, virtúte corroborári per Spíritum eius in interiórem hóminem, Christum habitáre per fidem in córdibus vestris: in caritáte radicáti, et fundáti, ut possítis comprehéndere cum ómnibus sanctis, quæ sit latitúdo, et longitúdo, et sublímitas, et profúndum: scire étiam supereminéntem sciéntiæ caritátem Christi, ut impleámini in omnem plenitúdinem Dei. Ei autem, qui potens est ómnia fácere superabundánter quam pétimus, aut intellégimus, secúndum virtútem, quæ operátur in nobis: ipsi glória in Ecclésia, et in Christo Iesu, in omnes generatiónes sǽculi sæculórum. Amen.
+
+<!-- end of quotation -->
 
 > **Challoner — biblical locus**
 >
@@ -210,6 +216,8 @@ The Missal opens with *Fratres: Obsecro vos*; Challoner retains the biblical ope
 >
 > Timébunt gentes nomen tuum, Dómine, et omnes reges terræ glóriam tuam. ℣. Quóniam ædificávit Dóminus Sion, et vidébitur in maiestáte sua.
 
+<!-- end of quotation -->
+
 > **Challoner — biblical locus**
 >
 > And the Gentiles shall fear thy name, O Lord, and all the kings of the earth thy glory.
@@ -221,6 +229,8 @@ The Missal opens with *Fratres: Obsecro vos*; Challoner retains the biblical ope
 > **Alleluia — Latin**
 >
 > Allelúia, allelúia. ℣. Cantáte Dómino cánticum novum: quia mirabília fecit Dóminus. Allelúia.
+
+<!-- end of quotation -->
 
 > **Challoner — biblical locus**
 >
@@ -237,6 +247,8 @@ The chant adds the explicit final *Dóminus* and the Alleluia framing; the Engli
 > In illo témpore: Cum intráret Iesus in domum cuiúsdam príncipis pharisæórum sábbato manducáre panem, et ipsi observábant eum. Et ecce homo quidam hydrópicus erat ante illum. Et respóndens Iesus dixit ad legisperítos et pharisǽos, dicens: Si licet sábbato curáre? At illi tacuérunt. Ipse vero apprehénsum sanávit eum, ac dimísit. Et respóndens ad illos, dixit: Cuius vestrum ásinus, aut bos in púteum cadet, et non contínuo éxtrahet illum die sábbati? Et non póterant ad hæc respondére illi. Dicébat autem et ad invitátos parábolam, inténdens quómodo primos accúbitus elígerent, dicens ad illos: Cum invitátus fúeris ad núptias, non discúmbas in primo loco, ne forte honorátior te sit invitátus ab illo, et véniens is qui te et illum vocávit, dicat tibi: Da huic locum: et tunc incípias cum rubóre novíssimum locum tenére. Sed cum vocátus fúeris, vade, recúmbe in novíssimo loco: ut, cum vénerit qui te invitávit, dicat tibi: Amíce, ascénde supérius. Tunc erit tibi glória coram simul discumbéntibus: quia omnis, qui se exáltat, humiliábitur: et qui se humíliat, exaltábitur.
 >
 > Credo.
+
+<!-- end of quotation -->
 
 > **Challoner — biblical locus**
 >
@@ -270,6 +282,8 @@ The Missal opens with *In illo témpore*; Challoner retains Luke's biblical open
 >
 > Dómine, in auxílium meum réspice: confundántur et revereántur, qui quærunt ánimam meam, ut áuferant eam: Dómine, in auxílium meum réspice.
 
+<!-- end of quotation -->
+
 > **Challoner — biblical comparison verses**
 >
 > Be pleased, O Lord, to deliver me: look down, O Lord, to help me.
@@ -286,6 +300,8 @@ The Latin chant selects the plea for help and the first enemy petition, then rep
 >
 > Præfatio de Ssma Trinitate.
 
+<!-- end of quotation -->
+
 > **Cummiskey 1861 — Secret**
 >
 > Cleanse us, O Lord, we beseech thee, by the efficacy of this sacrifice: and by thy mercy make us worthy to partake thereof. Thro’.
@@ -295,6 +311,8 @@ The Latin chant selects the plea for help and the first enemy petition, then rep
 > **Communion — Latin**
 >
 > Dómine, memorábor iustítiæ tuæ solíus: Deus, docuísti me a iuventúte mea: et usque in senéctam et sénium, Deus, ne derelínquas me.
+
+<!-- end of quotation -->
 
 > **Challoner — biblical comparison verses**
 >
@@ -311,6 +329,8 @@ The Latin chant takes the last clause of verse 16, the first of verse 17 and v
 > **Postcommunion — Latin**
 >
 > Purífica, quǽsumus, Dómine, mentes nostras benígnus, et rénova cæléstibus sacraméntis: ut consequénter et córporum præsens páriter et futúrum capiámus auxílium. Per Dóminum.
+
+<!-- end of quotation -->
 
 > **Cummiskey 1861 — Postcommunion**
 >

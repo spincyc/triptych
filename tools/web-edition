@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Convert publication leaves to Markdown web editions with installed pandoc.
 
-Schema-2 anchor validation also uses the site's renderer and the existing
-Python Markdown pin in requirements-public-alpha.txt.
+Schema-2 anchor validation, and the quotation audit of a leaf with two or more
+quotations, also use the site's renderer and the existing Python Markdown pin
+in requirements-public-alpha.txt.
 """
 
 from __future__ import annotations
@@ -194,6 +195,49 @@ return {
   },
 }
 """.replace("@MARK@", SPAN_CELL_MARK)
+
+# Pandoc ends a quotation at a blank line, so it writes two quotation
+# environments in a row as two blockquotes with only a blank line between them.
+# The site's Python-Markdown reads that as one quotation of several paragraphs,
+# and a psalm's response and its verses, two quotations in the PDF, reached the
+# reader as one. The filter writes this comment between any two adjacent
+# quotations, which ends the first for the site's renderer and prints nothing,
+# and reports how many quotations pandoc read, which the audit holds the
+# site-rendered page to.
+QUOTATION_SEPARATOR = "<!-- end of quotation -->"
+QUOTATION_COUNT_RE = re.compile(r"^triptych-quotations: (\d+)$", re.MULTILINE)
+QUOTATION_FILTER = """
+local SEPARATOR = "@SEPARATOR@"
+
+local function separate(blocks)
+  local out, previous, changed = pandoc.Blocks{}, nil, false
+  for _, block in ipairs(blocks) do
+    if block.t == "BlockQuote" and previous == "BlockQuote" then
+      out:insert(pandoc.RawBlock("html", SEPARATOR))
+      changed = true
+    end
+    out:insert(block)
+    previous = block.t
+  end
+  if changed then return out end
+end
+
+return {
+  {Blocks = separate},
+  {
+    Pandoc = function(doc)
+      local count = 0
+      doc:walk({BlockQuote = function() count = count + 1 end})
+      io.stderr:write("triptych-quotations: " .. count .. "\\n")
+    end,
+  },
+}
+""".replace("@SEPARATOR@", QUOTATION_SEPARATOR)
+# The separator as a block of its own, which the paragraph audits drop.
+QUOTATION_SEPARATOR_BLOCK_RE = re.compile(
+    r"^[ \t]*" + re.escape(QUOTATION_SEPARATOR) + r"[ \t]*\n[ \t]*\n", re.MULTILINE
+)
+RENDERED_QUOTATION_RE = re.compile(r"<blockquote(?=[\s>])")
 
 UNNUMBERED_HEADING_ATTRIBUTE_RE = re.compile(
     r"^(#{1,6} .+?) \{#([^{} ]+) \.unnumbered\}$", re.MULTILINE
@@ -1723,6 +1767,9 @@ def source_openings(sources: str) -> set[str]:
 
 def prose_blocks(markdown: str) -> list[str]:
     """The output blocks that carry a sentence, stripped of their own markup."""
+    # A quotation separator is no block a reader meets: the quotations either
+    # side of it are judged as any two adjacent blocks are.
+    markdown = QUOTATION_SEPARATOR_BLOCK_RE.sub("", markdown)
     text = MARKDOWN_TARGET_RE.sub("]", MARKDOWN_TAG_RE.sub(" ", markdown))
     blocks = []
     for block in BLOCK_SPLIT_RE.split(text):
@@ -2298,13 +2345,26 @@ def audit_output(
     definitions: str = "",
     source_body: str | None = None,
     lifted_notes: bool = False,
+    quotations: int | None = None,
 ) -> list[str]:
     """Compare critical macro payloads in the LaTeX body against the Markdown.
 
     The row-opening audit reads `source_body`, the body before the converter's
-    own rewriting, where one is given.
+    own rewriting, where one is given. `quotations`, the number of quotations
+    pandoc read, is held against the page as the site's renderer sets it.
     """
     failures = bracketed_shortfalls(body, markdown, bracketed or {})
+    # Only two or more quotations can be merged, so only then is the page rendered.
+    if quotations is not None and quotations > 1:
+        try:
+            rendered = len(RENDERED_QUOTATION_RE.findall(render_markdown(markdown, ROOT)))
+        except MarkdownRenderError as exc:
+            raise ConversionError(f"site-rendered quotation audit failed: {exc}") from exc
+        if rendered != quotations:
+            failures.append(
+                f"{quotations} source quotation(s) became {rendered} blockquote(s) "
+                "on the site"
+            )
     failures.extend(title_shortfalls(body, markdown))
     # A table pandoc could not write as a pipe table becomes an HTML table; a
     # table it dropped becomes neither.  A repeated-header longtable may split
@@ -2567,9 +2627,13 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         raise ConversionError("\n".join(failures))
     with tempfile.NamedTemporaryFile(
         "w", suffix=".lua", encoding="utf-8"
-    ) as table_filter, tempfile.NamedTemporaryFile("w", suffix=".tex", encoding="utf-8") as handle:
+    ) as table_filter, tempfile.NamedTemporaryFile(
+        "w", suffix=".lua", encoding="utf-8"
+    ) as quotation_filter, tempfile.NamedTemporaryFile("w", suffix=".tex", encoding="utf-8") as handle:
         table_filter.write(TABLE_FILTER)
         table_filter.flush()
+        quotation_filter.write(QUOTATION_FILTER)
+        quotation_filter.flush()
         handle.write(
             f"{shim_text}\n{locals_text}\n"
             f"\\begin{{document}}\n{body}\n\\end{{document}}\n"
@@ -2586,12 +2650,15 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         )
         command = ["pandoc", "-f", "latex", "-t", dialect, "--wrap=none",
                    "--shift-heading-level-by=1", f"--lua-filter={table_filter.name}",
-                   handle.name]
+                   f"--lua-filter={quotation_filter.name}", handle.name]
         result = subprocess.run(command, capture_output=True, text=True)
     if result.returncode != 0:
         raise ConversionError(f"pandoc failed:\n{result.stderr.strip()}")
     if MATH_WARNING_RE.search(result.stderr):
         raise ConversionError(f"math left as raw TeX:\n{result.stderr.strip()}")
+    quotation_count = QUOTATION_COUNT_RE.search(result.stderr)
+    if quotation_count is None:
+        raise ConversionError("pandoc's quotation filter reported no count")
     converted = clean_markdown_line_endings(result.stdout)
     if required_anchors is not None and toc_count:
         converted_toc_count = converted.count(WEB_TOC_SENTINEL)
@@ -2642,6 +2709,7 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         SHIM.read_text(encoding="utf-8") + "\n" + local_definitions(preamble),
         assembled_body,
         semantic_graph is not None,
+        int(quotation_count.group(1)),
     )
     if failures:
         raise ConversionError("\n".join(failures))

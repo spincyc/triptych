@@ -113,6 +113,8 @@ The Latin below is the complete recurring formulary collated against the 1962 Va
 >
 > *Deus, in adiutórium meum inténde: Dómine, ad adiuvándum me festína: confundántur et revereántur inimíci mei, qui quærunt ánimam meam. *Ps. ibid., 4* Avertántur retrórsum, et erubéscant: qui cógitant mihi mala. ℣. Glória Patri.*
 
+<!-- end of quotation -->
+
 > **Douay–Rheims/Challoner, Psalm 69:2–4 (modern Psalm 70:1–3)**
 >
 > O God, come to my assistance; O Lord, make haste to help me. Let them be confounded and ashamed that seek my soul: Let them be turned backward, and blush for shame that desire evils to me: Let them be presently turned away blushing for shame that say to me: ’Tis well, ’tis well.
@@ -124,6 +126,8 @@ The Latin below is the complete recurring formulary collated against the 1962 Va
 > **Oratio**
 >
 > *Omnípotens et miséricors Deus, de cuius múnere venit, ut tibi a fidélibus tuis digne et laudabíliter serviátur: tríbue, quǽsumus, nobis; ut ad promissiónes tuas sine offensióne currámus. Per Dóminum.*
+
+<!-- end of quotation -->
 
 > **Cummiskey Roman Missal, 1861, p. 420**
 >
@@ -137,6 +141,8 @@ The Latin below is the complete recurring formulary collated against the 1962 Va
 >
 > Fratres: Fidúciam talem habémus per Christum ad Deum: non quod sufficiéntes simus cogitáre áliquid a nobis, quasi ex nobis: sed sufficiéntia nostra ex Deo est: qui et idóneos nos fecit minístros novi testaménti: non líttera, sed spíritu: líttera enim occídit, spíritus autem vivíficat. Quod si ministrátio mortis, lítteris deformáta in lapídibus, fuit in glória; ita ut non possent inténdere fílii Israël in fáciem Móysi, propter glóriam vultus eius, quæ evacuátur: quómodo non magis ministrátio Spíritus erit in glória? Nam si ministrátio damnatiónis glória est: multo magis abúndat ministérium iustítiæ in glória.
 
+<!-- end of quotation -->
+
 > **Douay–Rheims/Challoner, 2 Corinthians 3:4–9**
 >
 > And such confidence we have, through Christ, towards God. Not that we are sufficient to think any thing of ourselves, as of ourselves: but our sufficiency is from God. Who also hath made us fit ministers of the new testament, not in the letter but in the spirit. For the letter killeth: but the spirit quickeneth. Now if the ministration of death, engraven with letters upon stones, was glorious (so that the children of Israel could not steadfastly behold the face of Moses, for the glory of his countenance), which is made void: How shall not the ministration of the spirit be rather in glory? For if the ministration of condemnation be glory, much more the ministration of justice aboundeth in glory.
@@ -147,6 +153,8 @@ The Latin below is the complete recurring formulary collated against the 1962 Va
 >
 > *Benedícam Dóminum in omni témpore: semper laus eius in ore meo. ℣. In Dómino laudábitur ánima mea: áudiant mansuéti, et læténtur.*
 
+<!-- end of quotation -->
+
 > **Douay–Rheims/Challoner, Psalm 33:2–3 (modern Psalm 34:1–2)**
 >
 > I will bless the Lord at all times, his praise shall be always in my mouth. In the Lord shall my soul be praised: let the meek hear and rejoice.
@@ -156,6 +164,8 @@ The Latin below is the complete recurring formulary collated against the 1962 Va
 > **Psalm 87:2 (Vulgate numbering)**
 >
 > *Allelúia, allelúia. ℣. Dómine, Deus salútis meæ, in die clamávi et nocte coram te. Allelúia.*
+
+<!-- end of quotation -->
 
 > **Douay–Rheims/Challoner, Psalm 87:2 (modern Psalm 88:1)**
 >
@@ -171,6 +181,8 @@ The Latin below is the complete recurring formulary collated against the 1962 Va
 >
 > *Rubric: Credo.*
 
+<!-- end of quotation -->
+
 > **Douay–Rheims/Challoner, Luke 10:23–37**
 >
 > And turning to his disciples, he said: Blessed are the eyes that see the things which you see. For I say to you that many prophets and kings have desired to see the things that you see and have not seen them; and to hear the things that you hear and have not heard them. And behold a certain lawyer stood up, tempting him and saying, Master, what must I do to possess eternal life? But he said to him: What is written in the law? How readest thou? He answering, said: Thou shalt love the Lord thy God with thy whole heart and with thy whole soul and with all thy strength and with all thy mind: and thy neighbour as thyself. And he said to him: Thou hast answered right. This do: and thou shalt live. But he willing to justify himself, said to Jesus: And who is my neighbour? And Jesus answering, said: A certain man went down from Jerusalem to Jericho and fell among robbers, who also stripped him and having wounded him went away, leaving him half dead. And it chanced, that a certain priest went down the same way: and seeing him, passed by. In like manner also a Levite, when he was near the place and saw him, passed by. But a certain Samaritan, being on his journey, came near him: and seeing him, was moved with compassion: And going up to him, bound up his wounds, pouring in oil and wine: and setting him upon his own beast, brought him to an inn and took care of him. And the next day he took out two pence and gave to the host and said: Take care of him; and whatsoever thou shalt spend over and above, I, at my return, will repay thee. Which of these three, in thy opinion, was neighbour to him that fell among the robbers? But he said: He that shewed mercy to him. And Jesus said to him: Go, and do thou in like manner.
@@ -182,6 +194,8 @@ The Latin below is the complete recurring formulary collated against the 1962 Va
 > **Exodus 32:11, 13, 14, with adapted matter from verse 12**
 >
 > *Precátus est Móyses in conspéctu Dómini Dei sui, et dixit: Quare, Dómine, irásceris in pópulo tuo? Parce iræ ánimæ tuæ: meménto Abraham, Isaac, et Iacob, quibus iurásti dare terram fluéntem lac et mel. Et placátus factus est Dóminus de malignitáte, quam dixit fácere pópulo suo.*
+
+<!-- end of quotation -->
 
 > **Douay–Rheims/Challoner, Exodus 32:11–14**
 >
@@ -197,6 +211,8 @@ The Latin below is the complete recurring formulary collated against the 1962 Va
 >
 > *Rubric: Præfatio de Ssma Trinitate.*
 
+<!-- end of quotation -->
+
 > **Cummiskey Roman Missal, 1861, p. 422**
 >
 > Mercifully look down, O Lord, on the offerings we lay on thy holy altar; that they may be to the honour of thy name, by obtaining pardon for us. Thro’.
@@ -206,6 +222,8 @@ The Latin below is the complete recurring formulary collated against the 1962 Va
 > **Psalm 103:13 and 14–15 (Vulgate numbering)**
 >
 > *De fructu óperum tuórum, Dómine, satiábitur terra: ut edúcas panem de terra, et vinum lætíficet cor hóminis: ut exhílaret fáciem in óleo, et panis cor hóminis confírmet.*
+
+<!-- end of quotation -->
 
 > **Douay–Rheims/Challoner, Psalm 103:13–15**
 >
@@ -218,6 +236,8 @@ The Latin below is the complete recurring formulary collated against the 1962 Va
 > **Postcommunio**
 >
 > *Vivíficet nos, quǽsumus, Dómine, huius participátio sancta mystérii: et páriter nobis expiatiónem tríbuat, et munímen. Per Dóminum.*
+
+<!-- end of quotation -->
 
 > **Cummiskey Roman Missal, 1861, p. 423**
 >
@@ -405,6 +425,8 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 >
 > **The turn.** Jesus refuses the lawyer’s attempt to delimit a class and asks who became neighbour by mercy. Tort law must do the thing the parable resists: specify foreseeability and legal proximity. Atkin turns a self-justifying question into a rule for liability; the civil rule is not the Gospel’s whole moral demand.
 
+<!-- end of quotation -->
+
 > **The Jerusalem–Jericho road becomes an experiment — Darley and Batson (1973)**
 >
 > **Appointed wording.** A man goes “from Jerusalem to Jericho”; priest and Levite see him and pass by (Luke 10:30–32).
@@ -413,6 +435,8 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 >
 > **The turn.** A narrative about seeing and passing becomes an experimental protocol. The assigned talk topic was not a significant predictor of helping, while time pressure had a marked effect. The staged emergency and small seminary sample do not exhaust mercy or prove the motives of the parable’s priest and Levite.
 
+<!-- end of quotation -->
+
 > **The killing letter exposes a marriage contract — Thomas Hardy (1896)**
 >
 > **Appointed wording.** “For the letter killeth: but the spirit quickeneth” (2 Cor. 3:6).
@@ -420,6 +444,8 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 > **Later use and locus.** Thomas Hardy places 2 Cor. 3:6 on the title page of the 1896 book edition of *Jude the Obscure*. In Part VI, ch. VIII (ch. 50 in the linked edition), Jude tells Sue inside a church that their return to socially sanctioned marriages is acting by the letter, and repeats “the letter killeth!”
 >
 > **The turn.** Paul’s contrast between covenant ministries becomes an indictment of civil and ecclesial marriage convention; the epigraph also makes the phrase a key for the novel’s conflict between legal form and lived attachment. Jude is a conflicted fictional speaker, not Hardy’s unqualified doctrinal voice, and the novel’s use is not Paul’s exegetical meaning.
+
+<!-- end of quotation -->
 
 > **Paul becomes a canon of statutory construction — Justice Frankfurter (1950)**
 >
@@ -447,6 +473,8 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 >
 > **Limit:** No minister or institution may identify itself simply with the Samaritan; ecclesial allegory remains subject to the literal command of mercy.
 
+<!-- end of quotation -->
+
 > **Exploratory proposal — Promise is destination, covenant ground, and guaranty**
 >
 > **Anchors:** Collect, Offertory, Gospel.
@@ -460,6 +488,8 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 > **Precedent result:** **Near analogue located.** Origen, *Homily on Luke* 34.3, reports an elder’s eschatological reading of the return; Ambrose, *Exposition of Luke* 7.83, and Bede, PL 92, 470D, also receive that return eschatologically. These enumerated witnesses do not join all three promise forms.
 >
 > **Limit:** The Samaritan’s narrated undertaking within the parable is not a covenant equal to God’s oath, and the proposal proves no compositional design.
+
+<!-- end of quotation -->
 
 > **Exploratory proposal — Mercy’s longer clock**
 >
@@ -475,6 +505,8 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 >
 > **Limit:** The words arise in different literary units; they do not create a schedule, and urgency in the Introit remains as important as duration.
 
+<!-- end of quotation -->
+
 > **Exploratory proposal — A bounded question receives an open-ended answer**
 >
 > **Anchors:** Gospel and Secret.
@@ -488,6 +520,8 @@ These four afterlives do more than repeat a biblical phrase: each moves it into 
 > **Precedent result:** **Near analogue located.** The enumerated Gospel commentators stress universal neighbour-love and the innkeeper’s further expense; none of them joins the Secret’s gerund.
 >
 > **Limit:** Christian generosity requires prudence, justice, vocation, and finite stewardship; *Fratelli tutti* 79–82 does not erase these goods.
+
+<!-- end of quotation -->
 
 > **Exploratory proposal — The medicine is neither only natural nor only sacramental**
 >

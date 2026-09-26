@@ -34,13 +34,19 @@ The four texts below are reproduced verbatim—wording, capitals, and punctuatio
 >
 > Our Father, who art in heaven, hallowed be Thy name; Thy kingdom come; Thy will be done on earth as it is in heaven. Give us this day our daily bread; and forgive us our trespasses as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil. Amen.
 
+<!-- end of quotation -->
+
 > **Received text — The Angelical Salutation (Hail Mary) (same witness, p. 5)**
 >
 > Hail Mary, full of grace! the Lord is with thee: blessed art thou amongst women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.
 
+<!-- end of quotation -->
+
 > **Received text — The Doxology (same witness, p. 44)**
 >
 > Glory be to the Father, and to the Son, and to the Holy Ghost. As it was in the beginning, is now, and ever shall be, world without end. Amen.
+
+<!-- end of quotation -->
 
 > **Received text — The Apostles’ Creed (same witness, p. 5)**
 >

@@ -63,37 +63,55 @@ Rubrics 274–284 determine which calendar governs. In a public church or public
 >
 > Enter the temporal day, every universal feast, every sourced particular feast, any vigil, the applicable octave day, and Our Lady on Saturday if rubric 78 applies. Do not yet choose a Mass.
 
+<!-- end of quotation -->
+
 > **Step 2: classify the candidates**
 >
 > For each candidate record its type—Sunday, feria, vigil, feast, octave day, or Saturday Office—and its own class. A Mass category has not yet been chosen, so do not label the day “a class III votive.”
+
+<!-- end of quotation -->
 
 > **Step 3: assign precedence positions**
 >
 > Locate each candidate in rubric 91. Within the same nominal class, a particular feast may precede a universal feast, a universal feast may precede an Ember feria, or a Sunday may precede a saint. Write the table position, not only the class.
 
+<!-- end of quotation -->
+
 > **Step 4: apply express exceptions**
 >
 > Test the rules for I- and II-class Sundays, feasts of the Lord, the Immaculate Conception, All Souls, Christmas octave, vigils, and the resumed Sundays after Epiphany. These rules prevent an apparently plausible result from being reached by class comparison alone.
+
+<!-- end of quotation -->
 
 > **Step 5: dispose of the impeded item**
 >
 > Use rubrics 92–102 to decide accidental transfer, perpetual reposition, commemoration, or omission. A lower position does not itself say which consequence follows.
 
+<!-- end of quotation -->
+
 > **Step 6: calculate commemorations**
 >
 > Classify each as privileged or ordinary under rubrics 106–110, observe the limits in rubric 111, the exclusions in rubric 112, and the order in rubrics 113–114. Then test whether the actual Mass is sung nonconventually, because ordinary commemorations do not enter it.
+
+<!-- end of quotation -->
 
 > **Step 7: test the requested Mass category**
 >
 > Begin with the Mass corresponding to the Office. If another Mass is requested, identify the exact rule admitting a festive, votive, Requiem, ritual, or external-solemnity Mass on this class of day. Do not reason from devotion or pastoral desirability alone.
 
+<!-- end of quotation -->
+
 > **Step 8: select and complete the formulary**
 >
 > Take the proper formulary where one exists. If it refers to a Common, supply only the missing parts from the indicated Common. Apply its seasonal alternatives and exact status as festive or votive. Keep a source line for every component.
 
+<!-- end of quotation -->
+
 > **Step 9: merge the formulary into the Order**
 >
 > Resolve the Introit doxology, Gloria, prayer set, lessons and chants, Creed, Preface, Canon inserts, Communion and Postcommunions, prayer over the people, dismissal, blessing, and Last Gospel. The complete worksheet in Section [7](#sec:assembly-map) follows the order of celebration.
+
+<!-- end of quotation -->
 
 > **Step 10: perform a contradiction check**
 >

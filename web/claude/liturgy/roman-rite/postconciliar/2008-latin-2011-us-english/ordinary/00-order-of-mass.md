@@ -306,6 +306,8 @@ The oldest Latin witness to the substance of several of its sections is Ambrose 
 > *Vis scire quia verbis coelestibus consecratur? Accipe quae sunt verba. Dicit sacerdos: Fac nobis, inquit, hanc oblationem ascriptam, ratam, rationabilem, acceptabilem: quod figura est corporis et sanguinis Domini nostri Iesu Christi.*<br>
 > Compare the 2008 Missal at n. 88: *Quam oblationem tu, Deus, in omnibus, quaesumus, benedictam, adscriptam, ratam, rationabilem, acceptabilemque facere digneris: ut nobis Corpus et Sanguis fiat dilectissimi Filii tui, Domini nostri Iesu Christi.*
 
+<!-- end of quotation -->
+
 > ***De sacramentis* IV, 6, 27 — the anamnesis, oblation, and *Supplices***
 >
 > *Et sacerdos dicit: Ergo memores gloriosissimae eius passionis, et ab inferis resurrectionis, et in coelum ascensionis, offerimus tibi hanc immaculatam hostiam, rationabilem hostiam, incruentam hostiam, hunc panem sanctum, et calicem vitae aeternae: et petimus et precamur, ut hanc oblationem suscipias in sublimi altari tuo per manus angelorum tuorum, sicut suscipere dignatus es munera pueri tui iusti Abel, et sacrificium patriarchae nostri Abrahae, et quod tibi obtulit summus sacerdos Melchisedech.*<br>

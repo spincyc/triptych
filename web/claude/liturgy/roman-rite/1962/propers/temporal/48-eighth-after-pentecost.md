@@ -122,6 +122,8 @@ One feature of that arrangement is verifiable in the book and easily missed. The
 >
 > *Suscépimus, Deus, misericórdiam tuam in médio templi tui: secúndum nomen tuum, Deus, ita et laus tua in fines terræ: iustítia plena est déxtera tua. **Ps. ibid., 2** *Magnus Dóminus, et laudábilis nimis: in civitáte Dei nostri, in monte sancto eius. **℣.** *Glória Patri.***
 
+<!-- end of quotation -->
+
 > **English (1861 witness).**  “We have received thy mercy, O God, in the midst of thy temple: According to thy name, so also is thy praise unto the ends of the earth : thy right hand is full of justice. *Ps.* Great is the Lord, and exceedingly to be praised ; in the city of our God, on his holy mountain. *V.* Glory.”
 
 Psalm 47 is a Zion song of the Korahite guild. Its argument is that the city God has founded cannot be shaken: the kings of the earth assemble, see, and are troubled; what had been heard is now seen; and the city is to be walked round and its towers told, so that another generation may be informed. Verses 10–11, which the Introit takes, come at the point where the psalm turns from the routed kings inward, to the sanctuary.
@@ -146,6 +148,8 @@ On the psalm’s opening verse, which returns as the Alleluia, Augustine reads t
 >
 > *Largíre nobis, quǽsumus, Dómine, semper spíritum cogitándi quæ recta sunt, propítius et agéndi: ut, qui sine te esse non póssumus, secúndum te vívere valeámus. Per Dóminum.*
 
+<!-- end of quotation -->
+
 > **English (1861 witness).**  “Grant us, O Lord, we beseech thee, the spirit of thinking and doing what is right, that we, who cannot even subsist without thee, may live according to thee. Thro’.”
 
 The oration is composed, not scriptural, and it quotes nothing. Its structure is a single request with an unusual internal joint. *Spíritum cogitándi … et agéndi* is one gift governing two gerunds, thinking and doing; and *propítius* — “mercifully,” modifying God’s granting — is planted between them, so that the mercy of the giving is heard exactly at the seam between intention and act. The 1861 English witness quietly drops the adverb; readers of that translation lose the joint.
@@ -159,6 +163,8 @@ The word *spíritum* is not demonstrably the Holy Spirit of the Epistle: the ora
 > **Léctio Epístolæ beáti Pauli Apóstoli ad Romános — no. 1514 — Rom. 8, 12-17**
 >
 > *Fratres: Debitóres sumus non carni, ut secúndum carnem vivámus. Si enim secúndum carnem vixéritis, moriémini: si autem spíritu facta carnis mortificavéritis, vivétis. Quicúmque enim spíritu Dei agúntur, ii sunt fílii Dei. Non enim accepístis spíritum servitútis íterum in timóre, sed accepístis spíritum adoptiónis filiórum, in quo clamámus: Abba (Pater). Ipse enim Spíritus testimónium reddit spirítui nostro, quod sumus fílii Dei. Si autem fílii, et herédes: herédes quidem Dei, coherédes autem Christi.*
+
+<!-- end of quotation -->
 
 > **English (1861 witness).**  “Brethren: We are debtors, not to the flesh, to live according to the flesh. … For whosoever are led by the Spirit of God, they are the Sons of God. For you have not received the spirit of bondage again in fear: but you have received the spirit of adoption of sons, whereby we cry: Abba, (Father.) For the Spirit himself giveth testimony to our spirit, that we are the sons of God. And if sons, heirs also: heirs indeed of God, and joint heirs with Christ.”
 
@@ -196,9 +202,13 @@ Immediately after *coherédes autem Christi*, Paul writes *si tamen compatimur, 
 >
 > *Esto mihi in Deum protectórem, et in locum refúgii, ut salvum me fácias. **℣. Ps. 70, 1** *Deus, in te sperávi: Dómine, non confúndar in ætérnum.**
 
+<!-- end of quotation -->
+
 > **Alleluia — no. 1516 — ℣. Ps. 47, 2**
 >
 > *Allelúia, allelúia. **℣. Ps. 47, 2** *Magnus Dóminus, et laudábilis valde: in civitáte Dei nostri, in monte sancto eius. Allelúia.**
+
+<!-- end of quotation -->
 
 > **English (1861 witness).**  Gradual: “Be thou unto me a God, a protector, and a place of refuge to save me. *V.* O God, on thee have I relied ; let me never, O Lord, be put to shame.” Alleluia: “*V.* Great is the Lord, and exceedingly to be praised in the city of our God, on his holy mountain. Alleluia. Alleluia.”
 
@@ -243,6 +253,8 @@ Here the tradition does not agree, and the disagreement is not a matter of empha
 > **Ambrose — the steward is not censured**
 >
 > *Nec reprehenditur villicus, in quo discimus non ipsi esse domini, sed potius alienarum villici facultatum. Et ideo licet peccaverit, tamen quia sibi in posterum ex indulgentia domini quaesivit auxilia, praedicatur.* “The steward is not censured; from which we learn that we are not owners but rather managers of other men’s resources. And so, although he sinned, yet because he sought himself help for the future out of his master’s indulgence, he is commended.”[^17]
+
+<!-- end of quotation -->
 
 > **Augustine — you may not defraud God in order to give alms**
 >
@@ -314,6 +326,8 @@ The sources themselves reach no consensus here, and the questions that follow st
 >
 > *Pópulum húmilem salvum fácies, Dómine, et óculos superbórum humiliábis: quóniam quis Deus præter te, Dómine?*
 
+<!-- end of quotation -->
+
 > **English (1861 witness).**  “Thou wilt save the humble people, O Lord: and thou wilt humble the eyes of the proud, for who is God besides thee, O Lord.”
 
 The antiphon is a splice, and both halves are adjusted. Clementine Ps 17:28 opens *Quoniam tu populum humilem salvum facies*; the chant drops the causal opening and inserts a vocative *Dómine*, converting a statement about God into an address to him. Clementine Ps 17:32 reads *Quoniam quis Deus praeter Dominum? aut quis Deus praeter Deum nostrum?*; the chant reads *quóniam quis Deus præter te, Dómine?*, turning third person into second and dropping the parallel clause. The result is that a psalm which spoke *about* God at both points now speaks *to* him at both — at the moment when the gifts are carried up.
@@ -328,6 +342,8 @@ On verse 32 Augustine turns the question into the Epistle’s answer: “For who
 >
 > *Súscipe, quǽsumus, Dómine, múnera, quæ tibi de tua largitáte deférimus: ut hæc sacrosáncta mystéria, grátiæ tuæ operánte virtúte, et præséntis vitæ nos conversatióne sanctíficent, et ad gáudia sempitérna perdúcant. Per Dóminum.*
 
+<!-- end of quotation -->
+
 > **English (1861 witness).**  “Receive, we beseech thee, O Lord, the offerings we bring, which are the gifts of thine own bounty: that these most holy mysteries may, by the power of thy grace, make our conduct in this life holy, and bring us to those joys that will never end. Thro’.”
 
 The Secret’s first clause is the Introit’s grammar applied to the gifts: *quæ tibi de tua largitáte deférimus*, which we bring you out of your own bounty. Nothing is offered that was not first given. Read beside the Gospel this is sharper than it looks: the steward’s crisis was that he disposed of goods that were not his, and the Church at the offertory says aloud that she is doing the same thing — with the difference that she says so.
@@ -341,6 +357,8 @@ The book then prints *Præfatio de Ssma Trinitate*. In the 1962 temporal cycle t
 > **Ant. ad Communionem — no. 1520 — Ps. 33, 9**
 >
 > *Gustáte et vidéte, quóniam suávis est Dóminus: beátus vir, qui sperat in eo.*
+
+<!-- end of quotation -->
 
 > **English (1861 witness).**  “Taste, and see, how sweet is the Lord ! blessed is the man who putteth his trust in him.”
 
@@ -357,6 +375,8 @@ The ordering of the verbs is what the Mass borrows: *gustáte* before *vidéte*.
 > **Postcommunio — no. 1521**
 >
 > *Sit nobis, Dómine, reparátio mentis et córporis cæléste mystérium: ut, cuius exséquimur cultum, sentiámus efféctum. Per Dóminum.*
+
+<!-- end of quotation -->
 
 > **English (1861 witness).**  “May this heavenly mystery, O Lord, renew us both in soul and body: that we may find in ourselves the effects of what we celebrate. Thro’.”
 
@@ -399,6 +419,8 @@ Throughout, the English phrases that entered the language are the Authorised Ver
 >
 > **Dependence and rights:** Echo: exact Authorised Version wording, capitalised, unattributed. Public domain; read in the Project Gutenberg text (ebook 5231), 2026-07-25.
 
+<!-- end of quotation -->
+
 > **2. “And he was commended.” The House of Commons, 1931 (*Gosp.*, Lk 16:8–9)**
 >
 > **Appointed phrases:** *laudávit dóminus víllicum iniquitátis*; *recípiant vos in ætérna tabernácula*
@@ -411,6 +433,8 @@ Throughout, the English phrases that entered the language are the Authorised Ver
 >
 > **Dependence and rights:** Documented on both sides: the parable is named three times in the debate. Parliamentary copyright; quoted under the Open Parliament Licence from the Historic Hansard text, read 2026-07-25.
 
+<!-- end of quotation -->
+
 > **3. Kingsley turns two verses into anti-clerical ammunition (*Gosp.*, Lk 16:3 and 16:6–7)**
 >
 > **Appointed phrases:** *fódere non váleo, mendicáre erubésco*; *accipe cautiónem tuam … scribe quinquagínta*
@@ -422,6 +446,8 @@ Throughout, the English phrases that entered the language are the Authorised Ver
 > **The turn:** Two different verses of the same appointed Gospel, redirected in consecutive speeches by two brothers, against two different clerical castes. The steward’s excuse becomes a muscular-Christian sneer at unmanly Protestant clergy, his physical incapacity read as effeminacy. Then the steward’s fraudulent write-down becomes a figure for sacramental absolution: the priest as a crooked accountant discounting sinners’ bills. A parable the Fathers used to defend almsgiving is here made to attack the remission of sins.
 >
 > **Dependence and rights:** Documented: “a hundred measures … write fifty” is unmistakably signalled. Public domain; read in the Project Gutenberg text (ebook 1860), 2026-07-25.
+
+<!-- end of quotation -->
 
 > **4. A steward at a garden party fears he is *the* steward (*Gosp.*, Lk 16:1–9)**
 >
@@ -436,6 +462,8 @@ Throughout, the English phrases that entered the language are the Authorised Ver
 > **The turn:** The joke depends on an exact congruence of office and a total incongruity of scale. Plomacy is a steward; he has just shown irregular leniency with his employer’s provisions to a man who may be useful; the verse fits him with uncomfortable precision — and the stake is who gets fed at a village fête. Trollope thereby stages, comically, the difficulty Ambrose and Augustine argued over: whether a small act of unauthorised generosity with someone else’s goods is commendable foresight or plain fraud. The novel declines to decide and serves dinner.
 >
 > **Dependence and rights:** Documented: Trollope names the unjust steward. Public domain; read in the Project Gutenberg text (ebook 3409), 2026-07-25.
+
+<!-- end of quotation -->
 
 > **5. Words as unjust stewards (*Gosp.*, Lk 16:1–2)**
 >
@@ -455,6 +483,8 @@ Throughout, the English phrases that entered the language are the Authorised Ver
 >
 > Everything below is exploratory editorial and AI proposal. None of it is sourced historical intent, attributed patristic or Doctoral teaching, or liturgical rubric. Each proposal was checked against the corpus this guide searched and against a targeted precedent search recorded in `research/scope.md`; where no precedent was located, that result is bounded by the search actually run and is correctable. Each ends with the strongest objection the author could find against it.
 
+<!-- end of quotation -->
+
 > **1. The congregation signs the first line of its own audit (*Int.* + *Gosp.*)**
 >
 > **Anchors.** Introit *Suscépimus, Deus, misericórdiam tuam* (no. 1512); Gospel *redde ratiónem villicatiónis tuæ* (no. 1517).
@@ -466,6 +496,8 @@ Throughout, the English phrases that entered the language are the Authorised Ver
 > **What the element-by-element reading misses.** Read seriatim, the Introit is a devotional pleasantry about mercy and the Gospel a hard case in moral theology. The order of speech acts is invisible unless the two are set side by side.
 >
 > **Strongest limit.** There is no verbal dependence whatever: *suscipere* and *reddere rationem* share no root, and the Introit’s *nos* is not the steward’s *ego*. No source consulted connects them. If the Introit was chosen for its temple imagery — which its shared use at the Purification makes likely — then this correspondence is a coincidence of the calendar and not a composition.
+
+<!-- end of quotation -->
 
 > **2. The antiphon that lacks a body, and the oration that supplies one (*Int.* + *Postcomm.*)**
 >
@@ -479,6 +511,8 @@ Throughout, the English phrases that entered the language are the Authorised Ver
 >
 > **Strongest limit.** The Pauline identification of the body as a temple (1 Cor 6:19) is *not* appointed in this Mass, so the bridge depends on a verse the congregation does not hear. And a simpler explanation of the shared antiphon is available and probably true: *Suscepimus* is a well-known chant that fits any Mass with a mercy-and-sanctuary theme, and its reuse says nothing about either formulary’s argument.
 
+<!-- end of quotation -->
+
 > **3. The steward’s two refusals are the Offertory’s two classes (*Gosp.* + *Off.*)**
 >
 > **Anchors.** Gospel *fódere non váleo, mendicáre erubésco* (no. 1517); Offertory *Pópulum húmilem salvum fácies … et óculos superbórum humiliábis* (no. 1518).
@@ -490,6 +524,8 @@ Throughout, the English phrases that entered the language are the Authorised Ver
 > **What the element-by-element reading misses.** The Offertory is normally read as a general thanksgiving verse. Its adjacency to a man who has just said, in effect, “I am too good to dig and too proud to beg,” is lost when the two are treated as separate items.
 >
 > **Strongest limit.** Augustine, expounding the Offertory’s own verse, reads *pópulum húmilem* not as the manual labourer but as those “who confess their sins,” and the proud as those who “seek to establish their own” righteousness. That is a moral, not a social, division, and it weakens the neat mapping of *fódere* onto poverty. The digging half of the proposal is an extension beyond what any checked witness says.
+
+<!-- end of quotation -->
 
 > **4. The debtors write in their own hands; the assembly says the Creed in its own voice (*Gosp.* + the printed **Credo**)**
 >
@@ -503,6 +539,8 @@ Throughout, the English phrases that entered the language are the Authorised Ver
 >
 > **Strongest limit.** This is the weakest anchor in the section, and deliberately so marked. **Credo** is prescribed on Sundays by general rubric, not chosen for this formulary; the same direction appears on the Seventh, Ninth, and every other Sunday after Pentecost. Any argument that its placement here is significant must explain why it is not equally significant everywhere else, and this proposal cannot.
 
+<!-- end of quotation -->
+
 > **5. A withheld condition and a partial mode of knowing (*Ep.* + *Comm.*)**
 >
 > **Anchors.** Epistle ending at *coherédes autem Christi* (no. 1514), before Paul’s *si tamen compatimur, ut et conglorificemur*; Communion *Gustáte et vidéte* (no. 1520).
@@ -514,6 +552,8 @@ Throughout, the English phrases that entered the language are the Authorised Ver
 > **What the element-by-element reading misses.** Each element alone is unremarkable — pericope boundaries are inherited, and *gustáte et vidéte* is the commonest of Communion antiphons. Only the conjunction suggests a pattern, and the conjunction is only visible if one knows where Rom 8:17 breaks.
 >
 > **Strongest limit and the disconfirming condition.** The proposal is vulnerable at its foundation, and the disconfirming evidence sits in the same book. The 1962 missal appoints Rom 8:18–23, the immediate sequel, on the *Fourth* Sunday after Pentecost. The condition of co-suffering is therefore not withheld from the liturgical year at all — only from this Sunday, and only because a lection had to end somewhere. If the pericope division is inherited from an earlier lectionary for reasons of length or of the ancient Roman station, then nothing is being withheld and this proposal collapses into a coincidence of scissors. The proposal survives, if at all, as a reading of the formulary’s effect on a hearer, never as a claim about its design.
+
+<!-- end of quotation -->
 
 > **6. Saying one thing twice as a figure of catholicity (*Grad.* + *Ep.*)**
 >

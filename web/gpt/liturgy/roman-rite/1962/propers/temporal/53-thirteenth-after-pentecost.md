@@ -108,6 +108,8 @@ The Latin below is the complete recurring formulary between marginal nos. 1562 
 >
 > *Réspice, Dómine, in testaméntum tuum, et ánimas páuperum tuórum ne derelínquas in finem: exsúrge, Dómine, et iúdica causam tuam, et ne obliviscáris voces quæréntium te. <span class="nodecor">Ps. ibid., 1</span> Ut quid, Deus, repulísti in finem: irátus est furor tuus super oves páscuæ tuæ? ℣. Glória Patri.*
 
+<!-- end of quotation -->
+
 > **Douay–Rheims/Challoner, Ps. 73:20, 19, 22–23 and 1**
 >
 > Have regard to thy covenant: for they that are the obscure of the earth have been filled with dwellings of iniquity. Deliver not up to beasts the souls that confess to thee: and forget not to the end the souls of thy poor. Arise, O God, judge thy own cause: remember thy reproaches with which the foolish man hath reproached thee all the day. Forget not the voices of thy enemies: the pride of them that hate thee ascendeth continually. O God, why hast thou cast us off unto the end: why is thy wrath enkindled against the sheep of thy pasture? ℣. *Glória Patri.*
@@ -119,6 +121,8 @@ The Latin below is the complete recurring formulary between marginal nos. 1562 
 > ***Oratio*; no. 1563**
 >
 > *Omnípotens sempitérne Deus, da nobis fidei, spei et caritátis augméntum: et, ut mereámur ássequi quod promíttis, fac nos amáre quod prǽcipis. Per Dóminum.*
+
+<!-- end of quotation -->
 
 > **Cummiskey hand missal (1861), Collect, p. 423**
 >
@@ -134,6 +138,8 @@ The Latin below is the complete recurring formulary between marginal nos. 1562 
 >
 > Fratres: Abrahæ dictæ sunt promissiónes, et sémini eius. Non dicit: Et semínibus, quasi in multis; sed quasi in uno: Et sémini tuo, qui est Christus. Hoc autem dico: testaméntum confirmátum a Deo, quæ post quadringéntos et trigínta annos facta est lex, non írritum facit ad evacuándam promissiónem. Nam si ex lege heréditas, iam non ex promissióne. Abrahæ autem per repromissiónem donávit Deus. Quid ígitur lex? Propter transgressiónes pósita est, donec veníret semen, cui promíserat, ordináta per Angelos in manu mediatóris. Mediátor autem uníus non est: Deus autem unus est. Lex ergo advérsus promíssa Dei? Absit. Si enim data esset lex, quæ posset vivificáre, vere ex lege esset iustítia. Sed conclúsit Scriptúra ómnia sub peccáto, ut promíssio ex fide Iesu Christi darétur credéntibus.
 
+<!-- end of quotation -->
+
 > **Douay–Rheims/Challoner, Gal. 3:16–22**
 >
 > To Abraham were the promises made and to his seed. He saith not: And to his seeds as of many. But as of one: And to thy seed, which is Christ. Now this I say: that the testament which was confirmed by God, the law which was made after four hundred and thirty years doth not disannul, to make the promise of no effect. For if the inheritance be of the law, it is no more of promise. But God gave it to Abraham by promise. Why then was the law? It was set because of transgressions, until the seed should come to whom he made the promise, being ordained by angels in the hand of a mediator. Now a mediator is not of one: but God is one. Was the law then against the promises of God: God forbid! For if there had been a law given which could give life, verily justice should have been by the law. But the scripture hath concluded all under sin, that the promise, by the faith of Jesus Christ, might be given to them that believe.
@@ -146,6 +152,8 @@ The Latin below is the complete recurring formulary between marginal nos. 1562 
 >
 > *Réspice, Dómine, in testaméntum tuum: et ánimas páuperum tuórum ne obliviscáris in finem. ℣. Exsúrge, Dómine, et iúdica causam tuam: memor esto oppróbrii servórum tuórum.*
 
+<!-- end of quotation -->
+
 > **Douay–Rheims/Challoner, Ps. 73:20a, 19b and 22**
 >
 > Have regard to thy covenant … and forget not to the end the souls of thy poor. ℣. Arise, O God, judge thy own cause: remember thy reproaches with which the foolish man hath reproached thee all the day.
@@ -157,6 +165,8 @@ The Latin below is the complete recurring formulary between marginal nos. 1562 
 > ***Psalmus 89:1*; no. 1566**
 >
 > *Allelúia, allelúia. ℣. Ps. 89, 1 Dómine, refúgium factus es nobis a generatióne et progénie. Allelúia.*
+
+<!-- end of quotation -->
 
 > **Douay–Rheims/Challoner, Ps. 89:1**
 >
@@ -172,6 +182,8 @@ The Latin below is the complete recurring formulary between marginal nos. 1562 
 >
 > In illo témpore: Dum iret Iesus in Ierúsalem, transíbat per médiam Samaríam et Galilǽam. Et cum ingrederétur quoddam castéllum, occurrérunt ei decem viri leprósi, qui stetérunt a longe; et levavérunt vocem dicéntes: Iesu præcéptor, miserére nostri. Quos ut vidit, dixit: Ite, osténdite vos sacerdótibus. Et factum est, dum irent, mundáti sunt. Unus autem ex illis, ut vidit quia mundátus est, regréssus est, cum magna voce magníficans Deum, et cécidit in fáciem ante pedes eius, grátias agens: et hic erat Samaritánus. Respóndens autem Iesus, dixit: Nonne decem mundáti sunt? et novem ubi sunt? Non est invéntus qui redíret, et daret glóriam Deo, nisi hic alienígena. Et ait illi: Surge, vade; quia fides tua te salvum fecit.
 
+<!-- end of quotation -->
+
 > **Douay–Rheims/Challoner, Luke 17:11–19**
 >
 > And it came to pass, as he was going to Jerusalem, he passed through the midst of Samaria and Galilee. And as he entered into a certain town, there met him ten men that were lepers, who stood afar off. And lifted up their voice, saying: Jesus, Master, have mercy on us. Whom when he saw, he said: Go, shew yourselves to the priests. And it came to pass, as they went, they were made clean. And one of them, when he saw that he was made clean, went back, with a loud voice glorifying God. And he fell on his face before his feet, giving thanks. And this was a Samaritan. And Jesus answering, said: Were not ten made clean? And where are the nine? There is no one found to return and give glory to God, but this stranger. And he said to him: Arise, go thy way; for thy faith hath made thee whole.
@@ -185,6 +197,8 @@ The Latin below is the complete recurring formulary between marginal nos. 1562 
 > ***Psalmus 30:15–16*; no. 1568**
 >
 > *In te sperávi, Dómine; dixi: Tu es Deus meus, in mánibus tuis témpora mea.*
+
+<!-- end of quotation -->
 
 > **Douay–Rheims/Challoner, Ps. 30:15–16**
 >
@@ -200,6 +214,8 @@ The Latin below is the complete recurring formulary between marginal nos. 1562 
 >
 > Præfatio de Ssma Trinitate.
 
+<!-- end of quotation -->
+
 > **Cummiskey hand missal (1861), Secret, p. 424**
 >
 > Be thou propitious, O Lord, to thy people: and mercifully receive their offerings: that being appeased thereby, thou mayest grant us pardon, and hear our requests. Thro’.
@@ -212,6 +228,8 @@ The Latin below is the complete recurring formulary between marginal nos. 1562 
 >
 > *Panem de cælo dedísti nobis, Dómine, habéntem omne delectaméntum, et omnem sapórem suavitátis.*
 
+<!-- end of quotation -->
+
 > **Douay–Rheims/Challoner, Wis. 16:20**
 >
 > Instead of which things, thou didst feed thy people with the food of angels, and gavest them bread from heaven, prepared without labour; having in it all that is delicious, and the sweetness of every taste.
@@ -223,6 +241,8 @@ The Latin below is the complete recurring formulary between marginal nos. 1562 
 > ***Postcommunio*; no. 1571**
 >
 > *Sumptis, Dómine, cæléstibus sacraméntis: ad redemptiónis ætérnæ, quæsumus, proficiámus augméntum. Per Dóminum.*
+
+<!-- end of quotation -->
 
 > **Cummiskey hand missal (1861), Postcommunion, p. 425**
 >

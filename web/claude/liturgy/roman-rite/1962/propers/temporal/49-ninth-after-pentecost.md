@@ -71,6 +71,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *Ecce Deus ádiuvat me, et Dóminus suscéptor est ánimæ meæ: avérte mala inimícis meis, et in veritáte tua dispérde illos, protéctor meus, Dómine. <span class="nodecor">Ps. ibid., 3</span> Deus, in nómine tuo salvum me fac: et in virtúte tua líbera me. ℣. Glória Patri.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Ps. 53:6–7 and 53:3**
 >
 > For behold God is my helper: and the Lord is the protector of my soul. Turn back the evils upon my enemies; and cut them off in thy truth. *Ps.* Save me, O God, by thy name, and judge me in thy strength. ℣. *Glória Patri.*
@@ -82,6 +84,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 > ***Oratio* — marginal no. 1523**
 >
 > *Páteant aures misericórdiæ tuæ, Dómine, précibus supplicántium: et, ut peténtibus desideráta concédas; fac eos, quæ tibi sunt plácita, postuláre. Per Dóminum nostrum.*
+
+<!-- end of quotation -->
 
 > **English: Cummiskey (Philadelphia, 1861), Collect of this formulary, printed p. 414**
 >
@@ -95,6 +99,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *Fratres: Non simus concupiscéntes malórum, sicut et illi concupiérunt. Neque idolólatræ efficiámini, sicut quidam ex ipsis: quemádmodum scriptum est: Sedit pópulus manducáre et bíbere, et surrexérunt lúdere. Neque fornicémur, sicut quidam ex ipsis fornicáti sunt, et cecidérunt una die vigínti tria mília. Neque tentémus Christum, sicut quidam eórum tentavérunt, et a serpéntibus periérunt. Neque murmuravéritis, sicut quidam eórum murmuravérunt, et periérunt ab exterminatóre. Hæc autem ómnia in figúra contingébant illis: scripta sunt autem ad correptiónem nostram, in quos fines sæculórum devenérunt. Itaque qui se exístimat stare, vídeat ne cadat. Tentátio vos non apprehéndat, nisi humána: fidélis autem Deus est, qui non patiétur vos tentári supra id quod potéstis, sed fáciet étiam cum tentatióne provéntum, ut possítis sustinére.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), 1 Cor. 10:6–13, from the point at which the lesson begins**
 >
 > … that we should not covet evil things, as they also coveted. Neither become ye idolaters, as some of them, as it is written: The people sat down to eat and drink and rose up to play. Neither let us commit fornication, as some of them committed fornication: and there fell in one day three and twenty thousand. Neither let us tempt Christ, as some of them tempted and perished by the serpents. Neither do you murmur, as some of them murmured and were destroyed by the destroyer. Now all these things happened to them in figure: and they are written for our correction, upon whom the ends of the world are come. Wherefore, he that thinketh himself to stand, let him take heed lest he fall. Let no temptation take hold on you, but such as is human. And God is faithful, who will not suffer you to be tempted above that which you are able: but will make also with temptation issue, that you may be able to bear it.
@@ -107,6 +113,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *Dómine Dóminus noster, quam admirábile est nomen tuum in univérsa terra! ℣. Quóniam eleváta est magnificéntia tua super cælos.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Ps. 8:2**
 >
 > O Lord, our Lord, how admirable is thy name in the whole earth! ℣. For thy magnificence is elevated above the heavens.
@@ -117,6 +125,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *Allelúia, allelúia. ℣. <span class="nodecor">Ps. 58, 2</span> Eripe me de inimícis meis, Deus meus: et ab insurgéntibus in me líbera me. Allelúia.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Ps. 58:2, between the chant’s own acclamations**
 >
 > Alleluia, alleluia. ℣. Deliver me from my enemies, O my God; and defend me from them that rise up against me. Alleluia.
@@ -126,6 +136,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 > ***✠ Sequéntia sancti Evangélii secúndum Lucam* — Luc. 19, 41-47 — marginal no. 1527**
 >
 > *In illo témpore: Cum appropinquáret Iesus Ierúsalem, videns civitátem, flevit super illam, dicens: Quia si cognovísses et tu, et quidem in hac die tua, quæ ad pacem tibi, nunc autem abscóndita sunt ab óculis tuis. Quia vénient dies in te: et circúmdabunt te inimíci tui vallo, et circúmdabunt te: et coangustábunt te úndique: et ad terram prostérnent te, et fílios tuos, qui in te sunt, et non relínquent in te lápidem super lápidem: eo quod non cognóveris tempus visitatiónis tuæ. Et ingréssus in templum, cœpit eícere vendéntes in illo, et eméntes, dicens illis: Scriptum est: Quia domus mea domus oratiónis est. Vos autem fecístis illam spelúncam latrónum. Et erat docens cotídie in templo.*
+
+<!-- end of quotation -->
 
 > **English: Douay–Rheims (Challoner), Lk. 19:41–47a**
 >
@@ -141,6 +153,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *Iustítiæ Dómini rectæ, lætificántes corda, et iudícia eius dulcióra super mel et favum: nam et servus tuus custódit ea.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Ps. 18:9–12 in full, with the four fragments the antiphon takes in bold**
 >
 > **v. 9** **The justices of the Lord are right, rejoicing hearts:** the commandment of the Lord is lightsome, enlightening the eyes. **v. 10** The fear of the Lord is holy, enduring for ever and ever: **the judgments of the Lord** are true, justified in themselves. **v. 11** More to be desired than gold and many precious stones: and **sweeter than honey and the honeycomb.** **v. 12** **For thy servant keepeth them,** and in keeping them there is a great reward.
@@ -152,6 +166,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 > ***Secreta* — marginal no. 1529**
 >
 > *Concéde nobis, quæsumus, Dómine, hæc digne frequentáre mystéria: quia, quóties huius hóstiæ commemorátio celebrátur, opus nostræ redemptiónis exercétur. Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte.*
+
+<!-- end of quotation -->
 
 > **English: Cummiskey (Philadelphia, 1861), Secret of this formulary, printed p. 415**
 >
@@ -167,6 +183,8 @@ The typical edition prints the long conclusion here, breaking off at *in unitát
 >
 > *Qui mandúcat meam carnem, et bibit meum sánguinem, in me manet, et ego in eo, dicit Dóminus.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Jn. 6:57**
 >
 > He that eateth my flesh and drinketh my blood abideth in me: and I in him.
@@ -178,6 +196,8 @@ The typical edition prints the long conclusion here, breaking off at *in unitát
 > ***Postcommunio* — marginal no. 1531**
 >
 > *Tui nobis, quæsumus, Dómine, commúnio sacraménti, et purificatiónem cónferat, et tríbuat unitátem. Per Dóminum nostrum.*
+
+<!-- end of quotation -->
 
 > **English: Cummiskey (Philadelphia, 1861), Postcommunion of this formulary, printed p. 415**
 >
@@ -252,9 +272,15 @@ That English is the English of the psalm, and at three points it is not the Engl
 
 > **St. Augustine, *Enarrationes in Psalmos* 53, §§4, 8–9** The controlling image is the Ziphites as those who *flourish*: their bloom is outward and temporary, while the just man’s flowering is hidden. At §8 — the Introit’s opening clause — Augustine’s point is that the help is *interior and present*, not merely future: the glory of the just is the testimony of conscience and the light of God’s countenance “put into my heart — not into my vineyard, not into my flock, not into my cask, not into my table.” At §9 the imprecation is read eschatologically: the enemies flourish for a time and perish for ever. English quoted from the public-domain NPNF first series, vol. 8, where the exposition is headed “Psalm 54” but cites internally as Psalm 53.
 
+<!-- end of quotation -->
+
 > **St. Thomas Aquinas, *Super Psalmo* 53, nn. 1, 3–4** Aquinas anchors the title in 1 Kings (1 Samuel) 23 and allegorises the Ziphites in the same direction as Augustine. His structural point is that the psalm’s petition is heard twice over: against the enemies’ assault, *ecce Deus adiuvat me*; against those seeking his life, *Dominus susceptor est animae meae*. He then meets the obvious objection to praying that they be cut off at all — *orate pro persequentibus* — and answers that prophetic imprecations admit three readings: as prediction (he notes that the Hebrew has a present, “thou turnest”), as conformity to divine justice, and as spiritual denunciation, since “when sinners cease to sin, then they die and cease to be sinners.”
 
+<!-- end of quotation -->
+
 > **St. Robert Bellarmine, *Explanatio in Psalmos*, Ps. LIII, vv. 4–5, tr. John O’Sullivan (Dublin, 1866)** Bellarmine turns the phrase inside out with one sentence: the enemies “had not God before their eyes, but God had them before his eyes.” He reads *Ecce* as “a sudden light from God” and the present tense as certainty, then supplies the concrete deliverance — the messenger announcing the Philistine raid that recalled Saul — and suggests David may have been speaking the words at that very moment. On the imprecation he agrees with Aquinas: “Such imprecations … are to be read as predictions; and so this reads in the Hebrew.”
+
+<!-- end of quotation -->
 
 > **Theodoret of Cyrus, *Interpretatio in Psalmos* 53 (PG 80, cols. 1265–1268) — Greek-tradition sample** Theodoret sets the psalm historically among the Ziphites who “feigned friendship” and betrayed David’s hiding place, then makes it deliberately general: David offered it as instruction so that anyone under unjust attack might pray it. He reads the opening clause as confidence in help coming before long. Alone among the four witnesses here he reads *in veritáte tua* — the Introit’s own text — and takes it, strikingly, as addressed to the Holy Spirit. Theodoret was consulted in Robert Hill’s modern English translation, which is in copyright; he is therefore summarised and not quoted, and the PG column numbers above are those printed inline in that translation, not read off a Migne scan.
 
@@ -300,7 +326,11 @@ That is why this Collect reads so pointedly in front of this Epistle. The wilder
 
 > **St. John Chrysostom, *Homilies on First Corinthians* 23 and 24** The pericope straddles two homilies: Homily 23 runs to v. 12 and stops; v. 13 opens Homily 24. In 23 he reads the Exodus material in strict parallel — as the gifts were figures, so are the punishments, and therefore “if the one be type, and the other substance, it must needs be that the punishments should as far exceed as the gifts.” He traces the whole catalogue to one root, luxury: from sensuality they “passed into idolatry.” On v. 12 the sin he identifies is not standing but *thinking* one stands: “this is not even standing as one ought to stand, to rely on yourself … For our standing here is not secure standing, no not until we be delivered out of the waves of this present life.” In 24 he reads v. 13 as a deliberate descent after terror, and then makes the decisive move: the ability is not natural. “For the ability lies in God’s gracious influence; a power which we draw down by our own will.” The way through is not primarily removal: “He gives patience and brings on a speedy release; so that in this way also the temptation becomes bearable.” English from the public-domain NPNF first series, vol. 12, tr. Talbot W. Chambers.
 
+<!-- end of quotation -->
+
 > **Ambrosiaster, *Commentaria in Epistolam ad Corinthios Primam*, ad 10:6–13 (PL 17)** Ambrosiaster identifies the target with unusual precision: those *qui in idolio recumbentes putabant non esse peccatum* — who reclined at table in an idol’s temple thinking it no sin. He reads v. 12 socially rather than merely morally: it is said to those presuming on the knowledge that all food is lawful, who scandalised weaker brethren while judging the Apostle. And at v. 13 he gives the pericope’s most distinctive reading: *tentatio humana* is not a concession but an exhortation — *Propter Christum ergo pati, humana tentatio est, per quam proficitur apud Deum*. On the “issue” that God makes with the temptation he is concrete to the point of arithmetic: God will either give strength or cut the trial short, “so that he who is known to be able to endure no more than three days is not allowed to suffer on the fourth.” The passage was read in the Migne text of the 1845 printing, where the embedded column marks put the passage at coll. 144–145; other Migne printings of the same work carry a different column system, and CSEL 81/2 was not consulted.
+
+<!-- end of quotation -->
 
 > **Correction 1: the commentary on this chapter is Peter of Tarantaise, not Aquinas** The exposition of 1 Corinthians 10 that circulates inside the Thomistic corpus is not St. Thomas’s. Corpus Thomisticum’s editorial note states *A capite vero X amissa est lectura, ac lacuna repleta ex commentario Petri de Tarantasia breviato forte a Nicholao de Gorran*, and Fabian Larcher’s English translation prints the bracket “\[CHAPTERS 7:15—10:33 (nos. 347–581) supplied by Peter of Tarantaise\]” in place of the text. Cited as Aquinas at a Marietti number, this material is a text his editors flag as someone else’s. What the passage actually contains is worth having on its own terms: at v. 12 it draws four things out of the verse — the multitude of those falling, the uncertainty of those standing, the necessity of caution, the ease of ruin — and at v. 13 gives *proventum* a moral condition: those do not burst in the furnace *qui non habent ventum superbiae*. **Correction 2 travels with it:** its maxim *Augustinus: propter Christum pati humana tentatio est* is verbatim Ambrosiaster, quoted just above; it is a gloss-transmission misattribution, not a saying of Augustine.
 
@@ -320,7 +350,11 @@ Here the chant and the Vulgate agree exactly, and the Douay silently shows how t
 
 > **St. Augustine, *Enarrationes in Psalmos* 8, §4** Augustine treats the two halves as question and answer — *how* is the Name wonderful throughout the earth? because the *magnificentia* has been lifted above the heavens — and reads that lifting as the Ascension: the glory was raised “from earthly humiliation” above the heavens, and it was the visible ascent that disclosed who had descended. The preceding sections have already read the psalm’s title *pro torcularibus*, “for the winepresses,” of the Churches and the martyrdoms.
 
+<!-- end of quotation -->
+
 > **St. Thomas Aquinas, *Super Psalmo* 8, n. 1** Aquinas gives the sharpest account of why the second colon is a reason at all. Wonder, he says, arises when the effect is seen and the cause unknown — *Admiratio est quando aliquis videt effectum, et ignorat causam*. God is not wholly unknown, since the creation shows him; but the effect does not manifest the cause perfectly, and therefore he remains *admirabilis*. The exaltation above the heavens then excludes two errors at once: that God is the form of the heavens, and that he acts by necessity of nature. He also insists on *in universa terra* against any restriction of the Name to one territory.
+
+<!-- end of quotation -->
 
 > **St. Robert Bellarmine, *Explanatio in Psalmos*, Ps. VIII, v. 1** Bellarmine anticipates the obvious objection — that in fact few admire — and answers that the Name is *worthy* of admiration whether or not admirers are found, “in the sense that all beautiful productions are said to praise the producer.” He then develops the second colon through an analogy of princely magnificence: God “created the universe for a palace, having the earth for its pavement, the heavens for its roof.”
 
@@ -375,7 +409,11 @@ Set together, the two quotations say something precise: the house whose vocation
 
 > **Origen, *Homiliae in Lucam* 38, in Jerome’s Latin (PL 26, cols. 302B–303D)** Origen begins from a principle: Christ fulfils in himself every beatitude he preached, and therefore he wept in order to found the beatitude of those who mourn. He then stages an objector who says the prophecy was plainly fulfilled when the Roman army destroyed the city — concedes it — and refuses to stop there. *Nos enim sumus Jerusalem quae defletur*: the weeping concerns *our* Jerusalem, the baptized who sins after the mysteries. “He does not lament over a Gentile, but over him who was a citizen of Jerusalem and ceased to be so.” Consequently the besiegers are demonologised: *circumdant eam inimici, contrariae videlicet fortitudines, spiritus nequam* — especially, he adds, when someone is overcome after years of chastity. The only English translation of this homily is modern and in copyright; the Latin is public domain, so the Latin is quoted and the rest is analysis.
 
+<!-- end of quotation -->
+
 > **St. Cyril of Alexandria, *Commentary on Luke*, Sermon 131, tr. R. Payne Smith (Oxford, 1859)** Cyril’s interest is what a tear proves. The ruin was not God’s good pleasure; Christ pitied them. The weeping is a real human act performed as the disclosure of an otherwise invisible compassion — “that we hereby might learn that He feels grief, if we may so speak of God, Who transcends all” — and “the tear which drops from the eye is a symbol of grief, or rather, a plain demonstration of it.” The things that are to thy peace he glosses as “the things, that is, useful and necessary for you to make your peace with God,” and he reads the hiding through 2 Corinthians 3 (the veil) and Romans 11:25, where the blindness is *in part*. He treats the siege as fulfilled — without ever naming Titus, Vespasian or the Romans — and immediately softens it: Israel “did not perish from the very roots,” the apostles being the firstfruits.
+
+<!-- end of quotation -->
 
 > **St. Gregory the Great, *Homiliae in Evangelia* 39, §§1–2 (PL 76, 1293–1301)** Gregory preached this homily to the people in the Lateran basilica on this very pericope, and his opening sentence is the one the later tradition repeats: *Flevit etenim prius Redemptor ruinam perfidae civitatis, quam ipsa sibi civitas non cognoscebat esse venturam* — “The merciful Redeemer wept over the fall of that city, which the city itself did not know was coming.” He supplies the elided verb of the broken sentence: *si cognovisses … subaudi, fleres* — understand, “thou wouldst have wept.” That elision is the one grammatical fact of the Gospel that the Douay cannot show, because its “If thou also hadst known … the things that are to thy peace” reads as a completed sentence and the Latin does not: *quæ ad pacem tibi* has no verb at all. He names the agents of the destruction, Vespasian and Titus, and argues that not one stone was left from the city’s own later migration to the ground outside the gate where the Lord was crucified. The cause is the unrecognised visitation, clinched with Jeremiah 8:7, where kite, turtledove, swallow and stork all keep their seasons.
 
@@ -451,7 +489,11 @@ Read in the antiphon’s order the four fragments say: the justices of the Lord 
 
 > **St. Thomas Aquinas, *Super Psalmo* 18, nn. 5–7** Aquinas predicates two things of the *iustitiae*: they are *recta*, containing justice, and *iucunda*, “not severe and disturbing, because they are mixed with equity” — hence *laetificantes corda*, on account of that equity and the hope of reward. At n. 7 he reaches the honey and gives three reasons why spiritual delights are objectively greater than bodily ones: the good enjoyed is higher; the power enjoying (intellect) is greater than sense; and the mode differs, since bodily pleasures consist *in fieri et in motu*, and what is only in becoming is never possessed whole at once. The proof, he says, is twofold — by experience, the servant who keeps them, and by effect. Then he presses the preposition: Scripture does not say *pro custodia* but *in custodiendis illis*, because the keeping of them is itself the great reward. The distinction is exactly the one the Douay’s “and in keeping them there is a great reward” preserves and the antiphon, which stops before it, does not.
 
+<!-- end of quotation -->
+
 > **St. Augustine, *Enarr. in Ps.* 18, Sermo I §§9–12 and Sermo II §§9–12** Sermo I reads the law-section christologically — the spotless law is Christ — and produces the image the Offertory most invites: one may already be honey, freed from this life, or still be honeycomb, wrapped in this life as in wax, needing God’s hand not to crush but to press one out of temporal into eternal life. At §12 he insists the reward for keeping the judgments is not some external benefit but the keeping itself. Sermo II reads the same verses pneumatologically and against the Donatists, punctuating each clause with *Hoc est Spiritus sanctus* and turning *iustificata in idipsum* onto ecclesial unity: *non ad rixas divisionis, sed ad congregationem unitatis*. The second sermon is not in the public-domain NPNF English, which prints only the first; it was read in Latin.
+
+<!-- end of quotation -->
 
 > **Theodoret of Cyrus, *Interpretatio in Psalmos* 18 (PG 80, cols. 996–997)** Theodoret expounds the five names the Law gives itself — law, testimony, judgments, command, decrees — and assigns each a distinct function, the judgments gladdening the heart by revealing the basis of judgment. He then qualifies the sweetness in a way no other witness here does: these things are worth more than gold and sweeter than honey not to all human beings, but to those truly human, whose life is not comparable with the beasts. Summarised, not quoted, for the rights reason given above.
 
@@ -491,9 +533,15 @@ The antiphon also reads *et ego in eo* where the Clementine Vulgate reads *et eg
 
 > **St. Augustine, *Tractates on John* 26, §§11–18, and 27, §§1, 6** Augustine builds the apparatus before he touches the clause. At §12 he separates the visible rite from its power — “the sacrament is one thing, the virtue of the sacrament another” — and gives the formula the whole later tradition uses: “he that eats within, not without; who eats in his heart, not who presses with his teeth.” At §13 he brings in 1 Corinthians 10:17, the verse the day’s own Epistle stops four verses short of: “One bread, says he, we being many are one body. O mystery of piety! O sign of unity! O bond of charity!” At §15 he distinguishes the sacrament of the thing from the thing itself, which is the fellowship of the body and its members. Only then, at §18, does he reach the antiphon’s clause: “This it is, therefore, for a man to eat that meat and to drink that drink, to dwell in Christ, and to have Christ dwelling in him.” Tractate 27 §1 turns it into a test: “The proof that a man has eaten and drank is this, if he abides and is abode in.” English from the public-domain NPNF first series, vol. 7, tr. John Gibb. **Correction 3:** 1 Corinthians 10:17 is quoted in Tractate 26 only, not in Tractate 27.
 
+<!-- end of quotation -->
+
 > **St. John Chrysostom, *Homilies on John* 47** Chrysostom’s word for the union is mixture: “He that eats My flesh, dwells in Me. This He said, showing that such an one is blended with Him.” The consequence follows as a syllogism — “for if he dwells in Me, and I live, it is plain that he will live also.” He then guards the following verse against a subordinationist reading and insists that the life promised is not bare life, since unbelievers live too, but “that glorious and ineffable life.” NPNF first series, vol. 14, tr. Charles Marriott.
 
+<!-- end of quotation -->
+
 > **St. Cyril of Alexandria, *Commentary on John* IV.2, tr. P. E. Pusey (Library of the Fathers, 1874)** Cyril illustrates the indwelling twice, physically: “as if one should join wax with other wax, he will surely see (I suppose) the one in the other,” and then leaven in the lump, so that “the least portion of the Blessing blendeth our whole body with itself.” He draws a pastoral conclusion that runs *against* abstention: those who plead unworthiness will, if they wait until they have stopped stumbling, never communicate at all, since the Blessing is medicinal.
+
+<!-- end of quotation -->
 
 > **St. Thomas Aquinas, *Super Ioannem* c. 6, lect. 7, n. 976 — and this one is authentic** Thomas casts the passage as a syllogism in which the antiphon’s verse is the major premise: whoever eats is joined to Christ; whoever is joined to Christ has life. Taken *mystice* there is no difficulty — spiritual eating is incorporation *per unionem fidei et caritatis*. Taken of sacramental reception he distinguishes, on Augustine’s authority (*Tract. in Ioh.* 26.18, quoted above), those who eat *non sacramentaliter tantum, sed revera* from those *qui in corde ficto ad illud accedunt*, in whom *nullum enim effectum habet sacramentum in ficto*. And he defines the feigning structurally: *Fictus enim est, cum non respondet interius quod signatur exterius* — and what this sacrament outwardly signifies is precisely the mutual indwelling. So the appointed clause functions in Thomas as the criterion by which fruitful reception is told from bare reception.
 
@@ -577,6 +625,8 @@ Read in sequence, the texts make one movement. Received help reforms desire; rem
 >
 > Everything below is exploratory editorial and AI proposal. None of it is sourced historical intent, attributed teaching, or documented reception, and none of it should be quoted as any of those. Each proposal was tested against the corpus checked for this guide and against a targeted search for its own distinctive conjunction; the results of those searches, and each proposal’s controlling limit, are recorded in `research/scope.md`. Evidence, doctrine, and the literal sense of the appointed texts govern; where a proposal and a checked witness conflict, the witness wins.
 
+<!-- end of quotation -->
+
 > **Editorial proposal — The day begins with the verb the city could not perform**
 >
 > **Anchors:** Gospel <span class="nodecor">(*Gosp.*)</span>, *eo quod non cognóveris tempus visitatiónis tuæ*; Introit <span class="nodecor">(*Int.*)</span>, *Ecce Deus ádiuvat me*, together with the missal’s inversion of the psalm’s own order.
@@ -588,6 +638,8 @@ Read in sequence, the texts make one movement. Received help reforms desire; rem
 > **What the ordinary reading misses:** Taken element by element, the Introit is generic confidence and the Gospel is a prophecy of siege; the inversion in the Introit’s construction is invisible unless the psalm is set beside the antiphon.
 >
 > **Strongest limit:** The inversion may be entirely a chant-repertory or centonising habit with no interpretive intent, and antiphons routinely take non-initial verses. *Ecce* and *cognóveris* share no root, the two texts share no vocabulary, and nothing here is evidence about any compiler.
+
+<!-- end of quotation -->
 
 > **Editorial proposal — The granted prayer is the danger the Collect is built against**
 >
@@ -601,6 +653,8 @@ Read in sequence, the texts make one movement. Received help reforms desire; rem
 >
 > **Strongest limit:** The Collect never mentions the wilderness; Numbers 11 reaches it only through the Epistle. *Desideráta* is neutral and the prayer nowhere says the things desired are evil — only that they may not be what pleases God. The proposal is a reading of adjacency, not of dependence.
 
+<!-- end of quotation -->
+
 > **Editorial proposal — Sweetened judgment is not softened judgment: the Offertory as Jeremiah’s answer**
 >
 > **Anchors:** Gospel <span class="nodecor">(*Gosp.*)</span>, the Temple action and *spelúncam latrónum* with its source in Jeremiah 7; Offertory <span class="nodecor">(*Off.*)</span>, *iudícia eius dulcióra super mel et favum: nam et servus tuus custódit ea*.
@@ -613,6 +667,8 @@ Read in sequence, the texts make one movement. Received help reforms desire; rem
 >
 > **Strongest limit:** No checked witness joins Psalm 18 to Luke 19 in this way. Psalm 18 has nothing to do with a temple; the Offertory is a centonisation whose assembly may be much older than any pairing with this Gospel; and the Gospel’s severity is not thereby made comfortable.
 
+<!-- end of quotation -->
+
 > **Editorial proposal — The Gospel’s last clause and the Secret’s *quóties* share one grammar**
 >
 > **Anchors:** Gospel <span class="nodecor">(*Gosp.*)</span>, *et erat docens cotídie in templo*; Secret <span class="nodecor">(*Sec.*)</span>, *quóties huius hóstiæ commemorátio celebrátur, opus nostræ redemptiónis exercétur*.
@@ -624,6 +680,8 @@ Read in sequence, the texts make one movement. Received help reforms desire; rem
 > **What the ordinary reading misses:** Element by element these are a narrative detail and a doctrinal clause, and the pericope’s endpoint looks arbitrary.
 >
 > **Strongest limit:** *Cotídie* and *quóties* are different words with different force — one temporal, one distributive — and the parallel is structural rather than verbal. The Secret is a Roman oration whose date and origin were not investigated here, and nothing indicates that anyone chose it for this Gospel.
+
+<!-- end of quotation -->
 
 > **Editorial proposal — The Alleluia is sung from inside the sepulchre, before the tears**
 >
@@ -651,6 +709,8 @@ Three verified afterlives of wording from the scriptural propers, each one a use
 >
 > **Rights and limit.** Blomefield’s *Essay* (Norwich, 1806 issue of the continued work) and the inscription itself are long out of copyright; the text was read in the British History Online edition. The witness is Blomefield’s transcription of a monument, not the monument; whether the stone survives was not investigated.
 
+<!-- end of quotation -->
+
 > **Gospel, Lk. 19:46 — Ambrose Bierce turns the accusation back on the accusers, 1911**
 >
 > **Appointed phrase.** *Vos autem fecístis illam spelúncam latrónum*, Douay–Rheims “But you have made it a den of thieves.”
@@ -660,6 +720,8 @@ Three verified afterlives of wording from the scriptural propers, each one a use
 > **The turn.** This is a double reversal, which sets it apart from a hundred sermons on financial greed. Bierce first performs the expected secularisation — Christ’s charge against the Temple becomes the standard charge against the stock exchange, complete with a temple standing in for a market. Then he takes it back: the phrase, he says, is not a moral judgment at all but a consolation, and what it consoles is failed avarice. The accusation that once cleared a sanctuary is redescribed as the liturgy of people who wish they had got in. Bierce then extends the joke by citing Andrew Carnegie’s own denunciation of brokers as parasites.
 >
 > **Rights and limit.** *The Devil’s Dictionary* was published in 1911 and is in the public domain in the United States. The verbal link is to the Douay–Rheims and King James wording “den of thieves”; Bierce does not cite Luke, and the dependence is on the naturalised English idiom rather than on this pericope specifically. The money-changers usually invoked alongside this phrase are *not* in the appointed Gospel: Luke names only sellers and buyers, and the tables belong to Mark, Matthew and John.
+
+<!-- end of quotation -->
 
 > **Gospel, Lk. 19:46 — a translator smuggles the Temple into Molière’s Paris, 1908**
 >

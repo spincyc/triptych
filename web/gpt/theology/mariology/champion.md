@@ -778,11 +778,15 @@ It is a legacy judgment made under the discipline then governing alleged private
 >
 > **Limit of that reception:** The judgment does not make every later biography, devotional expansion, image, prediction, healing, preservation claim, or institutional development part of the judged apparition corpus.
 
+<!-- end of quotation -->
+
 > **Event or tradition:** The survival of the chapel-school enclosure and those gathered there during the fires of 8–9 October 1871, remembered through prayer and procession.
 >
 > **Ecclesial reception or judgment:** The 2010 decree recounts the episode among historical signs of devotion and enduring spiritual fruit.
 >
 > **Limit of that reception:** The operative clause does not declare the preservation a miracle, and Pernin’s earliest substantial printed account deliberately withholds that conclusion.
+
+<!-- end of quotation -->
 
 > **Event or tradition:** The continuing shrine, the local solemnity on the shrine grounds, the title Our Lady of Champion, and Adele’s cause of beatification and canonization.
 >

@@ -61,6 +61,8 @@ The complete proper of *DOMINICA NONA post Pentecosten*, *II classis*, follows f
 >
 > *Ecce Deus ádiuvat me, et Dóminus suscéptor est ánimæ meæ: avérte mala inimícis meis, et in veritáte tua dispérde illos, protéctor meus, Dómine. <span class="nodecor">Ps. ibid., 3</span> Deus, in nómine tuo salvum me fac: et in virtúte tua líbera me. <span class="nodecor">℣. Glória Patri.</span>*
 
+<!-- end of quotation -->
+
 > **Douay–Rheims (Challoner), Ps. 53:6–7 and 53:3**
 >
 > For behold God is my helper: and the Lord is the protector of my soul. Turn back the evils upon my enemies; and cut them off in thy truth. *Ps.* Save me, O God, by thy name, and judge me in thy strength.
@@ -72,6 +74,8 @@ The complete proper of *DOMINICA NONA post Pentecosten*, *II classis*, follows f
 > ***Oratio***
 >
 > *Páteant aures misericórdiæ tuæ, Dómine, précibus supplicántium: et, ut peténtibus desideráta concédas; fac eos, quæ tibi sunt plácita, postuláre. Per Dóminum.*
+
+<!-- end of quotation -->
 
 > **Cummiskey hand missal (1861), Collect, p. 414**
 >
@@ -85,6 +89,8 @@ The complete proper of *DOMINICA NONA post Pentecosten*, *II classis*, follows f
 >
 > *Fratres: Non simus concupiscéntes malórum, sicut et illi concupiérunt. Neque idolólatræ efficiámini, sicut quidam ex ipsis: quemádmodum scriptum est: Sedit pópulus manducáre et bíbere, et surrexérunt lúdere. Neque fornicémur, sicut quidam ex ipsis fornicáti sunt, et cecidérunt una die vigínti tria mília. Neque tentémus Christum, sicut quidam eórum tentavérunt, et a serpéntibus periérunt. Neque murmuravéritis, sicut quidam eórum murmuravérunt, et periérunt ab exterminatóre. Hæc autem ómnia in figúra contingébant illis: scripta sunt autem ad correptiónem nostram, in quos fines sæculórum devenérunt. Itaque qui se exístimat stare, vídeat ne cadat. Tentátio vos non apprehéndat, nisi humána: fidélis autem Deus est, qui non patiétur vos tentári supra id quod potéstis, sed fáciet étiam cum tentatióne provéntum, ut possítis sustinére.*
 
+<!-- end of quotation -->
+
 > **Douay–Rheims (Challoner), 1 Cor. 10:6–13**
 >
 > … that we should not covet evil things, as they also coveted. Neither become ye idolaters, as some of them, as it is written: The people sat down to eat and drink and rose up to play. Neither let us commit fornication, as some of them committed fornication: and there fell in one day three and twenty thousand. Neither let us tempt Christ, as some of them tempted and perished by the serpents. Neither do you murmur, as some of them murmured and were destroyed by the destroyer. Now all these things happened to them in figure: and they are written for our correction, upon whom the ends of the world are come. Wherefore, he that thinketh himself to stand, let him take heed lest he fall. Let no temptation take hold on you, but such as is human. And God is faithful, who will not suffer you to be tempted above that which you are able: but will make also with temptation issue, that you may be able to bear it.
@@ -97,6 +103,8 @@ The complete proper of *DOMINICA NONA post Pentecosten*, *II classis*, follows f
 >
 > *Dómine Dóminus noster, quam admirábile est nomen tuum in univérsa terra! <span class="nodecor">℣.</span> Quóniam eleváta est magnificéntia tua super cælos.*
 
+<!-- end of quotation -->
+
 > **Douay–Rheims (Challoner), Ps. 8:2**
 >
 > O Lord, our Lord, how admirable is thy name in the whole earth! ℣. For thy magnificence is elevated above the heavens.
@@ -107,6 +115,8 @@ The complete proper of *DOMINICA NONA post Pentecosten*, *II classis*, follows f
 >
 > *Allelúia, allelúia. <span class="nodecor">℣.</span> Eripe me de inimícis meis, Deus meus: et ab insurgéntibus in me líbera me. Allelúia.*
 
+<!-- end of quotation -->
+
 > **Douay–Rheims (Challoner), Ps. 58:2**
 >
 > Alleluia, alleluia. ℣. Deliver me from my enemies, O my God; and defend me from them that rise up against me. Alleluia.
@@ -116,6 +126,8 @@ The complete proper of *DOMINICA NONA post Pentecosten*, *II classis*, follows f
 > ***✠ Sequéntia sancti Evangélii secúndum Lucam* — Luc. 19, 41–47**
 >
 > *In illo témpore: Cum appropinquáret Iesus Ierúsalem, videns civitátem, flevit super illam, dicens: Quia si cognovísses et tu, et quidem in hac die tua, quæ ad pacem tibi, nunc autem abscóndita sunt ab óculis tuis. Quia vénient dies in te: et circúmdabunt te inimíci tui vallo, et circúmdabunt te: et coangustábunt te úndique: et ad terram prostérnent te, et fílios tuos, qui in te sunt, et non relínquent in te lápidem super lápidem: eo quod non cognóveris tempus visitatiónis tuæ. Et ingréssus in templum, cœpit eícere vendéntes in illo, et eméntes, dicens illis: Scriptum est: Quia domus mea domus oratiónis est. Vos autem fecístis illam spelúncam latrónum. Et erat docens cotídie in templo.*
+
+<!-- end of quotation -->
 
 > **Douay–Rheims (Challoner), Luke 19:41–47a**
 >
@@ -129,6 +141,8 @@ The complete proper of *DOMINICA NONA post Pentecosten*, *II classis*, follows f
 >
 > *Iustítiæ Dómini rectæ, lætificántes corda, et iudícia eius dulcióra super mel et favum: nam et servus tuus custódit ea.*
 
+<!-- end of quotation -->
+
 > **Douay–Rheims (Challoner), Ps. 18:9–12; complete verses, selected fragments emphasized**
 >
 > **The justices of the Lord are right, rejoicing hearts:** the commandment of the Lord is lightsome, enlightening the eyes. The fear of the Lord is holy, enduring for ever and ever: **the judgments of the Lord** are true, justified in themselves. More to be desired than gold and many precious stones: and **sweeter than honey and the honeycomb.** **For thy servant keepeth them,** and in keeping them there is a great reward.
@@ -140,6 +154,8 @@ The complete proper of *DOMINICA NONA post Pentecosten*, *II classis*, follows f
 > ***Secreta***
 >
 > *Concéde nobis, quæsumus, Dómine, hæc digne frequentáre mystéria: quia, quóties huius hóstiæ commemorátio celebrátur, opus nostræ redemptiónis exercétur. Per Dóminum.*
+
+<!-- end of quotation -->
 
 > **Cummiskey hand missal (1861), Secret, p. 415**
 >
@@ -153,6 +169,8 @@ The complete proper of *DOMINICA NONA post Pentecosten*, *II classis*, follows f
 >
 > *Qui mandúcat meam carnem, et bibit meum sánguinem, in me manet, et ego in eo, dicit Dóminus.*
 
+<!-- end of quotation -->
+
 > **Douay–Rheims (Challoner), John 6:57**
 >
 > He that eateth my flesh and drinketh my blood abideth in me: and I in him.
@@ -164,6 +182,8 @@ The complete proper of *DOMINICA NONA post Pentecosten*, *II classis*, follows f
 > ***Postcommunio***
 >
 > *Tui nobis, quæsumus, Dómine, commúnio sacraménti, et purificatiónem cónferat, et tríbuat unitátem. Per Dóminum.*
+
+<!-- end of quotation -->
 
 > **Cummiskey hand missal (1861), Postcommunion, p. 415**
 >

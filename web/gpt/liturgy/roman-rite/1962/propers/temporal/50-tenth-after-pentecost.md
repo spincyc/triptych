@@ -115,6 +115,8 @@ The Latin below is collated against the 1962 Vatican typical Missal, printed pp.
 >
 > *Psalmus.* Exáudi, Deus, oratiónem meam, et ne despéxeris deprecatiónem meam: inténde mihi, et exáudi me.
 
+<!-- end of quotation -->
+
 > **Douay–Rheims/Challoner, Ps. 54:17–19, 20, 23, 2**
 >
 > But I have cried to God: and the Lord will save me. Evening and morning, and at noon I will speak and declare: and he shall hear my voice. God shall hear, and the Eternal shall humble them. He hath redeemed my soul in peace from them that draw near to me. Cast thy care upon the Lord, and he shall sustain thee. Hear, O God, my prayer, and despise not my supplication.
@@ -127,6 +129,8 @@ The Latin below is collated against the 1962 Vatican typical Missal, printed pp.
 >
 > *Deus, qui omnipoténtiam tuam parcéndo máxime et miserándo maniféstas: multíplica super nos misericórdiam tuam; ut, ad tua promíssa curréntes, cæléstium bonórum fácias esse consórtes. Per Dóminum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum.*
 
+<!-- end of quotation -->
+
 > **Cummiskey hand missal (1861), Collect, p. 416**
 >
 > O God, who chiefly manifestest thy Almighty power in pardoning and shewing mercy, increase thy goodness towards us: that having recourse to thy promises, we may be partakers of thy heavenly blessing. Thro’.
@@ -136,6 +140,8 @@ The Latin below is collated against the 1962 Vatican typical Missal, printed pp.
 > ***1 ad Corinthios 12:2–11***
 >
 > *Fratres: Scitis quóniam cum gentes essétis, ad simulácra muta prout ducebámini eúntes. Ideo notum vobis fácio, quod nemo in Spíritu Dei loquens, dicit anáthema Iesu. Et nemo potest dícere, Dóminus Iesus, nisi in Spíritu Sancto. Divisiónes vero gratiárum sunt, idem autem Spíritus. Et divisiónes ministratiónum sunt, idem autem Dóminus. Et divisiónes operatiónum sunt, idem vero Deus, qui operátur ómnia in ómnibus. Unicuíque autem datur manifestátio Spíritus ad utilitátem. Alii quidem per Spíritum datur sermo sapiéntiæ: álii autem sermo sciéntiæ secúndum eúndem Spíritum: álteri fides in eódem Spíritu: álii grátia sanitátum in uno Spíritu: álii operátio virtútum, álii prophétia, álii discrétio spirítuum, álii génera linguárum, álii interpretátio sermónum. Hæc autem ómnia operátur unus atque idem Spíritus, dívidens síngulis prout vult.*
+
+<!-- end of quotation -->
 
 > **Douay–Rheims/Challoner, 1 Cor. 12:2–11**
 >
@@ -149,6 +155,8 @@ The Latin below is collated against the 1962 Vatican typical Missal, printed pp.
 >
 > Allelúia, allelúia. *℣.* Te decet hymnus, Deus, in Sion: et tibi reddétur votum in Ierúsalem. Allelúia.
 
+<!-- end of quotation -->
+
 > **Douay–Rheims/Challoner, Ps. 16:8, 2; 64:2**
 >
 > Keep me as the apple of thy eye. Protect me under the shadow of thy wings. Let my judgment come forth from thy countenance: let thy eyes behold the things that are equitable. A hymn, O God, becometh thee in Sion: and a vow shall be paid to thee in Jerusalem.
@@ -158,6 +166,8 @@ The Latin below is collated against the 1962 Vatican typical Missal, printed pp.
 > ***Lucas 18:9–14***
 >
 > *In illo témpore: Dixit Iesus ad quosdam, qui in se confidébant tamquam iusti, et aspernabántur céteros, parábolam istam: Duo hómines ascendérunt in templum ut orárent: unus pharisǽus, et alter publicánus. Pharisǽus stans, hæc apud se orábat: Deus, grátias ago tibi, quia non sum sicut céteri hóminum: raptóres, iniústi, adúlteri: velut étiam hic publicánus. Ieiúno bis in sábbato: décimas do ómnium, quæ possídeo. Et publicánus a longe stans nolébat nec óculos ad cælum leváre: sed percutiébat pectus suum, dicens: Deus, propítius esto mihi peccatóri. Dico vobis: descéndit hic iustificátus in domum suam ab illo: quia omnis qui se exáltat, humiliábitur: et qui se humíliat, exaltábitur.*
+
+<!-- end of quotation -->
 
 > **Douay–Rheims/Challoner, Luke 18:9–14**
 >
@@ -169,6 +179,8 @@ The Latin below is collated against the 1962 Vatican typical Missal, printed pp.
 >
 > *Ad te, Dómine, levávi ánimam meam: Deus meus, in te confído, non erubéscam: neque irrídeant me inimíci mei: étenim univérsi, qui te exspéctant, non confundéntur.*
 
+<!-- end of quotation -->
+
 > **Douay–Rheims/Challoner, Ps. 24:1–3**
 >
 > To thee, O Lord, have I lifted up my soul. In thee, O my God, I put my trust; let me not be ashamed. Neither let my enemies laugh at me: for none of them that wait on thee shall be confounded.
@@ -179,6 +191,8 @@ The Latin below is collated against the 1962 Vatican typical Missal, printed pp.
 >
 > *Tibi, Dómine, sacrifícia dicáta reddántur: quæ sic ad honórem nóminis tui deferénda tribuísti, ut eádem remédia fíeri nostra præstáres. Per Dóminum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.*
 
+<!-- end of quotation -->
+
 > **Cummiskey hand missal (1861), Secret, p. 417**
 >
 > May the sacrifice, we offer, O Lord, be presented before thee: which thou hast appointed to be offered in honour of thy name; and at the same time become a remedy to us. Thro’.
@@ -188,6 +202,8 @@ The Latin below is collated against the 1962 Vatican typical Missal, printed pp.
 > ***Psalmus 50:21***
 >
 > *Acceptábis sacrifícium iustítiæ, oblatiónes et holocáusta, super altáre tuum, Dómine.*
+
+<!-- end of quotation -->
 
 > **Douay–Rheims/Challoner, Ps. 50:21**
 >
@@ -200,6 +216,8 @@ The Latin below is collated against the 1962 Vatican typical Missal, printed pp.
 > ***Postcommunio***
 >
 > *Quǽsumus, Dómine Deus noster: ut, quos divínis reparáre non désinis sacraméntis, tuis non destítuas benígnus auxíliis. Per Dóminum nostrum.*
+
+<!-- end of quotation -->
 
 > **Cummiskey hand missal (1861), Postcommunion, p. 418**
 >
@@ -384,9 +402,13 @@ The result is ecclesial as well as personal. The common-benefit criterion, Zion�
 >
 > Peter J. Green gave the exact Pauline phrase to his 2003 Royal Statistical Society presidential address on diversity within statistics. The published summary reviews the discipline’s variety, seeks an essential unity, and urges stronger bonds against fragmentation. A statement about charisms becomes a title for intellectual specialization and common scientific purpose. The verbal allusion is transparent; Green’s own account of choosing it appears in none of the records checked.
 
+<!-- end of quotation -->
+
 > **The Pharisee given a satirical Scots voice**
 >
 > Robert Burns’s “Holy Willie’s Prayer,” composed in 1785, makes the Pharisee’s self-congratulating prayer into an ironic dramatic monologue. Holy Willie blesses God for making him a chosen “sample” and a “pillar” in the temple, excuses his own misconduct, and calls down destruction on his opponents. Luke’s spiritual inventory becomes a satire of ecclesial hypocrisy. This is a strong structural and verbal echo, not a quotation of the appointed English; the poem is public domain.
+
+<!-- end of quotation -->
 
 > **The Pharisee and publican after Emmett Till**
 >

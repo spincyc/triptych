@@ -64,6 +64,8 @@ PC-S43-A
 >
 > This formulary does not reduce to one slogan. Its correlated strand joins Solomon’s listening heart, the Psalm’s valuation of divine instruction, and Jesus’ treasure and pearl: wisdom learns what is worth choosing. Romans contributes a semi-continuous word about God’s purpose amid suffering, not a hidden key to the parables. The proper chants and prayers gather the assembly, order passing goods, return received bounty, and ask that sacramental memory become saving love.
 
+<!-- end of quotation -->
+
 > **Hear, revalue, conform, return**
 >
 > **1. Hear — Entrance; Collect; First Reading.** God gathers and strengthens a people; Solomon confesses inadequacy and asks for judgment that listens.

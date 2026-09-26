@@ -120,6 +120,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *Deus in loco sancto suo: Deus qui inhabitáre facit unánimes in domo: ipse dabit virtútem et fortitúdinem plebi suæ. <span class="nodecor">Ps. ibid., 2</span> Exsúrgat Deus, et dissipéntur inimíci eius: et fúgiant, qui odérunt eum, a fácie eius. ℣. Glória Patri.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Ps. 67:6–7 and 36 in full, with the fragments the antiphon takes in bold, and Ps. 67:2**
 >
 > **v. 6** Who is the father of orphans, and the judge of widows. **God in his holy place:** **v. 7** **God who maketh men of one manner to dwell in a house:** Who bringeth out them that were bound in strength; in like manner them that provoke, that dwell in sepulchres. **v. 36** God is wonderful in his saints: the God of Israel is **he who will give power and strength to his people.** Blessed be God.
@@ -134,6 +136,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *Omnípotens sempitérne Deus, qui, abundántia pietátis tuæ, et mérita súpplicum excédis et vota: effúnde super nos misericórdiam tuam; ut dimíttas quæ consciéntia métuit, et adícias quod orátio non præsúmit. Per Dóminum nostrum.*
 
+<!-- end of quotation -->
+
 > **English: Cummiskey (Philadelphia, 1861), Collect of this formulary, printed p. 418**
 >
 > O Almighty and eternal God, who, in the abundance of thy goodness, exceedest both the merits and requests of thy suppliants; pour forth thy mercy upon us: and both pardon what our consciences dreadeth, and grant such blessings as we dare not presume to ask. Thro’.
@@ -145,6 +149,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 > ***Léctio Epístolæ beáti Pauli Apóstoli ad Corínthios* — 1 Cor. 15, 1-10 — marginal no. 1544**
 >
 > *Fratres: Notum vobis fácio Evangélium, quod prædicávi vobis, quod et accepístis, in quo et statis, per quod et salvámini: qua ratióne prædicáverim vobis, si tenétis, nisi frustra credidístis. Trádidi enim vobis in primis, quod et accépi: quóniam Christus mórtuus est pro peccátis nostris secúndum Scriptúras: et quia sepúltus est, et quia resurréxit tértia die secúndum Scriptúras: et quia visus est Cephæ, et post hoc úndecim. Deínde visus est plus quam quingéntis frátribus simul, ex quibus multi manent usque adhuc, quidam autem dormiérunt. Deínde visus est Iacóbo, deínde Apóstolis ómnibus: novíssime autem ómnium tamquam abortívo, visus est et mihi. Ego enim sum mínimus Apostolórum, qui non sum dignus vocári Apóstolus, quóniam persecútus sum Ecclésiam Dei. Grátia autem Dei sum id quod sum, et grátia eius in me vácua non fuit.*
+
+<!-- end of quotation -->
 
 > **English: Douay–Rheims (Challoner), 1 Cor. 15:1–10, to the point at which the lesson ends**
 >
@@ -158,6 +164,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *In Deo sperávit cor meum, et adiútus sum: et reflóruit caro mea, et ex voluntáte mea confitébor illi. ℣. Ad te, Dómine, clamávi: Deus meus, ne síleas, ne discédas a me.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Ps. 27:7 and 27:1 in full, with the sung words in bold**
 >
 > **v. 7** The Lord is my helper and my protector: **in him hath my heart confided, and I have been helped. And my flesh hath flourished again, and with my will I will give praise to him.** **v. 1** A psalm for David himself. **Unto thee will I cry, O Lord: O my God, be not thou silent to me:** lest if thou be silent to me, I become like them that go down into the pit.
@@ -170,6 +178,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *Allelúia, allelúia. ℣. <span class="nodecor">Ps. 80, 2-3</span> Exsultáte Deo adiutóri nostro, iubiláte Deo Iacob: súmite psalmum iucúndum cum cíthara. Allelúia.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Ps. 80:2–3 in full, with the sung words in bold**
 >
 > **v. 2** **Rejoice to God our helper: sing aloud to the God of Jacob.** **v. 3** **Take a psalm,** and bring hither the timbrel: the pleasant psaltery **with the harp.**
@@ -181,6 +191,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 > ***✠ Sequéntia sancti Evangélii secúndum Marcum* — Marc. 7, 31-37 — marginal no. 1547**
 >
 > *In illo témpore: Exiens Iesus de fínibus Tyri, venit per Sidónem ad mare Galilǽæ, inter médios fines Decapóleos. Et addúcunt ei surdum et mutum, et deprecabántur eum, ut impónat illi manum. Et apprehéndens eum de turba seórsum, misit dígitos suos in aurículas eius: et éxspuens, tétigit linguam eius: et suspíciens in cælum, ingémuit, et ait illi: Ephphetha, quod est adaperíre. Et statim apértæ sunt aures eius, et solútum est vínculum linguæ eius, et loquebátur recte. Et præcépit illis, ne cui dícerent. Quanto autem eis præcipiébat, tanto magis plus prædicábant: et eo ámplius admirabántur, dicéntes: Bene ómnia fecit: et surdos fecit audíre, et mutos loqui.*
+
+<!-- end of quotation -->
 
 > **English: Douay–Rheims (Challoner), Mk. 7:31–37**
 >
@@ -196,6 +208,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > *Exaltábo te, Dómine, quóniam suscepísti me, nec delectásti inimícos meos super me: Dómine, clamávi ad te, et sanásti me.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Ps. 29:2–3 in full, with the sung words in bold**
 >
 > **v. 2** **I will extol thee, O Lord, for thou hast upheld me: and hast not made my enemies to rejoice over me.** **v. 3** **O Lord** my God, **I have cried to thee, and thou hast healed me.**
@@ -207,6 +221,8 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 > ***Secreta* — marginal no. 1549**
 >
 > *Réspice, Dómine, quǽsumus, nostram propítius servitútem: ut, quod offérimus, sit tibi munus accéptum, et sit nostræ fragilitátis subsídium. Per Dóminum.*
+
+<!-- end of quotation -->
 
 > **English: Cummiskey (Philadelphia, 1861), Secret of this formulary, printed p. 420**
 >
@@ -222,6 +238,8 @@ The 1861 book prints no incipit for this Secret; its lines answer the appointed 
 >
 > *Honóra Dóminum de tua substántia, et de primítiis frugum tuárum: et implebúntur hórrea tua saturitáte, et vino torculária redundábunt.*
 
+<!-- end of quotation -->
+
 > **English: Douay–Rheims (Challoner), Prov. 3:9–10 in full, with the sung words in bold**
 >
 > **v. 9** **Honour the Lord with thy substance, and** give him **of the first of** all **thy fruits;** **v. 10** **And thy barns shall be filled with abundance, and thy presses shall run over with wine.**
@@ -233,6 +251,8 @@ The 1861 book prints no incipit for this Secret; its lines answer the appointed 
 > ***Postcommunio* — marginal no. 1551**
 >
 > *Sentiámus, quǽsumus, Dómine, tui perceptióne sacraménti, subsídium mentis et córporis: ut, in utróque salváti, cæléstis remédii plenitúdine gloriémur. Per Dóminum.*
+
+<!-- end of quotation -->
 
 > **English: Cummiskey (Philadelphia, 1861), Postcommunion of this formulary, printed p. 420**
 >
@@ -296,13 +316,23 @@ The complete appointed Latin has already been printed above, in liturgical order
 
 > **St. Hilary of Poitiers, *Tractatus super Psalmum* 67, §§2, 8, 37 (CSEL 22)** The earliest Latin exposition of the psalm, and it reads the whole thing as prophecy of Christ. On the psalm verse the missal sings — *Exsúrgat Deus* — Hilary is explicit that the rising asked for is the Resurrection: *resurrectionis enim nunc in deo tempus optatur*. At vv. 6–7 his lemma is *unimores*, a hyper-literal Latin for the Greek, and he is the first witness to weld the verse to the Jerusalem community of Acts: *ubi unius moris ac uoluntatis pacificus unanimisque conuentus — erat enim secundum Actus apostolorum credentium anima et cor unum*. At v. 36 he takes the giving of *virtus* and *fortitudo* as the resurrection of the body: God is wonderful in his saints *quos in uitae resurrectionem excitabit aeternos*, and gives strength to a people *quae inmortalis effecta intra se uitam uirtutemque contineat*.
 
+<!-- end of quotation -->
+
 > **St. Augustine, *Enarrationes in Psalmos* 67, §§2–3 (v. 2), §7 (vv. 6–7), §44 (v. 36; NPNF sec. 40)** Augustine’s lemma at v. 7 is *unius modi*, and he glosses it at once with the word the Introit sings: *unius modi habitare facit in domo*, that is, *unanimes, unum sentientes: iste est locus sanctus Domini*. He then makes the philological observation that the Greek admits either *modi* or *mores*, and notices that the Greek carries no prefix answering the *in* of *inhabitare*. The doctrinal point is the one the Introit’s first two clauses now make in sequence: God is contained by no place, so the holy place he is in is the one he makes — *ne quaeramus eum absque nobis; sed potius unius modi habitantes in domo, mereamur ut habitare etiam ipse dignetur in nobis* — and that place is built by grace and not by merits. On v. 2 he regards the petition as already answered: in the public-domain English of the NPNF translation, “Already this has come to pass: Christ has risen up … and His enemies have been dispersed through all nations.” On v. 36 the Introit’s last limb becomes resurrection doctrine, and he proves it out of the chapter the day’s own Epistle comes from: *Seminatur enim hoc corpus in infirmitate; surget in virtute* (1 Cor. 15:43), *virtutem resurrectionis eius* (Phil. 3:10), and *fortitudinem autem, qua inimica destruetur mors*. The full Latin shows that Augustine does **not** cite Acts 4:32 here. The Acts link that later readers assume is Augustinian is Hilary’s and Cassiodorus’s.
+
+<!-- end of quotation -->
 
 > **St. Jerome, *Tractatus de Psalmo* 67 (Morin)** A third track. Jerome’s lemma is *unius moris*, and he records what the Hebrew has: *In hebraeo autem habet “Dominus inhabitare facit monachos in domo”: id est, in quibus non cohabitat peccatum*. The monk hears *monks* in the verse. His exposition is accordingly moral rather than ecclesial — *Qui unius moris sunt, et non mutantur … Peccator autem mutatur*; *ubicumque sanctitas est, ibi habitaculum Dei est*. On v. 2 he states a double key openly: *specialiter* of the Lord, *ut resurgat a mortuis, et dispergat inimicos suos, hoc est diabolum et exercitum eius*, and *generaliter* whenever we are in tribulation. The homily breaks off at v. 31 and never reaches v. 36; the *Commentarioli* on this psalm begin only at v. 10.
 
+<!-- end of quotation -->
+
 > **Cassiodorus, *Expositio Psalmorum* 67, ad vv. 6, 7, 36** The one checked lemma that matches the Introit. Cassiodorus is the one checked expositor whose lemma is the Introit’s own text: *Deus, qui habitare facit unanimes in domo*. With that word in front of him he restores the Acts citation Augustine had dropped — *Multitudinis autem credentium erat cor unum et anima una* — adds Ps. 132:1, and identifies the house ecclesially: *In domo vero Ecclesiam significat*. At v. 36, however, he parts from Hilary and Augustine and takes the strength given to God’s people without any resurrection at all: *Dominus dabit fidelibus suis virtutem patientiae, et fidei fortitudinem, ut possint ad aeterna praemia pervenire*. The eschatology survives only as the *praemia*; the gift itself has been moralised into patience and faith.
 
+<!-- end of quotation -->
+
 > **Theodoret of Cyrus, *Interpretatio in Psalmos* 67, ad vv. 7 and 36 (PG 80, cols. 1380, 1400) — Greek-tradition sample** Theodoret reads the Septuagint’s “single-mannered” as those who hold one aim and choose to care for virtue only. There is no Acts citation, no monastic reading, and at v. 36 no resurrection: the saints are lovers of virtue whose lives make God be praised, on the model of Matthew 5:16, and the strengthening is providential. The only English of this commentary is in copyright, so Theodoret is summarised here and nowhere quoted.
+
+<!-- end of quotation -->
 
 > **Peter Lombard, *Commentarium in Psalmos* 67, ad v. 6 (PL 191); St. Robert Bellarmine, *Explanatio in Psalmos* 67, tr. John O’Sullivan (Dublin, 1866), pp. 196–201** The conveyor belt and its terminus. Lombard’s exposition is Augustine with the gloss embedded and tagged — *unius moris … id est unanimes, unum sentientes … Hunc autem locum gratia aedificat, non meritis* — which is how the schools received both the word and the anti-Pelagian point. By Bellarmine the Acts reading is simply standard: the dwellers are “of one mind, one will,” and he quotes “One soul, one heart.” At vv. 35–36 he follows Augustine rather than Cassiodorus: God “will endow his elect with true and real immortality.”
 
@@ -330,6 +360,8 @@ The complete appointed Latin has already been printed above, in liturgical order
 
 > **The continuation of Dom Prosper Guéranger, *The Liturgical Year* … *Time after Pentecost* (Dom Lucien Fromage), vol. II, 2nd ed., tr. Laurence Shepherd (1909), Eleventh Sunday, pp. 272–274** Fromage keys the Collect to the publican — and does so on historical grounds, citing Rupert of Deutz, *De divinis officiis* XII, 11, for an older arrangement that read Luke 18 on this Sunday. On the prayer itself: the Church, “with motherly tenderness, comes and takes up his faltering prayer, and gives it her own eloquence … granting them what they, poor sinners, are too afraid to presume to ask for.” That is reception of the second petition, and it reads *orátio* the way the 1861 missal does.
 
+<!-- end of quotation -->
+
 > **Blessed Ildefonso Schuster, *The Sacramentary* (*Liber Sacramentorum*), tr. Levelis-Marke, vol. III (1927), pp. 124–125** Schuster calls the Collect “a perfect liturgical gem” and says that “this short petition from the Sunday Liturgy contains a complete treatise on prayer.” The judgment matters because it is a judgment about compression: three clauses that between them state who prays, what prayer cannot reach, and what God does about the shortfall.
 
 **Afterlife in the reformed books.** The prayer did not stop in 1962. It is used verbatim, with the same contracted *adícias*, as the Collect of *Dominica XXVII per annum* in the postconciliar *Missale Romanum*. That reuse was verified in two independent unofficial Latin transcriptions; no free scan of the official *editio typica tertia* was located, so the official locus remains a lead and the postconciliar book is not quoted here. The reuse stands at that strength and no higher.
@@ -344,9 +376,15 @@ The complete appointed Latin has already been printed above, in liturgical order
 
 > **St. John Chrysostom, *Homiliae in epistulam I ad Corinthios* 38, §§2–3, 5, 7 (NPNF 1/12, tr. Chambers, 1889)** Chrysostom’s first observation is grammatical and it controls everything after it: Paul says *delivered* and *received*, not *taught* — “neither here does he say, I said to you, nor, I taught you, but uses the same expression again, saying, *I delivered unto you that which also I received*.” The gospel is transmission, not invention. The centre of the homily is anti-Manichaean: because Christ was sinless, his dying “for our sins” can only be the body’s death — “if being without sin He died, He died — not the death of sin … but the death of the body” — and *secúndum Scriptúras* pins that sense, with the burial clinching it. The appearance list he reads as a chain ordered by credibility, Cephas “the most credible of all”; and he notices that Paul writes *fallen asleep*, not *dead*, so that even the verb preaches resurrection. On v. 8 the self-abasement is calculated: “This is rather an expression of modesty than anything else.” On v. 10 — the lesson’s last words — he catches the reserve exactly: “he said not, I have displayed a diligence worthy of His grace, but, *it was not found vain*.” Chrysostom’s instinct throughout is **moral**. Augustine’s, on the same words, will be **dogmatic**.
 
+<!-- end of quotation -->
+
 > **Ambrosiaster, *Commentaria in epistulam ad Corinthios primam*, ad 15:1–11 (PL 17)** The earliest Latin commentary on the lesson, and the one with a text-critical surprise in it. On vv. 1–2 the stakes are total: those who desert the tradition *perdiderunt quod crediderunt; omnis enim spes credentium in hoc sensu est, quia mortui resurgent*. *Secundum Scripturas* he refers to the Old Testament, chiefly Isaiah 53, with an excursus on prophetic past tenses; the third day he takes from Hosea 6:3 read *sub persona populi*, adding *In Christo enim omnes resurrexisse, sicut in Adam omnes mortuos esse, nemo fidelium denegat*. James is singled out *ut multifaria apparentia fidem resurrectionis firmaret*. *Abortivus* he explains as *extra tempus natus* — Paul received the apostolate when Christ had already been received into heaven with his flesh. On v. 9, *tempore enim minor est, non dignitate*; on v. 10, *Ne se extulisse jactanter putaretur, statim se humiliat*. **And his lemma for the lesson’s last clause is not the Vulgate’s.** He reads *Et gratia ejus **pauper** in me non fuit* — “his grace was not poor in me” — an Old Latin variant that Cornelius a Lapide still knew, a millennium later, as “St. Ambrose’s” reading. The missal’s *vácua* is not the word the first Latin commentator had.
 
+<!-- end of quotation -->
+
 > **Theodoret of Cyrus, *Interpretatio in xiv epistulas S. Pauli*, in 1 Cor. 15 (PG 82, cols. 347–352; Migne’s Latin column quoted)** Theodoret states the chapter’s occasion first: impostors were denying the bodily resurrection, and cross, passion and resurrection all happened *propter resurrectionem communem*; hence *si enim non creditur resurrectio corporum, supervacanea est praedicatio Evangelii*. He builds the witness list as an ascending argument from testimony — the five hundred are *a suspicione alienum* and checkable, since *multi manent usque adhuc*. His reading of *abortivus* is his own and is the harshest in the tradition: Paul *abortivo fetui seipsum comparat, qui in hominum catalogo non recensetur* — the aborted foetus is not entered in the register of men. On v. 10 he catches Paul’s double bind: *Divitias occultare conatur, et aperire cogitur … Occultat enim miracula, et solum laborem ostendit, atque hunc quoque dicit esse divinae gratiae*. The only modern English of this commentary is in copyright, so the Latin column is quoted instead.
+
+<!-- end of quotation -->
 
 > **St. Thomas Aquinas, *Super I ad Corinthios*, cap. 15, lectio 1, nn. 888–911** **This corpus has a seam in it.** The *lectura* on 1 Corinthians survives with a gap filled from Peter of Tarantaise; that supplement covers 7:15–10:33, and the authentic *reportatio vulgata* resumes at chapter 11. Chapter 15 is therefore Thomas’s own. Lectio 1 covers vv. 1–11 entire and lectio 2 begins at v. 12, so the whole 1962 pericope sits inside one lecture. Thomas divides the four things delivered — death, burial, resurrection, appearance — gives three reasons the burial is named at all, and explains the omission of the women’s appearances with a principle of forensic economy: *noluit ponere testimonia nisi authentica*. He preserves Augustine’s judgment that the true reading at v. 5 is *duodecim* and that *undecim* is *corruptum … vitio scriptorum* — the missal prints *úndecim*, the appointed text above follows the missal, and the tradition mostly defends the harder number. On *abortivus* he does what a scholastic does and distinguishes three senses at once: *vel quia nascitur extra tempus debitum, vel cum violentia educitur, vel quia non perducitur ad debitam quantitatem* — and applies all three to Paul, including, remarkably, the second: converted by coercion, which he turns into an argument *contra haereticos, qui dicunt quod nullus debet cogi ad fidem, quia Paulus coactus fuit*. On the lesson’s own last words: *ex me nihil sum, sed id quod sum, gratia Dei sum … Et dicit “id quod sum,” quia homo sine gratia nihil est*. Larcher’s English is modern and in copyright, so the Latin is quoted instead.
 
@@ -382,13 +420,23 @@ Two conclusions follow, and the second is the one worth having. *First*, the Fat
 
 > **St. Augustine, *Enarrationes in Psalmos* 27, §§1, 7** Augustine assigns the whole psalm to Christ: *Ipsius mediatoris vox est, manu fortis in conflictu passionis*. On the versicle’s “be not silent from me” he reads a Christological danger — that the Word be separated from the assumed manhood. And at v. 7 he supplies the flattest and most consequential gloss in the whole tradition of this chant: *Et refloruit caro mea: id est, et resurrexit caro mea*. The flourishing is the Resurrection. He then notices the psalm’s own *ex voluntáte mea*: those freed from the fear of death confess him by free will.
 
+<!-- end of quotation -->
+
 > **Cassiodorus, *Expositio Psalmorum* 27, ad vv. 1, 7** Cassiodorus’s lemma at v. 7 is the chant’s *confitébor illi*. He follows Augustine on the speaker — *Christus Dominus clamat ad Patrem tempore passionis* — and then develops the flower-figure into a two-stage history that Augustine had left implicit: *Refloruit … quia et primo floruit: quippe quae ex Virgine sine peccato tanquam pulcherrimi floris singulare decus emicuit*, with Isaias 11:1 behind it. The flesh flowered in the virginal conception and re-flowered in the Resurrection. *Refloruit ergo significat resurrexit*: the prefix carries the doctrine.
+
+<!-- end of quotation -->
 
 > **St. Jerome, *Commentarioli in Psalmos* 27 (Morin)** Two short notes, both useful. On v. 1, *Lacus significat infernum* — and his lemma is the Gallican one, without *ne discédas*. On v. 7 he records a variant and then a second reading: *Pro carne, Theodotion “cor” interpretatus est. Aliter: quippe consurreximus Christo*. Theodotion read “heart” where the Church’s psalter reads “flesh”; and the flourishing may be read not of Christ’s flesh but of ours, risen with him. There is no Jerome homily on Psalm 27; the *Tractatus* series jumps from Psalm 14 to Psalm 66.
 
+<!-- end of quotation -->
+
 > **St. Thomas Aquinas, *Super Psalmo* 27, nn. 1, 7** Thomas divides the psalm scholastically and then, following the Gloss, gives the versicle to the man Christ praying not to be abandoned by the Godhead: *ne sileas subtrahendo mihi in beneficium resurrectionis, et ne taceas, idest ne deseras in passione*. He also records Jerome’s rendering of the Hebrew, *ne te tacente assimiler*. On v. 7 he gives the flower a salvation-historical span: *In primo homine floruit caro eius per innocentiae puritatem, sed peccando inquinata est. Sed in Christo refloruit in resurrectione*. His lemma for the last clause is *confitébor tibi*, not the chant’s *illi*, and he reads it of the converted will praising freely; he adds that if the verse is said of Christ, *refertur ad membra sua*.
 
+<!-- end of quotation -->
+
 > **Theodoret of Cyrus, *Interpretatio in Psalmos* 27, ad v. 7 (PG 80, col. 1060) — the dissent** Theodoret keeps the psalm where the Antiochene school keeps it: with David in flight from Saul, the Ziphites and Doeg. On v. 7 he understands a man released from the hardships of flight, sprouting and blooming again — bodily vigour recovered because his spirits have recovered. **No resurrection.** He is the one major witness who declines the Christological reading of *reflóruit caro mea*, and the chant is therefore sung under a real disagreement, not a consensus. The only English is in copyright, so he is summarised, not quoted.
+
+<!-- end of quotation -->
 
 > **Peter Lombard, *Commentarium in Psalmos* 27, ad v. 7 (PL 191); St. Robert Bellarmine, *Explanatio in Psalmos* 27, tr. O’Sullivan (1866), pp. 68–69** Lombard transmits both readings with their tags: the flesh *quae in Adam defloruit per peccatum* from the interlinear Gloss, and *Vel, caro mea refloruit, id est iterum in resurrectione floruit* correctly attributed to Cassiodorus. Bellarmine popularises the result — “He now passes to foretell the glory of the Lord’s resurrection” — and gives the flower its most concrete form: “My flesh, that had withered up in death, is not only restored to life, but to the bloom of youth, health, joy, and beauty.”
 
@@ -404,7 +452,11 @@ Two conclusions follow, and the second is the one worth having. *First*, the Fat
 
 > **St. Augustine, *Enarrationes in Psalmos* 80, §§3–5** Augustine takes Asaph as *congregatio* and the title’s winepresses as the Church’s press, separating oil from dregs. On v. 2 he is anti-spectacle: *Exsultate alii circo, vos Deo* — let others shout in the circus; you, to God our helper. On v. 3 he builds an exchange out of the two instruments: *Psalmus spiritalis est, tympanum carnale … accipite spiritalia, et date carnalia*. Receive the spiritual word, give back carnal things — support and mercy to the poor. The psaltery, which sounds from above, is heavenly preaching; the cithara, played below, is earthly works; word and deed have to sound together.
 
+<!-- end of quotation -->
+
 > **Cassiodorus, *Expositio Psalmorum* 80, ad vv. 2–3** Cassiodorus first presses *adiutóri*: an idol *fictitius deus non est adiutor, sed elisor; non sanans, sed vulnerans* — not healing but wounding. The true God heals, and the verb is the one this day’s Offertory sings four elements later. He then etymologises the shout — *Iubilate dictum est a iuvando, id est delectando* — and re-tools Augustine’s exchange ascetically: the drum is a stretched hide, therefore the mortified body, *sic hominum corpus, dum pro Domino tribulatione quatitur, ad superna mandata dulcius temperatur; tunc Deo bene damus tympanum dum eleemosynas facimus, cum ieiuniis corpus affligimus*. Psaltery and cithara — God’s words and human acts — *in unam societatem debeant convenire*.
+
+<!-- end of quotation -->
 
 > **Theodoret of Cyrus, *Interpretatio in Psalmos* 80, ad vv. 2–3 (PG 80, cols. 1520–1521); Bellarmine, *Explanatio in Psalmos* 80, tr. O’Sullivan, pp. 246–247** The literal wing. Theodoret notes the hexaplaric alternatives for the two verbs, takes the jubilation as a victory-shout, and keeps the instruments as instruments, appealing to the account of the temple orchestra in Chronicles. Bellarmine sides with him against Augustine on the occasion — a new-moon festival — and adds, with characteristic bluntness, that “he who sings moodily … gives to understand that he has very little affection for him whose praises he chants.” Against Augustine’s and Cassiodorus’s allegory this is a genuine and unresolved divergence about what the verse is for.
 
@@ -420,13 +472,23 @@ Two conclusions follow, and the second is the one worth having. *First*, the Fat
 
 > **Ps-Jerome, *Commentarius in evangelium secundum Marcum*, cap. VII (PL 30, cols. 611C–612B)** Transmitted under Jerome’s name and not his: the 1842 Oxford editors of the *Catena* already called it spurious, and modern scholarship treats it as an anonymous seventh-century work of the Irish milieu — in any case earlier than Bede. Its reading is corporate from the first line: Tyre is *angustia* and stands for Judaea; *Sidon vero venatio interpretatur, quae fera indomitaque nostra natio est*; the Decapolis is *decalogi mandata*. The itinerary *is* the passage of salvation from Judaea to the Gentiles. The deaf-mute is accordingly not an individual but the race: *Genus humanum per multa membra, ac si unus homo varia peste absumptus enumeratur: in protoplasto caecatur*. The fingers are *verba spiritus*; the spittle is *divina sapientia: quae solvit vinculum labiorum humani generis* — and the author names what the loosed mouth then says: *Credo in Deum Patrem omnipotentem*. The opened ears open *ad hymnos, cantica, et psalmos*. The sigh teaches: *nos gemere docuit, et in coelum thesaurum cordis nostri erigere*.
 
+<!-- end of quotation -->
+
 > **St. Bede, *In Marci evangelium expositio* II, on 7:31–37 (PL 92, cols. 203–206; his lemma spells *Effeta*)** The fullest Latin exposition, and the one the later tradition quarries. Six moves. *(a)* Being taken apart from the crowd is where salvation starts: *Prima salutis janua est infirmum apprehendente Domino de turba seorsum educi*, the sick mind drawn away *a consuetis humanae conversationis moribus*. *(b)* The fingers are the Holy Spirit, and he proves it from Scripture rather than asserting it: *Mittit digitos suos in auriculas, cum per dona sancti Spiritus aures cordis … aperit. Namque digitum Dei appellari Spiritum sanctum testatur ipse Dominus*, comparing Luke 11:20 with Matthew 12:28. *(c)* The spittle is divine wisdom — *Sputum namque Domini saporem designat sapientiae* — and the tongue it touches is a catechumen’s: the Lord acts *cum ad confessionem fidei ora catechizandorum instruit*. *(d)* The look upward names where hearing and speech must be sought; the sigh is not need but instruction: *Ingemuit autem, non quia ipsi opus esset cum gemitu aliquid petere a Patre … sed ut nobis gemendi daret exemplum*. *(e)* Verses 34–35 hold both natures at once: *Suspiciens in caelum quasi homo Deum precaturus ingemuit, sed mox uno sermone quasi divina potens maiestate curavit*. *(f)* Morally the deaf-mute is anyone *qui nec aures audiendis Dei verbis, nec os aperit proloquendis*, and he is carried by those already taught. Bede’s closing paragraph on v. 36 is Augustine’s *De consensu evangelistarum* 4.4.5 almost verbatim. Here Bede depends on Augustine — not, as is sometimes assumed for Marcan pericopes, on Gregory.
+
+<!-- end of quotation -->
 
 > **The Victor-of-Antioch tradition, quoted as “Chrysostomus” in the *Catena aurea in Marcum*, cap. 7, lectio 4** Chrysostom wrote no homilies on Mark. The excerpts the *Catena* labels “Chrysostomus” for this pericope belong to the Greek Mark-catena tradition associated with Victor of Antioch; the 1842 Oxford editors say so in the margin and print “Pseudo-Chrys.” The words are the Victor tradition’s, not Chrysostom’s. The move is worth having on its own account: the healing instrument is Christ’s own assumed body, *quod divina virtute ditatum erat corpus divinitati unitum … veniens Christus in seipso perfectionem demonstravit humanae naturae*; and the sigh is *nostram causam suscipiens in seipso, et naturae misertus humanae*. Where Bede makes the sigh an example for us, this tradition makes it a taking-on of our case.
 
+<!-- end of quotation -->
+
 > **Theophylact, *Enarratio in evangelium Marci*, on 7:31–37 (PG 123, cols. 565–568; Migne’s Latin quoted)** The Greek witness, read with Migne’s facing Latin because the only English is in copyright. He takes the affliction as demonic in origin, which is why it follows the exorcism of the Syrophoenician’s daughter, and notes that Jesus leaves Gentile territory promptly lest he be called a transgressor of the law. On the taking aside: *non erat arrogantiae sectator, qui se humiliarat usque ad nostram inopiam*. On the spittle he makes the strongest sacramental point in the tradition: it was done *ut ostenderet omnes partes sanctae carnis suae sanctas ac divinas esse … tametsi superfluitas sit omne sputum, sed in Domino admirabilia erant ac divina omnia*. On the sigh he is openly undecided — twice *fortassis* — between prayer to the Father and pity for human nature under tyranny. His coda, which both the *Catena* and a Lapide lift, converts the command of silence into an ethic: benefactors must not seek applause, and beneficiaries must praise even the unwilling benefactor.
 
+<!-- end of quotation -->
+
 > **St. Augustine, *De consensu evangelistarum* 4.4.5 (NPNF 1/6, tr. Salmond, 1888)** Augustine treats only vv. 36–37, and only one difficulty: if Christ knew they would publish it the more, why forbid it? His answer, in the public-domain English, is that “he desired to give backward ones to understand how much more zealously and fervently they ought to preach on whom He lays the commission to preach, if even men who were interdicted were unable to keep silent.” No allegory of fingers, spittle or sigh anywhere; this is the one place in the works checked where the Latin tradition’s greatest exegete touches the pericope, and it is a note on prescience and preaching.
+
+<!-- end of quotation -->
 
 > **Cornelius a Lapide, on Mark 7:31–37, *The Great Commentary*, tr. T. W. Mossman, vol. 3 (1887; 1891 printing), pp. 408–410** Philology first. The Greek adjective at v. 32, he says, means “speaking with difficulty … stammering,” not born mute; and *Ephphetha* he derives through the Hebrew root with the note that “for which the Syrians use Ephpheta.” He minds decorum at v. 33 (Christ spat on his own finger). Then he absorbs the tradition — Bede twice, including “Where, says Bede, the two natures of the one and the same Mediator between God and man are plainly set forth”; Theophylact on praising benefactors; Augustine on the silence. His own novelty is scholastic and dissenting: the command of v. 36 “was not properly a command, involving a fault if disobeyed, but merely a token of urbanity and modesty … Wherefore they did not commit sin who nevertheless divulged them.” On v. 37 he presses the adverb: it means “beautifully, becomingly, harmoniously … Christ’s whole life was one continuous beneficence.”
 
@@ -457,9 +519,15 @@ Fifteen centuries later the *Rituale Romanum* still prints it. In the Pustet pri
 
 > **St. Augustine, *Enarrationes in Psalmos* 29 — two expositions (Enarr. I §§1–3; Enarr. II §§1, 6, 11–12)** The first exposition calls the psalm one “of the joy of the Resurrection … not only of the Lord, but also of the whole Church,” and reads v. 2 as praise of God’s own height: *Exaltabo … suscepisti me: sublimitatem tuam laudabo*. The healing at v. 3 is healing from mortality itself. The second exposition — which exists in Latin only, the NPNF series carrying just the first — solves the title’s puzzle: *Modo enim fabricatur domus, id est Ecclesia, postea dedicabitur. In dedicatione apparebit gloria populi christiani, quae modo latet*. The house is being built now and dedicated later; Christ’s risen body is the pattern. And then, on the antiphon’s own last words, the question that the whole later tradition repeats: *Quem sanavit, qui nunquam aegrotavit …? Non, sed mortem carnis portabat, vulnus tuum portabat, sanaturus te de vulnere tuo. Sanata est autem caro. Quando? Cum resurrexit* — with 1 Cor. 15:54 quoted, which is again the day’s Epistle chapter.
 
+<!-- end of quotation -->
+
 > **Cassiodorus, *Expositio Psalmorum* 29, title and vv. 2–3** Cassiodorus compresses the title into a formula: *Domus significat dominici corporis templum; dedicatio vero resurrectionem*. On v. 2 he makes a rhetorician’s note on the chant’s own verb: *Delectasti vero posuit, pro delectare fecisti. Quae figura dicitur hypallage*. On v. 3 he reruns Augustine’s paradox almost verbatim — *Quemadmodum sanatus est, qui non legitur aegrotasse? Sed occulte ille aegrotabat, quando universum hominem sua incarnatione suscepit … quia in illo sanati sumus, sanatum se ipse profitetur* — a textbook demonstration of how much of Cassiodorus is Augustine reorganised.
 
+<!-- end of quotation -->
+
 > **St. Jerome, *Commentarioli in Psalmos* 29, ad titulum; St. Thomas Aquinas, *Super Psalmo* 29, nn. 1–2** Jerome gives the tradition its tersest form in a single sentence: *Dedicatio domus David, resurrectio Salvatoris intellegitur, in qua omnia vitae corpora dedicantur*. Aquinas weighs the letter first — David never dedicated the Lord’s house, and 2 Samuel 5 may supply his own — then decides: *Tamen melius intelligitur quod referatur ad mysterium domus David, idest Christi … dedicationem, quae fuit in resurrectione, quando corpus Christi indutum est gloria immortalitatis. Super corpus Christi continue construitur; et per conversionem fidelium dedicabitur.* That fuses Cassiodorus’s body and Augustine’s Church into a single two-stage scheme. On v. 3 he distinguishes: God heals the whole man, but *Christum vero sanavit a corporali solum passibilitate*.
+
+<!-- end of quotation -->
 
 > **Theodoret of Cyrus, *Interpretatio in Psalmos* 29, title and vv. 2–3 (PG 80, cols. 1069–1072); Bellarmine, tr. O’Sullivan, pp. 73–74** Theodoret argues from the letter that the title cannot be David’s temple, since David neither built it nor fits the words, and concludes that the dedication of the house is the re-making of human nature accomplished when Christ accepted and destroyed death. On v. 2 he has the Master take our firstfruits and refuse to let nature become the demons’ prize. On v. 3 Antiochene precision returns: the cry and the healing fit Hezekiah in the obvious sense, while human nature received its resurrection unasked, out of sheer love of humankind. Even the soberest reader of the four, then, reaches death-destroyed-and-nature-renewed; only the mechanics differ. Bellarmine states the consensus flatly: “In a prophetic sense, it applies literally to Christ. ‘Thou hast healed me’ of the wounds I suffered on the cross … ‘saved me’ by my resurrection,” and adds that all the saints will say it “most completely, in soul and body” on the last day.
 
@@ -489,6 +557,8 @@ Fifteen centuries later the *Rituale Romanum* still prints it. In the Pustet pri
 **The one wisdom text of the day, and the missal trims it.** Proverbs 3 is a father’s instruction: trust the Lord and lean not on your own prudence, honour him with your substance, do not despise his correction. Verses 9–10 are the single promise of material increase in the chapter, and they are conditioned on a prior giving away. The antiphon compresses at three points: v. 9 loses *ómnium* and the closing imperative *da ei*, and v. 10 loses the second *tua*. Losing *da ei* is the interesting one, because it removes the verb of donation and leaves the two verbs of filling: *honour … and thy barns shall be filled*. Schuster notices that the antiphon “departs from the usual rule of the classical antiphons” at all — it is not a psalm — and connects it to “these summer Masses, during the time of harvest,” and to the old blessing of firstfruits at *Per quem hæc omnia*.
 
 > **St. Bede, *In Proverbia Salomonis* I, on Prov. 3:9–10 (PL 91, cols. 950–952)** Bede reads the two verses on three levels and the second is the one that matters for this Mass. *Literally*, the alms must come from one’s own and honestly gotten substance, and be given for God’s honour rather than for applause: *Multi multa pauperibus, sed de aliena substantia … tribuunt*. *Spiritually*, the firstfruits are the firstfruits of *every* good work and of every grace received; a man honours the Lord *de sua substantia* who credits all the good he has to grace and not to his own powers and merits, *memor illius verbi: sine me nihil potestis facere* (John 15:5). *Eschatologically*, the filled barns are heavenly satiety — he quotes *satiabor … dum manifestabitur gloria tua* — and the overflowing presses the *interna suavitas aeternorum*; the giver of earthly help is repaid *caelesti remuneratione, ditior dando*, richer for the giving.
+
+<!-- end of quotation -->
 
 > **Rabanus Maurus, *Expositio in Proverbia Salomonis* I (PL 111, cols. c. 688–690); Salvian of Marseilles, *Ad Ecclesiam* I (PL 53, cols. 214–216)** Rabanus prints the full Vulgate lemma and then reproduces Bede’s exposition verbatim, minus a clause: the Carolingian canonisation of Bede’s reading and the route by which it reached the schools. Salvian, writing a good three centuries before Bede, is entirely literal and much sharper. Since everything we have is God’s gift, God calls his own property “ours” precisely so that our giving can earn something: *Cum totum suum sit quod ab eo accepimus, nostrum esse dicit ut demus … Si devotus es, da quasi tuum; si indevotus, redde quasi non tuum.* Give it as yours if you are devout; hand it back as not yours if you are not.
 
@@ -536,6 +606,8 @@ Four verified afterlives of wording from the scriptural propers, each a use that
 >
 > **Rights and limit.** The first edition (1868) and Morris (d. 1896) are long out of copyright. The dependence is on the naturalised English idiom “born out of due time,” shared by the Douay and the King James, not on this Mass lection; Morris cites nothing. The “Apology” is absent from the Project Gutenberg Part II e-text, so the first-edition scan is the witness.
 
+<!-- end of quotation -->
+
 > **Gospel, Mk. 7:34 — “Effeta, The Body Deodorant,” New Jersey, 1912**
 >
 > **Appointed phrase.** *Ephphetha, quod est adaperíre*, and the baptismal formula that quotes it: *Ephpheta, quod est, Adaperire … In odorem suavitatis* (*Rituale Romanum*, Pustet 1872, pp. 11–12).
@@ -546,6 +618,8 @@ Four verified afterlives of wording from the scriptural propers, each a use that
 >
 > **Rights and limit.** United States newspapers of 1912 are public domain. The copywriter’s proximate source is the baptismal rite rather than the Mass lection — but the rite is quoting this Sunday’s Gospel, and St. Ambrose says so. The 19 June issue is the one in which the scriptural slogan line is legible in the page text, and the wording was read there in context.
 
+<!-- end of quotation -->
+
 > **Introit psalm verse, Ps. 67:2 — Cromwell at Dunbar, 3 September 1650**
 >
 > **Appointed phrase.** *Exsúrgat Deus, et dissipéntur inimíci eius*; Douay–Rheims, “Let God arise, and let his enemies be scattered.” It is the verse the missal appoints as the Introit’s psalm verse.
@@ -555,6 +629,8 @@ Four verified afterlives of wording from the scriptural propers, each a use that
 > **The turn.** In the Mass the verse is sung by a congregation as the priest comes to the altar. At Dunbar it is not a prayer at all but a battlefield exclamation — the shout of a commander who has just watched a cavalry charge succeed, using the psalm to certify the outcome rather than to ask for it. Three years later the same psalm is deployed politically, as scriptural warrant for a revolutionary assembly. The verse travels from petition to victory-cry to constitutional argument.
 >
 > **Rights and limit.** Both sources are public domain. Cromwell’s wording is the English psalter and King James tradition, not the Douay. Hodgson’s memoir is remembered speech first printed in 1806, not a contemporary dispatch; Cromwell’s own letter about Dunbar does not contain the phrase. The 1806 page text garbles the word “scattered,” and the reading here is controlled by the editor’s footnote and by Carlyle’s transcription.
+
+<!-- end of quotation -->
 
 > **Gospel, Mk. 7:34 — a command to the deaf becomes the name deaf institutions gave themselves**
 >
@@ -572,6 +648,8 @@ Four verified afterlives of wording from the scriptural propers, each a use that
 >
 > Everything below is exploratory editorial and AI proposal. None of it is sourced historical intent, attributed teaching, or documented reception, and none of it should be quoted as any of those. Each proposal was tested against the corpus checked for this guide and against a targeted search for its own distinctive conjunction; the anchors, mechanism, search result and controlling limit of each are recorded in `research/scope.md`. “Not located in the checked corpus” is bounded to that corpus and never means that a connection is unprecedented. Evidence, doctrine, and the literal sense of the appointed texts govern; where a proposal and a checked witness conflict, the witness wins.
 
+<!-- end of quotation -->
+
 > **Editorial proposal — The day has two openings, and the second is a harvest**
 >
 > **Classification:** Not located in the checked corpus.
@@ -585,6 +663,8 @@ Four verified afterlives of wording from the scriptural propers, each a use that
 > **What the ordinary reading misses:** Element by element the Communion is an antiphon about almsgiving and the Gospel is a healing narrative, and the Collect’s *effúnde* is read as ordinary petitionary idiom. The three verbs are never set side by side.
 >
 > **Strongest limit:** The chant-cue evidence at the Collect is decisive against any design claim: the Ottobonianus margins cue this Communion two masses away from these orations, so the pairing is a late accident of two independently drifting cycles. St. Bede’s firstfruits-of-grace reading and Schuster’s harvest reading each control the Communion severally, and neither joins it to the Gospel. And the antiphon’s overflow is conditional on a giving away that the missal’s trimming of *da ei* has removed from view.
+
+<!-- end of quotation -->
 
 > **Editorial proposal — The loosed tongue is given a psalm to say, four elements later**
 >
@@ -600,6 +680,8 @@ Four verified afterlives of wording from the scriptural propers, each a use that
 >
 > **Strongest limit:** This is the proposal that most directly contradicts the checked tradition, and the contradiction is not marginal. Jerome, Augustine, Cassiodorus, Aquinas, Theodoret and Bellarmine all read Ps. 29’s healing of the Resurrection, on the strength of the psalm’s title; Augustine asks in so many words who healed a man who was never sick. Assigning the verse to the deaf-mute reads it against every witness checked. The nearest material found is Cassiodorus’s remark that idols do not heal but wound — and that falls in his exposition of this day’s Alleluia psalm, not of the Offertory.
 
+<!-- end of quotation -->
+
 > **Editorial proposal — Silence asked of God, and silence ended by God**
 >
 > **Classification:** Near analogue located.
@@ -614,6 +696,8 @@ Four verified afterlives of wording from the scriptural propers, each a use that
 >
 > **Strongest limit:** Two hard checks. The Gradual’s *ne discédas a me* has no patristic lemma at all — every checked expositor has *ne síleas* and *nequándo táceas* — so the closing plea cannot be given a documented reception. And Augustine assigns the whole of Psalm 27 to Christ in the Passion, not to a man asking to be spoken to. The near analogue is real but partial: the seventh-century commentary under Jerome’s name says the opened ears open *ad hymnos, cantica, et psalmos*, joining the healing to psalmody, and Bede supplies the groan as *exemplum gemendi*; neither joins either to this Gradual.
 
+<!-- end of quotation -->
+
 > **Editorial proposal — The shape of the lesson preaches what the lesson does not say**
 >
 > **Classification:** Not located in the checked corpus.
@@ -627,6 +711,8 @@ Four verified afterlives of wording from the scriptural propers, each a use that
 > **What the ordinary reading misses:** Each boundary looks like a separate accident of chant construction or lectionary convenience, and the Epistle’s mid-verse ending in particular is usually noted, if at all, as a curiosity.
 >
 > **Strongest limit:** The boundaries are received, not designed here: the same Epistle ending and the same trimmed antiphon stand in the Missals of 1570 and 1862, and no source states a motive for either. More seriously, the tradition whose key clause is cut — Augustine, Gregory, Aquinas — teaches human cooperation with grace on the strength of exactly those unread words. The pattern cannot be pressed into a denial of what they teach, and this guide does not press it.
+
+<!-- end of quotation -->
 
 > **Editorial proposal — A green Sunday that sings a small Easter**
 >
