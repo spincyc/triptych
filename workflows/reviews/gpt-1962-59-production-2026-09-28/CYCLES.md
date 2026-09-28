@@ -29,8 +29,11 @@ Its disposition is pending. No artifact has been accepted or installed.
 | research-review | 2 | PASS | New comparison and supporting evidence checked; all 144 sealed inputs match, no findings. |
 | author-study | 1 | PASS | Incorporated the reviewed Ephesians account and corrected the Gregory URL; rebuilt 20-page proof and inspected all pages. |
 | study-preflight | 1 | PASS | All workflow-declared study program checks passed after repair. |
+| study-review | 1 | PASS | Complete study, source loci, proper texts and chronology checked; all 17 sealed files unchanged, no blocking findings. |
+| derive-synthesis | 0 | PASS | Complete 10-page concise study with 3,719 substantive words, required four-page opening and full author page inspection. |
+| synthesis-preflight | 0 | PASS | All workflow-declared synthesis program checks passed. |
 
-Study-review iteration 1 is active. Every agent stage uses a fresh worker with no
+Concise-study review is active. Every agent stage uses a fresh worker with no
 inherited authoring conversation and the packet's declared reasoning effort.
 Author stages use `high`; review stages use `xhigh`. No nested workers are
 authorized by this workflow.
@@ -62,8 +65,8 @@ extra blank line at EOF in `sections/00-opening.tex` and
 those newly added files. These cosmetic source warnings have no rendered
 effect. No sealed study input was changed during cold review to clear them.
 After that review returned CHANGES_REQUIRED and the engine routed a research
-repair, the coordinator removed only those trailing blank lines; the study
-will receive its required fresh authoring and review passes after research.
+repair, the coordinator removed only those trailing blank lines. The subsequent
+fresh authoring and study-review passes accepted the corrected source.
 
 ## Scope
 

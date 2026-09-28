@@ -31,15 +31,17 @@ expansive-study author stage and its preflight have passed. Cold study review
 returned STU-CHR-001, requiring the modern Ephesians historical horizon;
 research iteration 2, its preflight and fresh research-review iteration 2 have
 passed. Author-study iteration 1 incorporated the reviewed comparison and
-corrected the Gregory link; its preflight passed, and renewed study review is
-active. The
-20-page draft is checkpointed; synthesis and homily remain to be derived.
+corrected the Gregory link; its preflight and renewed study review passed.
+The expansive study is content-accepted. Concise-study derivation and its
+preflight passed: the proof is 10 pages with 3,719 substantive words and the
+required four-page opening. Fresh concise-study review is active; the homily
+and final artifact/publication stages remain ahead.
 The context records a dated FSSP Ordo,
 six inspected Missal page images, ten appointed elements and the Trinity
 Preface, the omitted St Francis commemoration, and the separate optional Rosary
-external solemnity. Research records full Latin/English collation, 27 exact
+external solemnity. Research records full Latin/English collation, 28 exact
 source bindings, chronology, bounded reception and two proposed readings.
-No publication has yet been accepted.
+No final publication or installed artifact family has yet been accepted.
 The Ephesians repair adds one conditional critical-profile composition unit
 and current restricted USCCB source metadata while preserving traditional
 claims and unchanged default coverage. Its source title preserves the

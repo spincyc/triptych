@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-09-28"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 143
-source_surface_file_count = 2383
-snapshot = "sha256:b90c1b75cd9ee35a6301c91fe3b4a6bb4ce4a6772d306e7ef35f2a22bdd2d94c"
+source_surface_file_count = 2390
+snapshot = "sha256:be5bf03728912051aecd14f5af67f4b82719fcf06a031169701753c313f4b62e"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -10241,7 +10241,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-penteco
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/evaluations/blocking-findings-v1.toml"
-sha256 = "1a2865022b8565532550892147bf5974e7fca0635efdfcea4efe4efc9ea5b5f2"
+sha256 = "8ef246736e2ca824775a5467e6c086d47e441ff153c9758990106c8649dc808f"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"]
 
@@ -10301,7 +10301,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecos
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/production-review.md"
-sha256 = "8c24abbc18d72dd174fccef5e2252da0c32e379f953a1ce1c509cd0eef71133e"
+sha256 = "60df210e253bc6642284ebdcd2e681b508c7024f9b73adc4afa3ce91cba02f62"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"]
 
@@ -10368,6 +10368,48 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecos
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/90-study-apparatus.tex"
 sha256 = "e17406bb8cb0a46d192e116f6732217d2010e1d55884616288a731e8ec3e5dbc"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/01-inventory.tex"
+sha256 = "2cc6eb5f2eeab40c9176a342f51237f68c56131d9e723e696b4466ba3207ac7a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/02-overview.tex"
+sha256 = "d753a9d37d748263a8d2f723a0b0d4a16a9e2aef2cb774061b2d4307a135a448"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/03-chronology.tex"
+sha256 = "febe3f29c5d7927f58206560140d90906f6b98d57709900665b1d1d6eddf5d1f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/04-themes.tex"
+sha256 = "9d81d5f78cac5bf0fa02a0812939667f84769462d3ae02ebb691ea8c708f9910"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/10-commentary.tex"
+sha256 = "ed48c2709f7744b0ad5b8c18844f237a1e46e4e835e50385c175f9ce14354b79"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/90-apparatus.tex"
+sha256 = "9bc8e2f3d99932e36496596c5a0519e26f5746e40d98f374b63e4c50151a5ab9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/synthesis.tex"
+sha256 = "c01caba4af27a296fd7390e39f1663e72c8e3201f50072e386079f69e101dc5b"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"]
 

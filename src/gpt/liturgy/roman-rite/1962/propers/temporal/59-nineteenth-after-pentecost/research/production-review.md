@@ -150,3 +150,80 @@ text, PDF/font information and a dedicated raster child accompany that copy.
 This is author verification; the independent study verdict, companion
 derivations, final shared-timestamp build and independent visual review are
 separate subsequent events.
+
+## Derive synthesis — iteration 0
+
+The concise study, **Charity and the Renewed Life**, was derived on
+28 September 2026 from the accepted expansive study and its reviewed
+research. It implements the six already-declared synthesis components and
+the literal imports in `synthesis.tex`. The common manifest already named
+the correct synthesis-only membership, presentation roles, element coverage
+and generated-chronology reference; no manifest repair was necessary.
+The accepted study, chronology, evidence bindings and interpretation records
+were not revised. The shared generation record now identifies this
+contribution and the render-source finalization time **2026-09-28T16:26:54Z**.
+
+The complete ten-element map and exactly four overview sense rows occupy
+physical page 1. The canonical chronology, including all traditional
+alternatives, both critical comparisons and the unresolved Gospel event
+date, occupies page 2 alone. Its concise explanations retain the distinct
+Aramaic/Greek Matthew objects and the conditional later-disciple Ephesians
+interval. The source-grounded thematic movement occupies pages 3–4;
+developed interleaved commentary begins on page 5. Six cross-proper
+questions compare fruitful belonging with renewed action, preserving
+Augustine's and Gregory's different arguments for charity, Chrysostom's
+particular social commands, Bellarmine's grace/obedience distinction,
+Gregory's imperfect-charity consolation and the actual reception differences.
+No new evidence-dependent claim or additional research source was introduced.
+
+The substantive themes and commentary contain **3,719 words**: 1,081 in
+the thematic movement and 2,638 in the developed commentary. This source
+count excludes footnotes, headings, zref labels, TeX commands, the inventory,
+overview, chronology and terminal apparatus. Alphabetic words with internal
+apostrophes or hyphens count as one. The settled author proof has **10
+physical pages**, including all terminal content.
+
+The required `make doc` author build and synthesis-edition component
+artifact check passed. The settled auxiliary record proves inventory and
+overview on page 1, chronology on page 2, themes on pages 3–4 and commentary
+starting on page 5. Synthesis content preflight passed: 28 bindings resolve,
+all seven chronology cells retain generated annotations, and the
+house-voice, structural, rights and declared-coverage checks pass. The
+manual description-list bibliography was compared with its uses; the
+automatic references-used check recognizes no formal entries and does not
+supply a positive audit of that list.
+
+All ten page rasters were inspected; changed pages were reinspected after
+strengthening the thematic exposition and attaching two footnote markers
+to their preceding sentences. No clipping, overlap, missing glyph,
+stranded heading or detached marker remains. The shared title, map,
+overview and dossier forms retain house typography. Both thematic pages
+are substantively filled, the chronology remains legible, and the final
+references, single timestamp and compact rights colophon share page 10.
+The final LaTeX log contains no warnings, undefined references, overfull
+or underfull boxes. PDF inspection confirms US Letter, 17 embedded Latin
+Modern font entries and 462,675 bytes, below the size-review thresholds.
+
+The exact reviewer proof is retained in run `b686b7a44f0e35e7` under
+`artifacts/derive-synthesis-0000/`, outside its dedicated replaceable
+`rasters/` child:
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `synthesis-author-proof.pdf` | `a440660d94998ea71c70791b3d67eb2c16ab89d7000a46f3312091499553fac2` |
+| `synthesis-author-proof.aux` | `5fa40538283f0773f66967f7302f515865ba94edee61c1d71b60e74cdf1873bd` |
+| `synthesis-author-proof.log` | `4b2193be3777edf4b50940fd5a3b1d0c79b5cc8e8b22b32f27cf25c1afd1d518` |
+
+The artifact directory also holds the recorder file, extracted text,
+word-count method and totals, build and component/content check logs,
+font/PDF information and `proof-manifest.json` with exact repository-relative
+paths and hashes. This is author verification only; independent concise
+review, homily derivation, the final three-document shared-timestamp build
+and cold visual evaluation remain separate workflow events. No PDF was
+installed at this stage.
+
+The broader `make check-sources` reached successful source-library
+validation, then stopped at the document-catalogue prerequisite because the
+declared future `homily.tex` is not yet implemented. That global gate must
+be completed after the homily stage. Shared source inventories, catalog
+integration, commits and workflow advancement remain with the coordinator.

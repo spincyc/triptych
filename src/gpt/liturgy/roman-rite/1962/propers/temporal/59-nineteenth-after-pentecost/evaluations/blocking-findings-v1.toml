@@ -49,12 +49,12 @@ provider = "gpt"
 run_id = "b686b7a44f0e35e7"
 workflow = "proper-study"
 workflow_version = 7
-stage = "research-review"
-iteration = 2
+stage = "study-review"
+iteration = 1
 disposition = "PASS"
-standing = 1
+standing = 0
 accepted_count = 0
-advisory_count = 1
+advisory_count = 0
 observation_count = 0
 
 [[stages]]
@@ -71,29 +71,12 @@ observation_count = 0
 
 [[stages]]
 stage = "study-review"
-iteration = 0
-disposition = "CHANGES_REQUIRED"
+iteration = 1
+disposition = "PASS"
 run_id = "b686b7a44f0e35e7"
 workflow = "proper-study"
 workflow_version = 7
-standing = 1
+standing = 0
 accepted_count = 0
-advisory_count = 1
+advisory_count = 0
 observation_count = 0
-
-[[findings]]
-stage = "study-review"
-id = "STU-CHR-001"
-severity = "blocking"
-location = "research/scope.md, chronology section, lines 297–299; sections/70-date-location.tex, Epistle dossier, lines 24–25"
-problem = "The Ephesians dossier supplies only the historical Catholic Encyclopedia captivity alternatives and a generic destination qualification, then explicitly declines a current comparison after recorded access failures. It never supplies the principal modern critical authorship/composition horizon required by the 1962 dossier rules, which must already have a reviewed home here before the concise opening is written. The official USCCB Ephesians introduction is now directly readable at https://bible.usccb.org/bible/ephesians/0: its concluding paragraphs distinguish the traditional captivity account from the secretary/later-disciple alternatives and explain the textual and stylistic grounds for uncertainty. Merely saying that the displayed dates are not modern consensus leaves that required historical account absent."
-required_result = "Independently verify and record a current scholarly account of the Ephesians authorship/composition alternatives and their evidence, preserving the traditional Catholic chronology and uncertainty. Give the resulting bounded account a cited home in the expansive study's Ephesians dossier before it is reused by the concise study. Any newly adopted date or range must come through the canonical chronology corpus and an explicitly declared profile comparison, with generated annotations; do not insert a hand-authored replacement date or portray the alternatives as a consensus."
-repair_target = "research"
-
-[[advisories]]
-stage = "study-review"
-id = "STU-CIT-001"
-severity = "advisory"
-location = "sections/90-study-apparatus.tex:77, Gregory the Great reference"
-problem = "The printed Wikisource URL ends in Homiliae_in_Evangelia, whereas the retained edition and its provenance identify Homiliarum_in_Evangelia. The printed address could not be resolved during review; the latter address opened successfully and includes the link to Homily XXXVIII. The work and section numbers still identify the source, so this is a navigation defect rather than unsupported attribution."
-required_result = "Replace the printed URL with the checked edition index https://la.wikisource.org/wiki/Homiliarum_in_Evangelia or its exact Homily XXXVIII link, retaining the existing work and section locators."
