@@ -1,6 +1,54 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-postconciliar-twenty-seventh-2026-09-28"
+owner = "PROJECT-WORK.md"
+promise = "Drive the GPT proper-study workflow for the postconciliar Twenty-seventh Sunday in Ordinary Time, Year A, on 2026-10-04 through acceptance, installing the three reviewed PDFs and canonical web edition with durable research and review evidence; separate GPT and Claude documents into columns in the Sunday propers catalog."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "pc-s53-authorization"
+  criterion = "The production plan records the exact GPT identity authorization before seeding."
+  status = "pass"
+  evidence = ["guidance/liturgy/propers-production-plan.md"]
+  check = "contains"
+  path = "guidance/liturgy/propers-production-plan.md"
+  needle = "- Authorized 2026-09-28: provider `gpt`, identity `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a`."
+
+  [[deliverables.requirements]]
+  id = "pc-s53-run-accepted"
+  criterion = "The proper-study run for the exact GPT target and 2026-10-04 reaches ACCEPTED with fresh reviewers at its declared effort, and the leaf archives the actual packets, results and terminal evidence."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "pc-s53-four-artifacts"
+  criterion = "The 20–50-page expansive study, 10–12-page concise study, standalone homily and canonical web edition are independently reviewed and installed with exact receipts, catalog links and separate release records."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "pc-s53-research-and-provenance"
+  criterion = "The source records establish the dated occurrence, appointed elements and options, lawful witnesses, canonical chronology, reception and distinct interpretations; generation metadata and cycle evidence identify the actual production and review."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "provider-columns"
+  criterion = "The Sunday propers catalog separates GPT and Claude documents into columns while preserving cycle distinctions and all existing installed links, and the rendered table and links are checked."
+  status = "pass"
+  evidence = ["library/novus-ordo-liturgy.md", "guidance/repository.md", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "library/novus-ordo-liturgy.md"
+  needle = "| Sunday | Cycle | ChatGPT | Claude |"
+
+  [[deliverables.requirements]]
+  id = "validated-checkpoint"
+  criterion = "Required source and publication checks pass, durable records match actual workflow and artifact state, and the coherent delivered changes are committed on the workspace branch."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "gpt-1962-nineteenth-three-documents-2026-09-28"
 owner = "PROJECT-WORK.md"
 promise = "Drive the GPT proper-study workflow for the 1962 Nineteenth Sunday after Pentecost, Sunday 2026-10-04, through acceptance: expansive study, concise study, standalone homily and canonical web edition, with fresh cold reviews, installed artifacts, publication records and durable run evidence; then perform the subsequently requested validated push to main and verify its automatic Pages deployment."
@@ -160,12 +208,13 @@ state = "complete"
 
   [[deliverables.requirements]]
   id = "pc-s51-catalog-provider-labels"
-  criterion = "The postconciliar calendar's Twenty-Fifth Sunday Year A cell names the provider of every link, the proper-study publication gate refuses a cycle cell or provider column that misattributes a provider's links, and a test pins the rule."
+  criterion = "The postconciliar calendar's Twenty-Fifth Sunday Year A links identify their provider through the named column or explicit link label, the proper-study publication gate refuses a cycle cell or provider column that misattributes a provider's links, and a test pins the rule."
   status = "pass"
   evidence = ["library/novus-ordo-liturgy.md", "scripts/_proper_study.py", "tools/tests/test_workflow_proper_study.py"]
   check = "contains"
   path = "library/novus-ordo-liturgy.md"
-  needle = "[GPT Research PDF](../pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf)"
+  needle = "| Sunday | Cycle | ChatGPT | Claude |"
+  note = "On 2026-09-28 the maintainer requested separate GPT and Claude columns. That presentation supersedes provider names repeated inside cycle cells; the attribution requirement and both gate regressions remain."
 
   [[deliverables.requirements]]
   id = "pc-s51-catalog-live"

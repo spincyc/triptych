@@ -7,6 +7,38 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-09-28.
 
+## GPT postconciliar Twenty-seventh Sunday, 2026-09-28
+
+<!-- promised-deliverable: gpt-postconciliar-twenty-seventh-2026-09-28 -->
+
+The maintainer requested the proper-study workflow for the upcoming Sunday,
+4 October 2026, and separate GPT and Claude columns in the postconciliar
+Sunday propers calendar. The target is provider `gpt`, identity
+`liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a`.
+The USCCB dated readings identify the Twenty-seventh Sunday in Ordinary Time,
+Year A, Lectionary 139. The production plan records this exact scope opening.
+
+**In progress.** Proper-study v7 run `17099e79f3655b7d`, seeded at
+`264879369f1710eb0600a74836cedc62abd1ff28`, passed its authorization gate
+and entered context resolution. It will produce the expansive study, concise
+study, standalone homily and canonical web edition, with fresh independent
+reviews and durable run evidence. Context resolution includes the new Week 27
+shared Missal owner and exact edition-registry and build-dependency records.
+
+**Catalog separation verified.** The Sunday and replacement tables now have
+separate ChatGPT and Claude columns and a cycle column. All 52 link targets,
+17 publication markers and 216 celebration/cycle associations are preserved;
+the production renderer retains all 49 publication links. Chromium checks at
+1440, 1024, 768, 393 and 320 pixels found no page overflow; narrow screens use
+the existing internal table scrolling. The 36 proper-study tests and full
+promise-ledger validation pass. Catalog-only release bindings are exact.
+The completed older provider-attribution criterion now checks the named
+columns, as expressly requested, while retaining its attribution gate tests.
+
+Work remains on
+`feature/propers/codex`; completion, publication and deployment will be
+reported separately against actual evidence.
+
 ## GPT 1962 Nineteenth Sunday three documents, 2026-09-28
 
 <!-- promised-deliverable: gpt-1962-nineteenth-three-documents-2026-09-28 -->

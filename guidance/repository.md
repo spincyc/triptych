@@ -474,9 +474,12 @@ provider editions occupy one row even when their titles differ. In that case,
 use a neutral shared-work label in the first cell and preserve each exact title
 in its provider cell's publication link. Ordinary catalogs use named `ChatGPT`
 and `Claude` columns.
-The complete Sunday-propers calendars instead use the cycles needed to scan
-the series: the 1962 calendar keeps provider columns, while the postconciliar
-calendar uses `A`, `B`, and `C`. A hidden stable-publication marker may own an
+The complete Sunday-propers calendars also keep named provider columns.
+The postconciliar calendar adds a `Cycle` column: distinguish `A`, `B`, and
+`C` rows wherever their available editions differ; cycles with identical
+availability may share one row. The maintainer requested this separation on
+2026-09-28 so each provider's documents can be compared directly. A hidden
+stable-publication marker may own an
 installed canonical proper whose reader cell is deliberately plain text.
 Title cells remain unlinked bold text.
 
@@ -491,13 +494,11 @@ between the synthesis and web links. The canonical label remains `Research PDF`
 when appointed text is rights-limited. All three PDFs occupy the same owning
 catalog identity; their separate release records do not create extra rows.
 
-A postconciliar cycle cell names no provider, so a bare label in it reads as
-the primary provider's. Once a second provider's links enter a cycle cell, or
-a non-primary provider's links stand alone in one, every label in that cell
-names its provider: `GPT Synthesis PDF`, `Read Claude`. Qualifying a label
-already there changes no link and is part of wiring the new edition. A named
-`ChatGPT` or `Claude` column links only that provider's editions. The
-proper-study publication gate refuses either defect; on 2026-09-19 the Claude
+A named `ChatGPT` or `Claude` column links only that provider's
+editions; format labels need not repeat the provider. Legacy cycle-column
+tables require every label in a mixed-provider or non-primary-provider cell
+to name its provider, such as `GPT Synthesis PDF` or `Read Claude`. The
+proper-study publication gate checks both layouts; on 2026-09-19 the Claude
 Twenty-fifth Sunday links were appended after the ChatGPT edition's bare ones
 and read as the same edition's.
 
