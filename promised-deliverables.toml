@@ -4,7 +4,7 @@ schema_version = 1
 id = "gpt-1962-nineteenth-three-documents-2026-09-28"
 owner = "PROJECT-WORK.md"
 promise = "Drive the GPT proper-study workflow for the 1962 Nineteenth Sunday after Pentecost, Sunday 2026-10-04, through acceptance: expansive study, concise study, standalone homily and canonical web edition, with fresh cold reviews, installed artifacts, publication records and durable run evidence on feature/propers/codex."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "gpt-59-authorization"
@@ -18,26 +18,36 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "gpt-59-run-accepted"
   criterion = "A proper-study run for GPT identity 59-nineteenth-after-pentecost and date 2026-10-04 reaches ACCEPTED with fresh reviewers at the declared effort; the leaf archives terminal status, packets, results and review evidence."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/evaluations/proper-study-results/b686b7a44f0e35e7/record.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/evaluations/proper-study-results/b686b7a44f0e35e7/terminal-status.json"]
+  check = "contains"
+  path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/evaluations/proper-study-results/b686b7a44f0e35e7/terminal-status.json"
+  needle = "ACCEPTED"
 
   [[deliverables.requirements]]
   id = "gpt-59-four-artifacts"
   criterion = "The 20–50-page expansive study, 10–12-page concise study with its required four-page opening, standalone homily, and canonical web edition are reviewed and installed; exact artifact identities, homily word count and delivery estimate, catalog links and separate release records are verified."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf", "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf", "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf", "web/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/artifacts.json", "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/web-artifact.json", "library/traditional-latin-mass.md", "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.json", "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.json", "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.json"]
+  check = "pdf_min_pages"
+  path = "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf"
+  minimum = 20
 
   [[deliverables.requirements]]
   id = "gpt-59-research-and-provenance"
   criterion = "Source records establish the dated occurrence, appointed texts, lawful witnesses, chronology, reception and distinct interpretations; checks pass, every review cycle and remaining limitation is recorded, and generation metadata identifies the actual workflow and contributions."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/context.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/source-bindings.toml", "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/chronology.toml", "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/interpretations.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/production-review.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/generation-metadata.tex", "workflows/reviews/gpt-1962-59-production-2026-09-28/CYCLES.md"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "gpt-59-validated-checkpoint"
   criterion = "Required source and publication checks pass, the durable records agree with the artifacts and actual workflow state, and the coherent delivered changes are committed on the workspace branch."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/gpt-1962-59-production-2026-09-28/CYCLES.md"]
+  check = "contains"
+  path = "PROJECT-WORK.md"
+  needle = "86f187baf9d477ae65f7144911707c312e3fc28a"
 
 [[deliverables]]
 id = "known-issues-after-pc-s52-2026-09-25"

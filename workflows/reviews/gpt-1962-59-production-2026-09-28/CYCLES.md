@@ -165,5 +165,13 @@ errors. After the terminal archive and final production audit were written,
 the two source inventories were refreshed and full `make check-sources`
 passed again. Staged whitespace and added-text privacy checks pass. The
 coordinator rechecked all three build/install PDF pairs and installed web
-against the accepted hashes. Target completion and the concrete final branch
-checkpoint are reconciled in the final bookkeeping commit.
+against the accepted hashes. Publication checkpoint
+`86f187baf9d477ae65f7144911707c312e3fc28a` is committed and pushed to
+`origin/feature/propers/codex`. The final bookkeeping commit closes the target
+ledger against that concrete accepted-publication checkpoint.
+
+The isolated target ledger passes `check-promised-deliverables` with
+`--require-complete gpt-1962-nineteenth-three-documents-2026-09-28`:
+one tracked deliverable, one complete. A separate full-register check confirms
+exactly one marker for each of the 50 ledger entries. The final whole-ledger
+check still reports only the 23 inherited older-PDF errors described above.

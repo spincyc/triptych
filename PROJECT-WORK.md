@@ -22,7 +22,7 @@ records this exact scope opening. Calendar computation identifies the
 Nineteenth Sunday after Pentecost; the context stage established the
 dated occurrence and preserved the local-calendar limits of its witnesses.
 
-**Workflow accepted; final checkpoint pending.** Run `b686b7a44f0e35e7`
+**Complete on the workspace branch.** Run `b686b7a44f0e35e7`
 reached **ACCEPTED** under `proper-study` v7, preserving actual seed commit
 `a1320fb62298ed6b1cf10d82d252212a03a484d0`. The installed family comprises
 the 20-page expansive study (6,930 substantive words), the 10-page concise
@@ -62,9 +62,13 @@ promise ledger retains 23 inherited errors concerning older PDFs absent in
 this fresh clone, with no new errors; target completion is checked separately.
 After archiving and refreshing both source inventories, full
 `make check-sources`, staged whitespace and privacy checks pass; installed
-artifact hashes still match. The coherent branch checkpoint remains to be
-recorded. Work is confined to `feature/propers/codex`; no main merge or live
-deployment is claimed.
+artifact hashes still match. Publication checkpoint
+`86f187baf9d477ae65f7144911707c312e3fc28a` is committed and pushed to
+`origin/feature/propers/codex`; final bookkeeping closes the target ledger
+against that concrete checkpoint. The isolated target ledger passes with
+completion required, and all 50 ledger entries have exactly one work-register
+marker. Work is confined to this branch; no main merge or live deployment is
+claimed.
 
 ## Known issues after the Twenty-sixth Sunday, 2026-09-25
 
