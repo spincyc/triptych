@@ -14,8 +14,14 @@ Its disposition is pending. No artifact has been accepted or installed.
 | Stage | Iteration | Result | Evidence |
 | --- | ---: | --- | --- |
 | scope-gate | 0 | PASS | Exact provider and permanent-identity authorization passed. |
+| resolve-context | 0 | PASS | Dated FSSP Ordo, six controlling Missal page images, ten-element inventory, ordinary framing and branch dispositions; research source plan recorded. |
+| research | 0 | PASS | Textual collation, rights, chronology, bounded reception, two interpretations, exact bindings and declared dependencies recorded. |
+| research-preflight | 0 | PASS | Engine's research contract and receipt checks passed. |
+| research-review | 0 | CHANGES_REQUIRED | RES-001 requires the controlling author-standing registry in review dependencies; RES-002 advises precise wording for Gregory's weaving analogy. |
+| research | 1 | PASS | Declared the author-standing dependency and corrected Gregory's weaving analogy. |
+| research-preflight | 1 | PASS | Research checks pass; live next-review packet includes the current author-standing bytes. |
 
-Context resolution is active. Every agent stage uses a fresh worker with no
+Research review iteration 1 is active. Every agent stage uses a fresh worker with no
 inherited authoring conversation and the packet's declared reasoning effort.
 Author stages use `high`; review stages use `xhigh`. No nested workers are
 authorized by this workflow.
@@ -27,6 +33,13 @@ and `tmt check` passed. The release binding check reported zero stale bindings.
 The promise-ledger check has identical failures against the seed ledger and
 the newly registered target: ignored older PDFs are absent from a fresh clone.
 Those failures are not new-target acceptance and remain separately identified.
+
+After research, the canonical source graph, refreshed structural inventory and
+family ledger validate. The new publication is broadly source-categorized;
+the family ledger remains honestly pending and claims no completed family
+screening. The integrated `make check-sources` awaits the author stage's
+`web-edition.toml`, absent beside the deliberate source placeholder at this
+point. This intermediate failure is not waived for final acceptance.
 
 ## Scope
 

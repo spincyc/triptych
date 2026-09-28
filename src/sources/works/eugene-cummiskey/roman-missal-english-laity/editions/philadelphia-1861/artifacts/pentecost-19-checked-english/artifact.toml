@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.pentecost-19-checked-english"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Underlying anonymous English liturgical text published by Eugene Cummiskey, Philadelphia, 1861, is public domain in the United States by publication date. This file transcribes only that historical text; Google and Internet Archive apparatus is excluded."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/romanmissaltran00churgoog/romanmissaltran00churgoog.pdf"
+provenance = "Model-assisted transcription of four historical English passages, checked against the original page images on 2026-09-28. The separately registered complete source PDF was acquired and its hash matched; this artifact hash identifies only the normalized checked derivative, not the original source delivery."
+retrieved = "2026-09-28"
+sha256 = "e13f1baaafdf562493c8efeb9d7307d9367c331c2743af7d8609af5fe0802abe"
+byte_size = 685
+indexable = true
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/pentecost-19-checked-english/text.tsv"
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+transformation = "Transcription prepared during image collation collated visually against complete scan PDF pages 454–457, printed 445–448, on 2026-09-28. Line breaks and small capitals normalized, split words rejoined; source abbreviations preserved. No translation or modernization of wording. The source scan is not itself this text payload."
+encoding = "utf-8"

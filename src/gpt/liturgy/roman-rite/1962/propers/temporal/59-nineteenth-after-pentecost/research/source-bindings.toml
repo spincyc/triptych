@@ -1,0 +1,220 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = ["Printed411–412, marginal1679–1688; PDF492–493", "General rubrics91,95,111b, Mass rubrics358b,434b; printedXVII–XVIII,XXVI,XXXI; PDF15,16,24,29"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact full hash matched and specified page images personally inspected on 2026-09-28. Text/rank/appointments and bounded rubric control; no blanket public-domain claim."
+verified_on = "2026-09-28"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.pentecost-19-pages-351-352"
+loci = ["Printed351–352; parent PDF437–438, IA436–437"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Both extracted facsimile pages visually read; all ten base Latin elements compared with 1962. Older extra orations excluded; abbreviations and typography distinguished. Retained public-domain antecedent evidence."
+verified_on = "2026-09-28"
+source_fingerprint = "sha256:986d47dd5f573f07089aae0bd719adb9ff0394622ac1feefecbbb8afa81f1e4e"
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.pentecost-19-checked-english"
+loci = ["post-pentecosten-19/introit", "post-pentecosten-19/collect", "post-pentecosten-19/secret", "post-pentecosten-19/postcommunion"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Detailed inspected bounds: Introit antiphon445–446; Collect446; Secret447; Postcommunion447–448. Four historical-English texts independently checked in full scan images PDF454–457 on 2026-09-28; source delivery hash matched. Exact historical wording, not model translation. The Postcommunion extends beyond the older registry locator."
+verified_on = "2026-09-28"
+source_fingerprint = "sha256:0a44a181c237f658867ee8342455dfc21911a4fb97d36dcbc5d3e4238b94293e"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = ["Ps.77.1", "Ps.104.1", "Ps.118.4-5", "Ps.137.7", "Ps.140.2"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Detailed inspected bounds: CompletePsalms77,104,118,137,140; appointed77:1,104:1,118:4–5,137:7,140:2. Registered historical Bible text read directly. Exact biblical study English, with liturgical introductions/adaptations distinguished in verified.md."
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183"
+loci = ["Matt.22.1-14"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Detailed inspected bounds: Matthew21–22; appointed22:1–14. Registered historical Bible text read directly. Exact biblical study English, with liturgical introductions/adaptations distinguished in verified.md."
+source_fingerprint = "sha256:ed47ecb092ecb6256fb84450e8ad39d0debf2efe6c65442199a76a7fb1a8b98b"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-56-ephesians-10c79be0"
+loci = ["Eph.4.23-28"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Detailed inspected bounds: Ephesians4–5; appointed4:23–28. Registered historical Bible text read directly. Exact biblical study English, with liturgical introductions/adaptations distinguished in verified.md."
+source_fingerprint = "sha256:faac3fc52bb177cb8aeb9f5f56ceb440558a3cd57823293335446f8ae7c4dbf6"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.ccel-text-ce371798"
+loci = ["Augustine Sermon90, §§1–10; English SermonXL, BenedictineXC; lines37787–38200"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Actual complete sermon read in the retained NPNF text: mixed feast, garment of charity, love of enemies. No fresh print-facsimile collation."
+source_fingerprint = "sha256:7f21e16b88aa6eba6556891bfa99280fd5662bf42ef391de140ad6d2960b329a"
+
+[[bindings]]
+source_id = "artifact.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.complete-extracted-text-dc25dd69"
+loci = ["38.1-7", "38.9-14"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Detailed inspected bounds: Gregory Homiliae in EvangeliaII.38 §§1–7,9–14; especially9–13. Historical Latin paragraphs directly read: Incarnation, charity, twofold love, imperfect charity, hands withheld from need. Section8 not used. No attribution of this exact Roman formulary to Gregory."
+source_fingerprint = "sha256:dd03fd6ff09944af5ba01e741418ae3278e9bc68a08acb4d0cd4538129984eea"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-13.english-ccel-web-2026-09-05.ccel-npnf113-text-54274dd9"
+loci = ["Chrysostom Homilies on EphesiansXIII, treatment of4:23–24; XIV,4:25–28"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Direct appointed-locus exegesis and immediate argument inspected in retained historical NPNF English: renewal of conduct, membership, anger, work and alms."
+source_fingerprint = "sha256:374d296602c0a52e4c252ad0e7704b9c9952d06f6b66b891bb391c8509c390db"
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
+loci = ["77.1-3", "104.1-3", "118.1-8", "137.10-13", "140.1-7"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Detailed inspected bounds: Augustine Enarrationes: LatinPs77 §§1–3 = English78; Latin104 §§1–3 = English105; Latin118 Aleph §§1–8 = English119; Latin137 §§10–13 = English138; Latin140 §§1–7 = English141. Numbering checked from incipits and edition Latin-number notes. Relevant full argument blocks read, not a claim to have read the complete commentary. Grace, prayer, sacrifice and context bounds recorded in scope.md."
+source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
+
+[[bindings]]
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+loci = ["Bellarmine Psalms77:1–8;104:1–2;118:1–8;137:7–8;140:1–5"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "O’Sullivan historical English inspected directly. Literal speaker disagreement with Augustine retained; no fresh image collation of 1866 print."
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.in-omnes-pauli-epistolas-commentaria.dessain-volume-2-1857.book-ocr-2b7b11dc"
+loci = ["Aquinas Super Ephesios4 lectio7, printed329; lines34632–34747"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Latin OCR inspected for bounded renewal/Spirit argument; imperfect OCR, paraphrase only. Detailed lectio8 argument not claimed."
+source_fingerprint = "sha256:fc0fe651fc1f34b1d124831a6538442a81cd47acb7ec6161c19a7bfb4269aadf"
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-volume-3-ocr-4d8c8988"
+loci = ["Schuster SacramentaryIII, Nineteenth Sunday after Pentecost, pp171–174, lines10707–10901"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete matching Sunday unit inspected in retained historical English OCR. Direct all-element liturgical reception; station and Itala claims remain author hypotheses, not independent manuscript findings."
+source_fingerprint = "sha256:04f9c86491a663faa60eb325af91ca9056441e83aadb4608fbb0d8b87136a32f"
+
+[[bindings]]
+source_id = "artifact.honorius-augustodunensis.gemma-animae.1895-garnier-migne-pl-172.ia-djvu-ocr-2ebfcb5f"
+loci = ["IV.86"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Detailed inspected bounds: Honorius Gemma animaeIV.86, lines57029–57068. Actual Latin OCR locus read after formulary-index discovery. Shared elements only: commentator uses Matthew9, not this Matthew22 Gospel. Not counted as a required saintly/Father contributor."
+source_fingerprint = "sha256:472c828bf45f8c1c1d4e99c11211b27a8834e420d9bc76cf99a1d51833bfdffb"
+
+[[bindings]]
+source_id = "artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.ia-djvu-ocr-2e2ca850"
+loci = ["Rupert De divinis officiisXII.19,23487–23534"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Actual Latin OCR locus read after formulary-index discovery. Shared elements only: commentator uses Matthew9, not this Matthew22 Gospel. Not counted as a required saintly/Father contributor."
+source_fingerprint = "sha256:7ec56124e31762f147f8aed197516894e92dc2d5ec7de99bcc91a9f11d1a98d3"
+
+[[bindings]]
+source_id = "artifact.sicard-of-cremona.mitrale.latin-migne-pl-213.ia-djvu-ocr-ea9fd813"
+loci = ["Sicard MitraleVIII.19,29729–29749"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Actual Latin OCR locus read after formulary-index discovery. Shared elements only: commentator uses Matthew9, not this Matthew22 Gospel. Not counted as a required saintly/Father contributor."
+source_fingerprint = "sha256:f7ef227833c6454f7bea588021ba7c000d14f6dc1220746e710f6f3d8a19f761"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05485a-66d722ae-article-text"
+loci = ["Ladeuze, Epistle to the Ephesians, Date and place of composition; occasion, line69; destination discussion"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Retained historical article locus read as controlling evidence behind canonical chronology. Alternative proposals and uncertainty retained; no local replacement biblical dates."
+source_fingerprint = "sha256:1f1fff0c74949e159b7c41798a891333e64322a070bdbc6ded225800858f1456"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8-article-text"
+loci = ["Prat, St Paul, Chronology, concluding table line45"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Retained historical article locus read as controlling evidence behind canonical chronology. Alternative proposals and uncertainty retained; no local replacement biblical dates."
+source_fingerprint = "sha256:83263e9b6b864dbc2776538285f276ac7740d8e39098d077148ce421ca998f4f"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef-article-text"
+loci = ["Jacquier, Gospel of St Matthew, Date and place of composition, lines199–203"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Retained historical article locus read as controlling evidence behind canonical chronology. Alternative proposals and uncertainty retained; no local replacement biblical dates."
+source_fingerprint = "sha256:a5698ebe70292d9dc1c32df2c8cc440778cb8d0dc2f840f11d127482a4c4d5dd"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c-article-text"
+loci = ["Durand, The Synoptics, Origin, paragraph distinguishing original Aramaic and Greek rendering, line29"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Retained historical article locus read as controlling evidence behind canonical chronology. Alternative proposals and uncertainty retained; no local replacement biblical dates."
+source_fingerprint = "sha256:0a5a9e3b92db7d3a9953343ff8b1a04ec7baa2a01adbf31eadc28dc4e8f410d4"
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction-2026-09-28"
+loci = ["Whole Psalms introduction, especially second paragraph"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Actual current complete HTML acquired and hashed; introduction read directly. Broad composition boundary and inability to date each psalm securely both retained. Different delivery hash from July corpus artifact, not a claimed byte-identical reacquisition."
+source_fingerprint = "sha256:efc1b3e8a57dbda5d9bcb97137ea9911558ec6ec792b2247b0e8e7c8fed07cc3"
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"
+loci = ["Psalms introduction"]
+role = "context"
+states = ["cataloged"]
+context = "Catalogued exact source named by chronology. Its old delivery was not reacquired identically; the same official introduction was read in separately registered current bytes."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.matthew-introduction"
+loci = ["Matthew introduction, final five prose paragraphs on authorship, sources, composition and place; narrative overview of chapters 19-25"]
+role = "context"
+states = ["cataloged"]
+context = "Exact September21 corpus witness catalogued. The official current page was independently read through web access on2026-09-28; no exact-byte match to this older delivery is claimed. Current ordinary citation: https://bible.usccb.org/bible/matthew/0 . Comparison remains generated from the corpus."
+
+[[bindings]]
+source_id = "artifact.priestly-fraternity-of-saint-peter-france.ordo-du-mois.web-2026-09-28.complete-html-05f032b8"
+loci = ["October2026 heading HTML255, Sunday4October in line256"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete acquired institutional page inspected at the exact October block. Corroborates Sunday and optional external Rosary solemnity for FSSP France, not a universal local-calendar judgment."
+source_fingerprint = "sha256:97a8333f512ba4a9a05e245c9b8de2f56bbf307cbc2185c316b1aa0d63391620"
+
+[[bindings]]
+source_id = "artifact.francis-bacon.essays.gutenberg-575.complete-delivery-2026-09-28"
+loci = ["Of Anger, lines4745–4813"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Whole work acquired; complete essay read. Biblical limitation of anger becomes practical moral psychology, with subsequent revenge counsel distinguished from Christian charity."
+source_fingerprint = "sha256:878e4b46a83cf6f0218d7310e18bc383ae69393e750b4120c5b7447b901b4fa7"
+
+[[bindings]]
+source_id = "artifact.matthew-arnold.selections-from-prose-works.gutenberg-12628.complete-delivery-2026-09-28"
+loci = ["Heinrich Heine, closing paragraphs, lines4911–4953"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Whole volume acquired; closing argument read. Called/chosen formula applied to literary promise and moral balance, not a claim about eternal destiny."
+source_fingerprint = "sha256:a3edb262ec1f57ccab9861c140cb3eca2f1ae44e5d17289d28807b4a54a2f03b"
+
+[[bindings]]
+source_id = "artifact.ernst-haeckel.history-of-creation.gutenberg-40472.complete-delivery-2026-09-28"
+loci = ["VolumeI chapterVII, lines5140–5204"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Whole volume acquired; competition paragraph and context read. Called/chosen formula repurposed for differential survival. Cultural reception, not theological or scientific endorsement."
+source_fingerprint = "sha256:e48cbcc43d573db112aa84c738dbf351ff8addcd5a26df37097970d2881deb2f"

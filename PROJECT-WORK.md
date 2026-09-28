@@ -19,12 +19,20 @@ under the current `proper-study` three-document contract: a 20–50-page
 expansive study, a 10–12-page concise study, a standalone homily for an adult
 parish assembly, and the canonical study's web edition. The production plan
 records this exact scope opening. Calendar computation identifies the
-Nineteenth Sunday after Pentecost; the context stage must establish the
-dated occurrence and preserve any local-calendar limitation from its witnesses.
+Nineteenth Sunday after Pentecost; the context stage established the
+dated occurrence and preserved the local-calendar limits of its witnesses.
 
 **In progress.** Run `b686b7a44f0e35e7` is seeded under `proper-study` v7 at
-`a1320fb62298ed6b1cf10d82d252212a03a484d0`. The scope gate passed and context
-resolution is underway; no publication has been authored or accepted.
+`a1320fb62298ed6b1cf10d82d252212a03a484d0`. Scope and context resolution have
+passed; research and its program preflight have passed. Cold research review
+returned one dependency-closure repair. Research iteration 1 and its preflight
+have passed; a fresh reviewer is checking the repaired record.
+The context records a dated FSSP Ordo,
+six inspected Missal page images, ten appointed elements and the Trinity
+Preface, the omitted St Francis commemoration, and the separate optional Rosary
+external solemnity. Research records full Latin/English collation, 27 exact
+source bindings, chronology, bounded reception and two proposed readings.
+No publication has been authored or accepted.
 Every worker and cold reviewer will be dispatched fresh at the workflow's
 declared effort. The owning leaf will retain its research, review dispositions,
 and terminal run evidence. Work remains on `feature/propers/codex`, the
