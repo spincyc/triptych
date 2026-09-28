@@ -1,0 +1,273 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "SYN-CIT-001",
+      "location": "sections/synthesis-90-apparatus.tex:22, References, PDF p. 11; the same title occurs in the expansive study's sections/70-apparatus.tex",
+      "problem": "The bibliography names Durand's 1912 Catholic Encyclopedia source as The Synoptics. The actual retained article, newadvent-14530a-0a19aa2c-article-text, is titled The New Testament, as its first line and https://www.newadvent.org/cathen/14530a.htm confirm. Its Origin discussion supports the Matthew and John chronology used here; the defect is the bibliographical title, not the chronology or argument.",
+      "required_result": "At the next suitable revision, cite Alfred Durand, The New Testament (1912), section Origin, consistently in the concise and canonical references, retaining the existing source-specific chronology qualifications.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-lamentations",
+            "communion-corinthians",
+            "after-communion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/synthesis-01-inventory.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-lamentations",
+            "communion-corinthians",
+            "after-communion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/synthesis-02-overview.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-lamentations",
+            "communion-corinthians",
+            "after-communion"
+          ],
+          "key": "concise-chronology",
+          "kind": "front-matter",
+          "path": "sections/synthesis-03-chronology.tex",
+          "references": [
+            "research/chronology-annotations.tex"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-lamentations",
+            "communion-corinthians",
+            "after-communion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/synthesis-04-themes.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-lamentations",
+            "communion-corinthians",
+            "after-communion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/synthesis-05-commentary.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/synthesis-90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a",
+      "element_keys": [
+        "entrance",
+        "collect",
+        "first-reading",
+        "responsorial-psalm",
+        "second-reading",
+        "acclamation",
+        "gospel",
+        "offerings",
+        "communion-lamentations",
+        "communion-corinthians",
+        "after-communion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "gift"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-lamentations",
+            "communion-corinthians",
+            "after-communion"
+          ],
+          "key": "gift-and-fruit",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "title": "The fruit of a gift"
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Robert Bellarmine",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Leo the Great"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "restoration"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-lamentations",
+            "communion-corinthians",
+            "after-communion"
+          ],
+          "key": "restored-vineyard",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "title": "The wounded vineyard made one"
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a",
+    "files": {
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+      "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex": "9d6664bb232d4a2078a26084f09cb270d9ce7a3a05a1d90c2fd120d49daeb6df",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/interpretations.md": "54d13433c39247b038c2d05196dcd1b0252410c4b6edec7cfb3f5b3a5fa8d606",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/synthesis-01-inventory.tex": "bb04ac5c1df4faa24e3c7d8726b9a20e7cbe407c2f3270d275883708c820b871",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/synthesis-02-overview.tex": "6ff29afae88ac150f808d743c8510bc6504f665638cbe4dfc1c7c293e15cbebc",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/synthesis-03-chronology.tex": "a7db258e951e680236c1d2180617dc12e7deb0cd7316fccd3b623272ceced8c7",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/synthesis-04-themes.tex": "720ab9d17b393af0c1e2a3fc7e6174946f0b6f99886ce3e31678aa39e1ef42fa",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/synthesis-05-commentary.tex": "7f56702bbe940967d1451384ea8e3a600f65183a4556e5970148f7b4031bd3fe",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/synthesis-90-apparatus.tex": "1d1b30403183dcf71f6eb1a74b61d819b17ce8918792ef4df5d43439a124c455",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/synthesis.tex": "2be474d0a6cb0de2b235b86ffda7536e72962974fc4d2b8f0353f3f8c3f3641a"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "7",
+            "9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38",
+            "17099e79f3655b7d",
+            "264879369f1710eb0600a74836cedc62abd1ff28",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "Independently reviewed the sealed PC-S53-A concise study and all 11 proof pages against the expansive study, generated chronology, biblical contexts, and exact retained Augustine, Chrysostom, Bellarmine, Aquinas and Leo loci: the 1/2/3\u20134/5 opening, interleaved arguments, appointed alternatives and material qualifications meet the contract, with no blocking defect and one bibliographical advisory. All 11 sealed file hashes match; this review does not claim a new altar-book or critical-language collation, and live requests for the two NABRE introductions were refused, so their treatment was checked against the existing chronology evidence and upstream study."
+}

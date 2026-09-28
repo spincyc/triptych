@@ -266,13 +266,13 @@ nav a { color: var(--ink); text-decoration: none; }
    or Textual unit, Citation, Location, Date) that a reader needs side by side,
    so no column of it may go behind a sideways scroll — the maintainer's
    decision of 2026-09-23. It is found by its section heading, whose id is the
-   converter's `sec:date-location` label or the slug of the plain heading, and
+   converter's `sec:date-location` label or the plain or Appendix heading slug, and
    it ends at the next h2; test_public_alpha holds every edition to those ids.
    Wide, it is an ordinary table: its longest words need about 570px at most,
    which every width above the 760px query affords, and a block that scrolls
    let one edition's fixed 87% width clip its Date column at desktop widths.
    Narrow, see the 760px query. */
-.page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ h2 ~ table) {
+.page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"]) ~ h2 ~ table) {
   display: table;
 }
 
@@ -593,36 +593,36 @@ a.footnote-backref { text-decoration: none; }
      block laid out the same way. A padded note row (a note in the first cell,
      the rest empty) spans both. The cells stay table cells, so each keeps its
      header. */
-  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ h2 ~ table) {
+  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"]) ~ h2 ~ table) {
     display: block;
     width: auto;
     overflow: visible;
   }
-  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ h2 ~ table) :is(thead, tbody) {
+  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"]) ~ h2 ~ table) :is(thead, tbody) {
     display: block;
   }
-  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ h2 ~ table) tr {
+  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"]) ~ h2 ~ table) tr {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     border: 1px solid var(--section-line, var(--line));
   }
-  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ h2 ~ table) :is(tr + tr, thead + tbody tr:first-child) {
+  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"]) ~ h2 ~ table) :is(tr + tr, thead + tbody tr:first-child) {
     border-top: 0;
   }
-  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ h2 ~ table) :is(th, td) {
+  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"]) ~ h2 ~ table) :is(th, td) {
     padding: 0.6rem 0.7rem;
     border: 0;
   }
-  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ h2 ~ table) :is(th, td):nth-child(even) {
+  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"]) ~ h2 ~ table) :is(th, td):nth-child(even) {
     border-left: 1px solid var(--section-line, var(--line));
   }
-  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ h2 ~ table) :is(th, td):nth-child(n + 3) {
+  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"]) ~ h2 ~ table) :is(th, td):nth-child(n + 3) {
     border-top: 1px solid var(--section-line, var(--line));
   }
-  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ h2 ~ table) tr:has(> :nth-child(2):empty):has(> :nth-child(3):empty):has(> :nth-child(4):empty) > :first-child {
+  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"]) ~ h2 ~ table) tr:has(> :nth-child(2):empty):has(> :nth-child(3):empty):has(> :nth-child(4):empty) > :first-child {
     grid-column: 1 / -1;
   }
-  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"]) ~ h2 ~ table) tr:has(> :nth-child(2):empty):has(> :nth-child(3):empty):has(> :nth-child(4):empty) > :empty {
+  .page-shell.reading :is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"]) ~ table:not(:is(h2[id="sec:date-location"], h2[id="scriptural-date-and-location"], h2[id="appendix-scriptural-date-and-location"]) ~ h2 ~ table) tr:has(> :nth-child(2):empty):has(> :nth-child(3):empty):has(> :nth-child(4):empty) > :empty {
     display: none;
   }
   /* A long unbreakable run — a URL in the third-party notices, a query string

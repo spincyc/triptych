@@ -1,0 +1,41 @@
+{"event": "seed", "stage": "scope-gate", "timestamp": "2026-09-28T18:26:41Z", "workflow_id": "proper-study", "workflow_version": 7}
+{"event": "packet", "hash": "3bfbc3dd013b07a4648714a3f672635d6af43af4a136f93f1e08ec843fb35eb3", "iteration": 0, "size": 772, "stage": "scope-gate", "timestamp": "2026-09-28T18:26:41Z"}
+{"disposition": "PASS", "event": "result", "stage": "scope-gate", "timestamp": "2026-09-28T18:27:49Z", "transition": "resolve-context"}
+{"event": "packet", "hash": "729dae49b6badb26a8923a729d0e184333d7cde063385aea6d419c8a23cadb80", "iteration": 0, "size": 32886, "stage": "resolve-context", "timestamp": "2026-09-28T18:27:49Z"}
+{"disposition": "PASS", "event": "result", "stage": "resolve-context", "timestamp": "2026-09-28T18:40:18Z", "transition": "research"}
+{"event": "packet", "hash": "5c635b54723e8ce129c0a0cae1489bff92666340e04bb6eb6596af5fa9ec3ef5", "iteration": 0, "size": 33671, "stage": "research", "timestamp": "2026-09-28T18:40:18Z"}
+{"event": "intervene", "stage": "research", "text": "Contract wording clarification: the contract explicitly names guidance/liturgy/propers-three-documents.md as the deliverable owner. Its schema-2 supersession removes the older mandatory cultural-gallery and exploratory-proposal quotas. Read the coordinated no-clause consistently with that owner; each interpretation still requires its own four senses. No workflow source or review criteria changed.", "timestamp": "2026-09-28T18:43:29Z"}
+{"disposition": "PASS", "event": "result", "stage": "research", "timestamp": "2026-09-28T19:11:52Z", "transition": "research-preflight"}
+{"event": "packet", "hash": "a8619a2091e644002fd527e8c27989958114f94f1ad56e7367f13a7a34baeccd", "iteration": 0, "size": 780, "stage": "research-preflight", "timestamp": "2026-09-28T19:11:52Z"}
+{"disposition": "PASS", "event": "result", "stage": "research-preflight", "timestamp": "2026-09-28T19:12:05Z", "transition": "research-review"}
+{"event": "packet", "hash": "ea9dff5ad208639b2bb11c6c44ce81a9c4537cf97d825ffd908039af25b2e1c9", "iteration": 0, "size": 67987, "stage": "research-review", "timestamp": "2026-09-28T19:12:05Z"}
+{"disposition": "CHANGES_REQUIRED", "event": "result", "stage": "research-review", "timestamp": "2026-09-28T19:26:57Z", "transition": "research"}
+{"event": "packet", "hash": "8ed566b165d2f5cdd3c99df0b9b7b2e06524fe7b89d6881c86c9c98cd08f118e", "iteration": 1, "size": 37290, "stage": "research", "timestamp": "2026-09-28T19:26:57Z"}
+{"disposition": "PASS", "event": "result", "stage": "research", "timestamp": "2026-09-28T19:36:35Z", "transition": "research-preflight"}
+{"event": "packet", "hash": "a5b2d9ad4ea3a8259ba70063fea6380b5838e13d0e42133842972febfd02058b", "iteration": 1, "size": 2723, "stage": "research-preflight", "timestamp": "2026-09-28T19:36:35Z"}
+{"disposition": "PASS", "event": "result", "stage": "research-preflight", "timestamp": "2026-09-28T19:36:40Z", "transition": "research-review"}
+{"event": "packet", "hash": "0a2f3c2e95152c635affe76d8bfca6818e97204b0edd2e28f5cf387488bd228f", "iteration": 1, "size": 74935, "stage": "research-review", "timestamp": "2026-09-28T19:36:40Z"}
+{"disposition": "PASS", "event": "result", "stage": "research-review", "timestamp": "2026-09-28T19:49:34Z", "transition": "author-study"}
+{"event": "packet", "hash": "75db4102956180ff3c19a9d6cdab126c9840b1bd2fb98b8b9ef265e5845cf6f4", "iteration": 0, "size": 34951, "stage": "author-study", "timestamp": "2026-09-28T19:49:34Z"}
+{"disposition": "PASS", "event": "result", "stage": "author-study", "timestamp": "2026-09-28T20:13:35Z", "transition": "study-preflight"}
+{"event": "packet", "hash": "5900ad4d5c4bd138f30af7f02128bfe2aebff79fa5ea3cfa6a2e4eeeeba91bf3", "iteration": 0, "size": 777, "stage": "study-preflight", "timestamp": "2026-09-28T20:13:35Z"}
+{"disposition": "PASS", "event": "result", "stage": "study-preflight", "timestamp": "2026-09-28T20:13:43Z", "transition": "study-review"}
+{"event": "packet", "hash": "fb22299a560b0c888aca51b7e1e47dd61f003007a7d32cbdb140f3d2f45a36c0", "iteration": 0, "size": 43195, "stage": "study-review", "timestamp": "2026-09-28T20:13:43Z"}
+{"disposition": "PASS", "event": "result", "stage": "study-review", "timestamp": "2026-09-28T20:25:32Z", "transition": "derive-synthesis"}
+{"event": "packet", "hash": "6a0ad17bdc89ca23cf82abc87ceb7f152375c0aaac586800db0f831c3d121d34", "iteration": 0, "size": 33832, "stage": "derive-synthesis", "timestamp": "2026-09-28T20:25:32Z"}
+{"disposition": "PASS", "event": "result", "stage": "derive-synthesis", "timestamp": "2026-09-28T20:40:54Z", "transition": "synthesis-preflight"}
+{"event": "packet", "hash": "073239bcfe350fb96a5c6fcea60587f28f4b2bc19e85726d88f58bd6e06a61aa", "iteration": 0, "size": 781, "stage": "synthesis-preflight", "timestamp": "2026-09-28T20:40:54Z"}
+{"disposition": "PASS", "event": "result", "stage": "synthesis-preflight", "timestamp": "2026-09-28T20:41:02Z", "transition": "synthesis-review"}
+{"event": "packet", "hash": "adebb47d4de7d039b8f2963b03845dd2bb3eb4250841858a9737fd24d21dc7ae", "iteration": 0, "size": 40800, "stage": "synthesis-review", "timestamp": "2026-09-28T20:41:02Z"}
+{"disposition": "PASS", "event": "result", "stage": "synthesis-review", "timestamp": "2026-09-28T20:50:14Z", "transition": "derive-homily"}
+{"event": "packet", "hash": "29ca920be4862d43c52fe7b60f01728e17f0fb8fde0d1bcc2bfd0630b7427396", "iteration": 0, "size": 32860, "stage": "derive-homily", "timestamp": "2026-09-28T20:50:14Z"}
+{"disposition": "PASS", "event": "result", "stage": "derive-homily", "timestamp": "2026-09-28T21:01:13Z", "transition": "homily-preflight"}
+{"event": "packet", "hash": "d5c1c4074e3526d107f3b22665d68cbb07d2431eb4a3ceb82415f9b1f61bf092", "iteration": 0, "size": 778, "stage": "homily-preflight", "timestamp": "2026-09-28T21:01:13Z"}
+{"disposition": "PASS", "event": "result", "stage": "homily-preflight", "timestamp": "2026-09-28T21:01:21Z", "transition": "homily-review"}
+{"event": "packet", "hash": "f97c3daeca7d9f01f776c59d524d0ffa7f3eeb997a447049dd84625e31a897d8", "iteration": 0, "size": 37754, "stage": "homily-review", "timestamp": "2026-09-28T21:01:21Z"}
+{"disposition": "PASS", "event": "result", "stage": "homily-review", "timestamp": "2026-09-28T21:07:42Z", "transition": "build-artifacts"}
+{"event": "packet", "hash": "8c29890c12a21584dd7cf5a6f5d06adfb8be847dd9542342e11144e87984c562", "iteration": 0, "size": 33865, "stage": "build-artifacts", "timestamp": "2026-09-28T21:07:42Z"}
+{"disposition": "PASS", "event": "result", "stage": "build-artifacts", "timestamp": "2026-09-28T21:13:30Z", "transition": "artifact-gates"}
+{"event": "packet", "hash": "48de6b6038d4e30e5b6961274b6f3dd32da274cb178c763e15c46a079d1f936d", "iteration": 0, "size": 834, "stage": "artifact-gates", "timestamp": "2026-09-28T21:13:30Z"}
+{"disposition": "PASS", "event": "result", "stage": "artifact-gates", "timestamp": "2026-09-28T21:13:41Z", "transition": "visual-review"}
+{"event": "packet", "hash": "cd00fc64b729832e5615cbf9b011210d6fcae0685b11a4bcce18325278662f06", "iteration": 0, "size": 42335, "stage": "visual-review", "timestamp": "2026-09-28T21:13:41Z"}

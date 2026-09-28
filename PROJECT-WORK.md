@@ -18,26 +18,81 @@ Sunday propers calendar. The target is provider `gpt`, identity
 The USCCB dated readings identify the Twenty-seventh Sunday in Ordinary Time,
 Year A, Lectionary 139. The production plan records this exact scope opening.
 
-**In progress.** Proper-study v7 run `17099e79f3655b7d`, seeded at
-`264879369f1710eb0600a74836cedc62abd1ff28`, passed its authorization gate
-and entered context resolution. It will produce the expansive study, concise
-study, standalone homily and canonical web edition, with fresh independent
-reviews and durable run evidence. Context resolution includes the new Week 27
-shared Missal owner and exact edition-registry and build-dependency records.
+**Accepted and installed.** Proper-study v7 run `17099e79f3655b7d`, seeded at
+`264879369f1710eb0600a74836cedc62abd1ff28`, reached actual `ACCEPTED` after
+26 recorded packets and results, with no escalation. Fresh workers authored
+each stage at the declared high effort; fresh independent reviewers used
+xhigh. The [production archive](workflows/reviews/gpt-pc-s53-production-2026-09-28/README.md)
+retains exact packets, results, interventions, checkpoint hashes and the
+terminal state. The leaf's evaluation record links that archive and preserves
+the observed terminal status and replay. Final artifact hashes are recorded
+in the leaf's research receipts.
 
-**Catalog separation verified.** The Sunday and replacement tables now have
-separate ChatGPT and Claude columns and a cycle column. All 52 link targets,
-17 publication markers and 216 celebration/cycle associations are preserved;
-the production renderer retains all 49 publication links. Chromium checks at
-1440, 1024, 768, 393 and 320 pixels found no page overflow; narrow screens use
-the existing internal table scrolling. The 36 proper-study tests and full
-promise-ledger validation pass. Catalog-only release bindings are exact.
-The completed older provider-attribution criterion now checks the named
-columns, as expressly requested, while retaining its attribution gate tests.
+The installed family comprises a 21-page expansive study with 7,480
+substantive words, an 11-page concise study with 3,491 substantive words,
+a three-page homily and the canonical web edition. Concise physical-page
+markers place the map on page 1, chronology on page 2, themes on pages 3–4
+and commentary from page 5. The homily has 1,366 spoken words, estimated
+at 10.9–11.9 minutes at 115–125 words per minute before pauses; this was
+not a timed performance. All 35 final PDF pages passed fresh visual review.
+Normal Make installation preserved all three reviewed PDF hashes exactly;
+the installed Markdown is byte-identical to its reviewed conversion.
 
-Work remains on
-`feature/propers/codex`; completion, publication and deployment will be
-reported separately against actual evidence.
+Context resolution added the Week 27 shared Missal owner and exact GPT
+edition-registry and build-dependency records. Research covers all eleven
+element keys and two distinct interpretations, each with its own four senses.
+The first research review required ICEL policy and Honorius witness ancestry;
+the repair also corrected passage bounds and the local historical Mass
+comparison. Fresh review passed against 195 evidence files and 16 chronology
+inputs. Bounded source limits remain explicit: incomplete governing altar-book
+collation, unestablished exact approved-English Offerings text, unknown local
+choices, historical abridgments and incomplete reception coverage. The source
+family ledger retains its pending review states.
+
+The first web review passed full text fidelity but required the chronology
+appendix to receive the existing responsive table layout. The shared stylesheet
+now recognizes its appendix heading alongside the two earlier heading forms;
+regression coverage checks all ten rules and their following-section boundary.
+Both focused tests pass, while the old stylesheet fails all ten regression
+checks. Browser measurements cover all eight chronology tables at 320, 500
+and 1440 CSS pixels and preserve the old heading forms. Regeneration left the
+Markdown unchanged, and fresh independent review passed without findings after
+its own 500/1280-pixel browser and source/PDF checks. Root also inspected the
+saved mobile and desktop screenshots.
+
+The nonblocking STU-001/SYN-CIT-001 advisory remains explicit: Durand's
+bibliography title should be *The New Testament*, not *The Synoptics*.
+The cited article and its chronology evidence were checked. No repair route
+was invented to promote an advisory. VIS-001 accepts the sparse substantive
+terminal bibliography page. The archive also preserves the schema-2 quota
+clarification and the homily element-coverage tool/profile tension; no pinned
+workflow source changed to resolve either.
+
+**Catalog separation verified.** Sunday and replacement tables have separate
+ChatGPT and Claude columns and a cycle column. All 52 prior link targets,
+17 prior publication markers and 216 celebration/cycle associations remain;
+the new GPT Year A row adds exactly four links and one canonical marker.
+All 53 current publication links survive the production renderer, whose
+provider headers retain `scope="col"`. The earlier table layout checks passed
+at 1440, 1024, 768, 393 and 320 pixels. The 36 proper-study tests passed.
+The older provider-attribution criterion now accepts the expressly requested
+named columns while retaining its attribution gate tests.
+
+The terminal gate passed exact artifact/publication checks, scoped public-alpha
+policy, release bindings, the deterministic document catalog and corpus-wide
+web currency. The three release records and scoped site-source bindings match
+the installation. The aggregate source audit required a scoped refresh of five
+source-reader projection files for the new source editions; its repeat passed.
+Full public-alpha validation passed with 236 publications (234 alpha, two held),
+release bindings have zero stale entries and all 4,085 source-reader files are
+current. The archive retains the audit's nonblocking coverage limits and
+inherited exceptions. The final staged whitespace check reports an extra blank
+line at EOF in `synthesis.tex` and `synthesis-01` through `synthesis-05` components;
+the earlier unstaged checks did not inspect these new files. These six source
+style warnings are retained to preserve the accepted immutable source and PDF
+identities; the default staged whitespace check is not claimed to pass.
+Final commit bookkeeping remains pending on
+`feature/propers/codex`; no Pages deployment is claimed.
 
 ## GPT 1962 Nineteenth Sunday three documents, 2026-09-28
 

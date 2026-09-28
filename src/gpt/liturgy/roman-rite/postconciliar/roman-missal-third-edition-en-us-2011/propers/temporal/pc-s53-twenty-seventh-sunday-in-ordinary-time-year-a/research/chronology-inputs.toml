@@ -1,0 +1,99 @@
+# Appointment query input; no independently authored dates.
+# Entrance: Missal cf. Esther 4:17 maps to the Vulgate prayer at 13:9-11.
+# Corinthians 10:16 is the identified chalice context, not an additional appointed verse.
+schema = 1
+record_type = "proper-chronology-inputs"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a"
+calendar = "postconciliar"
+formula = "PC-S53-A"
+shared_owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/27/propers/verified.md"
+
+[[elements]]
+key = "entrance"
+name = "Entrance antiphon"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/27/propers/verified.md"
+citations = [
+  { ref = "Esther 13:9-11", citation = "Esther 13:9-11", system = "vulgate", kind = "identified-basis" },
+]
+
+[[elements]]
+key = "collect"
+name = "Collect"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/27/propers/verified.md"
+citations = [
+]
+non_scriptural_reason = "Composed Missal oration; no directly appointed biblical citation."
+
+[[elements]]
+key = "first-reading"
+name = "First reading"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Isaiah 5:1-7", citation = "Isaiah 5:1-7", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "responsorial-psalm"
+name = "Responsorial psalm"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Psalm 80:9, 12, 13-14, 15-16, 19-20", citation = "Psalm 80:9, 12, 13-14, 15-16, 19-20", system = "hebrew", kind = "appointed" },
+  { ref = "Isaiah 5:7a", citation = "Isaiah 5:7a", system = "vulgate", kind = "response" },
+]
+
+[[elements]]
+key = "second-reading"
+name = "Second reading"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Philippians 4:6-9", citation = "Philippians 4:6-9", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "acclamation"
+name = "Gospel acclamation"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Cf. John 15:16", citation = "John 15:16", system = "vulgate", kind = "adaptation" },
+]
+
+[[elements]]
+key = "gospel"
+name = "Gospel"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Matthew 21:33-43", citation = "Matthew 21:33-43", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "offerings"
+name = "Prayer over the Offerings"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/27/propers/verified.md"
+citations = [
+]
+non_scriptural_reason = "Composed Missal oration; no directly appointed biblical citation."
+
+[[elements]]
+key = "communion-lamentations"
+name = "Communion antiphon: Lamentations option"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/27/propers/verified.md"
+citations = [
+  { ref = "Lamentations 3:25", citation = "Lamentations 3:25", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "communion-corinthians"
+name = "Communion antiphon: Corinthians option"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/27/propers/verified.md"
+citations = [
+  { ref = "Cf. 1 Corinthians 10:17", citation = "1 Corinthians 10:17", system = "vulgate", kind = "adaptation" },
+  { ref = "1 Corinthians 10:16", citation = "1 Corinthians 10:16", system = "vulgate", kind = "identified-basis" },
+]
+
+[[elements]]
+key = "after-communion"
+name = "Prayer after Communion"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/27/propers/verified.md"
+citations = [
+]
+non_scriptural_reason = "Composed Missal oration; no directly appointed biblical citation."

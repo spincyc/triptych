@@ -1,0 +1,14 @@
+{
+  "artifact_path": "build/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "WEB-001",
+      "note": "All eight appendix dossiers use grid rows at 500px and ordinary four-column rows at 1280px, with no table or cell horizontal overflow; heading and all explanations remain unchanged. The owning heading/selector contract test passes.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "generate-web",
+  "summary": "Regenerated the canonical web edition through the normal converter, preserving all 77,606 Markdown bytes, and refreshed its receipt. Independently verified the shared appendix-heading repair with the owning test, full-document browser measurements at 500 and 1280 pixels, and focused-section visual inspection; recorded supplementary CSS identity without extending the Markdown receipt scope."
+}

@@ -1,0 +1,26 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "WEB-001",
+      "location": "build/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.md:455, Appendix: Scriptural Date and Location and its eight dossier tables; canonical leaf sections/60-history.tex:1; release/public-alpha/assets/site.css:275 and :596",
+      "problem": "The appendix heading renders as h2#appendix-scriptural-date-and-location, while the site's responsive dossier rules recognize only sec:date-location and scriptural-date-and-location. Consequently these tables receive the generic horizontally scrolling table layout instead of the required stacked narrow layout. In the actual full-document browser DOM at a measured 500-pixel viewport, six dossier tables exceed their 437-pixel visible width (Entrance 473 pixels; Corinthians 523 pixels), and the faithful focused-section screenshot visibly clips the Entrance Composition label and date behind a scrollbar. This violates the web-edition rule that every dossier column remain visible at narrow widths; the existing heading test misses the Appendix-prefixed form.",
+      "repair_target": "publication",
+      "required_result": "Make the generated appendix participate in the site's existing dossier presentation while preserving its heading, all eight dossiers and their explanations. Repair the publication conversion/rendering contract rather than hand-editing the generated Markdown, cover the Appendix-prefixed heading in the owning check, regenerate the canonical web edition, and verify that every chronology column is visible without horizontal table scrolling at narrow widths while desktop remains readable.",
+      "severity": "blocking"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a",
+    "files": {},
+    "provider": "gpt",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.md": "7d4109999858aab4efb433b0e95df5652edee458450e75c94eb9316a6196dac9"
+    }
+  },
+  "stage": "web-review",
+  "summary": "Reviewed the complete canonical build/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.md, SHA-256 7d4109999858aab4efb433b0e95df5652edee458450e75c94eb9316a6196dac9 (matching research/web-artifact.json), against the current 21-page research PDF (57ce918f211983e2aef40cc572863f40f79fc4c0400f8bcdaa66bf2ea8a060cf) and canonical source: the complete study, two interpretations, eight senses, eleven appointed anchors, 37 source notes, references, revision and rights notice are retained with no substantive text loss or TeX debris. Full-document rendering and link-target checks plus Chromium measurements and focused visual inspection at 500/1280 pixels identify one blocking chronology-layout defect; this is a local conversion review, not a full-site deployment or fresh research re-audit."
+}

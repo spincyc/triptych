@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it.",
  "counted": {
-  "documents": 199,
-  "issues": 233,
-  "pages": 6364,
+  "documents": 200,
+  "issues": 236,
+  "pages": 6385,
   "titles_unrecorded": 0,
-  "works": 145
+  "works": 146
  },
  "models": [
   {
@@ -29,7 +29,7 @@
    "id": "claude-fable-5"
   },
   {
-   "documents": 5,
+   "documents": 6,
    "id": "GPT-6"
   },
   {
@@ -52,7 +52,7 @@
    "label": "Claude"
   },
   {
-   "documents": 143,
+   "documents": 144,
    "id": "gpt",
    "label": "GPT"
   }
@@ -81,7 +81,7 @@
   },
   {
    "id": "liturgy",
-   "works": 53
+   "works": 54
   },
   {
    "id": "theology",
@@ -10855,6 +10855,71 @@
     }
    ],
    "leaf": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a",
+   "section": "liturgy"
+  },
+  {
+   "catalog": "library/novus-ordo-liturgy.md",
+   "catalog_page": "library/novus-ordo-liturgy.html",
+   "editions": [
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": 11,
+       "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-synthesis.pdf",
+       "subject": "Roman Missal Third Edition, United States: concise proper study for 4 October 2026",
+       "title": "Twenty-seventh Sunday in Ordinary Time, Year A: Gift, fruit and a people restored"
+      },
+      {
+       "kind": "homily",
+       "pages": 3,
+       "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-homily.pdf",
+       "subject": "Roman Missal Third Edition, United States: homily for 4 October 2026",
+       "title": "Twenty-seventh Sunday in Ordinary Time, Year A: The life that bears fruit"
+      }
+     ],
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "GPT-6",
+       "qualifiers": "workflow-declared-effort=high; client=Codex; unexposed: exact model variant; unexposed: model reasoning configuration; unexposed: runtime version",
+       "runtime": "OpenAI Codex client; unexposed: client version; unexposed: server revision. Authored the expansive study from reviewed research, inspected retained source loci, assembled lawful study Scripture, and performed author proof verification."
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "workflow-declared-effort=high; client=Codex; unexposed: exact model variant; unexposed: model reasoning configuration; unexposed: runtime version",
+       "runtime": "OpenAI Codex client; unexposed: client version; unexposed: server revision. Derived the concise study from the accepted expansive study, preserved its chronology and source limits, and performed synthesis author proof verification."
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "workflow-declared-effort=high; client=Codex; unexposed: exact model variant; unexposed: model reasoning configuration; unexposed: runtime version",
+       "runtime": "OpenAI Codex client; unexposed: client version; unexposed: server revision. Authored the homily from both reviewed studies, reopened its principal retained patristic and sacramental loci, and performed silent textual rehearsal and homily author proof verification."
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "GPT-6"
+     ],
+     "pages": 21,
+     "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.pdf",
+     "produced": {
+      "run_id": "17099e79f3655b7d",
+      "seed_commit": "264879369f1710eb0600a74836cedc62abd1ff28",
+      "workflow_digest": "9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38",
+      "workflow_id": "proper-study",
+      "workflow_version": "7"
+     },
+     "provider": "gpt",
+     "reviewed": "2026-09-28",
+     "revised": "2026-09-28T20:57:11Z",
+     "status": "alpha",
+     "subject": "Roman Missal Third Edition, United States: expansive proper study for 4 October 2026",
+     "title": "Twenty-seventh Sunday in Ordinary Time, Year A: The vineyard and its fruit",
+     "title_source": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/main.tex",
+     "web": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.html"
+    }
+   ],
+   "leaf": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a",
    "section": "liturgy"
   },
   {

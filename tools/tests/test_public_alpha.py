@@ -1289,18 +1289,47 @@ class PublicAlphaTest(unittest.TestCase):
         css = (
             REPOSITORY_ROOT / "release/public-alpha/assets/site.css"
         ).read_text(encoding="utf-8")
-        ids = set(re.findall(r'h2\[id="([^"]+)"\]', css))
-        self.assertEqual(ids, {"sec:date-location", "scriptural-date-and-location"})
+        ids = {
+            "sec:date-location",
+            "scriptural-date-and-location",
+            "appendix-scriptural-date-and-location",
+        }
+        # Every dossier rule needs both its opening heading and its next-h2
+        # boundary; adding an id to just one rule leaves part of the layout out.
+        selectors = re.findall(r"^[ \t]*\.page-shell\.reading :is\(h2.*?\{", css, flags=re.M)
+        self.assertEqual(len(selectors), 10)
+        for selector in selectors:
+            with self.subTest(selector=selector):
+                opening, ending = selector.split(" ~ table:not(", 1)
+                self.assertEqual(set(re.findall(r'h2\[id="([^"]+)"\]', opening)), ids)
+                self.assertEqual(set(re.findall(r'h2\[id="([^"]+)"\]', ending)), ids)
+                self.assertIn(" ~ h2 ~ table)", ending)
         narrow = css[css.index("@media (max-width: 760px)"):]
         self.assertRegex(narrow, r"~ h2 ~ table\) tr \{[^}]*display: grid;")
+        heading_text = r"(?:Appendix:\s+)?Scriptural Date and Location"
+        rendered_heading = (
+            r"<(h\d)\b[^>]*?(?:\sid=\"([^\"]*)\")?[^>]*>\s*"
+            + heading_text + r"\s*</\1>"
+        )
+        for title, expected_id in (
+            ("Scriptural Date and Location {#sec:date-location}", "sec:date-location"),
+            ("Scriptural Date and Location", "scriptural-date-and-location"),
+            ("Appendix: Scriptural Date and Location", "appendix-scriptural-date-and-location"),
+        ):
+            with self.subTest(title=title):
+                rendered = self.tool.render_markdown(f"## {title}\n", REPOSITORY_ROOT)
+                self.assertEqual(
+                    re.findall(rendered_heading, rendered, flags=re.I),
+                    [("h2", expected_id)],
+                )
         headings = 0
         for path in sorted((REPOSITORY_ROOT / "web").rglob("*.md")):
             text = path.read_text(encoding="utf-8")
-            if not re.search(r"^#+\s+Scriptural Date and Location\b", text, flags=re.M | re.I):
+            if not re.search(r"^#+\s+" + heading_text + r"\b", text, flags=re.M | re.I):
                 continue
             rendered = self.tool.render_markdown(text, REPOSITORY_ROOT)
             found = re.findall(
-                r"<(h\d)\b[^>]*?(?:\sid=\"([^\"]*)\")?[^>]*>\s*Scriptural Date and Location\s*</\1>",
+                rendered_heading,
                 rendered,
                 flags=re.I,
             )

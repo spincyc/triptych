@@ -1770,7 +1770,7 @@ release attachment, announcement, or promotion.
 | `library/law-and-church-discipline.md` | `23c168cb77e2efd6735778a57500f1b1b287f785c1bc7baf57a461dd96a7a744` |
 | `library/liturgy.md` | `ceddcd0f3e4c3c164917299ad7fc4fcedea6552d835687f55747787dc338a334` |
 | `library/mariology.md` | `01b55285b49898753023f97480dd32577bed1174684bc257fbfdc84f1c73362e` |
-| `library/novus-ordo-liturgy.md` | `12b2d12fead9b715e8a7ab04badc93db38f0fd2ce1549659051e25527810b50b` |
+| `library/novus-ordo-liturgy.md` | `b73df9186fd29782ba94422d0dfd45f01b2e17a6f878518bea2f877a95518fe4` |
 | `library/prayer.md` | `052c883da951a6089c0f1da44b9554653adcb440ead314cc36c350297d7ddb20` |
 | `library/scripture.md` | `739ced41934e834916f3c33e831c616708eaa4f7ba7f863e2ec9299cc4878570` |
 | `library/traditional-latin-mass.md` | `3eb35e8c659847c5de181c7d8086176b79fa00b5e4f152b892b3fefd947aeb6e` |
@@ -1782,7 +1782,7 @@ release attachment, announcement, or promotion.
 | `pdf/reading-plans/narrative-spine-story-king-james-version.pdf` | `44bed15d567d424ac5cf0ad13ff8ef9e3a39714ce7f566c539afd178cf7b39f4` |
 | `release/public-alpha/404.md` | `3813d3e1a7a03dd6ce7b397e19364fa9679cde8561dca28626cf0fa374e4db81` |
 | `release/public-alpha/assets/icon.png` | `ef1315d47930179e71319cebba58bd284756b9306a40d376ab7ca6e6d3c15ad5` |
-| `release/public-alpha/assets/site.css` | `84b3b5c7f4b9fdc294246d56ea6a047445dc12b923ad72d29b1a4a4a1291a766` |
+| `release/public-alpha/assets/site.css` | `a456caf21041256a1047560c0cee8638a99f7df819e6249ee3345e550b6b4060` |
 | `release/public-alpha/assets/social-card.png` | `d0adf2056a5aa7d6e4fd240a324d76a654a904547908f77ad9d8f7fc8abc7278` |
 | `release/public-alpha/layout.html` | `141bac1edad42e3661b823c26fda76328ce07b74ff1db6df1f53bcf581284c88` |
 | `requirements-public-alpha.txt` | `59bd4c5252324612c6ce5a27f4a4ba4e62aa4cc76bc3d974a29b45491c97c762` |
@@ -14131,7 +14131,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-4.json` | `7f1956b102a7b765dc36210f5557ad25f07d075c8edcc87a3acc85cd3a03473d` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-5.json` | `61abb15daa555ada778b2eeb6137cbc6114102586c9cc2a27d5e4863521de0e3` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-6.json` | `54408d9f5e1c8b684850b05976d6e3ac9ee3b88b6194c37c7e1cf83d52256d28` |
-| `src/web/data/structure/documents/corpus.json` | `ddaed744eb9207cff3f5dc8e52fc9b0eac20b1a1a1bc0358cf037f05e30bfcef` |
+| `src/web/data/structure/documents/corpus.json` | `cf09d8ad8b19bed1c90ec72bc588982f1b315ccb1bf97e5386c0442534e2bcd4` |
 | `src/web/data/structure/ordinary/index.json` | `b248eefcc0b073e43dd4c0d168007cd8d09fc5f28bd2fc633d98e2f4ba9e4846` |
 | `src/web/data/structure/ordinary/postconciliar.json` | `7714e4f1c328e4adad95afb3387e81b0cc44731977bfe5866a2ae2a2a597c2b6` |
 | `src/web/data/structure/ordinary/roman-1962.json` | `2c707b7d0ac3b61602533a57a26989042af43358e1d1dc7ca58aee286b827341` |
@@ -19893,7 +19893,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/catholic-church/de-exorcismis-et-supplicationibus-quibusdam/1998-latin-typical-1998-issued-1999.json` | `be5972b4845dd4ffda7402534d5b7b1a5539a9dc9163ec51d1d5ca107e94122c` |
 | `src/web/data/structure/sources/editions/catholic-church/de-exorcismis-et-supplicationibus-quibusdam/2004-latin-typical-emended-2004.json` | `3fcf418a83a9b0871cc55cc38dae65c68630e36486096720590620c67c7e0729` |
 | `src/web/data/structure/sources/editions/catholic-church/institutio-generalis-missalis-romani/2002-latin-missale-romanum-typica-tertia-2002.json` | `902d8f1bb01a4ae73f158432dc6e3a424d027e9cece50fc0acc0b6ce3528e8ba` |
-| `src/web/data/structure/sources/editions/catholic-church/institutio-generalis-missalis-romani/2011-english-us-2011-emended-2021.json` | `6c0696fbc6c08b442b08b2f736eb38ad9346f1962dbbd6c220126972fde3729f` |
+| `src/web/data/structure/sources/editions/catholic-church/institutio-generalis-missalis-romani/2011-english-us-2011-emended-2021.json` | `006982ffa4ddbce10346f93d4ab5220ec4c7711e42489bc6959767f0c8209470` |
 | `src/web/data/structure/sources/editions/catholic-church/liber-mozarabicus-sacramentorum/1912-ferotin-1912.json` | `fee6dd1c4b5fa998329362a04cde3a9b9526056bda5db9412fe9831fe3734202` |
 | `src/web/data/structure/sources/editions/catholic-church/missale-ad-usum-sarum/1861-dickinson-burntisland-1861-1883.json` | `a0562b143252ca2f2577cd0c8849ab75f6a6b657af4cf4d4d6b353a1a435fbb0` |
 | `src/web/data/structure/sources/editions/catholic-church/missale-bobbiense/1917-lowe-1917.json` | `79252949d44d71688ee56eb7dc37dd129cd34477b0ad1f198c8a875367583922` |
@@ -20394,6 +20394,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/nicene-and-post-nicene-fathers/series-1-volume-10/2026-2026-09-17-ccel-web.json` | `dd2ab812bbdfb88a2486f348dbb7459b8c6fe870438bf4b4340e15af06873b31` |
 | `src/web/data/structure/sources/editions/nicene-and-post-nicene-fathers/series-1-volume-11/2026-2026-09-17-ccel-web.json` | `500b9922c4dcefe63706858b382f706ca72b7796e1af098c49c737ebdbbb22c2` |
 | `src/web/data/structure/sources/editions/nicene-and-post-nicene-fathers/series-1-volume-12/1889-new-york-1889.json` | `d298872423b4896633641280f97a5742b84bca8faf404f715fb632e9e9237150` |
+| `src/web/data/structure/sources/editions/nicene-and-post-nicene-fathers/series-1-volume-12/2026-2026-09-28-ccel-web.json` | `d29773a306b22c2af5290779d3a7c4597b391fb109e85921fef319ffab7329f8` |
 | `src/web/data/structure/sources/editions/nicene-and-post-nicene-fathers/series-1-volume-13/2026-2026-09-05-english-ccel-web-2026-09-05.json` | `65b395f9523720ba2f446e51eec6c4f8dcb52fbe3ea145e15d699285478c2c09` |
 | `src/web/data/structure/sources/editions/nicene-and-post-nicene-fathers/series-1-volume-14/1889-new-york-1889.json` | `a813df27a9697c68c53ff09f12afa78d270971f3e4b2740b8622f58a5943a63c` |
 | `src/web/data/structure/sources/editions/nicene-and-post-nicene-fathers/series-1-volume-2/2026-2026-09-17-ccel-web.json` | `9a9b899d91cad61c89abb21a29871514d3250e54890df08edffdada086ad1dd4` |
@@ -20404,6 +20405,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/nicene-and-post-nicene-fathers/series-2-volume-1/1890-new-york-1890.json` | `9a14a58b952799d07fcfdad5d3092d09a732e8f5a1bc8281a75a0bf619f5b8b9` |
 | `src/web/data/structure/sources/editions/nicene-and-post-nicene-fathers/series-2-volume-11/1894-edinburgh-1894.json` | `cf39e51a7fb5eb8d103acfb0fbc11b6d6786a6c9769cd66cc4cee90bd3bf859e` |
 | `src/web/data/structure/sources/editions/nicene-and-post-nicene-fathers/series-2-volume-12/1895-new-york-1895.json` | `3368f5e02679bc9df0ff666a032f5cd57c7267ab40df592478c6da16cd184ee9` |
+| `src/web/data/structure/sources/editions/nicene-and-post-nicene-fathers/series-2-volume-12/2026-2026-09-28-ccel-web.json` | `564cbad7a99911d71eb94f53ee44d6cdfce0750dc217eeaec397884267a8f84d` |
 | `src/web/data/structure/sources/editions/nicene-and-post-nicene-fathers/series-2-volume-14/1900-new-york-1900.json` | `7fe103ea12d6c8423125904ba7e9193d38618c30322729c2ee82ce9e62413433` |
 | `src/web/data/structure/sources/editions/nicene-and-post-nicene-fathers/series-2-volume-2/1890-new-york-1890.json` | `57a6e9d17807ad265b3764c95190f0f16ecf44c75beca9a862403a6b3d8b7bb7` |
 | `src/web/data/structure/sources/editions/nicene-and-post-nicene-fathers/series-2-volume-3/1892-new-york-1892.json` | `3e356ce0aa960cc9df3cd1d7d338b98302971d07175174f3235f9e587b68c4e4` |
@@ -20664,6 +20666,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/united-states-bankruptcy-court-district-of-south-carolina/benton-v-bakker-in-re-heritage-village-church/1988-1988-bankruptcy-reporter-volume-92.json` | `7339b6bfa6c44ce0d2d35399749ee765e4da0f45c5a2e0edc0dfbef27f12c7c8` |
 | `src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/daily-readings/2026-2026-09-19-page-for-2026-09-20.json` | `b7003964049e12197faaf23ca1e90098eba4b1a8d08e9d1aab6b195a21fe6504` |
 | `src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/daily-readings/2026-2026-09-24-page-for-2026-09-27.json` | `3c89ea846eac81e0c604976aa281dbd26eaf284d88b9048b9d327b2bed619c39` |
+| `src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/daily-readings/2026-2026-09-28-page-for-2026-10-04.json` | `aa7f4a0ae311407ddff99d800d2176440a864a6d75493e7c28e57964254add90` |
 | `src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/exorcism-faq/2026-english-usccb-web-2026-07-26.json` | `97dba62a337e8031a52cb30af28db7ac1b1fb87bdc80f724cbf962dfb7e6bb22` |
 | `src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/exorcism-faq/2026-english-usccb-web-2026-07-27.json` | `2e44a219a8f20a0c470f1e8b979e3e10d1bc3955fc3a303f4e1f73f3b939036b` |
 | `src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/guidelines-publication-liturgical-books/2025-2025-first-printing.json` | `55f6ca82d6be8faaa9ad09fee097327012952fe9fe9a7012b68328665f939f97` |
@@ -20709,7 +20712,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/william-williams/guide-me-o-thou-great-jehovah/2026-hymnal-of-praise-1913-hymnary-web-2026-07-29.json` | `0c387edabb7fcde38b30186316a98931754e5184bea07b1c3f437c3192f8e195` |
 | `src/web/data/structure/sources/editions/world-health-organization/icd-11-clinical-descriptions-and-diagnostic-requirements/2024-english-who-2024.json` | `97b5a08dc7e0a83a6c4da5990e21e8fcc2e4356d569903f09b8b97d34f1672aa` |
 | `src/web/data/structure/sources/editions/world-intellectual-property-organization/wipo-lex-berne-contracting-parties/2026-web-2026-08-01.json` | `ffaf08c0f47cd6ab1d4761546a9e290ce69420b185c891d67395fcc17d5d9d5e` |
-| `src/web/data/structure/sources/index.json` | `d06c4b094db52e27b71c7bd066bb8b32e44569ad2a9b1b5ed64eac16cf192126` |
+| `src/web/data/structure/sources/index.json` | `eb2bd7711a7b7ada9a74c0e785da3275c94706ed14e44625d06f2d6778f46ad8` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.1.json` | `bf80df77e273500e8769a0a0613d4bb907a736fafce970a0e62804eda1219c58` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.10.json` | `14700390dab93606af7e6e934d457e2ed524f13977f64bb6ede3f04daea4521d` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.100.json` | `c9b31161f4c7f56ea4c89bfaa550e47bc6327f5b8db9f685dc5bf2a4d73d1de2` |
@@ -23887,6 +23890,7 @@ release attachment, announcement, or promotion.
 | `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.md` | `a6c1f0e58b6f8e88881a6b5af2390842dff42402b90bd7a31ff4cc3fa745fdd2` |
 | `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.md` | `bc5b419461c2d50bf2573d7f93710212f9581c73b515bbe7d2a457d42d73ffeb` |
 | `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md` | `b5bda234ada014610b88f46ab0c219005f7971a5daa3f13a0ee369423846e741` |
+| `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.md` | `7d4109999858aab4efb433b0e95df5652edee458450e75c94eb9316a6196dac9` |
 | `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.md` | `84549acaf543bb57e21a41629832ab054068e89d7f04579bb2c9a7d806b0946d` |
 | `web/gpt/theology/heresies/heresies-in-catholic-history.md` | `00d1550f60fa202b9cd236ca9bbfad8134de1265587e786f74adbf98908d54da` |
 | `web/gpt/theology/mariology/angelus.md` | `48c0305f39599cf307d0e8ed5d24b5df7c1d480c0c736daaf2b73eaf6706be2b` |

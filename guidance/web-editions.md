@@ -210,8 +210,9 @@ maintainer also decided on 2026-09-23: an ordinary four-column table at desktop
 widths, and at the stylesheet's 760px breakpoint each row set as two lines of
 two, unit and citation over location and date, beneath a header block of the
 same shape. `release/public-alpha/assets/site.css` finds the dossier by its
-section heading's id, `sec:date-location` or the plain heading's slug
-`scriptural-date-and-location`, and `tools/tests/test_public_alpha.py` holds
+section heading's id, `sec:date-location`, the plain heading's slug
+`scriptural-date-and-location`, or the appendix heading's slug
+`appendix-scriptural-date-and-location`, and `tools/tests/test_public_alpha.py` holds
 every edition to those ids, so a converter change to that heading moves the
 stylesheet with it.
 

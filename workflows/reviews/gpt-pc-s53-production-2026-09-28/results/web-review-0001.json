@@ -1,0 +1,17 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 1,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a",
+    "files": {},
+    "provider": "gpt",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.md": "7d4109999858aab4efb433b0e95df5652edee458450e75c94eb9316a6196dac9"
+    }
+  },
+  "stage": "web-review",
+  "summary": "PASS for the canonical expansive web study: research/web-artifact.json and the actual Markdown both identify SHA-256 7d4109999858aab4efb433b0e95df5652edee458450e75c94eb9316a6196dac9; full Markdown reading, comparison with canonical source and the 21-page research PDF (57ce918f211983e2aef40cc572863f40f79fc4c0400f8bcdaa66bf2ea8a060cf), exact normalized checks of 137 source paragraphs and all 37 notes, selected retained source-locus checks, and link/structure inspection found no blocking defect. Independent Chromium rendering at actual 500/1280-pixel widths confirms readable senses and notes and all eight chronology dossiers without cell overflow, using release/public-alpha/assets/site.css SHA-256 a456caf21041256a1047560c0cee8638a99f7df819e6249ee3345e550b6b4060 as supplementary rendering evidence outside the engine's Markdown seal; inspected opening and focused-region screenshots plus full-document DOM measurements support this bounded web review, which preserves existing source limits and does not claim a fresh complete research/PDF-visual review or installation."
+}

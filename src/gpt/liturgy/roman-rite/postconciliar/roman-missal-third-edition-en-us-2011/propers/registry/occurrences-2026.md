@@ -3,11 +3,12 @@
 **Territory:** dioceses of the United States of America
 **Calendar and source records checked through:** 2026-07-28
 **Specific addition:** PC-S51-A on 2026-09-20, independently resolved 2026-09-17; earlier occurrence records have not been re-reviewed by this addition.
+**Specific addition:** PC-S53-A on 2026-10-04, independently resolved 2026-09-28 from the official U.S. calendar and dated readings; earlier records were not re-reviewed.
 **Correction:** on 2026-09-24 the earlier rows' formula keys, slugs and manifest links, written before the registry renumbering of 2026-08-22, were corrected to the renumbered keys and their current leaves; their occurrence results were not re-reviewed.
 **Sunday cycle:** Year A, from 2025-11-30 through 2026-11-22
 **Adjacent ferial cycle:** Cycle II, independently resolved
 
-This record indexes the first ten 2026 national-calendar occurrences represented by existing leaves, plus PC-S51-A on 20 September. It does not resolve an unknown diocesan, religious, parish, titular, dedication, patronal, or other church-proper solemnity, and it is not an annual Ordo.
+This record indexes the first ten 2026 national-calendar occurrences represented by existing leaves, plus PC-S51-A on 20 September and PC-S53-A on 4 October. It does not resolve an unknown diocesan, religious, parish, titular, dedication, patronal, or other church-proper solemnity, and it is not an annual Ordo.
 
 | Formula key | Full publication slug | Civil date | Lectionary | National-calendar result | Controlling manifest |
 | --- | --- | --- | ---: | --- | --- |
@@ -22,5 +23,6 @@ This record indexes the first ten 2026 national-calendar occurrences represented
 | `PC-S43-A` | `pc-s43-seventeenth-sunday-in-ordinary-time-year-a` | 2026-07-26 | 109 | Seventeenth Sunday in Ordinary Time is celebrated; the memorial of Saints Joachim and Anne is omitted without commemoration or transfer. | [Manifest](../temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/instance/manifest.md) |
 | `PC-S44-A` | `pc-s44-eighteenth-sunday-in-ordinary-time-year-a` | 2026-08-02 | 112 | Eighteenth Sunday in Ordinary Time is celebrated in the national calendar. | [Manifest](../temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a/instance/manifest.md) |
 | `PC-S51-A` | `pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a` | 2026-09-20 | 133 | Twenty-fifth Sunday in Ordinary Time, Year A; green; the occurring Korean-martyrs memorial is omitted. Unknown local proper solemnities remain unresolved. | [Manifest](../temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/instance/manifest.md) |
+| `PC-S53-A` | `pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a` | 2026-10-04 | 139 | Twenty-seventh Sunday in Ordinary Time, Year A; green. Francis of Assisi is not celebrated in this national-calendar Sunday Mass; unknown local proper solemnities remain unresolved. | [Manifest](../temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/instance/manifest.md) |
 
-The two solemnities do not erase Ordinary Time Weeks IX and X. None of the eleven dated Sunday targets imports its Year A readings, Gloria, Creed, Preface, or formulary automatically into the following weekday; every ferial use requires its own manifest and the independent Cycle II Lectionary path.
+The two solemnities do not erase Ordinary Time Weeks IX and X. None of the twelve dated Sunday targets imports its Year A readings, Gloria, Creed, Preface, or formulary automatically into the following weekday; every ferial use requires its own manifest and the independent Cycle II Lectionary path.

@@ -1,0 +1,1683 @@
+{
+  "current_stage": "homily-review",
+  "disposition": null,
+  "document_root": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a",
+  "escalations": [],
+  "findings_forwarded_by": {
+    "research": "research-review"
+  },
+  "findings_forwarded_ids": {
+    "research": [
+      "RES-001"
+    ]
+  },
+  "iteration": 17,
+  "normalized_args": {
+    "audience": "adult parish assembly",
+    "date": "2026-10-04",
+    "proper": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a",
+    "provider": "gpt",
+    "research_handoff": "none"
+  },
+  "packet_hashes": [
+    {
+      "hash": "3bfbc3dd013b07a4648714a3f672635d6af43af4a136f93f1e08ec843fb35eb3",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/packets/scope-gate-0000.txt",
+      "stage": "scope-gate"
+    },
+    {
+      "hash": "729dae49b6badb26a8923a729d0e184333d7cde063385aea6d419c8a23cadb80",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/packets/resolve-context-0000.txt",
+      "stage": "resolve-context"
+    },
+    {
+      "hash": "5c635b54723e8ce129c0a0cae1489bff92666340e04bb6eb6596af5fa9ec3ef5",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/packets/research-0000.txt",
+      "stage": "research"
+    },
+    {
+      "hash": "a8619a2091e644002fd527e8c27989958114f94f1ad56e7367f13a7a34baeccd",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/packets/research-preflight-0000.txt",
+      "stage": "research-preflight"
+    },
+    {
+      "hash": "ea9dff5ad208639b2bb11c6c44ce81a9c4537cf97d825ffd908039af25b2e1c9",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/packets/research-review-0000.txt",
+      "review_inputs": {
+        "chronology_computation_inputs": {
+          "guidance/liturgy/postconciliar-propers-registry.md": "ffe8a6d8b7d79c652bdc49b3d5f6d4dbb32e3506abc7ab0310e745c2b7306ad4",
+          "requirements-tools.txt": "0969da99a0bc2a1b71ed50584560f4588a37567ac63af3ddbaf3c4617ca5621a",
+          "scripts/_calendars.py": "9961359f38a3e390b5de4103a5222149e40b906362bba4b5620590f5ee1fed8e",
+          "scripts/_canon.py": "16fbe8e77d97aac01053eff6d364840d1507314ee07a7038950e5ba5c1aac869",
+          "scripts/_chronology.py": "e618e3e50c17ac643f6021a212e3447743bcd9ab2fa14d818206c1af6b85416e",
+          "scripts/_deuterocanon.py": "4af9a1675dd8ddae6fcbde445a3406acc8b1662c1e9306361a5468609987efa1",
+          "scripts/_loci.py": "a6bfeb1f23069b645bffc7d62f034172b11673d247887b69dcf9880de99dd5a6",
+          "scripts/_projection.py": "342b44cfe6963613bd0f685ac6f85cdfd17e64a6ecf650230aade9ffeeade2c7",
+          "scripts/_proper_chronology.py": "a2bace78780bce9b7d0fd1de25630c873150ea8366ff022da51e7cb116c6632e",
+          "scripts/_proper_chronology_comparisons.py": "e93d4e9c42c18f9e84073a596af7e98a148f92f9b2b0e9a76dd57b1e7532698a",
+          "scripts/_proper_chronology_inputs.py": "67c3ffa66973c9ad9b1e60cac32937830f061a67d671bedeb872933a93dc329b",
+          "scripts/_psalms.py": "3bd7daa1f3b11f1901c21a9062bd022369f7086f7c014484935f0f251c5b4d09",
+          "scripts/_psalter.py": "9db74df548f43e0ca1f51d0c8f8fea4f3613d4f4d2298cb9a3e2c26edac356fd",
+          "scripts/_tooling.py": "592aa0610872c2f4aecd078fb5b4e6a56de46dece36e04a22b54ac24e8338fed",
+          "tools/citations": "1d5e30487cdecbd910b225dc033b31b9c3a3ac5285a349e24736a5a75a2e4810",
+          "tools/proper-chronology": "448b1d387a907dbba951133de7ed7d36bb76c92a5b955fb7b6a1353a1e3bf499"
+        },
+        "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a",
+        "files": {
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/README.md": "e61f5323480cbe19b7bf3b9ee046cfe8966f93662367513dea9cf9b0f27d5b66",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/formula-dispositions.md": "89d9d58ac5bcc07c00d12da3660e07d5ffad72866cc43f40b9581918ed71bde5",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/occurrences-2026.md": "8e693141c8da4beda2aca5ca37c41f923b339f63c09259ee1fdb8628a57eaa4c",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/instance/manifest.md": "9ab2f377d6de66eb639a2115620d32379b1d22b40cea1ac67dcf429b821630e9",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/propers/verified.md": "c4367c88e48ca6954481a904edde9c857128f2a94e74649cc38e993cafb22bb8",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex": "9d6664bb232d4a2078a26084f09cb270d9ce7a3a05a1d90c2fd120d49daeb6df",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/chronology-audit.md": "ad86670b812b8c0bd0531d44cfed8dd5c9e0eea02665daacf16a7f0158da2dde",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/chronology-inputs.toml": "9fd487f1561888df70c71ff005090c7a9ff3a09bf7d846ab70671ac156997841",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/chronology.toml": "defa0544bea8c87d391b45ac4842d5faff77c6a3170439491bf9a6e84334d709",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/context.md": "2335e7793ed51243eac5e5b5708d1f074ffda44a3a76dcd3782caf20a9dfc2c9",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/interpretations.md": "54d13433c39247b038c2d05196dcd1b0252410c4b6edec7cfb3f5b3a5fa8d606",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/review-dependencies.toml": "f40ac61b2abb93ed656956c13a5b3830ac8402eab112233f6f8cacbde0a5f835",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/scope.md": "9bc7e71c54970b372bff82f5eb3ae75e117f3d61e917284287511f01d233d06e",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/source-bindings.toml": "4de4d16adf5ba3c619fd7fb716e9d5ef095a1ee07bafd77bfdbf755a078cf323",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/source-plan.md": "42db21201f792ea681ac7369bd59da0a39fff0e287157baacbdcc4dab19ed7f7",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/27/propers/verified.md": "49ce6830cc5bce8d654908675720c69c73ad0e44ee3832e3196288406a137cd6",
+          "src/sources/calendars/postconciliar/propers.yaml": "be2fcb0ee70db4a51201cbffbe743bb6ec94c4728affd1f789b3d7c05165f20a",
+          "src/sources/chronology/bindings.yaml": "4d6488744b63bff3f74e8b981e211ff0ab060d8b071cf2a34a942e9f3829189c",
+          "src/sources/chronology/composition.yaml": "4c17f790990d4c4ecbd5e4139d16aaad12d8154cc2e861ed7b2fe33458ae1c8b",
+          "src/sources/chronology/events.yaml": "4490646b4756c9913fe7d553ce160b03ae633853c1e454a1ee38fae11873a122",
+          "src/sources/chronology/gaps.yaml": "84cccdb70ab980f22faf64ec32658f69c877b861856157b00430aa960ac4d14b",
+          "src/sources/chronology/isaiah-relation-review-2026-09-21.md": "3383997d6847807921c311a47719cf5022ae53d6013615d5c7aaa51f0eebeae9",
+          "src/sources/chronology/profiles.yaml": "7e9d4062810c91d4c3da1bcd4ef43e5cbd17a91bee2d479ca5183ea21d9fed0e",
+          "src/sources/commentary/formulary-loci.yaml": "ea0055280e0946a3a469aadc94e97d7a764d6d40da0df19d3db2fecc1ea3fb54",
+          "src/sources/commentary/fragment-loci.yaml": "40401cb64e74914124c78575e2fded053bdb4419228aa7e9d5fd2096cc527d98",
+          "src/sources/commentary/passage-commentary-index.yaml": "7f4c4b9fcdbb7c5948fc7d941d668e48ef9d663805ea06ff107d972f5d9eb84c",
+          "src/sources/inventories/author-standing-v1.toml": "47660310e0e68890d77d1870168efaf76dee832f9d537ba9b795691296c54fda",
+          "src/sources/inventories/catholic-encyclopedia-rights-v1.toml": "23fd15c63922894067c75f9650c2c4ed0c7388c22148339becd2073143c4171a",
+          "src/sources/inventories/icel-web-permission-rights-v1.toml": "fc0ceae47f6e22def7a51e9a9967581541934dab86a54fa8fbc8bb97514a7959",
+          "src/sources/inventories/liturgical-english-rights-v1.toml": "1190b3aa687c69c7e7923a2a7e4b63b31c0179c30371efc69c610013611997c3",
+          "src/sources/inventories/postconciliar-proper-translations-v1.toml": "525a9594aff649f897f5932297188a5a06a520c768d59aa097528f54da3ebd33",
+          "src/sources/inventories/source-containment-v1.toml": "5d013d91949a753810581d4cef7d71c8538250e994147f4188e40eb39c7e59cb",
+          "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/artifact.toml": "6bee6f13dd757842ceeb86ef5fd06b6fb0251a5ab75590fa793f324aef07b79f",
+          "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/source.txt": "d6841950333024906294e6e829f7512d08b3adf62ae6cee3615d18a7ad0020e9",
+          "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/edition.toml": "ca66a1598f692914e7c16f7a3200ed3be8f03c4e08246b87055c4d83929e2ab4",
+          "src/sources/works/augustine/enarrationes-in-psalmos/work.toml": "a3fa6fbac8db1820c20de67f21b12da3e0feb0aa18751b0fc0288223904992d4",
+          "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/english-us-2011-emended-2021/artifacts/usccb-chapter-ii-html-2026-09-28-d99adb8e/artifact.toml": "7ee8ea8899805d550aba7b576f137592f96aeb34f2352e29d67652c168d89705",
+          "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/english-us-2011-emended-2021/artifacts/usccb-chapter-vii-html-2026-09-28-954259ef/artifact.toml": "503d72d34b7d67ec7e0a7199fd8ce7c945b9eb3ef512d629390aaea9cab656c1",
+          "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/english-us-2011-emended-2021/edition.toml": "4911bfbf1a3956a129705a6f5af4b7fff895afd449550ac1ee30a0ba4fd41d1f",
+          "src/sources/works/catholic-church/institutio-generalis-missalis-romani/work.toml": "ddff455b5c3c5c592d9d437d4c65d8c1d54ff454ab336499f38c19a3713e3255",
+          "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/artifacts/antiphonary-pdf/artifact.toml": "0a749a245f1ee3ce1d8d3250d91742503065e9d1dee8eed6dfb065181f9d9dc8",
+          "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/edition.toml": "daf243c3600b683966550961da8f653c7b4fca5905522bb4235bcccad613a6f0",
+          "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml": "b86dcb4a240d25eb04150a99ba630c74454c46df1a6cc2e4669b682f937a697f",
+          "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/edition.toml": "5c6564d7db4b668729be36a92bcf07a29f932ad80e244f6bb0a04e08906443bf",
+          "src/sources/works/catholic-church/missale-romanum/work.toml": "ae029277a68493ed903cd608cd7abdb91797aaff614ab5646f7c6a2dbeaa2ffd",
+          "src/sources/works/catholic-church/ordo-lectionum-missae/editions/english-liturgy-office-web-2026-07-25/artifacts/liturgy-office-pdf-d286cb13/artifact.toml": "87f398d4d373fb45e5708a78a0a30a95dbea1fd59cba9166a2f4d0a15fc44012",
+          "src/sources/works/catholic-church/ordo-lectionum-missae/editions/english-liturgy-office-web-2026-07-25/edition.toml": "d6293c6f1cb68e077c362f402ce74c967cedb033be5a1014fdbaf08a06aecff5",
+          "src/sources/works/catholic-church/ordo-lectionum-missae/work.toml": "ad7180529504a200c4c6ed21c7666bef71f2ee530d5b2c91c914b76ca1995c36",
+          "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/artifacts/newadvent-10057a-e7b6ccef-article-text/artifact.toml": "064cdf2fa4756bc1f4556b7a31a8e6a4614eb59d1edc3e5ee1c5b7549b16d8b8",
+          "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/artifacts/newadvent-10057a-e7b6ccef-article-text/newadvent-10057a-e7b6ccef-article-text.txt": "3d9a35cc773f774ed3b423c890956ba655c61ceb7096fbd7c01a197f062168c2",
+          "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/artifacts/newadvent-10057a-e7b6ccef/artifact.toml": "b294291e332e98d8f848eeb581c1c8790c50f443c1d620237f4314a673741f2d",
+          "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/edition.toml": "927c6f8b34914a616a6ae8e7d529f2b744bf10811c87a9fc9b1f9613efc52a83",
+          "src/sources/works/catholic-encyclopedia/volume-10/work.toml": "35e69d1e21b0c1b474e7fdc146b5c77f772d02c1e7ca137b195215b7734ad90f",
+          "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/artifacts/newadvent-11567b-bff0dda8-article-text/artifact.toml": "fc12981c91a7aba5778225195ca29ed3888bd75d2e4320025778228977cbeec7",
+          "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/artifacts/newadvent-11567b-bff0dda8-article-text/newadvent-11567b-bff0dda8-article-text.txt": "c0f08396eca9b37415747eb06790ce986acc5bb650b2675d76af8449458bce1d",
+          "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/artifacts/newadvent-11567b-bff0dda8/artifact.toml": "b2d6bd1eaeea0fb45d04520f3c9b4ed00a134b2f68e5e1192c3b54302f981b9b",
+          "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/edition.toml": "a853c22a9912eca40252c6e83a5771bcbc3e4d280c93c1fa0576d5ec3e0f1c46",
+          "src/sources/works/catholic-encyclopedia/volume-11/work.toml": "89c729d48c4ee457f1897e72956c99a0965d697e412655bf38e1022f580bc0f3",
+          "src/sources/works/catholic-encyclopedia/volume-12/editions/new-york-1911/artifacts/newadvent-12008a-1e39e824-article-text/artifact.toml": "47acd12741fb82d814f5ead82aa286944d66e3b26a90808f2332f6a6cccc07f7",
+          "src/sources/works/catholic-encyclopedia/volume-12/editions/new-york-1911/artifacts/newadvent-12008a-1e39e824-article-text/newadvent-12008a-1e39e824-article-text.txt": "51c2cd3ae07d5574076e8505f0af2be9d3829d3b34446680c77f3718440b4530",
+          "src/sources/works/catholic-encyclopedia/volume-12/editions/new-york-1911/artifacts/newadvent-12008a-1e39e824/artifact.toml": "89e380e45528206cac1a66e6cc53c5f588b01c7fe615aa0ec6cac893941d3e91",
+          "src/sources/works/catholic-encyclopedia/volume-12/editions/new-york-1911/edition.toml": "438082c3ee4c3703219b9ff2d84f126f5dd3555d7fea32ecaaeffb6b2f12af04",
+          "src/sources/works/catholic-encyclopedia/volume-12/work.toml": "33c38def3e0a3deb9c0cc9dbf59f2286684ada7a066ae09ceab6729212b9dfa2",
+          "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/artifacts/newadvent-14530a-0a19aa2c-article-text/artifact.toml": "257dd7abc12662c518c7717dc472a969e2198bf8c9776affb75674ac739520ce",
+          "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/artifacts/newadvent-14530a-0a19aa2c-article-text/newadvent-14530a-0a19aa2c-article-text.txt": "c4e12a4a6127e8af8b7ac8e2176448f78a2be2cb2080ab5ffb6f885f8fcaa259",
+          "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/artifacts/newadvent-14530a-0a19aa2c/artifact.toml": "021921a3f483d209307f6dbf91db6b9ad97f7eea4951d9407dc90799b054af45",
+          "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/edition.toml": "9af0369eec24106ce972b11e835ee2021e60ee3c7472ed329806c5287e3d158f",
+          "src/sources/works/catholic-encyclopedia/volume-14/work.toml": "a4f100c2a3bcd0d13f19ba481c850b59c7ee572f31cead4e9450e21c95c4f153",
+          "src/sources/works/catholic-encyclopedia/volume-4/editions/new-york-1908/artifacts/newadvent-04364a-2b6b401d-article-text/artifact.toml": "9bbd4b977d46b94ecfdabde0c28a1be132b496739053038f9fd790eeb229e80c",
+          "src/sources/works/catholic-encyclopedia/volume-4/editions/new-york-1908/artifacts/newadvent-04364a-2b6b401d-article-text/newadvent-04364a-2b6b401d-article-text.txt": "1c480332e72614ded5468e9b408a76a72f5f4dd8bc50a523a0afd8f21301d882",
+          "src/sources/works/catholic-encyclopedia/volume-4/editions/new-york-1908/artifacts/newadvent-04364a-2b6b401d/artifact.toml": "53e685e3f5979bf55a6f4a5ddea5463f67df5b1810bd77c90258724bfe3a1d25",
+          "src/sources/works/catholic-encyclopedia/volume-4/editions/new-york-1908/edition.toml": "fd1a1b32d1d43c755a95f87c01057aef8f0ac88b2d3296a2b57094063a86310c",
+          "src/sources/works/catholic-encyclopedia/volume-4/work.toml": "1eaeeaff9bdf1d453027d504dc0cc7d3644ab146cf045495011fd36e7e81c963",
+          "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05549a-ab721ede-article-text/artifact.toml": "55564a6e8fa493e74c41049403673be205cce8ecf588dcff3a621b3612bb4c53",
+          "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05549a-ab721ede-article-text/newadvent-05549a-ab721ede-article-text.txt": "001300d7a30c91bb0133578f470843622aae58b3c88ed1b6a4da6c057a96bf83",
+          "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05549a-ab721ede/artifact.toml": "84fe8bc5954ecbb4c6b8c5e2690c379585db7a601bd94448aae6c0ab6853a13f",
+          "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/edition.toml": "4cce479273bc4236d50e37d83b4af871f5acd25ad1ae8e51ddf2417f66cdbc48",
+          "src/sources/works/catholic-encyclopedia/volume-5/work.toml": "532b41fbee708c3f06c33374b4068bf12a68e99c681d9540f2f4245bcf463bc5",
+          "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/newadvent-08179b-d4ee13fd-article-text/artifact.toml": "6266a727a25824b814441cba55222609035b076ee11bccbff3e45376ec0dd1cf",
+          "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/newadvent-08179b-d4ee13fd-article-text/newadvent-08179b-d4ee13fd-article-text.txt": "9b40deed12c9b2a23e91a0ed829049ba2c313e22b0b8442224d2cea7c8d4a2f7",
+          "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/newadvent-08179b-d4ee13fd/artifact.toml": "1fcf8441e31d51911508c3c592c406bb360d017b4b964310b75ab1e4e66404de",
+          "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/newadvent-08377a-f81e2c23-article-text/artifact.toml": "04f797b5ebc23e3828985e8ae7efc72b438c69bdf4d084a2a0df7d8345195fea",
+          "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/newadvent-08377a-f81e2c23-article-text/newadvent-08377a-f81e2c23-article-text.txt": "88b1d692d90f6a5bc1855e93d624844b3925437134f7349da0a0db415e3d58d7",
+          "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/newadvent-08377a-f81e2c23/artifact.toml": "312312f663403ce9c4d6518f45c0a90497f0f53581941d45d59757333178e702",
+          "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/newadvent-08438a-7620a92c-article-text/artifact.toml": "64f40ae9455a4739d12d6a01f7ffdf9e373190ef5643f192ba192e7ba20a2703",
+          "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/newadvent-08438a-7620a92c-article-text/newadvent-08438a-7620a92c-article-text.txt": "0315e7dac54885ebbb5324b88bd95105c1a946a23a67e544115cae55fd563cef",
+          "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/newadvent-08438a-7620a92c/artifact.toml": "f352cf2255f632e2284df8aaebb7e501f8858caf73ff59b3f08a5448ef25c6a3",
+          "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/edition.toml": "4c9b3e71d9fc425625469a8f15fef14db202ca8817d5533b8311fca0ae983dff",
+          "src/sources/works/catholic-encyclopedia/volume-8/work.toml": "a973b779e74b08dda53bd4abc84267babe2f8ac1be8341f0a764b12914afcade",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/gutenberg-text-7d10da78/artifact.toml": "95f90fbf4f45166a6448ce2847cb7c8d07291827da871c522abc85b4df31b0ba",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/gutenberg-text-7d10da78/pg1581.txt": "7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-19-esther-59a9e042/19-esther.tsv": "59a9e04246ea434e126b93960498541a0cc50d49a2119dff302bd3d06a2814eb",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-19-esther-59a9e042/artifact.toml": "ad5ff182fb2112693b2c45b8ae7f62a3ed29dfb1bcf8f0d016130e40f14ba7f9",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-21-psalms-578f023d/21-psalms.tsv": "578f023dfe1c830252f23df84bcdbaae79857a652e41b7546c461c4a22f601fc",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-21-psalms-578f023d/artifact.toml": "869bea970a8bbf13c4cad3b260301e6fd80300c18d340e98aa6e1e4aeefa1fa9",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-27-isaias-7c9a1228/27-isaias.tsv": "7c9a1228fe44b5f1ad6e3053788a6cac78e2a0fd400b8ede7b7ea8e2dc365df9",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-27-isaias-7c9a1228/artifact.toml": "577cd7433fdcc0a04946a493269bcd016a023c6254bfca4c25c3baf1507b0abd",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-29-lamentations-fd49dc8c/29-lamentations.tsv": "fd49dc8cbbdc5c783761a0a758897737006240b1683e740553c72f7304a4e8f3",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-29-lamentations-fd49dc8c/artifact.toml": "f29782084a5db879d995458409e4527e624fe03aa556fc5012429640e2b9595d",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-47-matthew-dd0ba183/47-matthew.tsv": "dd0ba183f5fd1e020e733233abfb8f3f97a8c0aded6c518266f8eeed44b6c327",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-47-matthew-dd0ba183/artifact.toml": "e9acb7563a1596a6a003fd955ec6566a443971d4024e760c95b34e98d329ea9c",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-50-john-27b8f3ed/50-john.tsv": "27b8f3ed447cec071ddd0784adecb3bcadf22251dd4c34b88b25939066568a81",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-50-john-27b8f3ed/artifact.toml": "278a8bcf517106e02e4d172dfaabeb464c100f636eb36b95bfce998694680d9c",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-53-1-corinthians-ffc4f260/53-1-corinthians.tsv": "ffc4f2602723e219525a4e6e3beff1cbd164cc2896637ff3062f27ee9a522928",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-53-1-corinthians-ffc4f260/artifact.toml": "ddb42591ba94c5230c80dff2e03a94920fb79edd70822e0832041ed28ed22478",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-57-philippians-4ff760a7/57-philippians.tsv": "4ff760a78c5156cc125d93cfd80ea5edac2ba5705227ee8d3f69fd0162f90ed5",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-57-philippians-4ff760a7/artifact.toml": "578250c55ebcb06bb3f23aedd2f338053ab4bef32de2b887208bb9ceac8b771e",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/edition.toml": "40ff35d8b45e3395a1b7ab5532e4a94c66dba693c828642d122d942048f3707a",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/work.toml": "33a0a06dd333ec0a2105e8904a7383b02cfeddcd7c3149f102704a6b95fa0dbc",
+          "src/sources/works/federation-of-diocesan-liturgical-commissions/mystagogical-reflections/editions/2016-collect-and-prayer-after-communion/artifacts/combo-col-pac-78d-ordinary-24-30/artifact.toml": "83a251601cb83c40e434d5f23c0860e89adc96c9c7aa1ca4f7212b386403c268",
+          "src/sources/works/federation-of-diocesan-liturgical-commissions/mystagogical-reflections/editions/2016-collect-and-prayer-after-communion/edition.toml": "29cf11e9f1a683e6b322ab2b88e57bc6cf383b85e52a2bff8d880c0f5c667b2b",
+          "src/sources/works/federation-of-diocesan-liturgical-commissions/mystagogical-reflections/work.toml": "2c161ecf0d31047113e01dc7852092ab17a9eb8ba087ff1bd73b82bd6bc73f5b",
+          "src/sources/works/holy-see/notitiae/editions/volume-44-numbers-503-504-2008/artifacts/official-pdf-74c8d174/artifact.toml": "527d1bc88436b492cc164c47f805e8cec51be9e4b7f30e852a8a6da571ab9892",
+          "src/sources/works/holy-see/notitiae/editions/volume-44-numbers-503-504-2008/edition.toml": "141bfdc2adc83f2faca91c846cd50c2473933f0a93e486376b2571816c33c06d",
+          "src/sources/works/holy-see/notitiae/work.toml": "a38c4a4885bf3c761bab70eea6fffccbf5c6d744a0d782ad014424850debe3fa",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1854-migne-pl-172/artifacts/iv.65-68-checked-text/artifact.toml": "dcd195ca55cbb6aa06f1cd0ce31116c077a0f564f33cf4428b6cd1429403cffe",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1854-migne-pl-172/artifacts/iv.65-68-checked-text/honorius-gemma-animae-iv-65-68.txt": "f79ab8a895b7f785d4fd90ddc0d232d59c62d547638b653879ea27e90fc6059e",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1895-garnier-migne-pl-172/artifacts/ia-djvu-ocr-2ebfcb5f/artifact.toml": "a45668c1b80e08c294546dd4d3f727a712719d481e77aa0fd2402bf9e00ff8cc",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1895-garnier-migne-pl-172/artifacts/ia-djvu-ocr-2ebfcb5f/patrologiaecursu0172mign_djvu.txt": "2ebfcb5ff3c527820036fe06be730b45d544eb1024dd5cb1980ef9c5a59444b1",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1895-garnier-migne-pl-172/edition.toml": "2b7fd1dd2c5bf4cb8a308a13b676bb479d09935758b22f0cf961e48116f72344",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/work.toml": "47851b8ae38de79ae6689679c102dfa0fd58209063bd28592c5b62ac85f922cc",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/editions/2026-09-17-ccel-web/artifacts/ccel-text-adb8f1c9/artifact.toml": "18ecf1cafe3bdf1260814535e463685ba022188b44e41081b458ecaca8c9d2f0",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/editions/2026-09-17-ccel-web/artifacts/ccel-text-adb8f1c9/source.txt": "adb8f1c9a988c5050a20fb9fdbf75143dcb227e95e3dad2f560a63b757923648",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/editions/2026-09-17-ccel-web/edition.toml": "b7a13b8b36fdb18210633d56da442b6cac0cde36212d685641416e66c150d4ba",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/work.toml": "64f748a6adfa87fbc44e85db154af8f940cb56bec23b06847e75ce657a6e49d7",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-12/editions/2026-09-28-ccel-web/artifacts/ccel-text-10a3454d/artifact.toml": "1e1a61d837eefe66882907c7167818fc3cc90e6d88d7b053ff2c3fa66feb8507",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-12/editions/2026-09-28-ccel-web/artifacts/ccel-text-10a3454d/source.txt": "10a3454d6c08d52088837132f06ca07c5a1ec9d7264d909fa92c48aa3b2ddddc",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-12/editions/2026-09-28-ccel-web/edition.toml": "a1921f7ae7a04f66b355f7d1f571a341a84aa969a2c2fc4c97866bb3818c75ec",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-12/work.toml": "10ee0df8995c966dc9d56091590d01816de94ac23991bd43d6a0caaa7be985e1",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/editions/2026-09-05-english-ccel-web-2026-09-05/artifacts/ccel-npnf113-text-54274dd9/artifact.toml": "0adbf85d85f7032db57850993746138d1fd0142b1c9a0c51b2c5af46679c00b3",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/editions/2026-09-05-english-ccel-web-2026-09-05/artifacts/ccel-npnf113-text-54274dd9/source.txt": "54274dd9aa73ca36e4da9e763e4a27d1818b09e42ffc73795529afec703a4210",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/editions/2026-09-05-english-ccel-web-2026-09-05/edition.toml": "7f2bdc7b4f135df424279c10ef2c86fa0d18cd02150cfccb9018d96700d2e37a",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/work.toml": "3b9fcf5867eac27bc6875c69dcb8d5599aa1881228cb2bc28fdacfb5e5417f88",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-7/editions/2026-09-17-ccel-web/artifacts/ccel-text-266502c9/artifact.toml": "15f5be8a03711aa84997af8e4e7eb4dba121ef3d83886374fb7df87ce8053e6b",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-7/editions/2026-09-17-ccel-web/artifacts/ccel-text-266502c9/source.txt": "266502c9bc5da73981217fc536682b999fc7a09da50255477ed4bcbdad1363e3",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-7/editions/2026-09-17-ccel-web/edition.toml": "faafb7e51384f9c9b8f190f75593df035d34d976c61353210286ac7e8f394286",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-7/work.toml": "756544b91a7d04ab1a360b6f35f8b28eeedf776c0bdc1dbb03ac2878e8cb91dd",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-2-volume-12/editions/2026-09-28-ccel-web/artifacts/ccel-text-7bb1db6e/artifact.toml": "6ffb55a637523c439b9ab2d49dac07ae730d7bb509d0008cdac2b6f623d663d4",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-2-volume-12/editions/2026-09-28-ccel-web/artifacts/ccel-text-7bb1db6e/source.txt": "7bb1db6e2f6814b58dd13a7b85f17f37f80c22ac979c3298793db1fa909b5b5a",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-2-volume-12/editions/2026-09-28-ccel-web/edition.toml": "3182eb5b9175db719f3e1754f6887c3255e21e311f7c791b7cc11a59ebd733f7",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-2-volume-12/work.toml": "1013aa0b59c57a8d1094e0ef826bdeff501d894fc2380cdde2f93aaf5556b1ca",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/full-text-html-c74854f0/artifact.toml": "24ce30309f919925cc65c4df4116e8c261dee33feacce2952113fdb83370f76f",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/historical-text-357551e1/artifact.toml": "6037444f771d285ced965d5688431d57056d1bf8242000de588ba556205a406c",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/historical-text-357551e1/text.txt": "357551e186b7c400fcd4f442ef2a70f6e51b7148ae69ab467b93b4a64ae51bc2",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/edition.toml": "91147082b1ba6f4478082eb6fc533efca88cd151335a478b648a83211e025328",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/work.toml": "18e7b82e6690e2dcca16267372957474d58097a6650793f71b42b17f003a8009",
+          "src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/artifacts/pg19950-body-4597132e/artifact.toml": "6154e86711081c51cdd680d9d97378f69958f5e2b06a237c600ff1371ea13efe",
+          "src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/artifacts/pg19950-body-4597132e/source.txt": "4597132e2dfd680253f4a52977af25245b61406d2325480f5a7308bc50265efd",
+          "src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/artifacts/pg19950-raw-4adb238f/artifact.toml": "c3bc07fb6e32ab3b831b22869b09fc0dd8912ddfcb94b186bbedf87569b7defa",
+          "src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/edition.toml": "6f40b2cb777a069da39170772ba21fb55606c47c2ed971d5ed82c7dc85d6f38b",
+          "src/sources/works/thomas-aquinas/summa-theologiae/work.toml": "99bf96a21399140542fd6e02b51ace8f3b312ba3b0ad30446f8ceb46f18e70ab",
+          "src/sources/works/united-states-conference-of-catholic-bishops/daily-readings/editions/2026-09-28-page-for-2026-10-04/artifacts/usccb-html-c8e960b7/artifact.toml": "95256c57dd08bca40741d7a8d0e322f52d54c22f32da5e0072ff5d7b56a83733",
+          "src/sources/works/united-states-conference-of-catholic-bishops/daily-readings/editions/2026-09-28-page-for-2026-10-04/edition.toml": "e4c76bf66c19e64be09e18f90546eb8cf9c97053f1c265d658a58569d496d12b",
+          "src/sources/works/united-states-conference-of-catholic-bishops/daily-readings/work.toml": "75ab5f839a59dec9197d5416766a13ddf3a6d1b0961d82a7c5157a098ef63188",
+          "src/sources/works/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/editions/2026/artifacts/usccb-pdf-4bd9add0/artifact.toml": "3d89e5f3cba84b402e7d4bef1ed0be4fc83589b279d7dc96e14e958485054ed3",
+          "src/sources/works/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/editions/2026/edition.toml": "e2da32223c03d9c1e5b9a61718efed24ed91e0a9b9005cf028b3acfc83f5b0a9",
+          "src/sources/works/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/work.toml": "91e66dd4d714c988f27429c0025b778a59326a0b538f3fc622504795332ca573",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-09-04-english-usccb-web/artifacts/lamentations-intro-eadb6e9d/artifact.toml": "dd73bcb00d6b75245a4952323d0c58ea861e3dbac1b054cb39a02dd777bf4136",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-09-04-english-usccb-web/edition.toml": "61851f22907a544a8d9867f10d69a882a6d30c865d875634fc121e9970520872",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-09-04-english-usccb-web/passages/lamentations-introduction.toml": "15c406f073a7ac2a0ca169c8405642bfbd34a8d95412d44a78c057dc66027448",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/english-usccb-web-2026-07-28/artifacts/psalms-intro-edaba4b4/artifact.toml": "bd76b681bf40186921543612ed33f3524727a0125f93425813bd38929704bee1",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/english-usccb-web-2026-07-28/edition.toml": "55b87d56f86112c9ab81ca97e80f7be8a409e882052d5104fba335b717df2266",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/english-usccb-web-2026-07-28/passages/psalms-introduction.toml": "3876fad73ca545b915301d41402cd35cb705069b97b895c7830aa216bf5e1563",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/work.toml": "62b31b36e33acc0bbf10eff575b99a734a8d7092ffc29e6e781f79272b4d07ac"
+        },
+        "provider": "gpt",
+        "review": "research",
+        "review_contract": "proper-study-v3",
+        "schema": 1
+      },
+      "stage": "research-review"
+    },
+    {
+      "hash": "8ed566b165d2f5cdd3c99df0b9b7b2e06524fe7b89d6881c86c9c98cd08f118e",
+      "iteration": 1,
+      "path": "build/tpt-runs/17099e79f3655b7d/packets/research-0001.txt",
+      "stage": "research"
+    },
+    {
+      "hash": "a5b2d9ad4ea3a8259ba70063fea6380b5838e13d0e42133842972febfd02058b",
+      "iteration": 1,
+      "path": "build/tpt-runs/17099e79f3655b7d/packets/research-preflight-0001.txt",
+      "stage": "research-preflight"
+    },
+    {
+      "hash": "0a2f3c2e95152c635affe76d8bfca6818e97204b0edd2e28f5cf387488bd228f",
+      "iteration": 1,
+      "path": "build/tpt-runs/17099e79f3655b7d/packets/research-review-0001.txt",
+      "review_inputs": {
+        "chronology_computation_inputs": {
+          "guidance/liturgy/postconciliar-propers-registry.md": "ffe8a6d8b7d79c652bdc49b3d5f6d4dbb32e3506abc7ab0310e745c2b7306ad4",
+          "requirements-tools.txt": "0969da99a0bc2a1b71ed50584560f4588a37567ac63af3ddbaf3c4617ca5621a",
+          "scripts/_calendars.py": "9961359f38a3e390b5de4103a5222149e40b906362bba4b5620590f5ee1fed8e",
+          "scripts/_canon.py": "16fbe8e77d97aac01053eff6d364840d1507314ee07a7038950e5ba5c1aac869",
+          "scripts/_chronology.py": "e618e3e50c17ac643f6021a212e3447743bcd9ab2fa14d818206c1af6b85416e",
+          "scripts/_deuterocanon.py": "4af9a1675dd8ddae6fcbde445a3406acc8b1662c1e9306361a5468609987efa1",
+          "scripts/_loci.py": "a6bfeb1f23069b645bffc7d62f034172b11673d247887b69dcf9880de99dd5a6",
+          "scripts/_projection.py": "342b44cfe6963613bd0f685ac6f85cdfd17e64a6ecf650230aade9ffeeade2c7",
+          "scripts/_proper_chronology.py": "a2bace78780bce9b7d0fd1de25630c873150ea8366ff022da51e7cb116c6632e",
+          "scripts/_proper_chronology_comparisons.py": "e93d4e9c42c18f9e84073a596af7e98a148f92f9b2b0e9a76dd57b1e7532698a",
+          "scripts/_proper_chronology_inputs.py": "67c3ffa66973c9ad9b1e60cac32937830f061a67d671bedeb872933a93dc329b",
+          "scripts/_psalms.py": "3bd7daa1f3b11f1901c21a9062bd022369f7086f7c014484935f0f251c5b4d09",
+          "scripts/_psalter.py": "9db74df548f43e0ca1f51d0c8f8fea4f3613d4f4d2298cb9a3e2c26edac356fd",
+          "scripts/_tooling.py": "592aa0610872c2f4aecd078fb5b4e6a56de46dece36e04a22b54ac24e8338fed",
+          "tools/citations": "1d5e30487cdecbd910b225dc033b31b9c3a3ac5285a349e24736a5a75a2e4810",
+          "tools/proper-chronology": "448b1d387a907dbba951133de7ed7d36bb76c92a5b955fb7b6a1353a1e3bf499"
+        },
+        "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a",
+        "files": {
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/README.md": "e61f5323480cbe19b7bf3b9ee046cfe8966f93662367513dea9cf9b0f27d5b66",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/formula-dispositions.md": "89d9d58ac5bcc07c00d12da3660e07d5ffad72866cc43f40b9581918ed71bde5",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/occurrences-2026.md": "8e693141c8da4beda2aca5ca37c41f923b339f63c09259ee1fdb8628a57eaa4c",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/instance/manifest.md": "9ab2f377d6de66eb639a2115620d32379b1d22b40cea1ac67dcf429b821630e9",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/propers/verified.md": "c4367c88e48ca6954481a904edde9c857128f2a94e74649cc38e993cafb22bb8",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex": "9d6664bb232d4a2078a26084f09cb270d9ce7a3a05a1d90c2fd120d49daeb6df",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/chronology-audit.md": "ad86670b812b8c0bd0531d44cfed8dd5c9e0eea02665daacf16a7f0158da2dde",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/chronology-inputs.toml": "9fd487f1561888df70c71ff005090c7a9ff3a09bf7d846ab70671ac156997841",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/chronology.toml": "defa0544bea8c87d391b45ac4842d5faff77c6a3170439491bf9a6e84334d709",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/context.md": "2335e7793ed51243eac5e5b5708d1f074ffda44a3a76dcd3782caf20a9dfc2c9",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/interpretations.md": "54d13433c39247b038c2d05196dcd1b0252410c4b6edec7cfb3f5b3a5fa8d606",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/review-dependencies.toml": "307472b3dd9ef6ba26b082c7f7dfe922635226bb16a5e6184f15211d6e533b17",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/scope.md": "a133587b60c3df00ea0723d3332efeb94e3e0f036527042aa06d617b13342f2b",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/source-bindings.toml": "ee7c44f81006eaeac3e86852822cae8e263b886a08d3cbe02191a118b47c0c53",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/source-plan.md": "adaeab9f87bb0a108472f3e38b2e04a4383850b4d15ed2ea4c4f6b6f6ffd80d9",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/27/propers/verified.md": "49ce6830cc5bce8d654908675720c69c73ad0e44ee3832e3196288406a137cd6",
+          "src/sources/calendars/postconciliar/propers.yaml": "be2fcb0ee70db4a51201cbffbe743bb6ec94c4728affd1f789b3d7c05165f20a",
+          "src/sources/chronology/bindings.yaml": "4d6488744b63bff3f74e8b981e211ff0ab060d8b071cf2a34a942e9f3829189c",
+          "src/sources/chronology/composition.yaml": "4c17f790990d4c4ecbd5e4139d16aaad12d8154cc2e861ed7b2fe33458ae1c8b",
+          "src/sources/chronology/events.yaml": "4490646b4756c9913fe7d553ce160b03ae633853c1e454a1ee38fae11873a122",
+          "src/sources/chronology/gaps.yaml": "84cccdb70ab980f22faf64ec32658f69c877b861856157b00430aa960ac4d14b",
+          "src/sources/chronology/isaiah-relation-review-2026-09-21.md": "3383997d6847807921c311a47719cf5022ae53d6013615d5c7aaa51f0eebeae9",
+          "src/sources/chronology/profiles.yaml": "7e9d4062810c91d4c3da1bcd4ef43e5cbd17a91bee2d479ca5183ea21d9fed0e",
+          "src/sources/commentary/formulary-loci.yaml": "ea0055280e0946a3a469aadc94e97d7a764d6d40da0df19d3db2fecc1ea3fb54",
+          "src/sources/commentary/fragment-loci.yaml": "40401cb64e74914124c78575e2fded053bdb4419228aa7e9d5fd2096cc527d98",
+          "src/sources/commentary/passage-commentary-index.yaml": "7f4c4b9fcdbb7c5948fc7d941d668e48ef9d663805ea06ff107d972f5d9eb84c",
+          "src/sources/inventories/author-standing-v1.toml": "47660310e0e68890d77d1870168efaf76dee832f9d537ba9b795691296c54fda",
+          "src/sources/inventories/catholic-encyclopedia-rights-v1.toml": "23fd15c63922894067c75f9650c2c4ed0c7388c22148339becd2073143c4171a",
+          "src/sources/inventories/icel-web-permission-rights-v1.toml": "fc0ceae47f6e22def7a51e9a9967581541934dab86a54fa8fbc8bb97514a7959",
+          "src/sources/inventories/liturgical-english-rights-v1.toml": "1190b3aa687c69c7e7923a2a7e4b63b31c0179c30371efc69c610013611997c3",
+          "src/sources/inventories/postconciliar-proper-translations-v1.toml": "525a9594aff649f897f5932297188a5a06a520c768d59aa097528f54da3ebd33",
+          "src/sources/inventories/source-containment-v1.toml": "5d013d91949a753810581d4cef7d71c8538250e994147f4188e40eb39c7e59cb",
+          "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/artifact.toml": "6bee6f13dd757842ceeb86ef5fd06b6fb0251a5ab75590fa793f324aef07b79f",
+          "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/source.txt": "d6841950333024906294e6e829f7512d08b3adf62ae6cee3615d18a7ad0020e9",
+          "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/edition.toml": "ca66a1598f692914e7c16f7a3200ed3be8f03c4e08246b87055c4d83929e2ab4",
+          "src/sources/works/augustine/enarrationes-in-psalmos/work.toml": "a3fa6fbac8db1820c20de67f21b12da3e0feb0aa18751b0fc0288223904992d4",
+          "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/english-us-2011-emended-2021/artifacts/usccb-chapter-ii-html-2026-09-28-d99adb8e/artifact.toml": "7ee8ea8899805d550aba7b576f137592f96aeb34f2352e29d67652c168d89705",
+          "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/english-us-2011-emended-2021/artifacts/usccb-chapter-vii-html-2026-09-28-954259ef/artifact.toml": "503d72d34b7d67ec7e0a7199fd8ce7c945b9eb3ef512d629390aaea9cab656c1",
+          "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/english-us-2011-emended-2021/edition.toml": "4911bfbf1a3956a129705a6f5af4b7fff895afd449550ac1ee30a0ba4fd41d1f",
+          "src/sources/works/catholic-church/institutio-generalis-missalis-romani/work.toml": "ddff455b5c3c5c592d9d437d4c65d8c1d54ff454ab336499f38c19a3713e3255",
+          "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/artifacts/antiphonary-pdf/artifact.toml": "0a749a245f1ee3ce1d8d3250d91742503065e9d1dee8eed6dfb065181f9d9dc8",
+          "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/edition.toml": "daf243c3600b683966550961da8f653c7b4fca5905522bb4235bcccad613a6f0",
+          "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml": "b86dcb4a240d25eb04150a99ba630c74454c46df1a6cc2e4669b682f937a697f",
+          "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/edition.toml": "5c6564d7db4b668729be36a92bcf07a29f932ad80e244f6bb0a04e08906443bf",
+          "src/sources/works/catholic-church/missale-romanum/work.toml": "ae029277a68493ed903cd608cd7abdb91797aaff614ab5646f7c6a2dbeaa2ffd",
+          "src/sources/works/catholic-church/ordo-lectionum-missae/editions/english-liturgy-office-web-2026-07-25/artifacts/liturgy-office-pdf-d286cb13/artifact.toml": "87f398d4d373fb45e5708a78a0a30a95dbea1fd59cba9166a2f4d0a15fc44012",
+          "src/sources/works/catholic-church/ordo-lectionum-missae/editions/english-liturgy-office-web-2026-07-25/edition.toml": "d6293c6f1cb68e077c362f402ce74c967cedb033be5a1014fdbaf08a06aecff5",
+          "src/sources/works/catholic-church/ordo-lectionum-missae/work.toml": "ad7180529504a200c4c6ed21c7666bef71f2ee530d5b2c91c914b76ca1995c36",
+          "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/artifacts/newadvent-10057a-e7b6ccef-article-text/artifact.toml": "064cdf2fa4756bc1f4556b7a31a8e6a4614eb59d1edc3e5ee1c5b7549b16d8b8",
+          "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/artifacts/newadvent-10057a-e7b6ccef-article-text/newadvent-10057a-e7b6ccef-article-text.txt": "3d9a35cc773f774ed3b423c890956ba655c61ceb7096fbd7c01a197f062168c2",
+          "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/artifacts/newadvent-10057a-e7b6ccef/artifact.toml": "b294291e332e98d8f848eeb581c1c8790c50f443c1d620237f4314a673741f2d",
+          "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/edition.toml": "927c6f8b34914a616a6ae8e7d529f2b744bf10811c87a9fc9b1f9613efc52a83",
+          "src/sources/works/catholic-encyclopedia/volume-10/work.toml": "35e69d1e21b0c1b474e7fdc146b5c77f772d02c1e7ca137b195215b7734ad90f",
+          "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/artifacts/newadvent-11567b-bff0dda8-article-text/artifact.toml": "fc12981c91a7aba5778225195ca29ed3888bd75d2e4320025778228977cbeec7",
+          "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/artifacts/newadvent-11567b-bff0dda8-article-text/newadvent-11567b-bff0dda8-article-text.txt": "c0f08396eca9b37415747eb06790ce986acc5bb650b2675d76af8449458bce1d",
+          "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/artifacts/newadvent-11567b-bff0dda8/artifact.toml": "b2d6bd1eaeea0fb45d04520f3c9b4ed00a134b2f68e5e1192c3b54302f981b9b",
+          "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/edition.toml": "a853c22a9912eca40252c6e83a5771bcbc3e4d280c93c1fa0576d5ec3e0f1c46",
+          "src/sources/works/catholic-encyclopedia/volume-11/work.toml": "89c729d48c4ee457f1897e72956c99a0965d697e412655bf38e1022f580bc0f3",
+          "src/sources/works/catholic-encyclopedia/volume-12/editions/new-york-1911/artifacts/newadvent-12008a-1e39e824-article-text/artifact.toml": "47acd12741fb82d814f5ead82aa286944d66e3b26a90808f2332f6a6cccc07f7",
+          "src/sources/works/catholic-encyclopedia/volume-12/editions/new-york-1911/artifacts/newadvent-12008a-1e39e824-article-text/newadvent-12008a-1e39e824-article-text.txt": "51c2cd3ae07d5574076e8505f0af2be9d3829d3b34446680c77f3718440b4530",
+          "src/sources/works/catholic-encyclopedia/volume-12/editions/new-york-1911/artifacts/newadvent-12008a-1e39e824/artifact.toml": "89e380e45528206cac1a66e6cc53c5f588b01c7fe615aa0ec6cac893941d3e91",
+          "src/sources/works/catholic-encyclopedia/volume-12/editions/new-york-1911/edition.toml": "438082c3ee4c3703219b9ff2d84f126f5dd3555d7fea32ecaaeffb6b2f12af04",
+          "src/sources/works/catholic-encyclopedia/volume-12/work.toml": "33c38def3e0a3deb9c0cc9dbf59f2286684ada7a066ae09ceab6729212b9dfa2",
+          "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/artifacts/newadvent-14530a-0a19aa2c-article-text/artifact.toml": "257dd7abc12662c518c7717dc472a969e2198bf8c9776affb75674ac739520ce",
+          "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/artifacts/newadvent-14530a-0a19aa2c-article-text/newadvent-14530a-0a19aa2c-article-text.txt": "c4e12a4a6127e8af8b7ac8e2176448f78a2be2cb2080ab5ffb6f885f8fcaa259",
+          "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/artifacts/newadvent-14530a-0a19aa2c/artifact.toml": "021921a3f483d209307f6dbf91db6b9ad97f7eea4951d9407dc90799b054af45",
+          "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/edition.toml": "9af0369eec24106ce972b11e835ee2021e60ee3c7472ed329806c5287e3d158f",
+          "src/sources/works/catholic-encyclopedia/volume-14/work.toml": "a4f100c2a3bcd0d13f19ba481c850b59c7ee572f31cead4e9450e21c95c4f153",
+          "src/sources/works/catholic-encyclopedia/volume-4/editions/new-york-1908/artifacts/ia-facsimile-pdf-d1b059b1/artifact.toml": "b15be97d18218dbbac35b801510cc37920f418e0d868dbce79727f74b1f1a684",
+          "src/sources/works/catholic-encyclopedia/volume-4/editions/new-york-1908/artifacts/newadvent-04364a-2b6b401d-article-text/artifact.toml": "9bbd4b977d46b94ecfdabde0c28a1be132b496739053038f9fd790eeb229e80c",
+          "src/sources/works/catholic-encyclopedia/volume-4/editions/new-york-1908/artifacts/newadvent-04364a-2b6b401d-article-text/newadvent-04364a-2b6b401d-article-text.txt": "1c480332e72614ded5468e9b408a76a72f5f4dd8bc50a523a0afd8f21301d882",
+          "src/sources/works/catholic-encyclopedia/volume-4/editions/new-york-1908/artifacts/newadvent-04364a-2b6b401d/artifact.toml": "53e685e3f5979bf55a6f4a5ddea5463f67df5b1810bd77c90258724bfe3a1d25",
+          "src/sources/works/catholic-encyclopedia/volume-4/editions/new-york-1908/edition.toml": "fd1a1b32d1d43c755a95f87c01057aef8f0ac88b2d3296a2b57094063a86310c",
+          "src/sources/works/catholic-encyclopedia/volume-4/work.toml": "1eaeeaff9bdf1d453027d504dc0cc7d3644ab146cf045495011fd36e7e81c963",
+          "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05549a-ab721ede-article-text/artifact.toml": "55564a6e8fa493e74c41049403673be205cce8ecf588dcff3a621b3612bb4c53",
+          "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05549a-ab721ede-article-text/newadvent-05549a-ab721ede-article-text.txt": "001300d7a30c91bb0133578f470843622aae58b3c88ed1b6a4da6c057a96bf83",
+          "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05549a-ab721ede/artifact.toml": "84fe8bc5954ecbb4c6b8c5e2690c379585db7a601bd94448aae6c0ab6853a13f",
+          "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/edition.toml": "4cce479273bc4236d50e37d83b4af871f5acd25ad1ae8e51ddf2417f66cdbc48",
+          "src/sources/works/catholic-encyclopedia/volume-5/work.toml": "532b41fbee708c3f06c33374b4068bf12a68e99c681d9540f2f4245bcf463bc5",
+          "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/ia-facsimile-pdf-ac62a7ca/artifact.toml": "d7b673c8469a6f0f91cfa53ec96fe78c778b34905a5d7ca6eafcdafd51bbb4b8",
+          "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/newadvent-08179b-d4ee13fd-article-text/artifact.toml": "6266a727a25824b814441cba55222609035b076ee11bccbff3e45376ec0dd1cf",
+          "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/newadvent-08179b-d4ee13fd-article-text/newadvent-08179b-d4ee13fd-article-text.txt": "9b40deed12c9b2a23e91a0ed829049ba2c313e22b0b8442224d2cea7c8d4a2f7",
+          "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/newadvent-08179b-d4ee13fd/artifact.toml": "1fcf8441e31d51911508c3c592c406bb360d017b4b964310b75ab1e4e66404de",
+          "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/newadvent-08377a-f81e2c23-article-text/artifact.toml": "04f797b5ebc23e3828985e8ae7efc72b438c69bdf4d084a2a0df7d8345195fea",
+          "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/newadvent-08377a-f81e2c23-article-text/newadvent-08377a-f81e2c23-article-text.txt": "88b1d692d90f6a5bc1855e93d624844b3925437134f7349da0a0db415e3d58d7",
+          "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/newadvent-08377a-f81e2c23/artifact.toml": "312312f663403ce9c4d6518f45c0a90497f0f53581941d45d59757333178e702",
+          "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/newadvent-08438a-7620a92c-article-text/artifact.toml": "64f40ae9455a4739d12d6a01f7ffdf9e373190ef5643f192ba192e7ba20a2703",
+          "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/newadvent-08438a-7620a92c-article-text/newadvent-08438a-7620a92c-article-text.txt": "0315e7dac54885ebbb5324b88bd95105c1a946a23a67e544115cae55fd563cef",
+          "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/newadvent-08438a-7620a92c/artifact.toml": "f352cf2255f632e2284df8aaebb7e501f8858caf73ff59b3f08a5448ef25c6a3",
+          "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/edition.toml": "4c9b3e71d9fc425625469a8f15fef14db202ca8817d5533b8311fca0ae983dff",
+          "src/sources/works/catholic-encyclopedia/volume-8/work.toml": "a973b779e74b08dda53bd4abc84267babe2f8ac1be8341f0a764b12914afcade",
+          "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/decree-implementing-canon-838-2021/editions/2021-english-press-office-bulletin/artifacts/press-office-pdf-9fd22cb8/artifact.toml": "c07ff14cafe93bfd5468e5dd461da96e6a51cac5f524eee4ef2a104fadd5217e",
+          "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/decree-implementing-canon-838-2021/editions/2021-english-press-office-bulletin/edition.toml": "16172c422dade5feee9880b53861cf26a44e386ef039f1ff8ec57c37234b0ffc",
+          "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/decree-implementing-canon-838-2021/editions/2021-english-press-office-bulletin/passages/2.toml": "e5fb6687d1109624fb1fa65718d7da48ed1133d6bc0c1e21b8df697a3d802033",
+          "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/decree-implementing-canon-838-2021/editions/2021-english-press-office-bulletin/passages/3.toml": "5be47ad1b2352f024bb9633d348fca90afb34635bd4575c38ac853d2fbe8c244",
+          "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/decree-implementing-canon-838-2021/editions/2021-english-press-office-bulletin/passages/40.toml": "7be1734df3a736a3de03f0824275d9a6d1e32d3899b3ca66ab7fee8892b0b6c6",
+          "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/decree-implementing-canon-838-2021/work.toml": "dbc80d47aca6ff0fc8d045a809528bb706b6955739f967e453931880c58d92dc",
+          "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/liturgiam-authenticam-2001/editions/english-vatican-web-2026-07-25/artifacts/vatican-html-01c63c12/artifact.toml": "713b27ae74a53699a0d1098dd003b1e93556f7592a4ec0aadcd9445480af6514",
+          "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/liturgiam-authenticam-2001/editions/english-vatican-web-2026-07-25/edition.toml": "1cbb637a092ccc47df5866624882f13d87ed0695d60dfe7b115fce89928e3f89",
+          "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/liturgiam-authenticam-2001/editions/english-vatican-web-2026-07-25/passages/111.toml": "88ca905bde727763245b2d6f295270daa2c9a97d5cda97008f537c4012f09a8d",
+          "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/liturgiam-authenticam-2001/editions/english-vatican-web-2026-07-25/passages/complete-text.toml": "9245b5a6113da14404a37b45bd63440f47e1b3a5f5ef03d08be9e9cccf2baf49",
+          "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/liturgiam-authenticam-2001/work.toml": "0dc137bf596b4b71b93afe3b069943be20b2b4b9ab9ae13592151d712d9e8f79",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/gutenberg-text-7d10da78/artifact.toml": "95f90fbf4f45166a6448ce2847cb7c8d07291827da871c522abc85b4df31b0ba",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/gutenberg-text-7d10da78/pg1581.txt": "7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-19-esther-59a9e042/19-esther.tsv": "59a9e04246ea434e126b93960498541a0cc50d49a2119dff302bd3d06a2814eb",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-19-esther-59a9e042/artifact.toml": "ad5ff182fb2112693b2c45b8ae7f62a3ed29dfb1bcf8f0d016130e40f14ba7f9",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-21-psalms-578f023d/21-psalms.tsv": "578f023dfe1c830252f23df84bcdbaae79857a652e41b7546c461c4a22f601fc",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-21-psalms-578f023d/artifact.toml": "869bea970a8bbf13c4cad3b260301e6fd80300c18d340e98aa6e1e4aeefa1fa9",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-27-isaias-7c9a1228/27-isaias.tsv": "7c9a1228fe44b5f1ad6e3053788a6cac78e2a0fd400b8ede7b7ea8e2dc365df9",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-27-isaias-7c9a1228/artifact.toml": "577cd7433fdcc0a04946a493269bcd016a023c6254bfca4c25c3baf1507b0abd",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-29-lamentations-fd49dc8c/29-lamentations.tsv": "fd49dc8cbbdc5c783761a0a758897737006240b1683e740553c72f7304a4e8f3",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-29-lamentations-fd49dc8c/artifact.toml": "f29782084a5db879d995458409e4527e624fe03aa556fc5012429640e2b9595d",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-47-matthew-dd0ba183/47-matthew.tsv": "dd0ba183f5fd1e020e733233abfb8f3f97a8c0aded6c518266f8eeed44b6c327",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-47-matthew-dd0ba183/artifact.toml": "e9acb7563a1596a6a003fd955ec6566a443971d4024e760c95b34e98d329ea9c",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-50-john-27b8f3ed/50-john.tsv": "27b8f3ed447cec071ddd0784adecb3bcadf22251dd4c34b88b25939066568a81",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-50-john-27b8f3ed/artifact.toml": "278a8bcf517106e02e4d172dfaabeb464c100f636eb36b95bfce998694680d9c",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-53-1-corinthians-ffc4f260/53-1-corinthians.tsv": "ffc4f2602723e219525a4e6e3beff1cbd164cc2896637ff3062f27ee9a522928",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-53-1-corinthians-ffc4f260/artifact.toml": "ddb42591ba94c5230c80dff2e03a94920fb79edd70822e0832041ed28ed22478",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-57-philippians-4ff760a7/57-philippians.tsv": "4ff760a78c5156cc125d93cfd80ea5edac2ba5705227ee8d3f69fd0162f90ed5",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-57-philippians-4ff760a7/artifact.toml": "578250c55ebcb06bb3f23aedd2f338053ab4bef32de2b887208bb9ceac8b771e",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/edition.toml": "40ff35d8b45e3395a1b7ab5532e4a94c66dba693c828642d122d942048f3707a",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/work.toml": "33a0a06dd333ec0a2105e8904a7383b02cfeddcd7c3149f102704a6b95fa0dbc",
+          "src/sources/works/federation-of-diocesan-liturgical-commissions/mystagogical-reflections/editions/2016-collect-and-prayer-after-communion/artifacts/combo-col-pac-78d-ordinary-24-30/artifact.toml": "83a251601cb83c40e434d5f23c0860e89adc96c9c7aa1ca4f7212b386403c268",
+          "src/sources/works/federation-of-diocesan-liturgical-commissions/mystagogical-reflections/editions/2016-collect-and-prayer-after-communion/edition.toml": "29cf11e9f1a683e6b322ab2b88e57bc6cf383b85e52a2bff8d880c0f5c667b2b",
+          "src/sources/works/federation-of-diocesan-liturgical-commissions/mystagogical-reflections/work.toml": "2c161ecf0d31047113e01dc7852092ab17a9eb8ba087ff1bd73b82bd6bc73f5b",
+          "src/sources/works/holy-see/notitiae/editions/volume-44-numbers-503-504-2008/artifacts/official-pdf-74c8d174/artifact.toml": "527d1bc88436b492cc164c47f805e8cec51be9e4b7f30e852a8a6da571ab9892",
+          "src/sources/works/holy-see/notitiae/editions/volume-44-numbers-503-504-2008/edition.toml": "141bfdc2adc83f2faca91c846cd50c2473933f0a93e486376b2571816c33c06d",
+          "src/sources/works/holy-see/notitiae/work.toml": "a38c4a4885bf3c761bab70eea6fffccbf5c6d744a0d782ad014424850debe3fa",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1854-migne-pl-172/artifacts/iv.65-68-checked-text/artifact.toml": "dcd195ca55cbb6aa06f1cd0ce31116c077a0f564f33cf4428b6cd1429403cffe",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1854-migne-pl-172/artifacts/iv.65-68-checked-text/honorius-gemma-animae-iv-65-68.txt": "f79ab8a895b7f785d4fd90ddc0d232d59c62d547638b653879ea27e90fc6059e",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1854-migne-pl-172/artifacts/migne-facsimile-pdf-906be8c5/artifact.toml": "7c15fb9b188d5ce5b0ea54a41d265ac7043ee18b9386fb16d7e239422cee334a",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1854-migne-pl-172/edition.toml": "a7d7c137db56f51f93a07e7580b10787d7afcf664948a838e70e4e12f8f60523",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1854-migne-pl-172/passages/iv.65.toml": "e0e86d38d324ea6efe65d94406ca7c63aa923553e734b9337d2bbf1f1b75f045",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1895-garnier-migne-pl-172/artifacts/ia-djvu-ocr-2ebfcb5f/artifact.toml": "a45668c1b80e08c294546dd4d3f727a712719d481e77aa0fd2402bf9e00ff8cc",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1895-garnier-migne-pl-172/artifacts/ia-djvu-ocr-2ebfcb5f/patrologiaecursu0172mign_djvu.txt": "2ebfcb5ff3c527820036fe06be730b45d544eb1024dd5cb1980ef9c5a59444b1",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1895-garnier-migne-pl-172/edition.toml": "2b7fd1dd2c5bf4cb8a308a13b676bb479d09935758b22f0cf961e48116f72344",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/work.toml": "47851b8ae38de79ae6689679c102dfa0fd58209063bd28592c5b62ac85f922cc",
+          "src/sources/works/international-commission-on-english-in-the-liturgy/publication-policies/editions/2013-amended-booklet/artifacts/publication-policies-pdf/artifact.toml": "0a930b204e435e7ca07fe48ad483bdba122a9cac551d591dc6a6ae1468696db6",
+          "src/sources/works/international-commission-on-english-in-the-liturgy/publication-policies/editions/2013-amended-booklet/edition.toml": "2c5acdc936e22b10370a8e414284dd0aa6f235c36a454a5c344ae95c67193535",
+          "src/sources/works/international-commission-on-english-in-the-liturgy/publication-policies/editions/2013-amended-booklet/passages/copyright-acknowledgment.toml": "aea9772c7fa31c9004958a2c310115e4f49dd648e9b315c51a6c1188408179ba",
+          "src/sources/works/international-commission-on-english-in-the-liturgy/publication-policies/editions/2013-amended-booklet/passages/global-computer-networks.toml": "b8240525d8ef899f297fb314d90adb4290fe5abc3638f545376ad5eb8ec8ee93",
+          "src/sources/works/international-commission-on-english-in-the-liturgy/publication-policies/editions/2013-amended-booklet/passages/icet-ellc-texts.toml": "58abd289d610872a3b0f3359b63f7a1b40aa01386004acff572cdef94258f768",
+          "src/sources/works/international-commission-on-english-in-the-liturgy/publication-policies/editions/2013-amended-booklet/passages/permissions-copyright-royalties.toml": "bc7b0dcf2c4efb7c389a6befdb094ead52c47e563d6a0849e6fa6d38c40787c0",
+          "src/sources/works/international-commission-on-english-in-the-liturgy/publication-policies/editions/2013-amended-booklet/passages/sense-lines.toml": "68971ce9aa52e3dff91268d3678a13c8290d9c71d5425421d33b466351c5f389",
+          "src/sources/works/international-commission-on-english-in-the-liturgy/publication-policies/editions/web-2026-08-01/artifacts/copyright-policy-html/artifact.toml": "55016cc7072174dfb17fb808368974337ba2bd5b2ac6e06a721f7b870b847a9d",
+          "src/sources/works/international-commission-on-english-in-the-liturgy/publication-policies/editions/web-2026-08-01/artifacts/what-is-icel-html/artifact.toml": "b87987456792c6e1545781d86179f95f87545fec04a82ed8bd104462c985cdcc",
+          "src/sources/works/international-commission-on-english-in-the-liturgy/publication-policies/editions/web-2026-08-01/edition.toml": "2c3ac291f1dd1c3f7d6444734ba2bb0499f29b90531dff3b060517dfa22d35dd",
+          "src/sources/works/international-commission-on-english-in-the-liturgy/publication-policies/editions/web-2026-08-01/passages/permissions-and-royalties.toml": "81143bcabf35dd0dfdc1a2011e885e3e89105e38e0d33ef319ed19c5ae057db6",
+          "src/sources/works/international-commission-on-english-in-the-liturgy/publication-policies/work.toml": "964bbe75e1cba2ebf004104550d8fc3479be9f4721ddd99ec786ba76079c9c76",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/editions/2026-09-17-ccel-web/artifacts/ccel-text-adb8f1c9/artifact.toml": "18ecf1cafe3bdf1260814535e463685ba022188b44e41081b458ecaca8c9d2f0",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/editions/2026-09-17-ccel-web/artifacts/ccel-text-adb8f1c9/source.txt": "adb8f1c9a988c5050a20fb9fdbf75143dcb227e95e3dad2f560a63b757923648",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/editions/2026-09-17-ccel-web/edition.toml": "b7a13b8b36fdb18210633d56da442b6cac0cde36212d685641416e66c150d4ba",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/work.toml": "64f748a6adfa87fbc44e85db154af8f940cb56bec23b06847e75ce657a6e49d7",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-12/editions/2026-09-28-ccel-web/artifacts/ccel-text-10a3454d/artifact.toml": "1e1a61d837eefe66882907c7167818fc3cc90e6d88d7b053ff2c3fa66feb8507",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-12/editions/2026-09-28-ccel-web/artifacts/ccel-text-10a3454d/source.txt": "10a3454d6c08d52088837132f06ca07c5a1ec9d7264d909fa92c48aa3b2ddddc",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-12/editions/2026-09-28-ccel-web/edition.toml": "a1921f7ae7a04f66b355f7d1f571a341a84aa969a2c2fc4c97866bb3818c75ec",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-12/work.toml": "10ee0df8995c966dc9d56091590d01816de94ac23991bd43d6a0caaa7be985e1",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/editions/2026-09-05-english-ccel-web-2026-09-05/artifacts/ccel-npnf113-text-54274dd9/artifact.toml": "0adbf85d85f7032db57850993746138d1fd0142b1c9a0c51b2c5af46679c00b3",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/editions/2026-09-05-english-ccel-web-2026-09-05/artifacts/ccel-npnf113-text-54274dd9/source.txt": "54274dd9aa73ca36e4da9e763e4a27d1818b09e42ffc73795529afec703a4210",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/editions/2026-09-05-english-ccel-web-2026-09-05/edition.toml": "7f2bdc7b4f135df424279c10ef2c86fa0d18cd02150cfccb9018d96700d2e37a",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/work.toml": "3b9fcf5867eac27bc6875c69dcb8d5599aa1881228cb2bc28fdacfb5e5417f88",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-7/editions/2026-09-17-ccel-web/artifacts/ccel-text-266502c9/artifact.toml": "15f5be8a03711aa84997af8e4e7eb4dba121ef3d83886374fb7df87ce8053e6b",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-7/editions/2026-09-17-ccel-web/artifacts/ccel-text-266502c9/source.txt": "266502c9bc5da73981217fc536682b999fc7a09da50255477ed4bcbdad1363e3",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-7/editions/2026-09-17-ccel-web/edition.toml": "faafb7e51384f9c9b8f190f75593df035d34d976c61353210286ac7e8f394286",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-7/work.toml": "756544b91a7d04ab1a360b6f35f8b28eeedf776c0bdc1dbb03ac2878e8cb91dd",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-2-volume-12/editions/2026-09-28-ccel-web/artifacts/ccel-text-7bb1db6e/artifact.toml": "6ffb55a637523c439b9ab2d49dac07ae730d7bb509d0008cdac2b6f623d663d4",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-2-volume-12/editions/2026-09-28-ccel-web/artifacts/ccel-text-7bb1db6e/source.txt": "7bb1db6e2f6814b58dd13a7b85f17f37f80c22ac979c3298793db1fa909b5b5a",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-2-volume-12/editions/2026-09-28-ccel-web/edition.toml": "3182eb5b9175db719f3e1754f6887c3255e21e311f7c791b7cc11a59ebd733f7",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-2-volume-12/work.toml": "1013aa0b59c57a8d1094e0ef826bdeff501d894fc2380cdde2f93aaf5556b1ca",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/full-text-html-c74854f0/artifact.toml": "24ce30309f919925cc65c4df4116e8c261dee33feacce2952113fdb83370f76f",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/historical-text-357551e1/artifact.toml": "6037444f771d285ced965d5688431d57056d1bf8242000de588ba556205a406c",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/historical-text-357551e1/text.txt": "357551e186b7c400fcd4f442ef2a70f6e51b7148ae69ab467b93b4a64ae51bc2",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/edition.toml": "91147082b1ba6f4478082eb6fc533efca88cd151335a478b648a83211e025328",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/work.toml": "18e7b82e6690e2dcca16267372957474d58097a6650793f71b42b17f003a8009",
+          "src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/artifacts/pg19950-body-4597132e/artifact.toml": "6154e86711081c51cdd680d9d97378f69958f5e2b06a237c600ff1371ea13efe",
+          "src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/artifacts/pg19950-body-4597132e/source.txt": "4597132e2dfd680253f4a52977af25245b61406d2325480f5a7308bc50265efd",
+          "src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/artifacts/pg19950-raw-4adb238f/artifact.toml": "c3bc07fb6e32ab3b831b22869b09fc0dd8912ddfcb94b186bbedf87569b7defa",
+          "src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/edition.toml": "6f40b2cb777a069da39170772ba21fb55606c47c2ed971d5ed82c7dc85d6f38b",
+          "src/sources/works/thomas-aquinas/summa-theologiae/work.toml": "99bf96a21399140542fd6e02b51ace8f3b312ba3b0ad30446f8ceb46f18e70ab",
+          "src/sources/works/united-states-conference-of-catholic-bishops/daily-readings/editions/2026-09-28-page-for-2026-10-04/artifacts/usccb-html-c8e960b7/artifact.toml": "95256c57dd08bca40741d7a8d0e322f52d54c22f32da5e0072ff5d7b56a83733",
+          "src/sources/works/united-states-conference-of-catholic-bishops/daily-readings/editions/2026-09-28-page-for-2026-10-04/edition.toml": "e4c76bf66c19e64be09e18f90546eb8cf9c97053f1c265d658a58569d496d12b",
+          "src/sources/works/united-states-conference-of-catholic-bishops/daily-readings/work.toml": "75ab5f839a59dec9197d5416766a13ddf3a6d1b0961d82a7c5157a098ef63188",
+          "src/sources/works/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/editions/2026/artifacts/usccb-pdf-4bd9add0/artifact.toml": "3d89e5f3cba84b402e7d4bef1ed0be4fc83589b279d7dc96e14e958485054ed3",
+          "src/sources/works/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/editions/2026/edition.toml": "e2da32223c03d9c1e5b9a61718efed24ed91e0a9b9005cf028b3acfc83f5b0a9",
+          "src/sources/works/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/work.toml": "91e66dd4d714c988f27429c0025b778a59326a0b538f3fc622504795332ca573",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-09-04-english-usccb-web/artifacts/lamentations-intro-eadb6e9d/artifact.toml": "dd73bcb00d6b75245a4952323d0c58ea861e3dbac1b054cb39a02dd777bf4136",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-09-04-english-usccb-web/edition.toml": "61851f22907a544a8d9867f10d69a882a6d30c865d875634fc121e9970520872",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-09-04-english-usccb-web/passages/lamentations-introduction.toml": "15c406f073a7ac2a0ca169c8405642bfbd34a8d95412d44a78c057dc66027448",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/english-usccb-web-2026-07-28/artifacts/psalms-intro-edaba4b4/artifact.toml": "bd76b681bf40186921543612ed33f3524727a0125f93425813bd38929704bee1",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/english-usccb-web-2026-07-28/edition.toml": "55b87d56f86112c9ab81ca97e80f7be8a409e882052d5104fba335b717df2266",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/english-usccb-web-2026-07-28/passages/psalms-introduction.toml": "3876fad73ca545b915301d41402cd35cb705069b97b895c7830aa216bf5e1563",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/work.toml": "62b31b36e33acc0bbf10eff575b99a734a8d7092ffc29e6e781f79272b4d07ac",
+          "src/sources/works/world-intellectual-property-organization/wipo-lex-berne-contracting-parties/editions/web-2026-08-01/artifacts/contracting-parties-html/artifact.toml": "05b7fe33d78d287a7c38ec0f992023ac389c023357a05404532e9262dd00fbc9",
+          "src/sources/works/world-intellectual-property-organization/wipo-lex-berne-contracting-parties/editions/web-2026-08-01/edition.toml": "3f4a08789c76d9035f97602e13da63cc670a18e659e1de55105ec80c3881d372",
+          "src/sources/works/world-intellectual-property-organization/wipo-lex-berne-contracting-parties/work.toml": "b15580d4421b6bac236025d1465369aa9c15754e8979d9632c6d9e068336845c"
+        },
+        "provider": "gpt",
+        "review": "research",
+        "review_contract": "proper-study-v3",
+        "schema": 1
+      },
+      "stage": "research-review"
+    },
+    {
+      "hash": "75db4102956180ff3c19a9d6cdab126c9840b1bd2fb98b8b9ef265e5845cf6f4",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/packets/author-study-0000.txt",
+      "stage": "author-study"
+    },
+    {
+      "hash": "5900ad4d5c4bd138f30af7f02128bfe2aebff79fa5ea3cfa6a2e4eeeeba91bf3",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/packets/study-preflight-0000.txt",
+      "stage": "study-preflight"
+    },
+    {
+      "hash": "fb22299a560b0c888aca51b7e1e47dd61f003007a7d32cbdb140f3d2f45a36c0",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/packets/study-review-0000.txt",
+      "review_inputs": {
+        "component_contract": {
+          "calendar": "postconciliar",
+          "components": [
+            {
+              "depends_on": [],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "responsorial-psalm",
+                "second-reading",
+                "acclamation",
+                "gospel",
+                "offerings",
+                "communion-lamentations",
+                "communion-corinthians",
+                "after-communion"
+              ],
+              "key": "opening",
+              "kind": "front-matter",
+              "path": "sections/00-opening.tex",
+              "references": []
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "responsorial-psalm",
+                "second-reading",
+                "acclamation",
+                "gospel",
+                "offerings",
+                "communion-lamentations",
+                "communion-corinthians",
+                "after-communion"
+              ],
+              "key": "study-map",
+              "kind": "front-matter",
+              "path": "sections/01-map.tex",
+              "references": []
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "responsorial-psalm",
+                "second-reading",
+                "acclamation",
+                "gospel",
+                "offerings",
+                "communion-lamentations",
+                "communion-corinthians",
+                "after-communion"
+              ],
+              "key": "treatment",
+              "kind": "proper-treatment",
+              "path": "sections/10-treatment.tex",
+              "references": [
+                "research/scope.md",
+                "research/source-bindings.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "responsorial-psalm",
+                "second-reading",
+                "acclamation",
+                "gospel",
+                "offerings",
+                "communion-lamentations",
+                "communion-corinthians",
+                "after-communion"
+              ],
+              "key": "texts",
+              "kind": "appointed-text",
+              "path": "sections/20-texts.tex",
+              "references": [
+                "research/source-bindings.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "responsorial-psalm",
+                "second-reading",
+                "acclamation",
+                "gospel",
+                "offerings",
+                "communion-lamentations",
+                "communion-corinthians",
+                "after-communion"
+              ],
+              "key": "gift",
+              "kind": "interpretive-lane",
+              "path": "sections/30-gift.tex",
+              "references": [
+                "research/interpretations.md"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "responsorial-psalm",
+                "second-reading",
+                "acclamation",
+                "gospel",
+                "offerings",
+                "communion-lamentations",
+                "communion-corinthians",
+                "after-communion"
+              ],
+              "key": "restoration",
+              "kind": "interpretive-lane",
+              "path": "sections/40-restoration.tex",
+              "references": [
+                "research/interpretations.md"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "responsorial-psalm",
+                "second-reading",
+                "acclamation",
+                "gospel",
+                "offerings",
+                "communion-lamentations",
+                "communion-corinthians",
+                "after-communion"
+              ],
+              "key": "comparison",
+              "kind": "front-matter",
+              "path": "sections/50-comparison.tex",
+              "references": []
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "responsorial-psalm",
+                "second-reading",
+                "acclamation",
+                "gospel",
+                "offerings",
+                "communion-lamentations",
+                "communion-corinthians",
+                "after-communion"
+              ],
+              "key": "history",
+              "kind": "terminal-apparatus",
+              "path": "sections/60-history.tex",
+              "references": [
+                "research/chronology-annotations.tex",
+                "research/chronology-audit.md"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [],
+              "key": "apparatus",
+              "kind": "terminal-apparatus",
+              "path": "sections/70-apparatus.tex",
+              "references": [
+                "research/scope.md"
+              ]
+            }
+          ],
+          "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a",
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-lamentations",
+            "communion-corinthians",
+            "after-communion"
+          ],
+          "lanes": [
+            {
+              "authors": [
+                "Augustine of Hippo",
+                "John Chrysostom",
+                "Thomas Aquinas"
+              ],
+              "carrying_authors": [
+                "Augustine of Hippo",
+                "John Chrysostom"
+              ],
+              "component_keys": [
+                "gift"
+              ],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "responsorial-psalm",
+                "second-reading",
+                "acclamation",
+                "gospel",
+                "offerings",
+                "communion-lamentations",
+                "communion-corinthians",
+                "after-communion"
+              ],
+              "key": "gift-and-fruit",
+              "senses": [
+                "literal",
+                "allegorical",
+                "moral",
+                "anagogical"
+              ],
+              "sources": [
+                "research/interpretations.md",
+                "research/scope.md",
+                "research/source-bindings.toml"
+              ],
+              "title": "The fruit of a gift"
+            },
+            {
+              "authors": [
+                "Augustine of Hippo",
+                "Robert Bellarmine",
+                "John Chrysostom",
+                "Thomas Aquinas",
+                "Leo the Great"
+              ],
+              "carrying_authors": [
+                "Augustine of Hippo",
+                "Robert Bellarmine"
+              ],
+              "component_keys": [
+                "restoration"
+              ],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "responsorial-psalm",
+                "second-reading",
+                "acclamation",
+                "gospel",
+                "offerings",
+                "communion-lamentations",
+                "communion-corinthians",
+                "after-communion"
+              ],
+              "key": "restored-vineyard",
+              "senses": [
+                "literal",
+                "allegorical",
+                "moral",
+                "anagogical"
+              ],
+              "sources": [
+                "research/interpretations.md",
+                "research/scope.md",
+                "research/source-bindings.toml"
+              ],
+              "title": "The wounded vineyard made one"
+            }
+          ],
+          "presentation": {
+            "chronology": "concise-chronology",
+            "commentary": "concise-commentary",
+            "inventory": "concise-inventory",
+            "overview": "concise-overview",
+            "themes": "concise-themes"
+          },
+          "presentation_contract": "interpretive-pagination-v1",
+          "schema": 2
+        },
+        "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a",
+        "files": {
+          "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+          "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/main.tex": "da410b2afddfb7f228cb3e786075f1593792de7c5ca951e9719e7fd974c78285",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex": "9d6664bb232d4a2078a26084f09cb270d9ce7a3a05a1d90c2fd120d49daeb6df",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/chronology-audit.md": "ad86670b812b8c0bd0531d44cfed8dd5c9e0eea02665daacf16a7f0158da2dde",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/interpretations.md": "54d13433c39247b038c2d05196dcd1b0252410c4b6edec7cfb3f5b3a5fa8d606",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/scope.md": "a133587b60c3df00ea0723d3332efeb94e3e0f036527042aa06d617b13342f2b",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/source-bindings.toml": "ee7c44f81006eaeac3e86852822cae8e263b886a08d3cbe02191a118b47c0c53",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/00-opening.tex": "5672a85cb116732794a28c4faa03d137ac9102daef66842ed9ef033922b2a8c0",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/01-map.tex": "640873ca986ef1f760a093a8cf18862699370079bca4c60727e38d62b9c797c6",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/10-treatment.tex": "1fd788f50b03655994e4d0bd4e4e4d705275ddb5f3812fe5c03fa4d23597d969",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/20-texts.tex": "f2b6639540eeec5ba492c7615e8d42744425aa583e44575c58ad3b4fd22e3fdd",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/30-gift.tex": "9e885bbe273992e1d794c730af6fe715209e1aa1b3f42760d9678056d6145ed9",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/40-restoration.tex": "8a82c761d6220f2b80ce1e314eedee82e8d85547a208cb5119a6895cee41c4b7",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/50-comparison.tex": "c4cb41658407e9177a82c5e6e47ad1646db790bd81991e4d6c6cb085edf897cf",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/60-history.tex": "ca9f567d1820c2673dc5467a4deac3a95ba64daa5e0dc042509d7997239b49ce",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/70-apparatus.tex": "e05d8a4f1f97fdb6010b8b2d7823dbc527d3a5db5b9c41ab898175e473e38e99"
+        },
+        "generation_provenance": {
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+            "inheritance": [],
+            "production": [
+              [
+                "proper-study",
+                "7",
+                "9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38",
+                "17099e79f3655b7d",
+                "264879369f1710eb0600a74836cedc62abd1ff28",
+                "unknown"
+              ]
+            ]
+          }
+        },
+        "provider": "gpt",
+        "review": "study",
+        "schema": 1
+      },
+      "stage": "study-review"
+    },
+    {
+      "hash": "6a0ad17bdc89ca23cf82abc87ceb7f152375c0aaac586800db0f831c3d121d34",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/packets/derive-synthesis-0000.txt",
+      "stage": "derive-synthesis"
+    },
+    {
+      "hash": "073239bcfe350fb96a5c6fcea60587f28f4b2bc19e85726d88f58bd6e06a61aa",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/packets/synthesis-preflight-0000.txt",
+      "stage": "synthesis-preflight"
+    },
+    {
+      "hash": "adebb47d4de7d039b8f2963b03845dd2bb3eb4250841858a9737fd24d21dc7ae",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/packets/synthesis-review-0000.txt",
+      "review_inputs": {
+        "component_contract": {
+          "calendar": "postconciliar",
+          "components": [
+            {
+              "depends_on": [],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "responsorial-psalm",
+                "second-reading",
+                "acclamation",
+                "gospel",
+                "offerings",
+                "communion-lamentations",
+                "communion-corinthians",
+                "after-communion"
+              ],
+              "key": "concise-inventory",
+              "kind": "front-matter",
+              "path": "sections/synthesis-01-inventory.tex",
+              "references": []
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "responsorial-psalm",
+                "second-reading",
+                "acclamation",
+                "gospel",
+                "offerings",
+                "communion-lamentations",
+                "communion-corinthians",
+                "after-communion"
+              ],
+              "key": "concise-overview",
+              "kind": "front-matter",
+              "path": "sections/synthesis-02-overview.tex",
+              "references": []
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "responsorial-psalm",
+                "second-reading",
+                "acclamation",
+                "gospel",
+                "offerings",
+                "communion-lamentations",
+                "communion-corinthians",
+                "after-communion"
+              ],
+              "key": "concise-chronology",
+              "kind": "front-matter",
+              "path": "sections/synthesis-03-chronology.tex",
+              "references": [
+                "research/chronology-annotations.tex"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "responsorial-psalm",
+                "second-reading",
+                "acclamation",
+                "gospel",
+                "offerings",
+                "communion-lamentations",
+                "communion-corinthians",
+                "after-communion"
+              ],
+              "key": "concise-themes",
+              "kind": "front-matter",
+              "path": "sections/synthesis-04-themes.tex",
+              "references": []
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "responsorial-psalm",
+                "second-reading",
+                "acclamation",
+                "gospel",
+                "offerings",
+                "communion-lamentations",
+                "communion-corinthians",
+                "after-communion"
+              ],
+              "key": "concise-commentary",
+              "kind": "integrated-commentary",
+              "path": "sections/synthesis-05-commentary.tex",
+              "references": [
+                "research/interpretations.md"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [],
+              "key": "concise-apparatus",
+              "kind": "terminal-apparatus",
+              "path": "sections/synthesis-90-apparatus.tex",
+              "references": []
+            }
+          ],
+          "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a",
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-lamentations",
+            "communion-corinthians",
+            "after-communion"
+          ],
+          "lanes": [
+            {
+              "authors": [
+                "Augustine of Hippo",
+                "John Chrysostom",
+                "Thomas Aquinas"
+              ],
+              "carrying_authors": [
+                "Augustine of Hippo",
+                "John Chrysostom"
+              ],
+              "component_keys": [
+                "gift"
+              ],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "responsorial-psalm",
+                "second-reading",
+                "acclamation",
+                "gospel",
+                "offerings",
+                "communion-lamentations",
+                "communion-corinthians",
+                "after-communion"
+              ],
+              "key": "gift-and-fruit",
+              "senses": [
+                "literal",
+                "allegorical",
+                "moral",
+                "anagogical"
+              ],
+              "sources": [
+                "research/interpretations.md",
+                "research/scope.md",
+                "research/source-bindings.toml"
+              ],
+              "title": "The fruit of a gift"
+            },
+            {
+              "authors": [
+                "Augustine of Hippo",
+                "Robert Bellarmine",
+                "John Chrysostom",
+                "Thomas Aquinas",
+                "Leo the Great"
+              ],
+              "carrying_authors": [
+                "Augustine of Hippo",
+                "Robert Bellarmine"
+              ],
+              "component_keys": [
+                "restoration"
+              ],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "responsorial-psalm",
+                "second-reading",
+                "acclamation",
+                "gospel",
+                "offerings",
+                "communion-lamentations",
+                "communion-corinthians",
+                "after-communion"
+              ],
+              "key": "restored-vineyard",
+              "senses": [
+                "literal",
+                "allegorical",
+                "moral",
+                "anagogical"
+              ],
+              "sources": [
+                "research/interpretations.md",
+                "research/scope.md",
+                "research/source-bindings.toml"
+              ],
+              "title": "The wounded vineyard made one"
+            }
+          ],
+          "presentation": {
+            "chronology": "concise-chronology",
+            "commentary": "concise-commentary",
+            "inventory": "concise-inventory",
+            "overview": "concise-overview",
+            "themes": "concise-themes"
+          },
+          "presentation_contract": "interpretive-pagination-v1",
+          "schema": 2
+        },
+        "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a",
+        "files": {
+          "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+          "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex": "9d6664bb232d4a2078a26084f09cb270d9ce7a3a05a1d90c2fd120d49daeb6df",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/interpretations.md": "54d13433c39247b038c2d05196dcd1b0252410c4b6edec7cfb3f5b3a5fa8d606",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/synthesis-01-inventory.tex": "bb04ac5c1df4faa24e3c7d8726b9a20e7cbe407c2f3270d275883708c820b871",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/synthesis-02-overview.tex": "6ff29afae88ac150f808d743c8510bc6504f665638cbe4dfc1c7c293e15cbebc",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/synthesis-03-chronology.tex": "a7db258e951e680236c1d2180617dc12e7deb0cd7316fccd3b623272ceced8c7",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/synthesis-04-themes.tex": "720ab9d17b393af0c1e2a3fc7e6174946f0b6f99886ce3e31678aa39e1ef42fa",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/synthesis-05-commentary.tex": "7f56702bbe940967d1451384ea8e3a600f65183a4556e5970148f7b4031bd3fe",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/synthesis-90-apparatus.tex": "1d1b30403183dcf71f6eb1a74b61d819b17ce8918792ef4df5d43439a124c455",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/synthesis.tex": "2be474d0a6cb0de2b235b86ffda7536e72962974fc4d2b8f0353f3f8c3f3641a"
+        },
+        "generation_provenance": {
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+            "inheritance": [],
+            "production": [
+              [
+                "proper-study",
+                "7",
+                "9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38",
+                "17099e79f3655b7d",
+                "264879369f1710eb0600a74836cedc62abd1ff28",
+                "unknown"
+              ]
+            ]
+          }
+        },
+        "provider": "gpt",
+        "review": "synthesis",
+        "schema": 1
+      },
+      "stage": "synthesis-review"
+    },
+    {
+      "hash": "29ca920be4862d43c52fe7b60f01728e17f0fb8fde0d1bcc2bfd0630b7427396",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/packets/derive-homily-0000.txt",
+      "stage": "derive-homily"
+    },
+    {
+      "hash": "d5c1c4074e3526d107f3b22665d68cbb07d2431eb4a3ceb82415f9b1f61bf092",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/packets/homily-preflight-0000.txt",
+      "stage": "homily-preflight"
+    },
+    {
+      "hash": "f97c3daeca7d9f01f776c59d524d0ffa7f3eeb997a447049dd84625e31a897d8",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/packets/homily-review-0000.txt",
+      "review_inputs": {
+        "component_contract": {
+          "calendar": "postconciliar",
+          "components": [
+            {
+              "depends_on": [],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "responsorial-psalm",
+                "second-reading",
+                "acclamation",
+                "gospel",
+                "offerings",
+                "communion-lamentations",
+                "communion-corinthians",
+                "after-communion"
+              ],
+              "key": "spoken",
+              "kind": "homily",
+              "path": "sections/homily-10-spoken.tex",
+              "references": [
+                "research/interpretations.md"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [],
+              "key": "homily-notes",
+              "kind": "terminal-apparatus",
+              "path": "sections/homily-90-notes.tex",
+              "references": []
+            }
+          ],
+          "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a",
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-lamentations",
+            "communion-corinthians",
+            "after-communion"
+          ],
+          "lanes": [
+            {
+              "authors": [
+                "Augustine of Hippo",
+                "John Chrysostom",
+                "Thomas Aquinas"
+              ],
+              "carrying_authors": [
+                "Augustine of Hippo",
+                "John Chrysostom"
+              ],
+              "component_keys": [
+                "gift"
+              ],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "responsorial-psalm",
+                "second-reading",
+                "acclamation",
+                "gospel",
+                "offerings",
+                "communion-lamentations",
+                "communion-corinthians",
+                "after-communion"
+              ],
+              "key": "gift-and-fruit",
+              "senses": [
+                "literal",
+                "allegorical",
+                "moral",
+                "anagogical"
+              ],
+              "sources": [
+                "research/interpretations.md",
+                "research/scope.md",
+                "research/source-bindings.toml"
+              ],
+              "title": "The fruit of a gift"
+            },
+            {
+              "authors": [
+                "Augustine of Hippo",
+                "Robert Bellarmine",
+                "John Chrysostom",
+                "Thomas Aquinas",
+                "Leo the Great"
+              ],
+              "carrying_authors": [
+                "Augustine of Hippo",
+                "Robert Bellarmine"
+              ],
+              "component_keys": [
+                "restoration"
+              ],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "responsorial-psalm",
+                "second-reading",
+                "acclamation",
+                "gospel",
+                "offerings",
+                "communion-lamentations",
+                "communion-corinthians",
+                "after-communion"
+              ],
+              "key": "restored-vineyard",
+              "senses": [
+                "literal",
+                "allegorical",
+                "moral",
+                "anagogical"
+              ],
+              "sources": [
+                "research/interpretations.md",
+                "research/scope.md",
+                "research/source-bindings.toml"
+              ],
+              "title": "The wounded vineyard made one"
+            }
+          ],
+          "presentation": {
+            "chronology": "concise-chronology",
+            "commentary": "concise-commentary",
+            "inventory": "concise-inventory",
+            "overview": "concise-overview",
+            "themes": "concise-themes"
+          },
+          "presentation_contract": "interpretive-pagination-v1",
+          "schema": 2
+        },
+        "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a",
+        "files": {
+          "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+          "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+          "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/homily.tex": "fb3c8f28fcb75288898dab89450276d32c12030de37bfde2ec06990bcb79d440",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/research/interpretations.md": "54d13433c39247b038c2d05196dcd1b0252410c4b6edec7cfb3f5b3a5fa8d606",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/homily-10-spoken.tex": "23127808deaeeddd52a65592af047964656f13e8cc6bf7df5a10b015186dacd1",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/homily-90-notes.tex": "dee7f103c7da1b6bec5cfbec9df95033a09eb19d395effb49f9e2187b3a1aeb1"
+        },
+        "generation_provenance": {
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+            "inheritance": [],
+            "production": [
+              [
+                "proper-study",
+                "7",
+                "9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38",
+                "17099e79f3655b7d",
+                "264879369f1710eb0600a74836cedc62abd1ff28",
+                "unknown"
+              ]
+            ]
+          }
+        },
+        "provider": "gpt",
+        "review": "homily",
+        "schema": 1
+      },
+      "stage": "homily-review"
+    }
+  ],
+  "repo_commit": "264879369f1710eb0600a74836cedc62abd1ff28",
+  "result_hashes": [
+    {
+      "disposition": "PASS",
+      "hash": "c2c5dc73384dcaa82e6a0b0b6d655a49fd9f0d8345607513add762f6826c4e2d",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/results/scope-gate-0000.json",
+      "stage": "scope-gate"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "48fe325962cd3855b8dda01aecbc7ca2569f57108257981ef97f5b185d1b0163",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/results/resolve-context-0000.json",
+      "stage": "resolve-context"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "c2413ccdf70db57317342bfe5eedaaefd37ebe4f4bcb648d11a59fae41b03362",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/results/research-0000.json",
+      "stage": "research"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "d9c4c5d71ce61eb0186e720a8b7c42807d1ab40d1053516f4841a9f45c9468f1",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/results/research-preflight-0000.json",
+      "stage": "research-preflight"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "hash": "7626a2b1c0c6201e03fa0a560d0f14ca751ac2daf18db171347a30596f2ade6c",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/results/research-review-0000.json",
+      "stage": "research-review"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "3666e15c3b86b0c1544ee8e2850ed9ce60f6673b7799eaa7e0409121821457a4",
+      "iteration": 1,
+      "path": "build/tpt-runs/17099e79f3655b7d/results/research-0001.json",
+      "stage": "research"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "3d41e3743c4cd6ecf837fcb791516f7a053ba74c59eeb7aa7a2100847f40b2c9",
+      "iteration": 1,
+      "path": "build/tpt-runs/17099e79f3655b7d/results/research-preflight-0001.json",
+      "stage": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "e6581f94fce856375b782255e7d8fe8ebff2157f3a1f80700e4531ccba258b9e",
+      "iteration": 1,
+      "path": "build/tpt-runs/17099e79f3655b7d/results/research-review-0001.json",
+      "stage": "research-review"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "1e156f34ec6dd239ec66335b3d24e9b5fae2e187d3249baa6c2c50627fb0c3b9",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/results/author-study-0000.json",
+      "stage": "author-study"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "db4f430efb6baf21bb53a26e3ace3bc17674c5b6c4e65d8af259ee8366a0f0ae",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/results/study-preflight-0000.json",
+      "stage": "study-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "401537c1d76e3cd8f47d9f14f003fe489b33b362d2ce2bcba9899ff01e6dffc9",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/results/study-review-0000.json",
+      "stage": "study-review"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "8ac417a35ebb679cd3dfd48fadc1574353a63f7efff4e04d4d472defb90cfdad",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/results/derive-synthesis-0000.json",
+      "stage": "derive-synthesis"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "67b87db41056e0690c03027475a5706f18334b8a627effc6e088c72dc2725ad3",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/results/synthesis-preflight-0000.json",
+      "stage": "synthesis-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "c3aaf099614c01e50f722895e3791cfe210b6fb6bbbd09af463b3a00054ddd5d",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/results/synthesis-review-0000.json",
+      "stage": "synthesis-review"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "ef70333377d4b2ea2ea40e841da3efc6cd2b77288d1ed27ecb4aa0b4c55c00b6",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/results/derive-homily-0000.json",
+      "stage": "derive-homily"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "38c3abc374b62eb01fe47799b263dc88821ecda5d4aac8a36d1adbda83d9b628",
+      "iteration": 0,
+      "path": "build/tpt-runs/17099e79f3655b7d/results/homily-preflight-0000.json",
+      "stage": "homily-preflight"
+    }
+  ],
+  "run_id": "17099e79f3655b7d",
+  "stage_blocking_ids": {},
+  "stage_blocking_targets": {},
+  "stage_failures": {
+    "homily-preflight": 0,
+    "research-preflight": 0,
+    "research-review": 0,
+    "scope-gate": 0,
+    "study-preflight": 0,
+    "study-review": 0,
+    "synthesis-preflight": 0,
+    "synthesis-review": 0
+  },
+  "stage_iterations": {
+    "author-study": 1,
+    "derive-homily": 1,
+    "derive-synthesis": 1,
+    "homily-preflight": 1,
+    "homily-review": 1,
+    "research": 2,
+    "research-preflight": 2,
+    "research-review": 2,
+    "resolve-context": 1,
+    "scope-gate": 1,
+    "study-preflight": 1,
+    "study-review": 1,
+    "synthesis-preflight": 1,
+    "synthesis-review": 1
+  },
+  "stage_novel": {
+    "homily-preflight": 0,
+    "research-preflight": 0,
+    "research-review": 0,
+    "scope-gate": 0,
+    "study-preflight": 0,
+    "study-review": 0,
+    "synthesis-preflight": 0,
+    "synthesis-review": 0
+  },
+  "stage_repeats": {
+    "homily-preflight": 0,
+    "research-preflight": 0,
+    "research-review": 0,
+    "scope-gate": 0,
+    "study-preflight": 0,
+    "study-review": 0,
+    "synthesis-preflight": 0,
+    "synthesis-review": 0
+  },
+  "stage_scope_baseline": {
+    "research-review": {
+      "instance/manifest.md": "9ab2f377d6de66eb639a2115620d32379b1d22b40cea1ac67dcf429b821630e9",
+      "main.tex": "6d163e91017ed9445c2ba60363fe57bcc1c88de33a605351cd0861b2f529a2d0",
+      "propers/verified.md": "c4367c88e48ca6954481a904edde9c857128f2a94e74649cc38e993cafb22bb8",
+      "research/chronology-annotations.tex": "9d6664bb232d4a2078a26084f09cb270d9ce7a3a05a1d90c2fd120d49daeb6df",
+      "research/chronology-audit.md": "ad86670b812b8c0bd0531d44cfed8dd5c9e0eea02665daacf16a7f0158da2dde",
+      "research/chronology-inputs.toml": "9fd487f1561888df70c71ff005090c7a9ff3a09bf7d846ab70671ac156997841",
+      "research/chronology.toml": "defa0544bea8c87d391b45ac4842d5faff77c6a3170439491bf9a6e84334d709",
+      "research/context.md": "2335e7793ed51243eac5e5b5708d1f074ffda44a3a76dcd3782caf20a9dfc2c9",
+      "research/interpretations.md": "54d13433c39247b038c2d05196dcd1b0252410c4b6edec7cfb3f5b3a5fa8d606",
+      "research/review-dependencies.toml": "307472b3dd9ef6ba26b082c7f7dfe922635226bb16a5e6184f15211d6e533b17",
+      "research/scope.md": "a133587b60c3df00ea0723d3332efeb94e3e0f036527042aa06d617b13342f2b",
+      "research/source-bindings.toml": "ee7c44f81006eaeac3e86852822cae8e263b886a08d3cbe02191a118b47c0c53",
+      "research/source-plan.md": "adaeab9f87bb0a108472f3e38b2e04a4383850b4d15ed2ea4c4f6b6f6ffd80d9"
+    },
+    "study-review": {
+      "generation-metadata.tex": "d8bf47954fd9964b4879aace698164b2bdecbfb60789e9315b19b40796d975cf",
+      "instance/manifest.md": "9ab2f377d6de66eb639a2115620d32379b1d22b40cea1ac67dcf429b821630e9",
+      "main.tex": "da410b2afddfb7f228cb3e786075f1593792de7c5ca951e9719e7fd974c78285",
+      "proper-components.toml": "aa7fbd44aadea966d3b211e8b781db76c82caeda770e5ba61806ca1a96b22b28",
+      "propers/verified.md": "c4367c88e48ca6954481a904edde9c857128f2a94e74649cc38e993cafb22bb8",
+      "research/chronology-annotations.tex": "9d6664bb232d4a2078a26084f09cb270d9ce7a3a05a1d90c2fd120d49daeb6df",
+      "research/chronology-audit.md": "ad86670b812b8c0bd0531d44cfed8dd5c9e0eea02665daacf16a7f0158da2dde",
+      "research/chronology-inputs.toml": "9fd487f1561888df70c71ff005090c7a9ff3a09bf7d846ab70671ac156997841",
+      "research/chronology.toml": "defa0544bea8c87d391b45ac4842d5faff77c6a3170439491bf9a6e84334d709",
+      "research/context.md": "2335e7793ed51243eac5e5b5708d1f074ffda44a3a76dcd3782caf20a9dfc2c9",
+      "research/interpretations.md": "54d13433c39247b038c2d05196dcd1b0252410c4b6edec7cfb3f5b3a5fa8d606",
+      "research/production-review.md": "c8d8dc7b7ab989b1d1fcfc6e9b93c582e757d6241b103e03446d95818c252cf8",
+      "research/review-dependencies.toml": "307472b3dd9ef6ba26b082c7f7dfe922635226bb16a5e6184f15211d6e533b17",
+      "research/scope.md": "a133587b60c3df00ea0723d3332efeb94e3e0f036527042aa06d617b13342f2b",
+      "research/source-bindings.toml": "ee7c44f81006eaeac3e86852822cae8e263b886a08d3cbe02191a118b47c0c53",
+      "research/source-plan.md": "adaeab9f87bb0a108472f3e38b2e04a4383850b4d15ed2ea4c4f6b6f6ffd80d9",
+      "sections/00-opening.tex": "5672a85cb116732794a28c4faa03d137ac9102daef66842ed9ef033922b2a8c0",
+      "sections/01-map.tex": "640873ca986ef1f760a093a8cf18862699370079bca4c60727e38d62b9c797c6",
+      "sections/10-treatment.tex": "1fd788f50b03655994e4d0bd4e4e4d705275ddb5f3812fe5c03fa4d23597d969",
+      "sections/20-texts.tex": "f2b6639540eeec5ba492c7615e8d42744425aa583e44575c58ad3b4fd22e3fdd",
+      "sections/30-gift.tex": "9e885bbe273992e1d794c730af6fe715209e1aa1b3f42760d9678056d6145ed9",
+      "sections/40-restoration.tex": "8a82c761d6220f2b80ce1e314eedee82e8d85547a208cb5119a6895cee41c4b7",
+      "sections/50-comparison.tex": "c4cb41658407e9177a82c5e6e47ad1646db790bd81991e4d6c6cb085edf897cf",
+      "sections/60-history.tex": "ca9f567d1820c2673dc5467a4deac3a95ba64daa5e0dc042509d7997239b49ce",
+      "sections/70-apparatus.tex": "e05d8a4f1f97fdb6010b8b2d7823dbc527d3a5db5b9c41ab898175e473e38e99",
+      "web-edition.toml": "506860966fce8df3681a60a88ae0b76538cc9203b3f7f010ee2c3dd1af6322ad"
+    },
+    "synthesis-review": {
+      "generation-metadata.tex": "c787f29f9c62738bb26d3c62fb887f72643ac8942d67df8062dbc83bde41809c",
+      "instance/manifest.md": "9ab2f377d6de66eb639a2115620d32379b1d22b40cea1ac67dcf429b821630e9",
+      "main.tex": "da410b2afddfb7f228cb3e786075f1593792de7c5ca951e9719e7fd974c78285",
+      "proper-components.toml": "aa7fbd44aadea966d3b211e8b781db76c82caeda770e5ba61806ca1a96b22b28",
+      "propers/verified.md": "c4367c88e48ca6954481a904edde9c857128f2a94e74649cc38e993cafb22bb8",
+      "research/chronology-annotations.tex": "9d6664bb232d4a2078a26084f09cb270d9ce7a3a05a1d90c2fd120d49daeb6df",
+      "research/chronology-audit.md": "ad86670b812b8c0bd0531d44cfed8dd5c9e0eea02665daacf16a7f0158da2dde",
+      "research/chronology-inputs.toml": "9fd487f1561888df70c71ff005090c7a9ff3a09bf7d846ab70671ac156997841",
+      "research/chronology.toml": "defa0544bea8c87d391b45ac4842d5faff77c6a3170439491bf9a6e84334d709",
+      "research/context.md": "2335e7793ed51243eac5e5b5708d1f074ffda44a3a76dcd3782caf20a9dfc2c9",
+      "research/interpretations.md": "54d13433c39247b038c2d05196dcd1b0252410c4b6edec7cfb3f5b3a5fa8d606",
+      "research/production-review.md": "63d56dcd5b949eefd94a36a386a5b92d9b1caf41d6a76357358032216cae52ae",
+      "research/review-dependencies.toml": "307472b3dd9ef6ba26b082c7f7dfe922635226bb16a5e6184f15211d6e533b17",
+      "research/scope.md": "a133587b60c3df00ea0723d3332efeb94e3e0f036527042aa06d617b13342f2b",
+      "research/source-bindings.toml": "ee7c44f81006eaeac3e86852822cae8e263b886a08d3cbe02191a118b47c0c53",
+      "research/source-plan.md": "adaeab9f87bb0a108472f3e38b2e04a4383850b4d15ed2ea4c4f6b6f6ffd80d9",
+      "sections/00-opening.tex": "5672a85cb116732794a28c4faa03d137ac9102daef66842ed9ef033922b2a8c0",
+      "sections/01-map.tex": "640873ca986ef1f760a093a8cf18862699370079bca4c60727e38d62b9c797c6",
+      "sections/10-treatment.tex": "1fd788f50b03655994e4d0bd4e4e4d705275ddb5f3812fe5c03fa4d23597d969",
+      "sections/20-texts.tex": "f2b6639540eeec5ba492c7615e8d42744425aa583e44575c58ad3b4fd22e3fdd",
+      "sections/30-gift.tex": "9e885bbe273992e1d794c730af6fe715209e1aa1b3f42760d9678056d6145ed9",
+      "sections/40-restoration.tex": "8a82c761d6220f2b80ce1e314eedee82e8d85547a208cb5119a6895cee41c4b7",
+      "sections/50-comparison.tex": "c4cb41658407e9177a82c5e6e47ad1646db790bd81991e4d6c6cb085edf897cf",
+      "sections/60-history.tex": "ca9f567d1820c2673dc5467a4deac3a95ba64daa5e0dc042509d7997239b49ce",
+      "sections/70-apparatus.tex": "e05d8a4f1f97fdb6010b8b2d7823dbc527d3a5db5b9c41ab898175e473e38e99",
+      "sections/synthesis-01-inventory.tex": "bb04ac5c1df4faa24e3c7d8726b9a20e7cbe407c2f3270d275883708c820b871",
+      "sections/synthesis-02-overview.tex": "6ff29afae88ac150f808d743c8510bc6504f665638cbe4dfc1c7c293e15cbebc",
+      "sections/synthesis-03-chronology.tex": "a7db258e951e680236c1d2180617dc12e7deb0cd7316fccd3b623272ceced8c7",
+      "sections/synthesis-04-themes.tex": "720ab9d17b393af0c1e2a3fc7e6174946f0b6f99886ce3e31678aa39e1ef42fa",
+      "sections/synthesis-05-commentary.tex": "7f56702bbe940967d1451384ea8e3a600f65183a4556e5970148f7b4031bd3fe",
+      "sections/synthesis-90-apparatus.tex": "1d1b30403183dcf71f6eb1a74b61d819b17ce8918792ef4df5d43439a124c455",
+      "synthesis.tex": "2be474d0a6cb0de2b235b86ffda7536e72962974fc4d2b8f0353f3f8c3f3641a",
+      "web-edition.toml": "506860966fce8df3681a60a88ae0b76538cc9203b3f7f010ee2c3dd1af6322ad"
+    }
+  },
+  "stage_scope_changed": {
+    "research-review": [
+      "generation-metadata.tex",
+      "homily.tex",
+      "main.tex",
+      "proper-components.toml",
+      "research/production-review.md",
+      "sections/00-opening.tex",
+      "sections/01-map.tex",
+      "sections/10-treatment.tex",
+      "sections/20-texts.tex",
+      "sections/30-gift.tex",
+      "sections/40-restoration.tex",
+      "sections/50-comparison.tex",
+      "sections/60-history.tex",
+      "sections/70-apparatus.tex",
+      "sections/homily-10-spoken.tex",
+      "sections/homily-90-notes.tex",
+      "sections/synthesis-01-inventory.tex",
+      "sections/synthesis-02-overview.tex",
+      "sections/synthesis-03-chronology.tex",
+      "sections/synthesis-04-themes.tex",
+      "sections/synthesis-05-commentary.tex",
+      "sections/synthesis-90-apparatus.tex",
+      "synthesis.tex",
+      "web-edition.toml"
+    ],
+    "study-review": [
+      "generation-metadata.tex",
+      "homily.tex",
+      "research/production-review.md",
+      "sections/homily-10-spoken.tex",
+      "sections/homily-90-notes.tex",
+      "sections/synthesis-01-inventory.tex",
+      "sections/synthesis-02-overview.tex",
+      "sections/synthesis-03-chronology.tex",
+      "sections/synthesis-04-themes.tex",
+      "sections/synthesis-05-commentary.tex",
+      "sections/synthesis-90-apparatus.tex",
+      "synthesis.tex"
+    ],
+    "synthesis-review": [
+      "generation-metadata.tex",
+      "homily.tex",
+      "research/production-review.md",
+      "sections/homily-10-spoken.tex",
+      "sections/homily-90-notes.tex"
+    ]
+  },
+  "transitions": [
+    {
+      "disposition": "PASS",
+      "from": "scope-gate",
+      "to": "resolve-context"
+    },
+    {
+      "disposition": "PASS",
+      "from": "resolve-context",
+      "to": "research"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research",
+      "to": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-preflight",
+      "to": "research-review"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "from": "research-review",
+      "to": "research"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research",
+      "to": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-preflight",
+      "to": "research-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-review",
+      "to": "author-study"
+    },
+    {
+      "disposition": "PASS",
+      "from": "author-study",
+      "to": "study-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "study-preflight",
+      "to": "study-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "study-review",
+      "to": "derive-synthesis"
+    },
+    {
+      "disposition": "PASS",
+      "from": "derive-synthesis",
+      "to": "synthesis-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "synthesis-preflight",
+      "to": "synthesis-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "synthesis-review",
+      "to": "derive-homily"
+    },
+    {
+      "disposition": "PASS",
+      "from": "derive-homily",
+      "to": "homily-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "homily-preflight",
+      "to": "homily-review"
+    }
+  ],
+  "unrepaired_for": {},
+  "unrepaired_notes": {},
+  "workflow_digest": "9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38",
+  "workflow_id": "proper-study",
+  "workflow_version": 7
+}

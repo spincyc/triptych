@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v7
+WORKFLOW_DIGEST: 9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38
+RUN_ID: 17099e79f3655b7d
+COMMIT: 264879369f1710eb0600a74836cedc62abd1ff28
+STAGE: research-preflight
+ITERATION: 1
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-10-04","proper":"liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a","provider":"gpt","research_handoff":"none"}
+DOCUMENT_ROOT: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"RES-002","location":"research/scope.md:136,141-142; corresponding loci/context entries in research/source-bindings.toml","problem":"Several physical line ranges do not cover the complete sections the records say were inspected. Chrysostom Matthew 68 sections 1-2 is given as lines 38374-38580, but section 2 continues beyond 38580 until the heading for section 3; First Corinthians 24 sections 1-5 is given as 12239-12445, but 12445 cuts inside section 5, before its discussion of verse 20. The Aquinas III.79.1 range ends at 43165 while its last sentence continues on the following line. The substantive adopted claims checked out when I read the complete loci, so this is a locator/inspection-scope inconsistency rather than an unsupported interpretation.","required_result":"Reconcile the stated section extents and physical line ranges with the actual inspected source spans, either recording complete checked bounds or explicitly naming a partial section; keep scope and source bindings consistent.","severity":"advisory"},{"id":"RES-003","location":"research/scope.md:144,164-167,175 (Honorius IV.65 comparison)","problem":"The local research record correctly restricts Honorius to the shared Collect and does not count him as a carrying Father or saint, but gives his own Mass only as an 'older Mass' with different Entrance and Communion. The sealed formulary index and source supply the identifying heading and fuller comparison: Dominica undecima post Pentecosten, Deus in loco, sub lege; Entrance Psalm 67:6, Epistle 1 Corinthians 15, Gospel Luke 18, Communion Proverbs 3:9. Keeping these facts only in the generic index makes the required local comparison less reproducible than the rest of the dossier.","required_result":"Record Honorius's own Mass heading and the concrete shared/different element comparison in scope, retaining his Collect-only historical role and ecclesiastical-writer standing.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

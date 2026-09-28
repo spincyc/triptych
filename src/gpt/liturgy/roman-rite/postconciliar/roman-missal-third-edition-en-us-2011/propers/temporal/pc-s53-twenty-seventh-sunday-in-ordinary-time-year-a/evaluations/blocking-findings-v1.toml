@@ -1,0 +1,155 @@
+# Blocking findings standing against this publication, the
+# verdicts its evaluation lanes reached, and the observations
+# they recorded outside their own criteria. Written by tpt after
+# each evaluation of this leaf.
+#
+# One record, several stages. Every entry names the stage that
+# raised it, [[stages]] says what each stage last said, and an
+# evaluation replaces its own stage's entries and leaves every
+# other stage's alone -- so what the content evaluation found
+# still stands here after the synthesis evaluation has spoken. A
+# stage that looked and found nothing leaves an empty list
+# rather than no entry: "evaluated, nothing stands" and
+# "nobody has looked" are different facts, per stage.
+#
+# The keys directly below these comments describe the write that
+# last touched this file, and count every stage's entries
+# together. They are its summary line. What a given stage found
+# is in that stage's [[stages]] entry and in the entries naming
+# it -- reading the top-level stage as the record's one stage is
+# the mistake this schema exists to stop.
+#
+# It exists because a run's own results live under build/, which
+# is ignored, which `make clean` and `wt tidy` delete without
+# asking, and which nothing preserves between productions.
+#
+# Nothing reads this back into a run. Carrying findings from one
+# production into the next wants doing where the run's identity
+# can cover it -- a committed record, or this file's hash in the
+# run id and the acceptance audit -- and until then this is a
+# record for people.
+#
+# Escalations -- defects in artifacts no stage of the run may
+# write: guidance, the source library, the tools, the workflow --
+# are written here too, from the run's whole ledger, so that the
+# decision they ask of a maintainer outlives the run directory.
+#
+# Accepted findings are true defects a lane judged not worth a
+# repair round, with the reason it judged so. Advisories are
+# defects that did not merit blocking. Both are here because a
+# verdict that dies with the run is met again by the next cold
+# read as though nobody had ever weighed it, and weighed again --
+# which is how a document in good shape spends a whole iteration
+# budget. A later evaluation reads these before it raises.
+
+standing_findings_schema = 4
+record_type = "standing-blocking-findings"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a"
+provider = "gpt"
+run_id = "17099e79f3655b7d"
+workflow = "proper-study"
+workflow_version = 7
+stage = "web-review"
+iteration = 1
+disposition = "PASS"
+standing = 0
+accepted_count = 1
+advisory_count = 2
+observation_count = 0
+
+[[stages]]
+stage = "homily-review"
+iteration = 0
+disposition = "PASS"
+run_id = "17099e79f3655b7d"
+workflow = "proper-study"
+workflow_version = 7
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[stages]]
+stage = "research-review"
+iteration = 1
+disposition = "PASS"
+run_id = "17099e79f3655b7d"
+workflow = "proper-study"
+workflow_version = 7
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[stages]]
+stage = "study-review"
+iteration = 0
+disposition = "PASS"
+run_id = "17099e79f3655b7d"
+workflow = "proper-study"
+workflow_version = 7
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 0
+disposition = "PASS"
+run_id = "17099e79f3655b7d"
+workflow = "proper-study"
+workflow_version = 7
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
+[[stages]]
+stage = "visual-review"
+iteration = 0
+disposition = "PASS"
+run_id = "17099e79f3655b7d"
+workflow = "proper-study"
+workflow_version = 7
+standing = 0
+accepted_count = 1
+advisory_count = 0
+observation_count = 0
+
+[[stages]]
+stage = "web-review"
+iteration = 1
+disposition = "PASS"
+run_id = "17099e79f3655b7d"
+workflow = "proper-study"
+workflow_version = 7
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[accepted]]
+stage = "visual-review"
+id = "VIS-001"
+severity = "accepted"
+location = "pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-synthesis.pdf, physical page 11; sections/synthesis-90-apparatus.tex terminal reference continuation"
+problem = "The final page is sparse: three complete reference entries, the revision timestamp and the compact rights colophon occupy roughly the upper third, leaving substantial unused space."
+required_result = "Accept the present terminal continuation for this run while preserving the complete citations and the colophon on the same physical page."
+accepted_because = "The page carries substantive, complete source entries rather than a stranded line or a rights-only spill, and the 11-page concise work meets its extent and opening contract. Rebalancing it would move settled pagination or compress already readable terminal prose without improving the argument, attribution or reader understanding."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-001"
+severity = "advisory"
+location = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/sections/70-apparatus.tex:38, References, Catholic Encyclopedia entry (proof p. 21)"
+problem = "The bibliography identifies Alfred Durand's 1912 article as The Synoptics. The retained article 14530a and the canonical chronology audit identify it as The New Testament; its Part III supplies the cited Matthew and John composition proposals. This isolated title error makes reader lookup less reliable, although the actual chronology evidence is present and accurately qualified."
+required_result = "Correct the Durand article title to The New Testament, retaining the author and year; a Part III locator or the stable article URL https://www.newadvent.org/cathen/14530a.htm would make the reference easier to follow."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-CIT-001"
+severity = "advisory"
+location = "sections/synthesis-90-apparatus.tex:22, References, PDF p. 11; the same title occurs in the expansive study's sections/70-apparatus.tex"
+problem = "The bibliography names Durand's 1912 Catholic Encyclopedia source as The Synoptics. The actual retained article, newadvent-14530a-0a19aa2c-article-text, is titled The New Testament, as its first line and https://www.newadvent.org/cathen/14530a.htm confirm. Its Origin discussion supports the Matthew and John chronology used here; the defect is the bibliographical title, not the chronology or argument."
+required_result = "At the next suitable revision, cite Alfred Durand, The New Testament (1912), section Origin, consistently in the concise and canonical references, retaining the existing source-specific chronology qualifications."
