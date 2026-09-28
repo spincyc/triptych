@@ -20,8 +20,11 @@ Its disposition is pending. No artifact has been accepted or installed.
 | research-review | 0 | CHANGES_REQUIRED | RES-001 requires the controlling author-standing registry in review dependencies; RES-002 advises precise wording for Gregory's weaving analogy. |
 | research | 1 | PASS | Declared the author-standing dependency and corrected Gregory's weaving analogy. |
 | research-preflight | 1 | PASS | Research checks pass; live next-review packet includes the current author-standing bytes. |
+| research-review | 1 | PASS | Fresh focused review cleared RES-001 and confirmed the Gregory correction; all 141 sealed inputs match, no blocking findings. |
+| author-study | 0 | PASS | Complete 20-page study, approximately 6,930 substantive words, two interpretations and all ten elements; author inspected every page. |
+| study-preflight | 0 | PASS | All workflow-declared study program checks passed. |
 
-Research review iteration 1 is active. Every agent stage uses a fresh worker with no
+Cold study review is active. Every agent stage uses a fresh worker with no
 inherited authoring conversation and the packet's declared reasoning effort.
 Author stages use `high`; review stages use `xhigh`. No nested workers are
 authorized by this workflow.
@@ -37,9 +40,10 @@ Those failures are not new-target acceptance and remain separately identified.
 After research, the canonical source graph, refreshed structural inventory and
 family ledger validate. The new publication is broadly source-categorized;
 the family ledger remains honestly pending and claims no completed family
-screening. The integrated `make check-sources` awaits the author stage's
-`web-edition.toml`, absent beside the deliberate source placeholder at this
-point. This intermediate failure is not waived for final acceptance.
+screening. The first integrated `make check-sources` stopped because
+`web-edition.toml` was absent beside the deliberate research-stage source
+placeholder. Authoring has since supplied it; the full integrated source
+check remains required after publication wiring and derived catalog refresh.
 
 ## Scope
 

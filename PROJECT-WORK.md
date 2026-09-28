@@ -26,13 +26,15 @@ dated occurrence and preserved the local-calendar limits of its witnesses.
 `a1320fb62298ed6b1cf10d82d252212a03a484d0`. Scope and context resolution have
 passed; research and its program preflight have passed. Cold research review
 returned one dependency-closure repair. Research iteration 1 and its preflight
-have passed; a fresh reviewer is checking the repaired record.
+have passed. Research-review iteration 1 passed with no findings, and the
+expansive-study author stage and its preflight have passed. The 20-page study
+is in cold content review; synthesis and homily remain to be derived.
 The context records a dated FSSP Ordo,
 six inspected Missal page images, ten appointed elements and the Trinity
 Preface, the omitted St Francis commemoration, and the separate optional Rosary
 external solemnity. Research records full Latin/English collation, 27 exact
 source bindings, chronology, bounded reception and two proposed readings.
-No publication has been authored or accepted.
+No publication has yet been accepted.
 Every worker and cold reviewer will be dispatched fresh at the workflow's
 declared effort. The owning leaf will retain its research, review dispositions,
 and terminal run evidence. Work remains on `feature/propers/codex`, the
