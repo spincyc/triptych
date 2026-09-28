@@ -22,6 +22,17 @@ current bytes before resubmission. RES-002 is also corrected in
 and lower pieces of wood, not two threads. The retained Latin was reread;
 “weaving analogy” preserves his argument about love of God and neighbour.
 
+Research iteration 2, 2026-09-28, addresses STU-CHR-001 by independently
+reading and registering the current official USCCB Ephesians introduction,
+adding its conditional later-disciple chronology to the canonical corpus,
+and declaring an explicit critical-profile comparison. The earlier access
+failure is superseded below. No accepted reception argument is reopened.
+The context inventory was reread and the calendar computation rerun; its
+nineteenth-Sunday candidate and unranked status still agree with `context.md`.
+The study-owner follow-through required after research review is specified
+below; this research repair does not claim that the authored study has
+already incorporated or passed review of the new evidence.
+
 ## Object and completed textual control
 
 `context.md` was read and its decisive witnesses independently inspected:
@@ -259,8 +270,9 @@ catena fragment, modern handout or search snippet is promoted to a Father.
 ## Chronology and location: reviewed input to the historical appendix
 
 `chronology.toml` and `chronology-annotations.tex` are generated through the
-same-family `proper-chronology` adapter. A declared comparison separately
-queries the critical Matthew composition claim; it does not replace or
+same-family `proper-chronology` adapter. Declared comparisons separately
+query the critical Matthew composition claim and the conditional Ephesians
+later-disciple claim; neither replaces or
 merge into the default comprehensive cascade. The expansive study must
 give these claims a same-owner historical appendix before the concise
 study's page2 reuses them. Copy generated labels/annotations rather than
@@ -294,9 +306,72 @@ The canonical comparison alone supplies its numerical date label. This
 current web reading was not a byte-identical reacquisition of the September21
 registered response; that earlier exact passage remains catalogued as the
 corpus's source, with the present ordinary bibliographic citation identifying
-the independent reading. Direct acquisition of the Ephesians introduction
-returned403, and web access also failed; no current numerical Ephesians
-claim or supposed modern consensus is invented from that unavailable source.
+the independent reading.
+
+### Ephesians: current authorship and composition alternatives
+
+The complete official [USCCB NABRE Ephesians introduction](https://bible.usccb.org/bible/ephesians/0)
+was independently opened and then acquired as a complete HTML response on
+2026-09-28 (52,266 bytes, SHA-256
+`94023f888e4b77939bf4aad796c9f9c1646f3dc26ec8388de0ce6abbd9e5f60e`).
+All four introductory paragraphs and the division list were read; paragraphs
+3–4 are the controlling loci (physical HTML lines 626 and 628). The exact
+artifact and a verified passage are registered under the dated USCCB
+2026-09-28 edition and bound here. Protected source bytes remain untracked;
+the passage summary provides an offline factual record, while exact wording
+requires the official source. The former HTTP403/access failure no longer
+limits this claim.
+
+The introduction preserves Pauline captivity, with Rome as the traditional
+location and earlier Caesarean captivity as an alternative. It identifies
+style, vocabulary (especially comparison with Colossians), ecclesiology and
+other doctrinal emphases as grounds for critical uncertainty about direct
+Pauline authorship. It leaves open both a secretary writing under Paul's
+direction and a later disciple developing his thought. Its approximate
+later interval belongs only to the latter hypothesis. The introduction
+supplies no composition city for that hypothesis and no separately dated
+secretarial scenario. Its destination discussion connects the lack of
+personal greetings and the address's absence from important early witnesses
+with proposals for circulation among churches of Asia Minor or a Laodicean
+destination. These are the official apparatus's historical judgments,
+not a new manuscript collation or a magisterial settlement.
+
+The canonical unit `critical.ephesians-later-disciple`, relation
+`composition`, profile `catholic-critical-v1`, records the source's
+“around A.D. 80–100” as a conditional interval with `disputed` disposition.
+Its subject title explicitly names the later-disciple hypothesis and the
+approximate character of the interval; neither
+the record nor the display may make this the secretary's date or a consensus.
+`chronology-profile-comparisons.toml` selects that exact subject for `epistle`.
+The default cascade still returns Ladeuze's and Prat's traditional alternatives;
+the new answer remains a separate generated comparison. No traditional date,
+profile policy, appointment, or interpretation has been replaced.
+
+**Projection limitation and separate tooling follow-up.** The current
+`concise_display_label` in `scripts/_proper_chronology.py` recognizes
+`about`, `approximately` and `c.` as approximation cues, but not the source's
+`around`. Its generated date alone therefore reads `A.D. 80–100`, while
+the sealed raw source label still includes `around`. The corpus subject title
+explicitly includes `(approximate)` so the complete generated comparison
+preserves the source's uncertainty without a hand-edited annotation or
+replacement date label. This is a source-owned qualification, not a repaired
+tool. A separate tooling change should recognize `around` and test that this
+interval renders with its approximation cue; no shared code was changed here.
+
+**Study-owner follow-through (STU-CHR-001).** After research review, replace
+the final Epistle dossier paragraph in `sections/70-date-location.tex` with
+a cited account of the alternatives and evidence above, preserving the
+traditional summary and the generated Date cell. The generated annotation
+already carries the distinct conditional comparison. Add the USCCB Ephesians
+introduction, paragraphs 3–4, URL and access date to the chronology references
+in `sections/90-study-apparatus.tex`. Review that expansive historical home
+before concise authoring reuses it; do not copy the obsolete refusal to add
+a current comparison. Finalize generation metadata and rebuild in that
+authoring stage. The advisory STU-CIT-001 belongs to the same apparatus:
+replace its Gregory URL with the edition's actual index,
+`https://la.wikisource.org/wiki/Homiliarum_in_Evangelia`, preserving II.38
+and the section locators. These reader-facing files remain with their
+authoring owner.
 
 No narrated-event date for Matt22 is returned: retain the explicit pending
 state. The Temple/Jerusalem setting comes from the contiguous narrative,

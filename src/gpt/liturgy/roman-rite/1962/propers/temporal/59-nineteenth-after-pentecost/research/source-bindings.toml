@@ -3,6 +3,15 @@ record_type = "bindings"
 document = "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"
 
 [[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-28.ephesians-introduction"
+loci = ["The Letter to the Ephesians, complete introduction; especially prose paragraphs 3-4, physical HTML lines 626 and 628"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Current official introduction independently read in complete acquired bytes. Supports the authorship and destination alternatives, their stated evidence, and the conditional later-disciple composition comparison. The canonical corpus alone supplies the date; the traditional cascade remains unchanged. No manuscript collation, settled consensus, or permission to reproduce modern source wording is claimed."
+verified_on = "2026-09-28"
+source_fingerprint = "sha256:3359c2cf3d60e7fce5b5a2a9e0f803ec8256af64a915ef9e901d51c4c3d85059"
+
+[[bindings]]
 source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
 loci = ["Printed411–412, marginal1679–1688; PDF492–493", "General rubrics91,95,111b, Mass rubrics358b,434b; printedXVII–XVIII,XXVI,XXXI; PDF15,16,24,29"]
 role = "textual-control"

@@ -9,6 +9,13 @@ rights audit is `scope.md`; these readings provide alternatives for the
 expansive study, comparison in the concise study, and a bounded choice for
 the homily. Neither a research proposal nor this record is a review verdict.
 
+The historical account in `scope.md`, revised in research iteration 2,
+distinguishes received Pauline attribution, a secretary under Paul's direction,
+and the conditional later-disciple hypothesis. Neither reading below depends
+on deciding between them. Attributing the Epistle to Paul in inherited
+theological exposition must not imply that its modern authorship question
+has been settled; its historical alternatives belong in the cited dossier.
+
 ## A. The invited people clothed in charity
 
 **Controlling claim.** The Lord who declares himself the people's salvation

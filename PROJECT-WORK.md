@@ -27,14 +27,23 @@ dated occurrence and preserved the local-calendar limits of its witnesses.
 passed; research and its program preflight have passed. Cold research review
 returned one dependency-closure repair. Research iteration 1 and its preflight
 have passed. Research-review iteration 1 passed with no findings, and the
-expansive-study author stage and its preflight have passed. The 20-page study
-is in cold content review; synthesis and homily remain to be derived.
+expansive-study author stage and its preflight have passed. Cold study review
+returned STU-CHR-001, requiring the modern Ephesians historical horizon;
+research iteration 2 and its preflight have passed, with fresh research review
+active before renewed study authoring and review. The
+20-page draft is checkpointed; synthesis and homily remain to be derived.
 The context records a dated FSSP Ordo,
 six inspected Missal page images, ten appointed elements and the Trinity
 Preface, the omitted St Francis commemoration, and the separate optional Rosary
 external solemnity. Research records full Latin/English collation, 27 exact
 source bindings, chronology, bounded reception and two proposed readings.
 No publication has yet been accepted.
+The Ephesians repair adds one conditional critical-profile composition unit
+and current restricted USCCB source metadata while preserving traditional
+claims and unchanged default coverage. Its source title preserves the
+approximation dropped by the existing concise date formatter for the word
+“around”; the research audit records that separate tooling limitation without
+claiming a code repair.
 Every worker and cold reviewer will be dispatched fresh at the workflow's
 declared effort. The owning leaf will retain its research, review dispositions,
 and terminal run evidence. Work remains on `feature/propers/codex`, the

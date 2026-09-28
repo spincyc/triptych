@@ -23,8 +23,11 @@ Its disposition is pending. No artifact has been accepted or installed.
 | research-review | 1 | PASS | Fresh focused review cleared RES-001 and confirmed the Gregory correction; all 141 sealed inputs match, no blocking findings. |
 | author-study | 0 | PASS | Complete 20-page study, approximately 6,930 substantive words, two interpretations and all ten elements; author inspected every page. |
 | study-preflight | 0 | PASS | All workflow-declared study program checks passed. |
+| study-review | 0 | CHANGES_REQUIRED | STU-CHR-001 requires a current Ephesians authorship/composition account in research and the study dossier; STU-CIT-001 advises correcting Gregory's source URL. |
+| research | 2 | PASS | Verified current USCCB Ephesians introduction, added a conditional critical-profile corpus assertion and generated comparison, and recorded study-owner follow-through. |
+| research-preflight | 2 | PASS | Research contract and current source bindings pass. |
 
-Cold study review is active. Every agent stage uses a fresh worker with no
+Research review iteration 2 is active. Every agent stage uses a fresh worker with no
 inherited authoring conversation and the packet's declared reasoning effort.
 Author stages use `high`; review stages use `xhigh`. No nested workers are
 authorized by this workflow.
@@ -44,6 +47,20 @@ screening. The first integrated `make check-sources` stopped because
 `web-edition.toml` was absent beside the deliberate research-stage source
 placeholder. Authoring has since supplied it; the full integrated source
 check remains required after publication wiring and derived catalog refresh.
+The research-2 integrated attempt reaches the next unfinished entrypoint,
+`homily.tex`; focused research, source-library and chronology checks pass.
+At this checkpoint, `make check-release-bindings` reports exactly one stale
+binding: this target's ungenerated canonical web edition. Existing publication
+bindings are unchanged; the new binding belongs to the installation stage.
+
+The expansive-study checkpoint's full staged whitespace check reported an
+extra blank line at EOF in `sections/00-opening.tex` and
+`sections/10-appointed-text.tex`; the earlier unstaged check did not include
+those newly added files. These cosmetic source warnings have no rendered
+effect. No sealed study input was changed during cold review to clear them.
+After that review returned CHANGES_REQUIRED and the engine routed a research
+repair, the coordinator removed only those trailing blank lines; the study
+will receive its required fresh authoring and review passes after research.
 
 ## Scope
 

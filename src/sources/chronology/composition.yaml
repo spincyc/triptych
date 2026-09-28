@@ -2910,6 +2910,37 @@ units:
             statement: post-A.D. 70 date
           label: "post-A.D. 70 date"
 
+  - id: critical.ephesians-later-disciple
+    title: Ephesians under the later-disciple hypothesis (approximate)
+    scope: {book: Eph}
+    dates:
+      - profile: catholic-critical-v1
+        disposition: disputed
+        basis_class: catholic-critical
+        basis: >-
+          The official NABRE Ephesians introduction, final prose paragraph,
+          offers a later disciple developing Paul's thought as one possible
+          explanation of the letter's style, vocabulary, ecclesiology and
+          doctrinal emphases. It dates that possibility "around A.D. 80–100".
+          The complete introduction was inspected in its 2026-09-28 web state.
+        sources:
+          - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-28.ephesians-introduction
+        note: >-
+          Conditional composition interval, not a consensus or a preference
+          for non-Pauline authorship. The same introduction preserves the
+          traditional captivity account and the possibility of a secretary
+          working at Paul's direction. It does not assign this later range
+          to the secretary. The title carries the condition into generated
+          comparison displays. No city of composition is given for the later
+          hypothesis. Traditional claims remain unchanged and supply the
+          default cascade's composition answer; this claim is reached through
+          an explicitly requested critical-profile comparison.
+        date:
+          precision: interval
+          from: {year: 80, era: ad}
+          to: {year: 100, era: ad}
+          label: "around A.D. 80–100"
+
   - id: critical.psalms.latest-composition-boundary
     title: The latest composition boundary shared by the Psalms
     scope: {book: Ps}
