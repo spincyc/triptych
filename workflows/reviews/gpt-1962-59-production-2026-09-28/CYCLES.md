@@ -26,8 +26,11 @@ Its disposition is pending. No artifact has been accepted or installed.
 | study-review | 0 | CHANGES_REQUIRED | STU-CHR-001 requires a current Ephesians authorship/composition account in research and the study dossier; STU-CIT-001 advises correcting Gregory's source URL. |
 | research | 2 | PASS | Verified current USCCB Ephesians introduction, added a conditional critical-profile corpus assertion and generated comparison, and recorded study-owner follow-through. |
 | research-preflight | 2 | PASS | Research contract and current source bindings pass. |
+| research-review | 2 | PASS | New comparison and supporting evidence checked; all 144 sealed inputs match, no findings. |
+| author-study | 1 | PASS | Incorporated the reviewed Ephesians account and corrected the Gregory URL; rebuilt 20-page proof and inspected all pages. |
+| study-preflight | 1 | PASS | All workflow-declared study program checks passed after repair. |
 
-Research review iteration 2 is active. Every agent stage uses a fresh worker with no
+Study-review iteration 1 is active. Every agent stage uses a fresh worker with no
 inherited authoring conversation and the packet's declared reasoning effort.
 Author stages use `high`; review stages use `xhigh`. No nested workers are
 authorized by this workflow.

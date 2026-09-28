@@ -89,3 +89,64 @@ cold-review copy is `study-author-proof.pdf` in run `b686b7a44f0e35e7`'s
 The run directory also retains build and check logs, PDF information,
 font evidence, and the dedicated replaceable raster child. This author
 inspection does not replace the later independent visual evaluation.
+
+## Author study — iteration 1
+
+The study was revised on 28 September 2026 after research iteration 2.
+The complete research scope, interpretation map and existing study components
+were read. The acquired USCCB Ephesians introduction was independently read,
+including its destination discussion and complete authorship paragraph;
+the generated chronology comparison was checked against that evidence.
+
+The historical appendix now explains the grounds for questioning direct
+Pauline authorship and distinguishes the secretary under Paul's direction
+from the later-disciple hypothesis. Only the latter receives the separately
+displayed approximate interval. The traditional captivity alternatives,
+uncertain composition location, destination proposals, and distinction between
+writer and recipients remain visible. This incorporates the study-owner
+follow-through identified as STU-CHR-001 in the reviewed research. The
+references now cite the USCCB introduction's paragraphs 3–4 and correct
+Gregory's Wikisource index URL, addressing STU-CIT-001. No reviewed research,
+chronology projection, source binding, appointed text, or interpretive lane
+was changed by this author stage.
+
+The complete two-reading study remains **6,930 substantive words**, independently
+recounted using the exclusions and token rule above. Its five counted components
+retain the same breakdown. The historical appendix's redundant concluding
+recap was shortened so its dossier and conclusion remain together on page 18;
+the qualifications remain in the dossier and scope appendix. The final
+proof remains **20 physical pages**. All pages were inspected as page rasters,
+with the three changed terminal pages reinspected after that pagination
+adjustment. Raster hashes establish that pages 1–17 were unchanged between
+the two proofs inspected during this stage. No clipping, overlapping text,
+missing glyph, or isolated heading was found. The final page contains the
+references, one visible timestamp and the compact rights colophon.
+
+The required author build and research component artifact check passed.
+Research content preflight passed with 28 valid bindings, both whole-formulary
+lanes, and the complete generated chronology for seven scriptural elements.
+The manual bibliography retains the earlier automatic-check limitation:
+the references-used check recognizes no formal bibliography entries. The
+final LaTeX log has no warnings, undefined references, overfull boxes or
+underfull boxes. PDF inspection confirms US Letter and 15 embedded Latin
+Modern fonts. The current Ephesians evidence is paraphrased; no protected
+liturgical English or newly composed prayer was added. Earlier source limits
+remain as recorded above and in the reviewed research.
+
+The exact run-provenance check passed. The broader `make check-sources`
+command reached successful source-library validation but stopped in its
+document-catalogue prerequisite because the manifest's future `homily.tex`
+does not yet exist. This is the current author-study stage boundary, not a
+completed global gate; the companion and later publication stages must
+complete that check after their entrypoints exist. Shared inventory refresh
+and integration remain with the workflow coordinator.
+
+Finalized render timestamp: **2026-09-28T15:59:54Z**. The exact cold-review
+copy is `study-author-proof.pdf` in this run's `author-study-0001` artifact
+directory, SHA-256
+`8d8e64a2ae4348ec9fb31e6e1cef189f80914c32f613c3ad451133fa2728f68c`.
+Build diagnostics, component/content checks, word-count evidence, extracted
+text, PDF/font information and a dedicated raster child accompany that copy.
+This is author verification; the independent study verdict, companion
+derivations, final shared-timestamp build and independent visual review are
+separate subsequent events.

@@ -29,8 +29,10 @@ returned one dependency-closure repair. Research iteration 1 and its preflight
 have passed. Research-review iteration 1 passed with no findings, and the
 expansive-study author stage and its preflight have passed. Cold study review
 returned STU-CHR-001, requiring the modern Ephesians historical horizon;
-research iteration 2 and its preflight have passed, with fresh research review
-active before renewed study authoring and review. The
+research iteration 2, its preflight and fresh research-review iteration 2 have
+passed. Author-study iteration 1 incorporated the reviewed comparison and
+corrected the Gregory link; its preflight passed, and renewed study review is
+active. The
 20-page draft is checkpointed; synthesis and homily remain to be derived.
 The context records a dated FSSP Ordo,
 six inspected Missal page images, ten appointed elements and the Trinity
