@@ -1,6 +1,45 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-1962-nineteenth-three-documents-2026-09-28"
+owner = "PROJECT-WORK.md"
+promise = "Drive the GPT proper-study workflow for the 1962 Nineteenth Sunday after Pentecost, Sunday 2026-10-04, through acceptance: expansive study, concise study, standalone homily and canonical web edition, with fresh cold reviews, installed artifacts, publication records and durable run evidence on feature/propers/codex."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "gpt-59-authorization"
+  criterion = "The production plan records the exact GPT identity authorization before seeding."
+  status = "pass"
+  evidence = ["guidance/liturgy/propers-production-plan.md"]
+  check = "contains"
+  path = "guidance/liturgy/propers-production-plan.md"
+  needle = "- Authorized 2026-09-28: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost`."
+
+  [[deliverables.requirements]]
+  id = "gpt-59-run-accepted"
+  criterion = "A proper-study run for GPT identity 59-nineteenth-after-pentecost and date 2026-10-04 reaches ACCEPTED with fresh reviewers at the declared effort; the leaf archives terminal status, packets, results and review evidence."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "gpt-59-four-artifacts"
+  criterion = "The 20–50-page expansive study, 10–12-page concise study with its required four-page opening, standalone homily, and canonical web edition are reviewed and installed; exact artifact identities, homily word count and delivery estimate, catalog links and separate release records are verified."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "gpt-59-research-and-provenance"
+  criterion = "Source records establish the dated occurrence, appointed texts, lawful witnesses, chronology, reception and distinct interpretations; checks pass, every review cycle and remaining limitation is recorded, and generation metadata identifies the actual workflow and contributions."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "gpt-59-validated-checkpoint"
+  criterion = "Required source and publication checks pass, the durable records agree with the artifacts and actual workflow state, and the coherent delivered changes are committed on the workspace branch."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "known-issues-after-pc-s52-2026-09-25"
 owner = "PROJECT-WORK.md"
 promise = "Fix the known issues left by the Claude pc-s51 and pc-s52 productions within Claude-owned and provider-neutral records, with independent review, and push: the pc-s52 leaf's standing review advisories and research-record lag; the upstream record defects its context stage found; and the pc-s51 run's unrepaired leads and research-record lag."

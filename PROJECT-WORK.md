@@ -5,7 +5,35 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-09-25.
+Last reconciled: 2026-09-28.
+
+## GPT 1962 Nineteenth Sunday three documents, 2026-09-28
+
+<!-- promised-deliverable: gpt-1962-nineteenth-three-documents-2026-09-28 -->
+
+The maintainer requested the TLM propers workflow for the upcoming Sunday,
+4 October 2026, with subagents permitted. The production targets provider
+`gpt`, identity
+`liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost`,
+under the current `proper-study` three-document contract: a 20–50-page
+expansive study, a 10–12-page concise study, a standalone homily for an adult
+parish assembly, and the canonical study's web edition. The production plan
+records this exact scope opening. Calendar computation identifies the
+Nineteenth Sunday after Pentecost; the context stage must establish the
+dated occurrence and preserve any local-calendar limitation from its witnesses.
+
+**In progress.** Authorization and acceptance criteria are recorded; the run
+has not yet been seeded and no publication has been authored or accepted.
+Every worker and cold reviewer will be dispatched fresh at the workflow's
+declared effort. The owning leaf will retain its research, review dispositions,
+and terminal run evidence. Work remains on `feature/propers/codex`, the
+workspace's required branch; this task does not update another checkout or
+merge into `main`.
+
+Completion requires workflow acceptance, all three reviewed and installed PDFs,
+the reviewed web edition, owning catalog and release records, source and
+publication checks, reconciled durable records, and a validated branch
+checkpoint. Publication or a successful build alone does not fulfill it.
 
 ## Known issues after the Twenty-sixth Sunday, 2026-09-25
 
