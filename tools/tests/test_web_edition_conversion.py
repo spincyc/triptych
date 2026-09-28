@@ -919,6 +919,42 @@ class WebEditionConversionTests(unittest.TestCase):
             "no generated chronology annotation for: gospel", str(raised.exception)
         )
 
+    def test_body_imported_chronology_is_expanded_without_definition_leakage(self) -> None:
+        definitions = (
+            r"\newcommand{\chronologyannotation}[1]{%" "\n"
+            r"\ifcsname triptychchronologyannotation@#1\endcsname" "\n"
+            r"\csname triptychchronologyannotation@#1\endcsname" "\n"
+            r"\else\PackageError{triptych}{No chronology annotation for #1}{}\fi}" "\n"
+            r"\newcommand{\chronologyannotationgroup}[3]{#3}" "\n"
+            r"\expandafter\def\csname triptychchronologyannotation@introit\endcsname{%"
+            "\n"
+            r"\chronologyannotationgroup{composition}{preferred}"
+            r"{\textbf{Composition}: Before c. 165 B.C.}}" "\n"
+        )
+        markdown = self.convert(
+            r"\input{studies/subject/research/chronology-annotations}" "\n"
+            r"\begin{tabular}{ll}" "\n"
+            r"Introit & \chronologyannotation{introit}\\" "\n"
+            r"\end{tabular}",
+            files={"research/chronology-annotations.tex": definitions},
+        )
+        self.assertEqual(markdown.count("Before c. 165 B.C."), 1)
+        self.assertIn("**Composition**:", markdown)
+        self.assertNotIn("triptychchronologyannotation@", markdown)
+        with self.assertRaisesRegex(DRIVER.ConversionError, r"unknown macro \\dubiousclaim"):
+            self.convert(
+                definitions.replace(r"\ifcsname", r"\dubiousclaim\ifcsname")
+                + r"\chronologyannotation{introit}"
+            )
+
+    def test_duplicate_chronology_across_preamble_and_body_is_refused(self) -> None:
+        definition = (
+            r"\expandafter\def\csname triptychchronologyannotation@introit\endcsname"
+            r"{Before c. 165 B.C.}"
+        )
+        with self.assertRaisesRegex(DRIVER.ConversionError, "duplicate generated chronology"):
+            self.convert(definition + r"\chronologyannotation{introit}", preamble=definition)
+
     def test_unknown_macro_names_its_file_and_writes_nothing(self) -> None:
         with self.assertRaises(DRIVER.ConversionError) as raised:
             self.convert(r"Prose \dubiousclaim{silently deleted evidence}.")

@@ -38,8 +38,10 @@ Its disposition is pending. No artifact has been accepted or installed.
 | homily-review | 0 | PASS | Complete speech, three proof pages, source support and exact 1,301-word count checked; no findings. |
 | build-artifacts | 0 | PASS | Normal Make builds produced 20/10/3 pages; logs, structure, embedded fonts and extracted texts pass; exact snapshot and all 33 rasters prepared without source changes. |
 | artifact-gates | 0 | PASS | Artifact snapshot, physical-page evidence and all upstream accepted review seals match. |
+| visual-review | 0 | PASS | All 33 pages inspected individually at full raster size; all 30 sealed inputs match, no findings. |
+| generate-web | 0 | PASS | Complete canonical Markdown and exact receipt generated after a tested repair for body-imported chronology; existing web editions remain byte-current. |
 
-Visual review is active. Every agent stage uses a fresh worker with no
+Web review is active. Every agent stage uses a fresh worker with no
 inherited authoring conversation and the packet's declared reasoning effort.
 Author stages use `high`; review stages use `xhigh`. No nested workers are
 authorized by this workflow.
@@ -83,6 +85,21 @@ effect. No sealed study input was changed during cold review to clear them.
 After that review returned CHANGES_REQUIRED and the engine routed a research
 repair, the coordinator removed only those trailing blank lines. The subsequent
 fresh authoring and study-review passes accepted the corrected source.
+
+## Web converter repair
+
+The first conversion attempt reported a missing introit chronology annotation.
+The definitions were present in the reviewed body component; the converter
+only read preamble definitions. The generation worker repaired that lookup,
+removed generated definitions from the rendered body, and limited its helper
+scan exception to the exact generated dispatcher. Regression coverage checks
+body imports, duplicate keys across preamble/body and refusal of an altered
+helper containing an unknown command. The 131-test converter suite passed;
+the stricter rejection assertion added afterward passed in its focused test.
+The coordinator inspected the complete diff and `tmt check` passed. No accepted
+publication source, metadata or PDF changed. The fidelity contract now records
+the supported body import. The full web-current check reports no stale existing
+edition, only the new edition awaiting review and installation.
 
 ## Scope
 

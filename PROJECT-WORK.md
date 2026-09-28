@@ -40,7 +40,10 @@ passed: the three-page proof has 1,301 spoken words, an estimated 10.4–11.3
 minutes before pauses. Fresh homily review passed with no findings. All three
 texts are content-accepted. Final artifact production and its gate passed:
 20/10/3 pages, exact PDF/render-input snapshot and concise physical-page
-evidence. Fresh visual review is active. The complete `make check-sources` now
+evidence. Fresh visual review passed all 33 pages with no findings and all
+30 sealed inputs unchanged. Canonical web conversion passed, including a
+tested converter repair for body-imported generated chronology; existing web
+editions remain byte-current. Fresh web review is active. The complete `make check-sources` now
 passes after the owning catalogue, source projection and inventory refreshes.
 The context records a dated FSSP Ordo,
 six inspected Missal page images, ten appointed elements and the Trinity

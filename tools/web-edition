@@ -927,11 +927,20 @@ def expand_chronology_annotations(
 ) -> tuple[str, list[str]]:
     """Expand deterministic generated chronology definitions before pandoc."""
     definitions: dict[str, str] = {}
-    for match in CHRONOLOGY_DEFINITION_RE.finditer(definition_source):
-        key = match.group(1)
-        if key in definitions:
-            raise ConversionError(f"duplicate generated chronology annotation: {key}")
-        definitions[key] = brace_group(definition_source, match.end() - 1)[0]
+    body_pieces, cursor = [], 0
+    for source, in_body in ((definition_source, False), (body, True)):
+        for match in CHRONOLOGY_DEFINITION_RE.finditer(source):
+            key = match.group(1)
+            if key in definitions:
+                raise ConversionError(f"duplicate generated chronology annotation: {key}")
+            definitions[key], end = brace_group(source, match.end() - 1)
+            if in_body:
+                # Generated helpers may be imported by a body component. Their
+                # definitions are not prose; only the projected calls render.
+                body_pieces.append(body[cursor:match.start()])
+                cursor = end
+    body_pieces.append(body[cursor:])
+    body = "".join(body_pieces)
 
     expected = []
 
@@ -1613,10 +1622,29 @@ def defined_names(text: str) -> set[str]:
     return {name for match in DEFINITION_RE.finditer(text) for name in match.groups() if name}
 
 
+def mask_chronology_dispatcher(text: str) -> str:
+    """The generated lookup is expanded here, not interpreted by pandoc."""
+    expected = (
+        r"\ifcsname triptychchronologyannotation@#1\endcsname"
+        r"\csname triptychchronologyannotation@#1\endcsname"
+        r"\else\PackageError{triptych}{No chronology annotation for #1}{}\fi"
+    )
+    for match in COMMAND_DEFINITION_RE.finditer(text):
+        if (match.group(1) or match.group(2)) != "chronologyannotation":
+            continue
+        count, default, body, opening = command_signature(text, match.end())
+        if (count == 1 and default is None
+                and re.sub(r"\s+", "", body) == re.sub(r"\s+", "", expected)):
+            _, end = brace_group(text, opening)
+            return text[:opening] + "{}" + text[end:]
+    return text
+
+
 def undefined_uses(sources: dict[Path, str], defined: set[str]) -> list[str]:
     """Name every control sequence pandoc would delete, with the file that uses it."""
     failures = []
-    scanned = {path: strip_for_scan(text) for path, text in sorted(sources.items())}
+    scanned = {path: mask_chronology_dispatcher(strip_for_scan(text))
+               for path, text in sorted(sources.items())}
     # A section file may define a macro that main.tex uses, so definitions are
     # pooled across the whole assembled document before anything is judged.
     known = defined.union(*(defined_names(text) for text in scanned.values()))

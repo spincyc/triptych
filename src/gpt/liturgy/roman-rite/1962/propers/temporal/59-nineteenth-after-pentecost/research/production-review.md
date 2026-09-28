@@ -374,3 +374,29 @@ the document catalogue current. It stopped on stale shared publication-
 inventory hashes for this leaf's `evaluations/blocking-findings-v1.toml`
 and `research/production-review.md`; the coordinator must refresh those
 records before integration. `git diff --check` passed.
+
+## Accepted visual review and canonical web generation
+
+The actual `visual-review` iteration 0 result is PASS with no findings.
+Its fresh reviewer inspected all 33 pages individually at full raster size,
+checked the contact sheets and PDF diagnostics, and verified all 30 sealed
+inputs. The exact PDFs remain those recorded in `research/artifacts.json`.
+
+The first canonical web conversion exposed a converter defect: generated
+chronology definitions imported through `sections/70-date-location.tex`
+were not collected because the converter looked only in the preamble.
+The generation worker repaired body-definition collection and removal,
+with an exact generated-dispatcher exception in the unknown-command scan.
+The publication's accepted sources, metadata and PDFs were unchanged.
+The regression suite passed 131 tests, with the subsequently added strict
+unknown-helper rejection assertion also passing in its focused test.
+Existing installed web editions remain byte-current under the repaired
+converter; the new edition's installation is still pending. The coordinator
+reviewed the complete code and fidelity-contract diff, and `tmt check` passed.
+
+The generated canonical Markdown has SHA-256
+`dc4948bdc26ab27a24d562018196b556298903d256b7364bf918997b38c25eb5`.
+Its conversion receipt is `research/web-artifact.json`. This is generation
+evidence only; independent web review and installation are separate events.
+The web checks use the repository-pinned Markdown 3.10.3 dependency in a
+task-local environment, with no global dependency change.

@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-09-28"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:a0c8045fd7de90e7b2a3d91367d339e26cfb41384c35295630fcb57f848cd8da"
+inventory_snapshot = "sha256:2ddc50ffff2483e43ac96ae48b5a9e22f60c2fff0818c15107d603d948bde91b"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:bd61d9d5e9dc8f2900d4cc11da434af1c6bde23aa4b1bf72a1792aed2286b059"
 canonical_catalog_snapshot = "sha256:9519a3083d67440cb6713c262436b6dfa15f2381f0ed5487cb422157e644d20d"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:2c933f04e15a5a0ed6c841b2eff8f27b4afc50dc9d3ab3b681a6875f188d6d33"
+snapshot = "sha256:51bf8a6264130cffe49e80a8745854b79c489ae5d858dbde903d212f856df7e7"
 families = []
 
 [[review_units]]
@@ -488,7 +488,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"
-surface_snapshot = "sha256:9fa608bcd1fb664ceaf46c4bab369e876c6d3ff0b837048bd0c5d8e681825737"
+surface_snapshot = "sha256:5efa80d03489634f41b498b5b5bad25c043908c3307ef7cc8b911c38a374c3ad"
 review_state = "pending"
 
 [[review_units]]

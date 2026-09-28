@@ -217,6 +217,12 @@ stylesheet with it.
 
 ## Componentized proper guides
 
+Generated chronology annotations may be imported by a body component as well
+as by the preamble. The converter expands their visible payloads, omits the
+generated definitions themselves, and audits each rendered call. Only the exact
+generated lookup helper is exempt from the unknown-command scan; duplicate
+annotation keys across preamble and body remain an error.
+
 When a proper profile authorizes `proper-components.toml`, the canonical
 research mode is the publication represented on the web. The converter reads
 the canonical entrypoint and every `research` component. The `-synthesis` PDF
