@@ -22,7 +22,7 @@ records this exact scope opening. Calendar computation identifies the
 Nineteenth Sunday after Pentecost; the context stage established the
 dated occurrence and preserved the local-calendar limits of its witnesses.
 
-**Publication complete; main integration in progress.** Run `b686b7a44f0e35e7`
+**Complete and deployed.** Run `b686b7a44f0e35e7`
 reached **ACCEPTED** under `proper-study` v7, preserving actual seed commit
 `a1320fb62298ed6b1cf10d82d252212a03a484d0`. The installed family comprises
 the 20-page expansive study (6,930 substantive words), the 10-page concise
@@ -80,10 +80,19 @@ check-deployment-sources`, `make public-site`, and `public-alpha verify
 missing older PDFs were restored from the live site and verified against its
 published checksums; the full ledger now passes (50 tracked, 39 complete while
 the new deployment requirement is open). The outgoing-range review confirms
-only the intended publication work and lawful source evidence. The push and
-verification of the resulting Pages run and affected live routes remain
-required. The workspace stays on `feature/propers/codex`; integration uses an
-explicit fast-forward push to the remote `main` ref.
+only the intended publication work and lawful source evidence.
+
+`origin/main` was fast-forwarded to
+`9aadae9fe3c48f04eecc1e7c50088c49abd17369`.
+[Pages run 36462444468](https://github.com/spincyc/triptych/actions/runs/36462444468)
+concluded success. The three live PDFs, canonical web HTML and owning calendar
+page each return HTTP 200 and match the verified local site byte for byte;
+the PDFs retain their independently reviewed hashes and the calendar page
+contains all four publication links. The
+[deployment evidence](workflows/reviews/gpt-1962-59-production-2026-09-28/deployment-evidence.json)
+records those concrete identities. The final follow-up commits only this
+observed deployment and completion bookkeeping. The workspace remains on
+`feature/propers/codex`; the remote main updates are ordinary fast-forwards.
 
 ## Known issues after the Twenty-sixth Sunday, 2026-09-25
 

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-09-28T18:10:16.753985Z",
+  "workflow_run_id": 36462444468,
+  "workflow_url": "https://github.com/spincyc/triptych/actions/runs/36462444468",
+  "workflow_head": "9aadae9fe3c48f04eecc1e7c50088c49abd17369",
+  "workflow_conclusion": "success",
+  "local_gates": {
+    "make check-deployment-sources": "pass",
+    "make public-site": "pass",
+    "tools/tpt public-alpha verify --deployment-target github-pages": "pass",
+    "make check-release-bindings": "pass"
+  },
+  "resources": [
+    {
+      "url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf",
+      "status": 200,
+      "bytes": 480574,
+      "sha256": "52b155c7e4366f0ef8304871ac1dabbbc56733aaaaa589f12085b396d7f18d43",
+      "matches_verified_local_artifact": true
+    },
+    {
+      "url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf",
+      "status": 200,
+      "bytes": 462674,
+      "sha256": "7681fbd92d4301f3138f5512d97f6273119a7364f2e02bbff2edb2ea115c1848",
+      "matches_verified_local_artifact": true
+    },
+    {
+      "url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf",
+      "status": 200,
+      "bytes": 275105,
+      "sha256": "75f155ca5c86429a1f487e6d076bffe3faf3026a4a6dbb9274be822344da963c",
+      "matches_verified_local_artifact": true
+    },
+    {
+      "url": "https://mystago.gy/web/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.html",
+      "status": 200,
+      "bytes": 90163,
+      "sha256": "e0f5a557eefe4701e1c9fee5387e12e3040750ff9126b3fe164fc42c2da2e56e",
+      "matches_verified_local_artifact": true
+    },
+    {
+      "url": "https://mystago.gy/library/traditional-latin-mass.html",
+      "status": 200,
+      "bytes": 27048,
+      "sha256": "0d3b5f110bcd266cd7da529e3f32126f6d32767d062892098bb64844d142158e",
+      "matches_verified_local_artifact": true
+    }
+  ],
+  "catalog_links_verified": [
+    "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf",
+    "web/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.html"
+  ]
+}

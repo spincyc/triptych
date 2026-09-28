@@ -206,3 +206,18 @@ lawful two-page Pustet 1862 Missal excerpt; private-path and credential-marker
 checks found none. Every outgoing source and historical object is intended
 for the public repository. The follow-up scope/status checkpoint adds only
 the work register, promise ledger and this cycle record.
+
+The ordinary atomic push advanced `origin/main` and the workspace branch to
+`9aadae9fe3c48f04eecc1e7c50088c49abd17369` without rewriting history.
+[Pages run 36462444468](https://github.com/spincyc/triptych/actions/runs/36462444468)
+concluded success, as did repository-hygiene run 36462444459. Live verification
+then returned HTTP 200 for the full, concise and homily PDFs, the canonical
+web HTML and the owning calendar page. Every response matches the verified
+local site byte for byte; all three PDF digests equal the accepted review
+digests, and the calendar page includes all four publication links.
+`deployment-evidence.json` records the workflow identity, verification instant,
+URLs, byte lengths and hashes. Main integration and verified deployment are
+complete. The final audit checkpoint changes only these deployment records
+and promise bookkeeping; it leaves every accepted publication byte unchanged.
+The complete ledger now passes with this target explicitly required complete:
+50 tracked deliverables, 40 complete, with no inherited missing-PDF errors.
