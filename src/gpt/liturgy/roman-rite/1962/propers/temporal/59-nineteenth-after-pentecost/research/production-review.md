@@ -321,3 +321,56 @@ These audit-only additions do not alter the rendered timestamp, production
 identity, prose, or inherited-source declarations. Content-review seals
 exclude pure contribution declarations by their owning contract; the final
 artifact snapshot and visual review will bind the complete metadata bytes.
+
+## Build artifacts — iteration 0
+
+All three final `make doc` builds completed on 28 September 2026 with the
+shared render timestamp **2026-09-28T16:45:22Z**. No content, layout,
+generation declaration or review seal was changed in this stage. The final
+LaTeX logs contain no warnings, undefined references, missing characters,
+overfull boxes or underfull boxes. The complete extracted texts were read;
+all physical pages contain text and no replacement character was found.
+`pdfinfo`, `pdffonts` and Ghostscript's null-page interpreter completed
+successfully. All font entries are embedded Latin Modern; all pages are
+US Letter. The component artifact check passed for the complete family.
+
+| Output | Physical pages | Bytes | Embedded font entries | SHA-256 |
+| --- | ---: | ---: | ---: | --- |
+| Study | 20 | 480574 | 15 | `52b155c7e4366f0ef8304871ac1dabbbc56733aaaaa589f12085b396d7f18d43` |
+| Concise study | 10 | 462674 | 17 | `7681fbd92d4301f3138f5512d97f6273119a7364f2e02bbff2edb2ea115c1848` |
+| Homily | 3 | 275105 | 11 | `75f155ca5c86429a1f487e6d076bffe3faf3026a4a6dbb9274be822344da963c` |
+
+The concise auxiliary evidence and page-by-page extraction agree: the
+complete inventory and four sense rows occupy physical page 1, chronology
+alone page 2, themes pages 3–4, and developed commentary begins on page 5.
+The study and concise totals include their terminal apparatus and meet
+their respective 20–50 and 10–12 page bounds. Every final extraction contains
+one revision timestamp and the rights colophon on its last physical page.
+
+The homily's 89.6 KiB per-page ratio exceeds the size-investigation trigger.
+Its bytes reproduce the previously investigated author proof exactly;
+the retained measurement identifies 244,939 compressed font-stream bytes,
+and a fresh `pdfimages -list` again finds no raster images. Font overhead
+accounts for the ratio; no PDF-only optimization was performed.
+
+`research/artifacts.json` records the exact final PDF hashes, render inputs
+and pagination evidence. The concrete PDFs remain under
+`build/gpt/liturgy/roman-rite/1962/propers/temporal/` with the bare identity,
+`-synthesis` and `-homily` suffixes. This run's
+`artifacts/build-artifacts-0000/` directory retains exact proof copies,
+all three auxiliary, log and recorder files, build output, PDF/font/structure
+checks, complete and per-page extractions, and `verification.json`.
+The repository `pdf-review` helper generated every page raster and contact
+sheet in that directory's dedicated replaceable `rasters/` child.
+
+This stage records mechanical artifact preparation, not a visual acceptance.
+The fresh visual reviewer must inspect all 33 pages after the upstream
+seal and artifact gates pass. No PDF was installed. The earlier limits on
+source evidence, bibliography automation and estimated delivery remain;
+shared inventory/catalog integration belongs to the coordinator.
+
+The stage's `make check-sources` passed source-library validation and found
+the document catalogue current. It stopped on stale shared publication-
+inventory hashes for this leaf's `evaluations/blocking-findings-v1.toml`
+and `research/production-review.md`; the coordinator must refresh those
+records before integration. `git diff --check` passed.

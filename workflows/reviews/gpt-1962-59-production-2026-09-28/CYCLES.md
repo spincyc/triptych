@@ -35,8 +35,11 @@ Its disposition is pending. No artifact has been accepted or installed.
 | synthesis-review | 0 | PASS | Complete concise prose and all 10 pages checked against the expansive study and exact cited loci; all 14 sealed inputs unchanged, no findings. |
 | derive-homily | 0 | PASS | Complete 1,301-word spoken homily and separate apparatus; three-page proof, estimated 10.4–11.3 minutes before pauses, all pages author-inspected. |
 | homily-preflight | 0 | PASS | All workflow-declared homily program checks passed. |
+| homily-review | 0 | PASS | Complete speech, three proof pages, source support and exact 1,301-word count checked; no findings. |
+| build-artifacts | 0 | PASS | Normal Make builds produced 20/10/3 pages; logs, structure, embedded fonts and extracted texts pass; exact snapshot and all 33 rasters prepared without source changes. |
+| artifact-gates | 0 | PASS | Artifact snapshot, physical-page evidence and all upstream accepted review seals match. |
 
-Homily review is active. Every agent stage uses a fresh worker with no
+Visual review is active. Every agent stage uses a fresh worker with no
 inherited authoring conversation and the packet's declared reasoning effort.
 Author stages use `high`; review stages use `xhigh`. No nested workers are
 authorized by this workflow.
