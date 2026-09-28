@@ -22,7 +22,7 @@ records this exact scope opening. Calendar computation identifies the
 Nineteenth Sunday after Pentecost; the context stage established the
 dated occurrence and preserved the local-calendar limits of its witnesses.
 
-**Complete on the workspace branch.** Run `b686b7a44f0e35e7`
+**Publication complete; main integration in progress.** Run `b686b7a44f0e35e7`
 reached **ACCEPTED** under `proper-study` v7, preserving actual seed commit
 `a1320fb62298ed6b1cf10d82d252212a03a484d0`. The installed family comprises
 the 20-page expansive study (6,930 substantive words), the 10-page concise
@@ -57,9 +57,10 @@ passed, existing web editions remained current, and accepted publication
 sources and PDFs were unchanged.
 
 The installer passed full source and web-currency checks, and the terminal
-publication gate passed all declared checks with no escalations. The complete
-promise ledger retains 23 inherited errors concerning older PDFs absent in
-this fresh clone, with no new errors; target completion is checked separately.
+publication gate passed all declared checks with no escalations. Before
+deployment preparation, the complete promise ledger retained 23 inherited
+errors concerning older PDFs absent in this fresh clone, with no new errors;
+target completion was checked separately.
 After archiving and refreshing both source inventories, full
 `make check-sources`, staged whitespace and privacy checks pass; installed
 artifact hashes still match. Publication checkpoint
@@ -67,8 +68,22 @@ artifact hashes still match. Publication checkpoint
 `origin/feature/propers/codex`; final bookkeeping closes the target ledger
 against that concrete checkpoint. The isolated target ledger passes with
 completion required, and all 50 ledger entries have exactly one work-register
-marker. Work is confined to this branch; no main merge or live deployment is
-claimed.
+marker.
+
+The maintainer subsequently requested a push to `main` on 28 September 2026.
+This authorizes integration and the automatic Pages deployment. The fetched
+`origin/main` remains `a1320fb62298ed6b1cf10d82d252212a03a484d0`, an ancestor
+of the completed publication checkpoint; no reconciliation or history rewrite
+is needed. The three local deployment gates pass: `make
+check-deployment-sources`, `make public-site`, and `public-alpha verify
+--deployment-target github-pages`. Release bindings remain exact. The 228
+missing older PDFs were restored from the live site and verified against its
+published checksums; the full ledger now passes (50 tracked, 39 complete while
+the new deployment requirement is open). The outgoing-range review confirms
+only the intended publication work and lawful source evidence. The push and
+verification of the resulting Pages run and affected live routes remain
+required. The workspace stays on `feature/propers/codex`; integration uses an
+explicit fast-forward push to the remote `main` ref.
 
 ## Known issues after the Twenty-sixth Sunday, 2026-09-25
 

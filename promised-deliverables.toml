@@ -3,8 +3,8 @@ schema_version = 1
 [[deliverables]]
 id = "gpt-1962-nineteenth-three-documents-2026-09-28"
 owner = "PROJECT-WORK.md"
-promise = "Drive the GPT proper-study workflow for the 1962 Nineteenth Sunday after Pentecost, Sunday 2026-10-04, through acceptance: expansive study, concise study, standalone homily and canonical web edition, with fresh cold reviews, installed artifacts, publication records and durable run evidence on feature/propers/codex."
-state = "complete"
+promise = "Drive the GPT proper-study workflow for the 1962 Nineteenth Sunday after Pentecost, Sunday 2026-10-04, through acceptance: expansive study, concise study, standalone homily and canonical web edition, with fresh cold reviews, installed artifacts, publication records and durable run evidence; then perform the subsequently requested validated push to main and verify its automatic Pages deployment."
+state = "in_progress"
 
   [[deliverables.requirements]]
   id = "gpt-59-authorization"
@@ -48,6 +48,12 @@ state = "complete"
   check = "contains"
   path = "PROJECT-WORK.md"
   needle = "86f187baf9d477ae65f7144911707c312e3fc28a"
+
+  [[deliverables.requirements]]
+  id = "gpt-59-main-and-pages"
+  criterion = "After the local deployment gates and exact outgoing-range disclosure review pass, the accepted publication reaches origin/main by ordinary fast-forward; the resulting Pages run and the three live PDFs, canonical web edition and owning calendar row are verified."
+  status = "open"
+  evidence = ["workflows/reviews/gpt-1962-59-production-2026-09-28/CYCLES.md"]
 
 [[deliverables]]
 id = "known-issues-after-pc-s52-2026-09-25"

@@ -175,3 +175,34 @@ The isolated target ledger passes `check-promised-deliverables` with
 one tracked deliverable, one complete. A separate full-register check confirms
 exactly one marker for each of the 50 ledger entries. The final whole-ledger
 check still reports only the 23 inherited older-PDF errors described above.
+
+## Main integration follow-up
+
+On 28 September 2026 the maintainer requested a push to `main`, extending
+the completed branch production to integration and its automatic Pages
+deployment. The fetched `origin/main` remains the original seed commit,
+an ancestor of the publication branch, so integration needs no source merge,
+rebase or rewritten history. The workspace remains on its required branch;
+the validated commit will be pushed explicitly to `refs/heads/main`.
+The local deployment gates and exact outgoing-range disclosure review precede
+that push; the resulting Pages run and changed live publication routes must
+be verified before deployment is represented as complete. These authorized
+follow-up steps supersede the earlier branch-only scope statements above.
+
+Local deployment preparation verified all 234 existing live PDFs against
+the site's SHA256SUMS and restored the 228 absent from this clone. The three
+new publication PDFs were preserved at their accepted hashes. This permits
+the complete site to be checked without rebuilding unrelated publications.
+The full promise ledger now passes: 50 tracked, 39 complete with the new
+main-and-Pages requirement still open. The earlier 23 missing-PDF errors are
+therefore resolved locally rather than waived.
+
+All three deployment gates pass: `make check-deployment-sources`,
+`make public-site`, and `tools/tpt public-alpha verify --deployment-target
+github-pages`. `make check-release-bindings` reports zero stale bindings and
+`tmt check` passes. The exact outgoing publication range contains twelve
+commits and 216 newly reachable blobs. Its only new binary source is the
+lawful two-page Pustet 1862 Missal excerpt; private-path and credential-marker
+checks found none. Every outgoing source and historical object is intended
+for the public repository. The follow-up scope/status checkpoint adds only
+the work register, promise ledger and this cycle record.
