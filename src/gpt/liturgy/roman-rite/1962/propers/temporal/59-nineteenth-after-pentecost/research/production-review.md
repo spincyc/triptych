@@ -227,3 +227,97 @@ validation, then stopped at the document-catalogue prerequisite because the
 declared future `homily.tex` is not yet implemented. That global gate must
 be completed after the homily stage. Shared source inventories, catalog
 integration, commits and workflow advancement remain with the coordinator.
+
+## Derive homily — iteration 0
+
+The standalone homily, **The Garment of Charity**, was derived on
+28 September 2026 after reading both reviewed studies in full and the
+canonical research scope and interpretation records. It addresses the
+packet's adult parish assembly for the 1962 Nineteenth Sunday after
+Pentecost, 4 October 2026. It implements the already-declared `homily.tex`,
+`homily-body` and `homily-apparatus` without changing the manifest, research
+evidence or either study. The shared generation record identifies the
+contribution and finalization timestamp **2026-09-28T16:45:22Z**.
+
+The controlling argument is the charity interpretation: the prepared feast
+calls its guests into the Bridegroom's love. The compatible renewed-action
+reading supplies the Epistle's truthful speech, restrained anger and work
+ordered to sharing. The Collect, Secret, Communion and Postcommunion place
+those responses within divine help, fruitful reception and continuing
+healing. The speech preserves the seriousness of judgment, the distinction
+between culpable withholding and inability, and Gregory's consolation for
+imperfect charity. Its practical examples are exhortations, not invented
+events; it ends as preaching and includes no newly composed recited prayer.
+No new source-dependent claim or upstream repair was introduced.
+
+The supporting primary passages were independently reread in the retained
+witnesses: Augustine, Sermon 90.4–6 and 9–10 (NPNF I.6, English Sermon XL),
+and *Enarrationes* 118, opening Aleph exposition 4–5 (NPNF I.8, English
+Psalm 119); Gregory, *Gospel Homilies* II.38.9–12; Chrysostom, *Ephesians*
+XIV on 4:25–28; and Schuster, *Sacramentary* III, the Collect and concluding
+Secret, Communion and Postcommunion exposition on pp. 171–174. The exact
+loci and the connection to the reviewed interpretations appear outside the
+speech under the source note and `References`. Historical transcriptions
+and Schuster's OCR retain their recorded evidence limits; this was no fresh
+facsimile collation of those editions.
+
+The body contains **1,301 spoken words**, counting alphabetic words with
+internal apostrophes or hyphens as one and excluding all title and terminal
+matter. At 115–125 words per minute the estimate is **10.4–11.3 minutes**
+before additional pauses, suitable for the requested approximate 10–12
+minutes. A silent editorial read-through checked the narrative sequence,
+sentence length, natural attribution, transitions, practical response and
+return to the opening feast image. No audible rehearsal, human performance
+or measured delivery time is claimed.
+
+The author proof is **3 physical pages**. The literal shared imports occur
+in the prescribed order; the full-width title precedes the shared
+two-column `properhomily` environment. Only the spoken component occurs
+inside that environment, on pages 1–2. Its closing page break places the
+single-column source/delivery note, references, one visible timestamp and
+rights colophon together on page 3. All three page rasters were inspected;
+the extracted text was read. No clipping, overlap, missing glyph or stranded
+heading was found. The final LaTeX log has no warnings, undefined references,
+overfull boxes or underfull boxes. `pdfinfo` confirms US Letter and the
+declared metadata; `pdffonts` confirms 11 embedded Latin Modern font entries.
+
+The PDF is 275,105 bytes, approximately 89.6 KiB per page. The size threshold
+was investigated: ten compressed embedded font streams account for 244,939
+bytes (about 89 percent); `pdfimages -list` reports no raster images. This
+short text-only PDF's font overhead explains the per-page ratio; no
+independent PDF optimization or source-image alteration was performed.
+
+The required `make doc` build, homily component artifact gate, complete
+homily content preflight and exact run-provenance check passed. All 28 source
+bindings resolve. The manual reference list was compared with actual uses;
+the automated references-used check recognizes zero formal bibliography
+entries and supplies no positive audit of this description list.
+`git diff --check` passed. The broader `make check-sources` passed source
+library validation but stopped at the shared catalogue and inventory checks:
+the catalogue has drifted, and the source inventory lacks the new homily
+files and has a stale evaluation-record hash. Those coordinator-owned
+refreshes remain required before integration; no shared record was changed
+in this dispatch.
+
+The exact proof is `homily-author-proof.pdf` in run
+`b686b7a44f0e35e7`'s `artifacts/derive-homily-0000/` directory, SHA-256
+`75f155ca5c86429a1f487e6d076bffe3faf3026a4a6dbb9274be822344da963c`.
+The proof's auxiliary, log and recorder files, extracted text, count/size
+evidence, check logs and hash manifest accompany it outside the dedicated
+replaceable raster child. This is author verification only. Independent
+homily review, the final shared-timestamp three-document build, cold visual
+review and installation remain subsequent workflow events. No PDF was
+installed, and no commit or workflow transition was performed here.
+
+## Coordinator provenance audit before final artifact production
+
+The structured generation declarations now also account for context and
+research work, workflow integration, and the independent source/content
+review configuration already used in this run. The exposed worker efforts
+are retained as `high` and `xhigh`; the coordinator's unexposed reasoning
+effort and all unavailable model/runtime details remain explicitly named
+as unexposed. No exact model variant or runtime version was inferred.
+These audit-only additions do not alter the rendered timestamp, production
+identity, prose, or inherited-source declarations. Content-review seals
+exclude pure contribution declarations by their owning contract; the final
+artifact snapshot and visual review will bind the complete metadata bytes.

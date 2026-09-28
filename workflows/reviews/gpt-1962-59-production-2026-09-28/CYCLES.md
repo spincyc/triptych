@@ -32,8 +32,11 @@ Its disposition is pending. No artifact has been accepted or installed.
 | study-review | 1 | PASS | Complete study, source loci, proper texts and chronology checked; all 17 sealed files unchanged, no blocking findings. |
 | derive-synthesis | 0 | PASS | Complete 10-page concise study with 3,719 substantive words, required four-page opening and full author page inspection. |
 | synthesis-preflight | 0 | PASS | All workflow-declared synthesis program checks passed. |
+| synthesis-review | 0 | PASS | Complete concise prose and all 10 pages checked against the expansive study and exact cited loci; all 14 sealed inputs unchanged, no findings. |
+| derive-homily | 0 | PASS | Complete 1,301-word spoken homily and separate apparatus; three-page proof, estimated 10.4–11.3 minutes before pauses, all pages author-inspected. |
+| homily-preflight | 0 | PASS | All workflow-declared homily program checks passed. |
 
-Concise-study review is active. Every agent stage uses a fresh worker with no
+Homily review is active. Every agent stage uses a fresh worker with no
 inherited authoring conversation and the packet's declared reasoning effort.
 Author stages use `high`; review stages use `xhigh`. No nested workers are
 authorized by this workflow.
@@ -58,6 +61,16 @@ The research-2 integrated attempt reaches the next unfinished entrypoint,
 At this checkpoint, `make check-release-bindings` reports exactly one stale
 binding: this target's ungenerated canonical web edition. Existing publication
 bindings are unchanged; the new binding belongs to the installation stage.
+
+After homily authoring, the coordinator refreshed the document catalogue,
+source projection, structural inventory and family ledger with their owning
+tools. The complete `make check-sources` passes. The projected source changes
+correspond to the registered witnesses, checked public-domain English passages
+and target bindings; protected USCCB wording remains withheld. The refreshed
+reader-facing catalogue and projection require their scoped release-binding
+refresh during installation. The generation audit additionally records the
+actual research, reviewer and coordinator configurations without changing
+rendered prose, the finalized timestamp or production identity.
 
 The expansive-study checkpoint's full staged whitespace check reported an
 extra blank line at EOF in `sections/00-opening.tex` and

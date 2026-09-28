@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-09-28"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 143
-source_surface_file_count = 2390
-snapshot = "sha256:be5bf03728912051aecd14f5af67f4b82719fcf06a031169701753c313f4b62e"
+source_surface_file_count = 2393
+snapshot = "sha256:2f48f25d5765eccdfc594d870674ff15942c6b7f64838acade06dd3f54b3ca13"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -10241,7 +10241,13 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-penteco
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/evaluations/blocking-findings-v1.toml"
-sha256 = "8ef246736e2ca824775a5467e6c086d47e441ff153c9758990106c8649dc808f"
+sha256 = "6d89af0af1a9f7b20c50581b77fa68fe882bc862e7257e4f8d17739e5563e226"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/homily.tex"
+sha256 = "157285a37dd7fd418946051a2b35242f9dfb682f104028becb0c005e4d628c52"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"]
 
@@ -10301,7 +10307,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecos
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/production-review.md"
-sha256 = "60df210e253bc6642284ebdcd2e681b508c7024f9b73adc4afa3ce91cba02f62"
+sha256 = "9f651c86e245fba2f2d6a434089fb4e7a0bbcbcf3e9a85255126ebeec5f7b097"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"]
 
@@ -10404,6 +10410,18 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecos
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/90-apparatus.tex"
 sha256 = "9bc8e2f3d99932e36496596c5a0519e26f5746e40d98f374b63e4c50151a5ab9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/homily/10-body.tex"
+sha256 = "c09bbd3cf387ec91622355e4472f67f168d3173522dc9702751998048a45b756"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/homily/90-apparatus.tex"
+sha256 = "586e72928869a85e106e5230852890a0ad71e3202faf7ee6712235c21205e8c8"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"]
 

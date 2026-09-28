@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it.",
  "counted": {
-  "documents": 198,
-  "issues": 230,
+  "documents": 199,
+  "issues": 233,
   "pages": 6344,
   "titles_unrecorded": 0,
-  "works": 144
+  "works": 145
  },
  "models": [
   {
@@ -29,7 +29,7 @@
    "id": "claude-fable-5"
   },
   {
-   "documents": 4,
+   "documents": 5,
    "id": "GPT-6"
   },
   {
@@ -52,7 +52,7 @@
    "label": "Claude"
   },
   {
-   "documents": 142,
+   "documents": 143,
    "id": "gpt",
    "label": "GPT"
   }
@@ -81,7 +81,7 @@
   },
   {
    "id": "liturgy",
-   "works": 52
+   "works": 53
   },
   {
    "id": "theology",
@@ -7207,6 +7207,93 @@
     }
    ],
    "leaf": "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost",
+   "section": "liturgy"
+  },
+  {
+   "catalog": null,
+   "catalog_page": null,
+   "editions": [
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": null,
+       "pdf": null,
+       "pdf_absent": "no PDF is installed for this issue",
+       "subject": "A concise comparison of the 1962 Roman Missal propers for 4 October 2026",
+       "title": "Nineteenth Sunday after Pentecost: Charity and the Renewed Life"
+      },
+      {
+       "kind": "homily",
+       "pages": null,
+       "pdf": null,
+       "pdf_absent": "no PDF is installed for this issue",
+       "subject": "A homily for an adult parish assembly on the 1962 Roman Missal propers for 4 October 2026",
+       "title": "Nineteenth Sunday after Pentecost: The Garment of Charity"
+      }
+     ],
+     "authorization": null,
+     "contributions": [
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; canonical expansive study authored from reviewed research, exact appointed-text assembly, two developed interpretations, historical appendix, component manifest, and author proof verification; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; study reentry incorporating reviewed Ephesians authorship and chronology alternatives, Gregory reference correction, and renewed author proof verification; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; concise study derived from the accepted expansive study, with complete inventory, four-sense overview, reviewed chronology, two-page thematic movement, integrated comparison and author proof verification; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; standalone homily derived from both reviewed studies, with an adult-parish argument joining the wedding garment, renewed conduct and the Mass's prayers, and separate source and delivery apparatus; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; calendar and source-context resolution, research, evidence registration, interpretive source mapping and research repairs; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "unexposed: reasoning effort, exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; workflow coordination, shared source-record integration and provenance audit; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=xhigh; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; independent source and content review under the declared workflow; unexposed: client version and server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "GPT-6"
+     ],
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
+     "produced": {
+      "run_id": "b686b7a44f0e35e7",
+      "seed_commit": "a1320fb62298ed6b1cf10d82d252212a03a484d0",
+      "workflow_digest": "9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38",
+      "workflow_id": "proper-study",
+      "workflow_version": "7"
+     },
+     "provider": "gpt",
+     "reviewed": "2026-09-28",
+     "revised": "2026-09-28T16:45:22Z",
+     "status": null,
+     "subject": "An expansive study of the 1962 Roman Missal propers for 4 October 2026",
+     "title": "Nineteenth Sunday after Pentecost: The Feast and the New Person",
+     "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/main.tex"
+    }
+   ],
+   "leaf": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
    "section": "liturgy"
   },
   {

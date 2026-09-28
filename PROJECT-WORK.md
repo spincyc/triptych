@@ -34,8 +34,12 @@ passed. Author-study iteration 1 incorporated the reviewed comparison and
 corrected the Gregory link; its preflight and renewed study review passed.
 The expansive study is content-accepted. Concise-study derivation and its
 preflight passed: the proof is 10 pages with 3,719 substantive words and the
-required four-page opening. Fresh concise-study review is active; the homily
-and final artifact/publication stages remain ahead.
+required four-page opening. Fresh concise-study review passed with no
+findings and all 14 sealed inputs unchanged. Homily derivation and preflight
+passed: the three-page proof has 1,301 spoken words, an estimated 10.4–11.3
+minutes before pauses. Fresh homily review is active; final artifact and
+publication stages remain ahead. The complete `make check-sources` now
+passes after the owning catalogue, source projection and inventory refreshes.
 The context records a dated FSSP Ordo,
 six inspected Missal page images, ten appointed elements and the Trinity
 Preface, the omitted St Francis commemoration, and the separate optional Rosary
