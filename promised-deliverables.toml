@@ -4,7 +4,7 @@ schema_version = 1
 id = "gpt-postconciliar-twenty-seventh-2026-09-28"
 owner = "PROJECT-WORK.md"
 promise = "Drive the GPT proper-study workflow for the postconciliar Twenty-seventh Sunday in Ordinary Time, Year A, on 2026-10-04 through acceptance, installing the three reviewed PDFs and canonical web edition with durable research and review evidence; separate GPT and Claude documents into columns in the Sunday propers catalog."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "pc-s53-authorization"
@@ -52,8 +52,11 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "validated-checkpoint"
   criterion = "Required source and publication checks pass, durable records match actual workflow and artifact state, and the coherent delivered changes are committed on the workspace branch."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/gpt-pc-s53-production-2026-09-28/README.md"]
+  check = "contains"
+  path = "PROJECT-WORK.md"
+  needle = "63c7aba000ad87893ba16ba53cfef6e335074628"
 
 [[deliverables]]
 id = "gpt-1962-nineteenth-three-documents-2026-09-28"

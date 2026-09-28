@@ -91,8 +91,9 @@ line at EOF in `synthesis.tex` and `synthesis-01` through `synthesis-05` compone
 the earlier unstaged checks did not inspect these new files. These six source
 style warnings are retained to preserve the accepted immutable source and PDF
 identities; the default staged whitespace check is not claimed to pass.
-Final commit bookkeeping remains pending on
-`feature/propers/codex`; no Pages deployment is claimed.
+Validated content checkpoint `63c7aba000ad87893ba16ba53cfef6e335074628`
+contains the accepted publication and its integration. The delivery is complete
+on `feature/propers/codex`; no Pages deployment is claimed.
 
 ## GPT 1962 Nineteenth Sunday three documents, 2026-09-28
 
