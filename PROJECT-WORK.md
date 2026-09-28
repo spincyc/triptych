@@ -22,8 +22,9 @@ records this exact scope opening. Calendar computation identifies the
 Nineteenth Sunday after Pentecost; the context stage must establish the
 dated occurrence and preserve any local-calendar limitation from its witnesses.
 
-**In progress.** Authorization and acceptance criteria are recorded; the run
-has not yet been seeded and no publication has been authored or accepted.
+**In progress.** Run `b686b7a44f0e35e7` is seeded under `proper-study` v7 at
+`a1320fb62298ed6b1cf10d82d252212a03a484d0`. The scope gate passed and context
+resolution is underway; no publication has been authored or accepted.
 Every worker and cold reviewer will be dispatched fresh at the workflow's
 declared effort. The owning leaf will retain its research, review dispositions,
 and terminal run evidence. Work remains on `feature/propers/codex`, the
@@ -34,6 +35,13 @@ Completion requires workflow acceptance, all three reviewed and installed PDFs,
 the reviewed web edition, owning catalog and release records, source and
 publication checks, reconciled durable records, and a validated branch
 checkpoint. Publication or a successful build alone does not fulfill it.
+
+The untouched clone passes `make check-sources`, `make check-release-bindings`
+and `tmt check`. The promise-ledger check has inherited missing-installed-PDF
+failures because those older outputs are ignored and absent from a fresh clone;
+the new entry adds no failures compared with the ledger at the seed commit.
+The [cycle record](workflows/reviews/gpt-1962-59-production-2026-09-28/CYCLES.md)
+tracks this run's actual transitions and validation limits.
 
 ## Known issues after the Twenty-sixth Sunday, 2026-09-25
 
