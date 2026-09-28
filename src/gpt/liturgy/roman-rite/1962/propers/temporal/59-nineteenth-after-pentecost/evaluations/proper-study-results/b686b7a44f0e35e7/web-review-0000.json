@@ -1,0 +1,17 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+    "files": {},
+    "provider": "gpt",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.md": "dc4948bdc26ab27a24d562018196b556298903d256b7364bf918997b38c25eb5"
+    }
+  },
+  "stage": "web-review",
+  "summary": "PASS for build/web/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.md, SHA-256 dc4948bdc26ab27a24d562018196b556298903d256b7364bf918997b38c25eb5, matching research/web-artifact.json: the complete Markdown was compared with the sealed 20-page research PDF and canonical TeX, preserving all appointed texts, both interpretations and their four senses, chronology distinctions, references, all 38 exact source notes, revision timestamp and rights notice without TeX debris or exposed model/runtime metadata. A Chromium preview using the site's locked Markdown 3.10.3 renderer and stylesheet confirmed representative desktop/mobile sections, all fragment targets, working footnote navigation and return, readable dossier reflow and a functioning horizontal inventory scroll without page overflow; this review covers local conversion fidelity and presentation, while remote URL availability and the deployed site were not audited."
+}

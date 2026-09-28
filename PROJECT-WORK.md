@@ -22,58 +22,49 @@ records this exact scope opening. Calendar computation identifies the
 Nineteenth Sunday after Pentecost; the context stage established the
 dated occurrence and preserved the local-calendar limits of its witnesses.
 
-**In progress.** Run `b686b7a44f0e35e7` is seeded under `proper-study` v7 at
-`a1320fb62298ed6b1cf10d82d252212a03a484d0`. Scope and context resolution have
-passed; research and its program preflight have passed. Cold research review
-returned one dependency-closure repair. Research iteration 1 and its preflight
-have passed. Research-review iteration 1 passed with no findings, and the
-expansive-study author stage and its preflight have passed. Cold study review
-returned STU-CHR-001, requiring the modern Ephesians historical horizon;
-research iteration 2, its preflight and fresh research-review iteration 2 have
-passed. Author-study iteration 1 incorporated the reviewed comparison and
-corrected the Gregory link; its preflight and renewed study review passed.
-The expansive study is content-accepted. Concise-study derivation and its
-preflight passed: the proof is 10 pages with 3,719 substantive words and the
-required four-page opening. Fresh concise-study review passed with no
-findings and all 14 sealed inputs unchanged. Homily derivation and preflight
-passed: the three-page proof has 1,301 spoken words, an estimated 10.4–11.3
-minutes before pauses. Fresh homily review passed with no findings. All three
-texts are content-accepted. Final artifact production and its gate passed:
-20/10/3 pages, exact PDF/render-input snapshot and concise physical-page
-evidence. Fresh visual review passed all 33 pages with no findings and all
-30 sealed inputs unchanged. Canonical web conversion passed, including a
-tested converter repair for body-imported generated chronology; existing web
-editions remain byte-current. Fresh web review is active. The complete `make check-sources` now
-passes after the owning catalogue, source projection and inventory refreshes.
-The context records a dated FSSP Ordo,
-six inspected Missal page images, ten appointed elements and the Trinity
-Preface, the omitted St Francis commemoration, and the separate optional Rosary
-external solemnity. Research records full Latin/English collation, 28 exact
-source bindings, chronology, bounded reception and two proposed readings.
-No final publication or installed artifact family has yet been accepted.
-The Ephesians repair adds one conditional critical-profile composition unit
-and current restricted USCCB source metadata while preserving traditional
-claims and unchanged default coverage. Its source title preserves the
-approximation dropped by the existing concise date formatter for the word
-“around”; the research audit records that separate tooling limitation without
-claiming a code repair.
-Every worker and cold reviewer will be dispatched fresh at the workflow's
-declared effort. The owning leaf will retain its research, review dispositions,
-and terminal run evidence. Work remains on `feature/propers/codex`, the
-workspace's required branch; this task does not update another checkout or
-merge into `main`.
+**Workflow accepted; final checkpoint pending.** Run `b686b7a44f0e35e7`
+reached **ACCEPTED** under `proper-study` v7, preserving actual seed commit
+`a1320fb62298ed6b1cf10d82d252212a03a484d0`. The installed family comprises
+the 20-page expansive study (6,930 substantive words), the 10-page concise
+study (3,719 substantive words, with the required four-page opening), a
+three-page homily (1,301 spoken words, estimated 10.4–11.3 minutes before
+pauses), and the canonical web edition. All installed bytes match their
+independently reviewed hashes. The calendar row, three separate release
+records and scoped site bindings are installed; there is no companion web
+authority. PDFs remain intentionally ignored under the repository's PDF
+migration policy, with sources, exact receipts and release records tracked.
 
-Completion requires workflow acceptance, all three reviewed and installed PDFs,
-the reviewed web edition, owning catalog and release records, source and
-publication checks, reconciled durable records, and a validated branch
-checkpoint. Publication or a successful build alone does not fulfill it.
+The fresh research reviews required dependency closure and then a current
+Ephesians historical comparison. Both repairs and their downstream study
+incorporation passed renewed review. Fresh study, concise, homily, visual
+and web reviews passed; every agent stage used the declared effort. The leaf
+archives all 30 exact packets, 30 accepted submissions, original seed records
+and terminal evidence under
+`evaluations/proper-study-results/b686b7a44f0e35e7/`. The
+[cycle record](workflows/reviews/gpt-1962-59-production-2026-09-28/CYCLES.md)
+records every transition, exact artifact identities and validation limits.
 
-The untouched clone passes `make check-sources`, `make check-release-bindings`
-and `tmt check`. The promise-ledger check has inherited missing-installed-PDF
-failures because those older outputs are ignored and absent from a fresh clone;
-the new entry adds no failures compared with the ledger at the seed commit.
-The [cycle record](workflows/reviews/gpt-1962-59-production-2026-09-28/CYCLES.md)
-tracks this run's actual transitions and validation limits.
+Research establishes the dated occurrence, ten appointed elements, Trinity
+Preface, omitted St Francis commemoration and separate optional Rosary Mass;
+it records 28 exact source bindings, lawful textual witnesses, chronology,
+bounded reception and two developed readings. The Ephesians comparison keeps
+the secretary and later-disciple alternatives distinct and preserves the
+traditional profile. Its title retains the approximation dropped by the
+existing concise date formatter; that separate tooling limitation remains
+documented. A converter defect affecting body-imported generated chronology
+was repaired with regression coverage: 131 converter tests and `tmt check`
+passed, existing web editions remained current, and accepted publication
+sources and PDFs were unchanged.
+
+The installer passed full source and web-currency checks, and the terminal
+publication gate passed all declared checks with no escalations. The complete
+promise ledger retains 23 inherited errors concerning older PDFs absent in
+this fresh clone, with no new errors; target completion is checked separately.
+After archiving and refreshing both source inventories, full
+`make check-sources`, staged whitespace and privacy checks pass; installed
+artifact hashes still match. The coherent branch checkpoint remains to be
+recorded. Work is confined to `feature/propers/codex`; no main merge or live
+deployment is claimed.
 
 ## Known issues after the Twenty-sixth Sunday, 2026-09-25
 

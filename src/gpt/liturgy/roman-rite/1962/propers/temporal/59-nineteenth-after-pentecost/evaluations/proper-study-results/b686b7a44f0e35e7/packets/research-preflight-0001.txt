@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v7
+WORKFLOW_DIGEST: 9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38
+RUN_ID: b686b7a44f0e35e7
+COMMIT: a1320fb62298ed6b1cf10d82d252212a03a484d0
+STAGE: research-preflight
+ITERATION: 1
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-10-04","proper":"liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost","provider":"gpt","research_handoff":"none"}
+DOCUMENT_ROOT: src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"RES-002","location":"src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/interpretations.md:28","problem":"Reading A describes Gregory's image as a \"two-thread image.\" In Homiliae in Evangelia 38.10 the retained Latin says that cloth is woven on two pieces of wood, upper and lower (\"in duobus lignis, superiore videlicet et inferiore, vestis texitur\"). The interpretation of inseparable love of God and neighbor is supported, but the physical detail of the attributed image is imprecise.","required_result":"Call this Gregory's weaving analogy, or accurately identify the two upper and lower loom beams, when carrying the passage into the study.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

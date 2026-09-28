@@ -49,7 +49,7 @@ provider = "gpt"
 run_id = "b686b7a44f0e35e7"
 workflow = "proper-study"
 workflow_version = 7
-stage = "visual-review"
+stage = "web-review"
 iteration = 0
 disposition = "PASS"
 standing = 0
@@ -107,6 +107,18 @@ observation_count = 0
 
 [[stages]]
 stage = "visual-review"
+iteration = 0
+disposition = "PASS"
+run_id = "b686b7a44f0e35e7"
+workflow = "proper-study"
+workflow_version = 7
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[stages]]
+stage = "web-review"
 iteration = 0
 disposition = "PASS"
 run_id = "b686b7a44f0e35e7"

@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v7
+WORKFLOW_DIGEST: 9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38
+RUN_ID: b686b7a44f0e35e7
+COMMIT: a1320fb62298ed6b1cf10d82d252212a03a484d0
+STAGE: homily-preflight
+ITERATION: 0
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-10-04","proper":"liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost","provider":"gpt","research_handoff":"none"}
+DOCUMENT_ROOT: src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: []
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

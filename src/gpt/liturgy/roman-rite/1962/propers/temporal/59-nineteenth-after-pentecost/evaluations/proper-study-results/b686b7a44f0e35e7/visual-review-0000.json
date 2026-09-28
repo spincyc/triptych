@@ -1,0 +1,55 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "artifacts": {
+      "document": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+      "pagination_evidence": {
+        "build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.aux": "5fa40538283f0773f66967f7302f515865ba94edee61c1d71b60e74cdf1873bd",
+        "build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.aux": "9df575e5f9cac9ee0c76ac8912f1240a82c0b622cc7b7b186d317e2175039591"
+      },
+      "pdfs": {
+        "build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf": "75f155ca5c86429a1f487e6d076bffe3faf3026a4a6dbb9274be822344da963c",
+        "build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf": "7681fbd92d4301f3138f5512d97f6273119a7364f2e02bbff2edb2ea115c1848",
+        "build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf": "52b155c7e4366f0ef8304871ac1dabbbc56733aaaaa589f12085b396d7f18d43"
+      },
+      "provider": "gpt",
+      "render_inputs": {
+        "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+        "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+        "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/generation-metadata.tex": "fa891ea9324b98e71976931f984ca6fd5eee7e4c61cf84f6dc19aca62f348b8b",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/homily.tex": "157285a37dd7fd418946051a2b35242f9dfb682f104028becb0c005e4d628c52",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/main.tex": "ec2ca21fd848f2586e697e283391f4a0172a4776f6b710d948432bae3aad2892",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/proper-components.toml": "12bd9c01dbe2e2542d3f6e74d1ca4f6b4b4da2fb780259cb83cf6efaba44dfff",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/chronology-annotations.tex": "b7e50caa9329f553ed4544bba2298cb5fea2e4bb6fba1dbb7afcf8cfac461ea0",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/00-opening.tex": "c9fd052b3aa7b014f13702384a65556b07cfe6ebc23d388a3222cfdac59d0e42",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/10-appointed-text.tex": "979fb7a8373b38bcc839476b084f2bab2cfa2d2d8621d9da7ccf5d95ff89aa75",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/20-commentary.tex": "1aea1ade3c71fbbf67069c6de8689e1b7557ad78ed0212fc8cf970478da96dd3",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/30-clothed-charity.tex": "d9742de8f4cab5242c474f162607afb5b69ef73d75639d9c045b058e9da66762",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/40-renewed-action.tex": "aee2a7c42211e3f9927d5d3d2c6be224864c3b37556de1f2643951d361f63b2f",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/50-comparison.tex": "d3886b794879124c3b3b0f582e6b26bd6650093d267d1e1ddc79b35f7209bc75",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/70-date-location.tex": "ca60f75fe144552191512d8ec898499a12ecf268c977e43f9f709f9634eaa707",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/90-study-apparatus.tex": "e17406bb8cb0a46d192e116f6732217d2010e1d55884616288a731e8ec3e5dbc",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/01-inventory.tex": "2cc6eb5f2eeab40c9176a342f51237f68c56131d9e723e696b4466ba3207ac7a",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/02-overview.tex": "d753a9d37d748263a8d2f723a0b0d4a16a9e2aef2cb774061b2d4307a135a448",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/03-chronology.tex": "febe3f29c5d7927f58206560140d90906f6b98d57709900665b1d1d6eddf5d1f",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/04-themes.tex": "9d81d5f78cac5bf0fa02a0812939667f84769462d3ae02ebb691ea8c708f9910",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/10-commentary.tex": "ed48c2709f7744b0ad5b8c18844f237a1e46e4e835e50385c175f9ce14354b79",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/90-apparatus.tex": "9bc8e2f3d99932e36496596c5a0519e26f5746e40d98f374b63e4c50151a5ab9",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/homily/10-body.tex": "c09bbd3cf387ec91622355e4472f67f168d3173522dc9702751998048a45b756",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/homily/90-apparatus.tex": "586e72928869a85e106e5230852890a0ad71e3202faf7ee6712235c21205e8c8",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/synthesis.tex": "c01caba4af27a296fd7390e39f1663e72c8e3201f50072e386079f69e101dc5b"
+      },
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+    "files": {},
+    "provider": "gpt",
+    "review": "visual",
+    "schema": 1
+  },
+  "stage": "visual-review",
+  "summary": "PASS after opening all three contact sheets and individually inspecting every full-page raster: under build/gpt/liturgy/roman-rite/1962/propers/temporal/, 59-nineteenth-after-pentecost.pdf, physical pages 1\u201320, receipt SHA-256 52b155c7e4366f0ef8304871ac1dabbbc56733aaaaa589f12085b396d7f18d43; 59-nineteenth-after-pentecost-synthesis.pdf, physical pages 1\u201310, receipt SHA-256 7681fbd92d4301f3138f5512d97f6273119a7364f2e02bbff2edb2ea115c1848; and 59-nineteenth-after-pentecost-homily.pdf, physical pages 1\u20133, receipt SHA-256 75f155ca5c86429a1f487e6d076bffe3faf3026a4a6dbb9274be822344da963c, all matching research/artifacts.json (receipt-file SHA-256 32bc9554c9fde55dcd4c4dff3cf38e1e277cadc13fd3271ee53ca69f37bd7a30) and the packet seal. The 30 sealed inputs match; the shared Latin Modern 11-point article and 0.75-inch-margin monochrome presentation, study lane headings and distinct four-senses blocks, concise physical opening and visible interleaving, homily full-width title/two-column speech/separate full-width apparatus, page breaks, tables, footnotes and final-page rights colophons are satisfactory, with embedded fonts, clean Ghostscript parsing, complete text extraction and settled markers agreeing with the actual pages; this visual review does not re-adjudicate upstream source acceptance or certify uninstalled publication mirrors or timed oral delivery."
+}

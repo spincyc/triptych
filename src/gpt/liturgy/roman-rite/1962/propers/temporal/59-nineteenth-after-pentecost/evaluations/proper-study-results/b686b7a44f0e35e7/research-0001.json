@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "note": "The research seal compiler includes src/sources/inventories/author-standing-v1.toml with SHA-256 47660310e0e68890d77d1870168efaf76dee832f9d537ba9b795691296c54fda, equal to the current owner bytes; the candidate seal is retained in .scratch/tlm-2026-10-04/research-0001/research-review-seal.json. Author roles are unchanged.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "research",
+  "summary": "Repaired RES-001 by adding the controlling author-standing inventory to review-dependencies.toml, preserving the existing author roles and confirming its current SHA-256 in a freshly compiled v3 research seal. Also corrected RES-002 to Gregory's weaving analogy after rereading Homily 38.10; scope.md records the repair. The research phase and standing checks pass; make check-sources remains limited by the unfinished leaf's absent web-edition.toml, while source-library validation passes. The coordinator must check the same owner/hash in the next live review packet after advancement."
+}

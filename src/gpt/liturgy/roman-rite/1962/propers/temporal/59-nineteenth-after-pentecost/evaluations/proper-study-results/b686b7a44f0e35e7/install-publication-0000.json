@@ -1,0 +1,7 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/production-review.md",
+  "disposition": "PASS",
+  "iteration": 0,
+  "stage": "install-publication",
+  "summary": "Installed all three accepted PDFs with the normal make install-doc recipes and verified build/install SHA-256 identity, installed and staged the byte-identical canonical web edition, created the three exact alpha release records, wired one canonical Sunday row, refreshed the owning catalog/source tools and only the 16 reconciled task-owned release inputs, and recorded actual accepted reviews and installation facts in research/production-review.md. Artifact and publication checks, make check-sources, full make check-web-editions-current, scoped public-alpha check (global source/release/authorization validity), final exact-byte verification and git diff --check passed; tools/release-bindings status reports exact: 0 stale binding(s), with concrete paths, hashes and exact commands in .scratch/tlm-2026-10-04/install-publication-0000/installation-evidence.json; no workflow advancement, commit, push or deployment was performed."
+}

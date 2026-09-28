@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v7
+WORKFLOW_DIGEST: 9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38
+RUN_ID: b686b7a44f0e35e7
+COMMIT: a1320fb62298ed6b1cf10d82d252212a03a484d0
+STAGE: study-preflight
+ITERATION: 1
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-10-04","proper":"liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost","provider":"gpt","research_handoff":"none"}
+DOCUMENT_ROOT: src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"STU-CIT-001","location":"sections/90-study-apparatus.tex:77, Gregory the Great reference","problem":"The printed Wikisource URL ends in Homiliae_in_Evangelia, whereas the retained edition and its provenance identify Homiliarum_in_Evangelia. The printed address could not be resolved during review; the latter address opened successfully and includes the link to Homily XXXVIII. The work and section numbers still identify the source, so this is a navigation defect rather than unsupported attribution.","required_result":"Replace the printed URL with the checked edition index https://la.wikisource.org/wiki/Homiliarum_in_Evangelia or its exact Homily XXXVIII link, retaining the existing work and section locators.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

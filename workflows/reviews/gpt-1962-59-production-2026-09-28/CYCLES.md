@@ -7,7 +7,9 @@ date `2026-10-04`, audience `adult parish assembly`.
 The run is pinned to seed commit
 `a1320fb62298ed6b1cf10d82d252212a03a484d0` and workflow digest
 `9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38`.
-Its disposition is pending. No artifact has been accepted or installed.
+Its terminal disposition is **ACCEPTED**, returned by the engine on
+28 September 2026. All three PDFs and the canonical web edition are installed
+at their independently reviewed hashes.
 
 ## Transitions
 
@@ -40,11 +42,24 @@ Its disposition is pending. No artifact has been accepted or installed.
 | artifact-gates | 0 | PASS | Artifact snapshot, physical-page evidence and all upstream accepted review seals match. |
 | visual-review | 0 | PASS | All 33 pages inspected individually at full raster size; all 30 sealed inputs match, no findings. |
 | generate-web | 0 | PASS | Complete canonical Markdown and exact receipt generated after a tested repair for body-imported chronology; existing web editions remain byte-current. |
+| web-review | 0 | PASS | Complete conversion, 38 exact notes, desktop/mobile rendering and local reference navigation checked at the sealed Markdown hash; no findings. Remote URL availability and a deployed site were not audited. |
+| install-publication | 0 | PASS | Normal Make installation reproduced all three accepted PDF hashes; exact web bytes, catalog row, three release records, scoped bindings and owning inventories installed. |
+| publication-gates | 0 | PASS | Engine publication checks, release bindings, scoped public-alpha and document-library checks, global catalogue structure and web currency passed; terminal ACCEPTED with no escalations. |
 
-Web review is active. Every agent stage uses a fresh worker with no
+Every agent stage used a fresh worker with no
 inherited authoring conversation and the packet's declared reasoning effort.
 Author stages use `high`; review stages use `xhigh`. No nested workers are
 authorized by this workflow.
+
+**Model provenance.** The contributing workers identify themselves as GPT-6,
+with `high` for the context, research, authorship, artifact, conversion and
+installation stages and `xhigh` for the independent reviews. The coordinator
+identifies as GPT-6; its reasoning setting is unexposed. Exact model variants,
+other model qualifiers, client version and server revision are unexposed.
+The generation metadata records these actual configurations without inventing
+an installation commit. No production metadata changed after the final
+artifact snapshot; later review and installation work is recorded here and
+in the actual engine submissions.
 
 ## Validation baseline
 
@@ -105,5 +120,50 @@ edition, only the new edition awaiting review and installation.
 
 The target has three PDFs and one canonical web edition. Work is integrated
 on the workspace branch `feature/propers/codex`; no main-branch merge or live
-deployment is claimed. The source owner will archive the actual workflow
-packets, results, terminal status and review evidence at completion.
+deployment is claimed. The source owner retains the actual workflow
+packets, results, terminal status and review evidence in the terminal archive.
+
+## Terminal evidence and installed artifacts
+
+The leaf's `evaluations/proper-study-results/b686b7a44f0e35e7/` contains all
+30 exact engine packets, all 30 accepted submissions (including the two
+CHANGES_REQUIRED results), the seed manifest and bootstrap, terminal state,
+status and replay output, plus a hash index. Every copied packet and result
+matches the engine's recorded SHA-256. The terminal replay reports
+`recorded_file_intact: true` and `deterministic: null`; it is a terminal
+integrity report, not a fresh deterministic reexecution.
+
+| Artifact | Extent | SHA-256 |
+| --- | --- | --- |
+| Expansive study | 20 pages; 6,930 substantive words | `52b155c7e4366f0ef8304871ac1dabbbc56733aaaaa589f12085b396d7f18d43` |
+| Concise study | 10 pages; 3,719 substantive words | `7681fbd92d4301f3138f5512d97f6273119a7364f2e02bbff2edb2ea115c1848` |
+| Homily | 3 pages; 1,301 spoken words | `75f155ca5c86429a1f487e6d076bffe3faf3026a4a6dbb9274be822344da963c` |
+| Canonical web Markdown | 38 exact notes | `dc4948bdc26ab27a24d562018196b556298903d256b7364bf918997b38c25eb5` |
+
+The homily estimate is 10.4–11.3 minutes at 115–125 words per minute before
+pauses; no timed human delivery is claimed. Source reviews checked the cited
+loci, not a new collation of complete critical editions. Manual bibliography
+checks supplied the evidence that the formal-entry citation tool cannot
+provide for description-list bibliographies. The existing concise chronology
+formatter drops the word “around”; the source-owned Ephesians title explicitly
+retains “approximate,” and the research record identifies that separate
+tooling limitation. The web review checked local presentation and navigation;
+remote URL availability and live deployment remain outside its claims.
+
+The installer passed full `make check-sources` and web currency. The terminal
+publication gate passed all its declared checks. The release binding diff
+changes exactly the 16 reconciled task-owned site inputs, including ten new
+inputs; all 22,137 other site-source hashes are preserved. There are zero
+stale release bindings. Installed PDFs are intentionally ignored under the
+repository's PDF migration policy; their sources, receipts and release records
+are tracked.
+
+The whole promise-ledger check retains 23 errors, all present in the untouched
+baseline and all concerning older absent PDFs. One baseline missing-directory
+error disappeared when this family was installed. There are no new ledger
+errors. After the terminal archive and final production audit were written,
+the two source inventories were refreshed and full `make check-sources`
+passed again. Staged whitespace and added-text privacy checks pass. The
+coordinator rechecked all three build/install PDF pairs and installed web
+against the accepted hashes. Target completion and the concrete final branch
+checkpoint are reconciled in the final bookkeeping commit.

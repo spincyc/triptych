@@ -1,0 +1,339 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "STU-CHR-001",
+      "location": "research/scope.md, chronology section, lines 297\u2013299; sections/70-date-location.tex, Epistle dossier, lines 24\u201325",
+      "problem": "The Ephesians dossier supplies only the historical Catholic Encyclopedia captivity alternatives and a generic destination qualification, then explicitly declines a current comparison after recorded access failures. It never supplies the principal modern critical authorship/composition horizon required by the 1962 dossier rules, which must already have a reviewed home here before the concise opening is written. The official USCCB Ephesians introduction is now directly readable at https://bible.usccb.org/bible/ephesians/0: its concluding paragraphs distinguish the traditional captivity account from the secretary/later-disciple alternatives and explain the textual and stylistic grounds for uncertainty. Merely saying that the displayed dates are not modern consensus leaves that required historical account absent.",
+      "repair_target": "research",
+      "required_result": "Independently verify and record a current scholarly account of the Ephesians authorship/composition alternatives and their evidence, preserving the traditional Catholic chronology and uncertainty. Give the resulting bounded account a cited home in the expansive study's Ephesians dossier before it is reused by the concise study. Any newly adopted date or range must come through the canonical chronology corpus and an explicitly declared profile comparison, with generated annotations; do not insert a hand-authored replacement date or portray the alternatives as a consensus.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-CIT-001",
+      "location": "sections/90-study-apparatus.tex:77, Gregory the Great reference",
+      "problem": "The printed Wikisource URL ends in Homiliae_in_Evangelia, whereas the retained edition and its provenance identify Homiliarum_in_Evangelia. The printed address could not be resolved during review; the latter address opened successfully and includes the link to Homily XXXVIII. The work and section numbers still identify the source, so this is a navigation defect rather than unsupported attribution.",
+      "required_result": "Replace the printed URL with the checked edition index https://la.wikisource.org/wiki/Homiliarum_in_Evangelia or its exact Homily XXXVIII link, retaining the existing work and section locators.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "appointed-text",
+          "kind": "appointed-text",
+          "path": "sections/10-appointed-text.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml",
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "commentary",
+          "kind": "proper-treatment",
+          "path": "sections/20-commentary.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "clothed-charity",
+          "kind": "interpretive-lane",
+          "path": "sections/30-clothed-charity.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "renewed-action",
+          "kind": "interpretive-lane",
+          "path": "sections/40-renewed-action.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "scriptural-date-location",
+          "kind": "front-matter",
+          "path": "sections/70-date-location.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-study-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Gregory the Great",
+            "Alfredo Ildefonso Schuster",
+            "Robert Bellarmine"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Gregory the Great"
+          ],
+          "component_keys": [
+            "clothed-charity"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "clothed-charity",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Robert Bellarmine",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Gregory the Great",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "renewed-action"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "renewed-action",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+    "files": {
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+      "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/main.tex": "ec2ca21fd848f2586e697e283391f4a0172a4776f6b710d948432bae3aad2892",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/propers/verified.md": "974f3b6f4d680f85a5fdd1a80bc96bec048f955cb29202cd2ab2ba65cf835af2",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/chronology-annotations.tex": "89b6a001b8045fe0a5948db4f546c0939dae8ae14eba3cd1da6387297c4930cd",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/chronology.toml": "ea77f6e9978352834facee19387af095a4cfb8eb10c3340ee2b712b3d4f3cbec",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/interpretations.md": "73cd8f0cbdc47eba85f0c90908291b4f949526c2b789d9ec382d936869ee6bce",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/scope.md": "264cbe0c3761a3ee598eff0ab5d81b5fe0113aa08064ac0720733bfa6a1ee5d3",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/source-bindings.toml": "b20f4d0d84e245571145dd08bf6c7e1425a48417ce0a59c2211f1341e8e8c819",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/00-opening.tex": "1b2aebab17772b39d85602f142adf6e85eba7650e6023d99c3fd0f977d918309",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/10-appointed-text.tex": "93bb67fe1179ff2e20179da15366ff4ff87fe3937423d60b4a755f4bc8fbb6f2",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/20-commentary.tex": "1aea1ade3c71fbbf67069c6de8689e1b7557ad78ed0212fc8cf970478da96dd3",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/30-clothed-charity.tex": "d9742de8f4cab5242c474f162607afb5b69ef73d75639d9c045b058e9da66762",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/40-renewed-action.tex": "aee2a7c42211e3f9927d5d3d2c6be224864c3b37556de1f2643951d361f63b2f",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/50-comparison.tex": "d3886b794879124c3b3b0f582e6b26bd6650093d267d1e1ddc79b35f7209bc75",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/70-date-location.tex": "b6a11f47fd2d0410b7619eb2b1304135a8cc1e973ae47d42a16c1f4511bd009d",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/90-study-apparatus.tex": "955b3bd55e2cfd05f1289ea2441f3bb286722f07adeedb840c63d8c9d1a0b8bd"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "7",
+            "9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38",
+            "b686b7a44f0e35e7",
+            "a1320fb62298ed6b1cf10d82d252212a03a484d0",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Reviewed the complete canonical expansive study and its 20-page PDF against the 1962 and historical missal images, biblical text, exact Augustine/Gregory/Chrysostom/Bellarmine/Aquinas/Schuster loci, and chronology witnesses; both interpretations substantially engage all ten elements with distinct arguments and their own four senses. CHANGES_REQUIRED for the missing modern Ephesians historical horizon, with one citation advisory; visual inspection covered the complete contact sheet and selected full-size pages, and this review does not certify the later companion or publication artifacts."
+}

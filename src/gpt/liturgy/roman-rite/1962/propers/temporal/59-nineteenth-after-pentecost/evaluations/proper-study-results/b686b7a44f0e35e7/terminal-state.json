@@ -1,0 +1,2478 @@
+{
+  "current_stage": "ACCEPTED",
+  "disposition": "ACCEPTED",
+  "document_root": "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+  "escalations": [],
+  "findings_forwarded_by": {
+    "research": "study-review"
+  },
+  "findings_forwarded_ids": {
+    "research": [
+      "STU-CHR-001"
+    ]
+  },
+  "iteration": 30,
+  "normalized_args": {
+    "audience": "adult parish assembly",
+    "date": "2026-10-04",
+    "proper": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+    "provider": "gpt",
+    "research_handoff": "none"
+  },
+  "packet_hashes": [
+    {
+      "hash": "5a9a98b4f9d10764ea267edda6735d065fb17e0aa0778e1d794f91cba3ab88c4",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/scope-gate-0000.txt",
+      "stage": "scope-gate"
+    },
+    {
+      "hash": "b2291eca92b9bb75ed1c0d9d03160f147c3625ce67e7ec1154ebefbc72f1fbc2",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/resolve-context-0000.txt",
+      "stage": "resolve-context"
+    },
+    {
+      "hash": "0414063a2699580554e8a9ac9ba988c6c7cc75db38438a9048f0e02ccbb301d6",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/research-0000.txt",
+      "stage": "research"
+    },
+    {
+      "hash": "709e39bee92a5096290ef28a2193f0077aec40db8bb7ed85fa4a0b2cc49110ba",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/research-preflight-0000.txt",
+      "stage": "research-preflight"
+    },
+    {
+      "hash": "6a8e70771a98d99f02727ac30b9cbbe6bbf964328733371d3547f2dc51ba994e",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/research-review-0000.txt",
+      "review_inputs": {
+        "chronology_computation_inputs": {
+          "requirements-tools.txt": "0969da99a0bc2a1b71ed50584560f4588a37567ac63af3ddbaf3c4617ca5621a",
+          "scripts/_calendars.py": "9961359f38a3e390b5de4103a5222149e40b906362bba4b5620590f5ee1fed8e",
+          "scripts/_canon.py": "16fbe8e77d97aac01053eff6d364840d1507314ee07a7038950e5ba5c1aac869",
+          "scripts/_chronology.py": "e618e3e50c17ac643f6021a212e3447743bcd9ab2fa14d818206c1af6b85416e",
+          "scripts/_deuterocanon.py": "4af9a1675dd8ddae6fcbde445a3406acc8b1662c1e9306361a5468609987efa1",
+          "scripts/_loci.py": "a6bfeb1f23069b645bffc7d62f034172b11673d247887b69dcf9880de99dd5a6",
+          "scripts/_projection.py": "342b44cfe6963613bd0f685ac6f85cdfd17e64a6ecf650230aade9ffeeade2c7",
+          "scripts/_proper_chronology.py": "a2bace78780bce9b7d0fd1de25630c873150ea8366ff022da51e7cb116c6632e",
+          "scripts/_proper_chronology_comparisons.py": "e93d4e9c42c18f9e84073a596af7e98a148f92f9b2b0e9a76dd57b1e7532698a",
+          "scripts/_psalms.py": "3bd7daa1f3b11f1901c21a9062bd022369f7086f7c014484935f0f251c5b4d09",
+          "scripts/_psalter.py": "9db74df548f43e0ca1f51d0c8f8fea4f3613d4f4d2298cb9a3e2c26edac356fd",
+          "scripts/_tooling.py": "592aa0610872c2f4aecd078fb5b4e6a56de46dece36e04a22b54ac24e8338fed",
+          "tools/proper-chronology": "448b1d387a907dbba951133de7ed7d36bb76c92a5b955fb7b6a1353a1e3bf499"
+        },
+        "document": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+        "files": {
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/propers/retrieved.txt": "a3880c6a92534a005906e6c181bc8994caae32757eebad1b624eb4175284b5d9",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/propers/verified.md": "974f3b6f4d680f85a5fdd1a80bc96bec048f955cb29202cd2ab2ba65cf835af2",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/chronology-annotations.tex": "89b6a001b8045fe0a5948db4f546c0939dae8ae14eba3cd1da6387297c4930cd",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/chronology-profile-comparisons.toml": "ad03eb7e6e4fb16d372c7407a872a9fb22fd39086ad80c923c7da0e24366f2fa",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/chronology.toml": "ea77f6e9978352834facee19387af095a4cfb8eb10c3340ee2b712b3d4f3cbec",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/context.md": "31a9b9b15091902206818ac4b4add4f691a6ec6ab07b20bcd2c58179ca73ef11",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/interpretations.md": "92a6fc85c49e23ca418c241644682987f3b6d861ec1c141100ff499d3132a529",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/review-dependencies.toml": "cc4ac27440cf0599612bd49dbf6d522d675c051aaafa2588efb3bb6e299d294e",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/scope.md": "d27e47950569fd15cde041549e5884a031612f4d2fb42e3d7a4f500c55dda5b8",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/source-bindings.toml": "b20f4d0d84e245571145dd08bf6c7e1425a48417ce0a59c2211f1341e8e8c819",
+          "src/sources/calendars/roman-1962/propers.yaml": "ad99721934f0feca5fb1e1a98339f31ef241d5c5a6beb93b0dbbeef7abaaacf0",
+          "src/sources/calendars/roman-1962/rubrics.yaml": "0e07bd5bffc4f15e625ca870cc2ef9fc9179f2bdcc4b5a789f323bf8915528fd",
+          "src/sources/chronology/bindings.yaml": "4d6488744b63bff3f74e8b981e211ff0ab060d8b071cf2a34a942e9f3829189c",
+          "src/sources/chronology/composition.yaml": "ca2a7c299b4b53ad98f91aacd966a20db8e54264e511ccd122b7eac1d3b4c37a",
+          "src/sources/chronology/events.yaml": "4490646b4756c9913fe7d553ce160b03ae633853c1e454a1ee38fae11873a122",
+          "src/sources/chronology/gaps.yaml": "84cccdb70ab980f22faf64ec32658f69c877b861856157b00430aa960ac4d14b",
+          "src/sources/chronology/profiles.yaml": "7e9d4062810c91d4c3da1bcd4ef43e5cbd17a91bee2d479ca5183ea21d9fed0e",
+          "src/sources/commentary/formulary-loci.yaml": "ea0055280e0946a3a469aadc94e97d7a764d6d40da0df19d3db2fecc1ea3fb54",
+          "src/sources/inventories/catholic-encyclopedia-rights-v1.toml": "23fd15c63922894067c75f9650c2c4ed0c7388c22148339becd2073143c4171a",
+          "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml": "d38c50f5ec0b834a7c0a614c9a80f9117c920abc11c8a444fa1eb067c6e1594b",
+          "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/artifact.toml": "6bee6f13dd757842ceeb86ef5fd06b6fb0251a5ab75590fa793f324aef07b79f",
+          "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/source.txt": "d6841950333024906294e6e829f7512d08b3adf62ae6cee3615d18a7ad0020e9",
+          "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/edition.toml": "ca66a1598f692914e7c16f7a3200ed3be8f03c4e08246b87055c4d83929e2ab4",
+          "src/sources/works/augustine/enarrationes-in-psalmos/work.toml": "a3fa6fbac8db1820c20de67f21b12da3e0feb0aa18751b0fc0288223904992d4",
+          "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ia-facsimile-pdf-363d6fc3/artifact.toml": "50af0360ef7cee43b0be7a77f211e8c63dc57f7db868a0a4f103f2e3b6056fc8",
+          "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/pentecost-19-pages-351-352/artifact.toml": "04f43e6304288d29529269ac154186533de6afcd8451d97fc4c5347670a81c57",
+          "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/pentecost-19-pages-351-352/source.pdf": "ac3f705034d2f649e07d3fff76d2ce5accf1d216fa68c8fa6ffe0b364374ed2c",
+          "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/edition.toml": "fa9da57d68f8c80a51376a87dbeed3b19c1d1d0043a4a9b202a3c8de9e1dd7ad",
+          "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml": "9e2440cfcf8fd3a0bc86dfc57bd9871992b9bca4fd5baced4ce07c7c06c48fbf",
+          "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/edition.toml": "2d629ce174b247c8d624b41f9061efe8c7bdf9ea29fcee0a2aec18db2d78bd10",
+          "src/sources/works/catholic-church/missale-romanum/work.toml": "ae029277a68493ed903cd608cd7abdb91797aaff614ab5646f7c6a2dbeaa2ffd",
+          "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/artifacts/newadvent-10057a-e7b6ccef-article-text/artifact.toml": "064cdf2fa4756bc1f4556b7a31a8e6a4614eb59d1edc3e5ee1c5b7549b16d8b8",
+          "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/artifacts/newadvent-10057a-e7b6ccef-article-text/newadvent-10057a-e7b6ccef-article-text.txt": "3d9a35cc773f774ed3b423c890956ba655c61ceb7096fbd7c01a197f062168c2",
+          "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/artifacts/newadvent-10057a-e7b6ccef/artifact.toml": "b294291e332e98d8f848eeb581c1c8790c50f443c1d620237f4314a673741f2d",
+          "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/edition.toml": "927c6f8b34914a616a6ae8e7d529f2b744bf10811c87a9fc9b1f9613efc52a83",
+          "src/sources/works/catholic-encyclopedia/volume-10/work.toml": "35e69d1e21b0c1b474e7fdc146b5c77f772d02c1e7ca137b195215b7734ad90f",
+          "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/artifacts/newadvent-11567b-bff0dda8-article-text/artifact.toml": "fc12981c91a7aba5778225195ca29ed3888bd75d2e4320025778228977cbeec7",
+          "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/artifacts/newadvent-11567b-bff0dda8-article-text/newadvent-11567b-bff0dda8-article-text.txt": "c0f08396eca9b37415747eb06790ce986acc5bb650b2675d76af8449458bce1d",
+          "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/artifacts/newadvent-11567b-bff0dda8/artifact.toml": "b2d6bd1eaeea0fb45d04520f3c9b4ed00a134b2f68e5e1192c3b54302f981b9b",
+          "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/edition.toml": "a853c22a9912eca40252c6e83a5771bcbc3e4d280c93c1fa0576d5ec3e0f1c46",
+          "src/sources/works/catholic-encyclopedia/volume-11/work.toml": "89c729d48c4ee457f1897e72956c99a0965d697e412655bf38e1022f580bc0f3",
+          "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/artifacts/newadvent-14530a-0a19aa2c-article-text/artifact.toml": "257dd7abc12662c518c7717dc472a969e2198bf8c9776affb75674ac739520ce",
+          "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/artifacts/newadvent-14530a-0a19aa2c-article-text/newadvent-14530a-0a19aa2c-article-text.txt": "c4e12a4a6127e8af8b7ac8e2176448f78a2be2cb2080ab5ffb6f885f8fcaa259",
+          "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/artifacts/newadvent-14530a-0a19aa2c/artifact.toml": "021921a3f483d209307f6dbf91db6b9ad97f7eea4951d9407dc90799b054af45",
+          "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/edition.toml": "9af0369eec24106ce972b11e835ee2021e60ee3c7472ed329806c5287e3d158f",
+          "src/sources/works/catholic-encyclopedia/volume-14/work.toml": "a4f100c2a3bcd0d13f19ba481c850b59c7ee572f31cead4e9450e21c95c4f153",
+          "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05485a-66d722ae-article-text/artifact.toml": "05179189d4116545c9881e614f13b91b877069587fc5d1d5802cad60653234cd",
+          "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05485a-66d722ae-article-text/newadvent-05485a-66d722ae-article-text.txt": "c101da65d2c3cd40ef206bf013e2e3aae5f544b413a3006fcdd8f4909b566b1b",
+          "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05485a-66d722ae/artifact.toml": "4b62ffca8a2ab3af2e5fc0dfeb62d2a0985edd98571623320dd3145b6d1b5db8",
+          "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/edition.toml": "4cce479273bc4236d50e37d83b4af871f5acd25ad1ae8e51ddf2417f66cdbc48",
+          "src/sources/works/catholic-encyclopedia/volume-5/work.toml": "532b41fbee708c3f06c33374b4068bf12a68e99c681d9540f2f4245bcf463bc5",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/gutenberg-text-7d10da78/artifact.toml": "95f90fbf4f45166a6448ce2847cb7c8d07291827da871c522abc85b4df31b0ba",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/gutenberg-text-7d10da78/pg1581.txt": "7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-21-psalms-578f023d/21-psalms.tsv": "578f023dfe1c830252f23df84bcdbaae79857a652e41b7546c461c4a22f601fc",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-21-psalms-578f023d/artifact.toml": "869bea970a8bbf13c4cad3b260301e6fd80300c18d340e98aa6e1e4aeefa1fa9",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-47-matthew-dd0ba183/47-matthew.tsv": "dd0ba183f5fd1e020e733233abfb8f3f97a8c0aded6c518266f8eeed44b6c327",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-47-matthew-dd0ba183/artifact.toml": "e9acb7563a1596a6a003fd955ec6566a443971d4024e760c95b34e98d329ea9c",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-56-ephesians-10c79be0/56-ephesians.tsv": "10c79be04d61bc3e555930d7a64fdcfb05cddda39f8a5ae4dcd6f4fe58b747e3",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-56-ephesians-10c79be0/artifact.toml": "3a2fc78561b7736e3e3100bbad06615e7e6962bfd327731c8d437be0291c7f83",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/edition.toml": "40ff35d8b45e3395a1b7ab5532e4a94c66dba693c828642d122d942048f3707a",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/work.toml": "33a0a06dd333ec0a2105e8904a7383b02cfeddcd7c3149f102704a6b95fa0dbc",
+          "src/sources/works/ernst-haeckel/history-of-creation/editions/gutenberg-40472/artifacts/complete-delivery-2026-09-28/artifact.toml": "1a1a7f695725bc35e1fc4028ae70667b2b5918261512d678e24d0712cb2c17e6",
+          "src/sources/works/ernst-haeckel/history-of-creation/editions/gutenberg-40472/edition.toml": "5fdff393279a83dbd9ed32a1d4c58547e80f2082e59f0157f4b3c84c42099bf2",
+          "src/sources/works/ernst-haeckel/history-of-creation/work.toml": "7903d015db785d1c110551427a34cba539d4b73bce07d527ed8d0ec0da95cd73",
+          "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-scan-pdf/artifact.toml": "92f2c4d89f3576a89dbb54b3cf0622240d5201df6ed1fe1898d706a97ac953e4",
+          "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/pentecost-19-checked-english/artifact.toml": "e54fae1cb3e84fb45a9dd303053082da2f5713cb8faf3080e5c755503e710e28",
+          "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/pentecost-19-checked-english/text.tsv": "e13f1baaafdf562493c8efeb9d7307d9367c331c2743af7d8609af5fe0802abe",
+          "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/edition.toml": "a6a946e4c1f7b470392972302a03036b151260f728ffe8a26d683f0493af7466",
+          "src/sources/works/eugene-cummiskey/roman-missal-english-laity/work.toml": "80a589340fe7fbe6284fa8cb1eef65b0f98d4bb6baee2d2f17a00b7b1b0c6358",
+          "src/sources/works/francis-bacon/essays/editions/gutenberg-575/artifacts/complete-delivery-2026-09-28/artifact.toml": "f9e6ccfc196e4aa85354a22257649b7d9e98786871b3fd7dd36ee31627990bed",
+          "src/sources/works/francis-bacon/essays/editions/gutenberg-575/edition.toml": "f6ca232c035cfa58537240e79613d3d3520667d5b902f8a90dca81d0fb87b5e4",
+          "src/sources/works/francis-bacon/essays/work.toml": "f495e78913d6604fec9e566eba84ce7ad1c26378e42eda9023dfbb9fc3a07a43",
+          "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/artifacts/complete-extracted-text-dc25dd69/artifact.toml": "3879d5bdd6491cc4d1c019a5178356e2a167a199122daede03de13f7c5728228",
+          "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/artifacts/complete-extracted-text-dc25dd69/gregory-whole.txt": "dc25dd691b3ed44100e8417b7cdad9e6120753cf60bc59b80c7c3239471e618d",
+          "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/artifacts/wsexport-complete-epub-50cc6f72/artifact.toml": "e29bf61af49557c0c1693386188b36ba9cc8ad2e2601eb4950a0a14a2b2253af",
+          "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/artifacts/wsexport-complete-epub-50cc6f72/gregory-whole.epub": "50cc6f72a7f28c4a16e67f6d9bd13827078c03eb290be1cd50e5ed001d6a294b",
+          "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/edition.toml": "50d4337a534e27027152b091a6020ac6f25e3b3507a620f472bfe912b95110c9",
+          "src/sources/works/gregory-the-great/homiliae-in-evangelia/work.toml": "92477f7381790e44eba65a5de70aeace9684650c16ef451081ee9df145b040a8",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1895-garnier-migne-pl-172/artifacts/ia-djvu-ocr-2ebfcb5f/artifact.toml": "a45668c1b80e08c294546dd4d3f727a712719d481e77aa0fd2402bf9e00ff8cc",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1895-garnier-migne-pl-172/artifacts/ia-djvu-ocr-2ebfcb5f/patrologiaecursu0172mign_djvu.txt": "2ebfcb5ff3c527820036fe06be730b45d544eb1024dd5cb1980ef9c5a59444b1",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1895-garnier-migne-pl-172/edition.toml": "2b7fd1dd2c5bf4cb8a308a13b676bb479d09935758b22f0cf961e48116f72344",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/work.toml": "47851b8ae38de79ae6689679c102dfa0fd58209063bd28592c5b62ac85f922cc",
+          "src/sources/works/ildefonso-schuster/the-sacramentary/editions/burns-oates-washbourne-english-1927/artifacts/ia-scan-volume-3-410f6d11/artifact.toml": "b5b65705ed165164fb74c915aff5ad2163e99cfa817ad4a3e7bf1d47a59e105e",
+          "src/sources/works/ildefonso-schuster/the-sacramentary/editions/burns-oates-washbourne-english-1927/artifacts/ia-volume-3-ocr-4d8c8988/artifact.toml": "2f13caea8e49b162389b7bc1cb6487ff0fcbb578db0f47e1739389fe4ea2c740",
+          "src/sources/works/ildefonso-schuster/the-sacramentary/editions/burns-oates-washbourne-english-1927/artifacts/ia-volume-3-ocr-4d8c8988/schuster-sacramentary-3-1927-ia-ocr.txt": "4d8c8988b954b4841acc7bbdcd91c55f54efb0de46dc66340bcc7e400a65e419",
+          "src/sources/works/ildefonso-schuster/the-sacramentary/editions/burns-oates-washbourne-english-1927/edition.toml": "317bd948fc9afc838d86f5460c3a75036ea880aa0434e96bbe2bf6a22c6a85c8",
+          "src/sources/works/ildefonso-schuster/the-sacramentary/work.toml": "011e75fdae9b57974cf4b7fe4d9e62e5dcbf08a20f71a536d61a38cbdb8acc91",
+          "src/sources/works/matthew-arnold/selections-from-prose-works/editions/gutenberg-12628/artifacts/complete-delivery-2026-09-28/artifact.toml": "0b3ce95f5a66777c8a2c15fd5de4f81848230d6367b4827c4d3463a38c736e3b",
+          "src/sources/works/matthew-arnold/selections-from-prose-works/editions/gutenberg-12628/edition.toml": "60843ee76fa49ab76bcb3b53e1f98e07fd2c71739d92f6bb1515a06ec7606f89",
+          "src/sources/works/matthew-arnold/selections-from-prose-works/work.toml": "defa889c65b108bb761622a036e3373d994f68da2da7aa36af447158fa7fbae4",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/editions/2026-09-05-english-ccel-web-2026-09-05/artifacts/ccel-npnf113-text-54274dd9/artifact.toml": "0adbf85d85f7032db57850993746138d1fd0142b1c9a0c51b2c5af46679c00b3",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/editions/2026-09-05-english-ccel-web-2026-09-05/artifacts/ccel-npnf113-text-54274dd9/source.txt": "54274dd9aa73ca36e4da9e763e4a27d1818b09e42ffc73795529afec703a4210",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/editions/2026-09-05-english-ccel-web-2026-09-05/edition.toml": "7f2bdc7b4f135df424279c10ef2c86fa0d18cd02150cfccb9018d96700d2e37a",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/work.toml": "3b9fcf5867eac27bc6875c69dcb8d5599aa1881228cb2bc28fdacfb5e5417f88",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/editions/2026-09-17-ccel-web/artifacts/ccel-text-ce371798/artifact.toml": "a7fd1cce189a25a74f8f70b3390bb0e640b3e400cbc1ed11e9db15207dd76e51",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/editions/2026-09-17-ccel-web/artifacts/ccel-text-ce371798/source.txt": "ce37179876e5e5c9d8e7a6f1f17b8796c4fdf3ffd2815acb82a1c734c57ecd18",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/editions/2026-09-17-ccel-web/edition.toml": "26d95c4235cabfde331bf62c72f0c9dcd253e34a97f2fd6c26da822b8f7bba26",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/work.toml": "ed3eae018d1b07504a5146903ecf63d241ec898e0dbf3f7c2b816fee340f2887",
+          "src/sources/works/priestly-fraternity-of-saint-peter-france/ordo-du-mois/editions/web-2026-09-28/artifacts/complete-html-05f032b8/artifact.toml": "8b503e37c1a8457a53a9d324c7dc0fadeac1a363aeafb7130e63556fea754389",
+          "src/sources/works/priestly-fraternity-of-saint-peter-france/ordo-du-mois/editions/web-2026-09-28/edition.toml": "58601153e5387edf6687bc783e66a60b93260b8a72c0ba83852d1cd5f83ce531",
+          "src/sources/works/priestly-fraternity-of-saint-peter-france/ordo-du-mois/work.toml": "e69561c035feaac11cae9cc2e91e494fe41a54f6ed8d8e37f8bac3b5032ea3ed",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/full-text-html-c74854f0/artifact.toml": "24ce30309f919925cc65c4df4116e8c261dee33feacce2952113fdb83370f76f",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/historical-text-357551e1/artifact.toml": "6037444f771d285ced965d5688431d57056d1bf8242000de588ba556205a406c",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/historical-text-357551e1/text.txt": "357551e186b7c400fcd4f442ef2a70f6e51b7148ae69ab467b93b4a64ae51bc2",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/edition.toml": "91147082b1ba6f4478082eb6fc533efca88cd151335a478b648a83211e025328",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/work.toml": "18e7b82e6690e2dcca16267372957474d58097a6650793f71b42b17f003a8009",
+          "src/sources/works/rupert-of-deutz/de-divinis-officiis/editions/latin-migne-pl-170/artifacts/ia-djvu-ocr-2e2ca850/artifact.toml": "495e902d9190cd47dbb6a476058d48f143285db7bd99016582f038f25b8e1104",
+          "src/sources/works/rupert-of-deutz/de-divinis-officiis/editions/latin-migne-pl-170/artifacts/ia-djvu-ocr-2e2ca850/patrologiaecursu0170mign_djvu.txt": "2e2ca8505e8ba73d9ce9fc1fdf027bd77df027d94c96fe7abd2945caf76ed376",
+          "src/sources/works/rupert-of-deutz/de-divinis-officiis/editions/latin-migne-pl-170/edition.toml": "041fa860261c85a473c5d8006c372a41dff4d7df398b38f8232606db835e4683",
+          "src/sources/works/rupert-of-deutz/de-divinis-officiis/work.toml": "f8d426daf8a18f3cf5399b83e928d2c534e6ed59f67717111aee98cc2c93fb45",
+          "src/sources/works/sicard-of-cremona/mitrale/editions/latin-migne-pl-213/artifacts/ia-djvu-ocr-ea9fd813/artifact.toml": "a5688906a2cc848f97f2ef642802c36b1a0ab433cd32e46e83dbf11570cf1c11",
+          "src/sources/works/sicard-of-cremona/mitrale/editions/latin-migne-pl-213/artifacts/ia-djvu-ocr-ea9fd813/patrologiaecursu0213mign_djvu.txt": "ea9fd813e1ca46eff4c59f7334f35ff5c7775d3cf8dc8bd20df471742c199e44",
+          "src/sources/works/sicard-of-cremona/mitrale/editions/latin-migne-pl-213/edition.toml": "482b874168bc986a7bdb04bb1a97dbca8bb1162780ad5a38920669e260aedb81",
+          "src/sources/works/sicard-of-cremona/mitrale/work.toml": "e46163d1b77a0148334a0439447441d0c5629c08bcd266ffbabc079234a34ebb",
+          "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/artifacts/book-ocr-2b7b11dc/artifact.toml": "895f86955ed0a3617da80300630f4427ad76d0c724f33d21f0c09bcfd4595833",
+          "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/artifacts/book-ocr-2b7b11dc/source.txt": "2b7b11dccac61ed35cef61e412b521c4028890caec2611c362336450972567ed",
+          "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/artifacts/ia-ocr-2529728f/artifact.toml": "2b8812879cc38379d3da6059e1c68c33a15fddaf833b069e29956bc0f4012c50",
+          "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/edition.toml": "291ddf0e4045047fdf7a369a4019c3946e7a032be743c65d45155b527f3f83ea",
+          "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/work.toml": "06bb6a660ea3e7d48fdfbf5c8bf685c8818454bc089eed657ae701e2449420cb",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-09-21-english-usccb-web/artifacts/matthew-intro-3578ab41/artifact.toml": "4c0b81c1dff8ee8ae92d264ced7df84d875642580f6eee9815cae242de5574b9",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-09-21-english-usccb-web/edition.toml": "ae29bb553daa905af39beeea715a30d1335c17ce3767e9f9970ed97c25074c81",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-09-21-english-usccb-web/passages/matthew-introduction.toml": "87d02bd20a221c39728582c2164d1bab95a2264dd912dad0f7aa85df68d7aab8",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/english-usccb-web-2026-07-28/artifacts/psalms-intro-edaba4b4/artifact.toml": "bd76b681bf40186921543612ed33f3524727a0125f93425813bd38929704bee1",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/english-usccb-web-2026-07-28/artifacts/psalms-introduction-2026-09-28/artifact.toml": "3ed1ea447982f291fb8a30a00fe17b4c43252332598e3d6060a15a3a0c292510",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/english-usccb-web-2026-07-28/edition.toml": "55b87d56f86112c9ab81ca97e80f7be8a409e882052d5104fba335b717df2266",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/english-usccb-web-2026-07-28/passages/psalms-introduction.toml": "3876fad73ca545b915301d41402cd35cb705069b97b895c7830aa216bf5e1563",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/work.toml": "62b31b36e33acc0bbf10eff575b99a734a8d7092ffc29e6e781f79272b4d07ac"
+        },
+        "provider": "gpt",
+        "review": "research",
+        "review_contract": "proper-study-v3",
+        "schema": 1
+      },
+      "stage": "research-review"
+    },
+    {
+      "hash": "d1aa6ed43a84786a67b76e636316681fc0955c2cff2e0cb907e107fcc1579015",
+      "iteration": 1,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/research-0001.txt",
+      "stage": "research"
+    },
+    {
+      "hash": "efa697a04e1f1cc8d19b956802da89285ed24c5f9a69285b90bba47fa5e73aa7",
+      "iteration": 1,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/research-preflight-0001.txt",
+      "stage": "research-preflight"
+    },
+    {
+      "hash": "c3072daf8e5eea6e5edb7c4a788fd408f29287bb03f72eec80403cbda3945224",
+      "iteration": 1,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/research-review-0001.txt",
+      "review_inputs": {
+        "chronology_computation_inputs": {
+          "requirements-tools.txt": "0969da99a0bc2a1b71ed50584560f4588a37567ac63af3ddbaf3c4617ca5621a",
+          "scripts/_calendars.py": "9961359f38a3e390b5de4103a5222149e40b906362bba4b5620590f5ee1fed8e",
+          "scripts/_canon.py": "16fbe8e77d97aac01053eff6d364840d1507314ee07a7038950e5ba5c1aac869",
+          "scripts/_chronology.py": "e618e3e50c17ac643f6021a212e3447743bcd9ab2fa14d818206c1af6b85416e",
+          "scripts/_deuterocanon.py": "4af9a1675dd8ddae6fcbde445a3406acc8b1662c1e9306361a5468609987efa1",
+          "scripts/_loci.py": "a6bfeb1f23069b645bffc7d62f034172b11673d247887b69dcf9880de99dd5a6",
+          "scripts/_projection.py": "342b44cfe6963613bd0f685ac6f85cdfd17e64a6ecf650230aade9ffeeade2c7",
+          "scripts/_proper_chronology.py": "a2bace78780bce9b7d0fd1de25630c873150ea8366ff022da51e7cb116c6632e",
+          "scripts/_proper_chronology_comparisons.py": "e93d4e9c42c18f9e84073a596af7e98a148f92f9b2b0e9a76dd57b1e7532698a",
+          "scripts/_psalms.py": "3bd7daa1f3b11f1901c21a9062bd022369f7086f7c014484935f0f251c5b4d09",
+          "scripts/_psalter.py": "9db74df548f43e0ca1f51d0c8f8fea4f3613d4f4d2298cb9a3e2c26edac356fd",
+          "scripts/_tooling.py": "592aa0610872c2f4aecd078fb5b4e6a56de46dece36e04a22b54ac24e8338fed",
+          "tools/proper-chronology": "448b1d387a907dbba951133de7ed7d36bb76c92a5b955fb7b6a1353a1e3bf499"
+        },
+        "document": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+        "files": {
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/propers/retrieved.txt": "a3880c6a92534a005906e6c181bc8994caae32757eebad1b624eb4175284b5d9",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/propers/verified.md": "974f3b6f4d680f85a5fdd1a80bc96bec048f955cb29202cd2ab2ba65cf835af2",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/chronology-annotations.tex": "89b6a001b8045fe0a5948db4f546c0939dae8ae14eba3cd1da6387297c4930cd",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/chronology-profile-comparisons.toml": "ad03eb7e6e4fb16d372c7407a872a9fb22fd39086ad80c923c7da0e24366f2fa",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/chronology.toml": "ea77f6e9978352834facee19387af095a4cfb8eb10c3340ee2b712b3d4f3cbec",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/context.md": "31a9b9b15091902206818ac4b4add4f691a6ec6ab07b20bcd2c58179ca73ef11",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/interpretations.md": "73cd8f0cbdc47eba85f0c90908291b4f949526c2b789d9ec382d936869ee6bce",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/review-dependencies.toml": "88f96c38e16cd4cbf87cce8053b1f752018437879f8717e1da07187006881b92",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/scope.md": "264cbe0c3761a3ee598eff0ab5d81b5fe0113aa08064ac0720733bfa6a1ee5d3",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/source-bindings.toml": "b20f4d0d84e245571145dd08bf6c7e1425a48417ce0a59c2211f1341e8e8c819",
+          "src/sources/calendars/roman-1962/propers.yaml": "ad99721934f0feca5fb1e1a98339f31ef241d5c5a6beb93b0dbbeef7abaaacf0",
+          "src/sources/calendars/roman-1962/rubrics.yaml": "0e07bd5bffc4f15e625ca870cc2ef9fc9179f2bdcc4b5a789f323bf8915528fd",
+          "src/sources/chronology/bindings.yaml": "4d6488744b63bff3f74e8b981e211ff0ab060d8b071cf2a34a942e9f3829189c",
+          "src/sources/chronology/composition.yaml": "ca2a7c299b4b53ad98f91aacd966a20db8e54264e511ccd122b7eac1d3b4c37a",
+          "src/sources/chronology/events.yaml": "4490646b4756c9913fe7d553ce160b03ae633853c1e454a1ee38fae11873a122",
+          "src/sources/chronology/gaps.yaml": "84cccdb70ab980f22faf64ec32658f69c877b861856157b00430aa960ac4d14b",
+          "src/sources/chronology/profiles.yaml": "7e9d4062810c91d4c3da1bcd4ef43e5cbd17a91bee2d479ca5183ea21d9fed0e",
+          "src/sources/commentary/formulary-loci.yaml": "ea0055280e0946a3a469aadc94e97d7a764d6d40da0df19d3db2fecc1ea3fb54",
+          "src/sources/inventories/author-standing-v1.toml": "47660310e0e68890d77d1870168efaf76dee832f9d537ba9b795691296c54fda",
+          "src/sources/inventories/catholic-encyclopedia-rights-v1.toml": "23fd15c63922894067c75f9650c2c4ed0c7388c22148339becd2073143c4171a",
+          "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml": "d38c50f5ec0b834a7c0a614c9a80f9117c920abc11c8a444fa1eb067c6e1594b",
+          "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/artifact.toml": "6bee6f13dd757842ceeb86ef5fd06b6fb0251a5ab75590fa793f324aef07b79f",
+          "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/source.txt": "d6841950333024906294e6e829f7512d08b3adf62ae6cee3615d18a7ad0020e9",
+          "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/edition.toml": "ca66a1598f692914e7c16f7a3200ed3be8f03c4e08246b87055c4d83929e2ab4",
+          "src/sources/works/augustine/enarrationes-in-psalmos/work.toml": "a3fa6fbac8db1820c20de67f21b12da3e0feb0aa18751b0fc0288223904992d4",
+          "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ia-facsimile-pdf-363d6fc3/artifact.toml": "50af0360ef7cee43b0be7a77f211e8c63dc57f7db868a0a4f103f2e3b6056fc8",
+          "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/pentecost-19-pages-351-352/artifact.toml": "04f43e6304288d29529269ac154186533de6afcd8451d97fc4c5347670a81c57",
+          "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/pentecost-19-pages-351-352/source.pdf": "ac3f705034d2f649e07d3fff76d2ce5accf1d216fa68c8fa6ffe0b364374ed2c",
+          "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/edition.toml": "fa9da57d68f8c80a51376a87dbeed3b19c1d1d0043a4a9b202a3c8de9e1dd7ad",
+          "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml": "9e2440cfcf8fd3a0bc86dfc57bd9871992b9bca4fd5baced4ce07c7c06c48fbf",
+          "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/edition.toml": "2d629ce174b247c8d624b41f9061efe8c7bdf9ea29fcee0a2aec18db2d78bd10",
+          "src/sources/works/catholic-church/missale-romanum/work.toml": "ae029277a68493ed903cd608cd7abdb91797aaff614ab5646f7c6a2dbeaa2ffd",
+          "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/artifacts/newadvent-10057a-e7b6ccef-article-text/artifact.toml": "064cdf2fa4756bc1f4556b7a31a8e6a4614eb59d1edc3e5ee1c5b7549b16d8b8",
+          "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/artifacts/newadvent-10057a-e7b6ccef-article-text/newadvent-10057a-e7b6ccef-article-text.txt": "3d9a35cc773f774ed3b423c890956ba655c61ceb7096fbd7c01a197f062168c2",
+          "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/artifacts/newadvent-10057a-e7b6ccef/artifact.toml": "b294291e332e98d8f848eeb581c1c8790c50f443c1d620237f4314a673741f2d",
+          "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/edition.toml": "927c6f8b34914a616a6ae8e7d529f2b744bf10811c87a9fc9b1f9613efc52a83",
+          "src/sources/works/catholic-encyclopedia/volume-10/work.toml": "35e69d1e21b0c1b474e7fdc146b5c77f772d02c1e7ca137b195215b7734ad90f",
+          "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/artifacts/newadvent-11567b-bff0dda8-article-text/artifact.toml": "fc12981c91a7aba5778225195ca29ed3888bd75d2e4320025778228977cbeec7",
+          "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/artifacts/newadvent-11567b-bff0dda8-article-text/newadvent-11567b-bff0dda8-article-text.txt": "c0f08396eca9b37415747eb06790ce986acc5bb650b2675d76af8449458bce1d",
+          "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/artifacts/newadvent-11567b-bff0dda8/artifact.toml": "b2d6bd1eaeea0fb45d04520f3c9b4ed00a134b2f68e5e1192c3b54302f981b9b",
+          "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/edition.toml": "a853c22a9912eca40252c6e83a5771bcbc3e4d280c93c1fa0576d5ec3e0f1c46",
+          "src/sources/works/catholic-encyclopedia/volume-11/work.toml": "89c729d48c4ee457f1897e72956c99a0965d697e412655bf38e1022f580bc0f3",
+          "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/artifacts/newadvent-14530a-0a19aa2c-article-text/artifact.toml": "257dd7abc12662c518c7717dc472a969e2198bf8c9776affb75674ac739520ce",
+          "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/artifacts/newadvent-14530a-0a19aa2c-article-text/newadvent-14530a-0a19aa2c-article-text.txt": "c4e12a4a6127e8af8b7ac8e2176448f78a2be2cb2080ab5ffb6f885f8fcaa259",
+          "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/artifacts/newadvent-14530a-0a19aa2c/artifact.toml": "021921a3f483d209307f6dbf91db6b9ad97f7eea4951d9407dc90799b054af45",
+          "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/edition.toml": "9af0369eec24106ce972b11e835ee2021e60ee3c7472ed329806c5287e3d158f",
+          "src/sources/works/catholic-encyclopedia/volume-14/work.toml": "a4f100c2a3bcd0d13f19ba481c850b59c7ee572f31cead4e9450e21c95c4f153",
+          "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05485a-66d722ae-article-text/artifact.toml": "05179189d4116545c9881e614f13b91b877069587fc5d1d5802cad60653234cd",
+          "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05485a-66d722ae-article-text/newadvent-05485a-66d722ae-article-text.txt": "c101da65d2c3cd40ef206bf013e2e3aae5f544b413a3006fcdd8f4909b566b1b",
+          "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05485a-66d722ae/artifact.toml": "4b62ffca8a2ab3af2e5fc0dfeb62d2a0985edd98571623320dd3145b6d1b5db8",
+          "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/edition.toml": "4cce479273bc4236d50e37d83b4af871f5acd25ad1ae8e51ddf2417f66cdbc48",
+          "src/sources/works/catholic-encyclopedia/volume-5/work.toml": "532b41fbee708c3f06c33374b4068bf12a68e99c681d9540f2f4245bcf463bc5",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/gutenberg-text-7d10da78/artifact.toml": "95f90fbf4f45166a6448ce2847cb7c8d07291827da871c522abc85b4df31b0ba",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/gutenberg-text-7d10da78/pg1581.txt": "7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-21-psalms-578f023d/21-psalms.tsv": "578f023dfe1c830252f23df84bcdbaae79857a652e41b7546c461c4a22f601fc",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-21-psalms-578f023d/artifact.toml": "869bea970a8bbf13c4cad3b260301e6fd80300c18d340e98aa6e1e4aeefa1fa9",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-47-matthew-dd0ba183/47-matthew.tsv": "dd0ba183f5fd1e020e733233abfb8f3f97a8c0aded6c518266f8eeed44b6c327",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-47-matthew-dd0ba183/artifact.toml": "e9acb7563a1596a6a003fd955ec6566a443971d4024e760c95b34e98d329ea9c",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-56-ephesians-10c79be0/56-ephesians.tsv": "10c79be04d61bc3e555930d7a64fdcfb05cddda39f8a5ae4dcd6f4fe58b747e3",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-56-ephesians-10c79be0/artifact.toml": "3a2fc78561b7736e3e3100bbad06615e7e6962bfd327731c8d437be0291c7f83",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/edition.toml": "40ff35d8b45e3395a1b7ab5532e4a94c66dba693c828642d122d942048f3707a",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/work.toml": "33a0a06dd333ec0a2105e8904a7383b02cfeddcd7c3149f102704a6b95fa0dbc",
+          "src/sources/works/ernst-haeckel/history-of-creation/editions/gutenberg-40472/artifacts/complete-delivery-2026-09-28/artifact.toml": "1a1a7f695725bc35e1fc4028ae70667b2b5918261512d678e24d0712cb2c17e6",
+          "src/sources/works/ernst-haeckel/history-of-creation/editions/gutenberg-40472/edition.toml": "5fdff393279a83dbd9ed32a1d4c58547e80f2082e59f0157f4b3c84c42099bf2",
+          "src/sources/works/ernst-haeckel/history-of-creation/work.toml": "7903d015db785d1c110551427a34cba539d4b73bce07d527ed8d0ec0da95cd73",
+          "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-scan-pdf/artifact.toml": "92f2c4d89f3576a89dbb54b3cf0622240d5201df6ed1fe1898d706a97ac953e4",
+          "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/pentecost-19-checked-english/artifact.toml": "e54fae1cb3e84fb45a9dd303053082da2f5713cb8faf3080e5c755503e710e28",
+          "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/pentecost-19-checked-english/text.tsv": "e13f1baaafdf562493c8efeb9d7307d9367c331c2743af7d8609af5fe0802abe",
+          "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/edition.toml": "a6a946e4c1f7b470392972302a03036b151260f728ffe8a26d683f0493af7466",
+          "src/sources/works/eugene-cummiskey/roman-missal-english-laity/work.toml": "80a589340fe7fbe6284fa8cb1eef65b0f98d4bb6baee2d2f17a00b7b1b0c6358",
+          "src/sources/works/francis-bacon/essays/editions/gutenberg-575/artifacts/complete-delivery-2026-09-28/artifact.toml": "f9e6ccfc196e4aa85354a22257649b7d9e98786871b3fd7dd36ee31627990bed",
+          "src/sources/works/francis-bacon/essays/editions/gutenberg-575/edition.toml": "f6ca232c035cfa58537240e79613d3d3520667d5b902f8a90dca81d0fb87b5e4",
+          "src/sources/works/francis-bacon/essays/work.toml": "f495e78913d6604fec9e566eba84ce7ad1c26378e42eda9023dfbb9fc3a07a43",
+          "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/artifacts/complete-extracted-text-dc25dd69/artifact.toml": "3879d5bdd6491cc4d1c019a5178356e2a167a199122daede03de13f7c5728228",
+          "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/artifacts/complete-extracted-text-dc25dd69/gregory-whole.txt": "dc25dd691b3ed44100e8417b7cdad9e6120753cf60bc59b80c7c3239471e618d",
+          "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/artifacts/wsexport-complete-epub-50cc6f72/artifact.toml": "e29bf61af49557c0c1693386188b36ba9cc8ad2e2601eb4950a0a14a2b2253af",
+          "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/artifacts/wsexport-complete-epub-50cc6f72/gregory-whole.epub": "50cc6f72a7f28c4a16e67f6d9bd13827078c03eb290be1cd50e5ed001d6a294b",
+          "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/edition.toml": "50d4337a534e27027152b091a6020ac6f25e3b3507a620f472bfe912b95110c9",
+          "src/sources/works/gregory-the-great/homiliae-in-evangelia/work.toml": "92477f7381790e44eba65a5de70aeace9684650c16ef451081ee9df145b040a8",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1895-garnier-migne-pl-172/artifacts/ia-djvu-ocr-2ebfcb5f/artifact.toml": "a45668c1b80e08c294546dd4d3f727a712719d481e77aa0fd2402bf9e00ff8cc",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1895-garnier-migne-pl-172/artifacts/ia-djvu-ocr-2ebfcb5f/patrologiaecursu0172mign_djvu.txt": "2ebfcb5ff3c527820036fe06be730b45d544eb1024dd5cb1980ef9c5a59444b1",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1895-garnier-migne-pl-172/edition.toml": "2b7fd1dd2c5bf4cb8a308a13b676bb479d09935758b22f0cf961e48116f72344",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/work.toml": "47851b8ae38de79ae6689679c102dfa0fd58209063bd28592c5b62ac85f922cc",
+          "src/sources/works/ildefonso-schuster/the-sacramentary/editions/burns-oates-washbourne-english-1927/artifacts/ia-scan-volume-3-410f6d11/artifact.toml": "b5b65705ed165164fb74c915aff5ad2163e99cfa817ad4a3e7bf1d47a59e105e",
+          "src/sources/works/ildefonso-schuster/the-sacramentary/editions/burns-oates-washbourne-english-1927/artifacts/ia-volume-3-ocr-4d8c8988/artifact.toml": "2f13caea8e49b162389b7bc1cb6487ff0fcbb578db0f47e1739389fe4ea2c740",
+          "src/sources/works/ildefonso-schuster/the-sacramentary/editions/burns-oates-washbourne-english-1927/artifacts/ia-volume-3-ocr-4d8c8988/schuster-sacramentary-3-1927-ia-ocr.txt": "4d8c8988b954b4841acc7bbdcd91c55f54efb0de46dc66340bcc7e400a65e419",
+          "src/sources/works/ildefonso-schuster/the-sacramentary/editions/burns-oates-washbourne-english-1927/edition.toml": "317bd948fc9afc838d86f5460c3a75036ea880aa0434e96bbe2bf6a22c6a85c8",
+          "src/sources/works/ildefonso-schuster/the-sacramentary/work.toml": "011e75fdae9b57974cf4b7fe4d9e62e5dcbf08a20f71a536d61a38cbdb8acc91",
+          "src/sources/works/matthew-arnold/selections-from-prose-works/editions/gutenberg-12628/artifacts/complete-delivery-2026-09-28/artifact.toml": "0b3ce95f5a66777c8a2c15fd5de4f81848230d6367b4827c4d3463a38c736e3b",
+          "src/sources/works/matthew-arnold/selections-from-prose-works/editions/gutenberg-12628/edition.toml": "60843ee76fa49ab76bcb3b53e1f98e07fd2c71739d92f6bb1515a06ec7606f89",
+          "src/sources/works/matthew-arnold/selections-from-prose-works/work.toml": "defa889c65b108bb761622a036e3373d994f68da2da7aa36af447158fa7fbae4",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/editions/2026-09-05-english-ccel-web-2026-09-05/artifacts/ccel-npnf113-text-54274dd9/artifact.toml": "0adbf85d85f7032db57850993746138d1fd0142b1c9a0c51b2c5af46679c00b3",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/editions/2026-09-05-english-ccel-web-2026-09-05/artifacts/ccel-npnf113-text-54274dd9/source.txt": "54274dd9aa73ca36e4da9e763e4a27d1818b09e42ffc73795529afec703a4210",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/editions/2026-09-05-english-ccel-web-2026-09-05/edition.toml": "7f2bdc7b4f135df424279c10ef2c86fa0d18cd02150cfccb9018d96700d2e37a",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/work.toml": "3b9fcf5867eac27bc6875c69dcb8d5599aa1881228cb2bc28fdacfb5e5417f88",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/editions/2026-09-17-ccel-web/artifacts/ccel-text-ce371798/artifact.toml": "a7fd1cce189a25a74f8f70b3390bb0e640b3e400cbc1ed11e9db15207dd76e51",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/editions/2026-09-17-ccel-web/artifacts/ccel-text-ce371798/source.txt": "ce37179876e5e5c9d8e7a6f1f17b8796c4fdf3ffd2815acb82a1c734c57ecd18",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/editions/2026-09-17-ccel-web/edition.toml": "26d95c4235cabfde331bf62c72f0c9dcd253e34a97f2fd6c26da822b8f7bba26",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/work.toml": "ed3eae018d1b07504a5146903ecf63d241ec898e0dbf3f7c2b816fee340f2887",
+          "src/sources/works/priestly-fraternity-of-saint-peter-france/ordo-du-mois/editions/web-2026-09-28/artifacts/complete-html-05f032b8/artifact.toml": "8b503e37c1a8457a53a9d324c7dc0fadeac1a363aeafb7130e63556fea754389",
+          "src/sources/works/priestly-fraternity-of-saint-peter-france/ordo-du-mois/editions/web-2026-09-28/edition.toml": "58601153e5387edf6687bc783e66a60b93260b8a72c0ba83852d1cd5f83ce531",
+          "src/sources/works/priestly-fraternity-of-saint-peter-france/ordo-du-mois/work.toml": "e69561c035feaac11cae9cc2e91e494fe41a54f6ed8d8e37f8bac3b5032ea3ed",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/full-text-html-c74854f0/artifact.toml": "24ce30309f919925cc65c4df4116e8c261dee33feacce2952113fdb83370f76f",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/historical-text-357551e1/artifact.toml": "6037444f771d285ced965d5688431d57056d1bf8242000de588ba556205a406c",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/historical-text-357551e1/text.txt": "357551e186b7c400fcd4f442ef2a70f6e51b7148ae69ab467b93b4a64ae51bc2",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/edition.toml": "91147082b1ba6f4478082eb6fc533efca88cd151335a478b648a83211e025328",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/work.toml": "18e7b82e6690e2dcca16267372957474d58097a6650793f71b42b17f003a8009",
+          "src/sources/works/rupert-of-deutz/de-divinis-officiis/editions/latin-migne-pl-170/artifacts/ia-djvu-ocr-2e2ca850/artifact.toml": "495e902d9190cd47dbb6a476058d48f143285db7bd99016582f038f25b8e1104",
+          "src/sources/works/rupert-of-deutz/de-divinis-officiis/editions/latin-migne-pl-170/artifacts/ia-djvu-ocr-2e2ca850/patrologiaecursu0170mign_djvu.txt": "2e2ca8505e8ba73d9ce9fc1fdf027bd77df027d94c96fe7abd2945caf76ed376",
+          "src/sources/works/rupert-of-deutz/de-divinis-officiis/editions/latin-migne-pl-170/edition.toml": "041fa860261c85a473c5d8006c372a41dff4d7df398b38f8232606db835e4683",
+          "src/sources/works/rupert-of-deutz/de-divinis-officiis/work.toml": "f8d426daf8a18f3cf5399b83e928d2c534e6ed59f67717111aee98cc2c93fb45",
+          "src/sources/works/sicard-of-cremona/mitrale/editions/latin-migne-pl-213/artifacts/ia-djvu-ocr-ea9fd813/artifact.toml": "a5688906a2cc848f97f2ef642802c36b1a0ab433cd32e46e83dbf11570cf1c11",
+          "src/sources/works/sicard-of-cremona/mitrale/editions/latin-migne-pl-213/artifacts/ia-djvu-ocr-ea9fd813/patrologiaecursu0213mign_djvu.txt": "ea9fd813e1ca46eff4c59f7334f35ff5c7775d3cf8dc8bd20df471742c199e44",
+          "src/sources/works/sicard-of-cremona/mitrale/editions/latin-migne-pl-213/edition.toml": "482b874168bc986a7bdb04bb1a97dbca8bb1162780ad5a38920669e260aedb81",
+          "src/sources/works/sicard-of-cremona/mitrale/work.toml": "e46163d1b77a0148334a0439447441d0c5629c08bcd266ffbabc079234a34ebb",
+          "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/artifacts/book-ocr-2b7b11dc/artifact.toml": "895f86955ed0a3617da80300630f4427ad76d0c724f33d21f0c09bcfd4595833",
+          "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/artifacts/book-ocr-2b7b11dc/source.txt": "2b7b11dccac61ed35cef61e412b521c4028890caec2611c362336450972567ed",
+          "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/artifacts/ia-ocr-2529728f/artifact.toml": "2b8812879cc38379d3da6059e1c68c33a15fddaf833b069e29956bc0f4012c50",
+          "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/edition.toml": "291ddf0e4045047fdf7a369a4019c3946e7a032be743c65d45155b527f3f83ea",
+          "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/work.toml": "06bb6a660ea3e7d48fdfbf5c8bf685c8818454bc089eed657ae701e2449420cb",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-09-21-english-usccb-web/artifacts/matthew-intro-3578ab41/artifact.toml": "4c0b81c1dff8ee8ae92d264ced7df84d875642580f6eee9815cae242de5574b9",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-09-21-english-usccb-web/edition.toml": "ae29bb553daa905af39beeea715a30d1335c17ce3767e9f9970ed97c25074c81",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-09-21-english-usccb-web/passages/matthew-introduction.toml": "87d02bd20a221c39728582c2164d1bab95a2264dd912dad0f7aa85df68d7aab8",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/english-usccb-web-2026-07-28/artifacts/psalms-intro-edaba4b4/artifact.toml": "bd76b681bf40186921543612ed33f3524727a0125f93425813bd38929704bee1",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/english-usccb-web-2026-07-28/artifacts/psalms-introduction-2026-09-28/artifact.toml": "3ed1ea447982f291fb8a30a00fe17b4c43252332598e3d6060a15a3a0c292510",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/english-usccb-web-2026-07-28/edition.toml": "55b87d56f86112c9ab81ca97e80f7be8a409e882052d5104fba335b717df2266",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/english-usccb-web-2026-07-28/passages/psalms-introduction.toml": "3876fad73ca545b915301d41402cd35cb705069b97b895c7830aa216bf5e1563",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/work.toml": "62b31b36e33acc0bbf10eff575b99a734a8d7092ffc29e6e781f79272b4d07ac"
+        },
+        "provider": "gpt",
+        "review": "research",
+        "review_contract": "proper-study-v3",
+        "schema": 1
+      },
+      "stage": "research-review"
+    },
+    {
+      "hash": "98b1bb2c256d990fce68ec4ca7719d34a9863944a7542aea07caf51bf0d75291",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/author-study-0000.txt",
+      "stage": "author-study"
+    },
+    {
+      "hash": "75ec6ad854f942e73fc2a79b69ae648d8c49d2af6fb0238c5b47dd963c79a4f2",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/study-preflight-0000.txt",
+      "stage": "study-preflight"
+    },
+    {
+      "hash": "33be22f0d3fcb22605869c838d496493a845791fc4f9245b0b51f38957f6ec15",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/study-review-0000.txt",
+      "review_inputs": {
+        "component_contract": {
+          "calendar": "roman-1962",
+          "components": [
+            {
+              "depends_on": [],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "opening",
+              "kind": "front-matter",
+              "path": "sections/00-opening.tex",
+              "references": [
+                "research/scope.md",
+                "research/interpretations.md",
+                "research/source-bindings.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "appointed-text",
+              "kind": "appointed-text",
+              "path": "sections/10-appointed-text.tex",
+              "references": [
+                "research/scope.md",
+                "research/interpretations.md",
+                "research/source-bindings.toml",
+                "propers/verified.md"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "commentary",
+              "kind": "proper-treatment",
+              "path": "sections/20-commentary.tex",
+              "references": [
+                "research/scope.md",
+                "research/interpretations.md",
+                "research/source-bindings.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "clothed-charity",
+              "kind": "interpretive-lane",
+              "path": "sections/30-clothed-charity.tex",
+              "references": [
+                "research/scope.md",
+                "research/interpretations.md",
+                "research/source-bindings.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "renewed-action",
+              "kind": "interpretive-lane",
+              "path": "sections/40-renewed-action.tex",
+              "references": [
+                "research/scope.md",
+                "research/interpretations.md",
+                "research/source-bindings.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "comparison",
+              "kind": "front-matter",
+              "path": "sections/50-comparison.tex",
+              "references": [
+                "research/scope.md",
+                "research/interpretations.md",
+                "research/source-bindings.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "introit",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "communion"
+              ],
+              "key": "scriptural-date-location",
+              "kind": "front-matter",
+              "path": "sections/70-date-location.tex",
+              "references": [
+                "research/scope.md",
+                "research/interpretations.md",
+                "research/source-bindings.toml",
+                "research/chronology-annotations.tex",
+                "research/chronology.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [],
+              "key": "study-apparatus",
+              "kind": "terminal-apparatus",
+              "path": "sections/90-study-apparatus.tex",
+              "references": []
+            }
+          ],
+          "document": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "lanes": [
+            {
+              "authors": [
+                "Augustine of Hippo",
+                "Gregory the Great",
+                "Alfredo Ildefonso Schuster",
+                "Robert Bellarmine"
+              ],
+              "carrying_authors": [
+                "Augustine of Hippo",
+                "Gregory the Great"
+              ],
+              "component_keys": [
+                "clothed-charity"
+              ],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "clothed-charity",
+              "senses": [
+                "literal",
+                "allegorical",
+                "moral",
+                "anagogical"
+              ],
+              "sources": [
+                "research/scope.md",
+                "research/interpretations.md"
+              ]
+            },
+            {
+              "authors": [
+                "John Chrysostom",
+                "Robert Bellarmine",
+                "Augustine of Hippo",
+                "Thomas Aquinas",
+                "Gregory the Great",
+                "Alfredo Ildefonso Schuster"
+              ],
+              "carrying_authors": [
+                "John Chrysostom",
+                "Robert Bellarmine"
+              ],
+              "component_keys": [
+                "renewed-action"
+              ],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "renewed-action",
+              "senses": [
+                "literal",
+                "allegorical",
+                "moral",
+                "anagogical"
+              ],
+              "sources": [
+                "research/scope.md",
+                "research/interpretations.md"
+              ]
+            }
+          ],
+          "presentation": {
+            "chronology": "concise-chronology",
+            "commentary": "concise-commentary",
+            "inventory": "concise-inventory",
+            "overview": "concise-overview",
+            "themes": "concise-themes"
+          },
+          "presentation_contract": "interpretive-pagination-v1",
+          "schema": 2
+        },
+        "document": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+        "files": {
+          "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+          "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/main.tex": "ec2ca21fd848f2586e697e283391f4a0172a4776f6b710d948432bae3aad2892",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/propers/verified.md": "974f3b6f4d680f85a5fdd1a80bc96bec048f955cb29202cd2ab2ba65cf835af2",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/chronology-annotations.tex": "89b6a001b8045fe0a5948db4f546c0939dae8ae14eba3cd1da6387297c4930cd",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/chronology.toml": "ea77f6e9978352834facee19387af095a4cfb8eb10c3340ee2b712b3d4f3cbec",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/interpretations.md": "73cd8f0cbdc47eba85f0c90908291b4f949526c2b789d9ec382d936869ee6bce",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/scope.md": "264cbe0c3761a3ee598eff0ab5d81b5fe0113aa08064ac0720733bfa6a1ee5d3",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/source-bindings.toml": "b20f4d0d84e245571145dd08bf6c7e1425a48417ce0a59c2211f1341e8e8c819",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/00-opening.tex": "1b2aebab17772b39d85602f142adf6e85eba7650e6023d99c3fd0f977d918309",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/10-appointed-text.tex": "93bb67fe1179ff2e20179da15366ff4ff87fe3937423d60b4a755f4bc8fbb6f2",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/20-commentary.tex": "1aea1ade3c71fbbf67069c6de8689e1b7557ad78ed0212fc8cf970478da96dd3",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/30-clothed-charity.tex": "d9742de8f4cab5242c474f162607afb5b69ef73d75639d9c045b058e9da66762",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/40-renewed-action.tex": "aee2a7c42211e3f9927d5d3d2c6be224864c3b37556de1f2643951d361f63b2f",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/50-comparison.tex": "d3886b794879124c3b3b0f582e6b26bd6650093d267d1e1ddc79b35f7209bc75",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/70-date-location.tex": "b6a11f47fd2d0410b7619eb2b1304135a8cc1e973ae47d42a16c1f4511bd009d",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/90-study-apparatus.tex": "955b3bd55e2cfd05f1289ea2441f3bb286722f07adeedb840c63d8c9d1a0b8bd"
+        },
+        "generation_provenance": {
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/generation-metadata.tex": {
+            "inheritance": [],
+            "production": [
+              [
+                "proper-study",
+                "7",
+                "9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38",
+                "b686b7a44f0e35e7",
+                "a1320fb62298ed6b1cf10d82d252212a03a484d0",
+                "unknown"
+              ]
+            ]
+          }
+        },
+        "provider": "gpt",
+        "review": "study",
+        "schema": 1
+      },
+      "stage": "study-review"
+    },
+    {
+      "hash": "a50497fa34ba139f9729d0cdb1b1cb1a97b6d832e1eb0a7e93b2611e83e2d454",
+      "iteration": 2,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/research-0002.txt",
+      "stage": "research"
+    },
+    {
+      "hash": "1776930fa5aa00221652358d773170cf304118104542f4b9fd03693805e7b384",
+      "iteration": 2,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/research-preflight-0002.txt",
+      "stage": "research-preflight"
+    },
+    {
+      "hash": "3adf4d47e53046a40d67fd9c82cb710e544ddd812503e42d091ac4c111094d73",
+      "iteration": 2,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/research-review-0002.txt",
+      "review_inputs": {
+        "chronology_computation_inputs": {
+          "requirements-tools.txt": "0969da99a0bc2a1b71ed50584560f4588a37567ac63af3ddbaf3c4617ca5621a",
+          "scripts/_calendars.py": "9961359f38a3e390b5de4103a5222149e40b906362bba4b5620590f5ee1fed8e",
+          "scripts/_canon.py": "16fbe8e77d97aac01053eff6d364840d1507314ee07a7038950e5ba5c1aac869",
+          "scripts/_chronology.py": "e618e3e50c17ac643f6021a212e3447743bcd9ab2fa14d818206c1af6b85416e",
+          "scripts/_deuterocanon.py": "4af9a1675dd8ddae6fcbde445a3406acc8b1662c1e9306361a5468609987efa1",
+          "scripts/_loci.py": "a6bfeb1f23069b645bffc7d62f034172b11673d247887b69dcf9880de99dd5a6",
+          "scripts/_projection.py": "342b44cfe6963613bd0f685ac6f85cdfd17e64a6ecf650230aade9ffeeade2c7",
+          "scripts/_proper_chronology.py": "a2bace78780bce9b7d0fd1de25630c873150ea8366ff022da51e7cb116c6632e",
+          "scripts/_proper_chronology_comparisons.py": "e93d4e9c42c18f9e84073a596af7e98a148f92f9b2b0e9a76dd57b1e7532698a",
+          "scripts/_psalms.py": "3bd7daa1f3b11f1901c21a9062bd022369f7086f7c014484935f0f251c5b4d09",
+          "scripts/_psalter.py": "9db74df548f43e0ca1f51d0c8f8fea4f3613d4f4d2298cb9a3e2c26edac356fd",
+          "scripts/_tooling.py": "592aa0610872c2f4aecd078fb5b4e6a56de46dece36e04a22b54ac24e8338fed",
+          "tools/proper-chronology": "448b1d387a907dbba951133de7ed7d36bb76c92a5b955fb7b6a1353a1e3bf499"
+        },
+        "document": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+        "files": {
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/propers/retrieved.txt": "a3880c6a92534a005906e6c181bc8994caae32757eebad1b624eb4175284b5d9",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/propers/verified.md": "974f3b6f4d680f85a5fdd1a80bc96bec048f955cb29202cd2ab2ba65cf835af2",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/chronology-annotations.tex": "b7e50caa9329f553ed4544bba2298cb5fea2e4bb6fba1dbb7afcf8cfac461ea0",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/chronology-profile-comparisons.toml": "7306dbbfa42399c1dab06cac21ca7fbdbf67fd0cb1fef34297adddca32b80cbc",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/chronology.toml": "8414686f0737fcd106702487d6e380fbac0412b626b3c9a7d1028a207cd8fc21",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/context.md": "31a9b9b15091902206818ac4b4add4f691a6ec6ab07b20bcd2c58179ca73ef11",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/interpretations.md": "2ce227b8be499275dd44f7d95f7377699e9db91b5cad14429daa4ae0e640c44e",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/review-dependencies.toml": "ae6b559d1dde87d5dfa960a0f76756312e7f084ab46b73bbdd5b0e696b51771a",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/scope.md": "94883591e56b18aa610af87301d83af75617309ecbfa09db90ae9a55fd170cec",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/source-bindings.toml": "86872efeb74eaf328aa07ea0c7e9a412694a44794af808527e25ca16f53d9d6c",
+          "src/sources/calendars/roman-1962/propers.yaml": "ad99721934f0feca5fb1e1a98339f31ef241d5c5a6beb93b0dbbeef7abaaacf0",
+          "src/sources/calendars/roman-1962/rubrics.yaml": "0e07bd5bffc4f15e625ca870cc2ef9fc9179f2bdcc4b5a789f323bf8915528fd",
+          "src/sources/chronology/bindings.yaml": "4d6488744b63bff3f74e8b981e211ff0ab060d8b071cf2a34a942e9f3829189c",
+          "src/sources/chronology/composition.yaml": "4c17f790990d4c4ecbd5e4139d16aaad12d8154cc2e861ed7b2fe33458ae1c8b",
+          "src/sources/chronology/events.yaml": "4490646b4756c9913fe7d553ce160b03ae633853c1e454a1ee38fae11873a122",
+          "src/sources/chronology/gaps.yaml": "84cccdb70ab980f22faf64ec32658f69c877b861856157b00430aa960ac4d14b",
+          "src/sources/chronology/profiles.yaml": "7e9d4062810c91d4c3da1bcd4ef43e5cbd17a91bee2d479ca5183ea21d9fed0e",
+          "src/sources/commentary/formulary-loci.yaml": "ea0055280e0946a3a469aadc94e97d7a764d6d40da0df19d3db2fecc1ea3fb54",
+          "src/sources/inventories/author-standing-v1.toml": "47660310e0e68890d77d1870168efaf76dee832f9d537ba9b795691296c54fda",
+          "src/sources/inventories/catholic-encyclopedia-rights-v1.toml": "23fd15c63922894067c75f9650c2c4ed0c7388c22148339becd2073143c4171a",
+          "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml": "d38c50f5ec0b834a7c0a614c9a80f9117c920abc11c8a444fa1eb067c6e1594b",
+          "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/artifact.toml": "6bee6f13dd757842ceeb86ef5fd06b6fb0251a5ab75590fa793f324aef07b79f",
+          "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/source.txt": "d6841950333024906294e6e829f7512d08b3adf62ae6cee3615d18a7ad0020e9",
+          "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/edition.toml": "ca66a1598f692914e7c16f7a3200ed3be8f03c4e08246b87055c4d83929e2ab4",
+          "src/sources/works/augustine/enarrationes-in-psalmos/work.toml": "a3fa6fbac8db1820c20de67f21b12da3e0feb0aa18751b0fc0288223904992d4",
+          "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ia-facsimile-pdf-363d6fc3/artifact.toml": "50af0360ef7cee43b0be7a77f211e8c63dc57f7db868a0a4f103f2e3b6056fc8",
+          "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/pentecost-19-pages-351-352/artifact.toml": "04f43e6304288d29529269ac154186533de6afcd8451d97fc4c5347670a81c57",
+          "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/pentecost-19-pages-351-352/source.pdf": "ac3f705034d2f649e07d3fff76d2ce5accf1d216fa68c8fa6ffe0b364374ed2c",
+          "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/edition.toml": "fa9da57d68f8c80a51376a87dbeed3b19c1d1d0043a4a9b202a3c8de9e1dd7ad",
+          "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml": "9e2440cfcf8fd3a0bc86dfc57bd9871992b9bca4fd5baced4ce07c7c06c48fbf",
+          "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/edition.toml": "2d629ce174b247c8d624b41f9061efe8c7bdf9ea29fcee0a2aec18db2d78bd10",
+          "src/sources/works/catholic-church/missale-romanum/work.toml": "ae029277a68493ed903cd608cd7abdb91797aaff614ab5646f7c6a2dbeaa2ffd",
+          "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/artifacts/newadvent-10057a-e7b6ccef-article-text/artifact.toml": "064cdf2fa4756bc1f4556b7a31a8e6a4614eb59d1edc3e5ee1c5b7549b16d8b8",
+          "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/artifacts/newadvent-10057a-e7b6ccef-article-text/newadvent-10057a-e7b6ccef-article-text.txt": "3d9a35cc773f774ed3b423c890956ba655c61ceb7096fbd7c01a197f062168c2",
+          "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/artifacts/newadvent-10057a-e7b6ccef/artifact.toml": "b294291e332e98d8f848eeb581c1c8790c50f443c1d620237f4314a673741f2d",
+          "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/edition.toml": "927c6f8b34914a616a6ae8e7d529f2b744bf10811c87a9fc9b1f9613efc52a83",
+          "src/sources/works/catholic-encyclopedia/volume-10/work.toml": "35e69d1e21b0c1b474e7fdc146b5c77f772d02c1e7ca137b195215b7734ad90f",
+          "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/artifacts/newadvent-11567b-bff0dda8-article-text/artifact.toml": "fc12981c91a7aba5778225195ca29ed3888bd75d2e4320025778228977cbeec7",
+          "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/artifacts/newadvent-11567b-bff0dda8-article-text/newadvent-11567b-bff0dda8-article-text.txt": "c0f08396eca9b37415747eb06790ce986acc5bb650b2675d76af8449458bce1d",
+          "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/artifacts/newadvent-11567b-bff0dda8/artifact.toml": "b2d6bd1eaeea0fb45d04520f3c9b4ed00a134b2f68e5e1192c3b54302f981b9b",
+          "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/edition.toml": "a853c22a9912eca40252c6e83a5771bcbc3e4d280c93c1fa0576d5ec3e0f1c46",
+          "src/sources/works/catholic-encyclopedia/volume-11/work.toml": "89c729d48c4ee457f1897e72956c99a0965d697e412655bf38e1022f580bc0f3",
+          "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/artifacts/newadvent-14530a-0a19aa2c-article-text/artifact.toml": "257dd7abc12662c518c7717dc472a969e2198bf8c9776affb75674ac739520ce",
+          "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/artifacts/newadvent-14530a-0a19aa2c-article-text/newadvent-14530a-0a19aa2c-article-text.txt": "c4e12a4a6127e8af8b7ac8e2176448f78a2be2cb2080ab5ffb6f885f8fcaa259",
+          "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/artifacts/newadvent-14530a-0a19aa2c/artifact.toml": "021921a3f483d209307f6dbf91db6b9ad97f7eea4951d9407dc90799b054af45",
+          "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/edition.toml": "9af0369eec24106ce972b11e835ee2021e60ee3c7472ed329806c5287e3d158f",
+          "src/sources/works/catholic-encyclopedia/volume-14/work.toml": "a4f100c2a3bcd0d13f19ba481c850b59c7ee572f31cead4e9450e21c95c4f153",
+          "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05485a-66d722ae-article-text/artifact.toml": "05179189d4116545c9881e614f13b91b877069587fc5d1d5802cad60653234cd",
+          "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05485a-66d722ae-article-text/newadvent-05485a-66d722ae-article-text.txt": "c101da65d2c3cd40ef206bf013e2e3aae5f544b413a3006fcdd8f4909b566b1b",
+          "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05485a-66d722ae/artifact.toml": "4b62ffca8a2ab3af2e5fc0dfeb62d2a0985edd98571623320dd3145b6d1b5db8",
+          "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/edition.toml": "4cce479273bc4236d50e37d83b4af871f5acd25ad1ae8e51ddf2417f66cdbc48",
+          "src/sources/works/catholic-encyclopedia/volume-5/work.toml": "532b41fbee708c3f06c33374b4068bf12a68e99c681d9540f2f4245bcf463bc5",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/gutenberg-text-7d10da78/artifact.toml": "95f90fbf4f45166a6448ce2847cb7c8d07291827da871c522abc85b4df31b0ba",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/gutenberg-text-7d10da78/pg1581.txt": "7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-21-psalms-578f023d/21-psalms.tsv": "578f023dfe1c830252f23df84bcdbaae79857a652e41b7546c461c4a22f601fc",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-21-psalms-578f023d/artifact.toml": "869bea970a8bbf13c4cad3b260301e6fd80300c18d340e98aa6e1e4aeefa1fa9",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-47-matthew-dd0ba183/47-matthew.tsv": "dd0ba183f5fd1e020e733233abfb8f3f97a8c0aded6c518266f8eeed44b6c327",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-47-matthew-dd0ba183/artifact.toml": "e9acb7563a1596a6a003fd955ec6566a443971d4024e760c95b34e98d329ea9c",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-56-ephesians-10c79be0/56-ephesians.tsv": "10c79be04d61bc3e555930d7a64fdcfb05cddda39f8a5ae4dcd6f4fe58b747e3",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-56-ephesians-10c79be0/artifact.toml": "3a2fc78561b7736e3e3100bbad06615e7e6962bfd327731c8d437be0291c7f83",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/edition.toml": "40ff35d8b45e3395a1b7ab5532e4a94c66dba693c828642d122d942048f3707a",
+          "src/sources/works/english-college-of-douay/douay-rheims-bible/work.toml": "33a0a06dd333ec0a2105e8904a7383b02cfeddcd7c3149f102704a6b95fa0dbc",
+          "src/sources/works/ernst-haeckel/history-of-creation/editions/gutenberg-40472/artifacts/complete-delivery-2026-09-28/artifact.toml": "1a1a7f695725bc35e1fc4028ae70667b2b5918261512d678e24d0712cb2c17e6",
+          "src/sources/works/ernst-haeckel/history-of-creation/editions/gutenberg-40472/edition.toml": "5fdff393279a83dbd9ed32a1d4c58547e80f2082e59f0157f4b3c84c42099bf2",
+          "src/sources/works/ernst-haeckel/history-of-creation/work.toml": "7903d015db785d1c110551427a34cba539d4b73bce07d527ed8d0ec0da95cd73",
+          "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-scan-pdf/artifact.toml": "92f2c4d89f3576a89dbb54b3cf0622240d5201df6ed1fe1898d706a97ac953e4",
+          "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/pentecost-19-checked-english/artifact.toml": "e54fae1cb3e84fb45a9dd303053082da2f5713cb8faf3080e5c755503e710e28",
+          "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/pentecost-19-checked-english/text.tsv": "e13f1baaafdf562493c8efeb9d7307d9367c331c2743af7d8609af5fe0802abe",
+          "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/edition.toml": "a6a946e4c1f7b470392972302a03036b151260f728ffe8a26d683f0493af7466",
+          "src/sources/works/eugene-cummiskey/roman-missal-english-laity/work.toml": "80a589340fe7fbe6284fa8cb1eef65b0f98d4bb6baee2d2f17a00b7b1b0c6358",
+          "src/sources/works/francis-bacon/essays/editions/gutenberg-575/artifacts/complete-delivery-2026-09-28/artifact.toml": "f9e6ccfc196e4aa85354a22257649b7d9e98786871b3fd7dd36ee31627990bed",
+          "src/sources/works/francis-bacon/essays/editions/gutenberg-575/edition.toml": "f6ca232c035cfa58537240e79613d3d3520667d5b902f8a90dca81d0fb87b5e4",
+          "src/sources/works/francis-bacon/essays/work.toml": "f495e78913d6604fec9e566eba84ce7ad1c26378e42eda9023dfbb9fc3a07a43",
+          "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/artifacts/complete-extracted-text-dc25dd69/artifact.toml": "3879d5bdd6491cc4d1c019a5178356e2a167a199122daede03de13f7c5728228",
+          "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/artifacts/complete-extracted-text-dc25dd69/gregory-whole.txt": "dc25dd691b3ed44100e8417b7cdad9e6120753cf60bc59b80c7c3239471e618d",
+          "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/artifacts/wsexport-complete-epub-50cc6f72/artifact.toml": "e29bf61af49557c0c1693386188b36ba9cc8ad2e2601eb4950a0a14a2b2253af",
+          "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/artifacts/wsexport-complete-epub-50cc6f72/gregory-whole.epub": "50cc6f72a7f28c4a16e67f6d9bd13827078c03eb290be1cd50e5ed001d6a294b",
+          "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/edition.toml": "50d4337a534e27027152b091a6020ac6f25e3b3507a620f472bfe912b95110c9",
+          "src/sources/works/gregory-the-great/homiliae-in-evangelia/work.toml": "92477f7381790e44eba65a5de70aeace9684650c16ef451081ee9df145b040a8",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1895-garnier-migne-pl-172/artifacts/ia-djvu-ocr-2ebfcb5f/artifact.toml": "a45668c1b80e08c294546dd4d3f727a712719d481e77aa0fd2402bf9e00ff8cc",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1895-garnier-migne-pl-172/artifacts/ia-djvu-ocr-2ebfcb5f/patrologiaecursu0172mign_djvu.txt": "2ebfcb5ff3c527820036fe06be730b45d544eb1024dd5cb1980ef9c5a59444b1",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1895-garnier-migne-pl-172/edition.toml": "2b7fd1dd2c5bf4cb8a308a13b676bb479d09935758b22f0cf961e48116f72344",
+          "src/sources/works/honorius-augustodunensis/gemma-animae/work.toml": "47851b8ae38de79ae6689679c102dfa0fd58209063bd28592c5b62ac85f922cc",
+          "src/sources/works/ildefonso-schuster/the-sacramentary/editions/burns-oates-washbourne-english-1927/artifacts/ia-scan-volume-3-410f6d11/artifact.toml": "b5b65705ed165164fb74c915aff5ad2163e99cfa817ad4a3e7bf1d47a59e105e",
+          "src/sources/works/ildefonso-schuster/the-sacramentary/editions/burns-oates-washbourne-english-1927/artifacts/ia-volume-3-ocr-4d8c8988/artifact.toml": "2f13caea8e49b162389b7bc1cb6487ff0fcbb578db0f47e1739389fe4ea2c740",
+          "src/sources/works/ildefonso-schuster/the-sacramentary/editions/burns-oates-washbourne-english-1927/artifacts/ia-volume-3-ocr-4d8c8988/schuster-sacramentary-3-1927-ia-ocr.txt": "4d8c8988b954b4841acc7bbdcd91c55f54efb0de46dc66340bcc7e400a65e419",
+          "src/sources/works/ildefonso-schuster/the-sacramentary/editions/burns-oates-washbourne-english-1927/edition.toml": "317bd948fc9afc838d86f5460c3a75036ea880aa0434e96bbe2bf6a22c6a85c8",
+          "src/sources/works/ildefonso-schuster/the-sacramentary/work.toml": "011e75fdae9b57974cf4b7fe4d9e62e5dcbf08a20f71a536d61a38cbdb8acc91",
+          "src/sources/works/matthew-arnold/selections-from-prose-works/editions/gutenberg-12628/artifacts/complete-delivery-2026-09-28/artifact.toml": "0b3ce95f5a66777c8a2c15fd5de4f81848230d6367b4827c4d3463a38c736e3b",
+          "src/sources/works/matthew-arnold/selections-from-prose-works/editions/gutenberg-12628/edition.toml": "60843ee76fa49ab76bcb3b53e1f98e07fd2c71739d92f6bb1515a06ec7606f89",
+          "src/sources/works/matthew-arnold/selections-from-prose-works/work.toml": "defa889c65b108bb761622a036e3373d994f68da2da7aa36af447158fa7fbae4",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/editions/2026-09-05-english-ccel-web-2026-09-05/artifacts/ccel-npnf113-text-54274dd9/artifact.toml": "0adbf85d85f7032db57850993746138d1fd0142b1c9a0c51b2c5af46679c00b3",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/editions/2026-09-05-english-ccel-web-2026-09-05/artifacts/ccel-npnf113-text-54274dd9/source.txt": "54274dd9aa73ca36e4da9e763e4a27d1818b09e42ffc73795529afec703a4210",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/editions/2026-09-05-english-ccel-web-2026-09-05/edition.toml": "7f2bdc7b4f135df424279c10ef2c86fa0d18cd02150cfccb9018d96700d2e37a",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/work.toml": "3b9fcf5867eac27bc6875c69dcb8d5599aa1881228cb2bc28fdacfb5e5417f88",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/editions/2026-09-17-ccel-web/artifacts/ccel-text-ce371798/artifact.toml": "a7fd1cce189a25a74f8f70b3390bb0e640b3e400cbc1ed11e9db15207dd76e51",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/editions/2026-09-17-ccel-web/artifacts/ccel-text-ce371798/source.txt": "ce37179876e5e5c9d8e7a6f1f17b8796c4fdf3ffd2815acb82a1c734c57ecd18",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/editions/2026-09-17-ccel-web/edition.toml": "26d95c4235cabfde331bf62c72f0c9dcd253e34a97f2fd6c26da822b8f7bba26",
+          "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/work.toml": "ed3eae018d1b07504a5146903ecf63d241ec898e0dbf3f7c2b816fee340f2887",
+          "src/sources/works/priestly-fraternity-of-saint-peter-france/ordo-du-mois/editions/web-2026-09-28/artifacts/complete-html-05f032b8/artifact.toml": "8b503e37c1a8457a53a9d324c7dc0fadeac1a363aeafb7130e63556fea754389",
+          "src/sources/works/priestly-fraternity-of-saint-peter-france/ordo-du-mois/editions/web-2026-09-28/edition.toml": "58601153e5387edf6687bc783e66a60b93260b8a72c0ba83852d1cd5f83ce531",
+          "src/sources/works/priestly-fraternity-of-saint-peter-france/ordo-du-mois/work.toml": "e69561c035feaac11cae9cc2e91e494fe41a54f6ed8d8e37f8bac3b5032ea3ed",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/full-text-html-c74854f0/artifact.toml": "24ce30309f919925cc65c4df4116e8c261dee33feacce2952113fdb83370f76f",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/historical-text-357551e1/artifact.toml": "6037444f771d285ced965d5688431d57056d1bf8242000de588ba556205a406c",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/historical-text-357551e1/text.txt": "357551e186b7c400fcd4f442ef2a70f6e51b7148ae69ab467b93b4a64ae51bc2",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/edition.toml": "91147082b1ba6f4478082eb6fc533efca88cd151335a478b648a83211e025328",
+          "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/work.toml": "18e7b82e6690e2dcca16267372957474d58097a6650793f71b42b17f003a8009",
+          "src/sources/works/rupert-of-deutz/de-divinis-officiis/editions/latin-migne-pl-170/artifacts/ia-djvu-ocr-2e2ca850/artifact.toml": "495e902d9190cd47dbb6a476058d48f143285db7bd99016582f038f25b8e1104",
+          "src/sources/works/rupert-of-deutz/de-divinis-officiis/editions/latin-migne-pl-170/artifacts/ia-djvu-ocr-2e2ca850/patrologiaecursu0170mign_djvu.txt": "2e2ca8505e8ba73d9ce9fc1fdf027bd77df027d94c96fe7abd2945caf76ed376",
+          "src/sources/works/rupert-of-deutz/de-divinis-officiis/editions/latin-migne-pl-170/edition.toml": "041fa860261c85a473c5d8006c372a41dff4d7df398b38f8232606db835e4683",
+          "src/sources/works/rupert-of-deutz/de-divinis-officiis/work.toml": "f8d426daf8a18f3cf5399b83e928d2c534e6ed59f67717111aee98cc2c93fb45",
+          "src/sources/works/sicard-of-cremona/mitrale/editions/latin-migne-pl-213/artifacts/ia-djvu-ocr-ea9fd813/artifact.toml": "a5688906a2cc848f97f2ef642802c36b1a0ab433cd32e46e83dbf11570cf1c11",
+          "src/sources/works/sicard-of-cremona/mitrale/editions/latin-migne-pl-213/artifacts/ia-djvu-ocr-ea9fd813/patrologiaecursu0213mign_djvu.txt": "ea9fd813e1ca46eff4c59f7334f35ff5c7775d3cf8dc8bd20df471742c199e44",
+          "src/sources/works/sicard-of-cremona/mitrale/editions/latin-migne-pl-213/edition.toml": "482b874168bc986a7bdb04bb1a97dbca8bb1162780ad5a38920669e260aedb81",
+          "src/sources/works/sicard-of-cremona/mitrale/work.toml": "e46163d1b77a0148334a0439447441d0c5629c08bcd266ffbabc079234a34ebb",
+          "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/artifacts/book-ocr-2b7b11dc/artifact.toml": "895f86955ed0a3617da80300630f4427ad76d0c724f33d21f0c09bcfd4595833",
+          "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/artifacts/book-ocr-2b7b11dc/source.txt": "2b7b11dccac61ed35cef61e412b521c4028890caec2611c362336450972567ed",
+          "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/artifacts/ia-ocr-2529728f/artifact.toml": "2b8812879cc38379d3da6059e1c68c33a15fddaf833b069e29956bc0f4012c50",
+          "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/edition.toml": "291ddf0e4045047fdf7a369a4019c3946e7a032be743c65d45155b527f3f83ea",
+          "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/work.toml": "06bb6a660ea3e7d48fdfbf5c8bf685c8818454bc089eed657ae701e2449420cb",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-09-21-english-usccb-web/artifacts/matthew-intro-3578ab41/artifact.toml": "4c0b81c1dff8ee8ae92d264ced7df84d875642580f6eee9815cae242de5574b9",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-09-21-english-usccb-web/edition.toml": "ae29bb553daa905af39beeea715a30d1335c17ce3767e9f9970ed97c25074c81",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-09-21-english-usccb-web/passages/matthew-introduction.toml": "87d02bd20a221c39728582c2164d1bab95a2264dd912dad0f7aa85df68d7aab8",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-09-28-english-usccb-web/artifacts/ephesians-introduction-94023f88/artifact.toml": "805bb7696304e9aef81b193cdd8b3b63eeb9b53b356d2a8c8c66990b6bae23db",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-09-28-english-usccb-web/edition.toml": "87a75f867690a6dabdc30e4091a2840c4b69bf2b728597b4d861b78da61273b4",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-09-28-english-usccb-web/passages/ephesians-introduction.toml": "2b5bc52b2cf6ff34c118113cf058506212c49f4e712bb5841f9afc47358d73d4",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/english-usccb-web-2026-07-28/artifacts/psalms-intro-edaba4b4/artifact.toml": "bd76b681bf40186921543612ed33f3524727a0125f93425813bd38929704bee1",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/english-usccb-web-2026-07-28/artifacts/psalms-introduction-2026-09-28/artifact.toml": "3ed1ea447982f291fb8a30a00fe17b4c43252332598e3d6060a15a3a0c292510",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/english-usccb-web-2026-07-28/edition.toml": "55b87d56f86112c9ab81ca97e80f7be8a409e882052d5104fba335b717df2266",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/english-usccb-web-2026-07-28/passages/psalms-introduction.toml": "3876fad73ca545b915301d41402cd35cb705069b97b895c7830aa216bf5e1563",
+          "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/work.toml": "62b31b36e33acc0bbf10eff575b99a734a8d7092ffc29e6e781f79272b4d07ac"
+        },
+        "provider": "gpt",
+        "review": "research",
+        "review_contract": "proper-study-v3",
+        "schema": 1
+      },
+      "stage": "research-review"
+    },
+    {
+      "hash": "5705bb636fd0191e7b85d008fce5d703eeef88a2ded290e56b9716c394af5f24",
+      "iteration": 1,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/author-study-0001.txt",
+      "stage": "author-study"
+    },
+    {
+      "hash": "a8d2a15d576e2a2c1adc1b0c9d06759f9b989b313816e12eea5527f81b0b6214",
+      "iteration": 1,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/study-preflight-0001.txt",
+      "stage": "study-preflight"
+    },
+    {
+      "hash": "a8c78e2ed48c5276c703300e292bc887abe34474784ab8a43b471d6af24f64ce",
+      "iteration": 1,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/study-review-0001.txt",
+      "review_inputs": {
+        "component_contract": {
+          "calendar": "roman-1962",
+          "components": [
+            {
+              "depends_on": [],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "opening",
+              "kind": "front-matter",
+              "path": "sections/00-opening.tex",
+              "references": [
+                "research/scope.md",
+                "research/interpretations.md",
+                "research/source-bindings.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "appointed-text",
+              "kind": "appointed-text",
+              "path": "sections/10-appointed-text.tex",
+              "references": [
+                "research/scope.md",
+                "research/interpretations.md",
+                "research/source-bindings.toml",
+                "propers/verified.md"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "commentary",
+              "kind": "proper-treatment",
+              "path": "sections/20-commentary.tex",
+              "references": [
+                "research/scope.md",
+                "research/interpretations.md",
+                "research/source-bindings.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "clothed-charity",
+              "kind": "interpretive-lane",
+              "path": "sections/30-clothed-charity.tex",
+              "references": [
+                "research/scope.md",
+                "research/interpretations.md",
+                "research/source-bindings.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "renewed-action",
+              "kind": "interpretive-lane",
+              "path": "sections/40-renewed-action.tex",
+              "references": [
+                "research/scope.md",
+                "research/interpretations.md",
+                "research/source-bindings.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "comparison",
+              "kind": "front-matter",
+              "path": "sections/50-comparison.tex",
+              "references": [
+                "research/scope.md",
+                "research/interpretations.md",
+                "research/source-bindings.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "introit",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "communion"
+              ],
+              "key": "scriptural-date-location",
+              "kind": "front-matter",
+              "path": "sections/70-date-location.tex",
+              "references": [
+                "research/scope.md",
+                "research/interpretations.md",
+                "research/source-bindings.toml",
+                "research/chronology-annotations.tex",
+                "research/chronology.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [],
+              "key": "study-apparatus",
+              "kind": "terminal-apparatus",
+              "path": "sections/90-study-apparatus.tex",
+              "references": []
+            }
+          ],
+          "document": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "lanes": [
+            {
+              "authors": [
+                "Augustine of Hippo",
+                "Gregory the Great",
+                "Alfredo Ildefonso Schuster",
+                "Robert Bellarmine"
+              ],
+              "carrying_authors": [
+                "Augustine of Hippo",
+                "Gregory the Great"
+              ],
+              "component_keys": [
+                "clothed-charity"
+              ],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "clothed-charity",
+              "senses": [
+                "literal",
+                "allegorical",
+                "moral",
+                "anagogical"
+              ],
+              "sources": [
+                "research/scope.md",
+                "research/interpretations.md"
+              ]
+            },
+            {
+              "authors": [
+                "John Chrysostom",
+                "Robert Bellarmine",
+                "Augustine of Hippo",
+                "Thomas Aquinas",
+                "Gregory the Great",
+                "Alfredo Ildefonso Schuster"
+              ],
+              "carrying_authors": [
+                "John Chrysostom",
+                "Robert Bellarmine"
+              ],
+              "component_keys": [
+                "renewed-action"
+              ],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "renewed-action",
+              "senses": [
+                "literal",
+                "allegorical",
+                "moral",
+                "anagogical"
+              ],
+              "sources": [
+                "research/scope.md",
+                "research/interpretations.md"
+              ]
+            }
+          ],
+          "presentation": {
+            "chronology": "concise-chronology",
+            "commentary": "concise-commentary",
+            "inventory": "concise-inventory",
+            "overview": "concise-overview",
+            "themes": "concise-themes"
+          },
+          "presentation_contract": "interpretive-pagination-v1",
+          "schema": 2
+        },
+        "document": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+        "files": {
+          "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+          "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/main.tex": "ec2ca21fd848f2586e697e283391f4a0172a4776f6b710d948432bae3aad2892",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/propers/verified.md": "974f3b6f4d680f85a5fdd1a80bc96bec048f955cb29202cd2ab2ba65cf835af2",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/chronology-annotations.tex": "b7e50caa9329f553ed4544bba2298cb5fea2e4bb6fba1dbb7afcf8cfac461ea0",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/chronology.toml": "8414686f0737fcd106702487d6e380fbac0412b626b3c9a7d1028a207cd8fc21",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/interpretations.md": "2ce227b8be499275dd44f7d95f7377699e9db91b5cad14429daa4ae0e640c44e",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/scope.md": "94883591e56b18aa610af87301d83af75617309ecbfa09db90ae9a55fd170cec",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/source-bindings.toml": "86872efeb74eaf328aa07ea0c7e9a412694a44794af808527e25ca16f53d9d6c",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/00-opening.tex": "c9fd052b3aa7b014f13702384a65556b07cfe6ebc23d388a3222cfdac59d0e42",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/10-appointed-text.tex": "979fb7a8373b38bcc839476b084f2bab2cfa2d2d8621d9da7ccf5d95ff89aa75",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/20-commentary.tex": "1aea1ade3c71fbbf67069c6de8689e1b7557ad78ed0212fc8cf970478da96dd3",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/30-clothed-charity.tex": "d9742de8f4cab5242c474f162607afb5b69ef73d75639d9c045b058e9da66762",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/40-renewed-action.tex": "aee2a7c42211e3f9927d5d3d2c6be224864c3b37556de1f2643951d361f63b2f",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/50-comparison.tex": "d3886b794879124c3b3b0f582e6b26bd6650093d267d1e1ddc79b35f7209bc75",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/70-date-location.tex": "ca60f75fe144552191512d8ec898499a12ecf268c977e43f9f709f9634eaa707",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/90-study-apparatus.tex": "e17406bb8cb0a46d192e116f6732217d2010e1d55884616288a731e8ec3e5dbc"
+        },
+        "generation_provenance": {
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/generation-metadata.tex": {
+            "inheritance": [],
+            "production": [
+              [
+                "proper-study",
+                "7",
+                "9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38",
+                "b686b7a44f0e35e7",
+                "a1320fb62298ed6b1cf10d82d252212a03a484d0",
+                "unknown"
+              ]
+            ]
+          }
+        },
+        "provider": "gpt",
+        "review": "study",
+        "schema": 1
+      },
+      "stage": "study-review"
+    },
+    {
+      "hash": "aef7556b75665fd28bab3d958cf7a3a6ea9c37bad5e26c3752ca8d3e0a020551",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/derive-synthesis-0000.txt",
+      "stage": "derive-synthesis"
+    },
+    {
+      "hash": "f9cac8da2c873c37b2fa5574a3da1a942c83147af3ff3fbf19111ede958b6dba",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/synthesis-preflight-0000.txt",
+      "stage": "synthesis-preflight"
+    },
+    {
+      "hash": "d6bc7da9df0f55a66d9364412efbd5f80712276cec2e68309a72f3d73bfe250e",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/synthesis-review-0000.txt",
+      "review_inputs": {
+        "component_contract": {
+          "calendar": "roman-1962",
+          "components": [
+            {
+              "depends_on": [],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "concise-inventory",
+              "kind": "front-matter",
+              "path": "sections/concise/01-inventory.tex",
+              "references": [
+                "research/scope.md",
+                "research/interpretations.md",
+                "research/source-bindings.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "concise-overview",
+              "kind": "front-matter",
+              "path": "sections/concise/02-overview.tex",
+              "references": [
+                "research/scope.md",
+                "research/interpretations.md",
+                "research/source-bindings.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "introit",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "communion"
+              ],
+              "key": "concise-chronology",
+              "kind": "front-matter",
+              "path": "sections/concise/03-chronology.tex",
+              "references": [
+                "research/scope.md",
+                "research/interpretations.md",
+                "research/source-bindings.toml",
+                "research/chronology-annotations.tex",
+                "research/chronology.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "concise-themes",
+              "kind": "front-matter",
+              "path": "sections/concise/04-themes.tex",
+              "references": [
+                "research/scope.md",
+                "research/interpretations.md",
+                "research/source-bindings.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "concise-commentary",
+              "kind": "integrated-commentary",
+              "path": "sections/concise/10-commentary.tex",
+              "references": [
+                "research/scope.md",
+                "research/interpretations.md",
+                "research/source-bindings.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [],
+              "key": "concise-apparatus",
+              "kind": "terminal-apparatus",
+              "path": "sections/concise/90-apparatus.tex",
+              "references": []
+            }
+          ],
+          "document": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "lanes": [
+            {
+              "authors": [
+                "Augustine of Hippo",
+                "Gregory the Great",
+                "Alfredo Ildefonso Schuster",
+                "Robert Bellarmine"
+              ],
+              "carrying_authors": [
+                "Augustine of Hippo",
+                "Gregory the Great"
+              ],
+              "component_keys": [
+                "clothed-charity"
+              ],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "clothed-charity",
+              "senses": [
+                "literal",
+                "allegorical",
+                "moral",
+                "anagogical"
+              ],
+              "sources": [
+                "research/scope.md",
+                "research/interpretations.md"
+              ]
+            },
+            {
+              "authors": [
+                "John Chrysostom",
+                "Robert Bellarmine",
+                "Augustine of Hippo",
+                "Thomas Aquinas",
+                "Gregory the Great",
+                "Alfredo Ildefonso Schuster"
+              ],
+              "carrying_authors": [
+                "John Chrysostom",
+                "Robert Bellarmine"
+              ],
+              "component_keys": [
+                "renewed-action"
+              ],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "renewed-action",
+              "senses": [
+                "literal",
+                "allegorical",
+                "moral",
+                "anagogical"
+              ],
+              "sources": [
+                "research/scope.md",
+                "research/interpretations.md"
+              ]
+            }
+          ],
+          "presentation": {
+            "chronology": "concise-chronology",
+            "commentary": "concise-commentary",
+            "inventory": "concise-inventory",
+            "overview": "concise-overview",
+            "themes": "concise-themes"
+          },
+          "presentation_contract": "interpretive-pagination-v1",
+          "schema": 2
+        },
+        "document": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+        "files": {
+          "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+          "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/chronology-annotations.tex": "b7e50caa9329f553ed4544bba2298cb5fea2e4bb6fba1dbb7afcf8cfac461ea0",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/chronology.toml": "8414686f0737fcd106702487d6e380fbac0412b626b3c9a7d1028a207cd8fc21",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/interpretations.md": "2ce227b8be499275dd44f7d95f7377699e9db91b5cad14429daa4ae0e640c44e",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/scope.md": "94883591e56b18aa610af87301d83af75617309ecbfa09db90ae9a55fd170cec",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/source-bindings.toml": "86872efeb74eaf328aa07ea0c7e9a412694a44794af808527e25ca16f53d9d6c",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/01-inventory.tex": "2cc6eb5f2eeab40c9176a342f51237f68c56131d9e723e696b4466ba3207ac7a",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/02-overview.tex": "d753a9d37d748263a8d2f723a0b0d4a16a9e2aef2cb774061b2d4307a135a448",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/03-chronology.tex": "febe3f29c5d7927f58206560140d90906f6b98d57709900665b1d1d6eddf5d1f",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/04-themes.tex": "9d81d5f78cac5bf0fa02a0812939667f84769462d3ae02ebb691ea8c708f9910",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/10-commentary.tex": "ed48c2709f7744b0ad5b8c18844f237a1e46e4e835e50385c175f9ce14354b79",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/90-apparatus.tex": "9bc8e2f3d99932e36496596c5a0519e26f5746e40d98f374b63e4c50151a5ab9",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/synthesis.tex": "c01caba4af27a296fd7390e39f1663e72c8e3201f50072e386079f69e101dc5b"
+        },
+        "generation_provenance": {
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/generation-metadata.tex": {
+            "inheritance": [],
+            "production": [
+              [
+                "proper-study",
+                "7",
+                "9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38",
+                "b686b7a44f0e35e7",
+                "a1320fb62298ed6b1cf10d82d252212a03a484d0",
+                "unknown"
+              ]
+            ]
+          }
+        },
+        "provider": "gpt",
+        "review": "synthesis",
+        "schema": 1
+      },
+      "stage": "synthesis-review"
+    },
+    {
+      "hash": "b4db7dc1b4ef477e141323c45f12c6dc55e98f6bd3f6c6b8a3cc61f87ba1440e",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/derive-homily-0000.txt",
+      "stage": "derive-homily"
+    },
+    {
+      "hash": "76829bae0d49d7c8ac854fa771e5bcaf2176fb1ce1393afa7b55f483f288b220",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/homily-preflight-0000.txt",
+      "stage": "homily-preflight"
+    },
+    {
+      "hash": "5da8025c482a26b3cac8c9342e8917f0473558f5a1810d92bd1c0dd6cca7bfee",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/homily-review-0000.txt",
+      "review_inputs": {
+        "component_contract": {
+          "calendar": "roman-1962",
+          "components": [
+            {
+              "depends_on": [],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "homily-body",
+              "kind": "homily",
+              "path": "sections/homily/10-body.tex",
+              "references": [
+                "research/scope.md",
+                "research/interpretations.md",
+                "research/source-bindings.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [],
+              "key": "homily-apparatus",
+              "kind": "terminal-apparatus",
+              "path": "sections/homily/90-apparatus.tex",
+              "references": []
+            }
+          ],
+          "document": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "lanes": [
+            {
+              "authors": [
+                "Augustine of Hippo",
+                "Gregory the Great",
+                "Alfredo Ildefonso Schuster",
+                "Robert Bellarmine"
+              ],
+              "carrying_authors": [
+                "Augustine of Hippo",
+                "Gregory the Great"
+              ],
+              "component_keys": [
+                "clothed-charity"
+              ],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "clothed-charity",
+              "senses": [
+                "literal",
+                "allegorical",
+                "moral",
+                "anagogical"
+              ],
+              "sources": [
+                "research/scope.md",
+                "research/interpretations.md"
+              ]
+            },
+            {
+              "authors": [
+                "John Chrysostom",
+                "Robert Bellarmine",
+                "Augustine of Hippo",
+                "Thomas Aquinas",
+                "Gregory the Great",
+                "Alfredo Ildefonso Schuster"
+              ],
+              "carrying_authors": [
+                "John Chrysostom",
+                "Robert Bellarmine"
+              ],
+              "component_keys": [
+                "renewed-action"
+              ],
+              "element_keys": [
+                "introit",
+                "collect",
+                "epistle",
+                "gradual",
+                "alleluia",
+                "gospel",
+                "offertory",
+                "secret",
+                "communion",
+                "postcommunion"
+              ],
+              "key": "renewed-action",
+              "senses": [
+                "literal",
+                "allegorical",
+                "moral",
+                "anagogical"
+              ],
+              "sources": [
+                "research/scope.md",
+                "research/interpretations.md"
+              ]
+            }
+          ],
+          "presentation": {
+            "chronology": "concise-chronology",
+            "commentary": "concise-commentary",
+            "inventory": "concise-inventory",
+            "overview": "concise-overview",
+            "themes": "concise-themes"
+          },
+          "presentation_contract": "interpretive-pagination-v1",
+          "schema": 2
+        },
+        "document": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+        "files": {
+          "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+          "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+          "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/homily.tex": "157285a37dd7fd418946051a2b35242f9dfb682f104028becb0c005e4d628c52",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/interpretations.md": "2ce227b8be499275dd44f7d95f7377699e9db91b5cad14429daa4ae0e640c44e",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/scope.md": "94883591e56b18aa610af87301d83af75617309ecbfa09db90ae9a55fd170cec",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/source-bindings.toml": "86872efeb74eaf328aa07ea0c7e9a412694a44794af808527e25ca16f53d9d6c",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/homily/10-body.tex": "c09bbd3cf387ec91622355e4472f67f168d3173522dc9702751998048a45b756",
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/homily/90-apparatus.tex": "586e72928869a85e106e5230852890a0ad71e3202faf7ee6712235c21205e8c8"
+        },
+        "generation_provenance": {
+          "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/generation-metadata.tex": {
+            "inheritance": [],
+            "production": [
+              [
+                "proper-study",
+                "7",
+                "9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38",
+                "b686b7a44f0e35e7",
+                "a1320fb62298ed6b1cf10d82d252212a03a484d0",
+                "unknown"
+              ]
+            ]
+          }
+        },
+        "provider": "gpt",
+        "review": "homily",
+        "schema": 1
+      },
+      "stage": "homily-review"
+    },
+    {
+      "hash": "9744d288546077fc66c2ae9357abdf8dd0a95d8772a60ac005da038c4770db77",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/build-artifacts-0000.txt",
+      "stage": "build-artifacts"
+    },
+    {
+      "hash": "976aaa4e73132e918763d4b93f28126667b9508b554200f61a602081bfaa17c7",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/artifact-gates-0000.txt",
+      "stage": "artifact-gates"
+    },
+    {
+      "hash": "e23cae423a6c23bc0b312ca0662610efae5251f7e3e21618aeac497e168103e4",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/visual-review-0000.txt",
+      "review_inputs": {
+        "artifacts": {
+          "document": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+          "pagination_evidence": {
+            "build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.aux": "5fa40538283f0773f66967f7302f515865ba94edee61c1d71b60e74cdf1873bd",
+            "build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.aux": "9df575e5f9cac9ee0c76ac8912f1240a82c0b622cc7b7b186d317e2175039591"
+          },
+          "pdfs": {
+            "build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf": "75f155ca5c86429a1f487e6d076bffe3faf3026a4a6dbb9274be822344da963c",
+            "build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf": "7681fbd92d4301f3138f5512d97f6273119a7364f2e02bbff2edb2ea115c1848",
+            "build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf": "52b155c7e4366f0ef8304871ac1dabbbc56733aaaaa589f12085b396d7f18d43"
+          },
+          "provider": "gpt",
+          "render_inputs": {
+            "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+            "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+            "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+            "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/generation-metadata.tex": "fa891ea9324b98e71976931f984ca6fd5eee7e4c61cf84f6dc19aca62f348b8b",
+            "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/homily.tex": "157285a37dd7fd418946051a2b35242f9dfb682f104028becb0c005e4d628c52",
+            "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/main.tex": "ec2ca21fd848f2586e697e283391f4a0172a4776f6b710d948432bae3aad2892",
+            "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/proper-components.toml": "12bd9c01dbe2e2542d3f6e74d1ca4f6b4b4da2fb780259cb83cf6efaba44dfff",
+            "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/chronology-annotations.tex": "b7e50caa9329f553ed4544bba2298cb5fea2e4bb6fba1dbb7afcf8cfac461ea0",
+            "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/00-opening.tex": "c9fd052b3aa7b014f13702384a65556b07cfe6ebc23d388a3222cfdac59d0e42",
+            "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/10-appointed-text.tex": "979fb7a8373b38bcc839476b084f2bab2cfa2d2d8621d9da7ccf5d95ff89aa75",
+            "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/20-commentary.tex": "1aea1ade3c71fbbf67069c6de8689e1b7557ad78ed0212fc8cf970478da96dd3",
+            "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/30-clothed-charity.tex": "d9742de8f4cab5242c474f162607afb5b69ef73d75639d9c045b058e9da66762",
+            "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/40-renewed-action.tex": "aee2a7c42211e3f9927d5d3d2c6be224864c3b37556de1f2643951d361f63b2f",
+            "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/50-comparison.tex": "d3886b794879124c3b3b0f582e6b26bd6650093d267d1e1ddc79b35f7209bc75",
+            "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/70-date-location.tex": "ca60f75fe144552191512d8ec898499a12ecf268c977e43f9f709f9634eaa707",
+            "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/90-study-apparatus.tex": "e17406bb8cb0a46d192e116f6732217d2010e1d55884616288a731e8ec3e5dbc",
+            "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/01-inventory.tex": "2cc6eb5f2eeab40c9176a342f51237f68c56131d9e723e696b4466ba3207ac7a",
+            "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/02-overview.tex": "d753a9d37d748263a8d2f723a0b0d4a16a9e2aef2cb774061b2d4307a135a448",
+            "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/03-chronology.tex": "febe3f29c5d7927f58206560140d90906f6b98d57709900665b1d1d6eddf5d1f",
+            "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/04-themes.tex": "9d81d5f78cac5bf0fa02a0812939667f84769462d3ae02ebb691ea8c708f9910",
+            "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/10-commentary.tex": "ed48c2709f7744b0ad5b8c18844f237a1e46e4e835e50385c175f9ce14354b79",
+            "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/90-apparatus.tex": "9bc8e2f3d99932e36496596c5a0519e26f5746e40d98f374b63e4c50151a5ab9",
+            "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/homily/10-body.tex": "c09bbd3cf387ec91622355e4472f67f168d3173522dc9702751998048a45b756",
+            "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/homily/90-apparatus.tex": "586e72928869a85e106e5230852890a0ad71e3202faf7ee6712235c21205e8c8",
+            "src/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/synthesis.tex": "c01caba4af27a296fd7390e39f1663e72c8e3201f50072e386079f69e101dc5b"
+          },
+          "schema": 2
+        },
+        "document": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+        "files": {},
+        "provider": "gpt",
+        "review": "visual",
+        "schema": 1
+      },
+      "stage": "visual-review"
+    },
+    {
+      "hash": "e9f6031409d819dc9f8e0575e0d1533ac92af296f6e2f5e7e9b88b150e61830b",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/generate-web-0000.txt",
+      "stage": "generate-web"
+    },
+    {
+      "hash": "7a244ee32a566d56110e6efacd9fd56efffe945bf3abc9bd52312a999601f595",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/web-review-0000.txt",
+      "review_inputs": {
+        "document": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+        "files": {},
+        "provider": "gpt",
+        "review": "web",
+        "schema": 1,
+        "web": {
+          "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.md": "dc4948bdc26ab27a24d562018196b556298903d256b7364bf918997b38c25eb5"
+        }
+      },
+      "stage": "web-review"
+    },
+    {
+      "hash": "1320e02ef7eade9c9ce227e21948f1d14c8a6244ca5c4081e6011ef3aae6b57e",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/install-publication-0000.txt",
+      "stage": "install-publication"
+    },
+    {
+      "hash": "4d9e19d49beaad6643b0bdd7881608ec854504afacc58c9695c459af16e658e3",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/packets/publication-gates-0000.txt",
+      "stage": "publication-gates"
+    }
+  ],
+  "repo_commit": "a1320fb62298ed6b1cf10d82d252212a03a484d0",
+  "result_hashes": [
+    {
+      "disposition": "PASS",
+      "hash": "c2c5dc73384dcaa82e6a0b0b6d655a49fd9f0d8345607513add762f6826c4e2d",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/scope-gate-0000.json",
+      "stage": "scope-gate"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "8886842bbabd8b65e71107e0559e20ba3ad812f5078c1f2c9b6c158f8e8dbc77",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/resolve-context-0000.json",
+      "stage": "resolve-context"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "c679554afe197a5fe5e9cfa3b7b5ea5e03ad748f2025f3b48b2b134371f339e9",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/research-0000.json",
+      "stage": "research"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "d9c4c5d71ce61eb0186e720a8b7c42807d1ab40d1053516f4841a9f45c9468f1",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/research-preflight-0000.json",
+      "stage": "research-preflight"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "hash": "a30895399a9b27f4d73fd54da1d90984371c21115c5326c8025c9b0c1053471c",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/research-review-0000.json",
+      "stage": "research-review"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "22ca754fd32211a8edeca81781d86ee0c2b5245d02af7fcb371713f17f01fae8",
+      "iteration": 1,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/research-0001.json",
+      "stage": "research"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "3d41e3743c4cd6ecf837fcb791516f7a053ba74c59eeb7aa7a2100847f40b2c9",
+      "iteration": 1,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/research-preflight-0001.json",
+      "stage": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "e18c4fd337073fd5044c37d83b052f5f5268f8bf83a079b0c12db7541e34cf42",
+      "iteration": 1,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/research-review-0001.json",
+      "stage": "research-review"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "c280e5c18981d24bb2f73e021a44776dddf21ef03b00435cf7c3c9aa07bc4a36",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/author-study-0000.json",
+      "stage": "author-study"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "db4f430efb6baf21bb53a26e3ace3bc17674c5b6c4e65d8af259ee8366a0f0ae",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/study-preflight-0000.json",
+      "stage": "study-preflight"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "hash": "49f02a3b08d53a2264efbd275cfd905be77d03c0254bb9adaa420597269c4b9c",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/study-review-0000.json",
+      "stage": "study-review"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "e251635a3a5e55c4e08315154bcb2323d69eeeb64673282ab318f72e88a69662",
+      "iteration": 2,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/research-0002.json",
+      "stage": "research"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "4826841d9cf1db8e180ed8cb4eba89546e06958edef59f53b3bd0b25143da4b9",
+      "iteration": 2,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/research-preflight-0002.json",
+      "stage": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "9b29713e7b0b1f0388bf65df3e720061be07524651ce868547b5085ecd5fbded",
+      "iteration": 2,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/research-review-0002.json",
+      "stage": "research-review"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "9f2326667cdee37043fe79ef99dd6f6fed5d77aa7d6ef0cc4d54915c390f92e3",
+      "iteration": 1,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/author-study-0001.json",
+      "stage": "author-study"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "64cc916498497445157cff08a5427e9162b4d673fa3d872e7e211df5c9e04202",
+      "iteration": 1,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/study-preflight-0001.json",
+      "stage": "study-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "39f8782cd62c4d5aeed4f5dd4329ab1fda52c37b2148e922ef11e2bd36dc323d",
+      "iteration": 1,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/study-review-0001.json",
+      "stage": "study-review"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "df7e6868c945eb4e754b465a5a004468ad95225f5d3f514d4426c0f4e58a9e5a",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/derive-synthesis-0000.json",
+      "stage": "derive-synthesis"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "67b87db41056e0690c03027475a5706f18334b8a627effc6e088c72dc2725ad3",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/synthesis-preflight-0000.json",
+      "stage": "synthesis-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "5afa1e7e937b6a247f579a1747ab8959a5a431a9f85bcdf957e1b120e62b5716",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/synthesis-review-0000.json",
+      "stage": "synthesis-review"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "7451db3dbb9fda96c16c4d4be05a7691c3ca34b7620bebd5af63afc147e2d9eb",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/derive-homily-0000.json",
+      "stage": "derive-homily"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "38c3abc374b62eb01fe47799b263dc88821ecda5d4aac8a36d1adbda83d9b628",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/homily-preflight-0000.json",
+      "stage": "homily-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "694f210e24dd4092fb2a7dd9442c026f8779a12f741d41cb6f6d31598075126d",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/homily-review-0000.json",
+      "stage": "homily-review"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "700161b48e4b82589a665ae8aac2031e55981928633cdbe34f75434aaf83c9f4",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/build-artifacts-0000.json",
+      "stage": "build-artifacts"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "97af5c9c6c70bfc4459030f6b4c4d3ef1c5d44f458a9759ff4ab5fcbb5607d3c",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/artifact-gates-0000.json",
+      "stage": "artifact-gates"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "5994486404e1fce474f51f4bf7cab5df0a0d227c22c979ed59235bd5a19f0c14",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/visual-review-0000.json",
+      "stage": "visual-review"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "073c051eada6ea50b87f2160f8cef1278b984f11f4a1a980da4dc343280d19c3",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/generate-web-0000.json",
+      "stage": "generate-web"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "5bda1c866fddd87d65f1b8591bfaa989d9850a33b227e4afa1ab59b38addf2cb",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/web-review-0000.json",
+      "stage": "web-review"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "4bcdcdaffcbf603594c046fac2aeac5e46fa968fc7652b16298a118855ecaafb",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/install-publication-0000.json",
+      "stage": "install-publication"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "87e27f47187bceefeff0205ab007611fe381e50491f82a337afa2b2f1cdd7d2a",
+      "iteration": 0,
+      "path": "build/tpt-runs/b686b7a44f0e35e7/results/publication-gates-0000.json",
+      "stage": "publication-gates"
+    }
+  ],
+  "run_id": "b686b7a44f0e35e7",
+  "stage_blocking_ids": {},
+  "stage_blocking_targets": {},
+  "stage_failures": {
+    "artifact-gates": 0,
+    "homily-preflight": 0,
+    "homily-review": 0,
+    "publication-gates": 0,
+    "research-preflight": 0,
+    "research-review": 0,
+    "scope-gate": 0,
+    "study-preflight": 0,
+    "study-review": 0,
+    "synthesis-preflight": 0,
+    "synthesis-review": 0,
+    "visual-review": 0,
+    "web-review": 0
+  },
+  "stage_iterations": {
+    "artifact-gates": 1,
+    "author-study": 2,
+    "build-artifacts": 1,
+    "derive-homily": 1,
+    "derive-synthesis": 1,
+    "generate-web": 1,
+    "homily-preflight": 1,
+    "homily-review": 1,
+    "install-publication": 1,
+    "publication-gates": 1,
+    "research": 3,
+    "research-preflight": 3,
+    "research-review": 3,
+    "resolve-context": 1,
+    "scope-gate": 1,
+    "study-preflight": 2,
+    "study-review": 2,
+    "synthesis-preflight": 1,
+    "synthesis-review": 1,
+    "visual-review": 1,
+    "web-review": 1
+  },
+  "stage_novel": {
+    "artifact-gates": 0,
+    "homily-preflight": 0,
+    "homily-review": 0,
+    "publication-gates": 0,
+    "research-preflight": 0,
+    "research-review": 0,
+    "scope-gate": 0,
+    "study-preflight": 0,
+    "study-review": 0,
+    "synthesis-preflight": 0,
+    "synthesis-review": 0,
+    "visual-review": 0,
+    "web-review": 0
+  },
+  "stage_repeats": {
+    "artifact-gates": 0,
+    "homily-preflight": 0,
+    "homily-review": 0,
+    "publication-gates": 0,
+    "research-preflight": 0,
+    "research-review": 0,
+    "scope-gate": 0,
+    "study-preflight": 0,
+    "study-review": 0,
+    "synthesis-preflight": 0,
+    "synthesis-review": 0,
+    "visual-review": 0,
+    "web-review": 0
+  },
+  "stage_scope_baseline": {
+    "homily-review": {
+      "generation-metadata.tex": "fa891ea9324b98e71976931f984ca6fd5eee7e4c61cf84f6dc19aca62f348b8b",
+      "homily.tex": "157285a37dd7fd418946051a2b35242f9dfb682f104028becb0c005e4d628c52",
+      "main.tex": "ec2ca21fd848f2586e697e283391f4a0172a4776f6b710d948432bae3aad2892",
+      "proper-components.toml": "12bd9c01dbe2e2542d3f6e74d1ca4f6b4b4da2fb780259cb83cf6efaba44dfff",
+      "propers/retrieved.txt": "a3880c6a92534a005906e6c181bc8994caae32757eebad1b624eb4175284b5d9",
+      "propers/verified.md": "974f3b6f4d680f85a5fdd1a80bc96bec048f955cb29202cd2ab2ba65cf835af2",
+      "research/chronology-annotations.tex": "b7e50caa9329f553ed4544bba2298cb5fea2e4bb6fba1dbb7afcf8cfac461ea0",
+      "research/chronology-profile-comparisons.toml": "7306dbbfa42399c1dab06cac21ca7fbdbf67fd0cb1fef34297adddca32b80cbc",
+      "research/chronology.toml": "8414686f0737fcd106702487d6e380fbac0412b626b3c9a7d1028a207cd8fc21",
+      "research/context.md": "31a9b9b15091902206818ac4b4add4f691a6ec6ab07b20bcd2c58179ca73ef11",
+      "research/interpretations.md": "2ce227b8be499275dd44f7d95f7377699e9db91b5cad14429daa4ae0e640c44e",
+      "research/production-review.md": "9f651c86e245fba2f2d6a434089fb4e7a0bbcbcf3e9a85255126ebeec5f7b097",
+      "research/review-dependencies.toml": "ae6b559d1dde87d5dfa960a0f76756312e7f084ab46b73bbdd5b0e696b51771a",
+      "research/scope.md": "94883591e56b18aa610af87301d83af75617309ecbfa09db90ae9a55fd170cec",
+      "research/source-bindings.toml": "86872efeb74eaf328aa07ea0c7e9a412694a44794af808527e25ca16f53d9d6c",
+      "sections/00-opening.tex": "c9fd052b3aa7b014f13702384a65556b07cfe6ebc23d388a3222cfdac59d0e42",
+      "sections/10-appointed-text.tex": "979fb7a8373b38bcc839476b084f2bab2cfa2d2d8621d9da7ccf5d95ff89aa75",
+      "sections/20-commentary.tex": "1aea1ade3c71fbbf67069c6de8689e1b7557ad78ed0212fc8cf970478da96dd3",
+      "sections/30-clothed-charity.tex": "d9742de8f4cab5242c474f162607afb5b69ef73d75639d9c045b058e9da66762",
+      "sections/40-renewed-action.tex": "aee2a7c42211e3f9927d5d3d2c6be224864c3b37556de1f2643951d361f63b2f",
+      "sections/50-comparison.tex": "d3886b794879124c3b3b0f582e6b26bd6650093d267d1e1ddc79b35f7209bc75",
+      "sections/70-date-location.tex": "ca60f75fe144552191512d8ec898499a12ecf268c977e43f9f709f9634eaa707",
+      "sections/90-study-apparatus.tex": "e17406bb8cb0a46d192e116f6732217d2010e1d55884616288a731e8ec3e5dbc",
+      "sections/concise/01-inventory.tex": "2cc6eb5f2eeab40c9176a342f51237f68c56131d9e723e696b4466ba3207ac7a",
+      "sections/concise/02-overview.tex": "d753a9d37d748263a8d2f723a0b0d4a16a9e2aef2cb774061b2d4307a135a448",
+      "sections/concise/03-chronology.tex": "febe3f29c5d7927f58206560140d90906f6b98d57709900665b1d1d6eddf5d1f",
+      "sections/concise/04-themes.tex": "9d81d5f78cac5bf0fa02a0812939667f84769462d3ae02ebb691ea8c708f9910",
+      "sections/concise/10-commentary.tex": "ed48c2709f7744b0ad5b8c18844f237a1e46e4e835e50385c175f9ce14354b79",
+      "sections/concise/90-apparatus.tex": "9bc8e2f3d99932e36496596c5a0519e26f5746e40d98f374b63e4c50151a5ab9",
+      "sections/homily/10-body.tex": "c09bbd3cf387ec91622355e4472f67f168d3173522dc9702751998048a45b756",
+      "sections/homily/90-apparatus.tex": "586e72928869a85e106e5230852890a0ad71e3202faf7ee6712235c21205e8c8",
+      "synthesis.tex": "c01caba4af27a296fd7390e39f1663e72c8e3201f50072e386079f69e101dc5b",
+      "web-edition.toml": "56df8cd7727e901ddf4732d56be8d3a020dc6e306d9e599c62f01136976fd49b"
+    },
+    "research-review": {
+      "generation-metadata.tex": "b7f9db868fd0ff85f1e8978d6633d9ab00c379f3cf161de25a28e49bc622b8bf",
+      "main.tex": "ec2ca21fd848f2586e697e283391f4a0172a4776f6b710d948432bae3aad2892",
+      "proper-components.toml": "12bd9c01dbe2e2542d3f6e74d1ca4f6b4b4da2fb780259cb83cf6efaba44dfff",
+      "propers/retrieved.txt": "a3880c6a92534a005906e6c181bc8994caae32757eebad1b624eb4175284b5d9",
+      "propers/verified.md": "974f3b6f4d680f85a5fdd1a80bc96bec048f955cb29202cd2ab2ba65cf835af2",
+      "research/chronology-annotations.tex": "b7e50caa9329f553ed4544bba2298cb5fea2e4bb6fba1dbb7afcf8cfac461ea0",
+      "research/chronology-profile-comparisons.toml": "7306dbbfa42399c1dab06cac21ca7fbdbf67fd0cb1fef34297adddca32b80cbc",
+      "research/chronology.toml": "8414686f0737fcd106702487d6e380fbac0412b626b3c9a7d1028a207cd8fc21",
+      "research/context.md": "31a9b9b15091902206818ac4b4add4f691a6ec6ab07b20bcd2c58179ca73ef11",
+      "research/interpretations.md": "2ce227b8be499275dd44f7d95f7377699e9db91b5cad14429daa4ae0e640c44e",
+      "research/production-review.md": "6ec52a9b218068b7db37dd1cd514ebc86d7e9087b8254ca06e0d4e71897254a7",
+      "research/review-dependencies.toml": "ae6b559d1dde87d5dfa960a0f76756312e7f084ab46b73bbdd5b0e696b51771a",
+      "research/scope.md": "94883591e56b18aa610af87301d83af75617309ecbfa09db90ae9a55fd170cec",
+      "research/source-bindings.toml": "86872efeb74eaf328aa07ea0c7e9a412694a44794af808527e25ca16f53d9d6c",
+      "sections/00-opening.tex": "c9fd052b3aa7b014f13702384a65556b07cfe6ebc23d388a3222cfdac59d0e42",
+      "sections/10-appointed-text.tex": "979fb7a8373b38bcc839476b084f2bab2cfa2d2d8621d9da7ccf5d95ff89aa75",
+      "sections/20-commentary.tex": "1aea1ade3c71fbbf67069c6de8689e1b7557ad78ed0212fc8cf970478da96dd3",
+      "sections/30-clothed-charity.tex": "d9742de8f4cab5242c474f162607afb5b69ef73d75639d9c045b058e9da66762",
+      "sections/40-renewed-action.tex": "aee2a7c42211e3f9927d5d3d2c6be224864c3b37556de1f2643951d361f63b2f",
+      "sections/50-comparison.tex": "d3886b794879124c3b3b0f582e6b26bd6650093d267d1e1ddc79b35f7209bc75",
+      "sections/70-date-location.tex": "b6a11f47fd2d0410b7619eb2b1304135a8cc1e973ae47d42a16c1f4511bd009d",
+      "sections/90-study-apparatus.tex": "955b3bd55e2cfd05f1289ea2441f3bb286722f07adeedb840c63d8c9d1a0b8bd",
+      "web-edition.toml": "56df8cd7727e901ddf4732d56be8d3a020dc6e306d9e599c62f01136976fd49b"
+    },
+    "study-review": {
+      "generation-metadata.tex": "b9685fa850392ce11d7f5554354ddd8047c1f63ff472ed552a7d9e293b302a0d",
+      "main.tex": "ec2ca21fd848f2586e697e283391f4a0172a4776f6b710d948432bae3aad2892",
+      "proper-components.toml": "12bd9c01dbe2e2542d3f6e74d1ca4f6b4b4da2fb780259cb83cf6efaba44dfff",
+      "propers/retrieved.txt": "a3880c6a92534a005906e6c181bc8994caae32757eebad1b624eb4175284b5d9",
+      "propers/verified.md": "974f3b6f4d680f85a5fdd1a80bc96bec048f955cb29202cd2ab2ba65cf835af2",
+      "research/chronology-annotations.tex": "b7e50caa9329f553ed4544bba2298cb5fea2e4bb6fba1dbb7afcf8cfac461ea0",
+      "research/chronology-profile-comparisons.toml": "7306dbbfa42399c1dab06cac21ca7fbdbf67fd0cb1fef34297adddca32b80cbc",
+      "research/chronology.toml": "8414686f0737fcd106702487d6e380fbac0412b626b3c9a7d1028a207cd8fc21",
+      "research/context.md": "31a9b9b15091902206818ac4b4add4f691a6ec6ab07b20bcd2c58179ca73ef11",
+      "research/interpretations.md": "2ce227b8be499275dd44f7d95f7377699e9db91b5cad14429daa4ae0e640c44e",
+      "research/production-review.md": "8c24abbc18d72dd174fccef5e2252da0c32e379f953a1ce1c509cd0eef71133e",
+      "research/review-dependencies.toml": "ae6b559d1dde87d5dfa960a0f76756312e7f084ab46b73bbdd5b0e696b51771a",
+      "research/scope.md": "94883591e56b18aa610af87301d83af75617309ecbfa09db90ae9a55fd170cec",
+      "research/source-bindings.toml": "86872efeb74eaf328aa07ea0c7e9a412694a44794af808527e25ca16f53d9d6c",
+      "sections/00-opening.tex": "c9fd052b3aa7b014f13702384a65556b07cfe6ebc23d388a3222cfdac59d0e42",
+      "sections/10-appointed-text.tex": "979fb7a8373b38bcc839476b084f2bab2cfa2d2d8621d9da7ccf5d95ff89aa75",
+      "sections/20-commentary.tex": "1aea1ade3c71fbbf67069c6de8689e1b7557ad78ed0212fc8cf970478da96dd3",
+      "sections/30-clothed-charity.tex": "d9742de8f4cab5242c474f162607afb5b69ef73d75639d9c045b058e9da66762",
+      "sections/40-renewed-action.tex": "aee2a7c42211e3f9927d5d3d2c6be224864c3b37556de1f2643951d361f63b2f",
+      "sections/50-comparison.tex": "d3886b794879124c3b3b0f582e6b26bd6650093d267d1e1ddc79b35f7209bc75",
+      "sections/70-date-location.tex": "ca60f75fe144552191512d8ec898499a12ecf268c977e43f9f709f9634eaa707",
+      "sections/90-study-apparatus.tex": "e17406bb8cb0a46d192e116f6732217d2010e1d55884616288a731e8ec3e5dbc",
+      "web-edition.toml": "56df8cd7727e901ddf4732d56be8d3a020dc6e306d9e599c62f01136976fd49b"
+    },
+    "synthesis-review": {
+      "generation-metadata.tex": "5619f2b8708cbd06ed7017f09bbf51a627f196ce7db137bf07a700aeb191d83c",
+      "main.tex": "ec2ca21fd848f2586e697e283391f4a0172a4776f6b710d948432bae3aad2892",
+      "proper-components.toml": "12bd9c01dbe2e2542d3f6e74d1ca4f6b4b4da2fb780259cb83cf6efaba44dfff",
+      "propers/retrieved.txt": "a3880c6a92534a005906e6c181bc8994caae32757eebad1b624eb4175284b5d9",
+      "propers/verified.md": "974f3b6f4d680f85a5fdd1a80bc96bec048f955cb29202cd2ab2ba65cf835af2",
+      "research/chronology-annotations.tex": "b7e50caa9329f553ed4544bba2298cb5fea2e4bb6fba1dbb7afcf8cfac461ea0",
+      "research/chronology-profile-comparisons.toml": "7306dbbfa42399c1dab06cac21ca7fbdbf67fd0cb1fef34297adddca32b80cbc",
+      "research/chronology.toml": "8414686f0737fcd106702487d6e380fbac0412b626b3c9a7d1028a207cd8fc21",
+      "research/context.md": "31a9b9b15091902206818ac4b4add4f691a6ec6ab07b20bcd2c58179ca73ef11",
+      "research/interpretations.md": "2ce227b8be499275dd44f7d95f7377699e9db91b5cad14429daa4ae0e640c44e",
+      "research/production-review.md": "60df210e253bc6642284ebdcd2e681b508c7024f9b73adc4afa3ce91cba02f62",
+      "research/review-dependencies.toml": "ae6b559d1dde87d5dfa960a0f76756312e7f084ab46b73bbdd5b0e696b51771a",
+      "research/scope.md": "94883591e56b18aa610af87301d83af75617309ecbfa09db90ae9a55fd170cec",
+      "research/source-bindings.toml": "86872efeb74eaf328aa07ea0c7e9a412694a44794af808527e25ca16f53d9d6c",
+      "sections/00-opening.tex": "c9fd052b3aa7b014f13702384a65556b07cfe6ebc23d388a3222cfdac59d0e42",
+      "sections/10-appointed-text.tex": "979fb7a8373b38bcc839476b084f2bab2cfa2d2d8621d9da7ccf5d95ff89aa75",
+      "sections/20-commentary.tex": "1aea1ade3c71fbbf67069c6de8689e1b7557ad78ed0212fc8cf970478da96dd3",
+      "sections/30-clothed-charity.tex": "d9742de8f4cab5242c474f162607afb5b69ef73d75639d9c045b058e9da66762",
+      "sections/40-renewed-action.tex": "aee2a7c42211e3f9927d5d3d2c6be224864c3b37556de1f2643951d361f63b2f",
+      "sections/50-comparison.tex": "d3886b794879124c3b3b0f582e6b26bd6650093d267d1e1ddc79b35f7209bc75",
+      "sections/70-date-location.tex": "ca60f75fe144552191512d8ec898499a12ecf268c977e43f9f709f9634eaa707",
+      "sections/90-study-apparatus.tex": "e17406bb8cb0a46d192e116f6732217d2010e1d55884616288a731e8ec3e5dbc",
+      "sections/concise/01-inventory.tex": "2cc6eb5f2eeab40c9176a342f51237f68c56131d9e723e696b4466ba3207ac7a",
+      "sections/concise/02-overview.tex": "d753a9d37d748263a8d2f723a0b0d4a16a9e2aef2cb774061b2d4307a135a448",
+      "sections/concise/03-chronology.tex": "febe3f29c5d7927f58206560140d90906f6b98d57709900665b1d1d6eddf5d1f",
+      "sections/concise/04-themes.tex": "9d81d5f78cac5bf0fa02a0812939667f84769462d3ae02ebb691ea8c708f9910",
+      "sections/concise/10-commentary.tex": "ed48c2709f7744b0ad5b8c18844f237a1e46e4e835e50385c175f9ce14354b79",
+      "sections/concise/90-apparatus.tex": "9bc8e2f3d99932e36496596c5a0519e26f5746e40d98f374b63e4c50151a5ab9",
+      "synthesis.tex": "c01caba4af27a296fd7390e39f1663e72c8e3201f50072e386079f69e101dc5b",
+      "web-edition.toml": "56df8cd7727e901ddf4732d56be8d3a020dc6e306d9e599c62f01136976fd49b"
+    },
+    "visual-review": {
+      "generation-metadata.tex": "fa891ea9324b98e71976931f984ca6fd5eee7e4c61cf84f6dc19aca62f348b8b",
+      "homily.tex": "157285a37dd7fd418946051a2b35242f9dfb682f104028becb0c005e4d628c52",
+      "main.tex": "ec2ca21fd848f2586e697e283391f4a0172a4776f6b710d948432bae3aad2892",
+      "proper-components.toml": "12bd9c01dbe2e2542d3f6e74d1ca4f6b4b4da2fb780259cb83cf6efaba44dfff",
+      "propers/retrieved.txt": "a3880c6a92534a005906e6c181bc8994caae32757eebad1b624eb4175284b5d9",
+      "propers/verified.md": "974f3b6f4d680f85a5fdd1a80bc96bec048f955cb29202cd2ab2ba65cf835af2",
+      "research/artifacts.json": "32bc9554c9fde55dcd4c4dff3cf38e1e277cadc13fd3271ee53ca69f37bd7a30",
+      "research/chronology-annotations.tex": "b7e50caa9329f553ed4544bba2298cb5fea2e4bb6fba1dbb7afcf8cfac461ea0",
+      "research/chronology-profile-comparisons.toml": "7306dbbfa42399c1dab06cac21ca7fbdbf67fd0cb1fef34297adddca32b80cbc",
+      "research/chronology.toml": "8414686f0737fcd106702487d6e380fbac0412b626b3c9a7d1028a207cd8fc21",
+      "research/context.md": "31a9b9b15091902206818ac4b4add4f691a6ec6ab07b20bcd2c58179ca73ef11",
+      "research/interpretations.md": "2ce227b8be499275dd44f7d95f7377699e9db91b5cad14429daa4ae0e640c44e",
+      "research/production-review.md": "36dacd21a9f8189f79b761f94757e20973aea2af1cde17c6e6c20b34aa4ef006",
+      "research/review-dependencies.toml": "ae6b559d1dde87d5dfa960a0f76756312e7f084ab46b73bbdd5b0e696b51771a",
+      "research/scope.md": "94883591e56b18aa610af87301d83af75617309ecbfa09db90ae9a55fd170cec",
+      "research/source-bindings.toml": "86872efeb74eaf328aa07ea0c7e9a412694a44794af808527e25ca16f53d9d6c",
+      "sections/00-opening.tex": "c9fd052b3aa7b014f13702384a65556b07cfe6ebc23d388a3222cfdac59d0e42",
+      "sections/10-appointed-text.tex": "979fb7a8373b38bcc839476b084f2bab2cfa2d2d8621d9da7ccf5d95ff89aa75",
+      "sections/20-commentary.tex": "1aea1ade3c71fbbf67069c6de8689e1b7557ad78ed0212fc8cf970478da96dd3",
+      "sections/30-clothed-charity.tex": "d9742de8f4cab5242c474f162607afb5b69ef73d75639d9c045b058e9da66762",
+      "sections/40-renewed-action.tex": "aee2a7c42211e3f9927d5d3d2c6be224864c3b37556de1f2643951d361f63b2f",
+      "sections/50-comparison.tex": "d3886b794879124c3b3b0f582e6b26bd6650093d267d1e1ddc79b35f7209bc75",
+      "sections/70-date-location.tex": "ca60f75fe144552191512d8ec898499a12ecf268c977e43f9f709f9634eaa707",
+      "sections/90-study-apparatus.tex": "e17406bb8cb0a46d192e116f6732217d2010e1d55884616288a731e8ec3e5dbc",
+      "sections/concise/01-inventory.tex": "2cc6eb5f2eeab40c9176a342f51237f68c56131d9e723e696b4466ba3207ac7a",
+      "sections/concise/02-overview.tex": "d753a9d37d748263a8d2f723a0b0d4a16a9e2aef2cb774061b2d4307a135a448",
+      "sections/concise/03-chronology.tex": "febe3f29c5d7927f58206560140d90906f6b98d57709900665b1d1d6eddf5d1f",
+      "sections/concise/04-themes.tex": "9d81d5f78cac5bf0fa02a0812939667f84769462d3ae02ebb691ea8c708f9910",
+      "sections/concise/10-commentary.tex": "ed48c2709f7744b0ad5b8c18844f237a1e46e4e835e50385c175f9ce14354b79",
+      "sections/concise/90-apparatus.tex": "9bc8e2f3d99932e36496596c5a0519e26f5746e40d98f374b63e4c50151a5ab9",
+      "sections/homily/10-body.tex": "c09bbd3cf387ec91622355e4472f67f168d3173522dc9702751998048a45b756",
+      "sections/homily/90-apparatus.tex": "586e72928869a85e106e5230852890a0ad71e3202faf7ee6712235c21205e8c8",
+      "synthesis.tex": "c01caba4af27a296fd7390e39f1663e72c8e3201f50072e386079f69e101dc5b",
+      "web-edition.toml": "56df8cd7727e901ddf4732d56be8d3a020dc6e306d9e599c62f01136976fd49b"
+    },
+    "web-review": {
+      "generation-metadata.tex": "fa891ea9324b98e71976931f984ca6fd5eee7e4c61cf84f6dc19aca62f348b8b",
+      "homily.tex": "157285a37dd7fd418946051a2b35242f9dfb682f104028becb0c005e4d628c52",
+      "main.tex": "ec2ca21fd848f2586e697e283391f4a0172a4776f6b710d948432bae3aad2892",
+      "proper-components.toml": "12bd9c01dbe2e2542d3f6e74d1ca4f6b4b4da2fb780259cb83cf6efaba44dfff",
+      "propers/retrieved.txt": "a3880c6a92534a005906e6c181bc8994caae32757eebad1b624eb4175284b5d9",
+      "propers/verified.md": "974f3b6f4d680f85a5fdd1a80bc96bec048f955cb29202cd2ab2ba65cf835af2",
+      "research/artifacts.json": "32bc9554c9fde55dcd4c4dff3cf38e1e277cadc13fd3271ee53ca69f37bd7a30",
+      "research/chronology-annotations.tex": "b7e50caa9329f553ed4544bba2298cb5fea2e4bb6fba1dbb7afcf8cfac461ea0",
+      "research/chronology-profile-comparisons.toml": "7306dbbfa42399c1dab06cac21ca7fbdbf67fd0cb1fef34297adddca32b80cbc",
+      "research/chronology.toml": "8414686f0737fcd106702487d6e380fbac0412b626b3c9a7d1028a207cd8fc21",
+      "research/context.md": "31a9b9b15091902206818ac4b4add4f691a6ec6ab07b20bcd2c58179ca73ef11",
+      "research/interpretations.md": "2ce227b8be499275dd44f7d95f7377699e9db91b5cad14429daa4ae0e640c44e",
+      "research/production-review.md": "bdacad35ce7cf4a966cda0eff9683cd18cc7e65e92a094a9106ba5ddebf3f806",
+      "research/review-dependencies.toml": "ae6b559d1dde87d5dfa960a0f76756312e7f084ab46b73bbdd5b0e696b51771a",
+      "research/scope.md": "94883591e56b18aa610af87301d83af75617309ecbfa09db90ae9a55fd170cec",
+      "research/source-bindings.toml": "86872efeb74eaf328aa07ea0c7e9a412694a44794af808527e25ca16f53d9d6c",
+      "research/web-artifact.json": "d7cb03e30c14b4ff1cc5f4bd79f745cba54c4925d2ac2c4fb862064b31f0a9a8",
+      "sections/00-opening.tex": "c9fd052b3aa7b014f13702384a65556b07cfe6ebc23d388a3222cfdac59d0e42",
+      "sections/10-appointed-text.tex": "979fb7a8373b38bcc839476b084f2bab2cfa2d2d8621d9da7ccf5d95ff89aa75",
+      "sections/20-commentary.tex": "1aea1ade3c71fbbf67069c6de8689e1b7557ad78ed0212fc8cf970478da96dd3",
+      "sections/30-clothed-charity.tex": "d9742de8f4cab5242c474f162607afb5b69ef73d75639d9c045b058e9da66762",
+      "sections/40-renewed-action.tex": "aee2a7c42211e3f9927d5d3d2c6be224864c3b37556de1f2643951d361f63b2f",
+      "sections/50-comparison.tex": "d3886b794879124c3b3b0f582e6b26bd6650093d267d1e1ddc79b35f7209bc75",
+      "sections/70-date-location.tex": "ca60f75fe144552191512d8ec898499a12ecf268c977e43f9f709f9634eaa707",
+      "sections/90-study-apparatus.tex": "e17406bb8cb0a46d192e116f6732217d2010e1d55884616288a731e8ec3e5dbc",
+      "sections/concise/01-inventory.tex": "2cc6eb5f2eeab40c9176a342f51237f68c56131d9e723e696b4466ba3207ac7a",
+      "sections/concise/02-overview.tex": "d753a9d37d748263a8d2f723a0b0d4a16a9e2aef2cb774061b2d4307a135a448",
+      "sections/concise/03-chronology.tex": "febe3f29c5d7927f58206560140d90906f6b98d57709900665b1d1d6eddf5d1f",
+      "sections/concise/04-themes.tex": "9d81d5f78cac5bf0fa02a0812939667f84769462d3ae02ebb691ea8c708f9910",
+      "sections/concise/10-commentary.tex": "ed48c2709f7744b0ad5b8c18844f237a1e46e4e835e50385c175f9ce14354b79",
+      "sections/concise/90-apparatus.tex": "9bc8e2f3d99932e36496596c5a0519e26f5746e40d98f374b63e4c50151a5ab9",
+      "sections/homily/10-body.tex": "c09bbd3cf387ec91622355e4472f67f168d3173522dc9702751998048a45b756",
+      "sections/homily/90-apparatus.tex": "586e72928869a85e106e5230852890a0ad71e3202faf7ee6712235c21205e8c8",
+      "synthesis.tex": "c01caba4af27a296fd7390e39f1663e72c8e3201f50072e386079f69e101dc5b",
+      "web-edition.toml": "56df8cd7727e901ddf4732d56be8d3a020dc6e306d9e599c62f01136976fd49b"
+    }
+  },
+  "stage_scope_changed": {
+    "homily-review": [
+      "research/artifacts.json",
+      "research/production-review.md",
+      "research/web-artifact.json"
+    ],
+    "research-review": [
+      "generation-metadata.tex",
+      "homily.tex",
+      "research/artifacts.json",
+      "research/production-review.md",
+      "research/web-artifact.json",
+      "sections/70-date-location.tex",
+      "sections/90-study-apparatus.tex",
+      "sections/concise/01-inventory.tex",
+      "sections/concise/02-overview.tex",
+      "sections/concise/03-chronology.tex",
+      "sections/concise/04-themes.tex",
+      "sections/concise/10-commentary.tex",
+      "sections/concise/90-apparatus.tex",
+      "sections/homily/10-body.tex",
+      "sections/homily/90-apparatus.tex",
+      "synthesis.tex"
+    ],
+    "study-review": [
+      "generation-metadata.tex",
+      "homily.tex",
+      "research/artifacts.json",
+      "research/production-review.md",
+      "research/web-artifact.json",
+      "sections/concise/01-inventory.tex",
+      "sections/concise/02-overview.tex",
+      "sections/concise/03-chronology.tex",
+      "sections/concise/04-themes.tex",
+      "sections/concise/10-commentary.tex",
+      "sections/concise/90-apparatus.tex",
+      "sections/homily/10-body.tex",
+      "sections/homily/90-apparatus.tex",
+      "synthesis.tex"
+    ],
+    "synthesis-review": [
+      "generation-metadata.tex",
+      "homily.tex",
+      "research/artifacts.json",
+      "research/production-review.md",
+      "research/web-artifact.json",
+      "sections/homily/10-body.tex",
+      "sections/homily/90-apparatus.tex"
+    ],
+    "visual-review": [
+      "research/production-review.md",
+      "research/web-artifact.json"
+    ],
+    "web-review": [
+      "research/production-review.md"
+    ]
+  },
+  "transitions": [
+    {
+      "disposition": "PASS",
+      "from": "scope-gate",
+      "to": "resolve-context"
+    },
+    {
+      "disposition": "PASS",
+      "from": "resolve-context",
+      "to": "research"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research",
+      "to": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-preflight",
+      "to": "research-review"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "from": "research-review",
+      "to": "research"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research",
+      "to": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-preflight",
+      "to": "research-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-review",
+      "to": "author-study"
+    },
+    {
+      "disposition": "PASS",
+      "from": "author-study",
+      "to": "study-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "study-preflight",
+      "to": "study-review"
+    },
+    {
+      "disposition": "CHANGES_REQUIRED",
+      "from": "study-review",
+      "to": "research"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research",
+      "to": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-preflight",
+      "to": "research-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-review",
+      "to": "author-study"
+    },
+    {
+      "disposition": "PASS",
+      "from": "author-study",
+      "to": "study-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "study-preflight",
+      "to": "study-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "study-review",
+      "to": "derive-synthesis"
+    },
+    {
+      "disposition": "PASS",
+      "from": "derive-synthesis",
+      "to": "synthesis-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "synthesis-preflight",
+      "to": "synthesis-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "synthesis-review",
+      "to": "derive-homily"
+    },
+    {
+      "disposition": "PASS",
+      "from": "derive-homily",
+      "to": "homily-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "homily-preflight",
+      "to": "homily-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "homily-review",
+      "to": "build-artifacts"
+    },
+    {
+      "disposition": "PASS",
+      "from": "build-artifacts",
+      "to": "artifact-gates"
+    },
+    {
+      "disposition": "PASS",
+      "from": "artifact-gates",
+      "to": "visual-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "visual-review",
+      "to": "generate-web"
+    },
+    {
+      "disposition": "PASS",
+      "from": "generate-web",
+      "to": "web-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "web-review",
+      "to": "install-publication"
+    },
+    {
+      "disposition": "PASS",
+      "from": "install-publication",
+      "to": "publication-gates"
+    },
+    {
+      "disposition": "PASS",
+      "from": "publication-gates",
+      "to": "ACCEPTED"
+    }
+  ],
+  "unrepaired_for": {},
+  "unrepaired_notes": {},
+  "workflow_digest": "9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38",
+  "workflow_id": "proper-study",
+  "workflow_version": 7
+}

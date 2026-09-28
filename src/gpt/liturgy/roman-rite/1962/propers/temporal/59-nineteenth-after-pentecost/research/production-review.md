@@ -400,3 +400,77 @@ Its conversion receipt is `research/web-artifact.json`. This is generation
 evidence only; independent web review and installation are separate events.
 The web checks use the repository-pinned Markdown 3.10.3 dependency in a
 task-local environment, with no global dependency change.
+
+## Accepted reviews and installation — iteration 0
+
+The engine results for run `b686b7a44f0e35e7` record PASS with no findings
+for research review iteration 2, study review iteration 1, synthesis review
+iteration 0, homily review iteration 0, visual review iteration 0 and web
+review iteration 0. These are the actual accepted results following the
+earlier research and study repairs, not a new editorial or ecclesiastical
+approval. The web reviewer compared the complete conversion with the sealed
+study and checked representative desktop/mobile presentation, all fragment
+targets and footnote navigation using the locked Markdown 3.10.3 renderer.
+Remote URL availability and the deployed site were outside that review.
+
+Before installation on 28 September 2026, the artifact checker confirmed
+that `research/artifacts.json` still matched the three PDFs, render inputs
+and pagination evidence. All three normal `make install-doc` recipes then
+completed with their dependencies and metadata checks intact. Every build
+and installed PDF retained its accepted hash:
+
+| Installed PDF, below `pdf/gpt/liturgy/roman-rite/1962/propers/temporal/` | SHA-256 |
+| --- | --- |
+| `59-nineteenth-after-pentecost.pdf` | `52b155c7e4366f0ef8304871ac1dabbbc56733aaaaa589f12085b396d7f18d43` |
+| `59-nineteenth-after-pentecost-synthesis.pdf` | `7681fbd92d4301f3138f5512d97f6273119a7364f2e02bbff2edb2ea115c1848` |
+| `59-nineteenth-after-pentecost-homily.pdf` | `75f155ca5c86429a1f487e6d076bffe3faf3026a4a6dbb9274be822344da963c` |
+
+The reviewed canonical Markdown was installed byte for byte at
+`web/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.md`
+with SHA-256 `dc4948bdc26ab27a24d562018196b556298903d256b7364bf918997b38c25eb5`.
+Neither companion has a separate web authority. The three independently
+generated release records below
+`release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/`
+name the exact output identities, `library/traditional-latin-mass.md`,
+status `alpha` and the standing authorization
+`perpetual-public-repository-2026`. The existing Nineteenth Sunday row
+links Full PDF, Synthesis PDF, Homily PDF and Read in that order, with one
+canonical primary-provider marker. Its Claude cell remains Planned.
+
+The deterministic document catalogue and source projection were regenerated
+with their owning tools. The publication-source inventory and family ledger
+were refreshed; their only changed publication surface is this canonical
+leaf's completed review and installation audit. The 16 task-owned site
+inputs were rebound with exact path scoping, including scoped adoption of
+the ten newly recognized inputs. Every other site-source binding was
+preserved. The publication checker, scoped public-alpha policy check,
+`make check-sources` and the full `make check-web-editions-current` recipe
+passed. The scoped public-alpha check validates global source, release and
+authorization records while requiring installed PDFs only for this family;
+it does not verify unrelated PDFs or authorize a deployment.
+
+Installation does not claim deployment or terminal workflow acceptance.
+The publication gate remains the engine's subsequent decision. Earlier
+source-evidence, bibliography-automation and estimated-delivery limits remain.
+
+## Terminal workflow acceptance
+
+The actual engine returned **ACCEPTED** for run `b686b7a44f0e35e7` on
+28 September 2026, after publication-gates iteration 0 passed with no findings
+or escalations. All installed artifacts retain the hashes recorded above.
+The leaf's `evaluations/proper-study-results/b686b7a44f0e35e7/` preserves
+the exact 30 packets and 30 accepted submissions, including failed review
+dispositions, original seed manifest and bootstrap, terminal state, status
+and replay output. Every copied packet and result matches its engine-recorded
+hash. The replay reports the last packet intact and `deterministic: null`;
+no fresh deterministic replay is claimed.
+
+This terminal decision supersedes the pending-stage statements in the
+historical entries above. It accepts the workflow's publication family; it
+does not broaden the stated source-review, citation-automation, delivery-
+timing or remote-site verification claims. Sources, release records, artifact
+receipts and run evidence are committed on the workspace branch. Installed
+PDFs remain intentionally untracked under repository policy. Final validation
+and the concrete branch checkpoint are recorded in
+`workflows/reviews/gpt-1962-59-production-2026-09-28/CYCLES.md` and the work
+register; no main merge or live deployment is claimed.
