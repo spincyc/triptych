@@ -92,8 +92,11 @@ the earlier unstaged checks did not inspect these new files. These six source
 style warnings are retained to preserve the accepted immutable source and PDF
 identities; the default staged whitespace check is not claimed to pass.
 Validated content checkpoint `63c7aba000ad87893ba16ba53cfef6e335074628`
-contains the accepted publication and its integration. The delivery is complete
-on `feature/propers/codex`; no Pages deployment is claimed.
+contains the accepted publication and its integration. The publication delivery
+was completed and pushed on `feature/propers/codex` at `f081255ce3e12e10dd11e2ddf605dba930afc80b`.
+The maintainer subsequently requested a push to `main`. That deployment extension
+is in progress: local deployment gates, exact outgoing-range review, an ordinary
+fast-forward push and verification of Pages and the affected live routes remain.
 
 ## GPT 1962 Nineteenth Sunday three documents, 2026-09-28
 
