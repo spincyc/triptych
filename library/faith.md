@@ -42,6 +42,7 @@
 
 | Publication | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |
+| **Angels and the Gift of Being** | [PDF](../pdf/gpt/theology/angelology.pdf) · [Read](../web/gpt/theology/angelology.html) | — | A Thomistic study of angelic nature, grace, and ministry, with the Celestial Hierarchy and the witness of the Fathers. |
 | **How the Catholic Church Teaches** | [PDF](../pdf/gpt/articles/faith/catholic-doctrinal-authority.pdf) · [Read](../web/gpt/articles/faith/catholic-doctrinal-authority.html) | — | Dogma, definitive doctrine, authentic teaching, discipline, theological opinion, their historical development, and the response proper to each. |
 
 ## Church, Liturgy, and Modern Controversies

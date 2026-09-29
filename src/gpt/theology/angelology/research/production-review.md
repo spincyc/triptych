@@ -58,12 +58,40 @@ match the reviewed layout byte for byte. The subsequent blank-line guard
 needed by Pandoc leaves the entire PDF byte-identical. Raster directories
 are disposable build output; this record retains their scope and result.
 
-## Installation and remaining integration
+## Installation and integration
 
 The reviewed PDF was installed with `make install-doc PROVIDER=gpt
 DOC=theology/angelology`; the built and installed SHA-256 values match the
 reviewed identity above. The reviewed web edition is installed and its
 separate [web review](web-review.md) records conversion and browser checks.
-Global checks, scoped release bindings, and final Git delivery are in progress.
+The Faith catalog links the GPT PDF and web reader. The separate unfinished
+Claude source is inventoried on its tracked state and explicitly held from
+publication. Two initial untracked Claude section files remain outside the
+new deliverable and are preserved byte for byte.
 The maintainer subsequently authorized pushing the completed work to `main`
 and verifying the automatic GitHub Pages deployment.
+
+
+## Repository validation
+
+The complete `make check-sources` target passes on the tracked deployment
+candidate, including the deployment source checks, both publication inventories,
+the source-reader and document-catalog projections, containment, and the family
+migration ledger. The two pre-existing untracked Claude sections were temporarily
+preserved outside the scanned tree and restored in a `finally` block; they are
+neither adopted as GPT work nor added to the tracked Claude inventory.
+
+The local clone initially lacked the previously published PDFs, which are
+intentionally untracked. To validate the assembled site without rebuilding or
+substituting unrelated publications, 234 missing installed PDFs were restored
+from the successful live deployment at commit
+`a53e262d00d2658ac079801b07b26deeffb05a6d` (Pages run `36506250643`). Every restored
+file matches both the live publication manifest and `SHA256SUMS`. All 942
+observed build-input files, including the Makefile and workflow, match that
+commit; there are no changed or unknown prerequisites. The new GPT angelology
+PDF and six installed reading-plan PDFs were preserved unchanged. These restored
+files total 267,651,824 bytes. The local receipt is disposable; this durable
+record retains the verification scope and deployment basis.
+
+Release bindings, the complete site artifact, promise reconciliation, and
+Git delivery are still being finalized.

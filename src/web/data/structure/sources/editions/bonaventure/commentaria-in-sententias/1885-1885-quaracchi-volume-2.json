@@ -1,0 +1,92 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 1139738,
+   "edition_owned": true,
+   "id": "artifact.bonaventure.commentaria-in-sententias.1885-quaracchi-volume-2.facsimile-printed-89-94-7647fddb",
+   "media_type": "application/pdf",
+   "notes": "Six consecutive pages extracted from source PDF pages111–116, corresponding to printed89–94; page order and raster content retained. This excerpt supplies inspected q1 and the opening of q2 but is not the complete second book.",
+   "page_count": 6,
+   "retrieved": "2026-09-29",
+   "rights": "public-domain",
+   "rights_basis": "Exact historical page images from the1885 public-domain Quaracchi printing; the derivative adds no new textual or artistic content.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 30913,
+   "edition_owned": true,
+   "id": "artifact.bonaventure.commentaria-in-sententias.1885-quaracchi-volume-2.facsimile-title-page-13505f91",
+   "media_type": "application/pdf",
+   "notes": "Whole-source PDF page11; title and printed1885 date directly inspected. This single page preserves the edition control alongside the retained doctrinal excerpt and whole OCR.",
+   "page_count": 1,
+   "retrieved": "2026-09-29",
+   "rights": "public-domain",
+   "rights_basis": "Exact title-page image from the1885 public-domain Quaracchi printing; no new source wording added.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "facsimile",
+   "byte_size": 112390944,
+   "edition_owned": true,
+   "id": "artifact.bonaventure.commentaria-in-sententias.1885-quaracchi-volume-2.ia-complete-facsimile-5e90802f",
+   "media_type": "application/pdf",
+   "notes": "Complete offered scan, 112390944 bytes. Access limitation: the107.2MiB facsimile is not retained in full because of measured size; complete6.5MiB OCR and a6-page exact-page facsimile derivative for printed89–94 are retained offline. Actual source inspection covers title-page and printed89–91 and94.",
+   "page_count": null,
+   "retrieved": "2026-09-29",
+   "rights": "public-domain",
+   "rights_basis": "Quaracchi1885 printing, published before1931, public domain in the United States.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/doctorisseraphic02bona/doctorisseraphic02bona.pdf",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "digital-text",
+   "byte_size": 6785166,
+   "edition_owned": true,
+   "id": "artifact.bonaventure.commentaria-in-sententias.1885-quaracchi-volume-2.ia-complete-ocr-da25d3f5",
+   "media_type": "text/plain",
+   "notes": "Complete offered OCR for the second book commentary and historical front matter. Retained unchanged as a searchable locating aid, not evidence that the entire work was read or that wording has been collated.",
+   "page_count": null,
+   "retrieved": "2026-09-29",
+   "rights": "public-domain",
+   "rights_basis": "Uncorrected machine OCR of the public-domain1885 Quaracchi text. No modern scholarly emendation is asserted; the underlying printing predates1931 in the United States.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/doctorisseraphic02bona/doctorisseraphic02bona_djvu.txt",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1885",
+  "editors": [],
+  "id": "edition.bonaventure.commentaria-in-sententias.1885-quaracchi-volume-2",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Quaracchi: Collegium S. Bonaventurae, 1885; Opera omnia, volumeII",
+  "title": "Commentaria in secundum librum Sententiarum, Opera omnia II",
+  "translators": [],
+  "year": 1885
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Commentary on the Sentences",
+   "Commentaria in secundum librum Sententiarum"
+  ],
+  "author": "Bonaventure",
+  "category": "scholastic-commentary",
+  "description": "Bonaventure commentary on Peter Lombard Sentences, addressed by book, distinction, part, article and question. The registered Quaracchi second volume prints his commentary on the second book.",
+  "id": "work.bonaventure.commentaria-in-sententias",
+  "languages": [
+   "la"
+  ],
+  "title": "Commentaria in quatuor libros Sententiarum"
+ }
+}

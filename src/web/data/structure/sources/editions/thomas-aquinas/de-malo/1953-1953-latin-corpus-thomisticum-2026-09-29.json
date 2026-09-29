@@ -1,0 +1,60 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 223244,
+   "edition_owned": true,
+   "id": "artifact.thomas-aquinas.de-malo.1953-latin-corpus-thomisticum-2026-09-29.qdm16-historical-latin-ea70895b",
+   "media_type": "text/plain",
+   "notes": "De malo q16, all twelve articles. The paragraph order is preserved; source wording is not corrected. Plain prose only, without the modern web reference labels; citations follow the parent witness. Not a critical edition or facsimile.",
+   "page_count": null,
+   "retrieved": "2026-09-29",
+   "rights": "public-domain",
+   "rights_basis": "Thomas Aquinas thirteenth-century Latin is public domain in the United States. The extraction retains historical Latin prose only; Corpus Thomisticum navigation, tags, modern electronic reference labels and editorial wrapper are excluded. Recorded printing and editorial revisions do not grant Triptych rights in the historical text.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "content-html",
+   "byte_size": 322684,
+   "edition_owned": true,
+   "id": "artifact.thomas-aquinas.de-malo.1953-latin-corpus-thomisticum-2026-09-29.qdm16-html-12518586",
+   "media_type": "text/html",
+   "page_count": null,
+   "retrieved": "2026-09-29",
+   "rights": "restricted",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.corpusthomisticum.org/qdm16.html",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1953",
+  "editors": [],
+  "id": "edition.thomas-aquinas.de-malo.1953-latin-corpus-thomisticum-2026-09-29",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Turin1953 text, Busa electronic transcription reviewed by Enrique Alarcón; full Corpus Thomisticum web page acquired29 September2026",
+  "title": "Turin1953 text, Busa electronic transcription reviewed by Enrique Alarcón",
+  "translators": [],
+  "year": 1953
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "De malo",
+   "On Evil"
+  ],
+  "author": "Thomas Aquinas",
+  "category": "disputed-question",
+  "description": "Aquinas's sixteen disputed questions on evil. Question 16, in twelve articles, treats the devils: whether they have bodies, whether they were created evil, the object and the instant of the first sin, the obstinacy of their will, and their knowledge and power. A locus is question.article, optionally with its division.",
+  "id": "work.thomas-aquinas.de-malo",
+  "languages": [
+   "la"
+  ],
+  "title": "Quaestiones disputatae de malo"
+ }
+}

@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-09-28.
+Last reconciled: 2026-09-29.
 
 ## GPT angelology reference, 2026-09-29
 
@@ -20,14 +20,15 @@ publication remain separate. The target is `src/gpt/theology/angelology/`,
 under `guidance/theology/angelology.md`, with working title *Angels and the
 Gift of Being: A Thomistic Study of Nature, Grace, and Ministry*.
 
-**Source complete; installation in progress.** Independent research and composition
+**Installed and reviewed; deployment validation in progress.** Independent research and composition
 are complete, with a 62-page PDF that has passed full visual review. The
 systematic spine covers every article of ST I qq. 50–64 and 106–114;
 Dionysius receives fifteen chapter treatments. The distinct pedagogical
 thread is the relation of created nature, grace, and ministry. Sources,
 evidence ceilings, disputed positions and source bindings belong to this
-edition's own research records. The source checkpoint preserves the full treatise and registered corpus;
-installation and final integration checks are being completed. Work is committed on the workspace branch `feature/angelology`. The maintainer
+edition's own research records. The source checkpoint preserves the full treatise and registered corpus.
+The reviewed PDF and web edition are installed and linked from the Faith
+catalog; final integration checks are being completed. Work is committed on the workspace branch `feature/angelology`. The maintainer
 subsequently directed that the completed work be pushed to `main`; final
 deployment validation and that push are therefore part of delivery.
 

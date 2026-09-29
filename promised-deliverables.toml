@@ -27,14 +27,14 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "pdf-installation"
   criterion = "The GPT PDF compiles without unresolved errors or overflow, every page receives visual review, and the reviewed bytes are installed at pdf/gpt/theology/angelology.pdf with a tracked receipt."
-  status = "open"
-  evidence = ["src/gpt/theology/angelology/research/scope.md"]
+  status = "pass"
+  evidence = ["src/gpt/theology/angelology/research/production-review.md"]
 
   [[deliverables.requirements]]
   id = "web-installation"
   criterion = "The reviewed canonical web edition, Faith catalog links, publication record and document catalog are installed and validated."
-  status = "open"
-  evidence = ["src/gpt/theology/angelology/research/scope.md"]
+  status = "pass"
+  evidence = ["src/gpt/theology/angelology/research/web-review.md"]
 
   [[deliverables.requirements]]
   id = "validation-and-checkpoints"

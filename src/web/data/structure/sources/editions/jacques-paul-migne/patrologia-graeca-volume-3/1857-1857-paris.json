@@ -1,0 +1,66 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "facsimile",
+   "byte_size": 32351768,
+   "edition_owned": true,
+   "id": "artifact.jacques-paul-migne.patrologia-graeca-volume-3.1857-paris.ia-complete-facsimile-4792e56d",
+   "media_type": "application/pdf",
+   "notes": "Complete offered PG3 volume, 596 PDF pages. Contains multiple works, Latin translation and commentaries; no assertion that all contents have been read. Thirty-one MiB retained for reusable column and page controls.",
+   "page_count": 596,
+   "retrieved": "2026-09-29",
+   "rights": "public-domain",
+   "rights_basis": "Facsimile of Migne 1857, published before1931 and public domain in the United States. The digitization does not relicense the historical text; the exact historical page images are preserved.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/Patrologia_Graeca_vol_003/PG003_text.pdf",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "digital-text",
+   "byte_size": 4354218,
+   "edition_owned": true,
+   "id": "artifact.jacques-paul-migne.patrologia-graeca-volume-3.1857-paris.ia-complete-ocr-c3f4056d",
+   "media_type": "text/plain",
+   "notes": "Whole offered OCR, retained unchanged as a locator; Greek/Latin recognition errors remain. Not a facsimile, diplomatic transcription or independent witness.",
+   "page_count": null,
+   "retrieved": "2026-09-29",
+   "rights": "public-domain",
+   "rights_basis": "Uncorrected machine OCR of the public-domain 1857 volume; no newly authored scholarly correction or translation is asserted. Public-domain status is recorded for the underlying historical edition in the United States.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/Patrologia_Graeca_vol_003/PG003_djvu.txt",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1857",
+  "editors": [
+   "Jacques-Paul Migne"
+  ],
+  "id": "edition.jacques-paul-migne.patrologia-graeca-volume-3.1857-paris",
+  "jurisdiction": null,
+  "language": "grc",
+  "publication": "Paris: Jacques-Paul Migne, 1857",
+  "title": "Patrologiae cursus completus, Series Graeca, Tomus III",
+  "translators": [],
+  "year": 1857
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Patrologia Graeca 3",
+   "PG 3",
+   "Dionysius Areopagita, Opera omnia"
+  ],
+  "author": "Jacques-Paul Migne, publisher and series editor",
+  "category": "collected-volume",
+  "description": "The Dionysian works, Latin translations and scholia/commentary apparatus in Migne PG3. Individual Dionysian treatises and commentators are distinct constituents; the Heavenly Hierarchy is not the entire volume.",
+  "id": "work.jacques-paul-migne.patrologia-graeca-volume-3",
+  "languages": [
+   "grc",
+   "la"
+  ],
+  "title": "Patrologiae cursus completus, Series Graeca, volume 3"
+ }
+}

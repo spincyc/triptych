@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it.",
  "counted": {
-  "documents": 200,
-  "issues": 236,
-  "pages": 6385,
+  "documents": 202,
+  "issues": 238,
+  "pages": 6447,
   "titles_unrecorded": 0,
-  "works": 146
+  "works": 147
  },
  "models": [
   {
@@ -33,7 +33,7 @@
    "id": "GPT-6"
   },
   {
-   "documents": 4,
+   "documents": 5,
    "id": "GPT-6-based Codex agent"
   },
   {
@@ -42,17 +42,21 @@
   },
   {
    "documents": 1,
+   "id": "Opus 5.5"
+  },
+  {
+   "documents": 1,
    "id": "gpt-6-astra"
   }
  ],
  "providers": [
   {
-   "documents": 56,
+   "documents": 57,
    "id": "claude",
    "label": "Claude"
   },
   {
-   "documents": 144,
+   "documents": 145,
    "id": "gpt",
    "label": "GPT"
   }
@@ -85,7 +89,7 @@
   },
   {
    "id": "theology",
-   "works": 16
+   "works": 17
   }
  ],
  "workflows": [
@@ -10999,6 +11003,71 @@
    ],
    "leaf": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar",
    "section": "liturgy"
+  },
+  {
+   "catalog": "library/faith.md",
+   "catalog_page": "library/faith.html",
+   "editions": [
+    {
+     "authorization": null,
+     "contributions": [
+      {
+       "model": "Opus 5.5",
+       "qualifiers": "unexposed: exact API model identifier; unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Factory Droid CLI agent and its subagents (research, drafting, typesetting, review); Factory Droid CLI 0.223.0; unexposed: server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "Opus 5.5"
+     ],
+     "pages": null,
+     "pdf_absent": "no PDF is installed for this issue",
+     "provider": "claude",
+     "reviewed": "2026-09-29",
+     "revised": "2026-09-29T12:32:06Z",
+     "status": "hold",
+     "subject": "A Thomistic reference on the angels following Summa theologiae I qq. 50-64 and 106-114, with a chapter-by-chapter exposition of the Celestial Hierarchy and the patristic, magisterial, and liturgical witness",
+     "title": "The Angels: Nature, Knowledge, Will, Fall, Order, and Ministry",
+     "title_source": "src/claude/theology/angelology/main.tex"
+    },
+    {
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "unexposed: exact API model identifier, parent reasoning effort, model qualifiers and sampling configuration",
+       "runtime": "OpenAI Codex through API; original research, composition, integration and review; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "reasoning-effort=high; unexposed: exact API model identifier, model qualifiers and sampling configuration",
+       "runtime": "OpenAI Codex delegated agents; primary-source research, composition and source-library integration; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "reasoning-effort=medium; unexposed: exact API model identifier, model qualifiers and sampling configuration",
+       "runtime": "OpenAI Codex delegated agent; web-edition integration; unexposed: client version and server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "GPT-6-based Codex agent"
+     ],
+     "pages": 62,
+     "pdf": "pdf/gpt/theology/angelology.pdf",
+     "provider": "gpt",
+     "reviewed": "2026-09-29",
+     "revised": "2026-09-29T21:48:19Z",
+     "status": "alpha",
+     "subject": "Angelology through Scripture, the Fathers, the Celestial Hierarchy, and Summa theologiae I questions 50-64 and 106-114",
+     "title": "Angels and the Gift of Being: A Thomistic Study of Nature, Grace, and Ministry",
+     "title_source": "src/gpt/theology/angelology/main.tex",
+     "web": "web/gpt/theology/angelology.html"
+    }
+   ],
+   "leaf": "theology/angelology",
+   "section": "theology"
   },
   {
    "catalog": "library/heresies.md",

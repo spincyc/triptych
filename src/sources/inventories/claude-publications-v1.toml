@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-09-25"
+audited_on = "2026-09-29"
 discovery_rule = "src/claude/**/main.tex"
-publication_count = 56
-source_surface_file_count = 1476
-snapshot = "sha256:e20583a87339c19b6ca645392df5ffdf9cfbb139f8bf67ab35c9e1ffa07f33f1"
+publication_count = 57
+source_surface_file_count = 1497
+snapshot = "sha256:449b6b67ec70918ce736a5cbefaf76c5d427124ead2ca6969ed18fb444600299"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -606,6 +606,17 @@ inventory_state = "sources-categorized"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"
+relationship = "local"
+
+[[documents]]
+id = "theology/angelology"
+main = "src/claude/theology/angelology/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["canon-law", "classical", "finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
+[[documents.record_owners]]
+id = "theology/angelology"
 relationship = "local"
 
 [[documents]]
@@ -8537,6 +8548,132 @@ path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-e
 sha256 = "2c660fc441dc13bc0a6a454d7a9e179febe75910a121dfcb3143538272480190"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/theology/angelology/appendices/01-the-nine-orders.tex"
+sha256 = "960a2da789f8d705f2ee96bcb47c5fc1931f1c8d10e27313661e704acea7cc84"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/claude/theology/angelology/appendices/05-dionysius-in-the-summa.tex"
+sha256 = "8d7d00e8273709c9857830f9e81d56e006d2410fafc77432840fca4df77cc652"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/claude/theology/angelology/appendices/06-magisterial-chronology.tex"
+sha256 = "907ca0eee6837b5d645426999f8e3d47b3162a8248d0b0bb95dd808e67c9a245"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/claude/theology/angelology/appendices/11-the-first-sin.tex"
+sha256 = "c483c81f58539de7892dc84e4aa684793cbdb80069a6497d6fb42398b04eb406"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/claude/theology/angelology/appendices/90-scope-corpus-qualifications.tex"
+sha256 = "65da457abec8742d44c6b81e5fd3a02952189ef16c72846403384394eaff8a40"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/claude/theology/angelology/main.tex"
+sha256 = "d17c38b0e40fce76352af821ab6bc88e8e440921a0cf566239defc93666c2043"
+kind = "publication-main"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/claude/theology/angelology/research/order-inventory.md"
+sha256 = "0763a763928cd8a204aab2c5f48e4d008a5cb002c9c38ceedbb5403824cec266"
+kind = "research-record"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/claude/theology/angelology/research/production-plan.md"
+sha256 = "c75a2e3f23a7a160981e59c0f25c127bac3bed78c78ed8e10a4c266906bf6e60"
+kind = "research-record"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/claude/theology/angelology/research/question-inventory.md"
+sha256 = "2f8c53dd93768f2be57919a601283db7b2b1a56be85d5153dd1c979e1e3408ac"
+kind = "research-record"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/claude/theology/angelology/research/scope.md"
+sha256 = "4518944e16b98df68a0251f468bfcf80f7173877c7f8a93a42a9d852117be2d2"
+kind = "research-scope"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/claude/theology/angelology/research/source-audit.md"
+sha256 = "285bbf24edb67de14e9fc12a9b420be78ffc1f9ae3c07a28f21c42af4d9f99b0"
+kind = "legacy-source-audit"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/claude/theology/angelology/research/terminology-audit.md"
+sha256 = "fba0e361e032e02a429dd79ad3ac31a162eb342ef32b3c09e6e444b3b88abed0"
+kind = "research-record"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/claude/theology/angelology/sections/00-scripture.tex"
+sha256 = "1f35bd668275162ddb7d0dbb23cb7039475395157940bd0d7d8a9bd8018f42a8"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/claude/theology/angelology/sections/05-faith-of-the-church.tex"
+sha256 = "30d7c2ee3fed6810a78ac9474b10112073078961d7164ece3e28c5fb7c2dbceb"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/claude/theology/angelology/sections/15-celestial-hierarchy.tex"
+sha256 = "1e34c4ab70ed3122651b55888d25d1291e0e51045a389cf35f0863dbd03dd661"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/claude/theology/angelology/sections/30-angelic-substance.tex"
+sha256 = "a8fc81cfa943d439c157a58ab6ea2a761c800359d57b3d81bb21e345378e2def"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/claude/theology/angelology/sections/32-bodies-place-motion.tex"
+sha256 = "d4639267c1e44d01f4b5ec59f194b03434db58d19cb24c7a3131d28d1e1d84b6"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/claude/theology/angelology/sections/36-will-and-love.tex"
+sha256 = "28131000369acfae57507c63072e6f48fb26ff0fc36c18db631c1fcb7b24f6b1"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/claude/theology/angelology/sections/38-creation-grace-glory.tex"
+sha256 = "19e3aec17d23ccb688bb864052fae89975bcd10d37db6f4e2f7f2dea2c4e0125"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/claude/theology/angelology/sections/70-disputed-questions.tex"
+sha256 = "d34c79129f54b48340454b382aafbe8db66338e429d7e7554107f86f0c292784"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/claude/theology/angelology/web-edition.toml"
+sha256 = "9fcedda8f72f6e90b7ba97fcea77a2501c02ef2b66a5e8e4115ee9b9c1e8bee3"
+kind = "rendered-content"
+owners = ["theology/angelology"]
 
 [[files]]
 path = "src/claude/theology/mariology/ark-of-the-covenant/figures/fig-ark.tex"
