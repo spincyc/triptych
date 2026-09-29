@@ -5,6 +5,82 @@ it: edition or translation, the URL and date of the reading, the loci
 read and quoted, the rights basis, and the verification ceiling. All
 readings were made on 2026-09-29 unless an entry says otherwise.
 
+## The Celestial Hierarchy, the nine orders, and Dionysius in the treatise
+
+### Witness 1
+- Witness: Pseudo-Dionysius the Areopagite, *De caelesti hierarchia*, English translation by John Parker, *The Works of Dionysius the Areopagite*, vol. 2 (London: Skeffington, 1899), web transcription at tertullian.org.
+- Repository id: work.pseudo-dionysius-the-areopagite.de-caelesti-hierarchia (existing); NEW edition/translation id suggested: `translation.parker.celestial-hierarchy-1897` (responsible John Parker; work_type translation; language eng; locus chapter.section, chapters 1–15).
+- URL: https://www.tertullian.org/fathers/areopagite_13_heavenly_hierarchy.htm (also areopagite_01_intro.htm, areopagite_11_objections.htm, areopagite_12_introduction.htm)
+- Retrieved: 2026-09-29T12:55:02Z
+- SHA-256 of the bytes read: ae7608cea7b9f874f2b8ebdabfbe9cfae8b74285fec914aeca3d87cd9089104d (114110 bytes)
+- Loci read: entire treatise, chapters 1–15, dedication and colophon; Parker's introductions and "Objections".
+- Quoted: CH 1.1–3; 2.1–5; 3.1–3; 4.1–4; 5; 6; 7.1–4; 8.1–2; 9.1–4; 10.1–3; 11.1–2; 12.1–3; 13.1–4; 14; 15.1–9 (verbatim phrases in section 15 file, cited by Parker section).
+- Rights: public domain (published 1899; Parker died 1917; US pre-1930 publication).
+- Ceiling: web transcription of a print translation; not collated with print; Parker defends the Areopagite authorship (rejected by modern scholarship — not quoted on that point). Note: Parker's ch. 6 has no section division; Migne divides it into §§1–2.
+
+### Witness 2
+- Witness: Gregory the Great, *Homiliae in Evangelia* 34, Latin text (Wikisource transcription of a Migne-based text), read for the nine orders, the names, and the citation of Dionysius.
+- Repository id: work.gregory-the-great.homiliae-in-evangelia (existing); edition id edition.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17 (existing).
+- URL: https://la.wikisource.org/wiki/Homiliae_in_Evangelia_(Gregorius_Magnus)
+- Retrieved: 2026-09-17 (edition registered 2026-09-17; text extracted to lane scratch 2026-09-29)
+- Loci read: Hom. 34 §§1–16 (full homily); §§7–14 read closely.
+- Quoted: 34.7 (novem ordines; Ezek 28:12); 34.8 (nomen officii non naturae); 34.9 (minima/summa nuntiant); 34.10 (per-order characterizations, quoted in appendices); 34.12 (Fertur vero Dionysius Areopagita, antiquus videlicet et venerabilis Pater).
+- Rights: PD text (PL 76); CC-BY-SA-3.0 for the Wikisource transcription layer.
+- Ceiling: web transcription of a Migne-based Latin text; not collated with CCSL/Étaix.
+
+### Witness 3
+- Witness: Migne, *Patrologia Graeca* 3 (Dionysius), Corderius edition — scanned page images used only to verify chapter incipit columns for the Celestial Hierarchy.
+- Repository id: NEW suggested: `edition.migne.pg-003-1865` (responsible J.-P. Migne / B. Corderius; work_type edition; languages grc, lat; locus column+letter, e.g. 120B).
+- URL: https://archive.org/details/patrologiae_cursus_completus_gr_vol_003_dionysius_areopagita
+- Retrieved: 2026-09-29T13:12:05Z
+- Loci read: CH incipits at cols 120B (ch. 1 §1), 136D (ch. 2), 164D (ch. 3), 177C (ch. 4), 196B (ch. 5), 200C (ch. 6 §1), 205B (ch. 7 §1), 237B (ch. 8), 257B (ch. 9 §1; heading 257A), 272D (ch. 10 §1; heading 272C), 284B (ch. 11), 292C (ch. 12), 300B (ch. 13), 321A (ch. 14), 325D (ch. 15 heading); Corderius note on ch. 14 citing ST I q. 50 a. 3.
+- Quoted: none (columns only).
+- Rights: PD (1865 printing).
+- Ceiling: columns for ch. 5/6/7 letters assigned by quarter-page pattern from leaf layout (letter position inferred from page structure, not from a printed letter on the crop); chapter numbers and column numbers read from images directly.
+
+### Witness 4
+- Witness: Thomas Aquinas, *Summa theologiae*, New Advent English (Fathers of the English Dominican Province).
+- Repository id: work.thomas-aquinas.summa-theologiae (existing).
+- URL: https://www.newadvent.org/summa/ (files 1047, 1050–1064, 1106–1114, 3008, 3030, 3059)
+- Retrieved: 2026-09-29T12:53:50Z–12:54:25Z
+- Loci read: I q. 108 aa. 5–6 read in full; programmatic extraction of every "Dionysius" mention and every "(Coel. Hier.|Div. Nom.|Eccl. Hier.|Myst. Theol.|Hier. Ang.|De Div. Nom.)" parenthetical in the listed files; contexts of all 98 citations inspected.
+- Quoted: short phrases from the translation in the section 15 Reception fields and in appendix 05 glosses.
+- Rights: translation 1920, PD (US); New Advent HTML used as transcription.
+- Ceiling: English translation only; not collated with the Leonine Latin. Note: na-summa-3008 is **II-II q. 8** (gift of understanding), not III q. 8 — New Advent 3xxx series is Secunda Secundae. New Advent prints "Hom. xxiv in Ev." in I q. 108 a. 6 where the homily is xxxiv (their typographical slip or their edition's).
+
+### Witness 5
+- Witness: Benedict XVI, General Audience "Pseudo-Dionysius, the Areopagite", 14 May 2008 (vatican.va English).
+- Repository id: NEW suggested: `work.benedict-xvi.general-audience-2008-05-14` (responsible Benedict XVI; work_type general-audience-catechesis; languages ita (orig), eng; locus paragraph).
+- URL: https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080514.html
+- Retrieved: 2026-09-29T13:10:55Z
+- SHA-256 of the bytes read: 29c715514923e6bf32cb09bc7264de8b522ef11aaeebfde6d2588391dac6a0f0 (45874 bytes)
+- Loci read: whole audience.
+- Quoted: "a sixth-century theologian whose name is unknown and who wrote under the pseudonym of Dionysius the Areopagite"; Proclus "who died in Athens in 485"; "did not want to glorify his own name"; "truly to serve the Gospel, to create an ecclesial theology"; "symphony of the cosmos that goes from the Seraphim to the Angels and Archangels"; "virtually rediscovered in the 13th century, especially by St Bonaventure".
+- Rights: © Libreria Editrice Vaticana; brief quotation with attribution.
+- Ceiling: official English translation; not collated with the Italian.
+
+### Witness 6
+- Witness: J. Stiglmayr, "Dionysius the Pseudo-Areopagite", *Catholic Encyclopedia* V (1909); J. P. Kirsch, "Hilduin, Abbot of St-Denis", *Catholic Encyclopedia* VII (1910).
+- Repository id: work.catholic-encyclopedia.volume-5 and work.catholic-encyclopedia.volume-7 (existing).
+- URL: https://www.newadvent.org/cathen/05013a.htm ; https://www.newadvent.org/cathen/07354a.htm
+- Retrieved: 2026-09-29T13:10:56Z / 13:10:58Z
+- SHA-256 of the bytes read: a704ad6ccc98d22749dce0515c081c40a973bcd67993a0db3ad872c9c5aa3433 (61832 bytes); e87ceb104d81f949546dfb4a178e00e8b2ff9b6172651861ae2a90fa9b82ab21 (11365 bytes)
+- Loci read: both articles in full (historical portions closely).
+- Quoted: none verbatim; facts cited: Severus (512–518, letter to abbot John), 533 conference and Hypatius, Sergius of Resaina (d. 536) Syriac version, Koch and Stiglmayr 1895 on Proclus, Michael II's gift 827, Hilduin translation and Denis identification, Eriugena c. 858 for Charles the Bald, Victorines and scholastics, Valla (1407–1457).
+- Rights: PD (1909/1910).
+- Ceiling: secondary reference, a century old; used only for reception history.
+
+### Witness 7
+- Witness: Douay-Rheims Bible (1581/1609), Project Gutenberg transcription.
+- Repository id: no work id found for a Douay-Rheims edition in src/sources (open issue).
+- URL: https://www.gutenberg.org/cache/epub/1581/pg1581.txt
+- Retrieved: 2026-09-29T12:58:58Z
+- SHA-256 of the bytes read: 7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007 (5880580 bytes)
+- Loci read: Gen 3:24; 4 Kgs 19:15; Tob 12:15; Ps 9:5; 79:2; 81:6; 102:21; 103:4; Isa 6:2–3, 6; 9:6; 63:2 (see open issue); Ezek 3:12; 9; 10:1, 7, 13, 20; 28:12–13; Dan 7:10; 8:16; 10:13; Zech 1–2; Mal 2:7; Matt 4:11; 18:10; 26:53; Luke 1:19; 1 Cor 3:9; Rom 8:38; Eph 1:21; 3:10; Col 1:16; 1 Thess 4:15; Jude 9; Apoc 4:8; 12:7; 1 Pet 3:22; Ps 21:7.
+- Quoted: DR wording in appendix 01 scripture loci.
+- Rights: PD.
+- Ceiling: Gutenberg transcription; verses verified by direct string match.
+
 ## Angelic substance; bodies, place, and motion (ST I qq. 50-53)
 
 ### Aquinas, Summa theologiae, English

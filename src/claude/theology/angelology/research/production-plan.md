@@ -74,7 +74,7 @@ each URL and reading date.
 | Scripture | `sections/00-scripture.tex` | planned | Douay–Rheims; Vulgate; ST I q. 50 a. 1, q. 108 a. 5 |
 | Faith of the Church | `sections/05-faith-of-the-church.tex` | planned | Lateran IV *Firmiter*; Vatican I *Dei Filius* 1; Braga I (561); Constantinople (543); *Humani generis* 26; Paul VI (15 Nov 1972); CDF *Christian Faith and Demonology* (1975); John Paul II audiences (July–Aug 1986); CCC 328–336, 391–395 |
 | Fathers before Dionysius | `sections/10-fathers-before-dionysius.tex` | planned | Hermas; Justin; Athenagoras; Irenaeus; Origen *De principiis* I; Basil; Gregory Nazianzen Or. 28, 38; Chrysostom; Ambrose; Jerome; Augustine *De civ. Dei* XI–XII, *De Gen. ad litt.* IV, *Enchiridion* 58 |
-| Celestial Hierarchy | `sections/15-celestial-hierarchy.tex` | planned | CH 1–15 (Parker); PG 3; Aquinas's citations |
+| Celestial Hierarchy | `sections/15-celestial-hierarchy.tex` | drafted | CH 1–15 (Parker); PG 3; Aquinas's citations |
 | Fathers after Dionysius | `sections/20-fathers-after-dionysius.tex` | planned | Gregory *Hom. in Ev.* 34, *Moralia*; Isidore *Etym.* VII.5; Damascene *De fide* II.3–4; Bede; Bernard *De consid.* V; Lombard *Sent.* II dd. 2–11 |
 | Angelic substance | `sections/30-angelic-substance.tex` | drafted | ST I q. 50; *De ente* 4; *De sub. sep.* |
 | Bodies, place, motion | `sections/32-bodies-place-motion.tex` | drafted | ST I qq. 51–53 |
@@ -93,11 +93,11 @@ each URL and reading date.
 | Liturgy | `sections/80-liturgy.tex` | planned | repository calendars; Missale Romanum 1962 and 2002; Roman Canon; Rituale |
 | Devotion and regulation | `sections/82-devotion-and-its-regulation.tex` | planned | Laodicea c. 35; Rome 745; Leo XIII; Directory on Popular Piety 213–217 |
 | Order of the universe | `sections/88-the-order-of-the-universe.tex` | planned | ST I q. 47, q. 50 a. 1, q. 108 |
-| App. nine orders | `appendices/01-the-nine-orders.tex` | planned | order inventory |
+| App. nine orders | `appendices/01-the-nine-orders.tex` | drafted | order inventory |
 | App. comparative orderings | `appendices/02-comparative-orderings.tex` | planned | order inventory |
 | App. article census | `appendices/03-article-census.tex` | planned | question inventory |
 | App. parallels in Aquinas | `appendices/04-parallels-in-aquinas.tex` | planned | Corpus Thomisticum |
-| App. Dionysius in the Summa | `appendices/05-dionysius-in-the-summa.tex` | planned | ST citations of CH |
+| App. Dionysius in the Summa | `appendices/05-dionysius-in-the-summa.tex` | drafted | ST citations of CH |
 | App. magisterial chronology | `appendices/06-magisterial-chronology.tex` | planned | acts above |
 | App. calendar | `appendices/07-calendar.tex` | planned | repository calendars |
 | App. Scripture index | `appendices/08-scripture-index.tex` | planned | body citations |
