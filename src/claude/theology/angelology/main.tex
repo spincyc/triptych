@@ -1,0 +1,124 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={The Angels: Nature, Knowledge, Will, Fall, Order, and Ministry},
+  pdfsubject={A Thomistic reference on the angels following Summa theologiae I qq. 50-64 and 106-114, with a chapter-by-chapter exposition of the Celestial Hierarchy and the patristic, magisterial, and liturgical witness}
+}
+
+\setcounter{tocdepth}{2}
+\setlength{\emergencystretch}{3em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+\titleformat{\subsubsection}
+  {\normalsize\bfseries}{\thesubsubsection}{0.55em}{}
+
+% Greek is given in italic transliteration; the source fonts carry no Greek.
+\newcommand{\gk}[1]{\textit{#1}}
+\newcommand{\ST}[1]{\emph{ST}~#1}
+
+\newcommand{\angeldossier}[4]{%
+  \begin{studyframe}
+  \textbf{Summa:} #1\par
+  \textbf{Grade:} #2\par
+  \textbf{Authorities:} #3\par
+  \textbf{Contrary opinion:} #4
+  \end{studyframe}}
+
+\newcommand{\angeldossiersettled}[3]{%
+  \begin{studyframe}
+  \textbf{Summa:} #1\par
+  \textbf{Grade:} #2\par
+  \textbf{Authorities:} #3
+  \end{studyframe}}
+
+\newcommand{\chchapter}[3]{%
+  \Needspace{10\baselineskip}%
+  \subsection{#1}
+  \textbf{Locus:} #2\par
+  \textbf{Reception in Aquinas:} #3\par}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.12\textheight}
+{\large\scshape A Triptych Reference\par}
+\vspace{1.5em}
+{\Huge\bfseries The Angels\par}
+\vspace{0.9em}
+{\Large Nature, Knowledge, Will, Fall, Order, and Ministry\par}
+\vspace{1.2em}
+{\large The treatise of Saint Thomas Aquinas,\\with the \emph{Celestial Hierarchy} and the witness of the Fathers\par}
+\vfill
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\footnotesize
+\linespread{0.96}\selectfont
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+% Body, in the order guidance/theology/angelology.md fixes.  A commented line
+% is a planned section not yet drafted; research/production-plan.md tracks it.
+%\input{theology/angelology/sections/00-scripture}
+%\input{theology/angelology/sections/05-faith-of-the-church}
+%\input{theology/angelology/sections/10-fathers-before-dionysius}
+%\input{theology/angelology/sections/15-celestial-hierarchy}
+%\input{theology/angelology/sections/20-fathers-after-dionysius}
+%\input{theology/angelology/sections/30-angelic-substance}
+%\input{theology/angelology/sections/32-bodies-place-motion}
+%\input{theology/angelology/sections/34-intellect-and-knowledge}
+%\input{theology/angelology/sections/36-will-and-love}
+%\input{theology/angelology/sections/38-creation-grace-glory}
+%\input{theology/angelology/sections/40-fall-and-punishment}
+%\input{theology/angelology/sections/50-illumination-and-speech}
+%\input{theology/angelology/sections/52-hierarchies-and-orders}
+%\input{theology/angelology/sections/54-government-and-mission}
+%\input{theology/angelology/sections/56-guardian-angels}
+%\input{theology/angelology/sections/58-assaults-of-demons}
+%\input{theology/angelology/sections/60-christ-mary-and-the-angels}
+%\input{theology/angelology/sections/70-disputed-questions}
+%\input{theology/angelology/sections/72-byzantine-line}
+%\input{theology/angelology/sections/80-liturgy}
+%\input{theology/angelology/sections/82-devotion-and-its-regulation}
+%\input{theology/angelology/sections/88-the-order-of-the-universe}
+\clearpage
+\appendix
+%\input{theology/angelology/appendices/01-the-nine-orders}
+%\input{theology/angelology/appendices/02-comparative-orderings}
+%\input{theology/angelology/appendices/03-article-census}
+%\input{theology/angelology/appendices/04-parallels-in-aquinas}
+%\input{theology/angelology/appendices/05-dionysius-in-the-summa}
+%\input{theology/angelology/appendices/06-magisterial-chronology}
+%\input{theology/angelology/appendices/07-calendar}
+%\input{theology/angelology/appendices/08-scripture-index}
+%\input{theology/angelology/appendices/09-names}
+%\input{theology/angelology/appendices/10-demons-powers-and-limits}
+%\input{theology/angelology/appendices/11-the-first-sin}
+%\input{theology/angelology/appendices/12-terminology}
+%\input{theology/angelology/appendices/13-witness-register}
+%\input{theology/angelology/appendices/90-scope-corpus-qualifications}
+%\input{theology/angelology/appendices/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+{\scriptsize\input{theology/angelology/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}

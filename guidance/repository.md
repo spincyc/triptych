@@ -163,6 +163,7 @@ src/<provider>/
       reference/
     comparative/
   theology/
+    angelology/
     virtues/
     sacraments/
     sacraments-at-a-glance/

@@ -1,6 +1,78 @@
 schema_version = 1
 
 [[deliverables]]
+id = "claude-angelology-2026-09-29"
+owner = "PROJECT-WORK.md"
+promise = "Produce the Claude reference `theology/angelology`: a document on the angels following the systematic teaching of Aquinas (ST I qq. 50-64 and 106-114), with a chapter-by-chapter exposition of the Celestial Hierarchy, an expanded patristic, magisterial, liturgical, and school corpus, and ample appendices of tables and hierarchies; carried through the full pipeline to a reviewed PDF, web edition, catalog row, and release record, with incremental commits pushed to feature/droid/theology/angelology."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "angelology-profile"
+  criterion = "A profile governs the work and AGENTS.md routes to it."
+  status = "pass"
+  evidence = ["guidance/theology/angelology.md", "AGENTS.md"]
+  check = "contains"
+  path = "AGENTS.md"
+  needle = "`guidance/theology/angelology.md`"
+
+  [[deliverables.requirements]]
+  id = "angelology-scope-recorded"
+  criterion = "The leaf's research scope records the user's deliverable and clarified choices."
+  status = "pass"
+  evidence = ["src/claude/theology/angelology/research/scope.md"]
+  check = "contains"
+  path = "src/claude/theology/angelology/research/scope.md"
+  needle = "## Recorded user deliverable (2026-09-29)"
+
+  [[deliverables.requirements]]
+  id = "angelology-thomist-treatise"
+  criterion = "The body treats every article of ST I qq. 50-64 and 106-114 in the Summa's order, each question with a graded dossier, and the article census appendix agrees with research/question-inventory.md."
+  status = "open"
+  evidence = ["src/claude/theology/angelology/research/production-plan.md"]
+
+  [[deliverables.requirements]]
+  id = "angelology-celestial-hierarchy"
+  criterion = "All fifteen chapters of the Celestial Hierarchy receive exposition with focused quotations from an identified public-domain translation, PG 3 loci, and Aquinas's reception; the full text is not reproduced."
+  status = "open"
+  evidence = ["src/claude/theology/angelology/research/production-plan.md"]
+
+  [[deliverables.requirements]]
+  id = "angelology-expanded-corpus"
+  criterion = "Patristic and saintly witnesses are read at their own loci and recorded in the source audit and witness register."
+  status = "open"
+  evidence = ["src/claude/theology/angelology/research/production-plan.md"]
+
+  [[deliverables.requirements]]
+  id = "angelology-extensions"
+  criterion = "The body covers the fallen angels (cross-referenced to the exorcism study), liturgy and devotion (1962 and postconciliar feasts, prefaces, the Leo XIII prayer to Saint Michael, the Angele Dei), the magisterium (Lateran IV, Vatican I, Humani generis, the Catechism, John Paul II's 1986 catecheses, the Directory on Popular Piety on angel names), and disputed questions after Aquinas (Bonaventure, Scotus, Suarez; Damascene and Palamas)."
+  status = "open"
+  evidence = ["src/claude/theology/angelology/research/production-plan.md"]
+
+  [[deliverables.requirements]]
+  id = "angelology-appendices"
+  criterion = "The appendices listed in the profile's reader order exist, with tables of the orders, comparative orderings, the article census, and the other listed concordances."
+  status = "open"
+  evidence = ["src/claude/theology/angelology/research/production-plan.md"]
+
+  [[deliverables.requirements]]
+  id = "angelology-pdf-reviewed"
+  criterion = "The PDF builds cleanly, every page is visually reviewed, and the reviewed PDF is installed at pdf/claude/theology/angelology.pdf."
+  status = "open"
+  evidence = ["src/claude/theology/angelology/research/production-plan.md"]
+
+  [[deliverables.requirements]]
+  id = "angelology-web-catalog-release"
+  criterion = "The reviewed web edition is installed at web/claude/theology/angelology.md, library/faith.md carries the catalog row, and release/publications/claude/theology/angelology.json exists."
+  status = "open"
+  evidence = ["src/claude/theology/angelology/research/production-plan.md"]
+
+  [[deliverables.requirements]]
+  id = "angelology-source-gates"
+  criterion = "New source works are registered, research/source-bindings.toml binds them, and make check-sources, check-metadata, and check-web-editions pass for the leaf."
+  status = "open"
+  evidence = ["src/claude/theology/angelology/research/production-plan.md"]
+
+[[deliverables]]
 id = "gpt-postconciliar-twenty-seventh-2026-09-28"
 owner = "PROJECT-WORK.md"
 promise = "Drive the GPT proper-study workflow for the postconciliar Twenty-seventh Sunday in Ordinary Time, Year A, on 2026-10-04 through acceptance, installing the three reviewed PDFs and canonical web edition with durable research and review evidence; separate GPT and Claude documents into columns in the Sunday propers catalog; then perform the subsequently requested validated push to main and verify its automatic Pages deployment."

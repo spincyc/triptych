@@ -7,6 +7,32 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-09-28.
 
+## Claude angelology reference, 2026-09-29
+
+<!-- promised-deliverable: claude-angelology-2026-09-29 -->
+
+The maintainer requested a document on angelology following the systematic
+teaching of Thomas Aquinas, with the *Celestial Hierarchy* of the Dionysian
+corpus sourced and included, the corpus expanded with patristic and saintly
+sources, and ample appendices of tables and hierarchies. Target: provider
+`claude`, leaf `theology/angelology`, governed by the new profile
+`guidance/theology/angelology.md`. Clarified choices: the full publication
+pipeline; a chapter-by-chapter exposition of the *Celestial Hierarchy* with
+focused quotations rather than its full text; all four extensions (fallen
+angels, liturgy and devotion, magisterium, disputed questions after Aquinas
+with the Byzantine line); no target length; English quotations with Latin or
+Greek for key technical definitions. All work is by Opus 5.5 through the
+Factory Droid agent and its subagents, with no model switch. Incremental
+commits go to `origin/feature/droid/theology/angelology`; the work is
+feature-branch only and is not merged to `main` by this request.
+
+**State: in progress.** The profile, routing, leaf scaffold, research scope,
+and production plan exist. The leaf's
+[production plan](src/claude/theology/angelology/research/production-plan.md)
+tracks every body section and appendix with its status and principal
+sources; a successor resumes from its first unit not yet `drafted`. Nothing
+is built, installed, cataloged, or released yet.
+
 ## GPT postconciliar Twenty-seventh Sunday, 2026-09-28
 
 <!-- promised-deliverable: gpt-postconciliar-twenty-seventh-2026-09-28 -->
