@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-09-29T01:03:13Z",
+  "workflow_run_id": 36505173632,
+  "workflow_url": "https://github.com/spincyc/triptych/actions/runs/36505173632",
+  "workflow_head": "6f9894562c95ed021756782031dee3d5ccf3922c",
+  "workflow_conclusion": "success",
+  "local_gates": {
+    "make check-deployment-sources": "pass",
+    "make public-site": "pass",
+    "tools/tpt public-alpha verify --deployment-target github-pages": "pass",
+    "make check-release-bindings": "pass"
+  },
+  "resources": [
+    {
+      "url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.pdf",
+      "status": 200,
+      "bytes": 484197,
+      "sha256": "57ce918f211983e2aef40cc572863f40f79fc4c0400f8bcdaa66bf2ea8a060cf",
+      "matches_verified_local_artifact": true
+    },
+    {
+      "url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-synthesis.pdf",
+      "status": 200,
+      "bytes": 441906,
+      "sha256": "f394f3f2081808e8470d416631638c64ef2e18a7fa3d2284c28ba3f6184a1729",
+      "matches_verified_local_artifact": true
+    },
+    {
+      "url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-homily.pdf",
+      "status": 200,
+      "bytes": 244774,
+      "sha256": "b7fd7a87d99b7e7dd7c2b329b61d315854649c4860f14cfc66fd39cf6eafca97",
+      "matches_verified_local_artifact": true
+    },
+    {
+      "url": "https://mystago.gy/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.html",
+      "status": 200,
+      "bytes": 97821,
+      "sha256": "29d8bf5915407f4ce8ac0fe6a5eb4a8be6b927ace213df83ebaf7ef95ff99ad6",
+      "matches_verified_local_artifact": true
+    },
+    {
+      "url": "https://mystago.gy/library/novus-ordo-liturgy.html",
+      "status": 200,
+      "bytes": 24602,
+      "sha256": "abef2cfda30c8e3f41884561d7051e418f2181f3bf3699daa30718494d512c8a",
+      "matches_verified_local_artifact": true
+    },
+    {
+      "url": "https://mystago.gy/assets/site.css",
+      "status": 200,
+      "bytes": 24682,
+      "sha256": "a456caf21041256a1047560c0cee8638a99f7df819e6249ee3345e550b6b4060",
+      "matches_verified_local_artifact": true
+    }
+  ],
+  "catalog_links_verified": [
+    "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.pdf",
+    "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-synthesis.pdf",
+    "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-homily.pdf",
+    "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.html"
+  ],
+  "provider_columns_verified": ["ChatGPT", "Claude"]
+}

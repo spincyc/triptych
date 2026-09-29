@@ -272,6 +272,18 @@ silently converted into completed screening or unrelated production work.
 
 ## Archive boundary
 
+The maintainer subsequently requested deployment to `main`. Local deployment
+source checks, public-site construction, GitHub Pages artifact verification and
+release bindings passed. The reviewed outgoing range reached `origin/main` by
+ordinary fast-forward at `6f9894562c95ed021756782031dee3d5ccf3922c`; automatic
+Pages run [36505173632](https://github.com/spincyc/triptych/actions/runs/36505173632)
+succeeded. On 29 September 2026 UTC, all three live PDFs, canonical HTML,
+postconciliar catalog and stylesheet returned HTTP 200 with hashes identical
+to the verified local artifact. The catalog's four GPT Year A links and
+separate provider headers were confirmed. The exact response identities and
+workflow result are retained in [deployment-evidence.json](deployment-evidence.json).
+This deployment record changes no accepted publication or review seal.
+
 The durable archive retains exact compiled packets, engine-accepted results,
 interventions and checkpoint metadata. Build logs, raster proofs, downloaded
 source caches and unrecorded scratch notes remain disposable outputs. Their

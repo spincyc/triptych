@@ -94,9 +94,17 @@ identities; the default staged whitespace check is not claimed to pass.
 Validated content checkpoint `63c7aba000ad87893ba16ba53cfef6e335074628`
 contains the accepted publication and its integration. The publication delivery
 was completed and pushed on `feature/propers/codex` at `f081255ce3e12e10dd11e2ddf605dba930afc80b`.
-The maintainer subsequently requested a push to `main`. That deployment extension
-is in progress: local deployment gates, exact outgoing-range review, an ordinary
-fast-forward push and verification of Pages and the affected live routes remain.
+The maintainer subsequently requested a push to `main`. **Complete and deployed:**
+the local deployment-source, public-site, GitHub Pages artifact and release-binding
+gates passed; the reviewed range reached `origin/main` by ordinary fast-forward
+at `6f9894562c95ed021756782031dee3d5ccf3922c`. Pages run
+[36505173632](https://github.com/spincyc/triptych/actions/runs/36505173632)
+succeeded. All three live PDFs, canonical HTML, owning catalog and stylesheet
+returned HTTP 200 and exactly matched the verified local artifact. The live
+catalog retains the four GPT Year A links and separate ChatGPT/Claude headers.
+The [deployment receipt](workflows/reviews/gpt-pc-s53-production-2026-09-28/deployment-evidence.json)
+records the actual run and six response hashes. This record update changes no
+publication source or reader-facing binding.
 
 ## GPT 1962 Nineteenth Sunday three documents, 2026-09-28
 
