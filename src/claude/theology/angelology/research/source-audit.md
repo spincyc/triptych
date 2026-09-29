@@ -8,8 +8,8 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 ## The Celestial Hierarchy, the nine orders, and Dionysius in the treatise
 
 ### Witness 1
-- Witness: Pseudo-Dionysius the Areopagite, *De caelesti hierarchia*, English translation by John Parker, *The Works of Dionysius the Areopagite*, vol. 2 (London: Skeffington, 1899), web transcription at tertullian.org.
-- Repository id: work.pseudo-dionysius-the-areopagite.de-caelesti-hierarchia (existing); NEW edition/translation id suggested: `translation.parker.celestial-hierarchy-1897` (responsible John Parker; work_type translation; language eng; locus chapter.section, chapters 1–15).
+- Witness: Pseudo-Dionysius the Areopagite, *De caelesti hierarchia*, English translation by John Parker, *The Works of Dionysius the Areopagite*, Part II (London and Oxford: James Parker and Co., 1899), web transcription at tertullian.org.
+- Repository ids: `work.pseudo-dionysius-the-areopagite.de-caelesti-hierarchia` (registered with this publication).
 - URL: https://www.tertullian.org/fathers/areopagite_13_heavenly_hierarchy.htm (also areopagite_01_intro.htm, areopagite_11_objections.htm, areopagite_12_introduction.htm)
 - Retrieved: 2026-09-29T12:55:02Z
 - SHA-256 of the bytes read: ae7608cea7b9f874f2b8ebdabfbe9cfae8b74285fec914aeca3d87cd9089104d (114110 bytes)
@@ -20,7 +20,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Witness 2
 - Witness: Gregory the Great, *Homiliae in Evangelia* 34, Latin text (Wikisource transcription of a Migne-based text), read for the nine orders, the names, and the citation of Dionysius.
-- Repository id: work.gregory-the-great.homiliae-in-evangelia (existing); edition id edition.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17 (existing).
+- Repository ids: `work.gregory-the-great.homiliae-in-evangelia` (existing); `edition.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17` (existing).
 - URL: https://la.wikisource.org/wiki/Homiliae_in_Evangelia_(Gregorius_Magnus)
 - Retrieved: 2026-09-17 (edition registered 2026-09-17; text extracted to lane scratch 2026-09-29)
 - Loci read: Hom. 34 §§1–16 (full homily); §§7–14 read closely.
@@ -30,7 +30,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Witness 3
 - Witness: Migne, *Patrologia Graeca* 3 (Dionysius), Corderius edition — scanned page images used only to verify chapter incipit columns for the Celestial Hierarchy.
-- Repository id: NEW suggested: `edition.migne.pg-003-1865` (responsible J.-P. Migne / B. Corderius; work_type edition; languages grc, lat; locus column+letter, e.g. 120B).
+- Repository ids: none registered; the entry cites the edition directly.
 - URL: https://archive.org/details/patrologiae_cursus_completus_gr_vol_003_dionysius_areopagita
 - Retrieved: 2026-09-29T13:12:05Z
 - Loci read: CH incipits at cols 120B (ch. 1 §1), 136D (ch. 2), 164D (ch. 3), 177C (ch. 4), 196B (ch. 5), 200C (ch. 6 §1), 205B (ch. 7 §1), 237B (ch. 8), 257B (ch. 9 §1; heading 257A), 272D (ch. 10 §1; heading 272C), 284B (ch. 11), 292C (ch. 12), 300B (ch. 13), 321A (ch. 14), 325D (ch. 15 heading); Corderius note on ch. 14 citing ST I q. 50 a. 3.
@@ -40,7 +40,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Witness 4
 - Witness: Thomas Aquinas, *Summa theologiae*, New Advent English (Fathers of the English Dominican Province).
-- Repository id: work.thomas-aquinas.summa-theologiae (existing).
+- Repository ids: `work.thomas-aquinas.summa-theologiae` (existing).
 - URL: https://www.newadvent.org/summa/ (files 1047, 1050–1064, 1106–1114, 3008, 3030, 3059)
 - Retrieved: 2026-09-29T12:53:50Z–12:54:25Z
 - Loci read: I q. 108 aa. 5–6 read in full; programmatic extraction of every "Dionysius" mention and every "(Coel. Hier.|Div. Nom.|Eccl. Hier.|Myst. Theol.|Hier. Ang.|De Div. Nom.)" parenthetical in the listed files; contexts of all 98 citations inspected.
@@ -50,7 +50,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Witness 5
 - Witness: Benedict XVI, General Audience "Pseudo-Dionysius, the Areopagite", 14 May 2008 (vatican.va English).
-- Repository id: NEW suggested: `work.benedict-xvi.general-audience-2008-05-14` (responsible Benedict XVI; work_type general-audience-catechesis; languages ita (orig), eng; locus paragraph).
+- Repository ids: `work.benedict-xvi.general-audience-2008-05-14` (registered with this publication).
 - URL: https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080514.html
 - Retrieved: 2026-09-29T13:10:55Z
 - SHA-256 of the bytes read: 29c715514923e6bf32cb09bc7264de8b522ef11aaeebfde6d2588391dac6a0f0 (45874 bytes)
@@ -61,7 +61,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Witness 6
 - Witness: J. Stiglmayr, "Dionysius the Pseudo-Areopagite", *Catholic Encyclopedia* V (1909); J. P. Kirsch, "Hilduin, Abbot of St-Denis", *Catholic Encyclopedia* VII (1910).
-- Repository id: work.catholic-encyclopedia.volume-5 and work.catholic-encyclopedia.volume-7 (existing).
+- Repository ids: `work.catholic-encyclopedia.volume-5` (existing); `work.catholic-encyclopedia.volume-7` (existing).
 - URL: https://www.newadvent.org/cathen/05013a.htm ; https://www.newadvent.org/cathen/07354a.htm
 - Retrieved: 2026-09-29T13:10:56Z / 13:10:58Z
 - SHA-256 of the bytes read: a704ad6ccc98d22749dce0515c081c40a973bcd67993a0db3ad872c9c5aa3433 (61832 bytes); e87ceb104d81f949546dfb4a178e00e8b2ff9b6172651861ae2a90fa9b82ab21 (11365 bytes)
@@ -72,7 +72,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Witness 7
 - Witness: Douay-Rheims Bible (1581/1609), Project Gutenberg transcription.
-- Repository id: no work id found for a Douay-Rheims edition in src/sources (open issue).
+- Repository ids: `work.english-college-of-douay.douay-rheims-bible` (existing).
 - URL: https://www.gutenberg.org/cache/epub/1581/pg1581.txt
 - Retrieved: 2026-09-29T12:58:58Z
 - SHA-256 of the bytes read: 7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007 (5880580 bytes)
@@ -85,7 +85,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Aquinas, Summa theologiae, English
 - Witness: Thomas Aquinas, *Summa theologiae* I qq. 50–53, trans. Fathers of the English Dominican Province, 2nd rev. ed. 1920, New Advent online edition.
-- Repository id: work.thomas-aquinas.summa-theologiae
+- Repository ids: `work.thomas-aquinas.summa-theologiae` (existing).
 - URL: https://www.newadvent.org/summa/1050.htm, 1051.htm, 1052.htm, 1053.htm
 - Retrieved: 2026-09-29T12:53:51Z–12:53:55Z
 - SHA-256 of the bytes read: 61ff4ab95cc9d06e45d5026da5c0071ed658d5d324eaf661d205faa3371df5be (50349 bytes); 912322a94acf2906d08fafcb71b69b0aabe61693222de87bd375feb65801088a (31771 bytes)
@@ -96,7 +96,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Aquinas, Summa theologiae, Latin
 - Witness: Thomas Aquinas, *Summa theologiae* I qq. 50–64, Leonine text as presented by Corpus Thomisticum.
-- Repository id: work.thomas-aquinas.summa-theologiae
+- Repository ids: `work.thomas-aquinas.summa-theologiae` (existing).
 - URL: https://www.corpusthomisticum.org/sth1050.html
 - Retrieved: 2026-09-29T12:54:32Z
 - SHA-256 of the bytes read: e2cfab53e3a057155f3e241b32c059123265ae7cfe58da04e9d7cb41f3fb0ee7 (402442 bytes)
@@ -107,7 +107,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Aquinas, De spiritualibus creaturis
 - Witness: Thomas Aquinas, *Quaestio disputata de spiritualibus creaturis*, Corpus Thomisticum.
-- Repository id: NEW work.thomas-aquinas.de-spiritualibus-creaturis (title *Quaestio disputata de spiritualibus creaturis*; responsible thomas-aquinas; work_type disputed-question; languages la; locus pattern `a. N arg./s.c./co./ad N`).
+- Repository ids: `work.thomas-aquinas.de-spiritualibus-creaturis` (registered with this publication).
 - URL: https://www.corpusthomisticum.org/qds.html
 - Retrieved: 2026-09-29T12:54:57Z
 - SHA-256 of the bytes read: 525438a81d5e92e57ec744e24be08c2a90e64fbe2e4cdc0d4919d6b45c96580f (357192 bytes)
@@ -118,7 +118,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Aquinas, De ente et essentia
 - Witness: Thomas Aquinas, *De ente et essentia*, Corpus Thomisticum.
-- Repository id: NEW work.thomas-aquinas.de-ente-et-essentia (opusculum; la; locus `c. N`).
+- Repository ids: `work.thomas-aquinas.de-ente-et-essentia` (registered with this publication).
 - URL: https://www.corpusthomisticum.org/oee.html
 - Retrieved: 2026-09-29T12:54:59Z
 - SHA-256 of the bytes read: 4fbd17e8136d920cd929f7b67fca45693f15eccdf4db7495bd16f9bcca119bb7 (54615 bytes)
@@ -129,7 +129,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Aquinas, De substantiis separatis
 - Witness: Thomas Aquinas, *De substantiis separatis*, Corpus Thomisticum.
-- Repository id: NEW work.thomas-aquinas.de-substantiis-separatis (opusculum; la; locus `c. N`).
+- Repository ids: `work.thomas-aquinas.de-substantiis-separatis` (registered with this publication).
 - URL: https://www.corpusthomisticum.org/ots.html
 - Retrieved: 2026-09-29T12:54:53Z
 - SHA-256 of the bytes read: 3149f5709dbec16c044723d25f009a4a43caf0d38e965f28a0972b55474c78d9 (167879 bytes)
@@ -140,7 +140,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Aquinas, Summa contra gentiles II
 - Witness: Thomas Aquinas, *Summa contra gentiles* II cc. 46–55, Corpus Thomisticum.
-- Repository id: NEW work.thomas-aquinas.summa-contra-gentiles (la; locus `lib. N cap. N n. N`).
+- Repository ids: `work.thomas-aquinas.summa-contra-gentiles` (registered with this publication).
 - URL: https://www.corpusthomisticum.org/scg2046.html
 - Retrieved: 2026-09-29T12:55:01Z
 - SHA-256 of the bytes read: 4facc3d0007a2edd8ab7f3bfe103446384124af3b18fa1d856b0a45055f33390 (69826 bytes)
@@ -151,7 +151,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### John Damascene, De fide orthodoxa II.3
 - Witness: John of Damascus, *An Exact Exposition of the Orthodox Faith* II.3 "Concerning angels", trans. S. D. F. Salmond, NPNF series 2 vol. 9 (1899), CCEL plain text.
-- Repository id: NEW work.john-of-damascus.de-fide-orthodoxa (title *Expositio fidei / De fide orthodoxa*; responsible john-of-damascus; treatise; grc, la, en; locus `II.N`).
+- Repository ids: `work.john-of-damascus.de-fide-orthodoxa` (registered with this publication).
 - URL: https://ccel.org/ccel/s/schaff/npnf209/cache/npnf209.txt
 - Retrieved: 2026-09-29T12:55:27Z
 - SHA-256 of the bytes read: 859ba34cc5998f2761b801aa5de724b2ea741a54d98e21614faeb89cc40f8ad4 (2606804 bytes)
@@ -162,7 +162,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Ambrose, De Spiritu Sancto I.7
 - Witness: Ambrose, *On the Holy Spirit* I.7.81, trans. H. de Romestin, NPNF series 2 vol. 10 (1896), CCEL.
-- Repository id: NEW work.ambrose.de-spiritu-sancto (treatise; la, en; locus `I.N.N`).
+- Repository ids: `work.ambrose.de-spiritu-sancto` (registered with this publication).
 - URL: https://ccel.org/ccel/s/schaff/npnf210/cache/npnf210.txt
 - Retrieved: 2026-09-29T12:55:29Z
 - SHA-256 of the bytes read: 14fa05cc98a67cb1ccf7613e63d5eb80fd48feb3e09dd29210e70f53dfcd7577 (2963575 bytes)
@@ -173,7 +173,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Dionysius, Divine Names 4
 - Witness: Dionysius the Areopagite, *On Divine Names*, trans. John Parker, *Works* (London 1897), tertullian.org transcription.
-- Repository id: work.pseudo-dionysius-the-areopagite.de-divinis-nominibus
+- Repository ids: `work.pseudo-dionysius-the-areopagite.de-divinis-nominibus` (registered with this publication).
 - URL: https://www.tertullian.org/fathers/areopagite_03_divine_names.htm
 - Retrieved: 2026-09-29T12:55:07Z
 - SHA-256 of the bytes read: 7d89093873b2ea5b8cf88e96c9066ce04907a0231523db3fa363c22039dc4295 (206269 bytes)
@@ -184,7 +184,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Dionysius, Celestial Hierarchy 10, 14, 15
 - Witness: Dionysius, *Celestial Hierarchy*, trans. John Parker, *Works* vol. 2 (London 1899), tertullian.org.
-- Repository id: work.pseudo-dionysius-the-areopagite.de-caelesti-hierarchia
+- Repository ids: `work.pseudo-dionysius-the-areopagite.de-caelesti-hierarchia` (registered with this publication).
 - URL: https://www.tertullian.org/fathers/areopagite_13_heavenly_hierarchy.htm
 - Retrieved: 2026-09-29T12:55:02Z
 - SHA-256 of the bytes read: ae7608cea7b9f874f2b8ebdabfbe9cfae8b74285fec914aeca3d87cd9089104d (114110 bytes)
@@ -195,7 +195,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Augustine, De civitate Dei XV.23, XVI.29
 - Witness: Augustine, *City of God*, trans. Marcus Dods, NPNF series 1 vol. 2 (1887), CCEL.
-- Repository id: work.augustine.de-civitate-dei
+- Repository ids: `work.augustine.de-civitate-dei` (existing).
 - URL: https://ccel.org/ccel/s/schaff/npnf102/cache/npnf102.txt
 - Retrieved: 2026-09-29T12:55:19Z
 - SHA-256 of the bytes read: 5c973feda803f3e58a88ed7df210b42d436f5466741eb8dbeae713ab56dedae4 (3692898 bytes)
@@ -206,7 +206,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Augustine, De Trinitate VI.6.8
 - Witness: Augustine, *On the Trinity*, trans. A. W. Haddan rev. W. G. T. Shedd, NPNF series 1 vol. 3 (1887), CCEL.
-- Repository id: NEW work.augustine.de-trinitate (treatise; la, en; locus `N.N.N`).
+- Repository ids: `work.augustine.de-trinitate` (registered with this publication).
 - URL: https://ccel.org/ccel/s/schaff/npnf103/cache/npnf103.txt
 - Retrieved: 2026-09-29T12:55:20Z
 - SHA-256 of the bytes read: cc8d3ff7ce4d4ba293f50a06200af03ff0e5abdeb5200db3a59b4dbe2cad7bdb (3357503 bytes)
@@ -217,7 +217,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Origen, De principiis I.6.4
 - Witness: Origen, *De principiis* (Rufinus's Latin), trans. F. Crombie, ANF vol. 4, CCEL.
-- Repository id: work.origen.de-principiis
+- Repository ids: `work.origen.de-principiis` (existing).
 - URL: https://ccel.org/ccel/s/schaff/anf04/cache/anf04.txt
 - Retrieved: 2026-09-29T12:55:15Z
 - SHA-256 of the bytes read: b9f385a048c18158c2f74dcd37062f48a1c68a5d05bdb07270a93692d172da2e (4237225 bytes)
@@ -228,7 +228,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Gregory the Great, Moralia XVI.37.45
 - Witness: Gregory the Great, *Morals on the Book of Job*, Library of Fathers vol. 21 (Oxford 1845), vol. II parts III–IV, archive.org OCR of a Google scan.
-- Repository id: NEW work.gregory-the-great.moralia-in-iob (commentary; la, en; locus `book.chapter.section`).
+- Repository ids: `work.gregory-the-great.moralia-in-iob` (registered with this publication).
 - URL: https://archive.org/download/21ALibraryOfFathersOfTheHolyCatholicV21/21ALibraryOfFathersOfTheHolyCatholicV21_djvu.txt
 - Retrieved: 2026-09-29T13:13:13Z
 - SHA-256 of the bytes read: f13861be5715cabe5283d5bd7f38cb35c2a1332bd6dc04cf049475b88da5c493 (1916422 bytes)
@@ -239,7 +239,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Bonaventure, In II Sententiarum d. 3
 - Witness: Bonaventure, *Commentaria in quatuor libros Sententiarum* II, *Opera omnia* t. 2 (Quaracchi 1885), archive.org OCR.
-- Repository id: work.bonaventure.opera-omnia-quaracchi
+- Repository ids: `work.bonaventure.opera-omnia-quaracchi` (existing).
 - URL: https://archive.org/download/doctorisseraphic02bona/doctorisseraphic02bona_djvu.txt
 - Retrieved: 2026-09-29T13:13:16Z
 - SHA-256 of the bytes read: da25d3f5fb7742367bfae54874c647148b1a96a8b89f2023b65d25bdce6d36dd (6785166 bytes)
@@ -250,7 +250,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Lateran IV, Firmiter (DS 800–801)
 - Witness: Denzinger, *Enchiridion symbolorum*, Latin, patristica.net presentation; English cross-check at papalencyclicals.net (Tanner translation, not quoted).
-- Repository id: work.fourth-lateran-council.firmiter-credimus; work.denzinger.enchiridion-symbolorum
+- Repository ids: `work.fourth-lateran-council.firmiter-credimus` (existing); `work.denzinger.enchiridion-symbolorum` (existing).
 - URL: https://patristica.net/denzinger/enchiridion-symbolorum.html ; https://www.papalencyclicals.net/councils/ecum12-2.htm
 - Retrieved: 2026-09-29T12:56:36Z; 12:56:39Z
 - SHA-256 of the bytes read: 604f24c46e0bc71c2018f25dc787a9ab421d4b2e9cf7d1cee1f43e910ef2708f (2333435 bytes); b93f45cd1f95cd2b5c994110637699fc665e207040d813107fe4c38c342bef45 (228156 bytes)
@@ -261,7 +261,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Vatican I, Dei Filius ch. 1
 - Witness: *Dei Filius* ch. 1, Latin (vatican.va); English (papalencyclicals.net).
-- Repository id: work.first-vatican-council.dei-filius
+- Repository ids: `work.first-vatican-council.dei-filius` (existing).
 - URL: https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700424_dei-filius_la.html ; https://www.papalencyclicals.net/councils/ecum20.htm
 - Retrieved: 2026-09-29T12:56:42Z; 12:56:40Z
 - SHA-256 of the bytes read: cdb6433e97aaa0fd31cd148d513392324c39779f0137402208ad66d19e8d7016 (29192 bytes); 80e25e52ffe10ebb389c1fdc2a9caf44cfca125fc0e75c92d481f2e9c89d242f (155629 bytes)
@@ -272,7 +272,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Catechism of the Catholic Church 328–330
 - Witness: CCC (English, vatican.va).
-- Repository id: work.catholic-church.catechism
+- Repository ids: `work.catholic-church.catechism` (existing).
 - URL: https://www.vatican.va/archive/ENG0015/__P1A.HTM
 - Retrieved: 2026-09-29T12:56:38Z
 - SHA-256 of the bytes read: f5d0972215f47a1bc22e768aa4e51f454db80f32dcbc4e3dd52b4a40ae5254d3 (22605 bytes)
@@ -283,7 +283,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Douay–Rheims
 - Witness: Douay–Rheims (Challoner), Project Gutenberg eBook 1581.
-- Repository id: work.english-college-of-douay.douay-rheims-bible (edition edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581)
+- Repository ids: `work.english-college-of-douay.douay-rheims-bible` (existing); `edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581` (existing).
 - URL: https://www.gutenberg.org/cache/epub/1581/pg1581.txt
 - Retrieved: 2026-09-29T12:58:58Z
 - SHA-256 of the bytes read: 7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007 (5880580 bytes)
