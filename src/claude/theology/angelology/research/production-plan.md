@@ -35,6 +35,38 @@ page-reviewed), `reviewed` (every page inspected in a review raster).
 - Received prayers: identified witness only, Latin and English each with
   its source; never compose or adapt.
 
+## Drafting lanes
+
+Units are drafted by parallel subagent lanes (all Opus 5.5). Each lane
+writes only its own unit files plus a transient record (source audit
+entries, question- and order-inventory rows, terminology, Scripture cited,
+binding candidates, Aquinas parallels, Dionysius citations, open issues);
+the orchestrator merges those records into the tracked `research/` files
+and commits. Launching all thirteen lanes at once was rate-limited by the
+model provider on 2026-09-29, so lanes run about three at a time.
+
+| Lane | Units |
+| --- | --- |
+| l1-substance | Angelic substance; Bodies, place, motion |
+| l2-knowledge | Intellect and knowledge |
+| l3-will-creation | Will and love; Creation, grace, glory |
+| l4-fall | Fall and punishment |
+| l5-hierarchies | Illumination and speech; Hierarchies and orders; Order of the universe |
+| l6-government | Government and mission; Guardian angels; Assaults of demons; App. demons' powers |
+| l7-ch | Celestial Hierarchy; App. nine orders; App. Dionysius in the Summa |
+| l8-scripture-faith | Scripture; Faith of the Church; App. magisterial chronology |
+| l9a-fathers-before | Fathers before Dionysius |
+| l9b-fathers-after | Fathers after Dionysius; App. comparative orderings |
+| l10a-christ-byzantine | Christ, Mary, angels; Byzantine line |
+| l10b-disputed | Disputed questions; App. first sin |
+| l11-liturgy | Liturgy; Devotion and regulation; App. calendar; App. names |
+| orchestrator | App. article census, parallels, Scripture index, terminology, witness register, scope, references |
+
+Primary texts are read from their public hosts (New Advent, Corpus
+Thomisticum, tertullian.org, CCEL, the Holy See, Denzinger at
+patristica.net, Project Gutenberg, archive.org); the source audit gives
+each URL and reading date.
+
 ## Units
 
 | Unit | File | Status | Principal sources |
@@ -74,7 +106,7 @@ page-reviewed), `reviewed` (every page inspected in a review raster).
 | App. first sin | `appendices/11-the-first-sin.tex` | planned | Aquinas, Scotus, Suárez, Fathers |
 | App. terminology | `appendices/12-terminology.tex` | planned | terminology audit |
 | App. witness register | `appendices/13-witness-register.tex` | planned | source audit; author-standing inventory |
-| Scope appendix | `appendices/90-scope-corpus-qualifications.tex` | planned | scope record |
+| Scope appendix | `appendices/90-scope-corpus-qualifications.tex` | drafted | scope record |
 | References | `appendices/99-references.tex` | planned | source audit |
 
 ## Pipeline steps after drafting
