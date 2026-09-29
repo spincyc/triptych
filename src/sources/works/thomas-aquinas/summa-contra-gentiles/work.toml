@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.thomas-aquinas.summa-contra-gentiles"
+title = "Summa contra gentiles"
+responsible = "Thomas Aquinas"
+work_type = "theological-treatise"
+alternate_titles = ["Liber de veritate catholicae fidei contra errores infidelium", "Summa contra Gentiles"]
+languages = ["la"]
+locus_pattern = '(?:I|II|III|IV)\.(?:[1-9]|[1-9][0-9]|1[0-6][0-9])'
+description = "Aquinas's four books on the truth of the Catholic faith. Book II, chapters 46-101, treats the intellectual substances; Book III, chapter 80, the orders of angels. A locus is book.chapter."

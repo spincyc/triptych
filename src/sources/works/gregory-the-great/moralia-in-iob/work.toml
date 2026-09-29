@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.gregory-the-great.moralia-in-iob"
+title = "Moralia in Iob"
+responsible = "Gregory the Great"
+work_type = "biblical-commentary"
+alternate_titles = ["Moralia", "Morals on the Book of Job", "Expositio in librum Iob"]
+languages = ["la"]
+locus_pattern = '(?:[1-9]|[1-2][0-9]|3[0-5])\.(?:[1-9]|[1-5][0-9])(?:\.[1-9][0-9]*)?'
+description = "Gregory's thirty-five books of moral exposition on Job. A locus is book.chapter, optionally with the paragraph number of the Maurist division."

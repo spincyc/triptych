@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.augustine.de-trinitate"
+title = "De Trinitate"
+responsible = "Augustine"
+work_type = "patristic-treatise"
+alternate_titles = ["On the Trinity"]
+languages = ["la"]
+locus_pattern = '(?:I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII|XIII|XIV|XV)\.(?:[1-9]|[1-2][0-9])(?:\.[1-9][0-9]*)?'
+description = "Augustine's fifteen books on the Trinity. Book III treats the divine government of bodies through spirits and the wonders worked by angels and demons. A locus is book.chapter, optionally with the paragraph."

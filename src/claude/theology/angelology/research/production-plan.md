@@ -76,8 +76,8 @@ each URL and reading date.
 | Fathers before Dionysius | `sections/10-fathers-before-dionysius.tex` | planned | Hermas; Justin; Athenagoras; Irenaeus; Origen *De principiis* I; Basil; Gregory Nazianzen Or. 28, 38; Chrysostom; Ambrose; Jerome; Augustine *De civ. Dei* XI–XII, *De Gen. ad litt.* IV, *Enchiridion* 58 |
 | Celestial Hierarchy | `sections/15-celestial-hierarchy.tex` | planned | CH 1–15 (Parker); PG 3; Aquinas's citations |
 | Fathers after Dionysius | `sections/20-fathers-after-dionysius.tex` | planned | Gregory *Hom. in Ev.* 34, *Moralia*; Isidore *Etym.* VII.5; Damascene *De fide* II.3–4; Bede; Bernard *De consid.* V; Lombard *Sent.* II dd. 2–11 |
-| Angelic substance | `sections/30-angelic-substance.tex` | planned | ST I q. 50; *De ente* 4; *De sub. sep.* |
-| Bodies, place, motion | `sections/32-bodies-place-motion.tex` | planned | ST I qq. 51–53 |
+| Angelic substance | `sections/30-angelic-substance.tex` | drafted | ST I q. 50; *De ente* 4; *De sub. sep.* |
+| Bodies, place, motion | `sections/32-bodies-place-motion.tex` | drafted | ST I qq. 51–53 |
 | Intellect and knowledge | `sections/34-intellect-and-knowledge.tex` | planned | ST I qq. 54–58; *De ver.* 8 |
 | Will and love | `sections/36-will-and-love.tex` | planned | ST I qq. 59–60 |
 | Creation, grace, glory | `sections/38-creation-grace-glory.tex` | planned | ST I qq. 61–62 |

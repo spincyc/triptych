@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.ambrose.de-spiritu-sancto"
+title = "De Spiritu Sancto"
+responsible = "Ambrose"
+work_type = "patristic-treatise"
+alternate_titles = ["On the Holy Spirit"]
+languages = ["la"]
+locus_pattern = '(?:I|II|III)\.(?:[1-9]|1[0-9]|2[0-2])(?:\.[1-9][0-9]*)?'
+description = "Ambrose's three books on the Holy Spirit, addressed to the emperor Gratian in 381. A locus is book.chapter, optionally with the paragraph."

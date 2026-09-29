@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.thomas-aquinas.de-spiritualibus-creaturis"
+title = "Quaestio disputata de spiritualibus creaturis"
+responsible = "Thomas Aquinas"
+work_type = "disputed-question"
+alternate_titles = ["De spiritualibus creaturis", "On Spiritual Creatures"]
+languages = ["la"]
+locus_pattern = '(?:[1-9]|1[01])(?:\.(?:objection-[1-9][0-9]*|sed-contra-[1-9]?|corpus|reply-[1-9][0-9]*))?'
+description = "Aquinas's single disputed question in eleven articles on spiritual substances: whether a spiritual substance is composed of matter and form, whether it can be united to a body, the soul, and whether there are many angels of one species (a. 8). A locus is article, optionally with its division."

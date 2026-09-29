@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.john-of-damascus.de-fide-orthodoxa"
+title = "Expositio fidei"
+responsible = "John of Damascus"
+work_type = "theological-treatise"
+alternate_titles = ["De fide orthodoxa", "An Exact Exposition of the Orthodox Faith", "Ekdosis akribes tes orthodoxou pisteos"]
+languages = ["grc"]
+locus_pattern = '(?:I|II|III|IV)\.(?:[1-9]|[1-2][0-9]|30)'
+description = "Damascene's exposition of the faith, the third part of his Fount of Knowledge, in four books by the Latin division. Book II, chapters 3 and 4, treat the angels and the devil and demons. A locus is book.chapter."
