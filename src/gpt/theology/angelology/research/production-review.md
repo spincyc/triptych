@@ -93,5 +93,22 @@ PDF and six installed reading-plan PDFs were preserved unchanged. These restored
 files total 267,651,824 bytes. The local receipt is disposable; this durable
 record retains the verification scope and deployment basis.
 
-Release bindings, the complete site artifact, promise reconciliation, and
-Git delivery are still being finalized.
+Final local gates pass: `make check-release-bindings`, `make public-site`,
+and `tools/tpt public-alpha verify --deployment-target github-pages`, as well
+as `make check-metadata`, `make check-promised-deliverables`, the focused
+web-edition check, `git diff --check`, and `tmt check`. The full site's angelology
+HTML is byte-identical to the browser-reviewed HTML recorded in `web-review.md`;
+its served PDF is byte-identical to the reviewed PDF above.
+
+Integration exposed an existing release-tool defect: its authorized source set
+included eligible web editions even when their publication was explicitly held.
+The source set now uses the same publication-inclusion decision as the renderer.
+The layout-eligibility declarations remain unchanged; absent included/alpha
+readers still fail validation. All 121 public-alpha tests and 21 release-binding
+tests pass, including both held-absence and included-absence regressions. The
+obsolete binding for an earlier held Claude reader was retired; the unfinished
+Claude angelology has its required hidden Faith catalog identity and no public
+reader or PDF link.
+
+The completed artifact is ready for the authorized push and live-deployment
+verification. Those remote results will be recorded after they occur.

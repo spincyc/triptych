@@ -478,7 +478,8 @@ class PublicAlphaTest(unittest.TestCase):
         import markdown
 
         tool = load_tool()
-        for source_relative in sorted({**tool.PAGE_MAP, **tool.document_pages()}):
+        included = tool.included_publications(tool.publication_map(tool.load_manifest()), False)
+        for source_relative in sorted({**tool.PAGE_MAP, **tool.included_document_pages(set(included))}):
             with self.subTest(source=source_relative):
                 text = (REPOSITORY_ROOT / source_relative).read_text(encoding="utf-8")
                 tool.reject_unrendered_code_fences(
@@ -712,7 +713,7 @@ class PublicAlphaTest(unittest.TestCase):
         authorization = self.manifest["authorizations"]["test-authorization"]
         authorization["site_sources"] = {
             source_path: digest((self.root / source_path).read_bytes())
-            for source_path in sorted(self.tool.site_source_paths())
+            for source_path in sorted(self.tool.site_source_paths(self.manifest))
         }
         publication_rows = []
         for publication in self.manifest["publications"]:
@@ -1730,6 +1731,22 @@ class PublicAlphaTest(unittest.TestCase):
             "longer reads it",
             str(failure.exception),
         )
+
+    def test_eligible_held_web_edition_is_not_an_approved_site_input(self) -> None:
+        self.add_unapproved_publication("held-work", "hold")
+        with mock.patch.object(self.tool, "eligible_document_ids", return_value={("gpt", "held-work")}):
+            self.assertNotIn("web/gpt/held-work.md", self.tool.site_source_paths(self.manifest))
+            self.authorize_current_inputs()
+            self.assertEqual(self.tool.site_source_binding_errors(self.manifest), [])
+            self.tool.candidate_inventory_data(self.manifest, self.tool.publication_map(self.manifest))
+
+    def test_missing_included_web_edition_remains_a_required_site_input(self) -> None:
+        with mock.patch.object(self.tool, "eligible_document_ids", return_value={("gpt", "work")}):
+            self.assertIn("web/gpt/work.md", self.tool.site_source_paths(self.manifest))
+            errors = self.tool.site_source_binding_errors(self.manifest)
+            self.assertTrue(any("web/gpt/work.md" in error for error in errors), errors)
+            with self.assertRaisesRegex(self.tool.ReleaseError, "unsafe or missing candidate site source: web/gpt/work.md"):
+                self.tool.candidate_inventory_data(self.manifest, self.tool.publication_map(self.manifest))
 
     def test_site_source_graph_keeps_every_copied_browser_and_data_input(self) -> None:
         bible_manifest = {

@@ -1,6 +1,7 @@
 # Faith
 
 <!-- triptych-publication-id: articles/faith/last-supper-calvary-and-the-mass -->
+<!-- triptych-publication-id: claude:theology/angelology -->
 
 [Return to the library](../README.md)
 

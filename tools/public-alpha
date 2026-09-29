@@ -1726,7 +1726,7 @@ def structure_loci(node: object, found: dict[str, set[tuple[str, int]]]) -> None
         structure_loci(value, found)
 
 
-def site_source_paths() -> set[str]:
+def site_source_paths(manifest: dict | None = None) -> set[str]:
     """Every repository input the artifact's approval binds.
 
     The reading pages and their machinery are here for the same reason the prose
@@ -1744,6 +1744,9 @@ def site_source_paths() -> set[str]:
     from being copied, while the exact per-file hashes prevent a fragment or a
     newly introduced structure family from changing after authorization.
     """
+    if manifest is None:
+        manifest = load_manifest()
+    included = included_publications(publication_map(manifest), preview=False)
     browser = {
         path.relative_to(ROOT).as_posix()
         for path in web_browser_pages().values()
@@ -1757,7 +1760,7 @@ def site_source_paths() -> set[str]:
     # the same authorization closure explicitly here.
     return (
         set(SITE_SOURCE_PATHS)
-        | set(document_pages())
+        | set(included_document_pages(set(included)))
         | pictorial_gallery_source_paths()
         | browser
         | set(reading_plan_pdfs())
@@ -1765,7 +1768,7 @@ def site_source_paths() -> set[str]:
 
 
 def site_source_inventory_gaps(
-    recorded: Iterable[str],
+    recorded: Iterable[str], manifest: dict | None = None,
 ) -> tuple[list[str], list[str]]:
     """Compare a recorded site-source inventory with the recognized set.
 
@@ -1776,7 +1779,7 @@ def site_source_inventory_gaps(
     does not use. A check that walks the record alone sees neither and reports
     exact, which is how twelve recognized inputs stayed unbound.
     """
-    recognized = site_source_paths()
+    recognized = site_source_paths(manifest)
     held = set(recorded)
     return sorted(recognized - held), sorted(held - recognized)
 
@@ -2522,7 +2525,7 @@ def candidate_inventory_data(
         )
 
     site_sources = []
-    for source_relative in sorted(site_source_paths()):
+    for source_relative in sorted(site_source_paths(manifest)):
         try:
             source_path = safe_relative_path(source_relative, "candidate site source")
         except ReleaseError as exc:
@@ -3997,7 +4000,7 @@ def site_source_binding_errors(manifest: dict) -> list[str]:
                     f"{label} {source_relative} does not match its approved "
                     f"SHA-256: approved {approved_hash}, actual {actual_hash}"
                 )
-        unrecorded, unrecognized = site_source_inventory_gaps(site_sources)
+        unrecorded, unrecognized = site_source_inventory_gaps(site_sources, manifest)
         for source_relative in unrecorded:
             errors.append(
                 f"{label} {source_relative} is recognized by the renderer and "

@@ -1762,7 +1762,7 @@ release attachment, announcement, or promotion.
 | `library/catholic-exorcism.md` | `cb8dc01280320b0377bd2d48e0013379b8acee3ede3d6255beaa37356c7c63db` |
 | `library/curriculums.md` | `4d6deabc3129f825c1f11677e6ac9f0afcdf62df68fb9965f0e9f2468e95ea32` |
 | `library/ecclesiastical-latin.md` | `79045a11252f9834170b8cd25ca3e471a871adc333e021892b4310d18f9e9fdd` |
-| `library/faith.md` | `0c57581d36733817edc3cf877f15be6cbfa8f28645528b666ca342265e8b1be8` |
+| `library/faith.md` | `30e6b2e2f054910fb8168bf58638b4580bffc865477f15c545ad6ecfadc9addf` |
 | `library/formation.md` | `1f307b80404e94b64a6d57208509725254535cbfa7a21be38df9d2e2dc0d7b1d` |
 | `library/heresies.md` | `ecec196802c48c2e86cd83f593e854438086c6c9dc898805105f305dd79239ee` |
 | `library/historical-accounts.md` | `24316cda039247b1f48b9828a83bbc1c9d36b70afcf314806eacb246837375ae` |
@@ -23808,7 +23808,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.visitatione-beatae-mariae-virginis-secret.json` | `8d37bcfd80e14d1980f3ff2d4b3f20e519da9e5c72783ce07ce5125b17247739` |
 | `src/web/data/structure/sources/text/passage.westcott-and-hort.the-new-testament-in-the-original-greek.introduction-and-appendix-1882.appendix-p71-lk-24.12.json` | `199d42eced334a709244d53f41cafdd57ee93cd352aad1273287b48ce5ba6bf7` |
 | `src/web/data/structure/sources/text/passage.william-smith.dictionary-of-greek-and-roman-antiquities.1875-lacuscurtius-web-2026-07-25.sv-mantele.json` | `5e9590fc1d25d8018dc0fc12d78e539d017b66527b2857a5ba554aa026979736` |
-| `tools/public-alpha` | `f95e36bb4c9c650f315ee78b2c1d8dc2c1a67f954fdb0e4f1aeb14623986649a` |
+| `tools/public-alpha` | `5c5e35468d377221e030adbd60ff1ec1c2757b6ffaee5f2b635e42037cbc4f84` |
 | `web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.md` | `6349355c26491b0292f854a8ac2da3fceba601432e92770d3db57c3821bca039` |
 | `web/claude/articles/canon-law/natural-positive-divine-human-law.md` | `75a6f9e454d09e5597d3089f0397eb30310d36790a048599e4f19ff3448a301b` |
 | `web/claude/articles/faith/against-the-instrumentalists.md` | `309ab5bf2c00ce7ad98bec3200025af2bb88f5a0717e353e89547ef88a3e4be1` |
@@ -23843,7 +23843,6 @@ release attachment, announcement, or promotion.
 | `web/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.md` | `ea4bdb002037c90078de51a24fccb65866fd82d9fb9386c1b1a976488bb2d0ab` |
 | `web/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.md` | `f16f5671d8343b4f92dd953002758922289fdb3c7b39256192fcc96c36aee739` |
 | `web/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.md` | `7a067369ebc44a0b081bbc26c49be9f39818b7371f8066a9a366a3dac04debd7` |
-| `web/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.md` | `0c9702a34a1e5ae802381104a2369521fa69d432a7d88f06bafd1f3e560d4fc6` |
 | `web/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.md` | `e3bbc6ab6e431bbbb6a60a885f581698fce91d5e40df5de7ee3c68272be787ff` |
 | `web/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.md` | `1399d12d5f150becca16051d9dad9a7f82651c50dca1b9855cd0e031e43cad24` |
 | `web/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md` | `10250b14b039c34b17125181a651026e30a43a047c1d5efda88cdd13eb35d229` |

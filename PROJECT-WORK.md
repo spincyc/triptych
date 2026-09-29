@@ -20,7 +20,7 @@ publication remain separate. The target is `src/gpt/theology/angelology/`,
 under `guidance/theology/angelology.md`, with working title *Angels and the
 Gift of Being: A Thomistic Study of Nature, Grace, and Ministry*.
 
-**Installed and reviewed; deployment validation in progress.** Independent research and composition
+**Installed, reviewed, and locally validated; Git delivery in progress.** Independent research and composition
 are complete, with a 62-page PDF that has passed full visual review. The
 systematic spine covers every article of ST I qq. 50–64 and 106–114;
 Dionysius receives fifteen chapter treatments. The distinct pedagogical
@@ -28,7 +28,8 @@ thread is the relation of created nature, grace, and ministry. Sources,
 evidence ceilings, disputed positions and source bindings belong to this
 edition's own research records. The source checkpoint preserves the full treatise and registered corpus.
 The reviewed PDF and web edition are installed and linked from the Faith
-catalog; final integration checks are being completed. Work is committed on the workspace branch `feature/angelology`. The maintainer
+catalog. The source, metadata, promise, release-binding, full-site build,
+and GitHub Pages artifact checks pass. Work is committed on the workspace branch `feature/angelology`. The maintainer
 subsequently directed that the completed work be pushed to `main`; final
 deployment validation and that push are therefore part of delivery.
 
