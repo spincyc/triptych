@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.thomas-aquinas.de-malo.1953-latin-corpus-thomisticum-2026-09-29.qdm16-historical-latin-ea70895b"
+edition_id = "edition.thomas-aquinas.de-malo.1953-latin-corpus-thomisticum-2026-09-29"
+artifact_type = "normalized-text"
+media_type = "text/plain"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Thomas Aquinas thirteenth-century Latin is public domain in the United States. The extraction retains historical Latin prose only; Corpus Thomisticum navigation, tags, modern electronic reference labels and editorial wrapper are excluded. Recorded printing and editorial revisions do not grant Triptych rights in the historical text."
+provenance = "Exact complete delivery acquired directly by HTTPS; identified through repository alias and edition searches. No source wording was supplied by a model."
+retrieved = "2026-09-29"
+sha256 = "ea70895b025ec9a513ceabe3720daf4572e6de455957f03a663118462f2fea1d"
+byte_size = 223244
+indexable = true
+notes = "De malo q16, all twelve articles. The paragraph order is preserved; source wording is not corrected. Plain prose only, without the modern web reference labels; citations follow the parent witness. Not a critical edition or facsimile."
+rights_jurisdiction = "United States"
+encoding = "utf-8"
+path = "src/sources/works/thomas-aquinas/de-malo/editions/1953-latin-corpus-thomisticum-2026-09-29/artifacts/qdm16-historical-latin-ea70895b/source.txt"
+derived_from = "artifact.thomas-aquinas.de-malo.1953-latin-corpus-thomisticum-2026-09-29.qdm16-html-12518586"
+transformation = "Decode ISO-8859-1; select every P TITLE block in source order; remove A NAME/SPAN CLASS=ref electronic reference labels; strip remaining HTML and decode entities; preserve paragraph order and normalize whitespace. No Latin wording supplied by a model."

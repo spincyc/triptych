@@ -1,14 +1,14 @@
 migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
-audited_on = "2026-09-28"
+audited_on = "2026-09-29"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:60f202d4e4d95367fc040782c6250337f5eba99568713d186d095c56d5dff185"
+inventory_snapshot = "sha256:323157dd10eae6a0632d25307c1603cff63237a1f307849925be942eae7da8ef"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
-classification_snapshot = "sha256:1028bc5a34d2c38315913177ae9b3eb5a0ba33775260f377aca2893323f6a62a"
-canonical_catalog_snapshot = "sha256:b9f3d00dae0f854707baaf18ecf9bd34cd3bf3323e5fbabab5713da7ecee2125"
+classification_snapshot = "sha256:a06dfc33dfd7278908c2f5c13d697240e09065561bb790e8acac7c60795b9e96"
+canonical_catalog_snapshot = "sha256:51bdbecda521eff0bff4d50da8600222dd2b8b655fd23485373c65ef948ece6e"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:3a3f7c964f458eac94bb2d3a08152379ec290612dc35896b28c56478b1674715"
+snapshot = "sha256:6fca6593530963ec63877230fdb979240427e384b7bafc2d7de6c0a597ee75fa"
 families = []
 
 [[review_units]]
@@ -704,6 +704,11 @@ review_state = "pending"
 [[review_units]]
 owner_id = "owner.typesetting.common"
 surface_snapshot = "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "theology/angelology"
+surface_snapshot = "sha256:0e9556d68644548db7561245691b266a820c01f2457751cd442ba14bb7db5b90"
 review_state = "pending"
 
 [[review_units]]

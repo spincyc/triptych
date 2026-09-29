@@ -70,8 +70,9 @@ who states it. Use these reader-facing values:
   a papal act, without a definition;
 - **Common teaching** — held commonly by the Fathers and theologians, without
   a magisterial act that teaches it;
-- **Thomist position** — Aquinas's determination where another Catholic school
-  determines otherwise;
+- **Thomist position** — Aquinas's systematic determination as such; name a
+  contrary Catholic school when its position has been read at its own locus,
+  without implying that this label alone establishes dissent;
 - **Disputed** — an open question on which the witnesses divide without a
   prevailing common teaching; and
 - **Pious tradition** or **Apocryphal** — devotional or extra-canonical
@@ -81,6 +82,14 @@ The grade attached to a proposition is project synthesis. Its basis is the
 act or witness cited beside it; where the witnesses do not settle the grade,
 the lower grade is used and the reason stays with the claim. Terminal
 apparatus states the grading rule once.
+
+Do not use **Disputed** merely because a survey establishing common teaching
+has not been performed. It records an actual open disagreement in the
+identified witnesses. Attribute a scholastic determination to Aquinas instead
+of manufacturing uncertainty about what he teaches. This clarification follows
+the maintainer's 29 September 2026 direction to give an affirmative Catholic
+treatise at the appropriate levels of determination, with compact authority
+distinctions and expansive patristic exposition.
 
 ## Dossier contract
 

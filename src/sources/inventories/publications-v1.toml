@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-09-28"
+audited_on = "2026-09-29"
 discovery_rule = "src/gpt/**/main.tex"
-publication_count = 144
-source_surface_file_count = 2462
-snapshot = "sha256:60f202d4e4d95367fc040782c6250337f5eba99568713d186d095c56d5dff185"
+publication_count = 145
+source_surface_file_count = 2504
+snapshot = "sha256:323157dd10eae6a0632d25307c1603cff63237a1f307849925be942eae7da8ef"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -1726,6 +1726,17 @@ inventory_state = "sources-categorized"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"
+relationship = "local"
+
+[[documents]]
+id = "theology/angelology"
+main = "src/gpt/theology/angelology/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+[[documents.record_owners]]
+id = "theology/angelology"
 relationship = "local"
 
 [[documents]]
@@ -14728,6 +14739,258 @@ path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-u
 sha256 = "689bcab35657618f2153b67382a8f075ff2b0b5f35170ad32dbc3620e09b84f6"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/gpt/theology/angelology/appendices/01-orders.tex"
+sha256 = "36b70cfaf33e251ec9223983e74cd13f16f3608b07b6aff493de681ba941bddf"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/appendices/02-article-census.tex"
+sha256 = "29b0033f65043a8f032863df0ecdf6afbbe88f32b1d88c5b93140c9093d84938"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/appendices/03-aquinas-parallels.tex"
+sha256 = "1c6631c7e45a3d117ece3bcaf58b7d13ab1482c03bd81970e662f57930652509"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/appendices/04-dionysian-concordance.tex"
+sha256 = "5d605e5b54a169dcb746baad4f70b8945ccea05ac2fce0009c489a4be7b78d0b"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/appendices/04-magisterial-chronology.tex"
+sha256 = "255a4ba0fdb190b3992a84df559dee0f962cb9b0c51ac88be89efe01289e08d1"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/appendices/05-calendar-and-names.tex"
+sha256 = "ab5c89a88af5b1fe2438e47dd65e590b25e325db2809d0e0aaa110bc2ab55263"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/appendices/06-scripture-and-powers.tex"
+sha256 = "de7e5a9c25c7405c1586be2b897078b99de08411bdb7aecbf790c4b06a028a24"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/appendices/07-first-sin.tex"
+sha256 = "9c23dd82d77098eafaaa35f6f4ee5e9c55346ddc4b72581c53e34466c17e927e"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/appendices/08-terminology-and-witnesses.tex"
+sha256 = "19140dde1fe9be63e978a8b50449c18b065c81d2da927ce062aeb843f4881d6d"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/appendices/90-scope.tex"
+sha256 = "c55936ee5b978ac024aee7bc24cc457c6d86ec2b9ab79bb58a2f2823b7dafaf9"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/appendices/99-references.tex"
+sha256 = "156277e380338b055cbd2c358acfe4353b281876500d7d2819a884b1daf0eada"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/main.tex"
+sha256 = "1225e7ed1a96d63f5906ba9b9e4b85a572c8768b8438948fe1d24fed8470c17d"
+kind = "publication-main"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/research/audits/aquinas-ministry.md"
+sha256 = "7919d997890003ffa95136b665b8e946c62fe02989b73572d0bd24bce8cef30a"
+kind = "research-record"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/research/audits/aquinas-nature.md"
+sha256 = "1948f0340b4f6bcb0a3edca1ed73b39de45a6e5946c0feb4793c90adaf3b8431"
+kind = "research-record"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/research/audits/christ-liturgy.md"
+sha256 = "01bf62871631441afcbd1dcf1ab790c1bc39bb73794fa792ef7da69aab6f7d02"
+kind = "research-record"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/research/audits/dionysius-fathers.md"
+sha256 = "c3d98fc43a693bacbf99186777fa9fe5e5997a4c09b306b5cd5bbbfe030edbcf"
+kind = "research-record"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/research/audits/opening.md"
+sha256 = "0c4eb32a285bfcf75f024292ca98c90f35f35ca1d0e1b15bbf49d04a0ebe8ab0"
+kind = "research-record"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/research/opening-source-audit.md"
+sha256 = "70857e7b170dc6a7dc85ccd00818b06f3911700a66f8d44201647972b448868b"
+kind = "research-record"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/research/order-inventory.md"
+sha256 = "0d3a3149cf4c00e8ff73c3a976bd681e77085016259cf01bcd3b8fa4452742af"
+kind = "research-record"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/research/production-review.md"
+sha256 = "3853d89eebf835cec39bb1f5a1fc70ac9bcd6fb7ea439332e5a1fbce83dccf80"
+kind = "research-record"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/research/question-inventory.md"
+sha256 = "903e107bcd2efd6e56c5d835587d43bf46a771af31793b2b8e2f989c21392c25"
+kind = "research-record"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/research/scope.md"
+sha256 = "09a501b1e8e34893cb82976b9f29f8e5d26ac4ea9313b711d9c950728504c53e"
+kind = "research-scope"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/research/source-audit.md"
+sha256 = "8e13fe493060b8fcd52b03c262ceebdfe3abd489ed5eeab3186959643481c27f"
+kind = "legacy-source-audit"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/research/source-bindings.toml"
+sha256 = "ac4f4d6669a0a10862863de8ad49d8b2799a56ac92c7fadc59f69bb9a61baa0f"
+kind = "source-binding"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/research/terminology-audit.md"
+sha256 = "d5e8078378bc7cb56d12525f9dbfef0ba22c4ff131543343512fdca02e6a0ad4"
+kind = "research-record"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/research/web-review.md"
+sha256 = "7071482535b31d2aa164aa0592502509d93c8dcc03f11603f86b6c951689fc23"
+kind = "research-record"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/sections/00-scripture.tex"
+sha256 = "1fc300acb892671d27c149da55f3b93b190fac52247e92a84e13d9450c2fd619"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/sections/05-creation-and-faith.tex"
+sha256 = "92b99a1baec647a9bf1ee716946bf1fc0e7d8ed9dced2ed1c20527ea247a9309"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/sections/10-fathers.tex"
+sha256 = "ab37c86e7a27e6ae3b1880b8c85bf360478ecbf5235ebc5419dc8c18d12da87f"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/sections/15-celestial-hierarchy.tex"
+sha256 = "a3cfe0567d666125a77778220bb09139a7557512ba608a6321e79b20fc47bf15"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/sections/20-reception.tex"
+sha256 = "e45180fe030e7b7607ce8897feee2c48374cce5040c8745b1d1bd0120aeb08ee"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/sections/30-nature.tex"
+sha256 = "2ef1aa6d454b8dfedbed2b9ee74d68cc3aba3e9e8bd0d3c8a07afe142310a5ae"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/sections/32-knowledge.tex"
+sha256 = "d97877ecc2192c12cac911268800f8e9f9b1bebafe4f400a20db8e47076c9df8"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/sections/34-love-and-grace.tex"
+sha256 = "202ad7f7752e380752c2362dc249793e517a47dd8be2c99ace928027964211db"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/sections/36-fall.tex"
+sha256 = "f224792e2c294f3bd21d30fad30f7d621ec105787021f40c7098c7edfcf52864"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/sections/40-illumination-and-order.tex"
+sha256 = "c9b2f9172162fa841a850998c779957b8c6388eb46fbd388c0ad75b4accf773f"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/sections/42-government-and-guardians.tex"
+sha256 = "4e0080b352f9f5735db84ca87cca93d5d7f951938d7e29eaf59649e5648d5870"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/sections/44-assault-and-providence.tex"
+sha256 = "721ad3138c3d9ff28ea08ab38580220fbe4bbc3b8be61c1d8f982fa6feb74519"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/sections/50-christ-mary.tex"
+sha256 = "2bfc732b58a3a2c8b2e994a5915d7fb32a384d793a1380b431b8a3e6eeed7aaf"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/sections/55-disputed-and-eastern.tex"
+sha256 = "e6912ffbe4e4f8722b7a61926a2e39f316b6ff776724e2987ef73d75ea99fa14"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/sections/60-liturgy-and-devotion.tex"
+sha256 = "c36ac11c1db73471f548c6f807b9ee55c7d89029f7bf76d73e4d1ce6f4802a02"
+kind = "rendered-content"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/gpt/theology/angelology/web-edition.toml"
+sha256 = "9fcedda8f72f6e90b7ba97fcea77a2501c02ef2b66a5e8e4115ee9b9c1e8bee3"
+kind = "rendered-content"
+owners = ["theology/angelology"]
 
 [[files]]
 path = "src/gpt/theology/heresies/heresies-in-catholic-history/main.tex"

@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
 audited_on = "2026-09-28"
-publication_snapshot = "sha256:7c4fe334717d4041f21d9ad3bbbc87329a2fb7b104681e6975df70c4d3a49e3c"
-classification_snapshot = "sha256:1028bc5a34d2c38315913177ae9b3eb5a0ba33775260f377aca2893323f6a62a"
+publication_snapshot = "sha256:c3291694742a936f66f48aeb087982670b4e5bc7c6082852b9d746dd562f51f7"
+classification_snapshot = "sha256:a06dfc33dfd7278908c2f5c13d697240e09065561bb790e8acac7c60795b9e96"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -515,6 +515,10 @@ source_categories = ["finding-aid", "historical-primary", "institutional-current
 [[classifications]]
 document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
+
+[[classifications]]
+document = "theology/angelology"
+source_categories = ["historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
 document = "theology/heresies/heresies-in-catholic-history"

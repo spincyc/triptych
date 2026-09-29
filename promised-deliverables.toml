@@ -9,20 +9,20 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "systematic-study"
   criterion = "The study treats ST I qq.50–64 and 106–114 in order with graded question dossiers and a complete article inventory agreeing with the reader census."
-  status = "open"
-  evidence = ["src/gpt/theology/angelology/research/scope.md"]
+  status = "pass"
+  evidence = ["src/gpt/theology/angelology/research/question-inventory.md"]
 
   [[deliverables.requirements]]
   id = "dionysius-and-corpus"
   criterion = "All fifteen Celestial Hierarchy chapters receive sourced exposition; additional patristic and saintly witnesses are read firsthand and registered with truthful evidence ceilings and publication bindings."
-  status = "open"
-  evidence = ["src/gpt/theology/angelology/research/scope.md"]
+  status = "pass"
+  evidence = ["src/gpt/theology/angelology/research/source-audit.md"]
 
   [[deliverables.requirements]]
   id = "reference-apparatus"
   criterion = "The profile's reference tables, hierarchies, concordances, calendar, Scripture index, terminology and scope appendices accompany the complete study."
-  status = "open"
-  evidence = ["src/gpt/theology/angelology/research/scope.md"]
+  status = "pass"
+  evidence = ["src/gpt/theology/angelology/research/order-inventory.md"]
 
   [[deliverables.requirements]]
   id = "pdf-installation"
@@ -38,7 +38,7 @@ state = "in_progress"
 
   [[deliverables.requirements]]
   id = "validation-and-checkpoints"
-  criterion = "Source, metadata, web and promise checks are recorded honestly, and coherent incremental commits preserve the delivered work on the workspace branch."
+  criterion = "Source, metadata, web and promise checks are recorded honestly, and coherent incremental commits preserve the delivered work on the workspace branch, followed by the subsequently authorized validated push to main and verification of its automatic deployment."
   status = "open"
   evidence = ["src/gpt/theology/angelology/research/scope.md"]
 

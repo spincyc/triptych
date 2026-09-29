@@ -334,6 +334,37 @@ Their course-wide provenance and rights boundary are recorded in the adjacent
 `research/source-audit.md`. No donor manuscript wording is offered under CC BY
 4.0 unless a later work-specific rights record establishes that basis.
 
+## Angelology primary witnesses (GPT edition, 29 September 2026)
+
+The original study at `src/gpt/theology/angelology/` uses historical wording
+from Scripture, Aquinas, Dionysius, the Fathers, and Bonaventure. The exact
+editions and artifacts, their acquisition and hashes, and the passages used
+are identified by its `research/source-bindings.toml` and `source-audit.md`.
+The project license covers the original exposition and apparatus; it does
+not relicense these sources.
+
+Retained historical witnesses include the Douay–Rheims/Challoner Bible;
+the English Dominican translation of Aquinas (1920); John Parker's Dionysius,
+volume II (1899); Migne's *Patrologia Graeca* volume 3; the nineteenth-century
+Dods, Haddan, Jackson, Salmond, Patrick, Browne–Swallow, and Prevost–Riddle
+translations; and the Quaracchi Bonaventure (1885). Their historical wording
+is public domain in the United States. The corresponding historical Latin
+texts of Aquinas, the councils, and Bonaventure are also public domain.
+Exact electronic artifacts retain their separate recorded rights: a modern
+website's wrapper, apparatus, or editorial contribution is not treated as
+public domain merely because it encloses an ancient text. Where a wrapper
+could not be redistributed on the recorded basis, only the identified
+historical text was retained in a derivative with its provenance recorded.
+
+The Gregory the Great Wikisource witness retains the attribution and license
+recorded by its existing source edition. Modern Holy See English documents,
+Benedict XVI's audience, the Byzantine Catholic calendar witness, and the
+Cambridge publisher's public chapter summary are represented by citation and
+bounded original paraphrase; their protected deliveries are metadata-only
+source records. The Cambridge chapter itself was not acquired or read.
+Historical calendar facts do not relicense contemporary liturgical texts.
+No contemporary prayer translation is reproduced in the study.
+
 ## Fonts and External Software
 
 Published PDFs embed Latin Modern font programs. The altar-server guides and the

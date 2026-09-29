@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.thomas-aquinas.de-veritate.1972-latin-corpus-thomisticum-2026-09-29.qdv08-historical-latin-9a86b5fb"
+edition_id = "edition.thomas-aquinas.de-veritate.1972-latin-corpus-thomisticum-2026-09-29"
+artifact_type = "normalized-text"
+media_type = "text/plain"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Thomas Aquinas thirteenth-century Latin is public domain in the United States. The extraction retains historical Latin prose only; Corpus Thomisticum navigation, tags, modern electronic reference labels and editorial wrapper are excluded. Recorded printing and editorial revisions do not grant Triptych rights in the historical text."
+provenance = "Exact complete delivery acquired directly by HTTPS; identified through repository alias and edition searches. No source wording was supplied by a model."
+retrieved = "2026-09-29"
+sha256 = "9a86b5fb961b960d4ffb70b4945a3441236d538724a6211f657d872245147e95"
+byte_size = 263181
+indexable = true
+notes = "De veritate qq8–9, all articles. The paragraph order is preserved; source wording is not corrected. Plain prose only, without the modern web reference labels; citations follow the parent witness. Not a critical edition or facsimile."
+rights_jurisdiction = "United States"
+encoding = "utf-8"
+path = "src/sources/works/thomas-aquinas/de-veritate/editions/1972-latin-corpus-thomisticum-2026-09-29/artifacts/qdv08-historical-latin-9a86b5fb/source.txt"
+derived_from = "artifact.thomas-aquinas.de-veritate.1972-latin-corpus-thomisticum-2026-09-29.qdv08-html-9b15fb2b"
+transformation = "Decode ISO-8859-1; select every P TITLE block in source order; remove A NAME/SPAN CLASS=ref electronic reference labels; strip remaining HTML and decode entities; preserve paragraph order and normalize whitespace. No Latin wording supplied by a model."

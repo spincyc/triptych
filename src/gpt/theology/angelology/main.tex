@@ -1,0 +1,87 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\hypersetup{
+pdftitle={Angels and the Gift of Being: A Thomistic Study of Nature, Grace, and Ministry},
+pdfsubject={Angelology through Scripture, the Fathers, the Celestial Hierarchy, and Summa theologiae I questions 50-64 and 106-114}}
+\setcounter{tocdepth}{2}
+\setlength{\emergencystretch}{3em}
+\widowpenalty=10000
+\clubpenalty=10000
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.6em}{}
+\newcommand{\ST}[1]{\emph{ST}~#1}
+\newcommand{\gk}[1]{\textit{#1}}
+\newcommand{\angeldossier}[4]{%
+\Needspace{9\baselineskip}
+\begin{studyframe}
+\textbf{Summa:} #1\par
+\textbf{Grade:} #2\par
+\textbf{Authorities:} #3\par
+\textbf{Contrary opinion:} #4
+\end{studyframe}}
+\newcommand{\angeldossiersettled}[3]{%
+\Needspace{9\baselineskip}
+\begin{studyframe}
+\textbf{Summa:} #1\par
+\textbf{Grade:} #2\par
+\textbf{Authorities:} #3
+\end{studyframe}}
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.15\textheight}
+{\large\scshape Triptych\par}
+\vspace{1.7em}
+{\Huge\bfseries Angels and the\\[0.2em]Gift of Being\par}
+\vspace{1.4em}
+{\Large A Thomistic Study of\\Nature, Grace, and Ministry\par}
+\vspace{1.6em}
+{\large With the \emph{Celestial Hierarchy}\\and the witness of the Fathers\par}
+\vfill
+\end{titlepage}
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{theology/angelology/sections/00-scripture}
+\input{theology/angelology/sections/05-creation-and-faith}
+\input{theology/angelology/sections/10-fathers}
+\input{theology/angelology/sections/15-celestial-hierarchy}
+\input{theology/angelology/sections/20-reception}
+\input{theology/angelology/sections/30-nature}
+\input{theology/angelology/sections/32-knowledge}
+\input{theology/angelology/sections/34-love-and-grace}
+\input{theology/angelology/sections/36-fall}
+\input{theology/angelology/sections/40-illumination-and-order}
+\input{theology/angelology/sections/42-government-and-guardians}
+\input{theology/angelology/sections/44-assault-and-providence}
+\input{theology/angelology/sections/50-christ-mary}
+\input{theology/angelology/sections/55-disputed-and-eastern}
+\input{theology/angelology/sections/60-liturgy-and-devotion}
+\clearpage
+\appendix
+\input{theology/angelology/appendices/01-orders}
+\input{theology/angelology/appendices/02-article-census}
+\input{theology/angelology/appendices/03-aquinas-parallels}
+\input{theology/angelology/appendices/04-dionysian-concordance}
+\input{theology/angelology/appendices/04-magisterial-chronology}
+\input{theology/angelology/appendices/05-calendar-and-names}
+\input{theology/angelology/appendices/06-scripture-and-powers}
+\input{theology/angelology/appendices/07-first-sin}
+\input{theology/angelology/appendices/08-terminology-and-witnesses}
+\input{theology/angelology/appendices/90-scope}
+\input{theology/angelology/appendices/99-references}
+\par\medskip{}
+
+{\raggedright\scriptsize\input{theology/angelology/generation-metadata}\par}
+\end{deepstudy}
+\end{document}

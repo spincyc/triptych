@@ -9,6 +9,13 @@ exposition and ample appendices, installed and linked in the web library.
 The Claude edition's source leads may be reused; its authored content is
 not the source of this edition's composition. No page quota was requested.
 
+The maintainer expressly clarified the governing voice: an authentic Catholic
+treatise, expansive and deep in its account of the best patristic sources,
+declaring conclusions at their appropriate degree of determination without
+repeated qualifications about dogma or a secular skeptical frame. Authority
+grades belong in compact dossiers and terminal apparatus. Local distinctions
+remain where they change the meaning of a teaching.
+
 ## Question, reader, and argument
 
 How can creatures without bodies know, love, receive grace, and serve God's
@@ -40,7 +47,10 @@ angelology is promised or implied.
 The profile's grades apply to propositions, never to an author as a whole.
 Defined and Church teaching require a named act; Common teaching is bounded
 by identified witnesses; school determinations and open disputes remain
-attributed. Grade assignments are editorial synthesis. The printed terminal
+attributed. “Thomist position” identifies Aquinas's systematic determination;
+“Disputed” records demonstrated alternatives, rather than an incomplete census
+of agreement. The owning profile was clarified with this rule on 29 September
+2026 in response to the maintainer's direction. Grade assignments are editorial synthesis. The printed terminal
 appendix states this rule without making readers cross it before the study.
 
 English scriptural quotations use the registered Douay–Rheims/Challoner
@@ -58,3 +68,8 @@ Provider `gpt`, leaf `theology/angelology`, profile
 composition are by Codex with delegated research lanes. No independent human
 theological review or ecclesiastical approval is claimed. Actual final checks
 and installation identities are recorded in `production-review.md`.
+
+The maintainer subsequently authorized pushing the completed work to `main`.
+The final delivery includes validated integration and verification of the
+automatic GitHub Pages deployment. Workspace commits remain on
+`feature/angelology`; no default-branch checkout is required.

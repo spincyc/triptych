@@ -20,20 +20,28 @@ publication remain separate. The target is `src/gpt/theology/angelology/`,
 under `guidance/theology/angelology.md`, with working title *Angels and the
 Gift of Being: A Thomistic Study of Nature, Grace, and Ministry*.
 
-**In progress.** Independent research and composition are underway. The
+**Source complete; installation in progress.** Independent research and composition
+are complete, with a 62-page PDF that has passed full visual review. The
 systematic spine covers every article of ST I qq. 50–64 and 106–114;
 Dionysius receives fifteen chapter treatments. The distinct pedagogical
 thread is the relation of created nature, grace, and ministry. Sources,
 evidence ceilings, disputed positions and source bindings belong to this
-edition's own research records. Nothing from this GPT edition is yet
-installed or released. Work remains on the workspace branch
-`feature/angelology`; no merge to `main` is part of this request.
+edition's own research records. The source checkpoint preserves the full treatise and registered corpus;
+installation and final integration checks are being completed. Work is committed on the workspace branch `feature/angelology`. The maintainer
+subsequently directed that the completed work be pushed to `main`; final
+deployment validation and that push are therefore part of delivery.
 
 Completion requires the complete article census and reference apparatus,
 source and metadata checks, visual review of every PDF page, installation,
 reviewed web conversion, the Faith catalog links, and a publication record.
 The leaf's `research/production-review.md` will record actual verification
 and artifact identities. The earlier Claude deliverable remains in progress.
+
+The maintainer further specified an authentic Catholic treatise: affirmative,
+expansive exposition of the best patristic witnesses, declaring conclusions
+at their proper degree of determination without repeated dogma disclaimers
+or a secular skeptical frame. Compact source distinctions do not displace
+the substantive teaching.
 
 ## Claude angelology reference, 2026-09-29
 

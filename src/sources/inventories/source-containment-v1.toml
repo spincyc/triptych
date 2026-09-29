@@ -1087,6 +1087,7 @@ basis = "Description: 'Hilary of Poitiers on the Trinity'."
 [[containers.constituents]]
 author = "John of Damascus"
 title = "An Exact Exposition of the Orthodox Faith"
+work_id = "work.john-of-damascus.de-fide-orthodoxa"
 whole = true
 basis = "Description: 'An Exact Exposition of the Orthodox Faith'."
 
@@ -3354,3 +3355,39 @@ author = "Pius VI"
 title = "Epistola dedicatoria Victorio Amedeo Sardiniae regi"
 locator = "col. 9, as the Elenchus lists it"
 basis = "The Elenchus: 'Pii Papae VI, Victorio Amedeo, Sardiniae regi, Epistola dedicatoria.'"
+
+
+[[containers]]
+id = "work.pseudo-dionysius-the-areopagite.works-part-ii-parker"
+manifest_sha256 = "ec8e7582597bef7ca1ef88479f1eb5e6becae83072638762f48ca443769d8a0a"
+status = "resolved"
+basis = "New volume title and bounded CH segment inspected against the acquired facsimile. The source record preserves the container/constituent distinction."
+
+[[containers.constituents]]
+author = "Pseudo-Dionysius the Areopagite"
+title = "De caelesti hierarchia"
+work_id = "work.pseudo-dionysius-the-areopagite.de-caelesti-hierarchia"
+whole = true
+locator = "Printed pages1\u201366; artifact pages27\u201392"
+basis = "Machine-bounded constituent segment and inspected chapter-heading/page audit."
+
+[[containers.constituents]]
+author = "Pseudo-Dionysius the Areopagite"
+title = "De ecclesiastica hierarchia"
+locator = "Second treatise after the Heavenly Hierarchy, as the1899 volume title identifies it; exact bounds not audited"
+basis = "Inspected volume title identifies both Hierarchies; only CH supplied publication evidence."
+
+[[containers]]
+id = "work.jacques-paul-migne.patrologia-graeca-volume-3"
+manifest_sha256 = "8140e37a84e56a81ee1e4f58a89a0922c5b95d2f6a058f173fa53dbc3bba1056"
+status = "partial"
+basis = "New volume title and bounded CH segment inspected against the acquired facsimile. The source record preserves the container/constituent distinction."
+unresolved = "The remaining Dionysian works, translations, scholia and Corderius commentary have not all received independent constituent records or physical bounds."
+
+[[containers.constituents]]
+author = "Pseudo-Dionysius the Areopagite"
+title = "De caelesti hierarchia"
+work_id = "work.pseudo-dionysius-the-areopagite.de-caelesti-hierarchia"
+whole = true
+locator = "PG3 columns119\u2013340; artifact pages60\u2013170, including interspersed Corderius commentary"
+basis = "Machine-bounded constituent segment and inspected chapter-heading/page audit."
