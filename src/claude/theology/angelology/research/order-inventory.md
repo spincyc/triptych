@@ -6,6 +6,24 @@ only when its locus was read at the source.
 
 | Order key | Witness | Locus | Source term | Rank | Characterization | Verified |
 | --- | --- | --- | --- | --- | --- | --- |
+| seraphim | Gregory the Great | Hom. in Ev. 34.8–9 | Seraphim | 1 | ardentes vel incendentes; burn with incomparable love | Read at locus (repository Wikisource edition) |
+| cherubim | Gregory the Great | Hom. in Ev. 34.9 | Cherubim | 2 | plenitudo scientiae; fullness of knowledge | Read at locus |
+| thrones | Gregory the Great | Hom. in Ev. 34.9 | Throni | 3 | God sits in them and through them decrees judgments | Read at locus |
+| dominations | Gregory the Great | Hom. in Ev. 34.9 | Dominationes | 4 | surpass the principalities; dominari est subiectos possidere | Read at locus |
+| virtues | Gregory the Great | Hom. in Ev. 34.9 | Virtutes | 5 | through them signs and miracles are most often done | Read at locus |
+| powers | Gregory the Great | Hom. in Ev. 34.9 | Potestates | 6 | adverse powers subject to them, restrained from tempting | Read at locus |
+| principalities | Gregory the Great | Hom. in Ev. 34.9 | Principatus | 7 | preside over the good spirits, dispose what is to be done | Read at locus |
+| archangels | Gregory the Great | Hom. in Ev. 34.8 | Archangeli | 8 | summi nuntii; announce the highest things | Read at locus |
+| angels | Gregory the Great | Hom. in Ev. 34.8 | Angeli | 9 | nuntii; announce the lesser things | Read at locus |
+| seraphim | Dionysius (as reported by Aquinas) | ST I q. 108 a. 6; cf. CH 6 | Seraphim | 1 | first hierarchy | Order only, via Aquinas (New Advent); CH 6 not read directly |
+| cherubim | Dionysius (via Aquinas) | ST I q. 108 a. 6; cf. CH 6 | Cherubim | 2 | first hierarchy | via Aquinas |
+| thrones | Dionysius (via Aquinas) | ST I q. 108 a. 6; cf. CH 6 | Throni | 3 | first hierarchy | via Aquinas |
+| dominations | Dionysius (via Aquinas) | ST I q. 108 a. 6; cf. CH 6 | Dominationes | 4 | middle hierarchy | via Aquinas |
+| virtues | Dionysius (via Aquinas) | ST I q. 108 a. 6; cf. CH 6 | Virtutes | 5 | placed between Dominations and Powers (Eph 1:21 read upward) | via Aquinas |
+| powers | Dionysius (via Aquinas) | ST I q. 108 a. 6; cf. CH 6 | Potestates | 6 | middle hierarchy | via Aquinas |
+| principalities | Dionysius (via Aquinas) | ST I q. 108 a. 6; cf. CH 6 | Principatus | 7 | lowest hierarchy (point of difference from Gregory) | via Aquinas |
+| archangels | Dionysius (via Aquinas) | ST I q. 108 a. 6; cf. CH 6 | Archangeli | 8 | lowest hierarchy | via Aquinas |
+| angels | Dionysius (via Aquinas) | ST I q. 108 a. 6; cf. CH 6 | Angeli | 9 | lowest hierarchy | via Aquinas |
 | seraphim | Dionysius, CH | 7.1 | seraphim (Heb. "kindling or burning") | 1 | Ceaseless movement around God; kindling; purifying fire | yes (Parker text) |
 | cherubim | Dionysius, CH | 7.1 | cherubim (Heb. "fulness of knowledge or stream of wisdom") | 2 | Vision of God; reception of highest light; communication downward | yes |
 | thrones | Dionysius, CH | 7.1 | thronoi | 3 | Exaltation; fixed settlement around the Highest; bearing God | yes |
@@ -33,3 +51,6 @@ only when its locus was read at the source.
 | principalities | Aquinas, ST I q. 108 | a. 6 s.c. | Principalities | 7 | First of lowest hierarchy (Dionysius); Gregory places them 5th | yes |
 | archangels | Aquinas, ST I q. 108 | a. 6 s.c. | Archangels | 8 | Middle of lowest hierarchy | yes |
 | angels | Aquinas, ST I q. 108 | a. 6 s.c. | Angels | 9 | Last; common name proper to lowest order (a. 5 ad 1) | yes |
+| angels | Jerome, In ep. ad Titum | on Titus 1:2 (PL 26) | angeli | Unranked (first in list) | Orders serving God before measured time | yes |
+| thrones | Jerome, In ep. ad Titum | on Titus 1:2 (PL 26) | throni | Unranked (second in list) | Orders serving God before measured time | yes |
+| dominations | Jerome, In ep. ad Titum | on Titus 1:2 (PL 26) | dominationes | Unranked (third in list) | Orders serving God before measured time | yes |

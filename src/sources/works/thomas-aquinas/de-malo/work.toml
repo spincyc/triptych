@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.thomas-aquinas.de-malo"
+title = "Quaestiones disputatae de malo"
+responsible = "Thomas Aquinas"
+work_type = "disputed-question"
+alternate_titles = ["De malo", "On Evil"]
+languages = ["la"]
+locus_pattern = '(?:[1-9]|1[0-6])\.(?:[1-9]|1[0-5])(?:\.(?:objection-[1-9][0-9]*|sed-contra-[1-9]?|corpus|reply-[1-9][0-9]*))?'
+description = "Aquinas's sixteen disputed questions on evil. Question 16, in twelve articles, treats the devils: whether they have bodies, whether they were created evil, the object and the instant of the first sin, the obstinacy of their will, and their knowledge and power. A locus is question.article, optionally with its division."

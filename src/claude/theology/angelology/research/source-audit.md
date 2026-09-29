@@ -5,6 +5,246 @@ it: edition or translation, the URL and date of the reading, the loci
 read and quoted, the rights basis, and the verification ceiling. All
 readings were made on 2026-09-29 unless an entry says otherwise.
 
+## Scripture, the faith of the Church, and the magisterial chronology
+
+### Witness: Douay–Rheims Bible (Challoner revision), Project Gutenberg eBook 1581
+
+- Repository ids: `work.english-college-of-douay.douay-rheims-bible` (existing); `edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581` (existing).
+- URL: https://www.gutenberg.org/cache/epub/1581/pg1581.txt
+- Retrieved: 2026-09-29T12:58:58Z
+- SHA-256 of the bytes read: 7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007 (5880580 bytes)
+- Loci read: every verse quoted in the three files (see the Scripture table below; pulled with `.scratch/lanes/l8-scripture-faith/dr.py`, verse pulls in `v1.txt`–`v4.txt`)
+- Quoted: all Scripture quotations in `sec:scripture`; `sec:faith` and `app:chronology` carry no fresh biblical quotation beyond what acts quote (Heb 2:14 inside DS 1511)
+- Rights: public domain (Challoner 1749–1752; Gutenberg transcription)
+- Ceiling: web transcription, Vulgate numbering; spot-checked chapter/verse but not collated with a print Douay; Douay book names kept (3/4 Kgs, Tobias, Osee, Apocalypse), Hebrew/modern numbering in brackets where it differs
+
+### Witness: Denzinger–Hünermann, *Enchiridion symbolorum* (patristica.net transcription)
+
+- Repository ids: `work.denzinger.enchiridion-symbolorum` (existing).
+- URL: https://patristica.net/denzinger/enchiridion-symbolorum.html
+- Retrieved: 2026-09-29T12:56:36Z
+- SHA-256 of the bytes read: 604f24c46e0bc71c2018f25dc787a9ab421d4b2e9cf7d1cee1f43e910ef2708f (2333435 bytes)
+- Loci read: DS 125, 150, 286, 325, 403–411, 455–464, 797, 800–801, 1333, 1336, 1511, 3002–3003, 3025, 3891
+- Quoted: DS 150 (phrase), 286 (Latin block), 325, 457 (Latin block), 797, 800–801 (Latin block), 1333 (phrase), 1511 (phrase), 3002 (Latin block), 3025 (phrase), 3891 (Latin phrase)
+- Rights: public-domain Latin acta
+- Ceiling: web transcription without apparatus; not collated with the print 43rd edition; DS numbering as the site gives it (old numbers in parentheses on site)
+
+### Witness: Augustine, *Enarrationes in Psalmos*, Ps 103 s. 1 (augustinus.it Latin; NPNF1 vol. 8 as English control)
+
+- Repository ids: `work.augustine.enarrationes-in-psalmos` (existing).
+- URL: https://www.augustinus.it/latino/esposizioni_salmi/esposizione_salmo_125_testo.htm (augustinus.it's own psalm numbering); control: https://ccel.org/ccel/s/schaff/npnf108/cache/npnf108.txt
+- Retrieved: 2026-09-29T13:16:09Z; control 2026-09-29T13:10:36Z
+- SHA-256 of the bytes read: c09f35f1aea0164d253248d7975fa0b8184a000566ca740f929de651fc603b3e (60734 bytes); d6841950333024906294e6e829f7512d08b3adf62ae6cee3615d18a7ad0020e9 (5029159 bytes)
+- Loci read: Enarr. in Ps. 103, sermo 1 entire as transcribed, esp. §15
+- Quoted: §15 (Latin block, `sec:scripture`)
+- Rights: Latin public domain (PL 37 basis)
+- Ceiling: web transcription, not collated with CCSL; NPNF1 vol. 8 abridges this psalm and omits §15, so no English quotation was taken from it
+
+### Witness: Augustine, *De civitate Dei* (NPNF1 vol. 2, Dods translation)
+
+- Repository ids: `work.augustine.de-civitate-dei` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf102/cache/npnf102.txt
+- Retrieved: 2026-09-29T12:55:19Z
+- SHA-256 of the bytes read: 5c973feda803f3e58a88ed7df210b42d436f5466741eb8dbeae713ab56dedae4 (3692898 bytes)
+- Loci read: XVI.29
+- Quoted: XVI.29 (two short phrases, `sec:scripture`)
+- Rights: public domain (NPNF, 1887)
+- Ceiling: English translation only; Latin not consulted
+
+### Witness: Augustine, *De Trinitate* (NPNF1 vol. 3, Haddan translation)
+
+- Repository ids: `work.augustine.de-trinitate` (registered with this publication).
+- URL: https://ccel.org/ccel/s/schaff/npnf103/cache/npnf103.txt
+- Retrieved: 2026-09-29T12:55:20Z
+- SHA-256 of the bytes read: cc8d3ff7ce4d4ba293f50a06200af03ff0e5abdeb5200db3a59b4dbe2cad7bdb (3357503 bytes)
+- Loci read: III.11.22–25
+- Quoted: III.11.22 (short phrase, `sec:scripture`)
+- Rights: public domain (NPNF)
+- Ceiling: English translation only; Latin not consulted
+
+### Witness: Gregory the Great, *Homiliae in Evangelia*, hom. 34 (repository Wikisource Latin edition)
+
+- Repository ids: `work.gregory-the-great.homiliae-in-evangelia` (existing); `edition.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17` (existing).
+- URL: repository edition artifact (Wikisource web capture), no fresh fetch
+- Retrieved: edition dated 2026-09-17
+- Loci read: Hom. 34.6–10
+- Quoted: 34.6, 34.7, 34.8, 34.8–9, 34.9 (Latin phrases, `sec:scripture`; `sec:faith` cites 34.7 without quotation)
+- Rights: public domain (PL 76 text via Wikisource)
+- Ceiling: wiki transcription; English renderings of the Latin are mine; no public-domain English of Hom. 34 was at hand
+
+### Witness: Thomas Aquinas, *Summa Theologiae* (New Advent, English Dominican Province 2nd rev. ed. 1920; Corpus Thomisticum Latin for key terms)
+
+- Repository ids: `work.thomas-aquinas.summa-theologiae` (existing).
+- URL: https://www.newadvent.org/summa/1047.htm … (`na-summa-1047`, `1050`–`1064`, `1106`–`1114`); Latin https://www.corpusthomisticum.org/sth1050.html etc.
+- Retrieved: 2026-09-29T12:53:50Z–12:54:36Z
+- Loci read: I q. 50 a. 1 s.c., a. 3 s.c.; q. 51 a. 3 ad 5; q. 58 a. 1 ad 2; q. 61 a. 3; q. 62 a. 9 ad 3; q. 63 aa. 5, 7, 8; q. 108 aa. 3, 5 (incl. ad 1), 6; q. 112 a. 1 s.c., a. 2 ad 2, a. 3 corpus/ad 3, a. 4 ad 2; q. 113 aa. 1, 2, 3, 8
+- Quoted: those loci (short English phrases)
+- Rights: public domain (1920 translation)
+- Ceiling: New Advent web text; Latin spot-checked against the ct- files for key terms only
+
+### Witness: *Catechism of the Catholic Church* (vatican.va English)
+
+- Repository ids: `work.catholic-church.catechism` (existing).
+- URL: https://www.vatican.va/archive/ENG0015/__P1A.HTM, `__P1B.HTM`, `__P1C.HTM`
+- Retrieved: 2026-09-29T12:56:38Z, 13:10:38Z, 13:10:40Z
+- Loci read: 328–336, 391–395, 414
+- Quoted: 328, 330, 331, 332 (list, elided), 333 (phrases), 334, 336 (incl. Basil as the CCC quotes him), 391, 392, 393 (incl. Damascene as the CCC quotes him), 395, 414; 329 is cited, not quoted, in `sec:scripture`
+- Rights: Vatican-site document, short quotations with attribution (per brief)
+- Ceiling: English as posted (1997 typical-edition translation); Latin typical edition not consulted
+
+### Witness: *Compendium of the Catechism of the Catholic Church* (2005)
+
+- Repository ids: `work.catholic-church.compendium-of-the-catechism` (registered with this publication).
+- URL: https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html
+- Retrieved: 2026-09-29T13:10:42Z
+- SHA-256 of the bytes read: a35594fda5cf56333ff59388de407e152f5cd41e012d68e34f2bf75bbfa691a8 (378892 bytes)
+- Loci read: 59–61, 74–75
+- Quoted: 60, 61, 74–75 (short phrases, `sec:faith`)
+- Rights: Vatican-site document, short quotations with attribution
+- Ceiling: English as posted
+
+### Witness: Lateran IV, *Firmiter credimus* (Latin via Denzinger; Tanner English as control only)
+
+- Repository ids: `work.fourth-lateran-council.firmiter-credimus` (existing).
+- URL: https://www.papalencyclicals.net/councils/ecum12-2.htm (control only, not quoted)
+- Retrieved: 2026-09-29T12:56:39Z
+- SHA-256 of the bytes read: b93f45cd1f95cd2b5c994110637699fc665e207040d813107fe4c38c342bef45 (228156 bytes); 604f24c46e0bc71c2018f25dc787a9ab421d4b2e9cf7d1cee1f43e910ef2708f (2333435 bytes)
+- Loci read: cap. 1 (DS 800–801)
+- Quoted: DS 800–801 Latin (via Denzinger); body English is my rendering of the Latin
+- Rights: Latin public domain; the papalencyclicals English is Tanner's copyrighted translation and is not quoted (brief CAUTION)
+- Ceiling: as Denzinger
+
+### Witness: Vatican I, *Dei Filius* (vatican.va Latin; Tanner English as control only)
+
+- Repository ids: `work.first-vatican-council.dei-filius` (existing).
+- URL: https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700424_dei-filius_la.html; control https://www.papalencyclicals.net/councils/ecum20.htm (not quoted)
+- Retrieved: 2026-09-29T12:56:42Z; control 2026-09-29T12:56:40Z
+- SHA-256 of the bytes read: cdb6433e97aaa0fd31cd148d513392324c39779f0137402208ad66d19e8d7016 (29192 bytes); 80e25e52ffe10ebb389c1fdc2a9caf44cfca125fc0e75c92d481f2e9c89d242f (155629 bytes)
+- Loci read: ch. 1 (DS 3002–3003), can. 1.5 (DS 3025)
+- Quoted: ch. 1 and can. 5 Latin
+- Rights: Latin public domain; Tanner English not quoted
+- Ceiling: vatican.va Latin transcription
+
+### Witness: Council of Florence, *Cantate Domino* (via Denzinger)
+
+- Repository ids: `work.council-of-florence.cantate-domino` (registered with this publication); `work.council-of-florence.laetentur-caeli` (existing).
+- URL: via Denzinger (above)
+- Retrieved: 2026-09-29T12:56:36Z
+- SHA-256 of the bytes read: 604f24c46e0bc71c2018f25dc787a9ab421d4b2e9cf7d1cee1f43e910ef2708f (2333435 bytes)
+- Loci read: DS 1333, 1336
+- Quoted: DS 1333 (phrase)
+- Rights: public-domain Latin
+- Ceiling: Denzinger text only; not read in the conciliar acta
+
+### Witness: Council of Trent, Session V (via Denzinger)
+
+- Repository ids: `work.council-of-trent.canones-et-decreta` (existing).
+- URL: via Denzinger (above)
+- Retrieved: 2026-09-29T12:56:36Z
+- SHA-256 of the bytes read: 604f24c46e0bc71c2018f25dc787a9ab421d4b2e9cf7d1cee1f43e910ef2708f (2333435 bytes)
+- Loci read: DS 1511
+- Quoted: DS 1511 (phrase incl. its quotation of Heb 2:14)
+- Rights: public-domain Latin
+- Ceiling: Denzinger text only
+
+### Witness: Pius XII, *Humani generis* (1950)
+
+- Repository ids: `work.pius-xii.humani-generis` (registered with this publication).
+- URL: https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html
+- Retrieved: 2026-09-29T12:56:44Z
+- SHA-256 of the bytes read: 95455e6c9667fd5049c721ccd157eb2711540d5e7b5bc028a295a99e39fbca57 (72589 bytes)
+- Loci read: n. 26 (DS 3891)
+- Quoted: n. 26 English (short) and DS 3891 Latin phrase (via Denzinger)
+- Rights: Vatican-site document, short quotation with attribution
+- Ceiling: English page; Latin via Denzinger only
+
+### Witness: Paul VI, *Credo of the People of God* (*Solemni hac liturgia*, 1968)
+
+- Repository ids: `work.paul-vi.solemni-hac-liturgia` (existing).
+- URL: https://www.vatican.va/content/paul-vi/en/motu_proprio/documents/hf_p-vi_motu-proprio_19680630_credo.html and the `_la.html` twin
+- Retrieved: 2026-09-29T13:10:44Z (en), 13:10:45Z (la)
+- SHA-256 of the bytes read: 8108a76f218bc8f70f8dbefd1606d070de70506467abeb287cde6ddcfcec6598 (58147 bytes); ee842d279fea0571802c3f83125e161ce0fe787127f0371af73839f1784c90ed (60038 bytes)
+- Loci read: 3, 8, 29 (en and la)
+- Quoted: 3, 8, 29 (short)
+- Rights: Vatican-site document, short quotations with attribution
+- Ceiling: as posted
+
+### Witness: Paul VI, general audience of 15 November 1972 (*Liberaci dal male*)
+
+- Repository ids: `work.paul-vi.general-audience-1972-11-15` (registered with this publication); `work.paul-vi.general-audience-1966-01-12` (existing).
+- URL: https://www.vatican.va/content/paul-vi/it/audiences/1972/documents/hf_p-vi_aud_19721115.html
+- Retrieved: 2026-09-29T12:56:50Z
+- SHA-256 of the bytes read: ade46aabccf08b76fcb0ea47f159fe252585939feb0db6d1f649a6be8eb589fe (50375 bytes)
+- Loci read: whole address (Italian)
+- Quoted: five short Italian phrases; English renderings mine
+- Rights: Vatican-site document, short quotations with attribution
+- Ceiling: Italian only; no official English on vatican.va
+
+### Witness: CDF, *Fede cristiana e demonologia* (26 June 1975)
+
+- Repository ids: `work.congregation-for-the-doctrine-of-the-faith.christian-faith-and-demonology-1975` (existing).
+- URL: https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19750626_fede-cristiana-demonologia_it.html
+- Retrieved: 2026-09-29T13:10:47Z
+- SHA-256 of the bytes read: c3ebeb93cc0b27dcd02a6b98e4021f44c49b1c37e913d7a9425d5c62613036aa (85871 bytes)
+- Loci read: prefatory note; magisterium section; conclusions
+- Quoted: four short Italian phrases; English renderings mine
+- Rights: Vatican-site document, short quotations with attribution
+- Ceiling: Italian version only; the original French publication (L'Osservatore Romano) was not fetched
+
+### Witness: John Paul II, six general-audience catecheses on the angels and demons (July–August 1986)
+
+- Repository ids: `work.john-paul-ii.general-audience-1986-07-09` (registered with this publication); `work.john-paul-ii.general-audience-1986-07-23` (registered with this publication); `work.john-paul-ii.general-audience-1986-07-30` (registered with this publication); `work.john-paul-ii.general-audience-1986-08-06` (registered with this publication); `work.john-paul-ii.general-audience-1986-08-13` (registered with this publication); `work.john-paul-ii.general-audience-1986-08-20` (registered with this publication); `work.john-paul-ii.general-audience-1999-07-28` (existing).
+- URL: https://www.vatican.va/content/john-paul-ii/it/audiences/1986/documents/hf_jp-ii_aud_1986{0709,0723,0730,0806,0813,0820}.html
+- Retrieved: 2026-09-29T13:11:17Z–13:11:26Z
+- Loci read: all six addresses in full
+- Quoted: 30 July (`angelo`/`malak` sentence), 6 August (*senza attribuirvi un valore assoluto*), 20 August (reference); English renderings mine
+- Rights: Vatican-site document, short quotations with attribution
+- Ceiling: Italian only (English pages are empty stubs); a possible 16 July 1986 audience was not checked (see Open issues)
+
+### Witness: Council of Laodicea, canons (NPNF2 vol. 14, Percival translation)
+
+- Repository ids: `work.council-of-laodicea.canons` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf214/cache/npnf214.txt
+- Retrieved: 2026-09-29T12:55:33Z
+- SHA-256 of the bytes read: 5b8d0c6518fd71b1de8d626ebf1d6b59c9967d2e7f5d2e0379654b5cbbf0c914 (2570287 bytes)
+- Loci read: canon 35 with Percival's notes (Hefele dating 343–381; Theodoret on Col 2:18)
+- Quoted: canon 35 (short, `app:chronology`)
+- Rights: public domain (NPNF, 1900)
+- Ceiling: Percival translation; Greek not checked
+
+### Witness: Roman synod of 745 under Pope Zachary (MGH, *Concilia aevi Karolini* II.1, ed. Werminghoff; archive.org OCR)
+
+- Repository ids: `work.holy-see.roman-synod-745` (registered with this publication).
+- URL: https://archive.org/download/conciliaaevikaro2pt1werm/conciliaaevikaro2pt1werm_djvu.txt
+- Retrieved: 2026-09-29T13:11:51Z
+- SHA-256 of the bytes read: a246239977995d40164f867ff7297f93c5763150115fc2b2d67527d997f1b35a (2099550 bytes)
+- Loci read: actio III (pp. 37–44 as OCR'd)
+- Quoted: two short Latin phrases (the three-name ruling; *magis demones*)
+- Rights: public domain (MGH 1906 scan)
+- Ceiling: OCR only, not collated with print; Aldebert's pseudo-angel names (Uriel, Raguel, Tubuel, Adinus, Tubuas, Sabaoc, Simiel) as OCR'd
+
+### Witness: CDWDS, *Directory on Popular Piety and the Liturgy* (2001)
+
+- Repository ids: `work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.directory-on-popular-piety-2001` (registered with this publication).
+- URL: https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html
+- Retrieved: 2026-09-29T12:56:46Z
+- SHA-256 of the bytes read: a9d30018f650a6854f3f13d3691a068a6519c2ebdb8d1fc9a2418ad13b90ed38 (531807 bytes)
+- Loci read: 213–217
+- Quoted: 217 (short phrase); 215 cited with its Scripture loci
+- Rights: Vatican-site document, short quotations with attribution
+- Ceiling: English only
+
+### Witness: CDF, Decree on the Opus Angelorum (6 June 1992)
+
+- Repository ids: `work.holy-see.cdf-decree-opus-angelorum-1992` (registered with this publication).
+- URL: https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19920606_opus-angelorum_lt.html
+- Retrieved: 2026-09-29T13:10:59Z
+- SHA-256 of the bytes read: 81d6d107d271c5220db4dad98bfa8be8f22032d6e91d90490f5c9b64865f1d9b (7696 bytes)
+- Loci read: whole decree (short)
+- Quoted: none verbatim in the body; paraphrased in `app:chronology`
+- Rights: public act, Latin
+- Ceiling: vatican.va Latin; the 24 Sept 1983 decisions (AAS 76 [1984] 175–176) are known only through this decree's recital and are so marked
+
 ## The Celestial Hierarchy, the nine orders, and Dionysius in the treatise
 
 ### Witness 1
@@ -291,3 +531,435 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 - Quoted: Ps 103:4; Dan 7:10; Gen 18:9, 18:16; Tob 5:8; 12:19; Heb 1:14.
 - Rights: public domain.
 - Ceiling: Gutenberg transcription.
+
+## Will and love; creation, grace, and glory (ST I qq. 59-62)
+
+### Thomas Aquinas, Summa theologiae I qq. 59–62 (English)
+
+- Witness: Thomas Aquinas, *Summa theologiae*, Fathers of the English
+  Dominican Province translation (Benziger, 1947), New Advent web
+  transcription.
+- Repository ids: `work.thomas-aquinas.summa-theologiae` (existing).
+- URL: https://www.newadvent.org/summa/1059.htm (…1060, 1061, 1062)
+- Retrieved: 2026-09-29T12:54:03Z–12:54:07Z (manifest `na-summa-1059..1062`)
+- Quoted: I q. 59 aa. 1–4; I q. 60 aa. 1–5; I q. 61 aa. 1–4;
+  I q. 62 aa. 1–9 (corpora, sed contra, replies as cited in the
+  sections); all English Summa quotations in both sections.
+- Rights: 1947 Benziger translation, public domain in the US; New
+  Advent transcription used under brief's standing cache policy.
+- Ceiling: Web transcription; not collated with the Leonine text or a
+  print Benziger.
+
+### Thomas Aquinas, Summa theologiae I qq. 50–64 (Latin)
+
+- Witness: Corpus Thomisticum (Leonine text) `sth1050.html`.
+- Repository ids: `work.thomas-aquinas.summa-theologiae` (existing).
+- URL: https://www.corpusthomisticum.org/sth1050.html
+- Retrieved: 2026-09-29T12:54:32Z (manifest `ct-sth1050`)
+- Quoted: Latin key terms and phrases for qq. 59–62 (e.g. q. 59 a. 3
+  "ubicumque est intellectus, est liberum arbitrium"; q. 61 a. 3 co.
+  duplex sententia, "probabilius"; q. 62 a. 3 "in gratia gratum
+  faciente"; q. 62 a. 7 "salvari primum in secundo"; q. 62 a. 8 ad 3
+  "maior libertas"; q. 62 a. 9 viator/comprehensor).
+- Rights: Corpus Thomisticum web text of the public-domain Leonine
+  edition; short quotations.
+- Ceiling: Web transcription; not collated with print Leonine.
+
+### Augustine, De civitate Dei (English)
+
+- Witness: NPNF I-2, Marcus Dods translation (CCEL text).
+- Repository ids: `work.augustine.de-civitate-dei` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf102/cache/npnf102.txt
+- Retrieved: 2026-09-29T12:55:19Z (manifest `ccel-npnf102`)
+- Quoted: XI.9 (angels as the light called "Day"; partakers of the
+  eternal light); XII.1 (two cities among the angels); XII.9
+  ("creating their nature, and endowing it with grace").
+- Rights: NPNF (1886–90), public domain.
+- Ceiling: CCEL transcription; not collated with CCSL 47–48.
+
+### Augustine, De civitate Dei (Latin)
+
+- Witness: The Latin Library, civ11.shtml / civ12.shtml.
+- Repository ids: `work.augustine.de-civitate-dei` (existing).
+- URL: https://www.thelatinlibrary.com/augustine/civ11.shtml ,
+  https://www.thelatinlibrary.com/augustine/civ12.shtml
+- Retrieved: 2026-09-29T13:36:43Z–13:36:45Z (manifest `ll-aug-civ11`,
+  `ll-aug-civ12`)
+- Quoted: XI.9 "ut ea luce inluminati, qua creati, fierent lux et
+  uocarentur dies"; XII.9 "simul eis et condens naturam et largiens
+  gratiam".
+- Rights: Public-domain Latin text; Latin Library transcription.
+- Ceiling: Unattributed web transcription; not collated with CCSL.
+
+### Gregory of Nazianzus, Oration 38 (English)
+
+- Witness: NPNF II-7 (CCEL text), Oration 38.9–10.
+- Repository ids: `work.gregory-of-nazianzus.oration-38` (registered with this publication).
+- URL: https://ccel.org/ccel/s/schaff/npnf207/cache/npnf207.txt
+- Retrieved: 2026-09-29T12:55:25Z (manifest `ccel-npnf207`)
+- Quoted: 38.9 ("He first conceived the Heavenly and Angelic Powers…")
+  and 38.9–10 (second, material creation after the first).
+- Rights: NPNF, public domain.
+- Ceiling: CCEL transcription of the English only; Greek not read.
+
+### John of Damascus, De fide orthodoxa (English)
+
+- Witness: NPNF II-9 (CCEL text), II.3.
+- Repository ids: `work.john-of-damascus.de-fide-orthodoxa` (registered with this publication).
+- URL: https://ccel.org/ccel/s/schaff/npnf209/cache/npnf209.txt
+- Retrieved: 2026-09-29T12:55:27Z (manifest `ccel-npnf209`)
+- Quoted: II.3 (angelic nature "rational, and intelligent, and endowed
+  with free-will"; "Some, indeed, like Gregory the Theologian, say that
+  these were before the creation of other things").
+- Rights: NPNF, public domain.
+- Ceiling: CCEL transcription of the English only.
+
+### Pseudo-Dionysius, De divinis nominibus (English, Parker)
+
+- Witness: John Parker translation (1897), tertullian.org
+  transcription.
+- Repository ids: `work.pseudo-dionysius-the-areopagite.de-divinis-nominibus` (registered with this publication).
+- URL: https://www.tertullian.org/fathers/areopagite_03_divine_names.htm
+- Retrieved: 2026-09-29T12:55:07Z (manifest `tert-areopagite_03_divine_names`)
+- Quoted: DN §4 in Parker's section numbering: 4.4 (graded aspiration),
+  4.12 (love "of a power unifying, and binding together"), 4.23
+  (demons: "An irrational anger----a senseless desire----a headlong
+  fancy").
+- Rights: Parker 1897, public domain.
+- Ceiling: Parker's section numbers do not map one-to-one onto modern
+  chapter divisions; section cites DN 4 with Parker's sub-numbering.
+  Not collated with the Greek or Luibheid.
+
+### Jerome, Commentariorum in epistolam ad Titum (Latin)
+
+- Witness: PL 26 (Migne), archive.org OCR of the volume scan, on
+  Titus 1:2.
+- Repository ids: `work.jerome.commentariorum-in-epistolam-ad-titum` (registered with this publication).
+- URL: https://archive.org/download/patrologiaecurs240unkngoog/patrologiaecurs240unkngoog_djvu.txt
+- Retrieved: 2026-09-29T13:24:28Z (manifest `ia-pl26`)
+- Quoted: on Titus 1:2 ("Sex milia necdum nostri orbis implentur
+  anni…"; "in quibus angeli, throni, dominationes, caeteraeque virtutes
+  servierint Deo…").
+- Rights: Migne PL 26 (1845), public domain.
+- Ceiling: Uncorrected archive.org OCR of the Migne scan; not collated
+  with CCSL 77C.
+
+### Peter Lombard, Sententiae II (Latin)
+
+- Witness: Quaracchi 1916 edition, vol. I, archive.org OCR.
+- Repository ids: `work.peter-lombard.sententiae` (existing).
+- URL: https://archive.org/download/libriivsententia01pete/libriivsententia01pete_djvu.txt
+- Retrieved: 2026-09-29T13:46:02Z (manifest
+  `ia-quaracchi-lombard-t1_djvu`)
+- Quoted: II d. 3 c. 2 (grace and glory proportioned to nature); d. 3
+  c. 4 ("non poterant proficere ad meritum vitae, nisi gratia
+  superadderetur"); d. 4 unicum (created neither in beatitude nor in
+  misery); d. 5 c. 1 ("nunquam est apposita ut converterentur"); d. 5
+  c. 4 (cooperating grace given to those who stood).
+- Rights: Quaracchi 1916, public domain.
+- Ceiling: Uncorrected OCR; not collated with the 1971–81
+  Grottaferrata edition. franciscan-archive.org transcriptions of these
+  distinctions returned 404.
+
+### Thomas Aquinas, Quaestiones disputatae de potentia (Latin)
+
+- Witness: Corpus Thomisticum `qdp3.html`.
+- Repository ids: `work.thomas-aquinas.de-potentia` (registered with this publication).
+- URL: https://www.corpusthomisticum.org/qdp3.html
+- Retrieved: 2026-09-29T13:36:49Z (manifest `ct-qdp3`)
+- Quoted: q. 3 a. 18 co. ("Angeli simul cum creatura corporali sunt
+  conditi; tamen sine alterius opinionis praeiudicio") and its
+  discussion of Jerome's report; q. 3 a. 17 read for the eternity
+  question.
+- Rights: Corpus Thomisticum web text; short quotations.
+- Ceiling: Web transcription; not collated with a critical edition.
+
+### Thomas Aquinas, Scriptum super libros Sententiarum II (Latin)
+
+- Witness: Corpus Thomisticum `snp2002.html` (dd. 2–4).
+- Repository ids: `work.thomas-aquinas.scriptum-super-sententiis` (existing).
+- URL: https://www.corpusthomisticum.org/snp2002.html
+- Retrieved: 2026-09-29T13:36:53Z (manifest `ct-snp2002`)
+- Quoted: d. 2 q. 1 a. 3 ("non est demonstratum, nec fide expressum");
+  d. 4 q. 1 a. 3 ("in naturalibus tantum creati sunt; et haec opinio
+  est communior"); d. 2 q. 1 a. 1 (aevum) referenced.
+- Rights: Corpus Thomisticum web text; short quotations.
+- Ceiling: Web transcription; not collated with the Mandonnet/Moos
+  edition.
+
+### Thomas Aquinas, Summa contra gentiles II (Latin)
+
+- Witness: Corpus Thomisticum `scg2046.html` (cc. 46–).
+- Repository ids: `work.thomas-aquinas.summa-contra-gentiles` (registered with this publication).
+- URL: https://www.corpusthomisticum.org/scg2046.html
+- Retrieved: 2026-09-29T12:55:01Z (manifest `ct-scg2046`)
+- Quoted: read II.46–48 for the q. 59 dossier parallel; nothing quoted
+  verbatim in the sections.
+- Rights: Corpus Thomisticum web text.
+- Ceiling: Web transcription.
+
+### Catechism of the Catholic Church (English)
+
+- Witness: vatican.va archive ENG0015, part one section one page.
+- Repository ids: `work.catholic-church.catechism` (existing).
+- URL: https://www.vatican.va/archive/ENG0015/__P1A.HTM
+- Retrieved: 2026-09-29T12:56:38Z (manifest `ccc-en-P1A`)
+- Quoted: CCC 330 ("have intelligence and will: they are personal and
+  immortal creatures"); CCC 331–332 (created through and for Christ;
+  present since creation).
+- Rights: Vatican-site document; short quotations with attribution.
+- Ceiling: Official English; Latin typical edition not consulted.
+
+### Denzinger, Enchiridion symbolorum (Latin)
+
+- Witness: patristica.net transcription, DS 800 (Lateran IV, Firmiter).
+- Repository ids: `work.denzinger.enchiridion-symbolorum` (existing).
+- URL: https://patristica.net/denzinger/enchiridion-symbolorum.html
+- Retrieved: 2026-09-29T12:56:36Z (manifest `denz-patristica`)
+- Quoted: DS 800 "simul ab initio temporis utramque de nihilo condidit
+  creaturam, spiritualem et corporalem, angelicam videlicet et
+  mundanam".
+- Rights: Conciliar text is public domain; Latin quoted per brief's
+  rights caution (Tanner's English not used).
+- Ceiling: Web transcription; not collated with the 43rd Denzinger
+  edition.
+
+### Vatican I, Dei Filius (Latin)
+
+- Witness: vatican.va, conciliar documents, Latin.
+- Repository ids: `work.first-vatican-council.dei-filius` (existing).
+- URL: https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700424_dei-filius_la.html
+- Retrieved: 2026-09-29T12:56:42Z (manifest `va-dei-filius-la`)
+- Quoted: ch. 1, the same "utramque de nihilo condidit creaturam…"
+  clause (repeating Lateran IV).
+- Rights: Vatican-site document; short Latin quotation with attribution.
+- Ceiling: Official Latin text; English paraphrase is mine (Tanner not
+  used).
+
+### Douay-Rheims Bible (English)
+
+- Witness: Project Gutenberg #1581 (Douay-Rheims, Challoner).
+- Repository ids: `work.english-college-of-douay.douay-rheims-bible` (existing).
+- URL: https://www.gutenberg.org/cache/epub/1581/pg1581.txt
+- Retrieved: 2026-09-29T12:58:58Z (manifest `gut-douay-rheims-1581`)
+- Quoted: Ps 148:2, 5; Sir 13:19.
+- Rights: Public domain.
+- Ceiling: Gutenberg transcription; other Scripture quotations in the
+  sections are as embedded in the Summa text (Benziger), not separately
+  verified against the Douay.
+
+## Disputed questions after Aquinas; positions on the first sin
+
+### Aquinas, Summa theologiae, English
+- Witness: Thomas Aquinas, *Summa theologiae* I, trans. Fathers of the English Dominican Province, 2nd rev. ed. 1920, New Advent online edition.
+- Repository ids: `work.thomas-aquinas.summa-theologiae` (existing).
+- URL: https://www.newadvent.org/summa/1050.htm, 1052.htm, 1061.htm, 1062.htm, 1063.htm, 1113.htm
+- Retrieved: 2026-09-29 (cache; see manifest.tsv)
+- SHA-256 of the bytes read: 61ff4ab95cc9d06e45d5026da5c0071ed658d5d324eaf661d205faa3371df5be (50349 bytes); a9933f3fabd2548737fdb3cbdc535e04f069dbd8fe5b7454954b93269ee7fe9a (19884 bytes); 50aa6317cf29f0ce6cb0a3c7ff5f81afc2387096f0f11f5020e59cd09b338e2c (28841 bytes); b7412a7cf1b4a8ab31c909237e3912e37eb10b3dce9a7fb40a6dffd43f8b267e (71939 bytes); ec2392cac3741da5f73dcfb70d3a7add91edbd85c06543c174cb470936c0ced8 (79216 bytes); 90503352952827b68b50c430f51df5fa977cd4d3404a06934b860fa9d6f2b576 (53327 bytes)
+- Loci read: I q. 50 aa. 2, 4; q. 52 aa. 1–3; q. 61 a. 3; q. 62 a. 3; q. 63 aa. 1–9 (corpus of each, aa. 2–3, 5–6 in full); q. 113 a. 5 in full.
+- Quoted: q. 50 a. 2 co., a. 4 co.; q. 52 a. 1 co.; q. 61 a. 3 co., ad 1; q. 62 a. 3 co.; q. 63 a. 3 co. (the Anselm clause), a. 5 co., a. 6 co.; q. 113 a. 5 co., ad 3.
+- Rights: public domain (1920 translation).
+- Ceiling: web transcription, not collated with the 1920 print.
+
+### Aquinas, Summa theologiae, Latin
+- Witness: Leonine text as presented by Corpus Thomisticum (I qq. 50–64 page).
+- Repository ids: `work.thomas-aquinas.summa-theologiae` (existing).
+- URL: https://www.corpusthomisticum.org/sth1050.html
+- Retrieved: 2026-09-29 (cache)
+- SHA-256 of the bytes read: e2cfab53e3a057155f3e241b32c059123265ae7cfe58da04e9d7cb41f3fb0ee7 (402442 bytes)
+- Loci read: prologues and corpora of qq. 50, 52, 61, 62, 63 consulted for Latin terms.
+- Quoted: none verbatim in the body (Latin terms cross-checked here).
+- Rights: public domain Latin. Ceiling: web transcription.
+
+### Aquinas, De malo q. 16
+- Witness: *Quaestiones disputatae de malo*, q. 16, Corpus Thomisticum.
+- Repository ids: `work.thomas-aquinas.de-malo` (registered with this publication).
+- URL: https://www.corpusthomisticum.org/qdm16.html
+- Retrieved: 2026-09-29 (cache)
+- SHA-256 of the bytes read: 125185866e21f915d9d469dd101e266842cd4ab6bee62ed7d57c7ad6515dcc62 (322684 bytes)
+- Loci read: q. 16 a. 3 co. [63593], a. 4 co. [63645], both in full.
+- Quoted: a. 3 co. (`eam consequi voluit per virtutem suae naturae; non tamen sine Deo in naturam operante, sed sine Deo gratiam conferente`); a. 4 co. (`reprobata fuit ab omnibus magistris tunc Parisiis legentibus`).
+- Rights: public domain Latin. Ceiling: web transcription.
+
+### Aquinas, De spiritualibus creaturis
+- Witness: *Quaestio disputata de spiritualibus creaturis*, Corpus Thomisticum.
+- Repository ids: `work.thomas-aquinas.de-spiritualibus-creaturis` (registered with this publication).
+- URL: https://www.corpusthomisticum.org/qds.html
+- Retrieved: 2026-09-29 (cache)
+- SHA-256 of the bytes read: 525438a81d5e92e57ec744e24be08c2a90e64fbe2e4cdc0d4919d6b45c96580f (357192 bytes)
+- Loci read: a. 1 co.
+- Quoted: a. 1 co. (`sed tamen hoc non est proprie dictum secundum communem usum nominum`).
+- Rights: public domain Latin. Ceiling: web transcription.
+
+### Bonaventure, In II Sent. (Quaracchi t. 2)
+- Witness: Bonaventure, *Commentaria in quatuor libros Sententiarum* II, in *Opera omnia* t. 2 (Quaracchi; archive.org item doctorisseraphic02bona, item metadata dated 1882), `_djvu.txt` OCR.
+- Repository ids: `work.bonaventure.opera-omnia-quaracchi` (existing).
+- URL: https://archive.org/details/doctorisseraphic02bona (OCR: https://archive.org/download/doctorisseraphic02bona/doctorisseraphic02bona_djvu.txt)
+- Retrieved: 2026-09-29 (cache, this lane's fetch list)
+- SHA-256 of the bytes read: da25d3f5fb7742367bfae54874c647148b1a96a8b89f2023b65d25bdce6d36dd (6785166 bytes)
+- Loci read: II d. 3 p. 1 a. 1 q. 1 (spiritual matter); d. 3 p. 1 a. 2 q. 1 (one species or many; pp. 102–104); d. 4 a. 1 q. 2 (created in grace; pp. 133–134); d. 5 a. 1 q. 1 (first sin pride; pp. 146–148); d. 9 a. unicus q. 1 (one species; p. 243).
+- Quoted: d. 3 p. 1 a. 1 q. 1 concl. (`Si materia large sumitur...`) and resp. (`illa positio videtur verior esse...`); d. 3 p. 1 a. 2 q. 1 concl. (`In Angelis, vel in aliquibus vel in omnibus, est discretio solummodo quoad personalitatem, non quoad speciem`), resp. (`praesumtio`; `positio sobria et catholica`); d. 9 q. 1 concl. (`videtur magis theologica et probabilis positio... quod omnes Angeli sint eiusdem speciei, sicut et omnes homines`); d. 4 a. 1 q. 2 concl. (`Probabilius videtur, Angelos non habuisse gratiam sanctificantem a primo instanti suae creationis`); d. 5 a. 1 q. 1 concl. (`Primum Angeli peccatum fuit superbia; quod initiatum est in praesumtione, consummatum in ambitione, confirmatum in invidiae et odii aversione`) and resp. (`ita quod nulli subesset; hoc est solius Dei, et hoc est aequiparantiae`).
+- Rights: public domain print (1882).
+- Ceiling: OCR with obvious errors silently corrected; **d. 3 p. 1 a. 2 q. 1 (pp. 102–104) verified against the page images** (BookReaderImages leaves 124–126, scale 2; images kept in `.scratch/lanes/l10b-disputed/pages/`) — this closes the gap l1 flagged. Other loci: OCR only, not collated with page images.
+
+### Scotus, Ordinatio (Opus Oxoniense) II, Vivès tt. 11–12
+- Witness: John Duns Scotus, *Opera omnia* (Vivès), t. 11 (1891; item operaomni11duns) and t. 12 (1891; item operaomni12duns), containing the Opus Oxoniense II with Lychetus's commentary; `_djvu.txt` OCR.
+- Repository ids: `work.john-duns-scotus.ordinatio` (registered with this publication).
+- URL: https://archive.org/details/operaomni11duns , https://archive.org/details/operaomni12duns
+- Retrieved: 2026-09-29 (cache)
+- SHA-256 of the bytes read: 530a361c48f7fb0ddeb0b6dfc7c7577a6fe7c6e821a3d0f02e29c9035fd81db0 (2304815 bytes); f457700397f55926a4bd9a0f5ee58898b03b86825a9aafbd42f89a9194495b0c (2712272 bytes)
+- Loci read: II d. 2 q. 5 (Vivès XI; angel in place — with the Lychetus gloss identifying Aquinas, I q. 52 aa. 1–2); II d. 3 q. 7 (several angels in one species; Vivès XII, pp. 159–163); II d. 6 q. 1 (could the devil will equality; Vivès XII, pp. 333 sqq.) and q. 2 (the first inordinate act; pp. 344 sqq., n. 14).
+- Quoted: d. 3 q. 7 (`Tenenda est ergo conclusio simpliciter opposita, quod scilicet simpliciter possibile est plures Angelos esse in eadem specie`); d. 2 q. 5 (`istud videtur esse damnatum, sicut quidam articulus damnatus ab Episcopo Parisiensi et excommunicatus`; `Nec valet dicere, quod excommunicatio non transeat mare, nec dioecesim...`); d. 6 q. 1 (`volitio complacentiae... potest esse impossibilis, et hoc sufficit ad meritum et demeritum`); d. 6 q. 2 (`primum peccatum ejus non fuit superbia proprie dicta, sed propter delectationem quam importabat, magis videtur reduci ad luxuriam`).
+- Rights: public domain print (1891).
+- Ceiling: OCR; d. 2's two-column interleaving makes the question number uncertain (Vivès running head and index give q. 5; Cajetan cites d. 2 q. 6) — see Open issues. d. 6 q. 2's phrase `immoderata concupiscentia beatitudinis` sits in a block the Vivès editors mark *Additio*; the body quotes only the n. 14 text proper.
+
+### Chartularium Universitatis Parisiensis t. 1 (the 1277 articles)
+- Witness: Heinrich Denifle and Émile Chatelain, *Chartularium Universitatis Parisiensis*, t. 1 (Paris 1889; item chartulariumuniv01univuoft), no. 473 (Stephen Tempier's condemnation of 7 March 1277) with the roll of 219 articles and Denifle's apparatus.
+- Repository ids: `work.heinrich-denifle.chartularium-universitatis-parisiensis` (registered with this publication).
+- URL: https://archive.org/details/chartulariumuniv01univuoft
+- Retrieved: 2026-09-29 (cache)
+- SHA-256 of the bytes read: 6b34c960627d168ad5ec1ebe0d14dccfc171cd9e13a5281254e86127ed6be586 (2925942 bytes)
+- Loci read: no. 473 heading and prefatory letter (pp. 543 sqq.); roll arts. 80–86, 96, 190–206, 217–219 and explicit (pp. 554–556, 558); Denifle's apparatus ad no. 473 (pp. 548–550), including the John of Naples report and the judgment on St. Thomas.
+- Quoted: arts. 81, 96, 191, 204, 218, 219 verbatim; the explicit (date clause); Denifle's note (`in condemnatione an. 1277 Parisiis non aperte agitur de S. Thoma`).
+- Rights: public domain print (1889).
+- Ceiling: OCR; the articles quoted were re-read in situ and are clean.
+
+### Cajetan on the Prima pars (Leonine t. 5)
+- Witness: Thomas de Vio, Cardinal Cajetan, *Commentaria* in *Summa theologiae* Ia, printed in the Leonine *Opera omnia* of Aquinas, t. 5 (Romae, Typographia Polyglotta; item operaomniaiussu05thom, item metadata dated 1882).
+- Repository ids: `work.thomas-de-vio-cajetan.commentaria-in-summam-theologiae` (registered with this publication).
+- URL: https://archive.org/details/operaomniaiussu05thom
+- Retrieved: 2026-09-29 (cache)
+- SHA-256 of the bytes read: 84fbee0e6b7bf684efc99ff632a75dcae6a2ab40a39829597a07bfb84c5d6fe4 (3986146 bytes)
+- Loci read: commentary on I q. 50 a. 4 (nn. 1–2, the doubt on `differunt materialiter` and the note that Scotus follows Aquinas's third recited opinion); commentary on I q. 52 a. 1 (nn. 1–28: the five considerations, Paris art. 219 turned on the opponents, the replies to Scotus's arguments via Capreolus, the Aristotle *De caelo* I and Nazianzen points, the citation of Aquinas, *Quodl.* I q. 3 a. 1).
+- Quoted: none verbatim in the body (paraphrase throughout; the Quodlibet distinction is reported as Cajetan's citation).
+- Rights: public domain print (1882).
+- Ceiling: OCR; question-number references to Scotus are Cajetan's (d. 2 q. 6).
+
+### Suárez, De angelis
+- Witness: Francisco Suárez, *De angelis*, in *Opera omnia* (Vivès) t. 2 (Paris 1856; item rpfranciscisuare02su), `_djvu.txt` OCR.
+- Repository ids: `work.francisco-suarez.de-angelis` (registered with this publication).
+- URL: https://archive.org/details/rpfranciscisuare02su
+- Retrieved: 2026-09-29 (cache)
+- SHA-256 of the bytes read: f563a3ff080cfc2c73a5634a3278d8c2a5b7a93b6154c4023c3e819f7d652472 (6655674 bytes)
+- Loci read: lib. I cap. 3 nn. 1–15 (when the angels were created; the Lateran *simul* controversy, with Ferrariensis, Vázquez, Cajetan, Sixtus of Siena, Bañez); lib. VII cap. 13 nn. 12–14 and 27–31 (the hypostatic-union object; revelation of Christ as head; positive precept).
+- Quoted: VII.13 n. 13 (`valde probabilis est sententia credens, Luciferum de facto peccasse per superbiam, appetendo hypostaticam unionem, et a principio adversarium Christi fuisse`); VII.30 (`revelavit a principio Christum, ut caput eorum, ut auctorem gratiae`); I.3 n. 15 paraphrased (`non carere temeritate` — the phrase verified in the text).
+- Rights: public domain print (1856).
+- Ceiling: OCR; two-column interleaving frequent; quoted phrases re-verified at their lines. Lib. VI on guardianship not read (see Open issues).
+
+### Anselm, De casu diaboli
+- Witness: Anselm of Canterbury, *De casu diaboli*, Latin text at logicmuseum.com, transcribed from F. S. Schmitt's edition (vol. 1, Edinburgh 1946, pp. 231–276).
+- Repository ids: `work.anselm-of-canterbury.de-casu-diaboli` (registered with this publication).
+- URL: https://www.logicmuseum.com/wiki/Authors/Anselm/de_casu
+- Retrieved: 2026-09-29T13:24:24Z (manifest)
+- SHA-256 of the bytes read: 289e187e37b0d9cc4428483a07db50be6cf58b5ab46aba8cdc1a0cb283206bf0 (115975 bytes)
+- Loci read: c. 4 (the sin's object) in full.
+- Quoted: c. 4 (`Peccavit ergo volendo aliquod commodum, quod nec habebat nec tunc velle debuit`; `voluit inordinate similis esse deo`; `propria voluntate, quae nulli subdita fuit`).
+- Rights: the underlying Latin is medieval; the Schmitt *edition* (1946) is in copyright — used in short focused quotations only (three sentences), rights basis: fair-use-scale quotation of a critical text for identification of the locus; no extended reproduction.
+- Ceiling: web transcription of Schmitt; not collated with the print; two obvious scan/transcription slips (`ibi` for `sibi`, `foit` for `fuit`) silently corrected.
+
+### Augustine, De civitate Dei (NPNF)
+- Witness: Augustine, *The City of God*, trans. Marcus Dods, NPNF ser. 1 vol. 2, CCEL text.
+- Repository ids: `work.augustine.de-civitate-dei` (existing).
+- URL: https://www.ccel.org/ccel/schaff/npnf102.html
+- Retrieved: 2026-09-29 (cache)
+- SHA-256 of the bytes read: 5c973feda803f3e58a88ed7df210b42d436f5466741eb8dbeae713ab56dedae4 (3692898 bytes)
+- Loci read: XI.13–15; XII.6–7; XII.9.
+- Quoted: XI.15 (`from the beginning of his sin...`); XII.6 (`have forsaken Him who supremely is... what else is it called than pride? For "pride is the beginning of sin"`); XII.9 (`in one and the same act creating their nature, and endowing it with grace`).
+- Rights: public domain translation (1886–90).
+- Ceiling: web transcription of NPNF.
+
+### Gregory of Nazianzus, Oration 38 (NPNF)
+- Witness: Gregory of Nazianzus, *Oration* 38 (*On the Theophany*), trans. Browne–Swallow, NPNF ser. 2 vol. 7, CCEL text.
+- Repository ids: `work.gregory-of-nazianzus.oration-38` (registered with this publication).
+- URL: https://www.ccel.org/ccel/schaff/npnf207.html
+- Retrieved: 2026-09-29 (cache)
+- SHA-256 of the bytes read: 56d84cfa94dee313af0139e2d7f3d4b5f7fffca40ce0f34794b5f56264964dfd (3388014 bytes)
+- Loci read: Or. 38.9–10.
+- Quoted: 38.9 (`He first conceived the Heavenly and Angelic Powers`; `became and is called Darkness through his pride`); 38.10 (`Then when His first creation was in good order, He conceives a second world, material and visible`).
+- Rights: public domain translation.
+- Ceiling: web transcription of NPNF.
+
+### Basil, Hexaemeron (NPNF)
+- Witness: Basil of Caesarea, *Hexaemeron* homily 1, trans. Blomfield Jackson, NPNF ser. 2 vol. 8, CCEL text.
+- Repository ids: `work.basil-of-caesarea.homiliae-in-hexaemeron` (existing).
+- URL: https://www.ccel.org/ccel/schaff/npnf208.html
+- Retrieved: 2026-09-29 (cache)
+- SHA-256 of the bytes read: 4f21a589be54f0c160c2a2bf8c316991dae1a0f3d13430466ed2db555018e0e2 (2645735 bytes)
+- Loci read: Hex. I.5.
+- Quoted: I.5 (`even before this world an order of things existed`; `outstripping the limits of time`).
+- Rights: public domain translation.
+- Ceiling: web transcription of NPNF.
+
+### John of Damascus, De fide orthodoxa (NPNF)
+- Witness: John of Damascus, *Exposition of the Orthodox Faith*, trans. S. D. F. Salmond, NPNF ser. 2 vol. 9, CCEL text.
+- Repository ids: `work.john-of-damascus.de-fide-orthodoxa` (registered with this publication).
+- URL: https://www.ccel.org/ccel/schaff/npnf209.html
+- Retrieved: 2026-09-29 (cache)
+- SHA-256 of the bytes read: 859ba34cc5998f2761b801aa5de724b2ea741a54d98e21614faeb89cc40f8ad4 (2606804 bytes)
+- Loci read: II.3 (creation of angels; the two opinions), II.4 (the devil and demons) in full.
+- Quoted: II.3 (`For myself, I am in harmony with the theologian`); II.4 (`determined to rise in rebellion`; the free-choice change).
+- Rights: public domain translation.
+- Ceiling: web transcription of NPNF.
+
+### Origen, Commentary on Matthew (ANF)
+- Witness: Origen, *Commentary on Matthew*, book XIII, trans. John Patrick, ANF vol. 9 (ANF Additional Volume), CCEL text.
+- Repository ids: `work.origen.commentarium-in-matthaeum` (registered with this publication).
+- URL: https://www.ccel.org/ccel/schaff/anf09.html
+- Retrieved: 2026-09-29 (cache)
+- SHA-256 of the bytes read: 3861096b158e12bc13f4516baac913cbd3d921c607862a7eace4f0257b3aefa5 (3047154 bytes)
+- Loci read: XIII.27–28 in full.
+- Quoted: XIII.27 (`from... the laver of regeneration`; `from birth... according to the foreknowledge and predestination of God`); XIII.28 (`consigns us to a holy angel`).
+- Rights: public domain translation.
+- Ceiling: web transcription of ANF; the Latin of Rufinus not consulted.
+
+### Jerome, Commentariorum in Matthaeum (PL 26)
+- Witness: Jerome, *Commentariorum in evangelium Matthaei* libri IV, Vallarsi–Migne text, PL 26; archive.org OCR of the PL printing (item patrologiaecurs240unkngoog, vol. 26, 1844/45).
+- Repository ids: `work.jerome.commentariorum-in-evangelium-matthaei` (existing); `work.jacques-paul-migne.patrologia-latina-volume-26` (existing).
+- URL: https://archive.org/details/patrologiaecurs240unkngoog
+- Retrieved: 2026-09-29 (cache)
+- SHA-256 of the bytes read: 74c5dd24a294e30a8a1de023ef9842b41a79f52410fae49113156b075ce0d046 (4745230 bytes)
+- Loci read: lib. III on Matt 18:10 (col. 130 area).
+- Quoted: `Magna dignitas animarum, ut unaquaeque habeat ab ortu nativitatis in custodiam sui angelum delegatum`.
+- Rights: public domain print (1845).
+- Ceiling: OCR; the quoted sentence read clean in situ.
+
+### Peter Lombard, Sententiae II
+- Witness: Peter Lombard, *Sententiarum libri quatuor* II, as printed at the head of each distinction in the Quaracchi Bonaventure t. 2 (the same scan as above).
+- Repository ids: `work.peter-lombard.sententiae` (existing).
+- URL: https://archive.org/details/doctorisseraphic02bona
+- Retrieved: 2026-09-29 (cache)
+- SHA-256 of the bytes read: da25d3f5fb7742367bfae54874c647148b1a96a8b89f2023b65d25bdce6d36dd (6785166 bytes)
+- Loci read: II d. 4 c. 1; d. 5 cc. 1–5.
+- Quoted: d. 5 c. 1 (`Invidiae namque mater est superbia, qua voluerunt se parificare Deo`; `Post creationem namque mox quidam conversi sunt... quidam aversi`; `nunquam est apposita, ut converterentur`).
+- Rights: public domain print (1882).
+- Ceiling: OCR of the Quaracchi printing of the Lombard's text, not the Grottaferrata critical edition.
+
+### Lateran IV, Firmiter; Vatican I, Dei Filius (Denzinger)
+- Witness: Lateran IV, *Firmiter* (DS 800), and Vatican I, *Dei Filius* ch. 1 (DS 3002), Latin text in Denzinger, *Enchiridion* (cache file denz-patristica.txt); *Dei Filius* also checked in the vatican.va Latin (va-dei-filius-la.txt).
+- Repository ids: `work.fourth-lateran-council.firmiter-credimus` (existing); `work.first-vatican-council.dei-filius` (existing); `work.denzinger.enchiridion-symbolorum` (existing).
+- URL: (cache; Denzinger) ; https://www.vatican.va/.../dei-filius (Latin)
+- Retrieved: 2026-09-29 (cache)
+- SHA-256 of the bytes read: 604f24c46e0bc71c2018f25dc787a9ab421d4b2e9cf7d1cee1f43e910ef2708f (2333435 bytes); cdb6433e97aaa0fd31cd148d513392324c39779f0137402208ad66d19e8d7016 (29192 bytes)
+- Loci read: DS 800 creation clause; DS 3002 (ch. 1, the repeated clause with the Lateran citation).
+- Quoted: DS 800 (`sua omnipotenti virtute simul ab initio temporis utramque de nihilo condidit creaturam, spiritualem et corporalem, angelicam videlicet et mundanam`).
+- Rights: Latin conciliar text, public domain. The papalencyclicals.net English (Tanner) was NOT quoted, per the brief's rights caution; used only as a finding aid.
+- Ceiling: Denzinger printing.
+
+### Catechism of the Catholic Church
+- Witness: CCC, English, vatican.va, part 1 art. 1 section paragraphs incl. 336.
+- Repository ids: `work.catholic-church.catechism` (existing).
+- URL: https://www.vatican.va/archive/ENG0015/__P1A.HTM (cache)
+- Retrieved: 2026-09-29 (cache)
+- SHA-256 of the bytes read: f5d0972215f47a1bc22e768aa4e51f454db80f32dcbc4e3dd52b4a40ae5254d3 (22605 bytes)
+- Loci read: 336.
+- Quoted: 336 (`From infancy to death human life is surrounded by their watchful care and intercession`) — short quotation, Vatican-site document, attribution in body.
+- Rights: short quotation with attribution (brief's Vatican-site rule).
+- Ceiling: web text.
+
+### Douay–Rheims Bible
+- Witness: Douay–Rheims (Challoner), Project Gutenberg eBook 1581.
+- Repository ids: `edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581` (existing).
+- SHA-256 of the bytes read: 7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007 (5880580 bytes)
+- Loci read: Ecclus 10:14–15 (verification of the pride verse cited by Augustine).
+- Quoted: none in body (Ecclus 10:15 is cited through Augustine's quotation; the Douay verse verified).
+- Rights: public domain.

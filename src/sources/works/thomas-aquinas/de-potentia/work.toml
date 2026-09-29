@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.thomas-aquinas.de-potentia"
+title = "Quaestiones disputatae de potentia"
+responsible = "Thomas Aquinas"
+work_type = "disputed-question"
+alternate_titles = ["De potentia", "De potentia Dei", "On the Power of God"]
+languages = ["la"]
+locus_pattern = '(?:[1-9]|10)\.(?:[1-9]|1[0-9])(?:\.(?:objection-[1-9][0-9]*|sed-contra-[1-9]?|corpus|reply-[1-9][0-9]*))?'
+description = "Aquinas's ten disputed questions on the power of God. Question 3, on creation, asks in article 17 whether the world has always existed and in article 18 whether the angels were created before the visible world. A locus is question.article, optionally with its division."

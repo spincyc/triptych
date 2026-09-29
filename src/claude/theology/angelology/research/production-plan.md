@@ -71,16 +71,16 @@ each URL and reading date.
 
 | Unit | File | Status | Principal sources |
 | --- | --- | --- | --- |
-| Scripture | `sections/00-scripture.tex` | planned | Douay–Rheims; Vulgate; ST I q. 50 a. 1, q. 108 a. 5 |
-| Faith of the Church | `sections/05-faith-of-the-church.tex` | planned | Lateran IV *Firmiter*; Vatican I *Dei Filius* 1; Braga I (561); Constantinople (543); *Humani generis* 26; Paul VI (15 Nov 1972); CDF *Christian Faith and Demonology* (1975); John Paul II audiences (July–Aug 1986); CCC 328–336, 391–395 |
+| Scripture | `sections/00-scripture.tex` | drafted | Douay–Rheims; Vulgate; ST I q. 50 a. 1, q. 108 a. 5 |
+| Faith of the Church | `sections/05-faith-of-the-church.tex` | drafted | Lateran IV *Firmiter*; Vatican I *Dei Filius* 1; Braga I (561); Constantinople (543); *Humani generis* 26; Paul VI (15 Nov 1972); CDF *Christian Faith and Demonology* (1975); John Paul II audiences (July–Aug 1986); CCC 328–336, 391–395 |
 | Fathers before Dionysius | `sections/10-fathers-before-dionysius.tex` | planned | Hermas; Justin; Athenagoras; Irenaeus; Origen *De principiis* I; Basil; Gregory Nazianzen Or. 28, 38; Chrysostom; Ambrose; Jerome; Augustine *De civ. Dei* XI–XII, *De Gen. ad litt.* IV, *Enchiridion* 58 |
 | Celestial Hierarchy | `sections/15-celestial-hierarchy.tex` | drafted | CH 1–15 (Parker); PG 3; Aquinas's citations |
 | Fathers after Dionysius | `sections/20-fathers-after-dionysius.tex` | planned | Gregory *Hom. in Ev.* 34, *Moralia*; Isidore *Etym.* VII.5; Damascene *De fide* II.3–4; Bede; Bernard *De consid.* V; Lombard *Sent.* II dd. 2–11 |
 | Angelic substance | `sections/30-angelic-substance.tex` | drafted | ST I q. 50; *De ente* 4; *De sub. sep.* |
 | Bodies, place, motion | `sections/32-bodies-place-motion.tex` | drafted | ST I qq. 51–53 |
 | Intellect and knowledge | `sections/34-intellect-and-knowledge.tex` | planned | ST I qq. 54–58; *De ver.* 8 |
-| Will and love | `sections/36-will-and-love.tex` | planned | ST I qq. 59–60 |
-| Creation, grace, glory | `sections/38-creation-grace-glory.tex` | planned | ST I qq. 61–62 |
+| Will and love | `sections/36-will-and-love.tex` | drafted | ST I qq. 59–60 |
+| Creation, grace, glory | `sections/38-creation-grace-glory.tex` | drafted | ST I qq. 61–62 |
 | Fall and punishment | `sections/40-fall-and-punishment.tex` | planned | ST I qq. 63–64; *De malo* 16 |
 | Illumination and speech | `sections/50-illumination-and-speech.tex` | planned | ST I qq. 106–107; *De ver.* 9 |
 | Hierarchies and orders | `sections/52-hierarchies-and-orders.tex` | planned | ST I qq. 108–109 |
@@ -88,7 +88,7 @@ each URL and reading date.
 | Guardian angels | `sections/56-guardian-angels.tex` | planned | ST I q. 113 |
 | Assaults of demons | `sections/58-assaults-of-demons.tex` | planned | ST I q. 114 |
 | Christ, Mary, angels | `sections/60-christ-mary-and-the-angels.tex` | planned | ST III q. 8 a. 4; q. 30; I q. 108 a. 8 |
-| Disputed questions | `sections/70-disputed-questions.tex` | planned | Bonaventure *In II Sent.*; Scotus *Ord.* II dd. 2–6; Suárez *De angelis*; Tempier 1277 |
+| Disputed questions | `sections/70-disputed-questions.tex` | drafted | Bonaventure *In II Sent.*; Scotus *Ord.* II dd. 2–6; Suárez *De angelis*; Tempier 1277 |
 | Byzantine line | `sections/72-byzantine-line.tex` | planned | Damascene; Palamas *Capita 150*; Byzantine synaxis of 8 November |
 | Liturgy | `sections/80-liturgy.tex` | planned | repository calendars; Missale Romanum 1962 and 2002; Roman Canon; Rituale |
 | Devotion and regulation | `sections/82-devotion-and-its-regulation.tex` | planned | Laodicea c. 35; Rome 745; Leo XIII; Directory on Popular Piety 213–217 |
@@ -98,12 +98,12 @@ each URL and reading date.
 | App. article census | `appendices/03-article-census.tex` | planned | question inventory |
 | App. parallels in Aquinas | `appendices/04-parallels-in-aquinas.tex` | planned | Corpus Thomisticum |
 | App. Dionysius in the Summa | `appendices/05-dionysius-in-the-summa.tex` | drafted | ST citations of CH |
-| App. magisterial chronology | `appendices/06-magisterial-chronology.tex` | planned | acts above |
+| App. magisterial chronology | `appendices/06-magisterial-chronology.tex` | drafted | acts above |
 | App. calendar | `appendices/07-calendar.tex` | planned | repository calendars |
 | App. Scripture index | `appendices/08-scripture-index.tex` | planned | body citations |
 | App. names | `appendices/09-names.tex` | planned | Tobit, Daniel, Luke, Jude, Rev.; Rome 745; Directory 217 |
 | App. demons' powers | `appendices/10-demons-powers-and-limits.tex` | planned | ST I qq. 64, 109–114 |
-| App. first sin | `appendices/11-the-first-sin.tex` | planned | Aquinas, Scotus, Suárez, Fathers |
+| App. first sin | `appendices/11-the-first-sin.tex` | drafted | Aquinas, Scotus, Suárez, Fathers |
 | App. terminology | `appendices/12-terminology.tex` | planned | terminology audit |
 | App. witness register | `appendices/13-witness-register.tex` | planned | source audit; author-standing inventory |
 | Scope appendix | `appendices/90-scope-corpus-qualifications.tex` | drafted | scope record |
