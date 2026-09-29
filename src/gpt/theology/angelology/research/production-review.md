@@ -110,5 +110,22 @@ obsolete binding for an earlier held Claude reader was retired; the unfinished
 Claude angelology has its required hidden Faith catalog identity and no public
 reader or PDF link.
 
-The completed artifact is ready for the authorized push and live-deployment
-verification. Those remote results will be recorded after they occur.
+## Verified publication
+
+The completed work was pushed to both `origin/feature/angelology` and
+`origin/main` at commit `e7113833bc9f30e77af37def9c03053a55641d73`. The automatic
+[GitHub Pages run 36637951336](https://github.com/spincyc/triptych/actions/runs/36637951336)
+completed successfully on 29 September 2026. Live HTTP checks returned 200 for
+the [reader](https://mystago.gy/web/gpt/theology/angelology.html),
+[PDF](https://mystago.gy/pdf/gpt/theology/angelology.pdf), and
+[Faith catalog](https://mystago.gy/library/faith.html). Both publication artifacts
+match their reviewed SHA-256 values above and in `web-review.md`. The live
+publication manifest includes the GPT study with its exact PDF hash; the Faith
+catalog contains both links. The earlier unfinished Claude study is not served.
+
+The live publication-manifest SHA-256 is
+`af93daf30cca78c03c9fc930d1981a46bb6a559394991eadfbae8bfe35a7c3b4`.
+The manifest does not embed a source commit; the successful Pages run supplies
+that provenance. The subsequent completion-record commit changes operational
+research and ledger records only; it does not change the reviewed publication
+source, reader Markdown, PDF, or reader-facing site inputs.

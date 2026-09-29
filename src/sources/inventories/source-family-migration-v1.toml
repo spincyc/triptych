@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-09-29"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:4c95403ec497db7fa0699cb716663df7c8d4bb314c6513a6689649d1dff1f0d3"
+inventory_snapshot = "sha256:abcd3661ef4746bf3f2ec2c31c0780a4cb1d0b0bc35e1d31e006bf38ab4a72a1"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:a06dfc33dfd7278908c2f5c13d697240e09065561bb790e8acac7c60795b9e96"
 canonical_catalog_snapshot = "sha256:51bdbecda521eff0bff4d50da8600222dd2b8b655fd23485373c65ef948ece6e"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:269253ff854c36c95406186f89a070bd4190d72b20b526fc60d8543265d84add"
+snapshot = "sha256:853cb8c0a6007eddae69068b5153caee73b92e65b3a936c47c084ea88949bccc"
 families = []
 
 [[review_units]]
@@ -708,7 +708,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/angelology"
-surface_snapshot = "sha256:9d673b6e6a804ba0db1e6bc5d8dd834b06231345466f6508cbbd13d8341a936c"
+surface_snapshot = "sha256:f647e246eab96de3101b68a1cb824d7c9749c5faca67cd1b491218247bd230ce"
 review_state = "pending"
 
 [[review_units]]

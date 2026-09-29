@@ -20,7 +20,7 @@ publication remain separate. The target is `src/gpt/theology/angelology/`,
 under `guidance/theology/angelology.md`, with working title *Angels and the
 Gift of Being: A Thomistic Study of Nature, Grace, and Ministry*.
 
-**Installed, reviewed, and locally validated; Git delivery in progress.** Independent research and composition
+**Complete, published, and verified.** Independent research and composition
 are complete, with a 62-page PDF that has passed full visual review. The
 systematic spine covers every article of ST I qq. 50–64 and 106–114;
 Dionysius receives fifteen chapter treatments. The distinct pedagogical
@@ -30,14 +30,17 @@ edition's own research records. The source checkpoint preserves the full treatis
 The reviewed PDF and web edition are installed and linked from the Faith
 catalog. The source, metadata, promise, release-binding, full-site build,
 and GitHub Pages artifact checks pass. Work is committed on the workspace branch `feature/angelology`. The maintainer
-subsequently directed that the completed work be pushed to `main`; final
-deployment validation and that push are therefore part of delivery.
+subsequently directed that the completed work be pushed to `main`. Both remote
+branches now contain publication commit `e7113833b`; automatic Pages run
+`36637951336` succeeded, and live checks verified the reader and PDF against
+the reviewed hashes. The study is available at
+[its web reader](https://mystago.gy/web/gpt/theology/angelology.html) and
+[PDF](https://mystago.gy/pdf/gpt/theology/angelology.pdf).
 
-Completion requires the complete article census and reference apparatus,
-source and metadata checks, visual review of every PDF page, installation,
-reviewed web conversion, the Faith catalog links, and a publication record.
-The leaf's `research/production-review.md` will record actual verification
-and artifact identities. The earlier Claude deliverable remains in progress.
+The complete article census and reference apparatus, source and metadata
+checks, visual review of every PDF page, installation, reviewed web conversion,
+Faith catalog links, and publication record are all delivered. The leaf's
+`research/production-review.md` records verification and artifact identities. The earlier Claude deliverable remains in progress.
 
 The maintainer further specified an authentic Catholic treatise: affirmative,
 expansive exposition of the best patristic witnesses, declaring conclusions
