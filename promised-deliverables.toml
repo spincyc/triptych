@@ -1,6 +1,48 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-angelology-2026-09-29"
+owner = "PROJECT-WORK.md"
+promise = "Create an independently researched and composed GPT angelology reference following Aquinas, with all fifteen chapters of the Celestial Hierarchy, patristic and saintly witnesses, substantial reference appendices, a reviewed installed PDF, and a reviewed web edition linked from the library. Preserve the earlier Claude work and commit incremental progress on feature/angelology."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "systematic-study"
+  criterion = "The study treats ST I qq.50–64 and 106–114 in order with graded question dossiers and a complete article inventory agreeing with the reader census."
+  status = "open"
+  evidence = ["src/gpt/theology/angelology/research/scope.md"]
+
+  [[deliverables.requirements]]
+  id = "dionysius-and-corpus"
+  criterion = "All fifteen Celestial Hierarchy chapters receive sourced exposition; additional patristic and saintly witnesses are read firsthand and registered with truthful evidence ceilings and publication bindings."
+  status = "open"
+  evidence = ["src/gpt/theology/angelology/research/scope.md"]
+
+  [[deliverables.requirements]]
+  id = "reference-apparatus"
+  criterion = "The profile's reference tables, hierarchies, concordances, calendar, Scripture index, terminology and scope appendices accompany the complete study."
+  status = "open"
+  evidence = ["src/gpt/theology/angelology/research/scope.md"]
+
+  [[deliverables.requirements]]
+  id = "pdf-installation"
+  criterion = "The GPT PDF compiles without unresolved errors or overflow, every page receives visual review, and the reviewed bytes are installed at pdf/gpt/theology/angelology.pdf with a tracked receipt."
+  status = "open"
+  evidence = ["src/gpt/theology/angelology/research/scope.md"]
+
+  [[deliverables.requirements]]
+  id = "web-installation"
+  criterion = "The reviewed canonical web edition, Faith catalog links, publication record and document catalog are installed and validated."
+  status = "open"
+  evidence = ["src/gpt/theology/angelology/research/scope.md"]
+
+  [[deliverables.requirements]]
+  id = "validation-and-checkpoints"
+  criterion = "Source, metadata, web and promise checks are recorded honestly, and coherent incremental commits preserve the delivered work on the workspace branch."
+  status = "open"
+  evidence = ["src/gpt/theology/angelology/research/scope.md"]
+
+[[deliverables]]
 id = "claude-angelology-2026-09-29"
 owner = "PROJECT-WORK.md"
 promise = "Produce the Claude reference `theology/angelology`: a document on the angels following the systematic teaching of Aquinas (ST I qq. 50-64 and 106-114), with a chapter-by-chapter exposition of the Celestial Hierarchy, an expanded patristic, magisterial, liturgical, and school corpus, and ample appendices of tables and hierarchies; carried through the full pipeline to a reviewed PDF, web edition, catalog row, and release record, with incremental commits pushed to feature/droid/theology/angelology."
