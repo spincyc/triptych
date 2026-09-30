@@ -67,6 +67,13 @@ Factory Droid agent and its subagents, with no model switch. Incremental
 commits go to `origin/feature/droid/theology/angelology`; the work is
 feature-branch only and is not merged to `main` by this request.
 
+On 2026-09-30 the work resumed in Claude Code, still on Opus 5.5 with
+Opus 5.5 subagents. The maintainer directed a declarative voice at each
+degree of determination, without dogma hedging, and an expansive account
+of the best patristic sources as an authentic Catholic treatise. The
+profile's "Voice and determination" section and the leaf's scope record
+that directive.
+
 **State: in progress.** The profile, routing, leaf scaffold, research scope,
 and production plan exist. The leaf's
 [production plan](src/claude/theology/angelology/research/production-plan.md)
