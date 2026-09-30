@@ -441,6 +441,294 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 - Quoted: Deut 32:8; Matt 18:10 (Douay wording).
 - Rights: public domain.
 
+## The Greek Fathers from Athanasius to Chrysostom
+
+### Athanasius, Orationes contra Arianos I–III
+- Witness: Athanasius, *Four Discourses against the Arians* (Newman's translation as revised by A. Robertson), NPNF2 4 (New York: Christian Literature Publishing Co., 1892), CCEL plain text; New Advent HTML of the same translation used only to restore the opening quotation marks that CCEL's text conversion drops.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://ccel.org/ccel/s/schaff/npnf204/cache/npnf204.txt ; https://www.newadvent.org/fathers/28161.htm , 28162.htm , 28163.htm
+- Retrieved: 2026-09-30 (CCEL 14:09:25Z; New Advent 14:32Z)
+- SHA-256 of the bytes read: d2f362ce989db6955bb7d900c619543c581beceaca52acd8359510551c85f124 (4570263 bytes); c7af95bd78890b292ac48db06c4401bafc431d64693afab2cd0460e14752b900 (220200 bytes)
+- Loci read: I.53–62; II.18–30; III.10–15
+- Quoted: I.55, 56, 61, 62; II.19, 20, 21, 23, 26, 27, 29; III.10, 12, 14
+- Rights: public domain (1892 translation)
+- Ceiling: web transcription; not collated with print or Greek; New Advent modernizes scriptural pronouns, so wording was taken from CCEL and only punctuation from New Advent.
+
+### Athanasius, De incarnatione Verbi
+- Witness: Athanasius, *On the Incarnation of the Word* (A. Robertson), NPNF2 4 (1892), CCEL.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://ccel.org/ccel/s/schaff/npnf204/cache/npnf204.txt
+- Retrieved: 2026-09-30T14:09:25Z
+- SHA-256 of the bytes read: d2f362ce989db6955bb7d900c619543c581beceaca52acd8359510551c85f124 (4570263 bytes)
+- Loci read: 25 (with §§23–24 headings)
+- Quoted: 25.5, 25.6
+- Rights: public domain
+- Ceiling: web transcription; not collated.
+
+### Athanasius, Vita Antonii
+- Witness: Athanasius, *Life of Antony* (H. Ellershaw), NPNF2 4 (1892), CCEL.
+- Repository ids: `work.athanasius-of-alexandria.vita-antonii` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf204/cache/npnf204.txt
+- Retrieved: 2026-09-30T14:09:25Z
+- SHA-256 of the bytes read: d2f362ce989db6955bb7d900c619543c581beceaca52acd8359510551c85f124 (4570263 bytes)
+- Loci read: 16, 20–44, 59–66
+- Quoted: 21, 22, 23, 24, 25, 26, 28, 29, 30, 31, 33, 34, 35, 36, 37, 38, 40, 41, 42, 43, 65
+- Rights: public domain
+- Ceiling: web transcription; translator named in the NPNF2 4 preface ("the Rev. H. Ellershaw, jun.").
+
+### Cyril of Jerusalem, Catecheses and Mystagogical Catecheses
+- Witness: Cyril of Jerusalem, *Catechetical Lectures* (E. H. Gifford), NPNF2 7 (New York, 1893), CCEL.
+- Repository ids: `work.cyril-of-jerusalem.catechetical-lectures` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf207/cache/npnf207.txt
+- Retrieved: 2026-09-29T12:55:25Z
+- SHA-256 of the bytes read: 56d84cfa94dee313af0139e2d7f3d4b5f7fffca40ce0f34794b5f56264964dfd (3388014 bytes)
+- Loci read: Cat. II.3–4; III.3, 16; IV.1; VI.5–6; VIII.3–5; XI.11–13, 21–23; XV.21–25; XVI.13–17, 20–24; Myst. V.4–9 (with the NPNF notes 2045, 2483–2486)
+- Quoted: II.4; III.3; III.16; IV.1; VI.6; VIII.4; XI.11, 12, 13, 21, 23; XV.22, 23, 24; XVI.13, 15, 16, 23; Myst. V.6
+- Rights: public domain
+- Ceiling: web transcription; not collated with Greek.
+
+### Basil, De Spiritu Sancto
+- Witness: Basil, *On the Spirit* (Blomfield Jackson), NPNF2 8 (Edinburgh: T&T Clark, 1895), CCEL.
+- Repository ids: `work.basil-of-caesarea.de-spiritu-sancto` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf208/cache/npnf208.txt
+- Retrieved: 2026-09-29T12:55:26Z
+- SHA-256 of the bytes read: 4f21a589be54f0c160c2a2bf8c316991dae1a0f3d13430466ed2db555018e0e2 (2645735 bytes)
+- Loci read: 13.29–30; 16.37–40; 23.54
+- Quoted: 13.29, 13.30, 16.38 (several sentences), 23.54
+- Rights: public domain
+- Ceiling: web transcription; Greek not collated (so the Greek behind "powers/authorities" in 16.38 is not verified).
+
+### Basil, Hexaemeron
+- Witness: Basil, *Hexaemeron* (Blomfield Jackson), NPNF2 8 (1895), CCEL.
+- Repository ids: `work.basil-of-caesarea.homiliae-in-hexaemeron` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf208/cache/npnf208.txt
+- Retrieved: 2026-09-29T12:55:26Z
+- SHA-256 of the bytes read: 4f21a589be54f0c160c2a2bf8c316991dae1a0f3d13430466ed2db555018e0e2 (2645735 bytes)
+- Loci read: I.1, I.5–6; II.4–5; V.5–6
+- Quoted: I.5; II.5; V.6
+- Rights: public domain
+- Ceiling: web transcription.
+
+### Basil, Adversus Eunomium III (Greek, PG 29)
+- Witness: Basil, *Adversus Eunomium* III.1–2, Greek text in Migne, *Patrologia Graeca* 29 (Paris, 1857), archive.org OCR; English rendering made for this edition.
+- Repository ids: `work.jacques-paul-migne.patrologia-graeca-volume-29` (existing).
+- URL: https://archive.org/download/patrologiae_cursus_completus_gr_vol_029/patrologiae_cursus_completus_gr_vol_029_djvu.txt
+- Retrieved: 2026-09-29T17:52:47Z
+- SHA-256 of the bytes read: f4b52a32d8e2a8e33c0532df6224976b63896f8f6276358b207f9297730f1c8e (8499613 bytes)
+- Loci read: III.1–2 (PG 29, 655–658; column headers 655/656 and 657/658 legible)
+- Quoted: III.1 (own rendering, block quotation, PG 29, 656B–657A); III.2 (own rendering, one sentence); transliterated terms paidag\=ogos, nomeus, archistrat\=egos
+- Rights: Migne Greek public domain; English is the edition's own rendering (marked by footnote in the body).
+- Ceiling: OCR of the Greek column read and rendered; the Latin column is OCR'd in Greek glyphs and is illegible; not collated with a critical edition. CCC 336 note 203 independently gives "PG 29, 656B".
+
+### Basil, Homiliae in Psalmos 33 and 48 (Greek, PG 29)
+- Witness: Basil, *Homilia in Psalmum 33* and *Homilia in Psalmum 48*, Greek text in PG 29, archive.org OCR; English renderings made for this edition.
+- Repository ids: `work.basil-of-caesarea.homilia-in-psalmum-33` (existing); `work.basil-of-caesarea.homiliae-in-psalmos` (existing); `work.jacques-paul-migne.patrologia-graeca-volume-29` (existing).
+- URL: https://archive.org/download/patrologiae_cursus_completus_gr_vol_029/patrologiae_cursus_completus_gr_vol_029_djvu.txt
+- Retrieved: 2026-09-29T17:52:47Z
+- SHA-256 of the bytes read: f4b52a32d8e2a8e33c0532df6224976b63896f8f6276358b207f9297730f1c8e (8499613 bytes)
+- Loci read: Hom. in Ps. 33.5 (on v. 8), 33.8 (on v. 12), 33 on vv. 16–17 (section number not legible in OCR), Hom. in Ps. 48.9 (on v. 15)
+- Quoted: all as own renderings: 33.5 (block + two sentences), 33.8 (one sentence), 33 on vv. 16–17 (two sentences), 48.9 (two sentences)
+- Rights: Migne Greek public domain; English is the edition's own rendering.
+- Ceiling: OCR Greek read; section numbers inferred from OCR markers ("5.", "8.", "9."); PG column numbers for these homilies are not legible in the OCR and are not printed in the body.
+
+### Gregory of Nazianzus, Orations 2, 28, 31, 38, 40, 41, 42, 45
+- Witness: Gregory Nazianzen, *Select Orations* (C. G. Browne and J. E. Swallow), NPNF2 7 (1893), CCEL.
+- Repository ids: `work.gregory-of-nazianzus.oration-38` (registered with this publication); `work.gregory-of-nazianzus.oration-40` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf207/cache/npnf207.txt
+- Retrieved: 2026-09-29T12:55:25Z
+- SHA-256 of the bytes read: 56d84cfa94dee313af0139e2d7f3d4b5f7fffca40ce0f34794b5f56264964dfd (3388014 bytes)
+- Loci read: Or. 2.67–73; 28.8–9, 30–31; 31.15, 29; 38.4, 7–12, 16–17; 40.4–7, 36; 41.10–11; 42 heading, 8–9, 27; 45.1–2, 5
+- Quoted: 2.73; 28.31 (two blocks and several phrases); 31.15; 31.29; 38.9 (block); 38.10; 38.11; 38.17; 40.5 (block); 40.7; 41.11; 42.9; 42.27; 45.2
+- Rights: public domain
+- Ceiling: web transcription; not collated with Greek (so the Greek of "Splendours, Ascents, Intelligences" is not given).
+
+### Gregory of Nyssa, Oratio catechetica
+- Witness: Gregory of Nyssa, *The Great Catechism* (W. Moore and H. A. Wilson), NPNF2 5 (1892), CCEL.
+- Repository ids: `work.gregory-of-nyssa.oratio-catechetica-magna` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf205/cache/npnf205.txt
+- Retrieved: 2026-09-29T17:32:27Z
+- SHA-256 of the bytes read: cef974043e48a52d1b6d4ce3bdfb538fa5be2c3af8b53e3bb75181760d614484 (3490499 bytes)
+- Loci read: 6 (whole); 24; 26 (first half)
+- Quoted: 6 (block and phrases); 24; 26
+- Rights: public domain
+- Ceiling: web transcription.
+
+### Gregory of Nyssa, De hominis opificio
+- Witness: *On the Making of Man*, NPNF2 5 (1892), CCEL.
+- Repository ids: `work.gregory-of-nyssa.de-hominis-opificio` (existing).
+- URL: as above
+- Retrieved: 2026-09-29T17:32:27Z
+- SHA-256 of the bytes read: cef974043e48a52d1b6d4ce3bdfb538fa5be2c3af8b53e3bb75181760d614484 (3490499 bytes)
+- Loci read: 17.1–4
+- Quoted: 17.2 (block), 17.3, 17.4
+- Rights: public domain
+- Ceiling: web transcription.
+
+### Gregory of Nyssa, Contra Eunomium
+- Witness: *Against Eunomius*, NPNF2 5 (1892), CCEL, NPNF book numbering.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: as above
+- Retrieved: 2026-09-29T17:32:27Z
+- SHA-256 of the bytes read: cef974043e48a52d1b6d4ce3bdfb538fa5be2c3af8b53e3bb75181760d614484 (3490499 bytes)
+- Loci read: NPNF Book IV §§2–3 (lines c. 13880–14010)
+- Quoted: IV.3 (two sentences)
+- Rights: public domain
+- Ceiling: NPNF division only; not reconciled with Jaeger's numbering.
+
+### Gregory of Nyssa, De vita Moysis II (Greek, PG 44)
+- Witness: Gregory of Nyssa, *De vita Moysis*, Greek text in Migne, PG 44 (Paris, 1863), archive.org OCR (full-text stream); English rendering made for this edition.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/stream/patrologiae_cursus_completus_gr_vol_044/patrologiae_cursus_completus_gr_vol_044_djvu.txt (the /download/ djvu.txt URL returned HTTP 500 twice; the stream endpoint serves the same OCR text inside HTML)
+- Retrieved: 2026-09-30T14:27:50Z
+- SHA-256 of the bytes read: aa9d6d88c7b49eff6b0b40b80c5986228356ccc3418127cdc6d72625d9410c7d (7884554 bytes)
+- Loci read: PG 44, 337D–340B
+- Quoted: 337D–340A (block, own rendering); 340 (one sentence, own rendering); 340 (paraphrase of the objector's concession)
+- Rights: Migne Greek public domain; English is the edition's own rendering.
+- Ceiling: OCR Greek read; column numbers inferred from garbled running heads (337/338, 339/340) and margin letters; modern section numbering (Musurillo/Daniélou) not verified, so the body cites book II and PG columns only.
+
+### Ephrem the Syrian, Hymns
+- Witness: Ephrem, *Hymns on the Nativity* (I–XIII J. B. Morris, revised; XIV–XIX A. E. Johnston), *Hymns for the Epiphany* (A. E. Johnston), *Nisibene Hymns* (J. T. S. Stopford and others), NPNF2 13, CCEL.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://ccel.org/ccel/s/schaff/npnf213/cache/npnf213.txt
+- Retrieved: 2026-09-29T12:55:32Z
+- SHA-256 of the bytes read: 02dd51a2aff1cabf92e80a0ab5f8d88872f2185613c92acd9d1a90431169285f (1921581 bytes)
+- Loci read: translators' preface; Nat. I (prose portion near note 377–378), XIV (whole), XV.35–37, XVI.7–8, XVIII.1–2; Epiph. IV.7–12, VI.5–9, 19–20, VIII.18–20; Nis. XXXVI.1, 14–16
+- Quoted: Nat. I; XIV.3–4, 21, 23; XV.37; XVI.8; Epiph. IV.10; VI.7, 8, 20; VIII.19; Nis. XXXVI.15
+- Rights: public domain
+- Ceiling: English only; Syriac not read ("Watchers" as Ephrem's usual name for the angels rests on the NPNF note 378); Nat. I is cited by hymn only (NPNF prints no stanza number there).
+
+### John Chrysostom, Homilies on Hebrews
+- Witness: Chrysostom, *Homilies on Hebrews* (Oxford translation revised by F. Gardiner), NPNF1 14, CCEL.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://ccel.org/ccel/s/schaff/npnf114/cache/npnf114.txt
+- Retrieved: 2026-09-29T12:55:23Z
+- SHA-256 of the bytes read: e26f55f8d0739c07d73d5b664e42efbd923a43230a22d93d55261c808e9cd458 (3943878 bytes)
+- Loci read: Hom. 3.1–5; 5.1; 6 (passage at line 37968)
+- Quoted: 3.1; 3.4 (block and several sentences); 5.1
+- Rights: public domain
+- Ceiling: web transcription; reviser named in the volume ("rev. frederic gardiner, d.d.").
+
+### John Chrysostom, Homilies on John
+- Witness: *Homilies on the Gospel of St. John*, NPNF1 14, CCEL.
+- Repository ids: `work.john-chrysostom.homilies-on-john` (existing).
+- URL: as above
+- Retrieved: 2026-09-29T12:55:23Z
+- SHA-256 of the bytes read: e26f55f8d0739c07d73d5b664e42efbd923a43230a22d93d55261c808e9cd458 (3943878 bytes)
+- Loci read: Hom. 15.1–2
+- Quoted: 15.1
+- Rights: public domain
+- Ceiling: NPNF numbers this homily 15; the Summa (I q. 12 a. 1 obj. 1) cites it as "Hom. xiv in Joan."
+
+### John Chrysostom, Homilies on Colossians
+- Witness: *Homilies on Colossians*, NPNF1 13, CCEL.
+- Repository ids: `work.john-chrysostom.homilies-on-colossians` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf113/cache/npnf113.txt
+- Retrieved: 2026-09-29T12:55:22Z
+- SHA-256 of the bytes read: 54274dd9aa73ca36e4da9e763e4a27d1818b09e42ffc73795529afec703a4210 (3933882 bytes)
+- Loci read: Hom. 3 (on Col 1:15–20, lines 24321–24570); Hom. 5 (lines 25255–25290); Hom. 6 (on Col 2:13–15); Hom. 7 (on Col 2:16–19)
+- Quoted: Hom. 3 (two blocks, three phrases); Hom. 5; Hom. 6; Hom. 7
+- Rights: public domain
+- Ceiling: NPNF gives no section numbers; cited by homily.
+
+### John Chrysostom, Homilies on Ephesians
+- Witness: *Homilies on Ephesians*, NPNF1 13, CCEL.
+- Repository ids: `work.john-chrysostom.homilies-on-ephesians` (existing).
+- URL: as above
+- Retrieved: 2026-09-29T12:55:22Z
+- SHA-256 of the bytes read: 54274dd9aa73ca36e4da9e763e4a27d1818b09e42ffc73795529afec703a4210 (3933882 bytes)
+- Loci read: Hom. 3 (moral part, lines 6340–6395); Hom. 7 (on Eph 3:8–11); Hom. 22 (on Eph 6:10–13)
+- Quoted: Hom. 3; Hom. 7; Hom. 22
+- Rights: public domain
+- Ceiling: cited by homily.
+
+### John Chrysostom, Homilies on Matthew 59
+- Witness: *Homilies on Matthew* (G. Prevost, rev. M. B. Riddle), NPNF1 10; read in CCEL and in the New Advent page cached by an earlier lane.
+- Repository ids: `work.john-chrysostom.homiliae-in-matthaeum` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf110/cache/npnf110.txt ; https://www.newadvent.org/fathers/200159.htm (local copy .scratch/aquinas-ministry/chrysostom-matt59.txt, accessed 2026-09-29 per artifact-receipts.json)
+- Retrieved: 2026-09-29T17:54:08Z (CCEL)
+- SHA-256 of the bytes read: adb8f1c9a988c5050a20fb9fdbf75143dcb227e95e3dad2f560a63b757923648 (3345978 bytes)
+- Loci read: Hom. 59.1–5
+- Quoted: 59.4
+- Rights: public domain
+- Ceiling: two web witnesses of the same translation agree; New Advent mislabels 1 Cor 11:10 as "1 Corinthians 10:10".
+
+### John Chrysostom, Homilies on Acts 26
+- Witness: *Homilies on the Acts of the Apostles*, NPNF1 11, CCEL.
+- Repository ids: `work.john-chrysostom.homilies-on-acts` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf111/cache/npnf111.txt
+- Retrieved: 2026-09-30T14:09:28Z
+- SHA-256 of the bytes read: 8bdb50c6fd132a9558cbd16808ae05000ddcc7059cfd6c1d282f4f734e539c15 (4443151 bytes)
+- Loci read: Hom. 26 (on Acts 12:12–17) with note 629
+- Quoted: Hom. 26
+- Rights: public domain
+- Ceiling: web transcription.
+
+### John Chrysostom, Homilies on 1 and 2 Corinthians
+- Witness: *Homilies on the Epistles of Paul to the Corinthians*, NPNF1 12 (Edinburgh, 1889), CCEL.
+- Repository ids: `work.john-chrysostom.homilies-on-first-corinthians` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf112/cache/npnf112.txt
+- Retrieved: 2026-09-30T14:09:29Z
+- SHA-256 of the bytes read: 10a3454d6c08d52088837132f06ca07c5a1ec9d7264d909fa92c48aa3b2ddddc (2897359 bytes)
+- Loci read: 1 Cor Hom. 26 (on 1 Cor 11:2–10); 2 Cor Hom. 2 (litany for the catechumens, with the NPNF note giving the reconstructed prayer)
+- Quoted: 1 Cor Hom. 26; 2 Cor Hom. 2
+- Rights: public domain
+- Ceiling: web transcription.
+
+### John Chrysostom, De sacerdotio; Ad Theodorum lapsum; De diabolo tentatore
+- Witness: *On the Priesthood* (translations new or revised by W. R. W. Stephens, per Schaff's preface), *Exhortation to Theodore after his Fall*, *Three Homilies concerning the Power of Demons*, NPNF1 9 (New York, 1886), CCEL.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://ccel.org/ccel/s/schaff/npnf109/cache/npnf109.txt
+- Retrieved: 2026-09-30T14:09:26Z
+- SHA-256 of the bytes read: d6a51d22d996e02c47b88462f7222737b26d2363212f24e34834cfc6b580da57 (2752950 bytes)
+- Loci read: De sac. III.4–5; VI.1–4; Ad Theod. I.11–12; De diab. I.4–6; II.1–2
+- Quoted: De sac. III.4 (block), III.5, VI.4 (block and phrase); Ad Theod. I.11, I.12; De diab. I.6, II.1, II.2
+- Rights: public domain
+- Ceiling: web transcription.
+
+### Thomas Aquinas, Summa theologiae (loci cited for reception)
+- Witness: English Dominican translation (2nd rev. ed. 1920) as presented by New Advent; Latin (Leonine) from Corpus Thomisticum for I q. 45 a. 5 and q. 113 prologue.
+- Repository ids: `work.thomas-aquinas.summa-theologiae` (existing).
+- URL: https://www.newadvent.org/summa/1012.htm , 4083.htm (fetched by this lane); 1050, 1051, 1052, 1057, 1061, 1062, 1063, 1064, 1108, 1113, 1114 (shared cache); Corpus Thomisticum per manifest (ct-sth1044, ct-sth1103)
+- Retrieved: 2026-09-30T14:23:55Z (1012, 4083); others 2026-09-29 per manifest
+- SHA-256 of the bytes read: ee3e9358de1bb9f43597737f2bdb483742666ca7235053084982853630bd8118 (107866 bytes); 9cc4a4ca7eb43fb062493b171f02284957e4627af226ea6c1e51c1d0659a9a62 (124815 bytes); 41c6edfab20faec48a4181d11d3dbde6549398127633854b20c60bce9f3c5b9c (176483 bytes); 5736abad11534d6a5ebb3fa0c76ff5df228d6558cbb69163f5f437523f2c2ed1 (476518 bytes)
+- Loci read: I q. 12 a. 1 (obj. 1, ad 1), a. 7 title; I q. 45 a. 5 (Latin s.c., corpus); I q. 50 a. 3; q. 51 aa. 1–2; q. 52 aa. 1–2 (corpus); q. 57 aa. 3, 5; q. 61 a. 3 (obj. 1, s.c., corpus, ad 1); q. 62 aa. 3, 6, 8 (titles and corpus of 3, 6); q. 63 aa. 2, 7 (corpus); q. 64 aa. 2, 4 (corpus); q. 108 aa. 4, 5 (s.c.), 6 (s.c., corpus); q. 113 aa. 1–6, 8; q. 114 aa. 1, 4; III q. 83 a. 4 (corpus, ad 9)
+- Quoted: I q. 12 a. 1 ad 1; q. 50 a. 3; q. 51 a. 2 ad 1; q. 57 a. 3; q. 61 a. 3 (obj. 1); q. 62 aa. 3, 6; q. 63 aa. 2, 7; q. 64 a. 4; q. 108 aa. 4, 6; q. 113 aa. 3, 6; q. 114 a. 1; III q. 83 a. 4 and ad 9
+- Rights: public domain translation
+- Ceiling: web transcription.
+
+### Denzinger (DS 411, 800, 801)
+- Witness: Denzinger, *Enchiridion symbolorum*, Latin, patristica.net transcription.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://patristica.net/denzinger/enchiridion-symbolorum.html
+- Retrieved: 2026-09-29T12:56:36Z
+- SHA-256 of the bytes read: 604f24c46e0bc71c2018f25dc787a9ab421d4b2e9cf7d1cee1f43e910ef2708f (2333435 bytes)
+- Loci read: DS 403–411; 800–801
+- Quoted: DS 800 (Latin phrase)
+- Rights: Latin conciliar text
+- Ceiling: web transcription.
+
+### Catechism of the Catholic Church 331–336
+- Witness: CCC, English, vatican.va.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://www.vatican.va/archive/ENG0015/__P1A.HTM
+- Retrieved: 2026-09-29T12:56:38Z
+- SHA-256 of the bytes read: f5d0972215f47a1bc22e768aa4e51f454db80f32dcbc4e3dd52b4a40ae5254d3 (22605 bytes)
+- Loci read: 331, 333, 334, 335, 336 and notes 202–203
+- Quoted: 335 (one sentence), 336 (two phrases)
+- Rights: Vatican copyright; short quotations with attribution.
+- Ceiling: web text.
+
+### Douay–Rheims (Challoner)
+- Witness: Project Gutenberg eBook 1581.
+- Repository ids: `edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581` (existing).
+- URL: https://www.gutenberg.org/cache/epub/1581/pg1581.txt
+- Retrieved: 2026-09-29T12:58:58Z
+- SHA-256 of the bytes read: 7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007 (5880580 bytes)
+- Loci read: all verses listed under Scripture cited that are quoted in English
+- Quoted: Heb 1:4; 2:2; 2:16; 1 Tim 5:21; Ps 33:8; 48:15; Ezek 28:15; Dan 10:13, 20; Matt 26:53; Acts 12:15; Col 2:18; 1 Cor 11:10
+- Rights: public domain
+- Ceiling: Gutenberg transcription.
+
 ## The Latin Fathers before Dionysius
 
 ### Witness: Tertullian, *Apologeticum* 22–23 (ANF 3, S. Thelwall trans.; Latin: The Latin Library)

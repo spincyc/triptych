@@ -53,6 +53,44 @@ only when its locus was read at the source.
 | powers | Methodius | De res. I.10; Symp. III.6 | "powers" | unranked | One race with principalities, distinct from angels | Read ANF 6 |
 | principalities | Methodius | De res. I.10; Symp. III.6 | "principalities" | unranked | The ninety-nine sheep | Read ANF 6 |
 | angels | Methodius | De res. I.10 | "angels and ministers" | lowest named (implied) | "heaven of angels" | Read ANF 6 |
+| angels | Gregory Nazianzen | Or. 28.31 | Angels | unranked; listed 1 of 9 | "pure natures and unalloyed, immovable to evil, or scarcely movable"; circling the First Cause; secondary lights | yes (NPNF2 7) |
+| archangels | Gregory Nazianzen | Or. 28.31 | Archangels | unranked; listed 2 of 9 | as above | yes |
+| thrones | Gregory Nazianzen | Or. 28.31 | Thrones | unranked; listed 3 of 9 | as above | yes |
+| dominations | Gregory Nazianzen | Or. 28.31 | Dominions | unranked; listed 4 of 9 | as above | yes |
+| principalities | Gregory Nazianzen | Or. 28.31 | Princedoms | unranked; listed 5 of 9 | as above | yes |
+| powers | Gregory Nazianzen | Or. 28.31 | Powers | unranked; listed 6 of 9 | as above | yes |
+| other | Gregory Nazianzen | Or. 28.31 | Splendours; Ascents; Intelligent Powers or Intelligencies | unranked; listed 7–9 of 9 | names from activity, not scriptural order names | yes (English only; Greek not read) |
+| angels | Cyril of Jerusalem | Myst. V.6 | Angels | enumeration; listed 1 of 9 | named in the anaphora before the Sanctus | yes (NPNF2 7) |
+| archangels | Cyril of Jerusalem | Myst. V.6 | Archangels | listed 2 of 9 | as above | yes |
+| virtues | Cyril of Jerusalem | Myst. V.6 | Virtues | listed 3 of 9 | as above | yes |
+| dominations | Cyril of Jerusalem | Myst. V.6 | Dominions | listed 4 of 9 | as above | yes |
+| principalities | Cyril of Jerusalem | Myst. V.6 | Principalities | listed 5 of 9 | as above | yes |
+| powers | Cyril of Jerusalem | Myst. V.6 | Powers | listed 6 of 9 | as above | yes |
+| thrones | Cyril of Jerusalem | Myst. V.6 | Thrones | listed 7 of 9 | as above | yes |
+| cherubim | Cyril of Jerusalem | Myst. V.6 | Cherubim "with many faces" | listed 8 of 9 | as above | yes |
+| seraphim | Cyril of Jerusalem | Myst. V.6 | Seraphim | listed 9 of 9 (named last, with Isa 6:2–3) | the Church receives their hymn to share it | yes |
+| dominations | Cyril of Jerusalem | Cat. XVI.23 | Dominions | 1 of 8 (explicit ascent "yet higher") | the Comforter is their Ruler, Teacher, Sanctifier | yes |
+| thrones | Cyril of Jerusalem | Cat. XVI.23 | Thrones | 2 of 8 | as above | yes |
+| powers | Cyril of Jerusalem | Cat. XVI.23 | Powers | 3 of 8 | as above | yes |
+| principalities | Cyril of Jerusalem | Cat. XVI.23 | Principalities | 4 of 8 | as above | yes |
+| virtues | Cyril of Jerusalem | Cat. XVI.23 | Virtues | 5 of 8 | as above | yes |
+| other | Cyril of Jerusalem | Cat. XVI.23 | Spirits | 6 of 8 | named between Archangels and Virtues | yes |
+| archangels | Cyril of Jerusalem | Cat. XVI.23 | Archangels | 7 of 8 | as above | yes |
+| angels | Cyril of Jerusalem | Cat. XVI.23 | Angels ("countless myriads" in the first heaven) | 8 of 8 | as above | yes |
+| thrones | Cyril of Jerusalem | Cat. VI.6 | Thrones | 1= (with Dominions) | behold God "more than the former, but yet less than His worthiness" | yes |
+| dominations | Cyril of Jerusalem | Cat. VI.6 | Dominions | 1= (with Thrones) | as above | yes |
+| archangels | Cyril of Jerusalem | Cat. VI.6 | Archangels | 2 | behold God "as much as they are able" | yes |
+| angels | Cyril of Jerusalem | Cat. VI.6 | Angels | 3 | behold God "as much as they can bear" | yes |
+| angels | Cyril of Jerusalem | Cat. XI.11 | Angels (first heaven) | lowest; "We have above us beings greater and higher" | do not know the Son's generation | yes |
+| thrones; dominations; principalities; powers | Cyril of Jerusalem | Cat. XI.11 | Thrones, Dominions, Principalities, Powers | above the angels; unranked among themselves | do not know the Son's generation | yes |
+| thrones; dominations; principalities; powers; virtues; angels; archangels | Basil | Hex. I.5 | thrones, dominions, principalities, powers (Col 1:16), virtues, hosts of angels, dignities of archangels | unranked enumeration | the intelligible creation before the world | yes (NPNF2 8) |
+| principalities; powers; thrones; dominations | Basil | De Sp. S. 16.38 | principalities and powers, authorities, thrones, and dominions | unranked enumeration | holy by the Spirit; "and all other reasonable natures whom we cannot name" | yes (English; "powers"/"authorities" Greek not verified) |
+| archangels; thrones; powers; dominations | Athanasius | C. Ar. II.27 | Archangels, Thrones, Authorities, Dominions | unranked | many ministers "ready to be sent" | yes (NPNF2 4) |
+| angels; thrones; powers | Athanasius | C. Ar. II.19 | Angels, Thrones, Authorities | unranked; each "according to its kind" | all creatures | yes |
+| angels; powers; thrones; dominations | Athanasius | C. Ar. III.10 | Angels, Powers, Authorities, Thrones, Dominions | unranked | remain in glory by willing what the Father wills | yes |
+| angels; archangels; thrones; dominations; principalities; powers | Chrysostom | Ad Theod. I.11 | angels, archangels, thrones, dominions, principalities, powers | unranked enumeration | the heavenly assembly | yes (NPNF1 9) |
+| angels; archangels; cherubim; seraphim | Chrysostom | Hom. in Heb. 5.1 | Angels and Archangels, Cherubim and Seraphim | unranked | adore our flesh in Christ | yes (NPNF1 14) |
+| other; cherubim; seraphim | Ephrem | Epiph. VI.20 | Watchers, Cherubin, Seraphin | unranked | join the baptized in praise | yes (NPNF2 13, English only) |
 | angels | Hilary | Tract. in Ps. 134.9 | angelis | — | 1st of 6 listed; with the others more worthy than men of the name "gods" (1 Cor 8:5) | yes (CSEL 22 OCR) |
 | archangels | Hilary | Tract. in Ps. 134.9 | archangelis | — | 2nd of 6 listed | yes |
 | thrones | Hilary | Tract. in Ps. 134.9 | thronis | — | 3rd of 6 listed | yes |

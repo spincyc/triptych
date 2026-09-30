@@ -12,12 +12,15 @@ transliteration.
 | adverse powers | virtutes adversae | — | Gregory, Hom. 34.10 | Restrained by the order of Powers |
 | aevum | aevum | — | I q. 61 a. 2 (cf. In II Sent. d. 2 q. 1 a. 1) | Angelic duration between time and eternity |
 | affective knowledge | cognitio affectiva | — | I q. 64 a. 1 co. | `producens amorem Dei`; NA renders "effective" |
+| alliance / ally | — | symmachia | Gregory of Nyssa, De vita Moysis II (PG 44, 337D) | "set beside ... as an ally"; not printed in body |
 | angel | angelus | angelos | Mal 3:1; ST I q. 108 a. 5 ad 1; CH 4–5 | Office-name, not nature-name (Augustine, Enarr. in Ps. 103 s. 1 §15; CCC 329) Name of office (Gregory, Hom. 34.8: nomen officii, non naturae) |
 | angel (name of office) | angelus; `officii nomen` | angelos | *Enarr. in Ps.* 103, s. 1.15; *De civ. Dei* XV.23 | not a name of nature; CCC 329 |
 | angel entrusted with Persia | angelus cui Persis credita est | — | Jerome, In Dan. 10:13 | princes of the nations |
+| angel of peace | — | — | Chrysostom, Hom. in 2 Cor. 2; Hom. in Col. 3 | petition of the litany for the catechumens |
 | angel of punishment | — | — | Hermas, Sim. VI.3 | "belongs to the just angels" |
 | angel of repentance | — | — | Hermas, Vis. V; Sim. X.1 | The Shepherd; guardian of the penitent |
 | angel of righteousness / of iniquity | — | — | Hermas, Mand. VI.2 | The two angels with each man |
+| angel ruling a nation | Principatus (ST I q. 108 a. 6) | ethnarch\=es angelos | Basil, Adv. Eun. III.1 | Basil's argument from the dignity of a nation; Aquinas's Principalities |
 | angels | angeli | angeloi | CH 9.2 |  |
 | application of power | applicatio virtutis |  | I q. 52 a. 1 co.; a. 2 co. | ground of angelic place |
 | archangel | archangelus | — | *Enchir.* 58; *De civ. Dei* XXII.30 | ranked above angels only in XXII.30 |
@@ -38,6 +41,7 @@ transliteration.
 | by way of persuasion | per modum suadentis | — | ST I q. 111 a. 2 | How angels move the will from without |
 | candidates for angelhood | angelorum … candidati | — | Tertullian, De orat. 3.3 | the praying Church learning the Sanctus |
 | Cherubim | Cherubim | cheroubim | Ezek 10:20; Gregory, Hom. 34.9; CH 7.1 | "Fullness of knowledge" "Fulness of knowledge or stream of wisdom" |
+| chief captain (of the Lord's host) | — | archistrat\=egos | Basil, Adv. Eun. III.1; Josh 5:14 |  |
 | chief princes = archangels | principes primi | — | Jerome, In Dan. 10:13 |  |
 | circumscriptively / definitively | circumscriptive / definitive |  | I q. 52 a. 2 co. | body / angel; God neither |
 | composing and dividing | componere et dividere | — | ST I q. 58 a. 4 | Denied of angelic knowledge |
@@ -83,6 +87,7 @@ transliteration.
 | ground of presence | ratio essendi in loco | — | Paris art. 219 gloss; Cajetan on I q. 52 a. 1 | the gloss: substance is not the ratio |
 | guard, keeping | custodia | — | Hilary 134.17; Jerome, In Matth. III | *in custodiam sui angelum delegatum* |
 | guardian angel | angelus custos | — | CCC 336; Matt 18:10 | "Beside each believer" (Basil, via CCC 336) |
+| guardian of our life | custodia (ST I q. 113 pr.) | phylax t\=es z\=o\=es | Basil, Hom. in Ps. 33.5 | not printed in body |
 | guardianship and cultivation of mankind | tutela cultusque generis humani | — | Lactantius, Div. inst. II.14.1 | ANF "protection and improvement" |
 | heavenly ministry | ministerium caeleste | — | Jerome, Ep. 18.7 | the whole angelic creation |
 | heavenly powers | virtutes caelestes | ouraniai dynameis | CH 11.1 | Common name for all orders |
@@ -115,6 +120,7 @@ transliteration.
 | Michael | Michael | Michael | Dan 10:13; Jude 9; Apoc 12:7 | Quis ut Deus (Gregory, Hom. 34.9) |
 | minister (intelligent instrument) | minister, instrumentum intelligens | — | ST I q. 112 a. 1 | Definition of angelic ministry |
 | ministering spirits | spiritus administratorii | leitourgika pneumata | Heb 1:14 | "Sent to minister" |
+| ministering spirits | — | — | Heb 1:14; Athanasius, C. Ar. III.14; Chrysostom, Hom. in Heb. 3.4 |  |
 | miracle (proper / wide) | miraculum proprie / large | — | ST I q. 110 a. 4; q. 114 a. 4 | Outside the order of the whole created nature / exceeding human power |
 | mirror | speculum | — | ST I q. 56 a. 3 co.; DN 4.22 | The angelic nature as mirror of the Divine image |
 | mode of knowledge | modus cognitionis | — | ST I q. 54 pr. | Fourth head (q. 58) |
@@ -159,12 +165,14 @@ transliteration.
 | Satan | Satanas | satanas | CCC 391 | "Adversary"; the fallen angel of Scripture and Tradition |
 | Satanas | — | — | Justin, Dial. 103; Irenaeus, Adv. haer. V.21.2 | "Sata" apostate + "Nas" serpent (Justin); "Satan signifies an apostate" (Irenaeus) |
 | science | scientia | episteme | CH 3.1 | Second term |
+| secondary Lights; Splendours | — | — | Gregory Nazianzen, Or. 28.31; 38.9; 40.5 | NPNF English; Greek not read |
 | secrets of hearts | cogitationes cordium | — | ST I q. 57 a. 4 | Known to God alone |
 | seminal principles | rationes seminales | — | I q. 62 a. 3 | Grace given as seed with nature |
 | sensitive appetite | appetitus sensitivus | — | I q. 59 a. 1 | Reaches particular goods only |
 | separate substance | substantia separata |  | I q. 50 a. 3 co. | Aquinas's philosophical name for angels |
 | Seraphim | Seraphim | seraphim | Isa 6:2; Gregory, Hom. 34.9; CH 7.1 | "Burning, kindling" "Kindling or burning" |
 | service due to God only | servitus; cultus | latreia | *De civ. Dei* X.1 | Augustine borrows the Greek word |
+| shepherd (of the believer) | — | nomeus | Basil, Adv. Eun. III.1 | CCC 336 "shepherd" |
 | spirit (name of nature) | spiritus | — | *Enarr. in Ps.* 103, s. 1.15 | what the angels are |
 | spirit about matter | — | — | Athenagoras, Leg. 24; Methodius via Photius | The devil's original charge |
 | spirits and humours | spiritus et humores | — | ST I q. 111 aa. 3–4 | Bodily means by which imagination and sense are moved |
@@ -181,11 +189,13 @@ transliteration.
 | to assist / to minister | assistere / ministrare, administrare | — | ST I q. 112 a. 3; Gregory, Hom. 34.12 | From Dan 7:10 |
 | to enter (the mind) | illabi (menti) | — | Gennadius 83; *ST* I q. 56 a. 2 obj. 3 | proper to God alone |
 | to tempt | tentare | — | ST I q. 114 a. 2 | "To make trial" (experimentum sumere) |
+| tutor (of the believer) | — | paidag\=ogos | Basil, Adv. Eun. III.1 (PG 29, 656B) | own rendering; CCC 336 gives "protector" |
 | union by pressure from without | applicatio et oppressio | — | Gennadius 83 | how demons act on the possessed |
 | universal matter | materia universalis |  | I q. 50 a. 2 co.; *De sub. sep.* c. 5 | Avicebron |
 | virtual contact | contactus virtutis |  | I q. 53 a. 1 co. | English Dominican "virtual contact" |
 | virtual quantity | quantitas virtualis |  | I q. 52 a. 1 co. | contrasted with dimensive quantity |
 | Virtues | Virtutes | dynameis | Eph 1:21; 1 Pet 3:22; CH 8.1 | Channel of miracles (Gregory) Parker "Powers" — collision with powers/potestates |
 | watch-tower of the angels | specula angelorum | — | Hilary, Tract. in Ps. 137.5 | rendered "watch" |
+| Watchers | — | — (Syriac not read) | Ephrem, Nat. I, XIV; Epiph. IV, VI, VIII | Ephrem's usual name for the angels (NPNF note 378) |
 | wayfarer / comprehensor | viator / comprehensor | — | I q. 62 a. 9 | Blessed angels are comprehensores, not viatores |
 | will | voluntas | — | I q. 59 a. 1 | Inclination following intellectual apprehension of good in general |
