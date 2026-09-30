@@ -245,6 +245,467 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 - Rights: public act, Latin
 - Ceiling: vatican.va Latin; the 24 Sept 1983 decisions (AAS 76 [1984] 175–176) are known only through this decree's recital and are so marked
 
+## Before the Fathers: Israel's writings outside the canon, the Septuagint, and Philo
+
+### Septuagint (Brenton)
+- Witness: L. C. L. Brenton, The Septuagint Version of the Old Testament with an English Translation (London: Bagster, 1851), as presented by eBible.org (eng-Brenton, per-chapter HTML).
+- Repository ids: `work.lancelot-brenton.septuagint-english-translation` (existing).
+- URL: https://ebible.org/eng-Brenton/{GEN06,DEU32,DEU33,JOB01,JOB02,JOB04,JOB38,PSA008,PSA077,PSA096,PSA137,PSA148,ISA09,ISA63,DAN03,DAN04,DAG03,DAG04,TOB12,TOB03}.htm; copyright page https://ebible.org/eng-Brenton/copyright.htm
+- Retrieved: 2026-09-30T14:37:41Z–14:38:05Z
+- Loci read: Gen 6:1–11; Deut 32:7–10, 43; 33:2; Job 1:6; 2:1; 4:18; 38:4–10; Ps 8:5–9; 77:23–27; 96:7; 137:1; 148:1–6; Isa 9:5–6 (LXX 9:5 = Vulg 9:6); 63:8–9; Dan 3 (both Greek forms); Dan 4 (Theodotion); Tob 3; 12.
+- Quoted: Deut 32:8–9; Deut 32:43 (clause); Deut 33:2 (clause); Job 1:6; Job 38:7; Ps 96:7 (clause); Isa 9:6 (LXX 9:5, clause); Isa 63:9 (clause); Gen 6:2 marginal note "Alex. angels of God" (paraphrased).
+- Rights: public domain (1851).
+- Ceiling: web transcription, eBible "source files dated 12 Dec 2025"; not collated with the 1851 print. The eBible Tobit and Greek Daniel additions read like the Authorized Version's Apocrypha; Tob 12:15 (Greek) therefore paraphrased only, not quoted. Brenton verse numbering is the Septuagint's (Isa 9:5).
+
+### Douay–Rheims (Challoner)
+- Witness: Douay–Rheims Bible, Challoner revision, Project Gutenberg eBook 1581.
+- Repository ids: `work.english-college-of-douay.douay-rheims-bible` (existing).
+- URL: https://www.gutenberg.org/cache/epub/1581/pg1581.txt
+- Retrieved: per manifest (gut-douay-rheims-1581.txt)
+- SHA-256 of the bytes read: 7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007 (5880580 bytes)
+- Loci read: Gen 4:26; 5:24; 6:2; 48:16; Exod 4:22; Deut 32:8, 43; 33:2; Job 1:6; 4:18; 38:7; Ps 8:6; 77:25, 49; 81:6; 95:5; 96:7; 137:1; Wis 2:24; 16:20; Isa 9:6; 63:9; Dan 3:49, 58, 92, 95; 4:10, 14, 20; 10:21; 12:1; Tob 12:12, 15; Matt 18:10; 22:30; John 1:51; Acts 7:53; 1 Cor 10:20; 11:10; Gal 3:19; 1 Tim 2:5; Heb 1:6; 2:2, 7; 2 Pet 2:4; Jude 6, 14–15; Apoc 8:2–4.
+- Quoted: all the above that appear in quotation marks in the body.
+- Rights: public domain.
+- Ceiling: Gutenberg transcription, not collated with print.
+
+### 1 Enoch (Charles 1917)
+- Witness: R. H. Charles, The Book of Enoch, with introduction by W. O. E. Oesterley (London: SPCK, 1917), transcribed at archive.sacred-texts.com (J. B. Hare, 2004).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.sacred-texts.com/bib/boe/boe{000,001,004,009–023,042,043,064,072,074,103,104}.htm (the live sacred-texts.com is now a JS app; archive host serves the original HTML)
+- Retrieved: 2026-09-30T14:38:06Z–14:38:40Z
+- Loci read: title page; 1; 6–20; 39; 40; 61; 69 (scan); 71; 99; 100.
+- Quoted: 1:9; 6:2, 6; 8:1; 9:3; 10:4–6, 12; 12:4; 15:2, 6–8; 16:3; 19:1; 14:22–23; 39:12; 71:7; 61:10; 40:9; 100:5; 20:1–8 (phrases).
+- Rights: public domain in the US (published 1917); transcription notice says PD.
+- Ceiling: web transcription; Charles's critical signs (⌈ ⌉, 〈 〉, †) omitted in quotation, as the body footnote states; not collated with print. Charles's translation is from the Ethiopic (1912 title page; not asserted in body for 1917).
+
+### Jubilees (Charles 1917)
+- Witness: R. H. Charles, The Book of Jubilees or the Little Genesis, translated from the Ethiopic, intro G. H. Box (London: SPCK, 1917), archive.sacred-texts.com.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.sacred-texts.com/bib/jub/jub{00,01,05,11,12,13,14,17,18,24,25,35,39,40,85}.htm
+- Retrieved: 2026-09-30T14:38:42Z–14:39:02Z
+- Loci read: title; 1:27–29; 2:1–33 (with Charles's notes); 4:15–24; 5:1–20; 10:1–17; 15:25–34; 17:15–18; 48:1–14; intro "Affinities" (finding aid only).
+- Quoted: 1:27; 1:29; 2:2 (with Charles's square brackets kept); 2:3; 2:18/15:27 ("great classes"); 4:15; 4:21–22; 5:6, 10; 10:6, 8–9; 17:16; 48:10; 15:31–32.
+- Rights: public domain in the US (1917).
+- Ceiling: web transcription; footnote numerals embedded in running text removed.
+
+### Testaments of the Twelve Patriarchs (Sinker, ANF 8)
+- Witness: R. Sinker (trans.), Testaments of the Twelve Patriarchs, Ante-Nicene Fathers vol. 8 (American ed. 1886), CCEL plain text.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://ccel.org/ccel/s/schaff/anf08/cache/anf08.txt
+- Retrieved: 2026-09-30T14:39:13Z
+- SHA-256 of the bytes read: fc3df54906137039ef2371aa9cf0fb774712d8ad0fd8f08b494cf5bf90817584 (4430805 bytes)
+- Loci read: Coxe and Sinker introductions; T. Reuben 1–7 (with notes 39–48); T. Levi 1–9; T. Judah 20–21; T. Dan 6 (note 149); T. Naphtali 3, 8; T. Asher 1, 6–7; T. Benjamin 6.
+- Quoted: T. Levi 3, 5; T. Dan 6; T. Judah 20; T. Asher 6; T. Benjamin 6; T. Reuben 2 ("seven spirits of error"), 3, 5; T. Naphtali 3.
+- Rights: public domain.
+- Ceiling: CCEL text, not collated with print.
+
+### Philo (Yonge)
+- Witness: C. D. Yonge (trans.), The Works of Philo Judaeus (London: Bohn, 1854–55), as presented at earlychristianwritings.com (section numbers of the modern editions inserted).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://www.earlychristianwritings.com/yonge/book{1,9,12,15,21,41}.html (book19, book22 fetched, not used)
+- Retrieved: 2026-09-30T14:39:03Z–14:39:11Z; book41 later on 2026-09-30 (list-l13a-israel-2)
+- Loci read: De opif. 72–76; De gig. 1–18; De plant. 12–15; De conf. 168–183; De somn. I.1–3, 133–150; QG I.1–2, 92–93.
+- Quoted: De gig. 6, 12, 16; De somn. I.141–142; De conf. 171, 174, 175, 179; QG I.92.
+- Rights: public domain (Yonge).
+- Ceiling: web edition; the site's text may derive from the Hendrickson reprint; De gig. 16 reads "differing indeed in name, but not identical in reality" — apparently a transcription error for "but identical" — not quoted. QG is Yonge's English of Aucher's Latin of the Armenian.
+
+### 1 Clement; Justin; Irenaeus (ANF 1)
+- Witness: ANF vol. 1 (1885), CCEL.
+- Repository ids: `work.ante-nicene-fathers.volume-1` (existing); `work.justin-martyr.second-apology` (existing); `work.irenaeus.adversus-haereses` (existing).
+- URL: https://ccel.org/ccel/s/schaff/anf01/cache/anf01.txt
+- Retrieved: per manifest (ccel-anf01.txt)
+- SHA-256 of the bytes read: ee9c7f0ac3f4df08d07ddf81cd7e061e82a35e0d27de611cae06f1e05b2fb991 (3149312 bytes)
+- Loci read: 1 Clem. 29; 2 Apol. 5; Dial. 62, 126, 131; Adv. haer. III.12.9, III.20.4, IV.16.2, IV.20.1, IV.36.4.
+- Quoted: all listed except 1 Clem. 29 (paraphrased in final text).
+- Rights: public domain. Ceiling: CCEL text; footnote markers removed.
+
+### Athenagoras; Clement of Alexandria; Hermas (ANF 2)
+- Witness: ANF vol. 2, CCEL.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://ccel.org/ccel/s/schaff/anf02/cache/anf02.txt
+- SHA-256 of the bytes read: ae8e15414a21fe8d54a30fee7c3fbd1ee6a018e624dcd681d030da5c1cabbcac (3768675 bytes)
+- Loci read: Legatio 24–25; Strom. I.15; V.1; VI.16; VII.2; Adumbrationes in Iudam; Hermas Mand. VI.2.
+- Quoted: Leg. 24, 25; Strom. I.15 (phrase), V.1, VI.16, VII.2; Mand. VI.2. Adumbr. paraphrased (ANF text reads "verities", a transcription error).
+- Rights: public domain.
+
+### Tertullian (ANF 3, 4)
+- Witness: ANF vols. 3–4, CCEL.
+- Repository ids: `work.ante-nicene-fathers.volume-3` (existing); `work.ante-nicene-fathers.volume-4` (existing).
+- URL: https://ccel.org/ccel/s/schaff/anf03/cache/anf03.txt ; .../anf04/cache/anf04.txt
+- Loci read: De idol. 4, 9, 15; De cultu fem. I.2–3; De virg. vel. 7.
+- Quoted: De cultu fem. I.2, I.3; De idol. 4, 9; De virg. vel. 7.
+- Rights: public domain.
+
+### Origen (ANF 4, ANF 9, GCS 7)
+- Witness: ANF 4 (De principiis, Contra Celsum), ANF 9 (Comm. in Io.); W. A. Baehrens, Origenes Werke 7 (GCS 30, Leipzig 1921), archive.org OCR.
+- Repository ids: `work.origen.de-principiis` (existing); `work.origen.contra-celsum` (existing); `work.ante-nicene-fathers.volume-9` (existing).
+- URL: CCEL anf04, anf09; https://archive.org/download/origeneswerkehrs07origuoft/origeneswerkehrs07origuoft_djvu.txt
+- Retrieved: GCS 2026-09-30 (list-l13a-israel-2); others per manifest
+- SHA-256 of the bytes read: b9f385a048c18158c2f74dcd37062f48a1c68a5d05bdb07270a93692d172da2e (4237225 bytes); 3861096b158e12bc13f4516baac913cbd3d921c607862a7eace4f0257b3aefa5 (3047154 bytes); 2c72837897b3ace1f5548a9a15563062f5601c563cc566d9fec6712adcdbb290 (2230721 bytes)
+- Loci read: De princ. I.3.3; I.5.2; I.8.1; IV.35 (ANF); C. Cels. IV.51; V.4, 29, 53–55; Comm. Io. VI.25 (ANF); Hom. in Ies. Nave 15.5–6 (GCS 7 pp. 389–392).
+- Quoted: De princ. I.5.2 (phrase), I.8.1; C. Cels. IV.51, V.4, V.53, V.54, V.55; Comm. Io. VI.25; Hom. Ies. Nave 15.5, 15.6 (Latin).
+- Rights: public domain (ANF; GCS 1921 PD in US).
+- Ceiling: GCS OCR normalized ("tanien"→"tamen", "fomicationis"→"fornicationis"). PG 12 OCR is Greek-mode and unusable for Latin.
+
+### Cyprian (ANF 5)
+- Repository ids: `work.ante-nicene-fathers.volume-5` (existing).
+- URL: CCEL anf05. Cache: text/ccel-anf05.txt
+- Loci read/Quoted: De habitu virginum 14.
+- Rights: public domain.
+
+### Julius Africanus (ANF 6)
+- Repository ids: `work.ante-nicene-fathers.volume-6` (existing).
+- URL: CCEL anf06. Cache: text/ccel-anf06.txt
+- Loci read/Quoted: Chronographia frag. 2 (via Syncellus).
+- Rights: public domain.
+
+### Lactantius (ANF 7; CSEL 19)
+- Witness: ANF 7; S. Brandt, CSEL 19 (1890), archive.org OCR.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: CCEL anf07; archive.org CSEL 19 (see manifest ia-csel19-lactantius.txt)
+- Loci read: Div. Inst. II.14 (CSEL numbering; ANF II.15).
+- Quoted: English ANF II.15; Latin CSEL II.14.1 phrase "misit angelos ad tutelam cultumque generis humani".
+- Rights: public domain.
+
+### Basil (PG 29)
+- Witness: Migne PG 29, archive.org OCR (Greek).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/patrologiae_cursus_completus_gr_vol_029/patrologiae_cursus_completus_gr_vol_029_djvu.txt
+- Loci read: Adv. Eun. III.1 (cols. c. 655–658).
+- Quoted: none (paraphrase from the Greek).
+- Rights: public domain. Ceiling: Greek OCR; column numbers unclear, cited as PG 29 only.
+
+### Eusebius (Ferrar)
+- Witness: W. J. Ferrar (trans.), Eusebius, Demonstratio evangelica (1920), tertullian.org.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://www.tertullian.org/fathers/eusebius_de_06_book4.htm
+- Retrieved: 2026-09-30 (list-l13a-israel)
+- SHA-256 of the bytes read: f969714663559f4b0cfc837aab5ac34fae2a2f8c0525b3bc2b10b7afc642975d (129224 bytes)
+- Loci read: IV.7–9. Quoted: IV.7.
+- Rights: public domain in the US (published 1920).
+
+### Hilary (CSEL 22)
+- Witness: A. Zingerle, CSEL 22 (1891), archive.org OCR.
+- Repository ids: `work.hilary-of-poitiers.tractatus-super-psalmos` (existing).
+- SHA-256 of the bytes read: 0c9712d4bb1cabe200b4acc320feb70c4f0a593f59ba902fc897ae006285eb08 (2320546 bytes)
+- Loci read: Tract. in Ps. 2.29–32 (p. 60); 132.6–7 (p. 689).
+- Quoted: 2.31 (Latin); 132.6 (Latin).
+- Rights: public domain. Ceiling: OCR; section "81" read as 31 from sequence 29, 30, [31], 32.
+
+### Epiphanius (PG 41, PG 43)
+- Witness: Migne PG 41 (Panarion), PG 43 (De mensuris et ponderibus), archive.org Greek-mode OCR.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/patrologiae_cursus_completus_gr_vol_041/..._djvu.txt; .../vol_043/..._djvu.txt
+- Retrieved: 2026-09-30T14:39:34Z, 14:39:38Z
+- Loci read: Panarion 39.6.1 (Greek); De mensuris 22 (Greek).
+- Quoted: Greek transliteration only (ta pneumata ta leitourgounta en\=opion autou; ta I\=ob\=elaia); otherwise paraphrase.
+- Rights: public domain. Ceiling: Greek OCR; Latin columns unreadable; no PD English located.
+
+### Chrysostom (PG 53; NPNF 1/10)
+- Witness: Migne PG 53 (Hom. in Gen. 22), archive.org Greek OCR; NPNF 1/10 (Hom. in Matt. 76).
+- Repository ids: `work.john-chrysostom.homiliae-in-matthaeum` (existing).
+- SHA-256 of the bytes read: b6fe7617168ba125d9fa4c2401e2ead351c91c4b508eecc96056e78ddd23dab3 (4609519 bytes); adb8f1c9a988c5050a20fb9fdbf75143dcb227e95e3dad2f560a63b757923648 (3345978 bytes)
+- Loci read: Hom. in Gen. 22.1–3 (Greek); Hom. in Matt. 76.
+- Quoted: none (paraphrase from Greek; Hom. in Matt. 76 cut from final text).
+- Rights: public domain. Ceiling: Greek OCR; section numbers from OCR markers (β′ misread as δ′).
+
+### Jerome (NPNF 2/3; PL 25; PL 22)
+- Repository ids: `work.jerome.de-viris-illustribus` (existing); `work.jerome.commentaria-in-danielem` (existing); `work.nicene-and-post-nicene-fathers.series-2-volume-3` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf203/cache/npnf203.txt (retrieved 2026-09-30T14:39:15Z); PL 25 and PL 22 archive.org (manifest ia-pl25-jerome-1845.txt, ia-pl22-jerome-epist-1845.txt)
+- Loci read: De vir. ill. 4, 11; In Dan. 4:10 (PL 25); Ep. 78, 18th station (PL 22).
+- Quoted: De vir. ill. 4, 11; In Dan. 4:10 (Latin); Ep. 78 (Latin phrase).
+- Rights: public domain. Ceiling: PL OCR normalized ("pernoe-tationibus"→"pernoctationibus", "oflicia"→"officia", "qut a Gracis"→"qui a Graecis"). Jerome's Comm. in Tit. 1:12 on Enoch (PL 26) located via index but OCR illegible — not used.
+
+### Augustine (NPNF 1/2; Latin)
+- Repository ids: `work.augustine.de-civitate-dei` (existing); `work.augustine.enarrationes-in-psalmos` (existing); `work.nicene-and-post-nicene-fathers.series-1-volume-2` (existing).
+- URL: CCEL npnf102; augustinus.it cdd_15_libro (cached), cdd_11/cdd_18 fetched 2026-09-30; enarr. Ps 103 (cached aug-enarr-ps103-s1-la)
+- Loci read: De civ. Dei XI.9; XV.23 (English and Latin XV.23.4); XVIII.38; Enarr. in Ps. 103 s.1.15.
+- Quoted: XI.9; XV.23 (English; Latin sentence on Enoch); XVIII.38; Enarr. Ps. 103 s.1.15 (Latin).
+- Rights: public domain (Dods; Latin).
+
+### Cassian; Sulpicius Severus (NPNF 2/11)
+- Repository ids: `work.nicene-and-post-nicene-fathers.series-2-volume-11` (existing).
+- SHA-256 of the bytes read: 8b1206d4e7488c65b5391875fd9570a8a6bcc83270dea35ffe44010c3575d267 (3470230 bytes)
+- Loci read: Conl. VIII.7, 17, 20–21; Chron. I.2.
+- Quoted: Conl. VIII.7, 17, 21; Chron. I.2 quote cut from final text (cited only).
+- Rights: public domain.
+
+### Ambrose (CSEL 32.1)
+- Witness: C. Schenkl (ed.), Sancti Ambrosii Opera I, CSEL 32.1 (Vienna 1896/97), archive.org OCR (Google scan).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/sanctiambrosiio00ambrgoog/sanctiambrosiio00ambrgoog_djvu.txt
+- Retrieved: 2026-09-30 (list-l13a-israel-2)
+- SHA-256 of the bytes read: c21ca8f75aa87c1e38f270bf3d39d12e6cb3de8ac8dc04e06dcb7c258d02d651 (1286745 bytes)
+- Loci read: De Noe 4.8–9 (pp. 417–418) with Schenkl's source apparatus ("Philo Quaest. I 92").
+- Quoted: De Noe 4.8 (Latin), OCR normalized ("ficripturae"→"scripturae", "augelis"→"angelis").
+- Rights: public domain.
+
+### Benedict (Latin Library)
+- Repository ids: `work.benedict-of-nursia.regula-benedicti` (existing).
+- URL: https://www.thelatinlibrary.com/benedict.html (retrieved 2026-09-30)
+- SHA-256 of the bytes read: 915d0ea6db9c756d84f0360fa22ed486c71babfa29419ac57de56ba21d85d835 (98415 bytes)
+- Loci read/Quoted: Regula 19.
+- Rights: public domain text.
+
+### Dionysius, Celestial Hierarchy (Parker)
+- Repository ids: `work.pseudo-dionysius-the-areopagite.de-caelesti-hierarchia` (registered with this publication); `work.pseudo-dionysius-the-areopagite.works-part-ii-parker` (registered with this publication).
+- SHA-256 of the bytes read: ae7608cea7b9f874f2b8ebdabfbe9cfae8b74285fec914aeca3d87cd9089104d (114110 bytes)
+- Loci read/Quoted: CH 9.1–4.
+- Rights: public domain (Parker 1899).
+
+### Gregory the Great
+- Repository ids: `work.gregory-the-great.homiliae-in-evangelia` (existing).
+- SHA-256 of the bytes read: 4eb8d78cd432816ff08b76b2549b6015fe29637307a22ee1d7ba79884d68e2f1 (701111 bytes); dfd661ab607de8517fed4ffabddea2bdb80da2591230cb5b9a73efc62d56147f (35028 bytes)
+- Loci read: Hom. in Ev. 34.8–9. Quoted: 34.8 Latin phrase ("apud nos etiam nomina a ministeriis trahunt").
+- Rights: public domain.
+
+### Aquinas, Summa theologiae (English Dominican 1920, New Advent)
+- Repository ids: `work.thomas-aquinas.summa-theologiae` (existing).
+- URL: https://www.newadvent.org/summa/{1045,1051,1061,1063,1064,1075,1091,1103,1108,1110,1112,1113,1114,2098,4026}.htm (1045, 1075, 1091, 2098, 4026, 1068 fetched this lane 2026-09-30)
+- Loci read: I q.45 a.5; q.51 a.3 ad 6; q.61 a.3; q.63 aa.2, 4; q.64 a.4; q.75 a.7; q.91 aa.2, 4; q.103 a.6; q.108 aa.5–6; q.110 a.1; q.112 a.3 ad 3; q.113 aa.1–8 (s.c.); q.114 aa.1, 3; I-II q.98 a.3; III q.26 a.1.
+- Quoted: all listed except q.45 a.5, q.113 a.1 (cited).
+- Rights: public domain (1920).
+
+### Denzinger (Latin)
+- Repository ids: `work.denzinger.enchiridion-symbolorum` (existing).
+- SHA-256 of the bytes read: 604f24c46e0bc71c2018f25dc787a9ab421d4b2e9cf7d1cee1f43e910ef2708f (2333435 bytes)
+- Loci read: DS 403 (Constantinople 543, can. 1); DS 800 (Lateran IV); DS 1502–1503 (Trent).
+- Quoted: DS 403 (phrase), DS 800 (two clauses).
+- Rights: Latin conciliar texts, public domain.
+
+### Roman synod of 745 (MGH)
+- Witness: A. Werminghoff (ed.), MGH Concilia II.1 (1906), archive.org OCR.
+- Repository ids: none registered; the entry cites the edition directly.
+- SHA-256 of the bytes read: a246239977995d40164f867ff7297f93c5763150115fc2b2d67527d997f1b35a (2099550 bytes)
+- Loci read: Concilium Romanum a. 745, pp. 42–43 (Aldebert's prayer and the bishops' answer).
+- Quoted: "non plus quam trium angelorum nomina cognoscimus, id est Michael, Gabriel, Raphael".
+- Rights: public domain. Ceiling: OCR; the eight names are not quoted because the OCR of two names ("Adiiius") is uncertain.
+
+### Directory on Popular Piety
+- Repository ids: `work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.directory-on-popular-piety-2001` (registered with this publication).
+- SHA-256 of the bytes read: a9d30018f650a6854f3f13d3691a068a6519c2ebdb8d1fc9a2418ad13b90ed38 (531807 bytes)
+- Loci read/Quoted: no. 217 (one sentence).
+- Rights: © Libreria Editrice Vaticana; short quotation with attribution.
+
+### Catechism of the Catholic Church (vatican.va)
+- Repository ids: `work.catholic-church.catechism` (existing).
+- URL: https://www.vatican.va/archive/ENG0015/__PG.HTM (retrieved 2026-09-30, list-l13a-israel-2)
+- SHA-256 of the bytes read: 83fac8941c8c9463f6aa75fa84e5193ba635411be3bc7564dca32368a290e395 (11902 bytes)
+- Loci read: CCC 56–58 with notes 9–12 (note 10 cites "Dt (LXX) 32:8").
+- Quoted: CCC 57 (short phrase).
+- Rights: © LEV; short quotation.
+
+## Before the Fathers: the Greek poets and philosophers
+
+### Hesiod, Works and Days
+- Witness: Hesiod, *Works and Days*, tr. H. G. Evelyn-White, *Hesiod, the Homeric Hymns and Homerica* (Loeb 1914), Project Gutenberg eBook 348.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://www.gutenberg.org/cache/epub/348/pg348.txt
+- Retrieved: 2026-09-30T14:33:47Z
+- SHA-256 of the bytes read: ba394b58b5c57fd137af888a20abf3d1c3515c273b0f29da4778484bb15349f2 (547932 bytes)
+- Loci read: ll. 106–155 (the races), 248–264.
+- Quoted: 121–126 (block ll. 121–139 in the translation); 248–255.
+- Rights: public domain (1914; Gutenberg PD US; translator d. 1924).
+- Ceiling: Gutenberg transcription; line numbers from the translation's bracketed ranges; not collated with print.
+
+### Plato, dialogues (Jowett)
+- Witness: Plato, *Cratylus*, *Apology*, *Symposium*, *Phaedo*, *Republic*, *Timaeus*, *Laws*, *Statesman*, *Phaedrus*, tr. B. Jowett (3rd ed. 1892), Project Gutenberg eBooks 1616, 1656, 1600, 1658, 1497, 1572, 1750, 1738, 1636.
+- Repository ids: `work.plato.symposium` (existing).
+- URL: https://www.gutenberg.org/cache/epub/{1616,1656,1600,1658,1497,1572,1750,1738,1636}/pg{id}.txt
+- Retrieved: 2026-09-30T14:33:49Z–14:34:03Z (Phaedrus 14:52:41Z)
+- SHA-256 of the bytes read: e5fe819c38e449ac686945b92aca54f3d4917e04ab1d47c576c54c9072e40acc (326450 bytes); f4cc548bd8c8b59e14effdbaab9df97f29bd48f317a466fe8c3c63ad288b964c (107485 bytes); 8b5c599ea734ff0f5e8d83f399dead8c796800897b107c8d53fa909f74a05d6f (200974 bytes); 164533dde5628e7cd2e51442c29367a132fc470271f0d7e77a2ef06170a008ca (257103 bytes); 917c1cb469e1a8eba6083808764d7131da8d79140b575b4214c9d02a73ec4528 (1244164 bytes); 4f839b423198a80be946aeb7d4b0baef30862d12702a6026b2479be9718342d9 (475689 bytes); 9a6ea73161956a622d0aba13d70b82c076feed7d37d257d26e458671b26dc8c9 (1364421 bytes); 171c09697bde2a26ad7cd4775929e780b0bc218ea47c4b4755cabe437610d3f4 (252962 bytes); ce41cbe9eb5750163ef9084d253d7786d13c24968ae7f5079be3abda53114734 (235362 bytes)
+- Loci read: Cratylus 397c–398e; Apology 31c–32a, 40a–41d; Symposium 202b–203b; Phaedo 107c–108c, 113d; Republic V 468e–469b, X 617c–621b; Timaeus 40a–42e, 90a–c; Laws IV 713b–714a, X 896d–897b, 906a–b; Statesman 271c–272b; Phaedrus 246e–247a.
+- Quoted: Cratylus 397e–398c; Apology 31c–d, 40a–c; Symposium 202d–203a; Phaedo 107d–108b; Republic X 617d–e, 620d–e; Timaeus 40d, 41a–b, 90a; Laws IV 713c–e, X 896e, 906a; Statesman 271d.
+- Rights: public domain (Jowett d. 1893).
+- Ceiling: the Gutenberg texts carry no Stephanus numbers; Stephanus loci assigned by content, not collated with a paginated edition. Phaedrus 246e read to verify Athenagoras' quotation; not quoted from Jowett.
+
+### Aristotle, Metaphysics XII and De caelo
+- Witness: Aristotle, *Metaphysics* XII, tr. W. D. Ross (Oxford 1908); *On the Heavens*, tr. J. L. Stocks (Oxford 1922); Internet Classics Archive.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://classics.mit.edu/Aristotle/metaphysics.12.xii.html ; https://classics.mit.edu/Aristotle/heavens.1.i.html ; https://classics.mit.edu/Aristotle/heavens.2.ii.html
+- Retrieved: 2026-09-30T14:40:44Z–14:40:46Z
+- SHA-256 of the bytes read: c1902c3f3c37160e057cb8dffb9c565c28724361d695d1ea67d20afc5659882c (62565 bytes); 63448eff6776b62066566a85e472e4463c4a39ae3b7dbfa763ba33ca1be0ee29 (101501 bytes); fe9950b0a7f8ba0045738e098f993e23d9f0b0980feaca3bcec11844b1058b0f (96969 bytes)
+- Loci read: Metaph. XII.7–8 entire; De caelo I.3; II.12.
+- Quoted: XII.8 1073a, 1074a, 1074b; De caelo I.3 270b; II.12 292a.
+- Rights: Ross 1908 public domain; Stocks 1922 public domain in the US (pre-1929) and in the UK (translator d. 1937).
+- Ceiling: web transcription without Bekker numbers; Bekker loci assigned by content.
+
+### Plutarch, De defectu oraculorum and De genio Socratis
+- Witness: Plutarch, *Why the Oracles Cease to Give Answers* (tr. R. Midgley) and *A Discourse concerning Socrates's Daemon*, in *Plutarch's Essays and Miscellanies*, ed. W. W. Goodwin (Boston, Little, Brown; vols. 2 and 4), Project Gutenberg 78147 and 79588.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://www.gutenberg.org/cache/epub/79588/pg79588.txt ; https://www.gutenberg.org/cache/epub/78147/pg78147.txt
+- Retrieved: 2026-09-30T14:40:56Z; 14:40:51Z
+- SHA-256 of the bytes read: 844d4c840ea86f90cf2cb6df38efd7905e51ff96e77dca2ee0aba7b0784f9bcb (1133803 bytes); c9593413ce80263cfc44e22e1be06267781e863252336a0cb603809246905ac8 (1107887 bytes)
+- Loci read: De def. or. 9–19; De gen. Socr. 20–24.
+- Quoted: De def. or. 10, 13, 15, 17; De gen. Socr. 20.
+- Rights: public domain (17th-c. translations revised by Goodwin, first ed. 1870s).
+- Ceiling: Gutenberg transcription of the Goodwin revision; chapter numbers are Goodwin's.
+
+### Apuleius, De deo Socratis
+- Witness: Apuleius, *On the God of Socrates*, anonymous translation in *The Works of Apuleius* (Bohn's Classical Library, London 1853; reprint 1878), archive.org OCR; Latin text from The Latin Library.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/worksapuleiusco00gurngoog/worksapuleiusco00gurngoog_djvu.txt ; https://archive.org/download/worksofapuleiusc00apulrich/worksofapuleiusc00apulrich_djvu.txt ; https://www.thelatinlibrary.com/apuleius/apuleius.deosocratis.shtml
+- Retrieved: 2026-09-30T14:41:17Z; 14:49:43Z; 14:49:44Z
+- SHA-256 of the bytes read: 413c8e7c78c40da536f001822961e35ae2d0c479bdafc22ac5d283b8189cd728 (1476884 bytes); 2f9560bb0b0dbe7254e014605afe8a78c99e1722cf2dd7dedc29c6cce522b62a (1434536 bytes); e0173182c21a0d01a1bd79137c9398bf2832e666c40ff786837c23d1c4fa21b3 (34353 bytes)
+- Loci read: De deo Socr. 1–6, 13–17 (English and Latin).
+- Quoted: 4 (Latin), 6 (English), 13 (English and Latin), 16 (English); 15 paraphrased.
+- Rights: public domain (1853).
+- Ceiling: OCR; the 1853 OCR has errors in ch. 6 ("asjaessengers", "Itey"), so the quoted text is collated against the 1878 OCR of the same Bohn setting; chapter numbers checked against The Latin Library headings.
+
+### Plotinus, Enneads III.4, III.5; Porphyry, Life of Plotinus
+- Witness: Plotinus, *Complete Works*, tr. K. S. Guthrie (1918), vols. 1 and 4, Project Gutenberg 42930 and 42933 (vol. 1 includes Porphyry's *Life*).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://www.gutenberg.org/cache/epub/42930/pg42930.txt ; https://www.gutenberg.org/cache/epub/42933/pg42933.txt
+- Retrieved: 2026-09-30T14:40:59Z; 14:41:04Z
+- SHA-256 of the bytes read: f4ef8a36b1fc21dd615e307e65b18aad6841d6f2c39eb336f51fc80a611c66a2 (521117 bytes); af75f5796e71afd86554bf300543811bdd22f41b2aaae5f77eceb918ef8ac703 (865752 bytes)
+- Loci read: Enn. III.4 (entire, Guthrie's "Of Our Individual Guardian"); III.5.1–6; Life 10.
+- Quoted: III.4.3; III.5.6; Life 10.
+- Rights: public domain in the US (1918); translator d. 1940.
+- Ceiling: Guthrie renders daimon as "guardian"; section numbers are Guthrie's; not collated with Henry–Schwyzer.
+
+### Porphyry, De abstinentia II
+- Witness: Porphyry, *On Abstinence from Animal Food*, book II, tr. T. Taylor, *Select Works of Porphyry* (London 1823), archive.org OCR.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/selectworksporp00taylgoog/selectworksporp00taylgoog_djvu.txt
+- Retrieved: 2026-09-30T14:41:21Z
+- SHA-256 of the bytes read: 8aa0167ea2e6a4a943440e7092e74caecf7b9e170bf159ffcb15b1a0b728747f (607119 bytes)
+- Loci read: II.36–43.
+- Quoted: II.38 (Taylor); II.38–42 quoted through Eusebius (Gifford).
+- Rights: public domain (1823).
+- Ceiling: noisy OCR; one silent correction in a quotation ("maderate" → "moderate"); the evil-daemon sentences are quoted from Gifford's Eusebius, where Gifford's notes identify them as De abst. II.38–42.
+
+### Iamblichus, De mysteriis
+- Witness: Iamblichus, *On the Mysteries of the Egyptians, Chaldeans, and Assyrians*, tr. T. Taylor (2nd ed. 1895), archive.org OCR.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/b24884170/b24884170_djvu.txt
+- Retrieved: 2026-09-30T14:51:36Z
+- SHA-256 of the bytes read: ab16f1f084301058f6b31518b6e80bbbc6724302fc59c8b1ff97c8de5c5e7996 (625203 bytes)
+- Loci read: II.2–4.
+- Quoted: II.3.
+- Rights: public domain (Taylor 1821; 1895 reprint).
+- Ceiling: OCR; Porphyry's question is Taylor's italic, and two OCR errors in it are corrected in the quotation ("hy" → "by", "he hnownr" → "be known").
+
+### Justin Martyr, Apologies
+- Witness: Justin, *First Apology* and *Second Apology*, ANF 1 (Schaff edition), CCEL text.
+- Repository ids: `work.justin-martyr.first-apology` (existing); `work.justin-martyr.second-apology` (existing); `work.ante-nicene-fathers.volume-1` (existing).
+- URL: https://ccel.org/ccel/s/schaff/anf01/cache/anf01.txt
+- Retrieved: 2026-09-29T12:55:11Z
+- SHA-256 of the bytes read: ee9c7f0ac3f4df08d07ddf81cd7e061e82a35e0d27de611cae06f1e05b2fb991 (3149312 bytes)
+- Loci read: 1 Apol. 5, 44, 59–60; 2 Apol. 10, 13.
+- Quoted: all these.
+- Rights: public domain (ANF 1885).
+- Ceiling: CCEL plain text; not collated with a Greek edition.
+
+### Athenagoras, Legatio; Clement of Alexandria, Stromata
+- Witness: Athenagoras, *A Plea for the Christians*; Clement, *Stromata*; ANF 2, CCEL text.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://ccel.org/ccel/s/schaff/anf02/cache/anf02.txt
+- Retrieved: 2026-09-29T12:55:12Z
+- SHA-256 of the bytes read: ae8e15414a21fe8d54a30fee7c3fbd1ee6a018e624dcd681d030da5c1cabbcac (3768675 bytes)
+- Loci read: Leg. 23–24; Strom. I.5, I.17, I.21 (opening), V.14 (passages on Plato), VI.3, VI.17, VII.2.
+- Quoted: Leg. 23, 24; Strom. I.5, I.17, I.21, V.14, VI.17, VII.2.
+- Rights: public domain.
+- Ceiling: CCEL plain text; ANF chapter titles are editorial and are not quoted as Clement's words.
+
+### Tertullian, Apologeticum; De anima
+- Witness: Tertullian, *Apology* and *A Treatise on the Soul*, ANF 3 (CCEL); Latin of *Apologeticum* 22 from The Latin Library.
+- Repository ids: `work.tertullian.apologeticum` (existing); `work.ante-nicene-fathers.volume-3` (existing).
+- URL: https://ccel.org/ccel/s/schaff/anf03/cache/anf03.txt ; https://www.thelatinlibrary.com/tertullian/tertullian.apol.shtml
+- Retrieved: 2026-09-29T12:55:14Z; 2026-09-30T14:14:43Z
+- SHA-256 of the bytes read: 9299f3fae7c08024ea918e70d25433b7b110cc2b851d030cb22f3b1f080800c8 (4427171 bytes); 04410aeeabcd7f2ef832b41b28469ee2cdf87d06a2898afccb8d2e3dcb0bbe01 (148723 bytes)
+- Loci read: Apol. 22–23; De anima 1, 37, 39, 53.
+- Quoted: Apol. 22.1–2 (English and Latin); De anima 1, 37, 39, 53.
+- Rights: public domain.
+- Ceiling: web transcriptions.
+
+### Minucius Felix, Octavius; Origen, Contra Celsum
+- Witness: Minucius Felix, *Octavius*; Origen, *Against Celsus*; ANF 4 (CCEL).
+- Repository ids: `work.origen.contra-celsum` (existing); `work.ante-nicene-fathers.volume-4` (existing).
+- URL: https://ccel.org/ccel/s/schaff/anf04/cache/anf04.txt
+- Retrieved: 2026-09-29T12:55:15Z
+- SHA-256 of the bytes read: b9f385a048c18158c2f74dcd37062f48a1c68a5d05bdb07270a93692d172da2e (4237225 bytes)
+- Loci read: Oct. 26–27; C. Cels. V.2–6; VII.68–70; VIII.24, 31–36, 60–64.
+- Quoted: Oct. 26; C. Cels. V.4, V.5, VII.69, VIII.31, 32, 34, 64.
+- Rights: public domain.
+- Ceiling: CCEL plain text.
+
+### Lactantius, Divinae institutiones II
+- Witness: Lactantius, *Divine Institutes*, ANF 7 (CCEL; ANF numbers the chapters II.15–16); Latin, ed. S. Brandt, CSEL 19 (1890), archive.org OCR (numbers them II.14–15).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://ccel.org/ccel/s/schaff/anf07/cache/anf07.txt ; https://archive.org/download/CorpusScriptorumEcclesiasticorumLatinorum19/Corpus_scriptorum_ecclesiasticorum_Latinorum_19_djvu.txt
+- Retrieved: 2026-09-29T12:55:17Z; 2026-09-30T14:24:31Z
+- SHA-256 of the bytes read: b69327af0a84dd247c8e32848ad158b038125b534fa6333bba734c5de22e261c (3986919 bytes); c9cab1f595d738f66287faf45407805b62bb73459952f4381905499e2a8eb286 (2788107 bytes)
+- Loci read: II.14–15 Brandt (ANF II.15–16).
+- Quoted: II.14.7–8 (English); II.14.6, 8, 12 (Latin phrases).
+- Rights: public domain.
+- Ceiling: CSEL OCR; Brandt section numbers read from the page margins; the apparatus note tying the grammarians' etymology to Cratylus 398b is a finding aid only.
+
+### Eusebius, Praeparatio evangelica
+- Witness: Eusebius of Caesarea, *Preparation for the Gospel*, tr. E. H. Gifford (Oxford 1903), books IV, V, VII, XI, XIII, transcribed by Roger Pearse at tertullian.org.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://www.tertullian.org/fathers/eusebius_pe_{04_book4,05_book5,07_book7,11_book11,13_book13}.htm
+- Retrieved: 2026-09-30T14:34:08Z–14:34:14Z
+- SHA-256 of the bytes read: 554dd61a56a7b96a1d1a02cbc0b412e1cf93d5b64967f13dabcc7659c1c84ddf (118032 bytes)
+- Loci read: IV contents, 17, 22–23 with Gifford's notes; V.1–7, 15–17; VII.15–16; XI.26–27; XIII preface, 1–2, 11–15.
+- Quoted: IV.17, 22; V.1, 3, 4, 17; VII.15, 16; XI.26; XIII preface, 1, 14, 15.
+- Rights: public domain (Gifford 1903; the transcription is marked public domain).
+- Ceiling: web transcription; Gifford's page references kept only in the notes read.
+
+### Augustine, De civitate Dei VIII–X; De doctrina christiana II.40
+- Witness: Augustine, *City of God*, NPNF 1.2 (Book VIII tr. J. J. Smith; Books IX–X tr. M. Dods); *On Christian Doctrine*, tr. J. F. Shaw, NPNF 1.2; Latin of VIII–IX from augustinus.it (NBA).
+- Repository ids: `work.augustine.de-civitate-dei` (existing); `work.augustine.de-doctrina-christiana` (existing); `work.nicene-and-post-nicene-fathers.series-1-volume-2` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf102/cache/npnf102.txt ; https://www.augustinus.it/latino/cdd/cdd_08_libro.htm ; https://www.augustinus.it/latino/cdd/cdd_09_libro.htm
+- Retrieved: 2026-09-29T12:55:19Z; 2026-09-30T14:15:01Z; 14:15:03Z
+- SHA-256 of the bytes read: 5c973feda803f3e58a88ed7df210b42d436f5466741eb8dbeae713ab56dedae4 (3692898 bytes); bd8ed7a5c387c8a52d501258bbecb724e6dae8833c816822a5bb79925ef2d1aa (100585 bytes); 464d82ad37e9313a7e4c8181f2518d39ec487cb1453fb504e8bcc70280058076 (66915 bytes)
+- Loci read: VIII.5, 9, 11, 13–16, 18, 22; IX.15, 19–23; X.1–2, 9–11, 26–27, 29; De doctr. chr. II.40.60–61; the NPNF note naming Smith as translator of Book VIII.
+- Quoted: VIII.5, 9, 11, 14, 16, 18 (English and Latin), 20 (Latin), 22; IX.15, 19, 20 (English and Latin), 23 (English and Latin phrase); X.2, 9, 10, 11, 26, 29; De doctr. chr. II.40.60.
+- Rights: public domain.
+- Ceiling: CCEL and augustinus.it transcriptions; subsection numbers within chapters not used.
+
+### Isidore, Etymologiae VIII.11
+- Witness: Isidore of Seville, *Etymologiae* VIII, The Latin Library.
+- Repository ids: `work.isidore.etymologiae` (existing).
+- URL: https://www.thelatinlibrary.com/isidore/8.shtml
+- Retrieved: 2026-09-30T14:49:33Z
+- SHA-256 of the bytes read: 96480a05bcaa0360188cf5970c0d02914ee2df2e65b62f9ea4d89288d0034439 (65576 bytes)
+- Loci read: VIII.11.1–18.
+- Quoted: VIII.11.16 (Latin phrase); VIII.11.15 cited.
+- Rights: public domain text.
+- Ceiling: web transcription (Lindsay text).
+
+### Thomas Aquinas, Summa theologiae (English and Latin)
+- Witness: *ST*, English Dominican translation, 2nd rev. ed. 1920, New Advent.
+- Repository ids: `work.thomas-aquinas.summa-theologiae` (existing).
+- URL: https://www.newadvent.org/summa/{1022,1050,1051,1063,1064,1103,1110,1111,1112,1113,3094}.htm
+- Retrieved: 2026-09-29/30 (see manifest; 3094 fetched 2026-09-30T14:34:15Z)
+- SHA-256 of the bytes read: a1a20aa7d29ce6cbcfc7a9dd60dcdad0edb7f39594e2f99f9c865b048952a3ea (42227 bytes)
+- Loci read: I q.22 a.3; q.50 aa.2–3, 5; q.51 a.1; q.63 a.7; q.64 a.4; q.103 a.6; q.110 aa.1–3; q.111 a.1; q.112 a.4; q.113 aa.2, 5; II-II q.94 aa.1, 4.
+- Quoted: all of these except q.110 aa.2–3.
+- Rights: public domain (1920).
+- Ceiling: New Advent HTML; the objections' citations of Damascene, Origen, Augustine (Gen. ad litt., De div. qq. 83), Jerome and Nemesius are reported as the *Summa*'s.
+
+### Thomas Aquinas, De substantiis separatis; SCG II.92; In Metaph. XII; In De causis; In De div. nom.
+- Witness: Corpus Thomisticum (Leonine 1968 for De sub. sep.; Leonine/Marietti for SCG; Marietti 1950 for In Metaph. and In DN; Saffrey 1954 for In De causis).
+- Repository ids: `work.thomas-aquinas.de-substantiis-separatis` (registered with this publication); `work.thomas-aquinas.summa-contra-gentiles` (registered with this publication).
+- URL: https://www.corpusthomisticum.org/ots.html ; scg2091.html ; cmp12.html ; cdc00.html ; cdn00.html
+- Retrieved: ots 2026-09-29T12:54:53Z; scg2091 2026-09-29T13:39:29Z; cmp12, cdc00, cdn00 2026-09-30T14:41:06Z–14:41:11Z
+- SHA-256 of the bytes read: 3149f5709dbec16c044723d25f009a4a43caf0d38e965f28a0972b55474c78d9 (167879 bytes); f044d4518ba4eada9fc0ae4539741ad71cd9dfb014730e1d772cd023f952a36e (79602 bytes); 58a349313eea934ec0f245f40754207a798b7b6f567d38690dc6dc7a4b0d19bc (216417 bytes); 3eda0e782b143d595ba3ddb6e933a6abf592c5f3b44325e288189fff5f9124b0 (7552 bytes); c5688a430f217569300187345cdf3e7abecd2e36c9d676725dafc79518aa7908 (9523 bytes)
+- Loci read: De sub. sep. prooem., 1–4, openings of 9–11, 18–20; SCG II.92 entire; In Metaph. XII lect. 8 n. 6–7, lect. 10 n. 31–33; In De causis prooem.; In DN prooem.
+- Quoted (Latin, with English marked "our translation"): De sub. sep. prooem., 2, 3, 4, 18, 20; SCG II.92 n. 7 (English only); In Metaph. XII lect. 10 n. 31; In De causis prooem.; In DN prooem.
+- Rights: the Latin text is public domain; the Corpus Thomisticum digital edition carries "© 2019 Fundación Tomás de Aquino quoad hanc editionem", so only short excerpts are quoted.
+- Ceiling: web edition; not collated with the Leonine print.
+
+### Magisterium and Scripture
+- Witness: Lateran IV, *Firmiter* (DS 800), Denzinger via patristica.net; CCC 329–331 (vatican.va English); Douay–Rheims (Challoner), Gutenberg 1581.
+- Repository ids: `work.fourth-lateran-council.firmiter-credimus` (existing); `work.denzinger.enchiridion-symbolorum` (existing); `work.catholic-church.catechism` (existing); `edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581` (existing).
+- URL: https://patristica.net/denzinger/enchiridion-symbolorum.html ; https://www.vatican.va/archive/ENG0015/__P1A.HTM ; https://www.gutenberg.org/cache/epub/1581/pg1581.txt
+- Retrieved: 2026-09-29T12:56:36Z; 12:56:38Z; 12:58:58Z
+- SHA-256 of the bytes read: 604f24c46e0bc71c2018f25dc787a9ab421d4b2e9cf7d1cee1f43e910ef2708f (2333435 bytes); f5d0972215f47a1bc22e768aa4e51f454db80f32dcbc4e3dd52b4a40ae5254d3 (22605 bytes); 7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007 (5880580 bytes)
+- Loci read: DS 800; CCC 329–331; the Douay verses listed below.
+- Quoted: DS 800 (Latin); CCC 329 and 331 (short phrases); Douay verses.
+- Rights: DS Latin public domain; CCC English is Vatican copyright, used in two short phrases with attribution; Douay public domain.
+- Ceiling: web transcriptions.
+
 ## The Greek Fathers before Nicaea
 
 ### Clement of Rome, First Epistle to the Corinthians
@@ -1266,6 +1727,172 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 - Quoted: DR wording in appendix 01 scripture loci.
 - Rights: PD.
 - Ceiling: Gutenberg transcription; verses verified by direct string match.
+
+## Gregory the Great, Isidore, and Bede
+
+### Gregory the Great, Homiliae XL in Evangelia (Latin)
+- Witness: Gregory the Great, *Homiliae in Evangelia*, Latin text transcribed on Latin Wikisource (print base not identified by Wikisource), checked against H. Hurter, *Sanctorum Patrum opuscula selecta*, series altera, t. VI (Innsbruck: Wagner, 1892), archive.org OCR.
+- Repository ids: `work.gregory-the-great.homiliae-in-evangelia` (existing).
+- URL: https://la.wikisource.org/w/index.php?title=Homiliarum_in_Evangelia/I-VIII&action=raw ; .../I-X ; .../XXIX ; .../XXXIV (also .scratch/aquinas-ministry/gregory-34.txt, EPUB-derived); Hurter: https://archive.org/download/sanctigregoriim00igoog/sanctigregoriim00igoog_djvu.txt
+- Retrieved: 2026-09-30T14:47Z (Wikisource); 2026-09-29T13:48:47Z (Hurter)
+- SHA-256 of the bytes read: d11ae8b729f667794b6719fa6504d74fd8a4c392d62b5f61330b9ad584e46a52 (5719 bytes); 4eb8d78cd432816ff08b76b2549b6015fe29637307a22ee1d7ba79884d68e2f1 (701111 bytes)
+- Loci read: Hom. 8 (whole); 10.1; 29.1--10 (whole homily scanned; 29.2, 29.5, 29.9 read closely); 34.1--18 (whole). Hurter OCR compared at 8.2, 34.4--8, 34.11--15.
+- Quoted: 8.1, 8.2 (four passages); 10.1; 29.2; 29.9; 34.3 (four phrases); 34.6 (two); 34.7 (four); 34.8 (three); 34.9 (three); 34.10 (six); 34.11 (four, incl. Deut 32:8 as Gregory reads it); 34.12 (four); 34.13 (four); 34.14 (five); 34.15. All English renderings of the Latin are this lane's own close paraphrases (marked as such in the section's first footnote), not a published translation.
+- Rights: Latin text public domain; renderings are lane-authored.
+- Ceiling: web transcription of unidentified print base; spot-collated with Hurter OCR (agreement at every quoted phrase checked, incl. "cuncta ibi singulorum sunt"); editorial Scripture/source parentheses of the web text (e.g. "(De Coel. Hierarch. cap. 7, 9, 13)" in 34.12) are omitted from quotations without ellipsis; PL 76 not checked (see Open issues).
+
+### Gregory the Great, Moralia in Iob (English, Library of the Fathers)
+- Witness: *Morals on the Book of Job by S. Gregory the Great*, Library of the Fathers 18, 21, 23, 31 (Oxford: Parker, 1844--1850): vol. I (Books I--X), vol. II (XI--XXII), vol. III pt 1 (XXIII--XXIX), vol. III pt 2 (XXX--XXXV); Books XXXII and XXXIV also in the lectionarycentral.com transcription of the same translation.
+- Repository ids: `work.gregory-the-great.moralia-in-iob` (registered with this publication).
+- URL: https://archive.org/download/moralsonbookofj01greg/moralsonbookofj01greg_djvu.txt ; https://archive.org/download/21ALibraryOfFathersOfTheHolyCatholicV21/21ALibraryOfFathersOfTheHolyCatholicV21_djvu.txt ; https://archive.org/download/23ALibraryOfFathersOfTheHolyCatholicV23/23ALibraryOfFathersOfTheHolyCatholicV23_djvu.txt ; https://archive.org/download/31ALibraryOfFathersOfTheHolyCatholicV31/31ALibraryOfFathersOfTheHolyCatholicV31_djvu.txt ; https://www.lectionarycentral.com/GregoryMoralia/Book32.html ; .../Book34.html
+- Retrieved: 2026-09-29T17:54:46Z (vol. I); 2026-09-29T13:13:13Z (vol. II); 2026-09-30T14:47:14Z (III.1); 2026-09-30T14:47:08Z (III.2); 2026-09-29T17:51Z (lectionarycentral)
+- SHA-256 of the bytes read: 96e0f3706c7a9a427bb3dffa578be87bd66ac96617fc90a7266ce7f241264ad2 (1806303 bytes); f13861be5715cabe5283d5bd7f38cb35c2a1332bd6dc04cf049475b88da5c493 (1916422 bytes); 84884416006c106a32ef20b8a574d9c06b1ce7db6b4814a73397d25c0356c824 (1027584 bytes); e57596ba2cedfc47ab9ff599c660b172262d9e25c33782c87419544a925f32be (2108312 bytes); 426a7d69992a5e03be469291433c135f5520e125db35b53f65d850b927b4dbef (153054 bytes); 01cd003e8190bffcb1c6a15e2cff7cde9c3f0a484c881c9627a3a7bbe5fa637a (139202 bytes)
+- Loci read: Epistle to Leander (opening and note); II.1--12; IV.3.8--IV.7.12; IV.29.55; V.38.68--69; XVII.12.15--XVII.16.22; XXVIII.14.34--XXVIII.15.35; XXXII.22.45--XXXII.24.51; XXXIV.6--XXXIV.7.16; XXXIV.19.38--XXXIV.23.47; index s.v. Isidore (vol. III.2).
+- Quoted: II.3.3 (block and three phrases); II.4.4; II.4.5; IV.3.8 (three phrases); IV.7.12; IV.29.55 (four phrases); V.38.68 (block, one phrase); XVII.12.17 (block, one phrase); XVII.13.18 (two); XVII.13.19; XXVIII.14.34 (three); XXXII.23.47 (block, four phrases); XXXII.23.48 (block, eight phrases); XXXII.23.49; XXXII.24.50 (two); XXXIV.7.12 (block); XXXIV.7.13; XXXIV.20.39; XXXIV.21.40 (block, one phrase); XXXIV.23.47.
+- Rights: public domain (1844--1850).
+- Ceiling: archive.org OCR, silently corrected for evident scanning errors ("tlie" > "the", "hght" > "light", "}" > "?", superscript/marginal debris removed); lectionarycentral transcription collated against the LF 31 scan at XXXII.23.47--48, XXXIV.7.12--13, XXXIV.23.47 (agreement). Chapter numbers taken from the LF marginal chapter marks; the speech passage (II.7.8--12) was read but not quoted because its chapter division is not legible in the OCR. Latin Moralia not read.
+
+### Gregory the Great, Dialogues IV (English)
+- Witness: *The Dialogues of Saint Gregory ... Translated into our English Tongue by P.W. and printed at Paris in 1608*, re-edited by Edmund G. Gardner (London: Philip Lee Warner, 1911), Book IV, pp. 177--258, transcribed by Roger Pearse (2004) at tertullian.org.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://www.tertullian.org/fathers/gregory_04_dialogues_book4.htm ; edition details from https://www.tertullian.org/fathers/gregory_00_dialogues_intro.htm
+- Retrieved: 2026-09-30T14:22:02Z (Book IV cache); intro page read by WebFetch 2026-09-30.
+- SHA-256 of the bytes read: c0fcbac5f0d6cbf6a192398f793368cf85d2e26253db4a40d0edd116c43698b1 (202560 bytes)
+- Loci read: IV.1--20; 25--29; 36--38; 58--59; editor's notes 1--23, 83--89.
+- Quoted: IV.1 (three phrases); IV.3; IV.5 (two); IV.7; IV.14 (two); IV.15 (three); IV.19 (two); IV.29; IV.36 (three); IV.58 (block).
+- Rights: public domain (1608 translation; 1911 edition; transcription declared public domain).
+- Ceiling: web transcription, not collated with the 1911 print; chapter numbers are the 1911 edition's (Aquinas, ST I q. 110 a. 1 s.c., cites the IV.5 passage as "Dial. iv, 6"); Latin not read.
+
+### Isidore of Seville, Etymologiae VII.5 (Latin)
+- Witness: Isidore, *Etymologiarum sive Originum liber VII*, ch. 5 "De angelis", The Latin Library transcription.
+- Repository ids: `work.isidore.etymologiae` (existing).
+- URL: https://www.thelatinlibrary.com/isidore/7.shtml
+- Retrieved: 2026-09-29T17:50:49Z
+- SHA-256 of the bytes read: 44312348f815c0af0ed00ecb532cbe327d3dc6a50f32ef78726b3d8abe37b150 (80402 bytes)
+- Loci read: VII.1 (opening), VII.5.1--33 (whole chapter), VII.8.22.
+- Quoted: VII.5.1--2 (block); 5.4; 5.6; 5.8; 5.10--11 (two phrases); 5.12; 5.15 (gloss); 5.24; 5.23; 5.28 (two); 5.29; 5.31 (block); 5.33; Gen 1:6, 8 as Isidore cites it.
+- Rights: public domain Latin; English renderings lane-authored.
+- Ceiling: web transcription; print base (presumably Lindsay 1911) not verified; the site's orthography (V for initial U) kept where quoted.
+
+### Isidore of Seville, Sententiae I.10 (Latin)
+- Witness: Isidore, *Sententiarum libri tres* I.10 "De angelis", Arevalo's text (Rome 1797--1803) in Migne, PL 83 (Paris), two archive.org scans (patrologiae83unknuoft; bim ... 1850_83).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/patrologiae83unknuoft/patrologiae83unknuoft_djvu.txt ; https://archive.org/download/bim_early-english-books-1641-1700_1850_83/bim_early-english-books-1641-1700_1850_83_djvu.txt
+- Retrieved: 2026-09-30T14:47:25Z; 2026-09-30T14:50:58Z
+- SHA-256 of the bytes read: e59b2eb652ece1ccf2f4cea6c0a35112dff950a7868c7e97034ee25ede7c0930 (5023656 bytes); 9201ea42ceb36f1bfca2e1ffe9c1719326a650fc5b9f8e4ce1e208d78f07cc9c (4053165 bytes)
+- Loci read: I.10.1--29 (PL 83, 553--560) with the notes of Loaisa and Arevalo (sources in Gregory Hom. 34, Moralia V, XXVIII, Augustine).
+- Quoted: I.10.2 (three phrases); 10.3; 10.4; 10.13; 10.14 (block); 10.16; 10.17; 10.19; 10.20; 10.24; 10.26.
+- Rights: public domain.
+- Ceiling: Latin reconstructed from two poor OCR scans read against each other (normalized to Migne orthography: coelum, charitas, j); no page-image check; column range approximate from running heads.
+
+### Bede, In Lucae evangelium expositio I (Latin)
+- Witness: Bede, *In Lucae evangelium expositio*, book I, in Migne, PL 92 (Paris, 1850), archive.org OCR.
+- Repository ids: `work.bede.in-lucae-evangelium-expositio` (existing).
+- URL: https://archive.org/download/bim_early-english-books-1641-1700_1850_92/bim_early-english-books-1641-1700_1850_92_djvu.txt
+- Retrieved: 2026-09-30T14:47:37Z
+- SHA-256 of the bytes read: 891f98ed5b5ee2ed3c71bcef4ad32ea67580e71e01e9ac2654fbbc5296a3e550 (3120643 bytes)
+- Loci read: on Luke 1:5--28 (PL 92, 313--318); on Luke 2:8--14 (PL 92, 332--334).
+- Quoted: on Luke 1:26 (two phrases, PL 92, 315--316); on Luke 2:13--14 (block and three phrases, PL 92, 333).
+- Rights: public domain; renderings lane-authored.
+- Ceiling: reconstructed from OCR (single scan); wording identical to Gregory Hom. 34.8--9 where Bede copies it, which confirms the reconstruction there.
+
+### Bede, Homiliae evangelii I.1 (Latin)
+- Witness: Bede, homily "In festo Annuntiationis beatae Mariae" (PL numbering Hom. I.1, "Homiliae genuinae"), Migne, PL 94 (Paris, 1850), archive.org OCR.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/bim_early-english-books-1641-1700_1850_94/bim_early-english-books-1641-1700_1850_94_djvu.txt
+- Retrieved: 2026-09-30T14:47:33Z
+- SHA-256 of the bytes read: eb888073ed25a141a81b55c90bc447e829babb03ab702a76171633012aadfec5 (3827054 bytes)
+- Loci read: PL 94, 9--12 (homily opening through the Ave); also PL 94 Hom. "In feria IV Quatuor Temporum" (Gregory 34.8--9 copied) noted, not used.
+- Quoted: PL 94, 9 (block); 9--10 (two phrases).
+- Rights: public domain; renderings lane-authored.
+- Ceiling: reconstructed from interleaved two-column OCR; CCSL numbering (I.3) not verified.
+
+### Bede, Explanatio Apocalypsis (English)
+- Witness: *The Explanation of the Apocalypse by Venerable Beda*, trans. Edward Marshall (Oxford and London: James Parker, 1878), archive.org OCR; Fordham Medieval Sourcebook page (preface only).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/explanationapoc00bedegoog/explanationapoc00bedegoog_djvu.txt ; https://sourcebooks.web.fordham.edu/source/bede-apoc.asp
+- Retrieved: 2026-09-30T14:49:33Z; 2026-09-30T14:47:20Z
+- SHA-256 of the bytes read: 738afa825b4646d27ad35508904a679993301c51b97f4842bc7f410ebb7b72a6 (364008 bytes); 840e32eb2c7a02b0b7d09eefee0de06908afec03fe9249024c543dd26a98bf80 (37752 bytes)
+- Loci read: book II on Apoc 7:11--13, 12:1--14; book III on 19:9--11, 22:8--10.
+- Quoted: on 12:7 (block); on 12:7 (lemma "fought", one phrase); on 12:10; on 12:12; on 19:10.
+- Rights: public domain (1878).
+- Ceiling: OCR corrected for evident errors ("jmned" > "joined", "citizensi" > "citizens,"); Latin (PL 93, cached as ia-pl93-bede.txt) not collated.
+
+### Bede, Historia ecclesiastica gentis Anglorum (English)
+- Witness: *Bede's Ecclesiastical History of England*, a revised translation by A. M. Sellar (London: George Bell, 1907), incl. Sellar's Life of Bede and Cuthbert's letter on Bede's death; Project Gutenberg eBook 38326.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://www.gutenberg.org/cache/epub/38326/pg38326.txt
+- Retrieved: 2026-09-30T14:47:15Z
+- SHA-256 of the bytes read: 977da0babf070c825befb0a5db65a9cc2440d9ab45aa869a959c1bab911be2c8 (1093654 bytes)
+- Loci read: Life of Bede (dates; Cuthbert's letter); II.1; III.8; III.19; IV.3; IV.23; V.12; V.13; V.14; V.19; notes 332--333, 547, 706, 926.
+- Quoted: Cuthbert's letter (two phrases); II.1 (two); III.8 (two); III.19 (six); IV.3 (block, three phrases); IV.23 (two); V.12 (four); V.13 (three); V.19.
+- Rights: public domain in the US (1907); translator's death date not verified for life+70 jurisdictions.
+- Ceiling: e-text of the 1907 print, not collated with page images; Latin (Plummer) not read (thelatinlibrary URLs 404).
+
+### Rabanus Maurus, De universo I.5 (Latin)
+- Witness: Rabanus Maurus, *De universo libri XXII*, I.5 "De angelis", Migne, PL 111 (Paris, 1852; running head OCR "CXIl"), archive.org OCR.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/bim_early-english-books-1641-1700_patrologiae-cursus-completus-_1852_111/bim_early-english-books-1641-1700_patrologiae-cursus-completus-_1852_111_djvu.txt
+- Retrieved: 2026-09-30T14:47:28Z
+- SHA-256 of the bytes read: 388452e9eac45018b493be159eeaa67fff350b298b2682db021e5bf80abe5bf2 (4995841 bytes)
+- Loci read: I.5 whole (PL 111, c. 27--32); title page.
+- Quoted: I.5 (Gregory's sentence "Sed quid prodest..."; "Quod nomen non per naturam, sed per officium ministrationis sortiti sunt").
+- Rights: public domain.
+- Ceiling: OCR; "Quod" reconstructed from "Quo"; column range approximate.
+
+### Thomas Aquinas, Summa theologiae (English and Latin)
+- Witness: *Summa theologiae*, Fathers of the English Dominican Province, 2nd rev. ed. 1920, New Advent.
+- Repository ids: `work.thomas-aquinas.summa-theologiae` (existing).
+- URL: https://www.newadvent.org/summa/1050.htm ... 1064.htm, 1106.htm ... 1114.htm
+- Retrieved: 2026-09-29 (manifest, e.g. 1108 at 12:54:13Z)
+- Loci read: I q. 51 aa. 1--2; q. 54 a. 5; q. 58 a. 3; q. 61 a. 3; q. 62 a. 8; q. 63 aa. 2--3, 7; q. 64 aa. 2, 4; q. 106 a. 3; q. 108 aa. 5--8; q. 109 a. 4; q. 110 aa. 1, 4; q. 111 a. 2; q. 112 aa. 1--4; q. 113 aa. 3, 8; name counts over I qq. 50--64, 106--114 (Gregory 52, Augustine 110, Damascene 18, Jerome 9, Isidore 4, Ambrose 3, Bede 1).
+- Quoted: q. 51 a. 1 ad 2; q. 58 a. 3 ad 3; q. 51 a. 2 ad 3; q. 63 a. 7 (s.c. paraphrase, co. "the more probable view", ad 1); q. 64 a. 2 ad 4; q. 108 a. 5 co. and ad 3 (paraphrase), a. 6 co. (three phrases), a. 8 co.; q. 111 a. 2 obj. 2; q. 112 a. 2 s.c. and co.; a. 3 obj. 1, ad 3; q. 113 a. 3 co., a. 8 co.
+- Rights: public domain translation.
+- Ceiling: New Advent presentation; the English edition misprints Gregory's homily as "Hom. xxiv" in q. 108; Latin not consulted for these loci.
+
+### Douay--Rheims Bible (Challoner), with notes
+- Witness: Douay--Rheims (Challoner revision), Project Gutenberg eBook 1581.
+- Repository ids: `work.english-college-of-douay.douay-rheims-bible` (existing); `edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581` (existing).
+- URL: https://www.gutenberg.org/cache/epub/1581/pg1581.txt
+- Retrieved: 2026-09-29T12:58:58Z
+- SHA-256 of the bytes read: 7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007 (5880580 bytes)
+- Loci read: all verses listed under Scripture cited; notes on Ezek 28:12 and Apoc 19:10.
+- Quoted: Luke 15:10; Ezek 28:12, 13; Eph 1:21; Col 1:16; Ps 103:4; Isa 14:13--14; Apoc 12:7; Ps 23:8, 10; Ps 9:5; Deut 32:8; Exod 7:1; Rom 13:10; Isa 6:6--7; Dan 7:10; Zach 2:3--4; Ps 79:2; Apoc 22:9; Job 1:6; 4:18; 25:2, 3; 40:14; 41:16, 24, 25; Dan 10:13; 12:1; Matt 18:10; Acts 12:15; Heb 1:14 (as quoted by Gregory/Isidore); Mal 3:1; Job 41:16; notes on Ezek 28:12 and Apoc 19:10.
+- Rights: public domain.
+- Ceiling: e-text; not collated with print.
+
+### Catechism of the Catholic Church
+- Witness: CCC (English, vatican.va), Part One, section on heaven and earth.
+- Repository ids: `work.catholic-church.catechism` (existing).
+- URL: https://www.vatican.va/archive/ENG0015/__P1A.HTM
+- Retrieved: 2026-09-29T12:56:38Z
+- SHA-256 of the bytes read: f5d0972215f47a1bc22e768aa4e51f454db80f32dcbc4e3dd52b4a40ae5254d3 (22605 bytes)
+- Loci read: 329--336.
+- Quoted: none verbatim beyond the single words "angel"/"spirit" (CCC 329); 332, 333, 335, 336 cited by paraphrase.
+- Rights: Vatican copyright; no extended quotation.
+- Ceiling: official web text.
+
+### Directory on Popular Piety and the Liturgy (2001)
+- Witness: Congregation for Divine Worship and the Discipline of the Sacraments, *Directory on Popular Piety and the Liturgy* (Vatican City, December 2001), English, vatican.va.
+- Repository ids: `work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.directory-on-popular-piety-2001` (registered with this publication).
+- URL: https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html
+- Retrieved: 2026-09-29T12:56:46Z
+- SHA-256 of the bytes read: a9d30018f650a6854f3f13d3691a068a6519c2ebdb8d1fc9a2418ad13b90ed38 (531807 bytes)
+- Loci read: 215--217; title page.
+- Quoted: none (no. 217 paraphrased).
+- Rights: Vatican copyright; paraphrase only.
+- Ceiling: official web text.
+
+### Catholic Encyclopedia, "Dionysius the Pseudo-Areopagite" (Stiglmayr, 1909)
+- Witness: J. Stiglmayr, "Dionysius the Pseudo-Areopagite", *Catholic Encyclopedia* V (1909), New Advent.
+- Repository ids: `work.catholic-encyclopedia.volume-5` (existing).
+- URL: https://www.newadvent.org/cathen/05013a.htm
+- Retrieved: 2026-09-29T13:10:56Z
+- SHA-256 of the bytes read: a704ad6ccc98d22749dce0515c081c40a973bcd67993a0db3ad872c9c5aa3433 (61832 bytes)
+- Loci read: paragraphs on Michael II's gift (827), Hilduin, Eriugena (c. 858, for Charles the Bald).
+- Quoted: none.
+- Rights: public domain.
+- Ceiling: finding aid for one historical fact in the Rabanus subsection; no position attributed from it.
 
 ## Angelic substance; bodies, place, and motion (ST I qq. 50-53)
 

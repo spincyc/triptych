@@ -24,6 +24,25 @@ only when its locus was read at the source.
 | principalities | Dionysius (via Aquinas) | ST I q. 108 a. 6; cf. CH 6 | Principatus | 7 | lowest hierarchy (point of difference from Gregory) | via Aquinas |
 | archangels | Dionysius (via Aquinas) | ST I q. 108 a. 6; cf. CH 6 | Archangeli | 8 | lowest hierarchy | via Aquinas |
 | angels | Dionysius (via Aquinas) | ST I q. 108 a. 6; cf. CH 6 | Angeli | 9 | lowest hierarchy | via Aquinas |
+| cherubim | 1 Enoch (Charles 1917) | 1 En 14:11, 18; 61:10; 71:7 | "cherubim"; "Cherubic" | unranked | Fiery cherubim in the house of God; with Seraphin and Ophannin they "sleep not And guard the throne" | yes |
+| seraphim | 1 Enoch (Charles 1917) | 1 En 61:10; 71:7 | "Seraphin" | unranked | Around the throne; "they who sleep not" | yes |
+| thrones | 1 Enoch (Charles 1917) | 1 En 61:10; 71:7 | "Ophannin" (Charles's transliteration) | unranked | Named with Cherubim and Seraphim; identification with Thrones not made by the witness | yes (term only) |
+| powers | 1 Enoch (Charles 1917) | 1 En 61:10 | "angels of power" | unranked | Summoned at the judgment | yes |
+| principalities | 1 Enoch (Charles 1917) | 1 En 61:10 | "angels of principalities" | unranked | Summoned at the judgment | yes |
+| archangels | 1 Enoch (Charles 1917) | 1 En 20:1–8 | "holy angels who watch" (seven named) | — | Uriel, Raphael, Raguel, Michael, Saraqael, Gabriel, Remiel with offices | yes |
+| archangels | 1 Enoch (Charles 1917) | 1 En 40:2–9 | "four presences" | — | Michael, Raphael, Gabriel, Phanuel | yes |
+| thrones | Testament of Levi (Sinker, ANF 8) | T. Levi 3 | "thrones" | 4th heaven from the top (below the angels of the presence and the angels who bear answers) | Hymns ever offered to God | yes |
+| dominations | Testament of Levi (Sinker, ANF 8) | T. Levi 3 | "dominions" | same heaven as thrones | Hymns ever offered to God | yes |
+| archangels | Clement of Alexandria (ANF 2) | Strom. VI.16 | "first-born princes of the angels" | — | Seven, of greatest power | yes |
+| angels | Jubilees (Charles 1917) | Jub 2:2, 18; 15:27 | "angels of the presence", "angels of sanctification" | two "great classes" above the angels of the elements | Created on the first day | yes |
+| angels | Eusebius | *Praep. ev.* VII.15 | angels (Gifford) | — (unranked list) | among the rational powers ordered like the stars, servants of God | yes (Gifford 1903) |
+| archangels | Eusebius | *Praep. ev.* VII.15 | archangels | — (unranked list) | as above | yes |
+| principalities | Eusebius | *Praep. ev.* VII.15 | principalities | — (unranked list) | as above | yes |
+| powers | Eusebius | *Praep. ev.* VII.15 | powers | — (unranked list) | as above | yes |
+| thrones | Eusebius | *Praep. ev.* VII.15 | thrones | — (unranked list) | as above | yes |
+| dominations | Eusebius | *Praep. ev.* VII.15 | dominions | — (unranked list) | as above | yes |
+| archangels | Iamblichus (pagan) | *De mysteriis* II.3 | archangels | 2 (after the gods) | apparitions "terrible, and at the same time mild"; nearer to divine causes | yes (Taylor OCR) |
+| angels | Iamblichus (pagan) | *De mysteriis* II.3 | angels | 3 (after archangels, above daemons) | apparitions simpler than daemons', "more mild" | yes (Taylor OCR) |
 | seraphim | Clement of Rome | 1 Clem. 34 | (Isa 6:3 quoted; order unnamed) | — | The Sanctus of Isa 6:3 joined to Dan 7:10's myriads | Read ANF 1; order implied, not named |
 | seraphim | Ignatius (longer recension) | Trall. 5 | "seraphim" | 1 (with cherubim; "pre-eminence") | Pre-eminent among the orders listed | Read ANF 1 (English) |
 | cherubim | Ignatius (longer recension) | Trall. 5 | "cherubim" | 1 (with seraphim) | Pre-eminent among the orders listed | Read ANF 1 (English) |
@@ -187,6 +206,60 @@ only when its locus was read at the source.
 | principalities | Aquinas, ST I q. 108 | a. 6 s.c. | Principalities | 7 | First of lowest hierarchy (Dionysius); Gregory places them 5th | yes |
 | archangels | Aquinas, ST I q. 108 | a. 6 s.c. | Archangels | 8 | Middle of lowest hierarchy | yes |
 | angels | Aquinas, ST I q. 108 | a. 6 s.c. | Angels | 9 | Last; common name proper to lowest order (a. 5 ad 1) | yes |
+| seraphim | Gregory the Great, *Hom. in Evang.* | 34.7 (list, ascending), 34.8--10 (offices) | seraphim | 1 | "ardentes vel incendentes"; so joined to God that no spirits stand between; their flame is love (34.10) | verified at locus (Wikisource Latin; Hurter 1892 OCR check) |
+| cherubim | Gregory the Great, *Hom. in Evang.* | 34.7 (list, ascending), 34.8--10 (offices) | cherubim | 2 | "plenitudo scientiae"; fuller knowledge the nearer they contemplate God (34.10) | verified at locus (Wikisource Latin; Hurter 1892 OCR check) |
+| thrones | Gregory the Great, *Hom. in Evang.* | 34.7 (list, ascending), 34.8--10 (offices) | throni | 3 | God sits in them and decrees his judgments through them (34.10; Ps 9:5) | verified at locus (Wikisource Latin; Hurter 1892 OCR check) |
+| dominations | Gregory the Great, *Hom. in Evang.* | 34.7 (list, ascending), 34.8--10 (offices) | dominationes | 4 | surpass principalities and powers; "dominari ... subjectos quosque possidere" (34.10) | verified at locus (Wikisource Latin; Hurter 1892 OCR check) |
+| principalities | Gregory the Great, *Hom. in Evang.* | 34.7 (list, ascending), 34.8--10 (offices) | principatus | 5 | preside over the good spirits and dispose them to the divine ministries; "principari est inter reliquos priorem existere" (34.10) | verified at locus (Wikisource Latin; Hurter 1892 OCR check) |
+| powers | Gregory the Great, *Hom. in Evang.* | 34.7 (list, ascending), 34.8--10 (offices) | potestates | 6 | the adverse powers are subject to them and curbed, lest they tempt men as much as they wish (34.10) | verified at locus (Wikisource Latin; Hurter 1892 OCR check) |
+| virtues | Gregory the Great, *Hom. in Evang.* | 34.7 (list, ascending), 34.8--10 (offices) | virtutes | 7 | through them signs and miracles are most often done (34.10) | verified at locus (Wikisource Latin; Hurter 1892 OCR check) |
+| archangels | Gregory the Great, *Hom. in Evang.* | 34.7 (list, ascending), 34.8--10 (offices) | archangeli | 8 | "summi nuntii", announce the highest things; Gabriel to Mary (34.8) | verified at locus (Wikisource Latin; Hurter 1892 OCR check) |
+| angels | Gregory the Great, *Hom. in Evang.* | 34.7 (list, ascending), 34.8--10 (offices) | angeli | 9 | "nuntii", announce the least things; "nomen officii, non naturae" (34.8) | verified at locus (Wikisource Latin; Hurter 1892 OCR check) |
+| angels | Gregory the Great, *Moralia* (LF trans.) | XXXII.23.48 | Angels | -- (unranked enumeration; list position 1) | one of the nine stones of Ezek 28:13 covering the first angel | verified at locus (LF vol. III pt 2 scan and lectionarycentral transcription) |
+| archangels | Gregory the Great, *Moralia* (LF trans.) | XXXII.23.48 | Archangels | -- (unranked enumeration; list position 2) | one of the nine stones of Ezek 28:13 covering the first angel | verified at locus (LF vol. III pt 2 scan and lectionarycentral transcription) |
+| thrones | Gregory the Great, *Moralia* (LF trans.) | XXXII.23.48 | Thrones | -- (unranked enumeration; list position 3) | one of the nine stones of Ezek 28:13 covering the first angel | verified at locus (LF vol. III pt 2 scan and lectionarycentral transcription) |
+| dominations | Gregory the Great, *Moralia* (LF trans.) | XXXII.23.48 | Dominations | -- (unranked enumeration; list position 4) | one of the nine stones of Ezek 28:13 covering the first angel | verified at locus (LF vol. III pt 2 scan and lectionarycentral transcription) |
+| virtues | Gregory the Great, *Moralia* (LF trans.) | XXXII.23.48 | Virtues | -- (unranked enumeration; list position 5) | one of the nine stones of Ezek 28:13 covering the first angel | verified at locus (LF vol. III pt 2 scan and lectionarycentral transcription) |
+| principalities | Gregory the Great, *Moralia* (LF trans.) | XXXII.23.48 | Princedoms | -- (unranked enumeration; list position 6) | one of the nine stones of Ezek 28:13 covering the first angel | verified at locus (LF vol. III pt 2 scan and lectionarycentral transcription) |
+| powers | Gregory the Great, *Moralia* (LF trans.) | XXXII.23.48 | Powers | -- (unranked enumeration; list position 7) | one of the nine stones of Ezek 28:13 covering the first angel | verified at locus (LF vol. III pt 2 scan and lectionarycentral transcription) |
+| cherubim | Gregory the Great, *Moralia* (LF trans.) | XXXII.23.48 | Cherubim | -- (unranked enumeration; list position 8) | one of the nine stones of Ezek 28:13 covering the first angel | verified at locus (LF vol. III pt 2 scan and lectionarycentral transcription) |
+| seraphim | Gregory the Great, *Moralia* (LF trans.) | XXXII.23.48 | Seraphim | -- (unranked enumeration; list position 9) | one of the nine stones of Ezek 28:13 covering the first angel | verified at locus (LF vol. III pt 2 scan and lectionarycentral transcription) |
+| seraphim | Isidore, *Etymologiae* | VII.5.5--24 (exposition, ascending) | seraphin | 1 | "ardentes vel incendentes"; no angels between them and God (VII.5.24) | verified at locus (Latin Library transcription) |
+| cherubim | Isidore, *Etymologiae* | VII.5.5--24 (exposition, ascending) | cherubin | 2 | "scientiae multitudo"/"plenitudo scientiae"; the two figures over the propitiatory (VII.5.22--23) | verified at locus (Latin Library transcription) |
+| thrones | Isidore, *Etymologiae* | VII.5.5--24 (exposition, ascending) | throni | 3 | seats over which the Creator presides and disposes his judgments (VII.5.21) | verified at locus (Latin Library transcription) |
+| dominations | Isidore, *Etymologiae* | VII.5.5--24 (exposition, ascending) | dominationes | 4 | "Virtutibus et Principatibus praeeminent"; dominate the other hosts (VII.5.20) | verified at locus (Latin Library transcription) |
+| principalities | Isidore, *Etymologiae* | VII.5.5--24 (exposition, ascending) | principatus | 5 | preside over the hosts of angels and dispose them to the divine ministry (VII.5.19) | verified at locus (Latin Library transcription) |
+| powers | Isidore, *Etymologiae* | VII.5.5--24 (exposition, ascending) | potestates | 6 | the adverse powers are subject to them, lest they harm the world as much as they wish (VII.5.18) | verified at locus (Latin Library transcription) |
+| virtues | Isidore, *Etymologiae* | VII.5.5--24 (exposition, ascending) | virtutes | 7 | through them signs and miracles are done in the world (VII.5.17) | verified at locus (Latin Library transcription) |
+| archangels | Isidore, *Etymologiae* | VII.5.5--24 (exposition, ascending) | archangeli | 8 | "summi nuntii"; "primatum teneant inter angelos", ARCHOS = princeps (VII.5.6--8) | verified at locus (Latin Library transcription) |
+| angels | Isidore, *Etymologiae* | VII.5.5--24 (exposition, ascending) | angeli | 9 | "nuntii", sent from heaven to announce to men; "officii nomen ... non naturae" (VII.5.1--2, 5) | verified at locus (Latin Library transcription) |
+| angels | Isidore, *Etymologiae* | VII.5.4 (list) | angeli | -- (unranked; list position 1) | same sequence as *Moralia* XXXII.23.48 | verified at locus |
+| archangels | Isidore, *Etymologiae* | VII.5.4 (list) | archangeli | -- (unranked; list position 2) | same sequence as *Moralia* XXXII.23.48 | verified at locus |
+| thrones | Isidore, *Etymologiae* | VII.5.4 (list) | throni | -- (unranked; list position 3) | same sequence as *Moralia* XXXII.23.48 | verified at locus |
+| dominations | Isidore, *Etymologiae* | VII.5.4 (list) | dominationes | -- (unranked; list position 4) | same sequence as *Moralia* XXXII.23.48 | verified at locus |
+| virtues | Isidore, *Etymologiae* | VII.5.4 (list) | virtutes | -- (unranked; list position 5) | same sequence as *Moralia* XXXII.23.48 | verified at locus |
+| principalities | Isidore, *Etymologiae* | VII.5.4 (list) | principatus | -- (unranked; list position 6) | same sequence as *Moralia* XXXII.23.48 | verified at locus |
+| powers | Isidore, *Etymologiae* | VII.5.4 (list) | potestates | -- (unranked; list position 7) | same sequence as *Moralia* XXXII.23.48 | verified at locus |
+| cherubim | Isidore, *Etymologiae* | VII.5.4 (list) | cherubim | -- (unranked; list position 8) | same sequence as *Moralia* XXXII.23.48 | verified at locus |
+| seraphim | Isidore, *Etymologiae* | VII.5.4 (list) | seraphim | -- (unranked; list position 9) | same sequence as *Moralia* XXXII.23.48 | verified at locus |
+| angels | Isidore, *Sententiae* (PL 83) | I.10.15 | angeli | -- (unranked; list position 1) | same list as *Etym.* VII.5.4; the nine stones of Ezek 28:13 | verified from two PL 83 OCR scans (reconstructed) |
+| archangels | Isidore, *Sententiae* (PL 83) | I.10.15 | archangeli | -- (unranked; list position 2) | same list as *Etym.* VII.5.4; the nine stones of Ezek 28:13 | verified from two PL 83 OCR scans (reconstructed) |
+| thrones | Isidore, *Sententiae* (PL 83) | I.10.15 | throni | -- (unranked; list position 3) | same list as *Etym.* VII.5.4; the nine stones of Ezek 28:13 | verified from two PL 83 OCR scans (reconstructed) |
+| dominations | Isidore, *Sententiae* (PL 83) | I.10.15 | dominationes | -- (unranked; list position 4) | same list as *Etym.* VII.5.4; the nine stones of Ezek 28:13 | verified from two PL 83 OCR scans (reconstructed) |
+| virtues | Isidore, *Sententiae* (PL 83) | I.10.15 | virtutes | -- (unranked; list position 5) | same list as *Etym.* VII.5.4; the nine stones of Ezek 28:13 | verified from two PL 83 OCR scans (reconstructed) |
+| principalities | Isidore, *Sententiae* (PL 83) | I.10.15 | principatus | -- (unranked; list position 6) | same list as *Etym.* VII.5.4; the nine stones of Ezek 28:13 | verified from two PL 83 OCR scans (reconstructed) |
+| powers | Isidore, *Sententiae* (PL 83) | I.10.15 | potestates | -- (unranked; list position 7) | same list as *Etym.* VII.5.4; the nine stones of Ezek 28:13 | verified from two PL 83 OCR scans (reconstructed) |
+| cherubim | Isidore, *Sententiae* (PL 83) | I.10.15 | cherubim | -- (unranked; list position 8) | same list as *Etym.* VII.5.4; the nine stones of Ezek 28:13 | verified from two PL 83 OCR scans (reconstructed) |
+| seraphim | Isidore, *Sententiae* (PL 83) | I.10.15 | seraphim | -- (unranked; list position 9) | same list as *Etym.* VII.5.4; the nine stones of Ezek 28:13 | verified from two PL 83 OCR scans (reconstructed) |
+| angels | Rabanus Maurus, *De universo* (PL 111) | I.5 (list) | angeli | -- (unranked; list position 1); exposition follows Isidore's ascending order | copied from Isidore, *Etym.* VII.5 | verified from PL 111 OCR |
+| archangels | Rabanus Maurus, *De universo* (PL 111) | I.5 (list) | archangeli | -- (unranked; list position 2); exposition follows Isidore's ascending order | copied from Isidore, *Etym.* VII.5 | verified from PL 111 OCR |
+| thrones | Rabanus Maurus, *De universo* (PL 111) | I.5 (list) | throni | -- (unranked; list position 3); exposition follows Isidore's ascending order | copied from Isidore, *Etym.* VII.5 | verified from PL 111 OCR |
+| dominations | Rabanus Maurus, *De universo* (PL 111) | I.5 (list) | dominationes | -- (unranked; list position 4); exposition follows Isidore's ascending order | copied from Isidore, *Etym.* VII.5 | verified from PL 111 OCR |
+| virtues | Rabanus Maurus, *De universo* (PL 111) | I.5 (list) | virtutes | -- (unranked; list position 5); exposition follows Isidore's ascending order | copied from Isidore, *Etym.* VII.5 | verified from PL 111 OCR |
+| powers | Rabanus Maurus, *De universo* (PL 111) | I.5 (list) | potestates | -- (unranked; list position 6); exposition follows Isidore's ascending order | copied from Isidore, *Etym.* VII.5 | verified from PL 111 OCR |
+| principalities | Rabanus Maurus, *De universo* (PL 111) | I.5 (list) | principatus | -- (unranked; list position 7); exposition follows Isidore's ascending order | copied from Isidore, *Etym.* VII.5 | verified from PL 111 OCR |
+| cherubim | Rabanus Maurus, *De universo* (PL 111) | I.5 (list) | cherubin | -- (unranked; list position 8); exposition follows Isidore's ascending order | copied from Isidore, *Etym.* VII.5 | verified from PL 111 OCR |
+| seraphim | Rabanus Maurus, *De universo* (PL 111) | I.5 (list) | seraphim | -- (unranked; list position 9); exposition follows Isidore's ascending order | copied from Isidore, *Etym.* VII.5 | verified from PL 111 OCR |
 | cherubim | Dionysius (Parker) | CH 12.2 | Cherubim | (first hierarchy) | Participate in higher wisdom and knowledge; the orders beneath participate partially and in a lower degree | yes |
 | angels | Dionysius (Parker) | CH 12.2 | Divisions of the Beings beneath | lower | Participate in wisdom and knowledge partially, in a lower degree | yes |
 | angels | Jerome, In ep. ad Titum | on Titus 1:2 (PL 26) | angeli | Unranked (first in list) | Orders serving God before measured time | yes |

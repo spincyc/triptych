@@ -92,8 +92,8 @@ each URL and reading date.
 | --- | --- | --- | --- |
 | Scripture | `sections/00-scripture.tex` | drafted | Douay–Rheims; Vulgate; ST I q. 50 a. 1, q. 108 a. 5 |
 | Faith of the Church | `sections/05-faith-of-the-church.tex` | drafted (voice revised 2026-09-30) | Lateran IV *Firmiter*; Vatican I *Dei Filius* 1; Braga I (561); Constantinople (543); *Humani generis* 26; Paul VI (15 Nov 1972); CDF *Christian Faith and Demonology* (1975); John Paul II audiences (July–Aug 1986); CCC 328–336, 391–395 |
-| Before the Fathers: Israel | `sections/07-israel-before-christ.tex` | drafting | Septuagint; 1 Enoch; *Jubilees*; *Testaments of the Twelve Patriarchs*; Philo |
-| Before the Fathers: philosophers | `sections/08-philosophers-before-christ.tex` | drafting | Hesiod; Plato; Aristotle; Plutarch; Apuleius; Plotinus; Porphyry; Proclus; Eusebius *Praep. ev.* |
+| Before the Fathers: Israel | `sections/07-israel-before-christ.tex` | drafted | Septuagint; 1 Enoch; *Jubilees*; *Testaments of the Twelve Patriarchs*; Philo |
+| Before the Fathers: philosophers | `sections/08-philosophers-before-christ.tex` | drafted | Hesiod; Plato; Aristotle; Plutarch; Apuleius; Plotinus; Porphyry; Proclus; Eusebius *Praep. ev.* |
 | Greek Fathers to Origen | `sections/10-fathers-before-dionysius.tex` | drafting | 1 Clement; Ignatius; Hermas; Justin; Athenagoras; Irenaeus; Clement of Alexandria; Origen |
 | Greek Fathers, Athanasius to Chrysostom | `sections/11-greek-fathers-nicene.tex` | drafting | Athanasius; Cyril of Jerusalem; Basil; Gregory Nazianzen; Gregory of Nyssa; Ephrem; Chrysostom |
 | Latin Fathers before Dionysius | `sections/12-latin-fathers-before-dionysius.tex` | drafting | Tertullian; Cyprian; Lactantius; Hilary; Ambrose; Jerome; Cassian |
@@ -120,7 +120,7 @@ each URL and reading date.
 | Saints and the holy angels | `sections/84-the-saints-and-the-angels.tex` | planned | Francis and Bonaventure's *Legenda*; Gertrude; Frances of Rome; Ignatius; Teresa; Francis de Sales; Newman |
 | Order of the universe | `sections/88-the-order-of-the-universe.tex` | drafting | ST I q. 47, q. 50 a. 1, q. 108 |
 | App. nine orders | `appendices/01-the-nine-orders.tex` | drafted | order inventory |
-| App. pre-Christian continuities | `appendices/02a-pre-christian-continuities.tex` | planned | continuity rows of l13a and l13b |
+| App. pre-Christian continuities | `appendices/02a-pre-christian-continuities.tex` | drafted | continuity rows of l13a and l13b |
 | App. comparative orderings | `appendices/02-comparative-orderings.tex` | planned | order inventory |
 | App. article census | `appendices/03-article-census.tex` | planned | question inventory |
 | App. parallels in Aquinas | `appendices/04-parallels-in-aquinas.tex` | planned | Corpus Thomisticum |
