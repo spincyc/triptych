@@ -4,7 +4,7 @@ schema_version = 1
 id = "claude-1962-nineteenth-three-documents-2026-09-30"
 owner = "PROJECT-WORK.md"
 promise = "Drive the proper-study workflow for provider claude on the 1962 Nineteenth Sunday after Pentecost for Sunday 2026-10-04 through terminal acceptance: expansive study, concise study, standalone homily and canonical web edition with fresh cold reviews, every workflow cycle and host intervention documented, every contributing model declared exactly, and the delivered work committed on feature/propers/claude."
-state = "complete"
+state = "in_progress"
 
   [[deliverables.requirements]]
   id = "claude-59-authorization"
@@ -48,6 +48,12 @@ state = "complete"
   check = "contains"
   path = "PROJECT-WORK.md"
   needle = "Run `a27462e34ec9c09a` (`proper-study` v7)"
+
+  [[deliverables.requirements]]
+  id = "claude-59-main-and-pages"
+  criterion = "On the maintainer's 2026-09-30 instruction, the publication reaches origin/main by fast-forward after the three deploy gates pass locally, and the triggered Pages run, the three PDF routes, the web route and the calendar row are verified live."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
 
 [[deliverables]]
 id = "gpt-angelology-2026-09-29"

@@ -56,9 +56,21 @@ published and declared conditional; no path sealed into the run's reviews
 changed. The `tools/commentary-work-index` transcripts that registering PL 35
 moved were recaptured from real runs.
 
-**Not pushed.** Everything is committed on `feature/propers/claude`, the
-workspace's required branch. Pushing it, and a fast-forward of `main` with
-its Pages deployment, wait for the maintainer's separate instruction.
+**Main integration requested.** On 2026-09-30 the maintainer instructed
+"reconcile , rebase with main ; push to main". `origin/main` had not moved
+from `af0929127`, which the branch already contains through `7c5faf256`, and a
+rebase would have left seed commit `56d8c30f2`, which the reviewed PDFs'
+generation metadata cites, reachable from no ref on `main`. Asked, the
+maintainer chose the fast-forward without a rebase. The 236 live PDFs absent
+from this clone were restored from the site and each matched its published
+`SHA256SUMS` entry. The three deploy gates pass locally: `make
+check-deployment-sources`, `make public-site`, and `tools/tpt public-alpha
+verify --deployment-target github-pages`; the built site carries the three
+new PDFs byte-identical to the installed ones. The outgoing range is 12
+commits and 144 new blobs; its only binary is the public-domain two-page PL
+35 (1845) excerpt, and no machine path, username or credential marker
+occurs in it. The deployment is verified live before this production is
+represented as complete.
 
 ## GPT angelology reference, 2026-09-29
 
