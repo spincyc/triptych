@@ -197,6 +197,60 @@ only when its locus was read at the source.
 | thrones | Aquinas | I q. 63 a. 9 ad 3 | Thrones | — (not ranked here) | Name drawn from God's indwelling; never given to demons | yes (na-summa-1063) |
 | powers | Aquinas | I q. 63 a. 9 ad 3 | Powers | — (not ranked here) | Name drawn from power; given to demons | yes (na-summa-1063) |
 | principalities | Aquinas | I q. 63 a. 9 ad 3 | Principalities | — (not ranked here) | Name drawn from power; given to demons | yes (na-summa-1063) |
+| seraphim | Dionysius as ranked by Aquinas | ST I q. 108 a. 6 s.c., co. | Seraphim | 1 | first hierarchy; union with God itself; named from the fire of love, akin to the Holy Spirit | Read at locus (NA English, CT Latin) |
+| cherubim | Dionysius as ranked by Aquinas | ST I q. 108 a. 6 s.c., co. | Cherubim | 2 | know the divine secrets supereminently | Read at locus (NA English, CT Latin) |
+| thrones | Dionysius as ranked by Aquinas | ST I q. 108 a. 6 s.c., co. | throni | 3 | receive God familiarly; immediate knowledge of the types in God; name common to whole first hierarchy | Read at locus (NA English, CT Latin) |
+| dominations | Dionysius as ranked by Aquinas | ST I q. 108 a. 6 s.c., co. | dominationes | 4 | appoint what is to be done | Read at locus (NA English, CT Latin) |
+| virtues | Dionysius as ranked by Aquinas | ST I q. 108 a. 6 s.c., co. | virtutes | 5 | give the power of carrying it out | Read at locus (NA English, CT Latin) |
+| powers | Dionysius as ranked by Aquinas | ST I q. 108 a. 6 s.c., co. | potestates | 6 | order how commands are carried out by others | Read at locus (NA English, CT Latin) |
+| principalities | Dionysius as ranked by Aquinas | ST I q. 108 a. 6 s.c., co. | principatus | 7 | lead in execution, like precentors and generals; preside over peoples and kingdoms | Read at locus (NA English, CT Latin) |
+| archangels | Dionysius as ranked by Aquinas | ST I q. 108 a. 6 s.c., co. | Archangeli | 8 | middle place in execution | Read at locus (NA English, CT Latin) |
+| angels | Dionysius as ranked by Aquinas | ST I q. 108 a. 6 s.c., co. | Angeli | 9 | simply execute | Read at locus (NA English, CT Latin) |
+| seraphim | Gregory as ranked by Aquinas | ST I q. 108 a. 6 co. | Seraphim | 1 | as Dionysius | Read at locus (NA English, CT Latin); Gregory also read at Hom. 34.10 |
+| cherubim | Gregory as ranked by Aquinas | ST I q. 108 a. 6 co. | Cherubim | 2 | as Dionysius | Read at locus (NA English, CT Latin); Gregory also read at Hom. 34.10 |
+| thrones | Gregory as ranked by Aquinas | ST I q. 108 a. 6 co. | throni | 3 | through them God accomplishes his judgments | Read at locus (NA English, CT Latin); Gregory also read at Hom. 34.10 |
+| dominations | Gregory as ranked by Aquinas | ST I q. 108 a. 6 co. | dominationes | 4 | appoint and order the divine ministrations | Read at locus (NA English, CT Latin); Gregory also read at Hom. 34.10 |
+| principalities | Gregory as ranked by Aquinas | ST I q. 108 a. 6 co. | principatus | 5 | rule even over good spirits | Read at locus (NA English, CT Latin); Gregory also read at Hom. 34.10 |
+| powers | Gregory as ranked by Aquinas | ST I q. 108 a. 6 co. | potestates | 6 | coerce the evil spirits | Read at locus (NA English, CT Latin); Gregory also read at Hom. 34.10 |
+| virtues | Gregory as ranked by Aquinas | ST I q. 108 a. 6 co. | virtutes | 7 | power over corporeal nature in working miracles | Read at locus (NA English, CT Latin); Gregory also read at Hom. 34.10 |
+| archangels | Gregory as ranked by Aquinas | ST I q. 108 a. 6 co. | Archangeli | 8 | announce great things above reason | Read at locus (NA English, CT Latin); Gregory also read at Hom. 34.10 |
+| angels | Gregory as ranked by Aquinas | ST I q. 108 a. 6 co. | Angeli | 9 | announce small things within reason | Read at locus (NA English, CT Latin); Gregory also read at Hom. 34.10 |
+| seraphim | Aquinas, Summa contra gentiles | III.80 nn. 5-16 | Seraphim | 1 | know the order of providence in the last end, the divine goodness; intensity of love | Read at locus (CT Latin, Leonine) |
+| cherubim | Aquinas, Summa contra gentiles | III.80 nn. 5-16 | Cherubim | 2 | know it in the divine form; scientiae plenitudo | Read at locus (CT Latin, Leonine) |
+| thrones | Aquinas, Summa contra gentiles | III.80 nn. 5-16 | throni | 3 | consider the disposition of the divine judgments in itself; judiciary power | Read at locus (CT Latin, Leonine) |
+| dominations | Aquinas, Summa contra gentiles | III.80 nn. 5-16 | dominationes | 4 | distribute universal providence to many executors; command | Read at locus (CT Latin, Leonine) |
+| virtues | Aquinas, Summa contra gentiles | III.80 nn. 5-16 | virtutes | 5 | multiply it into effects; motion of the heavens; miracles | Read at locus (CT Latin, Leonine) |
+| powers | Aquinas, Summa contra gentiles | III.80 nn. 5-16 | potestates | 6 | keep the established order unconfused; restrain what would disturb it | Read at locus (CT Latin, Leonine) |
+| principalities | Aquinas, Summa contra gentiles | III.80 nn. 5-16 | principatus | 7 | common good of cities and nations; disposition of kingdoms | Read at locus (CT Latin, Leonine) |
+| archangels | Aquinas, Summa contra gentiles | III.80 nn. 5-16 | Archangeli | 8 | good of one that serves many: matters of faith and divine worship (Gabriel) | Read at locus (CT Latin, Leonine) |
+| angels | Aquinas, Summa contra gentiles | III.80 nn. 5-16 | Angeli | 9 | good of each single man; guardians (Ps 90[91]:11) | Read at locus (CT Latin, Leonine) |
+| seraphim | Aquinas, In II Sent. | d. 9 q. 1 a. 3 co., ad 7 | Seraphim | 1 | act of loving; completest union | Read at locus (CT Latin, Parma) |
+| cherubim | Aquinas, In II Sent. | d. 9 q. 1 a. 3 co., ad 7 | Cherubim | 2 | act of seeing; plenitudo scientiae | Read at locus (CT Latin, Parma) |
+| thrones | Aquinas, In II Sent. | d. 9 q. 1 a. 3 co., ad 7 | throni | 3 | act of holding; God sits and rests in them | Read at locus (CT Latin, Parma) |
+| dominations | Aquinas, In II Sent. | d. 9 q. 1 a. 3 co., ad 7 | dominationes | 4 | direct and command all divine ministries, as an architect | Read at locus (CT Latin, Parma) |
+| virtues | Aquinas, In II Sent. | d. 9 q. 1 a. 3 co., ad 7 | virtutes | 5 | give efficacy, as laws must be armed | Read at locus (CT Latin, Parma) |
+| powers | Aquinas, In II Sent. | d. 9 q. 1 a. 3 co., ad 7 | potestates | 6 | sentence what is due to each; restrain aerial powers | Read at locus (CT Latin, Parma) |
+| principalities | Aquinas, In II Sent. | d. 9 q. 1 a. 3 co., ad 7 | principatus | 7 | limited to a province (prince of the Persians) | Read at locus (CT Latin, Parma) |
+| archangels | Aquinas, In II Sent. | d. 9 q. 1 a. 3 co., ad 7 | Archangeli | 8 | good of many through one person (Gabriel) | Read at locus (CT Latin, Parma) |
+| angels | Aquinas, In II Sent. | d. 9 q. 1 a. 3 co., ad 7 | Angeli | 9 | one man; announce least things; guard individuals | Read at locus (CT Latin, Parma) |
+| seraphim | Peter Lombard (triads under Dionysius's name, following Hugh) | Sent. II d. 9 c. 1 | Seraphim | 1 | superiores | Read at locus (Quaracchi 1916 OCR) |
+| cherubim | Peter Lombard (triads under Dionysius's name, following Hugh) | Sent. II d. 9 c. 1 | Cherubim | 2 | superiores | Read at locus (Quaracchi 1916 OCR) |
+| thrones | Peter Lombard (triads under Dionysius's name, following Hugh) | Sent. II d. 9 c. 1 | Throni | 3 | superiores | Read at locus (Quaracchi 1916 OCR) |
+| dominations | Peter Lombard (triads under Dionysius's name, following Hugh) | Sent. II d. 9 c. 1 | Dominationes | 4 | medii | Read at locus (Quaracchi 1916 OCR) |
+| principalities | Peter Lombard (triads under Dionysius's name, following Hugh) | Sent. II d. 9 c. 1 | Principatus | 5 | medii | Read at locus (Quaracchi 1916 OCR) |
+| powers | Peter Lombard (triads under Dionysius's name, following Hugh) | Sent. II d. 9 c. 1 | Potestates | 6 | medii | Read at locus (Quaracchi 1916 OCR) |
+| virtues | Peter Lombard (triads under Dionysius's name, following Hugh) | Sent. II d. 9 c. 1 | Virtutes | 7 | inferiores | Read at locus (Quaracchi 1916 OCR) |
+| archangels | Peter Lombard (triads under Dionysius's name, following Hugh) | Sent. II d. 9 c. 1 | Archangeli | 8 | inferiores | Read at locus (Quaracchi 1916 OCR) |
+| angels | Peter Lombard (triads under Dionysius's name, following Hugh) | Sent. II d. 9 c. 1 | Angeli | 9 | inferiores | Read at locus (Quaracchi 1916 OCR) |
+| seraphim | Bernard of Clairvaux | De consideratione V.4.8, 10 | Seraphim | 1 | inflamed with the divine fire, kindling all things | Read at locus (Lewis 1908 OCR); rank inferred from Bernard's ascending sequence |
+| cherubim | Bernard of Clairvaux | De consideratione V.4.8, 10 | Cherubim | 2 | drink at the fount of wisdom and pour forth knowledge | Read at locus (Lewis 1908 OCR); rank inferred from Bernard's ascending sequence |
+| thrones | Bernard of Clairvaux | De consideratione V.4.8, 10 | Thrones | 3 | God is seated in them; tranquillity; judge | Read at locus (Lewis 1908 OCR); rank inferred from Bernard's ascending sequence |
+| dominations | Bernard of Clairvaux | De consideratione V.4.8, 10 | Dominions | 4 | tower above the rest; all account to them | Read at locus (Lewis 1908 OCR); rank inferred from Bernard's ascending sequence |
+| principalities | Bernard of Clairvaux | De consideratione V.4.8, 10 | Principalities | 5 | by their wisdom earthly sovereignty is established and changed | Read at locus (Lewis 1908 OCR); rank inferred from Bernard's ascending sequence |
+| powers | Bernard of Clairvaux | De consideratione V.4.8, 10 | Powers | 6 | check the power of darkness | Read at locus (Lewis 1908 OCR); rank inferred from Bernard's ascending sequence |
+| virtues | Bernard of Clairvaux | De consideratione V.4.8, 10 | Virtues | 7 | signs and wonders in or through the elements | Read at locus (Lewis 1908 OCR); rank inferred from Bernard's ascending sequence |
+| archangels | Bernard of Clairvaux | De consideratione V.4.8, 10 | Archangels | 8 | admitted to divine secrets; sent for weighty reasons | Read at locus (Lewis 1908 OCR); rank inferred from Bernard's ascending sequence |
+| angels | Bernard of Clairvaux | De consideratione V.4.8, 10 | Angels | 9 | guardians of individual men | Read at locus (Lewis 1908 OCR); rank inferred from Bernard's ascending sequence |
 | seraphim | Aquinas, *SCG* III.80 | n. 5 | Seraphim | 1 | Perceive the reason of providence in the last end, the divine goodness; ardentes vel incendentes | yes |
 | cherubim | Aquinas, *SCG* III.80 | n. 6 | Cherubim | 2 | Know it in the divine form; scientiae plenitudo | yes |
 | thrones | Aquinas, *SCG* III.80 | n. 7 | throni | 3 | Consider the disposition of the divine judgments in itself | yes |
