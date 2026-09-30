@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 2908,
-  "editions": 1049,
+  "artifacts": 2910,
+  "editions": 1050,
   "passages": 5199,
   "readable": 3065,
-  "works": 776
+  "works": 777
  },
  "facets": {
   "authors": [
@@ -823,7 +823,7 @@
    },
    {
     "id": "Jacques-Paul Migne, publisher and series editor",
-    "works": 11
+    "works": 12
    },
    {
     "id": "James Joyce",
@@ -1760,12 +1760,12 @@
     "works": 12
    },
    {
-    "id": "patristic-treatise",
+    "id": "collected-volume",
     "works": 12
    },
    {
-    "id": "collected-volume",
-    "works": 11
+    "id": "patristic-treatise",
+    "works": 12
    },
    {
     "id": "liturgical-commentary",
@@ -3126,7 +3126,7 @@
     "id": "en"
    },
    {
-    "editions": 309,
+    "editions": 310,
     "id": "la"
    },
    {
@@ -3252,7 +3252,7 @@
     "label": "18th century"
    },
    {
-    "editions": 197,
+    "editions": 198,
     "id": "1800",
     "label": "19th century"
    },
@@ -3269,8 +3269,8 @@
   ],
   "rights": [
    {
-    "artifacts": 1632,
-    "editions": 378,
+    "artifacts": 1634,
+    "editions": 379,
     "id": "public-domain"
    },
    {
@@ -15396,6 +15396,36 @@
     "la"
    ],
    "title": "Patrologiae cursus completus, Series Latina, volume 26"
+  },
+  {
+   "alternate_titles": [
+    "Patrologia Latina 35",
+    "PL 35",
+    "Sancti Aurelii Augustini opera omnia, tomus tertius, pars altera"
+   ],
+   "author": "Jacques-Paul Migne, publisher and series editor",
+   "category": "collected-volume",
+   "directory": "editions/jacques-paul-migne/patrologia-latina-volume-35/",
+   "editions": [
+    {
+     "date": "1845",
+     "file": "1845-1845-paris.json",
+     "id": "edition.jacques-paul-migne.patrologia-latina-volume-35.1845-paris",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Patrologiae cursus completus, Series Latina, Tomus XXXV (Paris, 1845)",
+     "year": 1845
+    }
+   ],
+   "id": "work.jacques-paul-migne.patrologia-latina-volume-35",
+   "languages": [
+    "la"
+   ],
+   "title": "Patrologiae cursus completus, Series Latina, volume 35"
   },
   {
    "alternate_titles": [],

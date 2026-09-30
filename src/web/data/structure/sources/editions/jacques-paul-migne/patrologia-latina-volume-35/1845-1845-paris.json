@@ -1,0 +1,65 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "facsimile-excerpt",
+   "byte_size": 442677,
+   "edition_owned": true,
+   "id": "artifact.jacques-paul-migne.patrologia-latina-volume-35.1845-paris.columns-1329-1330-and-1343-1344-facsimile-1053cbb0",
+   "media_type": "application/pdf",
+   "notes": "Two pages only: parent PDF page 14 (columns 1329-1330, running head LIBER PRIMUS), carrying Augustine, Quaestiones Evangeliorum I.28 (end) to I.35 in column 1329, among them I.31 on Matthew 22:2-9; and parent PDF page 21 (columns 1343-1344, running head QUAESTIONUM EVANGELIORUM, S. AUGUSTINI), carrying Book II, questions 29 (end) to 32 in column 1343, among them II.30 on Luke 14:21, 23. All other parent pages are omitted; the parent stays remote for its measured size.",
+   "page_count": 2,
+   "retrieved": "2026-09-30",
+   "rights": "public-domain",
+   "rights_basis": "The 1845 Paris printing is in the United States public domain by date of publication (first published abroad before 1931, as derived for calendar year 2026 under guidance/missals.md). The scan is a Google digitization of a Harvard College Library copy delivered by the Internet Archive; a mechanical digitization of a public-domain printing adds no original authorship, and page extraction adds none. No modern editorial text is added by this retention.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/patrologiaecurs143migngoog/patrologiaecurs143migngoog.pdf",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "scan",
+   "byte_size": 62548064,
+   "edition_owned": true,
+   "id": "artifact.jacques-paul-migne.patrologia-latina-volume-35.1845-paris.internet-archive-google-pdf-b3ff8a95",
+   "media_type": "application/pdf",
+   "notes": "The PDF carries no text layer; every page is a 600-ppi bilevel image. PDF pages 1-3 are Google's notice and the library's leaves, the Patrologia title page is PDF p. 6, the Augustine title page PDF p. 8, and the Elenchus PDF p. 9; the text of Quaestiones Evangeliorum opens on PDF p. 10, whose opening page prints no column numbers; PDF p. 11 is headed 1323 and 1324, PDF p. 14 1329 and 1330, and PDF p. 21 1343 and 1344, two columns to a page. The Internet Archive's OCR of the item (patrologiaecurs143migngoog_djvu.txt) was used only to identify the volume and to find the passages; no wording rests on it. The parent stays remote for its measured size.",
+   "page_count": 593,
+   "retrieved": "2026-09-30",
+   "rights": "public-domain",
+   "rights_basis": "The represented 1845 Paris printing and Augustine's ancient Latin are in the United States public domain by age (first published abroad before 1931, as derived for calendar year 2026 under guidance/missals.md). The exact Google Books scan served by the Internet Archive is identified remotely rather than redistributed.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/patrologiaecurs143migngoog/patrologiaecurs143migngoog.pdf",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1845",
+  "editors": [
+   "Jacques-Paul Migne"
+  ],
+  "id": "edition.jacques-paul-migne.patrologia-latina-volume-35.1845-paris",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Parisiis excusus, venit apud editorem, in via dicta d'Amboise, prope portam vulgo d'Enfer nominatam, seu Petit-Montrouge, 1845",
+  "title": "Patrologiae cursus completus, Series Latina, Tomus XXXV (Paris, 1845)",
+  "translators": [],
+  "year": 1845
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Patrologia Latina 35",
+   "PL 35",
+   "Sancti Aurelii Augustini opera omnia, tomus tertius, pars altera"
+  ],
+  "author": "Jacques-Paul Migne, publisher and series editor",
+  "category": "collected-volume",
+  "description": "Volume 35 of Migne's Latin series, the second part of the third tome of Augustine's works, continuing the column numbering of volume 34 from column 1321. Its own Elenchus operum (artifact PDF page 9 of the registered scan, read on the image) lists in the second part: Quaestionum Evangeliorum libri II (col. 1321); Quaestionum septemdecim in Evangelium secundum Matthaeum liber unus (col. 1365); In Joannis Evangelium tractatus CXXIV (col. 1379); In Epistolam Joannis ad Parthos tractatus X (col. 1977); Expositio quarumdam propositionum ex Epistola ad Romanos (col. 2063); Epistolae ad Romanos inchoata expositio (col. 2087); Expositio ad Galatas (col. 2105); and in the appendix De mirabilibus sacrae Scripturae libri III (col. 2149), De benedictionibus patriarchae Jacob (col. 2199), Quaestiones Veteris et Novi Testamenti (col. 2213) and an exposition of the Apocalypse (col. 2417). A locus is the printed column number.",
+  "id": "work.jacques-paul-migne.patrologia-latina-volume-35",
+  "languages": [
+   "la"
+  ],
+  "title": "Patrologiae cursus completus, Series Latina, volume 35"
+ }
+}

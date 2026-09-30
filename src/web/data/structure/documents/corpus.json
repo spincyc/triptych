@@ -1,9 +1,9 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it.",
  "counted": {
-  "documents": 202,
-  "issues": 238,
-  "pages": 6447,
+  "documents": 203,
+  "issues": 241,
+  "pages": 6480,
   "titles_unrecorded": 0,
   "works": 147
  },
@@ -13,7 +13,7 @@
    "id": "GPT-5-based Codex agent"
   },
   {
-   "documents": 85,
+   "documents": 86,
    "id": "claude-opus-5-5[1m]"
   },
   {
@@ -51,7 +51,7 @@
  ],
  "providers": [
   {
-   "documents": 57,
+   "documents": 58,
    "id": "claude",
    "label": "Claude"
   },
@@ -7217,6 +7217,63 @@
    "catalog": "library/traditional-latin-mass.md",
    "catalog_page": "library/traditional-latin-mass.html",
    "editions": [
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": 12,
+       "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf",
+       "subject": "Concise study of the 1962 Missale Romanum proper for the Nineteenth Sunday after Pentecost: the appointed elements, four overview senses, the scriptural dossier, the movement of the formulary, and a commentary comparing three readings of the whole Mass",
+       "title": "Nineteenth Sunday after Pentecost: A Concise Study of the Proper in the 1962 Roman Missal"
+      },
+      {
+       "kind": "homily",
+       "pages": 3,
+       "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf",
+       "subject": "A homily for an adult parish assembly on the 1962 Missale Romanum proper for the Nineteenth Sunday after Pentecost, 4 October 2026: the guest without a wedding garment, the new man of the Epistle, the evening sacrifice of the Gradual, and the Communion's prayer for grace to keep what God commands",
+       "title": "Nineteenth Sunday after Pentecost: Clothed for the Wedding"
+      }
+     ],
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "unexposed: reasoning effort, declared high by the workflow and not enforced, since the harness runs every stage at the driver session's effort (run intervention 0000); unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code harness subagent (author-study stage of proper-study v7, iteration 0: the expansive study of the canonical leaf from the reviewed research records, comprising the opening with its element map, the appointed Latin with its public-domain English, the element-by-element settings, three readings of the whole formulary each with its own four senses, the comparison, the Scriptural Date and Location appendix on the generated chronology projection, the scope appendix and References; the schema-2 component manifest with its future concise and homily components and presentation roles; the leaf-local format and web-edition records; the production audit entry; and author proof checks; at iteration 1, the repair of the study-review findings: Honorius's return-from-exile reading removed from the second reading's difficulties and from its lane's authors, so that he is cited only in the element-by-element section for the elements his Mass shares (STU-001); the Gospel's and the Epistle's Scriptural Date and Location rows given Eusebius's tradition of the writing, Durand's c. A.D. 50 as the date of the Aramaic original, and the Caesarea-or-Rome captivity with Prat's Roman placing, the scope appendix's chronology paragraph agreeing with them (STU-002); the opening, the third reading and the comparison crediting the present-Church feast to Augustine, Gregory and Chrysostom, with Schuster's heavenly banquet recorded beside it and Schuster removed from that lane's carrying authors (STU-003); and, of the standing advisories, the dossier rows recast with a source or a fact as subject and the psalms' Location cells given settings, repeated quotations printed once, the third reading's healing list removed, and five local wording corrections); installed Claude Code CLI 2.1.285, the running build not separately exposed; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "unexposed: reasoning effort, declared high by the workflow and not enforced, since the harness runs every stage at the driver session's effort (run intervention 0000); unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code harness subagent (derive-synthesis stage of proper-study v7, iteration 0: the concise study derived from the accepted expansive study, comprising its entrypoint and six synthesis components, the map of the ten appointed elements with the Sunday's rubrical note and four overview senses on the first page, the Scriptural Date and Location sheet on the generated chronology projection, the two-page Themes and Movement, the integrated commentary comparing the three readings over six cross-proper questions, and its scope note and References; the production audit entry; and author proof checks); installed Claude Code CLI 2.1.285, the running build not separately exposed; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "unexposed: reasoning effort, declared high by the workflow and not enforced, since the harness runs every stage at the driver session's effort (run intervention 0000); unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code harness subagent (derive-homily stage of proper-study v7, iteration 0: the standalone homily derived from the two accepted studies, comprising its entrypoint, the spoken body for an adult parish assembly in eight movements joining the first and third readings of the whole formulary with the story of the call from the second, and the terminal note on sources and delivery with its References; the homily components' reference declarations in the manifest; the production audit entry; and author proof checks); installed Claude Code CLI 2.1.285, the running build not separately exposed; unexposed: server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "claude-opus-5-5[1m]"
+     ],
+     "pages": 33,
+     "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf",
+     "produced": {
+      "run_id": "a27462e34ec9c09a",
+      "seed_commit": "56d8c30f24bd0e42234c88c7d71c801981a9f2f9",
+      "workflow_digest": "9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38",
+      "workflow_id": "proper-study",
+      "workflow_version": "7"
+     },
+     "provider": "claude",
+     "reviewed": "2026-09-30",
+     "revised": "2026-09-30T20:57:05Z",
+     "status": "alpha",
+     "subject": "Expansive study of the 1962 Missale Romanum proper for the Nineteenth Sunday after Pentecost: appointed texts, each element in its setting, three readings of the whole formulary with their four senses, and a comparison",
+     "title": "Nineteenth Sunday after Pentecost: A Study of the Proper in the 1962 Roman Missal",
+     "title_source": "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/main.tex",
+     "web": "web/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.html"
+    },
     {
      "also": [
       {
