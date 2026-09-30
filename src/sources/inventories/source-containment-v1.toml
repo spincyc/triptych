@@ -305,6 +305,63 @@ reason = "One edition of the Sonnets, registered as a single work, with its edit
 # ---------------------------------------------------------------------------
 
 [[containers]]
+id = "work.jacques-paul-migne.patrologia-latina-volume-35"
+manifest_sha256 = "e517678841dda1eeb32fe522b9b40c88c85ac29908ef9b14d3aa14f5ddfa7af7"
+status = "partial"
+basis = "Work description, which transcribes the volume's own Elenchus operum: in the second part, Quaestionum Evangeliorum libri II (col. 1321), Quaestionum septemdecim in Evangelium secundum Matthaeum liber unus (col. 1365), In Joannis Evangelium tractatus CXXIV (col. 1379), In Epistolam Joannis ad Parthos tractatus X (col. 1977), Expositio quarumdam propositionum ex Epistola ad Romanos (col. 2063), Epistolae ad Romanos inchoata expositio (col. 2087) and Expositio ad Galatas (col. 2105), under the title S. Aurelii Augustini tomus tertius, pars altera."
+unresolved = "The description also lists four works printed in the appendix (De mirabilibus sacrae Scripturae libri III, col. 2149; De benedictionibus patriarchae Jacob, col. 2199; Quaestiones Veteris et Novi Testamenti, col. 2213; an exposition of the Apocalypse, col. 2417) without an author, and they are not listed here as anyone's. Each constituent's extent is bounded only by the next work's opening column; no extent is read off the pages beyond Quaestiones Evangeliorum."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "Quaestiones evangeliorum"
+work_id = "work.augustine.quaestiones-euangeliorum"
+whole = true
+locator = "cols. 1321-1364"
+basis = "Container description: 'Quaestionum Evangeliorum libri II (col. 1321)', the next work at col. 1365. edition.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05 is a transcription of 'the text reprinted in Jacques-Paul Migne, Patrologia Latina 35', whose inline column markers run from (1321); the registered scan's PDF pp. 14 and 21 carry columns 1329-1330 and 1343-1344 of it (the tracked facsimile excerpt columns-1329-1330-and-1343-1344-facsimile-1053cbb0)."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "Quaestionum septemdecim in Evangelium secundum Matthaeum liber unus"
+locator = "cols. 1365-1378"
+basis = "Container description: 'Quaestionum septemdecim in Evangelium secundum Matthaeum liber unus (col. 1365)', the next work at col. 1379. Printed among the volume's Augustine works; its authenticity is not examined here."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "In Iohannis evangelium tractatus CXXIV"
+work_id = "work.augustine.in-iohannis-evangelium-tractatus"
+whole = true
+locator = "cols. 1379-1976"
+basis = "Container description: 'In Joannis Evangelium tractatus CXXIV (col. 1379)', the next work at col. 1977."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "In epistolam Iohannis ad Parthos tractatus decem"
+whole = true
+locator = "cols. 1977-2062"
+basis = "Container description: 'In Epistolam Joannis ad Parthos tractatus X (col. 1977)', the next work at col. 2063."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "Expositio quarundam propositionum ex epistula ad Romanos"
+whole = true
+locator = "cols. 2063-2086"
+basis = "Container description: 'Expositio quarumdam propositionum ex Epistola ad Romanos (col. 2063)', the next work at col. 2087."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "Epistulae ad Romanos inchoata expositio"
+whole = true
+locator = "cols. 2087-2104"
+basis = "Container description: 'Epistolae ad Romanos inchoata expositio (col. 2087)', the next work at col. 2105."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "Expositio epistulae ad Galatas"
+whole = true
+locator = "cols. 2105-2148"
+basis = "Container description: 'Expositio ad Galatas (col. 2105)', the appendix beginning at col. 2149. The library holds two work records for this exposition (work.augustine.expositio-epistulae-ad-galatas and work.augustine.epistolae-ad-galatas-expositio); neither is joined here, because choosing between them is not this entry's to settle."
+
+[[containers]]
 id = "work.jacques-paul-migne.patrologia-latina-volume-37"
 manifest_sha256 = "8daf4cf839950037fe9869ce8fdc31ff5da50785461c4d4102c7dd87e8c73be7"
 status = "resolved"

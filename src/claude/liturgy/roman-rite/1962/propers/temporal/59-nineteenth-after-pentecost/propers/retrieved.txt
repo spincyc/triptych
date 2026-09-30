@@ -1,0 +1,344 @@
+RETRIEVED -- Nineteenth Sunday after Pentecost, 1962 Missale Romanum
+Unedited finding aid. NOT publication text. Optical-reading errors are preserved deliberately.
+
+Two machine pulls follow. Neither controls any published wording: every Latin form in
+propers/verified.md was read on page images of the controlling facsimile rendered at 200 and
+400 dpi, and the 1862 antecedent was read on the page images of its tracked two-page extraction
+at that extraction's native 300 ppi.
+
+==============================================================================
+PULL 1 -- the controlling facsimile's own embedded text layer
+==============================================================================
+Represented edition : Missale Romanum, editio typica (Typis Polyglottis Vaticanis, 1962)
+Artifact            : artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+Whole-file SHA-256  : 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a
+                      82,815,941 bytes; the whole file was fetched on 2026-09-30 from the
+                      registered source URL and hashed before any page was read; digest and
+                      byte length matched the registered record.
+Method              : poppler pdftotext in -layout mode over artifact PDF pp. 492-493
+                      (printed pp. 411-412). The two-column layout is flattened line by line,
+                      so the columns interleave; drop capitals are detached or lost.
+Extract SHA-256     : 3a4a5be6a728a27d7d9db515ea5133ceae7d2ab4a7cf3d6adee5432e62409e04
+                      (the two pages exactly as the tool emits them, form feed included)
+Boundaries shown    : printed p. 411 opens with the close of the Gospel of Dominica XVIII
+                      (Mt 9:6-8), then its Offertory (no. 1675), Secret (1676), Communion (1677)
+                      and Postcommunion (1678); then the heading DOMINICA DECIMA NONA post
+                      Pentecosten, II classis, and nos. 1679-1684. Printed p. 412 carries the
+                      rest of the Gospel, nos. 1685-1688, and then the heading DOMINICA VIGESIMA
+                      post Pentecosten, II classis, with nos. 1689-1691.
+Known misreadings   : 'TPXeus / JLy' for Deus and '/~*\ ratias / v J J' for Gratias (drop
+                      capitals of the Eighteenth Sunday); the drop capitals S (Salus), O
+                      (Omnipotens), F (Fratres), I (In illo), H (Haec), T (Tua) detached from
+                      their words; 'OfFertorium' and 'ofFeri-' for Offertorium, offeri-;
+                      'Graduate' for Graduale; 'Tune' for Tunc (twice); 'hue' for huc;
+                      'parata?' for paratae; 'eritfletus' and 'dentium.Multi' run together;
+                      'Ps. 137, 7I' with the drop capital L of Largire attached; '168' and a
+                      stray '4' for the marginal number 1684, which the page image prints
+                      whole; '!690' for 1690. Accents are dropped throughout.
+
+----- artifact PDF pp. 492-493 (printed pp. 411-412), pdftotext -layout -----
+                               Dominica XIX post Pentecosten                            411
+
+      paralytico: Surge, tolle lectum tuum, dite, popule meus, legem meam: incli-
+      et vade in domum tuam. Et surrexit, nate aurem vestram in verba oris mei.
+      et abiit in domum suam. Videntes                V. Gloria Patri.
+      autem turbae timuerunt, et glorificave-                        Oratio
+      runt Deum, qui dedit potestatem talem
+                                                        mnipotens et misericors Deus, 1680
+      hominibus.                          Credo.
+                                                 O        universa nobis adversantia pro-
+1675 Ant. ad OfFertorium Exodi 24, 4 et 5 pitiatus exclude: ut mente et corpore
+         Sanctificavit Moyses altare Domino, pariter expediti, quae tua sunt, liberis
+      offerens super illud holocausta, et im- mentibus exsequamur. Per Dominum.
+      molans victimas: fecit sacrificium ve-
+      spertinum in odorem suavitatis Domi- Lectio Epistolae beati Pauli Apostoli
+      no Deo, in conspectu filiorum Israel.           ad Ephesios.           Ephes. 4, 23-28
+                                                        atres: Renovamini spiritu mentis 1681
+                         Secreta
+1676 "TPXeus, qui nos, per huius sacrificii      F      vestrae, et induite novum homi-
+      JLy veneranda commercia, unius sum- nem, qui secundum Deum creatus est
+      mae divinitatis participes efficis: praesta, in iustitia et sanctitate veritatis. Prop-
+      qusesumus; ut, sicut tuam cognosci- ter quod deponentes mendacium, lo-
+      mus veritatem, sic earn dignis moribus quimini veritatem unusquisque cum
+      assequamur. Per Dominum.                     proximo suo: quoniam sumus invicem
+         Praefatio de Ssma Trinitate.              membra. Irascimini, et nolite peccare:
+                                                   sol non occidat super iracundiam ve-
+1677 Ant. ad Communionem              Ps. 95, 8-9 stram. Nolite locum dare diabolo: qui
+         Tollite hostias, et introite in atria furabatur, iam non furetur; magis
+                                                   autem laboret, operando manibus suis,
+      eius: adorate Dominum in aula sancta
+                                                   quod bonum est, ut habeat unde tri-
+      eius.
+                                                   buat necessitatem patienti.
+                    Postcommunio
+1678 /~*\ ratias tibi referimus, Domine, sacro Graduate                            Ps. 140, 2
+      v J J munere vegetati: tuam misericor-          Dirigatur oratio mea sicut incen- 1682
+      diam deprecantes; ut dignos nos eius sum in conspectu tuo, Domine. V. Ele-
+      participatione perficias. Per Dominum. vatio manuum mearum sacrificium
+                                                   vespertinum.
+      DOMINICA DECIMA NONA Alleluia, alleluia. V. Ps. 104, 1 Con- 1683
+                                                   fitemini Domino, et invocate nomen
+                 post Pentecosten                  eius: annuntiate inter gentes opera
+                        II classis
+                                                   eius. Alleluia.
+ 1679          Antiphona ad Introitum
+                                                         Sequentia sancti Evangelii secun-
+
+
+   S
+              alus populi ego sum, dicit Do-
+                minus: de quacumque tribula-              dum Matthaeum.        Mt. 22, 1-14
+                                                                                              168
+                tione clamaverint ad me, exau- T n illo tempore: Loquebatur Iesus 4
+                diam eos: et ero illorum Do- X. principibus sacerdotum et pharisaeis
+      minus in perpetuum. Ps. 77, 1 Atten- in parabolis, dicens: Simile factum est
+
+      32 - Missale Romanum
+   412                        Dominica XX post Pentecosten
+
+     regnum caelorum homini regi, qui fe- Dominum nostrum Iesum Christum,
+     cit nuptias filio suo. Et misit servos Filium tuum: Qui tecum vivit et re-
+     suos vocare invitatos ad nuptias, et no- gnat in unitate.
+     lebant venire. Iterum misit alios ser-        Praefatio de Ssma Trinitate.
+     vos, dicens: Dicite invitatis: Ecce
+     prandium meum paravi, tauri mei et Ant. ad Communionem Ps. 118, 4-5
+     altilia occisa sunt, et omnia parata:          Tu mandasti mandata tua custodiri 1687
+     venite ad nuptias. Illi autem neglexe- nimis: utinam dirigantur viae meae, ad
+     runt: et abierunt, alius in villam suam, custodiendas iustificationes tuas.
+     alius vero ad negotiationem suam: re-                      Postcommunio
+     liqui vero tenuerunt servos eius, et con-
+     tumeliis affectos occiderunt. Rex autem   T     ua nos, Domine, medicinalis ope- 1688
+                                                       ratio, et a nostris perversitatibus
+     cum audisset, iratus est: et missis clementer expediat, et tuis semper fa-
+     exercitibus suis, perdidit homicidas il- ciat inhaerere mandatis. Per Dominum.
+     los, et civitatem illorum succendit.
+     Tune ait servis suis: Nuptiae quidem            DOMINICA VIGESIMA
+     parata? sunt, sed qui invitati erant, non
+     fuerunt digni. Ite ergo ad exitus via-
+                                                           post Pentecosten
+     rum, et quoscumque inveneritis, voca-                         II classis
+     te ad nuptias. Et egressi servi eius in             Antiphona ad Introitum
+     vias, congregaverunt omnes, quos in-                    Dan. 3, 31, 29 et 35
+     venerunt, malos et bonos: et impletae                   mnia, quae fecisti nobis, Do- 1689
+     sunt nuptiae discumbentium. Intravit
+     autem rex, ut videret discumbentes, et
+     vidit ibi hominem non vestitum veste      O             • mine, in vero iudicio fe-
+                                                               cisti, quia peccavimus tibi,
+                                                               et mandatis tuis non oboedi-
+     nuptiali. Et ait illi: Amice, quomodo hue vimus: sed da gloriam nomini tuo, et
+     intrasti non habens vestem nuptialem ? fac nobiscum secundum multitudinem
+      At ille obmutuit. Tune dixit rex mini- misericordiae tuae. Ps. 118, 1 Beati im-
+      stris: Ligatis manibus et pedibus eius, maculati in via: qui ambulant in lege
+      mittite eum in tenebras exteriores: ibi Domini. V. Gloria Patri.
+      eritfletus et stridor dentium.Multi enim                       Oratio
+      sunt vocati, pauci vero electi.    Credo.
+      Ant. ad Offertorium             Ps. 137, 7I   argire, quaesumus, Domine, fideli- !690
+                                                    > bus tuis indulgentiam placatus et
+                                                  pacem:    ut pariter ab omnibus mun-
+1685 Si ambulavero in medio tribulationis,
+      vivificabis me, Domine: et super iram dentur ofFensis, et seciira tibi mente
+      inimicorum meorum extendes manum deserviant. Per Dominum.
+      tuam, et salvum me faciet dextera tua.
+                                                  Lectio Epistolae beati Pauli Apostoli
+                         Secreta                    ad Ephesios.             Ephes. 5, 15-21
+            aec munera, quaesumus, Domine,            atres: Videte quomodo caute am- 1691
+1686
+    H                                           F
+              quae oculis tuae maiestatis ofFeri-     buletis: non quasi insipientes, sed
+      mus, salutaria nobis esse concede. Per ut sapientes, redimentes tempus, quo-
+----- end of pull 1 -----
+
+==============================================================================
+PULL 2 -- the public-domain antecedent's tracked text layer
+==============================================================================
+Represented edition : Missale Romanum, Pustet, Ratisbon, 1862
+Artifact            : artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf
+Whole-file SHA-256  : f34bc7cf9293ffb353159e94118f4316bb4cc0a60230b315904dc77ba2502162
+                      recomputed on 2026-09-30 and matched the registered record.
+Extent shown        : physical lines 51814-51983, from the heading 'Dominica XIX. post
+                      Pentecosten.' to the 1862's 'Tertia ad libitum.' after the
+                      Postcommunion. Printed p. 352 begins at the running head within the
+                      extent. Lines are reproduced exactly as the artifact holds them.
+Extract SHA-256     : a52ead4716b3f70a860cb2425c42e585710739431cf4a949b007c20823070713
+Known misreadings   : Greek-looking 'o' for accented o throughout ('D6minus', 'p6puli');
+                      'Slnlroilus' for Introitus; 'Alus' for (S)Alus; 'PRatres' for FRatres;
+                      'Eplstolse', 'vestrse', 'nuptise' for Epistolae, vestrae, nuptiae;
+                      'Ps. MO' for Ps. 140; 'U16rum' for illorum; 'Ube-ris' for libe-ris;
+                      'Donum' for bonum; 'Mbeat' for habeat; 'reguum' for regnum; 'notebant'
+                      for nolebant; 'succ6noit' for succendit; 'Ntipti»' for Nuptiae;
+                      'd&itium' for dentium; 'aiius' for alius. The Postcommunion's
+                      'inhaerere' is damaged in this layer; the 1862 page image prints
+                      'inhærére mandátis' whole (propers/verified.md).
+
+----- physical lines 51814-51983 -----
+Dominica  XIX. 
+
+post  Pcntecosten. 
+
+Slnlroilus. 
+Alus  p6puli  ego  sum, 
+dicit  D6minus:  de  qua- 
+cumque  tribulati6ne  cla- 
+maverint  ad  me,  exaudiam 
+eos:  et  ero  U16rum  D6minus 
+in  perpetuum. 
+
+
+Ps.  77.  Att6ndite  p6pule 
+meus  legem  meam:  inclindte 
+aurem  vestram  in  verba  oris 
+mei.   \f.  G16ria  Patri. 
+
+Oratio. 
+
+OMnipotens  et  mis6ricors 
+Deus,  univ6rsa  nobis  ad- 
+vers&ntia  propiti&tus  exclude: 
+ut  mente  et  c6rpore  piriter 
+expediti,  quae  tua  sunt,  Ube- 
+ris  m6ntibus  exequ&mur.  Per 
+D6minum. 
+
+Sccunda  Oratio.  .  A  cunctis 
+nos.  fol.  315. 
+Tertia  ad  libitum. 
+
+L6ctio  Eplstolse  bedti  Pauli 
+Ap6stoh  ad  Eph6sios.  c.  4. 
+
+PRatres.  Renov&mini  spiritu 
+mentis  vestrse,  et  induite 
+novum  h6minem,  qui  sectin- 
+dum  Deum  cre&tus  est  in  ju- 
+stitia,  et  sanctitdte  verit&tis. 
+Propter  quod  depon6ntes  men- 
+d&cium,  loquimmi  veritdtem 
+unuscjuisque  cum  pr6ximo  suo: 
+qu6niam  sumus  invicem  mem- 
+bra.  Irascimini,  et  nolite  pec- 
+c&re:  sol  non  6ccidat  super 
+iractindiam  vestram.  Nolite 
+locum  dare  di&bolo:  qui  fu- 
+rab&tur,  jam  non  furStur; 
+magis  autem  lab6ret,  operdn- 
+do  m&nibus  suis,  quod  Donum 
+est,  ut  Mbeat  unde  tribuat 
+necessitdtem  pattenti. 
+
+'Gradualc.  Ps.  MO.  Dirigdtur 
+or&tio  mea,  sicut  inc6nsum  in 
+consp6ctu  tuo  D6mine. 
+
+Elev&tio  m&nuum  me&rum 
+sacrificium  vespertinum. 
+
+Alleluja,  alleluja. 
+¥.  Ps.  104.  Confitemini  D6- 
+mino,  et  invoc&te  nomen  ejus: 
+annunti&te  inter  gentes  6pera 
+ejus.  Alleluja. 
+
+
+Digitized  by  Google 
+
+
+352 
+
+
+Dominica  XX.  post  Pentecosten. 
+
+
+Sequ6ntia  sancti  Evang61ii  se- 
+cundum  Matthaeum. 
+
+cap.  22. 
+
+J'N  illo  t6mpore:  Loqueba- 
+tur  JesusPrincipibus  sacer- 
+6tum  et  Pharisaeis  in  para- 
+bolis,  dicens:  Siraile  factum 
+est  reguum  coel6rum  hdmini 
+regi,  qui  fecit  nuptias  fllio 
+suo.  Et  misit  servos  suos 
+vocare  invitatos  ad  nuptias, 
+et  notebant  venire.  Iterum  mi- 
+sit  alios  servos,  dicens :  Dicite 
+invitatis:  Ecce  prandium  meum 
+paravi,  tauri  mei,  et  altilia 
+occisa  sunt,  et  6mnia  parata : 
+venite  ad  nuptias.  llli  autem 
+neglex6runt  et  abterunt,  aiius 
+in  villam  suam,  alius  vero  ad 
+negotiati6nem  suam:  reliqui 
+vero  tenueYunt  servos  ejus, 
+et  contum61iis  afftctos  occi- 
+d6runt.  Rex  autem  cum  au- 
+disset,  iratus  est:  et  missis 
+exercitibus  suis,  p6rdidit  ho- 
+micidas  illos.  et  civitatem  ill6- 
+rum  succ6noit.  Tunc  ait  ser- 
+vis  suis:  Ntipti»  quidem  pa- 
+ratae  sunt,  sed  qui  invitati 
+erant,  non  fu6runt  digni.  Ite 
+ergo  ad  6xitus  vi&rum ,  et 
+quoscumqueinven6ritis,vocate 
+ad  nuptias.  Et  egr6ssi  servi 
+ejus  in  vias,  congregaverunt 
+omnes,  quos  inven£runt,  ma- 
+los  et  bonos,  et  impl6tae  sunt 
+nuptise  discumb6ntium.  Intra- 
+vit  autem  rex,  ut  vid6ret  dis- 
+cumbentes,  et  vidit  ibi  h6mi- 
+nem  non  vestitum  veste  nu- 
+ptiali.  Et  ait  illi :  Amice, 
+qu6modo  huc  intrasti ,  non 
+habens  vestem  nuptialem?  At 
+ille  obmutuit.  Tunc  dixit  rex 
+ministris:  Lig&tis  manibus  et 
+pedibus  ejus,  mittite  eum  in 
+tenebras  exteri6res:  ibi  erit 
+
+
+fletus,   et  stridor  d&itium. 
+Multi  enim  sunt  vocati,  pauci 
+vero  el6cti. 
+Credo. 
+
+Offertorium.  Ps.  137.  Si  am- 
+bulavero  in  m6dio  tribulati6- 
+nis,  vivificabis  me  D6mine :  et 
+super  iram  inimic6rum  me6- 
+rum  ext6ndes  manum  tuam,  et 
+salvum  me  faciet  dextera  tua. 
+
+Secreta. 
+
+nMc  munera ,  qusesumus 
+D6mine,  quae  oculis  tuae 
+majestatis  offerimus,  saluta- 
+ria  nobis  esse  conc6de.  Per 
+D6minum. 
+
+Alia  Secreta.   Exafidi  nos 
+Deus.  fol.  316. 
+Tertia  ad  libitum. 
+
+Comraunio.  Fs.  118.  Tuman- 
+d&sti  mand&ta  tua  custodiri 
+nimis:  utinam  dirigdntur  vise 
+meae,  ad  custodi6ndas  justi- 
+ficati6nes  tuas. 
+
+Postcommunio. 
+
+TUa  nos,  D6mine,  medici- 
+nalis  operatio,  et  a  nostris 
+perversitatibus  clem6nter  ex- 
+pediat,  et  tuis  semper  faciat 
+mhser^re  mandatis.  Per  D6- 
+minum. 
+
+Alia  Postcommunio.  Mundet 
+et  muniat.  fol.  316. 
+Tertia  ad  libitum. 
+----- end of pull 2 -----
