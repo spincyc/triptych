@@ -98,7 +98,12 @@ site's 1 MB per-page ceiling, so `web-edition.toml` declares it
 `angelology-web-catalog-release` stays blocked until that reader exists or
 the maintainer waives it. The web converter now letters references to
 appendices, which also corrected one line in each of two other tracked
-editions. On 2026-09-30 the maintainer directed the work pushed to `main`.
+editions. On 2026-09-30 the maintainer directed the work pushed to `main`:
+`main` fast-forwarded to `42916b898`, GitHub Pages run `36766212665`
+succeeded, and the live PDF at
+[mystago.gy](https://mystago.gy/pdf/claude/theology/angelology.pdf) matches
+the reviewed SHA-256 `7d641c0b2ecdb5ebf84a3376e37eda9a12feca7500a7cccfce40a4f5cfae84c7` exactly, with the Faith page linking
+both editions.
 
 ## GPT postconciliar Twenty-seventh Sunday, 2026-09-28
 
