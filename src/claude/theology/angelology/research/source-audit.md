@@ -3854,3 +3854,291 @@ Ceiling: web transcription.
 - Loci read: Ecclus 10:14–15 (verification of the pride verse cited by Augustine).
 - Quoted: none in body (Ecclus 10:15 is cited through Augustine's quotation; the Douay verse verified).
 - Rights: public domain.
+
+## The saints and the holy angels
+
+### Bonaventure, Legenda maior (Life of Saint Francis), English
+- Witness: Bonaventure, *The Life of Saint Francis*, trans. E. Gurney Salter (Temple Classics; London and Toronto: J. M. Dent, 1904).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/TheLifeOfSaintFrancis/TheLifeOfSaintFrancis_djvu.txt ; collation copy https://archive.org/download/cihm_88134/cihm_88134_djvu.txt
+- Retrieved: 2026-09-30T14:56:50Z; 2026-09-30T15:00:37Z
+- SHA-256 of the bytes read: e71d92ce5eba87bd250a9aaf4ce4b784b2d5787321d44dad0bbe344bb0a0bfe4 (353433 bytes); 33fad07e6ed41d5b86b2520952cefc10b7bd642c1f50e19d6f8e662ea05f0858 (351094 bytes)
+- Loci read: prol. 1–2; II.8; VIII.10; IX.3; XIII.1–5.
+- Quoted: prol. 1 ("himself an Angel of the true peace"; "appointed unto angelic ministries … chariot of fire"; "he is thought to be not unmeetly … seal of the Living God"); prol. 2 ("living among men … purity of the Angels"; "faithfully and devoutly held"); II.8 ("Perceiving that Angels ofttimes visited it …"; "commended it unto the Brethren …"); VIII.10 ("there would seem to have been a divine omen … vision of the Seraph"); IX.3 (block); XIII.1 ("like the heavenly spirits on Jacob's ladder …"; "the peaceful ecstasies of contemplation"; "When, according unto his wont …"); XIII.3 (block; "at the gracious aspect …"; "knowing that the infirmity …"; "wholly transformed …"); XIII.4 ("adding that He who had appeared …"); XIII.5 ("when the Feast of Saint Michael Archangel came …").
+- Rights: public domain (1904; translator's work out of copyright in US; Temple Classics).
+- Ceiling: Google/Canadiana OCR; two independent OCRs collated for every quoted sentence (agreement); marginal glosses stripped; not collated with print page images.
+
+### Bonaventure, Opera omnia (Quaracchi), t. VIII — Legenda S. Francisci (Latin)
+- Witness: *Doctoris seraphici S. Bonaventurae opera omnia*, t. VIII, Opusculum XXIII, Legenda S. Francisci (Ad Claras Aquas / Quaracchi).
+- Repository ids: `work.bonaventure.opera-omnia-quaracchi` (existing).
+- URL: https://archive.org/download/doctorisseraphic08bona/doctorisseraphic08bona_djvu.txt
+- Retrieved: 2026-09-30T14:56:55Z
+- SHA-256 of the bytes read: ac751f92bb942824d6e7e5fc037dde7f360d387854fbf35c938a5ff7e204a64e (6206733 bytes)
+- Loci read: c. 9 n. 3 with notes 9–12 (pp. c. 529–530); c. 13 nn. 1–3 with notes (pp. 542–543); title page.
+- Quoted: IX.3 "Beato autem Michaeli Archangelo, eo quod animarum repraesentandarum haberet officium, speciali erat amore devotior"; note 10 (Breviary responsory "Cui tradidit Deus animas Sanctorum, ut perducat eas in paradisum exsultationis" and antiphon "Archangele Michael, constitui te principem super omnes animas suscipiendas", as the note gives them); XIII.1 "Quadragesimam ibidem ad honorem sancti Archangeli Michaelis ieiunare coepisset"; XIII.3 "tam ignitas quam splendidas", "seraphicis desideriorum ardoribus"; title "Doctoris seraphici S. Bonaventurae opera omnia".
+- Rights: public domain (19th-c. critical edition; Latin text).
+- Ceiling: OCR; obvious OCR errors silently corrected (e.g. autera→autem, ofQcium→officium, salutera→salutem, Archangeh Michaehs→Archangeli Michaelis). Volume date not read.
+
+### Bonaventure, Opera omnia (Quaracchi), t. V — Itinerarium mentis in Deum
+- Witness: Quaracchi t. V, *Itinerarium mentis in Deum*, prologue.
+- Repository ids: `work.bonaventure.opera-omnia-quaracchi` (existing).
+- URL: https://archive.org/download/doctorisseraphic05bona/doctorisseraphic05bona_djvu.txt
+- Retrieved: 2026-09-30T15:01:11Z
+- SHA-256 of the bytes read: 9ba2eecaf747a4fe180a95df21cb536cd3ca8550921de9a4d357138a1aaabc12 (4455576 bytes)
+- Loci read: prol. 1 (end)–3 with notes.
+- Quoted: prol. 2 "amore quaerendi pacem spiritus"; "inter alia occurrit illud miraculum … ad instar Crucifixi"; prol. 3 "Nam per senas alas … amorem Crucifixi" (block); "quod mens in carne patuit"; "quae a creaturis incipiunt … nisi per Crucifixum"; "Effigies igitur sex alarum seraphicarum insinuat sex illuminationes scalares".
+- Rights: public domain.
+- Ceiling: OCR (inteUigi→intelligi, sfix→sex corrected); "thirty-three years" and "seventh successor" from prol. 2 and its note (1259).
+
+### Bonaventure, Opera omnia (Quaracchi), t. IX — Sermones de sanctis, De sanctis Angelis 1–5
+- Witness: Quaracchi t. IX, *Sermones de sanctis*, "De sanctis Angelis" sermons 1–5 (pp. 609 ff.).
+- Repository ids: `work.bonaventure.opera-omnia-quaracchi` (existing).
+- URL: https://ia800507.us.archive.org/28/items/doctorisseraphic09bona/doctorisseraphic09bona_djvu.txt (the first attempt at the archive.org/download URL returned HTTP 500 and is in the manifest as ia-bonaventure-opera-t9.txt)
+- Retrieved: 2026-09-30T14:57:59Z
+- SHA-256 of the bytes read: 77fd92d2f496d6f1bb0639d69466449481de4889e18b99d267a2047f97e566d7 (4918572 bytes)
+- Loci read: s. 1 (pp. 609–614, whole); s. 2 opening; s. 3 opening; s. 4 (pp. 620–622, whole); s. 5 opening (division and part I start).
+- Quoted: s. 1 "Habemus loqui de hierarchiis angelicis …" (p. 609); "Scala ista, cuius pars est in caelo …" (p. 610); "In prima hierarchia sunt Throni … triumphare" (pp. 612–613); "Et supra se hierarchia angelica habet Virginem gloriosam …" (p. 612); "Concentus caeli est harmonia laudis angelicae …" (p. 612); "Angeli dicunt nobis: Suscipite exempla …" (p. 612); "Magnum est confidere in Angelis" (p. 612); "Loquuntur de caelestibus et affectum habent in terrenis" (p. 612); "ideo eius officium celebratur per universam Ecclesiam" (p. 613). s. 4: "Angeli dicuntur nostri propter tria …"; "Primum remedium ministrat Raphael, qui interpretatur medicina Dei"; "Secundum remedium ministrat Gabriel …"; "Tertium remedium ministrat Michael … Deo facit"; "introducit animas in paradisum exsultationis"; "quis est tam desiderandus ut Deus?"; "tres Angelos solum ex nomine designat sacra Scriptura …"; "imago Dei manifestativa luminis occulti, speculum purum"; "Semper est Angelis cognata virginitas"; "nam generales custodes sunt animarum Angeli". s. 5: "hierarchia nihil aliud est quam sacer principatus".
+- Rights: public domain.
+- Ceiling: OCR with many errors, silently corrected in quoted phrases (e.g. Virlutiim→Virtutum, Principutuum→Principatuum, supporta7ulum→supportandum, lesum→Iesum); editors state s. 1 is from cod. Trecensis 981 (s. XIII) with "multa et gravia vitia" corrected; "(et)" is the editors' insertion. Garbled first-hierarchy line of s. 1 (p. 610) paraphrased, not quoted.
+
+### William of Tocco and Peter Calo, lives of Thomas Aquinas (ed. Prümmer)
+- Witness: D. Prümmer (ed.), *Fontes vitae S. Thomae Aquinatis notis historicis et criticis illustrati* (Toulouse: Privat, 1911 [fasc. containing Calo and Tocco]).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/prummerfontesvitaestho/prummerfontesvitaestho_djvu.txt (also fetched https://archive.org/download/fontesvitaesthom00pr/fontesvitaesthom00pr_djvu.txt, 1912, same texts, used for spot check only)
+- Retrieved: 2026-09-30T14:57:03Z; 2026-09-30T14:57:09Z
+- SHA-256 of the bytes read: 2ea97fa64ac0d2d0afebbf1b45762de86b60501b587651733b9e75b25305b70d (612331 bytes); f09a430f5266343fe668398aeffcaee8af7ccdc763be9be72717a96de4ff11ce (1633591 bytes)
+- Loci read: Prümmer prologue; Calo nn. 6–8 (pp. 23–24) with notes; Tocco cc. 9–11 (pp. 74–76) with notes.
+- Quoted: Tocco c. 10 "ecce ad eum duo Angeli coelitus missi sunt … divinae largitatis ex dono" (block); "cui Angelica societas, dum castitate cingitur, non negatur, qui meruit fieri puritate Angelicus"; Calo n. 7 "Cingimus te cingulo perpetue virginitatis, quod nullatenus de cetero dissolvetur"; "quod ex tunc non sensit nec minimum carnis motum". Prümmer note (Tocco's sworn testimony in the canonization process, no. 61) paraphrased.
+- Rights: Latin texts public domain; Prümmer edition 1911 (public domain in US).
+- Ceiling: Google OCR; castilale→castitate corrected; page order in OCR irregular (p. 79 header before p. 76); body cites by chapter.
+
+### Pius XI, Studiorum Ducem (Latin)
+- Witness: Pius XI, encyclical *Studiorum Ducem*, 29 June 1923 (AAS 15 [1923] 309–326, per page footer), Latin, vatican.va.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://www.vatican.va/content/pius-xi/la/encyclicals/documents/hf_p-xi_enc_19230629_studiorum-ducem.html
+- Retrieved: 2026-09-30T15:00:03Z
+- SHA-256 of the bytes read: 2f7ab30c0fe9164784b9a453bcc5b31197f6d46c684ba9ac0a5eaa6799964944 (70323 bytes)
+- Loci read: whole letter and appended ORATIO.
+- Quoted (short): "prima omnium occurrit ea virtus … castimoniam dicimus"; "dignus est habitus quem mystica zona angeli cingerent"; "rato Angelici titulo"; "non modo Angelicum, sed etiam Communem seu universalem Ecclesiae Doctorem"; "si Thomae pudicitia … cecidisset, verisimile est nequaquam Ecclesiam suum Doctorem Angelicum habituram fuisse"; "Militiae Angelicae societatem"; "sancti Thomae cum Angelis ei zonam accingentibus"; "qua ipse utebatur"; ORATIO "Creator ineffabilis, qui de thesauris sapientiae tuae tres Angelorum hierarchias designasti, et eas super caelum empyreum miro ordine collocasti".
+- Rights: Vatican-site document; short quotations with attribution. The prayer is quoted in Latin as text, not offered as English prayer (no translation of it given).
+- Ceiling: web text; not collated with AAS.
+
+### Gertrude the Great, Insinuationes divinae pietatis (Kenmare translation)
+- Witness: *The Life and Revelations of Saint Gertrude, Virgin and Abbess, of the Order of St. Benedict* (London: Burns & Oates; New York: Benziger; letter of Bp Moriarty dated 11 Dec. 1870; translator Sister M. Frances Clare, Kenmare), parts II–V translating books II–V of the *Insinuationes*.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/thelifeandrevela00gertuoft/thelifeandrevela00gertuoft_djvu.txt
+- Retrieved: 2026-09-30T14:57:14Z
+- SHA-256 of the bytes read: f4a481ea4819992320b497bd4d79a81aea8ebac609ba36e0dd21b2f5bf25ea63 (1230593 bytes)
+- Loci read: front matter, contents, Advertisement; pt III ch. 21; pt IV chs. 1–2 (Christmas); pt IV ch. 54 (St Michael) and 55 opening.
+- Quoted: pt III ch. 21 ("it appeared to her that her guardian angel took her in his arms … bless Thy little child"); pt IV ch. 2 ("When those who loved God with the greatest fervour … present their homage"; "that when angels are present at our solemnities …"); pt IV ch. 54 ("by meditating on the care …"; "I offer Thee this most august Sacrament …"; block "Thou hast indeed honoured us … utmost vigilance"; "appeared to her as a prince magnificently attired …"; Archangels', Virtues', Powers' promises; "For the prayers of one loving soul …").
+- Rights: public domain (1870).
+- Ceiling: OCR; "0 most loving"→"O most loving". Latin chapter numbers of the *Insinuationes*/*Legatus* not verified; body cites the translation's part/chapter. The translation conflates Gertrude the Great with the abbess; body does not call her abbess.
+
+### Mechtild, Select Revelations (1875)
+- Witness: *Select Revelations of S. Mechtild, Virgin: taken from the five books of her Spiritual Grace, and translated from the Latin by a secular priest* (London: T. Richardson, 1875).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/selectrevelation00mech/selectrevelation00mech_djvu.txt ; collation https://archive.org/download/selectrevelatio00mechgoog/selectrevelatio00mechgoog_djvu.txt
+- Retrieved: 2026-09-30T14:57:17Z; 2026-09-30T15:03:37Z
+- SHA-256 of the bytes read: cc5d201098135ed6247ad0244364a99adb4fdef17551f461f27663d44e8b096c (290555 bytes); 13ac85f1044004f9ef139e8f955f71aa5ba434fad2fb1417114df745377ad1e4 (252170 bytes)
+- Loci read: contents; ch. 16 (pp. 72–76) whole.
+- Quoted: ch. 16 ("The handmaid of Christ beheld a golden staircase … conversation of men"; "faithfully, and humbly, and devotedly … the poor"; block "And they who love God … no others are found").
+- Rights: public domain (1875).
+- Ceiling: both OCRs read "Before the heart of S. Michael" at the chapter opening (probably a misprint for "feast"); the phrase is not quoted. Latin locus in the *Liber specialis gratiae* not identified.
+
+### Trial and rehabilitation of Joan of Arc (Murray)
+- Witness: T. Douglas Murray (ed. and trans.), *Jeanne d'Arc, Maid of Orleans, Deliverer of France … as attested on oath and set forth in the original documents* (New York: McClure, Phillips, 1902).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/jeannedarcmaidof028754mbp/jeannedarcmaidof028754mbp_djvu.txt
+- Retrieved: 2026-09-30T14:57:24Z
+- SHA-256 of the bytes read: 2b7d8a16ec010a81d1c1cee0bec29b930183bd0b1bef93fa0d025b54d608dbae (790676 bytes)
+- Loci read: public sessions 21, 22, 24, 27 Feb., 1 and 3 Mar. 1431 (pp. 1–53 region); private sessions 15 and 17 Mar. (pp. 83–86); rehabilitation depositions of Pierre Lebouchier (1452; pp. 198–199) and Guillaume Delachambre (p. c. 254).
+- Quoted: 27 Feb. (block, "What was the first Voice … taken away with them"); 1 Mar. ("Do you think God has not wherewithal to clothe him?"); 3 Mar. ("I saw them with my eyes; and I believe …"); 15 Mar. (block; "so well, and it was so clear …"; "Above all things he told me to be a good child …"); 17 Mar. ("In the form of a true honest man … which he has given me"); Lebouchier ("to Saint Michael that he would direct and counsel her"; "While they were tying her to the stake …"); Delachambre ("cry 'Jesus' and … invoke St. Michael; and then she perished in the flame").
+- Rights: public domain (1902; Murray d. 1911).
+- Ceiling: English translation only; the Latin/French minute (Quicherat) not read. Lebouchier's day of examination is OCR-garbled ("May %th, 1452"); body gives the year only.
+
+### Fullerton, Life of St. Frances of Rome (1855)
+- Witness: Lady Georgiana Fullerton, *The Life of St. Frances of Rome* (London, 1855), with J. M. Capes's essay; Project Gutenberg eBook 8495.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://www.gutenberg.org/cache/epub/8495/pg8495.txt (first attempt at archive.org 8stfr10.txt returned 500)
+- Retrieved: 2026-09-30T14:58:01Z
+- SHA-256 of the bytes read: 16b83736f7e6187a56f3ac72db3d817b4e2a2498771ec69a46b30a993b3df8f1 (511114 bytes)
+- Loci read: preface on authorities (Mattiotti; Bollandists; Fuligatti; Bussière); chs. 3, 7, 14; contents.
+- Quoted: ch. 3 ("one day to accompany her … in a visible form"; "At the least imperfection …"); ch. 7 ("There are nine choirs …"; "This my companion is higher …"; "but the archangel remained …"; "His stature … degraded condition of our own"; "At night, and in the most profound darkness …"; "When she committed the slightest fault …"; "Be not afraid, father …"); ch. 14 ("The heavens open! …").
+- Rights: public domain (1855).
+- Ceiling: Gutenberg transcription; Mattiotti's Latin life (AASS) not read.
+
+### Ignatius of Loyola, Spiritual Exercises (Mullan 1914)
+- Witness: *The Spiritual Exercises of St. Ignatius of Loyola, translated from the Autograph* by Father Elder Mullan, S.J. (New York: Kenedy, 1914).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/spiritualexercis00ignauoft/spiritualexercis00ignauoft_djvu.txt
+- Retrieved: 2026-09-30T14:57:33Z
+- SHA-256 of the bytes read: e5d0d89ec40c6a7562f347d090e2280baada61fe4ff858033f8c55a49ec02a3e (223739 bytes)
+- Loci read: First Week first and second exercises; Second Week fourth day (Two Standards); Rules for discernment First Week 12–14; Rules for the Second Week 1–8.
+- Quoted: first exercise first point (block and two phrases); second exercise fifth point ("the Angels, how, though they are the sword …"); Two Standards first and second points; Second-Week rules 1, 3, 4 (block), 5, 7.
+- Rights: public domain (1914; US).
+- Ceiling: OCR; standard paragraph numbers not printed in Mullan and not used.
+
+### Teresa of Jesus, Life (Lewis)
+- Witness: *The Life of St. Teresa of Jesus … Written by Herself*, trans. David Lewis, 3rd ed. enlarged, with notes by B. Zimmerman (London: Baker, 1904); Project Gutenberg eBook 8120.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://www.gutenberg.org/cache/epub/8120/pg8120.txt
+- Retrieved: 2026-09-30T14:58:02Z
+- SHA-256 of the bytes read: 3420485ba9b861cc44ac80833e3d9864683784e93e0f68f6ba5fc44c407a33bc (1116120 bytes)
+- Loci read: ch. 29 §§ 15–19 with notes 13–18; ch. 31 §§ 3–4; ch. 39 §§ 31–32.
+- Quoted: 29.16 and 29.17 (blocks); 39.32; 31.4 (two sentences). Note 14 (cherubines/seraphim, Báñez) paraphrased.
+- Rights: public domain (1904; US).
+- Ceiling: Gutenberg transcription; Spanish autograph not read.
+
+### Francis de Sales, Introduction à la vie dévote (French)
+- Witness: *Introduction à la vie dévote*, édition corrigée (Lyon and Paris: Périsse frères, 1832); Project Gutenberg eBook 53540.
+- Repository ids: `work.francis-de-sales.introduction-a-la-vie-devote` (existing); `edition.francis-de-sales.introduction-a-la-vie-devote.perisse-freres-french-gutenberg` (existing).
+- URL: https://www.gutenberg.org/cache/epub/53540/pg53540.txt
+- Retrieved: 2026-09-30T14:59:40Z
+- SHA-256 of the bytes read: c2d4183f1d937d9ae9c7c73d9a444bf1a7701565d02402a2175c0e1bd0277036 (615203 bytes)
+- Loci read: II.16 whole.
+- Quoted: II.16 "Puisque c'est par le ministère des anges … nos aspirations"; "Rendez-vous fort familière avec les anges … coopèrent à vos intentions"; "il s'étoit toujours très-bien trouvé de saluer … les anges qui la protégeoient". English glosses are the lane's own (unquoted).
+- Rights: public domain.
+- Ceiling: Gutenberg transcription of the 1832 edition (spelling "présens", "étoit" as printed).
+- Also consulted, not quoted: *Introduction to the Devout Life*, "new edition" (London: Longmans, 1891; https://archive.org/download/IntroductionToTheDevoutLife/IntroductionToTheDevoutLife_djvu.txt; text/ia-desales-devout-life-1891.txt) — its preface states it omits the chapter on honouring and invoking Saints and Angels (numbered there Pt I ch. xvi) and passages invoking the saints; unusable for II.16. *Introduction to the Devout Life, a new translation* (London: Rivingtons, 1876; https://archive.org/download/introductiontod00salegoog/introductiontod00salegoog_djvu.txt; text/ia-desales-devout-life-1876.txt) — II.16 read; free rendering that softens "priez-les souvent"; not quoted.
+
+### Alphonsus Liguori, Sermons for all the Sundays (Grimm)
+- Witness: *Sermons for all the Sundays in the Year* / *Abridged Sermons for all Sundays*, Centenary Edition vol. XVI, ed. and trans. Eugene Grimm (New York: Benziger; item dated 1890).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/abridgedsermons16liguuoft/abridgedsermons16liguuoft_djvu.txt
+- Retrieved: 2026-09-30T15:11:10Z
+- SHA-256 of the bytes read: 4b1ec5ca2a813cabc2e1d9770acb7a97b8ff346f0958d335aac104ef916c8838 (1232231 bytes)
+- Loci read: s. 11 (Sixth Sunday after Epiphany, "Death of the Just", pp. 124–126); s. 44 (Fifteenth Sunday after Pentecost, pp. 457–458); series list in front matter.
+- Quoted: s. 11 (block, p. 125); s. 44 ("St. Joseph, St. Michael, the archangel, my holy angel-guardian …", p. 458).
+- Rights: public domain (Grimm d. 1891).
+- Ceiling: OCR of p. 125 is poor; the quoted sentences were reconstructed from legible OCR (`(iod`→God, `whh`→with, `guar dian`→guardian). Recommend collation against another scan (e.g. archive.org sermonsforallsun00liguuoft). Also consulted without quotation: vol. XV *Preaching* (text/ia-liguori-grimm-v15.txt; https://archive.org/download/alphonsusworks15liguuoft/alphonsusworks15liguuoft_djvu.txt) and vol. XVII (text/ia-liguori-grimm-v17.txt).
+
+### Alphonsus Liguori, Glories of Mary (Grimm)
+- Witness: *The Glories of Mary*, two volumes in one, Centenary Edition vols. VII–VIII, ed. Grimm, 4th reprint revised (Brooklyn etc.: Redemptorist Fathers, 1931).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/kpbc.umk.pl.Magazyn_286_07_HD_008_197127/Magazyn_286_07_HD_008_djvu.txt
+- Retrieved: 2026-09-30T15:12:23Z
+- SHA-256 of the bytes read: b1d891b61ab6b5a88fbe158b5260affc3e208ba380ac8d02bc6cace4c87a2f0c (1353188 bytes)
+- Loci read: series list; Pt I ch. II § 3 ("Mary renders death sweet"), pp. c. 100–102 with footnotes.
+- Quoted: "sends without delay the prince of the heavenly court … recommended themselves to her"; footnote Latin "Michael, dux et princeps militiæ cœlestis, cum omnibus spiritibus administratoriis, tuis, Virgo, paret præceptis" (Spec. B. V. lect. 3).
+- Rights: Grimm's 1888 translation public domain; 1931 reprint adds nothing quoted.
+- Ceiling: OCR; the series list announces "Devotion to the Holy Angels" in vol. VIII, but it is not in this reprint nor in the Kenedy 1888 *Glories* (text/ia-liguori-glories-kenedy-1888.txt; https://archive.org/download/thegloriesofmary00liguuoft/thegloriesofmary00liguuoft_djvu.txt), both checked.
+
+### Monnin, The Spirit of the Curé of Ars (1865)
+- Witness: Alfred Monnin, *The Spirit of the Curé of Ars*, trans. from the French, ed. J. E. Bowden (London, 1865).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/spiritcurarsstj00monngoog/spiritcurarsstj00monngoog_djvu.txt
+- Retrieved: 2026-09-30T14:59:43Z
+- SHA-256 of the bytes read: 0a908a99deaec89d8f4ed383306d9a0318933cd36bf3805c41c2059b28340f48 (363473 bytes)
+- Loci read: contents; pt I introduction (p. c. 30); Catechisms on the Prerogatives of the Pure Soul, the Priesthood, Frequent Communion, the Cardinal Virtues; Homily on the Cockle.
+- Quoted: "We always have two secretaries …"; "What joy is it to the guardian angel to conduct a pure soul!"; "How happy is a guardian angel who leads a beautiful soul to the holy table!"; "If I were to meet a priest and an angel … holds His place"; "When we are going along the streets … by our side".
+- Rights: public domain (1865).
+- Ceiling: Google OCR; French original not read.
+
+### O'Meara, The Curé of Ars
+- Witness: Kathleen O'Meara, *The Curé of Ars* (Notre Dame: Ave Maria Press, [1912?]).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/curofars00omeauoft/curofars00omeauoft_djvu.txt
+- Retrieved: 2026-09-30T15:07:29Z
+- SHA-256 of the bytes read: 5aa00843c0b86aa16c516510a4a7a90593130676d8c7dace0b27cfd5ede9f6b6 (261134 bytes)
+- Loci read: ch. 9 "He is persecuted by the devil" (pp. 77–91).
+- Quoted: "commending myself to God, to the Blessed Virgin, and my Guardian Angel"; "to be near me with His angels when the enemy came to torment me"; "The devil is cunning … puts him to flight"; "He is more powerful than the grappin."
+- Rights: public domain (author d. 1888).
+- Ceiling: OCR.
+
+### Germanus, Life of Gemma Galgani (O'Sullivan 1913)
+- Witness: Germanus of St Stanislaus, C.P., *The Life of Saint Gemma Galgani*, trans. A. M. O'Sullivan (St Louis: B. Herder, 1913), as retypeset by Catholic Way Publishing (2014).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/the-life-of-saint-gemma-galgani-by-venerable-reverend-germanus-c.-p/The_Life_of_Saint_Gemma_Galgani%20by%20Venerable%20Reverend%20Germanus%2C%20C.P_djvu.txt
+- Retrieved: 2026-09-30T14:59:54Z
+- SHA-256 of the bytes read: 6e9576903c61bc2e55442235fd11a4ce42d8e7d21865763768a89e295d6391fa (702851 bytes)
+- Loci read: ch. 1 opening; ch. 20 whole.
+- Quoted: ch. 20 ("as one friend would with another"; "Jesus … has not left me alone …"; angel's reply; "raised in the air with outspread wings …"; "I myself have many times assisted …"; "like a child at school"; dictation block; "My Angel is a little severe …"; "Dear Angel … I so love you!" dialogue; "From this day forward …"; "No, because I am sent by Him …"; "It is my wish that thy conversation …").
+- Rights: 1913 translation public domain in US; the retypeset claims typography only; words quoted are the 1913 translation's.
+- Ceiling: retypeset e-text, not collated with the 1913 print; small archaisms ("Art you") suggest retyping errors elsewhere; quoted passages avoid visibly corrupt lines. The French *Lettres et extases* (1920; text/ia-gemma-lettres-extases-1920.txt) fetched, not used.
+
+### Thérèse of Lisieux, Histoire d'une âme (1912) — "À mon Ange gardien"
+- Witness: Sœur Thérèse de l'Enfant Jésus, *Histoire d'une âme écrite par elle-même; Lettres; Poésies* (Lisieux, 1912 printing, "Cent vingt-cinquième mille"), pp. 427–428, as transcribed on French Wikisource (proofread "à valider").
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://fr.wikisource.org/wiki/Histoire_d%E2%80%99une_%C3%A2me/4/2/5 (also /1/4 read)
+- Retrieved: 2026-09-30T15:09:03Z; 15:09:05Z
+- SHA-256 of the bytes read: e6028bf3db48db2ce1232da150389b4f31c6975d5485e76708f826c1c94940c3 (70424 bytes); 172b4a7069bc2293f63a9f2bc20e0307d61ddff4ecfc026e143aab393c94953a (147700 bytes)
+- Loci read: poem "À mon Ange gardien" (Février 1897) whole; front matter (death date 30 Sept. 1897); ch. 4 searched for the angels.
+- Quoted: stanza 1 (block); stanza 2 lines; "plus promptement que les éclairs"; stanza 4 lines; stanza 6 (block). English glosses are the lane's own (unquoted).
+- Rights: author d. 1897; text public domain; Wikisource transcription CC BY-SA (source text PD).
+- Ceiling: Wikisource transcription of the 1912 printing; not collated with page images or the critical edition.
+
+### Thérèse, Poems (Emery 1907)
+- Witness: *Poems of Sr. Teresa, Carmelite of Lisieux*, trans. S. L. Emery (Boston: Angel Guardian Press, 1907).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/poemsofsrteresac00thrs/poemsofsrteresac00thrs_djvu.txt
+- Retrieved: 2026-09-30T14:59:47Z
+- SHA-256 of the bytes read: 610a90d869ab6c4c0995925babfb9c3d45fb68ca2a96c44e21aed15db7c6ab79 (202392 bytes)
+- Loci read: "To My Angel Guardian" (pp. 73–74); "The Angels of the Crib. Fragment." (pp. 134–136).
+- Quoted: "The Angels of the Crib" ("O Child, whose light doth blind the sight / … that love of Thine?"; "Thee will I guard by day and night").
+- Rights: public domain (1907; US).
+- Ceiling: OCR ("divine 1"→"divine!"). The French of "Les Anges à la crèche" not read.
+- Also consulted: T. N. Taylor, *Saint Thérèse of Lisieux … a new and complete translation of L'Histoire d'une âme* (1912; text/ia-therese-taylor-1912.txt) — searched for the Association of the Holy Angels; not found; not quoted.
+
+### Newman, Parochial and Plain Sermons II.29 "The Powers of Nature"
+- Witness: J. H. Newman, *Parochial and Plain Sermons*, vol. II, sermon 29 (Newman Reader transcription of the uniform edition, pp. 358–367).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://newmanreader.org/works/parochial/volume2/sermon29.html
+- Retrieved: 2026-09-30T15:00:00Z
+- SHA-256 of the bytes read: e27340a99e1f68590b8c16b56762bfe8d5130eaceb0ce073437f0d93739b7510 (18903 bytes)
+- Loci read: whole sermon and notes.
+- Quoted: pp. 358–359 (block); p. 360 ("how do the wind and water … work of Angels"); p. 361 ("Nature is not inanimate …"); p. 362 ("Every breath of air …"; "in subordination to that higher view"); p. 363 ("fixed laws, self-caused and self-sustained"; "the thousands and ten thousands of His unseen Servants"); pp. 365–366 ("it is a great comfort to reflect …"; "The very lowest of His Angels …"; "if we attain to heaven …").
+- Rights: public domain text; Newman Reader site © NINS for presentation; focused quotation.
+- Ceiling: web transcription; not collated with print.
+
+### Newman, The Dream of Gerontius
+- Witness: J. H. Newman, *The Dream of Gerontius* (dated "The Oratory. January, 1865"), in *Verses on Various Occasions* (Newman Reader transcription).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://newmanreader.org/works/verses/gerontius.html
+- Retrieved: 2026-09-30T15:00:01Z
+- SHA-256 of the bytes read: e558097b617acbf4c5be0f88f580fde0505daead16af5cb617d8ce2c6f6486fa (145115 bytes)
+- Loci read: §§ 2, 5, 6, 7 (angel passages).
+- Quoted: § 2 ("My work is done …" block; "My Father gave … To serve and save"; "a member of that family … he never has known sin"; "More than the Seraph … ransom'd race"); § 5 ("Least and most childlike of the Sons of God"; "Praise to the Holiest …"; "elder race"; "To battle and to win …"); § 6 ("the great Angel of the Agony …"); § 7 (block "Softly and gently … on the morrow").
+- Rights: public domain.
+- Ceiling: web transcription with hard line-wrap artifacts removed (e.g. "ran- som'd"); line division restored from the verse sense.
+
+### Gregory the Great, Homiliae in Evangelia 34.7 (for the order comparison only)
+- Witness: cache copy of Gregory, XL Homiliae in Evangelia.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/sanctigregoriim00igoog/sanctigregoriim00igoog_djvu.txt
+- Retrieved: 2026-09-29T13:48:47Z
+- SHA-256 of the bytes read: 4eb8d78cd432816ff08b76b2549b6015fe29637307a22ee1d7ba79884d68e2f1 (701111 bytes)
+- Loci read: 34.7 (list of nine orders).
+- Quoted: none (cited for the order only).
+- Rights: public domain.
+- Ceiling: OCR.
+
+### Denzinger (Lateran IV, DS 800)
+- Witness: cache Denzinger (Latin).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL/Retrieved: see manifest `denz-patristica.txt`.
+- SHA-256 of the bytes read: 604f24c46e0bc71c2018f25dc787a9ab421d4b2e9cf7d1cee1f43e910ef2708f (2333435 bytes)
+- Loci read: DS 800 (428).
+- Quoted: none (cited: "Diabolus enim et alii daemones a Deo quidem natura creati sunt boni, sed ipsi per se facti sunt mali").
+- Rights: public domain Latin.
+- Ceiling: OCR.
+
+### Catechism of the Catholic Church 335–336
+- Witness: CCC, English, vatican.va (cache ccc-en-P1A.txt).
+- Repository ids: `work.catholic-church.catechism` (existing).
+- URL/Retrieved: per manifest.
+- SHA-256 of the bytes read: f5d0972215f47a1bc22e768aa4e51f454db80f32dcbc4e3dd52b4a40ae5254d3 (22605 bytes)
+- Loci read: 334–336.
+- Quoted: 336 "From infancy to death human life is surrounded by their watchful care and intercession" (short; Vatican English, attributed).
+- Rights: Vatican copyright; short quotation with attribution.
+- Ceiling: web text.
+
+### Douay–Rheims (Challoner), Gutenberg 1581
+- Witness: repository edition edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.
+- Repository ids: `work.english-college-of-douay.douay-rheims-bible` (existing).
+- URL: https://www.gutenberg.org/cache/epub/1581/pg1581.txt
+- Retrieved: per manifest
+- SHA-256 of the bytes read: 7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007 (5880580 bytes)
+- Loci read: Ps 90:11–12; 103:4; 137:1; 2 Cor 11:14; Matt 18:10; Gen 28:12; Apoc 7:2; 12:7; Isa 6:2, 6–7; Luke 22:43; Dan 10:13; 12:1; Tob 12:12, 15; Heb 1:14; 4 Kings 6:16–17.
+- Quoted: Matt 18:10 (part); Ps 137:1 (part); 2 Cor 11:14 (part).
+- Rights: public domain.
+- Ceiling: Gutenberg transcription.

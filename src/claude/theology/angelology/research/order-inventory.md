@@ -359,3 +359,25 @@ only when its locus was read at the source.
 | angels | Dionysius | *CH* 9.2 (Parker) | Angels | 9 | Concerned with the things of the world; with Principalities and Archangels presides over human hierarchies | yes |
 | angels | Bernard | *De consideratione* V.4.8 (Lewis) | Angels | 9 | Believed given as guardians of individual men | yes |
 | angels | Suárez | *De angelis* VI.18.6 | Angeli infimi ordinis | 9 | Particular guardianship of single men | yes (OCR) |
+| seraphim | Bonaventure, *Serm. de sanctis, De sanctis Angelis* 1 | Opera IX 612–613 | seraphicus ordo / Seraphim | 1 | answers to the sweetness of the Holy Spirit; burning charity; "principatum tenent" in the first hierarchy | yes (OCR) |
+| cherubim | Bonaventure, *De sanctis Angelis* 1 | Opera IX 611–613 | Cherubim | 2 | answers to the Son; fulness of wisdom/knowledge | yes (OCR) |
+| thrones | Bonaventure, *De sanctis Angelis* 1 | Opera IX 610–613 | Throni | 3 | answer to the power of the Father; God gives his judgments in them | yes (OCR) |
+| dominations | Bonaventure, *De sanctis Angelis* 1 | Opera IX 611–613 | Dominationes | 4 | imperare (command); administer the governance of the universe | yes (OCR) |
+| virtues | Bonaventure, *De sanctis Angelis* 1 | Opera IX 611–613 | Virtutes | 5 | exsequi (execute) | yes (OCR) |
+| powers | Bonaventure, *De sanctis Angelis* 1 | Opera IX 611–613 | Potestates | 6 | triumphare; coerce contrary powers by prudence, not violence | yes (OCR) |
+| principalities | Bonaventure, *De sanctis Angelis* 1 | Opera IX 612–613 | Principatus | 7 | manuducere (lead by the hand); flow into the Church | yes (OCR) |
+| archangels | Bonaventure, *De sanctis Angelis* 1 | Opera IX 612–613 | Archangeli | 8 | erudire; teach the secrets of God | yes (OCR) |
+| angels | Bonaventure, *De sanctis Angelis* 1 | Opera IX 612–613 | Angeli | 9 | supportare; guard in prosperity and adversity | yes (OCR) |
+| thrones | Bonaventure, *De sanctis Angelis* 5 | Opera IX s. 5 pt I | Throni | first hierarchy | conformed to the Father in celsitudo praesidentiae | yes (OCR) |
+| cherubim | Bonaventure, *De sanctis Angelis* 5 | Opera IX s. 5 pt I | Cherubim | first hierarchy | conformed to the Son, plenitudo sapientiae | yes (OCR) |
+| seraphim | Bonaventure, *De sanctis Angelis* 5 | Opera IX s. 5 pt I | Seraphim | first hierarchy | conformed to the Holy Spirit, sanctitudo benevolentiae; "ardens sive incendens" | yes (OCR) |
+| seraphim | Mechtild, *Select Revelations* (1875) | ch. 16 | Seraphim | 1 (ninth step) | those who love God with his own love; nothing between them and God | yes |
+| cherubim | Mechtild | ch. 16 | Cherubim | 2 (eighth step) | the learned who pour back on God what they draw from him | yes |
+| thrones | Mechtild | ch. 16 | Thrones | 3 (seventh step) | contemplatives offering God a peaceful dwelling | yes |
+| dominations | Mechtild | ch. 16 | Dominations | 4 (sixth step) | those who bring the flesh under the spirit | yes |
+| principalities | Mechtild | ch. 16 | Principalities | 5 (fifth step) | prelates who watch for souls | yes |
+| powers | Mechtild | ch. 16 | Powers | 6 (fourth step) | those who fight vices and despise the enemy | yes |
+| virtues | Mechtild | ch. 16 | (unnamed; "together with their virtues") | 7 (third step) | patience, obedience, poverty, humility | partly: third step's order not named in the translation |
+| archangels | Mechtild | ch. 16 | Archangels | 8 (second step) | those who wait on God in prayer | yes |
+| angels | Mechtild | ch. 16 | Angels | 9 (first step) | those who minister in the Church and serve the sick, pilgrims, poor | yes |
+| seraphim … angels | Gregory, *Hom. in Evang.* | 34.7 | angelos, archangelos, virtutes, potestates, principatus, dominationes, thronos, cherubim, seraphim | ascending list (seraphim 1 … angels 9; principalities 5, powers 6, virtues 7) | read only to confirm Mechtild follows Gregory | yes (OCR) |

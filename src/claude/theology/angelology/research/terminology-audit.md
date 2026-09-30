@@ -10,6 +10,7 @@ transliteration.
 | accuser | criminator | diabolos | Lactantius, Div. inst. II.8.6 | ANF "accuser" |
 | added / cooperating grace | gratia apposita / gratia cooperans | — | Lombard, Sent. II d. 5 cc. 1, 3–4 | never given to those who fell |
 | adverse powers | virtutes adversae | — | Gregory, Hom. 34.10 | Restrained by the order of Powers |
+| aeon | aevum | aion | *De sanctis Angelis* 5 | angelic duration between eternity and time |
 | aevum | aevum | — | I q. 61 a. 2 (cf. In II Sent. d. 2 q. 1 a. 1) | Angelic duration between time and eternity |
 | affective knowledge | cognitio affectiva | — | I q. 64 a. 1 co. | `producens amorem Dei`; NA renders "effective" |
 | alliance / ally | — | symmachia | Gregory of Nyssa, De vita Moysis II (PG 44, 337D) | "set beside ... as an ally"; not printed in body |
@@ -22,8 +23,11 @@ transliteration.
 | angel of punishment | — | — | Hermas, Sim. VI.3 | "belongs to the just angels" |
 | angel of repentance | — | — | Hermas, Vis. V; Sim. X.1 | The Shepherd; guardian of the penitent |
 | angel of righteousness / of iniquity | — | — | Hermas, Mand. VI.2 | The two angels with each man |
+| angel of the diocese | l'ange du diocèse | — | de Sales II.16 | angels of places and parishes (Faber) |
 | angel ruling a nation | Principatus (ST I q. 108 a. 6) | ethnarch\=es angelos | Basil, Adv. Eun. III.1 | Basil's argument from the dignity of a nation; Aquinas's Principalities |
 | angel who reigns with him | Angelus conregnans | — | ST I q. 113 a. 4 | after the way |
+| Angelic Doctor | Doctor Angelicus | — | *Studiorum Ducem*; Prümmer prol. | Pius XI adds "Communis seu universalis" |
+| Angelic Warfare | Militia Angelica | — | *Studiorum Ducem* | confraternity for chastity under St Thomas |
 | angels | angeli | angeloi | CH 9.2 |  |
 | angels of the presence | — | — | Jub 1:27; 2:2; T. Levi 3 | Highest class in Jubilees and T. Levi |
 | application of power | applicatio virtutis |  | I q. 52 a. 1 co.; a. 2 co. | ground of angelic place |
@@ -106,11 +110,15 @@ transliteration.
 | Gabriel | Gabriel | Gabriel | Dan 8:16; Luke 1:19 | fortitudo Dei (Gregory) |
 | genii | genii | daimones | Tertullian, De anima 39; Lactantius II.14 | pagan household spirits = demons |
 | genius | genius | — | Apuleius *De deo Socr.* 15; Tertullian *De anima* 39; Lactantius II.14.12 | Latin rendering of daemon; Jowett uses "genius" for daimon in *Phaedo* and *Republic*. |
+| girdle of chastity | cingulum castitatis; mystica zona | — | Tocco c. 10; *Studiorum Ducem* | Calo: cingulum perpetue virginitatis |
 | gnostic (perfect Christian) | — | gnostikos | Clement, Strom. VII | Clement's term for the perfect believer |
+| good angel / evil angel | — | — | Ignatius, Rules for the Second Week 3–7 (Mullan) | "angel of light" (2 Cor 11:14) |
+| grappin | — | — | O'Meara ch. 9 | Vianney's name for the devil |
 | ground of presence | ratio essendi in loco | — | Paris art. 219 gloss; Cajetan on I q. 52 a. 1 | the gloss: substance is not the ratio |
 | guard of our life | — | phylax t\=es z\=o\=es | Basil, *Hom. in Ps.* 33.5 |  |
 | guard, keeping | custodia | — | Hilary 134.17; Jerome, In Matth. III | *in custodiam sui angelum delegatum* |
 | guardian (tutelary spirit) | custos | — | Hesiod *WD* 123 (tr.); Lactantius II.14.8; Clement *Strom.* V.14 ("tutelary angels"); Guthrie's Plotinus ("guardian" = daimon) | Guthrie's "guardian" translates daimon; not the Christian guardian angel. |
+| guardian angel | ange gardien; (angelus custos) | — | Thérèse, "À mon Ange gardien"; de Sales II.16 | Newman: "Angel-guardian" |
 | guardian angel | angelus custos | — | CCC 336; Matt 18:10; ST I q. 113 aa. 4, 6 | "Beside each believer" (Basil, via CCC 336) also "angel guardian" in 1920 English |
 | guardian of our life | custodia (ST I q. 113 pr.) | phylax t\=es z\=o\=es | Basil, Hom. in Ps. 33.5 | not printed in body |
 | guardianship | custodia | — | ST I q. 113 pr. | Dominican "guardianship" |
@@ -124,6 +132,7 @@ transliteration.
 | hidden seeds | `occulta semina` | — | *De Trin.* III.8.13 | angels apply them, do not create |
 | hidden seeds | occulta semina; naturae semina | — | Augustine, De Trin. III.8.13; De pot. q. 6 a. 3 | Causes latent in the elements; angels apply them, do not create |
 | hierarchy | hierarchia | hierarchia | CH 3.1 | "sacred order and science and operation"; the word appears first in this corpus |
+| hierarchy | hierarchia (= sacer principatus) | hierarchia | Bonaventure, *De sanctis Angelis* 5 | supercelestial / celestial / subcelestial |
 | hierarchy (sacred principality) | hierarchia; sacer principatus | hierarchia (hieron + archon) | CH 3.1; ST I q. 108 a. 1 co.; In II Sent. d. 9 q. 1 a. 1 co. | Defined by order, science, action, likeness to God |
 | honour of love, not servitude | `caritate, non servitute` | — | *De vera religione* 55.110 | the honour due to the angels |
 | illumination | illuminatio | photismos | CH 3.2–3 | Second |
@@ -141,6 +150,7 @@ transliteration.
 | interpreter, messenger | interpres, salutiger | — | Apuleius *De deo Socr.* 6; Plutarch *De def.* 13; Porphyry *De abst.* II.38 ("transporters") | Symposium's office of the daemonic. |
 | knowing (etymology of daemon) | peritus, rerum scius | daemones / daemonas | *Cratylus* 398b (Jowett "daemones (knowing or wise)"); Lactantius II.14.6; Isidore VIII.11.15; Augustine IX.20; Aquinas *De sub. sep.* 20 | Chain of one etymology. |
 | laws of the angels | leges angelorum | — | Hilary, Tract. in Ps. 118 Vau 8 |  |
+| Lent of Saint Michael | Quadragesima ad honorem sancti Archangeli Michaelis | — | Bonaventure, *Leg. maior* XIII.1; Quaracchi note to IX.3 | forty days from the Assumption to 29 Sept. |
 | Little Genesis | parva Genesis | ta I\=ob\=elaia / Lept\=e Genesis | Jerome, Ep. 78; Epiphanius, Pan. 39.6.1 | Names of Jubilees |
 | love of concupiscence | amor concupiscentiae | — | I q. 60 a. 3 | Love of a good to be had |
 | love of friendship | amor amicitiae | — | I q. 60 a. 3 | Wishing good to a subsisting good |
@@ -171,6 +181,7 @@ transliteration.
 | night knowledge | cognitio nocturna | — | I q. 64 a. 1 ad 3 | `non dicitur vespertina, sed nocturna` |
 | non-continuous motion | motus non continuus |  | I q. 53 a. 1 co. | whole place quitted at once |
 | obstinate / confirmed | obstinata / confirmata | — | I q. 64 a. 2 co. | Demons' will and good angels' will |
+| office of presenting souls | animarum repraesentandarum officium | — | *Leg. maior* IX.3 | Salter: "ministry of bringing souls before God" |
 | offices | officia | — | Origen, De princ. I.5.1 (note [2023]) | "rational offices and orders" |
 | operation | operatio | energeia | CH 3.1 | Third term |
 | order | ordo | taxis | CH 3.1 | First term of the definition |
@@ -219,6 +230,8 @@ transliteration.
 | seminal principles | rationes seminales | — | I q. 62 a. 3 | Grace given as seed with nature |
 | sensitive appetite | appetitus sensitivus | — | I q. 59 a. 1 | Reaches particular goods only |
 | separate substance | substantia separata | — | Aquinas *De sub. sep.*; *ST* I q.50 a.3; I q. 50 a. 3 co. | Aquinas's name for the philosophers' incorporeal substances, which the faith calls angels. Aquinas's philosophical name for angels |
+| Seraph (singular) | Seraph | — | *Leg. maior* XIII.3; *Itin.* prol. 2 | kept singular as in both witnesses |
+| seraphic | seraphicus | — | *Leg. maior* XIII.3; *Itin.* prol. 3; Quaracchi title | "Doctor seraphicus" as printed title |
 | Seraphim | Seraphim | seraphim | Isa 6:2; Gregory, Hom. 34.9; CH 7.1 | "Burning, kindling" "Kindling or burning" |
 | seraphim | seraphim / seraphin; "ardentes vel incendentes" | -- (Hebrew) | Hom. 34.10; Etym. VII.5.24 | "Quorum profecto flamma amor est" |
 | service due to God only | servitus; cultus | latreia | *De civ. Dei* X.1 | Augustine borrows the Greek word |
@@ -250,6 +263,7 @@ transliteration.
 | to minister / to stand by (assist) | ministrare / assistere | -- | Hom. 34.12; Moralia XVII.13.18; Etym. VII.5.19 | Dan 7:10; ST I q. 112 a. 3 |
 | to tempt | tentare | — | ST I q. 114 a. 2 | "To make trial" (experimentum sumere) |
 | tongue of angels | lingua Angelorum | — | ST I q. 107 a. 1 ad 2 | Metaphor for the power of manifesting the concept |
+| transverberation | — | — | tradition; Teresa, *Life* 29.16–17 | term not in Lewis; used as received name |
 | tutor | paedagogus | paidag\=ogos | Basil, *Adv. Eun.* III.1; Bernard, *Qui habitat* 12.3 | CCC 336 renders "protector" |
 | tutor (of the believer) | — | paidag\=ogos | Basil, Adv. Eun. III.1 (PG 29, 656B) | own rendering; CCC 336 gives "protector" |
 | types of the divine works | rationes divinorum operum | — | ST I q. 106 a. 1 ad 1 | Known more the more perfectly God is seen |
