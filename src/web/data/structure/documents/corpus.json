@@ -3,7 +3,7 @@
  "counted": {
   "documents": 203,
   "issues": 241,
-  "pages": 6480,
+  "pages": 6849,
   "titles_unrecorded": 0,
   "works": 147
  },
@@ -13,7 +13,7 @@
    "id": "GPT-5-based Codex agent"
   },
   {
-   "documents": 86,
+   "documents": 87,
    "id": "claude-opus-5-5[1m]"
   },
   {
@@ -11066,24 +11066,35 @@
    "catalog_page": "library/faith.html",
    "editions": [
     {
-     "authorization": null,
+     "authorization": "perpetual-public-repository-2026",
+     "basis": "page-size-ceiling",
+     "blocking_constructs": [
+      "single-page-length"
+     ],
      "contributions": [
       {
        "model": "Opus 5.5",
        "qualifiers": "unexposed: exact API model identifier; unexposed: reasoning-effort and sampling configuration",
        "runtime": "Factory Droid CLI agent and its subagents (research, drafting, typesetting, review); Factory Droid CLI 0.223.0; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "context-window=1M; unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent and its Opus 5.5 subagents (research, drafting, revision, typesetting, review); Claude Code CLI 2.1.285; unexposed: server revision"
       }
      ],
-     "eligibility": "eligible",
+     "eligibility": "conditional",
      "models": [
-      "Opus 5.5"
+      "Opus 5.5",
+      "claude-opus-5-5[1m]"
      ],
-     "pages": null,
-     "pdf_absent": "no PDF is installed for this issue",
+     "pages": 369,
+     "pdf": "pdf/claude/theology/angelology.pdf",
      "provider": "claude",
-     "reviewed": "2026-09-29",
-     "revised": "2026-09-29T12:32:06Z",
-     "status": "hold",
+     "rationale": "The treatise runs to about 290,000 words; its reviewed single-page rendering is about 2.1 MB, over the site's 1 MB per-page ceiling (PREVIEW_DOCUMENT_LIMIT in tools/public-alpha), so the reader waits on a multi-page web edition. The conversion, reviewed against the PDF on 2026-09-30, stays reproducible from the sources with tools/web-edition.",
+     "reviewed": "2026-09-30",
+     "revised": "2026-09-30T19:11:32Z",
+     "status": "alpha",
      "subject": "A Thomistic reference on the angels following Summa theologiae I qq. 50-64 and 106-114, with a chapter-by-chapter exposition of the Celestial Hierarchy and the patristic, magisterial, and liturgical witness",
      "title": "The Angels: Nature, Knowledge, Will, Fall, Order, and Ministry",
      "title_source": "src/claude/theology/angelology/main.tex"

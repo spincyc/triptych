@@ -89,12 +89,43 @@ Factory Droid agent and its subagents, with no model switch. Incremental
 commits go to `origin/feature/droid/theology/angelology`; the work is
 feature-branch only and is not merged to `main` by this request.
 
-**State: in progress.** The profile, routing, leaf scaffold, research scope,
-and production plan exist. The leaf's
+On 2026-09-30 the work resumed in Claude Code, still on Opus 5.5 with
+Opus 5.5 subagents. The maintainer directed a declarative voice at each
+degree of determination, without dogma hedging, and an expansive account
+of the best patristic sources as an authentic Catholic treatise. The
+profile's "Voice and determination" section and the leaf's scope record
+that directive.
+
+**Published as a PDF; the web edition is blocked.** The Claude
+edition, *The Angels: Nature, Knowledge, Will, Fall, Order, and Ministry*,
+is a 369-page treatise in 25 sections and 15 appendices: Scripture and the
+faith of the Church; the writings before Christ (Septuagint, Enoch,
+Jubilees, the Testaments, Philo, and the Greek poets and philosophers) and
+the continuity the Fathers established with them; the Greek and Latin
+Fathers, Augustine, the fifteen chapters of the *Celestial Hierarchy*, and
+the Fathers and Doctors after Dionysius; every article of ST I qq. 50–64
+and 106–114 with graded dossiers; Christ, Mary, and the angels; the
+disputed questions and the Byzantine line; liturgy, devotion, and the
+saints. The leaf's
+[production review](src/claude/theology/angelology/research/production-review.md)
+records four visual-review passes over every page, the web-edition review,
+the artifact hashes, the gates, and the evidence ceilings; its
 [production plan](src/claude/theology/angelology/research/production-plan.md)
-tracks every body section and appendix with its status and principal
-sources; a successor resumes from its first unit not yet `drafted`. Nothing
-is built, installed, cataloged, or released yet.
+records how each appendix is maintained. The reviewed PDF is installed,
+the Faith catalog row links the Claude PDF beside the GPT edition, and the
+release record is `alpha` under the standing authorization. The reviewed
+web edition cannot be installed: its single page is about 2.1 MB, over the
+site's 1 MB per-page ceiling, so `web-edition.toml` declares it
+`conditional` on a multi-page reader, and the requirement
+`angelology-web-catalog-release` stays blocked until that reader exists or
+the maintainer waives it. The web converter now letters references to
+appendices, which also corrected one line in each of two other tracked
+editions. On 2026-09-30 the maintainer directed the work pushed to `main`:
+`main` fast-forwarded to `42916b898`, GitHub Pages run `36766212665`
+succeeded, and the live PDF at
+[mystago.gy](https://mystago.gy/pdf/claude/theology/angelology.pdf) matches
+the reviewed SHA-256 `7d641c0b2ecdb5ebf84a3376e37eda9a12feca7500a7cccfce40a4f5cfae84c7` exactly, with the Faith page linking
+both editions.
 
 ## GPT postconciliar Twenty-seventh Sunday, 2026-09-28
 

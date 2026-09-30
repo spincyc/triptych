@@ -382,7 +382,7 @@ The Rosary is the rare devotion with a continuous papal literature of its own. T
 | *Marialis cultus* 42–55, 2 Feb 1974 | Paul VI, apostolic exhortation | The definitive anatomy: Gospel prayer, elements, liturgy boundary, “serenely free” |
 | *Rosarium Virginis Mariae*, 16 Oct 2002 | John Paul II, apostolic letter | Contemplation of the face of Christ; the mysteries of light proposed; method; Year of the Rosary |
 
-The table is an inventory of acts, not a hierarchy of authority: a feast extension and a doctrinal exposition are different kinds of thing and are weighed differently in section [6](#sec:scope).[^59]
+The table is an inventory of acts, not a hierarchy of authority: a feast extension and a doctrinal exposition are different kinds of thing and are weighed differently in section [A](#sec:scope).[^59]
 
 ### Pius V and the sixteenth-century witnesses
 

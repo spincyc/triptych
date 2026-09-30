@@ -1666,6 +1666,37 @@ def undefined_uses(sources: dict[Path, str], defined: set[str]) -> list[str]:
     return failures
 
 
+APPENDIX_RE = re.compile(r"\\appendix(?![A-Za-z@])")
+NUMBERED_SECTION_RE = re.compile(r"\\section\s*(?:\[[^\]]*\]\s*)?\{")
+NUMBERED_LINK_RE = re.compile(r"\[(\d+)((?:\.\d+)*)\]\(#([^)\s]+)\)")
+
+
+def letter_appendix_references(markdown: str, body: str) -> str:
+    """Print a reference to an appendix as TeX does, with the appendix letter.
+
+    Pandoc's reader ignores \\appendix and keeps numbering sections, so a
+    reference to the first appendix after twenty-five sections read "26"
+    where the PDF prints "A". A reference whose label is defined after the
+    first \\appendix, and whose number lies past the sections before it, is
+    renumbered from A; its subdivisions keep their numbers.
+    """
+    masked = mask_tex_comments(body)
+    found = APPENDIX_RE.search(masked)
+    if found is None:
+        return markdown
+    before = len(NUMBERED_SECTION_RE.findall(masked[:found.start()]))
+    appendix_labels = set(LABEL_RE.findall(masked[found.start():]))
+
+    def letter(match: re.Match[str]) -> str:
+        number, rest, label = int(match.group(1)), match.group(2), match.group(3)
+        index = number - before
+        if label not in appendix_labels or not 1 <= index <= 26:
+            return match.group(0)
+        return f"[{chr(ord('A') + index - 1)}{rest}](#{label})"
+
+    return NUMBERED_LINK_RE.sub(letter, markdown)
+
+
 def resolve_anchors(markdown: str, anchors: list[str] | None = None) -> str:
     """Unlink references without a heading or an explicitly supplied inline target."""
     # A reference's pandoc attributes restate the label and carry no text.
@@ -2692,6 +2723,7 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     if quotation_count is None:
         raise ConversionError("pandoc's quotation filter reported no count")
     converted = clean_markdown_line_endings(result.stdout)
+    converted = letter_appendix_references(converted, body)
     if required_anchors is not None and toc_count:
         converted_toc_count = converted.count(WEB_TOC_SENTINEL)
         if converted_toc_count != toc_count:

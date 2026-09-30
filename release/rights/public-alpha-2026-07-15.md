@@ -1762,7 +1762,7 @@ release attachment, announcement, or promotion.
 | `library/catholic-exorcism.md` | `cb8dc01280320b0377bd2d48e0013379b8acee3ede3d6255beaa37356c7c63db` |
 | `library/curriculums.md` | `4d6deabc3129f825c1f11677e6ac9f0afcdf62df68fb9965f0e9f2468e95ea32` |
 | `library/ecclesiastical-latin.md` | `79045a11252f9834170b8cd25ca3e471a871adc333e021892b4310d18f9e9fdd` |
-| `library/faith.md` | `30e6b2e2f054910fb8168bf58638b4580bffc865477f15c545ad6ecfadc9addf` |
+| `library/faith.md` | `0444d4c8ff90dbff6a7ab36925da50a6924a185b80c3fb6baef4b0a8c2bd6af8` |
 | `library/formation.md` | `1f307b80404e94b64a6d57208509725254535cbfa7a21be38df9d2e2dc0d7b1d` |
 | `library/heresies.md` | `ecec196802c48c2e86cd83f593e854438086c6c9dc898805105f305dd79239ee` |
 | `library/historical-accounts.md` | `24316cda039247b1f48b9828a83bbc1c9d36b70afcf314806eacb246837375ae` |
@@ -14131,7 +14131,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-4.json` | `7f1956b102a7b765dc36210f5557ad25f07d075c8edcc87a3acc85cd3a03473d` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-5.json` | `61abb15daa555ada778b2eeb6137cbc6114102586c9cc2a27d5e4863521de0e3` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-6.json` | `54408d9f5e1c8b684850b05976d6e3ac9ee3b88b6194c37c7e1cf83d52256d28` |
-| `src/web/data/structure/documents/corpus.json` | `60c79903e2ec7594bb22cb6c97c5ccc71c3b12d3aec88b87d63ec883bafbf7a3` |
+| `src/web/data/structure/documents/corpus.json` | `77cd1b0c8563475577fd9c97697bc435b40fc76db2e6dfc7599df9433b583945` |
 | `src/web/data/structure/ordinary/index.json` | `b248eefcc0b073e43dd4c0d168007cd8d09fc5f28bd2fc633d98e2f4ba9e4846` |
 | `src/web/data/structure/ordinary/postconciliar.json` | `7714e4f1c328e4adad95afb3387e81b0cc44731977bfe5866a2ae2a2a597c2b6` |
 | `src/web/data/structure/ordinary/roman-1962.json` | `2c707b7d0ac3b61602533a57a26989042af43358e1d1dc7ca58aee286b827341` |
@@ -20743,7 +20743,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/william-williams/guide-me-o-thou-great-jehovah/2026-hymnal-of-praise-1913-hymnary-web-2026-07-29.json` | `0c387edabb7fcde38b30186316a98931754e5184bea07b1c3f437c3192f8e195` |
 | `src/web/data/structure/sources/editions/world-health-organization/icd-11-clinical-descriptions-and-diagnostic-requirements/2024-english-who-2024.json` | `97b5a08dc7e0a83a6c4da5990e21e8fcc2e4356d569903f09b8b97d34f1672aa` |
 | `src/web/data/structure/sources/editions/world-intellectual-property-organization/wipo-lex-berne-contracting-parties/2026-web-2026-08-01.json` | `ffaf08c0f47cd6ab1d4761546a9e290ce69420b185c891d67395fcc17d5d9d5e` |
-| `src/web/data/structure/sources/index.json` | `f26cd9246320b719d4adc80d34cf77c14989dbd0b119dbd8329e1969128d1acf` |
+| `src/web/data/structure/sources/index.json` | `6f72756448dbdd4a768d8787f58ef545ddc102795c73ecf405159be13cf12a6b` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.1.json` | `bf80df77e273500e8769a0a0613d4bb907a736fafce970a0e62804eda1219c58` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.10.json` | `14700390dab93606af7e6e934d457e2ed524f13977f64bb6ede3f04daea4521d` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.100.json` | `c9b31161f4c7f56ea4c89bfaa550e47bc6327f5b8db9f685dc5bf2a4d73d1de2` |
@@ -23864,7 +23864,7 @@ release attachment, announcement, or promotion.
 | `web/claude/theology/mariology/la-salette.md` | `74c37df5fcf603102e999b403d9bcf5881375326394abf0c3b5f692b71f32067` |
 | `web/claude/theology/mariology/lourdes.md` | `ca9f9383f4401d760ed6e55010546b86b127a0fa4468927c40d187e78a1f855a` |
 | `web/claude/theology/mariology/marian-dogmas.md` | `db93f9e562bcfe2b1b0036a16046623fdd7e1edba3125c42919a867b0f5809fc` |
-| `web/claude/theology/mariology/rosary.md` | `f388bbafe0944469592792f887cacd7f2374a2b955db155fdad06cc7b98c6e18` |
+| `web/claude/theology/mariology/rosary.md` | `24898f36fd023e4cd641e9eb17a46a78c9360279f1b3f100fad0bdf2d9b28b38` |
 | `web/gpt/articles/canon-law/natural-positive-divine-human-law.md` | `30556b63383f48f0958cdb686138316cd2140b58315bfd3b35fee13fade4916a` |
 | `web/gpt/articles/faith/against-the-instrumentalists.md` | `bd1698211106e075773b9cacd9f1b7520193512132c805facce0fc861fcebd87` |
 | `web/gpt/articles/faith/at-the-end-of-every-why.md` | `638427f76ad44e1f3f6fcde5c6a92e5b462863cd9d3104d0c6166097c9eeeff1` |
@@ -23924,7 +23924,7 @@ release attachment, announcement, or promotion.
 | `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.md` | `7d4109999858aab4efb433b0e95df5652edee458450e75c94eb9316a6196dac9` |
 | `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.md` | `84549acaf543bb57e21a41629832ab054068e89d7f04579bb2c9a7d806b0946d` |
 | `web/gpt/theology/angelology.md` | `34d3c866336e843930bcec50f5d0ae0881131378b7294f2ab0672038e81c75a6` |
-| `web/gpt/theology/heresies/heresies-in-catholic-history.md` | `00d1550f60fa202b9cd236ca9bbfad8134de1265587e786f74adbf98908d54da` |
+| `web/gpt/theology/heresies/heresies-in-catholic-history.md` | `857e39f664c4112acbf01a8095703a96ccd32d080eb62cfec985daa09d73864c` |
 | `web/gpt/theology/mariology/angelus.md` | `48c0305f39599cf307d0e8ed5d24b5df7c1d480c0c736daaf2b73eaf6706be2b` |
 | `web/gpt/theology/mariology/apparitions.md` | `e89b5a093d47d02e3d1acb4e169a14924a130a34ded87843b18f1c83cea66cf3` |
 | `web/gpt/theology/mariology/ark-of-the-covenant.md` | `e90cf4c166712d1fdbc43174174d0c0ffa17da18c0ff53c1275597de1fb6595c` |

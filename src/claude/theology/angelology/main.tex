@@ -8,6 +8,7 @@
 }
 
 \setcounter{tocdepth}{2}
+\makeatletter\renewcommand*\l@subsection{\@dottedtocline{2}{1.5em}{2.8em}}\makeatother
 \setlength{\emergencystretch}{3em}
 \widowpenalty=10000
 \clubpenalty=10000
@@ -25,6 +26,7 @@
 \newcommand{\ST}[1]{\emph{ST}~#1}
 
 \newcommand{\angeldossier}[4]{%
+  \Needspace{10\baselineskip}%
   \begin{studyframe}
   \textbf{Summa:} #1\par
   \textbf{Grade:} #2\par
@@ -33,15 +35,16 @@
   \end{studyframe}}
 
 \newcommand{\angeldossiersettled}[3]{%
+  \Needspace{10\baselineskip}%
   \begin{studyframe}
   \textbf{Summa:} #1\par
   \textbf{Grade:} #2\par
   \textbf{Authorities:} #3
   \end{studyframe}}
 
-\newcommand{\chchapter}[3]{%
+\newcommand{\chchapter}[4]{%
   \Needspace{10\baselineskip}%
-  \subsection{#1}
+  \subsection{#1}\label{#4}
   \textbf{Locus:} #2\par
   \textbf{Reception in Aquinas:} #3\par}
 
@@ -78,43 +81,51 @@
 % is a planned section not yet drafted; research/production-plan.md tracks it.
 \input{theology/angelology/sections/00-scripture}
 \input{theology/angelology/sections/05-faith-of-the-church}
-%\input{theology/angelology/sections/10-fathers-before-dionysius}
+\input{theology/angelology/sections/07-israel-before-christ}
+\input{theology/angelology/sections/08-philosophers-before-christ}
+\input{theology/angelology/sections/10-fathers-before-dionysius}
+\input{theology/angelology/sections/11-greek-fathers-nicene}
+\input{theology/angelology/sections/12-latin-fathers-before-dionysius}
+\input{theology/angelology/sections/13-augustine}
 \input{theology/angelology/sections/15-celestial-hierarchy}
-%\input{theology/angelology/sections/20-fathers-after-dionysius}
+\input{theology/angelology/sections/20-fathers-after-dionysius}
+\input{theology/angelology/sections/21-medieval-doctors}
 \input{theology/angelology/sections/30-angelic-substance}
 \input{theology/angelology/sections/32-bodies-place-motion}
-%\input{theology/angelology/sections/34-intellect-and-knowledge}
+\input{theology/angelology/sections/34-intellect-and-knowledge}
 \input{theology/angelology/sections/36-will-and-love}
 \input{theology/angelology/sections/38-creation-grace-glory}
-%\input{theology/angelology/sections/40-fall-and-punishment}
-%\input{theology/angelology/sections/50-illumination-and-speech}
-%\input{theology/angelology/sections/52-hierarchies-and-orders}
-%\input{theology/angelology/sections/54-government-and-mission}
-%\input{theology/angelology/sections/56-guardian-angels}
-%\input{theology/angelology/sections/58-assaults-of-demons}
-%\input{theology/angelology/sections/60-christ-mary-and-the-angels}
+\input{theology/angelology/sections/40-fall-and-punishment}
+\input{theology/angelology/sections/50-illumination-and-speech}
+\input{theology/angelology/sections/52-hierarchies-and-orders}
+\input{theology/angelology/sections/54-government-and-mission}
+\input{theology/angelology/sections/56-guardian-angels}
+\input{theology/angelology/sections/58-assaults-of-demons}
+\input{theology/angelology/sections/60-christ-mary-and-the-angels}
 \input{theology/angelology/sections/70-disputed-questions}
-%\input{theology/angelology/sections/72-byzantine-line}
-%\input{theology/angelology/sections/80-liturgy}
-%\input{theology/angelology/sections/82-devotion-and-its-regulation}
-%\input{theology/angelology/sections/88-the-order-of-the-universe}
+\input{theology/angelology/sections/72-byzantine-line}
+\input{theology/angelology/sections/80-liturgy}
+\input{theology/angelology/sections/82-devotion-and-its-regulation}
+\input{theology/angelology/sections/84-the-saints-and-the-angels}
+\input{theology/angelology/sections/88-the-order-of-the-universe}
 \clearpage
 \appendix
 \input{theology/angelology/appendices/01-the-nine-orders}
-%\input{theology/angelology/appendices/02-comparative-orderings}
-%\input{theology/angelology/appendices/03-article-census}
-%\input{theology/angelology/appendices/04-parallels-in-aquinas}
+\input{theology/angelology/appendices/02-comparative-orderings}
+\input{theology/angelology/appendices/02a-pre-christian-continuities}
+\input{theology/angelology/appendices/03-article-census}
+\input{theology/angelology/appendices/04-parallels-in-aquinas}
 \input{theology/angelology/appendices/05-dionysius-in-the-summa}
 \input{theology/angelology/appendices/06-magisterial-chronology}
-%\input{theology/angelology/appendices/07-calendar}
-%\input{theology/angelology/appendices/08-scripture-index}
-%\input{theology/angelology/appendices/09-names}
-%\input{theology/angelology/appendices/10-demons-powers-and-limits}
+\input{theology/angelology/appendices/07-calendar}
+\input{theology/angelology/appendices/08-scripture-index}
+\input{theology/angelology/appendices/09-names}
+\input{theology/angelology/appendices/10-demons-powers-and-limits}
 \input{theology/angelology/appendices/11-the-first-sin}
-%\input{theology/angelology/appendices/12-terminology}
-%\input{theology/angelology/appendices/13-witness-register}
+\input{theology/angelology/appendices/12-terminology}
+\input{theology/angelology/appendices/13-witness-register}
 \input{theology/angelology/appendices/90-scope-corpus-qualifications}
-%\input{theology/angelology/appendices/99-references}
+\input{theology/angelology/appendices/99-references}
 \begingroup
 \setlength{\parskip}{0pt}
 {\scriptsize\input{theology/angelology/generation-metadata}}
