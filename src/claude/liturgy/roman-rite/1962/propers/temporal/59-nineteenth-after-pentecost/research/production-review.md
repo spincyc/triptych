@@ -744,3 +744,129 @@ These all pass on the final sources:
   and research editions;
 - `tools/check-generation-metadata` for the record and for each of the three
   built PDFs.
+
+## Build-artifacts
+
+Iteration 0 of the build stage of `proper-study` v7, run `a27462e34ec9c09a`,
+seeded at commit `56d8c30f24bd0e42234c88c7d71c801981a9f2f9`, after the homily
+review passed at its iteration 0. The worker is a Claude Code harness subagent
+running as `claude-opus-5-5[1m]`; the stage declares effort `high`, which the
+harness does not enforce (run intervention 0000). No source file was edited at
+this stage: the logs carry no layout warning and no layout repair was made, so
+no content seal is affected, and the shared generation record keeps its
+revision timestamp `2026-09-30T20:57:05Z`, which all three PDFs carry as their
+modification date. The only files this stage writes in the leaf are
+`research/artifacts.json`, written by the snapshot helper, and this entry.
+
+### Builds
+
+The author proofs, with their auxiliary files, logs, recorder files, contents
+file and metadata stamps, were deleted, and each output was built fresh with
+`make doc DOC=<id> PROVIDER=claude` for the bare document, `-synthesis` and
+`-homily`. Each settled in two pdfTeX passes; the first pass's requests to
+rerun for changed labels and table widths are answered by the second, whose log
+carries none. Each build passed the component-manifest and generation-metadata
+validation the Makefile runs. The fresh builds reproduced the derive-homily
+stage's proofs byte for byte, and the three auxiliary files are identical to
+theirs.
+
+| Output | Physical pages | Bytes | PDF SHA-256 |
+| --- | --- | --- | --- |
+| `build/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf` | 33 | 525,153 | `27c7d1979e4dfe30e3525cda062b7d380ae762f957ff58b21e3c473c478b213c` |
+| `build/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf` | 12 | 462,746 | `448b926a2a1cee8e44f11b3a5518eaa89cc3a6056f158cb5f4ba7699b8c1754f` |
+| `build/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf` | 3 | 259,524 | `e1dcfb384e9334670e5ea4d015390d7f4685b88b603a907d919312245c9e33c5` |
+
+The expansive study falls within 20–50 pages and the concise study within
+10–12. The auxiliary files are SHA-256
+`6bb79596ab47b316641188cb77aab4dd136ba593ca11d82d9cbc84e896d9fe9b` (study),
+`e362708b1767b56d21fb519df51a33f58447aa0adbb67bfea2ef2b944d505678` (concise)
+and `96da8bd61cc21463cd3eda0260cb058d26e765e456536a181a79f8efa1798486`
+(homily); the settled logs are
+`aa02cef8afdd3fadc61282c57f45788be5fcd20a3704676018e29a5abdb10bf2`,
+`1f7c59bca6c7a51b4c0a57625c8628b52c28df324d1c9812c43f62f00cd1c3f5` and
+`ad4d221a2bef4d0e3bbea21a3b17fcf008bb43bbcd9cfb8cbb68c93ae3480374`. The
+concise auxiliary file and log stay beside the PDFs in `build/` for the gate.
+
+### Log, font, structure and extraction checks
+
+- **Logs.** None of the three settled logs has a TeX error, an undefined or
+  multiply defined reference, an overfull or underfull box, a LaTeX or
+  package warning, a missing character or font-shape substitution, or a rerun
+  request. The only lines matching "warning" or "rerun" are the `infwarerr`
+  and `rerunfilecheck` package banners; the lines matching "substituted" are
+  `xcolor`'s colour-model information.
+- **Fonts.** Every font is Latin Modern (Roman, Roman Caps in the study, and
+  Mono), Type 1, embedded, subsetted and Unicode-mapped. Nothing was
+  substituted.
+- **Structure.** All three are unencrypted PDF 1.7 files from pdfTeX 1.40.29,
+  letter size on every page, with no image. Their titles and subjects are the
+  entrypoints', naming the Missal and the Sunday. They carry no creation date
+  and no trailer ID. Poppler's `pdfinfo`, `pdffonts` and `pdftotext` read them
+  with nothing on standard error, and the raster helper rendered every page. No
+  stricter PDF validator (qpdf, pypdf or pikepdf) is installed, so none was
+  run.
+- **Size.** The homily is 84.5 KiB a page, above the 75 KiB review trigger.
+  Measured by stream, 227,391 of its 259,524 bytes (87.6 %) are its nine
+  embedded Latin Modern font subsets and 21,153 bytes are page content; there
+  is no image. The figure is the fixed cost of the house fonts over three
+  pages, and nothing was rewritten. The study (15.5 KiB a page) and the
+  concise study (37.7 KiB a page) are below the trigger, and all three are
+  below 1 MiB.
+- **Extraction.** Text extracts from every page, with no `??` marker and no
+  replacement character. The extracted word counts, apparatus, running heads
+  and page numbers included, are 22,407 for the study, 9,685 for the concise
+  study and 2,306 for the homily.
+- **Concise opening.** The settled `zref` evidence places the inventory, the
+  overview and the four sense rows (literal, allegorical, moral, anagogical)
+  on physical page 1, the chronology on page 2, the themes from page 3 to page
+  4, and the start of the commentary on page 5. The extracted text agrees: page
+  1 carries the ten elements from Introit to Postcommunion and exactly the four
+  sense rows; page 2 holds only "Scriptural Date and Location", with the seven
+  passages in canonical order (Pss 77, 104, 118, 137, 140; Mt 22; Eph 4); pages
+  3 and 4 carry "The Propers: Themes and Movement"; page 5 opens "The Propers:
+  Detailed Commentary".
+- **Gates run ahead.** `tools/check-proper-components --phase artifacts` for
+  the research, synthesis and homily editions,
+  `tools/check-generation-metadata` on each of the three PDFs, and, after the
+  snapshot, `scripts/_proper_study.py check --phase artifacts
+  --require-presentation --require-format --require-authority --date
+  2026-10-04` all pass.
+
+### Snapshot and rasters
+
+`python3 scripts/_proper_study.py snapshot` wrote `research/artifacts.json`
+(receipt schema 2) from the final builds. It records the three PDF hashes
+above, 27 render inputs (the leaf's TeX sources, manifest and chronology
+annotations, and `src/common/preamble.tex`, `propers-format.tex` and
+`propers-homily.tex`) and, as pagination evidence, the study's and the concise
+study's auxiliary files. Bounded rasters and contact sheets of all 48 pages came
+from `tools/tpt pdf-review` and are in the run's
+`artifacts/build-artifacts-0000/rasters` child. Copies of the three PDFs,
+auxiliary, recorder, contents and log files, the extracted text, the font and
+info listings and the check output are kept beside that child, outside it, with
+their digests.
+
+### Remaining limitations for the visual reviewer
+
+The build worker looked at the contact sheets, the thumbnail of study page 3
+and the full rasters of study pages 7 and 8 only to decide whether a layout
+repair was needed. That is
+not the visual review, and no page has been inspected for it. Nothing found
+called for a repair; any repair would be a source edit that reopens reviewed
+content. For the reviewer to judge:
+
+- The shared format's right-hand running head takes the first section mark
+  on the page. Where a section begins below the top of a page, the head names
+  it over the end of the section before: study page 8 (the Appointed Texts'
+  Postcommunion under "Each Element in Its Setting"), pages 18, 23 and 28 (each
+  reading's four senses under the next reading's or the comparison's title),
+  and page 32 (the end of the scope appendix under "References", which the
+  author-study entry above records).
+- Short pages at section ends: study page 1 (title and contents, the lower
+  half empty), page 3 (the map ends about seven-eighths down, before the
+  Appointed Texts begin a fresh page), page 7 (the Postcommunion block moves
+  whole to page 8, leaving the foot of the page empty), and the final pages of
+  the study (33) and the concise study (12), which carry the end of the
+  References, the revision timestamp and the rights colophon.
+- The homily's note, References, timestamp and colophon fill page 3; its
+  speech occupies page 1 and page 2.

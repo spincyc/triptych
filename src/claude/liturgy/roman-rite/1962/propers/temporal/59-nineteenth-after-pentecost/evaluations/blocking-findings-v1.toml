@@ -49,13 +49,13 @@ provider = "claude"
 run_id = "a27462e34ec9c09a"
 workflow = "proper-study"
 workflow_version = 7
-stage = "homily-review"
+stage = "visual-review"
 iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 13
-observation_count = 5
+advisory_count = 15
+observation_count = 6
 
 [[stages]]
 stage = "homily-review"
@@ -103,6 +103,18 @@ workflow_version = 7
 standing = 0
 accepted_count = 0
 advisory_count = 3
+observation_count = 1
+
+[[stages]]
+stage = "visual-review"
+iteration = 0
+disposition = "PASS"
+run_id = "a27462e34ec9c09a"
+workflow = "proper-study"
+workflow_version = 7
+standing = 0
+accepted_count = 0
+advisory_count = 2
 observation_count = 1
 
 [[advisories]]
@@ -209,6 +221,22 @@ location = "sections/concise/04-themes.tex, last paragraph ('each developed at l
 problem = "The concise's body sends the reader to 'the expansive study'. That is a term from the production contract, and the reader has not been told what it names. The scope appendix identifies the companion only as 'The Nineteenth Sunday after Pentecost'. The concise prints the same title on its own page 1, because both entrypoints open with \\propertitle{The Nineteenth Sunday after Pentecost}{Dominica decima nona post Pentecosten}. A reader holding the concise is therefore told that the full argument is in a work carrying the title on the page in front of him. In print, only main.tex's fourth \\propertitle field distinguishes the study: 'The wedding garment, the call to the highways, and the evening sacrifice: a study of the proper in three readings'."
 required_result = "Identify the companion so that a reader can tell it from the concise. For example, call it 'the full study' in the body. In the scope appendix, name it by its distinguishing subtitle, or by its catalogue label 'Full PDF'. Leave the extent of pages 3-4 unchanged."
 
+[[advisories]]
+stage = "visual-review"
+id = "VIS-001"
+severity = "advisory"
+location = "Homily PDF: the foot of column 2 on physical page 1 runs into the head of column 1 on page 2 (source: sections/homily/10-homily.tex line 89)"
+problem = "The page turn falls inside a proper name. Page 1 ends with 'St' and page 2 opens with 'Hilary of Poitiers says that to spread the hands...', so a preacher reading from the printed page has to turn mid-name. None of the 13 'St <Name>' spaces in the spoken body is tied, and the same break recurs at a line end in column 2 of page 2 ('St' / 'Gregory')."
+required_result = "Join the honorific to the name with a non-breaking tie (St~Hilary, and preferably every St~ in sections/homily/10-homily.tex) so that no line or page break separates 'St' from the name. Then rebuild and re-inspect the homily's column and page breaks."
+
+[[advisories]]
+stage = "visual-review"
+id = "VIS-002"
+severity = "advisory"
+location = "The expansive study's References subheads on pp. 32-33 (sections/90-apparatus.tex, \\subsection*) against the concise study's References subheads on p. 12 (sections/concise/90-apparatus.tex, \\subsubsection*)"
+problem = "The two sibling studies set their References subdivisions at different heading levels: large bold upright in the expansive study, normal-size bold italic in the concise study. Each document is consistent within itself, but the pair's terminal apparatus does not share one hierarchy."
+required_result = "Use one heading level for the References subdivisions in both studies' apparatus, for example \\subsection* in both. Then rebuild and confirm that the concise study's final page still holds References, metadata and the colophon without a spill page."
+
 [[observations]]
 stage = "homily-review"
 location = "scripts/_proper_components.py, the schema-2 coverage check for kind 'homily' (the loop over appointed-text, proper-treatment, integrated-commentary and homily near line 796); src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/proper-components.toml, component homily-body element_keys"
@@ -233,3 +261,8 @@ note = "This one sentence form in the opening has now produced a blocking findin
 stage = "synthesis-review"
 location = "sections/concise/02-overview.tex, Allegorical row; evaluations/blocking-findings-v1.toml, RES-010 and STU-008"
 note = "This is the third finding in this run where a joint parenthesis or colon construction credits a second Father with the first Father's distinctive clause: RES-010 in interpretations.md, STU-008 in the study opening, and SYN-001 on the concise page 1. It is the missing profile or fragment criterion that the study-review observation already named. No gate can see how far a clause-level attribution reaches."
+
+[[observations]]
+stage = "visual-review"
+location = "build/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf (259,524 bytes over 3 pages)"
+note = "At 84.5 KiB per page the homily exceeds the 75 KiB-per-page investigation trigger in guidance/repository.md. On investigation, 227,400 bytes (87.6%) are the eleven embedded Latin Modern Type 1 subsets and the file contains no raster images, so the high ratio is fixed font overhead spread over a three-page document rather than a defect. The study (15.5 KiB/page) and the concise study (37.7 KiB/page) are well under the trigger."
