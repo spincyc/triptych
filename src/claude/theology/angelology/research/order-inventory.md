@@ -85,3 +85,8 @@ only when its locus was read at the source.
 | angels | Jerome, In ep. ad Titum | on Titus 1:2 (PL 26) | angeli | Unranked (first in list) | Orders serving God before measured time | yes |
 | thrones | Jerome, In ep. ad Titum | on Titus 1:2 (PL 26) | throni | Unranked (second in list) | Orders serving God before measured time | yes |
 | dominations | Jerome, In ep. ad Titum | on Titus 1:2 (PL 26) | dominationes | Unranked (third in list) | Orders serving God before measured time | yes |
+| seraphim | Aquinas | I q. 63 a. 7 ad 1 | Seraphim | 1 (Dionysius, as cited obj. 1) | Named from the heat of charity, incompatible with mortal sin; never given to the demons (a. 9 ad 3) | yes (na-summa-1063) |
+| cherubim | Aquinas | I q. 63 a. 7 ad 1 | Cherubim | 2 (Dionysius, as cited obj. 1) | "Fulness of knowledge," compatible with mortal sin; hence the first sinner is called a cherub (Ezek 28:14) | yes (na-summa-1063) |
+| thrones | Aquinas | I q. 63 a. 9 ad 3 | Thrones | — (not ranked here) | Name drawn from God's indwelling; never given to demons | yes (na-summa-1063) |
+| powers | Aquinas | I q. 63 a. 9 ad 3 | Powers | — (not ranked here) | Name drawn from power; given to demons | yes (na-summa-1063) |
+| principalities | Aquinas | I q. 63 a. 9 ad 3 | Principalities | — (not ranked here) | Name drawn from power; given to demons | yes (na-summa-1063) |

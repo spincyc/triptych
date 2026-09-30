@@ -9,6 +9,7 @@ transliteration.
 | --- | --- | --- | --- | --- |
 | added / cooperating grace | gratia apposita / gratia cooperans | — | Lombard, Sent. II d. 5 cc. 1, 3–4 | never given to those who fell |
 | aevum | aevum | — | I q. 61 a. 2 (cf. In II Sent. d. 2 q. 1 a. 1) | Angelic duration between time and eternity |
+| affective knowledge | cognitio affectiva | — | I q. 64 a. 1 co. | `producens amorem Dei`; NA renders "effective" |
 | angel | angelus | angelos | Mal 3:1; ST I q. 108 a. 5 ad 1; CH 4–5 | Office-name, not nature-name (Augustine, Enarr. in Ps. 103 s. 1 §15; CCC 329) Name of office (Gregory, Hom. 34.8: nomen officii, non naturae) |
 | angel of punishment | — | — | Hermas, Sim. VI.3 | "belongs to the just angels" |
 | angel of repentance | — | — | Hermas, Vis. V; Sim. X.1 | The Shepherd; guardian of the penitent |
@@ -20,7 +21,10 @@ transliteration.
 | at once from the beginning of time | simul ab initio temporis | — | DS 800; DS 3002 | the disputed particle of Firmiter |
 | Averter | Apopompaeus | — | Origen, De princ. III.2.1 (Lev 16:8) | Read; not used in final body |
 | both creatures | utramque … creaturam, spiritualem et corporalem, angelicam videlicet et mundanam | — | Lateran IV, Firmiter (DS 800); I q. 61 a. 1 | Defined simultaneity of spiritual and corporeal creation |
+| by a kind of exhortation | quadam quasi exhortatione | — | I q. 63 a. 8 co. | How the first sin caused the others |
+| by equality / by likeness | per aequiparantiam / per similitudinem | — | I q. 63 a. 3 co. | The devil sought likeness, not equality |
 | by essence / substantially | substantialiter | — | Origen, De princ. I.5.3 (note [2030]) | Whether holiness is by nature |
+| by the power of his own nature | per virtutem suae naturae | — | I q. 63 a. 3; *De malo* q. 16 a. 3 | Object of the first sin |
 | Cherubim | Cherubim | cheroubim | Ezek 10:20; Gregory, Hom. 34.9; CH 7.1 | "Fullness of knowledge" "Fulness of knowledge or stream of wisdom" |
 | circumscriptively / definitively | circumscriptive / definitive |  | I q. 52 a. 2 co. | body / angel; God neither |
 | composing and dividing | componere et dividere | — | ST I q. 58 a. 4 | Denied of angelic knowledge |
@@ -28,6 +32,7 @@ transliteration.
 | connatural / innate species | species connaturales (innatae) | — | ST I q. 55 a. 2 co. | Not drawn from things; received with the angelic nature |
 | consummate grace | gratia consummata | — | I q. 62 a. 2 ad 3 | Grace of the beatific conversion |
 | creating nature and bestowing grace in one act | simul … condens naturam et largiens gratiam | — | Augustine, De civ. Dei XII.9; I q. 62 a. 3 s.c. | Basis of the created-in-grace opinion |
+| dark air | caliginosus aer | — | I q. 64 a. 4 co. | NA "darksome atmosphere" |
 | definitively in place | esse in loco definitive | — | ST I q. 52 a. 1; Paris art. 219 | against circumscriptive presence |
 | demon | daemon | daimonion | DS 800 | Fallen angel |
 | demon | — | daimon | Justin, 1 Apol. 5 (ANF note [1774]) | Christian use for evil spirit; one devil, many demons |
@@ -38,14 +43,18 @@ transliteration.
 | efficacious / inefficacious volition | volitio efficax / inefficax (complacentiae) | — | Scotus, Ord. II d. 6 q. 1 | complacency may will the impossible |
 | elective love | dilectio electiva | — | I q. 60 a. 2 | Love of choice; meritorious |
 | empyrean heaven | caelum empyreum | — | I q. 61 a. 4 | Highest corporeal place, "from its splendor" (Strabus) |
+| envy | invidia | — | I q. 63 a. 2 ad 2 | Taken not as passion but `pro voluntate renitente bono alterius` |
 | equal-making | aequiparantia | — | Bonaventure, In II Sent. d. 5 a. 1 q. 1 | to preside subject to none |
 | essence, power, energy | essentia, potentia, operatio | ousia, dynamis, energeia | CH 11.2 | Triad behind ST I q. 54 a. 3 |
 | evening knowledge | cognitio vespertina | — | ST I q. 58 aa. 6–7 | Knowledge of things in their own nature |
 | ever mobile | semper mobilis |  | I q. 50 a. 1 arg. 2, ad 2 | Damascene's "in perpetual motion" (NPNF) |
+| evil of fault | malum culpae | — | I q. 63 pr. | The subject of q. 63 |
+| evil of punishment | malum poenae | — | I q. 63 pr.; q. 64 | The subject of q. 64 |
 | existence / what is | esse / quod est; quo est |  | I q. 50 a. 2 ad 3 | Boethian composition in angels |
 | first-born angel | — | angelos protogonos | Tatian, Or. 7 (ANF note [441]) | The angel who fell first; Greek from the American editor's note |
 | first-born princes of the angels (seven) | — | not verified | Clement, Strom. VI.16 | Greek not read |
 | first-created angels | — | — | Hermas, Vis. III.4; Sim. V.5 | The six builders and counsellors |
+| force of the first choice | vis primae electionis | — | *De malo* q. 16 a. 5 co. | Demons sin in every choice |
 | free choice | liberum arbitrium | — | I q. 59 a. 3 | "Ubicumque est intellectus, est liberum arbitrium" |
 | friendship-love / desire-love | velle amicitiae / velle concupiscentiae | — | Scotus, Ord. II d. 6 q. 2 | order of the will's acts |
 | from nothing | ex nihilo | — | I q. 61 a. 2 | "Idest postquam nihil fuerat" |
@@ -82,22 +91,27 @@ transliteration.
 | mysteries of grace | mysteria gratiae | — | ST I q. 57 a. 5 | Known only by revelation in the Word |
 | natural appetite | appetitus naturalis | — | I q. 59 a. 1 | Inclination without knowledge |
 | natural love | dilectio naturalis; amor naturalis | — | I q. 60 a. 1 | "Inclinatio naturae indita ab auctore naturae" |
+| night knowledge | cognitio nocturna | — | I q. 64 a. 1 ad 3 | `non dicitur vespertina, sed nocturna` |
 | non-continuous motion | motus non continuus |  | I q. 53 a. 1 co. | whole place quitted at once |
+| obstinate / confirmed | obstinata / confirmata | — | I q. 64 a. 2 co. | Demons' will and good angels' will |
 | offices | officia | — | Origen, De princ. I.5.1 (note [2023]) | "rational offices and orders" |
 | operation | operatio | energeia | CH 3.1 | Third term |
 | order | ordo | taxis | CH 3.1 | First term of the definition |
 | perfection | perfectio | teleiosis | CH 3.2–3 | Third |
 | personal vs specific distinction | discretio quoad personalitatem / quoad speciem | — | Bonaventure, d. 3 p. 1 a. 2 q. 1 | his "sober and catholic" position |
 | place | locus |  | I q. 52 | the body the angel's power touches |
+| place of punishment | locus poenalis | — | I q. 64 a. 4 co. | `duplex locus poenalis` |
 | power of knowledge | virtus cognoscitiva | — | ST I q. 54 pr. | First of the four heads of the treatise on angelic knowledge |
 | Powers | Potestates | exousiai | Eph 1:21; Rom 8:38; CH 8.1 | Restrain the adverse powers (Gregory) Parker "Authorities" |
 | powers (preface) | Dominationes | — | Origen, De princ. preface 2 (note [1919]) | Crombie renders Dominationes as "powers" here |
+| pride | superbia | — | I q. 63 a. 2 co. | `non subdi superiori in eo quo debet` |
 | Principalities | Principatus | archai | Eph 1:21; Col 1:16; Rom 8:38; CH 9.1 | Preside over the good spirits (Gregory) |
 | privilege of creation | conditionis praerogativa | — | Origen, De princ. I.5.3 (note [2029]) | Dominion as native privilege vs merit |
 | purely spiritual creature | creatura pure spiritualis |  | I q. 50 pr. | "quae in Scriptura sacra Angelus nominatur" |
 | purification | purificatio / mundatio | katharsis | CH 3.2–3 | First of the triple law |
 | quiddity | quod quid est | — | ST I q. 57 a. 1 ad 2; q. 58 a. 4–5 | The intellect's proper object; about it, no error |
 | Raphael | Raphael | — | Tob 3:25; 12:15 | medicina Dei (Gregory) |
+| resistance of the will | renisus voluntatis | — | I q. 64 a. 3 co. | Sorrow as a simple act of will |
 | sanctifying grace | gratia gratum faciens | — | I q. 62 a. 3 | "In gratia gratum faciente creatos" |
 | Satan | Satanas | satanas | CCC 391 | "Adversary"; the fallen angel of Scripture and Tradition |
 | Satanas | — | — | Justin, Dial. 103; Irenaeus, Adv. haer. V.21.2 | "Sata" apostate + "Nas" serpent (Justin); "Satan signifies an apostate" (Irenaeus) |

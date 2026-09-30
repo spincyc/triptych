@@ -1155,6 +1155,184 @@ readings were made on 2026-09-29 unless an entry says otherwise.
   sections are as embedded in the Summa text (Benziger), not separately
   verified against the Douay.
 
+## The fall and punishment of the demons (ST I qq. 63-64; De malo q. 16)
+
+### Aquinas, Summa theologiae I qq. 63–64 (English)
+- Witness: Thomas Aquinas, *Summa theologiae*, trans. Fathers of the English Dominican Province, 2nd rev. ed. 1920, as presented by New Advent.
+- Repository ids: `work.thomas-aquinas.summa-theologiae` (existing).
+- URL: https://www.newadvent.org/summa/1063.htm ; https://www.newadvent.org/summa/1064.htm
+- Retrieved: 2026-09-29T12:54:08Z ; 2026-09-29T12:54:10Z
+- SHA-256 of the bytes read: ec2392cac3741da5f73dcfb70d3a7add91edbd85c06543c174cb470936c0ced8 (79216 bytes); 843a0edc18e7c3bfba1864b089b68c8db0e7fe106c8ee1d8402a05b00a89bc28 (49694 bytes)
+- Loci read: q. 63 aa. 1–9 and q. 64 aa. 1–4, every objection, *sed contra*, corpus, and reply.
+- Quoted: q. 63 a. 1 co., ad 4; a. 2 s.c., co., ad 1; a. 3 co.; a. 4 co.; a. 5 co., ad 1, ad 4; a. 6 s.c., co., ad 4; a. 7 s.c., co.; a. 8 ad 3; a. 9 s.c., ad 3; q. 64 a. 1 co., ad 4; a. 2 co., ad 2, ad 5; a. 3 s.c., co., ad 3; a. 4 s.c., co., ad 3.
+- Rights: 1920 translation in the public domain; New Advent's copyright covers the online presentation only.
+- Ceiling: web transcription, not collated with print. New Advent omits the question prologues; the q. 63 prologue is given from the Latin only.
+
+### Aquinas, Summa theologiae I qq. 63–64 (Latin)
+- Witness: Thomas Aquinas, *Summa theologiae*, Leonine text as edited by Corpus Thomisticum (Busa, Alarcón).
+- Repository ids: `work.thomas-aquinas.summa-theologiae` (existing).
+- URL: https://www.corpusthomisticum.org/sth1050.html
+- Retrieved: 2026-09-29T12:54:32Z
+- SHA-256 of the bytes read: e2cfab53e3a057155f3e241b32c059123265ae7cfe58da04e9d7cb41f3fb0ee7 (402442 bytes)
+- Loci read: I q. 63 pr. and aa. 1–9; q. 64 pr. and aa. 1–4.
+- Quoted (Latin): q. 63 pr.; a. 2 co., ad 2; a. 3 co.; a. 4 s.c.; a. 5 co.; a. 6 co., ad 4; a. 7 co.; a. 8 co.; a. 9 co.; q. 64 a. 1 s.c., co., ad 3; a. 2 co.; a. 3 co.; a. 4 co.
+- Rights: Latin text; short quotations with attribution.
+- Ceiling: web edition of the Leonine text; not collated with the printed Leonine volume.
+
+### Aquinas, De malo q. 16
+- Witness: Thomas Aquinas, *Quaestiones disputatae de malo*, q. 16, Taurini 1953 text as edited by Corpus Thomisticum.
+- Repository ids: `work.thomas-aquinas.de-malo` (registered with this publication).
+- URL: https://www.corpusthomisticum.org/qdm16.html
+- Retrieved: 2026-09-29T12:54:47Z
+- SHA-256 of the bytes read: 125185866e21f915d9d469dd101e266842cd4ab6bee62ed7d57c7ad6515dcc62 (322684 bytes)
+- Loci read: prooemium (all twelve article titles); aa. 1–6 corpus; a. 4 arguments.
+- Quoted (Latin): a. 1 co. (`non multum refert ad fidei Christianae doctrinam`); a. 3 co.; a. 4 co. (three passages); a. 5 co.
+- Rights: Latin text; short quotations.
+- Ceiling: web edition of the Marietti text, not the Leonine; not collated with print.
+
+### Aquinas, Scriptum super Sententiis II (parallels)
+- Witness: Thomas Aquinas, *Scriptum super libros Sententiarum* II, Parma text as edited by Corpus Thomisticum.
+- Repository ids: `work.thomas-aquinas.scriptum-super-sententiis` (existing).
+- URL: https://www.corpusthomisticum.org/snp2002.html ; https://www.corpusthomisticum.org/snp2005.html
+- Retrieved: 2026-09-29T13:36:53Z ; 2026-09-30T14:25:15Z (snp2005 fetched by another lane today)
+- SHA-256 of the bytes read: aa7e232d993331e1651b74086148b7908e90c5825d72764b020ff19f9f14ebfa (224942 bytes); 9f55c793a696b620eb411cd7406b077051ae7a33262c6a5adc1f557458f2d7ce (210163 bytes)
+- Loci read: II d. 3 q. 2 a. 1 co.; d. 5 q. 1 aa. 1–3 co.; d. 6 q. 1 aa. 1–3 co.; d. 7 q. 1 a. 2 co.; d. 7 q. 2 a. 1 co.
+- Quoted: none in section 40 (parallels only, in the dossier Summa fields).
+- Rights: Latin text.
+- Ceiling: web text; read for correspondence of determination only.
+
+### Augustine, De civitate Dei XI.13, XI.15, XIV.3
+- Witness: Augustine, *The City of God*, trans. Marcus Dods, NPNF series 1 vol. 2 (Schaff, 1887); Latin XI from The Latin Library.
+- Repository ids: `work.augustine.de-civitate-dei` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf102/cache/npnf102.txt ; https://www.thelatinlibrary.com/augustine/civ11.shtml
+- Retrieved: 2026-09-29T12:55:19Z ; 2026-09-29T13:36:43Z
+- SHA-256 of the bytes read: 5c973feda803f3e58a88ed7df210b42d436f5466741eb8dbeae713ab56dedae4 (3692898 bytes); d39371cdd16d35aff529af05c50c68ba6260fbff76ff33526ddfca81cd3fb2e0 (81384 bytes)
+- Loci read: XI.13 (Latin and English), XI.15, XIV.3.
+- Quoted: XIV.3 (NPNF: "is exceedingly proud and envious", "is reserved in chains of darkness to everlasting punishment"). The *sed contra* wording of q. 63 a. 2 and the XI.15 phrase "from the beginning of sin" are the Summa's English, attributed as its citations.
+- Rights: NPNF public domain; Latin text public domain.
+- Ceiling: web transcriptions, not collated with print.
+
+### Augustine, Enchiridion 28–29
+- Witness: Augustine, *Enchiridion*, trans. J. F. Shaw, NPNF series 1 vol. 3.
+- Repository ids: `work.augustine.enchiridion-ad-laurentium` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf103/cache/npnf103.txt
+- Retrieved: 2026-09-29T12:55:20Z
+- SHA-256 of the bytes read: cc8d3ff7ce4d4ba293f50a06200af03ff0e5abdeb5200db3a59b4dbe2cad7bdb (3357503 bytes)
+- Loci read: chh. 28–29.
+- Quoted: ch. 29.
+- Rights: public domain.
+- Ceiling: web transcription.
+
+### Augustine, De Genesi ad litteram III.10.15; XI.14.18; XI.23.30; XI.26.33
+- Witness: Augustine, *De Genesi ad litteram*, Latin text of augustinus.it (NBA).
+- Repository ids: `work.augustine.de-genesi-ad-litteram` (existing).
+- URL: https://www.augustinus.it/latino/genesi_lettera/genesi_lettera_03_libro.htm ; https://www.augustinus.it/latino/genesi_lettera/genesi_lettera_11_libro.htm
+- Retrieved: 2026-09-29T17:51:12Z ; 2026-09-29T17:51:14Z
+- SHA-256 of the bytes read: 09c40f51702e2b82d0abb51201874d54412fc704c6eb3f89235f5c70e0ce51cc (56067 bytes); bb4af4ce50086b4b659056c7c6126dcae4d41d0d3e3af56b57157d98db17cdb0 (87547 bytes)
+- Loci read: III.10.15; XI.14.18; XI.23.30; XI.24.31–26.33.
+- Quoted (Latin): III.10.15; XI.14.18; XI.26.33 (extended in revision); XI.23.30 cited in the dossier (`superbia tumidus`).
+- Rights: Latin text; short quotation.
+- Ceiling: web edition; not collated with CSEL 28.
+
+### Gregory the Great, Homiliae in Evangelia 34.7, 34.9
+- Witness: Gregory the Great, *XL homiliarum in Evangelia libri duo*, Latin, archive.org scan (Google-digitized edition) with djvu OCR.
+- Repository ids: `work.gregory-the-great.homiliae-in-evangelia` (existing).
+- URL: https://archive.org/download/sanctigregoriim00igoog/sanctigregoriim00igoog_djvu.txt
+- Retrieved: 2026-09-29T13:48:47Z
+- SHA-256 of the bytes read: 4eb8d78cd432816ff08b76b2549b6015fe29637307a22ee1d7ba79884d68e2f1 (701111 bytes)
+- Loci read: 34.6–34.9.
+- Quoted (Latin): 34.7 (`dum cunctis agminibus angelorum praelatus est, ex eorum comparatione clarior fuit`); 34.9 (`ille antiquus hostis, qui Deo esse per superbiam similis concupivit`, added in revision in place of an English rendering).
+- Rights: Latin text, public domain.
+- Ceiling: very poor OCR; readings regularized by sense (e.g. OCR `agminibua wi-gelonim praelatua` for `agminibus angelorum praelatus`; `antiquua hostis ... super-biaai similis coucupivit`). Not collated with PL 76 or CCSL 141.
+
+### Gregory the Great, Moralia XXXII.23.47; XXXIV.6.11
+- Witness: Gregory the Great, *Morals on the Book of Job*, Library of the Fathers (Oxford, 1844–50), as transcribed at lectionarycentral.com.
+- Repository ids: `work.gregory-the-great.moralia-in-iob` (registered with this publication).
+- URL: https://www.lectionarycentral.com/GregoryMoralia/Book32.html ; https://www.lectionarycentral.com/GregoryMoralia/Book34.html
+- Retrieved: 2026-09-29T17:51:08Z ; 2026-09-29T17:51:09Z
+- SHA-256 of the bytes read: 426a7d69992a5e03be469291433c135f5520e125db35b53f65d850b927b4dbef (153054 bytes); 01cd003e8190bffcb1c6a15e2cff7cde9c3f0a484c881c9627a3a7bbe5fa637a (139202 bytes)
+- Loci read: XXXII.23.47–48; XXXIV.6.11.
+- Quoted: XXXII.23.47 (two sentences); XXXIV.6.11.
+- Rights: 1844–50 translation, public domain.
+- Ceiling: web transcription of the Oxford translation; section numbering as that page prints it.
+
+### John Damascene, De fide orthodoxa II.4
+- Witness: John of Damascus, *Exposition of the Orthodox Faith*, trans. S. D. F. Salmond, NPNF series 2 vol. 9.
+- Repository ids: `work.john-of-damascus.de-fide-orthodoxa` (registered with this publication).
+- URL: https://ccel.org/ccel/s/schaff/npnf209/cache/npnf209.txt
+- Retrieved: 2026-09-29T12:55:27Z
+- SHA-256 of the bytes read: 859ba34cc5998f2761b801aa5de724b2ea741a54d98e21614faeb89cc40f8ad4 (2606804 bytes)
+- Loci read: II.3–4.
+- Quoted: II.4 ("was not made wicked in nature but was good"; "of his free choice was changed"; "an innumerable host of angels subject to him were torn away and followed him"; and, added in revision, "what in the case of man is death is a fall in the case of angels ... no repentance").
+- Rights: public domain.
+- Ceiling: web transcription.
+
+### Origen, De principiis I.6
+- Witness: Origen, *De principiis*, Rufinus's Latin as translated by F. Crombie, ANF vol. 4.
+- Repository ids: `work.origen.de-principiis` (existing).
+- URL: https://ccel.org/ccel/s/schaff/anf04/cache/anf04.txt
+- Retrieved: 2026-09-29T12:55:15Z
+- SHA-256 of the bytes read: b9f385a048c18158c2f74dcd37062f48a1c68a5d05bdb07270a93692d172da2e (4237225 bytes)
+- Loci read: I.6.1–3.
+- Quoted: none; I.6.3 paraphrased in the Contrary opinion field (Origen leaves the conversion of the devil's orders to the reader).
+- Rights: public domain.
+- Ceiling: translation of Rufinus's Latin; the Summa's report of Origen's opinion (q. 64 a. 2) is given as Aquinas's report.
+
+### Dionysius, Divine Names 4.23
+- Witness: Dionysius the Areopagite, *Divine Names*, trans. John Parker, *Works* Part I (London, 1897), as transcribed at tertullian.org.
+- Repository ids: `work.pseudo-dionysius-the-areopagite.de-divinis-nominibus` (registered with this publication).
+- URL: https://www.tertullian.org/fathers/areopagite_03_divine_names.htm
+- Retrieved: 2026-09-29T12:55:07Z
+- SHA-256 of the bytes read: 7d89093873b2ea5b8cf88e96c9066ce04907a0231523db3fa363c22039dc4295 (206269 bytes)
+- Loci read: DN 4.23.
+- Quoted: DN 4.23 (extended in revision to the end of Parker's clause).
+- Rights: public domain.
+- Ceiling: web transcription; section numbering as in Parker.
+
+### Anselm, De casu diaboli c. 4
+- Witness: Anselm, *De casu diaboli*, Latin, logicmuseum transcription.
+- Repository ids: `work.anselm-of-canterbury.de-casu-diaboli` (registered with this publication).
+- URL: https://www.logicmuseum.com/wiki/Authors/Anselm/de_casu
+- Retrieved: 2026-09-29T13:24:24Z
+- SHA-256 of the bytes read: 289e187e37b0d9cc4428483a07db50be6cf58b5ab46aba8cdc1a0cb283206bf0 (115975 bytes)
+- Loci read: c. 4.
+- Quoted: none in section 40.
+- Rights: Latin text.
+- Ceiling: the Summa's words `appetiit illud ad quod pervenisset si stetisset` do not occur verbatim in c. 4; section 40 gives them as Aquinas's citation of Anselm.
+
+### Denzinger (Lateran IV; Braga I; Constantinople 543)
+- Witness: Denzinger, *Enchiridion symbolorum* (Latin, with DS and older numbers), patristica.net transcription.
+- Repository ids: `work.denzinger.enchiridion-symbolorum` (existing); `work.fourth-lateran-council.firmiter-credimus` (existing).
+- URL: https://patristica.net/denzinger/enchiridion-symbolorum.html
+- Retrieved: 2026-09-29T12:56:36Z
+- SHA-256 of the bytes read: 604f24c46e0bc71c2018f25dc787a9ab421d4b2e9cf7d1cee1f43e910ef2708f (2333435 bytes)
+- Loci read: DS 403–411; DS 455–464; DS 800–802.
+- Quoted: DS 409 (can. 7), 411 (can. 9), 457 (Braga I can. 7), 800, 801.
+- Rights: Latin conciliar text.
+- Ceiling: web transcription of Denzinger; not collated with the printed DS.
+
+### Catechism of the Catholic Church 391–395, 414
+- Witness: *Catechism of the Catholic Church*, English, vatican.va.
+- Repository ids: `work.catholic-church.catechism` (existing).
+- URL: https://www.vatican.va/archive/ENG0015/__P1C.HTM
+- Retrieved: 2026-09-29T13:10:40Z
+- SHA-256 of the bytes read: 3ce4c15f4bdb2cccf0dd788c1ddbe25a7eee2b8c1b35ecb60aa07d509b30c153 (33151 bytes)
+- Loci read: 391–395, 414.
+- Quoted: 392 (twice), 393, 395.
+- Rights: Vatican English; short quotations with attribution.
+- Ceiling: official web text.
+
+### Douay–Rheims Bible (Challoner)
+- Witness: Douay–Rheims Bible, Challoner revision, Project Gutenberg eBook 1581.
+- Repository ids: `work.english-college-of-douay.douay-rheims-bible` (existing); `edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581` (existing).
+- URL: https://www.gutenberg.org/cache/epub/1581/pg1581.txt
+- Retrieved: 2026-09-29T12:58:58Z
+- SHA-256 of the bytes read: 7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007 (5880580 bytes)
+- Loci read: every verse listed under Scripture cited.
+- Quoted: Job 4:18; 40:14; 41:25; Isa 14:12–14; Ezek 28:13; John 8:44; 1 John 3:8; 2 Pet 2:4, 2:19; Apoc 12:4, 12:9, 18:7; Luke 8:31, 10:18; Matt 25:41; Gen 1:31; Ecclus 10:15; Wis 2:24; Ps 73:23; 4 Kgs 6:16; James 2:19; Eph 6:12.
+- Rights: public domain.
+- Ceiling: Gutenberg transcription.
+
 ## Disputed questions after Aquinas; positions on the first sin
 
 ### Aquinas, Summa theologiae, English
