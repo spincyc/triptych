@@ -537,3 +537,210 @@ the dossier stands whole on page 2 with room below it; the themes fill pages 3
 and 4; the revision timestamp and the rights colophon share the last page with
 the References. This is an author proof inspection, not the independent visual
 evaluation, which follows the shared-timestamp three-document build.
+
+## Derive-homily
+
+Authored 30 September 2026 in `proper-study` v7, run `a27462e34ec9c09a`,
+seeded at commit `56d8c30f24bd0e42234c88c7d71c801981a9f2f9`, at derive-homily
+iteration 0, after the synthesis review passed at its iteration 0. The stage
+declares effort `high`, which the harness does not enforce (run intervention
+0000); the worker is a Claude Code harness subagent running as
+`claude-opus-5-5[1m]`. The homily is *The Nineteenth Sunday after Pentecost:
+Clothed for the Wedding*, built from `homily.tex`, addressed to an adult parish
+assembly for the occurrence of 4 October 2026, and derived from the two
+accepted studies of this same leaf. No research record and no component of
+either study was edited for it. The neighbouring Claude leaf
+`58-eighteenth-after-pentecost` was consulted only for the shape of its homily
+files, its word-count rule and the defects its homily reviews recorded; no
+claim, locus or quotation was taken from it. The other provider's leaf for this
+identity was not opened.
+
+The entrypoint imports `common/preamble`, `common/propers-format` and
+`common/propers-homily` in that order, then the leaf's `format.tex`, and uses
+the shared full-width `\propertitle`. The `properhomily` environment encloses
+only the literal import of the spoken component; the terminal note follows the
+environment's closing page break and sets its own running heads with
+`\runninghead`. No font, geometry, title or column setting is overridden
+locally. In the manifest the two homily components were already declared;
+their `references` now also name `propers/verified.md`, which holds the Missal
+loci and the route of the 1861 English that the speech and the note use. No
+other manifest entry changed.
+
+The two homily components:
+
+- `homily-body` (`sections/homily/10-homily.tex`): the spoken text, continuous
+  preaching with no heading, no direction to a preacher and no citation inside
+  the speech, in eight movements. It opens on the king's question to the guest
+  who says nothing, the one in the parable most like an assembly already
+  inside. It tells the call briefly (Mt 22:3, 5, 10), with Chrysostom on the
+  excuses that seem reasonable and his "From the highway", and sets the
+  Collect's freedom "both in soul and body" beside the excuses. It says what the
+  garment is not and what it is: Gregory's "not baptism or faith", Augustine's
+  "not the altar" and "in the heart", their shared answer, charity, and
+  Gregory's reason, that our Maker had it when he came to the wedding, with his
+  friend by faith and no friend by deeds. It hears the Epistle's "Put on the
+  new man" with Jerome's garment of the new man and his new man who is Christ,
+  the four acts of Eph 4:25–28, Gregory's hands already bound, and the
+  Gradual's lifted hands as Hilary reads them (Mt 25:35). It gives Augustine's
+  other answer to the same verse, the evening sacrifice of the Passion and its
+  morning offering in the Resurrection, and the Bridegroom praying on the Cross
+  for his enemies; then, in the preacher's own voice, the altar where the
+  sacrifice of the Cross is made present and Christ gives his Body and Blood.
+  It asks how guests from the highways could have a garment, and answers from
+  the Communion's command and wish with Augustine on *O that* and "God must be
+  prayed to grant Himself what He enjoineth", with Hilary's baptismal gift of
+  the Spirit beside Gregory's charity, Augustine's "Clothe others" and "Run to
+  Him", the Introit's promise to hear, and the Postcommunion. It sets
+  Augustine's two feasts, his present feast received worthily, and the wish he
+  forbids at the Lord's Table ("O that mine enemy might die!") against the
+  Communion's wish; gives Gregory's two questions of hatred and envy and three
+  acts for the week (anger settled before sunset, hands that give, the
+  Communion's verse prayed each morning); and ends on Gregory's called and
+  chosen, his psalm of hope for the imperfect (Ps 138:16), the king's
+  "Friend", and Augustine's "He knoweth how to clothe His naked ones".
+- `homily-note` (`sections/homily/90-note.tex`): the terminal note and the
+  References, read aloud by nobody: audience and occasion, spoken word count
+  and pace, relation to the three reviewed readings, the route by which each
+  quoted text reaches the page, and the exact loci.
+
+The argument joins the first and third readings, `wedding-garment` and
+`feast-that-now-is`, as `research/interpretations.md` § 4.5 recommends, and
+takes from `call-to-the-nations` only the story of the call. It keeps § 4.5's
+bounds:
+
+- no Father is said to call the wedding feast the Eucharist. Augustine is
+  quoted in his own words for the present feast (the Lord's Table, the Feast of
+  the Holy Scriptures) and for his denial that the garment is the altar
+  (*Sermo* 90, 5); the sentences on the altar are the Church's faith in the
+  preacher's voice and are credited to no one;
+- the highways are not identified with the nations, and the first invited are
+  not named;
+- no other Mass, liturgical commentator or compilation fact is mentioned, and
+  nothing is said about why these texts stand together;
+- the Postcommunion is quoted in the 1861 English without its "these thy
+  mysteries" (STU-009), and Schuster's Eucharistic reading of it is not used.
+
+Two disagreements the study keeps are spoken: Augustine against Hilary on the
+Gradual's evening sacrifice (the Passion, or the works of mercy), and Hilary's
+baptismal gift of the Spirit beside Gregory's and Augustine's charity, with the
+point both sides grant. Jerome's join of the new man to the garment is his own
+(*In Matth.* III, col. 160). The other joins are the homily's and are credited
+to no Father: the Collect beside the excuses; the charity the Bridegroom wore on
+the Cross, drawn from Gregory's reason and Augustine's Passion; the Communion's
+wish against the wish Augustine forbids; and the Introit's promise beside the
+asking. The Gospel, the Epistle, the Gradual, the Collect, the Introit, the
+Communion and the Postcommunion carry the argument; the Alleluia, the Offertory
+and the Secret are left to the studies. The manifest's complete element keys on
+both homily components are the component checker's coverage declaration and
+are unchanged.
+
+No English of a liturgical text was composed. The Introit antiphon, the Collect
+and the Postcommunion are quoted from the 1861 Cummiskey English in the tracked
+checked payload `…pentecost-19-checked-english` (SHA-256 `e13f1baa…`
+recomputed). Scripture is the Douay–Rheims at the canonical verses, each quoted
+verse matched in the tracked Challoner verse tables (Psalms `578f023d…`,
+Matthew `dd0ba183…`, Ephesians `10c79be0…`, digests recomputed). The one text
+the speech commends for private prayer is Ps 118:5 in the exact Douay wording,
+and the speech ends as preaching, with no recited prayer. Gregory, Jerome and
+Hilary are reported in English paraphrase of their Latin; no gloss of theirs is
+printed as a translation, and the Gregory transcription's Latin is not quoted.
+No anecdote, personal experience, clerical identity, miraculous story or
+attributed quotation was manufactured.
+
+### Verification performed at this stage
+
+Every attributed sentence was read again at its locus in the tracked source,
+not taken from the studies:
+
+- Augustine, *Sermo* 90 §§ 1, 4, 5 and 9 and *Sermo* 95 § 7, in the tracked
+  CCEL text of NPNF1 6 (SHA-256 `ce371798…` recomputed), physical lines
+  37787–38198 and 39370–39410;
+- Augustine, *Enarr. in Ps.* 118, Aleph 5 (lines 56788–56795) and 140, 3
+  (lines 65246–65262), in the tracked CCEL text of NPNF1 8 (`d6841950…`);
+- Chrysostom, *Hom. in Mt.* 69, in the tracked CCEL text of NPNF1 10
+  (`adb8f1c9…`), lines 39009–39011 (the excuses) and 39176–39180 ("Hear whence
+  ye were called. From the highway.");
+- Gregory, *Hom. in Ev.* 38 §§ 9–14, in the tracked Wikisource transcription
+  (`dc25dd69…`), lines 538–546;
+- Jerome, on Mt 22:11–12 and on Eph 4:24: the registered whole-volume PL 26
+  scan was fetched again from its source URL, and its 63,426,233 bytes matched
+  SHA-256 `0d889bd6…`; col. 160 D was read on a 300-dpi crop of PDF p. 87,
+  col. 161 A on PDF p. 88, and col. 508 C on PDF p. 261 at 150 dpi;
+- Hilary, *Tract. in Ps.* 140 §§ 3–4 (lines 65848–65921) and *In Matth.* 22, 7
+  (lines 82612–82640), in the tracked PL 9 optical text (`db389fea…`); the
+  page images were not re-read at this stage.
+
+All 38 quoted spans of the speech were then compared mechanically with those
+tracked texts and verse tables, and every one was found. The only differences
+are the nested quotation marks, the capital that begins a quotation where the
+Douay's "And" (Eph 4:24) or "Wherefore," (Eph 4:25) is left out, and the
+Communion's quotation, which joins two verse rows (Ps 118:4–5).
+
+**Spoken word count: 1,453 words.** The count is taken over
+`sections/homily/10-homily.tex` alone. Comments are removed, `\latin{}`
+contents kept and every other macro dropped, and the remainder is counted as
+whitespace-separated words carrying a letter, the rule the Eighteenth Sunday's
+homily recorded. The same count taken from the extracted text of the built
+PDF's first two pages, without the title block and running heads, is also
+1,453. At an unhurried 120 to 130 words a minute that is 11.2 to 12.1 minutes,
+within the profile's approximately 10–12; at 110 it would be 13.2. The figure
+is arithmetic on the word count and not a timed delivery: nobody has spoken
+these words and no rehearsal was audible. The prose was read through in full,
+silently, for sense, sentence length (mean 14 words, median 12, longest 32)
+and ease of speech. That reading split the longest sentences; recast a
+sentence that could be heard as Hilary answering the question of the guests
+swept in from the highways, which he answers otherwise; set doing and asking
+both under the gift of the garment rather than assigning putting on to our
+doing alone; and gave the king's servants back to the sentence that sends them
+into the highways.
+
+### Upstream observations reported for the homily's cold reviewer
+
+- STU-012 applies to the homily too: it prints the Challoner Douay at verses
+  whose verse-text artifacts are bound in no role. Research-owned.
+- STU-009's point is observed and not carried: the Latin Postcommunion names
+  only *tua medicinalis operatio*, and the homily's "healing work" follows the
+  Latin.
+- No missing argument or source was found, and nothing upstream was edited.
+
+### Author proof and checks
+
+The shared generation record carries a contribution for this stage and the
+revision timestamp `2026-09-30T20:57:05Z`. The expansive and concise studies
+were rebuilt at that timestamp and are unchanged at 33 and 12 physical pages
+with clean logs (SHA-256 `27c7d197…b213c` and `448b926a…c1754f`); the concise
+study's settled auxiliary file is byte-identical to the one the synthesis stage
+recorded (`e362708b1767b56d21fb519df51a33f58447aa0adbb67bfea2ef2b944d505678`),
+so its presentation markers have not moved.
+
+`make doc DOC=liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily PROVIDER=claude`
+settles in two passes with no overfull or underfull box, no undefined
+reference, no LaTeX warning and no rerun request. The PDF has 3 physical
+pages, letter size, Latin Modern Roman and Mono only, every font an embedded,
+subsetted Type 1 with a Unicode map; the document info carries the
+entrypoint's title and subject. Deleting the PDF, auxiliary file and log and
+building again reproduced the same bytes, SHA-256
+`e1dcfb384e9334670e5ea4d015390d7f4685b88b603a907d919312245c9e33c5`. The author
+read all three pages on rendered rasters. A first proof ran to four pages, the
+fourth holding only the last two References, the timestamp and the colophon;
+the note was shortened until the note, the References, the timestamp and the
+colophon share page 3. The speech fills page 1 and most of page 2 in two
+columns, with the seven movement breaks visible. This is an author proof
+inspection, not the independent visual evaluation, which follows the
+shared-timestamp three-document build.
+
+These all pass on the final sources:
+
+- `python3 scripts/_proper_study.py check --phase content --edition homily
+  --require-presentation --require-format --require-authority` with
+  `--date 2026-10-04`;
+- every `check-content-preflight` check the homily gate names: references-used
+  (eight entries, every one used), identifiers-resolve, bindings-valid,
+  restricted-not-reproduced, relation-coverage, unquoted-not-quoted,
+  structural-meta-labels, house-voice, the three chronology checks, and
+  provenance-matches-run against this run's workflow, version, digest, run id
+  and seed commit;
+- `tools/check-proper-components --phase artifacts` for the homily, synthesis
+  and research editions;
+- `tools/check-generation-metadata` for the record and for each of the three
+  built PDFs.

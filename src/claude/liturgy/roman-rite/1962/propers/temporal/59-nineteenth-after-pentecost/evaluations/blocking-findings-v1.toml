@@ -49,13 +49,25 @@ provider = "claude"
 run_id = "a27462e34ec9c09a"
 workflow = "proper-study"
 workflow_version = 7
-stage = "synthesis-review"
+stage = "homily-review"
 iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 10
-observation_count = 4
+advisory_count = 13
+observation_count = 5
+
+[[stages]]
+stage = "homily-review"
+iteration = 0
+disposition = "PASS"
+run_id = "a27462e34ec9c09a"
+workflow = "proper-study"
+workflow_version = 7
+standing = 0
+accepted_count = 0
+advisory_count = 3
+observation_count = 1
 
 [[stages]]
 stage = "research-review"
@@ -92,6 +104,30 @@ standing = 0
 accepted_count = 0
 advisory_count = 3
 observation_count = 1
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-001"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/homily/10-homily.tex, opening sentence of the Cross movement (line 96), 'St Augustine hears that verse differently', which follows the movement break after Hilary's quotation of Mt 25:35, 'I was hungry, and you gave me to eat' (line 92)"
+problem = "In speech, 'that verse' first attaches to the last verse the assembly heard, Mt 25:35, and not to the Gradual's Ps 140:2, which was quoted four sentences earlier. The listener recovers the referent only in the next sentence, when Augustine's 'evening sacrifice' arrives. A reader can look back on the page; a listener cannot, so the new movement opens on a misreference across a pause."
+required_result = "Name the verse when the movement begins, for example 'St Augustine hears the Gradual's verse differently: first of Christ, ...', and leave the rest of the movement unchanged."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-002"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/homily/10-homily.tex, second movement (lines 41-42), 'This morning's Collect asks for the freedom to do it'"
+problem = "The spoken body has to be speakable verbatim at any Mass of this Sunday. 'This morning' is false when the homily is preached at a later Mass of the day, such as an afternoon or evening Sunday Mass, so the preacher would have to edit the text before reading it. The note gives the occasion only as the Mass of 4 October 2026, with no hour."
+required_result = "Use a time-neutral phrase such as 'Today's Collect' or 'The Collect of this Mass', and leave the rest of the sentence unchanged."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-003"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/homily/90-note.tex, 'Exact loci' (lines 53-55: 'Gradual, Ps 140:2', 'Communion, Ps 118:4-5', '... and Ps 138:16') and References, Douay-Rheims entry (line 73: 'Ps 118:4-5; 138:16; 140:2')"
+problem = "guidance/liturgy/roman-1962-propers.md ('Source Records and Text Control') requires psalm citations in the Missal's Vulgate numbering, 'with the common modern number in parentheses where it differs'. All three psalms the note cites differ: they are 119, 139 and 141 in the modern numbering. The note gives none of the modern numbers and does not say its numbering is the Vulgate's. A reader who checks Ps 140:2 or Ps 138:16 in a modern Bible finds other psalms. The note's own Augustine reference does give the other numbering ('Psalms CXIX and CXLI in that translation'), so the apparatus is inconsistent with itself. STU-009(c) records the same class of defect in the study as advisory."
+required_result = "Add the modern number in parentheses at the first citation of each psalm in the note and in the References: Ps 140:2 (141:2), Ps 118:4-5 (119:4-5) and Ps 138:16 (139:16)."
 
 [[advisories]]
 stage = "research-review"
@@ -172,6 +208,11 @@ severity = "advisory"
 location = "sections/concise/04-themes.tex, last paragraph ('each developed at length in the expansive study with four senses of its own', page 4); sections/concise/90-apparatus.tex, 'Relation to the expansive study' (page 11); synthesis.tex and main.tex, \\propertitle first field"
 problem = "The concise's body sends the reader to 'the expansive study'. That is a term from the production contract, and the reader has not been told what it names. The scope appendix identifies the companion only as 'The Nineteenth Sunday after Pentecost'. The concise prints the same title on its own page 1, because both entrypoints open with \\propertitle{The Nineteenth Sunday after Pentecost}{Dominica decima nona post Pentecosten}. A reader holding the concise is therefore told that the full argument is in a work carrying the title on the page in front of him. In print, only main.tex's fourth \\propertitle field distinguishes the study: 'The wedding garment, the call to the highways, and the evening sacrifice: a study of the proper in three readings'."
 required_result = "Identify the companion so that a reader can tell it from the concise. For example, call it 'the full study' in the body. In the scope appendix, name it by its distinguishing subtitle, or by its catalogue label 'Full PDF'. Leave the extent of pages 3-4 unchanged."
+
+[[observations]]
+stage = "homily-review"
+location = "scripts/_proper_components.py, the schema-2 coverage check for kind 'homily' (the loop over appointed-text, proper-treatment, integrated-commentary and homily near line 796); src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/proper-components.toml, component homily-body element_keys"
+note = "The checker requires the homily component to declare every element key. guidance/liturgy/propers-three-documents.md, however, lets the homily leave minor propers to the research 'without reciting an inventory of every minor proper', and this homily's note leaves the Alleluia, Offertory and Secret to the studies. The manifest therefore declares a coverage that the speech does not have and is not required to have. That points to a missing distinction between 'informed by' and 'covers' for homily components in the checker or the profile, not to a defect in this leaf."
 
 [[observations]]
 stage = "research-review"

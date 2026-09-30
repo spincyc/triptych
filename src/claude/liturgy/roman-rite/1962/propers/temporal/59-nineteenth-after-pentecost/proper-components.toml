@@ -185,7 +185,7 @@ path = "sections/homily/10-homily.tex"
 modes = ["homily"]
 depends_on = []
 element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
-references = ["format.tex", "research/interpretations.md"]
+references = ["format.tex", "propers/verified.md", "research/interpretations.md"]
 
 [[components]]
 key = "homily-note"
@@ -194,7 +194,7 @@ path = "sections/homily/90-note.tex"
 modes = ["homily"]
 depends_on = ["homily-body"]
 element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
-references = ["research/interpretations.md", "research/scope.md"]
+references = ["propers/verified.md", "research/interpretations.md", "research/scope.md"]
 
 # --- Interpretive readings of the whole formulary ------------------------------
 #
