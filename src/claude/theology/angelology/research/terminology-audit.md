@@ -46,7 +46,7 @@ transliteration.
 | beginning of the ways of God | principium viarum Dei | -- | Moralia XXXII.23.47 (LF "chief of the ways of God"); Sent. I.10.4 | Job 40:14[19] (Douay "beginning of the ways of God") |
 | beyond measure | extra mensuram | — | Hugh, De sacr. I.5.26 | Where the evil of the angelic sin lies |
 | birthday of impatience | natales inpatientiae | — | Tertullian, De pat. 5.5 |  |
-| both creatures | utramque … creaturam, spiritualem et corporalem, angelicam videlicet et mundanam | — | Lateran IV, Firmiter (DS 800); I q. 61 a. 1 | Defined simultaneity of spiritual and corporeal creation |
+| both creatures | utramque … creaturam, spiritualem et corporalem, angelicam videlicet et mundanam | — | Lateran IV, Firmiter (DS 800); I q. 61 a. 1 | Defined: both creatures made from nothing at the beginning of time; created together, the common teaching of the Latin Doctors |
 | bound / loosed | ligari / solvi | — | De pot. q. 6 a. 5 | Demons hindered from, or permitted, what their nature reaches |
 | burning, fire, beginning of their mouth | ardor, incendium, principium oris | — | Jerome, Ep. 18.6 | etymology of *Seraphim*; cf. *ST* I q. 63 a. 7 ad 1 |
 | by a kind of exhortation | quadam quasi exhortatione | — | I q. 63 a. 8 co. | How the first sin caused the others |
@@ -64,7 +64,7 @@ transliteration.
 | chief messenger; archangel | archangelus; "summi nuntii" | archangelos; Isidore: "ARCHOS ... princeps" | Hom. 34.8; Etym. VII.5.6 | Isidore adds that archangels "primatum teneant inter angelos" |
 | chief princes = archangels | principes primi | — | Jerome, In Dan. 10:13 |  |
 | choir-leader | — | chorostatēs | Theodore, Or. 6.1 | Michael |
-| circumscriptively / definitively | circumscriptive / definitive |  | I q. 52 a. 2 co. | body / angel; God neither |
+| circum\-scrip\-tively / de\-fin\-i\-tively | circumscriptive / definitive |  | I q. 52 a. 2 co. | body / angel; God neither |
 | cleansing, purgation | purgatio | katharsis | ST I q. 106 a. 2 ad 1; De ver. q. 9 a. 3; CH 7.3 | Among angels: removal of nescience only |
 | completively / dispositively | completive / dispositive | — | ST I q. 108 a. 4 co. | Grace / nature in the distinction of orders |
 | composing and dividing | componere et dividere | — | ST I q. 58 a. 4 | Denied of angelic knowledge |
@@ -318,7 +318,7 @@ transliteration.
 | tongue of angels | lingua Angelorum | — | ST I q. 107 a. 1 ad 2 | Metaphor for the power of manifesting the concept |
 | transverberation | — | — | tradition; Teresa, *Life* 29.16–17 | term not in Lewis; used as received name |
 | tutor | paedagogus | paidag\=ogos | Basil, *Adv. Eun.* III.1; Bernard, *Qui habitat* 12.3 | CCC 336 renders "protector" |
-| tutor (of the believer) | — | paidag\=ogos | Basil, Adv. Eun. III.1 (PG 29, 656B) | own rendering; CCC 336 gives "protector" |
+| tutor (of the believer) | — | paidag\=ogos | Basil, Adv. Eun. III.1 (PG 29, 656B) | the compiler's gloss of Basil's word; CCC 336 renders the sentence with "protector" |
 | types of the divine works | rationes divinorum operum | — | ST I q. 106 a. 1 ad 1 | Known more the more perfectly God is seen |
 | union by pressure from without | applicatio et oppressio | — | Gennadius 83 | how demons act on the possessed |
 | universal matter | materia universalis |  | I q. 50 a. 2 co.; *De sub. sep.* c. 5 | Avicebron |

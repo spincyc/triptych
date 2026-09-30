@@ -301,7 +301,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Philo (Yonge)
 - Witness: C. D. Yonge (trans.), The Works of Philo Judaeus (London: Bohn, 1854–55), as presented at earlychristianwritings.com (section numbers of the modern editions inserted).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.philo.de-gigantibus` (registered with this publication); `work.philo.de-somniis` (registered with this publication); `work.philo.de-confusione-linguarum` (registered with this publication); `work.philo.de-plantatione` (registered with this publication); `work.philo.de-opificio-mundi` (registered with this publication); `work.philo.quaestiones-in-genesin` (registered with this publication).
 - URL: https://www.earlychristianwritings.com/yonge/book{1,9,12,15,21,41}.html (book19, book22 fetched, not used)
 - Retrieved: 2026-09-30T14:39:03Z–14:39:11Z; book41 later on 2026-09-30 (list-l13a-israel-2)
 - Loci read: De opif. 72–76; De gig. 1–18; De plant. 12–15; De conf. 168–183; De somn. I.1–3, 133–150; QG I.1–2, 92–93.
@@ -311,7 +311,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### 1 Clement; Justin; Irenaeus (ANF 1)
 - Witness: ANF vol. 1 (1885), CCEL.
-- Repository ids: `work.ante-nicene-fathers.volume-1` (existing); `work.justin-martyr.second-apology` (existing); `work.irenaeus.adversus-haereses` (existing).
+- Repository ids: `work.ante-nicene-fathers.volume-1` (existing); `work.justin-martyr.second-apology` (existing); `work.justin-martyr.dialogus-cum-tryphone` (registered with this publication); `work.irenaeus.adversus-haereses` (existing).
 - URL: https://ccel.org/ccel/s/schaff/anf01/cache/anf01.txt
 - Retrieved: per manifest (ccel-anf01.txt)
 - SHA-256 of the bytes read: ee9c7f0ac3f4df08d07ddf81cd7e061e82a35e0d27de611cae06f1e05b2fb991 (3149312 bytes)
@@ -330,7 +330,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Tertullian (ANF 3, 4)
 - Witness: ANF vols. 3–4, CCEL.
-- Repository ids: `work.ante-nicene-fathers.volume-3` (existing); `work.ante-nicene-fathers.volume-4` (existing).
+- Repository ids: `work.ante-nicene-fathers.volume-3` (existing); `work.ante-nicene-fathers.volume-4` (existing); `work.tertullian.de-cultu-feminarum` (registered with this publication); `work.tertullian.de-idololatria` (registered with this publication); `work.tertullian.de-virginibus-velandis` (registered with this publication).
 - URL: https://ccel.org/ccel/s/schaff/anf03/cache/anf03.txt ; .../anf04/cache/anf04.txt
 - Loci read: De idol. 4, 9, 15; De cultu fem. I.2–3; De virg. vel. 7.
 - Quoted: De cultu fem. I.2, I.3; De idol. 4, 9; De virg. vel. 7.
@@ -338,7 +338,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Origen (ANF 4, ANF 9, GCS 7)
 - Witness: ANF 4 (De principiis, Contra Celsum), ANF 9 (Comm. in Io.); W. A. Baehrens, Origenes Werke 7 (GCS 30, Leipzig 1921), archive.org OCR.
-- Repository ids: `work.origen.de-principiis` (existing); `work.origen.contra-celsum` (existing); `work.ante-nicene-fathers.volume-9` (existing).
+- Repository ids: `work.origen.de-principiis` (existing); `work.origen.contra-celsum` (existing); `work.ante-nicene-fathers.volume-9` (existing); `work.origen.commentarii-in-iohannem` (registered with this publication); `work.origen.homiliae-in-iesu-nave` (registered with this publication).
 - URL: CCEL anf04, anf09; https://archive.org/download/origeneswerkehrs07origuoft/origeneswerkehrs07origuoft_djvu.txt
 - Retrieved: GCS 2026-09-30 (list-l13a-israel-2); others per manifest
 - SHA-256 of the bytes read: b9f385a048c18158c2f74dcd37062f48a1c68a5d05bdb07270a93692d172da2e (4237225 bytes); 3861096b158e12bc13f4516baac913cbd3d921c607862a7eace4f0257b3aefa5 (3047154 bytes); 2c72837897b3ace1f5548a9a15563062f5601c563cc566d9fec6712adcdbb290 (2230721 bytes)
@@ -348,7 +348,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 - Ceiling: GCS OCR normalized ("tanien"→"tamen", "fomicationis"→"fornicationis"). PG 12 OCR is Greek-mode and unusable for Latin.
 
 ### Cyprian (ANF 5)
-- Repository ids: `work.ante-nicene-fathers.volume-5` (existing).
+- Repository ids: `work.ante-nicene-fathers.volume-5` (existing); `work.cyprian.de-habitu-virginum` (registered with this publication).
 - URL: CCEL anf05. Cache: text/ccel-anf05.txt
 - Loci read/Quoted: De habitu virginum 14.
 - Rights: public domain.
@@ -361,7 +361,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Lactantius (ANF 7; CSEL 19)
 - Witness: ANF 7; S. Brandt, CSEL 19 (1890), archive.org OCR.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.lactantius.divinae-institutiones` (registered with this publication).
 - URL: CCEL anf07; archive.org CSEL 19 (see manifest ia-csel19-lactantius.txt)
 - Loci read: Div. Inst. II.14 (CSEL numbering; ANF II.15).
 - Quoted: English ANF II.15; Latin CSEL II.14.1 phrase "misit angelos ad tutelam cultumque generis humani".
@@ -377,7 +377,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Eusebius (Ferrar)
 - Witness: W. J. Ferrar (trans.), Eusebius, Demonstratio evangelica (1920), tertullian.org.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.eusebius.demonstratio-evangelica` (registered with this publication).
 - URL: https://www.tertullian.org/fathers/eusebius_de_06_book4.htm
 - Retrieved: 2026-09-30 (list-l13a-israel)
 - SHA-256 of the bytes read: f969714663559f4b0cfc837aab5ac34fae2a2f8c0525b3bc2b10b7afc642975d (129224 bytes)
@@ -394,7 +394,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Epiphanius (PG 41, PG 43)
 - Witness: Migne PG 41 (Panarion), PG 43 (De mensuris et ponderibus), archive.org Greek-mode OCR.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.epiphanius-of-salamis.panarion` (registered with this publication); `work.epiphanius-of-salamis.de-mensuris-et-ponderibus` (registered with this publication).
 - URL: https://archive.org/download/patrologiae_cursus_completus_gr_vol_041/..._djvu.txt; .../vol_043/..._djvu.txt
 - Retrieved: 2026-09-30T14:39:34Z, 14:39:38Z
 - Loci read: Panarion 39.6.1 (Greek); De mensuris 22 (Greek).
@@ -403,7 +403,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Chrysostom (PG 53; NPNF 1/10)
 - Witness: Migne PG 53 (Hom. in Gen. 22), archive.org Greek OCR; NPNF 1/10 (Hom. in Matt. 76).
-- Repository ids: `work.john-chrysostom.homiliae-in-matthaeum` (existing).
+- Repository ids: `work.john-chrysostom.homiliae-in-genesim` (registered with this publication); `work.john-chrysostom.homiliae-in-matthaeum` (existing).
 - SHA-256 of the bytes read: b6fe7617168ba125d9fa4c2401e2ead351c91c4b508eecc96056e78ddd23dab3 (4609519 bytes); adb8f1c9a988c5050a20fb9fdbf75143dcb227e95e3dad2f560a63b757923648 (3345978 bytes)
 - Loci read: Hom. in Gen. 22.1–3 (Greek); Hom. in Matt. 76.
 - Quoted: none (paraphrase from Greek; Hom. in Matt. 76 cut from final text).
@@ -424,7 +424,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 - Rights: public domain (Dods; Latin).
 
 ### Cassian; Sulpicius Severus (NPNF 2/11)
-- Repository ids: `work.nicene-and-post-nicene-fathers.series-2-volume-11` (existing).
+- Repository ids: `work.nicene-and-post-nicene-fathers.series-2-volume-11` (existing); `work.sulpicius-severus.chronica` (registered with this publication).
 - SHA-256 of the bytes read: 8b1206d4e7488c65b5391875fd9570a8a6bcc83270dea35ffe44010c3575d267 (3470230 bytes)
 - Loci read: Conl. VIII.7, 17, 20–21; Chron. I.2.
 - Quoted: Conl. VIII.7, 17, 21; Chron. I.2 quote cut from final text (cited only).
@@ -432,7 +432,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Ambrose (CSEL 32.1)
 - Witness: C. Schenkl (ed.), Sancti Ambrosii Opera I, CSEL 32.1 (Vienna 1896/97), archive.org OCR (Google scan).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.ambrose.de-noe` (registered with this publication).
 - URL: https://archive.org/download/sanctiambrosiio00ambrgoog/sanctiambrosiio00ambrgoog_djvu.txt
 - Retrieved: 2026-09-30 (list-l13a-israel-2)
 - SHA-256 of the bytes read: c21ca8f75aa87c1e38f270bf3d39d12e6cb3de8ac8dc04e06dcb7c258d02d651 (1286745 bytes)
@@ -499,7 +499,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Hesiod, Works and Days
 - Witness: Hesiod, *Works and Days*, tr. H. G. Evelyn-White, *Hesiod, the Homeric Hymns and Homerica* (Loeb 1914), Project Gutenberg eBook 348.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.hesiod.works-and-days` (registered with this publication).
 - URL: https://www.gutenberg.org/cache/epub/348/pg348.txt
 - Retrieved: 2026-09-30T14:33:47Z
 - SHA-256 of the bytes read: ba394b58b5c57fd137af888a20abf3d1c3515c273b0f29da4778484bb15349f2 (547932 bytes)
@@ -510,7 +510,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Plato, dialogues (Jowett)
 - Witness: Plato, *Cratylus*, *Apology*, *Symposium*, *Phaedo*, *Republic*, *Timaeus*, *Laws*, *Statesman*, *Phaedrus*, tr. B. Jowett (3rd ed. 1892), Project Gutenberg eBooks 1616, 1656, 1600, 1658, 1497, 1572, 1750, 1738, 1636.
-- Repository ids: `work.plato.symposium` (existing).
+- Repository ids: `work.plato.symposium` (existing); `work.plato.cratylus` (registered with this publication); `work.plato.apologia-socratis` (registered with this publication); `work.plato.phaedo` (registered with this publication); `work.plato.respublica` (registered with this publication); `work.plato.timaeus` (registered with this publication); `work.plato.leges` (registered with this publication); `work.plato.politicus` (registered with this publication); `work.plato.phaedrus` (registered with this publication).
 - URL: https://www.gutenberg.org/cache/epub/{1616,1656,1600,1658,1497,1572,1750,1738,1636}/pg{id}.txt
 - Retrieved: 2026-09-30T14:33:49Z–14:34:03Z (Phaedrus 14:52:41Z)
 - SHA-256 of the bytes read: e5fe819c38e449ac686945b92aca54f3d4917e04ab1d47c576c54c9072e40acc (326450 bytes); f4cc548bd8c8b59e14effdbaab9df97f29bd48f317a466fe8c3c63ad288b964c (107485 bytes); 8b5c599ea734ff0f5e8d83f399dead8c796800897b107c8d53fa909f74a05d6f (200974 bytes); 164533dde5628e7cd2e51442c29367a132fc470271f0d7e77a2ef06170a008ca (257103 bytes); 917c1cb469e1a8eba6083808764d7131da8d79140b575b4214c9d02a73ec4528 (1244164 bytes); 4f839b423198a80be946aeb7d4b0baef30862d12702a6026b2479be9718342d9 (475689 bytes); 9a6ea73161956a622d0aba13d70b82c076feed7d37d257d26e458671b26dc8c9 (1364421 bytes); 171c09697bde2a26ad7cd4775929e780b0bc218ea47c4b4755cabe437610d3f4 (252962 bytes); ce41cbe9eb5750163ef9084d253d7786d13c24968ae7f5079be3abda53114734 (235362 bytes)
@@ -521,7 +521,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Aristotle, Metaphysics XII and De caelo
 - Witness: Aristotle, *Metaphysics* XII, tr. W. D. Ross (Oxford 1908); *On the Heavens*, tr. J. L. Stocks (Oxford 1922); Internet Classics Archive.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.aristotle.metaphysica` (registered with this publication); `work.aristotle.de-caelo` (registered with this publication).
 - URL: https://classics.mit.edu/Aristotle/metaphysics.12.xii.html ; https://classics.mit.edu/Aristotle/heavens.1.i.html ; https://classics.mit.edu/Aristotle/heavens.2.ii.html
 - Retrieved: 2026-09-30T14:40:44Z–14:40:46Z
 - SHA-256 of the bytes read: c1902c3f3c37160e057cb8dffb9c565c28724361d695d1ea67d20afc5659882c (62565 bytes); 63448eff6776b62066566a85e472e4463c4a39ae3b7dbfa763ba33ca1be0ee29 (101501 bytes); fe9950b0a7f8ba0045738e098f993e23d9f0b0980feaca3bcec11844b1058b0f (96969 bytes)
@@ -532,7 +532,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Plutarch, De defectu oraculorum and De genio Socratis
 - Witness: Plutarch, *Why the Oracles Cease to Give Answers* (tr. R. Midgley) and *A Discourse concerning Socrates's Daemon*, in *Plutarch's Essays and Miscellanies*, ed. W. W. Goodwin (Boston, Little, Brown; vols. 2 and 4), Project Gutenberg 78147 and 79588.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.plutarch.de-defectu-oraculorum` (registered with this publication); `work.plutarch.de-genio-socratis` (registered with this publication).
 - URL: https://www.gutenberg.org/cache/epub/79588/pg79588.txt ; https://www.gutenberg.org/cache/epub/78147/pg78147.txt
 - Retrieved: 2026-09-30T14:40:56Z; 14:40:51Z
 - SHA-256 of the bytes read: 844d4c840ea86f90cf2cb6df38efd7905e51ff96e77dca2ee0aba7b0784f9bcb (1133803 bytes); c9593413ce80263cfc44e22e1be06267781e863252336a0cb603809246905ac8 (1107887 bytes)
@@ -543,7 +543,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Apuleius, De deo Socratis
 - Witness: Apuleius, *On the God of Socrates*, anonymous translation in *The Works of Apuleius* (Bohn's Classical Library, London 1853; reprint 1878), archive.org OCR; Latin text from The Latin Library.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.apuleius.de-deo-socratis` (registered with this publication).
 - URL: https://archive.org/download/worksapuleiusco00gurngoog/worksapuleiusco00gurngoog_djvu.txt ; https://archive.org/download/worksofapuleiusc00apulrich/worksofapuleiusc00apulrich_djvu.txt ; https://www.thelatinlibrary.com/apuleius/apuleius.deosocratis.shtml
 - Retrieved: 2026-09-30T14:41:17Z; 14:49:43Z; 14:49:44Z
 - SHA-256 of the bytes read: 413c8e7c78c40da536f001822961e35ae2d0c479bdafc22ac5d283b8189cd728 (1476884 bytes); 2f9560bb0b0dbe7254e014605afe8a78c99e1722cf2dd7dedc29c6cce522b62a (1434536 bytes); e0173182c21a0d01a1bd79137c9398bf2832e666c40ff786837c23d1c4fa21b3 (34353 bytes)
@@ -554,7 +554,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Plotinus, Enneads III.4, III.5; Porphyry, Life of Plotinus
 - Witness: Plotinus, *Complete Works*, tr. K. S. Guthrie (1918), vols. 1 and 4, Project Gutenberg 42930 and 42933 (vol. 1 includes Porphyry's *Life*).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.plotinus.enneades` (registered with this publication); `work.porphyry.vita-plotini` (registered with this publication).
 - URL: https://www.gutenberg.org/cache/epub/42930/pg42930.txt ; https://www.gutenberg.org/cache/epub/42933/pg42933.txt
 - Retrieved: 2026-09-30T14:40:59Z; 14:41:04Z
 - SHA-256 of the bytes read: f4ef8a36b1fc21dd615e307e65b18aad6841d6f2c39eb336f51fc80a611c66a2 (521117 bytes); af75f5796e71afd86554bf300543811bdd22f41b2aaae5f77eceb918ef8ac703 (865752 bytes)
@@ -565,7 +565,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Porphyry, De abstinentia II
 - Witness: Porphyry, *On Abstinence from Animal Food*, book II, tr. T. Taylor, *Select Works of Porphyry* (London 1823), archive.org OCR.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.porphyry.de-abstinentia` (registered with this publication).
 - URL: https://archive.org/download/selectworksporp00taylgoog/selectworksporp00taylgoog_djvu.txt
 - Retrieved: 2026-09-30T14:41:21Z
 - SHA-256 of the bytes read: 8aa0167ea2e6a4a943440e7092e74caecf7b9e170bf159ffcb15b1a0b728747f (607119 bytes)
@@ -576,7 +576,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Iamblichus, De mysteriis
 - Witness: Iamblichus, *On the Mysteries of the Egyptians, Chaldeans, and Assyrians*, tr. T. Taylor (2nd ed. 1895), archive.org OCR.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.iamblichus.de-mysteriis` (registered with this publication).
 - URL: https://archive.org/download/b24884170/b24884170_djvu.txt
 - Retrieved: 2026-09-30T14:51:36Z
 - SHA-256 of the bytes read: ab16f1f084301058f6b31518b6e80bbbc6724302fc59c8b1ff97c8de5c5e7996 (625203 bytes)
@@ -598,7 +598,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Athenagoras, Legatio; Clement of Alexandria, Stromata
 - Witness: Athenagoras, *A Plea for the Christians*; Clement, *Stromata*; ANF 2, CCEL text.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.clement-of-alexandria.stromata` (registered with this publication).
 - URL: https://ccel.org/ccel/s/schaff/anf02/cache/anf02.txt
 - Retrieved: 2026-09-29T12:55:12Z
 - SHA-256 of the bytes read: ae8e15414a21fe8d54a30fee7c3fbd1ee6a018e624dcd681d030da5c1cabbcac (3768675 bytes)
@@ -609,7 +609,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Tertullian, Apologeticum; De anima
 - Witness: Tertullian, *Apology* and *A Treatise on the Soul*, ANF 3 (CCEL); Latin of *Apologeticum* 22 from The Latin Library.
-- Repository ids: `work.tertullian.apologeticum` (existing); `work.ante-nicene-fathers.volume-3` (existing).
+- Repository ids: `work.tertullian.apologeticum` (existing); `work.tertullian.de-anima` (registered with this publication); `work.ante-nicene-fathers.volume-3` (existing).
 - URL: https://ccel.org/ccel/s/schaff/anf03/cache/anf03.txt ; https://www.thelatinlibrary.com/tertullian/tertullian.apol.shtml
 - Retrieved: 2026-09-29T12:55:14Z; 2026-09-30T14:14:43Z
 - SHA-256 of the bytes read: 9299f3fae7c08024ea918e70d25433b7b110cc2b851d030cb22f3b1f080800c8 (4427171 bytes); 04410aeeabcd7f2ef832b41b28469ee2cdf87d06a2898afccb8d2e3dcb0bbe01 (148723 bytes)
@@ -620,7 +620,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Minucius Felix, Octavius; Origen, Contra Celsum
 - Witness: Minucius Felix, *Octavius*; Origen, *Against Celsus*; ANF 4 (CCEL).
-- Repository ids: `work.origen.contra-celsum` (existing); `work.ante-nicene-fathers.volume-4` (existing).
+- Repository ids: `work.minucius-felix.octavius` (registered with this publication); `work.origen.contra-celsum` (existing); `work.ante-nicene-fathers.volume-4` (existing).
 - URL: https://ccel.org/ccel/s/schaff/anf04/cache/anf04.txt
 - Retrieved: 2026-09-29T12:55:15Z
 - SHA-256 of the bytes read: b9f385a048c18158c2f74dcd37062f48a1c68a5d05bdb07270a93692d172da2e (4237225 bytes)
@@ -631,7 +631,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Lactantius, Divinae institutiones II
 - Witness: Lactantius, *Divine Institutes*, ANF 7 (CCEL; ANF numbers the chapters II.15–16); Latin, ed. S. Brandt, CSEL 19 (1890), archive.org OCR (numbers them II.14–15).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.lactantius.divinae-institutiones` (registered with this publication).
 - URL: https://ccel.org/ccel/s/schaff/anf07/cache/anf07.txt ; https://archive.org/download/CorpusScriptorumEcclesiasticorumLatinorum19/Corpus_scriptorum_ecclesiasticorum_Latinorum_19_djvu.txt
 - Retrieved: 2026-09-29T12:55:17Z; 2026-09-30T14:24:31Z
 - SHA-256 of the bytes read: b69327af0a84dd247c8e32848ad158b038125b534fa6333bba734c5de22e261c (3986919 bytes); c9cab1f595d738f66287faf45407805b62bb73459952f4381905499e2a8eb286 (2788107 bytes)
@@ -642,7 +642,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Eusebius, Praeparatio evangelica
 - Witness: Eusebius of Caesarea, *Preparation for the Gospel*, tr. E. H. Gifford (Oxford 1903), books IV, V, VII, XI, XIII, transcribed by Roger Pearse at tertullian.org.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.eusebius.praeparatio-evangelica` (registered with this publication).
 - URL: https://www.tertullian.org/fathers/eusebius_pe_{04_book4,05_book5,07_book7,11_book11,13_book13}.htm
 - Retrieved: 2026-09-30T14:34:08Z–14:34:14Z
 - SHA-256 of the bytes read: 554dd61a56a7b96a1d1a02cbc0b412e1cf93d5b64967f13dabcc7659c1c84ddf (118032 bytes)
@@ -686,7 +686,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Thomas Aquinas, De substantiis separatis; SCG II.92; In Metaph. XII; In De causis; In De div. nom.
 - Witness: Corpus Thomisticum (Leonine 1968 for De sub. sep.; Leonine/Marietti for SCG; Marietti 1950 for In Metaph. and In DN; Saffrey 1954 for In De causis).
-- Repository ids: `work.thomas-aquinas.de-substantiis-separatis` (registered with this publication); `work.thomas-aquinas.summa-contra-gentiles` (registered with this publication).
+- Repository ids: `work.thomas-aquinas.de-substantiis-separatis` (registered with this publication); `work.thomas-aquinas.summa-contra-gentiles` (registered with this publication); `work.thomas-aquinas.sententia-libri-metaphysicae` (registered with this publication); `work.thomas-aquinas.super-librum-de-causis` (registered with this publication); `work.thomas-aquinas.super-de-divinis-nominibus` (registered with this publication).
 - URL: https://www.corpusthomisticum.org/ots.html ; scg2091.html ; cmp12.html ; cdc00.html ; cdn00.html
 - Retrieved: ots 2026-09-29T12:54:53Z; scg2091 2026-09-29T13:39:29Z; cmp12, cdc00, cdn00 2026-09-30T14:41:06Z–14:41:11Z
 - SHA-256 of the bytes read: 3149f5709dbec16c044723d25f009a4a43caf0d38e965f28a0972b55474c78d9 (167879 bytes); f044d4518ba4eada9fc0ae4539741ad71cd9dfb014730e1d772cd023f952a36e (79602 bytes); 58a349313eea934ec0f245f40754207a798b7b6f567d38690dc6dc7a4b0d19bc (216417 bytes); 3eda0e782b143d595ba3ddb6e933a6abf592c5f3b44325e288189fff5f9124b0 (7552 bytes); c5688a430f217569300187345cdf3e7abecd2e36c9d676725dafc79518aa7908 (9523 bytes)
@@ -710,7 +710,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Clement of Rome, First Epistle to the Corinthians
 - Witness: Clement of Rome, *1 Clement*, tr. in ANF vol. 1 (Roberts/Donaldson/Coxe, 1885), CCEL plain text.
-- Repository ids: `work.ante-nicene-fathers.volume-1` (existing).
+- Repository ids: `work.ante-nicene-fathers.volume-1` (existing); `work.clement-of-rome.first-epistle-to-the-corinthians` (registered with this publication).
 - URL: https://ccel.org/ccel/s/schaff/anf01/cache/anf01.txt
 - Retrieved: 2026-09-29T12:55:11Z
 - SHA-256 of the bytes read: ee9c7f0ac3f4df08d07ddf81cd7e061e82a35e0d27de611cae06f1e05b2fb991 (3149312 bytes)
@@ -721,7 +721,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Ignatius of Antioch, Letters to the Trallians, Smyrnaeans, Ephesians
 - Witness: Ignatius, *Trall.*, *Smyrn.*, *Eph.*, shorter and longer Greek recensions in parallel, ANF vol. 1.
-- Repository ids: `work.ignatius-of-antioch.letter-to-the-smyrnaeans` (existing).
+- Repository ids: `work.ignatius-of-antioch.letter-to-the-smyrnaeans` (existing); `work.ignatius-of-antioch.letter-to-the-trallians` (registered with this publication); `work.ignatius-of-antioch.letter-to-the-ephesians` (registered with this publication).
 - URL: https://ccel.org/ccel/s/schaff/anf01/cache/anf01.txt
 - Retrieved: 2026-09-29T12:55:11Z
 - SHA-256 of the bytes read: ee9c7f0ac3f4df08d07ddf81cd7e061e82a35e0d27de611cae06f1e05b2fb991 (3149312 bytes)
@@ -732,7 +732,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Epistle of Barnabas; Epistle to Diognetus; Martyrdom of Polycarp
 - Witness: ANF vol. 1 translations.
-- Repository ids: `work.ante-nicene-fathers.volume-1` (existing).
+- Repository ids: `work.ante-nicene-fathers.volume-1` (existing); `work.anonymous.epistle-of-barnabas` (registered with this publication); `work.anonymous.epistle-to-diognetus` (registered with this publication).
 - URL: as above. Retrieved: 2026-09-29T12:55:11Z. Cache: text/ccel-anf01.txt
 - Loci read: Barn. 18; Diogn. 7; Mart. Pol. 2, 14.
 - Quoted: all four loci.
@@ -762,7 +762,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Athenagoras, A Plea for the Christians (Legatio)
 - Witness: ANF vol. 2.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.athenagoras.legatio-pro-christianis` (registered with this publication).
 - URL: https://ccel.org/ccel/s/schaff/anf02/cache/anf02.txt
 - Retrieved: 2026-09-29T12:55:12Z. Cache: text/ccel-anf02.txt
 - Loci read: Leg. 10, 24–28.
@@ -771,7 +771,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Tatian, Address to the Greeks
 - Witness: ANF vol. 2 (with the ANF introductory note on Tatian's later Encratism).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.tatian.oratio-ad-graecos` (registered with this publication).
 - URL / Retrieved / Cache: as ANF 2 above.
 - Loci read: Or. 7–9, 12–16, 20; introductory note.
 - Quoted: 7, 12, 14, 15, 16. Greek term `angelos protogonos` from the American editor's note [441] at ch. 7.
@@ -779,7 +779,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Theophilus of Antioch, To Autolycus
 - Witness: ANF vol. 2.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.theophilus-of-antioch.ad-autolycum` (registered with this publication).
 - URL / Retrieved / Cache: as ANF 2.
 - Loci read: II.8, II.28, II.29.
 - Quoted: II.8, 28, 29. Greek `apodedrakenai` as printed in ANF; the gloss joining it to `drakon` is editorial exposition of Theophilus's stated etymology.
@@ -796,7 +796,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Clement of Alexandria, Stromata
 - Witness: ANF vol. 2.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.clement-of-alexandria.stromata` (registered with this publication).
 - URL / Retrieved / Cache: as ANF 2.
 - Loci read: VI.3 (angel mentions), VI.7, VI.13, VI.16, VI.17; VII.1, VII.2, VII.7, VII.12, VII.13.
 - Quoted: VI.7, 13, 16, 17; VII.1, 2 (block and inline), 7, 12, 13.
@@ -840,7 +840,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Methodius of Olympus, Banquet of the Ten Virgins; Discourse on the Resurrection (with Photius's synopsis and the Damascene fragment)
 - Witness: ANF vol. 6.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.methodius-of-olympus.symposium` (registered with this publication); `work.methodius-of-olympus.de-resurrectione` (registered with this publication).
 - URL / Retrieved / Cache: as ANF 6.
 - Loci read: Symp. I.4 (angels mention), II.6, III.4, III.6, VIII.10; De res. I.9–12; Part II (Damascene fragment); Part III.1–9 (Photius, cod. 234, with notes [2894]–[2897]); introductory notice (bishop of Olympus and Patara in Lycia).
 - Quoted: Symp. II.6, III.6, VIII.10; De res. I.10 (block and inline), I.12; Part II fragment; Photius synopsis 7.
@@ -858,7 +858,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### John Chrysostom, Homiliae in Genesim 22
 - Witness: Migne, PG 53 (Paris 1862), Greek text, archive.org OCR.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.john-chrysostom.homiliae-in-genesim` (registered with this publication).
 - URL: https://archive.org/download/patrologiae_cursus_completus_gr_vol_053/patrologiae_cursus_completus_gr_vol_053_djvu.txt
 - Retrieved: 2026-09-30T14:20:51Z (fetched by this lane). Cache: text/ia-pg53-djvu.txt (lines ~25765–25900).
 - Loci read: Hom. 22.2–3 (Greek): refutes the angel reading of Gen 6:2 (angels are never called sons of God; the devil fell before man's creation; the bodiless nature is incapable of such desire, Matt 22:30) and identifies the sons of God with the line of Seth and Enos.
@@ -906,7 +906,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Athanasius, Orationes contra Arianos I–III
 - Witness: Athanasius, *Four Discourses against the Arians* (Newman's translation as revised by A. Robertson), NPNF2 4 (New York: Christian Literature Publishing Co., 1892), CCEL plain text; New Advent HTML of the same translation used only to restore the opening quotation marks that CCEL's text conversion drops.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.athanasius-of-alexandria.orationes-contra-arianos` (registered with this publication).
 - URL: https://ccel.org/ccel/s/schaff/npnf204/cache/npnf204.txt ; https://www.newadvent.org/fathers/28161.htm , 28162.htm , 28163.htm
 - Retrieved: 2026-09-30 (CCEL 14:09:25Z; New Advent 14:32Z)
 - SHA-256 of the bytes read: d2f362ce989db6955bb7d900c619543c581beceaca52acd8359510551c85f124 (4570263 bytes); c7af95bd78890b292ac48db06c4401bafc431d64693afab2cd0460e14752b900 (220200 bytes)
@@ -994,7 +994,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Gregory of Nazianzus, Orations 2, 28, 31, 38, 40, 41, 42, 45
 - Witness: Gregory Nazianzen, *Select Orations* (C. G. Browne and J. E. Swallow), NPNF2 7 (1893), CCEL.
-- Repository ids: `work.gregory-of-nazianzus.oration-38` (registered with this publication); `work.gregory-of-nazianzus.oration-40` (existing).
+- Repository ids: `work.gregory-of-nazianzus.oration-38` (registered with this publication); `work.gregory-of-nazianzus.oration-40` (existing); `work.gregory-of-nazianzus.oration-2` (registered with this publication).
 - URL: https://ccel.org/ccel/s/schaff/npnf207/cache/npnf207.txt
 - Retrieved: 2026-09-29T12:55:25Z
 - SHA-256 of the bytes read: 56d84cfa94dee313af0139e2d7f3d4b5f7fffca40ce0f34794b5f56264964dfd (3388014 bytes)
@@ -1027,7 +1027,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Gregory of Nyssa, Contra Eunomium
 - Witness: *Against Eunomius*, NPNF2 5 (1892), CCEL, NPNF book numbering.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.gregory-of-nyssa.contra-eunomium` (registered with this publication).
 - URL: as above
 - Retrieved: 2026-09-29T17:32:27Z
 - SHA-256 of the bytes read: cef974043e48a52d1b6d4ce3bdfb538fa5be2c3af8b53e3bb75181760d614484 (3490499 bytes)
@@ -1038,7 +1038,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Gregory of Nyssa, De vita Moysis II (Greek, PG 44)
 - Witness: Gregory of Nyssa, *De vita Moysis*, Greek text in Migne, PG 44 (Paris, 1863), archive.org OCR (full-text stream); English rendering made for this edition.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.gregory-of-nyssa.de-vita-moysis` (registered with this publication).
 - URL: https://archive.org/stream/patrologiae_cursus_completus_gr_vol_044/patrologiae_cursus_completus_gr_vol_044_djvu.txt (the /download/ djvu.txt URL returned HTTP 500 twice; the stream endpoint serves the same OCR text inside HTML)
 - Retrieved: 2026-09-30T14:27:50Z
 - SHA-256 of the bytes read: aa9d6d88c7b49eff6b0b40b80c5986228356ccc3418127cdc6d72625d9410c7d (7884554 bytes)
@@ -1049,7 +1049,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Ephrem the Syrian, Hymns
 - Witness: Ephrem, *Hymns on the Nativity* (I–XIII J. B. Morris, revised; XIV–XIX A. E. Johnston), *Hymns for the Epiphany* (A. E. Johnston), *Nisibene Hymns* (J. T. S. Stopford and others), NPNF2 13, CCEL.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.ephrem-the-syrian.hymni-de-nativitate` (registered with this publication); `work.ephrem-the-syrian.hymni-de-epiphania` (registered with this publication); `work.ephrem-the-syrian.carmina-nisibena` (registered with this publication).
 - URL: https://ccel.org/ccel/s/schaff/npnf213/cache/npnf213.txt
 - Retrieved: 2026-09-29T12:55:32Z
 - SHA-256 of the bytes read: 02dd51a2aff1cabf92e80a0ab5f8d88872f2185613c92acd9d1a90431169285f (1921581 bytes)
@@ -1060,7 +1060,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### John Chrysostom, Homilies on Hebrews
 - Witness: Chrysostom, *Homilies on Hebrews* (Oxford translation revised by F. Gardiner), NPNF1 14, CCEL.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.john-chrysostom.homilies-on-hebrews` (registered with this publication).
 - URL: https://ccel.org/ccel/s/schaff/npnf114/cache/npnf114.txt
 - Retrieved: 2026-09-29T12:55:23Z
 - SHA-256 of the bytes read: e26f55f8d0739c07d73d5b664e42efbd923a43230a22d93d55261c808e9cd458 (3943878 bytes)
@@ -1137,7 +1137,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### John Chrysostom, De sacerdotio; Ad Theodorum lapsum; De diabolo tentatore
 - Witness: *On the Priesthood* (translations new or revised by W. R. W. Stephens, per Schaff's preface), *Exhortation to Theodore after his Fall*, *Three Homilies concerning the Power of Demons*, NPNF1 9 (New York, 1886), CCEL.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.john-chrysostom.de-sacerdotio` (registered with this publication); `work.john-chrysostom.ad-theodorum-lapsum` (registered with this publication); `work.john-chrysostom.de-diabolo-tentatore` (registered with this publication).
 - URL: https://ccel.org/ccel/s/schaff/npnf109/cache/npnf109.txt
 - Retrieved: 2026-09-30T14:09:26Z
 - SHA-256 of the bytes read: d6a51d22d996e02c47b88462f7222737b26d2363212f24e34834cfc6b580da57 (2752950 bytes)
@@ -1216,7 +1216,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Witness: Tertullian, *De patientia* 5 (ANF 3, S. Thelwall; Latin: The Latin Library)
 
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.tertullian.de-patientia` (registered with this publication).
 - URL: ANF 3 as above; https://www.thelatinlibrary.com/tertullian/tertullian.patientia.shtml
 - Retrieved: 2026-09-29T12:55:14Z; 2026-09-30T14:14:47Z
 - SHA-256 of the bytes read: 9299f3fae7c08024ea918e70d25433b7b110cc2b851d030cb22f3b1f080800c8 (4427171 bytes); c78f0f82c911f7c4bd9741f3707916d7edaa2d00e352b82378e4e86cbdcd3baf (42947 bytes)
@@ -1227,7 +1227,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Witness: Tertullian, *De carne Christi* 3, 6 (ANF 3, P. Holmes; Latin: The Latin Library)
 
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.tertullian.de-carne-christi` (registered with this publication).
 - URL: ANF 3; https://www.thelatinlibrary.com/tertullian/tertullian.carne.shtml
 - Retrieved: 2026-09-29T12:55:14Z; 2026-09-30T14:14:44Z
 - SHA-256 of the bytes read: 9299f3fae7c08024ea918e70d25433b7b110cc2b851d030cb22f3b1f080800c8 (4427171 bytes); 3ae0ac81fcb94bc545c96a46061178e787b157e4028dc26a4b85c24d411919a2 (75987 bytes)
@@ -1238,7 +1238,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Witness: Tertullian, *De oratione* 3, 16, 22, 29 (ANF 3, S. Thelwall; Latin: The Latin Library)
 
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.tertullian.de-oratione` (registered with this publication).
 - URL: ANF 3; https://www.thelatinlibrary.com/tertullian/tertullian.oratione.shtml
 - Retrieved: 2026-09-29T12:55:14Z; 2026-09-30T14:14:46Z
 - SHA-256 of the bytes read: 9299f3fae7c08024ea918e70d25433b7b110cc2b851d030cb22f3b1f080800c8 (4427171 bytes); 36524829732d2399f488fde647ced44383eea570aa9e7f7503f7a7238a7049ce (33407 bytes)
@@ -1249,7 +1249,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Witness: Tertullian, *De anima* (ANF 3, P. Holmes)
 
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.tertullian.de-anima` (registered with this publication).
 - URL: ANF 3
 - Retrieved: 2026-09-29T12:55:14Z
 - SHA-256 of the bytes read: 9299f3fae7c08024ea918e70d25433b7b110cc2b851d030cb22f3b1f080800c8 (4427171 bytes)
@@ -1260,7 +1260,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Witness: Tertullian, *De idololatria* 9 (ANF 3) and *De cultu feminarum* I.2 (ANF 4)
 
-- Repository ids: `work.ante-nicene-fathers.volume-3` (existing); `work.ante-nicene-fathers.volume-4` (existing).
+- Repository ids: `work.tertullian.de-idololatria` (registered with this publication); `work.tertullian.de-cultu-feminarum` (registered with this publication); `work.ante-nicene-fathers.volume-3` (existing); `work.ante-nicene-fathers.volume-4` (existing).
 - URL: ANF 3; https://ccel.org/ccel/s/schaff/anf04/cache/anf04.txt
 - Retrieved: 2026-09-29T12:55:14Z; 2026-09-29T12:55:15Z
 - SHA-256 of the bytes read: 9299f3fae7c08024ea918e70d25433b7b110cc2b851d030cb22f3b1f080800c8 (4427171 bytes); b9f385a048c18158c2f74dcd37062f48a1c68a5d05bdb07270a93692d172da2e (4237225 bytes)
@@ -1271,7 +1271,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Witness: Minucius Felix, *Octavius* 26–27 (ANF 4, R. E. Wallis trans.)
 
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.minucius-felix.octavius` (registered with this publication).
 - URL: https://ccel.org/ccel/s/schaff/anf04/cache/anf04.txt
 - Retrieved: 2026-09-29T12:55:15Z
 - SHA-256 of the bytes read: b9f385a048c18158c2f74dcd37062f48a1c68a5d05bdb07270a93692d172da2e (4237225 bytes)
@@ -1282,7 +1282,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Witness: Cyprian, *De zelo et livore* 4; *Quod idola dii non sint* 6–7; *Ad Demetrianum* 15; *De habitu virginum* 14 (ANF 5, R. E. Wallis trans.)
 
-- Repository ids: `work.ante-nicene-fathers.volume-5` (existing).
+- Repository ids: `work.cyprian.de-zelo-et-livore` (registered with this publication); `work.cyprian.quod-idola-dii-non-sint` (registered with this publication); `work.cyprian.ad-demetrianum` (registered with this publication); `work.cyprian.de-habitu-virginum` (registered with this publication); `work.ante-nicene-fathers.volume-5` (existing).
 - URL: https://ccel.org/ccel/s/schaff/anf05/cache/anf05.txt
 - Retrieved: 2026-09-30T14:11:58Z
 - SHA-256 of the bytes read: a02b61c36f07edd406a08138b9797151d6e808cb1618f1cc282fe9db5f6a87f8 (4302686 bytes)
@@ -1293,7 +1293,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Witness: Lactantius, *Divinae institutiones* II.8, II.14–16 and *Epitome* 22–23 (ANF 7, W. Fletcher trans.; Latin and numbering: Brandt, CSEL 19, 1890)
 
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.lactantius.divinae-institutiones` (registered with this publication); `work.lactantius.epitome-divinarum-institutionum` (registered with this publication).
 - URL: https://ccel.org/ccel/s/schaff/anf07/cache/anf07.txt ; https://archive.org/download/CorpusScriptorumEcclesiasticorumLatinorum19/Corpus_scriptorum_ecclesiasticorum_Latinorum_19_djvu.txt
 - Retrieved: 2026-09-29T12:55:17Z; 2026-09-30T14:24:31Z
 - SHA-256 of the bytes read: b69327af0a84dd247c8e32848ad158b038125b534fa6333bba734c5de22e261c (3986919 bytes); c9cab1f595d738f66287faf45407805b62bb73459952f4381905499e2a8eb286 (2788107 bytes)
@@ -1326,7 +1326,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Witness: Ambrose, *De fide* I.10, III.3, IV.1 (NPNF2 10)
 
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.ambrose.de-fide` (registered with this publication).
 - URL: NPNF2 10 as above
 - Retrieved: 2026-09-29T12:55:29Z
 - SHA-256 of the bytes read: 14fa05cc98a67cb1ccf7613e63d5eb80fd48feb3e09dd29210e70f53dfcd7577 (2963575 bytes)
@@ -1337,7 +1337,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Witness: Ambrose, *De viduis* 9.52–58 (NPNF2 10)
 
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.ambrose.de-viduis` (registered with this publication).
 - URL: NPNF2 10 as above
 - Retrieved: 2026-09-29T12:55:29Z
 - SHA-256 of the bytes read: 14fa05cc98a67cb1ccf7613e63d5eb80fd48feb3e09dd29210e70f53dfcd7577 (2963575 bytes)
@@ -1359,7 +1359,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Witness: Jerome, *Epistula* 18 to Damasus (PL 22, Vallarsi text; NPNF2 6 introductory summary as control)
 
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.jerome.letter-18` (registered with this publication).
 - URL: https://archive.org/download/bim_early-english-books-1641-1700_patrologiae-cursus-completus-_1845_22/bim_early-english-books-1641-1700_patrologiae-cursus-completus-_1845_22_djvu.txt ; control https://ccel.org/ccel/s/schaff/npnf206/cache/npnf206.txt
 - Retrieved: 2026-09-30T14:14:41Z; control 2026-09-29T17:32:29Z
 - SHA-256 of the bytes read: afb07d6ae696c65680ea0feba64e541dbcfaa7526304c293f469370014dd5e95 (4268197 bytes); 53fb977f33ea3d92276eca7c0d2fa2e86f654499855ea74bef1c0721706724e1 (3559723 bytes)
@@ -1381,7 +1381,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Witness: Jerome, *Commentarii in epistulam ad Titum* on 1:2 and *in epistulam ad Ephesios* I on 1:21 (PL 26)
 
-- Repository ids: `work.jerome.commentariorum-in-epistolam-ad-titum` (registered with this publication).
+- Repository ids: `work.jerome.commentariorum-in-epistolam-ad-titum` (registered with this publication); `work.jerome.commentariorum-in-epistolam-ad-ephesios` (registered with this publication).
 - URL: PL 26 as above; control for Titus: PL 22 Vallarsi note to Ep. 18.7
 - Retrieved: 2026-09-29T13:24:28Z; 2026-09-30T14:14:41Z
 - SHA-256 of the bytes read: 74c5dd24a294e30a8a1de023ef9842b41a79f52410fae49113156b075ce0d046 (4745230 bytes); afb07d6ae696c65680ea0feba64e541dbcfaa7526304c293f469370014dd5e95 (4268197 bytes)
@@ -1392,7 +1392,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Witness: John Cassian, *Conlationes* VII–VIII (Abbot Serenus) (NPNF2 11, E. C. S. Gibson trans.)
 
-- Repository ids: `work.nicene-and-post-nicene-fathers.series-2-volume-11` (existing).
+- Repository ids: `work.john-cassian.conlationes` (registered with this publication); `work.nicene-and-post-nicene-fathers.series-2-volume-11` (existing).
 - URL: https://ccel.org/ccel/s/schaff/npnf211/cache/npnf211.txt
 - Retrieved: 2026-09-30T14:11:59Z
 - SHA-256 of the bytes read: 8b1206d4e7488c65b5391875fd9570a8a6bcc83270dea35ffe44010c3575d267 (3470230 bytes)
@@ -1544,7 +1544,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Augustine, De divinatione daemonum
 - Witness: Latin at augustinus.it.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.augustine.de-divinatione-daemonum` (registered with this publication).
 - URL: https://www.augustinus.it/latino/potere_divinatorio/potere_divinatorio_libro.htm
 - Retrieved: 2026-09-29T13:32:03Z
 - SHA-256 of the bytes read: 152f2e97c16255ad64191158345f5f220e113de7e86ce1480cf38a5406e7bc4b (30665 bytes)
@@ -1555,7 +1555,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Augustine, Retractationes, book II
 - Witness: Latin at augustinus.it.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.augustine.retractationes` (registered with this publication).
 - URL: https://www.augustinus.it/latino/ritrattazioni/ritrattazioni_2_libro.htm
 - Retrieved: 2026-09-30T14:14:57Z (this lane)
 - SHA-256 of the bytes read: 683b581f9430763fb9ddada2aaebb7ee92e924599a8f43f9010bb15f896be3ab (105653 bytes)
@@ -1566,7 +1566,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Augustine, De vera religione
 - Witness: Latin at augustinus.it.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.augustine.de-vera-religione` (registered with this publication).
 - URL: https://www.augustinus.it/latino/vera_religione/vera_religione_libro.htm
 - Retrieved: 2026-09-30T14:14:55Z (this lane)
 - SHA-256 of the bytes read: c52fe9053d2b1d51483ea96baea08f09f9755ef97e77c4feacd92121fcc6fc5b (162988 bytes)
@@ -1577,7 +1577,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Augustine, De diversis quaestionibus octoginta tribus
 - Witness: Latin at augustinus.it.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.augustine.de-diversis-quaestionibus-octoginta-tribus` (registered with this publication).
 - URL: https://www.augustinus.it/latino/ottantatre_questioni/ottantatre_questioni_libro.htm
 - Retrieved: 2026-09-29T13:31:33Z
 - SHA-256 of the bytes read: 60b9fbde7a1bb0bd7e4b28efa445f3ecc04da8459fca9407303464dd9fd68d28 (316081 bytes)
@@ -1754,7 +1754,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Gregory the Great, Dialogues IV (English)
 - Witness: *The Dialogues of Saint Gregory ... Translated into our English Tongue by P.W. and printed at Paris in 1608*, re-edited by Edmund G. Gardner (London: Philip Lee Warner, 1911), Book IV, pp. 177--258, transcribed by Roger Pearse (2004) at tertullian.org.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.gregory-the-great.dialogi` (registered with this publication).
 - URL: https://www.tertullian.org/fathers/gregory_04_dialogues_book4.htm ; edition details from https://www.tertullian.org/fathers/gregory_00_dialogues_intro.htm
 - Retrieved: 2026-09-30T14:22:02Z (Book IV cache); intro page read by WebFetch 2026-09-30.
 - SHA-256 of the bytes read: c0fcbac5f0d6cbf6a192398f793368cf85d2e26253db4a40d0edd116c43698b1 (202560 bytes)
@@ -1776,7 +1776,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Isidore of Seville, Sententiae I.10 (Latin)
 - Witness: Isidore, *Sententiarum libri tres* I.10 "De angelis", Arevalo's text (Rome 1797--1803) in Migne, PL 83 (Paris), two archive.org scans (patrologiae83unknuoft; bim ... 1850_83).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.isidore.sententiae` (registered with this publication).
 - URL: https://archive.org/download/patrologiae83unknuoft/patrologiae83unknuoft_djvu.txt ; https://archive.org/download/bim_early-english-books-1641-1700_1850_83/bim_early-english-books-1641-1700_1850_83_djvu.txt
 - Retrieved: 2026-09-30T14:47:25Z; 2026-09-30T14:50:58Z
 - SHA-256 of the bytes read: e59b2eb652ece1ccf2f4cea6c0a35112dff950a7868c7e97034ee25ede7c0930 (5023656 bytes); 9201ea42ceb36f1bfca2e1ffe9c1719326a650fc5b9f8e4ce1e208d78f07cc9c (4053165 bytes)
@@ -1798,7 +1798,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Bede, Homiliae evangelii I.1 (Latin)
 - Witness: Bede, homily "In festo Annuntiationis beatae Mariae" (PL numbering Hom. I.1, "Homiliae genuinae"), Migne, PL 94 (Paris, 1850), archive.org OCR.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.bede.homiliae-evangelii` (registered with this publication).
 - URL: https://archive.org/download/bim_early-english-books-1641-1700_1850_94/bim_early-english-books-1641-1700_1850_94_djvu.txt
 - Retrieved: 2026-09-30T14:47:33Z
 - SHA-256 of the bytes read: eb888073ed25a141a81b55c90bc447e829babb03ab702a76171633012aadfec5 (3827054 bytes)
@@ -1809,7 +1809,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Bede, Explanatio Apocalypsis (English)
 - Witness: *The Explanation of the Apocalypse by Venerable Beda*, trans. Edward Marshall (Oxford and London: James Parker, 1878), archive.org OCR; Fordham Medieval Sourcebook page (preface only).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.bede.explanatio-apocalypsis` (registered with this publication).
 - URL: https://archive.org/download/explanationapoc00bedegoog/explanationapoc00bedegoog_djvu.txt ; https://sourcebooks.web.fordham.edu/source/bede-apoc.asp
 - Retrieved: 2026-09-30T14:49:33Z; 2026-09-30T14:47:20Z
 - SHA-256 of the bytes read: 738afa825b4646d27ad35508904a679993301c51b97f4842bc7f410ebb7b72a6 (364008 bytes); 840e32eb2c7a02b0b7d09eefee0de06908afec03fe9249024c543dd26a98bf80 (37752 bytes)
@@ -1820,7 +1820,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Bede, Historia ecclesiastica gentis Anglorum (English)
 - Witness: *Bede's Ecclesiastical History of England*, a revised translation by A. M. Sellar (London: George Bell, 1907), incl. Sellar's Life of Bede and Cuthbert's letter on Bede's death; Project Gutenberg eBook 38326.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.bede.historia-ecclesiastica-gentis-anglorum` (registered with this publication).
 - URL: https://www.gutenberg.org/cache/epub/38326/pg38326.txt
 - Retrieved: 2026-09-30T14:47:15Z
 - SHA-256 of the bytes read: 977da0babf070c825befb0a5db65a9cc2440d9ab45aa869a959c1bab911be2c8 (1093654 bytes)
@@ -1831,7 +1831,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Rabanus Maurus, De universo I.5 (Latin)
 - Witness: Rabanus Maurus, *De universo libri XXII*, I.5 "De angelis", Migne, PL 111 (Paris, 1852; running head OCR "CXIl"), archive.org OCR.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.rabanus-maurus.de-universo` (registered with this publication).
 - URL: https://archive.org/download/bim_early-english-books-1641-1700_patrologiae-cursus-completus-_1852_111/bim_early-english-books-1641-1700_patrologiae-cursus-completus-_1852_111_djvu.txt
 - Retrieved: 2026-09-30T14:47:28Z
 - SHA-256 of the bytes read: 388452e9eac45018b493be159eeaa67fff350b298b2682db021e5bf80abe5bf2 (4995841 bytes)
@@ -1909,7 +1909,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Anselm, Cur Deus homo I.16–18 (Deane 1903)
 - Witness: Anselm, *Cur Deus homo*, tr. Sidney Norton Deane, *St. Anselm: Proslogium; Monologium; … and Cur Deus Homo* (Chicago: Open Court, 1903), pp. 210–222.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.anselm-of-canterbury.cur-deus-homo` (registered with this publication).
 - URL: https://archive.org/download/stanselmeproslog00anseuoft/stanselmeproslog00anseuoft_djvu.txt
 - Retrieved: 2026-09-30T14:58:11Z
 - SHA-256 of the bytes read: 5a578093b4b8c6a8042b8d695bda68df4e22d112f1774590c552d6851fee976a (642892 bytes)
@@ -1920,7 +1920,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Bernard, De consideratione V (PL 182; Lewis 1908)
 - Witness: Bernard of Clairvaux, *De consideratione* V.3.6–5.12: Latin PL 182:791–795 (DCO page images; archive.org OCR patrologiaecursu0182mign); English, George Lewis, *St. Bernard On Consideration* (Oxford: Clarendon Press, 1908), pp. 135–144.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.bernard-of-clairvaux.de-consideratione` (registered with this publication).
 - URL: http://www.documentacatholicaomnia.eu/02m/1090-1153,_Bernardus_Claraevallensis_Abbas,_De_Consideratione_Libri_Quinque_Ad_Eugenium_Tertium,_MLT.pdf ; https://archive.org/download/onconsideration00bern/onconsideration00bern_djvu.txt
 - Retrieved: 2026-09-30
 - SHA-256 of the bytes read: 83f2b090410f16d495b1e83878b5cff5c07b7a8bd4f931e2b47f80b59d1c0655 (7064 bytes); 57e5cb80e805369053a638f31e47e7f4ef94dcf488c1983c226814f727e2b970 (3621335 bytes); 23dacc2ca0c5f0244fe9c456afbdb2a2745767b2281d7553d07899d93416f49e (306976 bytes)
@@ -1931,7 +1931,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Bernard, Sermons on Psalm 90 (Qui habitat) 11–13 (PL 183; Mount Melleray 1921)
 - Witness: Latin PL 183:225–236 (DCO page images; archive.org OCR patrologiaecursu0183mign); English, *St. Bernard's Sermons for the Seasons & Principal Festivals of the Year*, tr. a Priest of Mount Melleray, vol. 1 (Dublin: Browne and Nolan, 1921), pp. 231–260.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.bernard-of-clairvaux.sermones-in-psalmum-qui-habitat` (registered with this publication).
 - URL: http://www.documentacatholicaomnia.eu/02m/1090-1153,_Bernardus_Claraevallensis_Abbas,_Sermones_De_Tempore._In_Psalmum_XC,_MLT.pdf ; https://archive.org/download/stbernardssermon0001prie_y4z3/stbernardssermon0001prie_y4z3_djvu.txt
 - Retrieved: 2026-09-30
 - SHA-256 of the bytes read: 937b7aae2d2821a3c9cc562dcd1995394d072dc94466347bbdd07011d0effba4 (7766 bytes); 449957346cf138812697c9f27b12dfec40b699b327b0b00ddb937fbdae61b39a (4127764 bytes); a66ad9a360627d988ff526cf20de3615d4b67c7c82157f69ff51340a84d1263e (807286 bytes)
@@ -1942,7 +1942,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Bernard, Sermons for the feast of St Michael 1–2 (PL 183; Mount Melleray 1925)
 - Witness: Latin PL 183:447–454 (DCO page images; archive.org OCR); English, *St. Bernard's Sermons for the Seasons*, vol. 3 (Dublin, 1925), pp. 315–329.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.bernard-of-clairvaux.sermones-in-festo-sancti-michaelis` (registered with this publication).
 - URL: http://www.documentacatholicaomnia.eu/02m/1090-1153,_Bernardus_Claraevallensis_Abbas,_Sermones_De_Sanctis._In_Festo_Sancti_Michaelis,_MLT.pdf ; https://archive.org/download/stbernardssermon0003prie_s9b1/stbernardssermon0003prie_s9b1_djvu.txt
 - Retrieved: 2026-09-30
 - SHA-256 of the bytes read: 1c0bfe0eff6719fa2cf3beefaaee22676c1049ac38e05d77612440b200f5bc57 (7294 bytes); b216b78d046e34fe56d463bf53eb6ca48a7dd8c7be7a1c08ccca2b39180df89a (964870 bytes)
@@ -1953,7 +1953,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Bernard, Sermons on the Song of Songs 5, 7, 19, 27 (Eales 1896)
 - Witness: *Life and Works of Saint Bernard*, ed. Mabillon, tr. Samuel J. Eales, vol. 4, *Cantica Canticorum* (London: John Hodges, 1896).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.bernard-of-clairvaux.sermones-super-cantica-canticorum` (registered with this publication).
 - URL: https://archive.org/download/LifeWorksOfSBernardClairvauxV4/LifeWorksOfSBernardClairvauxV4_djvu.txt (also DCO PDF of PL 183:785–1198 fetched, not used for quotation)
 - Retrieved: 2026-09-30T14:58:08Z
 - SHA-256 of the bytes read: 26d3f6378ee7b171dc0d6e4c0be0de6d7eedc27a813c296a1dea9b4283b4e287 (2087239 bytes); 05a4ae4546150b33e035d9900b9d393812df00896ca0a2ac92f6321787694964 (7009 bytes)
@@ -1964,7 +1964,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Hugh of St Victor, De sacramentis I.5 (PL 176)
 - Witness: Hugh of Saint Victor, *De sacramentis christianae fidei* I, pars 5, cc. 1–34, PL 176:245–264 (DCO page images; archive.org OCR patrologiaecursu0176mign).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.hugh-of-saint-victor.de-sacramentis-christianae-fidei` (registered with this publication).
 - URL: http://www.documentacatholicaomnia.eu/02m/1096-1141,_Hugo_De_S_Victore,_De_Sacramentis_Christianae_Fidei,_MLT.pdf ; https://archive.org/download/patrologiaecursu0176mign/patrologiaecursu0176mign_djvu.txt
 - Retrieved: 2026-09-30
 - SHA-256 of the bytes read: bdff1cbacd432932a543cbeaa815a34b1abe47e7f879ecfe53dadb0390733800 (7210 bytes); 45aa2541b54393f64578761a1c3cc1a64f80575c750dc16f3bee454953348134 (3673923 bytes)
@@ -1975,7 +1975,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Hugh of St Victor, Commentaria in Hierarchiam caelestem VI (PL 175)
 - Witness: PL 175:1037–1038 (DCO page image; archive.org OCR patrologiaecursu175mign).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.hugh-of-saint-victor.commentaria-in-hierarchiam-caelestem` (registered with this publication).
 - URL: http://www.documentacatholicaomnia.eu/02m/1096-1141,_Hugo_De_S_Victore,_Commentariorum_In_Hierarchiam_Coelestem_S_Dionysii_Areopagitae,_MLT.pdf
 - Retrieved: 2026-09-30T14:56:33Z
 - SHA-256 of the bytes read: 8b94178c65af38ddec2a9bd5f89ea94bc588638e67bd4313f1d29b4d7f1d2812 (7247 bytes); 2707405f16b87cf12bf9e3432922d7c75f093ba6391a55d0d3bc758b506abe3d (4568494 bytes)
@@ -1986,7 +1986,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Honorius Augustodunensis, Elucidarium (PL 172)
 - Witness: *Elucidarium* I.6–11 and II.28–29, PL 172:1113–1116, 1154–1155 (DCO page images; archive.org OCR patrologiaecursu0172mign).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.honorius-augustodunensis.elucidarium` (registered with this publication).
 - URL: http://www.documentacatholicaomnia.eu/02m/1080-1137,_Honorius_Augustodunensis,_Elucidarium_Sive_Dialogus_De_Summa_Totius_Christianae_Theologiae,_MLT.pdf
 - Retrieved: 2026-09-30T14:56:06Z
 - SHA-256 of the bytes read: 120fff9f38815abbd8ef962b4eda31123df36db044ef40179be4edac17f0ddc7 (7067 bytes); 2ebfcb5ff3c527820036fe06be730b45d544eb1024dd5cb1980ef9c5a59444b1 (4174594 bytes)
@@ -1997,7 +1997,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Hildegard of Bingen, Scivias I.6 (PL 197)
 - Witness: *Scivias* I, visio 6, PL 197:437–441 (DCO page images; archive.org OCR patrologiaecursu0197mign).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.hildegard-of-bingen.scivias` (registered with this publication).
 - URL: http://www.documentacatholicaomnia.eu/02m/1098-1179,_Hildegardis_(Hildegard_von_Bingen),_Scivias_Sive_Visionum_Ac_Revelationum_Libri_Tres,_MLT.pdf
 - Retrieved: 2026-09-30T14:56:03Z
 - SHA-256 of the bytes read: 3b891785a90d123b17a8f1827cfa01319ba52ef9dce1360d3dd8940d9c174f16 (6993 bytes); af5a03a74331e07219121e74ff58685a55d83702bfdb6044ea202a3ecbd82cd5 (4056084 bytes)
@@ -2074,7 +2074,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Cyril of Jerusalem; Gregory Nazianzen; Ambrose; John Damascene (NPNF)
 - Witness: *Myst. Cat.* V.6 and *Or.* 28.31 (NPNF2 7); Ambrose *De fide* V.13.166 and *De Spiritu Sancto* I.16.178 (NPNF2 10); Damascene *De fide orth.* II.3, tr. Salmond (NPNF2 9).
-- Repository ids: `work.cyril-of-jerusalem.catechetical-lectures` (existing); `work.john-of-damascus.de-fide-orthodoxa` (registered with this publication).
+- Repository ids: `work.cyril-of-jerusalem.catechetical-lectures` (existing); `work.gregory-of-nazianzus.oration-28` (registered with this publication); `work.ambrose.de-fide` (registered with this publication); `work.john-of-damascus.de-fide-orthodoxa` (registered with this publication).
 - URL: https://ccel.org/ccel/s/schaff/npnf207/cache/npnf207.txt ; …npnf210… ; …npnf209…
 - Retrieved: 2026-09-29
 - SHA-256 of the bytes read: 56d84cfa94dee313af0139e2d7f3d4b5f7fffca40ce0f34794b5f56264964dfd (3388014 bytes); 14fa05cc98a67cb1ccf7613e63d5eb80fd48feb3e09dd29210e70f53dfcd7577 (2963575 bytes); 859ba34cc5998f2761b801aa5de724b2ea741a54d98e21614faeb89cc40f8ad4 (2606804 bytes)
@@ -2085,7 +2085,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Dante, Paradiso XXVIII (Longfellow)
 - Witness: *Divine Comedy*, tr. H. W. Longfellow, *Paradiso*, Project Gutenberg eBook 1003.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.dante-alighieri.divina-commedia` (registered with this publication).
 - URL: https://www.gutenberg.org/cache/epub/1003/pg1003.txt
 - Retrieved: 2026-09-30T14:58:13Z
 - SHA-256 of the bytes read: 1d3caefa714846480a0ce44067396bc755b23ac78de41772c6d6bc98aa24095a (249847 bytes)
@@ -2418,7 +2418,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Dionysius, De ecclesiastica hierarchia
 - Witness: Pseudo-Dionysius, *On the Ecclesiastical Hierarchy*, trans. John Parker, 1899, tertullian.org online edition.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.pseudo-dionysius-the-areopagite.de-ecclesiastica-hierarchia` (registered with this publication).
 - URL: https://www.tertullian.org/fathers/areopagite_14_ecclesiastical_hierarchy.htm
 - Retrieved: 2026-09-29T12:55:09Z
 - SHA-256 of the bytes read: bf098b8ee8a85ecfa388d3004d389f8176f745e5bc80ff6494765a8bd281790c (152291 bytes)
@@ -2440,7 +2440,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Augustine, De divinatione daemonum
 - Witness: Augustine, *De divinatione daemonum*, Latin, augustinus.it.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.augustine.de-divinatione-daemonum` (registered with this publication).
 - URL: https://www.augustinus.it/latino/potere_divinatorio/potere_divinatorio_libro.htm
 - Retrieved: 2026-09-29T13:32:03Z
 - SHA-256 of the bytes read: 152f2e97c16255ad64191158345f5f220e113de7e86ce1480cf38a5406e7bc4b (30665 bytes)
@@ -3000,7 +3000,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Dionysius, Ecclesiastical Hierarchy (Parker)
 - Witness: same volume, EH, tertullian.org.
-- Repository ids: `work.pseudo-dionysius-the-areopagite.works-part-ii-parker` (registered with this publication).
+- Repository ids: `work.pseudo-dionysius-the-areopagite.works-part-ii-parker` (registered with this publication); `work.pseudo-dionysius-the-areopagite.de-ecclesiastica-hierarchia` (registered with this publication).
 - URL: https://www.tertullian.org/fathers/areopagite_14_ecclesiastical_hierarchy.htm
 - Retrieved: 2026-09-29
 - SHA-256 of the bytes read: bf098b8ee8a85ecfa388d3004d389f8176f745e5bc80ff6494765a8bd281790c (152291 bytes)
@@ -3066,7 +3066,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Augustine, Enchiridion; De cura pro mortuis gerenda
 - Witness: tr. J. F. Shaw (Enchiridion) and H. Browne (De cura), NPNF series 1 vol. 3, CCEL.
-- Repository ids: `work.augustine.enchiridion-ad-laurentium` (existing).
+- Repository ids: `work.augustine.enchiridion-ad-laurentium` (existing); `work.augustine.de-cura-pro-mortuis-gerenda` (registered with this publication).
 - URL: https://ccel.org/ccel/s/schaff/npnf103/cache/npnf103.txt
 - Retrieved: 2026-09-29
 - SHA-256 of the bytes read: cc8d3ff7ce4d4ba293f50a06200af03ff0e5abdeb5200db3a59b4dbe2cad7bdb (3357503 bytes)
@@ -3077,7 +3077,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Augustine, De diversis quaestionibus LXXXIII
 - Witness: Latin text, augustinus.it (NBA).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.augustine.de-diversis-quaestionibus-octoginta-tribus` (registered with this publication).
 - URL: https://www.augustinus.it/latino/ottantatre_questioni/ottantatre_questioni_libro.htm
 - Retrieved: 2026-09-29
 - SHA-256 of the bytes read: 60b9fbde7a1bb0bd7e4b28efa445f3ecc04da8459fca9407303464dd9fd68d28 (316081 bytes)
@@ -3132,7 +3132,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Bernard of Clairvaux, De consideratione
 - Witness: *Saint Bernard On Consideration*, tr. George Lewis (Oxford: Clarendon Press, 1908), archive.org OCR.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.bernard-of-clairvaux.de-consideratione` (registered with this publication).
 - URL: https://archive.org/download/onconsideration00bern/onconsideration00bern_djvu.txt
 - Retrieved: 2026-09-30
 - SHA-256 of the bytes read: 23dacc2ca0c5f0244fe9c456afbdb2a2745767b2281d7553d07899d93416f49e (306976 bytes)
@@ -3221,7 +3221,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Augustine, De diversis quaestionibus octoginta tribus q. 79
 - Witness: Latin as presented by augustinus.it.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.augustine.de-diversis-quaestionibus-octoginta-tribus` (registered with this publication).
 - URL: https://www.augustinus.it/latino/ottantatre_questioni/ottantatre_questioni_libro.htm
 - Retrieved: 2026-09-29
 - SHA-256 of the bytes read: 60b9fbde7a1bb0bd7e4b28efa445f3ecc04da8459fca9407303464dd9fd68d28 (316081 bytes)
@@ -3232,7 +3232,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Augustine, De divinatione daemonum
 - Witness: Latin as presented by augustinus.it.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.augustine.de-divinatione-daemonum` (registered with this publication).
 - URL: https://www.augustinus.it/latino/potere_divinatorio/potere_divinatorio_libro.htm
 - Retrieved: 2026-09-29
 - SHA-256 of the bytes read: 152f2e97c16255ad64191158345f5f220e113de7e86ce1480cf38a5406e7bc4b (30665 bytes)
@@ -3243,7 +3243,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Augustine, Retractationes II.30
 - Witness: Latin as presented by augustinus.it.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.augustine.retractationes` (registered with this publication).
 - URL: https://www.augustinus.it/latino/ritrattazioni/ritrattazioni_2_libro.htm
 - Retrieved: 2026-09-30T14:14:57Z
 - SHA-256 of the bytes read: 683b581f9430763fb9ddada2aaebb7ee92e924599a8f43f9010bb15f896be3ab (105653 bytes)
@@ -3286,7 +3286,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 
 ### Gregory the Great, Dialogues IV
 - Witness: English of 1608 (P. W.), ed. Edmund G. Gardner (London 1911), transcribed at tertullian.org.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.gregory-the-great.dialogi` (registered with this publication).
 - URL: https://www.tertullian.org/fathers/gregory_04_dialogues_book4.htm
 - Retrieved: 2026-09-30T14:22:02Z
 - SHA-256 of the bytes read: c0fcbac5f0d6cbf6a192398f793368cf85d2e26253db4a40d0edd116c43698b1 (202560 bytes)
@@ -3941,7 +3941,7 @@ Ceiling: web transcription.
 
 ### John Chrysostom, Homilies on Matthew, Ephesians, Hebrews
 - Witness: NPNF series 1 vols 10, 13, 14 (Schaff), CCEL text.
-- Repository ids: `work.john-chrysostom.homiliae-in-matthaeum` (existing); `work.john-chrysostom.homilies-on-ephesians` (existing).
+- Repository ids: `work.john-chrysostom.homiliae-in-matthaeum` (existing); `work.john-chrysostom.homilies-on-ephesians` (existing); `work.john-chrysostom.homilies-on-hebrews` (registered with this publication).
 - URL: https://ccel.org/ccel/s/schaff/npnf110/cache/npnf110.txt; npnf113; npnf114
 - Retrieved: 2026-09-29T17:54:08Z (110); 2026-09-29T12:55:22Z–12:55:23Z (113, 114)
 - SHA-256 of the bytes read: adb8f1c9a988c5050a20fb9fdbf75143dcb227e95e3dad2f560a63b757923648 (3345978 bytes); 54274dd9aa73ca36e4da9e763e4a27d1818b09e42ffc73795529afec703a4210 (3933882 bytes); e26f55f8d0739c07d73d5b664e42efbd923a43230a22d93d55261c808e9cd458 (3943878 bytes)
@@ -3952,7 +3952,7 @@ Ceiling: web transcription.
 
 ### Gregory Nazianzen, Orations 38 and 45
 - Witness: NPNF series 2 vol. 7, CCEL text.
-- Repository ids: `work.gregory-of-nazianzus.oration-38` (registered with this publication).
+- Repository ids: `work.gregory-of-nazianzus.oration-38` (registered with this publication); `work.gregory-of-nazianzus.oration-45` (registered with this publication).
 - URL: https://ccel.org/ccel/s/schaff/npnf207/cache/npnf207.txt
 - Retrieved: 2026-09-29T12:55:25Z
 - SHA-256 of the bytes read: 56d84cfa94dee313af0139e2d7f3d4b5f7fffca40ce0f34794b5f56264964dfd (3388014 bytes)
@@ -4007,7 +4007,7 @@ Ceiling: web transcription.
 
 ### Bede, Homilies
 - Witness: Bede, *Homiliae* I.1 (In festo Annuntiationis), Migne PL 94 (1850), archive.org OCR.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.bede.homiliae-evangelii` (registered with this publication).
 - URL: https://archive.org/download/bim_early-english-books-1641-1700_1850_94/bim_early-english-books-1641-1700_1850_94_djvu.txt
 - Retrieved: 2026-09-30T14:47:33Z (fetched by another lane)
 - SHA-256 of the bytes read: eb888073ed25a141a81b55c90bc447e829babb03ab702a76171633012aadfec5 (3827054 bytes)
@@ -4040,7 +4040,7 @@ Ceiling: web transcription.
 
 ### Bernard of Clairvaux, Homilies Super Missus est
 - Witness: *Sermons of St. Bernard on Advent and Christmas, including the famous treatise on the Incarnation called "Missus est"*, compiled and translated at St. Mary's Convent from the 1508 edition, introd. J. C. Hedley (London: R. & T. Washbourne; New York: Benziger, 1909); imprimatur 25 Oct. 1909.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.bernard-of-clairvaux.homiliae-super-missus-est` (registered with this publication).
 - URL: https://archive.org/download/sermonsofstberna00bernuoft/sermonsofstberna00bernuoft_djvu.txt
 - Retrieved: 2026-09-30T14:54:05Z
 - SHA-256 of the bytes read: 15cf43944c2024f84839994bf3294a6820d9080b5a1e959ac70897b10dd3c659 (288038 bytes)
@@ -4062,7 +4062,7 @@ Ceiling: web transcription.
 
 ### John Damascene, On Holy Images; Homilies on the Dormition
 - Witness: *St John Damascene on Holy Images, followed by Three Sermons on the Assumption*, trans. Mary H. Allies (London 1898; imprimatur 12 Aug. 1898), Project Gutenberg eBook 49917.
-- Repository ids: `work.john-of-damascus.homilies-on-the-dormition` (existing).
+- Repository ids: `work.john-of-damascus.homilies-on-the-dormition` (existing); `work.john-of-damascus.contra-imaginum-calumniatores` (registered with this publication).
 - URL: https://www.gutenberg.org/cache/epub/49917/pg49917.txt
 - Retrieved: 2026-09-30T14:54:06Z
 - SHA-256 of the bytes read: a0ba4890b6c020d446f469ea9cb6bf0daebe13f0e24a02a3f58b7bb3dda96de1 (358782 bytes)
@@ -4073,7 +4073,7 @@ Ceiling: web transcription.
 
 ### Maximus the Confessor, Mystagogia
 - Witness: *Mystagogia*, Greek text of Migne PG 91 (archive.org PatrologiaGraeca, Vol. 091).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.maximus-the-confessor.mystagogia` (registered with this publication).
 - URL: https://archive.org/download/PatrologiaGraeca/Patrologia%20Graeca%20Vol.%20091_djvu.txt; page images via the item's jp2.zip (leaves 367, 369, 380)
 - Retrieved: 2026-09-30T14:53:41Z (OCR); page images 2026-09-30
 - SHA-256 of the bytes read: e4e1c1926ec2dfd9fd71f276ca125866230230507d7727455e66cf40d3fca85c (7890188 bytes)
@@ -4095,7 +4095,7 @@ Ceiling: web transcription.
 
 ### Andrew of Caesarea, Commentary on the Apocalypse
 - Witness: Migne PG 106 (archive.org PatrologiaGraeca Vol. 106), Greek with Latin.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.andrew-of-caesarea.commentarius-in-apocalypsin` (registered with this publication).
 - URL: https://archive.org/download/PatrologiaGraeca/Patrologia%20Graeca%20Vol.%20106_djvu.txt
 - Retrieved: 2026-09-30T14:53:53Z
 - SHA-256 of the bytes read: 7b0567d128f8a25a8d1f3380bfb05c8b791b0704d5647898eb26ac2031b0c530 (7148801 bytes)
@@ -4106,7 +4106,7 @@ Ceiling: web transcription.
 
 ### Gregory Palamas, One Hundred and Fifty Chapters
 - Witness: *Capita physica, theologica, moralia et practica CL*, Migne PG 150 (archive.org PatrologiaGraeca Vol. 150).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.gregory-palamas.capita-150` (registered with this publication).
 - URL: https://archive.org/download/PatrologiaGraeca/Patrologia%20Graeca%20Vol.%20150_djvu.txt; page images via jp2.zip (leaves 596–597, 601, 610–611)
 - Retrieved: 2026-09-30T14:53:57Z (OCR); images 2026-09-30
 - SHA-256 of the bytes read: 4a5d98a2a7645b490dcc9e8500a060231e10dbc5c6441f54cb68280feebb09e5 (6994915 bytes)
@@ -4139,7 +4139,7 @@ Ceiling: web transcription.
 
 ### Pius XII, Ad caeli Reginam; Munificentissimus Deus
 - Witness: vatican.va Latin and English.
-- Repository ids: `work.pius-xii.munificentissimus-deus` (existing).
+- Repository ids: `work.pius-xii.ad-caeli-reginam` (registered with this publication); `work.pius-xii.munificentissimus-deus` (existing).
 - URL: https://www.vatican.va/content/pius-xii/la/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html (and /en/); https://www.vatican.va/content/pius-xii/la/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html (and /en/)
 - Retrieved: 2026-09-30T14:59:04Z–14:59:10Z
 - SHA-256 of the bytes read: 56079ef76d8496821ead5fdf4d0c0f6e9bdd82281b1e89e70ae3ec1d5e671b80 (67390 bytes); 2c84ef30841b66359d28d526a3aed585d6aa6aafbed3054fd564cf907d6a371f (74564 bytes)
@@ -4171,7 +4171,7 @@ Ceiling: web transcription.
 
 ### Hapgood, Service Book (1906)
 - Witness: Isabel F. Hapgood, *Service Book of the Holy Orthodox-Catholic Apostolic (Greco-Russian) Church* (1906; printed by H. O. Houghton & Co.), Cornell copy, archive.org cu31924029363128.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.isabel-florence-hapgood.service-book` (registered with this publication).
 - URL: https://archive.org/download/cu31924029363128/cu31924029363128_djvu.txt; page numbers via the item's hOCR page index and page_numbers.json
 - Retrieved: 2026-09-30T14:54:01Z
 - SHA-256 of the bytes read: 2b9e6ed4cb7d488c88fa5a17fb96479c3f3c0360fb81f78190654682f1d3f650 (1883883 bytes)
@@ -4468,7 +4468,7 @@ General normalizations in all Latin quotations (not otherwise noted): æ/œ liga
 - Ceiling: OCR only (noisy); only clean phrases quoted.
 
 ### Breviarium Romanum (Tours: Mame, 1898), Pars autumnalis and Pars verna
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.catholic-church.breviarium-romanum` (registered with this publication).
 - URL: https://archive.org/download/breviariumromanu18984cath/breviariumromanu18984cath_djvu.txt (autumnalis); https://archive.org/download/breviariumromanu21898cath/breviariumromanu21898cath_djvu.txt (verna)
 - Retrieved: 2026-09-30
 - SHA-256 of the bytes read: c61dd243e5b6c69a9c753d6c9d66da0bb34c726c2e74e027f64f17938240d5a0 (2529391 bytes)
@@ -4518,7 +4518,7 @@ General normalizations in all Latin quotations (not otherwise noted): æ/œ liga
 - Ceiling: page-image verified for every quoted passage.
 
 ### Collectio precum piorumque operum (Typis Polyglottis Vaticanis, 1929)
-- Repository ids: `work.apostolic-penitentiary.enchiridion-indulgentiarum` (existing).
+- Repository ids: `work.apostolic-penitentiary.collectio-precum-piorumque-operum-1929` (registered with this publication); `work.apostolic-penitentiary.enchiridion-indulgentiarum` (existing).
 - URL: https://archive.org/download/precesetpiaopera0000vari_c6f1/precesetpiaopera0000vari_c6f1_djvu.txt
 - Retrieved: 2026-09-30
 - SHA-256 of the bytes read: 085be3683d33e8a80b3fcd8adc36a30e215f8bd76eca7417eaf6d7e4f1896c76 (419403 bytes)
@@ -4528,7 +4528,7 @@ General normalizations in all Latin quotations (not otherwise noted): æ/œ liga
 - Ceiling: page-image verified.
 
 ### Key of Heaven (Baltimore: J. Murphy, 1901)
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.anonymous.key-of-heaven` (registered with this publication).
 - URL: https://archive.org/download/KeyOfHeaven/KeyOfHeaven_djvu.txt
 - Retrieved: 2026-09-30
 - SHA-256 of the bytes read: d7c06c2714928a4e4d4319d957b451bf72c75f8f56097bbabe30af7bc737ac52 (473013 bytes)
@@ -4538,7 +4538,7 @@ General normalizations in all Latin quotations (not otherwise noted): æ/œ liga
 - Ceiling: page-image verified.
 
 ### Jacobus de Voragine, The Golden Legend, Caxton's English ed. F. S. Ellis (Temple Classics, London: Dent, 1900), vol. V
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.jacobus-de-voragine.legenda-aurea` (registered with this publication).
 - URL: https://archive.org/download/goldenlegendorli05jaco/goldenlegendorli05jaco_djvu.txt
 - Retrieved: 2026-09-30
 - SHA-256 of the bytes read: 5b206a6715b1d484be64f48203f450292acb66cb1d4f9393e69db32ceaf0b1ec (535024 bytes)
@@ -4586,7 +4586,7 @@ General normalizations in all Latin quotations (not otherwise noted): æ/œ liga
 - Rights: public domain. Ceiling: Wikisource transcription of PL 76; not collated with Migne page.
 
 ### Gregory the Great, Dialogues IV (English 1608, ed. E. G. Gardner, 1911)
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.gregory-the-great.dialogi` (registered with this publication).
 - URL: https://www.tertullian.org/fathers/gregory_04_dialogues_book4.htm
 - Retrieved: 2026-09-30 (shared cache)
 - SHA-256 of the bytes read: c0fcbac5f0d6cbf6a192398f793368cf85d2e26253db4a40d0edd116c43698b1 (202560 bytes)
@@ -4679,7 +4679,7 @@ General normalizations in all Latin quotations (not otherwise noted): æ/œ liga
 
 ### Bonaventure, Legenda maior (Life of Saint Francis), English
 - Witness: Bonaventure, *The Life of Saint Francis*, trans. E. Gurney Salter (Temple Classics; London and Toronto: J. M. Dent, 1904).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.bonaventure.legenda-maior-sancti-francisci` (registered with this publication).
 - URL: https://archive.org/download/TheLifeOfSaintFrancis/TheLifeOfSaintFrancis_djvu.txt ; collation copy https://archive.org/download/cihm_88134/cihm_88134_djvu.txt
 - Retrieved: 2026-09-30T14:56:50Z; 2026-09-30T15:00:37Z
 - SHA-256 of the bytes read: e71d92ce5eba87bd250a9aaf4ce4b784b2d5787321d44dad0bbe344bb0a0bfe4 (353433 bytes); 33fad07e6ed41d5b86b2520952cefc10b7bd642c1f50e19d6f8e662ea05f0858 (351094 bytes)
@@ -4701,7 +4701,7 @@ General normalizations in all Latin quotations (not otherwise noted): æ/œ liga
 
 ### Bonaventure, Opera omnia (Quaracchi), t. V — Itinerarium mentis in Deum
 - Witness: Quaracchi t. V, *Itinerarium mentis in Deum*, prologue.
-- Repository ids: `work.bonaventure.opera-omnia-quaracchi` (existing).
+- Repository ids: `work.bonaventure.opera-omnia-quaracchi` (existing); `work.bonaventure.itinerarium-mentis-in-deum` (registered with this publication).
 - URL: https://archive.org/download/doctorisseraphic05bona/doctorisseraphic05bona_djvu.txt
 - Retrieved: 2026-09-30T15:01:11Z
 - SHA-256 of the bytes read: 9ba2eecaf747a4fe180a95df21cb536cd3ca8550921de9a4d357138a1aaabc12 (4455576 bytes)
@@ -4723,7 +4723,7 @@ General normalizations in all Latin quotations (not otherwise noted): æ/œ liga
 
 ### William of Tocco and Peter Calo, lives of Thomas Aquinas (ed. Prümmer)
 - Witness: D. Prümmer (ed.), *Fontes vitae S. Thomae Aquinatis notis historicis et criticis illustrati* (Toulouse: Privat, 1911 [fasc. containing Calo and Tocco]).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.william-of-tocco.vita-sancti-thomae-aquinatis` (registered with this publication); `work.peter-calo.vita-sancti-thomae-aquinatis` (registered with this publication).
 - URL: https://archive.org/download/prummerfontesvitaestho/prummerfontesvitaestho_djvu.txt (also fetched https://archive.org/download/fontesvitaesthom00pr/fontesvitaesthom00pr_djvu.txt, 1912, same texts, used for spot check only)
 - Retrieved: 2026-09-30T14:57:03Z; 2026-09-30T14:57:09Z
 - SHA-256 of the bytes read: 2ea97fa64ac0d2d0afebbf1b45762de86b60501b587651733b9e75b25305b70d (612331 bytes); f09a430f5266343fe668398aeffcaee8af7ccdc763be9be72717a96de4ff11ce (1633591 bytes)
@@ -4734,7 +4734,7 @@ General normalizations in all Latin quotations (not otherwise noted): æ/œ liga
 
 ### Pius XI, Studiorum Ducem (Latin)
 - Witness: Pius XI, encyclical *Studiorum Ducem*, 29 June 1923 (AAS 15 [1923] 309–326, per page footer), Latin, vatican.va.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.pius-xi.studiorum-ducem` (registered with this publication).
 - URL: https://www.vatican.va/content/pius-xi/la/encyclicals/documents/hf_p-xi_enc_19230629_studiorum-ducem.html
 - Retrieved: 2026-09-30T15:00:03Z
 - SHA-256 of the bytes read: 2f7ab30c0fe9164784b9a453bcc5b31197f6d46c684ba9ac0a5eaa6799964944 (70323 bytes)
@@ -4745,7 +4745,7 @@ General normalizations in all Latin quotations (not otherwise noted): æ/œ liga
 
 ### Gertrude the Great, Insinuationes divinae pietatis (Kenmare translation)
 - Witness: *The Life and Revelations of Saint Gertrude, Virgin and Abbess, of the Order of St. Benedict* (London: Burns & Oates; New York: Benziger; letter of Bp Moriarty dated 11 Dec. 1870; translator Sister M. Frances Clare, Kenmare), parts II–V translating books II–V of the *Insinuationes*.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.gertrude-the-great.insinuationes-divinae-pietatis` (registered with this publication).
 - URL: https://archive.org/download/thelifeandrevela00gertuoft/thelifeandrevela00gertuoft_djvu.txt
 - Retrieved: 2026-09-30T14:57:14Z
 - SHA-256 of the bytes read: f4a481ea4819992320b497bd4d79a81aea8ebac609ba36e0dd21b2f5bf25ea63 (1230593 bytes)
@@ -4756,7 +4756,7 @@ General normalizations in all Latin quotations (not otherwise noted): æ/œ liga
 
 ### Mechtild, Select Revelations (1875)
 - Witness: *Select Revelations of S. Mechtild, Virgin: taken from the five books of her Spiritual Grace, and translated from the Latin by a secular priest* (London: T. Richardson, 1875).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.mechtild-of-hackeborn.liber-specialis-gratiae` (registered with this publication).
 - URL: https://archive.org/download/selectrevelation00mech/selectrevelation00mech_djvu.txt ; collation https://archive.org/download/selectrevelatio00mechgoog/selectrevelatio00mechgoog_djvu.txt
 - Retrieved: 2026-09-30T14:57:17Z; 2026-09-30T15:03:37Z
 - SHA-256 of the bytes read: cc5d201098135ed6247ad0244364a99adb4fdef17551f461f27663d44e8b096c (290555 bytes); 13ac85f1044004f9ef139e8f955f71aa5ba434fad2fb1417114df745377ad1e4 (252170 bytes)
@@ -4778,7 +4778,7 @@ General normalizations in all Latin quotations (not otherwise noted): æ/œ liga
 
 ### Fullerton, Life of St. Frances of Rome (1855)
 - Witness: Lady Georgiana Fullerton, *The Life of St. Frances of Rome* (London, 1855), with J. M. Capes's essay; Project Gutenberg eBook 8495.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.georgiana-fullerton.life-of-st-frances-of-rome` (registered with this publication).
 - URL: https://www.gutenberg.org/cache/epub/8495/pg8495.txt (first attempt at archive.org 8stfr10.txt returned 500)
 - Retrieved: 2026-09-30T14:58:01Z
 - SHA-256 of the bytes read: 16b83736f7e6187a56f3ac72db3d817b4e2a2498771ec69a46b30a993b3df8f1 (511114 bytes)
@@ -4800,7 +4800,7 @@ General normalizations in all Latin quotations (not otherwise noted): æ/œ liga
 
 ### Teresa of Jesus, Life (Lewis)
 - Witness: *The Life of St. Teresa of Jesus … Written by Herself*, trans. David Lewis, 3rd ed. enlarged, with notes by B. Zimmerman (London: Baker, 1904); Project Gutenberg eBook 8120.
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.teresa-of-avila.libro-de-la-vida` (registered with this publication).
 - URL: https://www.gutenberg.org/cache/epub/8120/pg8120.txt
 - Retrieved: 2026-09-30T14:58:02Z
 - SHA-256 of the bytes read: 3420485ba9b861cc44ac80833e3d9864683784e93e0f68f6ba5fc44c407a33bc (1116120 bytes)
@@ -4823,7 +4823,7 @@ General normalizations in all Latin quotations (not otherwise noted): æ/œ liga
 
 ### Alphonsus Liguori, Sermons for all the Sundays (Grimm)
 - Witness: *Sermons for all the Sundays in the Year* / *Abridged Sermons for all Sundays*, Centenary Edition vol. XVI, ed. and trans. Eugene Grimm (New York: Benziger; item dated 1890).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.alphonsus-liguori.sermoni-compendiati` (registered with this publication).
 - URL: https://archive.org/download/abridgedsermons16liguuoft/abridgedsermons16liguuoft_djvu.txt
 - Retrieved: 2026-09-30T15:11:10Z
 - SHA-256 of the bytes read: 4b1ec5ca2a813cabc2e1d9770acb7a97b8ff346f0958d335aac104ef916c8838 (1232231 bytes)
@@ -4834,7 +4834,7 @@ General normalizations in all Latin quotations (not otherwise noted): æ/œ liga
 
 ### Alphonsus Liguori, Glories of Mary (Grimm)
 - Witness: *The Glories of Mary*, two volumes in one, Centenary Edition vols. VII–VIII, ed. Grimm, 4th reprint revised (Brooklyn etc.: Redemptorist Fathers, 1931).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.alphonsus-liguori.le-glorie-di-maria` (registered with this publication).
 - URL: https://archive.org/download/kpbc.umk.pl.Magazyn_286_07_HD_008_197127/Magazyn_286_07_HD_008_djvu.txt
 - Retrieved: 2026-09-30T15:12:23Z
 - SHA-256 of the bytes read: b1d891b61ab6b5a88fbe158b5260affc3e208ba380ac8d02bc6cace4c87a2f0c (1353188 bytes)
@@ -4845,7 +4845,7 @@ General normalizations in all Latin quotations (not otherwise noted): æ/œ liga
 
 ### Monnin, The Spirit of the Curé of Ars (1865)
 - Witness: Alfred Monnin, *The Spirit of the Curé of Ars*, trans. from the French, ed. J. E. Bowden (London, 1865).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.alfred-monnin.esprit-du-cure-dars` (registered with this publication).
 - URL: https://archive.org/download/spiritcurarsstj00monngoog/spiritcurarsstj00monngoog_djvu.txt
 - Retrieved: 2026-09-30T14:59:43Z
 - SHA-256 of the bytes read: 0a908a99deaec89d8f4ed383306d9a0318933cd36bf3805c41c2059b28340f48 (363473 bytes)
@@ -4856,7 +4856,7 @@ General normalizations in all Latin quotations (not otherwise noted): æ/œ liga
 
 ### O'Meara, The Curé of Ars
 - Witness: Kathleen O'Meara, *The Curé of Ars* (Notre Dame: Ave Maria Press, [1912?]).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.kathleen-omeara.cure-of-ars` (registered with this publication).
 - URL: https://archive.org/download/curofars00omeauoft/curofars00omeauoft_djvu.txt
 - Retrieved: 2026-09-30T15:07:29Z
 - SHA-256 of the bytes read: 5aa00843c0b86aa16c516510a4a7a90593130676d8c7dace0b27cfd5ede9f6b6 (261134 bytes)
@@ -4867,7 +4867,7 @@ General normalizations in all Latin quotations (not otherwise noted): æ/œ liga
 
 ### Germanus, Life of Gemma Galgani (O'Sullivan 1913)
 - Witness: Germanus of St Stanislaus, C.P., *The Life of Saint Gemma Galgani*, trans. A. M. O'Sullivan (St Louis: B. Herder, 1913), as retypeset by Catholic Way Publishing (2014).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.germanus-of-saint-stanislaus.vita-di-gemma-galgani` (registered with this publication).
 - URL: https://archive.org/download/the-life-of-saint-gemma-galgani-by-venerable-reverend-germanus-c.-p/The_Life_of_Saint_Gemma_Galgani%20by%20Venerable%20Reverend%20Germanus%2C%20C.P_djvu.txt
 - Retrieved: 2026-09-30T14:59:54Z
 - SHA-256 of the bytes read: 6e9576903c61bc2e55442235fd11a4ce42d8e7d21865763768a89e295d6391fa (702851 bytes)
@@ -4889,7 +4889,7 @@ General normalizations in all Latin quotations (not otherwise noted): æ/œ liga
 
 ### Thérèse, Poems (Emery 1907)
 - Witness: *Poems of Sr. Teresa, Carmelite of Lisieux*, trans. S. L. Emery (Boston: Angel Guardian Press, 1907).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.therese-of-lisieux.poesies` (registered with this publication).
 - URL: https://archive.org/download/poemsofsrteresac00thrs/poemsofsrteresac00thrs_djvu.txt
 - Retrieved: 2026-09-30T14:59:47Z
 - SHA-256 of the bytes read: 610a90d869ab6c4c0995925babfb9c3d45fb68ca2a96c44e21aed15db7c6ab79 (202392 bytes)
@@ -4901,7 +4901,7 @@ General normalizations in all Latin quotations (not otherwise noted): æ/œ liga
 
 ### Newman, Parochial and Plain Sermons II.29 "The Powers of Nature"
 - Witness: J. H. Newman, *Parochial and Plain Sermons*, vol. II, sermon 29 (Newman Reader transcription of the uniform edition, pp. 358–367).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.john-henry-newman.parochial-and-plain-sermons` (registered with this publication).
 - URL: https://newmanreader.org/works/parochial/volume2/sermon29.html
 - Retrieved: 2026-09-30T15:00:00Z
 - SHA-256 of the bytes read: e27340a99e1f68590b8c16b56762bfe8d5130eaceb0ce073437f0d93739b7510 (18903 bytes)
@@ -4912,7 +4912,7 @@ General normalizations in all Latin quotations (not otherwise noted): æ/œ liga
 
 ### Newman, The Dream of Gerontius
 - Witness: J. H. Newman, *The Dream of Gerontius* (dated "The Oratory. January, 1865"), in *Verses on Various Occasions* (Newman Reader transcription).
-- Repository ids: none registered; the entry cites the edition directly.
+- Repository ids: `work.john-henry-newman.dream-of-gerontius` (registered with this publication).
 - URL: https://newmanreader.org/works/verses/gerontius.html
 - Retrieved: 2026-09-30T15:00:01Z
 - SHA-256 of the bytes read: e558097b617acbf4c5be0f88f580fde0505daead16af5cb617d8ce2c6f6486fa (145115 bytes)
