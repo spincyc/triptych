@@ -8,6 +8,7 @@
 }
 
 \setcounter{tocdepth}{2}
+\makeatletter\renewcommand*\l@subsection{\@dottedtocline{2}{1.5em}{2.8em}}\makeatother
 \setlength{\emergencystretch}{3em}
 \widowpenalty=10000
 \clubpenalty=10000
@@ -25,6 +26,7 @@
 \newcommand{\ST}[1]{\emph{ST}~#1}
 
 \newcommand{\angeldossier}[4]{%
+  \Needspace{10\baselineskip}%
   \begin{studyframe}
   \textbf{Summa:} #1\par
   \textbf{Grade:} #2\par
@@ -33,6 +35,7 @@
   \end{studyframe}}
 
 \newcommand{\angeldossiersettled}[3]{%
+  \Needspace{10\baselineskip}%
   \begin{studyframe}
   \textbf{Summa:} #1\par
   \textbf{Grade:} #2\par
