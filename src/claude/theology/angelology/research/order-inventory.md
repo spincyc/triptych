@@ -533,6 +533,15 @@ only when its locus was read at the source.
 | angels | Dionysius | *CH* 9.2 (Parker) | Angels | 9 | Concerned with the things of the world; with Principalities and Archangels presides over human hierarchies | yes |
 | angels | Bernard | *De consideratione* V.4.8 (Lewis) | Angels | 9 | Believed given as guardians of individual men | yes |
 | angels | Suárez | *De angelis* VI.18.6 | Angeli infimi ordinis | 9 | Particular guardianship of single men | yes (OCR) |
+| seraphim | John Damascene | De fide orth. II.3 (PG 94, 873–874) | Σεραφίμ (hexapterygōn) | 1 | six-winged; first triad, ever about God and immediately united to him | Greek OCR and NPNF English read |
+| cherubim | John Damascene | De fide orth. II.3 | Χερουβίμ (polyommatōn) | 2 | many-eyed; first triad | Greek OCR and NPNF English read |
+| thrones | John Damascene | De fide orth. II.3 | Θρόνοι (hagiōtatōn) | 3 | most holy thrones; first triad | Greek OCR and NPNF English read |
+| dominations | John Damascene | De fide orth. II.3 | Κυριότητες | 4 | second triad | Greek OCR and NPNF English ("Dominions") read |
+| virtues | John Damascene | De fide orth. II.3 | Δυνάμεις | 5 | second triad (NPNF "Powers") | Greek OCR and NPNF English read |
+| powers | John Damascene | De fide orth. II.3 | Ἐξουσίαι | 6 | second triad (NPNF "Authorities") | Greek OCR and NPNF English read |
+| principalities | John Damascene | De fide orth. II.3 | Ἀρχαί | 7 | third triad (NPNF "Rulers") | Greek OCR and NPNF English read |
+| archangels | John Damascene | De fide orth. II.3 | Ἀρχάγγελοι | 8 | third triad | Greek OCR and NPNF English read |
+| angels | John Damascene | De fide orth. II.3 | Ἄγγελοι | 9 | third triad | Greek OCR and NPNF English read |
 | seraphim | Raccolta 1910, Angelical Crown | n. 291, p. 261 | Seraphim | 1 | "the fire of his perfect charity" | yes (page image) |
 | cherubim | Raccolta 1910, Angelical Crown | n. 291, p. 261 | Cherubim | 2 | "abandon the ways of sin, and follow the path of Christian perfection" | yes |
 | thrones | Raccolta 1910, Angelical Crown | n. 291, p. 262 | Thrones | 3 | "a true and earnest spirit of humility" | yes |

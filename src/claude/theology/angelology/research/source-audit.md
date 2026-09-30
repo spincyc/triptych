@@ -3860,6 +3860,340 @@ Ceiling: web transcription.
 ### Fetched, not used
 `ia-bernard-sermons-seasons-v1-1921_djvu.txt` (St. Bernard's Sermons for the Seasons, vol. 1, Dublin 1921): contains no Qui habitat sermon; not used.
 
+## Christ, Mary, and the angels; the Byzantine line
+
+### Aquinas, Summa theologiae, English
+- Witness: Thomas Aquinas, *Summa theologiae*, trans. Fathers of the English Dominican Province, 2nd rev. ed. 1920, New Advent online edition.
+- Repository ids: `work.thomas-aquinas.summa-theologiae` (existing).
+- URL: https://www.newadvent.org/summa/4008.htm, 4030.htm, 4059.htm, 1057.htm, 1064.htm, 1108.htm, 1050.htm, 1052.htm, 1061.htm, 1062.htm, 1063.htm, 1093.htm, 1110.htm, 1012.htm, 4083.htm, 1106.htm, 1113.htm (titles)
+- Retrieved: 2026-09-29T12:53:51Z–13:47:25Z; 1093 on 2026-09-30T15:27:55Z; 1012 and 4083 on 2026-09-30T14:23:55Z
+- SHA-256 of the bytes read: 40e150ece1b236f941f1322562aedfc70cab94a964c87328f94e7adfc99106bd (62188 bytes)
+- Loci read: III q. 8 a. 4 entire; III q. 30 aa. 1–4 entire; III q. 59 a. 6 entire; I q. 57 a. 5 entire; I q. 64 a. 1 obj. 4 and ad 4; I q. 108 a. 8 entire, aa. 5–6 (Gregory citations); I q. 50 a. 1 obj. 1–2, ad 1–2, a. 5 obj. 1, ad 1; I q. 52 a. 2 s.c.; I q. 61 a. 3 obj. 1, co., ad 1; I q. 62 a. 1 co., article titles; I q. 63 aa. 7 (co., ad 1) and 8 (obj. 1); I q. 64 a. 2 (Damascene citation); I q. 93 a. 3 entire; I q. 110 a. 1 co. (Damascene citation); I q. 12 a. 5 co.; III q. 83 a. 4 ad 9; titles of I qq. 106, 113.
+- Quoted: III q. 8 a. 4 s.c., co., ad 1–3; III q. 30 a. 1 co., ad 1–2; a. 2 co., ad 1, ad 3 (paraphrase), ad 4; a. 3 s.c., co., ad 3; a. 4 co., ad 1, ad 2; III q. 59 a. 6 obj. 2, s.c., co., ad 2, ad 3; I q. 57 a. 5 co., ad 1; I q. 64 a. 1 ad 4; I q. 108 a. 8 co.; I q. 50 a. 1 ad 1–2, a. 5 ad 1; I q. 61 a. 3 co., ad 1; I q. 63 a. 7 co.; I q. 93 a. 3 co.
+- Rights: 1920 translation public domain; New Advent presentation.
+- Ceiling: web transcription, not collated with print. New Advent's I q. 93 a. 3 co. contains a duplicated clause ("as God from God; and also in the fact that the whole human soul is in the whole body"); the Latin was quoted for that clause. Aquinas's citations of pseudo-Augustine, pseudo-Jerome, Origen, Maximus, Augustine (*De vera rel.* 31, *De civ. Dei* IX.21, *De sancta virg.* 3) are reported as his citations, not read at their loci.
+
+### Aquinas, Summa theologiae, Latin
+- Witness: Leonine text as presented by Corpus Thomisticum.
+- Repository ids: `work.thomas-aquinas.summa-theologiae` (existing).
+- URL: https://www.corpusthomisticum.org/sth4002.html (III qq. 2ff., for q. 8), sth4027.html (III q. 30), sth4053.html (III q. 59), sth1090.html (I q. 93)
+- Retrieved: 2026-09-30T14:53:29Z–14:53:38Z; sth1090 2026-09-30T15:27:58Z
+- SHA-256 of the bytes read: 3c6e8783bd7c396063261f33dd7b2d1f4b6356466eca5e07464f202e6401956e (513039 bytes); 5194d64c15bb57bb77bf0c769a4a0c04c646651006837b96b5725ab65290fa26 (436659 bytes); 4d96bdb03adcc441d962b6cbf978fce93293325be47d4a99cf4236f809c132ef (203855 bytes); 6dd5bd042610f3d689584ddfa14ab2245f63e49deea42432ce114219e94c9ad8 (279820 bytes)
+- Loci read: III q. 8 a. 4 arg., s.c., co.; III q. 30 pr., aa. 1–4 co., a. 2 ad 1, ad 4; III q. 59 a. 6 s.c., co.; I q. 93 a. 3 co.
+- Quoted: III q. 8 a. 4 co. (corpus Ecclesiae mysticum …); III q. 30 a. 1 co. (loco totius humanae naturae), a. 2 ad 1, a. 2 ad 4 (de ordine Archangelorum), a. 3 co. (visione angelica refovendi); I q. 93 a. 3 co. (inquantum … sicut Deus se habet ad mundum; simpliciter / secundum quid).
+- Rights: public-domain Latin.
+- Ceiling: web transcription of the Leonine text.
+
+### Douay–Rheims (Challoner)
+- Witness: Douay–Rheims Bible, Challoner revision, Project Gutenberg eBook 1581.
+- Repository ids: `work.english-college-of-douay.douay-rheims-bible` (existing).
+- URL: https://www.gutenberg.org/cache/epub/1581/pg1581.txt
+- Retrieved: 2026-09-29T12:58:58Z
+- SHA-256 of the bytes read: 7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007 (5880580 bytes)
+- Loci read: every verse listed under Scripture cited.
+- Quoted: see Scripture cited (all English Scripture quotations are Douay except Deut 32:8 and Isa 9:6 in the Septuagint, from Brenton).
+- Rights: public domain.
+- Ceiling: Gutenberg transcription.
+
+### Brenton, Septuagint in English
+- Witness: L. C. L. Brenton, *The Septuagint Version of the Old Testament* (English), ebible.org.
+- Repository ids: `work.lancelot-brenton.septuagint-english-translation` (existing).
+- URL: https://ebible.org/eng-Brenton/ISA09.htm; https://ebible.org/eng-Brenton/DEU32.htm
+- Retrieved: 2026-09-30T14:37:43Z–14:37:56Z (fetched by another lane)
+- SHA-256 of the bytes read: b411669dc694e59c082ab593d3e3fb64e74a35adf4a4e55c2d347a1d20252540 (6669 bytes); d5709ff7c85ab52d9538e4aaed3b4fbddb3d1a60932c7b7ffcf853ce855516f9 (13928 bytes)
+- Loci read: Isa 9:5 (LXX numbering; Vulgate 9:6); Deut 32:8.
+- Quoted: Isa 9:6 "the Messenger of great counsel"; Deut 32:8 "set the bounds of the nations according to the number of the angels of God".
+- Rights: public domain (19th-c. translation).
+- Ceiling: web transcription.
+
+### Dionysius, Celestial Hierarchy (Parker)
+- Witness: *Celestial Hierarchy*, John Parker trans., Works vol. 2 (London 1899), tertullian.org transcription.
+- Repository ids: `work.pseudo-dionysius-the-areopagite.de-caelesti-hierarchia` (registered with this publication).
+- URL: https://www.tertullian.org/fathers/areopagite_13_heavenly_hierarchy.htm
+- Retrieved: 2026-09-29T12:55:02Z
+- SHA-256 of the bytes read: ae7608cea7b9f874f2b8ebdabfbe9cfae8b74285fec914aeca3d87cd9089104d (114110 bytes)
+- Loci read: CH 4.4; CH 7.3.
+- Quoted: CH 4.4 (Angels first were initiated … God-formation); CH 7.3 (even the first of the Beings in Heaven …; immediately, and shewing to them …).
+- Rights: public domain.
+- Ceiling: web transcription; not collated with print.
+
+### Catechism of the Catholic Church
+- Witness: CCC, English, vatican.va.
+- Repository ids: `work.catholic-church.catechism` (existing).
+- URL: https://www.vatican.va/archive/ENG0015/__P1A.HTM
+- Retrieved: 2026-09-29T12:56:38Z
+- SHA-256 of the bytes read: f5d0972215f47a1bc22e768aa4e51f454db80f32dcbc4e3dd52b4a40ae5254d3 (22605 bytes)
+- Loci read: CCC 330–336.
+- Quoted: 331 ("Christ is the centre of the angelic world"); 333 (three short phrases).
+- Rights: Libreria Editrice Vaticana copyright; short quotations with attribution.
+- Ceiling: official web text.
+
+### Irenaeus, Against Heresies
+- Witness: ANF vol. 1 (Edinburgh trans., American ed. 1885), CCEL text.
+- Repository ids: `work.irenaeus.adversus-haereses` (existing).
+- URL: https://ccel.org/ccel/s/schaff/anf01/cache/anf01.txt
+- Retrieved: 2026-09-29T12:55:11Z
+- SHA-256 of the bytes read: ee9c7f0ac3f4df08d07ddf81cd7e061e82a35e0d27de611cae06f1e05b2fb991 (3149312 bytes)
+- Loci read: III.16.6–7.
+- Quoted: III.16.6.
+- Rights: public domain.
+- Ceiling: CCEL transcription.
+
+### John Chrysostom, Homilies on Matthew, Ephesians, Hebrews
+- Witness: NPNF series 1 vols 10, 13, 14 (Schaff), CCEL text.
+- Repository ids: `work.john-chrysostom.homiliae-in-matthaeum` (existing); `work.john-chrysostom.homilies-on-ephesians` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf110/cache/npnf110.txt; npnf113; npnf114
+- Retrieved: 2026-09-29T17:54:08Z (110); 2026-09-29T12:55:22Z–12:55:23Z (113, 114)
+- SHA-256 of the bytes read: adb8f1c9a988c5050a20fb9fdbf75143dcb227e95e3dad2f560a63b757923648 (3345978 bytes); 54274dd9aa73ca36e4da9e763e4a27d1818b09e42ffc73795529afec703a4210 (3933882 bytes); e26f55f8d0739c07d73d5b664e42efbd923a43230a22d93d55261c808e9cd458 (3943878 bytes)
+- Loci read: Hom. in Matt. 4.1–10, 13.5, 83.1; Hom. in Eph. 3 (on Eph 1:15–23 and moral part); Hom. in Heb. 3.1–4, 5.1.
+- Quoted: Hom. in Matt. 4.10, 13.5, 83.1; Hom. in Eph. 3 (two passages); Hom. in Heb. 3.1, 5.1.
+- Rights: public domain.
+- Ceiling: CCEL transcription; Hom. in Eph. 3 has no section numbers in this edition.
+
+### Gregory Nazianzen, Orations 38 and 45
+- Witness: NPNF series 2 vol. 7, CCEL text.
+- Repository ids: `work.gregory-of-nazianzus.oration-38` (registered with this publication).
+- URL: https://ccel.org/ccel/s/schaff/npnf207/cache/npnf207.txt
+- Retrieved: 2026-09-29T12:55:25Z
+- SHA-256 of the bytes read: 56d84cfa94dee313af0139e2d7f3d4b5f7fffca40ce0f34794b5f56264964dfd (3388014 bytes)
+- Loci read: Or. 38 entire (I–XVIII); Or. 45.24–26.
+- Quoted: Or. 38.2, 38.11, 38.14, 38.16, 38.17; Or. 45.24, 45.25.
+- Rights: public domain.
+- Ceiling: CCEL transcription.
+
+### Cyril of Jerusalem, Catechetical Lectures
+- Witness: NPNF series 2 vol. 7, CCEL text.
+- Repository ids: `work.cyril-of-jerusalem.catechetical-lectures` (existing).
+- URL: as above (npnf207)
+- Retrieved: 2026-09-29T12:55:25Z
+- SHA-256 of the bytes read: 56d84cfa94dee313af0139e2d7f3d4b5f7fffca40ce0f34794b5f56264964dfd (3388014 bytes)
+- Loci read: Cat. 14.22–30; Cat. 15.1–33.
+- Quoted: Cat. 14.22, 14.24; 15.1, 15.10, 15.21, 15.22, 15.24.
+- Rights: public domain.
+- Ceiling: CCEL transcription.
+
+### Hilary of Poitiers, On the Trinity
+- Witness: NPNF series 2 vol. 9 (Watson and Pullan), CCEL text.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://ccel.org/ccel/s/schaff/npnf209/cache/npnf209.txt
+- Retrieved: 2026-09-29T12:55:27Z
+- SHA-256 of the bytes read: 859ba34cc5998f2761b801aa5de724b2ea741a54d98e21614faeb89cc40f8ad4 (2606804 bytes)
+- Loci read: De Trin. X.40–41.
+- Quoted: X.40 (short), X.41.
+- Rights: public domain.
+- Ceiling: CCEL transcription.
+
+### Leo the Great, Sermons
+- Witness: NPNF series 2 vol. 12 (Feltoe), CCEL text.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://ccel.org/ccel/s/schaff/npnf212/cache/npnf212.txt
+- Retrieved: 2026-09-29T12:55:30Z
+- SHA-256 of the bytes read: 7bb1db6e2f6814b58dd13a7b85f17f37f80c22ac979c3298793db1fa909b5b5a (2906681 bytes)
+- Loci read: Serm. 21, 26 (Nativity), 73, 74 (Ascension) entire.
+- Quoted: Serm. 21.1, 21.2, 26.1, 26.3, 73.4, 74.1, 74.4.
+- Rights: public domain.
+- Ceiling: CCEL transcription.
+
+### Ambrose, Exposition of Luke
+- Witness: *Expositio evangelii secundum Lucam*, Latin Wikisource reproduction of the Corpus Corporum transcription of Migne PL 15.
+- Repository ids: `work.ambrose.expositio-evangelii-secundum-lucam` (existing).
+- URL: https://la.wikisource.org/w/index.php?title=Expositio_evangelii_secundum_Lucam/II&action=raw; …/X&action=raw
+- Retrieved: 2026-09-30T14:57:38Z–14:57:40Z
+- SHA-256 of the bytes read: 54d176a8f39bf9ae0703523cd23b0e4e5b0c615a40c6837819d057006443b970 (85898 bytes); d9776febe006764afbd835cfabd0602395fdc6607d1b45d939a5044b93d30e07 (112946 bytes)
+- Loci read: II.1–19, 50–53; X.65, 180–181.
+- Quoted (Latin, with unquoted gloss): II.8, II.15, II.19, II.50, II.51, II.52, II.53; X.65, X.181.
+- Rights: public-domain Latin.
+- Ceiling: web transcription of Migne; not collated with CSEL 32.4.
+
+### Bede, Homilies
+- Witness: Bede, *Homiliae* I.1 (In festo Annuntiationis), Migne PL 94 (1850), archive.org OCR.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/bim_early-english-books-1641-1700_1850_94/bim_early-english-books-1641-1700_1850_94_djvu.txt
+- Retrieved: 2026-09-30T14:47:33Z (fetched by another lane)
+- SHA-256 of the bytes read: eb888073ed25a141a81b55c90bc447e829babb03ab702a76171633012aadfec5 (3827054 bytes)
+- Loci read: Hom. I.1, opening sections (Luke 1:26–28).
+- Quoted: two sentences (Aptum profecto … decipiendam; Illa a diabolo … edidit) and one clause (jure angelico … imitari), orthography normalized.
+- Rights: public-domain Latin.
+- Ceiling: OCR, not checked on page images; PL column not given in the body.
+
+### Gregory the Great, Homilies on the Gospels
+- Witness: *Homiliae in Evangelia* 34, Latin Wikisource.
+- Repository ids: `work.gregory-the-great.homiliae-in-evangelia` (existing).
+- URL: https://la.wikisource.org/w/index.php?title=Homiliarum_in_Evangelia/XXXIV&action=raw
+- Retrieved: 2026-09-30T14:47:04Z (fetched by another lane)
+- SHA-256 of the bytes read: dfd661ab607de8517fed4ffabddea2bdb80da2591230cb5b9a73efc62d56147f (35028 bytes)
+- Loci read: 34.1–12.
+- Quoted (Latin with gloss): 34.3, 34.6, 34.11.
+- Rights: public-domain Latin.
+- Ceiling: web transcription.
+
+### Augustine, Enchiridion
+- Witness: NPNF series 1 vol. 3 (Shaw), CCEL text.
+- Repository ids: `work.augustine.enchiridion-ad-laurentium` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf103/cache/npnf103.txt
+- Retrieved: 2026-09-29T12:55:20Z
+- SHA-256 of the bytes read: cc8d3ff7ce4d4ba293f50a06200af03ff0e5abdeb5200db3a59b4dbe2cad7bdb (3357503 bytes)
+- Loci read: Enchir. 29, 62.
+- Quoted: 29, 62 (one phrase each).
+- Rights: public domain.
+- Ceiling: CCEL transcription.
+
+### Bernard of Clairvaux, Homilies Super Missus est
+- Witness: *Sermons of St. Bernard on Advent and Christmas, including the famous treatise on the Incarnation called "Missus est"*, compiled and translated at St. Mary's Convent from the 1508 edition, introd. J. C. Hedley (London: R. & T. Washbourne; New York: Benziger, 1909); imprimatur 25 Oct. 1909.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/sermonsofstberna00bernuoft/sermonsofstberna00bernuoft_djvu.txt
+- Retrieved: 2026-09-30T14:54:05Z
+- SHA-256 of the bytes read: 15cf43944c2024f84839994bf3294a6820d9080b5a1e959ac70897b10dd3c659 (288038 bytes)
+- Loci read: Missus est preface and homm. 1–4 (pp. 22–74).
+- Quoted: hom. 1 (pp. 25–26, 30–31), hom. 2 (one phrase), hom. 3 (pp. 48–49), hom. 4 (pp. 68–69).
+- Rights: published London 1909, before 1931: public domain in the United States.
+- Ceiling: OCR, checked for sense; not collated with the page images or with the Latin (PL 183; Leclercq).
+
+### John Damascene, Exposition of the Orthodox Faith
+- Witness: *De fide orthodoxa*, trans. S. D. F. Salmond, NPNF series 2 vol. 9 (CCEL); Greek of Migne PG 94 (archive.org PatrologiaGraeca item, OCR).
+- Repository ids: `work.john-of-damascus.de-fide-orthodoxa` (registered with this publication).
+- URL: https://ccel.org/ccel/s/schaff/npnf209/cache/npnf209.txt; https://archive.org/download/PatrologiaGraeca/Patrologia%20Graeca%20Vol.%20094_djvu.txt
+- Retrieved: 2026-09-29T12:55:27Z; 2026-09-30T14:53:44Z
+- SHA-256 of the bytes read: 859ba34cc5998f2761b801aa5de724b2ea741a54d98e21614faeb89cc40f8ad4 (2606804 bytes); 20425e6a8263f916adfcd75dfe76c6f12abdc9bb5c0487691a07a0b15c2dfa5f (9824524 bytes)
+- Loci read: II.3 and II.4 entire (English); Greek of II.3 definition, the triads, and the death/fall sentence of II.4; the NPNF prolegomenon on Burgundio's translation; translator's name (Salmond).
+- Quoted: II.3 (definition and most sentences on nature, lights, place, ministry, orders, time of creation, creators); II.4 (opening block and the sentences on evil, power, attack, death/fall); Greek transliterated for the definition, the triads, and the death/fall sentence.
+- Rights: public domain (1899 translation; Migne).
+- Ceiling: PG column numbers inferred from OCR column headers (865; 873–874; 877–878), not checked on page images.
+
+### John Damascene, On Holy Images; Homilies on the Dormition
+- Witness: *St John Damascene on Holy Images, followed by Three Sermons on the Assumption*, trans. Mary H. Allies (London 1898; imprimatur 12 Aug. 1898), Project Gutenberg eBook 49917.
+- Repository ids: `work.john-of-damascus.homilies-on-the-dormition` (existing).
+- URL: https://www.gutenberg.org/cache/epub/49917/pg49917.txt
+- Retrieved: 2026-09-30T14:54:06Z
+- SHA-256 of the bytes read: a0ba4890b6c020d446f469ea9cb6bf0daebe13f0e24a02a3f58b7bb3dda96de1 (358782 bytes)
+- Loci read: Apologies I and III (angel passages); Sermons I and II on the Assumption (angel passages).
+- Quoted: De imag. I (one sentence), III (block and several sentences); Hom. in Dorm. I (several sentences), II (two passages).
+- Rights: 1898 London publication; public domain in the United States.
+- Ceiling: Gutenberg transcription with transcriber's minor emendations; no page numbers; Allies's Greek parentheses omitted with ellipsis.
+
+### Maximus the Confessor, Mystagogia
+- Witness: *Mystagogia*, Greek text of Migne PG 91 (archive.org PatrologiaGraeca, Vol. 091).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/PatrologiaGraeca/Patrologia%20Graeca%20Vol.%20091_djvu.txt; page images via the item's jp2.zip (leaves 367, 369, 380)
+- Retrieved: 2026-09-30T14:53:41Z (OCR); page images 2026-09-30
+- SHA-256 of the bytes read: e4e1c1926ec2dfd9fd71f276ca125866230230507d7727455e66cf40d3fca85c (7890188 bytes)
+- Loci read: chs. 13, 19, 24 (Greek), 20–21 incipits; Migne's Latin of ch. 24 on the page image (col. 710).
+- Quoted (Greek transliterated, own rendering unquoted): ch. 13 (PG 91, 692C–D; checked on page image); ch. 19 (696C; checked on page image); ch. 24 phrase (709; OCR, consistent with the Latin read on the image).
+- Rights: public domain.
+- Ceiling: OCR plus page-image checks as stated.
+
+### Theodore the Studite, Orations 5 and 6
+- Witness: Migne PG 99 (archive.org PatrologiaGraeca Vol. 099): Or. 5 In dormitionem Deiparae; Or. 6 In sanctos angelos (Εἰς τὴν σύναξιν τῶν οὐρανίων ταγμάτων), from A. Mai's *Nova Patrum Bibliotheca*.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/PatrologiaGraeca/Patrologia%20Graeca%20Vol.%20099_djvu.txt; page images via jp2.tar (leaves 365–368)
+- Retrieved: 2026-09-30T14:53:50Z (OCR); images 2026-09-30
+- SHA-256 of the bytes read: af55f76d4179c09f4f808d2de05c9a4400a4fd45c0fa665aae1fb5cf437a00bb (9580329 bytes)
+- Loci read: Or. 5.5 (col. 728); Or. 6.1–3 (cols. 729–736) with Mai's note (col. 730).
+- Quoted (Greek transliterated): Or. 5.5 (checked on image); Or. 6.1 and 6.2 phrases (checked on images, cols. 729, 732, 733); Or. 6.3 phrase ton trisagion tēs Triados mēnyonta thesmon (OCR only).
+- Rights: public domain.
+- Ceiling: attribution of Or. 6 is Mai's; Mai notes an altered excerpt printed among Chrysostom's spuria.
+
+### Andrew of Caesarea, Commentary on the Apocalypse
+- Witness: Migne PG 106 (archive.org PatrologiaGraeca Vol. 106), Greek with Latin.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/PatrologiaGraeca/Patrologia%20Graeca%20Vol.%20106_djvu.txt
+- Retrieved: 2026-09-30T14:53:53Z
+- SHA-256 of the bytes read: 7b0567d128f8a25a8d1f3380bfb05c8b791b0704d5647898eb26ac2031b0c530 (7148801 bytes)
+- Loci read: ch. 21 (on Apoc 8:3–4); ch. 34 (on Apoc 12:7–9) with the Papias fragment.
+- Quoted (Greek transliterated): ch. 21 one sentence; ch. 34 two phrases.
+- Rights: public domain.
+- Ceiling: OCR only; not checked on page images; PG column numbers not established (no hOCR index for this volume), so the body cites "PG 106" without column.
+
+### Gregory Palamas, One Hundred and Fifty Chapters
+- Witness: *Capita physica, theologica, moralia et practica CL*, Migne PG 150 (archive.org PatrologiaGraeca Vol. 150).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/PatrologiaGraeca/Patrologia%20Graeca%20Vol.%20150_djvu.txt; page images via jp2.zip (leaves 596–597, 601, 610–611)
+- Retrieved: 2026-09-30T14:53:57Z (OCR); images 2026-09-30
+- SHA-256 of the bytes read: 4a5d98a2a7645b490dcc9e8500a060231e10dbc5c6441f54cb68280feebb09e5 (6994915 bytes)
+- Loci read: Cap. 27–28, 38–40, 60–66.
+- Quoted (Greek transliterated, checked on page images): Cap. 27 (1140A), 39 (1148B), 62 (1165A), 62 phrase, 63 phrase (1165D), 64 (1168A), 65 (1168C, with DN 4.8).
+- Rights: public domain (Migne). English translations (Sinkewicz 1988) are in copyright and were not used.
+- Ceiling: page images for every quoted phrase; paraphrase elsewhere from OCR.
+
+### Denzinger (Nicaea II; Constantinople IV)
+- Witness: Denzinger, *Enchiridion symbolorum*, Latin, patristica.net.
+- Repository ids: `work.denzinger.enchiridion-symbolorum` (existing).
+- URL: https://patristica.net/denzinger/enchiridion-symbolorum.html
+- Retrieved: 2026-09-29T12:56:36Z
+- SHA-256 of the bytes read: 604f24c46e0bc71c2018f25dc787a9ab421d4b2e9cf7d1cee1f43e910ef2708f (2333435 bytes)
+- Loci read: DS 600–603 (Nicaea II, definition on images, 13 Oct. 787); DS 655–656 (Constantinople IV, can. 3; heading "oecum. VIII", 870).
+- Quoted: DS 600 (sequentesque … Ecclesiae; tam videlicet … Sanctorum), DS 601 (veram latriam …; Imaginis enim honor …), DS 656 (insuper et iconas …).
+- Rights: public-domain Latin text.
+- Ceiling: web transcription; source typo "honrobiliumque" normalized to "honorabiliumque".
+
+### Second Vatican Council, Lumen gentium
+- Witness: Latin and English, vatican.va.
+- Repository ids: `work.second-vatican-council.lumen-gentium` (existing).
+- URL: https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_lt.html; English at https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html (local copy .scratch/christ-liturgy/lg.txt)
+- Retrieved: Latin 2026-09-30T14:59:02Z; English copy 2026-09-29 (christ-liturgy scratch)
+- SHA-256 of the bytes read: 0a828abb4be1de13b600bbc9bbae32832ed5ce4dad940629f57aae54c679fe23 (192411 bytes)
+- Loci read: LG 49–50, 53, 56, 59, 66, 69.
+- Quoted (Latin with gloss): 56, 66, 69.
+- Rights: Vatican text; short quotations with attribution.
+- Ceiling: official web text.
+
+### Pius XII, Ad caeli Reginam; Munificentissimus Deus
+- Witness: vatican.va Latin and English.
+- Repository ids: `work.pius-xii.munificentissimus-deus` (existing).
+- URL: https://www.vatican.va/content/pius-xii/la/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html (and /en/); https://www.vatican.va/content/pius-xii/la/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html (and /en/)
+- Retrieved: 2026-09-30T14:59:04Z–14:59:10Z
+- SHA-256 of the bytes read: 56079ef76d8496821ead5fdf4d0c0f6e9bdd82281b1e89e70ae3ec1d5e671b80 (67390 bytes); 2c84ef30841b66359d28d526a3aed585d6aa6aafbed3054fd564cf907d6a371f (74564 bytes)
+- Loci read: ACR 3, 30, 31, 41–42, 46–47, notes 55, 56, 61; MD definition and the paragraphs citing the angels (Albert the Great).
+- Quoted: ACR Latin 3, 41, 42, 46; MD Latin definition; MD English two short phrases; MD Latin Albert phrase.
+- Rights: Vatican texts; short quotations with attribution.
+- Ceiling: Pius IX's *Ineffabilis Deus* read only as quoted in ACR 41–42; ACR paragraph numbers follow the English edition.
+
+### Missale Romanum 1962
+- Witness: *Missale Romanum*, editio typica 1962 (CMAA facsimile PDF), text layer extracted with pdftotext.
+- Repository ids: `work.catholic-church.missale-romanum` (existing).
+- URL: https://media.churchmusicassociation.org/pdf/missale62.pdf (local copy .scratch/christ-liturgy/missale62.pdf, sha256 648fdb8f…)
+- Retrieved: 2026-09-29 (christ-liturgy scratch)
+- Loci read: 31 May B.M.V. Reginae (II cl.), Introit n. 2681; 16 July Introit n. 3054; 15 Aug. Assumption (I cl.), Alleluia n. 3382; 29 Sept. Dedication of St Michael (I cl.), nn. 3726–3731; Paschal preface; Canon, Supplices.
+- Quoted (Latin with gloss): n. 2681 Introit; n. 3382 Alleluia; n. 3727 collect (incipit); preface ending; Supplices clause.
+- Rights: Latin liturgical text; quoted briefly.
+- Ceiling: text layer only, not checked on page images.
+
+### Manual of Prayers (Baltimore, 1889)
+- Witness: *A Manual of Prayers for the Use of the Catholic Laity* (New York: Catholic Publication Society; London: Burns & Oates, 1889), archive.org manualofprayersf00wood.
+- Repository ids: `work.third-plenary-council-of-baltimore.manual-of-prayers` (existing).
+- URL: https://archive.org/download/manualofprayersf00wood/manualofprayersf00wood_djvu.txt; page images page/n62, n63, n74, n84, n85
+- Retrieved: 2026-09-30T14:54:08Z (OCR); images 2026-09-30
+- SHA-256 of the bytes read: eada18d4949720fcef1f031d067136c3dba908d2d3142c62f15bcfe54fc0c33f (1379047 bytes)
+- Loci read: pp. 55–56 (Angelus), 67 (Litany of Loreto), 77–78 (Ave Regina caelorum).
+- Quoted: Angelus versicle and collect (p. 55–56); Regina Angelorum / Queen of Angels (p. 67); Ave Regina caelorum, first two lines, Latin and English (p. 77). All checked on page images.
+- Rights: 1888 US copyright expired; public domain.
+- Ceiling: verified on page images.
+
+### Hapgood, Service Book (1906)
+- Witness: Isabel F. Hapgood, *Service Book of the Holy Orthodox-Catholic Apostolic (Greco-Russian) Church* (1906; printed by H. O. Houghton & Co.), Cornell copy, archive.org cu31924029363128.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/cu31924029363128/cu31924029363128_djvu.txt; page numbers via the item's hOCR page index and page_numbers.json
+- Retrieved: 2026-09-30T14:54:01Z
+- SHA-256 of the bytes read: 2b9e6ed4cb7d488c88fa5a17fb96479c3f3c0360fb81f78190654682f1d3f650 (1883883 bytes)
+- Loci read: calendar p. xiv; table p. xxiv; Vespers dismissal p. 14; weekday hymns p. 61; Divine Liturgy pp. 83–102, 126; Annunciation pp. 201–202; Falling-asleep pp. 264–266.
+- Quoted: pp. xiv, 14, 61, 83, 85, 86, 94, 95, 101, 102, 201, 202, 264, 266.
+- Rights: 1906 US publication; public domain.
+- Ceiling: OCR text layer; page numbers from the hOCR index; not checked on page images.
+
+### Synaxarium Ecclesiae Constantinopolitanae (Delehaye 1902)
+- Witness: *Synaxarium Ecclesiae Constantinopolitanae e codice Sirmondiano*, ed. H. Delehaye, Propylaeum ad Acta Sanctorum Novembris (Brussels 1902), archive.org DelehayeSynaxariumConstantinopolitanum.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/DelehayeSynaxariumConstantinopolitanum/Delehaye%2C%20Synaxarium%20Constantinopolitanum_djvu.txt; page image leaf 76
+- Retrieved: 2026-09-30T15:17:43Z
+- SHA-256 of the bytes read: df11361ff4d76de50776e24d4ca50e3cd3dc2f54ce16c193ff3decd9c297f62f (5639177 bytes)
+- Loci read: 6 Sept. (cols. 19–20); 25 Sept. (cols. 79–80); 8 Nov. (cols. 203–204, also on the page image); Delehaye's prolegomena note on the angel feasts.
+- Quoted (Greek transliterated): 6 Sept. phrases (anamnēsin poioumenoi tou thaumatos; chōneuesthai); 25 Sept. sentence; 8 Nov. sentence (Proschōmen; synaxis … henōsis).
+- Rights: 1902; public domain.
+- Ceiling: OCR; the scan is low resolution; the 8 Nov. entry was checked on the page image. The Synaxarion names the fallen taxiarch; the name is not given in the body.
+
+### Not used
+- Metropolitan Cantor Institute, online Menaion 8 November (.scratch/christ-liturgy/nov8.txt; https://mci.archpitt.org/menaion/11-08.html): modern translation, rights unresolved; not quoted, not relied on.
+
 ## Disputed questions after Aquinas; positions on the first sin
 
 ### Aquinas, Summa theologiae, English

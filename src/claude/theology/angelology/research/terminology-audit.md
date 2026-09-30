@@ -14,6 +14,7 @@ transliteration.
 | aeon | aevum | aion | *De sanctis Angelis* 5 | angelic duration between eternity and time |
 | aevum | aevum | — | I q. 61 a. 2 (cf. In II Sent. d. 2 q. 1 a. 1) | Angelic duration between time and eternity |
 | affective knowledge | cognitio affectiva | — | I q. 64 a. 1 co. | `producens amorem Dei`; NA renders "effective" |
+| after the image / after the likeness | ad imaginem / ad similitudinem | kat' eikona / kath' homoiōsin | Palamas, Cap. 39, 62–64; ST I q. 93 a. 3 |  |
 | alliance / ally | — | symmachia | Gregory of Nyssa, De vita Moysis II (PG 44, 337D) | "set beside ... as an ally"; not printed in body |
 | ally | — | symmachia | Gregory of Nyssa, *De vita Moysis* II | the angel "brother" to the mind |
 | angel | angelus | angelos | Mal 3:1; ST I q. 108 a. 5 ad 1; CH 4–5 | Office-name, not nature-name (Augustine, Enarr. in Ps. 103 s. 1 §15; CCC 329) Name of office (Gregory, Hom. 34.8: nomen officii, non naturae) |
@@ -41,6 +42,7 @@ transliteration.
 | at once from the beginning of time | simul ab initio temporis | — | DS 800; DS 3002 | the disputed particle of Firmiter |
 | Authorities (Parker) = Powers | potestates | exousiai | Dionysius, CH 8.1 | Parker's English |
 | Averter | Apopompaeus | — | Origen, De princ. III.2.1 (Lev 16:8) | Read; not used in final body |
+| be funnelled | — | chōneuesthai | Synaxarium CP, 6 Sept. | etymology of Chonae |
 | beginning of the ways of God | principium viarum Dei | -- | Moralia XXXII.23.47 (LF "chief of the ways of God"); Sent. I.10.4 | Job 40:14[19] (Douay "beginning of the ways of God") |
 | beyond measure | extra mensuram | — | Hugh, De sacr. I.5.26 | Where the evil of the angelic sin lies |
 | birthday of impatience | natales inpatientiae | — | Tertullian, De pat. 5.5 |  |
@@ -61,11 +63,12 @@ transliteration.
 | chief captain (of the Lord's host) | — | archistrat\=egos | Basil, Adv. Eun. III.1; Josh 5:14 |  |
 | chief messenger; archangel | archangelus; "summi nuntii" | archangelos; Isidore: "ARCHOS ... princeps" | Hom. 34.8; Etym. VII.5.6 | Isidore adds that archangels "primatum teneant inter angelos" |
 | chief princes = archangels | principes primi | — | Jerome, In Dan. 10:13 |  |
+| choir-leader | — | chorostatēs | Theodore, Or. 6.1 | Michael |
 | circumscriptively / definitively | circumscriptive / definitive |  | I q. 52 a. 2 co. | body / angel; God neither |
 | cleansing, purgation | purgatio | katharsis | ST I q. 106 a. 2 ad 1; De ver. q. 9 a. 3; CH 7.3 | Among angels: removal of nescience only |
 | completively / dispositively | completive / dispositive | — | ST I q. 108 a. 4 co. | Grace / nature in the distinction of orders |
 | composing and dividing | componere et dividere | — | ST I q. 58 a. 4 | Denied of angelic knowledge |
-| comprehensor | comprehensor | — | ST I q. 113 a. 4 ad 1 | of Christ's soul |
+| comprehensor | comprehensor | — | ST I q. 113 a. 4 ad 1; ST III q. 8 a. 4 ad 2; III q. 30 a. 2 ad 1 | of Christ's soul the Church in heaven |
 | comrade | contubernalis | — | Bernard, De consid. V.5.12 | The angel is in the soul as comrade, God as life |
 | confirmation in good | confirmatio in bono | — | I q. 62 a. 1 | Of the nature of beatitude |
 | connatural / innate species | species connaturales (innatae) | — | ST I q. 55 a. 2 co. | Not drawn from things; received with the angelic nature |
@@ -94,20 +97,24 @@ transliteration.
 | effluence | — | — | Eusebius *Praep. ev.* XIII.15 | Platonic derivation of rational natures, corrected to creation from nothing. |
 | elective love | dilectio electiva | — | I q. 60 a. 2 | Love of choice; meritorious |
 | empyrean heaven | caelum empyreum | — | I q. 61 a. 4 | Highest corporeal place, "from its splendor" (Strabus) |
+| emulation | aemulatio, certamen | hamilla | Maximus, Myst. 24 | of the angels by the faithful |
 | enlightenment, illumination | illuminatio; illuminare | photismos | ST I q. 106 a. 1; De ver. q. 9 a. 1 | "Manifestation of the known truth"; strengthening plus proposal |
 | envy | invidentia (`odium felicitatis alienae`) | — | *De Gen. ad litt.* XI.14.18 | follows pride |
 | envy | invidia | — | I q. 63 a. 2 ad 2 | Taken not as passion but `pro voluntate renitente bono alterius` |
 | envy, source of all evils | livor (liuor) | — | Lactantius, Div. inst. II.8.5 | *cunctorum malorum fontem esse liuorem* |
 | equal-making | aequiparantia | — | Bonaventure, In II Sent. d. 5 a. 1 q. 1 | to preside subject to none |
+| equality of honour | aequalitas honoris | isotimia | Maximus, Myst. 19 | with the bodiless powers in the age to come |
 | essence, power, energy | essentia, potentia, operatio | ousia, dynamis, energeia | CH 11.2 | Triad behind ST I q. 54 a. 3 |
 | evening knowledge | cognitio vespertina | — | ST I q. 58 aa. 6–7 | Knowledge of things in their own nature |
 | evening knowledge ("twilight knowledge", NPNF) | vespera; uespertina cognitio | — | *De Gen. ad litt.* IV.22.39–23.40; *De civ. Dei* XI.29 | knowledge of the creature in itself |
 | ever mobile | semper mobilis |  | I q. 50 a. 1 arg. 2, ad 2 | Damascene's "in perpetual motion" (NPNF) |
+| ever-moving | semper mobilis | aeikinētos | Damascene II.3; ST I q. 50 a. 1 ad 2 | Aquinas: ever actually intelligent |
 | every spirit is winged | omnis spiritus ales est | — | Tertullian, Apol. 22.8 | of angels and demons alike |
 | evil of fault | malum culpae | — | I q. 63 pr. | The subject of q. 63 |
 | evil of punishment | malum poenae | — | I q. 63 pr.; q. 64 | The subject of q. 64 |
 | exercise (of the evil angel) | exercitium | — | Lombard, *Sent.* II d. 11 c. 1 | "ad custodiam ... ad exercitium" |
 | existence / what is | esse / quod est; quo est |  | I q. 50 a. 2 ad 3 | Boethian composition in angels |
+| fall (of the angels) | casus | ekptōsis | Damascene II.4 | "what death is to men" |
 | familiar friends | familiares (angelos) | — | Bernard, In Ps. Qui habitat 12.10 | "Habetote familiares angelos" |
 | familiars | familiares | — | Bernard, *Qui habitat* 12.10 |  |
 | feast; memorial | festum; memoria | — | postconciliar calendar | ranks as the repository index prints them |
@@ -117,6 +124,7 @@ transliteration.
 | first-created angels | — | — | Hermas, Vis. III.4; Sim. V.5 | The six builders and counsellors |
 | force of the first choice | vis primae electionis | — | *De malo* q. 16 a. 5 co. | Demons sin in every choice |
 | free choice | liberum arbitrium | — | I q. 59 a. 3 | "Ubicumque est intellectus, est liberum arbitrium" |
+| free, self-determining | liberi arbitrii | autexousios | Damascene II.3 | NPNF "with free-will" |
 | friendship-love / desire-love | velle amicitiae / velle concupiscentiae | — | Scotus, Ord. II d. 6 q. 2 | order of the will's acts |
 | from nothing | ex nihilo | — | I q. 61 a. 2 | "Idest postquam nihil fuerat" |
 | Gabriel | Gabriel | Gabriel | Dan 8:16; Luke 1:19 | fortitudo Dei (Gregory) |
@@ -150,12 +158,17 @@ transliteration.
 | Holy Guardian Angels | Ss. Angeli Custodes | — | MR 1920/1962, 2 Oct | postconciliar Memorial |
 | honour of love, not servitude | `caritate, non servitute` | — | *De vera religione* 55.110 | the honour due to the angels |
 | illumination | illuminatio | photismos | CH 3.2–3 | Second |
+| illumination | illustratio | ellampsis | Palamas, Cap. 64–65; DN 4.8 | uncreated in Palamas |
+| immortal by grace | immortalis per gratiam | kata charin … to athanaton | Damascene II.3; ST I q. 50 a. 5 ad 1 | Aquinas: perfect immortality includes immutability |
+| in place of the whole human nature | loco totius humanae naturae | — | ST III q. 30 a. 1 co. | the Virgin's consent |
 | incorporeal | — | asomaton | Origen, De princ. preface 8 | Origen discusses the term |
+| incorporeal (relative to us) | incorporeus | asōmatos | Damascene II.3; ST I q. 50 a. 1 ad 1 | "compared with God … dense and material" |
 | influences (opposing) | virtutes | — | Origen, De princ. preface 5 (note [1926]) | Crombie's "influences" for Rufinus's Virtutes |
 | instant; now | instans; nunc |  | I q. 53 a. 3 co. | angelic time as succession of "nows" |
 | intellective appetite | appetitus intellectivus | — | I q. 59 a. 4 | Undivided into irascible/concupiscible; "remanet indivisus; et vocatur voluntas" |
 | intellectual / rational | intellectuales / rationales | noeros / logikos (as reported) | ST I q. 58 a. 3 | Names of the two intellectual natures; Greek not verified at locus |
 | intellectual companionship | intelligibilis societas |  | I q. 51 a. 2 ad 1 | English Dominican "intellectual companionship" |
+| intelligent essence | substantia intellectualis | ousia noera | Damascene, De fide orth. II.3 | first term of the definition |
 | intelligible outpouring | intelligibilis effluxus | — | ST I q. 55 a. 2 co. | God's concreation of the species with the angelic nature |
 | intelligible species | species intelligibiles | — | ST I q. 55 a. 2 | The angelic medium |
 | intentional existence | esse intentionale | — | ST I q. 56 a. 2 ad 3 | The mode in which one angel exists in another's intellect |
@@ -164,12 +177,15 @@ transliteration.
 | interpreter, messenger | interpres, salutiger | — | Apuleius *De deo Socr.* 6; Plutarch *De def.* 13; Porphyry *De abst.* II.38 ("transporters") | Symposium's office of the daemonic. |
 | justice | iustitia (PL: justitia) | — | Anselm, De casu diaboli 4, 9, 14–16 | Rectitude of will; its absence where due is injustice (c. 16) |
 | knowing (etymology of daemon) | peritus, rerum scius | daemones / daemonas | *Cratylus* 398b (Jowett "daemones (knowing or wise)"); Lactantius II.14.6; Isidore VIII.11.15; Augustine IX.20; Aquinas *De sub. sep.* 20 | Chain of one etymology. |
+| Lady of the angels | Domina angelorum | — | Ave Regina caelorum (Manual 1889, p. 77) | Caswall-type rendering "by angels mistress own'd" |
 | laws of the angels | leges angelorum | — | Hilary, Tract. in Ps. 118 Vau 8 |  |
 | Lent of Saint Michael | Quadragesima ad honorem sancti Archangeli Michaelis | — | Bonaventure, *Leg. maior* XIII.1; Quaracchi note to IX.3 | forty days from the Assumption to 29 Sept. |
+| let us attend | attendamus | Proschōmen | Synaxarium CP, 8 Nov. | Michael's word after the fall |
 | Little Genesis | parva Genesis | ta I\=ob\=elaia / Lept\=e Genesis | Jerome, Ep. 78; Epiphanius, Pan. 39.6.1 | Names of Jubilees |
 | Lordships (Parker) = Dominations | dominationes | kyriotetes | Dionysius, CH 8.1; appendix 02 | Parker's English |
 | love of concupiscence | amor concupiscentiae | — | I q. 60 a. 3 | Love of a good to be had |
 | love of friendship | amor amicitiae | — | I q. 60 a. 3 | Wishing good to a subsisting good |
+| lovers of mankind | — | philanthrōpoi | Theodore, Or. 6.1 | the angels |
 | Lucifer | Lucifer | heosphoros | Isa 14:12 | Read of the devil under the figure of the king of Babylon (ST I q. 63 a. 5) |
 | Masses for particular places | Missae pro aliquibus locis | — | MR 1962 appendix | 8 May in 1962 |
 | matter in the restricted sense | materia appropriate |  | Bonaventure, *In II Sent.* d. 3 p. 1 a. 1 q. 1 ad 1 | as principle of undergoing change |
@@ -191,6 +207,7 @@ transliteration.
 | morning | mane | — | *De Gen. ad litt.* IV.22.39, IV.30.47 | the turning of evening knowledge to praise |
 | morning knowledge | cognitio matutina | — | ST I q. 58 aa. 6–7 | Knowledge of things in the Word |
 | mysteries of grace | mysteria gratiae | — | ST I q. 57 a. 5 | Known only by revelation in the Word |
+| mystical body | corpus Ecclesiae mysticum | — | ST III q. 8 a. 4 co. | includes men and angels |
 | name of office, not of nature | nomen officii, non naturae | — | Gregory, Hom. 34.8; Isidore VII.5.2; In II Sent. d. 9 q. 1 a. 4 ad 2; Gregory Hom. 34.8; Isidore VII.5.2 | Aquinas: nature-name as manifestative, office-name as exterior ministry |
 | natural appetite | appetitus naturalis | — | I q. 59 a. 1 | Inclination without knowledge |
 | natural love | dilectio naturalis; amor naturalis | — | I q. 60 a. 1 | "Inclinatio naturae indita ab auctore naturae" |
@@ -201,6 +218,7 @@ transliteration.
 | office of presenting souls | animarum repraesentandarum officium | — | *Leg. maior* IX.3 | Salter: "ministry of bringing souls before God" |
 | offices | officia | — | Origen, De princ. I.5.1 (note [2023]) | "rational offices and orders" |
 | operation | operatio | energeia | CH 3.1 | Third term |
+| opponents of God | — | antitheoi | Palamas, Cap. 27 | the apostate angels |
 | order | ordo | taxis | CH 3.1 | First term of the definition |
 | order (angelic) | ordo | taxis | Lombard, Sent. II d. 9 c. 2 | "multitudo caelestium spirituum, qui inter se in aliquo munere gratiae similantur" |
 | order (grade) / order (ordering) | ordo | taxis | ST I q. 108 a. 2 ad 1 | Twofold sense |
@@ -239,6 +257,7 @@ transliteration.
 | property of angelic power | proprium angelicae potestatis | — | Tertullian, De carne Christi 6.10 | to take a body from no matter |
 | purely spiritual creature | creatura pure spiritualis |  | I q. 50 pr. | "quae in Scriptura sacra Angelus nominatur" |
 | purification | purificatio / mundatio | katharsis | CH 3.2–3 | First of the triple law |
+| Queen of Angels | Regina Angelorum | — | Litany of Loreto (Manual of Prayers 1889, p. 67) |  |
 | quiddity | quod quid est | — | ST I q. 57 a. 1 ad 2; q. 58 a. 4–5 | The intellect's proper object; about it, no error |
 | ramparts of the angels | angelorum munitiones | — | Hilary, Tract. in Ps. 124.5 |  |
 | rank, host (in vision) | acies | — | Hildegard, Scivias I.6 | The choirs seen in concentric ranks |
@@ -284,8 +303,10 @@ transliteration.
 | summit of things | in summo rerum vertice | — | SCG II.46 n. 1 | Intellectual creatures |
 | supernatural beatitude | beatitudo supernaturalis | — | I q. 60 a. 5 ad 4; I q. 62 a. 1 | Beatitude beyond natural faculty, by charity |
 | surrounding circle of angels | angelorum circumstantia | — | Tertullian, De orat. 3.3 |  |
+| synaxis | synaxis | synaxis | Synaxarium CP, 8 Nov. | "attention, concord, union" |
 | theurgy | theurgia | theurgia | Augustine *De civ. Dei* X.9–10; Iamblichus *De myst.* II.3 | Rejected as demon-worship under angels' names. |
 | threefold cord | funiculus triplex | — | Bernard, In festo S. Michaelis 1.4 | The angels' love: for God, for us, for themselves |
+| thrice-holy hymn | Trisagium | Trisagion | Maximus, Myst. 13, 19; Hapgood p. 86 | Maximus uses it also of the Sanctus |
 | Thrones | Throni | thronoi | Col 1:16 | God sits in them (Gregory) |
 | thrones | throni / sedes | thronoi | CH 7.1 | Gregory: throni = sedes (Hom. 34.10) |
 | thrones | throni; "sedes" | thronoi | Hom. 34.10; Etym. VII.5.21 | God sits in them and decrees judgments |
