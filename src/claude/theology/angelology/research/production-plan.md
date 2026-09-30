@@ -136,6 +136,26 @@ each URL and reading date.
 | Scope appendix | `appendices/90-scope-corpus-qualifications.tex` | drafted | scope record |
 | References | `appendices/99-references.tex` | drafted | source audit |
 
+## Apparatus maintenance (from 2026-09-30)
+
+Lane merging is closed: every drafting lane's record was merged with
+`.scratch/lanes/merge.py`, and the research files are now maintained
+directly. The article census (`03`) and terminology (`12`) are projections
+of `research/question-inventory.md` and `research/terminology-audit.md`,
+regenerated with `python3 .scratch/lanes/gen_appendices.py census
+terminology`; the continuities appendix (`02a`) with
+`.scratch/lanes/gen_continuities.py` from the continuity rows of lanes
+l13a and l13b. The parallels (`04`) and Scripture index (`08`) were
+generated once and are now maintained by hand, as are the witness register
+(`13`) and references (`99`). If `.scratch` is gone, edit the generated
+appendices by hand and keep them in agreement with the research files.
+
+In its own prose the book names Old Testament persons in the Douay forms
+(Isaias, Ezechiel, Eliseus); quotations keep their translators' forms.
+
+The PDF received two full visual reviews by five lanes each (375 and 373
+pages) on 2026-09-30; findings and dispositions are in the lanes' records.
+
 ## Pipeline steps after drafting
 
 1. `make doc DOC=theology/angelology PROVIDER=claude`; clear warnings.

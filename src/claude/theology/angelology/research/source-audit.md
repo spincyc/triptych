@@ -811,6 +811,7 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 - Quoted: preface 5, 6, 10; I.5.1, 2, 4, 5; I.6.1, 2, 3; I.8.1 (block and inline), 3, 4; Jerome fragment after I.8; II.9.1, 2, 3, 6; III.2.1, 2, 3, 4; III.3.2.
 - Rights: public domain.
 - Ceiling: English of Rufinus's Latin; Greek fragments not consulted beyond the Jerome fragment in ANF.
+- Terminology audit: the Latin terms *substantialiter* and *conditionis praerogativa* (I.5.3), *officia* (I.5.1), and Rufinus's *Virtutes* (preface 5) are read from Crombie's notes [2030], [2029], [2023], and [1926]; the Dominations of preface 2 from note [1919].
 
 ### Origen, Contra Celsum
 - Witness: ANF vol. 4 (tr. Crombie).
