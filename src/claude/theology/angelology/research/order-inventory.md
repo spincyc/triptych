@@ -51,6 +51,8 @@ only when its locus was read at the source.
 | principalities | Aquinas, ST I q. 108 | a. 6 s.c. | Principalities | 7 | First of lowest hierarchy (Dionysius); Gregory places them 5th | yes |
 | archangels | Aquinas, ST I q. 108 | a. 6 s.c. | Archangels | 8 | Middle of lowest hierarchy | yes |
 | angels | Aquinas, ST I q. 108 | a. 6 s.c. | Angels | 9 | Last; common name proper to lowest order (a. 5 ad 1) | yes |
+| cherubim | Dionysius (Parker) | CH 12.2 | Cherubim | (first hierarchy) | Participate in higher wisdom and knowledge; the orders beneath participate partially and in a lower degree | yes |
+| angels | Dionysius (Parker) | CH 12.2 | Divisions of the Beings beneath | lower | Participate in wisdom and knowledge partially, in a lower degree | yes |
 | angels | Jerome, In ep. ad Titum | on Titus 1:2 (PL 26) | angeli | Unranked (first in list) | Orders serving God before measured time | yes |
 | thrones | Jerome, In ep. ad Titum | on Titus 1:2 (PL 26) | throni | Unranked (second in list) | Orders serving God before measured time | yes |
 | dominations | Jerome, In ep. ad Titum | on Titus 1:2 (PL 26) | dominationes | Unranked (third in list) | Orders serving God before measured time | yes |

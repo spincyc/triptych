@@ -91,6 +91,33 @@ the maintainer's 29 September 2026 direction to give an affirmative Catholic
 treatise at the appropriate levels of determination, with compact authority
 distinctions and expansive patristic exposition.
 
+## Voice and determination
+
+The maintainer restated the direction for the Claude edition on 30 September
+2026: the work is an authentic Catholic treatise and an expansive account of
+what the best patristic and saintly sources wrote about the angels, not a
+secular or skeptical review. The rules that follow from it bind every edition.
+
+- Declare each teaching at its degree of determination and move on. The
+  verb carries the degree — "the Church confesses", "Scripture teaches",
+  "the Fathers commonly hold", "Aquinas determines", "it is piously
+  believed" — and the dossier carries the grade. One compact clause is the
+  most a body paragraph spends on authority.
+- Do not write sentences about what an act is not or what the Church has
+  not decided: "not a definition", "defines nothing", "adds no grade", "no
+  magisterial act addresses", "carries weight only by", "left to theology".
+  Name an act's kind once, where it is introduced, and then state what it
+  teaches.
+- Let the Fathers and saints speak at length. A major witness receives its
+  own exposition: the argument, the exegesis, the images, and focused
+  quotations at identified loci, not a citation list.
+- Present the angels, the demons, and the Church's cult of the angels as the
+  faith presents them. Hagiography and devotional tradition are related as
+  the Church receives them ("tradition relates") and graded **Pious
+  tradition**, without debunking. Historical-critical data appear only where
+  a claim depends on them, in a sentence, with fuller treatment in the scope
+  appendix.
+
 ## Dossier contract
 
 Each treated question of the *Summa* receives exposition in prose and one

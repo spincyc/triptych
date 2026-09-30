@@ -18,7 +18,9 @@ transliteration.
 | both creatures | utramque … creaturam, spiritualem et corporalem, angelicam videlicet et mundanam | — | Lateran IV, Firmiter (DS 800); I q. 61 a. 1 | Defined simultaneity of spiritual and corporeal creation |
 | Cherubim | Cherubim | cheroubim | Ezek 10:20; Gregory, Hom. 34.9; CH 7.1 | "Fullness of knowledge" "Fulness of knowledge or stream of wisdom" |
 | circumscriptively / definitively | circumscriptive / definitive |  | I q. 52 a. 2 co. | body / angel; God neither |
+| composing and dividing | componere et dividere | — | ST I q. 58 a. 4 | Denied of angelic knowledge |
 | confirmation in good | confirmatio in bono | — | I q. 62 a. 1 | Of the nature of beatitude |
+| connatural / innate species | species connaturales (innatae) | — | ST I q. 55 a. 2 co. | Not drawn from things; received with the angelic nature |
 | consummate grace | gratia consummata | — | I q. 62 a. 2 ad 3 | Grace of the beatific conversion |
 | creating nature and bestowing grace in one act | simul … condens naturam et largiens gratiam | — | Augustine, De civ. Dei XII.9; I q. 62 a. 3 s.c. | Basis of the created-in-grace opinion |
 | definitively in place | esse in loco definitive | — | ST I q. 52 a. 1; Paris art. 219 | against circumscriptive presence |
@@ -31,6 +33,7 @@ transliteration.
 | empyrean heaven | caelum empyreum | — | I q. 61 a. 4 | Highest corporeal place, "from its splendor" (Strabus) |
 | equal-making | aequiparantia | — | Bonaventure, In II Sent. d. 5 a. 1 q. 1 | to preside subject to none |
 | essence, power, energy | essentia, potentia, operatio | ousia, dynamis, energeia | CH 11.2 | Triad behind ST I q. 54 a. 3 |
+| evening knowledge | cognitio vespertina | — | ST I q. 58 aa. 6–7 | Knowledge of things in their own nature |
 | ever mobile | semper mobilis |  | I q. 50 a. 1 arg. 2, ad 2 | Damascene's "in perpetual motion" (NPNF) |
 | existence / what is | esse / quod est; quo est |  | I q. 50 a. 2 ad 3 | Boethian composition in angels |
 | free choice | liberum arbitrium | — | I q. 59 a. 3 | "Ubicumque est intellectus, est liberum arbitrium" |
@@ -46,15 +49,24 @@ transliteration.
 | illumination | illuminatio | photismos | CH 3.2–3 | Second |
 | instant; now | instans; nunc |  | I q. 53 a. 3 co. | angelic time as succession of "nows" |
 | intellective appetite | appetitus intellectivus | — | I q. 59 a. 4 | Undivided into irascible/concupiscible; "remanet indivisus; et vocatur voluntas" |
+| intellectual / rational | intellectuales / rationales | noeros / logikos (as reported) | ST I q. 58 a. 3 | Names of the two intellectual natures; Greek not verified at locus |
 | intellectual companionship | intelligibilis societas |  | I q. 51 a. 2 ad 1 | English Dominican "intellectual companionship" |
+| intelligible outpouring | intelligibilis effluxus | — | ST I q. 55 a. 2 co. | God's concreation of the species with the angelic nature |
+| intelligible species | species intelligibiles | — | ST I q. 55 a. 2 | The angelic medium |
+| intentional existence | esse intentionale | — | ST I q. 56 a. 2 ad 3 | The mode in which one angel exists in another's intellect |
 | love of concupiscence | amor concupiscentiae | — | I q. 60 a. 3 | Love of a good to be had |
 | love of friendship | amor amicitiae | — | I q. 60 a. 3 | Wishing good to a subsisting good |
 | Lucifer | Lucifer | heosphoros | Isa 14:12 | Read of the devil under the figure of the king of Babylon (ST I q. 63 a. 5) |
 | matter in the restricted sense | materia appropriate |  | Bonaventure, *In II Sent.* d. 3 p. 1 a. 1 q. 1 ad 1 | as principle of undergoing change |
+| medium of knowing | medium cognoscendi | — | ST I q. 54 pr. | Second head (q. 55): the species, not the power |
 | merit | meritum; meritorius | — | I q. 62 a. 4 | Deserving, not producing, the supernatural end |
 | messenger (Heb.) | mal'ak | malakh | JP2, aud. 30 July 1986 | "Delegated", "ambassador", per JP2 |
 | Michael | Michael | Michael | Dan 10:13; Jude 9; Apoc 12:7 | Quis ut Deus (Gregory, Hom. 34.9) |
 | ministering spirits | spiritus administratorii | leitourgika pneumata | Heb 1:14 | "Sent to minister" |
+| mirror | speculum | — | ST I q. 56 a. 3 co.; DN 4.22 | The angelic nature as mirror of the Divine image |
+| mode of knowledge | modus cognitionis | — | ST I q. 54 pr. | Fourth head (q. 58) |
+| morning knowledge | cognitio matutina | — | ST I q. 58 aa. 6–7 | Knowledge of things in the Word |
+| mysteries of grace | mysteria gratiae | — | ST I q. 57 a. 5 | Known only by revelation in the Word |
 | natural appetite | appetitus naturalis | — | I q. 59 a. 1 | Inclination without knowledge |
 | natural love | dilectio naturalis; amor naturalis | — | I q. 60 a. 1 | "Inclinatio naturae indita ab auctore naturae" |
 | non-continuous motion | motus non continuus |  | I q. 53 a. 1 co. | whole place quitted at once |
@@ -63,14 +75,17 @@ transliteration.
 | perfection | perfectio | teleiosis | CH 3.2–3 | Third |
 | personal vs specific distinction | discretio quoad personalitatem / quoad speciem | — | Bonaventure, d. 3 p. 1 a. 2 q. 1 | his "sober and catholic" position |
 | place | locus |  | I q. 52 | the body the angel's power touches |
+| power of knowledge | virtus cognoscitiva | — | ST I q. 54 pr. | First of the four heads of the treatise on angelic knowledge |
 | Powers | Potestates | exousiai | Eph 1:21; Rom 8:38; CH 8.1 | Restrain the adverse powers (Gregory) Parker "Authorities" |
 | Principalities | Principatus | archai | Eph 1:21; Col 1:16; Rom 8:38; CH 9.1 | Preside over the good spirits (Gregory) |
 | purely spiritual creature | creatura pure spiritualis |  | I q. 50 pr. | "quae in Scriptura sacra Angelus nominatur" |
 | purification | purificatio / mundatio | katharsis | CH 3.2–3 | First of the triple law |
+| quiddity | quod quid est | — | ST I q. 57 a. 1 ad 2; q. 58 a. 4–5 | The intellect's proper object; about it, no error |
 | Raphael | Raphael | — | Tob 3:25; 12:15 | medicina Dei (Gregory) |
 | sanctifying grace | gratia gratum faciens | — | I q. 62 a. 3 | "In gratia gratum faciente creatos" |
 | Satan | Satanas | satanas | CCC 391 | "Adversary"; the fallen angel of Scripture and Tradition |
 | science | scientia | episteme | CH 3.1 | Second term |
+| secrets of hearts | cogitationes cordium | — | ST I q. 57 a. 4 | Known to God alone |
 | seminal principles | rationes seminales | — | I q. 62 a. 3 | Grace given as seed with nature |
 | sensitive appetite | appetitus sensitivus | — | I q. 59 a. 1 | Reaches particular goods only |
 | separate substance | substantia separata |  | I q. 50 a. 3 co. | Aquinas's philosophical name for angels |

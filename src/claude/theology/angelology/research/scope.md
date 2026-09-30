@@ -3,9 +3,11 @@
 ## Work identity and governing question
 
 - **Provider and collection:** Anthropic Claude (the Opus 5.5 model, run
-  through the Factory Droid agent); theology reference works.
-- **Leaf:** `theology/angelology`. No GPT edition exists or is planned by
-  this request.
+  first through the Factory Droid agent and from 2026-09-30 through Claude
+  Code); theology reference works.
+- **Leaf:** `theology/angelology`. The GPT edition at
+  `src/gpt/theology/angelology/` is an independent composition under the
+  same profile; neither edition borrows the other's prose.
 - **Genre and profile:** comprehensive theological reference;
   `guidance/theology/angelology.md` governs, under the universal standard in
   `guidance/editorial.md`. The profile was written for this work on
@@ -28,10 +30,10 @@
   hierarchy is the channel through which God's light descends to the lower
   creation. The *Celestial Hierarchy* supplies the ordering Aquinas
   receives; Gregory, Augustine, and Damascene supply much of the rest. The
-  defined core is small (existence, creation, the goodness of their created
-  nature, the fall of some by their own will); most of the treatise is common
-  teaching or the Thomist position among disputing schools, and the document
-  grades each claim accordingly.
+  Church confesses the angels' creation from nothing, the goodness of
+  their created nature, and the fall of some by their own will; the Fathers
+  and Doctors unfold the rest, and the document declares each part at its
+  own degree of determination.
 
 ## Recorded user deliverable (2026-09-29)
 
@@ -64,6 +66,18 @@ The user requested, in this order of emphasis:
 10. incremental commits pushed to `feature/droid/theology/angelology` so that
     another agent can take over.
 
+## Voice directive (2026-09-30)
+
+On resuming the work the user directed that the voice simply declare what it
+can, at different levels of determination; that it not spend sentences on
+what is or is not dogma; that the work be an expansive, in-depth account of
+what the best patristic sources wrote about the angels; and that it be an
+authentic Catholic treatise, not a secular skeptical review. The profile's
+"Voice and determination" section carries the resulting rules. The drafted
+units were revised to them, and the patristic corpus was widened to give
+the Greek and Latin Fathers before Dionysius separate sections, and to add
+a section on the saints and spiritual writers.
+
 The ledger entry `claude-angelology-2026-09-29` in
 `promised-deliverables.toml` carries these as requirements.
 
@@ -73,27 +87,29 @@ Body, in the profile's reader order:
 
 1. The angels in Sacred Scripture
 2. The faith of the Church concerning the angels
-3. The Fathers before Dionysius
-4. The *Celestial Hierarchy* — the corpus, its reception, and all fifteen
+3. The Greek Fathers before Dionysius
+4. The Latin Fathers before Dionysius, with Augustine and Cassian
+5. The *Celestial Hierarchy* — the corpus, its reception, and all fifteen
    chapters
-5. The Fathers and Doctors after Dionysius, to Peter Lombard
-6. The angelic substance (I q. 50)
-7. Bodies, place, and motion (qq. 51–53)
-8. The angelic intellect and its knowledge (qq. 54–58)
-9. The angelic will and love (qq. 59–60)
-10. Creation, grace, and glory (qq. 61–62)
-11. The fall of the angels and its punishment (qq. 63–64; *De malo* q. 16)
-12. Illumination and speech (qq. 106–107)
-13. Hierarchies and orders, good and fallen (qq. 108–109)
-14. The angels in the government of the world; their mission (qq. 110–112)
-15. The guardian angels (q. 113)
-16. The assaults of the demons (q. 114)
-17. Christ, Mary, and the angels; men and the angelic ranks
-18. Disputed questions after Aquinas
-19. The Byzantine line
-20. The angels in the liturgy
-21. Devotion and its regulation
-22. The angels and the order of the universe
+6. The Fathers and Doctors after Dionysius, to Peter Lombard
+7. The angelic substance (I q. 50)
+8. Bodies, place, and motion (qq. 51–53)
+9. The angelic intellect and its knowledge (qq. 54–58)
+10. The angelic will and love (qq. 59–60)
+11. Creation, grace, and glory (qq. 61–62)
+12. The fall of the angels and its punishment (qq. 63–64; *De malo* q. 16)
+13. Illumination and speech (qq. 106–107)
+14. Hierarchies and orders, good and fallen (qq. 108–109)
+15. The angels in the government of the world; their mission (qq. 110–112)
+16. The guardian angels (q. 113)
+17. The assaults of the demons (q. 114)
+18. Christ, Mary, and the angels; men and the angelic ranks
+19. Disputed questions after Aquinas
+20. The Byzantine line
+21. The angels in the liturgy
+22. Devotion and its regulation
+23. The saints and the holy angels
+24. The angels and the order of the universe
 
 Appendices: the nine orders; comparative orderings; the article census;
 parallels in Aquinas's other works; the *Celestial Hierarchy* in the

@@ -532,6 +532,217 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 - Rights: public domain.
 - Ceiling: Gutenberg transcription.
 
+## Intellect and knowledge (ST I qq. 54-58)
+
+### Aquinas, Summa theologiae, English
+- Witness: Thomas Aquinas, *Summa theologiae* I qq. 54–58, trans. Fathers of the English Dominican Province, 2nd rev. ed. 1920, New Advent online edition.
+- Repository ids: `work.thomas-aquinas.summa-theologiae` (existing).
+- URL: https://www.newadvent.org/summa/1054.htm … 1058.htm
+- Retrieved: 2026-09-29T12:53:56Z–12:54:02Z
+- SHA-256 of the bytes read: 1f5d59d040c4c3da01f7d56432fe17ea332fcaf39d2eafd47cdb7d23fb6816d7 (36725 bytes); 786bdc9bb69673651d57e161e7e27b07a0d6b0edde58d57748d6d8b3eaea8fe6 (53086 bytes)
+- Loci read: every article of I qq. 54–58 in full (prologues, objections, sed contra, corpus, replies) — all 23 articles.
+- Quoted: q. 54 a. 1 co., ad 1–3; a. 2 s.c., co., ad 2; a. 3 s.c., co., ad 1–2; a. 4 co., ad 2; a. 5 s.c., co.; q. 55 a. 1 s.c., co., ad 1–3; a. 2 s.c., co., ad 1–3; a. 3 s.c., co., ad 1–3; q. 56 a. 1 s.c., co., ad 1–3; a. 2 s.c., co., ad 1–4; a. 3 s.c., co., ad 1, ad 3; q. 57 a. 1 co., ad 1–3; a. 2 s.c., co., ad 2; a. 3 s.c., co., ad 2–4; a. 4 s.c., co., ad 1–3; a. 5 s.c., co., ad 1–3; q. 58 a. 1 s.c., co., ad 2; a. 2 s.c., co.; a. 3 s.c., co., ad 1–3; a. 4 s.c., co., ad 1, ad 3; a. 5 s.c., co.; a. 6 s.c., co., ad 1–3; a. 7 s.c., co., ad 1–3.
+- Rights: public domain (1920 translation); New Advent presentation.
+- Ceiling: web transcription, not collated with the 1920 print.
+
+### Aquinas, Summa theologiae, Latin
+- Witness: Thomas Aquinas, *Summa theologiae* I qq. 50–64, Leonine text as presented by Corpus Thomisticum.
+- Repository ids: `work.thomas-aquinas.summa-theologiae` (existing).
+- URL: https://www.corpusthomisticum.org/sth1050.html
+- Retrieved: 2026-09-29T12:54:32Z
+- SHA-256 of the bytes read: e2cfab53e3a057155f3e241b32c059123265ae7cfe58da04e9d7cb41f3fb0ee7 (402442 bytes)
+- Loci read: prologues of qq. 54–58; corpora and key replies of all articles of qq. 54–58.
+- Quoted: q. 54 pr. (procedendum est ad cognitionem ipsius; virtus cognoscitiva; medium cognoscendi; modus cognitionis), a. 1 co. (impossibile est quod actio Angeli … sit eius substantia), a. 3 s.c. (dividuntur in substantiam, virtutem et operationem), a. 5 co. (de viribus animae non possunt eis competere nisi intellectus et voluntas); q. 55 a. 2 co. (species intelligibiles connaturales; non sunt a rebus acceptae, sed eis connaturales; per intelligibilem effluxum); q. 56 a. 1 co. (per suam formam, quae est sua substantia, seipsum intelligat), a. 2 ad 3 (esse intentionale); q. 56 a. 3 co. (ipsa natura angelica est quoddam speculum divinam similitudinem repraesentans); q. 57 a. 3 co. (futura in seipsis; solius Dei est futura cognoscere), a. 4 co. (solus Deus cogitationes cordium et affectiones voluntatum cognoscere potest), a. 5 co. (mysteria gratiae; alia Angelorum cognitio, quae eos beatos facit); q. 58 a. 3 co. (intellectuales … rationales), a. 4 co. (componere et dividere; intelligendo quod quid est), a. 5 co. (intellectus eius quod quid est semper est verus, nisi per accidens), a. 6 co. (cognitio matutina / cognitio vespertina; post vesperam non ponitur nox, sed mane).
+- Rights: Latin text public domain; Corpus Thomisticum presentation.
+- Ceiling: web transcription of the Leonine text; not collated with print.
+
+### Aquinas, De veritate q. 8
+- Witness: Thomas Aquinas, *Quaestiones disputatae de veritate* q. 8 (De cognitione angelorum), Corpus Thomisticum.
+- Repository ids: `work.thomas-aquinas.de-veritate` (registered with this publication).
+- URL: https://www.corpusthomisticum.org/qdv08.html
+- Retrieved: 2026-09-29T12:54:50Z
+- SHA-256 of the bytes read: 9b15fb2b63b70db664ba953a6a9a1ea349d3895482cd6a6cdb872dab817a1ec3 (405187 bytes)
+- Loci read: q. 8 prologue (17 articles); corpora of aa. 9, 10, 11, 12, 13, 15, 16, 17.
+- Quoted: none verbatim in the body; summarized as parallel (a. 11 names Avicenna; a. 17 restricts morning/evening knowledge to the blessed).
+- Rights: public domain Latin.
+- Ceiling: web transcription.
+
+### Aquinas, De malo q. 16
+- Witness: Thomas Aquinas, *Quaestiones disputatae de malo* q. 16, Corpus Thomisticum.
+- Repository ids: `work.thomas-aquinas.de-malo` (registered with this publication).
+- URL: https://www.corpusthomisticum.org/qdm16.html
+- Retrieved: 2026-09-29T12:54:47Z
+- SHA-256 of the bytes read: 125185866e21f915d9d469dd101e266842cd4ab6bee62ed7d57c7ad6515dcc62 (322684 bytes)
+- Loci read: q. 16 aa. 7–8 corpora and replies (demons' knowledge of the future and of secret thoughts).
+- Quoted: a. 8 quotes of Augustine, *Retractationes* II.30 (aut difficillime potest ab hominibus, aut omnino non potest inveniri), reported in the body as quoted by Aquinas.
+- Rights: public domain Latin.
+- Ceiling: web transcription.
+
+### Aquinas, Summa contra gentiles II
+- Witness: Thomas Aquinas, *Summa contra gentiles* II cc. 91–101, Corpus Thomisticum.
+- Repository ids: `work.thomas-aquinas.summa-contra-gentiles` (registered with this publication).
+- URL: https://www.corpusthomisticum.org/scg2091.html (chunk covering cc. 91–101; the expected scg2096.html returns 404)
+- Retrieved: 2026-09-29T13:39:29Z
+- SHA-256 of the bytes read: f044d4518ba4eada9fc0ae4539741ad71cd9dfb014730e1d772cd023f952a36e (79602 bytes)
+- Loci read: cc. 96 and 97 in full; chapter titles of cc. 96–101.
+- Quoted: c. 96 (nisi forte aequivoce, on agent/possible intellect), c. 97 (separate substance's intellect semper intelligens actu).
+- Rights: public domain Latin.
+- Ceiling: web transcription.
+
+### Aquinas, De substantiis separatis
+- Witness: Thomas Aquinas, *De substantiis separatis*, Corpus Thomisticum.
+- Repository ids: `work.thomas-aquinas.de-substantiis-separatis` (registered with this publication).
+- URL: https://www.corpusthomisticum.org/ots.html
+- Retrieved: 2026-09-29T12:54:53Z
+- SHA-256 of the bytes read: 3149f5709dbec16c044723d25f009a4a43caf0d38e965f28a0972b55474c78d9 (167879 bytes)
+- Loci read: c. 13 (title and argument on the knowledge and providence of spiritual substances); cc. 19–20 (quotations of DN 4 on circular motion and of Augustine, *De Genesi ad litteram* VIII, on the motion of created spirit through time).
+- Quoted: none in the body; cited as a parallel.
+- Rights: public domain Latin.
+- Ceiling: web transcription.
+
+### Dionysius, De divinis nominibus
+- Witness: Pseudo-Dionysius, *On the Divine Names*, trans. John Parker, 1897, tertullian.org online edition.
+- Repository ids: `work.pseudo-dionysius-the-areopagite.de-divinis-nominibus` (registered with this publication).
+- URL: https://www.tertullian.org/fathers/areopagite_03_divine_names.htm
+- Retrieved: 2026-09-29T12:55:07Z
+- SHA-256 of the bytes read: 7d89093873b2ea5b8cf88e96c9066ce04907a0231523db3fa363c22039dc4295 (206269 bytes)
+- Loci read: DN 1.2; 4.5–9, 4.22–23; 7.2.
+- Quoted: DN 1.2 (altogether incomprehensible to all …); DN 4.7 (embraced the whole in one); DN 4.8 (moved circularly …); DN 4.22 (a mirror untarnished …); DN 4.23 (an irrational anger …); DN 7.2 (not in portions, or from portions …; intuitively, immaterially and uniformly).
+- Rights: public domain translation (Parker, 1897).
+- Ceiling: web transcription of Parker; Greek text not consulted.
+
+### Dionysius, De caelesti hierarchia
+- Witness: Pseudo-Dionysius, *On the Heavenly Hierarchy*, trans. John Parker, 1899, tertullian.org online edition.
+- Repository ids: `work.pseudo-dionysius-the-areopagite.de-caelesti-hierarchia` (registered with this publication).
+- URL: https://www.tertullian.org/fathers/areopagite_13_heavenly_hierarchy.htm
+- Retrieved: 2026-09-29T12:55:02Z
+- SHA-256 of the bytes read: ae7608cea7b9f874f2b8ebdabfbe9cfae8b74285fec914aeca3d87cd9089104d (114110 bytes)
+- Loci read: CH 4.2; 6.1; 7.3; 11.2; 12.2.
+- Quoted: CH 4.2 (share in the supremely Divine participation …); CH 6.1 (they know their own proper powers); CH 7.3 (questioning Jesus Himself …); CH 11.2 (distributed into three,----into essence, and power, and energy); CH 12.2 (partially … in a lower degree).
+- Rights: public domain translation (Parker, 1899).
+- Ceiling: web transcription; Greek not consulted.
+
+### Dionysius, De ecclesiastica hierarchia
+- Witness: Pseudo-Dionysius, *On the Ecclesiastical Hierarchy*, trans. John Parker, 1899, tertullian.org online edition.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://www.tertullian.org/fathers/areopagite_14_ecclesiastical_hierarchy.htm
+- Retrieved: 2026-09-29T12:55:09Z
+- SHA-256 of the bytes read: bf098b8ee8a85ecfa388d3004d389f8176f745e5bc80ff6494765a8bd281790c (152291 bytes)
+- Loci read: EH 6.6 (the heavenly orders unequal in the sacred sciences).
+- Quoted: EH 6 (all the heavenly Orders are not the same, in all the sacred sciences …).
+- Rights: public domain translation.
+- Ceiling: web transcription; Greek not consulted.
+
+### Augustine, De Genesi ad litteram
+- Witness: Augustine, *De Genesi ad litteram* libri XII, Latin, augustinus.it (Nuova Biblioteca Agostiniana text presentation).
+- Repository ids: `work.augustine.de-genesi-ad-litteram` (existing).
+- URL: https://www.augustinus.it/latino/genesi_lettera/genesi_lettera_02_libro.htm (and _04, _05, _08)
+- Retrieved: 2026-09-29T13:31:53Z–13:32:00Z
+- SHA-256 of the bytes read: f8cf26227b12b2f3c5b58dd51c7e84e5e4813c20a45175499fca7ff0a7dc2808 (55987 bytes); 17605bed34870cd80c29f10c8361ce52eeac593961d90cc4e6bb7554c3d9e529 (83034 bytes); 2d8ed3690cecec76bc5a7ce33c1fdb4e6e49e55d4250dfc66caae2b0a12cfa76 (62309 bytes); a024b5abb84bf0eb2a1f254c7262ac585f3df876ae43c478a00f609af99c7f74 (72204 bytes)
+- Loci read: II.8.16–19; IV.22.39–25.42; IV.29.46; IV.31.48; IV.32.49–50; V.19.38; VIII.20.39.
+- Quoted: II.8.16 (caetera vero quae infra sunt …; in ipsa sua conformatione cognovit …); II.8.17 (ratio qua creatura conditur …; ex quo creati sunt, ipsa Verbi aeternitate …); IV.23.40 (multum quippe interest …); IV.24.41 (non remanet angelica scientia in eo quod creatum est …); IV.29.46 (simul hoc totum possint …); IV.32 (secundum potentiam spiritalem …); V.19.38 (sic ergo fuit hoc absconditum a saeculis in Deo …); VIII.20.39 (per tempus movet conditum spiritum …).
+- Rights: Latin text public domain; augustinus.it presentation.
+- Ceiling: web transcription; not collated with CSEL 28 or CSEL 28.1 print. Numbering follows the Maurist/NBA division; the Summa's "Gen. ad lit. iv, 24" corresponds to Maurist IV.23.40, and its "iv, 22, 31" to the IV.22.39 and IV.32.49–50 region.
+
+### Augustine, De divinatione daemonum
+- Witness: Augustine, *De divinatione daemonum*, Latin, augustinus.it.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://www.augustinus.it/latino/potere_divinatorio/potere_divinatorio_libro.htm
+- Retrieved: 2026-09-29T13:32:03Z
+- SHA-256 of the bytes read: 152f2e97c16255ad64191158345f5f220e113de7e86ce1480cf38a5406e7bc4b (30665 bytes)
+- Loci read: 5.9 (demons' prevision and reading of dispositions).
+- Quoted: 5.9 (non solum voce prolatas, verum etiam cogitatione conceptas … tota facilitate perdiscunt).
+- Rights: Latin text public domain.
+- Ceiling: web transcription; not collated with CSEL 41 print.
+
+### Augustine, De diversis quaestionibus octoginta tribus
+- Witness: Augustine, *De diversis quaestionibus LXXXIII*, Latin, augustinus.it.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://www.augustinus.it/latino/ottantatre_questioni/ottantatre_questioni_libro.htm
+- Retrieved: 2026-09-29T13:31:33Z
+- SHA-256 of the bytes read: 60b9fbde7a1bb0bd7e4b28efa445f3ecc04da8459fca9407303464dd9fd68d28 (316081 bytes)
+- Loci read: q. 32 (Utrum verum possit falsum videri).
+- Quoted: q. 32 (non ergo potest quidquam intellegi nisi ut est).
+- Rights: Latin text public domain.
+- Ceiling: web transcription. The Summa cites "QQ. 83, qu. 32"; some editions number this question 31 (Renatus); augustinus.it carries it as q. 32, matching the Summa.
+
+### Augustine, De civitate Dei
+- Witness: Augustine, *City of God*, trans. Marcus Dods, NPNF 1.2 (Schaff), ccel.org.
+- Repository ids: `work.augustine.de-civitate-dei` (existing).
+- URL: https://www.ccel.org/ccel/schaff/npnf102.txt
+- Retrieved: 2026-09-29T12:55:19Z
+- SHA-256 of the bytes read: 5c973feda803f3e58a88ed7df210b42d436f5466741eb8dbeae713ab56dedae4 (3692898 bytes)
+- Loci read: XI.7; XI.29.
+- Quoted: XI.7 (the knowledge of the creature is, in comparison of the knowledge of the Creator, but a twilight …); XI.29 (a noonday knowledge … a twilight knowledge).
+- Rights: public domain translation (1871–87 NPNF).
+- Ceiling: web transcription.
+
+### John Damascene, De fide orthodoxa
+- Witness: John of Damascus, *Exposition of the Orthodox Faith* II.3, trans. Salmond, NPNF 2.9, ccel.org.
+- Repository ids: `work.john-of-damascus.de-fide-orthodoxa` (registered with this publication).
+- URL: https://www.ccel.org/ccel/schaff/npnf209.txt
+- Retrieved: 2026-09-29T12:55:27Z
+- SHA-256 of the bytes read: 859ba34cc5998f2761b801aa5de724b2ea741a54d98e21614faeb89cc40f8ad4 (2606804 bytes)
+- Loci read: II.3 (Of angels).
+- Quoted: II.3 (an intelligent essence, in perpetual motion, with free-will, incorporeal …; secondary intelligent lights …; they have no need of tongue or hearing …; They behold God according to their capacity …).
+- Rights: public domain translation.
+- Ceiling: web transcription; Greek not consulted.
+
+### Gregory the Great, Moralia in Iob
+- Witness: Gregory the Great, *Morals on the Book of Job*, vol. 2, Library of the Fathers 21 (Oxford, 1844), archive.org.
+- Repository ids: `work.gregory-the-great.moralia-in-iob` (registered with this publication).
+- URL: https://archive.org/download/21ALibraryOfFathersOfTheHolyCatholicV21/21ALibraryOfFathersOfTheHolyCatholicV21_djvu.txt
+- Retrieved: 2026-09-29T13:13:13Z
+- SHA-256 of the bytes read: f13861be5715cabe5283d5bd7f38cb35c2a1332bd6dc04cf049475b88da5c493 (1916422 bytes)
+- Loci read: Moralia XVIII, on Job 28:17 (§§77–78 in the LF paragraph division).
+- Quoted: XVIII (when the countenance of each one is marked his conscience is penetrated along with it …; as now he cannot be distinguishable to himself).
+- Rights: public domain translation (1844–50).
+- Ceiling: archive.org OCR; not collated with print.
+
+### Gregory the Great, Homiliae in Evangelia
+- Witness: Gregory the Great, *XL Homiliarum in Evangelia libri duo*, ed. Wagner, Regensburg 1892, archive.org.
+- Repository ids: `work.gregory-the-great.homiliae-in-evangelia` (existing).
+- URL: https://archive.org/download/sanctigregoriim00igoog/sanctigregoriim00igoog_djvu.txt
+- Retrieved: 2026-09-29T13:48:47Z
+- SHA-256 of the bytes read: 4eb8d78cd432816ff08b76b2549b6015fe29637307a22ee1d7ba79884d68e2f1 (701111 bytes)
+- Loci read: Homilia XXIX.2.
+- Quoted: Hom. XXIX.2 (commune esse cum lapidibus, vivere cum arboribus, sentire cum animalibus, intelligere cum angelis; Angeli autem sunt, vivunt, sentiunt, et discernunt).
+- Rights: public domain Latin (1892 edition).
+- Ceiling: archive.org OCR of the Wagner edition; not collated with CCSL 141 (Étaix).
+
+### Bonaventure, In II Sententiarum
+- Witness: Bonaventure, *Commentaria in II Sententiarum*, Opera omnia t. 2 (Quaracchi, 1885), archive.org.
+- Repository ids: `work.bonaventure.opera-omnia-quaracchi` (existing).
+- URL: https://archive.org/ (Quaracchi t. 2; cached as ia-bonaventure-qu02)
+- Retrieved: 2026-09-29T13:15:31Z
+- SHA-256 of the bytes read: da25d3f5fb7742367bfae54874c647148b1a96a8b89f2023b65d25bdce6d36dd (6785166 bytes)
+- Loci read: d. 3 p. 2 a. 2 q. 1 (whether angels know by innate species), in full.
+- Quoted: none verbatim; summarized as contrary opinion (tertia positio: innate species for all things, possible reception of new species, singulars known by composing innate species while directing the gaze upon the thing).
+- Rights: public domain (1885 edition).
+- Ceiling: archive.org OCR; not collated with print.
+
+### Douay-Rheims Bible
+- Witness: The Holy Bible, Douay-Rheims (NT 1582 / OT 1609–10), Project Gutenberg #1581.
+- Repository ids: `work.english-college-of-douay.douay-rheims-bible` (existing).
+- URL: https://www.gutenberg.org/files/1581/1581.txt (as cached)
+- Retrieved: 2026-09-29T12:58:58Z
+- SHA-256 of the bytes read: 7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007 (5880580 bytes)
+- Loci read: Gen 1:5; Ps 90[91]:11; Ps 118[119]:100; Eccles 5:5; Isa 41:23; Isa 63:1; Jer 17:9–10; Amos 3:7; Matt 18:10; 22:30; 24:36; Rom 1:19–20; 1 Cor 2:10–11; 13:12; Eph 3:10; 5:8; 1 Tim 3:16; Heb 1:14; 1 Pet 1:12; 2 Pet 1:19.
+- Quoted: Ps 90[91]:11; Eccles 5:5; Isa 41:23; Jer 17:9–10; 1 Cor 2:11; Matt 24:36; 22:30; 1 Cor 13:12 (short clauses and full verses as given in the body).
+- Rights: public domain.
+- Ceiling: web transcription of the original Douay-Rheims; not the Challoner revision.
+
+### Catechism of the Catholic Church
+- Witness: *Catechism of the Catholic Church*, 2nd ed., English, vatican.va.
+- Repository ids: `work.catholic-church.catechism` (existing).
+- URL: https://www.vatican.va/archive/ENG0015/_INDEX.HTM (as cached)
+- Retrieved: 2026-09-29T12:56:38Z (P1A)
+- SHA-256 of the bytes read: f5d0972215f47a1bc22e768aa4e51f454db80f32dcbc4e3dd52b4a40ae5254d3 (22605 bytes)
+- Loci read: CCC 328–330.
+- Quoted: CCC 330 (As purely spiritual creatures angels have intelligence and will …).
+- Rights: fair quotation of a short numbered paragraph in a reference work.
+- Ceiling: web transcription.
+
 ## Will and love; creation, grace, and glory (ST I qq. 59-62)
 
 ### Thomas Aquinas, Summa theologiae I qq. 59–62 (English)
