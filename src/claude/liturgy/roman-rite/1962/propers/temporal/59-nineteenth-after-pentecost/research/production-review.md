@@ -330,3 +330,210 @@ reached are those the scope appendix names. The formulary's early lectionary
 and station history, which Schuster reports, is not used: no claim about the
 age of the pairing of these chants with this Gospel is made in either
 direction.
+
+## Derive-synthesis
+
+Authored 30 September 2026 in `proper-study` v7, run `a27462e34ec9c09a`,
+seeded at commit `56d8c30f24bd0e42234c88c7d71c801981a9f2f9`, at
+derive-synthesis iteration 0, after the study review passed at its
+iteration 1. The stage declares effort `high`, which the harness does not
+enforce (run intervention 0000); the worker is a Claude Code harness subagent
+running as `claude-opus-5-5[1m]`. The concise companion is *The Nineteenth
+Sunday after Pentecost: A Concise Study of the Proper in the 1962 Roman
+Missal*, built from `synthesis.tex` and derived from the accepted expansive
+study of this same leaf, for the occurrence of 4 October 2026. No research
+record and no study component was edited for it. In the manifest only the
+synthesis-only `concise-apparatus` entry changed: its references now name
+`propers/verified.md` and `research/interpretations.md` beside
+`research/scope.md`, which its scope note cites.
+
+The six synthesis components were written at this stage:
+
+- `concise-inventory` (`sections/concise/01-inventory.tex`): the map of the ten
+  appointed elements in the order of the Mass, quoting the 1861 English for the
+  three orations as the study's map does, with a rubrical note: second class,
+  green, Gloria, Credo and the Trinity Preface; St Francis (third class) gives
+  way and the Mass has one oration of each kind; and, as an option, the
+  external solemnity of the Holy Rosary under RGMR 358 b and 360, whose votive
+  Masses commemorate this Sunday's orations.
+- `concise-overview` (`sections/concise/02-overview.tex`): exactly four
+  overview rows, drawn from the three readings' own senses and from
+  `research/interpretations.md` § 4.4, with each witness named beside the
+  clause he states (see STU-008 below).
+- `concise-date-location` (`sections/concise/03-date-location.tex`): the
+  Scriptural Date and Location sheet. It imports the generated chronology
+  annotations once and carries one `\chronodate` cell for each of the seven
+  appointed Scriptures, in the study's canonical order. The dates, relation
+  labels, disputed alternatives and the Gospel's unresolved narrated-event
+  state are the study's, unchanged; the explanatory rows are the study's
+  appendix rows, with the antiphon's sentence shortened.
+- `concise-themes` (`sections/concise/04-themes.tex`): *The Propers: Themes and
+  Movement*, two pages. It opens with a direct thesis (a call, and what those
+  who answer it bring), follows the formulary from *Salus populi* to
+  *inhaerere mandatis* with the verbal returns the study records
+  (*tribulatio*; *expediti*/*expediat*; *quae tua sunt*/*tuis mandatis*;
+  *dirigatur*/*dirigantur*; Ps 104:45's justifications and the Communion's;
+  *in perpetuum*/*semper*; *oculis tuae maiestatis* and the *Placeat*), the
+  Gospel's setting in Mt 21–22, and the Epistle's chapter context. It then
+  names calling, hearing and keeping as the formulary's threads and states the
+  three readings, their questions and how they relate.
+- `concise-commentary` (`sections/concise/10-commentary.tex`): *The Propers:
+  Detailed Commentary*, six cross-proper questions, each drawing on several
+  elements and setting the readings' answers beside one another. Who was
+  invited, and where the call went (Gospel vv. 1–10, Introit psalm, Alleluia,
+  Collect). The feast that now is, and the feast to come (Gospel vv. 10–11,
+  Secret). What the king looks for (Gospel vv. 11–13, Epistle). Gift or work,
+  and the Communion's answer (Gospel, Communion, Postcommunion, Alleluia's
+  psalm). The evening sacrifice (Gradual, Offertory, Introit). Many called, few
+  chosen (Gospel v. 14, Postcommunion, and each reading's anagogical end).
+- `concise-apparatus` (`sections/concise/90-apparatus.tex`): the scope note and
+  the References for the sources this companion uses.
+
+Every reading's controlling claim is preserved, and so are the shared ground
+and the relation the study's comparison states (the second supplies the
+history in which the other two take place). The disagreements are kept where
+the study carries them:
+
+- the garment as the Spirit's baptismal gift (Hilary; Irenaeus's works of
+  righteousness on which the Spirit rests) against charity that the baptized
+  may lack (Gregory, Augustine), with Chrysostom holding both, and the
+  Communion's verse as the study's answer (Augustine, Hilary, the PG 27
+  *Expositiones*);
+- the garment as charity (Gregory, Augustine) beside the garment of the new
+  man made of the precepts kept, whose new man is Christ (Jerome; Aquinas in
+  two commentaries), stated as compatible and not identical;
+- the burned city as Jerusalem (Chrysostom; Jerome, one of two) or the
+  persecutors in eternal fire (Gregory; Hilary);
+- the highways as the nations (Irenaeus, Hilary, Jerome, Chrysostom), the
+  teachings of the Gentiles (Augustine, *Quaest. ev.* I.31) or the failure of
+  worldly undertakings (Gregory), with Rabanus Maurus heading Gregory's as the
+  moral sense;
+- the servants cited clause by clause (Gregory, Chrysostom, Irenaeus, Hilary,
+  Jerome), as RES-010 asks;
+- the feast named as the Lord's Table and the Scriptures (Augustine), the
+  Word and Scripture with no altar named (Gregory), or the mysteries partaken
+  (Chrysostom), with none calling the Gospel's feast the Eucharist; Hilary's
+  wedding in the resurrection and Schuster's heavenly banquet set beside the
+  present-Church reading, which is credited to Augustine and Gregory alone;
+- the evening sacrifice as the Passion (Augustine; Bellarmine as a
+  possibility) or the works of mercy of the last age (Hilary), with the first
+  reading taking Hilary's and the third Augustine's;
+- the Offertory's Vulgate past (Augustine; Chrysostom's Greek, which reports
+  two versions with the future) against the Missal's future.
+
+The compression set aside the element-by-element section's liturgical
+commentators other than Schuster (Honorius and Sicard are not cited, and no
+other Mass is mentioned), the continuation of *The Liturgical Year*, the
+psalms' titles beyond the dossier, Augustine on Ps 104's order of praise and
+invocation, his *Sermo* 95 invitation by his ministry and *Sermo* 90, 9 on the
+enemy's death, Jerome's *homo* and *rex*, Jerome and Aquinas on the place
+given to the devil, Chrysostom on Eph 4:23–24, Bellarmine on Pss 104:1 and
+137:7, and Schuster on the Introit, Collect, Alleluia, Offertory and
+Communion beyond the *utinam*. Nothing in the concise argument turns on them,
+and the study carries each.
+
+Every quotation printed is one the reviewed study prints. This was checked
+mechanically: each quoted English span and each `\latin{}` span of the six
+components (215 spans, split at ellipses) was searched in the study's
+components, and all were found; two that the first pass did not find had been
+recapitalised at the head of a sentence and were restored to the study's form.
+No source was read afresh at this stage, and no claim, date or locus absent
+from the study was added. The References list only works the concise body
+cites; Hilary's tractate on Ps 137 is not cited (STU-010).
+
+**Substantive word count: 6,668 words** (6,146 with the content of the
+`\latin{}` spans removed). The count covers the two argumentative components:
+the themes section, 1,679 (1,581), and the commentary, 4,989 (4,565). It
+strips comments, headings, zref and running-head labels, control words and
+braces, and counts whitespace-separated tokens that carry a letter or digit.
+It excludes the map (347), the overview rows (307), the dossier sheet (607)
+and the scope note with References (1,334), counted the same way.
+
+### Standing findings the concise study meets
+
+The study review left four advisories against the study and one against the
+research record that bear on this companion; the stage edits neither owner,
+and the concise study does not carry their defects:
+
+- STU-008: the opening's colon construction is not reused. The themes state
+  that Gregory and Augustine make the garment charity, that Jerome makes it the
+  garment of the new man made of the precepts kept and names the new man
+  Christ, and that the reading finds that garment in the Epistle's acts and the
+  Communion's wish; the third reading's feast is credited to Augustine and
+  Gregory, with Chrysostom's address named as his own. The overview rows name
+  each witness beside his own clause.
+- STU-009: the Postcommunion is said to name God's healing work, and the
+  Eucharistic reading is Schuster's; the Introit's antiphon is said only to
+  stand in no verse of the Vulgate; no psalm outside the formulary is cited,
+  and the scope note states the numbering convention as the text follows it.
+- STU-010: Hilary is not cited for the Offertory's tense.
+- STU-011: `research/interpretations.md` still names Schuster a carrying
+  author of `feast-that-now-is` and keeps Honorius in `call-to-the-nations`
+  (§ 2.3, § 2.5, § 4.2). The concise study follows the reviewed study and
+  manifest: Schuster is cited for the Gradual, Secret and Postcommunion with
+  his heavenly banquet beside the present-Church claim, and Honorius is not
+  cited.
+
+### Upstream observations reported for the cold reviewer
+
+- STU-012 applies to this companion too: it prints the Challoner Douay at
+  verses whose verse-text artifacts are bound in no role, and it quotes the
+  NPNF1-8 English of *Enarr. in Ps.* 104, 1, whose binding omits that locus.
+  Both are research-owned.
+- The study review's observation stands for page 2 as for the study's
+  appendix: the chronology corpus holds no modern critical claim for Matthew or
+  Ephesians, so neither explanatory row carries one.
+- No missing argument or source was found. The study, its dossier appendix and
+  the research records answered every point the concise prose needed.
+
+### Author proof and checks
+
+`make doc DOC=liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis PROVIDER=claude`
+settles with no overfull or underfull box, no undefined reference, no LaTeX
+warning and no rerun request. The PDF has 12 physical pages, letter size,
+Latin Modern Roman and Mono only, all embedded Type 1 subsets. The document
+info carries the entrypoint's title and subject.
+
+The settled auxiliary file records the physical pages the presentation
+contract fixes: the inventory and overview markers and all four sense markers
+on page 1; chronology start and end on page 2; themes start on page 3 and end
+on page 4; commentary start on page 5.
+
+These all pass on the final sources: `scripts/_proper_study.py check … --phase
+content --edition synthesis --require-presentation --require-format
+--require-authority` with `--date 2026-10-04`; every `check-content-preflight`
+check the synthesis gate names (references-used, identifiers-resolve,
+bindings-valid, restricted-not-reproduced, relation-coverage,
+unquoted-not-quoted, structural-meta-labels, house-voice, the three chronology
+checks, and provenance-matches-run against this run's workflow, version,
+digest, run id and seed commit); `tools/check-proper-components --phase
+artifacts` for both the synthesis and the research editions; and
+`tools/check-generation-metadata`.
+
+The shared generation record carries a contribution for this stage and the
+revision timestamp `2026-09-30T20:13:53Z`. The settled concise proof is
+`build/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf`,
+SHA-256 `62ae7851118ad854bb75dcd29739ec28e5c8e0defb1024c42fcc2072bb6a3ea7`;
+its auxiliary file is SHA-256
+`e362708b1767b56d21fb519df51a33f58447aa0adbb67bfea2ef2b944d505678` and its
+log SHA-256 `a10acc019e3ae9329ae8588b60f89ef0b70b526eba0c0fb3f7504b7273e5a346`.
+The expansive study was rebuilt at the same timestamp and is unchanged at 33
+pages with a clean log, SHA-256
+`b8918eba6b4fab193a426c01402285249f9e34638f3183d56fa7deed46e57b1b`. Copies of
+both PDFs, the synthesis auxiliary file, logs, extracted text, font list,
+physical-page list, checks and their digests are kept beneath this stage's
+artifact directory in the run; the page rasters and contact sheet are in a
+child directory of their own.
+
+The author read the contact sheet of all twelve pages and the full rasters of
+pages 1, 2 and 12. Layout revision removed a spill of the Moral and Anagogical
+rows onto page 2, which had pushed the whole document to 13 pages, by
+shortening the map and overview rows; it then filled the second thematic page,
+about a third empty, from the study's own setting of the Gospel (Mt 21:23,
+43, 45; 22:15), the verses after the Epistle (Eph 4:29–32) and the offering of
+the chalice (*Ordo Missae* no. 1032), and trimmed until the section ended on
+page 4. The map and the four overview rows rule to the same measure on page 1;
+the dossier stands whole on page 2 with room below it; the themes fill pages 3
+and 4; the revision timestamp and the rights colophon share the last page with
+the References. This is an author proof inspection, not the independent visual
+evaluation, which follows the shared-timestamp three-document build.

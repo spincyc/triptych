@@ -49,13 +49,13 @@ provider = "claude"
 run_id = "a27462e34ec9c09a"
 workflow = "proper-study"
 workflow_version = 7
-stage = "study-review"
-iteration = 1
+stage = "synthesis-review"
+iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 7
-observation_count = 3
+advisory_count = 10
+observation_count = 4
 
 [[stages]]
 stage = "research-review"
@@ -80,6 +80,18 @@ standing = 0
 accepted_count = 0
 advisory_count = 5
 observation_count = 2
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 0
+disposition = "PASS"
+run_id = "a27462e34ec9c09a"
+workflow = "proper-study"
+workflow_version = 7
+standing = 0
+accepted_count = 0
+advisory_count = 3
+observation_count = 1
 
 [[advisories]]
 stage = "research-review"
@@ -137,6 +149,30 @@ location = "research/source-bindings.toml: the only Douay-Rheims binding is arti
 problem = "guidance/liturgy/roman-1962-propers.md says that research/source-bindings.toml 'declares which registered sources this publication used, in which role, at which loci'. The study prints the Challoner Douay as its scriptural English for all six scriptural elements and quotes further verses. The registered verse-text artifacts it draws on (verse-text-21-psalms-578f023d, verse-text-47-matthew-dd0ba183, verse-text-56-ephesians-10c79be0, and verse-text-61-1-timothy-1f76a59e for 1 Tim 2:8) are bound in no role. The study also quotes the NPNF1-8 English of Enarr. in Ps. 104, 1 in the Alleluia subsection of sections/10-each-element.tex and in sections/40-feast-that-now-is.tex, but that binding's loci omit Ps 104. research/review-dependencies.toml seals the whole Challoner edition directory, so change detection for review is not lost, and the gap is advisory. The source library's use and impact queries will still not list this publication for those artifacts. research/production-review.md reports both gaps as upstream research items."
 required_result = "At the next research revision, bind the Challoner verse-text artifacts the study prints or quotes, with their loci and a role such as 'study-text', and add '104.1' to the NPNF1-8 binding's loci. Validate the file with tools/source-library validate."
 
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-001"
+severity = "advisory"
+location = "sections/concise/02-overview.tex, Allegorical row, clause 'The garment is charity, which the Bridegroom himself wore (Gregory; Augustine)' (physical page 1)"
+problem = "The parenthesis credits both Fathers with the whole clause, including its reason. That reason is Gregory's: the Bridegroom himself had charity when he came to the wedding at which he joined the Church to himself (Hom. in Ev. 38, 9: 'quia hanc in se conditor noster habuit, dum ad sociandae sibi Ecclesiae nuptias venit'). Augustine, in Sermo 90 (NPNF1-6, sections 5-6 and 9), makes the garment charity, puts it on 'to do honour to the Bridegroom', 'in honour of the union', and sets the Bridegroom's prayer for his enemies before the guest as the pattern. He does not say that the Bridegroom wore the garment. The study's own allegorical sense in sections/20-wedding-garment.tex and research/interpretations.md section 1.4 give this clause to Gregory alone. The component's header comment also says that each witness is named beside the clause he states and no other. This is advisory, like STU-008 and RES-010, because Augustine holds no view contrary to the clause."
+required_result = "Cite each clause to the Father who states it. For example: 'The garment is charity (Gregory; Augustine), which the Bridegroom himself wore (Gregory), or ...'. Keep the row otherwise unchanged, so that page 1 still holds the map and exactly four sense rows."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-002"
+severity = "advisory"
+location = "sections/concise/10-commentary.tex: 'The evening sacrifice', last paragraph ('At a Mass celebrated with incense the priest says the Gradual's verse again ... (Ordo Missae, no. 1037)', page 10); 'Many called, few chosen', third paragraph ('the Gradual that the priest says again over the altar at a Mass with incense ... the Secret whose words the Placeat repeats', page 10) and last paragraph ('The Mass that began with God promising to hear his people from any tribulation ends by asking to cleave to his commandments always', page 11); compare sections/concise/04-themes.tex, the Gradual paragraph (page 3) and the Offertory-Secret and Communion-Postcommunion paragraphs (page 4)"
+problem = "The commentary restates textual observations that the Themes pages already make. The priest's saying of Ps 140:2 as he incenses the altar at the Offertory appears three times (themes page 3; commentary page 10, twice). The Secret's and the Placeat's shared 'oculis tuae maiestatis' is stated in the themes and invoked again in the commentary. The themes' closing sentence, 'The Mass that began with God promising ... ends with a prayer to hold to his commandments semper', returns almost word for word as the commentary's penultimate sentence. The three-document profile asks that the page-5 commentary 'deepen and compare the earlier movement instead of repeating it', and the document is already at its 12-page ceiling. This is advisory because each repetition is short and true and none misleads."
+required_result = "Change the commentary, not pages 3-4, whose extent is fixed. Where a reading needs an observation the Themes pages already give, refer back to it in a clause rather than restating it. For example, reduce the Ordo Missae no. 1037 sentence in 'The evening sacrifice' to the clause the third reading needs. Also rewrite the closing of 'Many called, few chosen' so that it does not repeat the themes' 'The Mass that began ...' sentence."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-003"
+severity = "advisory"
+location = "sections/concise/04-themes.tex, last paragraph ('each developed at length in the expansive study with four senses of its own', page 4); sections/concise/90-apparatus.tex, 'Relation to the expansive study' (page 11); synthesis.tex and main.tex, \\propertitle first field"
+problem = "The concise's body sends the reader to 'the expansive study'. That is a term from the production contract, and the reader has not been told what it names. The scope appendix identifies the companion only as 'The Nineteenth Sunday after Pentecost'. The concise prints the same title on its own page 1, because both entrypoints open with \\propertitle{The Nineteenth Sunday after Pentecost}{Dominica decima nona post Pentecosten}. A reader holding the concise is therefore told that the full argument is in a work carrying the title on the page in front of him. In print, only main.tex's fourth \\propertitle field distinguishes the study: 'The wedding garment, the call to the highways, and the evening sacrifice: a study of the proper in three readings'."
+required_result = "Identify the companion so that a reader can tell it from the concise. For example, call it 'the full study' in the body. In the scope appendix, name it by its distinguishing subtitle, or by its catalogue label 'Full PDF'. Leave the extent of pages 3-4 unchanged."
+
 [[observations]]
 stage = "research-review"
 location = "tools/commentary-work-index, recorded example: discover --passage 'John 3:16' --max-results 3 (replayed by scripts/replay_examples.py under make check-examples)"
@@ -151,3 +187,8 @@ note = "Still true after iteration 1. guidance/liturgy/roman-1962-propers.md req
 stage = "study-review"
 location = "sections/00-opening.tex, the three '<witnesses> carry it: <thesis>' sentences (lines 66-82)"
 note = "This one sentence form in the opening has now produced a blocking finding (STU-003, iteration 0) and an advisory (STU-008). guidance/liturgy/propers-three-documents.md says how a reading's carrying authors are chosen and recorded, but not how an opening or concise overview may name them beside the reading's thesis without implying that they hold all of it. That missing sentence is a candidate for the profile or the author-study fragment."
+
+[[observations]]
+stage = "synthesis-review"
+location = "sections/concise/02-overview.tex, Allegorical row; evaluations/blocking-findings-v1.toml, RES-010 and STU-008"
+note = "This is the third finding in this run where a joint parenthesis or colon construction credits a second Father with the first Father's distinctive clause: RES-010 in interpretations.md, STU-008 in the study opening, and SYN-001 on the concise page 1. It is the missing profile or fragment criterion that the study-review observation already named. No gate can see how far a clause-level attribution reaches."
