@@ -11010,6 +11010,10 @@
    "editions": [
     {
      "authorization": "perpetual-public-repository-2026",
+     "basis": "page-size-ceiling",
+     "blocking_constructs": [
+      "single-page-length"
+     ],
      "contributions": [
       {
        "model": "Opus 5.5",
@@ -11022,7 +11026,7 @@
        "runtime": "Anthropic Claude Code agent and its Opus 5.5 subagents (research, drafting, revision, typesetting, review); Claude Code CLI 2.1.285; unexposed: server revision"
       }
      ],
-     "eligibility": "eligible",
+     "eligibility": "conditional",
      "models": [
       "Opus 5.5",
       "claude-opus-5-5[1m]"
@@ -11030,13 +11034,13 @@
      "pages": 369,
      "pdf": "pdf/claude/theology/angelology.pdf",
      "provider": "claude",
-     "reviewed": "2026-09-29",
+     "rationale": "The treatise runs to about 290,000 words; its reviewed single-page rendering is about 2.1 MB, over the site's 1 MB per-page ceiling (PREVIEW_DOCUMENT_LIMIT in tools/public-alpha), so the reader waits on a multi-page web edition. The conversion, reviewed against the PDF on 2026-09-30, stays reproducible from the sources with tools/web-edition.",
+     "reviewed": "2026-09-30",
      "revised": "2026-09-30T19:11:32Z",
      "status": "alpha",
      "subject": "A Thomistic reference on the angels following Summa theologiae I qq. 50-64 and 106-114, with a chapter-by-chapter exposition of the Celestial Hierarchy and the patristic, magisterial, and liturgical witness",
      "title": "The Angels: Nature, Knowledge, Will, Fall, Order, and Ministry",
-     "title_source": "src/claude/theology/angelology/main.tex",
-     "web": "web/claude/theology/angelology.html"
+     "title_source": "src/claude/theology/angelology/main.tex"
     },
     {
      "authorization": "perpetual-public-repository-2026",

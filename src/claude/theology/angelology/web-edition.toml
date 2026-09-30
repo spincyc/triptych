@@ -2,6 +2,8 @@ schema = 1
 record_type = "web-edition"
 document = "theology/angelology"
 
-eligibility = "eligible"
-blocking_constructs = []
-reviewed = "2026-09-29"
+eligibility = "conditional"
+basis = "page-size-ceiling"
+blocking_constructs = ["single-page-length"]
+rationale = "The treatise runs to about 290,000 words; its reviewed single-page rendering is about 2.1 MB, over the site's 1 MB per-page ceiling (PREVIEW_DOCUMENT_LIMIT in tools/public-alpha), so the reader waits on a multi-page web edition. The conversion, reviewed against the PDF on 2026-09-30, stays reproducible from the sources with tools/web-edition."
+reviewed = "2026-09-30"

@@ -74,7 +74,7 @@ of the best patristic sources as an authentic Catholic treatise. The
 profile's "Voice and determination" section and the leaf's scope record
 that directive.
 
-**Complete on the feature branch; not merged or deployed.** The Claude
+**Published as a PDF; the web edition is blocked.** The Claude
 edition, *The Angels: Nature, Knowledge, Will, Fall, Order, and Ministry*,
 is a 369-page treatise in 25 sections and 15 appendices: Scripture and the
 faith of the Church; the writings before Christ (Septuagint, Enoch,
@@ -89,14 +89,16 @@ saints. The leaf's
 records four visual-review passes over every page, the web-edition review,
 the artifact hashes, the gates, and the evidence ceilings; its
 [production plan](src/claude/theology/angelology/research/production-plan.md)
-records how each appendix is maintained. The reviewed PDF is installed
-locally, the web edition is installed at `web/claude/theology/angelology.md`,
-the Faith catalog row links both editions under their exact titles, and the
-release record is `alpha` under the standing authorization. The web
-converter now letters references to appendices, which also corrected one
-line in each of two other tracked editions. Commits are pushed to
-`origin/feature/droid/theology/angelology`; merging to `main` (and so
-deployment) awaits the maintainer.
+records how each appendix is maintained. The reviewed PDF is installed,
+the Faith catalog row links the Claude PDF beside the GPT edition, and the
+release record is `alpha` under the standing authorization. The reviewed
+web edition cannot be installed: its single page is about 2.1 MB, over the
+site's 1 MB per-page ceiling, so `web-edition.toml` declares it
+`conditional` on a multi-page reader, and the requirement
+`angelology-web-catalog-release` stays blocked until that reader exists or
+the maintainer waives it. The web converter now letters references to
+appendices, which also corrected one line in each of two other tracked
+editions. On 2026-09-30 the maintainer directed the work pushed to `main`.
 
 ## GPT postconciliar Twenty-seventh Sunday, 2026-09-28
 

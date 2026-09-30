@@ -46,7 +46,7 @@ state = "complete"
 id = "claude-angelology-2026-09-29"
 owner = "PROJECT-WORK.md"
 promise = "Produce the Claude reference `theology/angelology`: a document on the angels following the systematic teaching of Aquinas (ST I qq. 50-64 and 106-114), with a chapter-by-chapter exposition of the Celestial Hierarchy, an expanded patristic, magisterial, liturgical, and school corpus, and ample appendices of tables and hierarchies; carried through the full pipeline to a reviewed PDF, web edition, catalog row, and release record, with incremental commits pushed to feature/droid/theology/angelology. On 2026-09-30 the maintainer added a declarative voice at each degree of determination, an expansive patristic account as an authentic Catholic treatise, and research into continuity between the Fathers and pre-Christian writings."
-state = "complete"
+state = "in_progress"
 
   [[deliverables.requirements]]
   id = "angelology-profile"
@@ -111,8 +111,14 @@ state = "complete"
   [[deliverables.requirements]]
   id = "angelology-web-catalog-release"
   criterion = "The reviewed web edition is installed at web/claude/theology/angelology.md, library/faith.md carries the catalog row, and release/publications/claude/theology/angelology.json exists."
+  status = "blocked"
+  evidence = ["src/claude/theology/angelology/web-edition.toml", "src/claude/theology/angelology/research/production-review.md"]
+
+  [[deliverables.requirements]]
+  id = "angelology-catalog-release"
+  criterion = "library/faith.md links the Claude edition's PDF under its exact title and release/publications/claude/theology/angelology.json is alpha."
   status = "pass"
-  evidence = ["web/claude/theology/angelology.md", "library/faith.md", "release/publications/claude/theology/angelology.json"]
+  evidence = ["library/faith.md", "release/publications/claude/theology/angelology.json"]
   check = "contains"
   path = "library/faith.md"
   needle = "[The Angels: Nature, Knowledge, Will, Fall, Order, and Ministry](../pdf/claude/theology/angelology.pdf)"

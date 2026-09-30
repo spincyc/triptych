@@ -97,18 +97,25 @@ for word, the rest differing only by the two faults below.
 
 After both fixes no numbered appendix reference and no raw label remains,
 and `make check-web-editions-current` regenerates every tracked edition of
-both providers byte-identically. Installed web edition SHA-256:
+both providers byte-identically. The reviewed conversion's SHA-256 was
 `23c29b69f321a0275d68548c6e88d20262a9a75acc252cc47a8b90d47e680a39`.
+
+It is not installed. Its single-page HTML rendering is about 2.1 MB, over
+the site's 1 MB per-page ceiling, which `tools/public-alpha verify` enforces
+so that every page can raise a link preview. The leaf's `web-edition.toml`
+therefore declares the edition `conditional` on a multi-page reader, and the
+Faith catalog links the Claude edition's PDF alone.
 
 ## Gates
 
 `make check-sources`, `make check-metadata PROVIDER=claude`,
 `make check-web-editions PROVIDER=claude`, `make check-document-catalogue`,
 `make check-web-editions-current`, and `tools/release-bindings status`
-(exact) pass. The release record `release/publications/claude/theology/angelology.json`
+(exact) pass, and after the edition was withdrawn `make public-site` and
+`tools/public-alpha verify --deployment-target github-pages` pass. The
+release record `release/publications/claude/theology/angelology.json`
 is `alpha` under the standing public-alpha authorization, and the Faith
-catalog's angelology row links both editions under their exact titles. The
-work is on the feature branch; nothing was merged to `main` or deployed.
+catalog's angelology row links both editions under their exact titles.
 
 ## Evidence ceilings carried forward
 
