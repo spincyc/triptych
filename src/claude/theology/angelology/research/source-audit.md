@@ -3855,6 +3855,271 @@ Ceiling: web transcription.
 - Quoted: none in body (Ecclus 10:15 is cited through Augustine's quotation; the Douay verse verified).
 - Rights: public domain.
 
+## Liturgy, devotion and its regulation, calendar, names
+
+General normalizations in all Latin quotations (not otherwise noted): æ/œ ligatures resolved to ae/oe; accents and diaeresis (Mame, Tours printings: é, Michaël) dropped; long s (PL 25) printed as s; chant syllable hyphens removed (Rituale 1872 In paradisum; 1920 Exsultet). Spelling, j/i, capitals and punctuation otherwise as printed. English quotations exactly as printed, except that `o'ertheazure` etc. were read on the page image.
+
+### Missale Romanum, typical edition of 1920 (Internet Archive scan)
+- Witness: Missale Romanum, editio typica Vaticana 1920 (scan of a 1951–54 body / post-1970 appendix printing; see repository artifact record).
+- Repository ids: `edition.catholic-church.missale-romanum.vatican-typica-1920` (existing).
+- URL: https://archive.org/download/MissaleRomanumBenedettoXV/Missale%20Romanum%20Benedetto%20XV_djvu.txt
+- Retrieved: 2026-09-30
+- SHA-256 of the bytes read: aa6461961702b5cbae51460a7385f7a982c6f5a2649822d0bb8d5f13b6b387e0 (2918085 bytes)
+- Loci read: kalendarium (24 Mar, 8 May, 29 Sept, 2 Oct, 24 Oct); proper headings 8 May and 29 Sept; Sabbato Sancto litany and Exsultet (Benedictio Cerei, p. 233); Canon (Supplices, pp. 338–339); Missae pro defunctis, Offertory.
+- Quoted: Supplices (to "majestatis tuae … repleamur"); Exsultet opening; Holy Saturday litany invocations of angels; Requiem Offertory.
+- Rights: underlying 1920 typical edition and older text public domain (US, pre-1931; 17 USC 103(b)); only pre-1920 matter quoted, per the artifact record's own list of quotable parts.
+- Ceiling: OCR text layer only; not collated with a page image. The kalendarium line for 29 Sept reads "duplex II classis" while the proper heading reads "Duplex I classis" (see Open issues).
+
+### Missale Romanum, Tours: Mame, 1922 (editio quarta iuxta typicam Vaticanam)
+- Repository ids: `edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam` (existing).
+- URL: https://archive.org/download/missaleromanum0000unse/missaleromanum0000unse_djvu.txt
+- Retrieved: 2026-09-30
+- SHA-256 of the bytes read: e30d731cefbc25b1c806e49365c9cdb0fc54ad4a36ee08e7d544f2f024bbc9f6 (2393514 bytes)
+- Loci read: kalendarium (March, May [OCR scrambled], September, October); pp. 552–554 (S. Gabrielis); pp. 592–593 (8 May); pp. 725–729 (29 Sept; 2 Oct); pp. 741–743 (S. Raphaelis).
+- Quoted: collects of 24 Mar and 24 Oct; Secret and Postcommunion clauses of 24 Mar, 8 May/29 Sept, 2 Oct, 24 Oct; Alleluia verses; rubric "Missa Benedicite, ut in die 8 Maji … praeter ritum".
+- Rights: public domain (US, published 1922).
+- Ceiling: OCR only; accents dropped; not page-image collated.
+
+### Missale Romanum 1962 (CMAA facsimile)
+- Repository ids: none registered; the entry cites the edition directly.
+- Retrieved: local copy (GPT scratch); extracted with pdftotext -layout to work/missale62.txt on 2026-09-30.
+- Loci read: kalendarium (March, May, Sept, Oct); pp. 493, 670–672, 695; appendix Missae pro aliquibus locis p. [161] (page image, PDF p. 969).
+- Quoted: only the rubric at p. [161] ("Eodem die 8 maii. In Apparitione S. Michaelis Archangeli. Missa Benedicite, ut in Missali, die 29 septembris").
+- Rights: 1962 edition not cleared for reproduction; used for facts (dates, ranks, structure) and one short rubric quotation. All other Latin of these Masses quoted from 1920/1922/1898 witnesses.
+- Ceiling: text layer + one page image.
+
+### Repository calendar indexes
+- Witness: src/sources/calendars/roman-1962/propers.yaml; postconciliar/propers.yaml; roman-pre-1955/propers.yaml and rubrics.yaml (read-only).
+- Repository ids: none registered; the entry cites the edition directly.
+- Loci read: 1962 entries 1962-03-24, 1962-09-29, 1962-10-02, 1962-10-24; postconciliar pc-09-29 (OLM n. 647), pc-10-02 (OLM n. 650), and absence of angel entries on 03-24, 05-08, 10-24 (10-24 is St Anthony Mary Claret); pre-1955 header (structural projection from 1962; no angel departures).
+- Quoted: none (ranks and reading assignments only).
+- Rights: facts.
+- Ceiling: the pre-1955 index inherits from 1962 uncollated, so pre-1955 ranks were read in the 1920/1922 Missals and the 1898 Breviary instead.
+
+### Cummiskey, The Roman Missal … for the use of the laity (Philadelphia, 1861)
+- Repository ids: `edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861` (existing).
+- URL: repository TSVs (transcribed from IA romanmissaltran00churgoog page images).
+- Retrieved: repository tracked artifacts (2026-08-20).
+- Loci read: pp. xvi–xix, xxiv–xxv, xxviii–xxxii, xxxvii–xxxviii.
+- Quoted: Gloria incipit (Latin/English), Confiteor (abridged), incense prayer, Common Preface, Trinity/Nativity/Pentecost clauses, Sanctus, Supplices (English).
+- Rights: public domain (US).
+- Ceiling: repository transcriptions from page images (verified by that lane); the book's Latin is a lay missal's, not the altar book.
+
+### Cummiskey, The Roman Missal … (Philadelphia, 1843)
+- Repository ids: `edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1843` (existing).
+- Loci read: pp. 666–670 (Michaelmas; Guardian Angels), Holy Saturday blessing of the candle (p. 302/303), Masses for the Dead offertory.
+- Quoted: Alleluia verses of Michaelmas (English); "Let now the heavenly troop of angels rejoice"; Requiem Offertory English clause.
+- Rights: public domain.
+- Ceiling: OCR only (noisy); only clean phrases quoted.
+
+### Breviarium Romanum (Tours: Mame, 1898), Pars autumnalis and Pars verna
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/breviariumromanu18984cath/breviariumromanu18984cath_djvu.txt (autumnalis); https://archive.org/download/breviariumromanu21898cath/breviariumromanu21898cath_djvu.txt (verna)
+- Retrieved: 2026-09-30
+- SHA-256 of the bytes read: c61dd243e5b6c69a9c753d6c9d66da0bb34c726c2e74e027f64f17938240d5a0 (2529391 bytes)
+- Loci read: Autumn pp. 151 (Compline collect), 378–385 (29 Sept), 397–403 (2 Oct); Spring pp. 568–573 (8 May). Page images read: Autumn pp. 381 (leaf 426), 383–385 (leaves 428–430), 387, 399–401 (leaves 444–446), 404.
+- Quoted: Compline collect; Te splendor (stanzas 2–3); Christe sanctorum (stanzas 2–4); collect Deus qui miro ordine; Gregory lesson iv (nine orders); Jerome lesson ix sentence; Lauds antiphon 5; Magnificat antiphon Princeps gloriosissime; responsory titles; Custodes hominum stanza 1; Lauds hymn lines; collect of 2 Oct; Bernard lesson v; Hilary lesson ix; 8 May lessons iv–vi (iv entire; phrases of v–vi).
+- Rights: public domain (1898).
+- Ceiling: OCR plus page images of the Michaelmas and Guardian Angels leaves; Spring volume OCR only.
+
+### The Roman Breviary, translated by John, Marquess of Bute (Edinburgh: Blackwood, 1908), vols II and IV
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/romanbreviary04unknuoft/romanbreviary04unknuoft_djvu.txt; https://archive.org/download/theromanbreviary02unknuoft/theromanbreviary02unknuoft_djvu.txt
+- Retrieved: 2026-09-30
+- SHA-256 of the bytes read: cd9ea44377988ffc25d458795aed7b1782ec1e001dd5136a416494f002234f8f (2991278 bytes)
+- Loci read: IV kalendar; pp. 209–210 (Compline), 591–600 (Michaelmas), 613–619 (Guardian Angels), 684–686 (St Raphael); II kalendar, pp. 866–871 (8 May).
+- Quoted: English of the Compline collect, Michaelmas martyrology, invitatory, Gregory lessons iv–vi, Jerome lesson ix, Lauds antiphon, Copeland's Lauds hymn, collect, Magnificat antiphon, Caswall's Custodes hominum and Lauds hymn lines, Bernard lessons iv–vi, Hilary lesson ix, Guardian Angels collect, 8 May lessons iv–vi, Raphael lesson vi.
+- Rights: public domain (US, 1908; translator d. 1900; hymn translators Neale, Copeland, Caswall d. before 1885).
+- Ceiling: OCR only; clean passages. Bute renders "in summo circo" (8 May, lesson vi) as "on Hadrian's Mole"; the body quotes the Latin and names Bute's rendering.
+
+### Rituale Romanum (Ratisbon: Pustet, 1872)
+- Repository ids: `edition.catholic-church.rituale-romanum.latin-ratisbon-1872` (existing).
+- URL: https://archive.org/download/ritualeromanumpa00cath_0/ritualeromanumpa00cath_0_djvu.txt
+- Retrieved: 2026-09-30
+- SHA-256 of the bytes read: 412f153295e3bc62c35938cdf26c1101ea9d1ccc570bb3f814fc8c4b93c1622d (905571 bytes)
+- Loci read: Ordo commendationis animae pp. 115–116; In exspiratione pp. 131–132; Exsequiarum ordo p. 141.
+- Quoted: Proficiscere (to "Prophetarum"), "splendidus Angelorum coetus occurrat", Subvenite, In paradisum.
+- Rights: public domain.
+- Ceiling: OCR only.
+
+### A Manual of Prayers for the Use of the Catholic Laity (New York, 1889)
+- Repository ids: `edition.third-plenary-council-of-baltimore.manual-of-prayers.new-york-catholic-publication-society-1889` (existing).
+- URL: https://archive.org/download/manualofprayersf00wood/manualofprayersf00wood_djvu.txt
+- Retrieved: 2026-09-30
+- SHA-256 of the bytes read: eada18d4949720fcef1f031d067136c3dba908d2d3142c62f15bcfe54fc0c33f (1379047 bytes)
+- Loci read: pp. 531–532 (page images leaves n538–n539), 583–584.
+- Quoted: English of the Subvenite and In paradisum.
+- Rights: public domain (US; 1888 copyright expired).
+- Ceiling: Subvenite page-image verified; In paradisum OCR only.
+
+### The Raccolta, trans. Ambrose St John (London: Burns & Oates, 1910)
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/theraccoltaorcol00unknuoft/theraccoltaorcol00unknuoft_djvu.txt
+- Retrieved: 2026-09-30
+- SHA-256 of the bytes read: 5d6f8c594e1266b941020c510dd8e71d778655833c495f5b3268866fea138e85 (728786 bytes)
+- Loci read: nn. 182 (pp. 150–152), 289–297 (pp. 259–267). Page images: pp. 151–152, 259–263, 266–267.
+- Quoted: Angelus V/R and collect clause; Te splendor English stanzas; Princeps gloriosissime and collect (English); Angelical Crown (salutations, antiphon, versicle, collect clause); n. 292 opening and closing clauses; n. 293 antiphon; n. 295 prayer to St Raphael (entire); n. 296 Angele Dei (Latin, English, rhymed).
+- Rights: public domain (1910).
+- Ceiling: page-image verified for every quoted passage.
+
+### Collectio precum piorumque operum (Typis Polyglottis Vaticanis, 1929)
+- Repository ids: `work.apostolic-penitentiary.enchiridion-indulgentiarum` (existing).
+- URL: https://archive.org/download/precesetpiaopera0000vari_c6f1/precesetpiaopera0000vari_c6f1_djvu.txt
+- Retrieved: 2026-09-30
+- SHA-256 of the bytes read: 085be3683d33e8a80b3fcd8adc36a30e215f8bd76eca7417eaf6d7e4f1896c76 (419403 bytes)
+- Loci read: n. 331, pp. 327–328 (page image leaf n343), p. 329 (leaf n344).
+- Quoted: Latin of the prayer to St Michael after Low Mass; indulgence note (S. Rituum C., 6 Ian. 1884 et 24 Nov. 1915).
+- Rights: public domain in the US (published 1929; US term expired 1 Jan 2025).
+- Ceiling: page-image verified.
+
+### Key of Heaven (Baltimore: J. Murphy, 1901)
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/KeyOfHeaven/KeyOfHeaven_djvu.txt
+- Retrieved: 2026-09-30
+- SHA-256 of the bytes read: d7c06c2714928a4e4d4319d957b451bf72c75f8f56097bbabe30af7bc737ac52 (473013 bytes)
+- Loci read: pp. 138–141 (page images leaves n151–n153).
+- Quoted: heading, prayer "O God, our refuge" clause, English prayer to St Michael, indulgence line.
+- Rights: public domain (1901).
+- Ceiling: page-image verified.
+
+### Jacobus de Voragine, The Golden Legend, Caxton's English ed. F. S. Ellis (Temple Classics, London: Dent, 1900), vol. V
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/goldenlegendorli05jaco/goldenlegendorli05jaco_djvu.txt
+- Retrieved: 2026-09-30
+- SHA-256 of the bytes read: 5b206a6715b1d484be64f48203f450292acb66cb1d4f9393e69db32ceaf0b1ec (535024 bytes)
+- Loci read: "The Feast of S. Michael", pp. 180–186.
+- Quoted: Gargano (Michael's words), Tumba (second apparition), tide miracle, Gregory's vision over Hadrian's mausoleum.
+- Rights: public domain (Caxton 1483; Ellis ed. 1900).
+- Ceiling: OCR only. The Latin (Graesse 1846) fetch failed (HTTP 500); English only.
+
+### Sacramentarium Leonianum, ed. C. L. Feltoe (Cambridge, 1896)
+- Repository ids: `edition.catholic-church.sacramentarium-veronense.feltoe-1896` (existing).
+- URL: https://archive.org/download/sacramentariumle00cath/sacramentariumle00cath_djvu.txt
+- Retrieved: 2026-09-30
+- SHA-256 of the bytes read: 7e7e82fe4e8990ec557a914b6ec768c99e174623f8acba606654280845cad21b (672888 bytes)
+- Loci read: pp. 106–108 (XXVI Prid. Kal. Oct., N[atale] basilicae Angeli in Salaria) and editor's notes p. 106.
+- Quoted: Preface "Vere dignum … ministrorum"; clause "quae etsi humano generi … intuitu"; Secret clause; Postcommunion clause.
+- Rights: public domain (ancient text; 1896 edition).
+- Ceiling: OCR; abbreviated words (Dne) avoided in quotations.
+
+### Gregorian Sacramentary, ed. H. A. Wilson (HBS, 1915)
+- Repository ids: `edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915` (existing).
+- URL: https://archive.org/download/gregoriansacrame00cath/gregoriansacrame00cath_djvu.txt
+- Retrieved: 2026-09-30
+- SHA-256 of the bytes read: 3613cce6277a9d68a9554457c590affef959023675170d1abc4d8b28ebd76a20 (979250 bytes)
+- Loci read: III Kal. Oct., Dedicatio basilicae sancti Angeli, pp. 105–106.
+- Quoted: none verbatim beyond the heading words; collect identity, Secret and Postcommunion reading "quos honore prosequimur" reported.
+- Rights: public domain.
+- Ceiling: OCR.
+
+### Gelasian Sacramentary, ed. H. A. Wilson (1894)
+- Repository ids: `edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894` (existing).
+- URL: https://archive.org/download/gelasiansacrame00wilsgoog/gelasiansacrame00wilsgoog_djvu.txt
+- Retrieved: 2026-09-30
+- SHA-256 of the bytes read: 039123ca029bf1684b2e8b0dec014cc3fa9057ecb30da3494f7165cb89684d84 (1098845 bytes)
+- Loci read: Book II, "Orationes in Sancti Archangeli Michaelis, iii Kal. Octobres" (p. 200); appendix Gerbert list.
+- Quoted: none (read as control).
+- Rights: public domain. Ceiling: OCR.
+
+### Gregory the Great, Homiliae in Evangelia 34
+- Repository ids: `work.gregory-the-great.homiliae-in-evangelia` (existing).
+- URL: https://la.wikisource.org/w/index.php?title=Homiliarum_in_Evangelia/XXXIV&action=raw
+- Retrieved: 2026-09-30 (shared cache)
+- SHA-256 of the bytes read: dfd661ab607de8517fed4ffabddea2bdb80da2591230cb5b9a73efc62d56147f (35028 bytes)
+- Loci read: 34.7–34.11.
+- Quoted: 34.8 ("angelorum vocabulum…", "sed cum ad nos…"); 34.9 (names; "quia nullus potest…"; "qui se ad Dei similitudinem…"; "quia ad Dei similitudinem…"); 34.10 (Seraphim, Powers clause); 34.11 ("distinctae namque conversationes…", "quorum cor in igne…"). Lessons iv–vi also read in the Breviary and in Bute.
+- Rights: public domain. Ceiling: Wikisource transcription of PL 76; not collated with Migne page.
+
+### Gregory the Great, Dialogues IV (English 1608, ed. E. G. Gardner, 1911)
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://www.tertullian.org/fathers/gregory_04_dialogues_book4.htm
+- Retrieved: 2026-09-30 (shared cache)
+- SHA-256 of the bytes read: c0fcbac5f0d6cbf6a192398f793368cf85d2e26253db4a40d0edd116c43698b1 (202560 bytes)
+- Loci read: IV.58. Quoted: IV.58 ("for what right believing Christian … invisible?").
+- Rights: public domain. Ceiling: web transcription; p. 256 from the transcription's page marker.
+
+### Jerome, Commentarii in Danielem (PL 25)
+- Repository ids: `work.jerome.commentaria-in-danielem` (existing).
+- URL: https://archive.org/download/bim_early-english-books-1641-1700_patrologiae-cursus-completus-_1845_25/…_djvu.txt
+- SHA-256 of the bytes read: 116c5a253abdc00fd0882e5e102d38d9266b263e4096d0b720b062194cbb4bb9 (4968383 bytes)
+- Loci read: on Dan 8:16–17. Quoted: "fortitudo, vel robustus Dei"; "qui praepositus est praeliis"; "Raphael mittitur"; "curatio; vel medicina Dei"; "Michael dirigitur, qui interpretatur quis sicut Deus".
+- Rights: public domain. Ceiling: OCR (long s); column number not established.
+
+### Jerome, Hilary, Bernard as read in the Breviary
+- Jerome, In Matth. III on 18:10 (work.jerome.commentariorum-in-evangelium-matthaei); Hilary, In Matth. on c. 18 (NEW work.hilary-of-poitiers.commentarius-in-matthaeum); Bernard, Sermon on Ps 90 "Qui habitat" (NEW work.bernard-of-clairvaux.sermones-super-psalmum-qui-habitat). Read and quoted only as the Roman Breviary 1898 prints them (lessons) and in Bute's English; not read at their own editions. Aquinas's s.c. citation of Jerome (I q.113 a.5) read.
+
+### Isidore, Etymologiae VII.5
+- Repository ids: `work.isidore.etymologiae` (existing).
+- URL: https://www.thelatinlibrary.com/isidore/7.shtml; Retrieved 2026-09-29; Cache text/ll-isidore-etym07.txt
+- Loci read: VII.5.1–33. Quoted: VII.5.2, 5.15 ("Vriel interpretatur…"), 5.19 clause.
+- Rights: public domain. Ceiling: web transcription.
+
+### Origen, De principiis I.5.5 (trans. Crombie, ANF 4)
+- Repository ids: `work.origen.de-principiis` (existing).
+- SHA-256 of the bytes read: b9f385a048c18158c2f74dcd37062f48a1c68a5d05bdb07270a93692d172da2e (4237225 bytes)
+
+### Cyril of Jerusalem, Catechetical Lecture 23 (Mystagogical 5).6 (Gifford, NPNF II.7)
+- Repository ids: `work.cyril-of-jerusalem.catechetical-lectures` (existing).
+- SHA-256 of the bytes read: 56d84cfa94dee313af0139e2d7f3d4b5f7fffca40ce0f34794b5f56264964dfd (3388014 bytes)
+
+### Thomas Aquinas, Summa theologiae (English Dominican 1920, New Advent)
+- Repository ids: `work.thomas-aquinas.summa-theologiae` (existing).
+- URL: https://www.newadvent.org/summa/4083.htm (fetched 2026-09-30); 1111, 1113 (cache 2026-09-29)
+- Loci read: III q.83 a.4 (co., obj. 9, ad 9); I q.111 a.1 co.; I q.113 a.5.
+- Quoted: III q.83 a.4 co. (Gloria; Sanctus); ad 9 (entire reply, abridged); ad 9 on missa; I q.111 a.1 co. (two phrases).
+- Rights: public domain. Ceiling: New Advent presentation.
+
+### Council of Laodicea, canon 35 (trans. Percival, NPNF II.14)
+- Repository ids: `edition.council-of-laodicea.canons.english-percival-npnf2-14-1900-ccel-pdf-2018` (existing).
+- SHA-256 of the bytes read: 5b8d0c6518fd71b1de8d626ebf1d6b59c9967d2e7f5d2e0379654b5cbbf0c914 (2570287 bytes)
+
+### Roman synod of 745 (MGH Concilia II/1, ed. A. Werminghoff, 1906)
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/conciliaaevikaro2pt1werm/conciliaaevikaro2pt1werm_djvu.txt (shared cache, 2026-09-29)
+- Loci read: no. 5, Concilium Romanum a. 745, pp. 37–44 (page images pp. 42–44).
+- Quoted: Aldebert's invocation (p. 42); the bishops' verdict (p. 43); "sub obtentu angelorum demonum nomina introduxit" (p. 43).
+- Rights: public domain. Ceiling: page-image verified.
+
+### Admonitio generalis 789, c. 16 (MGH Capitularia I, ed. A. Boretius, 1883)
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/capitulariaregum01bore/capitulariaregum01bore_djvu.txt; Retrieved 2026-09-30; Cache text/ia-mgh-capitularia-01-boretius-1883-djvu.txt
+- Loci read: Admonitio generalis cc. 12–18, p. 55. Quoted: c. 16 clause.
+- Rights: public domain. Ceiling: OCR ("nco", "auctoritato" read as nec, auctoritate by context).
+
+### Directory on Popular Piety and the Liturgy (CDWDS, 17 Dec 2001), English (vatican.va)
+- Repository ids: `work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.directory-on-popular-piety-2001` (registered with this publication).
+- SHA-256 of the bytes read: a9d30018f650a6854f3f13d3691a068a6519c2ebdb8d1fc9a2418ad13b90ed38 (531807 bytes)
+- Rights: Holy See copyright; short quotations with attribution (brief). Note: 215 prints "spirts" (sic) — that clause is not quoted.
+
+### CDF, Decretum de doctrina et usibus particularibus consociationis "Opus Angelorum" (6 June 1992)
+- Repository ids: none registered; the entry cites the edition directly.
+- SHA-256 of the bytes read: 81d6d107d271c5220db4dad98bfa8be8f22032d6e91d90490f5c9b64865f1d9b (7696 bytes)
+- Rights: Holy See; short quotation. Ceiling: vatican.va HTML; AAS not seen.
+
+### Catechism of the Catholic Church (English, vatican.va)
+- Repository ids: `work.catholic-church.catechism` (existing).
+
+### Douay–Rheims (Challoner; Gutenberg 1581) and Douay 1610 appendix
+- Repository ids: `work.english-college-of-douay.douay-rheims-bible` (existing).
+- SHA-256 of the bytes read: 7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007 (5880580 bytes)
+- Rights: public domain. Ceiling: Gutenberg transcription.
+
+### R. H. Charles, The Book of Enoch (1917), ch. 20
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.sacred-texts.com/bib/boe/boe023.htm; cache text/st-boe023.txt (2026-09-30). Quoted: "names of the holy angels who watch"; the seven names listed. Rights: public domain (US). Ceiling: web transcription.
+
+### Guéranger, The Liturgical Year, Time after Pentecost V (English, Stanbrook)
+- Repository ids: `work.prosper-gueranger.the-liturgical-year` (existing); `edition.prosper-gueranger.the-liturgical-year.english-volume-14` (existing).
+- URL: https://archive.org/download/liturgicalyear00gugoog/liturgicalyear00gugoog_djvu.txt; Retrieved 2026-09-30; Cache text/ia-gueranger-lit-year-v14-1903-djvu.txt
+- Loci read: September 29; October 2. Quoted: none (paraphrase only: Paul V 1608, Clement X 1670; Chonae 6 Sept, synaxis 8 Nov).
+- Rights: public domain. Ceiling: OCR.
+
+### Negative or unused retrievals
+- Acta Sanctae Sedis 18 (1885–86) and 19 (1886–87) (IA actasanctaesedis0018iose, 0019iose): searched for the 1886 Michael prayer; not found in OCR.
+- Collectio caeremoniarum et precum (Rome 1912): no Leonine prayer.
+- Legenda aurea, Graesse 1846: HTTP 500.
+- Guéranger Paschal Time III (1909): fetched, not used.
+
 ## The saints and the holy angels
 
 ### Bonaventure, Legenda maior (Life of Saint Francis), English

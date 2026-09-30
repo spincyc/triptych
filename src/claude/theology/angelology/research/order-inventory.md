@@ -359,6 +359,17 @@ only when its locus was read at the source.
 | angels | Dionysius | *CH* 9.2 (Parker) | Angels | 9 | Concerned with the things of the world; with Principalities and Archangels presides over human hierarchies | yes |
 | angels | Bernard | *De consideratione* V.4.8 (Lewis) | Angels | 9 | Believed given as guardians of individual men | yes |
 | angels | Suárez | *De angelis* VI.18.6 | Angeli infimi ordinis | 9 | Particular guardianship of single men | yes (OCR) |
+| seraphim | Raccolta 1910, Angelical Crown | n. 291, p. 261 | Seraphim | 1 | "the fire of his perfect charity" | yes (page image) |
+| cherubim | Raccolta 1910, Angelical Crown | n. 291, p. 261 | Cherubim | 2 | "abandon the ways of sin, and follow the path of Christian perfection" | yes |
+| thrones | Raccolta 1910, Angelical Crown | n. 291, p. 262 | Thrones | 3 | "a true and earnest spirit of humility" | yes |
+| dominations | Raccolta 1910, Angelical Crown | n. 291, p. 262 | Dominations | 4 | "dominion over our senses" | yes |
+| powers | Raccolta 1910, Angelical Crown | n. 291, p. 262 | Powers | 5 | "from the wiles and temptations of the devil" | yes |
+| virtues | Raccolta 1910, Angelical Crown | n. 291, p. 262 | Virtues | 6 | "keep us from falling into temptations" | yes |
+| principalities | Raccolta 1910, Angelical Crown | n. 291, p. 262 | Principalities | 7 | "true and hearty obedience" | yes |
+| archangels | Raccolta 1910, Angelical Crown | n. 291, p. 262 | Archangels | 8 | "perseverance in the faith" | yes |
+| angels | Raccolta 1910, Angelical Crown | n. 291, p. 263 | Angels | 9 | "protect us during life, and after death may lead us into … glory" | yes |
+| angels | Rituale Romanum 1872, Proficiscere | pp. 115–116 | Angeli | unranked (pairs) | invoked in pairs: Angeli et Archangeli; Throni et Dominationes; Principatus et Potestates; Cherubim et Seraphim (no Virtutes) | yes (OCR) |
+| (all) | Roman Breviary 1898, 29 Sept Lauds ant. 5 | p. 384 | Angeli, Archangeli, Throni et Dominationes, Principatus et Potestates, Virtutes caelorum | unranked | bidden to praise the Lord | yes (page image) |
 | seraphim | Bonaventure, *Serm. de sanctis, De sanctis Angelis* 1 | Opera IX 612–613 | seraphicus ordo / Seraphim | 1 | answers to the sweetness of the Holy Spirit; burning charity; "principatum tenent" in the first hierarchy | yes (OCR) |
 | cherubim | Bonaventure, *De sanctis Angelis* 1 | Opera IX 611–613 | Cherubim | 2 | answers to the Son; fulness of wisdom/knowledge | yes (OCR) |
 | thrones | Bonaventure, *De sanctis Angelis* 1 | Opera IX 610–613 | Throni | 3 | answer to the power of the Father; God gives his judgments in them | yes (OCR) |

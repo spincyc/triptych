@@ -28,8 +28,10 @@ transliteration.
 | angel who reigns with him | Angelus conregnans | — | ST I q. 113 a. 4 | after the way |
 | Angelic Doctor | Doctor Angelicus | — | *Studiorum Ducem*; Prümmer prol. | Pius XI adds "Communis seu universalis" |
 | Angelic Warfare | Militia Angelica | — | *Studiorum Ducem* | confraternity for chastity under St Thomas |
+| Angelical Crown (chaplet of St Michael) | — | — | Raccolta n. 291 |  |
 | angels | angeli | angeloi | CH 9.2 |  |
 | angels of the presence | — | — | Jub 1:27; 2:2; T. Levi 3 | Highest class in Jubilees and T. Levi |
+| Apparition of St Michael | In Apparitione S. Michaelis Archangeli | — | MR 1920, 8 May | Bute: "Manifestation" |
 | application of power | applicatio virtutis |  | I q. 52 a. 1 co.; a. 2 co. | ground of angelic place |
 | archangel | archangelus | — | *Enchir.* 58; *De civ. Dei* XXII.30 | ranked above angels only in XXII.30 |
 | Archangels | Archangeli | archangeloi | Jude 9; 1 Thess 4:15 [4:16]; CH 9.2 | summi nuntii |
@@ -70,6 +72,7 @@ transliteration.
 | daemon / demon | daemon | daimon; daimonion | Plato, *Cratylus* 398b–c; Augustine, *De civ. Dei* IX.19–20 | Neutral or honorific among the Greeks; Christian usage reserves "demon" to the fallen (Augustine IX.19; Origen *C. Cels.* V.5). Body keeps "daemon" for the philosophers' beings and "demon" for the Fathers'. |
 | dark air | caliginosus aer | — | I q. 64 a. 4 co. | NA "darksome atmosphere" |
 | day-knowledge ("noonday knowledge", NPNF) | diurna cognitio | — | *De civ. Dei* XI.29 | knowledge of things in the Word; Aquinas's `cognitio matutina` |
+| Dedication of St Michael (Michaelmas) | In Dedicatione S. Michaelis Archangeli | — | MR 1920/1962, 29 Sept | Gregorian: Dedicatio basilicae sancti Angeli; Leonine: natale basilicae Angeli in Salaria |
 | definitively in place | esse in loco definitive | — | ST I q. 52 a. 1; Paris art. 219 | against circumscriptive presence |
 | delegated | delegatus | — | Jerome, *In Matth.* III |  |
 | demon | daemon | daimonion | DS 800; *De civ. Dei* IX.19–20 | Fallen angel never used in Scripture of good spirits; from knowledge |
@@ -79,6 +82,7 @@ transliteration.
 | devil | diabolus | diabolos | DS 800; CCC 2851; Chrysostom, Power of Demons hom. 2.2 | Created good, evil by his own act "Throws himself across"; "the slanderer" |
 | Dominations | Dominationes | kyriotetes | Col 1:16; Eph 1:21; CH 8.1; ST I q. 108 aa. 5-6; CH 8.1 (Parker "Lordships") | Direct the lower orders Parker "Lordships" |
 | dominations | dominationes; "dominari ... subjectos quosque possidere" | -- | Hom. 34.10; Etym. VII.5.20 | Gregory: above principalities and powers; Isidore: above virtues and principalities |
+| double of the first/second class | duplex I/II classis | — | MR 1920 (Mame); BR 1898 | 1962: I/II/III classis |
 | efficacious / inefficacious volition | volitio efficax / inefficax (complacentiae) | — | Scotus, Ord. II d. 6 q. 1 | complacency may will the impossible |
 | efficient / deficient cause | causa efficiens / deficiens | — | *De civ. Dei* XII.6–7 | the evil will has no efficient cause |
 | effluence | — | — | Eusebius *Praep. ev.* XIII.15 | Platonic derivation of rational natures, corrected to creation from nothing. |
@@ -99,6 +103,7 @@ transliteration.
 | exercise (of the evil angel) | exercitium | — | Lombard, *Sent.* II d. 11 c. 1 | "ad custodiam ... ad exercitium" |
 | existence / what is | esse / quod est; quo est |  | I q. 50 a. 2 ad 3 | Boethian composition in angels |
 | familiars | familiares | — | Bernard, *Qui habitat* 12.10 |  |
+| feast; memorial | festum; memoria | — | postconciliar calendar | ranks as the repository index prints them |
 | fellow citizens (of angels and men) | cives; socii | -- | Hom. in Evang. 8.2; Bede, In Luc. I (PL 92, 333) | Christmas reconciliation of angels and men |
 | first-born angel | — | angelos protogonos | Tatian, Or. 7 (ANF note [441]) | The angel who fell first; Greek from the American editor's note |
 | first-born princes of the angels (seven) | — | not verified | Clement, Strom. VI.16 | Greek not read |
@@ -114,6 +119,7 @@ transliteration.
 | gnostic (perfect Christian) | — | gnostikos | Clement, Strom. VII | Clement's term for the perfect believer |
 | good angel / evil angel | — | — | Ignatius, Rules for the Second Week 3–7 (Mullan) | "angel of light" (2 Cor 11:14) |
 | grappin | — | — | O'Meara ch. 9 | Vianney's name for the devil |
+| greater double | duplex majus | — | pre-1955 kalendaria | Bute: "Greater Double" |
 | ground of presence | ratio essendi in loco | — | Paris art. 219 gloss; Cajetan on I q. 52 a. 1 | the gloss: substance is not the ratio |
 | guard of our life | — | phylax t\=es z\=o\=es | Basil, *Hom. in Ps.* 33.5 |  |
 | guard, keeping | custodia | — | Hilary 134.17; Jerome, In Matth. III | *in custodiam sui angelum delegatum* |
@@ -134,6 +140,7 @@ transliteration.
 | hierarchy | hierarchia | hierarchia | CH 3.1 | "sacred order and science and operation"; the word appears first in this corpus |
 | hierarchy | hierarchia (= sacer principatus) | hierarchia | Bonaventure, *De sanctis Angelis* 5 | supercelestial / celestial / subcelestial |
 | hierarchy (sacred principality) | hierarchia; sacer principatus | hierarchia (hieron + archon) | CH 3.1; ST I q. 108 a. 1 co.; In II Sent. d. 9 q. 1 a. 1 co. | Defined by order, science, action, likeness to God |
+| Holy Guardian Angels | Ss. Angeli Custodes | — | MR 1920/1962, 2 Oct | postconciliar Memorial |
 | honour of love, not servitude | `caritate, non servitute` | — | *De vera religione* 55.110 | the honour due to the angels |
 | illumination | illuminatio | photismos | CH 3.2–3 | Second |
 | incorporeal | — | asomaton | Origen, De princ. preface 8 | Origen discusses the term |
@@ -155,6 +162,7 @@ transliteration.
 | love of concupiscence | amor concupiscentiae | — | I q. 60 a. 3 | Love of a good to be had |
 | love of friendship | amor amicitiae | — | I q. 60 a. 3 | Wishing good to a subsisting good |
 | Lucifer | Lucifer | heosphoros | Isa 14:12 | Read of the devil under the figure of the king of Babylon (ST I q. 63 a. 5) |
+| Masses for particular places | Missae pro aliquibus locis | — | MR 1962 appendix | 8 May in 1962 |
 | matter in the restricted sense | materia appropriate |  | Bonaventure, *In II Sent.* d. 3 p. 1 a. 1 q. 1 ad 1 | as principle of undergoing change |
 | mediator | mediator | — | Augustine *De civ. Dei* IX.15 | Christ the one Mediator against the demons' mediation. |
 | Mediator (angelic) | mediator | — | T. Dan 6; 1 Tim 2:5; ST III q.26 a.1 ad 2 | Aquinas: angels mediate "ministerially and dispositively" |
@@ -174,7 +182,7 @@ transliteration.
 | morning | mane | — | *De Gen. ad litt.* IV.22.39, IV.30.47 | the turning of evening knowledge to praise |
 | morning knowledge | cognitio matutina | — | ST I q. 58 aa. 6–7 | Knowledge of things in the Word |
 | mysteries of grace | mysteria gratiae | — | ST I q. 57 a. 5 | Known only by revelation in the Word |
-| name of office, not of nature | nomen officii, non naturae | — | Gregory, Hom. 34.8; Isidore VII.5.2; In II Sent. d. 9 q. 1 a. 4 ad 2 | Aquinas: nature-name as manifestative, office-name as exterior ministry |
+| name of office, not of nature | nomen officii, non naturae | — | Gregory, Hom. 34.8; Isidore VII.5.2; In II Sent. d. 9 q. 1 a. 4 ad 2; Gregory Hom. 34.8; Isidore VII.5.2 | Aquinas: nature-name as manifestative, office-name as exterior ministry |
 | natural appetite | appetitus naturalis | — | I q. 59 a. 1 | Inclination without knowledge |
 | natural love | dilectio naturalis; amor naturalis | — | I q. 60 a. 1 | "Inclinatio naturae indita ab auctore naturae" |
 | nescience | nescientia | — | ST I q. 106 a. 2 ad 1 | The only terminus a quo of angelic learning |
@@ -201,10 +209,12 @@ transliteration.
 | powers (order) | potestates | -- | Hom. 34.10; Etym. VII.5.18 | restrain the "virtutes adversae" (ST I q. 109 a. 4 s.c.) |
 | powers (preface) | Dominationes | — | Origen, De princ. preface 2 (note [1919]) | Crombie renders Dominationes as "powers" here |
 | powers of the air | aereae potestates | -- | Hom. 34.9; Etym. VII.5.11; Bede, In Luc. I | overthrown by Christ announced by Gabriel |
+| prayers after Low Mass | preces post privatae Missae celebrationem | — | Collectio 1929 n. 331 | "Leonine prayers" |
 | precedence, prelacy | praelatio | — | ST I q. 109 aa. 2, 4 |  |
 | presidency (of the angels over bodies) | praesidentia | — | ST I q. 110 pr. | Aquinas's term for the angels' rule over the corporeal creature |
 | pride | superbia | — | I q. 63 a. 2 co. | `non subdi superiori in eo quo debet` |
 | pride | superbia (`amor excellentiae propriae`) | — | *De Gen. ad litt.* XI.14.18 | precedes envy |
+| prince of the heavenly host | princeps militiae caelestis / Angelorum | — | Leonine prayer; BR resp. |  |
 | Principalities | Principatus | archai | Eph 1:21; Col 1:16; Rom 8:38; CH 9.1; ST I q. 108 a. 5 ad 3; CH 9.1 | Preside over the good spirits (Gregory) principari = to be first among others (Gregory 34.10) |
 | principalities | principatus; "principari est inter reliquos priorem existere" | -- | Hom. 34.10; Etym. VII.5.19 | preside over good spirits (ST I q. 108 a. 5 ad 3) |
 | private compacts; public justice | `privati contractus`; `publica iustitia` | — | *De div. qq. 83* q. 79.4 | magicians' wonders vs saints' |
@@ -244,6 +254,7 @@ transliteration.
 | spirits and humours | spiritus et humores | — | ST I q. 111 aa. 3–4 | Bodily means by which imagination and sense are moved |
 | spiritual matter | materia (large sumpta) in spiritualibus | — | Bonaventure, In II Sent. d. 3 p. 1 a. 1 q. 1 | "matter" taken broadly as every constitutive potency |
 | spiritual substance, a body of its own kind | substantia spiritalis … corporis alicuius, sui tamen generis | — | Tertullian, De carne Christi 6.9 | Tertullian's own view; contrast *ST* I q. 50 a. 1 |
+| standard-bearer | signifer | — | Requiem Offertory; Te splendor | "salutis signifer" |
 | stewards and tutors | actores et tutores | — | Bernard, *Qui habitat* 12.7 | Gal 4:2 |
 | stronger nature | natura potior | — | Hilary, Tract. in Ps. 134.17 | the angels relative to man |
 | subsisting form | forma subsistens |  | I q. 50 a. 2 ad 3; a. 5 co. | form existing without matter |
@@ -271,6 +282,7 @@ transliteration.
 | universal matter | materia universalis |  | I q. 50 a. 2 co.; *De sub. sep.* c. 5 | Avicebron |
 | upper, middle, lower classes of a city | optimates; populus honorabilis; vilis populus | — | ST I q. 108 a. 2 co. | English Dominican "nobles, middle-class, common people" |
 | vestibule of God | in vestibulis Dei | — | ST I q. 108 a. 1 co.; CH 7.2 (Parker "Its very vestibule") | First hierarchy |
+| Vice-Roy of Paradise | praepositus paradisi | — | BR 29 Sept | Bute's rendering |
 | virtual contact | contactus virtutis |  | I q. 53 a. 1 co. | English Dominican "virtual contact" |
 | virtual quantity | quantitas virtualis |  | I q. 52 a. 1 co. | contrasted with dimensive quantity |
 | Virtues | Virtutes | dynameis | Eph 1:21; 1 Pet 3:22; CH 8.1; ST I q. 108 a. 5 ad 1; CH 8.1 (Parker "Powers") | Channel of miracles (Gregory) Parker "Powers" — collision with powers/potestates Also common name of all the heavenly spirits |
