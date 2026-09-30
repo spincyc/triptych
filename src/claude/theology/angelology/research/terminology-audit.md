@@ -9,6 +9,7 @@ transliteration.
 | --- | --- | --- | --- | --- |
 | accuser | criminator | diabolos | Lactantius, Div. inst. II.8.6 | ANF "accuser" |
 | added / cooperating grace | gratia apposita / gratia cooperans | — | Lombard, Sent. II d. 5 cc. 1, 3–4 | never given to those who fell |
+| advantage | commodum | — | Anselm, De casu diaboli 4, 12–14 | The object of the will for happiness; happiness is made of advantages (c. 4) |
 | adverse powers | virtutes adversae | — | Gregory, Hom. 34.10 | Restrained by the order of Powers |
 | aeon | aevum | aion | *De sanctis Angelis* 5 | angelic duration between eternity and time |
 | aevum | aevum | — | I q. 61 a. 2 (cf. In II Sent. d. 2 q. 1 a. 1) | Angelic duration between time and eternity |
@@ -38,8 +39,10 @@ transliteration.
 | assault | impugnatio | — | ST I q. 114 pr., a. 1 | Distinguished from its ordering (ordo impugnationis) |
 | assumed body | corpus assumptum |  | I q. 51 a. 2 s.c., ad 2 | united as a represented mover |
 | at once from the beginning of time | simul ab initio temporis | — | DS 800; DS 3002 | the disputed particle of Firmiter |
+| Authorities (Parker) = Powers | potestates | exousiai | Dionysius, CH 8.1 | Parker's English |
 | Averter | Apopompaeus | — | Origen, De princ. III.2.1 (Lev 16:8) | Read; not used in final body |
 | beginning of the ways of God | principium viarum Dei | -- | Moralia XXXII.23.47 (LF "chief of the ways of God"); Sent. I.10.4 | Job 40:14[19] (Douay "beginning of the ways of God") |
+| beyond measure | extra mensuram | — | Hugh, De sacr. I.5.26 | Where the evil of the angelic sin lies |
 | birthday of impatience | natales inpatientiae | — | Tertullian, De pat. 5.5 |  |
 | both creatures | utramque … creaturam, spiritualem et corporalem, angelicam videlicet et mundanam | — | Lateran IV, Firmiter (DS 800); I q. 61 a. 1 | Defined simultaneity of spiritual and corporeal creation |
 | bound / loosed | ligari / solvi | — | De pot. q. 6 a. 5 | Demons hindered from, or permitted, what their nature reaches |
@@ -63,10 +66,13 @@ transliteration.
 | completively / dispositively | completive / dispositive | — | ST I q. 108 a. 4 co. | Grace / nature in the distinction of orders |
 | composing and dividing | componere et dividere | — | ST I q. 58 a. 4 | Denied of angelic knowledge |
 | comprehensor | comprehensor | — | ST I q. 113 a. 4 ad 1 | of Christ's soul |
+| comrade | contubernalis | — | Bernard, De consid. V.5.12 | The angel is in the soul as comrade, God as life |
 | confirmation in good | confirmatio in bono | — | I q. 62 a. 1 | Of the nature of beatitude |
 | connatural / innate species | species connaturales (innatae) | — | ST I q. 55 a. 2 co. | Not drawn from things; received with the angelic nature |
 | consummate grace | gratia consummata | — | I q. 62 a. 2 ad 3 | Grace of the beatific conversion |
 | conversion (turning toward) | conversio | — | ST I q. 106 a. 1 co. | Spiritual analogue of local nearness |
+| conversion / aversion | conversio / aversio | — | Hugh, De sacr. I.5.23–24; Lombard, Sent. II d. 5 c. 1 | The division of the angels by the will's turning |
+| cooperating grace | gratia cooperans | — | Hugh, De sacr. I.5.24; Lombard, Sent. II d. 5 cc. 3–4 | Given to those who turned; its absence left the fallen |
 | creating nature and bestowing grace in one act | simul … condens naturam et largiens gratiam | — | Augustine, De civ. Dei XII.9; I q. 62 a. 3 s.c. | Basis of the created-in-grace opinion |
 | daemon / angel | daemon / angelus | daim\=on / angelos | Philo, De gig. 6; De somn. I.141 | Philo identifies; the Fathers keep the office-name, the Church rejects identity of souls and angels |
 | daemon / demon | daemon | daimon; daimonion | Plato, *Cratylus* 398b–c; Augustine, *De civ. Dei* IX.19–20 | Neutral or honorific among the Greeks; Christian usage reserves "demon" to the fallen (Augustine IX.19; Origen *C. Cels.* V.5). Body keeps "daemon" for the philosophers' beings and "demon" for the Fathers'. |
@@ -102,6 +108,7 @@ transliteration.
 | evil of punishment | malum poenae | — | I q. 63 pr.; q. 64 | The subject of q. 64 |
 | exercise (of the evil angel) | exercitium | — | Lombard, *Sent.* II d. 11 c. 1 | "ad custodiam ... ad exercitium" |
 | existence / what is | esse / quod est; quo est |  | I q. 50 a. 2 ad 3 | Boethian composition in angels |
+| familiar friends | familiares (angelos) | — | Bernard, In Ps. Qui habitat 12.10 | "Habetote familiares angelos" |
 | familiars | familiares | — | Bernard, *Qui habitat* 12.10 |  |
 | feast; memorial | festum; memoria | — | postconciliar calendar | ranks as the repository index prints them |
 | fellow citizens (of angels and men) | cives; socii | -- | Hom. in Evang. 8.2; Bede, In Luc. I (PL 92, 333) | Christmas reconciliation of angels and men |
@@ -155,10 +162,12 @@ transliteration.
 | intercession (of angels) | intercessio | — | Hilary, Tract. in Ps. 129.7 | needed by our weakness, not by God |
 | interior word; word of the heart | verbum interius; verbum cordis | — | ST I q. 107 a. 1 co.; In II Sent. d. 11 q. 2 a. 3 |  |
 | interpreter, messenger | interpres, salutiger | — | Apuleius *De deo Socr.* 6; Plutarch *De def.* 13; Porphyry *De abst.* II.38 ("transporters") | Symposium's office of the daemonic. |
+| justice | iustitia (PL: justitia) | — | Anselm, De casu diaboli 4, 9, 14–16 | Rectitude of will; its absence where due is injustice (c. 16) |
 | knowing (etymology of daemon) | peritus, rerum scius | daemones / daemonas | *Cratylus* 398b (Jowett "daemones (knowing or wise)"); Lactantius II.14.6; Isidore VIII.11.15; Augustine IX.20; Aquinas *De sub. sep.* 20 | Chain of one etymology. |
 | laws of the angels | leges angelorum | — | Hilary, Tract. in Ps. 118 Vau 8 |  |
 | Lent of Saint Michael | Quadragesima ad honorem sancti Archangeli Michaelis | — | Bonaventure, *Leg. maior* XIII.1; Quaracchi note to IX.3 | forty days from the Assumption to 29 Sept. |
 | Little Genesis | parva Genesis | ta I\=ob\=elaia / Lept\=e Genesis | Jerome, Ep. 78; Epiphanius, Pan. 39.6.1 | Names of Jubilees |
+| Lordships (Parker) = Dominations | dominationes | kyriotetes | Dionysius, CH 8.1; appendix 02 | Parker's English |
 | love of concupiscence | amor concupiscentiae | — | I q. 60 a. 3 | Love of a good to be had |
 | love of friendship | amor amicitiae | — | I q. 60 a. 3 | Wishing good to a subsisting good |
 | Lucifer | Lucifer | heosphoros | Isa 14:12 | Read of the devil under the figure of the king of Babylon (ST I q. 63 a. 5) |
@@ -193,25 +202,32 @@ transliteration.
 | offices | officia | — | Origen, De princ. I.5.1 (note [2023]) | "rational offices and orders" |
 | operation | operatio | energeia | CH 3.1 | Third term |
 | order | ordo | taxis | CH 3.1 | First term of the definition |
+| order (angelic) | ordo | taxis | Lombard, Sent. II d. 9 c. 2 | "multitudo caelestium spirituum, qui inter se in aliquo munere gratiae similantur" |
 | order (grade) / order (ordering) | ordo | taxis | ST I q. 108 a. 2 ad 1 | Twofold sense |
+| orderer (of evil wills) | ordinator | — | Hugh, De sacr. I.5.27 | God orders wicked wills; he does not create them |
 | outward (external) ministry | exterius ministerium | — | ST I q. 112 aa. 2, 4 | Action by divine command on bodies |
 | particular / universal guardianship | custodia particularis / universalis | — | ST I q. 113 a. 3 |  |
 | perfecting | perfectio | teleiosis | ST I q. 106 a. 2 ad 1; De ver. q. 9 a. 3 | Consummation in known truth |
 | perfection | perfectio | teleiosis | CH 3.2–3 | Third |
+| perseverance | perseverantia | — | Anselm, De casu diaboli 2–4 | Received by the good angel; not received by the devil because he would not |
 | personal vs specific distinction | discretio quoad personalitatem / quoad speciem | — | Bonaventure, d. 3 p. 1 a. 2 q. 1 | his "sober and catholic" position |
 | place | locus |  | I q. 52 | the body the angel's power touches |
 | place of punishment | locus poenalis | — | I q. 64 a. 4 co. | `duplex locus poenalis` |
 | plan of government / execution | ratio gubernationis / executio | — | ST I q. 103 a. 6 | God holds the plan immediately; executes partly through creatures |
 | Plani (a kind of demon) | Plani | planoi | Cassian, Conl. VII.32 | NPNF note: "seducers"; some MSS *Fauni* |
+| power in acting; readiness in ministering; clearness in knowing; unchangeableness after choice | virtuositas; officiositas; perspicacitas; immutabilitas | — | Bonaventure, Brev. II.6.2 | The four companions of the four attributes |
 | power of knowledge | virtus cognoscitiva | — | ST I q. 54 pr. | First of the four heads of the treatise on angelic knowledge |
+| power of strength, dominion, administration | potestas virtutis, dominationis, administrationis | — | Hugh, De sacr. I.5.13 | The angels' threefold power |
 | Powers | Potestates | exousiai | Eph 1:21; Rom 8:38; CH 8.1; ST I q. 108 a. 5 ad 3; CH 8.1 (Parker "Authorities") | Restrain the adverse powers (Gregory) Parker "Authorities" |
 | Powers (of God) | Virtutes (Dei) | — | Jerome, Ep. 18.17 | generic for angels here |
 | powers (order) | potestates | -- | Hom. 34.10; Etym. VII.5.18 | restrain the "virtutes adversae" (ST I q. 109 a. 4 s.c.) |
+| Powers (Parker) = Virtues | virtutes | dynameis | Dionysius, CH 8.1 | Parker's English; source of confusion with Powers |
 | powers (preface) | Dominationes | — | Origen, De princ. preface 2 (note [1919]) | Crombie renders Dominationes as "powers" here |
 | powers of the air | aereae potestates | -- | Hom. 34.9; Etym. VII.5.11; Bede, In Luc. I | overthrown by Christ announced by Gabriel |
 | prayers after Low Mass | preces post privatae Missae celebrationem | — | Collectio 1929 n. 331 | "Leonine prayers" |
 | precedence, prelacy | praelatio | — | ST I q. 109 aa. 2, 4 |  |
 | presidency (of the angels over bodies) | praesidentia | — | ST I q. 110 pr. | Aquinas's term for the angels' rule over the corporeal creature |
+| presumption; ambition | praesumptio (praesumendo); ambitio (ambiendo) | — | Bonaventure, Brev. II.7.3 | Lucifer made himself his own principle and highest good |
 | pride | superbia | — | I q. 63 a. 2 co. | `non subdi superiori in eo quo debet` |
 | pride | superbia (`amor excellentiae propriae`) | — | *De Gen. ad litt.* XI.14.18 | precedes envy |
 | prince of the heavenly host | princeps militiae caelestis / Angelorum | — | Leonine prayer; BR resp. |  |
@@ -225,11 +241,14 @@ transliteration.
 | purification | purificatio / mundatio | katharsis | CH 3.2–3 | First of the triple law |
 | quiddity | quod quid est | — | ST I q. 57 a. 1 ad 2; q. 58 a. 4–5 | The intellect's proper object; about it, no error |
 | ramparts of the angels | angelorum munitiones | — | Hilary, Tract. in Ps. 124.5 |  |
+| rank, host (in vision) | acies | — | Hildegard, Scivias I.6 | The choirs seen in concentric ranks |
 | Raphael | Raphael | — | Tob 3:25; 12:15 | medicina Dei (Gregory) |
 | rational animal (of the angel) | rationale animal | -- | Hom. in Evang. 10.1 | metaphorical per ST I q. 51 a. 1 ad 2 |
 | religion; piety | religio; pietas | threskeia; eusebeia, theosebeia | *De civ. Dei* X.1 | ambiguities of the Latin words |
 | report (as angels) | — | diangellousi | Philo, De somn. I.141 | Philo's etymology of the office-name |
 | resistance of the will | renisus voluntatis | — | I q. 64 a. 3 co. | Sorrow as a simple act of will |
+| reverence, devotion, confidence | reverentia, devotio, fiducia | — | Bernard, In Ps. Qui habitat 12.6 | For the angel's presence, goodwill, and guardianship; Melleray renders devotio "gratitude" |
+| Rulers (Salmond) = Principalities | principatus | archai | Damascene, De fide orth. II.3 | Salmond's English |
 | sanctifying grace | gratia gratum faciens | — | I q. 62 a. 3 | "In gratia gratum faciente creatos" |
 | Satan | Satanas | satanas | CCC 391 | "Adversary"; the fallen angel of Scripture and Tradition |
 | Satanas | — | — | Justin, Dial. 103; Irenaeus, Adv. haer. V.21.2 | "Sata" apostate + "Nas" serpent (Justin); "Satan signifies an apostate" (Irenaeus) |
@@ -252,6 +271,7 @@ transliteration.
 | spirit (name of nature) | spiritus | — | *Enarr. in Ps.* 103, s. 1.15 | what the angels are |
 | spirit about matter | — | — | Athenagoras, Leg. 24; Methodius via Photius | The devil's original charge |
 | spirits and humours | spiritus et humores | — | ST I q. 111 aa. 3–4 | Bodily means by which imagination and sense are moved |
+| spiritual fire | spiritualis ignis | — | Honorius, Elucidarium I.6 | The angelic nature |
 | spiritual matter | materia (large sumpta) in spiritualibus | — | Bonaventure, In II Sent. d. 3 p. 1 a. 1 q. 1 | "matter" taken broadly as every constitutive potency |
 | spiritual substance, a body of its own kind | substantia spiritalis … corporis alicuius, sui tamen generis | — | Tertullian, De carne Christi 6.9 | Tertullian's own view; contrast *ST* I q. 50 a. 1 |
 | standard-bearer | signifer | — | Requiem Offertory; Te splendor | "salutis signifer" |
@@ -265,6 +285,7 @@ transliteration.
 | supernatural beatitude | beatitudo supernaturalis | — | I q. 60 a. 5 ad 4; I q. 62 a. 1 | Beatitude beyond natural faculty, by charity |
 | surrounding circle of angels | angelorum circumstantia | — | Tertullian, De orat. 3.3 |  |
 | theurgy | theurgia | theurgia | Augustine *De civ. Dei* X.9–10; Iamblichus *De myst.* II.3 | Rejected as demon-worship under angels' names. |
+| threefold cord | funiculus triplex | — | Bernard, In festo S. Michaelis 1.4 | The angels' love: for God, for us, for themselves |
 | Thrones | Throni | thronoi | Col 1:16 | God sits in them (Gregory) |
 | thrones | throni / sedes | thronoi | CH 7.1 | Gregory: throni = sedes (Hom. 34.10) |
 | thrones | throni; "sedes" | thronoi | Hom. 34.10; Etym. VII.5.21 | God sits in them and decrees judgments |
@@ -295,3 +316,4 @@ transliteration.
 | wayfarer | viator | — | ST I q. 113 a. 4 | guardianship lasts "quandiu viator est" |
 | wayfarer / comprehensor | viator / comprehensor | — | I q. 62 a. 9 | Blessed angels are comprehensores, not viatores |
 | will | voluntas | — | I q. 59 a. 1 | Inclination following intellectual apprehension of good in general |
+| will for happiness | voluntas beatitudinis | — | Anselm, De casu diaboli 13–14 | Tempered by justice without losing the power to exceed (c. 14) |

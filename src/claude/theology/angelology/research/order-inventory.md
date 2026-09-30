@@ -260,6 +260,180 @@ only when its locus was read at the source.
 | principalities | Rabanus Maurus, *De universo* (PL 111) | I.5 (list) | principatus | -- (unranked; list position 7); exposition follows Isidore's ascending order | copied from Isidore, *Etym.* VII.5 | verified from PL 111 OCR |
 | cherubim | Rabanus Maurus, *De universo* (PL 111) | I.5 (list) | cherubin | -- (unranked; list position 8); exposition follows Isidore's ascending order | copied from Isidore, *Etym.* VII.5 | verified from PL 111 OCR |
 | seraphim | Rabanus Maurus, *De universo* (PL 111) | I.5 (list) | seraphim | -- (unranked; list position 9); exposition follows Isidore's ascending order | copied from Isidore, *Etym.* VII.5 | verified from PL 111 OCR |
+| dominations | St Paul | Eph 1:21 | dominion | 1 of 4 | Named from the lowest upward, per ST I q. 108 a. 6 co. | Read (Douay, Gutenberg 1581); direction per New Advent ST |
+| virtues | St Paul | Eph 1:21 | virtue | 2 of 4 | Named from the lowest upward, per ST I q. 108 a. 6 co. | Read (Douay, Gutenberg 1581); direction per New Advent ST |
+| powers | St Paul | Eph 1:21 | power | 3 of 4 | Named from the lowest upward, per ST I q. 108 a. 6 co. | Read (Douay, Gutenberg 1581); direction per New Advent ST |
+| principalities | St Paul | Eph 1:21 | principality | 4 of 4 | Named from the lowest upward, per ST I q. 108 a. 6 co. | Read (Douay, Gutenberg 1581); direction per New Advent ST |
+| thrones | St Paul | Col 1:16 | thrones | 1 of 4 | Named from the highest downward, per ST I q. 108 a. 6 co. | Read (Douay); direction per New Advent ST |
+| dominations | St Paul | Col 1:16 | dominations | 2 of 4 | Named from the highest downward, per ST I q. 108 a. 6 co. | Read (Douay); direction per New Advent ST |
+| powers | St Paul | Col 1:16 | powers | 4 of 4 | Named from the highest downward, per ST I q. 108 a. 6 co. | Read (Douay); direction per New Advent ST |
+| principalities | St Paul | Col 1:16 | principalities | 3 of 4 | Named from the highest downward, per ST I q. 108 a. 6 co. | Read (Douay); direction per New Advent ST |
+| seraphim | Cyril of Jerusalem | Myst. Cat. V.6 | Seraphim | — (position 9 of 9) | Named in the eucharistic preface; not ranked | Read NPNF2 7 (CCEL) |
+| cherubim | Cyril of Jerusalem | Myst. Cat. V.6 | Cherubim | — (position 8 of 9) | Named in the eucharistic preface; not ranked | Read NPNF2 7 (CCEL) |
+| thrones | Cyril of Jerusalem | Myst. Cat. V.6 | Thrones | — (position 7 of 9) | Named in the eucharistic preface; not ranked | Read NPNF2 7 (CCEL) |
+| dominations | Cyril of Jerusalem | Myst. Cat. V.6 | Dominions | — (position 4 of 9) | Named in the eucharistic preface; not ranked | Read NPNF2 7 (CCEL) |
+| virtues | Cyril of Jerusalem | Myst. Cat. V.6 | Virtues | — (position 3 of 9) | Named in the eucharistic preface; not ranked | Read NPNF2 7 (CCEL) |
+| powers | Cyril of Jerusalem | Myst. Cat. V.6 | Powers | — (position 6 of 9) | Named in the eucharistic preface; not ranked | Read NPNF2 7 (CCEL) |
+| principalities | Cyril of Jerusalem | Myst. Cat. V.6 | Principalities | — (position 5 of 9) | Named in the eucharistic preface; not ranked | Read NPNF2 7 (CCEL) |
+| archangels | Cyril of Jerusalem | Myst. Cat. V.6 | Archangels | — (position 2 of 9) | Named in the eucharistic preface; not ranked | Read NPNF2 7 (CCEL) |
+| angels | Cyril of Jerusalem | Myst. Cat. V.6 | Angels | — (position 1 of 9) | Named in the eucharistic preface; not ranked | Read NPNF2 7 (CCEL) |
+| thrones | Gregory Nazianzen | Or. 28.31 | Thrones | — (position 3) | Not ranked; list continues Splendours, Ascents, Intelligent Powers | Read NPNF2 7 (CCEL) |
+| dominations | Gregory Nazianzen | Or. 28.31 | Dominions | — (position 4) | Not ranked; list continues Splendours, Ascents, Intelligent Powers | Read NPNF2 7 (CCEL) |
+| powers | Gregory Nazianzen | Or. 28.31 | Powers | — (position 6) | Not ranked; list continues Splendours, Ascents, Intelligent Powers | Read NPNF2 7 (CCEL) |
+| principalities | Gregory Nazianzen | Or. 28.31 | Princedoms | — (position 5) | Not ranked; list continues Splendours, Ascents, Intelligent Powers | Read NPNF2 7 (CCEL) |
+| archangels | Gregory Nazianzen | Or. 28.31 | Archangels | — (position 2) | Not ranked; list continues Splendours, Ascents, Intelligent Powers | Read NPNF2 7 (CCEL) |
+| angels | Gregory Nazianzen | Or. 28.31 | Angels | — (position 1) | Not ranked; list continues Splendours, Ascents, Intelligent Powers | Read NPNF2 7 (CCEL) |
+| seraphim | Ambrose | De fide V.13.166 | seraphim | — (position 4) | Not ranked; all made subject to Christ | Read NPNF2 10 (CCEL) |
+| cherubim | Ambrose | De fide V.13.166 | cherubim | — (position 3) | Not ranked; all made subject to Christ | Read NPNF2 10 (CCEL) |
+| thrones | Ambrose | De fide V.13.166 | thrones | — (position 5) | Not ranked; all made subject to Christ | Read NPNF2 10 (CCEL) |
+| dominations | Ambrose | De fide V.13.166 | dominions | — (position 6) | Not ranked; all made subject to Christ | Read NPNF2 10 (CCEL) |
+| powers | Ambrose | De fide V.13.166 | powers | — (position 7) | Not ranked; all made subject to Christ | Read NPNF2 10 (CCEL) |
+| archangels | Ambrose | De fide V.13.166 | archangels | — (position 2) | Not ranked; all made subject to Christ | Read NPNF2 10 (CCEL) |
+| angels | Ambrose | De fide V.13.166 | angels | — (position 1) | Not ranked; all made subject to Christ | Read NPNF2 10 (CCEL) |
+| seraphim | Dionysius (Parker 1899) | CH 6.2; 7.1; 8.1; 9.1–2 | Seraphim | 1 | Three triads (CH 6.2); ranks per CH 7–9 | Read at locus (tertullian.org transcription of Parker) |
+| cherubim | Dionysius (Parker 1899) | CH 6.2; 7.1; 8.1; 9.1–2 | Cherubim | 2 | Three triads (CH 6.2); ranks per CH 7–9 | Read at locus (tertullian.org transcription of Parker) |
+| thrones | Dionysius (Parker 1899) | CH 6.2; 7.1; 8.1; 9.1–2 | Thrones | 3 | Three triads (CH 6.2); ranks per CH 7–9 | Read at locus (tertullian.org transcription of Parker) |
+| dominations | Dionysius (Parker 1899) | CH 6.2; 7.1; 8.1; 9.1–2 | Lordships | 4 | Three triads (CH 6.2); ranks per CH 7–9 | Read at locus (tertullian.org transcription of Parker) |
+| virtues | Dionysius (Parker 1899) | CH 6.2; 7.1; 8.1; 9.1–2 | Powers | 5 | Three triads (CH 6.2); ranks per CH 7–9 | Read at locus (tertullian.org transcription of Parker) |
+| powers | Dionysius (Parker 1899) | CH 6.2; 7.1; 8.1; 9.1–2 | Authorities | 6 | Three triads (CH 6.2); ranks per CH 7–9 | Read at locus (tertullian.org transcription of Parker) |
+| principalities | Dionysius (Parker 1899) | CH 6.2; 7.1; 8.1; 9.1–2 | Principalities | 7 | Three triads (CH 6.2); ranks per CH 7–9 | Read at locus (tertullian.org transcription of Parker) |
+| archangels | Dionysius (Parker 1899) | CH 6.2; 7.1; 8.1; 9.1–2 | Archangels | 8 | Three triads (CH 6.2); ranks per CH 7–9 | Read at locus (tertullian.org transcription of Parker) |
+| angels | Dionysius (Parker 1899) | CH 6.2; 7.1; 8.1; 9.1–2 | Angels | 9 | Three triads (CH 6.2); ranks per CH 7–9 | Read at locus (tertullian.org transcription of Parker) |
+| seraphim | Gregory the Great | Hom. in Evang. 34.7, 10 | seraphim | 1 | List (34.7) written from the angels upward; exposition (34.10) ascends Virtues, Powers, Principalities, Dominations, Thrones, Cherubim, Seraphim | Read at locus (la.wikisource, PL 76 text) |
+| cherubim | Gregory the Great | Hom. in Evang. 34.7, 10 | cherubim | 2 | List (34.7) written from the angels upward; exposition (34.10) ascends Virtues, Powers, Principalities, Dominations, Thrones, Cherubim, Seraphim | Read at locus (la.wikisource, PL 76 text) |
+| thrones | Gregory the Great | Hom. in Evang. 34.7, 10 | throni | 3 | List (34.7) written from the angels upward; exposition (34.10) ascends Virtues, Powers, Principalities, Dominations, Thrones, Cherubim, Seraphim | Read at locus (la.wikisource, PL 76 text) |
+| dominations | Gregory the Great | Hom. in Evang. 34.7, 10 | dominationes | 4 | List (34.7) written from the angels upward; exposition (34.10) ascends Virtues, Powers, Principalities, Dominations, Thrones, Cherubim, Seraphim | Read at locus (la.wikisource, PL 76 text) |
+| virtues | Gregory the Great | Hom. in Evang. 34.7, 10 | virtutes | 7 | List (34.7) written from the angels upward; exposition (34.10) ascends Virtues, Powers, Principalities, Dominations, Thrones, Cherubim, Seraphim | Read at locus (la.wikisource, PL 76 text) |
+| powers | Gregory the Great | Hom. in Evang. 34.7, 10 | potestates | 6 | List (34.7) written from the angels upward; exposition (34.10) ascends Virtues, Powers, Principalities, Dominations, Thrones, Cherubim, Seraphim | Read at locus (la.wikisource, PL 76 text) |
+| principalities | Gregory the Great | Hom. in Evang. 34.7, 10 | principatus | 5 | List (34.7) written from the angels upward; exposition (34.10) ascends Virtues, Powers, Principalities, Dominations, Thrones, Cherubim, Seraphim | Read at locus (la.wikisource, PL 76 text) |
+| archangels | Gregory the Great | Hom. in Evang. 34.7, 10 | archangeli | 8 | List (34.7) written from the angels upward; exposition (34.10) ascends Virtues, Powers, Principalities, Dominations, Thrones, Cherubim, Seraphim | Read at locus (la.wikisource, PL 76 text) |
+| angels | Gregory the Great | Hom. in Evang. 34.7, 10 | angeli | 9 | List (34.7) written from the angels upward; exposition (34.10) ascends Virtues, Powers, Principalities, Dominations, Thrones, Cherubim, Seraphim | Read at locus (la.wikisource, PL 76 text) |
+| seraphim | Gregory the Great | Moralia XXXII.48 | Seraphim | — (position 9 of 9) | The nine stones of Ezek 28:13; enumeration, not ranked | Read LF vol. 31 (1850) OCR and lectionarycentral transcription |
+| cherubim | Gregory the Great | Moralia XXXII.48 | Cherubim | — (position 8 of 9) | The nine stones of Ezek 28:13; enumeration, not ranked | Read LF vol. 31 (1850) OCR and lectionarycentral transcription |
+| thrones | Gregory the Great | Moralia XXXII.48 | Thrones | — (position 3 of 9) | The nine stones of Ezek 28:13; enumeration, not ranked | Read LF vol. 31 (1850) OCR and lectionarycentral transcription |
+| dominations | Gregory the Great | Moralia XXXII.48 | Dominations | — (position 4 of 9) | The nine stones of Ezek 28:13; enumeration, not ranked | Read LF vol. 31 (1850) OCR and lectionarycentral transcription |
+| virtues | Gregory the Great | Moralia XXXII.48 | Virtues | — (position 5 of 9) | The nine stones of Ezek 28:13; enumeration, not ranked | Read LF vol. 31 (1850) OCR and lectionarycentral transcription |
+| powers | Gregory the Great | Moralia XXXII.48 | Powers | — (position 7 of 9) | The nine stones of Ezek 28:13; enumeration, not ranked | Read LF vol. 31 (1850) OCR and lectionarycentral transcription |
+| principalities | Gregory the Great | Moralia XXXII.48 | Princedoms | — (position 6 of 9) | The nine stones of Ezek 28:13; enumeration, not ranked | Read LF vol. 31 (1850) OCR and lectionarycentral transcription |
+| archangels | Gregory the Great | Moralia XXXII.48 | Archangels | — (position 2 of 9) | The nine stones of Ezek 28:13; enumeration, not ranked | Read LF vol. 31 (1850) OCR and lectionarycentral transcription |
+| angels | Gregory the Great | Moralia XXXII.48 | Angels | — (position 1 of 9) | The nine stones of Ezek 28:13; enumeration, not ranked | Read LF vol. 31 (1850) OCR and lectionarycentral transcription |
+| seraphim | Isidore | Etym. VII.5.4 | seraphim | — (position 9 of 9) | Enumeration; same sequence as Moralia XXXII.48 | Read (thelatinlibrary) |
+| cherubim | Isidore | Etym. VII.5.4 | cherubim | — (position 8 of 9) | Enumeration; same sequence as Moralia XXXII.48 | Read (thelatinlibrary) |
+| thrones | Isidore | Etym. VII.5.4 | throni | — (position 3 of 9) | Enumeration; same sequence as Moralia XXXII.48 | Read (thelatinlibrary) |
+| dominations | Isidore | Etym. VII.5.4 | dominationes | — (position 4 of 9) | Enumeration; same sequence as Moralia XXXII.48 | Read (thelatinlibrary) |
+| virtues | Isidore | Etym. VII.5.4 | virtutes | — (position 5 of 9) | Enumeration; same sequence as Moralia XXXII.48 | Read (thelatinlibrary) |
+| powers | Isidore | Etym. VII.5.4 | potestates | — (position 7 of 9) | Enumeration; same sequence as Moralia XXXII.48 | Read (thelatinlibrary) |
+| principalities | Isidore | Etym. VII.5.4 | principatus | — (position 6 of 9) | Enumeration; same sequence as Moralia XXXII.48 | Read (thelatinlibrary) |
+| archangels | Isidore | Etym. VII.5.4 | archangeli | — (position 2 of 9) | Enumeration; same sequence as Moralia XXXII.48 | Read (thelatinlibrary) |
+| angels | Isidore | Etym. VII.5.4 | angeli | — (position 1 of 9) | Enumeration; same sequence as Moralia XXXII.48 | Read (thelatinlibrary) |
+| seraphim | Isidore | Etym. VII.5.5–24 | seraphim | 1 (§24) | Exposition ascends in Gregory's sequence; Seraphim with no angels between them and God (§24) | Read (thelatinlibrary) |
+| cherubim | Isidore | Etym. VII.5.5–24 | cherubim | 2 (§22) | Exposition ascends in Gregory's sequence; Seraphim with no angels between them and God (§24) | Read (thelatinlibrary) |
+| thrones | Isidore | Etym. VII.5.5–24 | throni | 3 (§21) | Exposition ascends in Gregory's sequence; Seraphim with no angels between them and God (§24) | Read (thelatinlibrary) |
+| dominations | Isidore | Etym. VII.5.5–24 | dominationes | 4 (§20) | Exposition ascends in Gregory's sequence; Seraphim with no angels between them and God (§24) | Read (thelatinlibrary) |
+| virtues | Isidore | Etym. VII.5.5–24 | virtutes | 7 (§17) | Exposition ascends in Gregory's sequence; Seraphim with no angels between them and God (§24) | Read (thelatinlibrary) |
+| powers | Isidore | Etym. VII.5.5–24 | potestates | 6 (§18) | Exposition ascends in Gregory's sequence; Seraphim with no angels between them and God (§24) | Read (thelatinlibrary) |
+| principalities | Isidore | Etym. VII.5.5–24 | principatus | 5 (§19) | Exposition ascends in Gregory's sequence; Seraphim with no angels between them and God (§24) | Read (thelatinlibrary) |
+| archangels | Isidore | Etym. VII.5.5–24 | archangeli | 8 (§6) | Exposition ascends in Gregory's sequence; Seraphim with no angels between them and God (§24) | Read (thelatinlibrary) |
+| angels | Isidore | Etym. VII.5.5–24 | angeli | 9 (§5) | Exposition ascends in Gregory's sequence; Seraphim with no angels between them and God (§24) | Read (thelatinlibrary) |
+| seraphim | John Damascene (Salmond 1899) | De fide orth. II.3 | Seraphim | 1 | Three groups named from Dionysius | Read NPNF2 9 (CCEL) |
+| cherubim | John Damascene (Salmond 1899) | De fide orth. II.3 | Cherubim | 2 | Three groups named from Dionysius | Read NPNF2 9 (CCEL) |
+| thrones | John Damascene (Salmond 1899) | De fide orth. II.3 | thrones | 3 | Three groups named from Dionysius | Read NPNF2 9 (CCEL) |
+| dominations | John Damascene (Salmond 1899) | De fide orth. II.3 | Dominions | 4 | Three groups named from Dionysius | Read NPNF2 9 (CCEL) |
+| virtues | John Damascene (Salmond 1899) | De fide orth. II.3 | Powers | 5 | Three groups named from Dionysius | Read NPNF2 9 (CCEL) |
+| powers | John Damascene (Salmond 1899) | De fide orth. II.3 | Authorities | 6 | Three groups named from Dionysius | Read NPNF2 9 (CCEL) |
+| principalities | John Damascene (Salmond 1899) | De fide orth. II.3 | Rulers | 7 | Three groups named from Dionysius | Read NPNF2 9 (CCEL) |
+| archangels | John Damascene (Salmond 1899) | De fide orth. II.3 | Archangels | 8 | Three groups named from Dionysius | Read NPNF2 9 (CCEL) |
+| angels | John Damascene (Salmond 1899) | De fide orth. II.3 | Angels | 9 | Three groups named from Dionysius | Read NPNF2 9 (CCEL) |
+| seraphim | Hugh of St Victor | De sacr. I.5.30 (PL 176:260) | seraphim | 1 | Written from the angels upward in Dionysius's sequence; with man the tenth | Read at locus (PL 176 page image, DCO) |
+| cherubim | Hugh of St Victor | De sacr. I.5.30 (PL 176:260) | cherubim | 2 | Written from the angels upward in Dionysius's sequence; with man the tenth | Read at locus (PL 176 page image, DCO) |
+| thrones | Hugh of St Victor | De sacr. I.5.30 (PL 176:260) | thronos | 3 | Written from the angels upward in Dionysius's sequence; with man the tenth | Read at locus (PL 176 page image, DCO) |
+| dominations | Hugh of St Victor | De sacr. I.5.30 (PL 176:260) | dominationes | 4 | Written from the angels upward in Dionysius's sequence; with man the tenth | Read at locus (PL 176 page image, DCO) |
+| virtues | Hugh of St Victor | De sacr. I.5.30 (PL 176:260) | virtutes | 5 | Written from the angels upward in Dionysius's sequence; with man the tenth | Read at locus (PL 176 page image, DCO) |
+| powers | Hugh of St Victor | De sacr. I.5.30 (PL 176:260) | potestates | 6 | Written from the angels upward in Dionysius's sequence; with man the tenth | Read at locus (PL 176 page image, DCO) |
+| principalities | Hugh of St Victor | De sacr. I.5.30 (PL 176:260) | principatus | 7 | Written from the angels upward in Dionysius's sequence; with man the tenth | Read at locus (PL 176 page image, DCO) |
+| archangels | Hugh of St Victor | De sacr. I.5.30 (PL 176:260) | archangelos | 8 | Written from the angels upward in Dionysius's sequence; with man the tenth | Read at locus (PL 176 page image, DCO) |
+| angels | Hugh of St Victor | De sacr. I.5.30 (PL 176:260) | angelos | 9 | Written from the angels upward in Dionysius's sequence; with man the tenth | Read at locus (PL 176 page image, DCO) |
+| seraphim | Bernard | De consid. V.4.8 (PL 182:792–793) | Seraphin | 1 | Expounded upward with 'Putemus' in Gregory's sequence; Dominions tower above the rest | Read at locus (Lewis 1908; PL 182 page image) |
+| cherubim | Bernard | De consid. V.4.8 (PL 182:792–793) | Cherubim | 2 | Expounded upward with 'Putemus' in Gregory's sequence; Dominions tower above the rest | Read at locus (Lewis 1908; PL 182 page image) |
+| thrones | Bernard | De consid. V.4.8 (PL 182:792–793) | Thronos | 3 | Expounded upward with 'Putemus' in Gregory's sequence; Dominions tower above the rest | Read at locus (Lewis 1908; PL 182 page image) |
+| dominations | Bernard | De consid. V.4.8 (PL 182:792–793) | Dominationes | 4 | Expounded upward with 'Putemus' in Gregory's sequence; Dominions tower above the rest | Read at locus (Lewis 1908; PL 182 page image) |
+| virtues | Bernard | De consid. V.4.8 (PL 182:792–793) | Virtutes | 7 | Expounded upward with 'Putemus' in Gregory's sequence; Dominions tower above the rest | Read at locus (Lewis 1908; PL 182 page image) |
+| powers | Bernard | De consid. V.4.8 (PL 182:792–793) | Potestates | 6 | Expounded upward with 'Putemus' in Gregory's sequence; Dominions tower above the rest | Read at locus (Lewis 1908; PL 182 page image) |
+| principalities | Bernard | De consid. V.4.8 (PL 182:792–793) | Principatus | 5 | Expounded upward with 'Putemus' in Gregory's sequence; Dominions tower above the rest | Read at locus (Lewis 1908; PL 182 page image) |
+| archangels | Bernard | De consid. V.4.8 (PL 182:792–793) | Archangelos | 8 | Expounded upward with 'Putemus' in Gregory's sequence; Dominions tower above the rest | Read at locus (Lewis 1908; PL 182 page image) |
+| angels | Bernard | De consid. V.4.8 (PL 182:792–793) | Angelos | 9 | Expounded upward with 'Putemus' in Gregory's sequence; Dominions tower above the rest | Read at locus (Lewis 1908; PL 182 page image) |
+| seraphim | Bernard | In Cant. 19.2–6 | Séraphin | 1 | Each order's love of God; Principalities 'above' the Powers (19.3) | Read (Eales 1896) |
+| cherubim | Bernard | In Cant. 19.2–6 | Chérubin | 2 | Each order's love of God; Principalities 'above' the Powers (19.3) | Read (Eales 1896) |
+| thrones | Bernard | In Cant. 19.2–6 | Thrones | 3 | Each order's love of God; Principalities 'above' the Powers (19.3) | Read (Eales 1896) |
+| dominations | Bernard | In Cant. 19.2–6 | Dominations | 4 | Each order's love of God; Principalities 'above' the Powers (19.3) | Read (Eales 1896) |
+| virtues | Bernard | In Cant. 19.2–6 | Virtues | 7 | Each order's love of God; Principalities 'above' the Powers (19.3) | Read (Eales 1896) |
+| powers | Bernard | In Cant. 19.2–6 | Powers | 6 | Each order's love of God; Principalities 'above' the Powers (19.3) | Read (Eales 1896) |
+| principalities | Bernard | In Cant. 19.2–6 | Principalities | 5 | Each order's love of God; Principalities 'above' the Powers (19.3) | Read (Eales 1896) |
+| archangels | Bernard | In Cant. 19.2–6 | Archangels | 8 | Each order's love of God; Principalities 'above' the Powers (19.3) | Read (Eales 1896) |
+| angels | Bernard | In Cant. 19.2–6 | Angels | 9 | Each order's love of God; Principalities 'above' the Powers (19.3) | Read (Eales 1896) |
+| seraphim | Bernard | In Cant. 27.5 | Séraphin | — (position 9 of 9) | Enumeration; the stars of God's heaven | Read (Eales 1896) |
+| cherubim | Bernard | In Cant. 27.5 | Chérubin | — (position 8 of 9) | Enumeration; the stars of God's heaven | Read (Eales 1896) |
+| thrones | Bernard | In Cant. 27.5 | Thrones | — (position 7 of 9) | Enumeration; the stars of God's heaven | Read (Eales 1896) |
+| dominations | Bernard | In Cant. 27.5 | Dominations | — (position 4 of 9) | Enumeration; the stars of God's heaven | Read (Eales 1896) |
+| virtues | Bernard | In Cant. 27.5 | Virtues | — (position 3 of 9) | Enumeration; the stars of God's heaven | Read (Eales 1896) |
+| powers | Bernard | In Cant. 27.5 | Powers | — (position 6 of 9) | Enumeration; the stars of God's heaven | Read (Eales 1896) |
+| principalities | Bernard | In Cant. 27.5 | Principalities | — (position 5 of 9) | Enumeration; the stars of God's heaven | Read (Eales 1896) |
+| archangels | Bernard | In Cant. 27.5 | Archangels | — (position 2 of 9) | Enumeration; the stars of God's heaven | Read (Eales 1896) |
+| angels | Bernard | In Cant. 27.5 | Angels | — (position 1 of 9) | Enumeration; the stars of God's heaven | Read (Eales 1896) |
+| seraphim | Hildegard | Scivias I.6 (PL 197:437–440) | seraphin | 1 (from outer choir) | Concentric choirs: two (angels, archangels) within five within two (cherubim, seraphim) | Read at locus (PL 197 page images, DCO) |
+| cherubim | Hildegard | Scivias I.6 (PL 197:437–440) | cherubin | 2 (from outer choir) | Concentric choirs: two (angels, archangels) within five within two (cherubim, seraphim) | Read at locus (PL 197 page images, DCO) |
+| thrones | Hildegard | Scivias I.6 (PL 197:437–440) | throni | 3 (from outer choir) | Concentric choirs: two (angels, archangels) within five within two (cherubim, seraphim) | Read at locus (PL 197 page images, DCO) |
+| dominations | Hildegard | Scivias I.6 (PL 197:437–440) | dominationes | 4 (from outer choir) | Concentric choirs: two (angels, archangels) within five within two (cherubim, seraphim) | Read at locus (PL 197 page images, DCO) |
+| virtues | Hildegard | Scivias I.6 (PL 197:437–440) | virtutes | 7 (from outer choir) | Concentric choirs: two (angels, archangels) within five within two (cherubim, seraphim) | Read at locus (PL 197 page images, DCO) |
+| powers | Hildegard | Scivias I.6 (PL 197:437–440) | potestates | 6 (from outer choir) | Concentric choirs: two (angels, archangels) within five within two (cherubim, seraphim) | Read at locus (PL 197 page images, DCO) |
+| principalities | Hildegard | Scivias I.6 (PL 197:437–440) | principatus | 5 (from outer choir) | Concentric choirs: two (angels, archangels) within five within two (cherubim, seraphim) | Read at locus (PL 197 page images, DCO) |
+| archangels | Hildegard | Scivias I.6 (PL 197:437–440) | archangeli | 8 (from outer choir) | Concentric choirs: two (angels, archangels) within five within two (cherubim, seraphim) | Read at locus (PL 197 page images, DCO) |
+| angels | Hildegard | Scivias I.6 (PL 197:437–440) | angeli | 9 (from outer choir) | Concentric choirs: two (angels, archangels) within five within two (cherubim, seraphim) | Read at locus (PL 197 page images, DCO) |
+| seraphim | Peter Lombard | Sent. II d. 9 c. 1, first list | Seraphim | — (position 9 from the angels) | List as Hugh's (Dionysius's sequence written upward) | Read at locus (Quaracchi 1916 page image) |
+| cherubim | Peter Lombard | Sent. II d. 9 c. 1, first list | Cherubim | — (position 8 from the angels) | List as Hugh's (Dionysius's sequence written upward) | Read at locus (Quaracchi 1916 page image) |
+| thrones | Peter Lombard | Sent. II d. 9 c. 1, first list | Thronos | — (position 7 from the angels) | List as Hugh's (Dionysius's sequence written upward) | Read at locus (Quaracchi 1916 page image) |
+| dominations | Peter Lombard | Sent. II d. 9 c. 1, first list | Dominationes | — (position 6 from the angels) | List as Hugh's (Dionysius's sequence written upward) | Read at locus (Quaracchi 1916 page image) |
+| virtues | Peter Lombard | Sent. II d. 9 c. 1, first list | Virtutes | — (position 5 from the angels) | List as Hugh's (Dionysius's sequence written upward) | Read at locus (Quaracchi 1916 page image) |
+| powers | Peter Lombard | Sent. II d. 9 c. 1, first list | Potestates | — (position 4 from the angels) | List as Hugh's (Dionysius's sequence written upward) | Read at locus (Quaracchi 1916 page image) |
+| principalities | Peter Lombard | Sent. II d. 9 c. 1, first list | Principatus | — (position 3 from the angels) | List as Hugh's (Dionysius's sequence written upward) | Read at locus (Quaracchi 1916 page image) |
+| archangels | Peter Lombard | Sent. II d. 9 c. 1, first list | Archangelos | — (position 2 from the angels) | List as Hugh's (Dionysius's sequence written upward) | Read at locus (Quaracchi 1916 page image) |
+| angels | Peter Lombard | Sent. II d. 9 c. 1, first list | Angelos | — (position 1 from the angels) | List as Hugh's (Dionysius's sequence written upward) | Read at locus (Quaracchi 1916 page image) |
+| seraphim | Peter Lombard | Sent. II d. 9 cc. 1–2, triads | Seraphim | 1 | Triads ascribed to Dionysius in Gregory's placing; c. 2 expounds downward in Gregory's words | Read at locus (Quaracchi 1916 page images) |
+| cherubim | Peter Lombard | Sent. II d. 9 cc. 1–2, triads | Cherubim | 2 | Triads ascribed to Dionysius in Gregory's placing; c. 2 expounds downward in Gregory's words | Read at locus (Quaracchi 1916 page images) |
+| thrones | Peter Lombard | Sent. II d. 9 cc. 1–2, triads | Throni | 3 | Triads ascribed to Dionysius in Gregory's placing; c. 2 expounds downward in Gregory's words | Read at locus (Quaracchi 1916 page images) |
+| dominations | Peter Lombard | Sent. II d. 9 cc. 1–2, triads | Dominationes | 4 | Triads ascribed to Dionysius in Gregory's placing; c. 2 expounds downward in Gregory's words | Read at locus (Quaracchi 1916 page images) |
+| virtues | Peter Lombard | Sent. II d. 9 cc. 1–2, triads | Virtutes | 7 | Triads ascribed to Dionysius in Gregory's placing; c. 2 expounds downward in Gregory's words | Read at locus (Quaracchi 1916 page images) |
+| powers | Peter Lombard | Sent. II d. 9 cc. 1–2, triads | Potestates | 6 | Triads ascribed to Dionysius in Gregory's placing; c. 2 expounds downward in Gregory's words | Read at locus (Quaracchi 1916 page images) |
+| principalities | Peter Lombard | Sent. II d. 9 cc. 1–2, triads | Principatus | 5 | Triads ascribed to Dionysius in Gregory's placing; c. 2 expounds downward in Gregory's words | Read at locus (Quaracchi 1916 page images) |
+| archangels | Peter Lombard | Sent. II d. 9 cc. 1–2, triads | Archangeli | 8 | Triads ascribed to Dionysius in Gregory's placing; c. 2 expounds downward in Gregory's words | Read at locus (Quaracchi 1916 page images) |
+| angels | Peter Lombard | Sent. II d. 9 cc. 1–2, triads | Angeli | 9 | Triads ascribed to Dionysius in Gregory's placing; c. 2 expounds downward in Gregory's words | Read at locus (Quaracchi 1916 page images) |
+| seraphim | Bonaventure | Brev. II.8.1, 3 | Seraphim | I (triad) | benevolence | Read at locus (Quaracchi 1911 page images) |
+| cherubim | Bonaventure | Brev. II.8.1, 3 | Cherubim | I (triad) | wisdom | Read at locus (Quaracchi 1911 page images) |
+| thrones | Bonaventure | Brev. II.8.1, 3 | Throni | I (triad) | reverence | Read at locus (Quaracchi 1911 page images) |
+| dominations | Bonaventure | Brev. II.8.1, 3 | Dominationes | II (triad) | imperative power | Read at locus (Quaracchi 1911 page images) |
+| virtues | Bonaventure | Brev. II.8.1, 3 | Virtutes | II (triad) | executive power | Read at locus (Quaracchi 1911 page images) |
+| powers | Bonaventure | Brev. II.8.1, 3 | Potestates | II (triad) | expeditive power; drive back contrary powers | Read at locus (Quaracchi 1911 page images) |
+| principalities | Bonaventure | Brev. II.8.1, 3 | Principatus | III (triad) | to rule | Read at locus (Quaracchi 1911 page images) |
+| archangels | Bonaventure | Brev. II.8.1, 3 | Archangeli | III (triad) | to reveal | Read at locus (Quaracchi 1911 page images) |
+| angels | Bonaventure | Brev. II.8.1, 3 | Angeli | III (triad) | to raise up; guard the standing, help the fallen | Read at locus (Quaracchi 1911 page images) |
+| seraphim | Aquinas | ST I q. 108 a. 6 s.c. | Seraphim | 1 | Dionysius's order; Gregory's held reasonable (co.; ad 4) | Read (New Advent; Corpus Thomisticum Latin) |
+| cherubim | Aquinas | ST I q. 108 a. 6 s.c. | Cherubim | 2 | Dionysius's order; Gregory's held reasonable (co.; ad 4) | Read (New Advent; Corpus Thomisticum Latin) |
+| thrones | Aquinas | ST I q. 108 a. 6 s.c. | Thrones | 3 | Dionysius's order; Gregory's held reasonable (co.; ad 4) | Read (New Advent; Corpus Thomisticum Latin) |
+| dominations | Aquinas | ST I q. 108 a. 6 s.c. | Dominations | 4 | Dionysius's order; Gregory's held reasonable (co.; ad 4) | Read (New Advent; Corpus Thomisticum Latin) |
+| virtues | Aquinas | ST I q. 108 a. 6 s.c. | Virtues | 5 | Dionysius's order; Gregory's held reasonable (co.; ad 4) | Read (New Advent; Corpus Thomisticum Latin) |
+| powers | Aquinas | ST I q. 108 a. 6 s.c. | Powers | 6 | Dionysius's order; Gregory's held reasonable (co.; ad 4) | Read (New Advent; Corpus Thomisticum Latin) |
+| principalities | Aquinas | ST I q. 108 a. 6 s.c. | Principalities | 7 | Dionysius's order; Gregory's held reasonable (co.; ad 4) | Read (New Advent; Corpus Thomisticum Latin) |
+| archangels | Aquinas | ST I q. 108 a. 6 s.c. | Archangels | 8 | Dionysius's order; Gregory's held reasonable (co.; ad 4) | Read (New Advent; Corpus Thomisticum Latin) |
+| angels | Aquinas | ST I q. 108 a. 6 s.c. | Angels | 9 | Dionysius's order; Gregory's held reasonable (co.; ad 4) | Read (New Advent; Corpus Thomisticum Latin) |
+| seraphim | Dante (Longfellow) | Par. XXVIII.99–126 | Seraphim | 1 | Beatrice names the orders as Dionysius did; Gregory smiles at his dissent (vv. 133–135) | Read (Gutenberg 1003) |
+| cherubim | Dante (Longfellow) | Par. XXVIII.99–126 | Cherubim | 2 | Beatrice names the orders as Dionysius did; Gregory smiles at his dissent (vv. 133–135) | Read (Gutenberg 1003) |
+| thrones | Dante (Longfellow) | Par. XXVIII.99–126 | Thrones | 3 | Beatrice names the orders as Dionysius did; Gregory smiles at his dissent (vv. 133–135) | Read (Gutenberg 1003) |
+| dominations | Dante (Longfellow) | Par. XXVIII.99–126 | Dominions | 4 | Beatrice names the orders as Dionysius did; Gregory smiles at his dissent (vv. 133–135) | Read (Gutenberg 1003) |
+| virtues | Dante (Longfellow) | Par. XXVIII.99–126 | Virtues | 5 | Beatrice names the orders as Dionysius did; Gregory smiles at his dissent (vv. 133–135) | Read (Gutenberg 1003) |
+| powers | Dante (Longfellow) | Par. XXVIII.99–126 | Powers | 6 | Beatrice names the orders as Dionysius did; Gregory smiles at his dissent (vv. 133–135) | Read (Gutenberg 1003) |
+| principalities | Dante (Longfellow) | Par. XXVIII.99–126 | Principalities | 7 | Beatrice names the orders as Dionysius did; Gregory smiles at his dissent (vv. 133–135) | Read (Gutenberg 1003) |
+| archangels | Dante (Longfellow) | Par. XXVIII.99–126 | Archangels | 8 | Beatrice names the orders as Dionysius did; Gregory smiles at his dissent (vv. 133–135) | Read (Gutenberg 1003) |
+| angels | Dante (Longfellow) | Par. XXVIII.99–126 | angelic sports | 9 | Beatrice names the orders as Dionysius did; Gregory smiles at his dissent (vv. 133–135) | Read (Gutenberg 1003) |
 | cherubim | Dionysius (Parker) | CH 12.2 | Cherubim | (first hierarchy) | Participate in higher wisdom and knowledge; the orders beneath participate partially and in a lower degree | yes |
 | angels | Dionysius (Parker) | CH 12.2 | Divisions of the Beings beneath | lower | Participate in wisdom and knowledge partially, in a lower degree | yes |
 | angels | Jerome, In ep. ad Titum | on Titus 1:2 (PL 26) | angeli | Unranked (first in list) | Orders serving God before measured time | yes |

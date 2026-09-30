@@ -1894,6 +1894,227 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 - Rights: public domain.
 - Ceiling: finding aid for one historical fact in the Rabanus subsection; no position attributed from it.
 
+## The medieval Doctors to Peter Lombard; comparative orderings
+
+### Anselm, De casu diaboli (PL 158)
+- Witness: Anselm of Canterbury, *De casu diaboli*, Gerberon's text as reprinted in Migne, PL 158:325–360 (page images of the Migne volume as served by Documenta Catholica Omnia); archive.org OCR of PL 158 (patrologiaecursu0158mign_f7g5) for location; F. S. Schmitt's text (Edinburgh 1946) at logicmuseum.com read as a finding aid only.
+- Repository ids: `work.anselm-of-canterbury.de-casu-diaboli` (registered with this publication).
+- URL: http://www.documentacatholicaomnia.eu/02m/1033-1109,_Anselmus_Cantuariensis,_De_Casu_Diaboli,_MLT.pdf ; https://archive.org/download/patrologiaecursu0158mign_f7g5/patrologiaecursu0158mign_f7g5_djvu.txt ; https://www.logicmuseum.com/wiki/Authors/Anselm/de_casu
+- Retrieved: 2026-09-30 (DCO, archive.org); 2026-09-29 (logicmuseum)
+- SHA-256 of the bytes read: fe79468c7052228d498bec193f97c0d58f02dab8794dd0c6eb65746560af4d05 (6778 bytes); 90c8383a5312d57171dbb9020ac0095d433952ccb805ed2bb70753c51241640f (3653321 bytes); 289e187e37b0d9cc4428483a07db50be6cf58b5ab46aba8cdc1a0cb283206bf0 (115975 bytes)
+- Loci read: cc. 1–28 entire (Schmitt); PL cols 331–336, 341–350, 355–360 on page images
+- Quoted: c. 3 (col. 331, "sponte dimisit voluntatem quam habebat"); c. 4 (col. 333, three passages); c. 6 (col. 334, two); c. 14 (col. 346); c. 17 (col. 349); c. 18 (col. 350); c. 24 PL division = c. 25 Schmitt (col. 357); c. 27 (col. 360)
+- Rights: Migne 1853 public domain; Schmitt 1946 text not quoted (in copyright).
+- Ceiling: every Latin quotation checked against the Migne page image; not collated with Schmitt except where noted (PL c. 4 reads "ad augmentum beatitudinis esse illi poterat", Schmitt "ad augmentum ibi beatitudinis esse poterat"; PL ends c. 24 with the "praemium justitiae" sentence that Schmitt prints in c. 25). Chapters cited by Migne's numbering.
+
+### Anselm, Cur Deus homo I.16–18 (Deane 1903)
+- Witness: Anselm, *Cur Deus homo*, tr. Sidney Norton Deane, *St. Anselm: Proslogium; Monologium; … and Cur Deus Homo* (Chicago: Open Court, 1903), pp. 210–222.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/stanselmeproslog00anseuoft/stanselmeproslog00anseuoft_djvu.txt
+- Retrieved: 2026-09-30T14:58:11Z
+- SHA-256 of the bytes read: 5a578093b4b8c6a8042b8d695bda68df4e22d112f1774590c552d6851fee976a (642892 bytes)
+- Loci read: I.16, I.17, I.18, I.19 (opening)
+- Quoted: I.16 (one passage), I.17 (two), I.18 (three short passages)
+- Rights: published Chicago 1903; public domain in the US (pre-1931).
+- Ceiling: archive.org OCR of the printed volume; wording checked by reading; not compared with page images; Latin (PL 158:359–432) not collated.
+
+### Bernard, De consideratione V (PL 182; Lewis 1908)
+- Witness: Bernard of Clairvaux, *De consideratione* V.3.6–5.12: Latin PL 182:791–795 (DCO page images; archive.org OCR patrologiaecursu0182mign); English, George Lewis, *St. Bernard On Consideration* (Oxford: Clarendon Press, 1908), pp. 135–144.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: http://www.documentacatholicaomnia.eu/02m/1090-1153,_Bernardus_Claraevallensis_Abbas,_De_Consideratione_Libri_Quinque_Ad_Eugenium_Tertium,_MLT.pdf ; https://archive.org/download/onconsideration00bern/onconsideration00bern_djvu.txt
+- Retrieved: 2026-09-30
+- SHA-256 of the bytes read: 83f2b090410f16d495b1e83878b5cff5c07b7a8bd4f931e2b47f80b59d1c0655 (7064 bytes); 57e5cb80e805369053a638f31e47e7f4ef94dcf488c1983c226814f727e2b970 (3621335 bytes); 23dacc2ca0c5f0244fe9c456afbdb2a2745767b2281d7553d07899d93416f49e (306976 bytes)
+- Loci read: V.3.5–6.13 (Lewis); PL cols 791–796 on page images
+- Quoted: English V.3.6, V.4.7 (block and three phrases), V.4.8 (seven phrases), V.4.9 (two), V.4.10 (two plus block), V.5.11, V.5.12 (two); Latin V.4.8 (col. 792, Thrones), V.5.11 (col. 795, "Adsunt Angeli…"), V.5.12 (col. 795, two sentences)
+- Rights: Lewis 1908, public domain (US; pre-1931). Migne public domain.
+- Ceiling: Lewis's section numbers are printed "4." for PL 7 (OCR or printing); loci cited in PL numbering. Latin checked on page images at 60 dpi, legible.
+
+### Bernard, Sermons on Psalm 90 (Qui habitat) 11–13 (PL 183; Mount Melleray 1921)
+- Witness: Latin PL 183:225–236 (DCO page images; archive.org OCR patrologiaecursu0183mign); English, *St. Bernard's Sermons for the Seasons & Principal Festivals of the Year*, tr. a Priest of Mount Melleray, vol. 1 (Dublin: Browne and Nolan, 1921), pp. 231–260.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: http://www.documentacatholicaomnia.eu/02m/1090-1153,_Bernardus_Claraevallensis_Abbas,_Sermones_De_Tempore._In_Psalmum_XC,_MLT.pdf ; https://archive.org/download/stbernardssermon0001prie_y4z3/stbernardssermon0001prie_y4z3_djvu.txt
+- Retrieved: 2026-09-30
+- SHA-256 of the bytes read: 937b7aae2d2821a3c9cc562dcd1995394d072dc94466347bbdd07011d0effba4 (7766 bytes); 449957346cf138812697c9f27b12dfec40b699b327b0b00ddb937fbdae61b39a (4127764 bytes); a66ad9a360627d988ff526cf20de3615d4b67c7c82157f69ff51340a84d1263e (807286 bytes)
+- Loci read: serm. 11 entire; serm. 12 entire; serm. 13.1–3 (English); PL cols 225–236 (page images of 225–226, 233–236)
+- Quoted: English 11.4, 11.6 (block), 12.3, 12.4 (two), 12.6 (three), 12.7 (three), 12.10, 13.1 (two); Latin 12.6 (col. 233, block), 12.8 (col. 234), 12.10 (col. 235)
+- Rights: 1921 Dublin publication, anonymous translator; public domain in the US (pre-1931); EU/Irish status depends on the translator's identity (not established). Quotations kept focused.
+- Ceiling: English from archive.org OCR, read; Latin checked on page images; section numbers from PL.
+
+### Bernard, Sermons for the feast of St Michael 1–2 (PL 183; Mount Melleray 1925)
+- Witness: Latin PL 183:447–454 (DCO page images; archive.org OCR); English, *St. Bernard's Sermons for the Seasons*, vol. 3 (Dublin, 1925), pp. 315–329.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: http://www.documentacatholicaomnia.eu/02m/1090-1153,_Bernardus_Claraevallensis_Abbas,_Sermones_De_Sanctis._In_Festo_Sancti_Michaelis,_MLT.pdf ; https://archive.org/download/stbernardssermon0003prie_s9b1/stbernardssermon0003prie_s9b1_djvu.txt
+- Retrieved: 2026-09-30
+- SHA-256 of the bytes read: 1c0bfe0eff6719fa2cf3beefaaee22676c1049ac38e05d77612440b200f5bc57 (7294 bytes); b216b78d046e34fe56d463bf53eb6ca48a7dd8c7be7a1c08ccca2b39180df89a (964870 bytes)
+- Loci read: serm. 1 entire, serm. 2 entire (English); PL col. 449 on page image; cols 447–452 in OCR
+- Quoted: English 1.1, 1.2 (three), 1.3 (three), 1.5 (two); Latin 1.4 (col. 449)
+- Rights: as for the Mount Melleray volume 1 (1925; US public domain).
+- Ceiling: section numbers from PL OCR (1.4 funiculus triplex; 1.5–6 concord and discord; 2.2 three reasons).
+
+### Bernard, Sermons on the Song of Songs 5, 7, 19, 27 (Eales 1896)
+- Witness: *Life and Works of Saint Bernard*, ed. Mabillon, tr. Samuel J. Eales, vol. 4, *Cantica Canticorum* (London: John Hodges, 1896).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/LifeWorksOfSBernardClairvauxV4/LifeWorksOfSBernardClairvauxV4_djvu.txt (also DCO PDF of PL 183:785–1198 fetched, not used for quotation)
+- Retrieved: 2026-09-30T14:58:08Z
+- SHA-256 of the bytes read: 26d3f6378ee7b171dc0d6e4c0be0de6d7eedc27a813c296a1dea9b4283b4e287 (2087239 bytes); 05a4ae4546150b33e035d9900b9d393812df00896ca0a2ac92f6321787694964 (7009 bytes)
+- Loci read: serm. 5 entire; 7.1–7; 19 entire; 27.1–10
+- Quoted: 5.2, 5.4, 5.7, 5.8; 7.4 (three); 19.2–7 (seven, one block); 27.5 (two); 27.6 (block)
+- Rights: 1896, public domain.
+- Ceiling: English OCR read; Latin not collated. Eales's Psalm numbering is Hebrew; the body cites Vulgate with Hebrew in brackets. Aquinas's citation of sermon 6 (ST I q. 51 a. 1 obj. 1) reported as a claim about the Summa; sermon 6 not read.
+
+### Hugh of St Victor, De sacramentis I.5 (PL 176)
+- Witness: Hugh of Saint Victor, *De sacramentis christianae fidei* I, pars 5, cc. 1–34, PL 176:245–264 (DCO page images; archive.org OCR patrologiaecursu0176mign).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: http://www.documentacatholicaomnia.eu/02m/1096-1141,_Hugo_De_S_Victore,_De_Sacramentis_Christianae_Fidei,_MLT.pdf ; https://archive.org/download/patrologiaecursu0176mign/patrologiaecursu0176mign_djvu.txt
+- Retrieved: 2026-09-30
+- SHA-256 of the bytes read: bdff1cbacd432932a543cbeaa815a34b1abe47e7f879ecfe53dadb0390733800 (7210 bytes); 45aa2541b54393f64578761a1c3cc1a64f80575c750dc16f3bee454953348134 (3673923 bytes)
+- Loci read: I.5.1–34 entire (OCR); page images of cols 247–254, 257–262
+- Quoted: I.5.3 (col. 247), I.5.4 (cols 248, 249), I.5.5 (col. 249), I.5.7 (col. 250, two), I.5.8 (col. 250), I.5.10, I.5.12 (col. 251), I.5.13 (col. 252), I.5.18 (col. 253), I.5.24 (col. 257), I.5.26, I.5.27 (col. 258), I.5.30 (col. 260, block; col. 261), I.5.31, I.5.32 (col. 261)
+- Rights: Migne, public domain; English glosses are the lane's own, unquoted.
+- Ceiling: checked on page images; c. 28's list paraphrased because the print has a typographical error ("aus" for "aut").
+
+### Hugh of St Victor, Commentaria in Hierarchiam caelestem VI (PL 175)
+- Witness: PL 175:1037–1038 (DCO page image; archive.org OCR patrologiaecursu175mign).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: http://www.documentacatholicaomnia.eu/02m/1096-1141,_Hugo_De_S_Victore,_Commentariorum_In_Hierarchiam_Coelestem_S_Dionysii_Areopagitae,_MLT.pdf
+- Retrieved: 2026-09-30T14:56:33Z
+- SHA-256 of the bytes read: 8b94178c65af38ddec2a9bd5f89ea94bc588638e67bd4313f1d29b4d7f1d2812 (7247 bytes); 2707405f16b87cf12bf9e3432922d7c75f093ba6391a55d0d3bc758b506abe3d (4568494 bytes)
+- Loci read: book VI, cols 1037–1038
+- Quoted: VI (col. 1038, block)
+- Rights: Migne, public domain.
+- Ceiling: page image at 120 dpi.
+
+### Honorius Augustodunensis, Elucidarium (PL 172)
+- Witness: *Elucidarium* I.6–11 and II.28–29, PL 172:1113–1116, 1154–1155 (DCO page images; archive.org OCR patrologiaecursu0172mign).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: http://www.documentacatholicaomnia.eu/02m/1080-1137,_Honorius_Augustodunensis,_Elucidarium_Sive_Dialogus_De_Summa_Totius_Christianae_Theologiae,_MLT.pdf
+- Retrieved: 2026-09-30T14:56:06Z
+- SHA-256 of the bytes read: 120fff9f38815abbd8ef962b4eda31123df36db044ef40179be4edac17f0ddc7 (7067 bytes); 2ebfcb5ff3c527820036fe06be730b45d544eb1024dd5cb1980ef9c5a59444b1 (4174594 bytes)
+- Loci read: I.5–11; II.28–29
+- Quoted: I.6 (six short passages, col. 1113), I.7 (col. 1114), I.9, I.10 (cols 1115–1116, four), I.11, II.28 (col. 1154, block)
+- Rights: Migne, public domain.
+- Ceiling: page images at 60–80 dpi.
+
+### Hildegard of Bingen, Scivias I.6 (PL 197)
+- Witness: *Scivias* I, visio 6, PL 197:437–441 (DCO page images; archive.org OCR patrologiaecursu0197mign).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: http://www.documentacatholicaomnia.eu/02m/1098-1179,_Hildegardis_(Hildegard_von_Bingen),_Scivias_Sive_Visionum_Ac_Revelationum_Libri_Tres,_MLT.pdf
+- Retrieved: 2026-09-30T14:56:03Z
+- SHA-256 of the bytes read: 3b891785a90d123b17a8f1827cfa01319ba52ef9dce1360d3dd8940d9c174f16 (6993 bytes); af5a03a74331e07219121e74ff58685a55d83702bfdb6044ea202a3ecbd82cd5 (4056084 bytes)
+- Loci read: I.6 entire (cols 437–441)
+- Quoted: col. 437 (block; two phrases), col. 438 (two), col. 440 (one)
+- Rights: Migne, public domain; English glosses are the lane's own, unquoted.
+- Ceiling: page images; PL prints no chapter numbers within the vision, so loci are by column.
+
+### Peter Lombard, Sententiae II dd. 1–11 (Quaracchi 1916)
+- Witness: *Libri IV Sententiarum*, 2nd ed., t. 1 (Ad Claras Aquas: Collegium S. Bonaventurae, 1916), pp. 309–357.
+- Repository ids: `work.peter-lombard.sententiae` (existing).
+- URL: https://archive.org/download/libriivsententia01pete/libriivsententia01pete_djvu.txt ; https://archive.org/download/libriivsententia01pete/libriivsententia01pete_bw.pdf
+- Retrieved: 2026-09-29 (OCR); 2026-09-30T15:15:34Z (PDF)
+- SHA-256 of the bytes read: 4cc27eb3178d204a0d8727cb8bdfad2bcd0180a1ded0b9cc9d605b33b59c4cf8 (1592526 bytes)
+- Loci read: II d. 1 c. 5 – d. 12 c. 1 entire
+- Quoted: d. 2 c. 1; d. 2 c. 3; d. 3 c. 1; d. 3 c. 4; d. 4; d. 5 c. 1 (block); d. 5 c. 6; d. 6 c. 1 (two); d. 7 c. 4; d. 8 c. 3; d. 9 c. 1 (two); d. 9 c. 2 (three); d. 9 c. 3; d. 9 c. 6; d. 11 c. 1 (block; Jerome); d. 11 c. 2
+- Rights: 1916 edition, public domain (US; editors' text of a medieval work).
+- Ceiling: every quotation checked on page images (PDF pp. 397–440 = printed pp. 313–356).
+
+### Bonaventure, Breviloquium II.6–8 (Quaracchi 1911)
+- Witness: *Tria opuscula S. Bonaventurae: Breviloquium, Itinerarium, De reductione artium*, 3rd ed. (Ad Claras Aquas, 1911), pp. 74–82.
+- Repository ids: `work.bonaventure.breviloquium` (registered with this publication).
+- URL: https://archive.org/download/triaopusculaseraphici3ed/triaopusculaseraphici3ed.pdf ; …_djvu.txt
+- Retrieved: 2026-09-30
+- SHA-256 of the bytes read: 354278e155b269ba486c804cbfee9345a2903cc8f1f10c887aff872a58d431bf (673514 bytes)
+- Loci read: II.5.8 – II.9.2
+- Quoted: II.6.2 (two), II.7.1, II.7.3, II.8.1 (block), II.8.2, II.8.3
+- Rights: 1911, public domain.
+- Ceiling: page images (PDF pp. 85, 87–89, 91).
+
+### Thomas Aquinas, Summa theologiae I (English Dominican 1920; Leonine Latin)
+- Witness: New Advent English (Fathers of the English Dominican Province, 2nd rev. ed. 1920); Corpus Thomisticum Latin for q. 108 a. 6.
+- Repository ids: `work.thomas-aquinas.summa-theologiae` (existing).
+- URL: https://www.newadvent.org/summa/1108.htm (and 1051, 1062, 1063, 1106, 1111, 1112, 1113 as cached); https://www.corpusthomisticum.org (cache ct-sth1103.txt)
+- Retrieved: 2026-09-29
+- SHA-256 of the bytes read: 5736abad11534d6a5ebb3fa0c76ff5df228d6558cbb69163f5f437523f2c2ed1 (476518 bytes)
+- Loci read: q. 51 a. 1; q. 62 aa. 2, 6; q. 63 aa. 1, 3, 9; q. 106 aa. 2, 4; q. 108 aa. 4–6, 8; q. 111 a. 2; q. 112 a. 1; q. 113 aa. 1–2
+- Quoted: q. 63 a. 3 co. (Anselm); q. 108 a. 6 co. (six phrases) and ad 4 (one)
+- Rights: 1920 English, public domain.
+- Ceiling: New Advent presentation; Leonine Latin of q. 108 a. 6 read (it gives no homily number for Gregory; New Advent adds "Hom. xxiv").
+
+### Dionysius, Celestial Hierarchy 6–9 (Parker 1899)
+- Witness: John Parker, *The Works of Dionysius the Areopagite*, pt. 2 (London, 1899), as transcribed at tertullian.org.
+- Repository ids: `work.pseudo-dionysius-the-areopagite.de-caelesti-hierarchia` (registered with this publication).
+- URL: https://www.tertullian.org/fathers/areopagite_13_heavenly_hierarchy.htm
+- Retrieved: 2026-09-29
+- SHA-256 of the bytes read: ae7608cea7b9f874f2b8ebdabfbe9cfae8b74285fec914aeca3d87cd9089104d (114110 bytes)
+- Loci read: CH 5–9
+- Quoted: CH 7.1 ("warmth, and keenness")
+- Rights: 1899, public domain.
+- Ceiling: web transcription; not collated with print.
+
+### Gregory the Great, Hom. in Evang. 34; Moralia XXXII.48
+- Witness: Latin *Homiliae in Evangelia* 34 (la.wikisource, PL 76 text); *Morals on the Book of Job*, Library of the Fathers vol. 31 (vol. III pt. 2, Oxford 1850), and lectionarycentral transcription.
+- Repository ids: `work.gregory-the-great.homiliae-in-evangelia` (existing); `work.gregory-the-great.moralia-in-iob` (registered with this publication).
+- URL: https://la.wikisource.org/w/index.php?title=Homiliarum_in_Evangelia/XXXIV&action=raw ; https://archive.org/download/31ALibraryOfFathersOfTheHolyCatholicV31/31ALibraryOfFathersOfTheHolyCatholicV31_djvu.txt ; https://www.lectionarycentral.com/GregoryMoralia/Book32.html
+- Retrieved: 2026-09-29/30
+- SHA-256 of the bytes read: dfd661ab607de8517fed4ffabddea2bdb80da2591230cb5b9a73efc62d56147f (35028 bytes); e57596ba2cedfc47ab9ff599c660b172262d9e25c33782c87419544a925f32be (2108312 bytes); 426a7d69992a5e03be469291433c135f5520e125db35b53f65d850b927b4dbef (153054 bytes)
+- Loci read: Hom. 34.7–13; Moralia XXXII.47–48
+- Quoted: none in prose (lists in appendix table)
+- Rights: public domain.
+- Ceiling: web transcription (Wikisource) and OCR; lists agree across LF OCR and lectionarycentral.
+
+### Isidore, Etymologiae VII.5
+- Witness: Latin text at The Latin Library.
+- Repository ids: `work.isidore.etymologiae` (existing).
+- URL: https://www.thelatinlibrary.com/isidore/7.shtml
+- Retrieved: 2026-09-29T17:50:49Z
+- SHA-256 of the bytes read: 44312348f815c0af0ed00ecb532cbe327d3dc6a50f32ef78726b3d8abe37b150 (80402 bytes)
+- Loci read: VII.5.1–33
+- Quoted: VII.5.4 (list, appendix)
+- Rights: public domain text.
+- Ceiling: web transcription.
+
+### Cyril of Jerusalem; Gregory Nazianzen; Ambrose; John Damascene (NPNF)
+- Witness: *Myst. Cat.* V.6 and *Or.* 28.31 (NPNF2 7); Ambrose *De fide* V.13.166 and *De Spiritu Sancto* I.16.178 (NPNF2 10); Damascene *De fide orth.* II.3, tr. Salmond (NPNF2 9).
+- Repository ids: `work.cyril-of-jerusalem.catechetical-lectures` (existing); `work.john-of-damascus.de-fide-orthodoxa` (registered with this publication).
+- URL: https://ccel.org/ccel/s/schaff/npnf207/cache/npnf207.txt ; …npnf210… ; …npnf209…
+- Retrieved: 2026-09-29
+- SHA-256 of the bytes read: 56d84cfa94dee313af0139e2d7f3d4b5f7fffca40ce0f34794b5f56264964dfd (3388014 bytes); 14fa05cc98a67cb1ccf7613e63d5eb80fd48feb3e09dd29210e70f53dfcd7577 (2963575 bytes); 859ba34cc5998f2761b801aa5de724b2ea741a54d98e21614faeb89cc40f8ad4 (2606804 bytes)
+- Loci read: as named
+- Quoted: lists only (appendix)
+- Rights: public domain.
+- Ceiling: CCEL plain text.
+
+### Dante, Paradiso XXVIII (Longfellow)
+- Witness: *Divine Comedy*, tr. H. W. Longfellow, *Paradiso*, Project Gutenberg eBook 1003.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://www.gutenberg.org/cache/epub/1003/pg1003.txt
+- Retrieved: 2026-09-30T14:58:13Z
+- SHA-256 of the bytes read: 1d3caefa714846480a0ce44067396bc755b23ac78de41772c6d6bc98aa24095a (249847 bytes)
+- Loci read: Par. XXVIII entire (vv. counted: 139)
+- Quoted: XXVIII.133–135
+- Rights: public domain.
+- Ceiling: Gutenberg text; verse numbers counted from the canto text.
+
+### Fourth Lateran Council (Denzinger)
+- Witness: *Firmiter* and c. 2, Latin as in the Denzinger text cached for the leaf.
+- Repository ids: `work.fourth-lateran-council.firmiter-credimus` (existing); `work.denzinger.enchiridion-symbolorum` (existing).
+- URL: see manifest (denz-patristica)
+- Retrieved: 2026-09-29
+- SHA-256 of the bytes read: 604f24c46e0bc71c2018f25dc787a9ab421d4b2e9cf7d1cee1f43e910ef2708f (2333435 bytes)
+- Loci read: DS 800–804
+- Quoted: DS 800 (two clauses), DS 804 ("cum Petro Lombardo")
+- Rights: public domain Latin.
+- Ceiling: Denzinger transcription.
+
+### Douay–Rheims (Challoner)
+- Witness: Project Gutenberg eBook 1581.
+- Repository ids: `work.english-college-of-douay.douay-rheims-bible` (existing).
+- URL: https://www.gutenberg.org/cache/epub/1581/pg1581.txt
+- Retrieved: 2026-09-29
+- SHA-256 of the bytes read: 7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007 (5880580 bytes)
+- Loci read and quoted: 1 Cor 4:7; Gen 1:1; Ps 90:11–12; Ps 117:15; Ps 137:1; Isa 14:13–14; Job 40:14; Ezek 28:12–13; 4 Kgs 6:16; Eph 1:21; Col 1:16; Eph 6:12
+- Rights: public domain.
+- Ceiling: Gutenberg text.
+
 ## Angelic substance; bodies, place, and motion (ST I qq. 50-53)
 
 ### Aquinas, Summa theologiae, English
