@@ -4,8 +4,8 @@ provider = "claude"
 audited_on = "2026-09-30"
 discovery_rule = "src/claude/**/main.tex"
 publication_count = 57
-source_surface_file_count = 1530
-snapshot = "sha256:9bf0ac2e427d7960a8e1606833d489d05e2d72f6d4f7a30db2ee3e8a130f2066"
+source_surface_file_count = 1531
+snapshot = "sha256:49ceaa09e2139420d1043ec7b579967272afbbbf17cbd55d6b50742d80494ce0"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -8563,7 +8563,7 @@ owners = ["theology/angelology"]
 
 [[files]]
 path = "src/claude/theology/angelology/appendices/02a-pre-christian-continuities.tex"
-sha256 = "092a6bfdd7ce7c8606db95ba4edde26e106aa2487a27b4088d02a3d80dc39cb9"
+sha256 = "85252792166077255275420d0b8bfa4b1efe68f24f0cd322f9e7071adb9c1994"
 kind = "rendered-content"
 owners = ["theology/angelology"]
 
@@ -8575,7 +8575,7 @@ owners = ["theology/angelology"]
 
 [[files]]
 path = "src/claude/theology/angelology/appendices/04-parallels-in-aquinas.tex"
-sha256 = "3d00156c14d6df54c10f3afa9bcfa2a744ad8210fc325137f87b007b7aaeb3fd"
+sha256 = "3058df7c278be628369c470d92f0d837d2be6dcb7d873b8aed63dac61a788717"
 kind = "rendered-content"
 owners = ["theology/angelology"]
 
@@ -8587,7 +8587,7 @@ owners = ["theology/angelology"]
 
 [[files]]
 path = "src/claude/theology/angelology/appendices/06-magisterial-chronology.tex"
-sha256 = "503d0c8636198e8b7b2aab26bfd527a6c28365bae16aaeec61838d222caf1d93"
+sha256 = "86936494ef582c57b792840da6686b3c70f8aa43f9640e01096062c476266a91"
 kind = "rendered-content"
 owners = ["theology/angelology"]
 
@@ -8599,7 +8599,7 @@ owners = ["theology/angelology"]
 
 [[files]]
 path = "src/claude/theology/angelology/appendices/08-scripture-index.tex"
-sha256 = "88eeb257d8301260137a11e2af56dc0b0c2dcdfb1637f8b657bb5b84554a98bc"
+sha256 = "564d9d831095e72e96c140ea6eeb33eee07217b79507020de67e9f4f7f7c19e9"
 kind = "rendered-content"
 owners = ["theology/angelology"]
 
@@ -8623,7 +8623,7 @@ owners = ["theology/angelology"]
 
 [[files]]
 path = "src/claude/theology/angelology/appendices/12-terminology.tex"
-sha256 = "c05d08985cb5e92891f99f3c22511758b641908a8edd39a66885e1d1c26565a4"
+sha256 = "ee64f9d2d2652819364c2dc8867692de731f9c881f95174fc264abdd5e689ff7"
 kind = "rendered-content"
 owners = ["theology/angelology"]
 
@@ -8641,13 +8641,13 @@ owners = ["theology/angelology"]
 
 [[files]]
 path = "src/claude/theology/angelology/appendices/99-references.tex"
-sha256 = "c893d447839dc0fd92cc26308c7c4a2d80b9161864a45b56aad96865a69179c0"
+sha256 = "7845f8011012502f0b306e1a5421ba30459f2ef05906c6be9c309a21b20d1a24"
 kind = "rendered-content"
 owners = ["theology/angelology"]
 
 [[files]]
 path = "src/claude/theology/angelology/main.tex"
-sha256 = "60e7550031bff942a266e0de5f0e84086849e42e9c5dd1c0216789f111250d49"
+sha256 = "770fe0642313b2a58b42e750c0724e161ba3fdec7cdb78804d0cbfea3a87c48c"
 kind = "publication-main"
 owners = ["theology/angelology"]
 
@@ -8659,7 +8659,13 @@ owners = ["theology/angelology"]
 
 [[files]]
 path = "src/claude/theology/angelology/research/production-plan.md"
-sha256 = "14e4bc1bb625b926a645899baa73aa39a138733a803d6c6d6e7ef4ee6a43715e"
+sha256 = "349b393a52b05eb84028e45d2af22fbfa82e21f5deeb337a85d9f4c6034a12e4"
+kind = "research-record"
+owners = ["theology/angelology"]
+
+[[files]]
+path = "src/claude/theology/angelology/research/production-review.md"
+sha256 = "22667caf4706389b6ed4ea1223147dc7705a12c5c06101761130a74790787b0a"
 kind = "research-record"
 owners = ["theology/angelology"]
 
@@ -8689,7 +8695,7 @@ owners = ["theology/angelology"]
 
 [[files]]
 path = "src/claude/theology/angelology/research/terminology-audit.md"
-sha256 = "ca62a5370e20c019bc6ff18ac7d976fa3348bfd73263d0f5688c8302605c3683"
+sha256 = "08a58bd7fa2882b92e374ac5b64fc86fbfdf99af2bd5eef082962d1228833a81"
 kind = "research-record"
 owners = ["theology/angelology"]
 
@@ -8707,19 +8713,19 @@ owners = ["theology/angelology"]
 
 [[files]]
 path = "src/claude/theology/angelology/sections/07-israel-before-christ.tex"
-sha256 = "f05d3fc5ebbab244c1f925c099285443ac9eba363975e931e26fc0fdf3b52ef4"
+sha256 = "efe64abe38b874a0f5022394c108a48f556ce0b711ca0acee478e2de3f8a6c0e"
 kind = "rendered-content"
 owners = ["theology/angelology"]
 
 [[files]]
 path = "src/claude/theology/angelology/sections/08-philosophers-before-christ.tex"
-sha256 = "29a24a368265825f684a202828cbd04ffe2289b491c538475db3e167021ac8a6"
+sha256 = "5f40e90c69e066df3b3d1416929b5cd2b0ca48f36797ae61247b81c41ad97919"
 kind = "rendered-content"
 owners = ["theology/angelology"]
 
 [[files]]
 path = "src/claude/theology/angelology/sections/10-fathers-before-dionysius.tex"
-sha256 = "b11c0068b6c8a79bcb350c337e1db24c3ba539994c39da56dfd22d971f77153e"
+sha256 = "aa1bc8756d15e6348552689620f38890dcc676911fad095845d2b0d0ed7ffc3c"
 kind = "rendered-content"
 owners = ["theology/angelology"]
 
@@ -8731,25 +8737,25 @@ owners = ["theology/angelology"]
 
 [[files]]
 path = "src/claude/theology/angelology/sections/12-latin-fathers-before-dionysius.tex"
-sha256 = "68b160bd8870cddee4818084a3fb1f47ed6d9c9deae085eb5dcc28b287d1daaf"
+sha256 = "d8dd7f0ff2e30e0e83751da3c166ac432eb0745333eb917bd6799aad8726722b"
 kind = "rendered-content"
 owners = ["theology/angelology"]
 
 [[files]]
 path = "src/claude/theology/angelology/sections/13-augustine.tex"
-sha256 = "34f1f7c254cf5c2fbc68e6594169c39dbe0afdafaa31872846f4288a24e43256"
+sha256 = "f345ea75e562575073071708e8f70cbf543f7ce7d7d8a0efeeb54f4afd41e2c8"
 kind = "rendered-content"
 owners = ["theology/angelology"]
 
 [[files]]
 path = "src/claude/theology/angelology/sections/15-celestial-hierarchy.tex"
-sha256 = "be2ed28606bf1d3808cf24842dd14a611a8952d630ce985d43671c2331403930"
+sha256 = "8f287841fa393e7ec6303114a4776339aedf68ba041c9e7b6c5ce06b3b68ae62"
 kind = "rendered-content"
 owners = ["theology/angelology"]
 
 [[files]]
 path = "src/claude/theology/angelology/sections/20-fathers-after-dionysius.tex"
-sha256 = "814407ac5e37964f18e93865e14d718d1c1ee2913f0debf394049e5a39de3902"
+sha256 = "0d99516c95b1a2245f29ad0149f30e94e1725fe74b26521e7e365f02fbc84153"
 kind = "rendered-content"
 owners = ["theology/angelology"]
 
@@ -8773,7 +8779,7 @@ owners = ["theology/angelology"]
 
 [[files]]
 path = "src/claude/theology/angelology/sections/34-intellect-and-knowledge.tex"
-sha256 = "cc1e8f600030bdcde6da0309266d4c57feeb66eeeab5a65cb3de4fdcc9f5b0eb"
+sha256 = "6ab227c9f9ab023954cd5fe6defd92ec569b7a37fdcbcbd78184a6da577eabf6"
 kind = "rendered-content"
 owners = ["theology/angelology"]
 
@@ -8821,7 +8827,7 @@ owners = ["theology/angelology"]
 
 [[files]]
 path = "src/claude/theology/angelology/sections/58-assaults-of-demons.tex"
-sha256 = "e41dabfdd101456e135572ee2b508923f60eb40a50f9749571ac1acc742acca5"
+sha256 = "315293bd34b0f97245362ebc1baeee06d218802e21819727433040ccb68f7557"
 kind = "rendered-content"
 owners = ["theology/angelology"]
 
@@ -8845,7 +8851,7 @@ owners = ["theology/angelology"]
 
 [[files]]
 path = "src/claude/theology/angelology/sections/80-liturgy.tex"
-sha256 = "2e3811c6397854c0acbd899d2cb75731f251e7c6cc0793c16d56624574c6cbac"
+sha256 = "3cd0394e401d7991aeee6e8ccd167b0f8cda5944663dd5c3af048e4bf98408c1"
 kind = "rendered-content"
 owners = ["theology/angelology"]
 

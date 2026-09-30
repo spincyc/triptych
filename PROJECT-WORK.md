@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-09-29.
+Last reconciled: 2026-09-30.
 
 ## GPT angelology reference, 2026-09-29
 
@@ -74,12 +74,29 @@ of the best patristic sources as an authentic Catholic treatise. The
 profile's "Voice and determination" section and the leaf's scope record
 that directive.
 
-**State: in progress.** The profile, routing, leaf scaffold, research scope,
-and production plan exist. The leaf's
+**Complete on the feature branch; not merged or deployed.** The Claude
+edition, *The Angels: Nature, Knowledge, Will, Fall, Order, and Ministry*,
+is a 369-page treatise in 25 sections and 15 appendices: Scripture and the
+faith of the Church; the writings before Christ (Septuagint, Enoch,
+Jubilees, the Testaments, Philo, and the Greek poets and philosophers) and
+the continuity the Fathers established with them; the Greek and Latin
+Fathers, Augustine, the fifteen chapters of the *Celestial Hierarchy*, and
+the Fathers and Doctors after Dionysius; every article of ST I qq. 50–64
+and 106–114 with graded dossiers; Christ, Mary, and the angels; the
+disputed questions and the Byzantine line; liturgy, devotion, and the
+saints. The leaf's
+[production review](src/claude/theology/angelology/research/production-review.md)
+records four visual-review passes over every page, the web-edition review,
+the artifact hashes, the gates, and the evidence ceilings; its
 [production plan](src/claude/theology/angelology/research/production-plan.md)
-tracks every body section and appendix with its status and principal
-sources; a successor resumes from its first unit not yet `drafted`. Nothing
-is built, installed, cataloged, or released yet.
+records how each appendix is maintained. The reviewed PDF is installed
+locally, the web edition is installed at `web/claude/theology/angelology.md`,
+the Faith catalog row links both editions under their exact titles, and the
+release record is `alpha` under the standing authorization. The web
+converter now letters references to appendices, which also corrected one
+line in each of two other tracked editions. Commits are pushed to
+`origin/feature/droid/theology/angelology`; merging to `main` (and so
+deployment) awaits the maintainer.
 
 ## GPT postconciliar Twenty-seventh Sunday, 2026-09-28
 

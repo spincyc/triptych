@@ -3,7 +3,7 @@
  "counted": {
   "documents": 202,
   "issues": 238,
-  "pages": 6447,
+  "pages": 6816,
   "titles_unrecorded": 0,
   "works": 147
  },
@@ -11009,7 +11009,7 @@
    "catalog_page": "library/faith.html",
    "editions": [
     {
-     "authorization": null,
+     "authorization": "perpetual-public-repository-2026",
      "contributions": [
       {
        "model": "Opus 5.5",
@@ -11027,15 +11027,16 @@
       "Opus 5.5",
       "claude-opus-5-5[1m]"
      ],
-     "pages": null,
-     "pdf_absent": "no PDF is installed for this issue",
+     "pages": 369,
+     "pdf": "pdf/claude/theology/angelology.pdf",
      "provider": "claude",
      "reviewed": "2026-09-29",
-     "revised": "2026-09-30T18:23:23Z",
-     "status": "hold",
+     "revised": "2026-09-30T19:11:32Z",
+     "status": "alpha",
      "subject": "A Thomistic reference on the angels following Summa theologiae I qq. 50-64 and 106-114, with a chapter-by-chapter exposition of the Celestial Hierarchy and the patristic, magisterial, and liturgical witness",
      "title": "The Angels: Nature, Knowledge, Will, Fall, Order, and Ministry",
-     "title_source": "src/claude/theology/angelology/main.tex"
+     "title_source": "src/claude/theology/angelology/main.tex",
+     "web": "web/claude/theology/angelology.html"
     },
     {
      "authorization": "perpetual-public-repository-2026",

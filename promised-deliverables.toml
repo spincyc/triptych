@@ -45,8 +45,8 @@ state = "complete"
 [[deliverables]]
 id = "claude-angelology-2026-09-29"
 owner = "PROJECT-WORK.md"
-promise = "Produce the Claude reference `theology/angelology`: a document on the angels following the systematic teaching of Aquinas (ST I qq. 50-64 and 106-114), with a chapter-by-chapter exposition of the Celestial Hierarchy, an expanded patristic, magisterial, liturgical, and school corpus, and ample appendices of tables and hierarchies; carried through the full pipeline to a reviewed PDF, web edition, catalog row, and release record, with incremental commits pushed to feature/droid/theology/angelology."
-state = "in_progress"
+promise = "Produce the Claude reference `theology/angelology`: a document on the angels following the systematic teaching of Aquinas (ST I qq. 50-64 and 106-114), with a chapter-by-chapter exposition of the Celestial Hierarchy, an expanded patristic, magisterial, liturgical, and school corpus, and ample appendices of tables and hierarchies; carried through the full pipeline to a reviewed PDF, web edition, catalog row, and release record, with incremental commits pushed to feature/droid/theology/angelology. On 2026-09-30 the maintainer added a declarative voice at each degree of determination, an expansive patristic account as an authentic Catholic treatise, and research into continuity between the Fathers and pre-Christian writings."
+state = "complete"
 
   [[deliverables.requirements]]
   id = "angelology-profile"
@@ -69,50 +69,77 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "angelology-thomist-treatise"
   criterion = "The body treats every article of ST I qq. 50-64 and 106-114 in the Summa's order, each question with a graded dossier, and the article census appendix agrees with research/question-inventory.md."
-  status = "open"
-  evidence = ["src/claude/theology/angelology/research/production-plan.md"]
-
+  status = "pass"
+  evidence = ["src/claude/theology/angelology/research/question-inventory.md", "src/claude/theology/angelology/appendices/03-article-census.tex"]
+  check = "contains"
+  path = "src/claude/theology/angelology/appendices/03-article-census.tex"
+  needle = "The census holds 124 articles in 27 questions."
   [[deliverables.requirements]]
   id = "angelology-celestial-hierarchy"
   criterion = "All fifteen chapters of the Celestial Hierarchy receive exposition with focused quotations from an identified public-domain translation, PG 3 loci, and Aquinas's reception; the full text is not reproduced."
-  status = "open"
-  evidence = ["src/claude/theology/angelology/research/production-plan.md"]
-
+  status = "pass"
+  evidence = ["src/claude/theology/angelology/sections/15-celestial-hierarchy.tex"]
+  check = "contains"
+  path = "src/claude/theology/angelology/sections/15-celestial-hierarchy.tex"
+  needle = "{sec:ch15}"
   [[deliverables.requirements]]
   id = "angelology-expanded-corpus"
   criterion = "Patristic and saintly witnesses are read at their own loci and recorded in the source audit and witness register."
-  status = "open"
-  evidence = ["src/claude/theology/angelology/research/production-plan.md"]
-
+  status = "pass"
+  evidence = ["src/claude/theology/angelology/research/source-audit.md", "src/claude/theology/angelology/appendices/13-witness-register.tex", "src/claude/theology/angelology/sections/10-fathers-before-dionysius.tex", "src/claude/theology/angelology/sections/13-augustine.tex", "src/claude/theology/angelology/sections/84-the-saints-and-the-angels.tex"]
+  check = "path_exists"
   [[deliverables.requirements]]
   id = "angelology-extensions"
   criterion = "The body covers the fallen angels (cross-referenced to the exorcism study), liturgy and devotion (1962 and postconciliar feasts, prefaces, the Leo XIII prayer to Saint Michael, the Angele Dei), the magisterium (Lateran IV, Vatican I, Humani generis, the Catechism, John Paul II's 1986 catecheses, the Directory on Popular Piety on angel names), and disputed questions after Aquinas (Bonaventure, Scotus, Suarez; Damascene and Palamas)."
-  status = "open"
-  evidence = ["src/claude/theology/angelology/research/production-plan.md"]
-
+  status = "pass"
+  evidence = ["src/claude/theology/angelology/sections/40-fall-and-punishment.tex", "src/claude/theology/angelology/sections/58-assaults-of-demons.tex", "src/claude/theology/angelology/sections/80-liturgy.tex", "src/claude/theology/angelology/sections/82-devotion-and-its-regulation.tex", "src/claude/theology/angelology/sections/05-faith-of-the-church.tex", "src/claude/theology/angelology/sections/70-disputed-questions.tex", "src/claude/theology/angelology/sections/72-byzantine-line.tex"]
+  check = "path_exists"
   [[deliverables.requirements]]
   id = "angelology-appendices"
   criterion = "The appendices listed in the profile's reader order exist, with tables of the orders, comparative orderings, the article census, and the other listed concordances."
-  status = "open"
-  evidence = ["src/claude/theology/angelology/research/production-plan.md"]
-
+  status = "pass"
+  evidence = ["src/claude/theology/angelology/appendices/01-the-nine-orders.tex", "src/claude/theology/angelology/appendices/02-comparative-orderings.tex", "src/claude/theology/angelology/appendices/03-article-census.tex", "src/claude/theology/angelology/appendices/04-parallels-in-aquinas.tex", "src/claude/theology/angelology/appendices/08-scripture-index.tex", "src/claude/theology/angelology/appendices/12-terminology.tex", "src/claude/theology/angelology/appendices/13-witness-register.tex"]
+  check = "path_exists"
   [[deliverables.requirements]]
   id = "angelology-pdf-reviewed"
   criterion = "The PDF builds cleanly, every page is visually reviewed, and the reviewed PDF is installed at pdf/claude/theology/angelology.pdf."
-  status = "open"
-  evidence = ["src/claude/theology/angelology/research/production-plan.md"]
-
+  status = "pass"
+  evidence = ["src/claude/theology/angelology/research/production-review.md"]
+  check = "contains"
+  path = "src/claude/theology/angelology/research/production-review.md"
+  needle = "7d641c0b2ecdb5ebf84a3376e37eda9a12feca7500a7cccfce40a4f5cfae84c7"
   [[deliverables.requirements]]
   id = "angelology-web-catalog-release"
   criterion = "The reviewed web edition is installed at web/claude/theology/angelology.md, library/faith.md carries the catalog row, and release/publications/claude/theology/angelology.json exists."
-  status = "open"
-  evidence = ["src/claude/theology/angelology/research/production-plan.md"]
-
+  status = "pass"
+  evidence = ["web/claude/theology/angelology.md", "library/faith.md", "release/publications/claude/theology/angelology.json"]
+  check = "contains"
+  path = "library/faith.md"
+  needle = "[The Angels: Nature, Knowledge, Will, Fall, Order, and Ministry](../pdf/claude/theology/angelology.pdf)"
   [[deliverables.requirements]]
   id = "angelology-source-gates"
   criterion = "New source works are registered, research/source-bindings.toml binds them, and make check-sources, check-metadata, and check-web-editions pass for the leaf."
-  status = "open"
-  evidence = ["src/claude/theology/angelology/research/production-plan.md"]
+  status = "pass"
+  evidence = ["src/claude/theology/angelology/research/source-bindings.toml", "src/claude/theology/angelology/research/production-review.md"]
+  check = "contains"
+  path = "src/claude/theology/angelology/research/production-review.md"
+  needle = "`make check-sources`, `make check-metadata PROVIDER=claude`"
+
+  [[deliverables.requirements]]
+  id = "angelology-voice-directive"
+  criterion = "The maintainer's 2026-09-30 voice directive (declare at each degree of determination, no dogma hedging, expansive patristic account, authentic Catholic treatise) is recorded in the profile and scope, and the whole body is revised to it."
+  status = "pass"
+  evidence = ["guidance/theology/angelology.md", "src/claude/theology/angelology/research/scope.md"]
+  check = "contains"
+  path = "guidance/theology/angelology.md"
+  needle = "## Voice and determination"
+
+  [[deliverables.requirements]]
+  id = "angelology-pre-christian-continuity"
+  criterion = "The body researches the continuity between the Fathers and pre-Christian writings (Septuagint, Jewish writings outside the canon, Philo, Greek poets and philosophers), each at its locus beside the patristic reception, and an appendix tables the continuities."
+  status = "pass"
+  evidence = ["src/claude/theology/angelology/sections/07-israel-before-christ.tex", "src/claude/theology/angelology/sections/08-philosophers-before-christ.tex", "src/claude/theology/angelology/appendices/02a-pre-christian-continuities.tex"]
+  check = "path_exists"
 
 [[deliverables]]
 id = "gpt-postconciliar-twenty-seventh-2026-09-28"
