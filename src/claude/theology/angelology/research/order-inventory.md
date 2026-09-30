@@ -159,3 +159,24 @@ only when its locus was read at the source.
 | thrones | Aquinas | I q. 63 a. 9 ad 3 | Thrones | — (not ranked here) | Name drawn from God's indwelling; never given to demons | yes (na-summa-1063) |
 | powers | Aquinas | I q. 63 a. 9 ad 3 | Powers | — (not ranked here) | Name drawn from power; given to demons | yes (na-summa-1063) |
 | principalities | Aquinas | I q. 63 a. 9 ad 3 | Principalities | — (not ranked here) | Name drawn from power; given to demons | yes (na-summa-1063) |
+| seraphim | Aquinas, *SCG* III.80 | n. 5 | Seraphim | 1 | Perceive the reason of providence in the last end, the divine goodness; ardentes vel incendentes | yes |
+| cherubim | Aquinas, *SCG* III.80 | n. 6 | Cherubim | 2 | Know it in the divine form; scientiae plenitudo | yes |
+| thrones | Aquinas, *SCG* III.80 | n. 7 | throni | 3 | Consider the disposition of the divine judgments in itself | yes |
+| dominations | Aquinas, *SCG* III.80 | n. 10 | dominationes | 4 | Distribute the universal disposition to executors; dominorum est praecipere | yes |
+| virtues | Aquinas, *SCG* III.80 | n. 11 | virtutes | 5 | Move the heavens; execute works beyond the order of nature | yes |
+| powers | Aquinas, *SCG* III.80 | n. 12 | potestates | 6 | Guard the order against what would disturb it | yes |
+| principalities | Aquinas, *SCG* III.80 | n. 14 | principatus | 7 | Common good of city and nation; Dan 10 | yes |
+| archangels | Aquinas, *SCG* III.80 | n. 15 | Archangeli | 8 | Announce what all must believe (Gabriel) | yes |
+| angels | Aquinas, *SCG* III.80 | n. 16 | Angeli | 9 | Good of each person; guardians of men (Ps 90[91]:11) | yes |
+| seraphim, cherubim, thrones | Aquinas, *ST* I q. 112 | a. 4 co. | — | 1–3 | Not sent to outward ministry | yes |
+| dominations | Aquinas, *ST* I q. 112 | a. 4 co., ad 1 | dominationes | 4 | Not sent; dispose and command, as an architect | yes |
+| virtues | Aquinas, *ST* I q. 112 | a. 4 co. | virtutes | 5 | Sent; named in respect of some act | yes |
+| powers | Aquinas, *ST* I q. 112 | a. 4 co. | potestates | 6 | Sent; named in respect of some act | yes |
+| principalities | Aquinas, *ST* I q. 112 | a. 4 co. | principatus | 7 | Sent; "first among the workers" (Gregory) | yes |
+| archangels | Aquinas, *ST* I q. 112 | a. 4 co. | Archangeli | 8 | Sent; named from announcing | yes |
+| angels | Aquinas, *ST* I q. 112 | a. 4 co. | Angeli | 9 | Sent; named from announcing | yes |
+| virtues | Aquinas, *ST* I q. 110 | a. 1 ad 3 | virtutes | — | Preside over purely corporeal creatures; miracles sometimes by their ministry | yes |
+| powers | Aquinas, *ST* I q. 110 | a. 1 ad 3 (after Gregory) | potestates | — | Preside over the demons | yes |
+| powers | Gregory, *Hom. in Ev.* 34 | §10 | potestates | 6 | Adverse powers subject to them and bridled, lest they tempt as much as they will | yes |
+| virtues | Gregory, *Hom. in Ev.* 34 | §10 | virtutes | 7 | Per quos signa et miracula frequentius fiunt | yes |
+| dominations | Dionysius, *CH* (Parker) | 8.1 | Lordships | 4 | Unslavish elevation, superior to every subserviency | yes |

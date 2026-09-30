@@ -1795,6 +1795,314 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 - Rights: public domain.
 - Ceiling: Gutenberg transcription.
 
+## Government, mission, and the assaults of demons (ST I qq. 110-112, 114); the demons' powers and limits
+
+### Aquinas, Summa theologiae I qq. 110–112, 114 (with q. 57 aa. 3–4, q. 64 aa. 1 and 4, q. 103 a. 6, q. 106 pr.)
+- Witness: English Dominican translation, 2nd rev. ed. 1920, as presented by New Advent; Latin Leonine text as presented by Corpus Thomisticum.
+- Repository ids: `work.thomas-aquinas.summa-theologiae` (existing).
+- URL: https://www.newadvent.org/summa/1110.htm, 1111.htm, 1112.htm, 1114.htm, 1057.htm, 1064.htm; https://www.corpusthomisticum.org/sth1103.html
+- Retrieved: 2026-09-29 (manifest)
+- SHA-256 of the bytes read: 5736abad11534d6a5ebb3fa0c76ff5df228d6558cbb69163f5f437523f2c2ed1 (476518 bytes)
+- Loci read: I q. 110 pr., aa. 1–4 entire; q. 111 pr., aa. 1–4 entire; q. 112 pr., aa. 1–4 entire; q. 114 pr., aa. 1–5 entire; q. 57 aa. 3–4 corpora and ad 1; q. 64 a. 1 corpus and ad 4, a. 4 corpus; q. 103 a. 6 co. (Latin only); q. 106 pr. (Latin).
+- Quoted: every article of qq. 110–112 and 114 (English and key Latin); q. 103 a. 6 co. (Latin); q. 106 pr. and qq. 110–112, 114 prologues (Latin).
+- Rights: English Dominican 1920, public domain; Latin text public domain.
+- Ceiling: web presentations; not collated with the Leonine print. New Advent's typographical slip "form some corporeal agent" (q. 110 a. 2) avoided by quoting the Latin.
+
+### Aquinas, Summa contra gentiles III.78–81, 103
+- Witness: Latin (Leonine manual) as presented by Corpus Thomisticum.
+- Repository ids: `work.thomas-aquinas.summa-contra-gentiles` (registered with this publication).
+- URL: https://www.corpusthomisticum.org/scg3064.html
+- Retrieved: 2026-09-29
+- SHA-256 of the bytes read: b3be14fbe2b9597f2ca9cb482c009c33a133fcc73ff9190c836011a4cdb8bf1b (393598 bytes)
+- Loci read: III.78 nn. 1–6; III.79 nn. 1–5; III.80 nn. 1–19; III.81 n. 1; III.103 nn. 1–9.
+- Quoted: III.78 n. 1; III.80 nn. 10–11 (phrases); III.103 nn. 6–7.
+- Rights: Latin, public domain.
+- Ceiling: web transcription; English not used.
+
+### Aquinas, Quaestiones disputatae de potentia q. 6
+- Witness: Latin (Marietti) as presented by Corpus Thomisticum.
+- Repository ids: `work.thomas-aquinas.de-potentia` (registered with this publication).
+- URL: https://www.corpusthomisticum.org/qdp5.html (the page carrying qq. 5–6; qdp6.html returned 404)
+- Retrieved: 2026-09-30T14:22:35Z
+- SHA-256 of the bytes read: f470797614277976e9a030aaa1b33238a8853b30bd4f52443cbde09bcc449d70 (424769 bytes)
+- Loci read: q. 6 pr.; aa. 3, 4, 5, 10 corpora.
+- Quoted: a. 3 (absque assertione et sententiae melioris praeiudicio; unde Augustinus dicit ... ad nutum materia corporalis; per modum miraculi ... per modum artis); a. 5 (si Daemonibus ... non decet; per modum artis).
+- Rights: Latin, public domain.
+- Ceiling: web transcription. a. 3 cites Augustine "in II Lib. de Trinitate" for a passage that stands in De Trin. III.10.21. The gloss on Gen 6:4 in a. 3 is not used.
+
+### Aquinas, Quaestiones disputatae de malo q. 16
+- Witness: Latin (Leonine) as presented by Corpus Thomisticum.
+- Repository ids: `work.thomas-aquinas.de-malo` (registered with this publication).
+- URL: https://www.corpusthomisticum.org/qdm16.html
+- Retrieved: 2026-09-29
+- SHA-256 of the bytes read: 125185866e21f915d9d469dd101e266842cd4ab6bee62ed7d57c7ad6515dcc62 (322684 bytes)
+- Loci read: a. 6 co. (end), a. 7 co. (opening), aa. 8–12 corpora.
+- Quoted: a. 9 co. (spiritual substances cannot transform bodies formally); a. 12 co. (good angels strengthen the light, demons do not).
+- Rights: Latin, public domain.
+- Ceiling: web transcription.
+
+### Augustine, De Trinitate III
+- Witness: English of A. W. Haddan (1873), revised W. G. T. Shedd, NPNF series 1 vol. 3 (1887), CCEL plain text; Latin as presented by augustinus.it (NBA text).
+- Repository ids: `work.augustine.de-trinitate` (registered with this publication).
+- URL: https://ccel.org/ccel/s/schaff/npnf103/cache/npnf103.txt; https://www.augustinus.it/latino/trinita/trinita_03_libro.htm
+- Retrieved: 2026-09-29 (English); 2026-09-30T14:15:11Z (Latin)
+- SHA-256 of the bytes read: cc8d3ff7ce4d4ba293f50a06200af03ff0e5abdeb5200db3a59b4dbe2cad7bdb (3357503 bytes); b2b06936a08717dd5aa48a284827d500e8b632eb700c0779d457b133749e7f51 (68630 bytes)
+- Loci read: III.pref.1–3, III.1.4–11.27 entire.
+- Quoted: III.1.4, 1.6, 3.8, 4.9 (block), 5.11, 6.11, 7.12, 8.13 (block and Latin), 9.16, 9.18 (block), 10.19, 10.20, 10.21, 11.22, 11.23, 11.27; Latin 4.9, 8.13.
+- Rights: NPNF public domain; Latin public domain (web presentation).
+- Ceiling: web transcriptions; not collated with CCSL 50. Shedd's bracketed notes not used.
+
+### Augustine, De Genesi ad litteram VIII.24.45
+- Witness: Latin as presented by augustinus.it.
+- Repository ids: `work.augustine.de-genesi-ad-litteram` (existing).
+- URL: https://www.augustinus.it/latino/genesi_lettera/genesi_lettera_08_libro.htm
+- Retrieved: 2026-09-29
+- SHA-256 of the bytes read: a024b5abb84bf0eb2a1f254c7262ac585f3df876ae43c478a00f609af99c7f74 (72204 bytes)
+- Loci read: VIII.23.44–27.50.
+- Quoted: VIII.24.45 (two Latin phrases).
+- Rights: Latin, public domain.
+- Ceiling: web transcription; not collated with CSEL 28.
+
+### Augustine, De diversis quaestionibus octoginta tribus q. 79
+- Witness: Latin as presented by augustinus.it.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://www.augustinus.it/latino/ottantatre_questioni/ottantatre_questioni_libro.htm
+- Retrieved: 2026-09-29
+- SHA-256 of the bytes read: 60b9fbde7a1bb0bd7e4b28efa445f3ecc04da8459fca9407303464dd9fd68d28 (316081 bytes)
+- Loci read: q. 79.1–5.
+- Quoted: q. 79.1, 79.4, 79.5 (Latin).
+- Rights: Latin, public domain.
+- Ceiling: web transcription.
+
+### Augustine, De divinatione daemonum
+- Witness: Latin as presented by augustinus.it.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://www.augustinus.it/latino/potere_divinatorio/potere_divinatorio_libro.htm
+- Retrieved: 2026-09-29
+- SHA-256 of the bytes read: 152f2e97c16255ad64191158345f5f220e113de7e86ce1480cf38a5406e7bc4b (30665 bytes)
+- Loci read: entire (1.1–10.14).
+- Quoted: 3.7, 5.9, 6.10 (Latin phrases).
+- Rights: Latin, public domain. No public-domain English located; none quoted.
+- Ceiling: web transcription.
+
+### Augustine, Retractationes II.30
+- Witness: Latin as presented by augustinus.it.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://www.augustinus.it/latino/ritrattazioni/ritrattazioni_2_libro.htm
+- Retrieved: 2026-09-30T14:14:57Z
+- SHA-256 of the bytes read: 683b581f9430763fb9ddada2aaebb7ee92e924599a8f43f9010bb15f896be3ab (105653 bytes)
+- Loci read: II.30 (LVII).
+- Quoted: II.30 (two Latin phrases).
+- Rights: Latin, public domain.
+- Ceiling: web transcription.
+
+### Augustine, De civitate Dei XVIII.18, XX.19
+- Witness: English of Marcus Dods, NPNF series 1 vol. 2 (1887), CCEL.
+- Repository ids: `work.augustine.de-civitate-dei` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf102/cache/npnf102.txt
+- Retrieved: 2026-09-29
+- SHA-256 of the bytes read: 5c973feda803f3e58a88ed7df210b42d436f5466741eb8dbeae713ab56dedae4 (3692898 bytes)
+- Loci read: XVIII.18 entire; XX.19 (passage on the lying wonders and Job).
+- Quoted: XVIII.18 (three sentences); XX.19 (two sentences).
+- Rights: public domain.
+- Ceiling: web transcription. The transformation narratives of XVIII.18 are not used.
+
+### Gregory the Great, Moralia in Iob II and XVII
+- Witness: Library of the Fathers, Morals on the Book of Job, vol. 1 (Oxford 1844) and vol. 2 (Oxford 1845), archive.org OCR.
+- Repository ids: `work.gregory-the-great.moralia-in-iob` (registered with this publication).
+- URL: https://archive.org/download/moralsonbookofj01greg/moralsonbookofj01greg_djvu.txt; https://archive.org/download/21ALibraryOfFathersOfTheHolyCatholicV21/21ALibraryOfFathersOfTheHolyCatholicV21_djvu.txt
+- Retrieved: 2026-09-29
+- SHA-256 of the bytes read: 96e0f3706c7a9a427bb3dffa578be87bd66ac96617fc90a7266ce7f241264ad2 (1806303 bytes); f13861be5715cabe5283d5bd7f38cb35c2a1332bd6dc04cf049475b88da5c493 (1916422 bytes)
+- Loci read: II.2.2–13.22 (Job 1:6–15); XVII.12.17–14.20 (Job 25:2–4).
+- Quoted: II.3.3, II.4.4–5, II.10.16–17 (block), II.11.19, II.12.21, II.13.22; XVII.13.18–19.
+- Rights: LF translation, public domain.
+- Ceiling: OCR; obvious OCR errors corrected in quotation ("gb"→"go", "tlie/tlic"→"the", "hght"→"light"); passages with garbled quotation marks quoted only in their clean parts. Not collated with print or CCSL 143.
+
+### Gregory the Great, Homiliae in Evangelia 34
+- Witness: Latin, Wikisource transcription of a Migne-based text (repository edition).
+- Repository ids: `work.gregory-the-great.homiliae-in-evangelia` (existing); `edition.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17` (existing).
+- URL: https://la.wikisource.org/wiki/Homiliae_in_Evangelia_(Gregorius_Magnus)
+- Retrieved: 2026-09-17 (edition registration); read through the l7-ch extract .scratch/lanes/l7-ch/greg-h34-wrapped.txt
+- Loci read: 34.7–14.
+- Quoted: 34.8, 34.10, 34.12, 34.13 (Latin).
+- Rights: PL 76 text public domain; Wikisource layer CC BY-SA.
+- Ceiling: web transcription; no public-domain English located; none quoted in English.
+
+### Gregory the Great, Dialogues IV
+- Witness: English of 1608 (P. W.), ed. Edmund G. Gardner (London 1911), transcribed at tertullian.org.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://www.tertullian.org/fathers/gregory_04_dialogues_book4.htm
+- Retrieved: 2026-09-30T14:22:02Z
+- SHA-256 of the bytes read: c0fcbac5f0d6cbf6a192398f793368cf85d2e26253db4a40d0edd116c43698b1 (202560 bytes)
+- Loci read: IV.1–6.
+- Quoted: IV.5 (one sentence, the source of the sed contra of I q. 110 a. 1).
+- Rights: public domain.
+- Ceiling: web transcription. Chapter numbering of the 1911 English (ch. 5) differs from Aquinas's citation (iv, 6); footnoted in the body.
+
+### Dionysius, Celestial Hierarchy 1, 4, 8, 13, 14
+- Witness: John Parker, The Works of Dionysius the Areopagite, part II (London 1899), tertullian.org transcription.
+- Repository ids: `work.pseudo-dionysius-the-areopagite.de-caelesti-hierarchia` (registered with this publication); `work.pseudo-dionysius-the-areopagite.works-part-ii-parker` (registered with this publication).
+- URL: https://www.tertullian.org/fathers/areopagite_13_heavenly_hierarchy.htm
+- Retrieved: 2026-09-29
+- SHA-256 of the bytes read: ae7608cea7b9f874f2b8ebdabfbe9cfae8b74285fec914aeca3d87cd9089104d (114110 bytes)
+- Loci read: CH 1.2–3; 4.1–4; 8.1–2; 13.1–4; 14; 15.1 (opening).
+- Quoted: 1.2; 4.2, 4.3; 8.1; 13.2, 13.3, 13.4; 14.
+- Rights: public domain.
+- Ceiling: web transcription; stray period in 13.2 ("same name. as") avoided by quoting around it. CH 7 cited only as Aquinas cites it.
+
+### Dionysius, Divine Names 4 and 7
+- Witness: John Parker, Works of Dionysius, part I (London 1897), tertullian.org transcription.
+- Repository ids: `work.pseudo-dionysius-the-areopagite.de-divinis-nominibus` (registered with this publication).
+- URL: https://www.tertullian.org/fathers/areopagite_03_divine_names.htm
+- Retrieved: 2026-09-29
+- SHA-256 of the bytes read: 7d89093873b2ea5b8cf88e96c9066ce04907a0231523db3fa363c22039dc4295 (206269 bytes)
+- Loci read: DN 4.1–3, 4.18–23; 7.2–3.
+- Quoted: 4.2; 4.18; 4.23; 7.3.
+- Rights: public domain.
+- Ceiling: web transcription.
+
+### John of Damascus, De fide orthodoxa II.3–4
+- Witness: S. D. F. Salmond, NPNF series 2 vol. 9 (1899), CCEL.
+- Repository ids: `work.john-of-damascus.de-fide-orthodoxa` (registered with this publication).
+- URL: https://ccel.org/ccel/s/schaff/npnf209/cache/npnf209.txt
+- Retrieved: 2026-09-29
+- SHA-256 of the bytes read: 859ba34cc5998f2761b801aa5de724b2ea741a54d98e21614faeb89cc40f8ad4 (2606804 bytes)
+- Loci read: II.3–4 entire.
+- Quoted: II.3 (five sentences); II.4 (four sentences).
+- Rights: public domain.
+- Ceiling: English only; Salmond's rendering of the sentence Aquinas cites in I q. 111 a. 2 obj. 2 and q. 114 a. 3 obj. 1 differs from the Latin Aquinas used; both are given as such.
+
+### Origen, De principiis III.2
+- Witness: F. Crombie's English of Rufinus's Latin, ANF vol. 4, CCEL.
+- Repository ids: `work.origen.de-principiis` (existing).
+- URL: https://ccel.org/ccel/s/schaff/anf04/cache/anf04.txt
+- Retrieved: 2026-09-29
+- SHA-256 of the bytes read: b9f385a048c18158c2f74dcd37062f48a1c68a5d05bdb07270a93692d172da2e (4237225 bytes)
+- Loci read: III.2.1–7 entire.
+- Quoted: III.2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7.
+- Rights: public domain.
+- Ceiling: translation of Rufinus's Latin; not collated.
+
+### Origen, Contra Celsum I.6
+- Witness: F. Crombie, ANF vol. 4, CCEL.
+- Repository ids: `work.origen.contra-celsum` (existing).
+- URL: as above
+- Retrieved: 2026-09-29
+- SHA-256 of the bytes read: b9f385a048c18158c2f74dcd37062f48a1c68a5d05bdb07270a93692d172da2e (4237225 bytes)
+- Loci read: I.6.
+- Quoted: I.6 (one sentence, appendix).
+- Rights: public domain.
+- Ceiling: web transcription.
+
+### Athanasius, Vita Antonii 16–43
+- Witness: English of H. Ellershaw, NPNF series 2 vol. 4 (ed. A. Robertson, 1892), CCEL.
+- Repository ids: `work.athanasius-of-alexandria.vita-antonii` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf204/cache/npnf204.txt
+- Retrieved: 2026-09-30T14:09:25Z
+- SHA-256 of the bytes read: d2f362ce989db6955bb7d900c619543c581beceaca52acd8359510551c85f124 (4570263 bytes)
+- Loci read: 16–43 entire.
+- Quoted: 21, 22, 23, 24, 28, 29, 30, 31, 35, 38, 41, 42.
+- Rights: public domain.
+- Ceiling: web transcription. Ch. 43 (the questioning of apparitions) deliberately not used under the profile's fallen-angel bounds.
+
+### Athanasius, De incarnatione 47.2
+- Witness: A. Robertson, NPNF series 2 vol. 4 (1892), CCEL.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: as above
+- Retrieved: 2026-09-30T14:09:25Z
+- SHA-256 of the bytes read: d2f362ce989db6955bb7d900c619543c581beceaca52acd8359510551c85f124 (4570263 bytes)
+- Loci read: 47.1–4; 55.1–3.
+- Quoted: 47.2 (appendix).
+- Rights: public domain.
+- Ceiling: web transcription.
+
+### John Chrysostom, Three Homilies concerning the Power of Demons
+- Witness: English of T. P. Brandram, NPNF series 1 vol. 9, CCEL.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://ccel.org/ccel/s/schaff/npnf109/cache/npnf109.txt
+- Retrieved: 2026-09-30T14:09:26Z
+- SHA-256 of the bytes read: d6a51d22d996e02c47b88462f7222737b26d2363212f24e34834cfc6b580da57 (2752950 bytes)
+- Loci read: hom. 1 entire; hom. 2 entire; hom. 3.1–5.
+- Quoted: 1.6; 2.1, 2.2, 2.4, 2.5; 3.1, 3.2, 3.4.
+- Rights: public domain.
+- Ceiling: web transcription; a stray period in 3.4 ("wickedness. of") avoided by quoting around it. The editor's introduction is not used as a source.
+
+### John Chrysostom, Homilies on John 46
+- Witness: English of G. T. Stupart, NPNF series 1 vol. 14, CCEL.
+- Repository ids: `work.john-chrysostom.homilies-on-john` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf114/cache/npnf114.txt
+- Retrieved: 2026-09-29
+- SHA-256 of the bytes read: e26f55f8d0739c07d73d5b664e42efbd923a43230a22d93d55261c808e9cd458 (3943878 bytes)
+- Loci read: hom. 46 (Eucharistic passage).
+- Quoted: one sentence (appendix).
+- Rights: public domain.
+- Ceiling: web transcription.
+
+### John Cassian, Conferences VII–VIII
+- Witness: English of E. C. S. Gibson, NPNF series 2 vol. 11, CCEL.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://ccel.org/ccel/s/schaff/npnf211/cache/npnf211.txt
+- Retrieved: 2026-09-30T14:11:59Z
+- SHA-256 of the bytes read: 8b1206d4e7488c65b5391875fd9570a8a6bcc83270dea35ffe44010c3575d267 (3470230 bytes)
+- Loci read: VII.1–3, 6–23; VIII.1–3, 12–20.
+- Quoted: VII.8, 10, 15, 16, 17, 19, 20, 22; VIII.19.
+- Rights: public domain.
+- Ceiling: web transcription. VIII.16 (narrative about an identified monk's fall) not used.
+
+### Denzinger–Schönmetzer: Trent, Sess. V can. 1 (DS 1511), Sess. VI ch. 1 (DS 1521); Braga I can. 8 (DS 458)
+- Witness: Enchiridion symbolorum, Latin, patristica.net presentation.
+- Repository ids: `work.denzinger.enchiridion-symbolorum` (existing); `work.council-of-trent.canones-et-decreta` (existing).
+- URL: https://patristica.net/denzinger/enchiridion-symbolorum.html
+- Retrieved: 2026-09-29
+- SHA-256 of the bytes read: 604f24c46e0bc71c2018f25dc787a9ab421d4b2e9cf7d1cee1f43e910ef2708f (2333435 bytes)
+- Loci read: DS 457–460; 1511–1512; 1521.
+- Quoted: DS 1511, 1521 (Latin phrases); DS 458 paraphrased.
+- Rights: Latin conciliar texts, public domain; no copyrighted English used.
+- Ceiling: web transcription of DS.
+
+### Catechism of the Catholic Church 391–395, 2846–2854
+- Witness: English, vatican.va archive.
+- Repository ids: `work.catholic-church.catechism` (existing).
+- URL: https://www.vatican.va/archive/ENG0015/__P1C.HTM; https://www.vatican.va/archive/ENG0015/__PAC.HTM
+- Retrieved: 2026-09-29 (P1C); 2026-09-30T14:22:36Z (PAC)
+- SHA-256 of the bytes read: 3ce4c15f4bdb2cccf0dd788c1ddbe25a7eee2b8c1b35ecb60aa07d509b30c153 (33151 bytes); 42f886d8140924ace0ef510b3443096b88f74bfd2b9757080e684c854c112197 (15476 bytes)
+- Loci read: 391–395; 2846–2854 with notes 150–175.
+- Quoted: 395, 2846, 2849, 2851, 2852 (with Ambrose as cited), 2853, 2854 — short quotations.
+- Rights: Libreria Editrice Vaticana English, copyrighted; short focused quotations with attribution.
+- Ceiling: official web text.
+
+### Paul VI, general audience of 15 November 1972
+- Witness: Italian, vatican.va.
+- Repository ids: `work.paul-vi.general-audience-1972-11-15` (registered with this publication).
+- URL: https://www.vatican.va/content/paul-vi/it/audiences/1972/documents/hf_p-vi_aud_19721115.html
+- Retrieved: 2026-09-29
+- SHA-256 of the bytes read: ade46aabccf08b76fcb0ea47f159fe252585939feb0db6d1f649a6be8eb589fe (50375 bytes)
+- Loci read: entire.
+- Quoted: short Italian phrases (per eccellenza; per via dei sensi, della fantasia, della concupiscenza; Non è detto che ogni peccato ...; tutto ciò che ci difende ... La grazia è la difesa decisiva).
+- Rights: Holy See text; short quotations with attribution.
+- Ceiling: official web text. The printed reference "S. TH. 1, 104, 3" attached to the sentence on every sin evidently intends I q. 114 a. 3; the body says only "with a reference to the Summa".
+
+### Douay–Rheims Bible (Challoner)
+- Witness: Project Gutenberg eBook 1581.
+- Repository ids: `edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581` (existing).
+- URL: https://www.gutenberg.org/cache/epub/1581/pg1581.txt
+- Retrieved: 2026-09-29
+- SHA-256 of the bytes read: 7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007 (5880580 bytes)
+- Loci read and quoted: see Scripture cited.
+- Rights: public domain.
+- Ceiling: Gutenberg transcription.
+
+### Patrologia Latina 58 (contents)
+- Witness: PL 58, archive.org OCR.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/patrologiaecur58mign/patrologiaecur58mign_djvu.txt
+- Retrieved: 2026-09-30T14:12:54Z
+- SHA-256 of the bytes read: 722ef703cc9374a049f0fea1642b4c341a426bffd5482ea272580b00b4505cb9 (4731021 bytes)
+- Loci read: volume contents (Gennadius Massiliensis, Liber de Ecclesiasticis Dogmatibus).
+- Quoted: nothing.
+- Rights: public domain.
+- Ceiling: the chapter quoted by Aquinas (De eccl. dogm. 49, sed contra of I q. 114 a. 3) could not be located in the OCR; the body quotes it only as the Summa gives it and does not name Gennadius.
+
 ## Disputed questions after Aquinas; positions on the first sin
 
 ### Aquinas, Summa theologiae, English

@@ -9,6 +9,7 @@ transliteration.
 | --- | --- | --- | --- | --- |
 | accuser | criminator | diabolos | Lactantius, Div. inst. II.8.6 | ANF "accuser" |
 | added / cooperating grace | gratia apposita / gratia cooperans | — | Lombard, Sent. II d. 5 cc. 1, 3–4 | never given to those who fell |
+| adverse powers | virtutes adversae | — | Gregory, Hom. 34.10 | Restrained by the order of Powers |
 | aevum | aevum | — | I q. 61 a. 2 (cf. In II Sent. d. 2 q. 1 a. 1) | Angelic duration between time and eternity |
 | affective knowledge | cognitio affectiva | — | I q. 64 a. 1 co. | `producens amorem Dei`; NA renders "effective" |
 | angel | angelus | angelos | Mal 3:1; ST I q. 108 a. 5 ad 1; CH 4–5 | Office-name, not nature-name (Augustine, Enarr. in Ps. 103 s. 1 §15; CCC 329) Name of office (Gregory, Hom. 34.8: nomen officii, non naturae) |
@@ -21,16 +22,20 @@ transliteration.
 | application of power | applicatio virtutis |  | I q. 52 a. 1 co.; a. 2 co. | ground of angelic place |
 | archangel | archangelus | — | *Enchir.* 58; *De civ. Dei* XXII.30 | ranked above angels only in XXII.30 |
 | Archangels | Archangeli | archangeloi | Jude 9; 1 Thess 4:15 [4:16]; CH 9.2 | summi nuntii |
+| assault | impugnatio | — | ST I q. 114 pr., a. 1 | Distinguished from its ordering (ordo impugnationis) |
 | assumed body | corpus assumptum |  | I q. 51 a. 2 s.c., ad 2 | united as a represented mover |
 | at once from the beginning of time | simul ab initio temporis | — | DS 800; DS 3002 | the disputed particle of Firmiter |
 | Averter | Apopompaeus | — | Origen, De princ. III.2.1 (Lev 16:8) | Read; not used in final body |
 | birthday of impatience | natales inpatientiae | — | Tertullian, De pat. 5.5 |  |
 | both creatures | utramque … creaturam, spiritualem et corporalem, angelicam videlicet et mundanam | — | Lateran IV, Firmiter (DS 800); I q. 61 a. 1 | Defined simultaneity of spiritual and corporeal creation |
+| bound / loosed | ligari / solvi | — | De pot. q. 6 a. 5 | Demons hindered from, or permitted, what their nature reaches |
 | burning, fire, beginning of their mouth | ardor, incendium, principium oris | — | Jerome, Ep. 18.6 | etymology of *Seraphim*; cf. *ST* I q. 63 a. 7 ad 1 |
 | by a kind of exhortation | quadam quasi exhortatione | — | I q. 63 a. 8 co. | How the first sin caused the others |
 | by equality / by likeness | per aequiparantiam / per similitudinem | — | I q. 63 a. 3 co. | The devil sought likeness, not equality |
 | by essence / substantially | substantialiter | — | Origen, De princ. I.5.3 (note [2030]) | Whether holiness is by nature |
 | by the power of his own nature | per virtutem suae naturae | — | I q. 63 a. 3; *De malo* q. 16 a. 3 | Object of the first sin |
+| by way of art | per modum artis | — | De pot. q. 6 aa. 3, 5 | Angelic and demonic works on bodies |
+| by way of persuasion | per modum suadentis | — | ST I q. 111 a. 2 | How angels move the will from without |
 | candidates for angelhood | angelorum … candidati | — | Tertullian, De orat. 3.3 | the praying Church learning the Sanctus |
 | Cherubim | Cherubim | cheroubim | Ezek 10:20; Gregory, Hom. 34.9; CH 7.1 | "Fullness of knowledge" "Fulness of knowledge or stream of wisdom" |
 | chief princes = archangels | principes primi | — | Jerome, In Dan. 10:13 |  |
@@ -47,7 +52,7 @@ transliteration.
 | demon | — | daimon | Justin, 1 Apol. 5 (ANF note [1774]) | Christian use for evil spirit; one devil, many demons |
 | demon / dragon (deserter) | — | daimon; drakon; apodedrakenai | Theophilus, Ad Autol. II.28 | Theophilus's etymology; "apodedrakenai" printed in ANF |
 | determination of the will | determinatio voluntatis |  | I q. 53 a. 3 ad 1 | measures an angel's speed |
-| devil | diabolus | diabolos | DS 800 | Created good, evil by his own act |
+| devil | diabolus | diabolos | DS 800; CCC 2851; Chrysostom, Power of Demons hom. 2.2 | Created good, evil by his own act "Throws himself across"; "the slanderer" |
 | Dominations | Dominationes | kyriotetes | Col 1:16; Eph 1:21; CH 8.1 | Direct the lower orders Parker "Lordships" |
 | efficacious / inefficacious volition | volitio efficax / inefficax (complacentiae) | — | Scotus, Ord. II d. 6 q. 1 | complacency may will the impossible |
 | efficient / deficient cause | causa efficiens / deficiens | — | *De civ. Dei* XII.6–7 | the evil will has no efficient cause |
@@ -84,6 +89,7 @@ transliteration.
 | help of grace | auxilium gratiae | — | I q. 62 a. 2 | Needed to turn toward beatitude |
 | here and now | hic et nunc |  | I q. 50 a. 1 co. | why a body cannot understand |
 | hidden seeds | `occulta semina` | — | *De Trin.* III.8.13 | angels apply them, do not create |
+| hidden seeds | occulta semina; naturae semina | — | Augustine, De Trin. III.8.13; De pot. q. 6 a. 3 | Causes latent in the elements; angels apply them, do not create |
 | hierarchy | hierarchia | hierarchia | CH 3.1 | "sacred order and science and operation"; the word appears first in this corpus |
 | honour of love, not servitude | `caritate, non servitute` | — | *De vera religione* 55.110 | the honour due to the angels |
 | illumination | illuminatio | photismos | CH 3.2–3 | Second |
@@ -107,7 +113,9 @@ transliteration.
 | messenger | nuntius | angelos | *De civ. Dei* XV.23; *De Gen. ad litt.* V.19.37 | the general name of the whole heavenly city |
 | messenger (Heb.) | mal'ak | malakh | JP2, aud. 30 July 1986 | "Delegated", "ambassador", per JP2 |
 | Michael | Michael | Michael | Dan 10:13; Jude 9; Apoc 12:7 | Quis ut Deus (Gregory, Hom. 34.9) |
+| minister (intelligent instrument) | minister, instrumentum intelligens | — | ST I q. 112 a. 1 | Definition of angelic ministry |
 | ministering spirits | spiritus administratorii | leitourgika pneumata | Heb 1:14 | "Sent to minister" |
+| miracle (proper / wide) | miraculum proprie / large | — | ST I q. 110 a. 4; q. 114 a. 4 | Outside the order of the whole created nature / exceeding human power |
 | mirror | speculum | — | ST I q. 56 a. 3 co.; DN 4.22 | The angelic nature as mirror of the Divine image |
 | mode of knowledge | modus cognitionis | — | ST I q. 54 pr. | Fourth head (q. 58) |
 | morning | mane | — | *De Gen. ad litt.* IV.22.39, IV.30.47 | the turning of evening knowledge to praise |
@@ -121,19 +129,23 @@ transliteration.
 | offices | officia | — | Origen, De princ. I.5.1 (note [2023]) | "rational offices and orders" |
 | operation | operatio | energeia | CH 3.1 | Third term |
 | order | ordo | taxis | CH 3.1 | First term of the definition |
+| outward (external) ministry | exterius ministerium | — | ST I q. 112 aa. 2, 4 | Action by divine command on bodies |
 | perfection | perfectio | teleiosis | CH 3.2–3 | Third |
 | personal vs specific distinction | discretio quoad personalitatem / quoad speciem | — | Bonaventure, d. 3 p. 1 a. 2 q. 1 | his "sober and catholic" position |
 | place | locus |  | I q. 52 | the body the angel's power touches |
 | place of punishment | locus poenalis | — | I q. 64 a. 4 co. | `duplex locus poenalis` |
+| plan of government / execution | ratio gubernationis / executio | — | ST I q. 103 a. 6 | God holds the plan immediately; executes partly through creatures |
 | Plani (a kind of demon) | Plani | planoi | Cassian, Conl. VII.32 | NPNF note: "seducers"; some MSS *Fauni* |
 | power of knowledge | virtus cognoscitiva | — | ST I q. 54 pr. | First of the four heads of the treatise on angelic knowledge |
 | Powers | Potestates | exousiai | Eph 1:21; Rom 8:38; CH 8.1 | Restrain the adverse powers (Gregory) Parker "Authorities" |
 | Powers (of God) | Virtutes (Dei) | — | Jerome, Ep. 18.17 | generic for angels here |
 | powers (preface) | Dominationes | — | Origen, De princ. preface 2 (note [1919]) | Crombie renders Dominationes as "powers" here |
+| presidency (of the angels over bodies) | praesidentia | — | ST I q. 110 pr. | Aquinas's term for the angels' rule over the corporeal creature |
 | pride | superbia | — | I q. 63 a. 2 co. | `non subdi superiori in eo quo debet` |
 | pride | superbia (`amor excellentiae propriae`) | — | *De Gen. ad litt.* XI.14.18 | precedes envy |
 | Principalities | Principatus | archai | Eph 1:21; Col 1:16; Rom 8:38; CH 9.1 | Preside over the good spirits (Gregory) |
 | private compacts; public justice | `privati contractus`; `publica iustitia` | — | *De div. qq. 83* q. 79.4 | magicians' wonders vs saints' |
+| private contracts / public justice / signs of public justice | privati contractus / publica iustitia / signa publicae iustitiae | — | Augustine, QQ. 83 q. 79.4; ST I q. 110 a. 4 ad 2 | Magicians, good Christians, bad Christians |
 | privilege of creation | conditionis praerogativa | — | Origen, De princ. I.5.3 (note [2029]) | Dominion as native privilege vs merit |
 | property of angelic power | proprium angelicae potestatis | — | Tertullian, De carne Christi 6.10 | to take a body from no matter |
 | purely spiritual creature | creatura pure spiritualis |  | I q. 50 pr. | "quae in Scriptura sacra Angelus nominatur" |
@@ -155,6 +167,7 @@ transliteration.
 | service due to God only | servitus; cultus | latreia | *De civ. Dei* X.1 | Augustine borrows the Greek word |
 | spirit (name of nature) | spiritus | — | *Enarr. in Ps.* 103, s. 1.15 | what the angels are |
 | spirit about matter | — | — | Athenagoras, Leg. 24; Methodius via Photius | The devil's original charge |
+| spirits and humours | spiritus et humores | — | ST I q. 111 aa. 3–4 | Bodily means by which imagination and sense are moved |
 | spiritual matter | materia (large sumpta) in spiritualibus | — | Bonaventure, In II Sent. d. 3 p. 1 a. 1 q. 1 | "matter" taken broadly as every constitutive potency |
 | spiritual substance, a body of its own kind | substantia spiritalis … corporis alicuius, sui tamen generis | — | Tertullian, De carne Christi 6.9 | Tertullian's own view; contrast *ST* I q. 50 a. 1 |
 | stronger nature | natura potior | — | Hilary, Tract. in Ps. 134.17 | the angels relative to man |
@@ -165,7 +178,9 @@ transliteration.
 | surrounding circle of angels | angelorum circumstantia | — | Tertullian, De orat. 3.3 |  |
 | Thrones | Throni | thronoi | Col 1:16 | God sits in them (Gregory) |
 | thrones | throni / sedes | thronoi | CH 7.1 | Gregory: throni = sedes (Hom. 34.10) |
+| to assist / to minister | assistere / ministrare, administrare | — | ST I q. 112 a. 3; Gregory, Hom. 34.12 | From Dan 7:10 |
 | to enter (the mind) | illabi (menti) | — | Gennadius 83; *ST* I q. 56 a. 2 obj. 3 | proper to God alone |
+| to tempt | tentare | — | ST I q. 114 a. 2 | "To make trial" (experimentum sumere) |
 | union by pressure from without | applicatio et oppressio | — | Gennadius 83 | how demons act on the possessed |
 | universal matter | materia universalis |  | I q. 50 a. 2 co.; *De sub. sep.* c. 5 | Avicebron |
 | virtual contact | contactus virtutis |  | I q. 53 a. 1 co. | English Dominican "virtual contact" |
