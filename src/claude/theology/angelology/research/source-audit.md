@@ -3238,6 +3238,407 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 - Rights: public domain.
 - Ceiling: the chapter quoted by Aquinas (De eccl. dogm. 49, sed contra of I q. 114 a. 3) could not be located in the OCR; the body quotes it only as the Summa gives it and does not name Gennadius.
 
+## The guardian angels (ST I q. 113)
+
+### Aquinas, Summa theologiae I q. 113
+Witness: Thomas Aquinas, *Summa theologiae*, English Dominican Province 2nd rev. ed. 1920 (New Advent); Latin Leonine text (Corpus Thomisticum).
+Repository id: work.thomas-aquinas.summa-theologiae
+URL: https://www.newadvent.org/summa/1113.htm ; https://www.corpusthomisticum.org/sth1103.html
+Retrieved: 2026-09-29 (manifest)
+SHA-256 of the bytes read: 90503352952827b68b50c430f51df5fa977cd4d3404a06934b860fa9d6f2b576 (53327 bytes); 5736abad11534d6a5ebb3fa0c76ff5df228d6558cbb69163f5f437523f2c2ed1 (476518 bytes)
+Loci read: I q. 113 pr., aa. 1–8 entire (obj., s.c., co., ad) in both languages.
+Quoted: pr. (Latin); every article, English and key Latin phrases.
+Rights: 1920 English public domain; Latin text quoted in short phrases.
+Ceiling: web transcriptions; not collated with Leonine print. New Advent's "Tract. v, super Matt." (a. 5) is its own reference; Leonine has "super Matthaeum".
+
+### Aquinas, Scriptum super Sententiis II d. 11
+Witness: Thomas Aquinas, *In II Sent.* d. 11 q. 1 aa. 1–5, expositio textus; q. 2 a. 5 (Corpus Thomisticum, Parma text).
+Repository id: work.thomas-aquinas.scriptum-super-sententiis
+URL: https://www.corpusthomisticum.org/snp2009.html
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: 1df33e5b7ce0687c4d9a80c3b172ec4252734260d7259db445dbf8e1bb33560a (218939 bytes)
+Loci read: d. 11 q. 1 pr., aa. 1–5 entire, expositio; q. 2 pr., a. 1, a. 5 entire.
+Quoted: q. 1 a. 1 ad 1, ad 5, ad 6; a. 2 co. (phrase); a. 3 co., ad 3, ad 5; a. 4 ad 1, ad 5; a. 5 ad 2, ad 3; expositio; q. 2 a. 5 co. (Latin, with glosses).
+Rights: Latin, short quotation.
+Ceiling: web text; a. 5 co. reading "etiam impossibile erat" paraphrased by sense only.
+
+### Aquinas, Summa contra gentiles III.80
+Witness: *SCG* III.78–80, Leonine text (Corpus Thomisticum).
+Repository id: work.thomas-aquinas.summa-contra-gentiles
+URL: https://www.corpusthomisticum.org/scg3064.html
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: b3be14fbe2b9597f2ca9cb482c009c33a133fcc73ff9190c836011a4cdb8bf1b (393598 bytes)
+Loci read: III.78–80 entire.
+Quoted: III.80 nn. 14, 16 (Latin phrases).
+Rights: Latin, short quotation.
+Ceiling: web text.
+
+### Aquinas, De veritate q. 8 a. 11
+Witness: *Quaestiones disputatae de veritate* q. 8 a. 11 (Corpus Thomisticum).
+Repository id: work.thomas-aquinas.de-veritate
+URL: https://www.corpusthomisticum.org/qdv08.html
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: 9b15fb2b63b70db664ba953a6a9a1ea349d3895482cd6a6cdb872dab817a1ec3 (405187 bytes)
+Loci read: q. 8 a. 11 s.c. 1, co.; a. 12 arg. 5.
+Quoted: a. 11 co. (one Latin phrase).
+Rights: Latin, short quotation.
+Ceiling: web text.
+
+### Douay–Rheims Bible
+Witness: Douay–Rheims (Challoner), Project Gutenberg eBook 1581.
+Repository id: work.english-college-of-douay.douay-rheims-bible
+URL: https://www.gutenberg.org/cache/epub/1581/pg1581.txt
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: 7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007 (5880580 bytes)
+Loci read: every verse in "Scripture cited" below.
+Quoted: all English Scripture outside the Summa's own quotations.
+Rights: public domain.
+Ceiling: Gutenberg transcription.
+
+### Hermas, Shepherd
+Witness: *Shepherd of Hermas*, ANF 2 (Crombie).
+Repository id: NEW work.hermas.pastor — title "The Shepherd"; responsible Hermas; work_type apocalyptic-parenesis; languages grc, la, en; locus Vis./Mand./Sim. book.chapter.
+URL: https://ccel.org/ccel/s/schaff/anf02/cache/anf02.txt
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: ae8e15414a21fe8d54a30fee7c3fbd1ee6a018e624dcd681d030da5c1cabbcac (3768675 bytes)
+Loci read: Mand. VI.1–2; Vis. V.
+Quoted: Mand. VI.2.
+Rights: public domain (ANF 1885).
+Ceiling: ANF translation.
+
+### Clement of Alexandria, Stromata VI.17
+Witness: *Stromata* VI.17, ANF 2 (Wilson).
+Repository id: NEW work.clement-of-alexandria.stromata — responsible Clement of Alexandria; work_type miscellany; languages grc, en; locus book.chapter.
+URL: as ANF 2 above
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: ae8e15414a21fe8d54a30fee7c3fbd1ee6a018e624dcd681d030da5c1cabbcac (3768675 bytes)
+Loci read: VI.17 (passage on providence and angels).
+Quoted: VI.17 ("regiments of angels ... assigned to individuals").
+Rights: public domain.
+Ceiling: ANF translation. Eclogae 41, 48 (ANF 8) read but not used (they cite the apocryphal Apocalypse of Peter).
+
+### Origen, Commentary on Matthew XIII.26–28
+Witness: Origen, *Comm. in Matt.* XIII.26–28, ANF 9 (Patrick).
+Repository id: work.origen.commentarium-in-matthaeum
+URL: https://ccel.org/ccel/s/schaff/anf09/cache/anf09.txt
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: 3861096b158e12bc13f4516baac913cbd3d921c607862a7eace4f0257b3aefa5 (3047154 bytes)
+Loci read: XIII.26–28 entire.
+Quoted: XIII.26, 27, 28 (short).
+Rights: public domain.
+Ceiling: ANF translation.
+
+### Origen, De principiis II.10.7
+Witness: *De principiis* II.10.7, Rufinus's Latin in ANF 4 (Crombie).
+Repository id: work.origen.de-principiis
+URL: https://ccel.org/ccel/s/schaff/anf04/cache/anf04.txt
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: b9f385a048c18158c2f74dcd37062f48a1c68a5d05bdb07270a93692d172da2e (4237225 bytes)
+Loci read: II.10.7–8.
+Quoted: II.10.7.
+Rights: public domain.
+Ceiling: ANF translation.
+
+### Origen, Homilies on Numbers XI.3–4
+Witness: Origen, *Hom. in Num.* XI.3–4, Rufinus's Latin, ed. W. A. Baehrens, GCS 30 (Origenes Werke 7), Leipzig 1921, pp. 80–82.
+Repository id: NEW work.origen.homiliae-in-numeros — responsible Origen (Rufinus trans.); work_type homilies; languages la; locus homily.section.
+URL: https://archive.org/download/origeneswerkehrs07origuoft/origeneswerkehrs07origuoft_djvu.txt
+Retrieved: 2026-09-30 (manifest)
+SHA-256 of the bytes read: 2c72837897b3ace1f5548a9a15563062f5601c563cc566d9fec6712adcdbb290 (2230721 bytes)
+Loci read: XI.2–4.
+Quoted: XI.3 (one sentence), XI.4 (two sentences), Latin with gloss.
+Rights: ancient text; 1921 edition, US public domain.
+Ceiling: OCR normalized (e.g. "consunimatione" → consummatione, "angeii" → angeli); not collated with print.
+
+### Gregory the Wonderworker, Panegyric on Origen
+Witness: *Oratio panegyrica* 4–5, ANF 6 (Salmond).
+Repository id: NEW work.gregory-thaumaturgus.oratio-panegyrica-in-origenem — responsible Gregory Thaumaturgus; work_type oration; languages grc, en; locus section.
+URL: https://ccel.org/ccel/s/schaff/anf06/cache/anf06.txt
+Retrieved: 2026-09-30
+SHA-256 of the bytes read: cd739171090895364bad7600ebdebe824f995e696e75a3894c28ebdc671d68fb (3439156 bytes)
+Loci read: Pan. Or. 4, 5.
+Quoted: 4 ("that holy angel of God who fed me from my youth").
+Rights: public domain.
+Ceiling: ANF translation.
+
+### Basil, Adversus Eunomium III.1
+Witness: Basil, *Adversus Eunomium* III.1, Greek, Migne PG 29, 656B–657A.
+Repository id: NEW work.basil-of-caesarea.adversus-eunomium (textual control work.jacques-paul-migne.patrologia-graeca-volume-29)
+URL: https://archive.org/download/patrologiae_cursus_completus_gr_vol_029/patrologiae_cursus_completus_gr_vol_029_djvu.txt
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: f4b52a32d8e2a8e33c0532df6224976b63896f8f6276358b207f9297730f1c8e (8499613 bytes)
+Loci read: III.1–2.
+Quoted: III.1 (Greek in transliteration, unquoted gloss).
+Rights: public domain.
+Ceiling: Greek OCR; column from running head (656/657).
+
+### Basil, Homily on Psalm 33
+Witness: *Hom. in Ps.* 33.5, Greek, PG 29.
+Repository id: work.basil-of-caesarea.homilia-in-psalmum-33
+URL: as PG 29 above
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: f4b52a32d8e2a8e33c0532df6224976b63896f8f6276358b207f9297730f1c8e (8499613 bytes)
+Loci read: 33.5 (on v. 8) to start of 33.6.
+Quoted: 33.5 (two transliterated phrases, glossed).
+Rights: public domain.
+Ceiling: OCR; PG column not fixed (running heads garbled).
+
+### Gregory of Nyssa, Life of Moses II
+Witness: *De vita Moysis* II, Greek, Migne PG 44, 337–340.
+Repository id: NEW work.gregory-of-nyssa.de-vita-moysis — responsible Gregory of Nyssa; work_type spiritual treatise; languages grc; locus book.section (PG column).
+URL: https://archive.org/stream/patrologiae_cursus_completus_gr_vol_044/patrologiae_cursus_completus_gr_vol_044_djvu.txt
+Retrieved: 2026-09-30
+SHA-256 of the bytes read: aa9d6d88c7b49eff6b0b40b80c5986228356ccc3418127cdc6d72625d9410c7d (7884554 bytes)
+Loci read: the Aaron-meets-Moses passage (Exod 4:27) entire.
+Quoted: three transliterated phrases, glossed.
+Rights: public domain.
+Ceiling: Greek OCR; modern section numbers (II.45–47) not verified, so not printed.
+
+### Chrysostom, Homilies on Matthew 59
+Witness: *Hom. in Matt.* 59.4, NPNF 1.10 (Prevost).
+Repository id: work.john-chrysostom.homiliae-in-matthaeum
+URL: https://ccel.org/ccel/s/schaff/npnf110/cache/npnf110.txt
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: adb8f1c9a988c5050a20fb9fdbf75143dcb227e95e3dad2f560a63b757923648 (3345978 bytes)
+Loci read: Hom. 59.3–4.
+Quoted: 59.4.
+Rights: public domain.
+Ceiling: NPNF translation.
+
+### Chrysostom, Homilies on Acts 26
+Witness: *Hom. in Act.* 26, NPNF 1.11.
+Repository id: work.john-chrysostom.homilies-on-acts
+URL: https://ccel.org/ccel/s/schaff/npnf111/cache/npnf111.txt
+Retrieved: 2026-09-30
+SHA-256 of the bytes read: 8bdb50c6fd132a9558cbd16808ae05000ddcc7059cfd6c1d282f4f734e539c15 (4443151 bytes)
+Loci read: Hom. 26 on Acts 12:12–17.
+Quoted: "This is a truth, that each man has an Angel."
+Rights: public domain.
+Ceiling: NPNF translation.
+
+### Chrysostom, Homilies on Colossians 3
+Witness: *Hom. in Col.* 3, NPNF 1.13.
+Repository id: work.john-chrysostom.homilies-on-colossians
+URL: https://ccel.org/ccel/s/schaff/npnf113/cache/npnf113.txt
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: 54274dd9aa73ca36e4da9e763e4a27d1818b09e42ffc73795529afec703a4210 (3933882 bytes)
+Loci read: Hom. 3 on Col 1:20.
+Quoted: the passage on the angels of believers.
+Rights: public domain.
+Ceiling: NPNF translation.
+
+### Hilary, Tractatus super Psalmos 124, 134
+Witness: Hilary, *Tract. in Ps.* 124.6, 134.17, ed. Zingerle, CSEL 22 (1891).
+Repository id: work.hilary-of-poitiers.tractatus-super-psalmos
+URL: https://archive.org/download/shilariiepiscopi22hila/shilariiepiscopi22hila_djvu.txt
+Retrieved: 2026-09-30
+SHA-256 of the bytes read: 0c9712d4bb1cabe200b4acc320feb70c4f0a593f59ba902fc897ae006285eb08 (2320546 bytes)
+Loci read: 124.5–6; 134.17.
+Quoted: 124.6, 134.17 (Latin, glossed).
+Rights: public domain.
+Ceiling: OCR.
+
+### Ambrose, De viduis 9.55
+Witness: *De viduis* 9.55, NPNF 2.10 (de Romestin).
+Repository id: NEW work.ambrose.de-viduis — responsible Ambrose; work_type treatise; languages la, en; locus chapter.section.
+URL: https://ccel.org/ccel/s/schaff/npnf210/cache/npnf210.txt
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: 14fa05cc98a67cb1ccf7613e63d5eb80fd48feb3e09dd29210e70f53dfcd7577 (2963575 bytes)
+Loci read: 9.54–56.
+Quoted: 9.55 (one sentence).
+Rights: public domain.
+Ceiling: English only; Latin not read.
+
+### Jerome, In Matthaeum III on 18:10
+Witness: Jerome, *Commentariorum in Matthaeum* III, Migne PL 26.
+Repository id: work.jerome.commentariorum-in-evangelium-matthaei
+URL: https://archive.org/download/patrologiaecurs240unkngoog/patrologiaecurs240unkngoog_djvu.txt
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: 74c5dd24a294e30a8a1de023ef9842b41a79f52410fae49113156b075ce0d046 (4745230 bytes)
+Loci read: on Matt 18:7–12.
+Quoted: "Magna dignitas animarum ..." (Latin, glossed).
+Rights: public domain.
+Ceiling: OCR; column not fixed.
+
+### Jerome, In Danielem on 10:13
+Witness: Jerome, *Commentaria in Danielem*, PL 25 (1845).
+Repository id: work.jerome.commentaria-in-danielem
+URL: see manifest `ia-pl25-jerome-1845.txt`
+Retrieved: 2026-09-30
+SHA-256 of the bytes read: 116c5a253abdc00fd0882e5e102d38d9266b263e4096d0b720b062194cbb4bb9 (4968383 bytes)
+Loci read: on 10:13–20.
+Quoted: two Latin phrases.
+Rights: public domain.
+Ceiling: OCR, interleaved columns.
+
+### Cassian, Conferences VIII.13, 17
+Witness: Cassian, *Conlationes* VIII.13, 17, NPNF 2.11 (Gibson).
+Repository id: work.nicene-and-post-nicene-fathers.series-2-volume-11 (or NEW work.john-cassian.conlationes)
+URL: https://ccel.org/ccel/s/schaff/npnf211/cache/npnf211.txt
+Retrieved: 2026-09-30
+SHA-256 of the bytes read: 8b1206d4e7488c65b5391875fd9570a8a6bcc83270dea35ffe44010c3575d267 (3470230 bytes)
+Loci read: VIII.13; VIII.17.
+Quoted: VIII.13 (one sentence), VIII.17.
+Rights: public domain.
+Ceiling: NPNF translation.
+
+### Gregory the Great, Homilies on the Gospels 34
+Witness: *Hom. in Ev.* 34.8, 10, Latin (la.wikisource from PL 76).
+Repository id: work.gregory-the-great.homiliae-in-evangelia
+URL: https://la.wikisource.org/w/index.php?title=Homiliarum_in_Evangelia/XXXIV&action=raw
+Retrieved: 2026-09-30
+SHA-256 of the bytes read: dfd661ab607de8517fed4ffabddea2bdb80da2591230cb5b9a73efc62d56147f (35028 bytes)
+Loci read: 34.7–11.
+Quoted: 34.8, 34.10 (Latin phrases, glossed).
+Rights: public domain.
+Ceiling: Wikisource transcription.
+
+### Gregory the Great, Moralia III and XVII
+Witness: *Moralia in Iob*, Library of the Fathers (Oxford 1844–50), vols. 1 and 2.
+Repository id: work.gregory-the-great.moralia-in-iob
+URL: see manifest `ia-gregory-morals-lf-v1_djvu.txt`, `ia-lf21-gregory-morals-vol2`
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: 96e0f3706c7a9a427bb3dffa578be87bd66ac96617fc90a7266ce7f241264ad2 (1806303 bytes); f13861be5715cabe5283d5bd7f38cb35c2a1332bd6dc04cf049475b88da5c493 (1916422 bytes)
+Loci read: III §§5–7 (on Job 2:6); XVII.12.16–17 (on Job 25:2–3).
+Quoted: III §6; XVII.12.17.
+Rights: public domain.
+Ceiling: OCR; chapter number of III §6 not fixed, so cited by book and section.
+
+### Isidore, Sententiae I.10
+Witness: Isidore, *Sententiae* I.10.18–23, PL 83.
+Repository id: NEW work.isidore.sententiae — responsible Isidore of Seville; work_type sentences; languages la; locus book.chapter.section.
+URL: https://archive.org/download/patrologiae83unknuoft/patrologiae83unknuoft_djvu.txt
+Retrieved: 2026-09-30
+SHA-256 of the bytes read: e59b2eb652ece1ccf2f4cea6c0a35112dff950a7868c7e97034ee25ede7c0930 (5023656 bytes)
+Loci read: I.10.18–23.
+Quoted: none (paraphrase).
+Rights: public domain.
+Ceiling: OCR.
+
+### Bernard, Sermons on Psalm 90 (Qui habitat) 11–13
+Witness: Bernard of Clairvaux, *In Psalmum XC Qui habitat sermones XVII*, Migne PL 183, cols. 225–237.
+Repository id: NEW work.bernard-of-clairvaux.sermones-in-psalmum-qui-habitat — responsible Bernard of Clairvaux; work_type sermons; languages la; locus sermon.section.
+URL: https://archive.org/download/patrologiaecur183mign/patrologiaecur183mign_djvu.txt
+Retrieved: 2026-09-30T14:58:15Z
+SHA-256 of the bytes read: 05858281218a7e910ff33ea618309ed47106e3588ebe0e4b5589485022f08491 (4631784 bytes)
+Loci read: series title; Sermo XI entire; Sermo XII entire; Sermo XIII §1.
+Quoted: XI.2, 6, 10; XII.3, 4, 6, 7, 8, 9, 10 (Latin, glossed).
+Rights: public domain.
+Ceiling: OCR normalized (e.g. "vultum", "nutum", "gloriae", "coheredes", "Habetote"); doubtful readings avoided ("Tunc/Tune audeas", "ab opera/opere", "adjutorem tuum [in] opportunitatibus").
+
+### Bernard, De consideratione V.4.8
+Witness: Bernard, *On Consideration*, trans. G. Lewis (Oxford 1908).
+Repository id: NEW work.bernard-of-clairvaux.de-consideratione
+URL: https://archive.org/download/onconsideration00bern/onconsideration00bern_djvu.txt
+Retrieved: 2026-09-30
+SHA-256 of the bytes read: 23dacc2ca0c5f0244fe9c456afbdb2a2745767b2281d7553d07899d93416f49e (306976 bytes)
+Loci read: V.4.7–8.
+Quoted: V.4.8 (one clause).
+Rights: public domain (1908).
+Ceiling: OCR of translation.
+
+### Honorius Augustodunensis, Elucidarium II.28–29
+Witness: *Elucidarium* II.28–29, Migne PL 172, 1154–1155.
+Repository id: NEW work.honorius-augustodunensis.elucidarium
+URL: https://archive.org/download/patrologiaecur172mign/patrologiaecur172mign_djvu.txt
+Retrieved: 2026-09-30T14:59:21Z
+SHA-256 of the bytes read: 1c684f8a4792074e498a0a5f41c59092d03c6beac181457c78275e61f8c55a52 (4786925 bytes)
+Loci read: II.26–29.
+Quoted: II.28 (three Latin sentences), II.29 (one clause).
+Rights: public domain.
+Ceiling: OCR normalized.
+
+### Peter Lombard, Sententiae II d. 11
+Witness: Lombard, *Sententiae* II d. 11 c. 1–2, Quaracchi 1916, pp. 353–355.
+Repository id: work.peter-lombard.sententiae
+URL: https://archive.org/download/libriivsententia01pete/libriivsententia01pete_djvu.txt
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: 4cc27eb3178d204a0d8727cb8bdfad2bcd0180a1ded0b9cc9d605b33b59c4cf8 (1592526 bytes)
+Loci read: d. 11 c. 1 entire; c. 2 opening.
+Quoted: chapter title; two sentences (Latin, glossed).
+Rights: public domain (1916).
+Ceiling: OCR. The attribution to Gregory is the Master's; Gregory's own locus not read.
+
+### Suárez, De angelis VI.17–19
+Witness: Suárez, *De angelis* VI.17–19, Opera omnia t. 2 (Vivès, Paris 1856), pp. 746–765.
+Repository id: work.francisco-suarez.de-angelis
+URL: https://archive.org/download/rpfranciscisuare02su/rpfranciscisuare02su_djvu.txt
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: f563a3ff080cfc2c73a5634a3278d8c2a5b7a93b6154c4023c3e819f7d652472 (6655674 bytes)
+Loci read: VI.17.1–22; VI.18.1–6; VI.19.1–9, 12; index s.v. Custodia.
+Quoted: VI.17.6, 8, 10, 14, 18; VI.19.9 (Latin phrases, glossed); Origen as quoted at VI.17.9.
+Rights: public domain.
+Ceiling: OCR; chapter heading of VI.17 lost in OCR (running head only).
+
+### Catechism of the Catholic Church 336
+Witness: CCC (English, vatican.va).
+Repository id: work.catholic-church.catechism
+URL: https://www.vatican.va/archive/ENG0015/__P1A.HTM
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: f5d0972215f47a1bc22e768aa4e51f454db80f32dcbc4e3dd52b4a40ae5254d3 (22605 bytes)
+Loci read: 333–336 and n. 202–203.
+Quoted: 336.
+Rights: Libreria Editrice Vaticana; short quotation with attribution.
+Ceiling: web text.
+
+### John Paul II, general audience of 6 August 1986
+Witness: Italian text, vatican.va (the English page carries no text).
+Repository id: work.john-paul-ii.general-audience-1986-08-06
+URL: https://www.vatican.va/content/john-paul-ii/it/audiences/1986/documents/hf_jp-ii_aud_19860806.html
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: 537f0d3d9e86424b0d34ef5b1248e1993bac6544074fc4b185975953b2cd537f (53326 bytes)
+Loci read: nn. 1–8.
+Quoted: n. 7 (one sentence), n. 8 (one clause), Italian with gloss.
+Rights: LEV; short quotation with attribution.
+Ceiling: web text.
+
+### Directory on Popular Piety and the Liturgy (2001)
+Witness: CDWDS, English, vatican.va.
+Repository id: work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.directory-on-popular-piety-2001
+URL: https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: a9d30018f650a6854f3f13d3691a068a6519c2ebdb8d1fc9a2418ad13b90ed38 (531807 bytes)
+Loci read: nn. 213–217.
+Quoted: nn. 215, 216, 217 (short).
+Rights: Vatican; short quotation with attribution.
+Ceiling: web text.
+
+### John Damascene, De fide orthodoxa II.3
+Witness: NPNF 2.9 (Salmond).
+Repository id: work.john-of-damascus.de-fide-orthodoxa
+URL: https://ccel.org/ccel/s/schaff/npnf209/cache/npnf209.txt
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: 859ba34cc5998f2761b801aa5de724b2ea741a54d98e21614faeb89cc40f8ad4 (2606804 bytes)
+Loci read: II.3; II.4 opening.
+Quoted: II.3 (guardians of the divisions of the earth).
+Rights: public domain.
+Ceiling: NPNF translation.
+
+### Augustine, De civitate Dei XIV.6, 15
+Witness: NPNF 1.2 (Dods).
+Repository id: work.augustine.de-civitate-dei
+URL: https://ccel.org/ccel/s/schaff/npnf102/cache/npnf102.txt
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: 5c973feda803f3e58a88ed7df210b42d436f5466741eb8dbeae713ab56dedae4 (3692898 bytes)
+Loci read: XIV.6; XIV.15 (end).
+Quoted: XIV.15.
+Rights: public domain.
+Ceiling: English only.
+
+### Dionysius, Celestial Hierarchy 4, 5, 9, 10
+Witness: Parker translation (1899), tertullian.org.
+Repository id: work.pseudo-dionysius-the-areopagite.works-part-ii-parker
+URL: https://www.tertullian.org/fathers/areopagite_13_heavenly_hierarchy.htm
+Retrieved: 2026-09-29
+SHA-256 of the bytes read: ae7608cea7b9f874f2b8ebdabfbe9cfae8b74285fec914aeca3d87cd9089104d (114110 bytes)
+Loci read: CH 4.3–4, 5, 9.1–4, 10.1–3.
+Quoted: 4.4, 9.2 (short).
+Rights: public domain.
+Ceiling: web transcription.
+
+### Fetched, not used
+`ia-bernard-sermons-seasons-v1-1921_djvu.txt` (St. Bernard's Sermons for the Seasons, vol. 1, Dublin 1921): contains no Qui habitat sermon; not used.
+
 ## Disputed questions after Aquinas; positions on the first sin
 
 ### Aquinas, Summa theologiae, English

@@ -13,6 +13,7 @@ transliteration.
 | aevum | aevum | — | I q. 61 a. 2 (cf. In II Sent. d. 2 q. 1 a. 1) | Angelic duration between time and eternity |
 | affective knowledge | cognitio affectiva | — | I q. 64 a. 1 co. | `producens amorem Dei`; NA renders "effective" |
 | alliance / ally | — | symmachia | Gregory of Nyssa, De vita Moysis II (PG 44, 337D) | "set beside ... as an ally"; not printed in body |
+| ally | — | symmachia | Gregory of Nyssa, *De vita Moysis* II | the angel "brother" to the mind |
 | angel | angelus | angelos | Mal 3:1; ST I q. 108 a. 5 ad 1; CH 4–5 | Office-name, not nature-name (Augustine, Enarr. in Ps. 103 s. 1 §15; CCC 329) Name of office (Gregory, Hom. 34.8: nomen officii, non naturae) |
 | angel (name of office) | angelus; "nomen officii, non naturae" | angelos | Gregory, Hom. in Evang. 34.8; Isidore, Etym. VII.5.1--2; Sent. I.10.1; Rabanus, De universo I.5 | Gregory: "Graeca etenim lingua angeli nuntii"; Isidore gives Hebrew "malachoth"; CCC 329 gives the same distinction in Augustine's words |
 | angel (name of office) | angelus; `officii nomen` | angelos | *Enarr. in Ps.* 103, s. 1.15; *De civ. Dei* XV.23 | not a name of nature; CCC 329 |
@@ -22,6 +23,7 @@ transliteration.
 | angel of repentance | — | — | Hermas, Vis. V; Sim. X.1 | The Shepherd; guardian of the penitent |
 | angel of righteousness / of iniquity | — | — | Hermas, Mand. VI.2 | The two angels with each man |
 | angel ruling a nation | Principatus (ST I q. 108 a. 6) | ethnarch\=es angelos | Basil, Adv. Eun. III.1 | Basil's argument from the dignity of a nation; Aquinas's Principalities |
+| angel who reigns with him | Angelus conregnans | — | ST I q. 113 a. 4 | after the way |
 | angels | angeli | angeloi | CH 9.2 |  |
 | angels of the presence | — | — | Jub 1:27; 2:2; T. Levi 3 | Highest class in Jubilees and T. Levi |
 | application of power | applicatio virtutis |  | I q. 52 a. 1 co.; a. 2 co. | ground of angelic place |
@@ -54,6 +56,7 @@ transliteration.
 | cleansing, purgation | purgatio | katharsis | ST I q. 106 a. 2 ad 1; De ver. q. 9 a. 3; CH 7.3 | Among angels: removal of nescience only |
 | completively / dispositively | completive / dispositive | — | ST I q. 108 a. 4 co. | Grace / nature in the distinction of orders |
 | composing and dividing | componere et dividere | — | ST I q. 58 a. 4 | Denied of angelic knowledge |
+| comprehensor | comprehensor | — | ST I q. 113 a. 4 ad 1 | of Christ's soul |
 | confirmation in good | confirmatio in bono | — | I q. 62 a. 1 | Of the nature of beatitude |
 | connatural / innate species | species connaturales (innatae) | — | ST I q. 55 a. 2 co. | Not drawn from things; received with the angelic nature |
 | consummate grace | gratia consummata | — | I q. 62 a. 2 ad 3 | Grace of the beatific conversion |
@@ -64,6 +67,7 @@ transliteration.
 | dark air | caliginosus aer | — | I q. 64 a. 4 co. | NA "darksome atmosphere" |
 | day-knowledge ("noonday knowledge", NPNF) | diurna cognitio | — | *De civ. Dei* XI.29 | knowledge of things in the Word; Aquinas's `cognitio matutina` |
 | definitively in place | esse in loco definitive | — | ST I q. 52 a. 1; Paris art. 219 | against circumscriptive presence |
+| delegated | delegatus | — | Jerome, *In Matth.* III |  |
 | demon | daemon | daimonion | DS 800; *De civ. Dei* IX.19–20 | Fallen angel never used in Scripture of good spirits; from knowledge |
 | demon | — | daimon | Justin, 1 Apol. 5 (ANF note [1774]) | Christian use for evil spirit; one devil, many demons |
 | demon / dragon (deserter) | — | daimon; drakon; apodedrakenai | Theophilus, Ad Autol. II.28 | Theophilus's etymology; "apodedrakenai" printed in ANF |
@@ -88,7 +92,9 @@ transliteration.
 | every spirit is winged | omnis spiritus ales est | — | Tertullian, Apol. 22.8 | of angels and demons alike |
 | evil of fault | malum culpae | — | I q. 63 pr. | The subject of q. 63 |
 | evil of punishment | malum poenae | — | I q. 63 pr.; q. 64 | The subject of q. 64 |
+| exercise (of the evil angel) | exercitium | — | Lombard, *Sent.* II d. 11 c. 1 | "ad custodiam ... ad exercitium" |
 | existence / what is | esse / quod est; quo est |  | I q. 50 a. 2 ad 3 | Boethian composition in angels |
+| familiars | familiares | — | Bernard, *Qui habitat* 12.10 |  |
 | fellow citizens (of angels and men) | cives; socii | -- | Hom. in Evang. 8.2; Bede, In Luc. I (PL 92, 333) | Christmas reconciliation of angels and men |
 | first-born angel | — | angelos protogonos | Tatian, Or. 7 (ANF note [441]) | The angel who fell first; Greek from the American editor's note |
 | first-born princes of the angels (seven) | — | not verified | Clement, Strom. VI.16 | Greek not read |
@@ -102,10 +108,12 @@ transliteration.
 | genius | genius | — | Apuleius *De deo Socr.* 15; Tertullian *De anima* 39; Lactantius II.14.12 | Latin rendering of daemon; Jowett uses "genius" for daimon in *Phaedo* and *Republic*. |
 | gnostic (perfect Christian) | — | gnostikos | Clement, Strom. VII | Clement's term for the perfect believer |
 | ground of presence | ratio essendi in loco | — | Paris art. 219 gloss; Cajetan on I q. 52 a. 1 | the gloss: substance is not the ratio |
+| guard of our life | — | phylax t\=es z\=o\=es | Basil, *Hom. in Ps.* 33.5 |  |
 | guard, keeping | custodia | — | Hilary 134.17; Jerome, In Matth. III | *in custodiam sui angelum delegatum* |
 | guardian (tutelary spirit) | custos | — | Hesiod *WD* 123 (tr.); Lactantius II.14.8; Clement *Strom.* V.14 ("tutelary angels"); Guthrie's Plotinus ("guardian" = daimon) | Guthrie's "guardian" translates daimon; not the Christian guardian angel. |
-| guardian angel | angelus custos | — | CCC 336; Matt 18:10 | "Beside each believer" (Basil, via CCC 336) |
+| guardian angel | angelus custos | — | CCC 336; Matt 18:10; ST I q. 113 aa. 4, 6 | "Beside each believer" (Basil, via CCC 336) also "angel guardian" in 1920 English |
 | guardian of our life | custodia (ST I q. 113 pr.) | phylax t\=es z\=o\=es | Basil, Hom. in Ps. 33.5 | not printed in body |
+| guardianship | custodia | — | ST I q. 113 pr. | Dominican "guardianship" |
 | guardianship and cultivation of mankind | tutela cultusque generis humani | — | Lactantius, Div. inst. II.14.1 | ANF "protection and improvement" |
 | guidings by the hand | manuductiones | — | De ver. q. 9 a. 1 | Sacraments as guidings into intelligible things |
 | heavenly army / soldiers of God | militia coelestis; exercitus angelorum | -- | Bede, In Luc. I (PL 92, 333); Moralia XVII.13.19 | Luke 2:13 |
@@ -147,6 +155,7 @@ transliteration.
 | Messenger / Angel of great counsel | magni consilii angelus (not quoted) | megal\=es boul\=es angelos | Isa 9:6 LXX (Brenton 9:5) | Brenton "Messenger"; ANF Justin/Origen "Angel of (the) great counsel" |
 | Michael | Michael | Michael | Dan 10:13; Jude 9; Apoc 12:7 | Quis ut Deus (Gregory, Hom. 34.9) |
 | minister (intelligent instrument) | minister, instrumentum intelligens | — | ST I q. 112 a. 1 | Definition of angelic ministry |
+| ministering angel | Angelus minister | — | ST I q. 113 a. 4 ad 1 | Christ's, as inferior |
 | ministering spirits | spiritus administratorii | leitourgika pneumata | Heb 1:14 | "Sent to minister" |
 | ministering spirits | — | ta pneumata ta leitourgounta | Epiphanius, De mensuris 22; Jub 2:2; Heb 1:14; Athanasius, C. Ar. III.14; Chrysostom, Hom. in Heb. 3.4 | "spirits which serve before Him" |
 | miracle (proper / wide) | miraculum proprie / large | — | ST I q. 110 a. 4; q. 114 a. 4 | Outside the order of the whole created nature / exceeding human power |
@@ -167,6 +176,7 @@ transliteration.
 | order | ordo | taxis | CH 3.1 | First term of the definition |
 | order (grade) / order (ordering) | ordo | taxis | ST I q. 108 a. 2 ad 1 | Twofold sense |
 | outward (external) ministry | exterius ministerium | — | ST I q. 112 aa. 2, 4 | Action by divine command on bodies |
+| particular / universal guardianship | custodia particularis / universalis | — | ST I q. 113 a. 3 |  |
 | perfecting | perfectio | teleiosis | ST I q. 106 a. 2 ad 1; De ver. q. 9 a. 3 | Consummation in known truth |
 | perfection | perfectio | teleiosis | CH 3.2–3 | Third |
 | personal vs specific distinction | discretio quoad personalitatem / quoad speciem | — | Bonaventure, d. 3 p. 1 a. 2 q. 1 | his "sober and catholic" position |
@@ -212,6 +222,7 @@ transliteration.
 | Seraphim | Seraphim | seraphim | Isa 6:2; Gregory, Hom. 34.9; CH 7.1 | "Burning, kindling" "Kindling or burning" |
 | seraphim | seraphim / seraphin; "ardentes vel incendentes" | -- (Hebrew) | Hom. 34.10; Etym. VII.5.24 | "Quorum profecto flamma amor est" |
 | service due to God only | servitus; cultus | latreia | *De civ. Dei* X.1 | Augustine borrows the Greek word |
+| shepherd | — | nomeus | Basil, *Adv. Eun.* III.1 |  |
 | shepherd (of the believer) | — | nomeus | Basil, Adv. Eun. III.1 | CCC 336 "shepherd" |
 | situal (local, of operation on bodies) | situalis | — | De ver. q. 9 a. 6 ad 2 | Kept in Latin in the body |
 | speech | locutio | — | ST I q. 107 a. 1; De ver. q. 9 a. 4 | Ordering of the mental concept to another by the will |
@@ -220,6 +231,7 @@ transliteration.
 | spirits and humours | spiritus et humores | — | ST I q. 111 aa. 3–4 | Bodily means by which imagination and sense are moved |
 | spiritual matter | materia (large sumpta) in spiritualibus | — | Bonaventure, In II Sent. d. 3 p. 1 a. 1 q. 1 | "matter" taken broadly as every constitutive potency |
 | spiritual substance, a body of its own kind | substantia spiritalis … corporis alicuius, sui tamen generis | — | Tertullian, De carne Christi 6.9 | Tertullian's own view; contrast *ST* I q. 50 a. 1 |
+| stewards and tutors | actores et tutores | — | Bernard, *Qui habitat* 12.7 | Gal 4:2 |
 | stronger nature | natura potior | — | Hilary, Tract. in Ps. 134.17 | the angels relative to man |
 | subsisting form | forma subsistens |  | I q. 50 a. 2 ad 3; a. 5 co. | form existing without matter |
 | subtlety and tenuity (of demons) | subtilitas et tenuitas | — | Tertullian, Apol. 22.5 | ANF "subtleness and tenuity" |
@@ -238,6 +250,7 @@ transliteration.
 | to minister / to stand by (assist) | ministrare / assistere | -- | Hom. 34.12; Moralia XVII.13.18; Etym. VII.5.19 | Dan 7:10; ST I q. 112 a. 3 |
 | to tempt | tentare | — | ST I q. 114 a. 2 | "To make trial" (experimentum sumere) |
 | tongue of angels | lingua Angelorum | — | ST I q. 107 a. 1 ad 2 | Metaphor for the power of manifesting the concept |
+| tutor | paedagogus | paidag\=ogos | Basil, *Adv. Eun.* III.1; Bernard, *Qui habitat* 12.3 | CCC 336 renders "protector" |
 | tutor (of the believer) | — | paidag\=ogos | Basil, Adv. Eun. III.1 (PG 29, 656B) | own rendering; CCC 336 gives "protector" |
 | types of the divine works | rationes divinorum operum | — | ST I q. 106 a. 1 ad 1 | Known more the more perfectly God is seen |
 | union by pressure from without | applicatio et oppressio | — | Gennadius 83 | how demons act on the possessed |
@@ -248,9 +261,11 @@ transliteration.
 | virtual quantity | quantitas virtualis |  | I q. 52 a. 1 co. | contrasted with dimensive quantity |
 | Virtues | Virtutes | dynameis | Eph 1:21; 1 Pet 3:22; CH 8.1; ST I q. 108 a. 5 ad 1; CH 8.1 (Parker "Powers") | Channel of miracles (Gregory) Parker "Powers" — collision with powers/potestates Also common name of all the heavenly spirits |
 | virtues (order) | virtutes | -- | Hom. 34.10; Etym. VII.5.17 | through whom signs and miracles are done (ST I q. 110 a. 4 obj. 1) |
+| ward | alumnus | — | Suárez, *De angelis* VI.17 | "pray for his ward" |
 | watch-tower of the angels | specula angelorum | — | Hilary, Tract. in Ps. 137.5 | rendered "watch" |
 | watcher | vigil | ir (Theodotion's transliteration of the Aramaic) | Dan 4:10, 14 [4:13, 17]; Jerome, In Dan. 4:10 | Jerome: signifies angels "quod semper vigilent"; the Enochic books' name for angels holy and fallen |
 | watcher | vigil (Vulg. Dan 4:10) | — | Hesiod *WD* 252–255; Dan 4:10, 14 (Douay "watcher") | Parallel only. |
 | Watchers | — | — (Syriac not read) | Ephrem, Nat. I, XIV; Epiph. IV, VI, VIII | Ephrem's usual name for the angels (NPNF note 378) |
+| wayfarer | viator | — | ST I q. 113 a. 4 | guardianship lasts "quandiu viator est" |
 | wayfarer / comprehensor | viator / comprehensor | — | I q. 62 a. 9 | Blessed angels are comprehensores, not viatores |
 | will | voluntas | — | I q. 59 a. 1 | Inclination following intellectual apprehension of good in general |

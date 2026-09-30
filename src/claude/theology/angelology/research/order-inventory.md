@@ -345,3 +345,17 @@ only when its locus was read at the source.
 | powers | Gregory, *Hom. in Ev.* 34 | §10 | potestates | 6 | Adverse powers subject to them and bridled, lest they tempt as much as they will | yes |
 | virtues | Gregory, *Hom. in Ev.* 34 | §10 | virtutes | 7 | Per quos signa et miracula frequentius fiunt | yes |
 | dominations | Dionysius, *CH* (Parker) | 8.1 | Lordships | 4 | Unslavish elevation, superior to every subserviency | yes |
+| angels | Aquinas | ST I q. 113 a. 3 | Angeli (ordo infimus) | 9 | Particular guardianship of single men; to announce "minima" | yes (Latin, English) |
+| archangels | Aquinas | ST I q. 113 a. 3 | Archangeli, principes Angeli | 8 | Perhaps guardianship of the human multitude; Michael "one of the princes" | yes |
+| principalities | Aquinas | ST I q. 113 a. 3 | principatus | 7 | Guardianship of the human multitude; over good spirits (after Gregory) | yes |
+| powers | Aquinas | ST I q. 113 a. 3 | potestates | 6 | Guardianship over the demons | yes |
+| virtues | Aquinas | ST I q. 113 a. 3 | virtutes | 5 | Guardianship over all corporeal natures | yes |
+| principalities | Aquinas | SCG III.80 n. 14 | principatus | 7 | Common good of city or nation; disposition of kingdoms | yes |
+| archangels | Aquinas | SCG III.80 n. 15 | Archangeli | 8 | Good of one useful to many: faith, divine worship | yes |
+| angels | Aquinas | SCG III.80 n. 16 | Angeli | 9 | Good of each singly; hence guardians of men | yes |
+| angels | Gregory the Great | *Hom. in Ev.* 34.8 | angeli | 9 | "qui minima nuntiant" | yes (Latin) |
+| powers | Gregory the Great | *Hom. in Ev.* 34.10 | potestates | 6 | Restrain hostile powers from tempting as much as they would | yes |
+| principalities | Gregory the Great | *Hom. in Ev.* 34.10 | principatus | 5 | Preside over the good spirits | yes |
+| angels | Dionysius | *CH* 9.2 (Parker) | Angels | 9 | Concerned with the things of the world; with Principalities and Archangels presides over human hierarchies | yes |
+| angels | Bernard | *De consideratione* V.4.8 (Lewis) | Angels | 9 | Believed given as guardians of individual men | yes |
+| angels | Suárez | *De angelis* VI.18.6 | Angeli infimi ordinis | 9 | Particular guardianship of single men | yes (OCR) |
