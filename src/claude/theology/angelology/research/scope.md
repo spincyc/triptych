@@ -87,32 +87,33 @@ Body, in the profile's reader order:
 
 1. The angels in Sacred Scripture
 2. The faith of the Church concerning the angels
-2a. Before the Fathers: Israel's writings and the philosophers
-3. The Greek Fathers before Dionysius
-4. The Latin Fathers before Dionysius, with Augustine and Cassian
-5. The *Celestial Hierarchy* — the corpus, its reception, and all fifteen
+3. Before the Fathers: Israel's writings and the philosophers
+4. The Greek Fathers before Dionysius
+5. The Latin Fathers before Dionysius, with Augustine and Cassian
+6. The *Celestial Hierarchy* — the corpus, its reception, and all fifteen
    chapters
-6. The Fathers and Doctors after Dionysius, to Peter Lombard
-7. The angelic substance (I q. 50)
-8. Bodies, place, and motion (qq. 51–53)
-9. The angelic intellect and its knowledge (qq. 54–58)
-10. The angelic will and love (qq. 59–60)
-11. Creation, grace, and glory (qq. 61–62)
-12. The fall of the angels and its punishment (qq. 63–64; *De malo* q. 16)
-13. Illumination and speech (qq. 106–107)
-14. Hierarchies and orders, good and fallen (qq. 108–109)
-15. The angels in the government of the world; their mission (qq. 110–112)
-16. The guardian angels (q. 113)
-17. The assaults of the demons (q. 114)
-18. Christ, Mary, and the angels; men and the angelic ranks
-19. Disputed questions after Aquinas
-20. The Byzantine line
-21. The angels in the liturgy
-22. Devotion and its regulation
-23. The saints and the holy angels
-24. The angels and the order of the universe
+7. The Fathers and Doctors after Dionysius, to Peter Lombard and Bonaventure
+8. The angelic substance (I q. 50)
+9. Bodies, place, and motion (qq. 51–53)
+10. The angelic intellect and its knowledge (qq. 54–58)
+11. The angelic will and love (qq. 59–60)
+12. Creation, grace, and glory (qq. 61–62)
+13. The fall of the angels and its punishment (qq. 63–64; *De malo* q. 16)
+14. Illumination and speech (qq. 106–107)
+15. Hierarchies and orders, good and fallen (qq. 108–109)
+16. The angels in the government of the world; their mission (qq. 110–112)
+17. The guardian angels (q. 113)
+18. The assaults of the demons (q. 114)
+19. Christ, Mary, and the angels; men and the angelic ranks
+20. Disputed questions after Aquinas
+21. The Byzantine line
+22. The angels in the liturgy
+23. Devotion and its regulation
+24. The saints and the holy angels
+25. The angels and the order of the universe
 
-Appendices: the nine orders; comparative orderings; the article census;
+Appendices: the nine orders; comparative orderings; continuities with the
+writings before Christ; the article census;
 parallels in Aquinas's other works; the *Celestial Hierarchy* in the
 *Summa*; magisterial chronology; the angels in the calendar; Scripture
 index; the names of angels; the demons' powers and limits; positions on the

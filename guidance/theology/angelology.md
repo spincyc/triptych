@@ -192,14 +192,17 @@ The leaf keeps:
 ## Reader order and terminal apparatus
 
 After title and contents, begin with the angels in Scripture and the faith of
-the Church; then the Fathers' witness before and after Dionysius, with the
-*Celestial Hierarchy* exposition in its place; then the treatise in the
-*Summa*'s order; then Christ, Mary, and the angels; the disputed questions
-after Aquinas and the Byzantine line; the liturgy; and devotion with its
-regulation.
+the Church; then the pre-Christian writings the Fathers received, where an
+edition treats them; then the Fathers' witness before and after Dionysius,
+with the *Celestial Hierarchy* exposition in its place; then the treatise in
+the *Summa*'s order; then Christ, Mary, and the angels; the disputed
+questions after Aquinas and the Byzantine line; the liturgy; devotion with
+its regulation; and, where an edition treats them, the saints' devotion to
+the angels and a closing synthesis.
 
 Appendices follow in this order: reference tables and concordances (orders,
-comparative orderings, article census, parallels in Aquinas's works,
+comparative orderings, continuities with pre-Christian writings where the
+body treats them, article census, parallels in Aquinas's works,
 *Celestial Hierarchy* citations in the *Summa*, magisterial chronology,
 calendar, Scripture index, names, the demons' powers and limits, positions on
 the first sin, terminology, and witness register); then `Scope, Corpus, and

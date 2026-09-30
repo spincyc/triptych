@@ -94,47 +94,47 @@ each URL and reading date.
 | Faith of the Church | `sections/05-faith-of-the-church.tex` | drafted (voice revised 2026-09-30) | Lateran IV *Firmiter*; Vatican I *Dei Filius* 1; Braga I (561); Constantinople (543); *Humani generis* 26; Paul VI (15 Nov 1972); CDF *Christian Faith and Demonology* (1975); John Paul II audiences (July–Aug 1986); CCC 328–336, 391–395 |
 | Before the Fathers: Israel | `sections/07-israel-before-christ.tex` | drafted | Septuagint; 1 Enoch; *Jubilees*; *Testaments of the Twelve Patriarchs*; Philo |
 | Before the Fathers: philosophers | `sections/08-philosophers-before-christ.tex` | drafted | Hesiod; Plato; Aristotle; Plutarch; Apuleius; Plotinus; Porphyry; Proclus; Eusebius *Praep. ev.* |
-| Greek Fathers to Origen | `sections/10-fathers-before-dionysius.tex` | drafting | 1 Clement; Ignatius; Hermas; Justin; Athenagoras; Irenaeus; Clement of Alexandria; Origen |
-| Greek Fathers, Athanasius to Chrysostom | `sections/11-greek-fathers-nicene.tex` | drafting | Athanasius; Cyril of Jerusalem; Basil; Gregory Nazianzen; Gregory of Nyssa; Ephrem; Chrysostom |
-| Latin Fathers before Dionysius | `sections/12-latin-fathers-before-dionysius.tex` | drafting | Tertullian; Cyprian; Lactantius; Hilary; Ambrose; Jerome; Cassian |
-| Augustine | `sections/13-augustine.tex` | drafting | *De civ. Dei* VIII–XII, XV, XXII; *De Gen. ad litt.*; *De Trin.* III; *Enchiridion*; *Enarr. in Ps.* 103 |
+| Greek Fathers to Origen | `sections/10-fathers-before-dionysius.tex` | drafted | 1 Clement; Ignatius; Hermas; Justin; Athenagoras; Irenaeus; Clement of Alexandria; Origen |
+| Greek Fathers, Athanasius to Chrysostom | `sections/11-greek-fathers-nicene.tex` | drafted | Athanasius; Cyril of Jerusalem; Basil; Gregory Nazianzen; Gregory of Nyssa; Ephrem; Chrysostom |
+| Latin Fathers before Dionysius | `sections/12-latin-fathers-before-dionysius.tex` | drafted | Tertullian; Cyprian; Lactantius; Hilary; Ambrose; Jerome; Cassian |
+| Augustine | `sections/13-augustine.tex` | drafted | *De civ. Dei* VIII–XII, XV, XXII; *De Gen. ad litt.*; *De Trin.* III; *Enchiridion*; *Enarr. in Ps.* 103 |
 | Celestial Hierarchy | `sections/15-celestial-hierarchy.tex` | drafted | CH 1–15 (Parker); PG 3; Aquinas's citations |
-| Gregory, Isidore, Bede | `sections/20-fathers-after-dionysius.tex` | planned | Gregory *Hom. in Ev.* 34, *Moralia*, *Dialogues*; Isidore *Etym.* VII.5; Bede |
-| Medieval Doctors to Lombard | `sections/21-medieval-doctors.tex` | planned | Anselm; Bernard *De consid.* V, *Qui habitat* 11–12; Hugh of St Victor; Hildegard; Lombard *Sent.* II dd. 2–11 |
+| Gregory, Isidore, Bede | `sections/20-fathers-after-dionysius.tex` | drafted | Gregory *Hom. in Ev.* 34, *Moralia*, *Dialogues*; Isidore *Etym.* VII.5; Bede |
+| Medieval Doctors to Lombard | `sections/21-medieval-doctors.tex` | drafted | Anselm; Bernard *De consid.* V, *Qui habitat* 11–12; Hugh of St Victor; Hildegard; Lombard *Sent.* II dd. 2–11 |
 | Angelic substance | `sections/30-angelic-substance.tex` | drafted | ST I q. 50; *De ente* 4; *De sub. sep.* |
 | Bodies, place, motion | `sections/32-bodies-place-motion.tex` | drafted | ST I qq. 51–53 |
 | Intellect and knowledge | `sections/34-intellect-and-knowledge.tex` | drafted | ST I qq. 54–58; *De ver.* 8 |
 | Will and love | `sections/36-will-and-love.tex` | drafted | ST I qq. 59–60 |
 | Creation, grace, glory | `sections/38-creation-grace-glory.tex` | drafted | ST I qq. 61–62 |
 | Fall and punishment | `sections/40-fall-and-punishment.tex` | drafted | ST I qq. 63–64; *De malo* 16 |
-| Illumination and speech | `sections/50-illumination-and-speech.tex` | drafting | ST I qq. 106–107; *De ver.* 9 |
-| Hierarchies and orders | `sections/52-hierarchies-and-orders.tex` | drafting | ST I qq. 108–109 |
-| Government and mission | `sections/54-government-and-mission.tex` | drafting | ST I qq. 110–112 |
-| Guardian angels | `sections/56-guardian-angels.tex` | planned | ST I q. 113 |
-| Assaults of demons | `sections/58-assaults-of-demons.tex` | drafting | ST I q. 114 |
-| Christ, Mary, angels | `sections/60-christ-mary-and-the-angels.tex` | planned | ST III q. 8 a. 4; q. 30; I q. 108 a. 8 |
+| Illumination and speech | `sections/50-illumination-and-speech.tex` | drafted | ST I qq. 106–107; *De ver.* 9 |
+| Hierarchies and orders | `sections/52-hierarchies-and-orders.tex` | drafted | ST I qq. 108–109 |
+| Government and mission | `sections/54-government-and-mission.tex` | drafted | ST I qq. 110–112 |
+| Guardian angels | `sections/56-guardian-angels.tex` | drafted | ST I q. 113 |
+| Assaults of demons | `sections/58-assaults-of-demons.tex` | drafted | ST I q. 114 |
+| Christ, Mary, angels | `sections/60-christ-mary-and-the-angels.tex` | drafted | ST III q. 8 a. 4; q. 30; I q. 108 a. 8 |
 | Disputed questions | `sections/70-disputed-questions.tex` | drafted | Bonaventure *In II Sent.*; Scotus *Ord.* II dd. 2–6; Suárez *De angelis*; Tempier 1277 |
-| Byzantine line | `sections/72-byzantine-line.tex` | planned | Damascene; Palamas *Capita 150*; Byzantine synaxis of 8 November |
-| Liturgy | `sections/80-liturgy.tex` | planned | repository calendars; Missale Romanum 1962 and 2002; Roman Canon; Rituale |
-| Devotion and regulation | `sections/82-devotion-and-its-regulation.tex` | planned | Laodicea c. 35; Rome 745; Leo XIII; Directory on Popular Piety 213–217 |
-| Saints and the holy angels | `sections/84-the-saints-and-the-angels.tex` | planned | Francis and Bonaventure's *Legenda*; Gertrude; Frances of Rome; Ignatius; Teresa; Francis de Sales; Newman |
-| Order of the universe | `sections/88-the-order-of-the-universe.tex` | drafting | ST I q. 47, q. 50 a. 1, q. 108 |
+| Byzantine line | `sections/72-byzantine-line.tex` | drafted | Damascene; Palamas *Capita 150*; Byzantine synaxis of 8 November |
+| Liturgy | `sections/80-liturgy.tex` | drafted | repository calendars; Missale Romanum 1962 and 2002; Roman Canon; Rituale |
+| Devotion and regulation | `sections/82-devotion-and-its-regulation.tex` | drafted | Laodicea c. 35; Rome 745; Leo XIII; Directory on Popular Piety 213–217 |
+| Saints and the holy angels | `sections/84-the-saints-and-the-angels.tex` | drafted | Francis and Bonaventure's *Legenda*; Gertrude; Frances of Rome; Ignatius; Teresa; Francis de Sales; Newman |
+| Order of the universe | `sections/88-the-order-of-the-universe.tex` | drafted | ST I q. 47, q. 50 a. 1, q. 108 |
 | App. nine orders | `appendices/01-the-nine-orders.tex` | drafted | order inventory |
 | App. pre-Christian continuities | `appendices/02a-pre-christian-continuities.tex` | drafted | continuity rows of l13a and l13b |
-| App. comparative orderings | `appendices/02-comparative-orderings.tex` | planned | order inventory |
-| App. article census | `appendices/03-article-census.tex` | planned | question inventory |
-| App. parallels in Aquinas | `appendices/04-parallels-in-aquinas.tex` | planned | Corpus Thomisticum |
+| App. comparative orderings | `appendices/02-comparative-orderings.tex` | drafted | order inventory |
+| App. article census | `appendices/03-article-census.tex` | drafted | question inventory |
+| App. parallels in Aquinas | `appendices/04-parallels-in-aquinas.tex` | drafted | Corpus Thomisticum |
 | App. Dionysius in the Summa | `appendices/05-dionysius-in-the-summa.tex` | drafted | ST citations of CH |
 | App. magisterial chronology | `appendices/06-magisterial-chronology.tex` | drafted | acts above |
-| App. calendar | `appendices/07-calendar.tex` | planned | repository calendars |
-| App. Scripture index | `appendices/08-scripture-index.tex` | planned | body citations |
-| App. names | `appendices/09-names.tex` | planned | Tobit, Daniel, Luke, Jude, Rev.; Rome 745; Directory 217 |
-| App. demons' powers | `appendices/10-demons-powers-and-limits.tex` | drafting | ST I qq. 64, 109–114 |
+| App. calendar | `appendices/07-calendar.tex` | drafted | repository calendars |
+| App. Scripture index | `appendices/08-scripture-index.tex` | drafted | body citations |
+| App. names | `appendices/09-names.tex` | drafted | Tobit, Daniel, Luke, Jude, Rev.; Rome 745; Directory 217 |
+| App. demons' powers | `appendices/10-demons-powers-and-limits.tex` | drafted | ST I qq. 64, 109–114 |
 | App. first sin | `appendices/11-the-first-sin.tex` | drafted | Aquinas, Scotus, Suárez, Fathers |
-| App. terminology | `appendices/12-terminology.tex` | planned | terminology audit |
-| App. witness register | `appendices/13-witness-register.tex` | planned | source audit; author-standing inventory |
+| App. terminology | `appendices/12-terminology.tex` | drafted | terminology audit |
+| App. witness register | `appendices/13-witness-register.tex` | drafted | source audit; author-standing inventory |
 | Scope appendix | `appendices/90-scope-corpus-qualifications.tex` | drafted | scope record |
-| References | `appendices/99-references.tex` | planned | source audit |
+| References | `appendices/99-references.tex` | drafted | source audit |
 
 ## Pipeline steps after drafting
 
