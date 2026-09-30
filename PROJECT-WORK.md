@@ -69,8 +69,19 @@ verify --deployment-target github-pages`; the built site carries the three
 new PDFs byte-identical to the installed ones. The outgoing range is 12
 commits and 144 new blobs; its only binary is the public-domain two-page PL
 35 (1845) excerpt, and no machine path, username or credential marker
-occurs in it. The deployment is verified live before this production is
-represented as complete.
+occurs in it.
+
+**Deployed.** `origin/main` was fast-forwarded `af0929127..8f45cb0b6`, with no
+rebase or rewritten history.
+[Pages run 36793005054](https://github.com/spincyc/triptych/actions/runs/36793005054)
+concluded success, as did repository-hygiene run 36793005048. The three live
+PDFs (33, 12 and 3 pages), the web page and the Traditional Latin Mass
+calendar page each return HTTP 200 and are byte-identical to the locally
+verified site; the PDFs carry their reviewed hashes, and row 59 links all
+four Claude publications beside the GPT edition. The
+[deployment evidence](workflows/reviews/claude-1962-59-production-2026-09-30/deployment-evidence.json)
+records those identities. The workspace stays on `feature/propers/claude`,
+which is not pushed as a branch; `main` carries its commits.
 
 ## GPT angelology reference, 2026-09-29
 
