@@ -10,12 +10,17 @@ transliteration.
 | added / cooperating grace | gratia apposita / gratia cooperans | — | Lombard, Sent. II d. 5 cc. 1, 3–4 | never given to those who fell |
 | aevum | aevum | — | I q. 61 a. 2 (cf. In II Sent. d. 2 q. 1 a. 1) | Angelic duration between time and eternity |
 | angel | angelus | angelos | Mal 3:1; ST I q. 108 a. 5 ad 1; CH 4–5 | Office-name, not nature-name (Augustine, Enarr. in Ps. 103 s. 1 §15; CCC 329) Name of office (Gregory, Hom. 34.8: nomen officii, non naturae) |
+| angel of punishment | — | — | Hermas, Sim. VI.3 | "belongs to the just angels" |
+| angel of repentance | — | — | Hermas, Vis. V; Sim. X.1 | The Shepherd; guardian of the penitent |
+| angel of righteousness / of iniquity | — | — | Hermas, Mand. VI.2 | The two angels with each man |
 | angels | angeli | angeloi | CH 9.2 |  |
 | application of power | applicatio virtutis |  | I q. 52 a. 1 co.; a. 2 co. | ground of angelic place |
 | Archangels | Archangeli | archangeloi | Jude 9; 1 Thess 4:15 [4:16]; CH 9.2 | summi nuntii |
 | assumed body | corpus assumptum |  | I q. 51 a. 2 s.c., ad 2 | united as a represented mover |
 | at once from the beginning of time | simul ab initio temporis | — | DS 800; DS 3002 | the disputed particle of Firmiter |
+| Averter | Apopompaeus | — | Origen, De princ. III.2.1 (Lev 16:8) | Read; not used in final body |
 | both creatures | utramque … creaturam, spiritualem et corporalem, angelicam videlicet et mundanam | — | Lateran IV, Firmiter (DS 800); I q. 61 a. 1 | Defined simultaneity of spiritual and corporeal creation |
+| by essence / substantially | substantialiter | — | Origen, De princ. I.5.3 (note [2030]) | Whether holiness is by nature |
 | Cherubim | Cherubim | cheroubim | Ezek 10:20; Gregory, Hom. 34.9; CH 7.1 | "Fullness of knowledge" "Fulness of knowledge or stream of wisdom" |
 | circumscriptively / definitively | circumscriptive / definitive |  | I q. 52 a. 2 co. | body / angel; God neither |
 | composing and dividing | componere et dividere | — | ST I q. 58 a. 4 | Denied of angelic knowledge |
@@ -25,6 +30,8 @@ transliteration.
 | creating nature and bestowing grace in one act | simul … condens naturam et largiens gratiam | — | Augustine, De civ. Dei XII.9; I q. 62 a. 3 s.c. | Basis of the created-in-grace opinion |
 | definitively in place | esse in loco definitive | — | ST I q. 52 a. 1; Paris art. 219 | against circumscriptive presence |
 | demon | daemon | daimonion | DS 800 | Fallen angel |
+| demon | — | daimon | Justin, 1 Apol. 5 (ANF note [1774]) | Christian use for evil spirit; one devil, many demons |
+| demon / dragon (deserter) | — | daimon; drakon; apodedrakenai | Theophilus, Ad Autol. II.28 | Theophilus's etymology; "apodedrakenai" printed in ANF |
 | determination of the will | determinatio voluntatis |  | I q. 53 a. 3 ad 1 | measures an angel's speed |
 | devil | diabolus | diabolos | DS 800 | Created good, evil by his own act |
 | Dominations | Dominationes | kyriotetes | Col 1:16; Eph 1:21; CH 8.1 | Direct the lower orders Parker "Lordships" |
@@ -36,10 +43,14 @@ transliteration.
 | evening knowledge | cognitio vespertina | — | ST I q. 58 aa. 6–7 | Knowledge of things in their own nature |
 | ever mobile | semper mobilis |  | I q. 50 a. 1 arg. 2, ad 2 | Damascene's "in perpetual motion" (NPNF) |
 | existence / what is | esse / quod est; quo est |  | I q. 50 a. 2 ad 3 | Boethian composition in angels |
+| first-born angel | — | angelos protogonos | Tatian, Or. 7 (ANF note [441]) | The angel who fell first; Greek from the American editor's note |
+| first-born princes of the angels (seven) | — | not verified | Clement, Strom. VI.16 | Greek not read |
+| first-created angels | — | — | Hermas, Vis. III.4; Sim. V.5 | The six builders and counsellors |
 | free choice | liberum arbitrium | — | I q. 59 a. 3 | "Ubicumque est intellectus, est liberum arbitrium" |
 | friendship-love / desire-love | velle amicitiae / velle concupiscentiae | — | Scotus, Ord. II d. 6 q. 2 | order of the will's acts |
 | from nothing | ex nihilo | — | I q. 61 a. 2 | "Idest postquam nihil fuerat" |
 | Gabriel | Gabriel | Gabriel | Dan 8:16; Luke 1:19 | fortitudo Dei (Gregory) |
+| gnostic (perfect Christian) | — | gnostikos | Clement, Strom. VII | Clement's term for the perfect believer |
 | ground of presence | ratio essendi in loco | — | Paris art. 219 gloss; Cajetan on I q. 52 a. 1 | the gloss: substance is not the ratio |
 | guardian angel | angelus custos | — | CCC 336; Matt 18:10 | "Beside each believer" (Basil, via CCC 336) |
 | heavenly powers | virtutes caelestes | ouraniai dynameis | CH 11.1 | Common name for all orders |
@@ -47,6 +58,8 @@ transliteration.
 | here and now | hic et nunc |  | I q. 50 a. 1 co. | why a body cannot understand |
 | hierarchy | hierarchia | hierarchia | CH 3.1 | "sacred order and science and operation"; the word appears first in this corpus |
 | illumination | illuminatio | photismos | CH 3.2–3 | Second |
+| incorporeal | — | asomaton | Origen, De princ. preface 8 | Origen discusses the term |
+| influences (opposing) | virtutes | — | Origen, De princ. preface 5 (note [1926]) | Crombie's "influences" for Rufinus's Virtutes |
 | instant; now | instans; nunc |  | I q. 53 a. 3 co. | angelic time as succession of "nows" |
 | intellective appetite | appetitus intellectivus | — | I q. 59 a. 4 | Undivided into irascible/concupiscible; "remanet indivisus; et vocatur voluntas" |
 | intellectual / rational | intellectuales / rationales | noeros / logikos (as reported) | ST I q. 58 a. 3 | Names of the two intellectual natures; Greek not verified at locus |
@@ -70,6 +83,7 @@ transliteration.
 | natural appetite | appetitus naturalis | — | I q. 59 a. 1 | Inclination without knowledge |
 | natural love | dilectio naturalis; amor naturalis | — | I q. 60 a. 1 | "Inclinatio naturae indita ab auctore naturae" |
 | non-continuous motion | motus non continuus |  | I q. 53 a. 1 co. | whole place quitted at once |
+| offices | officia | — | Origen, De princ. I.5.1 (note [2023]) | "rational offices and orders" |
 | operation | operatio | energeia | CH 3.1 | Third term |
 | order | ordo | taxis | CH 3.1 | First term of the definition |
 | perfection | perfectio | teleiosis | CH 3.2–3 | Third |
@@ -77,19 +91,23 @@ transliteration.
 | place | locus |  | I q. 52 | the body the angel's power touches |
 | power of knowledge | virtus cognoscitiva | — | ST I q. 54 pr. | First of the four heads of the treatise on angelic knowledge |
 | Powers | Potestates | exousiai | Eph 1:21; Rom 8:38; CH 8.1 | Restrain the adverse powers (Gregory) Parker "Authorities" |
+| powers (preface) | Dominationes | — | Origen, De princ. preface 2 (note [1919]) | Crombie renders Dominationes as "powers" here |
 | Principalities | Principatus | archai | Eph 1:21; Col 1:16; Rom 8:38; CH 9.1 | Preside over the good spirits (Gregory) |
+| privilege of creation | conditionis praerogativa | — | Origen, De princ. I.5.3 (note [2029]) | Dominion as native privilege vs merit |
 | purely spiritual creature | creatura pure spiritualis |  | I q. 50 pr. | "quae in Scriptura sacra Angelus nominatur" |
 | purification | purificatio / mundatio | katharsis | CH 3.2–3 | First of the triple law |
 | quiddity | quod quid est | — | ST I q. 57 a. 1 ad 2; q. 58 a. 4–5 | The intellect's proper object; about it, no error |
 | Raphael | Raphael | — | Tob 3:25; 12:15 | medicina Dei (Gregory) |
 | sanctifying grace | gratia gratum faciens | — | I q. 62 a. 3 | "In gratia gratum faciente creatos" |
 | Satan | Satanas | satanas | CCC 391 | "Adversary"; the fallen angel of Scripture and Tradition |
+| Satanas | — | — | Justin, Dial. 103; Irenaeus, Adv. haer. V.21.2 | "Sata" apostate + "Nas" serpent (Justin); "Satan signifies an apostate" (Irenaeus) |
 | science | scientia | episteme | CH 3.1 | Second term |
 | secrets of hearts | cogitationes cordium | — | ST I q. 57 a. 4 | Known to God alone |
 | seminal principles | rationes seminales | — | I q. 62 a. 3 | Grace given as seed with nature |
 | sensitive appetite | appetitus sensitivus | — | I q. 59 a. 1 | Reaches particular goods only |
 | separate substance | substantia separata |  | I q. 50 a. 3 co. | Aquinas's philosophical name for angels |
 | Seraphim | Seraphim | seraphim | Isa 6:2; Gregory, Hom. 34.9; CH 7.1 | "Burning, kindling" "Kindling or burning" |
+| spirit about matter | — | — | Athenagoras, Leg. 24; Methodius via Photius | The devil's original charge |
 | spiritual matter | materia (large sumpta) in spiritualibus | — | Bonaventure, In II Sent. d. 3 p. 1 a. 1 q. 1 | "matter" taken broadly as every constitutive potency |
 | subsisting form | forma subsistens |  | I q. 50 a. 2 ad 3; a. 5 co. | form existing without matter |
 | sudden acceptance of truth | per subitam acceptionem veritatis | — | I q. 59 a. 3 ad 1 | Angelic choice without counsel |

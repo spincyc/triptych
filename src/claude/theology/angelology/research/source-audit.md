@@ -245,6 +245,202 @@ readings were made on 2026-09-29 unless an entry says otherwise.
 - Rights: public act, Latin
 - Ceiling: vatican.va Latin; the 24 Sept 1983 decisions (AAS 76 [1984] 175–176) are known only through this decree's recital and are so marked
 
+## The Greek Fathers before Nicaea
+
+### Clement of Rome, First Epistle to the Corinthians
+- Witness: Clement of Rome, *1 Clement*, tr. in ANF vol. 1 (Roberts/Donaldson/Coxe, 1885), CCEL plain text.
+- Repository ids: `work.ante-nicene-fathers.volume-1` (existing).
+- URL: https://ccel.org/ccel/s/schaff/anf01/cache/anf01.txt
+- Retrieved: 2026-09-29T12:55:11Z
+- SHA-256 of the bytes read: ee9c7f0ac3f4df08d07ddf81cd7e061e82a35e0d27de611cae06f1e05b2fb991 (3149312 bytes)
+- Loci read: chs. 29, 34, 36 (and chapter scan for all angel mentions, chs. 1–59).
+- Quoted: 29; 34 (block); 36.
+- Rights: public domain (1885 translation).
+- Ceiling: CCEL e-text of ANF; not collated with print or with the Greek.
+
+### Ignatius of Antioch, Letters to the Trallians, Smyrnaeans, Ephesians
+- Witness: Ignatius, *Trall.*, *Smyrn.*, *Eph.*, shorter and longer Greek recensions in parallel, ANF vol. 1.
+- Repository ids: `work.ignatius-of-antioch.letter-to-the-smyrnaeans` (existing).
+- URL: https://ccel.org/ccel/s/schaff/anf01/cache/anf01.txt
+- Retrieved: 2026-09-29T12:55:11Z
+- SHA-256 of the bytes read: ee9c7f0ac3f4df08d07ddf81cd7e061e82a35e0d27de611cae06f1e05b2fb991 (3149312 bytes)
+- Loci read: Trall. 5 (both recensions), Smyrn. 6, Eph. 13, 19 (both recensions); ANF introductory note on the recensions.
+- Quoted: Trall. 5 (shorter; and longer recension marked as such); Smyrn. 6; Eph. 13, 19 (shorter).
+- Rights: public domain.
+- Ceiling: English only; the longer recension identified as an interpolated expansion on the ANF introductory note's authority.
+
+### Epistle of Barnabas; Epistle to Diognetus; Martyrdom of Polycarp
+- Witness: ANF vol. 1 translations.
+- Repository ids: `work.ante-nicene-fathers.volume-1` (existing).
+- URL: as above. Retrieved: 2026-09-29T12:55:11Z. Cache: text/ccel-anf01.txt
+- Loci read: Barn. 18; Diogn. 7; Mart. Pol. 2, 14.
+- Quoted: all four loci.
+- Rights: public domain.
+- Ceiling: English only.
+
+### Hermas, The Shepherd
+- Witness: *The Pastor of Hermas*, ANF vol. 2 (1885).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://ccel.org/ccel/s/schaff/anf02/cache/anf02.txt
+- Retrieved: 2026-09-29T12:55:12Z
+- SHA-256 of the bytes read: ae8e15414a21fe8d54a30fee7c3fbd1ee6a018e624dcd681d030da5c1cabbcac (3768675 bytes)
+- Loci read: Vis. III.1–7, IV.1–2, V; Mand. VI.1–2, VII, XI, XII.4–6; Sim. V.5–6, VI.1–3, VII, VIII.1–3, IX.1, 12–14, 25, 27, X.1–4.
+- Quoted: Vis. III.2, 3, 4 (block), 5; IV.2; V; Mand. VI.2 (block), VII, XI, XII.4, 5; Sim. V.5–6, VI.2–3, VIII.1, 3 (block), IX.12, 14, X.1, 2.
+- Rights: public domain.
+- Ceiling: English only; ANF's composite text (Vatican/Palatine/Ethiopic variants noted in its footnotes, not weighed).
+
+### Justin Martyr, First and Second Apologies, Dialogue with Trypho
+- Witness: ANF vol. 1.
+- Repository ids: `work.justin-martyr.first-apology` (existing); `work.justin-martyr.second-apology` (existing).
+- URL: https://ccel.org/ccel/s/schaff/anf01/cache/anf01.txt
+- Retrieved: 2026-09-29T12:55:11Z. Cache: text/ccel-anf01.txt
+- Loci read: 1 Apol. 5, 6, 13, 16, 28, 63; 2 Apol. 4–9 (ANF numbering: ch. 5 "How the angels transgressed"); Dial. 56–60, 79, 103, 124–125, 128, 141.
+- Quoted: 1 Apol. 6 (block), 16, 28, 63; 2 Apol. 5 (block), 7; Dial. 56, 57, 60, 79, 125, 128, 141.
+- Rights: public domain.
+- Ceiling: English only; ANF's footnote on the grammar of 1 Apol. 6 read, not reproduced.
+
+### Athenagoras, A Plea for the Christians (Legatio)
+- Witness: ANF vol. 2.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://ccel.org/ccel/s/schaff/anf02/cache/anf02.txt
+- Retrieved: 2026-09-29T12:55:12Z. Cache: text/ccel-anf02.txt
+- Loci read: Leg. 10, 24–28.
+- Quoted: 10 (block), 24 (block and inline), 25, 26, 27.
+- Rights: public domain. Ceiling: English only.
+
+### Tatian, Address to the Greeks
+- Witness: ANF vol. 2 (with the ANF introductory note on Tatian's later Encratism).
+- Repository ids: none registered; the entry cites the edition directly.
+- URL / Retrieved / Cache: as ANF 2 above.
+- Loci read: Or. 7–9, 12–16, 20; introductory note.
+- Quoted: 7, 12, 14, 15, 16. Greek term `angelos protogonos` from the American editor's note [441] at ch. 7.
+- Rights: public domain. Ceiling: English only.
+
+### Theophilus of Antioch, To Autolycus
+- Witness: ANF vol. 2.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL / Retrieved / Cache: as ANF 2.
+- Loci read: II.8, II.28, II.29.
+- Quoted: II.8, 28, 29. Greek `apodedrakenai` as printed in ANF; the gloss joining it to `drakon` is editorial exposition of Theophilus's stated etymology.
+- Rights: public domain. Ceiling: English only.
+
+### Irenaeus, Against Heresies
+- Witness: ANF vol. 1.
+- Repository ids: `work.irenaeus.adversus-haereses` (existing).
+- URL: https://ccel.org/ccel/s/schaff/anf01/cache/anf01.txt. Retrieved: 2026-09-29T12:55:11Z. Cache: text/ccel-anf01.txt
+- Loci read: I.10.1–2; II.2.1–5; II.30.3–9; II.32.4–5; III.8.1–3; III.23.3; IV.7.4; IV.16.2; IV.20.1; IV.36.4; IV.37.1; IV.40.1–3; IV.41.1–3; V.21.1–3; V.23.1–2; V.24.1–4.
+- Quoted: all loci listed except II.30.4 and V.24.1 (read, not quoted in final text).
+- Rights: public domain.
+- Ceiling: English from the Latin and Greek fragments as ANF prints them; chapter titles are ANF editorial and not quoted as Irenaeus.
+
+### Clement of Alexandria, Stromata
+- Witness: ANF vol. 2.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL / Retrieved / Cache: as ANF 2.
+- Loci read: VI.3 (angel mentions), VI.7, VI.13, VI.16, VI.17; VII.1, VII.2, VII.7, VII.12, VII.13.
+- Quoted: VI.7, 13, 16, 17; VII.1, 2 (block and inline), 7, 12, 13.
+- Rights: public domain. Ceiling: English only.
+
+### Origen, De principiis (Rufinus's Latin, tr. Crombie)
+- Witness: ANF vol. 4 (Crombie's translation of Rufinus, with Jerome fragments from the Letter to Avitus).
+- Repository ids: `work.origen.de-principiis` (existing).
+- URL: https://ccel.org/ccel/s/schaff/anf04/cache/anf04.txt
+- Retrieved: 2026-09-29T12:55:15Z. Cache: text/ccel-anf04.txt
+- Loci read: preface 1–10 with notes [1919]–[1932]; I.5.1–5; I.6.1–4; I.8.1–4 and the two Jerome fragments; II.9.1–7; III.2.1–4; III.3.1–3.
+- Quoted: preface 5, 6, 10; I.5.1, 2, 4, 5; I.6.1, 2, 3; I.8.1 (block and inline), 3, 4; Jerome fragment after I.8; II.9.1, 2, 3, 6; III.2.1, 2, 3, 4; III.3.2.
+- Rights: public domain.
+- Ceiling: English of Rufinus's Latin; Greek fragments not consulted beyond the Jerome fragment in ANF.
+
+### Origen, Contra Celsum
+- Witness: ANF vol. 4 (tr. Crombie).
+- Repository ids: `work.origen.contra-celsum` (existing).
+- URL / Retrieved / Cache: as ANF 4.
+- Loci read: V.1–6, V.29–32; VIII.13, 25–27, 34–36, 57, 60, 64.
+- Quoted: V.4 (block), 5, 29, 30, 32; VIII.13, 25, 27, 34 (block and inline), 36 (block), 57, 60, 64 (block).
+- Rights: public domain. Ceiling: English only.
+
+### Origen, Commentary on Matthew, Book XIII
+- Witness: ANF vol. 9 (1896 additional volume; tr. Patrick).
+- Repository ids: `work.origen.commentarium-in-matthaeum` (registered with this publication); `work.ante-nicene-fathers.volume-9` (existing).
+- URL: https://ccel.org/ccel/s/schaff/anf09/cache/anf09.txt
+- Retrieved: 2026-09-29T13:24:25Z. Cache: text/ccel-anf09.txt
+- Loci read: XIII.26, 27, 28.
+- Quoted: XIII.26, 27, 28.
+- Rights: public domain. Ceiling: English only; complements the treatment in 70-disputed-questions.tex (sec:disputed), which covers XIII.27–28 for q. 113 a. 5.
+
+### Gregory Thaumaturgus, Oration and Panegyric Addressed to Origen
+- Witness: ANF vol. 6 (with introductory notice: native of Neocaesarea in Pontus, journey toward Berytus for law, Panegyric as valedictory at Caesarea, later bishop of Neocaesarea).
+- Repository ids: `work.ante-nicene-fathers.volume-6` (existing).
+- URL: https://ccel.org/ccel/s/schaff/anf06/cache/anf06.txt
+- Retrieved: 2026-09-30T14:09:50Z (fetched by this lane). Cache: text/ccel-anf06.txt
+- Loci read: Arguments IV, V, XIX; introductory notice.
+- Quoted: IV (block and inline), V, XIX.
+- Rights: public domain. Ceiling: English only.
+
+### Methodius of Olympus, Banquet of the Ten Virgins; Discourse on the Resurrection (with Photius's synopsis and the Damascene fragment)
+- Witness: ANF vol. 6.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL / Retrieved / Cache: as ANF 6.
+- Loci read: Symp. I.4 (angels mention), II.6, III.4, III.6, VIII.10; De res. I.9–12; Part II (Damascene fragment); Part III.1–9 (Photius, cod. 234, with notes [2894]–[2897]); introductory notice (bishop of Olympus and Patara in Lycia).
+- Quoted: Symp. II.6, III.6, VIII.10; De res. I.10 (block and inline), I.12; Part II fragment; Photius synopsis 7.
+- Rights: public domain.
+- Ceiling: English only; Part III is Photius's précis, cited as such.
+
+### Augustine, De civitate Dei XV.23, XVI.29
+- Witness: NPNF series 1 vol. 2 (tr. Dods).
+- Repository ids: `work.augustine.de-civitate-dei` (existing); `work.nicene-and-post-nicene-fathers.series-1-volume-2` (existing).
+- URL: https://ccel.org/ccel/s/schaff/npnf102/cache/npnf102.txt
+- Retrieved: 2026-09-29T12:55:19Z. Cache: text/ccel-npnf102.txt
+- Loci read: XV.23 (whole chapter), XVI.29.
+- Quoted: XVI.29 only; XV.23 cited for position (sons of God = Sethites; holy angels could not so fall).
+- Rights: public domain. Ceiling: English only.
+
+### John Chrysostom, Homiliae in Genesim 22
+- Witness: Migne, PG 53 (Paris 1862), Greek text, archive.org OCR.
+- Repository ids: none registered; the entry cites the edition directly.
+- URL: https://archive.org/download/patrologiae_cursus_completus_gr_vol_053/patrologiae_cursus_completus_gr_vol_053_djvu.txt
+- Retrieved: 2026-09-30T14:20:51Z (fetched by this lane). Cache: text/ia-pg53-djvu.txt (lines ~25765–25900).
+- Loci read: Hom. 22.2–3 (Greek): refutes the angel reading of Gen 6:2 (angels are never called sons of God; the devil fell before man's creation; the bodiless nature is incapable of such desire, Matt 22:30) and identifies the sons of God with the line of Seth and Enos.
+- Quoted: nothing (position only, own reading of the Greek; no English rendering printed).
+- Rights: public domain (1862 text).
+- Ceiling: noisy Greek OCR; section numbers and PG columns not verified against the page image, so the body cites "Hom. in Gen. 22" without column.
+
+### Thomas Aquinas, Summa theologiae (English Dominican 1920, New Advent; Latin Corpus Thomisticum)
+- Witness: ST I qq. 45 (Latin), 47, 50, 51, 59, 61, 62, 63, 64, 106, 108, 110, 111, 113, 114.
+- Repository ids: `work.thomas-aquinas.summa-theologiae` (existing).
+- URL: https://www.newadvent.org/summa/1047.htm (and 1050, 1051, 1059, 1061–1064, 1106, 1108, 1110, 1111, 1113, 1114); https://www.corpusthomisticum.org/sth1044.html
+- Retrieved: 2026-09-29 (12:53–12:54Z; ct-sth1044 12:54:28Z).
+- SHA-256 of the bytes read: 41c6edfab20faec48a4181d11d3dbde6549398127633854b20c60bce9f3c5b9c (176483 bytes)
+- Loci read: I q. 45 a. 5 (s.c., corpus, Latin); q. 47 a. 2 corpus and ad 3; q. 50 a. 3 s.c.; q. 51 aa. 1–3 (obj. 1 and ad 1; a. 2 s.c.; a. 3 ad 5, ad 6); q. 59 titles; q. 61 a. 1 title; q. 62 a. 6 s.c.; q. 63 aa. 2 (corpus), 3 (s.c.), 5 (corpus), 6 (obj. 2 and ad 2), 7 (obj. 1, ad 1), 8 (s.c.); q. 64 a. 1 ad 4, a. 2 corpus, a. 4; q. 106 titles; q. 108 aa. 5–6, 8; q. 110 a. 1 corpus; q. 111 aa. 1–3 corpus; q. 113 aa. 5, 7 obj. 4, 8 corpus; q. 114 aa. 1, 3.
+- Quoted: q. 51 a. 3 ad 5 ("in whom, nevertheless, he worshipped God"); q. 63 a. 5 ("under the figure of the prince of Babylon"; "in the person of the King of Tyre"); q. 63 a. 7 ad 1; q. 110 a. 1 (Origen's Hom. in Num. as quoted by Aquinas).
+- Rights: public domain (1920).
+- Ceiling: New Advent transcription; Latin checked only for q. 45 a. 5.
+
+### Denzinger (Constantinople 543, DS 403–411); Lateran IV (DS 800)
+- Witness: Denzinger Latin (patristica.net); Lateran IV Latin as quoted in the CDF 1975 study (vatican.va, Italian page, Latin quotation with COD n. 800).
+- Repository ids: `work.denzinger.enchiridion-symbolorum` (existing).
+- URL: https://patristica.net/denzinger/enchiridion-symbolorum.html; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19750626_fede-cristiana-demonologia_it.html
+- Retrieved: 2026-09-29T12:56:36Z; 2026-09-29T13:10:47Z
+- SHA-256 of the bytes read: 604f24c46e0bc71c2018f25dc787a9ab421d4b2e9cf7d1cee1f43e910ef2708f (2333435 bytes); c3ebeb93cc0b27dcd02a6b98e4021f44c49b1c37e913d7a9425d5c62613036aa (85871 bytes)
+- Loci read: DS 403–411; DS 800 (Latin sentence "Diabolus enim et daemones alii ...").
+- Quoted: nothing verbatim in the body (paraphrase of DS 403, 411, 800).
+- Rights: Latin public domain; English paraphrase only. Ceiling: web transcriptions.
+
+### Catechism of the Catholic Church 328–336
+- Witness: CCC English, vatican.va.
+- Repository ids: `work.catholic-church.catechism` (existing).
+- URL: https://www.vatican.va/archive/ENG0015/__P1A.HTM. Retrieved: 2026-09-29T12:56:38Z. Cache: text/ccc-en-P1A.txt
+- Loci read: 328–336.
+- Quoted: 328 (two short phrases).
+- Rights: Vatican-site document; short quotation with attribution. Ceiling: web text.
+
+### Douay–Rheims (Challoner), Project Gutenberg 1581
+- Witness: edition `edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581`.
+- URL: https://www.gutenberg.org/cache/epub/1581/pg1581.txt. Retrieved: 2026-09-29T12:58:58Z. Cache: text/gut-douay-rheims-1581.txt
+- Loci read: Gen 6:2; 48:16; Deut 32:8; Job 40:20; Ps 33:8; 90:11; Wis 11:21; Dan 6:22; 7:10; 10:13; Zach 1:14; Matt 18:10; Luke 10:18; Acts 12:15; Apoc 12:4.
+- Quoted: Deut 32:8; Matt 18:10 (Douay wording).
+- Rights: public domain.
+
 ## The Celestial Hierarchy, the nine orders, and Dionysius in the treatise
 
 ### Witness 1

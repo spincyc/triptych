@@ -24,6 +24,35 @@ only when its locus was read at the source.
 | principalities | Dionysius (via Aquinas) | ST I q. 108 a. 6; cf. CH 6 | Principatus | 7 | lowest hierarchy (point of difference from Gregory) | via Aquinas |
 | archangels | Dionysius (via Aquinas) | ST I q. 108 a. 6; cf. CH 6 | Archangeli | 8 | lowest hierarchy | via Aquinas |
 | angels | Dionysius (via Aquinas) | ST I q. 108 a. 6; cf. CH 6 | Angeli | 9 | lowest hierarchy | via Aquinas |
+| seraphim | Clement of Rome | 1 Clem. 34 | (Isa 6:3 quoted; order unnamed) | — | The Sanctus of Isa 6:3 joined to Dan 7:10's myriads | Read ANF 1; order implied, not named |
+| seraphim | Ignatius (longer recension) | Trall. 5 | "seraphim" | 1 (with cherubim; "pre-eminence") | Pre-eminent among the orders listed | Read ANF 1 (English) |
+| cherubim | Ignatius (longer recension) | Trall. 5 | "cherubim" | 1 (with seraphim) | Pre-eminent among the orders listed | Read ANF 1 (English) |
+| thrones | Ignatius (longer recension) | Trall. 5 | "thrones" | unranked list | Named with "authorities" | Read ANF 1 |
+| dominations | Ignatius (longer recension) | Trall. 5 | "dominions" | unranked list | Named with "powers" | Read ANF 1 |
+| powers | Ignatius (longer recension) | Trall. 5 | "powers" / "authorities" | unranked list | Greek not read; mapping of "powers" vs "authorities" to virtues/powers provisional | Read ANF 1 (English only) |
+| angels | Ignatius (longer recension) | Trall. 5 | "angelic orders", "angels and hosts" | unranked list | Generic and specific | Read ANF 1 |
+| angels | Irenaeus | Adv. haer. II.30.3, 6, 9; III.8.3 | "Angels" | unranked list | Creatures made through the Word; the Son reveals the Father to them | Read ANF 1 |
+| archangels | Irenaeus | II.30.3, 6, 9; III.8.3 | "Archangels" | unranked list | "the ranks of the Archangels" | Read ANF 1 |
+| thrones | Irenaeus | II.30.3, 6; III.8.3 | "Thrones" | unranked list | "the mysteries of the Thrones" | Read ANF 1 |
+| dominations | Irenaeus | II.30.3, 6; III.8.3 | "Dominions"/"Dominations" | unranked list | Among "Powers innumerable" | Read ANF 1 |
+| virtues | Irenaeus | II.30.6, 9 | "Virtues" | unranked list | Named after Powers | Read ANF 1 |
+| powers | Irenaeus | II.30.3, 6, 9 | "Powers" | unranked list | "Powers innumerable" | Read ANF 1 |
+| principalities | Irenaeus | II.30.6 | "Principalities" | unranked list | Named first in II.30.6 list | Read ANF 1 |
+| thrones | Origen | De princ. I.5.1, 3; I.6.2; I.8.4 | "thrones"/"seats" | unranked; office "of judging or ruling" | Rank by merit | Read ANF 4 (Rufinus Latin in English) |
+| dominations | Origen | I.5.1, 3; I.6.2; I.8.4 | "dominions" | unranked | Dominion "over slaves" (I.6.2); by merit | Read ANF 4 |
+| virtues | Origen | I.5.3; I.6.2 | "virtues"/"influences" | unranked | "influences" renders Latin Virtutes at preface 5 (note [1926]); identification at I.6.2 provisional | Read ANF 4 |
+| powers | Origen | I.5.1, 3; I.6.2; I.8.4 | "powers" | unranked | "exercise power over those who need to have power upon their head" | Read ANF 4 |
+| principalities | Origen | I.5.1, 3; I.6.2; I.8.4 | "principalities" | unranked | Hold dominion by merit | Read ANF 4 |
+| archangels | Origen | I.8.1 | "order of archangels" | 1 (of the pair) | Raphael healing, Gabriel wars, Michael prayers; above the order of angels | Read ANF 4 |
+| angels | Origen | I.8.1; I.6.2 | "order of angels" | 2 (of the pair) | Act under an archangel | Read ANF 4 |
+| archangels | Origen | C. Cels. VIII.13 | "Gabriel and Michael, and the other angels and archangels" | unranked | Servants of God after the Son | Read ANF 4 |
+| archangels | Clement of Alexandria | Strom. VI.7 | "archangels" | highest named | God "separated ... from even the archangels" | Read ANF 2 |
+| seraphim | Methodius | De res. I.10 | "seraphim" | highest named (implied) | "attend the Supreme Council, and uphold the universe" | Read ANF 6 |
+| cherubim | Methodius | De res. I.10 | "cherubim" | unranked | Do not change into angels | Read ANF 6 |
+| thrones | Methodius | De res. I.10 | "thrones" | unranked | "thrones of powers" | Read ANF 6 |
+| powers | Methodius | De res. I.10; Symp. III.6 | "powers" | unranked | One race with principalities, distinct from angels | Read ANF 6 |
+| principalities | Methodius | De res. I.10; Symp. III.6 | "principalities" | unranked | The ninety-nine sheep | Read ANF 6 |
+| angels | Methodius | De res. I.10 | "angels and ministers" | lowest named (implied) | "heaven of angels" | Read ANF 6 |
 | seraphim | Dionysius, CH | 7.1 | seraphim (Heb. "kindling or burning") | 1 | Ceaseless movement around God; kindling; purifying fire | yes (Parker text) |
 | cherubim | Dionysius, CH | 7.1 | cherubim (Heb. "fulness of knowledge or stream of wisdom") | 2 | Vision of God; reception of highest light; communication downward | yes |
 | thrones | Dionysius, CH | 7.1 | thronoi | 3 | Exaltation; fixed settlement around the Highest; bearing God | yes |
