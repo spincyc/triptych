@@ -402,6 +402,29 @@ class DriverConversionTests(unittest.TestCase):
                 )
             self.assertEqual(assembled.strip(), "Complete textual equivalent.")
 
+    def test_assemble_ignores_commented_out_input(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            source = Path(temporary) / "src"
+            written = source / "gpt" / "shared" / "written.tex"
+            written.parent.mkdir(parents=True)
+            written.write_text("Written section.\n", encoding="utf-8")
+            unset = source / "gpt" / "shared" / "unset.tex"
+            unset.write_text("Never set.\n", encoding="utf-8")
+            text = (
+                "\\input{shared/written}\n"
+                "%\\input{shared/unwritten}\n"
+                "% \\input{shared/unset}\n"
+                "Text. % \\input{shared/unwritten}\n"
+                "50\\% \\input{shared/written}\n"
+            )
+            seen: dict[Path, str] = {}
+            with mock.patch.object(DRIVER, "SRC", source):
+                assembled = DRIVER.assemble(text, "gpt", seen)
+            self.assertNotIn("Never set.", assembled)
+            self.assertEqual(assembled.count("Written section."), 2)
+            self.assertIn("%\\input{shared/unwritten}", assembled)
+            self.assertEqual(set(seen), {written.resolve()})
+
     def test_convert_selects_web_arm_before_auditing_nested_input(self) -> None:
         if shutil.which("pandoc") is None:
             self.skipTest("pandoc is not installed")
