@@ -1,0 +1,78 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "VIS-001",
+      "location": "Homily PDF: the foot of column 2 on physical page 1 runs into the head of column 1 on page 2 (source: sections/homily/10-homily.tex line 89)",
+      "problem": "The page turn falls inside a proper name. Page 1 ends with 'St' and page 2 opens with 'Hilary of Poitiers says that to spread the hands...', so a preacher reading from the printed page has to turn mid-name. None of the 13 'St <Name>' spaces in the spoken body is tied, and the same break recurs at a line end in column 2 of page 2 ('St' / 'Gregory').",
+      "required_result": "Join the honorific to the name with a non-breaking tie (St~Hilary, and preferably every St~ in sections/homily/10-homily.tex) so that no line or page break separates 'St' from the name. Then rebuild and re-inspect the homily's column and page breaks.",
+      "severity": "advisory"
+    },
+    {
+      "id": "VIS-002",
+      "location": "The expansive study's References subheads on pp. 32-33 (sections/90-apparatus.tex, \\subsection*) against the concise study's References subheads on p. 12 (sections/concise/90-apparatus.tex, \\subsubsection*)",
+      "problem": "The two sibling studies set their References subdivisions at different heading levels: large bold upright in the expansive study, normal-size bold italic in the concise study. Each document is consistent within itself, but the pair's terminal apparatus does not share one hierarchy.",
+      "required_result": "Use one heading level for the References subdivisions in both studies' apparatus, for example \\subsection* in both. Then rebuild and confirm that the concise study's final page still holds References, metadata and the colophon without a spill page.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "build/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf (259,524 bytes over 3 pages)",
+      "note": "At 84.5 KiB per page the homily exceeds the 75 KiB-per-page investigation trigger in guidance/repository.md. On investigation, 227,400 bytes (87.6%) are the eleven embedded Latin Modern Type 1 subsets and the file contains no raster images, so the high ratio is fixed font overhead spread over a three-page document rather than a defect. The study (15.5 KiB/page) and the concise study (37.7 KiB/page) are well under the trigger."
+    }
+  ],
+  "review_inputs": {
+    "artifacts": {
+      "document": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+      "pagination_evidence": {
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.aux": "e362708b1767b56d21fb519df51a33f58447aa0adbb67bfea2ef2b944d505678",
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.aux": "6bb79596ab47b316641188cb77aab4dd136ba593ca11d82d9cbc84e896d9fe9b"
+      },
+      "pdfs": {
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf": "e1dcfb384e9334670e5ea4d015390d7f4685b88b603a907d919312245c9e33c5",
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf": "448b926a2a1cee8e44f11b3a5518eaa89cc3a6056f158cb5f4ba7699b8c1754f",
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf": "27c7d1979e4dfe30e3525cda062b7d380ae762f957ff58b21e3c473c478b213c"
+      },
+      "provider": "claude",
+      "render_inputs": {
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/format.tex": "b7475c3429203698eac3e2992d15efb4060eb78163ff1b9eb152a0f7b45205da",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/generation-metadata.tex": "ec9ae6824a002c51508fae624bb8c3de94aeecc7f570d3f5390d68ca18ab1c4a",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/homily.tex": "b96be16c13cfb134e16d48490e22a98b0dcc93747cdd1823a4ddfc23e4a986ec",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/main.tex": "ece6c414c5b51f70641edd64c8d28b4fe383c70e8361badd9d5833f610ef096d",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/proper-components.toml": "98f4d4c35c4168f6f5ab5d4788cf9518a0042f0dccc10007259f467f21450318",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/chronology-annotations.tex": "5bec81a0d5a937f7a61f6c79c8d7764f4e7a55eb332f4b164771e2bf3a0b1404",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/00-opening.tex": "69661fb4c49bb60a69f177e1dc3f19f3b6cfe73d7cd17702bd4d310b11200075",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/05-appointed-texts.tex": "a700ac4f2bd4231712e57774332efce20629f2f3503ef40483d4f69a30412d7e",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/10-each-element.tex": "5674623a25d5993b0c6ed136d49178bfbf364846f94e4204ca755c5d3d02898b",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/20-wedding-garment.tex": "d922043e16feba8d87277477aae68f2a33af8515bd7dafba90258c0658f0b3e6",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/30-call-to-the-nations.tex": "4a5841fb0f7c323e240aa24b1d4d607a9b2ecc3cf8f939ab2c56a753546f6780",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/40-feast-that-now-is.tex": "90006da09793d03aec9d7e25215e35089732699cd3697435a217648be5747091",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/50-comparison.tex": "dfc136a3dae5bded8933b600fcc6500705617bc1078f011f97112335fb8347a9",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/80-date-location.tex": "0dc590032ba0ba64871c7921fee8dfa6dd76ca56b7543fc09041b7568593abc7",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/90-apparatus.tex": "e151ed4d4c6e58e54ae5b8d6ae1867b74f3605f9ac3ab51d5ff8150b92e10dd1",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/01-inventory.tex": "c12169d14ae54e326f3ee7d64430dccc606cc418403b01828e336222dfa7873f",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/02-overview.tex": "412c00a21b064f6993d33d9e266d5f1164ba1788506ee244d191ad2eebcd9d21",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/03-date-location.tex": "ccd3259d9f6dfa0bcbfd9cbb685b397e0c89230be5a7d5609ab78b46fdb44c10",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/04-themes.tex": "4ba543d348bbe6a4a5919b60b0d2ba78bf06a19a9529821e2ee86f25c7d114fa",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/10-commentary.tex": "7f3bd6c7f253c6e723663d6cdc16f867b0e4fc73fc5e68077ba869f6f1e1c377",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/concise/90-apparatus.tex": "c5321dd59e44362a8ee9db35026a04d602cef583e2f2ba08db230755010a7103",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/homily/10-homily.tex": "d8c257bc40826c780c2727ffb0c8e274a283578d042d1ab388428077744fcc57",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/homily/90-note.tex": "72084c9852fe0a8c076a77f660c5836e8d709096bd68395b558680d684b79860",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/synthesis.tex": "c1ea6b5569d7ce63272f7e796ef50b4ad1a222a7658eb6d4f6dd71850a9d4ab3",
+        "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+        "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+        "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+      },
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+    "files": {},
+    "provider": "claude",
+    "review": "visual",
+    "schema": 1
+  },
+  "stage": "visual-review",
+  "summary": "Cold visual review of the Claude 1962 Nineteenth Sunday after Pentecost leaf. Every page of all three sealed PDFs was inspected at full size, using the 1700x2200 rasters and contact sheets in build-artifacts-0000; those rasters were rendered from bytes identical to the REVIEW_INPUTS seal, and all 32 sealed hashes were re-verified. The artifacts are: build/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf (sha256 27c7d1979e4dfe30e3525cda062b7d380ae762f957ff58b21e3c473c478b213c), pages 1-33 of 33; build/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf (sha256 448b926a2a1cee8e44f11b3a5518eaa89cc3a6056f158cb5f4ba7699b8c1754f), pages 1-12 of 12; build/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf (sha256 e1dcfb384e9334670e5ea4d015390d7f4685b88b603a907d919312245c9e33c5), pages 1-3 of 3. Other checks: pdffonts shows only Latin Modern Type 1 subsets, all embedded, with no Type 3 fonts; pdfinfo title and subject are present on letter paper; the LaTeX logs have no overfull, underfull or undefined-reference warnings; extracted text is clean; every page has zero colour saturation, so the output is monochrome. Row-profile measurement puts the text block at 0.75 in on all sides, with no clipping and no header or footer collision. The settled zref markers in the concise aux (inventory, overview and all four sense rows on physical page 1; chronology on page 2; themes on pages 3-4; commentary from page 5) match the pages as rendered. Page counts are 33 for the study (range 20-50) and 12 for the concise study (range 10-12). Both studies are single-column 11-point Latin Modern. The study has three keyed lane headings, each with one four-senses block, and a one-page dossier; the concise study shows alternatives interleaved within each cross-proper question. The homily has a full-width title, a two-column speech, and a separate full-width note and References. Each document ends with the compact rights colophon on its final page, with no spill page. Every rendered source is unchanged since its cold-review acceptance commit. There was no formatting migration, so no text-preservation evidence was owed. Two advisories do not block. Verdict: PASS."
+}

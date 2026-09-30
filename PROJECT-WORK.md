@@ -23,11 +23,42 @@ Pentecost 24 May, nineteen weeks to 4 October). The production plan records
 this exact scope opening. The GPT leaf for the same identity is published;
 this is an independent Claude production and borrows nothing from it.
 
-**In progress.** Authorization and acceptance criteria are recorded; the run
-has not yet been seeded. Work stays on `feature/propers/claude`, the
-workspace's required branch. Pushing that branch, and any fast-forward of
-`main` with its Pages deployment, wait for the maintainer's separate
-instruction.
+**Done: ACCEPTED.** Run `a27462e34ec9c09a` (`proper-study` v7), seeded at
+the authorization commit `56d8c30f2`, reached ACCEPTED at `publication-gates`
+on 2026-09-30 with no escalation: 30 packets, three cycles, two host
+interventions. Research-review required two repair rounds (RES-001 to
+RES-004, then RES-008: Augustine's own answer on the highways in
+*Quaestiones evangeliorum* I.31, read on a newly registered PL 35 page image)
+and study-review one (STU-001 to STU-003: Honorius given a reading his Mass
+cannot carry, the dossier's places of writing, Schuster's heavenly banquet).
+The concise study, homily, visual and web reviews passed at their first
+round. Three readings carry the study: the wedding garment, the call to the
+nations, and the feast that now is.
+
+The 33-page study (SHA-256 `27c7d197...b213c`), 12-page concise study
+(`448b926a...c1754f`) and 3-page homily (`e1dcfb38...9c33c5`; 1,453 spoken
+words, an untimed estimate of 11.2-12.1 minutes) are installed byte-identical
+to their reviewed builds, with the canonical web edition (`a8b494c5...`),
+three alpha release records and the Claude cell of the Traditional Latin Mass
+row 59. The run evidence is archived in the leaf under
+`evaluations/proper-study-results/a27462e34ec9c09a/`; the driver's account of
+the cycles, interventions, model provenance and what stands is the
+[cycle record](workflows/reviews/claude-1962-59-production-2026-09-30/CYCLES.md).
+Twenty-three advisories stand in the leaf's findings record; STU-011 and
+STU-012 (research records lagging the reviewed study) are its first-revision
+candidates.
+
+**Repaired on the way.** The terminal gate's web-currency check failed at the
+seed base on the Claude angelology draft. `tools/web-edition` now ignores a
+commented-out `\input` (`d8c32cf92`, with a regression test), and
+`origin/main` was merged at `af0929127` (`7c5faf256`), where that leaf is
+published and declared conditional; no path sealed into the run's reviews
+changed. The `tools/commentary-work-index` transcripts that registering PL 35
+moved were recaptured from real runs.
+
+**Not pushed.** Everything is committed on `feature/propers/claude`, the
+workspace's required branch. Pushing it, and a fast-forward of `main` with
+its Pages deployment, wait for the maintainer's separate instruction.
 
 ## GPT angelology reference, 2026-09-29
 

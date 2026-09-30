@@ -1,0 +1,25 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STU-001",
+      "note": "Paragraph deleted from 'Two difficulties'; Honorius removed from the call-to-the-nations lane's authors; he remains only in sections/10-each-element.tex for the Introit, Collect, Epistle, Gradual, Offertory and Communion.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-002",
+      "note": "Gospel Location cell and explanatory row give Eusebius's tradition (Hebrew, as Matthew left Palestine) and identify c. A.D. 50 as Durand's date for the Aramaic original, quoting his sentence on the Greek; Epistle row gives Caesarea or Rome (Ladeuze's 'much mooted question') with Prat's Roman captivity; 90-apparatus Chronology paragraph agrees. No date outside research/chronology.toml is printed; chronology-claims-supported passes and refuses a probe with a changed year.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-003",
+      "note": "Opening, the feast reading's introduction and a new paragraph in its 'Two feasts' subsection credit the identification to Augustine and Gregory with Chrysostom and quote Schuster's 'predestination of souls to the heavenly banquet' (p. 173); Schuster removed from feast-that-now-is carrying_authors and from the comparison's Carried by cell.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": "Proof copy, settled log and aux, make log, check log and rasters (with contact sheets in their own rasters/ child) are under build/tpt-runs/a27462e34ec9c09a/artifacts/author-study-0001/. Research-owned items reported for the cold reviewer, not edited: research/interpretations.md still names Schuster as a carrying author of feast-that-now-is (reading table, sections 3.2, 4.2, 5) and still sets Honorius in the call-to-the-nations reading (2.3, and 2.5 as the 'homecoming rather than a mission' alternative), so the study and manifest now differ from that record as STU-001 and STU-003 required; the iteration-0 upstream items (Douay verse-text bindings; NPNF1-8 locus 104, 1) stand. A citation error was corrected in passing: Schuster's Postcommunion sentence is on p. 174, not 173. The scope appendix now runs a few lines onto the page where References begins, whose running head reads References. The trial web conversion was not repeated.",
+  "stage": "author-study",
+  "summary": "Repaired the three blocking study-review findings in the Claude 1962 Nineteenth Sunday after Pentecost study. STU-001: the Honorius 'third answer' paragraph is removed from the second reading and Honorius leaves that lane's authors, so he is cited only in the element-by-element section for shared elements. STU-002: the Gospel and Epistle dossiers and the scope appendix's Chronology paragraph now give Eusebius's reported tradition of the writing, c. A.D. 50 as Durand's date for the Aramaic original with the Greek rendering undated, and the Caesarea-or-Rome captivity with Prat's Roman placing, all from the declared chronology evidence, with the generated Date cells unchanged. STU-003: the opening and third reading credit the present-Church feast to Augustine and Gregory with Chrysostom, record Schuster's heavenly-banquet reading of the Gospel beside that claim, and drop Schuster from that lane's carrying_authors and from the comparison's Carried by cell. Standing advisories STU-004 to STU-007 are also cleared in the files touched. Author proof: build/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf, 33 pages, SHA-256 5896842328dc874d36881ac97ba41119efe2b3903dd6375a9792d0e3f5a85657, timestamp 2026-09-30T19:28:15Z; 16,331 substantive words; every study-preflight check and the artifact-phase component check pass."
+}

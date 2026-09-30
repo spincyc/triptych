@@ -1,0 +1,30 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "note": "The five chronology files, the Clementine book index and the three English edition directories are declared with reasons, and the trace shows full coverage. Scope 7.3 now states what the engine seals and what the leaf declares. The Ordo Missae and Preface loci were re-read on the bound facsimile and their five passage records bound.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-002",
+      "note": "Items (a) to (e) were read at their loci; the Latin intended for quotation was read on page images (PL 9 cols. 508-509 and 825-826; the Aquinas 1857 facsimile, pp. 327-333). For (f), the PG 27 expositions of Pss 77, 104 and 118 were sampled. The scope 3.4 and 5.1 bounds are corrected, Hilary's evening sacrifice is recorded in 4.6 as a real difference, and the element rows, senses and difficulties of all three readings are revised. Every source used is bound.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-003",
+      "note": "Reading 2's anagogical sense ties each Hilary clause to its own verse: v. 2 for the sacramentum, v. 4 for the gathering in numerum, v. 11 for the resurrection's coetus, v. 14 for raritas in electis. The filled-hall clause is marked [S].",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-004",
+      "note": "Scope 4.3 and 4.5 now name the holders (Irenaeus, Hilary, Jerome, Chrysostom) and record Gregory's defectus actionum reading and Augustine's silence. The join in interpretations 2.1 is relabelled [S], with each author cited for his own step. The other 'the Fathers' and all-witnesses formulas were checked and corrected where they went beyond the loci.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": "Records written in iteration 1, all under src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/: review-dependencies.toml, source-bindings.toml, scope.md, interpretations.md and context.md. review-dependencies.toml adds the five chronology corpus files, the Clementine ebible-latvuc book-index artifact and the Douay challoner-gutenberg-1581, RV ebible-eng-rv and WEB-C catholic-eng-web-c edition directories, each with a comment saying why it controls. An open-audit trace of proper-chronology record --check and annotations --check found no opened path outside the declaration. source-bindings.toml adds 8 bindings: the four Ordo Missae passages, the praefationes passage, the PG 27 OCR, and the Aquinas 1857 facsimile and OCR. It also extends the loci of the 1962 facsimile, PL 9 PDF and layer, CSEL 22, PG 55, PL 26, Bellarmine and NPNF 6 bindings. context.md records the iteration-1 re-reading of the Ordo Missae and Preface on page images and corrects one row: no. 1024 is the Kyrie and no. 1025 the Gloria. Gates: tools/source-library validate passes; scripts/_proper_study.py check --phase research passes; the v3 research seal builds (2,010 files); both chronology --check runs report current. The advisories are cleared too. RES-005: Chrysostom's 1 Tim 2:8 is placed at Ps 140:1, and Gregory's remedia sentence is reworded. RES-006: Jerome's Ps 77:49 citation is recorded, with an [R] link in reading 2's Introit row. RES-007: scope 3.12 gains rows for Schuster and the continuation. New finds: the Placeat, no. 1137, shares 'oculis tuae maiestatis' with the Secret at every Mass; Zingerle's CSEL lemma of Hilary on Ps 140:2 carries the Gradual's 'in conspectu tuo, domine'; Chrysostom reports Greek versions with futures at Ps 137:7b. Remaining limitations: the PG 27 and PG 55 Greek and the CSEL 22 Latin were read in OCR layers only, with no page image; the Greek is paraphrased, not quoted. The PG 27 expositions are printed under Athanasius's name, have no standing row and carry no reading. Theodoret, Cassiodorus, Hugh of Saint-Cher and the PG 55 material under Chrysostom's name on Pss 77, 104 and 118 were not read. The source of the Offertory's futures and of the Gradual's Domine is unresolved, because the Roman Psalter has no registered route. The five chronology sources stay bound at cataloged: their registered bytes are not reproducible. The corpus holds no traditional dates for the five psalms and no event date for Mt 22. Gregory's Latin is the licensed Wikisource layer and was not collated with PL 76. The six scriptural elements still lack Latin-provenance ledger rows, and the translation overlay's four pentecost-19 rows are stale; both are reported for their owners. The PG 27 layer was fetched from the item's own server after the archive.org download redirect returned HTTP 500, and its digest matched the registered one.",
+  "stage": "research",
+  "summary": "Repaired the four blocking research findings. The chronology corpus and the canon and concordance data its computation opens are now declared, and scope 7.3 is corrected. The Ordo Missae and Preface loci were re-read on the facsimile and their passage records bound. Hilary on Pss 118 and 140, Chrysostom and Bellarmine on Ps 137, Bellarmine on Ps 140, Aquinas on Eph 4:23-28 and the PG 27 Greek expositions of Pss 77, 104 and 118 were read at their loci and bound, and the readings were revised where they develop or contest them. Reading 2's anagogical sense now ties each Hilary clause to its verse. The Israel-and-nations reading is attributed to Irenaeus, Hilary, Jerome and Chrysostom, with Gregory's moral reading and Augustine's silence recorded beside it."
+}

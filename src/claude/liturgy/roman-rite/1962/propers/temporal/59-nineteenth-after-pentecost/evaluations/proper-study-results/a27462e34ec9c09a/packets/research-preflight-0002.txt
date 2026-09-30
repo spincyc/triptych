@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v7
+WORKFLOW_DIGEST: 9c0b654d981692c0a1d4592beae5a00764180378d63ba80185d3ce7a23f5be38
+RUN_ID: a27462e34ec9c09a
+COMMIT: 56d8c30f24bd0e42234c88c7d71c801981a9f2f9
+STAGE: research-preflight
+ITERATION: 2
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-10-04","proper":"liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost","provider":"claude","research_handoff":"none"}
+DOCUMENT_ROOT: src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"RES-009","location":"src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/interpretations.md \u00a7 2.4, Allegorical bullet ('a Church gathered from Jews and Gentiles (Jerome; Gregory \u00a7 3)'); \u00a7 2.2, 'Supporting witnesses', last sentence ('Bellarmine and Schuster read the Alleluia of the apostles' preaching to the nations'); \u00a7 2.3, alleluia row ('the apostles' preaching to the Gentiles (Bellarmine, Schuster)')","problem":"Two joint citations in reading 2 credit an author with a clause he does not state. First, Gregory's Hom. 38 \u00a7 3 makes the wedding the Son's union with the Church through the Incarnation, but Gregory names neither Jews nor Gentiles anywhere in the homily (scope \u00a7\u00a7 3.6, 4.3); the Jews-and-Gentiles clause is Jerome's (In Matth. III, col. 159). Second, Bellarmine on Ps 104:1 (O'Sullivan, line 3717, reread in this review) says that 'the prophet \u2026 invites God's people \u2026 to announce his wonderful works to other nations' and to 'speak in all directions among the gentiles'. He names no apostles. The apostolic preaching is Schuster's (p. 172) and the PG 27 Expositiones'. Scope \u00a7 3.5 quotes Bellarmine correctly; the defect is only in interpretations.md.","required_result":"Cite each clause to the author who states it. For example: 'the wedding the Son's union with the Church (Gregory \u00a7 3), a Church gathered from Jews and Gentiles (Jerome)', and 'the apostles' preaching to the Gentiles (Schuster; the PG 27 Expositiones); the proclaiming of God's works among the gentiles (Bellarmine)'.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

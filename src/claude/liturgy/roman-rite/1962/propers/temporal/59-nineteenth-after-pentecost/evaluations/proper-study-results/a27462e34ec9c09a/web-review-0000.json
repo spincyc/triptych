@@ -1,0 +1,17 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+    "files": {},
+    "provider": "claude",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.md": "a8b494c540f2cf7e4a8a63f2a0c27db0e64bf6b34b4890dc13f1bfd58430ee2d"
+    }
+  },
+  "stage": "web-review",
+  "summary": "Reviewed build/web/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.md, the conversion that research/web-artifact.json records at SHA-256 a8b494c540f2cf7e4a8a63f2a0c27db0e64bf6b34b4890dc13f1bfd58430ee2d. It is the only web output for the leaf, and running tools/web-edition again from the current sources, under the pinned Markdown 3.10.3 in a scratch environment, reproduced it byte for byte with every converter audit passing. check-web-edition reports the leaf eligible. The reviewed research PDF (SHA-256 27c7d197..., 33 pages, render inputs matching research/artifacts.json) was compared against the conversion word by word and punctuation mark by punctuation mark. The only differences are layout: running heads, the printed contents list replaced by [TOC], the text layer's V for the \u2123 glyph, table cells extracted in a different order, list bullets, and the H1/subject line the converter takes from the PDF's own title metadata, as in the installed Eighteenth Sunday edition. Every italic argument in the TeX (355) is italic in the web edition. Structure is preserved: the ten sections are h2 and their subsections h3. Each of the three readings is its own h2 (lane-* anchors) and closes with its four senses as a Literal/Allegorical/Moral/Anagogical definition list. The ten proper-<key> anchors are unique and sit on single-element headings, TOC links resolve, and no ids are duplicated. The 21 quotations render as 21 blockquotes, and the smallcaps witness heads and the \u2123 and accented Latin display correctly. The map and comparison tables are complete. The Scriptural Date and Location dossiers follow the maintainer's 2026-09-23 pattern: seven per-passage tables, with their notes and the Gospel's italic event row beneath each. There is no TeX debris, trailing whitespace, model, run or machine metadata. The References URLs return 200. The revision timestamp and rights colophon are present. The page was also rendered with the site's own render_page and layout, then viewed in headless Chromium at 1280 px (no overflow) and 390 px (no page-level horizontal scroll). Limit: at phone width the map and comparison tables scroll horizontally inside their frames. That is the site stylesheet's general table handling, measured identically on the installed 58 edition, not a defect of this conversion. Verdict: PASS, no findings."
+}

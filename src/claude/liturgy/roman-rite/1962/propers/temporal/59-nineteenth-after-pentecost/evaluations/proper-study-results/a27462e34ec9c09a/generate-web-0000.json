@@ -1,0 +1,7 @@
+{
+  "artifact_path": "build/web/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.md",
+  "disposition": "PASS",
+  "iteration": 0,
+  "stage": "generate-web",
+  "summary": "Converted only the canonical study with tools/tpt web-edition (pandoc 3.11; the converter's schema-2 anchor and quotation audits run under an isolated scratch venv holding the pinned Markdown 3.10.3, since the host carries 3.11) and recorded research/web-artifact.json at SHA-256 a8b494c540f2cf7e4a8a63f2a0c27db0e64bf6b34b4890dc13f1bfd58430ee2d. The declaration check passes, a repeat conversion is byte-identical, the same environment regenerates the tracked Eighteenth Sunday edition byte-for-byte, and a word-sequence comparison against every research component and the built PDF finds nothing lost beyond layout apparatus (running heads, page numbers, table of contents); the three lanes, their four-senses lists, the dossier, links, the revision timestamp and the rights colophon are all present. No conversion or declaration defect was found, nothing was changed, and no source defect is reported upstream."
+}
