@@ -491,5 +491,29 @@ class TrackedWebEditionRecordTests(unittest.TestCase):
                 CHECKER.audit_document(source_root, document)
 
 
+class AppendixReferenceLetterTests(unittest.TestCase):
+    """Pandoc ignores \\appendix; references to appendices must print letters."""
+
+    BODY = (
+        "\\section{One}\\label{sec:one}\n\\section*{Unnumbered}\n"
+        "\\section{Two}\\label{sec:two}\n% \\appendix\n\\appendix\n"
+        "\\section{First}\\label{app:first}\n\\subsection{Part}\\label{app:part}\n"
+        "\\section{Second}\\label{app:second}\n"
+    )
+
+    def test_appendix_references_take_letters(self) -> None:
+        markdown = "[3](#app:first), [3.1](#app:part), [4](#app:second)"
+        self.assertEqual(
+            DRIVER.letter_appendix_references(markdown, self.BODY),
+            "[A](#app:first), [A.1](#app:part), [B](#app:second)",
+        )
+
+    def test_body_references_and_documents_without_appendix_are_unchanged(self) -> None:
+        markdown = "[1](#sec:one) and [2](#sec:two)"
+        self.assertEqual(DRIVER.letter_appendix_references(markdown, self.BODY), markdown)
+        plain = "\\section{One}\\label{sec:one}\n"
+        self.assertEqual(DRIVER.letter_appendix_references("[1](#sec:one)", plain), "[1](#sec:one)")
+
+
 if __name__ == "__main__":
     unittest.main()
