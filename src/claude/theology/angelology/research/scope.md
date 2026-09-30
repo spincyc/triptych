@@ -87,6 +87,7 @@ Body, in the profile's reader order:
 
 1. The angels in Sacred Scripture
 2. The faith of the Church concerning the angels
+2a. Before the Fathers: Israel's writings and the philosophers
 3. The Greek Fathers before Dionysius
 4. The Latin Fathers before Dionysius, with Augustine and Cassian
 5. The *Celestial Hierarchy* — the corpus, its reception, and all fifteen
@@ -157,10 +158,18 @@ angels in the three calendars the repository carries; the regulation of
 devotion; the named disputed questions after Aquinas; and the Byzantine line
 as far as Damascene and Palamas.
 
+On 2026-09-30 the user asked for research into what continuity there is
+between the Church Fathers and pre-Christian writings. The body therefore
+includes a section on the writings before Christ and their reception by
+the Fathers: the Septuagint, the Jewish writings outside the canon, Philo,
+and the Greek poets and philosophers, each at its locus beside the
+patristic locus that receives, corrects, or rejects it; an appendix tables
+the continuities.
+
 Excluded: rites, discipline, and pastoral practice of exorcism (owned by the
 exorcism study); discernment of particular cases; claims about any named
-person's spiritual state; angelology of non-Christian religions except where a
-Father's argument requires it; the complete text of the *Celestial
+person's spiritual state; the angelology of other religions beyond the
+continuity just described; the complete text of the *Celestial
 Hierarchy* or of any other work; art history beyond what the liturgy's own
 texts carry; and any adjudication among Catholic schools beyond reporting
 their positions and the Church's acts.

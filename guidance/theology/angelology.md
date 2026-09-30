@@ -45,7 +45,18 @@ The controlling corpus is:
 
 Later school authors (Bonaventure, Scotus, Suárez, and others) and the
 Byzantine tradition enter as witnesses to named disputed questions, each at
-an identified locus. Handbooks, encyclopedias, and modern charts are finding
+an identified locus.
+
+The pre-Christian writings the Fathers received, used, or corrected enter as
+witnesses to that continuity (added at the maintainer's request of 30
+September 2026): the Septuagint's distinctive readings, the Jewish writings
+outside the canon (the Enochic books, *Jubilees*, the *Testaments of the
+Twelve Patriarchs*), Philo, and the Greek poets and philosophers from Hesiod
+and Plato to the Neoplatonists. Each is read at its own locus in an
+identified witness and set beside the patristic locus that receives,
+corrects, or rejects it. Extra-canonical Jewish writings are graded
+**Apocryphal**. The angelology of other religions stays outside the corpus
+unless a Father's argument requires it. Handbooks, encyclopedias, and modern charts are finding
 aids; they cannot supply a position to a named author.
 
 `research/question-inventory.md` lists every article of I qq. 50–64 and
