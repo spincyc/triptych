@@ -1,6 +1,8 @@
 # Dossier correction, 21 September 2026
 
-This supplement governs the current chronology revision. It does not amend the
+This supplement records the 21 September chronology revision; the
+1 October 2026 dispositions in `production-review.md` supersede its Ps 32
+request and generated-artifact state. It does not amend the
 18 September workflow's packets, verdicts or historical source-inspection
 claims. The independent corpus correction recorded at
 `src/sources/chronology/isaiah-relation-review-2026-09-21.md` is acceptance of
@@ -35,7 +37,8 @@ The Davidic title of Ps 32 was already present in this leaf's inspected
 Douay/Clementine witnesses; the revised wording states that the corpus has
 no traditional era for this psalm, not that a Davidic attribution has no
 historical reference in principle. The earlier request to the corpus owner
-to extend that binding remains open.
+to extend that binding was answered on 1 October 2026; the regenerated
+Gradual now displays the attribution and its regnal reference era.
 
 Gigot's retained Daniel article and Ladeuze's retained Ephesians article were
 read again. Their descriptions of what contemporary critics accept belong to

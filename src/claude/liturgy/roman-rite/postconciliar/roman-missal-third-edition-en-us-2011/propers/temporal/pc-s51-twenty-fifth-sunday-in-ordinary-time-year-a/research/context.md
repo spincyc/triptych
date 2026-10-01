@@ -147,8 +147,9 @@ them and the Year A readings is editorial synthesis, as the three-document
 profile settles for every formulary.
 
 **The Ordo's own tituli (added on research re-entry).** *Praenotanda* no. 106
-says that the relation between the readings of one Mass "is shown by the
-careful choice of the tituli set over the individual readings". At no. 133
+says that the relation between the readings of one Mass is shown by the
+careful choice of titles placed over the individual readings (printed p. XLV;
+paraphrase of the Latin, not a quotation of an English translation). At no. 133
 (printed p. 72) the *Ordo* prints three:
 
 | Reading | Titulus | Source of the words |

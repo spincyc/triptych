@@ -1,3 +1,5 @@
+# Post-acceptance dispositions, 2026-10-01. Stage counts and verdicts below
+# describe the historical evaluations; these resolutions do not restamp a run.
 # Blocking findings standing against this publication, the
 # verdicts its evaluation lanes reached, and the observations
 # they recorded outside their own criteria. Written by tpt after
@@ -136,6 +138,9 @@ severity = "advisory"
 location = "sections/homily/90-note.tex, paragraph 'Relation to the reviewed interpretations', the sentence beginning 'That the psalm's two words describe the householder's two dealings' (lines 36-41); with sections/homily/10-homily.tex lines 82-85 ('That is why this wage cannot be cut into shares ... he has no smaller self to give the latecomer'), lines 65-67 ('The men at the back of the line reasoned by the thoughts of men: more hours, more pay') and lines 112-114 ('So the murmur in this parable is no report from heaven. It is set before us now')"
 problem = "The note names four connections as the study's own, 'drawn from the wording of the texts; no Father makes them', and the sentence reads as the list of them. It leaves out the largest editorial step in the speech, the one its title rests on: that the parable's denarius is God giving himself and therefore cannot be divided. In the body that step is spoken in the preacher's voice directly after Jerome on the coin and Augustine on Psalm 144:18, and the accepted study marks it expressly as a joining of separate texts ('Two other witnesses say what the last reward is, each of his own text and neither of the parable', sections/40-because-i-am-good.tex lines 104-105). Two smaller steps of the same kind are also unlisted: the application of Isaiah 55:8 and Aquinas's antithesis to the labourers' arithmetic, and the inference drawn after Chrysostom's sentence that the murmur is set before the hearers now. It does not block because the body introduces Augustine as preaching on the psalm, the loci paragraph places his sentence at Enarrationes 144.22, and each attribution in the speech is accurate, so no reader is told that a Father said what he did not say; the defect is an incomplete account of which steps are the study's."
 required_result = "Beside the four connections already listed, the note says that identifying the parable's wage with God's gift of himself joins Jerome on the coin to Augustine on Psalm 144:18 and is the study's synthesis, and either names the two smaller applications as well or words the sentence so that it does not read as a complete list. The speech itself needs no change."
+resolution = "repaired"
+resolution_date = "2026-10-01"
+resolution_note = "sections/homily/90-note.tex explicitly records the denarius/self-gift synthesis joining Jerome on the coin to Augustine on Ps 144:18, plus the Isaiah arithmetic and present-hearer applications; none is attributed to a Father."
 
 [[advisories]]
 stage = "homily-review"
@@ -144,6 +149,9 @@ severity = "advisory"
 location = "sections/homily/10-homily.tex, the spoken body as a whole; most nearly the sixth movement, lines 138-143 ('Before this Mass ends another line will form ... The Lord himself, the pledge of that one wage')"
 problem = "The three-document profile makes the Homiletic Directory's orientation govern the homily's movement: the readings and prayers lead through Christ's Paschal mystery to Eucharistic participation and daily life. The speech reaches Communion and the coming week, but it never names the Lord's death or rising and never names Jesus as the teller of the parable. A search of the spoken body finds 'Christ' only in the three sentences on Philippians and 'The Lord himself' once at the Communion line, and finds no cross, blood, sacrifice, resurrection or 'Jesus'. The central claim, that the householder's wage is the giver himself, is therefore preached without the act in which he gives himself. The accepted study holds material that the derivation left out (Gregory on the thief as the labourer of the eleventh hour, Hom. in Evang. 19.3, and on the shepherd who feeds the redeemed with his own body and blood, 14.1). It does not block because the Communion movement does carry the assembly to Eucharistic participation, Christ is proclaimed as the wage in the Philippians movement, and the argument is complete and true without the addition."
 required_result = "If the speech is revised, one sentence, most naturally at the second line, says that the Lord given alike to each is the one who gave himself in his death and rising, so that the claim 'he gives himself' names how; the speech stays within its present length and adds no unsourced attribution."
+resolution = "repaired"
+resolution_date = "2026-10-01"
+resolution_note = "sections/homily/10-homily.tex names the same Lord Jesus who gave himself in death and rising at Communion. The note locates this in Mt 20:17–19 and Jn 10:17–18, already read in research/scope 2; spoken length falls from 1,482 to 1,463 words."
 
 [[advisories]]
 stage = "research-review"
@@ -152,6 +160,9 @@ severity = "advisory"
 location = "research/scope.md section 4 'Consequence' (final sentence) and section 3.6 (closing paragraph, 'independently and a generation apart'); research/interpretations.md Reading 1, Jerome on Matthew row ('An earlier witness to the scheme than Augustine or Gregory') and 'Strongest difficulty' ('Jerome, the earliest witness read for the scheme'), and Reading 3, 'Augustine's development' with the Gregory 19.4 and Hilary Aleph 12 rows ('independently')"
 problem = "The records rank the witnesses read by date and call several of them independent, yet no dating or dependence evidence for any patristic work is cited or bound. Scope section 4 says the earliest witness read for the ages of a life as his own view is Jerome. Chrysostom was read, holds that reading as his own (Hom. in Matt. 64.3), and the library's sealed work record places his homilies at Antioch in the 390s, while the library's record for Jerome's commentary, which is outside the seal, gives 398; on the library's own records that limb is unsupported and probably false. The sealed work record for Augustine's Sermo 87 gives its composition as unknown, so 'an earlier witness than Augustine' is unsupported as well. 'A generation apart' is said of Hilary (library: c. 364-367) and Augustine's Enarr. 118, whose date the record nowhere gives. 'Independently' reads as a claim that Gregory did not draw on Augustine, nor Augustine on Hilary, which nothing read establishes, and the record itself reports an editor's statement that Hilary drew on Origen. This reviewer verified none of these dates at a source; the defect is that the record asserts an order and an independence it has not evidenced. No reading, element contribution or sense depends on them, and the standing limits already forbid calling a reading the earliest, which is why this does not block."
 required_result = "Remove the statements of priority, interval and independence, keeping what each author says and that Jerome reports the ages-of-the-world reading as others'; or support each with a checked and bound dating or dependence source. In particular do not name Jerome the earliest witness read for the ages of a life while Chrysostom 64.3 holds it as his own, and replace 'independently' with wording that says only that the author states the point himself of his own passage. Until then the studies should state no order of priority among the witnesses."
+resolution = "repaired"
+resolution_date = "2026-10-01"
+resolution_note = "research/scope.md sections 3.6 and 4 and research/interpretations.md remove unsupported priority, generation interval and independence; each author still states his own checked claim. No replacement dating or dependence claim is invented."
 
 [[advisories]]
 stage = "research-review"
@@ -160,6 +171,9 @@ severity = "advisory"
 location = "research/context.md, 'The Ordo's own tituli (added on research re-entry)', first sentence"
 problem = "Praenotanda no. 106 is given in English inside quotation marks ('is shown by the careful choice of the tituli set over the individual readings'). Research read the paragraph only in Latin, and this review confirmed the Latin on the page image of printed p. XLV: 'Relatio autem inter lectiones eiusdem Missae ostenditur per accuratam selectionem titulorum qui singulis lectionibus praeponuntur.' The English is therefore this leaf's own rendering presented as a quotation; no English witness of the General Introduction to the Lectionary is bound, and whether the wording coincides with the approved English was not checked. A study author may print it as the document's English. The leaf audit states the same point without quotation marks and is not affected."
 required_result = "Quote the Latin sentence with its locator, or give the English without quotation marks as this leaf's paraphrase of the Latin."
+resolution = "repaired"
+resolution_date = "2026-10-01"
+resolution_note = "research/context.md names its English summary of Praenotanda 106 (printed p. XLV) as paraphrase of the Latin and removes quotation marks; it claims no English witness."
 
 [[advisories]]
 stage = "research-review"
@@ -168,6 +182,9 @@ severity = "advisory"
 location = "research/scope.md section 3, 'Quotation check', first sentence"
 problem = "The count does not reconcile: thirty-three quotations searched, thirty-two matched, and two of Gregory's corrected. Thirty-two matches leave one quotation that did not match, and two are said to have been corrected, so the fate of at least one quotation is unstated. Two reviews have since matched the quotations in the texts, so no quotation is known to be unverified; the defect is in the audit statement."
 required_result = "State counts that reconcile: how many quotations were searched, how many matched as first written, which did not, and what was done with each."
+resolution = "repaired"
+resolution_date = "2026-10-01"
+resolution_note = "research/scope.md 3 withdraws the irreconcilable historical aggregate, whose original per-item receipt is unavailable. A current bounded check of the twelve Gregory quotations in interpretations matched ten initially, corrected Eumdem ergo denarium and the punctuation/case of saltem in ultima aetate resipiscite, and matched twelve finally against the bound complete text (dc25dd69...). Original first-pass counts are not reconstructed."
 
 [[advisories]]
 stage = "synthesis-review"
@@ -176,6 +193,9 @@ severity = "advisory"
 location = "sections/concise/10-commentary.tex, subsection 'The murmur, and what the householder's reply decides', first paragraph, lines 105-110 (rendered page 6): 'Chrysostom will have neither as a fact about the saved ... The complaint is a device of the story (64.3). On his account the murmuring and the reply, a third of the parable, have little to do'"
 problem = "Two compressions in one place say more about Chrysostom than the accepted study or Hom. in Matt. 64.3-4 does. (1) 'Chrysostom will have neither' makes him set aside Gregory's and Jerome's explanations, which he does not address. Gregory starts from the very premise Chrysostom voices (Hom. in Evang. 19.4: 'Coelorum etenim regnum nullus murmurans accipit, nullus qui accipit murmurare potest'), which the paragraph's opening clause gives without a name, and Jerome's envy is that of every earlier calling toward the Gentiles, not a state of the saved. The study says only that on the second interpretation the murmuring cannot be a fact about the saved and that Chrysostom says so with force; research/scope.md section 7 classes the three accounts of the murmuring as complementary. (2) The concise drops what Chrysostom says the device is for ('to teach us that these have enjoyed such honor, as could even have begotten envy in others', 64.3) and moves the study's judgement 'on this interpretation they have little to do' onto 'his account', although the same subsection two paragraphs later reports his statement that the Lord frames the story to show 'that the whole is of His love to man' (64.4). The reader is given a mild opposition the sources do not state and a harsher verdict on Chrysostom than the study reaches. It does not block because every quotation is exact, the three positions are each reported truly, and the sentence carries its own limit ('as a fact about the saved')."
 required_result = "State Chrysostom's account beside the other two in his own terms without making him answer them: for him the complaint depicts no real grievance of those men and is brought in to show how great an honour the late comers receive (64.3). Keep the judgement that the murmuring and the reply are left with little to do as a judgement about the second interpretation, as the study has it, and not as a description of Chrysostom's account."
+resolution = "repaired"
+resolution_date = "2026-10-01"
+resolution_note = "sections/concise/10-commentary.tex reports Chrysostom's complaint as a measure of the latecomers' honour (Hom. in Matt. 64.3, retained CCEL NPNF1-10 lines 36397–36489 reopened); the limited role of the ending is assigned to the second interpretation, not to Chrysostom's account."
 
 [[advisories]]
 stage = "synthesis-review"
@@ -184,6 +204,9 @@ severity = "advisory"
 location = "sections/concise/01-inventory.tex, note under the map, line 40 ('every other element is required'), with sections/concise/90-apparatus.tex, paragraph 'Text and English'"
 problem = "The accepted study makes the same statement under its map and qualifies it in its scope appendix: 'Whether the United States Lectionary admits another Alleluia verse from a common set was not determined' (sections/90-apparatus.tex), which propers/verified.md also lists as outstanding. The concise apparatus keeps the study's other open question of text (the Greek evidence for Matthew 20:16 and the 16a lettering) and drops this one, so the concise says without qualification that the Alleluia verse is required while the records hold the point open. The appointment itself is not in doubt and no argument rests on the verse being the only one admitted, which is why this does not block."
 required_result = "Restore the open question in the concise scope note in one sentence, beside the sentence on Matthew 20:16, or word the page-one note so that it does not assert more about the Alleluia verse than the records establish."
+resolution = "repaired"
+resolution_date = "2026-10-01"
+resolution_note = "sections/concise/90-apparatus.tex restores the unresolved question whether the United States Lectionary permits another Alleluia verse from a common set, matching the study and verified appointment record."
 
 [[advisories]]
 stage = "synthesis-review"
@@ -192,6 +215,9 @@ severity = "advisory"
 location = "sections/concise/10-commentary.tex, subsection 'Whose work is the coming? The opened heart and the psalmist's wish', last sentence, lines 250-252 (rendered page 9): 'The step rests on Augustine's argument and on no agreement between the two, and it does not reach the claim with which the third interpretation began, which Chrysostom states for himself.'"
 problem = "In the study the corresponding sentence has Chrysostom's different reading of Acts 16:14 as its subject: that difference 'does not reach the first step or the claim with which this interpretation began'. Compression joined it to a sentence whose subject is 'the step', so 'it' now reads as the second step and the clause says that the step does not reach the claim, which is not what is meant; 'the first step' was dropped as well. A reader can recover the sense from the preceding sentences, so nothing false is conveyed, but the sentence that bounds the one real difference in the third interpretation is the least clear in its paragraph."
 required_result = "Give the clause its own subject, for example that the difference between the two readings of Acts 16:14 touches neither the first step nor the claim with which the third interpretation began, which Chrysostom states for himself."
+resolution = "repaired"
+resolution_date = "2026-10-01"
+resolution_note = "sections/concise/10-commentary.tex explicitly makes their different readings of Acts the subject and says these touch neither the first step nor the opening claim; it preserves the second step as Augustine's alone."
 
 [[advisories]]
 stage = "visual-review"
@@ -200,6 +226,9 @@ severity = "advisory"
 location = "Study PDF (fd3a4d13...), physical page 2; source sections/00-opening.tex, the \\small translation note ('Scripture is quoted throughout in the Douay--Rheims ...') after the first paragraph"
 problem = "The small-type note on the study translation starts on the very next baseline under the opening paragraph, with no space above it, while a \\medskip follows it. Because the spacing is lopsided, the note looks like a smaller-type continuation of the parable paragraph rather than a separate note on the text."
 required_result = "Whenever the study source is next reopened for another reason, put the same vertical space above the note as below it (for example a \\medskip before the group), or otherwise set it apart, so that it reads as a separate note."
+resolution = "repaired"
+resolution_date = "2026-10-01"
+resolution_note = "sections/00-opening.tex adds medskip above the small study-translation note to match the space below it."
 
 [[advisories]]
 stage = "web-review"
@@ -208,6 +237,9 @@ severity = "advisory"
 location = "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md, whole document: nothing between the title block (lines 5-14) and the first section (line 16) stands for the PDF's Contents on p. 1"
 problem = "The study PDF opens with a Contents list of its eleven sections with page numbers. tools/web-edition (line 1099) deletes \\tableofcontents, and neither the Markdown nor the site layout supplies any replacement. The published page is about 54,000 px tall at a 1280 px viewport and about 74,000 px tall at 500 px. It has 11 h2 and 51 h3 headings and no in-page navigation. Every heading carries an id, so nothing is unreachable by link, and the loss is navigation apparatus rather than text. guidance/web-editions.md neither declares this omission nor gives a reason for it, and the generate-web audit lists it only as an item for the reviewer."
 required_result = "Either the canonical web edition offers in-page navigation equivalent to the PDF's Contents, or the decision to drop print navigation from long studies is recorded in guidance/web-editions.md where a reviewer will meet it. For the first, the converter could emit a [TOC] marker for an entrypoint that requests \\tableofcontents, and the site's already-enabled toc extension would render it as a linked list of the sections."
+resolution = "already-repaired"
+resolution_date = "2026-10-01"
+resolution_note = "ec10cec29: the shared converter emits a web Contents for a schema-2 proper requesting tableofcontents, and audits its presence. Recovery regeneration uses this implementation."
 
 [[advisories]]
 stage = "web-review"
@@ -216,33 +248,54 @@ severity = "advisory"
 location = "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md lines 258-268, 320-330 and 386-396 (the three 'The four senses of this interpretation' blocks), and line 13 (the title-block subtitle); PDF pp. 17-18, 23 and 29"
 problem = "The source sets the four senses as a description list (fourSenses in format.tex). The PDF therefore prints each label (Literal., Allegorical., Moral., Anagogical.) as a bold term with its text in a hanging indent. The converter writes each label as plain text followed by a two-space Markdown hard break. On the site that break is lost: render_source_page runs rewrite_links, which calls rstrip() on every line (tools/public-alpha, line 2968) before rendering, so the trailing spaces are gone first. In headless Chromium the rendered page carries no <br> in <main> at all. Each label runs straight into its paragraph at body weight, for example 'Literal. A landowner hires workers at five hours of one day…'. The generate-web note that each label is 'followed by a line break' is true only of scripts/_markdown_render.py on its own. The same stripping joins the two lines of the subtitle at line 13, which does no harm. Nothing is lost or confusable: all four senses are present, named, in order, each in its own paragraph under its own h3. But the one structure the three-documents contract requires of every interpretation is the one place where the source's distinction between label and body is dropped rather than adapted."
 required_result = "On the published page, the four sense labels carry a weight or structure that survives the site's page path, so that each interpretation's senses can be scanned as easily as in the PDF. For example, the converter could write each description term as a bold run-in label, '**Literal.** …' (the form the tracked gpt proper editions already use and the site already renders), or the site could stop stripping Markdown hard breaks."
+resolution = "already-repaired"
+resolution_date = "2026-10-01"
+resolution_note = "ec10cec29: schema-2 descriptions preserve semantic definition terms instead of whitespace-dependent breaks, with site styling and converter tests. Recovery regenerates and checks the four-senses blocks."
 
 [[observations]]
 stage = "homily-review"
 location = "proper-components.toml, component homily-body, element_keys (line 194), with scripts/_proper_components.py lines 433-439 ('must declare coverage of every element key')"
 note = "The component gate requires the homily component to declare every element key, so homily-body declares all eleven, while the speech uses seven and the note truthfully leaves the Alleluia verse, the Prayer over the Offerings and both Communion antiphons to the studies, as the profile allows ('without reciting an inventory of every minor proper'); the declared coverage says more than any homily written to the profile will do, which is a mismatch between the gate and the profile and not a fact about this document."
+resolution = "already-repaired"
+resolution_date = "2026-10-01"
+resolution_note = "6f3a3567c: the three-document profile now defines homily element_keys as research informing the speech, not a claim that every element is recited."
 
 [[observations]]
 stage = "study-review"
 location = "scripts/_house_voice.py, line 271 (SELF) with WORK_NAMED and the rule 'the work possesses the finding'"
 note = "First recorded at iteration 1 and still true: the screen's names for the work are guide, project, repository, document, leaf and publication, so a schema-2 leaf that calls itself 'the study' passes house-voice with the forms STU-008 raised. The iteration-2 author searched the six argumentative components for the word directly, and this review repeated the search on the third interpretation; that is a missing word in a gate and not a fact about this document."
+resolution = "deferred"
+resolution_date = "2026-10-01"
+resolution_note = "The coordinator confirms that widening the house-voice heuristic to study is deliberate planned design work excluded from this recovery (PROJECT-WORK, corpus-links-and-known-issues-2026-10-01). The prior authored sentences are already repaired; no new gate rule is inferred."
 
 [[observations]]
 stage = "study-review"
 location = "research/interpretations.md, standing limits (line 43-44), Reading 3 ('and Chrysostom disputes it'; 'A real disagreement, to be preserved'; 'Chrysostom's objection above') and the Comparison ('his rule on details tells against one'; 'the one real dispute among the authors read'); research/scope.md, section 3.1, rows for Chrysostom and Aquinas on Matthew; research/production-review.md, 'For the cold reviewer, about the research records', items 1 to 6"
 note = "First recorded at iterations 0 and 1 and re-confirmed here at the bound sources: the research records, unchanged since research review, still say that Chrysostom disputes or objects to Augustine's second step, although Hom. in Acta 35 addresses no such claim and says nothing of where the willingness comes from; still list Jerome among those who expound the second sentence of Mt 20:16, which PL 26 col. 142 shows him carrying without comment; still say Chrysostom's rule on details tells against the ages of the world, which the study dropped under STU-003; and do not record his second application of that rule to 'No man hath hired us' (64.3) or Aquinas's division of the hours at David. The study as it stands follows the sources and not these sentences, and the production audit lists each point, but the concise and homily components name these records as references."
+resolution = "already-repaired"
+resolution_date = "2026-10-01"
+resolution_note = "097c14112: the current scope and interpretations records incorporate all six source corrections, including Chrysostom's non-disputatious Acts account, Jerome's uncommented second sentence, the second parable-rule application and Aquinas's David division."
 
 [[observations]]
 stage = "web-review"
 location = "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md lines 425-443 (Scriptural Date and Location table)"
 note = "The \\multicolumn handling that guidance/web-editions.md declares deliberate puts each dossier's full-width prose note into the Textual unit column. On the site that column is about 220 of the table's 632 px at a 1280 px viewport, so the longest note (Isaiah, about 120 words) becomes a tall, narrow cell beside three empty columns. The guidance's reasoning weighs the header mismatch but not this narrow measure, which this dossier's long notes make conspicuous. The text is complete and readable, and this is recorded for the owner of that decision."
+resolution = "already-repaired"
+resolution_date = "2026-10-01"
+resolution_note = "0df032e15: shared-format dossier notes render as paragraphs beneath their data rows; current conversion is verified rather than changing the leaf's table style."
 
 [[observations]]
 stage = "web-review"
 location = "tools/public-alpha rewrite_links (line 2968), which every web/ page passes through in render_source_page"
 note = "rewrite_links strips trailing whitespace from every Markdown line before rendering, so any two-space hard break is silently lost on the site. 16 tracked editions under web/ contain such lines, for example web/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.md with 253 lines and web/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md with 13. The converter's render audit uses scripts/_markdown_render.py alone and not the site's rewrite step, so a construct that depends on whitespace passes the audit and still changes on the page. This looks like a missing criterion in the converter audit or the site's verification, not something this conversion can repair."
+resolution = "already-repaired"
+resolution_date = "2026-10-01"
+resolution_note = "ec10cec29 and the current semantic-break conversion: no generated trailing-space break is needed; schema-2 four senses use definitions and explicit line breaks use br. Recovery checks the site-safe output."
 
 [[observations]]
 stage = "web-review"
 location = "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md lines 488-490 ('## References' followed by a standalone <span id=\"sec:references\">)"
 note = "In sections/90-apparatus.tex, \\label{sec:references} follows the starred References heading and its \\addcontentsline instead of sitting on the heading. It therefore converts to an empty span in its own paragraph, while the heading takes the auto-generated id 'references'. Every other sec: label became its heading's own id. Nothing links to either id, so nothing is broken."
+resolution = "repaired"
+resolution_date = "2026-10-01"
+resolution_note = "sections/90-apparatus.tex moves label sec:references immediately after its heading so the converter binds the stable id to the heading instead of leaving a separate empty span."

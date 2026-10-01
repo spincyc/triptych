@@ -68,9 +68,21 @@ says the verse was chosen for that reason.
 
 ## 3. Reception matrix
 
-**Quotation check.** At first submission thirty-three quotations were searched
-for verbatim in the texts read; thirty-two matched and two of Gregory's were
-corrected. On the re-entry the six Latin quotations of Jerome on Isaiah were
+**Quotation check.** The first-submission aggregate (thirty-three searched,
+thirty-two matched, two corrected) was inconsistent and has no surviving
+itemized receipt from which the original counts can be recovered. It is
+withdrawn, not silently reconciled. On 1 October 2026 the twelve quoted
+strings in the Gregory rows of `interpretations.md` were compared with the
+bound complete Wikisource text of *Homiliae in Evangelia* (SHA-256
+`dc25dd691b3ed44100e8417b7cdad9e6120753cf60bc59b80c7c3239471e618d`).
+Ten matched on the first comparison, allowing the declared Latin
+normalization and marked ellipses. Two needed correction: at 19.3
+`eumdem denarium` omitted `ergo` without a mark and now reads
+`Eumdem ergo denarium`; the short excerpt `Saltem in ultima aetate
+resipiscite.` now retains the source's lower-case opening and ends before
+its comma, `saltem in ultima aetate resipiscite`. All twelve then matched.
+These are current, bounded checks of Gregory's quoted wording, not a
+reconstruction of the old tally or a fresh verification of every quotation. On the re-entry the six Latin quotations of Jerome on Isaiah were
 checked again, this time on page images of Migne PL 24, and all six stand as
 quoted. Every Latin sentence newly quoted below (Jerome on Matthew, Hilary,
 Bede, Aquinas on Matthew, John and Philippians) and the sentences quoted from
@@ -209,7 +221,7 @@ held; a Lapide, Denis, Hugh and Lyra on Acts were not opened.
 | A | Hilary of Poitiers, *Tract. in Ps.* 118, Aleph 11–12 | Latin, CSEL 22, pp. 366–367, page images, retained | direct | V. 4: "nihil igitur dissoluto animo, nihil incurioso agendum est, sed sollicitos atque anxios curam mandatorum dei exsequi nos oportet". V. 5: "nisi a deo dirigamur, infirmes per naturam nostram erimus. adiuvandi igitur per gratiam eius dirigendique sumus" |
 | L | Robert Bellarmine, *Explanatio in Psalmos*, Ps. 118:4–5, 8 | O'Sullivan's abridged English, tracked text | direct, Doctor | V. 4 argues from the lawgiver: God commands "not by way of advice, but by strict precept". V. 5 is the king's own example of obedience; the law is called "justifications" because it makes the just more just, while the first justification "cannot be ascribed to the law, but to grace". V. 8: "withhold not your grace and your assistance, without which I can do nothing" |
 
-Hilary and Augustine agree, independently and a generation apart, that the
+Hilary and Augustine each state of the same verse that the
 wish of v. 5 confesses a need for God's direction and grace. Bellarmine reads
 the wish first as exemplary obedience and brings grace in at the verse's end
 and at v. 8. The difference is one of emphasis.
@@ -258,8 +270,9 @@ The editor's note at PL 26, col. 141, names Origen, and Hilary as drawing on
 him (section 3.1); that is an editor's statement and a lead. The common
 statement that Origen originated the two readings of the hours was not checked
 against Origen and is not asserted. Nothing in this leaf may say who first
-proposed either reading. The earliest witness **read** for the ages of a life
-as his own view, and for the ages of the world as a reported view, is Jerome.
+proposed either reading. Jerome states the ages-of-a-life reading as his own
+and reports the ages-of-the-world reading as others' without naming them.
+No chronology or dependence among the witnesses has been established.
 
 ## 5. Sources read outside the library, and the transport failure repaired
 

@@ -50,7 +50,7 @@ Trinity Preface is rubrically appointed, not proper; it may be cited where noted
 | --- | --- | --- | --- |
 | `whole-heart-one-body` | The whole heart for the one God, and the one body that love gathers | The Mass asks that God alone be loved with the whole heart, and shows that love lived as the unity of one people whose members bear one another. | Augustine; John Chrysostom; Gregory the Great; Jerome; Theodoret; Thomas Aquinas |
 | `son-and-lord-of-david` | David's son and David's Lord: the one God confessed in his Word and Spirit | Christ's question leads the Church to confess him Son of David according to the flesh and Lord according to his eternal birth, and the Mass's "one Lord … one God" is the confession of the one God in Father, Word and Spirit. | Jerome; Augustine; John Chrysostom; Thomas Aquinas; Irenaeus; Basil; Cassiodorus; Robert Bellarmine |
-| `just-judge-merciful-hearer` | "You are just, O Lord": the humbled people prays with Daniel for mercy | The Mass is the prayer of a people that confesses God's just judgment and asks mercy, not according to its own justice; with Daniel it intercedes for the sanctuary and the people called by God's name, and renders its vows. | Augustine; Jerome; Cassiodorus; Hilary; Robert Bellarmine; with Rupert and Durandus for the chants |
+| `just-judge-merciful-hearer` | "You are just, O Lord": the humbled people prays with Daniel for mercy | The Mass is the prayer of a people that confesses God's just judgment and asks mercy, not according to its own justice; with Daniel it intercedes for the sanctuary and the people called by God's name, and renders its vows. | Augustine; Jerome; John Chrysostom; Thomas Aquinas; Cassiodorus; Hilary; Robert Bellarmine; with Rupert and Durandus for the chants |
 
 The three are complementary. They differ in governing emphasis (love, faith,
 penitent prayer), in the element that anchors them (the Gospel's first half, the
@@ -69,7 +69,8 @@ love of God with the whole heart, soul and mind, and the love of the neighbour
 "like to this". Augustine reads "the whole heart" as leaving no part of life free
 to enjoy anything but God, and every other love, of self and of neighbour, as
 carried into that one current; Chrysostom reads the second as the way that leads
-to the first and by which the first is established. The Epistle shows that love
+to the first and as established in return by the first; both clauses concern
+the second commandment. The Epistle shows that love
 lived: a calling walked worthily in humility, meekness and patience, "supporting
 one another in charity", keeping "the unity of the Spirit in the bond of peace",
 because the people is one body in one Spirit and one hope. The Mass as a whole
@@ -172,7 +173,7 @@ claim marked below.
 
 | Element | Contribution | Basis |
 | --- | --- | --- |
-| `gospel` | The two commandments on which the whole law hangs; the second like the first; God loved without measure, the neighbour "as thyself". The second half (the Christ question) enters through Chrysostom: having praised the confession of one God, Jesus asks about the Christ so that they cannot say he was a foe to God and the law; the one God loved wholly is not loved apart from his Christ. | [A] Chrysostom hom. 71; Augustine DDC I.22; Gregory hom. 38.10 (doctrinal, on the commandment); Aquinas lect. 4 |
+| `gospel` | The two commandments on which the whole law hangs; the second like the first; God loved without measure, the neighbour "as thyself". The second half (the Christ question) enters through Chrysostom: having praised the scribe's confession of one God from Mark 12:32, Jesus asks about the Christ so that they cannot say he was a foe to God and the law; the one God loved wholly is not loved apart from his Christ. | [A] Chrysostom hom. 71; Augustine DDC I.22; Gregory hom. 38.10 (doctrinal, on the commandment); Aquinas lect. 4 |
 | `epistle` | Charity lived as the unity of one body: humility, meekness, patience, mutual bearing, the bond of peace, one body, one Spirit, one hope. The diverse gifts are one grace, as streams from one spring, so mutual bearing follows the law of love (κατὰ τὸν ἀγάπης νόμον) and the repeated *unus* of vv. 4–6 is a call to concord. | [A] Chrysostom hom. 9–11; Jerome II; Theodoret on 4:1–6; Aquinas lect. 1 |
 | `collect` | *te solum Deum pura mente sectári*: the first commandment asked for as a gift and against the contagion that divides the heart. The 1962 wording is the later form of the prayer; its oldest witness reads *te solum Dominum puro corde* (scope §§2.3, 3.2), and neither form was composed with this Gospel. The reading uses the appointed words as they stand. | [T] the words; [H] the wording's history; [A] Augustine *De moribus* I.11.18 on following God by loving him; the link to the Collect **[E]** |
 | `gradual` | *Beáta gens, cuius est Dóminus Deus eórum*: the people whose God is the Lord and who are his inheritance; the love that possesses God and is possessed by him. | [A] Augustine En. 32 I, 12 and II s. 2, 15–18; Cassiodorus on v. 12 (the nation gathered from all nations); Aquinas Super Ps. 32 n. 11 (beatitude, which all desire, is to cleave to God by knowing and loving, begun "in spe" and perfect "in patria"); Bellarmine on v. 12 |
@@ -256,7 +257,7 @@ the Trinity, and the one God above all (Father), through all (Son), in all (Holy
 Spirit), Aquinas by appropriation after first reading the phrases as the one
 God's dignity. Chrysostom reads the three phrases as the one God and Father
 above all, providing for all and dwelling in all. He argues from the verse that
-this attribute, which is owned to be the Son's, cannot mark inferiority, since
+an attribute said of the Son cannot mark inferiority, since
 it is said here of the Father. The Gradual verse "By the word of the Lord the
 heavens were established, and all the power of them by the spirit of his
 mouth" is the text by
@@ -316,7 +317,11 @@ Trinity of one substance". **[E]** for the whole-Mass form.
   and 'in you all,' that is, who dwelleth in you all. Now this they own to be an
   attribute of the Son; so that were it an argument of inferiority, it never would
   have been said of the Father." (NPNF1 13. Migne's Greek, PG 62, 80, glosses the
-  first phrase "who is above all", with no word for "the Lord".) He does not give
+  first phrase "who is above all", with no word for "the Lord". Its φησιν
+  is singular, "he says", with Paul as subject, where the NPNF has "they own";
+  the Greek text followed by that translation was not identified for either
+  difference. The quotation above is the NPNF English, not a translation of
+  Migne's Greek.) He does not give
   the phrases to the Persons. He reads them of the one God and Father, as
   Theodoret does, and supports the confession of the Son's equality by an
   argument: an attribute said of the Father cannot mark inferiority in the Son.
@@ -373,7 +378,7 @@ Trinity of one substance". **[E]** for the whole-Mass form.
 | `epistle` | "One Lord, one faith, one baptism, one God and Father … above all, through all, in all": the one Lord who is the Son; faith and baptism one because Trinitarian; the one God above, through and in all. | [A] Jerome II; Aquinas lect. 2; Chrysostom hom. 11 |
 | `gradual` | "By the word of the Lord the heavens were established, and all their power by the spirit of his mouth": the one God creating by Word and Spirit; the *beata gens* is the people whose God this Lord is. | [A] Irenaeus I.22.1 (doctrinal use of the verse); Basil DSS 16.38; Augustine En. 32 II s. 2, 5; Cassiodorus on v. 6; Aquinas Super Ps. 32 n. 5; Bellarmine on v. 6; [T] the same Missal prints *Spíritu* capitalized in the votive Mass of the Holy Spirit |
 | `collect` | *te solum Deum*: the one God alone followed, whom the Gospel and the Epistle confess; Chrysostom's point that "one God" excludes idols, not the Son, keeps the prayer's "alone" from being read against the Son. The oldest witness reads *te solum Dominum* (scope §2.3); *Deum* is the later reading of S.'s second hand, Gerbert, the Supplement's O and the 1962 book. Both words stand in the Gospel's *Dóminum Deum tuum*. | [T]; [H] the wording's history; [A] Chrysostom hom. 71 on "one God"; the application to the Collect **[E]** |
-| `alleluia` | For Augustine the one who prays is the eternal Word made poor, "In principio erat Verbum … Verbum caro factum est", head and body; for Cassiodorus it is the prophet as penitent, not Christ. | [A] Augustine En. 101 s. 1, 1–2; Cassiodorus (dissent, scope §4.1) |
+| `alleluia` | For Augustine the eternal Word made poor prays with his body: "Christus et Ecclesia, utrumque unus: sed Verbum et caro non utrumque unum; Pater et Verbum utrumque unum; Christus et Ecclesia utrumque unus, unus quidam vir perfectus". The masculine *unus* names Christ and the Church as one man; the neuter *unum* names the Father and Word as one in substance, whereas Word and flesh are not one substance, though one person. For Cassiodorus the speaker is the prophet as penitent, not Christ. | [A] Augustine En. 101 s. 1, 1–2; Cassiodorus (dissent, scope §4.1) |
 | `offertory` | Daniel's prayer, heard while he was still speaking, was answered by the revelation of the seventy weeks "until Christ the prince" (Dan 9:24–25, outside the appointed verses); Rupert and Durandus read the Offertory so, Durandus saying the archangel "certified him of the incarnation of Christ". | [A] Jerome on 9:21–24 (the prayer's effect; the seventy weeks, computations left undecided); [A] Rupert XII.17 and Durandus VI.131 for the chant; the use of 9:24 is **[E]** for the 1962 antiphon, which ends at 9:19 and prints no verses |
 | `communion` | "Terrible … who taketh away the spirit of princes": the Lord to whom every rebel is made a footstool (Ps 109:1 in the Gospel). | [A] Aquinas on "dominium super rebelles"; Chrysostom on "until I make Thine enemies Thy footstool" to move to fear; the link to the Communion **[E]** |
 | `secret` | Minimal, and shared with the other orations. The Secret's own words ask the Father's *maiestas* that "these holy things which we do" free us from past sins and from future ones; they name neither the Son nor the Spirit. Its conclusion is printed at length only as far as *in unitáte*, a typographic variable of the edition; under RG 115 a it concludes, like the Collect and the Postcommunion, through the Son who lives and reigns with the Father in the unity of the Holy Spirit (`propers/verified.md` §8). Its one point of contact with this reading is its first word: the Trinity Preface, appointed by rubric for every II-class Sunday of the season and printed as a direction immediately after this Secret, confesses the three persons' *in maiestáte … æquálitas*. That adjacency belongs to every such Sunday, not to this formulary. | [T] the Secret's words and the rubrical direction; the *maiestas* link **[E]** |
@@ -519,6 +524,14 @@ humility exalted, **[A]** for those chants only.
   populi tantum peccata, sed et sua … sive humiliter, cum peccatum ipse non fecerit, se
   jungit populo peccatori, ut ex humilitate veniam consequatur"; on 9:21–23 "grandis
   orationis effectus", Daniel *vir desideriorum*.
+- **Thomas Aquinas, *Super Philippenses* c. 4, on 4:6** (Dessain 1857,
+  vol. 2, p. 398; tracked optical layer, scope §3.7). [A] as doctrinal
+  illumination, not direct exegesis of Daniel: prayer must be made "cum fiducia
+  impetrandi, et hoc ex Dei misericordia", followed by Dan 9:18, "Neque enim
+  in justificationibus nostris prosternimus preces ante faciem tuam, sed in
+  miserationibus tuis multis". Confidence rests on God's mercy, not the
+  petitioner's merits. The unsung verse supplies the doctrine of prayer
+  developed beside the Offertory, not a quotation from the antiphon.
 - **Augustine, *De peccatorum meritis et remissione* II §13.** [A] Daniel "said so
   often in his prayer, 'We have sinned'" and distinguished "My sins … and the sins of
   my people"; the saints' confession is not made only on others' behalf. Against
@@ -569,7 +582,7 @@ humility exalted, **[A]** for those chants only.
 | Element | Contribution | Basis |
 | --- | --- | --- |
 | `introit` | "Just art thou … deal with thy servant according to thy mercy": the confession of God's just judgment by a penitent who asks mercy, not his own justice (Augustine; Bellarmine "not according to his own merits"), and, for Rupert and Durandus, the mercy asked of the judgment that exalts the humble. Daniel's own prayer confesses the same pair in the verses before the Offertory's (*Tibi, Domine, justitia*, 9:7; *Justus Dominus Deus noster*, 9:14; *Tibi … misericordia et propitiatio*, 9:9), and the Introit's psalm asks *Faciem tuam illumina super servum tuum* (118:135) in the Offertory's construction. | [A] Augustine s. 28.1, 26.5; Hilary *Ain* 10, *Sade* 1; Cassiodorus on vv. 124, 137; Bellarmine on vv. 124, 137; Rupert, Durandus (chant, within a Luke 14 office); [T] the unsung context (scope §1.1a); the link **[E]** |
-| `offertory` | Daniel's prayer for the sanctuary and for the people called by God's name; justice confessed, mercy provoked; the intercessor joined to his people. | [A] Jerome on 9:5–23; Augustine *De pecc. mer.* II §13; Rupert, Durandus (chant) |
+| `offertory` | Daniel's prayer for the sanctuary and for the people called by God's name; justice confessed, mercy provoked; the intercessor joined to his people. Aquinas uses the unsung Dan 9:18 to ground confidence in prayer in God's mercy. | [A] Jerome on 9:5–23; Augustine *De pecc. mer.* II §13; Aquinas *Super Philippenses* c. 4, on 4:6 (doctrinal illumination); Rupert, Durandus (chant) |
 | `alleluia` | "Hear, O Lord, my prayer": the poor man's cry, the fifth penitential psalm, intercession for the world's calamities; humility inclines God's ear. | [A] Cassiodorus; Augustine s. 1, 3 |
 | `collect` | *diabólica vitáre contágia*: the people asks to escape the devil's contamination and to follow the one God with a pure mind. | [T]; its penitential fit **[E]** |
 | `secret` | *a prætéritis nos delíctis éxuant, et futúris*: the offering asked to strip away past sins and guard from future ones. | [T]; doctrinal illumination, Trent sess. XIII cap. 2 (the Eucharist "tanquam antidotum") |
@@ -596,7 +609,9 @@ humility exalted, **[A]** for those chants only.
   undecided) read the prayer with its answer (scope §§1.2, 4.7). **[A]** for each
   witness; its use for the 1962 antiphon, which ends at 9:19, **[E]**.
 - **Moral.** Confess God's justice and your own sin, not only the sins of others; ask
-  mercy, not reward; intercede for the whole people as one of it; vow what you can
+  mercy, not reward, and pray confidently because of God's mercies rather than
+  your justifications (Aquinas, *Super Philippenses* c. 4, on 4:6); intercede
+  for the whole people as one of it; vow what you can
   and render it, relying on God; humble the spirit that makes princes proud.
 - **Anagogical.** The Introit asks the just God to deal with his servant
   *secúndum misericórdiam tuam*, which Augustine glosses "non utique secundum

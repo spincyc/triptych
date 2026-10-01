@@ -3272,3 +3272,144 @@ declared contracts and `check-generation-metadata` pass, and
 confirmed the cause, the definitions' identity with hyperref's, and the links,
 bookmarks and pixels of all 27 rebuilt PDFs; its advisory that the References
 anchor sat below its heading was answered by moving the anchor before it.
+
+## Post-acceptance revision answering every standing finding, 2026-10-01
+
+This recovery answers the fifteen advisories and nine observations preserved
+from the original accepted production. It retains that historical review and
+its stage counts. Each entry in `evaluations/blocking-findings-v1.toml` now has
+a dated resolution; the observation numbers below are their original file
+order, not newly assigned standing-finding identifiers. The maintainer limited
+this recovery to known defects and straightforward repairs, with no planned
+work or global design changes. Independent content and visual/web review of
+the new artifacts is pending; no earlier acceptance is claimed for these bytes.
+
+The revising agent is GPT-6 through the OpenAI Codex API. The exact model
+identifier beyond that exposed family, actual reasoning effort, client version
+and server revision are unexposed. The lane requested high effort; this is not
+runtime evidence of the setting. `generation-metadata.tex` preserves all prior
+contributors and records this contribution separately. Its final timestamp,
+`2026-10-01T22:37:06Z`, was captured from the UTC clock when the final two
+concise reading-name corrections were written, not estimated in advance.
+
+### Findings and dispositions
+
+| Finding | Disposition | Change and evidence |
+| --- | --- | --- |
+| HOM-010 | repaired | `sections/homily/90-note.tex:33`. sections/homily/90-note.tex and the corresponding study, concise and research claims now name the scribe's confession in Mark 12:32 that Chrysostom introduces into Homily 71 on Matthew. Re-read in registered CCEL NPNF1 10, source.txt lines 39940-40085; the appointed Matthew text does not contain the confession. |
+| HOM-011 | repaired | `sections/homily/10-homily.tex:105`. sections/homily/10-homily.tex now describes the sanctuary without restoring desolate, matching the antiphon collated in propers/verified.md section 7 and its appointed-text-against-Bible table: quod desertum est is absent. |
+| HOM-012 | repaired | `sections/homily/10-homily.tex:52`. sections/homily/10-homily.tex states the hinge in the speech's own short sentences and retains only Chrysostom's to confess Him also to be God. The quotation was re-read in the registered Homily 71 text; the note and word count were updated. |
+| RES-018 | repaired | `research/scope.md:661`. research/scope.md sections 3.3 and 4.5, research/interpretations.md section 2 and research/source-bindings.toml now distinguish PG 62 col. 80 phesin (he says, Paul) from NPNF1 13 this they own. The retained page image pg62-n83.jpg was re-read; the Greek behind the NPNF wording remains unidentified and the antecedent through all remains this audit's inference, not a Greek quotation. |
+| RES-019 | repaired | `research/scope.md`. research/scope.md section 9 records the public-domain underlying printings PG 62 (1860), PG 82 (1864) and CSEL 22 (Zingerle, 1891). Their derivative status is stated separately: the Hilary optical derivative has unresolved rights; PG 62 optical text was only an unregistered finding aid; the current registered PG 82 artifact now records public-domain mechanical OCR and remote storage because of size. Current artifact records were checked; the old unresolved-rights premise no longer describes PG 82. |
+| RES-020 | repaired | `research/scope.md`. The corpus owner added Ps 32 to the traditional Davidic attribution binding and rebuilt coverage after checking the Clementine Psalmus David and Douay A psalm for David at Ps 32:1. This leaf regenerated research/chronology.toml and chronology-annotations.tex with tools/tpt proper-chronology. Both Date tables, apparatuses, scope section 7.4 and the historical revision supplement now distinguish David's regnal era as an attribution reference point from a composition date; the former open request is answered. |
+| STU-006 | repaired | `research/interpretations.md:527`. research/interpretations.md section 3 now records Aquinas, Super Philippenses c. 4 on 4:6, in the witness list, Offertory row, moral sense and summary; the summary also includes Chrysostom. The registered Dessain volume 2 OCR at lines 42265-42283 was re-read: confidence rests on divine mercy, with Dan 9:18. No new image collation is claimed. |
+| STU-017 | repaired | `research/interpretations.md:381`. research/scope.md section 3.5 and research/interpretations.md section 2.3 now retain Augustine's complete Christus, Verbum, caro, Pater sentence, including sed Verbum et caro non utrumque unum; Pater et Verbum utrumque unum, and explain unus/unum. Re-read in the registered Enarrationes part 11 Latin text, section 2. |
+| SYN-020 | repaired | `sections/concise/01-inventory.tex`. sections/concise/01-inventory.tex confines the absence of a commemoration to 20 September 2026. The retained 1962 Missal images, Rubricae generales 111(b), printed XVIII, and Rubricae generales Missalis Romani 434(b), printed XXXI, both allow the stated same-class commemoration; the former universal prohibition was false. |
+| SYN-021 | repaired | `sections/concise/10-commentary.tex:212`. sections/concise/10-commentary.tex and sections/40-just-judge-merciful-hearer.tex explicitly place Augustine's humility sentence on the following verse, Ps 101:3. Re-read in Enarrationes in Psalmos 101, sermo 1, section 3; Bellarmine's gloss remains on the Alleluia's verse 2. |
+| SYN-022 | repaired | `sections/concise/90-apparatus.tex:87`. Both sections/90-apparatus.tex and sections/concise/90-apparatus.tex now include Lev 19:18 beside Deut 6:5 among the Douay loci. The tracked Bible reads Thou shalt love thy friend as thyself, matching the body's source claim. |
+| VIS-001 | escalated | `evaluations/blocking-findings-v1.toml:262`. Deferred design at the maintainer's 1 October 2026 direction: do not change the global line measure without actual clipping or overflow. The restyling in 6caf8946d moved this setting into shared src/common/propers-format.tex; the proposed narrower measure is no longer a leaf-local format change. Current page 2 retains all seven dossiers. A future measure change belongs to the shared format owner, with the fixed-page contract rechecked; this recovery makes no such design change. |
+| WEB-001 | already-repaired | `evaluations/blocking-findings-v1.toml:273`. Shared converter commit ec10cec29 (21 September 2026) restores Contents navigation. The conversion lane's fresh Chromium inspection of this leaf records 10 linked h2 entries and no missing target in .scratch/recovery-web-conversion/browser-proof.json. |
+| WEB-002 | already-repaired | `evaluations/blocking-findings-v1.toml:284`. Shared converter commit ec10cec29 (21 September 2026) emits semantic definition lists. The conversion lane's fresh Chromium inspection records 12 dt/dd pairs with all terms bold in .scratch/recovery-web-conversion/browser-proof.json. |
+| WEB-003 | already-repaired | `evaluations/blocking-findings-v1.toml:295`. Shared styling commit ec10cec29 (21 September 2026) supplies upright .nodecor cues. The conversion lane's fresh Chromium inspection records both cues with computed font-style normal in .scratch/recovery-web-conversion/browser-proof.json. |
+| OBS-01 | repaired | `research/interpretations.md`. research/interpretations.md section 1.1 now states both directions of Chrysostom's reciprocity: the second commandment opens the road to the first and is established in return by the first. Homily 71 and its four proof texts were re-read; the already correct study and homily remain the basis. |
+| OBS-02 | repaired | `sections/homily/90-note.tex:16`. sections/homily/90-note.tex now gives the revised spoken count, 1,380 words, and the 120-130 words-per-minute range, approximately 10.6-11.5 minutes. It no longer adds the slower 110 words-per-minute estimate. The independent whitespace-token count removes comments and command tokens, preserves quotation contents, and counts tokens containing letters. |
+| OBS-03 | repaired | `sections/90-apparatus.tex`. sections/90-apparatus.tex removes the unused Augustine Ps 32 I, 6 and II, s. 2, 8 and Bellarmine Ps 118:1 loci. Rupert had already left this apparatus with the D11 repair in 72fab1885; the surviving apparatus now lists the loci actually used. |
+| OBS-04 | declined | `research/chronology-annotations.tex:43`. The observation itself says this is not a defect of the study. The generated Offertory entry now explicitly marks the quoted seventy years as a duration, following the shared generator repair in 84666d2f6; no date for the Gospel event is supplied by the current corpus. The generated cells and their disclosed limits are retained. Supplying a new narrated-event date would require further shared-corpus research outside this recovery's authorized scope. |
+| OBS-05 | repaired | `generation-metadata.tex:1`. generation-metadata.tex uses the actual UTC finalization time captured for this revision, not an estimated future time. The same timestamp propagates through all three PDFs and the canonical web conversion. |
+| OBS-06 | repaired | `sections/concise/10-commentary.tex:231`. sections/concise/10-commentary.tex consistently calls the readings first, second and third, matching the order explicitly defined in the themes; variable descriptive aliases were removed where they obscured cross-proper comparison. |
+| OBS-07 | repaired | `homily.tex:7`. homily.tex explicitly selects pdfpagemode=UseNone, so a viewer does not open an empty outline pane. The study and concise study retain their actual outlines. |
+| OBS-08 | repaired | `evaluations/blocking-findings-v1.toml:359`. Fresh PDF rasters are generated under build/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-review/rasters, with a review-run.json that records the current PDF digests. Historical vr0/vr1 outputs are not reused for this revision. |
+| OBS-09 | repaired | `sections/90-apparatus.tex:98`. sections/90-apparatus.tex places label{sec:references} immediately on the References heading. The generated canonical web heading carries the sec:references target itself rather than a detached span. |
+
+### Layout repairs
+
+The homily now selects `pdfpagemode=UseNone`; the study and concise edition keep
+their real outline trees. The References label immediately follows the heading,
+so the canonical web heading carries `sec:references`. The shared fixes in
+`ec10cec29` already supply linked Contents, semantic sense labels and upright
+psalm-verse cues. A new shared converter audit correction normalizes TeX opening
+and closing quotation marks against rendered curly marks in the Daniel duration;
+it changes the audit, not the converted payload.
+
+VIS-001's proposed line-measure change remains deferred design under the
+maintainer's current instruction. The relevant setting moved to the shared
+format in `6caf8946d`; no leaf-local replacement or global redesign was made.
+The current concise page 2 carries all seven dossiers, with no observed clipping,
+overlap or overflow. Page 1 remains the map and four senses; pages 3–4 contain
+the themes and page 5 begins the detailed commentary.
+
+The author inspected contact sheets for all 44 pages and full-sized changed
+pages in each edition: study 12–14, 17, 24, 26–31; concise 1–2, 5–10; homily 1–3.
+Fresh rasters are under
+`build/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-review/rasters/`.
+The manifest there seals the three final PDF hashes below; superseded historical
+rasters are not the evidence for this pass. The full-sized final concise page 8
+and each edition's final timestamp page were inspected again after the final
+reading-name correction.
+
+### Artifacts
+
+The three PDFs are in `build/claude/liturgy/roman-rite/1962/propers/temporal/`;
+the canonical Markdown is in the corresponding `build/web/claude/` directory.
+They are prepared for independent review and have not been installed by this
+lane. `research/artifacts.json` and `research/web-artifact.json` are refreshed
+receipts. The final artifact and primary-witness digest manifests are retained
+in `.scratch/recovery-leaf-claude57/`.
+
+| Artifact | Pages | Bytes | SHA-256 |
+| --- | ---: | ---: | --- |
+| `57-seventeenth-after-pentecost.pdf` | 31 | 538853 | `0ddb9ad88e4a2c8973a6d25d96dd2a7d6598c2c833e5e3a0a51f563a905bfab3` |
+| `57-seventeenth-after-pentecost-synthesis.pdf` | 10 | 449540 | `88d173e9934c9f913a2c19ccc9037f09218033b38fdda889d24c7febaf26a09e` |
+| `57-seventeenth-after-pentecost-homily.pdf` | 3 | 274954 | `ff0409f2a7eb4392d6c7e51885950eefc0c3e1c3a86818981b1a6e4058faf8d4` |
+| `57-seventeenth-after-pentecost.md` | — | 116738 | `17c96f728bb49f1405ce0dcc33d00599bbd417c2552818307871c5d6d5d7c7df` |
+
+### Checks run
+
+- Three `make doc DOC=<leaf>{,-synthesis,-homily} PROVIDER=claude` builds:
+  pass, with the recipe's PDF-anchor checks. The final logs contain no warning,
+  overfull/underfull box, undefined reference or rerun request.
+- `_proper_study.py check --phase content --edition <edition>`: pass for
+  research, synthesis and homily.
+- `check-content-preflight`, each of the three editions: `references-used`,
+  `identifiers-resolve`, `bindings-valid`, `restricted-not-reproduced`,
+  `relation-coverage`, `unquoted-not-quoted`, `structural-meta-labels`,
+  `house-voice`, `chronology-record-current`, `chronology-annotations-current`,
+  `chronology-claims-supported`, and `provenance-matches-run`: all pass. The
+  provenance check uses the original declared proper-study v3 digest, run and
+  seed; it does not represent this recovery as a newly accepted workflow run.
+- `proper-chronology record --write` and `annotations --write`, then both
+  `--check`: pass after the corpus owner's Ps 32 correction. All printed Date
+  cells were read against the regenerated annotations.
+- `_proper_study.py snapshot` and `snapshot-web`: pass. Artifacts-phase check
+  after the final build with `--require-format --require-presentation`: pass.
+  The earlier pre-snapshot check correctly refused stale receipts with
+  `built PDFs or render inputs differ from the snapshot prepared for visual
+  review (pagination_evidence, pdfs, render_inputs)`; refreshing the receipts
+  cleared it.
+- `tools/web-edition` and `tools/check-web-edition`: pass under the lane's
+  pinned Markdown 3.10.3 / PyYAML 6.0.3 environment. The web heading is
+  `## References {#sec:references}`. Shared conversion-lane Chromium evidence
+  records ten linked Contents targets, twelve bold semantic sense labels and
+  two upright `.nodecor` cues; the independent reviewer receives the final
+  web hash below for its own check.
+- The spoken homily count is 1,380 words by the retained counting script; all
+  twelve reported homily font subsets are embedded. An initial word-count
+  invocation without its path argument failed with `IndexError: list index
+  out of range`; rerunning with the spoken source path returned 1380.
+- `git diff --check` over this leaf: pass.
+- Global `tools/tpt source-library validate` passed earlier in the recovery.
+  The subsequent 43-check run passed 42 checks and failed only global source
+  validation during concurrent corpus edits. Its seven errors have the common
+  diagnostic `artifact_page_ranges requires a controlling artifact with
+  page_count`, on newly added `vatican-typica-1962/passages/recovery-2026-10-01-*.toml`
+  records outside this leaf. Full diagnostics are in
+  `.scratch/recovery-leaf-claude57/gates.log`; the coordinator was notified for
+  the corpus owner to repair and rerun. This is not represented as a clean
+  global validation.
+
+The first raster command followed the common brief's scratch path and was
+refused: `pdf-review: --output must remain under this checkout's build/ tree
+or a /tmp subdirectory`. The coordinator authorized the unique build path
+above, in accordance with the repository helper's narrower output rule, and
+that render succeeded. No installed files, shared records, commits or pushes
+were written by this lane.

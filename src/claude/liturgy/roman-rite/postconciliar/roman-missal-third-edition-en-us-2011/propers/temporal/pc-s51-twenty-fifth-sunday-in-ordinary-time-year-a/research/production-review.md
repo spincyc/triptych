@@ -1253,3 +1253,126 @@ declared contracts and `check-generation-metadata` pass, and
 confirmed the cause, the definitions' identity with hyperref's, and the links,
 bookmarks and pixels of all 27 rebuilt PDFs; its advisory that the References
 anchor sat below its heading was answered by moving the anchor before it.
+
+## Post-acceptance revision answering every standing finding, 2026-10-01
+
+The maintainer's full-revision instruction of 1 October authorized checking
+all standing findings, retaining verified earlier repairs, correcting remaining
+leaf-local defects, and rebuilding for independent review. This recovery pass
+is authored by GPT-6 in the OpenAI Codex harness, with requested effort high
+and runtime reasoning effort, exact variant and sampling unexposed;
+it is not a fresh independent review or a rerun of the sealed historical
+workflow. The workflow's verdicts and counts are left as historical results.
+The contribution and revision timestamp are recorded in generation metadata.
+
+### Findings and dispositions
+
+Every accepted finding, advisory, observation and escalation in
+`evaluations/blocking-findings-v1.toml` now has a dated resolution. The original
+unidentified observations are numbered in their file order below. Earlier
+repairs are identified by their commits rather than represented as new work.
+
+| Finding | Disposition | Evidence or change |
+| --- | --- | --- |
+| HOM-001 | repaired | sections/homily/90-note.tex explicitly records the denarius/self-gift synthesis joining Jerome on the coin to Augustine on Ps 144:18, plus the Isaiah arithmetic and present-hearer applications; none is attributed to a Father. |
+| HOM-002 | repaired | sections/homily/10-homily.tex names the same Lord Jesus who gave himself in death and rising at Communion. The note locates this in Mt 20:17–19 and Jn 10:17–18, already read in research/scope 2; spoken length falls from 1,482 to 1,463 words. |
+| RES-017 | repaired | research/scope.md sections 3.6 and 4 and research/interpretations.md remove unsupported priority, generation interval and independence; each author still states his own checked claim. No replacement dating or dependence claim is invented. |
+| RES-018 | repaired | research/context.md names its English summary of Praenotanda 106 (printed p. XLV) as paraphrase of the Latin and removes quotation marks; it claims no English witness. |
+| RES-019 | repaired | research/scope.md 3 withdraws the irreconcilable historical aggregate, whose original per-item receipt is unavailable. A current bounded check of the twelve Gregory quotations in interpretations matched ten initially, corrected Eumdem ergo denarium and the punctuation/case of saltem in ultima aetate resipiscite, and matched twelve finally against the bound complete text (dc25dd69...). Original first-pass counts are not reconstructed. |
+| SYN-001 | repaired | sections/concise/10-commentary.tex reports Chrysostom's complaint as a measure of the latecomers' honour (Hom. in Matt. 64.3, retained CCEL NPNF1-10 lines 36397–36489 reopened); the limited role of the ending is assigned to the second interpretation, not to Chrysostom's account. |
+| SYN-002 | repaired | sections/concise/90-apparatus.tex restores the unresolved question whether the United States Lectionary permits another Alleluia verse from a common set, matching the study and verified appointment record. |
+| SYN-003 | repaired | sections/concise/10-commentary.tex explicitly makes their different readings of Acts the subject and says these touch neither the first step nor the opening claim; it preserves the second step as Augustine's alone. |
+| VIS-001 | repaired | sections/00-opening.tex adds medskip above the small study-translation note to match the space below it. |
+| WEB-001 | already-repaired | ec10cec29: the shared converter emits a web Contents for a schema-2 proper requesting tableofcontents, and audits its presence. Recovery regeneration uses this implementation. |
+| WEB-002 | already-repaired | ec10cec29: schema-2 descriptions preserve semantic definition terms instead of whitespace-dependent breaks, with site styling and converter tests. Recovery regenerates and checks the four-senses blocks. |
+| observations 1 | already-repaired | 6f3a3567c: the three-document profile now defines homily element_keys as research informing the speech, not a claim that every element is recited. |
+| observations 2 | deferred | The coordinator confirms that widening the house-voice heuristic to study is deliberate planned design work excluded from this recovery (PROJECT-WORK, corpus-links-and-known-issues-2026-10-01). The prior authored sentences are already repaired; no new gate rule is inferred. |
+| observations 3 | already-repaired | 097c14112: the current scope and interpretations records incorporate all six source corrections, including Chrysostom's non-disputatious Acts account, Jerome's uncommented second sentence, the second parable-rule application and Aquinas's David division. |
+| observations 4 | already-repaired | 0df032e15: shared-format dossier notes render as paragraphs beneath their data rows; current conversion is verified rather than changing the leaf's table style. |
+| observations 5 | already-repaired | ec10cec29 and the current semantic-break conversion: no generated trailing-space break is needed; schema-2 four senses use definitions and explicit line breaks use br. Recovery checks the site-safe output. |
+| observations 6 | repaired | sections/90-apparatus.tex moves label sec:references immediately after its heading so the converter binds the stable id to the heading instead of leaving a separate empty span. |
+
+The unsupported historical aggregate “33 searched / 32 matched / two
+corrected” is withdrawn, not reconciled by invented first-pass counts. A new
+bounded audit checks all twelve quoted Gregory phrases in the Gregory rows
+of `research/interpretations.md` against the complete bound Wikisource text,
+SHA-256 `dc25dd691b3ed44100e8417b7cdad9e6120753cf60bc59b80c7c3239471e618d`.
+Ten matched initially; restoring *ergo* in *Eumdem ergo denarium* and matching
+the lower-case excerpt *saltem in ultima aetate resipiscite* yielded twelve
+matches. The scope records the complete check and its limits; it does not
+claim a general quotation audit of all authors.
+
+The chronology record and annotations were regenerated by their owning
+command. The separately labelled Catholic critical comparison in the Gospel
+Date cell makes “last figure” ambiguous; both studies now say “sixth
+traditional figure”. Every printed Date cell was read against its surrounding
+prose. The homily's death-and-rising sentence uses Matthew 20:17–19 and John
+10:17–18, already present in the research context; its note now names those
+loci. Its spoken length is 1,463 words, down from 1,482, with corresponding
+pace arithmetic. No new interpretation or source-library record was added.
+
+The observation about widening the house-voice heuristic remains **deferred**,
+with the coordinator as owner: it is explicitly planned design work in
+`PROJECT-WORK.md`, outside this recovery's scope. The wider References
+heuristic proposal is likewise excluded. The concrete leaf References anchor
+was repaired without changing either shared heuristic.
+
+### Layout repairs
+
+The study translation note now has matching vertical space above and below;
+the References label directly follows its heading, preserving the PDF anchor
+and binding the web heading's stable id. Contact sheets of all pages and
+full-size study pages 2–3, 26–28 and 30–31, concise pages 2, 6 and 8–10, and
+homily pages 2–4 were opened. The added concise qualification and repaired
+homily note fit without clipping. The concise contract remains: inventory and
+overview on page 1, complete dossier on page 2, themes on pages 3–4, commentary
+beginning on page 5. The shared converter already supplies Contents and
+semantic four-senses definitions; no converter change belongs to this lane.
+
+### Artifacts
+
+These are the rebuilt review bytes under `build/claude/` and
+`build/web/claude/`; they have not been installed by this recovery lane.
+The base path is this leaf's document id; suffixes identify the companions.
+
+| Output | Pages | Bytes | SHA-256 |
+| --- | ---: | ---: | --- |
+| Study PDF | 31 | 545107 | `5a5c2d7c366562687f38c573a4dd15340b3dbbc2be714cb0b28d9da7bcfc95fa` |
+| Concise PDF (`-synthesis`) | 10 | 433219 | `a3074800af436139453fb484e918538d25d5948432d0d8724c3d9db8679661c6` |
+| Homily PDF (`-homily`) | 4 | 284366 | `97ff3ce6d9228383548ed463c2b3b73e5873e45f50c26f93fd8ada5b1400c2c5` |
+| Canonical web Markdown (`.md`) | — | 123879 | `a5b66e415ca2977795cc1890736a6b0c31661ddcf201b721d9d85752629f09ab` |
+
+### Checks run
+
+All final commands below returned zero, with the repository-pinned Python
+Markdown environment first on `PATH` for web generation and checks.
+
+- `make doc PROVIDER=claude DOC=<id>` for the study, synthesis and homily;
+  each ran its PDF-anchor, component and generation-metadata gates.
+- `proper-chronology record` and `annotations`, first `--write`, then `--check`.
+- `_proper_study.py check --phase content` for research, synthesis and homily.
+- For each of those editions, `check-content-preflight` with every one of:
+  `references-used`, `identifiers-resolve`, `bindings-valid`,
+  `restricted-not-reproduced`, `relation-coverage`, `unquoted-not-quoted`,
+  `structural-meta-labels`, `house-voice`, `chronology-record-current`,
+  `chronology-annotations-current`, `chronology-claims-supported`, and
+  `provenance-matches-run` against the original generation provenance.
+- `_proper_study.py check --phase artifacts`; `check-generation-metadata`
+  separately for all three PDFs; `source-library validate`.
+- `web-edition --provider claude --output build/web <id>` and
+  `check-web-edition --provider claude --document <id>`.
+- `_proper_study.py snapshot` and `snapshot-web`, recording the review bytes.
+- `pdfinfo` and `pdffonts`: page counts above; all fonts embedded, with Unicode
+  maps. The settled six-document log screen found no overfull/underfull box,
+  warning, undefined reference or rerun request.
+
+The leaf's 46-command gate manifest and logs are retained in
+`.scratch/recovery-leaf-claude58-s51/`, alongside the build logs and artifact
+hash manifest. The initial raster command failed with
+`pdf-review: --output must remain under this checkout's build/ tree or a /tmp subdirectory`.
+The succeeding command put rasters and contact sheets beneath the owned
+`build/claude/<id>-recovery-review/` directory. No other final gate failed.
+
+This is the author-side ready-for-review record. Independent content and
+visual/web re-review, installation, shared release receipts and deployment
+belong to the coordinator; no acceptance is asserted for those pending steps.

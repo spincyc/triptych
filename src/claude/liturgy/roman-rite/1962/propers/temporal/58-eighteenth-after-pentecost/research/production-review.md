@@ -1846,3 +1846,114 @@ declared contracts and `check-generation-metadata` pass, and
 confirmed the cause, the definitions' identity with hyperref's, and the links,
 bookmarks and pixels of all 27 rebuilt PDFs; its advisory that the References
 anchor sat below its heading was answered by moving the anchor before it.
+
+## Post-acceptance revision answering every standing finding, 2026-10-01
+
+The maintainer's full-revision instruction of 1 October authorized checking
+all standing findings, retaining verified earlier repairs, correcting remaining
+leaf-local defects, and rebuilding for independent review. This recovery pass
+is authored by GPT-6 in the OpenAI Codex harness, with requested effort high
+and runtime reasoning effort, exact variant and sampling unexposed;
+it is not a fresh independent review or a rerun of the sealed historical
+workflow. The workflow's verdicts and counts are left as historical results.
+The contribution and revision timestamp are recorded in generation metadata.
+
+### Findings and dispositions
+
+Every accepted finding, advisory, observation and escalation in
+`evaluations/blocking-findings-v1.toml` now has a dated resolution. The original
+unidentified observations are numbered in their file order below. Earlier
+repairs are identified by their commits rather than represented as new work.
+
+| Finding | Disposition | Evidence or change |
+| --- | --- | --- |
+| HOM-011 | already-repaired | 5dadb6678: sections/40-nothing-of-our-own.tex, Not quietism; scope 3.5 and interpretations 3.4 now complete Aquinas's three commands, including quia ire non poterat, dixit, Et ambula (Venice 1745 p. 122). The retained OCR at lines 16507–16512 was reopened in recovery. |
+| VIS-001 | already-repaired | 083a9ce84: The expanded third reading moved the comparison close; current page 29 is substantive; recovery full-size inspection of pages 27–29 confirmed this. |
+| VIS-002 | already-repaired | 5dadb6678: sections/50-comparison.tex: comparison table no longer leaves its seventh row alone on a new page; recovery full-size inspection confirms rows 1–3 on page 27 and rows 4–7 on page 28, with no orphaned seventh row. |
+| HOM-008 | already-repaired | ff6a55398: sections/homily/10-homily.tex: the healer quotation follows forgiveness, as in Chrysostom, Hom. in Matt. 29.2, CCEL NPNF1-10. |
+| HOM-009 | already-repaired | ff6a55398: sections/homily/10-homily.tex: Whatever faith he had, it brought him only as far as he was carried; the spoken syntax and unsupported exactly are repaired. |
+| HOM-010 | already-repaired | 452961c9f: sections/homily/10-homily.tex: the final movement names Christ's death and rising, Eucharist and Body and Blood in the preacher's voice. |
+| RES-031 | already-repaired | e1b946ce8: scope 3.5 and 10, its header, and interpretations 2.2 retain Ambrose's penitential imagery and reserve contritio/satisfactio for Aquinas. Ambrose V.14 was reopened: lectus doloris, conscience, Psalm 6 tears and return to paradise are present. |
+| RES-032 | already-repaired | 083a9ce84; 34f520bbe; f7b2e71ca: scope 3.5, 4.2 and 10, interpretations 3, bindings and third reading identify the sequel as Sermo 50 received under Chrysologus, also under Maximus; controlled PL 52/57 witnesses and disputed authorship are retained. It is not assigned to Chrysostom. |
+| RES-033 | already-repaired | e1b946ce8: scope 2.7 and 10, interpretations opening: four of five identify the Communion; Sicard VIII.18 names Offertory and Communion by sense only, matching the controlled locus inventory. |
+| RES-034 | already-repaired | e1b946ce8: scope 3.5, 3.9, 3.11, 6.3; interpretations 2.3, 2.4, 3.2, 3.4; source-bindings: continuation XI pp. 395, 408–409 (PDF 416, 429–430) and Aquinas p. 122 are recorded under their proper authors. |
+| RES-035 | already-repaired | e1b946ce8: interpretations 4.4: paradise belongs to Hilary and Ambrose; house of eternity to Aquinas, whose retained p. 122 text was reopened. |
+| RES-036 | already-repaired | e1b946ce8: interpretations 3.2 preserves Chrysostom's seems to court them, free of flattery and also covertly accusing, and no longer calls accusation his whole reading. |
+| STU-023 | already-repaired | e1b946ce8: interpretations 2.4 leaves his own city disputed (Chrysostom: Capernaum; Jerome: Nazareth); 1.2 and 1.3 include Aquinas beside Hilary for the Gentile-city allegory. |
+| STU-024 | already-repaired | 5dadb6678: sections/10-each-element.tex gives the Offertory and Secret their settings; a Lapide and Schuster's developed arguments have one home in sections/30-authority-on-earth.tex. |
+| SYN-008 | already-repaired | 5dadb6678: sections/concise/04-themes.tex says in its Collect and only collect, not single prayer. |
+| VIS-003 | already-repaired | 5dadb6678: sections/80-date-location.tex has medskip between introductory prose and dossier rule. |
+| VIS-004 | already-repaired | 5dadb6678: sections/50-comparison.tex header shortened to Power to forgive. |
+| VIS-005 | already-repaired | 5dadb6678: sections/homily/10-homily.tex uses raggedcolumns; ordinary movement spacing no longer stretches to fill columns. |
+| WEB-001 | already-repaired | 0df032e15: Shared converter restores all nonempty propertitle fields and checks their presence. Recovery regenerates this leaf with that converter. |
+| observations 1 | already-repaired | 3cc830e86 and d798a0bb0: the central index now has the Mt 9 Chrysologus witness; scope and production-review third pass correct the earlier missing-row statement. |
+| observations 2 | already-repaired | e1b946ce8: the scope header explicitly records iteration 7 and c2c54133a, which changed interpretations alone; production-review second pass records the correction. |
+| observations 3 | already-repaired | a9086b3da: the 1962 profile now points to the shared dossier environments as sole owner of measurements, eliminating the conflicting dimensions. |
+| observations 4 | already-repaired | 0df032e15: shared-format dossier notes become full-width paragraphs beneath their rows; current web generation and review check this leaf. |
+| STU-005 | already-repaired | 6586bb5ef; e974de733: Shared chronology policy and preflight admit locus-labelled dates; both dossiers give Ecclus 36:18 B.C. 190–170 or c. B.C. 280 and Ps 121:1 before c. 165 B.C. while preserving the nonuniform Date cell. |
+
+The interrupted apparatus correction is retained in both studies: “no
+traditional date” is expressly about the three psalms' **composition**. It
+does not erase the Communion's separately labelled superscription setting or
+prophetic referent. The generated chronology record and annotations were
+regenerated and checked, and every printed Date cell was read against its
+surrounding prose. No new source-library assertion was required.
+
+### Layout repairs
+
+The substantive standing layout repairs were already present. Full-size
+inspection confirmed the comparison's substantive ending on page 29, its
+three/four-row table split on pages 27–28, the dossier spacing, shortened
+header and ordinary homily column spacing. The recovery changes are confined
+to the scope clarification and metadata. Contact sheets of all pages and
+full-size study pages 27–34, concise pages 11–12 and homily page 3 were opened.
+The concise contract remains: inventory and overview on page 1, complete
+dossier on page 2, themes on pages 3–4, commentary beginning on page 5.
+
+### Artifacts
+
+These are the rebuilt review bytes under `build/claude/` and
+`build/web/claude/`; they have not been installed by this recovery lane.
+The base path is this leaf's document id; suffixes identify the companions.
+
+| Output | Pages | Bytes | SHA-256 |
+| --- | ---: | ---: | --- |
+| Study PDF | 34 | 570454 | `9e32a8b53ad66a9605981174dbca1325e00ca297b96b093fe39b9e756c5ae857` |
+| Concise PDF (`-synthesis`) | 12 | 459953 | `bdd75e96c97cf2a176350ae11543d56aef1e42b48b9ea5f15e3d69d9a9a975b1` |
+| Homily PDF (`-homily`) | 3 | 275110 | `a4f69e36d297de8ec8c7cedcd1d6343d047b3b0bf5735b6b6875b8c3c7218e4e` |
+| Canonical web Markdown (`.md`) | — | 133656 | `2fa1562ee4640682e311e2d13408997ebde30d8f43c795d2ac1df0c03c7bb5b2` |
+
+### Checks run
+
+All final commands below returned zero, with the repository-pinned Python
+Markdown environment first on `PATH` for web generation and checks.
+
+- `make doc PROVIDER=claude DOC=<id>` for the study, synthesis and homily;
+  each ran its PDF-anchor, component and generation-metadata gates.
+- `proper-chronology record` and `annotations`, first `--write`, then `--check`.
+- `_proper_study.py check --phase content` for research, synthesis and homily.
+- For each of those editions, `check-content-preflight` with every one of:
+  `references-used`, `identifiers-resolve`, `bindings-valid`,
+  `restricted-not-reproduced`, `relation-coverage`, `unquoted-not-quoted`,
+  `structural-meta-labels`, `house-voice`, `chronology-record-current`,
+  `chronology-annotations-current`, `chronology-claims-supported`, and
+  `provenance-matches-run` against the original generation provenance.
+- `_proper_study.py check --phase artifacts`; `check-generation-metadata`
+  separately for all three PDFs; `source-library validate`.
+- `web-edition --provider claude --output build/web <id>` and
+  `check-web-edition --provider claude --document <id>`.
+- `_proper_study.py snapshot` and `snapshot-web`, recording the review bytes.
+- `pdfinfo` and `pdffonts`: page counts above; all fonts embedded, with Unicode
+  maps. The settled six-document log screen found no overfull/underfull box,
+  warning, undefined reference or rerun request.
+
+The leaf's 46-command gate manifest and logs are retained in
+`.scratch/recovery-leaf-claude58-s51/`, alongside the build logs and artifact
+hash manifest. The initial raster command failed with
+`pdf-review: --output must remain under this checkout's build/ tree or a /tmp subdirectory`.
+The succeeding command put rasters and contact sheets beneath the owned
+`build/claude/<id>-recovery-review/` directory. No other final gate failed.
+
+This is the author-side ready-for-review record. Independent content and
+visual/web re-review, installation, shared release receipts and deployment
+belong to the coordinator; no acceptance is asserted for those pending steps.
