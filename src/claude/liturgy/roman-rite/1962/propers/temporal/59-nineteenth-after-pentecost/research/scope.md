@@ -28,7 +28,12 @@ post-acceptance revision of the same day, outside the run, declared
 `research/chronology-profile-comparisons.toml` and regenerated the chronology
 record and annotations (§§ 7.1, 7.2, 7.4); the corpus already held critical
 composition claims for Matthew and Ephesians, and the earlier statement that
-no study need for a comparison had been identified is withdrawn. The record
+no study need for a comparison had been identified is withdrawn. A further
+post-acceptance revision of 1 October 2026, also outside the run, followed the
+chronology corpus's commit `84666d2f6` of that day, which gave Pss 137 and 140
+David's traditional attribution and Mt 22:1–14 a narrated event, and the
+projection change that marks a derived date "(derived)": §§ 7.1–7.4 and § 10
+record the regenerated answers and the sources newly bound for them. The record
 audits the evidence on which the three documents of this leaf may rest: the
 text control, the passage-by-passage reception sweep, the liturgical
 commentators, the disagreements among the witnesses, the negative results, the chronology the
@@ -1527,22 +1532,33 @@ fingerprint and two `profile_comparisons`. The Gospel's event annotation now
 reads *Narrated event date unresolved*, the projection's fixed wording when a
 comparison is declared; the corpus state behind it is still `research-pending`.
 
+Regenerated again on 2026-10-01 in a second post-acceptance revision, after
+the corpus commit `84666d2f6` and the projection change that prints a claim
+carrying a derivation with "(derived)" after its value (`guidance/scripture-chronology.md`
+§ 14.1), with the same commands; both `--check` runs report the record and the
+annotations current: `research/chronology.toml` (`e03cc2a6…d714c9`, 45,672
+bytes) and `research/chronology-annotations.tex` (`e84b9431…a77d2e`, 13,424
+bytes); the comparison input is unchanged. The Gospel's status is now `dated`;
+the Offertory and Gradual gain a traditional attribution; every other answer in
+§ 7.2 is unchanged.
+
 ### 7.2 What the record asserts, element by element
 
 | Element | Loci | Status | Claims |
 |---|---|---|---|
 | `introit` | Ps 77:1 | composition-only | critical boundary *before c. 165 B.C.* (catholic-critical-v1; USCCB NABRE Psalms introduction), preferred |
 | `epistle` | Eph 4:23–28 | composition-only | *58 A.D. to 63 A.D.* (Catholic Encyclopedia vol. 5, *Ephesians*) and *61 A.D.* (vol. 11, *Paul*), both catholic-traditional-v1, disputed |
-| `gradual` | Ps 140:2 | composition-only | the psalms' critical boundary, as above |
+| `gradual` | Ps 140:2 | composition-only | the psalms' critical boundary, as above; since 2026-10-01 also the traditional attribution *David (reign in the usual chronology)*, *reigned from 1055 to 1015 B.C.* (Catholic Encyclopedia vol. 4, Corbett, *David, King*), catholic-traditional-v1, disputed, inherited from Pss 137 and 140 |
 | `alleluia` | Ps 104:1 | composition-only | the same |
-| `gospel` | Mt 22:1–14 | composition-only | six traditional composition claims for Matthew: *38–45*, *40–42*, *40–45*, *60–68*, *64–67* (vol. 10, *Gospel of St Matthew*) and *about 50* (vol. 14), all disputed; **no narrated-event claim**: the annotation prints *No narrated-event date in the chronology corpus* (`research-pending`) |
-| `offertory` | Ps 137:7 | composition-only | the psalms' critical boundary |
+| `gospel` | Mt 22:1–14 | composition-only, `dated` since 2026-10-01 | six traditional composition claims for Matthew: *38–45*, *40–42*, *40–45*, *60–68*, *64–67* (vol. 10, *Gospel of St Matthew*) and *about 50* (vol. 14), all disputed. Until 2026-10-01 **no narrated-event claim** (the annotation printed *No narrated-event date in the chronology corpus*, `research-pending`); since then the narrated event `life-of-christ.parable-of-the-marriage-feast`, *derived A.D. 29 from February, A.U.C. 782- Passover, 782* (vol. 8, Maas, *Jesus Christ*), catholic-traditional-v1, preferred, `basis_class = "derived"`, direct at all 14 loci; the annotation prints *Event: A.D. 29 (derived).* |
+| `offertory` | Ps 137:7 | composition-only | the psalms' critical boundary; since 2026-10-01 also David's traditional attribution, as for the Gradual |
 | `communion` | Ps 118:4–5 | composition-only | the same |
 | `collect`, `secret`, `postcommunion` | — | — | no Scripture |
 
-Under `catholic-traditional-v1` alone the five psalm elements are
-`undated-in-tradition` (0 claims); under `catholic-critical-v1` each element has
-one claim.
+Under `catholic-traditional-v1` alone the five psalm elements were
+`undated-in-tradition` (0 claims); since 2026-10-01 that holds for Pss 77, 104
+and 118, and Pss 137 and 140 are `attribution-only`. Under
+`catholic-critical-v1` each psalm element has one claim.
 
 **Profile comparisons (declared in the post-acceptance revision of
 2026-09-30).** The page-2 rule asks for the principal modern critical horizon
@@ -1589,6 +1605,24 @@ the registered bytes. Since the revision of 2026-09-30 the record also cites,
 through its two comparisons, the NABRE introductions to Matthew and to
 Ephesians (§ 7.2); they too are bound at `cataloged` only, and the computation
 now also opens this leaf's `research/chronology-profile-comparisons.toml`.
+Since the regeneration of 2026-10-01 the record also cites, for David's reign
+and the parable's derived year, the passage records
+`corbett-david-usual-chronology` (Catholic Encyclopedia vol. 4, printed p. 642)
+and `maas-journeys-six-seven-nine` (vol. 8, printed pp. 378, 380–381), each
+with its tracked New Advent article-text extraction. Unlike the deliveries
+above, both extractions are retained: on 2026-10-01 each was hashed and matched
+its record (`9ec755b9…` and `88b1d692…`) and the cited lines were read —
+Corbett's line 3, "According to the usual chronology, David was born in 1085
+and reigned from 1055 to 1015 B.C. Recent writers have been induced by the
+Assyrian inscriptions to date his reign from 30 to 50 years later"; Maas's
+line 25, "the forty second year before the destruction of Jerusalem is A.D. 29,
+or A.U.C. 782", and lines 129–134, the Ninth journey headed "February, A.U.C.
+782- Passover, 782" and, after the entry into Jerusalem and the Monday, "On
+Tuesday … then He proposes the parable of the two sons, of the wicked
+husbandmen, and of the marriage feast". The passage records were verified on
+the printed pages when they were registered; this revision did not see those
+pages. The passages are bound at `cataloged` and the extractions at
+`inspected`.
 
 **What the engine seals and what this leaf declares (corrected in iteration 1).**
 Iteration 0 wrote here that the chronology corpus's own records and the
@@ -1628,16 +1662,29 @@ five cited sources above remain bound at `cataloged` in
 
 ### 7.4 Limits the page-2 dossier must preserve
 
-1. **No traditional date for any of the five psalms.** Their titles are
+1. **Traditional attribution supplies no composition date for the five psalms.** Their titles are
    attributions — Ps 77 *Intellectus Asaph*; Ps 137 *Ipsi David*; Ps 140
-   *Psalmus David*; Pss 104 and 118 carry *Alleluja* — but the corpus holds no
-   `traditional-attribution` claim for these loci, so no era may be printed for
-   them. The explanatory row may name the titles as titles; it may not date them.
-   Ps 104:1 is also 1 Par 16:8; the corpus does not date that occasion either.
-2. **No narrated-event date for the Gospel.** The parable is spoken in the
-   temple in the exchange of Mt 21:23–22:14; the corpus holds no event claim, and
-   the Date cell's generated annotation says so. No date for the event may be
-   supplied from memory.
+   *Psalmus David*; Pss 104 and 118 carry *Alleluja*. Until 2026-10-01 the
+   corpus held no `traditional-attribution` claim for these loci. Since then it
+   binds Pss 137 and 140 to David's reign in Corbett's usual chronology, a
+   disputed reference era that, as the corpus binding says, neither dates the
+   writing nor supplies an occasion; the explanatory rows print it as the
+   title's reference point and not as the psalm's date, and keep the
+   Psalter's bound as the composition date. Pss 77, 104 and 118 still have no
+   attribution claim, so no era may be printed for them; their rows may name the
+   titles as titles and may not date them. Ps 104:1 is also 1 Par 16:8; the
+   corpus does not date that occasion either.
+2. **The Gospel's event year is derived.** The parable is spoken in the temple
+   in the exchange of Mt 21:23–22:14. Until 2026-10-01 the corpus held no event
+   claim and the Date cell said so. Since then it carries one year, derived from
+   Maas's A.U.C. 782 for the Ninth Journey by the article's own equation with
+   A.D. 29; Maas prints no A.D. year for the parable, and the Date cell marks it
+   "(derived)". The explanatory rows say that it is derived and from what, and
+   do not present the year as Maas's own. Maas's "Tuesday" is kept in the
+   corpus basis and is not printed: it follows the harmony's week, while St
+   Matthew's narrative, which the event row follows, sets the parable on the
+   morning after the entry (21:17–18, 23). No other date for the event may be
+   supplied.
 3. **Matthew's composition is disputed** among six traditional labels; all are
    `disputed`; none is preferred.
 4. **Ephesians** carries two traditional labels (58–63; 61), both disputed.
@@ -1651,8 +1698,8 @@ five cited sources above remain bound at `cataloged` in
    later-disciple hypothesis, conditional and not a consensus, with no place.
    Neither may be printed as part of the default answer.
 
-These limits are open corpus work for the chronology owner (§ 10), not
-something this leaf may fill.
+The unresolved chronology questions belong to the corpus owner (§ 10);
+the attributed eras and the derived Gospel year retain the limits above.
 
 ---
 
@@ -1752,7 +1799,9 @@ something this leaf may fill.
    example a terminal historical appendix using the same generated annotations —
    with every limit of § 7.4 kept.
 5. **Open corpus work, not this leaf's:** traditional-attribution chronology for
-   Pss 77, 104, 118, 137, 140 and a narrated-event claim for Mt 21:23–22:14 (§ 7.4);
+   Pss 77, 104 and 118 (§ 7.4). The corpus now supplies the attribution of
+   Pss 137 and 140 and a narrated-event claim for the appointed Mt 22:1–14,
+   so those former gaps are closed as described in § 7;
    Latin provenance rows for the six scriptural elements (§ 9); the stale
    translation overlay rows (§ 9); the duplicated FSSP France work (§ 8).
 6. **Open research leads:** the Roman Psalter and the Old Latin psalters for the

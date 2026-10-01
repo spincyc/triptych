@@ -52,14 +52,21 @@
 #   computation also opens; being a record of this leaf, sealed with its
 #   research and fingerprinted in research/chronology.toml, it is not an
 #   external owner and is not listed below.
-# - chronology/events.yaml: the narrated-event claims; that none reaches
-#   Mt 22:1-14 is why the Gospel's Date cell reports no event date
-#   (research-pending, the corpus's unauthored default).
+# - chronology/events.yaml: the narrated-event and contextual claims. Until
+#   2026-10-01 none reached Mt 22:1-14, and the Gospel's Date cell reported no
+#   event date; since the corpus commit of that day,
+#   life-of-christ.parable-of-the-marriage-feast gives it a year derived from
+#   Maas's A.U.C. 782, and israel.monarchy.david-traditional-era gives the
+#   Offertory and Gradual David's reign in Corbett's usual chronology as the
+#   reference point of their titles' attribution.
 # - chronology/bindings.yaml: the joins of claims to appointed loci and to their
-#   cited sources, which decide each element's status and relation labels.
+#   cited sources, which decide each element's status and relation labels,
+#   among them, since 2026-10-01, the traditional-attribution binding of
+#   Pss 137 and 140 to David and the event binding of Mt 22:1-14.
 # - chronology/gaps.yaml: its authored undated-in-tradition row for the whole
-#   Psalter, which the record reaches for all five psalm elements under
-#   catholic-traditional-v1 (research/scope.md section 7.2).
+#   Psalter, which the record reaches under catholic-traditional-v1 for the
+#   Introit, Alleluia and Communion; since 2026-10-01 the Offertory and Gradual
+#   are attribution-only under that profile (research/scope.md section 7.2).
 # - the Clementine ebible-latvuc book index: the canon (book identity and order)
 #   against which every appointed locus is resolved.
 # - the Douay-Rheims challoner-gutenberg-1581 edition: its verse texts witness

@@ -61,6 +61,15 @@ document = "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-penteco
 # section 7.2). Both are registered with restricted storage and no retained
 # bytes; the public pages were read through a web fetch, and no acquisition is
 # claimed.
+#
+# A post-acceptance revision of 2026-10-01, made outside the same run after the
+# chronology corpus gave Pss 137 and 140 David's traditional attribution and
+# Mt 22:1-14 a narrated event (corpus commit 84666d2f6), bound the two Catholic
+# Encyclopedia passage records the regenerated record cites for those claims,
+# Corbett's "David, King" and Maas's "Jesus Christ", at `cataloged`, and their
+# tracked article-text extractions at `inspected`: each extraction's SHA-256
+# was recomputed and matched its record, and the cited lines were read. The
+# printed pages behind the passage records were not seen in this revision.
 
 [[bindings]]
 source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
@@ -683,6 +692,45 @@ loci = [
 role = "context"
 states = ["cataloged"]
 context = "Read at: the claim research/chronology.toml cites in its critical-ephesians-composition comparison, Ephesians under the later-disciple hypothesis, around A.D. 80-100. A controlling source of the generated chronology record's comparison under catholic-critical-v1, bound so that its record enters the research seal; the study's and the concise study's Epistle dossiers describe it as the modern critical horizon, conditional and not a consensus. Restricted storage; no registered bytes are retained. The public introduction was read through a web fetch on 2026-09-30 and carries the cited label (research/scope.md section 7.2). No acquisition is claimed."
+
+[[bindings]]
+source_id = "passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology"
+loci = [
+  "article 'David, King,' printed p. 642, opening paragraph",
+]
+role = "context"
+states = ["cataloged"]
+context = "A controlling source of the generated chronology record since 2026-10-01: the traditional-attribution claim israel.monarchy.david-traditional-era, 'reigned from 1055 to 1015 B.C.', disputed, that the record carries for the Offertory (Ps 137:7) and the Gradual (Ps 140:2). The study's and the concise study's dossiers for both psalms describe it as David's reign in the usual chronology, the reference point of the titles' attribution and not a date of either psalm, and the two References cite the article at p. 642. The passage record was verified on the page image when it was registered; this revision read the tracked article text bound below, not the printed page."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"
+loci = [
+  "line 3",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f6d97140146a6cb3adcbb583db08c82f18a5f42f59b85e884f8feabb8380640d"
+context = "Catholic Encyclopedia, Corbett's 'David, King', tracked article-text extraction, hashed and matched to its record by SHA-256 on 2026-10-01, read at line 3: 'According to the usual chronology, David was born in 1085 and reigned from 1055 to 1015 B.C. Recent writers have been induced by the Assyrian inscriptions to date his reign from 30 to 50 years later.' The record's traditional-attribution claim for Pss 137 and 140 cites it, and the two psalms' dossiers report both sentences."
+
+[[bindings]]
+source_id = "passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-six-seven-nine"
+loci = [
+  "article 'Jesus Christ,' III.B.3, printed p. 378 and pp. 380-381: chronological calibration and Sixth, Seventh, and Ninth Journeys",
+]
+role = "context"
+states = ["cataloged"]
+context = "A controlling source of the generated chronology record since 2026-10-01: the narrated-event claim life-of-christ.parable-of-the-marriage-feast, 'derived A.D. 29 from February, A.U.C. 782- Passover, 782', preferred and derived, that the record carries for the Gospel (Mt 22:1-14). The study's and the concise study's Gospel dossiers say that the year is derived, that the article sets the parable within a journey it dates by the founding of Rome and equates that year with A.D. 29, and the two References cite the article at pp. 378 and 380-381. The passage record was verified on the page images when it was registered; this revision read the tracked article text bound below, not the printed pages."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text"
+loci = [
+  "line 25",
+  "lines 129-134",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:fe5c1682bc9df4a6ffe2e0a61f7ac28267f049a6ffef975b9a78bc795774f656"
+context = "Catholic Encyclopedia, Maas's 'Jesus Christ' (the New Advent page 'Chronology of the Life of Jesus Christ'), tracked article-text extraction, hashed and matched to its record by SHA-256 on 2026-10-01, read at line 25 ('the forty second year before the destruction of Jerusalem is A.D. 29, or A.U.C. 782') and lines 129-134 (the Ninth journey, 'February, A.U.C. 782- Passover, 782', and, after the entry into Jerusalem, 'On Tuesday ... Jesus answers the enemies' questions as to His authority; then He proposes the parable of the two sons, of the wicked husbandmen, and of the marriage feast'). The record's derived event year for Mt 22:1-14 cites it."
 
 [[bindings]]
 source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum"

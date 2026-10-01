@@ -1399,3 +1399,76 @@ declared contracts and `check-generation-metadata` pass, and
 confirmed the cause, the definitions' identity with hyperref's, and the links,
 bookmarks and pixels of all 27 rebuilt PDFs; its advisory that the References
 anchor sat below its heading was answered by moving the anchor before it.
+
+
+## Post-acceptance revision answering every standing finding, 2026-10-01
+
+The interrupted chronology revision was recovered and completed outside the
+recorded production run. The earlier accepted reviews above remain historical;
+this entry describes newly built artifacts prepared for an independent review,
+not a renewed workflow acceptance. The recovery contributor is the exposed
+GPT-6 identity in the OpenAI Codex harness, with lane-declared effort high;
+exact model variant, runtime effort, sampling, client version and server
+revision are unexposed. Prior contribution records are retained.
+
+### Findings and dispositions
+
+| Finding | Witness checked in this revision | Disposition and repair |
+| --- | --- | --- |
+| New David attribution conflicts with older dossier wording | Corbett, “David, King”, tracked article-text extraction, line 3; extraction SHA-256 matched its artifact record | Repaired in both Date dossiers, scope appendices and References: the title's attribution uses David's reign as its reference point, not as the psalm's composition date. Corbett's usual chronology and his report of later datings remain distinct. Scope §§ 7 and 10 and review-dependency comments now agree. |
+| The newly answered wedding-feast event conflicts with the old unresolved-event prose | Maas, “Jesus Christ”, tracked article text, line 25 and lines 129–134; extraction SHA-256 matched its record | Repaired in both Gospel dossiers, scope appendices and References. A.D. 29 is explicitly derived by applying Maas's own A.U.C. 782 equation to his Ninth Journey, and the generated cell says “(derived)”. Scope records that Maas's harmony places the parable on Tuesday while Matthew's narrative sequence describes the day after the entry; no independent conversion or reconciliation is claimed. |
+| Chronology evidence missing from leaf bindings | The two registered passage records and their tracked article-text artifacts | Four bindings added: cataloged passage records and inspected article-text extractions for Corbett and Maas. The printed article pages were not inspected in this recovery; binding states and contexts say so. |
+| Earlier REV-V-002 comparison-label advisory | Current generated annotations and rendered Date cells | Already repaired by the shared projection: the visible comparison heading is “Composition (Catholic critical chronology, for comparison)”. Profile keys remain only as machine arguments. |
+| Earlier standing findings | Current standing-findings record | All 15 advisories and 6 observations already have dispositions; none was reopened without contrary evidence. This revision addresses the chronology changes above, preserving the prior interpretation repairs. |
+
+### Layout repairs
+
+The extra Gospel explanation stays with its dossier on study page 30. The
+Epistle dossier begins whole on page 31. No shared dimensions or typography
+changed. The concise study still has inventory, overview and senses on page 1,
+chronology on 2, themes on 3–4 and commentary beginning on 5. Its References,
+timestamp and rights colophon still share page 12; the study remains 33 pages
+and the homily 3. The spoken homily is unchanged.
+
+This lane viewed the four contact sheets for these three PDFs, then full-size
+changed text pages: study 30–33, concise 2,
+11–12 and homily 3. No overlap, clipped text, broken dossier or colophon-only
+page was seen. Comparison with the installed PDFs was by extracted page text;
+no claim of pixel identity is made.
+
+### Artifacts
+
+Built with `make doc PROVIDER=claude DOC=<edition>`; web Markdown generated
+with `tools/tpt web-edition --provider claude <document>` under the pinned
+Markdown 3.10.3 environment. Build outputs only; not installed by this lane.
+
+| Output | Pages | Bytes | SHA-256 |
+| --- | ---: | ---: | --- |
+| study | 33 | 531,416 | `2220a1bb3bbe779e7851bd7f48648089de3fd1f1ede43f31e7ecbedec5198559` |
+| concise study | 12 | 450,750 | `b98cf300505245e81cc6b14d8843a57f429fc141a66b16a5260756c44fb1fb1f` |
+| homily | 3 | 259,494 | `a2e50073e13725a1297e8093bf3c0b88aca881142787a57dab85adfa16a51246` |
+| web Markdown | — | 136,420 | `14f5d48375abdd14f89073701f9b044b00b4fd7eae0a1ad5ed2df5634093b433` |
+
+### Checks run
+
+The chronology record and annotations were regenerated through the tool and
+both `--check` commands pass. All 39 leaf content/preflight checks pass (three
+editions, content gate plus the twelve preflight checks, including chronology
+support and the original run's provenance). The content gates also pass with
+`--require-presentation --require-format --require-authority`; the research
+phase passes too. After recording
+`snapshot` and `snapshot-web`, the artifacts-phase gate and
+`tools/check-web-edition` pass. All three settled TeX logs are free of overfull
+or underfull boxes, warnings, undefined references and rerun requests; all
+fonts are embedded. The normal build recipe's contents-anchor check passes.
+`git diff --check` passes for the leaf.
+
+`tools/tpt source-library validate` passes on the final rerun:
+artifact=2918, corpus=5, edition=1050, passage=5260, segment=94, work=935,
+bindings=3543. An intermediate run had encountered newly added shared recovery
+passage records whose `artifact_page_ranges` lacked a controlling artifact
+`page_count`; the shared lane corrected that transient state. No shared source
+record was edited here. The coordinator retains inventory/release refresh and
+installation. Receipts record bytes and do not renew the old review seals.
+Independent review of the hashes above is pending at this entry's preparation;
+its verdict must be recorded by the coordinator.

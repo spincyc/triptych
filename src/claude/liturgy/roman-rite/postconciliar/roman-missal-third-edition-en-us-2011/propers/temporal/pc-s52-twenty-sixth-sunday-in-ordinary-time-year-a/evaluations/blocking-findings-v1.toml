@@ -70,6 +70,11 @@ observation_count = 1
 # and second round"), a second round of the same day amended the notes of
 # SYN-001, SYN-002 and VIS-001 and of the observation.
 
+# Recovery revision, 2026-10-01: WEB-001 and the visual chronology
+# observation now have verified dispositions; SYN-002 also records closure
+# of the later RECHECK-A-001 / KI-019 Moral qualification gap. The original
+# run counts and verdicts above are historical and unchanged.
+
 [[stages]]
 stage = "homily-review"
 iteration = 0
@@ -327,7 +332,7 @@ problem = "The postconciliar profile requires the page-1 overview rows to preser
 required_result = "Mark the Chrysostom/Augustine clause of the Allegorical row and the Aquinas exaltation clause of the Anagogical row as holding where the longer form is read, and do the same in the closing comparison. Alternatively, restore Hilary on the servant's lowliness (Ps 118:50) beside Aquinas, so that the exaltation clause keeps a witness that holds under both forms."
 resolution = "repaired"
 resolution_date = "2026-09-25"
-resolution_note = "Verified against the longer-form marks of research/interpretations.md. The concise allegorical and anagogical rows and the closing comparison now mark the clauses that rest on Phil 2:6-11, and Hilary on the servant's lowliness stands beside Aquinas. The same gap in the study's third interpretation (allegorical and anagogical senses) and in research/interpretations.md was repaired too. Second round (REV-A-001, verified on the CSEL 22, p. 419 page image): Hilary's locus is Ps 118:50, the first Communion antiphon, itself an alternative, so his clause is now marked as holding where that antiphon is chosen in all four places, and every other sense clause resting on one Communion antiphon is marked the same way in the concise rows and comparison, the study's first and third interpretations and research/interpretations.md."
+resolution_note = "Verified against the longer-form marks of research/interpretations.md. The concise allegorical and anagogical rows and the closing comparison now mark the clauses that rest on Phil 2:6-11, and Hilary on the servant's lowliness stands beside Aquinas. The same gap in the study's third interpretation (allegorical and anagogical senses) and in research/interpretations.md was repaired too. Second round (REV-A-001, verified on the CSEL 22, p. 419 page image): Hilary's locus is Ps 118:50, the first Communion antiphon, itself an alternative, so his clause is now marked as holding where that antiphon is chosen in all four places, and every other sense clause resting on one Communion antiphon is marked the same way in the concise rows and comparison, the study's first and third interpretations and research/interpretations.md. Recovery revision 2026-10-01: the independent re-check's remaining Moral clauses (RECHECK-A-001, inventory KI-019) are now marked as longer-form-only in sections/40-the-mind-of-christ-jesus.tex and sections/concise/10-commentary.tex. Aquinas on Phil 2:8 (Super Philippenses c. 2, lect. 2, Dessain 1857 vol. 2 p. 379, retained OCR) and Chrysostom on Phil 2:11 (Hom. in Phil. 7, retained NPNF1-13 text) were re-read for the branch limit; research/interpretations.md already carried both marks."
 
 [[advisories]]
 stage = "synthesis-review"
@@ -369,14 +374,14 @@ severity = "advisory"
 location = "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a.md lines 82-92, The Appointed Texts > Responsorial Psalm (source: sections/05-appointed-texts.tex lines 93-115, two consecutive englishwitness environments)"
 problem = "The converter writes the response witness (Ps 24:6, first half) and the psalm witness (Ps 24:4-9) as two blockquotes separated only by a blank line. Python-Markdown merges them into one <blockquote>, so the site shows a single shaded quotation box where the PDF sets two separate quotation blocks. Both small-caps labels and all the text survive, and the second label still marks where the second witness begins, so no reader is misled. The difference is the loss of the semantic and visual division between two distinct quotations. The already-tracked pc-s51 edition shows the same behaviour, so the cause is in the converter."
 required_result = "If the converter is revised, emit consecutive quotation environments as distinct blockquotes, for example by placing a non-rendering separator such as an HTML comment between them. The Responsorial Psalm's response and psalm would then render as two quotation blocks, as in the PDF, and the audit should check that each englishwitness maps to exactly one blockquote."
-resolution = "open"
-resolution_date = "2026-09-25"
-resolution_note = "Not repaired by this leaf revision: the defect is in the web converter (tools/web-edition), outside the leaf and shared with other publications. The maintainer's known-issues register holds it for express authority."
+resolution = "repaired"
+resolution_date = "2026-10-01"
+resolution_note = "Already repaired in the shared converter by d33956978. The current edition was regenerated under pinned Python-Markdown 3.10.3 on 2026-10-01; the response and psalm witnesses have an intervening HTML comment, and rendering their section yields exactly two blockquotes. No leaf-specific converter change was needed."
 
 [[observations]]
 stage = "visual-review"
 location = "Expansive study PDF p. 27 and concise study PDF p. 2, First Reading and Entrance Antiphon Date cells (generated research/chronology-annotations.tex)"
 note = "The generated annotation prints the source labels bare after the relation words, which reads awkwardly: 'Historical setting: Preferred In the eighth year of his reign' has a capital 'In' mid-phrase, and 'Prophecy given: Duration: From Ezek. xxix, 17 it appears ...' and 'Historical setting: Duration: all these nations shall serve ...' carry a doubled label and an unquoted source sentence. A leaf may not hand-edit these cells, so any fix belongs to the chronology projection's formatting (for example quoting or lower-casing the source label), which is outside this run's repair owners."
-resolution = "open"
-resolution_date = "2026-09-25"
-resolution_note = "Verified on the rebuilt study, p. 27, and concise study, p. 2. The cells are generated into research/chronology-annotations.tex and may not be hand-edited; the fix belongs to the chronology projection outside this leaf. Not repaired by this leaf revision. Second round: after the projection's disposition wording changed, the annotations were regenerated, and the First Reading cell now reads 'Preferred: In the eighth year of his reign; alternatives: A.M. 3405, B.C. 597.' The doubled 'Duration:' label and the unquoted source sentence in the Prophecy given and Entrance Antiphon cells remain, so the observation stays open."
+resolution = "repaired"
+resolution_date = "2026-10-01"
+resolution_note = "Already repaired by the shared corpus/projection revision 84666d2f6; record and annotations regenerated and checked on 2026-10-01, then read in study p. 27 and concise p. 2. The cells now print quoted source phrases followed by (duration), without a doubled Duration label. Preferred and alternatives have colons. Schets's 598 B.C. alternative is retained beside Reid's 597 B.C.; both dossiers and research/scope.md now distinguish them. No generated cell was edited by hand."

@@ -1281,3 +1281,82 @@ declared contracts and `check-generation-metadata` pass, and
 confirmed the cause, the definitions' identity with hyperref's, and the links,
 bookmarks and pixels of all 27 rebuilt PDFs; its advisory that the References
 anchor sat below its heading was answered by moving the anchor before it.
+
+
+## Post-acceptance revision answering every standing finding, 2026-10-01
+
+The recovery revision was completed outside the recorded production run. The
+earlier accepted reviews above remain historical; this entry describes new
+artifacts prepared for an independent review, not renewed workflow acceptance.
+The recovery contributor is the exposed GPT-6 identity in the OpenAI Codex
+harness, with lane-declared effort high; exact variant, runtime effort,
+sampling, client version and server revision are unexposed. Prior contribution
+records are retained.
+
+### Findings and dispositions
+
+| Finding | Witness checked in this revision | Disposition and repair |
+| --- | --- | --- |
+| KI-019 / RECHECK-A-001: two Moral clauses lack the longer-form limit | Aquinas, *Super Philippenses* c. 2, lect. 2, Dessain 1857 vol. 2 p. 379, retained OCR lines 40178–40182 (the reading of Phil 2:8); Chrysostom, *Hom. in Phil.* 7, retained NPNF1-13 text lines 19682–19713 (Phil 2:11) | Repaired in `sections/40-the-mind-of-christ-jesus.tex`: both obeying against one's inclination and the warning against right praise with wrong conduct are now explicitly within the longer form. The concise comparison's corresponding Aquinas clause is marked in `sections/concise/10-commentary.tex`. The clauses that hold with either form remain distinct. `research/interpretations.md` already marked both longer-form-only; no new quote, witness or interpretation was added. SYN-002's resolution note records closure of the later re-check. |
+| WEB-001: adjacent response and psalm witnesses merge | Current generated Markdown, rendered with Python-Markdown 3.10.3 | Already repaired by shared converter commit `d33956978`. After regeneration, the separator comment yields exactly two blockquotes for the two witnesses. The standing finding is marked repaired. |
+| Visual observation: doubled duration labels and bare source sentences | Current generated annotations; Entrance Antiphon and First Reading cells in study p. 27 and concise p. 2 | Already repaired by shared corpus/projection revision `84666d2f6`: the source phrases are quoted and followed by “(duration)”, without a doubled label. The standing observation is marked repaired. |
+| Generated captivity alternatives outgrow the singular explanatory prose | Reid, “Captivities of the Israelites”, retained article-text line 27 (597 B.C.), and Schets, “Ezekiel”, retained article-text line 3 (598 B.C.) | Repaired in both Date dossiers and `research/scope.md`: Reid's surrender year and Schets's deportation year, one year earlier, are distinguished. Both generated alternatives remain; the Ezekiel ministry duration is separate. |
+
+The earlier RECHECK-A-001 paragraph above records the historical open state;
+its rendered qualification gap is closed by this revision. The other 20
+advisories were already disposed. No unresolved entry remains in this leaf's
+standing-findings record.
+
+### Layout repairs
+
+The branch qualification was worded within the existing Moral paragraph, and
+the concise comparison retained its page break. Both studies keep their prior
+33 and 12 pages, and the homily keeps 4; its spoken body is unchanged. The
+concise contract still places inventory, overview and senses on page 1,
+chronology wholly on 2, themes on 3–4 and commentary from 5. The study's Gospel
+dossier remains whole on page 28; References, timestamp and rights colophon
+share each document's final page. No shared typography changed.
+
+This lane viewed the four contact sheets for these three PDFs, then full-size
+changed text pages: study 25, 27 and 33, concise 2, 10 and 12, homily 4. No
+overlap, clipped text, broken dossier or colophon-only page was seen. Comparison
+with the installed PDFs was by extracted page text; no pixel-identity claim is
+made. The retained OCR and text witnesses above were read for the branch
+qualification; no fresh facsimile inspection is claimed.
+
+### Artifacts
+
+Built with `make doc PROVIDER=claude DOC=<edition>`; web Markdown generated
+with `tools/tpt web-edition --provider claude <document>` under the pinned
+Markdown 3.10.3 environment. Build outputs only; not installed by this lane.
+
+| Output | Pages | Bytes | SHA-256 |
+| --- | ---: | ---: | --- |
+| study | 33 | 570,695 | `09aad64dfb2829b1c27b82cb7efbd9acecb128e0f2d2c488669ff3d8d8bcf267` |
+| concise study | 12 | 447,528 | `18bc4f836acd67ca1ab6c2b64d38d9ccc846101b6684fafc964cd447fe90d109` |
+| homily | 4 | 286,448 | `e391c3398c0823605e35febac377c2741cdedaf3f29fc15d0ed9d6efdda62304` |
+| web Markdown | — | 132,790 | `7cca8344c38ce15f2a051fcf33d73578ff5f9a25d0aa9385e39f58335bd7a514` |
+
+### Checks run
+
+The chronology record and annotations were regenerated through the tool and
+both `--check` commands pass. All 39 leaf content/preflight checks pass (three
+editions, content gate plus the twelve preflight checks, including chronology
+support and the original run's provenance). The content gates also pass with
+`--require-presentation --require-format --require-authority`; the research
+phase passes too. After recording
+`snapshot` and `snapshot-web`, the artifacts-phase gate and
+`tools/check-web-edition` pass. All three settled TeX logs are free of overfull
+or underfull boxes, warnings, undefined references and rerun requests; all
+fonts are embedded. The normal build recipe's contents-anchor check passes.
+`git diff --check` passes for the leaf.
+
+`tools/tpt source-library validate` passes on the final rerun:
+artifact=2918, corpus=5, edition=1050, passage=5260, segment=94, work=935,
+bindings=3543. An intermediate run had encountered newly added shared recovery
+passage records whose `artifact_page_ranges` lacked a controlling artifact
+`page_count`; the shared lane corrected that transient state. No shared source
+record was edited here. The coordinator retains inventory/release refresh and
+installation. Receipts record bytes and do not renew the old review seals.
+Independent review of the hashes above is pending at this entry's preparation;
+its verdict must be recorded by the coordinator.
