@@ -168,7 +168,7 @@ source_fingerprint = "sha256:a5698ebe70292d9dc1c32df2c8cc440778cb8d0dc2f840f11d1
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c-article-text"
-loci = ["Durand, The Synoptics, Origin, paragraph distinguishing original Aramaic and Greek rendering, line29"]
+loci = ["Durand, The New Testament, Origin, paragraph distinguishing original Aramaic and Greek rendering, line29"]
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 context = "Retained historical article locus read as controlling evidence behind canonical chronology. Alternative proposals and uncertainty retained; no local replacement biblical dates."
@@ -227,3 +227,19 @@ role = "reception"
 states = ["cataloged", "acquired", "inspected"]
 context = "Whole volume acquired; competition paragraph and context read. Called/chosen formula repurposed for differential survival. Cultural reception, not theological or scientific endorsement."
 source_fingerprint = "sha256:e48cbcc43d573db112aa84c738dbf351ff8addcd5a26df37097970d2881deb2f"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text"
+loci = ["Maas, Chronology of the Life of Jesus Christ, line 25 and Ninth Journey, lines 130–134"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Retained article loci inspected on 2026-10-01: Maas places the marriage-feast parable on Tuesday in the closing week of his Ninth Journey. The corpus supplies the explicitly derived event year; the source supplies the journey setting and its own Roman/Christian-year equation. No replacement chronology was inferred locally."
+source_fingerprint = "sha256:fe5c1682bc9df4a6ffe2e0a61f7ac28267f049a6ffef975b9a78bc795774f656"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"
+loci = ["Corbett, King David, opening paragraph, line 3"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Retained opening paragraph inspected on 2026-10-01. Its usual chronology supplies the generated Davidic regnal reference frame; it is neither a composition date for Pss 137 and 140 nor modern consensus. The adjacent alternative dating remains a qualification of Corbett’s account."
+source_fingerprint = "sha256:f6d97140146a6cb3adcbb583db08c82f18a5f42f59b85e884f8feabb8380640d"

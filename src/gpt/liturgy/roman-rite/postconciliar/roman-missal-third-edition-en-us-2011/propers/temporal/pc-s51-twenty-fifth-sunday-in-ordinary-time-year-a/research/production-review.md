@@ -1368,3 +1368,71 @@ declared contracts and `check-generation-metadata` pass, and
 confirmed the cause, the definitions' identity with hyperref's, and the links,
 bookmarks and pixels of all 27 rebuilt PDFs; its advisory that the References
 anchor sat below its heading was answered by moving the anchor before it.
+
+
+## Post-acceptance revision answering every standing finding, 2026-10-01
+
+### Findings and dispositions
+
+The standing findings register has no undisposed advisory, observation or
+escalation. The generated chronology was refreshed against the repaired
+projection: the Johannine approximate composition range retains `c.`, and
+relation labels, competing estimates and unresolved event dates remain intact.
+The full and concise dossiers agree with the generated record. No new date,
+interpretation or source acquisition was introduced.
+
+### Layout repairs
+
+No layout adjustment was needed. The existing page counts and declared page
+contracts hold. All page contact sheets were inspected; full-size inspection
+covered full pages 17–18 and concise page 2. No clipping,
+overlap or displaced date content was found in those inspected pages.
+The generation timestamp is `2026-10-01T22:25:03Z`; the new contribution
+records GPT-6, requested high effort, and explicitly unexposed runtime details.
+Prior contributors and the original workflow provenance are preserved.
+
+### Artifacts
+
+These are the completed build artifacts, not installation claims. Paths are
+relative to the repository root.
+
+| Artifact | Pages | Bytes | SHA-256 |
+| --- | ---: | ---: | --- |
+| `build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf` | 3 | 273725 | `514a1cdb4719e5e9d7609dbe1da46093ff5c1d5e0abc37165237117c503e64d0` |
+| `build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf` | 10 | 419312 | `094320d3d17c59748097f43eb1a4c1407456bf51c432099495799c6eef0fd0c4` |
+| `build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf` | 20 | 440568 | `1ccb31ee142e83a86aaeb4586a371c16da934e998cee3fd693a241035da588cb` |
+| `build/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md` | — | 72888 | `e13bf85f26b02d0ba75393494f4b6fe7f632f2126f81f27562b0e8a1bd0646a2` |
+
+The current schema-2 `research/artifacts.json` and `research/web-artifact.json`
+were recorded by the snapshot commands after the final successful builds.
+
+### Checks run
+
+- `proper-chronology record` and `annotations`, each `--write` and `--check`: passed.
+- Normal `make doc` for every declared edition: passed, including the anchor
+  and generation-metadata gates. Settled logs have no warning, undefined
+  reference, overfull/underfull box or rerun request.
+- Edition-specific content checks: passed. All default
+  `check-content-preflight` checks and the separate `provenance-matches-run`
+  check against the original recorded run identity: passed.
+- Artifact checks with presentation and format requirements: passed.
+- `source-library validate`: passed.
+- Web generation with the pinned Markdown 3.10.3 environment and
+  `check-web-edition`: passed.
+- `pdfinfo`, full text extraction and font inspection: succeeded; every font
+  is embedded. The bounded `pdf-review` helper rendered every page.
+- Scoped `git diff --check`: passed.
+
+The exact command/exit records and build, preflight, artifact, web and raster
+logs are retained under `.scratch/recovery-leaf-gpt/`. The raster set is under
+`build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-recovery-review/rasters/`.
+
+### Review boundary
+
+This entry records the recovery author’s checks and visual inspection. The
+coordinator has dispatched an independent content, visual and web review of
+the exact hashes above; that review is pending at this entry. Earlier accepted
+workflow seals remain historical and were not restamped as current acceptance.
+Installation, publication projections, release bindings and deployment remain
+with the coordinator. No source, rights, appointment or local-calendar
+limitation was broadened by this repair.

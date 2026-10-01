@@ -19,8 +19,9 @@ liturgical rearrangement; the inventory and appointed texts retain that order.
   was not reopened, and remains catalog-only in this leaf's binding.
 - The retained American 1899 Douay text at Ps 32:1 names David; the draft's
   assertion that no author is named was incorrect. This is title attribution,
-  not a newly inferred writing date. The current corpus has no traditional
-  era bound to this psalm. Ps 75 names Asaph, Ps 101 an afflicted speaker,
+  not a newly inferred writing date. At that revision the corpus had no traditional
+  era bound to this psalm. The 2026-10-01 recovery adds the corpus's newly
+  bound Davidic regnal frame, explicitly as attribution rather than composition. Ps 75 names Asaph, Ps 101 an afflicted speaker,
   and Ps 118 no named author.
 - Gigot, *Book of Daniel*, “Authorship and date of composition,” was read
   in the complete retained article text. It gives the existing traditional

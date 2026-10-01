@@ -614,3 +614,81 @@ declared contracts and `check-generation-metadata` pass, and
 confirmed the cause, the definitions' identity with hyperref's, and the links,
 bookmarks and pixels of all 27 rebuilt PDFs; its advisory that the References
 anchor sat below its heading was answered by moving the anchor before it.
+
+
+## Post-acceptance revision answering every standing finding, 2026-10-01
+
+### Findings and dispositions
+
+KI-023 and the corresponding STU-001 / SYN-CIT-001 advisories are repaired.
+Durand's article is *The New Testament* (1912), as the retained title (line 1),
+Origin section (lines 17–39) and registered metadata establish. The full and
+concise references now use that title; the two advisory records carry dated
+`resolution = "repaired"` dispositions. Earlier production statements that
+these advisories remained open describe those earlier review states.
+
+KI-024 is repaired by removing the extra terminal blank lines from
+`synthesis.tex` and its five opening component files. The interrupted lane's
+before/after concise PDFs are byte-identical at SHA-256
+`b01e1baf95137a4c9d28bb72bea27b7de673a249c2baa493177e864c904e9d82`,
+confirming that this isolated whitespace repair changed no printed content.
+The accepted VIS-001 disposition for the sparse final bibliography page remains
+applicable; it is not an undisposed finding. The chronology was regenerated
+and checked, preserving its unresolved Matthew event and its explicit
+interpretation of `01-14` as 14 Nisan.
+
+### Layout repairs
+
+No layout adjustment was needed. The existing page counts and declared page
+contracts hold. All page contact sheets were inspected; full-size inspection
+covered full pages 18–19 and 21, and concise pages 2 and 11. No clipping,
+overlap or displaced date content was found in those inspected pages.
+The generation timestamp is `2026-10-01T22:25:03Z`; the new contribution
+records GPT-6, requested high effort, and explicitly unexposed runtime details.
+Prior contributors and the original workflow provenance are preserved.
+
+### Artifacts
+
+These are the completed build artifacts, not installation claims. Paths are
+relative to the repository root.
+
+| Artifact | Pages | Bytes | SHA-256 |
+| --- | ---: | ---: | --- |
+| `build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-homily.pdf` | 3 | 244824 | `7eb824cac27d8dc3d91a615c7655b87616c5cfc2975bc0c23b9f2a654c29008b` |
+| `build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-synthesis.pdf` | 11 | 442442 | `a5e7f36ff9deb36f72147756044b3aa2455ca9482684818cd7ae193ddda25b7b` |
+| `build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.pdf` | 21 | 485221 | `c33098c122dc9fcafdbd55e225a989ab20822e3d81f05bf222f3dd76e8fa700c` |
+| `build/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.md` | — | 77610 | `07a676484c738e02e9b95f31fac19ed27eff64f3edfb40af2a85d729e336bb74` |
+
+The current schema-2 `research/artifacts.json` and `research/web-artifact.json`
+were recorded by the snapshot commands after the final successful builds.
+
+### Checks run
+
+- `proper-chronology record` and `annotations`, each `--write` and `--check`: passed.
+- Normal `make doc` for every declared edition: passed, including the anchor
+  and generation-metadata gates. Settled logs have no warning, undefined
+  reference, overfull/underfull box or rerun request.
+- Edition-specific content checks: passed. All default
+  `check-content-preflight` checks and the separate `provenance-matches-run`
+  check against the original recorded run identity: passed.
+- Artifact checks with presentation and format requirements, plus authority: passed.
+- `source-library validate`: passed.
+- Web generation with the pinned Markdown 3.10.3 environment and
+  `check-web-edition`: passed.
+- `pdfinfo`, full text extraction and font inspection: succeeded; every font
+  is embedded. The bounded `pdf-review` helper rendered every page.
+- Scoped `git diff --check`: passed.
+
+The exact command/exit records and build, preflight, artifact, web and raster
+logs are retained under `.scratch/recovery-leaf-gpt/`. The raster set is under
+`build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-recovery-review/rasters/`.
+
+### Review boundary
+
+This entry records the recovery author’s checks and visual inspection. The
+coordinator has dispatched an independent content, visual and web review of
+the exact hashes above; that review is pending at this entry. Earlier accepted
+workflow seals remain historical and were not restamped as current acceptance.
+Installation, publication projections, release bindings and deployment remain
+with the coordinator. No source, rights, appointment or local-calendar
+limitation was broadened by this repair.

@@ -283,7 +283,7 @@ Paulin Ladeuze, Catholic Encyclopedia1909, “Epistle to the Ephesians,”
 “Date and place of composition; occasion”; Ferdinand Prat,1911, “St Paul,”
 “Chronology,” concluding dated table; E. Jacquier,1911, “Gospel of St
 Matthew,” “Date and place of composition”; Alfred Durand,1912, “The
-Synoptics,” “Origin,” paragraph on original Aramaic Matthew and its Greek
+New Testament,” “Origin,” paragraph on original Aramaic Matthew and its Greek
 rendering. They are dated scholarly witnesses, not a modern consensus.
 Ladeuze's captivity range and Prat's narrower year remain distinct.
 Ladeuze prefers Rome over Caesarea but calls the issue disputed. Jacquier
@@ -347,16 +347,11 @@ The default cascade still returns Ladeuze's and Prat's traditional alternatives;
 the new answer remains a separate generated comparison. No traditional date,
 profile policy, appointment, or interpretation has been replaced.
 
-**Projection limitation and separate tooling follow-up.** The current
-`concise_display_label` in `scripts/_proper_chronology.py` recognizes
-`about`, `approximately` and `c.` as approximation cues, but not the source's
-`around`. Its generated date alone therefore reads `A.D. 80–100`, while
-the sealed raw source label still includes `around`. The corpus subject title
-explicitly includes `(approximate)` so the complete generated comparison
-preserves the source's uncertainty without a hand-edited annotation or
-replacement date label. This is a source-owned qualification, not a repaired
-tool. A separate tooling change should recognize `around` and test that this
-interval renders with its approximation cue; no shared code was changed here.
+**Projection repair, 2026-10-01.** The shared projection now recognizes the
+source's `around` as a year hedge and prints `c. A.D. 80–100`, preserving the
+conditional later-disciple subject and disputed disposition. The original
+raw source label remains sealed in the generated annotation; the critical
+comparison remains separate from the traditional alternatives.
 
 **Study-owner follow-through (STU-CHR-001).** After research review, replace
 the final Epistle dossier paragraph in `sections/70-date-location.tex` with
@@ -373,9 +368,15 @@ replace its Gregory URL with the edition's actual index,
 and the section locators. These reader-facing files remain with their
 authoring owner.
 
-No narrated-event date for Matt22 is returned: retain the explicit pending
-state. The Temple/Jerusalem setting comes from the contiguous narrative,
-not a computation of a date. Ephesians addresses a Christian community
+The current generated record supplies a narrated-event year for Matt 22:1–14,
+explicitly derived from Maas's Ninth Journey reckoning. His retained article,
+“Chronology of the Life of Jesus Christ,” places the marriage-feast parable on
+the Tuesday of that journey's closing week (article-text lines 130–134);
+its A.U.C./A.D. equation appears at line 25. The derived value is taken only
+from the corpus. The Temple/Jerusalem setting comes from the contiguous
+narrative, not from the numerical derivation. Corbett's “usual chronology”
+provides the generated Davidic attribution frame for Pss 137 and 140; that
+regnal frame does not date either poem's composition. Ephesians addresses a Christian community
 traditionally associated with Ephesus/Asia Minor; the address and original
 destination are debated. Prayer psalms do not supply one recoverable scene
 of composition or one travel itinerary. The canonical broad psalm boundary

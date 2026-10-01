@@ -1445,3 +1445,79 @@ declared contracts and `check-generation-metadata` pass, and
 confirmed the cause, the definitions' identity with hyperref's, and the links,
 bookmarks and pixels of all 27 rebuilt PDFs; its advisory that the References
 anchor sat below its heading was answered by moving the anchor before it.
+
+
+## Post-acceptance revision answering every standing finding, 2026-10-01
+
+### Findings and dispositions
+
+The standing findings register has no undisposed advisory, observation or
+escalation. The new Psalm 32 attribution binding exposed a contradiction:
+the prose said no traditional era was established while the generated cell
+now supplies David's reign in Corbett's qualified usual chronology. The full
+and concise date dossiers now distinguish that regnal frame from the poem's
+composition. Both bibliographies cite Corbett's *King David* (1908), and the
+source binding pins the inspected opening paragraph (retained article line 3),
+including its later-dating qualification. The earlier chronology-revision
+note now identifies its no-era statement as the state at that earlier revision.
+
+The generated Daniel row retains “seventy years” as a duration and the
+separate composition date. The shared web converter's corrected quotation
+retention audit now accepts this genuine source phrase. No numerical event
+date was added for Matthew 22:34–46.
+
+### Layout repairs
+
+No layout adjustment was needed. The existing page counts and declared page
+contracts hold. All page contact sheets were inspected; full-size inspection
+covered full pages 19–20 and concise page 2. No clipping,
+overlap or displaced date content was found in those inspected pages.
+The generation timestamp is `2026-10-01T22:25:03Z`; the new contribution
+records GPT-6, requested high effort, and explicitly unexposed runtime details.
+Prior contributors and the original workflow provenance are preserved.
+
+### Artifacts
+
+These are the completed build artifacts, not installation claims. Paths are
+relative to the repository root.
+
+| Artifact | Pages | Bytes | SHA-256 |
+| --- | ---: | ---: | --- |
+| `build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf` | 3 | 242757 | `d6cc760a4b7de5c66b23f8529b3fe9a7050785fcaa3d6cd0822faf05e25ac6fa` |
+| `build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf` | 10 | 463937 | `89e976f3273d6280fbf8af3c59f055badcd6d665bd4d178d46da9665ecd8d82d` |
+| `build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf` | 22 | 473330 | `32971a439bb82c452276e542633beb7f8dd96c0b1de0790c5cb9248cac172777` |
+| `build/web/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md` | — | 82276 | `6a0fa26b494c811d1ab9ddc3f7e0135e2bec956d89c61280e95b05a73b651f51` |
+
+The current schema-2 `research/artifacts.json` and `research/web-artifact.json`
+were recorded by the snapshot commands after the final successful builds.
+
+### Checks run
+
+- `proper-chronology record` and `annotations`, each `--write` and `--check`: passed.
+- Normal `make doc` for every declared edition: passed, including the anchor
+  and generation-metadata gates. Settled logs have no warning, undefined
+  reference, overfull/underfull box or rerun request.
+- Edition-specific content checks: passed. All default
+  `check-content-preflight` checks and the separate `provenance-matches-run`
+  check against the original recorded run identity: passed.
+- Artifact checks with presentation and format requirements: passed.
+- `source-library validate`: passed.
+- Web generation with the pinned Markdown 3.10.3 environment and
+  `check-web-edition`: passed.
+- `pdfinfo`, full text extraction and font inspection: succeeded; every font
+  is embedded. The bounded `pdf-review` helper rendered every page.
+- Scoped `git diff --check`: passed.
+
+The exact command/exit records and build, preflight, artifact, web and raster
+logs are retained under `.scratch/recovery-leaf-gpt/`. The raster set is under
+`build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-recovery-review/rasters/`.
+
+### Review boundary
+
+This entry records the recovery author’s checks and visual inspection. The
+coordinator has dispatched an independent content, visual and web review of
+the exact hashes above; that review is pending at this entry. Earlier accepted
+workflow seals remain historical and were not restamped as current acceptance.
+Installation, publication projections, release bindings and deployment remain
+with the coordinator. No source, rights, appointment or local-calendar
+limitation was broadened by this repair.

@@ -1195,7 +1195,7 @@ The unchanged generated-record audit above is the date authority; these lane fin
 
 #### SCR-001 — scripture-context
 
-**Lane claim:** The four appointed psalm elements receive only the corpus’s common critical composition boundary; the record supplies no traditional date for any individual psalm.
+**Lane claim at that inspection:** The four appointed psalm elements then received only the corpus’s common critical composition boundary; that record supplied no traditional date for any individual psalm. The later chronological-context revisions below record the subsequently bound Davidic regnal frames, distinct from composition.
 
 **Evidence:**
 
@@ -2608,3 +2608,14 @@ The source binding records the exact Corbett passage. No date is inferred from
 an anonymous, Sabbath or Korahite title. Existing composition alternatives,
 superscription settings and prophetic referents remain distinct assertions.
 The page-2 revision keeps all appointed passages and their claim-local limits.
+
+## Publication projection recovery, 2026-10-01
+
+The chronology record and annotations were regenerated from the current shared
+corpus. The Gospel and Communion event figures now explicitly say “derived”;
+the conversion belongs to the corpus's inspected source equation. Approximate
+composition labels retain their approximation markers. Both page-2 dossiers
+were checked against the generated claims, including the separate Davidic
+regnal frames established in the September revision. No new date or source
+acquisition was introduced. The exact rebuilt artifacts and present review
+boundary are recorded in `production-review.md`.

@@ -504,3 +504,80 @@ declared contracts and `check-generation-metadata` pass, and
 confirmed the cause, the definitions' identity with hyperref's, and the links,
 bookmarks and pixels of all 27 rebuilt PDFs; its advisory that the References
 anchor sat below its heading was answered by moving the anchor before it.
+
+
+## Post-acceptance revision answering every standing finding, 2026-10-01
+
+### Findings and dispositions
+
+KI-023 is repaired: Durand's article is *The New Testament* (1912), not
+*The Synoptics*. Its retained title (line 1), Origin section (lines 17–39) and
+registered metadata control the corrected full and concise references,
+`research/scope.md` and the source-binding locator.
+
+The regenerated Gospel cell marks A.D. 29 as derived. The full and concise
+prose no longer denies the recorded event date: Maas's Ninth Journey and
+Tuesday marriage-feast passage (retained lines 130–134), read with his year
+equation (line 25), support the conversion. Added source bindings record those
+inspected loci and Corbett's qualified Davidic regnal frame (opening paragraph,
+line 3); the latter is distinct from composition of Psalms 137 and 140.
+The scope record's obsolete projection limitation is replaced by the present
+approximate A.D. 80–100 comparison, limited to the later-disciple hypothesis.
+The standing findings register has no undisposed advisory, observation or
+escalation. KI-029's prior repair in `2127bf2ea` needs no further change.
+
+### Layout repairs
+
+No layout adjustment was needed. The existing page counts and declared page
+contracts hold. All page contact sheets were inspected; full-size inspection
+covered full pages 18 and 20, and concise pages 2 and 10. No clipping,
+overlap or displaced date content was found in those inspected pages.
+The generation timestamp is `2026-10-01T22:25:03Z`; the new contribution
+records GPT-6, requested high effort, and explicitly unexposed runtime details.
+Prior contributors and the original workflow provenance are preserved.
+
+### Artifacts
+
+These are the completed build artifacts, not installation claims. Paths are
+relative to the repository root.
+
+| Artifact | Pages | Bytes | SHA-256 |
+| --- | ---: | ---: | --- |
+| `build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf` | 3 | 275162 | `26dc559868ca28e412aac0a9cdd9ff80c4c64884581aae554af4393c70223eb8` |
+| `build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf` | 10 | 466664 | `23aa8392a323418f1b552e5395db2fe1949829c78ced6c9e4477cc966211d9bd` |
+| `build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf` | 20 | 484581 | `6df2dca4e72d6f3530682437c575411cefef61dec00b322b41b4ee7ffb7733e4` |
+| `build/web/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.md` | — | 71512 | `019d919c1558305ae1cc3e3ebcb88fa6c39981fb44f90b23940f5bac7947e64f` |
+
+The current schema-2 `research/artifacts.json` and `research/web-artifact.json`
+were recorded by the snapshot commands after the final successful builds.
+
+### Checks run
+
+- `proper-chronology record` and `annotations`, each `--write` and `--check`: passed.
+- Normal `make doc` for every declared edition: passed, including the anchor
+  and generation-metadata gates. Settled logs have no warning, undefined
+  reference, overfull/underfull box or rerun request.
+- Edition-specific content checks: passed. All default
+  `check-content-preflight` checks and the separate `provenance-matches-run`
+  check against the original recorded run identity: passed.
+- Artifact checks with presentation and format requirements, plus authority: passed.
+- `source-library validate`: passed.
+- Web generation with the pinned Markdown 3.10.3 environment and
+  `check-web-edition`: passed.
+- `pdfinfo`, full text extraction and font inspection: succeeded; every font
+  is embedded. The bounded `pdf-review` helper rendered every page.
+- Scoped `git diff --check`: passed.
+
+The exact command/exit records and build, preflight, artifact, web and raster
+logs are retained under `.scratch/recovery-leaf-gpt/`. The raster set is under
+`build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-recovery-review/rasters/`.
+
+### Review boundary
+
+This entry records the recovery author’s checks and visual inspection. The
+coordinator has dispatched an independent content, visual and web review of
+the exact hashes above; that review is pending at this entry. Earlier accepted
+workflow seals remain historical and were not restamped as current acceptance.
+Installation, publication projections, release bindings and deployment remain
+with the coordinator. No source, rights, appointment or local-calendar
+limitation was broadened by this repair.

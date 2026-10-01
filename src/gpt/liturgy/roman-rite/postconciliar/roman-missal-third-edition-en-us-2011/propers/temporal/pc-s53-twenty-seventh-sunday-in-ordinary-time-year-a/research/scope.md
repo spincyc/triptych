@@ -346,3 +346,15 @@ Esther or Lamentations commentary adopted; no critical-language collation of
 the historical translations; no local ritual enactment. These limit the study's
 claims, not its independently established appointments or the two supported
 interpretations. Research and production reviews remain distinct future acts.
+
+## Bibliography and publication recovery, 2026-10-01
+
+The retained Durand article's title and Origin section were rechecked: the
+correct work is *The New Testament* (1912). Both bibliographies now carry
+that title, and STU-001 / SYN-CIT-001 have dated repaired dispositions. This
+corrects the locator without changing the cited chronological argument.
+Terminal blank-line cleanup in the concise components was verified against
+the interrupted lane's byte-identical before/after PDF. The regenerated
+chronology retains the unresolved Matthew event and distinguishes the Supper's
+14 Nisan from a civil date. `production-review.md` records the final artifacts
+and the current independent-review boundary.
