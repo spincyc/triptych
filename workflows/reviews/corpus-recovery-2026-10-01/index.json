@@ -5,9 +5,9 @@
   "assembly_head": "77c6a3121e185e8365b8df2a5454c2a74eee7a3a",
   "branch": "feature/propers/claude",
   "reviewed_state_includes_uncommitted_changes": true,
-  "state": "independent-reviews-and-local-integration-complete",
+  "state": "recovery-published-and-verified",
   "coordinator_integration": "scoped-pass",
-  "deployment": "pending",
+  "deployment": "verified-live",
   "package_kind": "Durable disposition record for existing independent review handoffs; not a new transport handoff or release authorization.",
   "records": [
     {
@@ -74,19 +74,20 @@
       "owner": "coordinator",
       "status": "scoped-pass",
       "scope": "Final gates, installed artifact hashes and integration acceptance.",
-      "sha256": "140d9f5ec0ede7bf734e2ea0bbdc30fb73901aaf36572f6baef76778e723d5a6"
+      "sha256": "3134dfe665233081c33dae1508d25a0a221048c729bb58e879b51a9157293743"
     },
     {
       "path": "deployment-evidence.json",
       "owner": "coordinator",
-      "status": "pending-coordinator-record",
-      "scope": "Main branch, Pages deployment and live verification."
+      "status": "verified-live",
+      "scope": "Main branch, Pages deployment and live verification.",
+      "sha256": "40657a82f29407d620f55003751cd7ef7799ae59e1a49bbbbba76f5b2463e2d8"
     }
   ],
   "scope_boundaries": [
     "Publication leaf reports cover the exact reviewed hashes; shared PDF baseline active leaf entries are superseded by these later leaf reports.",
     "Author verification of additional browser, calendar, source and sacramental repairs is explicitly distinguished from independent initial review.",
-    "Final installation and local integration are accepted only within integration-evidence.json scope. Deployment remains pending until its separate evidence is recorded."
+    "Final installation and local integration are accepted only within integration-evidence.json scope. Deployment is verified within the exact scope of deployment-evidence.json."
   ],
   "completed_publication_scope": {
     "independent_leaf_reviews": 12,

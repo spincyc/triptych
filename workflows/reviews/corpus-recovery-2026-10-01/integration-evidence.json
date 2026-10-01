@@ -5,7 +5,7 @@
   "branch": "feature/propers/claude",
   "status": "scoped-recovery-integration-pass",
   "scope": "Complete the interrupted authorized repairs to known and discovered regressions, including independent publication reviews, exact installation and local release validation. Planned work, unreproduced reports, historical acceptance obligations and explicit maintainer decisions remain separately recorded in PROJECT-WORK.md.",
-  "deployment_status": "not-yet-claimed; see deployment-evidence.json when present",
+  "deployment_status": "verified-live; see deployment-evidence.json for commit, successful automatic Pages run and all322 actual route results",
   "gates": [
     {
       "name": "source-and-deployment",
@@ -3028,6 +3028,24 @@
     "complete": 47,
     "result": "pass",
     "finding_aid_tests": 11,
-    "current_corpus_live_requirement": "open pending actual deployment"
+    "current_corpus_live_requirement": "open pending actual deployment",
+    "scope": "Predeployment validation at the published recovery commit; postdeployment closure is recorded below."
+  },
+  "postdeployment_accounting": {
+    "tracked_deliverables": 58,
+    "complete_deliverables": 48,
+    "current_corpus_requirement": "complete after actual live verification",
+    "finding_aid_tests": 11,
+    "ledger_examples": {
+      "captured": 2,
+      "replayed": 2,
+      "diverged": 0,
+      "wrote_tracked_state": 0,
+      "command": "python scripts/replay_examples.py --tool check-promised-deliverables",
+      "tool": "tools/check-promised-deliverables",
+      "sha256": "1052edcd5b8e58d06d0711ba3983bac19723b64b56477738a3d9910e71a29947",
+      "change": "Only the two captured outputs changed from47 to48 complete, by actual --recapture execution."
+    },
+    "release_bindings": "exact:0 stale bindings; publications and site inputs unchanged"
   }
 }

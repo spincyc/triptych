@@ -4,27 +4,27 @@ schema_version = 1
 id = "corpus-links-and-known-issues-2026-10-01"
 owner = "PROJECT-WORK.md"
 promise = "Fix the PDF hyperlink and bookmark defect in every installed publication of both providers, with a gate that keeps it fixed, and fix every open known issue recorded in this workstream and in PROJECT-WORK.md's open lists (or record, with its reason, any item that needs a maintainer decision), then push to main and verify the deployment."
-state = "in_progress"
+state = "complete"
 # 2026-10-01 recovery scope: finish and cold-review the interrupted repairs,
 # including discovered regressions and open straightforward defects; do not
 # implement planned feature/design work. PROJECT-WORK.md's 76-row disposition
 # table preserves the distinction. Current independent reviews and final
-# integration evidence close the scoped repair requirements; corpus-live stays
-# open until real main/Pages/live verification. Planned work is not completed.
+# integration evidence close the scoped repair requirements. The completed
+# main/Pages/live verification closes corpus-live. Planned work is not completed.
 
   [[deliverables.requirements]]
   id = "links-every-pdf"
   criterion = "In every installed PDF, every internal heading link and bookmark lands on the page of its heading with the anchor at or just above it, no heading link targets a table, figure or document-start anchor, and no bookmark title carries TeX markup; a gate refuses a build that regresses."
   status = "pass"
   evidence = ["PROJECT-WORK.md", "workflows/reviews/corpus-recovery-2026-10-01/integration-evidence.json", "tools/tests/test_pdf_anchor_pages.py", "src/gpt/theology/sacraments/research/scope.md"]
-  note = "Final frozen review passes all 245 installed PDFs (7,981 pages), with all 239 provider builds matching their installed hashes, no genuine heading-destination failure and five explicitly disposed text-matcher exceptions. Numeric/footnote links retain their distinct checks; 728 contents targets lack PDF page-label metadata. Regression gates protect the shared fixes. Deployment is separate."
+  note = "Final frozen review passes all 245 installed PDFs (7,981 pages), with all 239 provider builds matching their installed hashes, no genuine heading-destination failure and five explicitly disposed text-matcher exceptions. Numeric/footnote links retain their distinct checks; 728 contents targets lack PDF page-label metadata. Regression gates protect the shared fixes; corpus-live records the completed deployment verification."
 
   [[deliverables.requirements]]
   id = "known-issues-resolved"
   criterion = "Every open item of the verified known-issues inventory is fixed and checked, or recorded with the reason it needs a maintainer decision; the register's lists are reconciled."
   status = "pass"
   evidence = ["PROJECT-WORK.md", "workflows/reviews/corpus-recovery-2026-10-01/index.json", "workflows/reviews/corpus-recovery-2026-10-01/reviewed-publication-manifest.json", "workflows/reviews/corpus-recovery-2026-10-01/integration-evidence.json"]
-  note = "Satisfied for the maintainer's recovery scope: concrete known/discovered regressions and straightforward open defects are repaired and checked; all 76 inventory identities have explicit dispositions. All 12 independent leaf reviews pass within their recorded limits and their 33 PDFs/12 web editions are installed exactly. Planned design/corpus/audit work, 31 unexamined calendar groups, historical artifact-review obligations, editorial/history decisions and unreproduced old reports remain explicitly deferred or unproved; none is claimed completed, approved or retrospectively reproduced. Final local gates and replay support current repairs; live deployment remains separate."
+  note = "Satisfied for the maintainer's recovery scope: concrete known/discovered regressions and straightforward open defects are repaired and checked; all 76 inventory identities have explicit dispositions. All 12 independent leaf reviews pass within their recorded limits and their 33 PDFs/12 web editions are installed exactly. Planned design/corpus/audit work, 31 unexamined calendar groups, historical artifact-review obligations, editorial/history decisions and unreproduced old reports remain explicitly deferred or unproved; none is claimed completed, approved or retrospectively reproduced. Final local gates and replay support current repairs; corpus-live separately records successful Pages and live-byte verification."
 
   [[deliverables.requirements]]
   id = "claude-54-withdrawn"
@@ -38,9 +38,12 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "corpus-live"
   criterion = "Every changed publication is rebuilt, reviewed as its change requires and installed byte-identical to the verified build; the three deploy gates pass; the work reaches origin/main by fast-forward; the Pages run and the live artifacts are verified."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
-  note = "Source, PDF and leaf review outcomes are recorded independently of installation and deployment. Only the coordinator's final current-byte integration, deploy-gate and live verification evidence can close this requirement."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/corpus-recovery-2026-10-01/integration-evidence.json", "workflows/reviews/corpus-recovery-2026-10-01/deployment-evidence.json"]
+  check = "contains"
+  path = "workflows/reviews/corpus-recovery-2026-10-01/deployment-evidence.json"
+  needle = "\"status\": \"verified-live\""
+  note = "Commit 222ccef25f8f53dbbfb78d9cef433ca65ac041be reached main and feature/propers/claude; automatic Pages run 36941631076 completed successfully. The 2026-10-01 23:52:08–23:52:22 UTC audit matched all 322 routes on their first attempt: 245 PDFs with exact bytes/SHA-256/7,981 pages, all 12 updated web editions, 320 HTTP 200 responses and two withdrawn Claude 54 PDF HTTP 404 controls, with no local changes. Planned work and recorded historical limitations remain unchanged."
 
 [[deliverables]]
 id = "proper-study-pdf-anchors-2026-10-01"
