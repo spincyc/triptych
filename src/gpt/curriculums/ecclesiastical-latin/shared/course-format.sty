@@ -329,11 +329,11 @@
     \refstepcounter{worksheet}%
     \setcounter{passage}{0}%
     \ifsolutions
-      \section*{\phantomsection Solution #1 — #4}%
+      \section*{\phantomsection{}Solution #1 — #4}%
       \CourseUnnumberedSectionContents{Solution #1 — #4}%
       \markboth{Solution #1 — #4}{Solution #1 — #4}%
     \else
-      \section*{\phantomsection Worksheet #1 — #4}%
+      \section*{\phantomsection{}Worksheet #1 — #4}%
       \CourseUnnumberedSectionContents{Worksheet #1 — #4}%
       \markboth{Worksheet #1 — #4}{Worksheet #1 — #4}%
     \fi
@@ -420,8 +420,7 @@
     \else
       \par\removelastskip\clearpage
     \fi
-    \section*{#2}%
-    \phantomsection
+    \section*{\phantomsection{}#2}%
     \CourseUnnumberedSectionContents{#2}%
     \markboth{#2}{#2}%
     \textbf{Review form ID:} #1\par

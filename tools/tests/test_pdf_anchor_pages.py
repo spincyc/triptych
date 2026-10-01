@@ -60,7 +60,7 @@ class TitlesecAnchorPageTests(unittest.TestCase):
 
     def pushed_case(self, preamble: Path) -> tuple[int, int, dict[str, int], list[str]]:
         # Grow the filler until titlesec pushes the second heading to a new page.
-        for lines in range(30, 90):
+        for lines in range(1, 90):
             pages, text = self.build(preamble, lines)
             heading = self.heading_page(text, "Pushed heading")
             first = self.heading_page(text, "Paragraph 0 of filler")
@@ -68,9 +68,22 @@ class TitlesecAnchorPageTests(unittest.TestCase):
                 return heading, lines, pages, text
         self.fail("no filler length pushed the heading to the next page")
 
+    def stripped_preamble(self, directory: Path) -> Path:
+        source = (ROOT / "src/common/preamble.tex").read_text()
+        start = source.index("\\def\\tpt@ttl@steplink")
+        end = source.index("\\makeatother", source.index("\\AddToHook{package/titlesec/after}"))
+        stripped = directory / "preamble.tex"
+        stripped.write_text(source[:start] + source[end:])
+        return stripped
+
     def test_pushed_numbered_heading_keeps_its_anchor(self):
-        heading, _, pages, _ = self.pushed_case(ROOT / "src/common/preamble.tex")
+        heading, lines, pages, _ = self.pushed_case(ROOT / "src/common/preamble.tex")
         self.assertEqual(pages["section.2"], heading)
+        # The same document without the hooks strands the anchor on the page
+        # before, which is what makes the assertion above a real guard.
+        with tempfile.TemporaryDirectory() as temporary:
+            pages, text = self.build(self.stripped_preamble(Path(temporary)), lines)
+        self.assertLess(pages["section.2"], self.heading_page(text, "Pushed heading"))
 
     def hook_meanings(self, preamble: Path) -> tuple[str, str]:
         with tempfile.TemporaryDirectory() as temporary:
@@ -98,13 +111,8 @@ class TitlesecAnchorPageTests(unittest.TestCase):
         # The guard is real: with the hooks removed, titlesec's own fallback
         # leaves unnumbered headings without an anchor and numbered ones
         # anchored where the counter steps.
-        source = (ROOT / "src/common/preamble.tex").read_text()
-        start = source.index("\\def\\tpt@ttl@steplink")
-        end = source.index("\\makeatother", source.index("\\AddToHook{package/titlesec/after}"))
         with tempfile.TemporaryDirectory() as temporary:
-            stripped = Path(temporary) / "preamble.tex"
-            stripped.write_text(source[:start] + source[end:])
-            step, ref = self.hook_meanings(stripped)
+            step, ref = self.hook_meanings(self.stripped_preamble(Path(temporary)))
         # \\@gobble: its meaning is an empty body that takes one argument.
         self.assertEqual(step.strip(), "\\long macro:#1->")
         self.assertNotIn("Hy@raisedlink", ref)

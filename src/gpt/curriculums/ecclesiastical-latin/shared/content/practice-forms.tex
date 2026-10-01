@@ -4,8 +4,7 @@
   % doing so would create a running-head-and-footer-only leaf.
   \par\removelastskip
   \ifdim\pagetotal=0pt\else\clearpage\fi
-  \section*{#1}
-  \phantomsection
+  \section*{\phantomsection{}#1}
   \CourseUnnumberedSectionContents{#1}
   \markboth{#1}{#1}
   {\small #2\par}
