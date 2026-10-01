@@ -1854,6 +1854,9 @@ def _traced(
         path.relative_to(root).as_posix()
         for path in code
         if path.is_relative_to(root) and path.is_file()
+        # A virtualenv may live under the checkout's .scratch directory;
+        # its installed packages are interpreter inputs, just as for reads.
+        and not any(path.is_relative_to(entry) for entry in interpreter)
     }
     sources, source_files = set(), set()
     for source in {source for claim in claims for source in claim.sources}:

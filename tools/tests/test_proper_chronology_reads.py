@@ -12,10 +12,12 @@ from __future__ import annotations
 
 import json
 import shutil
+import sys
 import tempfile
 import tomllib
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 
 from tools.tests.test_proper_components_v2 import ROOT
@@ -96,6 +98,39 @@ class ComputationReadsTests(unittest.TestCase):
         with self.assertRaisesRegex(_proper_chronology.ChronologyWiringError,
                                     "derived copy under build/"):
             _proper_chronology._traced(str(ROOT), NINETEENTH, "gpt", [str(copy)], [])
+
+
+class InterpreterBoundaryTests(unittest.TestCase):
+    def test_a_virtualenv_inside_the_checkout_is_not_repository_evidence(self):
+        scratch = ROOT / ".scratch/pagination-contract"
+        scratch.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=scratch) as temporary:
+            root = Path(temporary)
+            interpreter = root / ".scratch/venv"
+            package = interpreter / "lib/python/site-packages/yaml"
+            compiled = package / "loader.py"
+            loaded = package / "_yaml.so"
+            data = package / "data.json"
+            repository = root / "scripts/computation.py"
+            for path in (compiled, loaded, data, repository):
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text("fixture")
+            found = SimpleNamespace(elements=[], profile_comparisons=[])
+            with (patch.object(sys, "prefix", str(interpreter)),
+                  patch.dict(sys.modules, {
+                      "chronology_test_extension": SimpleNamespace(__file__=str(loaded)),
+                  }),
+                  patch.object(_proper_chronology, "dossier", return_value=found),
+                  patch.object(_proper_chronology, "render"),
+                  patch.object(_proper_chronology, "annotations"),
+                  patch.object(_proper_chronology, "render_annotations_tex")):
+                traced = _proper_chronology._traced(
+                    str(root), NINETEENTH, "gpt",
+                    [str(compiled), str(loaded), str(data), str(repository)],
+                    [str(compiled), str(repository)],
+                )
+            self.assertEqual(traced["modules"], ["scripts/computation.py"])
+            self.assertEqual(traced["reads"], [])
 
 
 class RealLeafSealTests(unittest.TestCase):
