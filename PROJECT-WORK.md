@@ -50,6 +50,14 @@ comparison table credits "the whole Church still on its road" to Augustine,
 where the road is editorial synthesis. Repairing either changes a reviewed
 render input, so it needs a rebuild, fresh reviews and a redeployment.
 
+**Integration.** `origin/main` stood at `fb0d08f13`, so the rebase the
+maintainer asked for replays nothing and the three correction commits sit
+linearly on it. The three deploy gates pass locally (`make
+check-deployment-sources`, `make public-site`, `tools/tpt public-alpha
+verify --deployment-target github-pages`); the outgoing range changes eight
+text files and adds no binary, machine path or credential marker. The
+Pages run is verified before this correction is represented as complete.
+
 ## Claude 1962 Nineteenth Sunday three documents, 2026-09-30
 
 <!-- promised-deliverable: claude-1962-nineteenth-three-documents-2026-09-30 -->
