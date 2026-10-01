@@ -2,6 +2,12 @@
 
 ## 1. Status and scope
 
+The architecture survey below retains its original branch-specific evidence.
+The 2026-10-01 recovery adds dated implementation dispositions on
+`feature/propers/claude`; §20.1 reconciles its old defect register against the
+current code. A fixed implementation here is not evidence of deployment, and
+the proposed extractions and surface roadmap remain separately authorized work.
+
 This document is the Claude implementation lane's technical record for the
 corpus-wide redesign of Triptych's non-PDF web surfaces. It states how those
 surfaces are actually built at base commit `c27d6915319785686d1df6a1401a489aa9921f6f`,
@@ -391,14 +397,24 @@ every one of them is stripped at publish.
 Four selectors decide the behaviour of pages that never mention them. Each is a
 place where a stylesheet reorganisation would produce a change nobody asked for.
 
-**`day-missal.css` restyles the site header, unscoped.** Six rules beginning at
-`src/web/browser/liturgy/day-missal.css:51` re-lay-out `body > .site-header` —
-grid columns, gap, min-height, padding, the triptych mark's geometry, brand font
-sizes, nav gap — with no page-scoping selector at all, plus further unscoped
-blocks in the 47.5rem media query at `:604` and the print block at `:730`. The
-file is loaded by four published pages. Pulled into a shared bundle, it silently
-restyles the header of every page on the site. This is the most dangerous file
-in the tree.
+**`day-missal.css` restyled the site header, unscoped. Fixed on 2026-10-01 by
+`4ee23e218`.** Six rules beginning at `src/web/browser/liturgy/day-missal.css:51`
+re-laid-out `body > .site-header` — grid columns, gap, min-height, padding, the
+triptych mark's geometry, brand font sizes, nav gap — with no page-scoping
+selector at all, plus further unscoped blocks in the 47.5rem media query at
+`:604` and the print block at `:730`. The file is loaded by four published
+pages. Pulled into a shared bundle, it would have silently restyled the header
+of every page on the site, which made it the most dangerous file in the tree.
+All twelve selectors now read
+`body:where(:has(> .day-reader-candidate, > .visual-reset-page)) > .site-header`:
+they reach the header only through the page classes the build moves onto
+`#main-content` for the four pages that load the file, and `:where()` keeps
+their specificity at `body > .site-header`'s (0,1,1), so those four pages'
+cascade is what it was — the header's computed style and every route capture
+matched before and after. `tools/tests/test_browser_collisions.py` now fails
+any page stylesheet that reaches the layout's chrome without a page scope. The
+same hazard in `sources.css` — bare `.brand a` and `.site-footer a` — was
+scoped the same way the same day.
 
 **`reader-instrument.css:40-45` deletes the site chrome.**
 
@@ -476,48 +492,68 @@ contract, and `tools/tests/test_browser_collisions.py` fails a published page
 that names its `<main>` anything else. This fix is a prerequisite for a shared
 error component. Not on `origin/main`.
 
-`T.fail` has a second defect, **still live**, where it *is* used.
+`T.fail` had a second defect in the Sources caller, **fixed by the 2026-10-01
+recovery checkpoint**, where it *is* used.
 `sources.js:229` calls it when
 an edition has no recorded file; `fail` clears `#reading`, which contains both
 `#finder` and `#reader`, so `elements.finder` and `elements.reader` (`:53-54`)
 then point at detached nodes and every subsequent render writes into nothing.
-The page does not recover without a reload.
+The page could not recover without a reload. `openEdition` now invalidates
+the previous render before checking the path, reports the error into
+`elements.reader`, and leaves both persistent hosts connected with a Back
+action. `UnavailableCorpusTests` exercises the missing-path refusal and then
+opens a valid edition without a reload.
 
 Two further hazards belong here because they are structural rather than
-cosmetic. The published pages nest `<main>` inside `<main>`: `layout.html:29`
-wraps `{{CONTENT}}` in `<main id="main-content">` and every browser page
-contributes its own `<main>`. Two `main` landmarks, invalid HTML, and — because
+cosmetic. The published pages nested `<main>` inside `<main>`: `layout.html:29`
+wrapped `{{CONTENT}}` in `<main id="main-content">` and every browser page
+contributed its own `<main>`. Two `main` landmarks, invalid HTML, and — because
 `tools/public-alpha:2559` strips the page's skip link — the surviving skip
 target is the outer wrapper rather than the reading document. Every browser page
-is affected. No harness catches it, because every Chromium harness loads the
+was affected. No harness caught it, because every Chromium harness loads the
 repository or preview page and the preview-build assertions test robots and
 links, not landmark nesting.
 
-**This one is fixed on `impl/shell-plumbing` and not here.** `6b5742bf2` on that
-branch names the layout's wrapper element, has `wrap_in_layout` take it from the
-caller and `render_browser_page` ask for a `div`, while `browser_page_parts`
-refuses a browser page that does not declare exactly one `<main>` so the guard
-cannot silently become no landmark at all. It took that branch's gate from 117
-`single-main-element` failures to none. On `impl/foundation-hardening` the
-defect is live and measured: 117 failures in the run recorded in §17.5. The
-citation `layout.html:29` resolves here and **does not resolve** on
-`impl/shell-plumbing`, whose copy of this section still calls the defect
-outstanding; that branch's record is the wrong one.
+**Fixed on `feature/propers/claude` on 2026-10-01 by `4ee23e218`.** It was first fixed on
+`impl/shell-plumbing` by `6b5742bf2` (archived as `eeb43cb72` under the tag
+`archive/impl/shell-plumbing`), which never reached `main`: that commit named
+the layout's wrapper element, had `wrap_in_layout` take it from the caller and
+`render_browser_page` ask for a `div`, and had `browser_page_parts` refuse a
+browser page that did not declare exactly one `<main>`. It could not be taken
+whole, because `598e6da6e` had since given Sources no `<main>` of its own and
+let it stand on the layout's, which that guard would refuse. So `4ee23e218`
+decides from the page: a page that declares its own `<main>` is wrapped in a
+`<div id="main-content">`, a page that declares none keeps the layout's
+`<main>`, a `<main>` named inside a comment is not counted, and two or more are
+a build error. Built, twelve routes change only the wrapper's two lines;
+Sources and every prose page are byte-identical. The gate's
+`single-main-element` failures went from 108 to none with no other count
+rising (§17.5), and `tools/tests/test_browser_static.py` now asserts one
+landmark per *built* page, which is the side that was never read. The skip
+target is still the wrapper rather than the reading document; that milder
+matter is unchanged.
 
 One correction, because this document earlier let two separate things be read as
 one. The layout's own skip link **is** present and **does** point at an element
 that exists, on all thirteen routes. The gate's twenty-seven
-`skip-link-targets-existing-element` failures are therefore not a missing or
-dangling skip link. They are a focus trap: `propers-reader.js:1020` calls
+`skip-link-targets-existing-element` failures were therefore not a missing or
+dangling skip link. They were a focus trap: `propers-reader.js:1020` called
 `readerShell.open('browse', …)` on load when no formulary is deep-linked, and
-`reader-shell.js:220` opens that surface with `showModal()`, so the rest of the
-document is inert and Tab never reaches the skip link at all. It affects
+`reader-shell.js:220` opened that surface with `showModal()`, so the rest of the
+document was inert and Tab never reached the skip link at all. It affected
 `/liturgy/index.html`, `/liturgy/propers-reader.html` and
-`/liturgy/reader-visual-reset-propers.html`. No generator change can fix it: it
-is instrument-owned and both files sit inside the protected reader deliverable,
-so it belongs to that deliverable and to no corpus lane. The stripped-skip-link
-finding above stands and is a separate, milder matter about which landmark the
-surviving link targets.
+`/liturgy/reader-visual-reset-propers.html`. No generator change could fix it:
+it is instrument-owned, inside the protected reader deliverable. **Fixed on
+2026-10-01 by `4ee23e218`**, under the maintainer's same-day authority to fix
+the protected reader defects: a new Propers visit still opens Browse, as the
+accepted harnesses require, but the route asks the shell for a non-modal
+presentation (`readerShell.open('browse', …, { modal: false })`). It stands
+where the modal stood, takes no focus, and closes when focus moves elsewhere in
+the page or on Escape; the Browse action still opens it modally. The first Tab
+now reaches the skip link, and the twenty-seven failures are gone. The one
+visible difference is the modal backdrop's dimming on that first view, which
+goes with the modality. The stripped-skip-link finding above stands and is a
+separate, milder matter about which landmark the surviving link targets.
 
 And `history.js:341-348` sets `role="img"` on the
 map's `<svg>`, which prunes all descendants from the accessibility tree — the 59
@@ -1274,8 +1310,10 @@ browser page so head-whitelist and whole-document violations fail at
 `make check` instead of at build. Both use logic that already exists. Verify:
 introducing a deliberate syntax error in a scratch copy fails the test.
 
-**5. Fix the four hazards that block a shared shell. Depends on 4. Three of the
-four are done on this branch; (d) is not, and cannot be done from here.** These
+**5. Fix the four hazards that block a shared shell. Depends on 4. All four
+are done: (a)–(c) on the original implementation branch, and (d) on
+`feature/propers/claude` on 2026-10-01 by
+`4ee23e218`, under the maintainer's authority for protected liturgy.** These
 are prerequisites, not improvements.
 
 | | Hazard | State |
@@ -1283,19 +1321,22 @@ are prerequisites, not improvements.
 | (a) | `T.fail`/`T.showBanner` hard-coding `#reading` and `#banner` | **Done, `a912e182e`.** Both take an optional target; `fail` falls back to `DOCUMENT_LANDMARKS` (§5). `showBanner` still resolves to the single `#banner` id, and the liturgy reader still has no banner host — that residue is open and belongs to the liturgy deliverable. |
 | (b) | history's change-row `.field` colliding with the shared control `.field` | **Done, `bad976039`.** Renamed to `.change-field` across `history.js`, `history.css` and the markup together. |
 | (c) | texts' record card shadowing the shared `.detail` | **Done, `9e980ff5b`.** Renamed to `.record`; the panel keeps its `#detail` id. |
-| (d) | `day-missal.css`'s six unscoped `body > .site-header` blocks | **Open, and not this lane's to close.** Still unscoped at `day-missal.css:51`, with further unscoped blocks in the 47.5rem media query at `:604` and the print block at `:730`. |
+| (d) | `day-missal.css`'s six unscoped `body > .site-header` blocks | **Done, `4ee23e218` (2026-10-01).** All twelve selectors — the blocks at `:51`, the 47.5rem media query and the print rule — are scoped to the page classes of the four pages that load the file, inside `:where()` so their specificity is unchanged (§5). |
 
-(d) stands as the only remaining item, and it is blocked rather than merely
-undone: `day-missal.css` is loaded by four published liturgy pages inside the
-protected reader family, so scoping it is a change to protected liturgy and
-needs that deliverable's authority, not a corpus lane's. It remains the most
-dangerous file in the tree for anyone building a shared bundle, because pulling
-it in restyles the header of every page on the site.
+(d) was the last item, and it was blocked rather than merely undone:
+`day-missal.css` is loaded by four published liturgy pages inside the protected
+reader family, so scoping it was a change to protected liturgy and needed that
+deliverable's authority, not a corpus lane's. The maintainer gave it on
+2026-10-01. Pulling the file into a shared bundle no longer restyles the header
+of every page on the site, and `tools/tests/test_browser_collisions.py` fails
+any page stylesheet that reaches the layout's chrome unscoped.
 
-Verify, for each of (a)–(c) as landed and for (d) when it is done: a mechanical
-rename or signature change with an unchanged rendered DOM; before/after at
-393×852 and 1440×900 on the affected routes. None of these makes a visual
-decision.
+Verify, for each of (a)–(d) as landed: a mechanical rename, scope or signature
+change with an unchanged rendered DOM; before/after at 393×852 and 1440×900 on
+the affected routes. None of these makes a visual decision. For (d) the
+before/after was 60 route/state captures (15 routes at 1440, 393 and 320, and
+1440 print), byte-identical, with the header's computed style identical on the
+four pages that load the file.
 
 **6. Promote `reader-shell.js` and `reader-shell.css` to `shared/`. Depends on
 5, and on the liturgy deliverable in §13-C1 being closed or the files being
@@ -1376,6 +1417,12 @@ the page's landmark as a `<div>` while the repository-opened copy keeps `<main>`
 Restore a meaningful skip target while doing it. Verify: a landmark assertion in
 the per-route harness from step 9, run against the *built* artifact rather than
 the repository page — which is the gap that let this defect pass every gate.
+**The landmark half was done on 2026-10-01 by `4ee23e218`, ahead of step
+10**: the layout
+wraps a page in `<main>` only when the page declares none (§5), and the gate's
+`single-main-element` assertion over the built artifact now passes on every
+route. The meaningful skip target is not done; the layout's link still lands on
+the wrapper.
 
 **12. Split `browser-core.js`. Depends on 7.** Move the bible/loci/propers half
 (`:202-625` and `:1010-1408`, including the inline fallback chapters) into
@@ -1450,19 +1497,21 @@ than a silent scope expansion. Step 6 is the only step that needs them, and it
 is the only step that should wait.
 
 **R2. A stylesheet reorganisation breaking a page that never mentions the
-selector. Reduced, not closed.** Two of the four pieces of evidence are spent.
+selector. Reduced, not closed.** Three of the four pieces of evidence are spent.
 history's `.field` no longer wins over the shared control `.field` by load
 order — it is `.change-field` (`bad976039`) — and `texts.css` no longer shadows
 the shared `.detail` — it is `.record` (`9e980ff5b`). Both renames landed as
 isolated commits on `impl/foundation-hardening`, exactly as this risk's
-mitigation asked, and neither is on `origin/main`. What remains is the worse
-half: `day-missal.css:51` restyles `body > .site-header` unscoped on four
-published pages, and `browser-core.css`'s global `:focus-visible` (`:202-205`)
-is injected after `site.css` and therefore overrides the site header's own focus
-treatment on every browser page. Mitigation, unchanged for the remainder: do the
-scoping before anything is moved, each as an isolated commit with before/after
-captures — but see §11 step 5(d), because `day-missal.css` is protected liturgy
-and the scoping is not a corpus lane's to make.
+mitigation asked, and neither is on `origin/main`. The worse half was
+`day-missal.css:51` restyling `body > .site-header` unscoped on four published
+pages; **that was scoped on 2026-10-01 by `4ee23e218`** (§11 step 5(d)), as
+an isolated change with before/after captures, under the maintainer's authority
+for protected liturgy, and `sources.css`'s bare `.brand a` and `.site-footer a`
+were scoped the same way the same day. What remains is `browser-core.css`'s
+global `:focus-visible` (`:202-205`), which is injected after `site.css` and
+therefore overrides the site header's own focus treatment on every browser
+page. Mitigation, unchanged for the remainder: do the scoping before anything
+is moved, as an isolated commit with before/after captures.
 
 **R3. Flipping the dual-context guard.** Evidence: `browser-core.css:134`
 `body:not(:has(> .site-header))` switches the whole page between "inside the site
@@ -1987,8 +2036,9 @@ hash is a pure function of the tree, so the record is derived, not negotiated.
 `make check` takes about 310 seconds and is red at the base on
 `check-tool-registry` and `check-examples`. That redness is inherited.
 
-**The gate's numbers moved four times and are not the same on two branches, so
-no single figure is true of the lane.** The arc, each step measured by the
+**The gate's numbers moved four times on the impl branches and are not the same
+on two branches, so no single figure is true of the lane; the last two rows are
+the recovery baseline and feature-branch fix, measured on 2026-10-01.** The arc, each step measured by the
 commit that caused it:
 
 | At | Assertions | Failures | Cause | How known |
@@ -1997,6 +2047,8 @@ commit that caused it:
 | `d0c9aac44` | 2,290 | 228 | widened to the five-viewport governing matrix; +82 target-size failures, a new class | assertion total from that commit's message; 146 + 82 |
 | `862f25173` | 2,290 | 226 | the two 320px overflows closed | "from two to none with no other count moving" |
 | `6b5742bf2`, `impl/shell-plumbing` only | 2,290 | 109 | the 117 nested-`<main>` failures closed | "from 117 … to none with no other count rising"; 226 − 117 |
+| `6355fe014`, recovery baseline | 2,290 | 212 | 108 `single-main-element` (Sources already stood on the layout's landmark), 77 target-size, 27 skip-link | re-run 2026-10-01 over the built site |
+| `4ee23e218`, `feature/propers/claude` | 2,290 | 77 | the 108 nested-`<main>` and the 27 skip-link failures closed; target-size only | re-run 2026-10-01 over the built site, same 2,290 assertion identities, no other status changed |
 
 **On `impl/foundation-hardening` at `ecfb4e7b8`, re-run for this record: 2,290
 assertions over 19 routes and 9 states, 1,836 passed, 226 failed, 228 skipped,
@@ -2009,9 +2061,13 @@ that commit's own measurement. Anyone comparing must use the figure for the
 branch they are on. The earlier "1,583 passes against 146 failures … about 74
 seconds" was true at `0fcf0cb95` and is true nowhere now.
 
-Of the three surviving classes, one is a real live defect (`single-main-element`,
-fixed on the other impl branch), and two are dispositioned as not-defects here:
-see §20, FP1 for target size and FP5 for the skip link.
+Of the three surviving classes, one was a real live defect
+(`single-main-element`, fixed on the other impl branch), and two are
+dispositioned as not-defects here: see §20, FP1 for target size and FP5 for the
+skip link. **On `feature/propers/claude` on 2026-10-01, `4ee23e218` closed the first and the
+focus trap behind the third** (§5): the gate over the built site reports 77
+failures, all `primary-controls-meet-target-size` — the scheduled design
+dependency of FP1 — and nothing else.
 
 The rule that follows is the one that matters for parallel work: **compare
 failure sets, never exit codes.** Every branch here will see a non-zero exit
@@ -2151,8 +2207,10 @@ are given for this branch; where `main`'s differ, both are given.
 
 ### 20.1 Defects with no tracked record before this section
 
-All ten are live on `origin/main` as well as here, and none is fixed on any
-branch. Ranked worst first, where "worst" means the page states something untrue
+The table preserves the 2026-08-08 audit at the revisions named above, including
+its original status and line numbers. It is not the current open-work list;
+the dated reconciliation immediately below it controls the present status.
+Ranked worst first, where "worst" means the page states something untrue
 to a reader who cannot tell.
 
 | # | What the reader sees | Cause | Status |
@@ -2168,7 +2226,32 @@ to a reader who cannot tell.
 | **D-9** | When a law slice fails to load, the "Body of law" select sits at "**Loading…**", disabled, forever, beside prose saying the record could not be read. The page contradicts itself. | `law/index.html:41-42` seeds `<option>Loading…</option>`; the only replacement is `law.js:1293-1297`, and the slice-load `.catch` (`law.js:1346-1362`) renders into `canonView` and never touches `lineSelect`. Narrower than first reported: an *empty* bodies list still clears the placeholder, because the call seeds `{value:'', label:'Any'}`. The one reaching path is a failed slice — `?slice=nonesuch`, an unserved data root, any 404. `test_browser_collisions.py:19-25` makes exactly this argument about the *other* placeholder — a "Loading…" left standing "tells a reader the corpus is arriving when it is not" — and the `T.fail` work (§5) fixed it for `<main>` and did not extend to selects. Same shape in `texts/index.html`, five `Loading…` options at `:35`, `:42`, `:49`, `:56` and `:63`, behind the `T.fail` return at `texts.js:400-401`. | Live. `law/index.html` byte-identical on `main`. |
 | **D-10** | Nothing — this one is invisible to readers and costs only a maintainer's time. `scripture/track.js`'s header documents a hash that does not exist. | `:5` names the tiers "overview, narrative, year" and `:23-25` give `#tier=narrative`, `#tier=narrative&period=exile` and `#tier=narrative&reading=47`. The real tier ids in `structure/readings/narrative-spine.json` are `full-account`, `landmarks` and `story`, and the contract's canonical form is `#tier=wide&reading=r-014&bible=…` (`test_browser_url_contract.py:586`). `:796` — `tiers.indexOf(wantedTier) >= 0 ? wantedTier : tiers[0]` — opens the first tier for any unrecognised value, so the documented address does something, just not what it says. | Live. `track.js` byte-identical on `main`. |
 
-Two more defects are recorded on `main` but **scoped too narrowly to be found by
+#### Current disposition — 2026-10-01 recovery
+
+Rechecked against `a0ced2ce2` and the recovery edits on
+`feature/propers/claude`; these are code dispositions, not deployment claims.
+The original rows above must not be scheduled again as ten live defects.
+
+| Finding | Current evidence and disposition |
+| --- | --- |
+| D-1, D-2 | Fixed by `57cfbbee7`: Sources refuses a passage outside its named edition; History calls `reportUnknownStation` instead of substituting the newest station. |
+| D-3 | Fixed by `57cfbbee7`: History describes the surviving printing and gives the map a slice-qualified name. Its separate SVG accessibility concern remains outside this wording fix. |
+| D-4 | `57cfbbee7` ended bootstrap after the History spine arrived. The recovery checkpoint fixes the remaining initial transport-failure banner: no fallback is claimed when History holds none. |
+| D-5 | Fixed by `57cfbbee7`: Publications and Law restore a valid default when a named option is unavailable. |
+| D-6 | Fixed by `644e66ad3`: an empty shared hash is written, so clearing the last filter clears its address. The recovery checkpoint also fixes Publications Back navigation: absent filters now restore default selects instead of retaining and rewriting the previous filter. |
+| D-7 | Fixed in the integrated Catena controller: `wantedVoice` preserves the arrival voice until the populated selector can represent it. The production suite covers a fresh voiced arrival. |
+| D-8 | Fixed in the current Sources controller: navigation updates existing controls; an end-of-list step moves focus to the stable selector before disabling the used button. `SourceReaderInteractionTests` exercises both boundaries. |
+| D-9 | Law already replaces its loading control on failure. The recovery checkpoint gives all five Publications selects and all six Sources selects a disabled Unavailable state and changes the search placeholder on corpus failure. |
+| D-10 | Fixed by `57cfbbee7`: the track header names `landmarks`, `story`, and `full-account`, with `story` examples. |
+
+The recovery tests in `test_browser_truthfulness.py` drive Chromium over the
+production source files: four unavailable-state cases and a Publications
+Back-navigation case. Each fails against the pre-recovery controller and
+passes with the fix. Source failure preserves the requested address and both
+hosts, and a subsequent real edition opens without a reload. No planned
+surface, source relationship, Search feature, or visual redesign is implemented.
+
+Two more defects were recorded on `main` but **scoped too narrowly to be found by
 the agents who need them**, which is its own kind of absence:
 
 - `guidance/liturgy-reader-state.md:194-195` records that "the shared
@@ -2187,7 +2270,11 @@ the agents who need them**, which is its own kind of absence:
   `browser-core.js:933-935` defends the design — recognised by its text so a
   flag can never be left set — which is true of Back and false of Forward.
   `test_browser_url_contract.py:498` pins the guard and never tests Forward.
-  Identical on `main:873`, `:888`, `:894`.
+  Identical on `main:873`, `:888`, `:894` at that audit. **Fixed by
+  `644e66ad3`: the self-written marker is cleared when consumed.** The
+  current Source-reader Back/Forward browser regression exercises the shared
+  route behavior; the separate Publications missing-filter restoration defect
+  is closed by the recovery checkpoint above.
 - The same file at `:192-193` records that Day history navigation "does not…
   clear an absent Ordinary variant." The Apply path is the reachable one and the
   record does not name it: `day-reader.js` on `main:1719-1723` writes
@@ -2265,7 +2352,11 @@ exists, on all thirteen routes. The failures are a focus trap:
 `reader-shell.js:220` opens it with `showModal()`, so the document is inert and
 Tab never reaches the link. Three routes, instrument-owned, inside the protected
 reader deliverable; no generator change can fix it. Recorded at length in §5 and
-separated from the stripped-skip-link finding by `4b87fd14e`.
+separated from the stripped-skip-link finding by `4b87fd14e`. **The trap was
+fixed on 2026-10-01 by `4ee23e218`**: the route-foregrounded Browse is now
+non-modal and takes no focus, the first Tab reaches the skip link, and the 27
+failures are gone (§5, §17.5). The disposition stands: the skip link itself was
+never the defect.
 
 **FP6 — `role="radiogroup"` without roving tabindex is overstated by its own
 record.** §19 already downgrades it: the control is operable by Tab and Enter and

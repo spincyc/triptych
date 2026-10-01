@@ -110,7 +110,8 @@ function staticServer(delays) {
       const relative = decodeURIComponent(url.pathname).replace(/^\/+/, '');
       const file = resolve(ROOT, relative);
       if (file !== ROOT && !file.startsWith(ROOT + sep)) throw new Error('outside root');
-      const body = await readFile(file);
+      const body = Object.hasOwn(PLAN.responses || {}, relative)
+        ? PLAN.responses[relative] : await readFile(file);
       for (const rule of delays) {
         if (relative.includes(rule.match)) await sleep(rule.ms);
       }
@@ -235,6 +236,10 @@ async function run() {
     await cdp.ready();
     await cdp.send('Page.enable');
     await cdp.send('Runtime.enable');
+    if (PLAN.blocked) {
+      await cdp.send('Network.enable');
+      await cdp.send('Network.setBlockedURLs', { urls: PLAN.blocked });
+    }
 
     const seen = {};
     for (const act of PLAN.acts) {
@@ -337,6 +342,127 @@ BODY_STATE = """JSON.stringify({
   classes: Array.from(document.getElementById('passage-body').children)
     .map((node) => node.className)
 })"""
+
+
+class UnavailableCorpusTests(unittest.TestCase):
+    """A failed load stops claiming progress and leaves persistent controls usable."""
+
+    def test_sources_failure_replaces_every_loading_control(self) -> None:
+        seen = drive({
+            "blocked": ["*/structure/sources/index.json"],
+            "acts": [
+                {"do": "navigate", "url": page("sources")},
+                {"do": "wait", "until": "document.querySelector('#reading .error')"},
+                {"do": "eval", "name": "failure", "expression": """({
+                  selects: Array.from(document.querySelectorAll('#controls select'))
+                    .map(s => ({ text: s.textContent, disabled: s.disabled })),
+                  find: document.getElementById('find-input').placeholder
+                })"""},
+            ],
+        })["failure"]
+        self.assertEqual(len(seen["selects"]), 6)
+        for control in seen["selects"]:
+            self.assertTrue(control["disabled"])
+            self.assertIn("Unavailable", control["text"])
+            self.assertNotIn("Loading", control["text"])
+        self.assertIn("could not be read", seen["find"])
+
+    def test_publications_failure_replaces_every_loading_control(self) -> None:
+        seen = drive({
+            "blocked": ["*/structure/documents/corpus.json"],
+            "acts": [
+                {"do": "navigate", "url": page("texts")},
+                {"do": "wait", "until": "document.querySelector('#reading .error')"},
+                {"do": "eval", "name": "failure", "expression": """({
+                  error: document.querySelector('#reading .error').textContent,
+                  selects: Array.from(document.querySelectorAll('#controls select'))
+                    .map(s => ({ text: s.textContent, disabled: s.disabled })),
+                  find: document.getElementById('find-input').placeholder
+                })"""},
+            ],
+        })["failure"]
+        self.assertIn("could not be loaded", seen["error"])
+        self.assertEqual(len(seen["selects"]), 5)
+        for control in seen["selects"]:
+            self.assertTrue(control["disabled"])
+            self.assertIn("Unavailable", control["text"])
+            self.assertNotIn("Loading", control["text"])
+        self.assertIn("could not be read", seen["find"])
+
+    def test_history_initial_transport_failure_claims_no_fallback(self) -> None:
+        seen = drive({
+            "blocked": ["*/structure/act-history/index.json"],
+            "acts": [
+                {"do": "navigate", "url": page("history")},
+                {"do": "wait", "until": "document.getElementById('map').textContent.includes('could not be loaded')"},
+                {"do": "eval", "name": "notice", "expression":
+                 "document.getElementById('banner').textContent"},
+            ],
+        })["notice"]
+        self.assertIn("nothing to show", seen)
+        self.assertNotIn("showing its small built-in fallback", seen)
+
+    def test_source_edition_without_file_preserves_hosts_and_recovers(self) -> None:
+        index = json.loads((SOURCES / "index.json").read_text(encoding="utf-8"))
+        index["works"] = [work for work in index["works"]
+                          if any(edition["id"] in (IRENAEUS, ONE_PASSAGE)
+                                 for edition in work.get("editions", []))]
+        index["facets"] = {}
+        edition = next(edition for work in index["works"]
+                       for edition in work.get("editions", [])
+                       if edition["id"] == IRENAEUS)
+        edition.pop("file")
+        wanted = "#edition=" + IRENAEUS
+        seen = drive({
+            "responses": {"src/web/data/structure/sources/index.json": json.dumps(index)},
+            "acts": [
+                {"do": "navigate", "url": page("sources", fragment=wanted)},
+                {"do": "wait", "until": "document.querySelector('#reading .error')"},
+                {"do": "eval", "name": "failure", "expression": """({
+                  hosts: ['finder', 'reader'].map(id => !!document.getElementById(id)),
+                  error: document.querySelector('#reading .error').textContent,
+                  hash: location.hash
+                })"""},
+                {"do": "eval", "expression":
+                 "document.querySelector('#reader .back')?.click(); true"},
+                {"do": "eval", "name": "finder", "expression":
+                 "!!document.querySelector('#finder:not([hidden]) .edition-open')"},
+                {"do": "eval", "expression":
+                 "location.hash = " + json.dumps("#edition=" + ONE_PASSAGE) + "; true"},
+                {"do": "wait", "until": "document.querySelector('#reader .reader-edition')"},
+                {"do": "eval", "name": "recovered", "expression":
+                 "!!document.querySelector('#passage-body .passage-locus')"},
+            ],
+        })
+        self.assertEqual(seen["failure"]["hosts"], [True, True])
+        self.assertIn(IRENAEUS, seen["failure"]["error"])
+        self.assertEqual(seen["failure"]["hash"], wanted)
+        self.assertTrue(seen["finder"])
+        self.assertTrue(seen["recovered"])
+
+
+class PublicationFilterHistoryTests(unittest.TestCase):
+    def test_history_without_a_filter_restores_the_unfiltered_catalogue(self) -> None:
+        seen = drive({"acts": [
+            {"do": "navigate", "url": page("texts")},
+            {"do": "wait", "until": "!document.getElementById('author-select').disabled"},
+            {"do": "eval", "expression": """(() => {
+              const select = document.getElementById('author-select');
+              select.selectedIndex = 1;
+              select.dispatchEvent(new Event('change'));
+              return true;
+            })()"""},
+            {"do": "wait", "until": "location.hash.includes('author=')"},
+            {"do": "sleep", "ms": 100},
+            {"do": "eval", "expression": "history.back(); true"},
+            {"do": "wait", "until": "location.hash === ''"},
+            {"do": "sleep", "ms": 100},
+            {"do": "eval", "name": "restored", "expression": """({
+              hash: location.hash,
+              author: document.getElementById('author-select').value
+            })"""},
+        ]})["restored"]
+        self.assertEqual(seen, {"hash": "", "author": ""})
 
 
 class WithheldPassageTests(unittest.TestCase):

@@ -1341,6 +1341,10 @@
     return (slices.length && slices[0] && slices[0].id) || '';
   }
 
+  T.setInlineNotice(
+    'The act history could not be reached, so this page has nothing to show. ' +
+    'Serve the pages over HTTP with the data at "' + T.dataRoot + '".'
+  );
   chosenSlice().then(function (slice) {
     if (!slice) throw new Error(T.dataPath(MANIFEST) + ' names no slice to open');
     SLICE = slice;

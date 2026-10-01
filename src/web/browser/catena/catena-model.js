@@ -355,9 +355,14 @@
    * crossed that boundary is believed. Asked by descriptor, so a getter
    * standing there is seen without being run.
    *
-   * This closes the boundary for what this file is handed; the boundary
-   * itself is the shared loader's (`browser-core.js`), which could stop
-   * resolving promises with raw parsed values altogether.
+   * The shared loader (`browser-core.js` `loadJSON`) now refuses at the
+   * boundary itself: it parses from text and hands nothing on while either
+   * prototype carries a `then`. This check stays because the loader can only
+   * vouch for the moment it returns. Between that and the moment this file
+   * finalizes a value, `catena.js` passes it through two or three more
+   * promise hops (`cached`, `chapterFile`, the start-up `Promise.all`), each
+   * of which asks `then` again; this is the one check that sees the value
+   * where it becomes the page's, at the cost of one descriptor read.
    */
   function realmAdmitsThenable() {
     return Object.getOwnPropertyDescriptor(Object.prototype, 'then') !== undefined

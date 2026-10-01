@@ -231,12 +231,18 @@
    * ------------------------------------------------------------------ */
 
   async function openEdition(work, edition, wantedPassage, canonicalize) {
+    const token = T.beginRender();
     const path = M.editionPath(spine, work, edition);
     if (!path) {
-      T.fail('The index records no file for ' + edition.id + '.');
+      open = null;
+      showReader();
+      T.fail('The index records no file for ' + edition.id + '.', elements.reader);
+      const back = T.el('button', 'back', '← Back to the corpus');
+      back.type = 'button';
+      back.addEventListener('click', showFinder);
+      elements.reader.appendChild(back);
       return;
     }
-    const token = T.beginRender();
     showReader();
     T.clear(elements.reader);
     elements.reader.appendChild(T.el('p', 'placeholder', 'Loading the edition…'));
@@ -831,6 +837,12 @@
       spine = await T.loadJSON(SPINE);
     } catch (error) {
       T.doneBootstrapping();
+      for (const control of [elements.author, elements.category, elements.language,
+        elements.period, elements.rights, elements.sort]) {
+        T.fillSelect(control, [{ value: '', label: 'Unavailable — the corpus could not be read' }]);
+        control.disabled = true;
+      }
+      elements.find.placeholder = 'The corpus could not be read';
       T.fail('The source corpus could not be loaded: ' + (error.message || error));
       return;
     }

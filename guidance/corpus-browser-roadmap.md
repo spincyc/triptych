@@ -214,7 +214,10 @@ than production application logic.
 The following findings are non-blocking only for design acceptance and retain
 their distinct downstream classifications:
 
-- the inherited nested-`main` defect remains a production blocker;
+- the inherited nested-`main` defect was a production blocker (fixed on
+  `feature/propers/claude` on 2026-10-01 by `4ee23e218`: the layout wraps a page in `<main>`
+  only when the page declares none, and the gate's `single-main-element`
+  failures went from 108 to none);
 - Reader table-cell reflow and full no-JavaScript behavior remain production
   obligations;
 - implementation and hardening must add comprehensive Menu/Browse destination
@@ -257,6 +260,24 @@ findings remain backlog, and the twenty separately owned concerns were not
 touched. Release bindings were not refreshed; no merge, deploy, or release
 signing occurred.
 
+On 2026-10-01 the maintainer decided the hardening backlog be fixed. The three
+hardening findings were closed by `4ee23e218`: the six raw chapter roots and
+their refusal, lead and blocked members are read only as own data, so nothing
+inherited is believed and no accessor is called; a value finalized while a
+prototype `JSON.parse` builds on carries a `then` is refused; and the body-write
+retry criterion was found to be the error rather
+than the page — a failed DOM write is deliberately not retried, as the V16
+lane decided — and is now pinned by a test with its reasoning. The eight
+evidence-tooling findings were classified the same day: none is a defect in
+tooling tracked on `main`, because each lives in the immutable V16 handoff
+package's own scripts, so all eight passed to scheduling as feature or process
+work rather than being repaired in place.
+
+The recovery checkpoint carrying this record separately adds the shared
+`browser-core.js` loader refusal and Sources chrome scoping. Those changes
+are not in `4ee23e218`. Implementation on `feature/propers/claude` does not
+establish a merge to `main`, deployment, or acceptance of planned surfaces.
+
 Fresh validation on the candidate: `python3 scripts/_catena.py check` reports
 1,351 fragments / 1 book / 73 canon entries; `test_catena.py` 56/56 and the
 curated suite 419/419 under node; static browser checks 5/5; real-Chromium
@@ -278,7 +299,9 @@ REQUIRED** against candidate head
 `9810a29c38f6138069d11cb7c735d8bb8b190326`: two `MERGE_BLOCKER` findings, two
 `BOUNDED_INTEGRATION_CORRECTION` findings, `GenuinelyLateStaleWorkTest`
 ratified, and one new `HARDENING_BACKLOG` finding (the empty no-JavaScript
-`h2`). The one authorized bounded correction pass fixed exactly those four and
+`h2`; fixed on 2026-10-01 by `4ee23e218`, which gives it the served name "No
+chapter shown — needs JavaScript" that the script replaces on its first act).
+The one authorized bounded correction pass fixed exactly those four and
 opened no lane:
 
 - **Translation-absence identity.** `renderAbsences` rendered
@@ -339,6 +362,14 @@ Catena failures. Status:
 **awaiting one confirmation Codex review** scoped to these four corrections and
 a regression check. E1 remains unaccepted and unintegrated; no merge, deploy,
 release signing, or self-acceptance occurred.
+
+The preceding E1 candidate statuses are historical. Confirmation review
+`6d10197ef9543cbd34f4b9c884dd3d5b7aefd080` accepted the bounded correction,
+and merge `d66ea714adb1119dd1aba45d95b5b91399139351` integrated it; the
+corresponding completed promise is recorded in `PROJECT-WORK.md` and
+`promised-deliverables.toml`. That integration left the separately classified
+hardening and evidence-tooling backlogs intact; the 2026-10-01 entries below
+record their later disposition and do not reopen E1 acceptance.
 
 ## Structured-data limits and blocked follow-ups
 
@@ -401,6 +432,8 @@ comparison, text, or metadata in the UI.
 | 2026-08-09 | Final F0 and shared-shell design review | Independent review recorded **F0 Source Library — ACCEPT** and **Shared non-Liturgy shell — ACCEPT**, preserving C0/C1/D0/E0 and protected Liturgy/PDF/routes/hashes while carrying the disclosed production and data obligations forward. | Reviewed and packaged head `ecbd93a0575c4b890cc814af7cd20d01f5af7beb`; package `20260809T021953Z-corpus-wave-1-review-fixes.zip`; SHA-256 `d5fde51b14f143db05f762178896284d7768c0b2a11fc222fc2b32da63e22062`. |
 | 2026-08-28 | E1 Catena integration candidate | Built `integration/catena-e1` from the exact convergence-authorized main base per the review's bring-across manifest: final Catena route/model/HTML/CSS, the generator voice-authority change with its deterministic generated data, the generator-contract test expansion, and 419 curated production regressions. Fresh validation passed structure (1,351/1/73), focused Catena (56 and 419), static checks 5/5, identical 121-identity Chromium route runs at base and candidate (95/14/12, zero changes), governed CSS/JS budgets, and full discovery with zero new failure identities and zero Catena failures. Status **awaiting independent integration review**; not accepted, not integrated, no merge/deploy/release binding. | Convergence review `f1a5bbad763b847ded8799748223898de6ad4de9`; integration base `2778285849f2973ea89d1cfd5b2751ed4ae58e54`; V16 source `cc1f2fb8625f044558c26edd358b99cd7dcc7646`; branch `integration/catena-e1`; candidate head is the commit carrying this row. |
 | 2026-08-28 | E1 Catena bounded integration correction | Independent integration review `c3698563e3b45e35a672db37616e39ef27eb3d08` returned **CHANGES REQUIRED** (2 `MERGE_BLOCKER`, 2 `BOUNDED_INTEGRATION_CORRECTION`, `GenuinelyLateStaleWorkTest` ratified, one new `HARDENING_BACKLOG`). The one authorized bounded pass fixed exactly those four: a semantic DOM delimiter between the absence author and work (`Ambrose of MilanHexameron` no longer flattens into one word), a keyboard-only visible focus ring for recovery on `#reading` proved in real Chromium on the success and failure paths, curated-suite cleanup with the SHA pin and hostile machinery removed, lost ordinary coverage restored and a measured 71-class/394-test inventory replacing the disproved `8 + 40` split, and record integrity (work-register marker, executable `python3 scripts/_catena.py check`, discovery rerun at exact base and head). Zero new integration-caused failure identities; zero Chromium route identity or status changes; no ceiling raised. Status **awaiting one confirmation Codex review**; not accepted, not integrated, no merge/deploy/release binding. | Integration review `c3698563e3b45e35a672db37616e39ef27eb3d08`; reviewed candidate head `9810a29c38f6138069d11cb7c735d8bb8b190326`; integration base `2778285849f2973ea89d1cfd5b2751ed4ae58e54`; branch `integration/catena-e1`; corrected head is the commit carrying this row. |
+| 2026-10-01 | Protected browser and Catena defects | On `feature/propers/claude`, the layout wraps a browser page in `<main>` only when the page declares none; a new Propers visit opens Browse non-modally without taking focus; `day-missal.css`'s twelve site-header selectors are scoped with unchanged specificity; and the three Catena hardening findings and the empty no-JavaScript heading are closed. The recorded built-site gate went from 212 to 77 failures over the same 2,290 assertions (target-size only); the recorded 60 route/state captures were byte-identical. Release bindings and deployment remain separate. | `4ee23e218` |
+| 2026-10-01 | Browser recovery and cold review | The shared loader now refuses parsed values while either JSON prototype carries `then`, and Sources chrome selectors are scoped without changing specificity. Cold review also repaired History's initial-load false fallback notice, Publications' and Sources' failed-load controls, Publications' absent-filter Back navigation, and Sources' missing-edition-file error that detached its persistent hosts. Five added real-Chromium regressions fail with the preceding controllers and pass with the fixes. The historical D-1–D-10 register is reconciled in the implementation guidance; previously fixed items and planned work stay distinct. The eight evidence-tooling findings remain package-local follow-up work. | Recovery checkpoint carrying this record on `feature/propers/claude`; implementation, not deployment or new surface acceptance. |
 
 ## Next Codex tasks
 

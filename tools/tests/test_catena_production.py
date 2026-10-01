@@ -32,7 +32,11 @@ Added 2026-10-01, when the maintainer decided the convergence review's
 hardening backlog be fixed rather than carried: three runnable classes and
 nine tests (`E1HardeningBacklogTest`, `StaticReferenceNameIsReplacedTest`,
 `BodyWriteFailureIsTerminalTest`, and one `StaticDocumentTruthTest` method
-for the empty no-JavaScript heading) — 74 runnable classes, 403 tests.
+for the empty no-JavaScript heading) — 74 runnable classes, 403 tests. The
+same day the shared loader took the thenable refusal itself, adding one
+`E1HardeningBacklogTest` method that runs `browser-core.js` under node and
+teaching the replay's stub `fetch` to answer `text()` as a server does —
+74 runnable classes, 404 tests.
 
 WHAT IS DELIBERATELY NOT HERE
 -----------------------------
@@ -3022,11 +3026,17 @@ async function run(scenario) {
         ? bodyOf(rawly ? raw[path] : served) : ''
     };
     const answering = async () => finished;
+    /* The shared loader reads a body as TEXT and parses it itself
+     * (`browser-core.js` `loadJSON`, the KI-049 thenable refusal), so each
+     * answer is also offered as the JSON a server would send; `json` stays
+     * for anything that still asks for it. */
     const response = rawly
-      ? { ok: true, status: 200, json: async () => raw[path] }
+      ? { ok: true, status: 200, json: async () => raw[path],
+          text: async () => JSON.stringify(raw[path]) }
       : (served === null || served === undefined)
-        ? { ok: false, status: 404, json: async () => null }
-        : { ok: true, status: 200, json: answering };
+        ? { ok: false, status: 404, json: async () => null, text: async () => 'null' }
+        : { ok: true, status: 200, json: answering,
+            text: async () => JSON.stringify(finished) };
     /* V15: WHICH ASK OF THIS PATH IS HELD. `defer` parks every request whose
      * path carries the piece, which is the whole of the V14 axis. `deferTurn`
      * parks only the listed asks of it, so A's request may be held while B's
@@ -9841,9 +9851,12 @@ class E1HardeningBacklogTest(unittest.TestCase):
     2. THE ALTERNATING INHERITED `then`. A `then` getter on `Object.prototype`
        that answers `undefined` once and a resolver the next time substitutes
        the parsed document at the loader's promise boundary, before the model
-       sees it. The model now refuses any value finalized while either
-       prototype `JSON.parse` builds on carries a `then`: the text reads as
-       unreadable and states nothing it carried.
+       sees it. The shared loader (`browser-core.js` `loadJSON`) now parses
+       from text and refuses to hand anything on while either prototype
+       `JSON.parse` builds on carries a `then`, which covers every load on
+       every page; the model keeps the same check at the point of use, for the
+       promise hops `catena.js` adds after the loader returns, and a text it
+       finalizes there reads as unreadable and states nothing it carried.
     3. THE BODY-WRITE RETRY CRITERION — see `BodyWriteFailureIsTerminalTest`.
     """
 
@@ -10029,6 +10042,73 @@ class E1HardeningBacklogTest(unittest.TestCase):
         control = self.told()["realmControl"]
         self.assertIs(control["unreadable"], False)
         self.assertEqual(control["text"], "OWN TEXT")
+
+    #: The SHARED LOADER, `browser-core.js` `loadJSON`, run for real under node
+    #: with a stub `fetch` that offers a body both ways (`text()` and
+    #: `json()`), so the probe discriminates the loader's own choice. Every page
+    #: loads through it — indexes, spines, paragraphs, manifests, text — so the
+    #: refusal here covers what the model guard above cannot see.
+    LOADER_PROBE = r"""
+    'use strict';
+    const fs = require('node:fs');
+    const source = fs.readFileSync(process.argv[1], 'utf8');
+    const body = '{"text":"OWN TEXT"}';
+    const fetch = async () => ({ ok: true, status: 200,
+      text: async () => body, json: async () => JSON.parse(body) });
+    const window = { location: { search: '', hash: '' }, addEventListener() {} };
+    const document = { body: { appendChild() {} }, getElementById: () => null,
+      createElement: () => ({ setAttribute() {}, appendChild() {} }) };
+    new Function('window', 'self', 'document', 'fetch', 'location', 'history', source)(
+      window, window, document, fetch, window.location, { replaceState() {}, pushState() {} });
+    const T = window.Triptych;
+    // The probe's own async plumbing must not hand an object through a promise
+    // while a hostile `then` stands, or the probe is substituted instead of the
+    // loader: results are written straight into `out`, and every async
+    // function here resolves with `undefined`.
+    const out = Object.create(null);
+    const attempt = async (name) => {
+      try {
+        const value = await T.loadJSON('structure/catena/text/x.json');
+        const spot = value && Object.getOwnPropertyDescriptor(value, 'text');
+        out[name] = 'loaded:' + (spot ? spot.value : null);
+      } catch (error) {
+        out[name] = 'refused:' + String((error && error.message) || error);
+      }
+    };
+    (async () => {
+      await attempt('clean');
+      Object.defineProperty(Object.prototype, 'then', { configurable: true,
+        get() { return undefined; } });
+      try { await attempt('inertThen'); } finally { delete Object.prototype.then; }
+      let observed = 0;
+      Object.defineProperty(Object.prototype, 'then', { configurable: true, get() {
+        observed += 1;
+        if (observed % 2 === 1) return undefined;
+        return function (resolve) { resolve({ text: 'HOSTILE SECOND-THEN BODY' }); };
+      } });
+      try { await attempt('alternating'); } finally { delete Object.prototype.then; }
+      Object.defineProperty(Array.prototype, 'then', { configurable: true,
+        get() { return undefined; } });
+      try { await attempt('arrayThen'); } finally { delete Array.prototype.then; }
+      await attempt('cleanAgain');
+      process.stdout.write(JSON.stringify(Object.assign({}, out)));
+    })();
+    """
+
+    @unittest.skipIf(NODE is None, "node is not installed; the loader cannot be replayed")
+    def test_the_shared_loader_hands_on_nothing_from_a_thenable_realm(self):
+        told = json.loads(subprocess.run(
+            [NODE, "-e", self.LOADER_PROBE, str(BROWSER / "shared/browser-core.js")],
+            capture_output=True, text=True, check=True).stdout)
+        self.assertEqual(told["clean"], "loaded:OWN TEXT")
+        self.assertEqual(told["cleanAgain"], "loaded:OWN TEXT",
+                         "the refusal must not outlive the prototype that caused it")
+        for case in ("inertThen", "alternating", "arrayThen"):
+            with self.subTest(case=case):
+                self.assertTrue(told[case].startswith("refused:"),
+                                f"{case} handed a value on: {told[case]}")
+                self.assertIn('a "then" on a shared prototype', told[case])
+        self.assertNotIn("HOSTILE", json.dumps(told))
 
     @unittest.skipIf(NODE is None, "node is not installed; the model cannot be replayed")
     def test_the_alternating_then_substitution_reaches_no_body(self):

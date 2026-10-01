@@ -291,7 +291,11 @@ Production must prove, rather than merely promise:
 The inherited nested-`main`, narrow overflow, router history, selector
 collision, and missing-focus defects recorded in the implementation guidance
 remain production debt. An injected prototype may prove that it did not worsen
-them; it cannot close them.
+them; it cannot close them. On `feature/propers/claude`, 2026-10-01
+`4ee23e218` fixed the nested landmark in production code and scoped
+`day-missal.css`'s site-header rules under the maintainer's authority for
+protected liturgy. These are implementation fixes; the commit does not
+establish deployment or accept the remaining corpus program.
 
 ## Implementation sequence and ownership
 

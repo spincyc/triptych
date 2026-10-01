@@ -503,7 +503,10 @@
    * actually is, which is the first option, and `render` then writes the
    * address back to match. */
   function choose(select, value) {
-    if (!value) return;
+    if (!value) {
+      select.selectedIndex = 0;
+      return;
+    }
     select.value = value;
     if (select.selectedIndex < 0) select.selectedIndex = 0;
   }
@@ -526,6 +529,12 @@
     try {
       catalogue = await T.loadJSON(CATALOGUE);
     } catch (error) {
+      T.doneBootstrapping();
+      for (const control of [authorSelect, editionSelect, sectionSelect, readingSelect, sortSelect]) {
+        T.fillSelect(control, [{ value: '', label: 'Unavailable — the catalogue could not be read' }]);
+        control.disabled = true;
+      }
+      findInput.placeholder = 'The catalogue could not be read';
       T.fail('The catalogue could not be loaded: ' + (error.message || error));
       return;
     }

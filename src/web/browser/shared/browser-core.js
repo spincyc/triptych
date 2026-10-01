@@ -126,7 +126,36 @@ window.Triptych = (function () {
     if (!hasInline(path)) {
       throw new NotFound(path + ' is not in the built-in fallback');
     }
-    return JSON.parse(JSON.stringify(inlineFiles[path]));
+    return handedOn(JSON.parse(JSON.stringify(inlineFiles[path])), path);
+  }
+
+  /* A PARSED VALUE IS HANDED ON ONLY FROM A REALM THAT CANNOT TAKE IT FOR A
+   * PROMISE. `loadJSON` is async, so what it returns resolves a promise, and
+   * resolving a promise with an object asks the object for `then`. Nothing
+   * JSON can encode is callable, so a parsed document can be taken for a
+   * promise only through a `then` standing on one of the two prototypes
+   * `JSON.parse` builds on — and one that answers `undefined` once and a
+   * resolver the next time substitutes the whole document before any page
+   * sees it (the Catena E1 hardening backlog: V16 finalized "HOSTILE
+   * SECOND-THEN BODY" in place of the fragment's own words). So the body is
+   * read as text — a string is never a thenable, where `response.json()`'s own
+   * resolution was already one such ask — parsed here, and refused while either
+   * prototype carries a `then`. The prototypes are asked by descriptor, so a
+   * getter standing there is seen without being run, and the check and the
+   * return have no `await` between them, so nothing can be installed in the
+   * gap. Every page that loads through this file is covered: indexes,
+   * spines, paragraphs, manifests and text alike. */
+  function thenableRealm() {
+    return Object.getOwnPropertyDescriptor(Object.prototype, 'then') !== undefined
+      || Object.getOwnPropertyDescriptor(Array.prototype, 'then') !== undefined;
+  }
+
+  function handedOn(value, where) {
+    if (thenableRealm()) {
+      throw new Error(where + ' — refused: a "then" on a shared prototype could ' +
+        'have replaced the document with another');
+    }
+    return value;
   }
 
   let inlineNotice =
@@ -166,11 +195,13 @@ window.Triptych = (function () {
     if (response.status === 404) throw new NotFound(url + ' was not found (404)');
     if (!response.ok) throw new Error(url + ' — HTTP ' + response.status);
 
+    let value;
     try {
-      return await response.json();
+      value = JSON.parse(await response.text());
     } catch (error) {
       throw new Error(url + ' — the response was not valid JSON');
     }
+    return handedOn(value, url);
   }
 
   /**

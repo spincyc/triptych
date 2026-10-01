@@ -373,10 +373,18 @@
 
 /* This stylesheet is served only on the Sources route. Its own cross-section
    footer is navigation rather than prose, and the published shell's brand is
-   a route control; keep both at the same handset target floor as the reader. */
-.brand a,
+   a route control; keep both at the same handset target floor as the reader.
+
+   The brand and the site footer are the LAYOUT's, standing on every page, so
+   they are reached through the page class the build moves onto
+   `#main-content` rather than by their bare names: "served only on Sources"
+   was a fact about today's load list, not about these rules, and a bare
+   `.brand a` bundled anywhere else would re-size that page's header too. The
+   scope is inside `:where()`, so the specificity is still `.brand a`'s and
+   `.site-footer a`'s (0,1,1) and the Sources cascade is what it was. */
+:where(body:has(> .sources-page)) .brand a,
 .page-footer a,
-.site-footer a {
+:where(body:has(> .sources-page)) .site-footer a {
   display: inline-flex;
   align-items: center;
   min-height: 44px;

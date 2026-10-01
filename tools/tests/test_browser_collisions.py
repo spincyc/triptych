@@ -319,15 +319,9 @@ def selectors(path: Path) -> list[str]:
 # naming one of them scopes nothing, because every page carries it.
 BUILD_WRAPPER_CLASSES = {"page-shell", "page-browser", "section-toned"}
 
-# Unscoped reaches into the layout's chrome that are still in the tree. Listed
-# rather than silently permitted, so the list can only shorten. `sources.css`
-# sets a touch-target floor on the header's brand link and the footer's links
-# from bare `.brand a` and `.site-footer a`; it is served only on Sources today,
-# which is the same "only this page loads it" argument `day-missal.css` once
-# rested on. Recorded, not endorsed.
-UNSCOPED_LAYOUT_CHROME = {
-  "sources/sources.css": {".brand a", ".site-footer a"},
-}
+def without_where(selector: str) -> str:
+  """The selector with every `:where(...)` removed — its specificity-bearing part."""
+  return re.sub(r":where\((?:[^()]|\([^()]*\))*\)", "", selector).strip()
 
 
 def page_scoped(selector: str) -> bool:
@@ -358,7 +352,7 @@ class LayoutChromeScopeTest(unittest.TestCase):
       }
       with self.subTest(stylesheet=name):
         self.assertEqual(
-          unscoped, UNSCOPED_LAYOUT_CHROME.get(name, set()),
+          unscoped, set(),
           f"{name} reaches the layout's chrome from {sorted(unscoped)}; scope "
           "it under a class the page owns, as `body:has(.reader-instrument) > "
           ".site-header` does",
@@ -377,8 +371,19 @@ class LayoutChromeScopeTest(unittest.TestCase):
     for one in header:
       with self.subTest(selector=one):
         self.assertTrue(one.startswith("body:where(:has("), one)
-        self.assertTrue(re.sub(r":where\((?:[^()]|\([^()]*\))*\)", "", one)
-                        .startswith("body > .site-header"), one)
+        self.assertTrue(without_where(one).startswith("body > .site-header"), one)
+
+  def test_the_sources_chrome_rules_keep_their_cascade_weight(self):
+    """The same for Sources: its two chrome rules were bare `.brand a` and
+    `.site-footer a`, and with the `:where()` scope removed they still are."""
+    sheet = BROWSER / "sources/sources.css"
+    chrome = [one for one in selectors(sheet)
+              if re.search(r"\.(brand|site-footer)\b", one)]
+    self.assertEqual(sorted(without_where(one) for one in chrome),
+                     [".brand a", ".site-footer a"])
+    for one in chrome:
+      with self.subTest(selector=one):
+        self.assertTrue(one.startswith(":where(body:has(> .sources-page))"), one)
 
   def test_the_day_missal_scope_names_exactly_the_pages_that_load_it(self):
     """A page that starts loading day-missal.css is a decision, not a drift.
