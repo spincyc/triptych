@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 2910,
+  "artifacts": 2918,
   "editions": 1050,
-  "passages": 5199,
-  "readable": 3065,
-  "works": 936
+  "passages": 5260,
+  "readable": 3081,
+  "works": 935
  },
  "facets": {
   "authors": [
@@ -682,7 +682,7 @@
     "works": 1
    },
    {
-    "id": "Fraternité Sacerdotale Saint-Pierre, District de France",
+    "id": "Fraternité Sacerdotale Saint-Pierre, Province de France",
     "works": 1
    },
    {
@@ -1455,10 +1455,6 @@
    },
    {
     "id": "Priestly Fraternity of Saint Peter",
-    "works": 1
-   },
-   {
-    "id": "Priestly Fraternity of Saint Peter, Province of France",
     "works": 1
    },
    {
@@ -2497,10 +2493,6 @@
    },
    {
     "id": "bull",
-    "works": 1
-   },
-   {
-    "id": "calendar",
     "works": 1
    },
    {
@@ -3589,7 +3581,7 @@
   ],
   "rights": [
    {
-    "artifacts": 1634,
+    "artifacts": 1639,
     "editions": 379,
     "id": "public-domain"
    },
@@ -3609,7 +3601,7 @@
     "id": "licensed"
    },
    {
-    "artifacts": 64,
+    "artifacts": 67,
     "editions": 11,
     "id": "project-created"
    },
@@ -8928,8 +8920,8 @@
      "file": "1862-pustet-ratisbon-1862.json",
      "id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
      "language": "la",
-     "passages": 367,
-     "readable": 343,
+     "passages": 377,
+     "readable": 346,
      "rights": [
       "public-domain"
      ],
@@ -8967,7 +8959,7 @@
      "file": "1922-1922-tours-mame-editio-quarta-iuxta-typicam.json",
      "id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
      "language": "la",
-     "passages": 45,
+     "passages": 48,
      "readable": 0,
      "rights": [
       "public-domain"
@@ -9006,7 +8998,7 @@
      "file": "1962-vatican-typica-1962.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
      "language": "la",
-     "passages": 436,
+     "passages": 446,
      "readable": 0,
      "rights": [
       "unresolved"
@@ -9492,7 +9484,7 @@
      "file": "1861-philadelphia-1861.json",
      "id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
      "language": "en",
-     "passages": 415,
+     "passages": 440,
      "readable": 22,
      "rights": [
       "public-domain",
@@ -13787,7 +13779,7 @@
     "French district ordo",
     "Monthly liturgical calendar"
    ],
-   "author": "Fraternité Sacerdotale Saint-Pierre, District de France",
+   "author": "Fraternité Sacerdotale Saint-Pierre, Province de France",
    "category": "institutional-ordo",
    "directory": "editions/fssp-france/ordo-du-mois/",
    "editions": [
@@ -13815,6 +13807,19 @@
       "unresolved"
      ],
      "title": "Ordo du mois — web state of 22 September 2026",
+     "year": 2026
+    },
+    {
+     "date": "2026-09-28",
+     "file": "2026-2026-09-28-web.json",
+     "id": "edition.fssp-france.ordo-du-mois.web-2026-09-28",
+     "language": "fr",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Ordo du mois, web state read 28 September 2026",
      "year": 2026
     }
    ],
@@ -24262,32 +24267,6 @@
    "title": "Constitutions of the Priestly Fraternity of Saint Peter"
   },
   {
-   "alternate_titles": [],
-   "author": "Priestly Fraternity of Saint Peter, Province of France",
-   "category": "calendar",
-   "directory": "editions/priestly-fraternity-of-saint-peter-france/ordo-du-mois/",
-   "editions": [
-    {
-     "date": "2026-09-28",
-     "file": "2026-web-2026-09-28.json",
-     "id": "edition.priestly-fraternity-of-saint-peter-france.ordo-du-mois.web-2026-09-28",
-     "language": "fr",
-     "passages": 0,
-     "readable": 0,
-     "rights": [
-      "restricted"
-     ],
-     "title": "Ordo du mois, web state read 28 September 2026",
-     "year": 2026
-    }
-   ],
-   "id": "work.priestly-fraternity-of-saint-peter-france.ordo-du-mois",
-   "languages": [
-    "fr"
-   ],
-   "title": "Ordo du mois"
-  },
-  {
    "alternate_titles": [
     "L'Année liturgique"
    ],
@@ -29711,8 +29690,8 @@
      "file": "2026-2026-09-03-editorial-projection.json",
      "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03",
      "language": "la",
-     "passages": 1042,
-     "readable": 1042,
+     "passages": 1055,
+     "readable": 1055,
      "rights": [
       "project-created"
      ],

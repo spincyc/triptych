@@ -2,6 +2,21 @@
  "artifacts": [
   {
    "artifact_type": "web-page",
+   "byte_size": 95123,
+   "edition_owned": true,
+   "id": "artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-d1a6e39a",
+   "media_type": "text/html",
+   "notes": "Jacquier, Jacque Eug&egrave;ne. \"Gospel of St. Matthew.\" The Catholic Encyclopedia. Vol. 10. New York: Robert Appleton Company, 1911. A SECOND DELIVERY OF A PAGE THIS EDITION ALREADY REGISTERS: 95,123 bytes against the 95,482 registered on 2026-08-26 at artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef, whose SHA-256 a fresh delivery no longer reproduces. THE ARTICLE IS UNCHANGED: the transformation recorded on artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef-article-text, re-applied by script to these bytes on 2026-10-01, reproduces that retained file byte for byte (SHA-256 3d9a35cc773f774ed3b423c890956ba655c61ceb7096fbd7c01a197f062168c2, 64,011 bytes). The whole difference therefore lies in New Advent's page apparatus outside the article; the deficit is the uniform 359 bytes recorded for this class at artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05485a-e144286e, and the host still sends an x-mod-pagespeed header. That is an inference from the uniform deficit, not a diff, because the earlier bytes were not retained. NO SECOND COPY OF THE ARTICLE TEXT IS RETAINED HERE: a reader without the network opens artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef-article-text, and registering a second extraction of an unchanged article would put the same words in the tree twice. Registered to record the drift (guidance/sources.md: changed bytes receive a new artifact record, and consumers remain pinned until reviewed); the chronology claims citing artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef stay pinned to it, because the words they rest on are the retained extraction of those bytes. Three further fetches the same day returned these exact bytes.",
+   "page_count": null,
+   "retrieved": "2026-10-01",
+   "rights": "public-domain",
+   "rights_basis": "The Catholic Encyclopedia article is in the public domain in the United States: its volume was published between 1907 and 1912, so the longest term available to it under 17 U.S.C. 304 expired at the end of 2007 at the latest. What is not republished from this repository is New Advent's own layer of these exact bytes — the site's navigation, styling, advertising markup, support solicitation and \"About this page\" apparatus — which is why the delivery stays remote. That apparatus encumbers the page, not the article printed inside it. Settled once in src/sources/inventories/catholic-encyclopedia-rights-v1.toml.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.newadvent.org/cathen/10057a.htm",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "web-page",
    "byte_size": 95482,
    "edition_owned": true,
    "id": "artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef",
