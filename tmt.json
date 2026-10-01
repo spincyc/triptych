@@ -128,6 +128,17 @@
       "stage": "draft",
       "usage": "check-generation-metadata [--provider NAME] [--document DOCUMENT | --pdf DOCUMENT PDF]"
     },
+    "check-pdf-anchors": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Refuse PDF builds whose contents or bookmarks lack their own heading anchor.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "check-pdf-anchors STEM [STEM ...]"
+    },
     "check-promised-deliverables": {
       "idempotent": true,
       "json": false,

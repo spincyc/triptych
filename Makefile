@@ -118,6 +118,8 @@ BUILD_METADATA_STAMPS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .ok,$(
 BUILD_METADATA_VERIFICATIONS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .verify,$(DOCUMENTS)))
 INSTALLED_PDFS := $(addprefix $(PDF_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 METADATA_CHECKER := tools/tpt check-generation-metadata
+# Every contents line and bookmark must own its heading's anchor; see the tool.
+PDF_ANCHOR_CHECKER := tools/tpt check-pdf-anchors
 # A launcher invocation is two words. Make would read it as two prerequisites
 # and sha256sum would look for a file whose name contains a space, so
 # prerequisite and hash sites must name the implementation file instead.
@@ -1460,6 +1462,7 @@ $(BUILD_ROOT)/%-synthesis.pdf: $(COMMON_SOURCES) | $(BUILD_ROOT)/.metadata/%-syn
 	@mkdir -p $(@D) '$(BUILD_ROOT)/.metadata/$(dir $*)'
 	@rm -f -- '$(BUILD_ROOT)/.metadata/$*-synthesis.ok'
 	@$(call PDFLATEX_TO_FIXED_POINT,$(notdir $*)-synthesis,$*/synthesis.tex,$(BUILD_ROOT)/$*-synthesis)
+	@$(PDF_ANCHOR_CHECKER) '$(BUILD_ROOT)/$*-synthesis'
 	@$(PROPER_COMPONENT_CHECKER) --provider '$(PROVIDER)' --document '$*' \
 		--edition synthesis --aux '$(BUILD_ROOT)/$*-synthesis.aux'
 	@$(METADATA_CHECKER) --provider '$(PROVIDER)' --pdf '$*-synthesis' '$@'
@@ -1475,6 +1478,7 @@ $(BUILD_ROOT)/%-homily.pdf: $(COMMON_SOURCES) | $(BUILD_ROOT)/.metadata/%-homily
 	@mkdir -p $(@D) '$(BUILD_ROOT)/.metadata/$(dir $*)'
 	@rm -f -- '$(BUILD_ROOT)/.metadata/$*-homily.ok'
 	@$(call PDFLATEX_TO_FIXED_POINT,$(notdir $*)-homily,$*/homily.tex,$(BUILD_ROOT)/$*-homily)
+	@$(PDF_ANCHOR_CHECKER) '$(BUILD_ROOT)/$*-homily'
 	@$(PROPER_COMPONENT_CHECKER) --provider '$(PROVIDER)' --document '$*' \
 		--edition homily --aux '$(BUILD_ROOT)/$*-homily.aux'
 	@$(METADATA_CHECKER) --provider '$(PROVIDER)' --pdf '$*-homily' '$@'
@@ -1496,6 +1500,7 @@ $(BUILD_ROOT)/%.pdf: $(SOURCE_ROOT)/%/main.tex $(COMMON_SOURCES) | $(BUILD_ROOT)
 	@mkdir -p '$(BUILD_ROOT)/.metadata/$(dir $*)'
 	@rm -f -- '$(BUILD_ROOT)/.metadata/$*.ok'
 	@$(call PDFLATEX_TO_FIXED_POINT,$(notdir $*),$*/main.tex,$(BUILD_ROOT)/$*)
+	@$(PDF_ANCHOR_CHECKER) '$(BUILD_ROOT)/$*'
 	$(if $(wildcard $(SOURCE_ROOT)/$*/proper-components.toml),@$(PROPER_COMPONENT_CHECKER) \
 		--provider '$(PROVIDER)' --document '$*' \
 		--edition research --aux '$(BUILD_ROOT)/$*.aux')

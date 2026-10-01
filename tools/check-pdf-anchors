@@ -1,0 +1,223 @@
+#!/usr/bin/env python3
+"""Refuse PDF builds whose contents or bookmarks lack their own heading anchor.
+
+Every contents line and bookmark of a built document must point at the anchor
+of its own heading. hyperref names the anchor of a numbered or unnumbered
+heading after its sectioning level (section.3, subsection*.12); when a heading
+has none, the contents line silently takes whatever anchor came last before
+it, usually a table's, the document start, or the previous heading's, and the
+link opens somewhere else. That happened to every titlesec template until
+common/preamble installed hyperref's titlesec hooks, and still happens to a
+starred heading whose manual \\addcontentsline has no \\phantomsection.
+
+The check reads the settled build files beside the PDF: STEM.aux, whose
+\\@writefile{toc} entries are every contents line the document writes (each
+\\contentsline's fourth argument is its anchor, and the bookmark package builds
+the bookmarks from the same entries, with or without a printed contents page),
+and, when hyperref writes one, STEM.out (one \\BOOKMARK per bookmark), whose
+decoded titles may carry no TeX markup. common/preamble turns the `` and ''
+that hyperref used to copy into bookmarks into curly quotes; this check keeps
+it so wherever a .out shows the converted title.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import sys
+from pathlib import Path
+
+# Shared CLI helpers live outside tools/ so that tmt's registry scan, which
+# requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+from _tooling import Example, with_examples  # noqa: E402
+
+PROTOCOL_VERSION = 1
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "": (
+        Example(
+            "tools/check-pdf-anchors tools/tests/fixtures/pdf-anchors/anchored",
+            (
+                "tools/tests/fixtures/pdf-anchors/anchored: 4 contents lines, 3 bookmarks, every one on its own anchor",
+            ),
+        ),
+        Example(
+            "tools/check-pdf-anchors tools/tests/fixtures/pdf-anchors/borrowed",
+            (
+                "tools/tests/fixtures/pdf-anchors/borrowed.aux: contents line 'The Appointed Texts' points at table.1, not a heading anchor",
+                "tools/tests/fixtures/pdf-anchors/borrowed.aux: contents lines 'Appendix' and 'References' share the anchor section*.4",
+                "tools/tests/fixtures/pdf-anchors/borrowed.out: bookmark 'First' points at Doc-Start, not a heading anchor",
+                "tools/tests/fixtures/pdf-anchors/borrowed.out: bookmark '``Thou Art Just'' and mercy' carries TeX markup in its title",
+                "tools/tests/fixtures/pdf-anchors/borrowed: 4 problems",
+            ),
+            "a document whose headings borrow anchors; exits 1",
+        ),
+    ),
+}
+
+FOREIGN_ANCHOR = re.compile(
+    r"(?:Doc-Start|table\.|figure\.|equation\.|page\.|Hfootnote\.|footnote\.|Item\.|cite\.)"
+)
+CONTENTSLINE = re.compile(r"\\@writefile\s*\{toc\}\s*\{\s*\\contentsline\s*\{(?P<level>[^{}]*)\}")
+BOOKMARK = re.compile(r"\\BOOKMARK\s*\[[^]]*\]\[[^]]*\]\{(?P<anchor>[^{}]*)\}")
+
+
+def braced(text: str, start: int) -> tuple[str, int]:
+    """The balanced group opening at text[start] == '{', and the index after it."""
+    if start >= len(text) or text[start] != "{":
+        raise ValueError("expected a braced group")
+    depth, index = 0, start
+    while index < len(text):
+        char = text[index]
+        if char == "\\":
+            index += 2
+            continue
+        if char == "{":
+            depth += 1
+        elif char == "}":
+            depth -= 1
+            if depth == 0:
+                return text[start + 1:index], index + 1
+        index += 1
+    raise ValueError("unbalanced braces")
+
+
+def plain(title: str) -> str:
+    """A contents title as a reader would name it, for messages."""
+    title = re.sub(r"\\numberline\s*\{[^{}]*\}", "", title)
+    title = re.sub(r"\\[A-Za-z@]+\*?\s*", "", title)
+    return re.sub(r"\s+", " ", title.replace("{", "").replace("}", "")).strip()
+
+
+def decode_pdf_string(raw: str) -> str:
+    """Decode a hyperref .out title: octal escapes, UTF-16BE when it has a BOM."""
+    data = bytearray()
+    index = 0
+    while index < len(raw):
+        char = raw[index]
+        if char == "\\" and index + 1 < len(raw):
+            octal = re.match(r"[0-7]{1,3}", raw[index + 1:])
+            if octal:
+                data.append(int(octal.group(0), 8) & 0xFF)
+                index += 1 + len(octal.group(0))
+                continue
+            data.append(ord(raw[index + 1]) & 0xFF)
+            index += 2
+            continue
+        data.extend(char.encode("latin-1", "replace"))
+        index += 1
+    if data[:2] == b"\xfe\xff":
+        return bytes(data[2:]).decode("utf-16-be", "replace")
+    return bytes(data).decode("latin-1")
+
+
+def contents(path: Path) -> list[tuple[str, str]]:
+    """Every contents line an .aux writes to the toc, as (title, anchor)."""
+    text = path.read_text(encoding="utf-8", errors="replace")
+    lines = []
+    for match in CONTENTSLINE.finditer(text):
+        cursor = match.end()
+        groups = []
+        try:
+            for _ in range(3):
+                while cursor < len(text) and text[cursor].isspace():
+                    cursor += 1
+                group, cursor = braced(text, cursor)
+                groups.append(group)
+        except ValueError:
+            continue
+        title, _page, anchor = groups
+        lines.append((title, anchor.strip()))
+    return lines
+
+
+def bookmarks(path: Path) -> list[tuple[str, str]]:
+    """Every bookmark of a hyperref .out file as (decoded title, anchor)."""
+    text = path.read_text(encoding="latin-1")
+    marks = []
+    for match in BOOKMARK.finditer(text):
+        try:
+            title, _ = braced(text, match.end())
+        except ValueError:
+            continue
+        marks.append((decode_pdf_string(title), match["anchor"].strip()))
+    return marks
+
+
+def check(stem: Path) -> tuple[list[str], dict[str, int]]:
+    problems: list[str] = []
+    counts = {"contents": 0, "bookmarks": 0}
+    toc, out = stem.with_name(stem.name + ".aux"), stem.with_name(stem.name + ".out")
+    if not toc.is_file():
+        raise FileNotFoundError(f"{stem}: {toc.name} does not exist; build the document first")
+    for kind, path, entries in (
+        ("contents line", toc, contents(toc)),
+        ("bookmark", out, bookmarks(out) if out.is_file() else []),
+    ):
+        counts["contents" if kind == "contents line" else "bookmarks"] = len(entries)
+        owners: dict[str, str] = {}
+        for title, anchor in entries:
+            name = plain(title) if kind == "contents line" else title
+            if not anchor:
+                problems.append(f"{path}: {kind} '{name}' has no anchor")
+                continue
+            if FOREIGN_ANCHOR.match(anchor):
+                problems.append(f"{path}: {kind} '{name}' points at {anchor}, not a heading anchor")
+            elif anchor in owners and owners[anchor] != name:
+                problems.append(
+                    f"{path}: {kind}s '{owners[anchor]}' and '{name}' share the anchor {anchor}"
+                )
+            owners.setdefault(anchor, name)
+            if kind == "bookmark" and (
+                    "``" in title or "''" in title or re.search(r"\\[A-Za-z]", title)):
+                problems.append(f"{path}: bookmark '{name}' carries TeX markup in its title")
+    return problems, counts
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        prog="check-pdf-anchors",
+        description=__doc__.strip(),
+    )
+    parser.add_argument("stems", nargs="+", metavar="STEM",
+                        help="a build path without extension, e.g. build/gpt/articles/x/y")
+    parser.add_argument("--json", action="store_true",
+                        help="emit one compact key-sorted JSON object (cli-v1)")
+    with_examples(parser, EXAMPLES[""])
+    arguments = parser.parse_args(argv)
+    report = []
+    try:
+        for stem in arguments.stems:
+            problems, counts = check(Path(stem))
+            report.append({"stem": stem, "problems": problems, **counts})
+    except (OSError, ValueError) as error:
+        if arguments.json:
+            print(json.dumps({"code": "input", "error": str(error), "status": "error",
+                              "v": PROTOCOL_VERSION}, ensure_ascii=False, sort_keys=True,
+                             separators=(",", ":")), file=sys.stderr)
+        else:
+            print(f"check-pdf-anchors: {error}", file=sys.stderr)
+        return 2
+    failed = any(item["problems"] for item in report)
+    if arguments.json:
+        print(json.dumps({"documents": report, "status": "fail" if failed else "ok",
+                          "v": PROTOCOL_VERSION}, ensure_ascii=False, sort_keys=True,
+                         separators=(",", ":")))
+        return 1 if failed else 0
+    for item in report:
+        for problem in item["problems"]:
+            print(problem)
+        if item["problems"]:
+            print(f"{item['stem']}: {len(item['problems'])} problems")
+        else:
+            print(f"{item['stem']}: {item['contents']} contents lines, {item['bookmarks']} "
+                  "bookmarks, every one on its own anchor")
+    return 1 if failed else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

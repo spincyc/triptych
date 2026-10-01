@@ -172,6 +172,7 @@ with open(os.environ["MAKE_TEST_SOURCE_READER_LOG"], "a", encoding="utf-8") as l
             "document-library",
             "calendar-days",
             "check-calendar-masses",
+            "check-pdf-anchors",
             "mass-propers",
             "calendar-rubrics",
             "mass-ordinary",
