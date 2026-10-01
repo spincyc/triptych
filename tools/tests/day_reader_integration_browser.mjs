@@ -1701,6 +1701,59 @@ async function runAssertions(cdp, base) {
       `document.querySelectorAll('section.territorial-branch details.day-reasoning').length`), 2);
   });
 
+  await test('Apply clears outgoing edition variants while same-edition dates and history preserve them', async () => {
+    for (const origin of [STATES.postReadLatent,
+      updatedHash(STATES.postMissal, 'eucharistic-prayer', 'ep-iii')]) {
+      await navigateCandidate(cdp, base, origin + '&future-option=preserve-me');
+      const mode = await evaluate(cdp, 'dayReaderDebug.state.requestedMode');
+      const prayer = await evaluate(cdp,
+        `dayReaderDebug.state.options.legitimate['eucharistic-prayer']`);
+      await click(cdp, '[data-reader-action="date"]');
+      await evaluate(cdp, `document.querySelector('#reader-date').value = '2026-12-06'`);
+      const sameEdition = hash({
+        date: '2026-12-06', missal: 'postconciliar', bible: 'douay-rheims',
+        orations: 'la', mode, 'ordinary-lang': 'en',
+        rubrics: mode === 'missal' ? '1' : '0',
+        'eucharistic-prayer': prayer, 'future-option': 'preserve-me'
+      });
+      let before = await evaluate(cdp, 'dayReaderDebug.renders');
+      await click(cdp, '#date-form .surface-apply');
+      await waitForCommittedRender(cdp, before, sameEdition, 'same-edition Apply');
+      assert.equal(await evaluate(cdp,
+        `dayReaderDebug.state.options.legitimate['eucharistic-prayer']`), prayer);
+
+      await click(cdp, '[data-reader-action="date"]');
+      await evaluate(cdp, `document.querySelector('#reader-missal').value = 'roman-1962'`);
+      const params = new URLSearchParams(sameEdition.slice(1));
+      params.set('missal', 'roman-1962');
+      params.delete('eucharistic-prayer');
+      const changedEdition = '#' + params.toString();
+      before = await evaluate(cdp, 'dayReaderDebug.renders');
+      await click(cdp, '#date-form .surface-apply');
+      await waitForCommittedRender(cdp, before, changedEdition, 'changed-edition Apply');
+      const selected = await evaluate(cdp, `({
+        edition: dayReaderDebug.state.edition.id,
+        mode: dayReaderDebug.state.requestedMode,
+        outcome: dayReaderDebug.outcome,
+        options: dayReaderDebug.state.options.legitimate,
+        properCount: document.querySelectorAll('#reader-document .proper').length
+      })`);
+      assert.equal(selected.edition, 'roman-1962');
+      assert.equal(selected.mode, mode);
+      assert.equal(selected.outcome, 'ready');
+      assert.deepEqual(selected.options, {});
+      assert.ok(selected.properCount > 0);
+
+      await historyMove(cdp, 'back', sameEdition);
+      assert.equal(await evaluate(cdp, 'dayReaderDebug.state.edition.id'), 'postconciliar');
+      assert.equal(await evaluate(cdp,
+        `dayReaderDebug.state.options.legitimate['eucharistic-prayer']`), prayer);
+      await historyMove(cdp, 'forward', changedEdition);
+      assert.equal(await evaluate(cdp, 'dayReaderDebug.state.edition.id'), 'roman-1962');
+      assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'ready');
+    }
+  });
+
   await test('active and latent state remain distinct through Back and Forward', async () => {
     const active = STATES.postMissal;
     await navigateCandidate(cdp, base, STATES.currentStyleLatent);

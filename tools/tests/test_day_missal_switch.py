@@ -144,10 +144,14 @@ function missalRows(ids) {
   return ids.map((id) => ({id, label: id, edition: id, code: id}));
 }
 
-// The Apply handler and `hashWith`, exactly as day-reader.js ships them.
+// The Apply handler and its helpers, exactly as day-reader.js ships them.
 function replayApply(scenario) {
   const window = {location: {hash: scenario.hash}};
-  const runtime = {normalized: scenario.previous, ordinary: null};
+  const runtime = {
+    normalized: scenario.previous,
+    ordinary: null,
+    manifests: {ordinaryIndex: read(base + 'ordinary/index.json')}
+  };
   const dateInput = {value: scenario.date};
   const missalSelect = {value: scenario.missal};
   const bibleSelect = {value: scenario.bible};
@@ -163,6 +167,7 @@ function replayApply(scenario) {
   function navigate(updates, removals) {
     captured = {updates, removals: removals || []};
   }
+  __VARIANT_KEYS__
   __HASH_WITH__
   const apply = function (event) { __APPLY_BODY__ };
   apply({preventDefault() {}});
@@ -252,6 +257,7 @@ def bridge() -> str:
     held = source()
     return (
         NODE_PRELUDE
+        .replace("__VARIANT_KEYS__", block(held, "function variantKeys(ordinaryIndex) {"))
         .replace("__HASH_WITH__", block(held, "function hashWith(updates, removals) {"))
         .replace("__APPLY_BODY__", body(
             held, "dateForm.addEventListener('submit', function (event) {"))
@@ -263,9 +269,11 @@ def node(calls: list[dict]) -> list[dict]:
     if shutil.which("node") is None:
         raise unittest.SkipTest("node is not installed")
     run = subprocess.run(
-        ["node", "-e", bridge()], cwd=ROOT, check=True, text=True,
+        ["node", "-e", bridge()], cwd=ROOT, check=False, text=True,
         capture_output=True, input=json.dumps({"calls": calls}),
     )
+    if run.returncode:
+        raise AssertionError(run.stdout + run.stderr)
     return json.loads(run.stdout)
 
 
@@ -430,6 +438,35 @@ class DayMissalSwitchTests(unittest.TestCase):
                           "missal": "roman-1962", "date": DIVERGENT_DATE}])[0]
         self.assertTrue(resolved["ok"], resolved)
         self.assertEqual(resolved["resolved"], EASTER_4)
+
+    def test_edition_changes_clear_all_ordinary_variants_but_date_changes_keep_them(self) -> None:
+        ordinary = json.loads((ROOT / "src/web/data/structure/ordinary/postconciliar.json")
+                              .read_text(encoding="utf-8"))
+        variants = {
+            group["group"]: group["options"][-1]["id"]
+            for group in ordinary["variants"]
+        }
+        self.assertIn("eucharistic-prayer", variants)
+        held = hash_of("2026-11-29", "postconciliar", "advent-1")
+        held += "".join("&" + key + "=" + value for key, value in variants.items())
+        held += "&future-option=preserve-me"
+        changed_edition, changed_date = node([
+            apply_call(held, "2026-11-29", "roman-1962", "advent-1",
+                       "2026-11-29", "postconciliar"),
+            apply_call(held, "2026-12-06", "postconciliar", "advent-1",
+                       "2026-11-29", "postconciliar"),
+        ])
+        edition_pairs = pairs_of(changed_edition["hash"])
+        date_pairs = pairs_of(changed_date["hash"])
+        self.assertEqual(edition_pairs["missal"], "roman-1962")
+        self.assertEqual(date_pairs["date"], "2026-12-06")
+        for key, value in variants.items():
+            with self.subTest(variant=key):
+                self.assertNotIn(key, edition_pairs)
+                self.assertEqual(date_pairs[key], value)
+        for pairs in (edition_pairs, date_pairs):
+            self.assertNotIn("mass", pairs)
+            self.assertEqual(pairs["future-option"], "preserve-me")
 
     def test_a_removal_outranks_an_update_that_names_the_same_key(self) -> None:
         """The composition rule the Apply handler was already relying on."""

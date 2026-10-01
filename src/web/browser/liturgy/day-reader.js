@@ -2687,8 +2687,8 @@
     event.preventDefault();
     const previous = runtime.normalized && runtime.normalized.state;
     const nextFormulary = formularyField.hidden ? null : formularySelect.value;
-    const changedDay = !previous || previous.civilDate !== dateInput.value ||
-      previous.edition.id !== missalSelect.value;
+    const changedEdition = !previous || previous.edition.id !== missalSelect.value;
+    const changedDay = changedEdition || previous.civilDate !== dateInput.value;
     const previousFormulary = previous && previous.selectedReadableFormulary
       ? previous.selectedReadableFormulary.id : null;
     const changedFormulary = previousFormulary !== nextFormulary;
@@ -2701,14 +2701,20 @@
       mass: nextFormulary
     };
     if (!ordinaryLangField.hidden) updates['ordinary-lang'] = ordinaryLangSelect.value;
-    if (!ordinaryOptionField.hidden && runtime.ordinary) {
+    if (!changedEdition && !ordinaryOptionField.hidden && runtime.ordinary) {
       const groups = ordinaryVariantGroups(runtime.ordinary);
       if (groups.length === 1) updates[groups[0].group] = ordinaryOptionSelect.value;
     }
-    readerShell.close({ restoreFocus: false });
-    navigate(updates, changedDay ? ['mass', 'form', 'translation-witness', 'location'] :
+    const removals = changedDay ? ['mass', 'form', 'translation-witness', 'location'] :
       (changedFormulary ? ['form', 'translation-witness', 'location'] :
-        (changedOrations ? ['translation-witness'] : [])));
+        (changedOrations ? ['translation-witness'] : []));
+    // The option control and any latent variant hash belong to the outgoing
+    // edition. A missal change must not turn them into an explicit request for
+    // the new edition; date-only changes keep the reader's Ordinary choices.
+    if (changedEdition) removals.push.apply(removals,
+      variantKeys(runtime.manifests && runtime.manifests.ordinaryIndex));
+    readerShell.close({ restoreFocus: false });
+    navigate(updates, removals);
   });
 
   document.getElementById('previous-date').addEventListener('click', function () {
