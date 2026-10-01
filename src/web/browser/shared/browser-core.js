@@ -473,8 +473,19 @@ window.Triptych = (function () {
     );
   }
 
+  /**
+   * How an edition numbers its psalms, in words: its numbering system and,
+   * where it leaves psalm titles unnumbered, that too -- the King James prints
+   * the Miserere as 51:1 where the Hebrew numbering it follows says 51:3, and a
+   * label naming the system alone would describe a numbering it does not print.
+   */
+  function numberingLabel(bible) {
+    const label = bible.numbering + ' numbering';
+    return bible.psalm_titles === 'unnumbered' ? label + ', psalm titles unnumbered' : label;
+  }
+
   function bibleMeta(bible) {
-    const meta = [bible.label + ' — ' + bible.numbering + ' numbering'];
+    const meta = [bible.label + ' — ' + numberingLabel(bible)];
     if (bible.psalter) meta.push(bible.psalter + ' psalter');
     return meta;
   }
@@ -503,24 +514,57 @@ window.Triptych = (function () {
    * --------------------------------------------------------------------- */
 
   /**
+   * The loci key an edition reads, as the manifest states it.
+   *
+   * `bibles.json` names it per edition (`loci`): the numbering system, or the
+   * Hebrew numbering as an edition that leaves psalm titles unnumbered prints
+   * it. The page takes the key and computes nothing; a manifest written before
+   * the key existed falls back to the edition's numbering, which is the key
+   * every title-numbering edition reads anyway.
+   */
+  function lociKey(bible) {
+    return (bible && (bible.loci || bible.numbering)) || null;
+  }
+
+  /**
    * Pick the loci a given edition can actually read.
    *
-   * Structure files key loci by numbering system because the psalter is
-   * numbered differently in the Vulgate and Hebrew traditions and the same
-   * citation lands on different chapters. No numbering logic ships to the
-   * browser: the page reads the edition's `numbering` and takes the loci
-   * already computed for it. An edition whose numbering has no entry is a gap
-   * in the data, and is reported rather than silently guessed at — FAILURE 2.
+   * Structure files key loci by how an edition is addressed -- numbering
+   * system and psalm-title convention -- because the psalter is numbered
+   * differently in the Vulgate and Hebrew traditions and the same citation
+   * lands on different chapters, and an edition that leaves psalm titles
+   * unnumbered prints most psalms a verse or two lower. No numbering logic
+   * ships to the browser: the page reads the key its edition's manifest entry
+   * names (`lociKey`) and takes the loci already computed for it. An edition
+   * whose key has no entry is a gap in the data, and is reported rather than
+   * silently guessed at — FAILURE 2.
+   *
+   * `edition`, where given, is the edition's id. An edition whose own printing
+   * departs from the addressing it reads -- the Clementine opens Vulgate Psalm
+   * 115 at verse 1, not 10 -- has its loci under `edition_loci[edition]`,
+   * written by the generator from that edition's verse-alias table, and they
+   * win. A reason the generator recorded for refusing the edition or the
+   * addressing (`refused`) is the answer when no loci stand for it.
    *
    * The book token may sit on the locus or on the citation that owns it: a
    * reading names its book once and lets its loci carry chapter and verses
    * only. The token is what the fragment path is built from, so it wins over
    * the display name.
    */
-  function lociFor(citation, numbering) {
+  function lociFor(citation, numbering, edition) {
     const loci = (citation && citation.loci) || {};
-    const chosen = loci[numbering];
+    const refused = (citation && citation.refused) || {};
+    const departures = (citation && citation.edition_loci) || {};
+    if (edition && typeof refused[edition] === 'string') {
+      return { problem: refused[edition] };
+    }
+    const own = edition ? departures[edition] : undefined;
+    const chosen = Array.isArray(own) ? own : loci[numbering];
     const owner = (citation && (citation.token || citation.book)) || null;
+
+    if (!Array.isArray(chosen) && typeof refused[numbering] === 'string') {
+      return { problem: refused[numbering] };
+    }
 
     if (Array.isArray(chosen) && chosen.length) {
       const resolved = [];
@@ -554,6 +598,11 @@ window.Triptych = (function () {
         'this edition numbers by "' + numbering + '", and the citation carries ' +
         'loci only for ' + offered.map((key) => '"' + key + '"').join(', ') + '.'
     };
+  }
+
+  /** The loci one edition reads for a citation: its key, and its own departures. */
+  function editionLoci(citation, bible) {
+    return lociFor(citation, lociKey(bible), (bible && bible.id) || null);
   }
 
   /**
@@ -655,12 +704,15 @@ window.Triptych = (function () {
     return lociRuns(loci).map((run) => formatRun(run, book)).join(', ');
   }
 
-  /** Every distinct chapter a list of citations needs, in this numbering. */
-  function chaptersNeeded(citations, numbering) {
+  /**
+   * Every distinct chapter a list of citations needs, under this loci key --
+   * and, where `edition` is given, as that edition's own departures place them.
+   */
+  function chaptersNeeded(citations, numbering, edition) {
     const wanted = new Map();
     for (const citation of citations) {
       if (!citation || citation.unresolved) continue;
-      const picked = lociFor(citation, numbering);
+      const picked = lociFor(citation, numbering, edition);
       if (!picked.loci) continue;
       for (const locus of picked.loci) {
         wanted.set(locus.book + '|' + locus.chapter, {
@@ -677,7 +729,7 @@ window.Triptych = (function () {
    * A chapter already held costs nothing; a chapter cited twice is fetched once.
    */
   async function fetchFragments(bible, citations) {
-    const chapters = chaptersNeeded(citations, bible.numbering);
+    const chapters = chaptersNeeded(citations, lociKey(bible), bible.id);
     const results = await Promise.all(
       chapters.map((needed) => loadChapter(bible.id, needed.book, needed.chapter))
     );
@@ -810,15 +862,40 @@ window.Triptych = (function () {
    * of them.
    */
   function recastLoci(citation, bible, sourceNumbering, picked, options) {
-    if (!sourceNumbering || sourceNumbering === bible.numbering) return null;
-    if (!picked.loci) return null;
-    const source = lociFor(citation, sourceNumbering);
+    const written = citationNumbering(citation, sourceNumbering);
+    if (!written || !picked.loci) return null;
+    const source = lociFor(citation, written);
     if (!source.loci) return null;
     if (formatLoci(source.loci, options) === formatLoci(picked.loci, options)) {
       return null;
     }
-    return formatLoci(picked.loci, options) + ' in this edition\'s ' +
-      bible.numbering + ' numbering';
+    // An edition whose own printing departs from its numbering is not "in"
+    // that numbering at this citation, so it is not said to be.
+    const departs = Boolean(
+      citation.edition_loci && Array.isArray(citation.edition_loci[bible.id])
+    );
+    return formatLoci(picked.loci, options) + (departs
+      ? ' as this edition prints it'
+      : ' in this edition\'s ' + numberingLabel(bible));
+  }
+
+  /**
+   * The psalm numbering a citation is written in: its own, which the generator
+   * states on every psalm citation, else the structure file's. A psalm number
+   * names nothing until its system is said, and one Missal cites in both -- the
+   * postconciliar antiphons keep the Missal's Vulgate numbers inside a
+   * Hebrew-numbered file -- so a file-wide numbering cannot be trusted for one.
+   */
+  function citationNumbering(citation, sourceNumbering) {
+    return (citation && citation.numbering) || sourceNumbering || null;
+  }
+
+  /** "Vulgate numbering", for a citation that states its psalm numbering; else null. */
+  function psalmNumberingLabel(citation) {
+    const numbering = citation && citation.numbering;
+    if (!numbering) return null;
+    return String(numbering).charAt(0).toUpperCase() + String(numbering).slice(1) +
+      ' numbering';
   }
 
   /**
@@ -849,7 +926,7 @@ window.Triptych = (function () {
       return block;
     }
 
-    const picked = lociFor(citation, bible.numbering);
+    const picked = editionLoci(citation, bible);
     const label = citation.ref ||
       (picked.loci ? formatLoci(picked.loci, options) : null) ||
       (options && options.book) || citation.book || citation.token ||
@@ -857,6 +934,10 @@ window.Triptych = (function () {
     const recast = recastLoci(citation, bible, sourceNumbering, picked, options);
     if (showRef) {
       const line = el('p', 'citation-ref', label);
+      // Which psalm numbering the reference above is written in; the recast
+      // note, where there is one, says where this edition prints it.
+      const written = psalmNumberingLabel(citation);
+      if (written) line.appendChild(el('span', 'citation-numbering', written));
       if (recast) line.appendChild(el('span', 'citation-recast', recast));
       block.appendChild(line);
     } else if (recast) {
@@ -1497,7 +1578,16 @@ window.Triptych = (function () {
     // heading says what this proper is and where it comes from. Segments stay
     // together in that one reference, since they are one passage.
     const refs = (proper.citations || []).map((citation) => citation.ref).filter(Boolean);
-    if (refs.length) heading.appendChild(el('span', 'proper-ref', refs.join('; ')));
+    if (refs.length) {
+      const reference = el('span', 'proper-ref', refs.join('; '));
+      // The psalm numbering those references are written in, inside the
+      // reference so it travels and is removed with it. One proper's citations
+      // share one numbering (its own, else its Missal's), so it is said once;
+      // the citations below print no reference line of their own.
+      const written = (proper.citations || []).map(psalmNumberingLabel).find(Boolean);
+      if (written) reference.appendChild(el('span', 'citation-numbering', written));
+      heading.appendChild(reference);
+    }
     section.appendChild(heading);
 
     // The incipit is the passage's own opening words, so printing it above the
@@ -1691,6 +1781,11 @@ window.Triptych = (function () {
     loadBibles: loadBibles,
     fillBibleSelect: fillBibleSelect,
     bibleMeta: bibleMeta,
+    numberingLabel: numberingLabel,
+    lociKey: lociKey,
+    editionLoci: editionLoci,
+    citationNumbering: citationNumbering,
+    psalmNumberingLabel: psalmNumberingLabel,
 
     // loci and fragments
     lociFor: lociFor,

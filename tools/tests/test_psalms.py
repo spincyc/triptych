@@ -278,7 +278,12 @@ class VerseBoundTests(unittest.TestCase):
 
     def test_the_concordance_matches_the_tracked_verse_text(self) -> None:
         """The lookup table is numbering, and the verse text is scripture; if
-        they ever disagree the table is describing a psalter no edition has."""
+        they ever disagree the table is describing a psalter no edition has.
+
+        The witness prints two verses inside the verse before them and records
+        each in its own alias table, so the numbering ends a psalm at the last
+        verse it prints or records, whichever is later -- never at a number
+        neither artifact states."""
         import collections
         import csv
 
@@ -293,16 +298,26 @@ class VerseBoundTests(unittest.TestCase):
             for row in csv.DictReader(handle, delimiter="\t"):
                 printed[int(row["chapter"])].add(int(row["verse"]))
         self.assertEqual(sum(len(verses) for verses in printed.values()), 2528)
+        recorded: dict[int, set[int]] = collections.defaultdict(set)
+        aliases = sorted(artifacts.glob("verse-aliases-*/verse-aliases.tsv"))
+        self.assertEqual(len(aliases), 1)
+        with aliases[0].open(encoding="utf-8", newline="") as handle:
+            for row in csv.DictReader(handle, delimiter="\t"):
+                parts = row["cited_locus"].split(".")
+                if parts[0] == "Ps":
+                    recorded[int(parts[1])].add(int(parts[2]))
+        self.assertEqual(dict(recorded), {28: {11}, 150: {6}})
         for chapter, verses in printed.items():
             with self.subTest(chapter=chapter):
-                first, last = min(verses), max(verses)
+                first, last = min(verses), max(verses | recorded[chapter])
                 self.assertEqual(_psalms.psalm_ceiling(chapter, "vulgate"), last)
                 self.assertEqual(_psalms.validate_psalm(chapter, first, "vulgate"), "")
                 self.assertNotEqual(_psalms.validate_psalm(chapter, last + 1, "vulgate"), "")
 
     def test_every_verse_converts_and_returns(self) -> None:
         """The table is a bijection, so a round trip is the identity on all
-        2528 verses; nothing is dropped at a join and nothing doubles up."""
+        2530 verses -- the witness's 2528 and the two it prints inside the
+        verse before them; nothing is dropped at a join and nothing doubles up."""
         seen: set[tuple[int, int]] = set()
         for chapter in range(1, _psalms.LAST_PSALM + 1):
             first, last = _psalms.psalm_extent(chapter, "vulgate")
@@ -312,7 +327,7 @@ class VerseBoundTests(unittest.TestCase):
                 seen.add(hebrew[:2])
                 back = _psalms.convert_point(hebrew[0], hebrew[1], "hebrew", "vulgate")
                 self.assertEqual(back[:2], (chapter, verse))
-        self.assertEqual(len(seen), 2528)
+        self.assertEqual(len(seen), 2530)
 
     def test_a_psalm_outside_the_psalter_is_reported(self) -> None:
         for chapter in (0, 151, "24", None):
@@ -325,6 +340,144 @@ class VerseBoundTests(unittest.TestCase):
     def test_an_unknown_system_raises(self) -> None:
         with self.assertRaises(NumberingError):
             _psalms.validate_psalm(24, 1, "septuagint")
+
+
+class WitnessMergeTests(unittest.TestCase):
+    """The verses the concordance's witness prints inside the verse before them.
+
+    The Challoner Douay the concordance was compiled from prints Vulgate 28:11
+    at the end of 28:10 and 150:6 at the end of 150:5, and its own alias table
+    says so. The concordance, read alone, therefore ended both psalms a verse
+    early in both systems, and every conversion across them trimmed a cited
+    verse: christ-the-king's `Psalm 28:10-11` came back as Hebrew 29:10, the
+    responsorial `Psalm 150:5-6` as Vulgate 150:5. The numbering is the
+    concordance and the witness's alias table together.
+    """
+
+    def test_the_merged_verses_are_read_from_the_witness_alias_table(self) -> None:
+        self.assertEqual(_psalms.witness_merges(), ((28, 11), (150, 6)))
+
+    def test_a_merged_verse_is_numbered_in_both_systems(self) -> None:
+        self.assertEqual(_psalms.psalm_extent(28, "vulgate"), (1, 11))
+        self.assertEqual(_psalms.psalm_extent(29, "hebrew"), (1, 11))
+        self.assertEqual(_psalms.psalm_extent(150, "vulgate"), (1, 6))
+        self.assertEqual(_psalms.psalm_extent(150, "hebrew"), (1, 6))
+        self.assertEqual(_psalms.convert_point(28, 11, "vulgate", "hebrew")[:2], (29, 11))
+        self.assertEqual(_psalms.validate_psalm(150, 6, "hebrew"), "")
+
+    def test_a_range_over_a_merged_verse_converts_whole(self) -> None:
+        cases = (
+            ((28, 10, 11), "vulgate", "hebrew", (29, 10, 11)),
+            ((150, 5, 6), "hebrew", "vulgate", (150, 5, 6)),
+            ((150, 5, 6), "vulgate", "hebrew", (150, 5, 6)),
+        )
+        for (chapter, first, last), source, target, wanted in cases:
+            with self.subTest(source=source, chapter=chapter):
+                pieces, _ = _psalms.convert_range(
+                    "Psalms",
+                    {"chapter": chapter, "verse": first},
+                    {"chapter": chapter, "verse": last},
+                    source,
+                    target,
+                )
+                self.assertEqual(
+                    [
+                        (p["begin"]["chapter"], p["begin"]["verse"], p["end"]["verse"])
+                        for p in pieces
+                    ],
+                    [wanted],
+                )
+
+    def test_a_genuine_non_correspondence_is_still_not_supplied(self) -> None:
+        """Hebrew 56:14 is no merge: every tracked Vulgate witness divides that
+        psalm's body into fewer verses, so nothing records a verse to name."""
+        self.assertEqual(_psalms.psalm_extent(56, "hebrew"), (1, 13))
+        with self.assertRaises(NumberingError) as caught:
+            _psalms.convert_range_whole(
+                "Psalms",
+                {"chapter": 56, "verse": 13},
+                {"chapter": 56, "verse": 14},
+                "hebrew",
+                "vulgate",
+            )
+        self.assertIn("would drop verse 14", str(caught.exception))
+
+
+class WholeRangeConversionTests(unittest.TestCase):
+    """`convert_range_whole`: convert verse for verse, refuse rather than trim,
+    and keep an end the citation left open open after conversion."""
+
+    @staticmethod
+    def shape(pieces: list[dict]) -> list[tuple]:
+        return [
+            (p["begin"]["chapter"], p["begin"].get("verse"), p["end"].get("verse"))
+            for p in pieces
+        ]
+
+    def test_a_half_open_range_keeps_its_open_end_open(self) -> None:
+        """Vulgate 28:3- is "to the end of the psalm" in either numbering.
+
+        Closing the open end at the concordance's last verse and converting the
+        closed range served it as a range ending at that verse, so wherever an
+        edition prints a verse the concordance does not number the citation
+        lost it. The end the citation left open stays open on the converted
+        side, so every edition reads the psalm to its own last verse.
+        """
+        open_end = {"chapter": 28}
+        self.assertEqual(
+            self.shape(
+                _psalms.convert_range_whole(
+                    "Psalms", {"chapter": 28, "verse": 3}, open_end, "vulgate", "hebrew"
+                )
+            ),
+            [(29, 3, None)],
+        )
+        # Hebrew 20:7- is Vulgate 19:7-, which the Clementine prints to verse 10
+        # where the concordance's witness stops at 9.
+        self.assertEqual(
+            self.shape(
+                _psalms.convert_range_whole(
+                    "Psalms", {"chapter": 20, "verse": 7}, {"chapter": 20}, "hebrew", "vulgate"
+                )
+            ),
+            [(19, 7, None)],
+        )
+
+    def test_a_closed_range_stays_closed(self) -> None:
+        self.assertEqual(
+            self.shape(
+                _psalms.convert_range_whole(
+                    "Psalms",
+                    {"chapter": 28, "verse": 3},
+                    {"chapter": 28, "verse": 11},
+                    "vulgate",
+                    "hebrew",
+                )
+            ),
+            [(29, 3, 11)],
+        )
+
+    def test_a_whole_psalm_converts_to_the_verses_it_is(self) -> None:
+        whole = {"chapter": 147}
+        self.assertEqual(
+            self.shape(_psalms.convert_range_whole("Psalms", whole, whole, "vulgate", "hebrew")),
+            [(147, 12, None)],
+        )
+        self.assertEqual(
+            self.shape(_psalms.convert_range_whole("Psalms", whole, whole, "hebrew", "vulgate")),
+            [(146, None, None), (147, None, None)],
+        )
+
+    def test_another_book_and_one_numbering_pass_through(self) -> None:
+        span = {"chapter": 3, "verse": 1}
+        self.assertEqual(
+            _psalms.convert_range_whole("Joel", span, span, "vulgate", "hebrew"),
+            [{"begin": span, "end": span}],
+        )
+        self.assertEqual(
+            _psalms.convert_range_whole("Psalms", {"chapter": 28}, None, "vulgate", "vulgate"),
+            [{"begin": {"chapter": 28}, "end": {"chapter": 28}}],
+        )
 
 
 class RoundTripTests(unittest.TestCase):

@@ -33,7 +33,6 @@ def reset() -> None:
     for cached in (
         psalter.printed,
         psalter.departures,
-        psalter._witness_aliases,
     ):
         cached.cache_clear()
 
@@ -128,11 +127,14 @@ class Reading(unittest.TestCase):
         follows the Hebrew wherever the Vulgate divides a verse the Hebrew joins.
         Both numbers are cited and both are recorded in the witness edition's own
         alias table, so the extent is read from the two together — and the three
-        editions that print them are not departing at all.
+        editions that print them are not departing at all. `_psalms` reads the
+        two together itself, so a conversion across those verses no longer trims
+        one, and this module asks it rather than widening the extent again.
         """
+        self.assertEqual(psalter._psalms.witness_merges(), ((28, 11), (150, 6)))
         self.assertEqual(psalter.system_extent(28), (1, 11))
         self.assertEqual(psalter.system_extent(150), (1, 6))
-        self.assertEqual(psalter._psalms.psalm_extent(28, "vulgate"), (1, 10))
+        self.assertEqual(psalter._psalms.psalm_extent(28, "vulgate"), (1, 11))
         for edition in (CLEMENTINE, CPDV, AMERICAN):
             with self.subTest(edition=edition):
                 _, where = psalter.EDITIONS[edition]

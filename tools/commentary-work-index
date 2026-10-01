@@ -895,12 +895,26 @@ def _extract_passages_from_owner(owner: dict[str, Any], key: str | None) -> list
     return [entry for entry in payload if isinstance(entry, (dict, str))]
 
 
-def _passage_records_from_proper(citations, proper: dict[str, Any]) -> list[tuple[str, dict[str, Any]]]:
+def _passage_records_from_proper(
+    citations, proper: dict[str, Any], default: str
+) -> list[tuple[str, dict[str, Any], str]]:
+    """Every passage one proper cites, with its slot and the psalm numbering it is in.
+
+    The numbering is the owner's own -- a cycle's, else the proper's, else the
+    calendar's `default` -- by the citations tool's one inheritance rule
+    (`numbered_verse_lists`). Reading every citation under the calendar's sent
+    the postconciliar antiphons that keep the Missal's Vulgate numbers to
+    `unconvertible_references`, and ot-25's `Psalm 118:4-5` to Psalm 117.
+    """
     if not isinstance(proper, dict):
         return []
 
-    out: list[tuple[str, dict[str, Any]]] = []
+    out: list[tuple[str, dict[str, Any], str]] = []
     source = _coerce_str(proper.get("source"))
+    numbering = {
+        id(owner): _coerce_str(declared or default)
+        for _, owner, _, declared in citations.numbered_verse_lists(proper, default)
+    }
 
     cycles = proper.get("cycles")
     proper_name = _coerce_str(proper.get("name") or "proper")
@@ -914,14 +928,17 @@ def _passage_records_from_proper(citations, proper: dict[str, Any]) -> list[tupl
                 continue
             for raw in _extract_passages_from_owner(cycle_owner, "verses"):
                 for passage in _parse_passage_value(citations, raw):
-                    out.append((f"{proper_name}/{cycle_name}", passage))
+                    out.append(
+                        (f"{proper_name}/{cycle_name}", passage,
+                         numbering.get(id(cycle_owner), default))
+                    )
         return out
 
     if source not in {"scripture", "mixed"}:
         return []
     for raw in _extract_passages_from_owner(proper, "verses"):
         for passage in _parse_passage_value(citations, raw):
-            out.append((proper_name, passage))
+            out.append((proper_name, passage, numbering.get(id(proper), default)))
     return out
 
 
@@ -962,7 +979,9 @@ def _collect_mass_records(citations, doc: dict[str, Any], calendar: str) -> list
         for proper in entry.get("propers", []):
             if not isinstance(proper, dict):
                 continue
-            for slot_name, passage in _passage_records_from_proper(citations, proper):
+            for slot_name, passage, cited_in in _passage_records_from_proper(
+                citations, proper, numbering
+            ):
                 entries.append(
                     {
                         "calendar": calendar,
@@ -972,7 +991,7 @@ def _collect_mass_records(citations, doc: dict[str, Any], calendar: str) -> list
                         "date": date,
                         "proper_slot": slot_name,
                         "passage": passage,
-                        "numbering": numbering,
+                        "numbering": cited_in,
                         "source_category": "base",
                     }
                 )
@@ -986,7 +1005,9 @@ def _collect_mass_records(citations, doc: dict[str, Any], calendar: str) -> list
             for proper in form.get("propers", []):
                 if not isinstance(proper, dict):
                     continue
-                for slot_name, passage in _passage_records_from_proper(citations, proper):
+                for slot_name, passage, cited_in in _passage_records_from_proper(
+                    citations, proper, numbering
+                ):
                     entries.append(
                         {
                             "calendar": calendar,
@@ -996,7 +1017,7 @@ def _collect_mass_records(citations, doc: dict[str, Any], calendar: str) -> list
                             "date": date,
                             "proper_slot": slot_name,
                             "passage": passage,
-                            "numbering": numbering,
+                            "numbering": cited_in,
                             "source_category": "form",
                         }
                     )

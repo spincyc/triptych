@@ -423,43 +423,15 @@ def printed_extent(artifacts: str, psalm: int) -> tuple[int, int] | None:
 
 
 def system_extent(psalm: int) -> tuple[int, int]:
-    """The verse numbers the Vulgate psalm numbering has, from both tracked statements."""
-    low, high = _psalms.psalm_extent(psalm, "vulgate")
-    recorded = _witness_aliases().get(psalm, set())
-    if recorded:
-        low, high = min(low, *recorded), max(high, *recorded)
-    return low, high
+    """The verse numbers the Vulgate psalm numbering has, from both tracked statements.
 
-
-@lru_cache(maxsize=1)
-def _witness_aliases() -> dict[int, set[int]]:
-    """The psalm verse numbers the witness edition records without printing them.
-
-    The concordance cannot be the whole statement of the Vulgate psalm numbering,
-    and the reason is structural rather than an oversight. Its rows must be runs
-    of equal length in both systems, so its Vulgate column can only be the
-    printing that aligns one to one with the Hebrew — and where the Vulgate
-    divides a verse the Hebrew joins, that column has to follow the Hebrew and
-    the number goes unrecorded. Psalm 28:11 and Psalm 150:6 are exactly those
-    numbers: both are cited, both are in the published Vulgate scheme, and the
-    witness edition's own alias table already records where it carries each.
-
-    So the numbering is stated by two tracked artifacts together, and this reads
-    the second. Nothing here is typed: the loci come out of the witness's
-    `verse-aliases.tsv`, which the projection validates like any other.
+    The concordance alone ends Psalms 28 and 150 a verse early, because the
+    printing it was compiled from carries 28:11 and 150:6 inside the verse
+    before; that printing's own alias table records both. `_psalms` reads the
+    two artifacts together (`_psalms.witness_merges`), so its extent is already
+    the numbering's and is asked of it here rather than widened a second time.
     """
-    found: dict[int, set[int]] = {}
-    tables = sorted((WORKS / WITNESS).glob("verse-aliases-*/verse-aliases.tsv"))
-    if len(tables) != 1:
-        raise PsalterError(
-            f"expected one verse-alias table under {WORKS / WITNESS}, found {len(tables)}"
-        )
-    with tables[0].open(encoding="utf-8", newline="") as handle:
-        for row in csv.DictReader(handle, delimiter="\t"):
-            parts = (row.get("cited_locus") or "").split(".")
-            if len(parts) == 3 and parts[0] == PSALMS_TOKEN:
-                found.setdefault(int(parts[1]), set()).add(int(parts[2]))
-    return found
+    return _psalms.psalm_extent(psalm, "vulgate")
 
 
 def declared_extent(psalm: int, numbering: str) -> tuple[tuple[int, int], ...]:

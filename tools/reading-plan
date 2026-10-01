@@ -24,8 +24,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from _psalms import PSALMS, SYSTEMS, NumberingError, convert_range  # noqa: E402
-from _loci import range_to_loci  # noqa: E402
+from _psalms import (  # noqa: E402
+    PSALMS,
+    SYSTEMS,
+    NumberingError,
+    addressed,
+    convert_range_whole,
+)
+from _loci import edition_departures, range_to_loci  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
     examples_live_on_the_verbs,
@@ -203,21 +209,40 @@ def reading_structure(reading: dict, source: str, tokens: dict) -> dict:
     if structure["token"] is None:
         structure["unresolved"] = f"no book named {book!r} in this library"
         return structure
-    for target in SYSTEMS:
-        loci = []
-        try:
-            for span in reading.get("ranges") or []:
-                begin = (span or {}).get("begin") or {}
-                end = (span or {}).get("end") or begin
-                for piece in convert_range(book, begin, end, source, target)[0]:
-                    loci.extend(
-                        range_to_loci(piece.get("begin") or {}, piece.get("end") or {})
-                    )
-        except NumberingError as error:
-            structure["loci"] = {}
-            structure["unresolved"] = str(error)
-            return structure
-        structure["loci"][target] = loci
+    # Converted as the propers structure converts, through
+    # `_psalms.convert_range_whole`, which refuses a range it would trim; then
+    # addressed for every way an edition is numbered (`_psalms.addressed`), and
+    # placed in each offered edition whose own printing departs from that
+    # (`_loci.edition_departures`). The plan page renders through the same
+    # browser core as the propers, so its readings must carry the same keys.
+    converted: dict[str, list[dict]] = {}
+    try:
+        for target in SYSTEMS:
+            converted[target] = [
+                piece
+                for span in reading.get("ranges") or []
+                for piece in convert_range_whole(
+                    book,
+                    (span or {}).get("begin") or {},
+                    (span or {}).get("end") or (span or {}).get("begin") or {},
+                    source,
+                    target,
+                )
+            ]
+    except NumberingError as error:
+        structure["unresolved"] = str(error)
+        return structure
+    ranges, refused = addressed(book, converted)
+    for key, pieces in ranges.items():
+        loci: list[dict] = []
+        for piece in pieces:
+            loci.extend(range_to_loci(piece.get("begin") or {}, piece.get("end") or {}))
+        structure["loci"][key] = loci
+    departures, refused = edition_departures(structure["token"], structure["loci"], refused)
+    if departures:
+        structure["edition_loci"] = departures
+    if refused:
+        structure["refused"] = refused
     return structure
 
 

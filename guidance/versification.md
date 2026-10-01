@@ -1452,8 +1452,10 @@ tracked concordance, each edition's `verse-aliases.tsv` and its `book-index.tsv`
 beside them. The pattern is the one §3.1 records from `biblelib`: a derived
 artefact regenerated and asserted byte-identical by a test. This repository
 already applies it one layer up, in `src/web/data/structure/`, where every
-citation is resolved into both numbering systems so that no numbering logic
-ships to the browser at all.
+citation is resolved for every addressing an edition can be in -- both numbering
+systems, and the Hebrew as an edition leaving psalm titles unnumbered prints it
+-- with each offered edition's own departures beside them, so that no numbering
+logic ships to the browser at all (`guidance/web-data.md` §3).
 
 Resolution then has one shape everywhere. A caller asks for a canonical
 reference; the projection answers with a locus in the edition's own numbering,
@@ -1773,6 +1775,16 @@ concordance cannot hold. `_psalter.system_extent` therefore reads the numbering
 from **both tracked artifacts together**, and the three editions that print those
 verses stop being departures at all. Nothing there is typed: the loci come out of
 the witness's alias table.
+
+> **Extended to conversion, 1 October 2026.** `_psalter` read the two artifacts
+> together for its extents and `_psalms` did not, so every conversion still ran
+> on the concordance alone and trimmed both verses: christ-the-king's
+> `Psalm 28:10-11` reached Hebrew as 29:10, and `Psalm 150:5-6` reached the
+> Vulgate as 150:5. `_psalms` now restores the witness's merged verses into both
+> systems on load (`witness_merges`) — only a verse merged into the one before
+> it, at the end of its psalm, whose Hebrew run also ends its psalm, so the row
+> stays equal-length on both sides — and `_psalter.system_extent` asks it rather
+> than widening again. The concordance artifact itself is unchanged.
 
 **Both divisions are cited, which is why the table is keyed on the citation.**
 The 1962 communion *Notas mihi fecisti vias vitae* is cited `Psalm 15:11`, a

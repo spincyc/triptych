@@ -184,6 +184,7 @@ obtaining those schemes' lists.
 | `tiers[T].readings` disagrees with reality | someone treated the cumulative total as a per-tier count | `tests/tools/reading-plan.test` |
 | A reading addresses nothing | endpoint verse not printed in the Challoner edition | `reading-plan check` |
 | A psalm resolves to real, wrong verses | Vulgate reference read as Hebrew | `structure` resolves both systems ahead of the browser; a failure carries `unresolved` and *no* loci |
+| A reading shown one or two verses off, or from the wrong part of a book, in one edition | an edition that leaves psalm titles unnumbered, or whose own `verse-aliases.tsv` departs from its numbering (the Clementine's Psalm 15:11, the King James's Susanna), read with the addressing's loci | since 2026-10-01 `structure` writes every addressing and each offered edition's departures (`edition_loci`, `refused`), as `mass-propers` does — `guidance/web-data.md` §3 |
 | A psalm reading split at a false seam | the psalter concordance's inscription boundary | asserted in `tests/tools/reading-plan.test` |
 | Stale browser JSON | `src/web/data/structure/readings/narrative-spine.json` not regenerated after a plan edit | none — regenerate after every edit |
 

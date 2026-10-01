@@ -457,11 +457,13 @@ only for the six psalms that split between the systems. The eleven are:
 **Current state.** Each proper may now declare its own numbering rather than
 being forced into its calendar's, and the former eleven antiphons carry the
 needed declaration. `citations check` and `check-calendar-masses` honor it.
-Three unresolved loci remain across four owning slots: `Psalm 28:11` at
-`christ-the-king`, `Psalm 56:14` at `ot-24-saturday` cycle II, and
-`Psalm 150:6` at `ot-23-thursday` cycle I and `ot-33-wednesday` cycle II. The
-exceptions ledger is self-cleaning in both directions: an unlisted breach fails,
-and a listed locus that stops breaching also fails until its stale row is
+One unresolved locus remains: `Psalm 56:14` at `ot-24-saturday` cycle II.
+`Psalm 28:11` at `christ-the-king` and `Psalm 150:6` at `ot-23-thursday` cycle I
+and `ot-33-wednesday` cycle II left the ledger on 2026-10-01, once the psalm
+concordance was read together with its Douay-Rheims witness's own alias table,
+which records the 28:11 and 150:6 that printing carries inside the verse before.
+The exceptions ledger is self-cleaning in both directions: an unlisted breach
+fails, and a listed locus that stops breaching also fails until its stale row is
 removed.
 
 Two other references cannot resolve for reasons upstream of any of this:
@@ -534,7 +536,7 @@ Each of these is recorded in the repository as unresolved, not silently decided.
 
 | Question | Where it lives |
 | --- | --- |
-| The unresolved bound or numbering of `Psalm 28:11`, `Psalm 56:14`, and `Psalm 150:6` across their four owning slots | postconciliar `psalm_numbering_exceptions` |
+| The unresolved bound or numbering of `Psalm 56:14` in its one owning slot | postconciliar `psalm_numbering_exceptions` |
 | Whether Ascension, Corpus Christi, the Sacred Heart and the Chrism Mass belong under `seasonal` (where the Missal prints them) or `christological` (what they are by kind) | 1962 `open_collation_items` |
 | A registry scheme for 1962 ferias, which have no printed identifier | 1962 `open_collation_items` |
 | How 1962 commemorations should be modelled — the 104 are now dated entries of rank `Comm.`, but a commemoration's own three orations still have nowhere to live | 1962 `open_collation_items` |

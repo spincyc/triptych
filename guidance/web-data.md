@@ -202,45 +202,71 @@ outside the repository along with its index and cannot reach the public tree.
 `<out>/structure/propers/<calendar>.json`, written by `mass-propers structure`:
 
 ```json
-{"ref":"Psalm 24:1-3","book":"Psalms","token":"Ps",
- "loci":{"vulgate":[{"chapter":24,"first":1,"last":3}],
-         "hebrew":[{"chapter":25,"first":1,"last":3}]},
+{"ref":"Psalm 116:10, 15","book":"Psalms","token":"Ps","numbering":"hebrew",
+ "loci":{"vulgate":[{"chapter":115,"first":10,"last":10},{"chapter":115,"first":15,"last":15}],
+         "hebrew":[{"chapter":116,"first":10,"last":10},{"chapter":116,"first":15,"last":15}],
+         "hebrew-unnumbered-titles":[{"chapter":116,"first":10,"last":10},{"chapter":116,"first":15,"last":15}]},
+ "edition_loci":{"clementine-vulgate":[{"chapter":115,"first":1,"last":1},{"chapter":115,"first":6,"last":6}]},
  "unresolved":null}
 ```
 
-Every citation is resolved here, in both numbering systems, so that **no
-numbering logic ships to the browser**. A page reads its chosen translation's
-`numbering` and takes the loci already computed for it. Two variants, not one
-per translation: numbering is a property of the system, not of the edition. (Editions of one system can still print a psalm's verses differently — the Clementine, 1899 Douay and CPDV print Vulgate 147 as verses 1-9 where the concordance, following the Challoner Douay, numbers them 12-20 — which is why a citation is never converted into its own numbering.)
+Every citation is resolved here, for every way an edition is addressed, so that
+**no numbering logic ships to the browser**. A page reads the `loci` key its
+chosen translation's manifest entry names and takes the loci already computed
+for it. Three addressings, not one per translation (`_psalms.ADDRESSINGS`):
+`vulgate`, `hebrew`, and `hebrew-unnumbered-titles` — the Hebrew numbering as
+an edition that leaves psalm inscriptions unnumbered prints it, a verse or two
+lower through most titled psalms (the King James *Miserere* is 51:1 where the
+Hebrew numbering says 51:3). The title convention is not a numbering system,
+but an edition in it cannot be read with the Hebrew loci, and until 2026-10-01
+the King James, Revised Version and World English were: one verse off wherever
+a psalm has a numbered heading.
+
+Editions of one addressing can still print a psalm's verses differently — the
+Clementine, 1899 Douay and CPDV print Vulgate 147 as verses 1-9 where the
+concordance, following the Challoner Douay, numbers them 12-20 — which is why a
+citation is never converted into its own numbering, and why an edition's own
+departures are carried apart. Where an offered edition's `verse-aliases.tsv`
+moves a citation's loci, its loci stand under `edition_loci[<edition>]` and the
+page takes them in place of the addressing's (Lent 2's *Credidi*, Vulgate
+115:10, is the Clementine's 115:1); where that table refuses a verse — a verse
+the edition divides, a book it arranges otherwise — the reason stands under
+`refused[<edition>]`, beside any addressing that cannot take the citation
+(`refused["hebrew-unnumbered-titles"]` for an inscription endpoint or one of the
+sixteen psalms the concordance flags). The table is read through `_projection`
+as `index-bible` reads it, so the page and the indexes place one citation
+alike. A psalm citation also states the `numbering` it is written in, which the
+page prints beside its reference.
 
 A citation that cannot be converted carries the reason in `unresolved` and no
 loci at all. This is the load-bearing rule of the whole design, and a
-conversion that would lose a cited verse is one that cannot be made. The
-christ-the-king Communion Antiphon, `Psalm 28:10-11` declared Vulgate, is the
-worked case: the tracked psalm concordance ends Psalm 28 at verse 10, because
-the printing it was compiled from merges 28:10-11, so converting the range gives
-Hebrew 29:10 alone — a real verse, one short, and a page would render it
-confidently. The structure pass refuses it instead and names the bound. It
-refuses the responsorial `Psalm 150:5-6` for the same merge, and
-`Psalm 56:13-14` because no Vulgate verse answers Hebrew 56:14 at all: every
-tracked Vulgate witness divides that psalm's body into fewer verses. A page
-that explains itself beats one that is quietly wrong.
+conversion that would lose a cited verse is one that cannot be made: the
+responsorial `Psalm 56:13-14` is refused because no Vulgate verse answers
+Hebrew 56:14 at all — every tracked Vulgate witness divides that psalm's body
+into fewer verses — and the refusal names the bound. A page that explains
+itself beats one that is quietly wrong. Until 2026-10-01 christ-the-king's
+`Psalm 28:10-11` and the responsorial `Psalm 150:5-6` were refused too, because
+the concordance read alone ends both psalms a verse early: the printing it was
+compiled from carries 28:11 and 150:6 inside the verse before. That printing's
+own alias table records both, and `_psalms` now reads the two together.
 
 A psalm cited whole converts to the verses it is, not to a chapter number.
-Vulgate `Psalm 147`, the 1962 palm-sunday Procession Antiphon, is Hebrew
-147:12-20; served as Hebrew 147 it gave a Hebrew-numbered reader the eleven
-verses of Vulgate 146 first. The structure pass closes an open end at the
-psalm's concordance bound before converting and serves a piece that is a whole
-psalm as a whole psalm, open at both ends, because editions of one system
-number the same psalm differently: the Vulgate side of that antiphon stays
-`147` whole, which the Challoner Douay prints as verses 12-20 and the
-Clementine as 1-9.
+Vulgate `Psalm 147`, the 1962 palm-sunday Procession Antiphon, is Hebrew 147
+from verse 12; served as Hebrew 147 it gave a Hebrew-numbered reader the eleven
+verses of Vulgate 146 first. The conversion (`_psalms.convert_range_whole`,
+which the Bible indexes and the reading plan use too) closes an open end at the
+psalm's concordance bound before converting, and leaves open again any end the
+citation runs past where the converted piece reaches its own psalm's bound:
+a whole psalm is served whole, and a half-open range stays "to the end of the
+psalm", because editions of one system number the same psalm differently — the
+Vulgate side of that antiphon stays `147` whole, which the Challoner Douay
+prints as verses 12-20 and the Clementine as 1-9.
 
 Each citation is read under its own numbering — its cycle's, else its
 proper's, else the calendar's — which is the rule `show` applies too. The eleven
 postconciliar antiphons that print Vulgate numbers inside the Hebrew-declared
 file declare `psalm_numbering: vulgate` on the proper and resolve to the verses
-they cite; a twelfth, christ-the-king's, is the refused range above. Until
+they cite; a twelfth, christ-the-king's, does too since 2026-10-01. Until
 2026-09-25 the structure pass read all twelve under the calendar's numbering,
 and served eleven as unresolved for the wrong reason and ot-25's
 `Psalm 118:4-5` as the wrong psalm while `show` printed the right one.
@@ -295,7 +321,9 @@ capability is `held: false, available: false`.
 editions whose records say `publishable: true`. A licensed text is excluded
 when the file is generated rather than filtered in the page, so a browser
 cannot offer what the project has no right to serve even if its fragments were
-somehow present beside it.
+somehow present beside it. Each entry names the structure `loci` key the
+edition reads (`_psalms.addressing` of its `numbering` and `psalm_titles`), so
+the page takes the key rather than deriving it.
 
 The orations have the same manifest and it works the same way, but it is a key
 inside each propers structure file rather than a file of its own:
@@ -599,12 +627,16 @@ copyright, recorded with the acknowledgement wording that licence requires.
 
 1. Register the edition and its verse text in the source library, with rights.
 2. Add it to `EDITIONS` in `tools/index-bible`, declaring `language`,
-   `numbering`, `psalter`, `rights`, and `publishable`.
+   `numbering`, `psalter`, `psalm_titles`, `rights`, and `publishable`.
 3. `index-bible build` for its index and fragments; `index-bible manifest` to
    refresh the offered list.
 
-Nothing else changes. No page is rewritten, no structure file is regenerated,
-and no existing fragment is touched.
+Nothing else changes for an edition that prints the numbering it declares. No
+page is rewritten, no existing fragment is touched, and no structure file is
+regenerated. An edition whose own `verse-aliases.tsv` records departures is the
+exception: its loci are carried under `edition_loci` and `refused`, so
+`mass-propers structure` and `reading-plan structure` add them, and
+`mass-propers structure --check` fails until they do.
 
 ## Adding a translation of the orations
 

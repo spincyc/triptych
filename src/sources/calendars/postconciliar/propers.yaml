@@ -337,23 +337,24 @@ open_collation_items:
   takes_from from a dated mass to a Common is landed until the Missal''s own heading
   for that day has been read, because the Ordo''s heading appoints readings and the
   Missal''s heading appoints prayers, and the two need not agree.'
-# The three psalm loci this file still carries that the tracked concordance
+# The one psalm locus this file still carries that the tracked concordance
 # cannot bound. The Vulgate-numbered antiphons formerly listed here now declare
-# their numbering on the proper and have self-cleaned from this ledger. One
-# antiphon endpoint and two responsorial-psalm endpoints remain; Psalm 150:6 is
-# appointed by two Mass owners, so the three loci occur in four owning slots.
+# their numbering on the proper and have self-cleaned from this ledger, and so,
+# on 2026-10-01, did `Psalm 28:11` (christ-the-king) and `Psalm 150:6` (two
+# responsorial slots): the concordance is now read with its witness's alias
+# table, which records the 28:11 and 150:6 that printing carries inside the
+# verse before, so both systems number those verses. One responsorial-psalm
+# endpoint remains.
 #
 # This block is temporary. It exists so that the psalter-bounds gate can stay
-# shut over the rest of the calendar while these three loci remain unresolved,
-# and it is not a licence to leave them: `check-calendar-masses` reports every
-# locus below on each run without failing, fails on any psalm-bound breach that
-# is not listed, and fails on any locus listed here that has stopped breaching.
-# An entry therefore cannot outlive the defect that earned it. Settling the
-# responsorial endpoints requires checking the Ordo's numbering; settling the
-# antiphon endpoint requires checking its printed text and verse bound. Nothing
-# here anticipates either decision:
-# `divergence` states only what the two systems number, never what an antiphon
-# says.
+# shut over the rest of the calendar while this locus remains unresolved, and
+# it is not a licence to leave it: `check-calendar-masses` reports every locus
+# below on each run without failing, fails on any psalm-bound breach that is
+# not listed, and fails on any locus listed here that has stopped breaching. An
+# entry therefore cannot outlive the defect that earned it. Settling the
+# responsorial endpoint requires checking the Ordo's numbering. Nothing here
+# anticipates that decision: `divergence` states only what the two systems
+# number, never what a psalm says.
 psalm_numbering_exceptions:
 - psalm: 56
   divergence: Vulgate 56 is Hebrew 57; Hebrew 56 ends at verse 13. This locus is
@@ -364,21 +365,6 @@ psalm_numbering_exceptions:
     citation was read and is not decided here
   loci:
     "Psalm 56:14": ot-24-saturday/Responsorial Psalm, cycle II
-- psalm: 150
-  divergence: Vulgate and Hebrew agree on the number of this psalm at the end of the
-    psalter, so nothing is renumbered here; what breaches is the verse bound, the
-    tracked concordance ending Hebrew 150 at verse 5 where the Lectionary cites a
-    sixth. Also a RESPONSORIAL PSALM, and the same open question applies, so settle
-    it against the printed page rather than by renumbering
-  loci:
-    "Psalm 150:6": ot-23-thursday/Responsorial Psalm, cycle I; ot-33-wednesday/Responsorial
-      Psalm, cycle II
-- psalm: 28
-  divergence: Verse 11 is beyond the tracked Douay's Vulgate 28 as well as the
-    tracked Hebrew bound, so this endpoint needs a decision of its own rather than
-    a renumbering
-  loci:
-    "Psalm 28:11": christ-the-king/Communion Antiphon (Sedebit Dominus Rex in aeternum)
 # Where the citations above do not address the text the tracked editions print.
 # This calendar cites the Nova Vulgata; the Douay-Rheims, the Clementine Vulgate
 # and every other bible in this library follow the Vulgate division, and in

@@ -41,10 +41,12 @@ from _projection import (  # noqa: E402
 )
 from _psalms import (  # noqa: E402
     PSALMS,
+    TITLES_UNNUMBERED,
     NumberingError,
-    convert_range,
+    addressing,
+    convert_range_whole,
     convert_reference,
-    english_verse,
+    unnumber_titles,
 )
 from _tooling import (  # noqa: E402
     Example,
@@ -361,8 +363,9 @@ EDITIONS: dict[str, dict[str, object]] = {
 # is not.
 PSALTERS = ("gallican", "roman", "iuxta-hebraeos", "pian", "nova-vulgata", "masoretic")
 
-# A psalm inscription an edition prints without a verse number of its own.
-UNNUMBERED_TITLES = "unnumbered"
+# A psalm inscription an edition prints without a verse number of its own. The
+# shift it needs is `_psalms.unnumber_titles`, shared with the browser structure.
+UNNUMBERED_TITLES = TITLES_UNNUMBERED
 
 # How a refusal reads when it is the edition's own verse-alias table speaking
 # rather than a gap. The distinction is load-bearing: a recorded refusal is
@@ -890,42 +893,6 @@ class Divergences:
                 )
 
 
-def unnumber_titles(ranges: list) -> tuple[list, str]:
-    """Move Hebrew-numbered psalm ranges onto an edition that numbers no title.
-
-    Every calendar tracked here numbers a psalm's inscription, and the King
-    James Version does not, so its Psalm 51:1 is the *Miserere* that a
-    Hebrew-numbered calendar cites as 51:3. The shift is a property of the
-    edition rather than of the reference, and it is applied to the ranges only:
-    the key stays the string the calendar printed.
-
-    A range this correspondence cannot carry is refused rather than moved by
-    the offset at the head of the psalm. Two cases refuse. An endpoint on the
-    inscription has no verse to move to, because the edition prints those words
-    without a number. And where the two conventions divide a psalm's body
-    differently the concordance records no verse-for-verse correspondence at
-    all, so an offset taken from the first verse would land on real text some
-    way from the words cited.
-    """
-    moved: list = []
-    for span in ranges:
-        piece: dict = {}
-        for side in ("begin", "end"):
-            end = span.get(side)
-            if not isinstance(end, dict):
-                continue
-            chapter, verse = end.get("chapter"), end.get("verse")
-            if chapter is None or verse is None:
-                piece[side] = dict(end)
-                continue
-            found, problem = english_verse(int(chapter), int(verse))
-            if found is None:
-                return [], problem
-            piece[side] = {**end, "verse": found}
-        moved.append(piece)
-    return moved, ""
-
-
 def citation(
     entry: dict, source: str, target: str, tool, titles: str = ""
 ) -> tuple[str, list, str]:
@@ -941,6 +908,14 @@ def citation(
     ranges shift again. The second move applies even when the calendar and the
     edition already agree on numbering, which is the case that would otherwise
     read as needing no work at all.
+
+    The renumbering is `_psalms.convert_range_whole`, the conversion the browser
+    structure uses too, and not `convert_range` alone, which trims a range at
+    the concordance's bound and moves an open range by its chapter number. Through
+    it the Hebrew-declared `Psalm 150:1-2, 3-4, 5-6` reached three Vulgate
+    indexes without its sixth verse, and the Vulgate `Psalm 147` was filed in the
+    Hebrew-numbered ones as all of Hebrew 147 rather than 147:12 to the end. A
+    range that cannot be converted whole is refused with the bound named.
     """
     ref = str(entry["ref"])
     book = str(entry.get("book") or "")
@@ -957,10 +932,11 @@ def citation(
                 converted, _ = convert_reference(book, chapter, source, target, verse)
                 moved: list = []
                 for span in ranges:
-                    spans, _ = convert_range(
-                        book, span.get("begin") or {}, span.get("end"), source, target
+                    moved.extend(
+                        convert_range_whole(
+                            book, span.get("begin") or {}, span.get("end"), source, target
+                        )
                     )
-                    moved.extend(spans)
             except NumberingError as error:
                 return ref, [], str(error)
             key = ref if converted == chapter else tool.renumber(ref, converted)
@@ -1360,6 +1336,12 @@ def run_manifest(arguments: argparse.Namespace) -> dict:
             "numbering": str(edition["numbering"]),
             "psalter": str(edition["psalter"]),
             "psalm_titles": str(edition["psalm_titles"]),
+            # Which loci of a propers or reading-plan structure this edition
+            # reads: its numbering, and whether it numbers psalm titles. Stated
+            # here so the page takes the key and computes nothing; an edition
+            # that leaves titles unnumbered read the Hebrew loci and was one
+            # or two verses off wherever a psalm has a numbered heading.
+            "loci": addressing(str(edition["numbering"]), str(edition["psalm_titles"])),
             "rights": str(edition["rights"]),
         }
         for name, edition in sorted(

@@ -179,8 +179,11 @@ in the 1962 Missal and **Psalm 25** in the postconciliar one. Douay-Rheims Psalm
 
 This library's authority for the correspondence is a tracked, verse-level
 concordance — `psalm-numbering.tsv`, an artifact of the Douay-Rheims edition —
-which maps all **2,528 verses** of the psalter in **219 rows**, one row per run
-of verses both systems number without interruption. It is data, not a remembered
+which maps the **2,528 verses** that printing numbers in **219 rows**, one row
+per run of verses both systems number without interruption. That printing
+carries two more verses, Psalm 28:11 and 150:6, at the end of the verse before,
+and its own verse-alias table says so; the concordance is read together with
+that table, so the numbering holds all **2,530**. It is data, not a remembered
 rule, and it is validated every time it is read: both sides of every row must be
 the same length, and each system must cover all 150 psalms with no gap and no
 overlap. Nothing else in the repository restates the correspondence — when it

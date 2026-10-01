@@ -270,8 +270,11 @@ class TrackedProjectionTest(unittest.TestCase):
 
         `psalm_rows` depends on the numbering alone and `displaced_psalms` on
         nothing but the concordance, so the three Hebrew-numbered editions derive
-        one identical set of 2396 rows and the four Vulgate-numbered ones an
-        identical 16. Writing those out per edition would put a second, third and
+        one identical set of 2397 rows and the four Vulgate-numbered ones an
+        identical 16. (2397 since 2026-10-01: Vulgate 28:11, which the witness
+        prints inside 28:10 and the concordance once left unnumbered, renumbers
+        to Hebrew 29:11; Vulgate 150:6 is Hebrew 150:6 and writes no row.)
+        Writing those out per edition would put a second, third and
         seventh copy of the psalm concordance in this repository, which is the
         fault the concordance itself exists to prevent. They stay derived, and
         this test is what stops the next `--write` from quietly including them.
@@ -287,7 +290,7 @@ class TrackedProjectionTest(unittest.TestCase):
                 # the whole reason they are not written down seven times.
                 self.assertEqual(shared[numbering], set(concordance))
         self.assertEqual({numbering: len(rows) for numbering, rows in shared.items()},
-                         {"vulgate": 16, "hebrew": 2396})
+                         {"vulgate": 16, "hebrew": 2397})
 
     def test_a_refusal_stays_countable_from_the_file_alone(self) -> None:
         """A refusal is a row with a reason and no target, and can be counted."""

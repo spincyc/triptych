@@ -350,6 +350,123 @@ class UnnumberedTitleTests(unittest.TestCase):
         self.assertIn("hebrew numbering", str(caught.exception))
 
 
+class WholePsalmConversionTests(unittest.TestCase):
+    """A psalm citation converts whole into an index, or not at all.
+
+    `citation` once converted through `convert_range` alone, which trims a
+    range at the concordance's bound and moves an open range by its chapter
+    number. So the Hebrew-declared `Psalm 150:1-2, 3-4, 5-6` reached the
+    Clementine, CPDV and 1899 Douay indexes without *Omnis spiritus laudet
+    Dominum*, and the 1962 palm-sunday `Psalm 147`, declared Vulgate, was filed
+    in the King James, Revised Version and World English indexes as all of
+    Hebrew 147 -- Vulgate 146's eleven verses first. It now converts through
+    `_psalms.convert_range_whole`, as the browser structure does.
+    """
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.propers = load_tool("mass-propers")
+
+    def ranges(self, entry: dict, source: str, target: str, titles: str = "numbered"):
+        _, ranges, problem = index_bible.citation(entry, source, target, self.propers, titles)
+        return ranges, problem
+
+    def test_a_vulgate_whole_psalm_is_the_verses_it_is_in_hebrew(self) -> None:
+        whole = {"book": "Psalms", "ref": "Psalm 147", "ranges": [
+            {"begin": {"chapter": 147}, "end": {"chapter": 147}}
+        ]}
+        ranges, problem = self.ranges(whole, "vulgate", "hebrew", index_bible.UNNUMBERED_TITLES)
+        self.assertEqual(problem, "")
+        self.assertEqual(
+            [(r["begin"]["chapter"], r["begin"].get("verse"), r["end"].get("verse")) for r in ranges],
+            [(147, 12, None)],
+        )
+
+    def test_a_range_over_a_verse_the_witness_merges_converts_whole(self) -> None:
+        ranges, problem = self.ranges(psalm(150, 5, 6), "hebrew", "vulgate")
+        self.assertEqual(problem, "")
+        self.assertEqual(ranges, [span(150, 5, 6)])
+
+    def test_a_range_that_would_lose_a_verse_refuses(self) -> None:
+        ranges, problem = self.ranges(psalm(56, 13, 14), "hebrew", "vulgate")
+        self.assertEqual(ranges, [])
+        self.assertIn("would drop verse 14", problem)
+
+    def test_the_tracked_vulgate_indexes_end_psalm_150_at_every_spirit(self) -> None:
+        for edition, words in (
+            ("clementine-vulgate", "Omnis spiritus laudet Dominum"),
+            ("catholic-public-domain-version", "Let every spirit praise the Lord"),
+            ("douay-rheims-american-1899", "let every spirit praise the Lord"),
+            ("douay-rheims", "let every spirit praise the Lord"),
+        ):
+            with self.subTest(edition=edition):
+                text = passages(ROOT / f"src/sources/bibles/{edition}/index.yaml")[
+                    "Psalm 150:1-2, 3-4, 5-6"
+                ]
+                self.assertIn(words, text)
+
+    def test_the_tracked_hebrew_indexes_open_vulgate_147_at_jerusalem(self) -> None:
+        for edition in (
+            "king-james-version", "revised-version-1895", "world-english-bible-catholic"
+        ):
+            with self.subTest(edition=edition):
+                text = passages(ROOT / f"src/sources/bibles/{edition}/index.yaml")["Psalm 147"]
+                self.assertIn("Jerusalem", text.split(".")[0])
+                self.assertNotIn("for it is good to sing praises", text)
+
+
+class ChapterHeadingResidueTests(unittest.TestCase):
+    """No verse carries the heading of the chapter after it.
+
+    sacredbible.org prints each chapter's heading -- `[ Psalm 2 ]`, with the
+    Hebrew number in parentheses in the Psalms -- between the last verse of one
+    chapter and the `{chapter:verse}` marker of the next. The Catholic Public
+    Domain Version's verse-text transformation records dropping everything
+    outside a marker, and kept that heading at the end of the last verse of
+    1,260 chapters in 68 books, so every chapter fragment and every index
+    passage reaching a chapter's last verse ended in the next chapter's name.
+    """
+
+    HEADING = __import__("re").compile(r"\[ [^\]]*\d \](?: \([^)]*\))?\s*$")
+
+    def test_no_tracked_verse_text_ends_in_a_chapter_heading(self) -> None:
+        import csv
+
+        works = ROOT / "src/sources/works"
+        for edition in index_bible.EDITIONS.values():
+            artifacts = works / str(edition["artifacts"])
+            if not artifacts.is_dir():
+                continue  # a licensed edition held outside the repository
+            for path in sorted(artifacts.glob("verse-text-*/*.tsv")):
+                with path.open(encoding="utf-8", newline="") as handle:
+                    found = [
+                        f"{row['book']} {row['chapter']}:{row['verse']}"
+                        for row in csv.DictReader(handle, delimiter="\t")
+                        if self.HEADING.search(row["text"])
+                    ]
+                with self.subTest(artifact=path.parent.name):
+                    self.assertEqual(found, [])
+
+    def test_the_cpdv_psalm_fragments_end_in_the_psalm(self) -> None:
+        import json
+
+        chapters = ROOT / "src/sources/bibles/catholic-public-domain-version/chapters/Ps"
+        first = json.loads((chapters / "1.json").read_text(encoding="utf-8"))
+        self.assertEqual(
+            first["verses"]["6"],
+            "For the Lord knows the way of the just. And the path of the impious will pass away.",
+        )
+        tailed = [
+            path.name
+            for path in sorted(chapters.glob("*.json"))
+            if any(
+                self.HEADING.search(text)
+                for text in json.loads(path.read_text(encoding="utf-8"))["verses"].values()
+            )
+        ]
+        self.assertEqual(tailed, [])
+
+
 class WithheldLocusTests(unittest.TestCase):
     """A locus an edition prints text at, but not the text that was cited.
 

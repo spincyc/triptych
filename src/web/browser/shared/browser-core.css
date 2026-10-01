@@ -450,6 +450,12 @@ body:not(:has(> .site-header)) {
 
 .citation-recast { font-style: italic; }
 
+/* Which psalm numbering a reference is written in: a psalm number names nothing
+   until its system is said, and one Missal cites in both. */
+.citation-numbering::before { content: " · "; }
+
+.citation-numbering { font-style: italic; }
+
 /* A citation that crosses a chapter boundary says where the boundary is: verse
    numbers restart there, and without a marker a new chapter is indistinguishable
    from a repeated verse. Shown only for citations that actually cross one. */

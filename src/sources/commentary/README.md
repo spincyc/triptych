@@ -99,7 +99,10 @@ as written is still reported, as `cited`.
 Hebrew 51, and the two missals disagree by declaration: `roman-1962` is vulgate,
 `postconciliar` is hebrew. Guessing returns a real, confident, wrong psalm,
 which is worse than the miss it replaces. `build-corpus` needs no flag — it
-reads `psalm_numbering` off each calendar. Conversion runs through
+reads each citation's numbering as the calendar assigns it: the cycle's
+`psalm_numbering`, else the proper's, else the calendar's (the citations tool's
+`numbered_verse_lists`; until 2026-10-01 it read the calendar's alone, keying
+ot-25's Vulgate `Psalm 118:4-5` to Psalm 117). Conversion runs through
 `scripts/_psalms.py` and the tracked concordance; nothing is renumbered by hand,
 and a reference that does not exist in its declared system is reported
 `unconvertible` rather than moved.
@@ -120,7 +123,11 @@ differs from the tracked keys on twenty of them, which is what proves it. The
 eleven antiphons the postconciliar file prints in Vulgate numbers under a Hebrew
 declaration never reach a key at all: each exceeds its Hebrew psalm and is
 refused as `unconvertible`, so the psalter half of the index is clean by
-construction.
+construction. (So it was built, on 2026-07-31. Since 2026-10-01 `build-corpus`
+reads those antiphons under the Vulgate numbering they declare, so they convert
+and key their own psalms; the tracked corpus predates that and has not been
+rebuilt, because the calendars and the index have moved on since and a rebuild
+is a decision about the harvest's pending loci.)
 
 **The rest of the canon is not converted, so the file is mixed.** A non-psalm
 citation's chapter becomes the key as printed, which is the Vulgate's division

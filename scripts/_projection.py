@@ -299,7 +299,7 @@ def psalter_rows(edition_root: Path, numbering: str) -> list[Row]:
     derived = _psalter.derive_aliases(edition, numbering)
     if edition == _psalter.WITNESS_EDITION:
         # The witness's own psalm alias rows are an input to the numbering rather
-        # than an output of it — see `_psalter._witness_aliases` — so they are not
+        # than an output of it — see `_psalms.witness_merges` — so they are not
         # compared against a derivation that reads them.
         return []
     tracked = [

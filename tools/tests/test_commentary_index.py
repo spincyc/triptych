@@ -1010,5 +1010,95 @@ class FragmentNumberingTests(unittest.TestCase):
         self.assertEqual(self.found("Psalm 50:3", "hebrew"), [])
 
 
+
+class OwnNumberingTests(unittest.TestCase):
+    """Each citation is read under its own psalm numbering, not the calendar's.
+
+    The postconciliar file declares Hebrew, and its antiphons reproduce the
+    Missal's Vulgate psalm numbers; eleven of them, and Christ the King's,
+    declare `psalm_numbering: vulgate` on the proper. `build-corpus` read every
+    citation under the calendar's declaration, so ten of those antiphons were
+    listed as unconvertible ("hebrew Psalm 118:137 is outside the psalm") and
+    ot-25's `Psalm 118:4-5` was keyed to Vulgate Psalm 117, a different psalm,
+    with nothing to say so. The rule is the citations tool's one inheritance
+    (`numbered_verse_lists`): a cycle's, else the proper's, else the calendar's.
+    """
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.citations = work_index._load_citations_tool()
+
+    def verse(self, ref: str) -> dict:
+        return {"ref": ref, **self.citations.parse_citation(ref)}
+
+    def test_each_passage_carries_its_owners_numbering(self) -> None:
+        document = {
+            "psalm_numbering": "hebrew",
+            "sections": {"seasonal": {"kind": "seasonal", "masses": [{
+                "key": "day", "name": "Day", "season": "ordinary-time",
+                "propers": [
+                    {"name": "Communion Antiphon", "source": "scripture",
+                     "psalm_numbering": "vulgate", "verses": [self.verse("Psalm 118:4-5")]},
+                    {"name": "Responsorial Psalm", "cycles": {
+                        "A": {"source": "scripture", "verses": [self.verse("Psalm 145:2-3")]},
+                        "B": {"source": "scripture", "psalm_numbering": "vulgate",
+                              "verses": [self.verse("Psalm 53:3-4")]},
+                    }},
+                ],
+            }]}},
+        }
+        records = work_index._collect_mass_records(self.citations, document, "synthetic")
+        found = {
+            (row["proper_slot"], row["numbering"]): work_index._canonical_passage(
+                row["passage"], row["numbering"]
+            )["ref"]
+            for row in records
+        }
+        self.assertEqual(
+            found,
+            {
+                ("Communion Antiphon", "vulgate"): "Psalms 118:4-118:5",
+                ("Responsorial Psalm/A", "hebrew"): "Psalms 144:2-144:3",
+                ("Responsorial Psalm/B", "vulgate"): "Psalms 53:3-53:4",
+            },
+        )
+
+    def test_a_built_corpus_converts_the_vulgate_antiphons(self) -> None:
+        """Built from the tracked calendars and index into a scratch file.
+
+        Not read from the tracked `mass-commentary-corpus.yaml`: that file was
+        last built on 2026-07-31 and the calendars and the discovery index have
+        moved on since, so rebuilding it is a decision about the harvest's
+        pending loci and not a side effect of this rule.
+        """
+        import subprocess
+        import tempfile
+
+        import yaml
+
+        with tempfile.TemporaryDirectory() as scratch:
+            output = Path(scratch) / "corpus.yaml"
+            done = subprocess.run(
+                [sys.executable, str(ROOT / "tools" / "commentary-work-index"),
+                 "build-corpus", "--output", str(output), "--json"],
+                cwd=ROOT, capture_output=True, text=True, check=False,
+            )
+            self.assertEqual(done.returncode, 0, done.stderr)
+            corpus = yaml.safe_load(output.read_text(encoding="utf-8"))
+        self.assertEqual(
+            [row for row in corpus.get("unconvertible_references") or []
+             if row["mass"].startswith("postconciliar::")],
+            [],
+        )
+        (twenty_fifth,) = [
+            row for row in corpus["masses"]
+            if row["calendar"] == "postconciliar" and row["mass_key"] == "ot-25"
+        ]
+        keyed = {
+            passage for work in twenty_fifth["works"] for passage in work["passages"]
+        }
+        self.assertNotIn("Psalms 117:4-117:5", keyed)
+
+
 if __name__ == "__main__":
     unittest.main()

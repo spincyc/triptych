@@ -586,13 +586,27 @@ class MassElement(NamedTuple):
 def mass_elements(document: dict[str, Any], mass: dict[str, Any], citations: Citations) -> list[MassElement]:
     import _calendars  # noqa: E402
 
-    numbering = str(document.get("psalm_numbering") or NUMBERING)
+    default = str(document.get("psalm_numbering") or NUMBERING)
     entries, _ = _calendars.resolve_propers(document, mass)
     out: list[MassElement] = []
     for _, proper, _ in entries:
         role = calendar_role(str(proper.get("name") or ""))
         if role == "other":
             continue
+        # Read under the proper's own numbering where it declares one, by the
+        # citations tool's one inheritance rule: the postconciliar antiphons keep
+        # the Missal's Vulgate numbers inside a Hebrew-declared file, and read
+        # under the calendar's, ot-25's `Psalm 118:4-5` became Psalm 117.
+        numbering = next(
+            (
+                str(declared or default)
+                for suffix, _, _, declared in citations.module.numbered_verse_lists(
+                    proper, default
+                )
+                if suffix == ""
+            ),
+            default,
+        )
         refs: list[str] = []
         spans: list[Span] = []
         source: list[Span] = []

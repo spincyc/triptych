@@ -395,5 +395,46 @@ class ValidatorTests(unittest.TestCase):
         self.assertEqual(self.loci(topical), [])
 
 
+
+class OwnNumberingTests(unittest.TestCase):
+    """A Mass element is read under its proper's psalm numbering.
+
+    `mass_elements` read every citation under the calendar's declaration, so
+    the postconciliar ot-25 Communion Antiphon, `Psalm 118:4-5` declared
+    Vulgate inside the Hebrew-numbered file, was compared as Vulgate Psalm 117
+    -- a commentator quoting *Tu mandasti mandata tua* would have missed it and
+    one quoting Psalm 117 would have matched.
+    """
+
+    def test_a_vulgate_antiphon_in_a_hebrew_missal_is_read_as_vulgate(self) -> None:
+        antiphon = "Psalm 118:4-5"
+        psalm = "Psalm 145:2-3"
+        target = {
+            "key": "ot-25", "name": "ot-25",
+            "propers": [
+                {"name": "Communion Antiphon", "source": "scripture", "psalm_numbering": "vulgate",
+                 "verses": [{"ref": antiphon, **CITATIONS.parse(antiphon)}]},
+                {"name": "Offertory", "source": "scripture",
+                 "verses": [{"ref": psalm, **CITATIONS.parse(psalm)}]},
+            ],
+        }
+        document = {
+            "psalm_numbering": "hebrew",
+            "sections": {"seasonal": {"kind": "temporal", "masses": [target]}},
+        }
+        elements = {
+            element.role: element
+            for element in _formulary.mass_elements(document, target, CITATIONS)
+        }
+        self.assertEqual(
+            [(span.begin, span.end) for span in elements["communion"].spans],
+            [((118, 4), (118, 5))],
+        )
+        self.assertEqual(
+            [(span.begin, span.end) for span in elements["offertory"].spans],
+            [((144, 2), (144, 3))],
+        )
+
+
 if __name__ == "__main__":
     unittest.main()

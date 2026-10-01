@@ -58,10 +58,13 @@ apparatus exists to catch, and no resolution count will show it to you.
 - One tracked psalm concordance is the sole authority for Vulgate/Hebrew/English
   psalm numbering:
   `src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/psalm-numbering-*/psalm-numbering.tsv`
-  (219 rows, all 2,528 psalter verses). `scripts/_psalms.py` holds no table of
-  its own and validates the file on load — equal-length sides, all 150 psalms,
-  no gap, no overlap. It raises `PsalterUnavailable` rather than converting from
-  a bad table.
+  (219 rows, the 2,528 verses that printing numbers), read together with the
+  same edition's own `verse-aliases.tsv`, which records the Vulgate 28:11 and
+  150:6 that printing carries inside the verse before (`_psalms.witness_merges`;
+  2,530 verses). `scripts/_psalms.py` holds no table of its own and validates
+  both on load — equal-length sides, all 150 psalms, no gap, no overlap, and a
+  psalm alias row only of a verse merged into the one before it at its psalm's
+  end. It raises `PsalterUnavailable` rather than converting from a bad table.
 - `tools/index-bible`'s `EDITIONS` dict is the edition registry. `numbering`,
   `psalter`, `psalm_titles`, `rights`, `publishable` and the artifact path all
   live there.
@@ -82,8 +85,11 @@ apparatus exists to catch, and no resolution count will show it to you.
   that has stopped breaching fails.
 - Psalms are excluded from `citation_divergences` by construction — a second
   mechanism could only contradict the concordance.
-- Structure files resolve every citation in **both** numbering systems, so no
-  numbering logic ships to the browser.
+- Structure files resolve every citation for every addressing — `vulgate`,
+  `hebrew`, and `hebrew-unnumbered-titles` (`_psalms.ADDRESSINGS`) — and carry
+  each offered edition's own departures from its alias table under
+  `edition_loci` / `refused`, so no numbering logic ships to the browser; the
+  manifest names each edition's key. `guidance/web-data.md` §3.
 - Rights on the psalm concordance, book indexes and alias tables are
   `project-created`: numbering facts, no third-party text.
 
@@ -451,9 +457,22 @@ Measured 31 July 2026. Re-measure before quoting any figure here.
   Vulgate and the Nova Vulgata exchange the meek and those who mourn. Both
   resolve to real beatitudes either way and the recorded incipit is too short to
   say which was meant. Settle against the printed antiphon, not by reasoning.
-- **10 psalms, 19 loci, carry Vulgate numbers in a Hebrew-declared file.** Listed
-  under the postconciliar calendar's `psalm_numbering_exceptions`, which is
-  self-cleaning in both directions and is meant to empty.
+- **One psalm locus breaches the postconciliar file's declared numbering**,
+  `Psalm 56:14`, listed under `psalm_numbering_exceptions`, which is
+  self-cleaning in both directions and is meant to empty. The Vulgate-numbered
+  antiphons declare their numbering on the proper.
+- **Hebrew 29 and 150 may be flagged `english_offset_uniform: no` for the
+  witness's merges alone.** Measured 2026-10-01 against the tracked texts: the
+  Clementine's Psalm 28 and the King James, Revised Version and World English
+  Psalm 29 run eleven verses verse for verse, the inscription inside verse 1
+  (offset 0, where the concordance's English column says 1); Psalm 150 runs six
+  in all four. The flags therefore look like artefacts of the Challoner printing
+  the concordance was compiled from, which joins 28:10-11 and 150:5-6, and they
+  make the three title-unnumbered editions refuse both psalms. Lifting them is a
+  correction of the concordance artifact itself — it moves the artifact's
+  fingerprint, which some eighty tracked records pin — and the three external
+  detectors that agreed on the sixteen counted against the Douay, so re-check
+  them before calling the list fifteen or fourteen.
 - **No `verse-inventory` artifact, no book-index schema, no cross-edition
   divergence register.** All three are proposed and unbuilt in
   `guidance/versification.md` §8. The fourth item that section proposes — a

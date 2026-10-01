@@ -44,6 +44,7 @@ from _psalms import (  # noqa: E402
     NumberingError,
     convert_point,
     convert_range,
+    dropped_verses,
     psalm_ceiling,
     psalm_extent,
 )
@@ -915,10 +916,12 @@ class ResolveAppointedPassages(unittest.TestCase):
             structure = propers_tool.calendar_structure(ROOT, "synthetic", tokens)
 
         def loci(citation: dict) -> dict:
+            """The two numbering systems' loci; the title convention is held elsewhere."""
             self.assertIsNone(citation["unresolved"], citation["ref"])
             return {
                 system: [(row["chapter"], row["first"], row["last"]) for row in rows]
                 for system, rows in citation["loci"].items()
+                if system in ("vulgate", "hebrew")
             }
 
         # (proper, course, cycle) -> the loci its one citation must reach.
@@ -1009,24 +1012,25 @@ class ResolveAppointedPassages(unittest.TestCase):
     def test_structure_refuses_a_range_the_concordance_would_trim(self):
         """A range past a psalm's tracked bound is refused, never shortened.
 
-        `convert_range` keeps only the verses the concordance numbers, and the
-        concordance was compiled from a printing that merges Vulgate 28:10-11
-        and 150:5-6, so it ends both psalms a verse early. Once the structure
-        pass read each citation under its own numbering, the postconciliar
-        christ-the-king Communion Antiphon, `Ps 28, 10-11` declared Vulgate,
-        was served as Hebrew 29:10 alone: 29:11, "Dominus benedicet populo suo
-        in pace", was gone and nothing said so. The Hebrew-declared
-        responsorial endpoint at 150:6 had been served one verse short the
-        same way, and so had the one at Hebrew 56:14, for a different reason:
-        that is no merge. Every tracked Vulgate witness prints Psalm 55 with
-        thirteen verses, the two systems divide the psalm's body differently,
-        and Hebrew 56:14 has no Vulgate verse of its own for a concordance to
-        name -- splitting the Douay's merged verses would not supply one. A
-        citation that cannot be converted whole is served unresolved, naming
-        the bound, with no loci at all.
+        `convert_range` keeps only the verses the concordance numbers. Until
+        2026-10-01 the concordance was read without its witness's alias table,
+        which records the Vulgate 28:11 and 150:6 that printing carries inside
+        the verse before, so it ended both psalms a verse early. Once the
+        structure pass read each citation under its own numbering, the
+        postconciliar christ-the-king Communion Antiphon, `Ps 28, 10-11`
+        declared Vulgate, was served as Hebrew 29:10 alone: 29:11, "Dominus
+        benedicet populo suo in pace", was gone and nothing said so. The
+        Hebrew-declared responsorial endpoint at 150:6 had been served one
+        verse short the same way, and so had the one at Hebrew 56:14, for a
+        different reason: that is no merge. Every tracked Vulgate witness
+        prints Psalm 55 with thirteen verses, the two systems divide the
+        psalm's body differently, and Hebrew 56:14 has no Vulgate verse of its
+        own for a concordance to name. A citation that cannot be converted
+        whole is served unresolved, naming the bound, with no loci at all.
 
         Each range is built one verse past whatever bound the concordance
-        states, so the test holds the rule and not today's table.
+        states, so the test holds the rule and not today's table; the tracked
+        cases are held by `test_served_structure_reads_the_witness_merged_verses`.
         """
 
         def psalm(chapter: int, first: int, last: int) -> dict:
@@ -1137,14 +1141,15 @@ class ResolveAppointedPassages(unittest.TestCase):
         not see it, because it skipped every locus with an open end.
 
         An open end is closed at its psalm's bound in the numbering it is read
-        under, and the closed range converts verse for verse like any other. A
-        converted piece that is the whole of its psalm is served whole, open at
-        both ends, as the citation was: the editions of one system still number
-        the same psalm differently -- the Clementine, the 1899 Douay and the
-        CPDV print Vulgate 147 as verses 1-9 where the concordance runs it
-        12-20, and every tracked witness but the Challoner Douay prints a sixth
-        verse of Psalm 150 that the concordance does not number. Any other
-        piece is served at the verses it converts to.
+        under, and the closed range converts verse for verse like any other.
+        Where the converted piece reaches its own psalm's bound at an end the
+        citation runs past, that end is served open again, as the citation
+        was: the editions of one system still number the same psalm
+        differently -- the Clementine, the 1899 Douay and the CPDV print
+        Vulgate 147 as verses 1-9 where the concordance runs it 12-20. So a
+        whole psalm is served whole, and Vulgate 147 is Hebrew 147 from verse
+        12 to the end of the psalm (the open end kept open since 2026-10-01,
+        see `test_structure_keeps_a_half_open_range_open_across_numberings`).
         """
 
         def whole(chapter: int) -> dict:
@@ -1203,7 +1208,7 @@ class ResolveAppointedPassages(unittest.TestCase):
             # The worked case: Vulgate 147 is Hebrew 147:12-20, not Hebrew 147.
             ("Psalm (vulgate)", "Psalm 147"): {
                 "vulgate": [(147, *entire)],
-                "hebrew": [(147, 12, 20)],
+                "hebrew": [(147, 12, None)],
             },
             # A whole psalm that is a whole psalm in the other system stays
             # whole, as it was served before.
@@ -1221,8 +1226,8 @@ class ResolveAppointedPassages(unittest.TestCase):
                 "hebrew": [(147, *entire)],
                 "vulgate": [(146, *entire), (147, *entire)],
             },
-            # Not closed at the concordance's fifth verse, which would lose the
-            # sixth that the Clementine prints.
+            # Not closed at a verse the concordance numbers, which would lose
+            # any verse an edition prints past it.
             ("Psalm (hebrew)", "Psalm 150"): {
                 "hebrew": [(150, *entire)],
                 "vulgate": [(150, *entire)],
@@ -1240,9 +1245,17 @@ class ResolveAppointedPassages(unittest.TestCase):
                             for row in rows
                         ]
                         for system, rows in citation["loci"].items()
+                        if system in loci
                     },
                     loci,
                 )
+        # An edition leaving psalm titles unnumbered reads the Hebrew verses,
+        # shifted where a title takes a number; Hebrew 147 has none to shift,
+        # and an open end stays open whatever the edition numbers it.
+        self.assertEqual(
+            served[("Psalm (vulgate)", "Psalm 147")]["loci"]["hebrew-unnumbered-titles"],
+            [{"chapter": 147, "first": 12, "last": None}],
+        )
 
         # The check reads open ends too: handed what `convert_range` makes of
         # the open range by itself, it names the difference instead of
@@ -1250,11 +1263,137 @@ class ResolveAppointedPassages(unittest.TestCase):
         whole_147 = {"chapter": 147}
         moved, _ = convert_range("Psalms", whole_147, whole_147, "vulgate", "hebrew")
         self.assertEqual(
-            propers_tool.dropped_verses(
+            dropped_verses(
                 "Psalms", whole_147, whole_147, "vulgate", "hebrew", moved
             ),
             "vulgate Psalm 147:12-20 would convert to 20 verses in hebrew, not its 9",
         )
+
+    def test_structure_keeps_a_half_open_range_open_across_numberings(self):
+        """A half-open psalm range is "to the end of the psalm" on both sides.
+
+        Converting closed the open end at the concordance's last verse and
+        served the closed range, so wherever an edition prints a verse past
+        the concordance's -- the Clementine's Vulgate 19:10, which the
+        concordance's witness joins to 19:9 -- a citation running to the end
+        of the psalm lost it on the converted side, and nothing said so. No
+        tracked citation has this shape; the rule is held here so that one
+        cannot arrive with it.
+        """
+
+        def half_open(chapter: int, first: int) -> dict:
+            return {
+                "book": "Psalms",
+                "ranges": [
+                    {"begin": {"chapter": chapter, "verse": first}, "end": {"chapter": chapter}}
+                ],
+                "ref": f"Psalm {chapter}:{first}-",
+            }
+
+        day = {
+            "key": "day",
+            "name": "Day",
+            "season": "ordinary-time",
+            "registry": "day",
+            "propers": [
+                {
+                    "name": "Communion Antiphon",
+                    "source": "scripture",
+                    "psalm_numbering": "vulgate",
+                    "verses": [half_open(28, 3)],
+                },
+                {
+                    "name": "Responsorial Psalm",
+                    "source": "scripture",
+                    "verses": [half_open(20, 7)],
+                },
+            ],
+        }
+        source = {
+            "calendar": "synthetic",
+            "edition": "Synthetic source edition",
+            "edition_short": "Synthetic Missal",
+            "psalm_numbering": "hebrew",
+            "sections": {"seasonal": {"kind": "seasonal", "masses": [day]}},
+        }
+        with (
+            patch.object(propers_tool, "load_calendar", return_value=source),
+            patch.object(
+                propers_tool, "translation_overlay", return_value=({}, {}, [], {})
+            ),
+            patch.object(propers_tool, "publication_records", return_value=({}, [])),
+        ):
+            structure = propers_tool.calendar_structure(
+                ROOT, "synthetic", {"Psalms": "Ps"}
+            )
+        served = {
+            citation["ref"]: citation
+            for row in structure["masses"][0]["propers"]
+            for citation in row["citations"]
+        }
+        wanted = {
+            "Psalm 28:3-": {"vulgate": [(28, 3, None)], "hebrew": [(29, 3, None)]},
+            "Psalm 20:7-": {"hebrew": [(20, 7, None)], "vulgate": [(19, 7, None)]},
+        }
+        for ref, loci in wanted.items():
+            with self.subTest(ref=ref):
+                citation = served[ref]
+                self.assertIsNone(citation["unresolved"], citation["unresolved"])
+                self.assertEqual(
+                    {
+                        system: [(row["chapter"], row["first"], row["last"]) for row in rows]
+                        for system, rows in citation["loci"].items()
+                        if system in loci
+                    },
+                    loci,
+                )
+
+    def test_served_structure_reads_the_witness_merged_verses(self):
+        """The four tracked citations the concordance's merges left unresolved.
+
+        Christ the King's Communion Antiphon `Psalm 28:10-11` (Vulgate) and the
+        responsorial `Psalm 150:1-2, 3-4, 5-6` (Hebrew, two slots) reach a verse
+        the concordance's witness prints inside the verse before it; read
+        together with that witness's alias table the numbering has both verses,
+        and the citations are served whole. `Psalm 56:10, 11-12, 13-14` is no
+        merge and stays unresolved, naming the bound.
+        """
+        payload = json.loads(
+            (ROOT / "src/web/data/structure/propers/postconciliar.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        masses = {mass["key"]: mass for mass in payload["masses"]}
+
+        def cited(key: str, proper: str, course: str = "", cycle: str = "") -> dict:
+            for row in masses[key]["propers"]:
+                if row["name"] != proper:
+                    continue
+                owner = row[course][cycle] if course else row
+                (found,) = [c for c in owner["citations"] if c["book"] == "Psalms"]
+                return found
+            raise AssertionError(f"{key} has no {proper}")
+
+        def shape(citation: dict, system: str) -> list[tuple]:
+            return [
+                (row["chapter"], row["first"], row["last"])
+                for row in citation["loci"][system]
+            ]
+
+        king = cited("christ-the-king", "Communion Antiphon")
+        self.assertIsNone(king["unresolved"], king["unresolved"])
+        self.assertEqual(shape(king, "vulgate"), [(28, 10, 11)])
+        self.assertEqual(shape(king, "hebrew"), [(29, 10, 11)])
+        for key, cycle in (("ot-23-thursday", "I"), ("ot-33-wednesday", "II")):
+            with self.subTest(mass=key):
+                laud = cited(key, "Responsorial Psalm", "weekday_cycles", cycle)
+                self.assertIsNone(laud["unresolved"], laud["unresolved"])
+                self.assertEqual(
+                    shape(laud, "vulgate"), [(150, 1, 2), (150, 3, 4), (150, 5, 6)]
+                )
+        tense = cited("ot-24-saturday", "Responsorial Psalm", "weekday_cycles", "II")
+        self.assertEqual(tense["loci"], {})
+        self.assertIn("would drop verse 14", tense["unresolved"])
 
     def test_served_structure_converts_every_cited_verse(self):
         """Every tracked structure file serves each psalm citation one set of verses.
