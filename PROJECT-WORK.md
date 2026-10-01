@@ -31,8 +31,33 @@ installs the hooks from the preamble whenever titlesec loads, gives every
 manual contents line its own anchor, cleans the bookmark titles, adds a gate,
 and regenerates and redeploys every affected PDF of both providers.
 
-**In progress.** The work list of open known issues is being inventoried and
-verified against the current tree.
+**Known-issues inventory.** A read-only lane verified every open item the
+register and this workstream record against the tree at `a502ba06a`: 76
+deduplicated items, 59 open, 13 already fixed but still listed open, and 4
+unverifiable. On 2026-10-01 the maintainer decided the ones that change
+scope:
+
+- the five published Claude leaves with undisposed findings (1962 55, 56,
+  57, 58 and pc-s51) each get a full revision answering every standing
+  finding, with independent reviews, rebuilt and redeployed ("Full revision
+  per leaf (Recommended)");
+- the held Claude Fourteenth Sunday (54) is withdrawn ("Withdraw it");
+- the protected browser defects are fixed: the nested `<main>`, the Propers
+  modal trapping focus on load, the unscoped `day-missal.css` header
+  selector, and the Catena hardening findings and empty no-JavaScript
+  heading ("Fix them (Recommended)");
+- feature and design work is scheduled rather than built now, while the 32
+  damaged 1962 orations are read from the Missal's page images ("Schedule
+  them, don't build now (Recommended)"). Scheduled: control target sizes, the
+  Reader's production obligations, a multi-page angelology reader, the
+  ritual-flow refinement, the 2,176 sung propers, the postconciliar rights
+  policy, the CLI consolidation, the engine redesigns (findings
+  carry-forward, repair accounting, house-voice and references heuristics,
+  the legacy pipelines), commentary-id reconciliation, and a fresh
+  independent audit of the chronology corpus.
+
+The fix lanes take the remaining open defects; the 13 already-fixed entries
+are reconciled in the register and ledger.
 
 ## Proper-study PDF contents links, 2026-10-01
 
