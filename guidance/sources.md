@@ -132,6 +132,35 @@ translation, recension, or official version ordinarily creates a new edition.
 Never make `latest`, `current`, or an access host part of a supposedly permanent
 work identity.
 
+### A host's revision is not the printing it revises
+
+**New Advent's Church Fathers pages do not print the Schaff translations as
+printed.** The citation block of each page compared names the 1888 translation
+and adds "Revised and edited for New Advent by Kevin Knight", and the revision
+modernises the English: the second person *ye*, *thou*, *thee*, *thy* becomes
+*you* and *your*, and archaic verb forms go with it (*hath* to *has*, *spake* to
+*spoke*). The pages were set against the tracked CCEL text of the same volumes
+for Augustine on Psalms 95 and 121 (NPNF1-8) and Chrysostom's twenty-ninth
+homily on Matthew (NPNF1-10) by the research of the Claude 1962 Eighteenth
+Sunday leaf, and the Chrysostom and Psalm 95 instances were re-checked on
+2026-10-01: the 1888 *He said not, I forgive thee thy sins, but, thy sins be
+forgiven thee* reads on New Advent *I forgive you your sins, but, your sins be
+forgiven you*, and *if ye will enter* reads *if you will enter*. The comparison
+reached those pages only. Any other New Advent Fathers page is read for the same
+statement in its own citation block, and its wording is checked against a
+printing before it is treated as unrevised.
+
+So the wording of a New Advent delivery that carries that statement is New
+Advent's revision, whatever its edition record calls it. A study that quotes
+"the NPNF translation" takes the words from a tracked text of the printing where
+the library holds one — the tracked CCEL texts, filed under
+`works/nicene-and-post-nicene-fathers/` or, for Augustine on the Psalms, under
+the work itself — and a quotation taken from a New Advent page is attributed to
+that revision and never presented as the printing's. The caveat is recorded here
+once rather than on each New Advent edition record, whose fingerprints reviewed
+bindings pin; the deliveries it reaches are those whose `source_url` is under
+`https://www.newadvent.org/fathers/`.
+
 ## Ownership and paths
 
 Tracked source-library records use this hierarchy:
