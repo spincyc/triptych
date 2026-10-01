@@ -16,6 +16,7 @@ would go green against the wrong file.
 from __future__ import annotations
 
 import io
+import json
 import re
 import subprocess
 import sys
@@ -1092,7 +1093,7 @@ bindings:
                          {"traditional-attribution"})
         # Ps.137 and Ps.140 were added on 2026-10-01 (KI-013) from their
         # inspected titles; Ps.140's heading is the Clementine's, as Ps.94's is.
-        attributed = (33, 39, 70, 85, 94, 97, 137, 140)
+        attributed = (32, 33, 39, 70, 85, 94, 97, 137, 140)
         self.assertEqual(
             {str(span) for item in bindings for span in item.scope},
             {f"Ps.{chapter}" for chapter in attributed},
@@ -1131,6 +1132,25 @@ bindings:
             answer = _chronology.chronology(locus)
             self.assertIn((relation, event),
                           {(item.relation, item.subject) for item in answer.assertions})
+
+    def test_psalm_32_title_supplies_attribution_without_an_occasion(self) -> None:
+        for edition, title in (("douay-rheims", "A psalm for David."),
+                               ("clementine-vulgate", "Psalmus David.")):
+            path = (REPOSITORY_ROOT / "src/sources/bibles" / edition
+                    / "chapters/Ps/32.json")
+            self.assertTrue(json.loads(path.read_text())["verses"]["1"].startswith(title))
+        for locus in (_chronology.Locus("vulgate", "Ps", 32, 6),
+                      _chronology.Locus("hebrew", "Ps", 33, 6)):
+            with self.subTest(locus=locus):
+                answer = _chronology.chronology(locus)
+                self.assertEqual(answer.status, "composition-only")
+                self.assertEqual(
+                    {item.relation for item in answer.assertions},
+                    {"composition", "traditional-attribution"})
+                attribution = next(item for item in answer.assertions
+                                   if item.relation == "traditional-attribution")
+                self.assertEqual(attribution.subject,
+                                 "israel.monarchy.david-traditional-era")
 
     def test_psalms_without_a_davidic_title_do_not_inherit_davids_era(self) -> None:
         for chapter in (83, 91, 101, 117):

@@ -124,6 +124,12 @@ class Claim(NamedTuple):
     characters of provenance prose, they are the corpus's to state, and a copy
     of them here would be a second place they could be edited. A reader who
     wants them runs `tools/tpt scripture-chronology query <locus> --evidence`.
+
+    `derived` says the corpus date carries a `derivation`, which is what makes
+    a date derived (guidance §10), so that every display can mark it. It is
+    not rendered into the record, which already says the same thing in
+    `basis_class = "derived"` and in the source label; a test holds the two
+    words to each other across the whole corpus.
     """
 
     relation: str
@@ -138,6 +144,7 @@ class Claim(NamedTuple):
     profile: str
     sources: tuple[str, ...]
     reaches: tuple[Reach, ...]
+    derived: bool = False
 
     def sort_key(self) -> tuple:
         return (
@@ -169,7 +176,12 @@ class Claim(NamedTuple):
             self.basis_class,
             self.profile,
             self.sources,
+            self.derived,
         )
+
+
+# Claim fields the record does not carry; see `Claim`.
+UNRECORDED_CLAIM_FIELDS = ("reaches", "derived")
 
 
 class Element(NamedTuple):
@@ -527,6 +539,7 @@ def _claims_at(locus: str, profile: str | None, corpus_root: Path | None) -> tup
                     scope=item.scope,
                 ),
             ),
+            derived=item.claim.date.derived,
         )
         for item in answer.assertions
     ]
@@ -914,17 +927,32 @@ GAP_DISPLAY = {
 }
 
 
-# A span's structured endpoints cannot say that the source hedged them; only
-# its label can, so the label is read for the source's own approximation word.
-# "around" and a printed "c."/"ca."/"circ." were missing until 2026-10-01, and
-# "around A.D. 80–100" was printed as the exact span "A.D. 80–100". The
-# abbreviations are matched in lower case and only before a year or era,
-# because the "C." of "A. C. 1491" (ante Christum) is an era, not a hedge.
-APPROXIMATION = re.compile(
-    r"(?i:\b(?:about|around|circa|approx(?:imately)?\.?)\b)"
-    r"|(?<![A-Za-z])(?:c|ca|circ)\.\s*~?\s*"
-    r"(?=[0-9]|A\.\s?D\.|B\.\s?C\.|A\.\s?M\.)"
+# A HEDGE ON THE YEAR. A span's structured endpoints cannot say that the source
+# hedged them; only its words can, so the label is read for the source's own
+# approximation word -- but only where the word governs a year. "around" and a
+# printed "c."/"ca."/"circ." were missing until 2026-10-01, and "around A.D.
+# 80–100" printed as the exact span "A.D. 80–100". A word that hedges
+# something else does not make the year approximate: "about Easter A.D. 57"
+# states the year and hedges the season. So "about", "around" and "circa"
+# count only when what follows is a year, an era or "the year(s)", and "c.",
+# "ca." and "circ." only before a year or an era, in lower case, because the
+# "C." of "A. C. 1491" (ante Christum) is an era, not a hedge. "approximately"
+# qualifies the figures it is printed with, wherever it stands ("from the year
+# 90 to 100 (approximately)"). The content preflight reads printed prose by
+# this same definition (`_date_signature`), so the page and the check cannot
+# disagree about what a hedge is.
+_ERA_TOKEN = r"(?:A\.\s?D\.|B\.\s?C\.|A\.\s?M\.)"
+YEAR_HEDGE = re.compile(
+    rf"(?i:\b(?:about|around|circa)\s+(?:the\s+)?(?:years?\s+)?"
+    rf"(?:{_ERA_TOKEN}\s*)?[0-9])"
+    r"|(?i:\bapprox(?:imately)?\b)"
+    rf"|(?<![A-Za-z])(?:c|ca|circ)\.\s*~?\s*(?=[0-9]|{_ERA_TOKEN})"
 )
+
+
+def hedges_the_year(text: str) -> bool:
+    """Whether printed date wording hedges its year, by `YEAR_HEDGE`."""
+    return bool(YEAR_HEDGE.search(" ".join(text.replace("~", " ").split())))
 
 
 def _sentence(text: str, initial: bool) -> str:
@@ -934,6 +962,23 @@ def _sentence(text: str, initial: bool) -> str:
 
 def concise_display_label(claim: Claim, *, initial: bool = True) -> str:
     """A compact, deterministic display of one structured corpus date.
+
+    A claim carrying a `derivation` is marked "(derived)" after its value,
+    as a duration is marked "(duration)", because guidance §10 requires a
+    derived claim to be "visibly derived wherever it is displayed". Until
+    2026-10-01 the derived A.D. years of the Naim and Bread of Life events
+    printed as bare years ("Event: A.D. 27."), indistinguishable from a year a
+    source states; the word "derived" survived only in the sealed source label.
+    A display that already opens with the word is not marked twice.
+    """
+    value = _concise_value(claim, initial=initial)
+    if claim.derived and not re.match(r"(?i)derived\b", value):
+        value += " (derived)"
+    return value
+
+
+def _concise_value(claim: Claim, *, initial: bool = True) -> str:
+    """The concise display of the date itself, before any derivation mark.
 
     Absolute endpoints are merely respelled; no endpoint or precision is
     changed, and a span whose source label hedges it ("about", "around",
@@ -960,7 +1005,7 @@ def concise_display_label(claim: Claim, *, initial: bool = True) -> str:
     if span:
         if _is_century_notation(span):
             return _sentence(claim.label.strip(), initial)
-        prefix = "c. " if APPROXIMATION.search(claim.label) else ""
+        prefix = "c. " if hedges_the_year(claim.label) else ""
         return (
             f"{prefix}{span.group('era')} {span.group('first')}\N{EN DASH}"
             f"{span.group('last')}"
@@ -1594,7 +1639,7 @@ def _render_claim(lines: list[str], table: str, claim: Claim) -> None:
     lines.append("")
     lines.append(f"[[{table}]]")
     for name in Claim._fields:
-        if name != "reaches":
+        if name not in UNRECORDED_CLAIM_FIELDS:
             lines.append(_field(name, getattr(claim, name)))
     for reach in claim.reaches:
         lines.append("")

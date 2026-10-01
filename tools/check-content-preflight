@@ -1426,11 +1426,28 @@ def _normalized_label(text: str) -> str:
 # biblical chronology claims.
 ERA = r"(?:A\.\s*D\.|B\.\s*C\.|A\.\s*M\.)"
 YEAR_OR_SPAN = r"[0-9]+(?:\s*(?:-{1,2}|–|—|to|or)\s*[0-9]+)?"
-MANUAL_CHRONOLOGY_DATE = re.compile(
-    rf"(?ix)(?:\b(?:post-|pre-|after\s+|before\s+|about\s+|c\.\s*~?\s*)?"
-    rf"{ERA}\s*~?\s*{YEAR_OR_SPAN}(?:\s+date)?\b|"
-    rf"\b(?:about\s+|c\.\s*)?{YEAR_OR_SPAN}\s*~?\s*{ERA})"
+# The hedge words a printed date may open with. "around", "circa", "ca." and
+# "circ." were missing until 2026-10-01, so "around A.D. 80–100" in prose was
+# read as the exact "A.D. 80–100" and passed against an exact label. What a
+# hedge MEANS -- whether it governs the year -- is decided once, in
+# `_proper_chronology.hedges_the_year`; this only finds where a date begins.
+HEDGE_WORD = (
+    r"(?:(?:about|around|circa|approx(?:imately)?\.?)\s+"
+    r"|(?:c|ca|circ)\.\s*~?\s*)"
 )
+DATE_QUALIFIER = (
+    rf"(?:post-|pre-|after\s+|before\s+)?(?:{HEDGE_WORD})?"
+    r"(?:(?:the\s+)?years?\s+)?"
+)
+# Keep the complete qualification in both era orders and in passage-labelled
+# dates. Scanning only the number in "about the year 57 A.D." or "before
+# 57 A.D." would falsely authorize it against the exact A.D. 57 claim.
+PRINTED_CHRONOLOGY_DATE = (
+    rf"\b{DATE_QUALIFIER}(?:{ERA}\s*~?\s*{YEAR_OR_SPAN}\b"
+    rf"|{YEAR_OR_SPAN}\s*~?\s*{ERA})"
+    r"(?:\s+\(approx(?:imately)?\.?\))?(?:\s+date\b)?"
+)
+MANUAL_CHRONOLOGY_DATE = re.compile(PRINTED_CHRONOLOGY_DATE, re.I | re.X)
 ERA_IN_DATE = re.compile(ERA, re.I)
 
 # A manual date that omits its era is still a chronology claim. Keep this
@@ -1440,7 +1457,8 @@ ERA_IN_DATE = re.compile(ERA, re.I)
 # site. Authors can always avoid ambiguity by leaving the date in the
 # generated annotation and referring to "the displayed range" in prose.
 QUALIFIED_ERALESS_DATE = re.compile(
-    rf"(?ix)\b(?:post-|pre-|after\s+|before\s+|about\s+|c\.\s*~?\s*)"
+    rf"(?ix)\b(?:post-|pre-|after\s+|before\s+|{HEDGE_WORD})"
+    r"(?:(?:the\s+)?years?\s+)?"
     rf"(?!{ERA}\b){YEAR_OR_SPAN}\b"
 )
 BARE_ERALESS_SPAN = re.compile(
@@ -1458,6 +1476,15 @@ def _date_signature(value: str) -> tuple[str, str, tuple[int, ...]] | None:
     Direction and precision are meaning, not typography: a post-A.D. 70
     boundary must never authorize pre-70, exact-70 or merely approximate-70
     prose.
+
+    A date is approximate when its words hedge its YEAR, by the one rule the
+    generated Date cells use (`_proper_chronology.hedges_the_year`): "about",
+    "around" or "circa" before a year, an era or "the year", or "c."/"ca."
+    before a year or era, or "approximately". Until 2026-10-01 this read only
+    "about" and "c.", so a label saying "around A.D. 80–100" authorized the
+    exact "A.D. 80–100" in prose; and it read "about" anywhere, so "about
+    Easter A.D. 57", which states the year and hedges the season, authorized
+    an approximate "c. A.D. 57".
     """
     normalized = _normalized_label(value)
     era = ERA_IN_DATE.search(normalized)
@@ -1466,14 +1493,17 @@ def _date_signature(value: str) -> tuple[str, str, tuple[int, ...]] | None:
     era_key = re.sub(r"[^A-Za-z]", "", era.group(0)).upper()
     years = tuple(int(item) for item in re.findall(r"[0-9]+", normalized))
     lowered = normalized.lower()
+    approximate = _wiring().hedges_the_year(normalized)
     if re.search(r"(?:\bpost-|\bafter\s+)", lowered):
         relation = "after"
     elif re.search(r"(?:\bpre-|\bbefore\s+)", lowered):
         relation = "before"
-    elif re.search(r"(?:\babout\s+|(?:^|\s)c\.\s*)", lowered):
+    elif approximate:
         relation = "approximate"
     else:
         relation = "exact"
+    if approximate and relation in {"before", "after"}:
+        relation += "-approximate"
     return (era_key, relation, years) if years else None
 
 
@@ -1490,8 +1520,8 @@ def _date_signature(value: str) -> tuple[str, str, tuple[int, ...]] | None:
 # is held to that locus and nowhere else: the date must be one the generated
 # record gives at every verse the label names, the label must name the row's
 # own verses, and a label no citation grammar reads is refused rather than
-# ignored. The date carries its whole relation — `before c. 165 B.C.` is a
-# boundary here, where the edition-wide scan reads only `c. 165 B.C.`.
+# ignored. Both scans carry the whole relation and precision, so
+# `before c. 165 B.C.` cannot authorize `before 165 B.C.`.
 PASSAGE_BOOK = r"(?:[1-4]\s*)?[A-Z][A-Za-z]*\.?"
 PASSAGE_POINT = r"[0-9]+(?::[0-9]+)?[a-z]?"
 PASSAGE_EXTENT = rf"{PASSAGE_POINT}(?:\s*(?:-{{1,2}}|–|—)\s*{PASSAGE_POINT})?"
@@ -1499,10 +1529,7 @@ PASSAGE_VERSES = (
     rf"[0-9]+:[0-9]+[a-z]?(?:\s*(?:-{{1,2}}|–|—)\s*{PASSAGE_POINT})?"
     rf"(?:\s*,\s*{PASSAGE_EXTENT})*"
 )
-PASSAGE_DATE = (
-    rf"(?i:(?:(?:before|after|about)\s+|post-|pre-)?(?:c\.\s*)?"
-    rf"(?:{ERA}\s*{YEAR_OR_SPAN}|{YEAR_OR_SPAN}\s*{ERA}))"
-)
+PASSAGE_DATE = rf"(?i:{PRINTED_CHRONOLOGY_DATE})"
 PER_PASSAGE_DATE = re.compile(
     rf"(?<![A-Za-z0-9])(?P<citation>{PASSAGE_BOOK}\s+{PASSAGE_VERSES})"
     rf"\s*:\s*(?P<dates>{PASSAGE_DATE}(?:\s*,?\s+or\s+{PASSAGE_DATE})*)"

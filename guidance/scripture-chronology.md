@@ -971,7 +971,7 @@ Under `catholic-comprehensive-v1`, every locus in the 37 171-locus distinct
 content universe has at least one answerable positional date or bound.
 **[verified]** That includes 1 356 Greek-native loci and six
 World-English-Catholic-native loci outside the 35 809-locus Vulgate primary
-universe. The broader address universe likewise resolves all 42 587 supported
+universe. The broader address universe likewise resolves all 42 589 supported
 printed addresses. `--require-date` enforces both statements from the tracked
 witnesses rather than from a presumed dense chapter range.
 
@@ -1371,15 +1371,31 @@ it does not import the 1962 calendar, source owner, or research judgments.
   the requested profile and source ids as well as the ordinary claim metadata.
 - **What the concise display may print** (2026-10-01, after three published
   defects). It respells and never weakens: a span whose source label hedges
-  it ("about", "around", "circa", "approximately", a printed "c." or "ca.")
+  its year ("about", "around" or "circa" before a year, an era or "the
+  year"; a printed "c." or "ca." before a year or era; "approximately")
   prints "c.", because a span's endpoints cannot say the source hedged them
-  and "around A.D. 80–100" had printed as an exact span. A `duration` says how
-  long and never when (§10.0), so it prints the source's own words for the
+  and "around A.D. 80–100" had printed as an exact span. A hedge on
+  something else does not reach the year: "about Easter A.D. 57" states the
+  year and hedges the season, and prints "A.D. 57". The rule is written once,
+  as `hedges_the_year` in `scripts/_proper_chronology.py`, and the content
+  preflight reads printed prose by it, so prose may neither drop a hedge the
+  source put on a year nor move one onto a year the source states. The prose
+  scan retains qualifications in either era order, including "about the year"
+  and parenthesized "approximately"; a boundary keeps both its direction and
+  its approximation, so "before c. 165 B.C." never licenses "before 165 B.C."
+  A `duration` says how long and never when (§10.0), so it prints the source's
+  own words for the
   length in quotation marks, then "(duration)" — "Historical setting:
   “seventy years” (duration)" — and never a second label after the
   relation's ("Prophecy given: Duration: …"), nor the duration's longer
   source sentence as though it were the page's own words; that sentence stays
-  in the record. Source wording that continues a sentence, after a subject
+  in the record. A claim carrying a `derivation` is marked "(derived)" after
+  its value, "Event: A.D. 27 (derived).", because §10 requires it to be
+  visibly derived wherever it is displayed; until 2026-10-01 the derived
+  years printed bare, and only the sealed source label said "derived". The
+  record does not carry the mark: its `basis_class = "derived"` already says
+  it, and a test holds that class to the derivation across the corpus.
+  Source wording that continues a sentence, after a subject
   title and comma, keeps its own case ("…, post-A.D. 70 date"). A candidate
   whose display repeats, ignoring case, one already shown in its group is
   shown once, under the strongest disposition stating it: Luke 2:42 and the
@@ -1615,13 +1631,13 @@ alleluia
   Traditional attribution -- disputed: David (reign in the usual chronology), B.C. 1055-1015.
   Composition: Before c. 165 B.C.
 gospel
-  Event: A.D. 27.
+  Event: A.D. 27 (derived).
   Composition -- disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished.
 offertory
   Traditional attribution -- disputed: David (reign in the usual chronology), B.C. 1055-1015.
   Composition: Before c. 165 B.C.
 communion
-  Event: A.D. 28.
+  Event: A.D. 28 (derived).
   Composition -- disputed: c. A.D. 90-100; A.D. 96-100.
 ```
 
@@ -1654,7 +1670,7 @@ relation prophetic-referent 297
 relation retrospective-event 413
 relation superscription-setting 277
 relation textual-attestation 2489
-relation traditional-attribution 1412
+relation traditional-attribution 1434
 relation utterance 1476
 system greek 1356
 system vulgate 35809
@@ -1665,9 +1681,9 @@ universe-limitation note missing_dates and --require-date apply only to loci enu
 unenumerable-system nab this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
 unenumerable-system nova-vulgata this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
 unenumerable-system septuagint this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
-multiple-relations 9234
+multiple-relations 9256
 event-assertions 13019
-alternatives 14396
+alternatives 14418
 ```
 
 The address-universe companion checks alternate printed numberings as separate
@@ -1677,29 +1693,29 @@ addresses. Its complete output is:
 $ ./tools/tpt scripture-chronology coverage --profile catholic-comprehensive-v1 --universe addresses --require-date --plain
 profile catholic-comprehensive-v1
 universe supported-scripture-addresses
-verses 42587
-runs 2308
+verses 42589
+runs 2309
 status attestation-only 1796
 status attribution-only 898
-status composition-only 25202
-status dated 14691
+status composition-only 25190
+status dated 14705
 status not-alignable 0
 status research-pending 0
 status textually-distinct 0
 status undated-in-tradition 0
-relation composition 31812
+relation composition 31814
 relation final-formation 1249
 relation historical-setting 4191
-relation narrated-event 7991
+relation narrated-event 8005
 relation prophecy-given 2134
 relation prophetic-referent 532
 relation retrospective-event 488
 relation superscription-setting 553
 relation textual-attestation 2493
-relation traditional-attribution 1496
+relation traditional-attribution 1576
 relation utterance 1528
 system greek 2156
-system hebrew 2528
+system hebrew 2530
 system vulgate 35809
 system world-english-catholic 2094
 missing-dates 0
@@ -1708,9 +1724,9 @@ universe-limitation note missing_dates and --require-date apply only to loci enu
 unenumerable-system nab this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
 unenumerable-system nova-vulgata this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
 unenumerable-system septuagint this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
-multiple-relations 10931
-event-assertions 14691
-alternatives 14834
+multiple-relations 11025
+event-assertions 14705
+alternatives 14914
 ```
 
 `make check-scripture-chronology` runs `validate` and `check`, and is part of

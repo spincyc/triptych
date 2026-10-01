@@ -5,7 +5,7 @@ schema: triptych-chronology-bindings/v1
 # scripts/_projection.py projects into. Declared here so that no row's
 # numbering is a thing the reader assumed.
 numbering: vulgate
-updated: '2026-09-21'
+updated: '2026-10-01'
 bindings:
   - relation: prophecy-given
     event: israel.exile.second-isaias-oracles
@@ -96,6 +96,19 @@ bindings:
       - bible:douay-rheims:Ps.137.1
       - bible:clementine-vulgate:Ps.137.1
       - bible:clementine-vulgate:Ps.140.1
+  - relation: traditional-attribution
+    event: israel.monarchy.david-traditional-era
+    scope: [{book: Ps, chapter: 32}]
+    note: >-
+      Inspected 2026-10-01: the tracked Douay-Rheims opens
+      Ps.32.1 "A psalm for David", and the tracked Clementine Vulgate
+      "Psalmus David". Both identify David without naming an occasion.
+      This received attribution reaches the existing regnal reference era;
+      it neither dates the psalm's composition to his reign nor supplies a
+      historical setting. The separate composition bound remains unchanged.
+    sources:
+      - bible:douay-rheims:Ps.32.1
+      - bible:clementine-vulgate:Ps.32.1
 
   # === bind-passion ====================================================
   # --- The Passion, harmonised ------------------------------------------------

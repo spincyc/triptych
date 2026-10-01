@@ -967,9 +967,26 @@ class ReaderFacingDisplayTests(unittest.TestCase):
 
     def test_a_hedge_on_a_season_is_not_a_hedge_on_the_year(self) -> None:
         """"about Easter A.D. 57" states the year and hedges the season; the
-        year is stored exact, and the display does not make it approximate."""
+        year is stored exact, and the display does not make it approximate.
+        The same holds for a span: a hedge counts only where it governs a
+        year (`hedges_the_year`, shared with the content preflight)."""
         self.assertEqual(chronology.concise_display_label(
             _claim("year", "57 A.D.", "about Easter A.D. 57")), "A.D. 57")
+        for label, date, expected in (
+            # "about" hedges the point in the year, not the year.
+            ("about the end of the year 63 or the beginning of 64",
+             "63 A.D. to 64 A.D.", "A.D. 63–64"),
+            # "about" hedges an interval of years; 51 and 54 are stated.
+            ("began about three years previously, in 51 ... probably in 54",
+             "51 A.D. to 54 A.D.", "A.D. 51–54"),
+            # and a hedge that does govern the year still prints "c.".
+            ("about the years 64-67", "64 A.D. to 67 A.D.", "c. A.D. 64–67"),
+        ):
+            with self.subTest(label=label):
+                self.assertEqual(chronology.concise_display_label(
+                    _claim("interval", date, label)), expected)
+        self.assertFalse(chronology.hedges_the_year("about Easter A.D. 57"))
+        self.assertTrue(chronology.hedges_the_year("about the year 70"))
 
     def test_source_wording_after_a_subject_title_continues_the_sentence(self) -> None:
         boundary = _claim("boundary", "post-A.D. 70 date", "post-A.D. 70 date",
@@ -1034,6 +1051,76 @@ class ReaderFacingDisplayTests(unittest.TestCase):
                       "{When he was twelve years old}", tex)
         self.assertIn("{alternate}{When he was twelve years old}{}.", tex)
         self.assertNotIn("alternative", tex)
+
+    def test_a_derived_claim_is_marked_wherever_it_is_displayed(self) -> None:
+        """Guidance §10: a derived claim "is visibly derived wherever it is
+        displayed". Until 2026-10-01 the Fifteenth Sunday printed Maas-derived
+        years as "Event: A.D. 27." and "Event: A.D. 28.", the same words a
+        source-stated year would print."""
+        found = chronology.annotations(chronology.dossier(FIFTEENTH))
+        by_key = {e.key: e for e in found.elements}
+        for key, expected in (("gospel", "Event: A.D. 27 (derived)."),
+                              ("communion", "Event: A.D. 28 (derived).")):
+            with self.subTest(element=key):
+                event = next(g for g in by_key[key].groups
+                             if g.relation == "narrated-event")
+                self.assertEqual(chronology._group_display(event), expected)
+                self.assertIn(expected.split(": ", 1)[1].rstrip(".") + "}",
+                              chronology._tex_group(event))
+        # Every displayed claim, both ways round: marked if and only if its
+        # corpus date carries a derivation.
+        for element in found.elements:
+            for group in element.groups:
+                for claim in group.claims:
+                    with self.subTest(subject=claim.subject, label=claim.label):
+                        self.assertEqual(
+                            claim.display_label.endswith("(derived)"),
+                            claim.label.startswith("derived "))
+        rendered = subprocess.run(
+            [str(TOOL), "annotations", "--document", FIFTEENTH, "--format",
+             "text"], cwd=ROOT, capture_output=True, text=True, check=False)
+        self.assertEqual(rendered.returncode, 0, rendered.stderr)
+        self.assertIn("  Event: A.D. 27 (derived).", rendered.stdout)
+        self.assertNotIn("  Event: A.D. 27.\n", rendered.stdout)
+
+    def test_every_derivation_in_the_corpus_is_marked_and_nothing_else(self) -> None:
+        """Over the whole corpus, not only the leaves that print one today."""
+        held = corpus.load()
+        marked = 0
+        for holder in (held.events, held.units):
+            for subject in holder.values():
+                for claim in subject.claims:
+                    projected = _claim(
+                        claim.date.precision, str(claim.date), claim.date.label,
+                        derived=claim.date.derived)
+                    display = chronology.concise_display_label(projected)
+                    with self.subTest(subject=subject.id, label=claim.date.label):
+                        if claim.date.derived:
+                            marked += 1
+                            self.assertRegex(display, r"(?i)^derived\b|\(derived\)$")
+                        else:
+                            self.assertNotIn("(derived)", display)
+        self.assertGreaterEqual(marked, 5)
+
+    def test_the_record_witnesses_what_the_display_marks(self) -> None:
+        """The record does not carry `derived`; it carries `basis_class`, and
+        across the corpus a claim is `derived` in that class exactly when its
+        date carries a derivation. If the two words ever disagree, the
+        projection would no longer be a function of the record."""
+        held = corpus.load()
+        for holder in (held.events, held.units):
+            for subject in holder.values():
+                for index, claim in enumerate(subject.claims):
+                    with self.subTest(claim=f"{subject.id}#{index}"):
+                        self.assertEqual(claim.date.derived,
+                                         claim.basis_class == "derived")
+        record = tomllib.loads(chronology.render(chronology.dossier(FIFTEENTH)))
+        claims = [claim for element in record["elements"]
+                  for claim in element.get("claims", [])]
+        self.assertTrue(claims)
+        self.assertTrue(all("derived" not in claim for claim in claims),
+                        "the record's bytes do not change to carry the mark")
+        self.assertIn("derived", {claim["basis_class"] for claim in claims})
 
     def test_every_evidence_profile_has_a_reader_name(self) -> None:
         profiles = corpus.load().profiles
