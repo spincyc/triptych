@@ -13,6 +13,74 @@
 \usepackage{multicol}
 \usepackage{xcolor}
 \usepackage{hyperref}
+% hyperref installs titlesec's anchor hooks only when titlesec is already
+% loaded, and every template loads titlesec after this preamble. Without them
+% titlesec gives an unnumbered heading no anchor and sets a numbered heading's
+% anchor where its counter steps, which stays behind on the previous page when
+% the heading moves to the next: contents links, bookmarks and labels then
+% land on the wrong place. These are hyperref's own definitions, from its
+% \@ifpackageloaded{titlesec} block, installed the moment titlesec loads.
+\makeatletter
+\def\tpt@ttl@steplink#1{%
+  \Hy@MakeCurrentHrefAuto{#1*}%
+  \edef\ttl@Hy@saveanchor{%
+    \noexpand\Hy@raisedlink{%
+      \noexpand\hyper@anchorstart{\@currentHref}%
+      \noexpand\hyper@anchorend
+      \def\noexpand\ttl@Hy@SavedCurrentHref{\@currentHref}%
+      \noexpand\ttl@Hy@PatchSaveWrite
+    }%
+  }%
+}
+\def\tpt@ttl@patchsavewrite{%
+  \begingroup
+    \toks@\expandafter{\ttl@savewrite}%
+    \edef\x{\endgroup
+      \def\noexpand\ttl@savewrite{%
+        \let\noexpand\@currentHref
+            \noexpand\ttl@Hy@SavedCurrentHref
+        \the\toks@
+      }%
+    }%
+  \x
+}
+\def\tpt@ttl@refstepcounter#1{%
+  \let\ttl@b\Hy@raisedlink
+  \def\Hy@raisedlink##1{%
+    \def\ttl@Hy@saveanchor{\Hy@raisedlink{##1}}%
+  }%
+  \refstepcounter{#1}%
+  \let\Hy@raisedlink\ttl@b
+}
+\AddToHook{package/titlesec/after}{%
+  \let\ttl@Hy@steplink\tpt@ttl@steplink
+  \let\ttl@Hy@PatchSaveWrite\tpt@ttl@patchsavewrite
+  \let\ttl@Hy@refstepcounter\tpt@ttl@refstepcounter
+}
+\makeatother
+% hyperref copies TeX's `` and '' into PDF strings literally, so a heading
+% quoted for print showed ``Thou Art Just'' in the bookmark pane and in the
+% document title. After hyperref converts a string, replace those pairs with the
+% curly quotes the page prints. A single ` or ' is left as it is.
+\ExplSyntaxOn
+\str_const:Nx \c__tpt_pdf_open_quotes_str
+  { \c_backslash_str 000` \c_backslash_str 000` }
+\str_const:Nx \c__tpt_pdf_close_quotes_str
+  { \c_backslash_str 000' \c_backslash_str 000' }
+\str_const:Nx \c__tpt_pdf_curly_open_str
+  { \c_backslash_str 040 \c_backslash_str 034 }
+\str_const:Nx \c__tpt_pdf_curly_close_str
+  { \c_backslash_str 040 \c_backslash_str 035 }
+\cs_set_eq:NN \__tpt_pdfstringdef_saved_post_hook:N \pdfstringdefPostHook
+\cs_set_protected:Npn \pdfstringdefPostHook #1
+  {
+    \__tpt_pdfstringdef_saved_post_hook:N #1
+    \exp_args:NNVV \tl_greplace_all:Nnn #1
+      \c__tpt_pdf_open_quotes_str \c__tpt_pdf_curly_open_str
+    \exp_args:NNVV \tl_greplace_all:Nnn #1
+      \c__tpt_pdf_close_quotes_str \c__tpt_pdf_curly_close_str
+  }
+\ExplSyntaxOff
 \usepackage[most]{tcolorbox}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,calc,positioning,shapes.geometric}
