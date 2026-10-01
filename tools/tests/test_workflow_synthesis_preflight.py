@@ -750,12 +750,14 @@ class CorpusTests(unittest.TestCase):
                        for job, result in zip(jobs, results)
                        if result.returncode})
 
-    def test_the_gate_refuses_none_of_the_eighteen_manifest_leaves(self):
+    def test_the_gate_refuses_none_of_the_twenty_manifest_leaves(self):
         """Which, recorded, so that a change in the number is a decision.
 
-        The census stood at fifteen, then seventeen, and is now eighteen, and
-        each addition is recorded here rather than left to fail as an
-        inherited red: the GPT Seventeenth Sunday after Pentecost, the Claude
+        The census stood at fifteen, then seventeen and eighteen, and is now
+        twenty after both providers' Nineteenth Sundays were added. Each
+        addition is recorded here rather than left to fail as an inherited
+        red. The earlier additions were
+        the GPT Seventeenth Sunday after Pentecost, the Claude
         Seventeenth Sunday produced by run `1e02dc05f2df9940`, and the Claude
         Eighteenth Sunday produced by run `71b6f89518984232`. None of the
         three was refused.
@@ -770,7 +772,7 @@ class CorpusTests(unittest.TestCase):
         `test_the_companion_only_prose_the_gate_was_built_for` and
         `EditionScopeTests`.
         """
-        self.assertEqual(len(manifest_leaves()), 18)
+        self.assertEqual(len(manifest_leaves()), 20)
         self.assertEqual(self.refused(GATE_CHECKS, "synthesis"), [])
 
     def test_the_gate_refuses_no_leaf_the_canonical_gate_accepts(self):

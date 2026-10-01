@@ -2094,9 +2094,12 @@ def normalize_audit_text(text: str) -> str:
     text = replace_grouped_macro(text, "textbf", 1, lambda arguments: arguments[0])
     text = text.replace("**", "")
     text = COMMENT_RE.sub("", text).replace(r"\space", " ").replace("~", " ")
-    # Pandoc smartens an ASCII apostrophe within a name even though the source
-    # chronology payload retains ASCII.  This comparison is an omission audit,
-    # so that typographic substitution is immaterial; no prose output changes.
+    # Pandoc sets TeX quotes and smartens apostrophes while the source payload
+    # keeps their ASCII spelling. Compare their punctuation without changing
+    # the prose or forgiving a missing word or annotation occurrence.
+    text = text.replace("``", '"').replace("''", '"')
+    text = text.replace("\N{LEFT DOUBLE QUOTATION MARK}", '"')
+    text = text.replace("\N{RIGHT DOUBLE QUOTATION MARK}", '"')
     text = text.replace("\N{RIGHT SINGLE QUOTATION MARK}", "'")
     text = text.replace("--", "-")
     text = re.sub(r"[\N{EN DASH}\N{EM DASH}\N{MINUS SIGN}]", "-", text)

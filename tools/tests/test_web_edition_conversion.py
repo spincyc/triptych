@@ -966,6 +966,21 @@ class WebEditionConversionTests(unittest.TestCase):
                 self.assertIn(f"{marker}Event{marker}: A.D. 27.", markdown)
                 self.assertNotIn("triptychchronologyannotation@", markdown)
 
+    def test_generated_chronology_with_tex_quotation_marks_survives(self) -> None:
+        markdown = self.convert(
+            r"\chronologyannotation{offertory}",
+            preamble=(
+                r"\newcommand{\chronologyannotation}[1]{}" "\n"
+                r"\expandafter\def\csname triptychchronologyannotation@offertory\endcsname{"
+                r"\textbf{Historical setting}: ``seventy years'' (duration). "
+                r"\textbf{Composition}: B.C. 570--536.}"
+            ),
+        )
+        self.assertIn(
+            "**Historical setting**: “seventy years” (duration). "
+            "**Composition**: B.C. 570–536.", markdown,
+        )
+
     def test_generated_profile_comparison_keeps_display_and_hides_metadata(self) -> None:
         definitions = (
             r"\newcommand{\chronologyannotationcomparisonclaim}[8]{#8}"
@@ -1793,6 +1808,25 @@ class WebEditionAuditTests(unittest.TestCase):
             "account), B.C. 740-701.",
             failures,
         )
+
+    def test_chronology_quote_equivalence_keeps_words_and_occurrence_counts(self) -> None:
+        annotation = r"\textbf{Historical setting}: ``seventy years'' (duration)."
+        rendered = "\n**Historical setting**: “seventy years” (duration).\n"
+        for payload, expected, shortfall in (
+            (rendered, [annotation], False),
+            (rendered.replace("seventy", "sixty"), [annotation], True),
+            (rendered.replace("seventy years", ""), [annotation], True),
+            (rendered, [annotation, annotation], True),
+        ):
+            with self.subTest(payload=payload, occurrences=len(expected)):
+                failures = DRIVER.audit_output(
+                    "Prose.", self.minimal_markdown() + payload,
+                    chronology_annotations=expected,
+                )
+                self.assertEqual(
+                    any("generated chronology annotation payload shortfall" in item
+                        for item in failures), shortfall, failures,
+                )
 
     def test_dropped_bracketed_macro_payload_is_reported(self) -> None:
         definitions, bracketed = DRIVER.guard_opening_brackets(

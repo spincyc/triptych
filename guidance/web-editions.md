@@ -246,6 +246,20 @@ as by the preamble. The converter expands their visible payloads, omits the
 generated definitions themselves, and audits each rendered call. Only the exact
 generated lookup helper is exempt from the unknown-command scan; duplicate
 annotation keys across preamble and body remain an error.
+The payload audit treats TeX double quotation marks and their rendered curly
+forms as equivalent, as it does smart apostrophes and dashes. This changes only
+the comparison: missing or changed words and missing repeated calls still fail.
+Without that equivalence, Claude's Seventeenth Sunday study was refused even
+though its Daniel chronology correctly rendered “seventy years”.
+
+Since 2026-09-21, schema-2 proper studies retain an explicit `\tableofcontents`
+at its source position as links to the web page's top-level headings, without
+print page numbers. Their description lists, including `fourSenses`, render as
+semantic definition terms and bodies; the site gives the terms bold weight and
+sets `.nodecor` cues upright inside italic quotations. These resolve the
+earlier proper-study navigation and label losses; the existing regression
+tests cover both conversion and the site's renderer. The legacy conversion
+dialect for other publications is unchanged.
 
 When a proper profile authorizes `proper-components.toml`, the canonical
 research mode is the publication represented on the web. The converter reads
