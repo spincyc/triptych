@@ -160,6 +160,36 @@ pages rechecked. Both installed PDFs are byte-identical to the reviewed
 builds. No prior exact-byte release clearance attaches to these changed
 bytes.
 
+## Landscape PDF destinations — 2026-10-01
+
+The corpus link review found an inherited navigation defect on the treatise's
+landscape lexicon, master matrix, and initiation table (physical pages 61–63).
+Their named destinations used `/XYZ` coordinates at y=4134.697 on a page whose
+MediaBox is only 792 points high. A text match on the correct page had concealed
+the destination error. The same unused lexicon destination existed in the
+at-a-glance companion.
+
+Each of the three shared landscape fragments now scopes `pdfview=Fit` to its
+landscape environment. These destinations show the complete table and heading;
+portrait destinations retain their existing view. No printed content,
+pagination, or revision display changes. The real-fragment tests in
+`tools/tests/test_pdf_anchor_pages.py` verify the destination page and `/Fit`
+view, and reproduce the out-of-page coordinates with that setting removed.
+
+Settled independent and normal builds agree byte-for-byte: the 71-page
+treatise is SHA-256
+`2dd6ab793b69e069f6e31c9be114fc54d643942f7f83d62ad09dc2a8d3e5ce8f`;
+the 10-page companion is
+`8aa641e10e703d5914f39d38f70613aa0a0e9a9635b7186f93c6c9328dcda5c3`.
+Every page is pixel-identical to its prior installed page at 200 dpi, with
+identical extracted text and PDF metadata. All 81 pages were inspected in
+bounded review sheets; the landscape destinations and terminal rights notices
+were also inspected at full size. The five anchor-page tests, build anchor
+checks, and generation-metadata checks pass. Fonts remain embedded, subsetted,
+and Unicode-mapped. The treatise's single underfull metadata-paragraph warning
+is unchanged from the baseline. This record identifies the reviewed builds;
+installation and deployment remain part of the corpus repair's release step.
+
 ## *Unitatis redintegratio* source-family production review — 2026-07-24
 
 The exact English, Latin, and AAS 57 witnesses were normalized. The treatise

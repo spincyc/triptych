@@ -5,7 +5,8 @@ titlesec heading's anchor is set where its counter steps, so a heading that
 titlesec moves to the next page leaves its anchor, and every contents link and
 bookmark to it, on the page before. The build gate (tools/check-pdf-anchors)
 reads anchor names and cannot see a page, so these tests prove the mechanism:
-the hooks are installed, and a pushed heading keeps its destination.
+the hooks are installed, a pushed heading keeps its destination, and the
+sacramental landscape fragments use destinations that show their heading page.
 """
 from __future__ import annotations
 
@@ -116,6 +117,81 @@ class TitlesecAnchorPageTests(unittest.TestCase):
         # \\@gobble: its meaning is an empty body that takes one argument.
         self.assertEqual(step.strip(), "\\long macro:#1->")
         self.assertNotIn("Hy@raisedlink", ref)
+
+
+@unittest.skipUnless(shutil.which("pdflatex") and shutil.which("pdfinfo")
+                     and shutil.which("pdftotext"), "requires TeX and Poppler")
+class LandscapeAnchorPageTests(unittest.TestCase):
+    def build_fragments(self, remove_fit: bool = False):
+        root = ROOT / "src/gpt/theology/sacraments"
+        fragments = ("fragments/full-matrix.tex", "fragments/lexicon.tex",
+                     "sections/14-churches-initiation.tex")
+        with tempfile.TemporaryDirectory() as temporary:
+            build = Path(temporary)
+            inputs = []
+            for index, relative in enumerate(fragments):
+                source = (root / relative).read_text()
+                if remove_fit:
+                    source = source.replace(r"\hypersetup{pdfview=Fit}", "")
+                path = build / f"fragment-{index}.tex"
+                path.write_text(source)
+                inputs.append(r"\input{" + path.as_posix() + "}")
+            preamble = (ROOT / "src/common/preamble.tex").as_posix()
+            (build / "probe.tex").write_text(
+                r"\input{" + preamble + "}\n" + r"""
+\usepackage{pdflscape}
+\usepackage{ragged2e}
+\newcommand{\sacramentMatrixPageHook}{%
+  \refstepcounter{section}\addcontentsline{toc}{section}{Matrix}}
+\newcommand{\sacramentLexiconPageHook}{%
+  \phantomsection\addcontentsline{toc}{section}{Lexicon}}
+\newcommand{\churchesInitiationPageHook}{%
+  \refstepcounter{section}\addcontentsline{toc}{section}{Initiation}}
+\begin{document}
+""" + "\n".join(inputs) + r"\end{document}")
+            for _ in range(2):
+                result = subprocess.run(
+                    ["pdflatex", "-interaction=nonstopmode", "-halt-on-error", "probe.tex"],
+                    cwd=build, capture_output=True, text=True)
+                self.assertEqual(result.returncode, 0, result.stdout[-2000:])
+            aux = (build / "probe.aux").read_text()
+            entries = re.findall(
+                r"\\contentsline\s*\{section\}\{(Matrix|Lexicon|Initiation)\}"
+                r"\{(\d+)\}\{([^}]+)\}", aux)
+            self.assertEqual(len(entries), 3)
+            output = subprocess.run(
+                ["pdfinfo", "-dests", "probe.pdf"], cwd=build,
+                capture_output=True, text=True, check=True).stdout
+            destinations = {name: (int(page), view.strip()) for page, view, name in
+                            re.findall(r'^\s*(\d+)\s+\[([^]]+)\]\s+"([^"]+)"',
+                                       output, re.M)}
+            text = subprocess.run(
+                ["pdftotext", "probe.pdf", "-"], cwd=build,
+                capture_output=True, text=True, check=True).stdout.split("\f")
+            return entries, destinations, text
+
+    def test_landscape_fragment_links_show_the_heading_page(self):
+        entries, destinations, pages = self.build_fragments()
+        headings = {"Matrix": "The Seven Sacraments",
+                    "Lexicon": "Metaphysical and Sacramental Lexicon",
+                    "Initiation": "The Twenty-Four Catholic Churches"}
+        for title, page, anchor in entries:
+            with self.subTest(title=title):
+                destination_page, view = destinations[anchor]
+                self.assertEqual(destination_page, int(page))
+                self.assertIn(headings[title], " ".join(pages[destination_page - 1].split()))
+                self.assertEqual(view, "Fit")
+
+    def test_without_landscape_view_the_destinations_are_outside_the_page(self):
+        entries, destinations, _ = self.build_fragments(remove_fit=True)
+        for title, _, anchor in entries:
+            with self.subTest(title=title):
+                _, view = destinations[anchor]
+                kind, x, y, _ = view.split()
+                self.assertEqual(kind, "XYZ")
+                self.assertFalse(0 <= float(x) <= 612 and 0 <= float(y) <= 792,
+                                 "negative control must reproduce the off-page destination")
+
 
 if __name__ == "__main__":
     unittest.main()
