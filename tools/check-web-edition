@@ -52,6 +52,7 @@ FIELDS = frozenset(
         "blocking_constructs",
         "rationale",
         "reviewed",
+        "withdrawn",
     }
 )
 BASIS_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
@@ -84,6 +85,10 @@ class Record:
     blocking_constructs: tuple[str, ...]
     rationale: str | None
     reviewed: dt.date
+    # The date a maintainer withdrew the publication. Eligibility still says
+    # what the layout allows; a withdrawn leaf gets no web edition whatever it
+    # says, so --list-eligible leaves it out and no tracked edition may remain.
+    withdrawn: dt.date | None = None
 
 
 @dataclass(frozen=True)
@@ -205,24 +210,27 @@ def parse_record(path: Path) -> Record:
     if basis is not None and not BASIS_RE.fullmatch(basis):
         raise ValueError(f"basis must be a lowercase kebab-case token: {basis!r}")
 
-    reviewed = data.get("reviewed")
-    if not isinstance(reviewed, str) or not re.fullmatch(
-        r"[0-9]{4}-[0-9]{2}-[0-9]{2}", reviewed
-    ):
-        raise ValueError(f"reviewed must be an ISO date YYYY-MM-DD: {reviewed!r}")
-    try:
-        reviewed_date = dt.date.fromisoformat(reviewed)
-    except ValueError as exc:
-        raise ValueError(f"invalid reviewed date {reviewed!r}") from exc
-
+    withdrawn = data.get("withdrawn")
     return Record(
         document=document,
         eligibility=eligibility,
         basis=basis,
         blocking_constructs=tuple(constructs),
         rationale=rationale,
-        reviewed=reviewed_date,
+        reviewed=iso_date("reviewed", data.get("reviewed")),
+        withdrawn=None if withdrawn is None else iso_date("withdrawn", withdrawn),
     )
+
+
+def iso_date(name: str, value: object) -> dt.date:
+    if not isinstance(value, str) or not re.fullmatch(
+        r"[0-9]{4}-[0-9]{2}-[0-9]{2}", value
+    ):
+        raise ValueError(f"{name} must be an ISO date YYYY-MM-DD: {value!r}")
+    try:
+        return dt.date.fromisoformat(value)
+    except ValueError as exc:
+        raise ValueError(f"invalid {name} date {value!r}") from exc
 
 
 def audit_document(source_root: Path, relative: str) -> Record:
@@ -264,7 +272,10 @@ def main() -> int:
     parser.add_argument(
         "--list-eligible",
         action="store_true",
-        help="print each validated eligible leaf id instead of the count summary",
+        help=(
+            "print each validated eligible leaf id that is not withdrawn, "
+            "instead of the count summary"
+        ),
     )
     with_examples(parser, EXAMPLES[""])
     args = parser.parse_args()
@@ -300,16 +311,18 @@ def main() -> int:
 
     if args.list_eligible:
         for record in records:
-            if record.eligibility == "eligible":
+            if record.eligibility == "eligible" and record.withdrawn is None:
                 print(record.document)
         return 0
 
     counts = {name: 0 for name in ELIGIBILITIES}
     for record in records:
         counts[record.eligibility] += 1
+    withdrawn = sum(1 for record in records if record.withdrawn is not None)
     print(
         "Web-edition declarations valid: "
         + ", ".join(f"{counts[name]} {name}" for name in ELIGIBILITIES)
+        + (f"; {withdrawn} withdrawn, with no web edition" if withdrawn else "")
         + "."
     )
     return 0

@@ -59,6 +59,77 @@ scope:
 The fix lanes take the remaining open defects; the 13 already-fixed entries
 are reconciled in the register and ledger.
 
+### The Claude Fourteenth Sunday withdrawn, 2026-10-01
+
+The maintainer decided that the held Claude 1962 Fourteenth Sunday after
+Pentecost (`liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost`)
+is withdrawn: "Keep the sources but remove its held release records and stale
+handoffs, and mark it withdrawn." It had no installed PDF, two standing
+blocking findings (`CON-CIT-107`, `CON-CIT-110`) and a tracked web edition no
+evaluation had reviewed. The repository has no `withdrawn` release state, so
+the decision is carried out within the model its gates enforce:
+
+- **Sources and research stay**, unchanged but for the web-edition
+  declaration below; the leaf's standing-findings record still names the two
+  findings.
+- **The two release records stay at `hold`; they could not be removed.**
+  `tools/public-alpha` requires a record for every discovered source, every
+  `main.tex` leaf and every companion a component manifest declares. Without
+  the two it refuses the inventory: `manifest/source mismatch:
+  missing=['claude:…/54-fourteenth-after-pentecost',
+  'claude:…/54-fourteenth-after-pentecost-synthesis']`, and the catalog's two
+  stable markers become identities absent from the manifest. A record's status
+  is `hold` or `alpha` and it has no field for a withdrawal; `hold` already
+  keeps the leaf out of every public artifact. The withdrawal is recorded in
+  [the production plan](guidance/liturgy/propers-production-plan.md#withdrawn-targets).
+  The catalog row keeps its two markers and its `Planned` cell, the catalog's
+  word for no installed artifact; the GPT cell is untouched.
+- **The unreviewed web edition is removed.** No declaration state fitted:
+  `eligible` demands a tracked edition, and `conditional` or `ineligible`
+  would claim a blocking construct the leaf does not use. `check-web-edition`
+  now reads a `withdrawn` date beside the unchanged eligibility and leaves a
+  withdrawn leaf out of `--list-eligible`, so no edition is generated,
+  installed or required, and `check-web-editions-current` refuses one left
+  behind; [the web-editions policy](guidance/web-editions.md) states the rule.
+- **The four root handoffs are retired**: `HANDOFF-proper-54-convergence.md`,
+  `HANDOFF-proper-54-finish.md`, `HANDOFF-proper-55-blocked.md` and
+  `HANDOFF-proper-56-convergence.md`, each describing a superseded state.
+  Their content survives in this register, the 54, 55 and 56 leaves' research
+  and standing records, `workflows/OPERATOR.md` and the lane fragments, except
+  the items below, which are recoverable from history at `6355fe014`.
+- **Left standing.** The production plan's authorization line stays as
+  history, and the propers workflows' scope gates match only `- Authorized`
+  lines, so they would still admit a new Claude 54 production; the plan says
+  the withdrawal, not the gate, closes it. The tracked document catalogue
+  still lists the edition as held, with the 76- and 45-page extents of a build
+  nobody reviewed.
+
+**Found only in the retired handoffs**, each needing its own lane or decision:
+
+- Whether `proposal-fields` should also check the profile's four-to-six
+  proposal count, as a separate `proposal-count` check. Never decided.
+- A materiality gate on content findings was considered and deliberately not
+  built, as the maintainer's call.
+- Leaf 55's brief is wrong where its leaf is right: the Wilson numbering
+  witnesses ("four" against its own five sigla), the Hebrews `Hodie` returns
+  ("four" against three of five loci), the formulary extent (pp. 396–398
+  against `verified.md`'s 396–397), and §1.1's "exactly one place" against its
+  own §6. Only `research-synthesis` writes a brief.
+- Leaf 56's brief, `research/scope.md` l. 3218, still pairs Exod. 23:5 with
+  the fallen ox (23:5 is an ass under its burden; the fallen ox is
+  Deut. 22:4), the error its leaf fixed; and its Sarum binding's `context` in
+  `research/source-bindings.toml` (l. 730) still says no 1662 text was
+  opened, which the leaf's Brightman and Blunt bindings supersede.
+- The repository-wide translation-ledger contradiction — the Cummiskey 1861
+  `[[untranslated]]` rows for `pentecost-13` to `-15` in
+  `src/sources/inventories/roman-1962-proper-translations-v1.toml` typed
+  `rights-withheld` "until a binding exists" while the tracked artifact and
+  passage records exist — and the Hesbert/gregorien.info rights ceiling stand
+  only in leaf 55's brief §10.3, not as open register items.
+- `scripts/_house_voice.py` masks `Appendix\b.*` headings before its rules
+  run, so workflow vocabulary printed in a scope appendix ("reconciling it
+  belongs to the lane that owns it", once in leaf 55) passes the screen.
+
 ## Proper-study PDF contents links, 2026-10-01
 
 <!-- promised-deliverable: proper-study-pdf-anchors-2026-10-01 -->
@@ -2368,6 +2439,8 @@ does not survive it. Its durable content is in guidance; its operational content
   * The Claude Fourteenth Sunday remains held: it has no installed PDF, and
     both of its release records state `status: hold`. Its partial production is
     being integrated on `feature/propers-chronology`, not promoted to `main`.
+    *Withdrawn 2026-10-01:* see "The Claude Fourteenth Sunday withdrawn,
+    2026-10-01".
 
 ### Superseded restart plan after the first two failed runs, 2026-09-04
 
@@ -2443,9 +2516,11 @@ does not account for and may be swept.
 The ignored run directory did not cross the Git handoff into this clone, and no
 `evaluations/blocking-findings-v1.toml` exists for this leaf. Its exact final
 joined result and sole second revision-pass result are now tracked under the
-leaf's `research/` directory, and its seven final blocking findings are
-enumerated in `HANDOFF-proper-54-convergence.md`, without falsely claiming that
-the old run wrote a formal standing-findings record. The originating
+leaf's `research/` directory, where
+`research/production-content-evaluation-0002.json` carries its seven final
+blocking findings in full (`CON-EVI-020`, `CON-EVI-021`, `CON-REC-010`,
+`CON-CIT-020`, `CON-CIT-021`, `CON-PRO-001`, `CON-PRO-002`), without falsely
+claiming that the old run wrote a formal standing-findings record. The originating
 `triptych/proper-54` workspace is therefore no longer the sole copy.
 
 The run repaired eighteen blocking findings in two revision passes, two of
@@ -2459,8 +2534,11 @@ other. And `Carter v. Harris` carried a two-century span claim while
 The ignored run directory was not itself portable. Integration therefore
 preserves its final joined evaluation and its sole second revision-pass result
 verbatim in the leaf as `research/production-content-evaluation-0002.json` and
-`research/production-content-revision-0001.json`; the tracked handoff records
-their SHA-256 digests and enumerates the seven blocking findings still open.
+`research/production-content-revision-0001.json`, SHA-256
+`0524513300e424331c4fee02595ccb156002a7564203680d4424cd02fe2e03fb` and
+`f89dfec80d884273343d639c2611b01be1fcd11428be254fd70ac75140f22a62`. The root
+handoff that first recorded those digests was retired on 2026-10-01 with the
+leaf's withdrawal.
 
 ### Why it blocked, which was not the document
 
@@ -5677,3 +5755,8 @@ required a judgement about leaf 54 at all, and it is the same shape as the six
 site-level gates that stopped leaf 55: a leaf-scoped production blocked on
 corpus-scoped state. Whether `check-web-editions-current` should pass over held
 publications is a maintainer's call and is not made here.
+
+*Superseded 2026-10-01.* The maintainer withdrew the leaf and this edition was
+removed unreviewed; see "The Claude Fourteenth Sunday withdrawn, 2026-10-01".
+The general question above is untouched: a withdrawn leaf now declares
+`withdrawn` and needs no edition, but a held one still does.

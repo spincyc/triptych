@@ -59,6 +59,20 @@ Declaring `eligible` against a document that uses a blocking construct is a
 gate failure, not a judgment call. Reclassify the leaf or remove the
 construct.
 
+Withdrawal is not an eligibility, and is never written as one. A publication
+the maintainer withdraws keeps its sources and its declaration, which adds
+`withdrawn = "YYYY-MM-DD"`, the date of the decision; its eligibility goes on
+stating what the layout allows. A withdrawn leaf has no tier-one output:
+`check-web-edition --list-eligible` omits it, so `make web-editions` and
+`make install-web-editions` never write its edition, and
+`make check-web-editions-current` refuses any tracked edition left behind for
+it. The decision is recorded where its collection records scope — for the
+propers, [the production plan](liturgy/propers-production-plan.md). The first
+was the held Claude 1962 Fourteenth Sunday after Pentecost on 2026-10-01,
+whose tracked edition no evaluation had ever reviewed; until then its
+declaration could only demand that edition, as `eligible`, or claim a
+blocking construct the leaf does not use.
+
 ## Rights and provenance
 
 A web edition reproduces the document's rights colophon

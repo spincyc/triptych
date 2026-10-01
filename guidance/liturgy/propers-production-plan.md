@@ -51,6 +51,8 @@ On 2026-08-26 the maintainer reopened this boundary once more, for the single
 Claude and GPT, authored to the current componentized profile. Each provider
 target is a full target on the same terms as `51`–`53`. No other identity
 becomes a target by this decision, and the collections otherwise remain closed.
+The Claude target was withdrawn on 2026-10-01; see
+[Withdrawn targets](#withdrawn-targets).
 
 The permanent identities in the registry and the profile remain complete and
 fixed, because an identity may never be reassigned and a future maintainer must
@@ -118,6 +120,28 @@ and an identity with no line here is closed.
 - Authorized 2026-09-28: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost`.
 - Authorized 2026-09-28: provider `gpt`, identity `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a`.
 - Authorized 2026-09-30: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost`.
+
+### Withdrawn targets
+
+Each line below records one maintainer decision to withdraw one provider's
+target for one permanent identity from publication for good. The target's
+authorization line above stays as the record of what was opened; this line
+closes it, and nothing of that target is produced, released or rendered again
+without a new decision recorded here. The scope gates of the propers workflows
+match only `- Authorized` lines, so they do not read this list and would still
+admit a withdrawn target; this record, not the gate, is what closes it.
+
+- Withdrawn 2026-10-01: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost`.
+
+The Claude Fourteenth Sunday was withdrawn while it was held: no PDF had been
+installed, two blocking findings stood in its
+`evaluations/blocking-findings-v1.toml`, and no evaluation had ever reviewed
+its tracked web edition. Its sources and research records stay in the tree,
+and its unreviewed web edition was removed. Its two release records stay at
+`hold`: the public-alpha inventory must account for every discovered source,
+`hold` is the state that keeps a source out of every public artifact, and the
+record has no field that could carry a withdrawal, so this list is where the
+withdrawal is recorded. The GPT target for the same identity is unaffected.
 
 ## How to find out what exists
 

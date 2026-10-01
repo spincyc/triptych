@@ -132,6 +132,45 @@ class WebEditionTreeTests(unittest.TestCase):
         self.assertEqual(status, 0, errors)
         self.assertIn("1 eligible, 1 conditional, 1 ineligible", output)
 
+    def test_a_withdrawn_leaf_keeps_its_eligibility_and_lists_no_edition(self) -> None:
+        self.write_leaf("articles/faith/plain", declaration=record("articles/faith/plain"))
+        self.write_leaf(
+            "articles/faith/withdrawn",
+            declaration=record("articles/faith/withdrawn", withdrawn='"2026-10-01"'),
+        )
+        declared = self.audit("articles/faith/withdrawn")
+        self.assertEqual(declared.eligibility, "eligible")
+        self.assertEqual(declared.withdrawn, CHECKER.dt.date(2026, 10, 1))
+        self.assertIsNone(self.audit("articles/faith/plain").withdrawn)
+
+        status, output, errors = self.run_main("--provider", "gpt", "--list-eligible")
+        self.assertEqual(status, 0, errors)
+        self.assertEqual(output.split(), ["articles/faith/plain"])
+
+        status, output, errors = self.run_main("--provider", "gpt")
+        self.assertEqual(status, 0, errors)
+        self.assertIn(
+            "2 eligible, 0 conditional, 0 ineligible; 1 withdrawn, with no web edition.",
+            output,
+        )
+
+    def test_withdrawn_must_be_an_iso_date_string(self) -> None:
+        for name, value in (
+            ("toml-date", "2026-10-01"),
+            ("prose", '"October 2026"'),
+            ("calendar", '"2026-02-30"'),
+            ("boolean", "true"),
+        ):
+            with self.subTest(name=name):
+                self.write_leaf(
+                    "articles/faith/bad",
+                    declaration=record("articles/faith/bad", withdrawn=value),
+                )
+                with self.assertRaisesRegex(
+                    ValueError, "withdrawn must be an ISO date|invalid withdrawn date"
+                ):
+                    self.audit("articles/faith/bad")
+
     def test_missing_declaration_is_an_error(self) -> None:
         self.write_leaf("articles/faith/undeclared")
         status, _, errors = self.run_main("--provider", "gpt")

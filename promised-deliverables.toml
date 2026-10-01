@@ -19,6 +19,15 @@ state = "in_progress"
   evidence = ["PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
+  id = "claude-54-withdrawn"
+  criterion = "The held Claude 1962 Fourteenth Sunday after Pentecost is withdrawn as the maintainer decided on 2026-10-01: its sources and research stay; its two release records stay at hold, because the release inventory refuses a discovered source without one, and the withdrawal is recorded in the production plan; its unreviewed web edition is removed and its declaration carries a withdrawn date the web-edition checker honours; the four stale root handoffs are retired with their surviving content tracked; the GPT edition and catalog cell are untouched."
+  status = "pass"
+  evidence = ["guidance/liturgy/propers-production-plan.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/web-edition.toml", "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.json", "tools/check-web-edition", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/web-edition.toml"
+  needle = "withdrawn = \"2026-10-01\""
+
+  [[deliverables.requirements]]
   id = "corpus-live"
   criterion = "Every changed publication is rebuilt, reviewed as its change requires and installed byte-identical to the verified build; the three deploy gates pass; the work reaches origin/main by fast-forward; the Pages run and the live artifacts are verified."
   status = "open"
