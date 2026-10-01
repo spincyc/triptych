@@ -9,14 +9,20 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-59-correction-records"
   criterion = "research/interpretations.md agrees with the reviewed study on carrying authors, Schuster and Honorius, and cites each clause of the servants' identification to the author who states it; scope.md 3.6 states a search result a replay matches; source-bindings.toml binds the Challoner verse texts the documents print or quote and Ps 104:1 in the NPNF1-8 binding, and the source library validates; each finding's disposition is written into the leaf's findings record and research/production-review.md."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/production-review.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/evaluations/blocking-findings-v1.toml", "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/source-bindings.toml"]
+  check = "contains"
+  path = "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/production-review.md"
+  needle = "Post-acceptance research-record correction, 2026-09-30"
 
   [[deliverables.requirements]]
   id = "claude-59-correction-reviewed"
   criterion = "A fresh reviewer that did not author the correction checks it against the findings and the cited witnesses and finds nothing blocking, and no render input, installed PDF or web edition of the leaf changes."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/production-review.md", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "PROJECT-WORK.md"
+  needle = "the re-check passed with nothing standing"
 
   [[deliverables.requirements]]
   id = "claude-59-correction-on-main"

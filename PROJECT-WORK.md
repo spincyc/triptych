@@ -25,10 +25,30 @@ documents print nor Ps 104:1 of the NPNF1-8 Augustine. None of these files is
 a render input, so no reviewed PDF or web byte changes. The other standing
 advisories, which concern rendered prose, are outside this correction.
 
-**In progress.** The correction is authored and independently re-reviewed,
-each entry's disposition is written into the leaf's findings record, and the
-work is integrated on `main` with the deploy gates run and the Pages run
-verified.
+**Corrected and reviewed** (`2b45c1ad0`). `research/interpretations.md`
+names Augustine, Gregory and Chrysostom as the feast-that-now-is reading's
+carrying authors, sets Schuster's heavenly-banquet reading (*Sacramentary*
+III, p. 173) beside its controlling claim with every element he is cited on,
+removes Honorius from the call-to-the-nations reading, and cites each clause
+of the servants' identification to its author; `research/scope.md` §3.6
+states the Sermo 90/95 search as a replay returns it; and
+`research/source-bindings.toml` binds the four Challoner verse-text
+artifacts the documents print and Ps 104:1 of the NPNF1-8 Augustine. An
+independent review found one blocking defect (REV-B-001: Schuster said to be
+cited on three elements "only") and three advisories; a second round
+repaired all four, and the re-check passed with nothing standing. Each
+finding's disposition is in the findings record and
+`research/production-review.md`. No render input, installed PDF or web byte
+changed.
+
+**Left open in the rendered documents**, recorded in
+`research/production-review.md`: the study's "Two difficulties" close
+(`sections/30-call-to-the-nations.tex`) and the concise commentary say
+"with Augustine in his own form, that the highways lead to the nations",
+where Augustine makes the highways the Gentiles' teachings; and the study's
+comparison table credits "the whole Church still on its road" to Augustine,
+where the road is editorial synthesis. Repairing either changes a reviewed
+render input, so it needs a rebuild, fresh reviews and a redeployment.
 
 ## Claude 1962 Nineteenth Sunday three documents, 2026-09-30
 
