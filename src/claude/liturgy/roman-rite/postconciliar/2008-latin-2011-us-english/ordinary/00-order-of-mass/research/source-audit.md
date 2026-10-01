@@ -19,7 +19,9 @@ acquired bytes hashed identically to the registered artifact. Read:
 - the *Ordo Missae*, nn. 1–146, and the solemn blessings that follow.
 
 A new passage `passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ordo-missae`
-records that reading at artifact pages 290–348, states `verified`, and carries the ceiling.
+records that reading at artifact pages 303–383, states `verified`, and carries the ceiling. (The
+range was first recorded as 290–348, which begins in the Proper of Time and stops inside the Roman
+Canon; it was corrected on the passage record on 2026-10-01 against the same bytes.)
 
 **Ceiling.** The artifact is a secondary digitally typeset reproduction, not a page facsimile of
 the printed altar book. Its typesetting carries visible defects (lost word spacing in places, an
