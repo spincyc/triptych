@@ -15,12 +15,14 @@ run_tool() {
 
 run_tool --help >/dev/null
 
-sandbox="$(mktemp -d)"
+mkdir -p "$repo/.scratch"
+sandbox="$(mktemp -d "$repo/.scratch/document-library-test.XXXXXX")"
 trap 'rm -rf "$sandbox"' EXIT INT TERM
 
 # Every derived title is confirmed against the PDF that was built from it, and
 # the page's own model is replayed against the summaries the catalogue offers.
-summary="$(run_tool check | head -1)"
+run_tool check >"$sandbox/check.txt"
+summary="$(head -1 "$sandbox/check.txt")"
 case "$summary" in
 *" works, "*" documents, "*" issues, "*" pages.") ;;
 *)
@@ -48,14 +50,20 @@ if [ "$issues" -lt "$docs" ] || [ "$works" -gt "$docs" ] || [ "$pages" -lt "$doc
 	exit 1
 fi
 
-# Every issue's title was confirmed, and nothing went unrecorded or unbuilt
-# without being counted as such.
-run_tool check | grep -q "confirmed against the built PDF: $issues" || {
-	echo "not every issue's title was confirmed against its PDF" >&2
-	exit 1
-}
+# Withdrawn editions retain source records without an installed PDF. Every
+# issue must be confirmed or explicitly reported absent; deployment eligibility
+# separately requires every published issue's artifact.
+run_tool check --json >"$sandbox/check.json"
+python3 - "$sandbox/check.json" <<'PY'
+import json, sys
+
+report = json.load(open(sys.argv[1], encoding="utf-8"))
+assert not report["unrecorded"], report["unrecorded"]
+assert report["confirmed"] + len(report["unbuilt"]) == report["issues"], report
+assert all(isinstance(reason, str) and reason.strip() for reason in report["unbuilt"])
+PY
 for line in "titles the sources do not state" "issues with no PDF installed"; do
-	run_tool check | grep -q "$line" || {
+	grep -q "$line" "$sandbox/check.txt" || {
 		echo "check does not report: $line" >&2
 		exit 1
 	}

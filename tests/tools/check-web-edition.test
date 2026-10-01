@@ -14,7 +14,8 @@ run_tool() {
 
 run_tool --help >/dev/null
 
-sandbox="$(mktemp -d)"
+mkdir -p "$repo/.scratch"
+sandbox="$(mktemp -d "$repo/.scratch/check-web-edition-test.XXXXXX")"
 trap 'rm -rf "$sandbox"' EXIT INT TERM
 
 # The provider is pinned so an inherited PROVIDER cannot move the gate.
@@ -92,6 +93,7 @@ esac
 other="$(run_tool --provider claude)"
 case "$other" in
 "Web-edition declarations valid: "*" eligible, "*" conditional, "*" ineligible.") ;;
+"Web-edition declarations valid: "*" eligible, "*" conditional, "*" ineligible; "*" withdrawn, with no web edition.") ;;
 *)
 	echo "unexpected summary line for claude: $other" >&2
 	exit 1
