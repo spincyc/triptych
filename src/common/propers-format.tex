@@ -3,6 +3,45 @@
 \usepackage{xurl}
 \usepackage{bookmark}
 \usepackage[nobottomtitles*]{titlesec}
+% hyperref defines titlesec's anchor hooks only when titlesec is already
+% loaded, and common/preamble loads hyperref first. Without them titlesec sets
+% \ttl@Hy@steplink to \@gobble, so no unnumbered section (secnumdepth is 0
+% below) got an anchor: every contents line, bookmark and \label after a
+% heading pointed at whatever anchor came before it, usually a table's. These
+% are hyperref's own definitions, from its \@ifpackageloaded{titlesec} block.
+\makeatletter
+\def\ttl@Hy@steplink#1{%
+  \Hy@MakeCurrentHrefAuto{#1*}%
+  \edef\ttl@Hy@saveanchor{%
+    \noexpand\Hy@raisedlink{%
+      \noexpand\hyper@anchorstart{\@currentHref}%
+      \noexpand\hyper@anchorend
+      \def\noexpand\ttl@Hy@SavedCurrentHref{\@currentHref}%
+      \noexpand\ttl@Hy@PatchSaveWrite
+    }%
+  }%
+}
+\def\ttl@Hy@PatchSaveWrite{%
+  \begingroup
+    \toks@\expandafter{\ttl@savewrite}%
+    \edef\x{\endgroup
+      \def\noexpand\ttl@savewrite{%
+        \let\noexpand\@currentHref
+            \noexpand\ttl@Hy@SavedCurrentHref
+        \the\toks@
+      }%
+    }%
+  \x
+}
+\def\ttl@Hy@refstepcounter#1{%
+  \let\ttl@b\Hy@raisedlink
+  \def\Hy@raisedlink##1{%
+    \def\ttl@Hy@saveanchor{\Hy@raisedlink{##1}}%
+  }%
+  \refstepcounter{#1}%
+  \let\Hy@raisedlink\ttl@b
+}
+\makeatother
 \usepackage{fancyhdr}
 \usepackage{zref-user,zref-abspage}
 \usepackage{graphicx}

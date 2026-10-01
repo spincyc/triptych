@@ -320,6 +320,70 @@ class ProperFormatTests(unittest.TestCase):
             text=True, check=True).stdout
         self.assertNotIn("LMRoman10-Italic", fonts)
 
+    @unittest.skipUnless(shutil.which("pdflatex"), "requires TeX")
+    def test_every_heading_gets_its_own_link_anchor(self):
+        # common/preamble loads hyperref before propers-format loads titlesec,
+        # so hyperref never defined titlesec's anchor hooks: no unnumbered
+        # section had an anchor, and every contents link, bookmark and \label
+        # after a heading jumped to the last anchor before it, here table.1.
+        build = self.root / "build"
+        build.mkdir()
+        source = build / "anchors.tex"
+        common = (self.root / "src/common").as_posix()
+        source.write_text(
+            "\\input{" + common + "/preamble}\n\\input{" + common + "/propers-format}\n"
+            "\\begin{document}\\propertitle{Title}{}{}{}\n\\tableofcontents\n"
+            "\\begin{table}[h]\\centering A table.\\caption{A table}\\end{table}\n"
+            "\\section{First heading}\\label{sec:first}\nText.\\clearpage\n"
+            "\\properlane{lane}{Lane heading}\nText.\\clearpage\n"
+            "\\phantomsection\n\\section*{References}\n"
+            "\\addcontentsline{toc}{section}{References}\\label{sec:references}\n"
+            "Text.\\end{document}\n")
+        result = subprocess.run(["pdflatex", "-interaction=nonstopmode", "-halt-on-error",
+                                 source.name], cwd=build, capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stdout[-2500:])
+        toc = (build / "anchors.toc").read_text()
+        anchors = re.findall(r"\\contentsline \{section\}\{([^{}]*)\}\{\d+\}\{([^{}]*)\}", toc)
+        self.assertEqual([title for title, _ in anchors],
+                         ["First heading", "Lane heading", "References"])
+        targets = [anchor for _, anchor in anchors]
+        self.assertTrue(all(anchor.startswith("section*.") for anchor in targets), targets)
+        self.assertEqual(len(set(targets)), 3, targets)
+        aux = (build / "anchors.aux").read_text()
+        labels = dict(re.findall(
+            r"\\newlabel\{(sec:first|lane-lane|sec:references)\}\{\{[^{}]*\}\{\d+\}"
+            r"\{[^{}]*\}\{([^{}]*)\}", aux))
+        self.assertEqual(set(labels), {"sec:first", "lane-lane", "sec:references"})
+        self.assertEqual([labels[key] for key in ("sec:first", "lane-lane", "sec:references")],
+                         targets)
+
+    def test_tracked_starred_contents_headings_carry_their_own_anchor(self):
+        # A starred heading gets no anchor from titlesec, so a manual contents
+        # line after it, and its bookmark, borrowed the anchor before it. The
+        # \phantomsection goes before the heading, so a viewer lands on it.
+        consumers = sorted({
+            path.parent for path in (ROOT / "src").rglob("*.tex")
+            if "\\input{common/propers-format}" in path.read_text(errors="ignore")
+        })
+        self.assertTrue(consumers)
+        starred = re.compile(r"\\section\*\{([^{}]*)\}")
+        checked = 0
+        for leaf in consumers:
+            for path in sorted(leaf.rglob("*.tex")):
+                lines = path.read_text().splitlines()
+                for index, line in enumerate(lines):
+                    match = starred.search(line)
+                    if not match:
+                        continue
+                    following = "\n".join(lines[index:index + 12])
+                    if "\\addcontentsline{toc}{section}{" + match[1] + "}" not in following:
+                        continue
+                    checked += 1
+                    with self.subTest(path=path.relative_to(ROOT).as_posix(), line=index + 1):
+                        self.assertEqual(lines[index - 1].strip() if index else "",
+                                         "\\phantomsection")
+        self.assertGreater(checked, 0)
+
     @unittest.skipUnless(shutil.which("pdflatex") and shutil.which("pdftotext"),
                          "requires TeX and Poppler")
     def test_rendered_obfuscated_inputs_are_rejected_by_the_semantic_graph(self):
