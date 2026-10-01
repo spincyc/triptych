@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.recovery-page-reading-orations-f5b13d07"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych created this bounded transcription layout and editorial projection and offers its editorial contributions under CC BY 4.0. The underlying prayers are preexisting public-domain material corroborated word for word in the registered Pustet Ratisbon 1862 printing. Triptych claims no exclusive right in those words. Only punctuation, orthography and printed conclusion length are selected from the 1962 target; no page image, layout, marginal numbering or rubric is reproduced."
+rights_jurisdiction = "United States"
+provenance = "Created on 2026-10-01 after cold review found seven OCR-damaged calendar bodies still marked collated. Each target prayer was read on the registered 1962 facsimile at 200 and 400 dpi, and its preexisting petition corroborated on the registered 1862 facsimile page image. Both complete PDF hashes were independently checked. The new artifact corrects those seven projections while retaining the older artifacts unchanged as immutable evidence."
+retrieved = "2026-10-01"
+sha256 = "f5b13d076714bfdea8e8e0474cc0d11a8872adbbfee8357be61f01d19b4ed8d0"
+byte_size = 1435
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/recovery-page-reading-orations-f5b13d07/recovery-page-reading-orations-f5b13d07.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Select only the seven prayers addressed by this artifact's passages. Join printed line wraps; remove stress accents; expand ae/oe ligatures; normalize consonantal i to the calendar j orthography; omit headings and page furniture; retain the controlling 1962 punctuation, case and conclusion at its printed length. The paired witness passages and ledger rows record each antecedent difference and correction. The registered 1862 facsimile artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3 supplies the visual reading; its retained text artifact is an addressable historical antecedent, not the source of any reconstructed letter."
+indexable = true
+encoding = "utf-8"
+notes = "Closed scope: Felix Collect; Vincent and Anastasius Secret; January and June commemorations of Peter Postcommunion; Chair of Peter Postcommunion; Ubald Collect; Peter Celestine Collect. The 1862 Ubald locus is corrected to printed p. 446, PDF p. 532. Neither the existing projection artifacts nor the source facsimiles were modified."

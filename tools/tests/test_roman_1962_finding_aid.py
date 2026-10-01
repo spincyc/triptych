@@ -93,6 +93,10 @@ CUMMISKEY_PENTECOST_19_PUBLICATION_TSV = (
     CUMMISKEY_EDITION.parent
     / "artifacts/roman-1962-pentecost-19-en/roman-1962-pentecost-19-en.tsv"
 )
+CUMMISKEY_PENTECOST_13_15_PUBLICATION_TSV = (
+    CUMMISKEY_EDITION.parent
+    / "artifacts/roman-1962-pentecost-13-15-en/roman-1962-pentecost-13-15-en.tsv"
+)
 ANTECEDENT_EDITION = (
     ROOT
     / "src/sources/works/catholic-church/missale-romanum/editions"
@@ -679,11 +683,14 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
         # Secret, a witness-gap slot against the 1962 facsimile, its Latin; its
         # English row keeps `no-exemplar` and moves the same way: 66 -> 65,
         # 137 -> 136, 955 -> 956 and 599 -> 600.
+        # Recovery restored nine Pentecost 13–15 publication bindings and
+        # recorded two Angela Merici English gaps: 956 -> 949, 600 -> 602,
+        # and 344 -> 335. These are deliberate dispositions, not lost rows.
         self.assertEqual(len(source_established), 65)
         self.assertEqual(len(expected), 136)
         self.assertTrue(expected.issubset(typed))
         quarantined = set(typed) - expected
-        self.assertEqual(len(quarantined), 956)
+        self.assertEqual(len(quarantined), 949)
         self.assertEqual(
             {
                 (
@@ -704,8 +711,8 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                 for identity in quarantined
             },
             {
-                ("no-exemplar", None): 600,
-                ("rights-withheld", CUMMISKEY_SOURCE): 344,
+                ("no-exemplar", None): 602,
+                ("rights-withheld", CUMMISKEY_SOURCE): 335,
                 ("witness-gap", CUMMISKEY_SOURCE): 12,
             },
         )
@@ -820,7 +827,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
             )
             and "publication_artifact_id" in row
         }
-        self.assertEqual(len(expected), 65)
+        self.assertEqual(len(expected), 74)
         self.assertEqual(set(bound), expected)
         self.assertTrue(expected.isdisjoint(self.exact_gap_identities()))
         self.assertEqual(
@@ -837,6 +844,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
             CUMMISKEY_RECOVERED_PUBLICATION_TSV,
             CUMMISKEY_AUGUSTINE_PUBLICATION_TSV,
             CUMMISKEY_PENTECOST_19_PUBLICATION_TSV,
+            CUMMISKEY_PENTECOST_13_15_PUBLICATION_TSV,
         )
         publication_artifacts = {
             load(path.parent / "artifact.toml")["id"]: load(

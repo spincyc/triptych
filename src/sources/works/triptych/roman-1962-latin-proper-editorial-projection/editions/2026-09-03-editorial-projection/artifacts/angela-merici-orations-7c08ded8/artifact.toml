@@ -1,0 +1,24 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.angela-merici-orations-7c08ded8"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych created the bounded selection, transcription layout, normalization decisions, and collation record and offers those editorial contributions under CC BY 4.0. The underlying Latin prayers are public domain in the United States because each stands word for word in two separately registered public-domain printings: the Pustet printing published at Ratisbon in 1862 and the Mame printing published at Tours in 1922. Triptych claims no exclusive right in those underlying words. The target-edition comparison selects only mechanical punctuation, project orthography, and the conclusion as printed, within the preexisting formulas; no page image, layout, rubric, marginal number, or other 1962-only matter is reproduced."
+rights_jurisdiction = "United States"
+provenance = "Created by Triptych on 2026-10-01 for the follow-up to the KI-054 page-reading lane, whose reading of the 1962 facsimile found that the typical edition appoints St Angela Merici her own Secret and Postcommunion at printed p. 542, nos. 2698 and 2699, each marked P, under the directive Missa Dilexisti, de Communi Virginum III loco [32], cum orationibus ut infra, while the calendar held only her Collect. Each was read at 200 and again at 400 dpi from the exact registered CMAA facsimile and corroborated word for word on the page images of two registered public-domain printings: the 1862 Pustet facsimile, whose appendix of Masses pro aliquibus locis keeps her on 31 May at printed pp. [144]-[145], and the 1922 Tours Mame, which keeps her on 31 May at printed pp. 604-605. This artifact is a project editorial projection over those witnesses, not an edition of any Missal."
+retrieved = "2026-10-01"
+sha256 = "7c08ded86d626a1400363274eb0ef64b39542db06bf4bffb83ad75b22dd7bf64"
+byte_size = 334
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/angela-merici-orations-7c08ded8/angela-merici-orations-7c08ded8.txt"
+projected_from = [
+  "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf",
+  "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+  "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+]
+transformation = "Select only the Secret and the Postcommunion of s-angelae-mericiae-virginis that the 1962 typical edition prints at printed p. 542, nos. 2698 and 2699; read each on the 1962 page image; join printed line wraps; remove stress accents; expand printed ae/oe ligatures to ae/oe; normalise the target's consonantal i to the calendar's declared j orthography, which neither body needs; omit headings, rubrics, marginal numbers, the marginal P letters and layout; and apply the controlling 1962 printing's punctuation and its conclusion at the length that printing sets it. No word is supplied from either public-domain witness."
+indexable = true
+encoding = "utf-8"
+notes = "Scope is closed at the 2 bodies listed in the passages of this edition that name this artifact. The separate 1862, 1922 and 1962 passages remain the historical and target witnesses; this project-created artifact owns only the editorial projection. Every antecedent reading named in the ledger was made on a page image of its book, not on a text layer; the 1862 text-layer line numbers in those rows are an address in the tracked text artifact, not the source of the reading. The 1862 leaves were read on the registered facsimile PDF artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3, which each such ledger row names beside the text artifact. The Collect of the same day is projected in ki054-page-reading-orations-7d558094, whose scope was closed before these two were read."

@@ -172,50 +172,40 @@ open_collation_items:
   cross-reference n. 739,6 it prints 17-18a in full; the full form is carried, because a
   range descending from 17 to 8a is not a reference this grammar can hold, and the
   elision is recorded rather than harmonized away'
-- 'a part letter the Ordo prints against a Vulgate-numbered psalm verse names a colon of
-  the Vulgate''s division, and scripts/_psalms converts verse numbers only, so the letter
-  misaddresses the text when it is carried onto a Hebrew verse whose cola differ. Found
-  on 2026-09-25 at Psalm 24 (25):4: in the tracked Clementine and Douay-Rheims v. 4 has
-  three cola, the first on the confusion of the wicked, which the tracked King James
-  Version prints as 25:3b, so the Ordo''s 4bc is the whole of Hebrew 25:4 and its 4a is
-  Hebrew 25:3b. Corrected at ot-26 Year A (Ordo n. 136, read). Still carrying a
-  Vulgate-division letter on Hebrew 25:4, with their Ordo pages not re-read for this:
-  the responsorial psalms of advent-1 Year C, advent-3-monday, advent-december-23,
-  lent-1 Year B, lent-3-tuesday, ot-3 Year B, ot-9-wednesday cycle I and
-  ot-9-thursday cycle II, and the Gospel Acclamations of ot-10-wednesday and
-  ot-20-friday. No other psalm was examined for the same shift. Weighed on 2026-09-25
-  and not adopted: a per-cycle psalm_numbering vulgate on ot-26 Year A, which would
-  keep the printed 4bc in part. scripts/_psalms convert_range carries an endpoint''s
-  letter unchanged onto the converted verse, returning Hebrew 25:4 with part bc, and
-  mass-propers renumbers a printed ref keeping its letters, so every conversion to
-  Hebrew would state 25:4bc again; and this file carries responsorial psalms in the
-  Lectionary''s Hebrew numbering (src/sources/calendars/README.md, Citation
-  conventions). The printed citation is kept in the ot-26 mass notes instead. For
-  these loci this entry qualifies the SETTLED part-letter entry above and supersedes
-  the example in [corrections].part_letters_note of
-  src/sources/inventories/postconciliar-seasonal-collation-v1.toml, which is
-  advent-1 Year C and is dated there'
-- 'the either/or basis that every member of an alternative group must carry alike
-  (src/sources/calendars/README.md, ordinary_disposition) is, for the Communion
-  antiphons of ot-2 to ot-24 and ot-27 to ot-33, the second antiphon''s own note
-  carried on both members, so the first antiphon''s basis describes the second.
-  Measured on 2026-09-25: in all thirty Masses the first antiphon''s basis equals the
-  second antiphon''s notes. At 27 of them it calls the antiphon the second, the one
-  printed after or introduced by Vel, or the alternative to the preceding antiphon,
-  or at ot-15 gives the Missal''s citation of the second, all false of the first; at
-  ot-14, ot-16 and ot-17 it says only that the antiphon is an alternative appointed
-  by the Missal. ot-25 and ot-26 were restated on 2026-09-25 with a basis true of
-  both members, read in the 2002 artifact at artifact pages 267-268 and 289-290: the
-  Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
-  rubric 6 lets one or the other be chosen. The thirty were not restated, because
-  their antiphons have not been read in the Missal and the wording belongs to that
-  collation, not to uniformity. A case-sensitive literal sweep of every alternative
-  group''s basis for second, preceding and Vel outside those Masses returned 31
-  further groups counted per formulary (30 counted by Mass and group name), among
-  them lent-1''s Communion antiphons, lent-2''s and lent-3''s Entrance antiphons, the
-  Baptism of the Lord''s Collect, and Lectionary shorter forms and Vel alternatives
-  in several sections; they were not examined one by one, and some
-  may be accurate'
+- 'Psalm 24 (25):4 part letters: the Ordo responsorial selections use a three-colon Vulgate
+  division whose 4bc is the whole of Hebrew 25:4 and whose 4a belongs to Hebrew 25:3b,
+  as the tracked Douay-Rheims and King James texts show. Corrected first at ot-26 Year
+  A on 2026-09-25. SETTLED for the ten further named leads on 2026-10-01 by re-reading
+  the Ordo at 200 dpi, artifact internet-archive-scan-pdf-ed4bc14e: the eight
+  Responsorial Psalms of advent-1 Year C (p. 59, n. 3), advent-3-monday (p. 161, n.
+  187), advent-december-23 (p. 166, n. 199), lent-1 Year B (p. 73, n. 23),
+  lent-3-tuesday (p. 188, n. 238), ot-3 Year B (p. 100, n. 68), ot-9-wednesday cycle I
+  and ot-9-thursday cycle II (p. 244, nn. 355-356) are corrected with their printed
+  citations preserved in mass notes. The Gospel Acclamations of ot-10-wednesday and
+  ot-20-friday (pp. 247 and 278, nn. 361 and 423) were false-positive leads: their
+  printed words identify the second colon of Hebrew 25:4, so their existing 25:4b, 5a
+  is correct and retained. Do not shift a part letter by uniformity across those
+  different uses in the Ordo. No other psalm was examined. This qualifies the earlier
+  SETTLED part-letter entry and supersedes the advent-1 Year C example in
+  [corrections].part_letters_note of
+  src/sources/inventories/postconciliar-seasonal-collation-v1.toml. A per-cycle
+  Vulgate declaration remains unsuitable here: the converters carry endpoint letters
+  unchanged and would recreate the false Hebrew 25:4bc.'
+- 'SETTLED on 2026-10-01: the either/or basis for the Communion antiphons of ot-2 to ot-24 and
+  ot-27 to ot-33 formerly copied the second antiphon''s individual note onto both
+  members. Each group now carries a statement true of both alternatives, following the
+  correction already made at ot-25 and ot-26 on 2026-09-25. The thirty group
+  appointments were checked at 200 dpi on artifact pages 269-288 and 290-295 of
+  secondary-digital-pdf-0b458944, with each mass note giving its exact pages, and
+  Ordinary Time rubric 6 was read at artifact page 268. The witness is a digitally
+  typeset secondary reproduction of the 2002 Missal, not a printed-book facsimile or
+  evidence of the 2008 reprint; the antiphon citations and wording remain uncollated
+  by this bounded check. STILL OPEN: the earlier case-sensitive sweep of
+  alternative-group bases for second, preceding and Vel outside these Masses returned
+  31 further groups counted per formulary (30 by Mass and group name), including
+  lent-1 Communion, lent-2 and lent-3 Entrance, the Baptism of the Lord Collect, and
+  Lectionary shorter forms and Vel alternatives. Those groups have not been examined
+  individually and some may be accurate.'
 - 'oration conclusions are rendered both as the terse printed cue and in expanded form;
   settle one rendering at collation'
 - 'where the 1998 US Lectionary and the Ordo Lectionum diverge, the Ordo reading was
@@ -731,7 +721,11 @@ sections:
         this file declares psalm_numbering hebrew. The Communion Antiphon and the
         Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
         does not, and they are still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Responsorial Psalm in cycle C was re-read at 200 dpi on Ordo
+        artifact page 59, n. 3: Ps 24, 4bc-5ab, 8-9, 10, 14. Its Vulgate 4bc names the whole
+        of Hebrew 25:4, so the inherited part letter is removed; the other part letters are
+        preserved.'
       propers:
       - name: Entrance Antiphon
         incipit: Ad te levavi
@@ -812,7 +806,7 @@ sections:
             verses:
             - book: Psalms
               ranges:
-              - begin: {chapter: 25, verse: 4, part: bc}
+              - begin: {chapter: 25, verse: 4}
                 end: {chapter: 25, verse: 5, part: ab}
               - begin: {chapter: 25, verse: 8}
                 end: {chapter: 25, verse: 9}
@@ -820,7 +814,7 @@ sections:
                 end: {chapter: 25, verse: 10}
               - begin: {chapter: 25, verse: 14}
                 end: {chapter: 25, verse: 14}
-              ref: "Psalm 25:4bc-5ab, 8-9, 10, 14"
+              ref: 'Psalm 25:4-5ab, 8-9, 10, 14'
       - name: Second Reading
         source: scripture
         cycles:
@@ -2081,13 +2075,13 @@ sections:
         verses:
         - book: Psalms
           ranges:
-          - begin: {chapter: 25, verse: 4, part: bc}
+          - begin: {chapter: 25, verse: 4}
             end: {chapter: 25, verse: 5, part: ab}
           - begin: {chapter: 25, verse: 6}
             end: {chapter: 25, verse: 7, part: bc}
           - begin: {chapter: 25, verse: 8}
             end: {chapter: 25, verse: 9}
-          ref: Psalm 25:4bc-5ab, 6-7bc, 8-9
+          ref: 'Psalm 25:4-5ab, 6-7bc, 8-9'
       - name: Gospel Acclamation
         source: scripture
         verses:
@@ -2112,7 +2106,10 @@ sections:
         where the day is 17 or 18 December the formulary of n. 193 or n. 194 is used instead, this number
         being omitted along with those that follow it in the week. NOTHING BUT THE READINGS IS HELD. No
         antiphon and no oration is carried: their text is in the Missale Romanum 2002, which is in
-        copyright and not held here, and none is invented or pointed at another day''s.'
+        copyright and not held here, and none is invented or pointed at another day''s.
+        On 2026-10-01 the Responsorial Psalm was re-read at 200 dpi on Ordo artifact page
+        161, n. 187: Ps 24, 4bc-5ab, 6-7bc, 8-9. Its Vulgate 4bc names the whole of Hebrew
+        25:4, so the inherited part letter is removed; the other part letters are preserved.'
     - key: advent-3-tuesday
       name: Tuesday of the Third Week of Advent
       registry: 'pc-T-advent-3-tuesday'
@@ -2606,7 +2603,7 @@ sections:
         verses:
         - book: Psalms
           ranges:
-          - begin: {chapter: 25, verse: 4, part: bc}
+          - begin: {chapter: 25, verse: 4}
             end: {chapter: 25, verse: 5, part: ab}
           - begin: {chapter: 25, verse: 8}
             end: {chapter: 25, verse: 9}
@@ -2614,7 +2611,7 @@ sections:
             end: {chapter: 25, verse: 10}
           - begin: {chapter: 25, verse: 14}
             end: {chapter: 25, verse: 14}
-          ref: Psalm 25:4bc-5ab, 8-9, 10, 14
+          ref: 'Psalm 25:4-5ab, 8-9, 10, 14'
       - name: Gospel
         source: scripture
         verses:
@@ -2631,7 +2628,10 @@ sections:
         a composed text there with no scripture citation above it, and that text is the book''s expression
         and is not carried. NOTHING BUT THE READINGS IS HELD. No antiphon and no oration is carried: their
         text is in the Missale Romanum 2002, which is in copyright and not held here, and none is invented
-        or pointed at another day''s.'
+        or pointed at another day''s.
+        On 2026-10-01 the Responsorial Psalm was re-read at 200 dpi on Ordo artifact page
+        166, n. 199: Ps 24, 4bc-5ab, 8-9, 10, 14. Its Vulgate 4bc names the whole of Hebrew
+        25:4, so the inherited part letter is removed; the other part letters are preserved.'
     - key: advent-december-24
       name: 24 December, Morning Mass
       registry: 'pc-T-advent-december-24'
@@ -4871,7 +4871,11 @@ sections:
         this file declares psalm_numbering hebrew. The Communion Antiphon and the
         Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
         does not, and they are still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Responsorial Psalm in cycle B was re-read at 200 dpi on Ordo
+        artifact page 73, n. 23: Ps 24, 4bc-5ab, 6-7bc, 8-9. Its Vulgate 4bc names the whole
+        of Hebrew 25:4, so the inherited part letter is removed; the other part letters are
+        preserved.'
       propers:
       - name: Entrance Antiphon
         incipit: Invocabit me
@@ -4939,13 +4943,13 @@ sections:
             verses:
             - book: Psalms
               ranges:
-              - begin: {chapter: 25, verse: 4, part: bc}
+              - begin: {chapter: 25, verse: 4}
                 end: {chapter: 25, verse: 5, part: ab}
               - begin: {chapter: 25, verse: 6}
                 end: {chapter: 25, verse: 7, part: bc}
               - begin: {chapter: 25, verse: 8}
                 end: {chapter: 25, verse: 9}
-              ref: "Psalm 25:4bc-5ab, 6-7bc, 8-9"
+              ref: 'Psalm 25:4-5ab, 6-7bc, 8-9'
           C:
             verses:
             - book: Psalms
@@ -7062,13 +7066,13 @@ sections:
         verses:
         - book: Psalms
           ranges:
-          - begin: {chapter: 25, verse: 4, part: bc}
+          - begin: {chapter: 25, verse: 4}
             end: {chapter: 25, verse: 5, part: ab}
           - begin: {chapter: 25, verse: 6}
             end: {chapter: 25, verse: 7, part: bc}
           - begin: {chapter: 25, verse: 8}
             end: {chapter: 25, verse: 9}
-          ref: Psalm 25:4bc-5ab, 6-7bc, 8-9
+          ref: 'Psalm 25:4-5ab, 6-7bc, 8-9'
       - name: Verse Before the Gospel
         source: scripture
         verses:
@@ -7096,7 +7100,10 @@ sections:
         deliberately chooses no basis for a weekday''s orations. Responsorial psalms are printed in
         Vulgate numbering and are converted here by scripts/_psalms from the tracked verse concordance,
         because this file declares psalm_numbering hebrew. Lent repeats annually, so no cycle key is
-        carried.'
+        carried.
+        On 2026-10-01 the Responsorial Psalm was re-read at 200 dpi on Ordo artifact page
+        188, n. 238: Ps 24, 4bc-5ab, 6-7bc, 8-9. Its Vulgate 4bc names the whole of Hebrew
+        25:4, so the inherited part letter is removed; the other part letters are preserved.'
     - key: lent-3-wednesday
       name: Wednesday of the Third Week of Lent
       registry: 'pc-T-lent-3-wednesday'
@@ -13833,10 +13840,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact page 99, printed page 45, nn.
         64-66. The Ordo prints its responsorial psalms in Vulgate numbering; they are
         converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Communion Antiphon and the
-        Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
-        does not, and they are still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact pages 269-270 of secondary-digital-pdf-0b458944, together with Ordinary
+        Time rubric 6 on artifact page 268. This is a digitally typeset secondary
+        reproduction of the 2002 Missal, not a page image of the printed book or a witness
+        to the 2008 reprint. The check confirms two alternatives, the second after Vel; it
+        does not collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Omnis terra adoret te
@@ -14024,7 +14035,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-23-5
-          basis: "Second of the two communion antiphons given; either may be chosen, preferring the one that accords with the Gospel of the Mass."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Parasti in conspectu meo mensam
         source: scripture
         verses:
@@ -14038,7 +14050,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: 1-john-4-16
-          basis: "Second of the two communion antiphons given; either may be chosen, preferring the one that accords with the Gospel of the Mass."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Nos cognovimus et credidimus
         source: scripture
         verses:
@@ -14067,10 +14080,18 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact page 100, printed page 46, nn.
         67-69. The Ordo prints its responsorial psalms in Vulgate numbering; they are
         converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Communion Antiphon and the
-        Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
-        does not, and they are still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Responsorial Psalm in cycle B was re-read at 200 dpi on Ordo
+        artifact page 100, n. 68: Ps 24, 4bc-5ab, 6-7bc, 8-9. Its Vulgate 4bc names the
+        whole of Hebrew 25:4, so the inherited part letter is removed; the other part
+        letters are preserved.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact page 270 of secondary-digital-pdf-0b458944, together with Ordinary Time
+        rubric 6 on artifact page 268. This is a digitally typeset secondary reproduction of
+        the 2002 Missal, not a page image of the printed book or a witness to the 2008
+        reprint. The check confirms two alternatives, the second after Vel; it does not
+        collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Cantate Domino canticum novum
@@ -14143,13 +14164,13 @@ sections:
             verses:
             - book: Psalms
               ranges:
-              - begin: {chapter: 25, verse: 4, part: bc}
+              - begin: {chapter: 25, verse: 4}
                 end: {chapter: 25, verse: 5, part: ab}
               - begin: {chapter: 25, verse: 6}
                 end: {chapter: 25, verse: 7, part: bc}
               - begin: {chapter: 25, verse: 8}
                 end: {chapter: 25, verse: 9}
-              ref: "Psalm 25:4bc-5ab, 6-7bc, 8-9"
+              ref: 'Psalm 25:4-5ab, 6-7bc, 8-9'
           C:
             verses:
             - book: Psalms
@@ -14258,7 +14279,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-34-6
-          basis: "Second of the two communion antiphons given; either may be chosen, preferring the one that accords with the Gospel of the Mass."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Accedite ad Dominum
         source: scripture
         verses:
@@ -14272,7 +14294,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: john-8-12
-          basis: "Second of the two communion antiphons given; either may be chosen, preferring the one that accords with the Gospel of the Mass."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Ego sum lux mundi
         source: scripture
         verses:
@@ -14301,10 +14324,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact pages 101-102, printed pages
         47-48, nn. 70-72. The Ordo prints its responsorial psalms in Vulgate numbering;
         they are converted here by scripts/_psalms from the tracked verse concordance,
-        because this file declares psalm_numbering hebrew. The Communion Antiphon and
-        the Entrance Antiphon of this Mass were NOT read: the Missal prints them, the
-        Ordo does not, and they are still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        because this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact page 271 of secondary-digital-pdf-0b458944, together with Ordinary Time
+        rubric 6 on artifact page 268. This is a digitally typeset secondary reproduction of
+        the 2002 Missal, not a page image of the printed book or a witness to the 2008
+        reprint. The check confirms two alternatives, the second after Vel; it does not
+        collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Salvos nos fac
@@ -14482,7 +14509,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-31-17-18
-          basis: "Second of the two communion antiphons given; either may be chosen, preferring the one that accords with the Gospel of the Mass."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Illumina faciem tuam
         source: scripture
         verses:
@@ -14496,7 +14524,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: matthew-5-3-4
-          basis: "Second of the two communion antiphons given; either may be chosen, preferring the one that accords with the Gospel of the Mass."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Beati pauperes spiritu
         source: scripture
         verses:
@@ -14525,10 +14554,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact page 103, printed page 49, nn.
         73-75. The Ordo prints its responsorial psalms in Vulgate numbering; they are
         converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Communion Antiphon and the
-        Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
-        does not, and they are still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact pages 271-272 of secondary-digital-pdf-0b458944, together with Ordinary
+        Time rubric 6 on artifact page 268. This is a digitally typeset secondary
+        reproduction of the 2002 Missal, not a page image of the printed book or a witness
+        to the 2008 reprint. The check confirms two alternatives, the second after Vel; it
+        does not collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Venite, adoremus Deum
@@ -14705,7 +14738,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-107-8-9
-          basis: "Second of the two communion antiphons given; either may be chosen, preferring the one that accords with the Gospel of the Mass."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Confiteantur Domino
         source: scripture
         verses:
@@ -14719,7 +14753,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: matthew-5-5-6
-          basis: "Second of the two communion antiphons given; either may be chosen, preferring the one that accords with the Gospel of the Mass."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Beati qui lugent
         source: scripture
         verses:
@@ -14748,10 +14783,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact page 104, printed page 50, nn.
         76-78. The Ordo prints its responsorial psalms in Vulgate numbering; they are
         converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Communion Antiphon, the Communion
-        Antiphon (alternative) and the Entrance Antiphon of this Mass were NOT read: the
-        Missal prints them, the Ordo does not, and they are still model-generated leads.
-        See src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated.
+        See src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact pages 272-273 of secondary-digital-pdf-0b458944, together with Ordinary
+        Time rubric 6 on artifact page 268. This is a digitally typeset secondary
+        reproduction of the 2002 Missal, not a page image of the printed book or a witness
+        to the 2008 reprint. The check confirms two alternatives, the second after Vel; it
+        does not collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Esto mihi in Deum protectorem
@@ -14928,7 +14967,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-77-29-30
-          basis: "The Missal appoints this second antiphon with Vel, one or the other being chosen, preferably the one according with the Gospel of the Mass."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         psalm_numbering: vulgate
         incipit: Manducaverunt, et saturati sunt nimis
         source: scripture
@@ -14943,7 +14983,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: john-3-16
-          basis: "The Missal appoints this second antiphon with Vel, one or the other being chosen, preferably the one according with the Gospel of the Mass."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Sic Deus dilexit mundum
         source: scripture
         verses:
@@ -14972,10 +15013,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact page 105, printed page 51, nn.
         79-81. The Ordo prints its responsorial psalms in Vulgate numbering; they are
         converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Communion Antiphon, the Communion
-        Antiphon (alternative) and the Entrance Antiphon of this Mass were NOT read: the
-        Missal prints them, the Ordo does not, and they are still model-generated leads.
-        See src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated.
+        See src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact pages 273-274 of secondary-digital-pdf-0b458944, together with Ordinary
+        Time rubric 6 on artifact page 268. This is a digitally typeset secondary
+        reproduction of the 2002 Missal, not a page image of the printed book or a witness
+        to the 2008 reprint. The check confirms two alternatives, the second after Vel; it
+        does not collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Domine, in tua misericordia speravi
@@ -15161,7 +15206,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-9-2-3
-          basis: "The Missal appoints this second antiphon with Vel, one or the other being chosen, preferably the one according with the Gospel of the Mass."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Narrabo omnia mirabilia tua
         source: scripture
         verses:
@@ -15175,7 +15221,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: john-11-27
-          basis: "The Missal appoints this second antiphon with Vel, one or the other being chosen, preferably the one according with the Gospel of the Mass."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Domine, ego credidi
         source: scripture
         verses:
@@ -15204,10 +15251,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact page 106, printed page 52, nn.
         82-84. The Ordo prints its responsorial psalms in Vulgate numbering; they are
         converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Communion Antiphon, the Communion
-        Antiphon (alternative) and the Entrance Antiphon of this Mass were NOT read: the
-        Missal prints them, the Ordo does not, and they are still model-generated leads.
-        See src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated.
+        See src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact pages 274-275 of secondary-digital-pdf-0b458944, together with Ordinary
+        Time rubric 6 on artifact page 268. This is a digitally typeset secondary
+        reproduction of the 2002 Missal, not a page image of the printed book or a witness
+        to the 2008 reprint. The check confirms two alternatives, the second after Vel; it
+        does not collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         psalm_numbering: vulgate
@@ -15384,7 +15435,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-12-6
-          basis: "The Missal appoints this second antiphon with Vel, one or the other being chosen, preferably the one according with the Gospel of the Mass."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Cantabo Domino, qui bona tribuit mihi
         source: scripture
         verses:
@@ -15398,7 +15450,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: matthew-28-20
-          basis: "The Missal appoints this second antiphon with Vel, one or the other being chosen, preferably the one according with the Gospel of the Mass."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Ecce ego vobiscum sum
         source: scripture
         verses:
@@ -15427,11 +15480,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact pages 107-108, printed pages
         53-54, nn. 85-87. The Ordo prints its responsorial psalms in Vulgate numbering;
         they are converted here by scripts/_psalms from the tracked verse concordance,
-        because this file declares psalm_numbering hebrew. The Communion Antiphon, the
-        Communion Antiphon (alternative) and the Entrance Antiphon of this Mass were NOT
-        read: the Missal prints them, the Ordo does not, and they are still
-        model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        because this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact page 275 of secondary-digital-pdf-0b458944, together with Ordinary Time
+        rubric 6 on artifact page 268. This is a digitally typeset secondary reproduction of
+        the 2002 Missal, not a page image of the printed book or a witness to the 2008
+        reprint. The check confirms two alternatives, the second after Vel; it does not
+        collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         psalm_numbering: vulgate
@@ -15613,7 +15669,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-16-6
-          basis: "The Missal appoints this second antiphon with Vel, one or the other being chosen, preferably the one according with the Gospel of the Mass."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Ego clamavi, quoniam exaudisti me
         source: scripture
         verses:
@@ -15627,7 +15684,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: mark-11-23-24
-          basis: "The Missal appoints this second antiphon with Vel, one or the other being chosen, preferably the one according with the Gospel of the Mass."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Amen dico vobis
         source: scripture
         verses:
@@ -15658,10 +15716,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact page 109, printed page 55, nn.
         88-90. The Ordo prints its responsorial psalms in Vulgate numbering; they are
         converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Communion Antiphon and the
-        Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
-        does not, and they are still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact page 276 of secondary-digital-pdf-0b458944, together with Ordinary Time
+        rubric 6 on artifact page 268. This is a digitally typeset secondary reproduction of
+        the 2002 Missal, not a page image of the printed book or a witness to the 2008
+        reprint. The check confirms two alternatives, the second after Vel; it does not
+        collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Dominus illuminatio mea
@@ -15837,7 +15899,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-17-3
-          basis: "Alternative communion antiphon, printed in the Missal after \"Vel\"."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Dominus firmamentum meum
         source: scripture
         verses:
@@ -15851,7 +15914,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: 1-john-4-16
-          basis: "Alternative communion antiphon, printed in the Missal after \"Vel\"."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Deus caritas est
         source: scripture
         verses:
@@ -15879,10 +15943,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact page 110, printed page 56, nn.
         91-93. The Ordo prints its responsorial psalms in Vulgate numbering; they are
         converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Communion Antiphon and the
-        Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
-        does not, and they are still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact pages 276-277 of secondary-digital-pdf-0b458944, together with Ordinary
+        Time rubric 6 on artifact page 268. This is a digitally typeset secondary
+        reproduction of the 2002 Missal, not a page image of the printed book or a witness
+        to the 2008 reprint. The check confirms two alternatives, the second after Vel; it
+        does not collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Exaudi, Domine, vocem meam
@@ -16060,7 +16128,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-26-4
-          basis: "Alternative communion antiphon, printed in the Missal after \"Vel\"."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Unum petii a Domino
         source: scripture
         verses:
@@ -16074,7 +16143,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: john-17-11
-          basis: "Alternative communion antiphon, printed in the Missal after \"Vel\"."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Pater sancte, serva eos in nomine tuo
         source: scripture
         verses:
@@ -16102,10 +16172,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact page 111, printed page 57, nn.
         94-96. The Ordo prints its responsorial psalms in Vulgate numbering; they are
         converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Communion Antiphon and the
-        Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
-        does not, and they are still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact pages 277-278 of secondary-digital-pdf-0b458944, together with Ordinary
+        Time rubric 6 on artifact page 268. This is a digitally typeset secondary
+        reproduction of the 2002 Missal, not a page image of the printed book or a witness
+        to the 2008 reprint. The check confirms two alternatives, the second after Vel; it
+        does not collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Dominus fortitudo plebis suae
@@ -16283,7 +16357,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-144-15
-          basis: "Alternative communion antiphon, printed in the Missal after \"Vel\"."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Oculi omnium in te sperant
         source: scripture
         verses:
@@ -16297,7 +16372,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: john-10-11-15
-          basis: "Alternative communion antiphon, printed in the Missal after \"Vel\"."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Ego sum pastor bonus
         source: scripture
         verses:
@@ -16327,10 +16403,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact pages 112-113, printed pages
         58-59, nn. 97-99. The Ordo prints its responsorial psalms in Vulgate numbering;
         they are converted here by scripts/_psalms from the tracked verse concordance,
-        because this file declares psalm_numbering hebrew. The Communion Antiphon and
-        the Entrance Antiphon of this Mass were NOT read: the Missal prints them, the
-        Ordo does not, and they are still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        because this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact pages 278-279 of secondary-digital-pdf-0b458944, together with Ordinary
+        Time rubric 6 on artifact page 268. This is a digitally typeset secondary
+        reproduction of the 2002 Missal, not a page image of the printed book or a witness
+        to the 2008 reprint. The check confirms two alternatives, the second after Vel; it
+        does not collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Omnes gentes, plaudite manibus
@@ -16526,7 +16606,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-102-1
-          basis: "Alternative communion antiphon, printed in the Missal after \"Vel\"."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Benedic, anima mea, Domino
         source: scripture
         verses:
@@ -16540,7 +16621,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: john-17-20-21
-          basis: "Alternative communion antiphon, printed in the Missal after \"Vel\"."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Pater, pro eis rogo
         source: scripture
         verses:
@@ -16568,10 +16650,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact page 114, printed page 60, nn.
         100-102. The Ordo prints its responsorial psalms in Vulgate numbering; they are
         converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Communion Antiphon and the
-        Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
-        does not, and they are still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact page 279 of secondary-digital-pdf-0b458944, together with Ordinary Time
+        rubric 6 on artifact page 268. This is a digitally typeset secondary reproduction of
+        the 2002 Missal, not a page image of the printed book or a witness to the 2008
+        reprint. The check confirms two alternatives, the second after Vel; it does not
+        collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Suscepimus, Deus, misericordiam tuam
@@ -16753,7 +16839,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-34-9
-          basis: "Alternative communion antiphon appointed by the Missal."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Gustate et videte quoniam suavis est Dominus
         source: scripture
         verses:
@@ -16767,7 +16854,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: matthew-11-28
-          basis: "Alternative communion antiphon appointed by the Missal."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Venite ad me, omnes qui laboratis
         source: scripture
         verses:
@@ -16795,10 +16883,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact page 115, printed page 61, nn.
         103-105. The Ordo prints its responsorial psalms in Vulgate numbering; they are
         converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Communion Antiphon and the
-        Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
-        does not, and they are still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact page 280 of secondary-digital-pdf-0b458944, together with Ordinary Time
+        rubric 6 on artifact page 268. This is a digitally typeset secondary reproduction of
+        the 2002 Missal, not a page image of the printed book or a witness to the 2008
+        reprint. The check confirms two alternatives, the second after Vel; it does not
+        collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Ego autem cum iustitia apparebo in conspectu tuo
@@ -16984,7 +17076,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-84-4-5
-          basis: "Alternative communion antiphon appointed by the Missal, which cites it as John 6:57."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Passer invenit sibi domum
         source: scripture
         verses:
@@ -16998,7 +17091,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: john-6-56
-          basis: "Alternative communion antiphon appointed by the Missal, which cites it as John 6:57."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Qui manducat meam carnem et bibit meum sanguinem
         source: scripture
         verses:
@@ -17027,10 +17121,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact page 116, printed page 62, nn.
         106-108. The Ordo prints its responsorial psalms in Vulgate numbering; they are
         converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Communion Antiphon and the
-        Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
-        does not, and they are still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact pages 280-281 of secondary-digital-pdf-0b458944, together with Ordinary
+        Time rubric 6 on artifact page 268. This is a digitally typeset secondary
+        reproduction of the 2002 Missal, not a page image of the printed book or a witness
+        to the 2008 reprint. The check confirms two alternatives, the second after Vel; it
+        does not collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Ecce Deus adiuvat me
@@ -17206,7 +17304,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-111-4-5
-          basis: "Alternative communion antiphon appointed by the Missal."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Memoriam fecit mirabilium suorum
         source: scripture
         verses:
@@ -17220,7 +17319,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: revelation-3-20
-          basis: "Alternative communion antiphon appointed by the Missal."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Ecce sto ad ostium et pulso
         source: scripture
         verses:
@@ -17248,10 +17348,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact page 117, printed page 63, nn.
         109-111. The Ordo prints its responsorial psalms in Vulgate numbering; they are
         converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Communion Antiphon and the
-        Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
-        does not, and they are still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact pages 281-282 of secondary-digital-pdf-0b458944, together with Ordinary
+        Time rubric 6 on artifact page 268. This is a digitally typeset secondary
+        reproduction of the 2002 Missal, not a page image of the printed book or a witness
+        to the 2008 reprint. The check confirms two alternatives, the second after Vel; it
+        does not collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Deus in loco sancto suo
@@ -17431,7 +17535,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-103-2
-          basis: "Alternative communion antiphon appointed by the Missal."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Benedic, anima mea, Domino
         source: scripture
         verses:
@@ -17445,7 +17550,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: matthew-5-7-8
-          basis: "Alternative communion antiphon appointed by the Missal."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Beati misericordes, quoniam ipsi misericordiam consequentur
         source: scripture
         verses:
@@ -17473,10 +17579,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact page 118, printed page 64, nn.
         112-114. The Ordo prints its responsorial psalms in Vulgate numbering; they are
         converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Communion Antiphon, the Communion
-        Antiphon (alternative) and the Entrance Antiphon of this Mass were NOT read: the
-        Missal prints them, the Ordo does not, and they are still model-generated leads.
-        See src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated.
+        See src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact pages 282-283 of secondary-digital-pdf-0b458944, together with Ordinary
+        Time rubric 6 on artifact page 268. This is a digitally typeset secondary
+        reproduction of the 2002 Missal, not a page image of the printed book or a witness
+        to the 2008 reprint. The check confirms two alternatives, the second after Vel; it
+        does not collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Deus, in adiutorium meum intende
@@ -17665,7 +17775,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: wisdom-16-20
-          basis: "Printed as the alternative (\"Vel\") Communion Antiphon."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Panem de caelo dedisti nobis
         source: scripture
         verses:
@@ -17679,7 +17790,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: john-6-35
-          basis: "Printed as the alternative (\"Vel\") Communion Antiphon."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Ego sum panis vitae
         source: scripture
         verses:
@@ -17707,11 +17819,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact pages 119-120, printed pages
         65-66, nn. 115-117. The Ordo prints its responsorial psalms in Vulgate
         numbering; they are converted here by scripts/_psalms from the tracked verse
-        concordance, because this file declares psalm_numbering hebrew. The Communion
-        Antiphon, the Communion Antiphon (alternative) and the Entrance Antiphon of this
-        Mass were NOT read: the Missal prints them, the Ordo does not, and they are
-        still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        concordance, because this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact pages 283-284 of secondary-digital-pdf-0b458944, together with Ordinary
+        Time rubric 6 on artifact page 268. This is a digitally typeset secondary
+        reproduction of the 2002 Missal, not a page image of the printed book or a witness
+        to the 2008 reprint. The check confirms two alternatives, the second after Vel; it
+        does not collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Respice, Domine, in testamentum tuum
@@ -17906,7 +18021,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-147-12
-          basis: "Printed as the alternative (\"Vel\") Communion Antiphon."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Lauda, Ierusalem, Dominum
         source: scripture
         verses:
@@ -17925,7 +18041,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: john-6-51
-          basis: "Printed as the alternative (\"Vel\") Communion Antiphon."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Panis, quem ego dedero
         source: scripture
         verses:
@@ -17953,10 +18070,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact page 121, printed page 67, nn.
         118-120. The Ordo prints its responsorial psalms in Vulgate numbering; they are
         converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Communion Antiphon, the Communion
-        Antiphon (alternative) and the Entrance Antiphon of this Mass were NOT read: the
-        Missal prints them, the Ordo does not, and they are still model-generated leads.
-        See src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated.
+        See src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact pages 284-285 of secondary-digital-pdf-0b458944, together with Ordinary
+        Time rubric 6 on artifact page 268. This is a digitally typeset secondary
+        reproduction of the 2002 Missal, not a page image of the printed book or a witness
+        to the 2008 reprint. The check confirms two alternatives, the second after Vel; it
+        does not collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Protector noster, aspice, Deus
@@ -18134,7 +18255,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-129-7
-          basis: "Printed as the alternative (\"Vel\") Communion Antiphon."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Apud Dominum misericordia
         source: scripture
         verses:
@@ -18148,7 +18270,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: john-6-51-52
-          basis: "Printed as the alternative (\"Vel\") Communion Antiphon."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Ego sum panis vivus
         source: scripture
         verses:
@@ -18176,10 +18299,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact page 122, printed page 68, nn.
         121-123. The Ordo prints its responsorial psalms in Vulgate numbering; they are
         converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Communion Antiphon, the Communion
-        Antiphon (alternative) and the Entrance Antiphon of this Mass were NOT read: the
-        Missal prints them, the Ordo does not, and they are still model-generated leads.
-        See src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated.
+        See src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact page 285 of secondary-digital-pdf-0b458944, together with Ordinary Time
+        rubric 6 on artifact page 268. This is a digitally typeset secondary reproduction of
+        the 2002 Missal, not a page image of the printed book or a witness to the 2008
+        reprint. The check confirms two alternatives, the second after Vel; it does not
+        collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Inclina, Domine, aurem tuam ad me
@@ -18358,7 +18485,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-103-13-15
-          basis: "Printed as the alternative (\"Vel\") Communion Antiphon."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: De fructu operum tuorum, Domine, satiabitur terra
         source: scripture
         verses:
@@ -18372,7 +18500,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: john-6-55
-          basis: "Printed as the alternative (\"Vel\") Communion Antiphon."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Qui manducat meam carnem
         source: scripture
         verses:
@@ -18400,10 +18529,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact page 123, printed page 69, nn.
         124-126. The Ordo prints its responsorial psalms in Vulgate numbering; they are
         converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Communion Antiphon and the
-        Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
-        does not, and they are still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact page 286 of secondary-digital-pdf-0b458944, together with Ordinary Time
+        rubric 6 on artifact page 268. This is a digitally typeset secondary reproduction of
+        the 2002 Missal, not a page image of the printed book or a witness to the 2008
+        reprint. The check confirms two alternatives, the second after Vel; it does not
+        collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Miserere mihi, Domine
@@ -18589,7 +18722,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-30-20
-          basis: "Second communion antiphon offered by the Missal as an alternative."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         psalm_numbering: vulgate
         incipit: Quam magna multitudo dulcedinis tuae
         source: scripture
@@ -18604,7 +18738,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: matthew-5-9-10
-          basis: "Second communion antiphon offered by the Missal as an alternative."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Beati pacifici
         source: scripture
         verses:
@@ -18632,10 +18767,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact page 124, printed page 70, nn.
         127-129. The Ordo prints its responsorial psalms in Vulgate numbering; they are
         converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Communion Antiphon and the
-        Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
-        does not, and they are still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact pages 286-287 of secondary-digital-pdf-0b458944, together with Ordinary
+        Time rubric 6 on artifact page 268. This is a digitally typeset secondary
+        reproduction of the 2002 Missal, not a page image of the printed book or a witness
+        to the 2008 reprint. The check confirms two alternatives, the second after Vel; it
+        does not collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         psalm_numbering: vulgate
@@ -18810,7 +18949,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-41-2-3
-          basis: "Second communion antiphon offered by the Missal as an alternative."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Quemadmodum desiderat cervus
         source: scripture
         verses:
@@ -18824,7 +18964,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: john-8-12
-          basis: "Second communion antiphon offered by the Missal as an alternative."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Ego sum lux mundi
         source: scripture
         verses:
@@ -18852,10 +18993,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact page 125, printed page 71, nn.
         130-132. The Ordo prints its responsorial psalms in Vulgate numbering; they are
         converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Communion Antiphon and the
-        Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
-        does not, and they are still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact pages 287-288 of secondary-digital-pdf-0b458944, together with Ordinary
+        Time rubric 6 on artifact page 268. This is a digitally typeset secondary
+        reproduction of the 2002 Missal, not a page image of the printed book or a witness
+        to the 2008 reprint. The check confirms two alternatives, the second after Vel; it
+        does not collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Da pacem, Domine, sustinentibus te
@@ -19030,7 +19175,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-35-8
-          basis: "Second communion antiphon offered by the Missal as an alternative."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Quam pretiosa est misericordia tua, Deus
         source: scripture
         verses:
@@ -19044,7 +19190,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: 1-corinthians-10-16
-          basis: "Second communion antiphon offered by the Missal as an alternative."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Calix benedictionis, cui benedicimus
         source: scripture
         verses:
@@ -19548,10 +19695,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact page 130, printed page 76, nn.
         139-141. The Ordo prints its responsorial psalms in Vulgate numbering; they are
         converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Communion Antiphon, the Communion
-        Antiphon (alternative) and the Entrance Antiphon of this Mass were NOT read: the
-        Missal prints them, the Ordo does not, and they are still model-generated leads.
-        See src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated.
+        See src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact pages 290-291 of secondary-digital-pdf-0b458944, together with Ordinary
+        Time rubric 6 on artifact page 268. This is a digitally typeset secondary
+        reproduction of the 2002 Missal, not a page image of the printed book or a witness
+        to the 2008 reprint. The check confirms two alternatives, the second after Vel; it
+        does not collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: In voluntate tua, Domine
@@ -19728,7 +19879,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: lamentations-3-25
-          basis: "The Missal prints this as an alternative (\"Vel\") to the preceding antiphon."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Bonus est Dominus
         source: scripture
         verses:
@@ -19742,7 +19894,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: 1-corinthians-10-17
-          basis: "The Missal prints this as an alternative (\"Vel\") to the preceding antiphon."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Unus panis et unum corpus
         source: scripture
         verses:
@@ -19770,11 +19923,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact pages 131-132, printed pages
         77-78, nn. 142-144. The Ordo prints its responsorial psalms in Vulgate
         numbering; they are converted here by scripts/_psalms from the tracked verse
-        concordance, because this file declares psalm_numbering hebrew. The Communion
-        Antiphon, the Communion Antiphon (alternative) and the Entrance Antiphon of this
-        Mass were NOT read: the Missal prints them, the Ordo does not, and they are
-        still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        concordance, because this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact page 291 of secondary-digital-pdf-0b458944, together with Ordinary Time
+        rubric 6 on artifact page 268. This is a digitally typeset secondary reproduction of
+        the 2002 Missal, not a page image of the printed book or a witness to the 2008
+        reprint. The check confirms two alternatives, the second after Vel; it does not
+        collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Si iniquitates observaveris, Domine
@@ -19945,7 +20101,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-33-11
-          basis: "The Missal prints this as an alternative (\"Vel\") to the preceding antiphon."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Divites eguerunt et esurierunt
         source: scripture
         verses:
@@ -19959,7 +20116,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: 1-john-3-2
-          basis: "The Missal prints this as an alternative (\"Vel\") to the preceding antiphon."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Cum apparuerit Dominus
         source: scripture
         verses:
@@ -19987,11 +20145,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact pages 133-134, printed pages
         79-80, nn. 145-147. The Ordo prints its responsorial psalms in Vulgate
         numbering; they are converted here by scripts/_psalms from the tracked verse
-        concordance, because this file declares psalm_numbering hebrew. The Communion
-        Antiphon, the Communion Antiphon (alternative) and the Entrance Antiphon of this
-        Mass were NOT read: the Missal prints them, the Ordo does not, and they are
-        still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        concordance, because this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact pages 291-292 of secondary-digital-pdf-0b458944, together with Ordinary
+        Time rubric 6 on artifact page 268. This is a digitally typeset secondary
+        reproduction of the 2002 Missal, not a page image of the printed book or a witness
+        to the 2008 reprint. The check confirms two alternatives, the second after Vel; it
+        does not collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Ego clamavi, quoniam exaudisti me
@@ -20177,7 +20338,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-32-18-19
-          basis: "The Missal prints this as an alternative (\"Vel\") to the preceding antiphon."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         psalm_numbering: vulgate
         incipit: Ecce oculi Domini super timentes eum
         source: scripture
@@ -20192,7 +20354,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: mark-10-45
-          basis: "The Missal prints this as an alternative (\"Vel\") to the preceding antiphon."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Filius hominis venit
         source: scripture
         verses:
@@ -20220,11 +20383,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact pages 135-136, printed pages
         81-82, nn. 148-150. The Ordo prints its responsorial psalms in Vulgate
         numbering; they are converted here by scripts/_psalms from the tracked verse
-        concordance, because this file declares psalm_numbering hebrew. The Communion
-        Antiphon, the Communion Antiphon (alternative) and the Entrance Antiphon of this
-        Mass were NOT read: the Missal prints them, the Ordo does not, and they are
-        still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        concordance, because this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact pages 292-293 of secondary-digital-pdf-0b458944, together with Ordinary
+        Time rubric 6 on artifact page 268. This is a digitally typeset secondary
+        reproduction of the 2002 Missal, not a page image of the printed book or a witness
+        to the 2008 reprint. The check confirms two alternatives, the second after Vel; it
+        does not collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Laetetur cor quaerentium Dominum
@@ -20400,7 +20566,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-19-6
-          basis: "The Missal offers this antiphon as an alternative, introduced by Vel."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Laetabimur in salutari tuo
         source: scripture
         verses:
@@ -20414,7 +20581,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: ephesians-5-2
-          basis: "The Missal offers this antiphon as an alternative, introduced by Vel."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Christus dilexit nos
         source: scripture
         verses:
@@ -20442,11 +20610,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact pages 137-138, printed pages
         83-84, nn. 151-153. The Ordo prints its responsorial psalms in Vulgate
         numbering; they are converted here by scripts/_psalms from the tracked verse
-        concordance, because this file declares psalm_numbering hebrew. The Communion
-        Antiphon, the Communion Antiphon (alternative) and the Entrance Antiphon of this
-        Mass were NOT read: the Missal prints them, the Ordo does not, and they are
-        still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        concordance, because this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact pages 293-294 of secondary-digital-pdf-0b458944, together with Ordinary
+        Time rubric 6 on artifact page 268. This is a digitally typeset secondary
+        reproduction of the 2002 Missal, not a page image of the printed book or a witness
+        to the 2008 reprint. The check confirms two alternatives, the second after Vel; it
+        does not collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Ne derelinquas me
@@ -20622,7 +20793,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-15-11
-          basis: "The Missal offers this antiphon as an alternative, introduced by Vel."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         psalm_numbering: vulgate
         incipit: Notas mihi fecisti vias vitae
         source: scripture
@@ -20637,7 +20809,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: john-6-58
-          basis: "The Missal offers this antiphon as an alternative, introduced by Vel."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Sicut misit me vivens Pater
         source: scripture
         verses:
@@ -20665,11 +20838,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact pages 139-140, printed pages
         85-86, nn. 154-156. The Ordo prints its responsorial psalms in Vulgate
         numbering; they are converted here by scripts/_psalms from the tracked verse
-        concordance, because this file declares psalm_numbering hebrew. The Communion
-        Antiphon, the Communion Antiphon (alternative) and the Entrance Antiphon of this
-        Mass were NOT read: the Missal prints them, the Ordo does not, and they are
-        still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        concordance, because this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact pages 294-295 of secondary-digital-pdf-0b458944, together with Ordinary
+        Time rubric 6 on artifact page 268. This is a digitally typeset secondary
+        reproduction of the 2002 Missal, not a page image of the printed book or a witness
+        to the 2008 reprint. The check confirms two alternatives, the second after Vel; it
+        does not collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: Intret oratio mea
@@ -20847,7 +21023,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-22-1-2
-          basis: "The Missal offers this antiphon as an alternative, introduced by Vel."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Dominus regit me
         source: scripture
         verses:
@@ -20861,7 +21038,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: luke-24-35
-          basis: "The Missal offers this antiphon as an alternative, introduced by Vel."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Cognoverunt discipuli
         source: scripture
         verses:
@@ -20889,10 +21067,14 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact page 141, printed page 87, nn.
         157-159. The Ordo prints its responsorial psalms in Vulgate numbering; they are
         converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Communion Antiphon, the Communion
-        Antiphon (alternative) and the Entrance Antiphon of this Mass were NOT read: the
-        Missal prints them, the Ordo does not, and they are still model-generated leads.
-        See src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        this file declares psalm_numbering hebrew. The antiphon citations and wording remain uncollated.
+        See src/sources/inventories/postconciliar-seasonal-collation-v1.toml.
+        On 2026-10-01 the Communion alternative-group appointment was checked at 200 dpi on
+        artifact page 295 of secondary-digital-pdf-0b458944, together with Ordinary Time
+        rubric 6 on artifact page 268. This is a digitally typeset secondary reproduction of
+        the 2002 Missal, not a page image of the printed book or a witness to the 2008
+        reprint. The check confirms two alternatives, the second after Vel; it does not
+        collate the antiphon citations or wording.'
       propers:
       - name: Entrance Antiphon
         incipit: 'Dicit Dominus: Ego cogito cogitationes pacis'
@@ -21075,7 +21257,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: psalm-72-28
-          basis: "The Missal offers this antiphon as an alternative, introduced by Vel."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         psalm_numbering: vulgate
         incipit: Mihi autem adhaerere Deo bonum est
         source: scripture
@@ -21090,7 +21273,8 @@ sections:
           kind: alternative
           group: communion-antiphon
           option: mark-11-23-24
-          basis: "The Missal offers this antiphon as an alternative, introduced by Vel."
+          basis: 'The Missal prints two Communion antiphons, the second after Vel, and its Ordinary Time
+            rubric 6 lets one or the other be chosen.'
         incipit: Amen dico vobis
         source: scripture
         verses:
@@ -25878,14 +26062,14 @@ sections:
             - book: Psalms
               ranges:
               - begin: {chapter: 25, verse: 2}
-                end: {chapter: 25, verse: 4, part: a}
-              - begin: {chapter: 25, verse: 4, part: b}
+                end: {chapter: 25, verse: 3}
+              - begin: {chapter: 25, verse: 4}
                 end: {chapter: 25, verse: 5, part: ab}
               - begin: {chapter: 25, verse: 6}
                 end: {chapter: 25, verse: 7, part: bc}
               - begin: {chapter: 25, verse: 8}
                 end: {chapter: 25, verse: 9}
-              ref: Psalm 25:2-4a, 4b-5ab, 6-7bc, 8-9
+              ref: 'Psalm 25:2-3, 4-5ab, 6-7bc, 8-9'
           'II':
             verses:
             - book: Psalms
@@ -25924,7 +26108,11 @@ sections:
         prints them, the Ordo does not, it is in copyright and not held here, and for an Ordinary Time
         weekday the index deliberately chooses no basis for them (see rubrics.yaml, ordinary-time-
         weekday). Nothing of the book''s wording - no pericope title, psalm response, acclamation text,
-        rubric or printed heading - is reproduced.'
+        rubric or printed heading - is reproduced.
+        On 2026-10-01 the Responsorial Psalm in cycle I was re-read at 200 dpi on Ordo
+        artifact page 244, n. 355: Ps 24, 2-4a, 4b-5ab, 6-7bc, 8-9. Vulgate 24:2-4a covers
+        Hebrew 25:2-3, and the following 4b-5ab begins with the whole of Hebrew 25:4; the
+        first two ranges are corrected accordingly.'
     - key: ot-9-thursday
       name: Thursday of the Ninth Week in Ordinary Time
       registry: 'pc-T-ot-9-thursday'
@@ -25971,7 +26159,7 @@ sections:
             verses:
             - book: Psalms
               ranges:
-              - begin: {chapter: 25, verse: 4, part: bc}
+              - begin: {chapter: 25, verse: 4}
                 end: {chapter: 25, verse: 5, part: ab}
               - begin: {chapter: 25, verse: 8}
                 end: {chapter: 25, verse: 9}
@@ -25979,7 +26167,7 @@ sections:
                 end: {chapter: 25, verse: 10}
               - begin: {chapter: 25, verse: 14}
                 end: {chapter: 25, verse: 14}
-              ref: Psalm 25:4bc-5ab, 8-9, 10, 14
+              ref: 'Psalm 25:4-5ab, 8-9, 10, 14'
       - name: Gospel Acclamation
         source: scripture
         verses:
@@ -26008,7 +26196,11 @@ sections:
         No oration and no antiphon is carried: the Missale Romanum 2002 prints them, the Ordo does not, it
         is in copyright and not held here, and for an Ordinary Time weekday the index deliberately chooses
         no basis for them (see rubrics.yaml, ordinary-time-weekday). Nothing of the book''s wording - no
-        pericope title, psalm response, acclamation text, rubric or printed heading - is reproduced.'
+        pericope title, psalm response, acclamation text, rubric or printed heading - is reproduced.
+        On 2026-10-01 the Responsorial Psalm in cycle II was re-read at 200 dpi on Ordo
+        artifact page 244, n. 356: Ps 24, 4bc-5ab, 8-9, 10, 14. Its Vulgate 4bc names the
+        whole of Hebrew 25:4, so the inherited part letter is removed; the other part
+        letters are preserved.'
     - key: ot-9-friday
       name: Friday of the Ninth Week in Ordinary Time
       registry: 'pc-T-ot-9-friday'
@@ -26419,7 +26611,12 @@ sections:
         prints them, the Ordo does not, it is in copyright and not held here, and for an Ordinary Time
         weekday the index deliberately chooses no basis for them (see rubrics.yaml, ordinary-time-
         weekday). Nothing of the book''s wording - no pericope title, psalm response, acclamation text,
-        rubric or printed heading - is reproduced.'
+        rubric or printed heading - is reproduced.
+        On 2026-10-01 the Gospel Acclamation was re-read at 200 dpi on Ordo artifact page
+        247, n. 361: Ps 24, 4b. 5a. Its printed words request instruction in the paths, the
+        second colon of Hebrew 25:4, so the existing Hebrew citation 25:4b, 5a is correct.
+        This is not the three-colon division used in the responsorial selections and
+        requires no letter shift.'
     - key: ot-10-thursday
       name: Thursday of the Tenth Week in Ordinary Time
       registry: 'pc-T-ot-10-thursday'
@@ -31556,7 +31753,12 @@ sections:
         orations of the preceding Sunday first among the permitted bases (see rubrics.yaml, ordinary-time-
         weekday) and nothing here chooses one, so no oration and no antiphon is carried and none is
         invented. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml for the citation
-        ruling this stays inside.'
+        ruling this stays inside.
+        On 2026-10-01 the Gospel Acclamation was re-read at 200 dpi on Ordo artifact page
+        278, n. 423: Ps 24, 4b. 5a. Its printed words request instruction in the paths, the
+        second colon of Hebrew 25:4, so the existing Hebrew citation 25:4b, 5a is correct.
+        This is not the three-colon division used in the responsorial selections and
+        requires no letter shift.'
     - key: ot-20-saturday
       name: Saturday of the Twentieth Week in Ordinary Time
       registry: 'pc-T-ot-20-saturday'

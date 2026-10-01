@@ -14,14 +14,17 @@ calendar = "roman-1962"
 target = "src/sources/calendars/roman-1962/propers.yaml"
 recorded_on = "2026-08-02"
 merge = """
-Current disposition, 2026-10-01: 103 positive entries remain -- sixty-five
+Current disposition, 2026-10-01: 112 positive entries remain -- seventy-four
 Cummiskey rows with exact page-image and tracked-publication bindings, thirty-two
 Lasance rows with exact facsimile bindings, and six public-domain Sequence rows.
-The other 1,092 exact identities are typed, text-free `untranslated` records.
+The other 1,085 exact identities are typed, text-free `untranslated` records.
 The four added on 2026-10-01 are the Introit, Collect, Secret and Postcommunion
 of `pentecost-19`, formerly `rights-withheld` rows awaiting a publication
 binding; they bind the tracked artifact roman-1962-pentecost-19-en, read against
-the page images that day. The counts that follow are those of 2026-08-28.
+the page images that day. Nine further entries restore the Collect, Secret and Postcommunion of Sundays
+13-15 after Pentecost through roman-1962-pentecost-13-15-en, after a fresh
+page-image reading. The two newly established Angela Merici prayers have
+explicit no-exemplar dispositions. The counts that follow are those of 2026-08-28.
 The new 106-row Cummiskey recovery artifact supplies 48 active exact identities
 and 58 evidence-only or quarantined rows; cataloguing a historical English row
 does not itself establish a target identity. Nineteen formerly quarantined Lasance leads now
@@ -1737,6 +1740,240 @@ source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revise
 text = """
 O God Who on Thy Church didst bestow a new glory in the marvelous learning and in the meritorious life of blessed Ephrem, Thy confessor and doctor: humbly we beseech Thee that, through his prayers, she may be shielded by Thine unfailing might against every snare of false teaching and wickedness. Through our Lord.
 """
+
+[[entries]]
+mass = "pentecost-13"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+incipit = "Omnipotens sempiterne Deus, da nobis"
+witness = "cummiskey-1861"
+printed_page = "423"
+ia_leaf = 431
+ia_leaf_range = [431, 431]
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-pentecost-13--main--collect--all--1"
+publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-pentecost-13-15-en"
+publication_artifact_sha256 = "96f9fa76f10865337b611b179fed9508bf343eaeabed6775b3b7fb48ea1d9edb"
+publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-roman-1962-pentecost-13--main--collect--all--1"
+collated = "page-image and tracked transcription, 2026-10-01"
+collation_result = "confirmed"
+witness_note = "Printed p. 423 under `COLLECT. Omnipotens.` after the Introit `Respice, Domine, in testamentum tuum` of the formulary headed `XIII. SUNDAY after PENTECOST.`; `eter-nal` and `promis-est` closed up. The printed Latin cue Omnipotens. and the English petition answer the target Omnipotens sempiterne Deus, da nobis. Read again from the exact registered PDF at 200 and 400 dpi on 2026-10-01; its SHA-256 was independently checked. This is the pre-1955 lay hand-missal English witness, not a modern approved liturgical translation."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = "O Almighty and eternal God, grant us an increase of faith, hope, and charity; and, that we may deserve what thou promisest, make us love what thou commandest. Thro'."
+
+[[entries]]
+mass = "pentecost-13"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+incipit = "Propitiare, Domine"
+witness = "cummiskey-1861"
+printed_page = "424-425"
+ia_leaf = 432
+ia_leaf_range = [432, 433]
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-pentecost-13--main--secret--all--1"
+publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-pentecost-13-15-en"
+publication_artifact_sha256 = "96f9fa76f10865337b611b179fed9508bf343eaeabed6775b3b7fb48ea1d9edb"
+publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-roman-1962-pentecost-13--main--secret--all--1"
+collated = "page-image and tracked transcription, 2026-10-01"
+collation_result = "confirmed"
+witness_note = "Begins as the last lines of printed p. 424 (running head `XIII. SUNDAY AFTER PENTECOST.`) under `SECRET.—` with no Latin cue, after the Offertory printed `Ps. xxxv.`, and ends at the head of p. 425; both leaves were opened. `par-don` closed up. Its position after the Offertory within Sunday XIII and the clauses for appeasement, pardon and granting requests answer Propitiare, Domine, populo tuo ... indulgentiam nobis tribuas, et postulata concedas. Read again from the exact registered PDF at 200 and 400 dpi on 2026-10-01; its SHA-256 was independently checked. This is the pre-1955 lay hand-missal English witness, not a modern approved liturgical translation."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = "Be thou propitious, O Lord, to thy people: and mercifully receive their offerings: that being appeased thereby, thou mayest grant us pardon, and hear our requests. Thro'."
+
+[[entries]]
+mass = "pentecost-13"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+incipit = "Sumptis, Domine"
+witness = "cummiskey-1861"
+printed_page = "425"
+ia_leaf = 433
+ia_leaf_range = [433, 433]
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-pentecost-13--main--postcommunion--all--1"
+publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-pentecost-13-15-en"
+publication_artifact_sha256 = "96f9fa76f10865337b611b179fed9508bf343eaeabed6775b3b7fb48ea1d9edb"
+publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-roman-1962-pentecost-13--main--postcommunion--all--1"
+collated = "page-image and tracked transcription, 2026-10-01"
+collation_result = "confirmed"
+witness_note = "Printed p. 425 (running head `XIV. SUNDAY AFTER PENTECOST.`) under `P. COMM. Sumptis.`, before the heading `XIV. SUNDAY after PENTECOST.`; `mys-teries` closed up. The printed Latin cue Sumptis. and the English petition answer the target Sumptis, Domine. Read again from the exact registered PDF at 200 and 400 dpi on 2026-10-01; its SHA-256 was independently checked. This is the pre-1955 lay hand-missal English witness, not a modern approved liturgical translation."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = "May these heavenly mysteries, O Lord, which we have received, advance our eternal redemption. Thro'."
+
+[[entries]]
+mass = "pentecost-14"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+incipit = "Custodi, Domine"
+witness = "cummiskey-1861"
+printed_page = "425"
+ia_leaf = 433
+ia_leaf_range = [433, 433]
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-pentecost-14--main--collect--all--1"
+publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-pentecost-13-15-en"
+publication_artifact_sha256 = "96f9fa76f10865337b611b179fed9508bf343eaeabed6775b3b7fb48ea1d9edb"
+publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-roman-1962-pentecost-14--main--collect--all--1"
+collated = "page-image and tracked transcription, 2026-10-01"
+collation_result = "confirmed"
+witness_note = "Printed p. 425 under `COLLECT. Custodi.` after the Introit `Protector noster` of the formulary headed `XIV. SUNDAY after PENTECOST.`. The printed Latin cue Custodi. and the English petition answer the target Custodi, Domine. Read again from the exact registered PDF at 200 and 400 dpi on 2026-10-01; its SHA-256 was independently checked. This is the pre-1955 lay hand-missal English witness, not a modern approved liturgical translation."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = "Preserve, O Lord, we beseech thee, thy Church by thy constant mercy: and since our weak mortality is continually falling without thy assistance, may thy grace withdraw it from what is hurtful, and direct it in the ways of salvation. Thro'."
+
+[[entries]]
+mass = "pentecost-14"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+incipit = "Concede nobis, Domine"
+witness = "cummiskey-1861"
+printed_page = "427"
+ia_leaf = 435
+ia_leaf_range = [435, 435]
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-pentecost-14--main--secret--all--1"
+publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-pentecost-13-15-en"
+publication_artifact_sha256 = "96f9fa76f10865337b611b179fed9508bf343eaeabed6775b3b7fb48ea1d9edb"
+publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-roman-1962-pentecost-14--main--secret--all--1"
+collated = "page-image and tracked transcription, 2026-10-01"
+collation_result = "confirmed"
+witness_note = "Printed p. 427 (running head `XV. SUNDAY AFTER PENTECOST.`) under `SECRET.—` with no Latin cue, after the Fourteenth Sunday's Offertory `Ps. xxxiii.` and before the heading `XV. SUNDAY after PENTECOST.`. Its position before the Communion within Sunday XIV and the clauses for the saving victim, cleansing sins and divine favour answer Concede nobis, Domine ... hostia salutaris ... purgatio delictorum ... propitiatio potestatis. Read again from the exact registered PDF at 200 and 400 dpi on 2026-10-01; its SHA-256 was independently checked. This is the pre-1955 lay hand-missal English witness, not a modern approved liturgical translation."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = "Grant, we beseech thee, O Lord, that this victim of salvation may both cleanse us from our sins, and render thy Majesty propitious to us. Thro'."
+
+[[entries]]
+mass = "pentecost-14"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+incipit = "Purificent semper"
+witness = "cummiskey-1861"
+printed_page = "427"
+ia_leaf = 435
+ia_leaf_range = [435, 435]
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-pentecost-14--main--postcommunion--all--1"
+publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-pentecost-13-15-en"
+publication_artifact_sha256 = "96f9fa76f10865337b611b179fed9508bf343eaeabed6775b3b7fb48ea1d9edb"
+publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-roman-1962-pentecost-14--main--postcommunion--all--1"
+collated = "page-image and tracked transcription, 2026-10-01"
+collation_result = "confirmed"
+witness_note = "Printed p. 427 under `P. COMM. Purificent.`. The printed Latin cue Purificent. and the English petition answer the target Purificent semper. Read again from the exact registered PDF at 200 and 400 dpi on 2026-10-01; its SHA-256 was independently checked. This is the pre-1955 lay hand-missal English witness, not a modern approved liturgical translation."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = "May these thy mysteries, O God, continually purify us and strengthen us: and procure us eternal salvation. Thro'."
+
+[[entries]]
+mass = "pentecost-15"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+incipit = "Ecclesiam tuam, Domine"
+witness = "cummiskey-1861"
+printed_page = "428"
+ia_leaf = 436
+ia_leaf_range = [436, 436]
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-pentecost-15--main--collect--all--1"
+publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-pentecost-13-15-en"
+publication_artifact_sha256 = "96f9fa76f10865337b611b179fed9508bf343eaeabed6775b3b7fb48ea1d9edb"
+publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-roman-1962-pentecost-15--main--collect--all--1"
+collated = "page-image and tracked transcription, 2026-10-01"
+collation_result = "confirmed"
+witness_note = "Printed p. 428 (running head `XV. SUNDAY AFTER PENTECOST.`) under `COLLECT. Ecclesiam.` after the Introit `Inclina, Domine`, which begins under the heading `XV. SUNDAY after PENTECOST.` on p. 427. The printed Latin cue Ecclesiam. and the English petition answer the target Ecclesiam tuam, Domine. Read again from the exact registered PDF at 200 and 400 dpi on 2026-10-01; its SHA-256 was independently checked. This is the pre-1955 lay hand-missal English witness, not a modern approved liturgical translation."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = "May thy continual mercy purify and defend thy church: and since without thee it cannot be safe, may it always be directed by the influence of thy grace. Thro'."
+
+[[entries]]
+mass = "pentecost-15"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+incipit = "Tua nos, Domine"
+witness = "cummiskey-1861"
+printed_page = "429"
+ia_leaf = 437
+ia_leaf_range = [437, 437]
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-pentecost-15--main--secret--all--1"
+publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-pentecost-13-15-en"
+publication_artifact_sha256 = "96f9fa76f10865337b611b179fed9508bf343eaeabed6775b3b7fb48ea1d9edb"
+publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-roman-1962-pentecost-15--main--secret--all--1"
+collated = "page-image and tracked transcription, 2026-10-01"
+collation_result = "confirmed"
+witness_note = "Printed p. 429 (running head `XVI. SUNDAY AFTER PENTECOST.`) under `SECRET.—` with no Latin cue, after the Offertory `Ps. xxxix.`; the page prints no conclusion. The book prints one Secret here, as the 1962 formulary has one. Its position before the Communion within Sunday XV and the clauses for the mysteries preserving us against the devil answer Tua nos, Domine, sacramenta custodiant ... contra diabolicos ... incursus. The lack of an English conclusion is a property of this historical witness, not an instruction to shorten the 1962 Latin. Read again from the exact registered PDF at 200 and 400 dpi on 2026-10-01; its SHA-256 was independently checked. This is the pre-1955 lay hand-missal English witness, not a modern approved liturgical translation."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = "May thy mysteries, O Lord, preserve us, and always defend us against the attacks of the devil."
+
+[[entries]]
+mass = "pentecost-15"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+incipit = "Mentes nostras"
+witness = "cummiskey-1861"
+printed_page = "429"
+ia_leaf = 437
+ia_leaf_range = [437, 437]
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-pentecost-15--main--postcommunion--all--1"
+publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-pentecost-13-15-en"
+publication_artifact_sha256 = "96f9fa76f10865337b611b179fed9508bf343eaeabed6775b3b7fb48ea1d9edb"
+publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-roman-1962-pentecost-15--main--postcommunion--all--1"
+collated = "page-image and tracked transcription, 2026-10-01"
+collation_result = "confirmed"
+witness_note = "Printed p. 429 under `P. COMM. Mentes.`, before the heading `XVI. SUNDAY after PENTECOST.`; `sensuali-ty` closed up. The cue answers the 1962 `Mentes nostras et corpora possideat`. The printed Latin cue Mentes. and the English petition answer the target Mentes nostras. Read again from the exact registered PDF at 200 and 400 dpi on 2026-10-01; its SHA-256 was independently checked. This is the pre-1955 lay hand-missal English witness, not a modern approved liturgical translation."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = "May the efficacy of these divine mysteries, O Lord, possess both our souls and bodies: that their effects, not our own sensuality, may always take the lead in us. Thro'."
 
 [[untranslated]]
 mass = "s-ioannis-mariae-vianney-confessoris"
@@ -5800,114 +6037,6 @@ note = "A historical English lead was formerly stored here, but no exact tracked
 
 [[untranslated]]
 mass = "pentecost-12"
-form_id = "main"
-proper = "Postcommunion"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"] }
-note = "A historical English lead was formerly stored here, but no exact tracked publication artifact and passage binding establishes text that may be served. The wording is quarantined until that binding exists."
-
-[[untranslated]]
-mass = "pentecost-13"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"] }
-note = "A historical English lead was formerly stored here, but no exact tracked publication artifact and passage binding establishes text that may be served. The wording is quarantined until that binding exists."
-
-[[untranslated]]
-mass = "pentecost-13"
-form_id = "main"
-proper = "Secret"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"] }
-note = "A historical English lead was formerly stored here, but no exact tracked publication artifact and passage binding establishes text that may be served. The wording is quarantined until that binding exists."
-
-[[untranslated]]
-mass = "pentecost-13"
-form_id = "main"
-proper = "Postcommunion"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"] }
-note = "A historical English lead was formerly stored here, but no exact tracked publication artifact and passage binding establishes text that may be served. The wording is quarantined until that binding exists."
-
-[[untranslated]]
-mass = "pentecost-14"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"] }
-note = "A historical English lead was formerly stored here, but no exact tracked publication artifact and passage binding establishes text that may be served. The wording is quarantined until that binding exists."
-
-[[untranslated]]
-mass = "pentecost-14"
-form_id = "main"
-proper = "Secret"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"] }
-note = "A historical English lead was formerly stored here, but no exact tracked publication artifact and passage binding establishes text that may be served. The wording is quarantined until that binding exists."
-
-[[untranslated]]
-mass = "pentecost-14"
-form_id = "main"
-proper = "Postcommunion"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"] }
-note = "A historical English lead was formerly stored here, but no exact tracked publication artifact and passage binding establishes text that may be served. The wording is quarantined until that binding exists."
-
-[[untranslated]]
-mass = "pentecost-15"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"] }
-note = "A historical English lead was formerly stored here, but no exact tracked publication artifact and passage binding establishes text that may be served. The wording is quarantined until that binding exists."
-
-[[untranslated]]
-mass = "pentecost-15"
-form_id = "main"
-proper = "Secret"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"] }
-note = "A historical English lead was formerly stored here, but no exact tracked publication artifact and passage binding establishes text that may be served. The wording is quarantined until that binding exists."
-
-[[untranslated]]
-mass = "pentecost-15"
 form_id = "main"
 proper = "Postcommunion"
 cycle = "all"
@@ -12008,7 +12137,7 @@ lang = "en"
 extent = "body"
 availability = "unavailable"
 reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+note = "No exact English exemplar is bound to this source-established Latin proper."
 
 [[untranslated]]
 mass = "comm-s-agnetis-virginis-martyris-secundo"
@@ -17932,3 +18061,27 @@ verified_artifact_page = 531
 verified_on_page = "2026-08-19"
 verified_printed_page = "522"
 note = "Read on leaf n530, printed p. 522, running head `29th NOVEMBER.`. This is the FIRST page of the witness's Proper of Saints, which opens at 29 November with the Vigil of St Andrew; the commemoration is printed inside it as `COLLECT. Deus, qui.-Of St. SATURNINUS.`, the day's own Collect standing above it on the preceding leaf. The Latin cue `Deus, qui` answers the 1962 incipit `Deus, qui nos beati Saturnini Martyris tui`. Kalendar p. 776 (leaf n784) confirms the join: `29 Vigil of S. Andrew, Com. of S. Saturninus, m. Simple 521`. Date agrees: 29 November in both books. A small ink mark stands before `Thro'` in the closing line (`by his merits. 'Thro'.`); it is scanner or press dirt and is not reproduced. The historical English and its exact Cummiskey page are registered, and a read-only audit found full-formula agreement with Pustet and the 1962 target. This row remains text-free until durable target-Latin and independent-witness passage bindings preserve that identity check."
+
+[[untranslated]]
+mass = "s-angelae-mericiae-virginis"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+lang = "en"
+extent = "body"
+availability = "unavailable"
+reason = { kind = "no-exemplar" }
+note = "No exact English exemplar is bound to this source-established Latin proper, added after page-image review on 2026-10-01. This is an unbound slot, not a claim that the historical witnesses omit the prayer."
+
+[[untranslated]]
+mass = "s-angelae-mericiae-virginis"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+lang = "en"
+extent = "body"
+availability = "unavailable"
+reason = { kind = "no-exemplar" }
+note = "No exact English exemplar is bound to this source-established Latin proper, added after page-image review on 2026-10-01. This is an unbound slot, not a claim that the historical witnesses omit the prayer."

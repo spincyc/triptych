@@ -143,6 +143,63 @@ def permitted_nonexact_fields() -> list[str]:
 
 
 class ProductionLedgerTests(unittest.TestCase):
+    def test_cold_review_repairs_are_bound_to_the_read_target_pages(self) -> None:
+        document = yaml.safe_load(
+            (CALENDARS / "roman-1962/propers.yaml").read_text(encoding="utf-8")
+        )
+        bodies = {
+            (mass["key"], proper["name"]): " ".join(proper["text"].split())
+            for section in document["sections"].values()
+            for mass in section["masses"]
+            for proper in mass.get("propers", [])
+            if "text" in proper
+        }
+        readings = {
+            ("comm-s-felicis-presbyteri-martyris", "Collect"): (
+                "Concede, quaesumus, omnipotens Deus:", "Per Dominum nostrum."
+            ),
+            ("ss-vincentii-anastasii-martyrum", "Secret"): (
+                "devotionis offerimus: quae", "Per Dominum."
+            ),
+            ("comm-s-petri-apostoli", "Postcommunion"): (
+                "munus oblatum: ut, sicut", "Qui tecum vivit et regnat in unitate."
+            ),
+            ("cathedrae-s-petri-apostoli", "Postcommunion"): (
+                "per illum tuae", "indulgentiae largitatem."
+            ),
+            ("s-ubaldi-episcopi-confessoris", "Collect"): (
+                "Auxilium tuum nobis, Domine, quaesumus, placatus impende:",
+                "Per Dominum.",
+            ),
+            ("s-petri-caelestini-papae-confessoris", "Collect"): (
+                "quique illum humilitati postponere docuisti:",
+                "Qui tecum vivit et regnat in unitate.",
+            ),
+            ("comm-s-petri-apostoli-2", "Postcommunion"): (
+                "per illum tuae", "Per Dominum."
+            ),
+        }
+        ledger = tomllib.loads(
+            (INVENTORIES / "roman-1962-proper-latin-provenance-v1.toml").read_text()
+        )
+        rows = {(row["mass"], row["proper"]): row for row in ledger["entries"]}
+        for key, (reading, conclusion) in readings.items():
+            with self.subTest(key=key):
+                self.assertIn(reading, bodies[key])
+                self.assertTrue(bodies[key].endswith(conclusion))
+                self.assertNotRegex(bodies[key], r"\bilium\b|sanitaria|Oratio|AUxflium|V -")
+                self.assertIn(
+                    ".recovery-2026-10-01-", rows[key]["verification_source_id"]
+                )
+        self.assertIn(
+            "nobis salutaria, te miserante, reddantur",
+            bodies["ss-vincentii-anastasii-martyrum", "Secret"],
+        )
+        self.assertIn(
+            "printed p. 446; artifact PDF p. 532",
+            rows["s-ubaldi-episcopi-confessoris", "Collect"]["publication_locator"],
+        )
+
     def test_ledgers_cover_every_direct_text_without_name_collapse(self) -> None:
         paths = [
             CALENDARS / calendar / "propers.yaml"
@@ -156,7 +213,9 @@ class ProductionLedgerTests(unittest.TestCase):
             "postconciliar": (329, 4),
             # 1112 since 2026-10-01: the KI-054 page reading landed the
             # Agnes secundo Secret, a witness-gap slot with no stub row before.
-            "roman-1962": (1112, 5),
+            # 1114 later that day: St Angela Merici's own Secret and
+            # Postcommunion, new slots, each with a new collated row.
+            "roman-1962": (1114, 5),
             "roman-pre-1955": (0, 0),
         }
         for calendar, (total, repeated) in expected.items():
@@ -175,7 +234,8 @@ class ProductionLedgerTests(unittest.TestCase):
             self.assertEqual(repeated, sum(key.occurrence > 1 for key in records))
 
     def test_publication_loader_validates_production_source_metadata(self) -> None:
-        expected = {"postconciliar": 329, "roman-1962": 1112, "roman-pre-1955": 1112}
+        # 1114 since 2026-10-01: St Angela Merici's Secret and Postcommunion.
+        expected = {"postconciliar": 329, "roman-1962": 1114, "roman-pre-1955": 1114}
         for calendar, count in expected.items():
             records, problems = publication_records(CALENDARS, calendar, INVENTORIES)
             self.assertEqual([], problems)
@@ -213,8 +273,10 @@ class ProductionLedgerTests(unittest.TestCase):
         )
         # 1066 since 2026-10-01: the 32 KI-054 bodies, each read on the 1962
         # page image and on a page image of the 1862 Pustet or the 1922 Mame.
-        self.assertEqual(1066, len(permitted))
-        self.assertEqual(1066, len(roman))
+        # 1068 later that day: St Angela Merici's own Secret and Postcommunion,
+        # read on the 1962 page image and on the 1862 Pustet's (and the Mame's).
+        self.assertEqual(1068, len(permitted))
+        self.assertEqual(1068, len(roman))
         target_artifact = (
             "artifact.catholic-church.missale-romanum."
             "vatican-typica-1962.cmaa-facsimile-pdf"
@@ -351,7 +413,10 @@ class ProductionLedgerTests(unittest.TestCase):
         # 30 since 2026-10-01: the 29 KI-054 rows resting on the 1862 name its
         # registered facsimile PDF beside the text layer, because the words were
         # read on that printing's page images, not on its damaged text layer.
-        self.assertEqual(30, len(supplemented), supplemented)
+        # 32 later that day: St Angela Merici's Secret and Postcommunion, read
+        # on the 1862's appendix leaves n813-n814, do the same.
+        # Seven further cold-review repairs bind the 1862 page image as well.
+        self.assertEqual(39, len(supplemented), supplemented)
 
         work = tomllib.loads((EDITORIAL_PROJECTION / "work.toml").read_text())
         self.assertEqual("Triptych contributors", work["responsible"])

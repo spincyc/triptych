@@ -151,6 +151,9 @@ class CountingKeyTests(unittest.TestCase):
         )
         counted = propers.census_of(document)
 
+        # 1513, 3443 and 3443 since 2026-10-01: St Angela Merici's own Secret
+        # and Postcommunion, which the 1962 prints at nos. 2698 and 2699, are
+        # proper slots of her own instead of the Common's showing through.
         self.assertEqual(
             {
                 row["kind"]: (row["masses"], row["propers"])
@@ -160,13 +163,13 @@ class CountingKeyTests(unittest.TestCase):
                 "seasonal": (128, 1352),
                 "christological": (8, 96),
                 "marian": (18, 124),
-                "sanctoral": (307, 1511),
+                "sanctoral": (307, 1513),
                 "common": (30, 358),
             },
         )
         self.assertEqual(counted["masses"], 491)
-        self.assertEqual(counted["propers"], 3441)
-        self.assertEqual(counted["substantive_propers"], 3441)
+        self.assertEqual(counted["propers"], 3443)
+        self.assertEqual(counted["substantive_propers"], 3443)
         self.assertEqual(counted["propers_in_forms"], 182)
         self.assertEqual(counted["scripture_bearing_propers"], 2194)
         self.assertEqual(counted["slot_names"], 120)
@@ -767,6 +770,32 @@ class EnglishCoverageTests(unittest.TestCase):
             / "src/sources/inventories/roman-1962-proper-translations-v1.toml"
         )
         document = tomllib.loads(path.read_text(encoding="utf-8"))
+        # These nine prayers previously had historical English leads but no
+        # complete publication binding. The 15th Sunday Secret prints no
+        # conclusion; recovery must preserve that witness extent.
+        recovered = {
+            (row["mass"], row["proper"]): row
+            for row in document["entries"]
+            if row["mass"] in {"pentecost-13", "pentecost-14", "pentecost-15"}
+            and row["proper"] in {"Collect", "Secret", "Postcommunion"}
+        }
+        self.assertEqual(9, len(recovered))
+        self.assertEqual(
+            "May thy mysteries, O Lord, preserve us, and always defend us "
+            "against the attacks of the devil.",
+            recovered["pentecost-15", "Secret"]["translations"][0]["text"],
+        )
+        self.assertEqual(
+            [432, 433], recovered["pentecost-13", "Secret"]["ia_leaf_range"]
+        )
+        angela = {
+            row["proper"]: row["reason"]["kind"]
+            for row in document["untranslated"]
+            if row["mass"] == "s-angelae-mericiae-virginis"
+        }
+        self.assertEqual(
+            {"Secret": "no-exemplar", "Postcommunion": "no-exemplar"}, angela
+        )
         rows = [
             row
             for row in document.get("entries") or []

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-pentecost-13-15-en"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Only historical English wording published at Philadelphia in 1861 is transcribed here, public domain in the United States by publication date. A faithful transcription originates no new copyright. No Google or Internet Archive header, watermark, page image, OCR or annotation is reproduced. The registered scan remains remote verification evidence, not the publication payload."
+rights_jurisdiction = "United States"
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+transformation = "The nine Collect, Secret and Postcommunion bodies of Sundays XIII-XV after Pentecost were read on the exact registered PDF page images at 200 and 400 dpi on 2026-10-01, printed pp. 423-425 and 427-429, artifact pages 432-434 and 436-438 (IA leaves n431-n433 and n435-n437). This cold reading agrees with the retained independent lane-overlay readings. Join printed line wraps and line-break hyphenation; retain wording, case, punctuation and conclusion length; normalize the printed apostrophe in Thro to the straight apostrophe used by the translation overlay. Omit headings, Latin cues and page furniture. Pentecost 15 Secret has no printed conclusion, and none is added. Running heads anticipate the following Sunday on several pages; each prayer is assigned by the actual formulary boundaries and its own Latin cue where present."
+retrieved = "2026-10-01"
+sha256 = "96f9fa76f10865337b611b179fed9508bf343eaeabed6775b3b7fb48ea1d9edb"
+byte_size = 2141
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/roman-1962-pentecost-13-15-en/roman-1962-pentecost-13-15-en.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "One header and nine historical-English rows, each addressed by its own publication passage and a separate page-image verification passage. The overlay argues the exact 1962 target identity. This bounded derivative closes the nine KI-031 rights-withheld rows without changing the older immutable temporal-orations-en artifact."
