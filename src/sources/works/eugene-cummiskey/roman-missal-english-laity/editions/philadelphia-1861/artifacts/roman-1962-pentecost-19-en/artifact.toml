@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-pentecost-19-en"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The four rows reproduce only historical English wording printed in an 1861 Philadelphia edition, which is in the United States public domain by publication date. They contain no Google or Internet Archive header, watermark, page image, OCR, markup or annotation. A faithful project transcription of public-domain wording creates no new copyright. The exact Google-digitized PDF remains remote and unresolved; it is visual verification evidence, not this publication payload."
+rights_jurisdiction = "United States"
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+transformation = "Page-image transcription of the English column of the Nineteenth Sunday after Pentecost at printed pp. 445-448 (artifact pages 454-457, IA leaves n453-n456), read 2026-10-01 at 200 and 400 dpi in the exact registered scan PDF, whose bytes were re-downloaded that day and hashed to its registered SHA-256. The Collect, Secret and Postcommunion wording agrees word for word with the separately registered checked derivative pentecost-19-checked-english (2026-09-28) and with lines 167-169 of temporal-orations-en; the Introit's psalm verse and Glory cue, which that derivative omits, were read on the page and agree with the item's registered OCR layer (ia-djvu-ocr), the only other reading. Only historical English bodies were retained: headings, Latin, page furniture and Google matter were omitted; line-break hyphenation (dis-tress, mer-ciful) was closed up and line breaks normalized to single spaces. Three normalizations are made and only these: the Introit's two-line drop capital `I AM` is set `I am`; the versicle glyph before `Glory` is set `V.`; and the book's abbreviated conclusion is set `Thro'.` with a straight apostrophe, the form this repository's 1962 translation overlay uses. The Postcommunion's `obedient` is printed with damaged type at the line end of p. 448 and is read as the word the 2026-09-28 check and the OCR context give. The Introit row is the complete printed Introit -- antiphon, the Psalm 77 verse and the Glory cue -- because the 1962 target body carries the verse and Gloria Patri; it is not the antiphon-only body of pentecost-19-checked-english."
+retrieved = "2026-10-01"
+sha256 = "8e9dc4e6490fe4bb726e64264247a8d1c58cc05da2c2b05b72168b68dd6a5e0f"
+byte_size = 1081
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/roman-1962-pentecost-19-en/roman-1962-pentecost-19-en.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "One header and four historical-English rows, one per Roman-1962 target of pentecost-19: Introit, Collect, Secret and Postcommunion, in that order on physical lines 2-5. Columns follow roman-1962-recovered-en without its alignment_status column: each row's target identity is argued on its own overlay entry in src/sources/inventories/roman-1962-proper-translations-v1.toml, which binds it through a single-line publish passage beside a page-image verify passage. Registered 2026-10-01 so that the overlay's four rights-withheld rows for this Mass could become positive entries: pentecost-19-checked-english carries the same English but names its column `text`, which the overlay's publication binding cannot read, and its Introit is the antiphon only. That artifact and its four passages are unchanged."

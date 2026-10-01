@@ -89,6 +89,10 @@ CUMMISKEY_AUGUSTINE_PUBLICATION_TSV = (
     CUMMISKEY_EDITION.parent
     / "artifacts/augustine-collect-en/augustine-collect-en.tsv"
 )
+CUMMISKEY_PENTECOST_19_PUBLICATION_TSV = (
+    CUMMISKEY_EDITION.parent
+    / "artifacts/roman-1962-pentecost-19-en/roman-1962-pentecost-19-en.tsv"
+)
 ANTECEDENT_EDITION = (
     ROOT
     / "src/sources/works/catholic-church/missale-romanum/editions"
@@ -668,11 +672,14 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
         # English exemplar was bound, and so move from the source-established
         # set to the quarantined no-exemplar rows beside the two that already
         # had Latin: 663 -> 66, 734 -> 137, 362 -> 959 and 2 -> 599.
+        # On 2026-10-01 the four pentecost-19 rights-withheld rows (Introit,
+        # Collect, Secret, Postcommunion) became publication-bound entries:
+        # 959 -> 955 and 348 -> 344.
         self.assertEqual(len(source_established), 66)
         self.assertEqual(len(expected), 137)
         self.assertTrue(expected.issubset(typed))
         quarantined = set(typed) - expected
-        self.assertEqual(len(quarantined), 959)
+        self.assertEqual(len(quarantined), 955)
         self.assertEqual(
             {
                 (
@@ -694,7 +701,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
             },
             {
                 ("no-exemplar", None): 599,
-                ("rights-withheld", CUMMISKEY_SOURCE): 348,
+                ("rights-withheld", CUMMISKEY_SOURCE): 344,
                 ("witness-gap", CUMMISKEY_SOURCE): 12,
             },
         )
@@ -809,7 +816,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
             )
             and "publication_artifact_id" in row
         }
-        self.assertEqual(len(expected), 61)
+        self.assertEqual(len(expected), 65)
         self.assertEqual(set(bound), expected)
         self.assertTrue(expected.isdisjoint(self.exact_gap_identities()))
         self.assertEqual(
@@ -825,6 +832,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
             CUMMISKEY_PALM_PUBLICATION_TSV,
             CUMMISKEY_RECOVERED_PUBLICATION_TSV,
             CUMMISKEY_AUGUSTINE_PUBLICATION_TSV,
+            CUMMISKEY_PENTECOST_19_PUBLICATION_TSV,
         )
         publication_artifacts = {
             load(path.parent / "artifact.toml")["id"]: load(

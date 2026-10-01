@@ -607,7 +607,8 @@ class TheCorpusItself(unittest.TestCase):
             if row.get("reason", {}).get("source_id") == EDITION
             and row.get("reason", {}).get("kind") == "rights-withheld"
         ]
-        self.assertEqual(len(unavailable), 348)
+        # 348 until 2026-10-01, when the four pentecost-19 rows were bound.
+        self.assertEqual(len(unavailable), 344)
         self.assertTrue(all("text" not in row for row in unavailable))
 
     def test_holy_week_is_outside_the_second_witness(self):
