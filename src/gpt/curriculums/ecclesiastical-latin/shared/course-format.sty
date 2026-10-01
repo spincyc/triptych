@@ -329,13 +329,11 @@
     \refstepcounter{worksheet}%
     \setcounter{passage}{0}%
     \ifsolutions
-      \section*{Solution #1 — #4}%
-      \phantomsection
+      \section*{\phantomsection Solution #1 — #4}%
       \CourseUnnumberedSectionContents{Solution #1 — #4}%
       \markboth{Solution #1 — #4}{Solution #1 — #4}%
     \else
-      \section*{Worksheet #1 — #4}%
-      \phantomsection
+      \section*{\phantomsection Worksheet #1 — #4}%
       \CourseUnnumberedSectionContents{Worksheet #1 — #4}%
       \markboth{Worksheet #1 — #4}{Worksheet #1 — #4}%
     \fi

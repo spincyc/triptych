@@ -132,6 +132,7 @@ GROUPS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
         (
             "check-curriculum-structure",
             "check-generation-metadata",
+            "check-pdf-anchors",
             "check-promised-deliverables",
             "check-web-edition",
             "complete-missal",
@@ -192,6 +193,7 @@ REACHES: dict[str, str] = {
     "check-content-preflight": NOTHING,
     "check-curriculum-structure": NOTHING,
     "check-generation-metadata": NOTHING,
+    "check-pdf-anchors": NOTHING,
     "check-promised-deliverables": NOTHING,
     "check-proper-components": NOTHING,
     "check-proper-identity": NOTHING,

@@ -1,0 +1,36 @@
+#!/bin/sh
+# Test for `tools/tpt check-pdf-anchors`: exit 0 = pass (the stable gate).
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/check-pdf-anchors"
+fixtures="$repo/tools/tests/fixtures/pdf-anchors"
+
+"$tool" --help >/dev/null
+
+# A document whose every contents line and bookmark owns its anchor passes.
+"$tool" "$fixtures/anchored" >/dev/null
+"$tool" --json "$fixtures/anchored" | grep -q '"status":"ok"'
+
+# Each way a heading borrowed an anchor is refused, and the run exits 1.
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+if "$tool" "$fixtures/borrowed" > "$sandbox/out.txt"; then exit 1; fi
+grep -q "points at table.1" "$sandbox/out.txt"
+grep -q "share the anchor section\*.4" "$sandbox/out.txt"
+grep -q "carries TeX markup in its title" "$sandbox/out.txt"
+grep -q "bookmark 'First' points at Doc-Start" "$sandbox/out.txt"
+
+# A second line on an anchor is refused even under the same title, and an
+# anchor some other counter stepped (a worksheet's) is not a heading's.
+printf '%s\n' '\relax' \
+  '\@writefile{toc}{\contentsline {section}{Notes}{3}{section*.2}\protected@file@percent }' \
+  '\@writefile{toc}{\contentsline {section}{Notes}{9}{section*.2}\protected@file@percent }' \
+  '\@writefile{toc}{\contentsline {section}{Worksheet A}{5}{worksheet.4}\protected@file@percent }' \
+  > "$sandbox/probe.aux"
+if "$tool" "$sandbox/probe" > "$sandbox/probe.txt"; then exit 1; fi
+grep -q "share the anchor section\*.2" "$sandbox/probe.txt"
+grep -q "points at worksheet.4, not a heading anchor" "$sandbox/probe.txt"
+
+# A stem with neither build file is an input error, not a pass.
+if "$tool" "$sandbox/missing" 2>/dev/null; then exit 1; fi

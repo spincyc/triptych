@@ -98,14 +98,18 @@ person-and-object count.
 \begingroup
 % The role routes are a continuous printable section, so a ruled heading is
 % sufficient; seven full coach boxes added almost a page of frame padding.
+% A card's page break is decided before its anchor, label and contents line,
+% which \rolecardstart precedes, so a card that moves to the next page takes
+% its bookmark and its index entry with it.
+\newcommand{\rolecardstart}{\par\medskip\Needspace{0.27\textheight}}
 \renewcommand{\rolecard}[2]{%
-  \par\medskip\Needspace{0.27\textheight}
   \noindent\colorbox{black}{%
     \parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
       \color{white}\large\bfseries\strut #1}}\par
   \smallskip
   #2\par}
 
+\rolecardstart
 \phantomsection
 \label{solemn-role:mc:first}
 \addcontentsline{toc}{subsection}{MC --- master of ceremonies}
@@ -144,6 +148,7 @@ count every person and object before anyone unvests.
 enough. Never send two servers to repair the same missed action.}
 \label{solemn-role:mc:last}
 
+\rolecardstart
 \phantomsection
 \label{solemn-role:th:first}
 \addcontentsline{toc}{subsection}{Th --- thurifer}
@@ -185,6 +190,7 @@ branch and check the thurible only in the sacristy.
 This model always has a separate Th and Bb; it has no combined-role route.}
 \label{solemn-role:th:last}
 
+\rolecardstart
 \phantomsection
 \label{solemn-role:bb:first}
 \addcontentsline{toc}{subsection}{Bb --- boat bearer}
@@ -221,6 +227,7 @@ Offer the boat only at the named preparation; after every handoff, know its
 next station before moving.}
 \label{solemn-role:bb:last}
 
+\rolecardstart
 \phantomsection
 \label{solemn-role:a1:first}
 \addcontentsline{toc}{subsection}{A1 --- first acolyte}
@@ -265,6 +272,7 @@ Never leave the Communion plate or a cruet without its named receiver.
 \CommunionPatenSafetyDiagram}
 \label{solemn-role:a1:last}
 
+\rolecardstart
 \phantomsection
 \label{solemn-role:a2:first}
 \addcontentsline{toc}{subsection}{A2 --- second acolyte}
@@ -306,6 +314,7 @@ Match A1 at stationary candle formations; travel single file and check the
 path before carrying the folded veil.}
 \label{solemn-role:a2:last}
 
+\rolecardstart
 \phantomsection
 \label{solemn-role:tb:first}
 \addcontentsline{toc}{subsection}{Tb1--Tb4 --- torchbearers}
@@ -341,6 +350,7 @@ The MC marks the departure branch before Mass; never decide it while holding a
 lighted torch.}
 \label{solemn-role:tb:last}
 
+\rolecardstart
 \phantomsection
 \label{solemn-role:cb:first}
 \addcontentsline{toc}{subsection}{Cb --- optional cross-bearer}

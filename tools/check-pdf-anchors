@@ -59,8 +59,12 @@ EXAMPLES = {
     ),
 }
 
-FOREIGN_ANCHOR = re.compile(
-    r"(?:Doc-Start|table\.|figure\.|equation\.|page\.|Hfootnote\.|footnote\.|Item\.|cite\.)"
+# Only a sectioning command's own anchor names a heading. A denylist of the
+# usual borrowings would pass an anchor a template steps for some other counter
+# just before its headings (a worksheet's, say), so the rule is an allowlist.
+HEADING_ANCHOR = re.compile(
+    r"(?:part|chapter|section|subsection|subsubsection|paragraph|subparagraph|appendix)"
+    r"\*?\.[^\s]+$"
 )
 CONTENTSLINE = re.compile(r"\\@writefile\s*\{toc\}\s*\{\s*\\contentsline\s*\{(?P<level>[^{}]*)\}")
 BOOKMARK = re.compile(r"\\BOOKMARK\s*\[[^]]*\]\[[^]]*\]\{(?P<anchor>[^{}]*)\}")
@@ -165,9 +169,11 @@ def check(stem: Path) -> tuple[list[str], dict[str, int]]:
             if not anchor:
                 problems.append(f"{path}: {kind} '{name}' has no anchor")
                 continue
-            if FOREIGN_ANCHOR.match(anchor):
+            if not HEADING_ANCHOR.match(anchor):
                 problems.append(f"{path}: {kind} '{name}' points at {anchor}, not a heading anchor")
-            elif anchor in owners and owners[anchor] != name:
+            elif anchor in owners:
+                # Two lines on one anchor means one of them borrowed it, even
+                # when both carry the same title (a second "Notes", say).
                 problems.append(
                     f"{path}: {kind}s '{owners[anchor]}' and '{name}' share the anchor {anchor}"
                 )
