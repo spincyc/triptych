@@ -1,6 +1,30 @@
 schema_version = 1
 
 [[deliverables]]
+id = "corpus-links-and-known-issues-2026-10-01"
+owner = "PROJECT-WORK.md"
+promise = "Fix the PDF hyperlink and bookmark defect in every installed publication of both providers, with a gate that keeps it fixed, and fix every open known issue recorded in this workstream and in PROJECT-WORK.md's open lists (or record, with its reason, any item that needs a maintainer decision), then push to main and verify the deployment."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "links-every-pdf"
+  criterion = "In every installed PDF, every internal heading link and bookmark lands on the page of its heading with the anchor at or just above it, no heading link targets a table, figure or document-start anchor, and no bookmark title carries TeX markup; a gate refuses a build that regresses."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "known-issues-resolved"
+  criterion = "Every open item of the verified known-issues inventory is fixed and checked, or recorded with the reason it needs a maintainer decision; the register's lists are reconciled."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "corpus-live"
+  criterion = "Every changed publication is rebuilt, reviewed as its change requires and installed byte-identical to the verified build; the three deploy gates pass; the work reaches origin/main by fast-forward; the Pages run and the live artifacts are verified."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "proper-study-pdf-anchors-2026-10-01"
 owner = "PROJECT-WORK.md"
 promise = "Make every contents link, bookmark and section label in the proper-study PDFs built with src/common/propers-format.tex land on its own heading, by fixing the shared format and the References anchors, and rebuild, reinstall and redeploy the 27 PDFs of the nine affected Claude and GPT leaves on the maintainer's 2026-10-01 authorization."

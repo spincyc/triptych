@@ -7,6 +7,33 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-01.
 
+## Corpus PDF links and every known issue, 2026-10-01
+
+<!-- promised-deliverable: corpus-links-and-known-issues-2026-10-01 -->
+
+After the proper-study contents-link repair was deployed, the maintainer
+instructed on 2026-10-01: "fix the defect comprehensively ; fix any known
+issues ; push to main". Asked which known issues, the maintainer chose "Also
+the register's open lists": this workstream's open items and every open
+"known issues" or "left standing" item recorded in this register.
+
+The defect is wider than the proper studies. A scan of all 245 installed PDFs
+found contents links and bookmarks landing on the wrong page or anchor in
+many families. `common/preamble` is the only place hyperref is loaded, and
+every template that loads titlesec does so after it, so hyperref never
+installs titlesec's anchor hooks: unnumbered headings get no anchor, and a
+numbered heading's anchor is set where its counter steps, which stays on the
+previous page whenever the heading moves to the next (an article's §5.1
+bookmark opens page 9; the heading is at the top of page 10). Other
+families add a starred heading's contents line without its own anchor, and
+some bookmark titles carry TeX quotes (``…''). The comprehensive fix
+installs the hooks from the preamble whenever titlesec loads, gives every
+manual contents line its own anchor, cleans the bookmark titles, adds a gate,
+and regenerates and redeploys every affected PDF of both providers.
+
+**In progress.** The work list of open known issues is being inventoried and
+verified against the current tree.
+
 ## Proper-study PDF contents links, 2026-10-01
 
 <!-- promised-deliverable: proper-study-pdf-anchors-2026-10-01 -->
