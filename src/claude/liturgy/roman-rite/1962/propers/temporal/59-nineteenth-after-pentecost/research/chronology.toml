@@ -318,6 +318,24 @@ locus = "Ps.140.2"
 inherited = true
 scope = "Ps"
 
+[[elements.claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.claims.reaches]]
+locus = "Ps.140.2"
+inherited = true
+scope = "Ps.137 Ps.140"
+
 [[elements.publication_claims]]
 relation = "composition"
 subject = "critical.psalms.latest-composition-boundary"
@@ -335,6 +353,24 @@ sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bi
 locus = "Ps.140.2"
 inherited = true
 scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.140.2"
+inherited = true
+scope = "Ps.137 Ps.140"
 
 [[elements]]
 key = "alleluia"
@@ -387,9 +423,9 @@ key = "gospel"
 name = "Gospel"
 refs = ["Matthew 22:1-14"]
 loci = ["Matt.22.1", "Matt.22.2", "Matt.22.3", "Matt.22.4", "Matt.22.5", "Matt.22.6", "Matt.22.7", "Matt.22.8", "Matt.22.9", "Matt.22.10", "Matt.22.11", "Matt.22.12", "Matt.22.13", "Matt.22.14"]
-status = "composition-only"
+status = "dated"
 reason = ""
-publication_status = "composition-only"
+publication_status = "dated"
 publication_reason = ""
 
 [[elements.claims]]
@@ -890,6 +926,89 @@ locus = "Matt.22.9"
 inherited = true
 scope = "Matt"
 
+[[elements.claims]]
+relation = "narrated-event"
+subject = "life-of-christ.parable-of-the-marriage-feast"
+title = "The parable of the marriage feast, proposed in the Temple"
+label = "derived A.D. 29 from February, A.U.C. 782- Passover, 782"
+date = "29 A.D."
+precision = "interval"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "derived"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-six-seven-nine", "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text"]
+
+[[elements.claims.reaches]]
+locus = "Matt.22.1"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.10"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.11"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.12"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.13"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.14"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.2"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.3"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.4"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.5"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.6"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.7"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.8"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.9"
+inherited = false
+scope = "Matt.22.1-14"
+
 [[elements.publication_claims]]
 relation = "composition"
 subject = "composition.gospel-of-matthew"
@@ -1387,6 +1506,89 @@ scope = "Matt"
 locus = "Matt.22.9"
 inherited = true
 scope = "Matt"
+
+[[elements.publication_claims]]
+relation = "narrated-event"
+subject = "life-of-christ.parable-of-the-marriage-feast"
+title = "The parable of the marriage feast, proposed in the Temple"
+label = "derived A.D. 29 from February, A.U.C. 782- Passover, 782"
+date = "29 A.D."
+precision = "interval"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "derived"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-six-seven-nine", "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text"]
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.1"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.10"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.11"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.12"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.13"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.14"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.2"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.3"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.4"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.5"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.6"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.7"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.8"
+inherited = false
+scope = "Matt.22.1-14"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.9"
+inherited = false
+scope = "Matt.22.1-14"
 
 [[elements]]
 key = "offertory"
@@ -1416,6 +1618,24 @@ locus = "Ps.137.7"
 inherited = true
 scope = "Ps"
 
+[[elements.claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.claims.reaches]]
+locus = "Ps.137.7"
+inherited = true
+scope = "Ps.137 Ps.140"
+
 [[elements.publication_claims]]
 relation = "composition"
 subject = "critical.psalms.latest-composition-boundary"
@@ -1433,6 +1653,24 @@ sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bi
 locus = "Ps.137.7"
 inherited = true
 scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.137.7"
+inherited = true
+scope = "Ps.137 Ps.140"
 
 [[elements]]
 key = "secret"

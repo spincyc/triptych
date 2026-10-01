@@ -1595,18 +1595,30 @@ units:
     title: The Book of Wisdom
     scope: {book: Wis}
     note: >-
-      TWO REIGNS, TWO CLAIMS, AND THE GAP BETWEEN THEM IS NOT ASSERTED. Gigot
-      offers a choice between the reign of Ptolemy IV Philopator (221-204 B.C.)
-      and that of Ptolemy VII Physicon (145-117 B.C.) and declines to make it.
-      Until 2026-09-02 this unit held ONE claim whose stored interval ran
-      221-117, which spans both reigns and the fifty-nine years between them --
-      203 to 146 -- that the source's own sentence excludes, since its whole
-      argument is that only under those two depraved princes were the Egyptian
-      Jews persecuted. The note conceded the widening and the machine value did
-      not, and a consumer computing with the date got the years the article
-      rules out. The two reigns are now two `disputed` claims, each bounded by
-      the years the article prints for it, and neither is `preferred`, because
-      the article chooses neither.
+      TWO REIGNS, TWO CLAIMS, AND WHAT EACH REIGN DATES. Gigot offers a choice
+      between the reign of Ptolemy IV Philopator (221-204 B.C.) and that of
+      Ptolemy VII Physicon (145-117 B.C.) and declines to make it. Until
+      2026-09-02 this unit held ONE claim whose stored interval ran 221-117,
+      spanning both reigns and the fifty-nine years between them, which the
+      article's argument excludes as the time the writer has in view: only
+      under those two princes were the Egyptian Jews persecuted. That repair
+      made the reigns two `disputed` claims, neither `preferred`, because the
+      article chooses neither -- and stored each reign as the interval in
+      which the WRITING fell. CORRECTED 2026-10-01 (known issue KI-015, first
+      recorded in attribution-context-review.md): the reigns date the
+      persecution the writer "has in view", not the writing, and the same
+      paragraph allows that the work "was published after the demise of those
+      princes" (Gigot citing Lesêtre, adopted as a possibility in his own
+      voice). What the article supports about the writing is therefore a lower
+      bound on each reading: no earlier than the reign the writer has in view,
+      with no upper bound stated. Each claim is now a `no-earlier-than`
+      boundary at the first year the article prints for its reign, and its
+      label keeps the article's own words for the reign; the reign's end is no
+      longer asserted as a bound on the writing. The two readings stay
+      `disputed`. The years between the reigns are excluded only as the time
+      in view, which is not a relation a composition unit can carry, and no
+      setting is authored here because the article identifies no passage of
+      the book that describes it.
     dates:
       - profile: catholic-traditional-v1
         disposition: disputed
@@ -1635,9 +1647,11 @@ units:
           the book ... But this view of the matter never was unanimous in the Early
           Christian Church." No Solomonic date for Wisdom stands on this source.
         date:
-          precision: interval
-          from: {year: 221, era: bc}
-          to: {year: 204, era: bc}
+          precision: boundary
+          boundary:
+            direction: no-earlier-than
+            endpoint: {year: 221, era: bc}
+            statement: in or after the time of Ptolemy IV Philopator (221-204 B.C.)
           label: "the time of ... Ptolemy IV Philopator (221-204 B.C.)"
       - profile: catholic-traditional-v1
         disposition: disputed
@@ -1648,15 +1662,19 @@ units:
           (221-204 B.C.), or Ptolemy VII Physicon (145-117 B.C.)".
         sources: [artifact.catholic-encyclopedia.volume-15.new-york-1912.newadvent-15666a-999fbc07]
         note: >-
-          The second of the two reigns Gigot offers, recorded on its own bounds
-          for the reason the subject note gives: an interval spanning both would
+          The second of the two reigns Gigot offers, recorded on its own for
+          the reason the subject note gives: an interval spanning both would
           assert the years between them, and the article's argument is that the
           persecution it reads in the book belongs to one of these two reigns and
-          not to the time between.
+          not to the time between. Like the first, it bounds the writing from
+          below only, because the article allows publication after the reign
+          (subject note, 2026-10-01).
         date:
-          precision: interval
-          from: {year: 145, era: bc}
-          to: {year: 117, era: bc}
+          precision: boundary
+          boundary:
+            direction: no-earlier-than
+            endpoint: {year: 145, era: bc}
+            statement: in or after the time of Ptolemy VII Physicon (145-117 B.C.)
           label: "the time of ... Ptolemy VII Physicon (145-117 B.C.)"
 
   - id: composition.book-of-ecclesiasticus

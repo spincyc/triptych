@@ -40,6 +40,7 @@ The review record, which asserts nothing about Scripture and is read by no tool:
 | `final-acceptance-howlett.md` | the whole-artifact appendix: every claim citing Howlett, with its grounding sentence, source voice and admissibility ruling |
 | `final-acceptance-sloet.md` | the whole-artifact appendix for Sloet, separating the Petavius table from Sloet's own |
 | `final-acceptance-stub-evidence.md` | every conclusion that could have rested on the broken `--bible` stub, re-resolved through the real machinery |
+| `remote-delivery-recheck-2026-10-01.md` | five cited remote deliveries re-fetched after their hashes drifted: what changed, what did not, and why no claim was rebound |
 
 `coverage.tsv` is written by `tools/tpt scripture-chronology build` and gated
 by `check`, which refuses a stale table rather than rebuilding it. Do not

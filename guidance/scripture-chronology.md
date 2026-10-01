@@ -676,6 +676,16 @@ prohibitions:
   Gospel's narrated event are two assertions on one locus, not one.
 - **`retrospective-event` is not `narrated-event`.** A passage that recalls the
   Exodus does not narrate it.
+- **`utterance` is not a later recitation.** The words a passage quotes were
+  spoken when the passage says they were; a psalm sung again centuries later
+  is being received, not uttered. Drum's "Psalms" says Our Lord "recited the
+  Hallels at the last Passover", and no Gospel quotes them there ("a hymn
+  being said", Matthew 26:30). Binding Psalms 112–117 (Vulgate) to the Last
+  Supper as `utterance` would date their eighty-five verses by an act of
+  reception, and a page would print it as when they were spoken. The
+  corpus therefore holds no such binding (2026-10-01, closing an enrichment
+  the population lane of 2026-08-26 left unowned); liturgical reception is
+  not a temporal relation of the text.
 
 Additional relations may be added when research proves one semantically
 necessary. Synonyms may not.
@@ -736,7 +746,12 @@ from it, because an anchor is checked for existence and never computed with
 reaches keep whatever else reaches them and nothing moves in coverage: the
 accession verses answer `composition-only` from their book's composition unit.
 **[verified]** `validate` remarks on such an event exactly as it does on any
-event no binding reaches (§16) — a remark, and not an error.
+event no binding reaches (§16) — a remark, and not an error. A *dated* event no
+binding reaches is held for a stated reason — the anchor or derivation input
+other claims are measured from, or a subject no passage of Scripture narrates —
+and `UnboundEventTests` in `tools/tests/test_chronology.py` declares each one
+with its reason, in both directions, so a newly unbound event is dispositioned
+rather than remarked on and forgotten.
 
 **A textual unit still requires a claim**, and the loader refuses one without.
 A unit exists only to carry a textual-history date over an extent, so a dateless
@@ -1354,6 +1369,39 @@ it does not import the 1962 calendar, source owner, or research judgments.
   audit. That display is regenerated from the corpus, never hand-authored.
   Schema 3 gives comparison groups their own sealed macros; those macros carry
   the requested profile and source ids as well as the ordinary claim metadata.
+- **What the concise display may print** (2026-10-01, after three published
+  defects). It respells and never weakens: a span whose source label hedges
+  it ("about", "around", "circa", "approximately", a printed "c." or "ca.")
+  prints "c.", because a span's endpoints cannot say the source hedged them
+  and "around A.D. 80–100" had printed as an exact span. A `duration` says how
+  long and never when (§10.0), so it prints the source's own words for the
+  length in quotation marks, then "(duration)" — "Historical setting:
+  “seventy years” (duration)" — and never a second label after the
+  relation's ("Prophecy given: Duration: …"), nor the duration's longer
+  source sentence as though it were the page's own words; that sentence stays
+  in the record. Source wording that continues a sentence, after a subject
+  title and comma, keeps its own case ("…, post-A.D. 70 date"). A candidate
+  whose display repeats, ignoring case, one already shown in its group is
+  shown once, under the strongest disposition stating it: Luke 2:42 and the
+  Catholic Encyclopedia repeating it are one value, and the Holy Family's
+  Communion had printed "Preferred: When he was twelve years old;
+  alternative: When he was twelve years old". The repeating claim's sealed
+  macro stays in the TeX with an empty display, so no assertion leaves the
+  artifact. A declared comparison is headed by its relation and then, in
+  parentheses, the requested evidence profile's reader-facing name and "for
+  comparison":
+  "Composition (Catholic critical chronology, for comparison): The Greek
+  Gospel of Matthew in the NABRE introduction, post-A.D. 70 date." The name
+  is the profile's own `display.reader_name` in `profiles.yaml`, read rather
+  than restated; a profile declaring none cannot be compared on a page, and
+  the projection refuses it. The visible disposition word of a comparison is
+  computed from its claims. No internal key is visible: the profile id, the
+  chronology status (`composition-only`) and the source ids stay in the
+  sealed macro arguments, which is how a displayed critical assertion still
+  identifies its profile. A source is named only as the corpus subject's own
+  title names it, and an official Catholic introduction so named is
+  editorial scholarship (§4.8), never a definition. `ReaderFacingDisplayTests`
+  in `tools/tests/test_proper_chronology_annotations.py` holds each rule.
 - The publication projection leads with traditional attribution and the
   passage's identified setting, event or retrospect, then textual history,
   then the distinct prophetic referent. This is presentation order, not a
@@ -1588,11 +1636,11 @@ $ ./tools/tpt scripture-chronology coverage --profile catholic-comprehensive-v1 
 profile catholic-comprehensive-v1
 universe distinct-scripture-content
 verses 37171
-runs 1964
+runs 1965
 status attestation-only 1792
 status attribution-only 898
-status composition-only 21476
-status dated 13005
+status composition-only 21462
+status dated 13019
 status not-alignable 0
 status research-pending 0
 status textually-distinct 0
@@ -1600,13 +1648,13 @@ status undated-in-tradition 0
 relation composition 26400
 relation final-formation 1249
 relation historical-setting 2934
-relation narrated-event 7977
+relation narrated-event 7991
 relation prophecy-given 2134
 relation prophetic-referent 297
 relation retrospective-event 413
 relation superscription-setting 277
 relation textual-attestation 2489
-relation traditional-attribution 1394
+relation traditional-attribution 1412
 relation utterance 1476
 system greek 1356
 system vulgate 35809
@@ -1617,9 +1665,9 @@ universe-limitation note missing_dates and --require-date apply only to loci enu
 unenumerable-system nab this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
 unenumerable-system nova-vulgata this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
 unenumerable-system septuagint this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
-multiple-relations 9202
-event-assertions 13005
-alternatives 14378
+multiple-relations 9234
+event-assertions 13019
+alternatives 14396
 ```
 
 The address-universe companion checks alternate printed numberings as separate

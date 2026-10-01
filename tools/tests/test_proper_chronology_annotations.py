@@ -881,5 +881,188 @@ class AnnotationProjectionTests(unittest.TestCase):
                 self.assertEqual(json.loads(done.stderr)["code"], "refused")
 
 
+NINETEENTH = f"{COLLECTION}/temporal/59-nineteenth-after-pentecost"
+SEVENTEENTH = f"{COLLECTION}/temporal/57-seventeenth-after-pentecost"
+
+
+def _claim(precision: str, date: str, label: str, **fields) -> chronology.Claim:
+    values = dict(
+        relation="composition", subject="fixture.subject", title="Fixture",
+        label=label, date=date, precision=precision, disposition="preferred",
+        answerability="answerable", basis_class="traditional-catholic",
+        profile="catholic-traditional-v1", sources=("fixture",), reaches=(),
+    )
+    values.update(fields)
+    return chronology.Claim(**values)
+
+
+class ReaderFacingDisplayTests(unittest.TestCase):
+    """The three display defects published Date cells carried until 2026-10-01.
+
+    Each printed what the corpus holds in a form a reader could not use: a
+    duration labelled twice and its source sentence printed as the page's own
+    words ("Prophecy given: Duration: From Ezek. xxix, 17 it appears ..."); a
+    comparison headed by an internal profile id and a chronology status
+    ("Comparison (catholic-critical-v1) -- Composition -- composition-only");
+    and a span whose source said "around" printed as an exact span.
+    """
+
+    def test_a_duration_is_quoted_once_and_never_labelled_twice(self) -> None:
+        claim = _claim(
+            "duration",
+            "From Ezek. xxix, 17 it appears that he prophesied during at "
+            "least twenty-two years",
+            "he prophesied during at least twenty-two years",
+            relation="prophecy-given",
+        )
+        self.assertEqual(
+            chronology.concise_display_label(claim),
+            "\N{LEFT DOUBLE QUOTATION MARK}he prophesied during at least "
+            "twenty-two years\N{RIGHT DOUBLE QUOTATION MARK} (duration)",
+        )
+        # The corpus's own duration, as the Seventeenth Sunday's Offertory
+        # (Dan 9) prints it, in the text view and in the visible TeX.
+        found = chronology.annotations(chronology.dossier(SEVENTEENTH))
+        offertory = next(e for e in found.elements if e.key == "offertory")
+        setting = next(g for g in offertory.groups
+                       if g.relation == "historical-setting")
+        self.assertEqual(
+            chronology._group_display(setting),
+            "Historical setting: \N{LEFT DOUBLE QUOTATION MARK}seventy years"
+            "\N{RIGHT DOUBLE QUOTATION MARK} (duration).",
+        )
+        tex = chronology._tex_group(setting)
+        self.assertIn("{seventy years}{``seventy years'' (duration)}", tex)
+        for rendered in (chronology._group_display(setting), tex,
+                         chronology.render_annotations_text(found)):
+            self.assertNotIn("Duration:", rendered)
+            self.assertNotIn("serve the king of Babylon", rendered.split(
+                "\\chronologyannotationclaim")[0])
+
+    def test_a_label_saying_around_keeps_its_hedge(self) -> None:
+        span = "80 A.D. to 100 A.D."
+        for label in ("around A.D. 80–100", "circa A.D. 80-100",
+                      "c. A.D. 80–100", "ca. 80-100 A.D.",
+                      "from the year 80 to 100 (approximately)"):
+            with self.subTest(label=label):
+                self.assertEqual(
+                    chronology.concise_display_label(
+                        _claim("interval", span, label)),
+                    "c. A.D. 80–100")
+        # Not hedges: an exact span, and the "C." of ante Christum.
+        self.assertEqual(chronology.concise_display_label(
+            _claim("interval", span, "A.D. 80–100")), "A.D. 80–100")
+        self.assertEqual(chronology.concise_display_label(
+            _claim("interval", "485 B.C. to 424 B.C.",
+                   "A. M. 3519, A. C. 485-424")), "B.C. 485–424")
+        # The corpus's own "around A.D. 80–100", in the Nineteenth Sunday's
+        # Epistle comparison, which printed "A.D. 80-100" until 2026-10-01.
+        found = chronology.annotations(chronology.dossier(NINETEENTH))
+        epistle = next(e for e in found.elements if e.key == "epistle")
+        compared = next(g for g in epistle.groups if g.requested_profile)
+        self.assertEqual([c.label for c in compared.claims],
+                         ["around A.D. 80–100"])
+        self.assertTrue(compared.claims[0].display_label.endswith(
+            ", c. A.D. 80–100"))
+
+    def test_a_hedge_on_a_season_is_not_a_hedge_on_the_year(self) -> None:
+        """"about Easter A.D. 57" states the year and hedges the season; the
+        year is stored exact, and the display does not make it approximate."""
+        self.assertEqual(chronology.concise_display_label(
+            _claim("year", "57 A.D.", "about Easter A.D. 57")), "A.D. 57")
+
+    def test_source_wording_after_a_subject_title_continues_the_sentence(self) -> None:
+        boundary = _claim("boundary", "post-A.D. 70 date", "post-A.D. 70 date",
+                          title="The Greek Gospel of Matthew in the NABRE introduction")
+        self.assertEqual(chronology.concise_display_label(boundary),
+                         "Post-A.D. 70 date")
+        self.assertEqual(
+            chronology._annotation_claim(boundary, name_subject=True).display_label,
+            "The Greek Gospel of Matthew in the NABRE introduction, "
+            "post-A.D. 70 date")
+
+    def test_a_comparison_is_named_for_a_reader_and_not_by_its_id(self) -> None:
+        found = chronology.annotations(chronology.dossier(NINETEENTH))
+        by_key = {e.key: e for e in found.elements}
+        gospel = next(g for g in by_key["gospel"].groups if g.requested_profile)
+        epistle = next(g for g in by_key["epistle"].groups if g.requested_profile)
+        self.assertEqual(
+            chronology._group_display(gospel),
+            "Composition (Catholic critical chronology, for comparison): The "
+            "Greek Gospel of Matthew in the NABRE introduction, post-A.D. 70 "
+            "date.")
+        self.assertEqual(
+            chronology._group_display(epistle),
+            "Composition (Catholic critical chronology, for comparison) -- "
+            "disputed: Ephesians under the later-disciple hypothesis "
+            "(approximate), c. A.D. 80–100.")
+        for group in (gospel, epistle):
+            tex = chronology._tex_group(group, comparison_enabled=True)
+            # The id and the chronology status stay sealed for audit ...
+            self.assertTrue(tex.startswith(
+                r"\chronologyannotationcomparisongroup{catholic-critical-v1}"
+                r"{composition}{composition-only}{"))
+            # ... and what a reader sees carries neither.
+            visible = re.sub(
+                r"\\chronologyannotationreach(?:\{[^{}]*\}){3}", "", tex)
+            visible = re.sub(
+                r"\\chronologyannotationcomparisonclaim(?:\{[^{}]*\}){7}"
+                r"\{([^{}]*)\}", r"\1", visible)
+            visible = visible.partition("{composition-only}")[2]
+            self.assertNotIn("catholic-critical-v1", visible)
+            self.assertNotIn("composition-only", visible)
+            self.assertNotIn("Comparison (", visible)
+
+    def test_one_value_two_sources_is_shown_once_and_sealed_twice(self) -> None:
+        """KI-012, reproduced 2026-10-01 at 1962 identity 11 (Holy Family):
+        Luke 2:42 (preferred) and the Catholic Encyclopedia repeating it
+        (alternate) printed as a disagreement with itself."""
+        holy_family = f"{COLLECTION}/temporal/11-holy-family"
+        found = chronology.annotations(chronology.dossier(holy_family))
+        communion = next(e for e in found.elements if e.key == "communion")
+        event = next(g for g in communion.groups
+                     if g.relation == "narrated-event")
+        self.assertEqual(
+            sorted((c.disposition, c.label) for c in event.claims),
+            [("alternate", "When he was twelve years old"),
+             ("preferred", "when he was twelve years old")])
+        self.assertEqual(chronology._group_display(event),
+                         "Event: When he was twelve years old.")
+        tex = chronology._tex_group(event)
+        self.assertEqual(tex.count(r"\chronologyannotationclaim"), 2)
+        self.assertIn("{preferred}{when he was twelve years old}"
+                      "{When he was twelve years old}", tex)
+        self.assertIn("{alternate}{When he was twelve years old}{}.", tex)
+        self.assertNotIn("alternative", tex)
+
+    def test_every_evidence_profile_has_a_reader_name(self) -> None:
+        profiles = corpus.load().profiles
+        for identifier, entry in profiles.items():
+            if entry.get("kind", "evidence") != "evidence":
+                continue
+            with self.subTest(profile=identifier):
+                name = (entry.get("display") or {}).get("reader_name", "")
+                self.assertTrue(name.strip())
+                self.assertNotIn(identifier, name)
+                self.assertNotRegex(name, r"-v[0-9]+\b")
+
+    def test_a_comparison_profile_without_a_reader_name_is_refused(self) -> None:
+        from unittest import mock
+
+        real = corpus.load()
+        profiles = {key: dict(value) for key, value in real.profiles.items()}
+        profiles["catholic-critical-v1"]["display"] = {
+            key: value
+            for key, value in profiles["catholic-critical-v1"]["display"].items()
+            if key != "reader_name"
+        }
+        anonymous = real._replace(profiles=profiles)
+        with mock.patch.object(chronology._chronology, "load",
+                               return_value=anonymous):
+            with self.assertRaisesRegex(chronology.ChronologyWiringError,
+                                        "display.reader_name"):
+                chronology.dossier(NINETEENTH)
+
+
 if __name__ == "__main__":
     unittest.main()

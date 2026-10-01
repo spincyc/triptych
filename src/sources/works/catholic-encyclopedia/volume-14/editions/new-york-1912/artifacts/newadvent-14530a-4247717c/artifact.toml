@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-4247717c"
+edition_id = "edition.catholic-encyclopedia.volume-14.new-york-1912"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "remote"
+rights_status = "public-domain"
+rights_basis = "The Catholic Encyclopedia article is in the public domain in the United States: its volume was published between 1907 and 1912, so the longest term available to it under 17 U.S.C. 304 expired at the end of 2007 at the latest. What is not republished from this repository is New Advent's own layer of these exact bytes — the site's navigation, styling, advertising markup, support solicitation and \"About this page\" apparatus — which is why the delivery stays remote. That apparatus encumbers the page, not the article printed inside it. Settled once in src/sources/inventories/catholic-encyclopedia-rights-v1.toml."
+rights_jurisdiction = "United States"
+source_url = "https://www.newadvent.org/cathen/14530a.htm"
+provenance = "Exact New Advent HTML response acquired directly over HTTPS with curl on 2026-10-01 by the chronology correction lane answering known issue KI-014, and hashed before use. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-10-01"
+sha256 = "4247717c9272ed6cd6d86da845fd5386576ca1e5c1c15d07047ac99bb488a7e6"
+byte_size = 76687
+indexable = false
+notes = "Durand, Alfred. \"The New Testament.\" The Catholic Encyclopedia. Vol. 14. New York: Robert Appleton Company, 1912. A SECOND DELIVERY OF A PAGE THIS EDITION ALREADY REGISTERS: 76,687 bytes against the 77,046 registered on 2026-08-26 at artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c, whose SHA-256 a fresh delivery no longer reproduces. THE ARTICLE IS UNCHANGED: the transformation recorded on artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c-article-text, re-applied by script to these bytes on 2026-10-01, reproduces that retained file byte for byte (SHA-256 c4e12a4a6127e8af8b7ac8e2176448f78a2be2cb2080ab5ffb6f885f8fcaa259, 52,109 bytes). The whole difference therefore lies in New Advent's page apparatus outside the article; the deficit is the uniform 359 bytes recorded for this class at artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05485a-e144286e, and the host still sends an x-mod-pagespeed header. That is an inference from the uniform deficit, not a diff, because the earlier bytes were not retained. NO SECOND COPY OF THE ARTICLE TEXT IS RETAINED HERE: a reader without the network opens artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c-article-text, and registering a second extraction of an unchanged article would put the same words in the tree twice. Registered to record the drift (guidance/sources.md: changed bytes receive a new artifact record, and consumers remain pinned until reviewed); the chronology claims citing artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c stay pinned to it, because the words they rest on are the retained extraction of those bytes. Three further fetches the same day returned these exact bytes."

@@ -476,6 +476,15 @@ profiles:
         No numeric confidence, no model score, and no silent harmonisation of
         two claims into a third nobody asserted.
     display:
+      reader_name: traditional Catholic chronology
+      reader_name_rule: >-
+        What a page shows a reader in place of this profile's id, where a
+        generated Date cell has to name the profile at all: in an explicitly
+        declared comparison, as "<Relation> (<reader_name>, for comparison)".
+        It is written mid-sentence, in lower case except for proper words, and
+        it names the evidence policy, not a source; the id stays in the
+        generated record and the sealed macro arguments. Added 2026-10-01,
+        when the comparison label printed the id itself.
       rule: >-
         A source's own printed form is preserved in "label" and is never the
         machine truth. Anno Mundi figures are recorded in the era they were
@@ -528,7 +537,11 @@ profiles:
         years the source's own test has just eliminated. life-of-christ
         .crucifixion holds three such claims and composition.book-of-wisdom two,
         one for each of the two reigns Gigot offers, because the fifty-nine
-        years between those reigns are exactly what his argument excludes.
+        years between those reigns are exactly what his argument excludes as
+        the time the writer has in view. (Since 2026-10-01 each Wisdom claim
+        bounds the writing from below only, at its reign's first year: the
+        reign dates the persecution in view, and the article allows that the
+        book was published after it.)
         A CONCESSIVE BOUND IS TAKEN AT THE CONCESSION. "At the end of the reign
         of Xerxes I (485-465 B.C.)" states a bound at the END of that reign; the
         parenthesis identifies the reign and does not open the window. The
@@ -756,6 +769,16 @@ profiles:
         No numeric confidence, silent midpoint, union of alternatives into a
         source-less range, or conversion of an open horizon into invented bounds.
     display:
+      reader_name: Catholic critical chronology
+      reader_name_rule: >-
+        What a page shows a reader in place of this profile's id, where a
+        generated Date cell has to name the profile at all: in an explicitly
+        declared comparison, as "<Relation> (<reader_name>, for comparison)".
+        It is written mid-sentence, in lower case except for proper words, and
+        it names the evidence policy, not a source; the id stays in the
+        generated record and the sealed macro arguments, which is how the
+        `profiles` rule below is met. Added 2026-10-01, when the comparison
+        label printed the id itself.
       rule: >-
         Preserve the source's own label and hedge. A consumer may add a concise
         relation label, but it may not make a broad or conditional horizon look

@@ -75,6 +75,12 @@ finding, not a corrected or accepted date. The same article distinguishes the
 Solomonic literary persona from actual authorship, so this revision gives
 Wisdom no automatic date for Solomon's lifetime.
 
+*Disposed 2026-10-01 (known issue KI-015).* The finding was right: each reign
+now bounds the writing from below only, as a `no-earlier-than` boundary at the
+reign's first year, and the reign's end is no longer asserted; the unit's own
+note records why. The correction is unreviewed and awaits the scheduled
+independent audit of the corpus.
+
 ## Publication boundary
 
 The generated annotations put traditional attribution and identified settings

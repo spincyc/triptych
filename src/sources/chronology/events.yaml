@@ -514,6 +514,66 @@ events:
               The named input has exactly one claim: Maas's A.U.C. 782 = A.D.
               29 equivalence. It is separate from the historical Crucifixion
               event and its several disputed dates.
+  - id: life-of-christ.parable-of-the-marriage-feast
+    title: The parable of the marriage feast, proposed in the Temple
+    note: >-
+      Added 2026-10-01 (known issue KI-013) on the pattern of the Naim and
+      Bread of Life events above, and unreviewed until the scheduled
+      independent audit of the corpus. Maas's same Tuesday paragraph also
+      places the question of Our Lord's authority, the parables of the two
+      sons and of the wicked husbandmen, the three snares, the question of
+      Christ's sonship, the woes, the widow's mite and the prophecies of that
+      evening on the same day. None of those passages is bound to this event,
+      which is the marriage-feast parable alone; a later binding of them
+      needs its own subject or a deliberate widening of this one, not a
+      silent reuse.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis_class: derived
+        basis: >-
+          Maas's article "Jesus Christ" in the Catholic Encyclopedia (vol. 8,
+          New York 1910) heads the Ninth Journey "February, A.U.C. 782-
+          Passover, 782", and in the week that closes it, after the entry into
+          Jerusalem and the Monday, says: "On Tuesday ... Jesus answers the
+          enemies' questions as to His authority; then He proposes the parable
+          of the two sons, of the wicked husbandmen, and of the marriage
+          feast." The same article expressly equates A.U.C. 782 with A.D. 29;
+          applying that source-internal reckoning gives A.D. 29 for both
+          bounds of the journey's interval.
+        sources:
+          - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-six-seven-nine
+          - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text
+        note: >-
+          The passage record verifies the Ninth Journey's heading and the
+          A.U.C. 782 = A.D. 29 equation against the printed page images; the
+          Tuesday sentence is read in the retained article text and was not
+          collated against the page images. The source prints the journey's
+          interval only in Anno Urbis Conditae; the A.D. value is an explicit
+          rank-7 derivation from the dedicated single-claim Maas calibration
+          anchor, exactly as for the Naim and Bread of Life events. Equal year
+          endpoints mean the event falls somewhere within the stated part of
+          A.D. 29. "Tuesday" is Maas's day within the closing week and is kept
+          in the basis rather than encoded: the source names no date of the
+          month, and the Passion's own year and day are disputed on the
+          Crucifixion event, from which nothing here is computed.
+        date:
+          precision: interval
+          from: {year: 29, era: ad}
+          to: {year: 29, era: ad}
+          label: >-
+            derived A.D. 29 from February, A.U.C. 782- Passover, 782
+          derivation:
+            rule: >-
+              Use Maas's express equivalence A.U.C. 782 = A.D. 29 as the
+              source-internal epoch and subtract 753 from each A.U.C. year;
+              preserve the source's February and Passover bounds without
+              converting them into months or days it does not state.
+            inputs: [chronology.maas-auc-782-ad-29-calibration]
+            note: >-
+              The named input has exactly one claim: Maas's A.U.C. 782 = A.D.
+              29 equivalence. It is separate from the historical Crucifixion
+              event and its several disputed dates.
   - id: life-of-christ.last-supper
     title: The Last Supper
     dates:
@@ -6023,6 +6083,32 @@ events:
           precision: year
           from: {year: 597, era: bc}
           label: "597 B.C."
+      # Added 2026-10-01 (known issue KI-016); unreviewed until the scheduled
+      # independent audit of the corpus.
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        basis_class: traditional-catholic
+        basis: >-
+          Joseph Schets's "Ezekiel" (Catholic Encyclopedia, New York, 1909)
+          opens by placing the prophet among the deported: he "was one of the
+          priests who, in the year 598 B.C., had been deported together with
+          Joachim as prisoners from Jerusalem (2 Kings 24:12-16; cf. Ezekiel
+          33:21, 40:1)." The year is stated in the article's own voice and
+          no method is given for it.
+        sources: [artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070]
+        note: >-
+          One year from Reid's 597 above, and not harmonised with it: two
+          rank-6 articles print two years for one deportation, and each is
+          kept as its source printed it. Both stay behind Scripture's own
+          regnal dateline, which is why neither is preferred. The article's
+          "Joachim" is this event's Joachin, not his father Joakim: it cites
+          2 Kings 24:12-16, and its next sentence dates Ezechiel's call by "the
+          captivity of Joachim", which is Ezechiel 1:2's "the captivity of king
+          Joachin".
+        date:
+          precision: year
+          from: {year: 598, era: bc}
+          label: "in the year 598 B.C."
 
   - id: israel.exile.sedecias-reign
     title: The reign of Sedecias
@@ -6599,6 +6685,52 @@ events:
           precision: approximate-year
           from: {year: 397, era: bc}
           label: "might have taken place as late as 397 B.C."
+      # Added 2026-10-01 (known issue KI-016): the two horns of the question
+      # Van Hoonacker's "Malachias" poses, each its own disputed claim under
+      # `display.stated_bounds`; unreviewed until the scheduled independent
+      # audit of the corpus.
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis_class: traditional-catholic
+        basis: >-
+          Albin Van Hoonacker's "Malachias (Malachi)" (Catholic Encyclopedia,
+          New York, 1910) poses "the question as to whether the mission of
+          Esdras, related in I Esd., vii-x, falls in the seventh year of
+          Artaxerxes I (458 B.C.), that is to say, thirteen years before the
+          first mission of Nehemias, or in the seventh year Artaxerxes II (398
+          B.C.), and therefore after Nehemias." This is the first of its two
+          candidate years.
+        sources: [artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09562b-38fb6fcd]
+        note: >-
+          The article argues the question from Scripture -- Esdras's own
+          account of his reform (Ezra 10; 7:14-8:36) set against the state of
+          affairs Malachias describes -- and closes on a question rather than a
+          ruling, so neither year it names is preferred here. Its argument
+          leans towards the later year; that lean is recorded, not resolved.
+          The year agrees with the 458 of Reid and Meistermann above.
+        date:
+          precision: year
+          from: {year: 458, era: bc}
+          label: "the seventh year of Artaxerxes I (458 B.C.)"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis_class: traditional-catholic
+        basis: >-
+          The same sentence of Van Hoonacker's "Malachias (Malachi)" gives the
+          second candidate: the mission of Esdras falls "in the seventh year
+          Artaxerxes II (398 B.C.), and therefore after Nehemias."
+        sources: [artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09562b-38fb6fcd]
+        note: >-
+          One year from Souvay's "as late as 397 B.C." above, and not
+          harmonised with it. Sixty years after the article's other candidate,
+          which is why the two are two claims and not an interval
+          (`display.stated_bounds`). The ground the article gives is
+          Scripture's, not a profane synchronism, so the figure is answered
+          with; the regnal year is printed as settled.
+        date:
+          precision: year
+          from: {year: 398, era: bc}
+          label: "the seventh year Artaxerxes II (398 B.C.)"
 
   - id: israel.restoration.nehemias-mission
     title: The mission of Nehemias and the restoration of the Holy City
@@ -6653,6 +6785,38 @@ events:
             of: israel.restoration.esdras-return
             statement: Thirteen years later
           label: "Thirteen years later"
+      # Added 2026-10-01 (known issue KI-016), preserved and not answered
+      # with; unreviewed until the scheduled independent audit of the corpus.
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        answerability: preserved
+        basis_class: modern-critical
+        basis: >-
+          Albin Van Hoonacker's "Book of Nehemiah" (Catholic Encyclopedia, New
+          York, 1911) gives the year and its ground together: "It had long been
+          the opinion of most historians of Israel that the Artaxerxes of
+          Nehemiah was certainly the first of that name, and that consequently
+          the first mission of Nehemiah fell in the year B.C. 445. The Aramaic
+          papyri of Elephantine, recently published by Sachau, put this date
+          beyond the shadow of a doubt."
+        sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10737c-8f80f067]
+        note: >-
+          PRESERVED, NOT ANSWERED, on the disclosure test of profiles.yaml. The
+          two grounds the article offers for the year are the opinion of "most
+          historians of Israel", which is that party's claim and not the
+          article's (guidance §15.1, case 3), and the Elephantine papyri, a
+          documentary synchronism through "the seventeenth year of Darius II (B.
+          C. 408)" that the article says puts the date "beyond the shadow of a
+          doubt". Scripture supplies the regnal year, "the twentieth year of
+          Artaxerxes the king" (2 Esdras 2:1); what fixes WHICH Artaxerxes, and
+          so the B.C. year, is presented as the papyri, and no admissible ground
+          is offered as primary, so under `corroboration_is_not_the_ground` the
+          papyri are the ground. The answerable 444 of Howlett and Souvay above
+          stand beside it, one year apart, and are not adjusted to it.
+        date:
+          precision: year
+          from: {year: 445, era: bc}
+          label: "the first mission of Nehemiah fell in the year B.C. 445"
 
   - id: israel.restoration.nehemias-second-mission
     title: The second mission of Nehemias
@@ -6672,6 +6836,36 @@ events:
           precision: approximate-year
           from: {year: 430, era: bc}
           label: "the second time about 430 B.C."
+      # Added 2026-10-01 (known issue KI-016), preserved and not answered
+      # with; unreviewed until the scheduled independent audit of the corpus.
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        answerability: preserved
+        basis_class: modern-critical
+        basis: >-
+          Albin Van Hoonacker's "Book of Nehemiah" (Catholic Encyclopedia, New
+          York, 1911) bounds the second mission by the end of the first: "After
+          the expiration of his first mission, Nehemiah had returned to Susa in
+          the thirty-second year of Artaxerxes (B. C. 433; 13:6). Some time
+          after, he was charged with a fresh mission to Judea".
+        sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10737c-8f80f067]
+        note: >-
+          PRESERVED, NOT ANSWERED, for the reason recorded on the first
+          mission's B.C. 445 from the same article: the regnal year is
+          Scripture's, "the two and thirtieth year of Artaxerxes" (2 Esdras
+          13:6), and the B.C. year rests on the article's identification of
+          Nehemiah's Artaxerxes, which the same article says in terms rests on
+          the Elephantine papyri -- "the Artaxerxes of Nehemiah, therefore, was
+          the predecessor, and not the successor, of Darius II". The figure is a
+          lower bound on this mission, not its date, and it agrees with Souvay's
+          answerable "about 430" above rather than disputing it.
+        date:
+          precision: boundary
+          boundary:
+            direction: after
+            endpoint: {year: 433, era: bc}
+            statement: some time after the return to Susa in B.C. 433
+          label: "returned to Susa in the thirty-second year of Artaxerxes (B. C. 433; 13:6). Some time after"
 
   - id: israel.maccabees.seleucid-era
     title: "The Seleucid era, 'the kingdom of the Greeks'"

@@ -69,6 +69,33 @@ bindings:
       - bible:clementine-vulgate:Ps.94.1
       - bible:douay-rheims:Heb.4.7
       - bible:douay-rheims:Ps.97.1
+  # Added 2026-10-01 (known issue KI-013), on the row above's own rule and
+  # unreviewed until the scheduled independent audit of the corpus.
+  - relation: traditional-attribution
+    event: israel.monarchy.david-traditional-era
+    scope:
+      - {book: Ps, chapter: 137}
+      - {book: Ps, chapter: 140}
+    note: >-
+      Two further psalms whose inspected titles name David, under the rule of
+      the row above and with its qualifications: the attribution identifies
+      the figure, and his regnal reference era neither dates the writing nor
+      supplies an occasion. The tracked Douay-Rheims heads Ps.137.1 "For David
+      himself", and the tracked Clementine Vulgate "Ipsi David". The tracked
+      Clementine Vulgate heads Ps.140.1 "Psalmus David"; the tracked
+      Douay-Rheims prints no heading there, so the Clementine heading supplies
+      this binding, as it does for Ps.94 above. Neither title names an occasion,
+      and Drum's "Psalms", read in full for the psalter gap row, dates neither
+      psalm, so each keeps that row's answer for its writing. Of the other
+      three psalms the 1962 Nineteenth Sunday after Pentecost appoints, Ps.77
+      is headed "Understanding for Asaph", which Drum says of the Asaph psalms
+      "pertain to widely-separated periods of Jewish history", and Ps.104 and
+      Ps.118 carry no author in their titles; none of the three receives an
+      attribution here.
+    sources:
+      - bible:douay-rheims:Ps.137.1
+      - bible:clementine-vulgate:Ps.137.1
+      - bible:clementine-vulgate:Ps.140.1
 
   # === bind-passion ====================================================
   # --- The Passion, harmonised ------------------------------------------------
@@ -5079,6 +5106,27 @@ bindings:
     sources:
       - bible:douay-rheims:John.6.52
       - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-three-five
+  # Added 2026-10-01 (known issue KI-013); unreviewed until the scheduled
+  # independent audit of the corpus.
+  - relation: narrated-event
+    event: life-of-christ.parable-of-the-marriage-feast
+    scope:
+      - {book: Matt, chapter: 22, first: 1, last: 14}
+    note: >-
+      Matthew 22:1-14 is the complete narrated episode: "And Jesus answering,
+      spoke again in parables to them, saying", through the parable's close,
+      "For many are called, but few are chosen." It continues the answer
+      begun when "he was come into the temple" (Matthew 21:23), and Maas names
+      the same parable among those Jesus proposes there on the Tuesday. The
+      narrated event is Our Lord speaking the parable; the king, the wedding
+      and the guests are its story and are dated by nothing. The derived date
+      is held once on the event, not repeated in this binding.
+    sources:
+      - bible:douay-rheims:Matt.22.1
+      - bible:douay-rheims:Matt.22.14
+      - bible:douay-rheims:Matt.21.23
+      - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-six-seven-nine
+      - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text
   # === lane osee ===
   # Two relations over one book, and one event holding the dates once. These rows
   # replace a whole-book composition unit that carried the ministry's range as a

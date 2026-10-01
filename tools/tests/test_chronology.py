@@ -1090,11 +1090,14 @@ bindings:
         bindings = [item for item in held.bindings if item.event == subject]
         self.assertEqual({item.relation for item in bindings},
                          {"traditional-attribution"})
+        # Ps.137 and Ps.140 were added on 2026-10-01 (KI-013) from their
+        # inspected titles; Ps.140's heading is the Clementine's, as Ps.94's is.
+        attributed = (33, 39, 70, 85, 94, 97, 137, 140)
         self.assertEqual(
             {str(span) for item in bindings for span in item.scope},
-            {f"Ps.{chapter}" for chapter in (33, 39, 70, 85, 94, 97)},
+            {f"Ps.{chapter}" for chapter in attributed},
         )
-        for chapter in (33, 39, 70, 85, 94, 97):
+        for chapter in attributed:
             for verse in (1, _chronology.verse_counts()[("Ps", chapter)]):
                 with self.subTest(chapter=chapter, verse=verse):
                     answer = _chronology.chronology(f"Ps.{chapter}.{verse}")
@@ -4940,6 +4943,13 @@ class QuotedBasisTests(unittest.TestCase):
             "The NABRE Matthew introduction, freshly acquired and read in full "
             "on 2026-09-21. The post-A.D. 70 phrase is in the restricted "
             "source, not its retained summary; artifact hash and route are recorded.")),
+        # Declared 2026-10-01: the unit landed on 2026-09-28 without this
+        # entry, and this test had failed on it since.
+        "unit:critical.ephesians-later-disciple#0": (1, (
+            "The NABRE Ephesians introduction, read in full in its 2026-09-28 "
+            "web state. The 'around A.D. 80-100' phrase is in the restricted "
+            "source; its artifact records the hash and the public route, and "
+            "protected bytes are not retained in Git.")),
         "event:apostolic-age.exile-of-saint-john-to-patmos#0": (2, (
             "Eusebius, Church History III.18.1, in the NPNF translation New "
             "Advent hosts. The artifact is registered and hashed but its bytes "
@@ -6043,13 +6053,25 @@ class StatedBoundsTests(unittest.TestCase):
                           "which the article eliminates")
 
     def test_the_two_wisdom_reigns_are_two_claims(self) -> None:
+        """Two readings, never one span across both -- and, since 2026-10-01
+        (KI-015), neither reign is stored as the interval the WRITING fell in.
+        Gigot's reigns date the persecution the writer "has in view", and his
+        paragraph allows that the work "was published after the demise of
+        those princes", so each reading bounds the writing from below only."""
         claims = _chronology.load().units["composition.book-of-wisdom"].claims
-        spans = sorted(
-            (claim.date.begin.year, claim.date.end.year) for claim in claims)
-        self.assertEqual(spans, [(145, 117), (221, 204)])
+        bounds = sorted(
+            (claim.date.boundary["direction"], claim.date.boundary["endpoint"].year)
+            for claim in claims if claim.date.precision == "boundary")
+        self.assertEqual(bounds, [("no-earlier-than", 145),
+                                  ("no-earlier-than", 221)])
+        self.assertEqual(len(claims), 2)
         for claim in claims:
             self.assertEqual(claim.disposition, "disputed",
                              "the article chooses between neither reign")
+            self.assertNotIn(claim.date.end.year, (204, 117),
+                             "the reign's end is not a bound on the writing")
+            self.assertIn("B.C.)", claim.date.label,
+                          "the label keeps the article's words for the reign")
 
     def test_esther_opens_at_the_end_of_the_reign_and_not_its_beginning(
             self) -> None:
@@ -6395,8 +6417,19 @@ class StatedRuleIsTheEnforcedRuleTests(unittest.TestCase):
         self.assertEqual(
             invoking,
             ["event:apostolic-age.death-of-herod-agrippa#0",
+             "event:israel.restoration.nehemias-mission#3",
              "event:life-of-christ.death-of-herod#0"],
             "a claim invokes the corroboration clause and is not tested here")
+
+        # The one claim that invokes the clause to REFUSE (2026-10-01,
+        # KI-016): Van Hoonacker's B.C. 445 offers no admissible ground as
+        # primary, so the papyri are the ground and the figure is preserved.
+        refused = self.claim("event:israel.restoration.nehemias-mission#3")
+        self.assertEqual(refused.answerability, "preserved")
+        self.assertEqual(refused.basis_class, "modern-critical")
+        self.assertIn("papyri are the ground", " ".join(refused.note.split()))
+        self.assertIn("Aramaic papyri of Elephantine",
+                      " ".join(refused.basis.split()))
 
         # Agrippa: the ground shown is Prat's reckoning, not the coin.
         note = " ".join(self.claim(
@@ -6427,6 +6460,90 @@ class StatedRuleIsTheEnforcedRuleTests(unittest.TestCase):
         self.assertIn("WHAT THIS RULING DOES NOT SAY", note)
         self.assertIn("eponym-canon synchronism", note)
         self.assertNotIn("Van Hoonacker", note)
+
+
+class UnboundEventTests(unittest.TestCase):
+    """Every dated event no binding reaches is declared, with its reason.
+
+    `validate` remarks on such an event and fails on nothing (guidance §6.1,
+    §16), which is right: an anchor or an extra-biblical subject may hold a
+    date no verse of Scripture narrates. But a remark nobody has to act on
+    is a dashboard, and from 2026-08-26 to 2026-10-01 "thirteen dated events
+    bound to nothing" stood in the work register as an enrichment no lane
+    owned. This list is that disposition, asserted in both directions: an
+    event that becomes unbound fails until someone says why, and one that
+    gains a binding fails until it is struck from here.
+    """
+
+    ANCHOR = "held as the anchor or input other claims are measured from"
+    UNBOUND = {
+        # Anchors and inputs: their bindings would be the events that use them.
+        "chronology.maas-auc-782-ad-29-calibration": (
+            "Maas's era calibration, the derivation input of the Naim, Bread "
+            "of Life and marriage-feast events; deliberately unbound from "
+            "Scripture by its own note"),
+        "apostolic-age.arrival-of-cestius-gallus-at-jerusalem": (
+            ANCHOR + ": the Christians' flight; no passage narrates it"),
+        "apostolic-age.accession-of-vespasian": (
+            ANCHOR + ": the destruction of Jerusalem; no passage narrates it"),
+        "israel.judges.ark-comes-to-cariathiarim": (
+            ANCHOR + ": the ark's years at Cariathiarim, whose own event is "
+            "bound to 1 Kings 7:1-2"),
+        "israel.exile.nabuchodonosor-accession": (
+            ANCHOR + ": the captivities and the burning of the Temple"),
+        "israel.maccabees.seleucid-era": (
+            ANCHOR + ": an era the books of Machabees date by, which no "
+            "passage narrates"),
+        "israel.restoration.reign-of-artaxerxes-i": (
+            ANCHOR + ": Nehemias's tidings of Jerusalem"),
+        "israel.exodus.passage-of-the-red-sea": (
+            ANCHOR + ": the march to Mara; Exodus 14, which narrates it, is "
+            "bound to israel.exodus.the-exodus, which dates the crossing"),
+        # After Acts closes, or outside it: no passage narrates these.
+        "apostolic-age.saint-paul-second-period-of-activity": (
+            "Prat's table; after Acts closes, and narrated by no passage"),
+        "apostolic-age.second-arrest-of-saint-paul": (
+            "Prat's table; narrated by no passage"),
+        "apostolic-age.martyrdom-of-saint-paul": (
+            "narrated by no passage; 2 Timothy 4:6 anticipates it, and no "
+            "inspected source binds that verse to it"),
+        "apostolic-age.arrival-of-saint-peter-at-rome": (
+            "narrated by no passage"),
+        "apostolic-age.flight-of-the-christians-from-jerusalem": (
+            "narrated by no passage; Meistermann's Christians flee 'recalling "
+            "Christ's prophecies (Luke 19:43, 44)', but those verses foretell "
+            "the siege, bound there as the fall of Jerusalem, not the flight"),
+        "apostolic-age.vespasian-invades-galilee": (
+            "narrated by no passage; context of the Jewish War"),
+        "apostolic-age.siege-of-jerusalem-begun": (
+            "a day within apostolic-age.destruction-of-jerusalem, its parent, "
+            "which carries the prophetic-referent bindings"),
+        "apostolic-age.burning-of-the-temple": (
+            "a day within apostolic-age.destruction-of-jerusalem, its parent, "
+            "which carries the prophetic-referent bindings"),
+        "apostolic-age.return-of-saint-john-from-patmos": (
+            "narrated by no passage; Apocalypse 1:9 narrates the exile, which "
+            "is bound to its own event"),
+        "apostolic-age.death-of-saint-john": (
+            "narrated by no passage; John 21:23 records only the saying that "
+            "the disciple should not die"),
+    }
+
+    @staticmethod
+    def unbound() -> set[str]:
+        """What `validate` remarks on: dated, unbound, and no one's parent."""
+        corpus = _chronology.load()
+        bound = {binding.event for binding in corpus.bindings}
+        parents = {event.parent for event in corpus.events.values()}
+        return {
+            event.id for event in corpus.events.values()
+            if event.claims and event.id not in bound and event.id not in parents
+        }
+
+    def test_every_unbound_dated_event_is_declared_with_its_reason(self) -> None:
+        self.assertEqual(sorted(self.unbound()), sorted(self.UNBOUND))
+        for identifier, reason in self.UNBOUND.items():
+            self.assertGreater(len(reason), 20, identifier)
 
 
 if __name__ == "__main__":

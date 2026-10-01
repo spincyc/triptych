@@ -193,6 +193,9 @@ class ProfileComparison(NamedTuple):
     status: str
     reason: str
     claims: tuple[Claim, ...]
+    # The profile's `display.reader_name`: what a reader is shown in place of
+    # the id, which stays in the record and the sealed macro arguments.
+    requested_profile_name: str = ""
 
 
 class Dossier(NamedTuple):
@@ -254,6 +257,7 @@ class AnnotationGroup(NamedTuple):
     reason: str
     claims: tuple[AnnotationClaim, ...]
     requested_profile: str = ""
+    requested_profile_name: str = ""
 
 
 class AnnotationElement(NamedTuple):
@@ -714,6 +718,18 @@ def _profile_comparisons(
             raise ChronologyWiringError(
                 f"{where}: explicit evidence-profile query returned another profile"
             )
+        # A reader is shown the profile's own reader-facing name, never its id;
+        # a profile that declares none cannot be compared on a page.
+        reader_name = str(
+            (corpus.profiles.get(profile, {}).get("display") or {}).get(
+                "reader_name", "")
+        ).strip()
+        if not reader_name:
+            raise ChronologyWiringError(
+                f"{where}: evidence profile {profile!r} declares no "
+                f"display.reader_name in profiles.yaml, so a Date cell could "
+                f"name it only by its id"
+            )
         comparisons.append(ProfileComparison(
             key=key,
             element_key=element_key,
@@ -723,6 +739,7 @@ def _profile_comparisons(
             status=status,
             reason=reason,
             claims=claims,
+            requested_profile_name=reader_name,
         ))
 
     return tuple(comparisons), dependencies
@@ -892,14 +909,43 @@ GAP_DISPLAY = {
 }
 
 
-def concise_display_label(claim: Claim) -> str:
+# A span's structured endpoints cannot say that the source hedged them; only
+# its label can, so the label is read for the source's own approximation word.
+# "around" and a printed "c."/"ca."/"circ." were missing until 2026-10-01, and
+# "around A.D. 80–100" was printed as the exact span "A.D. 80–100". The
+# abbreviations are matched in lower case and only before a year or era,
+# because the "C." of "A. C. 1491" (ante Christum) is an era, not a hedge.
+APPROXIMATION = re.compile(
+    r"(?i:\b(?:about|around|circa|approx(?:imately)?\.?)\b)"
+    r"|(?<![A-Za-z])(?:c|ca|circ)\.\s*~?\s*"
+    r"(?=[0-9]|A\.\s?D\.|B\.\s?C\.|A\.\s?M\.)"
+)
+
+
+def _sentence(text: str, initial: bool) -> str:
+    """Source wording opening a sentence, or continuing one unchanged."""
+    return text[:1].upper() + text[1:] if initial else text
+
+
+def concise_display_label(claim: Claim, *, initial: bool = True) -> str:
     """A compact, deterministic display of one structured corpus date.
 
     Absolute endpoints are merely respelled; no endpoint or precision is
-    changed. A relative claim cannot safely be shortened by clipping the
-    source sentence, because a second clause can hold a second bound. Its
-    projection therefore retains the full source wording, changing only the
-    initial capitalization and terminal punctuation.
+    changed, and a span whose source label hedges it ("about", "around",
+    "circa", "c.") keeps that hedge as "c.". A relative claim cannot safely
+    be shortened by clipping the source sentence, because a second clause can
+    hold a second bound. Its projection therefore retains the full source
+    wording, changing only the initial capitalization and terminal
+    punctuation, and only where the display opens its sentence: `initial` is
+    false where a subject title and comma already precede it, so source
+    wording continues the sentence in its own case ("…, post-A.D. 70 date").
+
+    A duration says how long and never when (§10.0). It is displayed as the
+    source's own words for the length, quoted because they are the source's
+    and not this projection's, with "(duration)" after them. The relation
+    label already stands before the colon, so a second label ("Prophecy
+    given: Duration: …") is never printed, and the longer source sentence the
+    corpus keeps as the duration's statement stays in the audit record.
     """
     point = ABSOLUTE_POINT.match(claim.date)
     if point:
@@ -908,31 +954,28 @@ def concise_display_label(claim: Claim) -> str:
     span = ABSOLUTE_SPAN.match(claim.date)
     if span:
         if _is_century_notation(span):
-            label = claim.label.strip()
-            return label[:1].upper() + label[1:]
-        approximate = bool(
-            re.search(r"\b(?:about|approx(?:imately)?\.?)\b", claim.label, re.I)
-        )
-        prefix = "c. " if approximate else ""
+            return _sentence(claim.label.strip(), initial)
+        prefix = "c. " if APPROXIMATION.search(claim.label) else ""
         return (
             f"{prefix}{span.group('era')} {span.group('first')}\N{EN DASH}"
             f"{span.group('last')}"
         )
     if claim.precision == "relative":
-        label = claim.label.strip().rstrip(".")
-        return label[:1].upper() + label[1:]
+        return _sentence(claim.label.strip().rstrip("."), initial)
     if claim.precision == "boundary":
-        label = claim.date.strip()
-        return label[:1].upper() + label[1:]
+        return _sentence(claim.date.strip(), initial)
     if claim.precision == "duration":
-        return f"Duration: {claim.date}"
+        words = claim.label.strip().rstrip(".") or claim.date.strip()
+        return (f"\N{LEFT DOUBLE QUOTATION MARK}{words}"
+                f"\N{RIGHT DOUBLE QUOTATION MARK} (duration)")
     return claim.date
 
 
 def _annotation_claim(claim: Claim, *, name_subject: bool = False) -> AnnotationClaim:
-    display = concise_display_label(claim)
     if name_subject or claim.relation == "traditional-attribution":
-        display = f"{claim.title}, {display}"
+        display = f"{claim.title}, {concise_display_label(claim, initial=False)}"
+    else:
+        display = concise_display_label(claim)
     return AnnotationClaim(
         subject=claim.subject,
         title=claim.title,
@@ -1036,6 +1079,7 @@ def annotations(found: Dossier) -> AnnotationProjection:
                 reason=comparison.reason,
                 claims=held,
                 requested_profile=comparison.requested_profile,
+                requested_profile_name=comparison.requested_profile_name,
             ))
         # A scriptural element with no assertions still needs a visible answer
         # in its Date cell.  Composition is the date of the text itself, and is
@@ -1188,15 +1232,42 @@ def _gap_display(group: AnnotationGroup, *, comparison_enabled: bool = False) ->
     return GAP_DISPLAY.get(group.status, group.status.replace("-", " ").capitalize())
 
 
-def _group_display(group: AnnotationGroup, *, comparison_enabled: bool = False) -> str:
+def _group_heading(group: AnnotationGroup) -> str:
+    """The visible relation label, naming a comparison's profile for a reader.
+
+    A comparison is headed by its relation and then, in parentheses, the
+    requested evidence profile's `display.reader_name` and the words "for
+    comparison", so it can neither be mistaken for the default answer nor
+    print an internal id: "Composition (Catholic critical chronology, for
+    comparison)". The profile id, the chronology status and the source ids
+    remain in the group's and claim's sealed macro arguments for audit.
+    """
     relation = _relation_label(group.relation)
     if group.requested_profile:
-        relation = f"Comparison ({group.requested_profile}) -- {relation}"
+        name = group.requested_profile_name or group.requested_profile
+        relation = f"{relation} ({name}, for comparison)"
+    return relation
+
+
+def _group_qualifier(group: AnnotationGroup) -> str:
+    """The disposition word after the heading; nothing when preferred.
+
+    A default group's status is already the most cautious disposition among
+    its claims. A comparison's status is the chronology status its query
+    returned ("composition-only"), which is audit vocabulary and not a
+    disposition, so its visible word is computed from its claims instead.
+    """
+    status = (_group_status(group.claims) if group.requested_profile
+              else group.status)
+    return f" -- {status}" if status != "preferred" else ""
+
+
+def _group_display(group: AnnotationGroup, *, comparison_enabled: bool = False) -> str:
+    relation = _group_heading(group)
     if not group.claims:
         return f"{relation} -- {_gap_display(group, comparison_enabled=comparison_enabled)}."
     values = _candidate_display(group, lambda claim: claim.display_label)
-    qualifier = f" -- {group.status}" if group.status != "preferred" else ""
-    sentence = f"{relation}{qualifier}: {values}"
+    sentence = f"{relation}{_group_qualifier(group)}: {values}"
     return sentence if sentence.endswith((".", "?", "!", "\N{HORIZONTAL ELLIPSIS}")) else sentence + "."
 
 
@@ -1228,6 +1299,10 @@ TEX_ESCAPE = {
     "\N{EN DASH}": "--",
     "\N{EM DASH}": "---",
     "\N{HORIZONTAL ELLIPSIS}": "...",
+    # A duration's display quotes the source; TeX's own quotation ligatures,
+    # as the leaves' prose writes them.
+    "\N{LEFT DOUBLE QUOTATION MARK}": "``",
+    "\N{RIGHT DOUBLE QUOTATION MARK}": "''",
 }
 
 
@@ -1283,19 +1358,41 @@ def _tex_comparison_claim(
     )
 
 
-def _candidate_display(group: AnnotationGroup, render_claim) -> str:
+def _candidate_display(group: AnnotationGroup, render_claim,
+                       render_repeat=lambda claim: "") -> str:
     """All candidates, compactly labelled when dispositions differ.
 
     Each disposition word ends in a colon, so a source label that opens with a
     capital or a clause of its own is never run into it ("Preferred: In the
     eighth year of his reign; alternatives: A.M. 3405, B.C. 597"). The word
     agrees in number with what follows it; the source labels are untouched.
+
+    A candidate whose display repeats, ignoring case, one already shown is not
+    shown again: two sources stating one thing are one value to a reader, not
+    a disagreement. Until 2026-10-01 the Holy Family's Communion printed
+    "Preferred: When he was twelve years old; alternative: When he was twelve
+    years old" -- Luke 2:42 and the Catholic Encyclopedia repeating it. Claims
+    are ordered strongest disposition first, so the value stays under the
+    strongest disposition stating it, and `render_repeat` appends the
+    repeating claim straight after it: nothing for a reader, and in TeX its
+    sealed macro with an empty display, so no assertion leaves the artifact.
     """
+    shown: dict[str, int] = {}
+    rendered: list[list[str]] = []
+    dispositions: list[str] = []
+    for claim in group.claims:
+        key = claim.display_label.casefold()
+        if key in shown:
+            rendered[shown[key]].append(render_repeat(claim))
+            continue
+        shown[key] = len(rendered)
+        rendered.append([render_claim(claim)])
+        dispositions.append(claim.disposition)
     buckets = {
         disposition: [
-            render_claim(claim)
-            for claim in group.claims
-            if claim.disposition == disposition
+            "".join(parts)
+            for parts, held in zip(rendered, dispositions)
+            if held == disposition
         ]
         for disposition in _chronology.DISPOSITIONS
     }
@@ -1317,12 +1414,7 @@ def _candidate_display(group: AnnotationGroup, render_claim) -> str:
 
 
 def _tex_group(group: AnnotationGroup, *, comparison_enabled: bool = False) -> str:
-    relation_label = _relation_label(group.relation)
-    if group.requested_profile:
-        relation_label = (
-            f"Comparison ({group.requested_profile}) -- {relation_label}"
-        )
-    relation = r"\textbf{" + tex_escape(relation_label) + "}"
+    relation = r"\textbf{" + tex_escape(_group_heading(group)) + "}"
     if not group.claims:
         visible = (
             f"{relation} -- "
@@ -1334,10 +1426,11 @@ def _tex_group(group: AnnotationGroup, *, comparison_enabled: bool = False) -> s
                 claim, group.requested_profile
             )) if group.requested_profile else _tex_claim
         )
-        values = _candidate_display(group, render_claim)
+        values = _candidate_display(
+            group, render_claim,
+            lambda claim: render_claim(claim._replace(display_label="")))
         plain_values = _candidate_display(group, lambda claim: claim.display_label)
-        qualifier = f" -- {group.status}" if group.status != "preferred" else ""
-        visible = f"{relation}{qualifier}: {values}"
+        visible = f"{relation}{_group_qualifier(group)}: {values}"
         if not plain_values.endswith((".", "?", "!", "\N{HORIZONTAL ELLIPSIS}")):
             visible += "."
     macro = ("\\chronologyannotationcomparisongroup"
