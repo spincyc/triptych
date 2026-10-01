@@ -59,6 +59,36 @@ scope:
 The fix lanes take the remaining open defects; the 13 already-fixed entries
 are reconciled in the register and ledger.
 
+### The 32 damaged 1962 orations read on the page, 2026-10-01
+
+Every oration and chant the backfill had left `blocked` was read on page
+images of the registered 1962 facsimile, never from a text layer, and checked
+word for word against a public-domain printing on its own page images: 29
+against the 1862 Pustet, 3 against the 1922 Mame. All 32 are published
+(`3fa0fa469`). The page reading corrected three antecedents the 2026-09-04
+collation had named:
+
+- the Agnes secundo Secret's antecedent is the 1862's own Agnes secundo
+  Secret (p. 397), since the one named reads `de Sanctorum`;
+- the Friday Seven Sorrows Secret's witness is the Mame (p. 563), because the
+  1862 reads `suae, suorumque`;
+- the Hilary Secret's witness is the Mame's Commune Doctorum (p. 26*).
+
+The reading found three defects it did not fix:
+
+- **St Angela Merici.** Her 1962 page appoints her own Secret ("Hostia,
+  Domine, quam tibi beatae Angelae…") and Postcommunion ("Caelesti alimonia
+  refecti…"), which the Mame also carries, but the calendar holds only her
+  Collect, so the Common's Secret and Postcommunion show through. Her mass note
+  claims a reading from 1862 leaf n813, yet the 1862 has no Angela, and the
+  Pustet passage `s-angelae-mericiae-virginis-orations.toml` points at
+  St Petronilla's lines.
+- **Stale mass notes.** 24 of the 28 masses touched still say their orations
+  are "not transcribed" or "not visually collated", or that the 1962 wording
+  is "not quoted"; the rest of the backfill has the same prose.
+- **The Agnes secundo Secret's English row** still calls its slot a
+  "text-free Latin proper slot", though its `no-exemplar` reason stands.
+
 ### The Claude Fourteenth Sunday withdrawn, 2026-10-01
 
 The maintainer decided that the held Claude 1962 Fourteenth Sunday after
@@ -2294,6 +2324,12 @@ witness, 16 are `variant` where 1955 or 1960 revised the wording, 10 are genuine
 1955 composition, and **33 are `blocked` on a string that needs reading on a
 page image**. Only that last group is likely to become publishable.
 
+*Updated 2026-10-01:* the blocked group is read and published (commit
+`3fa0fa469`; see "Corpus PDF links and every known issue, 2026-10-01"). The
+1962 row now stands at 1,066 published, 46 rights-withheld and 83 witness-gap,
+and the findings record holds 68 entries: 41 `absent`, 17 `variant`, 10
+`new-matter`, none `blocked`.
+
 ### The witnesses
 
 Four public-domain books, all registered:
@@ -2410,6 +2446,8 @@ does not survive it. Its durable content is in guidance; its operational content
      `comm-s-pauli-apostoli` Postcommunion, `s-gregorii-i` Postcommunion),
      which need a collation lane rather than a repair lane, since a repair lane
      may not manufacture the rest of a prayer.
+     *Done 2026-10-01* (`3fa0fa469`): 32 read on page images and published,
+     the four truncated prayers collated in full.
   2. **The 2,176 sung propers of the 1962 calendar.** The reader currently
      prints a Bible wherever the Missal recasts: for the Fourteenth Sunday's
      Communion it shows `Quaerite ergo primum regnum Dei, et justitiam ejus`
