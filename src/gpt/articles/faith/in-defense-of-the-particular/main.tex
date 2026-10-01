@@ -21,6 +21,7 @@
 
 \makeatletter
 \renewcommand{\enoteheading}{%
+  \phantomsection%
   \section*{\notesname}%
   \addcontentsline{toc}{section}{\notesname}%
   \@mkboth{\MakeUppercase{\notesname}}{\MakeUppercase{\notesname}}}
