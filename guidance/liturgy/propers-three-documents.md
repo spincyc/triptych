@@ -170,7 +170,11 @@ substantively on at least two distinct patristic or saintly authors, as
 [Liturgical commentators](#liturgical-commentators) defines them. A second
 name without a developed contribution does not meet this requirement. The authors
 must agree on its controlling claims; preserve any narrower disagreement
-beside the relevant claim. If a central disagreement would undo the argument,
+beside the relevant claim. Where an opening, overview or summary names a
+reading's authors beside its thesis, credit each only with the clause he
+states; a sentence of the form "these Fathers carry it: <thesis>" credits each
+with the whole synthesis, which none of them may hold. If a central
+disagreement would undo the argument,
 separate the readings or revise the argument. Do not invent a historical school,
 unanimity, conflict, or a second interpretation merely to meet the numerical
 minimum. Return to research if fewer than two defensible interpretations exist.
@@ -504,9 +508,13 @@ Schema 2 declares `calendar = "roman-1962"` or `calendar = "postconciliar"`,
 matching the canonical document path, and rejects cross-family imports.
 It names exactly three PDF outputs, their local entrypoints, the
 canonical web owner, stable element keys, and ordered components with mode
-membership. Its two to five `[[lanes]]` records name stable keys, authors,
-existing source-audit paths, component keys, all four senses, and coverage of
-every appointed element. The checker verifies records and include reachability;
+membership. The homily component's `element_keys` declare the elements whose
+research informs the speech, which the checker requires to be all of them; they
+do not claim the speech recites each, since the homily lets the larger research
+inform the whole without an inventory of every minor proper. The manifest's
+two to five `[[lanes]]` records name stable keys, authors, existing
+source-audit paths, component keys, all four senses, and coverage of every
+appointed element. The checker verifies records and include reachability;
 it does not prove theological agreement or quality merely from declared keys.
 
 New `proper-study` runs, from version 7, also declare
