@@ -847,3 +847,5 @@ They must be declared in the guide and are not to be filled in by the project.
 7. **`Aduléscens`.** The Douay's "Young man" answers the word whichever way it is
    spelled, so nothing is missing; the spelling difference is a Latin matter only
    and is recorded at row 25 above.
+
+**Correction completed, 2026-10-01.** The source-library owner corrected both passage notes after checking the controlling 1962 Missal, printed p. 397: the Secret is `Tua nos, Domine, sacramenta custodiant`, marginal no. 1589, and the Postcommunion is `Mentes nostras et corpora possideat`, marginal no. 1591. The English payloads did not change. This leaf re-read the corrected records and the page image and updated both fingerprints in `research/source-bindings.toml`. The preceding error report remains historical evidence, not a statement of the current records.

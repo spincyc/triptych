@@ -225,16 +225,16 @@ source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 role = "translation-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-09-05"
-source_fingerprint = "sha256:3391340d6a87bc33f5867f0223953315a0b2da30e9e01afdad81b33be67564dd"
-context = "The per-oration registered passage for the Secret's English, re-read this run on the registered page images at printed p. 429. Its own notes state that the English was checked against the Latin at marginal number 1571; this formulary's Secret is marginal no. 1589, and 1571 is the Thirteenth Sunday's Postcommunion in the same series. The English the record carries is nonetheless the right English and matches the page image; the error is in a free-text note and not in the text, amending it would move the fingerprint pinned here, and the correction belongs to the source library. Every marginal number printed in this guide comes from propers/verified.md."
+source_fingerprint = "sha256:7e563c0e653497f5aadac16cd2865b7981b9611c32e49ae5f66e2e401e28dc52"
+context = "The per-oration registered passage for the Secret's English, re-read during the original production on the registered page image at printed p. 429. Metadata rechecked 2026-10-01: the source-library notes now correctly identify Tua nos, Domine, sacramenta custodiant at marginal no. 1589, printed p. 397 of the 1962 Missal, confirmed on the controlling facsimile page. The prior 1571 reference was a citation error; the English payload is unchanged. Rebound after reading the corrected record and that page."
 
 [[bindings]]
 source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.post-pentecosten-15.postcommunion"
 role = "translation-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-09-05"
-source_fingerprint = "sha256:f24196754f32f7e76705d37f286eb493f6a292fbf616c994b8c72840f872a0e9"
-context = "The per-oration registered passage for the Postcommunion's English, re-read this run on the registered page images at printed p. 429. Its own notes state a check against the Latin `Mentes nostras, quaesumus, Domine, lumine tuae claritatis illustra` at marginal number 1573, which is a different prayer -- the Fourteenth Sunday's Collect -- and not this formulary's Postcommunion at marginal no. 1591. The English is right and matches the page image; the citation in the note is not, and repairing it belongs to the source library."
+source_fingerprint = "sha256:2a9fbf5a8b81bcfe57d6e02640f6a8541e4840ea33c39d0b4c96bbe4f559cf64"
+context = "The per-oration registered passage for the Postcommunion's English, re-read during the original production on the registered page image at printed p. 429. Metadata rechecked 2026-10-01: the source-library notes now correctly identify Mentes nostras et corpora possideat at marginal no. 1591, printed p. 397 of the 1962 Missal, confirmed on the controlling facsimile page. The prior incipit and 1573 reference were citation errors; the English payload is unchanged. Rebound after reading the corrected record and that page."
 
 
 # --- Comparison text for the appointed Latin ---
@@ -364,7 +364,7 @@ loci = [
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:599755766908c25b18fe4ea8fc3aa9059a94a8705e5845f5d0067b01cfe4d0eb"
-context = "The page image carrying Wilson's printed p. 174, where all three of this formulary's orations stand together as one Mass and in liturgical order under the heading DOMINICA .XVI. POST PENTECOSTEN. with the folio mark [fo. 168v]. It is also the witness for the one word-order difference between the eighth-century text and 1962, `tueantur semper` against `semper tueantur`. Read as an image; the neighbouring leaves carry the Ottobonianus chant margins and the section numbering the guide reports."
+context = "The page image carrying Wilson's printed p. 174, where all three of this formulary's orations stand together as one Mass and in liturgical order under the heading DOMINICA .XVI. POST PENTECOSTEN. with the folio mark [fo. 168v]. It is also the witness for the one place where the Hadrianum's wording of the three differs from 1962, the Secret's `tueantur semper` against `semper tueantur`; the Old Gelasian departs at that place and at a second, the Postcommunion's `possideat, Domine, quaesumus`, so between the eighth-century books and 1962 the wording moves in two places (corrected 2026-10-01 from 'the one word-order difference between the eighth-century text and 1962'). Read as an image; the neighbouring leaves carry the Ottobonianus chant margins and the section numbering the guide reports."
 
 [[bindings]]
 source_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-djvu-ocr-gregoriansacrame00cath"
@@ -385,7 +385,7 @@ loci = [
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:de8481129b2d28d8a06d3b061dd5e4c315471f0eef5c54a5d9a006f0fcb56201"
-context = "The page image carrying Wilson's printed p. 230, where the same three orations stand under the heading `Item alia Missa` with no Sunday number, and where the marginal apparatus records the four-witness numbering split. The image settles what the optical layers lose: the second Collect of the Gelasian Mass carries only two of the four sigla, so Pamelius and Menard do not have it, and the three prayers all four numbering witnesses carry are exactly the three the 1962 formulary keeps."
+context = "The page image carrying Wilson's printed p. 230, where the same three orations stand under the heading `Item alia Missa` with no Sunday number, and where the marginal apparatus records the five-witness numbering split (`R. S. Gerb.` at the seventeenth Sunday, `Pam.` at the sixteenth, `Men.` at the seventeenth). The image settles what the optical layers lose: the second Collect of the Gelasian Mass carries only three of the five sigla, `R. S. / Gerb. 175.`, so Pamelius and Menard do not have it, and the three prayers all five numbering witnesses carry are exactly the three the 1962 formulary keeps (corrected 2026-10-01 from 'four-witness', 'two of the four sigla' and 'all four')."
 
 [[bindings]]
 source_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-gelasiansacrame00wilsgoog"
@@ -829,7 +829,7 @@ source_id = "passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:8e714d5f9db2e08f54da02b78a55723bf92afcbc30370a1d564e5a055158c41b"
-context = "The passage the chronology corpus resolves both narrated-event claims through: the raising of the widow's son at Naim and the Bread of Life discourse at Capharnaum. Its labels are what the Gospel's and the Communion's event rows print, and they answer a different question from the composition labels beside them."
+context = "The passage the chronology corpus resolves both narrated-event claims through: the raising of the widow's son at Naim and the Bread of Life discourse at Capharnaum. Maas dates the two journeys that carry them only by the year of Rome (`About Pentecost, A.U.C. 780- Autumn, 780`; `Spring, A.U.C. 781`); the years the Gospel's and the Communion's Date cells print are the corpus's derivations from those, by Maas's own equation of A.U.C. 782 with A.D. 29, and the cells mark them derived. They answer a different question from the composition labels beside them."
 
 [[bindings]]
 source_id = "passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology"

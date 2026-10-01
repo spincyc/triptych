@@ -14,8 +14,17 @@ pasted into a guide: `guidance/editorial.md` keeps method, evidence classes and 
 machinery out of the reader's hearing, and what the author inherits from this file is its
 conclusions and its bounds, never its register.
 
+A post-acceptance revision of 1 October 2026, made outside any run and recorded in
+`research/production-review.md`, corrected this record where the published leaf was right
+and it was not: the formulary's printed extent below (pp. 396-397, not 396-398), Wilson's
+numbering witnesses in §10.1 item 8 (five, not four), and the quotation of `claude/54` in
+§12. Three further miscounts the leaf had already avoided — Wilson's witnesses in §2.8 and
+§11, the Hebrews returns to `Hodie` in §2.4, and the places where the orations' wording
+moved in §1.1 — had been corrected on 2026-09-09 by brief-revision iteration 4 of run
+`6fb5fba4867eb8cf` (commit `43e354b12`); the revision re-checked each against its witness.
+
 Appointed formulary, as collated in `propers/verified.md` against the CMAA facsimile of the
-1962 typical edition, printed pp. 396-398, marginal nos. 1582-1591:
+1962 typical edition, printed pp. 396-397, marginal nos. 1582-1591:
 
 | # | Element | Reference | Marginal no. |
 | --- | --- | --- | --- |
@@ -2210,9 +2219,12 @@ What follows is therefore sorted by whether anything actually blocks or constrai
    constrains:** the Epistle-and-Gospel pairing may be reported as what the Liber Comitis prints
    there, and no more.
 8. **Rheinau, S. Gallen 348, Pamelius, Menard and Gerbert at p. 175 were not opened** (LIT-004,
-   LIT-022). **What it constrains:** the four-witness Sunday-numbering split is Wilson's report of
+   LIT-022). **What it constrains:** the five-witness Sunday-numbering split is Wilson's report of
    those books and must be attributed to his apparatus. Opening Gerbert at printed p. 175 is the
-   cheapest of the four to close.
+   cheapest of the five to close. (Corrected on 2026-10-01 from "four-witness" and "of the four":
+   Wilson's note on p. 230 names `R. S. Gerb.`, `Pam.` and `Men.`, his preface makes `R.` and
+   `S.` the Rheinau and S. Gallen manuscripts and `Gerb.` Gerbert's printed text, which follows a
+   third, later manuscript, so the witnesses are five, as §2.8 and §11 already count them.)
 9. **No page image of the Vatican typica 1604 or the Venice 1570 was opened for this formulary,
    and neither has a passage record**, so the Gospel's preexisting-material antecedent rests on
    two optical layers whose own records classify them `degraded-latin` and instruct `QUOTE FROM
@@ -2341,6 +2353,9 @@ whole library: artifact 2150, corpus 5, edition 731, passage 5127, segment 72, w
 Take a marginal number from `propers/verified.md` and never from these notes. Repairing the
 records is the source library's work and not this run's: changing a passage record moves its
 fingerprint and both records are pinned (COV-012).
+
+
+**Correction completed, 2026-10-01.** The source-library owner corrected both passage notes after checking the controlling 1962 Missal, printed p. 397: the Secret is `Tua nos, Domine, sacramenta custodiant`, marginal no. 1589, and the Postcommunion is `Mentes nostras et corpora possideat`, marginal no. 1591. The English payloads did not change. This leaf re-read the corrected records and the page image and updated both fingerprints in `research/source-bindings.toml`. The preceding error report remains historical evidence, not a statement of the current records.
 
 ### 10.5 A method warning that applies to every negative in this brief
 
@@ -2568,7 +2583,11 @@ assert more than that.
   it existing here`, and the leaf that did not exist when that sentence was written now does:
   `propers/verified.md` collates `Panis, quem ego dedero` at printed p. 397. And `claude/54`'s
   chant-set identification runs against the tracked registry, which that leaf itself labels `a
-  repository derivative and not the printed pp. 396-398`. The Ottobonianus cue-offset conflict
+  repository derivative and not a facsimile collation`, asking that prose say so `unless someone
+  collates pp. 396–398 of the typical edition`; this formulary's own extent within those pages
+  is pp. 396-397 (`propers/verified.md`). (The quotation is corrected on 2026-10-01: the earlier
+  form, `a repository derivative and not the printed pp. 396-398`, joined two of `claude/54`'s
+  phrases into words that leaf does not print.) The Ottobonianus cue-offset conflict
   that leaf left open — its own §6.8 recording an earlier page-image reading at offset +2 against
   a later optical-only reading at offset zero, and leaving it with the words `the page image
   controls and someone must go back to it` — **was gone back to by this production's
