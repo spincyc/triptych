@@ -169,8 +169,23 @@ class Mame1922WitnessTests(unittest.TestCase):
         # (598e6da6e) and a fifth on 2026-08-28 (f96727106). The 1962 Latin
         # witness backfill of 2026-09-03/04 added forty (694129798, ba31b45d0,
         # 7ceab2f2a, 8e8b5575b) and 3c886a866 rebuilt the projection over them.
+        # The 2026-10-01 page readings added the Seven Sorrows and Hilary
+        # Secrets and Angela Merici's orations as three further identity-only
+        # witnesses. They do not make the remote facsimile payload readable.
         tracked = sorted(PASSAGES.glob("*.toml"))
-        self.assertEqual(len(tracked), 45)
+        self.assertEqual(len(tracked), 48)
+        recoveries = {
+            "comm-septem-dolorum-beatae-mariae-virginis-orations.toml": "artifact PDF p. 677",
+            "s-hilarii-episcopi-confessoris-ecclesiae-doctoris-orations.toml": "artifact PDF p. 904",
+            "s-angelae-mericiae-virginis-orations.toml": "artifact PDF p. 719",
+        }
+        for filename, locus in recoveries.items():
+            with self.subTest(recovery=filename):
+                passage = load(PASSAGES / filename)
+                self.assertEqual(passage["artifact_id"], ARTIFACT_ID)
+                self.assertEqual(passage["artifact_sha256"], DIGEST)
+                self.assertEqual(passage["verified_on"], "2026-10-01")
+                self.assertIn(locus, passage["locus"])
         self.assertEqual(
             sorted(passage["id"] for passage in structure["passages"]),
             sorted(load(path)["id"] for path in tracked),

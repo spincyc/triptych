@@ -450,7 +450,7 @@ set -- $MAKE_TEST_BRIEF_PAGES
 
 
 class ResearchBuildTests(unittest.TestCase):
-    """The real Makefile research rule, with TeX and metadata stubbed out."""
+    """The real research rule with TeX and unrelated artifact gates stubbed out."""
 
     def setUp(self):
         self.temporary = tempfile.TemporaryDirectory()
@@ -471,6 +471,9 @@ class ResearchBuildTests(unittest.TestCase):
                         "    raise SystemExit(127)\n"
                         "os.execv(target, [target] + sys.argv[2:])\n")
         self.executable("tools/check-generation-metadata", "#!/bin/sh\nexit 0\n")
+        # Fixture PDFs are text, not navigable PDFs. Anchor validation has its
+        # own integration suite; this fixture exercises the component gate.
+        self.executable("tools/check-pdf-anchors", "#!/bin/sh\nexit 0\n")
         self.executable("bin/pdfinfo", "#!/bin/sh\nexit 0\n")
         self.executable("bin/pdftotext", FAKE_PDFTOTEXT)
         pdflatex = self.executable("bin/fake-pdflatex", FAKE_PDFLATEX)

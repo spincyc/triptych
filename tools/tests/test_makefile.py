@@ -898,6 +898,41 @@ exec /usr/bin/id "$@"
         fake_id.chmod(0o755)
         self.environment["PATH"] = f"{shadow_bin}:{self.environment['PATH']}"
 
+        # The fake package transaction cannot update the host's canonical
+        # Python. Execute the real post-install check with an isolated package
+        # version so neither host packages nor an active venv decide this test.
+        python = self.root / "fake-python"
+        python_log = self.root / "python-version.log"
+        python.write_text(
+            """#!/usr/bin/env python3
+import os
+import sys
+from unittest.mock import patch
+
+def installed_version(name):
+    with open(os.environ["MAKE_TEST_PYTHON_LOG"], "a", encoding="utf-8") as log:
+        log.write(name + "\\n")
+    if name != "Markdown":
+        raise AssertionError(name)
+    return os.environ["MAKE_TEST_MARKDOWN_VERSION"]
+
+if len(sys.argv) != 3 or sys.argv[1] != "-c":
+    raise SystemExit("expected the post-install Python check")
+with patch("importlib.metadata.version", side_effect=installed_version):
+    exec(sys.argv[2], {"__name__": "__main__"})
+""",
+            encoding="utf-8",
+        )
+        python.chmod(0o755)
+        self.environment["MAKE_TEST_PYTHON_LOG"] = str(python_log)
+        self.environment["MAKE_TEST_MARKDOWN_VERSION"] = next(
+            line.removeprefix("Markdown==")
+            for line in (self.root / "requirements-public-alpha.txt").read_text(
+                encoding="utf-8"
+            ).splitlines()
+            if line.startswith("Markdown==")
+        )
+
         listed = self.run_make("dependencies-arch").stdout.splitlines()
         install_arguments = (
             "install-dependencies-arch",
@@ -905,14 +940,17 @@ exec /usr/bin/id "$@"
             f"ARCH_PACMAN={pacman}",
             f"ARCH_SUDO={sudo}",
             f"ARCH_ID={fake_id}",
+            f"ARCH_PYTHON={python}",
         )
         dry_run = self.run_make("-n", *install_arguments)
         self.assertIn(str(pacman), dry_run.stdout)
         self.assertIn(str(sudo), dry_run.stdout)
         self.assertIn(str(fake_id), dry_run.stdout)
+        self.assertIn(str(python), dry_run.stdout)
         self.assertNotIn("/usr/bin/pacman", dry_run.stdout)
         self.assertNotIn("/usr/bin/sudo", dry_run.stdout)
         result = self.run_make(*install_arguments)
+        self.assertEqual(self.lines(python_log), ["Markdown"])
         arguments = self.lines(self.pacman_log)
         expected_packages = [
             "make",
@@ -967,6 +1005,12 @@ exec /usr/bin/id "$@"
         self.assertIn("shadows canonical /usr/bin/codex", result.stderr)
         self.assertIn("shadows canonical /usr/bin/gh", result.stderr)
         self.assertIn("shadows canonical /usr/bin/rg", result.stderr)
+
+        self.environment["MAKE_TEST_MARKDOWN_VERSION"] = "0.invalid-fixture"
+        mismatched = self.run_make(*install_arguments, check=False)
+        self.assertNotEqual(mismatched.returncode, 0)
+        self.assertIn("Installed Markdown 0.invalid-fixture does not match", mismatched.stderr)
+        self.assertEqual(self.lines(python_log), ["Markdown", "Markdown"])
 
     def test_arch_dependency_install_rejects_other_operating_systems(self) -> None:
         os_release = self.root / "other-os-release"

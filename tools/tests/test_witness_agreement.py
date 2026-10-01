@@ -568,11 +568,10 @@ class TheCorpusItself(unittest.TestCase):
             self.assertEqual(transcription[field], printing[field])
 
     def test_the_unbound_second_witness_is_quarantined_verbatim(self):
-        """The historical artifact remains evidence, never served wording.
+        """The unbound historical artifact remains evidence, not a serving basis.
 
-        None of its payload may survive in positive entries until each target
-        has an exact page and publication binding. The typed absence ledger,
-        not an unbound transcription, carries that disposition.
+        Identical wording may be recovered only through an exact target,
+        page-image passage and independent tracked publication binding.
         """
         import csv
         import tomllib
@@ -595,20 +594,41 @@ class TheCorpusItself(unittest.TestCase):
         ]
         self.assertEqual(carried, [])
         wording = {text.strip() for text in printed.values()}
-        retained = {
-            translation["text"].strip()
+        recovered = [
+            row
             for row in document["entries"]
-            for translation in row["translations"]
-        }
-        self.assertTrue(wording.isdisjoint(retained))
+            if any(
+                translation["text"].strip() in wording
+                for translation in row["translations"]
+            )
+        ]
+        # The nine 2026-10-01 recoveries have their own bindings. Only the
+        # Fifteenth Sunday Secret matches this older derivative byte for byte;
+        # the other conclusions retain the page's punctuation instead.
+        self.assertEqual(
+            {(row["mass"], row["proper"]) for row in recovered},
+            {("pentecost-15", "Secret")},
+        )
+        for row in recovered:
+            self.assertEqual(row["artifact_id"], ARTIFACT.rsplit(".", 1)[0] + ".ia-scan-pdf")
+            self.assertEqual(row["ia_leaf_range"], [437, 437])
+            self.assertEqual(
+                row["publication_artifact_id"],
+                ARTIFACT.rsplit(".", 1)[0] + ".roman-1962-pentecost-13-15-en",
+            )
+            self.assertNotEqual(row["publication_artifact_id"], ARTIFACT)
+            propers.validate_translation_publication_binding(
+                row, propers.DEFAULT_ROOT, SIDECAR
+            )
         unavailable = [
             row
             for row in document["untranslated"]
             if row.get("reason", {}).get("source_id") == EDITION
             and row.get("reason", {}).get("kind") == "rights-withheld"
         ]
-        # 348 until 2026-10-01, when the four pentecost-19 rows were bound.
-        self.assertEqual(len(unavailable), 344)
+        # 348 until 2026-10-01: four pentecost-19 rows, then nine orations of
+        # pentecost-13 through pentecost-15 acquired exact publication bindings.
+        self.assertEqual(len(unavailable), 335)
         self.assertTrue(all("text" not in row for row in unavailable))
 
     def test_holy_week_is_outside_the_second_witness(self):
