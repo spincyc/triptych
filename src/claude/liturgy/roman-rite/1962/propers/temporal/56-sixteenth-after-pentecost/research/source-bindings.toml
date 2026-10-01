@@ -727,7 +727,7 @@ loci = ["printed cols. 506, 509-510 and 512"]
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:87f2dcc29aaef4454c3e5e41d5625ea7cc1503952d469dd84face3d39abac084"
-context = "A medieval use in which the split this formulary shows in the older Roman books survives whole: chants and Epistle at Dominica Decima sexta post Trinitatem with the Roman Fifteenth Sunday's orations and Gospel, Collect and Gospel at Dominica Decima septima with the Roman Seventeenth's chants and Epistle. Two Sarum alleluias differ from the Roman and the guide prints both rather than smoothing them. Whether the arrangement descends into the English prayer books was not established: no 1662 text was opened."
+context = "A medieval use in which the split this formulary shows in the older Roman books survives whole: chants and Epistle at Dominica Decima sexta post Trinitatem with the Roman Fifteenth Sunday's orations and Gospel, Collect and Gospel at Dominica Decima septima with the Roman Seventeenth's chants and Epistle. Two Sarum alleluias differ from the Roman and the guide prints both rather than smoothing them. The descent into the English prayer books is supported by the separately bound Brightman and Blunt synopses (research/scope.md section 4.4). No printing of the Book of Common Prayer itself was collated; that limitation does not negate the synopses' evidence."
 
 [[bindings]]
 source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-30.paris-1846.ia-page-image-n264-3a711815"
@@ -839,10 +839,10 @@ context = "The second source the corpus names for the Epistle, supplying the lab
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"
-loci = ["the article 'Gospel of Saint Luke'"]
+loci = ["the article 'The New Testament'"]
 role = "context"
 states = ["cataloged"]
-context = "The source the corpus names for one of the Gospel's two composition labels. It is also the nearest source that would state a place of writing, a first audience and the writer's life stage for the Gospel, and it was not opened for any of them. Bound at catalog state and with no fingerprint, because no lane of this run opened it: it reaches this guide only through the Scripture chronology corpus and the generated projection at research/chronology-annotations.tex, and acquired or inspected would both overstate what was done."
+context = "The source the corpus names for one of the Gospel's two composition labels. The prior binding incorrectly called this an article on Saint Luke; its retained derivative is headed The New Testament. No independent Luke-composition geography is inferred from it. Bound at catalog state and with no fingerprint, because no lane of this run opened it: it reaches this guide only through the Scripture chronology corpus and the generated projection at research/chronology-annotations.tex, and acquired or inspected would both overstate what was done."
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03738a-5eb03e5b"
@@ -1195,3 +1195,11 @@ role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:7b24b4906009799c42c524a36cefa8f24ddc70fd6308798c6daeb1a582d501d7"
 context = "Henry William Herbert's 1882 use of 'the inner man' in the gastric sense, the page fixed by the running head standing immediately above it in the scan. It is seven years earlier than the gallery's Jerome K. Jerome witness and is what makes that entry's limiting qualification -- that the gastric sense is an idiom of the language and not a joke either novelist invented -- a statement of fact. It stands in volume 2 and not in volume 1, which is bound beside it and which an earlier search of this work went to."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05485a-66d722ae-article-text"
+loci = ["To whom addressed", "Date and place of composition; occasion"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1f1fff0c74949e159b7c41798a891333e64322a070bdbc6ded225800858f1456"
+context = "Read on 2026-10-01 to check the dossier's assertion that the encyclopedia names no place or audience. Ladeuze favours Rome over Caesarea and places the traditional Ephesian destination beside his proposal of a circular letter to north-eastern Asian churches. The dossier now gives that disagreement without adopting his conjectural destination as settled. Dates remain those of the generated chronology record."

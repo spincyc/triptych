@@ -2,11 +2,15 @@
 
 Audit record for the canonical leaf
 `liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost`.
-Written by `research-synthesis` of run `e4aebcbd941b6b1a`
+Originally written by `research-synthesis` of run `e4aebcbd941b6b1a`
 (workflow `proper v25`, commit `b66eb4b44d8e76801a86275b19c3a2e45713b4ab`,
-2026-09-05). This file is rewritten at each iteration of this stage, which is
-its sole writer; the research lanes were forbidden to touch it and no later
-stage may add to it or amend it.
+2026-09-05), then revised by the `brief-revision` stages of runs
+`53bdb2eaab3ba398` and `b16414357535992e`. A coordinated post-acceptance
+revision on 2026-10-01 corrected the remaining findings; its dispositions
+are in `research/production-review.md`. The historical research narrative
+below uses “this run” for `e4aebcbd941b6b1a` unless it names another run;
+its corpus counts and process states describe those dated productions,
+not the present checkout.
 
 **This is the iteration-2 state, and it integrates a fresh seven-lane join
 whole rather than a diff against what stood before.** The join carries **216
@@ -1813,9 +1817,11 @@ data; the twelve missal payloads above; and the published `research/scope.md` an
    `main.tex`, the two provider liturgy trees hold **62 documents**, not the 21
    proper leaves iteration 0 listed: claude has 7 1962 proper leaves (48, 49, 51,
    52, 53, 54, 56), 2 postconciliar proper leaves, an ordinary, two reference
-   works, a comparative and a postconciliar ordinary; gpt has 15 1962 proper
-   leaves and a ritual leaf, 11 postconciliar proper leaves, an ordinary, 13
-   reference works, a comparative and a postconciliar ordinary. **The thirteen
+   works, a comparative, a postconciliar ordinary and a postconciliar reference; gpt has 15 1962 proper
+   leaves and a ritual leaf, 12 postconciliar proper leaves, an ordinary, 15
+   reference works, a comparative, a postconciliar ordinary and a postconciliar
+   reference. These categories total 15 Claude and 47 GPT documents: the seed
+   commit has 61 liturgy `main.tex` files and this new leaf is the sixty-second. **The fourteen
    postconciliar leaves were inside the index at both iterations and so inside
    every negative**, but iteration 0's statement of the corpus did not name them,
    and two of them bear on this Mass (PRE-035, §7.15).
@@ -3214,8 +3220,9 @@ philosopher's deliberate inversion.
 - **Wording check.** The idiom says "ditch"; the Latin says `púteum` and both
   Douay and AV say "pit". Present the idiom as a paraphrase of the appointed
   verse and never as a quotation of it. The rival ancestors were checked: Matt.
-  12:11 has a sheep in a pit on the sabbath but no ox, and Deut. 22:4 / Exod.
-  23:5 have the fallen ox but no sabbath, so **Luke 14:5 is the only locus
+  12:11 has a sheep in a pit on the sabbath but no ox; Deut. 22:4 names an
+  ass or ox fallen on the way, and Exod. 23:5 an ass lying under its burden,
+  neither naming the sabbath, so **Luke 14:5 is the only locus
   carrying both**, which is why the idiom's sabbath sense points here.
 - **Context.** In 1897, a city council quarrel over parliamentary tactics on the
   budget; in 1904, a Kentucky farm wife licensing Sunday gate-mending lest the
@@ -3596,7 +3603,7 @@ authored by a model.
   (Int., Grad., Ep., Off.) and "Ear, eye, touch, and mouth" (Int., Gosp., Off.)
   — proposals built from one formulary's several registers of a single category.
 - **Search boundary.** §3.4; `latitudo`, `sublimitas` and `ascende superius`
-  each return exactly one line in the 326,844-line prose index, and it is this
+  each return exactly one line in the 332,704-line prose index defined in §3.4, and it is this
   leaf's own `verified.md`. No commentary tradition on Eph. 3:18 is held by the
   registered library.
 - **Classification: NOT LOCATED IN THE CHECKED CORPUS.**
@@ -3635,7 +3642,8 @@ authored by a model.
   count over composed orations only, not over the missal.
 - **Classification: NOT LOCATED IN THE CHECKED CORPUS.**
 - **Controlling limit.** No checked witness joins the sabbath healing to the
-  doctrine of grace; both Ambrose and Bede join it to avarice. **A guide that
+  doctrine of grace. Ambrose makes the flesh overwhelm the soul; Bede and
+  Augustine compare the dropsical condition to avarice. **A guide that
   makes the healing a figure of prevenient grace is proposing, and must be in
   the exploratory section.** If a later reception sweep documents the join, that
   part moves out of this section.
@@ -4400,7 +4408,7 @@ moved afterwards, and this run's authoring stage regenerated
 brief's own 2026-09-09T09:25:13 — adding a fifth relation type the earlier
 transcription could not have carried, `traditional-attribution`, at the Introit,
 the Alleluia, the Offertory and the Communion. **§12 was re-transcribed from the
-regenerated record by this run's `brief-revision` stage**, run
+regenerated record by the `brief-revision` stage of run
 `53bdb2eaab3ba398`, on findings `CON-EVI-002` and `CON-PRO-001`. The record now
 carries **eighteen assertions across the seven scriptural elements** — two at
 the Introit, two at the Epistle, one at the Gradual, four at the Alleluia, two
@@ -4691,7 +4699,8 @@ production of this target, and the three silences are of different kinds.**
 2. **Run directories still on this machine.**
    `grep -l '"proper": "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost"' build/tpt-runs/*/state.json`
    returns exactly one path, `build/tpt-runs/e4aebcbd941b6b1a/state.json`,
-   **which is this run**, and `build/tpt-runs/` contains exactly one directory.
+   **the original run `e4aebcbd941b6b1a`**, at the 2026-09-05 inventory.
+   The one-directory count was historical and makes no claim about later runs.
    **An empty or single-entry result from that grep is not by itself evidence
    that this target has no prior production**: `build/` is ignored, `make clean`
    deletes it, and `wt tidy` sweeps it without asking, so a finished run leaves
@@ -5018,3 +5027,27 @@ Recorded here because no lane owns them and they would otherwise be lost.
   end would have been recorded once instead of walked into. **Whether this leaf
   should gain such a file is not this stage's call**, and `precedent-search`, which
   is read-only, expressly decides nothing about the repository. PRE-039.
+
+## Post-acceptance source corrections, 2026-10-01
+
+The dispositions in `research/production-review.md` supersede the dated
+production states above. In particular, §11's statement that composition place,
+audience and life stage were not supplied describes the original sweep, not
+the witnesses' contents. The retained text of Ladeuze's *Catholic Encyclopedia*
+article “Epistle to the Ephesians”, sections “To whom addressed” and “Date and
+place of composition; occasion”, discusses Rome and Caesarea, favours Rome,
+and places the traditional Ephesian destination beside his proposed circular
+letter to churches in north-eastern Asia Minor. Page 2 and the terminal apparatus
+now carry those alternatives. Article 14530a is “The New Testament”, not an
+article titled “Gospel of Saint Luke”; the binding's false title is corrected.
+The default chronology answer remains the source of the dates; its preference
+for traditional Ephesians claims does not mean the corpus contains no critical
+claim (`critical.ephesians-later-disciple`). No new date was authored here.
+
+The cultural audit's Exodus 23:5 now names an ass under its burden rather than
+an ox; Deuteronomy 22:4 names both an ass and an ox fallen on the road. Neither
+verse mentions the sabbath. The Sarum binding now agrees with §4.4 and with the
+retained Brightman and Blunt synopses: the prayer-book descent is evidenced by
+those synopses, although no Prayer Book printing was collated. The Fromage
+four-measures passage was re-read on printed p. 359 (PDF p. 380) of the bound
+1909 facsimile; the companion's locator now names that page explicitly.
