@@ -5,18 +5,25 @@ id = "corpus-links-and-known-issues-2026-10-01"
 owner = "PROJECT-WORK.md"
 promise = "Fix the PDF hyperlink and bookmark defect in every installed publication of both providers, with a gate that keeps it fixed, and fix every open known issue recorded in this workstream and in PROJECT-WORK.md's open lists (or record, with its reason, any item that needs a maintainer decision), then push to main and verify the deployment."
 state = "in_progress"
+# 2026-10-01 recovery scope: finish and cold-review the interrupted repairs,
+# including discovered regressions and open straightforward defects; do not
+# implement planned feature/design work. PROJECT-WORK.md's 76-row disposition
+# table preserves the distinction. None of the three broad requirements below
+# is passed by this register reconciliation or by an old review of other bytes.
 
   [[deliverables.requirements]]
   id = "links-every-pdf"
   criterion = "In every installed PDF, every internal heading link and bookmark lands on the page of its heading with the anchor at or just above it, no heading link targets a table, figure or document-start anchor, and no bookmark title carries TeX markup; a gate refuses a build that regresses."
   status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  evidence = ["PROJECT-WORK.md", "tools/tests/test_pdf_anchor_pages.py", "src/gpt/theology/sacraments/research/scope.md"]
+  note = "Recovery review covers 245 installed PDFs and 239 provider builds (7,165 pages); the repaired sacramental landscape destinations are documented with exact reviewed hashes and real-fragment regressions. Final installation and the post-leaf corpus scan remain pending, so this installed-PDF requirement stays open."
 
   [[deliverables.requirements]]
   id = "known-issues-resolved"
   criterion = "Every open item of the verified known-issues inventory is fixed and checked, or recorded with the reason it needs a maintainer decision; the register's lists are reconciled."
   status = "open"
   evidence = ["PROJECT-WORK.md"]
+  note = "The owning 76-row table records fixed, reviewed, integration-pending, planned, historical and decision-bound items individually. KI-027's bounded 30-group/eight-Psalm repair passes its focused checks, while 31 unexamined groups remain planned collation. Source repairs cover seven identifiable Latin bodies, nine Cummiskey rows and Angela's explicit English gaps; source/census projections and finding-aid checks now pass. Day's cross-Missal Apply regression passes 43 browser assertions. Five GPT leaves and Claude 59/pc-s52 have independent scoped passes and exact-byte installation; the five full Claude revisions, final integrated suite and release/site checks remain open."
 
   [[deliverables.requirements]]
   id = "claude-54-withdrawn"
@@ -32,6 +39,7 @@ state = "in_progress"
   criterion = "Every changed publication is rebuilt, reviewed as its change requires and installed byte-identical to the verified build; the three deploy gates pass; the work reaches origin/main by fast-forward; the Pages run and the live artifacts are verified."
   status = "open"
   evidence = ["PROJECT-WORK.md"]
+  note = "Source, PDF and leaf review outcomes are recorded independently of installation and deployment. Only the coordinator's final current-byte integration, deploy-gate and live verification evidence can close this requirement."
 
 [[deliverables]]
 id = "proper-study-pdf-anchors-2026-10-01"
@@ -755,7 +763,7 @@ state = "complete"
 id = "chronology-per-passage-dates-2026-09-23"
 owner = "PROJECT-WORK.md"
 promise = "Resolve escalation STU-005 as the maintainer decided on 2026-09-23: a page-2 dossier row for an element whose appointed passages carry different dates may state each passage's own date, labelled by its locus and drawn only from the generated chronology record, so that every appointed passage is dated as the 1962 profile requires. Lands after the Claude 1962 Eighteenth Sunday run publishes."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "checker-admits-per-passage-dates"
@@ -776,8 +784,12 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "eighteenth-sunday-introit-dated"
   criterion = "At the Eighteenth Sunday leaf's first revision, its Introit dossier rows in the expansive and concise studies give Ecclus 36:18 its generated date beside Ps 121:1's."
-  status = "open"
-  evidence = ["src/sources/inventories/research-staleness-v1.toml"]
+  status = "pass"
+  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/80-date-location.tex", "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/03-date-location.tex", "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/production-review.md"]
+  check = "contains"
+  path = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/sections/concise/03-date-location.tex"
+  needle = "Ecclus~36:18: B.C.~190--170 or c.~B.C.~280"
+  note = "Reconciled 2026-10-01 (KI-064): c408cf346 already supplied the per-passage date in both studies after review. This records that completed narrow revision, not completion of the current five-leaf revision program or a research-staleness rebaseline."
 
 [[deliverables]]
 id = "claude-1962-eighteenth-three-documents-2026-09-22"
@@ -855,7 +867,8 @@ state = "complete"
   evidence = ["PROJECT-WORK.md", "tools/tests/test_containment.py"]
   check = "contains"
   path = "PROJECT-WORK.md"
-  needle = "maps De consensu evangelistarum on 29 chapters but not on Matthew 9"
+  needle = "Augustine's *De consensu evangelistarum*, held inside NPNF1 vol. 6"
+  note = "Reconciled 2026-10-01, KI-068: the old contains check pinned the recorded absence on Matthew 9. The recovery discovery query now surfaces the held work at Matthew 9:1-8, so the check names that verified positive disposition without changing the acceptance criterion."
 
   [[deliverables.requirements]]
   id = "merged-without-disturbing-review"
@@ -1463,12 +1476,16 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "independent-foundation-disposition"
   criterion = "An independent reviewer answers the four blocking information-architecture, liturgy-adapter, provider-terminology, and A2-A4 visual/interaction questions, and the accepted, rejected, or changes-required disposition is recorded in the operational authorities before production foundation work begins."
-  status = "open"
+  status = "pass"
   evidence = [
     "guidance/corpus-browser-vision.md",
     "guidance/corpus-browser-roadmap.md",
-    "build/agent-continuity/corpus-browser-foundation.md",
+    "PROJECT-WORK.md",
   ]
+  check = "contains"
+  path = "guidance/corpus-browser-roadmap.md"
+  needle = "Shared non-Liturgy shell — ACCEPT"
+  note = "Reconciled 2026-10-01 (KI-053) against the tracked 2026-08-08 A0-A4 dispositions and the independent Wave 1 review of ecbd93a0575c4b890cc814af7cd20d01f5af7beb, both preceding the 2026-08-10 integration. The criterion requires recorded disposition, not a particular ZIP review; no criterion was weakened and no production route receives visual acceptance from this design decision. The broader foundation deliverable remains candidate pending separate reconciliation of its other evidence."
 
 [[deliverables]]
 id = "corpus-browser-foundation-hardening-2026-08-08"
@@ -2430,6 +2447,7 @@ state = "candidate"
   criterion = "Low Mass and trainer PDFs, maps, hashes, artwork records, and every-page visual evidence agree on one exact snapshot."
   status = "open"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/artwork-manifest.md"]
+  note = "2026-10-01, KI-057: the 2026-07-31 retirement of six-concern scoring is not proof that these actual artifact records agree. Retain this concrete consistency requirement open; no new artwork or planned guide revision is started by the recovery pass."
 
 [[deliverables]]
 id = "task-3-sanctuary-dictionaries"
@@ -2484,8 +2502,16 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "exact-snapshot-review"
   criterion = "Source support, rights and distribution status, safety, artifact consistency, mechanical correctness, and every-page visual evidence agree on one exact snapshot; any concrete defect remains explicit."
-  status = "open"
+  status = "waived"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md"]
+  waiver_reason = "The six-concern exact-snapshot scoring requirement was retired as bookkeeping, not fulfilled by a review. Its continuing concrete-defect obligation is preserved in the following requirement."
+  waiver_authority = "Maintainer decision of 2026-07-31, recorded in PROJECT-WORK.md, Standing public-alpha authority; reconciled 2026-10-01 as KI-057."
+
+  [[deliverables.requirements]]
+  id = "concrete-defects-explicit"
+  criterion = "Every known concrete defect in the Missa Cantata guide and cue cards remains explicit in the owning research records, release inventory, catalogs and project register; no internal check is represented as external approval."
+  status = "open"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md", "PROJECT-WORK.md"]
 
 [[deliverables]]
 id = "task-5-solemn-mass"
@@ -2508,8 +2534,16 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "exact-snapshot-review"
   criterion = "Source support, rights and distribution status, safety, artifact consistency, mechanical correctness, and every-page visual evidence agree on one exact snapshot; any concrete defect remains explicit."
-  status = "open"
+  status = "waived"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md"]
+  waiver_reason = "The six-concern exact-snapshot scoring requirement was retired as bookkeeping, not fulfilled by a review. Its continuing concrete-defect obligation is preserved in the following requirement."
+  waiver_authority = "Maintainer decision of 2026-07-31, recorded in PROJECT-WORK.md, Standing public-alpha authority; reconciled 2026-10-01 as KI-057."
+
+  [[deliverables.requirements]]
+  id = "concrete-defects-explicit"
+  criterion = "Every known concrete defect in the Solemn Mass guide and cue cards remains explicit in the owning research records, release inventory, catalogs and project register; no internal check is represented as external approval."
+  status = "open"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md", "PROJECT-WORK.md"]
 
 [[deliverables]]
 id = "project-review-discoverability"
@@ -2588,6 +2622,7 @@ state = "in_progress"
   criterion = "The exhaustive staleness audit passes with no stale edition."
   status = "open"
   evidence = ["tools/research-staleness", "PROJECT-WORK.md"]
+  note = "2026-10-01, KI-057: deliberately suspended by the maintainer on 2026-07-31, not passed or permanently waived. No research rebaseline or fresh corpus review is authorized by the recovery instruction to skip planned work. The clean suspension exit from check-staleness does not establish zero stale editions."
 
 [[deliverables]]
 id = "project-source-family-screening"
@@ -2598,8 +2633,10 @@ state = "complete"
   [[deliverables.requirements]]
   id = "screening-complete"
   criterion = "Every exact source-family review unit is family-screened."
-  status = "pass"
-  evidence = ["src/sources/inventories/source-family-migration-v1.toml", "guidance/sources.md"]
+  status = "waived"
+  evidence = ["src/sources/inventories/source-family-migration-v1.toml", "guidance/sources.md", "PROJECT-WORK.md"]
+  waiver_reason = "The maintainer withdrew family-screening as a requirement; pending unit rows are not evidence that all units were reviewed. This supersedes the inaccurate pass status without inventing review or changing source records."
+  waiver_authority = "Maintainer decision of 2026-07-31, recorded in PROJECT-WORK.md, Reconciliation history; reconciled 2026-10-01 as KI-057."
 
 [[deliverables]]
 id = "project-public-review-gates"
@@ -2610,6 +2647,14 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "work-specific-gates"
   criterion = "Every public-alpha publication has exact-snapshot evidence for source support, rights and distribution status, safety, artifact consistency, mechanical correctness, and every-page visual inspection, or retains each concrete defect explicitly."
+  status = "waived"
+  evidence = ["release/public-alpha.json", "PROJECT-WORK.md"]
+  waiver_reason = "The six-concern alpha completion assessment was retired as bookkeeping. This is not a claim that the reviews occurred; its continuing requirement to retain known concrete defects is preserved below."
+  waiver_authority = "Maintainer decision of 2026-07-31, recorded in PROJECT-WORK.md, Standing public-alpha authority; reconciled 2026-10-01 as KI-057."
+
+  [[deliverables.requirements]]
+  id = "concrete-defects-explicit"
+  criterion = "Every known concrete defect in a public-alpha publication remains explicit in its research records, release inventory, catalogs and project register, and no internal check is represented as external approval."
   status = "open"
   evidence = ["release/public-alpha.json", "PROJECT-WORK.md"]
 
@@ -2794,12 +2839,16 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "translation-independent-identity"
   criterion = "Chronology identity rests on named Scripture textual/addressing systems rather than translation editions; the Vulgate remains the preferred shared system wherever an existing safe correspondence holds, and shared chronology is authored once there rather than duplicated per system; a textually distinct non-Vulgate locus may own chronology natively; a failed projection into the Vulgate does not imply a failed native chronology query, mapping status and chronology status being separate axes; chronology is not duplicated per translation; and no universal verse-space fiction is introduced."
-  status = "open"
+  status = "pass"
   evidence = [
+    "src/sources/chronology/final-acceptance-review.md",
     "scripts/_chronology.py",
     "guidance/scripture-chronology.md",
     "tools/tests/test_chronology.py",
   ]
+  check = "contains"
+  path = "src/sources/chronology/final-acceptance-review.md"
+  needle = "| `translation-independent-identity` | **PASS** |"
   note = "Reopened 2026-08-27. The former criterion was satisfiable by one named system, `vulgate`, and so did not prove the requirement it was written for. The corpus treated a concordance refusal as a chronology refusal, which conflates two questions: whether this locus can be asserted equivalent to that one, and whether this locus can carry chronology at all. A textually distinct locus - the Greek Sirach is the repository's own standing example - must be able to own native chronology while its mapping to the Vulgate is still refused."
 
   # 2026-08-27, post-audit correction lane: READY_FOR_REREVIEW, and still open,
@@ -2824,6 +2873,13 @@ state = "in_progress"
   # lane it reviewed, and this lane is in the same position, so neither may
   # accept. The reviewer who marks this pass reviews every row of
   # final-acceptance-manifest.tsv from a clean session.
+
+  # 2026-10-01, KI-017: record the subsequent genuinely cold final review's
+  # explicit PASS of this criterion at audited corpus 5b4fe31c0. That reviewer
+  # checked every acceptance case and constructed the ownership/full-span
+  # probes. The old open comments above describe the earlier repair lanes;
+  # this reconciliation accepts their later independent disposition, not the
+  # corpus's current source claims or the outstanding source-audit requirement.
 
   [[deliverables.requirements]]
   id = "typed-many-valued-model"
@@ -2882,13 +2938,17 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "exhaustive-coverage"
   criterion = "Coverage is reported over a universe that is named rather than assumed. Every locus of the Vulgate/Clementine primary chronology universe reaches exactly one typed chronology status and none is silently undated; separately, every additional native locus in each non-Vulgate textual/addressing system the chronology subsystem declares native support for is accounted for, without counting an alternate numbering of a safely corresponding text as new Scripture; cross-system mapping status is reported as its own axis rather than as a chronology status; and the report distinguishes substantive, composition-only, multi-assertion, alternative-bearing, research-gap and mapping-refused categories without a bare headline percentage."
-  status = "open"
+  status = "pass"
   evidence = [
+    "src/sources/chronology/final-acceptance-review.md",
     "src/sources/chronology/coverage.tsv",
     "src/sources/chronology/gaps.yaml",
     "guidance/scripture-chronology.md",
     "tools/tests/test_chronology.py",
   ]
+  check = "contains"
+  path = "src/sources/chronology/final-acceptance-review.md"
+  needle = "| `exhaustive-coverage` | **PASS** |"
   note = "Reopened 2026-08-27. The former criterion proved exhaustive Vulgate/Clementine accounting - 35 809 verses, none research-pending - and was marked pass on that basis, but it did not prove exhaustive coverage of every locus the chronology layer can address once native non-Vulgate systems are admitted, because the layer admitted none. It returns to pass only when the corrected universe is honestly and completely enumerated; if the repository's machinery cannot yet enumerate a supported system's native loci, this stays open with that reason recorded."
 
   # 2026-08-27, post-audit correction lane: still open, and now open for a
@@ -2923,6 +2983,13 @@ state = "in_progress"
   # stricter reading, the criterion should SAY so rather than be enforced by a
   # note. The seven loci are preserved: no date was invented to close them.
 
+  # 2026-10-01, KI-017: record the subsequent cold review's explicit PASS.
+  # It independently reproduced the 37,171-locus universe and every category,
+  # without importing the loader, and distinguished a research-gap category
+  # from a requirement to invent dates until it was empty. The criterion is
+  # unchanged; the earlier repair-lane comments are historical, not additional
+  # acceptance criteria. This is no acceptance of later source/corpus changes.
+
   [[deliverables.requirements]]
   id = "consumer-non-derivation-contract"
   criterion = "Tracked guidance states that propers and every other consumer must obtain biblical chronology from this corpus and must not independently research, infer, harmonize, or invent a replacement date when the corpus is absent or unresolved."
@@ -2935,6 +3002,12 @@ state = "in_progress"
   status = "open"
   evidence = ["guidance/scripture-chronology.md", "PROJECT-WORK.md"]
   note = "Added 2026-08-27 by the correction lane, which may not mark it pass. Machine-valid is not source-verified: the population wave passed every gate and its own authors' review, and a second reader still found a quotation from memory, a wrong relative anchor, a modern-critical figure inside the traditional profile, an unretained claim of source silence that proved false for half its subjects, and a refusal that went stale mid-wave. Author self-review cannot discharge this. The corpus is a canonical factual dependency for every future proper, which makes false confidence more dangerous than missing data."
+  # 2026-10-01, KI-017: STILL OPEN. The final-acceptance review explicitly says
+  # KEEP OPEN and its overall disposition is CHANGES_REQUIRED. A fresh source
+  # audit is planned, excluded from the current recovery implementation; the
+  # regenerated profile-contract-rereview-manifest.tsv includes later changes
+  # that this historical review could not accept. The deliverable stays
+  # in_progress, irrespective of the two narrow historical PASS dispositions.
 
   # 2026-08-27: the cold audit ran and returned CHANGES_REQUIRED - 104 standing
   # findings over 84 distinct defects, one critical. The post-audit correction
