@@ -1,6 +1,30 @@
 schema_version = 1
 
 [[deliverables]]
+id = "claude-59-research-record-correction-2026-09-30"
+owner = "PROJECT-WORK.md"
+promise = "Correct the Claude 1962 Nineteenth Sunday leaf's research records where they lag the reviewed study or misstate their sources (STU-011, STU-012, RES-010, RES-011), with an independent re-review, without changing any reviewed render byte, and integrate the correction on main with its Pages deployment verified."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "claude-59-correction-records"
+  criterion = "research/interpretations.md agrees with the reviewed study on carrying authors, Schuster and Honorius, and cites each clause of the servants' identification to the author who states it; scope.md 3.6 states a search result a replay matches; source-bindings.toml binds the Challoner verse texts the documents print or quote and Ps 104:1 in the NPNF1-8 binding, and the source library validates; each finding's disposition is written into the leaf's findings record and research/production-review.md."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-59-correction-reviewed"
+  criterion = "A fresh reviewer that did not author the correction checks it against the findings and the cited witnesses and finds nothing blocking, and no render input, installed PDF or web edition of the leaf changes."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-59-correction-on-main"
+  criterion = "The correction reaches origin/main as a fast-forward of commits rebased onto the current main, after the three deploy gates pass locally, and the triggered Pages run is verified."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "claude-1962-nineteenth-three-documents-2026-09-30"
 owner = "PROJECT-WORK.md"
 promise = "Drive the proper-study workflow for provider claude on the 1962 Nineteenth Sunday after Pentecost for Sunday 2026-10-04 through terminal acceptance: expansive study, concise study, standalone homily and canonical web edition with fresh cold reviews, every workflow cycle and host intervention documented, every contributing model declared exactly, and the delivered work committed on feature/propers/claude."

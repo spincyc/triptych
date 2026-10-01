@@ -7,6 +7,29 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-09-30.
 
+## Claude Nineteenth Sunday research-record correction, 2026-09-30
+
+<!-- promised-deliverable: claude-59-research-record-correction-2026-09-30 -->
+
+After the Nineteenth Sunday publication was deployed, the maintainer
+instructed on 2026-09-30: "do the correction ; rebase, reconcile, with main,
+push to main". The correction is the one the production left standing for
+the leaf's research owner: its research records lag the reviewed study
+(STU-011, STU-012), with two research-review advisories of the same owner and
+class (RES-010, RES-011). `research/interpretations.md` still names Schuster
+a carrying author of the feast-that-now-is reading, keeps Honorius in the
+call-to-the-nations reading, and credits Hilary with prophets and "one God";
+`research/scope.md` §3.6 under-reports a replayable search; and
+`research/source-bindings.toml` binds neither the Challoner verse texts the
+documents print nor Ps 104:1 of the NPNF1-8 Augustine. None of these files is
+a render input, so no reviewed PDF or web byte changes. The other standing
+advisories, which concern rendered prose, are outside this correction.
+
+**In progress.** The correction is authored and independently re-reviewed,
+each entry's disposition is written into the leaf's findings record, and the
+work is integrated on `main` with the deploy gates run and the Pages run
+verified.
+
 ## Claude 1962 Nineteenth Sunday three documents, 2026-09-30
 
 <!-- promised-deliverable: claude-1962-nineteenth-three-documents-2026-09-30 -->
