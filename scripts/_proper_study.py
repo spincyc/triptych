@@ -26,6 +26,19 @@ RECEIPT = "research/artifacts.json"
 RECEIPT_SCHEMA = 2
 WEB_RECEIPT = "research/web-artifact.json"
 RESEARCH_REVIEW_CONTRACT = "proper-study-v3"
+# v4 (selected from proper-study version 8) also seals what v3 names only by
+# its code: every file the leaf's chronology computation opens outside the
+# leaf, every repository module it compiles, and the source records, ancestry
+# and available payloads of every source its answer cites. v3 stays as it was,
+# so a review sealed under it verifies as it always did.
+CHRONOLOGY_READS_CONTRACT = "proper-study-v4"
+RESEARCH_REVIEW_CONTRACTS = (RESEARCH_REVIEW_CONTRACT, CHRONOLOGY_READS_CONTRACT)
+# Within the leaf the research seal's own rule decides what is evidence: these
+# three directories, which it seals whole. The component manifest is opened by
+# the postconciliar adapter only to refuse a disagreement; it is authored after
+# research, and its bytes are not an input to the answer.
+LEAF_EVIDENCE = ("research", "propers", "instance")
+LEAF_AGREEMENT_ONLY = ("proper-components.toml",)
 # Computation is a separate seal dimension from the source owners declared by
 # research. The workflow digest covers recipes/fragments/schemas, not the code
 # those commands execute. Keep this bounded adapter/query dependency list here.
@@ -210,14 +223,24 @@ def artifact_state(root: Path, provider: str, document: str) -> dict:
 def bound_evidence(root: Path, bindings: Path) -> set[Path]:
     """Follow the source library's exact ancestry, including available payloads."""
     ids = [item["source_id"] for item in tomllib.loads(bindings.read_text()).get("bindings", [])]
-    if not ids:
-        return set()
+    return source_evidence(root, ids)
+
+
+def _source_library(root: Path):
     loader = importlib.machinery.SourceFileLoader("proper_study_sources", str(ROOT / "tools/source-library"))
     spec = importlib.util.spec_from_loader(loader.name, loader)
     library_tool = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = library_tool
     spec.loader.exec_module(library_tool)
-    library = library_tool.load_library(root, check_binding_fingerprints=False)
+    return library_tool, library_tool.load_library(root, check_binding_fingerprints=False)
+
+
+def source_evidence(root: Path, ids, role: str = "bound evidence") -> set[Path]:
+    """Each source's record, its ancestry's records, and their available payloads."""
+    ids = list(ids)
+    if not ids:
+        return set()
+    library_tool, library = _source_library(root)
     paths, visited = set(), set()
     while ids:
         source_id = ids.pop()
@@ -225,7 +248,7 @@ def bound_evidence(root: Path, bindings: Path) -> set[Path]:
             continue
         visited.add(source_id)
         if source_id not in library.records:
-            raise ValueError(f"unregistered bound evidence: {source_id}")
+            raise ValueError(f"unregistered {role}: {source_id}")
         record = library.records[source_id]
         paths.add(record.path)
         ids.extend(library_tool._dependency_ids(record))
@@ -357,6 +380,32 @@ def chronology_computation_inputs(root: Path, provider: str, document: str) -> d
     return {name: digest(root / name) for name in sorted(names)}
 
 
+def chronology_reads(root: Path, provider: str, document: str) -> tuple[set[Path], dict[str, str], list[str]]:
+    """What the leaf's chronology computation reads, compiles and cites, for a v4 seal.
+
+    The files are read off the computation itself by
+    `_proper_chronology.computation_reads`, never listed here. A file it opens
+    inside the leaf is left to the leaf's own seal rule, and one outside that
+    rule's directories is refused rather than silently sealed or dropped.
+    """
+    import _proper_chronology
+
+    leaf = leaf_path(root, provider, document).resolve()
+    traced = _proper_chronology.computation_reads(document, root, provider)
+    paths = {root / name for name in traced["source_files"]}
+    for name in traced["reads"]:
+        path = root / name
+        if path.resolve().is_relative_to(leaf):
+            parts = path.resolve().relative_to(leaf).parts
+            if parts[:1] and parts[0] in LEAF_EVIDENCE or parts == LEAF_AGREEMENT_ONLY:
+                continue
+            raise ValueError("the chronology computation reads a leaf file the research seal "
+                             f"does not cover: {name}")
+        paths.add(path)
+    modules = {name: digest(root / name) for name in traced["modules"]}
+    return paths, modules, traced["sources"]
+
+
 def review_inputs(root: Path, provider: str, document: str, review: str, *,
                   review_contract: str | None = None) -> dict:
     """Stable evidence scope for each independent review, sealed by the engine.
@@ -366,8 +415,9 @@ def review_inputs(root: Path, provider: str, document: str, review: str, *,
     Research evidence and source bindings are independently sealed before prose.
     """
     leaf = leaf_path(root, provider, document)
-    if review_contract is not None and (review_contract != RESEARCH_REVIEW_CONTRACT or review != "research"):
-        raise ValueError("review-contract proper-study-v3 applies only to research review")
+    if review_contract is not None and (review_contract not in RESEARCH_REVIEW_CONTRACTS
+                                        or review != "research"):
+        raise ValueError(f"review-contract {review_contract} applies only to research review")
     paths: set[Path] = set()
     value = {"schema": 1, "provider": provider, "document": document, "review": review}
     if review == "research":
@@ -382,13 +432,22 @@ def review_inputs(root: Path, provider: str, document: str, review: str, *,
             paths.update(path for path in (leaf / directory).rglob("*") if path.is_file())
         paths.update(research_dependencies(root, provider, document))
         paths.update(bound_evidence(root, leaf / "research/source-bindings.toml"))
-        if review_contract == RESEARCH_REVIEW_CONTRACT:
+        if review_contract in RESEARCH_REVIEW_CONTRACTS:
             for name in ("research/chronology.toml", "research/chronology-annotations.tex"):
                 path = leaf / name
                 if not path.is_file() or not path.read_text().strip():
-                    raise ValueError(f"v3 research review requires canonical chronology input: {name}")
+                    raise ValueError(f"{review_contract} research review requires canonical "
+                                     f"chronology input: {name}")
             value["review_contract"] = review_contract
-            value["chronology_computation_inputs"] = chronology_computation_inputs(root, provider, document)
+            computation = chronology_computation_inputs(root, provider, document)
+            if review_contract == CHRONOLOGY_READS_CONTRACT:
+                reads, modules, cited = chronology_reads(root, provider, document)
+                # The named list stays; anything else the computation compiled joins it.
+                computation.update(modules)
+                paths.update(reads)
+                paths.update(source_evidence(root, cited, "chronology source"))
+                value["chronology_cited_sources"] = cited
+            value["chronology_computation_inputs"] = computation
     elif review in {"study", "synthesis", "homily"}:
         data = manifest(leaf)
         mode = "research" if review == "study" else review
@@ -621,8 +680,8 @@ def main() -> int:
                         help="require the author-standing contract (proper-study v7)")
     parser.add_argument("--date", default="undated")
     parser.add_argument("--review", choices=("research", "study", "synthesis", "homily", "visual", "web"))
-    parser.add_argument("--review-contract", choices=(RESEARCH_REVIEW_CONTRACT,),
-                        help="explicit v3 research seal; omitted for historical review receipts")
+    parser.add_argument("--review-contract", choices=RESEARCH_REVIEW_CONTRACTS,
+                        help="explicit v3 or v4 research seal; omitted for historical review receipts")
     args = parser.parse_args()
     root = args.root.resolve()
     try:

@@ -797,6 +797,21 @@ class ResearchGuidanceTests(PropersCase):
         self.assertIn("Associate every result with its declared lane id.",
                       self.instructions)
 
+    def test_guidance_gives_each_research_lane_its_own_working_area(self):
+        """A read-only lane still writes scripts and intermediate output.
+
+        Seven research lanes ran at once in `ca03f1b357e7ec25` and one found
+        its script replaced by a sibling's; the policy now requires the driver
+        to keep their working areas disjoint.
+        """
+        self.assertIn(
+            "Give every lane a working area of its own, disjoint from every "
+            "other lane's, for any file it writes outside its result.",
+            self.instructions)
+        self.assertIn(
+            "the location of its own working area, disjoint from every other "
+            "lane's, and nothing else.", self.instructions)
+
     def test_guidance_specifies_deterministic_batching(self):
         """Test 19."""
         self.assertIn(

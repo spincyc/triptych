@@ -10,7 +10,7 @@ available for legacy schema-1 work. The current three-document contract
 restores the established first four pages for the concise companion, while
 its remaining argument and the expansive study follow their distinct roles. Read
 `guidance/liturgy/propers-three-documents.md` for the owning standard. The
-`proper-study` workflow is at version 7. The version paragraphs below say what
+`proper-study` workflow is at version 8. The version paragraphs below say what
 each bump changed.
 
 The driver grammar is unchanged:
@@ -68,11 +68,14 @@ settled references. The artifact gate refuses a schema-1 receipt and prints the
 `snapshot` command that replaces it. The visual-review seal embeds this receipt.
 A run whose visual review was sealed under schema 1 therefore returns to build
 and visual review at its terminal gate.
-The v3 research-review command explicitly selects
-`--review-contract proper-study-v3`, requiring canonical chronology records and separately sealing
+The research-review command explicitly selects a seal contract.
+`--review-contract proper-study-v3` requires canonical chronology records and separately seals
 their computation code and applicable identity registry even before a new
-leaf's component manifest exists. The default seal contract remains unchanged
-for historical runs, including older studies that already carried chronology.
+leaf's component manifest exists. `proper-study-v4`, which version 8 selects,
+also seals what that computation reads and what its answer cites; Version 8
+below says how. The default seal contract remains unchanged for historical
+runs, including older studies that already carried chronology, and so does
+`proper-study-v3`.
 
 Publication checks require all three target PDFs and the canonical web edition,
 their exact release records and the correct family catalog. Public-alpha uses
@@ -172,6 +175,59 @@ repeat the presentation and format contracts. These changes move the workflow
 digest, so a version-6 run cannot advance under them: complete it, or seed a
 new run. Published leaves are not re-gated; `check-proper-components`
 validates their manifests under the contracts they declare.
+
+Version 8 makes two changes, one to a fragment and one to the research seal.
+
+The contract fragment's sentence on the four senses and the old quotas is
+rewritten. Version 7 read "There is no global substitute for each
+interpretation's four senses, mandatory cultural gallery, or
+exploratory-proposal quota", which parses as requiring a gallery and a
+proposal quota of every interpretation. The GPT postconciliar Twenty-seventh
+Sunday run, `17099e79f3655b7d`, needed a recorded clarification during research,
+intervention 0000 (`encoded: false`), to read it as the profile intends. The
+fragment now
+says what `guidance/liturgy/propers-three-documents.md` says, in two sentences:
+each interpretation carries its own four senses and no global table substitutes
+for them; the older two-document contract's mandatory cultural gallery and
+exploratory-proposal quotas do not apply and are not reinstated, and a gallery
+or proposal appendix is no substitute for an interpretation's argument. This
+version encodes that intervention.
+
+The research review's seal now covers the chronology's inputs. Under
+`proper-study-v3` it named the computation's code and nothing the code read, so
+a seal could miss the data a chronology answer rests on and the sources it
+cites. The Claude postconciliar Twenty-fifth Sunday run, `472e2eb20876b22a`,
+spent two of its four review cycles there: its first research review found 153
+verse files the computation opened and the leaf had not declared, and its
+second found that none of the nine sources the chronology record cites had a
+file in the seal. The research-review command now selects `proper-study-v4`.
+`computation_reads` in `scripts/_proper_chronology.py` runs the leaf's record
+and annotations computation in a fresh interpreter under an audit hook, with
+the calendar parse cache off and no compiled bytecode, and reports every file
+it opens, every repository file it compiles, and every source its claims cite.
+None of these is listed by hand. The seal adds every file read outside the leaf, every
+compiled module beyond the named computation inputs, each cited Scripture
+chapter file, and each cited source-library record with its ancestry and
+available payload; `chronology_cited_sources` names the ids. Inside the leaf,
+the seal's existing rule decides: `research/`, `propers/` and `instance/` are
+already sealed whole, and the component manifest, which the postconciliar
+adapter opens only to refuse a disagreement, is authored after research and is
+not evidence. A read under `build/`, which would be a cache standing in for a
+source, and a read of any other leaf file are refused rather than sealed.
+
+Across the nine proper-study leaves in the tree on 2026-10-01, every
+`proper-study-v3` seal is a subset of the same leaf's `proper-study-v4` seal.
+The GPT 1962 Nineteenth Sunday and GPT postconciliar Twenty-seventh Sunday
+seals each gain about 1,560 files: the Clementine chapters, three editions'
+verse texts and the canonical book index the computation opens. Four other
+leaves gain the Douay-Rheims chapters their records cite as Scripture
+witnesses. `research/review-dependencies.toml` still declares every other
+external owner, and the research fragment now tells the researcher that these
+need no declaration.
+
+Both changes move the workflow digest, since the fragments and the pipeline's
+review command are inside it, so a version-7 run cannot advance under them:
+complete it, or seed a new run.
 
 ## Overview
 
@@ -355,8 +411,9 @@ The parent agent (Claude or Codex session) follows this cycle:
    - `SINGLE`: start one clean AI worker, give it exactly the packet contents,
      and require its structured result as JSON at a path you choose.
    - `FANOUT / HOST-MAX`: start one clean AI worker per listed lane and none
-     besides, give each exactly its own lane packet, and require one structured
-     result per lane.
+     besides, give each exactly its own lane packet and a working area of its
+     own, disjoint from every other lane's, and require one structured result
+     per lane.
    - `PROGRAM GATE`: start no worker; `tpt` runs the stage itself.
 3. **Advance**: Run the command `tpt` printed — `advance <run-id> --result
    <path>`, one `--lane-result <lane-id>=<path>` per lane, or `--run-gate`.
@@ -415,8 +472,9 @@ canonical order with its own packet path, `lane_packet_hash`, and reasoning
 effort. Start one fresh subagent per listed lane and none besides, each at its
 own lane's effort — lanes of one stage need not share a level, and running them
 together is no reason to level them — give each exactly the contents of its own
-lane packet, and require one structured JSON result per lane. Then advance with
-one `--lane-result` flag per lane:
+lane packet and the location of a working area of its own, and require one
+structured JSON result per lane. Then advance with one `--lane-result` flag per
+lane:
 
 ```bash
 tools/tpt proper <proper-id> advance <run-id> \
@@ -456,6 +514,20 @@ supports fewer concurrent subagents than there are lanes, take the lanes in the
 canonical order the instructions list them, run one batch at your host's
 maximum, then the next, until every lane has finished. Batching changes no lane
 id, no lane order, and no lane packet byte.
+
+Give every lane a working area of its own, disjoint from every other lane's,
+and name it in that lane's dispatch: it is where the lane writes anything that
+is not its result, such as scripts, retrieved files and intermediate output.
+The instructions state the requirement and no path shape, because where a host
+keeps scratch space is the host's business; a directory per lane is enough. Only
+the driver can do this, since no lane can see its siblings. A read-only lane
+still writes: in run `ca03f1b357e7ec25` two of seven concurrent research lanes
+worked in one scratch directory, and a sibling replaced one lane's `build.py`
+mid-run under a name either would have chosen. That lane noticed and said so in
+its hand-back; nothing else would have. A lane whose evidence came from a
+sibling's script returns a result that is correctly shaped, hashed and joined,
+and wrong. The policy text lives in `scripts/_workflow.py`, outside the
+workflow-source digest, so stating it moved no run's digest.
 
 `tpt` performs the join. Do not invent, omit, combine, or subdivide lanes; do
 not summarize, merge, reconcile, reorder, or edit a lane result; and do not
@@ -1091,7 +1163,9 @@ Each stage declares how it is run:
 - `fanout/host-max`: `research`, `content-evaluation`, and `visual-evaluation`.
   All three mutate no authoritative artifact — one discovers, two judge — so
   their work is partitioned across lanes that can run at the same time. Nothing
-  a lane does can conflict with a sibling's, because no lane writes anything.
+  a lane does to the repository can conflict with a sibling's, because no lane
+  writes there; the scratch files a lane does write go in the working area of
+  its own that the driver assigns it.
 
 `research` declares seven lanes, in canonical order:
 

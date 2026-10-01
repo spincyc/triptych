@@ -2,12 +2,16 @@
 
 Read `guidance/liturgy/propers-three-documents.md` completely. It owns this
 workflow's deliverable: a 20–50-page expansive study, a 10–12-page concise
-study with the restored four-page opening, and a standalone homily. There is
-no global substitute for each interpretation's four senses, mandatory cultural
-gallery, or exploratory-proposal quota. Read the applicable
-1962 or postconciliar profile for identity, text control, rights, source
-research, and branches. Universal editorial and repository guidance continues
-to govern. The canonical leaf is `DOCUMENT_ROOT` in this packet.
+study with the restored four-page opening, and a standalone homily. Each
+interpretation carries its own literal, allegorical, moral, and anagogical
+senses, and no global four-senses table substitutes for them. The older
+two-document contract's mandatory cultural gallery and exploratory-proposal
+quotas do not apply to this workflow, and nothing in it reinstates them; a
+gallery or a proposal appendix is no substitute for an interpretation's
+argument. Read the applicable 1962 or postconciliar profile for identity, text
+control, rights, source research, and branches. Universal editorial and
+repository guidance continues to govern. The canonical leaf is `DOCUMENT_ROOT`
+in this packet.
 
 Produce one expansive source-first study, one concise study, and one standalone
 homily from one canonical research owner. The three entrypoints are `main.tex`,

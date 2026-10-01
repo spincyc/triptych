@@ -413,6 +413,36 @@ class ControllerGuidanceTests(FanoutCase):
         self.assertIn("Batching changes no lane id, no lane order, and no "
                       "lane packet byte.", instructions)
 
+    def test_fanout_gives_every_lane_a_disjoint_working_area(self):
+        """Lanes running together must not share where they write.
+
+        In run `ca03f1b357e7ec25` two research lanes worked in one scratch
+        directory and a sibling replaced a lane's script mid-run under a name
+        either would have chosen. Only the driver can allocate disjoint areas,
+        since no lane can see its siblings, so the policy text requires it --
+        and names no path shape, which belongs to the host.
+        """
+        run_id = self.seed()["run_id"]
+        instructions = self.advance_to_fanout(run_id)["instructions"]
+        self.assertIn(
+            "Give every lane a working area of its own, disjoint from every "
+            "other lane's, for any file it writes outside its result.",
+            instructions)
+        self.assertIn(
+            "Give each one exactly the contents of its own lane packet and "
+            "the location of its own working area, disjoint from every other "
+            "lane's, and nothing else.", instructions)
+        # The packet paths in the roster are the run's; the rule names none.
+        rule = [line for line in instructions.splitlines()
+                if "working area" in line]
+        self.assertEqual(len(rule), 2)
+        for host_shape in (".scratch", "/tmp", "build/", "/"):
+            self.assertFalse(any(host_shape in line for line in rule),
+                             host_shape)
+        # A single stage has no sibling to collide with and is not told this.
+        single = self.seed()["instructions"]
+        self.assertNotIn("working area", single)
+
     def test_the_controller_is_not_asked_to_join(self):
         run_id = self.seed()["run_id"]
         instructions = self.advance_to_fanout(run_id)["instructions"]

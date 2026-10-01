@@ -749,8 +749,10 @@ programmatic validation  -> program
 ```
 
 Fan-out is the mode for work that mutates nothing: lanes that only discover or
-only judge write no artifact a sibling could conflict over, so the only cost of
-running them at once is host capacity. Everything that writes — authoring,
+only judge write no artifact a sibling could conflict over, and the scratch
+files they do write go in disjoint working areas the controller assigns (see
+controller guidance below), so the only cost of running them at once is host
+capacity. Everything that writes — authoring,
 revision, retrieval, and the one stage that integrates many lanes into one
 brief — is `single`, because an authoritative artifact has exactly one owner at
 a time and a synthesis reconciled by two agents is two syntheses. Checks a
@@ -1161,6 +1163,16 @@ path and `lane_packet_hash`, gives the exact `advance` command with one
 as it supports, up to all of them; where host capacity is lower than the lane
 count, the lanes are taken in canonical order, one batch at the host maximum at
 a time. Batching changes no lane id, no lane order, and no lane packet byte.
+
+The fan-out form also requires the controller to give every lane a working area
+of its own, disjoint from every sibling's, and to name it in the lane's
+dispatch beside the packet. Lane identity is fixed by the workflow, but where a
+lane writes its scripts and intermediate output is not, and concurrent agents
+otherwise inherit one default working area from their host: in run
+`ca03f1b357e7ec25` a research lane's script was replaced mid-run by a sibling's
+under the same name. Only the controller can allocate disjoint areas, because a
+lane cannot see its siblings, so the rule is in these instructions rather than
+in a fragment. It names no path shape, which is the host's to choose.
 
 Every dispatch line names the reasoning effort the agent runs at: the single
 form states it once, the fan-out form states it inside each lane's own roster

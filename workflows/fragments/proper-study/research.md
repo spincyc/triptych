@@ -25,8 +25,8 @@ Prepare the concise study's required page-2 chronology through the canonical
 verified appointments and the owning adapter; preserve partial-verse and
 adaptation limits, alternatives, event/composition distinctions and absent
 dates. Follow the chronology profile for postconciliar appointment query inputs.
-Declare and inspect the controlling chronology source owners in this research
-boundary. A prior date-free study's approval does not cover new date claims.
+Inspect the controlling chronology source owners in this research boundary.
+A prior date-free study's approval does not cover new date claims.
 Provide those claims a reviewed home in the expansive study as well, such as
 a same-owner terminal historical appendix. Complete these records before
 drafting reader-facing study prose. A fresh research reviewer follows.
@@ -42,5 +42,8 @@ for postconciliar work and any controlling same-family registry records. An
 empty array is valid when all evidence is local or already bound by source ID.
 The engine also seals the leaf's entire `research/`, `propers/`, and `instance/`
 evidence, excluding mutable production/review receipts, and the exact ancestry
-and available payload bytes of every registered binding. The reviewer verifies
-that this dependency declaration includes all controlling external evidence.
+and available payload bytes of every registered binding. For the chronology it
+seals every file the record and annotations computation opens outside the leaf,
+and every source the chronology record cites, with that source's ancestry and
+available payload; these need no declaration. The reviewer verifies that this
+dependency declaration includes all other controlling external evidence.

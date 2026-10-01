@@ -505,11 +505,14 @@ class ChronologyComputationSealTests(unittest.TestCase):
         with self.assertRaises(OSError):
             self.seal()
 
-    def test_only_current_pipeline_research_seal_selects_v3_contract(self):
+    def test_v3_contract_is_retained_for_research_review_only(self):
+        # Version 8 moved research review to proper-study-v4, which also seals
+        # the chronology computation's reads (test_proper_chronology_reads);
+        # v3 stays selectable so a review sealed under it still verifies.
         pipeline = json.loads((ROOT / "workflows/pipelines/proper-study.json").read_text())
         selected = [stage["id"] for stage in pipeline["stages"]
                     if "--review-contract proper-study-v3" in stage.get("review_input_command", "")]
-        self.assertEqual(selected, ["research-review"])
+        self.assertEqual(selected, [])
         with self.assertRaisesRegex(ValueError, "only to research"):
             study.review_inputs(self.root, "gpt", self.document, "study", review_contract=study.RESEARCH_REVIEW_CONTRACT)
 

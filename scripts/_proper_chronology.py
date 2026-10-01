@@ -38,7 +38,12 @@ canonical concordance before the same chronology queries below.
 
 from __future__ import annotations
 
+import json
+import os
 import re
+import site
+import subprocess
+import sys
 from functools import lru_cache
 from pathlib import Path
 from typing import NamedTuple
@@ -1659,3 +1664,177 @@ def render(found: Dossier) -> str:
 
 def record_path(leaf: Path) -> Path:
     return leaf / RECORD
+
+
+# --- What the computation reads ---------------------------------------------
+#
+# A review seal that names the computation's code but not its data misses most
+# of what a chronology answer rests on. For one postconciliar leaf the record
+# and annotations opened 1,576 files beneath src/ -- the corpus, the canonical
+# book index, the Clementine chapters whose verse counts close an open citation,
+# and three editions' verse texts behind the Psalter concordance -- and the run
+# that wrote it learned that only from a reviewer, then traced them by hand.
+# Listing them here by hand would be the second source of truth
+# `guidance/the-shape.md` §2 predicts will disagree, so they are read off the
+# computation itself: it runs in a fresh interpreter with an audit hook
+# installed before any repository module is imported, and every file it opens
+# is reported.
+#
+# Two things would make that report lie, and both are closed. `_calendars`
+# parses a large YAML or TOML file through a JSON cache under build/, so with a
+# warm cache the computation opens the cache entry and not the calendar; the
+# probe runs with that cache off, and a read that still lands under build/ is
+# refused rather than reported in a source's place. And whether Python opens a
+# module's source or a compiled copy depends on the state of __pycache__; the
+# probe reads no compiled copy, so every module it imports is compiled from its
+# source, and the files it compiles are reported as code, apart from data.
+#
+# What the answer cites is not what it opens: a claim names source ids, and
+# their records are never read to compute it. A source-library id is reported
+# as an id, for a seal to follow into the library with its ancestry. Scripture
+# cited as its own witness is a tracked bible file instead, and is reported as
+# that file: `bible:<edition>:<locus>` is the edition's chapter record, which
+# `_chronology._bible_source_locus_problem` reads to admit the source, and
+# `bible.<edition>` the edition's index, whose presence admits it.
+
+_READS_PROBE = """\
+import json, os, sys
+opened, compiled = [], []
+def _hook(event, args):
+    if event == "open" and args and isinstance(args[0], (str, bytes, os.PathLike)):
+        opened.append(os.fsdecode(args[0]))
+    elif event == "compile" and len(args) > 1 and isinstance(args[1], (str, bytes, os.PathLike)):
+        compiled.append(os.fsdecode(args[1]))
+sys.addaudithook(_hook)
+sys.path.insert(0, sys.argv[1])
+import _proper_chronology
+print(json.dumps(_proper_chronology._traced(
+    sys.argv[2], sys.argv[3], sys.argv[4], opened, compiled)))
+"""
+
+
+def computation_reads(
+    document: str, root: Path = ROOT, provider: str = "claude"
+) -> dict[str, list[str]]:
+    """What the leaf's chronology record and annotations are computed from.
+
+    `reads` is every data file the computation opens and `modules` every
+    repository file it compiles as code, both relative to `root`. `sources` is
+    the source-library ids its claims cite, and `source_files` the tracked bible
+    files that hold the Scripture they cite as a witness. The computation is the
+    one `tools/tpt proper-chronology record` and `annotations` run, and it is
+    run, not modelled.
+    """
+    import tempfile
+
+    with tempfile.TemporaryDirectory() as no_bytecode:
+        completed = subprocess.run(
+            [sys.executable, "-c", _READS_PROBE, str(Path(__file__).resolve().parent),
+             str(Path(root).resolve()), document, provider],
+            cwd=root,
+            env={
+                **os.environ,
+                "TRIPTYCH_YAML_CACHE": "0",
+                # An empty bytecode tree: every module is compiled from source.
+                "PYTHONPYCACHEPREFIX": no_bytecode,
+                "PYTHONDONTWRITEBYTECODE": "1",
+            },
+            capture_output=True,
+            text=True,
+            timeout=200,
+            check=False,
+        )
+    if completed.returncode:
+        lines = completed.stderr.strip().splitlines() or ["no output"]
+        raise ChronologyWiringError(
+            f"{document}: the chronology computation could not be traced: {lines[-1]}"
+        )
+    return json.loads(completed.stdout)
+
+
+def _traced(
+    root_text: str, document: str, provider: str, opened: list[str], compiled: list[str]
+) -> dict[str, list[str]]:
+    """Run the computation, then sort what it opened into data and code."""
+    root = Path(root_text).resolve()
+    found = dossier(
+        document,
+        root=root,
+        # As `tools/proper-chronology` does: the installed corpus unless the
+        # root is a fixture that carries its own.
+        corpus_root=None if root == ROOT else root / "src/sources/chronology",
+        provider=provider,
+    )
+    render(found)
+    render_annotations_tex(annotations(found))
+    claims = [claim for element in found.elements for claim in element.claims]
+    claims += [claim for item in found.profile_comparisons for claim in item.claims]
+
+    def resolved(name: str) -> Path:
+        path = Path(name)
+        return (path if path.is_absolute() else Path.cwd() / path).resolve()
+
+    code = {resolved(name) for name in compiled if not name.startswith("<")}
+    code.update(
+        Path(module.__file__).resolve()
+        for module in list(sys.modules.values())
+        if isinstance(getattr(module, "__file__", None), str)
+    )
+    interpreter = {
+        Path(entry).resolve()
+        for entry in (sys.prefix, sys.base_prefix, sys.exec_prefix,
+                      *site.getsitepackages(), site.getusersitepackages())
+    }
+    reads: set[str] = set()
+    for name in opened:
+        path = resolved(name)
+        if (not path.is_file() or path in code or "__pycache__" in path.parts
+                or any(path.is_relative_to(entry) for entry in interpreter)):
+            continue
+        if path.is_relative_to(root):
+            relative = path.relative_to(root)
+            if relative.parts[:1] == ("build",):
+                raise ChronologyWiringError(
+                    f"{document}: the chronology computation read {relative.as_posix()}, "
+                    f"a derived copy under build/, in place of a tracked source"
+                )
+            reads.add(relative.as_posix())
+        elif path.is_relative_to(ROOT):
+            raise ChronologyWiringError(
+                f"{document}: the chronology computation read "
+                f"{path.relative_to(ROOT).as_posix()} outside the root it was asked "
+                f"about, {root}"
+            )
+    modules = {
+        path.relative_to(root).as_posix()
+        for path in code
+        if path.is_relative_to(root) and path.is_file()
+    }
+    sources, source_files = set(), set()
+    for source in {source for claim in claims for source in claim.sources}:
+        if source.startswith("bible:"):
+            _, edition, raw = (source.split(":", 2) + ["", ""])[:3]
+            locus = _chronology.parse_locus(raw, f"{document}: cited source {source!r}")
+            name = f"src/sources/bibles/{edition}/chapters/{locus.token}/{locus.chapter}.json"
+        elif source.startswith("bible."):
+            name = f"src/sources/bibles/{source.removeprefix('bible.')}/index.yaml"
+        else:
+            sources.add(source)
+            continue
+        if not edition_file_is_tracked(root, name):
+            raise ChronologyWiringError(
+                f"{document}: cited source {source!r} names no tracked bible file ({name})"
+            )
+        source_files.add(name)
+    return {
+        "reads": sorted(reads),
+        "modules": sorted(modules),
+        "sources": sorted(sources),
+        "source_files": sorted(source_files),
+    }
+
+
+def edition_file_is_tracked(root: Path, name: str) -> bool:
+    """Whether a cited bible file is a file inside the bible tree, as named."""
+    path = (root / name).resolve()
+    return path.is_file() and path.is_relative_to((root / "src/sources/bibles").resolve())

@@ -1,6 +1,6 @@
 {
   "id": "proper-study",
-  "version": 7,
+  "version": 8,
   "description": "Source-first proper study, concise study and standalone homily, with independent reviews",
   "default_effort": "high",
   "document_argument": "proper",
@@ -139,7 +139,7 @@
       "max_novel_iterations": 4,
       "review_scope": true,
       "records_standing_findings": true,
-      "review_input_command": "python3 scripts/_proper_study.py seal --provider {provider} --document {proper} --review research --review-contract proper-study-v3",
+      "review_input_command": "python3 scripts/_proper_study.py seal --provider {provider} --document {proper} --review research --review-contract proper-study-v4",
       "review_input_repair_target": "research"
     },
     {

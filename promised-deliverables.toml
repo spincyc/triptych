@@ -978,9 +978,10 @@ state = "complete"
   criterion = "After the Claude 1962 Eighteenth Sunday run publishes, the reviewer sentence, the standing pointers and the mandatory authority check reach a new proper-study version (proposal step 7; decisions D5 and D6)."
   status = "pass"
   evidence = ["workflows/pipelines/proper-study.json", "workflows/OPERATOR.md", "scripts/_proper_study.py", "tools/tests/test_proper_components_v2.py"]
+  note = "The needle was the literal version 7 pin until version 8 (2026-10-01) moved it; it is now the mandatory --require-authority gate flag that version 7 introduced, which later versions keep."
   check = "contains"
   path = "workflows/pipelines/proper-study.json"
-  needle = "\"version\": 7,"
+  needle = "--require-authority"
 
   [[deliverables.requirements]]
   id = "continuation-attribution-staleness"

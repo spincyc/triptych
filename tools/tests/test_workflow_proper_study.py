@@ -72,6 +72,24 @@ class DefinitionTests(unittest.TestCase):
             for fragment in stage.get("fragments", []):
                 self.assertTrue((ROOT / "workflows/fragments" / fragment).is_file())
 
+    def test_the_contract_keeps_the_four_senses_apart_from_the_retired_quotas(self):
+        """Version 8. Version 7 coordinated all three under one "no global
+        substitute" clause, which reads as requiring a gallery and a proposal
+        quota of every interpretation; the GPT postconciliar Twenty-seventh
+        Sunday run needed a recorded clarification to read it as the
+        three-document profile intends."""
+        text = " ".join((ROOT / "workflows/fragments/proper-study/contract.md")
+                        .read_text(encoding="utf-8").split())
+        self.assertNotIn("four senses, mandatory cultural gallery, or exploratory-proposal quota",
+                         text)
+        self.assertIn("Each interpretation carries its own literal, allegorical, moral, and "
+                      "anagogical senses, and no global four-senses table substitutes for them.",
+                      text)
+        self.assertIn("mandatory cultural gallery and exploratory-proposal quotas do not apply "
+                      "to this workflow, and nothing in it reinstates them", text)
+        self.assertTrue(all("proper-study/contract.md" in stage.get("fragments", [])
+                            for stage in self.stages.values() if stage["type"] != "gate"))
+
     def test_date_and_audience_change_run_identity(self):
         args = {"proper": TLM, "provider": "gpt", "date": "2026-09-20"}
         first = self.engine.compute_run_id("proper-study", 1, "a" * 40, args)
