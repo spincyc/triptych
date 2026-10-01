@@ -45,7 +45,13 @@
 #   catholic-traditional-v1, catholic-critical-v1) that decide which claims the
 #   record keeps and which it prefers.
 # - chronology/composition.yaml: the composition claims (Matthew, Ephesians, the
-#   psalms' critical boundary) the record prints.
+#   psalms' critical boundary) the record prints, and, since the post-acceptance
+#   revision of 2026-09-30, the two catholic-critical-v1 claims for Matthew and
+#   Ephesians that the record carries as profile comparisons. Those are selected
+#   by this leaf's own research/chronology-profile-comparisons.toml, which the
+#   computation also opens; being a record of this leaf, sealed with its
+#   research and fingerprinted in research/chronology.toml, it is not an
+#   external owner and is not listed below.
 # - chronology/events.yaml: the narrated-event claims; that none reaches
 #   Mt 22:1-14 is why the Gospel's Date cell reports no event date
 #   (research-pending, the corpus's unauthored default).

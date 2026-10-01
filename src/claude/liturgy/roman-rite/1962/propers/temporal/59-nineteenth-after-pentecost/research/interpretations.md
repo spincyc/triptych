@@ -45,6 +45,14 @@ the elements his Mass shares with this one stay in `research/scope.md` § 3.12.
 The second reading's allegorical sense also cites each clause of the
 servants' identification to the author who states it (§ 2.4).
 
+Post-acceptance revision, 30 September 2026, made outside the same run in
+answer to its standing advisories STU-008 and STU-009 (`research/production-review.md`),
+which repaired the three documents: § 3.1 no longer gives the Postcommunion the
+word *sacrament*, which its Latin does not contain (it names only *tua …
+medicinalis operatio*), and keeps the Eucharistic reading as Schuster's; and the
+allegorical sense of § 3.4 gives the Lord's Table to Augustine alone and the
+banquet of the Word to Gregory, as the study now does.
+
 ## The rules this record keeps
 
 1. **A Father is cited for what he said of his own passage.** Gregory, Augustine,
@@ -540,8 +548,9 @@ voice of that assembly at that table: it cries in tribulation and is heard, its
 prayer rises as incense and its lifted hands join the evening sacrifice that is
 the Lord's Passion (Augustine's answer; Hilary's differs, § 3.5), it offers
 gifts before God's eyes and asks that they be saving, and at the Communion it
-asks to keep what it is commanded and to be freed by the sacrament's healing
-work. The garment is the question put to every guest before he approaches.
+asks to keep what it is commanded and to be freed by God's healing work, which
+Schuster reads of the Eucharist (p. 174). The garment is the question put to
+every guest before he approaches.
 
 The identification of the present feast with the Lord's table is **[R]**
 (Augustine, Sermo 90 §§ 1, 4, 9; Chrysostom, Hom. 69); the evening sacrifice as
@@ -654,8 +663,9 @@ of the Order of Mass asks that the sacrifice offered *oculis tuae maiestatis* be
   comes in to see them. The psalmist asks that his evening prayer rise like
   incense and his lifted hands be accepted as the evening sacrifice; walking in
   the midst of tribulation, he trusts to be kept alive.
-- **Allegorical.** The feast is the Church now, at the Lord's table and the
-  Scriptures' banquet (Augustine §§ 1, 9; Gregory §§ 1, 7, 11, 14); the evening
+- **Allegorical.** The feast is the Church now (Augustine § 1; Gregory §§ 1,
+  7), at the Lord's Table and the feast of the Scriptures (Augustine §§ 1, 9)
+  and the banquet of the Word and of Scripture (Gregory §§ 11, 14); the evening
   sacrifice is the Lord's Passion, the offering of a salutary Victim (Augustine
   on Ps 140; Bellarmine, as a possibility), and prayer is offered through Christ
   the high priest (Bellarmine); the guests who have received the mysteries are

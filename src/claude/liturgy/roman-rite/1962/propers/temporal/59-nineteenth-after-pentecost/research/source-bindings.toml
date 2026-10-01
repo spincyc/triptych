@@ -51,6 +51,16 @@ document = "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-penteco
 # Enarrationes binding. Their states describe what that correction did: each
 # artifact's SHA-256 was recomputed and matched, every bound locus was read in
 # the tracked bytes, and the fingerprints were taken from tools/source-library.
+#
+# A post-acceptance revision of 2026-09-30, made outside the same run in answer
+# to the study review's observation on the page-2 critical horizon
+# (research/production-review.md), declared
+# research/chronology-profile-comparisons.toml and bound, at `cataloged` only
+# like the other chronology sources, the two NABRE introductions the
+# regenerated record now cites through its comparisons (research/scope.md
+# section 7.2). Both are registered with restricted storage and no retained
+# bytes; the public pages were read through a web fetch, and no acquisition is
+# claimed.
 
 [[bindings]]
 source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
@@ -511,7 +521,7 @@ loci = [
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:270b160fa7bcdcdcc2553168c73f3cc4f1c72448c47c7ceb1e47a0942f69a540"
-context = "Read at: Tract. in Ps. 137, section 15, CSEL 22 p. 748, physical lines 37995-38030. The registered remote OCR layer of CSEL 22, fetched whole on 2026-09-30 and matched; damaged; paraphrased, not quoted. Iteration 1 (digest re-matched) read Tract. in Ps. 118, Aleph 11-12 (locus 118.11-12 names the sections of the Aleph tractate), at physical lines 19346-19392, and Tract. in Ps. 140, 1-5, at lines 40250-40385 (pp. 789-791 by the running heads): both agree in substance with the PL 9 page images, which control every quotation. Zingerle's lemma for Ps 140:2 reads in conspectu tuo, domine, the Gradual's order (research/scope.md section 5.1). The iteration 0 literal searches missed Ps 118:4-5 because this layer letterspaces its lemmata (research/scope.md section 5.1)."
+context = "Read at: Tract. in Ps. 137, section 15, CSEL 22 pp. 742-743, physical lines 37995-38030 (corrected on 2026-09-30 from p. 748, the layer's misreading of p. 743's running head, after the Internet Archive's page images n771-n772 of the same item were read; those leaves are not registered or retained). The registered remote OCR layer of CSEL 22, fetched whole on 2026-09-30 and matched; damaged; paraphrased, not quoted. Iteration 1 (digest re-matched) read Tract. in Ps. 118, Aleph 11-12 (locus 118.11-12 names the sections of the Aleph tractate), at physical lines 19346-19392, and Tract. in Ps. 140, 1-5, at lines 40250-40385 (pp. 789-791 by the running heads): both agree in substance with the PL 9 page images, which control every quotation. Zingerle's lemma for Ps 140:2 reads in conspectu tuo, domine, the Gradual's order (research/scope.md section 5.1). The iteration 0 literal searches missed Ps 118:4-5 because this layer letterspaces its lemmata (research/scope.md section 5.1)."
 
 [[bindings]]
 source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-70.paris-1865.ia-djvu-ocr-patrologiaecurs27goog"
@@ -579,7 +589,7 @@ loci = [
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:7ec56124e31762f147f8aed197516894e92dc2d5ec7de99bcc91a9f11d1a98d3"
-context = "Rupert's Mass with these chants has the paralytic for its Gospel; XII.20 puts the wedding feast with the next Sunday's chants. Recorded for research/scope.md section 2.1; nothing used in a reading. Read in the tracked OCR layer; standing ecclesiastical writer."
+context = "Rupert's Mass with these chants has the paralytic for its Gospel; XII.20 puts the wedding feast with the next Sunday's chants. Recorded for research/scope.md section 2.1, and cited, since the post-acceptance revision of 2026-09-30, in the expansive study's References for the scope appendix's clause that the commentators' Mass shared this formulary's Epistle and some of its chants but read another Gospel; nothing is used in a reading. Read in the tracked OCR layer; standing ecclesiastical writer."
 
 [[bindings]]
 source_id = "artifact.sicard-of-cremona.mitrale.latin-migne-pl-213.ia-djvu-ocr-ea9fd813"
@@ -599,7 +609,7 @@ loci = [
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:5be12620687e1829e19de144d3c79009d8b9dce221c126174799a60e3facbb4a"
-context = "Durandus's Mass with these chants has, in quibusdam Ecclesiis, Mt 9; recorded, not used. Read in the tracked OCR layer; standing ecclesiastical writer."
+context = "Durandus's Mass with these chants has, in quibusdam Ecclesiis, Mt 9. Recorded for research/scope.md section 2.1, and cited, since the post-acceptance revision of 2026-09-30, in the expansive study's References for the scope appendix's clause that the commentators' Mass read another Gospel; nothing is used in a reading. Read in the tracked OCR layer; standing ecclesiastical writer."
 
 [[bindings]]
 source_id = "artifact.berno-of-reichenau.libellus-de-quibusdam-rebus-ad-missae-officium-pertinentibus.latin-migne-pl-142.ia-djvu-ocr-991758f7"
@@ -609,7 +619,7 @@ loci = [
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:4778aee25531318267265263f4cd2dd69bb05dcae281e5fd650bbf8d6e3433d3"
-context = "Berno's Salus populi Mass has Mt 9; the wedding feast follows with Omnia quae fecisti. Recorded for research/scope.md section 2.1, not used. Read in the tracked OCR layer; standing ecclesiastical writer."
+context = "Berno's Salus populi Mass has Mt 9; the wedding feast follows with Omnia quae fecisti. Recorded for research/scope.md section 2.1, and cited, since the post-acceptance revision of 2026-09-30, in the expansive study's References for the scope appendix's clause that the commentators' Mass read another Gospel; nothing is used in a reading. Read in the tracked OCR layer; standing ecclesiastical writer."
 
 [[bindings]]
 source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"
@@ -655,6 +665,24 @@ loci = [
 role = "context"
 states = ["cataloged"]
 context = "A controlling source of the generated chronology record, bound so that its record enters the research seal. A fresh delivery fetched on 2026-09-30 did not reproduce the registered digest; that delivery was read and carries the cited label (research/scope.md section 7.3). No acquisition of the registered bytes is claimed."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.matthew-introduction"
+loci = [
+  "Matthew introduction, final five prose paragraphs on authorship, sources, composition and place; narrative overview of chapters 19-25",
+]
+role = "context"
+states = ["cataloged"]
+context = "Read at: the claim research/chronology.toml cites in its critical-matthew-composition comparison, Matthew, post-A.D. 70 date. A controlling source of the generated chronology record's comparison under catholic-critical-v1, bound so that its record enters the research seal; the study's and the concise study's Gospel dossiers describe it as the modern critical horizon. Restricted storage; no registered bytes are retained. The public introduction was read through a web fetch on 2026-09-30 and carries the cited label (research/scope.md section 7.2). No acquisition is claimed."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-28.ephesians-introduction"
+loci = [
+  "The Letter to the Ephesians, complete introduction; especially prose paragraphs 3-4, physical HTML lines 626 and 628",
+]
+role = "context"
+states = ["cataloged"]
+context = "Read at: the claim research/chronology.toml cites in its critical-ephesians-composition comparison, Ephesians under the later-disciple hypothesis, around A.D. 80-100. A controlling source of the generated chronology record's comparison under catholic-critical-v1, bound so that its record enters the research seal; the study's and the concise study's Epistle dossiers describe it as the modern critical horizon, conditional and not a consensus. Restricted storage; no registered bytes are retained. The public introduction was read through a web fetch on 2026-09-30 and carries the cited label (research/scope.md section 7.2). No acquisition is claimed."
 
 [[bindings]]
 source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum"

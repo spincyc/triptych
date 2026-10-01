@@ -109,7 +109,7 @@ path = "sections/80-date-location.tex"
 modes = ["research"]
 depends_on = []
 element_keys = ["introit", "epistle", "gradual", "alleluia", "gospel", "offertory", "communion"]
-references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml", "research/scope.md"]
+references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml", "research/chronology-profile-comparisons.toml", "research/scope.md"]
 
 [[components]]
 key = "study-apparatus"
@@ -147,7 +147,7 @@ path = "sections/concise/03-date-location.tex"
 modes = ["synthesis"]
 depends_on = []
 element_keys = ["introit", "epistle", "gradual", "alleluia", "gospel", "offertory", "communion"]
-references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml"]
+references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml", "research/chronology-profile-comparisons.toml"]
 
 [[components]]
 key = "concise-themes"

@@ -23,7 +23,12 @@ disposition, tabulated in § 3.13. A post-acceptance correction of 30 September
 (`research/production-review.md`), restated in § 3.6 the result of the
 iteration-2 search of Augustine's Sermones 90 and 95 as a replay over the
 stated line ranges returns it; that replay used the repository's raw-line
-case-folded search, and no `searched` binding is claimed for it. The record
+case-folded search, and no `searched` binding is claimed for it. A
+post-acceptance revision of the same day, outside the run, declared
+`research/chronology-profile-comparisons.toml` and regenerated the chronology
+record and annotations (§§ 7.1, 7.2, 7.4); the corpus already held critical
+composition claims for Matthew and Ephesians, and the earlier statement that
+no study need for a comparison had been identified is withdrawn. The record
 audits the evidence on which the three documents of this leaf may rest: the
 text control, the passage-by-passage reception sweep, the liturgical
 commentators, the disagreements among the witnesses, the negative results, the chronology the
@@ -953,9 +958,15 @@ the Latin for this Gospel was not located), Alphonsus Liguori (no record). See
   revive me, unless I walk in the midst of tribulation*. His lemma has the past
   tense: *Thou hast stretched forth Thine hand over the wrath of mine enemies*;
   *mine enemies cannot separate me from Thee*.
-- **Hilary, Tract. in Ps. 137 § 15** (CSEL 22, p. 748 by the layer's running
-  head; the registered IA OCR layer, fetched 2026-09-30 and matched
-  `6b39d974…`, lines 37995–38030; layer, damaged). The just man does not refuse to
+- **Hilary, Tract. in Ps. 137 § 15** (CSEL 22, pp. 742–743; the registered IA
+  OCR layer, fetched 2026-09-30 and matched `6b39d974…`, lines 37995–38030;
+  layer, damaged). The page is corrected from the p. 748 this record first gave:
+  that figure is the layer's misreading of p. 743's running head (the real
+  p. 748 lies in the tractate on Ps 138). The post-acceptance revision of
+  2026-09-30 confirmed § 15 on the Internet Archive's page images of the same
+  item, leaves n771 (p. 742, where § 15 begins, lemma *extendisti manus tuas: et
+  saluum me fecit dextera tua*) and n772 (p. 743); those leaves are not
+  registered, and nothing was retained. The just man does not refuse to
   walk amid tribulations, knowing with the Apostle that tribulation works patience
   (Rom 5:3), that gold is proved and the soldier crowned by war, and that he is
   unequal to tribulations without God's help; therefore he is sure of his
@@ -1506,6 +1517,16 @@ with the chronology corpus. Written: `research/chronology.toml` (SHA-256
 (`5bec81a0…1b1404`, 9,271 bytes). Profile `catholic-comprehensive-v1`; system
 `vulgate`; `formulary = "appointed"`.
 
+Regenerated on 2026-09-30 in the post-acceptance revision, after
+`research/chronology-profile-comparisons.toml` (SHA-256 `1c48dd33…365f08`,
+499 bytes) was declared, with the same two commands and `--provider claude`:
+`research/chronology.toml` (schema 3, `ffd46afc…46aaf6`, 39,136 bytes) and
+`research/chronology-annotations.tex` (`1bef846f…446aaa`, 11,668 bytes). Every
+default answer in § 7.2 is unchanged; the record adds the comparison input's
+fingerprint and two `profile_comparisons`. The Gospel's event annotation now
+reads *Narrated event date unresolved*, the projection's fixed wording when a
+comparison is declared; the corpus state behind it is still `research-pending`.
+
 ### 7.2 What the record asserts, element by element
 
 | Element | Loci | Status | Claims |
@@ -1521,8 +1542,36 @@ with the chronology corpus. Written: `research/chronology.toml` (SHA-256
 
 Under `catholic-traditional-v1` alone the five psalm elements are
 `undated-in-tradition` (0 claims); under `catholic-critical-v1` each element has
-one claim. No `chronology-profile-comparisons.toml` is declared: no study need
-has been identified for placing another profile's answer beside the default.
+one claim.
+
+**Profile comparisons (declared in the post-acceptance revision of
+2026-09-30).** The page-2 rule asks for the principal modern critical horizon
+in each explanatory row, and the corpus holds it for the two lessons under
+`catholic-critical-v1`, which the default cascade does not reach for them
+because the traditional profile answers first. `research/chronology-profile-comparisons.toml`
+therefore selects, for comparison beside the default answer and never in it:
+
+| Key | Element | Profile, relation, subject | Returned claim |
+|---|---|---|---|
+| `critical-matthew-composition` | `gospel` (Mt 22:1–14) | `catholic-critical-v1`, `composition`, `critical.gospel-of-matthew` | *post-A.D. 70 date*, boundary after A.D. 70, `preferred`; title *The Greek Gospel of Matthew in the NABRE introduction*; source the NABRE Matthew introduction (2026-09-21 web state); all 14 loci, inherited from the book |
+| `critical-ephesians-composition` | `epistle` (Eph 4:23–28) | `catholic-critical-v1`, `composition`, `critical.ephesians-later-disciple` | *around A.D. 80–100*, interval, `disputed`; title *Ephesians under the later-disciple hypothesis (approximate)*; source the NABRE Ephesians introduction (2026-09-28 web state); all 6 loci, inherited from the book |
+
+The corpus notes govern how either may be printed: Matthew's is a lower bound on
+the Greek Gospel, not an exact date, a narrated-event date or a date for an
+Aramaic predecessor; Ephesians' is a conditional interval for one hypothesis,
+not a consensus or a preference for non-Pauline authorship, not assigned to the
+secretary hypothesis the same introduction keeps, and with no city of
+composition. Both sources are registered with restricted storage and no
+retained bytes; their passage records carry the corpus's summary. On
+2026-09-30 both public introductions were read through a web fetch: the
+Matthew introduction gives the "post-A.D. 70 date" (with dependence on Mark and
+Mt 22:7 as its grounds, and "probably at least a decade later"), and the
+Ephesians introduction, after the traditional Roman imprisonment and an
+earlier Caesarean alternative, leaves open a secretary working at Paul's
+direction or a later disciple developing Paul's thought, and gives only the
+latter "around A.D. 80–100" (the corpus's own summary, kept to here rather than
+the introduction's wording, which is restricted). No bytes were retained or hashed. Both are bound in
+`research/source-bindings.toml` at `cataloged`.
 
 ### 7.3 Inspection of the controlling chronology source owners
 
@@ -1536,7 +1585,10 @@ were read: each carries the label the record cites — *a period between 58 and
 *about the year 40-42*, *the years 40-45*, *about the year 60-68*, *about the
 years 64-67*; *about the year 50*; and *not as late as the Maccabean period (ca.
 165)*. The inspection therefore confirms the wording on a later delivery, not on
-the registered bytes.
+the registered bytes. Since the revision of 2026-09-30 the record also cites,
+through its two comparisons, the NABRE introductions to Matthew and to
+Ephesians (§ 7.2); they too are bound at `cataloged` only, and the computation
+now also opens this leaf's `research/chronology-profile-comparisons.toml`.
 
 **What the engine seals and what this leaf declares (corrected in iteration 1).**
 Iteration 0 wrote here that the chronology corpus's own records and the
@@ -1591,6 +1643,13 @@ five cited sources above remain bound at `cataloged` in
 4. **Ephesians** carries two traditional labels (58–63; 61), both disputed.
 5. **Ps 77:1 and Ps 104:1** in the Missal omit the psalm titles the Clementine
    counts inside v. 1; the loci are unchanged.
+6. **The two critical comparisons** (§ 7.2, added 2026-09-30) stand in their
+   own generated group after the default answer and are described in the
+   explanatory row as the modern critical horizon, each with its corpus
+   condition: for Matthew a post-A.D. 70 lower bound on the Greek Gospel that
+   dates neither Durand's Aramaic original nor the event; for Ephesians the
+   later-disciple hypothesis, conditional and not a consensus, with no place.
+   Neither may be printed as part of the default answer.
 
 These limits are open corpus work for the chronology owner (§ 10), not
 something this leaf may fill.

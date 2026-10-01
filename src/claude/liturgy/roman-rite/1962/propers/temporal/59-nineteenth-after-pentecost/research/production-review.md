@@ -1200,3 +1200,172 @@ correction may not edit:
   that the highways lead to the nations": the wording REV-B-003 removed from
   `interpretations.md` § 2.5. The study states each Father's identification
   correctly elsewhere.
+
+## Post-acceptance revision answering every standing finding, 2026-09-30
+
+On 30 September 2026 the maintainer asked that everything still standing
+against this leaf be fixed. That was the eleven advisories of run
+`a27462e34ec9c09a` that had no disposition (STU-008 to STU-010, SYN-001 to
+SYN-003, HOM-001 to HOM-003, VIS-001 and VIS-002), the two rendered
+inaccuracies the research-record correction above left open, and the study
+review's observation on the page-2 critical horizon. The revision was made
+outside the workflow, as one lane of a coordinated repair. Each point was
+checked against the witness it cites before anything changed, and repaired in
+every document that states it. It changed rendered content, so the run's
+visual and content acceptances do not cover these PDFs. Independent content
+and visual/web reviews of the first round, and their re-checks of the second,
+are recorded under "Independent re-review and second round" below.
+
+### Findings and dispositions
+
+| Finding | Checked against | Disposition | What changed |
+| --- | --- | --- | --- |
+| STU-008 | Gregory, *Hom.* 38, 9, 11, 14 (tracked Wikisource transcription, digest re-matched); Augustine, *Sermo* 90, 1, 6 (NPNF1-6 tracked text, digest re-matched); Jerome, *In Matth.* III, PL 26 col. 160 D, and *In Eph.* II, col. 508, on page images of the registered PL 26 scan, fetched whole and matched to its digest | repaired | `sections/00-opening.tex`: Gregory and Augustine make the garment charity; Jerome the new man's garment of the Lord's precepts kept, the new man Christ; the reading finds it in the Epistle's acts and the Communion's wish. Augustine and Gregory say the feast is the Church now, the Lord's Table for Augustine and the banquet of the Word for Gregory; Chrysostom addresses its guests. No "carry it:" sentence remains. The third reading's allegorical sense (`40-feast-that-now-is.tex`) now credits each his own term; `interpretations.md` § 3.4 follows. |
+| STU-009 | the Postcommunion's Latin (`propers/verified.md`); Schuster, *Sacramentary* III, p. 174 (tracked OCR, line 10890); the Douay psalm-numbering table and verse texts of Pss 34:3, 90:15, 138:16 | repaired | (a) `40-feast-that-now-is.tex`: the Postcommunion names God's work, *tua … medicinalis operatio*, and the reading's opening says God's healing work, which Schuster reads of the Eucharist; `interpretations.md` § 3.1 follows. (b) `10-each-element.tex`: the orations are the Church's composition; the antiphon stands in no verse of the Vulgate, its source unidentified; "no single verse of Scripture" now "of the Vulgate". (c) Ps 34:3 (35:3) and 90:15 (91:15) in `05-appointed-texts.tex`, Ps 138:16 (139:16) in `20-wedding-garment.tex`, and the numbering convention restated so that it is true of the text. |
+| STU-010 | Hilary, *Tract. in Ps.* 137, 15, CSEL 22 OCR layer fetched whole and matched to its digest, lines 37995–38030 (lemma *extendisti … fecit*), and, in the second round, the Internet Archive's page images n771–n772 of the same item, which put § 15 on pp. 742–743; Rupert XII.19–20, Durandus VI.136 and Berno's *Libellus* in their tracked layers, digests re-matched | repaired | `90-apparatus.tex` References: Hilary on Ps 137, 15 (CSEL 22, ed. Zingerle, pp. 742–743; the first round printed p. 748, the OCR layer's misreading of p. 743's running head, corrected in the second round, REV-C-001); Rupert, *De divinis officiis* XII.19–20 (PL 170); Durandus, *Rationale* VI.136 (Lyon, 1612); Berno, *Libellus* (PL 142). The scope clause is unchanged; the three commentators' bindings now say they are cited (REV-C-005). |
+| SYN-001 | Gregory, *Hom.* 38, 9; Augustine, *Sermo* 90, 5–6 | repaired | `concise/02-overview.tex`: "The garment is charity (Gregory; Augustine), which the Bridegroom himself wore (Gregory)". |
+| SYN-002 | the built concise pages 3–4 | repaired | `concise/10-commentary.tex`: the Ordo Missae no. 1037 sentence reduced to a clause on the Offertory; the third reading's prayers named in "Many called, few chosen" without restating the incensing or the *Placeat*; the sentence repeating the themes' "The Mass that began …" removed. |
+| SYN-003 | `main.tex` and `synthesis.tex` title fields | repaired | "the expansive study" becomes "the full study" in `concise/04-themes.tex` and the homily note; the concise scope appendix names it as the Full PDF subtitled *The wedding garment, the call to the highways, and the evening sacrifice: a study of the proper in three readings*. |
+| HOM-001 | Augustine, *Enarr. in Ps.* 140, 3 (NPNF1-8, digest re-matched) | repaired | "St Augustine hears the Gradual's verse differently". |
+| HOM-002 | — | repaired | "Today's Collect". |
+| HOM-003 | the Douay psalm-numbering table | repaired | The note's loci and Douay References give Ps 140:2 (141:2), 118:4–5 (119:4–5) and 138:16 (139:16). |
+| VIS-001 | the rebuilt homily, on rasters | repaired | All 13 "St <Name>" in the spoken body tied; page 2 now opens "St Hilary of Poitiers". |
+| VIS-002 | the rebuilt concise study, on rasters | repaired | Concise References subdivisions at `\subsection*`, the study's level; page 12 still holds References, timestamp and colophon. |
+| Open item: Augustine's highways | Augustine, *Quaest. ev.* I.31 (tracked Latin transcription: *viae intelliguntur dogmata Gentium*) | repaired | `30-call-to-the-nations.tex` (close of "Two difficulties") and `concise/10-commentary.tex`: Gregory's answer stands beside that of Irenaeus, Hilary, Jerome and Chrysostom, for whom the highways are the nations, and beside Augustine's own, for whom they are the teachings of the Gentiles. The concise themes' "where the highways lead" now reads "what the highways are". |
+| Open item: the road in the comparison | Augustine, *Enarr. in Ps.* 140, 2 (NPNF1-8, lines 65232–65244) | repaired | `50-comparison.tex`, lifted-hands row: "The prayer of a people still on the road: the whole Christ crying to the end of the world (Augustine), in the last age (Hilary)". The concise commentary's sentence now has the second reading take from Augustine the Church that must cry to the end of the world. |
+| Study-review observation: critical horizon | `src/sources/chronology/composition.yaml`; the NABRE introductions' passage records; both public introductions read on 2026-09-30 through a web fetch, which returned the cited sentences (no bytes retained or hashed) | repaired | The observation's premise was wrong: the corpus holds `critical.gospel-of-matthew` and `critical.ephesians-later-disciple` under `catholic-critical-v1`. `research/chronology-profile-comparisons.toml` (new) selects both; `tools/tpt proper-chronology record --document … --provider claude --write` and `annotations … --format tex --write` regenerated `research/chronology.toml` (schema 3) and `research/chronology-annotations.tex`, default answers unchanged. The Gospel and Epistle explanatory rows of `80-date-location.tex` and `concise/03-date-location.tex` carry each as the modern critical horizon with its corpus condition; the scope appendices and References follow. Declared in `proper-components.toml` (references of both chronology components), `research/scope.md` §§ 7.1–7.4, a comment in `research/review-dependencies.toml` and two `cataloged` bindings in `research/source-bindings.toml`. |
+| The two "carry it" observations (study review; synthesis review) | `guidance/liturgy/propers-three-documents.md` | repaired | Every instance in this leaf is repaired (STU-008, SYN-001, and RES-010 earlier). The first round recorded them open because the criterion they asked for belongs to guidance; the coordinator has since added it to the profile (an opening, overview or summary that names a reading's authors beside its thesis credits each only with the clause he states), and the findings record now marks both repaired. |
+| Homily-review observation: `element_keys` of the homily | `guidance/liturgy/propers-three-documents.md`, "Mechanical and judgment gates" | repaired | Answered by the coordinator's profile sentence: a homily component's `element_keys` declare the elements whose research informs the speech, which the checker requires to be all of them, and do not claim the speech recites each. The manifest and checker are unchanged. |
+| Research-review observation: `commentary-work-index` example drift | commit `9d0c5b7fa` | repaired | The coordinator recaptured the tool's transcripts from real runs in that commit; all 13 of its examples replay clean. |
+| Visual-review observation: homily bytes per page | the rebuilt homily (259,496 bytes over 3 pages, fonts only) | not-a-defect | As the observation itself found, the ratio is the fixed overhead of the embedded Latin Modern subsets; the revised homily keeps the same fonts. |
+
+The derive-synthesis section above says that the corpus holds no modern
+critical claim for Matthew or Ephesians. That statement was wrong and is
+superseded here. One generated wording changed with the comparisons: the
+Gospel's event annotation now reads "Narrated event date unresolved", the
+projection's fixed form when a comparison is declared; the corpus state is
+still `research-pending`. A probe of `check-content-preflight --check
+chronology-claims-supported` with the dossier's dates altered to "after
+A.D. 75" and "A.D. 80–105" refused both; the dossiers as written pass.
+
+### Layout repairs
+
+- The opening's new attributions first pushed the map's last row onto page 4;
+  the paragraph was tightened until the map stood whole on page 3 again.
+- The critical horizon lengthened the study's dossier appendix past one page
+  and split the Epistle's dossier. A `\pagebreak` before that dossier keeps it
+  whole, as the pc-s52 revision did for its Gospel, and the `\clearpage`
+  between the appendix and `sections/90-apparatus.tex` was removed from
+  `main.tex`, so the scope appendix follows the Epistle's dossier on page 31
+  instead of leaving a sparse page.
+- The concise page 2 holds the sheet with room to spare; no repair was needed.
+
+### Artifacts
+
+| Output | Pages | SHA-256 | Bytes |
+| --- | --- | --- | --- |
+| `build/…/59-nineteenth-after-pentecost.pdf` | 33 | `2f7707347671c95e7ed27fc7cf28c29f9629ab57f9a2f43af40a48abf9f8b8a4` | 528,081 |
+| `build/…/59-nineteenth-after-pentecost-synthesis.pdf` | 12 | `cc11da2da51fe051be9989dd3f509fc12d98aecf7dacabdfb42c42109bc1ef32` | 448,015 |
+| `build/…/59-nineteenth-after-pentecost-homily.pdf` | 3 | `aaa3c8fe8dcecb86377242b5a3325fe380bd83fce12897ccf080d21b05ff8288` | 259,496 |
+| `build/web/…/59-nineteenth-after-pentecost.md` | — | `2ea1fc7a9e069093ee3d331f6e65b5b435f192645b9d107aefb6efa113abe50b` | 134,830 |
+
+`\AIDocumentRevisionTimestamp` is `2026-10-01T01:50:15Z`, and one
+`\AIModelContribution` line records this revision. The spoken body is 1,453
+words by the rule recorded under Derive-homily, with `~` read as a space.
+`research/artifacts.json` and `research/web-artifact.json` were re-recorded
+by `scripts/_proper_study.py snapshot` and `snapshot-web`. Nothing was
+installed under `pdf/` or `web/`.
+
+### Checks run
+
+- `make doc` for the study, the concise study and the homily: two passes each,
+  and the settled logs carry no overfull or underfull box, LaTeX or package
+  warning, undefined reference or rerun request. A second build of all three
+  was byte-identical. `pdffonts` reports every font embedded; `pdfinfo` gives
+  each PDF its title and subject and the revision time.
+- The concise aux file places inventory, overview and all four sense markers on
+  page 1, chronology on page 2, themes on pages 3–4 and commentary from page 5.
+- `tools/tpt pdf-review --output build/tpt-revision-2026-09-30/rasters` over
+  the three PDFs; every changed page was inspected (study pp. 2–4, 8, 13, 22,
+  23, 27–33; concise pp. 1–5, 9–12; homily pp. 1–3), with both contact sheets
+  of the study.
+- `tools/tpt web-edition` with Markdown 3.10.3, the version
+  `requirements-public-alpha.txt` pins, installed in a temporary environment
+  for the run.
+- The coordinator's gate list, every preflight and artifact gate the workflow
+  ran for this leaf: for each edition `scripts/_proper_study.py check --phase
+  content` and `check-content-preflight` (references-used,
+  identifiers-resolve, bindings-valid, restricted-not-reproduced,
+  relation-coverage, unquoted-not-quoted, structural-meta-labels, house-voice,
+  chronology-record-current, chronology-annotations-current,
+  chronology-claims-supported, provenance-matches-run); `check --phase
+  artifacts`; `proper-chronology record --check` and `annotations --check`;
+  and `source-library validate`. All 43 pass.
+- `tools/tpt source-library validate` passes; `tools/tpt source-inventory
+  check` passes.
+
+### Independent re-review and second round
+
+An independent content review of the revision, on the same day, returned
+CHANGES_REQUIRED with one blocking finding and four advisories, REV-C-001 to
+REV-C-005; the visual and web review passed. A second round, outside the
+workflow and within the same leaf, checked each against its witness and
+repaired all five.
+
+| Finding | Checked against | Disposition | What changed |
+| --- | --- | --- | --- |
+| REV-C-001 (blocking) | the Internet Archive's page images of the CSEL 22 item, leaves n771 (p. 742, where § 15 begins, lemma *extendisti manus tuas: et saluum me fecit dextera tua*) and n772 (p. 743), read on 2026-09-30; the OCR layer re-fetched and matched to its digest | repaired | Hilary, *Tract. in Ps.* 137, 15 is at CSEL 22 pp. 742–743. The p. 748 that the research stage took from the layer, and that the first round repeated and called verified, is the layer's misreading of p. 743's running head; the real p. 748 is in the tractate on Ps 138. Corrected in the study's References, `research/scope.md` § 3.7, the CSEL 22 binding's context, the STU-010 row above and the STU-010 resolution note. The leaves are not registered, and nothing was retained. |
+| REV-C-002 | `evaluations/blocking-findings-v1.toml` as the coordinator left it | repaired | The table above now gives all six observations: the critical horizon (repaired by this revision); the two on the "carry it" form, repaired, the leaf's instances by this revision and the missing criterion by the coordinator's sentence in `guidance/liturgy/propers-three-documents.md`; the homily `element_keys` observation, answered by the coordinator's second sentence there; the example drift, recaptured in commit `9d0c5b7fa`, after which all 13 examples replay clean; and the PDF size, `not-a-defect`. The findings record's header now says that this revision answered three of the six, the two on the sentence form first as open, and the coordinator the other three; a sentence for this round follows it. |
+| REV-C-003 | the generated Date cells, which now print the declared comparison after the default answer | repaired | In both studies' Gospel dossiers "The last date, c. A.D. 50" now reads "The sixth, c. A.D. 50"; in both Epistle dossiers "The range is Ladeuze's" reads "The first range shown is Ladeuze's". The study's scope appendix no longer says the Date cells come from the record "under its default profile": they carry its default answer for every element and, for the Gospel and the Epistle, a declared comparison under the critical profile. The concise scope note had no such phrase. |
+| REV-C-004 | the corpus note of `critical.ephesians-later-disciple` | repaired | "a secretary writing at Paul's (his) direction" now reads "a secretary working at Paul's direction" in both Epistle dossiers. `research/scope.md` § 7.2 no longer quotes the restricted introduction's sentence; it summarises it in the corpus's terms. |
+| REV-C-005 | the three bindings and the study's References | repaired | The Rupert, Durandus and Berno binding contexts in `research/source-bindings.toml` now say that the study's References cite them for the scope appendix's clause that the commentators' Mass read another Gospel, and that nothing of theirs is used in a reading. `tools/tpt source-library validate` passes. |
+
+Render inputs changed, so `\AIDocumentRevisionTimestamp` moved to
+`2026-10-01T02:29:20Z`, and a second `\AIModelContribution` line records this
+round. All three documents were rebuilt with `make doc`: two passes each, with
+settled logs carrying no overfull or underfull box, warning, undefined
+reference or rerun request. A second build was byte-identical. The concise
+markers are unchanged, with inventory, overview and four senses on page 1,
+chronology on page 2, themes on pages 3–4 and commentary from page 5. The
+changed pages (study pp. 30–33) and concise pp. 1–5 were inspected on rasters
+from `tools/tpt pdf-review --output build/tpt-revision-2026-09-30/rasters-r2`.
+`snapshot` and `snapshot-web` re-recorded the receipts. The web edition was
+regenerated with the full pinned deploy environment (Markdown 3.10.3); the
+first round had used a temporary environment carrying only that pin.
+
+| Output | Pages | SHA-256 | Bytes |
+| --- | --- | --- | --- |
+| study | 33 | `343d68584f0497f286f251744061df8356336a66c084083bd216786b0c071c94` | 528,196 |
+| concise study | 12 | `d845791fa6edfc0f30fabadb3695bc129563a60420a17bc2189727ce6a21f30d` | 448,068 |
+| homily | 3 | `597e74d7a80ec96a02ddf640bfe429d9dd7190181d463c7ad833590ba653ddd1` | 259,493 |
+| web Markdown | — | `4b3697b0cdf149eb27d97cdfac8940be738cffce190ca4c870ec2b3863c461b4` | 134,942 |
+
+After the second round the coordinator's gate list (every preflight and
+artifact gate named under "Checks run" above) passes all 43 checks, and
+`tools/tpt source-library validate` and `tools/tpt source-inventory check`
+pass. No independent review of the second round is recorded here.
+
+### Coordinator's record of the reviews
+
+The coordinator dispatched two fresh reviewers that had not authored the
+revision. The content review of the first round returned CHANGES_REQUIRED
+with REV-C-001 (blocking: Hilary's CSEL 22 page) and REV-C-002 to REV-C-005;
+its re-check of the second round passed, with one advisory, REV-C-006 (this
+entry's opening still said no review was recorded), which the coordinator
+repaired in the paragraph above. The visual and web review inspected every
+page of the three first-round PDFs, regenerated the web edition byte for byte
+under the pinned Markdown 3.10.3 and rendered it at 360, 390 and 1280 px; it
+passed, and its re-check of the second round pixel-diffed every page against
+the first, viewed each changed page at full size, confirmed the concise
+page contract, clean logs and embedded fonts, and again reproduced the web
+edition byte for byte. Its one advisory (REV-V-001, renumbered REV-V-002)
+stands for the owner of `tools/tpt proper-chronology annotations`, not this
+leaf: the generated Gospel and Epistle Date cells print the profile key
+"catholic-critical-v1" and "composition-only", the generator's standard
+comparison label, already published in Claude 57 and GPT 59, which the
+profile forbids editing by hand. The reviewed artifacts are the study
+`343d68584f0497f286f251744061df8356336a66c084083bd216786b0c071c94` (33 pp.),
+the concise study `d845791fa6edfc0f30fabadb3695bc129563a60420a17bc2189727ce6a21f30d`
+(12 pp.), the homily `597e74d7a80ec96a02ddf640bfe429d9dd7190181d463c7ad833590ba653ddd1`
+(3 pp.) and the web Markdown
+`4b3697b0cdf149eb27d97cdfac8940be738cffce190ca4c870ec2b3863c461b4`.

@@ -69,7 +69,18 @@ observation_count = 6
 # above still describe the run's last write. After that revision's independent
 # re-review (REV-B-001 to REV-B-004, recorded in research/production-review.md,
 # "Independent re-review and second round"), a second round of the same day
-# amended the notes of STU-011 and STU-012.
+# amended the notes of STU-011 and STU-012. A post-acceptance revision of the
+# same day, on the maintainer's request to fix everything still standing,
+# repaired the eleven remaining advisories in the three documents and answered
+# three of the six observations (the page-2 critical horizon, and the two on
+# the 'carry it' sentence form, first as open while the profile lacked their
+# criterion), writing the same three keys into each entry it addressed.
+# The coordinator then wrote the keys into the remaining observations: the
+# profile now states the two criteria the observations found missing, the
+# example drift was recaptured, and `not-a-defect` marks the one observation
+# whose own investigation found no defect. After that revision's independent
+# re-review (REV-C-001 to REV-C-005, recorded in research/production-review.md),
+# a second round of the same day corrected the note of STU-010.
 
 [[stages]]
 stage = "homily-review"
@@ -150,6 +161,9 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/homily/10-homily.tex, opening sentence of the Cross movement (line 96), 'St Augustine hears that verse differently', which follows the movement break after Hilary's quotation of Mt 25:35, 'I was hungry, and you gave me to eat' (line 92)"
 problem = "In speech, 'that verse' first attaches to the last verse the assembly heard, Mt 25:35, and not to the Gradual's Ps 140:2, which was quoted four sentences earlier. The listener recovers the referent only in the next sentence, when Augustine's 'evening sacrifice' arrives. A reader can look back on the page; a listener cannot, so the new movement opens on a misreference across a pause."
 required_result = "Name the verse when the movement begins, for example 'St Augustine hears the Gradual's verse differently: first of Christ, ...', and leave the rest of the movement unchanged."
+resolution = "repaired"
+resolution_date = "2026-09-30"
+resolution_note = "The Cross movement now opens 'St Augustine hears the Gradual's verse differently', naming the verse at the movement break; the rest of the movement is unchanged. Augustine's reading of that verse of the Passion was re-read at Enarr. in Ps. 140, 3 (NPNF1-8, tracked CCEL text, digest re-matched)."
 
 [[advisories]]
 stage = "homily-review"
@@ -158,6 +172,9 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/homily/10-homily.tex, second movement (lines 41-42), 'This morning's Collect asks for the freedom to do it'"
 problem = "The spoken body has to be speakable verbatim at any Mass of this Sunday. 'This morning' is false when the homily is preached at a later Mass of the day, such as an afternoon or evening Sunday Mass, so the preacher would have to edit the text before reading it. The note gives the occasion only as the Mass of 4 October 2026, with no hour."
 required_result = "Use a time-neutral phrase such as 'Today's Collect' or 'The Collect of this Mass', and leave the rest of the sentence unchanged."
+resolution = "repaired"
+resolution_date = "2026-09-30"
+resolution_note = "'This morning's Collect' now reads 'Today's Collect'; the rest of the sentence is unchanged. With HOM-001's added word the spoken body is still 1,453 words by the rule recorded in research/production-review.md, which the note states."
 
 [[advisories]]
 stage = "homily-review"
@@ -166,6 +183,9 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/sections/homily/90-note.tex, 'Exact loci' (lines 53-55: 'Gradual, Ps 140:2', 'Communion, Ps 118:4-5', '... and Ps 138:16') and References, Douay-Rheims entry (line 73: 'Ps 118:4-5; 138:16; 140:2')"
 problem = "guidance/liturgy/roman-1962-propers.md ('Source Records and Text Control') requires psalm citations in the Missal's Vulgate numbering, 'with the common modern number in parentheses where it differs'. All three psalms the note cites differ: they are 119, 139 and 141 in the modern numbering. The note gives none of the modern numbers and does not say its numbering is the Vulgate's. A reader who checks Ps 140:2 or Ps 138:16 in a modern Bible finds other psalms. The note's own Augustine reference does give the other numbering ('Psalms CXIX and CXLI in that translation'), so the apparatus is inconsistent with itself. STU-009(c) records the same class of defect in the study as advisory."
 required_result = "Add the modern number in parentheses at the first citation of each psalm in the note and in the References: Ps 140:2 (141:2), Ps 118:4-5 (119:4-5) and Ps 138:16 (139:16)."
+resolution = "repaired"
+resolution_date = "2026-09-30"
+resolution_note = "Checked against the Douay-Rheims psalm-numbering table (artifact psalm-numbering-ee3c7757: Vulgate 118, 138 and 140 are Hebrew 119, 139 and 141, verses unchanged). The note's Exact loci and its Douay-Rheims References entry now give Ps 140:2 (141:2), Ps 118:4-5 (119:4-5) and Ps 138:16 (139:16) at first citation."
 
 [[advisories]]
 stage = "research-review"
@@ -196,6 +216,9 @@ severity = "advisory"
 location = "sections/00-opening.tex, lines 66-71 ('... and St Gregory the Great, St Augustine and St Jerome carry it: the garment is charity, the new man put on, Christ himself, shown in the Epistle's plain acts and asked for in the Communion's wish') and lines 79-82 ('St Augustine and St Gregory carry it, with St John Chrysostom's address to those who have partaken of the mysteries: the feast is the Church now, at the Lord's table, ...')"
 problem = "The colon construction gives each reading's composite answer to the Fathers named before it. For the first reading, Gregory (Hom. 38, 9) and Augustine (Sermo 90, 5-6) say the garment is charity. Jerome (In Matth. III, PL 26 cols. 160-161; In Eph. II, col. 508) says it is the Lord's precepts kept, the garment of the new man, and that the new man is Christ. None of the three calls the wedding garment 'Christ himself'; that is Aquinas (Super Matth. c. 22) and, of the Epistle's garment, Schuster. None joins the garment to the Epistle's four acts or to the Communion's wish. research/interpretations.md section 1.3 marks those joins as editorial synthesis, and the reading's own body presents them that way ('Put together, ...'). For the third reading, 'at the Lord's table' is Augustine's phrase. The same reading says Gregory's feast is the banquet of the Word and of Scripture and that he 'does not name the altar at all'. The body attributes every step exactly, so a reader is corrected a few pages later. But the opening's summary implies consensus by proximity (guidance/liturgy/roman-1962-propers.md, 'Evidence and Claim Discipline'), and the concise page 1 and themes are likely to reuse it. This is advisory, not blocking: unlike STU-003, no named witness holds a view contrary to the claim."
 required_result = "The opening states each reading's answer so that each named witness is credited only with what he says. For example: Gregory and Augustine make the garment charity; Jerome makes it the garment of the new man, woven of the Lord's precepts kept, and names the new man Christ; the reading finds that garment shown in the Epistle's acts and asked for in the Communion's wish. For the third reading, the present-Church feast is credited to Augustine and Gregory, with 'the Lord's Table' given to Augustine or replaced by a term both of them use."
+resolution = "repaired"
+resolution_date = "2026-09-30"
+resolution_note = "Verified: Gregory, Hom. 38, 9 (tracked Wikisource transcription: Quid ergo debemus intelligere nuptialem vestem, nisi charitatem?) and 38, 11 and 14 (Scripturae sacrae epulis; divini Verbi epulas; the homily has no word for the altar); Augustine, Sermo 90, 1 and 6 (NPNF1-6, tracked CCEL text: the Lord's Table; the wedding garment is charity); Jerome, In Matth. III, PL 26 col. 160 D, and In Eph. II, col. 508, on the registered PL 26 scan re-fetched and matched to its digest, read on page images (praecepta sunt Domini ... novique hominis efficiunt vestimentum; Iste quippe est novus homo). The opening now says that Gregory and Augustine make the garment charity and Jerome the garment of the new man, made of the Lord's precepts kept, with the new man Christ, and gives the reading the joins to the Epistle's acts and the Communion's wish; for the third reading Augustine and Gregory say the feast is the Church now, the Lord's Table for Augustine and the banquet of the Word for Gregory. No 'carry it:' sentence remains in the opening. The third reading's allegorical sense, which gave the Lord's Table and the banquet of the Word to both jointly, now gives each his own, and research/interpretations.md section 3.4 follows. The concise themes already credited each witness with his own clause; the concise page 1 is SYN-001."
 
 [[advisories]]
 stage = "study-review"
@@ -204,6 +227,9 @@ severity = "advisory"
 location = "(a) sections/40-feast-that-now-is.tex, subsection 'Commanded and asked, healed and held', second paragraph, 'The Postcommunion names the sacrament's work in the language of medicine, medicinalis operatio'; (b) sections/10-each-element.tex, opening paragraph, 'four are the Church's own composition' and 'The Introit's antiphon and the three orations are not Scripture'; (c) psalm citations outside the appointed verses, e.g. Ps 34:3 and 90:15 (sections/05-appointed-texts.tex and 10-each-element.tex), Ps 137:3 (10-each-element.tex) and Ps 138:16 (20-wedding-garment.tex)"
 problem = "(a) The Latin names only 'tua ... medicinalis operatio'. The study's own Postcommunion note (sections/05-appointed-texts.tex) says that 'These thy mysteries' is the 1861 translator's addition. research/scope.md section 1.3 records that the formulary nowhere names the Eucharist; the Eucharistic reading is Schuster's (p. 174), and the next sentence rightly gives it to him. As a textual statement in the study's own voice, the sentence gives the prayer a word it does not contain. (b) The antiphon's source is unidentified. The scope appendix says it 'was not traced to a scriptural or liturgical source'. research/scope.md sections 3.1 and 5.1 record that no Old Latin or Roman psalter was searched, that Schuster suggests the Itala, and that the continuation calls the antiphon a cento of Scripture; neither claim was adopted. Calling it 'the Church's own composition' and 'not Scripture' asserts an origin the evidence leaves open. (c) sections/05-appointed-texts.tex says that 'Psalms are cited in the Missal's numbering, with the Hebrew numbering in parentheses', and guidance/liturgy/roman-1962-propers.md requires the common modern number in parentheses where it differs. The five appointed psalms carry it in the map, loci and dossiers, but Pss 34, 90, 137:3 and 138 are cited without it, so a reader using a modern Bible finds another psalm."
 required_result = "(a) Say that the Postcommunion names God's work, 'tua ... medicinalis operatio', in the language of medicine, and keep the Eucharistic reading as Schuster's. (b) Describe the antiphon as standing in no verse of the Vulgate, with its source unidentified, and make no claim about its origin; the orations may remain the Church's composition. (c) Give the Hebrew number in parentheses at least at the first citation of each psalm outside the formulary (Ps 34:3 (35:3), Ps 90:15 (91:15), Ps 138:16 (139:16)), or restate the convention so that it is true of the text."
+resolution = "repaired"
+resolution_date = "2026-09-30"
+resolution_note = "(a) Verified on the Latin (tua ... medicinalis operatio, propers/verified.md) and Schuster, The Sacramentary III, p. 174 (tracked 1927 OCR, line 10890). The Postcommunion subsection now says the prayer names God's work in the language of medicine, with the Eucharistic reading kept as Schuster's; the third reading's opening, which said 'the sacrament's healing work', now says God's healing work, which Schuster reads of the Eucharist, and research/interpretations.md section 3.1 follows. (b) The opening of Each Element in Its Setting now says that the three orations are the Church's composition and that the Introit's antiphon stands in no verse of the Vulgate and its source is unidentified; the Introit subsection's 'no single verse of Scripture' now reads 'of the Vulgate'. (c) Checked against the Douay-Rheims psalm-numbering table and verse texts (Ps 34:3, 90:15, 138:16): Ps 34:3 (35:3) and Ps 90:15 (91:15) at their first citation in The Appointed Texts and Ps 138:16 (139:16) at its first in the first reading; the convention now says the Hebrew numbering follows at each psalm's first citation and in the loci. Ps 137:3 is a later citation of the Offertory's psalm, first cited in the map as Ps 137:7 (138:7). The concise study cites only the formulary's psalms, and its convention was already true."
 
 [[advisories]]
 stage = "study-review"
@@ -212,6 +238,9 @@ severity = "advisory"
 location = "sections/90-apparatus.tex, References, 'St Hilary of Poitiers ... Tractatus super Psalmos, in Ps. 118, Aleph 11-12, and in Ps. 140, 3-4', and 'Appendix: Scope and Qualifications', 'Reception' paragraph ('... and with them Rupert of Deutz, William Durandus and Berno of Reichenau, expounded a Mass that shared ... but read another Gospel'); claim at sections/10-each-element.tex, Offertory subsection ('St Augustine and St Hilary read the verse with the Vulgate's past')"
 problem = "guidance/liturgy/roman-1962-propers.md ('References and metadata') requires References to carry exact loci sufficient to verify each claim. The Offertory subsection makes a claim about Hilary's lemma of Ps 137:7. Its evidence is Tract. in Ps. 137, section 15, in the CSEL 22 layer (research/scope.md section 3.7), but References names Hilary's tractates only on Pss 118 and 140. The scope appendix attributes the other Gospel to the Masses of Rupert, Durandus and Berno. research/scope.md sections 2.1 and 3.12 hold that evidence (De divinis officiis XII.19-20; Rationale VI.136; Libellus, PL 142), but neither the clause nor References gives a work or locus for any of the three."
 required_result = "Add Hilary, Tractatus super Psalmos, in Ps. 137, 15 (CSEL 22, ed. Zingerle, p. 748), to References, or drop Hilary from the sentence. Give the three commentators' works and loci in References, or in the scope clause itself."
+resolution = "repaired"
+resolution_date = "2026-09-30"
+resolution_note = "Verified: Hilary, Tract. in Ps. 137, 15, in the registered CSEL 22 OCR layer re-fetched and matched to its digest, physical lines 37995-38030, lemma extendisti manus tuas: et saluum me fecit dextera tua, and on the Internet Archive's page images of the same item, leaves n771-n772: section 15 stands on pp. 742-743 (the first round's p. 748, which the finding's own required result also gives, is the OCR layer's misreading of p. 743's running head, as the independent re-review REV-C-001 found; the real p. 748 is in the tractate on Ps 138); and in the tracked layers, digests re-matched, Rupert, De divinis officiis XII.19-20 (PL 170, lines 23487-23560), Durandus, Rationale VI.136 (Lyon 1612, lines 17130-17159) and Berno's Libellus (PL 142, lines 85800-85822), each giving these chants the paralytic's Gospel. The study's References now carry Hilary's tractate on Ps 137, 15 (CSEL 22, ed. Zingerle, pp. 742-743) and the three commentators' works and loci, and their bindings say so; the scope clause is unchanged. The concise study makes neither claim."
 
 [[advisories]]
 stage = "study-review"
@@ -242,6 +271,9 @@ severity = "advisory"
 location = "sections/concise/02-overview.tex, Allegorical row, clause 'The garment is charity, which the Bridegroom himself wore (Gregory; Augustine)' (physical page 1)"
 problem = "The parenthesis credits both Fathers with the whole clause, including its reason. That reason is Gregory's: the Bridegroom himself had charity when he came to the wedding at which he joined the Church to himself (Hom. in Ev. 38, 9: 'quia hanc in se conditor noster habuit, dum ad sociandae sibi Ecclesiae nuptias venit'). Augustine, in Sermo 90 (NPNF1-6, sections 5-6 and 9), makes the garment charity, puts it on 'to do honour to the Bridegroom', 'in honour of the union', and sets the Bridegroom's prayer for his enemies before the guest as the pattern. He does not say that the Bridegroom wore the garment. The study's own allegorical sense in sections/20-wedding-garment.tex and research/interpretations.md section 1.4 give this clause to Gregory alone. The component's header comment also says that each witness is named beside the clause he states and no other. This is advisory, like STU-008 and RES-010, because Augustine holds no view contrary to the clause."
 required_result = "Cite each clause to the Father who states it. For example: 'The garment is charity (Gregory; Augustine), which the Bridegroom himself wore (Gregory), or ...'. Keep the row otherwise unchanged, so that page 1 still holds the map and exactly four sense rows."
+resolution = "repaired"
+resolution_date = "2026-09-30"
+resolution_note = "Verified: Gregory, Hom. 38, 9 (tracked transcription: quia hanc in se conditor noster habuit, dum ad sociandae sibi Ecclesiae nuptias venit); Augustine, Sermo 90, 5-6 (NPNF1-6) makes the garment charity, put on to do honour to the Bridegroom, and does not say the Bridegroom wore it. The row now reads 'The garment is charity (Gregory; Augustine), which the Bridegroom himself wore (Gregory)'; the rebuilt aux file still puts the map and all four sense markers on page 1."
 
 [[advisories]]
 stage = "synthesis-review"
@@ -250,6 +282,9 @@ severity = "advisory"
 location = "sections/concise/10-commentary.tex: 'The evening sacrifice', last paragraph ('At a Mass celebrated with incense the priest says the Gradual's verse again ... (Ordo Missae, no. 1037)', page 10); 'Many called, few chosen', third paragraph ('the Gradual that the priest says again over the altar at a Mass with incense ... the Secret whose words the Placeat repeats', page 10) and last paragraph ('The Mass that began with God promising to hear his people from any tribulation ends by asking to cleave to his commandments always', page 11); compare sections/concise/04-themes.tex, the Gradual paragraph (page 3) and the Offertory-Secret and Communion-Postcommunion paragraphs (page 4)"
 problem = "The commentary restates textual observations that the Themes pages already make. The priest's saying of Ps 140:2 as he incenses the altar at the Offertory appears three times (themes page 3; commentary page 10, twice). The Secret's and the Placeat's shared 'oculis tuae maiestatis' is stated in the themes and invoked again in the commentary. The themes' closing sentence, 'The Mass that began with God promising ... ends with a prayer to hold to his commandments semper', returns almost word for word as the commentary's penultimate sentence. The three-document profile asks that the page-5 commentary 'deepen and compare the earlier movement instead of repeating it', and the document is already at its 12-page ceiling. This is advisory because each repetition is short and true and none misleads."
 required_result = "Change the commentary, not pages 3-4, whose extent is fixed. Where a reading needs an observation the Themes pages already give, refer back to it in a clause rather than restating it. For example, reduce the Ordo Missae no. 1037 sentence in 'The evening sacrifice' to the clause the third reading needs. Also rewrite the closing of 'Many called, few chosen' so that it does not repeat the themes' 'The Mass that began ...' sentence."
+resolution = "repaired"
+resolution_date = "2026-09-30"
+resolution_note = "Checked against pages 3-4 of the built concise study. In 'The evening sacrifice' the Ordo Missae no. 1037 sentence is reduced to a clause on the Offertory; in 'Many called, few chosen' the third reading's prayers are named without restating the incensing or the Placeat's words; and the sentence that repeated the themes' 'The Mass that began ...' is removed. Pages 3-4 keep their extent and the concise study its twelve pages."
 
 [[advisories]]
 stage = "synthesis-review"
@@ -258,6 +293,9 @@ severity = "advisory"
 location = "sections/concise/04-themes.tex, last paragraph ('each developed at length in the expansive study with four senses of its own', page 4); sections/concise/90-apparatus.tex, 'Relation to the expansive study' (page 11); synthesis.tex and main.tex, \\propertitle first field"
 problem = "The concise's body sends the reader to 'the expansive study'. That is a term from the production contract, and the reader has not been told what it names. The scope appendix identifies the companion only as 'The Nineteenth Sunday after Pentecost'. The concise prints the same title on its own page 1, because both entrypoints open with \\propertitle{The Nineteenth Sunday after Pentecost}{Dominica decima nona post Pentecosten}. A reader holding the concise is therefore told that the full argument is in a work carrying the title on the page in front of him. In print, only main.tex's fourth \\propertitle field distinguishes the study: 'The wedding garment, the call to the highways, and the evening sacrifice: a study of the proper in three readings'."
 required_result = "Identify the companion so that a reader can tell it from the concise. For example, call it 'the full study' in the body. In the scope appendix, name it by its distinguishing subtitle, or by its catalogue label 'Full PDF'. Leave the extent of pages 3-4 unchanged."
+resolution = "repaired"
+resolution_date = "2026-09-30"
+resolution_note = "The themes now send the reader to 'the full study', and the scope appendix's 'Relation to the full study' names it as the Full PDF subtitled The wedding garment, the call to the highways, and the evening sacrifice: a study of the proper in three readings, the fourth title field of main.tex. Pages 3-4 keep their extent. The homily note's 'expansive study' also reads 'full study'."
 
 [[advisories]]
 stage = "visual-review"
@@ -266,6 +304,9 @@ severity = "advisory"
 location = "Homily PDF: the foot of column 2 on physical page 1 runs into the head of column 1 on page 2 (source: sections/homily/10-homily.tex line 89)"
 problem = "The page turn falls inside a proper name. Page 1 ends with 'St' and page 2 opens with 'Hilary of Poitiers says that to spread the hands...', so a preacher reading from the printed page has to turn mid-name. None of the 13 'St <Name>' spaces in the spoken body is tied, and the same break recurs at a line end in column 2 of page 2 ('St' / 'Gregory')."
 required_result = "Join the honorific to the name with a non-breaking tie (St~Hilary, and preferably every St~ in sections/homily/10-homily.tex) so that no line or page break separates 'St' from the name. Then rebuild and re-inspect the homily's column and page breaks."
+resolution = "repaired"
+resolution_date = "2026-09-30"
+resolution_note = "Every one of the 13 'St <Name>' spaces in the spoken body is tied (St~). Rebuilt and inspected on rasters: column 2 of page 1 ends with the Gradual's verse and page 2 opens 'St Hilary of Poitiers'; no line or page break separates 'St' from a name."
 
 [[advisories]]
 stage = "visual-review"
@@ -274,33 +315,54 @@ severity = "advisory"
 location = "The expansive study's References subheads on pp. 32-33 (sections/90-apparatus.tex, \\subsection*) against the concise study's References subheads on p. 12 (sections/concise/90-apparatus.tex, \\subsubsection*)"
 problem = "The two sibling studies set their References subdivisions at different heading levels: large bold upright in the expansive study, normal-size bold italic in the concise study. Each document is consistent within itself, but the pair's terminal apparatus does not share one hierarchy."
 required_result = "Use one heading level for the References subdivisions in both studies' apparatus, for example \\subsection* in both. Then rebuild and confirm that the concise study's final page still holds References, metadata and the colophon without a spill page."
+resolution = "repaired"
+resolution_date = "2026-09-30"
+resolution_note = "The concise study's References subdivisions are now \\subsection*, the study's level. Rebuilt and inspected: the concise study's twelfth page holds the References, the revision timestamp and the colophon, with no spill page."
 
 [[observations]]
 stage = "homily-review"
 location = "scripts/_proper_components.py, the schema-2 coverage check for kind 'homily' (the loop over appointed-text, proper-treatment, integrated-commentary and homily near line 796); src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/proper-components.toml, component homily-body element_keys"
 note = "The checker requires the homily component to declare every element key. guidance/liturgy/propers-three-documents.md, however, lets the homily leave minor propers to the research 'without reciting an inventory of every minor proper', and this homily's note leaves the Alleluia, Offertory and Secret to the studies. The manifest therefore declares a coverage that the speech does not have and is not required to have. That points to a missing distinction between 'informed by' and 'covers' for homily components in the checker or the profile, not to a defect in this leaf."
+resolution = "repaired"
+resolution_date = "2026-09-30"
+resolution_note = "Answered in guidance/liturgy/propers-three-documents.md, 'Mechanical and judgment gates': a homily component's element_keys declare the elements whose research informs the speech, which the checker requires to be all of them, and do not claim the speech recites each. The checker is unchanged, and this leaf's manifest now declares what the profile says the key means."
 
 [[observations]]
 stage = "research-review"
 location = "tools/commentary-work-index, recorded example: discover --passage 'John 3:16' --max-results 3 (replayed by scripts/replay_examples.py under make check-examples)"
 note = "This iteration's new PL 35 containment entry joins Augustine's In Iohannis evangelium tractatus to PL 35. The recorded transcript therefore now diverges: the run prints one more holdings line, 'inside work.jacques-paul-migne.patrologia-latina-volume-35'. Four other examples of the same tool (containment ×2, standing ×2) already diverged for reasons that predate this leaf. Recapturing the transcripts is outside the research owner, and the research stage disclosed the drift."
+resolution = "repaired"
+resolution_date = "2026-09-30"
+resolution_note = "The tool's transcripts were recaptured from real runs in commit 9d0c5b7fa (scripts/replay_examples.py --tool commentary-work-index --recapture); all 13 of its examples replay clean."
 
 [[observations]]
 stage = "study-review"
 location = "sections/80-date-location.tex, Gospel and Epistle explanatory rows; src/sources/chronology/composition.yaml, entries composition.gospel-of-matthew and composition.epistle-to-the-ephesians"
 note = "Still true after iteration 1. guidance/liturgy/roman-1962-propers.md requires the principal modern critical horizon in each page-2 explanatory row, but the chronology corpus holds no modern critical claim for Matthew or Ephesians, so neither this appendix nor the concise page 2 drawn from it can carry one. research/scope.md section 10 lists other corpus gaps but not this one, and no gate checks the requirement."
+resolution = "repaired"
+resolution_date = "2026-09-30"
+resolution_note = "The premise was wrong: src/sources/chronology/composition.yaml holds critical.gospel-of-matthew (post-A.D. 70 date, preferred) and critical.ephesians-later-disciple (around A.D. 80-100, disputed) under catholic-critical-v1, which the default cascade does not reach because the traditional profile answers first. research/chronology-profile-comparisons.toml now selects both for comparison; research/chronology.toml (schema 3) and research/chronology-annotations.tex were regenerated with tools/tpt proper-chronology, and the default answers are unchanged. The Gospel and Epistle explanatory rows of the study's appendix and of the concise page 2 carry each as the modern critical horizon with its corpus condition: a lower bound on the Greek Gospel that dates neither the Aramaic original nor the event; a conditional later-disciple hypothesis, not a consensus, beside the secretary and the traditional captivity, with no place. Both NABRE introductions were read on their public pages on 2026-09-30 and are bound at cataloged; research/scope.md section 7 no longer says that no comparison is needed."
 
 [[observations]]
 stage = "study-review"
 location = "sections/00-opening.tex, the three '<witnesses> carry it: <thesis>' sentences (lines 66-82)"
 note = "This one sentence form in the opening has now produced a blocking finding (STU-003, iteration 0) and an advisory (STU-008). guidance/liturgy/propers-three-documents.md says how a reading's carrying authors are chosen and recorded, but not how an opening or concise overview may name them beside the reading's thesis without implying that they hold all of it. That missing sentence is a candidate for the profile or the author-study fragment."
+resolution = "repaired"
+resolution_date = "2026-09-30"
+resolution_note = "Every instance of the sentence form in this leaf is repaired (STU-008 in the opening; SYN-001 on the concise page 1; RES-010 earlier in research/interpretations.md), and the missing criterion is now in guidance/liturgy/propers-three-documents.md: where an opening, overview or summary names a reading's authors beside its thesis, each is credited only with the clause he states."
 
 [[observations]]
 stage = "synthesis-review"
 location = "sections/concise/02-overview.tex, Allegorical row; evaluations/blocking-findings-v1.toml, RES-010 and STU-008"
 note = "This is the third finding in this run where a joint parenthesis or colon construction credits a second Father with the first Father's distinctive clause: RES-010 in interpretations.md, STU-008 in the study opening, and SYN-001 on the concise page 1. It is the missing profile or fragment criterion that the study-review observation already named. No gate can see how far a clause-level attribution reaches."
+resolution = "repaired"
+resolution_date = "2026-09-30"
+resolution_note = "The leaf's instances are repaired (SYN-001, STU-008, RES-010), and the criterion this observation found missing is now in guidance/liturgy/propers-three-documents.md: a joint parenthesis or colon credits each author only with the clause he states."
 
 [[observations]]
 stage = "visual-review"
 location = "build/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf (259,524 bytes over 3 pages)"
 note = "At 84.5 KiB per page the homily exceeds the 75 KiB-per-page investigation trigger in guidance/repository.md. On investigation, 227,400 bytes (87.6%) are the eleven embedded Latin Modern Type 1 subsets and the file contains no raster images, so the high ratio is fixed font overhead spread over a three-page document rather than a defect. The study (15.5 KiB/page) and the concise study (37.7 KiB/page) are well under the trigger."
+resolution = "not-a-defect"
+resolution_date = "2026-09-30"
+resolution_note = "As the observation itself found, the ratio is the fixed overhead of eleven embedded Latin Modern Type 1 subsets over three pages, with no raster images; the revised homily keeps the same fonts, so nothing is changed."
