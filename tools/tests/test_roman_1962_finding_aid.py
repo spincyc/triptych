@@ -675,11 +675,15 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
         # On 2026-10-01 the four pentecost-19 rights-withheld rows (Introit,
         # Collect, Secret, Postcommunion) became publication-bound entries:
         # 959 -> 955 and 348 -> 344.
-        self.assertEqual(len(source_established), 66)
-        self.assertEqual(len(expected), 137)
+        # Also on 2026-10-01 the KI-054 page reading gave the Agnes secundo
+        # Secret, a witness-gap slot against the 1962 facsimile, its Latin; its
+        # English row keeps `no-exemplar` and moves the same way: 66 -> 65,
+        # 137 -> 136, 955 -> 956 and 599 -> 600.
+        self.assertEqual(len(source_established), 65)
+        self.assertEqual(len(expected), 136)
         self.assertTrue(expected.issubset(typed))
         quarantined = set(typed) - expected
-        self.assertEqual(len(quarantined), 955)
+        self.assertEqual(len(quarantined), 956)
         self.assertEqual(
             {
                 (
@@ -700,7 +704,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                 for identity in quarantined
             },
             {
-                ("no-exemplar", None): 599,
+                ("no-exemplar", None): 600,
                 ("rights-withheld", CUMMISKEY_SOURCE): 344,
                 ("witness-gap", CUMMISKEY_SOURCE): 12,
             },

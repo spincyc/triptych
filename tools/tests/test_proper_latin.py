@@ -154,7 +154,9 @@ class ProductionLedgerTests(unittest.TestCase):
         )
         expected = {
             "postconciliar": (329, 4),
-            "roman-1962": (1111, 5),
+            # 1112 since 2026-10-01: the KI-054 page reading landed the
+            # Agnes secundo Secret, a witness-gap slot with no stub row before.
+            "roman-1962": (1112, 5),
             "roman-pre-1955": (0, 0),
         }
         for calendar, (total, repeated) in expected.items():
@@ -164,7 +166,8 @@ class ProductionLedgerTests(unittest.TestCase):
             self.assertEqual([], problems)
             self.assertEqual(total, len(records))
             self.assertEqual(
-                {"postconciliar": 329, "roman-1962": 77}.get(calendar, 0),
+                # 46 since 2026-10-01: KI-054 published 31 quarantined bodies.
+                {"postconciliar": 329, "roman-1962": 46}.get(calendar, 0),
                 sum(row.get("body_status") == "removed" for row in records.values()),
             )
             # Four duplicate-name pairs and one six-item procession are all
@@ -172,7 +175,7 @@ class ProductionLedgerTests(unittest.TestCase):
             self.assertEqual(repeated, sum(key.occurrence > 1 for key in records))
 
     def test_publication_loader_validates_production_source_metadata(self) -> None:
-        expected = {"postconciliar": 329, "roman-1962": 1111, "roman-pre-1955": 1111}
+        expected = {"postconciliar": 329, "roman-1962": 1112, "roman-pre-1955": 1112}
         for calendar, count in expected.items():
             records, problems = publication_records(CALENDARS, calendar, INVENTORIES)
             self.assertEqual([], problems)
@@ -208,8 +211,10 @@ class ProductionLedgerTests(unittest.TestCase):
             {k.mass for k in roman} <= calendar_masses,
             sorted({k.mass for k in roman} - calendar_masses),
         )
-        self.assertEqual(1034, len(permitted))
-        self.assertEqual(1034, len(roman))
+        # 1066 since 2026-10-01: the 32 KI-054 bodies, each read on the 1962
+        # page image and on a page image of the 1862 Pustet or the 1922 Mame.
+        self.assertEqual(1066, len(permitted))
+        self.assertEqual(1066, len(roman))
         target_artifact = (
             "artifact.catholic-church.missale-romanum."
             "vatican-typica-1962.cmaa-facsimile-pdf"
@@ -343,7 +348,10 @@ class ProductionLedgerTests(unittest.TestCase):
         self.assertEqual(set(projection_specs), used_projection_editions)
         # The same kind of tripwire as the permitted count: a further witness
         # beside the pinned one is rare, so each is a visible edit here.
-        self.assertEqual(1, len(supplemented), supplemented)
+        # 30 since 2026-10-01: the 29 KI-054 rows resting on the 1862 name its
+        # registered facsimile PDF beside the text layer, because the words were
+        # read on that printing's page images, not on its damaged text layer.
+        self.assertEqual(30, len(supplemented), supplemented)
 
         work = tomllib.loads((EDITORIAL_PROJECTION / "work.toml").read_text())
         self.assertEqual("Triptych contributors", work["responsible"])
@@ -391,7 +399,7 @@ class ProductionLedgerTests(unittest.TestCase):
                 for line in payload[start - 1 : end]
             )
             self.assertEqual(row["text_sha256"], text_sha256(projected_body))
-        self.assertEqual(406, len(nonpermitted))
+        self.assertEqual(375, len(nonpermitted))
         collated = [
             item for item in nonpermitted if item[2]["provenance_status"] == "collated"
         ]
@@ -452,7 +460,7 @@ class ProductionLedgerTests(unittest.TestCase):
         unresolved = [
             row for _, _, row in nonpermitted if row["provenance_status"] == "unresolved"
         ]
-        self.assertEqual(402, len(unresolved))
+        self.assertEqual(371, len(unresolved))
         self.assertTrue(all(row["publication_basis"] == "unresolved" for row in unresolved))
         postconciliar = [
             row for calendar, _, row in nonpermitted if calendar == "postconciliar"

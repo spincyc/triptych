@@ -39,7 +39,7 @@ EXAMPLES = {
         Example(
             "tools/audit-latin-body-substitutions",
             (
-                "1034 bodies, 3940 distinct tokens, 1264 known forms, "
+                "1066 bodies, 4101 distinct tokens, 1320 known forms, "
                 "0 to read on a page image",
             ),
         ),
@@ -76,6 +76,10 @@ SHORTEST = 4
 READ_ON_THE_PAGE = {
     ("s-raymundi-penafort-confessoris", "Collect", "maris"),
     ("s-silvestri-abbatis", "Secret", "effecti"),
+    # "Symphorosa et filiis eius" -- the sons, ablative plural, read on the
+    # 1962 page image (printed p. 591, no. 3092) and on the 1862's (p. 492)
+    # on 2026-10-01; not a damaged filius.
+    ("comm-ss-symphorosae-septem-eius-filiorum", "Postcommunion", "filiis"),
 }
 # Settled on grammar rather than on the page, which is weaker and is recorded as
 # such: `beatae Monicae pias lacrimas` is an accusative plural agreeing with its

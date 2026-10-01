@@ -71,6 +71,12 @@ class LegitimateTextSurvives(unittest.TestCase):
         # finalizer had already deleted several from a body on that reasoning.
         self.assertEqual([], body_damage("cor ego mea da ita fac es est qui O"))
 
+    def test_the_superlative_of_pius(self):
+        # The Seven Sorrows Secret, read on the 1962 page image: the doubled i
+        # of piissimo is the word, not u read as ii.
+        self.assertEqual([], body_damage("multiplicato piissimo interventu"))
+        self.assertIn("siipplices", body_damage("piissime siipplices"))
+
     def test_the_pluperfect_subjunctive(self):
         self.assertEqual([], body_damage("cum audisset et fecisset atque venisset"))
 

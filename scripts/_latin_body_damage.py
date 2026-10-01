@@ -69,6 +69,12 @@ KNOWN_GOOD = frozenset(
         "remedii", "mysteriis", "gaudii", "auxilii", "ministerii", "sacrificii",
         "beneficii", "iudicii", "judicii", "obsequii", "imperii", "silentii",
         "principii", "consilii", "exercitii", "martyrii",
+        # The superlative of pius doubles its i before -ssim-, which the
+        # u-read-as-ii rule cannot tell from damage. The Seven Sorrows Secret's
+        # "piissimo interventu" was read on the 1962 page image and stands so
+        # in the 1862 and the 1922 Mame (2026-10-01).
+        "piissimus", "piissima", "piissimum", "piissimi", "piissimae",
+        "piissimo", "piissime",
     }
 )
 

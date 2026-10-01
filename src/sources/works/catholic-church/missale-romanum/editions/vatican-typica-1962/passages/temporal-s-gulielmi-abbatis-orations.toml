@@ -1,0 +1,11 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-gulielmi-abbatis-orations"
+edition_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+locus = "Collect at printed p. 564, no. 2878, marked P; artifact PDF p. 645, right column, under 'Die 25 iunii, S. Gulielmi Abbatis'"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The proper orations of s-gulielmi-abbatis in the controlling 1962 typical edition. This is the target transcription witness for their wording, pointing and conclusion length; it is not the rights authority for publishing them."
+verified_on = "2026-10-01"
+notes = "Read on page images rendered at 200 and 400 dpi from the exact identified CMAA facsimile, fetched against its registered hash, not through its embedded text layer, which drops ornamental initials and misreads marginal numbers. Publication rights come from a separately registered public-domain witness and from 17 U.S.C. 103(b); see src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml."

@@ -22091,47 +22091,77 @@ sections:
               chapter: 1
               verse: 12
           ref: Lamentations 1:12
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
-        notes: Printed p. 500 = digital p. 581, n. 2363, headed Tractus, rendered again at
-          400 dpi. Recorded mixed because the Missal cites the verse and not the antiphon -
-          the antiphon carries no reference and the verse is printed V. Thren. 1, 12, which
-          this file's citation convention renders Lamentations 1:12. It is unconditional
-          here. At 15 September the same words stand as an Alleluia (n. 3621) WITHOUT the
-          Threni verse, and the Tract (n. 3622) is printed only for use after Septuagesima,
-          with a further Alleluia (n. 3623) replacing the Gradual in paschaltide. This day
-          is in Passiontide and has no Alleluia at all, which is the second reason no
-          takes_from could serve - _apply_overrides can add a proper and cannot remove one.
-          The typica prints iuxta and Iesu; both are normalised to j.
+        notes: >-
+          Printed p. 500 = digital p. 581, n. 2363, headed Tractus, rendered again at
+          400 dpi. Recorded mixed because the Missal cites the verse and not the
+          antiphon - the antiphon carries no reference and the verse is printed V.
+          Thren. 1, 12, which this file's citation convention renders Lamentations
+          1:12. It is unconditional here. At 15 September the same words stand as an
+          Alleluia (n. 3621) WITHOUT the Threni verse, and the Tract (n. 3622) is
+          printed only for use after Septuagesima, with a further Alleluia (n. 3623)
+          replacing the Gradual in paschaltide. This day is in Passiontide and has no
+          Alleluia at all, which is the second reason no takes_from could serve -
+          _apply_overrides can add a proper and cannot remove one. The typica prints
+          iuxta and Iesu; both are normalised to j. Printed locus printed p. 500, no.
+          2363, under the heading Tractus; artifact PDF p. 581, left column; read on
+          the 1962 page image at 200 and 400 dpi on 2026-10-01. Preexisting material
+          under 17 U.S.C. 103(b), corroborated word for word in the public-domain 1862
+          Pustet Ratisbon, Festum VII. Dolorum B. M. Virg. (Friday after Passion
+          Sunday), Tractus, printed p. 420, text-layer lines 59860-59867, read on the
+          page image of the registered facsimile PDF at p. 506.
+        text: |
+          Stabat sancta Maria, caeli Regina et mundi Domina, juxta Crucem Domini
+          nostri Jesu Christi dolorosa. V. O vos omnes, qui transitis per viam,
+          attendite et videte, si est dolor sicut dolor meus.
       - name: Sequence
         incipit: Stabat Mater dolorosa
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
         notes: >-
-          The fifth and last of the five Sequences the 1962 books appoint, and the one this
-          file has never carried. Printed pp. 500-501 = digital pp. 581-582, n. 2364, headed
-          Sequentia, both columns rendered again at 400 dpi because the strophe punctuation
-          carries the sense. One line here is one printed strophe, and the closing Amen
-          stands on its own line as the page sets it, which is the convention this file
-          already uses at Dies irae. Twenty strophes.
-          It is NOT the September printing and it is not copied from it. The Missal prints
+          The fifth and last of the five Sequences the 1962 books appoint, and the one
+          this file has never carried. Printed pp. 500-501 = digital pp. 581-582, n.
+          2364, headed Sequentia, both columns rendered again at 400 dpi because the
+          strophe punctuation carries the sense. One line here is one printed strophe,
+          and the closing Amen stands on its own line as the page sets it, which is
+          the convention this file already uses at Dies irae. Twenty strophes. It is
+          NOT the September printing and it is not copied from it. The Missal prints
           this Sequence twice in full, here and at 15 September n. 3624, and the two
           settings differ. This one is unconditional; September's is headed (in Missis
           votivis omittenda). This one ends Paradisi gloria. Amen.; September's ends
-          Paradisi gloria. Amen. Alleluia. on one line. September also prints a comma after
-          fleret in the fifth strophe and after stare in the fourteenth, where this setting
-          prints none. Both were read at 400 dpi on 2026-08-02 and the difference is in the
-          type, not in the scan. The typica prints Iuxta, Cuius, Iesum, iam and iudicii;
-          all are normalised to j under this file's declared convention.
+          Paradisi gloria. Amen. Alleluia. on one line. September also prints a comma
+          after fleret in the fifth strophe and after stare in the fourteenth, where
+          this setting prints none. Both were read at 400 dpi on 2026-08-02 and the
+          difference is in the type, not in the scan. The typica prints Iuxta, Cuius,
+          Iesum, iam and iudicii; all are normalised to j under this file's declared
+          convention. Printed locus printed pp. 500-501, no. 2364, under the heading
+          Sequentia; artifact PDF p. 581, right column, and p. 582, left column; read
+          on the 1962 page image at 200 and 400 dpi on 2026-10-01. Preexisting
+          material under 17 U.S.C. 103(b), corroborated word for word in the
+          public-domain 1862 Pustet Ratisbon, Festum VII. Dolorum B. M. Virg. (Friday
+          after Passion Sunday), Sequentia in Missis Votivis omittenda, printed pp.
+          420-421, text-layer lines 59897-59977 and 59989-59995, read on the page
+          image of the registered facsimile PDF at pp. 506-507.
+        text: |
+          Stabat Mater dolorosa Juxta Crucem lacrimosa, Dum pendebat Filius.
+          Cujus animam gementem, Contristatam et dolentem, Pertransivit gladius.
+          O quam tristis et afflicta Fuit illa benedicta Mater Unigeniti!
+          Quae maerebat, et dolebat, Pia Mater, dum videbat Nati poenas incliti.
+          Quis est homo, qui non fleret Matrem Christi si videret In tanto supplicio?
+          Quis non posset contristari, Christi Matrem contemplari Dolentem cum Filio?
+          Pro peccatis suae gentis Vidit Jesum in tormentis, Et flagellis subditum.
+          Vidit suum dulcem Natum Moriendo desolatum, Dum emisit spiritum.
+          Eia, Mater, fons amoris, Me sentire vim doloris Fac, ut tecum lugeam.
+          Fac, ut ardeat cor meum In amando Christum Deum, Ut sibi complaceam.
+          Sancta Mater, istud agas, Crucifixi fige plagas Cordi meo valide.
+          Tui Nati vulnerati, Tam dignati pro me pati, Poenas mecum divide.
+          Fac me tecum pie flere, Crucifixo condolere, Donec ego vixero.
+          Juxta Crucem tecum stare Et me tibi sociare In planctu desidero.
+          Virgo virginum praeclara, Mihi jam non sis amara: Fac me tecum plangere.
+          Fac, ut portem Christi mortem, Passionis fac consortem, Et plagas recolere.
+          Fac me plagis vulnerari, Fac me Cruce inebriari, Et cruore Filii.
+          Flammis ne urar succensus, Per te, Virgo, sim defensus In die judicii.
+          Christe, cum sit hinc exire, Da per Matrem me venire Ad palmam victoriae.
+          Quando corpus morietur, Fac, ut animae donetur Paradisi gloria.
+          Amen.
       - name: Gospel
         source: scripture
         verses:
@@ -22164,17 +22194,24 @@ sections:
       - name: Secret
         incipit: Offerimus tibi preces et hostias, Domine Jesu Christe
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
-        notes: Printed p. 501 = digital p. 582, n. 2367, headed Secreta, rendered again at
-          400 dpi. The printed conclusion is carried as the page abbreviates it. The rubric
-          Praefatio de B. Maria Virg. Et te in Transfixione stands under the feria's Secret
-          on the same page and is not recorded, because this file records no Preface. The
-          typica prints Iesu; normalised to j.
+        notes: >-
+          Printed p. 501 = digital p. 582, n. 2367, headed Secreta, rendered again at
+          400 dpi. The printed conclusion is carried as the page abbreviates it. The
+          rubric Praefatio de B. Maria Virg. Et te in Transfixione stands under the
+          feria's Secret on the same page and is not recorded, because this file
+          records no Preface. The typica prints Iesu; normalised to j. Printed locus
+          printed p. 501, no. 2367, under the heading Secreta; artifact PDF p. 582,
+          right column; read on the 1962 page image at 200 and 400 dpi on 2026-10-01.
+          Preexisting material under 17 U.S.C. 103(b), corroborated word for word in
+          the public-domain 1922 Tours Mame, editio quarta iuxta typicam, Fer. VI post
+          Dom. Pas. - Septem Dolorum B. M. V., Secreta, printed p. 563, artifact PDF
+          p. 677, read on the page image.
+        text: |
+          Offerimus tibi preces et hostias, Domine Jesu Christe, humiliter
+          supplicantes: ut, qui Transfixionem dulcissimi spiritus beatae Mariae Matris
+          tuae precibus recensemus; suo suorumque sub Cruce Sanctorum consortium
+          multiplicato piissimo interventu, meritis mortis tuae, meritum cum beatis
+          habeamus: Qui vivis et regnas cum Deo Patre in unitate.
       - name: Communion
         incipit: Felices sensus beatae Mariae Virginis
         source: composed
@@ -23071,35 +23108,60 @@ sections:
       - name: Sequence
         incipit: Stabat Mater dolorosa
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
         notes: >-
-          The 1962 books appoint five Sequences and this file now carries all five. Printed
-          pp. 657-658 = digital pp. 738-739, n. 3624, headed Sequentia and, on its own line
-          beneath, the rubric (in Missis votivis omittenda) - so it is omitted when this
-          Mass is said as a votive Mass. Read on 2026-08-02 from the page images of the CMAA
-          facsimile of the 1962 typica,
+          The 1962 books appoint five Sequences and this file now carries all five.
+          Printed pp. 657-658 = digital pp. 738-739, n. 3624, headed Sequentia and, on
+          its own line beneath, the rubric (in Missis votivis omittenda) - so it is
+          omitted when this Mass is said as a votive Mass. Read on 2026-08-02 from the
+          page images of the CMAA facsimile of the 1962 typica,
           artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-          (sha256 648fdb8f...3518a, 82815941 bytes, matched on the copy read before any
-          reading was taken from it), at 200 dpi for the page and 400 dpi for both columns,
-          because the strophe punctuation carries the sense. No OCR text layer supplied a
-          reading. One line here is one printed strophe, which is the convention this file
-          uses at Lauda Sion and at Dies irae; twenty strophes, and the closing Amen.
-          Alleluia. stands on the last strophe's third line as the page sets it rather than
-          on a line of its own.
-          This is the second of the Missal's two full printings and it was NOT copied from
-          the first. The Friday after Passion Sunday prints the whole Sequence at n. 2364
-          with no votive rubric over it, ends Paradisi gloria. Amen. with the Amen on a line
-          of its own and no Alleluia, and prints no comma after fleret in the fifth strophe
-          or after stare in the fourteenth, where this setting prints both. The two were
-          read side by side at 400 dpi and the three differences are in the type, not in the
-          scan. The typica prints Iuxta twice, Cuius, Iesum, iam and iudicii; all are
-          normalised to j under this file's declared convention, and the final Alleluja
-          carries the same normalisation this file already applies at Lauda Sion.
+          (sha256 648fdb8f...3518a, 82815941 bytes, matched on the copy read before
+          any reading was taken from it), at 200 dpi for the page and 400 dpi for both
+          columns, because the strophe punctuation carries the sense. No OCR text
+          layer supplied a reading. One line here is one printed strophe, which is the
+          convention this file uses at Lauda Sion and at Dies irae; twenty strophes,
+          and the closing Amen. Alleluia. stands on the last strophe's third line as
+          the page sets it rather than on a line of its own. This is the second of the
+          Missal's two full printings and it was NOT copied from the first. The Friday
+          after Passion Sunday prints the whole Sequence at n. 2364 with no votive
+          rubric over it, ends Paradisi gloria. Amen. with the Amen on a line of its
+          own and no Alleluia, and prints no comma after fleret in the fifth strophe
+          or after stare in the fourteenth, where this setting prints both. The two
+          were read side by side at 400 dpi and the three differences are in the type,
+          not in the scan. The typica prints Iuxta twice, Cuius, Iesum, iam and
+          iudicii; all are normalised to j under this file's declared convention, and
+          the final Alleluja carries the same normalisation this file already applies
+          at Lauda Sion. Printed locus printed p. 657, no. 3624, under the heading
+          Sequentia with the rubric (in Missis votivis omittenda); artifact PDF p.
+          738, left and right columns; read on the 1962 page image at 200 and 400 dpi
+          on 2026-10-01. Preexisting material under 17 U.S.C. 103(b), corroborated
+          word for word in the public-domain 1862 Pustet Ratisbon, Festum VII. Dolorum
+          B. M. Virg. (Friday after Passion Sunday), Sequentia in Missis Votivis
+          omittenda; and Dominica III. Septembris, In Festo VII. Dolorum B. M.
+          Virginis, the rubric 'et post Sequentiam additur Alleluja', printed pp.
+          420-421; 541, text-layer lines 59897-59977 and 59989-59995 and 74314-74324,
+          read on the page image of the registered facsimile PDF at pp. 506-507; 627.
+        text: |
+          Stabat Mater dolorosa Juxta Crucem lacrimosa, Dum pendebat Filius.
+          Cujus animam gementem, Contristatam et dolentem, Pertransivit gladius.
+          O quam tristis et afflicta Fuit illa benedicta Mater Unigeniti!
+          Quae maerebat, et dolebat, Pia Mater, dum videbat Nati poenas incliti.
+          Quis est homo, qui non fleret, Matrem Christi si videret In tanto supplicio?
+          Quis non posset contristari, Christi Matrem contemplari Dolentem cum Filio?
+          Pro peccatis suae gentis Vidit Jesum in tormentis, Et flagellis subditum.
+          Vidit suum dulcem Natum Moriendo desolatum, Dum emisit spiritum.
+          Eia, Mater, fons amoris, Me sentire vim doloris Fac, ut tecum lugeam.
+          Fac, ut ardeat cor meum In amando Christum Deum, Ut sibi complaceam.
+          Sancta Mater, istud agas, Crucifixi fige plagas Cordi meo valide.
+          Tui Nati vulnerati, Tam dignati pro me pati, Poenas mecum divide.
+          Fac me tecum pie flere, Crucifixo condolere, Donec ego vixero.
+          Juxta Crucem tecum stare, Et me tibi sociare In planctu desidero.
+          Virgo virginum praeclara, Mihi jam non sis amara: Fac me tecum plangere.
+          Fac, ut portem Christi mortem, Passionis fac consortem, Et plagas recolere.
+          Fac me plagis vulnerari, Fac me Cruce inebriari, Et cruore Filii.
+          Flammis ne urar succensus, Per te, Virgo, sim defensus In die judicii.
+          Christe, cum sit hinc exire, Da per Matrem me venire Ad palmam victoriae.
+          Quando corpus morietur, Fac, ut animae donetur Paradisi gloria. Amen. Alleluia.
       - name: Gospel
         source: scripture
         verses:
@@ -23134,12 +23196,19 @@ sections:
       - name: Collect
         incipit: Deus, qui per
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 668, no. 3707, marked P; artifact PDF p. 749, left
+          column, under the heading Oratio; read on the 1962 page image at 200 and 400
+          dpi on 2026-10-01. Preexisting material under 17 U.S.C. 103(b), corroborated
+          word for word in the public-domain 1862 Pustet Ratisbon, In Festo B. Mariae
+          Virginis de Mercede, Oratio, printed p. 548, text-layer lines 75201-75212,
+          read on the page image of the registered facsimile PDF at p. 634.
+        text: |
+          Deus, qui per gloriosissimam Filii tui Matrem, ad liberandos Christi fideles
+          a potestate paganorum, nova Ecclesiam tuam prole amplificare dignatus es:
+          praesta, quaesumus; ut, quam pie veneramur tanti operis institutricem, ejus
+          pariter meritis et intercessione, a peccatis omnibus et captivitate daemonis
+          liberemur. Per eundem Dominum.
       takes_from:
         mass: commune-festorum-bmv
         citation: Commune Sanctorum [41]
@@ -23454,12 +23523,20 @@ sections:
       - name: Postcommunion
         incipit: Sumptis, Domine, salutis
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 722, no. 4133, marked C; artifact PDF p. 803, right
+          column, under the heading Postcommunio; read on the 1962 page image at 200
+          and 400 dpi on 2026-10-01. Preexisting material under 17 U.S.C. 103(b),
+          corroborated word for word in the public-domain 1862 Pustet Ratisbon, Festa
+          Novembris (21), In Praesentatione B. Mariae Virginis, Postcommunio (turning
+          the page at quaesu-/mus), printed pp. 580-581, text-layer lines 79003-79004
+          and 79015-79019, read on the page image of the registered facsimile PDF at
+          pp. 666-667.
+        text: |
+          Sumptis, Domine, salutis nostrae subsidiis: da, quaesumus, beatae Mariae
+          semper Virginis patrociniis nos ubique protegi; in cujus veneratione haec
+          tuae obtulimus majestati. Per Dominum nostrum Jesum Christum, Filium tuum:
+          Qui tecum vivit et regnat in unitate.
       takes_from:
         mass: commune-festorum-bmv
         citation: Commune Sanctorum [41]
@@ -25243,12 +25320,19 @@ sections:
       - name: Secret
         incipit: Sancti Hilarii Pontificis
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 442, no. 1917, marked C I; artifact PDF p. 523,
+          right column, under 'Die 14 ianuarii, S. Hilarii Ep., Conf. et Eccl. Doct.';
+          read on the 1962 page image at 200 and 400 dpi on 2026-10-01. Preexisting
+          material under 17 U.S.C. 103(b), corroborated word for word in the
+          public-domain 1922 Tours Mame, editio quarta iuxta typicam, Commune
+          Doctorum, Pro Doctore Pontifice, Secreta, printed p. 26*, artifact PDF p.
+          904, read on the page image.
+        text: |
+          Sancti Hilarii Pontificis tui atque Doctoris nobis, Domine, pia non desit
+          oratio: quae et munera nostra conciliet; et tuam nobis indulgentiam semper
+          obtineat. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit
+          et regnat in unitate.
       - name: Postcommunion
         incipit: 'Ut nobis, Domine'
         source: composed
@@ -26709,13 +26793,19 @@ sections:
       - name: Secret
         incipit: Ecclesiae tuae, quaesumus
         source: composed
-        notes: Printed p. 455, no. 2022, under Pro S. Petro.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 455, no. 2022, under 'Pro S. Petro Secreta' in the
+          Mass of 25 January; artifact PDF p. 536, right column; read on the 1962 page
+          image at 200 and 400 dpi on 2026-10-01. Preexisting material under 17 U.S.C.
+          103(b), corroborated word for word in the public-domain 1862 Pustet
+          Ratisbon, In Conversione S. Pauli (25 January), Pro S. Petro, Secreta,
+          printed p. 395, text-layer lines 56895-56900, read on the page image of the
+          registered facsimile PDF at p. 481.
+        text: |
+          Ecclesiae tuae, quaesumus, Domine, preces et hostias beati Petri Apostoli
+          commendet oratio: ut, quod pro illius gloria celebramus, nobis prosit ad
+          veniam. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et
+          regnat in unitate.
       - name: Postcommunion
         incipit: Laetificet nos, Domine
         source: composed
@@ -27188,12 +27278,19 @@ sections:
           ref: Matthew 13:44-52
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 459, no. 2051, under 'Pro S. Agnete Secreta' in the
+          commemoration within the Mass of 28 January; artifact PDF p. 540, left
+          column; read on the 1962 page image at 200 and 400 dpi on 2026-10-01.
+          Preexisting material under 17 U.S.C. 103(b), corroborated word for word in
+          the public-domain 1862 Pustet Ratisbon, Die xxviii, S. Agnetis Virginis et
+          Martyris Secundo, Secreta, printed p. 397, text-layer lines 57237-57243,
+          read on the page image of the registered facsimile PDF at p. 483.
+        text: |
+          Super has, quaesumus, Domine, hostias benedictio copiosa descendat: quae et
+          sanctificationem nobis clementer operetur, et de Martyrum nos solemnitate
+          laetificet. Per Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit
+          et regnat in unitate.
       - name: Communion
         source: scripture
         verses:
@@ -28642,13 +28739,18 @@ sections:
       - name: Postcommunion
         incipit: Sanctificati, Domine, salutari
         source: composed
-        notes: Printed p. 479, no. 2211, under Pro S. Paulo.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 479, no. 2211, under 'Pro S. Paulo Postcommunio' in
+          the Mass of the Chair of St Peter, 22 February; artifact PDF p. 560, left
+          column; read on the 1962 page image at 200 and 400 dpi on 2026-10-01.
+          Preexisting material under 17 U.S.C. 103(b), corroborated word for word in
+          the public-domain 1862 Pustet Ratisbon, Festa Januarii (18), the Chair of St
+          Peter at Rome, Pro S. Paulo, Postcommunio, printed p. 387, text-layer lines
+          55966-55970, read on the page image of the registered facsimile PDF at p.
+          473.
+        text: |
+          Sanctificati, Domine, salutari mysterio: quaesumus; ut nobis ejus non desit
+          oratio, cujus nos donasti patrocinio gubernari. Per Dominum.
     - key: s-petri-damiani-episcopi-confessoris-ecclesiae
       name: S. Petri Damiani Episcopi, Confessoris et Ecclesiae Doctoris
       registry: '1962-02-23'
@@ -29643,13 +29745,18 @@ sections:
       - name: Postcommunion
         incipit: Deus, qui beatum Gregorium
         source: composed
-        notes: Printed p. 488, no. 2282, marked P.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 488, no. 2282, marked P; artifact PDF p. 569, left
+          column, under 'Die 12 martii, S. Gregorii I Papae, Conf. et Eccl. Doct.';
+          read on the 1962 page image at 200 and 400 dpi on 2026-10-01. Preexisting
+          material under 17 U.S.C. 103(b), corroborated word for word in the
+          public-domain 1862 Pustet Ratisbon, Festa Martii (12), S. Gregorii Papae,
+          Postcommunio, printed p. 414, text-layer lines 59308-59314, read on the page
+          image of the registered facsimile PDF at p. 500.
+        text: |
+          Deus, qui beatum Gregorium Pontificem Sanctorum tuorum meritis coaequasti:
+          concede propitius; ut, qui commemorationis ejus festa percolimus, vitae
+          quoque imitemur exempla. Per Dominum.
     - key: s-patricii-episcopi-confessoris
       name: S. Patricii Episcopi et Confessoris
       registry: '1962-03-17'
@@ -33418,12 +33525,20 @@ sections:
       propers:
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 534, no. 2638, marked P; artifact PDF p. 615, foot
+          of the right column, under 'Die 25 maii, S. Gregorii VII Papae et Conf.';
+          read on the 1962 page image at 200 and 400 dpi on 2026-10-01. Preexisting
+          material under 17 U.S.C. 103(b), corroborated word for word in the
+          public-domain 1862 Pustet Ratisbon, Festa Maji (25), S. Gregorii VII, Oratio
+          (turning the page at tuenda / Ecclesiae), printed pp. 448-449, text-layer
+          lines 63345-63348 and 63359-63363, read on the page image of the registered
+          facsimile PDF at pp. 534-535.
+        text: |
+          Deus, in te sperantium fortitudo, qui beatum Gregorium Confessorem tuum
+          atque Pontificem, pro tuenda Ecclesiae libertate, virtute constantiae
+          roborasti: da nobis, ejus exemplo et intercessione, omnia adversantia
+          fortiter superare. Per Dominum.
       notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
         carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
         CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
@@ -33831,12 +33946,19 @@ sections:
       propers:
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 539, no. 2675, marked P; artifact PDF p. 620, right
+          column, under 'Die 29 maii, S. Mariae Magdalenae de Pazzis Virginis'; read
+          on the 1962 page image at 200 and 400 dpi on 2026-10-01. Preexisting
+          material under 17 U.S.C. 103(b), corroborated word for word in the
+          public-domain 1862 Pustet Ratisbon, Die xxvii (May), S. Mariae Magdalenae de
+          Pazzis, Virginis, Oratio, printed p. 451, text-layer lines 63656-63663, read
+          on the page image of the registered facsimile PDF at p. 537.
+        text: |
+          Deus, virginitatis amator, qui beatam Mariam Magdalenam Virginem, tuo amore
+          succensam, caelestibus donis decorasti: da; ut, quam festiva celebritate
+          veneramur, puritate et caritate imitemur. Per Dominum nostrum Jesum
+          Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
       notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
         carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
         CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
@@ -33901,12 +34023,19 @@ sections:
       propers:
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 542, no. 2697, marked P; artifact PDF p. 623, left
+          column, under 'Die 1 iunii, S. Angelae Mericiae Virg.'; read on the 1962
+          page image at 200 and 400 dpi on 2026-10-01. Preexisting material under 17
+          U.S.C. 103(b), corroborated word for word in the public-domain 1922 Tours
+          Mame, editio quarta iuxta typicam, Die 31 Maji, S. Angelae Mericiae, Oratio,
+          printed p. 605, artifact PDF p. 719, read on the page image.
+        text: |
+          Deus, qui novum per beatam Angelam sacrarum Virginum collegium in Ecclesia
+          tua florescere voluisti: da nobis, ejus intercessione, angelicis moribus
+          vivere; ut, terrenis omnibus abdicatis, gaudiis perfrui mereamur aeternis.
+          Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat
+          in unitate.
       notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
         carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
         CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
@@ -34367,12 +34496,20 @@ sections:
       propers:
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 546, no. 2733, marked P; artifact PDF p. 627, right
+          column, under 'Die 6 iunii, S. Norberti Ep. et Conf.'; read on the 1962 page
+          image at 200 and 400 dpi on 2026-10-01. Preexisting material under 17 U.S.C.
+          103(b), corroborated word for word in the public-domain 1862 Pustet
+          Ratisbon, Die vi (June), S. Norberti, Episcopi et Confessoris, Oratio,
+          printed p. 455, text-layer lines 64110-64120, read on the page image of the
+          registered facsimile PDF at p. 541.
+        text: |
+          Deus, qui beatum Norbertum Confessorem tuum atque Pontificem verbi tui
+          praeconem eximium effecisti, et per eum Ecclesiam tuam nova prole
+          fecundasti: praesta, quaesumus; ut, ejusdem suffragantibus meritis, quod ore
+          simul et opere docuit, te adjuvante, exercere valeamus. Per Dominum nostrum
+          Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
       takes_from:
         mass: commune-confessoris-pontificis-1
         citation: Commune Sanctorum [19]
@@ -34535,12 +34672,18 @@ sections:
       propers:
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 548, no. 2747, marked P; artifact PDF p. 629, left
+          column, under 'Die 10 iunii, S. Margaritae Reginae, Vid.'; read on the 1962
+          page image at 200 and 400 dpi on 2026-10-01. Preexisting material under 17
+          U.S.C. 103(b), corroborated word for word in the public-domain 1862 Pustet
+          Ratisbon, Die x (June), S. Margaritae, Reginae Scotiae, Oratio, printed p.
+          456, text-layer lines 64225-64231, read on the page image of the registered
+          facsimile PDF at p. 542.
+        text: |
+          Deus, qui beatam Margaritam reginam eximia in pauperes caritate mirabilem
+          effecisti: da; ut, ejus intercessione et exemplo, tua in cordibus nostris
+          caritas jugiter augeatur. Per Dominum nostrum.
       notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
         carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
         CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
@@ -36100,12 +36243,20 @@ sections:
       propers:
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 564, no. 2878, marked P; artifact PDF p. 645, right
+          column, under 'Die 25 iunii, S. Gulielmi Abbatis'; read on the 1962 page
+          image at 200 and 400 dpi on 2026-10-01. Preexisting material under 17 U.S.C.
+          103(b), corroborated word for word in the public-domain 1862 Pustet
+          Ratisbon, Die xxv (June), S. Guillelmi, Abbatis, Oratio, printed p. 469,
+          text-layer lines 65825-65834, read on the page image of the registered
+          facsimile PDF at p. 555.
+        text: |
+          Deus, qui infirmitati nostrae ad terendam salutis viam in Sanctis tuis
+          exemplum et praesidium collocasti: da nobis, ita beati Gulielmi Abbatis
+          merita venerari; ut ejusdem excipiamus suffragia, et vestigia prosequamur.
+          Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat
+          in unitate.
       notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
         carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
         CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
@@ -37257,12 +37408,19 @@ sections:
       propers:
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 582, no. 3008, marked P; artifact PDF p. 663, left
+          column, under 'Die 8 iulii, S. Elisabeth Reginae, Vid.'; read on the 1962
+          page image at 200 and 400 dpi on 2026-10-01. Preexisting material under 17
+          U.S.C. 103(b), corroborated word for word in the public-domain 1862 Pustet
+          Ratisbon, Die viii (July), S. Elisabeth, Reginae Portugalliae, Viduae,
+          Oratio, printed p. 484, text-layer lines 67514-67523, read on the page image
+          of the registered facsimile PDF at p. 570.
+        text: |
+          Clementissime Deus, qui beatam Elisabeth reginam, inter ceteras egregias
+          dotes, bellici furoris sedandi praerogativa decorasti: da nobis, ejus
+          intercessione; post mortalis vitae, quam suppliciter petimus, pacem, ad
+          aeterna gaudia pervenire. Per Dominum.
       notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
         carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
         CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
@@ -37579,12 +37737,19 @@ sections:
       propers:
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 585, no. 3038, marked P; artifact PDF p. 666, right
+          column, under the commemoration 'Eodem die 12 iulii, Ss. Naboris et Felicis
+          Martyrum' begun at the foot of the left column; read on the 1962 page image
+          at 200 and 400 dpi on 2026-10-01. Preexisting material under 17 U.S.C.
+          103(b), corroborated word for word in the public-domain 1862 Pustet
+          Ratisbon, Die xii, S. Joannis Gualberti, Pro commem. Ss. Naboris et Felicis
+          Mart., Oratio, printed p. 485, text-layer lines 67674-67680, read on the
+          page image of the registered facsimile PDF at p. 571.
+        text: |
+          Praesta, quaesumus, Domine: ut, sicut nos sanctorum Martyrum tuorum Naboris
+          et Felicis natalicia celebranda non deserunt; ita jugiter suffragiis
+          comitentur. Per Dominum.
       notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
         carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
         CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
@@ -37755,12 +37920,21 @@ sections:
       propers:
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 587, no. 3051, marked P; artifact PDF p. 668, left
+          column, under 'Die 15 iulii, S. Henrici Imperatoris, Conf.'; read on the
+          1962 page image at 200 and 400 dpi on 2026-10-01. Preexisting material under
+          17 U.S.C. 103(b), corroborated word for word in the public-domain 1862
+          Pustet Ratisbon, Die xv (July), S. Henrici, Confessoris, Oratio, printed p.
+          488, text-layer lines 67984-67996, read on the page image of the registered
+          facsimile PDF at p. 574.
+        text: |
+          Deus, qui hodierna die beatum Henricum Confessorem tuum e terreni culmine
+          imperii ad regnum aeternum transtulisti: te supplices exoramus; ut, sicut
+          illum, gratiae tuae ubertate praeventum, illecebras saeculi superare
+          fecisti, ita nos facias, ejus imitatione, mundi hujus blandimenta vitare, et
+          ad te puris mentibus pervenire. Per Dominum nostrum Jesum Christum, Filium
+          tuum: Qui tecum vivit et regnat in unitate.
       notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
         carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
         CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
@@ -38068,30 +38242,47 @@ sections:
       - name: Collect
         incipit: Deus, qui nos concedis sanctorum Martyrum tuorum
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 591, no. 3090; artifact PDF p. 672, right column,
+          under 'Eodem die 18 iulii, Ss. Symphorosae et septem filiorum eius Mm.
+          Commemoratio'; read on the 1962 page image at 200 and 400 dpi on 2026-10-01.
+          Preexisting material under 17 U.S.C. 103(b), corroborated word for word in
+          the public-domain 1862 Pustet Ratisbon, Festa Julii (18), Eadem Die, S.
+          Symphorosae cum septem Filiis, Martyr., Oratio, printed p. 491, text-layer
+          lines 68394-68400, read on the page image of the registered facsimile PDF at
+          p. 577.
+        text: |
+          Deus, qui nos concedis sanctorum Martyrum tuorum Symphorosae et filiorum
+          ejus natalicia colere: da nobis in aeterna beatitudine de eorum societate
+          gaudere. Per Dominum.
       - name: Secret
         incipit: Munera tibi, Domine, nostrae devotionis offerimus
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 591, no. 3091; artifact PDF p. 672, right column;
+          read on the 1962 page image at 200 and 400 dpi on 2026-10-01. Preexisting
+          material under 17 U.S.C. 103(b), corroborated word for word in the
+          public-domain 1862 Pustet Ratisbon, Festa Julii (18), S. Symphorosae cum
+          septem Filiis, Secreta, printed p. 492, text-layer lines 68440-68445, read
+          on the page image of the registered facsimile PDF at p. 578.
+        text: |
+          Munera tibi, Domine, nostrae devotionis offerimus: quae et pro tuorum tibi
+          grata sint honore justorum, et nobis salutaria, te miserante, reddantur. Per
+          Dominum.
       - name: Postcommunion
         incipit: Praesta nobis, quaesumus Domine
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 591, no. 3092; artifact PDF p. 672, right column;
+          read on the 1962 page image at 200 and 400 dpi on 2026-10-01. Preexisting
+          material under 17 U.S.C. 103(b), corroborated word for word in the
+          public-domain 1862 Pustet Ratisbon, Festa Julii (18), S. Symphorosae cum
+          septem Filiis, Postcommunio, printed p. 492, text-layer lines 68453-68458,
+          read on the page image of the registered facsimile PDF at p. 578.
+        text: |
+          Praesta nobis, quaesumus, Domine: intercedentibus sanctis Martyribus tuis
+          Symphorosa et filiis ejus; ut, quod ore contingimus, pura mente capiamus.
+          Per Dominum.
       notes: 'No oration of the controlling 1962 edition has been read for this day, and nothing here comes from
         it. All three orations are transcribed from Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet
         Ratisbon 1862 printing the source library already tracks as public domain, read from its PAGE IMAGES and
@@ -39385,12 +39576,20 @@ sections:
       propers:
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 606, no. 3211, marked P; artifact PDF p. 687, right
+          column, under 'Eodem die 29 iulii, Ss. Felicis, Simplicii, Faustini et
+          Beatricis Martyrum Commemoratio'; read on the 1962 page image at 200 and 400
+          dpi on 2026-10-01. Preexisting material under 17 U.S.C. 103(b), corroborated
+          word for word in the public-domain 1862 Pustet Ratisbon, Festa Julii (29),
+          Pro commem. Ss. Martyrum Felicis, Simplicii, Faustini, et Beatricis, Oratio,
+          printed p. 502, text-layer lines 69600-69608, read on the page image of the
+          registered facsimile PDF at p. 588.
+        text: |
+          Praesta, quaesumus, Domine: ut, sicut populus christianus Martyrum tuorum
+          Felicis, Simplicii, Faustini et Beatricis temporali solemnitate congaudet,
+          ita perfruatur aeterna; et, quod votis celebrat, comprehendat effectu. Per
+          Dominum.
       notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
         carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
         CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
@@ -40168,12 +40367,20 @@ sections:
       propers:
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 614, no. 3271; artifact PDF p. 695, left column,
+          under 'Et fit commemoratio Ss. Xysti II Papae, Felicissimi et Agapiti
+          Martyrum' in the Mass of the Transfiguration, 6 August; read on the 1962
+          page image at 200 and 400 dpi on 2026-10-01. Preexisting material under 17
+          U.S.C. 103(b), corroborated word for word in the public-domain 1862 Pustet
+          Ratisbon, Festa Augusti (6), In Transfiguratione, Pro commemorat. Ss. Mart.
+          Xysti, Felicissimi, et Agapiti, Oratio, printed p. 510, text-layer lines
+          70568-70574, read on the page image of the registered facsimile PDF at p.
+          596.
+        text: |
+          Deus, qui nos concedis sanctorum Martyrum tuorum Xysti, Felicissimi et
+          Agapiti natalicia colere: da nobis in aeterna beatitudine de eorum societate
+          gaudere. Per Dominum nostrum.
       notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
         carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
         CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
@@ -41107,12 +41314,19 @@ sections:
       propers:
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 624, no. 3362, marked P; artifact PDF p. 705, right
+          column, under 'Die 13 augusti, Ss. Hippolyti et Cassiani Mm. Commemoratio';
+          read on the 1962 page image at 200 and 400 dpi on 2026-10-01. Preexisting
+          material under 17 U.S.C. 103(b), corroborated word for word in the
+          public-domain 1862 Pustet Ratisbon, Die xiii, Eadem Die, Ss. Hippolyti et
+          Cassiani, Martyrum, Oratio, printed p. 517, text-layer lines 71425-71431,
+          read on the page image of the registered facsimile PDF at p. 603.
+        text: |
+          Da, quaesumus, omnipotens Deus: ut beatorum Martyrum tuorum Hippolyti et
+          Cassiani veneranda solemnitas, et devotionem nobis augeat, et salutem. Per
+          Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in
+          unitate.
       - name: Secret
         incipit: Respice, Domine, munera populi tui
         source: composed
@@ -41545,12 +41759,22 @@ sections:
       propers:
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 632, no. 3420, marked P; artifact PDF p. 713, right
+          column, under 'Die 21 augusti, S. Ioannae Franciscae Fremiot de Chantal
+          Vid.'; read on the 1962 page image at 200 and 400 dpi on 2026-10-01.
+          Preexisting material under 17 U.S.C. 103(b), corroborated word for word in
+          the public-domain 1862 Pustet Ratisbon, Die xxi (August), S. Joannae
+          Franciscae Fremiot de Chantal, Viduae, Oratio, printed p. 524, text-layer
+          lines 72310-72324, read on the page image of the registered facsimile PDF at
+          p. 610.
+        text: |
+          Omnipotens et misericors Deus, qui beatam Joannam Franciscam, tuo amore
+          succensam, admirabili spiritus fortitudine per omnes vitae semitas in via
+          perfectionis donasti, quique per illam illustrare Ecclesiam tuam nova prole
+          voluisti: ejus meritis et precibus concede; ut, qui infirmitatis nostrae
+          conscii de tua virtute confidimus, caelestis gratiae auxilio cuncta nobis
+          adversantia vincamus. Per Dominum.
       notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
         carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
         CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
@@ -41616,12 +41840,19 @@ sections:
       propers:
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 635, no. 3441, marked P; artifact PDF p. 716, left
+          column, under 'Die 23 augusti, S. Philippi Benitii Conf.'; read on the 1962
+          page image at 200 and 400 dpi on 2026-10-01. Preexisting material under 17
+          U.S.C. 103(b), corroborated word for word in the public-domain 1862 Pustet
+          Ratisbon, Die xxiii (August), S. Philippi Benitii, Confessoris, Oratio,
+          printed p. 525, text-layer lines 72441-72448, read on the page image of the
+          registered facsimile PDF at p. 611.
+        text: |
+          Deus, qui, per beatum Philippum Confessorem tuum, eximium nobis humilitatis
+          exemplum tribuisti: da famulis tuis prospera mundi ex ejus imitatione
+          despicere, et caelestia semper inquirere. Per Dominum nostrum Jesum
+          Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
       notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
         carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
         CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
@@ -42231,12 +42462,19 @@ sections:
       - name: Secret
         incipit: Sacrificium tibi, Domine, laudis offerimus
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 641, no. 3492, marked P; artifact PDF p. 722, right
+          column, under the commemoration 'Eodem die 28 augusti, S. Hermetis Mart.'
+          begun at the foot of the left column; read on the 1962 page image at 200 and
+          400 dpi on 2026-10-01. Preexisting material under 17 U.S.C. 103(b),
+          corroborated word for word in the public-domain 1862 Pustet Ratisbon, Festa
+          Augusti (28), Pro sancto Hermete, Secreta, printed p. 530, text-layer lines
+          72960-72965, read on the page image of the registered facsimile PDF at p.
+          616.
+        text: |
+          Sacrificium tibi, Domine, laudis offerimus in tuorum commemoratione
+          Sanctorum: da, quaesumus; ut, quod illis contulit gloriam, nobis prosit ad
+          salutem. Per Dominum.
       - name: Postcommunion
         incipit: Repleti, Domine, benedictione coelesti
         source: composed
@@ -42438,12 +42676,19 @@ sections:
       propers:
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 643, no. 3510, marked P; artifact PDF p. 724, right
+          column, under 'Die 30 augusti, S. Rosae Limanae Virginis'; read on the 1962
+          page image at 200 and 400 dpi on 2026-10-01. Preexisting material under 17
+          U.S.C. 103(b), corroborated word for word in the public-domain 1862 Pustet
+          Ratisbon, Die xxx (August), S. Rosae a S. Maria, Virginis Limanae, Oratio,
+          printed p. 532, text-layer lines 73231-73240, read on the page image of the
+          registered facsimile PDF at p. 618.
+        text: |
+          Bonorum omnium largitor, omnipotens Deus, qui beatam Rosam, caelestis
+          gratiae rore praeventam, virginitatis et patientiae decore Indis florescere
+          voluisti: da nobis famulis tuis; ut, in odorem suavitatis ejus currentes,
+          Christi bonus odor effici mereamur: Qui tecum vivit et regnat in unitate.
       notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
         carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
         CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
@@ -43093,12 +43338,17 @@ sections:
       propers:
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 652, no. 3583, marked P; artifact PDF p. 733, left
+          column, under 'Die 9 septembris, S. Gorgonii Mart. Commemoratio'; read on
+          the 1962 page image at 200 and 400 dpi on 2026-10-01. Preexisting material
+          under 17 U.S.C. 103(b), corroborated word for word in the public-domain 1862
+          Pustet Ratisbon, Die ix, Pro Commem. S. Gorgonii, Martyris, Oratio, printed
+          p. 537, text-layer lines 73814-73817, read on the page image of the
+          registered facsimile PDF at p. 623.
+        text: |
+          Sanctus tuus, Domine, Gorgonius sua nos intercessione laetificet: et pia
+          faciat solemnitate gaudere. Per Dominum nostrum.
       - name: Secret
         incipit: Grata tibi sit, Domine, nostrae servitutis oblatio
         source: composed
@@ -43165,12 +43415,18 @@ sections:
       propers:
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 652, no. 3589, marked P; artifact PDF p. 733, right
+          column, under 'Die 11 septembris, Ss. Proti et Hyacinthi Martyrum
+          Commemoratio'; read on the 1962 page image at 200 and 400 dpi on 2026-10-01.
+          Preexisting material under 17 U.S.C. 103(b), corroborated word for word in
+          the public-domain 1862 Pustet Ratisbon, Die xi, Pro Commemoratione Ss. Proti
+          et Hyacinthi, Martyrum, Oratio, printed p. 538, text-layer lines
+          74004-74008, read on the page image of the registered facsimile PDF at p.
+          624.
+        text: |
+          Beatorum Martyrum tuorum Proti et Hyacinthi nos, Domine, foveat pretiosa
+          confessio: et pia jugiter intercessio tueatur. Per Dominum.
       - name: Secret
         incipit: Pro sanctorum Martyrum tuorum Proti et Hyacinthi
         source: composed
