@@ -1093,3 +1093,110 @@ acceptance, and nothing has been committed.
   The same comparison replayed in that environment with only that leaf left
   out converted 56 Claude and 72 ChatGPT eligible leaves and found every
   tracked web edition current, this one included.
+
+## Post-acceptance research-record correction, 2026-09-30
+
+On 30 September 2026 the maintainer asked for the correction. For this leaf it
+is the four standing advisories of run `a27462e34ec9c09a` that
+`evaluations/blocking-findings-v1.toml` assigns to the leaf's research
+records: RES-010, RES-011, STU-011 and STU-012. The correction was made outside
+the workflow, as one lane of a coordinated repair. Each finding was checked
+against the tracked witness it cites before anything changed, and the reviewed
+study, concise study and homily were taken as the statement of what is
+settled. Five files changed: `research/interpretations.md`,
+`research/scope.md`, `research/source-bindings.toml`, this record and the
+standing-findings file. No render input changed, so the installed PDFs, the
+web edition, `generation-metadata.tex`, `research/artifacts.json` and
+`research/web-artifact.json` still describe the accepted build.
+
+### Findings and dispositions
+
+| Finding | Checked against | Disposition | What changed |
+| --- | --- | --- | --- |
+| RES-010 | Gregory, *Hom.* 38, 3 (tracked Wikisource transcription, line 534: *et prius prophetas, et postmodum apostolos fecit*); Chrysostom, *Hom. in Mt.* 69 (NPNF1-10, lines 39016–39023); Irenaeus IV.36.5 (ANF 1 OCR layer, lines 66435–66479); Hilary, *In Matth.* XXII.4 (PL 9 OCR layer, lines 82594–82599); each digest re-matched | repaired | `interpretations.md` § 2.4, allegorical sense: the servants are prophets and then apostles (Gregory; Chrysostom, with John and the Son between them), sent by the one God who called those of old by the prophets and calls us by the apostles (Irenaeus); for Hilary, the apostles and then apostolic men, their successors. That is the study's own wording in its allegorical sense. §§ 2.2 and 2.6 already gave each identification to its author, and no other sentence of the research records carried the joint clause. |
+| RES-011 | NPNF1-6, `ccel-text-ce371798`, digest re-matched; the search replayed with `tools/source-library search` (case-folded literal within each physical line) for the nine stated terms, kept to lines 37787–38310 and 39237–39464 | repaired | `scope.md` § 3.6, Sermo 95 bullet: the replay returns 23 lines. The record now says that no hit identifies the refusing guests or the highways and lists every hit by line, in five kinds: the servants who invite good and bad; the hearers and the guests as invited; the Israelites and Pharaoh's magicians; the Jews in the Stephen and tribute-money passages; and two matches inside other words, *ways* in *always* (line 39261) and *nation* in *explanation* (line 39360), which the finding did not list. *Gentile*, *highway* and *streets* return nothing. The conclusion is unchanged. A dated sentence in the record's opening names the replay's method and claims no `searched` binding. |
+| STU-011 | the reviewed study (`sections/40-feast-that-now-is.tex`, `30-call-to-the-nations.tex`, `50-comparison.tex`) and `proper-components.toml`; Schuster, *The Sacramentary* III, tracked 1927 OCR, digest re-matched (Introit p. 171, Collect pp. 171–172, Gradual p. 172, Gospel, Offertory, Secret and Communion p. 173, Postcommunion p. 174) | repaired | `interpretations.md`: the readings table, § 4.2 and § 5 name Augustine, Gregory and Chrysostom as the carrying authors of `feast-that-now-is`. § 3.1 records beside the controlling claim Schuster's reading of this Gospel's banquet as the heavenly one (p. 173), and § 3.2 and § 5 make him a supporting witness, cited on the Introit, Collect, Gradual, Offertory, Secret, Communion and Postcommunion as § 3.3 cites him (second round, REV-B-001). Honorius leaves the introit, collect, epistle and gradual rows of § 2.3, the lifted-hands row of § 4.2 and the `call-to-the-nations` row of § 5. The alternative of § 2.5 is now Gregory's moral reading of the highways, which the study's comparison and § 4.3 already call the second reading's alternative. No sentence of the record credits Honorius with a reading of the formulary; his readings of the shared elements stay unchanged in `scope.md` § 3.12. A dated note in the record's opening lists these changes. |
+| STU-012 | the four Challoner verse-text artifacts named below and the NPNF1-8 text, digests re-matched; the documents' text matched against every verse file of the edition; fingerprints from `tools/source-library fingerprint` | repaired | `source-bindings.toml` binds, in role `translation-control` with states cataloged, acquired and inspected, the verse texts of Psalms (`578f023d`), Matthew (`dd0ba183`), Ephesians (`10c79be0`) and 1 Timothy (`1f76a59e`). They are the four books from which the three documents print or quote Douay English. Their loci are the Douay loci the study's References cite in those books, of which the concise study's and the homily's are subsets, and every locus was read. The finding's `study-text` is not a declared binding role; `translation-control` is the role the sibling leaves give these artifacts. `104.1` is added to the NPNF1-8 *Enarrationes* binding, read at Psalm CV § 1, lines 52659–52675, against the quotations in the study and the concise study. A dated header comment in the file records the additions. |
+
+Two facts found in the course of the checks are recorded here and changed
+nothing outside the four findings. Hilary's sentence at *In Matth.* XXII.4
+does name the prophets, as those whose invitation the apostles recall
+(*commonefacere eos quos invitaverant prophetae*), though not as the servants;
+RES-010's "He names no prophets" is therefore too strong, and its conclusion
+stands. And the study's and the concise study's References cite the Douay also
+at 1 Par 15:3; 16:1, 7–8, Rom 13:14 and 1 Tim 1:5. The documents print no Douay English at any of these: the Paralipomenon verses are
+summarised beside the Alleluia and in its dossier, Rom 13:14 stands beside
+Jerome's Latin, and the words printed at 1 Tim 1:5 are the NPNF English of
+Augustine's Sermo 90. The 1 Paralipomenon and Romans artifacts are therefore
+not bound; 1 Tim 1:5 is bound with the 1 Timothy artifact, with that fact in
+the binding's context.
+
+### Checks run
+
+- `tools/tpt source-library validate` exits 0 (`source-library valid:
+  artifact=2910 corpus=5 edition=1050 passage=5199 segment=94 work=936
+  bindings=3533`), and `tools/source-library uses` lists this leaf for each of
+  the five artifacts whose bindings changed.
+- `scripts/_proper_study.py check --provider claude --document
+  liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost --date
+  2026-10-04 --phase research` exits 0.
+- `git diff` against the commit before the correction touches only the five
+  files named above.
+
+### What review covers these files
+
+The review seals of run `a27462e34ec9c09a` were taken over the research
+records as they stood when the run accepted them. They do not cover this
+correction's changes to `research/interpretations.md`, `research/scope.md` and
+`research/source-bindings.toml`. An independent re-review of the first round
+is recorded below; no review of the second round's changes is recorded
+here.
+
+### Limits that remain
+
+`src/sources/inventories/claude-publications-v1.toml` records the digest of
+every source-bearing file of this leaf. After this correction its entries for
+the five changed files are stale, and `tools/tpt source-inventory check`
+reports them, until the inventory is refreshed and its classification row
+re-applied. That inventory is outside this correction's files. The other
+standing findings of the run (HOM-001 to HOM-003, STU-008 to STU-010, SYN-001
+to SYN-003, VIS-001 and VIS-002) are not research-owned and are untouched.
+
+### Independent re-review and second round
+
+An independent re-review of the first round, on the same day, returned
+CHANGES_REQUIRED with one blocking finding and three advisories, REV-B-001 to
+REV-B-004. A second round, again outside the workflow and within the same five
+files, checked each against the witness it cites and repaired all four, with
+one further correction the reviewer named.
+
+| Finding | Checked against | Disposition | What changed |
+| --- | --- | --- | --- |
+| REV-B-001 (blocking) | `interpretations.md` § 3.3; `sections/40-feast-that-now-is.tex`; Schuster, tracked 1927 OCR (Introit p. 171, Collect pp. 171–172, Offertory and Communion p. 173) | repaired | The first round called Schuster a supporting witness for the Gradual, Secret and Postcommunion "only", while § 3.3 cites him also on the Introit, Collect, Offertory and Communion and the study on the Introit, Collect and Communion. § 3.1, § 3.2, § 5 and the record's dated note now name every element on which he is cited, and § 3.2 keeps the Gradual, Secret and Postcommunion as the three he reads in the reading's direction. |
+| REV-B-002 | NPNF1-8 text, lines 52672–52677; ANF 1 OCR layer, lines 66476–66480 | repaired | Augustine on Psalm CV § 1 ends at line 52675 (*in prophecy?*), and Irenaeus's sentence ends at line 66479. The range is corrected in the NPNF1-8 binding's context, in the STU-012 resolution note and in the table above, and the Irenaeus range in the RES-010 row above. |
+| REV-B-003 | `interpretations.md` §§ 2.1 and 2.6 | repaired | The alternative of § 2.5 no longer says that the highways "lead to the nations": the controlling reading is that of Irenaeus, Hilary, Jerome and Chrysostom, for whom the highways are the nations, with Augustine's own form, for whom they are the teachings of the Gentiles out of which believers came to Christ. |
+| REV-B-004 | Augustine, *Enarr. in Ps.* 140, 2 (NPNF1-8, lines 65232–65244) | repaired | `interpretations.md` § 4.2, lifted-hands row, `call-to-the-nations` cell: Augustine is credited with the whole Christ's prayer, which goes on while tribulation remains for the Church, even to the end of the world; "a people still on the road" is marked **[S]**, as § 2.3 already marks it. |
+
+The further correction: the paragraph above on the Douay loci the documents
+do not print said that only the study's References cite 1 Par and Rom 13:14;
+the concise study's References cite them too, and the sentence now says so.
+The STU-011 and STU-012 resolution notes in
+`evaluations/blocking-findings-v1.toml` were amended to match, and its header
+comment records this round.
+
+Open items for the next revision of the reviewed documents, which this
+correction may not edit:
+
+- The study's comparison table (`sections/50-comparison.tex`, lifted-hands
+  row) credits "The prayer of the whole Church still on its road" to
+  Augustine, the credit REV-B-004 removed from the research record.
+  *Enarr. in Ps.* 140, 2 says that the whole Christ prays while tribulation
+  remains for the Church, to the end of the world; the road is the reading's
+  own image.
+- The study (`sections/30-call-to-the-nations.tex`, the close of "Two
+  difficulties") and the concise study (`sections/concise/10-commentary.tex`,
+  the paragraph on Gregory's highways) set Gregory's answer beside that of
+  Irenaeus, Hilary, Jerome and Chrysostom, "with Augustine in his own form,
+  that the highways lead to the nations": the wording REV-B-003 removed from
+  `interpretations.md` § 2.5. The study states each Father's identification
+  correctly elsewhere.

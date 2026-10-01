@@ -31,6 +31,20 @@ names Augustine among the holders of that step, with the form of his answer
 kept distinct, and no longer says that he does not raise the question. It also
 cites each clause of two joint citations to the author who states it.
 
+Post-acceptance correction, 30 September 2026, made outside run
+`a27462e34ec9c09a` after the three documents were accepted, in answer to its
+standing advisories STU-011 and RES-010 (`research/production-review.md`). The
+record now agrees with the reviewed study and its manifest on two points.
+Augustine, Gregory and Chrysostom carry `feast-that-now-is`; Schuster is a
+supporting witness, cited on the Introit, Collect, Gradual, Offertory, Secret,
+Communion and Postcommunion (§ 3.3), and his reading of this Gospel's banquet
+as the heavenly one (*The Sacramentary* III, p. 173) is recorded beside the
+controlling claim (§§ 3.1, 3.2, 4.2, 5). Honorius is no
+longer cited in `call-to-the-nations` (§§ 2.3, 2.5, 4.2, 5); his readings of
+the elements his Mass shares with this one stay in `research/scope.md` § 3.12.
+The second reading's allegorical sense also cites each clause of the
+servants' identification to the author who states it (§ 2.4).
+
 ## The rules this record keeps
 
 1. **A Father is cited for what he said of his own passage.** Gregory, Augustine,
@@ -76,7 +90,7 @@ cites each clause of two joint citations to the author who states it.
 |---|---|---|---|---|
 | `wedding-garment` | The garment the King looks for: the new man put on in charity | What must the one who has come in be wearing? | vv. 11–14 | Gregory the Great, Augustine, Jerome |
 | `call-to-the-nations` | The invitation refused and carried to the highways | Who is called, by whom, and what happens to the call when it is refused? | vv. 1–10 | John Chrysostom, Irenaeus, Hilary of Poitiers |
-| `feast-that-now-is` | The feast that now is: the Church at the Lord's table and its evening sacrifice | Where is the feast now, and how does this assembly take its place at it? | vv. 10–11 with v. 14 | Augustine, Gregory the Great, John Chrysostom, with Bl. Ildefonso Schuster |
+| `feast-that-now-is` | The feast that now is: the Church at the Lord's table and its evening sacrifice | Where is the feast now, and how does this assembly take its place at it? | vv. 10–11 with v. 14 | Augustine, Gregory the Great, John Chrysostom |
 
 ---
 
@@ -383,10 +397,10 @@ refused the sacrament of the Incarnation (PL 107 layer; `research/scope.md`
 
 | Element | Contribution | Status |
 |---|---|---|
-| `introit` | *Salus populi ego sum … et ero illorum Dominus in perpetuum*: the promise to a people; Ps 77:1 opens a psalm that recites Israel's history to a later generation, and whose next verse, *Aperiam in parabolis os meum*, Mt 13:35 applies to Jesus's parables — the Gospel here is spoken *in parabolis*. Augustine: the old people's story admonishes the new. The Greek *Expositiones* under Athanasius's name: *popule meus* in v. 1 is the people from the nations, and *legem meam* the Gospel law. Jerome, on Mt 22:7, cites the same psalm at v. 49 for the avenging angels. Honorius hears the antiphon announced to a captive people set free to return. | [T] Ps 77:2 and Mt 13:35; [R] Augustine on Ps 77; [R] the PG 27 *Expositiones* on Ps 77:1; [R] Jerome, Ps 77:49 with Mt 22:7 (another verse of the Introit's psalm, not the verse sung); [R] Honorius on the Introit only; [S] the join of v. 1 to the Gospel |
-| `collect` | *universa nobis adversantia … exclude: ut mente et corpore pariter expediti*: the invited went off *in villam … ad negotiationem*; the Collect asks to be free of what held them. Honorius: the returning people ask that adversities be excluded. | [T] the two phrases; [R] Gregory and Hilary on field and trade; [S] the join |
-| `epistle` | *quoniam sumus invicem membra*: the body gathered from both peoples lives as one body; Jerome on v. 25: the neighbour is *omnem hominem* from one parent. Honorius: the new man is the condition of the return home. | [R] Jerome on Eph 4:25; [R] Honorius; [S] |
-| `gradual` | The prayer of a people on the way (Honorius: *populus … jam pergens*); Augustine: the whole Christ prays while tribulation lasts for the Church. Hilary on this verse: the evening sacrifice belongs to *us, in quos consummatio saeculorum devenit*, in the last age of the world, when blood offerings have ceased. | [R] Honorius, Augustine, Hilary on Ps 140; [S] |
+| `introit` | *Salus populi ego sum … et ero illorum Dominus in perpetuum*: the promise to a people; Ps 77:1 opens a psalm that recites Israel's history to a later generation, and whose next verse, *Aperiam in parabolis os meum*, Mt 13:35 applies to Jesus's parables — the Gospel here is spoken *in parabolis*. Augustine: the old people's story admonishes the new. The Greek *Expositiones* under Athanasius's name: *popule meus* in v. 1 is the people from the nations, and *legem meam* the Gospel law. Jerome, on Mt 22:7, cites the same psalm at v. 49 for the avenging angels. | [T] Ps 77:2 and Mt 13:35; [R] Augustine on Ps 77; [R] the PG 27 *Expositiones* on Ps 77:1; [R] Jerome, Ps 77:49 with Mt 22:7 (another verse of the Introit's psalm, not the verse sung); [S] the join of v. 1 to the Gospel |
+| `collect` | *universa nobis adversantia … exclude: ut mente et corpore pariter expediti*: the invited went off *in villam … ad negotiationem*; the Collect asks to be free of what held them. | [T] the two phrases; [R] Gregory and Hilary on field and trade; [S] the join |
+| `epistle` | *quoniam sumus invicem membra*: the body gathered from both peoples lives as one body; Jerome on v. 25: the neighbour is *omnem hominem* from one parent. | [R] Jerome on Eph 4:25; [S] |
+| `gradual` | The prayer of a people still on the road; Augustine: the whole Christ prays while tribulation lasts for the Church, even to the end of the world. Hilary on this verse: the evening sacrifice belongs to *us, in quos consummatio saeculorum devenit*, in the last age of the world, when blood offerings have ceased. | [R] Augustine, Hilary on Ps 140; [S] the people on the road |
 | `alleluia` | *annuntiate inter gentes opera eius*: in prophecy, the evangelists' commission (Augustine); the Spirit's command to the apostles to show the Lord's wonders to the people from the nations (the PG 27 *Expositiones*); the apostles' preaching of the Gospel, continued by the bishops and pastors (Schuster); the proclaiming of God's works among the gentiles (Bellarmine). The Gospel's *Ite ergo ad exitus viarum* is the parable's form of the same command; Augustine reads that command, in another work, as sent to the Gentiles' teachings (*Quaestiones* I.31). | [R] Augustine, the PG 27 *Expositiones*, Schuster and Bellarmine on Ps 104:1; [R] Augustine on Mt 22:9; [S] the join of the two |
 | `gospel` | vv. 1–10: the king, the refused invitation twice sent, the servants seized and killed, the burned city, the highways, the hall filled *malos et bonos*. | [T]; [R] Chrysostom, Irenaeus, Hilary, Jerome for the call passing from Israel to the nations; Augustine (*Quaestiones* I.31) for the highways as the Gentiles' teachings, from which believers came to Christ; Gregory for the servants and the excuses only |
 | `offertory` | *Si ambulavero in medio tribulationis … super iram inimicorum meorum extendes manum tuam*: the messengers' road (Chrysostom names Stephen and James); Augustine: *mine enemies cannot separate me from Thee*; Chrysostom on Ps 137:7: kept alive within the dangers, not spared them. | [R] Augustine and Chrysostom on Ps 137:7; [S] the join to the servants |
@@ -406,8 +420,11 @@ refused the sacrament of the Incarnation (PL 107 layer; `research/scope.md`
   the Church through the Incarnation (Gregory § 3; Augustine, *Quaestiones*
   I.31: the Word incarnate, in whose assumed humanity the Church is joined to
   God), a Church gathered from Jews and Gentiles (Jerome); the servants are
-  prophets and apostles sent by one God (Irenaeus; Gregory; Hilary; Chrysostom);
-  the highways are the nations (Irenaeus; Hilary; Jerome; Chrysostom), or the
+  prophets and then apostles (Gregory § 3; Chrysostom, with John and the Son
+  between them), sent by the one God who called those of old by the prophets
+  and calls us by the apostles (Irenaeus); for Hilary they are the apostles and
+  then apostolic men, their successors (In Matth. XXII.4); the highways are
+  the nations (Irenaeus; Hilary; Jerome; Chrysostom), or the
   Gentiles' teachings, from all of which those who believed in Christ came
   (Augustine, *Quaestiones* I.31); the Alleluia's command is the evangelists'
   (Augustine) and the apostles', given to them for the nations (the PG 27
@@ -483,12 +500,12 @@ rests on the texts' own words and on each witness's reading of his own text, and
 the join is the editor's. Jerome's use of Ps 77:49 on Mt 22:7 is his, is made of
 another verse than the one sung, and is cited as such.
 
-**Alternative.** Honorius reads the shared chants as the song of a people
-returning from exile (Cyrus; Zorobabel), which would make the formulary a
-homecoming rather than a mission. He is an ecclesiastical writer and his Mass had
-another Gospel; the reading uses him only for the shared chants and keeps the
-mission reading of Irenaeus, Hilary, Jerome and Chrysostom as the controlling
-one.
+**Alternative.** Gregory's moral reading of the refusers and the highways,
+set out above, is the alternative this reading keeps. It stands beside the
+controlling claim as Gregory's own. The controlling reading remains that of
+Irenaeus, Hilary, Jerome and Chrysostom, for whom the highways are the nations,
+with Augustine's own form of the answer, for whom they are the teachings of the
+Gentiles, out of which those who believed came to Christ (§§ 2.1, 2.6).
 
 ### 2.6 Agreements and differences within the reading
 
@@ -532,6 +549,22 @@ the Passion is **[R]** (Augustine on Ps 140; Bellarmine, as a possibility); the
 joining of those to this Mass's Gradual, Offertory, Secret, Communion and
 Postcommunion is **[S]**.
 
+Bl. Ildefonso Schuster, commenting on this Mass as a Mass, reads its Gradual as
+the Christian's evening oblation (p. 172) and its Secret and Postcommunion of
+the Eucharist (pp. 173–174), in the same direction as this reading. The banquet
+of this Gospel is for him the heavenly one: *The primary aim of the
+predestination of souls to the heavenly banquet is the supreme glorification of
+Christ as first-born of the human family and head of the Church*, and of the
+guest without the garment, *God calls our souls, but they must be in accord
+with their calling, so that the grace of eternal happiness may also be their
+due reward* (*The Sacramentary* III, p. 173; `research/scope.md` § 3.6). His
+banquet is the one to come, the feast Augustine sets beside the present one as
+the other, to which the evil do not come. The present-Church reading of the
+wedding is Augustine's and Gregory's, not Schuster's. He is a supporting
+witness here, cited on the Introit (p. 171), Collect (pp. 171–172), Gradual
+(p. 172), Offertory, Secret and Communion (p. 173) and Postcommunion (p. 174)
+(§§ 3.2, 3.3).
+
 ### 3.2 Principal witnesses and their reasoning
 
 **Augustine.** Sermo 90 opens with the table: *All the faithful know the
@@ -574,14 +607,19 @@ requires that the hands raised in prayer be raised without anger (1 Tim 2:8). On
 Ps 137:7 he observes that the psalmist does not say God will drive the
 tribulation away but that he will keep him alive within it.
 
-**Bl. Ildefonso Schuster** reads this Mass itself: the Gradual's oblation *is
-always an evening sacrifice, for it is enveloped in the twilight of faith*, to be
-endured *with Christ* before *the morning joy of the beatific vision*; the Secret
-asks that *the holy oblation* be *a pledge of eternal salvation to all those that
-share therein*; the Postcommunion asks *that the healing grace of the Eucharist
-may mercifully deliver us from our perversity*. His standing (Blessed) lets him be
-one of two carrying authors beside Augustine; he is the witness who reads the
-Mass as a Mass.
+**Bl. Ildefonso Schuster**, a supporting witness, reads this Mass itself: the
+Gradual's oblation *is always an evening sacrifice, for it is enveloped in the
+twilight of faith*, to be endured *with Christ* before *the morning joy of the
+beatific vision* (p. 172); the Secret asks that *the holy oblation* be *a pledge
+of eternal salvation to all those that share therein* (p. 173); the
+Postcommunion asks *that the healing grace of the Eucharist may mercifully
+deliver us from our perversity* (p. 174). He is the witness who reads the Mass
+as a Mass, and for these three elements he reads it in this reading's
+direction; the reading also cites him on the Introit (p. 171), Collect
+(pp. 171–172), Offertory and Communion (p. 173), element by element (§ 3.3).
+He does not carry the reading: the feast he finds in this Gospel is
+the heavenly banquet, not the present Church (p. 173; § 3.1). Augustine,
+Gregory and Chrysostom carry it.
 
 **Supporting witnesses.** Bellarmine on Ps 140:2: prayer rises straight as
 incense only with pure intention and attention; *Christ is the high priest, for
@@ -712,9 +750,9 @@ read the same Gospel whole and let every element speak.
 | Weight of the Gospel | vv. 11–14 | vv. 1–10 | vv. 10–11, 14 |
 | Leading psalm | the Communion (commandments) | the Introit verse and Alleluia (history, nations) | the Gradual and Offertory (prayer in tribulation, evening sacrifice) |
 | What the nuptials are | the Church entered by faith, judged by charity | the union of Christ and a Church of Jews and Gentiles; its glory received in the resurrection (Hilary) | the present Church at the Lord's table and the Scriptures' banquet |
-| The Gradual's lifted hands | works of mercy (Hilary), without anger (Chrysostom on v. 1) | the prayer of the last age (Hilary) and of the Church on the way (Augustine; Honorius) | the Passion's evening sacrifice (Augustine), or the works of mercy (Hilary) |
+| The Gradual's lifted hands | works of mercy (Hilary), without anger (Chrysostom on v. 1) | the prayer of the last age (Hilary); the whole Christ's prayer, which goes on while tribulation remains for the Church, even to the end of the world (Augustine); a people still on the road [S] | the Passion's evening sacrifice (Augustine), or the works of mercy (Hilary) |
 | Principal difficulty | gift or work (Hilary against Gregory and Augustine) | the burned city (historical against eschatological), and Gregory's moral reading of the highways | the sacrament is not the garment (Augustine); the evening sacrifice (Augustine against Hilary) |
-| Carrying authors | Gregory, Augustine, Jerome | Chrysostom, Irenaeus, Hilary | Augustine, Gregory, Chrysostom, with Schuster |
+| Carrying authors | Gregory, Augustine, Jerome | Chrysostom, Irenaeus, Hilary | Augustine, Gregory, Chrysostom |
 
 ### 4.3 How they relate
 
@@ -773,8 +811,8 @@ other Masses of `research/scope.md` § 2.
 | Lane key | `carrying_authors` | Standing | Other named authors |
 |---|---|---|---|
 | `wedding-garment` | Gregory the Great; Augustine of Hippo; Jerome | father; father; father | John Chrysostom (father), Hilary of Poitiers (father; on Mt 22 and on Pss 118 and 140), Irenaeus of Lyons (father), Thomas Aquinas (doctor; on Mt 22 and on Eph 4), Robert Bellarmine (doctor; on Ps 140), Alfredo Ildefonso Schuster (blessed), Rabanus Maurus (saint, transmitter only); the PG 27 *Expositiones* under Athanasius's name (no standing row; not to be listed as an author the checker resolves) |
-| `call-to-the-nations` | John Chrysostom; Irenaeus of Lyons; Hilary of Poitiers | father; father; father | Jerome, Gregory the Great (the alternative reading of the highways), Augustine of Hippo (fathers; Augustine on Pss 77 and 104 and, in *Quaestiones evangeliorum* I.31, on the highways as the Gentiles' teachings); Robert Bellarmine (doctor); Alfredo Ildefonso Schuster (blessed); Rabanus Maurus (saint, transmitter only); Honorius Augustodunensis (ecclesiastical writer; shared chants only); the PG 27 *Expositiones* under Athanasius's name (no standing row) |
-| `feast-that-now-is` | Augustine of Hippo; Gregory the Great; John Chrysostom; Alfredo Ildefonso Schuster | father; father; father; blessed | Hilary of Poitiers (father; the different answer on Ps 140:2, and on Ps 118:5), Jerome (father; on Eph 4:27), Thomas Aquinas (doctor; on Eph 4:25–27), Robert Bellarmine (doctor; on Pss 137 and 140); the continuation of *The Liturgical Year* (Lucien Fromage, ecclesiastical writer; witness to the Mass only); the PG 27 *Expositiones* (no standing row) |
+| `call-to-the-nations` | John Chrysostom; Irenaeus of Lyons; Hilary of Poitiers | father; father; father | Jerome, Gregory the Great (the alternative reading of the highways), Augustine of Hippo (fathers; Augustine on Pss 77 and 104 and, in *Quaestiones evangeliorum* I.31, on the highways as the Gentiles' teachings); Robert Bellarmine (doctor); Alfredo Ildefonso Schuster (blessed); Rabanus Maurus (saint, transmitter only); the PG 27 *Expositiones* under Athanasius's name (no standing row) |
+| `feast-that-now-is` | Augustine of Hippo; Gregory the Great; John Chrysostom | father; father; father | Alfredo Ildefonso Schuster (blessed; supporting witness on the Introit, Collect, Gradual, Offertory, Secret, Communion and Postcommunion, with his heavenly-banquet reading of the Gospel, p. 173, recorded beside the controlling claim, § 3.1), Hilary of Poitiers (father; the different answer on Ps 140:2, and on Ps 118:5), Jerome (father; on Eph 4:27), Thomas Aquinas (doctor; on Eph 4:25–27), Robert Bellarmine (doctor; on Pss 137 and 140); the continuation of *The Liturgical Year* (Lucien Fromage, ecclesiastical writer; witness to the Mass only); the PG 27 *Expositiones* (no standing row) |
 
 Every carrying author makes a developed contribution at a checked locus in the
 section above; none is present by name only.

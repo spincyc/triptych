@@ -41,6 +41,16 @@ document = "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-penteco
 # retained the two pages it read as a tracked facsimile excerpt. It also bound
 # Augustine's Sermo 112 (NPNF Sermon LXII) on Lk 14 and re-read Rabanus's
 # catena on Mt 22:8-10.
+#
+# A post-acceptance correction of 2026-09-30, made outside run
+# a27462e34ec9c09a in answer to its standing advisory STU-012
+# (research/production-review.md), bound the four Challoner Douay-Rheims
+# verse-text artifacts from which the three documents print or quote their
+# scriptural English (Psalms, Matthew, Ephesians, 1 Timothy), at the Douay loci
+# the documents' References cite in those books, and added 104.1 to the NPNF1-8
+# Enarrationes binding. Their states describe what that correction did: each
+# artifact's SHA-256 was recomputed and matched, every bound locus was read in
+# the tracked bytes, and the fingerprints were taken from tools/source-library.
 
 [[bindings]]
 source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
@@ -159,6 +169,73 @@ role = "context"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:c3702f219d6641eb66186bd7d3d557375aec2843467d0d54aabe3397ec7e8fb7"
 context = "Read at: Vulgate Pss 77, 104, 118, 137, 140 against Hebrew 78, 105, 119, 138, 141. The registered psalm concordance, used to state each psalm's Hebrew number and a zero verse offset for all five."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = [
+  "Ps.34.3",
+  "Ps.77.1-8",
+  "Ps.77.12-13",
+  "Ps.77.49",
+  "Ps.77.52-54",
+  "Ps.77.67-72",
+  "Ps.90.15",
+  "Ps.104.1",
+  "Ps.104.45",
+  "Ps.118.1",
+  "Ps.118.4-5",
+  "Ps.118.19",
+  "Ps.118.54",
+  "Ps.137.1-4",
+  "Ps.137.7",
+  "Ps.138.16",
+  "Ps.140.1-4",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+context = "The registered public-domain English of the five appointed psalm chants, which the study prints at the canonical verses (Introit verse Ps 77:1, Gradual Ps 140:2, Alleluia Ps 104:1, Offertory Ps 137:7, Communion Ps 118:4-5) and the concise study and homily quote. The other loci are the psalm verses the three documents' References cite in this edition, quoted or summarised beside the chants: Ps 34:3 and 90:15 beside the Introit antiphon; Ps 77:2, 6, 8, 49 and 70-71 within the ranges cited for the Introit's psalm; Ps 104:45; Ps 118:1, 19 and 54; Ps 137:1-4; Ps 138:16 with Gregory; Ps 140:1 and 4. Where a chant departs from its verse the Douay renders the Clementine and not the Missal, as propers/verified.md and the study's scope appendix record. Bound on 2026-09-30 by the post-acceptance correction for standing advisory STU-012: SHA-256 recomputed and matched, and every locus read in the exact tracked verse file."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183"
+loci = [
+  "Matt.13.35",
+  "Matt.21.1-18",
+  "Matt.21.23",
+  "Matt.21.43",
+  "Matt.21.45",
+  "Matt.22.1-15",
+  "Matt.25.34-35",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:ed47ecb092ecb6256fb84450e8ad39d0debf2efe6c65442199a76a7fb1a8b98b"
+context = "The registered public-domain English of the Gospel, Mt 22:1-14, which the study prints whole and the concise study and homily quote. The other loci are those the three documents' References cite in this edition: v. 15, the Pharisees' counsel that follows (quoted); Mt 21:43 and 45, the vineyard's sentence and the hearers who knew he spoke of them, and 21:23, the chief priests and ancients in the temple (quoted); Mt 25:34-35, quoted where Hilary reads the evening sacrifice as the works of mercy; and Mt 13:35 and 21:1-18, cited for Ps 77:2 fulfilled and for the Gospel's setting on page 2. Bound on 2026-09-30 by the post-acceptance correction for standing advisory STU-012: SHA-256 recomputed and matched, and every locus read in the exact tracked verse file."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-56-ephesians-10c79be0"
+loci = [
+  "Eph.1.1",
+  "Eph.3.1",
+  "Eph.4.1",
+  "Eph.4.22-32",
+  "Eph.6.20",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:faac3fc52bb177cb8aeb9f5f56ceb440558a3cd57823293335446f8ae7c4dbf6"
+context = "The registered public-domain English of the Epistle, Eph 4:23-28, which the study prints whole and the concise study and homily quote. The other loci are those the three documents' References cite in this edition: Eph 4:22 and 29-32 around the lesson (vv. 22, 30 and 32 quoted); 4:1, the prisoner in the Lord (quoted); and 1:1, 3:1 and 6:20, the writer, his addressees and his chains, for page 2 (1:1 quoted). Bound on 2026-09-30 by the post-acceptance correction for standing advisory STU-012: SHA-256 recomputed and matched, and every locus read in the exact tracked verse file."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-61-1-timothy-1f76a59e"
+loci = [
+  "1Tim.1.5",
+  "1Tim.2.8",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:6a1bc30255ec2edfbeffa18aff78ca993fa666cb5b4b61f17a4efd0f9c2d0018"
+context = "1 Tim 2:8, lifting up pure hands, without anger and contention, which the study and the concise study quote in this English where Hilary reads the Gradual's lifted hands with it (Tract. in Ps. 140, 3). 1 Tim 1:5 is also cited in this edition by the study's and the concise study's References; the words the documents print at that citation are Augustine's lemma in the NPNF English of Sermo 90, not this text. Bound on 2026-09-30 by the post-acceptance correction for standing advisory STU-012: SHA-256 recomputed and matched, and both loci read in the exact tracked verse file."
 
 [[bindings]]
 source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.pentecost-19-introit-antiphon-checked"
@@ -392,6 +469,7 @@ context = "Read at: Rabanus Maurus, Comm. in Matth., on Mt 22:11-14, physical li
 source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
 loci = [
   "77.1-2",
+  "104.1",
   "118.4-5",
   "137.10-11",
   "140.2-4",
@@ -399,7 +477,7 @@ loci = [
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
-context = "Read at: Psalm LXXVIII sections 1-2, lines 37535-37600 (Vulg. Ps 77); Psalm CXIX, Aleph, sections 4-5, lines 56775-56792 (Vulg. Ps 118:4-5); Psalm CXXXVIII sections 10-11, lines 64280-64300 (Vulg. Ps 137:7); Psalm CXLI sections 2-4, lines 65231-65270 (Vulg. Ps 140:1-3). Augustine's expositions of four of the formulary's psalms in the NPNF English; SHA-256 recomputed and matched."
+context = "Read at: Psalm LXXVIII sections 1-2, lines 37535-37600 (Vulg. Ps 77); Psalm CV section 1, lines 52659-52675 (Vulg. Ps 104:1); Psalm CXIX, Aleph, sections 4-5, lines 56775-56792 (Vulg. Ps 118:4-5); Psalm CXXXVIII sections 10-11, lines 64280-64300 (Vulg. Ps 137:7); Psalm CXLI sections 2-4, lines 65231-65270 (Vulg. Ps 140:1-3). Augustine's expositions of five of the formulary's psalms in the NPNF English; SHA-256 recomputed and matched. The locus 104.1 was added on 2026-09-30 by the post-acceptance correction for standing advisory STU-012: the study and the concise study quote this English of the exposition (the first psalm headed Allelujah; praise before invocation; the other Latin copies' Preach the Gospel and the Evangelists in prophecy), which the correction read at those lines with its digest re-matched; the research had read the exposition in Latin only, bound through the Wikisource part-11 artifact."
 
 [[bindings]]
 source_id = "artifact.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-part-11-latin-text"

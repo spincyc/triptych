@@ -18,10 +18,15 @@ to what the highways of Mt 22:9 are that iteration 1 had not opened, was read in
 the tracked transcription and collated on a page image of Migne's PL 35, which
 this stage registered (§§ 3.6, 4.3); the record no longer says that Augustine
 does not raise the question; and the `discover` rerun's every lead now has a
-disposition, tabulated in § 3.13. It audits the evidence on
-which the three documents of this leaf may rest: the text control, the
-passage-by-passage reception sweep, the liturgical commentators, the
-disagreements among the witnesses, the negative results, the chronology the
+disposition, tabulated in § 3.13. A post-acceptance correction of 30 September
+2026, made outside the run in answer to its standing advisory RES-011
+(`research/production-review.md`), restated in § 3.6 the result of the
+iteration-2 search of Augustine's Sermones 90 and 95 as a replay over the
+stated line ranges returns it; that replay used the repository's raw-line
+case-folded search, and no `searched` binding is claimed for it. The record
+audits the evidence on which the three documents of this leaf may rest: the
+text control, the passage-by-passage reception sweep, the liturgical
+commentators, the disagreements among the witnesses, the negative results, the chronology the
 concise study's page 2 will print, the occurrence and rubrical re-check, and
 the rights of every text a study may quote. The
 readings built on this evidence are in `research/interpretations.md`. This is
@@ -818,13 +823,30 @@ brought in). Not pursued; no claim depends on it.
   receive together*; the garment is charity (1 Cor 13). The sermon is headed
   on Mk 8:5, the seven loaves, and turns to the wedding feast at § 4. Neither
   sermon takes up who the refusing guests are or what the highways are: both
-  were re-read for this in iteration 1, and in iteration 2 a search of both
-  sermons whole (lines 37787–38310 and 39237–39464) for *Gentile*, *nation*,
-  *Jew*, *Israel*, *highway*, *ways*, *streets*, *invited* and *servants*
-  found only the servants who *invited good and bad* (Sermo 90 §§ 3–4), Stephen
-  rebuking *the Jews* (§ 9), and the Israelites and Pharaoh's magicians as an
-  instance of miracles (§ 5). Augustine's answer to the question of the
-  highways is in the *Quaestiones* (above), not in these sermons (§ 4.3).
+  were re-read for this in iteration 1, and in iteration 2 both sermons were
+  searched whole (lines 37787–38310 and 39237–39464) for *Gentile*, *nation*,
+  *Jew*, *Israel*, *highway*, *ways*, *streets*, *invited* and *servants*. No
+  hit identifies the refusing guests or the highways. Replayed on 30 September
+  2026 in the post-acceptance correction (`tools/source-library search`, a
+  case-folded literal match within each physical line, run over the artifact
+  and kept to those two ranges), the search returns 23 lines, of five kinds:
+  the servants who invite good and bad and do not inspect the guests (Sermo 90
+  §§ 3–4, lines 37847, 37861, 37870, 37871, 37880, 37881, 37893, 37898); the
+  hearers and the guests as invited (Sermo 90 § 7, 38048, *be invited as one
+  who is to remain*; § 9, 38122 and 38125, *thou hast now come invited
+  hither*; Sermo 95 § 4, 39291 and 39293, the Master of the house and the
+  Bridegroom who had invited them; § 5, 39338, *the Master of the house Who
+  had invited him*, and 39347–39348, *ye have been invited through me … He
+  invited you by my ministry*); the Israelites and Pharaoh's magicians as an
+  instance of miracles (Sermo 90 § 5, 37954, 37955, 37957); the Jews, in the
+  Stephen passage (§ 9, 38097) and the tribute-money passage (§ 10, 38184);
+  and two matches inside other words, *ways* in *always* (Sermo 95 § 2, 39261)
+  and *nation* in *explanation* (§ 6, 39360). *Gentile*, *highway* and
+  *streets* return nothing. The iteration-2 wording named only the first kind,
+  the Stephen passage and the Israelites, as though nothing else had been
+  found; research review RES-011 replayed it and showed the omission.
+  Augustine's answer to the question of the highways is in the *Quaestiones*
+  (above), not in these sermons (§ 4.3).
 - **Gregory the Great, Hom. in Evang. 38** (Latin; the registered tracked
   Wikisource transcription of the Migne text, CC BY-SA 3.0, physical lines
   527–547; layer, not collated with the PL 76 page images, whose registered
