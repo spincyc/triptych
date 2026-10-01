@@ -66,8 +66,14 @@ job had passed. Nothing reader-facing was lost: the correction changes no
 site input, and the live `SHA256SUMS` is byte-identical to the one in the
 site built locally at `3b98c21fe`. As the repository guidance directs, the
 failure is answered by this later checkpoint, whose push starts a fresh
-automatic Pages run; that run is verified before the correction is
-represented as complete.
+automatic Pages run.
+
+**Done.** `origin/main` was fast-forwarded `3b98c21fe..1be68351d`, and
+[Pages run 36799616986](https://github.com/spincyc/triptych/actions/runs/36799616986)
+concluded success, as did repository-hygiene run 36799617033. The live
+`SHA256SUMS` is byte-identical to the locally verified site, and the three
+Nineteenth Sunday PDFs, the web page and the Traditional Latin Mass page
+return HTTP 200 byte-identical to it.
 
 ## Claude 1962 Nineteenth Sunday three documents, 2026-09-30
 

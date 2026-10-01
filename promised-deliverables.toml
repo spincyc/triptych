@@ -4,7 +4,7 @@ schema_version = 1
 id = "claude-59-research-record-correction-2026-09-30"
 owner = "PROJECT-WORK.md"
 promise = "Correct the Claude 1962 Nineteenth Sunday leaf's research records where they lag the reviewed study or misstate their sources (STU-011, STU-012, RES-010, RES-011), with an independent re-review, without changing any reviewed render byte, and integrate the correction on main with its Pages deployment verified."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "claude-59-correction-records"
@@ -27,8 +27,11 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-59-correction-on-main"
   criterion = "The correction reaches origin/main as a fast-forward of commits rebased onto the current main, after the three deploy gates pass locally, and the triggered Pages run is verified."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
+  check = "contains"
+  path = "PROJECT-WORK.md"
+  needle = "Pages run 36799616986](https://github.com/spincyc/triptych/actions/runs/36799616986)\nconcluded success"
 
 [[deliverables]]
 id = "claude-1962-nineteenth-three-documents-2026-09-30"
