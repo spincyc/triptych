@@ -85,12 +85,12 @@ EXAMPLES = {
                 "# no binding reaches event israel.judges.ark-comes-to-cariathiarim",
                 "# no binding reaches event israel.maccabees.seleucid-era",
                 "# no binding reaches event israel.restoration.reign-of-artaxerxes-i",
-                "chronology corpus valid: 3 profiles, 287 events, 77 composition_units, 382 bindings, 23 gaps, 73 books",
+                "chronology corpus valid: 3 profiles, 288 events, 78 composition_units, 385 bindings, 23 gaps, 73 books",
             ),
         ),
         Example("tools/scripture-chronology validate --json",
             (
-                "{\"answerability\":{\"by_basis\":{\"catholic-critical\":18,\"derived\":4,\"modern-critical\":10,\"patristic\":4,\"primary-t... [+1303 chars]",
+                "{\"answerability\":{\"by_basis\":{\"catholic-critical\":19,\"derived\":5,\"modern-critical\":12,\"patristic\":4,\"primary-t... [+1303 chars]",
             ),
         ),
     ),
@@ -144,17 +144,17 @@ EXAMPLES = {
                 "profile\tcatholic-comprehensive-v1",
                 "universe\tdistinct-scripture-content",
                 "verses\t37171",
-                "runs\t1964",
+                "runs\t1965",
                 "status\tattestation-only\t1792",
                 "status\tattribution-only\t898",
-                "status\tcomposition-only\t21476",
-                "status\tdated\t13005",
+                "status\tcomposition-only\t21462",
+                "status\tdated\t13019",
                 "... 27 more lines",
             ),
         ),
         Example("tools/scripture-chronology coverage --json",
             (
-                "{\"by_relation\":{\"composition\":26400,\"final-formation\":1249,\"historical-setting\":2934,\"narrated-event\":7977,\"pr... [+1573 chars]",
+                "{\"by_relation\":{\"composition\":26400,\"final-formation\":1249,\"historical-setting\":2934,\"narrated-event\":7991,\"pr... [+1573 chars]",
             ),
         ),
         Example(
@@ -162,7 +162,7 @@ EXAMPLES = {
             "catholic-comprehensive-v1 --universe distinct-content "
             "--require-date --json",
             (
-                "{\"by_relation\":{\"composition\":26400,\"final-formation\":1249,\"historical-setting\":2934,\"narrated-event\":7977,\"prophecy-given\":2134,\"prophetic-referent\":297,\"retrospective-event\":413,\"superscription-setting\":277,\"textual-attestation\":2489,\"traditional-attribution\":1394,\"utterance\":1476},\"by_status\":{\"attestation-only\":1792,\"attribution-only\":898,\"composition-only\":21476,\"dated\":13005,\"not-alignable\":0,\"research-pending\":0,\"textually-distinct\":0,\"undated-in-tradition\":0},\"by_system\":{\"greek\":1356,\"vulgate\":35809,\"world-english-catholic\":6},\"missing_dates\":0,\"profile\":\"catholic-comprehensive-v1\",\"require_date\":true,\"runs\":1964,\"status\":\"ok\",\"substantive_by_provenance\":{\"both\":1417,\"direct_only\":3562,\"inherited_only\":8026},\"total_verses\":37171,\"unenumerable_systems\":{\"nab\":\"this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it\",\"nova-vulgata\":\"this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it\",\"septuagint\":\"this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it\"},\"universe\":\"distinct-scripture-content\",\"universe_limitations\":{\"date_completeness_scope\":\"enumerated-loci-only\",\"note\":\"missing_dates and --require-date apply only to loci enumerated by tracked witnesses and concordances\"},\"v\":1,\"verses_with_alternative_traditional_claims\":14378,\"verses_with_multiple_relations\":9202,\"verses_with_substantive_event_assertions\":13005}",
+                "{\"by_relation\":{\"composition\":26400,\"final-formation\":1249,\"historical-setting\":2934,\"narrated-event\":7991,\"prophecy-given\":2134,\"prophetic-referent\":297,\"retrospective-event\":413,\"superscription-setting\":277,\"textual-attestation\":2489,\"traditional-attribution\":1434,\"utterance\":1476},\"by_status\":{\"attestation-only\":1792,\"attribution-only\":898,\"composition-only\":21462,\"dated\":13019,\"not-alignable\":0,\"research-pending\":0,\"textually-distinct\":0,\"undated-in-tradition\":0},\"by_system\":{\"greek\":1356,\"vulgate\":35809,\"world-english-catholic\":6},\"missing_dates\":0,\"profile\":\"catholic-comprehensive-v1\",\"require_date\":true,\"runs\":1965,\"status\":\"ok\",\"substantive_by_provenance\":{\"both\":1417,\"direct_only\":3576,\"inherited_only\":8026},\"total_verses\":37171,\"unenumerable_systems\":{\"nab\":\"this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it\",\"nova-vulgata\":\"this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it\",\"septuagint\":\"this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it\"},\"universe\":\"distinct-scripture-content\",\"universe_limitations\":{\"date_completeness_scope\":\"enumerated-loci-only\",\"note\":\"missing_dates and --require-date apply only to loci enumerated by tracked witnesses and concordances\"},\"v\":1,\"verses_with_alternative_traditional_claims\":14418,\"verses_with_multiple_relations\":9256,\"verses_with_substantive_event_assertions\":13019}",
             ),
             "the strict publication invariant over each distinct enumerable "
             "textual locus; exits nonzero if any positional date is missing",
@@ -172,7 +172,7 @@ EXAMPLES = {
             "catholic-comprehensive-v1 --universe addresses "
             "--require-date --json",
             (
-                "{\"by_relation\":{\"composition\":31812,\"final-formation\":1249,\"historical-setting\":4191,\"narrated-event\":7991,\"prophecy-given\":2134,\"prophetic-referent\":532,\"retrospective-event\":488,\"superscription-setting\":553,\"textual-attestation\":2493,\"traditional-attribution\":1496,\"utterance\":1528},\"by_status\":{\"attestation-only\":1796,\"attribution-only\":898,\"composition-only\":25202,\"dated\":14691,\"not-alignable\":0,\"research-pending\":0,\"textually-distinct\":0,\"undated-in-tradition\":0},\"by_system\":{\"greek\":2156,\"hebrew\":2528,\"vulgate\":35809,\"world-english-catholic\":2094},\"missing_dates\":0,\"profile\":\"catholic-comprehensive-v1\",\"require_date\":true,\"runs\":2308,\"status\":\"ok\",\"substantive_by_provenance\":{\"both\":1494,\"direct_only\":3638,\"inherited_only\":9559},\"total_verses\":42587,\"unenumerable_systems\":{\"nab\":\"this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it\",\"nova-vulgata\":\"this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it\",\"septuagint\":\"this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it\"},\"universe\":\"supported-scripture-addresses\",\"universe_limitations\":{\"date_completeness_scope\":\"enumerated-loci-only\",\"note\":\"missing_dates and --require-date apply only to loci enumerated by tracked witnesses and concordances\"},\"v\":1,\"verses_with_alternative_traditional_claims\":14834,\"verses_with_multiple_relations\":10931,\"verses_with_substantive_event_assertions\":14691}",
+                "{\"by_relation\":{\"composition\":31814,\"final-formation\":1249,\"historical-setting\":4191,\"narrated-event\":8005,\"prophecy-given\":2134,\"prophetic-referent\":532,\"retrospective-event\":488,\"superscription-setting\":553,\"textual-attestation\":2493,\"traditional-attribution\":1576,\"utterance\":1528},\"by_status\":{\"attestation-only\":1796,\"attribution-only\":898,\"composition-only\":25190,\"dated\":14705,\"not-alignable\":0,\"research-pending\":0,\"textually-distinct\":0,\"undated-in-tradition\":0},\"by_system\":{\"greek\":2156,\"hebrew\":2530,\"vulgate\":35809,\"world-english-catholic\":2094},\"missing_dates\":0,\"profile\":\"catholic-comprehensive-v1\",\"require_date\":true,\"runs\":2309,\"status\":\"ok\",\"substantive_by_provenance\":{\"both\":1494,\"direct_only\":3652,\"inherited_only\":9559},\"total_verses\":42589,\"unenumerable_systems\":{\"nab\":\"this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it\",\"nova-vulgata\":\"this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it\",\"septuagint\":\"this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it\"},\"universe\":\"supported-scripture-addresses\",\"universe_limitations\":{\"date_completeness_scope\":\"enumerated-loci-only\",\"note\":\"missing_dates and --require-date apply only to loci enumerated by tracked witnesses and concordances\"},\"v\":1,\"verses_with_alternative_traditional_claims\":14914,\"verses_with_multiple_relations\":11025,\"verses_with_substantive_event_assertions\":14705}",
             ),
             "the same invariant over every enumerable printed address, "
             "including alternate numbering systems",
@@ -182,7 +182,7 @@ EXAMPLES = {
         Example(
             "tools/scripture-chronology build --dry-run",
             (
-                "dry-run\tsrc/sources/chronology/coverage.tsv\t1883 rows\tunchanged",
+                "dry-run\tsrc/sources/chronology/coverage.tsv\t1884 rows\tunchanged",
             ),
             note=(
                 "reads and reports only. Without --dry-run this rewrites the "
@@ -193,7 +193,7 @@ EXAMPLES = {
         Example(
             "tools/scripture-chronology build --dry-run --json",
             (
-                "{\"changed\":false,\"path\":\"src/sources/chronology/coverage.tsv\",\"rows\":1883,\"status\":\"dry-run\",\"v\":1}",
+                "{\"changed\":false,\"path\":\"src/sources/chronology/coverage.tsv\",\"rows\":1884,\"status\":\"dry-run\",\"v\":1}",
             ),
             note="the same, as the machine contract",
         ),
@@ -201,12 +201,12 @@ EXAMPLES = {
     "check": (
         Example("tools/scripture-chronology check",
             (
-                "chronology coverage table current: 1883 rows",
+                "chronology coverage table current: 1884 rows",
             ),
         ),
         Example("tools/scripture-chronology check --json",
             (
-                "{\"problems\":[],\"rows\":1883,\"status\":\"ok\",\"v\":1}",
+                "{\"problems\":[],\"rows\":1884,\"status\":\"ok\",\"v\":1}",
             ),
         ),
     ),

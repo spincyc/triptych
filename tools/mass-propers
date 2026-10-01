@@ -119,8 +119,8 @@ EXAMPLES = {
                 "  -> build/example-propers/structure/propers/roman-1962.json",
                 "  -> build/example-propers/structure/propers/roman-pre-1955.json",
                 "  -> build/example-propers/structure/propers/index.json",
-                "  Latin withheld from publication: 1812",
-                "  refused: 27",
+                "  Latin withheld from publication: 1782",
+                "  refused: 24",
             ),
             "WRITES one file per missal and the manifest naming them. --out here is untracked; the default writes tracked src/web/data",
         ),
@@ -139,8 +139,8 @@ EXAMPLES = {
         Example(
             "tools/mass-propers census",
             (
-                "# roman-pre-1955 English orations: 1147 slots appointed, 86 public-available, 0 held rights-restricted, 1061 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
-                "# roman-1962 English orations: 1195 slots appointed, 99 public-available, 0 held rights-restricted, 1096 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
+                "# roman-pre-1955 English orations: 1149 slots appointed, 99 public-available, 0 held rights-restricted, 1050 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
+                "# roman-1962 English orations: 1197 slots appointed, 112 public-available, 0 held rights-restricted, 1085 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
                 "# postconciliar English orations: 330 slots appointed, 113 public-available, 0 held rights-restricted, 217 ledgered untranslated, 0 unaccounted; 3 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
                 "# postconciliar Latin recension: 326 unique non-scriptural slots, 0 bodies resident; 0 explicitly antecedent substitutes, 0 other bodies with antecedent-relation metadata, 0 without per-slot Latin relation; direct target-edition artifact attestation not-represented",
                 "<!-- census:begin — derived; edit nothing between these markers -->",

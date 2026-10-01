@@ -431,7 +431,7 @@ Allegorical.
 
 Moral.
 
-: Count others better than yourself, by the image of God in them if by nothing else, and obey against your own inclination (Aquinas); where the second antiphon is chosen, begin to lay down your life by giving of your means to a brother in need (Augustine); do not glorify Christ rightly and live wrongly (Chrysostom).
+: Count others better by God’s image in them (Aquinas). In the longer form, obey against your own inclination (Aquinas) and do not glorify Christ rightly and live wrongly (Chrysostom). With the second antiphon, begin to lay down your life by giving to a brother in need (Augustine).
 
 Anagogical.
 
@@ -479,13 +479,13 @@ The strophe of the letter Zain in the long alphabetic psalm on God’s law. The 
 
 | **Textual unit** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| First Reading | Ezek 18:25–28 | Among the captives “by the river Chobar”, “in the land of the Chaldeans” (1:1–3); addressed to “the house of Israel” (18:25) | **Historical setting**: Preferred: In the eighth year of his reign; alternatives: A.M. 3405, B.C. 597. **Prophecy given**: Duration: From Ezek. xxix, 17 it appears that he prophesied during at least twenty-two years. |
+| First Reading | Ezek 18:25–28 | Among the captives “by the river Chobar”, “in the land of the Chaldeans” (1:1–3); addressed to “the house of Israel” (18:25) | **Historical setting**: Preferred: In the eighth year of his reign; alternatives: A.M. 3405, B.C. 597, B.C. 598. **Prophecy given**: “he prophesied during at least twenty-two years” (duration). |
 
-Traditional attribution: “Ezechiel the priest the son of Buzi” (1:3). Chapter 18 carries no date formula; in the book’s order it falls between the oracles dated to the sixth year of the captivity (8:1) and the seventh (20:1). The setting answers date the captivity on which the book is framed, not this oracle. The preferred label is the Douay–Rheims phrase for Joachin’s surrender to Nabuchodonosor in the second captivity (4 Kgs 24:12), the year being that of Nabuchodonosor’s reign; the A.M. figure is Usher’s reckoning as Haydock reports it in his note on Psalm 70; and the figure before the Christian era is the year of the surrender in the *Catholic Encyclopedia*’s article on the captivities (Reid). The prophecy row gives the length of Ezekiel’s ministry that the *Catholic Encyclopedia*’s article on the prophet (Schets) reads from 29:17; that article dates his deportation a year earlier than the article on the captivities.
+Traditional attribution: “Ezechiel the priest the son of Buzi” (1:3). Chapter 18 carries no date formula; in the book’s order it falls between the oracles dated to the sixth year of the captivity (8:1) and the seventh (20:1). The setting answers date the captivity on which the book is framed, not this oracle. The preferred label is the Douay–Rheims phrase for Joachin’s surrender to Nabuchodonosor in the second captivity (4 Kgs 24:12), the year being that of Nabuchodonosor’s reign; the A.M. figure is Usher’s reckoning as Haydock reports it in his note on Psalm 70; and the first figure before the Christian era is the year of the surrender in the *Catholic Encyclopedia*’s article on the captivities (Reid). The prophecy row gives the length of Ezekiel’s ministry that the *Catholic Encyclopedia*’s article on the prophet (Schets) reads from 29:17; that article dates his deportation a year earlier than the article on the captivities.
 
 | **Textual unit** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Entrance Antiphon | Dan 3:29–31, 42–43 (Vulgate), adapted | The furnace of Nabuchodonosor, “of the province of Babylon” (3:1, 20–25) | **Historical setting**: Duration: all these nations shall serve the king of Babylon seventy years. **Composition**: Most likely long after the Exile. |
+| Entrance Antiphon | Dan 3:29–31, 42–43 (Vulgate), adapted | The furnace of Nabuchodonosor, “of the province of Babylon” (3:1, 20–25) | **Historical setting**: “seventy years” (duration). **Composition**: Most likely long after the Exile. |
 
 *Narrated event: the prayer of Azarias in the midst of the fire.*
 
@@ -635,7 +635,7 @@ Traditional attribution: St John the Apostle. The range is the one the *Catholi
 
 - George Leo Haydock, note on Psalm 70:1, in the Douay–Rheims Bible with Haydock’s commentary, reporting Usher’s chronology; cited for the A.M. figure as the chronology corpus records it.
 
-**Last revised (UTC):** 2026-09-25T21:29:48Z
+**Last revised (UTC):** 2026-10-01T22:32:35Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

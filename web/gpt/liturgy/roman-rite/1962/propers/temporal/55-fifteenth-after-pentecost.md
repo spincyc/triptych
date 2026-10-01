@@ -143,7 +143,7 @@ The Clementine title names David. Praise of the Creator and Shepherd leads to Is
 
 **Location:** Naim’s gate; writing place unestablished
 
-**Date:** **Event**: A.D. 27. **Composition** – disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished.
+**Date:** **Event**: A.D. 27 (derived). **Composition** – disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished.
 
 *Event: Christ meets a widow’s funeral procession at Naim’s gate (Luke 7:11–12), between the centurion’s healing and John’s inquiry (7:1–23).*
 
@@ -155,7 +155,7 @@ Luke’s first composition position comes from the Catholic Encyclopedia XIV (19
 
 **Location:** Capharnaum synagogue; writing place unestablished
 
-**Date:** **Event**: A.D. 28. **Composition** – disputed: c. A.D. 90–100; A.D. 96–100.
+**Date:** **Event**: A.D. 28 (derived). **Composition** – disputed: c. A.D. 90–100; A.D. 96–100.
 
 *Event: the Bread of Life discourse follows feeding and travel around the Galilean/Tiberias sea; John 6:60 explicitly names the synagogue at Capharnaum.*
 
@@ -551,6 +551,6 @@ The recorded source checks and this guide’s interpretation confer no imprimatu
 
 Web witnesses were accessed 5 September 2026; appointed-text and chronology checks retain their separate recorded dates.
 
-**Last revised (UTC):** 2026-09-24T16:57:53Z
+**Last revised (UTC):** 2026-10-01T22:25:03Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

@@ -415,7 +415,7 @@ The two printed relations answer different questions and are not to be merged. T
 
 | **Textual unit** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Gospel | Mt 20:1–16a | Spoken to the disciples on the journey toward Jerusalem, after Peter’s question (19:27) | **Event** – Narrated event date unresolved. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Comparison (catholic-critical-v1) – Composition** – composition-only: The Greek Gospel of Matthew in the NABRE introduction, Post-A.D. 70 date. |
+| Gospel | Mt 20:1–16a | Spoken to the disciples on the journey toward Jerusalem, after Peter’s question (19:27) | **Event** – Narrated event date unresolved. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Composition (Catholic critical chronology, for comparison)**: The Greek Gospel of Matthew in the NABRE introduction, post-A.D. 70 date. |
 
 *Narrated event: a parable of Jesus, told within the journey that ends at Jerusalem, before the third prediction of the Passion (20:17–19); the chronology corpus holds no date for the narrated event.*
 
@@ -431,7 +431,7 @@ Traditional attribution: St John the Apostle. The two printed ranges are the re
 
 | **Textual unit** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Acclamation (its basis) | cf. Acts 16:14b, an adaptation | Event: Philippi in Macedonia, by the riverside on the sabbath (16:12–13) | **Event** – disputed: A.D. 50–53; c. A.D. 51–54. **Composition**: c. A.D. 64. |
+| Acclamation (its basis) | cf. Acts 16:14b, an adaptation | Event: Philippi in Macedonia, by the riverside on the sabbath (16:12–13) | **Event** – disputed: A.D. 50–53; A.D. 51–54. **Composition**: c. A.D. 64. |
 
 *Narrated event: the conversion of Lydia during St Paul’s second missionary journey (Acts 15:36–18:22).*
 
@@ -491,7 +491,7 @@ NPNF denotes *Nicene and Post-Nicene Fathers*, first series; ANF denotes *Ante-N
 
 15. USCCB, *New American Bible, Revised Edition*, introductions to [Isaiah](https://bible.usccb.org/bible/isaiah/0), [Psalms](https://bible.usccb.org/bible/psalms/0), and [Matthew](https://bible.usccb.org/bible/matthew/0); complete introduction bodies inspected in the registered 21 September 2026 web state. Protected texts; historical orientation only.
 
-**Last revised (UTC):** 2026-09-24T16:45:48Z
+**Last revised (UTC):** 2026-10-01T22:25:03Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

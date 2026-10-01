@@ -469,11 +469,11 @@ Traditional attribution: the prophet Isaias; the range shown is the era the *Cat
 
 | **Textual unit** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Gospel | Mt 20:1–16a | Spoken to the disciples on the way to Jerusalem, after Peter’s question (19:27) and before the third prediction of the Passion (20:17–19) | **Event** – Narrated event date unresolved. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Comparison (catholic-critical-v1) – Composition** – composition-only: The Greek Gospel of Matthew in the NABRE introduction, Post-A.D. 70 date. |
+| Gospel | Mt 20:1–16a | Spoken to the disciples on the way to Jerusalem, after Peter’s question (19:27) and before the third prediction of the Passion (20:17–19) | **Event** – Narrated event date unresolved. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Composition (Catholic critical chronology, for comparison)**: The Greek Gospel of Matthew in the NABRE introduction, post-A.D. 70 date. |
 
 *Narrated event: a parable of Jesus, told within the journey that ends at Jerusalem (20:17–18).*
 
-Traditional attribution: St Matthew the Apostle. The Date column keeps as disputed alternatives the figures the *Catholic Encyclopedia* reports (1911, 1912): its article on the Gospel opens its discussion of the date with the words “Ancient ecclesiastical writers are at variance” and says that in its own day “opinion is rather divided”. The alternatives are not of equal standing in their own sources: about A.D. 38–45 reckons from the Ascension; about A.D. 40–42 rests on a tradition of the apostles’ dispersal that the article itself calls “admittedly not too reliable”; A.D. 40–45 is the article’s report of Catholic opinion in its own day; about A.D. 60–68 is conditional on a later definitive departure of the apostles; about A.D. 64–67 rests on a text of Irenaeus whose difficulties of interpretation, the article says, prevent any positive conclusion; and the single year printed last is said in the article on the New Testament of the original text of Matthew, which its author holds to have been Aramaic, the Greek rendering being left undated. The principal modern critical account in the NABRE introduction gives a “post-A.D. 70 date”, “probably at least a decade later”, without an upper bound. Its account is probabilistic. Jacquier’s “Destination of the Gospel” reports publication in Judea for converted Jews; NABRE describes an unknown author and proposes Antioch in Syria as a plausible location for Jewish and Gentile Christians. The writing place is distinct from the parable’s scene.
+Traditional attribution: St Matthew the Apostle. The Date column keeps as disputed alternatives the figures the *Catholic Encyclopedia* reports (1911, 1912): its article on the Gospel opens its discussion of the date with the words “Ancient ecclesiastical writers are at variance” and says that in its own day “opinion is rather divided”. The alternatives are not of equal standing in their own sources: about A.D. 38–45 reckons from the Ascension; about A.D. 40–42 rests on a tradition of the apostles’ dispersal that the article itself calls “admittedly not too reliable”; A.D. 40–45 is the article’s report of Catholic opinion in its own day; about A.D. 60–68 is conditional on a later definitive departure of the apostles; about A.D. 64–67 rests on a text of Irenaeus whose difficulties of interpretation, the article says, prevent any positive conclusion; and the sixth traditional figure is said in the article on the New Testament of the original text of Matthew, which its author holds to have been Aramaic, the Greek rendering being left undated. The principal modern critical account in the NABRE introduction gives a “post-A.D. 70 date”, “probably at least a decade later”, without an upper bound. Its account is probabilistic. Jacquier’s “Destination of the Gospel” reports publication in Judea for converted Jews; NABRE describes an unknown author and proposes Antioch in Syria as a plausible location for Jewish and Gentile Christians. The writing place is distinct from the parable’s scene.
 
 | **Textual unit** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
@@ -485,7 +485,7 @@ Traditional attribution: St John the Apostle. The *Catholic Encyclopedia* gives
 
 | **Textual unit** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Alleluia verse (its basis) | cf. Acts 16:14b, an adaptation | Event: Philippi, “the chief city of part of Macedonia, a colony” (16:12), by the riverside on the sabbath (16:13) | **Event** – disputed: A.D. 50–53; c. A.D. 51–54. **Composition**: c. A.D. 64. |
+| Alleluia verse (its basis) | cf. Acts 16:14b, an adaptation | Event: Philippi, “the chief city of part of Macedonia, a colony” (16:12), by the riverside on the sabbath (16:13) | **Event** – disputed: A.D. 50–53; A.D. 51–54. **Composition**: c. A.D. 64. |
 
 *Narrated event: the conversion of Lydia during St Paul’s second missionary journey (Acts 15:36–18:22).*
 
@@ -540,9 +540,7 @@ Traditional attribution: St Paul, writing from captivity. The first figure is t
 
 **Records.** The composition of the target is audited in `propers/verified.md`; the reception search, loci, disagreements and negative results in `research/scope.md`; and the reasoning behind the three interpretations, with the class of every cross-element link, in `research/interpretations.md`. Earlier research received independent review; that review does not cover the revised historical dossier.
 
-## References
-
-<span id="sec:references" data-label="sec:references"></span>
+## References {#sec:references}
 
 ### Liturgical books and Bibles
 
@@ -600,6 +598,6 @@ Traditional attribution: St Paul, writing from captivity. The first figure is t
 
 - United States Conference of Catholic Bishops, *New American Bible, Revised Edition*, introductions to [Isaiah](https://bible.usccb.org/bible/isaiah/0), [Psalms](https://bible.usccb.org/bible/psalms/0) and [Matthew](https://bible.usccb.org/bible/matthew/0), registered 21 September 2026 web state (summarized, with brief source phrases).
 
-**Last revised (UTC):** 2026-09-24T17:17:38Z
+**Last revised (UTC):** 2026-10-01T22:25:46Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

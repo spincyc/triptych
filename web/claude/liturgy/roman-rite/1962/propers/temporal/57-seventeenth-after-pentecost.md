@@ -292,7 +292,7 @@ Set beside the Gospel, the Epistle shows the second commandment at work inside t
 
 ### The Gospel’s second half inside this reading
 
-The question that follows the first commandment belongs to the same Gospel, and Chrysostom joins the two halves himself. Jesus praises the confession of one God, then asks whose son the Christ is, “that they may not be able to say, that He did miracles indeed, yet was an adversary to the law, and a foe to God”. The question leads them on “to confess Him also to be God”. On Chrysostom’s account, then, the one God who is to be loved wholly is not loved apart from his Christ, and the question about David’s son belongs to the question about the great commandment. What the question reveals belongs to the second reading; that it follows from the commandment is all the first needs.
+The question that follows the first commandment belongs to the same Gospel, and Chrysostom joins the two halves himself, bringing in Mark’s scribe (12:32). Jesus praises his confession of one God, then asks whose son the Christ is, “that they may not be able to say, that He did miracles indeed, yet was an adversary to the law, and a foe to God”. The question leads them on “to confess Him also to be God”. On Chrysostom’s account, then, the one God who is to be loved wholly is not loved apart from his Christ, and the question about David’s son belongs to the question about the great commandment. What the question reveals belongs to the second reading; that it follows from the commandment is all the first needs.
 
 ### The prayers and chants of a people that loves
 
@@ -348,7 +348,7 @@ St Augustine opens his exposition of Ps 109 with this Gospel. The psalm prophes
 
 St Jerome presses the same logic from the side of the psalm. If the Christ is a mere man and only David’s son, how can David call him his Lord, and that not by error or by his own will but in the Holy Spirit? *Dominus igitur David vocatur, non secundum id quod de eo natus est, sed juxta id quod natus ex Patre semper fuit, praeveniens ipsum carnis suae patrem*: he is called David’s Lord not by his birth from David but by his birth from the Father, which always was, and which goes before the father of his flesh. Jerome meets a Jewish reading that applied the psalm to Abraham with the psalm’s own later words, “from the womb before the day star I begot thee” and “a priest for ever” (*Commentarii in Matthaeum* IV, on 22:41–46).
 
-St John Chrysostom attends to the way Christ teaches. Jesus had just praised the confession that there is one God, and he explains why that praise does not exclude himself: the saying “There is one God” is spoken “not to the rejection of the Son, but to make the distinction from idols”. The counter-question follows, “secretly leading them on to confess Him also to be God”. Since they held him a mere man, he brings in David witnessing “to His being Lord, and the genuineness of His Sonship, and His equality in honor with His Father”. He adds the second half of the verse, “Till I make Thine enemies Thy footstool”, “in order to move them to fear”. He teaches by question and inference, “in condescension”, so that the saying might not give offence (*Homilies on Matthew* 71).
+St John Chrysostom attends to the way Christ teaches, bringing in the scribe’s confession from Mark 12:32. Jesus had just praised that confession of one God, and he explains why that praise does not exclude himself: the saying “There is one God” is spoken “not to the rejection of the Son, but to make the distinction from idols”. The counter-question follows, “secretly leading them on to confess Him also to be God”. Since they held him a mere man, he brings in David witnessing “to His being Lord, and the genuineness of His Sonship, and His equality in honor with His Father”. He adds the second half of the verse, “Till I make Thine enemies Thy footstool”, “in order to move them to fear”. He teaches by question and inference, “in condescension”, so that the saying might not give offence (*Homilies on Matthew* 71).
 
 St Thomas Aquinas gathers these threads into a doctrinal statement. Christ has two generations, and the Pharisees answered only of the flesh. The psalm shows three things of the Son: *praeeminentiam ad sanctos, aequalitatem ad patrem, et dominium super rebelles*, his pre-eminence over the saints, his equality with the Father and his dominion over the rebellious. The conclusion is plain: *filius est secundum carnem … et dominus secundum divinitatem* (*Super Matthaeum* c. 22, lect. 4). The liturgical commentator William Durandus reads its second half as Christ reproving the Pharisees *de infidelitate, quia non credebant ipsum esse Deum*: for their unbelief, because they did not believe him to be God (*Rationale* VI.135).
 
@@ -442,7 +442,7 @@ The antiphon’s words echo the Introit’s psalm. *Illumina faciem tuam super s
 
 ### The poor man’s cry and the vows of the humble
 
-The Alleluia comes from the fifth penitential psalm, headed “The prayer of the poor man”. Augustine hears in its second verse humility inclining God’s ear: *si me extollo, longe fis; si me humilio, inclinas aurem tuam ad me*, if I exalt myself, thou art far; if I humble myself, thou inclinest thine ear to me (*Enarrationes in Psalmos* 101, s. 1, 3). Cassiodorus, who hears the psalm in the voice of Christ’s poor rather than of Christ, draws its scope to the whole world: *Tales sunt pauperes Christi, qui non solum pro suis malis, verum etiam pro totius mundi calamitatibus intercedere comprobantur*, such are the poor of Christ, who are found interceding not only for their own ills but for the calamities of the whole world (*Expositio psalmorum*, on Ps 101). Bellarmine calls the verse the Church’s daily preparation for every other petition, and asks with it for the gift of prayer itself: “make me so pray that I may be worthy of being heard”. What hinders prayer, he says, is “want of faith, of confidence, of humility, desire”.
+The Alleluia comes from the fifth penitential psalm, headed “The prayer of the poor man”. Augustine hears in the following verse, Ps 101:3, humility inclining God’s ear: *si me extollo, longe fis; si me humilio, inclinas aurem tuam ad me*, if I exalt myself, thou art far; if I humble myself, thou inclinest thine ear to me (*Enarrationes in Psalmos* 101, s. 1, 3). Cassiodorus, who hears the psalm in the voice of Christ’s poor rather than of Christ, draws its scope to the whole world: *Tales sunt pauperes Christi, qui non solum pro suis malis, verum etiam pro totius mundi calamitatibus intercedere comprobantur*, such are the poor of Christ, who are found interceding not only for their own ills but for the calamities of the whole world (*Expositio psalmorum*, on Ps 101). Bellarmine calls the verse the Church’s daily preparation for every other petition, and asks with it for the gift of prayer itself: “make me so pray that I may be worthy of being heard”. What hinders prayer, he says, is “want of faith, of confidence, of humility, desire”.
 
 The Communion completes the movement in vows. Augustine counsels *Quisque quod potest voveat, et reddat*, let each vow what he can and pay it, relying not on his own strength but on the one to whom he vows. The “spirit of princes” that God takes away is the spirit of the proud, *Spiritus enim principum, superbi sunt spiritus*, and he reads the kings of the earth morally: *Rege terram, et eris rex terrae*, rule the earth, that is, your flesh, and you will be a king of the earth (*Enarrationes in Psalmos* 75, 16–18). Cassiodorus sets the vows at the altar, where the faithful bring their gifts, and adds that God is terrible chiefly to the devout, to whom he is also sweet. Bellarmine reads the verses just before the Communion’s, “When God arose in judgment, to save all the meek of the earth”, of “the day of general judgment”, when the meek will no longer be “harassed by their proud and cruel persecutors”. The God of the Communion is then “terrible” in his judgments, “not only to ordinary men, but even to kings and princes”.
 
@@ -491,7 +491,7 @@ They part on the questions below.
 | The Offertory | Intercession for the neighbour, made as one of the people | A prayer answered by the prophecy of Christ’s coming | Justice confessed and mercy asked for the whole people |
 | What follows for faith and life | Charity ordered to God builds and keeps the Church’s unity | Faith confesses Christ equal to the Father and the one God as Trinity | Humility confesses sin and receives mercy |
 
-The readings differ in emphasis more than in what they identify. The first and the second divide the Gospel between them, the commandment and the question about the Christ, and St John Chrysostom’s seventy-first homily on Matthew is the witness that they belong together. Having praised the confession of one God, Christ asks about the Christ, so that the God who is to be loved with the whole heart is shown to be the God whose Son is David’s Lord. The third rests on the chants that have stood together at this Sunday longest, the Introit, the Offertory and the Communion, and gives the Mass its tone: the first two supply its doctrine, and the third the posture in which that doctrine is received.
+The readings differ in emphasis more than in what they identify. The first and the second divide the Gospel between them, the commandment and the question about the Christ, and St John Chrysostom’s seventy-first homily on Matthew is the witness that they belong together. In his exposition, which brings in the scribe’s confession from Mark 12:32, Christ praises the confession of one God and asks about the Christ, so that the God who is to be loved with the whole heart is shown to be the God whose Son is David’s Lord. The third rests on the chants that have stood together at this Sunday longest, the Introit, the Offertory and the Communion, and gives the Mass its tone: the first two supply its doctrine, and the third the posture in which that doctrine is received.
 
 No witness called on here opposes another’s controlling claim. The disagreements are real but narrow, and each belongs to one text. Augustine hears Christ in the poor man of Ps 101 and Cassiodorus hears the poor of Christ. Jerome allows that Daniel, though sinless, joined himself to a sinful people, and Augustine insists that Daniel confessed sins of his own. Jerome and Aquinas give “above all, and through all, and in us all” to the three Persons, and Chrysostom and Theodoret read it of the one God and Father. Hilary and Augustine place the beginning of the servant’s mercy differently. Chrysostom and Jerome give different reasons for the lawyer’s question. Bellarmine takes the Introit’s *iudicium* for the law, and Durandus for the judgment that exalts the humble.
 
@@ -503,9 +503,9 @@ Each passage the Mass reads or sings from Scripture, once, in canonical order; b
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Gradual | Ps 32:6, 12 (Heb. 33) | No place named | **Composition**: Before c. 165 B.C. |
+| Gradual | Ps 32:6, 12 (Heb. 33) | No place named | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Composition**: Before c. 165 B.C. |
 
-Titled *Psalmus David*, “A psalm for David” (v. 1): an attribution by title, with no traditional era held for this psalm in the chronology record. A hymn of the just to God’s creating word (vv. 1–9) and to the nation he chose (v. 12). The date is the modern critical boundary for the whole Psalter, within which no single psalm can be dated securely.
+Titled *Psalmus David*, “A psalm for David” (v. 1): a Davidic attribution whose displayed regnal era is a reference point, not a composition date. A hymn of the just to God’s creating word (vv. 1–9) and to the nation he chose (v. 12). The composition bound is the modern critical boundary for the whole Psalter, within which no single psalm can be dated securely.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
@@ -527,13 +527,13 @@ An alphabetical psalm in praise of God’s law, with no title beyond *Alleluia*;
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Offertory | Dan 9:17–19, compiled | Daniel at the court of Babylon; for the Jews of his own time and after. Event: the kingdom of the Chaldeans, first year of Darius the Mede (9:1); prayer for the desolate sanctuary of Jerusalem (9:17) | **Historical setting**: Duration: all these nations shall serve the king of Babylon seventy years. **Composition**: B.C. 570–536. |
+| Offertory | Dan 9:17–19, compiled | Daniel at the court of Babylon; for the Jews of his own time and after. Event: the kingdom of the Chaldeans, first year of Darius the Mede (9:1); prayer for the desolate sanctuary of Jerusalem (9:17) | **Historical setting**: “seventy years” (duration). **Composition**: B.C. 570–536. |
 
 Traditional attribution: Daniel the prophet, in the Exile, telling his own prayer (“I, Daniel”, 9:2) when he understood from Jeremias that the seventy years of desolation were ending. The 1908 *Catholic Encyclopedia* article that holds the traditional date sets against it a more recent critical theory, widely accepted by scholars of its time, that an unknown later author composed the book; no date is given for that position here. The same article’s grounds for the traditional position give the place and the hearers: only “a resident in Babylon” could have written the book’s details, and Daniel, “owing to his position at the court of Babylon”, wrote “for the comfort of the Jews of his time and of subsequent ages”. For the later author it supposes, the article names no place of writing at all.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Gospel | Mt 22:34–46 | Matthew in Judea, before he left Jerusalem; to the Jews who had believed. Event: the Temple, Jerusalem (21:23) | **Event** – Narrated event date unresolved. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Comparison (catholic-critical-v1) – Composition** – composition-only: The Greek Gospel of Matthew in the NABRE introduction, Post-A.D. 70 date. |
+| Gospel | Mt 22:34–46 | Matthew in Judea, before he left Jerusalem; to the Jews who had believed. Event: the Temple, Jerusalem (21:23) | **Event** – Narrated event date unresolved. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Composition (Catholic critical chronology, for comparison)**: The Greek Gospel of Matthew in the NABRE introduction, post-A.D. 70 date. |
 
 *Narrated event: the last of Christ’s controversies in the Temple (21:23–22:46), before the Passion is foretold “after two days” (26:1–2).*
 
@@ -557,15 +557,13 @@ Traditional attribution: St Paul, in a letter of his captivity; the *Catholic En
 
 **History of the formulary.** The chant and sacramentary witnesses are cited in editions and a database view: H. A. Wilson’s editions of the Gelasian (1894) and Gregorian (1915) sacramentaries, read on their page images; and gregorien.info’s view of Hesbert’s *Antiphonale Missarum Sextuplex* for the earliest graduals. No critical edition of the sacramentaries (Deshusses, Mohlberg), no manuscript, no edition of the Roman psalter and no Old Latin text of Daniel was consulted.
 
-**Chronology.** The Date cells in Scriptural Date and Location come from the Scripture chronology corpus, through the record generated for this formulary. That default-profile record gives the four psalms only the modern critical boundary for the Psalter, which it takes from the introduction to the Psalms in the New American Bible, Revised Edition (summarized, not quoted); it holds no traditional date for them. For Daniel, Matthew and Ephesians it holds only the traditional dates reported by the *Catholic Encyclopedia*. A separate critical-profile query supplies Matthew’s post-A.D. 70 comparison in the explanatory prose; it does not replace or merge the traditional alternatives. No critical date for Daniel or Ephesians is supplied. The Gospel’s narrated event is undated. The record and its sources are audited in `research/scope.md`.
+**Chronology.** The Date cells in Scriptural Date and Location come from the Scripture chronology corpus, through the record generated for this formulary. That default-profile record gives the four psalms the modern critical boundary for the Psalter, from the introduction to the Psalms in the New American Bible, Revised Edition (summarized, not quoted). For Ps 32 it also gives David’s regnal era as the reference point of its traditional attribution, not as its composition date. For Daniel, Matthew and Ephesians it holds only the traditional dates reported by the *Catholic Encyclopedia*. A separate critical-profile query supplies Matthew’s post-A.D. 70 comparison in the explanatory prose; it does not replace or merge the traditional alternatives. No critical date for Daniel or Ephesians is supplied. The Gospel’s narrated event is undated. The record and its sources are audited in `research/scope.md`.
 
 **Rights.** The Latin of the formulary is published on the basis of its public-domain antecedent, the Pustet Missal of 1862 (17 U.S.C. 103(b)); the Douay–Rheims, the 1861 Cummiskey English, the Latin Fathers in Migne and the nineteenth-century English translations are in the public domain. The Marietti Latin of Aquinas on Matthew and the Corpus Thomisticum text of his commentary on the Psalms are modern presentations and are quoted briefly. The New American Bible introduction and the dated Ordos are cited, not reproduced.
 
 **Records.** The appointed-text collation is in `propers/verified.md`; the search, loci, disagreements and negative results in `research/scope.md`; and the reasoning behind the three readings in `research/interpretations.md`. The research records were reviewed independently before this study was written.
 
-## References
-
-<span id="sec:references" data-label="sec:references"></span>
+## References {#sec:references}
 
 ### Liturgical books and Bibles
 
@@ -577,7 +575,7 @@ Traditional attribution: St Paul, in a letter of his captivity; the *Catholic En
 
 - *The Roman Missal, Translated into the English Language for the Use of the Laity*, first revised edition (Philadelphia: Eugene Cummiskey, 1861), pp. 431–433 (XVII Sunday after Pentecost, Collect, Secret, Postcommunion) and pp. xxviii–xxix (Preface on Trinity Sunday and other Sundays).
 
-- The Holy Bible, Douay–Rheims version, revised by Bishop Richard Challoner (Project Gutenberg text): Deut 6:5; Ps 32; 75; 101; 109; 118; Isa 1:16; Dan 9; Mt 21:23; 22; 26:1–2; Eph 1:1; 2:11–18; 4:1–15.
+- The Holy Bible, Douay–Rheims version, revised by Bishop Richard Challoner (Project Gutenberg text): Lev 19:18; Deut 6:5; Ps 32; 75; 101; 109; 118; Isa 1:16; Dan 9; Mt 21:23; 22; 26:1–2; Eph 1:1; 2:11–18; 4:1–15.
 
 - *Biblia Sacra Vulgatae editionis* (Clementine Vulgate), eBible.org text: Ps 32; 75; 101; 118; Dan 9; Mt 22; Eph 4.
 
@@ -593,7 +591,7 @@ Traditional attribution: St Paul, in a letter of his captivity; the *Catholic En
 
 ### Fathers, Doctors and saints
 
-- St Augustine, *Enarrationes in Psalmos*, Latin text of Migne, PL 36–37 (Wikisource and Corpus Corporum): on Ps 32, I, 6, 12, and II, s. 2, 5, 8, 15–18; on Ps 101, s. 1, 1–3; on Ps 109, 1–6. Latin on Ps 75, 16–18 and on Ps 118, s. 26, 5 and s. 28, 1 from <https://www.augustinus.it/latino/esposizioni_salmi/>.
+- St Augustine, *Enarrationes in Psalmos*, Latin text of Migne, PL 36–37 (Wikisource and Corpus Corporum): on Ps 32, I, 12, and II, s. 2, 5, 15–18; on Ps 101, s. 1, 1–3; on Ps 109, 1–6. Latin on Ps 75, 16–18 and on Ps 118, s. 26, 5 and s. 28, 1 from <https://www.augustinus.it/latino/esposizioni_salmi/>.
 
 - St Augustine, *On Christian Doctrine* I.22.20–21, I.27.28, I.30.31–33, trans. J. F. Shaw, Nicene and Post-Nicene Fathers, 1st ser., vol. 2.
 
@@ -625,7 +623,7 @@ Traditional attribution: St Paul, in a letter of his captivity; the *Catholic En
 
 - St Thomas Aquinas, *Postilla super Psalmos*, Ps 32, nn. 5, 11 (Parma text, Corpus Thomisticum, <https://www.corpusthomisticum.org/cps31.html>).
 
-- St Robert Bellarmine, *A Commentary on the Book of Psalms*, trans. J. O’Sullivan (1866, abridged), read in the eCatholic2000 transcription of that translation, <https://www.ecatholic2000.com/bellarmine/commentary-on-psalms.shtml>: on Pss 32:6, 12; 75:9–13; 101:2; 118:1, 124, 137.
+- St Robert Bellarmine, *A Commentary on the Book of Psalms*, trans. J. O’Sullivan (1866, abridged), read in the eCatholic2000 transcription of that translation, <https://www.ecatholic2000.com/bellarmine/commentary-on-psalms.shtml>: on Pss 32:6, 12; 75:9–13; 101:2; 118:124, 137.
 
 - Council of Trent, sess. XIII, *Decretum de ss. Eucharistia*, cap. 2, in *Canones et decreta Concilii Tridentini* (Tauchnitz, 1887).
 
@@ -645,6 +643,6 @@ Traditional attribution: St Paul, in a letter of his captivity; the *Catholic En
 
 - Fraternité Saint-Pierre (France), *Ordo du mois*, entry for 20 September 2026; Institut du Christ Roi Souverain Prêtre (France), *Ordo*, entry for 20 September 2026.
 
-**Last revised (UTC):** 2026-09-24T17:17:38Z
+**Last revised (UTC):** 2026-10-01T22:37:06Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

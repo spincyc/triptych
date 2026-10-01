@@ -61,14 +61,14 @@ EXAMPLES = {
         Example(
             "tools/check-calendar-masses check --calendar roman-1962",
             (
-                "src/sources/calendars/roman-1962/propers.yaml\t491 masses\t3441 propers",
+                "src/sources/calendars/roman-1962/propers.yaml\t491 masses\t3443 propers",
                 "src/sources/inventories/roman-1962-proper-translations-v1.toml\t6 read twice\t5 agree\t1 disagree",
             ),
         ),
         Example(
             "tools/check-calendar-masses check --json",
             (
-                "{\"excepted\":[\"src/sources/calendars/postconciliar/propers.yaml: ot-23-thursday/Responsorial Psal... [+1437 chars]",
+                "{\"excepted\":[\"src/sources/calendars/postconciliar/propers.yaml: ot-24-saturday/Responsorial Psal... [+976 chars]",
             ),
         ),
     ),

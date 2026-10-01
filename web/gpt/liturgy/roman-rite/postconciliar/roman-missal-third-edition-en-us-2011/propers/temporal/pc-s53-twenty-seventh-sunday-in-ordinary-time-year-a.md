@@ -557,11 +557,11 @@ The Catholic Encyclopedia chronology witnesses are historical reference judgment
 
 - *Notitiae* 44, nos. 503–504 (2008), pp. 367–372, especially p. 371: bounded variation notice, not proof of complete edition identity.
 
-- *Catholic Encyclopedia*: Arthur McMahon, “Esther” (1909); Charles Souvay, “Isaias” (1910); Ferdinand Prat, “St. Paul” (1911); Achille Vander Heeren, “Epistle to the Philippians” (1911); Cornelius Aherne, “Epistles to the Corinthians” (1908); Leopold Fonck, “Gospel of St. John” (1910); Anthony Maas, “Chronology of the Life of Jesus Christ” (1910); Alfred Durand, “The Synoptics” (1912); E. Jacquier, “Gospel of St. Matthew” (1911). Chronological discussions identified in the canonical chronology record.
+- *Catholic Encyclopedia*: Arthur McMahon, “Esther” (1909); Charles Souvay, “Isaias” (1910); Ferdinand Prat, “St. Paul” (1911); Achille Vander Heeren, “Epistle to the Philippians” (1911); Cornelius Aherne, “Epistles to the Corinthians” (1908); Leopold Fonck, “Gospel of St. John” (1910); Anthony Maas, “Chronology of the Life of Jesus Christ” (1910); Alfred Durand, “The New Testament” (1912); E. Jacquier, “Gospel of St. Matthew” (1911). Chronological discussions identified in the canonical chronology record.
 
 - NABRE introductions to Psalms and Lamentations, official USCCB witnesses: broad psalm composition limits and the setting, authorship and grouping of Lamentations. Used for chronology and orientation; protected Bible translation not reproduced.
 
-**Last revised (UTC):** 2026-09-28T20:57:11Z
+**Last revised (UTC):** 2026-10-01T22:25:03Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

@@ -399,9 +399,9 @@ Each passage this Mass reads or sings from Scripture, once, in canonical order; 
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Gradual | Ps. 32:6, 12 (modern 33) | No place named in the appointed verses | **Composition**: Before c. 165 B.C. |
+| Gradual | Ps. 32:6, 12 (modern 33) | No place named in the appointed verses | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Composition**: Before c. 165 B.C. |
 
-The appointed verses join two of the psalm’s movements: the blessedness of the people the Lord chose for his inheritance (v. 12) and the heavens established by his word and spirit (v. 6). The Douay–Rheims heading reads “A psalm for David”, an attribution without a named occasion or place of writing, first audience or stage in the attributed author’s life. No traditional era is established for this psalm. The NABRE introduction supplies the broad limit shown for the Psalter, not a precise date for this poem, and denies that individual psalms can be dated with certainty.
+The appointed verses join two of the psalm’s movements: the blessedness of the people the Lord chose for his inheritance (v. 12) and the heavens established by his word and spirit (v. 6). The Douay–Rheims heading reads “A psalm for David”, an attribution without a named occasion or place of writing, first audience or stage in the attributed author’s life. Corbett’s “usual chronology” supplies David’s regnal frame for that attribution, not the poem’s composition date. The NABRE introduction supplies the broad limit shown for the Psalter, not a precise date for this poem, and denies that individual psalms can be dated with certainty.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
@@ -423,13 +423,13 @@ An alphabetical psalm in praise of the law, with no named author and no traditio
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Offertory | Dan. 9:17–19, adapted | Daniel at the court of Babylon, in the first year of Darius the Mede (9:1); prayer for the desolate sanctuary of Jerusalem (9:17) | **Historical setting**: Duration: all these nations shall serve the king of Babylon seventy years. **Composition**: B.C. 570–536. |
+| Offertory | Dan. 9:17–19, adapted | Daniel at the court of Babylon, in the first year of Darius the Mede (9:1); prayer for the desolate sanctuary of Jerusalem (9:17) | **Historical setting**: “seventy years” (duration). **Composition**: B.C. 570–536. |
 
 Traditional attribution: the prophet Daniel, in the Exile, recording his own prayer (“I, Daniel”, 9:2) when he understood from Jeremias that the seventy years of desolation were ending. The 1908 *Catholic Encyclopedia* article that admits 570–536 B.C. as the book’s date grounds the traditional position in details it says only “a resident in Babylon” could supply, written by Daniel, “owing to his position at the court of Babylon”, “for the comfort of the Jews of his time and of subsequent ages”. Gigot also reports the critical attribution to an unknown later author rather than Daniel; his account describes scholarship of 1908, not a fresh survey of present opinion, and it establishes no numerical modern critical date for that alternative. The “seventy years” carried in the Date column is the duration of the servitude within the prayer’s setting (Jer. 25:11–12), not a composition date. The chant selects and rearranges Daniel’s petitions; its liturgical form has its own history, distinct from the composition of the chapter.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Gospel | Matt. 22:34–46 | Written, in the received account, in Judea before Matthew’s departure from Jerusalem, for the Jews who had believed; the encounter narrated in the Temple at Jerusalem (21:23) | **Event** – Narrated event date unresolved. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Comparison (catholic-critical-v1) – Composition** – composition-only: The Greek Gospel of Matthew in the NABRE introduction, Post-A.D. 70 date. |
+| Gospel | Matt. 22:34–46 | Written, in the received account, in Judea before Matthew’s departure from Jerusalem, for the Jews who had believed; the encounter narrated in the Temple at Jerusalem (21:23) | **Event** – Narrated event date unresolved. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Composition (Catholic critical chronology, for comparison)**: The Greek Gospel of Matthew in the NABRE introduction, post-A.D. 70 date. |
 
 *Narrated event: the last of the Lord’s controversies in the Temple (21:23–22:46), shortly before the Passion forecast at 26:1–2. No numerical narrated-event date for these verses is established here.*
 
@@ -479,11 +479,11 @@ The source research received an independent workflow review before authoring. Th
 
 12. FSSP France, [Ordo du mois](https://www.fssp.fr/ordo-du-mois/), September 2026, entry for 20 September; ICRSP France, [Ordo](https://icrspfrance.fr/ordo.php), entry for 20 September 2026. Entries checked during research on 17 September 2026; institutional corroboration of universal occurrence, not a specified local Ordo.
 
-13. Chronology witnesses, retained New Advent article texts in the *Catholic Encyclopedia*: F. E. Gigot, [“Book of Daniel”](https://www.newadvent.org/cathen/04621b.htm), vol. 4 (1908), “Authorship and date of composition”; P. Ladeuze, [“Epistle to the Ephesians”](https://www.newadvent.org/cathen/05485a.htm), vol. 5 (1909), “To whom addressed”, “Date and place of composition” and “Authenticity”; F. Prat, [“St. Paul”](https://www.newadvent.org/cathen/11567b.htm), vol. 11 (1911), “Chronology”, final table; E. Jacquier, [“Gospel of St. Matthew”](https://www.newadvent.org/cathen/10057a.htm), vol. 10 (1911), “Destination” and “Date and place of composition”; A. Durand, [“The New Testament”](https://www.newadvent.org/cathen/14530a.htm), vol. 14 (1912), “Origin”, paragraph on Matthew’s Aramaic original.
+13. Chronology witnesses, retained New Advent article texts in the *Catholic Encyclopedia*: F. E. Gigot, [“Book of Daniel”](https://www.newadvent.org/cathen/04621b.htm), vol. 4 (1908), “Authorship and date of composition”; P. Ladeuze, [“Epistle to the Ephesians”](https://www.newadvent.org/cathen/05485a.htm), vol. 5 (1909), “To whom addressed”, “Date and place of composition” and “Authenticity”; F. Prat, [“St. Paul”](https://www.newadvent.org/cathen/11567b.htm), vol. 11 (1911), “Chronology”, final table; E. Jacquier, [“Gospel of St. Matthew”](https://www.newadvent.org/cathen/10057a.htm), vol. 10 (1911), “Destination” and “Date and place of composition”; A. Durand, [“The New Testament”](https://www.newadvent.org/cathen/14530a.htm), vol. 14 (1912), “Origin”, paragraph on Matthew’s Aramaic original; John Corbett, [“King David”](https://www.newadvent.org/cathen/04642b.htm), vol. 4 (1908), opening paragraph, the “usual chronology” of his reign.
 
 14. *New American Bible Revised Edition*, introductions to [Psalms](https://bible.usccb.org/bible/psalms/0) (superscriptions and broad chronological limit) and [Matthew](https://bible.usccb.org/bible/matthew/0) (the separately identified post-A.D. 70 critical boundary and its probabilistic qualification), official USCCB web edition, inspected 21 September 2026. Protected introductions summarized, not reproduced.
 
-**Last revised (UTC):** 2026-09-24T17:05:02Z
+**Last revised (UTC):** 2026-10-01T22:25:03Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

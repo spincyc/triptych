@@ -429,13 +429,13 @@ The last request is therefore a fitting answer to the Gospel’s searching endin
 
 ## Scriptural Date and Location {#sec:date-location}
 
-The appointed biblical units appear below in canonical and verse order. The psalm dates are broad limits of composition, not dates of each poem’s particular occasion. The orations and the Introit’s composed antiphon have no biblical composition-date entry.
+The appointed biblical units appear below in canonical and verse order. The psalm composition dates are broad limits, not dates of each poem’s particular occasion. For Pss 137 and 140, whose Vulgate titles name David, his reign in Corbett’s “usual chronology” frames the traditional attribution; it does not date either poem’s writing. The orations and the Introit’s composed antiphon have no biblical composition-date entry.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
 | Introit verse | Ps 77(78):1 | Israel; instruction addressed to the people | **Composition**: Before c. 165 B.C. |
 
-The psalm teaches through Israel’s deliverances and failures and ends with David’s shepherding. Augustine hears God through the prophet; Bellarmine identifies David as immediate speaker. These are interpretations of the voice, not a dated occasion of composition. The USCCB introduction supplies the broad boundary and warns that individual psalms cannot be securely dated.
+The psalm teaches through Israel’s deliverances and failures and ends with David’s shepherding. Augustine hears God through the prophet; Bellarmine identifies David as immediate speaker. These interpret the voice; they date no occasion of composition. The USCCB introduction supplies the broad boundary and warns that individual psalms cannot be securely dated.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
@@ -451,27 +451,27 @@ The speaker’s wish for directed ways belongs to the opening of an alphabetic m
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Offertory | Ps 137(138):7 | Thanksgiving and trust amid hostile surroundings | **Composition**: Before c. 165 B.C. |
+| Offertory | Ps 137(138):7 | Thanksgiving and trust amid hostile surroundings | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Composition**: Before c. 165 B.C. |
 
 The psalm gives thanks for answered prayer and trusts God’s continuing work. Neither the named trouble nor the enemies establish an individually dated event. The Offertory’s verbal adaptation belongs to its liturgical use.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Gradual | Ps 140(141):2 | Prayer imaged through incense and evening sacrifice | **Composition**: Before c. 165 B.C. |
+| Gradual | Ps 140(141):2 | Prayer imaged through incense and evening sacrifice | **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Composition**: Before c. 165 B.C. |
 
-The fuller prayer concerns speech, temptation, correction, and danger. Its sacrificial language supplies the image, not a securely located occasion of composition. Augustine’s interpretation through Christ’s Passion is distinct from the poem’s composition chronology.
+The fuller prayer concerns speech, temptation, correction, and danger. Its sacrificial language supplies the image, not a securely located occasion of composition. Augustine’s Passion reading is distinct from the poem’s composition chronology.
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Gospel | Matt 22:1–14 | Jesus teaching in the Temple, Jerusalem; traditional composition associated with Palestine | **Event** – Narrated event date unresolved. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Comparison (catholic-critical-v1) – Composition** – composition-only: The Greek Gospel of Matthew in the NABRE introduction, Post-A.D. 70 date. |
+| Gospel | Matt 22:1–14 | Jesus teaching in the Temple, Jerusalem; traditional composition associated with Palestine | **Event**: A.D. 29 (derived). **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Composition (Catholic critical chronology, for comparison)**: The Greek Gospel of Matthew in the NABRE introduction, post-A.D. 70 date. |
 
 Traditional attribution names Matthew. Jacquier reports several composition proposals; Durand’s early proposal concerns a hypothesized Aramaic original and does not date the Greek rendering. The separately displayed critical comparison concerns the Greek Gospel: the USCCB introduction treats authorship and dependence on Mark as critical questions and suggests Antioch as a plausible location. The proposals concern distinguishable literary objects and arguments, not one agreed date.
 
-*Narrated setting: Matthew 21:23 places the controversy in the Temple; 21:45 identifies the chief priests and Pharisees, and 22:1 continues the speech. Jerusalem is the event’s setting. No numerical date for this narrated occasion is supplied here.*
+*Narrated setting: Matthew 21:23 places the controversy in the Temple; 21:45 identifies the chief priests and Pharisees, and 22:1 continues the speech. Jerusalem is the event’s setting. Maas places the parable on the Tuesday after the entry into Jerusalem, in a journey he dates by the years of Rome; the displayed year is derived from that dating, not stated by him.*
 
 | **Proper** | **Citation** | **Location** | **Date** |
 |:---|:---|:---|:---|
-| Epistle | Eph 4:23–28 | Traditional Pauline captivity; Rome preferred to Caesarea in Ladeuze’s account; recipients associated with Ephesus in Asia Minor | **Composition** – disputed: A.D. 58–63; A.D. 61. **Comparison (catholic-critical-v1) – Composition** – composition-only: Ephesians under the later-disciple hypothesis (approximate), A.D. 80–100. |
+| Epistle | Eph 4:23–28 | Traditional Pauline captivity; Rome preferred to Caesarea in Ladeuze’s account; recipients associated with Ephesus in Asia Minor | **Composition** – disputed: A.D. 58–63; A.D. 61. **Composition (Catholic critical chronology, for comparison)** – disputed: Ephesians under the later-disciple hypothesis (approximate), c. A.D. 80–100. |
 
 Ladeuze’s captivity range and Prat’s narrower Pauline chronology remain distinct alternatives. The USCCB Ephesians introduction, paragraphs 3–4, retains traditional Pauline captivity but reports doubts about direct authorship based on style, vocabulary, comparison with Colossians, and ecclesiology. It allows a secretary under Paul’s direction or a later disciple developing his thought. The separate comparison’s approximate interval belongs only to the later-disciple hypothesis; no composition city or separate secretarial date is supplied for those alternatives. The absence of personal greetings and omission of the Ephesian address in important early manuscripts support proposals for circulation among Asian churches or a Laodicean destination. These proposed recipients do not establish the writer’s location.
 
@@ -485,7 +485,7 @@ The normalized Latin was collated against the target facsimile and the public-do
 
 The reception study uses the checked loci of Augustine, Gregory, Chrysostom, Bellarmine, Aquinas, and Schuster. Their individual arguments are attributed to their works; the two whole-formulary readings are editorial syntheses. Schuster’s matching Sunday commentary is direct reception of the assembled Mass. Ancient compilation history is not established here. The reception sweep is bounded, not exhaustive; historical translations and inspected Latin transcriptions are not fresh critical editions. Aquinas’s inspected OCR supports paraphrase only. The evidence and textual limits are recorded in `propers/verified.md`, `research/scope.md`, and `research/interpretations.md`.
 
-The historical appendix preserves the available chronology’s alternatives and unresolved Gospel event date. It does not give the broad Psalter boundary the force of a date for an individual poem. The study is an AI-assisted Catholic study aid, not an ecclesiastical judgment or an independently issued critical edition.
+The historical appendix preserves the available chronology’s alternatives and marks the Gospel event’s year as derived from Maas’s reckoning, not stated by him. It does not give the broad Psalter boundary the force of a date for an individual poem. The study is an AI-assisted Catholic study aid, not an ecclesiastical judgment or an independently issued critical edition.
 
 ## References
 
@@ -523,9 +523,9 @@ Blessed Ildefonso Schuster
 
 Scriptural chronology and location
 
-: Paulin Ladeuze, “Epistle to the Ephesians,” *Catholic Encyclopedia* 5 (1909), “Date and place of composition; occasion” and destination discussion; <https://www.newadvent.org/cathen/05485a.htm>. Ferdinand Prat, “St. Paul,” vol. 11 (1911), “Chronology,” concluding table; <https://www.newadvent.org/cathen/11567b.htm>. E. Jacquier, “Gospel of St. Matthew,” vol. 10 (1911), “Date and place of composition”; <https://www.newadvent.org/cathen/10057a.htm>. Alfred Durand, “The Synoptics,” vol. 14 (1912), “Origin,” Aramaic original and Greek rendering; <https://www.newadvent.org/cathen/14530a.htm>. USCCB, NABRE introductions to Psalms and Matthew, consulted 28 September 2026: <https://bible.usccb.org/bible/psalms/0> and <https://bible.usccb.org/bible/matthew/0>. USCCB, NABRE introduction to Ephesians, paragraphs 3–4, destination and authorship alternatives, consulted 28 September 2026: <https://bible.usccb.org/bible/ephesians/0>. The introductions supply bounded historical judgments, not liturgical English.
+: Paulin Ladeuze, “Epistle to the Ephesians,” *Catholic Encyclopedia* 5 (1909), “Date and place of composition; occasion” and destination discussion; <https://www.newadvent.org/cathen/05485a.htm>. Ferdinand Prat, “St. Paul,” vol. 11 (1911), “Chronology,” concluding table; <https://www.newadvent.org/cathen/11567b.htm>. E. Jacquier, “Gospel of St. Matthew,” vol. 10 (1911), “Date and place of composition”; <https://www.newadvent.org/cathen/10057a.htm>. Alfred Durand, “The New Testament,” vol. 14 (1912), “Origin,” Aramaic original and Greek rendering; <https://www.newadvent.org/cathen/14530a.htm>. Anthony J. Maas, “Chronology of the Life of Jesus Christ,” vol. 8 (1910), the Ninth Journey and the Tuesday of its closing week, with the article’s equation of the Roman and Christian years; <https://www.newadvent.org/cathen/08377a.htm>. John Corbett, “King David,” vol. 4 (1908), opening paragraph, the “usual chronology” of his reign; <https://www.newadvent.org/cathen/04642b.htm>. USCCB, NABRE introductions to Psalms and Matthew, consulted 28 September 2026: <https://bible.usccb.org/bible/psalms/0> and <https://bible.usccb.org/bible/matthew/0>. USCCB, NABRE introduction to Ephesians, paragraphs 3–4, destination and authorship alternatives, consulted 28 September 2026: <https://bible.usccb.org/bible/ephesians/0>. The introductions supply bounded historical judgments, not liturgical English.
 
-**Last revised (UTC):** 2026-09-28T16:45:22Z
+**Last revised (UTC):** 2026-10-01T22:25:03Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 
