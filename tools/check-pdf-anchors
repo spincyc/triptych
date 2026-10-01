@@ -18,6 +18,12 @@ and, when hyperref writes one, STEM.out (one \\BOOKMARK per bookmark), whose
 decoded titles may carry no TeX markup. common/preamble turns the `` and ''
 that hyperref used to copy into bookmarks into curly quotes; this check keeps
 it so wherever a .out shows the converted title.
+
+What it cannot see is a page: an anchor stranded on the page before its
+heading keeps its own name. The preamble's hooks prevent that for titlesec
+headings, and tools/tests/test_pdf_anchor_pages.py proves they are installed;
+a template that decides a page break after placing its own anchor must place
+the break first (see the Solemn Mass role cards).
 """
 
 from __future__ import annotations
