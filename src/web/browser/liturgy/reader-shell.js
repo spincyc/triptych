@@ -9,6 +9,13 @@
     );
   }
 
+  // What the browser gives a MODAL dialog by itself (`dialog:modal`: fixed to
+  // the viewport and above every page layer, the highest of which here is 80),
+  // lent to a non-modal surface while it is shown so that it stands where the
+  // reader's own action would put it, and taken back when it closes. Margins,
+  // sizes and the narrow bottom-sheet form stay with the stylesheets.
+  const NON_MODAL_GEOMETRY = Object.freeze({ position: 'fixed', inset: '0', 'z-index': '90' });
+
   function create(options) {
     const held = options || {};
     const shell = held.root;
@@ -25,6 +32,7 @@
     });
 
     let openName = null;
+    let openModal = false;
     let invoker = null;
     let preservedY = 0;
     let preservedLocation = null;
@@ -190,11 +198,20 @@
       const restoreTo = invoker;
       const restoreY = preservedY;
       const restoreLocation = preservedLocation;
+      // A non-modal surface left the page live, so where the reader is now is
+      // the place to keep; only a modal one holds a place to return to.
+      const restoreScroll = openModal && closeOptions.restoreScroll !== false;
+      if (surface && !openModal) {
+        Object.keys(NON_MODAL_GEOMETRY).forEach(function (property) {
+          surface.style.removeProperty(property);
+        });
+      }
       openName = null;
+      openModal = false;
       invoker = null;
       if (surface && surface.open) surface.close();
       if (button) button.setAttribute('aria-expanded', 'false');
-      if (closeOptions.restoreScroll !== false) {
+      if (restoreScroll) {
         window.scrollTo({ top: restoreY, behavior: 'auto' });
         currentLocation = restoreLocation;
         markCurrent();
@@ -205,9 +222,22 @@
       if (typeof held.onClose === 'function') held.onClose(name);
     }
 
-    function open(name, button) {
+    /*
+     * A surface the reader opens is MODAL: the page behind it is inert, focus
+     * is contained, and Escape returns focus to the invoker. A surface a route
+     * foregrounds by itself, before the reader has done anything, is opened
+     * with `{ modal: false }` instead. Opened modally on load, Propers Browse
+     * made the whole document inert, so Tab never reached the site's skip
+     * link and the first key a keyboard reader pressed landed inside a dialog
+     * nobody had asked for. Shown non-modally it stands open just the same,
+     * but takes no focus, closes the moment focus moves anywhere else in the
+     * page — so it can never sit over a focused control — or on Escape, and
+     * the action that names it still opens it modally.
+     */
+    function open(name, button, presentation) {
       const surface = surfaces.get(name);
       if (!surface) return;
+      const modal = !(presentation && presentation.modal === false);
       if (openName) close({ restoreFocus: false });
       markCurrent();
       preservedY = window.scrollY;
@@ -215,10 +245,21 @@
       invoker = button || actions.get(name) || null;
       if (typeof held.beforeOpen === 'function') held.beforeOpen(name);
       openName = name;
+      openModal = modal;
       const action = actions.get(name);
       if (action) action.setAttribute('aria-expanded', 'true');
-      surface.showModal();
-      const first = focusable(surface);
+      // Not `show()`: it runs the dialog focusing steps, which would move focus
+      // — and Tab's starting point — into the surface. The attribute presents
+      // the same non-modal dialog and leaves focus where the reader has it.
+      if (modal) {
+        surface.showModal();
+      } else {
+        Object.keys(NON_MODAL_GEOMETRY).forEach(function (property) {
+          surface.style.setProperty(property, NON_MODAL_GEOMETRY[property]);
+        });
+        surface.setAttribute('open', '');
+      }
+      const first = modal && focusable(surface);
       if (first) first.focus({ preventScroll: true });
       if (name === 'contents') centerCurrentContents(surface);
       if (typeof held.onOpen === 'function') held.onOpen(name);
@@ -276,6 +317,21 @@
         event.preventDefault();
         close();
       });
+    });
+    // A non-modal surface receives no `cancel`, so its two dismissals are
+    // listened for here; while a modal one is open neither listener acts.
+    document.addEventListener('focusin', function (event) {
+      if (!openName || openModal) return;
+      const surface = surfaces.get(openName);
+      if (surface && !surface.contains(event.target)) {
+        close({ restoreFocus: false });
+      }
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key !== 'Escape' || !openName || openModal) return;
+      const surface = surfaces.get(openName);
+      event.preventDefault();
+      close({ restoreFocus: Boolean(surface && surface.contains(document.activeElement)) });
     });
     window.addEventListener('scroll', scheduleMark, { passive: true });
     window.addEventListener('resize', scheduleMark);

@@ -47,25 +47,34 @@
 }
 
 /* This page keeps the shared links but makes the repository chrome one quiet
-   band above the book. */
-body > .site-header {
+   band above the book.
+
+   SCOPED TO THE PAGES THAT LOAD THIS FILE. The header is the layout's, shared
+   by every page on the site, and these rules once said `body > .site-header`
+   with nothing naming a page: bundled or loaded anywhere else, they restyled
+   that page's header too. They now reach it only through the page class the
+   build moves onto `#main-content` (Day and its candidate declare
+   `day-reader-candidate`, the two visual-reset oracles `visual-reset-page`).
+   `:where()` keeps the specificity at `body > .site-header`'s (0,1,1), so on
+   those four pages the cascade is exactly what it was. */
+body:where(:has(> .day-reader-candidate, > .visual-reset-page)) > .site-header {
   grid-template-columns: auto auto minmax(0, 1fr);
   gap: 0.65rem;
   min-height: 3.35rem;
   padding: 0.4rem clamp(0.85rem, 3vw, 1.75rem);
 }
 
-body > .site-header .triptych-mark {
+body:where(:has(> .day-reader-candidate, > .visual-reset-page)) > .site-header .triptych-mark {
   grid-template-columns: repeat(3, 0.34rem);
   min-width: 1.8rem;
   height: 1.45rem;
 }
 
-body > .site-header .triptych-mark i { height: 1rem; }
-body > .site-header .triptych-mark i:nth-child(2) { height: 1.35rem; }
-body > .site-header .brand a { font-size: 1.18rem; }
-body > .site-header .brand span { font-size: 0.62rem; }
-body > .site-header nav {
+body:where(:has(> .day-reader-candidate, > .visual-reset-page)) > .site-header .triptych-mark i { height: 1rem; }
+body:where(:has(> .day-reader-candidate, > .visual-reset-page)) > .site-header .triptych-mark i:nth-child(2) { height: 1.35rem; }
+body:where(:has(> .day-reader-candidate, > .visual-reset-page)) > .site-header .brand a { font-size: 1.18rem; }
+body:where(:has(> .day-reader-candidate, > .visual-reset-page)) > .site-header .brand span { font-size: 0.62rem; }
+body:where(:has(> .day-reader-candidate, > .visual-reset-page)) > .site-header nav {
   justify-self: end;
   gap: 0.85rem;
   font-size: 0.78rem;
@@ -601,23 +610,23 @@ body > .site-header nav {
 }
 
 @media (max-width: 47.5rem) {
-  body > .site-header {
+  body:where(:has(> .day-reader-candidate, > .visual-reset-page)) > .site-header {
     grid-template-columns: auto auto minmax(0, 1fr);
     padding-block: 0.3rem;
   }
 
-  body > .site-header .brand span {
+  body:where(:has(> .day-reader-candidate, > .visual-reset-page)) > .site-header .brand span {
     display: none;
   }
 
-  body > .site-header nav {
+  body:where(:has(> .day-reader-candidate, > .visual-reset-page)) > .site-header nav {
     grid-column: auto;
     flex-wrap: nowrap;
     align-self: stretch;
     border-top: 0;
   }
 
-  body > .site-header nav a {
+  body:where(:has(> .day-reader-candidate, > .visual-reset-page)) > .site-header nav a {
     min-height: 2.75rem;
   }
 }
@@ -727,7 +736,7 @@ body > .site-header nav {
 }
 
 @media print {
-  body > .site-header {
+  body:where(:has(> .day-reader-candidate, > .visual-reset-page)) > .site-header {
     display: none;
   }
 

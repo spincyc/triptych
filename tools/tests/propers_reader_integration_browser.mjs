@@ -891,6 +891,30 @@ async function assertions(cdp, base) {
     assert.equal((await snapshot(cdp)).outcome, 'browse');
     assert.equal(await evaluate(cdp, `document.querySelector('[data-reader-surface="browse"]').open`), true);
     assert.equal(await evaluate(cdp, `document.querySelectorAll('#reader-document .proper').length`), 0);
+    // Browse foregrounded by the route stands open but takes neither the page
+    // nor focus: opened modally it made the document inert, and Tab never
+    // reached the skip link. The first Tab must, and dismisses the surface.
+    const surfaceState = `(() => ({
+      open: document.querySelector('#browse-surface').open,
+      modal: document.querySelector('#browse-surface').matches(':modal'),
+      expanded: document.querySelector('[data-reader-action="browse"]').getAttribute('aria-expanded'),
+      skipFocused: document.activeElement.classList.contains('skip-link'),
+      bodyFocused: document.activeElement === document.body
+    }))()`;
+    assert.deepEqual(await evaluate(cdp, surfaceState),
+      { open: true, modal: false, expanded: 'true', skipFocused: false, bodyFocused: true });
+    for (const type of ['keyDown', 'keyUp']) {
+      await cdp.send('Input.dispatchKeyEvent', { type, key: 'Tab', code: 'Tab', windowsVirtualKeyCode: 9 });
+    }
+    await new Promise((done) => setTimeout(done, 50));
+    assert.deepEqual(await evaluate(cdp, surfaceState),
+      { open: false, modal: false, expanded: 'false', skipFocused: true, bodyFocused: false });
+    await candidate(cdp, base, STATES.missing); await escape(cdp);
+    assert.deepEqual(await evaluate(cdp, surfaceState),
+      { open: false, modal: false, expanded: 'false', skipFocused: false, bodyFocused: true });
+    await click(cdp, '[data-reader-action="browse"]');
+    assert.equal(await evaluate(cdp, `document.querySelector('#browse-surface').matches(':modal')`), true);
+    await escape(cdp);
     await candidate(cdp, base, STATES.invalid);
     assert.equal((await snapshot(cdp)).outcome, 'invalid');
     await candidate(cdp, base, STATES.invalidMass);

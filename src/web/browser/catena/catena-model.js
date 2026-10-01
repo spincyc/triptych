@@ -282,6 +282,89 @@
   }
 
   /**
+   * NOTHING ANSWERS FOR A CHAPTER BUT THE CHAPTER'S OWN DATA.
+   *
+   * The first of the three E1 hardening findings the convergence review left
+   * in its backlog (`review/catena-e1-convergence`, from the V16 review's
+   * "decisive semantic observation defect"). `normalizeChapter` read the six
+   * raw roots of a spine — `fragments`, `sources`, `refusals`, `unfetched`,
+   * `blocked`, `leads` — by ordinary lookup, and the refusal, lead and blocked
+   * members under them the same way, while every other semantic member of
+   * this file had already moved to own data. A value standing on a prototype
+   * therefore became the page's authority —
+   * `chapterProjection(Object.create({fragments: [hostile]}))` rendered the
+   * hostile row as held commentary — and an own accessor was CALLED to find
+   * out what it said.
+   *
+   * These read the way `requestSnapshot` reads a request: by own descriptor,
+   * so an accessor is declined and never invoked, with the prototype asked
+   * whether it names what was asked. Anything that would have answered from
+   * anywhere but the record's own table is neither believed nor ignored: it
+   * marks the `verdict` contaminated, and a contaminated chapter is unreadable
+   * whole — the sentence the page already says of a record it cannot read.
+   * `JSON.parse` makes only plain records and lists of own data properties, so
+   * on every real spine these return exactly what the plain lookups did.
+   */
+  function plainPrototype(value) {
+    const above = Object.getPrototypeOf(value);
+    return above === null
+      || above === (Array.isArray(value) ? Array.prototype : Object.prototype);
+  }
+
+  function ownMember(record, name, verdict) {
+    if (record === null || typeof record !== 'object') return undefined;
+    const spot = Object.getOwnPropertyDescriptor(record, name);
+    if (spot !== undefined) {
+      if (Object.hasOwn(spot, 'value')) return spot.value;
+      verdict.contaminated = true;
+      return undefined;
+    }
+    const above = Object.getPrototypeOf(record);
+    if (above !== null && (!plainPrototype(record) || name in above)) {
+      verdict.contaminated = true;
+    }
+    return undefined;
+  }
+
+  /** A list's members by own descriptor, in order; `null` for a non-list. A
+   *  hole stays a hole (`undefined`, refused later as a non-record). */
+  function ownMembers(value, verdict) {
+    if (!Array.isArray(value)) return null;
+    if (!plainPrototype(value)) verdict.contaminated = true;
+    const length = ownData(value, 'length');
+    const members = [];
+    for (let index = 0; index < length; index += 1) {
+      members.push(ownMember(value, String(index), verdict));
+    }
+    return members;
+  }
+
+  /**
+   * CAN A PARSED VALUE IN THIS REALM BE TAKEN FOR A PROMISE?
+   *
+   * The second hardening finding. A spine and a fragment's text both arrive
+   * through `Triptych.loadJSON`, which resolves a promise with the parsed
+   * value, and resolving a promise with an object asks it for `then`. A
+   * `then` reachable from `Object.prototype` — an alternating getter that
+   * answers `undefined` once and a resolver for forged text the next time —
+   * therefore substituted the document before this file ever saw it, and V16
+   * finalized `HOSTILE SECOND-THEN BODY` instead of the record's own words.
+   * Nothing the parsed JSON itself carries can do that: an own `then` from
+   * JSON is data, never callable. So the only way in is the two prototypes
+   * `JSON.parse` builds on, and while either carries a `then` no value that
+   * crossed that boundary is believed. Asked by descriptor, so a getter
+   * standing there is seen without being run.
+   *
+   * This closes the boundary for what this file is handed; the boundary
+   * itself is the shared loader's (`browser-core.js`), which could stop
+   * resolving promises with raw parsed values altogether.
+   */
+  function realmAdmitsThenable() {
+    return Object.getOwnPropertyDescriptor(Object.prototype, 'then') !== undefined
+      || Object.getOwnPropertyDescriptor(Array.prototype, 'then') !== undefined;
+  }
+
+  /**
    * A number AS THE DATA CARRIES IT, or nothing.
    *
    * Not `Number(value)`: that coercion accepts `"1"` and, worse, accepts `[1]`,
@@ -1269,13 +1352,16 @@
    */
   function normalizeChapter(record) {
     const pass = ++passes;
-    // THE SIX RAW MEMBERS, ONE READ EACH.
-    const listed = record.fragments;
-    const carried = record.sources;
-    const refused = record.refusals;
-    const stopped = record.unfetched;
-    const barred = record.blocked;
-    const leading = record.leads;
+    // THE SIX RAW MEMBERS, ONE OWN-DATA READ EACH (`ownMember` says why), and
+    // one verdict for everything below that would have answered from
+    // somewhere the record does not carry.
+    const verdict = { contaminated: realmAdmitsThenable() };
+    const listed = ownMember(record, 'fragments', verdict);
+    const carried = ownMember(record, 'sources', verdict);
+    const refused = ownMember(record, 'refusals', verdict);
+    const stopped = ownMember(record, 'unfetched', verdict);
+    const barred = ownMember(record, 'blocked', verdict);
+    const leading = ownMember(record, 'leads', verdict);
     // THE MEMBER INVENTORY, TAKEN ONCE AS AN INVENTORY.
     //
     // V14, the V13 review: the list was read once for its members and again
@@ -1287,8 +1373,10 @@
     // acting on an inventory nothing had approved whole. One `slice` reads
     // the length once and each index once; every question below is put to
     // the array this file then owns, and the raw list is never asked again.
-    const inventory = Array.isArray(listed)
-      ? Array.prototype.slice.call(listed) : null;
+    // Taken by own descriptor since the E1 hardening backlog: `slice` read
+    // each index by ordinary lookup, so an index accessor ran and a hole
+    // answered from `Array.prototype`.
+    const inventory = ownMembers(listed, verdict);
     const held = bag(carried);
     // EVERY NESTED SOURCE, NORMALIZED ONCE, UNDER ONE RULE.
     const carriedSources = normalizeSources(held);
@@ -1391,7 +1479,14 @@
     // something and said nothing this page can read — and answering it with
     // "Nothing held here" turns an over-claim into a manufactured negative,
     // which is the trade this correction exists to refuse.
-    const unreadable = inventory === null
+    //
+    // AND A RECORD SOMETHING ELSE ANSWERED FOR. The nested rows are taken
+    // first so that what they found is part of the one verdict.
+    const refusals = normalizeRefusals(refused, verdict);
+    const blocked = Object.freeze(blockedRows(barred, verdict));
+    const leads = Object.freeze(leadRows(leading, verdict));
+    const unreadable = verdict.contaminated
+      || inventory === null
       || (carried !== undefined && held !== carried)
       || (refused !== undefined && bag(refused) !== refused)
       || stopped !== undefined
@@ -1410,9 +1505,9 @@
     made.rows = Object.freeze(rows);
     made.voices = Object.freeze(Array.from(voices.values()).sort(byVoice));
     made.editions = Object.freeze(editions);
-    made.refusals = normalizeRefusals(refused);
-    made.blocked = Object.freeze(blockedRows(barred));
-    made.leads = Object.freeze(leadRows(leading));
+    made.refusals = refusals;
+    made.blocked = blocked;
+    made.leads = leads;
     // `sealed`, not `whole`: this file already has a `whole()` that types a
     // recorded number, and a const of that name would shadow it for the
     // length of this function.
@@ -1495,17 +1590,20 @@
    * refusal member mutated after the chapter was read cannot change the
    * strongest claim this page makes.
    */
-  function normalizeRefusals(value) {
+  function normalizeRefusals(value, verdict) {
     const held = bag(value);
     const kept = Object.create(null);
     for (const key in held) {
       if (!Object.hasOwn(held, key)) continue;
       const rows = [];
-      for (const one of records(held[key])) {
+      // Own data at the key, in the list and in each member, like the roots
+      // above it (`ownMember`): a refusal is the strongest claim this page
+      // makes, and a prototype may not make it for the record.
+      for (const one of records(ownMembers(ownMember(held, key, verdict), verdict))) {
         rows.push(Object.freeze({
-          kind: sound(one.kind),
-          chapter: whole(one.chapter),
-          note: sound(one.note)
+          kind: sound(ownMember(one, 'kind', verdict)),
+          chapter: whole(ownMember(one, 'chapter', verdict)),
+          note: sound(ownMember(one, 'note', verdict))
         }));
       }
       kept[key] = Object.freeze(rows);
@@ -1637,7 +1735,11 @@
   }
 
   function textPayload(loaded) {
-    const record = bag(loaded);
+    // A value that crossed the loader while a `then` stood on the prototypes
+    // `JSON.parse` builds on may not be the document that was fetched
+    // (`realmAdmitsThenable`). It is read as nothing at all — no words, no
+    // acknowledgement, no basis — so it finalizes as unreadable below.
+    const record = realmAdmitsThenable() ? Object.create(null) : bag(loaded);
     const text = sound(ownData(record, 'text'));
     const acknowledged = ownData(record, 'acknowledgement');
     return sealText({
@@ -2397,22 +2499,24 @@
    * renderable — but it does assert that SOMETHING was believed to comment
    * here, and a record naming neither a work nor a man asserts not even that.
    */
-  function leadRow(entry) {
+  function leadRow(entry, verdict) {
+    // Own data, by `ownMember`: an inherited author or an author getter is
+    // not this record naming a work.
     const record = bag(entry);
-    const who = sound(record.author);
-    const title = sound(record.title);
+    const who = sound(ownMember(record, 'author', verdict));
+    const title = sound(ownMember(record, 'title', verdict));
     if (!who && !title) return null;
     // FROZEN LIKE EVERY OTHER ROW THE PAGE RENDERS. V14: the arrays were
     // sealed and their members were not, so a lead or a blocked entry a
     // consumer trusts as final could still be rewritten in place.
-    return Object.freeze({ who: who, title: title, when: say(record.date) });
+    return Object.freeze({ who: who, title: title, when: say(ownMember(record, 'date', verdict)) });
   }
 
-  /** The acquisition list, its members alone. */
-  function leadRows(value) {
+  /** The acquisition list, its members alone, each taken by own descriptor. */
+  function leadRows(value, verdict) {
     const rows = [];
-    for (const one of records(value)) {
-      const row = leadRow(one);
+    for (const one of records(ownMembers(value, verdict))) {
+      const row = leadRow(one, verdict);
       if (row) rows.push(row);
     }
     return rows;
@@ -2426,21 +2530,23 @@
    * it, and a page that counted such a record told the reader this project
    * holds a work it cannot name.
    */
-  function blockedRow(entry) {
+  function blockedRow(entry, verdict) {
     const record = bag(entry);
     // Each field on its own merit: coupled, a missing author lost the title.
-    const named = [sound(record.author), sound(record.work)]
+    // Each by own descriptor, as `leadRow` reads its own.
+    const named = [sound(ownMember(record, 'author', verdict)),
+      sound(ownMember(record, 'work', verdict))]
       .filter(Boolean).join(' — ');
-    const why = sound(record.reason);
+    const why = sound(ownMember(record, 'reason', verdict));
     if (!named && !why) return null;
     return Object.freeze({ named: named, why: why });
   }
 
-  /** The held-and-blocked rows, their members alone. */
-  function blockedRows(value) {
+  /** The held-and-blocked rows, their members alone, by own descriptor. */
+  function blockedRows(value, verdict) {
     const rows = [];
-    for (const one of records(value)) {
-      const row = blockedRow(one);
+    for (const one of records(ownMembers(value, verdict))) {
+      const row = blockedRow(one, verdict);
       if (row) rows.push(row);
     }
     return rows;

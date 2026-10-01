@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Name collisions between the shared browser stylesheet and an instrument's own.
 
-Three defects sat in the browser tree and each one is a class of defect rather
+Four defects sat in the browser tree and each one is a class of defect rather
 than an incident.
 
 1. TWO COMPONENTS UNDER ONE NAME. `shared/browser-core.css` styled `.field` as a
@@ -30,6 +30,14 @@ than an incident.
    carry that value, and each rendered `Instrument read: none-claimed — ` with a
    dangling em dash where the corpus has a sentence to say.
 
+4. ONE PAGE'S STYLESHEET RESTYLING EVERY PAGE'S HEADER. The site header,
+   footer, banner and breadcrumb belong to `release/public-alpha/layout.html`
+   and stand on every page. `liturgy/day-missal.css` restyled them through
+   `body > .site-header`, which names no page at all: loaded or bundled
+   anywhere else, it re-laid-out that page's header too. A rule may reach the
+   layout's chrome only from inside a page scope — a `:has()` naming a class
+   the page itself owns — the way `reader-instrument.css` hides it.
+
 These tests are source-level. They read the files rather than a rendered page,
 except where a model can be replayed under node, which the landmark test does.
 """
@@ -48,6 +56,8 @@ ROOT = Path(__file__).resolve().parents[2]
 BROWSER = ROOT / "src/web/browser"
 CORE_CSS = BROWSER / "shared/browser-core.css"
 CORE_JS = BROWSER / "shared/browser-core.js"
+LAYOUT = ROOT / "release/public-alpha/layout.html"
+GENERATOR = ROOT / "tools/public-alpha"
 ACT_HISTORY = ROOT / "src/web/data/structure/act-history"
 NODE = shutil.which("node")
 
@@ -252,6 +262,150 @@ class DocumentLandmarkTest(unittest.TestCase):
     self.assertEqual(report["byElement"], "somewhere-else")
     self.assertIsNone(report["noLandmark"]["region"])
     self.assertEqual(report["noLandmark"]["spoken"], "boom")
+
+
+def published_entrances() -> tuple[str, ...]:
+  """The entrance directories the build publishes, read off the generator."""
+  found = re.search(r"^WEB_BROWSER_ENTRANCES = \(([^)]*)\)", GENERATOR.read_text(), re.M)
+  if found is None:
+    raise AssertionError("tools/public-alpha no longer declares WEB_BROWSER_ENTRANCES")
+  return tuple(re.findall(r'"([^"]+)"', found.group(1)))
+
+
+def layout_chrome_classes() -> set[str]:
+  """Every class the layout stands on every page, and nothing a page owns.
+
+  Read off `layout.html`, plus the two pieces `wrap_in_layout` writes in
+  around it — the release banner and the breadcrumb — which are asserted to
+  still be the generator's own names. `skip-link` is left out: every browser
+  page carries one of its own and the shared core styles that class for both.
+  """
+  found: set[str] = set()
+  for value in re.findall(r'class="([^"{]*)"', LAYOUT.read_text()):
+    found |= set(value.split())
+  generator = GENERATOR.read_text()
+  for written in ("release-banner", "breadcrumb"):
+    if f'class="{written}' not in generator:
+      raise AssertionError(f"tools/public-alpha no longer writes .{written}")
+    found.add(written)
+  return found - {"skip-link"}
+
+
+def selectors(path: Path) -> list[str]:
+  """Every complex selector in a stylesheet, split only at TOP-LEVEL commas.
+
+  The commas inside `:has(> .a, > .b)` belong to the argument, not to the
+  list; splitting there would read half a scope as a selector of its own.
+  """
+  found: list[str] = []
+  for block in re.finditer(r"([^{}]+)\{", without_comments(path.read_text())):
+    prelude = block.group(1).strip()
+    if not prelude or prelude.startswith("@"):
+      continue
+    depth, start = 0, 0
+    for index, character in enumerate(prelude):
+      if character == "(":
+        depth += 1
+      elif character == ")":
+        depth -= 1
+      elif character == "," and depth == 0:
+        found.append(prelude[start:index].strip())
+        start = index + 1
+    found.append(prelude[start:].strip())
+  return [one for one in found if one]
+
+
+# The classes the BUILD writes onto every browser page's wrapper. A `:has()`
+# naming one of them scopes nothing, because every page carries it.
+BUILD_WRAPPER_CLASSES = {"page-shell", "page-browser", "section-toned"}
+
+# Unscoped reaches into the layout's chrome that are still in the tree. Listed
+# rather than silently permitted, so the list can only shorten. `sources.css`
+# sets a touch-target floor on the header's brand link and the footer's links
+# from bare `.brand a` and `.site-footer a`; it is served only on Sources today,
+# which is the same "only this page loads it" argument `day-missal.css` once
+# rested on. Recorded, not endorsed.
+UNSCOPED_LAYOUT_CHROME = {
+  "sources/sources.css": {".brand a", ".site-footer a"},
+}
+
+
+def page_scoped(selector: str) -> bool:
+  """Does the selector reach the chrome only from inside a named page?
+
+  It must carry a `:has()` whose argument names a class some page owns — not
+  a class the build stamps on every wrapper, and not the chrome itself.
+  """
+  for argument in re.findall(r":has\(([^()]*)\)", selector):
+    named = set(re.findall(r"\.([A-Za-z0-9_-]+)", argument))
+    named -= BUILD_WRAPPER_CLASSES | layout_chrome_classes()
+    named = {one for one in named if not one.startswith("section-")}
+    if named:
+      return True
+  return False
+
+
+class LayoutChromeScopeTest(unittest.TestCase):
+  def test_no_instrument_reaches_the_layout_chrome_unscoped(self):
+    """`body > .site-header` in day-missal.css restyled every page's header."""
+    chrome = layout_chrome_classes()
+    self.assertTrue({"site-header", "site-footer", "brand"} <= chrome, chrome)
+    for sheet in instrument_stylesheets():
+      name = sheet.relative_to(BROWSER).as_posix()
+      unscoped = {
+        one for one in selectors(sheet)
+        if set(re.findall(r"\.([A-Za-z0-9_-]+)", one)) & chrome and not page_scoped(one)
+      }
+      with self.subTest(stylesheet=name):
+        self.assertEqual(
+          unscoped, UNSCOPED_LAYOUT_CHROME.get(name, set()),
+          f"{name} reaches the layout's chrome from {sorted(unscoped)}; scope "
+          "it under a class the page owns, as `body:has(.reader-instrument) > "
+          ".site-header` does",
+        )
+
+  def test_the_day_missal_header_rules_keep_their_cascade_weight(self):
+    """The scope is a `:where()`, so the four pages' cascade is unchanged.
+
+    Strip the `:where(...)` and each selector is the one it replaced; a scope
+    that added specificity could have changed which rule wins on the very
+    pages this file is meant for.
+    """
+    sheet = BROWSER / "liturgy/day-missal.css"
+    header = [one for one in selectors(sheet) if ".site-header" in one]
+    self.assertEqual(len(header), 12, "the twelve header selectors are all here")
+    for one in header:
+      with self.subTest(selector=one):
+        self.assertTrue(one.startswith("body:where(:has("), one)
+        self.assertTrue(re.sub(r":where\((?:[^()]|\([^()]*\))*\)", "", one)
+                        .startswith("body > .site-header"), one)
+
+  def test_the_day_missal_scope_names_exactly_the_pages_that_load_it(self):
+    """A page that starts loading day-missal.css is a decision, not a drift.
+
+    The scope lists page classes; this derives the published pages that load
+    the sheet and requires each to carry a scoped class and no other page to.
+    """
+    sheet = BROWSER / "liturgy/day-missal.css"
+    scope: set[str] = set()
+    for one in selectors(sheet):
+      if ".site-header" in one:
+        for argument in re.findall(r":has\(([^()]*)\)", one):
+          scope |= set(re.findall(r"\.([A-Za-z0-9_-]+)", argument))
+    loaders, others = [], []
+    for entrance in published_entrances():
+      for page in sorted((BROWSER / entrance).glob("*.html")):
+        text = page.read_text()
+        body = re.search(r'<body[^>]*\bclass="([^"]*)"', text)
+        classes = set(body.group(1).split()) if body else set()
+        (loaders if 'href="day-missal.css"' in text else others).append((page, classes))
+    self.assertGreaterEqual(len(loaders), 4, "expected the Day pages to load the sheet")
+    for page, classes in loaders:
+      with self.subTest(loads=page.name):
+        self.assertTrue(classes & scope, f"{page.name} loads day-missal.css outside its scope")
+    for page, classes in others:
+      with self.subTest(does_not_load=page.relative_to(BROWSER).as_posix()):
+        self.assertFalse(classes & scope, f"{page.name} is in scope but never loads the sheet")
 
 
 class CitationVocabularyTest(unittest.TestCase):

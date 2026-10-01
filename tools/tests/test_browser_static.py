@@ -21,6 +21,7 @@ import importlib.machinery
 import importlib.util
 import shutil
 import subprocess
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -116,6 +117,75 @@ class BrowserPagePublishabilityTest(unittest.TestCase):
     rendered = self.module.render_browser_page(source, output_relative, False, {})
     self.assertEqual(source.read_text(encoding="utf-8").count("<main"), 0)
     self.assertEqual(rendered.count("<main"), 1)
+    self.assertIn('<main id="main-content"', rendered)
+
+  def test_every_built_browser_page_carries_exactly_one_document_landmark(self):
+    """One `<main>` per BUILT page — the publish side, which nothing read.
+
+    Every source page here declared one landmark or none and passed, while the
+    artifact wrapped twelve of them in the layout's own `<main>`: two document
+    landmarks on every route but Sources, 108 `single-main-element` failures in
+    `corpus_browser_gate.mjs`, and no static test that rendered a page. A page
+    naming its own `<main>` is wrapped in a plain `<div id="main-content">`; a
+    page naming none keeps the layout's. Either way exactly one survives, and
+    the layout's skip link — the only one left after the page's own is
+    stripped — lands on an element that exists.
+    """
+    for page in self.pages:
+      output_relative = f"{page.parent.name}/{page.name}"
+      declared = page.read_text(encoding="utf-8").count("<main")
+      with self.subTest(page=page.relative_to(ROOT).as_posix(), declared=declared):
+        built = self.module.render_browser_page(page, output_relative, False, {})
+        self.assertEqual(built.count("<main"), 1, "exactly one <main> per built page")
+        self.assertEqual(built.count("</main>"), 1)
+        wrapper = "div" if declared else "main"
+        self.assertIn(f'<{wrapper} id="main-content"', built)
+        self.assertEqual(built.count('class="skip-link"'), 1)
+        self.assertIn('href="#main-content"', built)
+        self.assertEqual(built.count('id="main-content"'), 1)
+
+  def test_a_browser_page_with_two_landmarks_is_refused(self):
+    """The wrapper can remove a nested pair it made, not one a page made.
+
+    Zero is repaired by the layout and one is kept; two would publish two
+    document landmarks whatever the layout did, so the split refuses the page
+    rather than choosing which of them a reader should believe.
+    """
+    # Under the repository, because the split names a page by its path there;
+    # `build/` is the ignored place a test may write.
+    (ROOT / "build").mkdir(exist_ok=True)
+    with tempfile.TemporaryDirectory(dir=ROOT / "build") as scratch:
+      page = Path(scratch) / "index.html"
+      page.write_text(
+        "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">"
+        "<title>Two</title><link rel=\"stylesheet\" href=\"two.css\"></head>"
+        "<body><main id=\"reading\"></main><main id=\"also\"></main>"
+        "<script src=\"two.js\"></script></body></html>",
+        encoding="utf-8",
+      )
+      with self.assertRaises(self.module.ReleaseError) as refused:
+        self.module.browser_page_parts(page, "catena/index.html")
+      self.assertIn("declares 2 <main> elements", str(refused.exception))
+      # A `<main>` mentioned in a comment is not a landmark and is not counted.
+      page.write_text(
+        "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">"
+        "<title>One</title><link rel=\"stylesheet\" href=\"one.css\"></head>"
+        "<body><!-- the <main> below is the reading --><main id=\"reading\"></main>"
+        "<script src=\"one.js\"></script></body></html>",
+        encoding="utf-8",
+      )
+      parts = self.module.browser_page_parts(page, "catena/index.html")
+      self.assertEqual(parts["content_element"], "div")
+
+  def test_a_prose_page_keeps_the_layouts_landmark(self):
+    """The default is proved through the real layout, not only declared."""
+    prose = self.module.wrap_in_layout(
+      "ABOUT.md", "about.html", "page-shell", "About", "", "<p>Prose.</p>",
+      False, {},
+    )
+    self.assertIn('<main id="main-content"', prose)
+    self.assertEqual(prose.count("<main"), 1)
+    self.assertNotIn("{{CONTENT_ELEMENT}}", prose)
 
   def test_every_browser_source_keeps_one_page_heading(self):
     for page in self.pages:

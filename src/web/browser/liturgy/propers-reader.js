@@ -1529,7 +1529,10 @@
         populateBrowseSurface();
         refreshDetailsAfterOutcome();
         if (serial !== runtime.serial) return;
-        readerShell.open('browse', shellRoot.querySelector('[data-reader-action="browse"]'));
+        // Foregrounded by the route, not asked for: shown without taking the
+        // page, so the document stays live and its skip link reachable.
+        readerShell.open('browse', shellRoot.querySelector('[data-reader-action="browse"]'),
+          { modal: false });
         return;
       }
 

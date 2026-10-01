@@ -78,6 +78,35 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         # an unresolved entry, but lifecycle ownership remains in the shell.
         self.assertEqual(text(JS).count('data-reader-action="browse"'), 1)
 
+    def test_route_foregrounded_browse_does_not_take_the_page(self) -> None:
+        """A new visit still opens Browse, but non-modally and without focus.
+
+        `readerShell.open('browse', ...)` on load used `showModal()`, which made
+        the document inert: Tab never reached the site's skip link (27
+        `skip-link-targets-existing-element` failures in the artifact gate).
+        The route now asks the shell for its non-modal presentation, which the
+        shell dismisses on focus leaving it or on Escape; the reader's own
+        Browse action stays modal. Driven for real in the Propers harness.
+        """
+        source = text(JS)
+        self.assertEqual(source.count("{ modal: false }"), 1)
+        self.assertIn(
+            "readerShell.open('browse', shellRoot.querySelector('[data-reader-action=\"browse\"]'),\n"
+            "          { modal: false });",
+            source,
+        )
+        shell = text(SHELL_JS)
+        self.assertEqual(shell.count("showModal()"), 1)
+        for token in (
+            "surface.showModal();",
+            "surface.setAttribute('open', '');",
+            "const NON_MODAL_GEOMETRY = Object.freeze({ position: 'fixed', inset: '0', 'z-index': '90' });",
+            "const first = modal && focusable(surface);",
+            "document.addEventListener('focusin'",
+            "event.key !== 'Escape' || !openName || openModal",
+        ):
+            self.assertIn(token, shell)
+
     def test_shared_shell_remains_one_entrance_neutral_implementation(self) -> None:
         source = text(SHELL_JS)
         for token in (

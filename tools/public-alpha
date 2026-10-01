@@ -3396,13 +3396,22 @@ def wrap_in_layout(
     body_extra: str = "",
     declared_description: str = "",
     declared_robots: str = "",
+    content_element: str = "main",
 ) -> str:
     """Put one page's content inside the site's chrome.
 
     Every page a reader can reach comes through here, whichever way its content
     was produced, so the header, navigation, footer, stylesheet and robots
     metadata cannot differ between one page and the next.
+
+    `content_element` names the element the chrome wraps the content in: a
+    `<main>` where the layout is the page's only document landmark, and a
+    plain `<div>` where the content already declares its own `<main>`, so the
+    published page never nests one inside the other. `render_browser_page`
+    decides which from the page itself.
     """
+    if content_element not in ("main", "div"):
+        raise ReleaseError(f"unsupported layout content element: {content_element!r}")
     template = (TEMPLATE_ROOT / "layout.html").read_text(encoding="utf-8")
     if declared_robots:
         robots = f'<meta name="robots" content="{html.escape(declared_robots)}">'
@@ -3439,6 +3448,7 @@ def wrap_in_layout(
         social += social_meta(output_relative, title, description)
     home_current, about_current, feedback_current = navigation_state(source_relative)
     replacements = {
+        "{{CONTENT_ELEMENT}}": content_element,
         "{{PAGE_CLASS}}": page_class,
         "{{DOCUMENT_TITLE}}": html.escape(document_title(title)),
         "{{ROBOTS}}": robots,
@@ -3475,6 +3485,7 @@ BROWSER_STYLESHEET_RE = re.compile(r'<link rel="stylesheet" href="[^"]+">')
 BROWSER_SCRIPT_RE = re.compile(r'<script src="[^"]+"></script>')
 BROWSER_SKIP_LINK_RE = re.compile(r'<a class="skip-link" href="[^"]+">.*?</a>\s*', re.DOTALL)
 BROWSER_BODY_CLASS_RE = re.compile(r'\bclass="([^"]*)"')
+BROWSER_MAIN_RE = re.compile(r"<main[\s>]")
 # What a browser page's head may hold. Anything else is a page doing something
 # the layout has no place for, and is refused rather than dropped: a stylesheet
 # or a meta tag silently discarded here would reach the reader as a page that
@@ -3526,9 +3537,24 @@ def browser_page_parts(source_path: Path, output_relative: str) -> dict:
     if not scripts:
         raise ReleaseError(f"{label}: declares no script; the page cannot render without one")
     content = BROWSER_SCRIPT_RE.sub("", body)
-    # The layout supplies its own skip link, to its own main element. Two of
-    # them puts the reader on a target that is no longer the top of the content.
+    # The layout supplies its own skip link, to the element it wraps the page
+    # in. Two of them puts the reader on a target that is no longer the top of
+    # the content.
     content = BROWSER_SKIP_LINK_RE.sub("", content, count=1)
+    # ONE DOCUMENT LANDMARK PER PUBLISHED PAGE. A page that names its own
+    # `<main>` — the reading, the map, the code — keeps it, and the layout wraps
+    # it in a plain `<div>`: wrapping it in a second `<main>` told assistive
+    # technology the page had two contents, on twelve routes, for as long as no
+    # gate read the built page. A page that declares none (Sources) is given the
+    # layout's `<main>`, so neither case can publish with no landmark at all.
+    # Two or more cannot be repaired by the wrapper and are refused. A `<main>`
+    # named inside a comment is prose, not a landmark, and is not counted.
+    landmarks = len(BROWSER_MAIN_RE.findall(re.sub(r"<!--.*?-->", "", content, flags=re.DOTALL)))
+    if landmarks > 1:
+        raise ReleaseError(
+            f"{label}: declares {landmarks} <main> elements; a browser page may "
+            "declare at most one, which the layout then wraps without adding its own"
+        )
 
     body_class = BROWSER_BODY_CLASS_RE.search(body_attributes)
     classes = ["page-shell", "page-browser", "section-toned"]
@@ -3552,6 +3578,7 @@ def browser_page_parts(source_path: Path, output_relative: str) -> dict:
         "body_extra": "".join(f"\n  {script}" for script in scripts),
         "content": content.strip("\n"),
         "page_class": " ".join(classes),
+        "content_element": "div" if landmarks else "main",
     }
 
 
@@ -3614,6 +3641,7 @@ def render_browser_page(
         body_extra=parts["body_extra"],
         declared_description=parts["declared_description"],
         declared_robots=parts["declared_robots"],
+        content_element=parts["content_element"],
     )
 
 

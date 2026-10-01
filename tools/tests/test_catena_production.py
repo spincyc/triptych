@@ -28,12 +28,20 @@ Two retained classes are one test lighter than in wave-1: `FrozenContractTest`
 lost the forbidden candidate SHA pin, and `V15TransportOwnershipTest` lost the
 write-break probe its seam no longer carries.
 
+Added 2026-10-01, when the maintainer decided the convergence review's
+hardening backlog be fixed rather than carried: three runnable classes and
+nine tests (`E1HardeningBacklogTest`, `StaticReferenceNameIsReplacedTest`,
+`BodyWriteFailureIsTerminalTest`, and one `StaticDocumentTruthTest` method
+for the empty no-JavaScript heading) — 74 runnable classes, 403 tests.
+
 WHAT IS DELIBERATELY NOT HERE
 -----------------------------
 No synthetic hostile machinery: no planted prototypes, accessors, `Proxy`
 walkers, thenables or realm pollution; no evidence-package or attempt-history
 validation; no candidate or source identity pin of any kind. Those cases stay
-with the convergence hardening backlog and the original wave-1 file. The replay
+with the original wave-1 file — with one bounded exception:
+`E1HardeningBacklogTest` plants exactly the shapes the three backlog findings
+name, against the model alone, to prove each is closed. The replay
 harness (REPLAY, SCENARIOS, the DOM shim and ReplayTest) is carried only as far
 as the retained classes reach: SCENARIOS holds only the entries they read, and
 the harness holds only the seams those entries use.
@@ -2494,10 +2502,10 @@ function makeDocument() {
   return document;
 }
 
-/* The shape of the STATIC catena/index.html the script reaches into: empty
- * reference, "Needs JavaScript" placeholder options, the open controls
- * disclosure, and a static-entry section in main — no aria-busy, no
- * "Loading" placeholder. */
+/* The shape of the STATIC catena/index.html the script reaches into: the
+ * reference naming no chapter ("No chapter shown — needs JavaScript"),
+ * "Needs JavaScript" placeholder options, the open controls disclosure, and a
+ * static-entry section in main — no aria-busy, no "Loading" placeholder. */
 function buildPage(document) {
   const body = document.body;
   const add = (parent, tag, id, className) => {
@@ -2511,7 +2519,7 @@ function buildPage(document) {
   // CHANGED PIN (review 2026-08-11, robustness): the primary Scripture locus
   // was absent from heading navigation; the reference line is now an h2.
   const line = add(header, 'h2', null, 'reference-line');
-  add(line, 'span', 'reference');
+  add(line, 'span', 'reference').textContent = 'No chapter shown — needs JavaScript';
   add(line, 'span', 'reference-book', 'reference-book');
   add(header, 'p', 'tally', 'tally');
   add(body, 'div', 'banner', 'banner');
@@ -5201,6 +5209,25 @@ class StaticDocumentTruthTest(unittest.TestCase):
 
     def test_the_selects_say_the_truth_as_served(self):
         self.assertEqual(self.page.count('<option value="">Needs JavaScript</option>'), 4)
+
+    def test_the_reference_heading_has_a_name_as_served(self):
+        # E1 hardening backlog (integration review c3698563e): the reference
+        # `h2` held only empty spans until script ran, so with scripts off the
+        # page's second heading stood in heading navigation with no name. As
+        # served it now names no chapter and says why, in the selects' words;
+        # the script's first act replaces it with "Loading…" (the replay pins
+        # that it never survives a run).
+        line = self.page[self.page.index('<h2 class="reference-line">'):]
+        line = line[:line.index("</h2>")]
+        named = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", line)).strip()
+        self.assertEqual(named, "No chapter shown — needs JavaScript")
+        self.assertIn('<span id="reference">No chapter shown — needs JavaScript</span>', line)
+        self.assertIn('<span class="reference-book" id="reference-book"></span>', line)
+        script = held(CATENA / "catena.js")
+        start = script[script.index("async function start()"):]
+        self.assertLess(start.index("reference.textContent = 'Loading…';"),
+                        start.index("T.loadJSON("),
+                        "the static name must be replaced before anything is fetched")
 
     def test_the_main_region_owns_static_truth_and_browse_entries(self):
         main = self.page[self.page.index("<main"):self.page.index("</main>")]
@@ -9791,6 +9818,282 @@ class V7SharedFieldDriftTest(unittest.TestCase):
                     "extent", "source"):
             with self.subTest(field=own):
                 self.assertNotIn(own, inherited)
+
+
+class E1HardeningBacklogTest(unittest.TestCase):
+    """The convergence review's three HARDENING_BACKLOG findings, closed.
+
+    `review/catena-e1-convergence` classified them as not production-reachable
+    — JSON makes only plain records of own data — and moved them out of the
+    E1 merge loop; on 2026-10-01 the maintainer decided they be fixed. This
+    file's opening note says no planted prototypes, accessors or thenables
+    live here; these are the exception, held to exactly the three findings,
+    each driven against the real model with the real Genesis 1 spine.
+
+    1. INHERITED VALUES AND ACCESSORS AT THE SIX RAW CHAPTER ROOTS AND THEIR
+       NESTED MEMBERS. `normalizeChapter` read `fragments`, `sources`,
+       `refusals`, `unfetched`, `blocked` and `leads` by ordinary lookup, and
+       the refusal, lead and blocked members below them the same way, so a
+       prototype's value became the page's authority and an own getter was
+       called. Every one of them now reads by own descriptor; anything that
+       would have answered for the record from elsewhere makes the chapter
+       unreadable, whole, and no getter is ever invoked.
+    2. THE ALTERNATING INHERITED `then`. A `then` getter on `Object.prototype`
+       that answers `undefined` once and a resolver the next time substitutes
+       the parsed document at the loader's promise boundary, before the model
+       sees it. The model now refuses any value finalized while either
+       prototype `JSON.parse` builds on carries a `then`: the text reads as
+       unreadable and states nothing it carried.
+    3. THE BODY-WRITE RETRY CRITERION — see `BodyWriteFailureIsTerminalTest`.
+    """
+
+    PROBE = r"""
+    'use strict';
+    const M = require(process.argv[1]);
+    const canonical = JSON.parse(process.argv[2]);
+    const fresh = () => JSON.parse(JSON.stringify(canonical));
+    const project = (file) => {
+      try {
+        const made = M.chapterProjection(file);
+        const notes = [];
+        for (const key of Object.keys(made.refusals)) {
+          for (const one of made.refusals[key]) notes.push(one.note);
+        }
+        return { unreadable: made.unreadable, rows: made.rows.length,
+          leads: made.leads.map((one) => one.who),
+          blocked: made.blocked.map((one) => one.named + ' ' + one.why),
+          refusals: notes };
+      } catch (error) {
+        return { threw: String((error && error.message) || error) };
+      }
+    };
+    const PLANTED = {
+      fragments: () => fresh().fragments,
+      sources: () => fresh().sources,
+      refusals: () => ({ 'douay-rheims': [
+        { kind: 'displaced', chapter: 1, note: 'PLANTED REFUSAL' }] }),
+      unfetched: () => 'PLANTED UNFETCHED',
+      blocked: () => [{ author: 'PLANTED BLOCKED', work: 'W', reason: 'R' }],
+      leads: () => [{ author: 'PLANTED LEAD', title: 'T' }]
+    };
+    const out = { control: project(fresh()), inherited: {}, getter: {}, nested: {} };
+    for (const name of Object.keys(PLANTED)) {
+      const own = fresh();
+      delete own[name];
+      const above = {};
+      above[name] = PLANTED[name]();
+      out.inherited[name] = project(Object.assign(Object.create(above), own));
+      const accessor = fresh();
+      const value = PLANTED[name]();
+      let calls = 0;
+      Object.defineProperty(accessor, name, { enumerable: true, configurable: true,
+        get() { calls += 1; return value; } });
+      out.getter[name] = Object.assign(project(accessor), { calls: 0 });
+      out.getter[name].calls = calls;
+    }
+    {
+      const own = fresh();
+      delete own.leads;
+      Object.prototype.leads = PLANTED.leads();
+      try { out.polluted = project(own); } finally { delete Object.prototype.leads; }
+    }
+    {
+      const file = fresh();
+      let calls = 0;
+      file.leads = [{ get author() { calls += 1; return 'PLANTED LEAD'; }, title: 'T' }];
+      out.nested.leadGetter = project(file);
+      out.nested.leadGetter.calls = calls;
+    }
+    {
+      const file = fresh();
+      file.leads = [Object.create({ author: 'PLANTED LEAD', title: 'T' })];
+      out.nested.leadInherited = project(file);
+    }
+    {
+      const file = fresh();
+      file.refusals = { 'douay-rheims': [Object.create(
+        { kind: 'displaced', chapter: 1, note: 'PLANTED REFUSAL' })] };
+      out.nested.refusalInherited = project(file);
+    }
+    {
+      const file = fresh();
+      let calls = 0;
+      file.blocked = [{ author: 'A', work: 'W', get reason() { calls += 1; return 'PLANTED'; } }];
+      out.nested.blockedGetter = project(file);
+      out.nested.blockedGetter.calls = calls;
+    }
+    {
+      const file = fresh();
+      const first = file.fragments[0];
+      let calls = 0;
+      Object.defineProperty(file.fragments, '0', { enumerable: true, configurable: true,
+        get() { calls += 1; return first; } });
+      out.nested.indexGetter = project(file);
+      out.nested.indexGetter.calls = calls;
+    }
+    {
+      let calls = 0;
+      Object.defineProperty(Object.prototype, 'then', { configurable: true,
+        get() { calls += 1; return undefined; } });
+      try {
+        out.realm = {
+          chapter: project(fresh()),
+          text: Object.assign({}, M.textPayload(JSON.parse('{"text":"OWN TEXT","acknowledgement":"OWN"}')))
+        };
+      } finally { delete Object.prototype.then; }
+      out.realm.calls = calls;
+      out.realmControl = Object.assign({}, M.textPayload(JSON.parse('{"text":"OWN TEXT"}')));
+    }
+    (async () => {
+      // The loader's shape: an async function that returns a parsed value.
+      let observed = 0;
+      Object.defineProperty(Object.prototype, 'then', { configurable: true, get() {
+        observed += 1;
+        if (observed % 2 === 1) return undefined;
+        return function (resolve) { resolve({ text: 'HOSTILE SECOND-THEN BODY' }); };
+      } });
+      let loaded;
+      let content;
+      try {
+        const loadJSON = async () => await Promise.resolve(JSON.parse('{"text":"OWN TEXT"}'));
+        loaded = await loadJSON();
+        content = M.textPayload(loaded);
+      } finally { delete Object.prototype.then; }
+      const spot = Object.getOwnPropertyDescriptor(loaded, 'text');
+      out.substitution = { arrived: spot ? spot.value : null,
+        content: Object.assign({}, content) };
+      process.stdout.write(JSON.stringify(out));
+    })();
+    """
+
+    ROOTS = ("fragments", "sources", "refusals", "unfetched", "blocked", "leads")
+
+    @classmethod
+    def told(cls) -> dict:
+        if not hasattr(cls, "_told"):
+            spine = held(ROOT / "src/web/data/structure/catena/01-gen/001.json")
+            cls._told = json.loads(subprocess.run(
+                [NODE, "-e", cls.PROBE, str(CATENA / "catena-model.js"), spine],
+                capture_output=True, text=True, check=True).stdout)
+        return cls._told
+
+    def assert_refused(self, seen: dict, label: str) -> None:
+        self.assertNotIn("threw", seen, label)
+        self.assertIs(seen["unreadable"], True, f"{label} was believed: {seen}")
+        planted = [one for field in ("leads", "blocked", "refusals")
+                   for one in seen[field] if "PLANTED" in one]
+        self.assertEqual(planted, [], f"{label} carried a planted value into a row")
+
+    @unittest.skipIf(NODE is None, "node is not installed; the model cannot be replayed")
+    def test_the_real_spine_still_reads_as_it_always_did(self):
+        control = self.told()["control"]
+        self.assertIs(control["unreadable"], False)
+        self.assertGreater(control["rows"], 100)
+        self.assertTrue(control["leads"], "Genesis 1 carries leads")
+
+    @unittest.skipIf(NODE is None, "node is not installed; the model cannot be replayed")
+    def test_no_inherited_chapter_root_is_believed(self):
+        for root in self.ROOTS:
+            with self.subTest(root=root):
+                seen = self.told()["inherited"][root]
+                self.assert_refused(seen, "inherited " + root)
+                if root == "fragments":
+                    self.assertEqual(seen["rows"], 0, "an inherited list rendered rows")
+        self.assert_refused(self.told()["polluted"], "Object.prototype.leads")
+
+    @unittest.skipIf(NODE is None, "node is not installed; the model cannot be replayed")
+    def test_no_chapter_root_accessor_is_ever_called(self):
+        for root in self.ROOTS:
+            with self.subTest(root=root):
+                seen = self.told()["getter"][root]
+                self.assert_refused(seen, root + " getter")
+                self.assertEqual(seen["calls"], 0, root + " getter was invoked")
+
+    @unittest.skipIf(NODE is None, "node is not installed; the model cannot be replayed")
+    def test_nested_members_and_list_indices_answer_only_for_themselves(self):
+        nested = self.told()["nested"]
+        for label in ("leadGetter", "leadInherited", "refusalInherited",
+                      "blockedGetter", "indexGetter"):
+            with self.subTest(case=label):
+                self.assert_refused(nested[label], label)
+                self.assertEqual(nested[label].get("calls", 0), 0, label + " was invoked")
+
+    @unittest.skipIf(NODE is None, "node is not installed; the model cannot be replayed")
+    def test_a_thenable_realm_finalizes_nothing_it_was_handed(self):
+        realm = self.told()["realm"]
+        self.assert_refused(realm["chapter"], "chapter under Object.prototype.then")
+        self.assertIs(realm["text"]["unreadable"], True)
+        self.assertEqual(realm["text"]["text"], "")
+        self.assertEqual(realm["text"]["acknowledgement"], "")
+        self.assertEqual(realm["calls"], 0, "the realm check ran the getter it was looking at")
+        control = self.told()["realmControl"]
+        self.assertIs(control["unreadable"], False)
+        self.assertEqual(control["text"], "OWN TEXT")
+
+    @unittest.skipIf(NODE is None, "node is not installed; the model cannot be replayed")
+    def test_the_alternating_then_substitution_reaches_no_body(self):
+        substitution = self.told()["substitution"]
+        # NON-VACUITY: the fixture really substitutes the document at the
+        # promise boundary, exactly as the V16 review's probe did.
+        self.assertEqual(substitution["arrived"], "HOSTILE SECOND-THEN BODY")
+        content = substitution["content"]
+        self.assertIs(content["unreadable"], True)
+        self.assertEqual(content["text"], "")
+
+
+class StaticReferenceNameIsReplacedTest(ReplayTest):
+    """The served heading names no chapter; a page whose script ran never does.
+
+    The replay's static page carries the same served text as `index.html`
+    (`buildPage`), so if any path — a chapter, an empty chapter, an invalid
+    address, a failed bootstrap — left it standing, it would be here.
+    """
+
+    SERVED = "No chapter shown — needs JavaScript"
+
+    def test_no_replayed_state_keeps_the_served_name(self):
+        checked = 0
+        for name, report in sorted(self.pages.items()):
+            if "error" in report:
+                continue
+            for label, snap in [("final", report)] + sorted(report.get("snapshots", {}).items()):
+                with self.subTest(scenario=name, at=label):
+                    checked += 1
+                    self.assertNotEqual(snap.get("referenceText"), self.SERVED)
+        self.assertGreater(checked, 50, "the replay produced too few states to say anything")
+
+
+class BodyWriteFailureIsTerminalTest(unittest.TestCase):
+    """The third hardening finding: the criterion was wrong, not the page.
+
+    V16's ledger said a throwing body write "resets the retry flag". The page
+    deliberately does not, and the convergence review classified the finding
+    as `Body-write failure criterion incorrectly requires retry reset`: an
+    earlier revision did reset it inside the write's `catch`, and an
+    adversarial review removed it, because a throw AFTER the body had landed
+    then left the body on the page with no journal entry and invited a second
+    full application out of the memoised completion — a page written twice and
+    journalled never. So a network failure is retryable and a failed DOM write
+    is not: `asked = false` happens only in the transport-failure arm, and a
+    write that throws, or silently does not take, appends no body entry and is
+    not attempted again. No such failure is reachable in a real DOM. The rule
+    lived only in the unintegrated V16 records until this test; it is pinned
+    here so the wrong criterion cannot be reintroduced as a "fix".
+    """
+
+    def test_only_a_transport_failure_resets_retry(self):
+        script = held(CATENA / "catena.js")
+        self.assertIn("try { said = write(); } catch (problem) { said = null; }", script)
+        self.assertIn("if (said === text.textContent) M.bodyApplied(fragment, completed, true);",
+                      script)
+        resets = re.findall(r"^\s*asked = false;$", script, re.M)
+        self.assertEqual(len(resets), 1, "retry is reset somewhere other than the failure arm")
+        failure = script[script.index("(failed) => {"):]
+        failure = failure[:failure.index("wrote(failed, ")]
+        self.assertRegex(failure, r"\n\s*asked = false;\n")
+        writer = script[script.index("const wrote = (completed, write) => {"):]
+        writer = writer[:writer.index("};")]
+        self.assertNotIn("asked", writer, "the write itself must not reset retry")
 
 
 if __name__ == "__main__":
