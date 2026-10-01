@@ -29,7 +29,31 @@ providers (Recommended)": fix the shared macro and the References anchors,
 rebuild, re-snapshot the receipts, reinstall and redeploy all 27 PDFs,
 verifying every link and that every page stays pixel-identical.
 
-**In progress.**
+**Fixed and verified** (`eab814997`, records `7c9a2c093`). The shared format
+defines hyperref's three titlesec hooks after loading titlesec, and the seven
+starred References headings have `\phantomsection` before them. A compiled
+regression test fails without the fix, and a source test requires the anchor
+before every starred heading that writes its own contents line. All 27 PDFs
+were rebuilt and installed byte-identical: every page is pixel-identical to
+the previous installation, all 71 contents links and 128 bookmarks land on
+their heading's page with the anchor just above it (before, 20 of the 27
+PDFs pointed them at `table.*` or `Doc-Start`), and the 244 footnote links
+resolve. Receipts, the leaves' production records, both publication
+inventories and the family ledger are refreshed; the artifacts gate of each
+leaf, `check-generation-metadata` on all 27, `check-sources`,
+`check-release-bindings` and `check-web-editions-current` pass. An
+independent review passed; its advisory that the References anchor sat below
+its heading was answered by moving the anchor before it. One test,
+`test_the_tracked_registry_resolves_every_published_lane_author`, fails
+identically on `main`: GPT pc-s53's manifest names Leo the Great, who has no
+author-standing row.
+
+**Left open, outside the authorization** (the review's REV-L-003): the same
+class of defect stands in 19 other installed PDFs built without this format,
+among them 16 articles whose "Notes" bookmark borrows the last section's
+anchor, two GPT biographies whose first section points at `Doc-Start`, and
+the angelology reference, whose "References" bookmark lands a page early.
+Each needs its own template or leaf repair and a maintainer decision.
 
 ## Claude Nineteenth Sunday revision answering every standing finding, 2026-09-30
 

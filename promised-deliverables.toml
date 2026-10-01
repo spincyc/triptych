@@ -9,14 +9,20 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "anchors-fixed-and-tested"
   criterion = "The shared format gives every unnumbered section its own anchor and each References contents line its own anchor; a regression test fails without the fix."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["src/common/propers-format.tex", "tools/tests/test_propers_format.py"]
+  check = "contains"
+  path = "tools/tests/test_propers_format.py"
+  needle = "def test_every_heading_gets_its_own_link_anchor"
 
   [[deliverables.requirements]]
   id = "anchors-verified-27-pdfs"
   criterion = "In all 27 rebuilt PDFs every internal heading link lands on the page of its heading and no heading link targets a table, footnote or document-start anchor; every page is pixel-identical to the previously installed PDF; the receipts are re-recorded, the leaves' artifact checks pass, and an independent reviewer confirms both."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/production-review.md"]
+  check = "contains"
+  path = "PROJECT-WORK.md"
+  needle = "all 71 contents links and 128 bookmarks land on"
 
   [[deliverables.requirements]]
   id = "anchors-live"
