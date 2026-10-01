@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-10-01"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:ec6ac523e4625fe969ca0a68671702895e765a38fc7c960c34987e9ef96b91b6"
+inventory_snapshot = "sha256:18db89fd2e818679f929a3053fba081852b869eb519dff1a5ffb2952e2fea9e8"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:a06dfc33dfd7278908c2f5c13d697240e09065561bb790e8acac7c60795b9e96"
-canonical_catalog_snapshot = "sha256:3487fdd4c20e55160054d529a2f8b721463aa3d89b273adf9ba3023325b022b9"
+canonical_catalog_snapshot = "sha256:2bb76d17f6254d192c3f24e0b250d3ffdcc102a3ff73860d4f3110841adc4393"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:49c4cea7dd6d590305f15185e66ebb22886d748bcbe32f2f46dfb66821a0a795"
+snapshot = "sha256:43016cafae3ce0db1fe4782466eb2940b683d737bca58d5e54828e70f8ff1b1b"
 families = []
 
 [[review_units]]
@@ -23,12 +23,12 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/against-the-instrumentalists"
-surface_snapshot = "sha256:e90c492fbf5237e5188d08c90c421f88e438a4eee8a96520bb26190f1c108a70"
+surface_snapshot = "sha256:7424c5fab20be46cb62169cbdd499e9c46b0a6423abebcc920582ca4c9977160"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/at-the-end-of-every-why"
-surface_snapshot = "sha256:ed51d59dc5c0e24655e01e64818c8d890fe6429407199c86b963f01a50eb6a53"
+surface_snapshot = "sha256:3fbce2565dbbeedcef72d9344736742603b8685ae256661755dadd3ccd8dd0c6"
 review_state = "pending"
 
 [[review_units]]
@@ -68,7 +68,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/in-defense-of-the-particular"
-surface_snapshot = "sha256:c2a011351b3a1e3cc04478fafaa4149174078ff3ff1a829f08394e2447016515"
+surface_snapshot = "sha256:e10a5a07bf5ceed7a9db931ea6cd55a805945a87dcd67d4ade9787f8f241c8a1"
 review_state = "pending"
 
 [[review_units]]
@@ -78,12 +78,12 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/ontological-vertigo"
-surface_snapshot = "sha256:5d4bab21e8eefa2c4ea23d3083570cf3e646dd5516bbc7663f44440d1e875426"
+surface_snapshot = "sha256:c8b6d73d33178e16e2946583fc55ba9420026e77e9a6318ee4268e500a52a10e"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/the-due-return"
-surface_snapshot = "sha256:3c9cd3b61c79dda4d0d57d35efda4c47678f26a207a2783e364e28901530df8b"
+surface_snapshot = "sha256:bfdaff494e4220ff4154629de5180da10036447c482ecb90905a5375ed0a52bb"
 review_state = "pending"
 
 [[review_units]]
@@ -133,12 +133,12 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "biographies/saint-robert-bellarmine"
-surface_snapshot = "sha256:7f1905d39847330b0ce0f3a471498d3bf8331f3dad949e8ae8b7efd1929d0dfc"
+surface_snapshot = "sha256:345489d582da865ab7f2e96665901734dde1d56c92e0472af0655feab10c0744"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "biographies/saint-thomas-aquinas"
-surface_snapshot = "sha256:468cecaa9455669e6b46745664a1e4528e4dbb63c59a6567ab62065b14d43d3b"
+surface_snapshot = "sha256:e4463febb2b46165353d270eefb2680b82e234c0de1a1b74e53d468f0051b2ce"
 review_state = "pending"
 
 [[review_units]]
@@ -363,7 +363,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "history/catholic-exorcism/01-history-and-current-practice"
-surface_snapshot = "sha256:f3152171f3686bc88ea92d05e998c1e8754d35d8ce32e3eacf20e4b4ba3b7154"
+surface_snapshot = "sha256:98d8e8b35ccaee4f47d079de246995e0e7a7011a656c049732f750e230963fd9"
 review_state = "pending"
 
 [[review_units]]
@@ -393,7 +393,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
-surface_snapshot = "sha256:c76ae32741d09b810d3bc9da5decff9dd0ab66f31db3049cf1f5b2728ed8c35c"
+surface_snapshot = "sha256:b2ea0beb0377deea883ee1530769ffee6c8472ead742929ebad25746e403aaf0"
 review_state = "pending"
 
 [[review_units]]
@@ -473,7 +473,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost"
-surface_snapshot = "sha256:808ad130f3f1a93eea9a61bd32dd1e1b8d7f581b735c6252d0a4bbb82e4b8b6b"
+surface_snapshot = "sha256:53c23a9001de4b8ceecb60b80f8ddcf49a4a0faf1425753448aaba80d98ed74e"
 review_state = "pending"
 
 [[review_units]]
@@ -483,12 +483,12 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
-surface_snapshot = "sha256:95d3703d007acc5b9ff4373ed42a01d23e903e56a9f9f71f7371dc3de5f09b3f"
+surface_snapshot = "sha256:d404360bfe6dac2e4d03e870404a078b13efeb936de98847e213caac164081b6"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"
-surface_snapshot = "sha256:4546f667ca66647d8df1ba3f3def64398e22b181bd8b0b6bba0d67d399ec6a4e"
+surface_snapshot = "sha256:1b4272aca5282d5c791662a8cbb318a3f1c49ee9151433bfd0059cad950f5433"
 review_state = "pending"
 
 [[review_units]]
@@ -638,12 +638,12 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:26173b5453b182cb80d0360460a3fc08b8432650f3aa7250e36d9e27d6ac8c7b"
+surface_snapshot = "sha256:cf8ceae28badd66f037da50774faca989efc06daba1d4e4a6472149a40545e68"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:d1e846b53c1559ddc8da363d0444c19c8b6076453ea7104f8d88984b3abc87c7"
+surface_snapshot = "sha256:bea4d4caab0cd5f017fdc15b8111a899ee7b2bba1078e895a2d113dc70303c46"
 review_state = "pending"
 
 [[review_units]]
@@ -658,7 +658,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.curriculums.ecclesiastical-latin"
-surface_snapshot = "sha256:82ef39483b12bbe66cd04cf8ed9a60ff748a9d81322db7c590280f95976c48a7"
+surface_snapshot = "sha256:2b7b4345b0ae81cd277012f48aeb7ea9574d7c3b16de4dd63d0176d809653e25"
 review_state = "pending"
 
 [[review_units]]
@@ -683,7 +683,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.altar-server-guides"
-surface_snapshot = "sha256:520c6a65a764409683aec319a2acc24cb5f673292fced7173210a56f9ef4c49d"
+surface_snapshot = "sha256:4e2ce5534a30a6382b99c64a279a5c1402abe5cb9be9bd56df39163241e87c0a"
 review_state = "pending"
 
 [[review_units]]
@@ -708,7 +708,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/angelology"
-surface_snapshot = "sha256:f647e246eab96de3101b68a1cb824d7c9749c5faca67cd1b491218247bd230ce"
+surface_snapshot = "sha256:539ec705f17fca1baad67d943cd3aa20dabdc9f23bd178cab27f076b8ca18371"
 review_state = "pending"
 
 [[review_units]]
@@ -778,7 +778,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/sacraments"
-surface_snapshot = "sha256:94be5b936b4ff90347ec641bf2c27231747218c06c9884dd29f5844d323b9488"
+surface_snapshot = "sha256:1a9149eca1e6887577095023a7c949a4744109098f72f72359c46ba2abc21453"
 review_state = "pending"
 
 [[review_units]]
