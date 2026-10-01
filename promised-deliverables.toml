@@ -1,6 +1,30 @@
 schema_version = 1
 
 [[deliverables]]
+id = "proper-study-pdf-anchors-2026-10-01"
+owner = "PROJECT-WORK.md"
+promise = "Make every contents link, bookmark and section label in the proper-study PDFs built with src/common/propers-format.tex land on its own heading, by fixing the shared format and the References anchors, and rebuild, reinstall and redeploy the 27 PDFs of the nine affected Claude and GPT leaves on the maintainer's 2026-10-01 authorization."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "anchors-fixed-and-tested"
+  criterion = "The shared format gives every unnumbered section its own anchor and each References contents line its own anchor; a regression test fails without the fix."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "anchors-verified-27-pdfs"
+  criterion = "In all 27 rebuilt PDFs every internal heading link lands on the page of its heading and no heading link targets a table, footnote or document-start anchor; every page is pixel-identical to the previously installed PDF; the receipts are re-recorded, the leaves' artifact checks pass, and an independent reviewer confirms both."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "anchors-live"
+  criterion = "The 27 PDFs are installed byte-identical to the verified builds, the three deploy gates pass, the work reaches origin/main by fast-forward, and the Pages run and the live PDFs are verified."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "claude-59-full-revision-2026-09-30"
 owner = "PROJECT-WORK.md"
 promise = "Revise the Claude 1962 Nineteenth Sunday study, concise study, homily and web edition to answer every finding still standing against the leaf (STU-008 to STU-010, SYN-001 to SYN-003, HOM-001 to HOM-003, VIS-001, VIS-002, the two rendered inaccuracies of the research-record review, and the actionable observations), with fresh independent reviews, reinstalled artifacts, and the result deployed and verified live from main."

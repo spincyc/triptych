@@ -5,7 +5,31 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-09-30.
+Last reconciled: 2026-10-01.
+
+## Proper-study PDF contents links, 2026-10-01
+
+<!-- promised-deliverable: proper-study-pdf-anchors-2026-10-01 -->
+
+The maintainer reported on 2026-10-01 that "the hyperlinks in the pdf do not
+jump to their claimed locations in the docs". Diagnosis: every proper-study
+PDF built with `src/common/propers-format.tex` loads `titlesec` after
+`common/preamble` has loaded `hyperref`. hyperref defines titlesec's anchor
+hooks only when titlesec is already loaded, so titlesec sets
+`\ttl@Hy@steplink` to `\@gobble`; with `secnumdepth` 0 every section is
+unnumbered, gets no anchor, and each contents line, bookmark and following
+`\label` points at the last anchor before it, usually `table.1`. The
+starred References heading adds its contents line with no `\phantomsection`
+and so borrows the anchor before it. The format serves nine leaves (Claude
+57, 58, 59, pc-s51, pc-s52; GPT 57, 59, pc-s51, pc-s53), 27 PDFs. Seven
+expansive studies show the broken contents links (all five Claude; GPT 57
+and pc-s51); the other PDFs have no contents links but change bytes with the
+fix. Asked, the maintainer authorized on 2026-10-01 "All 9 leaves, both
+providers (Recommended)": fix the shared macro and the References anchors,
+rebuild, re-snapshot the receipts, reinstall and redeploy all 27 PDFs,
+verifying every link and that every page stays pixel-identical.
+
+**In progress.**
 
 ## Claude Nineteenth Sunday revision answering every standing finding, 2026-09-30
 
