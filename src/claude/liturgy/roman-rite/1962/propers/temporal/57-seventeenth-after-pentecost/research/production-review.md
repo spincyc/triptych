@@ -3242,3 +3242,33 @@ A D12 ruling was received with the findings. The 1962 Missal's own course,
 the Epistle sequence and the Missal's ordering of the Matthew pericopes, is a
 fact of this book about this formulary's texts and stays where it is. The
 pages are unchanged at 31, 10 and 3, and the concise themes still end on page 4.
+
+## Contents links and bookmarks rebuild, 2026-10-01
+
+On 1 October 2026 the maintainer reported that the PDFs' hyperlinks did not
+jump to their claimed locations, and authorized regenerating every leaf built
+with `src/common/propers-format.tex`, both providers. The cause was shared:
+`common/preamble` loads hyperref before the format loads titlesec, so hyperref
+never defined titlesec's anchor hooks and titlesec replaced them with
+`\@gobble`. With `secnumdepth` 0 every section went without an anchor, and
+each contents line, PDF bookmark and following `\label` pointed at the last
+anchor before it, usually `table.1`. The shared format now defines hyperref's
+own hooks after loading titlesec. Its References heading, starred so that `check-content-preflight` can find it, now has `\phantomsection` immediately before it, so the manual contents line, its bookmark and `\label{sec:references}` have an anchor of their own that keeps the heading in view. No word, layout or page
+changed: every page is pixel-identical to the previous installation, and only
+link destinations and bookmarks differ. The three PDFs were rebuilt with the
+normal recipes and installed byte-identical:
+
+| PDF | Pages | SHA-256 |
+| --- | ---: | --- |
+| Study | 31 | `33d74be84ad6fbf71dd47be48f0a8a138d2d00e90bef94fac168e830f7dce3a1` |
+| Concise study | 10 | `7d90cb361ef54dff2aa6d194bac0eb4699756c4d12eba4fe135e3edcee8d0e26` |
+| Homily | 3 | `5e9321aaeb8378caa832be8742bb26b1625c245a1e29f237e17eac90b9abc157` |
+
+Verified on the installed PDFs: 10 contents links and 14 bookmarks
+each land on the page of their heading with the anchor at or above it, and
+0 footnote links resolve. The artifacts-phase gate under this leaf's
+declared contracts and `check-generation-metadata` pass, and
+`research/artifacts.json` is re-recorded. An independent review
+confirmed the cause, the definitions' identity with hyperref's, and the links,
+bookmarks and pixels of all 27 rebuilt PDFs; its advisory that the References
+anchor sat below its heading was answered by moving the anchor before it.

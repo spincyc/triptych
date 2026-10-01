@@ -474,3 +474,33 @@ PDFs remain intentionally untracked under repository policy. Final validation
 and the concrete branch checkpoint are recorded in
 `workflows/reviews/gpt-1962-59-production-2026-09-28/CYCLES.md` and the work
 register; no main merge or live deployment is claimed.
+
+## Contents links and bookmarks rebuild, 2026-10-01
+
+On 1 October 2026 the maintainer reported that the PDFs' hyperlinks did not
+jump to their claimed locations, and authorized regenerating every leaf built
+with `src/common/propers-format.tex`, both providers. The cause was shared:
+`common/preamble` loads hyperref before the format loads titlesec, so hyperref
+never defined titlesec's anchor hooks and titlesec replaced them with
+`\@gobble`. With `secnumdepth` 0 every section went without an anchor, and
+each contents line, PDF bookmark and following `\label` pointed at the last
+anchor before it, usually `table.1`. The shared format now defines hyperref's
+own hooks after loading titlesec. No word, layout or page
+changed: every page is pixel-identical to the previous installation, and only
+link destinations and bookmarks differ. The three PDFs were rebuilt with the
+normal recipes and installed byte-identical:
+
+| PDF | Pages | SHA-256 |
+| --- | ---: | --- |
+| Study | 20 | `ca1dd6edd726240acaacb9800f321bfec1e1a2dbea914b70b88c526f418018a1` |
+| Concise study | 10 | `ba7dfa7c14b95310ee677a33875476dbc8ab0b759925fe5c72160743987836db` |
+| Homily | 3 | `0832932d754a44308aeac2435ee92df7184afafb8a7ca18be93932738e89213f` |
+
+Verified on the installed PDFs, which print no contents
+links: their 15 bookmarks each land on the page of their heading with the anchor at or above it, and
+65 footnote links resolve. The artifacts-phase gate under this leaf's
+declared contracts and `check-generation-metadata` pass, and
+`research/artifacts.json` is re-recorded. An independent review
+confirmed the cause, the definitions' identity with hyperref's, and the links,
+bookmarks and pixels of all 27 rebuilt PDFs; its advisory that the References
+anchor sat below its heading was answered by moving the anchor before it.

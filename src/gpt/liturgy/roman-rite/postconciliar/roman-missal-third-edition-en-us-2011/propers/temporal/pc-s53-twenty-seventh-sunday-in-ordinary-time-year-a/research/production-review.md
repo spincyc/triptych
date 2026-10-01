@@ -584,3 +584,33 @@ binding check passed. Full public-alpha accounts for 236 publications
 (234 alpha, two hold); bindings report zero stale entries. The durable
 production archive records the aggregate's nonblocking inventory and baseline
 limits, including the pending family ledger and missing Leo author-standing row.
+
+## Contents links and bookmarks rebuild, 2026-10-01
+
+On 1 October 2026 the maintainer reported that the PDFs' hyperlinks did not
+jump to their claimed locations, and authorized regenerating every leaf built
+with `src/common/propers-format.tex`, both providers. The cause was shared:
+`common/preamble` loads hyperref before the format loads titlesec, so hyperref
+never defined titlesec's anchor hooks and titlesec replaced them with
+`\@gobble`. With `secnumdepth` 0 every section went without an anchor, and
+each contents line, PDF bookmark and following `\label` pointed at the last
+anchor before it, usually `table.1`. The shared format now defines hyperref's
+own hooks after loading titlesec. No word, layout or page
+changed: every page is pixel-identical to the previous installation, and only
+link destinations and bookmarks differ. The three PDFs were rebuilt with the
+normal recipes and installed byte-identical:
+
+| PDF | Pages | SHA-256 |
+| --- | ---: | --- |
+| Study | 21 | `3194dda1274bfb834af6746e25627b94423933132998dc68d38dd946a3d865f6` |
+| Concise study | 11 | `b01e1baf95137a4c9d28bb72bea27b7de673a249c2baa493177e864c904e9d82` |
+| Homily | 3 | `9eb51f88c25ad09dd35687c051845bc154f283e72a9ca6139a62049c244ca85d` |
+
+Verified on the installed PDFs, which print no contents
+links: their 17 bookmarks each land on the page of their heading with the anchor at or above it, and
+59 footnote links resolve. The artifacts-phase gate under this leaf's
+declared contracts and `check-generation-metadata` pass, and
+`research/artifacts.json` is re-recorded. An independent review
+confirmed the cause, the definitions' identity with hyperref's, and the links,
+bookmarks and pixels of all 27 rebuilt PDFs; its advisory that the References
+anchor sat below its heading was answered by moving the anchor before it.

@@ -1223,3 +1223,33 @@ property of the texts.
 - The receipts are re-snapshotted, and `_proper_study.py check` passes in
   content, artifacts and publication with `--require-presentation
   --require-format`.
+
+## Contents links and bookmarks rebuild, 2026-10-01
+
+On 1 October 2026 the maintainer reported that the PDFs' hyperlinks did not
+jump to their claimed locations, and authorized regenerating every leaf built
+with `src/common/propers-format.tex`, both providers. The cause was shared:
+`common/preamble` loads hyperref before the format loads titlesec, so hyperref
+never defined titlesec's anchor hooks and titlesec replaced them with
+`\@gobble`. With `secnumdepth` 0 every section went without an anchor, and
+each contents line, PDF bookmark and following `\label` pointed at the last
+anchor before it, usually `table.1`. The shared format now defines hyperref's
+own hooks after loading titlesec. Its References heading, starred so that `check-content-preflight` can find it, now has `\phantomsection` immediately before it, so the manual contents line, its bookmark and `\label{sec:references}` have an anchor of their own that keeps the heading in view. No word, layout or page
+changed: every page is pixel-identical to the previous installation, and only
+link destinations and bookmarks differ. The three PDFs were rebuilt with the
+normal recipes and installed byte-identical:
+
+| PDF | Pages | SHA-256 |
+| --- | ---: | --- |
+| Study | 31 | `881eb94949c71f45eff19e86b5c6286048e8e283da804fdf671b2b3c53677a8b` |
+| Concise study | 10 | `81d3924d07edd527339ac2ba7c26753680617bfc949dbf1ce50866c4fc03fc7a` |
+| Homily | 4 | `9ad7b6c3b68d1c0ceefc272e9b64795259f16b9d8a9d238c567dda802ac37ad0` |
+
+Verified on the installed PDFs: 11 contents links and 15 bookmarks
+each land on the page of their heading with the anchor at or above it, and
+0 footnote links resolve. The artifacts-phase gate under this leaf's
+declared contracts and `check-generation-metadata` pass, and
+`research/artifacts.json` is re-recorded. An independent review
+confirmed the cause, the definitions' identity with hyperref's, and the links,
+bookmarks and pixels of all 27 rebuilt PDFs; its advisory that the References
+anchor sat below its heading was answered by moving the anchor before it.

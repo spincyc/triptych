@@ -1369,3 +1369,33 @@ the concise study `d845791fa6edfc0f30fabadb3695bc129563a60420a17bc2189727ce6a21f
 (12 pp.), the homily `597e74d7a80ec96a02ddf640bfe429d9dd7190181d463c7ad833590ba653ddd1`
 (3 pp.) and the web Markdown
 `4b3697b0cdf149eb27d97cdfac8940be738cffce190ca4c870ec2b3863c461b4`.
+
+## Contents links and bookmarks rebuild, 2026-10-01
+
+On 1 October 2026 the maintainer reported that the PDFs' hyperlinks did not
+jump to their claimed locations, and authorized regenerating every leaf built
+with `src/common/propers-format.tex`, both providers. The cause was shared:
+`common/preamble` loads hyperref before the format loads titlesec, so hyperref
+never defined titlesec's anchor hooks and titlesec replaced them with
+`\@gobble`. With `secnumdepth` 0 every section went without an anchor, and
+each contents line, PDF bookmark and following `\label` pointed at the last
+anchor before it, usually `table.1`. The shared format now defines hyperref's
+own hooks after loading titlesec. Its References heading, starred so that `check-content-preflight` can find it, now has `\phantomsection` immediately before it, so the manual contents line, its bookmark and `\label{sec:references}` have an anchor of their own that keeps the heading in view. No word, layout or page
+changed: every page is pixel-identical to the previous installation, and only
+link destinations and bookmarks differ. The three PDFs were rebuilt with the
+normal recipes and installed byte-identical:
+
+| PDF | Pages | SHA-256 |
+| --- | ---: | --- |
+| Study | 33 | `bbdb436d4910d6bff0f3114cf17901bafa2cdcc833d1b27a6abf8605d224fa3a` |
+| Concise study | 12 | `6836b0169fc519297a6beeea89826a5b3cb4e83b6b136b72bc5fdc0ac09611b7` |
+| Homily | 3 | `597e74d7a80ec96a02ddf640bfe429d9dd7190181d463c7ad833590ba653ddd1` |
+
+Verified on the installed PDFs: 10 contents links and 14 bookmarks
+each land on the page of their heading with the anchor at or above it, and
+0 footnote links resolve. The artifacts-phase gate under this leaf's
+declared contracts and `check-generation-metadata` pass, and
+`research/artifacts.json` is re-recorded. An independent review
+confirmed the cause, the definitions' identity with hyperref's, and the links,
+bookmarks and pixels of all 27 rebuilt PDFs; its advisory that the References
+anchor sat below its heading was answered by moving the anchor before it.
