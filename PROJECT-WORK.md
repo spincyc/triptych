@@ -7,6 +7,32 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-09-30.
 
+## Claude Nineteenth Sunday revision answering every standing finding, 2026-09-30
+
+<!-- promised-deliverable: claude-59-full-revision-2026-09-30 -->
+
+After the research-record correction was deployed, the maintainer instructed
+on 2026-09-30: "fix all ; push to main ; verify through to completion". In
+scope is everything still standing against the Claude 1962 Nineteenth Sunday
+leaf: the eleven open advisories of run `a27462e34ec9c09a`'s reviews (STU-008
+to STU-010, SYN-001 to SYN-003, HOM-001 to HOM-003, VIS-001, VIS-002); the
+two rendered inaccuracies the correction's review surfaced (the "highways
+lead to the nations" wording in the study and concise study, and the
+comparison table's Augustine credit for the Church's road); and the
+actionable observations. The study-review observation that the chronology
+corpus holds no modern critical date for Matthew or Ephesians is mistaken
+about the corpus, which carries `critical.gospel-of-matthew` and
+`critical.ephesians-later-disciple`; the leaf never generated its profile
+comparison, so its page-2 rows lack the critical horizon. The homily-coverage
+and opening-sentence observations are answered in the three-document
+profile. Repository-wide items outside this leaf (shared registry gaps,
+other tools' example transcripts) are not in scope.
+
+**In progress.** The revision changes reviewed render inputs, so the three
+PDFs are rebuilt settled, the web edition regenerated, and both pass fresh
+independent content, visual and web reviews before installation, the deploy
+gates, the push to `main` and live verification.
+
 ## Claude Nineteenth Sunday research-record correction, 2026-09-30
 
 <!-- promised-deliverable: claude-59-research-record-correction-2026-09-30 -->

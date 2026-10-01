@@ -1,6 +1,30 @@
 schema_version = 1
 
 [[deliverables]]
+id = "claude-59-full-revision-2026-09-30"
+owner = "PROJECT-WORK.md"
+promise = "Revise the Claude 1962 Nineteenth Sunday study, concise study, homily and web edition to answer every finding still standing against the leaf (STU-008 to STU-010, SYN-001 to SYN-003, HOM-001 to HOM-003, VIS-001, VIS-002, the two rendered inaccuracies of the research-record review, and the actionable observations), with fresh independent reviews, reinstalled artifacts, and the result deployed and verified live from main."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "claude-59-revision-content"
+  criterion = "Each listed finding is repaired in every document stating the point, or recorded open with its reason; the Gospel and Epistle page-2 rows carry the modern critical horizon drawn only from the leaf's generated chronology records; each disposition is written into the findings record and research/production-review.md."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-59-revision-reviewed"
+  criterion = "Fresh reviewers that did not author the revision check its content against the cited witnesses, every page of the rebuilt PDFs and the regenerated web edition, and nothing blocking stands; the study stays within 20-50 pages and the concise study within 10-12 with its four-page opening."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-59-revision-live"
+  criterion = "The reviewed PDFs and web edition are installed byte-identical to their reviewed builds, the publication checks and the three deploy gates pass, the work reaches origin/main by fast-forward, and the triggered Pages run and the live routes are verified."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "claude-59-research-record-correction-2026-09-30"
 owner = "PROJECT-WORK.md"
 promise = "Correct the Claude 1962 Nineteenth Sunday leaf's research records where they lag the reviewed study or misstate their sources (STU-011, STU-012, RES-010, RES-011), with an independent re-review, without changing any reviewed render byte, and integrate the correction on main with its Pages deployment verified."
