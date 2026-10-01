@@ -28,10 +28,28 @@ and opening-sentence observations are answered in the three-document
 profile. Repository-wide items outside this leaf (shared registry gaps,
 other tools' example transcripts) are not in scope.
 
-**In progress.** The revision changes reviewed render inputs, so the three
-PDFs are rebuilt settled, the web edition regenerated, and both pass fresh
-independent content, visual and web reviews before installation, the deploy
-gates, the push to `main` and live verification.
+**Revised, reviewed and installed** (`48485f46b`, with the profile
+clarification `6f3a3567c`). Each finding was checked against its witness and
+repaired in every document stating it; every advisory and observation in the
+leaf's findings record now carries a disposition, and
+`research/production-review.md` records each. Both page-2 dossiers carry the
+modern critical horizon from the leaf's newly declared profile comparison.
+The three-document profile now states the two rules the observations found
+missing: a homily component's `element_keys` declare what informs the speech,
+and an opening or summary naming a reading's authors credits each only with
+the clause he states. An independent content review raised one blocking
+defect (REV-C-001: Hilary on Ps 137 is CSEL 22 pp. 742–743, not p. 748) and
+four advisories; the second round repaired them and the re-check passed. An
+independent visual and web review inspected every page, reproduced the web
+edition byte for byte and passed both rounds. Installed byte-identical to the
+reviewed builds: study `343d6858…` (33 pp.), concise study `d845791f…`
+(12 pp., page contract intact), homily `597e74d7…` (3 pp.), web `4b3697b0…`.
+
+**Left for other owners.** The generated Date cells print the comparison
+label "catholic-critical-v1 … composition-only" (REV-V-001/002), the
+`tools/tpt proper-chronology annotations` generator's standard output, also
+published in Claude 57 and GPT 59; cleaning it is that tool's change and
+would regenerate every edition that declares a comparison.
 
 ## Claude Nineteenth Sunday research-record correction, 2026-09-30
 

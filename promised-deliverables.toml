@@ -9,14 +9,20 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-59-revision-content"
   criterion = "Each listed finding is repaired in every document stating the point, or recorded open with its reason; the Gospel and Epistle page-2 rows carry the modern critical horizon drawn only from the leaf's generated chronology records; each disposition is written into the findings record and research/production-review.md."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/production-review.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/evaluations/blocking-findings-v1.toml", "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/chronology-profile-comparisons.toml"]
+  check = "contains"
+  path = "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/production-review.md"
+  needle = "Post-acceptance revision answering every standing finding, 2026-09-30"
 
   [[deliverables.requirements]]
   id = "claude-59-revision-reviewed"
   criterion = "Fresh reviewers that did not author the revision check its content against the cited witnesses, every page of the rebuilt PDFs and the regenerated web edition, and nothing blocking stands; the study stays within 20-50 pages and the concise study within 10-12 with its four-page opening."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/production-review.md", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "src/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/research/production-review.md"
+  needle = "### Coordinator's record of the reviews"
 
   [[deliverables.requirements]]
   id = "claude-59-revision-live"
