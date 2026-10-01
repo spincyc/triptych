@@ -55,8 +55,19 @@ maintainer asked for replays nothing and the three correction commits sit
 linearly on it. The three deploy gates pass locally (`make
 check-deployment-sources`, `make public-site`, `tools/tpt public-alpha
 verify --deployment-target github-pages`); the outgoing range changes eight
-text files and adds no binary, machine path or credential marker. The
-Pages run is verified before this correction is represented as complete.
+text files and adds no binary, machine path or credential marker.
+
+`origin/main` was fast-forwarded `fb0d08f13..3b98c21fe`. Repository-hygiene
+run 36799001965 succeeded, but
+[Pages run 36799001902](https://github.com/spincyc/triptych/actions/runs/36799001902)
+failed in its deploy step: `actions/deploy-pages` timed out requesting its
+OIDC ID token ("Failed to get ID Token. Request timeout"), after the build
+job had passed. Nothing reader-facing was lost: the correction changes no
+site input, and the live `SHA256SUMS` is byte-identical to the one in the
+site built locally at `3b98c21fe`. As the repository guidance directs, the
+failure is answered by this later checkpoint, whose push starts a fresh
+automatic Pages run; that run is verified before the correction is
+represented as complete.
 
 ## Claude 1962 Nineteenth Sunday three documents, 2026-09-30
 
