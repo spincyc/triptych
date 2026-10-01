@@ -498,7 +498,7 @@ def prepare(tool: str) -> None:
             run(str(step))
 
 
-def tracked_differences() -> set[str]:
+def tracked_differences(root: Path | None = None) -> set[str]:
     """Every tracked path that differs from HEAD, staged or not.
 
     `git status --porcelain` also reports the untracked output these examples
@@ -509,59 +509,97 @@ def tracked_differences() -> set[str]:
     for staged in ([], ["--cached"]):
         result = subprocess.run(
             ["git", "diff", "--name-only", "--no-renames", "-z"] + staged,
-            cwd=ROOT, capture_output=True, text=True,
+            cwd=root or ROOT, capture_output=True, text=True,
         )
         found.update(name for name in result.stdout.split("\0") if name)
     return found
 
 
+# Where the guard keeps the uncommitted bytes a changed path held before the
+# example that saw it change, one directory per replay. Ignored, like all of
+# build/, and never read back by anything here.
+PRE_IMAGES = "build/replay-examples/pre-images"
+
+
 class TrackedGuard:
-    """Undo, and attribute, a write an example makes to tracked state.
+    """Attribute and report a change to tracked state while an example runs.
 
     Half of these invocations write. Every one was captured against a scratch
     path under build/, and the ones that would rewrite tracked release bindings
     are in EXEMPT — but that is a claim about the transcripts, and this is what
     holds it. Checking once at the end of the run named the paths without naming
-    the invocation that wrote them, and left the tree dirty for whoever ran it;
-    it also compared `git status` lines, so a second write to a file that was
-    already modified moved no line and was invisible.
+    the invocation that wrote them; it also compared `git status` lines, so a
+    second write to a file that was already modified moved no line and was
+    invisible. Asking after every example names the invocation and compares
+    bytes, so neither gap is open.
 
-    Asking after every example gives the invocation away and bounds the damage
-    to one of them. The bytes of what is already dirty are recorded up front, so
-    a file carrying someone's uncommitted work is put back as it was rather than
-    reverted to HEAD.
+    It never writes a tracked path. It used to put every changed path back --
+    to HEAD, or to the uncommitted bytes it recorded up front -- and that is only
+    safe if nothing but the replay writes while it runs, which this repository's
+    concurrent agents do not promise. The guard sees that a path changed during
+    an example, not who changed it: during the Fourteenth Sunday work it reported
+    reverting `PROJECT-WORK.md` and a workflow fragment that two other workers
+    were editing at the time. So a change is now reported against the example it
+    happened during, the replay fails, and the path is left exactly as found.
+    Where the path held uncommitted bytes before that example, those bytes are
+    saved under PRE_IMAGES first, so what the old restore could recover is still
+    recoverable; a path that matched HEAD needs no copy. Restoring is a decision
+    for whoever reads the report and knows which writer it was.
     """
 
-    def __init__(self) -> None:
-        self.dirty = tracked_differences()
+    def __init__(self, root: Path | None = None) -> None:
+        self.root = root or ROOT
+        self.saved: dict[str, Path] = {}
+        self.changes = 0
+        self.run_directory: Path | None = None
+        self.snapshot()
+
+    def snapshot(self) -> None:
+        """Record the dirty set, and the bytes of each dirty path, as of now."""
+        self.dirty = tracked_differences(self.root)
         self.recorded = {name: self.content(name) for name in self.dirty}
 
-    @staticmethod
-    def content(name: str) -> bytes | None:
-        path = ROOT / name
+    def content(self, name: str) -> bytes | None:
+        path = self.root / name
         return path.read_bytes() if path.is_file() else None
 
     def wrote(self) -> list[str]:
-        """The tracked paths written since the last ask, restored to what they were."""
+        """The tracked paths that changed since the last ask, left as they are."""
         touched = sorted(
-            (tracked_differences() - self.dirty)
+            (tracked_differences(self.root) - self.dirty)
             | {name for name in self.dirty if self.content(name) != self.recorded[name]}
         )
+        if not touched:
+            return touched
+        self.changes += 1
+        self.saved = {}
         for name in touched:
-            if name in self.dirty:
-                path = ROOT / name
-                if self.recorded[name] is None:
-                    path.unlink(missing_ok=True)
-                else:
-                    path.parent.mkdir(parents=True, exist_ok=True)
-                    path.write_bytes(self.recorded[name])
-            else:
-                # It matched HEAD before this example ran, so HEAD is what it was.
-                subprocess.run(
-                    ["git", "checkout", "--", name],
-                    cwd=ROOT, capture_output=True,
-                )
+            before = self.recorded.get(name)
+            if before is not None:
+                self.saved[name] = self.keep(name, before)
+        # The next example answers only for what changes while it runs.
+        self.snapshot()
         return touched
+
+    def keep(self, name: str, before: bytes) -> Path:
+        """Save a path's bytes from before this change, one directory per change."""
+        if self.run_directory is None:
+            stamp = time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())
+            self.run_directory = self.root / PRE_IMAGES / f"{stamp}-{os.getpid()}"
+        target = self.run_directory / f"{self.changes:03d}" / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(before)
+        return target
+
+    def described(self, name: str) -> str:
+        """What a path in the last change held before it, and where that is now."""
+        saved = self.saved.get(name)
+        if saved is None:
+            return f"{name} matched HEAD before; left as found"
+        return (
+            f"{name} held uncommitted work before, saved at "
+            f"{saved.relative_to(self.root)}; left as found"
+        )
 
 
 def replay(names: list[str] | None = None, *, echo: bool = False) -> list[Result]:
@@ -574,8 +612,10 @@ def replay(names: list[str] | None = None, *, echo: bool = False) -> list[Result
         written = guard.wrote()
         if written:
             raise SystemExit(
-                f"replay-examples: preparing {path.name} wrote tracked state, which "
-                "PREPARE may not do; the writes were undone:\n  " + "\n  ".join(written)
+                f"replay-examples: tracked state changed while preparing {path.name}, "
+                "which PREPARE may not do. Nothing was undone: the replay cannot tell "
+                "its own write from another writer's.\n  "
+                + "\n  ".join(guard.described(name) for name in written)
             )
         for capture in captures_of(path):
             result = replay_one(capture)
@@ -583,7 +623,7 @@ def replay(names: list[str] | None = None, *, echo: bool = False) -> list[Result
             if written:
                 result.status = "wrote-tracked"
                 result.problems = tuple(
-                    f"wrote tracked {name} (undone)" for name in written
+                    f"changed while it ran: {guard.described(name)}" for name in written
                 )
             results.append(result)
             if echo:
@@ -798,13 +838,21 @@ def report(results: list[Result], *, stream=sys.stdout) -> int:
 
     if wrote:
         print(
-            "\nwrote tracked state, which no capture may do; the writes were undone:",
+            "\ntracked state changed while an example ran, which no capture may do."
+            "\nNothing was undone: the replay cannot tell an example's write from"
+            " another writer's.",
             file=stream,
         )
         for result in wrote:
             print(f"  $ {result.capture.command}", file=stream)
             for problem in result.problems:
                 print(f"    {problem}", file=stream)
+        print(
+            "  Once you know which writer it was, restore a path that matched HEAD with"
+            "\n  `git checkout -- <path>`, or one that held uncommitted work from its saved"
+            " copy.",
+            file=stream,
+        )
 
     for result in diverged:
         print(f"\n{result.capture.label}", file=stream)
@@ -888,7 +936,8 @@ def main(argv: list[str] | None = None) -> int:
                 indent=1,
             )
         )
-        return 1 if any(r.status in ("diverged", "recovered") for r in results) else 0
+        failing = ("diverged", "recovered", "wrote-tracked")
+        return 1 if any(r.status in failing for r in results) else 0
     return report(results)
 
 

@@ -20,10 +20,14 @@ failure in a new place.
 from __future__ import annotations
 
 import ast
+import io
 import re
+import subprocess
 import sys
+import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -172,6 +176,100 @@ class ComparisonTests(unittest.TestCase):
         one = capture(command, ("audited_on: 2026-08-27",))
         self.assertEqual(replay.compare(one, ["audited_on: 2026-08-28"]), [])
         self.assertTrue(replay.compare(one, ["audited_on: today"]))
+
+
+def git(root: Path, *arguments: str) -> None:
+    subprocess.run(
+        ["git", "-c", "user.name=Replay Test", "-c", "user.email=replay@example.invalid",
+         "-c", "commit.gpgsign=false", *arguments],
+        cwd=root, check=True, capture_output=True,
+    )
+
+
+class GuardTests(unittest.TestCase):
+    """A replay reports a change to tracked state and destroys none.
+
+    The guard cannot tell an example's write from another writer's, and it used
+    to revert whatever changed: run beside another agent, `make check-examples`
+    reported reverting `PROJECT-WORK.md` and a workflow fragment two workers were
+    editing. Each case here changes a tracked path while the guard is watching,
+    as a concurrent writer would, and requires the change to be reported and the
+    path left exactly as that writer left it.
+    """
+
+    def setUp(self) -> None:
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        self.root = Path(temporary.name)
+        git(self.root, "init", "-q")
+        (self.root / "clean.txt").write_text("committed\n", encoding="utf-8")
+        (self.root / "dirty.txt").write_text("committed\n", encoding="utf-8")
+        (self.root / "doomed.txt").write_text("committed\n", encoding="utf-8")
+        git(self.root, "add", ".")
+        git(self.root, "commit", "-q", "-m", "fixture")
+        # Somebody's uncommitted work, present before the replay starts.
+        (self.root / "dirty.txt").write_text("uncommitted work\n", encoding="utf-8")
+        patcher = mock.patch.object(replay, "ROOT", self.root)
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
+    def text(self, name: str) -> str:
+        return (self.root / name).read_text(encoding="utf-8")
+
+    def test_another_writers_changes_are_reported_and_left_as_found(self) -> None:
+        guard = replay.TrackedGuard()
+        (self.root / "clean.txt").write_text("another agent's edit\n", encoding="utf-8")
+        (self.root / "dirty.txt").write_text("another agent's next edit\n", encoding="utf-8")
+        (self.root / "doomed.txt").unlink()
+
+        self.assertEqual(guard.wrote(), ["clean.txt", "dirty.txt", "doomed.txt"])
+        self.assertEqual(self.text("clean.txt"), "another agent's edit\n")
+        self.assertEqual(self.text("dirty.txt"), "another agent's next edit\n")
+        self.assertFalse((self.root / "doomed.txt").exists())
+
+        # What the path held before the change, where that was not HEAD, is kept.
+        self.assertIn("matched HEAD", guard.described("clean.txt"))
+        kept = guard.saved["dirty.txt"]
+        self.assertTrue(kept.is_relative_to(self.root / replay.PRE_IMAGES))
+        self.assertEqual(kept.read_text(encoding="utf-8"), "uncommitted work\n")
+        self.assertIn(str(kept.relative_to(self.root)), guard.described("dirty.txt"))
+
+        # Charged once: the next example answers only for its own window.
+        self.assertEqual(guard.wrote(), [])
+
+    def test_a_replay_names_the_example_and_undoes_nothing(self) -> None:
+        capture_one = capture("tools/example write", ())
+
+        def writes_tracked_state(found: replay.Capture) -> replay.Result:
+            (self.root / "clean.txt").write_text("written by the example\n", encoding="utf-8")
+            return replay.Result(found, "match")
+
+        with mock.patch.object(replay, "tool_paths", return_value=[self.root / "example"]), \
+                mock.patch.object(replay, "prepare"), \
+                mock.patch.object(replay, "captures_of", return_value=[capture_one]), \
+                mock.patch.object(replay, "replay_one", side_effect=writes_tracked_state):
+            results = replay.replay()
+
+        self.assertEqual([result.status for result in results], ["wrote-tracked"])
+        self.assertIn("clean.txt matched HEAD", results[0].problems[0])
+        self.assertEqual(self.text("clean.txt"), "written by the example\n")
+        self.assertEqual(self.text("dirty.txt"), "uncommitted work\n")
+        stream = io.StringIO()
+        self.assertEqual(replay.report(results, stream=stream), 1)
+        self.assertIn("Nothing was undone", stream.getvalue())
+        self.assertIn("$ tools/example write", stream.getvalue())
+
+    def test_a_preparation_that_changes_tracked_state_stops_and_undoes_nothing(self) -> None:
+        def prepares_into_tracked_state(tool: str) -> None:
+            (self.root / "dirty.txt").write_text("prepared over it\n", encoding="utf-8")
+
+        with mock.patch.object(replay, "tool_paths", return_value=[self.root / "example"]), \
+                mock.patch.object(replay, "prepare", side_effect=prepares_into_tracked_state), \
+                self.assertRaises(SystemExit) as stopped:
+            replay.replay()
+        self.assertIn("Nothing was undone", str(stopped.exception.code))
+        self.assertIn("dirty.txt held uncommitted work", str(stopped.exception.code))
+        self.assertEqual(self.text("dirty.txt"), "prepared over it\n")
 
 
 class MachineryTests(unittest.TestCase):
