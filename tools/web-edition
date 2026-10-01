@@ -239,6 +239,78 @@ QUOTATION_SEPARATOR_BLOCK_RE = re.compile(
 )
 RENDERED_QUOTATION_RE = re.compile(r"<blockquote(?=[\s>])")
 
+# Pandoc indents what a list item holds after its first line -- a nested list,
+# a second paragraph -- by the width of the item's marker, two columns for
+# "- ". The site's Python-Markdown needs four, and reads a nested list indented
+# by two as more items of the list it sits in: the bibliographies of both
+# Claude calendar references printed each witness's components as siblings of
+# the witness until 2026-10-01. `nest_lists_for_site` re-indents such items, and
+# this filter reports every list item pandoc read, as its nesting depth and the
+# number of blocks it holds, which the audit holds the site-rendered page to.
+LIST_ITEMS_RE = re.compile(r"^triptych-list-items:((?: \d+:\d+)*)$", re.MULTILINE)
+LIST_FILTER = """
+local items = {}
+local visit
+
+local function blocks_of(item)
+  local count = 0
+  for _, block in ipairs(item) do
+    -- A separator comment, such as the quotation filter's, prints nothing.
+    if not (block.t == "RawBlock" and block.format == "html"
+            and block.text:match("^%s*<!%-%-.-%-%->%s*$")) then
+      count = count + 1
+    end
+  end
+  return count
+end
+
+local function visit_all(blocks, depth)
+  for _, block in ipairs(blocks) do visit(block, depth) end
+end
+
+local function visit_rows(rows, depth)
+  for _, row in ipairs(rows) do
+    for _, cell in ipairs(row.cells) do visit_all(cell.contents, depth) end
+  end
+end
+
+visit = function(block, depth)
+  local kind = block.t
+  if kind == "BulletList" or kind == "OrderedList" then
+    for _, item in ipairs(block.content) do
+      items[#items + 1] = (depth + 1) .. ":" .. blocks_of(item)
+      visit_all(item, depth + 1)
+    end
+  elseif kind == "BlockQuote" or kind == "Div" or kind == "Figure" then
+    visit_all(block.content, depth)
+  elseif kind == "DefinitionList" then
+    for _, entry in ipairs(block.content) do
+      for _, definition in ipairs(entry[2]) do visit_all(definition, depth) end
+    end
+  elseif kind == "Table" then
+    visit_rows(block.head.rows, depth)
+    for _, body in ipairs(block.bodies) do
+      visit_rows(body.head, depth)
+      visit_rows(body.body, depth)
+    end
+    visit_rows(block.foot.rows, depth)
+  end
+end
+
+return {
+  {
+    Pandoc = function(doc)
+      visit_all(doc.blocks, 0)
+      -- A note's lists print in the footnotes, outside any list item.
+      doc:walk({Note = function(note) visit_all(note.content, 0) end})
+      local line = "triptych-list-items:"
+      for _, item in ipairs(items) do line = line .. " " .. item end
+      io.stderr:write(line .. "\\n")
+    end,
+  },
+}
+"""
+
 UNNUMBERED_HEADING_ATTRIBUTE_RE = re.compile(
     r"^(#{1,6} .+?) \{#([^{} ]+) \.unnumbered\}$", re.MULTILINE
 )
@@ -683,6 +755,99 @@ def clean_markdown_line_endings(markdown: str) -> str:
         match = re.search(r"[ \t]{2,}$", line)
         lines.append((line[:match.start()] + "<br>") if match else line.rstrip(" \t"))
     return "\n".join(lines) + ("\n" if terminal_newline else "")
+
+
+MARKDOWN_LIST_MARKER_RE = re.compile(r"(?:[-*+]|\d{1,9}[.)])(?: +|$)")
+MARKDOWN_QUOTE_PREFIX_RE = re.compile(r"^(?:> ?)*")
+MARKDOWN_FENCE_RE = re.compile(r"(`{3,}|~{3,})")
+
+
+def nest_lists_for_site(markdown: str) -> str:
+    """Indent what a list item holds by four columns, as Python-Markdown reads it.
+
+    Pandoc indents an item's later blocks by its marker's width. Under "- "
+    that is two columns, which pandoc and CommonMark read as nesting and the
+    site's renderer reads as a sibling item or, for a paragraph, as the end of
+    the list. Only an item that holds more than its first paragraph moves: a
+    nested list or a block after a blank line inside it. A paragraph's own
+    continuation line, such as the line after a hard break, already reads as
+    part of its item, and an item whose marker is four columns wide, as
+    pandoc writes "1.  ", is already where the renderer wants it; neither
+    changes, so an edition with no such item is byte-identical. Quotation
+    prefixes are kept and their contents treated alike; fenced code moves with
+    its item and is never read for markers.
+    """
+    lines = markdown.split("\n")
+    # Pass one: each item's frame -- where its content starts in pandoc's
+    # output, how wide its marker is, its parent -- and whether it holds a
+    # block the renderer will only nest at four columns.
+    frames: list[dict] = []
+    owner: list[int | None] = []      # innermost frame holding each line
+    marker: list[int | None] = []     # the frame a marker line opens
+    stack: list[int] = []
+    prefix_of_stack = None
+    fence: str | None = None
+    blank_before = False
+    for line in lines:
+        prefix = MARKDOWN_QUOTE_PREFIX_RE.match(line).group(0)
+        rest = line[len(prefix):]
+        if prefix != prefix_of_stack and rest.strip():
+            stack, prefix_of_stack, fence = [], prefix, None
+        if not rest.strip():
+            owner.append(stack[-1] if stack else None)
+            marker.append(None)
+            blank_before = True
+            continue
+        indent = len(rest) - len(rest.lstrip(" "))
+        if fence is None:
+            while stack and indent < frames[stack[-1]]["content"]:
+                stack.pop()
+        holder = stack[-1] if stack else None
+        opened = None
+        if fence is None:
+            found = MARKDOWN_LIST_MARKER_RE.match(rest[indent:])
+            if found:
+                width = len(found.group(0)) if found.group(0).endswith(" ") else len(found.group(0)) + 1
+                opened = len(frames)
+                frames.append({"parent": holder, "indent": indent,
+                               "content": indent + width, "width": width, "nests": False})
+                if holder is not None:
+                    frames[holder]["nests"] = True
+            elif holder is not None and blank_before:
+                frames[holder]["nests"] = True
+            if MARKDOWN_FENCE_RE.match(rest[indent:]):
+                fence = MARKDOWN_FENCE_RE.match(rest[indent:]).group(1)
+        elif rest[indent:].startswith(fence):
+            fence = None
+        owner.append(holder)
+        marker.append(opened)
+        if opened is not None:
+            stack.append(opened)
+        blank_before = False
+
+    # Pass two: how far each frame's content moves. A frame that nests puts
+    # its content four columns past its own marker; one that does not keeps
+    # its content where pandoc put it relative to that marker.
+    shift: list[int] = []
+    for frame in frames:
+        parent = frame["parent"]
+        moved = shift[parent] if parent is not None else 0
+        frame["moved"] = moved
+        if frame["nests"]:
+            shift.append(moved + frame["indent"] + max(4, frame["width"]) - frame["content"])
+        else:
+            shift.append(moved)
+    out = []
+    for line, holder, opened in zip(lines, owner, marker):
+        prefix = MARKDOWN_QUOTE_PREFIX_RE.match(line).group(0)
+        rest = line[len(prefix):]
+        if not rest.strip():
+            out.append(line)
+            continue
+        by = frames[opened]["moved"] if opened is not None else (
+            shift[holder] if holder is not None else 0)
+        out.append(prefix + " " * by + rest if by > 0 else line)
+    return "\n".join(out)
 
 
 def strip_for_scan(text: str) -> str:
@@ -2396,6 +2561,111 @@ def repeated_headers(markdown: str) -> int:
     return count
 
 
+class RenderedListItems(HTMLParser):
+    """Each list item on a rendered page, as its depth and its block count.
+
+    The count matches the filter's: each block element an item holds directly
+    is one, and a run of text and inline elements between them is one, which is
+    how a tight item's plain text and a loose item's paragraph both count once.
+    The renderer's own lists are not the document's: the table of contents is
+    skipped, and the footnotes' list holds notes, whose lists count from the top.
+    """
+
+    BLOCKS = {"address", "blockquote", "details", "div", "dl", "figure", "h1", "h2",
+              "h3", "h4", "h5", "h6", "hr", "ol", "p", "pre", "section", "table", "ul"}
+    VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link",
+            "meta", "source", "track", "wbr"}
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.stack: list[list] = []   # [tag, role, blocks, in_inline_run]
+        self.items: Counter[tuple[int, int]] = Counter()
+
+    def _counting_item(self) -> list | None:
+        if self.stack and self.stack[-1][1] == "item":
+            return self.stack[-1]
+        return None
+
+    def _child(self, block: bool) -> None:
+        item = self._counting_item()
+        if item is None:
+            return
+        if block:
+            item[2] += 1
+            item[3] = False
+        elif not item[3]:
+            item[2] += 1
+            item[3] = True
+
+    def handle_starttag(self, tag: str, attributes: list) -> None:
+        if any(entry[1] == "toc" for entry in self.stack):
+            if tag not in self.VOID:
+                self.stack.append([tag, "toc", 0, False])
+            return
+        self._child(tag in self.BLOCKS)
+        if tag in self.VOID:
+            return
+        classes = (dict(attributes).get("class") or "").split()
+        parent = self.stack[-1][1] if self.stack else None
+        role = None
+        if tag == "div" and "toc" in classes:
+            role = "toc"
+        elif tag == "div" and "footnote" in classes:
+            role = "notes"
+        elif tag == "ol" and parent == "notes":
+            role = "note-list"
+        elif tag == "li" and parent == "note-list":
+            role = "note"
+        elif tag == "li":
+            role = "item"
+        self.stack.append([tag, role, 0, False])
+
+    def handle_startendtag(self, tag: str, attributes: list) -> None:
+        if not any(entry[1] == "toc" for entry in self.stack):
+            self._child(tag in self.BLOCKS)
+
+    def handle_endtag(self, tag: str) -> None:
+        for index in range(len(self.stack) - 1, -1, -1):
+            if self.stack[index][0] == tag:
+                closed = self.stack[index:]
+                del self.stack[index:]
+                for entry in reversed(closed):
+                    if entry[1] == "item":
+                        depth = 1 + sum(1 for open_entry in self.stack if open_entry[1] == "item")
+                        self.items[(depth, entry[2])] += 1
+                return
+
+    def handle_data(self, data: str) -> None:
+        if data.strip() and not any(entry[1] == "toc" for entry in self.stack):
+            self._child(False)
+
+
+def rendered_list_items(rendered: str) -> Counter[tuple[int, int]]:
+    parser = RenderedListItems()
+    parser.feed(rendered)
+    parser.close()
+    return parser.items
+
+
+def list_item_shortfalls(
+    source: Counter[tuple[int, int]], site: Counter[tuple[int, int]]
+) -> list[str]:
+    """The list items the site sets at another depth or holding other blocks."""
+    if source == site:
+        return []
+
+    def described(items: Counter[tuple[int, int]]) -> str:
+        return ", ".join(
+            f"{count} at depth {depth} holding {blocks} block(s)"
+            for (depth, blocks), count in sorted(items.items())
+        ) or "none"
+
+    return [
+        "list items are set differently on the site than pandoc read them: "
+        f"{described(source - site)} became {described(site - source)}"
+    ]
+
+
 def audit_output(
     body: str,
     markdown: str,
@@ -2409,25 +2679,41 @@ def audit_output(
     source_body: str | None = None,
     lifted_notes: bool = False,
     quotations: int | None = None,
+    list_items: list[tuple[int, int]] | None = None,
 ) -> list[str]:
     """Compare critical macro payloads in the LaTeX body against the Markdown.
 
     The row-opening audit reads `source_body`, the body before the converter's
     own rewriting, where one is given. `quotations`, the number of quotations
-    pandoc read, is held against the page as the site's renderer sets it.
+    pandoc read, and `list_items`, each list item pandoc read as its nesting
+    depth and block count, are held against the page as the site's renderer
+    sets it.
     """
     failures = bracketed_shortfalls(body, markdown, bracketed or {})
+    site_page: list[str] = []
+
+    def rendered_on_site(audit: str) -> str:
+        if not site_page:
+            try:
+                site_page.append(render_markdown(markdown, ROOT))
+            except MarkdownRenderError as exc:
+                raise ConversionError(f"site-rendered {audit} audit failed: {exc}") from exc
+        return site_page[0]
+
     # Only two or more quotations can be merged, so only then is the page rendered.
     if quotations is not None and quotations > 1:
-        try:
-            rendered = len(RENDERED_QUOTATION_RE.findall(render_markdown(markdown, ROOT)))
-        except MarkdownRenderError as exc:
-            raise ConversionError(f"site-rendered quotation audit failed: {exc}") from exc
+        rendered = len(RENDERED_QUOTATION_RE.findall(rendered_on_site("quotation")))
         if rendered != quotations:
             failures.append(
                 f"{quotations} source quotation(s) became {rendered} blockquote(s) "
                 "on the site"
             )
+    # Indentation decides only what an item holds after its first block, so a
+    # page whose items each hold one block is not rendered for this audit.
+    if list_items and any(blocks > 1 for _, blocks in list_items):
+        failures.extend(list_item_shortfalls(
+            Counter(list_items), rendered_list_items(rendered_on_site("list"))
+        ))
     failures.extend(title_shortfalls(body, markdown))
     # A table pandoc could not write as a pipe table becomes an HTML table; a
     # table it dropped becomes neither.  A repeated-header longtable may split
@@ -2692,11 +2978,15 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         "w", suffix=".lua", encoding="utf-8"
     ) as table_filter, tempfile.NamedTemporaryFile(
         "w", suffix=".lua", encoding="utf-8"
-    ) as quotation_filter, tempfile.NamedTemporaryFile("w", suffix=".tex", encoding="utf-8") as handle:
+    ) as quotation_filter, tempfile.NamedTemporaryFile(
+        "w", suffix=".lua", encoding="utf-8"
+    ) as list_filter, tempfile.NamedTemporaryFile("w", suffix=".tex", encoding="utf-8") as handle:
         table_filter.write(TABLE_FILTER)
         table_filter.flush()
         quotation_filter.write(QUOTATION_FILTER)
         quotation_filter.flush()
+        list_filter.write(LIST_FILTER)
+        list_filter.flush()
         handle.write(
             f"{shim_text}\n{locals_text}\n"
             f"\\begin{{document}}\n{body}\n\\end{{document}}\n"
@@ -2713,7 +3003,8 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         )
         command = ["pandoc", "-f", "latex", "-t", dialect, "--wrap=none",
                    "--shift-heading-level-by=1", f"--lua-filter={table_filter.name}",
-                   f"--lua-filter={quotation_filter.name}", handle.name]
+                   f"--lua-filter={quotation_filter.name}",
+                   f"--lua-filter={list_filter.name}", handle.name]
         result = subprocess.run(command, capture_output=True, text=True)
     if result.returncode != 0:
         raise ConversionError(f"pandoc failed:\n{result.stderr.strip()}")
@@ -2722,7 +3013,14 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     quotation_count = QUOTATION_COUNT_RE.search(result.stderr)
     if quotation_count is None:
         raise ConversionError("pandoc's quotation filter reported no count")
-    converted = clean_markdown_line_endings(result.stdout)
+    list_report = LIST_ITEMS_RE.search(result.stderr)
+    if list_report is None:
+        raise ConversionError("pandoc's list filter reported no items")
+    list_items = [
+        (int(depth), int(blocks))
+        for depth, blocks in (item.split(":") for item in list_report.group(1).split())
+    ]
+    converted = nest_lists_for_site(clean_markdown_line_endings(result.stdout))
     converted = letter_appendix_references(converted, body)
     if required_anchors is not None and toc_count:
         converted_toc_count = converted.count(WEB_TOC_SENTINEL)
@@ -2774,6 +3072,7 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         assembled_body,
         semantic_graph is not None,
         int(quotation_count.group(1)),
+        list_items,
     )
     if failures:
         raise ConversionError("\n".join(failures))

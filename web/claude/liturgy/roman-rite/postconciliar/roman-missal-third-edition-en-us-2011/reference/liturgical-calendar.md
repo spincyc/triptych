@@ -901,17 +901,17 @@ Grouped by the role each source played. Loci cited in the body are to these edit
 
 - *Missale Romanum, ex decreto Sacrosancti Oecumenici Concilii Vaticani II instauratum, auctoritate Pauli PP. VI promulgatum, Ioannis Pauli PP. II cura recognitum*, *editio typica tertia*. Civitas Vaticana: Typis Vaticanis, 2002. Containing, and cited here as:
 
-  - *Institutio generalis Missalis Romani*, nn. 53, 68, 353–355, 357–358, 363, 372, 374–378, cited as <span class="smallcaps">igmr</span>;
+    - *Institutio generalis Missalis Romani*, nn. 53, 68, 353–355, 357–358, 363, 372, 374–378, cited as <span class="smallcaps">igmr</span>;
 
-  - *Normae universales de anno liturgico et de calendario*, nn. 1–61 with the *Tabula dierum liturgicorum secundum ordinem praecedentiae disposita*, cited as <span class="smallcaps">nualc</span>;
+    - *Normae universales de anno liturgico et de calendario*, nn. 1–61 with the *Tabula dierum liturgicorum secundum ordinem praecedentiae disposita*, cited as <span class="smallcaps">nualc</span>;
 
-  - *Calendarium Romanum Generale*, including the movable entries appended to December and June and the convention that an entry without a stated grade is an optional memorial;
+    - *Calendarium Romanum Generale*, including the movable entries appended to December and June and the convention that an entry without a stated grade is an optional memorial;
 
-  - the rubrics *Tempus “per annum”* 1–6, and the formularies of *Hebdomada I* and *Hebdomada XXXIV “per annum”*;
+    - the rubrics *Tempus “per annum”* 1–6, and the formularies of *Hebdomada I* and *Hebdomada XXXIV “per annum”*;
 
-  - the rubric *In Baptismate Domini*; the heading *In feriis temporis Nativitatis*; the rubric on the announcement of movable feasts at the Epiphany;
+    - the rubric *In Baptismate Domini*; the heading *In feriis temporis Nativitatis*; the rubric on the announcement of movable feasts at the Epiphany;
 
-  - *Tabella temporaria praecipuarum celebrationum anni liturgici*, civil years 2000–2023.
+    - *Tabella temporaria praecipuarum celebrationum anni liturgici*, civil years 2000–2023.
 
 - *Ordo lectionum Missae*, *editio typica altera*. Civitas Vaticana: Libreria Editrice Vaticana, 1981. *Praenotanda* nn. 65, 66 with n. 102 of the notes, 69, 103, 104 with nn. 115–116 of the notes, cited as <span class="smallcaps">olm</span>; with the decree of promulgation of 25 May 1969 (prot. 106/69) and the decree *De editione typica altera* of 21 January 1981 (prot. CD 240/81) in the front matter.
 

@@ -82,6 +82,33 @@ def quotation_texts(rendered: str) -> list[str]:
     return [" ".join(text.split()) for text in parser.texts]
 
 
+def list_items(rendered: str) -> list[tuple[int, str]]:
+    """Each list item's nesting depth and own words, in opening order."""
+
+    class Items(HTMLParser):
+        def __init__(self) -> None:
+            super().__init__()
+            self.items: list[list] = []
+            self.open: list[int] = []
+
+        def handle_starttag(self, tag: str, attributes: list) -> None:
+            if tag == "li":
+                self.open.append(len(self.items))
+                self.items.append([len(self.open), ""])
+
+        def handle_endtag(self, tag: str) -> None:
+            if tag == "li":
+                self.open.pop()
+
+        def handle_data(self, data: str) -> None:
+            if self.open:
+                self.items[self.open[-1]][1] += data
+
+    parser = Items()
+    parser.feed(rendered)
+    return [(depth, " ".join(text.split())) for depth, text in parser.items]
+
+
 @unittest.skipUnless(HAS_PANDOC, "pandoc is not installed")
 class WebEditionConversionTests(unittest.TestCase):
     def convert(
@@ -692,6 +719,65 @@ class WebEditionConversionTests(unittest.TestCase):
         self.assertIn(
             "2 source quotation(s) became 1 blockquote(s) on the site", str(raised.exception)
         )
+
+    @unittest.skipUnless(importlib.util.find_spec("markdown"), "Python Markdown is not installed")
+    def test_nested_lists_stay_nested_on_the_site(self) -> None:
+        # Pandoc indents an item's nested list by its marker's width, two
+        # columns under "- ", and the site's Python-Markdown set the nested
+        # items as siblings of the item holding them: both Claude calendar
+        # references printed each witness's components that way. Rendered by
+        # the site itself.
+        site = runpy.run_path(str(ROOT / "tools/public-alpha"))
+        markdown = self.convert(
+            "\\begin{itemize}\n"
+            "\\item The typical edition, read for:\n"
+            "\\begin{itemize}\n\\item the decrees;\n\\item the calendar.\n\\end{itemize}\n"
+            "\\item A brief, with a second paragraph.\n\n"
+            "Its second paragraph.\n"
+            "\\item A numbered sequence:\n"
+            "\\begin{enumerate}\n\\item first;\n\\begin{itemize}\n\\item its note.\n"
+            "\\end{itemize}\n\\item second.\n\\end{enumerate}\n"
+            "\\end{itemize}\n"
+        )
+        self.assertIn("\n    - the decrees;", markdown)
+        rendered = site["render_page"](
+            "web/test/studies/subject.md", markdown, "subject.html", True, {}
+        )
+        self.assertEqual(
+            [(depth, text.split()[0]) for depth, text in list_items(rendered)],
+            [(1, "The"), (2, "the"), (2, "the"), (1, "A"), (1, "A"),
+             (2, "first;"), (3, "its"), (2, "second.")],
+        )
+        self.assertIn((1, "A brief, with a second paragraph. Its second paragraph."),
+                      list_items(rendered))
+
+    @unittest.skipUnless(importlib.util.find_spec("markdown"), "Python Markdown is not installed")
+    def test_lists_the_site_would_flatten_stop_the_conversion(self) -> None:
+        # Without the re-indentation the filter still reports what pandoc read,
+        # and the audit, reading the page as the site renders it, refuses it.
+        with mock.patch.object(DRIVER, "nest_lists_for_site", side_effect=lambda text: text), \
+                self.assertRaises(DRIVER.ConversionError) as raised:
+            self.convert(
+                "\\begin{itemize}\n\\item Parent.\n\\begin{itemize}\n"
+                "\\item child.\n\\end{itemize}\n\\end{itemize}\n"
+            )
+        self.assertIn("list items are set differently on the site", str(raised.exception))
+        self.assertIn("1 at depth 2 holding 1 block(s)", str(raised.exception))
+
+    def test_list_audit_renders_only_items_holding_more_than_one_block(self) -> None:
+        # A one-block item reads the same at any indentation, so a page of them
+        # is not rendered; a nested list is, and never passes unrendered.
+        with mock.patch("_markdown_render.distribution_version", return_value="0.invalid"):
+            markdown = self.convert(
+                "\\begin{itemize}\n\\item One.\n\\item Two.\n\\end{itemize}\n"
+            )
+            self.assertIn("- One.", markdown)
+            with self.assertRaises(DRIVER.ConversionError) as raised:
+                self.convert(
+                    "\\begin{itemize}\n\\item Parent.\n\\begin{itemize}\n"
+                    "\\item child.\n\\end{itemize}\n\\end{itemize}\n"
+                )
+        self.assertIn("site-rendered list audit failed", str(raised.exception))
 
     def test_quotation_audit_requires_the_site_renderer_dependency_lock(self) -> None:
         # A leaf with fewer than two quotations has none to merge and is not
@@ -1757,6 +1843,91 @@ class WebEditionAuditTests(unittest.TestCase):
             "\n\n> The verses", f"\n\n{DRIVER.QUOTATION_SEPARATOR}\n\n> The verses"
         )
         self.assertEqual(DRIVER.audit_output("Prose.", apart, quotations=2), [])
+
+    def test_nesting_moves_only_items_that_hold_more_than_a_paragraph(self) -> None:
+        pandoc = (
+            "- Parent:\n"
+            "\n"
+            "  - child;\n"
+            "\n"
+            "    - grandchild.\n"
+            "\n"
+            "- One paragraph, with a hard break<br>\n"
+            "  and its continuation line.\n"
+            "\n"
+            "- Two paragraphs.\n"
+            "\n"
+            "  The second.\n"
+            "\n"
+            "  ``` text\n"
+            "  - not a marker\n"
+            "  ```\n"
+            "\n"
+            "1.  Numbered:\n"
+            "\n"
+            "    - already four columns in.\n"
+            "\n"
+            "> - Quoted parent:\n"
+            ">\n"
+            ">   - quoted child.\n"
+            "\n"
+            "Prose after the lists.\n"
+        )
+        self.assertEqual(
+            DRIVER.nest_lists_for_site(pandoc),
+            "- Parent:\n"
+            "\n"
+            "    - child;\n"
+            "\n"
+            "        - grandchild.\n"
+            "\n"
+            "- One paragraph, with a hard break<br>\n"
+            "  and its continuation line.\n"
+            "\n"
+            "- Two paragraphs.\n"
+            "\n"
+            "    The second.\n"
+            "\n"
+            "    ``` text\n"
+            "    - not a marker\n"
+            "    ```\n"
+            "\n"
+            "1.  Numbered:\n"
+            "\n"
+            "    - already four columns in.\n"
+            "\n"
+            "> - Quoted parent:\n"
+            ">\n"
+            ">     - quoted child.\n"
+            "\n"
+            "Prose after the lists.\n",
+        )
+        # Nothing here holds more than a paragraph, so nothing moves.
+        flat = "- One.\n- Two<br>\n  continued.\n\n1.  Three.\n"
+        self.assertEqual(DRIVER.nest_lists_for_site(flat), flat)
+
+    @unittest.skipUnless(importlib.util.find_spec("markdown"), "Python Markdown is not installed")
+    def test_lists_flattened_on_the_site_are_reported(self) -> None:
+        source = [(1, 2), (2, 1), (2, 1), (1, 1)]
+        flat = self.minimal_markdown() + "\n- Parent:\n\n  - one;\n  - two.\n\n- Next.\n"
+        failures = DRIVER.audit_output("Prose.", flat, list_items=source)
+        self.assertTrue(any("list items are set differently on the site" in failure
+                            for failure in failures), failures)
+        self.assertEqual(
+            DRIVER.audit_output("Prose.", DRIVER.nest_lists_for_site(flat), list_items=source), []
+        )
+
+    def test_rendered_list_items_skip_the_renderers_own_lists(self) -> None:
+        rendered = (
+            '<div class="toc"><ul><li><a href="#a">A</a></li></ul></div>'
+            "<ul><li><p>Parent.</p><ul><li>child<br>line</li></ul></li><li>Next.</li></ul>"
+            '<div class="footnote"><hr><ol><li id="fn:1"><p>Note.</p>'
+            "<ul><li>in the note</li></ul></li></ol></div>"
+        )
+        self.assertEqual(
+            DRIVER.rendered_list_items(rendered),
+            Counter({(1, 2): 1, (2, 1): 1, (1, 1): 2}),
+        )
 
     def test_paragraph_audits_read_across_a_quotation_separator(self) -> None:
         plain = "> One ends\n\n> without a stop.\n"

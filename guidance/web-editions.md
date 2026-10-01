@@ -152,7 +152,16 @@ forty editions of both providers set as one what the PDF sets as two until
 2026-09-25, so a pandoc filter now writes `<!-- end of quotation -->` between
 any two adjacent quotations and the audit, rendering every edition with two
 or more quotations with the site's renderer, refuses one with more or fewer
-blockquotes than the quotations pandoc read;
+blockquotes than the quotations pandoc read; pandoc indents what a list item
+holds after its first paragraph by the width of its marker, two columns under
+`- `, where the site's Python-Markdown needs four and sets a nested list so
+indented as more items of the list around it, so both Claude calendar
+references printed each witness's components as siblings of the witness until
+2026-10-01: the converter now indents such an item's content four columns,
+moving nothing in an item that holds only its first paragraph, and the audit,
+rendering every edition in which an item holds more than one block with the
+site's renderer, refuses one whose list items differ in depth or in block
+count from those pandoc read;
 and pandoc cannot expand the `\if\relax\detokenize{#n}\relax`
 test with which `\propertitle` omits an empty field, so every proper title
 block lost its second and third lines while their words still stood in the

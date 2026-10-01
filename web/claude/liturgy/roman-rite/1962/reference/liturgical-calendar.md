@@ -1198,19 +1198,19 @@ Sources are grouped by the role they play. Only sources actually read for this e
 
 - *Missale Romanum ex decreto Sacrosancti Concilii Tridentini restitutum, Summorum Pontificum cura recognitum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962). Read in the facsimile published by the Church Music Association of America, whose exact bytes are registered in the repository’s source library and were re-downloaded and hashed byte-identical during the preparation of this edition. The following were read:
 
-  - the front-matter decrees and papal bulls;
+    - the front-matter decrees and papal bulls;
 
-  - the note *De anno et eius partibus*, including the Ember Day rule and the account of the Gregorian correction;
+    - the note *De anno et eius partibus*, including the Ember Day rule and the account of the Gregorian correction;
 
-  - the *Tabella temporaria festorum mobilium* and the *Tabula paschalis antiqua reformata*, read as rendered page images at 200 and 400 dots per inch;
+    - the *Tabella temporaria festorum mobilium* and the *Tabula paschalis antiqua reformata*, read as rendered page images at 200 and 400 dots per inch;
 
-  - the universal *Calendarium* at printed pages XLV–LIII, all nine pages read as rendered page images at 260 dots per inch;
+    - the universal *Calendarium* at printed pages XLV–LIII, all nine pages read as rendered page images at 260 dots per inch;
 
-  - the formularies of the First Sunday after the Epiphany, the Holy Family, and the Commemoration of the Baptism of the Lord, with their occurrence rubrics;
+    - the formularies of the First Sunday after the Epiphany, the Holy Family, and the Commemoration of the Baptism of the Lord, with their occurrence rubrics;
 
-  - the Ember Wednesday of Pentecost and of September;
+    - the Ember Wednesday of Pentecost and of September;
 
-  - the Twenty-third Sunday after Pentecost with the resumption rubric printed at its end; the Third and Fourth Sundays left over after the Epiphany; and the Twenty-fourth and last Sunday after Pentecost, whose Epistle is Colossians 1:9–14 and Gospel Matthew 24:15–35.
+    - the Twenty-third Sunday after Pentecost with the resumption rubric printed at its end; the Third and Fourth Sundays left over after the Epiphany; and the Twenty-fourth and last Sunday after Pentecost, whose Epistle is Colossians 1:9–14 and Gospel Matthew 24:15–35.
 
 - Pius V, bull *Quo primum tempore*, 14 July 1570; Clement VIII, brief of 7 July 1604; and Urban VIII, brief of 2 September 1634 — all read in the front matter of the same 1962 edition, and used only for the dated timeline.
 
