@@ -33,7 +33,8 @@
 # convention and its date; `basis_sources` cites every source the basis was read
 # from, as an https URL or a library record id. Every source was fetched whole
 # with curl on 2026-09-22, or on 2026-09-23 for the rows added or corrected that
-# day, and read locally; none passed through a model. A web
+# day, or on the date a later section's header gives for its rows, and read
+# locally; none passed through a model. A web
 # search was used only to locate a page, never to read one. Where a source
 # gives no date, `died` says so rather than supplying one. `censures` records a
 # judgment on a point -- the body, the year, the point, the source -- and a
@@ -547,3 +548,48 @@ basis_sources = [
 ]
 confession = "Catholic"
 notes = "The Catholic Encyclopedia's article says of Bruni's edition that 'Many writings, however, which Bruni ascribes to Maximus are of doubtful origin', and its appendix carries writings of uncertain authorship. Homilia CVIII of that edition is the text Patrologia Latina 52 prints as Peter Chrysologus's Sermo 50; its ascription is recorded on passage.maximus-of-turin.homiliae.1862-migne-pl-57.homilia-108 and passage.peter-chrysologus.sermones.1894-garnier-migne-pl-52.sermo-50 and is not settled here. This row states who Maximus is, not that he wrote that homily."
+
+# ---------------------------------------------------------------------------
+# Rows added 2026-10-01 for the two gaps `standing` reported
+#
+# Leo the Great is named as a lane author by the GPT postconciliar pc-s53
+# proper-components manifest; Maximus the Confessor is the author of the
+# registered liturgical commentary work.maximus-the-confessor.mystagogia. Their
+# sources were fetched whole with curl on 2026-10-01 and read locally; each
+# Catholic Encyclopedia article was confirmed by its own title and citation
+# line, and the Martyrology entries were read in the same djvu text the
+# Maximus of Turin row cites.
+# ---------------------------------------------------------------------------
+
+[[persons]]
+id = "leo-the-great"
+name = "Leo the Great"
+names = ["Leo the Great", "Leo I", "Pope Leo I", "Pope Leo the Great", "St Leo the Great", "Pope St Leo I"]
+died = "10 November 461"
+standing = "father"
+standing_basis = "Pope (reigned 440-61), 'Place and date of birth unknown; died 10 November, 461'; 'In 1754 Benedict XIV exalted him to the dignity of Doctor of the Church (doctor ecclesiæ)', and his feast is kept in the Latin Church on 11 April (Catholic Encyclopedia, 'Pope St. Leo I (the Great)', vol. 9, 1910). The Catholic Encyclopedia's 'Doctors of the Church' records the same act: 'St. Leo I (a well-deserved but belated honour) by Benedict XIV (1754)'. Among the Fathers by the Catholic Encyclopedia's 'Fathers of the Church': the Gelasian 'list of approved Fathers comprises' him by name, and its survey of preaching ends on 'the ponderous rhythms of Leo the Great. The eloquence of these Fathers need not be here described', the sentence that grounds the Chrysologus and Maximus of Turin rows. The Roman Martyrology, in the English translation of the edition printed at Rome in 1914 (Baltimore: John Murphy, 1916), reads at the eleventh day of April: 'At Rome, St. Leo, pope and confessor, who was surnamed the Great on account of his extraordinary merits.' A Father before a Doctor, by this file's precedence."
+basis_sources = [
+  "https://www.newadvent.org/cathen/09154b.htm",
+  "https://www.newadvent.org/cathen/05075a.htm",
+  "https://www.newadvent.org/cathen/06001a.htm",
+  "https://archive.org/download/romanmartyrology00cathuoft/romanmartyrology00cathuoft_djvu.txt",
+]
+confession = "Catholic"
+notes = "The library has no work namespace for him, so the row names none; the GPT pc-s53 manifest cites him by the name 'Leo the Great'. The Catholic Encyclopedia's 'Fathers of the Church' also says he was left out of the four 'Latin Doctors' 'on account of the paucity of his writings, and by the fact that his letters had a far higher authority as papal utterances'; that is the medieval grouping, not his standing, which Benedict XIV's act settles."
+
+[[persons]]
+id = "maximus-the-confessor"
+namespaces = ["maximus-the-confessor"]
+name = "Maximus the Confessor"
+names = ["Maximus the Confessor", "Maximus Confessor", "St Maximus the Confessor", "Maximus the Theologian"]
+died = "13 August 662, in exile"
+standing = "father"
+standing_basis = "'Known as the Theologian and as Maximus Confessor, born at Constantinople about 580; died in exile 13 August, 662'; 'Thus St. Maximus died for orthodoxy and obedience to Rome', is 'deeply learned in the Fathers', 'may be said to complete and close the series of patristic writings on the Incarnation', and 'is commemorated in the Roman Martyrology on 13 August' (Catholic Encyclopedia, 'St. Maximus of Constantinople', vol. 10, 1911). The Roman Martyrology, in the English translation of the edition printed at Rome in 1914 (Baltimore: John Murphy, 1916), reads at the thirteenth day of August: 'At Constantinople, St. Maximus, a monk, distinguished for learning and for zeal for Catholic truth.' The Catholic Encyclopedia's 'Fathers of the Church' holds that 'The Fathers' must 'undoubtedly include ... in the East, St. John Damascene (d. about 754)', names 'St. Maximus Confessor' among the Eastern writers of the period that John of Damascus 'closes', and counts among its criteria of a Father an 'encomium in the Roman Martyrology'. A Father by this file's precedence, within that article's limits of the patristic age, and a saint by the cultus the Martyrology records; not a Doctor."
+basis_sources = [
+  "https://www.newadvent.org/cathen/10078b.htm",
+  "https://www.newadvent.org/cathen/06001a.htm",
+  "https://www.newadvent.org/cathen/05075a.htm",
+  "https://archive.org/download/romanmartyrology00cathuoft/romanmartyrology00cathuoft_djvu.txt",
+]
+confession = "Catholic"
+notes = "The Fathers article gives the Martyrology criterion as an encomium 'as \"sanctitate et doctrina insignis\"'; only the 1916 English Martyrology was read, so the Latin wording of his entry is not claimed. The Encyclopedia article's 'one of the chief doctors of the theology of the Incarnation' is description, not the title: the Encyclopedia's 'Doctors of the Church' does not name him. It also calls the ancient Vita et certamen 'not contemporary' and says it 'cannot be trusted'."
