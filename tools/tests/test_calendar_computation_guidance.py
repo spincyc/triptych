@@ -99,7 +99,7 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
       r"^\| (PC-S\d{2}) \| `[^`]+` \| [^|]+ \|$", registry, re.MULTILINE
     )
     rows = re.findall(
-      r"^\| \*\*(.+?)\*\* \|.*\|.*\|.*\|$",
+      r"^\| \*\*(.+?)\*\* \| ([ABC](?:, [ABC])*) \|.*\|.*\|$",
       landing.split("## Sunday Propers Calendar")[1].split("### Sunday replacements")[0],
       re.MULTILINE,
     )
@@ -112,7 +112,14 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
       )
     ]
     self.assertEqual(parents, [f"PC-S{n:02d}" for n in range(1, 61)])
-    self.assertEqual(len(rows), 63)
+    # 59fe23257 separated provider columns and split published cycles into
+    # their own rows; the 60 parents plus three Triduum entries are unchanged.
+    cycles_by_title = {}
+    for title, cycles in rows:
+      cycles_by_title.setdefault(title, []).extend(cycles.split(", "))
+    self.assertEqual(len(cycles_by_title), 63)
+    for title, cycles in cycles_by_title.items():
+      self.assertCountEqual(cycles, ["A", "B", "C"], title)
     self.assertEqual(sum(counts), 184)
     self.assertIn(
       "| PC-T01 | `pc-t01-evening-mass-of-the-lords-supper` | "
@@ -136,16 +143,16 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
       "### Sunday replacements", 1
     )[0]
     self.assertIn(
-      "| **Evening Mass of the Lord's Supper** | Planned | Planned | Planned |",
+      "| **Evening Mass of the Lord's Supper** | A, B, C | Planned | Planned |",
       calendar,
     )
     self.assertIn(
-      "| **Celebration of the Lord's Passion** | Planned | Planned | Planned |",
+      "| **Celebration of the Lord's Passion** | A, B, C | Planned | Planned |",
       calendar,
     )
     self.assertIn(
-      "| **Easter Vigil** | Planned with Easter Sunday | "
-      "Planned with Easter Sunday | Planned with Easter Sunday |",
+      "| **Easter Vigil** | A, B, C | Planned with Easter Sunday | "
+      "Planned with Easter Sunday |",
       calendar,
     )
     # Verify Triduum ordering: Palm Sunday < Supper < Passion < Vigil < Easter
@@ -162,17 +169,19 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     # The production plan no longer restates the registry's counts, so there
     # is no totals table to assert on; the registry above is the one source.
     self.assertIn(
-      "| **Nativity of the Lord** | Planned | Planned | Planned |",
+      "| **Nativity of the Lord** | A, B, C | Planned | Planned |",
       landing,
     )
     self.assertNotRegex(landing, r"\b\d+ planned\b")
     self.assertIn(
       "| PC-R08 | **Commemoration of All the Faithful Departed** | "
-      "Unresolved | Unresolved | Unresolved |",
+      "A, B, C | Unresolved | Unresolved |",
       landing,
     )
 
   def test_sunday_catalog_links_only_installed_publications(self):
+    # The accepted 1962 Sunday 59 and postconciliar Ordinary Time 27 families were
+    # installed in 86f187baf/866b740c1 and 63c7aba00, respectively.
     permitted_full_guides = {
       *(f"{number:02d}-{slug}.pdf" for number, slug in (
         (39, "trinity-sunday"),
@@ -192,9 +201,11 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
         (56, "sixteenth-after-pentecost"),
         (57, "seventeenth-after-pentecost"),
         (58, "eighteenth-after-pentecost"),
+        (59, "nineteenth-after-pentecost"),
       )),
       "57-seventeenth-after-pentecost-homily.pdf",
       "58-eighteenth-after-pentecost-homily.pdf",
+      "59-nineteenth-after-pentecost-homily.pdf",
       *(f"pc-s{number}-{slug}-year-a.pdf" for number, slug in (
         (37, "eleventh-sunday-in-ordinary-time"),
         (38, "twelfth-sunday-in-ordinary-time"),
@@ -206,9 +217,11 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
         (27, "most-holy-body-and-blood-of-christ"),
         (51, "twenty-fifth-sunday-in-ordinary-time"),
         (52, "twenty-sixth-sunday-in-ordinary-time"),
+        (53, "twenty-seventh-sunday-in-ordinary-time"),
       )),
       "pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf",
       "pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-homily.pdf",
+      "pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-homily.pdf",
       "pc-s44-eighteenth-sunday-in-ordinary-time-year-a.pdf",
       "pc-s44-eighteenth-sunday-in-ordinary-time-year-b.pdf",
       "pc-s44-eighteenth-sunday-in-ordinary-time-year-c.pdf",

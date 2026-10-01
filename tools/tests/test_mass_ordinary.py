@@ -1672,14 +1672,18 @@ process.stdout.write(JSON.stringify({
         current Proper corpus, while the separate cue test holds accessibility.
         """
         report = self.run_harness()
+        # Compared with the pinned 7285e3ec9 payloads on 2026-10-01: only
+        # c2b1a271b's explicit Psalm numbering/title-unnumbered loci and the
+        # collated ot-18 Communion group basis changed. Received prayer text,
+        # translations, event order and counts are unchanged.
         expected = {
             "pentecost_10_text": (
                 205,
-                "151f0c6578ddd8f834c0a739b81e26ca3e0494650ce17ca3ca23a6f0d53015f6",
+                "78c002dd2f36e44c9e10b8bb8657e537124582b997c12774891e84f5ea654083",
             ),
             "ot_18_text": (
                 67,
-                "b49c8f64f4bf81dbb01f373d9d90ea9ba55bf60ec3f0f0faffd188a127161368",
+                "28630a65f69d784944b4ea4ed0b6e2f47c8c894a799a2fbb5872f859b88fcb1f",
             ),
         }
         for key, (count, wanted_digest) in expected.items():
@@ -2119,16 +2123,20 @@ class FormularyPage(unittest.TestCase):
 
     def test_text_bearing_proper_structures_remain_fixed(self) -> None:
         """The full Proper records, including current FDLC oration provenance."""
+        # The 2026-10-01 comparison against 7285e3ec9 found only c2b1a271b's
+        # citation numbering and hebrew-unnumbered-titles loci additions:
+        # 16 fields in Advent I and six in ot-18, with no prayer text or
+        # translation/provenance change and the same ten/eleven Proper rows.
         expected = {
             "roman-1962": (
                 "advent-1",
                 10,
-                "71977549482161848dee6a0a3c9c8edc12827f7cd64f0c279614f6e500d4b2fa",
+                "23cb24d02409584f7c1e1d436dbbb279f29f09b5887082610458f079f0974b5f",
             ),
             "postconciliar": (
                 "ot-18",
                 11,
-                "1a9a860550b7d969c3838fe256bc7af10a61904b6feecc964f780c3a1bdb7cbc",
+                "0edc91f08a6fd5451bfe5fc53607e4ccba60e73993219e970bdbce81ba0b6ec9",
             ),
         }
         keys = (

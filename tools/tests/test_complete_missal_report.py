@@ -565,7 +565,10 @@ class CompleteMissalReportTests(unittest.TestCase):
             self.assertEqual(set(row), {"mass", "target", "group", "candidates"})
 
         english = pre_1955["textual"]["filled_text_slots"]["english"]
-        self.assertEqual(english["with_english"], 86)
+        # The inherited ledger adds the nine collated Cummiskey orations for
+        # Pentecost 13-15 (1733ef528) and four Pentecost 19 slots (d34f6a2d8).
+        # Removing precisely those thirteen entries reproduces the former 86.
+        self.assertEqual(english["with_english"], 99)
         self.assertEqual(
             english["translation_ledger_calendars"],
             ["roman-1962", "roman-pre-1955"],
