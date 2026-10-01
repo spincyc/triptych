@@ -55,6 +55,17 @@ anchor, two GPT biographies whose first section points at `Doc-Start`, and
 the angelology reference, whose "References" bookmark lands a page early.
 Each needs its own template or leaf repair and a maintainer decision.
 
+**Deployed.** The three deploy gates passed and the outgoing range (four
+commits, text only) carried no binary, machine path or credential marker.
+`origin/main` was fast-forwarded `48da60ea0..0e62767de`, and
+[Pages run 36875569023](https://github.com/spincyc/triptych/actions/runs/36875569023)
+concluded success. The live `SHA256SUMS` is byte-identical to the locally
+verified site, and all 27 PDFs return HTTP 200 byte-identical to the verified
+installation; in the live Claude Nineteenth Sunday study every contents link
+targets its own section anchor. The
+[deployment evidence](workflows/reviews/proper-study-pdf-anchors-2026-10-01/deployment-evidence.json)
+records the 27 identities.
+
 ## Claude Nineteenth Sunday revision answering every standing finding, 2026-09-30
 
 <!-- promised-deliverable: claude-59-full-revision-2026-09-30 -->

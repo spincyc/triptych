@@ -4,7 +4,7 @@ schema_version = 1
 id = "proper-study-pdf-anchors-2026-10-01"
 owner = "PROJECT-WORK.md"
 promise = "Make every contents link, bookmark and section label in the proper-study PDFs built with src/common/propers-format.tex land on its own heading, by fixing the shared format and the References anchors, and rebuild, reinstall and redeploy the 27 PDFs of the nine affected Claude and GPT leaves on the maintainer's 2026-10-01 authorization."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "anchors-fixed-and-tested"
@@ -27,8 +27,11 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "anchors-live"
   criterion = "The 27 PDFs are installed byte-identical to the verified builds, the three deploy gates pass, the work reaches origin/main by fast-forward, and the Pages run and the live PDFs are verified."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/proper-study-pdf-anchors-2026-10-01/deployment-evidence.json", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "workflows/reviews/proper-study-pdf-anchors-2026-10-01/deployment-evidence.json"
+  needle = "\"workflow_conclusion\": \"success\""
 
 [[deliverables]]
 id = "claude-59-full-revision-2026-09-30"
