@@ -51,6 +51,18 @@ label "catholic-critical-v1 … composition-only" (REV-V-001/002), the
 published in Claude 57 and GPT 59; cleaning it is that tool's change and
 would regenerate every edition that declares a comparison.
 
+**Deployed.** The three deploy gates passed locally and the outgoing range
+(four commits, text only) carried no binary, machine path or credential
+marker. `origin/main` was fast-forwarded `ab4214de6..58b0734e2`, and
+[Pages run 36807041483](https://github.com/spincyc/triptych/actions/runs/36807041483)
+concluded success, as did repository-hygiene run 36807041496. The live
+`SHA256SUMS` is byte-identical to the locally verified site; the three PDFs
+(33, 12 and 3 pages, at their reviewed hashes), the web page (which reads
+Hilary on Ps 137 at CSEL 22 pp. 742–743) and the Traditional Latin Mass page
+return HTTP 200 byte-identical to it. The
+[deployment evidence](workflows/reviews/claude-1962-59-production-2026-09-30/deployment-evidence-revision.json)
+records those identities.
+
 ## Claude Nineteenth Sunday research-record correction, 2026-09-30
 
 <!-- promised-deliverable: claude-59-research-record-correction-2026-09-30 -->

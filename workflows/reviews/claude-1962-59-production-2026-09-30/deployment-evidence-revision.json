@@ -1,0 +1,54 @@
+{
+  "record_type": "deployment-verification",
+  "verified_on": "2026-09-30",
+  "purpose": "post-acceptance revision answering every standing finding",
+  "commit": "58b0734e2201446fef77670a12caacd25301471e",
+  "workflow_run": "https://github.com/spincyc/triptych/actions/runs/36807041483",
+  "workflow_conclusion": "success",
+  "publication": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+  "provider": "claude",
+  "routes": [
+    {
+      "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf",
+      "http_status": 200,
+      "physical_pages": 33,
+      "sha256": "343d68584f0497f286f251744061df8356336a66c084083bd216786b0c071c94",
+      "compared_with": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf",
+      "http_status": 200,
+      "physical_pages": 12,
+      "sha256": "d845791fa6edfc0f30fabadb3695bc129563a60420a17bc2189727ce6a21f30d",
+      "compared_with": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf",
+      "http_status": 200,
+      "physical_pages": 3,
+      "sha256": "597e74d7a80ec96a02ddf640bfe429d9dd7190181d463c7ad833590ba653ddd1",
+      "compared_with": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/web/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.html",
+      "http_status": 200,
+      "sha256": "5f1f265a4d8cd971c8f93e9a7a2ec06919f0407683b0bc3849a083e51cf3d52b",
+      "bytes": 152479,
+      "compared_with": "build/public-alpha/site/web/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.html (the locally verified site)",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/library/traditional-latin-mass.html",
+      "http_status": 200,
+      "checked": "byte-identical to the locally verified site; row 59 links the three Claude PDFs and the Claude web page"
+    },
+    {
+      "url": "https://mystago.gy/SHA256SUMS",
+      "http_status": 200,
+      "checked": "byte-identical to build/public-alpha/site/SHA256SUMS of the locally verified site"
+    }
+  ]
+}
