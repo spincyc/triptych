@@ -8,22 +8,23 @@ state = "in_progress"
 # 2026-10-01 recovery scope: finish and cold-review the interrupted repairs,
 # including discovered regressions and open straightforward defects; do not
 # implement planned feature/design work. PROJECT-WORK.md's 76-row disposition
-# table preserves the distinction. None of the three broad requirements below
-# is passed by this register reconciliation or by an old review of other bytes.
+# table preserves the distinction. Current independent reviews and final
+# integration evidence close the scoped repair requirements; corpus-live stays
+# open until real main/Pages/live verification. Planned work is not completed.
 
   [[deliverables.requirements]]
   id = "links-every-pdf"
   criterion = "In every installed PDF, every internal heading link and bookmark lands on the page of its heading with the anchor at or just above it, no heading link targets a table, figure or document-start anchor, and no bookmark title carries TeX markup; a gate refuses a build that regresses."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", "tools/tests/test_pdf_anchor_pages.py", "src/gpt/theology/sacraments/research/scope.md"]
-  note = "Recovery review covers 245 installed PDFs and 239 provider builds (7,165 pages); the repaired sacramental landscape destinations are documented with exact reviewed hashes and real-fragment regressions. Final installation and the post-leaf corpus scan remain pending, so this installed-PDF requirement stays open."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/corpus-recovery-2026-10-01/integration-evidence.json", "tools/tests/test_pdf_anchor_pages.py", "src/gpt/theology/sacraments/research/scope.md"]
+  note = "Final frozen review passes all 245 installed PDFs (7,981 pages), with all 239 provider builds matching their installed hashes, no genuine heading-destination failure and five explicitly disposed text-matcher exceptions. Numeric/footnote links retain their distinct checks; 728 contents targets lack PDF page-label metadata. Regression gates protect the shared fixes. Deployment is separate."
 
   [[deliverables.requirements]]
   id = "known-issues-resolved"
   criterion = "Every open item of the verified known-issues inventory is fixed and checked, or recorded with the reason it needs a maintainer decision; the register's lists are reconciled."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
-  note = "The owning 76-row table records fixed, reviewed, integration-pending, planned, historical and decision-bound items individually. KI-027's bounded 30-group/eight-Psalm repair passes its focused checks, while 31 unexamined groups remain planned collation. Source repairs cover seven identifiable Latin bodies, nine Cummiskey rows and Angela's explicit English gaps; source/census projections and finding-aid checks now pass. Day's cross-Missal Apply regression passes 43 browser assertions. Five GPT leaves and Claude 59/pc-s52 have independent scoped passes and exact-byte installation; the five full Claude revisions, final integrated suite and release/site checks remain open."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/corpus-recovery-2026-10-01/index.json", "workflows/reviews/corpus-recovery-2026-10-01/reviewed-publication-manifest.json", "workflows/reviews/corpus-recovery-2026-10-01/integration-evidence.json"]
+  note = "Satisfied for the maintainer's recovery scope: concrete known/discovered regressions and straightforward open defects are repaired and checked; all 76 inventory identities have explicit dispositions. All 12 independent leaf reviews pass within their recorded limits and their 33 PDFs/12 web editions are installed exactly. Planned design/corpus/audit work, 31 unexamined calendar groups, historical artifact-review obligations, editorial/history decisions and unreproduced old reports remain explicitly deferred or unproved; none is claimed completed, approved or retrospectively reproduced. Final local gates and replay support current repairs; live deployment remains separate."
 
   [[deliverables.requirements]]
   id = "claude-54-withdrawn"

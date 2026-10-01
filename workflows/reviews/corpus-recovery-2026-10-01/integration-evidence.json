@@ -1,0 +1,3033 @@
+{
+  "schema": "triptych-corpus-recovery-integration/v1",
+  "recorded_utc": "2026-10-01T23:32:04.700348+00:00",
+  "source_and_publication_commit": "a64d226c24232a2d6fbfa17ff5304974af73a556",
+  "branch": "feature/propers/claude",
+  "status": "scoped-recovery-integration-pass",
+  "scope": "Complete the interrupted authorized repairs to known and discovered regressions, including independent publication reviews, exact installation and local release validation. Planned work, unreproduced reports, historical acceptance obligations and explicit maintainer decisions remain separately recorded in PROJECT-WORK.md.",
+  "deployment_status": "not-yet-claimed; see deployment-evidence.json when present",
+  "gates": [
+    {
+      "name": "source-and-deployment",
+      "command": [
+        "make",
+        "check-deployment-sources"
+      ],
+      "exit_code": 0,
+      "log": ".scratch/recovery-root/final-source-and-deployment.log",
+      "log_sha256": "3daa1352d9b36c6183dd949ed28179ea96adc69a0126331bb6650fdc64a308fe"
+    },
+    {
+      "name": "unit-suite",
+      "command": [
+        "make",
+        "check-tests",
+        "TEST_JOBS=-j8"
+      ],
+      "exit_code": 0,
+      "log": ".scratch/recovery-root/final-unit-suite.log",
+      "log_sha256": "bcc67ee3e2e7aaeb73a9b3be37251375b8b3a0687781b92aeda426e2d1d7398c"
+    },
+    {
+      "name": "preview-build",
+      "command": [
+        "make",
+        "public-preview"
+      ],
+      "exit_code": 0,
+      "log": ".scratch/recovery-root/final-preview-build.log",
+      "log_sha256": "f258ecee8c2ae28c44d823d3ddc415fc2e6cee4983b76f476ebc3bdc72ee9e02"
+    },
+    {
+      "name": "public-build",
+      "command": [
+        "make",
+        "public-site"
+      ],
+      "exit_code": 0,
+      "log": ".scratch/recovery-root/final-public-build.log",
+      "log_sha256": "25ad5caad8c3a80a0ef0f8a30bc282b86e6d82dd0cb1fcea5fb224996e1e30c5"
+    },
+    {
+      "name": "installed-gates",
+      "command": [
+        "make",
+        "check-document-catalogue",
+        "check-promised-deliverables",
+        "check-public-alpha"
+      ],
+      "exit_code": 0,
+      "log": ".scratch/recovery-root/final-installed-gates.log",
+      "log_sha256": "faa4dd94c548cefc5c59c3305cd91ae824deb262baef54b272afb51b7da0710f"
+    },
+    {
+      "name": "github-pages-verification",
+      "command": [
+        "tools/tpt",
+        "public-alpha",
+        "verify",
+        "--deployment-target",
+        "github-pages"
+      ],
+      "exit_code": 0,
+      "log": ".scratch/recovery-root/final-github-pages-verification.log",
+      "log_sha256": "b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14"
+    },
+    {
+      "name": "source-checks",
+      "command": [
+        "make",
+        "check"
+      ],
+      "exit_code": 0,
+      "log": ".scratch/recovery-root/final-source-checks.log",
+      "log_sha256": "0b422707201d7744d40b7730efded89dd9698e6ab25baebadb553b45a110ee79"
+    },
+    {
+      "name": "tpt-check",
+      "command": [
+        "tools/tpt",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": ".scratch/recovery-root/final-tpt-check.log",
+      "log_sha256": "38c0d0f113d84b6babe4845916c6909a28c8592762fde7bf142aec16bb440512"
+    },
+    {
+      "name": "tmt-check",
+      "command": [
+        "tmt",
+        "check"
+      ],
+      "exit_code": 0,
+      "log": ".scratch/recovery-root/final-tmt-check.log",
+      "log_sha256": "dc51b8c96c2d745df3bd5590d990230a482fd247123599548e0632fdbf97fc22"
+    }
+  ],
+  "unit_suite": {
+    "tests": 4346,
+    "workers": 8,
+    "units": 147,
+    "skipped": 11,
+    "elapsed_seconds": 136.69,
+    "result": "OK"
+  },
+  "example_replay": {
+    "captured": 256,
+    "replayed": 250,
+    "diverged": 0,
+    "known_stale": 0,
+    "existing_exemptions": 6,
+    "unrunnable_here": 0,
+    "wrote_tracked_state": 0,
+    "declared_volatile_lines": 3,
+    "transcripts_updated": 57,
+    "tool_files": 20,
+    "normalized_ast_changes": "Example.output only; existing commands and behavior unchanged",
+    "recapture_report_sha256": "9a2236c8ebee0521a1306e7592c13973e86e27ddbdb6b2d5933ed420591bf0e3",
+    "intentional_nonzero_recaptures": [
+      {
+        "command": "tools/research-staleness status",
+        "exit_code": 1,
+        "stderr": "empty",
+        "reason": "Existing example intentionally reports stale editions or changed research inputs; no rebaseline or behavior change."
+      },
+      {
+        "command": "tools/research-staleness status --provider claude",
+        "exit_code": 1,
+        "stderr": "empty",
+        "reason": "Existing example intentionally reports stale editions or changed research inputs; no rebaseline or behavior change."
+      },
+      {
+        "command": "tools/research-staleness explain claude articles/faith/four-last-things-01-death",
+        "exit_code": 1,
+        "stderr": "empty",
+        "reason": "Existing example intentionally reports stale editions or changed research inputs; no rebaseline or behavior change."
+      },
+      {
+        "command": "tools/research-staleness explain gpt articles/faith/last-supper-calvary-and-the-mass",
+        "exit_code": 1,
+        "stderr": "empty",
+        "reason": "Existing example intentionally reports stale editions or changed research inputs; no rebaseline or behavior change."
+      }
+    ],
+    "bounded_authorization": "Only those four existing intentional staleness examples used --accept-failing. No failing publication verification was accepted; the renderer binding and stale preview manifest were refreshed and verification then passed.",
+    "fixture": "The three existing PDF preconditions were satisfied by an exclusive-create copy of the independently reviewed 20-page GPT59 PDF, SHA256 6df2dca4e72d6f3530682437c575411cefef61dec00b322b41b4ee7ffb7733e4; declarations and six exemptions unchanged.",
+    "future_ledger_dependency": "The predeployment ledger reports 58 tracked and 47 complete. Closing the live criterion requires a later actual-output recapture of the two promised-deliverables examples.",
+    "tool_identities": [
+      {
+        "path": "tools/audit-latin-body-substitutions",
+        "sha256": "a68b1a8b6dfffc9d5588e48873b521d33638ba186f4aef7211a17686e599e0f3",
+        "changed": true,
+        "only_example_outputs_changed": true
+      },
+      {
+        "path": "tools/check-calendar-masses",
+        "sha256": "ca59c698f75820138ad8a05d6f8f47de0f61b510b3b9956047acc6ee1ea341e6",
+        "changed": true,
+        "only_example_outputs_changed": true
+      },
+      {
+        "path": "tools/check-generation-metadata",
+        "sha256": "4b1e05a1258e66cabd2e5c1373a1385af389537cc339dbc387942488fcdbebd3",
+        "changed": true,
+        "only_example_outputs_changed": true
+      },
+      {
+        "path": "tools/check-promised-deliverables",
+        "sha256": "c86b57e3190b4c73cc4bb29f4c2e0f82b922bb584d2bf0a7cc475e85b6ed3894",
+        "changed": true,
+        "only_example_outputs_changed": true
+      },
+      {
+        "path": "tools/check-proper-components",
+        "sha256": "98da479ec1dc9fe1fdf164c4a39af652f3b8db56fe772da98e92b685a56f19ca",
+        "changed": true,
+        "only_example_outputs_changed": true
+      },
+      {
+        "path": "tools/check-web-edition",
+        "sha256": "e5100a1e2c2f34ae1f36bdbbaecab3275f4ea0d4a62662fbe3d29c4942593e99",
+        "changed": true,
+        "only_example_outputs_changed": true
+      },
+      {
+        "path": "tools/citations",
+        "sha256": "5ea3673e2dc7623345c8fe702d7ed7b028329ca63c18f4ee81b61f6be1531763",
+        "changed": true,
+        "only_example_outputs_changed": true
+      },
+      {
+        "path": "tools/commentary-work-index",
+        "sha256": "ba6f37e66bf268516b776c449bbee27c6b449f1c167956593aa96e7cc6529264",
+        "changed": true,
+        "only_example_outputs_changed": true
+      },
+      {
+        "path": "tools/document-library",
+        "sha256": "a16516a164c7ea1227bbf4a964e96a6ceff5a46661bd21951f2a31ee9a8bcc39",
+        "changed": true,
+        "only_example_outputs_changed": true
+      },
+      {
+        "path": "tools/index-bible",
+        "sha256": "8b98a60b040c3fd491e2f4c27cf8d29d055718ef7892367a15328d84845b9d50",
+        "changed": true,
+        "only_example_outputs_changed": true
+      },
+      {
+        "path": "tools/mass-propers",
+        "sha256": "f5d0c0a3300fe3a714c53036f7563377dd7c3a3cafb6e1e8d417631ad0b96749",
+        "changed": true,
+        "only_example_outputs_changed": true
+      },
+      {
+        "path": "tools/proper-chronology",
+        "sha256": "d75e5296362b65d0f6cdebe7301881635998a78022a6506daa3390446452979a",
+        "changed": true,
+        "only_example_outputs_changed": true
+      },
+      {
+        "path": "tools/public-alpha",
+        "sha256": "8833c3798bff78120bb97c5298520046d16e32b2eeec0568ffdd0636c19ded0d",
+        "changed": true,
+        "only_example_outputs_changed": true
+      },
+      {
+        "path": "tools/research-staleness",
+        "sha256": "4bd62ea8e181c40100d9ce1c4a2b19794f010b929d6b0efed11fdd12e1ab4a07",
+        "changed": true,
+        "only_example_outputs_changed": true
+      },
+      {
+        "path": "tools/scripture-chronology",
+        "sha256": "ac929b3fb1f9a3062a284ea2bace87443bcda68abd295ec81ba261a19de76051",
+        "changed": true,
+        "only_example_outputs_changed": true
+      },
+      {
+        "path": "tools/source-family-migration",
+        "sha256": "f908676009183ed9b3335e654235c110eaf925b22eb75ad9efe1097f0c1a4df6",
+        "changed": true,
+        "only_example_outputs_changed": true
+      },
+      {
+        "path": "tools/source-inventory",
+        "sha256": "c82fd588bd1d95eeb8880922e0f20293801a9a42fa1d7b63a51f712a90a4a571",
+        "changed": true,
+        "only_example_outputs_changed": true
+      },
+      {
+        "path": "tools/source-library",
+        "sha256": "9c7209448bcc360e8c912e80975f13442c338f3c22e4429c0993bfc15db559e1",
+        "changed": true,
+        "only_example_outputs_changed": true
+      },
+      {
+        "path": "tools/source-reader",
+        "sha256": "2019718685d8b784a0fa6d0f080fdb9f299480f1e2a5beeb7e8ae17153ab6266",
+        "changed": true,
+        "only_example_outputs_changed": true
+      },
+      {
+        "path": "tools/tpt",
+        "sha256": "8fbac2e0ba1c98bfd33ede68715d0c31f3ad6c129f487fe26f2580630c86db27",
+        "changed": true,
+        "only_example_outputs_changed": true
+      }
+    ]
+  },
+  "independently_reviewed_leaf_installations": {
+    "pdfs": 33,
+    "pdf_pages": 533,
+    "web_editions": 12,
+    "all_exact_hashes_match": true,
+    "artifacts": [
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.pdf",
+        "sha256": "343320a491eb0664b489cbf97e4fccd1b9aba067d2a84a4f0a0abbec4e2b9a1f",
+        "review_record": "claude-55-56.json"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf",
+        "sha256": "c2b94955797178dfe6df237c775db8d66e9b2354358a709bad7d46817229b309",
+        "review_record": "claude-55-56.json"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis.pdf",
+        "sha256": "19c61da00b2edade877a0aea30b2d8bb2fb78532eb3454b6e438523b7bcd34f4",
+        "review_record": "claude-55-56.json"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.pdf",
+        "sha256": "f9434cd197f555f0fb9dbff3a12f5204d3440f7822ebb6f850c8204e21b12370",
+        "review_record": "claude-55-56.json"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf",
+        "sha256": "ff0409f2a7eb4392d6c7e51885950eefc0c3e1c3a86818981b1a6e4058faf8d4",
+        "review_record": "claude-57-58-s51.json"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf",
+        "sha256": "88d173e9934c9f913a2c19ccc9037f09218033b38fdda889d24c7febaf26a09e",
+        "review_record": "claude-57-58-s51.json"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf",
+        "sha256": "0ddb9ad88e4a2c8973a6d25d96dd2a7d6598c2c833e5e3a0a51f563a905bfab3",
+        "review_record": "claude-57-58-s51.json"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-homily.pdf",
+        "sha256": "a4f69e36d297de8ec8c7cedcd1d6343d047b3b0bf5735b6b6875b8c3c7218e4e",
+        "review_record": "claude-57-58-s51.json"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-synthesis.pdf",
+        "sha256": "bdd75e96c97cf2a176350ae11543d56aef1e42b48b9ea5f15e3d69d9a9a975b1",
+        "review_record": "claude-57-58-s51.json"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.pdf",
+        "sha256": "9e32a8b53ad66a9605981174dbca1325e00ca297b96b093fe39b9e756c5ae857",
+        "review_record": "claude-57-58-s51.json"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf",
+        "sha256": "a2e50073e13725a1297e8093bf3c0b88aca881142787a57dab85adfa16a51246",
+        "review_record": "claude-59-s52.json"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf",
+        "sha256": "b98cf300505245e81cc6b14d8843a57f429fc141a66b16a5260756c44fb1fb1f",
+        "review_record": "claude-59-s52.json"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf",
+        "sha256": "2220a1bb3bbe779e7851bd7f48648089de3fd1f1ede43f31e7ecbedec5198559",
+        "review_record": "claude-59-s52.json"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf",
+        "sha256": "97ff3ce6d9228383548ed463c2b3b73e5873e45f50c26f93fd8ada5b1400c2c5",
+        "review_record": "claude-57-58-s51.json"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+        "sha256": "a3074800af436139453fb484e918538d25d5948432d0d8724c3d9db8679661c6",
+        "review_record": "claude-57-58-s51.json"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf",
+        "sha256": "5a5c2d7c366562687f38c573a4dd15340b3dbbc2be714cb0b28d9da7bcfc95fa",
+        "review_record": "claude-57-58-s51.json"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-homily.pdf",
+        "sha256": "e391c3398c0823605e35febac377c2741cdedaf3f29fc15d0ed9d6efdda62304",
+        "review_record": "claude-59-s52.json"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+        "sha256": "18bc4f836acd67ca1ab6c2b64d38d9ccc846101b6684fafc964cd447fe90d109",
+        "review_record": "claude-59-s52.json"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a.pdf",
+        "sha256": "09aad64dfb2829b1c27b82cb7efbd9acecb128e0f2d2c488669ff3d8d8bcf267",
+        "review_record": "claude-59-s52.json"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.pdf",
+        "sha256": "781d6296394c38f58a49ea536462ece957f99ba3f7cfe536c7bd00178175a5d0",
+        "review_record": "gpt-publications.json"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf",
+        "sha256": "a02a5ab3821cf20d311d110a92db1fc645970954e17598a7322d167cb1b90017",
+        "review_record": "gpt-publications.json"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf",
+        "sha256": "d6cc760a4b7de5c66b23f8529b3fe9a7050785fcaa3d6cd0822faf05e25ac6fa",
+        "review_record": "gpt-publications.json"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf",
+        "sha256": "89e976f3273d6280fbf8af3c59f055badcd6d665bd4d178d46da9665ecd8d82d",
+        "review_record": "gpt-publications.json"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf",
+        "sha256": "32971a439bb82c452276e542633beb7f8dd96c0b1de0790c5cb9248cac172777",
+        "review_record": "gpt-publications.json"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf",
+        "sha256": "26dc559868ca28e412aac0a9cdd9ff80c4c64884581aae554af4393c70223eb8",
+        "review_record": "gpt-publications.json"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf",
+        "sha256": "23aa8392a323418f1b552e5395db2fe1949829c78ced6c9e4477cc966211d9bd",
+        "review_record": "gpt-publications.json"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf",
+        "sha256": "6df2dca4e72d6f3530682437c575411cefef61dec00b322b41b4ee7ffb7733e4",
+        "review_record": "gpt-publications.json"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf",
+        "sha256": "514a1cdb4719e5e9d7609dbe1da46093ff5c1d5e0abc37165237117c503e64d0",
+        "review_record": "gpt-publications.json"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+        "sha256": "094320d3d17c59748097f43eb1a4c1407456bf51c432099495799c6eef0fd0c4",
+        "review_record": "gpt-publications.json"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf",
+        "sha256": "1ccb31ee142e83a86aaeb4586a371c16da934e998cee3fd693a241035da588cb",
+        "review_record": "gpt-publications.json"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-homily.pdf",
+        "sha256": "7eb824cac27d8dc3d91a615c7655b87616c5cfc2975bc0c23b9f2a654c29008b",
+        "review_record": "gpt-publications.json"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-synthesis.pdf",
+        "sha256": "a5e7f36ff9deb36f72147756044b3aa2455ca9482684818cd7ae193ddda25b7b",
+        "review_record": "gpt-publications.json"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.pdf",
+        "sha256": "c33098c122dc9fcafdbd55e225a989ab20822e3d81f05bf222f3dd76e8fa700c",
+        "review_record": "gpt-publications.json"
+      },
+      {
+        "path": "web/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.md",
+        "sha256": "6dacd0fa198e21faa9e99040058fbb5a2e631163cabd7ac9e7db5b9a158c1d37",
+        "review_record": "claude-55-56.json"
+      },
+      {
+        "path": "web/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.md",
+        "sha256": "b956f42043465751d49810357b0770299a87c87b8b665178f37948a84398b344",
+        "review_record": "claude-55-56.json"
+      },
+      {
+        "path": "web/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md",
+        "sha256": "17c96f728bb49f1405ce0dcc33d00599bbd417c2552818307871c5d6d5d7c7df",
+        "review_record": "claude-57-58-s51.json"
+      },
+      {
+        "path": "web/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.md",
+        "sha256": "2fa1562ee4640682e311e2d13408997ebde30d8f43c795d2ac1df0c03c7bb5b2",
+        "review_record": "claude-57-58-s51.json"
+      },
+      {
+        "path": "web/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.md",
+        "sha256": "14f5d48375abdd14f89073701f9b044b00b4fd7eae0a1ad5ed2df5634093b433",
+        "review_record": "claude-59-s52.json"
+      },
+      {
+        "path": "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md",
+        "sha256": "a5b66e415ca2977795cc1890736a6b0c31661ddcf201b721d9d85752629f09ab",
+        "review_record": "claude-57-58-s51.json"
+      },
+      {
+        "path": "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a.md",
+        "sha256": "7cca8344c38ce15f2a051fcf33d73578ff5f9a25d0aa9385e39f58335bd7a514",
+        "review_record": "claude-59-s52.json"
+      },
+      {
+        "path": "web/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.md",
+        "sha256": "9c38cf85aab687b96e4d3a2636be56ff8a44e00743d1e7b7723cf641d89281d1",
+        "review_record": "gpt-publications.json"
+      },
+      {
+        "path": "web/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md",
+        "sha256": "6a0fa26b494c811d1ab9ddc3f7e0135e2bec956d89c61280e95b05a73b651f51",
+        "review_record": "gpt-publications.json"
+      },
+      {
+        "path": "web/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.md",
+        "sha256": "019d919c1558305ae1cc3e3ebcb88fa6c39981fb44f90b23940f5bac7947e64f",
+        "review_record": "gpt-publications.json"
+      },
+      {
+        "path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md",
+        "sha256": "e13bf85f26b02d0ba75393494f4b6fe7f632f2126f81f27562b0e8a1bd0646a2",
+        "review_record": "gpt-publications.json"
+      },
+      {
+        "path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.md",
+        "sha256": "07a676484c738e02e9b95f31fac19ed27eff64f3edfb40af2a85d729e336bb74",
+        "review_record": "gpt-publications.json"
+      }
+    ]
+  },
+  "final_corpus_pdf_audit": {
+    "schema": "triptych-corpus-recovery-final-installation-review-v1",
+    "status": "pass",
+    "reviewer": "cold_pdf_corpus",
+    "reviewed_head": "77c6a3121e185e8365b8df2a5454c2a74eee7a3a",
+    "completed_utc": "2026-10-01T23:16:03.147248+00:00",
+    "scope": {
+      "provider_build_pdfs": 239,
+      "provider_build_pages": 7165,
+      "installed_pdfs": 245,
+      "installed_pages": 7981,
+      "reading_plan_pdfs": 6,
+      "reading_plan_pages": 816,
+      "earlier_reviewed_nonproper_pdfs": 155,
+      "earlier_reviewed_stable_proper_pdfs": 51,
+      "released_active_leaf_pdfs": 33,
+      "released_active_leaf_directories": 12
+    },
+    "identity": {
+      "provider_build_installed_exact_sha256_matches": 239,
+      "earlier206_reviewed_hashes_preserved": true,
+      "all6_readingplans_unchanged_from_initial_snapshot": true,
+      "snapshot_sources_changed_during_or_after_audit": [],
+      "withdrawn_claude54_builds_and_installed_pdfs_absent": true
+    },
+    "navigation": {
+      "tex_anchor_gate": {
+        "documents": 239,
+        "contents_records": 10199,
+        "out_bookmarks": 5160,
+        "problems": 0
+      },
+      "actual_pdf_bookmarks": 5288,
+      "internal_annotation_count": 8102,
+      "text_and_footnote_link_groups": 5166,
+      "numeric_link_groups": 2799,
+      "matcher_counts": {
+        "bookmarks": {
+          "ok": 5285,
+          "not-found": 3
+        },
+        "links": {
+          "ok": 5156,
+          "number": 2799,
+          "footnote": 8,
+          "not-found": 2
+        }
+      },
+      "wrong_page_or_below_heading_findings": 0,
+      "shared_bookmark_targets": [],
+      "tex_markup_in_bookmark_titles": [],
+      "all_named_heading_destinations_checked": 12187,
+      "distinct_used_named_heading_destinations": 5333,
+      "missing_or_outside_page_destinations": [],
+      "printed_contents_page_label_check": {
+        "counts": {
+          "contents_records": 10199,
+          "destination_page_labels_equal": 9471,
+          "target_has_no_pdf_page_label": 728
+        },
+        "problems": []
+      },
+      "text_matcher_exceptions": [
+        {
+          "path": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf",
+          "kind": "bookmarks",
+          "classification": "not-found",
+          "title": "Integrated response cards",
+          "level": 1,
+          "dest": "section*.1",
+          "page": 0,
+          "label": "",
+          "anchor_y": 54.0,
+          "status": "absent",
+          "heading_y": null,
+          "next_page_hit": null,
+          "has_tex_quotes": false,
+          "disposition": "pass: deliberately unprinted bookmark grouping title. Source response-reference.tex inserts it immediately before the first card grid; destination physical1 y54 points from top."
+        },
+        {
+          "path": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf",
+          "kind": "bookmarks",
+          "classification": "not-found",
+          "title": "Integrated response cards",
+          "level": 1,
+          "dest": "section*.1",
+          "page": 0,
+          "label": "",
+          "anchor_y": 54.0,
+          "status": "absent",
+          "heading_y": null,
+          "next_page_hit": null,
+          "has_tex_quotes": false,
+          "disposition": "pass: deliberately unprinted bookmark grouping title. Source response-reference.tex inserts it immediately before the first card grid; destination physical1 y54 points from top."
+        },
+        {
+          "path": "pdf/gpt/theology/heresies/heresies-in-catholic-history.pdf",
+          "kind": "links",
+          "classification": "not-found",
+          "src": 72,
+          "text": "The Three Chapters controversy",
+          "dest": "subsection.3.17",
+          "page": 16,
+          "label": "15",
+          "status": "words-elsewhere",
+          "anchor_y": 301.275,
+          "heading_y": null,
+          "disposition": "pass: semantic alias. The Three Chapters controversy targets The Three Chapters and Constantinople II, physical17/printed15. Destination y301.275 points precedes heading y307.691."
+        },
+        {
+          "path": "pdf/gpt/theology/sacraments.pdf",
+          "kind": "bookmarks",
+          "classification": "not-found",
+          "title": "The Seven-Sacrament Comparative Matrix",
+          "level": 1,
+          "dest": "appendix.B",
+          "page": 61,
+          "label": "60",
+          "anchor_y": null,
+          "status": "rotated-absent",
+          "heading_y": null,
+          "next_page_hit": null,
+          "has_tex_quotes": false,
+          "disposition": "pass: semantic alias. The Seven-Sacrament Comparative Matrix targets printed Appendix B: The Seven Sacraments, physical62/printed60. Raw destination appendix.B is Fit; full rotated table and heading visible."
+        },
+        {
+          "path": "pdf/gpt/theology/sacraments.pdf",
+          "kind": "links",
+          "classification": "not-found",
+          "src": 1,
+          "text": "B The Seven-Sacrament Comparative Matrix",
+          "dest": "appendix.B",
+          "page": 61,
+          "label": "60",
+          "status": "rotated-absent",
+          "anchor_y": null,
+          "heading_y": null,
+          "disposition": "pass: semantic alias. The Seven-Sacrament Comparative Matrix targets printed Appendix B: The Seven Sacraments, physical62/printed60. Raw destination appendix.B is Fit; full rotated table and heading visible."
+        }
+      ]
+    },
+    "sacramental_destination_repair": [
+      {
+        "document": "gpt/theology/sacraments.pdf",
+        "sha256": "2dd6ab793b69e069f6e31c9be114fc54d643942f7f83d62ad09dc2a8d3e5ce8f",
+        "fit_destination_records": [
+          "  61 [ Fit                     ] \"section*.8\"",
+          "  61 [ Fit                     ] \"section*.9\"",
+          "  62 [ Fit                     ] \"appendix.B\"",
+          "  63 [ Fit                     ] \"appendix.C\""
+        ],
+        "matrix_page_text_start": "Appendix B: The Seven Sacraments\nVisible words of the Word made flesh\nA patristic and Thomistic synthesis of sign, causality, grace, communion, and glory\nFormal definition. A sacrament of the New Law is a visible sign of a hidden reality, i"
+      },
+      {
+        "document": "gpt/theology/sacraments-at-a-glance.pdf",
+        "sha256": "8aa641e10e703d5914f39d38f70613aa0a0e9a9635b7186f93c6c9328dcda5c3",
+        "fit_destination_records": [
+          "   2 [ Fit                     ] \"section*.1\""
+        ],
+        "matrix_page_text_start": "Metaphysical and Sacramental Lexicon\nThese terms are analogical instruments of disciplined contemplation. They do not place divine action inside a creaturely mechanism; they\ndistinguish what God causes, what the ecclesial sign signifies, an"
+      }
+    ],
+    "genuine_failures": [],
+    "method": [
+      "Freeze build PDFs and installed PDFs plus corresponding TeX aux/out files; SHA256 verify every frozen input against source at start and completion.",
+      "Compare every provider installed PDF to its current build; compare206 reviewed immutable hashes and6 reading plans to initial reviewed snapshot.",
+      "Run repository anchor-name gate across all239 frozen builds.",
+      "Run prior text matcher on all245 installed PDFs; independently resolve all named heading destinations and check page ranges and MediaBox bounds, including rotated pages.",
+      "Check every contents entry expected page label against actual destination PDF page label where present; record absent page-label metadata explicitly.",
+      "Manually dispose five known semantic-alias or unprinted-title matcher exceptions and verify raw sacramental Fit destinations with Poppler pdfinfo."
+    ],
+    "limitations": [
+      "Final content and visual acceptance of33 active leaf PDFs comes from the12 independent leaf reviews supplied by the coordinator; this supplement independently verifies current installed/build identity and navigation, without repeating source-content review.",
+      "728 contents records target PDFs without page-label metadata, so that particular label-comparison check is inapplicable to those records. Destination validity and text matcher still ran.",
+      "Numeric/footnote links are counted and checked for valid destination pages; they are not treated as heading-title matches.",
+      "Visual identity evidence remains the separate baseline corpus comparison and final leaf reviews. The intentional Solemn Mass physical7 role-index correction means literal corpus-wide pixel identity is not claimed.",
+      "qpdf unavailable; no qpdf structural check claimed."
+    ],
+    "installed_artifact_manifest": [
+      {
+        "path": "pdf/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.pdf",
+        "pages": 43,
+        "sha256": "9d03b99e9bf8a8b8c3e48ef1ebc6183a7f659288624dc6b21429270287318958",
+        "build_path": "build/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.pdf"
+      },
+      {
+        "path": "pdf/claude/articles/canon-law/natural-positive-divine-human-law.pdf",
+        "pages": 33,
+        "sha256": "c1231cb832cd2789562b5572dc609662d232fd49ae0e3929cf427196f411e01e",
+        "build_path": "build/claude/articles/canon-law/natural-positive-divine-human-law.pdf"
+      },
+      {
+        "path": "pdf/claude/articles/faith/against-the-instrumentalists.pdf",
+        "pages": 30,
+        "sha256": "68714adc28f4dfaae70460e62196594c4a53f7b70a4d0d581a853010293d316e",
+        "build_path": "build/claude/articles/faith/against-the-instrumentalists.pdf"
+      },
+      {
+        "path": "pdf/claude/articles/faith/at-the-end-of-every-why.pdf",
+        "pages": 16,
+        "sha256": "a17428166268c7f7bd7732a250b8ec98e3aa7cb67093c1c2a5bcc3496dd658aa",
+        "build_path": "build/claude/articles/faith/at-the-end-of-every-why.pdf"
+      },
+      {
+        "path": "pdf/claude/articles/faith/council-missal-and-crisis.pdf",
+        "pages": 18,
+        "sha256": "f51ffecbc9dc199f9d3b800d45e36314085bc82165806092908bca9de8731949",
+        "build_path": "build/claude/articles/faith/council-missal-and-crisis.pdf"
+      },
+      {
+        "path": "pdf/claude/articles/faith/four-last-things-01-death.pdf",
+        "pages": 36,
+        "sha256": "b3fea91ab2750f911f52846e1f3ca60b6ae77b677ba51b08e461a1012f77bddd",
+        "build_path": "build/claude/articles/faith/four-last-things-01-death.pdf"
+      },
+      {
+        "path": "pdf/claude/articles/faith/four-last-things-02-judgment.pdf",
+        "pages": 37,
+        "sha256": "e7e74db5b07ac9d947d866b27a40e05c4cd76c2f6b2aa8e9243be08036e1fc63",
+        "build_path": "build/claude/articles/faith/four-last-things-02-judgment.pdf"
+      },
+      {
+        "path": "pdf/claude/articles/faith/four-last-things-03-hell.pdf",
+        "pages": 38,
+        "sha256": "cfebdcb2240f0edfe04526bee97eb7bc03a1a7b9cc604b52fa0bafa85693672f",
+        "build_path": "build/claude/articles/faith/four-last-things-03-hell.pdf"
+      },
+      {
+        "path": "pdf/claude/articles/faith/four-last-things-04-heaven.pdf",
+        "pages": 39,
+        "sha256": "58d2927bb758dbcc73ea6334d88b4b27f173550664b864a24a6775acccffc8b6",
+        "build_path": "build/claude/articles/faith/four-last-things-04-heaven.pdf"
+      },
+      {
+        "path": "pdf/claude/articles/faith/freemasonry-and-the-catholic-church.pdf",
+        "pages": 15,
+        "sha256": "583c4454e25e756f274f072d6a7af10406c24edcc3474e7460949033a9b1c640",
+        "build_path": "build/claude/articles/faith/freemasonry-and-the-catholic-church.pdf"
+      },
+      {
+        "path": "pdf/claude/articles/faith/in-defense-of-the-particular.pdf",
+        "pages": 56,
+        "sha256": "4a954fcba62133a183a5c98ce121928157e9667b3782c244840e2c770c9187cb",
+        "build_path": "build/claude/articles/faith/in-defense-of-the-particular.pdf"
+      },
+      {
+        "path": "pdf/claude/articles/faith/ontological-vertigo.pdf",
+        "pages": 31,
+        "sha256": "be3ad6eed8c75f28e4ab533c5c753483783f2b8a09f94c6ab1ce660218d4a62a",
+        "build_path": "build/claude/articles/faith/ontological-vertigo.pdf"
+      },
+      {
+        "path": "pdf/claude/articles/faith/the-due-return.pdf",
+        "pages": 16,
+        "sha256": "8b86bf7afcec49bfe08228ae1c7a4470a60a2c145d99f5ac0144e06e7f48f78e",
+        "build_path": "build/claude/articles/faith/the-due-return.pdf"
+      },
+      {
+        "path": "pdf/claude/articles/faith/trustful-surrender-to-divine-providence.pdf",
+        "pages": 33,
+        "sha256": "4fda196b426a7d0563ea9075458f94bd10935873649d97f28098ea438016fa44",
+        "build_path": "build/claude/articles/faith/trustful-surrender-to-divine-providence.pdf"
+      },
+      {
+        "path": "pdf/claude/articles/scripture/abraham-and-the-daylight-stars.pdf",
+        "pages": 38,
+        "sha256": "a0c382aebf108fa132045e41ec4096270a79392361db4067d041929303bd97a9",
+        "build_path": "build/claude/articles/scripture/abraham-and-the-daylight-stars.pdf"
+      },
+      {
+        "path": "pdf/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb.pdf",
+        "pages": 35,
+        "sha256": "5fa08c98e4ac6e5b89ae50208392014b8588411925a4fa9c3d981d152995bf0e",
+        "build_path": "build/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb.pdf"
+      },
+      {
+        "path": "pdf/claude/biographies/origen.pdf",
+        "pages": 18,
+        "sha256": "73db2932ef6a4e493b882b8d13fc0e778b55022d4bc0aaac17a9b9402fe18994",
+        "build_path": "build/claude/biographies/origen.pdf"
+      },
+      {
+        "path": "pdf/claude/biographies/saint-augustine-of-hippo.pdf",
+        "pages": 22,
+        "sha256": "ee5bb6caa90c165f8838697859fd5041f646ab331ddbfe6704158795835f0139",
+        "build_path": "build/claude/biographies/saint-augustine-of-hippo.pdf"
+      },
+      {
+        "path": "pdf/claude/biographies/saint-jerome.pdf",
+        "pages": 18,
+        "sha256": "9bb6857084b8e12d6dba5bce33ca820e6b87555edd4c89a424669f224b14f151",
+        "build_path": "build/claude/biographies/saint-jerome.pdf"
+      },
+      {
+        "path": "pdf/claude/biographies/saint-paul.pdf",
+        "pages": 28,
+        "sha256": "a1ce967be8f1b7ed3a6c5593b9e900cf3d690c69405cacb50723e5a5780ab2a7",
+        "build_path": "build/claude/biographies/saint-paul.pdf"
+      },
+      {
+        "path": "pdf/claude/biographies/saint-peter.pdf",
+        "pages": 39,
+        "sha256": "71f5d0e80915c5149a0856933ffc985d7bf7b6a4ad75899e9f5925396eed3c81",
+        "build_path": "build/claude/biographies/saint-peter.pdf"
+      },
+      {
+        "path": "pdf/claude/biographies/saint-robert-bellarmine.pdf",
+        "pages": 29,
+        "sha256": "c2067a1e4fbf5320c3b91b22f033c68d097243bc84ec6b2a4b0c1a85c2290dc5",
+        "build_path": "build/claude/biographies/saint-robert-bellarmine.pdf"
+      },
+      {
+        "path": "pdf/claude/biographies/saint-thomas-aquinas.pdf",
+        "pages": 18,
+        "sha256": "782fbc440427a8d9187d883123e2587e6fc9327a5363c26e41fc958d062f6018",
+        "build_path": "build/claude/biographies/saint-thomas-aquinas.pdf"
+      },
+      {
+        "path": "pdf/claude/biographies/tertullian.pdf",
+        "pages": 28,
+        "sha256": "1b109e0c8e1f76cee275bc79336e18e5bfe17e0a94b743cc435c117ce253887a",
+        "build_path": "build/claude/biographies/tertullian.pdf"
+      },
+      {
+        "path": "pdf/claude/history/biblical-translations/01-septuagint.pdf",
+        "pages": 17,
+        "sha256": "bbe768bff1e75aa14cc1bb2cfd7d25aa22ac0408ec32c044b3e91489e246b8ad",
+        "build_path": "build/claude/history/biblical-translations/01-septuagint.pdf"
+      },
+      {
+        "path": "pdf/claude/history/biblical-translations/02-vulgate.pdf",
+        "pages": 18,
+        "sha256": "f6f310e4cf7edd5f8a46ebaf03a73bd0c7c076abb3e2998401c6424c8de78e43",
+        "build_path": "build/claude/history/biblical-translations/02-vulgate.pdf"
+      },
+      {
+        "path": "pdf/claude/history/traditional-priestly-institutes/01-sspx.pdf",
+        "pages": 36,
+        "sha256": "01e77f2fe61b2897507c1fa8e19dafe4d9e1bbb453a50b203479f398e1736900",
+        "build_path": "build/claude/history/traditional-priestly-institutes/01-sspx.pdf"
+      },
+      {
+        "path": "pdf/claude/history/traditional-priestly-institutes/02-fssp.pdf",
+        "pages": 47,
+        "sha256": "48ee20e3b719311ecbf6b944a28e1570a568ede01e2f47ba2a4875a33700c210",
+        "build_path": "build/claude/history/traditional-priestly-institutes/02-fssp.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf",
+        "pages": 38,
+        "sha256": "f9acbdd5427e0b60c09cede1bab38c12064b7d1bacece9c39948e006e4dd7a40",
+        "build_path": "build/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost.pdf",
+        "pages": 26,
+        "sha256": "3cccb0e2dc875a1ad35cc3e303290370e4b4705f0b781b268efba6554ea8d949",
+        "build_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost-synthesis.pdf",
+        "pages": 12,
+        "sha256": "2d6b4a812912e5af48513973a1d3a4578ddcfdb181175108d131fc2061ecc7e6",
+        "build_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost-synthesis.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost.pdf",
+        "pages": 32,
+        "sha256": "cb0691bd2457a20ce6db5d9c61f0cadda87dc8c3ddd2de38ad3eafc9c6302ea2",
+        "build_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost-synthesis.pdf",
+        "pages": 17,
+        "sha256": "a2a93219811201c25d1b63dfa4a83dfbc05a0f47faced27f25782eefb97af697",
+        "build_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost-synthesis.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf",
+        "pages": 34,
+        "sha256": "5e99f7b083a6997692dff07e1ad32af7b7f2375c63132ce22c8d0f39f87202d6",
+        "build_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost-synthesis.pdf",
+        "pages": 19,
+        "sha256": "033a74ab5d4a3804ae3909e45cb69d5c4f68810133a61e44b7132cc4d0a5110b",
+        "build_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost-synthesis.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf",
+        "pages": 36,
+        "sha256": "e41590d396e445ddbb9ae43de3e93b0585b40028d4aeb841237eac6ac8347107",
+        "build_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis.pdf",
+        "pages": 19,
+        "sha256": "9b6086d5833f04ca162e32a924b1bcfd5a294470db95f2bfb0352ab4c87f46c6",
+        "build_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf",
+        "pages": 43,
+        "sha256": "3bc4f2c8b68109393e68c70c43f45c30569f78e2503b06db5897029aa713ceb1",
+        "build_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.pdf",
+        "pages": 24,
+        "sha256": "343320a491eb0664b489cbf97e4fccd1b9aba067d2a84a4f0a0abbec4e2b9a1f",
+        "build_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf",
+        "pages": 36,
+        "sha256": "c2b94955797178dfe6df237c775db8d66e9b2354358a709bad7d46817229b309",
+        "build_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis.pdf",
+        "pages": 29,
+        "sha256": "19c61da00b2edade877a0aea30b2d8bb2fb78532eb3454b6e438523b7bcd34f4",
+        "build_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.pdf",
+        "pages": 45,
+        "sha256": "f9434cd197f555f0fb9dbff3a12f5204d3440f7822ebb6f850c8204e21b12370",
+        "build_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf",
+        "pages": 3,
+        "sha256": "ff0409f2a7eb4392d6c7e51885950eefc0c3e1c3a86818981b1a6e4058faf8d4",
+        "build_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf",
+        "pages": 10,
+        "sha256": "88d173e9934c9f913a2c19ccc9037f09218033b38fdda889d24c7febaf26a09e",
+        "build_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf",
+        "pages": 31,
+        "sha256": "0ddb9ad88e4a2c8973a6d25d96dd2a7d6598c2c833e5e3a0a51f563a905bfab3",
+        "build_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-homily.pdf",
+        "pages": 3,
+        "sha256": "a4f69e36d297de8ec8c7cedcd1d6343d047b3b0bf5735b6b6875b8c3c7218e4e",
+        "build_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-homily.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-synthesis.pdf",
+        "pages": 12,
+        "sha256": "bdd75e96c97cf2a176350ae11543d56aef1e42b48b9ea5f15e3d69d9a9a975b1",
+        "build_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-synthesis.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.pdf",
+        "pages": 34,
+        "sha256": "9e32a8b53ad66a9605981174dbca1325e00ca297b96b093fe39b9e756c5ae857",
+        "build_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf",
+        "pages": 3,
+        "sha256": "a2e50073e13725a1297e8093bf3c0b88aca881142787a57dab85adfa16a51246",
+        "build_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf",
+        "pages": 12,
+        "sha256": "b98cf300505245e81cc6b14d8843a57f429fc141a66b16a5260756c44fb1fb1f",
+        "build_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf",
+        "pages": 33,
+        "sha256": "2220a1bb3bbe779e7851bd7f48648089de3fd1f1ede43f31e7ecbedec5198559",
+        "build_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf",
+        "pages": 40,
+        "sha256": "fb0086555a3b070ca781a05407374dd8f2d8ff7f64852c9b1ef6cce207d032b6",
+        "build_path": "build/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf",
+        "pages": 45,
+        "sha256": "0a75b12920518437be8024e121425d38bcff3c6a9d11e9f0263420fb0ba64b65",
+        "build_path": "build/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice.pdf",
+        "pages": 36,
+        "sha256": "622def5fa2bd9ff5a33c5488d7370e0d5c182a43281d087bf4e8d9e746da5584",
+        "build_path": "build/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.pdf",
+        "pages": 38,
+        "sha256": "f54b95fdf7869e32d71392f3828440ba84f51d9e0c08ddad23807426a5b3ac68",
+        "build_path": "build/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a.pdf",
+        "pages": 21,
+        "sha256": "8d1f57e8652f8e47db250e6dd9a98b938573d5cf71a8843ee6f5743d18b8f457",
+        "build_path": "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+        "pages": 16,
+        "sha256": "1ca770edcd7440fd032b95703279a7f537e2fe3434084f6415374215d045acff",
+        "build_path": "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a-synthesis.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a.pdf",
+        "pages": 30,
+        "sha256": "ce2ecc306bf3da55ae58df6d40808a750fc4fc34638c9388711f3c930a09425a",
+        "build_path": "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf",
+        "pages": 4,
+        "sha256": "97ff3ce6d9228383548ed463c2b3b73e5873e45f50c26f93fd8ada5b1400c2c5",
+        "build_path": "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+        "pages": 10,
+        "sha256": "a3074800af436139453fb484e918538d25d5948432d0d8724c3d9db8679661c6",
+        "build_path": "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf",
+        "pages": 31,
+        "sha256": "5a5c2d7c366562687f38c573a4dd15340b3dbbc2be714cb0b28d9da7bcfc95fa",
+        "build_path": "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-homily.pdf",
+        "pages": 4,
+        "sha256": "e391c3398c0823605e35febac377c2741cdedaf3f29fc15d0ed9d6efdda62304",
+        "build_path": "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-homily.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+        "pages": 12,
+        "sha256": "18bc4f836acd67ca1ab6c2b64d38d9ccc846101b6684fafc964cd447fe90d109",
+        "build_path": "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-synthesis.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a.pdf",
+        "pages": 33,
+        "sha256": "09aad64dfb2829b1c27b82cb7efbd9acecb128e0f2d2c488669ff3d8d8bcf267",
+        "build_path": "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a.pdf"
+      },
+      {
+        "path": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.pdf",
+        "pages": 39,
+        "sha256": "de33f36fa4c127ca8f03f983e41c79844086c23303d16faf0df1a0f50ffac595",
+        "build_path": "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.pdf"
+      },
+      {
+        "path": "pdf/claude/theology/angelology.pdf",
+        "pages": 369,
+        "sha256": "7c7dd98cd39d0bdf5960a141cd65a9ab84b591fe7e452dd28b42aae6cf00a626",
+        "build_path": "build/claude/theology/angelology.pdf"
+      },
+      {
+        "path": "pdf/claude/theology/mariology/ark-of-the-covenant.pdf",
+        "pages": 64,
+        "sha256": "334bb75fa8a0171b8c31e07c8fb966d2cf9c54079481bc3da4abe4ad5cd82a92",
+        "build_path": "build/claude/theology/mariology/ark-of-the-covenant.pdf"
+      },
+      {
+        "path": "pdf/claude/theology/mariology/champion.pdf",
+        "pages": 32,
+        "sha256": "8f52af5cd3b53b7aa04e2d04f7fa2acd165e45ed2ad56710e5d6d1f2a8929f2b",
+        "build_path": "build/claude/theology/mariology/champion.pdf"
+      },
+      {
+        "path": "pdf/claude/theology/mariology/fatima.pdf",
+        "pages": 37,
+        "sha256": "f4d2633bc913ac55d52e2bee359e4261645647744975d6cb29f73b80670cdfb9",
+        "build_path": "build/claude/theology/mariology/fatima.pdf"
+      },
+      {
+        "path": "pdf/claude/theology/mariology/guadalupe.pdf",
+        "pages": 40,
+        "sha256": "78400ff5fa8d8861e0ef27989d6b816d6dee819e7df5eb1153718d0f9674296f",
+        "build_path": "build/claude/theology/mariology/guadalupe.pdf"
+      },
+      {
+        "path": "pdf/claude/theology/mariology/la-salette.pdf",
+        "pages": 54,
+        "sha256": "89aba5578e527d34e761b4daa4a2c51bfa3a95c4e450e7dd0a96647190066f07",
+        "build_path": "build/claude/theology/mariology/la-salette.pdf"
+      },
+      {
+        "path": "pdf/claude/theology/mariology/lourdes.pdf",
+        "pages": 30,
+        "sha256": "557178f664a9e6aad3975ec56188df41251b78dc2b47c825c6d3bd27494ee11b",
+        "build_path": "build/claude/theology/mariology/lourdes.pdf"
+      },
+      {
+        "path": "pdf/claude/theology/mariology/marian-dogmas.pdf",
+        "pages": 36,
+        "sha256": "9d36bd995761dc13b5804ec745f90662bb81fc9c0bfe75eb0c57cdbb700ae6bc",
+        "build_path": "build/claude/theology/mariology/marian-dogmas.pdf"
+      },
+      {
+        "path": "pdf/claude/theology/mariology/rosary.pdf",
+        "pages": 32,
+        "sha256": "77c361ea5af8372e87f9dcda678ecd3334b55bb46520102cad7e475aafa7bdeb",
+        "build_path": "build/claude/theology/mariology/rosary.pdf"
+      },
+      {
+        "path": "pdf/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence.pdf",
+        "pages": 31,
+        "sha256": "aaf3e8e45471895f68c53445f0e65079ed9d6a456c788530f775f7326341caa4",
+        "build_path": "build/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence.pdf"
+      },
+      {
+        "path": "pdf/gpt/articles/canon-law/natural-positive-divine-human-law.pdf",
+        "pages": 39,
+        "sha256": "b5b5b6ade63ac65b4697becc339b76b5ec9a60b7e5820ef4bee11212eaf5a0a2",
+        "build_path": "build/gpt/articles/canon-law/natural-positive-divine-human-law.pdf"
+      },
+      {
+        "path": "pdf/gpt/articles/faith/against-the-instrumentalists.pdf",
+        "pages": 9,
+        "sha256": "f8a04e7d2a0049d06ec31762bcc4f7be997c3b88d0f7fa4302bdd0755fdd986f",
+        "build_path": "build/gpt/articles/faith/against-the-instrumentalists.pdf"
+      },
+      {
+        "path": "pdf/gpt/articles/faith/at-the-end-of-every-why.pdf",
+        "pages": 14,
+        "sha256": "c506c5b0bd98cf549236cb6a099bbcd3b8990cfbab9d4ee55cabe416f818c281",
+        "build_path": "build/gpt/articles/faith/at-the-end-of-every-why.pdf"
+      },
+      {
+        "path": "pdf/gpt/articles/faith/catholic-doctrinal-authority.pdf",
+        "pages": 7,
+        "sha256": "5c672677f038132676aa4db35664f7f2bf3b01d1c1b2af64eff8266ef9e4c330",
+        "build_path": "build/gpt/articles/faith/catholic-doctrinal-authority.pdf"
+      },
+      {
+        "path": "pdf/gpt/articles/faith/council-missal-and-crisis.pdf",
+        "pages": 51,
+        "sha256": "c433bc3587b2f3938cba8c3545b068993753daea69ef82eb8b4e67a0852e76bd",
+        "build_path": "build/gpt/articles/faith/council-missal-and-crisis.pdf"
+      },
+      {
+        "path": "pdf/gpt/articles/faith/four-last-things-01-death.pdf",
+        "pages": 6,
+        "sha256": "bc207c15497e47abe87420857179d3495300ee77594e6372e8003e6b64991741",
+        "build_path": "build/gpt/articles/faith/four-last-things-01-death.pdf"
+      },
+      {
+        "path": "pdf/gpt/articles/faith/four-last-things-02-judgment.pdf",
+        "pages": 7,
+        "sha256": "907bcd034ca6a5881c0d41ba9002a9d291a54ca7dad5c99b2d9265857f2714cb",
+        "build_path": "build/gpt/articles/faith/four-last-things-02-judgment.pdf"
+      },
+      {
+        "path": "pdf/gpt/articles/faith/four-last-things-03-hell.pdf",
+        "pages": 7,
+        "sha256": "695616632d541ab9296c13455580bd5d3a7f64cde0f1d5ff037919a6e2d51b86",
+        "build_path": "build/gpt/articles/faith/four-last-things-03-hell.pdf"
+      },
+      {
+        "path": "pdf/gpt/articles/faith/four-last-things-04-heaven.pdf",
+        "pages": 7,
+        "sha256": "4e92ed8383771b8d7fdb282cd3fa96b189a10a78103c1813cdcca66e002f3984",
+        "build_path": "build/gpt/articles/faith/four-last-things-04-heaven.pdf"
+      },
+      {
+        "path": "pdf/gpt/articles/faith/freemasonry-and-the-catholic-church.pdf",
+        "pages": 46,
+        "sha256": "f454fcaae846064cacfe4068df11be4a01eb1c64a7a3902edc2a1d38d1a5ef6f",
+        "build_path": "build/gpt/articles/faith/freemasonry-and-the-catholic-church.pdf"
+      },
+      {
+        "path": "pdf/gpt/articles/faith/in-defense-of-the-particular.pdf",
+        "pages": 12,
+        "sha256": "187ef3df0128b7ae937839472388af46bf7d5185824d0790460eedaf4f6552fe",
+        "build_path": "build/gpt/articles/faith/in-defense-of-the-particular.pdf"
+      },
+      {
+        "path": "pdf/gpt/articles/faith/last-supper-calvary-and-the-mass.pdf",
+        "pages": 10,
+        "sha256": "39fe71962067cbe4b650017fd71f80714525c3f2aee67f5812e91d744a8663ad",
+        "build_path": "build/gpt/articles/faith/last-supper-calvary-and-the-mass.pdf"
+      },
+      {
+        "path": "pdf/gpt/articles/faith/ontological-vertigo.pdf",
+        "pages": 13,
+        "sha256": "6166714959913095345925ee367ca85171a3aeb2f898fcb6eb546125d79b7e3b",
+        "build_path": "build/gpt/articles/faith/ontological-vertigo.pdf"
+      },
+      {
+        "path": "pdf/gpt/articles/faith/the-due-return.pdf",
+        "pages": 18,
+        "sha256": "bb71b314242451a775ea7fc69008cf1bb1e39a96af6b5545d627c7f25509a72e",
+        "build_path": "build/gpt/articles/faith/the-due-return.pdf"
+      },
+      {
+        "path": "pdf/gpt/articles/faith/trustful-surrender-to-divine-providence.pdf",
+        "pages": 25,
+        "sha256": "8d8d22b72a02ad07c2c528c89cf235c436881aab237fd47b161f1b997fab9059",
+        "build_path": "build/gpt/articles/faith/trustful-surrender-to-divine-providence.pdf"
+      },
+      {
+        "path": "pdf/gpt/articles/scripture/abraham-and-the-daylight-stars.pdf",
+        "pages": 8,
+        "sha256": "7db5e9f78ff7acb74048fb5d37c94dcfad464fee64feecc23d4d660249c4e4bd",
+        "build_path": "build/gpt/articles/scripture/abraham-and-the-daylight-stars.pdf"
+      },
+      {
+        "path": "pdf/gpt/articles/scripture/john-6-bread-from-heaven.pdf",
+        "pages": 12,
+        "sha256": "72a078642da44b0e8392876cd46f8e3d4198bd385fc647220cc78497e82ef1d1",
+        "build_path": "build/gpt/articles/scripture/john-6-bread-from-heaven.pdf"
+      },
+      {
+        "path": "pdf/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb.pdf",
+        "pages": 11,
+        "sha256": "d0841261bf6c8a4b427138135b84cd989a8820ecaee072f0354b25f775379724",
+        "build_path": "build/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb.pdf"
+      },
+      {
+        "path": "pdf/gpt/biographies/origen.pdf",
+        "pages": 28,
+        "sha256": "af2b2d28be10530baa285ef39850bc08e4a6b8f062ae60918b9c01e918190275",
+        "build_path": "build/gpt/biographies/origen.pdf"
+      },
+      {
+        "path": "pdf/gpt/biographies/saint-augustine-of-hippo.pdf",
+        "pages": 19,
+        "sha256": "2cc064bbfa9dd1889ec888af4e69f4aa1d6dcf52f635ff17a2fa625fda9d2a87",
+        "build_path": "build/gpt/biographies/saint-augustine-of-hippo.pdf"
+      },
+      {
+        "path": "pdf/gpt/biographies/saint-jerome.pdf",
+        "pages": 21,
+        "sha256": "a0be03d496954f4f1674f932f70dbe4c29fd3c2d2a7d8ffe21b3d990dfb93c2f",
+        "build_path": "build/gpt/biographies/saint-jerome.pdf"
+      },
+      {
+        "path": "pdf/gpt/biographies/saint-paul.pdf",
+        "pages": 27,
+        "sha256": "80b87b5fafd32de4cbec1347412002e14abfd85ee4ace92f55482d9c72296603",
+        "build_path": "build/gpt/biographies/saint-paul.pdf"
+      },
+      {
+        "path": "pdf/gpt/biographies/saint-peter.pdf",
+        "pages": 21,
+        "sha256": "3c153be9b384a3752a971abd8fb48ac7c0d9aa1fa92a3a5b95f569f3dc420830",
+        "build_path": "build/gpt/biographies/saint-peter.pdf"
+      },
+      {
+        "path": "pdf/gpt/biographies/saint-robert-bellarmine.pdf",
+        "pages": 23,
+        "sha256": "53290aece495f695d18476893302ca34f8df290de3ee2a718bf4b298a3d27a8c",
+        "build_path": "build/gpt/biographies/saint-robert-bellarmine.pdf"
+      },
+      {
+        "path": "pdf/gpt/biographies/saint-thomas-aquinas.pdf",
+        "pages": 22,
+        "sha256": "2bcad1f76f48a5cbf684bd9ae92704f204310b20178f5c9246db2a47bdbb80b5",
+        "build_path": "build/gpt/biographies/saint-thomas-aquinas.pdf"
+      },
+      {
+        "path": "pdf/gpt/biographies/tertullian.pdf",
+        "pages": 30,
+        "sha256": "b8c4f6bb4c96720ebbfb1bf7991b6365948cd1d0544e4de07cf02caa57dd38fb",
+        "build_path": "build/gpt/biographies/tertullian.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/00-course-guide.pdf",
+        "pages": 41,
+        "sha256": "6eb977ffa5d2490005557bee642648d3e012ba322c1d2b6c05c84e05e17aa94a",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/00-course-guide.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/00-memory-workbook.pdf",
+        "pages": 757,
+        "sha256": "8b71ba937885eff5d19936871397f895cffcf566bfbdf9241c8cc3b162419960",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/00-memory-workbook.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/00-reference-grammar.pdf",
+        "pages": 57,
+        "sha256": "9ac7b8a0b5fa83bfd51a072790372ae0d3c4e0f5ea5f68f60ea6e516a1efae59",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/00-reference-grammar.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf",
+        "pages": 38,
+        "sha256": "2fb71e7104696709194e99c54b471f211a3b1dc3e1452b4029e741b4e63cfe61",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/02-noun-systems.pdf",
+        "pages": 37,
+        "sha256": "02b120f0acf82e530bc93f80579a8b85aada3057cbf56bb5d1878d0930404544",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/01-foundations/02-noun-systems.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/03-nouns-and-adjectives.pdf",
+        "pages": 39,
+        "sha256": "eeda1fd9d9037f8db15329dbec5870743274144bb2ea128399573a13bd57c29a",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/01-foundations/03-nouns-and-adjectives.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/04-being-and-present-action.pdf",
+        "pages": 38,
+        "sha256": "4982c1eaeabe3e285496d5d336f9fa1e2a49c360460eb73725468edd8666de59",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/01-foundations/04-being-and-present-action.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/05-perfect-passive-and-deponents.pdf",
+        "pages": 38,
+        "sha256": "82bf627fc01553c87724514d00b17dab5c50b5b757ce185d79a9adab41eb8463",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/01-foundations/05-perfect-passive-and-deponents.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/06-pronouns-prepositions-and-reading.pdf",
+        "pages": 47,
+        "sha256": "23e05937eb8862652b78756f47500aa10c6c8125b38b0d615ce343be6ff53861",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/01-foundations/06-pronouns-prepositions-and-reading.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/07-reference-comparison-and-number.pdf",
+        "pages": 42,
+        "sha256": "e468e771dd44d996883d1a7a2f24517cccbd1556d7f24d2d8bb77dc9482c0465",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/02-core-grammar/07-reference-comparison-and-number.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/08-infinitives-participles-and-absolutes.pdf",
+        "pages": 41,
+        "sha256": "255bed223c8925492396d2b5833117d83dabdf08c8c016df0c88054c477b4cf4",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/02-core-grammar/08-infinitives-participles-and-absolutes.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/09-subjunctive-system-purpose-result.pdf",
+        "pages": 53,
+        "sha256": "fc75d6974efdf3d27f13e0d81458e3fe4d2e1fd19567ff5f1da65176dd7896e8",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/02-core-grammar/09-subjunctive-system-purpose-result.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/10-circumstance-conditions-characteristic.pdf",
+        "pages": 50,
+        "sha256": "1ba528bf2d339727ddc517d34e6e662359594df4cf90bdc2839e6e9c9e1d242c",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/02-core-grammar/10-circumstance-conditions-characteristic.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/11-commands-wishes-verbal-nouns.pdf",
+        "pages": 41,
+        "sha256": "91d76274d1d71c213a2aaf0c0a47ba7e1fcf366663571f6b3827fdb79280ba71",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/02-core-grammar/11-commands-wishes-verbal-nouns.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression.pdf",
+        "pages": 41,
+        "sha256": "87d11856996b3ffdb9ffdf5264356aa3b29346144654ce09819c3c0d35d9471c",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/13-reader-method-and-ordinary.pdf",
+        "pages": 40,
+        "sha256": "c18051c2e362e336569c3d3daabf198172d670408d802f221941973c9d821a0c",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/03-missal-reading/13-reader-method-and-ordinary.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/14-orations-and-petitions.pdf",
+        "pages": 39,
+        "sha256": "6eb5cca55ee712a57fc97db11928067cc1a5222f8879b77e3b4633cb86ccd51d",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/03-missal-reading/14-orations-and-petitions.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/15-lessons-epistles-and-gospels.pdf",
+        "pages": 39,
+        "sha256": "ec831ad64e992cf1daaf8381a8b445abbbfc736ee1e11f08a8e085d31f079c02",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/03-missal-reading/15-lessons-epistles-and-gospels.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon.pdf",
+        "pages": 41,
+        "sha256": "04f13569839e2ca3e764ee05c708f4e6dd112999dedd1593712aaffb951ad36f",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/17-temporal-sanctoral-and-commons.pdf",
+        "pages": 41,
+        "sha256": "95920e26f735c7e819790117801e0c0e74966890130aebde959da8f3fd0ea0e8",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/03-missal-reading/17-temporal-sanctoral-and-commons.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/18-holy-week-requiem-and-complete-mass.pdf",
+        "pages": 55,
+        "sha256": "26b813878c32e8a081d0375cdbeb7338e5817ca11dd745edbb58958b542c1aa4",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/03-missal-reading/18-holy-week-requiem-and-complete-mass.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture.pdf",
+        "pages": 39,
+        "sha256": "a2bd3e98431d9eb389fff4c1b6d895890702d5257f9826895a5df4f0c34fc62b",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose.pdf",
+        "pages": 41,
+        "sha256": "1552224f7471573e48eec6103cc29cf0e041eadb5ac945b35e93c975002ebd71",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-imitation.pdf",
+        "pages": 43,
+        "sha256": "e421640b1d3eae7f61553b97fbfbac692f627260a72d322d00e16fcf56e0938d",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-imitation.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research.pdf",
+        "pages": 47,
+        "sha256": "39249d32f07ef7352b103b4737426f02d5cc7e5452092ea763121c947024c00c",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/01-textual-prosody.pdf",
+        "pages": 24,
+        "sha256": "4cc2f57be72b82d6d5e43ed32dd8bc682384d45f8fd6335b3999ea3a96e507ae",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/01-textual-prosody.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/02-hexameter.pdf",
+        "pages": 22,
+        "sha256": "dc8ece6bb6e93bc43ecf5d925e97b93ad250121736f238d181f3f4393d972762",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/02-hexameter.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/03-elegiac-verse.pdf",
+        "pages": 22,
+        "sha256": "6ee987b391a794001168ba60287ae00a00ab67d3b2de37d00b52e5bbc456715a",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/03-elegiac-verse.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/04-lyric-meters.pdf",
+        "pages": 23,
+        "sha256": "f256ed2610d10958a25355e460024ab1c5f52be70964d49806119dee7a7ec7af",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/04-lyric-meters.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/05-christian-poetics.pdf",
+        "pages": 22,
+        "sha256": "47b1cd6a98f5bd160df05cc3476ea29c1e26fec97db031214380e09268765d19",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/05-christian-poetics.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-and-sequences.pdf",
+        "pages": 23,
+        "sha256": "d8bdbcd13403fde363c91804cc120eeaba82d639d0b3949b348b40fcb3779350",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-and-sequences.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/07-poetic-commentary.pdf",
+        "pages": 24,
+        "sha256": "2c3aac9204bb852c038c0496a6810b9b66f977660612fe60d5e1ffcd43330a17",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/07-poetic-commentary.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/08-verse-composition.pdf",
+        "pages": 25,
+        "sha256": "565ee7fd77c694ef13e7d75b6e868cebf73f1ed196dc0a369372f887cd3a71d1",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/08-verse-composition.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/01-foundations.pdf",
+        "pages": 20,
+        "sha256": "4605aacda9cf2f89b809d5da2c74b9289a3cf1c089b0cf6e73d4148fc9bba900",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/01-foundations.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/02-core-grammar.pdf",
+        "pages": 20,
+        "sha256": "9adf19adf64b974391a446453cc20fe7543c30bc51c522c397ae858022a47a86",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/02-core-grammar.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading.pdf",
+        "pages": 29,
+        "sha256": "15a918ec80438183e3845c075cd94b698760054e4feadc2ca6d501288c4087b8",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading.pdf"
+      },
+      {
+        "path": "pdf/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced.pdf",
+        "pages": 28,
+        "sha256": "6170cf7f81277e77d52d77b8728dd8d0541d0ad9bff4816bbbd69d05dc522b8c",
+        "build_path": "build/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced.pdf"
+      },
+      {
+        "path": "pdf/gpt/devotions/novenas/00-ascension-to-pentecost-daily-prayer.pdf",
+        "pages": 11,
+        "sha256": "0de4b0b706cc42ae4297a054a34c237f54691bcce158b9c06ebe0008b6d76f15",
+        "build_path": "build/gpt/devotions/novenas/00-ascension-to-pentecost-daily-prayer.pdf"
+      },
+      {
+        "path": "pdf/gpt/devotions/novenas/00-ascension-to-pentecost.pdf",
+        "pages": 27,
+        "sha256": "1bad9a403bec69a675c733c30d133447c49c46e36b9bb8538ded9f0a6528220c",
+        "build_path": "build/gpt/devotions/novenas/00-ascension-to-pentecost.pdf"
+      },
+      {
+        "path": "pdf/gpt/devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer.pdf",
+        "pages": 12,
+        "sha256": "e136c00ee2bbbbbc916c7c82e841149baf81045559b7d2f46dcff7e781318380",
+        "build_path": "build/gpt/devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer.pdf"
+      },
+      {
+        "path": "pdf/gpt/devotions/novenas/10-our-lady-of-mount-carmel.pdf",
+        "pages": 29,
+        "sha256": "49c0a754fe6b6c4693735a989c7810c5b03346a2b87b8a061d66c211b0c4f2aa",
+        "build_path": "build/gpt/devotions/novenas/10-our-lady-of-mount-carmel.pdf"
+      },
+      {
+        "path": "pdf/gpt/history/biblical-translations/01-septuagint.pdf",
+        "pages": 22,
+        "sha256": "d5fdd92e252a95cf13e0b2211672eb1cd307df490c6abc772884f461cade5f62",
+        "build_path": "build/gpt/history/biblical-translations/01-septuagint.pdf"
+      },
+      {
+        "path": "pdf/gpt/history/biblical-translations/02-vulgate.pdf",
+        "pages": 24,
+        "sha256": "bfd8b1b38bb09560e634007c930543376b7e32d5dfe73139e4fdd1b44bf1f142",
+        "build_path": "build/gpt/history/biblical-translations/02-vulgate.pdf"
+      },
+      {
+        "path": "pdf/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf",
+        "pages": 120,
+        "sha256": "616e9ee71576852d9c2d9c9a65c7b4f84c7d3ae6e5dd60b00e505f306fb9e151",
+        "build_path": "build/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf"
+      },
+      {
+        "path": "pdf/gpt/history/catholic-parish-histories/01-st-stanislaus-milwaukee.pdf",
+        "pages": 33,
+        "sha256": "7667b1d05ee1f6d09eeedbbc0c211b5a214793edb41a1564aeb63258c04a2fa1",
+        "build_path": "build/gpt/history/catholic-parish-histories/01-st-stanislaus-milwaukee.pdf"
+      },
+      {
+        "path": "pdf/gpt/history/catholic-parish-histories/02-st-anthony-willits.pdf",
+        "pages": 28,
+        "sha256": "9da10723869c26fc564de9cbffef954d421c8fa1c04a49382cd77767b0593573",
+        "build_path": "build/gpt/history/catholic-parish-histories/02-st-anthony-willits.pdf"
+      },
+      {
+        "path": "pdf/gpt/history/traditional-priestly-institutes/01-sspx.pdf",
+        "pages": 22,
+        "sha256": "bd6729e601df4bda5dbcd290cda5a84947b39e93d62370c306c5e39c23d472d5",
+        "build_path": "build/gpt/history/traditional-priestly-institutes/01-sspx.pdf"
+      },
+      {
+        "path": "pdf/gpt/history/traditional-priestly-institutes/02-fssp.pdf",
+        "pages": 25,
+        "sha256": "cb49d44373c0989dc92422debce937564ddde6d27504e7b4fd66f32aba1c2a21",
+        "build_path": "build/gpt/history/traditional-priestly-institutes/02-fssp.pdf"
+      },
+      {
+        "path": "pdf/gpt/history/traditional-priestly-institutes/03-icksp.pdf",
+        "pages": 26,
+        "sha256": "22d53cc00326467a5ec21bdd196c26b13b43a69e9f7ffb7eae6635be8a7e0a31",
+        "build_path": "build/gpt/history/traditional-priestly-institutes/03-icksp.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf",
+        "pages": 42,
+        "sha256": "d52713d260e28aca0d0a9e8466e62456e83b94498e9c0cf4333240eee269b2ca",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.pdf",
+        "pages": 16,
+        "sha256": "8ed58bab843ff142bcd2d71cb791f3c26349e672e6c7a07b8f745d96f7599e26",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday.pdf",
+        "pages": 13,
+        "sha256": "fb72ab1e61aa308c0ee56ef043d46e68fb6b5a7b1b6161d64565198fdad31f2c",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/41-second-after-pentecost.pdf",
+        "pages": 12,
+        "sha256": "375a8663eac254952a803255cf3b582ca2813a57a5ebd6b605419bfdf306886a",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/41-second-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/43-third-after-pentecost.pdf",
+        "pages": 13,
+        "sha256": "6e7a53339745f39a54630201b6c3545dbd8f2d0421d9f4da1469ac8f10f46cc0",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/43-third-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/44-fourth-after-pentecost.pdf",
+        "pages": 11,
+        "sha256": "ddaabce8123b2dd29ab0403feec0f2d36a3884e3859ee9d5c1253d788c498692",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/44-fourth-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/45-fifth-after-pentecost.pdf",
+        "pages": 13,
+        "sha256": "d0e43be3683c3d11569c52d83546672beec5a041e3618fd500860261a9a26037",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/45-fifth-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/46-sixth-after-pentecost.pdf",
+        "pages": 12,
+        "sha256": "1785704e504f6582bdd541ba0de02351e3aff2b4d68f2766c2c1ab6f5aad81a8",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/46-sixth-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/47-seventh-after-pentecost.pdf",
+        "pages": 12,
+        "sha256": "02514f0453b034b39028ac8e4805bd7571208816b266ab96c46e915ee97da014",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/47-seventh-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost.pdf",
+        "pages": 11,
+        "sha256": "557fc42bf73c017ff54504d89214361cd9cdf08ab21944e1a7ecdf276cf00395",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost-synthesis.pdf",
+        "pages": 7,
+        "sha256": "3926f938c6217d7cc94594f2a81a9d6b79a8c76473f6d4de00feda4e78de5592",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost-synthesis.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost.pdf",
+        "pages": 15,
+        "sha256": "d0491e032193b6c9f75bfd46854ca490bc524dc63895b6d14306530330098214",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost-synthesis.pdf",
+        "pages": 10,
+        "sha256": "696f6364acbdb13ba4a9c41d499a555e4ee1d88d349b06fbdaa6dca158c8e969",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost-synthesis.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost.pdf",
+        "pages": 18,
+        "sha256": "c7f7476ce988d526dd1713d65363ad4db11eb3fad0572563b2d70b43d609e101",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost-synthesis.pdf",
+        "pages": 12,
+        "sha256": "be3c6fbc4562089cbf4fd9898ea99cd52f3c82bb5435ce845c620e18f1cf7e59",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost-synthesis.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf",
+        "pages": 19,
+        "sha256": "13f2a02a0ba107997c54aea93f14f9c68db10f2b22a5352d6a42960aad16288d",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost-synthesis.pdf",
+        "pages": 12,
+        "sha256": "7273e6c85ad8d2bc1b3591b5a611f34b03b7484418517faad13173db876817a6",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost-synthesis.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf",
+        "pages": 20,
+        "sha256": "ba47c06f512636510247cc290a2e6dfb62875cee8d3b236352697a3906fb1cc0",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis.pdf",
+        "pages": 13,
+        "sha256": "2ded0918f4e82798b21653f0274c2bd6492faacee801fefa5dfad624597736e8",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf",
+        "pages": 23,
+        "sha256": "8755608adb65cd05a8f9c3151e5c088099a42be96ac2e4a6e13de909f8d786b2",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost-synthesis.pdf",
+        "pages": 14,
+        "sha256": "2bf434c3219bffbcf338e3948646b3f5f7121bf13bc3c4efffc08547eb693393",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost-synthesis.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.pdf",
+        "pages": 20,
+        "sha256": "ae718e8b78144a40c317279f46f078ba1705c0c90aa15e175f8ef77465be6c04",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.pdf",
+        "pages": 12,
+        "sha256": "781d6296394c38f58a49ea536462ece957f99ba3f7cfe536c7bd00178175a5d0",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf",
+        "pages": 16,
+        "sha256": "a02a5ab3821cf20d311d110a92db1fc645970954e17598a7322d167cb1b90017",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis.pdf",
+        "pages": 13,
+        "sha256": "83df90ff33ee448c58483205abe9ee0cc8b81fa6ae34351495bb880966efa26d",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.pdf",
+        "pages": 20,
+        "sha256": "dc1c4c57eac71641c3cd3af267186b72acfb0ad57beb56dcc4b4dff23faf64d9",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf",
+        "pages": 3,
+        "sha256": "d6cc760a4b7de5c66b23f8529b3fe9a7050785fcaa3d6cd0822faf05e25ac6fa",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf",
+        "pages": 10,
+        "sha256": "89e976f3273d6280fbf8af3c59f055badcd6d665bd4d178d46da9665ecd8d82d",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf",
+        "pages": 22,
+        "sha256": "32971a439bb82c452276e542633beb7f8dd96c0b1de0790c5cb9248cac172777",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf",
+        "pages": 3,
+        "sha256": "26dc559868ca28e412aac0a9cdd9ff80c4c64884581aae554af4393c70223eb8",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf",
+        "pages": 10,
+        "sha256": "23aa8392a323418f1b552e5395db2fe1949829c78ced6c9e4477cc966211d9bd",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf",
+        "pages": 20,
+        "sha256": "6df2dca4e72d6f3530682437c575411cefef61dec00b322b41b4ee7ffb7733e4",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards.pdf",
+        "pages": 7,
+        "sha256": "e847165fbbd01f0031477c0fd409fb88037e695f51f288a051cf54e7605f7991",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual.pdf",
+        "pages": 26,
+        "sha256": "5c22a6171c732d3a40f035a343b478217d8ea23a47adcdad7821390fda16333e",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass.pdf",
+        "pages": 26,
+        "sha256": "024d56d9fddc966560058c33db01c22cf773adbdc3f5236b903cd29cd4e3c5a9",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf",
+        "pages": 13,
+        "sha256": "abcd27d40cf04af3cec3be36ca67f6b0a6e480e452cade65203a186f7b004909",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf",
+        "pages": 34,
+        "sha256": "474270a567e300fd3401d3db881cb3a37cf2f072c869dedb99cc34be7afe700c",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf",
+        "pages": 12,
+        "sha256": "b2703a930eafcfb245f987ae48b98554d5eec2dcdaff08867d105103d2eb4ad6",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf",
+        "pages": 30,
+        "sha256": "70bb9e9c5ac299512e86183005b6dbaa0ce1fe4a362fb04e60f1fa98da88224a",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf",
+        "pages": 40,
+        "sha256": "7924e96ca6391d90d2c148c10a572987d81f8a5040e8d0bbce71e205e03e27a4",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf",
+        "pages": 19,
+        "sha256": "12c608de3f92c4b45bff5a61065c727e7eea9635cb229bb9c453b3caf62082b9",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.pdf",
+        "pages": 11,
+        "sha256": "a1c73dae1be5cdfb5c64aeb821da5858aa2bf06c1e07200f39fead0c9f6c91fd",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf",
+        "pages": 13,
+        "sha256": "1d6d8e87927b671f5cbc2fe8215e80ea26a1150f92ee47084b9b6a2555668e20",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf",
+        "pages": 11,
+        "sha256": "064698f20dae028eb9e9c77a9d2d6add68bb378125a4ac415854bddcf2260706",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.pdf",
+        "pages": 10,
+        "sha256": "803f92f2239a6c2923b33185e7a66bbbcc9681d6c078d8ed1fa254fb6951df8f",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf",
+        "pages": 16,
+        "sha256": "dc0da7ba4de58bb1ca4ae5c8c8d5388164a92eae9ae6348c4095961c5d7fcd2a",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.pdf",
+        "pages": 12,
+        "sha256": "8240b82fe9f764747fdc0bf0d8005c2c4abd64c4ee17e645a8a053c8177c09a0",
+        "build_path": "build/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice.pdf",
+        "pages": 46,
+        "sha256": "b66d52c7109962ead71def8d96afb1aa299239078772f18388b9912db9cb11c1",
+        "build_path": "build/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.pdf",
+        "pages": 77,
+        "sha256": "a8b128e25cfa6a5d71783d873e589865d04ec9ae927484d20e89bf77e92de78d",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a.pdf",
+        "pages": 14,
+        "sha256": "9dd635778b3fbd70307e6ad412ea96d7da1c4d92045b2c009b74c679a41566d6",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s27-most-holy-body-and-blood-of-christ-year-a.pdf",
+        "pages": 14,
+        "sha256": "ebb4d7bc921a61e6e0a4bec44205f5dce5ae02b9c9a059ea21f0308667c75571",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s27-most-holy-body-and-blood-of-christ-year-a.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-eleventh-sunday-in-ordinary-time-year-a.pdf",
+        "pages": 12,
+        "sha256": "a3184423107ce85b581e50f1ba78418849eca46c925f3cc4b8d3317128dc62e7",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-eleventh-sunday-in-ordinary-time-year-a.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-twelfth-sunday-in-ordinary-time-year-a.pdf",
+        "pages": 12,
+        "sha256": "17b8742fd31584ed520b6624ecc8ffb7f34b334d958bde66741de58138a73ffc",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-twelfth-sunday-in-ordinary-time-year-a.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-thirteenth-sunday-in-ordinary-time-year-a.pdf",
+        "pages": 12,
+        "sha256": "f1ee0747ad0d46dedad0849da0a7bf37e21cd76191288ef8f4cb2ccea0ab2e6a",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-thirteenth-sunday-in-ordinary-time-year-a.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-fourteenth-sunday-in-ordinary-time-year-a.pdf",
+        "pages": 12,
+        "sha256": "e9fc943ecf0291bd9886eaaf5fc9f7be5a7a3a243fce30942ccb7ce510e5df18",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-fourteenth-sunday-in-ordinary-time-year-a.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-fifteenth-sunday-in-ordinary-time-year-a.pdf",
+        "pages": 12,
+        "sha256": "a3cb356d21b04e496ad1072895fdc8ad1454a4464002bc1137fddad217e06bf7",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-fifteenth-sunday-in-ordinary-time-year-a.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a.pdf",
+        "pages": 12,
+        "sha256": "7abf39ba8a2ce323388784204f94e633182ae96ca3557a0a886f04b001386890",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+        "pages": 9,
+        "sha256": "a5e0d5d25b3fa52bf96e59ae72488b2848e0d6e018b6f8217fa3c0ce75884a01",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a-synthesis.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a.pdf",
+        "pages": 13,
+        "sha256": "632e5cf3c4b435abad71cd0a2674b2129e307b5321c0a99a62ab12f7e2be89d4",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+        "pages": 10,
+        "sha256": "2411d50e7e377430841530c26bef6305edbd5c7231c0182d28ccb38a2b23d7a1",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a-synthesis.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a.pdf",
+        "pages": 18,
+        "sha256": "48e84ab2407af5ba4d250b0f3c31527f78f9891bf89400086f9c85dada251aaf",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b-synthesis.pdf",
+        "pages": 10,
+        "sha256": "01ced51925dc1e7e8d58204980a99d61d3d3977101df15b986ac632d8c3d2782",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b-synthesis.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.pdf",
+        "pages": 16,
+        "sha256": "6ea6b75e14f949115fad658a1997973aee4100f99536ef22c0a073eb5039a9e6",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c-synthesis.pdf",
+        "pages": 8,
+        "sha256": "4b7b92783ec7631f78ce8e078b3e39f46b1f24d90a7c30286f060cb90f118c8c",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c-synthesis.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.pdf",
+        "pages": 13,
+        "sha256": "d6e86768b0f06b1846b72cb0177c03b9ae55f03b75e0c8555d260efdcafebab1",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf",
+        "pages": 3,
+        "sha256": "514a1cdb4719e5e9d7609dbe1da46093ff5c1d5e0abc37165237117c503e64d0",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+        "pages": 10,
+        "sha256": "094320d3d17c59748097f43eb1a4c1407456bf51c432099495799c6eef0fd0c4",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf",
+        "pages": 20,
+        "sha256": "1ccb31ee142e83a86aaeb4586a371c16da934e998cee3fd693a241035da588cb",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-homily.pdf",
+        "pages": 3,
+        "sha256": "7eb824cac27d8dc3d91a615c7655b87616c5cfc2975bc0c23b9f2a654c29008b",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-homily.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-synthesis.pdf",
+        "pages": 11,
+        "sha256": "a5e7f36ff9deb36f72147756044b3aa2455ca9482684818cd7ae193ddda25b7b",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-synthesis.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.pdf",
+        "pages": 21,
+        "sha256": "c33098c122dc9fcafdbd55e225a989ab20822e3d81f05bf222f3dd76e8fa700c",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.pdf",
+        "pages": 19,
+        "sha256": "6a983285f290f9d9e4c9fb2fd108a481889f9c53567e135ed18bfe70774ae618",
+        "build_path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.pdf"
+      },
+      {
+        "path": "pdf/gpt/theology/angelology.pdf",
+        "pages": 62,
+        "sha256": "3392d9925872de591e30a296dcd51615d55d34998472c246414e1b7e9dce9947",
+        "build_path": "build/gpt/theology/angelology.pdf"
+      },
+      {
+        "path": "pdf/gpt/theology/heresies/heresies-in-catholic-history.pdf",
+        "pages": 81,
+        "sha256": "f7021096931f0040a4f40ddaf5459347c986403a9194080e3d1f3ab10e96f2fa",
+        "build_path": "build/gpt/theology/heresies/heresies-in-catholic-history.pdf"
+      },
+      {
+        "path": "pdf/gpt/theology/mariology/angelus.pdf",
+        "pages": 8,
+        "sha256": "fe4355e6db42accc9af72e6daf598ca7a6ed45a3cc1f01b9d9e43c6a3570d268",
+        "build_path": "build/gpt/theology/mariology/angelus.pdf"
+      },
+      {
+        "path": "pdf/gpt/theology/mariology/apparitions.pdf",
+        "pages": 44,
+        "sha256": "f184febe7f9220b79f98f1e7e0356336386f7783f4a1885255c77b6452a78ec8",
+        "build_path": "build/gpt/theology/mariology/apparitions.pdf"
+      },
+      {
+        "path": "pdf/gpt/theology/mariology/ark-of-the-covenant.pdf",
+        "pages": 46,
+        "sha256": "118e1f3577c6abe9811e4410048abc471300195f4d2447f0a9435c5b973cbfb9",
+        "build_path": "build/gpt/theology/mariology/ark-of-the-covenant.pdf"
+      },
+      {
+        "path": "pdf/gpt/theology/mariology/champion.pdf",
+        "pages": 32,
+        "sha256": "e06928c03d0df5813a462b2dda1fcdc2db9e4b530aa4a91fb3d2d1c7710c02f3",
+        "build_path": "build/gpt/theology/mariology/champion.pdf"
+      },
+      {
+        "path": "pdf/gpt/theology/mariology/doctrinal-authority.pdf",
+        "pages": 7,
+        "sha256": "64dace6d07e6b86d9664f02608e963de51fc42b0a7c4263bbb5c59350f99e9ce",
+        "build_path": "build/gpt/theology/mariology/doctrinal-authority.pdf"
+      },
+      {
+        "path": "pdf/gpt/theology/mariology/fatima.pdf",
+        "pages": 32,
+        "sha256": "aa512ea04e0def83b77f7a8a65f98cec07169ba84f4862deef4a5b18c3f0be79",
+        "build_path": "build/gpt/theology/mariology/fatima.pdf"
+      },
+      {
+        "path": "pdf/gpt/theology/mariology/guadalupe.pdf",
+        "pages": 30,
+        "sha256": "42193ce0b189db88c1ba276b2de51b1d2f03d930823f0ffb25c2bbd3a7ecee92",
+        "build_path": "build/gpt/theology/mariology/guadalupe.pdf"
+      },
+      {
+        "path": "pdf/gpt/theology/mariology/la-salette.pdf",
+        "pages": 33,
+        "sha256": "6f0656b9d2ee32ea993c2274b949ee399c9144cfd19c85eebc65014fce465f3c",
+        "build_path": "build/gpt/theology/mariology/la-salette.pdf"
+      },
+      {
+        "path": "pdf/gpt/theology/mariology/lourdes.pdf",
+        "pages": 31,
+        "sha256": "e488b0bc99613bf5dc836fc731c7d8f413f99b054b6594122e86d3e7651e8420",
+        "build_path": "build/gpt/theology/mariology/lourdes.pdf"
+      },
+      {
+        "path": "pdf/gpt/theology/mariology/marian-dogmas.pdf",
+        "pages": 35,
+        "sha256": "7af99466f823367006c086df58b02b5724d66c1d4b5c37988f09c45c6817a17e",
+        "build_path": "build/gpt/theology/mariology/marian-dogmas.pdf"
+      },
+      {
+        "path": "pdf/gpt/theology/mariology/regina-coeli.pdf",
+        "pages": 8,
+        "sha256": "8b443ab042e4538a10302f026231abe1065ad96267cdf9433c42ac4d5f26ca76",
+        "build_path": "build/gpt/theology/mariology/regina-coeli.pdf"
+      },
+      {
+        "path": "pdf/gpt/theology/mariology/rosary.pdf",
+        "pages": 27,
+        "sha256": "fa09d6407a0e40113b28d8745d602899ca307f9937a82c2480d30b7a0c9c74f8",
+        "build_path": "build/gpt/theology/mariology/rosary.pdf"
+      },
+      {
+        "path": "pdf/gpt/theology/sacraments-at-a-glance.pdf",
+        "pages": 10,
+        "sha256": "8aa641e10e703d5914f39d38f70613aa0a0e9a9635b7186f93c6c9328dcda5c3",
+        "build_path": "build/gpt/theology/sacraments-at-a-glance.pdf"
+      },
+      {
+        "path": "pdf/gpt/theology/sacraments.pdf",
+        "pages": 71,
+        "sha256": "2dd6ab793b69e069f6e31c9be114fc54d643942f7f83d62ad09dc2a8d3e5ce8f",
+        "build_path": "build/gpt/theology/sacraments.pdf"
+      },
+      {
+        "path": "pdf/gpt/theology/virtues.pdf",
+        "pages": 48,
+        "sha256": "a099ce1a7c38b9cf935a285b2bdfffab2774278f02dbfe1c0d0c9cf56c7bc80c",
+        "build_path": "build/gpt/theology/virtues.pdf"
+      },
+      {
+        "path": "pdf/reading-plans/narrative-spine-full-account-douay-rheims.pdf",
+        "pages": 298,
+        "sha256": "cfd84b8ea305e3e4d033209964f982720e853b9419604c6a9f12770d53e7d117",
+        "unchanged_reading_plan": true
+      },
+      {
+        "path": "pdf/reading-plans/narrative-spine-full-account-king-james-version.pdf",
+        "pages": 284,
+        "sha256": "746e90d1e15ed79f31eaf2283461bcd7007a0513faae2501522dcf914bbe31d4",
+        "unchanged_reading_plan": true
+      },
+      {
+        "path": "pdf/reading-plans/narrative-spine-landmarks-douay-rheims.pdf",
+        "pages": 32,
+        "sha256": "f63fdea277cf4a259885ab174520264b80e685d4d647a24ff27591ef8a008259",
+        "unchanged_reading_plan": true
+      },
+      {
+        "path": "pdf/reading-plans/narrative-spine-landmarks-king-james-version.pdf",
+        "pages": 32,
+        "sha256": "44c98e73b2f521b5957d66dd8002f582ca071e184929248fea8d3462c6de59b6",
+        "unchanged_reading_plan": true
+      },
+      {
+        "path": "pdf/reading-plans/narrative-spine-story-douay-rheims.pdf",
+        "pages": 85,
+        "sha256": "e23724c4e75cc5bd46896cc13717358db9d5d7ec01b7f8fcac42b8f647d0cbc0",
+        "unchanged_reading_plan": true
+      },
+      {
+        "path": "pdf/reading-plans/narrative-spine-story-king-james-version.pdf",
+        "pages": 85,
+        "sha256": "44bed15d567d424ac5cf0ad13ff8ef9e3a39714ce7f566c539afd178cf7b39f4",
+        "unchanged_reading_plan": true
+      }
+    ],
+    "evidence": [
+      {
+        "path": ".scratch/recovery-pdf-corpus/final-audit/snapshot-manifest.json",
+        "sha256": "1ba2d521e4f21d884164c2e9df10fb6855bf931454e6dda09fda729ac2cc926b"
+      },
+      {
+        "path": ".scratch/recovery-pdf-corpus/final-audit/build-installed-identity.json",
+        "sha256": "5ddb2056bc0f1bdefc84301c18d46c4d162fda8a1cf9fca75d7e05831a0c3f16"
+      },
+      {
+        "path": ".scratch/recovery-pdf-corpus/final-audit/anchor-gate.json",
+        "sha256": "65c6fe0e221cb09821ca95e41c180b56b7bdded8b8d9a9a29d623cc41fc32e45"
+      },
+      {
+        "path": ".scratch/recovery-pdf-corpus/final-audit/navigation-detail.json",
+        "sha256": "b950c75623595b8bd4b6594bb1085e86319b0719e448744aff17a27dfc45a4b1"
+      },
+      {
+        "path": ".scratch/recovery-pdf-corpus/final-audit/navigation-exceptions.json",
+        "sha256": "686fdeb976db47b1e71edac43e7a7e7b62e568813a7663770965a26666f2fbdd"
+      },
+      {
+        "path": ".scratch/recovery-pdf-corpus/final-audit/destination-extents.json",
+        "sha256": "6cb6543b63b5bf09c6015864bce50ce5ae27bacccd7004b4d2d5afbe91addb74"
+      },
+      {
+        "path": ".scratch/recovery-pdf-corpus/final-audit/reading-plans.json",
+        "sha256": "a0d3f483b98ec6ba9d1fb6b87700a63a4f9d1a93bc5eab45882cda6e3042c28d"
+      },
+      {
+        "path": ".scratch/recovery-pdf-corpus/final-audit/summary.json",
+        "sha256": "ac63d003713166d7d37d57942b30af92bee6d8f91349854d1f83fb9f85b44aad"
+      },
+      {
+        "path": ".scratch/recovery-pdf-corpus/final-audit/sacramental-final-destinations.json",
+        "sha256": "c80514b4c97ea99c439ba9cfeaac024de754b38c789f259c17d8f89bac894871"
+      },
+      {
+        "path": ".scratch/recovery-pdf-corpus/final-audit/earlier-review-identity.json",
+        "sha256": "763ff79a7988dca31f5b183ec7ef3abb8d42715261a555c9fb2d6c31cfea6e9d"
+      },
+      {
+        "path": ".scratch/recovery-pdf-corpus/final-audit/contents-destination-page-labels.json",
+        "sha256": "45c51ccaeb7f4b92a8a5b06e150c6763c8642204099209c06feda46c2c5f0c11"
+      },
+      {
+        "path": ".scratch/recovery-pdf-corpus/final-audit/sacraments-destinations.txt",
+        "sha256": "5394066068fbcc7c3c7332d1908004711df36cb76ee480e22e24be81d556af14"
+      },
+      {
+        "path": ".scratch/recovery-pdf-corpus/final-audit/sacraments-at-a-glance-destinations.txt",
+        "sha256": "cdbd4b0c74350f1e0f9c101300630e1f186b6b977c28b8876d740a9cb3554e4b"
+      }
+    ]
+  },
+  "final_built_site_browser_review": {
+    "schema": "triptych-browser-recovery-artifact-review/v1",
+    "reviewer": "cold_browser",
+    "scope": "Final integrated local public-site artifact. Assets and ordinary data responses served directly from build/public-alpha/site; named fault-injection cases are explicit. No asset overlays or tracked edits.",
+    "verdict": "scoped-pass-with-known-design-gap",
+    "new_failures": [],
+    "artifact": {
+      "root": "build/public-alpha/site",
+      "head_at_start": "77c6a3121e185e8365b8df2a5454c2a74eee7a3a",
+      "head_at_end": "77c6a3121e185e8365b8df2a5454c2a74eee7a3a",
+      "checked_files_sha256": {
+        "PUBLICATION-MANIFEST.json": "c72865209abd332be85a331853235dde12be0fe015971eabc59ebb4e8de69061",
+        "shared/browser-core.js": "86afaa4ea86b451a1da17195ba1128158e713210a326ee8de4f5cbf15180f9b1",
+        "catena/catena-model.js": "1f9337bb8eaf1a6f086ae57ff9debaa80bb9212a837c93b4fff9a826dbc8da83",
+        "catena/catena.js": "fa3b58f9a12cb1223229a0cb6920f7db3cb05aa26848f613c74647e3d2f7ae78",
+        "history/history.js": "83a5824093a1568de9b0ebc1b3fa0da37cb8bcf7e503ce7195905da15f3221b1",
+        "sources/sources.js": "45c86252478782dd5a0cae6bf11c278b2c2fcdfb3aa9f303f9f93ee684fe7d2c",
+        "sources/sources.css": "4d47cb9f37fa95e6cb3894b500ab31c0b123adf27e65aa8784e313103409a41b",
+        "texts/texts.js": "a2ce9ad7ad2741391e0aadf02426e628f30dc29a9b1eba4bad6dd80da2f36521",
+        "liturgy/day-reader.js": "1b64f6542fbfd1e6f455cf6af427a98ff1be372f681f0eea83f9cdbd14823796",
+        "catena/index.html": "b7a770cf0c212738d1e56137039aca905853dcd97d886ecd9213bb096fe97ad2",
+        "sources/index.html": "0bf4015ab2ac885f8d8c83e8a43ebcb961e188a19604eb3944a595254d74359c",
+        "texts/index.html": "d12d9f494fd7f29d7c62a1955935793dd70744a71eee6c40ec4422c782088104",
+        "liturgy/day.html": "da4c429cc87b2ff4aea3d136e4af1acca69588f789d229b06b406b0cb888877f",
+        "browse/structure/sources/index.json": "2030f70c65c905875c54988eb383bc0122fa7b1a6ccddccedde3de7ae9a86d34",
+        "browse/structure/documents/corpus.json": "f652c35cbc15dbc1e13681f7a1a46589e0c36cc37aadd0771582dcba51bbce5d",
+        "browse/structure/ordinary/index.json": "b248eefcc0b073e43dd4c0d168007cd8d09fc5f28bd2fc633d98e2f4ba9e4846"
+      },
+      "checked_files_unchanged_during_run": true,
+      "runtime_assets_match_source": {
+        "shared/browser-core.js": true,
+        "catena/catena-model.js": true,
+        "catena/catena.js": true,
+        "history/history.js": true,
+        "sources/sources.js": true,
+        "sources/sources.css": true,
+        "texts/texts.js": true,
+        "liturgy/day-reader.js": true
+      },
+      "limits": "Hashes bind the named files, not every file in the site tree. PUBLICATION-MANIFEST.json and all repaired runtime assets are included."
+    },
+    "whole_site_gate": {
+      "command": "TRIPTYCH_CHROME=/usr/bin/chromium TRIPTYCH_REVIEW_ROOT=build/public-alpha/site node tools/tests/corpus_browser_gate.mjs",
+      "exit_code": 1,
+      "chrome": "Chrome/153.0.8010.52",
+      "counts": {
+        "routes": 19,
+        "states": 9,
+        "pages": 171,
+        "assertions": 2290,
+        "passed": 1985,
+        "failed": 77,
+        "skipped": 228
+      },
+      "summary": [
+        {
+          "name": "escape-key-does-not-throw",
+          "total": 171,
+          "passed": 171,
+          "failed": 0,
+          "skipped": 0,
+          "routesFailing": 0
+        },
+        {
+          "name": "focus-indicator-differs-from-resting",
+          "total": 171,
+          "passed": 171,
+          "failed": 0,
+          "skipped": 0,
+          "routesFailing": 0
+        },
+        {
+          "name": "hash-deep-link-is-honoured",
+          "total": 10,
+          "passed": 10,
+          "failed": 0,
+          "skipped": 0,
+          "routesFailing": 0
+        },
+        {
+          "name": "html-element-has-lang",
+          "total": 171,
+          "passed": 171,
+          "failed": 0,
+          "skipped": 0,
+          "routesFailing": 0
+        },
+        {
+          "name": "interactive-controls-have-accessible-names",
+          "total": 171,
+          "passed": 171,
+          "failed": 0,
+          "skipped": 0,
+          "routesFailing": 0
+        },
+        {
+          "name": "internal-links-resolve",
+          "total": 19,
+          "passed": 19,
+          "failed": 0,
+          "skipped": 0,
+          "routesFailing": 0
+        },
+        {
+          "name": "no-console-errors",
+          "total": 171,
+          "passed": 171,
+          "failed": 0,
+          "skipped": 0,
+          "routesFailing": 0
+        },
+        {
+          "name": "no-failed-requests",
+          "total": 171,
+          "passed": 171,
+          "failed": 0,
+          "skipped": 0,
+          "routesFailing": 0
+        },
+        {
+          "name": "no-horizontal-overflow-at-320",
+          "total": 171,
+          "passed": 19,
+          "failed": 0,
+          "skipped": 152,
+          "routesFailing": 0
+        },
+        {
+          "name": "no-script-static-truth",
+          "total": 19,
+          "passed": 19,
+          "failed": 0,
+          "skipped": 0,
+          "routesFailing": 0
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "total": 171,
+          "passed": 18,
+          "failed": 77,
+          "skipped": 76,
+          "routesFailing": 18
+        },
+        {
+          "name": "single-h1-element",
+          "total": 171,
+          "passed": 171,
+          "failed": 0,
+          "skipped": 0,
+          "routesFailing": 0
+        },
+        {
+          "name": "single-main-element",
+          "total": 171,
+          "passed": 171,
+          "failed": 0,
+          "skipped": 0,
+          "routesFailing": 0
+        },
+        {
+          "name": "skip-link-targets-existing-element",
+          "total": 171,
+          "passed": 171,
+          "failed": 0,
+          "skipped": 0,
+          "routesFailing": 0
+        },
+        {
+          "name": "subpath-deep-link-startup",
+          "total": 19,
+          "passed": 19,
+          "failed": 0,
+          "skipped": 0,
+          "routesFailing": 0
+        },
+        {
+          "name": "tab-traversal-reaches-visible-controls",
+          "total": 171,
+          "passed": 171,
+          "failed": 0,
+          "skipped": 0,
+          "routesFailing": 0
+        },
+        {
+          "name": "title-present-and-unduplicated",
+          "total": 171,
+          "passed": 171,
+          "failed": 0,
+          "skipped": 0,
+          "routesFailing": 0
+        }
+      ],
+      "known_failure": {
+        "id": "KI-046",
+        "classification": "planned design dependency",
+        "name": "primary-controls-meet-target-size",
+        "count": 77,
+        "exact_prior_name_route_state_set_match": true,
+        "new_identity_count": 0,
+        "resolved_identity_count": 0,
+        "disposition": "Retained enhanced target-size gap; no redesign authorized."
+      },
+      "failure_identities": [
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/404.html",
+          "state": "handset-393x852"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/404.html",
+          "state": "handset-393x852-forced-colors"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/404.html",
+          "state": "handset-393x852-reduced-motion"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/404.html",
+          "state": "handset-393x852-scale-400"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/about.html",
+          "state": "handset-393x852"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/about.html",
+          "state": "handset-393x852-forced-colors"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/about.html",
+          "state": "handset-393x852-reduced-motion"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/about.html",
+          "state": "handset-393x852-scale-400"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/catena/index.html",
+          "state": "handset-393x852"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/catena/index.html",
+          "state": "handset-393x852-forced-colors"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/catena/index.html",
+          "state": "handset-393x852-reduced-motion"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/catena/index.html",
+          "state": "handset-393x852-scale-400"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/catena/index.html",
+          "state": "handset-393x852-text-200"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/docs/bibles.html",
+          "state": "handset-393x852"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/docs/bibles.html",
+          "state": "handset-393x852-forced-colors"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/docs/bibles.html",
+          "state": "handset-393x852-reduced-motion"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/docs/bibles.html",
+          "state": "handset-393x852-scale-400"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/history/index.html",
+          "state": "handset-393x852"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/history/index.html",
+          "state": "handset-393x852-forced-colors"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/history/index.html",
+          "state": "handset-393x852-reduced-motion"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/history/index.html",
+          "state": "handset-393x852-scale-400"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/history/index.html",
+          "state": "handset-393x852-text-200"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/index.html",
+          "state": "handset-393x852"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/index.html",
+          "state": "handset-393x852-forced-colors"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/index.html",
+          "state": "handset-393x852-reduced-motion"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/index.html",
+          "state": "handset-393x852-scale-400"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/law/index.html",
+          "state": "handset-393x852"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/law/index.html",
+          "state": "handset-393x852-forced-colors"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/law/index.html",
+          "state": "handset-393x852-reduced-motion"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/law/index.html",
+          "state": "handset-393x852-scale-400"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/law/index.html",
+          "state": "handset-393x852-text-200"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/library/biographies.html",
+          "state": "handset-393x852"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/library/biographies.html",
+          "state": "handset-393x852-forced-colors"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/library/biographies.html",
+          "state": "handset-393x852-reduced-motion"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/library/biographies.html",
+          "state": "handset-393x852-scale-400"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/day-reader.html",
+          "state": "handset-393x852"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/day-reader.html",
+          "state": "handset-393x852-forced-colors"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/day-reader.html",
+          "state": "handset-393x852-reduced-motion"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/day-reader.html",
+          "state": "handset-393x852-scale-400"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/day.html",
+          "state": "handset-393x852"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/day.html",
+          "state": "handset-393x852-forced-colors"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/day.html",
+          "state": "handset-393x852-reduced-motion"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/day.html",
+          "state": "handset-393x852-scale-400"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/index.html",
+          "state": "handset-393x852"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/index.html",
+          "state": "handset-393x852-forced-colors"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/index.html",
+          "state": "handset-393x852-reduced-motion"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/index.html",
+          "state": "handset-393x852-scale-400"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/propers-reader.html",
+          "state": "handset-393x852"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/propers-reader.html",
+          "state": "handset-393x852-forced-colors"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/propers-reader.html",
+          "state": "handset-393x852-reduced-motion"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/propers-reader.html",
+          "state": "handset-393x852-scale-400"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/reader-visual-reset-day.html",
+          "state": "handset-393x852"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/reader-visual-reset-day.html",
+          "state": "handset-393x852-forced-colors"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/reader-visual-reset-day.html",
+          "state": "handset-393x852-reduced-motion"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/reader-visual-reset-day.html",
+          "state": "handset-393x852-scale-400"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/reader-visual-reset-propers.html",
+          "state": "handset-393x852"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/reader-visual-reset-propers.html",
+          "state": "handset-393x852-forced-colors"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/reader-visual-reset-propers.html",
+          "state": "handset-393x852-reduced-motion"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/liturgy/reader-visual-reset-propers.html",
+          "state": "handset-393x852-scale-400"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/scripture/index.html",
+          "state": "handset-393x852"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/scripture/index.html",
+          "state": "handset-393x852-forced-colors"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/scripture/index.html",
+          "state": "handset-393x852-reduced-motion"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/scripture/index.html",
+          "state": "handset-393x852-scale-400"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/scripture/track.html",
+          "state": "handset-393x852"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/scripture/track.html",
+          "state": "handset-393x852-forced-colors"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/scripture/track.html",
+          "state": "handset-393x852-reduced-motion"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/scripture/track.html",
+          "state": "handset-393x852-scale-400"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/scripture/track.html",
+          "state": "handset-393x852-text-200"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/texts/index.html",
+          "state": "handset-393x852"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/texts/index.html",
+          "state": "handset-393x852-forced-colors"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/texts/index.html",
+          "state": "handset-393x852-reduced-motion"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/texts/index.html",
+          "state": "handset-393x852-scale-400"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/texts/index.html",
+          "state": "handset-393x852-text-200"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.html",
+          "state": "handset-393x852"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.html",
+          "state": "handset-393x852-forced-colors"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.html",
+          "state": "handset-393x852-reduced-motion"
+        },
+        {
+          "name": "primary-controls-meet-target-size",
+          "route": "/web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.html",
+          "state": "handset-393x852-scale-400"
+        }
+      ],
+      "bounds": {
+        "tabDepth": 10,
+        "focusSample": 6,
+        "targetSizeMinPx": 44,
+        "targetSizeMeasuredAtWidth": 393,
+        "linksPerRouteCap": 40,
+        "cappedRoutes": [
+          {
+            "route": "/texts/index.html",
+            "collected": 390,
+            "checked": 40,
+            "notChecked": 350
+          }
+        ],
+        "hashDeepLinksCovered": [
+          "/catena/index.html",
+          "/history/index.html",
+          "/law/index.html",
+          "/liturgy/day-reader.html",
+          "/liturgy/day.html",
+          "/liturgy/index.html",
+          "/liturgy/propers-reader.html",
+          "/scripture/track.html",
+          "/sources/index.html",
+          "/texts/index.html"
+        ],
+        "subpathPrefix": "/triptych/"
+      }
+    },
+    "focused_artifact_tests": {
+      "command": "python3 .scratch/recovery-browser/final_site_probes.py",
+      "runs": 32,
+      "passed": true,
+      "failures": 0,
+      "errors": 0,
+      "tests": [
+        {
+          "test": "tools.tests.test_browser_truthfulness.UnavailableCorpusTests.test_history_initial_transport_failure_claims_no_fallback",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_browser_truthfulness.UnavailableCorpusTests.test_publications_failure_replaces_every_loading_control",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_browser_truthfulness.UnavailableCorpusTests.test_source_edition_without_file_preserves_hosts_and_recovers",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_browser_truthfulness.UnavailableCorpusTests.test_sources_failure_replaces_every_loading_control",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_browser_truthfulness.PublicationFilterHistoryTests.test_history_without_a_filter_restores_the_unfiltered_catalogue",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_browser_truthfulness.WithheldPassageTests.test_no_words_arrive_under_the_refusal_once_the_older_fetch_returns",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_browser_truthfulness.WithheldPassageTests.test_the_withheld_passage_exposes_no_prose_bearing_metadata",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_browser_truthfulness.WithheldPassageTests.test_the_withheld_passage_stands_alone_the_moment_it_is_chosen",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_browser_truthfulness.SourceReaderInteractionTests.test_a_segment_narrows_but_does_not_replace_its_controller",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_browser_truthfulness.SourceReaderInteractionTests.test_an_edition_only_link_is_canonicalized_to_its_first_passage",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_browser_truthfulness.SourceReaderInteractionTests.test_boundary_steps_move_focus_to_the_stable_passage_selector",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_browser_truthfulness.SourceReaderInteractionTests.test_browser_back_and_forward_restore_exact_provenance",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_browser_truthfulness.SourceReaderInteractionTests.test_finder_typing_replaces_one_canonical_history_entry",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_browser_truthfulness.SourceReaderInteractionTests.test_one_passage_keeps_the_selector_and_omits_impossible_steps",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_browser_truthfulness.SourceReaderInteractionTests.test_opening_a_one_passage_edition_writes_its_complete_citation",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_browser_truthfulness.SourceReaderInteractionTests.test_selecting_preserves_focus_navigation_and_exact_controller",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_browser_truthfulness.SourceReaderInteractionTests.test_stepping_preserves_focus_navigation_and_exact_controller",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_browser_truthfulness.SourceReaderInteractionTests.test_the_controller_is_named_in_both_passage_and_apparatus",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_browser_truthfulness.SourceReaderAddressTests.test_back_from_a_direct_reader_address_returns_to_default_finder",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_browser_truthfulness.SourceReaderAddressTests.test_invalid_finder_values_are_dropped_without_losing_valid_state",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_browser_truthfulness.SourceReaderAddressTests.test_rights_filter_includes_segment_controlled_editions",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_browser_truthfulness.SourceReaderAddressTests.test_same_fact_editions_have_distinct_recorded_labels",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_browser_truthfulness.SourceReaderAddressTests.test_unknown_edition_is_refused_without_rewriting_its_citation",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_catena_production.E1HardeningBacklogTest.test_a_thenable_realm_finalizes_nothing_it_was_handed",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_catena_production.E1HardeningBacklogTest.test_nested_members_and_list_indices_answer_only_for_themselves",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_catena_production.E1HardeningBacklogTest.test_no_chapter_root_accessor_is_ever_called",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_catena_production.E1HardeningBacklogTest.test_no_inherited_chapter_root_is_believed",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_catena_production.E1HardeningBacklogTest.test_the_alternating_then_substitution_reaches_no_body",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_catena_production.E1HardeningBacklogTest.test_the_real_spine_still_reads_as_it_always_did",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_catena_production.E1HardeningBacklogTest.test_the_shared_loader_hands_on_nothing_from_a_thenable_realm",
+          "status": "pass"
+        },
+        {
+          "test": "tools.tests.test_catena_production.BodyWriteFailureIsTerminalTest.test_only_a_transport_failure_resets_retry",
+          "status": "pass"
+        },
+        {
+          "test": "__main__.CatenaArtifactArrival.test_fresh_english_voice_arrival_keeps_exact_hash_and_real_fragments",
+          "status": "pass"
+        }
+      ],
+      "intentional_faults": [
+        "Blocked Sources, Publications and History bootstrap requests.",
+        "Missing-file Sources test replaces only the built index response with its bounded fixture.",
+        "Withheld-passage race delays the built text response.",
+        "Catena Node probes apply hostile records/prototypes to the exact built model and shared loader."
+      ],
+      "scope": "Sources transport/missing-file recovery, withholding race, source selection/provenance/focus and Back/Forward, Publications transport and empty-hash Back, History transport message, Catena fresh voiced arrival and exact built loader/model guards."
+    },
+    "day_artifact_scenario": {
+      "command": "TRIPTYCH_CHROME=/usr/bin/chromium TRIPTYCH_REVIEW_ROOT=build/public-alpha/site TRIPTYCH_SOURCE_ONLY=1 node .scratch/recovery-browser/final-site-day.mjs",
+      "harness_adaptation": "Existing tracked Day browser harness uses built /liturgy and /browse paths; executes only the unchanged Apply regression and settlement checks. Runtime assets are unmodified.",
+      "assertions": [
+        {
+          "name": "Apply clears outgoing edition variants while same-edition dates and history preserve them",
+          "status": "pass"
+        }
+      ],
+      "console_errors": 0,
+      "request_failures": 0,
+      "http_failures": 0,
+      "unnamed_interactive_nodes": 0,
+      "coverage": "Read latent EP II and Missal active EP III; same-edition date change preserves option; missal change removes it; unknown compatible key preserved; Back restores prior exact selection and Forward restores Roman1962."
+    },
+    "evidence_sha256": {
+      "final-site-before.json": "5820449b8ceedaa4f69db88f61b36f90fe70e4057cd89364b3d3831a17f5057b",
+      "final-site-gate.json": "78470a49da13fb52c4e26de4d091fab382b90b103fcc7913a38fd0f00b1b1461",
+      "final-site-gate.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "final-site-focused.json": "77b4ded940f748027f1cb3afc04a59bbeef74072b713477b123d6ad97aa76e1b",
+      "final-site-focused.log": "0fbb6752cb4d8c0edb04c07696fb84ec8f8bba2fb4603a1a4a8e19bc4ee0d361",
+      "final-site-day.json": "d59b113c2c298ebf9486f010cb9f1878c457b7ed0ce2c5a5037fe2744dbf22f9",
+      "final-site-day.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "final_site_probes.py": "74d8573fcee517bacf5d96f8f7d514075493797f6629f924d8df61811bb5fd3c",
+      "final-site-day.mjs": "0ecec8023b9df5268c66097392ef87497e8bff434b8b4ce4d6f82e145b9e6a83"
+    },
+    "limitations": [
+      "Local built-artifact verification does not prove deployment or constitute external milestone acceptance.",
+      "The whole-site gate remains non-green only at the unchanged77 KI-046 enhanced target-size assertions;228 assertions are skipped as reported.",
+      "The Day artifact run executes the focused Apply scenario; the earlier source-only Day run covered43/43 assertions.",
+      "Coordinator owns publication/release validation, deployment and live-byte verification."
+    ]
+  },
+  "additional_recovery_checks": {
+    "source_library": "Final make check-sources passed after source and inventory freeze. The deployment-source gate was subsequently rerun and passed; both family screening and suspended research staleness remain distinct from these validity checks.",
+    "chronology_read_tracer": "Nested virtualenv modules are excluded consistently with interpreter data reads. Fourteen focused tests passed under pinned and system Python; the negative control reproduces the former failure. All 15 existing chronology record/annotation pairs remain current.",
+    "calendar_expectations": "91 tests pass after four historical Mass hashes were reproduced and their exact citation-metadata changes checked, 63 calendar entries retained, and the 86-to-99 English count increase proved to be exactly thirteen newly bound Cummiskey slots.",
+    "test_fixtures": "60 focused fixture tests pass after the fake Arch installer reports the locked Markdown version and the fake PDF build supplies its required anchor-check command. Production gates remain unchanged.",
+    "installation_identity": "All 245 installed PDFs were independently snapshotted and verified; all 239 provider builds match installed bytes. Final offline live-verifier plan also confirms the built site copies match."
+  },
+  "limits": [
+    "The whole-site browser gate exits 1 solely for the same 77 previously recorded KI-046 enhanced target-size findings. Their exact identity set is unchanged; the focused repaired behaviors pass. This is not an all-green accessibility or new visual-design acceptance claim.",
+    "The detailed PDF audit retains all five manually resolved matcher exceptions, the 728 contents records lacking optional page-label metadata, and the unavailable qpdf check.",
+    "The source review and historical workflow evidence retain their own provenance and custody limits. No fresh exhaustive chronology-source audit, family screening, broader corpus collation, historical review replacement or protected-history cleanup is claimed.",
+    "No deployment or live-byte claim is made by local build success; that is recorded separately after the automatic Pages workflow succeeds."
+  ],
+  "ledger_validation": {
+    "tracked": 58,
+    "complete": 47,
+    "result": "pass",
+    "finding_aid_tests": 11,
+    "current_corpus_live_requirement": "open pending actual deployment"
+  }
+}

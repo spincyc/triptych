@@ -1,0 +1,100 @@
+{
+  "schema": "triptych-recovery-review-bundle/v1",
+  "date": "2026-10-01",
+  "scope": "Crash recovery of known corpus regressions; independent review evidence and explicitly distinguished implementation evidence. No broader source, completeness or release approval is inferred.",
+  "assembly_head": "77c6a3121e185e8365b8df2a5454c2a74eee7a3a",
+  "branch": "feature/propers/claude",
+  "reviewed_state_includes_uncommitted_changes": true,
+  "state": "independent-reviews-and-local-integration-complete",
+  "coordinator_integration": "scoped-pass",
+  "deployment": "pending",
+  "package_kind": "Durable disposition record for existing independent review handoffs; not a new transport handoff or release authorization.",
+  "records": [
+    {
+      "path": "aggregation-validation.json",
+      "sha256": "07a50bc9617b23b233b28ea0bd1265ea98fd90a24f3fb0d8ad80d96ea15c1ca1",
+      "evidence_kind": "aggregation-integrity-and-artifact-identity-check"
+    },
+    {
+      "path": "browser-regressions.json",
+      "sha256": "c95dc8a6e78422e6d48d8bc55c53b8df51eea8d9024d85d8de5be667dee00fd9",
+      "evidence_kind": "independent-initial-audit-with-author-verification-of-subsequent-repairs"
+    },
+    {
+      "path": "calendar-ki027.json",
+      "sha256": "0b0bedd47ef6ae7349838d81f868a4bbf493d97bea910063f2d83b9481da34e0",
+      "evidence_kind": "implementation-source-collation-report"
+    },
+    {
+      "path": "claude-55-56.json",
+      "sha256": "59c772938468bb2b56dba43e61dcb1d9e039dd13360fb4facdc31fc5db835677",
+      "evidence_kind": "independent-publication-review"
+    },
+    {
+      "path": "claude-57-58-s51.json",
+      "sha256": "370c4b615d6804f4d42d0003c94b582b243843bac9931a1a6e49a1a5a0fc4334",
+      "evidence_kind": "independent-publication-review"
+    },
+    {
+      "path": "claude-59-s52.json",
+      "sha256": "9703544bb1afadd22c06fdc9107b1394d7429407c530ad308dbfffd92297f328",
+      "evidence_kind": "independent-publication-review"
+    },
+    {
+      "path": "gpt-publications.json",
+      "sha256": "215dcaf3b6e678617b162e70dccd061de6433775c2158e3d8d4bc0c83e978a39",
+      "evidence_kind": "independent-publication-review"
+    },
+    {
+      "path": "psalm-bible-chain.json",
+      "sha256": "8e88d7718bdac7f0df9ba9d098f17e2cd1db1e487d57edfc8f135ac0a8719fd5",
+      "evidence_kind": "independent-code-and-data-review"
+    },
+    {
+      "path": "reviewed-publication-manifest.json",
+      "sha256": "3b6c614dd8616dc853ff5b7d328d06d3f5fc247bba6ee9c0503476aa5a3c94ec",
+      "evidence_kind": "artifact-identity-manifest"
+    },
+    {
+      "path": "shared-pdf-corpus.json",
+      "sha256": "6c16dc22df17b71cffb41f0d018abe0650dc47cb487db11962197527bba083de",
+      "evidence_kind": "independent-inherited-navigation-audit-with-author-verification-of-bounded-sacramental-repair"
+    },
+    {
+      "path": "source-orations.json",
+      "sha256": "e4179702bd6d7f116007cd9c3dd48e28b59a49132a18e5ee556bba979d27655f",
+      "evidence_kind": "independent-review-of-inherited-work-with-author-verification-of-additional-corrections"
+    }
+  ],
+  "pending_reports": [],
+  "retention": "Structured results and exact artifact identities survive scratch deletion. Referenced rasters, transient previews and raw logs are not retained here and are not required to interpret the recorded scope and verdicts.",
+  "coordinator_records": [
+    {
+      "path": "integration-evidence.json",
+      "owner": "coordinator",
+      "status": "scoped-pass",
+      "scope": "Final gates, installed artifact hashes and integration acceptance.",
+      "sha256": "140d9f5ec0ede7bf734e2ea0bbdc30fb73901aaf36572f6baef76778e723d5a6"
+    },
+    {
+      "path": "deployment-evidence.json",
+      "owner": "coordinator",
+      "status": "pending-coordinator-record",
+      "scope": "Main branch, Pages deployment and live verification."
+    }
+  ],
+  "scope_boundaries": [
+    "Publication leaf reports cover the exact reviewed hashes; shared PDF baseline active leaf entries are superseded by these later leaf reports.",
+    "Author verification of additional browser, calendar, source and sacramental repairs is explicitly distinguished from independent initial review.",
+    "Final installation and local integration are accepted only within integration-evidence.json scope. Deployment remains pending until its separate evidence is recorded."
+  ],
+  "completed_publication_scope": {
+    "independent_leaf_reviews": 12,
+    "pdfs": 33,
+    "pdf_pages": 533,
+    "canonical_web_markdown": 12,
+    "manifest": "reviewed-publication-manifest.json"
+  },
+  "frozen_for_coordinator_integration": true,
+  "coordinator_source_and_publication_commit": "a64d226c24232a2d6fbfa17ff5304974af73a556"
+}

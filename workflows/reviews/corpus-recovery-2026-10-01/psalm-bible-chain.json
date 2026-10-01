@@ -1,0 +1,153 @@
+{
+  "schema": "triptych-recovery-review/v1",
+  "evidence_kind": "independent-code-and-data-review",
+  "scope": "Committed Psalm/Bible chain fixes KI-001 through KI-008: conversions, edition aliases, title numbering, per-proper numbering and CPDV heading removal.",
+  "reviewed_change": "c2b1a271bb9fcd9c294904f8f5fe51d82b8a5f7a",
+  "disposition": "bounded-pass",
+  "findings": [
+    {
+      "severity": "nonblocking",
+      "status": "pre-existing-limitation",
+      "owner": "tools/index-bible:932",
+      "summary": "Index-key generation calls convert_reference before whole-range conversion, so whole Vulgate Psalms 9/113 and Hebrew Psalms 116/147 still refuse during key generation. Shared conversion handles the split correctly.",
+      "reproducer": {
+        "function": "tools/index-bible.citation",
+        "entry": {
+          "book": "Psalms",
+          "ref": "Psalm 9",
+          "ranges": [
+            {
+              "begin": {
+                "chapter": 9
+              },
+              "end": {
+                "chapter": 9
+              }
+            }
+          ]
+        },
+        "source": "vulgate",
+        "target": "hebrew",
+        "result": "Vulgate Psalm 9 splits into Hebrew 9, 10; a verse is needed to choose"
+      },
+      "tracked_impact": "No affected tracked appointment found in the 3,636-occurrence sweep; outside the requested regression repair scope."
+    }
+  ],
+  "checks": [
+    {
+      "command": "python -m unittest tools.tests.test_psalms tools.tests.test_index_bible.WholePsalmConversionTests tools.tests.test_index_bible.ChapterHeadingResidueTests tools.tests.test_index_bible.UnnumberedTitleTests tools.tests.test_formulary.OwnNumberingTests tools.tests.test_commentary_index.OwnNumberingTests",
+      "exit_status": 0,
+      "tests": 80,
+      "result": "pass"
+    },
+    {
+      "command": "python -m unittest tools.tests.test_proper_references.ResolveAppointedPassages.test_structure_reads_each_citation_under_its_own_numbering tools.tests.test_proper_references.ResolveAppointedPassages.test_structure_refuses_a_range_the_concordance_would_trim tools.tests.test_proper_references.ResolveAppointedPassages.test_structure_serves_a_whole_psalm_as_the_verses_it_is tools.tests.test_proper_references.ResolveAppointedPassages.test_structure_keeps_a_half_open_range_open_across_numberings tools.tests.test_proper_references.ResolveAppointedPassages.test_served_structure_reads_the_witness_merged_verses tools.tests.test_proper_references.ResolveAppointedPassages.test_served_structure_converts_every_cited_verse",
+      "exit_status": 0,
+      "tests": 6,
+      "result": "pass"
+    },
+    {
+      "reproduction": "audit_python",
+      "exit_status": 0,
+      "result": "98,451 valid closed, whole and half-open ranges match independently expanded tracked concordance plus witness aliases; 1,260 changed CPDV rows across 68 books remove only the immediately following chapter heading; other fields/loci unchanged and metadata hashes/byte sizes valid."
+    },
+    {
+      "reproduction": "chain_python",
+      "exit_status": 0,
+      "result": "All 3,636 tracked Psalm appointment occurrences agree between index and shared conversion; all 1,333 CPDV chapter fragments exactly match source TSVs. Re-run during durable-record assembly."
+    }
+  ],
+  "source_hashes_at_chain_recheck": [
+    {
+      "path": "scripts/_formulary.py",
+      "sha256": "9b0080c544c9e87bf6fd9e82d4eb49e053f246d566ad737e5f2e8f7d45574966"
+    },
+    {
+      "path": "scripts/_loci.py",
+      "sha256": "5eafc434e662eebc8275d5a33d46d4feb54dcbb0a5bcaaf4ccb6da4645ce251d"
+    },
+    {
+      "path": "scripts/_projection.py",
+      "sha256": "ab7c0d3e99598282706fdf5d9737c5224ab19d3c0f87b893178766b00aa94eaf"
+    },
+    {
+      "path": "scripts/_psalms.py",
+      "sha256": "597c4c7cccec762385c824811b483de9971da6b22ea54c11ba65aebd7902426a"
+    },
+    {
+      "path": "scripts/_psalter.py",
+      "sha256": "9e430145e6ef0abb4bfa8654112fac59d1ff67e6f77dddd3459b12ed0c94e4fc"
+    },
+    {
+      "path": "src/sources/bibles/catholic-public-domain-version/index.yaml",
+      "sha256": "9324bc9750ef6d711f52b076cc540142d4118fe335b1290688140a99e97de052"
+    },
+    {
+      "path": "src/sources/bibles/clementine-vulgate/index.yaml",
+      "sha256": "8238c15c0b36346347e2eae9140b4637af2263029ac11e38e4e37b1314e6f9d3"
+    },
+    {
+      "path": "src/sources/bibles/douay-rheims-american-1899/index.yaml",
+      "sha256": "dfb876dddef5a2367a1bb1fb92d490ba9ddc11ed491c436954b0ce96ce014d7b"
+    },
+    {
+      "path": "src/sources/bibles/douay-rheims/index.yaml",
+      "sha256": "4c0b7685f247263d2a1022ee777633c84573d8f9f8b31529539f8be32b57d440"
+    },
+    {
+      "path": "src/sources/bibles/king-james-version/index.yaml",
+      "sha256": "d72325818a8ab0e98b02b84aee16f09b72ab9a2ce47f682ab042efe395abf0bb"
+    },
+    {
+      "path": "src/sources/bibles/revised-version-1895/index.yaml",
+      "sha256": "90a28a91e7bc4e9fa0a8955001cf23526ba9a588da48969407b0c2d6014e2178"
+    },
+    {
+      "path": "src/sources/bibles/world-english-bible-catholic/index.yaml",
+      "sha256": "be0092b80ed5e91c920e5ec7682b9fedb7b3c0ba9062dd77978b27c456cf3ef9"
+    },
+    {
+      "path": "src/sources/calendars/postconciliar/propers.yaml",
+      "sha256": "358941b01860dc003b361a59624637b3d751641fe92dad584e63b9d03cca9329"
+    },
+    {
+      "path": "src/sources/calendars/roman-1962/propers.yaml",
+      "sha256": "e7cc7d412bc0b359c3b691579a1c87b2b151a69dd61365d2472bf708c229822b"
+    },
+    {
+      "path": "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/psalm-numbering-ee3c7757/psalm-numbering.tsv",
+      "sha256": "535761886df263b55bf39aa6c5f8ec1a4997abd6c33627c50518d65a0965b721"
+    },
+    {
+      "path": "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-aliases-fef3f2ed/verse-aliases.tsv",
+      "sha256": "fef3f2edb0c175497fedc1f265d2d3776acf08b39d52822fc423a2b08d5c5229"
+    },
+    {
+      "path": "tools/commentary-work-index",
+      "sha256": "0f981ac8d9ee7bbf2c1509e261d90108cebe373e9989a2414e6b02fbcd119856"
+    },
+    {
+      "path": "tools/index-bible",
+      "sha256": "50c653d933c6cdec8d0670a1e58fdad6dfdc955da8b9896cb8256d0624db9502"
+    },
+    {
+      "path": "tools/mass-propers",
+      "sha256": "1233c5eaaa75aa126c89fbe4156dba38e7645d0e17ffc08565c9a50ac3db3ff1"
+    },
+    {
+      "path": "tools/reading-plan",
+      "sha256": "c7e224ee1cf1e8888f62cc0dd9fc488877d209c2216735045b1d4a93c020e86e"
+    }
+  ],
+  "reproduction": {
+    "audit_python": "from pathlib import Path\nimport csv, hashlib, io, json, re, subprocess, sys, tomllib\nsys.path.insert(0, 'scripts')\nimport _psalms\nROOT = Path.cwd()\nCOMMIT='c2b1a271b'\nrawpath=next(_psalms.CONCORDANCE_ROOT.glob(_psalms.CONCORDANCE_GLOB))\nrows=list(csv.DictReader(rawpath.open(),delimiter='\\t'))\n# Independent oracle: expand the tracked table's equal-length rows and the two\n# extents restored from the witness aliases, without calling conversion helpers.\nmaps={s:{} for s in ('vulgate','hebrew')}\nfor row in rows:\n    points=[]\n    for s in maps:\n        low,*rest=map(int,row[s+'_verses'].split('-'))\n        high=rest[0] if rest else low\n        points.append([(int(row[s+'_psalm']),v) for v in range(low,high+1)])\n    for a,b in zip(*points,strict=True):\n        maps['vulgate'][a]=b; maps['hebrew'][b]=a\naliases=next(_psalms.CONCORDANCE_ROOT.glob(_psalms.WITNESS_ALIASES_GLOB))\nfor row in csv.DictReader(aliases.open(),delimiter='\\t'):\n    token,c,v=row['cited_locus'].split('.')\n    if token!='Ps': continue\n    c,v=int(c),int(v)\n    hc,hv=maps['vulgate'][(c,v-1)]\n    maps['vulgate'][(c,v)]=(hc,hv+1)\n    maps['hebrew'][(hc,hv+1)]=(c,v)\nbounds={s:{c:(min(v for ch,v in m if ch==c),max(v for ch,v in m if ch==c)) for c in range(1,151)} for s,m in maps.items()}\nn=0\nfor s,t in [('vulgate','hebrew'),('hebrew','vulgate')]:\n    for c,(low,high) in bounds[s].items():\n        for first in [None,*range(low,high+1)]:\n            for last in [None,*range(low if first is None else first,high+1)]:\n                b={'chapter':c}; e={'chapter':c}\n                if first is not None: b['verse']=first\n                if last is not None: e['verse']=last\n                out=_psalms.convert_range_whole('Psalms',b,e,s,t)\n                expected=[maps[s][(c,v)] for v in range(low if first is None else first,(high if last is None else last)+1)]\n                actual=[]\n                for p in out:\n                    pc=p['begin']['chapter']; plow,phigh=bounds[t][pc]\n                    actual.extend((pc,v) for v in range(p['begin'].get('verse',plow),p['end'].get('verse',phigh)+1))\n                assert actual==expected,(s,c,first,last,out,expected)\n                n+=1\nprint('Exhaustive closed, whole, and half-open Psalm ranges:',n,'PASS')\nbase='src/sources/works/ronald-conte/catholic-public-domain-version/editions/sacredbible-original-web-2026-07-31/artifacts/'\nfiles=subprocess.check_output(['git','diff-tree','--no-commit-id','--name-only','-r',COMMIT,'--',base],text=True).splitlines()\nfiles=[f for f in files if f.endswith('.tsv') and '/verse-text-' in f]\nchanged=0\nfor name in files:\n    old=list(csv.DictReader(io.StringIO(subprocess.check_output(['git','show',COMMIT+'^:'+name],text=True)),delimiter='\\t'))\n    new=list(csv.DictReader(io.StringIO(subprocess.check_output(['git','show',COMMIT+':'+name],text=True)),delimiter='\\t'))\n    assert len(old)==len(new)\n    for idx,(a,b) in enumerate(zip(old,new,strict=True)):\n        assert {k:v for k,v in a.items() if k!='text'}=={k:v for k,v in b.items() if k!='text'}\n        if a==b: continue\n        assert a['text'].startswith(b['text']), (name,a,b)\n        removed=a['text'][len(b['text']):]\n        match=re.fullmatch(r' \\[ [^\\]]* (\\d+) \\](?: \\([^)]*\\))?',removed)\n        assert match,(name,a['chapter'],removed)\n        assert idx+1<len(old) and int(match[1])==int(old[idx+1]['chapter'])==int(a['chapter'])+1,(name,a,removed)\n        changed+=1\n    current=Path(name).read_bytes()\n    meta=tomllib.loads(Path(name).with_name('artifact.toml').read_text())\n    assert hashlib.sha256(current).hexdigest()==meta['sha256'] and len(current)==meta['byte_size']\nprint('CPDV changed rows:',changed,'across',len(files),'books; only immediate next chapter headings removed; metadata hashes/bytes PASS')\n",
+    "chain_python": "import csv, json, sys\nfrom pathlib import Path\nfrom collections import defaultdict\nsys.path.insert(0,'scripts')\nsys.path.insert(0,'.')\nfrom tools.tests.test_index_bible import index_bible, load_tool\nimport _psalms\npropers=load_tool('mass-propers')\nfor s,c,t in [('vulgate',9,'hebrew'),('vulgate',113,'hebrew'),('hebrew',116,'vulgate'),('hebrew',147,'vulgate')]:\n    entry={'book':'Psalms','ref':f'Psalm {c}','ranges':[{'begin':{'chapter':c},'end':{'chapter':c}}]}\n    print('Synthetic',s,c,'index:',index_bible.citation(entry,s,t,propers))\n    print('Shared range:',_psalms.convert_range_whole('Psalms',{'chapter':c},None,s,t))\nfound=[]; psalm_count=0\nfor cal in propers.calendars(Path('src/sources/calendars')):\n    doc=propers.load_calendar(Path('src/sources/calendars'),cal)\n    for _,mass in propers.masses_of(doc):\n        for entry,s in propers.numbered_entries(mass,doc.get('psalm_numbering')):\n            if entry.get('book')!='Psalms':continue\n            psalm_count+=1\n            target='hebrew' if s=='vulgate' else 'vulgate'\n            try:\n                expected=[p for span in entry.get('ranges',[]) for p in _psalms.convert_range_whole('Psalms',span.get('begin') or {},span.get('end'),s,target)]\n            except _psalms.NumberingError:continue\n            _,actual,error=index_bible.citation(entry,s,target,propers)\n            if error or actual!=expected:found.append((cal,mass.get('key'),s,entry.get('ref'),error))\nprint('Actual appointment sweep:',psalm_count,'Psalm occurrences; index/shared conversion mismatches:',len(found),found)\nchapters=defaultdict(dict)\nbase=Path('src/sources/works/ronald-conte/catholic-public-domain-version/editions/sacredbible-original-web-2026-07-31/artifacts')\nfor p in base.glob('verse-text-*/*.tsv'):\n    for row in csv.DictReader(p.open(),delimiter='\\t'):\n        chapters[(row['book'],int(row['chapter']))][row['verse']]=row['text']\nfragment_root=Path('src/sources/bibles/catholic-public-domain-version/chapters')\nfiles=list(fragment_root.glob('*/*.json'))\nassert len(files)==len(chapters),(len(files),len(chapters))\nfor (book,chapter),verses in chapters.items():\n    j=json.loads((fragment_root/book/f'{chapter}.json').read_text())\n    assert j['verses']==verses,(book,chapter)\nprint('CPDV all',len(chapters),'chapter fragments match the canonical verse TSVs exactly.')\n",
+    "execution": "Run each Python source from the repository root with the pinned project Python dependencies. The audit compares CPDV before/after c2b1a271b; the chain sweep reads current source data, whose assembly-time hashes are recorded above."
+  },
+  "limitations": [
+    "No fresh external text collation or browser visual review in this lane.",
+    "No complete worktree hash was captured at the original 86-test run. The code was unchanged from the reviewed commit; the final chain sweep is separately pinned by the listed assembly-time source hashes.",
+    "Known nonuniform title-convention Psalm refusals remain deliberately unchanged."
+  ],
+  "integration": "No tracked implementation changes made by this reviewer; coordinator integration and deployment remain separate."
+}

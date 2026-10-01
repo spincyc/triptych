@@ -1,0 +1,183 @@
+{
+  "schema": "triptych-recovery-review/v1",
+  "evidence_kind": "implementation-source-collation-report",
+  "independence": "The source-collation author also implemented the repair. This is not an independent review verdict.",
+  "origins": [
+    {
+      "path": ".scratch/recovery-calendar/report.json",
+      "sha256": "878155e97256bf9882fdfc5b26d84a894e4d5825f94cbc40ddf198d8a7a54110",
+      "retained_payload": "Structured report below; transient images, HTML, scans and browser profiles are not copied."
+    },
+    {
+      "path": ".scratch/recovery-calendar/semantic-diff.json",
+      "sha256": "c30ddd9b36752489157cd515517093e52e39c8a2671fba69434a200337823631",
+      "retained_payload": "Structured report below; transient images, HTML, scans and browser profiles are not copied."
+    },
+    {
+      "path": ".scratch/recovery-calendar/mass-baselines/report.json",
+      "sha256": "c79dc7ab83a30dbadd85eb823b0eaf045bba660437a2e29a1cb1668bbe5a2cc4",
+      "retained_payload": "Structured source-impact explanation and verification results copied; no historical generated Proper payload copied."
+    }
+  ],
+  "report": {
+    "date": "2026-10-01",
+    "issue": "KI027",
+    "scope": "Thirty previously named Communion alternative groups and ten previously named Psalm 25:4 part-letter leads only.",
+    "witnesses": {
+      "ordo": {
+        "artifact": "internet-archive-scan-pdf-ed4bc14e",
+        "sha256": "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d",
+        "url": "https://archive.org/download/OLM1981/Ordo%20lectionum%20Missae%20%28editio%20typica%20altera%2C%201981%29.pdf",
+        "visually_read_artifact_pages": [
+          59,
+          73,
+          100,
+          161,
+          166,
+          188,
+          244,
+          247,
+          278
+        ],
+        "render_dpi": 200
+      },
+      "missal": {
+        "artifact": "secondary-digital-pdf-0b458944",
+        "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+        "url": "https://media.musicasacra.com/books/latin_missal2002.pdf",
+        "visually_read_artifact_pages": [
+          268,
+          269,
+          270,
+          271,
+          272,
+          273,
+          274,
+          275,
+          276,
+          277,
+          278,
+          279,
+          280,
+          281,
+          282,
+          283,
+          284,
+          285,
+          286,
+          287,
+          288,
+          290,
+          291,
+          292,
+          293,
+          294,
+          295
+        ],
+        "render_dpi": 200,
+        "evidence_ceiling": "Secondary digitally typeset reproduction of the 2002 edition; not a printed-book facsimile and not a witness for the declared 2008 reprint."
+      }
+    },
+    "repairs": {
+      "communion_group_bases": 30,
+      "basis_scalars": 60,
+      "psalm_citations": 8,
+      "psalm_false_positive_leads_preserved": [
+        "ot-10-wednesday",
+        "ot-20-friday"
+      ],
+      "changed_source": "src/sources/calendars/postconciliar/propers.yaml"
+    },
+    "checks": {
+      "regression_tests": "3 pass; original snapshot produces exactly 8 failed subtests and no errors",
+      "existing_content_integrity_tests": "17 pass",
+      "check_calendar_masses": "exit 0; 619 Masses, 2998 propers; pre-existing excepted Psalm 56:14 only",
+      "seven_bible_builds": "all exit 0",
+      "seven_bible_freshness_checks": "all exit 0",
+      "git_diff_check": "exit 0"
+    },
+    "generated": {
+      "editions": [
+        "catholic-public-domain-version",
+        "clementine-vulgate",
+        "douay-rheims",
+        "douay-rheims-american-1899",
+        "king-james-version",
+        "revised-version-1895",
+        "world-english-bible-catholic"
+      ],
+      "changed_files": "seven index.yaml files only",
+      "semantic_changes": "Three Psalm appointment keys replaced per edition; only passage mapping changes, with the ot-9-wednesday text losing the formerly duplicated whole verse 4.",
+      "chapter_fragments": "unchanged"
+    },
+    "remaining": [
+      "31 other alternative groups were not collated and remain open.",
+      "No other Psalm was examined.",
+      "Antiphon citation and wording collation remains open.",
+      "2008 Missal source verification remains open.",
+      "Parent must regenerate the shared propers browser structure after all source lanes finish."
+    ],
+    "review_artifacts": [
+      "propers.before.yaml",
+      "semantic-diff.json",
+      "test-before.log",
+      "check-calendar.log",
+      "build-<edition>.log",
+      "check-<edition>.log"
+    ],
+    "delivery": "No commits, pushes, source manifest changes, shared browser structure writes, or subagent delegation."
+  },
+  "semantic_diff_retention": "Full source-text diff is not copied; source edits and regression tests remain in their tracked owners. The report preserves exact bounded collation scope, witness hashes, dispositions and limitations.",
+  "later_test_baseline_repair": {
+    "evidence_kind": "author-verification-of-test-expectation-repair",
+    "independence_limit": "The calendar lane performed these test updates and their verification; this is not a new independent acceptance verdict.",
+    "report": {
+      "hash_snapshot": "7285e3ec9",
+      "reproduction": "Current renderer and Ordinary files with only old generated Proper JSON substituted reproduce all four pinned hashes exactly.",
+      "hash_changes": {
+        "roman-1962/advent-1": 16,
+        "postconciliar/ot-18": 6,
+        "pentecost_10_text": 16,
+        "ot_18_text": 7
+      },
+      "hash_change_types": [
+        "c2b1a271b adds numbering and hebrew-unnumbered-titles loci metadata",
+        "1733ef528 changes the collated ot-18 Communion group basis"
+      ],
+      "unchanged": [
+        "prayer bodies",
+        "translations",
+        "translation provenance",
+        "event order",
+        "row and event counts"
+      ],
+      "calendar": "63 unique titles still cover each of A, B and C exactly once; provider-separated catalog has 77 physical rows. Registry 60 parents / 184 forms remains asserted.",
+      "publications": "Added only already accepted/installed 1962 Sunday 59 full/homily and postconciliar OT27 full/homily filenames; every link still must exist.",
+      "english": "Exactly thirteen new inherited public-domain Cummiskey slots explain 86 to 99; removing them from current owning derivation reproduces 86.",
+      "checks": {
+        "test_mass_ordinary": "Ran 60 tests in 10.354s; OK",
+        "test_calendar_computation_guidance": "Ran 11 tests in 6.225s; OK",
+        "test_complete_missal_report": "Ran 20 tests in 6.698s; OK"
+      },
+      "files": [
+        "tools/tests/test_mass_ordinary.py",
+        "tools/tests/test_calendar_computation_guidance.py",
+        "tools/tests/test_complete_missal_report.py"
+      ]
+    },
+    "test_source_hashes_at_aggregation": [
+      {
+        "path": "tools/tests/test_mass_ordinary.py",
+        "sha256": "e78fd9f442ec03a6d44818a1083e572858439dd02c84a712485b9947bb4f4960"
+      },
+      {
+        "path": "tools/tests/test_calendar_computation_guidance.py",
+        "sha256": "bf76f26e5582f071c3c7885c51cb4a02e6cfa8b80b15ce41ffc0556b142e87b6"
+      },
+      {
+        "path": "tools/tests/test_complete_missal_report.py",
+        "sha256": "98a22f3f137fbeee6ad9fc78ec397450ce5df4e38aed9aa68fba616abd4e7d4a"
+      }
+    ]
+  }
+}

@@ -1,0 +1,923 @@
+{
+  "schema": "triptych-recovery-review/v1",
+  "evidence_kind": "independent-publication-review",
+  "status": "complete-for-scoped-independent-publication-review",
+  "origins": [
+    {
+      "path": ".scratch/recovery-review-55-56/claude-55-review.json",
+      "sha256": "08fec29f83de4828e85d2ffe4de554f503900ffd64d19f226bc85c95e6f7f742"
+    },
+    {
+      "path": ".scratch/recovery-review-55-56/55-independent-checks.json",
+      "sha256": "02ebca03956c26fcdbf5558a044c07163a6141800dd44ccb8892049473b7a74d"
+    },
+    {
+      "path": ".scratch/recovery-review-55-56/claude-56-review.json",
+      "sha256": "a4465ed0050a30bed164c4b972dbbc781247034ea4daad92ce30af494eebc49e"
+    },
+    {
+      "path": ".scratch/recovery-review-55-56/56-independent-checks.json",
+      "sha256": "c7ecce63ab20e3489d16619d5d72b1bc0f225f9113df1690408d31449ebfae41"
+    }
+  ],
+  "reviews": [
+    {
+      "schema_version": 1,
+      "reviewer": "independent-claude-55-56-review",
+      "verdict": "PASS",
+      "provider": "claude",
+      "document": "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost",
+      "scope": "Independent recovery review of all ten standing dispositions, changed claims and source witnesses, every PDF page in both legacy schema-1 editions, and generated canonical web at desktop/mobile. No authoring or source edits by reviewer.",
+      "artifacts": [
+        {
+          "path": "build/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf",
+          "sha256": "c2b94955797178dfe6df237c775db8d66e9b2354358a709bad7d46817229b309",
+          "bytes": 608032,
+          "pages": 36,
+          "pages_visually_inspected": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36
+          ]
+        },
+        {
+          "path": "build/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.pdf",
+          "sha256": "343320a491eb0664b489cbf97e4fccd1b9aba067d2a84a4f0a0abbec4e2b9a1f",
+          "bytes": 540814,
+          "pages": 24,
+          "pages_visually_inspected": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        {
+          "path": "build/web/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.md",
+          "sha256": "6dacd0fa198e21faa9e99040058fbb5a2e631163cabd7ac9e7db5b9a158c1d37",
+          "bytes": 169965,
+          "pages": null,
+          "pages_visually_inspected": []
+        }
+      ],
+      "source_files": [
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost/evaluations/blocking-findings-v1.toml",
+          "sha256": "03362258d9275d56f879fbbf641cb35fa0ce39b279191cb5975252d011f7e8a8"
+        },
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost/generation-metadata.tex",
+          "sha256": "8035074158f7da2e9ba1e2f7ed294f24abdb08f7cf3708d5f997774a36ed9946"
+        },
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost/main.tex",
+          "sha256": "8773bf797059a7d106d3f22bd74dbee5f3ee6be01a7084adc97d9045743a2a36"
+        },
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost/propers/verified.md",
+          "sha256": "cd7fce44235a9cc218c95960fb5f3f2f492babfac8938d468ea499ee25044057"
+        },
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost/research/chronology-annotations.tex",
+          "sha256": "a3c4e5b046c73410659985804b7869dcf2ebd2cc58356d4dec397a578bffa410"
+        },
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost/research/scope.md",
+          "sha256": "cdbab0612616923b2cfed0881cdf7ad89d34a4d8697f86de4cc5b3e7c48a6c3a"
+        },
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost/research/source-bindings.toml",
+          "sha256": "85b299d50b1bb8e0c924307fc05fe2af3ba8d0b29d49c5dae682e0bfe47971e6"
+        },
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost/sections/synthesis/20-integrated-commentary.tex",
+          "sha256": "2ba57c230dd3d0e1f93a0973b50a3dae4e8ef3f12cbec3ea91ae314cf9c7e0f5"
+        }
+      ],
+      "findings": [],
+      "disposition_review": {
+        "accepted": "SYN-CON-009 and OBS01–07 dispositions agree with inspected evidence; Cummiskey CON-CIT-003 metadata repair matches controlling p397; CON-PRO-003 already fixed in guidance.",
+        "additional_repairs": "Wilson five-witness count and the distinct Hadrianum/Gelasian word orders agree with p230/p174 images; missal extent396–397 agrees with facsimile; metadata30 clauses/five files matches10+8+6+4+2; Augustine tota die clause is §5; u of Adulescens is explicit."
+      },
+      "source_witnesses_inspected": [
+        ".scratch/rev-claude-55/m62-0477.jpg",
+        ".scratch/rev-claude-55/m62-0478.jpg",
+        ".scratch/rev-claude-55/wilson-p230-small.jpg",
+        ".scratch/rev-claude-55/wilson1915-leaf231.jpg",
+        ".scratch/rev-claude-55/aug-ps085.htm",
+        ".scratch/recovery-leaf-claude55/aas599.png",
+        ".scratch/recovery-leaf-claude55/aas709.png"
+      ],
+      "visual_review": {
+        "pdf": "All60 pages individually opened through view_image at full raster size; p1 map/four senses, sole chronology p2, themes pp3–4, next component p5, all continuations and terminal pages clear. Full p36 inherited sparse final page retains references+metadata+rights.",
+        "web": "Actual tools/public-alpha render_page with locked renderer and current site.css at real web output route; Chromium1440x1100 and390x844; top, date table, detailed commentary, and end screenshots individually inspected. Mobile dossier rows reflow two-by-two and notes use full width. No clipping/overlap observed.",
+        "web_screenshots": [
+          ".scratch/recovery-review-55-56/55-fifteenth-after-pentecost-desktop-top.png",
+          ".scratch/recovery-review-55-56/55-fifteenth-after-pentecost-desktop-dates.png",
+          ".scratch/recovery-review-55-56/55-fifteenth-after-pentecost-desktop-commentary.png",
+          ".scratch/recovery-review-55-56/55-fifteenth-after-pentecost-desktop-end.png",
+          ".scratch/recovery-review-55-56/55-fifteenth-after-pentecost-mobile-top.png",
+          ".scratch/recovery-review-55-56/55-fifteenth-after-pentecost-mobile-dates.png",
+          ".scratch/recovery-review-55-56/55-fifteenth-after-pentecost-mobile-commentary.png",
+          ".scratch/recovery-review-55-56/55-fifteenth-after-pentecost-mobile-end.png"
+        ],
+        "raster_root": "build/recovery-review-55-56/55-final/rasters"
+      },
+      "commands_results": {
+        "pdf_review": "tools/pdf-review --output build/recovery-review-55-56/55-final/rasters build/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf build/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.pdf: exit0",
+        "checks_path": ".scratch/recovery-review-55-56/55-independent-checks.json",
+        "pdfinfo": "both exit0,36/24pages,Letter",
+        "pdftotext": "both exit0",
+        "pdffonts": "both exit0; all fonts embedded,subsetted,Unicode mapped",
+        "web_declaration": "exit0,1eligible",
+        "logs": "No overfull/underfull/warning/undefined/rerun-request entries; only package metadata mentioning Rerun.",
+        "capture": "node .scratch/recovery-review-55-56/capture.mjs exit0 after correcting local preview route and allowing scroll to settle; final screenshots use real reader page classes."
+      },
+      "limits": [
+        "Scoped recovery acceptance, not a new exhaustive research audit or completed KI-017 chronology audit.",
+        "Desktop legacy dossier note rows remain in the first table cell with padded empty cells, as expressly accepted by web-editions guidance.",
+        "No homily/schema2 migration is applicable; no future design work was evaluated as required.",
+        "Malformed initial check-web-edition invocation exited2; corrected provider/document command passed."
+      ]
+    },
+    {
+      "schema_version": 1,
+      "reviewer": "independent-claude-55-56-review",
+      "verdict": "PASS",
+      "provider": "claude",
+      "document": "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost",
+      "scope": "Independent recovery review of all 31 standing dispositions, changed claims and cited witnesses, all pages of both final legacy schema-1 PDFs, and canonical generated web at desktop/mobile. Reviewer made no authoring or source edits.",
+      "artifacts": [
+        {
+          "path": "build/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.pdf",
+          "sha256": "f9434cd197f555f0fb9dbff3a12f5204d3440f7822ebb6f850c8204e21b12370",
+          "bytes": 783681,
+          "pages": 45,
+          "pages_visually_inspected": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45
+          ]
+        },
+        {
+          "path": "build/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis.pdf",
+          "sha256": "19c61da00b2edade877a0aea30b2d8bb2fb78532eb3454b6e438523b7bcd34f4",
+          "bytes": 691324,
+          "pages": 29,
+          "pages_visually_inspected": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29
+          ]
+        },
+        {
+          "path": "build/web/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.md",
+          "sha256": "b956f42043465751d49810357b0770299a87c87b8b665178f37948a84398b344",
+          "bytes": 206773,
+          "pages": null,
+          "pages_visually_inspected": []
+        }
+      ],
+      "source_files": [
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/evaluations/blocking-findings-v1.toml",
+          "sha256": "51436b2f78e0b76facfc40e4b8494aab09ff215d0798c7da8a09a609bbbc6762"
+        },
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/generation-metadata.tex",
+          "sha256": "30c74760cd98ad12be83dee71d2a3bdc2f11ca97a692251828e97664a6df2496"
+        },
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/main.tex",
+          "sha256": "1d56debef0bf735d861119440af5051212e0e1810513d31d0ef39ed894481ff8"
+        },
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/research/production-review.md",
+          "sha256": "3599725b31680f0b6fad3352cef248b6a2991e4fd4f49278b3daaef42512e7b6"
+        },
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/research/scope.md",
+          "sha256": "327b05c2bffe1dcee5c954cccac9771e0381ed357ab014318e5927e3ce32c97b"
+        },
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/research/source-bindings.toml",
+          "sha256": "67234866126cf797d56ccc86e42eab60c991a6f2a7f4391c3153c1cbc066f8b8"
+        },
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/research/web-artifact.json",
+          "sha256": "2f0b8b8231bc038e3ac5e3568f34d845a4eb4ccaf40ea72e2a8ac0b562e84572"
+        },
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/sections/00-map.tex",
+          "sha256": "cf568d549270d9d07a5bd36136dcc17d3b239da7619d38ab403e6669c53c73f5"
+        },
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/sections/10-date-location.tex",
+          "sha256": "6d8519ff5b53ea52771097fb1a95c3e2b949ab3ce0a8190f8fa0db737c550bfe"
+        },
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/sections/20-themes.tex",
+          "sha256": "e3bff28701efb0fd7b0eccbbb100971cb5b49570fa28cb1fa6c580671f690535"
+        },
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/sections/30-commentary.tex",
+          "sha256": "b113b92d75535ffe875a8cb2cbe9795bbb38b36770a05cade7bb5c318c83ca46"
+        },
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/sections/35-source-grounded-synthesis.tex",
+          "sha256": "f371878842f11905152672bfe9b2c9c498c18b2b2039161525abbb770d242542"
+        },
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/sections/50-interpretive.tex",
+          "sha256": "dfa0bd4e8f359e3a921f5f910ede7601227e9a31672442c887fb435b36e578d8"
+        },
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/sections/90-scope.tex",
+          "sha256": "e3a70462dd92afad3386f4179a027f6dbc433b361554f97b8f1207a7c7c2f59c"
+        },
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/sections/99-references.tex",
+          "sha256": "385bd9a756f7eab491ffb07f395b5e87f50571f5fbf72a85ca8e038164d797d3"
+        },
+        {
+          "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/sections/synthesis/20-integrated-commentary.tex",
+          "sha256": "b3bc188a7d07f52727c5fa10d6354381653440fcff5e76a2f442e0a55e69cfe3"
+        }
+      ],
+      "findings": [],
+      "disposition_review": [
+        {
+          "kind": "advisories",
+          "id": "CON-EVI-011",
+          "author_resolution": "repaired",
+          "author_resolution_note": "sections/30-commentary.tex and sections/synthesis/20-integrated-commentary.tex now put Deus in Psalm 16:6's opening clause. Checked against the tracked Clementine Ps 16:6.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "advisories",
+          "id": "CON-EVI-012",
+          "author_resolution": "repaired",
+          "author_resolution_note": "sections/20-themes.tex makes sharing follow God's completing, matching ut eius mereamur esse participes in propers/verified.md.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "advisories",
+          "id": "CON-EVI-014",
+          "author_resolution": "repaired",
+          "author_resolution_note": "sections/20-themes.tex and sections/30-commentary.tex distinguish the Epistle's strengthening from the Postcommunion's renewal. Checked Eph 3:16 and the appointed oration.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "advisories",
+          "id": "CON-SYN-001",
+          "author_resolution": "repaired",
+          "author_resolution_note": "The Collect commentary now states Cassiodorus's cross-proper point without reprinting the Latin developed at the Offertory and Communion. The retained Cassiodorus Ps 70 lines 4 and 33 and Ps 39 line 22 support it.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "advisories",
+          "id": "CON-SYN-002",
+          "author_resolution": "repaired",
+          "author_resolution_note": "The thematic movement now states the wider scriptural and exegetical setting concisely; the detailed commentary keeps the full conclusion and Hebrews evidence.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "advisories",
+          "id": "CON-SYN-003",
+          "author_resolution": "repaired",
+          "author_resolution_note": "The thematic movement paraphrases Trent's three verbs and leaves the complete Latin and verbal comparison in the Collect commentary.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "advisories",
+          "id": "CON-SYN-004",
+          "author_resolution": "repaired",
+          "author_resolution_note": "The thematic movement compresses the Matthew 11:29-30 connection in its own wording; the exact joined-adjective demonstration stays in the Introit commentary.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "advisories",
+          "id": "CON-CIT-012",
+          "author_resolution": "repaired",
+          "author_resolution_note": "Proposal P2 and research/scope.md now include Augustine with Ambrose and Bede and distinguish their readings. The retained Quaestiones euangeliorum II.29, line 82, explicitly compares the dropsical man with the avaricious rich man.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "advisories",
+          "id": "CON-CIT-016",
+          "author_resolution": "repaired",
+          "author_resolution_note": "research/scope.md section 3.4 now reconciles 62: 15 Claude and 47 GPT. git ls-tree at seed b66eb4b44d8e76801a86275b19c3a2e45713b4ab lists 61 liturgy main.tex files; this newly authored leaf makes 62. Missing from the old breakdown were both postconciliar reference works, two GPT 1962 references (15, not 13), and one GPT postconciliar proper (12, not 11). Thus the old thirteen-postconciliar subtotal was also wrong: fourteen were included. No present-tree recount substituted for the historical boundary.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "advisories",
+          "id": "CON-PRO-002",
+          "author_resolution": "repaired",
+          "author_resolution_note": "The canonical scope arm now says Some of the psalm commentaries quoted above give a psalm a speaker and an occasion, preserving its four examples without claiming all five psalms have both.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "advisories",
+          "id": "CON-PRO-008",
+          "author_resolution": "repaired",
+          "author_resolution_note": "research/scope.md P1 now names the section 3.4 index of 332,704 lines instead of 326,844.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "advisories",
+          "id": "CON-PRO-009",
+          "author_resolution": "repaired",
+          "author_resolution_note": "research/scope.md names research-synthesis and both brief-revision runs, identifies the default historical referent of this run, names the later run at section 12, and dates section 13's original directory count.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "observations",
+          "id": "OBS-01",
+          "author_resolution": "deferred",
+          "author_resolution_note": "No leaf defect: main.tex still builds the companion exactly as editionnote describes. Assigning a future workflow owner for cross-edition apparatus claims is planned workflow work excluded from this recovery.",
+          "independent_review": "Accepted as outside recovery scope by parent direction"
+        },
+        {
+          "kind": "observations",
+          "id": "OBS-02",
+          "author_resolution": "deferred",
+          "author_resolution_note": "The recovery checked the research record against the same source-fidelity standard as reader prose. Clarifying future workflow criterion scope is planned workflow work excluded from this recovery.",
+          "independent_review": "Accepted as outside recovery scope by parent direction"
+        },
+        {
+          "kind": "observations",
+          "id": "OBS-03",
+          "author_resolution": "deferred",
+          "author_resolution_note": "The three text advisories are now repaired in both editions. Changing the workflow's routing of advisory repairs is planned workflow work excluded from this recovery.",
+          "independent_review": "Accepted as outside recovery scope by parent direction"
+        },
+        {
+          "kind": "observations",
+          "id": "OBS-04",
+          "author_resolution": "deferred",
+          "author_resolution_note": "The four actual repetition advisories are repaired. Clarifying schema-1 synthesis terminology and future reviewer ownership is planned workflow work excluded from this recovery.",
+          "independent_review": "Accepted as outside recovery scope by parent direction"
+        },
+        {
+          "kind": "observations",
+          "id": "OBS-05",
+          "author_resolution": "repaired",
+          "author_resolution_note": "sections/30-commentary.tex now calls the three cases numbering hazards, covering both verse offsets and the PG facsimile's repeated opening.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "observations",
+          "id": "OBS-06",
+          "author_resolution": "not-a-defect",
+          "author_resolution_note": "The historical leaf-local dossier measurements remain under the legacy profile exception. The repaired page 2 preserves all seven dossiers and their relation labels; visual review judges their rendered legibility.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "observations",
+          "id": "OBS-07",
+          "author_resolution": "deferred",
+          "author_resolution_note": "The source-specific bounds still qualify the exact adjacent claims; the Sarum body clause now says without image collation. Future assignment of qualification-placement judgment is planned workflow work excluded from this recovery.",
+          "independent_review": "Accepted as outside recovery scope by parent direction"
+        },
+        {
+          "kind": "observations",
+          "id": "OBS-08",
+          "author_resolution": "not-a-defect",
+          "author_resolution_note": "This is the historical passing overlap measurement, not a requested text repair. The companion retains five cross-proper arguments instead of a ten-element sweep.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "observations",
+          "id": "OBS-09",
+          "author_resolution": "repaired",
+          "author_resolution_note": "sections/00-map.tex now says at least three ways, matching the detailed commentary and themes; the four unopened Ephesians commentators remain named in the scope appendix.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "observations",
+          "id": "OBS-10",
+          "author_resolution": "repaired",
+          "author_resolution_note": "The companion's Psalm 16:6 vocative is corrected with CON-EVI-011, from the tracked Clementine text.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "observations",
+          "id": "OBS-11",
+          "author_resolution": "deferred",
+          "author_resolution_note": "The observation proposes a conceptual-restatement review criterion and records no existing criterion failure. Workflow design is excluded from this recovery; the existing one-fullest-home and source-fidelity standards remain applicable in the independent review.",
+          "independent_review": "Accepted as outside recovery scope by parent direction"
+        },
+        {
+          "kind": "observations",
+          "id": "OBS-12",
+          "author_resolution": "repaired",
+          "author_resolution_note": "The companion References now locates the four-measures quotation at p. 359, re-read on PDF p. 380 of the registered 1909 facsimile; the evidence note identifies the two optical-only passages as not quoted by this edition.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "observations",
+          "id": "OBS-13",
+          "author_resolution": "repaired",
+          "author_resolution_note": "The companion References now gives pp. 367-368 for the Ambrose relay, the span recorded in research/scope.md and already named among the image-collated pages.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "observations",
+          "id": "OBS-14",
+          "author_resolution": "not-a-defect",
+          "author_resolution_note": "The mandated proposal field describes an element-by-element manner of reading, not a section of this companion; the indefinite article and editionnote make the reference intelligible.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "observations",
+          "id": "OBS-15",
+          "author_resolution": "not-a-defect",
+          "author_resolution_note": "The shared appendix truthfully reports the canonical text's evidence and explicitly identifies what the companion does not reproduce. The observation found no false count, locator, or evidence-state assertion.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "observations",
+          "id": "OBS-16",
+          "author_resolution": "repaired",
+          "author_resolution_note": "Both scope arms now include the Offertory's petition among Theodoret's Greek/Latin partings, matching the already retained comparison of Ps 39:14.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "observations",
+          "id": "OBS-17",
+          "author_resolution": "repaired",
+          "author_resolution_note": "The companion References distinguishes its image-checked p. 359 quotation from the p. 358 and p. 360 passages it does not quote; same repair as observation 12.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "observations",
+          "id": "OBS-18",
+          "author_resolution": "repaired",
+          "author_resolution_note": "The appendix now introduces three obstacles explaining some of the negative results rather than implying its three-item list enumerates all five chants. No unsearched obstacle is invented.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        },
+        {
+          "kind": "escalations",
+          "id": "CON-PRO-003",
+          "author_resolution": "already-repaired",
+          "author_resolution_note": "Commit b27036f9b856bd8f662f51b6e6128bd90a5ed633 settled CON-PRO-003 on 2026-09-11: the publication gate now repeats the audit's five fields and reserves Fruit for the proposal. The current profile and this leaf agree; no new fruit field is required in the research audit.",
+          "independent_review": "Disposition agrees with independently inspected evidence and rendered final prose"
+        }
+      ],
+      "source_checks": [
+        {
+          "claim": "Psalm 16:6 opening vocative",
+          "evidence": "Tracked Clementine Ps16:6 puts Deus in Ego clamavi quoniam exaudisti me Deus before inclina aurem tuam mihi; research p13 and synthesis p7 now delimit the shared petition accurately."
+        },
+        {
+          "claim": "Strengthening, renewal, and the Secret purpose clause",
+          "evidence": "Tracked Eph3:16 corroborari and appointed Postcommunion renova support the distinction on themes p4 and full commentary p24. Secret ut eius mereamur esse participes makes sharing the purpose of perfice miseratus in nobis; themes p3 now states that relation."
+        },
+        {
+          "claim": "Cassiodorus repetition repair",
+          "evidence": "Retained Ps70 apparatus lines4 and33 and Ps39 line22 support the removed duplicate quotations and the Collect summary. Full quotation homes remain at Communion and Offertory. Trent and Matthew abbreviations preserve the full Latin proof in detailed commentary."
+        },
+        {
+          "claim": "Three figurative witnesses in proposal P2",
+          "evidence": "Augustine Quaestiones euangeliorum II29 retained text line82 explicitly compares hydropic man and avaricious rich man. Final P2 researchp32/synthesisp17 distinguishes this from Ambrose flesh/soul explanation and Bede heart/avarice, without attributing avarice itself to Ambrose."
+        },
+        {
+          "claim": "Historical corpus count",
+          "evidence": "Independent git ls-tree at b66eb4b44d8e76801a86275b19c3a2e45713b4ab found61 liturgy main.tex files:14 Claude,47 GPT. Adding the current new Claude leaf yields62 and15/47; repaired research record retains its historical boundary."
+        },
+        {
+          "claim": "Ephesians place and audience; article14530a identity",
+          "evidence": "Retained CE05485a and live New Advent primary article To whom addressed plus Date and place of composition sections discuss disputed audience, Rome/Caesarea and prefer Rome, supporting repaired p2 and scope. Retained CE14530a opens The New Testament. No new composition date inferred."
+        },
+        {
+          "claim": "Brightman and Blunt Prayer Book descent",
+          "evidence": "Brightman retained optical text around printed520–521 shows Sarum Tua nos, Eph4, Luke14 followed by1549/1552/1661 versions; Blunt lines35940–36170 shows TrinityXVI Eph3:13–21 with Luke7 and TrinityXVII Tua nos with Eph4/Luke14. Prose now accurately describes these as synopses, not a directly collated Prayer Book."
+        },
+        {
+          "claim": "Fromage exact locator and evidence states",
+          "evidence": "Actually viewed rendered printed359 from extracted bound PDF page380: full four-measures/indwelling quotation matches synthesisp6 and Referencesp26. Independent pdftotext equality confirms viewed extract equals bound page380. Read bound PDF pages388–389, printed367–368, for Ambrose relay and Ecclus3:20–21. Synthesis References distinguishes image-checked359 from unquoted optical-only358/360."
+        },
+        {
+          "claim": "Ox-law distinction",
+          "evidence": "Tracked Ex23:4 returns a straying ox/ass;23:5 lifts an ass under its burden; Deut22:4 mentions fallen ox/ass. Final gallery researchp29/synthesisp14 preserves these distinctions."
+        },
+        {
+          "claim": "Scope, ownership and final grammar",
+          "evidence": "Read final researchp36 and synthesisp21 individually. Psalm-setting claims are limited to cited examples; repaired source-coverage sentence states what chronology sources supply. Rollcall now includes the Offertory Greek/Latin parting already demonstrated in the retained Ps39:14 comparison. Three gallery obstacles are explicitly partial; proposal fields and edition overdisclosure remain intelligible."
+        }
+      ],
+      "source_witnesses": [
+        {
+          "path": "src/sources/bibles/clementine-vulgate/chapters/Ps/16.json",
+          "sha256": "47d3f440ff1d007c604eb2a1ce2192985b6cd8243376194d8ba5026e1f36897a"
+        },
+        {
+          "path": "src/sources/bibles/clementine-vulgate/chapters/Eph/3.json",
+          "sha256": "f958af4408a2f32878123bed23fd4e195e90672527d98290c9dd4cc631dd8786"
+        },
+        {
+          "path": "src/sources/bibles/clementine-vulgate/chapters/Ex/23.json",
+          "sha256": "184e62b6c3e3c9643c1cfc45ab2038b6f2e1fe0120ce899f74fdb3509cd6cd5b"
+        },
+        {
+          "path": "src/sources/bibles/clementine-vulgate/chapters/Deut/22.json",
+          "sha256": "73a2d78f325210e61c5b61e623c61692b271f7ebbc475fc0b477460bbd9f603e"
+        },
+        {
+          "path": "src/sources/works/augustine/quaestiones-euangeliorum/editions/latin-migne-corpus-corporum-wikisource-web-2026-09-05/artifacts/wikisource-latin-text/quaestiones-euangeliorum.txt",
+          "sha256": "aed43fd30cbd7a5bfe698c3930c360a6e4cb201f5da47951dc26a22c069c80e7"
+        },
+        {
+          "path": "src/sources/works/cassiodorus/expositio-psalmorum/editions/latin-corpus-corporum-monumenta-web-2026-09-05/artifacts/monumenta-ps70-apparatus-latin-text/cassiodorus-ps70-latin.txt",
+          "sha256": "3745f10012379c67101d850b5709b8555a8b5323a6ea97cf609e3af1eb3ced3a"
+        },
+        {
+          "path": "src/sources/works/cassiodorus/expositio-psalmorum/editions/latin-corpus-corporum-monumenta-web-2026-09-05/artifacts/monumenta-ps39-apparatus-latin-text/cassiodorus-ps39-latin.txt",
+          "sha256": "e5e2d07126608ef26bb856c29fd8b47aa3e355c622328656202dcbcbc489181c"
+        },
+        {
+          "path": "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05485a-66d722ae-article-text/newadvent-05485a-66d722ae-article-text.txt",
+          "sha256": "c101da65d2c3cd40ef206bf013e2e3aae5f544b413a3006fcdd8f4909b566b1b"
+        },
+        {
+          "path": "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/artifacts/newadvent-14530a-0a19aa2c-article-text/newadvent-14530a-0a19aa2c-article-text.txt",
+          "sha256": "c4e12a4a6127e8af8b7ac8e2176448f78a2be2cb2080ab5ffb6f885f8fcaa259"
+        },
+        {
+          "path": "src/sources/works/frank-edward-brightman/the-english-rite/editions/london-rivingtons-1915-volume-2/artifacts/ia-djvu-text-englishrite0002febr-f01e2067/english-rite-volume-2-djvu.txt",
+          "sha256": "f01e2067b62c211583b7370cd6983d85c82bf0a93dfe87664cebf1e78c43bce5"
+        },
+        {
+          "path": "src/sources/works/john-henry-blunt/the-annotated-book-of-common-prayer/editions/london-1866/artifacts/ia-djvu-text-gtu-32400003882739-f3f87210/annotated-book-of-common-prayer-djvu.txt",
+          "sha256": "f3f8721004a2cb697a1552d85eacb84c276111af58295c7f58957c4296459e88"
+        },
+        {
+          "path": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1900-volume-11/artifacts/ia-pdf-95ba98e2/source.pdf",
+          "sha256": "95ba98e2d71e4374c4e5262935c71d5d2479b64b34dd3da290b60209ebd92690"
+        }
+      ],
+      "visual_review": {
+        "pdf": "All74 pages individually opened through view_image. Full1–24 were viewed in initial render and independently byte-compared equal to final frozen rasters; full25–45 and synthesis1–29 viewed from final-frozen render. Page1 map/four senses, page2 sole chronology, pages3–4 themes, next componentp5 all intact. All continuations, boxes, references and terminal metadata/rights legible without clipping or overlap. Fullp45 is an inherited sparse terminal page carrying references and metadata/rights together.",
+        "pdf_raster_root": "build/recovery-review-55-56/56-final-frozen/rasters",
+        "web": "Actual tools/public-alpha render_page with pinned renderer, current site.css and actual web output route; Chromium1440x1100 and390x844. Top/date/commentary/end screenshots individually viewed at both widths. Desktop dossier notes retain legacy first-cell layout, intentionally unchanged. Mobile dossier reflows2x2 with full-width notes. Other comparison table uses internal horizontal scroll; panned screenshot actually viewed and DOM measured scrollLeft110,scrollWidth437,clientWidth327,overflow auto. No page-level horizontal overflow.",
+        "web_screenshots": [
+          {
+            "path": ".scratch/recovery-review-55-56/56-sixteenth-after-pentecost-desktop-top.png",
+            "sha256": "b723e4fd538abde86ea8ca9f9d7a847323f662aef2dcc84d1a44e768f1f6e40a",
+            "visually_inspected": true
+          },
+          {
+            "path": ".scratch/recovery-review-55-56/56-sixteenth-after-pentecost-desktop-dates.png",
+            "sha256": "e3a42b96fcabfae076786f4f11bd64d147c3759698a014397e07a13cc2e5b892",
+            "visually_inspected": true
+          },
+          {
+            "path": ".scratch/recovery-review-55-56/56-sixteenth-after-pentecost-desktop-commentary.png",
+            "sha256": "ace93f2ed9b7b52e50ebbf437ec9de576e7f5d9445044691dda6e11ca202a453",
+            "visually_inspected": true
+          },
+          {
+            "path": ".scratch/recovery-review-55-56/56-sixteenth-after-pentecost-desktop-end.png",
+            "sha256": "2a23ae44968d9a94ebc5c456fc6a79ad8f6da316fbeda819e43b5e24ab6d36dc",
+            "visually_inspected": true
+          },
+          {
+            "path": ".scratch/recovery-review-55-56/56-sixteenth-after-pentecost-mobile-top.png",
+            "sha256": "9f2055223a6406e7d517b02a3fc01d455125e40037db6b8577e04c2f12b30867",
+            "visually_inspected": true
+          },
+          {
+            "path": ".scratch/recovery-review-55-56/56-sixteenth-after-pentecost-mobile-dates.png",
+            "sha256": "c1fd3dc76490fbe28b3b2bd43a010708b7e7ce0a2c0d556354168b1d2aa4d318",
+            "visually_inspected": true
+          },
+          {
+            "path": ".scratch/recovery-review-55-56/56-sixteenth-after-pentecost-mobile-commentary.png",
+            "sha256": "4bdc4dfc09d929fd88c5a872c90cfbff5c50aecc55c9588f2cabb1ca7052490e",
+            "visually_inspected": true
+          },
+          {
+            "path": ".scratch/recovery-review-55-56/56-sixteenth-after-pentecost-mobile-end.png",
+            "sha256": "c30afa571c4c7eb84b08eb33f349ca3f519478452efd93144baf2be316f38c95",
+            "visually_inspected": true
+          },
+          {
+            "path": ".scratch/recovery-review-55-56/56-sixteenth-after-pentecost-mobile-panned.png",
+            "sha256": "1f14ec71a6ecf7026c5080767c562b287e4860b05463c499ed3aad393e4eb78c",
+            "visually_inspected": true
+          }
+        ],
+        "web_table_scroll_evidence": ".scratch/recovery-review-55-56/56-table-scroll.json"
+      },
+      "checks": {
+        "independent_log": ".scratch/recovery-review-55-56/56-independent-checks.json",
+        "independent_results": "Nine commands all exit0: pdfinfo, pdffonts, pdftotext for both PDFs; check-web-edition; complete twelve-check check-content-preflight for research and synthesis. Every font embedded/subset/Unicode; final settled logs independently searched and contain no Overfull/Underfull/Warning/undefined/rerun request. Final hashes independently recomputed.",
+        "render_command": "tools/pdf-review --output build/recovery-review-55-56/56-final-frozen/rasters build/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.pdf build/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis.pdf",
+        "web_commands": "Pinned venv Python runpy tools/public-alpha render_page into reviewer scratch, then node .scratch/recovery-review-55-56/capture.mjs and capture-pan.mjs.",
+        "author_checks_consulted": "research/production-review.md and .scratch/recovery-leaf-claude56/final-checks.json plus settled-checks.json; author-reported checks are distinct from independent commands above."
+      },
+      "intermediate_outputs": "No earlier56 artifact was accepted. Author detected and repaired two scope grammar splices before final seal, first full-only then shared-scope; final hashes above supersede readiness hashes0e247...,9ed503... and corresponding web/synthesis iterations. Final fullp36 and synthesisp21 were re-read as final images. A failed attempt to open p25 before raster generation completed was retried after successful completion; no page coverage was inferred from file existence.",
+      "limits": [
+        "Known-regression recovery of legacy schema1 only: no schema2 migration, homily creation, planned workflow redesign, or new specialist/ecclesiastical approval.",
+        "No exhaustive fresh chronology-source audit/KI017 completion is claimed. Changed chronology-source identity/place/audience claims and live projection gates were checked; retained wider source limitations remain explicit.",
+        "Source negatives remain bounded by the historical recorded corpora. Optical-only witnesses are not promoted to image-collated status by this review.",
+        "Workflow observations01,02,03,04,07,11 remain deferred by parent recovery-scope instruction, separate from actual leaf defects.",
+        "Review did not rebuild or install publication artifacts; parent owns installation and final repository gates."
+      ]
+    }
+  ],
+  "observed_commands_results": {
+    "55": [
+      {
+        "command": [
+          "pdfinfo",
+          "build/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf"
+        ],
+        "exit_code": 0,
+        "stderr": ""
+      },
+      {
+        "command": [
+          "pdffonts",
+          "build/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf"
+        ],
+        "exit_code": 0,
+        "stderr": ""
+      },
+      {
+        "command": [
+          "pdftotext",
+          "-layout",
+          "build/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf",
+          ".scratch/recovery-review-55-56/55-fifteenth-after-pentecost.txt"
+        ],
+        "exit_code": 0,
+        "stderr": ""
+      },
+      {
+        "command": [
+          "pdfinfo",
+          "build/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.pdf"
+        ],
+        "exit_code": 0,
+        "stderr": ""
+      },
+      {
+        "command": [
+          "pdffonts",
+          "build/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.pdf"
+        ],
+        "exit_code": 0,
+        "stderr": ""
+      },
+      {
+        "command": [
+          "pdftotext",
+          "-layout",
+          "build/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.pdf",
+          ".scratch/recovery-review-55-56/55-fifteenth-after-pentecost-synthesis.txt"
+        ],
+        "exit_code": 0,
+        "stderr": ""
+      },
+      {
+        "command": [
+          ".scratch/recovery-root/venv/bin/python",
+          "tools/check-web-edition",
+          "build/web/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.md"
+        ],
+        "exit_code": 2,
+        "stderr": "usage: check-web-edition [-h] [--provider PROVIDER] [--document DOCUMENT]\n                         [--list-eligible]\ncheck-web-edition: error: unrecognized arguments: build/web/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.md\n"
+      },
+      {
+        "command": [
+          ".scratch/recovery-root/venv/bin/python",
+          "tools/check-web-edition",
+          "--provider",
+          "claude",
+          "--document",
+          "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost"
+        ],
+        "exit_code": 0,
+        "stderr": ""
+      }
+    ],
+    "56": [
+      {
+        "command": [
+          "pdfinfo",
+          "build/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.pdf"
+        ],
+        "exit_code": 0,
+        "stderr": ""
+      },
+      {
+        "command": [
+          "pdffonts",
+          "build/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.pdf"
+        ],
+        "exit_code": 0,
+        "stderr": ""
+      },
+      {
+        "command": [
+          "pdftotext",
+          "-layout",
+          "build/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.pdf",
+          ".scratch/recovery-review-55-56/56.txt"
+        ],
+        "exit_code": 0,
+        "stderr": ""
+      },
+      {
+        "command": [
+          "pdfinfo",
+          "build/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis.pdf"
+        ],
+        "exit_code": 0,
+        "stderr": ""
+      },
+      {
+        "command": [
+          "pdffonts",
+          "build/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis.pdf"
+        ],
+        "exit_code": 0,
+        "stderr": ""
+      },
+      {
+        "command": [
+          "pdftotext",
+          "-layout",
+          "build/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis.pdf",
+          ".scratch/recovery-review-55-56/56-synthesis.txt"
+        ],
+        "exit_code": 0,
+        "stderr": ""
+      },
+      {
+        "command": [
+          ".scratch/recovery-root/venv/bin/python",
+          "tools/check-web-edition",
+          "--provider",
+          "claude",
+          "--document",
+          "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost"
+        ],
+        "exit_code": 0,
+        "stderr": ""
+      },
+      {
+        "command": [
+          ".scratch/recovery-root/venv/bin/python",
+          "tools/check-content-preflight",
+          "--provider",
+          "claude",
+          "--document",
+          "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost",
+          "--edition",
+          "research"
+        ],
+        "exit_code": 0,
+        "stderr": ""
+      },
+      {
+        "command": [
+          ".scratch/recovery-root/venv/bin/python",
+          "tools/check-content-preflight",
+          "--provider",
+          "claude",
+          "--document",
+          "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost",
+          "--edition",
+          "synthesis"
+        ],
+        "exit_code": 0,
+        "stderr": ""
+      }
+    ]
+  },
+  "retention": "Source and output identities, review scope and dispositions are retained. Witness images, PDF text, rasters, generated HTML and browser profile payloads are not copied.",
+  "integration": "Coordinator acceptance and final installed-byte verification are outside this review record."
+}

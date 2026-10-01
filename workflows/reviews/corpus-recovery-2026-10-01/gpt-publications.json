@@ -1,0 +1,549 @@
+{
+  "schema": "triptych-recovery-review/v1",
+  "evidence_kind": "independent-publication-review",
+  "origins": [
+    {
+      "path": ".scratch/recovery-review-gpt/review-report.json",
+      "sha256": "846cf65034e7f1ceb4e5d45a50c793a71992a719ccda109c61a597c93290939a",
+      "retained_payload": "Structured report below; transient images, HTML, scans and browser profiles are not copied."
+    },
+    {
+      "path": ".scratch/recovery-review-gpt/snapshot.json",
+      "sha256": "fdf454d563a9ad1888ac65e909f9155ec6aa934d443bba2f6ab8c737f3328328",
+      "retained_payload": "Structured report below; transient images, HTML, scans and browser profiles are not copied."
+    }
+  ],
+  "snapshot_comparison": "Reviewer report and initial snapshot name identical 19 output hashes.",
+  "review": {
+    "pdfs": [
+      {
+        "path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf",
+        "pages": 16,
+        "sha256": "a02a5ab3821cf20d311d110a92db1fc645970954e17598a7322d167cb1b90017",
+        "bytes": 459060,
+        "warnings": [],
+        "rasters": "build/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-recovery-review/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost",
+        "contact_sheets": [
+          "build/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-recovery-review/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost/contact-sheets/sheet-001.png"
+        ],
+        "visual_review_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "enlarged_raster_pages": [
+          2,
+          16
+        ],
+        "disposition": "pass within recovery diff and all-page visual review scope"
+      },
+      {
+        "path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.pdf",
+        "pages": 12,
+        "sha256": "781d6296394c38f58a49ea536462ece957f99ba3f7cfe536c7bd00178175a5d0",
+        "bytes": 412014,
+        "warnings": [],
+        "rasters": "build/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-recovery-review/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis",
+        "contact_sheets": [
+          "build/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-recovery-review/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis/contact-sheets/sheet-001.png"
+        ],
+        "visual_review_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "enlarged_raster_pages": [
+          2,
+          12
+        ],
+        "disposition": "pass within recovery diff and all-page visual review scope"
+      },
+      {
+        "path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf",
+        "pages": 10,
+        "sha256": "89e976f3273d6280fbf8af3c59f055badcd6d665bd4d178d46da9665ecd8d82d",
+        "bytes": 463937,
+        "warnings": [],
+        "rasters": "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-recovery-review/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis",
+        "contact_sheets": [
+          "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-recovery-review/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis/contact-sheets/sheet-001.png"
+        ],
+        "visual_review_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "enlarged_raster_pages": [
+          2,
+          10
+        ],
+        "disposition": "pass within recovery diff and all-page visual review scope"
+      },
+      {
+        "path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf",
+        "pages": 22,
+        "sha256": "32971a439bb82c452276e542633beb7f8dd96c0b1de0790c5cb9248cac172777",
+        "bytes": 473330,
+        "warnings": [],
+        "rasters": "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-recovery-review/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+        "contact_sheets": [
+          "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-recovery-review/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/contact-sheets/sheet-001.png",
+          "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-recovery-review/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/contact-sheets/sheet-002.png"
+        ],
+        "visual_review_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "enlarged_raster_pages": [
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "disposition": "pass within recovery diff and all-page visual review scope"
+      },
+      {
+        "path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf",
+        "pages": 3,
+        "sha256": "d6cc760a4b7de5c66b23f8529b3fe9a7050785fcaa3d6cd0822faf05e25ac6fa",
+        "bytes": 242757,
+        "warnings": [],
+        "rasters": "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-recovery-review/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily",
+        "contact_sheets": [
+          "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-recovery-review/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily/contact-sheets/sheet-001.png"
+        ],
+        "visual_review_pages": [
+          1,
+          2,
+          3
+        ],
+        "enlarged_raster_pages": [
+          3
+        ],
+        "disposition": "pass within recovery diff and all-page visual review scope"
+      },
+      {
+        "path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf",
+        "pages": 20,
+        "sha256": "6df2dca4e72d6f3530682437c575411cefef61dec00b322b41b4ee7ffb7733e4",
+        "bytes": 484581,
+        "warnings": [],
+        "rasters": "build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-recovery-review/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+        "contact_sheets": [
+          "build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-recovery-review/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost/contact-sheets/sheet-001.png"
+        ],
+        "visual_review_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "enlarged_raster_pages": [
+          18,
+          19,
+          20
+        ],
+        "disposition": "pass within recovery diff and all-page visual review scope"
+      },
+      {
+        "path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf",
+        "pages": 3,
+        "sha256": "26dc559868ca28e412aac0a9cdd9ff80c4c64884581aae554af4393c70223eb8",
+        "bytes": 275162,
+        "warnings": [],
+        "rasters": "build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-recovery-review/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily",
+        "contact_sheets": [
+          "build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-recovery-review/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily/contact-sheets/sheet-001.png"
+        ],
+        "visual_review_pages": [
+          1,
+          2,
+          3
+        ],
+        "enlarged_raster_pages": [
+          3
+        ],
+        "disposition": "pass within recovery diff and all-page visual review scope"
+      },
+      {
+        "path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf",
+        "pages": 10,
+        "sha256": "23aa8392a323418f1b552e5395db2fe1949829c78ced6c9e4477cc966211d9bd",
+        "bytes": 466664,
+        "warnings": [],
+        "rasters": "build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-recovery-review/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis",
+        "contact_sheets": [
+          "build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-recovery-review/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis/contact-sheets/sheet-001.png"
+        ],
+        "visual_review_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "enlarged_raster_pages": [
+          2,
+          10
+        ],
+        "disposition": "pass within recovery diff and all-page visual review scope"
+      },
+      {
+        "path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf",
+        "pages": 20,
+        "sha256": "1ccb31ee142e83a86aaeb4586a371c16da934e998cee3fd693a241035da588cb",
+        "bytes": 440568,
+        "warnings": [],
+        "rasters": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-recovery-review/rasters/build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+        "contact_sheets": [
+          "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-recovery-review/rasters/build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/contact-sheets/sheet-001.png"
+        ],
+        "visual_review_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "enlarged_raster_pages": [
+          17,
+          18,
+          20
+        ],
+        "disposition": "pass within recovery diff and all-page visual review scope"
+      },
+      {
+        "path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf",
+        "pages": 3,
+        "sha256": "514a1cdb4719e5e9d7609dbe1da46093ff5c1d5e0abc37165237117c503e64d0",
+        "bytes": 273725,
+        "warnings": [],
+        "rasters": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-recovery-review/rasters/build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily",
+        "contact_sheets": [
+          "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-recovery-review/rasters/build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily/contact-sheets/sheet-001.png"
+        ],
+        "visual_review_pages": [
+          1,
+          2,
+          3
+        ],
+        "enlarged_raster_pages": [
+          3
+        ],
+        "disposition": "pass within recovery diff and all-page visual review scope"
+      },
+      {
+        "path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+        "pages": 10,
+        "sha256": "094320d3d17c59748097f43eb1a4c1407456bf51c432099495799c6eef0fd0c4",
+        "bytes": 419312,
+        "warnings": [],
+        "rasters": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-recovery-review/rasters/build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis",
+        "contact_sheets": [
+          "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-recovery-review/rasters/build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis/contact-sheets/sheet-001.png"
+        ],
+        "visual_review_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "enlarged_raster_pages": [
+          2,
+          10
+        ],
+        "disposition": "pass within recovery diff and all-page visual review scope"
+      },
+      {
+        "path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-synthesis.pdf",
+        "pages": 11,
+        "sha256": "a5e7f36ff9deb36f72147756044b3aa2455ca9482684818cd7ae193ddda25b7b",
+        "bytes": 442442,
+        "warnings": [],
+        "rasters": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-recovery-review/rasters/build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-synthesis",
+        "contact_sheets": [
+          "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-recovery-review/rasters/build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-synthesis/contact-sheets/sheet-001.png"
+        ],
+        "visual_review_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "enlarged_raster_pages": [
+          2,
+          11
+        ],
+        "disposition": "pass within recovery diff and all-page visual review scope"
+      },
+      {
+        "path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-homily.pdf",
+        "pages": 3,
+        "sha256": "7eb824cac27d8dc3d91a615c7655b87616c5cfc2975bc0c23b9f2a654c29008b",
+        "bytes": 244824,
+        "warnings": [],
+        "rasters": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-recovery-review/rasters/build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-homily",
+        "contact_sheets": [
+          "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-recovery-review/rasters/build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-homily/contact-sheets/sheet-001.png"
+        ],
+        "visual_review_pages": [
+          1,
+          2,
+          3
+        ],
+        "enlarged_raster_pages": [
+          3
+        ],
+        "disposition": "pass within recovery diff and all-page visual review scope"
+      },
+      {
+        "path": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.pdf",
+        "pages": 21,
+        "sha256": "c33098c122dc9fcafdbd55e225a989ab20822e3d81f05bf222f3dd76e8fa700c",
+        "bytes": 485221,
+        "warnings": [],
+        "rasters": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-recovery-review/rasters/build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a",
+        "contact_sheets": [
+          "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-recovery-review/rasters/build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/contact-sheets/sheet-001.png",
+          "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-recovery-review/rasters/build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/contact-sheets/sheet-002.png"
+        ],
+        "visual_review_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "enlarged_raster_pages": [
+          21
+        ],
+        "disposition": "pass within recovery diff and all-page visual review scope"
+      }
+    ],
+    "web": [
+      {
+        "path": "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.md",
+        "sha256": "9c38cf85aab687b96e4d3a2636be56ff8a44e00743d1e7b7723cf641d89281d1",
+        "bytes": 73989
+      },
+      {
+        "path": "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md",
+        "sha256": "6a0fa26b494c811d1ab9ddc3f7e0135e2bec956d89c61280e95b05a73b651f51",
+        "bytes": 82276
+      },
+      {
+        "path": "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.md",
+        "sha256": "019d919c1558305ae1cc3e3ebcb88fa6c39981fb44f90b23940f5bac7947e64f",
+        "bytes": 71512
+      },
+      {
+        "path": "build/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md",
+        "sha256": "e13bf85f26b02d0ba75393494f4b6fe7f632f2126f81f27562b0e8a1bd0646a2",
+        "bytes": 72888
+      },
+      {
+        "path": "build/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.md",
+        "sha256": "07a676484c738e02e9b95f31fac19ed27eff64f3edfb40af2a85d729e336bb74",
+        "bytes": 77610
+      }
+    ],
+    "total_pages": 164,
+    "reviewer": "independent-gpt-publication-review",
+    "disposition": "pass",
+    "findings": [],
+    "scope": "Independent content review of recovery changes and generated date displays; all 164 PDF pages inspected in contact sheets plus 28 enlarged focus pages; final web Markdown and rendered DOM preservation, chronology excerpt visual checks. Not a new research audit of unchanged work or publication approval beyond these artifacts.",
+    "content_checks": [
+      "55 derived Gospel AD27 and Communion AD28 retained; c. labels and attribution qualification preserved",
+      "57 Ps32 Davidic regnal frame remains traditional-attribution, Corbett bound and cited; quoted seventy years duration and separate critical Matthew comparison preserved",
+      "59 Maas Ninth Journey and Tuesday marriage-feast placement checked in retained article; AUC782=AD29 conversion explicitly derived; Davidic frames qualified; Durand title corrected; added Maas/Corbett references present in both editions",
+      "pc-s51 critical Matthew comparison remains separate and probabilistically qualified; no invented event date",
+      "pc-s53 Durand corrected in both editions; whitespace-only KI024 before/after archived concise PDFs byte identical; page2 contract and final page intact",
+      "All 14 PDFs retain 2026-10-01T22:25:03Z terminal revision metadata and rights block without an extra rights-only page"
+    ],
+    "web_checks": [
+      {
+        "tocLinks": 0,
+        "missingToc": [],
+        "horizontalOverflow": false,
+        "required_text": {
+          "A.D. 27 (derived)": true,
+          "A.D. 28 (derived)": true
+        },
+        "old_Durand_title_present": false,
+        "path": "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.md",
+        "sha256": "9c38cf85aab687b96e4d3a2636be56ff8a44e00743d1e7b7723cf641d89281d1"
+      },
+      {
+        "tocLinks": 10,
+        "missingToc": [],
+        "horizontalOverflow": false,
+        "required_text": {
+          "“seventy years” (duration)": true,
+          "Corbett’s “usual chronology”": true,
+          "Composition (Catholic critical chronology, for comparison)": true
+        },
+        "old_Durand_title_present": false,
+        "path": "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md",
+        "sha256": "6a0fa26b494c811d1ab9ddc3f7e0135e2bec956d89c61280e95b05a73b651f51"
+      },
+      {
+        "tocLinks": 0,
+        "missingToc": [],
+        "horizontalOverflow": false,
+        "required_text": {
+          "A.D. 29 (derived)": true,
+          "the displayed year is derived": true,
+          "Alfred Durand, “The New Testament,”": true,
+          "Corbett": true
+        },
+        "old_Durand_title_present": false,
+        "path": "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.md",
+        "sha256": "019d919c1558305ae1cc3e3ebcb88fa6c39981fb44f90b23940f5bac7947e64f"
+      },
+      {
+        "tocLinks": 9,
+        "missingToc": [],
+        "horizontalOverflow": false,
+        "required_text": {
+          "Composition (Catholic critical chronology, for comparison)": true,
+          "post-A.D. 70 date": true
+        },
+        "old_Durand_title_present": false,
+        "path": "build/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md",
+        "sha256": "e13bf85f26b02d0ba75393494f4b6fe7f632f2126f81f27562b0e8a1bd0646a2"
+      },
+      {
+        "tocLinks": 0,
+        "missingToc": [],
+        "horizontalOverflow": false,
+        "required_text": {
+          "Alfred Durand, “The New Testament”": true
+        },
+        "old_Durand_title_present": false,
+        "path": "build/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.md",
+        "sha256": "07a676484c738e02e9b95f31fac19ed27eff64f3edfb40af2a85d729e336bb74"
+      }
+    ],
+    "ki024": {
+      "before": "b01e1baf95137a4c9d28bb72bea27b7de673a249c2baa493177e864c904e9d82",
+      "after": "b01e1baf95137a4c9d28bb72bea27b7de673a249c2baa493177e864c904e9d82"
+    },
+    "web_visual_scope": "Five chronology excerpt screenshots rendered from the exact final Markdown with the locked site renderer and current site.css. Full-document DOM text and TOC targets checked; no claim of full-site navigation or every viewport review. Full-document deep-scroll screenshot harness yielded blank captures, so excerpt screenshots were used."
+  },
+  "integration": "Coordinator acceptance and final installed-byte verification are outside this review record."
+}

@@ -1,0 +1,164 @@
+{
+  "schema": "triptych-recovery-review/v1",
+  "evidence_kind": "independent-initial-audit-with-author-verification-of-subsequent-repairs",
+  "independence": "This lane independently audited the recovered implementation and then authored the additional browser repairs listed here. Its verification of those new repairs is author verification, not a second independent approval.",
+  "origins": [
+    {
+      "path": ".scratch/recovery-browser/review-report.json",
+      "sha256": "c96242b1b7fa6765ae517d598d7d3150c49117ce07490108d7e342b99253964c"
+    }
+  ],
+  "command_normalization": "Absolute browser executable path replaced by a portable placeholder; no local preview addresses or browser-profile payloads retained.",
+  "review": {
+    "reviewer": "browser-regression-audit-and-repair",
+    "scope": "Independent audit and repair of recovered browser regressions; no planned browser features, source-data changes, commits, pushes, or external review acceptance.",
+    "head_at_report": "8eddf841d7740ecca4979b96bd5329ddfd18827f",
+    "prior_browser_checkpoint": "13a6ef731",
+    "file_sha256": {
+      "src/web/browser/catena/catena-model.js": "1f9337bb8eaf1a6f086ae57ff9debaa80bb9212a837c93b4fff9a826dbc8da83",
+      "src/web/browser/shared/browser-core.js": "86afaa4ea86b451a1da17195ba1128158e713210a326ee8de4f5cbf15180f9b1",
+      "src/web/browser/sources/sources.css": "4d47cb9f37fa95e6cb3894b500ab31c0b123adf27e65aa8784e313103409a41b",
+      "src/web/browser/sources/sources.js": "45c86252478782dd5a0cae6bf11c278b2c2fcdfb3aa9f303f9f93ee684fe7d2c",
+      "src/web/browser/history/history.js": "83a5824093a1568de9b0ebc1b3fa0da37cb8bcf7e503ce7195905da15f3221b1",
+      "src/web/browser/texts/texts.js": "a2ce9ad7ad2741391e0aadf02426e628f30dc29a9b1eba4bad6dd80da2f36521",
+      "src/web/browser/liturgy/day-reader.js": "1b64f6542fbfd1e6f455cf6af427a98ff1be372f681f0eea83f9cdbd14823796",
+      "tools/tests/day_reader_integration_browser.mjs": "a176afd6cba56b9383082397f1b90efcb06989206ae1c3a6b785dd5d5098806b",
+      "tools/tests/test_day_missal_switch.py": "a5559097bb26aa3455144ab8eda6787d931a4bdebc1a08d3cc7cf8d0d159130b",
+      "tools/tests/test_browser_truthfulness.py": "954a30fd3408b537704d1095e12d9bfe38c9311fccece823a97d53446aaaa711"
+    },
+    "findings": [
+      {
+        "id": "history-bootstrap-message",
+        "status": "fixed",
+        "reproduction": "Block History index request; original banner promised a fallback corpus although none was loaded.",
+        "fix": "History-specific transport failure message says no history is available."
+      },
+      {
+        "id": "sources-missing-edition-path",
+        "status": "fixed",
+        "reproduction": "Edition metadata without file path caused failure rendering to detach the persistent finder and reader hosts.",
+        "fix": "Invalidate pending render, keep hosts attached, render failure inside reader and provide Back to finder."
+      },
+      {
+        "id": "publications-bootstrap-controls",
+        "status": "fixed",
+        "reproduction": "Block corpus request; five controls remained Loading.",
+        "fix": "All five controls show disabled Unavailable, search placeholder identifies failure."
+      },
+      {
+        "id": "sources-bootstrap-controls",
+        "status": "fixed",
+        "reproduction": "Block source catalogue request; six controls remained Loading.",
+        "fix": "All six controls show disabled Unavailable, search placeholder identifies failure."
+      },
+      {
+        "id": "publications-empty-history-filter",
+        "status": "fixed",
+        "reproduction": "Choose an author, then Back to empty hash; previous author remained selected and was rewritten into URL.",
+        "fix": "Missing hash filters restore default select options."
+      },
+      {
+        "id": "day-edition-ordinary-variant",
+        "status": "fixed",
+        "reproduction": "Postconciliar Day with explicit EP III, Date missal=roman-1962, Apply retained eucharistic-prayer and committed invalid-explicit-variant.",
+        "fix": "Clear manifest-declared variants on edition change, avoid copying outgoing option control; preserve variants for date-only changes and direct invalid-link refusal."
+      },
+      {
+        "id": "shared-forward-suppression",
+        "status": "previously-fixed-confirmed",
+        "fix_commit": "644e66ad3",
+        "evidence": "browser-core.js clears lastWritten when consuming the self-written event; current real-Chromium Sources Back/Forward provenance regression and URL-contract suite pass."
+      },
+      {
+        "id": "day-missal-switch-harness",
+        "status": "fixed",
+        "reproduction": "Five Node replay tests errored because the extracted Apply handler now uses variantKeys/runtime.manifests absent from the harness.",
+        "fix": "Extract production variantKeys and supply real Ordinary manifest; new test proves all three variant keys clear only on edition changes."
+      }
+    ],
+    "verification": [
+      {
+        "command": "python3 -m unittest tools.tests.test_browser_collisions tools.tests.test_catena_production tools.tests.test_browser_static tools.tests.test_browser_url_contract tools.tests.test_browser_truthfulness tools.tests.test_browser_citation_truth tools.tests.test_corpus_browser_gate tools.tests.test_catena tools.tests.test_source_reader tools.tests.test_browser_psalm_loci -v",
+        "result": "686 tests run:685 passed,one opt-in live gate skipped; run preceded final Sources bootstrap case.",
+        "evidence": ".scratch/recovery-browser/final-units.log",
+        "exit_status": null,
+        "exit_status_note": "Numeric process status was not supplied in the consolidated report; observed outcomes and failures are preserved without inferring a status."
+      },
+      {
+        "command": "python3 -m unittest tools.tests.test_browser_truthfulness -v",
+        "result": "44/44 passed after final Sources bootstrap repair.",
+        "evidence": ".scratch/recovery-browser/truthfulness-final.log",
+        "exit_status": null,
+        "exit_status_note": "Numeric process status was not supplied in the consolidated report; observed outcomes and failures are preserved without inferring a status."
+      },
+      {
+        "command": "TRIPTYCH_CHROME=<chromium-executable> TRIPTYCH_REVIEW_ROOT=<isolated-overlay> node tools/tests/corpus_browser_gate.mjs",
+        "result": "2290 assertions:1985 pass,77 enhanced target-size failures already dispositioned as design dependency,228 skip. No new regression. Overlay before final failure-only Source bootstrap change.",
+        "evidence": ".scratch/recovery-browser/corpus-gate-after.json",
+        "exit_status": null,
+        "exit_status_note": "Numeric process status was not supplied in the consolidated report; observed outcomes and failures are preserved without inferring a status."
+      },
+      {
+        "command": "TRIPTYCH_CHROME=<chromium-executable> TRIPTYCH_SOURCE_ONLY=1 TRIPTYCH_SOURCE_PROPERS=src/web/data/structure/propers node tools/tests/day_reader_integration_browser.mjs",
+        "result": "43/43 passed, zero console/request/HTTP failures and zero unnamed interactive accessibility nodes.",
+        "evidence": ".scratch/recovery-browser/day-browser-final.json",
+        "exit_status": null,
+        "exit_status_note": "Numeric process status was not supplied in the consolidated report; observed outcomes and failures are preserved without inferring a status."
+      },
+      {
+        "command": "python3 -m unittest tools.tests.test_browser_truthfulness.SourceReaderInteractionTests.test_browser_back_and_forward_restore_exact_provenance tools.tests.test_browser_url_contract -v",
+        "result": "49/49 passed.",
+        "evidence": ".scratch/recovery-browser/shared-forward.log",
+        "exit_status": null,
+        "exit_status_note": "Numeric process status was not supplied in the consolidated report; observed outcomes and failures are preserved without inferring a status."
+      },
+      {
+        "command": "python3 -m unittest tools.tests.test_day_reader_integration tools.tests.test_day_missal_integration tools.tests.test_liturgy_reader_state -v",
+        "result": "101/103 passed initially; failures were stale release bindings and CLI/generated Proper order parity. Parity rerun passed after coordinator regenerated structures; bindings remain coordinator-owned.",
+        "evidence": ".scratch/recovery-browser/day-units.log",
+        "exit_status": null,
+        "exit_status_note": "Numeric process status was not supplied in the consolidated report; observed outcomes and failures are preserved without inferring a status."
+      },
+      {
+        "command": "python3 -m unittest tools.tests.test_liturgy_reader_state.ParityTests.test_postconciliar_2026_2027_weekday_and_sunday_cli_browser_cycle_parity -v",
+        "result": "1/1 passed after generated-data refresh.",
+        "evidence": ".scratch/recovery-browser/day-parity-refreshed.log",
+        "exit_status": null,
+        "exit_status_note": "Numeric process status was not supplied in the consolidated report; observed outcomes and failures are preserved without inferring a status."
+      },
+      {
+        "command": "python3 -m unittest tools.tests.test_day_missal_switch -v",
+        "result": "13/13 passed.",
+        "evidence": ".scratch/recovery-browser/day-missal-switch.log",
+        "exit_status": null,
+        "exit_status_note": "Numeric process status was not supplied in the consolidated report; observed outcomes and failures are preserved without inferring a status."
+      },
+      {
+        "command": "Negative controls serve/replay pre-fix controllers against new regressions.",
+        "result": "Five browser recovery cases fail old controllers; Day Chromium edition transition fails old controller; Day Node test fails all three retained variant subtests.",
+        "evidence": [
+          ".scratch/recovery-browser/regression-controls.log",
+          ".scratch/recovery-browser/source-bootstrap-control.log",
+          ".scratch/recovery-browser/day-apply-control.json",
+          ".scratch/recovery-browser/day-missal-switch-control.log"
+        ],
+        "exit_status": null,
+        "exit_status_note": "Numeric process status was not supplied in the consolidated report; observed outcomes and failures are preserved without inferring a status."
+      },
+      {
+        "command": "node --check affected Day controller/harness; git diff --check affected files",
+        "result": "Passed.",
+        "exit_status": null,
+        "exit_status_note": "Numeric process status was not supplied in the consolidated report; observed outcomes and failures are preserved without inferring a status."
+      }
+    ],
+    "visual_evidence": "Sources desktop1440x900 and mobile393x852 screenshots before/after scoped CSS are byte-identical; after captures visually inspected. No Day visual redesign.",
+    "limitations": [
+      "Verification is local source/isolated-overlay evidence, not deployed artifact or external acceptance.",
+      "Final public-site generation, release bindings, complete repository gate, durable record aggregation and final-site browser gate remain coordinator-owned.",
+      "Earlier failed preliminary Day test attempts were test assumptions (URL encoding and hidden multi-group option select); final tracked test and complete43-assertion run pass."
+    ],
+    "ownership": "All browser files and tests released to coordinator; no live test processes."
+  },
+  "integration": "Final site generation, final installed artifact checks, release bindings and deployment remain coordinator-owned."
+}

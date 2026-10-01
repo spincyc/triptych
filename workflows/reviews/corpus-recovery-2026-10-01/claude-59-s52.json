@@ -1,0 +1,107 @@
+{
+  "schema": "triptych-recovery-review/v1",
+  "evidence_kind": "independent-publication-review",
+  "origins": [
+    {
+      "path": ".scratch/recovery-review-59-s52/review.json",
+      "sha256": "7081cd18192eaacb6ab87959a691d1129c8e35f28eda6cc24d453ba222a3985d",
+      "retained_payload": "Structured report below; transient images, HTML, scans and browser profiles are not copied."
+    },
+    {
+      "path": ".scratch/recovery-review-59-s52/artifacts.json",
+      "sha256": "ec2a496cf2b933722fbf786cbd74453364e564c201ebca664034a7913cf16bbe",
+      "retained_payload": "Structured report below; transient images, HTML, scans and browser profiles are not copied."
+    }
+  ],
+  "review": {
+    "reviewer": "independent-claude-59-s52-review",
+    "scope": "Independent review of publication author changes in Claude59 and pc-s52; all-page visual inspection of six final PDFs, changed source/content review and canonical web fidelity/reflow. Not independent review of shared chronology generator or preflight authored by this reviewer.",
+    "disposition": "No blocking findings within review scope",
+    "artifacts": {
+      "59": {
+        "web_sha256": "14f5d48375abdd14f89073701f9b044b00b4fd7eae0a1ad5ed2df5634093b433",
+        "html": ".scratch/recovery-review-59-s52/59.html",
+        "pdfs": [
+          {
+            "path": "build/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf",
+            "sha256": "2220a1bb3bbe779e7851bd7f48648089de3fd1f1ede43f31e7ecbedec5198559",
+            "pages": 33,
+            "all_fonts_embedded": true
+          },
+          {
+            "path": "build/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf",
+            "sha256": "b98cf300505245e81cc6b14d8843a57f429fc141a66b16a5260756c44fb1fb1f",
+            "pages": 12,
+            "all_fonts_embedded": true
+          },
+          {
+            "path": "build/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf",
+            "sha256": "a2e50073e13725a1297e8093bf3c0b88aca881142787a57dab85adfa16a51246",
+            "pages": 3,
+            "all_fonts_embedded": true
+          }
+        ],
+        "all_pdf_pages_visually_inspected": true,
+        "web_regeneration_byte_equal": true,
+        "blockers": [],
+        "web_path": "build/web/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.md"
+      },
+      "s52": {
+        "web_sha256": "7cca8344c38ce15f2a051fcf33d73578ff5f9a25d0aa9385e39f58335bd7a514",
+        "html": ".scratch/recovery-review-59-s52/s52.html",
+        "pdfs": [
+          {
+            "path": "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a.pdf",
+            "sha256": "09aad64dfb2829b1c27b82cb7efbd9acecb128e0f2d2c488669ff3d8d8bcf267",
+            "pages": 33,
+            "all_fonts_embedded": true
+          },
+          {
+            "path": "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+            "sha256": "18bc4f836acd67ca1ab6c2b64d38d9ccc846101b6684fafc964cd447fe90d109",
+            "pages": 12,
+            "all_fonts_embedded": true
+          },
+          {
+            "path": "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-homily.pdf",
+            "sha256": "e391c3398c0823605e35febac377c2741cdedaf3f29fc15d0ed9d6efdda62304",
+            "pages": 4,
+            "all_fonts_embedded": true
+          }
+        ],
+        "all_pdf_pages_visually_inspected": true,
+        "web_regeneration_byte_equal": true,
+        "blockers": [],
+        "web_path": "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a.md"
+      }
+    },
+    "total_pdf_pages_visually_inspected": 97,
+    "pdf_visual_evidence": [
+      "build/recovery-review-59-s52/01/rasters/review-run.json",
+      "build/recovery-review-59-s52/02/rasters/review-run.json"
+    ],
+    "content_evidence": [
+      "Corbett King David tracked article text line3 and passage record; raw SHA256 matches artifact record. Pss137/140 attribution is not converted into composition dates.",
+      "Maas Chronology of Life Jesus Christ tracked article text line25 and lines129-134; raw SHA256 matches artifact record. AUC782=AD29 equation and marriage-feast placement support explicitly derived date. Matthew narrative day-after-entry remains distinct from Maas harmony.",
+      "Aquinas Dessain1857vol2 OCR40166-40190, SuperPhil2lect2; Chrysostom NPNF1-13CCEL19672-19722 HomPhil7. Longer-form-only application retained in study25 and concise10.",
+      "Schets Ezekiel article text line3 and Reid Captivities line27 support distinct598/597BC captivity alternatives; study27 and concise2 distinguish them.",
+      "Both homilies read in extracted text; existing branch/source-delivery notes checked. No render change beyond metadata claimed."
+    ],
+    "checks": [
+      "Both full check-content-preflight passes",
+      "Both check-proper-components --phase artifacts passes",
+      "Both check-web-edition passes",
+      "Independent tools/web-edition regeneration byte-equal for both",
+      "Six PDFs: metadata/extraction/font inspection; every font embedded; logs have no warning, undefined-reference, or over/underfull-box diagnostic",
+      "Leaf diff --check passes",
+      "Browser rendered with public-alpha.render_page, exact locked Markdown and repository CSS, reader output path. Final CDP screenshots at1280 and390px; date rows reflow visibly without hidden date column; definitions, changed qualifications and rights footer inspected. No broken internal targets or duplicate ids in HTML."
+    ],
+    "browser_evidence": "cdp-report.json plus *-cdp.png (final render uses reader class; earlier non-CDP attempts are not acceptance evidence)",
+    "limitations": [
+      "Review does not re-collate every unchanged source or establish fresh workflow-stage acceptance for historical sealed runs.",
+      "Installed PDFs/web not mutated by this reviewer; author/coordinator must ensure installation matches listed reviewed hashes.",
+      "Shared generator/preflight independence belongs to parent reviewer."
+    ]
+  },
+  "integration": "Coordinator acceptance and final installed-byte verification are outside this review record."
+}

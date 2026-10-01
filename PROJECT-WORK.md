@@ -77,46 +77,49 @@ accounts remain historical evidence. **Implemented** names a committed repair,
 not a claim that the current publication was rebuilt, reviewed, installed or
 deployed. **Repairing** includes unfinished inherited edits. **Planned** means
 excluded from this recovery implementation. **Decision** or **unreproduced**
-keeps the precise limitation visible. Final corpus-link, known-issue and live
-publication requirements remain open until their own evidence is recorded.
+keeps the precise limitation visible. The final installed-PDF repair and
+known-issue disposition requirements are satisfied within the maintainer's
+explicit recovery scope. This does not complete planned work, settle retained
+editorial/history decisions, reproduce unidentified old reports or establish a
+fresh chronology/source-family audit. Live deployment remains open.
 
 | ID | Issue | Current disposition and evidence or next action |
 | --- | --- | --- |
-| KI-001 | Unnumbered psalm titles shift browser verses | Implemented in `c2b1a271b`; independent cold review of KI-001–008 passes as recorded below. Final site verification remains. |
+| KI-001 | Unnumbered psalm titles shift browser verses | Implemented in `c2b1a271b`; independent cold review of KI-001–008 passes as recorded below. Final source, installed-artifact and site checks pass; deployment remains pending. |
 | KI-002 | Clementine verse aliases ignored | Implemented in `c2b1a271b`; edition departures are applied and tested in `tools/tests/test_browser_psalm_loci.py`. |
 | KI-003 | Citation's psalm numbering omitted | Implemented in `c2b1a271b`; browser labels distinguish the citation's numbering from the selected Bible's. |
 | KI-004 | Formulary/commentary tools use calendar-wide numbering | Implemented in `c2b1a271b`; `_formulary.py`, commentary indexing and the tracked commentary corpus use the owning citation's numbering. |
 | KI-005 | Psalm concordance merges final verses | Implemented in `c2b1a271b`; concordance, its checks and affected generated indexes changed. |
-| KI-006 | Indexes trim Ps 150:6 and overextend Vulgate Ps 147 | Implemented in `c2b1a271b`; regenerated Bible indexes require final source and deployment checks. |
+| KI-006 | Indexes trim Ps 150:6 and overextend Vulgate Ps 147 | Implemented in `c2b1a271b`; regenerated Bible indexes pass final source and installed-artifact checks. Deployment remains pending. |
 | KI-007 | Half-open cross-numbering citation loses a verse | Implemented in `c2b1a271b`; regression covered even though no tracked citation used that shape. |
-| KI-008 | CPDV last verses include the next heading | Implemented in `c2b1a271b`; chapter and paragraph data changed. Final site-source bindings must cover those bytes. |
-| KI-009 | Duration Date cells repeat labels and print unquoted prose | Implemented in `84666d2f6`; affected proper publications still require final rebuilding and review. |
-| KI-010 | Date cells expose raw comparison-profile labels | Implemented in `84666d2f6`; publication regeneration and review are part of the leaf repairs. |
-| KI-011 | Concise date formatter drops approximation | Implemented in `84666d2f6`; `c63a66e72` preserves the distinction between season and year hedges and marks derived displays. Shared chronology/preflight tests pass. Final affected-leaf publication remains open. |
+| KI-008 | CPDV last verses include the next heading | Implemented in `c2b1a271b`; chapter and paragraph data changed and final site-source bindings verify their current bytes. |
+| KI-009 | Duration Date cells repeat labels and print unquoted prose | Implemented in `84666d2f6`; affected proper publications are regenerated, independently reviewed and installed byte-identically. Deployment remains pending. |
+| KI-010 | Date cells expose raw comparison-profile labels | Implemented in `84666d2f6`; regenerated affected leaf publications have independent scoped passes and exact-byte installations. |
+| KI-011 | Concise date formatter drops approximation | Implemented in `84666d2f6`; `c63a66e72` preserves season/year hedges and marks derived displays. Shared tests pass; affected leaf publications are reviewed and installed byte-identically. |
 | KI-012 | Alleged case-only duplicate in Proper 11 | Original example unreproduced by the inventory. `84666d2f6` adds case-insensitive display deduplication; do not assert an independently reproduced original failure. |
-| KI-013 | Missing traditional Psalm and Matthew 22 chronology | Implemented in `84666d2f6`; changed corpus answers must agree with regenerated Claude and GPT Nineteenth Sunday prose. The independent source audit stays open. |
+| KI-013 | Missing traditional Psalm and Matthew 22 chronology | Implemented in `84666d2f6`; regenerated Claude and GPT Nineteenth Sunday prose has independent source/content review and exact-byte installation. The separate independent corpus source audit remains open and planned. |
 | KI-014 | Five remote chronology deliveries no longer reproduce | Disposition implemented in `84666d2f6`; `src/sources/chronology/remote-delivery-recheck-2026-10-01.md` records current deliveries and unchanged retained article text. Old immutable artifacts were not overwritten; a leaf's evidence-grade change needs its own binding review. |
 | KI-015 | Wisdom persecution intervals overstate composition bounds | Implemented in `84666d2f6`; composition relations corrected, with the later independent corpus audit still owed. |
 | KI-016 | Unbound events, Hallel relation and further chronology claims | Implemented in `84666d2f6`; corpus records and coverage changed. Source acceptance is not inferred from machine validity. |
 | KI-017 | Chronology ledger acceptance and independent audit | Reconciled narrowly: the tracked final cold review passes identity and coverage. The independent source audit remains open and planned; no overall corpus acceptance is claimed. |
-| KI-018 | Calendar-reference web editions flatten nested lists | Implemented in `217aead2c`; converter and regenerated calendar web editions changed. WEB-001–003 were already repaired in `ec10cec29`; `c6b4696bb` corrects the TeX/smart-quote audit defect, with 168 converter tests passing. Final release checks remain. |
-| KI-019 | Claude pc-s52 longer-reading moral clauses unmarked | Repaired in both study and concise interpretation clauses against the longer Second Reading; independent content, all-page PDF and desktop/mobile web review passes. The six reviewed Claude 59/pc-s52 PDFs and two web editions are installed byte-identically. Final release/deployment checks remain. |
-| KI-020 | Claude 57 research records lag the study | Repairing with the full Claude 57 revision; Aquinas and the operative Augustine clause must agree in research and rendered editions. |
-| KI-021 | Five Claude leaves lack finding dispositions | Repairing: full revisions of 1962 55, 56, 57, 58 and pc-s51, including every standing finding, independent content/visual review, receipts and publication. Old PASS headers do not disposition the surviving advisories and observations. |
+| KI-018 | Calendar-reference web editions flatten nested lists | Implemented in `217aead2c`; converter and regenerated calendar web editions changed. WEB-001–003 were already repaired in `ec10cec29`; `c6b4696bb` corrects the TeX/smart-quote audit defect. The 168 converter tests and final source/release/site checks pass. |
+| KI-019 | Claude pc-s52 longer-reading moral clauses unmarked | Repaired in both study and concise interpretation clauses against the longer Second Reading; independent content, all-page PDF and desktop/mobile web review passes. Reviewed Claude 59/pc-s52 artifacts are installed byte-identically; deployment remains pending. |
+| KI-020 | Claude 57 research records lag the study | Implemented with the Claude 57 revision in `a73740d97`; research and rendered editions now agree on Aquinas and the operative Augustine clause. Independent scoped content/PDF/web review passes; reviewed artifacts are installed byte-identically. |
+| KI-021 | Five Claude leaves lack finding dispositions | All five full Claude revisions have explicit standing dispositions, independent scoped content/visual/web passes and exact-byte installation: 55 in `c1c2720da`, 56 in `77c6a3121`, and 57/58/pc-s51 in `a73740d97`. Deferred design/workflow observations remain named in the reviews below; deployment remains pending. |
 | KI-022 | Claude 49 concise page 4 is short | Decision retained: no source-faithful fill was found. No invented content or layout waiver is authorized by treating it as a minor defect. |
-| KI-023 | Durand's article misnamed in GPT 59 and pc-s53 | Implemented in `fae0fccf3`: retained article 14530a is *The New Testament*. Both studies and concise editions have the corrected title; independent GPT content/PDF/web review passes and the reviewed artifacts are installed byte-identically. Final release/deployment checks remain. |
+| KI-023 | Durand's article misnamed in GPT 59 and pc-s53 | Implemented in `fae0fccf3`: retained article 14530a is *The New Testament*. Both studies and concise editions have the corrected title; independent GPT review and final release checks pass, with exact-byte installation. Deployment remains pending. |
 | KI-024 | GPT pc-s53 trailing blank lines | Implemented with KI-023 in `fae0fccf3`; independent review verifies the archived before/after concise PDFs share SHA-256 `b01e1baf95137a4c9d28bb72bea27b7de673a249c2baa493177e864c904e9d82`. Final source-hash receipts and reviewed regenerated artifacts are current; deployment remains pending. |
 | KI-025 | Held Claude 54 and stale root handoffs | Withdrawn in `963af0dbf`; source remains, release records remain at `hold` as the inventory requires, unreviewed web edition removed. The dated withdrawal account below explains the model's limits. |
-| KI-026 | 2002 Ordo Missae starts at the wrong artifact page | Implemented in `ad3146b53`; corrected start is p. 303. Source projections and bindings require final verification. |
+| KI-026 | 2002 Ordo Missae starts at the wrong artifact page | Implemented in `ad3146b53`; corrected start is p. 303. Final source projections and current bindings pass their gates. |
 | KI-027 | Postconciliar Communion alternatives and Ps 25:4 part letters | Implemented in `1733ef528`: 30 Communion group bases and eight Responsorial Psalm citations corrected after page inspection; two Gospel Acclamation leads were verified correct and left unchanged. Three regression tests, 17 integrity tests, calendar validation and all seven Bible index builds/checks pass; shared browser projection is regenerated. The 31 other groups remain unexamined planned collation, not established defects; witness limits are recorded below. |
 | KI-028 | 1962 facsimile source URL returns 404 | Implemented in `ad3146b53`; source record points to the delivery whose bytes match the registered artifact. |
-| KI-029 | Duplicate FSSP France Ordo work identities | Implemented in `2127bf2ea`; four leaf bindings and projections must retain the canonical identity after final generation. |
-| KI-030 | Leo the Great lacks author standing | Implemented in `d07e1c2d1`, which also records Maximus the Confessor; the published-lane author-registry check must pass. |
-| KI-031 | Cummiskey translation rows remain withheld despite bindings | Nineteenth Sunday rows implemented in `d34f6a2d8`; `1733ef528` restores nine further English orations for Pentecost 13–15 after fresh page reading, with the derivative and 18 verification/publication passages recorded. Seven identifiable damaged Latin bodies are also repaired. Source-content and finding-aid checks pass and projections/counts are refreshed; final release integration remains. |
+| KI-029 | Duplicate FSSP France Ordo work identities | Implemented in `2127bf2ea`; final source validation and regenerated consumer projections preserve the canonical identity. |
+| KI-030 | Leo the Great lacks author standing | Implemented in `d07e1c2d1`, which also records Maximus the Confessor; the published-lane author-registry check passes in the final source gate. |
+| KI-031 | Cummiskey translation rows remain withheld despite bindings | Nineteenth Sunday rows implemented in `d34f6a2d8`; `1733ef528` restores nine further Cummiskey orations after page reading and repairs seven identifiable Latin bodies. Source-content, finding-aid, generated-projection and final source/release checks pass. |
 | KI-032 | New Advent wording is mistaken for its historical printing | Implemented in `3ccf77c72`; shared source guidance distinguishes a host's modernized delivery from the printing it revises. |
 | KI-033 | Commentary work identities and partial containers | Planned reconciliation workstream, excluded from recovery implementation. Existing open notes remain truthful. |
 | KI-034 | Fan-out lanes share a working area | Implemented in `a0ced2ce2`; execution policy requires disjoint working areas and has regression coverage. |
-| KI-035 | Example replay can revert another writer's tracked changes | Implemented in `652bb972d`; replay refuses destructive restoration. Example transcript drift is still assessed separately as KI-062. |
+| KI-035 | Example replay can revert another writer's tracked changes | Implemented in `652bb972d`; replay refuses destructive restoration. Integrated transcript refresh and replay are recorded as KI-062. |
 | KI-036 | Cross-run findings and escalation carry-forward | Planned engine design, excluded from this pass; tracked standing records remain the recovery source meanwhile. |
 | KI-037 | Repair ownership and repeat-budget special cases | Planned engine design, excluded from this pass. |
 | KI-038 | Workflow seal omits chronology inputs and sources | Implemented in `a0ced2ce2`; chronology read-set discovery and sealing are tested. |
@@ -125,27 +128,27 @@ publication requirements remain open until their own evidence is recorded.
 | KI-041 | References-used cannot distinguish some entries | Planned citation/heuristic design; explicit citation keys and rule redesign are outside this pass. |
 | KI-042 | Ambiguous obsolete proposal/gallery quota sentence | Implemented in `a0ced2ce2`; owning contract fragment clarifies the rule and the workflow version changes between runs. |
 | KI-043 | Legacy proper/proper-finish convergence defects | Planned legacy-pipeline disposition or redesign. Withdrawal of Claude 54 does not silently repair these engines. |
-| KI-044 | Published browser pages nest main landmarks | Implemented in `4ee23e218`; verify the final built-site gate, not only source markup. |
+| KI-044 | Published browser pages nest main landmarks | Implemented in `4ee23e218`; the exact final built-site review finds no remaining nested-main regression. The unchanged KI-046 target-size failures remain separately planned. |
 | KI-045 | Propers Browse modal traps focus on arrival | Implemented in `4ee23e218`; arrival Browse is non-modal and preserves skip-link access. |
 | KI-046 | Enhanced control-target sizes | Planned design dependency; the historical gate's enhanced target-size failures are not counted as newly discovered regressions. |
-| KI-047 | Day CSS changes the shared header globally | Implemented in `4ee23e218`; analogous Sources CSS exposure repaired in `13a6ef731`. Focused browser checks pass; final deployment evidence remains. |
+| KI-047 | Day CSS changes the shared header globally | Implemented in `4ee23e218`; analogous Sources CSS exposure repaired in `13a6ef731`. Focused browser and final source/release checks pass; deployment remains pending. |
 | KI-048 | Reader reflow, no-JavaScript and destination-activation obligations | Planned production implementation, excluded from recovery; a concrete existing regression discovered during review is recorded separately. |
 | KI-049 | Catena hardening and evidence-tooling backlog | Core hardening and empty no-JavaScript heading implemented in `4ee23e218`; shared-loader follow-up completed in `13a6ef731`. Eight immutable handoff-package tooling findings remain planned process work, not patched historical evidence. |
 | KI-050 | Unidentified stale Fortescue artifact note | Unreproduced: the old report identifies neither the record nor the stale assertion. Identify exact evidence before changing source data. |
 | KI-051 | Claude angelology exceeds the web page-size ceiling | Planned multipage Reader work; the conditional web publication stays blocked. No ceiling waiver is implied. |
 | KI-052 | Liturgy ritual-flow refinement | Planned feature work, excluded from recovery implementation. |
 | KI-053 | Foundation independent-disposition ledger remains open | Reconciled against the 2026-08-08 dispositions and tracked Wave 1 acceptance. The narrow historical design criterion is answered; this grants no production-route acceptance. |
-| KI-054 | 32 damaged 1962 orations need page reading | Original 32 implemented in `3fa0fa469`, findings recorded in `de98068fd`. `1733ef528` repairs Angela Merici's two missing appointments, their source attribution, stale mass notes and the Agnes English-row description. Angela's two English gaps now have explicit no-exemplar dispositions; no translation was invented. Generated projection and accounting checks pass; final release integration remains. |
+| KI-054 | 32 damaged 1962 orations need page reading | Original 32 implemented in `3fa0fa469`, findings recorded in `de98068fd`; `1733ef528` repairs Angela's missing appointments, source attribution, stale mass notes and Agnes English-row description. Explicit no-exemplar English gaps, generated accounting and final source/release checks pass; no translation was invented. |
 | KI-055 | 2,176 sung 1962 propers lack Missal text | Planned dedicated corpus workstream, excluded from recovery. |
 | KI-056 | Postconciliar composed/sung text publication and rights | Planned corpus and rights-policy work, excluded from recovery; 1962 publication rules are not transferred to it. |
-| KI-057 | Ledger still demands retired or suspended reviews | Reconciled by kind: retired six-concern scoring/family-screening is recorded as waived on the 2026-07-31 decision; actual artifact consistency and explicit defects are not thereby proved. Staleness stays suspended without rebaselining. |
+| KI-057 | Ledger still demands retired or suspended reviews | Reconciled by kind: retired six-concern scoring/family-screening is waived on the 2026-07-31 decision. Historical artifact-consistency and explicit-defect requirements remain open where unproved and still require their own evidence. Staleness stays suspended without rebaselining. |
 | KI-058 | Protected or superseded objects in published history | Deferred history/release-policy decision. No history rewrite, force-push or claim that reachable history is clean is authorized. |
 | KI-059 | Historical commit subjects spell pC-s37 | Retain published history; cosmetic subject corrections do not justify rewriting it. |
 | KI-060 | Four historical coordinator editorial rulings | Deferred maintainer decisions; preserve their recorded provisional status and do not restate them as fresh human acceptance. |
 | KI-061 | CLI flag, dispatcher, verb and tool-name consolidation | Planned tooling program, excluded from recovery. |
-| KI-062 | Reported example transcript divergence | Open verification after KI-035: replay against the integrated generated/publication state; distinguish stale expected counts from a tool regression. |
-| KI-063 | Historical 35-binding unexplained drift | Historical cause unrecoverable from the inventory evidence. Later current-byte checks supersede its publication status, not an explanation of the old changes; final current release validation remains required. |
-| KI-064 | Eighteenth Sunday date/revision requirements listed open | Previously repaired in `c408cf346`; both dossier sources explicitly date Ecclus 36:18. The narrow per-passage ledger requirement is reconciled; today's full revision remains KI-021. |
+| KI-062 | Reported example transcript divergence | The final example check passes: 256 captured, 250 replayed, zero diverged or known-stale, six never run, zero unrunnable and zero tracked writes; three declared volatile examples retain their documented treatment. Fifty-seven actual transcripts across 20 tools were recaptured; AST comparison confirms output-only changes. No historical run was restamped as new acceptance. |
+| KI-063 | Historical 35-binding unexplained drift | Historical cause unrecoverable from the inventory evidence. Final current-byte source/release validation passes; that supersedes the old publication status without claiming an explanation of the historical 35-binding changes. |
+| KI-064 | Eighteenth Sunday date/revision requirements listed open | Previously repaired in `c408cf346`; both dossier sources explicitly date Ecclus 36:18. The narrow ledger requirement is reconciled and the full Claude 58 revision has a scoped independent pass under KI-021. |
 | KI-065 | Finding-aid test expected 66 instead of 663 | Original failure repaired. `1733ef528` also answers the separate recovery failure for two unaccounted English slots with Angela Merici's explicit no-exemplar rows and refreshes positive/gap expectations and the carried census. The finding-aid checks now pass. |
 | KI-066 | Web converter omits local def/gdef/let definitions | Previously repaired in `5f104b3ff`; `tools/web-edition` carries these definitions in TeX order. |
 | KI-067 | Cassiodorus/a Lapide locus patterns too narrow | Previously repaired in `285c96b35`; the locus-pattern rebinding account below records the sweep. |
@@ -186,8 +189,8 @@ unknown-key retention and Back/Forward, with no console, request, HTTP or
 interactive accessibility-name errors. The pre-fix controller fails the new
 Apply regression with its retained variant and invalid selection. Shared
 Sources Forward restoration was already repaired in `644e66ad3` and passes
-49 current focused checks. Current release bindings and the final site gate
-remain integration obligations.
+49 current focused checks. Current release bindings and final site checks pass, subject to the unchanged
+planned target-size findings recorded below.
 
 `c6b4696bb` corrects the synthesis-preflight census from eighteen to twenty,
 including both Nineteenth Sunday leaves; its targeted current-corpus check
@@ -195,7 +198,8 @@ passes. The shared chronology repair in `c63a66e72` marks
 derived dates, preserves year hedges and corrects the Psalm 32 attribution;
 316 corpus/preflight tests, 54 projection/read-tracing tests, 10 hedge tests,
 both smoke checks and corpus validation/currentness checks pass. Both
-Seventeenth Sunday leaves require regeneration for that attribution change.
+Seventeenth Sunday leaves are regenerated, independently reviewed and installed
+for that attribution change.
 These chronology changes, Angela Merici appointments, and shared
 loader/CSS corrections above are concrete repairs, not invitations to resume the
 planned browser or corpus programs. Each new disposition must retain its
@@ -216,14 +220,16 @@ existing integrity tests and calendar validation pass. Seven Bible indexes
 were rebuilt and checked; each changes only three Psalm appointment keys,
 with no chapter-fragment changes. The 31 other alternative groups, other
 Psalms, antiphon wording/citation collation and 2008 source verification stay
-unexamined planned work. Shared browser projection is regenerated; final
-release checks remain integration obligations.
+unexamined planned work. Shared browser projection and final source/release
+checks pass.
 
-**Independent recovery leaf reviews.** These verdicts refer to the exact
-SHA-256 tables in each named leaf's 2026-10-01 `research/production-review.md`
-and, where its schema supplies them, `research/artifacts.json` and
-`research/web-artifact.json`. They do not accept later changed bytes or
-restamp historical workflow seals.
+**Independent recovery leaf reviews.** The durable evidence bundle at
+`workflows/reviews/corpus-recovery-2026-10-01/index.json` preserves all 12
+independent leaf dispositions and the exact 33 PDF / 12 web identities in
+`reviewed-publication-manifest.json`: 533 PDF pages reviewed. These identities
+also appear in the dated leaf production reviews and schema-defined receipts.
+All are installed byte-identically. The verdicts do not accept later changed
+bytes or restamp historical workflow seals.
 
 - **GPT 1962 55, 57, 59 and pc-s51, pc-s53: scoped PASS, no findings.** The
   reviewer inspected all 164 pages of 14 PDFs in contact sheets and 28
@@ -236,7 +242,7 @@ restamp historical workflow seals.
   full-site or every-viewport visual coverage. All 19 artifact hashes were
   rechecked after the nonrendering audit freeze. The coordinator installed
   those exact PDF/web bytes. Source changes are committed in `fae0fccf3`;
-  release/deployment remains pending.
+  release checks pass; deployment remains pending.
 - **Claude 1962 59 and pc-s52: no blocking findings in scope.** Every page of
   the six PDFs was inspected: 33/12/3 pages for 59 and 33/12/4 for pc-s52,
   97 total. The new chronology claims were checked against Corbett/Maas and
@@ -246,31 +252,75 @@ restamp historical workflow seals.
   date tables, definitions, qualifications, anchors and rights notices.
   Final PDF and web hashes match the author manifests and the coordinator's
   installations. This review is independent of the leaf author, but excludes
-  the shared chronology/preflight code the reviewer authored. Release and
-  deployment remain pending.
+  the shared chronology/preflight code the reviewer authored. Release checks pass;
+  deployment remains pending.
 
-The five full Claude revisions in KI-021 still require their own final cold
-dispositions; the passes above do not supply them.
+- **Claude 55 and 56: independent PASS.** Every page was inspected at readable
+  scale: 36/24 pages for 55 and 45/29 for 56, 134 total. Final desktop/mobile
+  web views, source/witness identities and standing dispositions were checked.
+  Leaf 56's 31 dispositions are accepted; its six workflow observations remain
+  deferred. These legacy schema-1 leaves retain two PDFs each, without an
+  invented homily or migration. The review is preserved in `claude-55-56.json`;
+  the source commits are `c1c2720da` and `77c6a3121`.
+- **Claude 57, 58 and pc-s51: scoped PASS, no remaining recovery regression.**
+  All 138 pages of nine PDFs were swept in contact sheets; affected and dense
+  pages were additionally viewed at readable scale. Twelve independent
+  artifact/web/chronology checks pass, with 14 source hashes inspected. Exact
+  rendered web at 1280 px and 390 px has no dossier overflow; the three tables
+  of contents resolve 10/10/11 targets and each edition keeps 12 definition
+  pairs. Leaf 57's VIS-001 line-measure design and pc-s51's house-voice heuristic
+  expansion remain planned; unset event dates, source qualifications and the
+  missing historical audit receipt remain honestly qualified. The review is
+  preserved in `claude-57-58-s51.json`; source commit `a73740d97`.
 
-**Independent corpus PDF review.** The recovery snapshots all 245 installed
-PDFs (239 provider PDFs and six reading plans) and checks all 239 builds,
-7,165 pages. The anchor gate passes 10,199 contents lines and 5,160 build
-bookmarks; the PDF navigation audit covers 5,288 bookmarks, 5,158 text links,
-2,799 numeric references and eight footnote groups. After the curriculum
-repair, no matched heading destination lands on the wrong page or below its
-heading. The six reading plans have no internal links or bookmarks.
+All five requested full Claude revisions therefore have current independent
+dispositions and exact-byte installations. This does not turn deferred design
+observations or a lost historical receipt into completed work.
 
-The cold audit also found three used sacramental table destinations outside
-their MediaBox, missed by the earlier review's rotated-page skip. Three
-shared landscape fragments now use scoped `/Fit` destinations, protected by
-positive and negative tests against the real fragments. Both sacramental
-PDFs' 81 pages are pixel-identical to the prior installed pages at 200 dpi,
-with identical extracted text and metadata; all pages were visually reviewed,
-and the normal builds match the independently reviewed builds byte-for-byte.
-The exact hashes and review limits are preserved in
-`src/gpt/theology/sacraments/research/scope.md`. Installation and the final
-post-leaf corpus scan remain pending. This interim review does not pass the
-ledger's final installed-PDF or live-publication requirement.
+**Final installed corpus PDF review.** The final frozen audit passes all 245
+installed PDFs, 7,981 pages: 239 provider builds (7,165 pages) are exact SHA-256
+matches to their installations; six reading plans (816 pages) remain unchanged
+and have no internal links or bookmarks. The 206 earlier reviewed stable
+provider PDFs retain their hashes; 33 active leaf PDFs have the independent
+content/visual dispositions above. Withdrawn Claude 54 builds and installed
+PDFs are absent.
+
+The build gate checks 10,199 contents records and 5,160 bookmarks without a
+problem. The installed navigation review checks 5,288 bookmarks, 8,102 internal
+annotations and all 12,187 named-heading destination references (5,333 distinct
+used destinations), including rotated pages. No genuine wrong-page,
+below-heading, missing or outside-page destination remains, and bookmark
+titles contain no TeX markup. Five text-matcher exceptions are individually
+disposed: two intentionally unprinted response-card grouping titles, one
+Three Chapters semantic alias and the sacramental matrix's bookmark/link
+aliases. Of the contents records, 9,471 match PDF page labels; 728 target PDFs
+without that metadata, so label comparison is inapplicable while destination
+validity and text checks still apply. Numeric/footnote links are checked for
+valid destination pages, not treated as heading-title matches.
+
+The cold audit's three out-of-page sacramental table destinations are repaired
+with scoped `/Fit` settings on the shared landscape fragments and regression
+tests using the real fragments. Both sacramental PDFs' 81 pages are
+pixel-identical to their prior installed pages at 200 dpi, with identical text
+and metadata, and were visually reviewed. The current exact hashes and limits
+are in `src/gpt/theology/sacraments/research/scope.md`. Corpus-wide pixel
+identity is not claimed: the Solemn Mass physical-page-7 role-index correction
+is intentional. `qpdf` is unavailable, so no qpdf structural check is claimed.
+The coordinator's `integration-evidence.json` in the durable recovery bundle
+records the final corpus audit and current installation evidence. Deployment
+remains a separate, open requirement.
+
+**Final predeployment integration.** All 4,346 unit tests pass (11 skips,
+136.69 seconds). Source/deployment-source, installed-artifact, public policy,
+site build and GitHub Pages artifact verification gates pass. The exact final
+site retains the same 77 enhanced target-size findings under planned KI-046
+and has no new failures; 32 focused checks pass. Final Day Apply, Back and Forward checks pass without browser errors.
+The final example check passes: 256 captured, 250 replayed, zero diverged or known-stale, six never run, zero unrunnable and zero tracked writes; three declared volatile examples retain their documented treatment. The example refresh captures actual command output,
+with AST comparison proving that its 57 transcript updates across 20 tools
+change output only. The source-family ledger remains at zero reviewed
+families, all 156 pending; this recovery is not screening completion. The
+coordinator owns final integration and deployment records. No push, Pages
+success or live-byte verification is implied by these local gates.
 
 ### The 32 damaged 1962 orations read on the page, 2026-10-01
 
@@ -328,8 +378,13 @@ Source-library validation, calendar validation, 21 proper-Latin tests and a
 substitution audit of 1,068 bodies with zero hits pass. `1733ef528` commits
 the source repairs, carried census and finding-aid expectations; the shared
 projection is regenerated and finding-aid checks now pass. There is no
-remaining source-content blocker in this bounded repair; the final integrated
-suite and release checks still govern publication.
+remaining source-content blocker in this bounded repair. Final
+`make check-sources` passes after the leaf freeze: both publication inventories
+replay (GPT 145 publications / 2,505 files; Claude 58 / 1,599), classification
+is unchanged, and the reviewed canonical diff covers 47 passages and three
+artifacts in three existing works. Thirty Mame/witness-agreement regression
+tests also pass after identity/binding-aware expectation corrections. Final
+release checks pass; live deployment remains pending.
 
 ### The Claude Fourteenth Sunday withdrawn, 2026-10-01
 

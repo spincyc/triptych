@@ -1,0 +1,224 @@
+{
+  "schema": "triptych-recovery-review/v1",
+  "evidence_kind": "independent-review-of-inherited-work-with-author-verification-of-additional-corrections",
+  "origins": [
+    {
+      "path": ".scratch/recovery-orations/source-review-report.json",
+      "sha256": "b993aa9a85cba3e428b713776ffae8ce5a8181df9406b7b117a5da3a7dabb018",
+      "retained_payload": "Structured assertions and identities only; no source scans, raw page text, browser profiles or rasters."
+    },
+    {
+      "path": ".scratch/recovery-orations/final-integration-check-sources.log",
+      "sha256": "8bee98fdb9abb5b4541aa1789f9cb24d48fa5ed56ad2e1983267c9864084eb7f",
+      "retained_payload": "Success result retained in the review; raw gate output not copied."
+    }
+  ],
+  "review": {
+    "schema": "triptych-recovery-source-review/v1",
+    "date": "2026-10-01",
+    "agent": "source-oration-recovery-review-and-repair",
+    "role": "Recovered and cold-reviewed prior agent source work; implemented additional bounded source corrections and tests. This is not independent acceptance of the corrections authored by this same lane.",
+    "verdict": "bounded-source-checks-pass",
+    "independent_acceptance_of_own_edits": false,
+    "independently_reviewed_prior_work": [
+      "Angela Merici Secret and Postcommunion against 1962, 1862 Pustet and 1922 Mame images",
+      "285 inherited mass-note edits and semantic-only formatting minimization",
+      "nine prior Cummiskey page readings against fresh 200/400 dpi page renders before restoration"
+    ],
+    "implemented_corrections": [
+      {
+        "finding": "remaining-latin-ocr-damage",
+        "disposition": "repaired",
+        "count": 7,
+        "identities": [
+          [
+            "comm-s-felicis-presbyteri-martyris",
+            "Collect"
+          ],
+          [
+            "ss-vincentii-anastasii-martyrum",
+            "Secret"
+          ],
+          [
+            "comm-s-petri-apostoli",
+            "Postcommunion"
+          ],
+          [
+            "cathedrae-s-petri-apostoli",
+            "Postcommunion"
+          ],
+          [
+            "s-ubaldi-episcopi-confessoris",
+            "Collect"
+          ],
+          [
+            "s-petri-caelestini-papae-confessoris",
+            "Collect"
+          ],
+          [
+            "comm-s-petri-apostoli-2",
+            "Postcommunion"
+          ]
+        ],
+        "evidence": "Exact target page images at 200/400 dpi and registered 1862 witness images; per-text source ledger records transformations."
+      },
+      {
+        "finding": "ubald-antecedent-page",
+        "disposition": "repaired",
+        "before": "printed p. 444",
+        "after": "printed p. 446 / PDF p. 532"
+      },
+      {
+        "finding": "KI-031-pentecost-13-through-15-orations",
+        "disposition": "repaired",
+        "count": 9,
+        "evidence": "Separate exact page-verification and tracked-publication passages; printed pp. 423-425,427-429; artifact PDF pp. 432-434,436-438."
+      },
+      {
+        "finding": "angela-english-accounting",
+        "disposition": "repaired",
+        "count": 2,
+        "status": "no-exemplar",
+        "limit": "No exact English exemplar bound; no claim of historical absence."
+      },
+      {
+        "finding": "cummiskey-pentecost-15-latin-appointment-notes",
+        "disposition": "repaired",
+        "after": "Secret marginal1589; Postcommunion marginal1591 and Mentes nostras et corpora possideat; 1962 printed397/PDF478. English remains printed429/IAleaf437/PDF438."
+      },
+      {
+        "finding": "mame-test-stale-count",
+        "disposition": "repaired",
+        "count_change": [
+          45,
+          48
+        ],
+        "evidence": "Three named new identity-only passages; remote payload remains withheld."
+      },
+      {
+        "finding": "witness-quarantine-test-overbroad-text-ban",
+        "disposition": "repaired",
+        "evidence": "Only Pentecost15 Secret matches the older derivative verbatim; test demands exact IAleaf437 and a separate valid publication binding, and still forbids older artifact as the serving source. Rights-withheld count344 to335."
+      }
+    ],
+    "source_artifacts": [
+      {
+        "id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "role": "target",
+        "full_payload_hash_checked": true
+      },
+      {
+        "id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+        "role": "public-domain antecedent",
+        "full_payload_hash_checked": true
+      },
+      {
+        "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+        "sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+        "role": "public-domain antecedent",
+        "full_payload_hash_checked": true
+      },
+      {
+        "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+        "sha256": "85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898",
+        "role": "historical English visual controller",
+        "full_payload_hash_checked": true
+      }
+    ],
+    "publication_artifacts": [
+      {
+        "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.angela-merici-orations-7c08ded8",
+        "sha256": "7c08ded86d626a1400363274eb0ef64b39542db06bf4bffb83ad75b22dd7bf64",
+        "authorship_scope": "prior agent implementation, cold-reviewed"
+      },
+      {
+        "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.recovery-page-reading-orations-f5b13d07",
+        "sha256": "f5b13d076714bfdea8e8e0474cc0d11a8872adbbfee8357be61f01d19b4ed8d0",
+        "authorship_scope": "implemented in this lane"
+      },
+      {
+        "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-pentecost-13-15-en",
+        "sha256": "96f9fa76f10865337b611b179fed9508bf343eaeabed6775b3b7fb48ea1d9edb",
+        "authorship_scope": "implemented in this lane"
+      }
+    ],
+    "checks": [
+      {
+        "command": "tools/tpt source-library validate",
+        "result": "pass",
+        "counts": {
+          "artifact": 2918,
+          "passage": 5260,
+          "bindings": 3543
+        }
+      },
+      {
+        "command": "tools/check-calendar-masses",
+        "result": "pass"
+      },
+      {
+        "command": "python3 -m unittest tools.tests.test_proper_latin",
+        "result": "pass",
+        "tests": 21
+      },
+      {
+        "command": "python3 -m unittest tools.tests.test_mame_1922_missal_witness tools.tests.test_witness_agreement",
+        "result": "pass",
+        "tests": 30
+      },
+      {
+        "command": "tools/tpt audit-latin-body-substitutions --calendar roman-1962",
+        "result": "pass",
+        "bodies": 1068,
+        "flagged": 0
+      },
+      {
+        "command": "git diff --check (owned source/tests)",
+        "result": "pass"
+      },
+      {
+        "command": "tools/tpt source-family-migration check",
+        "result": "pass",
+        "reviewed_families": 0,
+        "pending_review_units": 156
+      },
+      {
+        "command": "make check-sources",
+        "result": "pass",
+        "log": ".scratch/recovery-orations/final-integration-check-sources.log"
+      }
+    ],
+    "limits": [
+      "No whole-corpus fresh collation claim.",
+      "Earlier scratch estimate of eight damaged bodies yielded only seven identifiable identities; no eighth correction claimed.",
+      "No facsimile or preexisting immutable artifact bytes redistributed or changed.",
+      "Source-family screening remains pending for all156 units.",
+      "Generated projections, profile builds and release acceptance belong to coordinator/independent reviewers."
+    ],
+    "detail_report": ".scratch/recovery-orations/source-review-report.md",
+    "integration": {
+      "status": "pass",
+      "source_tree_frozen_by_authors": true,
+      "inventories": {
+        "gpt": {
+          "publications": 145,
+          "source_surface_files": 2505
+        },
+        "claude": {
+          "publications": 58,
+          "source_surface_files": 1599
+        }
+      },
+      "classification_change": false,
+      "reviewed_families": 0,
+      "pending_family_units": 156,
+      "complete_family_screening_claimed": false
+    }
+  },
+  "integration": {
+    "coordinator_acceptance": "pending",
+    "generated_projection_and_installed_artifact_verification": "coordinator-owned"
+  }
+}

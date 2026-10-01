@@ -1,0 +1,41 @@
+{
+  "schema": "triptych-recovery-aggregation-validation/v1",
+  "evidence_kind": "aggregation-integrity-and-artifact-identity-check",
+  "verified_at_utc": "2026-10-01T23:12:44.941436+00:00",
+  "working_tree_head": "77c6a3121e185e8365b8df2a5454c2a74eee7a3a",
+  "includes_uncommitted_changes": true,
+  "result": "pass",
+  "scope": "Integrity of the durable aggregation and current build identities. This adds no independent source-content or visual-review claim beyond the referenced reviewer records.",
+  "checks": {
+    "original_report_and_log_hash_references": 19,
+    "publication_build_outputs": {
+      "pdfs": 33,
+      "pdf_pages": 533,
+      "canonical_web_markdown": 12,
+      "sha256_mismatches": 0
+    },
+    "merged_provider_pdf_builds": {
+      "pdfs": 239,
+      "pages": 7165,
+      "sha256_mismatches": 0,
+      "pdfinfo_page_count_mismatches": 0,
+      "composition": "33 final independent leaf PDF identities supersede the 33 baseline active-leaf entries; 155 reviewed nonproper and 51 stable proper PDFs retain their reviewed hashes."
+    },
+    "source_hash_entries_checked_by_group": {
+      "browser": 10,
+      "psalm": 20,
+      "sacramental": 41,
+      "calendar_test_repair": 3,
+      "claude_55_56": 36,
+      "claude_57_58_s51": 17
+    },
+    "source_hash_mismatches": 0,
+    "private_machine_path_scan": "pass",
+    "json_duplicate_key_and_whitespace_check": "pass"
+  },
+  "limits": [
+    "Final installed artifact identity, fresh corpus navigation audit, repository integration and deployment are coordinator-owned.",
+    "Six reading-plan PDFs are outside this provider-build comparison; their original baseline status is recorded in shared-pdf-corpus.json.",
+    "Source hash counts are entries, not distinct files; the sacramental input sets overlap."
+  ]
+}

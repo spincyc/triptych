@@ -1,0 +1,1330 @@
+{
+  "schema": "triptych-recovery-review/v1",
+  "evidence_kind": "independent-publication-review",
+  "origins": [
+    {
+      "path": ".scratch/recovery-review-57-58-s51/review.json",
+      "sha256": "0afb6b226b850c1a2cb6ce52c5e31ecfaf1545ccc1a98b3c25e2862ef31b7d8f"
+    },
+    {
+      "path": ".scratch/recovery-review-57-58-s51/gregory-audit.json",
+      "sha256": "4adc7f38ad17dae9953fc276c8ddfe166d6412c1a5562eb85bca46615cd3d24e"
+    },
+    {
+      "path": ".scratch/recovery-review-57-58-s51/browser-checks.json",
+      "sha256": "2cb88038d845c28d26c5ec54ef50c7db5db42de20147f4cbbcc4c42e62eed646"
+    },
+    {
+      "path": ".scratch/recovery-review-57-58-s51/independent-checks.json",
+      "sha256": "370184b1e3e7d8a70043bb5359a55a27959856bbceb0dc52fef4c5ddc18306b2"
+    }
+  ],
+  "review": {
+    "schema": 1,
+    "reviewer": "independent-claude-57-58-s51-review",
+    "reviewed_at_utc": "2026-10-01T22:55:12.938594+00:00",
+    "verdict": "PASS",
+    "leaves": [
+      {
+        "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+        "provider": "claude",
+        "verdict": "PASS",
+        "scope": "Known-regression recovery, existing standing dispositions, corrected source claims, three rendered PDFs and canonical generated web; not a new full editorial production.",
+        "findings": [],
+        "standing_disposition_file": "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/blocking-findings-v1.toml",
+        "standing_disposition_sha256": "3185949180a0ff72fc2c4d87d0e4f7a8f1c85a9331f09ba7484676aca0f42287",
+        "dispositions": [
+          {
+            "category": "advisories",
+            "id": "HOM-010",
+            "author_resolution": "repaired",
+            "author_resolution_note": "sections/homily/90-note.tex and the corresponding study, concise and research claims now name the scribe's confession in Mark 12:32 that Chrysostom introduces into Homily 71 on Matthew. Re-read in registered CCEL NPNF1 10, source.txt lines 39940-40085; the appointed Matthew text does not contain the confession.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "HOM-011",
+            "author_resolution": "repaired",
+            "author_resolution_note": "sections/homily/10-homily.tex now describes the sanctuary without restoring desolate, matching the antiphon collated in propers/verified.md section 7 and its appointed-text-against-Bible table: quod desertum est is absent.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "HOM-012",
+            "author_resolution": "repaired",
+            "author_resolution_note": "sections/homily/10-homily.tex states the hinge in the speech's own short sentences and retains only Chrysostom's to confess Him also to be God. The quotation was re-read in the registered Homily 71 text; the note and word count were updated.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "RES-018",
+            "author_resolution": "repaired",
+            "author_resolution_note": "research/scope.md sections 3.3 and 4.5, research/interpretations.md section 2 and research/source-bindings.toml now distinguish PG 62 col. 80 phesin (he says, Paul) from NPNF1 13 this they own. The retained page image pg62-n83.jpg was re-read; the Greek behind the NPNF wording remains unidentified and the antecedent through all remains this audit's inference, not a Greek quotation.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "RES-019",
+            "author_resolution": "repaired",
+            "author_resolution_note": "research/scope.md section 9 records the public-domain underlying printings PG 62 (1860), PG 82 (1864) and CSEL 22 (Zingerle, 1891). Their derivative status is stated separately: the Hilary optical derivative has unresolved rights; PG 62 optical text was only an unregistered finding aid; the current registered PG 82 artifact now records public-domain mechanical OCR and remote storage because of size. Current artifact records were checked; the old unresolved-rights premise no longer describes PG 82.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "RES-020",
+            "author_resolution": "repaired",
+            "author_resolution_note": "The corpus owner added Ps 32 to the traditional Davidic attribution binding and rebuilt coverage after checking the Clementine Psalmus David and Douay A psalm for David at Ps 32:1. This leaf regenerated research/chronology.toml and chronology-annotations.tex with tools/tpt proper-chronology. Both Date tables, apparatuses, scope section 7.4 and the historical revision supplement now distinguish David's regnal era as an attribution reference point from a composition date; the former open request is answered.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "STU-006",
+            "author_resolution": "repaired",
+            "author_resolution_note": "research/interpretations.md section 3 now records Aquinas, Super Philippenses c. 4 on 4:6, in the witness list, Offertory row, moral sense and summary; the summary also includes Chrysostom. The registered Dessain volume 2 OCR at lines 42265-42283 was re-read: confidence rests on divine mercy, with Dan 9:18. No new image collation is claimed.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "STU-017",
+            "author_resolution": "repaired",
+            "author_resolution_note": "research/scope.md section 3.5 and research/interpretations.md section 2.3 now retain Augustine's complete Christus, Verbum, caro, Pater sentence, including sed Verbum et caro non utrumque unum; Pater et Verbum utrumque unum, and explain unus/unum. Re-read in the registered Enarrationes part 11 Latin text, section 2.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "SYN-020",
+            "author_resolution": "repaired",
+            "author_resolution_note": "sections/concise/01-inventory.tex confines the absence of a commemoration to 20 September 2026. The retained 1962 Missal images, Rubricae generales 111(b), printed XVIII, and Rubricae generales Missalis Romani 434(b), printed XXXI, both allow the stated same-class commemoration; the former universal prohibition was false.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "SYN-021",
+            "author_resolution": "repaired",
+            "author_resolution_note": "sections/concise/10-commentary.tex and sections/40-just-judge-merciful-hearer.tex explicitly place Augustine's humility sentence on the following verse, Ps 101:3. Re-read in Enarrationes in Psalmos 101, sermo 1, section 3; Bellarmine's gloss remains on the Alleluia's verse 2.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "SYN-022",
+            "author_resolution": "repaired",
+            "author_resolution_note": "Both sections/90-apparatus.tex and sections/concise/90-apparatus.tex now include Lev 19:18 beside Deut 6:5 among the Douay loci. The tracked Bible reads Thou shalt love thy friend as thyself, matching the body's source claim.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "VIS-001",
+            "author_resolution": "escalated",
+            "author_resolution_note": "Deferred design at the maintainer's 1 October 2026 direction: do not change the global line measure without actual clipping or overflow. The restyling in 6caf8946d moved this setting into shared src/common/propers-format.tex; the proposed narrower measure is no longer a leaf-local format change. Current page 2 retains all seven dossiers. A future measure change belongs to the shared format owner, with the fixed-page contract rechecked; this recovery makes no such design change.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "WEB-001",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "Shared converter commit ec10cec29 (21 September 2026) restores Contents navigation. The conversion lane's fresh Chromium inspection of this leaf records 10 linked h2 entries and no missing target in .scratch/recovery-web-conversion/browser-proof.json.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "WEB-002",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "Shared converter commit ec10cec29 (21 September 2026) emits semantic definition lists. The conversion lane's fresh Chromium inspection records 12 dt/dd pairs with all terms bold in .scratch/recovery-web-conversion/browser-proof.json.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "WEB-003",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "Shared styling commit ec10cec29 (21 September 2026) supplies upright .nodecor cues. The conversion lane's fresh Chromium inspection records both cues with computed font-style normal in .scratch/recovery-web-conversion/browser-proof.json.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "observations",
+            "id": "homily-review-observation-0",
+            "author_resolution": "repaired",
+            "author_resolution_note": "research/interpretations.md section 1.1 now states both directions of Chrysostom's reciprocity: the second commandment opens the road to the first and is established in return by the first. Homily 71 and its four proof texts were re-read; the already correct study and homily remain the basis.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "observations",
+            "id": "homily-review-observation-1",
+            "author_resolution": "repaired",
+            "author_resolution_note": "sections/homily/90-note.tex now gives the revised spoken count, 1,380 words, and the 120-130 words-per-minute range, approximately 10.6-11.5 minutes. It no longer adds the slower 110 words-per-minute estimate. The independent whitespace-token count removes comments and command tokens, preserves quotation contents, and counts tokens containing letters.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "observations",
+            "id": "study-review-observation-2",
+            "author_resolution": "repaired",
+            "author_resolution_note": "sections/90-apparatus.tex removes the unused Augustine Ps 32 I, 6 and II, s. 2, 8 and Bellarmine Ps 118:1 loci. Rupert had already left this apparatus with the D11 repair in 72fab1885; the surviving apparatus now lists the loci actually used.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "observations",
+            "id": "study-review-observation-3",
+            "author_resolution": "declined",
+            "author_resolution_note": "The observation itself says this is not a defect of the study. The generated Offertory entry now explicitly marks the quoted seventy years as a duration, following the shared generator repair in 84666d2f6; no date for the Gospel event is supplied by the current corpus. The generated cells and their disclosed limits are retained. Supplying a new narrated-event date would require further shared-corpus research outside this recovery's authorized scope.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "observations",
+            "id": "synthesis-review-observation-4",
+            "author_resolution": "repaired",
+            "author_resolution_note": "generation-metadata.tex uses the actual UTC finalization time captured for this revision, not an estimated future time. The same timestamp propagates through all three PDFs and the canonical web conversion.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "observations",
+            "id": "synthesis-review-observation-5",
+            "author_resolution": "repaired",
+            "author_resolution_note": "sections/concise/10-commentary.tex consistently calls the readings first, second and third, matching the order explicitly defined in the themes; variable descriptive aliases were removed where they obscured cross-proper comparison.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "observations",
+            "id": "visual-review-observation-6",
+            "author_resolution": "repaired",
+            "author_resolution_note": "homily.tex explicitly selects pdfpagemode=UseNone, so a viewer does not open an empty outline pane. The study and concise study retain their actual outlines.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "observations",
+            "id": "visual-review-observation-7",
+            "author_resolution": "repaired",
+            "author_resolution_note": "Fresh PDF rasters are generated under build/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-review/rasters, with a review-run.json that records the current PDF digests. Historical vr0/vr1 outputs are not reused for this revision.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "observations",
+            "id": "web-review-observation-8",
+            "author_resolution": "repaired",
+            "author_resolution_note": "sections/90-apparatus.tex places label{sec:references} immediately on the References heading. The generated canonical web heading carries the sec:references target itself rather than a detached span.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          }
+        ],
+        "visual": {
+          "all_pages_contact_sheet_sweep": true,
+          "all_pages_readable_scale": false,
+          "readable_scale_pages": {
+            "research": [
+              27
+            ],
+            "synthesis": [
+              2,
+              7,
+              8
+            ],
+            "homily": [
+              1,
+              3
+            ]
+          },
+          "outcome": "No actual clipping, overflow, missing section or new pagination regression observed. Full-size affected/critical pages augment all-page contact sweeps."
+        },
+        "artifacts": [
+          {
+            "path": "build/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf",
+            "sha256": "0ddb9ad88e4a2c8973a6d25d96dd2a7d6598c2c833e5e3a0a51f563a905bfab3",
+            "pages": 31,
+            "bytes": 538853,
+            "font_review": {
+              "all_embedded": true,
+              "all_subset": true,
+              "all_unicode_mapped": true,
+              "raw_pdffonts_output_sha256": "780a953e9575c3398aff74a9d20d3f906a88e7849e46764589c8e446c86f6f83"
+            }
+          },
+          {
+            "path": "build/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf",
+            "sha256": "88d173e9934c9f913a2c19ccc9037f09218033b38fdda889d24c7febaf26a09e",
+            "pages": 10,
+            "bytes": 449540,
+            "font_review": {
+              "all_embedded": true,
+              "all_subset": true,
+              "all_unicode_mapped": true,
+              "raw_pdffonts_output_sha256": "c7a2d926c10ed9090dd46c22f1950471ea9eaa86637558357aeae29e1c5051d1"
+            }
+          },
+          {
+            "path": "build/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf",
+            "sha256": "ff0409f2a7eb4392d6c7e51885950eefc0c3e1c3a86818981b1a6e4058faf8d4",
+            "pages": 3,
+            "bytes": 274954,
+            "font_review": {
+              "all_embedded": true,
+              "all_subset": true,
+              "all_unicode_mapped": true,
+              "raw_pdffonts_output_sha256": "31e48bf0c97205d094705868d887c23bd7cd9eeabf0ab86eeddc967ce33addcb"
+            }
+          }
+        ],
+        "web": [
+          {
+            "path": "build/web/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md",
+            "sha256": "17c96f728bb49f1405ce0dcc33d00599bbd417c2552818307871c5d6d5d7c7df",
+            "toc": 1,
+            "dt": 12,
+            "dd": 12,
+            "duplicate_ids": [],
+            "broken_fragments": [],
+            "nodecor": false,
+            "bytes": 116738
+          }
+        ]
+      },
+      {
+        "document": "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost",
+        "provider": "claude",
+        "verdict": "PASS",
+        "scope": "Known-regression recovery, existing standing dispositions, corrected source claims, three rendered PDFs and canonical generated web; not a new full editorial production.",
+        "findings": [],
+        "standing_disposition_file": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/evaluations/blocking-findings-v1.toml",
+        "standing_disposition_sha256": "0b07d20896b373783ad4c4cf5906d8a087fd98a9922923e814d0d2c1260d113e",
+        "dispositions": [
+          {
+            "category": "accepted",
+            "id": "HOM-011",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "5dadb6678: sections/40-nothing-of-our-own.tex, Not quietism; scope 3.5 and interpretations 3.4 now complete Aquinas's three commands, including quia ire non poterat, dixit, Et ambula (Venice 1745 p. 122). The retained OCR at lines 16507–16512 was reopened in recovery.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "accepted",
+            "id": "VIS-001",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "083a9ce84: The expanded third reading moved the comparison close; current page 29 is substantive; recovery full-size inspection of pages 27–29 confirmed this.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "accepted",
+            "id": "VIS-002",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "5dadb6678: sections/50-comparison.tex: comparison table no longer leaves its seventh row alone on a new page; recovery full-size inspection confirms rows 1–3 on page 27 and rows 4–7 on page 28, with no orphaned seventh row.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "HOM-008",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "ff6a55398: sections/homily/10-homily.tex: the healer quotation follows forgiveness, as in Chrysostom, Hom. in Matt. 29.2, CCEL NPNF1-10.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "HOM-009",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "ff6a55398: sections/homily/10-homily.tex: Whatever faith he had, it brought him only as far as he was carried; the spoken syntax and unsupported exactly are repaired.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "HOM-010",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "452961c9f: sections/homily/10-homily.tex: the final movement names Christ's death and rising, Eucharist and Body and Blood in the preacher's voice.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "RES-031",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "e1b946ce8: scope 3.5 and 10, its header, and interpretations 2.2 retain Ambrose's penitential imagery and reserve contritio/satisfactio for Aquinas. Ambrose V.14 was reopened: lectus doloris, conscience, Psalm 6 tears and return to paradise are present.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "RES-032",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "083a9ce84; 34f520bbe; f7b2e71ca: scope 3.5, 4.2 and 10, interpretations 3, bindings and third reading identify the sequel as Sermo 50 received under Chrysologus, also under Maximus; controlled PL 52/57 witnesses and disputed authorship are retained. It is not assigned to Chrysostom.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "RES-033",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "e1b946ce8: scope 2.7 and 10, interpretations opening: four of five identify the Communion; Sicard VIII.18 names Offertory and Communion by sense only, matching the controlled locus inventory.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "RES-034",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "e1b946ce8: scope 3.5, 3.9, 3.11, 6.3; interpretations 2.3, 2.4, 3.2, 3.4; source-bindings: continuation XI pp. 395, 408–409 (PDF 416, 429–430) and Aquinas p. 122 are recorded under their proper authors.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "RES-035",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "e1b946ce8: interpretations 4.4: paradise belongs to Hilary and Ambrose; house of eternity to Aquinas, whose retained p. 122 text was reopened.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "RES-036",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "e1b946ce8: interpretations 3.2 preserves Chrysostom's seems to court them, free of flattery and also covertly accusing, and no longer calls accusation his whole reading.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "STU-023",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "e1b946ce8: interpretations 2.4 leaves his own city disputed (Chrysostom: Capernaum; Jerome: Nazareth); 1.2 and 1.3 include Aquinas beside Hilary for the Gentile-city allegory.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "STU-024",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "5dadb6678: sections/10-each-element.tex gives the Offertory and Secret their settings; a Lapide and Schuster's developed arguments have one home in sections/30-authority-on-earth.tex.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "SYN-008",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "5dadb6678: sections/concise/04-themes.tex says in its Collect and only collect, not single prayer.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "VIS-003",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "5dadb6678: sections/80-date-location.tex has medskip between introductory prose and dossier rule.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "VIS-004",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "5dadb6678: sections/50-comparison.tex header shortened to Power to forgive.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "VIS-005",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "5dadb6678: sections/homily/10-homily.tex uses raggedcolumns; ordinary movement spacing no longer stretches to fill columns.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "WEB-001",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "0df032e15: Shared converter restores all nonempty propertitle fields and checks their presence. Recovery regenerates this leaf with that converter.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "observations",
+            "id": "research-review-observation-0",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "3cc830e86 and d798a0bb0: the central index now has the Mt 9 Chrysologus witness; scope and production-review third pass correct the earlier missing-row statement.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "observations",
+            "id": "research-review-observation-1",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "e1b946ce8: the scope header explicitly records iteration 7 and c2c54133a, which changed interpretations alone; production-review second pass records the correction.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "observations",
+            "id": "visual-review-observation-2",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "a9086b3da: the 1962 profile now points to the shared dossier environments as sole owner of measurements, eliminating the conflicting dimensions.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "observations",
+            "id": "web-review-observation-3",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "0df032e15: shared-format dossier notes become full-width paragraphs beneath their rows; current web generation and review check this leaf.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "escalations",
+            "id": "STU-005",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "6586bb5ef; e974de733: Shared chronology policy and preflight admit locus-labelled dates; both dossiers give Ecclus 36:18 B.C. 190–170 or c. B.C. 280 and Ps 121:1 before c. 165 B.C. while preserving the nonuniform Date cell.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          }
+        ],
+        "visual": {
+          "all_pages_contact_sheet_sweep": true,
+          "all_pages_readable_scale": false,
+          "readable_scale_pages": {
+            "research": [
+              27,
+              28,
+              29,
+              30
+            ],
+            "synthesis": [
+              2
+            ],
+            "homily": [
+              3
+            ]
+          },
+          "outcome": "No actual clipping, overflow, missing section or new pagination regression observed. Full-size affected/critical pages augment all-page contact sweeps."
+        },
+        "artifacts": [
+          {
+            "path": "build/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.pdf",
+            "sha256": "9e32a8b53ad66a9605981174dbca1325e00ca297b96b093fe39b9e756c5ae857",
+            "pages": 34,
+            "bytes": 570454,
+            "font_review": {
+              "all_embedded": true,
+              "all_subset": true,
+              "all_unicode_mapped": true,
+              "raw_pdffonts_output_sha256": "6d076e7ac38e537cc31851d44098bd13cfc2998afc0e2ea0f0cc94b2603f51a5"
+            }
+          },
+          {
+            "path": "build/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-synthesis.pdf",
+            "sha256": "bdd75e96c97cf2a176350ae11543d56aef1e42b48b9ea5f15e3d69d9a9a975b1",
+            "pages": 12,
+            "bytes": 459953,
+            "font_review": {
+              "all_embedded": true,
+              "all_subset": true,
+              "all_unicode_mapped": true,
+              "raw_pdffonts_output_sha256": "3d65598f06eb57f6123e76c73bc14e13998509203fe5a4db1bf7b55fb772d9f4"
+            }
+          },
+          {
+            "path": "build/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-homily.pdf",
+            "sha256": "a4f69e36d297de8ec8c7cedcd1d6343d047b3b0bf5735b6b6875b8c3c7218e4e",
+            "pages": 3,
+            "bytes": 275110,
+            "font_review": {
+              "all_embedded": true,
+              "all_subset": true,
+              "all_unicode_mapped": true,
+              "raw_pdffonts_output_sha256": "bdf8157356daf61302cdbc206dc3e5ad5edfc983ecb385aa4e28467a761430bb"
+            }
+          }
+        ],
+        "web": [
+          {
+            "path": "build/web/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.md",
+            "sha256": "2fa1562ee4640682e311e2d13408997ebde30d8f43c795d2ac1df0c03c7bb5b2",
+            "toc": 1,
+            "dt": 12,
+            "dd": 12,
+            "duplicate_ids": [],
+            "broken_fragments": [],
+            "nodecor": false,
+            "bytes": 133656
+          }
+        ]
+      },
+      {
+        "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+        "provider": "claude",
+        "verdict": "PASS",
+        "scope": "Known-regression recovery, existing standing dispositions, corrected source claims, three rendered PDFs and canonical generated web; not a new full editorial production.",
+        "findings": [],
+        "standing_disposition_file": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/blocking-findings-v1.toml",
+        "standing_disposition_sha256": "bb8501198c531ea06284d6de256c1eaa2051b68d891df70c4190d1335844676a",
+        "dispositions": [
+          {
+            "category": "advisories",
+            "id": "HOM-001",
+            "author_resolution": "repaired",
+            "author_resolution_note": "sections/homily/90-note.tex explicitly records the denarius/self-gift synthesis joining Jerome on the coin to Augustine on Ps 144:18, plus the Isaiah arithmetic and present-hearer applications; none is attributed to a Father.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "HOM-002",
+            "author_resolution": "repaired",
+            "author_resolution_note": "sections/homily/10-homily.tex names the same Lord Jesus who gave himself in death and rising at Communion. The note locates this in Mt 20:17–19 and Jn 10:17–18, already read in research/scope 2; spoken length falls from 1,482 to 1,463 words.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "RES-017",
+            "author_resolution": "repaired",
+            "author_resolution_note": "research/scope.md sections 3.6 and 4 and research/interpretations.md remove unsupported priority, generation interval and independence; each author still states his own checked claim. No replacement dating or dependence claim is invented.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "RES-018",
+            "author_resolution": "repaired",
+            "author_resolution_note": "research/context.md names its English summary of Praenotanda 106 (printed p. XLV) as paraphrase of the Latin and removes quotation marks; it claims no English witness.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "RES-019",
+            "author_resolution": "repaired",
+            "author_resolution_note": "research/scope.md 3 withdraws the irreconcilable historical aggregate, whose original per-item receipt is unavailable. A current bounded check of the twelve Gregory quotations in interpretations matched ten initially, corrected Eumdem ergo denarium and the punctuation/case of saltem in ultima aetate resipiscite, and matched twelve finally against the bound complete text (dc25dd69...). Original first-pass counts are not reconstructed.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "SYN-001",
+            "author_resolution": "repaired",
+            "author_resolution_note": "sections/concise/10-commentary.tex reports Chrysostom's complaint as a measure of the latecomers' honour (Hom. in Matt. 64.3, retained CCEL NPNF1-10 lines 36397–36489 reopened); the limited role of the ending is assigned to the second interpretation, not to Chrysostom's account.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "SYN-002",
+            "author_resolution": "repaired",
+            "author_resolution_note": "sections/concise/90-apparatus.tex restores the unresolved question whether the United States Lectionary permits another Alleluia verse from a common set, matching the study and verified appointment record.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "SYN-003",
+            "author_resolution": "repaired",
+            "author_resolution_note": "sections/concise/10-commentary.tex explicitly makes their different readings of Acts the subject and says these touch neither the first step nor the opening claim; it preserves the second step as Augustine's alone.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "VIS-001",
+            "author_resolution": "repaired",
+            "author_resolution_note": "sections/00-opening.tex adds medskip above the small study-translation note to match the space below it.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "WEB-001",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "ec10cec29: the shared converter emits a web Contents for a schema-2 proper requesting tableofcontents, and audits its presence. Recovery regeneration uses this implementation.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "advisories",
+            "id": "WEB-002",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "ec10cec29: schema-2 descriptions preserve semantic definition terms instead of whitespace-dependent breaks, with site styling and converter tests. Recovery regenerates and checks the four-senses blocks.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "observations",
+            "id": "homily-review-observation-0",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "6f3a3567c: the three-document profile now defines homily element_keys as research informing the speech, not a claim that every element is recited.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "observations",
+            "id": "study-review-observation-1",
+            "author_resolution": "deferred",
+            "author_resolution_note": "The coordinator confirms that widening the house-voice heuristic to study is deliberate planned design work excluded from this recovery (PROJECT-WORK, corpus-links-and-known-issues-2026-10-01). The prior authored sentences are already repaired; no new gate rule is inferred.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "observations",
+            "id": "study-review-observation-2",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "097c14112: the current scope and interpretations records incorporate all six source corrections, including Chrysostom's non-disputatious Acts account, Jerome's uncommented second sentence, the second parable-rule application and Aquinas's David division.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "observations",
+            "id": "web-review-observation-3",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "0df032e15: shared-format dossier notes render as paragraphs beneath their data rows; current conversion is verified rather than changing the leaf's table style.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "observations",
+            "id": "web-review-observation-4",
+            "author_resolution": "already-repaired",
+            "author_resolution_note": "ec10cec29 and the current semantic-break conversion: no generated trailing-space break is needed; schema-2 four senses use definitions and explicit line breaks use br. Recovery checks the site-safe output.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          },
+          {
+            "category": "observations",
+            "id": "web-review-observation-5",
+            "author_resolution": "repaired",
+            "author_resolution_note": "sections/90-apparatus.tex moves label sec:references immediately after its heading so the converter binds the stable id to the heading instead of leaving a separate empty span.",
+            "reviewer_disposition": "consistent with scoped recovery review; preserve stated qualification"
+          }
+        ],
+        "visual": {
+          "all_pages_contact_sheet_sweep": true,
+          "all_pages_readable_scale": false,
+          "readable_scale_pages": {
+            "research": [
+              25,
+              27,
+              28
+            ],
+            "synthesis": [
+              2
+            ],
+            "homily": [
+              2,
+              3
+            ]
+          },
+          "outcome": "No actual clipping, overflow, missing section or new pagination regression observed. Full-size affected/critical pages augment all-page contact sweeps."
+        },
+        "artifacts": [
+          {
+            "path": "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf",
+            "sha256": "5a5c2d7c366562687f38c573a4dd15340b3dbbc2be714cb0b28d9da7bcfc95fa",
+            "pages": 31,
+            "bytes": 545107,
+            "font_review": {
+              "all_embedded": true,
+              "all_subset": true,
+              "all_unicode_mapped": true,
+              "raw_pdffonts_output_sha256": "ec263d9f0685c29186f6caafc014ff9920aba7a9e5e245b1dd0373b195529558"
+            }
+          },
+          {
+            "path": "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+            "sha256": "a3074800af436139453fb484e918538d25d5948432d0d8724c3d9db8679661c6",
+            "pages": 10,
+            "bytes": 433219,
+            "font_review": {
+              "all_embedded": true,
+              "all_subset": true,
+              "all_unicode_mapped": true,
+              "raw_pdffonts_output_sha256": "c1544d2a588c337917590ee17e4c1e1487b12c6bef61ddbdd6a584718931d040"
+            }
+          },
+          {
+            "path": "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf",
+            "sha256": "97ff3ce6d9228383548ed463c2b3b73e5873e45f50c26f93fd8ada5b1400c2c5",
+            "pages": 4,
+            "bytes": 284366,
+            "font_review": {
+              "all_embedded": true,
+              "all_subset": true,
+              "all_unicode_mapped": true,
+              "raw_pdffonts_output_sha256": "f947ab91910e3d8338eaadfecc83c1a0a76af64d20740ae35d3f8a2944870a08"
+            }
+          }
+        ],
+        "web": [
+          {
+            "path": "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md",
+            "sha256": "a5b66e415ca2977795cc1890736a6b0c31661ddcf201b721d9d85752629f09ab",
+            "toc": 1,
+            "dt": 12,
+            "dd": 12,
+            "duplicate_ids": [],
+            "broken_fragments": [],
+            "nodecor": false,
+            "bytes": 123879
+          }
+        ]
+      }
+    ],
+    "independent_checks": [
+      {
+        "command": [
+          ".scratch/recovery-root/venv/bin/python",
+          "scripts/_proper_study.py",
+          "check",
+          "--provider",
+          "claude",
+          "--document",
+          "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+          "--phase",
+          "artifacts"
+        ],
+        "exit": 0,
+        "log": "57-check-0.log"
+      },
+      {
+        "command": [
+          ".scratch/recovery-root/venv/bin/python",
+          "tools/check-web-edition",
+          "--provider",
+          "claude",
+          "--document",
+          "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
+        ],
+        "exit": 0,
+        "log": "57-check-1.log"
+      },
+      {
+        "command": [
+          ".scratch/recovery-root/venv/bin/python",
+          "tools/tpt",
+          "proper-chronology",
+          "record",
+          "--provider",
+          "claude",
+          "--document",
+          "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+          "--check"
+        ],
+        "exit": 0,
+        "log": "57-check-2.log"
+      },
+      {
+        "command": [
+          ".scratch/recovery-root/venv/bin/python",
+          "tools/tpt",
+          "proper-chronology",
+          "annotations",
+          "--provider",
+          "claude",
+          "--document",
+          "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+          "--check"
+        ],
+        "exit": 0,
+        "log": "57-check-3.log"
+      },
+      {
+        "command": [
+          ".scratch/recovery-root/venv/bin/python",
+          "scripts/_proper_study.py",
+          "check",
+          "--provider",
+          "claude",
+          "--document",
+          "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost",
+          "--phase",
+          "artifacts"
+        ],
+        "exit": 0,
+        "log": "58-check-0.log"
+      },
+      {
+        "command": [
+          ".scratch/recovery-root/venv/bin/python",
+          "tools/check-web-edition",
+          "--provider",
+          "claude",
+          "--document",
+          "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"
+        ],
+        "exit": 0,
+        "log": "58-check-1.log"
+      },
+      {
+        "command": [
+          ".scratch/recovery-root/venv/bin/python",
+          "tools/tpt",
+          "proper-chronology",
+          "record",
+          "--provider",
+          "claude",
+          "--document",
+          "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost",
+          "--check"
+        ],
+        "exit": 0,
+        "log": "58-check-2.log"
+      },
+      {
+        "command": [
+          ".scratch/recovery-root/venv/bin/python",
+          "tools/tpt",
+          "proper-chronology",
+          "annotations",
+          "--provider",
+          "claude",
+          "--document",
+          "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost",
+          "--check"
+        ],
+        "exit": 0,
+        "log": "58-check-3.log"
+      },
+      {
+        "command": [
+          ".scratch/recovery-root/venv/bin/python",
+          "scripts/_proper_study.py",
+          "check",
+          "--provider",
+          "claude",
+          "--document",
+          "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+          "--phase",
+          "artifacts"
+        ],
+        "exit": 0,
+        "log": "pc-check-0.log"
+      },
+      {
+        "command": [
+          ".scratch/recovery-root/venv/bin/python",
+          "tools/check-web-edition",
+          "--provider",
+          "claude",
+          "--document",
+          "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"
+        ],
+        "exit": 0,
+        "log": "pc-check-1.log"
+      },
+      {
+        "command": [
+          ".scratch/recovery-root/venv/bin/python",
+          "tools/tpt",
+          "proper-chronology",
+          "record",
+          "--provider",
+          "claude",
+          "--document",
+          "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+          "--check"
+        ],
+        "exit": 0,
+        "log": "pc-check-2.log"
+      },
+      {
+        "command": [
+          ".scratch/recovery-root/venv/bin/python",
+          "tools/tpt",
+          "proper-chronology",
+          "annotations",
+          "--provider",
+          "claude",
+          "--document",
+          "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+          "--check"
+        ],
+        "exit": 0,
+        "log": "pc-check-3.log"
+      }
+    ],
+    "source_inspections": [
+      {
+        "path": ".scratch/rev-claude-57/pg62-n83.jpg",
+        "sha256": "efd4c7cd895629b398b884896e96213f4568a679f1ba39a24a8c32f88790421d",
+        "inspection": "Image independently viewed: PG62 col80 lower right singular phesin; does not identify the Greek underlying NPNF plural."
+      },
+      {
+        "path": ".scratch/rev-claude-57/rg111-0016.png",
+        "sha256": "e1a76e837730fa160955abb224c2859a21fa14c51e1f6dde6b1d364308128c31",
+        "inspection": "Image independently viewed: 1962 general rubrics111b permits stated second-class commemoration subject to privileged commemoration."
+      },
+      {
+        "path": ".scratch/rev-claude-57/rgmr434-0029.png",
+        "sha256": "74091eca20724c8282c44ce5db7b629f457262606d3a2ac39fc99d71aa9d7028",
+        "inspection": "Image independently viewed: Missal general rubrics434b confirms same qualification."
+      },
+      {
+        "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/editions/2026-09-17-ccel-web/artifacts/ccel-text-adb8f1c9/source.txt",
+        "sha256": "adb8f1c9a988c5050a20fb9fdbf75143dcb227e95e3dad2f560a63b757923648",
+        "inspection": "Read Homilies Matthew71 lines39940–40085,64 lines36397–36495,29 forgiveness/healer context at18574: supports Mark/Matthew distinction, reciprocal commandments, honour of latecomers, parable limits, silence after forgiveness."
+      },
+      {
+        "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/latin-migne-corpus-corporum-wikisource-web-2026-09-05/artifacts/wikisource-part-11-latin-text/enarrationes-part-11.txt",
+        "sha256": "8b9dafef805536c0d4551fc427a6b7060fc1655326b0d1e14507b317dfcf711f",
+        "inspection": "Read Ps101 sermo1 sections2–3 (lines6–7): full unus/unum antithesis, humility tied to verse3 following appointed verse2."
+      },
+      {
+        "path": "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/artifacts/book-ocr-2b7b11dc/source.txt",
+        "sha256": "2b7b11dccac61ed35cef61e412b521c4028890caec2611c362336450972567ed",
+        "inspection": "Read42250–42290: Philippians4:6 confidence on mercy and Daniel9:18; optical text check, no fresh facsimile claim."
+      },
+      {
+        "path": "src/sources/works/thomas-aquinas/opera-editio-altera-veneta-tomus-3/editions/1745-venice-bettinelli/artifacts/ia-djvu-ocr-10aa155e/aquinas-opera-veneta-1745-tomus-3-djvu.txt",
+        "sha256": "10aa155e6eb5e079509c9445fc876f1a876879172159200e85974c579963efee",
+        "inspection": "Read16485–16535: Matthew9 triad completed with Et ambula; administration/authority; contrition/satisfaction; house of eternity/conscience. Optical text, not new page collation."
+      },
+      {
+        "path": "src/sources/works/ambrose/expositio-evangelii-secundum-lucam/editions/2026-09-05-latin-migne-wikisource-book-5/artifacts/wikisource-book-5-fde2303a/ambrose-luke5-raw.txt",
+        "sha256": "fde2303a59dfd232a508f9a2e0d289c24df699607f7570b2139a9edc6330ac52",
+        "inspection": "ReadV10–15 including13–15: penitential imagery, conscience, tears, return to paradise, crowd judgement; contrasts supported."
+      },
+      {
+        "path": "src/sources/works/peter-chrysologus/sermones/editions/1894-garnier-migne-pl-52/artifacts/sermo-50-checked-text-bce4087b/chrysologus-sermo-50.txt",
+        "sha256": "bce4087b25ad339035b6918473593a2f6a23d423d6a35a97843450d1a0adc01f",
+        "inspection": "Read whole retained Sermo50 checked transcription. Inspected source passage metadata preserving multiple attributions and printed non respicit difficulty, without settling authorship."
+      },
+      {
+        "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-12/editions/2026-09-28-ccel-web/artifacts/ccel-text-10a3454d/source.txt",
+        "sha256": "10a3454d6c08d52088837132f06ca07c5a1ec9d7264d909fa92c48aa3b2ddddc",
+        "inspection": "Read770–800: 1Cor1:8 seems to court, free from flattery, also covertly accusing. Current qualification supported."
+      },
+      {
+        "path": "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/artifacts/complete-extracted-text-dc25dd69/gregory-whole.txt",
+        "sha256": "dc25dd691b3ed44100e8417b7cdad9e6120753cf60bc59b80c7c3239471e618d",
+        "inspection": "Read changed wording in context; independently matched all12 Gregory quotation strings currently listed in pc-s51 interpretations, with whitespace/ligature/case normalization and ordered ellipsis spans. Does not recreate withdrawn historical aggregate."
+      },
+      {
+        "path": ".scratch/recovery-calendar/ordo1981.txt",
+        "sha256": "e121610f2cc4e728d3c9086f201ff6e40468d905f255bae962849212e3870ff5",
+        "inspection": "Read1425–1436 Praenotanda106: Latin relation/titles statement supports explicitly labelled English paraphrase. Retained extracted source; not a new facsimile inspection."
+      },
+      {
+        "path": "src/sources/works/catholic-encyclopedia/volume-4/editions/new-york-1908/artifacts/newadvent-04642b-f1c0bed3-article-text/newadvent-04642b-f1c0bed3-article-text.txt",
+        "sha256": "9ec755b99fe64e052da036362ebc20990d002c8e59a6bd219b0467e6dd981279",
+        "inspection": "Read opening David paragraph: usual chronology1055–1015B.C. and later dating alternative. Checked source passage control metadata; current leaf labels regnal attribution reference, not composition."
+      },
+      {
+        "path": "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/gutenberg-text-7d10da78/pg1581.txt",
+        "sha256": "7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007",
+        "inspection": "ReadLeviticus19:18 lines12765–12768: friend as thyself supports new apparatus locus."
+      }
+    ],
+    "web_browser_checks": [
+      {
+        "name": "57",
+        "width": 1280,
+        "viewport": 1280,
+        "body": 1265,
+        "toc": 10,
+        "definitions": 12,
+        "dossierTables": 7,
+        "dossier": [
+          {
+            "width": 631.625,
+            "scroll": 631,
+            "client": 632,
+            "notes": []
+          },
+          {
+            "width": 631.625,
+            "scroll": 631,
+            "client": 632,
+            "notes": []
+          },
+          {
+            "width": 631.625,
+            "scroll": 631,
+            "client": 632,
+            "notes": []
+          },
+          {
+            "width": 631.625,
+            "scroll": 631,
+            "client": 632,
+            "notes": []
+          },
+          {
+            "width": 631.625,
+            "scroll": 631,
+            "client": 632,
+            "notes": []
+          },
+          {
+            "width": 631.625,
+            "scroll": 631,
+            "client": 632,
+            "notes": []
+          },
+          {
+            "width": 631.625,
+            "scroll": 631,
+            "client": 632,
+            "notes": []
+          }
+        ]
+      },
+      {
+        "name": "57",
+        "width": 390,
+        "viewport": 390,
+        "body": 375,
+        "toc": 10,
+        "definitions": 12,
+        "dossierTables": 7,
+        "dossier": [
+          {
+            "width": 327,
+            "scroll": 327,
+            "client": 327,
+            "notes": []
+          },
+          {
+            "width": 327,
+            "scroll": 327,
+            "client": 327,
+            "notes": []
+          },
+          {
+            "width": 327,
+            "scroll": 327,
+            "client": 327,
+            "notes": []
+          },
+          {
+            "width": 327,
+            "scroll": 327,
+            "client": 327,
+            "notes": []
+          },
+          {
+            "width": 327,
+            "scroll": 327,
+            "client": 327,
+            "notes": []
+          },
+          {
+            "width": 327,
+            "scroll": 327,
+            "client": 327,
+            "notes": []
+          },
+          {
+            "width": 327,
+            "scroll": 327,
+            "client": 327,
+            "notes": []
+          }
+        ]
+      },
+      {
+        "name": "58",
+        "width": 1280,
+        "viewport": 1280,
+        "body": 1265,
+        "toc": 10,
+        "definitions": 12,
+        "dossierTables": 7,
+        "dossier": [
+          {
+            "width": 631.625,
+            "scroll": 631,
+            "client": 632,
+            "notes": []
+          },
+          {
+            "width": 631.625,
+            "scroll": 631,
+            "client": 632,
+            "notes": []
+          },
+          {
+            "width": 631.625,
+            "scroll": 631,
+            "client": 632,
+            "notes": []
+          },
+          {
+            "width": 631.625,
+            "scroll": 631,
+            "client": 632,
+            "notes": []
+          },
+          {
+            "width": 631.625,
+            "scroll": 631,
+            "client": 632,
+            "notes": []
+          },
+          {
+            "width": 631.625,
+            "scroll": 631,
+            "client": 632,
+            "notes": []
+          },
+          {
+            "width": 631.625,
+            "scroll": 631,
+            "client": 632,
+            "notes": []
+          }
+        ]
+      },
+      {
+        "name": "58",
+        "width": 390,
+        "viewport": 390,
+        "body": 375,
+        "toc": 10,
+        "definitions": 12,
+        "dossierTables": 7,
+        "dossier": [
+          {
+            "width": 327,
+            "scroll": 327,
+            "client": 327,
+            "notes": []
+          },
+          {
+            "width": 327,
+            "scroll": 327,
+            "client": 327,
+            "notes": []
+          },
+          {
+            "width": 327,
+            "scroll": 327,
+            "client": 327,
+            "notes": []
+          },
+          {
+            "width": 327,
+            "scroll": 327,
+            "client": 327,
+            "notes": []
+          },
+          {
+            "width": 327,
+            "scroll": 327,
+            "client": 327,
+            "notes": []
+          },
+          {
+            "width": 327,
+            "scroll": 327,
+            "client": 327,
+            "notes": []
+          },
+          {
+            "width": 327,
+            "scroll": 327,
+            "client": 327,
+            "notes": []
+          }
+        ]
+      },
+      {
+        "name": "pc",
+        "width": 1280,
+        "viewport": 1280,
+        "body": 1265,
+        "toc": 11,
+        "definitions": 12,
+        "dossierTables": 8,
+        "dossier": [
+          {
+            "width": 631.625,
+            "scroll": 631,
+            "client": 632,
+            "notes": []
+          },
+          {
+            "width": 631.625,
+            "scroll": 631,
+            "client": 632,
+            "notes": []
+          },
+          {
+            "width": 631.625,
+            "scroll": 631,
+            "client": 632,
+            "notes": []
+          },
+          {
+            "width": 631.625,
+            "scroll": 631,
+            "client": 632,
+            "notes": []
+          },
+          {
+            "width": 631.625,
+            "scroll": 631,
+            "client": 632,
+            "notes": []
+          },
+          {
+            "width": 631.625,
+            "scroll": 631,
+            "client": 632,
+            "notes": []
+          },
+          {
+            "width": 631.625,
+            "scroll": 631,
+            "client": 632,
+            "notes": []
+          },
+          {
+            "width": 631.625,
+            "scroll": 631,
+            "client": 632,
+            "notes": []
+          }
+        ]
+      },
+      {
+        "name": "pc",
+        "width": 390,
+        "viewport": 390,
+        "body": 375,
+        "toc": 11,
+        "definitions": 12,
+        "dossierTables": 8,
+        "dossier": [
+          {
+            "width": 327,
+            "scroll": 327,
+            "client": 327,
+            "notes": []
+          },
+          {
+            "width": 327,
+            "scroll": 327,
+            "client": 327,
+            "notes": []
+          },
+          {
+            "width": 327,
+            "scroll": 327,
+            "client": 327,
+            "notes": []
+          },
+          {
+            "width": 327,
+            "scroll": 327,
+            "client": 327,
+            "notes": []
+          },
+          {
+            "width": 327,
+            "scroll": 327,
+            "client": 327,
+            "notes": []
+          },
+          {
+            "width": 327,
+            "scroll": 327,
+            "client": 327,
+            "notes": []
+          },
+          {
+            "width": 327,
+            "scroll": 327,
+            "client": 327,
+            "notes": []
+          },
+          {
+            "width": 327,
+            "scroll": 327,
+            "client": 327,
+            "notes": []
+          }
+        ]
+      }
+    ],
+    "evidence": {
+      "rasters": [
+        "build/recovery-review-57-58-s51/01/rasters/review-run.json",
+        "build/recovery-review-57-58-s51/03/rasters/review-run.json"
+      ],
+      "gregory_audit": ".scratch/recovery-review-57-58-s51/gregory-audit.json",
+      "browser": ".scratch/recovery-review-57-58-s51/browser-checks.json",
+      "checks": ".scratch/recovery-review-57-58-s51/independent-checks.json"
+    },
+    "limits": [
+      "Scope is the recovered changes and standing actual defects, not an exhaustive re-audit of every unchanged quotation in the publications.",
+      "All138PDF pages visually swept in fresh contact sheets; identified dense and affected pages additionally viewed at readable scale, as enumerated. No claim that every page was individually opened full-size.",
+      "Web uses the exact locked Markdown renderer and current site CSS at1280px and390px in isolated reader wrappers; full site publication/navigation is outside this leaf review.",
+      "57VIS-001 remains deferred shared line-measure design; no observed clipping/overflow. Unresolved Gospel-event date retained; no invented chronology.",
+      "pc-s51 house-voice heuristic expansion remains planned design outside recovery; missing historical33/32 audit receipt is honestly withdrawn rather than reconstructed.",
+      "Chrysologus/Maximus authorship, printed readings, witness derivative rights and other existing source qualifications remain qualified; this review does not resolve them.",
+      "Fonts were independently inspected with pdffonts: all nine PDFs have embedded subset fonts with Unicode maps. No new tracked source edits, installs, commits or publication were performed."
+    ]
+  },
+  "retention": "Exact source and output identities, scopes, standing dispositions and review results retained. Raw font listings summarized; source scans, source excerpts, rasters, browser profiles and raw HTML are not copied.",
+  "aggregation_verification": {
+    "current_artifact_hashes_verified": 12,
+    "source_inspection_hashes_verified": 14,
+    "standing_disposition_hashes_verified": 3
+  },
+  "integration": "Coordinator acceptance and final installed-byte verification are outside this review record."
+}
