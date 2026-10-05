@@ -21,7 +21,7 @@ The dated FSSP Province de France witness corroborates the occurrence. The
 inspected 1962 Missal governs the conditional Maternity commemoration, precedence
 and Trinity Preface; no unspecified local-calendar privilege is asserted.
 
-**Workflow ACCEPTED; live deployment pending.** The reviewed
+**Workflow ACCEPTED and pushed to main; live deployment externally blocked.** The reviewed
 family has a 21-page expansive study (6,338 substantive words), a ten-page concise
 study (3,784 words), a three-page homily (1,377 spoken words, estimated 11–12
 minutes), and the canonical web edition. All final content, visual and web
@@ -115,8 +115,23 @@ build and GitHub Pages-target verification pass. The source gate caught an audit
 record hash changed during final archive wording; after refreshing its inventory,
 the complete `make check-sources` rerun passed.
 [Local integration evidence](workflows/reviews/propers-quality-2026-10-05/sunday-integration-evidence.json)
-records the exact checks and preserved prior states. The audited ordinary
-fast-forward push and live-byte checks remain.
+records the exact checks and preserved prior states. Commit
+`055e18fa1cd245fc280652a794f1de7396d2271b` reached main and the workspace
+branch by audited ordinary fast-forward. The outgoing range contains 274 paths,
+only two lawful 1862 facsimile clips as new binary Git content, no private-data
+pattern matches, and no ignored build/scratch/publication PDF files. Native
+archived gate-log terminal blanks are intentionally preserved byte for byte;
+all authored sources and records pass whitespace checks.
+
+Pages run `37364001250` failed without executing a build step: its hosted
+runner was never acquired after repeated attempts. GitHub simultaneously
+reported an Actions runner-assignment incident. The
+[external blocker evidence](workflows/reviews/propers-quality-2026-10-05/sunday-deployment-pending.json)
+records the actual failure and remaining live checks. The evidence-record push
+will trigger a new automatic attempt. No content or CI repair is warranted by
+this platform failure. The main-and-pages requirement remains open until a
+successful deployment and exact live-byte/retired-route checks; it is not
+claimed complete by local build success or the accepted production workflow.
 
 ## Corpus PDF links and every known issue, 2026-10-01
 

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "status": "blocked-external-runner-allocation",
+  "observed_at": "2026-10-05T19:48:51.532437+00:00",
+  "workflow_head": "055e18fa1cd245fc280652a794f1de7396d2271b",
+  "workflow_run_id": 37364001250,
+  "workflow_url": "https://github.com/spincyc/triptych/actions/runs/37364001250",
+  "workflow_status": "completed",
+  "workflow_conclusion": "failure",
+  "job_conclusion": "cancelled",
+  "job_started_at": "2026-10-05T19:31:55Z",
+  "job_completed_at": "2026-10-05T19:46:58Z",
+  "executed_steps": 0,
+  "annotation": "The job was not acquired by Runner of type hosted even after multiple attempts",
+  "github_status_incident": "https://www.githubstatus.com/incidents/3q1yb5m7ltvb",
+  "incident_status_when_checked": "investigating",
+  "incident_started_at": "2026-10-05T19:11:58.373Z",
+  "incident_scope": "GitHub reports delays assigning hosted runners to Actions jobs.",
+  "main_push": "ordinary fast-forward succeeded; workspace branch also pushed",
+  "local_gates": "passed; see sunday-integration-evidence.json",
+  "actual_proper_workflow": "ACCEPTED; all 38 results archived",
+  "live_resources_verified": false,
+  "remaining_work": [
+    "Successful GitHub Pages deployment after hosted-runner recovery.",
+    "Compare three live PDFs, canonical web, owning catalog, document catalog, and affected source projections to the verified local site; confirm removed OCR endpoint returns 404.",
+    "Close the main-and-pages ledger requirement only after that evidence exists."
+  ],
+  "recovery": "The evidence-record push triggers a fresh automatic Pages attempt; no changes to reviewed content or CI configuration are needed. Prepared live verifier remains in ignored task scratch. No site deployment success is claimed."
+}

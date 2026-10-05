@@ -415,3 +415,20 @@ refresh the complete gate passed. No rendered document changed.
 [sunday-integration-evidence.json](sunday-integration-evidence.json) retains
 numeric statuses, log digests and the exact preserved prior review states.
 Main and live deployment acceptance remain separate.
+
+## Main publication and external deployment blocker
+
+The audited publication commit `055e18fa1cd245fc280652a794f1de7396d2271b`
+reached main and the workspace branch by ordinary fast-forward. All local
+source/site gates passed. The 274-path outgoing audit found only the two lawful
+1862 PDF clips as new binary Git content, no private-data pattern matches, and
+no ignored build/scratch/publication PDF. The 88 whitespace warnings are solely
+terminal blank lines in verbatim archived gate logs; authored files pass.
+
+Pages run `37364001250` failed before executing a build step because no hosted
+runner acquired the job after repeated attempts. GitHub reported an Actions
+runner-assignment incident at the same time.
+[sunday-deployment-pending.json](sunday-deployment-pending.json) records this
+external failure and recovery checks. The evidence-record push triggers a new
+automatic attempt; no content or CI configuration change is indicated. Live
+publication acceptance remains open, and no successful deployment is claimed.

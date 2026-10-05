@@ -41,7 +41,9 @@ state = "in_progress"
   id = "gpt-60-main-and-pages"
   criterion = "After required source/publication/deployment checks and outgoing-range disclosure review, the coherent changes reconcile with current main and reach origin/main by ordinary fast-forward; Pages succeeds and the three live PDFs, canonical web edition and owning catalog match the reviewed release."
   status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/propers-quality-2026-10-05/sunday-integration-evidence.json", "workflows/reviews/propers-quality-2026-10-05/sunday-deployment-pending.json"]
+  check = "path_exists"
+  note = "Local source/site gates and outgoing disclosure review passed; 055e18fa1 reached main and the workspace branch by ordinary fast-forward. Pages 37364001250 failed before any build step because no hosted runner was acquired, consistent with GitHub's reported Actions incident. Successful deployment and exact live verification remain externally blocked and are not claimed. The evidence-record push triggers a fresh automatic attempt without changing the accepted content."
 
 [[deliverables]]
 id = "corpus-links-and-known-issues-2026-10-01"
