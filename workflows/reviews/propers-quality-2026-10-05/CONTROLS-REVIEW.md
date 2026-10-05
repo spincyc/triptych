@@ -1,3 +1,7 @@
+> Historical snapshot: this report concerns the initial local base. Read
+> [the disposition](RECORD.md) and [current-main comparison](CURRENT-MAIN-REVIEW.md)
+> before treating a finding as current.
+
 # Independent controls review — 5 October 2026
 
 Final verdict after focused recheck: **PASS**. The single research/review

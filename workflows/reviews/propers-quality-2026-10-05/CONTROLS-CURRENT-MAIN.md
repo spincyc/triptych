@@ -47,3 +47,35 @@ was still in conflict resolution when inspected; this report recommends the
 resolution and does not certify a completed merged tree or new workflow digest.
 No tests were rerun and no tracked files were changed. A final bounded diff
 check should confirm that these resolutions are present before seeding.
+
+## Final integrated recheck — PASS
+
+Reviewed commit `50b1ff05f232ab128c2d32ce3770c2d8f0458ac9` against current-main
+base `b373dd5db96ea67b1975b27de411cfd6cf2e1ee6`, using immutable handoff
+`build/agent-handoffs/20261005T130639Z-propers-v9-controls`. The base is an
+ancestor of the reviewed commit. The nine-file focused diff matches the
+handoff's `changes.patch` byte-for-byte and passes `git diff --check`.
+
+All requested integration resolutions are present:
+
+- The checker and component tests are identical to current main. The profile
+  retains the complete researched-coverage meaning of homily `element_keys`.
+- The added subset sentence and the spoken-use declaration instruction are
+  gone. Meaningful selection and freedom from spoken enumeration remain.
+- The distinct-question repair remains: interpretations may answer the same
+  question while differing in developed argument or consequence.
+- The workflow is v9. Its only pipeline-definition change against current main
+  is the version number; the `proper-study-v4` research seal remains intact.
+  The research fragment preserves automatic chronology dependency discovery,
+  and OPERATOR accurately explains both v8 and v9.
+- Historical controls findings are explicitly labeled as snapshots and linked
+  to the current-main disposition, preventing their stale gate diagnosis from
+  silently becoming current policy.
+
+**Final verdict: PASS for the integrated v9 controls.** No remaining findings
+prevent pinning these packet bytes. The handoff records all 148 focused control
+tests passing and the ledger check passing (59 tracked, 48 complete); this final
+bounded recheck inspected that evidence without rerunning the suite. Separate
+chronology validation and all future production research, content, visual, and
+publication reviews remain outside this controls approval. No tracked files
+were changed by this review.

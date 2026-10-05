@@ -21,8 +21,9 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "cold-quality-review"
   criterion = "A fresh comparative review examines actual recent GPT and Claude studies and homilies, records specific evidence and contrary findings, distinguishes demonstrated causes from hypotheses, and records how the new packet applies the supported lessons."
-  status = "open"
-  evidence = ["workflows/reviews/propers-quality-2026-10-05/REVIEW.md", "PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/propers-quality-2026-10-05/CURRENT-MAIN-REVIEW.md", "workflows/reviews/propers-quality-2026-10-05/RECORD.md", "workflows/reviews/propers-quality-2026-10-05/CONTROLS-CURRENT-MAIN.md", "guidance/liturgy/propers-three-documents.md", "workflows/pipelines/proper-study.json"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "gpt-60-workflow-and-artifacts"

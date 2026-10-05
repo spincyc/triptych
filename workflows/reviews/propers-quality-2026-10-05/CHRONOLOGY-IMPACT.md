@@ -1,3 +1,7 @@
+> Historical snapshot: this report concerns the initial local base. Read
+> [the disposition](RECORD.md) and [current-main comparison](CURRENT-MAIN-REVIEW.md)
+> before treating a finding as current.
+
 # Consumer freshness and source-receipt obligations
 
 No existing artifact, edition or passage record was edited. Four new passage identities were added, so existing source fingerprints do not change merely through acquisition. Original six-Psalm Davidic binding remains byte-for-byte unchanged; Ps107/144 and Ps118 use separate new bindings.

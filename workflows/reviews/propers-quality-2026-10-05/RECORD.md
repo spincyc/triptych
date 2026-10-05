@@ -12,8 +12,11 @@ against that base. The first successful current network fetch then found
 `origin/main` at `b373dd5db`, 112 commits ahead, including a completed Claude
 Nineteenth Sunday and substantive source, chronology and workflow repairs.
 The initial reports do not certify current main or establish that its already
-repaired defects remain open. A current-main matched-pair supplement and
-integrated checks are therefore required before publication.
+repaired defects remain open. [CURRENT-MAIN-REVIEW.md](CURRENT-MAIN-REVIEW.md) supplies the matched Nineteenth
+Sunday comparison against the fetched main and controls the final editorial
+verdict. The narrower question selection and less unfolding listener discovery
+remain supported; strong GPT reasoning and practical pastoral exposition remain
+explicit counterevidence. Integrated acceptance checks remain required.
 
 The first production attempt, `4104a1c080c562ac`, was held before context
 submission. Only the scope gate passed; no publication source was authored.
@@ -52,8 +55,12 @@ earlier ambiguity, not proof of a current contradictory gate.
 Proper-study v9 retains upstream v8's v4 research seal, automatic chronology
 input discovery, clarified four-senses rule, stage order, declared effort,
 page ranges and source requirements. Only the new editorial packet criteria
-and version change remain. The initial controls review's P2 wording finding
-was repaired: distinct arguments may answer the same question.
+and version change remain. All 148 focused component, workflow, preflight and
+effort tests pass on the integrated tree. The initial controls review's P2 wording finding
+was repaired: distinct arguments may answer the same question. The integrated
+controls recheck returned **PASS** at `50b1ff05f` against the immutable
+`20261005T130639Z-propers-v9-controls` package. Both the directory and its
+sibling ZIP were created; the ZIP inventory and integrity test passed.
 
 ## Chronology
 
@@ -70,8 +77,30 @@ The initial independent review found no blocker and reproduced one inherited
 Ephesians test failure. Current main already repairs that baseline failure;
 those old counts are historical, and integration must use current results.
 The old impact files likewise describe the initial base, not a rereview of
-newer installed guides. Existing publications are preserved as their reviewed
-snapshots; no old research approval is silently advanced to the new corpus.
+newer installed guides. `CHRONOLOGY-CURRENT-MAIN-IMPACT.md` and its JSON
+companion supersede those counts: 14 active historical leaves plus the retained,
+withdrawn Claude Fourteenth Sunday have changed annotation projections; seven
+structured records differ. No snapshot was already stale at current main.
+Existing publications are preserved as their reviewed snapshots; future
+revision must regenerate and re-review their chronology. No old research
+approval is silently advanced to the new corpus. The withdrawn target remains
+withdrawn. Existing artifact, edition and passage fingerprints are unchanged.
+
+The independent integrated chronology recheck returned **PASS**, retained in
+`CHRONOLOGY-INTEGRATED-REVIEW.md`. It checked all 15 frozen file hashes,
+confirmed the four source records were unchanged, compared live annotations,
+and independently proved that the corrected trace test retains exact-set
+checking while an old PC-S51 snapshot still fails its separate freshness gate.
+All 348 tests and 20 CLI examples pass. The new package is
+`20261005T131112Z-integrated-psalm-gospel-chronology`; its directory and ZIP
+were created and the 14-entry ZIP inventory verified.
+
+The normal `make check-sources`, integrated `make public-site` and
+`public-alpha verify --deployment-target github-pages` checks pass. The source
+family ledger's 156 units remain pending, with no inferred acceptance. The
+broader staleness diagnostic reports 159 editions needing attention; it was
+not rebaselined or treated as a publication approval. The precise chronology
+impact is recorded separately above.
 
 ## Review packages and remaining work
 

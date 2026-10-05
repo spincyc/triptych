@@ -1,0 +1,68 @@
+{
+  "current_stage": "resolve-context",
+  "disposition": null,
+  "document_root": "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost",
+  "escalations": [],
+  "findings_forwarded_by": {},
+  "findings_forwarded_ids": {},
+  "iteration": 2,
+  "normalized_args": {
+    "audience": "adult parish assembly",
+    "date": "2026-10-11",
+    "proper": "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost",
+    "provider": "gpt",
+    "research_handoff": ".scratch/proper-production-2026-10-05/preliminary-evidence.md"
+  },
+  "packet_hashes": [
+    {
+      "hash": "9d941232b108adf0444d3a829987771779b57884e4c95b71af4455df67ebc629",
+      "iteration": 0,
+      "path": "build/tpt-runs/4104a1c080c562ac/packets/scope-gate-0000.txt",
+      "stage": "scope-gate"
+    },
+    {
+      "hash": "7bffc330342c41a42fa2030920342f779971be48f67491d48f131429157359a0",
+      "iteration": 0,
+      "path": "build/tpt-runs/4104a1c080c562ac/packets/resolve-context-0000.txt",
+      "stage": "resolve-context"
+    }
+  ],
+  "repo_commit": "f66b0fabf3ed69656df74a422096515582606f6d",
+  "result_hashes": [
+    {
+      "disposition": "PASS",
+      "hash": "c2c5dc73384dcaa82e6a0b0b6d655a49fd9f0d8345607513add762f6826c4e2d",
+      "iteration": 0,
+      "path": "build/tpt-runs/4104a1c080c562ac/results/scope-gate-0000.json",
+      "stage": "scope-gate"
+    }
+  ],
+  "run_id": "4104a1c080c562ac",
+  "stage_blocking_ids": {},
+  "stage_blocking_targets": {},
+  "stage_failures": {
+    "scope-gate": 0
+  },
+  "stage_iterations": {
+    "resolve-context": 1,
+    "scope-gate": 1
+  },
+  "stage_novel": {
+    "scope-gate": 0
+  },
+  "stage_repeats": {
+    "scope-gate": 0
+  },
+  "transitions": [
+    {
+      "disposition": "PASS",
+      "from": "scope-gate",
+      "to": "resolve-context"
+    }
+  ],
+  "unrepaired_for": {},
+  "unrepaired_notes": {},
+  "workflow_digest": "10456890a43a8ec43dfe3aea6794166e02156404a2d51a754ef0465797e33f3b",
+  "workflow_id": "proper-study",
+  "workflow_version": 8
+}

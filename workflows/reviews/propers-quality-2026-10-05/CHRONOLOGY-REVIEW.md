@@ -1,3 +1,7 @@
+> Historical snapshot: this report concerns the initial local base. Read
+> [the disposition](RECORD.md) and [current-main comparison](CURRENT-MAIN-REVIEW.md)
+> before treating a finding as current.
+
 Independent chronology review — 2026-10-05
 
 Verdict: no blocking finding in the reviewed Psalm dating / annotation delta or the subsequently added Cana event. The change meaningfully adds traditional historical context while retaining explicit limits. It does not establish an occasion date for Psalms 107, 118, or 144, and must not be described as doing so. Acceptance here concerns chronology semantics and evidence, not publication layout or approval of an installed guide.

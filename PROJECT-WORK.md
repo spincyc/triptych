@@ -41,10 +41,11 @@ Claude Nineteenth Sunday. The initial quality comparison and chronology review
 are retained as reviews of their stated base, not represented as reviews of
 current main. The v8 run `4104a1c080c562ac` was held before its first context
 result; only its scope gate passed and no publication source was authored.
-Reconciliation and an updated matched-pair quality review now precede a new
-production seed. The reviewed chronology delta is checkpointed for integration;
-its final integrated behavior must be tested and independently rechecked.
-
+The branch is now rebased on that main at `50b1ff05f`. The
+[current-main supplement](workflows/reviews/propers-quality-2026-10-05/CURRENT-MAIN-REVIEW.md)
+compares the finished Nineteenth Sunday pair and controls the final quality
+judgment. It confirms narrower question selection and less unfolding discovery
+while preserving GPT's substantial source reasoning and pastoral strengths.
 
 Reconciliation preserves current main's explicit homily-manifest meaning:
 all researched elements inform the speech; the spoken argument remains
@@ -52,7 +53,21 @@ selective. The initial-base checker change is dropped as superseded by that
 upstream clarification. Proper-study v9 adds the bounded editorial question,
 inference and homily-movement controls while retaining v8's v4 research seal,
 automatic chronology dependency discovery and clarified four-senses contract.
-The integrated chronology and publication run remain under review.
+Independent integrated controls review passes. All 148 focused workflow and
+component tests pass; 348 chronology, trace, display and lineage tests pass.
+The normal `make check-sources` gate also passes, preserving all 156 family
+review units as pending. The four added source passages change no existing
+source-record fingerprint. Scoped source-reader and document-catalog
+projections are refreshed. Five PDFs absent after the rebase were restored
+from the published site and checked against its `SHA256SUMS`, allowing the
+integrated public-site build and GitHub Pages-target verification to pass
+without regenerating prior publications.
+
+Actual proper-study v9 run `e80cd019cbe2d2f4`, seeded at `50b1ff05f`, has
+passed its scope gate and is resolving context through a fresh worker. The
+independent integrated chronology recheck also passes; its record preserves
+strict historical-snapshot freshness checks. Publication acceptance, reviewed
+installation and deployment remain open.
 
 ## Corpus PDF links and every known issue, 2026-10-01
 

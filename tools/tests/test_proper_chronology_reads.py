@@ -78,8 +78,11 @@ class ComputationReadsTests(unittest.TestCase):
         self.assertIn("guidance/liturgy/postconciliar-propers-registry.md", reads)
 
     def test_cited_sources_are_exactly_what_the_record_cites(self):
-        record = tomllib.loads((ROOT / "src/claude" / TWENTY_FIFTH / "research/chronology.toml")
-                               .read_text(encoding="utf-8"))
+        # The trace describes today's computation. A historical leaf may keep
+        # its reviewed snapshot while a corpus change awaits consumer rereview;
+        # its freshness gate is separate from this source-completeness check.
+        record = tomllib.loads(_proper_chronology.render(
+            _proper_chronology.dossier(TWENTY_FIFTH, provider="claude")))
         cited = {source
                  for holder in (*record.get("elements", []), *record.get("profile_comparisons", []))
                  for claim in holder.get("claims", [])

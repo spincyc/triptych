@@ -1,3 +1,7 @@
+> Historical snapshot: this report concerns the initial local base. Read
+> [the disposition](RECORD.md) and [current-main comparison](CURRENT-MAIN-REVIEW.md)
+> before treating a finding as current.
+
 COMPARATIVE PROPERS QUALITY REVIEW — 5 OCTOBER 2026
 
 Read-only review of repository HEAD a53e262d00d2658ac079801b07b26deeffb05a6d,
