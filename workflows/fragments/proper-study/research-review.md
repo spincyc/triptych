@@ -13,6 +13,9 @@ by the concise opening's page-2 dossier. Check every directly appointed
 Scripture unit and alternative, exact citation and Psalm numbering system,
 canonical chronology claims and their controlling sources. Distinguish
 composition and narrated-event dates; preserve disputed and unresolved states.
+For Psalms, check that an author's reference era does not stand in for an
+identified occasion, and that the answer retains the event's context or an
+honest unresolved occasion alongside textual history.
 Postconciliar appointment query inputs must derive from that edition's own
 verified owner, never another family's calendar or a neighboring Sunday's data.
 Confirm that all controlling chronology evidence enters the research seal.
@@ -20,7 +23,11 @@ Confirm that all controlling chronology evidence enters the research seal.
 Test every proposed interpretation as a complete argument, supported by
 substantive contributions from at least two distinct Fathers or saints, as the
 three-document profile defines them. A name-count alone does not demonstrate
-agreement. Are its authors' controlling claims compatible? Does each appointed
+agreement. Are its authors' controlling claims compatible? Does each proposed
+reading answer a particular exegetical question through a developed inference,
+with a distinct argument, movement or consequence as the three-document
+profile requires, and does the research confront the
+appointed texts' most consequential difficulties? Does each appointed
 element actually contribute? Are its four senses distinct and textually
 grounded? Do the two to five readings differ materially without invented
 conflict? Are the Fathers' own claims kept distinct from the editor's

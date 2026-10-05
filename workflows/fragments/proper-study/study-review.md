@@ -12,6 +12,10 @@ Fathers or saints, as the three-document profile defines them; a second name
 without contributing reasoning does not count.
 
 Check substantial depth, meaningful treatment of every element, accurate
+development of the particular questions and distinctive arguments or inferences
+required by the three-document profile, and treatment of consequential textual
+difficulties. Different readings may answer the same question.
+Do not accept repeated applications as distinct interpretations. Check accurate
 attribution and usable citations, honest source roles, actual agreement and
 disagreement, doctrinal precision, and faithful scope. No Father's isolated
 exegesis may be represented as his synthesis of the Mass. Complementary

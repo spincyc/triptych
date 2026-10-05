@@ -229,6 +229,18 @@ Both changes move the workflow digest, since the fragments and the pipeline's
 review command are inside it, so a version-7 run cannot advance under them:
 complete it, or seed a new run.
 
+Version 9 applies the 5 October 2026 comparative quality review. Research and
+study packets examine each reading's particular exegetical question and its
+distinctive argument, inference, movement or consequence; different readings
+may answer the same question. Homily packets test whether the text drives its
+decisive turn. Psalm research checks traditional occasions and remembered
+events separately from composition. The existing homily manifest describes
+all research informing the speech, without requiring spoken enumeration.
+Stages, effort, page ranges and source requirements are unchanged. The v4
+research seal and automatic chronology dependency discovery from version 8
+remain in force. These packet changes require a new run; historical terminal
+records retain their identity.
+
 ## Overview
 
 The deterministic AI-guidance workflow engine drives a cycle of fresh AI

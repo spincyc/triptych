@@ -5,7 +5,51 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-01.
+Last reconciled: 2026-10-05.
+
+## GPT Twentieth Sunday, Psalm event chronology and quality review, 2026-10-05
+
+<!-- promised-deliverable: gpt-1962-twentieth-quality-2026-10-05 -->
+
+The maintainer requested the upcoming Sunday's 1962 propers through the actual
+`proper-study` workflow, a fix for Psalm historical dating that gives textual
+composition without the traditional setting and date of the events, and a cold
+review of the recent GPT studies and homilies against the stronger recent Claude
+work. The requested publication includes reconciliation with `main`, a validated
+push to `main`, and verification of the resulting deployment. Work remains on
+the workspace branch `feature/propers/codex`.
+
+The target is provider `gpt`, identity
+`liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost`, for
+Sunday, 11 October 2026, subject to the workflow's sourced occurrence check.
+The production plan opens this one identity. The promised outputs are the
+expansive study, concise study, standalone homily and canonical web edition.
+
+**In progress.** The fetched base is `a53e262d0`, shared by the workspace and
+`origin/main`, and the initial worktree was clean. The independent
+[comparative review](workflows/reviews/propers-quality-2026-10-05/REVIEW.md)
+finds narrower source development and repetitive derivative arguments in the
+matched Seventeenth Sunday GPT packet, with significant contrary evidence in
+the Nineteenth Sunday study. Mixed provenance and different formularies limit
+claims about models or a general decline. Proper-study v8 now tests the
+particular exegetical question and distinctive argument of each reading, and
+whether a homily's textual discovery changes its pastoral argument. It also
+corrects a demonstrated checker/profile conflict: homilies may declare a
+truthful nonempty subset of appointed elements, while studies and interpretive
+lanes still cover the whole formulary. Independent controls review required
+one wording repair to preserve different answers to the same question; that
+repair is applied. The focused suite passes 149 of 150 tests; the sole failure
+is the inherited unregistered Leo the Great in the earlier GPT pc-s53 manifest.
+The version-history compatibility test passes independently.
+
+The chronology repair and its independent source review proceed separately;
+the production run will bind the fixed controls and verified source records.
+Traditional
+attribution, an identified historical occasion, retrospective narrated events,
+composition and redaction remain separate claims; missing event evidence is not
+permission to manufacture a date. The quality review must distinguish observed
+document defects and demonstrated process causes from hypotheses about models.
+Acceptance, reviewed installation, reconciliation, push and deployment remain open.
 
 ## Corpus PDF links and every known issue, 2026-10-01
 

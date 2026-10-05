@@ -1,6 +1,42 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-1962-twentieth-quality-2026-10-05"
+owner = "PROJECT-WORK.md"
+promise = "Complete the upcoming Sunday 2026-10-11 GPT 1962 propers through proper-study; fix missing traditional Psalm event dating/context; cold-review recent GPT versus Claude document and homily quality and apply substantiated lessons; reconcile with main, push validated work to main and verify Pages."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "gpt-60-authorization"
+  criterion = "The exact provider and permanent identity are authorized before seeding and the dated occurrence is independently sourced."
+  status = "open"
+  evidence = ["guidance/liturgy/propers-production-plan.md", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "psalm-event-chronology"
+  criterion = "The causal gap is documented and repaired with meaningful regression checks; Psalm dates distinguish the traditional setting and narrated or remembered events from composition, preserving sourced alternatives and uncertainty. The new documents expose that distinction."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "cold-quality-review"
+  criterion = "A fresh comparative review examines actual recent GPT and Claude studies and homilies, records specific evidence and contrary findings, distinguishes demonstrated causes from hypotheses, and records how the new packet applies the supported lessons."
+  status = "open"
+  evidence = ["workflows/reviews/propers-quality-2026-10-05/REVIEW.md", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "gpt-60-workflow-and-artifacts"
+  criterion = "The actual proper-study run reaches ACCEPTED with fresh reviewers at declared effort; the reviewed 20–50-page expansive study, 10–12-page concise study, standalone homily and canonical web edition are installed, with exact evidence, catalog links, separate release records and durable packets/results."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "gpt-60-main-and-pages"
+  criterion = "After required source/publication/deployment checks and outgoing-range disclosure review, the coherent changes reconcile with current main and reach origin/main by ordinary fast-forward; Pages succeeds and the three live PDFs, canonical web edition and owning catalog match the reviewed release."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "corpus-links-and-known-issues-2026-10-01"
 owner = "PROJECT-WORK.md"
 promise = "Fix the PDF hyperlink and bookmark defect in every installed publication of both providers, with a gate that keeps it fixed, and fix every open known issue recorded in this workstream and in PROJECT-WORK.md's open lists (or record, with its reason, any item that needs a maintainer decision), then push to main and verify the deployment."

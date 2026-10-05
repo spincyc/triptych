@@ -14,6 +14,10 @@ measured repetition, a return to an opening image, or a practicable response.
 Use only those this argument needs. Do not manufacture anecdotes, personal
 experience, clerical identity, miraculous stories, or attributed quotations.
 
+Apply the three-document profile's test of how the appointed text changes the
+listener's understanding; record the decisive textual detail in the production
+audit.
+
 The body is ready to read verbatim: continuous preaching, no outline, stage
 directions, advice to a preacher, or inline scholarly apparatus. Attribute a
 Father naturally when useful. Put exact loci, the relation to reviewed

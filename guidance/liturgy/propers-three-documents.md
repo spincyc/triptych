@@ -186,6 +186,16 @@ identifications into one account nor dramatize complementary emphases as a
 dispute. A coherent whole-Mass reading is editorial synthesis over a
 compilation, as [above](#the-formulary-is-a-compilation).
 
+In `research/interpretations.md`, identify the particular exegetical question
+each reading answers, the checked reasoning that answers it, and the consequence
+that distinguishes it from the other readings. Compare those answers before
+drafting. Different titles or groups of authors do not make distinct arguments
+when their explanations repeatedly end at the same general application.
+Test whether the selected evidence develops the appointed texts' most demanding
+or theologically consequential feature, rather than passing over it because a
+more familiar theme is easier to write. These are judgments about the text and
+sources, not a quota of doctrines, authors or pages.
+
 ### Liturgical commentators
 
 A liturgical commentator expounds a Mass or office as a whole, as Rupert of
@@ -413,6 +423,15 @@ prayers lead through Christ's Paschal mystery to Eucharistic participation and
 daily life. This governs the homily's movement without turning it into a
 scholarly lecture. It supplies no claim that an AI has prayed, heard this
 congregation, or exercised the ordained ministry.
+
+The homily's governing question, image and decisive turn should grow from the
+appointed texts. A familiar pastoral problem may open it, but the exegesis must
+change how that problem is understood and answered. In the production audit,
+identify that change and the textual detail that makes it possible. Review
+whether the argument would substantially survive replacing this Sunday's
+readings with unrelated ones; merely naming the proper or adding a verse does
+not make a generic sequence specific. Ordinary applications remain welcome
+when the text earns them.
 
 ## Composition and review
 

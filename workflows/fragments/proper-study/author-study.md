@@ -17,6 +17,11 @@ words is a planning range; the finished PDF must occupy 20–50 physical pages.
 Meaningful exposition decides the treatment within that range. Reject both
 padding and an outline passed off as expansive.
 
+Develop the particular exegetical questions and distinctive arguments or
+inferences audited under the three-document profile. Different readings may
+answer the same question. Let their textual difficulties drive the exposition;
+do not return each reading to the same application through different headings.
+
 Create or revise the full schema-2 `proper-components.toml`, declaring future
 synthesis and homily components as well as the actual research files. The
 study preflight requires only research-mode files to exist yet. Record two to

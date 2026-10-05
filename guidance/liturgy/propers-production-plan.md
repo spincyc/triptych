@@ -121,6 +121,8 @@ and an identity with no line here is closed.
 - Authorized 2026-09-28: provider `gpt`, identity `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a`.
 - Authorized 2026-09-30: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost`.
 
+- Authorized 2026-10-05: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost`.
+
 ### Withdrawn targets
 
 Each line below records one maintainer decision to withdraw one provider's

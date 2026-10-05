@@ -6,6 +6,11 @@ meaningful use of appointed Scripture and prayer, an intelligible movement,
 pertinent pedagogy, concrete pastoral fruit and hope. A fluent generic sermon
 that could fit any Sunday fails. So does a lecture assembled from quotations.
 
+Apply the three-document profile's text-substitution test to the argument's
+actual movement, not merely its quotations. Identify whether the decisive turn
+comes from the text and changes the listener's understanding. Judge meaningful
+selection; do not require a sermon to enumerate every minor proper.
+
 Check adult-parish language, sentence length, oral transitions, recoverable
 images and precise theological claims. The body must be speakable verbatim
 with no editorial instructions or dependence on visible footnotes. Examine
