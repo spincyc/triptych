@@ -25,31 +25,34 @@ Sunday, 11 October 2026, subject to the workflow's sourced occurrence check.
 The production plan opens this one identity. The promised outputs are the
 expansive study, concise study, standalone homily and canonical web edition.
 
-**In progress.** The fetched base is `a53e262d0`, shared by the workspace and
-`origin/main`, and the initial worktree was clean. The independent
-[comparative review](workflows/reviews/propers-quality-2026-10-05/REVIEW.md)
-finds narrower source development and repetitive derivative arguments in the
-matched Seventeenth Sunday GPT packet, with significant contrary evidence in
-the Nineteenth Sunday study. Mixed provenance and different formularies limit
-claims about models or a general decline. Proper-study v8 now tests the
-particular exegetical question and distinctive argument of each reading, and
-whether a homily's textual discovery changes its pastoral argument. It also
-corrects a demonstrated checker/profile conflict: homilies may declare a
-truthful nonempty subset of appointed elements, while studies and interpretive
-lanes still cover the whole formulary. Independent controls review required
-one wording repair to preserve different answers to the same question; that
-repair is applied. The focused suite passes 149 of 150 tests; the sole failure
-is the inherited unregistered Leo the Great in the earlier GPT pc-s53 manifest.
-The version-history compatibility test passes independently.
+**In progress.** The initial local base was `a53e262d0`. Independent reviews
+of that snapshot found narrower source development and repetitive derivative
+arguments in the matched Seventeenth Sunday GPT packet, with significant
+contrary evidence in the Nineteenth Sunday study. The
+[review archive](workflows/reviews/propers-quality-2026-10-05/RECORD.md)
+retains exact scope and limitations. The requested Psalm repair distinguishes
+traditional attribution, an identified occasion, retrospective events and
+composition; missing evidence does not authorize a fabricated date.
 
-The chronology repair and its independent source review proceed separately;
-the production run will bind the fixed controls and verified source records.
-Traditional
-attribution, an identified historical occasion, retrospective narrated events,
-composition and redaction remain separate claims; missing event evidence is not
-permission to manufacture a date. The quality review must distinguish observed
-document defects and demonstrated process causes from hypotheses about models.
-Acceptance, reviewed installation, reconciliation, push and deployment remain open.
+The first successful current network fetch resolved `origin/main` to
+`b373dd5db`, 112 commits beyond that initial local snapshot. Those commits
+include substantive chronology repairs, a new research seal and the completed
+Claude Nineteenth Sunday. The initial quality comparison and chronology review
+are retained as reviews of their stated base, not represented as reviews of
+current main. The v8 run `4104a1c080c562ac` was held before its first context
+result; only its scope gate passed and no publication source was authored.
+Reconciliation and an updated matched-pair quality review now precede a new
+production seed. The reviewed chronology delta is checkpointed for integration;
+its final integrated behavior must be tested and independently rechecked.
+
+
+Reconciliation preserves current main's explicit homily-manifest meaning:
+all researched elements inform the speech; the spoken argument remains
+selective. The initial-base checker change is dropped as superseded by that
+upstream clarification. Proper-study v9 adds the bounded editorial question,
+inference and homily-movement controls while retaining v8's v4 research seal,
+automatic chronology dependency discovery and clarified four-senses contract.
+The integrated chronology and publication run remain under review.
 
 ## Corpus PDF links and every known issue, 2026-10-01
 

@@ -843,6 +843,16 @@ acquires a Davidic date merely because the containing book is the Psalter.
 Edition-specific titles must identify their witness: the Clementine title at
 Psalm 94 is not printed in the tracked Douay heading.
 
+An anonymous heading does not itself settle received attribution. Psalm 118
+has no Davidic heading in the tracked Douay, but the inspected Haydock note
+reports its general attribution to David while preserving several proposed
+occasions. That evidence supports attribution alone. Psalm 136's represented
+Babylonian lament likewise has a historical setting after Jerusalem's fall
+independent of whether its words were composed prophetically, in captivity,
+or at the return. Its explicit recollection of the destruction at verse 7
+receives a separate `retrospective-event` binding; that event's absolute dates
+do not become dates of every verse or of the writing.
+
 **It is an anthology.** It has no single composition date and this corpus will
 not give it one. Composition units are authored per psalm, or per group where
 tradition groups them. A profile may assert a `final-formation` horizon over the
@@ -1425,6 +1435,18 @@ it does not import the 1962 calendar, source owner, or research judgments.
   applicable assertion survives. Traditional attribution includes its subject
   title; composition bounds remain explicitly composition bounds. These
   distinctions apply to Old Testament readings as well as Gospel episodes.
+  Every event, setting, utterance, attribution, or prophetic claim also names
+  its temporal subject in the visible annotation, even when it is the sole
+  subject in its group. A number or duration without its subject loses the
+  historical context the date is meant to supply.
+  A project-derived claim also carries `(derived)` in that visible annotation;
+  its source label and typed date remain unchanged in the audit fields.
+  An element containing a Psalm also shows an explicit historical-occasion
+  gap when no setting, event, retrospect, or utterance applies across the
+  whole appointment. `Occasion date unresolved` reports the selected corpus's
+  absence, not a claim that all traditional sources are silent. A partial
+  answer instead reports that no single occasion date applies across every
+  cited locus. Attribution and prophetic fulfilment do not fill this gap.
 - `content-preflight` enforces it. `chronology-record-current` regenerates the
   record and refuses a leaf whose copy has drifted — it is generated, so it is
   rewritten from the corpus and never reconciled toward the guide.
@@ -1622,22 +1644,26 @@ For Proper 55 its complete plain-text output is:
 $ ./tools/tpt proper-chronology annotations --document liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost --provider gpt --profile catholic-comprehensive-v1 --format text --plain
 introit
   Traditional attribution -- disputed: David (reign in the usual chronology), B.C. 1055-1015.
+  Historical setting -- Occasion date unresolved.
   Composition: Before c. 165 B.C.
 epistle
   Composition: Preferred: A.D. 58; alternatives: A.D. 49-50, c. A.D. 53-54, A.D. 56, A.D. 57-58.
 gradual
+  Historical setting -- Occasion date unresolved.
   Composition: Before c. 165 B.C.
 alleluia
   Traditional attribution -- disputed: David (reign in the usual chronology), B.C. 1055-1015.
+  Historical setting -- Occasion date unresolved.
   Composition: Before c. 165 B.C.
 gospel
-  Event: A.D. 27 (derived).
+  Event: The raising of the widow's son at Naim, A.D. 27 (derived).
   Composition -- disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished.
 offertory
   Traditional attribution -- disputed: David (reign in the usual chronology), B.C. 1055-1015.
+  Historical setting -- Occasion date unresolved.
   Composition: Before c. 165 B.C.
 communion
-  Event: A.D. 28 (derived).
+  Event: The Bread of Life discourse at Capharnaum, A.D. 28 (derived).
   Composition -- disputed: c. A.D. 90-100; A.D. 96-100.
 ```
 
@@ -1652,11 +1678,11 @@ $ ./tools/tpt scripture-chronology coverage --profile catholic-comprehensive-v1 
 profile catholic-comprehensive-v1
 universe distinct-scripture-content
 verses 37171
-runs 1965
+runs 1969
 status attestation-only 1792
 status attribution-only 898
-status composition-only 21462
-status dated 13019
+status composition-only 21454
+status dated 13027
 status not-alignable 0
 status research-pending 0
 status textually-distinct 0
@@ -1664,13 +1690,13 @@ status undated-in-tradition 0
 relation composition 26400
 relation final-formation 1249
 relation historical-setting 2934
-relation narrated-event 7991
+relation narrated-event 7999
 relation prophecy-given 2134
 relation prophetic-referent 297
-relation retrospective-event 413
+relation retrospective-event 414
 relation superscription-setting 277
 relation textual-attestation 2489
-relation traditional-attribution 1434
+relation traditional-attribution 1645
 relation utterance 1476
 system greek 1356
 system vulgate 35809
@@ -1681,9 +1707,9 @@ universe-limitation note missing_dates and --require-date apply only to loci enu
 unenumerable-system nab this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
 unenumerable-system nova-vulgata this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
 unenumerable-system septuagint this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
-multiple-relations 9256
-event-assertions 13019
-alternatives 14418
+multiple-relations 9475
+event-assertions 13027
+alternatives 14630
 ```
 
 The address-universe companion checks alternate printed numberings as separate
@@ -1694,11 +1720,11 @@ $ ./tools/tpt scripture-chronology coverage --profile catholic-comprehensive-v1 
 profile catholic-comprehensive-v1
 universe supported-scripture-addresses
 verses 42589
-runs 2309
+runs 2315
 status attestation-only 1796
 status attribution-only 898
-status composition-only 25190
-status dated 14705
+status composition-only 25182
+status dated 14713
 status not-alignable 0
 status research-pending 0
 status textually-distinct 0
@@ -1706,13 +1732,13 @@ status undated-in-tradition 0
 relation composition 31814
 relation final-formation 1249
 relation historical-setting 4191
-relation narrated-event 8005
+relation narrated-event 8013
 relation prophecy-given 2134
 relation prophetic-referent 532
-relation retrospective-event 488
+relation retrospective-event 490
 relation superscription-setting 553
 relation textual-attestation 2493
-relation traditional-attribution 1576
+relation traditional-attribution 1998
 relation utterance 1528
 system greek 2156
 system hebrew 2530
@@ -1724,9 +1750,9 @@ universe-limitation note missing_dates and --require-date apply only to loci enu
 unenumerable-system nab this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
 unenumerable-system nova-vulgata this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
 unenumerable-system septuagint this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
-multiple-relations 11025
-event-assertions 14705
-alternatives 14914
+multiple-relations 11455
+event-assertions 14713
+alternatives 15338
 ```
 
 `make check-scripture-chronology` runs `validate` and `check`, and is part of

@@ -24,6 +24,7 @@ COLLECTION = "liturgy/roman-rite/1962/propers"
 FIFTEENTH = f"{COLLECTION}/temporal/55-fifteenth-after-pentecost"
 FOURTEENTH = f"{COLLECTION}/temporal/54-fourteenth-after-pentecost"
 SIXTEENTH = f"{COLLECTION}/temporal/56-sixteenth-after-pentecost"
+TWENTIETH = f"{COLLECTION}/temporal/60-twentieth-after-pentecost"
 TRINITY = f"{COLLECTION}/temporal/39-trinity-sunday"
 EIGHTH = f"{COLLECTION}/temporal/48-eighth-after-pentecost"
 NINTH = f"{COLLECTION}/temporal/49-ninth-after-pentecost"
@@ -266,7 +267,8 @@ class AnnotationProjectionTests(unittest.TestCase):
         alleluia = next(e for e in sixteen.elements if e.key == "alleluia")
         self.assertEqual(
             [group.relation for group in alleluia.groups],
-            ["traditional-attribution", "composition", "prophetic-referent"],
+            ["traditional-attribution", "historical-setting", "composition",
+             "prophetic-referent"],
         )
         communion = next(e for e in sixteen.elements if e.key == "communion")
         self.assertEqual(
@@ -285,7 +287,7 @@ class AnnotationProjectionTests(unittest.TestCase):
                                disposition="preferred")
         element = introit._replace(publication_claims=(david, other))
         projection = chronology.annotations(dossier._replace(elements=(element,)))
-        groups = projection.elements[0].groups
+        groups = tuple(g for g in projection.elements[0].groups if g.claims)
         self.assertEqual(len(groups), 2)
         self.assertEqual({group.status for group in groups}, {"preferred", "disputed"})
         self.assertEqual({len(group.claims) for group in groups}, {1})
@@ -303,7 +305,79 @@ class AnnotationProjectionTests(unittest.TestCase):
         rendered = next(e for e in projection.elements if e.key == "introit")
         self.assertEqual(rendered.status, "attribution-only")
         self.assertEqual([g.relation for g in rendered.groups],
-                         ["traditional-attribution"])
+                         ["traditional-attribution", "historical-setting"])
+        self.assertFalse(rendered.groups[1].claims)
+
+    def test_twentieth_psalms_expose_traditional_context_and_occasion_limits(self) -> None:
+        dossier = chronology.dossier(TWENTIETH)
+        projection = chronology.annotations(dossier)
+        by_key = {element.key: element for element in projection.elements}
+        for key in ("gradual", "alleluia", "communion"):
+            groups = by_key[key].groups
+            self.assertEqual([g.relation for g in groups], [
+                "traditional-attribution", "historical-setting", "composition",
+            ])
+            self.assertEqual(groups[0].claims[0].profile, "catholic-traditional-v1")
+            self.assertEqual(groups[1].status, "research-pending")
+            self.assertEqual(groups[1].claims, ())
+            self.assertEqual(groups[2].claims[0].profile, "catholic-critical-v1")
+        # The mixed Daniel/Psalm Introit cannot borrow a common occasion from
+        # Daniel, or spread David's reference era from the Psalm to Daniel.
+        self.assertEqual(by_key["introit"].groups[0].status, chronology.NONUNIFORM)
+        self.assertTrue(all(not g.claims for g in by_key["introit"].groups))
+        offertory = by_key["offertory"]
+        scenes = [g for g in offertory.groups if g.relation == "historical-setting"]
+        self.assertEqual(len(scenes), 2)
+        self.assertEqual({c.precision for g in scenes for c in g.claims},
+                         {"boundary", "duration"})
+        boundary = next(c for g in scenes for c in g.claims
+                        if c.precision == "boundary")
+        self.assertIn("after Jerusalem's destruction", boundary.display_label)
+        self.assertTrue(boundary.display_label.endswith(" (derived)"))
+        self.assertEqual(boundary.label,
+                         "For the time of Jeremias, and the captivity of Babylon")
+        rendered = chronology.render_annotations_text(projection)
+        tex = chronology.render_annotations_tex(projection)
+        for subject in ("The Babylonian captives' lament",
+                        "The seventy years of servitude to Babylon"):
+            self.assertIn(subject, rendered)
+            self.assertIn(chronology.tex_escape(subject), tex)
+        self.assertIn("Occasion date unresolved", rendered)
+        self.assertNotIn("A.M. 3416", rendered)
+        self.assertNotIn("A.M. 3416", tex)
+
+    def test_single_event_subject_is_visible_even_without_competing_subjects(self) -> None:
+        projection = chronology.annotations(chronology.dossier(FIFTEENTH))
+        gospel = next(e for e in projection.elements if e.key == "gospel")
+        event = next(g for g in gospel.groups if g.relation == "narrated-event")
+        self.assertEqual(len({c.subject for c in event.claims}), 1)
+        for claim in event.claims:
+            self.assertIn(claim.title, claim.display_label)
+            self.assertIn(claim.title, chronology._group_display(event))
+
+    def test_cana_healing_retains_derived_interval_and_exact_source_label(self) -> None:
+        subject = "life-of-christ.healing-of-the-rulers-son-at-cana"
+        for verse in (46, 53):
+            answer = corpus.chronology(f"John.4.{verse}")
+            claim = next(a.claim for a in answer.assertions if a.subject == subject)
+            self.assertEqual(claim.basis_class, "derived")
+            self.assertEqual(claim.date.precision, "interval")
+            self.assertEqual(str(claim.date), "26 A.D. to 27 A.D.")
+            self.assertEqual(claim.date.derivation["inputs"],
+                             ["chronology.maas-auc-782-ad-29-calibration"])
+        for verse in (45, 54):
+            self.assertNotIn(subject, {a.subject for a in
+                             corpus.chronology(f"John.4.{verse}").assertions})
+        projected = chronology.annotations(chronology.dossier(TWENTIETH))
+        gospel = next(e for e in projected.elements if e.key == "gospel")
+        self.assertEqual([g.relation for g in gospel.groups],
+                         ["narrated-event", "composition"])
+        claim = gospel.groups[0].claims[0]
+        self.assertEqual(claim.label, "Passover, A.U.C. 779 - about Pentecost, 780")
+        self.assertIn("The healing of the ruler's son at Cana", claim.display_label)
+        self.assertIn("A.D. 26–27 (derived)", claim.display_label)
+        self.assertNotIn("c. A.D.", claim.display_label)
+        self.assertEqual(claim.profile, "catholic-traditional-v1")
 
     def test_old_testament_events_survive_and_precede_available_composition(self) -> None:
         dossier = chronology.dossier(FIFTEENTH)
@@ -559,7 +633,9 @@ class AnnotationProjectionTests(unittest.TestCase):
             dossier._replace(elements=(element,))
         ).elements[0]
         self.assertEqual(projection.status, "attestation-only")
-        self.assertEqual(projection.groups[0].relation, "textual-attestation")
+        self.assertEqual([g.relation for g in projection.groups],
+                         ["historical-setting", "textual-attestation"])
+        self.assertEqual(projection.groups[0].claims, ())
 
     def test_record_preserves_full_audit_and_reach_provenance(self) -> None:
         parsed = tomllib.loads(chronology.render(chronology.dossier(EIGHTH)))
@@ -813,8 +889,10 @@ class AnnotationProjectionTests(unittest.TestCase):
         )
         self.assertEqual(
             chronology._group_display(setting),
-            "Superscription setting: Preferred: In the third year of the "
-            "reign of Joakim, king of Juda; alternative: A.M. 3398.",
+            "Superscription setting: Preferred: The first captivity of Juda, "
+            "under Joakim, In the third year of the reign of Joakim, king of "
+            "Juda; alternative: The first captivity of Juda, under Joakim, "
+            "A.M. 3398.",
         )
 
     def test_write_and_check_hold_the_generated_tex_exactly(self) -> None:
@@ -928,11 +1006,13 @@ class ReaderFacingDisplayTests(unittest.TestCase):
                        if g.relation == "historical-setting")
         self.assertEqual(
             chronology._group_display(setting),
-            "Historical setting: \N{LEFT DOUBLE QUOTATION MARK}seventy years"
+            "Historical setting: The seventy years of servitude to Babylon, "
+            "\N{LEFT DOUBLE QUOTATION MARK}seventy years"
             "\N{RIGHT DOUBLE QUOTATION MARK} (duration).",
         )
         tex = chronology._tex_group(setting)
-        self.assertIn("{seventy years}{``seventy years'' (duration)}", tex)
+        self.assertIn("{seventy years}{The seventy years of servitude to Babylon, "
+                      "``seventy years'' (duration)}", tex)
         for rendered in (chronology._group_display(setting), tex,
                          chronology.render_annotations_text(found)):
             self.assertNotIn("Duration:", rendered)
@@ -1044,11 +1124,13 @@ class ReaderFacingDisplayTests(unittest.TestCase):
             [("alternate", "When he was twelve years old"),
              ("preferred", "when he was twelve years old")])
         self.assertEqual(chronology._group_display(event),
-                         "Event: When he was twelve years old.")
+                         "Event: The Finding of Our Lord in the Temple, "
+                         "when he was twelve years old.")
         tex = chronology._tex_group(event)
         self.assertEqual(tex.count(r"\chronologyannotationclaim"), 2)
         self.assertIn("{preferred}{when he was twelve years old}"
-                      "{When he was twelve years old}", tex)
+                      "{The Finding of Our Lord in the Temple, "
+                      "when he was twelve years old}", tex)
         self.assertIn("{alternate}{When he was twelve years old}{}.", tex)
         self.assertNotIn("alternative", tex)
 
@@ -1059,8 +1141,12 @@ class ReaderFacingDisplayTests(unittest.TestCase):
         source-stated year would print."""
         found = chronology.annotations(chronology.dossier(FIFTEENTH))
         by_key = {e.key: e for e in found.elements}
-        for key, expected in (("gospel", "Event: A.D. 27 (derived)."),
-                              ("communion", "Event: A.D. 28 (derived).")):
+        for key, expected in (
+            ("gospel", "Event: The raising of the widow's son at Naim, "
+             "A.D. 27 (derived)."),
+            ("communion", "Event: The Bread of Life discourse at Capharnaum, "
+             "A.D. 28 (derived)."),
+        ):
             with self.subTest(element=key):
                 event = next(g for g in by_key[key].groups
                              if g.relation == "narrated-event")
@@ -1080,7 +1166,8 @@ class ReaderFacingDisplayTests(unittest.TestCase):
             [str(TOOL), "annotations", "--document", FIFTEENTH, "--format",
              "text"], cwd=ROOT, capture_output=True, text=True, check=False)
         self.assertEqual(rendered.returncode, 0, rendered.stderr)
-        self.assertIn("  Event: A.D. 27 (derived).", rendered.stdout)
+        self.assertIn("  Event: The raising of the widow's son at Naim, "
+                      "A.D. 27 (derived).", rendered.stdout)
         self.assertNotIn("  Event: A.D. 27.\n", rendered.stdout)
 
     def test_every_derivation_in_the_corpus_is_marked_and_nothing_else(self) -> None:

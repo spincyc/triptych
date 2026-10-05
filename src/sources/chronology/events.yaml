@@ -435,6 +435,43 @@ events:
           precision: year
           from: {year: 29, era: ad}
           label: "A.U.C. 782 = A.D. 29"
+  - id: life-of-christ.healing-of-the-rulers-son-at-cana
+    title: The healing of the ruler's son at Cana
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis_class: derived
+        basis: >-
+          Maas's Second Journey encompasses Passover, A.U.C. 779 through about
+          Pentecost, 780, and explicitly includes the prayer at Cana for the
+          dying son at Capharnaum after Jesus returns to Galilee. The article
+          equates A.U.C. 782 with A.D. 29; applying that source-internal
+          calibration yields A.D. 26-27 for the encompassing journey.
+        sources:
+          - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-second-journey-cana
+          - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text
+        note: >-
+          The healing falls within this journey; it did not last for the whole
+          interval. The source gives no narrower absolute date for the healing.
+          The A.D. endpoints are a project derivation, not a printed A.D. date
+          or a consensus chronology. The source's feast-day bounds are retained
+          in its label without conversion to unsupported months or days.
+        date:
+          precision: interval
+          from: {year: 26, era: ad}
+          to: {year: 27, era: ad}
+          label: "Passover, A.U.C. 779 - about Pentecost, 780"
+          derivation:
+            rule: >-
+              Use Maas's express equivalence A.U.C. 782 = A.D. 29 as the
+              source-internal epoch and subtract 753 from each A.U.C. year;
+              retain the encompassing journey's stated bounds without
+              inventing a more precise date for the healing.
+            inputs: [chronology.maas-auc-782-ad-29-calibration]
+            note: >-
+              The named input has exactly one claim, the source's era
+              equivalence; it neither chooses a disputed Crucifixion date nor
+              inherits the dates held on that historical event.
   - id: life-of-christ.raising-of-the-widows-son-at-naim
     title: The raising of the widow's son at Naim
     dates:
@@ -6412,6 +6449,45 @@ events:
           label: >-
             in the seventh year ... In the eighteenth year of Nabuchodonosor ...
             In the three and twentieth year of Nabuchodonosor
+
+  - id: israel.exile.psalm-136-captive-lament
+    title: "The Babylonian captives' lament"
+    note: >-
+      The temporal subject is the historical scene recalled in Psalm 136,
+      not the date of its composition or first performance. Haydock preserves
+      expression at Babylon or at the return, as well as earlier prophetic
+      authorship. The represented captives remember the city's destruction;
+      no particular deportation or absolute year is assigned to their lament.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis_class: derived
+        basis: >-
+          Psalm 136:1 and 3 place the lamenting captives by Babylon's rivers;
+          verse 7 recalls the day of Jerusalem and the demand to raze it.
+          Haydock's argument identifies Babylonian captivity and the verse-7
+          note identifies the Edomites inciting the Babylonians to destroy
+          Jerusalem. The represented lament therefore follows the destruction
+          it remembers, independently of when a poet composed its words.
+        sources:
+          - bible:douay-rheims:Ps.136.1
+          - bible:douay-rheims:Ps.136.3
+          - bible:douay-rheims:Ps.136.7
+          - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-136-babylon-and-jerusalem
+        date:
+          precision: boundary
+          boundary:
+            direction: after
+            anchor: israel.exile.third-captivity
+            statement: "after Jerusalem's destruction under Sedecias"
+          label: "For the time of Jeremias, and the captivity of Babylon"
+          derivation:
+            rule: >-
+              A historical scene remembering Jerusalem's Babylonian destruction
+              follows that event. This one-sided bound dates the represented
+              scene only; it selects none of the anchor's absolute dates and
+              provides no bound on the writing or the end of the captivity.
+            inputs: [israel.exile.third-captivity]
 
   - id: israel.exile.seventy-years
     title: The seventy years of servitude to Babylon

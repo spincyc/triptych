@@ -918,6 +918,13 @@ ANNOTATION_RELATION_ORDER = {
     relation: index for index, relation in enumerate(ANNOTATION_RELATIONS)
 }
 
+# A prophetic fulfilment and an attributed author's era do not identify the
+# historical occasion of the psalm's own scene.
+PSALM_OCCASION_RELATIONS = frozenset({
+    "historical-setting", "superscription-setting", "narrated-event",
+    "retrospective-event", "utterance",
+})
+
 GAP_DISPLAY = {
     "undated-in-tradition": "Undated in the traditional chronology corpus",
     "research-pending": "Chronology research pending",
@@ -1022,7 +1029,7 @@ def _concise_value(claim: Claim, *, initial: bool = True) -> str:
 
 
 def _annotation_claim(claim: Claim, *, name_subject: bool = False) -> AnnotationClaim:
-    if name_subject or claim.relation == "traditional-attribution":
+    if name_subject or claim.relation not in _chronology.TEXTUAL_RELATIONS:
         display = f"{claim.title}, {concise_display_label(claim, initial=False)}"
     else:
         display = concise_display_label(claim)
@@ -1070,7 +1077,8 @@ def annotations(found: Dossier) -> AnnotationProjection:
     a narrated-event group. When the corpus supplies only composition
     chronology, that empty group makes the missing event chronology explicit
     instead of letting the book's composition date masquerade as the episode's
-    date.
+    date. Psalm elements likewise disclose an unresolved historical occasion;
+    neither an attribution nor a later prophetic referent fills that gap.
     """
     projected: list[AnnotationElement] = []
     for element in found.elements:
@@ -1170,6 +1178,22 @@ def annotations(found: Dossier) -> AnnotationProjection:
                     )
                 )
 
+        if (any(locus.startswith("Ps.") for locus in element.loci)
+                and not PSALM_OCCASION_RELATIONS.intersection(by_relation)):
+            partial = any(
+                claim.relation in PSALM_OCCASION_RELATIONS
+                for claim in element.claims
+            )
+            groups.append(_gap_group(
+                "historical-setting",
+                NONUNIFORM if partial else "research-pending",
+                ("No single historical occasion assertion applies across every "
+                 "cited locus; the audit record retains the passage-specific "
+                 "answers." if partial else
+                 "The selected chronology profile supplies no historical "
+                 "occasion date for these Psalm loci. An attribution, textual "
+                 "history, or prophetic referent does not date that occasion."),
+            ))
         groups.sort(
             key=lambda group: (
                 ANNOTATION_RELATION_ORDER.get(group.relation, 999),
@@ -1274,6 +1298,10 @@ def _relation_label(relation: str) -> str:
 
 
 def _gap_display(group: AnnotationGroup, *, comparison_enabled: bool = False) -> str:
+    if group.relation == "historical-setting" and group.status == "research-pending":
+        return "Occasion date unresolved"
+    if group.relation == "historical-setting" and group.status == NONUNIFORM:
+        return "No single occasion date applies across every cited locus"
     if group.relation == "narrated-event" and group.status == "research-pending":
         return ("Narrated event date unresolved" if comparison_enabled else
                 "No narrated-event date in the chronology corpus")

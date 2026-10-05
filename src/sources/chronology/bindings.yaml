@@ -5,7 +5,7 @@ schema: triptych-chronology-bindings/v1
 # scripts/_projection.py projects into. Declared here so that no row's
 # numbering is a thing the reader assumed.
 numbering: vulgate
-updated: '2026-10-01'
+updated: '2026-10-05'
 bindings:
   - relation: prophecy-given
     event: israel.exile.second-isaias-oracles
@@ -109,6 +109,35 @@ bindings:
     sources:
       - bible:douay-rheims:Ps.32.1
       - bible:clementine-vulgate:Ps.32.1
+
+  - relation: traditional-attribution
+    event: israel.monarchy.david-traditional-era
+    scope: [{book: Ps, chapter: 107}, {book: Ps, chapter: 144}]
+    note: >-
+      The tracked Douay titles at Ps.107.1 ("A canticle of a psalm for David
+      himself") and Ps.144.1 ("Praise, for David himself") explicitly name
+      David. Neither title identifies a historical occasion. The same
+      received reference era used by the other inspected Davidic titles
+      orients the attributed figure, without dating either poem's writing
+      or placing its unnamed occasion inside David's reign.
+    sources:
+      - bible:douay-rheims:Ps.107.1
+      - bible:douay-rheims:Ps.144.1
+
+  - relation: traditional-attribution
+    event: israel.monarchy.david-traditional-era
+    scope: [{book: Ps, chapter: 118}]
+    note: >-
+      The Haydock commentary at Psalm 118:1, continued on printed p. 781,
+      says that David is the author "to whom it is generally attributed".
+      This is received commentary attribution, not a biblical superscription:
+      the tracked Douay heading names no author. The same note preserves
+      competing proposals for Solomon's instruction, David's persecution by
+      Saul, and the consolation of the captives, without settling one. This
+      binding therefore supplies only the attributed figure's reference era;
+      no proposal becomes the psalm's historical setting or writing date.
+    sources:
+      - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-118-attribution-and-occasions
 
   # === bind-passion ====================================================
   # --- The Passion, harmonised ------------------------------------------------
@@ -4315,7 +4344,7 @@ bindings:
       counted deportations are each a single occasion, and the psalm says
       nothing that would choose among them — it does not say which carrying-off
       brought these singers to Babylon, and nothing here will pick one to be
-      decisive. What the psalm does assert is that it is sung from inside the
+      decisive. What the psalm represents is the captives' lament during the
       servitude, in Babylon, with the fall of Jerusalem already a thing
       remembered and prayed against: "Remember, O Lord, the children of Edom,
       in the day of Jerusalem: Who say: Rase it, rase it, even to the
@@ -4323,16 +4352,48 @@ bindings:
       (v. 8), whose punishment is still to come. The seventy years of servitude
       to Babylon is the only one of the seven that is that state rather than a
       day within it, and it is the one bound. The binding carries no date, and
-      the event's own claim is relative — Jeremias 25:11's seventy years,
-      measured from the first subjection of Juda — so nothing here converts the
-      psalm into a year. Verses 7-9 additionally recall the destruction of
-      Jerusalem as an earlier event; that is retrospective-event, a different
-      relation, and it is not authored here. VULGATE numbering: this is Hebrew
-      137.
+      the event's own claim is a duration — Jeremias 25:11's seventy years —
+      not a dated interval or an offset. The separate historical-setting
+      boundary below positions the represented lament after Jerusalem's fall.
+      Haydock preserves expression at Babylon or at the return, and a possible
+      earlier prophetic composition: this scene dates neither writing nor
+      performance. Verse 7's explicit recollection has its own retrospective
+      binding. VULGATE numbering: this is Hebrew 137.
     sources:
       - bible:douay-rheims:Ps.136.1
       - bible:douay-rheims:Ps.136.7
       - bible:douay-rheims:Ps.136.8
+      - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-136-babylon-and-jerusalem
+
+  - relation: historical-setting
+    event: israel.exile.psalm-136-captive-lament
+    scope: [{book: Ps, chapter: 136}]
+    note: >-
+      The represented scene is the captives' lament after the fall they recall
+      in verse 7. Haydock's argument and notes at verses 1 and 7 identify the
+      Babylonian captivity and Jerusalem's destruction; their proposals for
+      when the words were composed or sung remain unresolved. This binding
+      dates the historical scene only, not the writing, and does not select
+      the deportation in which these particular captives were taken.
+    sources:
+      - bible:douay-rheims:Ps.136.1
+      - bible:douay-rheims:Ps.136.3
+      - bible:douay-rheims:Ps.136.7
+      - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-136-babylon-and-jerusalem
+
+  - relation: retrospective-event
+    event: israel.exile.third-captivity
+    scope: [{book: Ps, chapter: 136, first: 7, last: 7}]
+    note: >-
+      "Remember ... in the day of Jerusalem" recalls the city's destruction.
+      Haydock's verse-7 note identifies the Edomites inciting the Babylonians
+      to destroy it. Only this verse explicitly recalls that event; the
+      destruction's dates are not promoted to the whole psalm, its writing,
+      or its opening lament. The source event keeps its own traditional
+      preferred date and alternatives, without an Anno Mundi conversion.
+    sources:
+      - bible:douay-rheims:Ps.136.7
+      - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-136-babylon-and-jerusalem
 
   - relation: prophetic-referent
     event: life-of-christ.ascension
@@ -5088,6 +5149,21 @@ bindings:
     sources:
       - artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04
       - bible:douay-rheims:Luke.3.23
+  - relation: narrated-event
+    event: life-of-christ.healing-of-the-rulers-son-at-cana
+    scope:
+      - {book: John, chapter: 4, first: 46, last: 53}
+    note: >-
+      The appointed passage locates Jesus at Cana, the ruler's sick son at
+      Capharnaum, the father's plea and Jesus's assurance, and the servants'
+      confirmation of the healing. Maas expressly includes this incident in
+      his Second Journey. Only the inspected appointed verses are bound; the
+      journey's derived interval is held once on the event.
+    sources:
+      - bible:douay-rheims:John.4.46
+      - bible:douay-rheims:John.4.50
+      - bible:douay-rheims:John.4.53
+      - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-second-journey-cana
   - relation: narrated-event
     event: life-of-christ.raising-of-the-widows-son-at-naim
     scope:

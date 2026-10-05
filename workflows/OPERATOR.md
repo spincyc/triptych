@@ -10,7 +10,7 @@ available for legacy schema-1 work. The current three-document contract
 restores the established first four pages for the concise companion, while
 its remaining argument and the expansive study follow their distinct roles. Read
 `guidance/liturgy/propers-three-documents.md` for the owning standard. The
-`proper-study` workflow is at version 8. The version paragraphs below say what
+`proper-study` workflow is at version 9. The version paragraphs below say what
 each bump changed.
 
 The driver grammar is unchanged:

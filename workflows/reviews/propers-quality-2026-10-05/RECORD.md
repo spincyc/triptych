@@ -1,57 +1,84 @@
-# Quality review disposition
+# Propers quality and chronology review
 
 The maintainer requested a cold comparison of recent GPT and Claude propers,
-a repair for missing Psalm event chronology, and a complete new GPT packet
-for the Twentieth Sunday after Pentecost, 11 October 2026. `REVIEW.md` is the
-independent comparison against base `a53e262d00d2658ac079801b07b26deeffb05a6d`.
-It is an editorial diagnosis, not a second source or rendered-PDF acceptance.
+a repair for missing Psalm event chronology, and a complete GPT packet for
+the Twentieth Sunday after Pentecost, 11 October 2026.
 
-## Applied controls
+## Evidence scope and reconciliation
 
-The matched Seventeenth Sunday pair supports the strongest comparison; other
-formularies and mixed authorship prevent a clean model ranking or temporal
-regression claim. The new controls preserve the report's counterevidence.
+The initial local snapshot was `a53e262d00d2658ac079801b07b26deeffb05a6d`.
+`REVIEW.md`, `CONTROLS-REVIEW.md` and `CHRONOLOGY-REVIEW.md` retain reviews
+against that base. The first successful current network fetch then found
+`origin/main` at `b373dd5db`, 112 commits ahead, including a completed Claude
+Nineteenth Sunday and substantive source, chronology and workflow repairs.
+The initial reports do not certify current main or establish that its already
+repaired defects remain open. A current-main matched-pair supplement and
+integrated checks are therefore required before publication.
 
-- The interpretation audit and research/study packets require a particular
-  question, checked inferential development and a distinctive argument,
-  movement or consequence. Complementary answers to the same question remain
-  valid. No extra author, doctrine, interpretation or length quota was added.
-- Homily drafting and review examine the text's decisive turn and its effect
-  on the listener's response. Familiar pastoral problems remain possible when
-  their treatment is earned by the appointed texts.
-- The component checker accepts the homily's nonempty subset of appointed
-  elements. Unknown elements remain errors; the full studies and interpretive
-  lanes retain complete coverage. A preceding production record documents an
-  author expanding a selective sermon after the old checker rejected it.
-- Psalm research and review distinguish traditional attribution, occasion,
-  remembered events and composition. Source implementation and final output
-  acceptance are separate reviews.
-- The concise-study contract already requires interleaved comparison of
-  witnesses' reasoning and rejects miniature lane summaries. Its existing
-  upstream-repair rule remains in force; no word-count shortcut was added.
+The first production attempt, `4104a1c080c562ac`, was held before context
+submission. Only the scope gate passed; no publication source was authored.
+Its actual pending state and sole result are preserved in the production
+archive. No result or terminal state was manufactured. The new run will use
+proper-study v9 over reconciled main.
 
-The pipeline is version 8 because the compiled packets change. Stage order,
-worker/reviewer effort, page ranges, source rules and prior terminal identities
-remain unchanged. The old completed deliverable's version-7 check now points
-to the durable version-history statement instead of the mutable current
-pipeline number; its criterion is unchanged.
+## Final controls
 
-## Verification and independent review
+The editorial comparison examines the questions the appointed texts raise,
+the source reasoning developed to answer them, and how the concise study and
+homily preserve that reasoning. The strongest initial comparison was the
+matched Seventeenth Sunday pair. Different formularies, revision histories
+and mixed provenance prevent a clean model ranking or general regression
+claim. GPT's Nineteenth Sunday supplies significant contrary evidence.
 
-The component, proper-study, content-preflight and effort suites ran 150 tests:
-149 passed. The sole failure is the earlier GPT pc-s53 manifest's unregistered
-Leo the Great; the same test fails with the unchanged HEAD checker. The
-independent reviewer reproduced that failure set and separately passed the
-terminal-history/version compatibility test. No test or authority record was
-weakened. The promised-deliverable ledger and `git diff --check` pass.
+The interpretation audit and research/study packets now require a particular
+question, checked inferential development and a distinctive argument,
+movement or consequence. Complementary answers to the same question remain
+valid. No extra author, doctrine, interpretation or length quota is added.
+Homily drafting and review examine the text's decisive turn and its effect
+on the listener's response. Familiar pastoral problems remain possible when
+their treatment is earned by the appointed texts. The existing concise-study
+contract already requires interleaved comparison of witnesses' reasoning and
+rejects miniature lane summaries; its upstream-repair rule remains in force.
 
-The first independent controls verdict required changing “distinct exegetical
-question” to permit different supported answers to one question. The repair
-changes research-review, author-study, study-review and OPERATOR consistently.
-The first and revised immutable review packages are retained under ignored
-`build/agent-handoffs/`; the revised snapshot is
-`20261005T125322Z-propers-quality-controls-revised`. Its ZIP was created and
-tested successfully. The independent focused recheck returned **PASS** with no remaining controls
-findings; `CONTROLS-REVIEW.md` retains both the finding and its disposition.
-Publication research, prose and artifacts remain open until their actual
-workflow reviews complete.
+**The proposed checker change was dropped.** The initial-base review found
+an author expanding a selective homily after an all-elements rejection, but
+current main's `6f3a3567c` had already settled the manifest's meaning: all
+researched elements inform the speech; their declaration does not claim
+spoken enumeration. `CONTROLS-CURRENT-MAIN.md` records the independent
+reassessment. The upstream checker, its tests and that explicit profile
+meaning are preserved. The historical author reaction is evidence of the
+earlier ambiguity, not proof of a current contradictory gate.
+
+Proper-study v9 retains upstream v8's v4 research seal, automatic chronology
+input discovery, clarified four-senses rule, stage order, declared effort,
+page ranges and source requirements. Only the new editorial packet criteria
+and version change remain. The initial controls review's P2 wording finding
+was repaired: distinct arguments may answer the same question.
+
+## Chronology
+
+The source repair distinguishes traditional attribution, an identified
+occasion, remembered events and composition. It names temporal subjects in
+the visible answer and shows unresolved Psalm occasions explicitly. New
+received evidence covers Psalms 107, 118, 136 and 144, while the Psalm 78
+record preserves unresolved historical alternatives. Psalm 136's represented
+Babylonian setting does not date its composition; the recalled destruction's
+absolute dates remain confined to verse 7. John 4:46–53 has a broad derived
+interval from Maas's encompassing journey, not a precise healing date.
+
+The initial independent review found no blocker and reproduced one inherited
+Ephesians test failure. Current main already repairs that baseline failure;
+those old counts are historical, and integration must use current results.
+The old impact files likewise describe the initial base, not a rereview of
+newer installed guides. Existing publications are preserved as their reviewed
+snapshots; no old research approval is silently advanced to the new corpus.
+
+## Review packages and remaining work
+
+Immutable initial and revised controls packages, and the chronology package,
+were created under ignored `build/agent-handoffs/` with sibling ZIPs whose
+inventories were tested. They preserve their stated bases. Integrated review
+and the final publication family receive new packages rather than overwriting
+those snapshots. The source and PDF acceptance gates, reviewed installation,
+main integration and live deployment remain open until actual evidence closes
+them in the owning register and ledger.

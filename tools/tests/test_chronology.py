@@ -1093,7 +1093,7 @@ bindings:
                          {"traditional-attribution"})
         # Ps.137 and Ps.140 were added on 2026-10-01 (KI-013) from their
         # inspected titles; Ps.140's heading is the Clementine's, as Ps.94's is.
-        attributed = (32, 33, 39, 70, 85, 94, 97, 137, 140)
+        attributed = (32, 33, 39, 70, 85, 94, 97, 107, 118, 137, 140, 144)
         self.assertEqual(
             {str(span) for item in bindings for span in item.scope},
             {f"Ps.{chapter}" for chapter in attributed},
@@ -1152,7 +1152,7 @@ bindings:
                 self.assertEqual(attribution.subject,
                                  "israel.monarchy.david-traditional-era")
 
-    def test_psalms_without_a_davidic_title_do_not_inherit_davids_era(self) -> None:
+    def test_psalms_without_a_davidic_witness_do_not_inherit_davids_era(self) -> None:
         for chapter in (83, 91, 101, 117):
             for verse in (1, _chronology.verse_counts()[("Ps", chapter)]):
                 with self.subTest(chapter=chapter, verse=verse):
@@ -1160,6 +1160,35 @@ bindings:
                     relations = {a.relation for a in answer.assertions}
                     self.assertNotIn("traditional-attribution", relations)
                     self.assertIn("composition", relations)
+
+    def test_psalm_118_received_attribution_does_not_choose_a_proposed_occasion(self) -> None:
+        answer = _chronology.chronology("Ps.118.49")
+        self.assertEqual({a.relation for a in answer.assertions},
+                         {"composition", "traditional-attribution"})
+        bindings = [b for b in _chronology.load().bindings
+                    if any(str(span) == "Ps.118" for span in b.scope)]
+        self.assertEqual(len(bindings), 1)
+        self.assertTrue(any("psalm-118-attribution-and-occasions" in source
+                            for source in bindings[0].sources))
+
+    def test_psalm_136_dates_the_scene_and_scopes_the_recalled_event(self) -> None:
+        opening = _chronology.chronology("Ps.136.1", profile=PROFILE)
+        scene = next(a for a in opening.assertions
+                     if a.subject == "israel.exile.psalm-136-captive-lament")
+        self.assertEqual(scene.relation, "historical-setting")
+        self.assertEqual(scene.claim.date.precision, "boundary")
+        self.assertEqual(scene.claim.date.anchor, "israel.exile.third-captivity")
+        self.assertTrue(scene.claim.date.derived)
+        self.assertNotIn("retrospective-event", {a.relation for a in opening.assertions})
+        recalled = _chronology.chronology("Ps.136.7", profile=PROFILE)
+        dates = [a for a in recalled.assertions if a.relation == "retrospective-event"]
+        self.assertTrue(dates)
+        self.assertEqual({a.subject for a in dates}, {"israel.exile.third-captivity"})
+        self.assertTrue(any(a.claim.date.label == "A.M. 3416" for a in dates))
+        self.assertTrue(all(a.claim.answerability == "answerable" for a in dates))
+        for verse in (1, 3, 7, 9):
+            answer = _chronology.chronology(f"Ps.136.{verse}", profile=PROFILE)
+            self.assertNotIn("composition", {a.relation for a in answer.assertions})
 
 
 class InheritanceTests(unittest.TestCase):
@@ -4248,6 +4277,13 @@ class RemediationTests(unittest.TestCase):
                 # answers with is the verse, and this rule is about the values
                 # the apparatus itself supplies.
                 continue
+            if claim.basis_class == "derived":
+                # A project inference from a Psalm's historical scene does
+                # not report a numerical value printed in Haydock's apparatus.
+                self.assertTrue(claim.date.derived, identifier)
+                self.assertEqual(claim.date.precision, "boundary", identifier)
+                self.assertIsNone(claim.date.begin, identifier)
+                continue
             self.assertEqual(claim.basis_class, "reported-excluded", identifier)
             self.assertEqual(
                 claim.reporting_exception,
@@ -5793,6 +5829,12 @@ class StoredDateAgreesWithItsLabelTests(unittest.TestCase):
     ERA_AD = re.compile(r"\bA\.?\s?D\.?\B|\bA\.\s?D\.")
 
     UNLABELLED = {
+        "event:life-of-christ.healing-of-the-rulers-son-at-cana#0": (
+            "The exact source label gives the enclosing journey in A.U.C. "
+            "779-780. A.D. 26-27 are explicitly derived from Maas's separate "
+            "A.U.C. 782 = A.D. 29 calibration; the dedicated calibration "
+            "test below checks both endpoints and the dependency, so this "
+            "exception does not exempt its numerical values from checking."),
         "event:apostolic-age.famine-under-claudius#0": (
             "The label is the article's own phrase 'precisely in this year' "
             "and prints no figure; the year 44 is the one the sentence it "
@@ -5917,6 +5959,21 @@ class StoredDateAgreesWithItsLabelTests(unittest.TestCase):
                                 f"{kind}:{subject.id}#{index} stores "
                                 f"{endpoint.era} under label {date.label!r}")
         self.assertEqual(wrong, [])
+
+    def test_cana_source_era_is_converted_only_through_its_named_calibration(self) -> None:
+        held = _chronology.load()
+        claim = held.events["life-of-christ.healing-of-the-rulers-son-at-cana"].claims[0]
+        anchor_id = "chronology.maas-auc-782-ad-29-calibration"
+        anchor = held.events[anchor_id].claims[0]
+        self.assertEqual(claim.basis_class, "derived")
+        self.assertEqual(claim.date.derivation["inputs"], [anchor_id])
+        self.assertEqual(claim.date.label,
+                         "Passover, A.U.C. 779 - about Pentecost, 780")
+        self.assertEqual(anchor.date.label, "A.U.C. 782 = A.D. 29")
+        self.assertEqual(anchor.date.begin.year, 29)
+        for endpoint, auc in zip((claim.date.begin, claim.date.end), (779, 780)):
+            self.assertEqual(endpoint.era, "ad")
+            self.assertEqual(endpoint.year, anchor.date.begin.year + auc - 782)
 
 
 # --- PCC-40: retained text later than the edition it hangs under ------------
