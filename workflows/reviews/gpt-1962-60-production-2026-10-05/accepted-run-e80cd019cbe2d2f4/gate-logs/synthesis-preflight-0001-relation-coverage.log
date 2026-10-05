@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost --edition synthesis --check relation-coverage
+exit 0
+--- stdout ---
+relation-coverage (synthesis edition): 2 interpretive lanes, each declaring all four senses and whole-proper component coverage
+
+--- stderr ---
+

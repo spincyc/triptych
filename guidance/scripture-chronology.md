@@ -1042,6 +1042,18 @@ date:
 Gospel written over five years and a Gospel written at an unknown point in a
 five-year window are not the same statement.
 
+A claim may carry optional `context_qualification`: a nonempty source-owned
+qualification that must accompany its concise value when exported as another
+event's anchor context (§12). This descriptive metadata does not alter the
+date, label, answerability, or ordinary assertion. In particular, the 588 B.C.
+Petavius/Sloet candidate's retained-transcription check and pending printed-page
+verification must travel with the number; hiding that limitation in a corpus
+note would make the concise display imply stronger verification than occurred.
+Qualification-only additions, changes and removals are semantic review changes:
+both manifest and full claim comparisons carry this field, with a historical
+loader's missing field equivalent to an empty qualification. Neither source
+approval nor an old review acceptance is renewed by regenerating that manifest.
+
 ### 10.0 A duration is not a relative offset
 
 `relative` says **when** relative to something else. `duration` says **how
@@ -1199,6 +1211,31 @@ Each assertion carries its relation, the event or unit it belongs to, that
 subject's title, the claim (date, disposition, `answerability`, `basis_class`,
 sources, note), whether it was `inherited`, and the authored scope it reached
 the locus from.
+
+Its `binding_sources` separately carry the evidence for a locus-to-event link.
+Those sources do not become the authors of the event's date: Haydock's received
+Davidic attribution of Psalm118 warrants that relationship, while Corbett is
+the source for the displayed reign dates. All matching selected routes retain
+their warrants, including native-system and broad whole-Psalm routes; shared
+and native deduplication retains both routes' evidence. A nonmatching binding
+or a suppressed evidence-profile answer contributes no source to the answer.
+
+`anchor_contexts(answer)` and the query CLI's separate `anchor_contexts` field
+expose one hop of context for an answerable event relation whose structured
+boundary names an event anchor. They retain the parent assertion, anchor
+identity, direction, exact candidate indexes, labels, sources, qualifications,
+and dispositions. Candidates are answerable evidence in the parent's own leaf
+profile, never an unfiltered profile union, and preserved contradictions remain
+excluded even in evidence mode. They are not further assertions about the
+queried locus and do not change its status. This bounded view performs no
+recursion, arithmetic or era conversion; relative offsets, durations' `within`
+references, textual-unit anchors, and bare absolute boundaries do not expand.
+An event after a destruction dated 586 B.C. may still be in 586 B.C.; the view
+does not replace that relationship with the stricter numerical bound “after
+586 B.C.” or date the Psalm's utterance or composition. A.M. 3416 and the
+586/587/588 B.C. alternatives remain separate qualified candidates, never a
+conversion or a synthesized interval; the preserved contradictory 536 B.C.
+claim remains outside the answer.
 
 Ordering is stable and defined: relation in the order of §5, then disposition
 (`preferred`, `alternate`, `disputed`), then subject id, then the date's
@@ -1371,6 +1408,37 @@ it does not import the 1962 calendar, source owner, or research judgments.
   subject, status, returned claims, leaf profiles, sources, and full locus
   reach. A reviewer can therefore see that a critical comparison is present
   without mistaking it for the default cascade's answer.
+- Schema 4 is used only when a record carries typed `anchor_contexts`.
+  Schemas 2 and 3 remain readable and unchanged for records without contexts.
+  Each context identifies the element and its full shared boundary assertion,
+  named event anchor and direction, then the anchor candidates with their
+  profile, disposition, source ids, basis, note, and contextual qualification.
+  This separately generated audit context does not enter `claims` or
+  `publication_claims`, and it cannot license manual dates in prose or Date
+  cells. A boundary must apply across every appointed locus to contribute
+  context; a mixed-locus row cannot borrow an anchor from one part. Schema 4's
+  generated annotation group names the anchor and relationship, says the dates
+  belong to that anchor rather than the passage or its composition, and keeps
+  the same-year caution. The reader heading is “Historical background”, and the
+  prose names the historical event and says both events could occur in the same
+  year; internal anchor/boundary vocabulary belongs to the typed audit record.
+  Its own sealed claim/group macros preserve parent and
+  anchor identities, exact raw labels, profile, disposition, source ids, and
+  visible qualification. Preflight compares both artifacts with the current
+  projection and rejects altered context or calls to the internal context
+  macros outside the generated artifact. Web conversion preserves the complete
+  visible payload. The computation-read seal includes the anchor candidates'
+  source records and their ancestry through the existing source resolver.
+- The research computation trace seals binding warrants as well as date-claim
+  sources. Proper aggregation unions that internal evidence across retained
+  routes without changing date identity or the across-all-loci intersection.
+  An audit-only assertion still needs its evidence sealed even when it cannot
+  be printed as a common Date cell. This metadata does not change the existing
+  chronology record or annotation schema; it travels separately to the source
+  resolver and into `chronology_cited_sources` and the research-input file
+  fingerprints. Sealing `bindings.yaml` alone does not seal the referenced
+  passage record or its ancestry. A change confined to that warrant therefore
+  invalidates the research seal without inventing a change to the event date.
 - Manual consumers may display only the source's raw `label`; they may not
   mint, shorten, or edit a normalized date label. The sole exception is the
   deterministic `annotations` projection: its generated TeX may render the

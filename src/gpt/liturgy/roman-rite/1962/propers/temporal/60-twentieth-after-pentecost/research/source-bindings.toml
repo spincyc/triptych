@@ -1,0 +1,206 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = ["Printed 412–413 / PDF 493–494, marginal 1689–1698", "Printed 685–686 / PDF 766–767, prayers 3847, 3855, 3857", "Printed 244–245 / PDF 325–326, Preface 1053", "Rubrics PDF 15–16, 29, 32–33: RG 91,106–109,111; RGMR 433–437,480,482–483,494,505"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Whole delivery hash matched and exact images inspected; Sunday and Marian pages checked at 200 and 400 dpi. Governing wording and occurrence authority; historical antecedents, not this complete edition, supply the Latin publication route."
+verified_on = "2026-10-05"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.pentecost-20-pages-352-354"
+loci = ["Printed 352–354 / parent PDF 438–440"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact retained images independently read at a legible 2400-pixel scale; all ten base Sunday elements compared against 1962. Historical extra orations excluded; abnormal source page boxes do not justify claiming normal physical-page dpi."
+verified_on = "2026-10-05"
+source_fingerprint = "sha256:345ce7b743f69ae052378e9ed8648b1e229685720858eadf66bb38c3b7c3bd0f"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.maternitatis-beatae-mariae-virginis-orations"
+loci = ["Maternity of the Blessed Virgin Mary, appendix for particular places, second Sunday of October; Collect [171], Secret and Postcommunion [172]; parent PDF 841–842"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Detailed inspected bounds: Appendix [171]–[172] / parent PDF 841–842; all three prayers. Actual 1862 page images establish all three Latin antecedents. Prior misowned 1922 locator over 1862 OCR corrected with coordinated ownership; prior uses were empty. Old feast assignment excluded."
+verified_on = "2026-10-05"
+source_fingerprint = "sha256:bd0b90fe231ddc7f5f71280b87a817d40510bc30e264ea4b6d5338ba850c2c1e"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+loci = ["Appendix [20]–[21] / PDF 1050–1051"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Whole PDF hash matched; actual Marian prayers inspected in page images as separate corroboration. This 1922 owner is not described as the 1862 printing."
+verified_on = "2026-10-05"
+source_fingerprint = "sha256:2aeeef19bd9fd55efb91a84ab940dd7be0abed5af53bc5d1d63517fb364b7661"
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.pentecost-20-checked-english"
+loci = ["post-pentecosten-20/collect", "post-pentecosten-20/secret", "post-pentecosten-20/postcommunion"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Detailed inspected bounds: Collect printed 448 / PDF 457; Secret printed 449 / PDF 458; Postcommunion printed 449–450 / PDF 458–459. Three received human English prayers checked word for word in the hash-matched scan, including Postcommunion continuation. Historical hand-missal English, not official 1962 English; received abbreviated conclusions preserved."
+verified_on = "2026-10-05"
+source_fingerprint = "sha256:4bc42f25e9e375fe487959e200923fdef0ac9b875197c3c5eaab63d9292dc397"
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en"
+loci = ["praefatio-communis", "praefatio-de-ss-trinitate"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Detailed inspected bounds: Common opening and Trinity continuation, printed xxviii–xxix / PDF 39–40. Facing columns and continuation inspected in original images; Trinity Preface body distinguished from Sanctus. The English common opening is joined to the marked same-witness Trinity continuation, not translated by the model."
+verified_on = "2026-10-05"
+source_fingerprint = "sha256:5f55635ee72dee95edb4acb7616cd2158569f83d6f510f7685e9765b46f9617b"
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la"
+loci = ["praefatio-communis", "praefatio-de-ss-trinitate"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Detailed inspected bounds: Common opening and Trinity continuation, printed xxviii–xxix / PDF 39–40. Facing columns and continuation inspected in original images; Trinity Preface body distinguished from Sanctus. The English common opening is joined to the marked same-witness Trinity continuation, not translated by the model."
+verified_on = "2026-10-05"
+source_fingerprint = "sha256:4dd570d15a594e4ab3b870a81e16e96c4802adaf6907f2f26dd29b76fdaae4ff"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.maternity-checked-english"
+loci = ["Maternity of the Blessed Virgin Mary; Collect, Secret and Postcommunion; printed 1233, 1235–1236"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Detailed inspected bounds: Printed 1233,1235–1236 / PDF 1234,1236–1237; Collect, Secret, Postcommunion. All three historical English prayers checked against facing Latin and 1962 in exact images; whole PDF hash matched. Original-body pages outside excluded inserts, under recorded nonrenewal rights basis. Physical later printing distinguished from edition identity."
+verified_on = "2026-10-05"
+source_fingerprint = "sha256:b51416c00ff7cf76a92eacf34d4ded07af7686f1b863caa01cd27447db93e147"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-32-daniel-8954f60d"
+loci = ["Dan.3.29-31", "Dan.3.35", "Dan.3.42-43"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Detailed inspected bounds: Complete Daniel 3; appointed adapted prayer draws on 3:29–31,35,42–43. Registered historical verse text read in full stated contexts. Biblical study English distinguished from the Missal adaptations; not conflated with American 1899 wording."
+source_fingerprint = "sha256:d0b3ef2c7944402acdaed457d921aff389826a39dc2ec7ada6adc53ff9feadac"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-50-john-27b8f3ed"
+loci = ["John.4.46-53"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Detailed inspected bounds: Complete John 4; appointed 4:46b–53. Registered historical verse text read in full stated contexts. Biblical study English distinguished from the Missal adaptations; not conflated with American 1899 wording."
+source_fingerprint = "sha256:4498ea55e49e3577649969ed0bcf456423b8aec2f9edda55586c37190dfe77a4"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-56-ephesians-10c79be0"
+loci = ["Eph.5.15-21"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Detailed inspected bounds: Complete Ephesians 4–6; appointed 5:15–21. Registered historical verse text read in full stated contexts. Biblical study English distinguished from the Missal adaptations; not conflated with American 1899 wording."
+source_fingerprint = "sha256:faac3fc52bb177cb8aeb9f5f56ceb440558a3cd57823293335446f8ae7c4dbf6"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = ["Ps.107.2", "Ps.118.1", "Ps.118.49-50", "Ps.136.1", "Ps.144.15-16"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Detailed inspected bounds: Complete Vulgate Psalms 107,118,136,144; appointed 107:2,118:1,118:49–50a,136:1,144:15–16. Registered historical verse text read in full stated contexts. Biblical study English distinguished from the Missal adaptations; not conflated with American 1899 wording."
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-7.ccel-web-2026-09-17.ccel-text-266502c9"
+loci = ["Augustine Tractates on John XVI.1–7, complete; lines 8462–8696"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete homily read in retained historical English. Direct John exegesis, with initial-faith disagreement, Samaritan contrast and incarnate Word context retained; no fresh print-image collation."
+source_fingerprint = "sha256:10294711891b3ca7163bf578e02d0a027dbd110257bdaf2fb0b89b65ffe858de"
+
+[[bindings]]
+source_id = "artifact.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.complete-extracted-text-dc25dd69"
+loci = ["28.1-3"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Detailed inspected bounds: II.28.1–3, complete homily; lines 349–357. Complete Latin homily read directly. Faith restricted by assumed bodily presence, status inversion and humility; actual homily setting preserved. Modern Wikisource transcription attribution and CC BY-SA 3.0 apply; no model rendering represented as received English."
+source_fingerprint = "sha256:dd03fd6ff09944af5ba01e741418ae3278e9bc68a08acb4d0cd4538129984eea"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-13.english-ccel-web-2026-09-05.ccel-npnf113-text-54274dd9"
+loci = ["Chrysostom Homilies on Ephesians XIX complete, lines 13166–13630; XVIII preceding context; editorial note 404"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Actual historical English arguments read through reciprocal service at 5:21. Chrysostom and NPNF editor distinguished on thanksgiving for all things; no attribution of a whole-Mass design."
+source_fingerprint = "sha256:374d296602c0a52e4c252ad0e7704b9c9952d06f6b66b891bb391c8509c390db"
+
+[[bindings]]
+source_id = "artifact.jerome.commentaria-in-danielem.migne-pl-25-wikisource-1845.latin-text-3fe4ba4f"
+loci = ["Book I, Daniel 3:23–26,29,37,39,49,57–58"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Retained Latin exposition read at specified complete argument blocks, including representative confession and Greek additions. Not a claim to have read the entire commentary or established its publication as a fresh page-image collation."
+source_fingerprint = "sha256:dab9057a0dc93c8f7e968498dc2c41949281b7c7b59b8d746f86eb80b992a6d8"
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
+loci = ["107.1-2", "118.1-8", "118.50-56", "136.1-13", "144.14-18"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Detailed inspected bounds: Vulgate 107 (NPNF 108) §§1–2; Vulgate 118 (NPNF 119) §§1–8,50–56; Vulgate 136 (NPNF 137) §§1–13, complete; Vulgate 144 (NPNF 145) §§14–18. Exact argument blocks read in retained NPNF historical English, with edition numbering checked. Prayer for help and fulfilment, pilgrim song, furnace/food comparison and fitting-season physician retained; short Psalm 107 backward reference not inflated."
+source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
+
+[[bindings]]
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+loci = ["Psalm 118:1–3,49–50", "Psalm 136:1–4", "Psalm 144:14–17", "Psalm 107 and its reference to Psalm 56:8"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Actual historical O’Sullivan translation read at specified loci. Interior citizenship, prayer as means of fulfilment and open-hand generosity adopted; claims blaming poverty on sufferers are not applied diagnostically."
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-scan-volume-3-410f6d11"
+loci = ["Volume III, Twentieth Sunday after Pentecost, printed 174–178 / PDF 190–194"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Complete Sunday commentary read in OCR and all five pages visually checked in the hash-matched PDF. Ten base elements match. Marian commemoration and Trinity Preface are not covered here; autumn imagery is later application, not established original design."
+verified_on = "2026-10-05"
+source_fingerprint = "sha256:765e56515c01f4983b213615c6241c91fdb853e38d082a70ca61373369b43f6c"
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-volume-3-ocr-4d8c8988"
+loci = ["Volume III, Twentieth Sunday after Pentecost, printed 174–178 / PDF 190–194"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete Sunday commentary read in OCR and all five pages visually checked in the hash-matched PDF. Ten base elements match. Marian commemoration and Trinity Preface are not covered here; autumn imagery is later application, not established original design."
+source_fingerprint = "sha256:04f9c86491a663faa60eb325af91ca9056441e83aadb4608fbb0d8b87136a32f"
+
+[[bindings]]
+source_id = "passage.fssp-france.ordo-du-mois.web-2026-10-05.2026-10-11"
+loci = ["October 2026; Sunday 11 October entry"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Detailed inspected bounds: October 2026; Sunday 11 October entry; full HTML line 256. Complete exact October response inspected; date, Sunday, class and color corroborated for FSSP Province de France. Copyrighted remote witness; no full calendar reproduced and no universal local-calendar or commemoration inference."
+verified_on = "2026-10-05"
+source_fingerprint = "sha256:7533ef1ae68b49fb227f22dbe480d1cf51c3f5dbd565095723c13d5700c5054a"
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-28.ephesians-introduction"
+loci = ["The Letter to the Ephesians, complete introduction; especially prose paragraphs 3-4, physical HTML lines 626 and 628"]
+role = "context"
+states = ["cataloged"]
+context = "September witness cataloged as the source of the canonical comparison assertion; no exact-byte reinspection of that historical delivery is claimed. The independently inspected October response used for this research has its own binding below."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-10-05.ephesians-introduction"
+loci = ["The Letter to the Ephesians, complete introduction and division list; physical HTML lines 622-638, especially paragraphs 3-4 at lines 626 and 628"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete October response was hashed and all four introductory paragraphs and the division list independently read on 2026-10-05, with a same-day reopening of the official page. The adopted destination and authorship comparison belongs to this exact witness. The later-disciple proposal retains its approximate date and conditional status; the secretary hypothesis remains distinct. This does not independently replace the numerical assertion held by canonical chronology. Protected HTML is not redistributed."
+verified_on = "2026-10-05"
+source_fingerprint = "sha256:2f5df3eb97faa0f68a6db133ce71cadb9ec5768013daea8a0d20b3d8b5b1be35"
+
+[[bindings]]
+source_id = "passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-118-attribution-and-occasions"
+loci = ["Ps.118.1"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete PDF's SHA-256 matched the registered artifact; the image of printed p. 781 / PDF p. 817 was independently read. The note reports general Davidic attribution alongside competing proposals concerning instruction of Solomon, David under Saul, and consolation of the captives, including a proposed Daniel attribution. This controls Psalm 118's received attribution for the Introit verse and Communion; Corbett supplies only David's reference era. No single occasion, authorship certainty or composition date follows."
+verified_on = "2026-10-05"
+source_fingerprint = "sha256:a8c1b08afa2a0ad782f36d3dd77f9ef12c2e75faf68c8ebec35d253f52d89901"

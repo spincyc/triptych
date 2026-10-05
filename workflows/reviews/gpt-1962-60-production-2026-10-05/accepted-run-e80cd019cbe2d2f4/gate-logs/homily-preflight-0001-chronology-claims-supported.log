@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost --edition homily --check chronology-claims-supported
+exit 0
+--- stdout ---
+chronology-claims-supported (homily edition): 0 chronology claims and no date cell, every claim asserted by the corpus (not yet bound by version: the concise physical-page contract requires the complete canonical chronology)
+
+--- stderr ---
+

@@ -64,6 +64,7 @@ CALENDAR = "roman-1962"
 RECORD = "research/chronology.toml"
 RECORD_SCHEMA = 3
 LEGACY_RECORD_SCHEMA = 2
+ANCHOR_CONTEXT_SCHEMA = 4
 RECORD_TYPE = "proper-chronology"
 GENERATOR = "tools/tpt proper-chronology record"
 
@@ -145,6 +146,9 @@ class Claim(NamedTuple):
     sources: tuple[str, ...]
     reaches: tuple[Reach, ...]
     derived: bool = False
+    # The resolved link's warrant, retained for the research seal without
+    # presenting it as evidence for the event's date or changing claim identity.
+    binding_sources: tuple[str, ...] = ()
 
     def sort_key(self) -> tuple:
         return (
@@ -181,7 +185,7 @@ class Claim(NamedTuple):
 
 
 # Claim fields the record does not carry; see `Claim`.
-UNRECORDED_CLAIM_FIELDS = ("reaches", "derived")
+UNRECORDED_CLAIM_FIELDS = ("reaches", "derived", "binding_sources")
 
 
 class Element(NamedTuple):
@@ -215,6 +219,26 @@ class ProfileComparison(NamedTuple):
     requested_profile_name: str = ""
 
 
+class AnchorCandidate(NamedTuple):
+    index: int
+    claim: Claim
+    qualification: str
+    basis: str
+    note: str
+    reporting_exception: str | None
+
+
+class AnchorContext(NamedTuple):
+    """Dates of a named boundary anchor, never additional Psalm assertions."""
+
+    element_key: str
+    parent: Claim
+    subject: str
+    title: str
+    direction: str
+    candidates: tuple[AnchorCandidate, ...]
+
+
 class Dossier(NamedTuple):
     """Everything the corpus answers about one proper's appointed Scripture.
 
@@ -236,6 +260,7 @@ class Dossier(NamedTuple):
     appointment_notes: tuple[str, ...] = ()
     profile_comparisons: tuple[ProfileComparison, ...] = ()
     comparison_dependencies: tuple[tuple[str, str], ...] = ()
+    anchor_contexts: tuple[AnchorContext, ...] = ()
 
     def element(self, key: str) -> Element | None:
         for item in self.elements:
@@ -275,6 +300,7 @@ class AnnotationGroup(NamedTuple):
     claims: tuple[AnnotationClaim, ...]
     requested_profile: str = ""
     requested_profile_name: str = ""
+    anchor_context: AnchorContext | None = None
 
 
 class AnnotationElement(NamedTuple):
@@ -519,8 +545,12 @@ def _claims_at(locus: str, profile: str | None, corpus_root: Path | None) -> tup
     answer = _chronology.chronology(locus, profile=profile, root=corpus_root)
     if not answer.resolved:
         return answer.status, answer.reason, []
-    claims = [
-        Claim(
+    claims = [_assertion_claim(item, str(answer.locus)) for item in answer.assertions]
+    return answer.status, answer.note, claims
+
+
+def _assertion_claim(item, locus: str) -> Claim:
+    return Claim(
             relation=item.relation,
             subject=item.subject,
             title=item.title,
@@ -534,16 +564,46 @@ def _claims_at(locus: str, profile: str | None, corpus_root: Path | None) -> tup
             sources=tuple(item.claim.sources),
             reaches=(
                 Reach(
-                    locus=str(answer.locus),
+                    locus=locus,
                     inherited=item.inherited,
                     scope=item.scope,
                 ),
             ),
             derived=item.claim.date.derived,
+            binding_sources=tuple(getattr(item, "binding_sources", ())),
         )
-        for item in answer.assertions
-    ]
-    return answer.status, answer.note, claims
+
+
+def _anchor_contexts(elements: tuple[Element, ...], corpus_root: Path | None) -> tuple[AnchorContext, ...]:
+    contexts = []
+    for element in elements:
+        # Only a boundary assertion common to every appointed locus may bring
+        # its anchor into the element-wide projection. Never widen a mixed row.
+        for parent in element.publication_claims:
+            if parent.precision != "boundary" or not parent.reaches:
+                continue
+            locus = parent.reaches[0].locus
+            answer = _chronology.chronology(locus, profile=parent.profile, root=corpus_root)
+            for context in _chronology.anchor_contexts(answer, corpus_root):
+                owner = _assertion_claim(context.parent, locus)
+                if owner.identity_key() != parent.identity_key():
+                    continue
+                candidates = []
+                for index, claim in context.claims:
+                    projected = Claim(
+                        relation="anchor-context", subject=context.subject,
+                        title=context.title, label=claim.date.label,
+                        date=str(claim.date), precision=claim.date.precision,
+                        disposition=claim.disposition, answerability=claim.answerability,
+                        basis_class=claim.basis_class, profile=claim.profile,
+                        sources=claim.sources, reaches=(), derived=claim.derived,
+                    )
+                    candidates.append(AnchorCandidate(index, projected,
+                        claim.context_qualification, claim.basis, claim.note,
+                        claim.reporting_exception))
+                contexts.append(AnchorContext(element.key, parent, context.subject,
+                    context.title, context.direction, tuple(candidates)))
+    return tuple(contexts)
 
 
 NONUNIFORM = "nonuniform"
@@ -575,6 +635,7 @@ def _aggregate_claims(
     for identity in identities:
         first: Claim | None = None
         reaches: dict[tuple, Reach] = {}
+        binding_sources: set[str] = set()
         for claims in by_locus:
             candidates = claims.get(identity)
             if candidates is None:
@@ -584,12 +645,14 @@ def _aggregate_claims(
                     first = claim
                 for reach in claim.reaches:
                     reaches.setdefault(reach.sort_key(), reach)
+                binding_sources.update(claim.binding_sources)
         if first is not None:
             aggregated.append(
                 first._replace(
                     reaches=tuple(
                         reaches[key] for key in sorted(reaches)
-                    )
+                    ),
+                    binding_sources=tuple(sorted(binding_sources)),
                 )
             )
     return tuple(sorted(aggregated, key=Claim.sort_key))
@@ -854,6 +917,7 @@ def dossier(
         appointment_notes=inputs.notes if inputs is not None else (),
         profile_comparisons=comparisons,
         comparison_dependencies=comparison_dependencies,
+        anchor_contexts=_anchor_contexts(held_elements, corpus_root),
     )
 
 
@@ -1194,6 +1258,17 @@ def annotations(found: Dossier) -> AnnotationProjection:
                  "occasion date for these Psalm loci. An attribution, textual "
                  "history, or prophetic referent does not date that occasion."),
             ))
+        for context in found.anchor_contexts:
+            if (context.element_key != element.key
+                    or context.parent not in element.publication_claims):
+                continue
+            groups.append(AnnotationGroup(
+                relation="anchor-context", status="context", reason="",
+                claims=tuple(_annotation_claim(candidate.claim, name_subject=False)
+                             ._replace(display_label=_anchor_candidate_display(candidate))
+                             for candidate in context.candidates),
+                anchor_context=context,
+            ))
         groups.sort(
             key=lambda group: (
                 ANNOTATION_RELATION_ORDER.get(group.relation, 999),
@@ -1231,8 +1306,7 @@ def annotation_payload(found: AnnotationProjection) -> dict[str, object]:
     """The JSON-ready annotation contract, with source and display labels."""
     return {
         "status": "ok",
-        "schema": (ANNOTATIONS_SCHEMA if found.comparison_dependencies
-                   else LEGACY_ANNOTATIONS_SCHEMA),
+        "schema": _annotation_schema(found),
         "projection_type": ANNOTATIONS_TYPE,
         "document": found.document,
         "calendar": found.calendar,
@@ -1259,6 +1333,8 @@ def annotation_payload(found: AnnotationProjection) -> dict[str, object]:
                         "status": group.status,
                         "reason": group.reason,
                         "requested_profile": group.requested_profile,
+                        **({"anchor_context": _anchor_payload(group.anchor_context)}
+                           if group.anchor_context else {}),
                         "claims": [
                             {
                                 "subject": claim.subject,
@@ -1320,6 +1396,8 @@ def _group_heading(group: AnnotationGroup) -> str:
     comparison)". The profile id, the chronology status and the source ids
     remain in the group's and claim's sealed macro arguments for audit.
     """
+    if group.anchor_context:
+        return f"Historical background: {group.anchor_context.title}"
     relation = _relation_label(group.relation)
     if group.requested_profile:
         name = group.requested_profile_name or group.requested_profile
@@ -1342,11 +1420,49 @@ def _group_qualifier(group: AnnotationGroup) -> str:
 
 def _group_display(group: AnnotationGroup, *, comparison_enabled: bool = False) -> str:
     relation = _group_heading(group)
+    if group.anchor_context:
+        return f"{relation}: {_candidate_display(group, lambda claim: claim.display_label)}. {_anchor_caution(group.anchor_context)}"
     if not group.claims:
         return f"{relation} -- {_gap_display(group, comparison_enabled=comparison_enabled)}."
     values = _candidate_display(group, lambda claim: claim.display_label)
     sentence = f"{relation}{_group_qualifier(group)}: {values}"
     return sentence if sentence.endswith((".", "?", "!", "\N{HORIZONTAL ELLIPSIS}")) else sentence + "."
+
+
+def _annotation_schema(found: AnnotationProjection) -> int:
+    if any(group.anchor_context for element in found.elements for group in element.groups):
+        return ANCHOR_CONTEXT_SCHEMA
+    return ANNOTATIONS_SCHEMA if found.comparison_dependencies else LEGACY_ANNOTATIONS_SCHEMA
+
+
+def _anchor_candidate_display(candidate: AnchorCandidate) -> str:
+    value = concise_display_label(candidate.claim)
+    return f"{value} ({candidate.qualification})" if candidate.qualification else value
+
+
+def _anchor_caution(context: AnchorContext) -> str:
+    return (f"The represented event is {context.direction} this historical event. "
+            "These dates belong to that historical event, not to the passage or its "
+            "composition. Both events could occur in the same year.")
+
+
+def _anchor_payload(context: AnchorContext) -> dict[str, object]:
+    return {
+        "element_key": context.element_key,
+        "parent": {key: getattr(context.parent, key) for key in Claim._fields
+                   if key not in UNRECORDED_CLAIM_FIELDS},
+        "parent_reaches": [reach._asdict() for reach in context.parent.reaches],
+        "subject": context.subject, "title": context.title,
+        "direction": context.direction,
+        "candidates": [
+            {**{key: getattr(candidate.claim, key) for key in Claim._fields
+                if key not in UNRECORDED_CLAIM_FIELDS},
+             "index": candidate.index, "qualification": candidate.qualification,
+             "basis": candidate.basis, "note": candidate.note,
+             "reporting_exception": candidate.reporting_exception}
+            for candidate in context.candidates
+        ],
+    }
 
 
 def render_annotations_text(found: AnnotationProjection) -> str:
@@ -1493,6 +1609,26 @@ def _candidate_display(group: AnnotationGroup, render_claim,
 
 def _tex_group(group: AnnotationGroup, *, comparison_enabled: bool = False) -> str:
     relation = r"\textbf{" + tex_escape(_group_heading(group)) + "}"
+    if group.anchor_context:
+        context = group.anchor_context
+        candidates = {id(claim): candidate
+                      for claim, candidate in zip(group.claims, context.candidates)}
+        def render_anchor(claim: AnnotationClaim, *, repeated: bool = False) -> str:
+            candidate = candidates[id(claim)]
+            return (r"\chronologyannotationanchorclaim" + "".join(
+                "{" + tex_escape(str(value)) + "}" for value in (
+                    context.subject, candidate.index, claim.profile,
+                    claim.disposition, ",".join(claim.sources), candidate.claim.basis_class,
+                    claim.label, candidate.qualification,
+                    "" if repeated else claim.display_label)))
+        values = _candidate_display(group, render_anchor,
+                                    lambda claim: render_anchor(claim, repeated=True))
+        visible = f"{relation}: {values}. {tex_escape(_anchor_caution(context))}"
+        return (r"\chronologyannotationanchorgroup" + "".join(
+            "{" + tex_escape(value) + "}" for value in (
+                context.parent.subject, context.parent.relation, context.parent.profile,
+                context.parent.label, context.subject, context.direction, group.status))
+                + "{" + visible + "}")
     if not group.claims:
         visible = (
             f"{relation} -- "
@@ -1524,7 +1660,7 @@ def render_annotations_tex(found: AnnotationProjection) -> str:
     lines = [
         "% Generated. Do not edit.",
         "% Deterministic projection of research/chronology.toml.",
-        f"% schema: {ANNOTATIONS_SCHEMA if found.comparison_dependencies else LEGACY_ANNOTATIONS_SCHEMA}",
+        f"% schema: {_annotation_schema(found)}",
         f"% document: {found.document}",
         f"% generated-by: {ANNOTATIONS_GENERATOR}",
         # These are intentionally `newcommand`, not `providecommand`. This
@@ -1541,6 +1677,11 @@ def render_annotations_tex(found: AnnotationProjection) -> str:
         r"    \PackageError{triptych}{No chronology annotation for #1}{}%",
         r"  \fi}",
     ]
+    if _annotation_schema(found) == ANCHOR_CONTEXT_SCHEMA:
+        lines[6:6] = [
+            r"\newcommand{\chronologyannotationanchorclaim}[9]{#9}",
+            r"\newcommand{\chronologyannotationanchorgroup}[8]{#8}",
+        ]
     if found.comparison_dependencies:
         lines[6:6] = [
             r"\newcommand{\chronologyannotationcomparisonclaim}[8]{#8}",
@@ -1626,6 +1767,16 @@ COMPARISON_HEADER = """\
 # leaf-profile claim and source ids; its input file is fingerprinted below.
 """
 
+ANCHOR_CONTEXT_HEADER = """\
+#
+# `anchor_contexts` are one-hop evidence about a boundary's named event anchor.
+# They are not assertions about the appointed locus, its utterance, or its
+# composition, and do not alter elements' publication_claims. The relation is
+# to the anchor event, not a strict numerical year bound; it can occur within
+# that anchor's year. Candidates retain their profile, source qualification,
+# and disposition without era conversion or harmonizing alternative years.
+"""
+
 
 def _string(value: str) -> str:
     """A TOML basic string. Every escape TOML requires, and no others."""
@@ -1685,9 +1836,12 @@ def render(found: Dossier) -> str:
     )
     if found.comparison_dependencies:
         header += COMPARISON_HEADER
+    if found.anchor_contexts:
+        header += ANCHOR_CONTEXT_HEADER
     lines = [header, ""]
     lines.append(_field(
         "schema",
+        ANCHOR_CONTEXT_SCHEMA if found.anchor_contexts else
         RECORD_SCHEMA if found.comparison_dependencies else LEGACY_RECORD_SCHEMA,
     ))
     lines.append(_field("record_type", RECORD_TYPE))
@@ -1732,6 +1886,23 @@ def render(found: Dossier) -> str:
             lines.append(_field(name, getattr(comparison, name)))
         for claim in comparison.claims:
             _render_claim(lines, "profile_comparisons.claims", claim)
+    for context in found.anchor_contexts:
+        payload = _anchor_payload(context)
+        lines.extend(("", "[[anchor_contexts]]"))
+        for name in ("element_key", "subject", "title", "direction"):
+            lines.append(_field(name, payload[name]))
+        lines.extend(("", "[anchor_contexts.parent]"))
+        for name, value in payload["parent"].items():
+            lines.append(_field(name, value))
+        for reach in payload["parent_reaches"]:
+            lines.extend(("", "[[anchor_contexts.parent.reaches]]"))
+            for name, value in reach.items():
+                lines.append(_field(name, value))
+        for candidate in payload["candidates"]:
+            lines.extend(("", "[[anchor_contexts.candidates]]"))
+            for name, value in candidate.items():
+                if value is not None:
+                    lines.append(_field(name, value))
     return "\n".join(lines) + "\n"
 
 
@@ -1842,6 +2013,8 @@ def _traced(
     render_annotations_tex(annotations(found))
     claims = [claim for element in found.elements for claim in element.claims]
     claims += [claim for item in found.profile_comparisons for claim in item.claims]
+    claims += [candidate.claim for context in getattr(found, "anchor_contexts", ())
+               for candidate in context.candidates]
 
     def resolved(name: str) -> Path:
         path = Path(name)
@@ -1887,7 +2060,8 @@ def _traced(
         and not any(path.is_relative_to(entry) for entry in interpreter)
     }
     sources, source_files = set(), set()
-    for source in {source for claim in claims for source in claim.sources}:
+    for source in {source for claim in claims
+                   for source in (*claim.sources, *getattr(claim, "binding_sources", ()))}:
         if source.startswith("bible:"):
             _, edition, raw = (source.split(":", 2) + ["", ""])[:3]
             locus = _chronology.parse_locus(raw, f"{document}: cited source {source!r}")

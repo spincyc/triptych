@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost --edition synthesis --check provenance-matches-run --run-workflow proper-study --run-workflow-version 9 --run-workflow-digest ef8058d0bd73437c67569a8d24ce67dac4c273fef7688aef8a54dec9e7986b13 --run-id e80cd019cbe2d2f4 --run-seed-commit 50b1ff05f232ab128c2d32ce3770c2d8f0458ac9
+exit 0
+--- stdout ---
+provenance-matches-run (synthesis edition): the record states run e80cd019cbe2d2f4 of proper-study v9, digest ef8058d0bd73, seed commit 50b1ff05f232
+
+--- stderr ---
+

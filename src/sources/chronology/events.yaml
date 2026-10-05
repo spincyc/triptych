@@ -6282,6 +6282,7 @@ events:
           precision: year
           from: {year: 3416, era: am}
           label: "A.M. 3416"
+        context_qualification: "Haydock reporting Ussher; A.M. is not converted"
       - profile: catholic-traditional-v1
         disposition: alternate
         basis_class: traditional-catholic
@@ -6301,6 +6302,7 @@ events:
           precision: year
           from: {year: 586, era: bc}
           label: "586 B.C."
+        context_qualification: "Reid and Meistermann, Catholic Encyclopedia"
       - profile: catholic-traditional-v1
         disposition: alternate
         basis_class: traditional-catholic
@@ -6318,6 +6320,7 @@ events:
           precision: year
           from: {year: 587, era: bc}
           label: "the fall of Jerusalem (587 B.C.)"
+        context_qualification: "Schets, Catholic Encyclopedia"
       - profile: catholic-traditional-v1
         disposition: alternate
         basis_class: reported-traditional
@@ -6356,6 +6359,9 @@ events:
           precision: year
           from: {year: 588, era: bc}
           label: "B.C. 588"
+        context_qualification: >-
+          Petavius table reported by Sloet; retained transcription checked,
+          printed-page verification still pending
       - profile: catholic-traditional-v1
         disposition: alternate
         answerability: preserved

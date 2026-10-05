@@ -1076,6 +1076,12 @@ def chronology_projection(body: str) -> str:
     """Resolve the generated annotation helper macros to their visible payload."""
     body = replace_grouped_macro(body, "chronologyannotationreach", 3, lambda _: "")
     body = replace_grouped_macro(
+        body, "chronologyannotationanchorclaim", 9, lambda arguments: arguments[8]
+    )
+    body = replace_grouped_macro(
+        body, "chronologyannotationanchorgroup", 8, lambda arguments: arguments[7]
+    )
+    body = replace_grouped_macro(
         body, "chronologyannotationcomparisonclaim", 8,
         lambda arguments: arguments[7]
     )

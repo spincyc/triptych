@@ -1,10 +1,10 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 2918,
-  "editions": 1050,
-  "passages": 5264,
-  "readable": 3082,
+  "artifacts": 2924,
+  "editions": 1052,
+  "passages": 5267,
+  "readable": 3081,
   "works": 935
  },
  "facets": {
@@ -3434,7 +3434,7 @@
   ],
   "languages": [
    {
-    "editions": 565,
+    "editions": 566,
     "id": "en"
    },
    {
@@ -3446,7 +3446,7 @@
     "id": "mul"
    },
    {
-    "editions": 34,
+    "editions": 35,
     "id": "fr"
    },
    {
@@ -3574,25 +3574,25 @@
     "label": "20th century"
    },
    {
-    "editions": 564,
+    "editions": 566,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 1639,
+    "artifacts": 1643,
     "editions": 379,
     "id": "public-domain"
    },
    {
-    "artifacts": 772,
-    "editions": 386,
+    "artifacts": 773,
+    "editions": 387,
     "id": "restricted"
    },
    {
-    "artifacts": 326,
-    "editions": 158,
+    "artifacts": 327,
+    "editions": 159,
     "id": "unresolved"
    },
    {
@@ -8921,7 +8921,7 @@
      "id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
      "language": "la",
      "passages": 377,
-     "readable": 346,
+     "readable": 345,
      "rights": [
       "public-domain"
      ],
@@ -13619,7 +13619,7 @@
      "file": "1945-benziger-revised-1945.json",
      "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
      "language": "en",
-     "passages": 32,
+     "passages": 33,
      "readable": 0,
      "rights": [
       "public-domain",
@@ -13820,6 +13820,19 @@
       "restricted"
      ],
      "title": "Ordo du mois, web state read 28 September 2026",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-05",
+     "file": "2026-2026-10-05-web.json",
+     "id": "edition.fssp-france.ordo-du-mois.web-2026-10-05",
+     "language": "fr",
+     "passages": 1,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Ordo du mois, October 2026 state inspected 5 October 2026",
      "year": 2026
     }
    ],
@@ -30083,6 +30096,19 @@
      "date": "2026-09-28",
      "file": "2026-2026-09-28-english-usccb-web.json",
      "id": "edition.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-28",
+     "language": "en",
+     "passages": 1,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "New American Bible, Revised Edition: USCCB web state",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-05",
+     "file": "2026-2026-10-05-english-usccb-web.json",
+     "id": "edition.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-10-05",
      "language": "en",
      "passages": 1,
      "readable": 0,

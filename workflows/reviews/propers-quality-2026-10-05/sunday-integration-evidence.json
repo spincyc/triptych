@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-05",
+  "status": "local-publication-gates-passed",
+  "workflow_run": "e80cd019cbe2d2f4",
+  "workflow_disposition": "ACCEPTED",
+  "workflow_results": 38,
+  "workflow_standing_findings": [],
+  "checks": [
+    {
+      "command": "make check-sources",
+      "exit_status": 0,
+      "log_sha256": "1b2e56e1e79536b8c913ed1a33405e888b47cf53cf81d569de78eeb3b07cdee4"
+    },
+    {
+      "command": "make public-site",
+      "exit_status": 0,
+      "log_sha256": "6a53b8f9062d214562d758dc3a8d65e49b8c7e8e0004efc920ffe1030980d376"
+    },
+    {
+      "command": "tools/public-alpha verify --deployment-target github-pages",
+      "exit_status": 0,
+      "log_sha256": "b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14"
+    }
+  ],
+  "environment": "Repository Python dependencies pinned by requirements-tools.txt and requirements-public-alpha.txt; Markdown 3.10.3.",
+  "superseded_source_check": {
+    "command": "make check-sources",
+    "exit_status": 2,
+    "reason": "Final production-review wording changed after its first stable handoff. The source inventory correctly rejected the old hash; refreshed against the final unchanged audit, then reran the complete source gate successfully.",
+    "log_sha256": "e20c85c5eb83c57a6c1c10af646d584f9689c53df8a2caa21b6669362df0e22a"
+  },
+  "preserved_prior_classifications": 145,
+  "preserved_prior_family_review_units": 156,
+  "current_family_review_units": 157,
+  "family_review_states": "all pending",
+  "atomic_citation_coverage": false,
+  "source_reader_files": 4134,
+  "last_leaf_audit_sha256": "1f6008b6bcbe2098759b2e28d81cdff96cd24f6a0839ff577d5c59216ddd0ec6",
+  "live_deployment": "not yet asserted; separate live evidence required",
+  "staged_whitespace_check": {
+    "command": "git diff --cached --check",
+    "exit_status": 2,
+    "warnings": 88,
+    "disposition": "Only terminal blank lines in byte-exact archived native gate logs; intentionally preserved. All authored sources and records pass. No whitespace failure hidden or native log normalized."
+  }
+}

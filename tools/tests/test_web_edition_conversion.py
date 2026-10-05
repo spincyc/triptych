@@ -966,6 +966,24 @@ class WebEditionConversionTests(unittest.TestCase):
                 self.assertIn(f"{marker}Event{marker}: A.D. 27.", markdown)
                 self.assertNotIn("triptychchronologyannotation@", markdown)
 
+    def test_generated_anchor_context_keeps_qualified_dates_through_pandoc(self) -> None:
+        import _proper_chronology as chronology
+        document = "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost"
+        definitions = chronology.render_annotations_tex(chronology.annotations(
+            chronology.dossier(document, provider="gpt")))
+        markdown = self.convert(r"\chronologyannotation{offertory}", preamble=definitions)
+        for text in ("Historical background", "The third captivity of Juda", "A.M. 3416", "B.C. 586",
+                     "B.C. 587", "B.C. 588", "Haydock reporting Ussher",
+                     "Reid and Meistermann", "Schets", "Petavius table reported by Sloet",
+                     "printed-page verification still pending",
+                     "The represented event is after this historical event",
+                     "not to the passage or its composition", "same year"):
+            self.assertIn(text, markdown)
+        for jargon in ("Anchor context", "this anchor", "the boundary"):
+            self.assertNotIn(jargon, markdown)
+        self.assertNotIn("536", markdown)
+        self.assertNotIn("chronologyannotationanchor", markdown)
+
     def test_generated_chronology_with_tex_quotation_marks_survives(self) -> None:
         markdown = self.convert(
             r"\chronologyannotation{offertory}",

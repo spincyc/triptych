@@ -329,9 +329,31 @@ def query(arguments: argparse.Namespace) -> dict[str, object]:
             "reason": answer.reason,
             "assertions": [],
         }
+    contexts = _chronology.anchor_contexts(answer, root)
     return {
         "status": "ok",
         "locus": str(answer.locus),
+        **({"anchor_contexts": [
+            {
+                "parent": {"subject": context.parent.subject,
+                           "relation": context.parent.relation,
+                           "profile": context.parent.claim.profile,
+                           "label": context.parent.claim.date.label,
+                           "date": str(context.parent.claim.date)},
+                "subject": context.subject, "title": context.title,
+                "direction": context.direction,
+                "candidates": [
+                    {"index": index, "date": str(claim.date),
+                     "precision": claim.date.precision, "label": claim.date.label,
+                     "profile": claim.profile, "disposition": claim.disposition,
+                     "answerability": claim.answerability, "basis_class": claim.basis_class,
+                     "reporting_exception": claim.reporting_exception,
+                     "basis": claim.basis, "note": claim.note,
+                     "sources": list(claim.sources),
+                     "qualification": claim.context_qualification}
+                    for index, claim in context.claims
+                ],
+            } for context in contexts]} if contexts else {}),
         "chronology_status": answer.status,
         "reason": answer.note,
         # Always expose the policy context. A gap has no resolved leaf claim,
@@ -515,6 +537,14 @@ def _render_query(payload: dict) -> int:
             f"{item['relation']}\t{shown}\t{disposition}"
             f"\t{reach}\t{item['subject']}\t{item['title']}"
         )
+    for context in payload.get("anchor_contexts", []):
+        print(f"# Historical background: {context['title']}; {context['parent']['subject']} "
+              f"is {context['direction']} this historical event. Both events could occur in the same year.")
+        for candidate in context["candidates"]:
+            qualification = candidate["qualification"]
+            print(f"anchor-context\t{candidate['label'] or candidate['date']}"
+                  f"\t{candidate['disposition']}\t{candidate['profile']}"
+                  f"\t{context['subject']}\t{qualification}")
     return 0
 
 

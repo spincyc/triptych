@@ -27,6 +27,21 @@
    "storage": "remote"
   },
   {
+   "artifact_type": "normalized-text",
+   "byte_size": 758,
+   "edition_owned": true,
+   "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.maternity-checked-english",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-10-05",
+   "rights": "public-domain",
+   "rights_basis": "The project’s controlling Lasance rights inventory establishes nonrenewal of the 1937 and 1945 registrations. These three prayers belong to ordinary printed pages 1233, 1235 and 1236, outside both excluded later inserts. Only the checked historical English is retained; no later appendix or scan-host expression.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf",
+   "storage": "tracked"
+  },
+  {
    "artifact_type": "ocr-text",
    "byte_size": 4349573,
    "edition_owned": true,
@@ -369,6 +384,28 @@
    "storage": "remote",
    "verified_on": "2026-08-27",
    "withheld": "rights"
+  },
+  {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.maternity-checked-english",
+   "artifact_type": "normalized-text",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.maternity-checked-english",
+   "locus": "Maternity of the Blessed Virgin Mary; Collect, Secret and Postcommunion; printed 1233, 1235–1236",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-05",
+   "withheld": "not-prose"
   },
   {
    "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",

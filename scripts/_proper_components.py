@@ -44,6 +44,7 @@ CHRONOLOGY_COMMANDS = {
     "chronologyannotation", "chronologyannotationclaim",
     "chronologyannotationcomparisonclaim", "chronologyannotationreach",
     "chronologyannotationgroup", "chronologyannotationcomparisongroup",
+    "chronologyannotationanchorclaim", "chronologyannotationanchorgroup",
 }
 COMMAND_DEFINITION_RE = re.compile(
     r"\\(?P<kind>(?:new|renew|provide)command|DeclareRobustCommand|"

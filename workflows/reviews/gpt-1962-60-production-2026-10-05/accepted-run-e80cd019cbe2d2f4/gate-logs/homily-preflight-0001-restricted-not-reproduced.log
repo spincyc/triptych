@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost --edition homily --check restricted-not-reproduced
+exit 0
+--- stdout ---
+restricted-not-reproduced (homily edition): 24 bound sources, 3 of them restricted, none reproduced
+
+--- stderr ---
+

@@ -1,0 +1,31 @@
+{
+  "adopted": [
+    {
+      "path": "src/web/data/structure/sources/editions/catholic-church/missale-romanum/1862-pustet-ratisbon-1862.json",
+      "sha256": "75b6687796ff55843d31d96de258756b38ce84b5701b38d66af175a9f80226ea"
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/eugene-cummiskey/roman-missal-english-laity/1861-philadelphia-1861.json",
+      "sha256": "efe0871e1688eec390b0604740fb66f0118965e0f6fee2257233aef6d714818d"
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/francis-xavier-lasance/the-new-roman-missal/1945-benziger-revised-1945.json",
+      "sha256": "6b672d48828c5d43387b9b853280a28ea438e9f9fcf243384ac7045789369cd8"
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/fssp-france/ordo-du-mois/2026-2026-10-05-web.json",
+      "sha256": "c325471a6ce943e906be4639c1734840201f8de099ac9565a5e17b01598367aa"
+    },
+    {
+      "path": "src/web/data/structure/sources/index.json",
+      "sha256": "b9f130964fd94129ba645a91fd230ce857d15dae3ecf450f475e1875c20623b8"
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/2026-2026-10-05-english-usccb-web.json",
+      "sha256": "400eca0bb7fa5b0f8486fdfa2a54b9976bb37b44976a75ec13bed50216b533cb"
+    }
+  ],
+  "removed": "src/web/data/structure/sources/text/passage.catholic-church.missale-romanum.pustet-ratisbon-1862.maternitatis-beatae-mariae-virginis-orations.json",
+  "reason": "The prior Maternity payload was unrelated title-page OCR. The corrected passage is backed by the inspected facsimile, with no standalone prose transcription.",
+  "research_review_repair": "RES-002: added only restricted October USCCB witness metadata and the regenerated index; no protected payload, earlier edition change or further deletion."
+}

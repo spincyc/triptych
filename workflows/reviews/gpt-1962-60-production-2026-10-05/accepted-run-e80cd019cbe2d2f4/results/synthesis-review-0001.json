@@ -1,0 +1,302 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 1,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "maternity-collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "maternity-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "maternity-postcommunion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/concise/01-inventory.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "maternity-collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "maternity-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "maternity-postcommunion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/concise/02-overview.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "concise-chronology",
+          "kind": "front-matter",
+          "path": "sections/concise/03-chronology.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "maternity-collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "maternity-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "maternity-postcommunion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/concise/04-themes.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "maternity-collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "maternity-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "maternity-postcommunion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/concise/10-commentary.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/concise/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "maternity-collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "maternity-secret",
+        "preface",
+        "communion",
+        "postcommunion",
+        "maternity-postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "Augustine of Hippo",
+            "Jerome",
+            "John Chrysostom",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "word-heals"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "maternity-collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "maternity-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "maternity-postcommunion"
+          ],
+          "key": "word-heals",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Jerome",
+            "Robert Bellarmine",
+            "Gregory the Great",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "song-exile"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "maternity-collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "maternity-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "maternity-postcommunion"
+          ],
+          "key": "song-exile",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost",
+    "files": {
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/chronology-annotations.tex": "c51671c5f2aca1fe6a826d66fa96cc86980459789006e3078394a00fe9924213",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/chronology.toml": "27723adeac1bce57183dd04a878b153df484971604c4b004945d5e7dc3fd8db1",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/interpretations.md": "2d88cba9a617e1ac3b7c5aee2357358f2ecaa628f6c6df831fa8ba6fa19d2775",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/scope.md": "f33c4fe57eb25abed7d72610796893e54b27ed34da5d0daf1e595b7b54b41e05",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/source-bindings.toml": "8d7a4b7c6f6d5abc873f0522711ff9df21ca32b8af9ab16c5d56b08fb8586b17",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/01-inventory.tex": "c889363b495b25d0f4721608b7419fdfdaf077f200527d5c9a47253f8cda568c",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/02-overview.tex": "c34649593930ab765d0a7ce3f581ea55d877e2e6f4eb24c05eca238698482cfb",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/03-chronology.tex": "d06423414cf9b97cb29407f5b05096881320311b59e606726dc91472f1fa959e",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/04-themes.tex": "78db99052d642b5c25ba7a14d00bce3153de40b290b329c12737903906971d11",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/10-commentary.tex": "cfc82c9e644bbf226f66a836a55a3365e85dd5c5dd320ce7ff7cf9b1a3631016",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/90-apparatus.tex": "36ee16d0e709bedcece78de77517c2997d68a65dd46a262a2e15052ac8808028",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/synthesis.tex": "c9158d0b3f645d55b69991d2e8259852b103d3d575e7b3c37fcfbb7e66a6e0bf"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "9",
+            "ef8058d0bd73437c67569a8d24ce67dac4c273fef7688aef8a54dec9e7986b13",
+            "e80cd019cbe2d2f4",
+            "50b1ff05f232ab128c2d32ce3770c2d8f0458ac9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "PASS: independently read Trust and Thanksgiving, compared its controlling claims with the expansive study and canonical chronology, checked exact Gregory, Augustine, Chrysostom, Jerome, Bellarmine and Schuster loci, and inspected all ten pages of the source-matched proof (SHA-256 3b3437ccabc41ad73cd3be6072fb4d90ada392e65fdc5cd1f05bbc42236d67b7); the prescribed opening, substantive interleaved comparison, conditional appointments and claim-local qualifications are preserved without a new source-dependent claim or blocking defect. This is a concise-study review using the retained identified witnesses, including Schuster page images, not a new exhaustive reception sweep or complete Missal recollation; the chronology's stated alternatives and Petavius printed-page verification limit remain explicit."
+}

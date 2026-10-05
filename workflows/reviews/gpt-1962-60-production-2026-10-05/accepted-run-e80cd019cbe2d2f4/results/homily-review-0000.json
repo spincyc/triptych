@@ -1,0 +1,194 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "maternity-collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "maternity-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "maternity-postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-body.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "homily-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "maternity-collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "maternity-secret",
+        "preface",
+        "communion",
+        "postcommunion",
+        "maternity-postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "Augustine of Hippo",
+            "Jerome",
+            "John Chrysostom",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "word-heals"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "maternity-collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "maternity-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "maternity-postcommunion"
+          ],
+          "key": "word-heals",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Jerome",
+            "Robert Bellarmine",
+            "Gregory the Great",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "song-exile"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "maternity-collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "maternity-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "maternity-postcommunion"
+          ],
+          "key": "song-exile",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost",
+    "files": {
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/homily.tex": "0b63f4672c25a314d6fecc1fe4fe18eaf45a44547b253933947889be094de3df",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/interpretations.md": "2d88cba9a617e1ac3b7c5aee2357358f2ecaa628f6c6df831fa8ba6fa19d2775",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/scope.md": "f33c4fe57eb25abed7d72610796893e54b27ed34da5d0daf1e595b7b54b41e05",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/source-bindings.toml": "8d7a4b7c6f6d5abc873f0522711ff9df21ca32b8af9ab16c5d56b08fb8586b17",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/homily/10-body.tex": "29d8001e31ec8942725e02e8c44bb8afef827579c9e6cb3975ef16606be738cb",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/homily/90-apparatus.tex": "ae929557d6a9157c5de49a391b5f8d50bd73aab3732d6152403010eba75970be"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "9",
+            "ef8058d0bd73437c67569a8d24ce67dac4c273fef7688aef8a54dec9e7986b13",
+            "e80cd019cbe2d2f4",
+            "50b1ff05f232ab128c2d32ce3770c2d8f0458ac9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "PASS: Independently read The Journey Home continuously and checked its two upstream interpretive readings, John 4:46b-53, Ephesians 5:15-21, the appointed lament and Communion verses, Gregory II.28.1, Chrysostom Ephesians XIX, Augustine Psalm 118 paragraphs 50-51, the 1962 Missal pages 412-413, and Schuster III pages 175-178; its departure-before-confirmation, matching-hour and household-faith movement earns the concrete pastoral application, preserves hope without promising every bodily cure, and has no blocking defect. All sealed file hashes match, the three proof pages were inspected, and the independently counted 1,377 spoken words support the stated 11.0-12.0-minute estimate at 115-125 words per minute; this is a written speech and source review, with no audible rehearsal, timed human performance, fresh exhaustive reception sweep, or later three-document visual-gate acceptance claimed."
+}

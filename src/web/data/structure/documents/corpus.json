@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it.",
  "counted": {
-  "documents": 203,
-  "issues": 241,
-  "pages": 6849,
+  "documents": 204,
+  "issues": 244,
+  "pages": 6870,
   "titles_unrecorded": 0,
-  "works": 147
+  "works": 148
  },
  "models": [
   {
@@ -29,7 +29,7 @@
    "id": "claude-fable-5"
   },
   {
-   "documents": 12,
+   "documents": 13,
    "id": "GPT-6"
   },
   {
@@ -56,7 +56,7 @@
    "label": "Claude"
   },
   {
-   "documents": 145,
+   "documents": 146,
    "id": "gpt",
    "label": "GPT"
   }
@@ -85,7 +85,7 @@
   },
   {
    "id": "liturgy",
-   "works": 54
+   "works": 55
   },
   {
    "id": "theology",
@@ -7423,6 +7423,86 @@
     }
    ],
    "leaf": "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost",
+   "section": "liturgy"
+  },
+  {
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
+   "editions": [
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": 10,
+       "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis.pdf",
+       "subject": "A concise comparison of the 1962 Roman Missal propers for 11 October 2026",
+       "title": "Twentieth Sunday after Pentecost: Trust and Thanksgiving"
+      },
+      {
+       "kind": "homily",
+       "pages": 3,
+       "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-homily.pdf",
+       "subject": "A homily for an adult parish assembly on the 1962 Roman Missal propers for 11 October 2026",
+       "title": "Twentieth Sunday after Pentecost: The Journey Home"
+      }
+     ],
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; canonical expansive study, appointed-text assembly, two interpretations, historical appendix, manifest and author verification; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; concise study derived from the reviewed expansive study, four-page opening, interleaved commentary and author proof; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; standalone homily derived from both reviewed studies, source and delivery note, silent oral-clarity review and author proof; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; Bellarmine reference-link repair, footnote attachment correction and revised study author proof; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; renewed concise derivation check against the repaired expansive study, unchanged concise prose, and current author proof verification; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; renewed homily derivation against both current studies, unchanged speech and source note, silent oral-clarity review and current author proof verification; unexposed: client version and server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "GPT-6"
+     ],
+     "pages": 21,
+     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.pdf",
+     "produced": {
+      "run_id": "e80cd019cbe2d2f4",
+      "seed_commit": "50b1ff05f232ab128c2d32ce3770c2d8f0458ac9",
+      "workflow_digest": "ef8058d0bd73437c67569a8d24ce67dac4c273fef7688aef8a54dec9e7986b13",
+      "workflow_id": "proper-study",
+      "workflow_version": "9"
+     },
+     "provider": "gpt",
+     "reviewed": "2026-10-05",
+     "revised": "2026-10-05T17:56:39Z",
+     "status": "alpha",
+     "subject": "An expansive study of the 1962 Roman Missal propers for 11 October 2026",
+     "title": "Twentieth Sunday after Pentecost: The Word, the Wound, and the Song",
+     "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/main.tex",
+     "web": "web/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.html"
+    }
+   ],
+   "leaf": "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost",
    "section": "liturgy"
   },
   {

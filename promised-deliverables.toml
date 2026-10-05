@@ -9,14 +9,18 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "gpt-60-authorization"
   criterion = "The exact provider and permanent identity are authorized before seeding and the dated occurrence is independently sourced."
-  status = "open"
-  evidence = ["guidance/liturgy/propers-production-plan.md", "PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["guidance/liturgy/propers-production-plan.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/context.md", "src/sources/works/fssp-france/ordo-du-mois/editions/2026-10-05-web/passages/2026-10-11.toml", "workflows/reviews/gpt-1962-60-production-2026-10-05/DRIVER-RECORD.md"]
+  check = "path_exists"
+  note = "Actual v9 run e80cd019cbe2d2f4 passed scope and context. The dated FSSP Province de France witness independently corroborates the Twentieth Sunday on 11 October 2026; the inspected 1962 Missal controls the general-calendar precedence, conditional Maternity commemoration and Trinity Preface. No unspecified local-calendar privilege is asserted."
 
   [[deliverables.requirements]]
   id = "psalm-event-chronology"
   criterion = "The causal gap is documented and repaired with meaningful regression checks; Psalm dates distinguish the traditional setting and narrated or remembered events from composition, preserving sourced alternatives and uncertainty. The new documents expose that distinction."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/propers-quality-2026-10-05/RECORD.md", "workflows/reviews/propers-quality-2026-10-05/ANCHOR-CONTEXT-REREVIEW.md", "workflows/reviews/propers-quality-2026-10-05/BINDING-SOURCE-REVIEW.md", "tools/tests/test_chronology_anchor_context.py", "tools/tests/test_chronology_binding_sources.py", "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/70-date-location.tex", "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/03-chronology.tex", "workflows/reviews/gpt-1962-60-production-2026-10-05/DRIVER-RECORD.md"]
+  check = "path_exists"
+  note = "Shared implementation and source-seal repairs passed independent review. Both new studies passed actual content review with the qualified historical dates visible; the concise table fits physical page two. Attribution, unresolved occasions, remembered events, composition, and duration remain distinct. Older publications remain their reviewed snapshots and have not been silently rebuilt or reapproved. Final family and deployment acceptance are separately tracked below."
 
   [[deliverables.requirements]]
   id = "cold-quality-review"
@@ -28,8 +32,10 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "gpt-60-workflow-and-artifacts"
   criterion = "The actual proper-study run reaches ACCEPTED with fresh reviewers at declared effort; the reviewed 20–50-page expansive study, 10–12-page concise study, standalone homily and canonical web edition are installed, with exact evidence, catalog links, separate release records and durable packets/results."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-1962-60-production-2026-10-05/accepted-run-e80cd019cbe2d2f4/state.json", "workflows/reviews/gpt-1962-60-production-2026-10-05/DRIVER-RECORD.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/artifacts.json", "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/web-artifact.json", "library/traditional-latin-mass.md"]
+  check = "path_exists"
+  note = "Actual v9 run e80cd019cbe2d2f4 reached ACCEPTED with 38 results, no escalations or standing findings. Final full/concise/homily PDFs have 21/10/3 pages; fresh content, visual and web reviews passed, followed by installer and terminal publication gates. The 171 native archived files retain exact hashes; immutable family handoff includes all 34 page rasters and 19 web screenshots. Live publication remains separately tracked."
 
   [[deliverables.requirements]]
   id = "gpt-60-main-and-pages"

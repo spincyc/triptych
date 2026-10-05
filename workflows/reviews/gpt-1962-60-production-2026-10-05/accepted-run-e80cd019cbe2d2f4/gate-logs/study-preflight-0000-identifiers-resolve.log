@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost --edition research --check identifiers-resolve
+exit 0
+--- stdout ---
+identifiers-resolve (research edition): the leaf prints no source identifier
+
+--- stderr ---
+

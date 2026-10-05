@@ -810,6 +810,9 @@ class Claim(NamedTuple):
     answerability: str = "answerable"
     basis_class: str = "unreviewed"
     reporting_exception: str | None = None
+    # Compact source attribution or material caveat carried when this claim
+    # supplies background for another event's named boundary. No date is added.
+    context_qualification: str = ""
 
     @property
     def derived(self) -> bool:
@@ -883,6 +886,10 @@ class Assertion(NamedTuple):
     claim: Claim
     inherited: bool
     scope: str          # the authored extent it reached this locus from
+    # Evidence for the locus-to-event relationship, distinct from the date's
+    # own sources. A commentator attributing a Psalm to David does not thereby
+    # become the authority for the dates of David's reign.
+    binding_sources: tuple[str, ...] = ()
 
     def sort_key(self) -> tuple:
         return (
@@ -928,6 +935,50 @@ class Answer(NamedTuple):
     @property
     def resolved(self) -> bool:
         return True
+
+
+class AnchorContext(NamedTuple):
+    """One-hop context for an existing named event boundary, not an assertion
+    about the queried locus. Claim indexes identify the exact anchor evidence.
+    Relative offsets, durations and textual-unit anchors are not expanded.
+    """
+
+    parent: Assertion
+    subject: str
+    title: str
+    direction: str
+    claims: tuple[tuple[int, Claim], ...]
+
+
+def anchor_contexts(answer: Answer | Unresolved, root: Path | None = None) -> tuple[AnchorContext, ...]:
+    """Expose the named event's answerable candidates in the parent's own
+    evidence profile, without arithmetic, era conversion or recursive lookup.
+    The query's assertions, status and scope are never changed by this view.
+    """
+    if not isinstance(answer, Answer):
+        return ()
+    corpus = load(root)
+    contexts = []
+    for assertion in answer.assertions:
+        boundary = assertion.claim.date.boundary
+        if (assertion.relation not in EVENT_RELATIONS or not boundary
+                or not corpus.answers_with(assertion.claim)):
+            continue
+        anchor = corpus.events.get(boundary.get("anchor"))
+        if anchor is None:
+            continue
+        admitted = tuple(_candidates(corpus, anchor.claims,
+                                    assertion.claim.profile, evidence=False))
+        claims = tuple(sorted(
+            ((index, claim) for index, claim in enumerate(anchor.claims)
+             if claim in admitted),
+            key=lambda item: (DISPOSITIONS.index(item[1].disposition),
+                              str(item[1].date), item[0]),
+        ))
+        if claims:
+            contexts.append(AnchorContext(assertion, anchor.id, anchor.title,
+                                          boundary["direction"], claims))
+    return tuple(contexts)
 
 
 # --- Loading ----------------------------------------------------------------
@@ -1197,6 +1248,7 @@ def _claims(
             {
                 "profile", "disposition", "date", "basis", "sources", "note",
                 "answerability", "basis_class", "reporting_exception",
+                "context_qualification",
             },
             spot,
         )
@@ -1224,6 +1276,9 @@ def _claims(
                 answerability=state,
                 basis_class=basis_class,
                 reporting_exception=lift,
+                context_qualification=_text(
+                    entry, "context_qualification", spot,
+                    required="context_qualification" in entry),
             )
         )
     # The conflict policy, enforced rather than described: one preferred claim
@@ -2606,6 +2661,7 @@ def _native_assertions(
                     claim=claim,
                     inherited=span.first is None and span.last is None,
                     scope=_scope_text(binding.scope),
+                    binding_sources=binding.sources,
                 )
             )
     found.sort(key=lambda item: item.sort_key())
@@ -2673,9 +2729,33 @@ def _broad_preferred_assertions(
                 Assertion(
                     binding.relation, event.id, event.title, claim,
                     inherited=True, scope=_scope_text(binding.scope),
+                    binding_sources=binding.sources,
                 )
             )
     return tuple(sorted(found, key=lambda item: item.sort_key()))
+
+
+def _merge_native_assertions(shared: list[Assertion], native: tuple[Assertion, ...]) -> None:
+    """Keep the existing shared/native deduplication, preserving link evidence.
+
+    The safe mapping can make one assertion true by both routes. Suppressing
+    the repeated assertion must not suppress the native binding's warrant.
+    Only assertions already shared are deduplicated, as before; distinct
+    native-only scope routes remain distinct assertions.
+    """
+    positions: dict[tuple, list[int]] = {}
+    for index, item in enumerate(shared):
+        key = (item.relation, item.subject, item.claim.profile, str(item.claim.date))
+        positions.setdefault(key, []).append(index)
+    for item in native:
+        key = (item.relation, item.subject, item.claim.profile, str(item.claim.date))
+        if key not in positions:
+            shared.append(item)
+            continue
+        for index in positions[key]:
+            held = shared[index]
+            sources = tuple(sorted(set(held.binding_sources) | set(item.binding_sources)))
+            shared[index] = held._replace(binding_sources=sources)
 
 
 def chronology(
@@ -2879,17 +2959,7 @@ def chronology(
                 else ()
             )
             gathered = list(broad)
-            held = {
-                (item.relation, item.subject, item.claim.profile, str(item.claim.date))
-                for item in gathered
-            }
-            gathered.extend(
-                item for item in native
-                if (
-                    item.relation, item.subject, item.claim.profile,
-                    str(item.claim.date),
-                ) not in held
-            )
+            _merge_native_assertions(gathered, native)
             selected, resolved_profiles = _select_assertions(
                 corpus, gathered, requested_profile, evidence
             )
@@ -3015,21 +3085,12 @@ def chronology(
                     claim=claim,
                     inherited=span.first is None and span.last is None,
                     scope=_scope_text(binding.scope),
+                    binding_sources=binding.sources,
                 )
             )
 
     if native:
-        held = {
-            (item.relation, item.subject, item.claim.profile, str(item.claim.date))
-            for item in assertions
-        }
-        assertions.extend(
-            item for item in native
-            if (
-                item.relation, item.subject, item.claim.profile,
-                str(item.claim.date),
-            ) not in held
-        )
+        _merge_native_assertions(assertions, native)
     selected, resolved_profiles = _select_assertions(
         corpus, assertions, requested_profile, evidence
     )

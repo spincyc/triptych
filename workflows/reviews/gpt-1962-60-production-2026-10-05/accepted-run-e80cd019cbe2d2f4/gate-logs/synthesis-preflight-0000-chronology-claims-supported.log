@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost --edition synthesis --check chronology-claims-supported
+exit 0
+--- stdout ---
+chronology-claims-supported (synthesis edition): 7 date cells, 7 generated annotations, and 0 direct chronology claims, every claim asserted by the corpus at the element it is printed for, no figure printed outside one (the macro discipline binds); 2 per-passage dates, each the record's answer for the passage it names
+
+--- stderr ---
+

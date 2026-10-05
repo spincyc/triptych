@@ -1,0 +1,19 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "note": "The exact Haydock attribution passage is now an inspected, fingerprinted binding and appears in both final sealed files and automatic chronology_cited_sources. Its received attribution does not settle competing occasions or supply a composition date.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-002",
+      "note": "The 52,279-byte October response with SHA-256 33ca30fe5b4ddc2f6d00b02c961d6d424cc1a1c7041b20ccb9c782e49fe801ca has separate restricted source owners, complete inspected bounds, rights/access limitations and an inspected binding sealed with its ancestry. Historical September source records remain unchanged and all historical bindings continue to validate.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "research",
+  "summary": "Repaired RES-001 by inspecting the hash-matched Haydock Psalm 118:1 note at printed p. 781 / PDF p. 817, recording its competing proposals in scope.md, and binding its exact passage and ancestry; repaired RES-002 by registering and binding the exact October USCCB introduction as a separate restricted edition/artifact/passage without changing September ancestry. Source-library and research checks pass, regenerated chronology remains byte-identical and current, and the final v4 seal contains both evidence chains; Psalm occasion remains unresolved, the later-disciple comparison remains conditional and approximate, and protected source payloads remain untracked."
+}

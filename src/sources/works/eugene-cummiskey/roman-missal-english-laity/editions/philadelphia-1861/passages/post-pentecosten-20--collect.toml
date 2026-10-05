@@ -6,11 +6,9 @@ artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia
 artifact_sha256 = "c79e9500b1b3a50f4ed3f6096b9bf89012f16bf79a8d24c1ed365b295ec1bae0"
 locus = "post-pentecosten-20/collect"
 states = ["cataloged", "acquired", "inspected", "verified"]
-verified_on = "2026-07-25"
+verified_on = "2026-10-05"
 context = "The collect of the post-pentecosten-20 formulary as printed on leaf n456 (printed page 448) of Internet Archive item romanmissaltran00churgoog, read as a page image at 1300-1400 px width."
 physical_line_ranges = [[170, 170]]
 text = "Favourably grant, we beseech thee, O Lord, thy servants both pardon and peace; that, being cleansed from the guilt of all their offences, they may serve thee with secure minds. Thro’."
-transcription_segments = [
-  { line = 170, text = "Favourably grant, we beseech thee, O Lord, thy servants both pardon and peace; that, being cleansed from the guilt of all their offences, they may serve thee with secure minds. Thro’." },
-]
-notes = "Wording collated character by character against the 1861 page image on 2026-07-25, and the formulary correspondence checked against the Latin `Largire, quaesumus, Domine, fidelibus tuis indulgentiam placatus et pacem` at marginal number 1623 of the 1962 Vatican typical edition in the CMAA facsimile, SHA-256 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a. The 1861 English is a free devotional rendering, not a word-for-word translation, and is quoted as an identified historical English witness only."
+transcription_segments = [{line = 170, text = "Favourably grant, we beseech thee, O Lord, thy servants both pardon and peace; that, being cleansed from the guilt of all their offences, they may serve thee with secure minds. Thro’."}]
+notes = "Fresh page-image collation 2026-10-05 confirms the historical English wording and its correspondence to Largire, quaesumus, Domine in 1962 printed 412–413/PDF 493–494. This replaces the previous incorrect marginal 1623/1629 reference. The existing IA leaf n456/n457 is zero-based; PDF 457/458 is one-based. Historical human English, not an approved 1962 English liturgical text. Correction provenance: previous fingerprint sha256:890175b0aca91ead6705b26424d732b09f211fa5c5664a6a47048974f7d95082; no publication bindings reported by source-library uses; no unrelated binding retargeted."

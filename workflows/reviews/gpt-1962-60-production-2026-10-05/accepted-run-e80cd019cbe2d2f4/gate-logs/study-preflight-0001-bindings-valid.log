@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost --edition research --check bindings-valid
+exit 0
+--- stdout ---
+bindings-valid (research edition): 24 bindings, every id registered and every reviewed state fingerprinted as the library computes it
+
+--- stderr ---
+

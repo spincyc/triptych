@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "WEB-001",
+      "note": "Canonical source URL corrected to the registered O\u2019Sullivan commentary; fresh GET succeeded and the revised PDF annotation carries that URL. No generated Markdown was patched.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "author-study",
+  "summary": "Repaired WEB-001 by correcting the canonical Bellarmine URL and verified HTTP 200 plus the actual revised PDF link. Applied recorded intervention 0002 to attach footnote 34 without changing prose or chronology; author verification passed for the 21-page, 6338-word study, preserved at build/tpt-runs/e80cd019cbe2d2f4/artifacts/author-study-0001/author-proof.pdf (SHA-256 abc824e7f341eaba7b242d5a74bf5d381b749ece9cd5e331a575c137dc3d87af); downstream derivation, web conversion and independent reviews remain workflow work."
+}

@@ -1,0 +1,7 @@
+$ python3 scripts/_proper_study.py check --provider gpt --document liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost --date 2026-10-11 --phase artifacts --require-presentation --require-format --require-authority
+exit 0
+--- stdout ---
+proper-study check artifacts: liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost
+
+--- stderr ---
+

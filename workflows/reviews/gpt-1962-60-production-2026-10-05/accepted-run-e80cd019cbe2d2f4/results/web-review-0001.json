@@ -1,0 +1,17 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 1,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost",
+    "files": {},
+    "provider": "gpt",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.md": "c812431a575cf7705e1e9597fb0a19e5be8df76ab35a3841d56c2c330f50acd8"
+    }
+  },
+  "stage": "web-review",
+  "summary": "PASS: the canonical web conversion at build/web/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.md matches research/web-artifact.json SHA-256 c812431a575cf7705e1e9597fb0a19e5be8df76ab35a3841d56c2c330f50acd8; its complete text, two interpretations with four senses each, 14 appointed anchors, chronology, 34 exact notes, timestamp and rights were checked against the canonical source and 21-page reviewed PDF abc824e7f341eaba7b242d5a74bf5d381b749ece9cd5e331a575c137dc3d87af. Actual desktop/mobile site previews, internal note navigation and all 12 external destinations passed, including the corrected NPNF editorial note 404; this accepts the sealed conversion, without claiming a new comprehensive source audit, whole-site navigation check or deployment verification."
+}

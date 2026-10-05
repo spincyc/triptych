@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost --edition research --check unquoted-not-quoted
+exit 0
+--- stdout ---
+unquoted-not-quoted (research edition): 0 sources declared unquoted, none attributed a quotation
+
+--- stderr ---
+

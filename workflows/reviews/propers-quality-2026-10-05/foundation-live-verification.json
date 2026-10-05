@@ -1,0 +1,43 @@
+{
+  "commit": "3967091cb2ca97c663f6f8c6fd63c82b561e88ea",
+  "pages_run_id": 37315826419,
+  "pages_conclusion": "success",
+  "verified_utc": "2026-10-05",
+  "checks": [
+    {
+      "url": "https://mystago.gy/browse/structure/documents/corpus.json",
+      "http_status": 200,
+      "local_sha256": "17a95dd1dfbbda682d0b759ad94d2617f06211db1e1e77433ac3b5c79be1a197",
+      "live_sha256": "17a95dd1dfbbda682d0b759ad94d2617f06211db1e1e77433ac3b5c79be1a197",
+      "matched": true
+    },
+    {
+      "url": "https://mystago.gy/browse/structure/sources/index.json",
+      "http_status": 200,
+      "local_sha256": "19fefed9efc2dd6d298abbe06e3e83b42952e68ee1dcbfbbe189ab978cf1c53e",
+      "live_sha256": "19fefed9efc2dd6d298abbe06e3e83b42952e68ee1dcbfbbe189ab978cf1c53e",
+      "matched": true
+    },
+    {
+      "url": "https://mystago.gy/browse/structure/sources/editions/catholic-encyclopedia/volume-8/1910-new-york-1910.json",
+      "http_status": 200,
+      "local_sha256": "ec844bddb64a00c45321ee0abde66618d1021d714f925589c74e0f4fc5a73487",
+      "live_sha256": "ec844bddb64a00c45321ee0abde66618d1021d714f925589c74e0f4fc5a73487",
+      "matched": true
+    },
+    {
+      "url": "https://mystago.gy/browse/structure/sources/editions/george-leo-haydock/douay-rheims-with-haydock-commentary/2014-2014-loreto-feeney-memorial.json",
+      "http_status": 200,
+      "local_sha256": "7ae8f1ba4af69687f340df0fe62eb59b3dcb6001e0e753e0242fdc0b533ccdd1",
+      "live_sha256": "7ae8f1ba4af69687f340df0fe62eb59b3dcb6001e0e753e0242fdc0b533ccdd1",
+      "matched": true
+    },
+    {
+      "url": "https://mystago.gy/browse/structure/sources/text/passage.catholic-encyclopedia.volume-8.new-york-1910.maas-second-journey-cana.json",
+      "http_status": 200,
+      "local_sha256": "218f88da5c7973b5de759a8973ae6c119cad56d5f23356331852044512486db5",
+      "live_sha256": "218f88da5c7973b5de759a8973ae6c119cad56d5f23356331852044512486db5",
+      "matched": true
+    }
+  ]
+}

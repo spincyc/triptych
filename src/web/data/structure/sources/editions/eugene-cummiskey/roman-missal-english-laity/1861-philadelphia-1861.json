@@ -279,6 +279,21 @@
   },
   {
    "artifact_type": "normalized-text",
+   "byte_size": 538,
+   "edition_owned": true,
+   "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.pentecost-20-checked-english",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-10-05",
+   "rights": "public-domain",
+   "rights_basis": "Anonymous human English published in Philadelphia 1861; United States public domain by publication date. Only historical prayer wording transcribed; no Google or Internet Archive front matter.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/romanmissaltran00churgoog/romanmissaltran00churgoog.pdf",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "normalized-text",
    "byte_size": 7724,
    "edition_owned": true,
    "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-antecedent-orations-en",
@@ -7564,7 +7579,7 @@
    "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.post-pentecosten-20.collect",
    "locus": "post-pentecosten-20/collect",
    "media_type": "text/tab-separated-values; charset=utf-8",
-   "notes": "Wording collated character by character against the 1861 page image on 2026-07-25, and the formulary correspondence checked against the Latin `Largire, quaesumus, Domine, fidelibus tuis indulgentiam placatus et pacem` at marginal number 1623 of the 1962 Vatican typical edition in the CMAA facsimile, SHA-256 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a. The 1861 English is a free devotional rendering, not a word-for-word translation, and is quoted as an identified historical English witness only.",
+   "notes": "Fresh page-image collation 2026-10-05 confirms the historical English wording and its correspondence to Largire, quaesumus, Domine in 1962 printed 412–413/PDF 493–494. This replaces the previous incorrect marginal 1623/1629 reference. The existing IA leaf n456/n457 is zero-based; PDF 457/458 is one-based. Historical human English, not an approved 1962 English liturgical text. Correction provenance: previous fingerprint sha256:890175b0aca91ead6705b26424d732b09f211fa5c5664a6a47048974f7d95082; no publication bindings reported by source-library uses; no unrelated binding retargeted.",
    "readable": true,
    "rights": "public-domain",
    "rights_basis": "The 1861 Philadelphia printing was published long before 1929 and is in the public domain in the United States. This file contains only that printing's own English wording, transcribed by this project; a faithful transcription of a public-domain text originates no new copyright, and no Google or Internet Archive front matter, markup, annotation, or page-image material is reproduced.",
@@ -7580,7 +7595,7 @@
    ],
    "storage": "tracked",
    "text_path": "structure/sources/text/passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.post-pentecosten-20.collect.json",
-   "verified_on": "2026-07-25",
+   "verified_on": "2026-10-05",
    "words": 31
   },
   {
@@ -7590,7 +7605,7 @@
    "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.post-pentecosten-20.secret",
    "locus": "post-pentecosten-20/secret",
    "media_type": "text/tab-separated-values; charset=utf-8",
-   "notes": "Wording collated character by character against the 1861 page image on 2026-07-25, and the formulary correspondence checked against the Latin `Haec munera, quaesumus, Domine, et vincula nostrae pravitatis absolvant` at marginal number 1629 of the 1962 Vatican typical edition in the CMAA facsimile, SHA-256 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a. The 1861 English is a free devotional rendering, not a word-for-word translation, and is quoted as an identified historical English witness only.",
+   "notes": "Fresh page-image collation 2026-10-05 confirms the historical English wording and its correspondence to Caelestem nobis praebeant haec mysteria in 1962 printed 412–413/PDF 493–494. This replaces the previous incorrect marginal 1623/1629 reference and unrelated Haec munera Latin incipit. The existing IA leaf n456/n457 is zero-based; PDF 457/458 is one-based. Historical human English, not an approved 1962 English liturgical text. Correction provenance: previous fingerprint sha256:a0d5ac929bf0e6365d4c1962a998b62fdfd104dac08390796a8aa72ded944cd7; no publication bindings reported by source-library uses; no unrelated binding retargeted.",
    "readable": true,
    "rights": "public-domain",
    "rights_basis": "The 1861 Philadelphia printing was published long before 1929 and is in the public domain in the United States. This file contains only that printing's own English wording, transcribed by this project; a faithful transcription of a public-domain text originates no new copyright, and no Google or Internet Archive front matter, markup, annotation, or page-image material is reproduced.",
@@ -7606,7 +7621,7 @@
    ],
    "storage": "tracked",
    "text_path": "structure/sources/text/passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.post-pentecosten-20.secret.json",
-   "verified_on": "2026-07-25",
+   "verified_on": "2026-10-05",
    "words": 22
   },
   {

@@ -1,0 +1,81 @@
+{"event": "seed", "stage": "scope-gate", "timestamp": "2026-10-05T13:08:22Z", "workflow_id": "proper-study", "workflow_version": 9}
+{"event": "packet", "hash": "9a8678507e8ba85a0ff5f9e95f43371fbeae5dd1b14a865dce2e8258023e12cb", "iteration": 0, "size": 687, "stage": "scope-gate", "timestamp": "2026-10-05T13:08:22Z"}
+{"disposition": "PASS", "event": "result", "stage": "scope-gate", "timestamp": "2026-10-05T13:10:33Z", "transition": "resolve-context"}
+{"event": "packet", "hash": "5d6e2fd0abcf6c40f28a4fba5cc2fc82e2ea2127789725a6a16caedba1b45364", "iteration": 0, "size": 33058, "stage": "resolve-context", "timestamp": "2026-10-05T13:10:33Z"}
+{"disposition": "PASS", "event": "result", "stage": "resolve-context", "timestamp": "2026-10-05T13:19:34Z", "transition": "research"}
+{"event": "packet", "hash": "f667aa9878a79f3cc1ad4a7224aa929f72d5d1143929d934eeca5344fdc8fd01", "iteration": 0, "size": 34642, "stage": "research", "timestamp": "2026-10-05T13:19:34Z"}
+{"disposition": "PASS", "event": "result", "stage": "research", "timestamp": "2026-10-05T14:35:45Z", "transition": "research-preflight"}
+{"event": "packet", "hash": "3db0c92e2092693106b2c9e1af7061cd26c0f607ea325deb67ca474a84b02aae", "iteration": 0, "size": 695, "stage": "research-preflight", "timestamp": "2026-10-05T14:35:45Z"}
+{"disposition": "PASS", "event": "result", "stage": "research-preflight", "timestamp": "2026-10-05T14:36:16Z", "transition": "research-review"}
+{"event": "packet", "hash": "5032e2377a5914433d6a070b390ef8e0262ae20ab888f4066cbe9198c9d292a6", "iteration": 0, "size": 380026, "stage": "research-review", "timestamp": "2026-10-05T14:36:16Z"}
+{"disposition": "CHANGES_REQUIRED", "event": "result", "stage": "research-review", "timestamp": "2026-10-05T14:50:46Z", "transition": "research"}
+{"event": "packet", "hash": "13c9e8dd13212e9c8c235b9141876fbe7091f06c93041f7edf18f8a1e14af386", "iteration": 1, "size": 38224, "stage": "research", "timestamp": "2026-10-05T14:50:46Z"}
+{"disposition": "PASS", "event": "result", "stage": "research", "timestamp": "2026-10-05T15:18:03Z", "transition": "research-preflight"}
+{"event": "packet", "hash": "c8fbe60dc355ff2800916f1764772b2a2e66bb23e1fd6608c5670556457b5248", "iteration": 1, "size": 695, "stage": "research-preflight", "timestamp": "2026-10-05T15:18:03Z"}
+{"disposition": "PASS", "event": "result", "stage": "research-preflight", "timestamp": "2026-10-05T15:18:13Z", "transition": "research-review"}
+{"event": "packet", "hash": "2646b4dfe4bf6dd42d86c498245bf5bcb871a97b0f758c563608773da81ae754", "iteration": 1, "size": 381814, "stage": "research-review", "timestamp": "2026-10-05T15:18:13Z"}
+{"disposition": "PASS", "event": "result", "stage": "research-review", "timestamp": "2026-10-05T15:23:19Z", "transition": "author-study"}
+{"event": "packet", "hash": "97861e24045afaef7ad35f9433c08d3d85692065e402dc5e8cd54ecd4f065daf", "iteration": 0, "size": 35289, "stage": "author-study", "timestamp": "2026-10-05T15:23:19Z"}
+{"disposition": "PASS", "event": "result", "stage": "author-study", "timestamp": "2026-10-05T15:50:45Z", "transition": "study-preflight"}
+{"event": "packet", "hash": "a1da8a67f6a66220d762accc21ddd9f4924c745ba40488010af22407b81132bd", "iteration": 0, "size": 692, "stage": "study-preflight", "timestamp": "2026-10-05T15:50:45Z"}
+{"disposition": "PASS", "event": "result", "stage": "study-preflight", "timestamp": "2026-10-05T15:51:14Z", "transition": "study-review"}
+{"event": "packet", "hash": "cae96e652152b209200b6fdbfdc4ceeae2e27166504b4cce3b5b67d34ba596d9", "iteration": 0, "size": 42486, "stage": "study-review", "timestamp": "2026-10-05T15:51:14Z"}
+{"disposition": "PASS", "event": "result", "stage": "study-review", "timestamp": "2026-10-05T16:09:29Z", "transition": "derive-synthesis"}
+{"event": "packet", "hash": "15b3a4498e5c5f7770d69c3547738739dfb816929c1f5d4ef5eefa6cfede032f", "iteration": 0, "size": 33862, "stage": "derive-synthesis", "timestamp": "2026-10-05T16:09:29Z"}
+{"event": "intervene", "stage": "derive-synthesis", "text": "During derive-synthesis iteration 0, supplemental coordinator reading identified the sentence The particular child lives again among his family in the final concise commentary. John 4 describes recovery before death. The active synthesis author should phrase this as recovery, such as The child returns to health among his family, to avoid implying resurrection. This narrow precision correction supplies no review verdict; normal independent synthesis review remains required.", "timestamp": "2026-10-05T16:20:54Z"}
+{"disposition": "PASS", "event": "result", "stage": "derive-synthesis", "timestamp": "2026-10-05T16:28:51Z", "transition": "synthesis-preflight"}
+{"event": "packet", "hash": "b6f330a55785a906906af45427763368db618ebc91476e39eac7b1df3f6fb99c", "iteration": 0, "size": 696, "stage": "synthesis-preflight", "timestamp": "2026-10-05T16:28:51Z"}
+{"disposition": "PASS", "event": "result", "stage": "synthesis-preflight", "timestamp": "2026-10-05T16:29:14Z", "transition": "synthesis-review"}
+{"event": "packet", "hash": "6b5979560a2cbe611daa69d08eca6a0280c653bfbb162923a067e3205be5d64a", "iteration": 0, "size": 40883, "stage": "synthesis-review", "timestamp": "2026-10-05T16:29:14Z"}
+{"disposition": "PASS", "event": "result", "stage": "synthesis-review", "timestamp": "2026-10-05T16:42:33Z", "transition": "derive-homily"}
+{"event": "packet", "hash": "5ead29da6cee0c02b9a8151ebd5eab6cd13a325aaf3dd2c50cf5e34225a62cea", "iteration": 0, "size": 33197, "stage": "derive-homily", "timestamp": "2026-10-05T16:42:33Z"}
+{"event": "intervene", "stage": "derive-homily", "text": "During derive-homily iteration 0, supplemental coordinator reading found repeated closely related application lists: admitting fault or serving or taking responsibility, stopping an argument or speaking kindly, then the closing instruction to take one concrete responsibility. The final movement also repeats the grace, Eucharist, one-action sequence identified in the recent GPT comparison. Before freezing the homily, remove the repeated applications and develop the final movement from this Gospel: the word, the matching hour, mercy already given, and household belief, using accepted-study prayers where they advance that argument. Preserve practical clarity and the careful qualification about continued suffering. This asks for a consequential turn and earned response, without extra Fathers or sources, a prescribed hook, or obligatory recitation of further propers. Use only the accepted study. Normal independent homily review remains required and supplies its own verdict.", "timestamp": "2026-10-05T16:50:36Z"}
+{"disposition": "PASS", "event": "result", "stage": "derive-homily", "timestamp": "2026-10-05T16:57:09Z", "transition": "homily-preflight"}
+{"event": "packet", "hash": "262784f0ce29202d81d022259974a17431329e4afd55784dfbd0671c154cc03e", "iteration": 0, "size": 693, "stage": "homily-preflight", "timestamp": "2026-10-05T16:57:09Z"}
+{"disposition": "PASS", "event": "result", "stage": "homily-preflight", "timestamp": "2026-10-05T16:57:30Z", "transition": "homily-review"}
+{"event": "packet", "hash": "55102d32f818bc08715035899ff423151a8f8b7cd4e56a7ac0da928a65dd55b3", "iteration": 0, "size": 38090, "stage": "homily-review", "timestamp": "2026-10-05T16:57:30Z"}
+{"disposition": "PASS", "event": "result", "stage": "homily-review", "timestamp": "2026-10-05T17:04:36Z", "transition": "build-artifacts"}
+{"event": "packet", "hash": "915272b0a412b26e35fb22c9b5641923469ec40b5b3fbd34f9e683a04a1fd0aa", "iteration": 0, "size": 33611, "stage": "build-artifacts", "timestamp": "2026-10-05T17:04:36Z"}
+{"disposition": "PASS", "event": "result", "stage": "build-artifacts", "timestamp": "2026-10-05T17:11:50Z", "transition": "artifact-gates"}
+{"event": "packet", "hash": "38e0cca294552752c7e51a4405f602d899b0af5b69246bd17fd3d7342b16b488", "iteration": 0, "size": 749, "stage": "artifact-gates", "timestamp": "2026-10-05T17:11:50Z"}
+{"disposition": "PASS", "event": "result", "stage": "artifact-gates", "timestamp": "2026-10-05T17:12:11Z", "transition": "visual-review"}
+{"event": "packet", "hash": "8399855fe6224cf5c7312f854ab47b0ce143810205ea2c737b4de8156b9ad2e9", "iteration": 0, "size": 40227, "stage": "visual-review", "timestamp": "2026-10-05T17:12:11Z"}
+{"disposition": "PASS", "event": "result", "stage": "visual-review", "timestamp": "2026-10-05T17:19:46Z", "transition": "generate-web"}
+{"event": "packet", "hash": "1fe961a30d84ed6473760f9393de41d7860e25408c7c5fa9e0c5da8d49691c27", "iteration": 0, "size": 32073, "stage": "generate-web", "timestamp": "2026-10-05T17:19:46Z"}
+{"disposition": "PASS", "event": "result", "stage": "generate-web", "timestamp": "2026-10-05T17:25:12Z", "transition": "web-review"}
+{"event": "packet", "hash": "9db9099eeb4b565bd12fa8b0344b192e7260242e76c3388dd4f03239c08a3b8b", "iteration": 0, "size": 33993, "stage": "web-review", "timestamp": "2026-10-05T17:25:12Z"}
+{"disposition": "CHANGES_REQUIRED", "event": "result", "stage": "web-review", "timestamp": "2026-10-05T17:52:22Z", "transition": "author-study"}
+{"event": "packet", "hash": "8d4da23498ec5933a8f54c3196fa221c6b1d4c9273581d1a3bb2460c8760659d", "iteration": 1, "size": 36633, "stage": "author-study", "timestamp": "2026-10-05T17:52:22Z"}
+{"event": "intervene", "stage": "author-study", "text": "During author-study iteration 1, the coordinator authorizes addressing the existing nonblocking visual advisory VIS-001 while this source owner is already open: attach footnote 34 directly to the preceding punctuation after remembered. in sections/40-song-exile.tex, removing the breakable newline space without changing prose or citation. Inspect the resulting callout in the already-required rebuild and fresh reviews. Preserve the chronology layout accepted under VIS-002. This is a recorded author-stage instruction, not a new carried blocking finding or a change to any historical verdict.", "timestamp": "2026-10-05T17:54:27Z"}
+{"disposition": "PASS", "event": "result", "stage": "author-study", "timestamp": "2026-10-05T18:02:56Z", "transition": "study-preflight"}
+{"event": "packet", "hash": "20b13d8f231d82503ecc962a1ab25ce46c46153e2ef2d3c135947ae173c5f30b", "iteration": 1, "size": 692, "stage": "study-preflight", "timestamp": "2026-10-05T18:02:56Z"}
+{"disposition": "PASS", "event": "result", "stage": "study-preflight", "timestamp": "2026-10-05T18:03:17Z", "transition": "study-review"}
+{"event": "packet", "hash": "973db5c42bca92820211129e45b322f1cb53536b463d8687097af0cdbc946b74", "iteration": 1, "size": 42986, "stage": "study-review", "timestamp": "2026-10-05T18:03:17Z"}
+{"disposition": "PASS", "event": "result", "stage": "study-review", "timestamp": "2026-10-05T18:16:23Z", "transition": "derive-synthesis"}
+{"event": "packet", "hash": "f8ceb82bb7e7d0d566ad34e6278b1f86d36c8071e9826995fd96b4fe1f114b22", "iteration": 1, "size": 33862, "stage": "derive-synthesis", "timestamp": "2026-10-05T18:16:23Z"}
+{"disposition": "PASS", "event": "result", "stage": "derive-synthesis", "timestamp": "2026-10-05T18:23:48Z", "transition": "synthesis-preflight"}
+{"event": "packet", "hash": "99e1a02bb84fdb85996d8fb681627849e1398919d165a928e3bcb489626b6af3", "iteration": 1, "size": 696, "stage": "synthesis-preflight", "timestamp": "2026-10-05T18:23:48Z"}
+{"disposition": "PASS", "event": "result", "stage": "synthesis-preflight", "timestamp": "2026-10-05T18:24:03Z", "transition": "synthesis-review"}
+{"event": "packet", "hash": "9b11cc4f6ff6df8db38fc1b3279ad5975649c135b00129862ebed546a12d432f", "iteration": 1, "size": 41153, "stage": "synthesis-review", "timestamp": "2026-10-05T18:24:03Z"}
+{"disposition": "PASS", "event": "result", "stage": "synthesis-review", "timestamp": "2026-10-05T18:31:22Z", "transition": "derive-homily"}
+{"event": "packet", "hash": "cc7787d5b528651d9d15d753a786707e03b1f9a9be7c59a97a2f379788f7eacc", "iteration": 1, "size": 33197, "stage": "derive-homily", "timestamp": "2026-10-05T18:31:22Z"}
+{"disposition": "PASS", "event": "result", "stage": "derive-homily", "timestamp": "2026-10-05T18:37:10Z", "transition": "homily-preflight"}
+{"event": "packet", "hash": "f94b8b2665e12b2307e7dce734c5650b71bf9b94805f0d2567811b871c3a34dd", "iteration": 1, "size": 693, "stage": "homily-preflight", "timestamp": "2026-10-05T18:37:10Z"}
+{"disposition": "PASS", "event": "result", "stage": "homily-preflight", "timestamp": "2026-10-05T18:37:30Z", "transition": "homily-review"}
+{"event": "packet", "hash": "db81dec44f5d5426aef9c220b5ad8d30791fff3d8637a592479cc658dd5ff386", "iteration": 1, "size": 38282, "stage": "homily-review", "timestamp": "2026-10-05T18:37:30Z"}
+{"disposition": "PASS", "event": "result", "stage": "homily-review", "timestamp": "2026-10-05T18:44:24Z", "transition": "build-artifacts"}
+{"event": "packet", "hash": "0210221df9276a07366117c80acbf9f714224589163bf96d950bf60b3e4ea6f9", "iteration": 1, "size": 33611, "stage": "build-artifacts", "timestamp": "2026-10-05T18:44:24Z"}
+{"disposition": "PASS", "event": "result", "stage": "build-artifacts", "timestamp": "2026-10-05T18:51:40Z", "transition": "artifact-gates"}
+{"event": "packet", "hash": "8185372478aad0bdcea9402560e88de57b8262eb3c106f433146c58b3c4913c3", "iteration": 1, "size": 749, "stage": "artifact-gates", "timestamp": "2026-10-05T18:51:40Z"}
+{"disposition": "PASS", "event": "result", "stage": "artifact-gates", "timestamp": "2026-10-05T18:51:55Z", "transition": "visual-review"}
+{"event": "packet", "hash": "855dc6123489485fa6c8dca997bf6be6e698874fc3732c00a89c0e034d8b40a1", "iteration": 1, "size": 40419, "stage": "visual-review", "timestamp": "2026-10-05T18:51:55Z"}
+{"disposition": "PASS", "event": "result", "stage": "visual-review", "timestamp": "2026-10-05T19:02:40Z", "transition": "generate-web"}
+{"event": "packet", "hash": "53378e88bef9ba3543fe525c1312f6604a0b507de40fe268ed425190741e487a", "iteration": 1, "size": 32073, "stage": "generate-web", "timestamp": "2026-10-05T19:02:40Z"}
+{"disposition": "PASS", "event": "result", "stage": "generate-web", "timestamp": "2026-10-05T19:06:35Z", "transition": "web-review"}
+{"event": "packet", "hash": "ad1e8af3a3c2378555a787f13cabe7659416dcd9408fff59d3e034ffaa7fce9e", "iteration": 1, "size": 34185, "stage": "web-review", "timestamp": "2026-10-05T19:06:35Z"}
+{"disposition": "PASS", "event": "result", "stage": "web-review", "timestamp": "2026-10-05T19:17:18Z", "transition": "install-publication"}
+{"event": "packet", "hash": "0079664c1e16710fc87a05e3715bef49ad19c219fe0415a6a0eaa2b57e3f9829", "iteration": 0, "size": 34567, "stage": "install-publication", "timestamp": "2026-10-05T19:17:18Z"}
+{"disposition": "PASS", "event": "result", "stage": "install-publication", "timestamp": "2026-10-05T19:24:48Z", "transition": "publication-gates"}
+{"event": "packet", "hash": "a517dd08a43f0c980179788250086f7e9d37ed6fc7c218a835623cb08a3c60c2", "iteration": 0, "size": 778, "stage": "publication-gates", "timestamp": "2026-10-05T19:24:48Z"}
+{"disposition": "PASS", "event": "result", "stage": "publication-gates", "timestamp": "2026-10-05T19:26:02Z", "transition": "ACCEPTED"}
+{"event": "accepted", "timestamp": "2026-10-05T19:26:02Z"}

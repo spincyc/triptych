@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost --edition synthesis --check chronology-annotations-current
+exit 0
+--- stdout ---
+chronology-annotations-current (synthesis edition): research/chronology-annotations.tex carries the complete live projection for 7 scriptural elements and 19 projected candidates
+
+--- stderr ---
+

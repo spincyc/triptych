@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost --edition research --check references-used
+exit 0
+--- stdout ---
+references-used (research edition): 0 entries, every one used in the body
+
+--- stderr ---
+

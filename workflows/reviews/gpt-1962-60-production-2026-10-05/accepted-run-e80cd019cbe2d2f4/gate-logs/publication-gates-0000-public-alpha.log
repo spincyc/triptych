@@ -1,0 +1,10 @@
+$ tools/tpt public-alpha check --provider gpt --document liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost
+exit 0
+--- stdout ---
+public-alpha scoped policy valid: gpt:liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost
+global source, release and authorization records valid: 244 publications
+installed-PDF scope: liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost, liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-homily, liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis
+Unrelated PDF installation was not checked; this is not a deployment verification.
+
+--- stderr ---
+

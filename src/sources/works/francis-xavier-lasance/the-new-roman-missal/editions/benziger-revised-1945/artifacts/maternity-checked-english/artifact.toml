@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.maternity-checked-english"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The project’s controlling Lasance rights inventory establishes nonrenewal of the 1937 and 1945 registrations. These three prayers belong to ordinary printed pages 1233, 1235 and 1236, outside both excluded later inserts. Only the checked historical English is retained; no later appendix or scan-host expression."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+provenance = "Complete registered PDF downloaded on 2026-10-05; SHA-256 matched 6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70. Model-assisted transcription checked word by word against the page images at PDF 1234, 1236 and 1237. These are human historical translations, not generated translations."
+retrieved = "2026-10-05"
+sha256 = "661c88187ac134bbfb0f542c42e9f65dfed9fc77f29da06f18df9d547d620fa9"
+byte_size = 758
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/maternity-checked-english/text.tsv"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+transformation = "Line-end hyphenation rejoined and initial display capitals normalized; historical words, punctuation, capitalization and abbreviated conclusions preserved. Metadata columns added. The Postcommunion’s identification of heavenly healing with Him is the historical translators’ interpretive rendering, not a literal replacement of the Latin. The exemplar is a later printing of the 1945 revision, not a 1937 impression."

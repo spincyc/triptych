@@ -1,0 +1,71 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "VIS-001",
+      "location": "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/40-song-exile.tex:187\u2013190; expansive PDF physical page 16, footnote callout 34",
+      "problem": "The newline before the footnote command supplies a breakable space, so callout 34 begins the next body line before \u201cThis remembered promise\u201d instead of remaining beside the sentence ending \u201cremembered.\u201d The note remains readable and its source association is recoverable, but the detached callout interrupts the line.",
+      "required_result": "If this typography is revised, attach the footnote command directly to the preceding punctuation, then rebuild and inspect the affected pages to keep the callout with the sentence it documents.",
+      "severity": "advisory"
+    },
+    {
+      "accepted_because": "Full-page inspection shows a clear four-column summary, italic event rows and full-width explanations with unambiguous dossier boundaries. Readers are not misled; inserting the extra rules would consume scarce space on the settled one-page chronology and require pagination work for no meaningful gain in this artifact.",
+      "id": "VIS-002",
+      "location": "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/03-chronology.tex; concise PDF physical page 2",
+      "problem": "The concise dossiers omit the internal cmidrule separators specified by the 1962 dossier pattern between summary, event and explanatory rows. Rules appear only between complete dossiers.",
+      "required_result": "Exact conformity would add the prescribed internal separators while preserving all chronology evidence, legibility and physical-page-2 placement.",
+      "severity": "accepted"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "artifacts": {
+      "document": "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost",
+      "pagination_evidence": {
+        "build/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis.aux": "89d1ce3d48a87698f8b7193ae57f93babe3d5347116e41189e4acb789f113269",
+        "build/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.aux": "32faf3daee4990e72391e28b768324dd9f18fe1f5a968a5bf6d53968b83b7da1"
+      },
+      "pdfs": {
+        "build/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-homily.pdf": "f066abdb02582d6e74b35adc09eeccb48d034e3ea34551db651dc993cfc44405",
+        "build/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis.pdf": "0626703ad457fbdb83297b310e3f2a21eed69b3d46d343cd2a50d06fd93a7ad3",
+        "build/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.pdf": "df4e168056800cea5d0836c98136dea4224c886ff1e8a3b75e953be211ce6d87"
+      },
+      "provider": "gpt",
+      "render_inputs": {
+        "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+        "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+        "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/generation-metadata.tex": "8274abcb0b531e4d6fb92c552b4639fe3990e3772e64f905ceb8d3b2e99fefb4",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/homily.tex": "0b63f4672c25a314d6fecc1fe4fe18eaf45a44547b253933947889be094de3df",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/main.tex": "092949f13d1a2ed0a1301f6d225e059f06e0ea90a7e29a11f7886fbe67ba64a7",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/proper-components.toml": "879b723af0be8740674736d88488b06eb798e1c6df62adca30f15c28f14f7de8",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/chronology-annotations.tex": "c51671c5f2aca1fe6a826d66fa96cc86980459789006e3078394a00fe9924213",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/00-opening.tex": "53b59061a211928a9a799454c62e98bdd46ba404352772d672a0469eb7ec250e",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/10-appointed-text.tex": "7b454831a2c9952505732fb9a8e7b7b34ad8dec1817981ff1bb6007459604457",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/20-commentary.tex": "6eb62a585c488833cdb31724c1cd40c15ab2ca802fbc7f8f35532e38ef0be7ae",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/30-word-heals.tex": "0e7ff6dd67326aa67f9904fef414ee03c237a9d8318f41e33302f7b0302c914f",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/40-song-exile.tex": "e144059198a9ee211c1716e29dcabd2cec5479ee215ee0839372cb6de839dfb2",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/50-comparison.tex": "9c04b1aa019b3168508c1d1d283c54470051c6bf89e11b56f39edaba13a8a35b",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/70-date-location.tex": "f0f2f0aeab8ae2a06546001b992159f1ce34814ab5b7a226ee18a51170744ec6",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/90-study-apparatus.tex": "022f7ac4730856f40a309f509a934e53c1f1e8b8e16d399e08063368c7d3e94a",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/01-inventory.tex": "c889363b495b25d0f4721608b7419fdfdaf077f200527d5c9a47253f8cda568c",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/02-overview.tex": "c34649593930ab765d0a7ce3f581ea55d877e2e6f4eb24c05eca238698482cfb",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/03-chronology.tex": "d06423414cf9b97cb29407f5b05096881320311b59e606726dc91472f1fa959e",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/04-themes.tex": "78db99052d642b5c25ba7a14d00bce3153de40b290b329c12737903906971d11",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/10-commentary.tex": "cfc82c9e644bbf226f66a836a55a3365e85dd5c5dd320ce7ff7cf9b1a3631016",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/90-apparatus.tex": "36ee16d0e709bedcece78de77517c2997d68a65dd46a262a2e15052ac8808028",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/homily/10-body.tex": "29d8001e31ec8942725e02e8c44bb8afef827579c9e6cb3975ef16606be738cb",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/homily/90-apparatus.tex": "ae929557d6a9157c5de49a391b5f8d50bd73aab3732d6152403010eba75970be",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/synthesis.tex": "c9158d0b3f645d55b69991d2e8259852b103d3d575e7b3c37fcfbb7e66a6e0bf"
+      },
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost",
+    "files": {},
+    "provider": "gpt",
+    "review": "visual",
+    "schema": 1
+  },
+  "stage": "visual-review",
+  "summary": "PASS after opening all four contact sheets and independently inspecting all 34 full-page rasters: build/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.pdf (SHA-256 df4e168056800cea5d0836c98136dea4224c886ff1e8a3b75e953be211ce6d87, physical pages 1\u201321); build/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis.pdf (SHA-256 0626703ad457fbdb83297b310e3f2a21eed69b3d46d343cd2a50d06fd93a7ad3, physical pages 1\u201310); build/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-homily.pdf (SHA-256 f066abdb02582d6e74b35adc09eeccb48d034e3ea34551db651dc993cfc44405, physical pages 1\u20133). The common research/artifacts.json receipt has SHA-256 d8e3a68995abeb9844ea38014de128171a1ef12d73a2f133dc85d9433307789a; PDF/source/raster hashes, embedded fonts, logs, extraction, physical opening markers and terminal colophons were checked, with one nonblocking callout advisory and one accepted dossier-rule departure, no blocking defect, and no live handle. Bounded evidence and inspection coverage are recorded in .scratch/proper-production-2026-10-05/visual-review-v9-0000/inspection-report.json; no new source/content acceptance, physical-print review, timed delivery or installed-mirror acceptance is claimed."
+}

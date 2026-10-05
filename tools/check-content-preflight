@@ -1344,6 +1344,8 @@ SEALED_ANNOTATION_MACROS = (
     "chronologyannotationcomparisongroup",
     "chronologyannotationcomparisonclaim",
     "chronologyannotationreach",
+    "chronologyannotationanchorclaim",
+    "chronologyannotationanchorgroup",
 )
 SEALED_ANNOTATION_NAMES = "|".join(SEALED_ANNOTATION_MACROS)
 LATEX_COMMAND_DEFINITION = re.compile(
@@ -1754,6 +1756,13 @@ def _annotation_macro_definitions(leaf: Path, generated: Path) -> list[str]:
         if path == generated:
             continue
         text = active_tex(path.read_text(encoding="utf-8"))
+        for call in re.finditer(r"\\chronologyannotationanchor(?:claim|group)\b", text):
+            line = text.count("\n", 0, call.start()) + 1
+            problems.append(
+                f"{path.relative_to(leaf)}:{line}: anchor context helpers may occur "
+                f"only in {generated.relative_to(leaf)}; use the generated "
+                "element annotation so anchor dates cannot become passage dates"
+            )
         matches = sorted(
             (match.start(), match.group("kind"), match.group("name"))
             for pattern in patterns for match in pattern.finditer(text)
@@ -2171,7 +2180,7 @@ def check_chronology_annotations_current(
     )
     return problems, (
         f"{path.relative_to(leaf)} carries the complete live projection for "
-        f"{len(scriptural)} scriptural elements and {claims} corpus assertions"
+        f"{len(scriptural)} scriptural elements and {claims} projected candidates"
     )
 
 

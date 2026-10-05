@@ -12,62 +12,111 @@ Last reconciled: 2026-10-05.
 <!-- promised-deliverable: gpt-1962-twentieth-quality-2026-10-05 -->
 
 The maintainer requested the upcoming Sunday's 1962 propers through the actual
-`proper-study` workflow, a fix for Psalm historical dating that gives textual
-composition without the traditional setting and date of the events, and a cold
-review of the recent GPT studies and homilies against the stronger recent Claude
-work. The requested publication includes reconciliation with `main`, a validated
-push to `main`, and verification of the resulting deployment. Work remains on
-the workspace branch `feature/propers/codex`.
+`proper-study` workflow; traditional Psalm event dates and context distinguished
+from composition; a cold comparison of recent GPT and Claude documents and
+homilies; reconciliation with main; and publication to main with live checking.
+The target is GPT's **Twentieth Sunday after Pentecost, 11 October 2026**,
+`liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost`.
+The dated FSSP Province de France witness corroborates the occurrence. The
+inspected 1962 Missal governs the conditional Maternity commemoration, precedence
+and Trinity Preface; no unspecified local-calendar privilege is asserted.
 
-The target is provider `gpt`, identity
-`liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost`, for
-Sunday, 11 October 2026, subject to the workflow's sourced occurrence check.
-The production plan opens this one identity. The promised outputs are the
-expansive study, concise study, standalone homily and canonical web edition.
+**Workflow ACCEPTED; live deployment pending.** The reviewed
+family has a 21-page expansive study (6,338 substantive words), a ten-page concise
+study (3,784 words), a three-page homily (1,377 spoken words, estimated 11–12
+minutes), and the canonical web edition. All final content, visual and web
+reviews pass. Catalog links and separate release records are installed; the
+actual installer and terminal publication gate passed; run `e80cd019cbe2d2f4`
+reached ACCEPTED with 38 results, no escalations and no standing findings.
+Exact PDF/web identities belong to the leaf's artifact receipts and the
+[production archive](workflows/reviews/gpt-1962-60-production-2026-10-05/DRIVER-RECORD.md).
 
-**In progress.** The initial local base was `a53e262d0`. Independent reviews
-of that snapshot found narrower source development and repetitive derivative
-arguments in the matched Seventeenth Sunday GPT packet, with significant
-contrary evidence in the Nineteenth Sunday study. The
-[review archive](workflows/reviews/propers-quality-2026-10-05/RECORD.md)
-retains exact scope and limitations. The requested Psalm repair distinguishes
-traditional attribution, an identified occasion, retrospective events and
-composition; missing evidence does not authorize a fabricated date.
+The initial local base `a53e262d0` was 112 commits behind fetched main
+`b373dd5db`. The unpublished work was rebased, preserving current main's v4
+research seal and clarified homily contract: all researched elements inform the
+speech, whose spoken argument remains selective. The initial-base proposed
+checker change was dropped as superseded upstream. The held v8 run
+`4104a1c080c562ac` produced only its scope verdict; its unchanged available
+records remain archived. Replacement v9 run `e80cd019cbe2d2f4` was seeded at
+`50b1ff05f232ab128c2d32ce3770c2d8f0458ac9`, with fresh high-effort authors and
+xhigh-effort reviewers. Its actual packets, results, gates and interventions
+control acceptance. No unrecorded substitute verdict is used.
 
-The first successful current network fetch resolved `origin/main` to
-`b373dd5db`, 112 commits beyond that initial local snapshot. Those commits
-include substantive chronology repairs, a new research seal and the completed
-Claude Nineteenth Sunday. The initial quality comparison and chronology review
-are retained as reviews of their stated base, not represented as reviews of
-current main. The v8 run `4104a1c080c562ac` was held before its first context
-result; only its scope gate passed and no publication source was authored.
-The branch is now rebased on that main at `50b1ff05f`. The
-[current-main supplement](workflows/reviews/propers-quality-2026-10-05/CURRENT-MAIN-REVIEW.md)
-compares the finished Nineteenth Sunday pair and controls the final quality
-judgment. It confirms narrower question selection and less unfolding discovery
-while preserving GPT's substantial source reasoning and pastoral strengths.
+The [current-main cold review](workflows/reviews/propers-quality-2026-10-05/CURRENT-MAIN-REVIEW.md)
+controls the quality conclusion: GPT's question selection was narrower and its
+arguments and endings more uniform, while Claude more often developed source
+disagreement and discovery for the listener. GPT retained substantial source
+reasoning and pastoral strengths. This evidence does not establish general
+model regression or a hidden effort-setting cause; the available dates and
+provenance do not form a matched two-week statistical comparison. V9 adds
+specific question, checked inference and homily movement controls without
+quotas, forced authors or extra interpretive lanes. Independent integrated
+controls review and 148 focused workflow/component tests passed.
 
-Reconciliation preserves current main's explicit homily-manifest meaning:
-all researched elements inform the speech; the spoken argument remains
-selective. The initial-base checker change is dropped as superseded by that
-upstream clarification. Proper-study v9 adds the bounded editorial question,
-inference and homily-movement controls while retaining v8's v4 research seal,
-automatic chronology dependency discovery and clarified four-senses contract.
-Independent integrated controls review passes. All 148 focused workflow and
-component tests pass; 348 chronology, trace, display and lineage tests pass.
-The normal `make check-sources` gate also passes, preserving all 156 family
-review units as pending. The four added source passages change no existing
-source-record fingerprint. Scoped source-reader and document-catalog
-projections are refreshed. Five PDFs absent after the rebase were restored
-from the published site and checked against its `SHA256SUMS`, allowing the
-integrated public-site build and GitHub Pages-target verification to pass
-without regenerating prior publications.
+The new homily initially repeated the familiar application-list and ending
+pattern. Recorded intervention 0001 required revision before any author result
+or review seal: one developed practical example, the matching hour, mercy
+already given, servants' testimony and household belief now carry its movement.
+The surviving earlier draft is preserved without reconstructing overwritten
+states. Intervention 0000 separately corrected recovery language that could
+imply resurrection. The complete actual history and bounded editorial judgment
+are in the [quality record](workflows/reviews/propers-quality-2026-10-05/RECORD.md).
 
-Actual proper-study v9 run `e80cd019cbe2d2f4`, seeded at `50b1ff05f`, has
-passed its scope gate and is resolving context through a fresh worker. The
-independent integrated chronology recheck also passes; its record preserves
-strict historical-snapshot freshness checks. Publication acceptance, reviewed
-installation and deployment remain open.
+The chronology repair distinguishes attribution, unresolved occasions,
+represented or remembered events, composition, and duration. Psalm 136 now
+shows the named destruction's traditional date alternatives as historical
+background, with their source qualifications; they do not become dates of the
+Psalm's utterance or composition. Davidic titles receive a qualified regnal
+reference without inventing an occasion. One-hop typed anchor context retains
+its subject, profile and evidence; qualification-only changes now reach the
+semantic audit. Independent rereview passed after that first review finding;
+587 author-run regression tests and 12 independently repeated focused tests
+passed. The 528 prior review identities remain; no old approval was renewed.
+
+Actual research-review-0000 required two repairs: automatic sealing omitted a
+Psalm 118 attribution warrant, and the inspected October USCCB response needed
+its own registered witness. The general binding-source trace repair passed
+independent review, with 412 author-run tests and 35 independently repeated
+focused tests; it preserves date identities and existing publication outputs.
+The exact October response now has its own metadata and inspected binding,
+while September ancestry stays unchanged. Fresh research-review-0001 passed
+with all 2,180 sealed files and 13 computation inputs matching. A fresh USCCB
+request returned 403, so the reviewer inspected the exact retained witness and
+did not claim successful live retrieval.
+
+Web-review-0000 found the study's Bellarmine bibliography link returned 404.
+The engine returned normally to author-study-0001. The source URL was repaired;
+intervention 0002 also attached an already-advisory footnote marker while the
+study was being rebuilt. The accepted concise table layout stayed unchanged.
+Every downstream content, artifact, visual and web stage ran again. Final visual
+review inspected all 34 full-page rasters and four contact sheets; final web
+review checked all twelve external links (HTTP 200), fourteen appointed anchors,
+thirty-four notes, complete source/PDF fidelity and desktop/mobile rendering,
+retaining nineteen screenshots. No physical printing or timed spoken rehearsal
+is claimed. The Sloet printed-page verification limit remains explicit.
+
+Source collation also corrected the misowned 1862 Maternity locus and Cummiskey
+prayer loci; no corrected passage had an earlier publication binding. The
+obsolete Maternity source-reader payload contained unrelated title-page OCR and
+is removed. New lawful clips, checked English transcriptions, Ordo metadata and
+October USCCB metadata are registered under their actual editions. Restricted
+response bodies remain untracked. The source-reader refresh covers only the
+five affected editions, index and removed payload. All 145 earlier classification
+rows and 156 family review units are unchanged; all 157 current units remain
+pending, with no atomic citation coverage claimed. Older publications remain
+reviewed snapshots and were not silently rebuilt or reapproved.
+
+The foundation reached main and the workspace branch at
+`3967091cb2ca97c663f6f8c6fd63c82b561e88ea`; Pages run `37315826419` succeeded
+and five changed served projections matched the verified build byte for byte
+([evidence](workflows/reviews/propers-quality-2026-10-05/foundation-live-verification.json)).
+The final Sunday family reached terminal workflow acceptance. The public site
+build and GitHub Pages-target verification pass. The source gate caught an audit
+record hash changed during final archive wording; after refreshing its inventory,
+the complete `make check-sources` rerun passed.
+[Local integration evidence](workflows/reviews/propers-quality-2026-10-05/sunday-integration-evidence.json)
+records the exact checks and preserved prior states. The audited ordinary
+fast-forward push and live-byte checks remain.
 
 ## Corpus PDF links and every known issue, 2026-10-01
 

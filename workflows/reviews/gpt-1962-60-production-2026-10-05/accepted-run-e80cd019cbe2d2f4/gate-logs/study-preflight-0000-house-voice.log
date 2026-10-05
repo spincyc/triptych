@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost --edition research --check house-voice
+exit 0
+--- stdout ---
+house-voice (research edition): 10 reader-facing files, no sentence taking the guide, its apparatus or the repository as its subject
+
+--- stderr ---
+

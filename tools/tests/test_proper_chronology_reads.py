@@ -22,6 +22,7 @@ from unittest.mock import patch
 
 from tools.tests.test_proper_components_v2 import ROOT
 import _proper_chronology
+import _chronology
 import _proper_study as study
 
 NINETEENTH = "liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost"
@@ -29,6 +30,27 @@ TWENTY_FIFTH = ("liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-
                 "propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a")
 CORPUS = tuple(f"src/sources/chronology/{name}.yaml"
                for name in ("bindings", "composition", "events", "gaps", "profiles"))
+
+
+def resolved_binding_sources(found):
+    """Independent expected evidence from selected core queries, before the
+    proper adapter aggregates claims and the trace extracts source IDs.
+    """
+    sources = set()
+    for element in found.elements:
+        for locus in element.loci:
+            answer = _chronology.chronology(locus, profile=found.profile)
+            if answer.resolved:
+                sources.update(s for item in answer.assertions for s in item.binding_sources)
+    for comparison in found.profile_comparisons:
+        for locus in found.element(comparison.element_key).loci:
+            answer = _chronology.chronology(locus, profile=comparison.requested_profile)
+            if answer.resolved:
+                sources.update(s for item in answer.assertions
+                               if item.relation == comparison.relation
+                               and item.subject == comparison.subject
+                               for s in item.binding_sources)
+    return sources
 
 
 class ComputationReadsTests(unittest.TestCase):
@@ -77,16 +99,17 @@ class ComputationReadsTests(unittest.TestCase):
         self.assertIn(f"{edition}/registry/formula-dispositions.md", reads)
         self.assertIn("guidance/liturgy/postconciliar-propers-registry.md", reads)
 
-    def test_cited_sources_are_exactly_what_the_record_cites(self):
+    def test_cited_sources_are_exactly_date_claims_and_selected_binding_evidence(self):
         # The trace describes today's computation. A historical leaf may keep
         # its reviewed snapshot while a corpus change awaits consumer rereview;
         # its freshness gate is separate from this source-completeness check.
-        record = tomllib.loads(_proper_chronology.render(
-            _proper_chronology.dossier(TWENTY_FIFTH, provider="claude")))
+        found = _proper_chronology.dossier(TWENTY_FIFTH, provider="claude")
+        record = tomllib.loads(_proper_chronology.render(found))
         cited = {source
                  for holder in (*record.get("elements", []), *record.get("profile_comparisons", []))
                  for claim in holder.get("claims", [])
                  for source in claim.get("sources", [])}
+        cited.update(resolved_binding_sources(found))
         library = {source for source in cited if not source.startswith("bible")}
         self.assertEqual(set(self.twenty_fifth["sources"]), library)
         self.assertTrue(any(source.startswith("artifact.catholic-encyclopedia")

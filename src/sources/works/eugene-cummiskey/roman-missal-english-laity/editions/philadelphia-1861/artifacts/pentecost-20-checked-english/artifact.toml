@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.pentecost-20-checked-english"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Anonymous human English published in Philadelphia 1861; United States public domain by publication date. Only historical prayer wording transcribed; no Google or Internet Archive front matter."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/romanmissaltran00churgoog/romanmissaltran00churgoog.pdf"
+provenance = "Model-assisted transcription checked word by word against acquired whole scan PDF 457–459 on 2026-10-05, including Postcommunion continuation on printed 450."
+retrieved = "2026-10-05"
+sha256 = "0f45cd314efbf489ea51c01390f55089ac6f312aa645d4097cab7a6635a5c366"
+byte_size = 538
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/pentecost-20-checked-english/text.tsv"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+transformation = "Historical wording and abbreviated conclusions preserved; line-end division and small capitals normalized. Tabular locators added as project metadata."

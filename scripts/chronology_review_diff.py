@@ -161,7 +161,8 @@ def claim(c):
             "basis": c.basis, "sources": list(c.sources), "note": c.note,
             "answerability": getattr(c, "answerability", "answerable"),
             "basis_class": getattr(c, "basis_class", ""),
-            "reporting_exception": getattr(c, "reporting_exception", None)}
+            "reporting_exception": getattr(c, "reporting_exception", None),
+            "context_qualification": getattr(c, "context_qualification", "")}
 
 def span(s):
     return [s.system, s.token, s.chapter, s.first, s.last]
@@ -284,11 +285,15 @@ def _j(value) -> str:
 # `answerability` and `basis_class` are the two the second was: a claim that
 # stopped being a candidate answer is the most consequential thing a correction
 # lane can do to one, and it moves no date and no source.
+# A context qualification is likewise semantic: removing the 588 B.C.
+# printed-page caveat changes what a reader can infer without changing the
+# number. Historical loaders have no such field; absence means empty.
 FIELDS_MANIFEST = (
     ("disposition", lambda c: c["disposition"]),
     ("answerability", lambda c: c.get("answerability", "answerable")),
     ("basis_class", lambda c: c.get("basis_class", "")),
     ("reporting_exception", lambda c: c.get("reporting_exception")),
+    ("context_qualification", lambda c: c.get("context_qualification", "")),
     ("date", lambda c: _date_text(c["date"])),
     ("anchor", _anchor),
     ("within", _within),

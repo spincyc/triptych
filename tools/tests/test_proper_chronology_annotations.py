@@ -343,8 +343,13 @@ class AnnotationProjectionTests(unittest.TestCase):
             self.assertIn(subject, rendered)
             self.assertIn(chronology.tex_escape(subject), tex)
         self.assertIn("Occasion date unresolved", rendered)
-        self.assertNotIn("A.M. 3416", rendered)
-        self.assertNotIn("A.M. 3416", tex)
+        # The anchor's dates are separate context, never dates of the lament.
+        context = next(g for g in offertory.groups if g.anchor_context)
+        self.assertIn("A.M. 3416", chronology._group_display(context))
+        self.assertTrue(all("A.M. 3416" not in chronology._group_display(g)
+                            for g in offertory.groups if not g.anchor_context))
+        self.assertIn("not to the passage or its composition", rendered)
+        self.assertIn(r"\chronologyannotationanchorgroup", tex)
 
     def test_single_event_subject_is_visible_even_without_competing_subjects(self) -> None:
         projection = chronology.annotations(chronology.dossier(FIFTEENTH))

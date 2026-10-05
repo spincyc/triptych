@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost --edition synthesis --check structural-meta-labels
+exit 0
+--- stdout ---
+structural-meta-labels (synthesis edition): 14 headings, box titles, run-in labels, and table headings inspected, with no forbidden structural meta-label (the leaf adopts schema 2)
+
+--- stderr ---
+

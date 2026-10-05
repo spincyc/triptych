@@ -1,0 +1,26 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "WEB-001",
+      "location": "sections/90-study-apparatus.tex:104, References / Later saintly and liturgical reception; generated canonical Markdown line 562",
+      "problem": "The Bellarmine reference links to https://www.ecatholic2000.com/bellarmine/commentary.shtml, which returns HTTP 404 for both HEAD and a normal GET (the response explicitly says the URL was not found). The converter faithfully reproduces this invalid source URL, so readers cannot follow the supplied reference for Bellarmine\u2019s Psalm 136 and 144 arguments. The registered historical-text artifact instead names https://www.ecatholic2000.com/bellarmine/commentary-on-psalms.shtml, verified with HTTP 200 and identified as the same O\u2019Sullivan 1866 translation. Evidence: .scratch/proper-production-2026-10-05/web-review-v9-0000/bellarmine-get-headers.txt, bellarmine-get.html, bellarmine-correct-headers.txt, and review-evidence.json.",
+      "repair_target": "study",
+      "required_result": "Correct the URL in the canonical study source to the verified registered work URL, preserving its exact Psalm loci and edition attribution; regenerate the dependent reviewed artifacts and canonical web conversion through the workflow. The resulting reader link must open the intended Bellarmine commentary successfully; do not patch generated Markdown independently.",
+      "severity": "blocking"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost",
+    "files": {},
+    "provider": "gpt",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.md": "f24141b7c8fe79ea1b0ea92b0485eabdaa978803932668946165e15882c4b31c"
+    }
+  },
+  "stage": "web-review",
+  "summary": "Reviewed the complete canonical Markdown build/web/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.md (conversion SHA-256 f24141b7c8fe79ea1b0ea92b0485eabdaa978803932668946165e15882c4b31c, matching research/web-artifact.json) against its source and reviewed 21-page study PDF (df4e168056800cea5d0836c98136dea4224c886ff1e8a3b75e953be211ce6d87), with Chromium 153 at 1280x900 and 390x844, 27 inspected screenshots, 14 proper anchors and 34 working note/backlink pairs; evidence is .scratch/proper-production-2026-10-05/web-review-v9-0000/review-evidence.json and its site/, screenshots/, desktop-audit.json, mobile-audit.json, and checked-hashes.json. CHANGES_REQUIRED for one study-owned broken bibliography URL confirmed by HEAD and GET 404; the other 11 external links resolved 200, browser processes are closed, and this local conversion review does not claim deployed-site acceptance, assistive-technology testing, or a new complete source collation."
+}
