@@ -27,3 +27,9 @@
 {"event": "packet", "hash": "d85adb3c662b8b3c9c1489fd271b7ec4365211a799036432cc61ef41255a49d5", "iteration": 0, "size": 776, "stage": "homily-preflight", "timestamp": "2026-10-06T18:08:38Z"}
 {"disposition": "PASS", "event": "result", "stage": "homily-preflight", "timestamp": "2026-10-06T18:08:50Z", "transition": "homily-review"}
 {"event": "packet", "hash": "3dca4c7decd03171cc50c11f84a450aff3c05808f414bcbef67fa497eb710444", "iteration": 0, "size": 38340, "stage": "homily-review", "timestamp": "2026-10-06T18:08:50Z"}
+{"disposition": "PASS", "event": "result", "stage": "homily-review", "timestamp": "2026-10-06T18:12:39Z", "transition": "build-artifacts"}
+{"event": "packet", "hash": "83066b93a3dc387ba67efdd91022441c731b6a0c426ff95d9a975f259cf4cff6", "iteration": 0, "size": 34114, "stage": "build-artifacts", "timestamp": "2026-10-06T18:12:39Z"}
+{"disposition": "PASS", "event": "result", "stage": "build-artifacts", "timestamp": "2026-10-06T18:16:15Z", "transition": "artifact-gates"}
+{"event": "packet", "hash": "2fdd77e286ff979bbfcfc1fe7298876d823bee3a3c820869e5746ba6f32cf904", "iteration": 0, "size": 832, "stage": "artifact-gates", "timestamp": "2026-10-06T18:16:15Z"}
+{"disposition": "PASS", "event": "result", "stage": "artifact-gates", "timestamp": "2026-10-06T18:16:29Z", "transition": "visual-review"}
+{"event": "packet", "hash": "59b2345af533c6d8fcafdc3cc6bc898dd0e543ec90a5d5003e832b5fc9d9cfc4", "iteration": 0, "size": 42561, "stage": "visual-review", "timestamp": "2026-10-06T18:16:29Z"}

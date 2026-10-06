@@ -632,3 +632,68 @@ fresh contribution. Earlier production receipts remain historical. This is
 author verification, not independent homily or visual acceptance. The later
 three-document build must rebuild both studies at the shared timestamp.
 No PDF was installed, no web edition changed and no shared inventory edited.
+
+## Replacement run 36f05d0fcf255303: build-artifacts, iteration 0 — 6 October 2026
+
+All three required `make doc DOC=<id> PROVIDER=gpt` targets pass at the
+settled shared revision `2026-10-06T18:06:33Z`. This stage changed no accepted
+prose, evidence, layout, manifest or generation declaration and refreshed no
+content seal. The later shared timestamp explains why the study and concise
+proofs differ from their earlier author proofs; the homily retains its author
+proof's exact hash.
+
+| Output | Physical pages | Bytes | SHA-256 |
+| --- | ---: | ---: | --- |
+| Expansive study | 21 | 461,684 | `576c626bb65e54ead78072a29c1f810b2205d226d8dcbcfc9aebe644493e0dc5` |
+| Concise study | 10 | 442,100 | `af3d7fcdbbf5ba08c5243f8d7ed61e23712cfb4d40558e318c8d93bb39b2bc10` |
+| Homily | 3 | 246,688 | `c54a0de449fd18508112f0365875217631f5bebf03a11d88f9dd978fc159cd09` |
+
+Four rounds of normal Make invocations retained these exact hashes. The first
+updated the studies; the second reused current targets. To test actual
+recompilation rather than only cached validation, rounds three and four each
+preserved every output, removed only the generated PDF target, and reran the
+same normal Make recipe. Both full recompilations reproduced all three PDF
+hashes without changes to source bytes, build configuration or the toolchain.
+No normalization or independent PDF rewriting was used. Each round's PDFs,
+auxiliaries, final logs, recorders and Make transcripts remain in its own
+`repeat-1` through `repeat-4` child under the stage evidence directory.
+
+The final logs contain no fatal errors, undefined references, missing-character
+diagnostics, LaTeX warnings, overfull or underfull boxes, or infinite-shrink
+diagnostics. The Make recipes' metadata checks, all-output artifact component
+check and three PDF anchor checks pass. The concise absolute-page markers put
+inventory, overview and its four named senses on physical page 1, chronology
+on 2, themes on 3–4, and developed commentary beginning on 5. Extracted text
+independently follows that order. Both study lengths meet their required
+physical-page ranges.
+
+All three complete text extractions were inspected. There is no empty page or
+replacement character, and each final page contains the sole visible revision
+and the rights colophon. PDF information reports unencrypted letter-size PDF
+1.7, expected titles and subjects, no automatic creation date and modification
+dates matching the shared revision. All 41 Latin Modern font rows are embedded,
+subsetted and have Unicode mappings. Ghostscript parsed all 34 pages through
+its null-page device with no diagnostics. The three image inventories are
+empty. The homily's 80.3 KiB per page is the only size-investigation trigger;
+its ten embedded font rows supply a fixed payload in a short publication.
+No source-independent size optimization was applied.
+
+The canonical PDFs are the bare leaf ID, `-synthesis` and `-homily` under
+`build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/`.
+Exact final copies and the settled auxiliary, log and recorder evidence are in
+`build/tpt-runs/36f05d0fcf255303/artifacts/build-artifacts-0/`, beside font,
+structure, extraction, page-marker and check reports. `proof-verification.json`
+records actual repeated-build hashes and diagnostic facts. The required
+snapshot command replaced `research/artifacts.json` with three PDF hashes,
+26 render inputs and two pagination auxiliaries; each recorded digest was
+independently verified against its current file. A copy of that receipt is in
+the stage evidence directory. The repository raster helper successfully
+prepared all 34 pages and bounded contact sheets in the dedicated replaceable
+`rasters` child. Earlier runs and author artifacts remain intact.
+
+These are build and extraction checks, not independent visual acceptance.
+The fresh reviewer still judges every page, including the compact chronology,
+the concise page-7 running head and the study's short unit-ending pages.
+No semantic defect requiring upstream revision was identified during this
+artifact check. Existing evidence and rights limits remain unchanged.
+No PDF was installed, no web edition was changed and no workflow was advanced.

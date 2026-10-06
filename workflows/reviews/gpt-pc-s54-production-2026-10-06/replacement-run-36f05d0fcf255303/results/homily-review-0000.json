@@ -1,0 +1,184 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel-long",
+            "gospel-short",
+            "offerings",
+            "communion-psalm",
+            "communion-john",
+            "after-communion"
+          ],
+          "key": "spoken",
+          "kind": "homily",
+          "path": "sections/homily-10-spoken.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "homily-notes",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily-90-notes.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
+      "element_keys": [
+        "entrance",
+        "collect",
+        "first-reading",
+        "psalm",
+        "second-reading",
+        "acclamation",
+        "gospel-long",
+        "gospel-short",
+        "offerings",
+        "communion-psalm",
+        "communion-john",
+        "after-communion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "charity"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel-long",
+            "gospel-short",
+            "offerings",
+            "communion-psalm",
+            "communion-john",
+            "after-communion"
+          ],
+          "key": "gift-becomes-charity",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "title": "The invitation becomes a life of charity"
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Gregory the Great"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "abundance"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel-long",
+            "gospel-short",
+            "offerings",
+            "communion-psalm",
+            "communion-john",
+            "after-communion"
+          ],
+          "key": "abundance-amid-need",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "title": "The feast sustains those who still hunger"
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
+    "files": {
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/homily.tex": "91179382546ba235e28e01a65c425cd082d83224b13c4ab0ba65ac2ae8e84420",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/interpretations.md": "41f8457d421f450795d25cdd4a1b00fbd4cab380517de863e43fe6d9b18f657b",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/homily-10-spoken.tex": "d2559db03090d6627a99d17e7a0216be7f3b85213d99b58c7b5f0b7ab87388c6",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/homily-90-notes.tex": "d3a9267d1ca759197e1e1691c22d2e2922425993a99897129e518f80aa57aa4c"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "9",
+            "ef8058d0bd73437c67569a8d24ce67dac4c273fef7688aef8a54dec9e7986b13",
+            "36f05d0fcf255303",
+            "c150b81c6c7bab0dca2c688191fc7706a3f497c0",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "PASS after independently reading PC-S54-A's complete homily and notes, comparing the reviewed abundance interpretation, checking the biblical contexts, Chrysostom's Philippians XV, Thomas's Isaiah 25 paragraph 84985 and FDLC prayer witnesses on pages 14\u201315, and inspecting all three proof pages. Paul's commendation of help immediately after strength in Christ supplies a decisive textual turn toward mutual care and Eucharistic hope; the speech preserves Gospel-option limits, its 1,208 words support the stated 10.1\u201311.0-minute estimate at 110\u2013120 words per minute, all seven sealed file hashes match, and no blocking defect remains, with no audible rehearsal or timed human performance certified."
+}

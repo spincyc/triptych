@@ -45,7 +45,23 @@ studies and reopening its sources. The fresh three-page proof has SHA-256
 Its 1,208 spoken words imply an estimated 10.1–11.0 minutes at 110–120 words
 per minute; only silent prose rehearsal is claimed. All three pages were
 inspected. Derive-homily-0000 and homily-preflight-0000 passed; independent
-homily-review-0000 is pending. The author's optional full source check exited
+homily-review-0000 passed with no findings after source, all-page and
+seven-input seal checks. All three content reviews are accepted; the engine
+dispatched build-artifacts-0000 for the final family snapshot.
+Build-artifacts-0000 and artifact-gates-0000 passed at 21/10/3 pages with
+the settled shared timestamp `2026-10-06T18:06:33Z`. Normal repeated full
+recompilations of unchanged inputs produced identical bytes. The final
+study, synthesis and homily hashes are respectively
+`576c626bb65e54ead78072a29c1f810b2205d226d8dcbcfc9aebe644493e0dc5`,
+`af3d7fcdbbf5ba08c5243f8d7ed61e23712cfb4d40558e318c8d93bb39b2bc10`
+and `c54a0de449fd18508112f0365875217631f5bebf03a11d88f9dd978fc159cd09`.
+The current artifact receipt records the PDFs, render inputs and pagination
+evidence. Logs, fonts, structure, text extraction and physical-page markers
+pass; all accepted content seals remain current. All 34 page rasters and
+supporting evidence are under
+`build/tpt-runs/36f05d0fcf255303/artifacts/build-artifacts-0/`.
+Independent visual-review-0000 is pending.
+The author's optional full source check exited
 2 only at the still-stale document catalog; source-library and inventory
 validation passed. Final catalog generation and the complete rerun remain due.
 

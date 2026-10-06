@@ -35,7 +35,11 @@ synthesis-review-0000 passed with no findings after checking all ten pages,
 source support, chronology qualifications and eleven sealed inputs. The
 homily author and preflight stages passed with a fresh three-page proof and
 1,208 spoken words (estimated 10.1–11.0 minutes). Independent homily review
-is pending. Every replacement
+passed with no findings after source, complete-proof and seven-input seal
+checks. All three content reviews are accepted. The final three-document
+build and artifact gate passed at 21/10/3 pages, with byte-identical repeated
+builds and current content seals. Independent visual review is pending.
+Every replacement
 acceptance comes from its own native reviews.
 
 First run `beb2231b657a358d` passed content and visual reviews but ended
