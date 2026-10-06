@@ -7,6 +7,27 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-06.
 
+## GPT Twenty-eighth Sunday main integration, 2026-10-06
+
+<!-- promised-deliverable: gpt-pc-s54-main-2026-10-06 -->
+
+The maintainer subsequently requested reconciliation/rebase and a push to main.
+Fetched `origin/main` is `833196e9405a686ccd4a5b185a6461d2d80aee6d`,
+already an ancestor of the completed workspace delivery
+`47f36f0d4a84114457b76ad07bedd9d66dda6f04`: seventeen outgoing commits,
+no incoming commits and no conflicts. Ordinary fast-forward publication
+preserves the accepted run's historical commit identities; no rebase is needed.
+
+**Validated for fast-forward; push and live verification pending.** The
+deployment source gate, public site build and GitHub Pages-target verification
+all pass. The outgoing 17-commit, 290-path history contains only intended
+public text; object-level scanning found no private-data patterns or ignored
+outputs. The [integration evidence](workflows/reviews/gpt-pc-s54-production-2026-10-06/main-integration.json)
+records commands, exits and log hashes. Accepted sources, publication
+bytes and native archives remain unchanged. This mechanical integration has no
+new independent-review boundary; the completed production reviews and immutable
+handoff continue to cover those exact bytes.
+
 ## GPT Twenty-eighth Sunday proper studies, 2026-10-06
 
 <!-- promised-deliverable: gpt-pc-s54-three-documents-2026-10-06 -->
