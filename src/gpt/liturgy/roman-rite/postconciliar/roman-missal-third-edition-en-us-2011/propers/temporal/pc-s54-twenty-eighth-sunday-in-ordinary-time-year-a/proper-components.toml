@@ -1,0 +1,201 @@
+schema = 2
+record_type = "proper-components"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a"
+calendar = "postconciliar"
+entrypoint = "main.tex"
+synthesis_entrypoint = "synthesis.tex"
+homily_entrypoint = "homily.tex"
+appointed_text_completeness = "rights-limited"
+presentation_contract = "interpretive-pagination-v1"
+format_contract = "propers-format-v1"
+authority_contract = "authority-standing-v1"
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading", "acclamation", "gospel-long", "gospel-short", "offerings", "communion-psalm", "communion-john", "after-communion"]
+
+[outputs]
+research = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a"
+synthesis = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis"
+homily = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily"
+web = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a"
+canonical_label = "Research PDF"
+synthesis_label = "Synthesis PDF"
+homily_label = "Homily PDF"
+
+[presentation]
+inventory = "concise-inventory"
+overview = "concise-overview"
+chronology = "concise-chronology"
+themes = "concise-themes"
+commentary = "concise-commentary"
+
+[[components]]
+key = "opening"
+path = "sections/00-opening.tex"
+kind = "front-matter"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading", "acclamation", "gospel-long", "gospel-short", "offerings", "communion-psalm", "communion-john", "after-communion"]
+depends_on = []
+references = []
+
+[[components]]
+key = "study-map"
+path = "sections/01-map.tex"
+kind = "front-matter"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading", "acclamation", "gospel-long", "gospel-short", "offerings", "communion-psalm", "communion-john", "after-communion"]
+depends_on = []
+references = []
+
+[[components]]
+key = "treatment"
+path = "sections/10-treatment.tex"
+kind = "proper-treatment"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading", "acclamation", "gospel-long", "gospel-short", "offerings", "communion-psalm", "communion-john", "after-communion"]
+depends_on = []
+references = ["research/scope.md", "research/source-bindings.toml"]
+
+[[components]]
+key = "texts"
+path = "sections/20-texts.tex"
+kind = "appointed-text"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading", "acclamation", "gospel-long", "gospel-short", "offerings", "communion-psalm", "communion-john", "after-communion"]
+depends_on = []
+references = ["research/source-bindings.toml"]
+
+[[components]]
+key = "charity"
+path = "sections/30-charity.tex"
+kind = "interpretive-lane"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading", "acclamation", "gospel-long", "gospel-short", "offerings", "communion-psalm", "communion-john", "after-communion"]
+depends_on = []
+references = ["research/interpretations.md"]
+
+[[components]]
+key = "abundance"
+path = "sections/40-abundance.tex"
+kind = "interpretive-lane"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading", "acclamation", "gospel-long", "gospel-short", "offerings", "communion-psalm", "communion-john", "after-communion"]
+depends_on = []
+references = ["research/interpretations.md"]
+
+[[components]]
+key = "comparison"
+path = "sections/50-comparison.tex"
+kind = "front-matter"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading", "acclamation", "gospel-long", "gospel-short", "offerings", "communion-psalm", "communion-john", "after-communion"]
+depends_on = []
+references = []
+
+[[components]]
+key = "history"
+path = "sections/60-history.tex"
+kind = "terminal-apparatus"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading", "acclamation", "gospel-long", "gospel-short", "offerings", "communion-psalm", "communion-john", "after-communion"]
+depends_on = []
+references = ["research/chronology-annotations.tex", "research/chronology.toml"]
+
+[[components]]
+key = "apparatus"
+path = "sections/70-apparatus.tex"
+kind = "terminal-apparatus"
+modes = ["research"]
+element_keys = []
+depends_on = []
+references = ["research/scope.md"]
+
+[[components]]
+key = "concise-inventory"
+path = "sections/synthesis-01-inventory.tex"
+kind = "front-matter"
+modes = ["synthesis"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading", "acclamation", "gospel-long", "gospel-short", "offerings", "communion-psalm", "communion-john", "after-communion"]
+depends_on = []
+references = []
+
+[[components]]
+key = "concise-overview"
+path = "sections/synthesis-02-overview.tex"
+kind = "front-matter"
+modes = ["synthesis"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading", "acclamation", "gospel-long", "gospel-short", "offerings", "communion-psalm", "communion-john", "after-communion"]
+depends_on = []
+references = []
+
+[[components]]
+key = "concise-chronology"
+path = "sections/synthesis-03-chronology.tex"
+kind = "front-matter"
+modes = ["synthesis"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading", "acclamation", "gospel-long", "gospel-short", "offerings", "communion-psalm", "communion-john", "after-communion"]
+depends_on = []
+references = ["research/chronology-annotations.tex"]
+
+[[components]]
+key = "concise-themes"
+path = "sections/synthesis-04-themes.tex"
+kind = "front-matter"
+modes = ["synthesis"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading", "acclamation", "gospel-long", "gospel-short", "offerings", "communion-psalm", "communion-john", "after-communion"]
+depends_on = []
+references = []
+
+[[components]]
+key = "concise-commentary"
+path = "sections/synthesis-05-commentary.tex"
+kind = "integrated-commentary"
+modes = ["synthesis"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading", "acclamation", "gospel-long", "gospel-short", "offerings", "communion-psalm", "communion-john", "after-communion"]
+depends_on = []
+references = ["research/interpretations.md"]
+
+[[components]]
+key = "concise-apparatus"
+path = "sections/synthesis-90-apparatus.tex"
+kind = "terminal-apparatus"
+modes = ["synthesis"]
+element_keys = []
+depends_on = []
+references = []
+
+[[components]]
+key = "spoken"
+path = "sections/homily-10-spoken.tex"
+kind = "homily"
+modes = ["homily"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading", "acclamation", "gospel-long", "gospel-short", "offerings", "communion-psalm", "communion-john", "after-communion"]
+depends_on = []
+references = ["research/interpretations.md"]
+
+[[components]]
+key = "homily-notes"
+path = "sections/homily-90-notes.tex"
+kind = "terminal-apparatus"
+modes = ["homily"]
+element_keys = []
+depends_on = []
+references = []
+
+[[lanes]]
+key = "gift-becomes-charity"
+title = "The invitation becomes a life of charity"
+authors = ["Gregory the Great", "Augustine of Hippo", "John Chrysostom", "Thomas Aquinas"]
+carrying_authors = ["Gregory the Great", "Augustine of Hippo"]
+sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
+component_keys = ["charity"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading", "acclamation", "gospel-long", "gospel-short", "offerings", "communion-psalm", "communion-john", "after-communion"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+
+[[lanes]]
+key = "abundance-amid-need"
+title = "The feast sustains those who still hunger"
+authors = ["John Chrysostom", "Augustine of Hippo", "Thomas Aquinas", "Gregory the Great"]
+carrying_authors = ["John Chrysostom", "Augustine of Hippo", "Thomas Aquinas"]
+sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
+component_keys = ["abundance"]
+element_keys = ["entrance", "collect", "first-reading", "psalm", "second-reading", "acclamation", "gospel-long", "gospel-short", "offerings", "communion-psalm", "communion-john", "after-communion"]
+senses = ["literal", "allegorical", "moral", "anagogical"]

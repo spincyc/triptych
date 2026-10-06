@@ -12,3 +12,9 @@
 {"event": "packet", "hash": "5a61db7426cb9e938d447188e14c2b8f15a27cddd7a82b55c6de79e1be12183f", "iteration": 1, "size": 778, "stage": "research-preflight", "timestamp": "2026-10-06T15:29:50Z"}
 {"disposition": "PASS", "event": "result", "stage": "research-preflight", "timestamp": "2026-10-06T15:30:01Z", "transition": "research-review"}
 {"event": "packet", "hash": "36d84a9d73128918651faefd747eaf83827996fb97e6beb21d73c09ba2012651", "iteration": 0, "size": 297918, "stage": "research-review", "timestamp": "2026-10-06T15:30:01Z"}
+{"disposition": "PASS", "event": "result", "stage": "research-review", "timestamp": "2026-10-06T15:40:00Z", "transition": "author-study"}
+{"event": "packet", "hash": "c2c705db390dc8e9e889b080b0c30bd1f9649e09308c458dbbf63a9c1f8a20e4", "iteration": 0, "size": 35512, "stage": "author-study", "timestamp": "2026-10-06T15:40:00Z"}
+{"disposition": "PASS", "event": "result", "stage": "author-study", "timestamp": "2026-10-06T15:58:06Z", "transition": "study-preflight"}
+{"event": "packet", "hash": "91bb65255316a75e6f851c8f7613ba9404f56e65efe1c44adcf94a07edb18306", "iteration": 0, "size": 775, "stage": "study-preflight", "timestamp": "2026-10-06T15:58:06Z"}
+{"disposition": "PASS", "event": "result", "stage": "study-preflight", "timestamp": "2026-10-06T15:58:26Z", "transition": "study-review"}
+{"event": "packet", "hash": "757f4bc6b6215166032d382e8245c3344f4e290457260435688bbee9b6846d1c", "iteration": 0, "size": 43715, "stage": "study-review", "timestamp": "2026-10-06T15:58:26Z"}

@@ -28,8 +28,17 @@ The engine dispatched `research-0001` to a fresh high-effort worker. That worker
 repaired the declaration, explicitly included the registered rights-authority
 owners and recorded its bounded audit. Research-preflight-0001 passed and the
 engine dispatched research-review-0000 to a fresh xhigh-effort reviewer against
-its actual 1,768-file v4 research seal. No study, research-review acceptance or
-publication is claimed.
+its actual 1,768-file v4 research seal. That independent review passed with no
+findings: all sealed files and 16 computation inputs matched, and the reviewer
+checked the actual liturgical, reception and chronology evidence. Acceptance
+retains the recorded exact-book, translation, chronology and unadopted-source
+limits. A fresh high-effort author completed the 21-page expansive proof with
+6,537 substantive words. All 21 initial pages were inspected, then the affected
+pages rechecked after a chronology-table boundary repair and keeping the first
+four-senses block together. The settled author proof is 461,386 bytes, SHA-256
+`ef5d28fc061b8abd44738053a0f56135edcff24eb52cb326ddd0a8481087525b`.
+Study-preflight-0000 passed and the engine dispatched study-review-0000 to a
+fresh xhigh-effort reviewer. Study acceptance and publication remain pending.
 A separate read-only identity check
 confirmed the dated USCCB assignment and Year A against its 2026 calendar.
 That finding is an input lead, not the workflow's context or research verdict.
@@ -59,8 +68,10 @@ screening units remain pending and atomic citation coverage remains false.
 
 The mid-production `make check-sources` exits 2 because document-library requires
 the future author-study `web-edition.toml` beside the reserved `main.tex`.
-The log is retained in the task scratch directory. This is an open production
-dependency, not a successful full source gate or a reason to invent metadata.
+The log is retained in the task scratch directory. Author-study has since
+supplied that declaration. The complete source and catalog checks will run
+again after the actual companion and publication records exist; that earlier
+failed invocation is not reclassified as a pass.
 
 The initial deliverable validator rejected missing evidence pointers on the
 open requirements. Commit `72fa0d381` supplied them and corrected the earlier

@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a --edition research --check chronology-claims-supported
+exit 0
+--- stdout ---
+chronology-claims-supported (research edition): 8 date cells, 8 generated annotations, and 0 direct chronology claims, every claim asserted by the corpus at the element it is printed for, no figure printed outside one (not yet bound by version: the concise physical-page contract requires the complete canonical chronology)
+
+--- stderr ---
+

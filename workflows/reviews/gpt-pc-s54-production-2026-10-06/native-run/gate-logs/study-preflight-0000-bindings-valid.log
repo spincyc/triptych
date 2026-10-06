@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a --edition research --check bindings-valid
+exit 0
+--- stdout ---
+bindings-valid (research edition): 29 bindings, every id registered and every reviewed state fingerprinted as the library computes it
+
+--- stderr ---
+

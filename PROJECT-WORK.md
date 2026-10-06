@@ -25,8 +25,11 @@ stages. The first research worker completed a bounded dossier with 29 source
 bindings, two complete interpretations and generated chronology. Research
 preflight then rejected two guidance paths in the source-owner dependency
 list. A fresh high-effort worker repaired the declaration and made the rights
-authority chain explicit; research-preflight-0001 passed. A fresh xhigh-effort
-reviewer is checking the actual 1,768-file research seal before drafting.
+authority chain explicit; research-preflight-0001 passed. Independent
+research-review-0000 passed with no findings after checking the actual
+1,768-file research seal and its source claims. The expansive author proof
+has 21 pages and 6,537 substantive words; study-preflight-0000 passed. A fresh
+xhigh-effort reviewer is checking that study before companion derivation.
 The dated USCCB evidence confirms Year A and Lectionary 142. The complete
 inventory, registry-fixed week-28 owner, edition disposition and three PDF
 dependencies are recorded. The actual workflow
@@ -47,10 +50,13 @@ registry and promised-deliverable checks also pass. The
 [production record](workflows/reviews/gpt-pc-s54-production-2026-10-06/README.md)
 retains the run identity, native records and corrected initial ledger-validation
 failure. The mid-production source check stopped at the future study's absent
-web declaration; source-library, inventory, rights projection, containment and
+web declaration, which the author has since supplied. Source-library,
+inventory, rights projection, containment and
 family-ledger checks pass independently. The refreshed ledger has 158 pending
 screening units, with no family-screening or atomic-coverage claim. Neither
-that check nor research review is represented as passed.
+that full check nor publication acceptance is represented as passed. Research
+checkpoint `bc597b708` is committed and pushed to the workspace branch; the
+native run continues from its original seed.
 
 ## GPT Twentieth Sunday, Psalm event chronology and quality review, 2026-10-05
 

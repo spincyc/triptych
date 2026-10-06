@@ -1,5 +1,5 @@
 {
-  "current_stage": "research-review",
+  "current_stage": "study-review",
   "disposition": null,
   "document_root": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
   "escalations": [],
@@ -11,7 +11,7 @@
       "GATE-RESEARCH-RECORDS"
     ]
   },
-  "iteration": 7,
+  "iteration": 10,
   "normalized_args": {
     "audience": "adult parish assembly",
     "date": "2026-10-11",
@@ -1873,6 +1873,370 @@
         "schema": 1
       },
       "stage": "research-review"
+    },
+    {
+      "hash": "c2c705db390dc8e9e889b080b0c30bd1f9649e09308c458dbbf63a9c1f8a20e4",
+      "iteration": 0,
+      "path": "build/tpt-runs/beb2231b657a358d/packets/author-study-0000.txt",
+      "stage": "author-study"
+    },
+    {
+      "hash": "91bb65255316a75e6f851c8f7613ba9404f56e65efe1c44adcf94a07edb18306",
+      "iteration": 0,
+      "path": "build/tpt-runs/beb2231b657a358d/packets/study-preflight-0000.txt",
+      "stage": "study-preflight"
+    },
+    {
+      "hash": "757f4bc6b6215166032d382e8245c3344f4e290457260435688bbee9b6846d1c",
+      "iteration": 0,
+      "path": "build/tpt-runs/beb2231b657a358d/packets/study-review-0000.txt",
+      "review_inputs": {
+        "component_contract": {
+          "calendar": "postconciliar",
+          "components": [
+            {
+              "depends_on": [],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "psalm",
+                "second-reading",
+                "acclamation",
+                "gospel-long",
+                "gospel-short",
+                "offerings",
+                "communion-psalm",
+                "communion-john",
+                "after-communion"
+              ],
+              "key": "opening",
+              "kind": "front-matter",
+              "path": "sections/00-opening.tex",
+              "references": []
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "psalm",
+                "second-reading",
+                "acclamation",
+                "gospel-long",
+                "gospel-short",
+                "offerings",
+                "communion-psalm",
+                "communion-john",
+                "after-communion"
+              ],
+              "key": "study-map",
+              "kind": "front-matter",
+              "path": "sections/01-map.tex",
+              "references": []
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "psalm",
+                "second-reading",
+                "acclamation",
+                "gospel-long",
+                "gospel-short",
+                "offerings",
+                "communion-psalm",
+                "communion-john",
+                "after-communion"
+              ],
+              "key": "treatment",
+              "kind": "proper-treatment",
+              "path": "sections/10-treatment.tex",
+              "references": [
+                "research/scope.md",
+                "research/source-bindings.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "psalm",
+                "second-reading",
+                "acclamation",
+                "gospel-long",
+                "gospel-short",
+                "offerings",
+                "communion-psalm",
+                "communion-john",
+                "after-communion"
+              ],
+              "key": "texts",
+              "kind": "appointed-text",
+              "path": "sections/20-texts.tex",
+              "references": [
+                "research/source-bindings.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "psalm",
+                "second-reading",
+                "acclamation",
+                "gospel-long",
+                "gospel-short",
+                "offerings",
+                "communion-psalm",
+                "communion-john",
+                "after-communion"
+              ],
+              "key": "charity",
+              "kind": "interpretive-lane",
+              "path": "sections/30-charity.tex",
+              "references": [
+                "research/interpretations.md"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "psalm",
+                "second-reading",
+                "acclamation",
+                "gospel-long",
+                "gospel-short",
+                "offerings",
+                "communion-psalm",
+                "communion-john",
+                "after-communion"
+              ],
+              "key": "abundance",
+              "kind": "interpretive-lane",
+              "path": "sections/40-abundance.tex",
+              "references": [
+                "research/interpretations.md"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "psalm",
+                "second-reading",
+                "acclamation",
+                "gospel-long",
+                "gospel-short",
+                "offerings",
+                "communion-psalm",
+                "communion-john",
+                "after-communion"
+              ],
+              "key": "comparison",
+              "kind": "front-matter",
+              "path": "sections/50-comparison.tex",
+              "references": []
+            },
+            {
+              "depends_on": [],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "psalm",
+                "second-reading",
+                "acclamation",
+                "gospel-long",
+                "gospel-short",
+                "offerings",
+                "communion-psalm",
+                "communion-john",
+                "after-communion"
+              ],
+              "key": "history",
+              "kind": "terminal-apparatus",
+              "path": "sections/60-history.tex",
+              "references": [
+                "research/chronology-annotations.tex",
+                "research/chronology.toml"
+              ]
+            },
+            {
+              "depends_on": [],
+              "element_keys": [],
+              "key": "apparatus",
+              "kind": "terminal-apparatus",
+              "path": "sections/70-apparatus.tex",
+              "references": [
+                "research/scope.md"
+              ]
+            }
+          ],
+          "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel-long",
+            "gospel-short",
+            "offerings",
+            "communion-psalm",
+            "communion-john",
+            "after-communion"
+          ],
+          "lanes": [
+            {
+              "authors": [
+                "Gregory the Great",
+                "Augustine of Hippo",
+                "John Chrysostom",
+                "Thomas Aquinas"
+              ],
+              "carrying_authors": [
+                "Gregory the Great",
+                "Augustine of Hippo"
+              ],
+              "component_keys": [
+                "charity"
+              ],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "psalm",
+                "second-reading",
+                "acclamation",
+                "gospel-long",
+                "gospel-short",
+                "offerings",
+                "communion-psalm",
+                "communion-john",
+                "after-communion"
+              ],
+              "key": "gift-becomes-charity",
+              "senses": [
+                "literal",
+                "allegorical",
+                "moral",
+                "anagogical"
+              ],
+              "sources": [
+                "research/interpretations.md",
+                "research/scope.md",
+                "research/source-bindings.toml"
+              ],
+              "title": "The invitation becomes a life of charity"
+            },
+            {
+              "authors": [
+                "John Chrysostom",
+                "Augustine of Hippo",
+                "Thomas Aquinas",
+                "Gregory the Great"
+              ],
+              "carrying_authors": [
+                "John Chrysostom",
+                "Augustine of Hippo",
+                "Thomas Aquinas"
+              ],
+              "component_keys": [
+                "abundance"
+              ],
+              "element_keys": [
+                "entrance",
+                "collect",
+                "first-reading",
+                "psalm",
+                "second-reading",
+                "acclamation",
+                "gospel-long",
+                "gospel-short",
+                "offerings",
+                "communion-psalm",
+                "communion-john",
+                "after-communion"
+              ],
+              "key": "abundance-amid-need",
+              "senses": [
+                "literal",
+                "allegorical",
+                "moral",
+                "anagogical"
+              ],
+              "sources": [
+                "research/interpretations.md",
+                "research/scope.md",
+                "research/source-bindings.toml"
+              ],
+              "title": "The feast sustains those who still hunger"
+            }
+          ],
+          "presentation": {
+            "chronology": "concise-chronology",
+            "commentary": "concise-commentary",
+            "inventory": "concise-inventory",
+            "overview": "concise-overview",
+            "themes": "concise-themes"
+          },
+          "presentation_contract": "interpretive-pagination-v1",
+          "schema": 2
+        },
+        "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
+        "files": {
+          "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+          "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/main.tex": "2b60a7aeed610e2e25567eca8301c26b724df52db4fe89b3ac13b212158dd8b9",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex": "63263d70252984a82372e0fbba2b580c4908245c1c152331b13ebe934a7301cf",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/chronology.toml": "d9e0c8c1ef2287ad80a098a30680f2b3e00f9fcb178c1f90ac66706561c9372b",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/interpretations.md": "fe1aadb9fbb0050833cdb2a547012172afa5613e9f99cc2db4e28fb6b0b9e711",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/scope.md": "173ae690de317cfa2e57def8bdb398c64bd3c9021204b7e7a7edf261b90912a4",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/source-bindings.toml": "d67d9aba3d25579ac9a5e306cee4811a4809b5474908fb7fe4122e7a09bba2c9",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/00-opening.tex": "5373ebe5870bed82b33f02a0b77e72a716b85d96b43a5a9264d008f454a5a0c7",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/01-map.tex": "81286dcd7a776e1a60abf32b21b758485dc1fba92cbec097a7a4d128e07c01a5",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/10-treatment.tex": "76b22b44c806302a2a76ecc5fa1304ff711ca0402db234e17389a968d5f9099c",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/20-texts.tex": "3c4cab81850e5c84a68a61d20cbc72f90a204037e2c7cd1ca28588c666ed9226",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/30-charity.tex": "efb42f695bc7bc5b6fff712530365630824445bdeb90c95435c6bb9470eae06e",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/40-abundance.tex": "e4689ef9dddf8df8646c7207d15694155d00d42f775460b856a5efcf3109bb8b",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/50-comparison.tex": "6e581ee94e04096a5e512487bbc1254c084edb78ec48f6769e253694be23266c",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/60-history.tex": "704a651d048e409501bc9b8a952f9f7e2d18dfe0d92bfff902ff13c4aa226df6",
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/70-apparatus.tex": "241ed79116a077095b87e7acb88755023137d0f3a6b2ed4f7eb3d99698a5b77c"
+        },
+        "generation_provenance": {
+          "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+            "inheritance": [],
+            "production": [
+              [
+                "proper-study",
+                "9",
+                "ef8058d0bd73437c67569a8d24ce67dac4c273fef7688aef8a54dec9e7986b13",
+                "beb2231b657a358d",
+                "742d56bd0152eba02999c6e9afb47ae3340c5a72",
+                "unknown"
+              ]
+            ]
+          }
+        },
+        "provider": "gpt",
+        "review": "study",
+        "schema": 1
+      },
+      "stage": "study-review"
     }
   ],
   "repo_commit": "742d56bd0152eba02999c6e9afb47ae3340c5a72",
@@ -1918,6 +2282,27 @@
       "iteration": 1,
       "path": "build/tpt-runs/beb2231b657a358d/results/research-preflight-0001.json",
       "stage": "research-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "907eab4d1cac6f38828fa6e2302ac01f36cea033122da4b1a7afe544b1891617",
+      "iteration": 0,
+      "path": "build/tpt-runs/beb2231b657a358d/results/research-review-0000.json",
+      "stage": "research-review"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "5c109cbfa979b1060448efa1594febc7894564482afc1fb2c2fad63c01af52ff",
+      "iteration": 0,
+      "path": "build/tpt-runs/beb2231b657a358d/results/author-study-0000.json",
+      "stage": "author-study"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "db4f430efb6baf21bb53a26e3ace3bc17674c5b6c4e65d8af259ee8366a0f0ae",
+      "iteration": 0,
+      "path": "build/tpt-runs/beb2231b657a358d/results/study-preflight-0000.json",
+      "stage": "study-preflight"
     }
   ],
   "run_id": "beb2231b657a358d",
@@ -1925,25 +2310,67 @@
   "stage_blocking_targets": {},
   "stage_failures": {
     "research-preflight": 0,
-    "scope-gate": 0
+    "research-review": 0,
+    "scope-gate": 0,
+    "study-preflight": 0
   },
   "stage_iterations": {
+    "author-study": 1,
     "research": 2,
     "research-preflight": 2,
     "research-review": 1,
     "resolve-context": 1,
-    "scope-gate": 1
+    "scope-gate": 1,
+    "study-preflight": 1,
+    "study-review": 1
   },
   "stage_novel": {
     "research-preflight": 0,
-    "scope-gate": 0
+    "research-review": 0,
+    "scope-gate": 0,
+    "study-preflight": 0
   },
   "stage_repeats": {
     "research-preflight": 0,
-    "scope-gate": 0
+    "research-review": 0,
+    "scope-gate": 0,
+    "study-preflight": 0
   },
-  "stage_scope_baseline": {},
-  "stage_scope_changed": {},
+  "stage_scope_baseline": {
+    "research-review": {
+      "instance/manifest.md": "08225dc9d27cf6688a3f4207aa1bdcc13efb60619059ff7fbe22390b85b22ba0",
+      "main.tex": "6d163e91017ed9445c2ba60363fe57bcc1c88de33a605351cd0861b2f529a2d0",
+      "propers/verified.md": "3fc1045aed7de765bb183ff9e3097f7d46f78bb2ba4164e3be84d30042b1208e",
+      "research/chronology-annotations.tex": "63263d70252984a82372e0fbba2b580c4908245c1c152331b13ebe934a7301cf",
+      "research/chronology-inputs.toml": "110e8e186301d2cfe4abece105f7028e7a6d1415445434971af4e7303df4332a",
+      "research/chronology-profile-comparisons.toml": "e77bdc39d80aba55b7dbae9c0d2426251d61ca8b0fb7209a94fc65293a23a82b",
+      "research/chronology.toml": "d9e0c8c1ef2287ad80a098a30680f2b3e00f9fcb178c1f90ac66706561c9372b",
+      "research/context.md": "516246b98336c65e81d733b61626c4da7515bcde33d6123a79adbfe23ffd8807",
+      "research/interpretations.md": "fe1aadb9fbb0050833cdb2a547012172afa5613e9f99cc2db4e28fb6b0b9e711",
+      "research/review-dependencies.toml": "a96fd44da2571b53e31d6cb9d58d0473fc7938532ae8dd054d83971472bc8aa5",
+      "research/scope.md": "173ae690de317cfa2e57def8bdb398c64bd3c9021204b7e7a7edf261b90912a4",
+      "research/source-bindings.toml": "d67d9aba3d25579ac9a5e306cee4811a4809b5474908fb7fe4122e7a09bba2c9",
+      "research/source-plan.md": "3f78df91b49271ad14b4b5706302fdee40556872a8936dfa0db2258d3d3a2c2b"
+    }
+  },
+  "stage_scope_changed": {
+    "research-review": [
+      "generation-metadata.tex",
+      "main.tex",
+      "proper-components.toml",
+      "research/production-review.md",
+      "sections/00-opening.tex",
+      "sections/01-map.tex",
+      "sections/10-treatment.tex",
+      "sections/20-texts.tex",
+      "sections/30-charity.tex",
+      "sections/40-abundance.tex",
+      "sections/50-comparison.tex",
+      "sections/60-history.tex",
+      "sections/70-apparatus.tex",
+      "web-edition.toml"
+    ]
+  },
   "transitions": [
     {
       "disposition": "PASS",
@@ -1974,6 +2401,21 @@
       "disposition": "PASS",
       "from": "research-preflight",
       "to": "research-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research-review",
+      "to": "author-study"
+    },
+    {
+      "disposition": "PASS",
+      "from": "author-study",
+      "to": "study-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "from": "study-preflight",
+      "to": "study-review"
     }
   ],
   "unrepaired_for": {},
