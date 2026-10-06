@@ -38,6 +38,7 @@ for each Lectionary cycle. Provider columns link available editions or say
 <!-- triptych-publication-id: liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c -->
 <!-- triptych-publication-id: liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a -->
 <!-- triptych-publication-id: liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a -->
+<!-- triptych-publication-id: liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a -->
 
 | Sunday | Cycle | ChatGPT | Claude |
 | --- | --- | --- | --- |
@@ -111,7 +112,8 @@ for each Lectionary cycle. Provider columns link available editions or say
 | **Twenty-sixth Sunday in Ordinary Time** | B, C | Planned | Planned |
 | **Twenty-seventh Sunday in Ordinary Time** | A | [Research PDF](../pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.pdf) · [Synthesis PDF](../pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-synthesis.pdf) · [Homily PDF](../pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-homily.pdf) · [Read](../web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.html) | Planned |
 | **Twenty-seventh Sunday in Ordinary Time** | B, C | Planned | Planned |
-| **Twenty-eighth Sunday in Ordinary Time** | A, B, C | Planned | Planned |
+| **Twenty-eighth Sunday in Ordinary Time** | A | [Research PDF](../pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.pdf) · [Synthesis PDF](../pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.pdf) · [Homily PDF](../pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.pdf) · [Read](../web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.html) | Planned |
+| **Twenty-eighth Sunday in Ordinary Time** | B, C | Planned | Planned |
 | **Twenty-ninth Sunday in Ordinary Time** | A, B, C | Planned | Planned |
 | **Thirtieth Sunday in Ordinary Time** | A, B, C | Planned | Planned |
 | **Thirty-first Sunday in Ordinary Time** | A, B, C | Planned | Planned |

@@ -4,27 +4,31 @@ schema_version = 1
 id = "gpt-pc-s54-three-documents-2026-10-06"
 owner = "PROJECT-WORK.md"
 promise = "Drive the upcoming Sunday 2026-10-11 GPT postconciliar propers through proper-study, producing and independently reviewing the expansive study, concise study, homily and canonical web edition."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "gpt-pc-s54-identity"
   criterion = "The exact provider and formula are authorized; the dated official occurrence, edition, cycle, shared Missal owner and complete branch inventory are resolved."
   status = "pass"
-  evidence = ["guidance/liturgy/propers-production-plan.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/context.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/instance/manifest.md", "workflows/reviews/gpt-pc-s54-production-2026-10-06/native-run/results/resolve-context-0000.json"]
+  evidence = ["guidance/liturgy/propers-production-plan.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/context.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/instance/manifest.md", "workflows/reviews/gpt-pc-s54-production-2026-10-06/replacement-run-36f05d0fcf255303/results/resolve-context-0000.json"]
   check = "path_exists"
-  note = "Actual run beb2231b657a358d passed scope and context. Official dated evidence establishes 11 October 2026, Year A and Lectionary 142; the week-28 owner and all twelve appointed branches are recorded. Unspecified local calendar overlays remain outside this national-calendar determination."
+  note = "Fresh context passed in accepted run 36f05d0fcf255303. Official dated evidence establishes 11 October 2026, Year A and Lectionary 142; the week-28 owner and all twelve appointed branches are recorded. Unspecified local overlays remain outside this national-calendar determination."
 
   [[deliverables.requirements]]
   id = "gpt-pc-s54-workflow"
   criterion = "The actual proper-study run reaches ACCEPTED with independent reviewers at declared effort, durable native packets and results, and no unresolved blocking findings."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-pc-s54-production-2026-10-06/replacement-run-36f05d0fcf255303/state.json", "workflows/reviews/gpt-pc-s54-production-2026-10-06/replacement-run-36f05d0fcf255303/results/publication-gates-0000.json", "workflows/reviews/gpt-pc-s54-production-2026-10-06/README.md"]
+  check = "path_exists"
+  note = "Actual v9 run 36f05d0fcf255303 reached ACCEPTED with 21 passed stages, fresh reviewers at declared effort, no escalations or standing findings, and 94 exact native archive files. The earlier run remains terminal BLOCKED and its verdicts were not reused as replacement acceptance."
 
   [[deliverables.requirements]]
   id = "gpt-pc-s54-publication"
   criterion = "The reviewed 20–50-page expansive study, 10–12-page concise study, standalone homily and canonical web edition are installed with exact artifact evidence, catalog links and separate release records. Required source and publication checks pass and coherent work is committed on the workspace branch."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/artifacts.json", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/web-artifact.json", "workflows/reviews/gpt-pc-s54-production-2026-10-06/replacement-run-36f05d0fcf255303/results/install-publication-0000.json", "workflows/reviews/gpt-pc-s54-production-2026-10-06/replacement-run-36f05d0fcf255303/results/publication-gates-0000.json", "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.md", "library/novus-ordo-liturgy.md", "release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.json", "release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.json", "release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.json"]
+  check = "path_exists"
+  note = "Reviewed 21/10/3-page PDFs and canonical Markdown are installed byte-identically. Native publication gates and the final complete source check pass; 34 PDF pages and thirty desktop/mobile screenshots were inspected. Coherent delivery commits use feature/propers/codex; main integration and live deployment are separate."
 
 [[deliverables]]
 id = "gpt-1962-twentieth-quality-2026-10-05"

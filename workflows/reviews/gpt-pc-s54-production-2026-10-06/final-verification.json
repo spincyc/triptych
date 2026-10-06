@@ -1,0 +1,53 @@
+{
+  "run_id": "36f05d0fcf255303",
+  "disposition": "ACCEPTED",
+  "native_results": 21,
+  "native_archive_files": 94,
+  "historical_blocked_archive_files": 106,
+  "checks": [
+    {
+      "command": "PYTHONPATH=.scratch/pc-s54-repair/dependencies make check-sources",
+      "exit_code": 0,
+      "log": "workflows/reviews/gpt-pc-s54-production-2026-10-06/final-source-check.log",
+      "qualification": "Final check after native ACCEPTED and settled installation audit/inventory writes.",
+      "log_qualification": "1 local-machine-path lines omitted from public selected output; complete original retained in task scratch."
+    },
+    {
+      "name": "delivery",
+      "command": "python3 .scratch/pc-s54-repair/coordinator/verify-delivery.py",
+      "exit_code": 0,
+      "output": "ACCEPTED: 21 PASS results; three PDF pairs and canonical web byte-identical; three release records; one catalog marker; 200 exact archived files; private-pattern audit clear.\n"
+    },
+    {
+      "name": "authored-whitespace",
+      "command": "git diff --check -- . ':!workflows/reviews/gpt-pc-s54-production-2026-10-06/*/gate-logs/*'",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "promised-deliverables",
+      "command": "tools/tpt check-promised-deliverables",
+      "exit_code": 0,
+      "output": "Promised-deliverable ledger valid: 60 tracked, 49 complete.\n"
+    },
+    {
+      "name": "tool-registry",
+      "command": "tmt check",
+      "exit_code": 0,
+      "output": "ok\n"
+    }
+  ],
+  "publication_gate_result": "workflows/reviews/gpt-pc-s54-production-2026-10-06/replacement-run-36f05d0fcf255303/results/publication-gates-0000.json",
+  "disclosure": {
+    "changed_paths": 290,
+    "unexpected_paths": [],
+    "private_matches": [],
+    "build_or_scratch_paths": [],
+    "qualification": "Three registry files were initially omitted from the scope list; their complete diffs were inspected and contain only PC-S54 adoption, occurrence and count updates. Final count includes the two coordinator verification records."
+  },
+  "qualifications": [
+    "Native gate logs retain exact trailing blank lines; authored whitespace check excludes these immutable log files.",
+    "Source-family screening remains a separate 158-unit backlog; ordinary source validation does not claim atomic citation coverage.",
+    "Checks apply to settled publication bytes and completion records before their delivery commit; main integration and live deployment are outside this workspace delivery."
+  ]
+}

@@ -37,3 +37,9 @@
 {"event": "packet", "hash": "2d29380434ef4c3a086b435eb661aa2acebba37cfa576f0ea40b890385c0f578", "iteration": 0, "size": 32436, "stage": "generate-web", "timestamp": "2026-10-06T18:20:57Z"}
 {"disposition": "PASS", "event": "result", "stage": "generate-web", "timestamp": "2026-10-06T18:23:48Z", "transition": "web-review"}
 {"event": "packet", "hash": "fe2160c5299e7b387af7368b7b84296dd35770fb679793ceefd7233550e99aaf", "iteration": 0, "size": 34286, "stage": "web-review", "timestamp": "2026-10-06T18:23:48Z"}
+{"disposition": "PASS", "event": "result", "stage": "web-review", "timestamp": "2026-10-06T18:30:25Z", "transition": "install-publication"}
+{"event": "packet", "hash": "168713713b233ede19e0f87e8369264e9d74225402455024dd2490e03ac215a3", "iteration": 0, "size": 34790, "stage": "install-publication", "timestamp": "2026-10-06T18:30:25Z"}
+{"disposition": "PASS", "event": "result", "stage": "install-publication", "timestamp": "2026-10-06T18:35:33Z", "transition": "publication-gates"}
+{"event": "packet", "hash": "77f3ab40dd0b67a62d8ece7c12e258a6e5fbe9fa3e0e76d539c68daf3779e2ce", "iteration": 0, "size": 861, "stage": "publication-gates", "timestamp": "2026-10-06T18:35:33Z"}
+{"disposition": "PASS", "event": "result", "stage": "publication-gates", "timestamp": "2026-10-06T18:36:41Z", "transition": "ACCEPTED"}
+{"event": "accepted", "timestamp": "2026-10-06T18:36:41Z"}

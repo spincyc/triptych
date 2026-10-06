@@ -1,11 +1,11 @@
 {
-  "current_stage": "web-review",
-  "disposition": null,
+  "current_stage": "ACCEPTED",
+  "disposition": "ACCEPTED",
   "document_root": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
   "escalations": [],
   "findings_forwarded_by": {},
   "findings_forwarded_ids": {},
-  "iteration": 19,
+  "iteration": 21,
   "normalized_args": {
     "audience": "adult parish assembly",
     "date": "2026-10-11",
@@ -2788,6 +2788,18 @@
         }
       },
       "stage": "web-review"
+    },
+    {
+      "hash": "168713713b233ede19e0f87e8369264e9d74225402455024dd2490e03ac215a3",
+      "iteration": 0,
+      "path": "build/tpt-runs/36f05d0fcf255303/packets/install-publication-0000.txt",
+      "stage": "install-publication"
+    },
+    {
+      "hash": "77f3ab40dd0b67a62d8ece7c12e258a6e5fbe9fa3e0e76d539c68daf3779e2ce",
+      "iteration": 0,
+      "path": "build/tpt-runs/36f05d0fcf255303/packets/publication-gates-0000.txt",
+      "stage": "publication-gates"
     }
   ],
   "repo_commit": "c150b81c6c7bab0dca2c688191fc7706a3f497c0",
@@ -2917,6 +2929,27 @@
       "iteration": 0,
       "path": "build/tpt-runs/36f05d0fcf255303/results/generate-web-0000.json",
       "stage": "generate-web"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "29a18cabf846b22ec20be18b4b9e0e8fa46caecd84f0e8c014f8590a95436c7a",
+      "iteration": 0,
+      "path": "build/tpt-runs/36f05d0fcf255303/results/web-review-0000.json",
+      "stage": "web-review"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "4c8b209bfba1f0aff2a9cfe7caf742bff7e604897d84f001be96d55c25cc9abf",
+      "iteration": 0,
+      "path": "build/tpt-runs/36f05d0fcf255303/results/install-publication-0000.json",
+      "stage": "install-publication"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "87e27f47187bceefeff0205ab007611fe381e50491f82a337afa2b2f1cdd7d2a",
+      "iteration": 0,
+      "path": "build/tpt-runs/36f05d0fcf255303/results/publication-gates-0000.json",
+      "stage": "publication-gates"
     }
   ],
   "run_id": "36f05d0fcf255303",
@@ -2926,6 +2959,7 @@
     "artifact-gates": 0,
     "homily-preflight": 0,
     "homily-review": 0,
+    "publication-gates": 0,
     "research-preflight": 0,
     "research-review": 0,
     "scope-gate": 0,
@@ -2933,7 +2967,8 @@
     "study-review": 0,
     "synthesis-preflight": 0,
     "synthesis-review": 0,
-    "visual-review": 0
+    "visual-review": 0,
+    "web-review": 0
   },
   "stage_iterations": {
     "artifact-gates": 1,
@@ -2944,6 +2979,8 @@
     "generate-web": 1,
     "homily-preflight": 1,
     "homily-review": 1,
+    "install-publication": 1,
+    "publication-gates": 1,
     "research": 1,
     "research-preflight": 1,
     "research-review": 1,
@@ -2960,6 +2997,7 @@
     "artifact-gates": 0,
     "homily-preflight": 0,
     "homily-review": 0,
+    "publication-gates": 0,
     "research-preflight": 0,
     "research-review": 0,
     "scope-gate": 0,
@@ -2967,12 +3005,14 @@
     "study-review": 0,
     "synthesis-preflight": 0,
     "synthesis-review": 0,
-    "visual-review": 0
+    "visual-review": 0,
+    "web-review": 0
   },
   "stage_repeats": {
     "artifact-gates": 0,
     "homily-preflight": 0,
     "homily-review": 0,
+    "publication-gates": 0,
     "research-preflight": 0,
     "research-review": 0,
     "scope-gate": 0,
@@ -2980,7 +3020,8 @@
     "study-review": 0,
     "synthesis-preflight": 0,
     "synthesis-review": 0,
-    "visual-review": 0
+    "visual-review": 0,
+    "web-review": 0
   },
   "stage_scope_baseline": {
     "homily-review": {
@@ -3177,6 +3218,46 @@
       "sections/synthesis-90-apparatus.tex": "4814f061fd38a97ac9a2aa5d462d02ea403eb421ce8b1a56e5226109970038d8",
       "synthesis.tex": "f954337bfeef5fdba55a31dd7e42fa50e4ca6a590c0a44662c010b55465e1bea",
       "web-edition.toml": "cc6a6ed6fbbea9fac9e234c781a69d5ee61e22dd06be4c4d36a030b609a37cb4"
+    },
+    "web-review": {
+      "generation-metadata.tex": "5704dd554923f5a86edfc02dcadb512fe5171b3fd856145aa36f0019a97944e2",
+      "homily.tex": "91179382546ba235e28e01a65c425cd082d83224b13c4ab0ba65ac2ae8e84420",
+      "instance/manifest.md": "684b6a565026a5227b4a1c62817e40a6b9fef727d07d56218ceee78d123422ef",
+      "main.tex": "2b60a7aeed610e2e25567eca8301c26b724df52db4fe89b3ac13b212158dd8b9",
+      "proper-components.toml": "ddc91eee8f608c2d36ff33148a3033017258c753745b7c3a373a6be7f80bbfd7",
+      "propers/verified.md": "3fc1045aed7de765bb183ff9e3097f7d46f78bb2ba4164e3be84d30042b1208e",
+      "research/artifacts.json": "d098c4501b4326e1bd14ad0d5a8490a0a910a1609f62d06997702056e38b6ebb",
+      "research/chronology-annotations.tex": "eb7a09ab41b1547ffb101809c76517d46c82357c0efb0a1fed19e56ed9d9c08f",
+      "research/chronology-inputs.toml": "110e8e186301d2cfe4abece105f7028e7a6d1415445434971af4e7303df4332a",
+      "research/chronology-profile-comparisons.toml": "e77bdc39d80aba55b7dbae9c0d2426251d61ca8b0fb7209a94fc65293a23a82b",
+      "research/chronology.toml": "2bb8274bb9dea13c0541b7915760a7465d7b5be212a914aaba0dc41cb8b8a693",
+      "research/context.md": "0a75797387286377666e3a2e6e15606ebd9c214123b22542d38ae8e3b9691bc4",
+      "research/interpretations.md": "41f8457d421f450795d25cdd4a1b00fbd4cab380517de863e43fe6d9b18f657b",
+      "research/production-review.md": "85a96f86f504b22ddc2ecf9cc5ceef9c93783e78b622f44f692d0c314b873f86",
+      "research/review-dependencies.toml": "ce0c6485e8592a1085dfd9cec1c4f0ca1671745da309cedfef0d25e16dd49680",
+      "research/scope.md": "c83c2c1dbe5ef5c42b15641c6be806b7b73f58f9c674d86e3d55122461070284",
+      "research/source-bindings.toml": "d67d9aba3d25579ac9a5e306cee4811a4809b5474908fb7fe4122e7a09bba2c9",
+      "research/source-plan.md": "8527bb068a35b3cbe124fbf62276baafb6a8a991e979da99020aaae7a723ceb6",
+      "research/web-artifact.json": "1173c967e6e72ec63785c19ff12cf891d0c7f80f53f59c9c075ea181aee23184",
+      "sections/00-opening.tex": "5373ebe5870bed82b33f02a0b77e72a716b85d96b43a5a9264d008f454a5a0c7",
+      "sections/01-map.tex": "81286dcd7a776e1a60abf32b21b758485dc1fba92cbec097a7a4d128e07c01a5",
+      "sections/10-treatment.tex": "11047002b7587d880cc8bd6b04e1f8ab5ffdd56f3671d93cc5834d735c251fb2",
+      "sections/20-texts.tex": "1da7b0fb556c3cd2d859e32432cc407d2576dfcdd230fc80240d4a9d48a1b389",
+      "sections/30-charity.tex": "efb42f695bc7bc5b6fff712530365630824445bdeb90c95435c6bb9470eae06e",
+      "sections/40-abundance.tex": "e4689ef9dddf8df8646c7207d15694155d00d42f775460b856a5efcf3109bb8b",
+      "sections/50-comparison.tex": "6e581ee94e04096a5e512487bbc1254c084edb78ec48f6769e253694be23266c",
+      "sections/60-history.tex": "2136bf095e8bb9a6bc1aa68cf3a6312125c75977397f408a44fecf90571d9848",
+      "sections/70-apparatus.tex": "241ed79116a077095b87e7acb88755023137d0f3a6b2ed4f7eb3d99698a5b77c",
+      "sections/homily-10-spoken.tex": "d2559db03090d6627a99d17e7a0216be7f3b85213d99b58c7b5f0b7ab87388c6",
+      "sections/homily-90-notes.tex": "d3a9267d1ca759197e1e1691c22d2e2922425993a99897129e518f80aa57aa4c",
+      "sections/synthesis-01-inventory.tex": "d3adfd3320a9439469031d3eb9c7c56eff64acba56685db04b79755cc45fa3b2",
+      "sections/synthesis-02-overview.tex": "ac1bf6926be823c9b0ed18d004bebcbc7a2f9de60d0bdbe01c2041c984e2267b",
+      "sections/synthesis-03-chronology.tex": "4b90e58a132cc21189805b2f99c198bd5cfdff9f49cc5bc49ed7330072d71230",
+      "sections/synthesis-04-themes.tex": "3d2dd7e48776f81867c56c058a84c7d6a69bb4a4907229edcff1c8af38d0299e",
+      "sections/synthesis-05-commentary.tex": "99eead249c02760ed52477d815c55ccd9a0611eb928398b5819495bfa771cea0",
+      "sections/synthesis-90-apparatus.tex": "4814f061fd38a97ac9a2aa5d462d02ea403eb421ce8b1a56e5226109970038d8",
+      "synthesis.tex": "f954337bfeef5fdba55a31dd7e42fa50e4ca6a590c0a44662c010b55465e1bea",
+      "web-edition.toml": "cc6a6ed6fbbea9fac9e234c781a69d5ee61e22dd06be4c4d36a030b609a37cb4"
     }
   },
   "stage_scope_changed": {
@@ -3208,7 +3289,11 @@
       "research/web-artifact.json"
     ],
     "visual-review": [
+      "research/production-review.md",
       "research/web-artifact.json"
+    ],
+    "web-review": [
+      "research/production-review.md"
     ]
   },
   "transitions": [
@@ -3301,6 +3386,21 @@
       "disposition": "PASS",
       "from": "generate-web",
       "to": "web-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "web-review",
+      "to": "install-publication"
+    },
+    {
+      "disposition": "PASS",
+      "from": "install-publication",
+      "to": "publication-gates"
+    },
+    {
+      "disposition": "PASS",
+      "from": "publication-gates",
+      "to": "ACCEPTED"
     }
   ],
   "unrepaired_for": {},

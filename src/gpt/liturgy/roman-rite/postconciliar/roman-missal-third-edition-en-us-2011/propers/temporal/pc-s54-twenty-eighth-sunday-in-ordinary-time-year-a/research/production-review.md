@@ -697,3 +697,57 @@ the concise page-7 running head and the study's short unit-ending pages.
 No semantic defect requiring upstream revision was identified during this
 artifact check. Existing evidence and rights limits remain unchanged.
 No PDF was installed, no web edition was changed and no workflow was advanced.
+
+## Replacement run 36f05d0fcf255303: install-publication, iteration 0 — 6 October 2026
+
+The engine's actual iteration-0 results record PASS for research, study,
+synthesis, homily, visual and canonical web review. The visual reviewer
+inspected all 34 physical pages (21 study, 10 concise, 3 homily); the web
+reviewer compared the complete canonical conversion with the study and checked
+desktop and mobile rendering with the locked Markdown 3.10.3 renderer.
+These are the recorded independent review events, not new source collation,
+print proof or timed human delivery. The evidence and rights limits recorded
+above remain in force.
+
+The artifact-current check passed before installation. Each of the three
+normal `make install-doc DOC=<id> PROVIDER=gpt` invocations completed with
+its declared dependencies and checks, without source or timestamp changes.
+Each build and installed PDF was then hashed and compared with the accepted
+`research/artifacts.json` receipt; all six comparisons matched:
+
+| Installed output below `pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/` | SHA-256 |
+| --- | --- |
+| `pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.pdf` | `576c626bb65e54ead78072a29c1f810b2205d226d8dcbcfc9aebe644493e0dc5` |
+| `pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.pdf` | `af3d7fcdbbf5ba08c5243f8d7ed61e23712cfb4d40558e318c8d93bb39b2bc10` |
+| `pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.pdf` | `c54a0de449fd18508112f0365875217631f5bebf03a11d88f9dd978fc159cd09` |
+
+The reviewed canonical Markdown was copied byte-for-byte from `build/web/gpt/`
+to its mirrored `web/gpt/` path and staged for the tracked-file check. Its
+SHA-256 remains `b91cb9d304eebdfa991243f02ddfc29fa2b323632ea92639fb2f8e4a064013b8`,
+matching `research/web-artifact.json`. No companion web authority was created.
+The accepted receipts, review seals and shared revision timestamp
+`2026-10-06T18:06:33Z` were preserved.
+
+Three normal `make add-publication` invocations created independent alpha
+records under `release/publications/gpt/` for the bare ID, `-synthesis` and
+`-homily`, all naming `library/novus-ordo-liturgy.md` and standing authorization
+`perpetual-public-repository-2026`. The existing Sunday's Year A cell now links
+Research PDF, Synthesis PDF, Homily PDF and Read in manifest order, with one
+canonical marker. The B/C availability and Claude cells retain Planned.
+The owning tools refreshed the document catalogue and source projection;
+release binding refresh was restricted to this production's ten changed or
+new catalog, projection and web paths. The direct three-document publication
+contract and scoped public-alpha check both passed. Installation records a
+reviewed local publication; the terminal engine gate still decides run
+acceptance, and no deployment is claimed here.
+
+The global `make check-sources`, `make check-release-bindings` and
+`make check-web-editions-current` checks also completed successfully, as did
+the scoped document-library check and global `structure --check`.
+Release bindings reported zero stale entries. Public-alpha checked the three
+installed outputs and global source, release and authorization records; it
+did not check unrelated absent PDFs or verify a deployment. The routine
+source gate preserves the family ledger's honest pending review state and
+does not claim completed family screening or atomic citation coverage.
+After recording these actual outcomes, the source inventory and family
+ledger were refreshed again to include this completed production audit.

@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it.",
  "counted": {
-  "documents": 204,
-  "issues": 244,
-  "pages": 6870,
+  "documents": 205,
+  "issues": 247,
+  "pages": 6891,
   "titles_unrecorded": 0,
-  "works": 148
+  "works": 149
  },
  "models": [
   {
@@ -29,7 +29,7 @@
    "id": "claude-fable-5"
   },
   {
-   "documents": 13,
+   "documents": 14,
    "id": "GPT-6"
   },
   {
@@ -56,7 +56,7 @@
    "label": "Claude"
   },
   {
-   "documents": 146,
+   "documents": 147,
    "id": "gpt",
    "label": "GPT"
   }
@@ -85,7 +85,7 @@
   },
   {
    "id": "liturgy",
-   "works": 55
+   "works": 56
   },
   {
    "id": "theology",
@@ -11157,6 +11157,91 @@
     }
    ],
    "leaf": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a",
+   "section": "liturgy"
+  },
+  {
+   "catalog": "library/novus-ordo-liturgy.md",
+   "catalog_page": "library/novus-ordo-liturgy.html",
+   "editions": [
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": 10,
+       "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+       "subject": "Roman Missal Third Edition, United States: concise proper study for 11 October 2026",
+       "title": "Twenty-eighth Sunday in Ordinary Time, Year A: The feast and the life it gives — concise study"
+      },
+      {
+       "kind": "homily",
+       "pages": 3,
+       "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.pdf",
+       "subject": "Roman Missal Third Edition, United States: homily for an adult parish assembly, 11 October 2026",
+       "title": "Twenty-eighth Sunday in Ordinary Time, Year A: The table and the shared need"
+      }
+     ],
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "GPT-6",
+       "qualifiers": "workflow-declared-effort=high; client=Codex; unexposed: exact model variant; unexposed: model reasoning configuration; unexposed: runtime version",
+       "runtime": "OpenAI Codex API agent; unexposed: client version; unexposed: server revision. Authored the expansive study from the reviewed research, reopened retained source loci, assembled the lawful study passages and canonical chronology, and performed author proof verification."
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "workflow-declared-effort=high; client=Codex; unexposed: exact model variant; unexposed: model reasoning configuration; unexposed: runtime version",
+       "runtime": "OpenAI Codex API agent; unexposed: client version; unexposed: server revision. Repaired the NABRE Matthew dating qualification against the retained official introduction and performed the revised study's author proof verification."
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "workflow-declared-effort=high; client=Codex; unexposed: exact model variant; unexposed: model reasoning configuration; unexposed: runtime version",
+       "runtime": "OpenAI Codex API agent; unexposed: client version; unexposed: server revision. Derived the concise comparison from the accepted expansive study, preserved the canonical chronology and alternatives, and performed concise author proof verification."
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "workflow-declared-effort=high; client=Codex; unexposed: exact model variant; unexposed: model reasoning configuration; unexposed: runtime version",
+       "runtime": "OpenAI Codex API agent; unexposed: client version; unexposed: server revision. Derived the homily from both reviewed studies, reopened the retained controlling loci, silently rehearsed the spoken prose for oral sense, and performed homily author proof verification."
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "workflow-declared-effort=high; client=Codex; unexposed: exact model variant; unexposed: model reasoning configuration; unexposed: runtime version",
+       "runtime": "OpenAI Codex API agent; unexposed: client version; unexposed: server revision. Reconciled the preserved expansive study with replacement-run research, added twelve appointed-element web targets and distinct rights-safe locators, and performed fresh canonical conversion and author proof verification."
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "workflow-declared-effort=high; client=Codex; unexposed: exact model variant; unexposed: model reasoning configuration; unexposed: runtime version",
+       "runtime": "OpenAI Codex API agent; unexposed: client version; unexposed: server revision. Reconciled the concise comparison with the replacement run's accepted expansive study, restored Gregory's qualification concerning the banquet accounts, and performed fresh concise author proof verification."
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "workflow-declared-effort=high; client=Codex; unexposed: exact model variant; unexposed: model reasoning configuration; unexposed: runtime version",
+       "runtime": "OpenAI Codex API agent; unexposed: client version; unexposed: server revision. Reconciled the retained homily with the replacement run's accepted studies, reopened its controlling reception and prayer witnesses, silently reread the speech for oral clarity, and performed fresh homily author proof verification."
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "GPT-6"
+     ],
+     "pages": 21,
+     "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.pdf",
+     "produced": {
+      "run_id": "36f05d0fcf255303",
+      "seed_commit": "c150b81c6c7bab0dca2c688191fc7706a3f497c0",
+      "workflow_digest": "ef8058d0bd73437c67569a8d24ce67dac4c273fef7688aef8a54dec9e7986b13",
+      "workflow_id": "proper-study",
+      "workflow_version": "9"
+     },
+     "provider": "gpt",
+     "reviewed": "2026-10-06",
+     "revised": "2026-10-06T18:06:33Z",
+     "status": "alpha",
+     "subject": "Roman Missal Third Edition, United States: expansive proper study for 11 October 2026",
+     "title": "Twenty-eighth Sunday in Ordinary Time, Year A: The feast and the life it gives",
+     "title_source": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/main.tex",
+     "web": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.html"
+    }
+   ],
+   "leaf": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
    "section": "liturgy"
   },
   {

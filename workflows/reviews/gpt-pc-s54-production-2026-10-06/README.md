@@ -5,7 +5,35 @@ Ordinary Time, Year A, 11 October 2026, for an adult parish assembly. The
 canonical leaf is
 `src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/`.
 
-## Replacement run in progress
+## Replacement run ACCEPTED
+
+Actual run `36f05d0fcf255303` reached **ACCEPTED** with all 21 native stages
+passed, no escalations and no standing blocking findings. The accepted
+21/10/3-page PDFs and canonical Markdown are installed byte-identically;
+normal Make installations preserved every accepted hash below. The Year A
+catalog cell, one canonical marker and three independent alpha release
+records are present. Years B/C and the other provider remain unchanged.
+Scoped release refresh changed exactly ten task-owned site-source bindings
+and their rights-record hash rows; authorization terms were not changed.
+
+The native terminal publication gate passed the three-document installation,
+release bindings, scoped public-alpha, document catalog and global web-current
+checks. A final complete `PYTHONPATH=.scratch/pc-s54-repair/dependencies make
+check-sources` after ACCEPTED and settled installation-audit writes exited 0.
+Earlier failed invocations below remain recorded as failures. The accepted
+native archive has 94 exact files; the first terminal run has 106. Both were
+compared byte for byte and checked for machine-private path/session patterns.
+This is completed workspace delivery on `feature/propers/codex`; main
+integration and live deployment are separate operations.
+
+`final-verification.json` records the final numeric check results and disclosure
+audit; `final-source-check.log` retains selected final source-check output,
+with the count of omitted local-machine-path lines stated in its header.
+The tool registry and completed promised-deliverable ledger validate. Native
+gate logs retain their exact bytes, including terminal blank lines; authored
+whitespace checking excludes those immutable logs.
+
+## Replacement-run history
 
 Run `36f05d0fcf255303` is seeded at
 `c150b81c6c7bab0dca2c688191fc7706a3f497c0` under the unchanged v9 workflow
@@ -68,16 +96,23 @@ passed under the locked Markdown runtime. The exact canonical Markdown hash is
 `b91cb9d304eebdfa991243f02ddfc29fa2b323632ea92639fb2f8e4a064013b8`,
 recorded in the leaf's `research/web-artifact.json`. The converter and author
 checks cover all nine components, 183 prose spans, twelve anchors, both
-interpretations' four senses, 41 notes and terminal metadata. Independent
-web content and desktop/mobile browser review is pending.
+interpretations' four senses, 41 notes and terminal metadata. Fresh xhigh
+web-review-0000 passed with no findings. It matched 128 substantive source
+paragraphs and all 41 notes, checked the sealed inputs and conversion bytes,
+tested browser navigation at 1280×900 and 390×844, and inspected all thirty
+screenshots. There was no document overflow, missing fragment, duplicate ID
+or visible TeX debris; all tables fit and the chronology tables used their
+intended mobile arrangement. The actual installer and terminal publication
+gate subsequently passed, completing this run.
 The homily author's optional full source check exited
 2 only at the still-stale document catalog; source-library and inventory
-validation passed. Final catalog generation and the complete rerun remain due.
+validation passed. Installation subsequently refreshed the catalog; the final
+complete source rerun passed as recorded above.
 
 The replacement research worker's `make check-sources` exited 2 for six stale
 publication-inventory hashes and the still-unrefreshed document catalog. The
 coordinator refreshed the source inventories after leaf stability; catalog
-generation and a full source rerun remain due with installation. That failed
+generation and a full source rerun were then due with installation. That failed
 command remains a failure in its receipt and scratch log. The author's later
 optional full source check likewise stopped at changed publication hashes and
 the unrefreshed document catalog; this is not a final publication check.

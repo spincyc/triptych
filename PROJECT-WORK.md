@@ -18,58 +18,38 @@ U.S. Twenty-eighth Sunday in Ordinary Time, Year A, 11 October 2026:
 This request opens that provider and identity under the three-document
 contract. Work remains on the workspace branch `feature/propers/codex`.
 
-**In progress; replacement run active after a blocked first run.** The clean
-starting checkout is `833196e9405a686ccd4a5b185a6461d2d80aee6d`. Replacement
-v9 run `36f05d0fcf255303`, seeded at
-`c150b81c6c7bab0dca2c688191fc7706a3f497c0`, passed scope, fresh context,
-research reconciliation, research preflight and independent research review.
-Author-study-0000 and study-preflight-0000 passed after intervention 0000
-added all twelve appointed-element source anchors and proved canonical
-conversion with the locked Markdown runtime. The fresh author proof has
-21 pages and 6,537 substantive words. Independent study-review-0000 passed
-with no findings after checking the full proof, source loci, chronology and
-17 sealed inputs. Derive-synthesis-0000 and synthesis-preflight-0000 passed;
-the fresh ten-page concise proof has 3,274 substantive words and restores
-Gregory's explicit allowance for a harmonizing Gospel reading. Independent
-synthesis-review-0000 passed with no findings after checking all ten pages,
-source support, chronology qualifications and eleven sealed inputs. The
-homily author and preflight stages passed with a fresh three-page proof and
-1,208 spoken words (estimated 10.1–11.0 minutes). Independent homily review
-passed with no findings after source, complete-proof and seven-input seal
-checks. All three content reviews are accepted. The final three-document
-build and artifact gate passed at 21/10/3 pages, with byte-identical repeated
-builds and current content seals. Independent visual review passed with no
-findings after inspecting all 34 pages and four contact sheets. Canonical web
-conversion and its snapshot passed, including all twelve anchors. Independent
-web content and desktop/mobile browser review is pending.
-Every replacement
-acceptance comes from its own native reviews.
+**Complete: proper-study ACCEPTED; workspace delivery on
+`feature/propers/codex`.** Replacement v9 run `36f05d0fcf255303` completed
+all 21 stages with no escalations or standing blocking findings. Its fresh
+research, study, concise, homily, visual and web reviews all passed.
 
-First run `beb2231b657a358d` passed content and visual reviews but ended
-BLOCKED when canonical conversion found the missing study-owned source
-anchors. Its exact terminal state and historical reviews remain preserved in
-`workflows/reviews/gpt-pc-s54-production-2026-10-06/native-run/`. The engine
-has no supported upstream route or resume operation at that boundary. The
-replacement run preserves supported research and prose while obtaining fresh
-acceptance through the full workflow; no blocked result has been rewritten.
+The installed family contains a 21-page expansive study (6,537 substantive
+words), ten-page concise study (3,274 substantive words), three-page homily
+(1,208 spoken words, estimated 10.1–11.0 minutes) and canonical web edition.
+All 34 PDF pages and thirty desktop/mobile web screenshots were inspected.
+Normal repeated builds reproduced identical PDF bytes; every installed PDF
+and the installed Markdown match their accepted receipts. The Year A catalog
+row links all four outputs, with three independent alpha release records.
+The terminal publication gate and final complete `make check-sources` pass.
 
-The dated USCCB evidence confirms Year A and Lectionary 142. The complete
-inventory, registry-fixed week-28 owner, edition disposition and three PDF
-dependencies are recorded. Baseline source checks passed before the new leaf.
-Subsequent full source checks correctly reported incomplete publication
-projections; the source inventories have been refreshed, while document
-catalog generation and the final complete source check remain due with
-installation. Source-family screening remains an independent backlog of
-158 pending units, with no claim of completed screening or atomic coverage.
-
-Completion requires the actual workflow's ACCEPTED disposition, all three
-reviewed PDFs and canonical web edition installed, catalog and release
-records reconciled, required source and publication checks, and coherent
-commits on the workspace branch. The
+The clean task base is `833196e9405a686ccd4a5b185a6461d2d80aee6d`; the
+accepted run's seed is `c150b81c6c7bab0dca2c688191fc7706a3f497c0`.
+First run `beb2231b657a358d` ended BLOCKED at conversion because the study
+lacked twelve required anchors. That terminal result remains unchanged.
+The replacement repaired the study-owned targets, proved conversion early
+with the locked Markdown runtime, and obtained fresh acceptance throughout.
+Its 94 native archive files and the first run's 106 files match their live
+run records byte for byte. The
 [production record](workflows/reviews/gpt-pc-s54-production-2026-10-06/README.md)
-preserves native run identities, exact results, repairs, source limitations
-and failed invocations. Live deployment and integration into main are separate
-from this workspace delivery.
+retains exact receipts, stage results, repairs and failed invocations.
+
+The dated U.S. evidence establishes 11 October 2026, Year A and Lectionary
+142. Exact 2008/2011 altar-book collation and a primary approved English
+Offerings exemplar remain unavailable; protected prayers are not reconstructed.
+Local choices remain unselected. Source-family screening is a separate
+158-unit backlog, with no claim of completed screening or atomic coverage.
+Live deployment and integration into main are separate from this completed
+workspace delivery.
 
 ## GPT Twentieth Sunday, Psalm event chronology and quality review, 2026-10-05
 

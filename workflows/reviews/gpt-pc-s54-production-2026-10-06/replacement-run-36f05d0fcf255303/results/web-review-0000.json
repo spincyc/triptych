@@ -1,0 +1,17 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
+    "files": {},
+    "provider": "gpt",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.md": "b91cb9d304eebdfa991243f02ddfc29fa2b323632ea92639fb2f8e4a064013b8"
+    }
+  },
+  "stage": "web-review",
+  "summary": "PASS for the canonical PC-S54-A study conversion recorded in research/web-artifact.json, SHA-256 b91cb9d304eebdfa991243f02ddfc29fa2b323632ea92639fb2f8e4a064013b8: the complete Markdown was compared with canonical sources and the reviewed 21-page research PDF, including 128 substantive paragraphs, all 41 exact notes, interpretation boundaries, four senses, tables, appointed alternatives, timestamp and rights. Actual Chromium review through the repository renderer with locked Markdown 3.10.3 passed at 1280x900 and 390x844, including anchor and note/backlink navigation, overflow, table behavior and visual inspection of 30 screenshots; evidence and reproducible static preview are in .scratch/pc-s54-repair/web-review-0000/, with broader research re-verification and full-site integration outside this conversion review."
+}

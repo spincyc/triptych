@@ -1,0 +1,68 @@
+Selected final make check-sources output; actual exit status 0.
+1 lines containing local machine paths omitted from this public copy.
+Original complete log: .scratch/pc-s54-repair/coordinator/final-check-sources.log
+
+current: 505 files for 3 slices, 118 stations on 23 lines
+test_allowlist_exactly_matches_installed_curriculum_pdfs (tools.tests.test_curriculum_liturgical_rights.CurriculumLiturgicalRightsTests.test_allowlist_exactly_matches_installed_curriculum_pdfs) ... source-library valid: artifact=2930 corpus=5 edition=1056 passage=5268 segment=94 work=936 bindings=3596
+source-inventory valid: publications=58 source_surface_files=1599 owners=5
+source-inventory valid: publications=147 source_surface_files=2576 owners=11
+149 works, 205 documents, 247 issues, 6815 pages.
+  titles derived from source and confirmed against the built PDF: 245
+  titles the sources do not state: 0
+  issues with no PDF installed: 2
+    claude liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost: no PDF is installed for this issue
+    claude liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost-synthesis: no PDF is installed for this issue
+  the page's own derivation, replayed: src/web/browser/texts/catalogue-model.js
+  editions whose production record makes no comparable claim: 188
+  editions produced under a workflow version since superseded: 14 (advisory; nothing gates on it)
+  editions produced under a workflow version later than the one declared: 0
+  editions whose workflow source has been revised since they were produced: 0
+  workflows the comparison is measured against: 3
+ok
+test_allowlist_exactly_matches_tracked_curriculum_sources (tools.tests.test_curriculum_liturgical_rights.CurriculumLiturgicalRightsTests.test_allowlist_exactly_matches_tracked_curriculum_sources) ... ok
+test_hash_only_registry_is_complete_and_well_formed (tools.tests.test_curriculum_liturgical_rights.CurriculumLiturgicalRightsTests.test_hash_only_registry_is_complete_and_well_formed) ... ok
+test_scanner_is_location_and_surface_sensitive (tools.tests.test_curriculum_liturgical_rights.CurriculumLiturgicalRightsTests.test_scanner_is_location_and_surface_sensitive) ... ok
+test_tex_control_words_cannot_hide_a_window (tools.tests.test_curriculum_liturgical_rights.CurriculumLiturgicalRightsTests.test_tex_control_words_cannot_hide_a_window) ... ok
+test_unavailable_dispositions_cover_affected_stable_ids (tools.tests.test_curriculum_liturgical_rights.CurriculumLiturgicalRightsTests.test_unavailable_dispositions_cover_affected_stable_ids) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 3.799s
+
+OK
+149 works, 205 documents, 247 issues, 6891 pages.
+  src/web/data/structure/documents/corpus.json is current
+936 works, 1056 editions, 2930 artifacts, 5268 passages; 3081 readable here.
+  passages the rights records withhold: 2187
+  every one of them listed with its reason: yes
+  the page's own derivation, replayed: src/web/browser/sources/reader-model.js
+936 works, 1056 editions, 2930 artifacts, 5268 passages; 3081 readable here.
+  src/web/data/structure/sources is current (4138 files)
+postconciliar: 38406 placements
+roman-1962: 12871 placements
+roman-pre-1955: 12769 placements
+checked against the worked tables in guidance/liturgy/calendar-computation.md
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-24-saturday/Responsorial Psalm/II/end: Psalm 56:14 exceeds hebrew Psalm 56, which ends at verse 13
+src/sources/calendars/postconciliar/propers.yaml	619 masses	2998 propers
+src/sources/calendars/roman-1962/propers.yaml	491 masses	3443 propers
+src/sources/calendars/roman-pre-1955/propers.yaml	8 masses	0 propers
+src/sources/inventories/roman-1962-proper-translations-v1.toml	6 read twice	5 agree	1 disagree
+postconciliar: 619 masses, 3626 citations
+roman-1962: 491 masses, 4355 citations
+roman-pre-1955: 489 masses, 4290 citations
+  4 tracked file(s) are current
+postconciliar: 612 masses classified over 13 bases and 13 rows, 11 implied-day rules, 5 questions left open
+roman-1962: 461 masses classified over 28 bases and 28 rows, 9 implied-day rules, 5 questions left open
+roman-pre-1955: 459 masses classified over 33 bases and 25 rows, 9 implied-day rules, 6 questions left open
+solved cases: 39 of 39 verified against the browser's model
+  asserting 6 of 20 fields the model returns; no case asserts absent, candidates, ceilings, choice, choiceRequired, conditions, extras, folded, option, remarks, season, sungDiffers, unsettled, winnerRule
+postconciliar: 7 sections, 59 elements, 1 witness, 3 variants, 11 slots; en 0 held/59 missing, la 20 held/39 missing; relations la antecedent/collated 5, la antecedent/uncollated 15; 0 target-recension exclusions
+roman-1962: 6 sections, 189 elements, 2 witnesses, 0 variants, 9 slots; en 189 held/0 missing, la 112 held/77 missing; relations en antecedent/uncollated 189, la antecedent/uncollated 112; 6 target-recension exclusions
+roman-pre-1955: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; en 195 held/0 missing, la 112 held/83 missing; relations en antecedent/uncollated 195, la antecedent/uncollated 112; 0 target-recension exclusions
+the written files are current
+containment: 124 containers (94 records, 30 whole-volume artifacts), 329 constituents, 65 of them commentary-index leads
+  resolved 25 · partial 82 · unresolved 17 · not containers 26 · identities 6
+author standing: 33 persons · father 13 · doctor 2 · saint 2 · blessed 1 · servant-of-god 1 · ecclesiastical-writer 13 · non-catholic 1
+  liturgical commentaries with a row: 12 of 12 · published lane authors with a row: 25 of 25
+formulary loci: 11 works, 46 loci (6 structural, 4 of them by topic only and listed under no mass)
+  headings replayed against their lines: 42 · read in a facsimile, bounded by pages: 4
+source-family-migration valid: families=0 review_units=158 screened=0 pending=158 trace_records=0 atomic_citation_coverage=false
