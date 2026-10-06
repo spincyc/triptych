@@ -19,9 +19,12 @@ This request opens that provider and identity under the three-document
 contract. Work remains on the workspace branch `feature/propers/codex`.
 
 **In progress.** The clean starting checkout is `833196e9405a686ccd4a5b185a6461d2d80aee6d`.
-The dated official occurrence, complete text inventory and registry-fixed
-week-28 owner are being checked before research. The actual `proper-study`
-workflow will control research, independent content reviews, the expansive
+Proper-study v9 run `beb2231b657a358d`, seeded at
+`742d56bd0152eba02999c6e9afb47ae3340c5a72`, passed its scope gate and is
+resolving the context with a fresh high-effort worker. A separate dated USCCB
+check confirms Year A and Lectionary 142; the complete inventory and
+registry-fixed week-28 owner remain in that stage. The actual workflow
+controls research, independent content reviews, the expansive
 and concise studies and homily, visual and web reviews, installation and
 publication records. No finished document or acceptance is claimed.
 
@@ -31,6 +34,13 @@ records reconciled, required source and publication checks, and a coherent
 commit on the workspace branch. Production evidence will be retained under
 `workflows/reviews/gpt-pc-s54-production-2026-10-06/`. Live deployment and
 integration into main are separate from this workspace delivery.
+
+The baseline `make check-sources` passed, retaining the source family's
+157 pending screening units as an explicit independent backlog. The tool
+registry and promised-deliverable checks also pass. The
+[production record](workflows/reviews/gpt-pc-s54-production-2026-10-06/README.md)
+retains the run identity, initial native checkpoint and corrected initial
+ledger-validation failure; no failed check is represented as a pass.
 
 ## GPT Twentieth Sunday, Psalm event chronology and quality review, 2026-10-05
 

@@ -1,0 +1,68 @@
+{
+  "current_stage": "resolve-context",
+  "disposition": null,
+  "document_root": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
+  "escalations": [],
+  "findings_forwarded_by": {},
+  "findings_forwarded_ids": {},
+  "iteration": 2,
+  "normalized_args": {
+    "audience": "adult parish assembly",
+    "date": "2026-10-11",
+    "proper": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
+    "provider": "gpt",
+    "research_handoff": "none"
+  },
+  "packet_hashes": [
+    {
+      "hash": "bab8c065789eb3cbe930e77dfca4118586b8e03ba257459eec3c7d63f8e09fec",
+      "iteration": 0,
+      "path": "build/tpt-runs/beb2231b657a358d/packets/scope-gate-0000.txt",
+      "stage": "scope-gate"
+    },
+    {
+      "hash": "c212c105a5bf6d8979deaf8c889b39d96bad539e51824784b3097d6cfc53bdd7",
+      "iteration": 0,
+      "path": "build/tpt-runs/beb2231b657a358d/packets/resolve-context-0000.txt",
+      "stage": "resolve-context"
+    }
+  ],
+  "repo_commit": "742d56bd0152eba02999c6e9afb47ae3340c5a72",
+  "result_hashes": [
+    {
+      "disposition": "PASS",
+      "hash": "c2c5dc73384dcaa82e6a0b0b6d655a49fd9f0d8345607513add762f6826c4e2d",
+      "iteration": 0,
+      "path": "build/tpt-runs/beb2231b657a358d/results/scope-gate-0000.json",
+      "stage": "scope-gate"
+    }
+  ],
+  "run_id": "beb2231b657a358d",
+  "stage_blocking_ids": {},
+  "stage_blocking_targets": {},
+  "stage_failures": {
+    "scope-gate": 0
+  },
+  "stage_iterations": {
+    "resolve-context": 1,
+    "scope-gate": 1
+  },
+  "stage_novel": {
+    "scope-gate": 0
+  },
+  "stage_repeats": {
+    "scope-gate": 0
+  },
+  "transitions": [
+    {
+      "disposition": "PASS",
+      "from": "scope-gate",
+      "to": "resolve-context"
+    }
+  ],
+  "unrepaired_for": {},
+  "unrepaired_notes": {},
+  "workflow_digest": "ef8058d0bd73437c67569a8d24ce67dac4c273fef7688aef8a54dec9e7986b13",
+  "workflow_id": "proper-study",
+  "workflow_version": 9
+}
