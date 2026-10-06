@@ -10,16 +10,19 @@ state = "in_progress"
   id = "gpt-pc-s54-identity"
   criterion = "The exact provider and formula are authorized; the dated official occurrence, edition, cycle, shared Missal owner and complete branch inventory are resolved."
   status = "open"
+  evidence = ["PROJECT-WORK.md", "guidance/liturgy/propers-production-plan.md"]
 
   [[deliverables.requirements]]
   id = "gpt-pc-s54-workflow"
   criterion = "The actual proper-study run reaches ACCEPTED with independent reviewers at declared effort, durable native packets and results, and no unresolved blocking findings."
   status = "open"
+  evidence = ["PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "gpt-pc-s54-publication"
   criterion = "The reviewed 20–50-page expansive study, 10–12-page concise study, standalone homily and canonical web edition are installed with exact artifact evidence, catalog links and separate release records. Required source and publication checks pass and coherent work is committed on the workspace branch."
   status = "open"
+  evidence = ["PROJECT-WORK.md"]
 
 [[deliverables]]
 id = "gpt-1962-twentieth-quality-2026-10-05"
