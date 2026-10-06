@@ -100,3 +100,54 @@ run `beb2231b657a358d`; seed commit
 The shared generation record names the visible GPT-6 model family and the
 packet's high effort, while marking the exact model variant, actual runtime
 reasoning configuration, client version and server revision unexposed.
+
+## Author-study, iteration 1 — 6 October 2026
+
+STU-001 is repaired in the Gospel dossier of `sections/60-history.tex`.
+The retained official USCCB Matthew introduction's final authorship,
+sources, dating and place paragraphs were reread, together with the
+registered `matthew-introduction` passage. The prose now preserves
+“probably at least a decade later” after Jerusalem's destruction; the
+generated critical comparison still supplies the post-A.D. 70 bound.
+Antioch remains a plausible proposal, and the Greek Gospel comparison
+remains distinct from the traditional hypotheses. No year, upper endpoint,
+new evidence, or replacement chronology was introduced. The accepted
+research, interpretation audit, bindings and generated chronology are
+unchanged.
+
+The scope and all source limits recorded above remain in force. The
+substantive exposition remains **6,537 words**: the five counted components
+were checked byte-for-byte against the committed iteration-0 sources and
+are unchanged. The historical appendix is excluded from that count. The
+shared finalization timestamp is now `2026-10-06T16:08:39Z`, with the actual
+repair contribution recorded under the same workflow provenance.
+
+The required `make doc` build, research-edition artifact component check,
+all twelve default content-preflight checks, and exact-run provenance check
+passed. The settled build contains no overfull or underfull boxes,
+undefined references, LaTeX warnings or infinite-shrink diagnostic. An
+initial version restated the destruction's year independently of the
+generated date cell; content preflight refused that extra manual date.
+The final prose leaves the year in its generated comparison and preserves
+the source's open interval in the explanation.
+
+The proof has **21 physical letter pages**, 461,386 bytes, with embedded,
+subsetted Latin Modern fonts and Unicode mappings. All pages were
+inspected on the two contact sheets; the two changed pages, 17 and 21,
+were also inspected at full-page scale. Their correction and revision
+timestamp are legible, the dossier remains intact, and the final rights
+colophon stays on the final content page. The other 19 page rasters are
+byte-identical to the retained iteration-0 rasters. No installed PDF or
+web edition was changed by this repair.
+
+- Canonical PDF: `build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.pdf`
+- Retained cold-review proof: `build/tpt-runs/beb2231b657a358d/artifacts/author-study-0001/author-proof.pdf`
+- SHA-256: `c5ada91b5330bcff1f38437d1399ccefc767c16d4495b2daf2309379a154fa93`.
+- Evidence directory: `build/tpt-runs/beb2231b657a358d/artifacts/author-study-0001`.
+  Build, component, content and provenance diagnostics, PDF information,
+  font report, text extraction, count verification, proof identity and
+  raster comparison are retained there. Rasters have their own replaceable
+  child; the earlier iteration's proof and evidence remain intact.
+
+These are author verification facts. Independent study review and the
+subsequent companion, three-document visual and web stages remain required.

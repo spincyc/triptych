@@ -28,8 +28,12 @@ list. A fresh high-effort worker repaired the declaration and made the rights
 authority chain explicit; research-preflight-0001 passed. Independent
 research-review-0000 passed with no findings after checking the actual
 1,768-file research seal and its source claims. The expansive author proof
-has 21 pages and 6,537 substantive words; study-preflight-0000 passed. A fresh
-xhigh-effort reviewer is checking that study before companion derivation.
+has 21 pages and 6,537 substantive words; study-preflight-0000 passed.
+Study-review-0000 supported the arguments and coverage but raised STU-001:
+the Matthew chronology prose narrowed a source's open minimum interval into
+a following decade. The generated chronology remains correct. A fresh
+high-effort author corrected the prose and rebuilt the 21-page proof;
+study-preflight-0001 passed, and a fresh xhigh reviewer is checking the revision.
 The dated USCCB evidence confirms Year A and Lectionary 142. The complete
 inventory, registry-fixed week-28 owner, edition disposition and three PDF
 dependencies are recorded. The actual workflow

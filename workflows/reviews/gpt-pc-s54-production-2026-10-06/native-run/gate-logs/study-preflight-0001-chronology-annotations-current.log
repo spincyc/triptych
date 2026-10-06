@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a --edition research --check chronology-annotations-current
+exit 0
+--- stdout ---
+chronology-annotations-current (research edition): research/chronology-annotations.tex carries the complete live projection for 9 scriptural elements and 27 projected candidates
+
+--- stderr ---
+

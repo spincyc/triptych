@@ -37,8 +37,19 @@ limits. A fresh high-effort author completed the 21-page expansive proof with
 pages rechecked after a chronology-table boundary repair and keeping the first
 four-senses block together. The settled author proof is 461,386 bytes, SHA-256
 `ef5d28fc061b8abd44738053a0f56135edcff24eb52cb326ddd0a8481087525b`.
-Study-preflight-0000 passed and the engine dispatched study-review-0000 to a
-fresh xhigh-effort reviewer. Study acceptance and publication remain pending.
+Study-preflight-0000 passed. Fresh xhigh-effort study-review-0000 supported the
+arguments, branch distinctions and coverage but returned CHANGES_REQUIRED for
+STU-001: the historical appendix changes the NABRE introduction's “probably
+at least a decade later” after A.D. 70 into “probably in the following decade.”
+The generated chronology is correct; the prose adds an unsupported narrowing.
+The engine dispatched author-study-0001 for the study-owned repair. The author
+corrected only the historical wording, shared generation metadata and production
+audit, preserving accepted research. Its 21-page proof has SHA-256
+`c5ada91b5330bcff1f38437d1399ccefc767c16d4495b2daf2309379a154fa93`;
+only pages 17 and 21 differ from the prior rasters and were inspected again.
+Study-preflight-0001 passed and fresh study-review-0001 is underway. Study
+checkpoint `1852e3c23` is pushed, preserving the original reviewed sources and
+proof identity. Study acceptance and publication remain pending.
 A separate read-only identity check
 confirmed the dated USCCB assignment and Year A against its 2026 calendar.
 That finding is an input lead, not the workflow's context or research verdict.
