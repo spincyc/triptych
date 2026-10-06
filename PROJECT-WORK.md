@@ -18,15 +18,25 @@ already an ancestor of the completed workspace delivery
 no incoming commits and no conflicts. Ordinary fast-forward publication
 preserves the accepted run's historical commit identities; no rebase is needed.
 
-**Validated for fast-forward; push and live verification pending.** The
-deployment source gate, public site build and GitHub Pages-target verification
-all pass. The outgoing 17-commit, 290-path history contains only intended
-public text; object-level scanning found no private-data patterns or ignored
-outputs. The [integration evidence](workflows/reviews/gpt-pc-s54-production-2026-10-06/main-integration.json)
-records commands, exits and log hashes. Accepted sources, publication
-bytes and native archives remain unchanged. This mechanical integration has no
-new independent-review boundary; the completed production reviews and immutable
-handoff continue to cover those exact bytes.
+**Complete: pushed to main and verified live.** Commit
+`cd2771d3d415b3d2d5164e339e6dab0465b9dcd2` reached main by ordinary
+fast-forward, with the workspace ref at the same commit. The deployment source
+gate, public site build and GitHub Pages-target verification passed locally.
+The [integration evidence](workflows/reviews/gpt-pc-s54-production-2026-10-06/main-integration.json)
+records those commands, exits, log hashes and the disclosure audit. GitHub's
+repository-hygiene run `37516357323` and Pages run `37516357342` both succeeded.
+
+The [live verification](workflows/reviews/gpt-pc-s54-production-2026-10-06/live-verification.json)
+compares thirteen served resources byte for byte with the verified local site:
+three PDFs, canonical web edition, owning catalog, document catalog, six source
+edition projections and source index. All returned HTTP 200 and matched; the
+owning catalog exposes all four publication links. Accepted sources,
+publication bytes and 200 native archive files remain unchanged. The existing
+immutable handoff continues to cover those exact bytes; no new external
+review boundary was introduced by this mechanical integration.
+
+The closing commit changes only operational records and this live evidence;
+it does not change any input to the verified reader-facing artifact.
 
 ## GPT Twenty-eighth Sunday proper studies, 2026-10-06
 
@@ -37,7 +47,7 @@ the documentation workflow, with subagents permitted. The target is GPT's
 U.S. Twenty-eighth Sunday in Ordinary Time, Year A, 11 October 2026:
 `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a`.
 This request opens that provider and identity under the three-document
-contract. Work remains on the workspace branch `feature/propers/codex`.
+contract. Production completed on the workspace branch `feature/propers/codex`.
 
 **Complete: proper-study ACCEPTED; workspace delivery on
 `feature/propers/codex`.** Replacement v9 run `36f05d0fcf255303` completed
@@ -69,8 +79,8 @@ The dated U.S. evidence establishes 11 October 2026, Year A and Lectionary
 Offerings exemplar remain unavailable; protected prayers are not reconstructed.
 Local choices remain unselected. Source-family screening is a separate
 158-unit backlog, with no claim of completed screening or atomic coverage.
-Live deployment and integration into main are separate from this completed
-workspace delivery.
+The subsequent main integration and exact live verification are complete in
+the separate entry above; this production acceptance remains unchanged.
 
 ## GPT Twentieth Sunday, Psalm event chronology and quality review, 2026-10-05
 
