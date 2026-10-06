@@ -60,8 +60,17 @@ evidence. Logs, fonts, structure, text extraction and physical-page markers
 pass; all accepted content seals remain current. All 34 page rasters and
 supporting evidence are under
 `build/tpt-runs/36f05d0fcf255303/artifacts/build-artifacts-0/`.
-Independent visual-review-0000 is pending.
-The author's optional full source check exited
+Fresh xhigh visual-review-0000 passed with no findings after inspecting all
+34 individual pages and four contact sheets and matching the PDFs, auxiliaries,
+26 render inputs and raster receipts. Its limits are screen review rather
+than print proof, new source research or audible delivery. Generate-web-0000
+passed under the locked Markdown runtime. The exact canonical Markdown hash is
+`b91cb9d304eebdfa991243f02ddfc29fa2b323632ea92639fb2f8e4a064013b8`,
+recorded in the leaf's `research/web-artifact.json`. The converter and author
+checks cover all nine components, 183 prose spans, twelve anchors, both
+interpretations' four senses, 41 notes and terminal metadata. Independent
+web content and desktop/mobile browser review is pending.
+The homily author's optional full source check exited
 2 only at the still-stale document catalog; source-library and inventory
 validation passed. Final catalog generation and the complete rerun remain due.
 

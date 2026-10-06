@@ -1,0 +1,56 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "artifacts": {
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
+      "pagination_evidence": {
+        "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.aux": "ba06a7fc468df6fded7ebbad66e054033fecca4edd85ad8090572c98c79e1969",
+        "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.aux": "253122921c726626d8f2a2e0619a12fbaf036cd3fe459e56a686f2904c4588d4"
+      },
+      "pdfs": {
+        "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.pdf": "c54a0de449fd18508112f0365875217631f5bebf03a11d88f9dd978fc159cd09",
+        "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.pdf": "af3d7fcdbbf5ba08c5243f8d7ed61e23712cfb4d40558e318c8d93bb39b2bc10",
+        "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.pdf": "576c626bb65e54ead78072a29c1f810b2205d226d8dcbcfc9aebe644493e0dc5"
+      },
+      "provider": "gpt",
+      "render_inputs": {
+        "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+        "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+        "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/generation-metadata.tex": "5704dd554923f5a86edfc02dcadb512fe5171b3fd856145aa36f0019a97944e2",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/homily.tex": "91179382546ba235e28e01a65c425cd082d83224b13c4ab0ba65ac2ae8e84420",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/main.tex": "2b60a7aeed610e2e25567eca8301c26b724df52db4fe89b3ac13b212158dd8b9",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/proper-components.toml": "ddc91eee8f608c2d36ff33148a3033017258c753745b7c3a373a6be7f80bbfd7",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex": "eb7a09ab41b1547ffb101809c76517d46c82357c0efb0a1fed19e56ed9d9c08f",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/00-opening.tex": "5373ebe5870bed82b33f02a0b77e72a716b85d96b43a5a9264d008f454a5a0c7",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/01-map.tex": "81286dcd7a776e1a60abf32b21b758485dc1fba92cbec097a7a4d128e07c01a5",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/10-treatment.tex": "11047002b7587d880cc8bd6b04e1f8ab5ffdd56f3671d93cc5834d735c251fb2",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/20-texts.tex": "1da7b0fb556c3cd2d859e32432cc407d2576dfcdd230fc80240d4a9d48a1b389",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/30-charity.tex": "efb42f695bc7bc5b6fff712530365630824445bdeb90c95435c6bb9470eae06e",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/40-abundance.tex": "e4689ef9dddf8df8646c7207d15694155d00d42f775460b856a5efcf3109bb8b",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/50-comparison.tex": "6e581ee94e04096a5e512487bbc1254c084edb78ec48f6769e253694be23266c",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/60-history.tex": "2136bf095e8bb9a6bc1aa68cf3a6312125c75977397f408a44fecf90571d9848",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/70-apparatus.tex": "241ed79116a077095b87e7acb88755023137d0f3a6b2ed4f7eb3d99698a5b77c",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/homily-10-spoken.tex": "d2559db03090d6627a99d17e7a0216be7f3b85213d99b58c7b5f0b7ab87388c6",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/homily-90-notes.tex": "d3a9267d1ca759197e1e1691c22d2e2922425993a99897129e518f80aa57aa4c",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/synthesis-01-inventory.tex": "d3adfd3320a9439469031d3eb9c7c56eff64acba56685db04b79755cc45fa3b2",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/synthesis-02-overview.tex": "ac1bf6926be823c9b0ed18d004bebcbc7a2f9de60d0bdbe01c2041c984e2267b",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/synthesis-03-chronology.tex": "4b90e58a132cc21189805b2f99c198bd5cfdff9f49cc5bc49ed7330072d71230",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/synthesis-04-themes.tex": "3d2dd7e48776f81867c56c058a84c7d6a69bb4a4907229edcff1c8af38d0299e",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/synthesis-05-commentary.tex": "99eead249c02760ed52477d815c55ccd9a0611eb928398b5819495bfa771cea0",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/synthesis-90-apparatus.tex": "4814f061fd38a97ac9a2aa5d462d02ea403eb421ce8b1a56e5226109970038d8",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/synthesis.tex": "f954337bfeef5fdba55a31dd7e42fa50e4ca6a590c0a44662c010b55465e1bea"
+      },
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
+    "files": {},
+    "provider": "gpt",
+    "review": "visual",
+    "schema": 1
+  },
+  "stage": "visual-review",
+  "summary": "PASS after opening all four contact sheets and individually inspecting every one of the 34 pages in build/tpt-runs/36f05d0fcf255303/artifacts/build-artifacts-0/: pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.pdf: physical pages 1\u201321, PDF receipt SHA-256 576c626bb65e54ead78072a29c1f810b2205d226d8dcbcfc9aebe644493e0dc5, raster-receipt SHA-256 ac4150174057d19e6bee214e08431b72772d8b1670ef229dc733e73e3d6209c5; pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.pdf: physical pages 1\u20133, PDF receipt SHA-256 c54a0de449fd18508112f0365875217631f5bebf03a11d88f9dd978fc159cd09, raster-receipt SHA-256 d88f24231952db8c4e0a597f72b977157154791555adbcba21b5bc4f6b61fa2e; pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.pdf: physical pages 1\u201310, PDF receipt SHA-256 af3d7fcdbbf5ba08c5243f8d7ed61e23712cfb4d40558e318c8d93bb39b2bc10, raster-receipt SHA-256 ace9bb04dc603acf98cc10cbbea8bc1ad5eb8b4f5c3edacafeb1bfda47104b6f. The packet seal matches all three PDFs, two settled auxiliary files and 26 render inputs; actual PDF/font/text checks and final logs confirm embedded Latin Modern fonts, correct 11-point/0.75-inch baseline, no layout warnings or extraction replacement characters, intact tables and footnotes, clear single-column studies and two-column homily with separate apparatus, the concise physical 1/2/3\u20134/5 opening, meaningful section boundaries, and legible final-page rights colophons; no blocking visual defect was found, with verification details in .scratch/pc-s54-repair/visual-review-0000/evidence.json and limits confined to screen review rather than print proof, new source research or audible delivery."
+}
