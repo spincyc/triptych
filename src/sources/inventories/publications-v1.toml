@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-10-06"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 147
-source_surface_file_count = 2573
-snapshot = "sha256:b67402caa14d3aa9341e424524822e611440ad38cad4bb1426d0f34da46a024c"
+source_surface_file_count = 2576
+snapshot = "sha256:a4cebfb8640b26a656ac9b0ee9d434adbcade509194d56572fad6438b151c454"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -14797,7 +14797,13 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/evaluations/blocking-findings-v1.toml"
-sha256 = "4032ab07dd2906f0437349d6acb4b0f72b4b8db5007304e8b83a72ca1d9a2d00"
+sha256 = "c58864bf8103a6a1d8e2cb751c4c4eadad8d17b993e510e004322e4ebdf46f0d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/homily.tex"
+sha256 = "91179382546ba235e28e01a65c425cd082d83224b13c4ab0ba65ac2ae8e84420"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a"]
 
@@ -14863,7 +14869,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/production-review.md"
-sha256 = "9a024f2bb1c628a76c89f6665fcbed52026baa57019411f0d6324b75079218fa"
+sha256 = "3d57f8b91b8c0751ec5b23f2753b9234548b7bc4d4228f130a4495516f851fd0"
 kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a"]
 
@@ -14942,6 +14948,18 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/70-apparatus.tex"
 sha256 = "241ed79116a077095b87e7acb88755023137d0f3a6b2ed4f7eb3d99698a5b77c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/homily-10-spoken.tex"
+sha256 = "d2559db03090d6627a99d17e7a0216be7f3b85213d99b58c7b5f0b7ab87388c6"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/homily-90-notes.tex"
+sha256 = "d3a9267d1ca759197e1e1691c22d2e2922425993a99897129e518f80aa57aa4c"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a"]
 

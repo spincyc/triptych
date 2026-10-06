@@ -57,8 +57,18 @@ concise proof has 10 pages and 3,255 substantive words, SHA-256
 `65433c3386fc7f8acc5682b2d9af949cb09d4cf195c76f18680a15f558f90cf4`.
 It interleaves both accepted interpretations after the prescribed four-page
 opening. Author checks and all-page inspection pass; the actual
-synthesis-preflight-0000 passed and fresh xhigh synthesis-review-0000 is
-underway. Companion, visual, web and publication acceptance remain pending.
+synthesis-preflight-0000 and fresh xhigh synthesis-review-0000 passed with no
+findings. The reviewer verified the sealed inputs, exact supporting loci,
+appointment images, chronology qualifications and all ten proof pages. The
+engine dispatched derive-homily-0000 to a fresh high-effort author. Its
+three-page proof has 1,208 spoken words, estimated at 10.1–11.0 minutes at
+110–120 words per minute, SHA-256
+`ab4c94523f4263905959012c7bc67e5c0c3a25f22e6113fef68de1481050719c`.
+The textual turn is Paul's commendation of shared distress immediately after
+his confession of Christ's strength. The author performed silent prose
+rehearsal and inspected all three pages; no timed human delivery is claimed.
+Homily-preflight-0000 passed and fresh xhigh homily-review-0000 is underway.
+Homily, final visual, web and publication acceptance remain pending.
 A separate read-only identity check
 confirmed the dated USCCB assignment and Year A against its 2026 calendar.
 That finding is an input lead, not the workflow's context or research verdict.

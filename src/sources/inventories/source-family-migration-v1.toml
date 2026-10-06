@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-10-06"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:b67402caa14d3aa9341e424524822e611440ad38cad4bb1426d0f34da46a024c"
+inventory_snapshot = "sha256:a4cebfb8640b26a656ac9b0ee9d434adbcade509194d56572fad6438b151c454"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:4120f5969591f65c4b4da32f1fa33138127615327b9d02b19486839057df1457"
 canonical_catalog_snapshot = "sha256:b208657e58e3aa27285f303aa0901149f75879a415244b42e096ccc0aab37ed6"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:b993f967f90fab3139fa5128725710760670f4dc6f126a7718462d851dca08ac"
+snapshot = "sha256:9c2a002181c1f786026046b01672d9863540cf0b5e04d274a54cd72aa21ef2d9"
 families = []
 
 [[review_units]]
@@ -653,7 +653,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:098e6337a3259ace0602a5c8250e0ab70a99cf16d6007ce906159b82ad6ee3bd"
+surface_snapshot = "sha256:0a192ecac749e3ac725e1e80b76252b081138adb815c25055f60fe6d1dfce3d1"
 review_state = "pending"
 
 [[review_units]]

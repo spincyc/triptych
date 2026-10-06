@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a --edition homily --check relation-coverage
+exit 0
+--- stdout ---
+relation-coverage (homily edition): 2 interpretive lanes, each declaring all four senses and whole-proper component coverage
+
+--- stderr ---
+

@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a --edition homily --check unquoted-not-quoted
+exit 0
+--- stdout ---
+unquoted-not-quoted (homily edition): 0 sources declared unquoted, none attributed a quotation
+
+--- stderr ---
+

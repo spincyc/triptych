@@ -49,8 +49,8 @@ provider = "gpt"
 run_id = "beb2231b657a358d"
 workflow = "proper-study"
 workflow_version = 9
-stage = "study-review"
-iteration = 1
+stage = "synthesis-review"
+iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 0
@@ -72,6 +72,18 @@ observation_count = 0
 [[stages]]
 stage = "study-review"
 iteration = 1
+disposition = "PASS"
+run_id = "beb2231b657a358d"
+workflow = "proper-study"
+workflow_version = 9
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 0
 disposition = "PASS"
 run_id = "beb2231b657a358d"
 workflow = "proper-study"

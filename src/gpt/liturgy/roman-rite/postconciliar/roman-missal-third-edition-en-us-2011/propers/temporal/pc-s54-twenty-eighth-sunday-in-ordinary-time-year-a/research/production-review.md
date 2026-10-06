@@ -221,3 +221,93 @@ information, font report, text extraction, word-count calculation and complete
 proof identities are retained alongside those files. This records author
 verification only; cold synthesis review and final three-document visual
 review remain distinct forthcoming stages.
+
+## Derive-homily, iteration 0 — 6 October 2026
+
+The standalone homily, **The table and the shared need**, is complete in
+`homily.tex` and its two homily-only components. It addresses an adult parish
+assembly and develops the reviewed abundance interpretation rather than
+reciting the studies' alternatives. Matthew's prepared feast and refusal
+introduce the difficulty of receiving; Paul's hunger and commendation of
+assistance explain fellowship; the Shepherd's table amid danger and Isaiah's
+defeat of death distinguish present care from final fulfillment. The Collect
+places good action within grace, and the Prayer after Communion gives the
+Eucharistic movement its end in divine participation. The speech closes by
+returning to the table and calling for a concrete act of giving or receiving.
+
+The decisive textual detail is **Philippians 4:14 immediately following
+4:13**. Paul commends the donors' fellowship after affirming Christ's
+strength. This changes the initial question from whether trust removes need
+to how divine provision sustains a person through both endurance and shared
+care. A hearer cannot use another's contentment as permission to withhold
+help, or demand solitary self-sufficiency as proof of personal faith. This
+inference depends on the appointed sequence, not a generic application
+attached to an interchangeable reading. The Gospel's prepared invitation,
+its refusal and its mixed gathering remain integral to the argument. Its
+use of Matthew 22:1–10 works with either authorized form and does not imply
+that the omitted garment has been proclaimed. No Communion alternative is
+presumed locally selected.
+
+The author read both studies, their source scope and interpretation audit,
+and reopened the retained Chrysostom, *Homilies on Philippians* XV,
+especially ad 4:11–14 and 18–20, in NPNF1 XIII; Thomas's Latin Isaiah 25
+exposition, paragraph 84985, including the final threefold-banquet note;
+the Douay–Rheims/Challoner Matthew 22:1–14, Philippians 4, Psalm 22 and
+Isaiah 25 witnesses; and the FDLC Collect and after-Communion excerpts,
+pp. 14–15. These were bounded reinspections of the accepted evidence, not
+a new acquisition or critical collation. Exact loci and the relation to the
+reviewed interpretation appear in the separate terminal note and References.
+The accepted research, expansive study and concise study sources are
+unchanged. No upstream defect requiring a repair was found in this derivation.
+The existing schema-2 component declarations already name the exact local
+homily components and all informing elements; their validation required no
+manifest revision.
+
+The spoken component contains **1,208 English word tokens**, counting
+apostrophized or internally hyphenated words as one. Apparatus and title are
+excluded. At **110–120 words per minute**, the estimate is **10.1–11.0
+minutes**. A silent prose rehearsal checked oral sense, manageable sentences,
+clear antecedents, the transitions from invitation to need and from present
+help to future fullness, and the opening image's return. No audible rehearsal
+or timed human delivery occurred. Practical examples are applications, not
+fabricated testimony. There is no assumed clerical identity, attributed
+direct quotation, inline scholarly apparatus, stage direction or recited
+prayer in the spoken body. The oration descriptions are explanatory subjects,
+not substitute liturgical translations.
+
+The author proof has **3 physical letter pages**: the full-width title and
+shared two-column Latin Modern speech on pages 1–2, followed by the separate
+single-column note, references, revision timestamp and rights colophon on
+page 3. All three full-page rasters were inspected. Columns, paragraph flow,
+running head, title and final colophon are legible and unclipped; the speech
+ends before the apparatus page. No local font, title or geometry overrides
+were introduced. All fonts are embedded/subsetted with Unicode mappings.
+The 246,688-byte proof slightly exceeds the 75-KiB-per-page investigation
+threshold (about 80.3 KiB/page): inspection found no raster images, and the
+short artifact embeds the shared Latin Modern font subsets. No image payload
+or abnormal page content explains the size, and no source-independent PDF
+optimization was applied.
+
+The required `make doc` build and homily artifact component check pass.
+All twelve default homily content-preflight checks and exact-run provenance
+check pass. The settled log has no overfull/underfull boxes, undefined
+references, LaTeX warnings or infinite-shrink diagnostic. PDF information,
+font report and extraction were inspected; the visible revision timestamp
+occurs exactly once and agrees with the PDF modification date. The shared
+source-finalization timestamp is `2026-10-06T16:41:45Z`; the actual homily
+contribution is recorded under this packet's exact workflow provenance.
+
+Retained evidence directory:
+`build/tpt-runs/beb2231b657a358d/artifacts/derive-homily-0000`.
+The `rasters` child alone is replaceable; proof and diagnostics are beside it.
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `author-proof.pdf` (246,688 bytes) | `ab4c94523f4263905959012c7bc67e5c0c3a25f22e6113fef68de1481050719c` |
+| `author-proof.aux` | `3e3b39672b7ff30966db77c17ab182839e19807046a6ecd92043883cc2146706` |
+| `author-proof.log` | `3e0e358855b099b3c91c01f3afeab645c7b8f66b9ad4172d888d0904b0dc9c62` |
+
+This is author verification, not independent homily or visual acceptance.
+No PDF was installed and no web edition was changed. The shared timestamp
+requires the later three-document build; earlier study proofs remain
+historical review evidence rather than final common-timestamp artifacts.

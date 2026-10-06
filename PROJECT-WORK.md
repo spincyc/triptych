@@ -36,7 +36,10 @@ high-effort author corrected the prose and rebuilt the 21-page proof;
 study-preflight-0001 and fresh xhigh study-review-0001 passed. STU-001 is
 resolved with no standing blocking findings. The concise author completed a
 10-page, 3,255-word interleaved study and inspected all ten pages. The actual
-synthesis-preflight-0000 passed; fresh xhigh synthesis-review-0000 is underway.
+synthesis-preflight-0000 and fresh xhigh synthesis-review-0000 passed with no
+findings. A fresh high-effort author completed the three-page homily, with
+1,208 spoken words and an estimated 10.1–11.0-minute delivery. Homily
+preflight passed; independent xhigh homily-review-0000 is underway.
 The dated USCCB evidence confirms Year A and Lectionary 142. The complete
 inventory, registry-fixed week-28 owner, edition disposition and three PDF
 dependencies are recorded. The actual workflow
