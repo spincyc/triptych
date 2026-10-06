@@ -1,0 +1,14 @@
+{"event": "seed", "stage": "scope-gate", "timestamp": "2026-10-06T14:50:19Z", "workflow_id": "proper-study", "workflow_version": 9}
+{"event": "packet", "hash": "bab8c065789eb3cbe930e77dfca4118586b8e03ba257459eec3c7d63f8e09fec", "iteration": 0, "size": 770, "stage": "scope-gate", "timestamp": "2026-10-06T14:50:19Z"}
+{"disposition": "PASS", "event": "result", "stage": "scope-gate", "timestamp": "2026-10-06T14:50:29Z", "transition": "resolve-context"}
+{"event": "packet", "hash": "c212c105a5bf6d8979deaf8c889b39d96bad539e51824784b3097d6cfc53bdd7", "iteration": 0, "size": 33141, "stage": "resolve-context", "timestamp": "2026-10-06T14:50:29Z"}
+{"disposition": "PASS", "event": "result", "stage": "resolve-context", "timestamp": "2026-10-06T14:58:47Z", "transition": "research"}
+{"event": "packet", "hash": "d8c48f2014ce40d25347906ffbddd734802aef61198c7a46982f686843281b1a", "iteration": 0, "size": 34725, "stage": "research", "timestamp": "2026-10-06T14:58:47Z"}
+{"disposition": "PASS", "event": "result", "stage": "research", "timestamp": "2026-10-06T15:24:59Z", "transition": "research-preflight"}
+{"event": "packet", "hash": "4422171193cf746a3abae1933819afc228657c9eab326529b30634d840b38c6f", "iteration": 0, "size": 778, "stage": "research-preflight", "timestamp": "2026-10-06T15:24:59Z"}
+{"disposition": "FAIL", "event": "result", "stage": "research-preflight", "timestamp": "2026-10-06T15:25:05Z", "transition": "research"}
+{"event": "packet", "hash": "a122ad0e3cfc3550f9d0e5d770c7d86601c562506c4a9ac9c4226005f491e2f6", "iteration": 1, "size": 35025, "stage": "research", "timestamp": "2026-10-06T15:25:05Z"}
+{"disposition": "PASS", "event": "result", "stage": "research", "timestamp": "2026-10-06T15:29:50Z", "transition": "research-preflight"}
+{"event": "packet", "hash": "5a61db7426cb9e938d447188e14c2b8f15a27cddd7a82b55c6de79e1be12183f", "iteration": 1, "size": 778, "stage": "research-preflight", "timestamp": "2026-10-06T15:29:50Z"}
+{"disposition": "PASS", "event": "result", "stage": "research-preflight", "timestamp": "2026-10-06T15:30:01Z", "transition": "research-review"}
+{"event": "packet", "hash": "36d84a9d73128918651faefd747eaf83827996fb97e6beb21d73c09ba2012651", "iteration": 0, "size": 297918, "stage": "research-review", "timestamp": "2026-10-06T15:30:01Z"}

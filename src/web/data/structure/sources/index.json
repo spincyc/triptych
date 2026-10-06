@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 2924,
-  "editions": 1052,
-  "passages": 5267,
+  "artifacts": 2930,
+  "editions": 1056,
+  "passages": 5268,
   "readable": 3081,
-  "works": 935
+  "works": 936
  },
  "facets": {
   "authors": [
@@ -1779,7 +1779,7 @@
    },
    {
     "id": "Thomas Aquinas",
-    "works": 22
+    "works": 23
    },
    {
     "id": "Thomas Aquinas; collected edition",
@@ -2224,6 +2224,10 @@
     "works": 3
    },
    {
+    "id": "medieval-biblical-commentary",
+    "works": 3
+   },
+   {
     "id": "papal-catechesis",
     "works": 3
    },
@@ -2345,10 +2349,6 @@
    },
    {
     "id": "liturgical-norms",
-    "works": 2
-   },
-   {
-    "id": "medieval-biblical-commentary",
     "works": 2
    },
    {
@@ -3434,11 +3434,11 @@
   ],
   "languages": [
    {
-    "editions": 566,
+    "editions": 568,
     "id": "en"
    },
    {
-    "editions": 310,
+    "editions": 312,
     "id": "la"
    },
    {
@@ -3574,20 +3574,20 @@
     "label": "20th century"
    },
    {
-    "editions": 566,
+    "editions": 570,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 1643,
-    "editions": 379,
+    "artifacts": 1644,
+    "editions": 380,
     "id": "public-domain"
    },
    {
-    "artifacts": 773,
-    "editions": 387,
+    "artifacts": 778,
+    "editions": 390,
     "id": "restricted"
    },
    {
@@ -9149,7 +9149,7 @@
      "file": "1981-latin-editio-typica-altera-1981.json",
      "id": "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
      "language": "la",
-     "passages": 22,
+     "passages": 23,
      "readable": 0,
      "rights": [
       "restricted"
@@ -21940,6 +21940,19 @@
      "rights": [],
      "title": "NPNF Second Series, Volume VII: Cyril of Jerusalem, Gregory Nazianzen",
      "year": 1894
+    },
+    {
+     "date": "2026-10-06",
+     "file": "2026-2026-10-06-ccel-web.json",
+     "id": "edition.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "NPNF2-07: Cyril of Jerusalem, Gregory Nazianzen, CCEL whole text",
+     "year": 2026
     }
    ],
    "id": "work.nicene-and-post-nicene-fathers.series-2-volume-7",
@@ -28797,6 +28810,19 @@
      ],
      "title": "In Isaiam prophetam expositio",
      "year": 1863
+    },
+    {
+     "date": "2026-10-06",
+     "file": "2026-2026-10-06-latin-corpusthomisticum.json",
+     "id": "edition.thomas-aquinas.expositio-super-isaiam-ad-litteram.latin-corpusthomisticum-web-2026-10-06",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Expositio super Isaiam ad litteram, Corpus Thomisticum, chapters 1 lectio 2 to 33",
+     "year": 2026
     }
    ],
    "id": "work.thomas-aquinas.expositio-super-isaiam-ad-litteram",
@@ -29391,6 +29417,35 @@
     "la"
    ],
    "title": "Super Epistolam B. Pauli ad Hebraeos lectura"
+  },
+  {
+   "alternate_titles": [
+    "Super Philippenses",
+    "Commentary on Philippians"
+   ],
+   "author": "Thomas Aquinas",
+   "category": "medieval-biblical-commentary",
+   "directory": "editions/thomas-aquinas/super-philippenses/",
+   "editions": [
+    {
+     "date": "2026-10-06",
+     "file": "2026-2026-10-06-latin-corpusthomisticum.json",
+     "id": "edition.thomas-aquinas.super-philippenses.latin-corpusthomisticum-web-2026-10-06",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Super Epistolam B. Pauli ad Philippenses lectura, Corpus Thomisticum",
+     "year": 2026
+    }
+   ],
+   "id": "work.thomas-aquinas.super-philippenses",
+   "languages": [
+    "la"
+   ],
+   "title": "Super Epistolam B. Pauli ad Philippenses lectura"
   },
   {
    "alternate_titles": [
@@ -29997,6 +30052,19 @@
       "restricted"
      ],
      "title": "Daily Readings for 4 October 2026, Twenty-seventh Sunday in Ordinary Time, web state of 28 September 2026",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-06",
+     "file": "2026-2026-10-06-page-for-2026-10-11.json",
+     "id": "edition.united-states-conference-of-catholic-bishops.daily-readings.2026-10-11-web-2026-10-06",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Daily Readings for 11 October 2026, Twenty-eighth Sunday in Ordinary Time, web state of 6 October 2026",
      "year": 2026
     }
    ],

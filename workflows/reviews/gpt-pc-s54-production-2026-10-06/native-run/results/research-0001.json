@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/review-dependencies.toml",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "GATE-RESEARCH-RECORDS",
+      "note": "Removed both guidance paths from the source-owner declaration, preserved the canonical Week 28 and edition-registry owners, and verified the complete research check and v4 seal without advancing the workflow.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "research",
+  "summary": "Repaired research/review-dependencies.toml to declare source owners beneath src/ and include the registered rights evidence behind its controlling inventories; documented the authority-chain audit in research/scope.md. The research-phase gate and v4 evidence-seal compilation pass; the existing exact-book, translation, reception and local-selection limits remain explicit."
+}

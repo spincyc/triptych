@@ -20,10 +20,16 @@ contract. Work remains on the workspace branch `feature/propers/codex`.
 
 **In progress.** The clean starting checkout is `833196e9405a686ccd4a5b185a6461d2d80aee6d`.
 Proper-study v9 run `beb2231b657a358d`, seeded at
-`742d56bd0152eba02999c6e9afb47ae3340c5a72`, passed its scope gate and is
-resolving the context with a fresh high-effort worker. A separate dated USCCB
-check confirms Year A and Lectionary 142; the complete inventory and
-registry-fixed week-28 owner remain in that stage. The actual workflow
+`742d56bd0152eba02999c6e9afb47ae3340c5a72`, passed its scope and context
+stages. The first research worker completed a bounded dossier with 29 source
+bindings, two complete interpretations and generated chronology. Research
+preflight then rejected two guidance paths in the source-owner dependency
+list. A fresh high-effort worker repaired the declaration and made the rights
+authority chain explicit; research-preflight-0001 passed. A fresh xhigh-effort
+reviewer is checking the actual 1,768-file research seal before drafting.
+The dated USCCB evidence confirms Year A and Lectionary 142. The complete
+inventory, registry-fixed week-28 owner, edition disposition and three PDF
+dependencies are recorded. The actual workflow
 controls research, independent content reviews, the expansive
 and concise studies and homily, visual and web reviews, installation and
 publication records. No finished document or acceptance is claimed.
@@ -39,8 +45,12 @@ The baseline `make check-sources` passed, retaining the source family's
 157 pending screening units as an explicit independent backlog. The tool
 registry and promised-deliverable checks also pass. The
 [production record](workflows/reviews/gpt-pc-s54-production-2026-10-06/README.md)
-retains the run identity, initial native checkpoint and corrected initial
-ledger-validation failure; no failed check is represented as a pass.
+retains the run identity, native records and corrected initial ledger-validation
+failure. The mid-production source check stopped at the future study's absent
+web declaration; source-library, inventory, rights projection, containment and
+family-ledger checks pass independently. The refreshed ledger has 158 pending
+screening units, with no family-screening or atomic-coverage claim. Neither
+that check nor research review is represented as passed.
 
 ## GPT Twentieth Sunday, Psalm event chronology and quality review, 2026-10-05
 

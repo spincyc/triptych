@@ -9,8 +9,10 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "gpt-pc-s54-identity"
   criterion = "The exact provider and formula are authorized; the dated official occurrence, edition, cycle, shared Missal owner and complete branch inventory are resolved."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", "guidance/liturgy/propers-production-plan.md"]
+  status = "pass"
+  evidence = ["guidance/liturgy/propers-production-plan.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/context.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/instance/manifest.md", "workflows/reviews/gpt-pc-s54-production-2026-10-06/native-run/results/resolve-context-0000.json"]
+  check = "path_exists"
+  note = "Actual run beb2231b657a358d passed scope and context. Official dated evidence establishes 11 October 2026, Year A and Lectionary 142; the week-28 owner and all twelve appointed branches are recorded. Unspecified local calendar overlays remain outside this national-calendar determination."
 
   [[deliverables.requirements]]
   id = "gpt-pc-s54-workflow"

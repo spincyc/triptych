@@ -8,7 +8,7 @@
 **Sunday cycle:** Year A, from 2025-11-30 through 2026-11-22
 **Adjacent ferial cycle:** Cycle II, independently resolved
 
-This record indexes the first ten 2026 national-calendar occurrences represented by existing leaves, plus PC-S51-A on 20 September and PC-S53-A on 4 October. It does not resolve an unknown diocesan, religious, parish, titular, dedication, patronal, or other church-proper solemnity, and it is not an annual Ordo.
+This record indexes the first ten 2026 national-calendar occurrences represented by existing leaves, plus PC-S51-A on 20 September, PC-S53-A on 4 October and PC-S54-A on 11 October. It does not resolve an unknown diocesan, religious, parish, titular, dedication, patronal, or other church-proper solemnity, and it is not an annual Ordo.
 
 | Formula key | Full publication slug | Civil date | Lectionary | National-calendar result | Controlling manifest |
 | --- | --- | --- | ---: | --- | --- |
@@ -24,5 +24,6 @@ This record indexes the first ten 2026 national-calendar occurrences represented
 | `PC-S44-A` | `pc-s44-eighteenth-sunday-in-ordinary-time-year-a` | 2026-08-02 | 112 | Eighteenth Sunday in Ordinary Time is celebrated in the national calendar. | [Manifest](../temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a/instance/manifest.md) |
 | `PC-S51-A` | `pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a` | 2026-09-20 | 133 | Twenty-fifth Sunday in Ordinary Time, Year A; green; the occurring Korean-martyrs memorial is omitted. Unknown local proper solemnities remain unresolved. | [Manifest](../temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/instance/manifest.md) |
 | `PC-S53-A` | `pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a` | 2026-10-04 | 139 | Twenty-seventh Sunday in Ordinary Time, Year A; green. Francis of Assisi is not celebrated in this national-calendar Sunday Mass; unknown local proper solemnities remain unresolved. | [Manifest](../temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a/instance/manifest.md) |
+| `PC-S54-A` | `pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a` | 2026-10-11 | 142 | Twenty-eighth Sunday in Ordinary Time, Year A; green. National calendar and both Gospel lengths independently verified 2026-10-06; unknown local proper solemnities remain unresolved. | [Manifest](../temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/instance/manifest.md) |
 
-The two solemnities do not erase Ordinary Time Weeks IX and X. None of the twelve dated Sunday targets imports its Year A readings, Gloria, Creed, Preface, or formulary automatically into the following weekday; every ferial use requires its own manifest and the independent Cycle II Lectionary path.
+The two solemnities do not erase Ordinary Time Weeks IX and X. None of the thirteen dated Sunday targets imports its Year A readings, Gloria, Creed, Preface, or formulary automatically into the following weekday; every ferial use requires its own manifest and the independent Cycle II Lectionary path.

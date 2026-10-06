@@ -21,12 +21,46 @@ This production opens only the named GPT postconciliar identity.
 
 ## Current state
 
-The scope gate passed. Context resolution is in progress; no study, source
-acceptance or publication is claimed. A separate read-only identity check
+The scope gate and context resolution passed. The engine accepted the actual
+`research-0000` worker result, then research-preflight-0000 rejected two
+guidance paths in a dependency list restricted to source owners under `src/`.
+The engine dispatched `research-0001` to a fresh high-effort worker. That worker
+repaired the declaration, explicitly included the registered rights-authority
+owners and recorded its bounded audit. Research-preflight-0001 passed and the
+engine dispatched research-review-0000 to a fresh xhigh-effort reviewer against
+its actual 1,768-file v4 research seal. No study, research-review acceptance or
+publication is claimed.
+A separate read-only identity check
 confirmed the dated USCCB assignment and Year A against its 2026 calendar.
 That finding is an input lead, not the workflow's context or research verdict.
 The calendar and registry agree on Lectionary 142 and both Gospel lengths,
 Matthew 22:1–14 and 22:1–10. Unspecified local overlays are not resolved.
+
+The context worker established the canonical week-28 owner, all three explicit
+Makefile edges, edition adoption and occurrence, a reserved unpublished
+entrypoint, context, source plan, instance manifest and composition audit.
+It reacquired four complete registered PDFs with matching hashes and inspected
+five relevant page images, and independently opened the U.S. readings and
+GIRM. Source-library, link, scaffold and build-dependency checks passed.
+The first research dossier adds 29 bindings, complete twelve-branch reception
+matrices for two distinct readings, generated chronology and annotations, and
+bounded repeated searches. Exact 2008/2011 altar-book collation and a primary
+English offerings exemplar remain unclaimed; the dossier explains the limits
+of the inspected witnesses. No protected prayer is reconstructed.
+
+Six new exact source artifacts, four editions, one work and one OLM passage
+validate. The only new tracked payload is the whole public-domain CCEL NPNF2
+VII download. The source-reader refresh changes only the six affected edition
+projections and index, preserving 3,081 readable passages. Source-reader rights
+and currency checks, source containment, publication inventory and the family
+ledger pass. The preexisting empty-family bootstrap ledger accepts the changed
+canonical catalog under the tool's explicit bootstrap rule; all 158 owner
+screening units remain pending and atomic citation coverage remains false.
+
+The mid-production `make check-sources` exits 2 because document-library requires
+the future author-study `web-edition.toml` beside the reserved `main.tex`.
+The log is retained in the task scratch directory. This is an open production
+dependency, not a successful full source gate or a reason to invent metadata.
 
 The initial deliverable validator rejected missing evidence pointers on the
 open requirements. Commit `72fa0d381` supplied them and corrected the earlier
