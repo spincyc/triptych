@@ -311,3 +311,64 @@ This is author verification, not independent homily or visual acceptance.
 No PDF was installed and no web edition was changed. The shared timestamp
 requires the later three-document build; earlier study proofs remain
 historical review evidence rather than final common-timestamp artifacts.
+
+## Build-artifacts, iteration 0 — 6 October 2026
+
+All three outputs were built with their required `make doc` targets under
+provider `gpt`, using the shared finalization timestamp
+`2026-10-06T16:41:45Z`. No accepted prose, evidence, layout source, component
+manifest or generation declaration changed in this stage. No content seal was
+refreshed. The study and concise PDF hashes consequently differ from their
+older author proofs, which preceded the homily's shared timestamp; the homily
+retains its author-proof hash.
+
+| Output | Physical pages | Bytes | SHA-256 |
+| --- | ---: | ---: | --- |
+| Expansive study | 21 | 461,386 | `54af465955894279c43a3b917f63273f8f1322c4964840b05e44e2a0fc70cb74` |
+| Concise study | 10 | 442,006 | `5977e2d99c201d6bd69dc07cd0488ba7ddf4f51d065d4006be3c8a753f999bfe` |
+| Homily | 3 | 246,688 | `ab4c94523f4263905959012c7bc67e5c0c3a25f22e6113fef68de1481050719c` |
+
+The canonical output paths are the bare leaf ID, `-synthesis` and `-homily`
+beneath `build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/`,
+each with the `.pdf` extension. Their retained stage copies, settled `.aux`,
+`.log` and recorder files, build transcripts, PDF information, font reports,
+extracted texts and structure diagnostics are in
+`build/tpt-runs/beb2231b657a358d/artifacts/build-artifacts-0/`.
+The dedicated `rasters` child contains the repository helper's bounded
+page rasters and contact sheets for all 34 pages.
+
+The final logs contain no fatal errors, undefined references, missing-character
+diagnostics, overfull or underfull boxes, LaTeX warnings or infinite-shrink
+diagnostics. The Makefile's generation-metadata and component checks passed;
+the separate all-output artifact component check also passed. The concise
+settled absolute-page markers put both inventory and overview, including
+exactly four sense markers, on physical page 1; chronology on page 2; themes
+from page 3 through page 4; and commentary beginning on page 5. No logical
+page-counter reset supplies these positions.
+
+All three PDFs are unencrypted letter-size PDF 1.7 files. PDF information
+and complete text extractions were inspected, with no empty page, replacement
+character or missing revision display found. Each carries the expected title,
+subject and one visible revision timestamp; modification dates agree with that
+shared timestamp. All 41 font rows across the three files are Latin Modern,
+embedded, subsetted and accompanied by Unicode mappings. Ghostscript's
+null-page device parsed every page without an error or warning. The homily's
+80.3 KiB per page remains the only size-review trigger: its image inventory
+is empty and its ten embedded font rows explain the short file's fixed font
+payload; no independent PDF optimization was applied.
+
+The required snapshot command wrote `research/artifacts.json`, recording all
+three current PDF hashes, 26 render inputs and the two study pagination
+auxiliaries. Every recorded hash was independently compared with the current
+bytes. The concise `.aux` hash is
+`ba06a7fc468df6fded7ebbad66e054033fecca4edd85ad8090572c98c79e1969`;
+its final `.log` hash is
+`f07f5c9beed4f226e0a443bdd5141f13cd5214cd0a9d400bb31937a86fd3fc73`.
+Both are retained beside the final concise PDF.
+
+These are build and extraction checks, not independent visual acceptance.
+The fresh visual reviewer must still inspect every current page, including
+the compact chronology and the study's short unit-ending pages. The accepted
+source and rights limitations recorded above remain unchanged. No semantic
+defect requiring upstream revision was identified during this artifact check.
+No PDF was installed and no web edition was changed.

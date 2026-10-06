@@ -1,5 +1,5 @@
 {
-  "current_stage": "homily-review",
+  "current_stage": "visual-review",
   "disposition": null,
   "document_root": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
   "escalations": [],
@@ -15,7 +15,7 @@
       "GATE-RESEARCH-RECORDS"
     ]
   },
-  "iteration": 19,
+  "iteration": 22,
   "normalized_args": {
     "audience": "adult parish assembly",
     "date": "2026-10-11",
@@ -3085,6 +3085,73 @@
         "schema": 1
       },
       "stage": "homily-review"
+    },
+    {
+      "hash": "118d2c81f03a9920abc905e8655148ecd5846f014a31d9f161ce56a9b76437cc",
+      "iteration": 0,
+      "path": "build/tpt-runs/beb2231b657a358d/packets/build-artifacts-0000.txt",
+      "stage": "build-artifacts"
+    },
+    {
+      "hash": "2140f7d56725eb2a1e310cb75e2848a8914955603fc91aeccfaa9e18bc49b3b0",
+      "iteration": 0,
+      "path": "build/tpt-runs/beb2231b657a358d/packets/artifact-gates-0000.txt",
+      "stage": "artifact-gates"
+    },
+    {
+      "hash": "fc854cd7b335156968b65152c12a0bc0e178143d9c304f91f112a60e60af0d31",
+      "iteration": 0,
+      "path": "build/tpt-runs/beb2231b657a358d/packets/visual-review-0000.txt",
+      "review_inputs": {
+        "artifacts": {
+          "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
+          "pagination_evidence": {
+            "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.aux": "ba06a7fc468df6fded7ebbad66e054033fecca4edd85ad8090572c98c79e1969",
+            "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.aux": "423cbab3cbbb3a0536bd0ce7edb550bd2bf55cf2a35429237cf5510b8fe833ce"
+          },
+          "pdfs": {
+            "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.pdf": "ab4c94523f4263905959012c7bc67e5c0c3a25f22e6113fef68de1481050719c",
+            "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.pdf": "5977e2d99c201d6bd69dc07cd0488ba7ddf4f51d065d4006be3c8a753f999bfe",
+            "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.pdf": "54af465955894279c43a3b917f63273f8f1322c4964840b05e44e2a0fc70cb74"
+          },
+          "provider": "gpt",
+          "render_inputs": {
+            "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+            "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+            "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/generation-metadata.tex": "4fcf98f6920ddfe87a8ec73dfea9d63d0c151d7f70c4d9af895baa2c6058a811",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/homily.tex": "91179382546ba235e28e01a65c425cd082d83224b13c4ab0ba65ac2ae8e84420",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/main.tex": "2b60a7aeed610e2e25567eca8301c26b724df52db4fe89b3ac13b212158dd8b9",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/proper-components.toml": "ddc91eee8f608c2d36ff33148a3033017258c753745b7c3a373a6be7f80bbfd7",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex": "63263d70252984a82372e0fbba2b580c4908245c1c152331b13ebe934a7301cf",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/00-opening.tex": "5373ebe5870bed82b33f02a0b77e72a716b85d96b43a5a9264d008f454a5a0c7",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/01-map.tex": "81286dcd7a776e1a60abf32b21b758485dc1fba92cbec097a7a4d128e07c01a5",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/10-treatment.tex": "76b22b44c806302a2a76ecc5fa1304ff711ca0402db234e17389a968d5f9099c",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/20-texts.tex": "3c4cab81850e5c84a68a61d20cbc72f90a204037e2c7cd1ca28588c666ed9226",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/30-charity.tex": "efb42f695bc7bc5b6fff712530365630824445bdeb90c95435c6bb9470eae06e",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/40-abundance.tex": "e4689ef9dddf8df8646c7207d15694155d00d42f775460b856a5efcf3109bb8b",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/50-comparison.tex": "6e581ee94e04096a5e512487bbc1254c084edb78ec48f6769e253694be23266c",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/60-history.tex": "2136bf095e8bb9a6bc1aa68cf3a6312125c75977397f408a44fecf90571d9848",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/70-apparatus.tex": "241ed79116a077095b87e7acb88755023137d0f3a6b2ed4f7eb3d99698a5b77c",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/homily-10-spoken.tex": "d2559db03090d6627a99d17e7a0216be7f3b85213d99b58c7b5f0b7ab87388c6",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/homily-90-notes.tex": "d3a9267d1ca759197e1e1691c22d2e2922425993a99897129e518f80aa57aa4c",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/synthesis-01-inventory.tex": "d3adfd3320a9439469031d3eb9c7c56eff64acba56685db04b79755cc45fa3b2",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/synthesis-02-overview.tex": "ac1bf6926be823c9b0ed18d004bebcbc7a2f9de60d0bdbe01c2041c984e2267b",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/synthesis-03-chronology.tex": "4b90e58a132cc21189805b2f99c198bd5cfdff9f49cc5bc49ed7330072d71230",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/synthesis-04-themes.tex": "3d2dd7e48776f81867c56c058a84c7d6a69bb4a4907229edcff1c8af38d0299e",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/synthesis-05-commentary.tex": "510970fa5bac0e3d5f97a2aaf14df650efdd61ab9ab35d866540baad5b4a303d",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/synthesis-90-apparatus.tex": "4814f061fd38a97ac9a2aa5d462d02ea403eb421ce8b1a56e5226109970038d8",
+            "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/synthesis.tex": "f954337bfeef5fdba55a31dd7e42fa50e4ca6a590c0a44662c010b55465e1bea"
+          },
+          "schema": 2
+        },
+        "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
+        "files": {},
+        "provider": "gpt",
+        "review": "visual",
+        "schema": 1
+      },
+      "stage": "visual-review"
     }
   ],
   "repo_commit": "742d56bd0152eba02999c6e9afb47ae3340c5a72",
@@ -3214,13 +3281,36 @@
       "iteration": 0,
       "path": "build/tpt-runs/beb2231b657a358d/results/homily-preflight-0000.json",
       "stage": "homily-preflight"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "16858666a73d9669583efaea0c376b80ef9569ffd488c1850352c1ca6706c690",
+      "iteration": 0,
+      "path": "build/tpt-runs/beb2231b657a358d/results/homily-review-0000.json",
+      "stage": "homily-review"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "ff35e6600e177e7e0885f5fb19dd46bcc09888ddb88ef1b8096216ecb5f88f89",
+      "iteration": 0,
+      "path": "build/tpt-runs/beb2231b657a358d/results/build-artifacts-0000.json",
+      "stage": "build-artifacts"
+    },
+    {
+      "disposition": "PASS",
+      "hash": "97af5c9c6c70bfc4459030f6b4c4d3ef1c5d44f458a9759ff4ab5fcbb5607d3c",
+      "iteration": 0,
+      "path": "build/tpt-runs/beb2231b657a358d/results/artifact-gates-0000.json",
+      "stage": "artifact-gates"
     }
   ],
   "run_id": "beb2231b657a358d",
   "stage_blocking_ids": {},
   "stage_blocking_targets": {},
   "stage_failures": {
+    "artifact-gates": 0,
     "homily-preflight": 0,
+    "homily-review": 0,
     "research-preflight": 0,
     "research-review": 0,
     "scope-gate": 0,
@@ -3230,7 +3320,9 @@
     "synthesis-review": 0
   },
   "stage_iterations": {
+    "artifact-gates": 1,
     "author-study": 2,
+    "build-artifacts": 1,
     "derive-homily": 1,
     "derive-synthesis": 1,
     "homily-preflight": 1,
@@ -3243,10 +3335,13 @@
     "study-preflight": 2,
     "study-review": 2,
     "synthesis-preflight": 1,
-    "synthesis-review": 1
+    "synthesis-review": 1,
+    "visual-review": 1
   },
   "stage_novel": {
+    "artifact-gates": 0,
     "homily-preflight": 0,
+    "homily-review": 0,
     "research-preflight": 0,
     "research-review": 0,
     "scope-gate": 0,
@@ -3256,7 +3351,9 @@
     "synthesis-review": 0
   },
   "stage_repeats": {
+    "artifact-gates": 0,
     "homily-preflight": 0,
+    "homily-review": 0,
     "research-preflight": 0,
     "research-review": 0,
     "scope-gate": 0,
@@ -3266,6 +3363,44 @@
     "synthesis-review": 0
   },
   "stage_scope_baseline": {
+    "homily-review": {
+      "generation-metadata.tex": "4fcf98f6920ddfe87a8ec73dfea9d63d0c151d7f70c4d9af895baa2c6058a811",
+      "homily.tex": "91179382546ba235e28e01a65c425cd082d83224b13c4ab0ba65ac2ae8e84420",
+      "instance/manifest.md": "08225dc9d27cf6688a3f4207aa1bdcc13efb60619059ff7fbe22390b85b22ba0",
+      "main.tex": "2b60a7aeed610e2e25567eca8301c26b724df52db4fe89b3ac13b212158dd8b9",
+      "proper-components.toml": "ddc91eee8f608c2d36ff33148a3033017258c753745b7c3a373a6be7f80bbfd7",
+      "propers/verified.md": "3fc1045aed7de765bb183ff9e3097f7d46f78bb2ba4164e3be84d30042b1208e",
+      "research/chronology-annotations.tex": "63263d70252984a82372e0fbba2b580c4908245c1c152331b13ebe934a7301cf",
+      "research/chronology-inputs.toml": "110e8e186301d2cfe4abece105f7028e7a6d1415445434971af4e7303df4332a",
+      "research/chronology-profile-comparisons.toml": "e77bdc39d80aba55b7dbae9c0d2426251d61ca8b0fb7209a94fc65293a23a82b",
+      "research/chronology.toml": "d9e0c8c1ef2287ad80a098a30680f2b3e00f9fcb178c1f90ac66706561c9372b",
+      "research/context.md": "516246b98336c65e81d733b61626c4da7515bcde33d6123a79adbfe23ffd8807",
+      "research/interpretations.md": "fe1aadb9fbb0050833cdb2a547012172afa5613e9f99cc2db4e28fb6b0b9e711",
+      "research/production-review.md": "3d57f8b91b8c0751ec5b23f2753b9234548b7bc4d4228f130a4495516f851fd0",
+      "research/review-dependencies.toml": "a96fd44da2571b53e31d6cb9d58d0473fc7938532ae8dd054d83971472bc8aa5",
+      "research/scope.md": "173ae690de317cfa2e57def8bdb398c64bd3c9021204b7e7a7edf261b90912a4",
+      "research/source-bindings.toml": "d67d9aba3d25579ac9a5e306cee4811a4809b5474908fb7fe4122e7a09bba2c9",
+      "research/source-plan.md": "3f78df91b49271ad14b4b5706302fdee40556872a8936dfa0db2258d3d3a2c2b",
+      "sections/00-opening.tex": "5373ebe5870bed82b33f02a0b77e72a716b85d96b43a5a9264d008f454a5a0c7",
+      "sections/01-map.tex": "81286dcd7a776e1a60abf32b21b758485dc1fba92cbec097a7a4d128e07c01a5",
+      "sections/10-treatment.tex": "76b22b44c806302a2a76ecc5fa1304ff711ca0402db234e17389a968d5f9099c",
+      "sections/20-texts.tex": "3c4cab81850e5c84a68a61d20cbc72f90a204037e2c7cd1ca28588c666ed9226",
+      "sections/30-charity.tex": "efb42f695bc7bc5b6fff712530365630824445bdeb90c95435c6bb9470eae06e",
+      "sections/40-abundance.tex": "e4689ef9dddf8df8646c7207d15694155d00d42f775460b856a5efcf3109bb8b",
+      "sections/50-comparison.tex": "6e581ee94e04096a5e512487bbc1254c084edb78ec48f6769e253694be23266c",
+      "sections/60-history.tex": "2136bf095e8bb9a6bc1aa68cf3a6312125c75977397f408a44fecf90571d9848",
+      "sections/70-apparatus.tex": "241ed79116a077095b87e7acb88755023137d0f3a6b2ed4f7eb3d99698a5b77c",
+      "sections/homily-10-spoken.tex": "d2559db03090d6627a99d17e7a0216be7f3b85213d99b58c7b5f0b7ab87388c6",
+      "sections/homily-90-notes.tex": "d3a9267d1ca759197e1e1691c22d2e2922425993a99897129e518f80aa57aa4c",
+      "sections/synthesis-01-inventory.tex": "d3adfd3320a9439469031d3eb9c7c56eff64acba56685db04b79755cc45fa3b2",
+      "sections/synthesis-02-overview.tex": "ac1bf6926be823c9b0ed18d004bebcbc7a2f9de60d0bdbe01c2041c984e2267b",
+      "sections/synthesis-03-chronology.tex": "4b90e58a132cc21189805b2f99c198bd5cfdff9f49cc5bc49ed7330072d71230",
+      "sections/synthesis-04-themes.tex": "3d2dd7e48776f81867c56c058a84c7d6a69bb4a4907229edcff1c8af38d0299e",
+      "sections/synthesis-05-commentary.tex": "510970fa5bac0e3d5f97a2aaf14df650efdd61ab9ab35d866540baad5b4a303d",
+      "sections/synthesis-90-apparatus.tex": "4814f061fd38a97ac9a2aa5d462d02ea403eb421ce8b1a56e5226109970038d8",
+      "synthesis.tex": "f954337bfeef5fdba55a31dd7e42fa50e4ca6a590c0a44662c010b55465e1bea",
+      "web-edition.toml": "cc6a6ed6fbbea9fac9e234c781a69d5ee61e22dd06be4c4d36a030b609a37cb4"
+    },
     "research-review": {
       "instance/manifest.md": "08225dc9d27cf6688a3f4207aa1bdcc13efb60619059ff7fbe22390b85b22ba0",
       "main.tex": "6d163e91017ed9445c2ba60363fe57bcc1c88de33a605351cd0861b2f529a2d0",
@@ -3346,11 +3481,16 @@
     }
   },
   "stage_scope_changed": {
+    "homily-review": [
+      "research/artifacts.json",
+      "research/production-review.md"
+    ],
     "research-review": [
       "generation-metadata.tex",
       "homily.tex",
       "main.tex",
       "proper-components.toml",
+      "research/artifacts.json",
       "research/production-review.md",
       "sections/00-opening.tex",
       "sections/01-map.tex",
@@ -3375,6 +3515,7 @@
     "study-review": [
       "generation-metadata.tex",
       "homily.tex",
+      "research/artifacts.json",
       "research/production-review.md",
       "sections/homily-10-spoken.tex",
       "sections/homily-90-notes.tex",
@@ -3389,6 +3530,7 @@
     "synthesis-review": [
       "generation-metadata.tex",
       "homily.tex",
+      "research/artifacts.json",
       "research/production-review.md",
       "sections/homily-10-spoken.tex",
       "sections/homily-90-notes.tex"
@@ -3484,6 +3626,21 @@
       "disposition": "PASS",
       "from": "homily-preflight",
       "to": "homily-review"
+    },
+    {
+      "disposition": "PASS",
+      "from": "homily-review",
+      "to": "build-artifacts"
+    },
+    {
+      "disposition": "PASS",
+      "from": "build-artifacts",
+      "to": "artifact-gates"
+    },
+    {
+      "disposition": "PASS",
+      "from": "artifact-gates",
+      "to": "visual-review"
     }
   ],
   "unrepaired_for": {},
