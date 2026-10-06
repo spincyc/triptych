@@ -26,7 +26,16 @@ Author-study-0000 and study-preflight-0000 passed. All twelve appointed-element
 anchors, including separate alternatives, validate in source and rendered
 output. The fresh 21-page author proof retains 6,537 substantive words and has
 SHA-256 `1e48c0145da0af5a46cf496aa0b50e0833b9541f3f1bd44647dd706393bee9dd`.
-All pages were inspected; independent study-review-0000 is pending.
+All pages were inspected. Fresh xhigh study-review-0000 passed with no
+findings after reading the full proof, checking exact source loci and
+chronology alternatives, and confirming all 17 sealed inputs and proof bytes.
+The engine dispatched derive-synthesis-0000 to a fresh high-effort author.
+That author restored Gregory's explicit permission to harmonize Matthew and
+Luke while retaining his principal present-Church exposition. The fresh
+ten-page proof has 3,274 substantive words, SHA-256
+`c0557a1d49124bab8ba1a548126f86280ec62edb7ed09edc414b6558744165f1`.
+All pages were inspected; derive-synthesis-0000 and synthesis-preflight-0000
+passed. Independent synthesis-review-0000 is pending.
 
 The replacement research worker's `make check-sources` exited 2 for six stale
 publication-inventory hashes and the still-unrefreshed document catalog. The

@@ -18,77 +18,47 @@ U.S. Twenty-eighth Sunday in Ordinary Time, Year A, 11 October 2026:
 This request opens that provider and identity under the three-document
 contract. Work remains on the workspace branch `feature/propers/codex`.
 
-**In progress; replacement run active after a blocked first run.** The clean starting
-checkout is `833196e9405a686ccd4a5b185a6461d2d80aee6d`.
-Replacement v9 run `36f05d0fcf255303`, seeded at
-`c150b81c6c7bab0dca2c688191fc7706a3f497c0`, passed scope and context. Fresh
-research reconciliation, preflight and fresh xhigh research-review-0000
-passed. Author-study-0000 and study-preflight-0000 passed after recorded
-intervention 0000 added twelve source anchors and proved canonical conversion
-with the locked Markdown runtime. The fresh 21-page proof retains 6,537
-substantive words; independent study-review-0000 is pending. Every replacement acceptance
-will come from its own fresh native review, not the first run's verdicts.
-Proper-study v9 run `beb2231b657a358d`, seeded at
-`742d56bd0152eba02999c6e9afb47ae3340c5a72`, passed its scope and context
-stages. The first research worker completed a bounded dossier with 29 source
-bindings, two complete interpretations and generated chronology. Research
-preflight then rejected two guidance paths in the source-owner dependency
-list. A fresh high-effort worker repaired the declaration and made the rights
-authority chain explicit; research-preflight-0001 passed. Independent
-research-review-0000 passed with no findings after checking the actual
-1,768-file research seal and its source claims. The expansive author proof
-has 21 pages and 6,537 substantive words; study-preflight-0000 passed.
-Study-review-0000 supported the arguments and coverage but raised STU-001:
-the Matthew chronology prose narrowed a source's open minimum interval into
-a following decade. The generated chronology remains correct. A fresh
-high-effort author corrected the prose and rebuilt the 21-page proof;
-study-preflight-0001 and fresh xhigh study-review-0001 passed. STU-001 is
-resolved with no standing blocking findings. The concise author completed a
-10-page, 3,255-word interleaved study and inspected all ten pages. The actual
-synthesis-preflight-0000 and fresh xhigh synthesis-review-0000 passed with no
-findings. A fresh high-effort author completed the three-page homily, with
-1,208 spoken words and an estimated 10.1–11.0-minute delivery. Homily
-preflight and independent xhigh homily-review-0000 passed with no findings.
-All three content reviews are accepted. The final three-document build and
-artifact gate passed at 21/10/3 pages; all accepted content seals remain
-current. Fresh xhigh visual-review-0000 passed after inspecting all 34 pages
-and four contact sheets. VIS-001 explicitly accepts the sparse first
-interpretation ending without requiring a repair. Canonical web conversion
-failed because all twelve required schema-2 proper anchors are absent from
-the study source. The converter correctly refused to invent those targets.
-The actual worker BLOCKED result ended run `beb2231b657a358d`; its content and
-visual reviews remain historical evidence, not publication acceptance.
-The engine has no supported upstream routing or resume operation for this
-linear-stage failure. A replacement run will preserve the existing research
-and authored work, repair the source anchors under the study owner, and obtain
-fresh native reviews. Web review and publication gates remain pending.
+**In progress; replacement run active after a blocked first run.** The clean
+starting checkout is `833196e9405a686ccd4a5b185a6461d2d80aee6d`. Replacement
+v9 run `36f05d0fcf255303`, seeded at
+`c150b81c6c7bab0dca2c688191fc7706a3f497c0`, passed scope, fresh context,
+research reconciliation, research preflight and independent research review.
+Author-study-0000 and study-preflight-0000 passed after intervention 0000
+added all twelve appointed-element source anchors and proved canonical
+conversion with the locked Markdown runtime. The fresh author proof has
+21 pages and 6,537 substantive words. Independent study-review-0000 passed
+with no findings after checking the full proof, source loci, chronology and
+17 sealed inputs. Derive-synthesis-0000 and synthesis-preflight-0000 passed;
+the fresh ten-page concise proof has 3,274 substantive words and restores
+Gregory's explicit allowance for a harmonizing Gospel reading. Independent
+synthesis-review-0000 is pending. Every replacement
+acceptance comes from its own native reviews.
+
+First run `beb2231b657a358d` passed content and visual reviews but ended
+BLOCKED when canonical conversion found the missing study-owned source
+anchors. Its exact terminal state and historical reviews remain preserved in
+`workflows/reviews/gpt-pc-s54-production-2026-10-06/native-run/`. The engine
+has no supported upstream route or resume operation at that boundary. The
+replacement run preserves supported research and prose while obtaining fresh
+acceptance through the full workflow; no blocked result has been rewritten.
+
 The dated USCCB evidence confirms Year A and Lectionary 142. The complete
 inventory, registry-fixed week-28 owner, edition disposition and three PDF
-dependencies are recorded. The actual workflow
-controls research, independent content reviews, the expansive
-and concise studies and homily, visual and web reviews, installation and
-publication records. No finished document or acceptance is claimed.
+dependencies are recorded. Baseline source checks passed before the new leaf.
+Subsequent full source checks correctly reported incomplete publication
+projections; the source inventories have been refreshed, while document
+catalog generation and the final complete source check remain due with
+installation. Source-family screening remains an independent backlog of
+158 pending units, with no claim of completed screening or atomic coverage.
 
 Completion requires the actual workflow's ACCEPTED disposition, all three
 reviewed PDFs and canonical web edition installed, catalog and release
-records reconciled, required source and publication checks, and a coherent
-commit on the workspace branch. Production evidence will be retained under
-`workflows/reviews/gpt-pc-s54-production-2026-10-06/`. Live deployment and
-integration into main are separate from this workspace delivery.
-
-The baseline `make check-sources` passed, retaining the source family's
-157 pending screening units as an explicit independent backlog. The tool
-registry and promised-deliverable checks also pass. The
+records reconciled, required source and publication checks, and coherent
+commits on the workspace branch. The
 [production record](workflows/reviews/gpt-pc-s54-production-2026-10-06/README.md)
-retains the run identity, native records and corrected initial ledger-validation
-failure. The mid-production source check stopped at the future study's absent
-web declaration, which the author has since supplied. Source-library,
-inventory, rights projection, containment and
-family-ledger checks pass independently. The refreshed ledger has 158 pending
-screening units, with no family-screening or atomic-coverage claim. Neither
-that full check nor publication acceptance is represented as passed. Research
-checkpoint `bc597b708` is committed and pushed to the workspace branch; the
-native run continues from its original seed.
+preserves native run identities, exact results, repairs, source limitations
+and failed invocations. Live deployment and integration into main are separate
+from this workspace delivery.
 
 ## GPT Twentieth Sunday, Psalm event chronology and quality review, 2026-10-05
 

@@ -504,3 +504,64 @@ content, companion, artifact and web stages must judge this run's bytes; the
 later shared-timestamp three-document build and independent visual review remain
 required. No PDF was installed and no workflow result was inherited as a new
 acceptance.
+
+## Replacement run 36f05d0fcf255303: derive-synthesis, iteration 0 — 6 October 2026
+
+The retained concise study was reread in full against this run's accepted
+expansive study, scope, interpretation audit and generated chronology. The two
+controlling questions remain distinct and interleaved: charity as the life
+fitting to the invitation, and provision through endurance, mutual assistance
+and final fulfillment. The Gospel lengths, Communion alternatives, differing
+interpretations of the burned city, imperfect charity, creaturely likeness and
+present need retain their material qualifications. No upstream defect was
+identified and no accepted research or expansive prose was changed.
+
+One compressed qualification was restored in the first commentary section:
+Gregory's present-Church account is his principal exposition, and he allows
+Matthew's and Luke's banquet accounts to be reconciled without disagreement
+in faith. This was already explicit in the accepted study and interpretation
+audit. The retained Latin Homily 38.1 was reopened to check the qualification;
+this is bounded reinspection, not new acquisition or critical collation.
+The entrypoint, synthesis-only membership, shared format and presentation roles
+already satisfy the packet and required no changes. The canonical chronology
+and its nine date cells remain unchanged.
+
+The substantive text contains **3,274 English word tokens**: 830 in the themes
+and movement and 2,444 in the developed commentary. The calculation excludes
+footnotes, headings, labels, TeX commands, inventory, overview, chronology and
+terminal apparatus, using the prior counting method with current source bytes.
+The shared finalization timestamp is `2026-10-06T17:54:14Z`; the actual new
+contribution is recorded beside the historical contributions under this run's
+exact provenance. Previous run receipts above remain historical.
+
+The required `make doc` and synthesis artifact component check pass. All twelve
+default synthesis content checks and the separate exact-run provenance check
+pass. The settled **10-page** author proof places inventory and exactly four
+sense rows on physical page 1, chronology alone on 2, themes on 3–4, and
+commentary beginning on 5. Every final full-page raster was inspected, including
+the dense chronology, paragraph continuations, footnotes, final references,
+timestamp and rights colophon. No clipping, collisions or unintended sparse
+spill page was found. The final log has no overfull or underfull boxes,
+undefined references, missing characters or LaTeX warnings. Ghostscript parses
+all pages without diagnostics. The letter-size PDF has sixteen embedded,
+subsetted Latin Modern font rows with Unicode mappings; its 442,100 bytes are
+below both size-investigation thresholds. PDF metadata and text extraction
+agree with the sole displayed revision timestamp.
+
+Current proof directory:
+`build/tpt-runs/36f05d0fcf255303/artifacts/derive-synthesis-0000`.
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `author-proof.pdf` | `c0557a1d49124bab8ba1a548126f86280ec62edb7ed09edc414b6558744165f1` |
+| `author-proof.aux` | `ba06a7fc468df6fded7ebbad66e054033fecca4edd85ad8090572c98c79e1969` |
+| `author-proof.log` | `53af209ca80e2554f3f088e73d18e4c36555d5178354a7cb19b51ed21b5615b0` |
+
+The directory retains the recorder, checks, extraction, font and structure
+reports, word count, physical-page labels, proof identities and a dedicated
+replaceable raster child. The helper requires a destination beneath `build/`,
+so its refusal of a scratch destination was resolved by the required stage
+artifact child. This is author verification only. Fresh synthesis review and
+the later common-timestamp three-document build and cold visual review remain
+required. No PDF was installed and no web edition or shared source inventory
+was changed.

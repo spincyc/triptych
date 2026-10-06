@@ -15,3 +15,9 @@
 {"event": "packet", "hash": "9047ef753201cd5b1fc522628f52ad27169001c70a18fd9e24faf595f1810e99", "iteration": 0, "size": 775, "stage": "study-preflight", "timestamp": "2026-10-06T17:44:45Z"}
 {"disposition": "PASS", "event": "result", "stage": "study-preflight", "timestamp": "2026-10-06T17:44:55Z", "transition": "study-review"}
 {"event": "packet", "hash": "5df414e5cef2dbbe1a0ab0eda75142aacbc62ea5c1d192ad02de4aa605cef942", "iteration": 0, "size": 43715, "stage": "study-review", "timestamp": "2026-10-06T17:44:55Z"}
+{"disposition": "PASS", "event": "result", "stage": "study-review", "timestamp": "2026-10-06T17:52:46Z", "transition": "derive-synthesis"}
+{"event": "packet", "hash": "fe1e3ab60b1bd131049d0da9c4ad34feaed4ca4658394998e1e77ddb7c08c523", "iteration": 0, "size": 34085, "stage": "derive-synthesis", "timestamp": "2026-10-06T17:52:46Z"}
+{"disposition": "PASS", "event": "result", "stage": "derive-synthesis", "timestamp": "2026-10-06T17:57:12Z", "transition": "synthesis-preflight"}
+{"event": "packet", "hash": "18557e0d15071ea3225040d51f5530aa48b36e7ae795b1f80b09d67901832ace", "iteration": 0, "size": 779, "stage": "synthesis-preflight", "timestamp": "2026-10-06T17:57:12Z"}
+{"disposition": "PASS", "event": "result", "stage": "synthesis-preflight", "timestamp": "2026-10-06T17:57:23Z", "transition": "synthesis-review"}
+{"event": "packet", "hash": "529a08969a637490b97e24cbbbbe74b14efaaa799d6441f8f5c852a68bfd37b3", "iteration": 0, "size": 41050, "stage": "synthesis-review", "timestamp": "2026-10-06T17:57:23Z"}
