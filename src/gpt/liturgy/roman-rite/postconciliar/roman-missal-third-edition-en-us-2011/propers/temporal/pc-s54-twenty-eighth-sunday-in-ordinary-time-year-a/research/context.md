@@ -40,6 +40,13 @@ texts enter this Mass. The liturgical-year interval is 2025-11-30 through
 30 through November 22. Easter is 2026-04-05, Pentecost 2026-05-24, and the
 next Advent Sunday 2026-11-29. The last Sunday, November 22, is six weeks
 after October 11, confirming week 28 from the terminal week-34 anchor.
+The opening anchor is the Baptism on January 11: the last pre-Lenten
+Sunday is February 15, week 6, before Ash Wednesday on February 18.
+The resumed week after Pentecost is week 8; week 7 is omitted in this
+33-week year. Fresh `calendar-days` queries for February 15, May 25,
+October 11 and November 22 agree with those week numbers and the official
+calendar's dated entries. The numbered week resumed on May 25 does not
+displace that day's appointed memorial.
 The independently resolved weekday **Cycle II** concerns only the adjacent
 ferial readings, not this Sunday.
 
@@ -56,7 +63,10 @@ an edition split. Its canonical common Missal owner is
 locators, collation, rights and variants. This leaf references its conclusions
 without becoming another collation owner. The Makefile explicitly binds all
 three intended PDFs to W28; the collection already declares its registry edge.
-The source reservation in `main.tex` is not study prose or a publication.
+The existing `main.tex`, `synthesis.tex` and `homily.tex` contain authored
+documents, not reservation scaffolds. Their existence does not confer
+acceptance in this production; their substantive reviews remain separate
+from this context resolution.
 
 ## Complete ordered inventory
 
@@ -83,8 +93,9 @@ formula target. Common Missal elements retain W28's stated evidence ceiling.
 The official U.S. [GIRM chapter II](https://www.usccb.org/prayer-and-worship/the-mass/general-instruction-of-the-roman-missal/girm-chapter-2)
 and [chapter VII](https://www.usccb.org/prayer-and-worship/the-mass/general-instruction-of-the-roman-missal/girm-chapter-7)
 were opened on 2026-10-06. These locate ordinary and open-choice texts; they
-do not supply invented selections. Research must bind the exact controlling
-source records before its review seal.
+do not supply invented selections. Their exact controlling source records
+are bound in [source-bindings.toml](source-bindings.toml); external controlling
+owners are declared in [review-dependencies.toml](review-dependencies.toml).
 
 | Semantic branch / place | Authority | Resolution |
 | --- | --- | --- |
@@ -129,7 +140,24 @@ historical compositional design. No other liturgical family's calendar,
 formulary, reading inventory or interpretive plan supplies this study.
 
 The complete inventory and source plan settle the object to study at the
-disclosed witness layers. The research-stage scope, bindings, reception, chronology and two proposed
-interpretations are now recorded in research/scope.md and its adjacent
-records, with unresolved exact-book collation explicitly retained. Authored
-documents and every publication review remain downstream work.
+disclosed witness layers. The existing research-stage scope, bindings,
+reception, chronology and two interpretations are recorded in research/scope.md
+and its adjacent records, with unresolved exact-book collation explicitly
+retained. Existing authored documents and retained review history supply
+material for the subsequent stages, not inherited acceptance.
+
+## Fresh context verification, 2026-10-06
+
+This resolution independently rechecked the existing records. The whole
+official calendar and dated reading-page deliveries were fetched again and
+matched their registered hashes; the calendar's October source-page image
+and the OLM no. 142 source-page image were read. The Week 28 witnesses and
+variation notice were reread at their owner's stated source-page loci after
+the retained whole-PDF hashes were checked. The U.S. GIRM chapters II and VII
+were fetched whole and the adopted branch norms read; the fresh chapter VII
+delivery differs from the bound delivery only in request-query metadata,
+with its normative text unchanged. The Lectionary introduction's cycle,
+Ordinary Time correlation and resumption rules were also read in the retained
+complete witness. These checks preserve the inventory, open local choices
+and W28 evidence ceiling; they do not claim a new exact altar-book collation
+or renew the later research and publication verdicts.

@@ -34,7 +34,10 @@ room by refusing communion's life.
 Gregory supplies the decisive inference in *Homiliae in Evangelia* 38.1,
 7–13. Someone can be expelled from Matthew's feast, so Gregory understands
 it as the present Church, where good and bad are gathered, rather than the
-completed heavenly assembly. In §9 neither baptism nor faith by itself can
+completed heavenly assembly. He permits a harmonizing account of Matthew
+and Luke in §1; the present-Church argument is his preferred exposition,
+not an assertion that another faithful reading is impossible.
+In §9 neither baptism nor faith by itself can
 be the garment: the guest already has entry, yet lacks it. Gregory identifies
 charity as the missing reality. In §§10–11 the garment's twofold weave is
 love of God and neighbor, extending beyond friendly reciprocity to enemies.

@@ -1,0 +1,11 @@
+{"event": "seed", "stage": "scope-gate", "timestamp": "2026-10-06T17:03:17Z", "workflow_id": "proper-study", "workflow_version": 9}
+{"event": "packet", "hash": "20782fe20902eac115ebd24caffd2e219970341a9a05a653aaf1db63a35cb613", "iteration": 0, "size": 770, "stage": "scope-gate", "timestamp": "2026-10-06T17:03:17Z"}
+{"event": "intervene", "stage": "author-study", "text": "Replacement run after beb2231b657a358d ended BLOCKED at conversion. During author-study, repair the twelve absent proper-<element-key> labels at the appointed text or rights-safe locator, with separate long/short Gospel and Communion targets, as guidance/web-editions.md requires. Preserve supported research and prose; verify canonical conversion at the author boundary to catch missing anchors before downstream review. New content, artifact and web reviews must judge the new run and bytes; prior verdicts are historical evidence only.", "timestamp": "2026-10-06T17:03:35Z"}
+{"disposition": "PASS", "event": "result", "stage": "scope-gate", "timestamp": "2026-10-06T17:03:36Z", "transition": "resolve-context"}
+{"event": "packet", "hash": "48a4447db7e338b59464f64ada5bb870290a7a74c2da9300ae0bf40aae0e3310", "iteration": 0, "size": 33141, "stage": "resolve-context", "timestamp": "2026-10-06T17:03:36Z"}
+{"disposition": "PASS", "event": "result", "stage": "resolve-context", "timestamp": "2026-10-06T17:08:59Z", "transition": "research"}
+{"event": "packet", "hash": "7f13c9eae0615bf28c4d1bb2e6ce8f1b83f04c6070cbba88859061c41cc86d55", "iteration": 0, "size": 34725, "stage": "research", "timestamp": "2026-10-06T17:08:59Z"}
+{"disposition": "PASS", "event": "result", "stage": "research", "timestamp": "2026-10-06T17:21:00Z", "transition": "research-preflight"}
+{"event": "packet", "hash": "a1a838fa44cd4afa1f98e4f5a3437f37cab16ff5784c5597d9439fd7cc675c41", "iteration": 0, "size": 778, "stage": "research-preflight", "timestamp": "2026-10-06T17:21:00Z"}
+{"disposition": "PASS", "event": "result", "stage": "research-preflight", "timestamp": "2026-10-06T17:21:06Z", "transition": "research-review"}
+{"event": "packet", "hash": "b7f3261dea72642ac9ed48734b086c445f7399f768646d2b1550ec74f54e91b1", "iteration": 0, "size": 297918, "stage": "research-review", "timestamp": "2026-10-06T17:21:06Z"}

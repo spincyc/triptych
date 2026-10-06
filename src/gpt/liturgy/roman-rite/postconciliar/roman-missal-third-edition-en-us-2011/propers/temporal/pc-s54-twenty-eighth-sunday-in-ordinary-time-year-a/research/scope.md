@@ -2,8 +2,8 @@
 
 Workflow provenance: `proper-study` v9, digest
 `ef8058d0bd73437c67569a8d24ce67dac4c273fef7688aef8a54dec9e7986b13`,
-run `beb2231b657a358d`, research iteration 0, seed commit
-`742d56bd0152eba02999c6e9afb47ae3340c5a72`. Research boundary: 2026-10-06. This is the postconciliar U.S. Twenty-eighth
+run `36f05d0fcf255303`, research iteration 0, seed commit
+`c150b81c6c7bab0dca2c688191fc7706a3f497c0`. Research boundary: 2026-10-06. This is the postconciliar U.S. Twenty-eighth
 Sunday in Ordinary Time, Year A, requested for 2026-10-11, Lectionary 142.
 The national calendar and official dated readings were independently checked;
 no supplied local overlay changes that result. The complete appointment and
@@ -12,6 +12,21 @@ and [verified appointments](../propers/verified.md). The common Missal evidence
 has one owner, [Week 28](../../shared/ordinary-time/weeks/28/propers/verified.md).
 Nothing here imports another calendar's Sunday, prayer selection or
 interpretation. The audience is an adult parish assembly.
+
+This fresh research pass reuses exact retained acquisitions and independently
+reads their evidence; it does not inherit a previous verdict. All biblical
+contexts and adopted reception loci listed below were reread. The Missal,
+OLM, Notitiae and Haydock pages were viewed again, and their complete retained
+artifacts were hashed against the registered identities. The dated calendar,
+Lectionary and GIRM acquisitions from the current context pass were inspected.
+The new GIRM VII response differs from the registered response in page-shell
+bytes; its complete §§352–367 match after HTML extraction and whitespace
+normalization. The exact retained registered artifact remains the binding.
+The official current NABRE introductions were reopened for corroboration;
+their older registered pins remain controlling. The acquisition history in
+source records is not a claim that this worker downloaded those files anew.
+Earlier production and dependency-repair history belongs in
+[production-review.md](production-review.md), not in the current evidence verdict.
 
 ## Evidence and edition disposition
 
@@ -93,7 +108,7 @@ specified loci, never an assertion that whole source volumes were studied.
 | Augustine, *Enarrationes in Psalmos* 129.1–8, NPNF1 VIII | Nobody stands on innocence before a strict accounting; forgiveness and Christ's redemption allow patient hope; the morning is related to Christ and resurrection. | Direct whole-psalm exegesis; Entrance basis, not the modern antiphon or the entire Mass. |
 | Bellarmine, *Explanatio in Psalmos*, Psalm 129 ad vv. 1–8, John O'Sullivan's 1866 abridged English | Penitence requires knowledge both of misery and of mercy; ignorance of either yields complacency or despair; redemption begun will be completed. | Later saintly direct reception. Abridged translation does not control complete Latin. His narrative use of David is reception, not a title-established dated occasion. |
 | Augustine, *Enarrationes* 22.1–6, NPNF1 VIII | Christ shepherds the Church through regeneration and discipline to a mature table and lasting dwelling; mercy precedes any merit. | Complete short exposition. His sacramental reading is distinguishable from the poem's pastoral and hospitality images. |
-| Augustine, *Enarrationes* 33, second exposition, §§8–14, NPNF1 VIII | Love of God and neighbor are the two feet; the wealthy may die wealthy while the faithful lack money; true good includes virtues and Christ the living bread. | Continuous selected portion. §13 states the objection; §14 answers it. Do not reduce him to a promise of material plenty. |
+| Augustine, *Enarrationes* 33, second exposition, §§8–14, NPNF1 VIII | Love of God and neighbor are the two feet; the wealthy may die wealthy while the faithful lack money; true good includes virtues and Christ the living bread. | Continuous selected portion of the historical translation, with its printed ellipses; not a claim to an unabridged Latin collation. §13 states the objection; §14 answers it. Do not reduce him to a promise of material plenty. |
 | Gregory the Great, *Homiliae in Evangelia* 38.1–16, complete Latin | Matthew's wedding is the present mixed Church because someone can yet be expelled; the garment is charity, beyond mere admission; twofold love extends to enemies and to the neglected sick and needy. | Direct Gospel exegesis. §§9–13 supply the main chain, §12 guards the imperfect against despair, §14 forbids presumption. The entire current formulary is an editorial extension. |
 | John Chrysostom, *Homiliae in Matthaeum* 69.1–3, NPNF1 X | The repeated call manifests the giver's generosity, entry is unmerited, but subsequent conduct matters; he reads the burned city historically and urges visible changed life. | Direct exegesis. His comparison imports Luke's excuses; Matthew itself says farm and business. Do not report Luke's wife/oxen as proclaimed here. |
 | Chrysostom, *In Philippenses* homily XV, ad 4:10–23, NPNF1 XIII | Contentment is learned in prosperity and deprivation, empowered by Christ; gifts remain praiseworthy fellowship; God supplies necessities rather than riches. | Whole final homily read. The donor benefits as giver without making Paul self-sufficient or treating the gift as a purchase of grace. |
@@ -117,12 +132,26 @@ requirement independently of Cyril's attribution question.
 
 ## Bounded sweep and second searches
 
-The commentary-work index was queried for all eight distinct scriptural
-loci, then the Psalm 129, Isaiah 25 and 1 John gaps were rerun without a
-result limit. Holdings are discovery aids, not proof that a named author
+The commentary-work index was freshly queried without a result limit for all
+eight distinct scriptural loci, preserving Vulgate Psalm numbering. The
+original first/second search history is retained in the matrix below; its
+adopted witnesses were independently reread in this pass. Holdings are
+discovery aids, not proof that a named author
 comments on the exact verses. Exact retained sources or complete published
 responses were then opened at the loci above. The sweep is bounded by these
 work families, languages and sources, not a claim to exhaust all reception.
+
+The fresh 1 John query again supplied Bede, Didymus, Lyra, Denis, Theophylact
+and Estius as leads without exact held passages. A work-family hit for a
+Lapide does not establish a Johannine holding: its returned volumes include
+Pauline and Pentateuch material. A further web search for Bede on 1 John 3:2
+returned aggregators, not an inspected critical or historical edition; no
+later direct interpretation is attributed on that basis. Fresh official-site
+searches for the Week 28 Offerings yielded no primary English exemplar.
+The translation inventory's Hadrianum Collect, Veronese after-Communion and
+Cummiskey antecedent Offerings rows were inspected as finding aids. They
+remain distinct from approved 2011 English and are not adopted here without
+the independent antecedent collation required for that route.
 
 | Appointed unit(s) | First search and actual result | Proportionate second pass and disposition |
 | --- | --- | --- |
@@ -152,7 +181,9 @@ destruction. These are different exegetical moves. Do not fuse them into a
 single claim that either author made. Gregory's garment is charity;
 Chrysostom's is appropriate life and practice. Those are complementary at
 this point, not a fabricated dispute. Gregory distinguishes Matthew's feast
-from Luke's eternal banquet, while Chrysostom freely uses Luke's details;
+from Luke's eternal banquet, while Chrysostom freely uses Luke's details.
+Gregory also expressly allows a harmonizing explanation in §1, provided faith
+is preserved, rather than making his distinction the only admissible reading;
 the study must maintain Matthew's actual wording and its own long/short cut.
 The NPNF Matthew homily’s editorial note 2585 says verses 7–14 in its
 opening biblical lemma are supplied from the Oxford/Field tradition rather
@@ -190,8 +221,10 @@ canonical record and annotations commands. The declared critical-composition
 comparisons for both Gospel forms preserve the separate Catholic-critical
 profile alongside the default traditional-first answer. All numerical
 reader-facing claims must consume these generated annotations or the exact
-supported labels. A terminal historical appendix in the expansive study must
-receive the same reviewed claims before the concise page-2 table is derived.
+supported labels. The existing [terminal historical appendix](../sections/60-history.tex)
+in the expansive study was inspected as the home for these same claims:
+its eight dossiers preserve the event/composition distinction, source-specific
+qualifications and separate Gospel comparison required by the concise table.
 No date-free predecessor's approval is treated as review of these claims.
 
 | Unit | Source-owner inspection and correct historical distinction | Place / uncertainty to carry into both studies |
@@ -202,8 +235,8 @@ No date-free predecessor's approval is treated as review of these claims.
 | Philippians | Read Prat's chronology paragraph and Vander Heeren's date/place paragraph in retained historical encyclopedia article texts: the two returned Roman-captivity composition answers remain alternatives, not a merged range or current consensus. | Paul writes to Philippi; the source's proposed writing place is Rome, distinct from the addressees. The readings' hunger and gifts have no separately established incident date. |
 | Acclamation | Read Ladeuze's date/place discussion and Prat's chronology: uncertainty includes Caesarea or Rome and different displayed composition labels. | Address to Ephesus / wider recipients is distinct from place of composition; the acclamation inherits no date for a separate spoken liturgical event. |
 | Both Gospel forms | Read Maas's Ninth Journey and chronology calibration, Jacquier's Time and place of composition, Durand's Gospel paragraph, and the canonical event/composition owners. The Temple discourse event is a project-derived date within Maas's named traditional chronology. The king's banquet is a parable, not a royal event dated by that number. | Jerusalem Temple teaching follows Matthew 21:23. Jacquier's early dispersal tradition is explicitly unreliable, his later reckoning conditional and Irenaeus inference inconclusive; Durand's earlier date concerns an Aramaic predecessor, leaving the Greek rendering undated. These must not be presented as six equally certain modern findings. |
-| Both Gospel forms, critical comparison | Inspected the registered NABRE Matthew introduction passage and independently reopened its official current final authorship/date/place paragraphs after a first 403; read the supported post-destruction lower bound and probable later-decade qualification. No exact year or endpoint is minted. | Antioch in Syria is a plausible composition proposal, not the discourse location. The comparison concerns the Greek Gospel, distinct from traditional hypotheses about an Aramaic predecessor. |
-| Communion psalm | Read Douay Psalm 33 title, canonical attribution/event bindings and Corbett's David paragraph. Reacquired the exact Haydock facsimile (hash matched) and viewed physical pp. 396, 398–399: the year frame belongs to surrounding 1 Kings 20–22, not a separately dated Psalm verse. | Title names Achimelech; the linked narrative calls the king Achis at Geth (modern Gath). Preserve the naming discrepancy and the source's A.M. frame; no fresh conversion. David's reign identifies the attributed person; this flight precedes it. |
+| Both Gospel forms, critical comparison | Inspected the registered NABRE Matthew introduction passage and independently reopened its official current final authorship/date/place paragraphs; read the supported post-destruction lower bound and probable later-decade qualification. No exact year or endpoint is minted. | Antioch in Syria is a plausible composition proposal, not the discourse location. The comparison concerns the Greek Gospel, distinct from traditional hypotheses about an Aramaic predecessor. |
+| Communion psalm | Read Douay Psalm 33 title, canonical attribution/event bindings and Corbett's David paragraph. Reused the exact retained Haydock facsimile (hash matched) and viewed physical pp. 396, 398–399: the year frame belongs to surrounding 1 Kings 20–22, not a separately dated Psalm verse. | Title names Achimelech; the linked narrative calls the king Achis at Geth (modern Gath). Preserve the naming discrepancy and the source's A.M. frame; no fresh conversion. David's reign identifies the attributed person; this flight precedes it. |
 | Communion John | Read Durand's Johannine dating paragraph and Drum's discussion in the retained article texts: the displayed range concerns writing, not the future appearing or vision of God. | No exact place of writing is established here. The promised vision is not an event to locate on an earthly map. |
 | Three orations | Non-scriptural with no appointed biblical citation; no canonical date answer is fabricated. | Liturgical action and reception, not a newly invented scriptural historical scene. |
 
@@ -244,30 +277,3 @@ Research is complete to the stated evidence boundary; exact altar-book
 collation, ancient prayer genealogies, later direct 1 John reception and
 unselected local options remain explicit limitations, not fabricated findings.
 No drafting, review acceptance, PDF inspection or publication is asserted here.
-
-## Research dependency repair, iteration 1
-
-On 2026-10-06, the research-records gate's dependency-path finding was
-repaired. `review-dependencies.toml` now declares source owners beneath
-`src/` only. The stable identity registry remains a separately sealed
-computation input; the publication-policy guidance remains governing
-guidance, not a source owner. Neither removal changes the adopted identity
-or the publication boundary.
-
-The authority-chain audit covered the context, instance, appointment audit,
-Week 28 owner, bindings and rights declarations. The compiled v4 research
-seal includes the national calendar, dated U.S. reading page, OLM appointment,
-GIL selection principles, both U.S. GIRM chapters, all four common-Missal
-witnesses, Week 28 owner and edition registry. The calendar acquisition and
-dated reading acquisition still match their registered hashes; the October
-calendar page was reread. No contextual correction was required.
-
-The rights inventories are retained dependencies. The ICEL publication-policy
-work and the registered 2021 canon-838 decree and *Liturgiam authenticam*
-owners are now explicitly declared as well, so the recorded permission and
-restriction evidence behind those inventories enters the seal. This is an
-inspection of the registered evidence chain, not a new retrieval or a new
-rights determination. Registered bindings and chronology computation continue
-to supply their own source ancestry and available payloads. Previously
-excluded translation routes, unverified antecedents and local selections
-remain excluded; exact-book and source-language limits above remain in force.

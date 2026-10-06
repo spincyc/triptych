@@ -390,3 +390,35 @@ coverage gate. The existing eligibility declaration was preserved. No generated
 web artifact exists for review, and no web snapshot receipt or approval was
 created. The accepted source text and rendered PDFs remain unchanged; this
 stage is blocked pending the workflow's upstream source-repair route.
+
+## Prior-run research dependency repair history — 6 October 2026
+
+The following receipt was relocated from `scope.md` during replacement run
+`36f05d0fcf255303`. It records research iteration 1 of prior run
+`beb2231b657a358d`; it is preserved history, not a verification or acceptance
+claim for the replacement run.
+
+On 2026-10-06, the research-records gate's dependency-path finding was
+repaired. `review-dependencies.toml` now declares source owners beneath
+`src/` only. The stable identity registry remains a separately sealed
+computation input; the publication-policy guidance remains governing
+guidance, not a source owner. Neither removal changes the adopted identity
+or the publication boundary.
+
+The authority-chain audit covered the context, instance, appointment audit,
+Week 28 owner, bindings and rights declarations. The compiled v4 research
+seal includes the national calendar, dated U.S. reading page, OLM appointment,
+GIL selection principles, both U.S. GIRM chapters, all four common-Missal
+witnesses, Week 28 owner and edition registry. The calendar acquisition and
+dated reading acquisition still match their registered hashes; the October
+calendar page was reread. No contextual correction was required.
+
+The rights inventories are retained dependencies. The ICEL publication-policy
+work and the registered 2021 canon-838 decree and *Liturgiam authenticam*
+owners are now explicitly declared as well, so the recorded permission and
+restriction evidence behind those inventories enters the seal. This is an
+inspection of the registered evidence chain, not a new retrieval or a new
+rights determination. Registered bindings and chronology computation continue
+to supply their own source ancestry and available payloads. Previously
+excluded translation routes, unverified antecedents and local selections
+remain excluded; exact-book and source-language limits above remain in force.

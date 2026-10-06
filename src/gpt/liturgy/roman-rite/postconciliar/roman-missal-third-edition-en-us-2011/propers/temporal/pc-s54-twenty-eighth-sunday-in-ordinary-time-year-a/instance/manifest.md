@@ -21,10 +21,11 @@ identity. The one canonical common source owner is
 [Week 28](../../shared/ordinary-time/weeks/28/propers/verified.md); its edition
 and rights limitations are not duplicated here.
 
-This leaf is the canonical research owner for `main.tex`, `synthesis.tex`
-and `homily.tex`; only the source reservation exists at context stage.
-No separate companion research owner is authorized. The sole web edition
-will belong to the canonical study. Source plan and uncompleted collation
+This leaf is the canonical research owner for the existing authored
+`main.tex`, `synthesis.tex` and `homily.tex`. No separate companion research
+owner is authorized. The sole web edition belongs to the canonical study.
+The fresh context resolution does not inherit their prior review verdicts.
+Source plan and uncompleted collation
 are recorded in [source-plan.md](../research/source-plan.md).
 
 ## Ordered appointment inventory

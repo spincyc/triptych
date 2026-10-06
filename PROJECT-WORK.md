@@ -18,8 +18,14 @@ U.S. Twenty-eighth Sunday in Ordinary Time, Year A, 11 October 2026:
 This request opens that provider and identity under the three-document
 contract. Work remains on the workspace branch `feature/propers/codex`.
 
-**In progress; first run BLOCKED at web conversion.** The clean starting
+**In progress; replacement run active after a blocked first run.** The clean starting
 checkout is `833196e9405a686ccd4a5b185a6461d2d80aee6d`.
+Replacement v9 run `36f05d0fcf255303`, seeded at
+`c150b81c6c7bab0dca2c688191fc7706a3f497c0`, passed scope and context. Fresh
+research reconciliation and preflight passed; fresh xhigh research-review-0000
+is underway. Recorded intervention 0000 assigns the twelve source anchors
+and an early conversion check to author-study. Every replacement acceptance
+will come from its own fresh native review, not the first run's verdicts.
 Proper-study v9 run `beb2231b657a358d`, seeded at
 `742d56bd0152eba02999c6e9afb47ae3340c5a72`, passed its scope and context
 stages. The first research worker completed a bounded dossier with 29 source

@@ -76,4 +76,17 @@ oration genealogy and further Bede/other reception leads remain unadopted.
 These are explicit evidence ceilings, not replacements for the research
 performed. Both Gospel and Communion choice sets remain unselected, as do
 local chants, Preface, Eucharistic Prayer and unspecified local-calendar
-choices. Cold review and all authored artifacts remain subsequent work.
+choices. The three authored artifacts now exist. Their retained reviews do
+not supply acceptance to a fresh production.
+
+## Context reconciliation, 2026-10-06
+
+The fresh context check reread the appointment and common-owner source
+witnesses and retained the existing source routes above. The OLM no. 142
+inspection and the official U.S. calendar, reading-page and GIRM controls now
+have bindings in [source-bindings.toml](source-bindings.toml); the initial
+table's prospective instructions are historical acquisition tasks, not
+current claims of missing records. [context.md](context.md) records the
+fresh checks and the complete inventory. The next research stage must
+independently assess the retained evidence and its stated limits; it may
+reuse the acquired sources, but not a predecessor's verdict.

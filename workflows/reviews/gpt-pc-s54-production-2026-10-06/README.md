@@ -5,7 +5,34 @@ Ordinary Time, Year A, 11 October 2026, for an adult parish assembly. The
 canonical leaf is
 `src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/`.
 
-## Run identity
+## Replacement run in progress
+
+Run `36f05d0fcf255303` is seeded at
+`c150b81c6c7bab0dca2c688191fc7706a3f497c0` under the unchanged v9 workflow
+and digest below. Scope and fresh context reconciliation passed. The context
+worker independently rechecked the official occurrence, appointments and
+source images, preserving the evidence ceilings and correcting stale scaffold
+wording; scope, source-library and local-link checks pass. Fresh research
+reconciliation and research-preflight-0000 passed. The source sweep, direct
+loci and chronology owners were independently rechecked; the chronology
+regeneration changed only the manifest fingerprint. The scope distinguishes
+retained acquisitions from fresh inspections and preserves Gregory's permission
+for harmonization and the NPNF translation's ellipses. No new source or binding
+was required. Fresh xhigh research-review-0000 is underway.
+
+The replacement research worker's `make check-sources` exited 2 for six stale
+publication-inventory hashes and the still-unrefreshed document catalog. The
+coordinator refreshed the source inventories after leaf stability; catalog
+generation and a full source rerun remain due with installation. That failed
+command remains a failure in its receipt and scratch log.
+Intervention 0000 records the author-owned anchor repair and early converter
+check. Existing research and prose are reusable evidence and material;
+every replacement content, artifact and web acceptance must come from its
+own fresh native stages. Records are archived separately in
+`replacement-run-36f05d0fcf255303/`; `native-run/` remains the first terminal
+run without rewriting its BLOCKED result.
+
+## First run identity
 
 - Workflow: `proper-study`, version 9.
 - Digest: `ef8058d0bd73437c67569a8d24ce67dac4c273fef7688aef8a54dec9e7986b13`.
