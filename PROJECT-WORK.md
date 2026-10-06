@@ -18,7 +18,8 @@ U.S. Twenty-eighth Sunday in Ordinary Time, Year A, 11 October 2026:
 This request opens that provider and identity under the three-document
 contract. Work remains on the workspace branch `feature/propers/codex`.
 
-**In progress.** The clean starting checkout is `833196e9405a686ccd4a5b185a6461d2d80aee6d`.
+**In progress; first run BLOCKED at web conversion.** The clean starting
+checkout is `833196e9405a686ccd4a5b185a6461d2d80aee6d`.
 Proper-study v9 run `beb2231b657a358d`, seeded at
 `742d56bd0152eba02999c6e9afb47ae3340c5a72`, passed its scope and context
 stages. The first research worker completed a bounded dossier with 29 source
@@ -42,7 +43,17 @@ findings. A fresh high-effort author completed the three-page homily, with
 preflight and independent xhigh homily-review-0000 passed with no findings.
 All three content reviews are accepted. The final three-document build and
 artifact gate passed at 21/10/3 pages; all accepted content seals remain
-current. Fresh xhigh visual-review-0000 is inspecting the final 34 pages.
+current. Fresh xhigh visual-review-0000 passed after inspecting all 34 pages
+and four contact sheets. VIS-001 explicitly accepts the sparse first
+interpretation ending without requiring a repair. Canonical web conversion
+failed because all twelve required schema-2 proper anchors are absent from
+the study source. The converter correctly refused to invent those targets.
+The actual worker BLOCKED result ended run `beb2231b657a358d`; its content and
+visual reviews remain historical evidence, not publication acceptance.
+The engine has no supported upstream routing or resume operation for this
+linear-stage failure. A replacement run will preserve the existing research
+and authored work, repair the source anchors under the study owner, and obtain
+fresh native reviews. Web review and publication gates remain pending.
 The dated USCCB evidence confirms Year A and Lectionary 142. The complete
 inventory, registry-fixed week-28 owner, edition disposition and three PDF
 dependencies are recorded. The actual workflow

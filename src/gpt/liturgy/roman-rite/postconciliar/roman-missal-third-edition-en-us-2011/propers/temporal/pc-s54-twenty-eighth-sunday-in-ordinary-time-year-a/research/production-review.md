@@ -372,3 +372,21 @@ the compact chronology and the study's short unit-ending pages. The accepted
 source and rights limitations recorded above remain unchanged. No semantic
 defect requiring upstream revision was identified during this artifact check.
 No PDF was installed and no web edition was changed.
+
+## Generate-web, iteration 0 — 6 October 2026
+
+The required canonical conversion stopped before producing Markdown because
+the accepted study sources contain none of the twelve explicit schema-2
+appointed-element labels. The converter reported missing source anchors for
+`proper-entrance`, `proper-collect`, `proper-first-reading`, `proper-psalm`,
+`proper-second-reading`, `proper-acclamation`, `proper-gospel-long`,
+`proper-gospel-short`, `proper-offerings`, `proper-communion-psalm`,
+`proper-communion-john` and `proper-after-communion`.
+
+The web-edition guidance assigns missing source labels to the study author.
+This conversion stage permits conversion and declaration repairs only, so it
+did not insert labels into the accepted study or weaken the converter's
+coverage gate. The existing eligibility declaration was preserved. No generated
+web artifact exists for review, and no web snapshot receipt or approval was
+created. The accepted source text and rendered PDFs remain unchanged; this
+stage is blocked pending the workflow's upstream source-repair route.

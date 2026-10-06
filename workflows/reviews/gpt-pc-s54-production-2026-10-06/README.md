@@ -19,7 +19,21 @@ uses a fresh reviewer at xhigh effort with no authoring conversation. Gates
 run through the engine. No worker commits, publishes or advances the run.
 This production opens only the named GPT postconciliar identity.
 
-## Current state
+## First run: BLOCKED at canonical web conversion
+
+Run `beb2231b657a358d` ended with the actual generate-web-0000 BLOCKED result.
+Conversion refused all twelve missing `proper-<element-key>` source labels.
+The source labels belong to the study author under `guidance/web-editions.md`;
+the conversion worker correctly preserved accepted sources and PDFs and did
+not fabricate Markdown or a web receipt. Its exact failed conversion output
+is retained in `conversion-failure.log`; the coordinator independently
+reproduced the exact converter failure with exit status 1. The native engine has no upstream route or
+resume operation for a linear-stage BLOCKED result. A replacement run is
+required to repair the study-owned anchors and obtain fresh acceptance.
+The first run's proofs, accepted reviews and terminal record remain intact;
+none is represented as publication acceptance or rewritten into a success.
+
+## First-run history
 
 The scope gate and context resolution passed. The engine accepted the actual
 `research-0000` worker result, then research-preflight-0000 rejected two
@@ -78,8 +92,13 @@ Build logs have no unresolved layout or reference warnings, all fonts are
 embedded, and Ghostscript parsed all 34 pages without diagnostics. Final
 proofs, auxiliary/log evidence and rasters are retained under
 `build/tpt-runs/beb2231b657a358d/artifacts/build-artifacts-0/`.
-Fresh xhigh visual-review-0000 is inspecting all final pages; visual, web and
-publication acceptance remain pending.
+Fresh xhigh visual-review-0000 passed after inspecting all 34 pages and four
+contact sheets and verifying the receipt, source, PDF, auxiliary and raster
+identities. VIS-001 explicitly accepts the sparse first-interpretation ending
+on study page 12 because its complete four-senses block and fresh-page next
+interpretation remain clear; no repair is owed. The engine dispatched
+generate-web-0000, which returned the actual BLOCKED result described above.
+Web review, installation and publication gates never ran in this first run.
 A separate read-only identity check
 confirmed the dated USCCB assignment and Year A against its 2026 calendar.
 That finding is an input lead, not the workflow's context or research verdict.
