@@ -9,3 +9,9 @@
 {"event": "packet", "hash": "a1a838fa44cd4afa1f98e4f5a3437f37cab16ff5784c5597d9439fd7cc675c41", "iteration": 0, "size": 778, "stage": "research-preflight", "timestamp": "2026-10-06T17:21:00Z"}
 {"disposition": "PASS", "event": "result", "stage": "research-preflight", "timestamp": "2026-10-06T17:21:06Z", "transition": "research-review"}
 {"event": "packet", "hash": "b7f3261dea72642ac9ed48734b086c445f7399f768646d2b1550ec74f54e91b1", "iteration": 0, "size": 297918, "stage": "research-review", "timestamp": "2026-10-06T17:21:06Z"}
+{"disposition": "PASS", "event": "result", "stage": "research-review", "timestamp": "2026-10-06T17:33:24Z", "transition": "author-study"}
+{"event": "packet", "hash": "82b912161bc8227bbb983aa42bb1c3a06157766fd8369c70c98d5f85831dd5a1", "iteration": 0, "size": 35512, "stage": "author-study", "timestamp": "2026-10-06T17:33:24Z"}
+{"disposition": "PASS", "event": "result", "stage": "author-study", "timestamp": "2026-10-06T17:44:45Z", "transition": "study-preflight"}
+{"event": "packet", "hash": "9047ef753201cd5b1fc522628f52ad27169001c70a18fd9e24faf595f1810e99", "iteration": 0, "size": 775, "stage": "study-preflight", "timestamp": "2026-10-06T17:44:45Z"}
+{"disposition": "PASS", "event": "result", "stage": "study-preflight", "timestamp": "2026-10-06T17:44:55Z", "transition": "study-review"}
+{"event": "packet", "hash": "5df414e5cef2dbbe1a0ab0eda75142aacbc62ea5c1d192ad02de4aa605cef942", "iteration": 0, "size": 43715, "stage": "study-review", "timestamp": "2026-10-06T17:44:55Z"}

@@ -422,3 +422,85 @@ rights determination. Registered bindings and chronology computation continue
 to supply their own source ancestry and available payloads. Previously
 excluded translation routes, unverified antecedents and local selections
 remain excluded; exact-book and source-language limits above remain in force.
+
+## Replacement run 36f05d0fcf255303: author-study, iteration 0 — 6 October 2026
+
+This is a fresh author verification for `proper-study` v9, workflow digest
+`ef8058d0bd73437c67569a8d24ce67dac4c273fef7688aef8a54dec9e7986b13`,
+seed `c150b81c6c7bab0dca2c688191fc7706a3f497c0`. Earlier receipts above
+remain historical. The complete expansive study was reread against this run's
+accepted scope and interpretation audit. The existing substantive prose remains
+supported: the two readings develop charity as the wedding garment and divine
+abundance learned through dependence, with distinct four-sense accounts and
+whole-formulary coverage. Gregory's Homily 38, Chrysostom's Philippians XV,
+and Augustine's second exposition of Psalm 33 were also reopened in the retained
+witnesses to check central moves. No accepted research evidence, companion
+prose, manifest contract or source binding was changed.
+
+The engine-recorded intervention is repaired by twelve explicit
+`proper-<element-key>` source labels. Nine sit at the individual public-domain
+study text or locator in `sections/20-texts.tex`; the three oration targets sit
+at their existing incipit-and-subject locators in `sections/10-treatment.tex`.
+The short Gospel now has its own heading and exact Matthew 22:1–10 locator,
+distinct from the long form, with the printed end marker retained. Both
+Communion alternatives have separate targets. Canonical conversion was tested
+early and again against the final sources; both successful conversions passed
+the converter's source and site-rendered anchor coverage audit.
+
+The freshly calculated substantive count is **6,537 words**: opening 330,
+element treatment 2,248, charity interpretation 1,809, abundance interpretation
+1,855 and comparison 295. The calculation removes footnotes, headings, labels,
+TeX commands and sense labels and excludes the inventory, Scripture quotations,
+chronology and terminal apparatus. Its per-component receipt also confirms
+that the exposition is unchanged apart from the three added labels. Exact
+2008/2011 altar-book collation, an approved U.S. English Offerings exemplar,
+independent ancient-prayer genealogy and a later direct 1 John witness remain
+unavailable. Historical translations, Bellarmine's abridgment, Cyril attribution,
+Greek collation limits and the Fathers' differing Gospel interpretations remain
+qualified. No restricted approved wording or reconstructed prayer was added.
+
+The required `make doc` author build, research artifact component check, all
+twelve default research content preflights and the separate exact-run provenance
+check passed. The settled PDF has **21 physical letter pages**, 461,681 bytes,
+shared-format 11-point Latin Modern, monochrome output, and fifteen embedded,
+subsetted font rows with Unicode mappings. The final log has no overfull or
+underfull box, undefined reference, missing-character or LaTeX warning.
+Ghostscript parsed all pages without diagnostics. The canonical timestamp is
+`2026-10-06T17:37:34Z`; the shared metadata records this run and the current
+GPT-6 author contribution without asserting an exposed runtime variant.
+
+All 21 final full-page rasters were inspected. An intermediate 22-page build
+had duplicated the three prayer locators in the study-text component and spilled
+the final locator onto a nearly empty page. Removing that duplication and placing
+the labels at the existing locators restored 21 pages. The short ends of the
+study-text unit, first interpretation's grouped four senses and historical
+appendix remain readable, intentional unit boundaries. The compact chronology,
+footnotes, final references, timestamp and rights colophon show no clipping,
+collision or new sparse spill.
+
+The cold-review proof is
+`build/tpt-runs/36f05d0fcf255303/artifacts/author-study-0000/author-proof.pdf`,
+SHA-256 `1e48c0145da0af5a46cf496aa0b50e0833b9541f3f1bd44647dd706393bee9dd`.
+The canonical PDF is the bare leaf ID with `.pdf` beneath `build/gpt/`.
+The stage directory retains the settled auxiliaries, build and check logs,
+PDF information, fonts, extracted text, word-count receipt, proof identities
+and the replaceable `rasters` child.
+
+The early Markdown proof is beneath that directory's `early-web/gpt/`, at
+the canonical leaf ID with `.md`, SHA-256
+`830636e8d3a90330bb4d98d5132e2732c75f5651025a0cac228fcea76ac31695`.
+The final counterpart beneath `final-web/gpt/` is SHA-256
+`19eb04c5dd83d4bc49e081f0ec625afab2ded2ba7076b2f4e90209387f448f72`.
+The default converter initially refused installed Python Markdown 3.11 because
+the bound lock requires 3.10.3. Both successful checks used an existing pinned
+3.10.3 runtime through `PYTHONPATH`; the final command uses the replacement
+run's task-local dependency copy. Exact commands and environments are retained
+in the stage evidence receipt. No dependency lock, global package or converter
+code changed. These are author boundary conversion proofs, not a published
+web edition or independent web acceptance.
+
+This dispatch completes study authoring and its own verification only. Fresh
+content, companion, artifact and web stages must judge this run's bytes; the
+later shared-timestamp three-document build and independent visual review remain
+required. No PDF was installed and no workflow result was inherited as a new
+acceptance.

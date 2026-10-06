@@ -18,13 +18,32 @@ loci and chronology owners were independently rechecked; the chronology
 regeneration changed only the manifest fingerprint. The scope distinguishes
 retained acquisitions from fresh inspections and preserves Gregory's permission
 for harmonization and the NPNF translation's ellipses. No new source or binding
-was required. Fresh xhigh research-review-0000 is underway.
+was required. Fresh xhigh research-review-0000 passed with no blocking findings,
+verifying all 1,768 sealed files, 16 computation inputs and 28 distinct binding
+fingerprints. The engine dispatched author-study-0000 with recorded intervention
+0000 for the source anchors, new-run provenance and early conversion proof.
+Author-study-0000 and study-preflight-0000 passed. All twelve appointed-element
+anchors, including separate alternatives, validate in source and rendered
+output. The fresh 21-page author proof retains 6,537 substantive words and has
+SHA-256 `1e48c0145da0af5a46cf496aa0b50e0833b9541f3f1bd44647dd706393bee9dd`.
+All pages were inspected; independent study-review-0000 is pending.
 
 The replacement research worker's `make check-sources` exited 2 for six stale
 publication-inventory hashes and the still-unrefreshed document catalog. The
 coordinator refreshed the source inventories after leaf stability; catalog
 generation and a full source rerun remain due with installation. That failed
-command remains a failure in its receipt and scratch log.
+command remains a failure in its receipt and scratch log. The author's later
+optional full source check likewise stopped at changed publication hashes and
+the unrefreshed document catalog; this is not a final publication check.
+
+The early converter check also exposed a runtime mismatch: default
+Python-Markdown 3.11 does not satisfy `requirements-public-alpha.txt`, which
+binds 3.10.3. The existing pinned dependency was copied into task-local scratch
+and its version checked; global packages and the lock remain unchanged.
+Subsequent web and publication commands use
+`PYTHONPATH=.scratch/pc-s54-repair/dependencies`. A read-only comparison of
+research-seal output under the default and pinned environments is byte-identical;
+no accepted seal or result was replaced by that diagnostic check.
 Intervention 0000 records the author-owned anchor repair and early converter
 check. Existing research and prose are reusable evidence and material;
 every replacement content, artifact and web acceptance must come from its
