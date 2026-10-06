@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a --edition synthesis --check restricted-not-reproduced
+exit 0
+--- stdout ---
+restricted-not-reproduced (synthesis edition): 29 bound sources, 13 of them restricted, none reproduced
+
+--- stderr ---
+

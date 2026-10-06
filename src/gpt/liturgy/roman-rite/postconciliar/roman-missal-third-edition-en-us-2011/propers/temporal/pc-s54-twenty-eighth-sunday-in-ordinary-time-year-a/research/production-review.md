@@ -151,3 +151,73 @@ web edition was changed by this repair.
 
 These are author verification facts. Independent study review and the
 subsequent companion, three-document visual and web stages remain required.
+
+## Derive-synthesis, iteration 0 — 6 October 2026
+
+The concise study is authored in `synthesis.tex` and its six synthesis-only
+components. It preserves the accepted study's two controlling questions:
+charity as the life fitting to received communion, and divine abundance amid
+real need. Four cross-proper questions interleave Gregory, Augustine,
+Chrysostom and Thomas at the points where their arguments meet. The comparison
+retains Gregory/Chrysostom's different readings of the burned city, the
+complementary garment identifications, the short Gospel's omitted inspection,
+Chrysostom's necessities and Thomas's heavenly fulfillment, and the two
+mutually alternative Communion emphases. No new evidence-dependent claim or
+change to the accepted research or expansive prose was introduced.
+
+The author read the complete expansive study, interpretation audit and scope,
+and reopened the retained Gregory Homily 38 argument on present Church,
+garment, twofold charity and imperfect love, Chrysostom's Philippians XV
+argument on learned contentment and the donors' fellowship, and the official
+Matthew introduction's dating/place qualification. This was bounded reuse,
+not a fresh research sweep or independent critical collation. The canonical
+generated chronology bytes remain unchanged. Its distinct dates, relation
+labels, uncertainties and critical comparison survive in the concise dossier.
+The Gospel forms have separate generated date cells within one shared dossier
+so both appointment keys are covered; their contextual explanation appears
+once. The other passages follow canonical order.
+
+Substantive exposition is **3,255 words**: 830 in Themes and Movement and
+2,425 in the developed commentary. The count uses English word tokens after
+removing footnotes, structural headings, labels and TeX commands; inventory,
+overview, chronology and terminal apparatus are excluded. The existing
+schema-2 manifest already declared the exact six components and presentation
+roles; its mode membership remains accurate and was validated without changing
+the accepted study or its research dependencies.
+
+The settled author proof is **10 physical letter pages**. Inventory and the
+exactly four overview rows begin and end on page 1; chronology begins and
+ends on page 2; Themes and Movement spans pages 3–4; developed commentary
+begins on page 5. The settled auxiliary markers prove those positions. The
+required build and synthesis artifact component check pass, as do the twelve
+default synthesis content-preflight checks and the separate exact-run
+provenance check. The final TeX log has no overfull/underfull boxes, undefined
+references, LaTeX warnings or infinite-shrink diagnostics. PDF metadata and
+extracted text were checked; all fonts are embedded, subsetted Latin Modern
+with Unicode mappings.
+
+Every page was visually inspected at full-page raster scale. Tables remain
+within their margins; the compact shared chronology type is legible; both
+thematic pages carry substantive prose; footnotes and running heads remain
+separate from body text; the revision timestamp and rights colophon share the
+final references page. No installed publication or web edition was changed.
+The source-finalization timestamp is `2026-10-06T16:26:10Z`; the shared
+record adds the actual concise-author contribution under the exact packet
+provenance. Its update requires the later common-timestamp three-document
+build, not a claim that the older study proof is the final installed artifact.
+
+Retained proof directory:
+`build/tpt-runs/beb2231b657a358d/artifacts/derive-synthesis-0000`.
+The replaceable `rasters` child is separate from the proof and diagnostics.
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `author-proof.pdf` (442,008 bytes) | `65433c3386fc7f8acc5682b2d9af949cb09d4cf195c76f18680a15f558f90cf4` |
+| `author-proof.aux` | `ba06a7fc468df6fded7ebbad66e054033fecca4edd85ad8090572c98c79e1969` |
+| `author-proof.log` | `04868ba896243dc4d67129716e1a52cd1f3318e20ce113619ef20cabe0538891` |
+
+Build, component, content and provenance logs, recorder evidence, PDF
+information, font report, text extraction, word-count calculation and complete
+proof identities are retained alongside those files. This records author
+verification only; cold synthesis review and final three-document visual
+review remain distinct forthcoming stages.

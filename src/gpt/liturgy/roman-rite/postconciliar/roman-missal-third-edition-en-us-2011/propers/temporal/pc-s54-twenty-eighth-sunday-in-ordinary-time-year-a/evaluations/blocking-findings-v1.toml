@@ -50,9 +50,9 @@ run_id = "beb2231b657a358d"
 workflow = "proper-study"
 workflow_version = 9
 stage = "study-review"
-iteration = 0
-disposition = "CHANGES_REQUIRED"
-standing = 1
+iteration = 1
+disposition = "PASS"
+standing = 0
 accepted_count = 0
 advisory_count = 0
 observation_count = 0
@@ -71,21 +71,12 @@ observation_count = 0
 
 [[stages]]
 stage = "study-review"
-iteration = 0
-disposition = "CHANGES_REQUIRED"
+iteration = 1
+disposition = "PASS"
 run_id = "beb2231b657a358d"
 workflow = "proper-study"
 workflow_version = 9
-standing = 1
+standing = 0
 accepted_count = 0
 advisory_count = 0
 observation_count = 0
-
-[[findings]]
-stage = "study-review"
-id = "STU-001"
-severity = "blocking"
-location = "sections/60-history.tex:22, Gospel dossier explanatory row; retained author-proof.pdf p. 17"
-problem = "The NABRE comparison is paraphrased as dating Matthew after Jerusalem's destruction, \"probably in the following decade.\" The inspected USCCB Matthew introduction instead says \"probably at least a decade later\" than A.D. 70 (https://bible.usccb.org/bible/matthew/0, final authorship/source/date discussion; also the registered matthew-introduction passage and research acquisition matthew-intro.txt:813). The study changes an open minimum interval into a particular following decade, potentially placing composition earlier and adding an unsupported upper bound. The generated comparison correctly retains only the post-A.D. 70 claim, so it does not authorize this narrowing."
-required_result = "Revise this source-attributed prose to preserve the NABRE introduction's actual qualification: after A.D. 70, probably at least a decade later. Retain the separate critical-profile comparison, Antioch's qualified status, and the distinction from traditional hypotheses; do not invent a replacement year or closed date range."
-repair_target = "study"

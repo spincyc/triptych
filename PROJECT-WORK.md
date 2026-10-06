@@ -33,7 +33,10 @@ Study-review-0000 supported the arguments and coverage but raised STU-001:
 the Matthew chronology prose narrowed a source's open minimum interval into
 a following decade. The generated chronology remains correct. A fresh
 high-effort author corrected the prose and rebuilt the 21-page proof;
-study-preflight-0001 passed, and a fresh xhigh reviewer is checking the revision.
+study-preflight-0001 and fresh xhigh study-review-0001 passed. STU-001 is
+resolved with no standing blocking findings. The concise author completed a
+10-page, 3,255-word interleaved study and inspected all ten pages. The actual
+synthesis-preflight-0000 passed; fresh xhigh synthesis-review-0000 is underway.
 The dated USCCB evidence confirms Year A and Lectionary 142. The complete
 inventory, registry-fixed week-28 owner, edition disposition and three PDF
 dependencies are recorded. The actual workflow

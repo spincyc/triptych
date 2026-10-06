@@ -47,9 +47,18 @@ corrected only the historical wording, shared generation metadata and production
 audit, preserving accepted research. Its 21-page proof has SHA-256
 `c5ada91b5330bcff1f38437d1399ccefc767c16d4495b2daf2309379a154fa93`;
 only pages 17 and 21 differ from the prior rasters and were inspected again.
-Study-preflight-0001 passed and fresh study-review-0001 is underway. Study
-checkpoint `1852e3c23` is pushed, preserving the original reviewed sources and
-proof identity. Study acceptance and publication remain pending.
+Study-preflight-0001 and fresh xhigh study-review-0001 passed. The independent
+review checked the current source fingerprint and proof, supporting source
+loci and the retained Matthew introduction. STU-001 is resolved with no
+blocking findings remaining. Checkpoints `1852e3c23` and `a60cc4c3a` are pushed,
+preserving both study versions and their proof identities. The engine has
+dispatched derive-synthesis-0000 to a fresh high-effort author. Its settled
+concise proof has 10 pages and 3,255 substantive words, SHA-256
+`65433c3386fc7f8acc5682b2d9af949cb09d4cf195c76f18680a15f558f90cf4`.
+It interleaves both accepted interpretations after the prescribed four-page
+opening. Author checks and all-page inspection pass; the actual
+synthesis-preflight-0000 passed and fresh xhigh synthesis-review-0000 is
+underway. Companion, visual, web and publication acceptance remain pending.
 A separate read-only identity check
 confirmed the dated USCCB assignment and Year A against its 2026 calendar.
 That finding is an input lead, not the workflow's context or research verdict.
