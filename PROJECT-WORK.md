@@ -5,7 +5,32 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-05.
+Last reconciled: 2026-10-06.
+
+## GPT Twenty-eighth Sunday proper studies, 2026-10-06
+
+<!-- promised-deliverable: gpt-pc-s54-three-documents-2026-10-06 -->
+
+The maintainer requested the upcoming Sunday's postconciliar propers through
+the documentation workflow, with subagents permitted. The target is GPT's
+U.S. Twenty-eighth Sunday in Ordinary Time, Year A, 11 October 2026:
+`liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a`.
+This request opens that provider and identity under the three-document
+contract. Work remains on the workspace branch `feature/propers/codex`.
+
+**In progress.** The clean starting checkout is `833196e9405a686ccd4a5b185a6461d2d80aee6d`.
+The dated official occurrence, complete text inventory and registry-fixed
+week-28 owner are being checked before research. The actual `proper-study`
+workflow will control research, independent content reviews, the expansive
+and concise studies and homily, visual and web reviews, installation and
+publication records. No finished document or acceptance is claimed.
+
+Completion requires the actual workflow's ACCEPTED disposition, all three
+reviewed PDFs and canonical web edition installed, catalog and release
+records reconciled, required source and publication checks, and a coherent
+commit on the workspace branch. Production evidence will be retained under
+`workflows/reviews/gpt-pc-s54-production-2026-10-06/`. Live deployment and
+integration into main are separate from this workspace delivery.
 
 ## GPT Twentieth Sunday, Psalm event chronology and quality review, 2026-10-05
 

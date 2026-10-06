@@ -1,6 +1,27 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-pc-s54-three-documents-2026-10-06"
+owner = "PROJECT-WORK.md"
+promise = "Drive the upcoming Sunday 2026-10-11 GPT postconciliar propers through proper-study, producing and independently reviewing the expansive study, concise study, homily and canonical web edition."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "gpt-pc-s54-identity"
+  criterion = "The exact provider and formula are authorized; the dated official occurrence, edition, cycle, shared Missal owner and complete branch inventory are resolved."
+  status = "open"
+
+  [[deliverables.requirements]]
+  id = "gpt-pc-s54-workflow"
+  criterion = "The actual proper-study run reaches ACCEPTED with independent reviewers at declared effort, durable native packets and results, and no unresolved blocking findings."
+  status = "open"
+
+  [[deliverables.requirements]]
+  id = "gpt-pc-s54-publication"
+  criterion = "The reviewed 20–50-page expansive study, 10–12-page concise study, standalone homily and canonical web edition are installed with exact artifact evidence, catalog links and separate release records. Required source and publication checks pass and coherent work is committed on the workspace branch."
+  status = "open"
+
+[[deliverables]]
 id = "gpt-1962-twentieth-quality-2026-10-05"
 owner = "PROJECT-WORK.md"
 promise = "Complete the upcoming Sunday 2026-10-11 GPT 1962 propers through proper-study; fix missing traditional Psalm event dating/context; cold-review recent GPT versus Claude document and homily quality and apply substantiated lessons; reconcile with main, push validated work to main and verify Pages."
