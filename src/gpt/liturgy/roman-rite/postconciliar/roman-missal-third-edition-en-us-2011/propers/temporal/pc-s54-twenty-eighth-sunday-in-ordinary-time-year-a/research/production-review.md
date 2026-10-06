@@ -565,3 +565,70 @@ artifact child. This is author verification only. Fresh synthesis review and
 the later common-timestamp three-document build and cold visual review remain
 required. No PDF was installed and no web edition or shared source inventory
 was changed.
+
+## Replacement run 36f05d0fcf255303: derive-homily, iteration 0 — 6 October 2026
+
+Both accepted studies were reread in full, together with their interpretation
+audit and the retained homily. The speech and terminal note remain supported
+and were reused without textual alteration. The argument follows the second
+interpretation, “The feast sustains those who still hunger,” for an adult
+parish assembly. Its decisive detail is Philippians 4:14 immediately following
+4:13: Christ's strengthening does not make the Philippians' assistance
+superfluous. This changes the pastoral question from whether faith eliminates
+need to how trust, receiving help and sharing another's distress belong
+together. Matthew's prepared feast and neglected invitation, Psalm 23's table
+amid enemies, Isaiah's end of death and the prayers for grace and divine
+participation sustain that specific argument. Replacing those texts would
+remove its governing tension and its answer, not merely its illustrations.
+
+The fresh bounded source check reopened Philippians 4 in the retained
+Douay–Rheims witness, Chrysostom's Homily XV at the argument on 4:11–14 and
+its gift context, Thomas's complete Isaiah 25 exposition (paragraph 84985),
+and the FDLC images at printed pages 14–15 for the two prayer subjects.
+The retained complete Thomas and FDLC acquisitions still match their
+registered hashes. This was reinspection, not a new acquisition or a critical
+edition collation. Exact loci remain outside the speech under References.
+The homily uses Matthew 22:1–10, common to both Gospel forms; neither a local
+Gospel choice nor a Communion-antiphon choice is assumed. No source-dependent
+claim was added and no accepted study or research evidence was repaired.
+
+Fresh token counting confirms **1,208 spoken words**, with internal
+apostrophes and hyphens counted within a word and title/apparatus excluded.
+At **110–120 words per minute**, this gives **10.1–11.0 minutes**, an estimate
+only. A fresh silent rereading checked sentence sense, antecedents, the move
+from invitation to hunger, the turn from present help to final fulfillment,
+and the return to the table image. No audible rehearsal or timed human
+delivery occurred. The practical examples remain applications rather than
+testimony; there is no invented anecdote, clerical identity, attributed direct
+quotation, stage direction, inline scholarly apparatus or recited prayer.
+
+The required `make doc` build, homily artifact component check, twelve default
+homily content-preflight checks and exact-run provenance check pass. The
+settled author proof has **3 physical letter pages**, with the full-width
+title and shared two-column speech on pages 1–2 and the separate note,
+References, timestamp and rights colophon on page 3. All three final full-page
+rasters were visually inspected. Column flow, running head, apparatus and
+colophon are legible, with no clipping, collisions or unintended spill page.
+The settled log has no overfull or underfull boxes, undefined references,
+missing characters or LaTeX warnings. Ghostscript parses every page without
+diagnostics. All ten Latin Modern font rows are embedded, subsetted and have
+Unicode mappings. PDF metadata and extraction show the sole revision display
+at `2026-10-06T18:06:33Z`. The 246,688-byte file exceeds the 75-KiB-per-page
+investigation threshold slightly; it contains no raster images, and the
+embedded shared-font payload accounts for the short artifact's size.
+
+| Author proof artifact | SHA-256 |
+| --- | --- |
+| Homily PDF | `c54a0de449fd18508112f0365875217631f5bebf03a11d88f9dd978fc159cd09` |
+| Settled auxiliary | `3e3b39672b7ff30966db77c17ab182839e19807046a6ecd92043883cc2146706` |
+| Settled log | `dbd762cae9a4c6d5c0e1a8ffdee134be8940c89bbfa94dad324cf215c83726b2` |
+
+The proof is the canonical leaf's `-homily.pdf` below `build/gpt/`, with its
+settled auxiliary and log alongside. The required helper's dedicated rasters
+are under `build/tpt-runs/36f05d0fcf255303/artifacts/derive-homily-0000/rasters`;
+the assigned worker evidence retains exact proof copies and check receipts.
+The shared generation record carries this packet's exact provenance and a
+fresh contribution. Earlier production receipts remain historical. This is
+author verification, not independent homily or visual acceptance. The later
+three-document build must rebuild both studies at the shared timestamp.
+No PDF was installed, no web edition changed and no shared inventory edited.

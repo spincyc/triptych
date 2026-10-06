@@ -1,0 +1,274 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel-long",
+            "gospel-short",
+            "offerings",
+            "communion-psalm",
+            "communion-john",
+            "after-communion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/synthesis-01-inventory.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel-long",
+            "gospel-short",
+            "offerings",
+            "communion-psalm",
+            "communion-john",
+            "after-communion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/synthesis-02-overview.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel-long",
+            "gospel-short",
+            "offerings",
+            "communion-psalm",
+            "communion-john",
+            "after-communion"
+          ],
+          "key": "concise-chronology",
+          "kind": "front-matter",
+          "path": "sections/synthesis-03-chronology.tex",
+          "references": [
+            "research/chronology-annotations.tex"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel-long",
+            "gospel-short",
+            "offerings",
+            "communion-psalm",
+            "communion-john",
+            "after-communion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/synthesis-04-themes.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel-long",
+            "gospel-short",
+            "offerings",
+            "communion-psalm",
+            "communion-john",
+            "after-communion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/synthesis-05-commentary.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/synthesis-90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
+      "element_keys": [
+        "entrance",
+        "collect",
+        "first-reading",
+        "psalm",
+        "second-reading",
+        "acclamation",
+        "gospel-long",
+        "gospel-short",
+        "offerings",
+        "communion-psalm",
+        "communion-john",
+        "after-communion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "charity"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel-long",
+            "gospel-short",
+            "offerings",
+            "communion-psalm",
+            "communion-john",
+            "after-communion"
+          ],
+          "key": "gift-becomes-charity",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "title": "The invitation becomes a life of charity"
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Gregory the Great"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "abundance"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel-long",
+            "gospel-short",
+            "offerings",
+            "communion-psalm",
+            "communion-john",
+            "after-communion"
+          ],
+          "key": "abundance-amid-need",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "title": "The feast sustains those who still hunger"
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
+    "files": {
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex": "eb7a09ab41b1547ffb101809c76517d46c82357c0efb0a1fed19e56ed9d9c08f",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/interpretations.md": "41f8457d421f450795d25cdd4a1b00fbd4cab380517de863e43fe6d9b18f657b",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/synthesis-01-inventory.tex": "d3adfd3320a9439469031d3eb9c7c56eff64acba56685db04b79755cc45fa3b2",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/synthesis-02-overview.tex": "ac1bf6926be823c9b0ed18d004bebcbc7a2f9de60d0bdbe01c2041c984e2267b",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/synthesis-03-chronology.tex": "4b90e58a132cc21189805b2f99c198bd5cfdff9f49cc5bc49ed7330072d71230",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/synthesis-04-themes.tex": "3d2dd7e48776f81867c56c058a84c7d6a69bb4a4907229edcff1c8af38d0299e",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/synthesis-05-commentary.tex": "99eead249c02760ed52477d815c55ccd9a0611eb928398b5819495bfa771cea0",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/synthesis-90-apparatus.tex": "4814f061fd38a97ac9a2aa5d462d02ea403eb421ce8b1a56e5226109970038d8",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/synthesis.tex": "f954337bfeef5fdba55a31dd7e42fa50e4ca6a590c0a44662c010b55465e1bea"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "9",
+            "ef8058d0bd73437c67569a8d24ce67dac4c273fef7688aef8a54dec9e7986b13",
+            "36f05d0fcf255303",
+            "c150b81c6c7bab0dca2c688191fc7706a3f497c0",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "PASS: The 10-page concise study faithfully interleaves the expansive study's two interpretations, preserves the appointed options and qualified canonical chronology, and meets the required four-page opening and page-5 commentary boundary in the inspected PDF, rendered pages, auxiliary labels, and settled log. Comparison with the expansive study and the exact cited Gregory, Chrysostom, Augustine, Thomas, and chronology passages supports its controlling claims without unsupported additions; the digital-witness, bounded reception-history, and unavailable exact altar-book-collation limits remain explicit, and all 11 sealed input files match the packet."
+}

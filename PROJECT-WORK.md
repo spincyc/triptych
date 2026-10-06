@@ -31,7 +31,11 @@ with no findings after checking the full proof, source loci, chronology and
 17 sealed inputs. Derive-synthesis-0000 and synthesis-preflight-0000 passed;
 the fresh ten-page concise proof has 3,274 substantive words and restores
 Gregory's explicit allowance for a harmonizing Gospel reading. Independent
-synthesis-review-0000 is pending. Every replacement
+synthesis-review-0000 passed with no findings after checking all ten pages,
+source support, chronology qualifications and eleven sealed inputs. The
+homily author and preflight stages passed with a fresh three-page proof and
+1,208 spoken words (estimated 10.1–11.0 minutes). Independent homily review
+is pending. Every replacement
 acceptance comes from its own native reviews.
 
 First run `beb2231b657a358d` passed content and visual reviews but ended

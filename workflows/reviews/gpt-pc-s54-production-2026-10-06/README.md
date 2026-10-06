@@ -35,7 +35,19 @@ Luke while retaining his principal present-Church exposition. The fresh
 ten-page proof has 3,274 substantive words, SHA-256
 `c0557a1d49124bab8ba1a548126f86280ec62edb7ed09edc414b6558744165f1`.
 All pages were inspected; derive-synthesis-0000 and synthesis-preflight-0000
-passed. Independent synthesis-review-0000 is pending.
+passed. Fresh xhigh synthesis-review-0000 passed with no findings after
+inspecting all ten pages, confirming the physical-page sequence, checking
+exact source loci and chronology qualifications, and matching eleven sealed
+inputs. The engine dispatched derive-homily-0000 to a fresh high-effort author.
+That author retained the supported spoken text after checking both accepted
+studies and reopening its sources. The fresh three-page proof has SHA-256
+`c54a0de449fd18508112f0365875217631f5bebf03a11d88f9dd978fc159cd09`.
+Its 1,208 spoken words imply an estimated 10.1–11.0 minutes at 110–120 words
+per minute; only silent prose rehearsal is claimed. All three pages were
+inspected. Derive-homily-0000 and homily-preflight-0000 passed; independent
+homily-review-0000 is pending. The author's optional full source check exited
+2 only at the still-stale document catalog; source-library and inventory
+validation passed. Final catalog generation and the complete rerun remain due.
 
 The replacement research worker's `make check-sources` exited 2 for six stale
 publication-inventory hashes and the still-unrefreshed document catalog. The

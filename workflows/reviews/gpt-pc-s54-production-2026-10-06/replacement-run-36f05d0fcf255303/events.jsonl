@@ -21,3 +21,9 @@
 {"event": "packet", "hash": "18557e0d15071ea3225040d51f5530aa48b36e7ae795b1f80b09d67901832ace", "iteration": 0, "size": 779, "stage": "synthesis-preflight", "timestamp": "2026-10-06T17:57:12Z"}
 {"disposition": "PASS", "event": "result", "stage": "synthesis-preflight", "timestamp": "2026-10-06T17:57:23Z", "transition": "synthesis-review"}
 {"event": "packet", "hash": "529a08969a637490b97e24cbbbbe74b14efaaa799d6441f8f5c852a68bfd37b3", "iteration": 0, "size": 41050, "stage": "synthesis-review", "timestamp": "2026-10-06T17:57:23Z"}
+{"disposition": "PASS", "event": "result", "stage": "synthesis-review", "timestamp": "2026-10-06T18:04:29Z", "transition": "derive-homily"}
+{"event": "packet", "hash": "579f061571181bcd1aea893d7295fc4bad99426a7c19554e0ecd527ce7483e2d", "iteration": 0, "size": 33280, "stage": "derive-homily", "timestamp": "2026-10-06T18:04:29Z"}
+{"disposition": "PASS", "event": "result", "stage": "derive-homily", "timestamp": "2026-10-06T18:08:38Z", "transition": "homily-preflight"}
+{"event": "packet", "hash": "d85adb3c662b8b3c9c1489fd271b7ec4365211a799036432cc61ef41255a49d5", "iteration": 0, "size": 776, "stage": "homily-preflight", "timestamp": "2026-10-06T18:08:38Z"}
+{"disposition": "PASS", "event": "result", "stage": "homily-preflight", "timestamp": "2026-10-06T18:08:50Z", "transition": "homily-review"}
+{"event": "packet", "hash": "3dca4c7decd03171cc50c11f84a450aff3c05808f414bcbef67fa497eb710444", "iteration": 0, "size": 38340, "stage": "homily-review", "timestamp": "2026-10-06T18:08:50Z"}
