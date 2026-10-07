@@ -49,13 +49,13 @@ provider = "claude"
 run_id = "9c1136f1f8d1241c"
 workflow = "proper-study"
 workflow_version = 9
-stage = "research-review"
+stage = "study-review"
 iteration = 1
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 4
-observation_count = 1
+advisory_count = 7
+observation_count = 2
 
 [[stages]]
 stage = "research-review"
@@ -67,6 +67,18 @@ workflow_version = 9
 standing = 0
 accepted_count = 0
 advisory_count = 4
+observation_count = 1
+
+[[stages]]
+stage = "study-review"
+iteration = 1
+disposition = "PASS"
+run_id = "9c1136f1f8d1241c"
+workflow = "proper-study"
+workflow_version = 9
+standing = 0
+accepted_count = 0
+advisory_count = 3
 observation_count = 1
 
 [[advisories]]
@@ -101,7 +113,36 @@ location = "research/scope.md section 3.5 (Alleluia, Ps 107:2) and section 1.3 (
 problem = "The Alleluia's words are Ps 56:8-9 as well as Ps 107:2-3 (scope 1.2), and the sweep follows that route for Augustine (Enarr. 56, NPNF1-8) and Bellarmine (Ps 56:8). It does not follow it for Hilary. His Tractatus in Ps 56 stands in the bound PL 9 OCR layer: the edition's psalm-text heading at about physical lines 29070-29095 prints 'Paratum cor meum, Deus, paratum cor meum: cantabo et psalmum dicam tibi. Exsurge gloria mea', and the commentary follows. `commentary-work-index discover` reports Hilary as held for Psalm 56. The matrix records neither a reading nor a disposition. Section 1.3 says only that PL 9 has no tractate on Ps 107, which leaves out a psalter-text witness to the same verse."
 required_result = "Read Hilary's Tract. in Ps 56 on vv. 8-9 in the bound PL 9 layer, giving the column and checking the page image before any Latin is quoted. Record in section 3.5 what it says of the prepared heart and the song, and add its psalm-text heading and lemma to the section 1.3 Alleluia row. Alternatively, record the lead and say why it was not opened."
 
+[[advisories]]
+stage = "study-review"
+id = "STU-004"
+severity = "advisory"
+location = "sections/50-comparison.tex lines 27-30 (the witness sentence beginning 'St Augustine speaks in all three'); evidence at sections/20-word-at-a-distance.tex 141-145, 163-169, 193-198 and sections/30-songs-of-sion.tex 51-61, 182-189, 195-197"
+problem = "The comparison says that Augustine speaks 'for the order of prayer, the prepared heart and the physician's due time in the first, for the rivers of Babylon and the road of the law in the second'. The second reading uses all three of the loci credited to the first. It quotes Enarr. 144 on v. 17 (the saints first praised his justice) at 30:51-61. It reads the Gradual's due time as Augustine's physician's care at 30:195-197. And its Alleluia account quotes the same sentence of Enarr. 56 on v. 8, 'the patience of good men with preparation of heart accepteth the will of God', at 30:184-186. The first reading repeats that sentence at 20:164-166. The iteration-1 repair added 'the prepared heart' to the first reading's list, extending an allocation that already overlapped. Nothing false is asserted, but the sentence presents as the first reading's own a body of Augustinian evidence that the first and second readings share. That shared evidence is exactly what the comparison exists to show, and it leaves unsaid how differently the two readings use it: the first for accepting another means than the one asked, and the father's night of waiting; the second for glorying and singing in tribulation, and the exiles' waiting."
+required_result = "The comparison names Augustine's order of prayer (Enarr. 144 on v. 17), his physician's due time (144 on vv. 15-16) and his prepared heart (56 on v. 8) as evidence shared by the first and second readings. In a clause, it says how each reading uses them differently. It does not credit them to the first reading alone. No other sentence needs to change."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-005"
+severity = "advisory"
+location = "sections/20-word-at-a-distance.tex lines 170-171 ('Neither speaks of the Gospel, and the join is the editor's'), 179-181 ('Here too the join to the Gospel is the editor's: ...'), 187-189 ('On the editor's reading the ready heart and the mind at rest are one disposition'); sections/50-comparison.tex lines 4-5 ('and what they share can be said exactly')"
+problem = "The new Alleluia and Collect prose names the evidence class of its own connections three times, and the comparison opens by announcing its own precision. guidance/editorial.md ('Speaking from within the tradition'; 'State the finding, not the process that produced it') treats a qualifying sentence as legitimate when its subject is a source, a text or a witness. The same sentence is the defect when its subject is the guide, the reading or an evidence class: 'Naming the discipline is itself the defect.' The three-document profile leaves the synthesis label to research/interpretations.md. The study meets that bound by crediting each Father only with what he said. Line 170, 'Neither speaks of the Gospel', already does so with the sources as subject, so the added label adds nothing. These clauses answer the wording of STU-001's required result ('Mark any join ... as the editor's'). That instruction was satisfied by the source-subject sentence, and it is the reviewer's wording that invited the label. The sentence at 179-181 is also hard to parse: it announces a join and then gives it only as a negation, with 'the ruler's' left to stand for 'the ruler's rank'. No reader is misled, since no join is attributed to a Father. The phrasing occurs nowhere else in the study, and the house-voice screen, which is partial by construction, passed it."
+required_result = "In those places, a source, a text or the father is the grammatical subject. 'Neither speaks of the Gospel' stays. The clause 'and the join is the editor's', the sentence opener 'Here too the join to the Gospel is the editor's' and the phrase 'On the editor's reading' go. The gloria mea contrast is stated directly: the glory the verse sings is God, while the honour Gregory says pride pays to rank is the honour the ruler expected. The comparison's 'and what they share can be said exactly' goes. No attribution changes, and no Father is credited with any join."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-006"
+severity = "advisory"
+location = "research/interpretations.md section 4.1 'What the three share' (lines 622-630)"
+problem = "The reasoning record still says that all three readings take Filius tuus vivit and the Communion's hope as the formulary's hinge, read the Introit's confession as the right beginning of prayer, and rest on the Fathers' agreement that the healing was by word without presence. Its own section 2.1 ('The reading's centre is not the Gospel but the chants and Epistle') and section 2.5 contradict this for the second reading. Section 3 hears the third reading's Introit as Israel's confession and not in Augustine's order of prayer. The reviewed comparison (sections/50-comparison.tex 4-33) now states the shared ground correctly, and research/production-review.md lines 250-254 report the discrepancy as an upstream item. No reader-facing text now depends on section 4.1. It is, however, the interpretation reasoning record that the concise-study and homily authors read, and as it stands it invites them to restore the overstatement STU-002 removed. Only a research re-entry can repair it, and that would rerun every dependent document and review for a sentence no reader sees. That is why it is not raised as blocking."
+required_result = "Whenever research is next re-entered, section 4.1 claims as common to all three readings only what all three hold: the Postcommunion's oboedire mandatis answering the Introit's non oboedivimus, the Introit's confession heard three ways, and a place for the Communion's hope in God's word. It credits the Gospel hinge and the healing-by-word agreement to readings 1 and 3, and Augustine's order of prayer to readings 1 and 2, as the study's comparison does. Until then, the concise and homily authors take the readings' shared ground from the reviewed comparison, not from section 4.1."
+
 [[observations]]
 stage = "research-review"
 location = "research/chronology.toml, introit claim composition.book-of-daniel.prayer-of-azarias (src/sources/chronology/composition.yaml lines 1869-1906)"
 note = "Still true at this iteration: the corpus prefers, as catholic-traditional-v1 composition, the CE 'Book of Daniel' author's own judgment that the Prayer of Azarias is 'most likely' by an author 'long after the Exile', and it gives that judgment against the view the same article reports of 'nearly all Catholic writers' (the time of Daniel). The corpus note settles the order under scripture-chronology section 4.4 and records the contrary view without authoring it, so the record (scripture-chronology query --evidence at Dan 3:29 returns no alternative) gives the page-2 dossier no received alternative to foreground. That is a tension for the chronology and profile owners, not a defect of this leaf."
+
+[[observations]]
+stage = "study-review"
+location = "rendered pp. 17, 25 and 28 of the 31-page research build; the \\runninghead marks in sections/30-songs-of-sion.tex, sections/50-comparison.tex and sections/90-apparatus.tex"
+note = "Where a section begins mid-page, its running head governs that whole page. Page 17 opens with the first reading's Moral and Anagogical senses under the head 'The Song of the Exiles'; this is new at iteration 1, from the reflow of the added Alleluia paragraph. Page 25 opens with the third reading's senses under 'The Three Readings Compared', and page 28 opens with the Scriptural Date and Location table under 'Appendix: Scope and Qualifications'. This is a matter for visual review, not for the study's argument."
