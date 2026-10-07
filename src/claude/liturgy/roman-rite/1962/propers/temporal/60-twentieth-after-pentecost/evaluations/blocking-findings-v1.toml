@@ -49,13 +49,13 @@ provider = "claude"
 run_id = "9c1136f1f8d1241c"
 workflow = "proper-study"
 workflow_version = 9
-stage = "study-review"
+stage = "synthesis-review"
 iteration = 1
 disposition = "PASS"
 standing = 0
 accepted_count = 0
 advisory_count = 7
-observation_count = 2
+observation_count = 3
 
 [[stages]]
 stage = "research-review"
@@ -79,6 +79,18 @@ workflow_version = 9
 standing = 0
 accepted_count = 0
 advisory_count = 3
+observation_count = 1
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 1
+disposition = "PASS"
+run_id = "9c1136f1f8d1241c"
+workflow = "proper-study"
+workflow_version = 9
+standing = 0
+accepted_count = 0
+advisory_count = 0
 observation_count = 1
 
 [[advisories]]
@@ -146,3 +158,8 @@ note = "Still true at this iteration: the corpus prefers, as catholic-traditiona
 stage = "study-review"
 location = "rendered pp. 17, 25 and 28 of the 31-page research build; the \\runninghead marks in sections/30-songs-of-sion.tex, sections/50-comparison.tex and sections/90-apparatus.tex"
 note = "Where a section begins mid-page, its running head governs that whole page. Page 17 opens with the first reading's Moral and Anagogical senses under the head 'The Song of the Exiles'; this is new at iteration 1, from the reflow of the added Alleluia paragraph. Page 25 opens with the third reading's senses under 'The Three Readings Compared', and page 28 opens with the Scriptural Date and Location table under 'Appendix: Scope and Qualifications'. This is a matter for visual review, not for the study's argument."
+
+[[observations]]
+stage = "synthesis-review"
+location = "rendered p. 11 of the concise proof (sha256 cc65a2e2fb61246b7c25d61e42fc0b7e57a547530b9e0ce37c54957aacdb169b); the \\section{Appendix: Scope and Qualifications} start in sections/concise/90-apparatus.tex"
+note = "The iteration-0 observation still holds after the repair. The page opens with the commentary's last two paragraphs, on the Secret and the three hopes, under the running head 'Appendix: Scope and Qualifications'. It belongs to the visual review."
