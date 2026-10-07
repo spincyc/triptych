@@ -49,13 +49,25 @@ provider = "claude"
 run_id = "9c1136f1f8d1241c"
 workflow = "proper-study"
 workflow_version = 9
-stage = "synthesis-review"
-iteration = 1
+stage = "homily-review"
+iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 7
+advisory_count = 12
 observation_count = 3
+
+[[stages]]
+stage = "homily-review"
+iteration = 0
+disposition = "PASS"
+run_id = "9c1136f1f8d1241c"
+workflow = "proper-study"
+workflow_version = 9
+standing = 0
+accepted_count = 0
+advisory_count = 5
+observation_count = 0
 
 [[stages]]
 stage = "research-review"
@@ -92,6 +104,46 @@ standing = 0
 accepted_count = 0
 advisory_count = 0
 observation_count = 1
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-001"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/homily/10-homily.tex lines 32-34 ('Listen to what the man asked. ``Lord, come down before that my son die.'' The first answer he receives is hard.') with lines 49-50 ('So the man asks again: ``Lord, come down.''')"
+problem = "The speech gives the direct speech of Jn 4:49 as the request that came before the rebuke of 4:48. In John the first request is reported indirectly (4:47, Douay 'prayed him to come down and heal his son: for he was at the point of death'). The words 'Lord, come down before that my son die' are spoken only after the rebuke. So a listener who has just heard the Gospel hears v. 49 twice, the first time in the wrong place. The structure (ask, rebuke, ask again, word) is right and the argument is unharmed. But this is the one place where the homily quotes its own pericope out of order, and the textual point it blurs is that the urgent plea is the father's reply to the rebuke."
+required_result = "Give the first request in the words of 4:47 (quoted from the Douay, or reported without quotation marks), and keep the quoted 'Lord, come down before that my son die' for the plea after the rebuke. If 4:47 is quoted, add it to the note's Gospel loci."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-002"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/homily/10-homily.tex lines 96-102 ('The Communion prays, ``Be thou mindful of thy word to thy servant, in which thou hast given me hope.'' ... And the psalm goes on, in words the Communion leaves out: ``because thy word hath enlivened me.''')"
+problem = "The Communion (no. 1697) is Ps 118:49-50a and ends 'haec me consolata est in humilitate mea' ('This hath comforted me in my humiliation'). The speech quotes only v. 49 as the Communion, then says 'the psalm goes on' with v. 50b. A listener therefore hears the unsung clause as following straight after 'hope', and the Communion's own last line is dropped without notice. The note's locus (Ps 118:49-50) is correct; the speech misdescribes how far the chant runs. Nothing doctrinal turns on this, and the fuller form would sharpen the point: the chant stops just before the psalm's 'because'."
+required_result = "Let the speech say that the Communion goes on to 'This hath comforted me in my humiliation' and stops there, and that the psalm then finishes the sentence: 'because thy word hath enlivened me'. Alternatively, describe the unsung words as the close of the next verse, so that no listener takes v. 49 for the whole Communion."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-003"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/homily/10-homily.tex lines 117-121 ('On this altar Christ does come down: his Body and Blood are truly here. But he comes as he came to Capharnaum, by a word, hidden from our eyes. What we see is bread and wine.')"
+problem = "This is the homily's one doctrinal statement on the Eucharist, and it ends 'What we see is bread and wine.' Taken at its word, the sentence says that bread and wine are what is there to be seen. The Church's teaching (Council of Trent, sess. XIII, ch. 4 and can. 2) is that after the consecration only the appearances of bread and wine remain. The previous sentence ('truly here ... hidden from our eyes') keeps most listeners from misreading it, so it is not blocking. It is still the one imprecise clause in a carefully worded paragraph, at the point where precision matters most. The analogy 'he comes as he came to Capharnaum' also rests only on its 'by a word, hidden' qualifier. At Capharnaum Christ acted at a distance; on the altar he is substantially present."
+required_result = "Word the sensory clause as appearance, for example 'What we see looks like bread and wine' or 'What our eyes see are the appearances of bread and wine'. Optionally, let the Capharnaum analogy say that what the two share is the word and the hiddenness, not the mode of presence."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-004"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/homily/10-homily.tex lines 139-141 ('And the last prayer of this Mass will answer the first. We confessed that we ``disobeyed thy commandments.'' At the end we shall ask ...')"
+problem = "The Postcommunion is not the last prayer of the Mass. In every 1962 Mass the Placeat, the blessing and the Last Gospel follow it. On 11 October 2026, at a low or conventual Mass, the Maternity's Postcommunion also follows the Sunday's under its own conclusion: the leaf's own records say so (propers/verified.md 'Commemorated orations on 11 October 2026'; research/interpretations.md section 6). 'The first' means the Introit, which is not the first prayer either: the prayers at the foot of the altar come before it, and the Collect is the first oration. The Introit-Postcommunion pairing (non oboedivimus / oboedire mandatis) is sound and textual. Only the first-and-last framing is inexact, and at a low Mass on the homily's own date it is false."
+required_result = "Name the two texts instead of their positions, for example 'And the prayer after Communion will answer the Introit', or otherwise drop the first/last claim. The pairing and its point stay as they are."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-005"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/homily/10-homily.tex lines 87-89 ('Some here have prayed for a son or a daughter, a husband or a wife ... and the answer was not his.') read with lines 125-132 (the Introit 'Whatever thou hast done to us, O Lord, thou hast done by a just judgment: for we have sinned ...', Augustine's 'First they praised Him scourging, and so they felt Him feeding', and 'The father had to learn that order')"
+problem = "The homily speaks directly to listeners whose prayers for a child or spouse were not granted. A few paragraphs later it quotes the Introit's confession of just judgment for sin and Augustine's 'praised Him scourging', and it applies that order to the father of a dying son. Nothing in the speech stops the confession being heard as a verdict on each listener's loss. research/interpretations.md section 2.5 names that reading as the Introit's strongest difficulty. Jerome answers it there: the innocent youths confess ex persona populi. Augustine places the confession in the order of prayer, not as the explanation of every pain. The quotations are exact, Augustine's sentence is faithfully represented, and the homily's own gloss ('first God, and then my need') shows it does not intend the harsh reading. That is why this finding is not blocking. Still, the guard is missing exactly where a bereaved listener needs it."
+required_result = "Add one clause that lets the text guard itself. For example, say that Azarias was in the furnace for his faithfulness (Dan 3:12-23) and confessed his people's sin as his own, or that confessing God's justice is not a sentence passed on each sorrow. If a Father is named for it (Jerome, Comm. in Dan. on 3:29), add his locus to the note."
 
 [[advisories]]
 stage = "research-review"

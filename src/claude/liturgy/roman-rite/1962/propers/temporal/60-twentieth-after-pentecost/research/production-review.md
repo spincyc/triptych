@@ -557,3 +557,216 @@ the list of witnesses not reached now that the search bound names them,
 restored the colophon to page 12. The overview's anagogical row was shortened
 by two words so that it keeps three lines. This is an author proof inspection,
 not the independent visual evaluation.
+
+## Derive-homily
+
+Authored 7 October 2026 in `proper-study` v9, run `9c1136f1f8d1241c`, seeded
+at commit `1fa591a03c11d064c9f1afda6c44ccdbe7903bf2`, at derive-homily
+iteration 0, after the synthesis review passed at its iteration 1. The stage
+ran as a Claude Code harness subagent, `claude-opus-5-5[1m]`, dispatched at
+reasoning effort `high`. The homily is *The Twentieth Sunday after Pentecost:
+The Word on the Road Home*, built from `homily.tex`, addressed to an adult
+parish assembly for the occurrence of 11 October 2026, and derived from the
+two accepted studies of this same leaf. No research record, study or concise
+component, or manifest entry was edited for it; the manifest already declared
+both homily components with complete element keys and the references they use.
+The neighbouring Claude leaf `59-nineteenth-after-pentecost` was consulted only
+for the shape of its homily files and its word-count rule; no claim, locus or
+quotation was taken from it. The other provider's leaf for this identity was
+not opened.
+
+The entrypoint imports `common/preamble`, `common/propers-format` and
+`common/propers-homily` in that order, then the leaf's `format.tex`, and uses
+the shared full-width `\propertitle`. The `properhomily` environment encloses
+only the literal import of the spoken component; the terminal note follows the
+environment's closing page break and sets its running heads with
+`\runninghead`. No font, geometry, title or column setting is overridden.
+
+- `homily-body` (`sections/homily/10-homily.tex`): the spoken text, continuous
+  preaching with no heading, no direction to a preacher and no citation inside
+  the speech, in nine movements: the man walking home with a sentence and the
+  governing question; what he asked and the rebuke, with Augustine's "of no
+  faith at all" against Gregory's belief mixed with doubt, and Chrysostom's two
+  patients; the turn; the walk, with Aquinas's faith growing on the road, the
+  night of *heri hora septima* and the Gradual's due season in Augustine's
+  sickroom; the prayers not answered as asked, with Chrysostom's thanks "even
+  if they obtain it not", the Epistle's thanks for all things, the Communion
+  with Augustine's "fulfil Thy promise" and its unsung *vivificavit me*; the
+  assembly in the father's place, with the Secret's medicine and the altar;
+  the Introit with Augustine's order of prayer, the Collect's secure minds and
+  the Postcommunion's obedience; a response for the week, with the Offertory's
+  exiles and Augustine's "whither your hope goeth before"; and the road's end.
+- `homily-note` (`sections/homily/90-note.tex`): the terminal note and the
+  References, read aloud by nobody: audience and occasion, word count and pace,
+  relation to the three reviewed readings, the route of each quoted text, and
+  the exact loci.
+
+### The argument, and the profile's test
+
+The homily follows the first reading, `word-at-a-distance`, as
+`research/interpretations.md` § 4.7 recommends, and takes from
+`songs-of-sion-in-babylon` the Introit's order of prayer (evidence the first
+and second readings share, STU-004), the Epistle's thanks and the Offertory's
+exiles. `israel-and-the-nations` is left to the studies, as § 4.7 advises.
+
+- **Governing question.** What do you do when you have asked God to come, and
+  he sends you a word instead?
+- **Image.** A father walking home from Cana to Capharnaum with nothing in his
+  hands but a sentence; it returns at the Collect (the secure mind on the road
+  in the dark), at the Offertory (his hope going ahead of him) and at the close.
+- **Decisive turn, and the textual detail that makes it.** The father's plea
+  is *Domine, descende* (Jn 4:49); the answer is *Vade, filius tuus vivit*
+  (4:50). Christ refuses the man's plan and grants his prayer: the presence the
+  father asked for is given as a word, which Gregory reads as the creating will
+  healing *solo jussu* (*Hom.* 28, 1). The second detail is *heri hora
+  septima* (4:52): the word had done its work before the father knew it. These
+  change the familiar problem of a prayer that seems to go unanswered from
+  "God has not come" to "God has acted by his word where he is not seen", and
+  the response from waiting for a sign to *credidit homo sermoni … et ibat*.
+- **Text-substitution test.** The question, image and turn depend on this
+  Gospel's refusal to come down and its healing at a distance; the Gradual's
+  *in tempore opportuno*, the Communion's *Memento verbi tui* with its unsung
+  *vivificavit me* beside *Filius tuus vivit*, the Secret's *medicinam*, and the
+  Introit's *mandatis tuis non oboedivimus* answered by the Postcommunion's
+  *tuis semper oboedire mandatis* carry the movement. With unrelated readings
+  the argument would not survive.
+
+Bounds kept:
+
+- Gregory's *per spiritum* is not resolved: the speech says the Lord "is absent
+  nowhere" (RES-005; § 4.7). His Latin is not quoted; he is paraphrased.
+- No Father is said to join the Gospel to any chant or oration (§ 4.7). The
+  joins are the homily's own and credited to no one: the plan refused and the
+  prayer granted, the father learning the Introit's order, the Collect's secure
+  mind as his, the Postcommunion's obedience as his going, and the exiles' hope
+  as his road. The sentences on the altar are the Church's faith in the
+  preacher's voice; Fromage, who joins this Gospel to the Secret, is not used.
+- The shared ground of the readings is taken from the reviewed comparison and
+  not from `research/interpretations.md` § 4.1 (STU-006). Augustine's order of
+  prayer is not presented as the first reading's alone (STU-004). No sentence
+  labels a join or announces its own method (STU-005).
+- Bellarmine, Berno and Hilary are not used (RES-010, RES-011, RES-012). No
+  commentator's other Mass, no compilation history and no other Sunday is
+  mentioned; the commemoration of the Maternity is named only in the note.
+- One disagreement the study keeps is spoken: the ruler's first faith,
+  Augustine against Gregory. The rebuke is not softened: Augustine's reading of
+  it is quoted at full weight beside Chrysostom's mercy.
+- The pastoral difficulty of prayers not granted is met with what the sources
+  say: Augustine's "Thou delayest, not deniest" is set beside Chrysostom's
+  thanks "even if they obtain it not", and the speech says plainly that the
+  Gospel does not promise every prayer an answer in the shape asked.
+
+No English of a liturgical text was composed. The Introit antiphon, Collect,
+Secret and Postcommunion are quoted in the 1861 Cummiskey English. The one text
+commended for daily prayer is Ps 118:49 in the exact Douay wording, and the
+note records that it reads "Be thou mindful" for the Missal's *Memento* and
+lacks the added *Domine*. The speech ends as preaching, with no recited prayer.
+No anecdote, personal experience, clerical identity, miraculous story or
+attributed quotation was manufactured. The one direct plea in the assembly's
+voice ("Lord, come down before it is too late") is set without quotation marks.
+
+### Verification performed at this stage
+
+Every quoted or paraphrased witness was read at its locus in this stage, not
+taken from the studies:
+
+- Chrysostom, *Hom. 35 in Io.*: the registered NPNF1-14 facsimile was fetched
+  from its source URL into the run's scratch area; SHA-256 `a09a5d18…dcd59c0f`
+  matched. PDF pp. 144–145 (printed pp. 124–125) were extracted and read: "For
+  here He healeth the father, sick in mind, no less than the son" (§ 2) and
+  "they ought even if they obtain it not, to persist just the same in giving
+  thanks, in glorifying God" (§ 3), and the paraphrased context (thanks when
+  comfort comes in a child's sickness).
+- Cummiskey 1861: the registered scan was fetched; SHA-256 `85034c90…eae028898`
+  matched; PDF p. 457 (printed p. 448) was rendered and the Introit antiphon and
+  Collect read on the image. The Collect, Secret and Postcommunion were also
+  matched in the tracked payload `pentecost-20-checked-english` (SHA-256
+  `0f45cd31…` recomputed).
+- Augustine, *Tract. in Io.* 16, 3, in the tracked NPNF1-7 CCEL text (SHA-256
+  `266502c9…` recomputed), lines 8525–8590; *Enarr.* 144 §§ 14–15 (lines
+  66727–66746), 118 sermo 15 on v. 49 (lines 57598–57606), 136 § 13 (lines
+  64078–64084), in the tracked NPNF1-8 text (`d6841950…`, recomputed).
+- Gregory, *Hom. in Ev.* 28, 1, in the tracked Wikisource transcription
+  (`dc25dd69…`), line 353: *Neque enim ab eo quaereret salutem quem non
+  crederet salvatorem*; *in fide dubitavit*; *qui per spiritum nusquam
+  deerat*; *solo jussu salutem reddidit qui voluntate omnia creavit*.
+- Aquinas, *Super Io.* c. 4 lect. 7, in the tracked Venice 1745 OCR layer
+  (`10aa155e…`), lines 67575–67595 and 67684–67696: *Et ibat proficiendo in
+  fide*; *in via enim Dei non proficere, deficere est*; the stages of the
+  ruler's faith. Paraphrased, not quoted.
+- Scripture: every quoted verse matched in the tracked Challoner verse tables
+  (John `27b8f3ed…`, Ephesians `10c79be0…`, Psalms `578f023d…`, digests
+  recomputed).
+
+The fetched files stay in the run's scratch area; nothing was added to the
+source library. A script then compared all 30 quoted spans of the speech with
+those texts. Twenty-eight were found mechanically; the two Chrysostom spans,
+which the two-column facsimile's text layer interleaves, were confirmed in the
+layout extraction. The only differences are the capital that begins
+"Here He healeth" where the NPNF reads "For here", and the ellipsis joining
+Augustine's §§ 14 and 15 on Ps 144.
+
+**Spoken word count: 1,469 words.** The count is taken over
+`sections/homily/10-homily.tex` alone: comments removed, `\latin{}` contents
+kept, every other macro dropped, whitespace-separated words carrying a letter
+or digit counted. The same count over the extracted text of the built PDF's
+first two pages, without the title block and running heads, is also 1,469. At
+an unhurried 120 to 130 words a minute that is 11.3 to 12.2 minutes; at 110 it
+would be 13.4. The figure is arithmetic and not a timed delivery: nobody has
+spoken these words and no rehearsal was audible. The prose was read through in
+full, silently, for sense, sentence length (116 sentences, mean 12.7 words,
+median 11, longest 36, the Introit antiphon quoted whole) and ease of
+speech. Two drafts were cut from about 1,920 and 1,610 words. The reading moved
+the Postcommunion and Offertory into the future tense, since both follow the
+homily; took the quotation marks off the assembly's own plea; removed a
+sentence that credited the Secret with naming Capharnaum; replaced "That is
+why the Mass began as it did", which asserted a design, with a plain statement
+of how it began; and split the Introit's lead-in from its quotation.
+
+### Author proof and checks
+
+The shared generation record carries a contribution for this stage and the
+revision timestamp `2026-10-07T20:03:52Z`. All three documents were rebuilt
+at that timestamp with `make doc`; each settled log carries no overfull or
+underfull box, LaTeX warning, undefined reference or rerun request. The homily
+has 3 physical pages: the spoken body on pages 1–2 in two Latin Modern
+columns, the note, References, revision timestamp and rights colophon on page
+3. `pdffonts` reports Latin Modern Roman and Mono only, all embedded Type 1
+subsets. The study is unchanged at 31 pages and the concise study at 12; its
+auxiliary file is byte-identical to the one its review read, with inventory,
+overview and the four sense markers on page 1, chronology on page 2, themes on
+pages 3–4 and commentary from page 5.
+
+These checks pass on the final sources:
+
+- `scripts/_proper_study.py check … --date 2026-10-11 --phase content
+  --edition homily --require-presentation --require-format
+  --require-authority`;
+- every homily-preflight `check-content-preflight` check: references-used,
+  identifiers-resolve, bindings-valid, restricted-not-reproduced,
+  relation-coverage, unquoted-not-quoted, structural-meta-labels, house-voice,
+  chronology-record-current, chronology-annotations-current,
+  chronology-claims-supported, and provenance-matches-run against this run's
+  workflow, version, digest, run id and seed commit;
+- `tools/check-proper-components --phase artifacts` for the research, synthesis
+  and homily editions;
+- `tools/check-generation-metadata` for the leaf and for each of the three PDFs.
+
+| File | SHA-256 |
+| --- | --- |
+| Homily proof PDF | `e2ad69b1b3ece4c141c8756cefed03a42e09de32b14204ce7d9445153c0e4b14` |
+| Homily auxiliary file | `96da8bd61cc21463cd3eda0260cb058d26e765e456536a181a79f8efa1798486` |
+| Homily log | `5dc8d4bb0407962c84c8e5ec9fe62aa8ec169c2fe5602105cdc97c0f5eeb2bdd` |
+| Expansive study, rebuilt | `f1a9918244721162770772663f087d2bf0e13936f4d73385846bdfd367cd87c4` |
+| Concise study, rebuilt | `29d93ddd16c034d1c7c395a8a190010be9afedb1a842994b43065bb21b132511` |
+| Concise auxiliary file | `ab5d73de1da3e396cdb879c48a7e7f3b4ba422e2747e3818afec406261f3bec2` |
+
+The author read all three pages of the homily proof at 80 dpi. This is an
+author proof inspection, not the independent visual evaluation.
+
+### Upstream observations reported for the homily's cold reviewer
+
+- No missing argument or source was found for the homily.
+- STU-006 still stands against `research/interpretations.md` § 4.1, and RES-005
+  against § 5's "presence by the Spirit everywhere"; both are research-owned,
+  and the homily follows neither sentence.
