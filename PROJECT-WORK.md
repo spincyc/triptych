@@ -5,7 +5,30 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-06.
+Last reconciled: 2026-10-07.
+
+## Claude 1962 Twentieth Sunday three documents, 2026-10-07
+
+<!-- promised-deliverable: claude-1962-twentieth-three-documents-2026-10-07 -->
+
+The maintainer asked on 2026-10-07 for the TLM propers workflow for the
+upcoming Sunday, 11 October 2026, to be driven to completion and pushed to
+`main`, with subagents permitted, and confirmed the provider authorization
+explicitly. The production targets provider `claude`, identity
+`liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost`,
+under the current `proper-study` three-document contract: a 20–50-page
+expansive study, a 10–12-page concise study, a standalone homily for an adult
+parish assembly, and the canonical study's web edition. `tools/mass-today
+--date 2026-10-11 --calendar roman-1962` resolves the Twentieth Sunday after
+Pentecost, a second-class Sunday (Easter 5 April 2026, Pentecost 24 May,
+twenty weeks to 11 October). The production plan records this exact scope
+opening. The GPT leaf for the same identity is published; this is an
+independent Claude production and borrows nothing from it.
+
+**In progress.** Authorization and acceptance criteria are recorded; the run
+has not yet been seeded. Work is committed on `feature/propers/claude`, the
+workspace's required branch, and reaches `main` by fast-forward after the
+local deploy gates pass.
 
 ## GPT Twenty-eighth Sunday main integration, 2026-10-06
 
