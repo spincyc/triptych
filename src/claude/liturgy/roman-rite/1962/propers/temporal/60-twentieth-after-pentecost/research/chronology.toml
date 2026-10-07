@@ -1,0 +1,1276 @@
+# Generated. Do not edit.
+#
+# What the Scripture chronology corpus answers about this proper's appointed
+# loci, written by `tools/tpt proper-chronology record` and held
+# against the corpus by `check-content-preflight`. Every field
+# here is the corpus's, carried so that the guide's prose can be regenerated
+# without re-researching the fact: `guidance/scripture-chronology.md` §14.
+#
+# `formulary` is `appointed` when the calendar appoints this identity a Mass
+# formulary, and `no-calendar-formulary` when it does not — a ritual Mass,
+# appointed by a rite rather than by a day, which the calendar sources here do
+# not encode. In that state the record lists no element, `formulary_reason`
+# says why, and no date may be supplied from anywhere else to fill the gap.
+#
+# `label` is the source's own words and the only value a manually authored
+# guide may display. `date` is the normalized form, for comparison and never
+# for a manual page. The sole permitted display exception is the deterministic
+# `tools/tpt proper-chronology annotations` projection: it may render its
+# concise `display_label` because the same generated contract retains the raw
+# `label` and claim `profile`. No manual consumer may mint or edit one. An
+# element's `claims` are the full audit union of assertions resolved at any of
+# its appointed loci; each claim's nested `reaches` records every locus, corpus
+# scope, and inheritance route by which it was returned. `publication_claims`
+# is the exact across-all-loci intersection that the generated one-cell
+# annotation may display. `status` and `reason` summarize the audit answer;
+# `publication_status` and `publication_reason` describe that safe
+# intersection. An element with no `status` cites no Scripture; one whose
+# publication status is
+# `undated-in-tradition` or `research-pending` has no date to print, and the
+# guide states that absence rather than filling it. `nonuniform` means its loci
+# have chronology but share no one assertion an element-wide Date cell could
+# truthfully print.
+#
+# `profile_comparisons` are separately requested evidence-profile answers.
+# They never alter `profile`, `claims`, or `publication_claims`. Each row names
+# the exact requested evidence profile, element, relation, subject, returned
+# leaf-profile claim and source ids; its input file is fingerprinted below.
+#
+# `anchor_contexts` are one-hop evidence about a boundary's named event anchor.
+# They are not assertions about the appointed locus, its utterance, or its
+# composition, and do not alter elements' publication_claims. The relation is
+# to the anchor event, not a strict numerical year bound; it can occur within
+# that anchor's year. Candidates retain their profile, source qualification,
+# and disposition without era conversion or harmonizing alternative years.
+
+
+schema = 4
+record_type = "proper-chronology"
+document = "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost"
+calendar = "roman-1962"
+mass = "pentecost-20"
+system = "vulgate"
+profile = "catholic-comprehensive-v1"
+formulary = "appointed"
+formulary_reason = ""
+generated_by = "tools/tpt proper-chronology record"
+
+[[comparison_dependencies]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/chronology-profile-comparisons.toml"
+sha256 = "139a40c7f50531ff34337f64368f66dc23e9909ef9d06f2802237a8200eee01c"
+
+[[elements]]
+key = "introit"
+name = "Introit"
+refs = ["Daniel 3:31", "Daniel 3:29", "Daniel 3:35", "Psalm 118:1"]
+loci = ["Dan.3.31", "Dan.3.29", "Dan.3.35", "Ps.118.1"]
+status = "dated"
+reason = ""
+publication_status = "nonuniform"
+publication_reason = "No single chronology assertion applies across every appointed locus (Dan.3.31=dated, Dan.3.29=dated, Dan.3.35=dated, Ps.118.1=composition-only); the element-wide Date cell must not print a locus-specific claim."
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.book-of-daniel.prayer-of-azarias"
+title = "The Prayer of Azarias and the Song of the Three Children (Dan. iii, 24-90)"
+label = "most likely long after the Exile"
+date = "ascribed to some unknown Jewish author who lived long after the Exile"
+precision = "relative"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04621b-2a74931e"]
+
+[[elements.claims.reaches]]
+locus = "Dan.3.29"
+inherited = false
+scope = "Dan.3.24-90"
+
+[[elements.claims.reaches]]
+locus = "Dan.3.31"
+inherited = false
+scope = "Dan.3.24-90"
+
+[[elements.claims.reaches]]
+locus = "Dan.3.35"
+inherited = false
+scope = "Dan.3.24-90"
+
+[[elements.claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.claims.reaches]]
+locus = "Ps.118.1"
+inherited = true
+scope = "Ps"
+
+[[elements.claims]]
+relation = "historical-setting"
+subject = "israel.exile.seventy-years"
+title = "The seventy years of servitude to Babylon"
+label = "seventy years"
+date = "all these nations shall serve the king of Babylon seventy years"
+precision = "duration"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "scripture"
+profile = "catholic-traditional-v1"
+sources = ["bible:douay-rheims:Jer.25.11", "bible:douay-rheims:Jer.25.12"]
+
+[[elements.claims.reaches]]
+locus = "Dan.3.29"
+inherited = true
+scope = "Dan"
+
+[[elements.claims.reaches]]
+locus = "Dan.3.31"
+inherited = true
+scope = "Dan"
+
+[[elements.claims.reaches]]
+locus = "Dan.3.35"
+inherited = true
+scope = "Dan"
+
+[[elements.claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.claims.reaches]]
+locus = "Ps.118.1"
+inherited = true
+scope = "Ps.118"
+
+[[elements]]
+key = "collect"
+name = "Collect"
+refs = []
+loci = []
+status = ""
+reason = ""
+publication_status = ""
+publication_reason = ""
+
+[[elements]]
+key = "epistle"
+name = "Epistle"
+refs = ["Ephesians 5:15-21"]
+loci = ["Eph.5.15", "Eph.5.16", "Eph.5.17", "Eph.5.18", "Eph.5.19", "Eph.5.20", "Eph.5.21"]
+status = "composition-only"
+reason = ""
+publication_status = "composition-only"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.epistle-to-the-ephesians"
+title = "The Epistle to the Ephesians"
+label = "a period between 58 and 63"
+date = "58 A.D. to 63 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05485a-66d722ae"]
+
+[[elements.claims.reaches]]
+locus = "Eph.5.15"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.5.16"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.5.17"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.5.18"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.5.19"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.5.20"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.5.21"
+inherited = true
+scope = "Eph"
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.epistle-to-the-ephesians"
+title = "The Epistle to the Ephesians"
+label = "(Philemon; Colossians; Ephesians; Philippians), 61"
+date = "61 A.D."
+precision = "year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8"]
+
+[[elements.claims.reaches]]
+locus = "Eph.5.15"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.5.16"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.5.17"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.5.18"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.5.19"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.5.20"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.5.21"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.epistle-to-the-ephesians"
+title = "The Epistle to the Ephesians"
+label = "a period between 58 and 63"
+date = "58 A.D. to 63 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05485a-66d722ae"]
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.5.15"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.5.16"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.5.17"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.5.18"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.5.19"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.5.20"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.5.21"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.epistle-to-the-ephesians"
+title = "The Epistle to the Ephesians"
+label = "(Philemon; Colossians; Ephesians; Philippians), 61"
+date = "61 A.D."
+precision = "year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8"]
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.5.15"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.5.16"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.5.17"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.5.18"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.5.19"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.5.20"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.5.21"
+inherited = true
+scope = "Eph"
+
+[[elements]]
+key = "gradual"
+name = "Gradual"
+refs = ["Psalm 144:15-16"]
+loci = ["Ps.144.15", "Ps.144.16"]
+status = "composition-only"
+reason = ""
+publication_status = "composition-only"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.claims.reaches]]
+locus = "Ps.144.15"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.144.16"
+inherited = true
+scope = "Ps"
+
+[[elements.claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.claims.reaches]]
+locus = "Ps.144.15"
+inherited = true
+scope = "Ps.107 Ps.144"
+
+[[elements.claims.reaches]]
+locus = "Ps.144.16"
+inherited = true
+scope = "Ps.107 Ps.144"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.144.15"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.144.16"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.144.15"
+inherited = true
+scope = "Ps.107 Ps.144"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.144.16"
+inherited = true
+scope = "Ps.107 Ps.144"
+
+[[elements]]
+key = "alleluia"
+name = "Alleluia"
+refs = ["Psalm 107:2"]
+loci = ["Ps.107.2"]
+status = "composition-only"
+reason = ""
+publication_status = "composition-only"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.claims.reaches]]
+locus = "Ps.107.2"
+inherited = true
+scope = "Ps"
+
+[[elements.claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.claims.reaches]]
+locus = "Ps.107.2"
+inherited = true
+scope = "Ps.107 Ps.144"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.107.2"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.107.2"
+inherited = true
+scope = "Ps.107 Ps.144"
+
+[[elements]]
+key = "gospel"
+name = "Gospel"
+refs = ["John 4:46-53"]
+loci = ["John.4.46", "John.4.47", "John.4.48", "John.4.49", "John.4.50", "John.4.51", "John.4.52", "John.4.53"]
+status = "dated"
+reason = ""
+publication_status = "dated"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.gospel-of-john"
+title = "The Gospel of St John"
+label = "from the year 90 to 100 (approximately)"
+date = "90 A.D. to 100 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"]
+
+[[elements.claims.reaches]]
+locus = "John.4.46"
+inherited = true
+scope = "John"
+
+[[elements.claims.reaches]]
+locus = "John.4.47"
+inherited = true
+scope = "John"
+
+[[elements.claims.reaches]]
+locus = "John.4.48"
+inherited = true
+scope = "John"
+
+[[elements.claims.reaches]]
+locus = "John.4.49"
+inherited = true
+scope = "John"
+
+[[elements.claims.reaches]]
+locus = "John.4.50"
+inherited = true
+scope = "John"
+
+[[elements.claims.reaches]]
+locus = "John.4.51"
+inherited = true
+scope = "John"
+
+[[elements.claims.reaches]]
+locus = "John.4.52"
+inherited = true
+scope = "John"
+
+[[elements.claims.reaches]]
+locus = "John.4.53"
+inherited = true
+scope = "John"
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.gospel-of-john"
+title = "The Gospel of St John"
+label = "96 or one of the succeeding years"
+date = "96 A.D. to 100 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08438a-7620a92c"]
+
+[[elements.claims.reaches]]
+locus = "John.4.46"
+inherited = true
+scope = "John"
+
+[[elements.claims.reaches]]
+locus = "John.4.47"
+inherited = true
+scope = "John"
+
+[[elements.claims.reaches]]
+locus = "John.4.48"
+inherited = true
+scope = "John"
+
+[[elements.claims.reaches]]
+locus = "John.4.49"
+inherited = true
+scope = "John"
+
+[[elements.claims.reaches]]
+locus = "John.4.50"
+inherited = true
+scope = "John"
+
+[[elements.claims.reaches]]
+locus = "John.4.51"
+inherited = true
+scope = "John"
+
+[[elements.claims.reaches]]
+locus = "John.4.52"
+inherited = true
+scope = "John"
+
+[[elements.claims.reaches]]
+locus = "John.4.53"
+inherited = true
+scope = "John"
+
+[[elements.claims]]
+relation = "narrated-event"
+subject = "life-of-christ.healing-of-the-rulers-son-at-cana"
+title = "The healing of the ruler's son at Cana"
+label = "Passover, A.U.C. 779 - about Pentecost, 780"
+date = "26 A.D. to 27 A.D."
+precision = "interval"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "derived"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-8.new-york-1910.maas-second-journey-cana", "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text"]
+
+[[elements.claims.reaches]]
+locus = "John.4.46"
+inherited = false
+scope = "John.4.46-53"
+
+[[elements.claims.reaches]]
+locus = "John.4.47"
+inherited = false
+scope = "John.4.46-53"
+
+[[elements.claims.reaches]]
+locus = "John.4.48"
+inherited = false
+scope = "John.4.46-53"
+
+[[elements.claims.reaches]]
+locus = "John.4.49"
+inherited = false
+scope = "John.4.46-53"
+
+[[elements.claims.reaches]]
+locus = "John.4.50"
+inherited = false
+scope = "John.4.46-53"
+
+[[elements.claims.reaches]]
+locus = "John.4.51"
+inherited = false
+scope = "John.4.46-53"
+
+[[elements.claims.reaches]]
+locus = "John.4.52"
+inherited = false
+scope = "John.4.46-53"
+
+[[elements.claims.reaches]]
+locus = "John.4.53"
+inherited = false
+scope = "John.4.46-53"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.gospel-of-john"
+title = "The Gospel of St John"
+label = "from the year 90 to 100 (approximately)"
+date = "90 A.D. to 100 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"]
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.46"
+inherited = true
+scope = "John"
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.47"
+inherited = true
+scope = "John"
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.48"
+inherited = true
+scope = "John"
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.49"
+inherited = true
+scope = "John"
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.50"
+inherited = true
+scope = "John"
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.51"
+inherited = true
+scope = "John"
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.52"
+inherited = true
+scope = "John"
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.53"
+inherited = true
+scope = "John"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.gospel-of-john"
+title = "The Gospel of St John"
+label = "96 or one of the succeeding years"
+date = "96 A.D. to 100 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08438a-7620a92c"]
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.46"
+inherited = true
+scope = "John"
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.47"
+inherited = true
+scope = "John"
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.48"
+inherited = true
+scope = "John"
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.49"
+inherited = true
+scope = "John"
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.50"
+inherited = true
+scope = "John"
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.51"
+inherited = true
+scope = "John"
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.52"
+inherited = true
+scope = "John"
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.53"
+inherited = true
+scope = "John"
+
+[[elements.publication_claims]]
+relation = "narrated-event"
+subject = "life-of-christ.healing-of-the-rulers-son-at-cana"
+title = "The healing of the ruler's son at Cana"
+label = "Passover, A.U.C. 779 - about Pentecost, 780"
+date = "26 A.D. to 27 A.D."
+precision = "interval"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "derived"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-8.new-york-1910.maas-second-journey-cana", "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text"]
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.46"
+inherited = false
+scope = "John.4.46-53"
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.47"
+inherited = false
+scope = "John.4.46-53"
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.48"
+inherited = false
+scope = "John.4.46-53"
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.49"
+inherited = false
+scope = "John.4.46-53"
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.50"
+inherited = false
+scope = "John.4.46-53"
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.51"
+inherited = false
+scope = "John.4.46-53"
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.52"
+inherited = false
+scope = "John.4.46-53"
+
+[[elements.publication_claims.reaches]]
+locus = "John.4.53"
+inherited = false
+scope = "John.4.46-53"
+
+[[elements]]
+key = "offertory"
+name = "Offertory"
+refs = ["Psalm 136:1"]
+loci = ["Ps.136.1"]
+status = "dated"
+reason = ""
+publication_status = "dated"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.claims.reaches]]
+locus = "Ps.136.1"
+inherited = true
+scope = "Ps"
+
+[[elements.claims]]
+relation = "historical-setting"
+subject = "israel.exile.psalm-136-captive-lament"
+title = "The Babylonian captives' lament"
+label = "For the time of Jeremias, and the captivity of Babylon"
+date = "after Jerusalem's destruction under Sedecias"
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "derived"
+profile = "catholic-traditional-v1"
+sources = ["bible:douay-rheims:Ps.136.1", "bible:douay-rheims:Ps.136.3", "bible:douay-rheims:Ps.136.7", "passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-136-babylon-and-jerusalem"]
+
+[[elements.claims.reaches]]
+locus = "Ps.136.1"
+inherited = true
+scope = "Ps.136"
+
+[[elements.claims]]
+relation = "historical-setting"
+subject = "israel.exile.seventy-years"
+title = "The seventy years of servitude to Babylon"
+label = "seventy years"
+date = "all these nations shall serve the king of Babylon seventy years"
+precision = "duration"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "scripture"
+profile = "catholic-traditional-v1"
+sources = ["bible:douay-rheims:Jer.25.11", "bible:douay-rheims:Jer.25.12"]
+
+[[elements.claims.reaches]]
+locus = "Ps.136.1"
+inherited = true
+scope = "Ps.136"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.136.1"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "historical-setting"
+subject = "israel.exile.psalm-136-captive-lament"
+title = "The Babylonian captives' lament"
+label = "For the time of Jeremias, and the captivity of Babylon"
+date = "after Jerusalem's destruction under Sedecias"
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "derived"
+profile = "catholic-traditional-v1"
+sources = ["bible:douay-rheims:Ps.136.1", "bible:douay-rheims:Ps.136.3", "bible:douay-rheims:Ps.136.7", "passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-136-babylon-and-jerusalem"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.136.1"
+inherited = true
+scope = "Ps.136"
+
+[[elements.publication_claims]]
+relation = "historical-setting"
+subject = "israel.exile.seventy-years"
+title = "The seventy years of servitude to Babylon"
+label = "seventy years"
+date = "all these nations shall serve the king of Babylon seventy years"
+precision = "duration"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "scripture"
+profile = "catholic-traditional-v1"
+sources = ["bible:douay-rheims:Jer.25.11", "bible:douay-rheims:Jer.25.12"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.136.1"
+inherited = true
+scope = "Ps.136"
+
+[[elements]]
+key = "secret"
+name = "Secret"
+refs = []
+loci = []
+status = ""
+reason = ""
+publication_status = ""
+publication_reason = ""
+
+[[elements]]
+key = "communion"
+name = "Communion"
+refs = ["Psalm 118:49-50"]
+loci = ["Ps.118.49", "Ps.118.50"]
+status = "composition-only"
+reason = ""
+publication_status = "composition-only"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.claims.reaches]]
+locus = "Ps.118.49"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.118.50"
+inherited = true
+scope = "Ps"
+
+[[elements.claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.claims.reaches]]
+locus = "Ps.118.49"
+inherited = true
+scope = "Ps.118"
+
+[[elements.claims.reaches]]
+locus = "Ps.118.50"
+inherited = true
+scope = "Ps.118"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.118.49"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.118.50"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.118.49"
+inherited = true
+scope = "Ps.118"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.118.50"
+inherited = true
+scope = "Ps.118"
+
+[[elements]]
+key = "postcommunion"
+name = "Postcommunion"
+refs = []
+loci = []
+status = ""
+reason = ""
+publication_status = ""
+publication_reason = ""
+
+[[profile_comparisons]]
+key = "critical-ephesians-composition"
+element_key = "epistle"
+requested_profile = "catholic-critical-v1"
+relation = "composition"
+subject = "critical.ephesians-later-disciple"
+status = "composition-only"
+reason = ""
+
+[[profile_comparisons.claims]]
+relation = "composition"
+subject = "critical.ephesians-later-disciple"
+title = "Ephesians under the later-disciple hypothesis (approximate)"
+label = "around A.D. 80–100"
+date = "80 A.D. to 100 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-28.ephesians-introduction"]
+
+[[profile_comparisons.claims.reaches]]
+locus = "Eph.5.15"
+inherited = true
+scope = "Eph"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Eph.5.16"
+inherited = true
+scope = "Eph"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Eph.5.17"
+inherited = true
+scope = "Eph"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Eph.5.18"
+inherited = true
+scope = "Eph"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Eph.5.19"
+inherited = true
+scope = "Eph"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Eph.5.20"
+inherited = true
+scope = "Eph"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Eph.5.21"
+inherited = true
+scope = "Eph"
+
+[[anchor_contexts]]
+element_key = "offertory"
+subject = "israel.exile.third-captivity"
+title = "The third captivity of Juda: the destruction of Jerusalem under Sedecias"
+direction = "after"
+
+[anchor_contexts.parent]
+relation = "historical-setting"
+subject = "israel.exile.psalm-136-captive-lament"
+title = "The Babylonian captives' lament"
+label = "For the time of Jeremias, and the captivity of Babylon"
+date = "after Jerusalem's destruction under Sedecias"
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "derived"
+profile = "catholic-traditional-v1"
+sources = ["bible:douay-rheims:Ps.136.1", "bible:douay-rheims:Ps.136.3", "bible:douay-rheims:Ps.136.7", "passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-136-babylon-and-jerusalem"]
+
+[[anchor_contexts.parent.reaches]]
+locus = "Ps.136.1"
+inherited = true
+scope = "Ps.136"
+
+[[anchor_contexts.candidates]]
+relation = "anchor-context"
+subject = "israel.exile.third-captivity"
+title = "The third captivity of Juda: the destruction of Jerusalem under Sedecias"
+label = "A.M. 3416"
+date = "3416 A.M."
+precision = "year"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "reported-excluded"
+profile = "catholic-traditional-v1"
+sources = ["passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology"]
+index = 0
+qualification = "Haydock reporting Ussher; A.M. is not converted"
+basis = "The Haydock edition's note at Psalm 70:1 prints a chronology the page attributes to Usher by the siglum standing after the figures, giving \"the last, when the city was destroyed and Sedecias was taken, 3416\", after the first captivity at A.M. 3398 and the second at 3405."
+note = "Usher's figure as transmitted by the Haydock edition, recorded as that Catholic edition's testimony and never as Usher standing alone. The Anno Mundi figure is kept exactly as printed and is not converted. The passage record states that these figures are not printed at Psalm 88 and do not prove the Babylonian setting proposed there."
+reporting_exception = "ussher-reported-by-a-ranked-catholic-source"
+
+[[anchor_contexts.candidates]]
+relation = "anchor-context"
+subject = "israel.exile.third-captivity"
+title = "The third captivity of Juda: the destruction of Jerusalem under Sedecias"
+label = "586 B.C."
+date = "586 B.C."
+precision = "year"
+disposition = "alternate"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03315a-9cb437e2", "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14499a-82b12b6e"]
+index = 1
+qualification = "Reid and Meistermann, Catholic Encyclopedia"
+basis = "George Reid's \"Captivities of the Israelites\" (Catholic Encyclopedia, New York, 1908) writes that \"the Babylonians finally entered through a breach in the wall, 586 B.C.\", and Meistermann's \"Temple of Jerusalem\" (1912) says the Temple \"was destroyed by Nabuchodonozor in 586 B.C.\""
+note = "Two Catholic Encyclopedia articles agreeing on 586 against three other figures inside the same encyclopedia. \"Nabuchodonozor\" is the Temple article's spelling."
+
+[[anchor_contexts.candidates]]
+relation = "anchor-context"
+subject = "israel.exile.third-captivity"
+title = "The third captivity of Juda: the destruction of Jerusalem under Sedecias"
+label = "the fall of Jerusalem (587 B.C.)"
+date = "587 B.C."
+precision = "year"
+disposition = "alternate"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08652a-189e1a8f"]
+index = 2
+qualification = "Schets, Catholic Encyclopedia"
+basis = "Joseph Schets's \"Third and Fourth Books of Kings\" (Catholic Encyclopedia, New York, 1910), arguing about the date of those books, dates the event in passing: Jeremias, if the author, \"wrote the book not long before, or shortly after, the fall of Jerusalem (587 B.C.)\"."
+note = "Incidental to an argument about authorship, and one year later than the figure Reid prints. Meistermann's \"Jerusalem (Before A.D. 71)\" likewise ends Sedecias's reign at 587."
+
+[[anchor_contexts.candidates]]
+relation = "anchor-context"
+subject = "israel.exile.third-captivity"
+title = "The third captivity of Juda: the destruction of Jerusalem under Sedecias"
+label = "B.C. 588"
+date = "588 B.C."
+precision = "year"
+disposition = "alternate"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c"]
+index = 3
+qualification = "Petavius table reported by Sloet; retained transcription checked, printed-page verification still pending"
+basis = "The Petavius table in Sloet's \"Chronology of the Kings\" (Catholic Encyclopedia, New York, 1910) closes the Juda column at \"B.C. ... 588\" after Sedecias, and the Remarks cell attached to that final entry reads \"Capture of Jerusalem\"."
+note = "Table extraction, with the Remarks cell paired to the final Sedecias entry. Re-verify against a page image before publishing. CHECKED 2026-09-02 against the RETAINED ARTICLE TEXT, which this repository did not hold when the caveat above was written. In newadvent-08654a-645bba6c-article-text.txt the table's label cells and its year cells are stored as two consecutive blocks of lines, and inside a block the year belonging to a label stands a CONSTANT number of lines further on: 21 in the first Juda block, 19 in the second, 17 in the Israel block. All ten figures this corpus takes from the Petavius table pair on that constant - 1055 David, 1015 Solomon, 1012 \"(Building of the Temple)\", 975 Roboam, 727 Ezechias, 641 Josias, 610 Joakim, 599 Sedecias, 588 on the Sedecias \"(end)\" row whose Remarks cell reads \"Capture of Jerusalem\", and 721 on the Osee \"(end)\" row whose Remarks cell reads \"Taking of Samaria\" - and across each block's paired range every blank line in the label column faces a blank line in the year column, the only label lines facing a blank being lines of a label that wraps onto two. So the pairing rests on a skeleton the two columns share and not on a judgement about which year looked nearest which label. THE CAVEAT IS NARROWED, NOT WITHDRAWN. What is now checkable offline is the pairing inside New Advent's delivery. What is still unchecked is whether that delivery reproduces the printed page's rows, and the volume-8 facsimile that would settle it is registered remote at 135,877,116 bytes and is not retained here, so the page-image check still cannot be run without a network. The figures stand where they stood; what has changed is that a reader can reopen the pairing in this repository instead of taking it on trust."

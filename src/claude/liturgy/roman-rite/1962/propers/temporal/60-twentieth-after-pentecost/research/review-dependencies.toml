@@ -1,0 +1,53 @@
+# Controlling external evidence this research reads outside its leaf and that
+# registered source bindings do not already seal (research/source-bindings.toml
+# seals every bound record and its ancestry). Declared on 2026-10-07 in the
+# research stage of run 9c1136f1f8d1241c. Every path is a tracked record under
+# src/ in the roman-1962 family or the provider-neutral source library.
+#
+# Rights, ledgers, standing and joins
+# - missale-romanum-1962-facsimile-rights-v1.toml: the rights holding (17 U.S.C.
+#   103(b) with a public-domain antecedent) on which every Latin element's
+#   publication basis rests (propers/verified.md; research/scope.md section 9).
+# - roman-1962-proper-latin-provenance-v1.toml: the ledger whose three
+#   pentecost-20 rows and three maternitatis-beatae-mariae-virginis rows are
+#   relied on, and whose missing and mislocated rows are reported
+#   (research/scope.md section 9).
+# - roman-1962-proper-translations-v1.toml: the same-family overlay whose rows
+#   for these orations say the English is unavailable; research/scope.md
+#   section 9 answers them.
+# - lasance-new-roman-missal-rights-v1.toml: the nonrenewal record on which the
+#   Lasance English of the commemorated orations rests.
+# - author-standing-v1.toml: the standing of every author the readings name and
+#   of every carrying author (research/interpretations.md section 5).
+# - source-containment-v1.toml and commentary/passage-commentary-index.yaml: the
+#   joins behind the holdings `commentary-work-index discover` reported for every
+#   appointed locus, and behind the lead-by-lead disposition of
+#   research/scope.md section 3.
+# - commentary/formulary-loci.yaml: the liturgical commentators' element
+#   comparison, whose empty result for this Mass research/scope.md section 2.1
+#   reports.
+# - calendars/roman-1962/propers.yaml and rubrics.yaml: the computation inputs
+#   research/context.md adopts for occurrence and precedence (finding aids), and
+#   the citation the chronology wiring resolves. propers.yaml is also the
+#   finding aid that research/scope.md section 2.1 cites (iteration 1) for the
+#   1962 Nineteenth Sunday's Gospel, Mt 22:1-14, on which Fromage's frame rests.
+# - author-standing-v1.toml also carries the standing research/scope.md
+#   section 3.3 now reports for Theophylact of Ohrid (iteration 1).
+#
+# The Scripture chronology corpus
+# research/chronology.toml and research/chronology-annotations.tex were generated
+# and checked with tools/tpt proper-chronology (research/scope.md section 7).
+# The engine seals every file that computation opens outside the leaf and every
+# source the record cites; those need no declaration and are not repeated here.
+paths = [
+  "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml",
+  "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+  "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+  "src/sources/inventories/lasance-new-roman-missal-rights-v1.toml",
+  "src/sources/inventories/author-standing-v1.toml",
+  "src/sources/inventories/source-containment-v1.toml",
+  "src/sources/commentary/formulary-loci.yaml",
+  "src/sources/commentary/passage-commentary-index.yaml",
+  "src/sources/calendars/roman-1962/propers.yaml",
+  "src/sources/calendars/roman-1962/rubrics.yaml",
+]

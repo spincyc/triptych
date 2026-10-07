@@ -1,0 +1,107 @@
+# Blocking findings standing against this publication, the
+# verdicts its evaluation lanes reached, and the observations
+# they recorded outside their own criteria. Written by tpt after
+# each evaluation of this leaf.
+#
+# One record, several stages. Every entry names the stage that
+# raised it, [[stages]] says what each stage last said, and an
+# evaluation replaces its own stage's entries and leaves every
+# other stage's alone -- so what the content evaluation found
+# still stands here after the synthesis evaluation has spoken. A
+# stage that looked and found nothing leaves an empty list
+# rather than no entry: "evaluated, nothing stands" and
+# "nobody has looked" are different facts, per stage.
+#
+# The keys directly below these comments describe the write that
+# last touched this file, and count every stage's entries
+# together. They are its summary line. What a given stage found
+# is in that stage's [[stages]] entry and in the entries naming
+# it -- reading the top-level stage as the record's one stage is
+# the mistake this schema exists to stop.
+#
+# It exists because a run's own results live under build/, which
+# is ignored, which `make clean` and `wt tidy` delete without
+# asking, and which nothing preserves between productions.
+#
+# Nothing reads this back into a run. Carrying findings from one
+# production into the next wants doing where the run's identity
+# can cover it -- a committed record, or this file's hash in the
+# run id and the acceptance audit -- and until then this is a
+# record for people.
+#
+# Escalations -- defects in artifacts no stage of the run may
+# write: guidance, the source library, the tools, the workflow --
+# are written here too, from the run's whole ledger, so that the
+# decision they ask of a maintainer outlives the run directory.
+#
+# Accepted findings are true defects a lane judged not worth a
+# repair round, with the reason it judged so. Advisories are
+# defects that did not merit blocking. Both are here because a
+# verdict that dies with the run is met again by the next cold
+# read as though nobody had ever weighed it, and weighed again --
+# which is how a document in good shape spends a whole iteration
+# budget. A later evaluation reads these before it raises.
+
+standing_findings_schema = 4
+record_type = "standing-blocking-findings"
+document = "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost"
+provider = "claude"
+run_id = "9c1136f1f8d1241c"
+workflow = "proper-study"
+workflow_version = 9
+stage = "research-review"
+iteration = 1
+disposition = "PASS"
+standing = 0
+accepted_count = 0
+advisory_count = 4
+observation_count = 1
+
+[[stages]]
+stage = "research-review"
+iteration = 1
+disposition = "PASS"
+run_id = "9c1136f1f8d1241c"
+workflow = "proper-study"
+workflow_version = 9
+standing = 0
+accepted_count = 0
+advisory_count = 4
+observation_count = 1
+
+[[advisories]]
+stage = "research-review"
+id = "RES-005"
+severity = "advisory"
+location = "research/interpretations.md section 5, carrying-authors table, `word-at-a-distance` row ('Gregory: presence by the Spirit everywhere')"
+problem = "The iteration-1 revision removed the paraphrase that was quoted as Augustine's, turned the Gregory sentence in the homily notes (now section 4.7) into a description, and section 1.2 now leaves per spiritum in Gregory's Latin, saying the records do not settle it as the Holy Spirit. The carrying-authors table in section 5 still sums up Gregory's developed contribution as 'presence by the Spirit everywhere', which is the capitalised reading section 1.2 disclaims. This is the row a manifest lane record is most likely to copy."
+required_result = "Reword the section 5 entry so that it does not resolve Gregory's per spiritum as the Holy Spirit (for example: the Lord sought in bodily presence who was nowhere absent; healing by command alone), in line with section 1.2."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-010"
+severity = "advisory"
+location = "research/interpretations.md section 2.5, second bullet ('so he shares the Rock-is-Christ reading and differs from Augustine only by adding the literal and allegorical senses'), and section 2.6, fifth bullet ('Augustine, Hilary, Cassiodorus and Bellarmine read the little ones dashed on the Rock as sins killed young against Christ'); research/scope.md section 4.9, closing paragraph ('Augustine, Hilary, Cassiodorus and Bellarmine (in his moral sense) agree that the little ones dashed on the rock are sins or desires killed while young')"
+problem = "The RES-003 repair quotes Bellarmine's three senses of Ps 136:7-9 accurately at the locus (O'Sullivan tracked text, physical line 4843), but its summary sentences go too far the other way and claim an agreement he does not hold. In both of Bellarmine's spiritual senses the little ones are persons, not desires. Allegorically they are the pagans' children, converted and brought 'to the rock, Christ, to get a fortunate dash against it, and die the death of the old man, to rise a new man'. Morally, set against the king of Babylon's snares for 'the little ones of Christ', the blessed man 'by a happy dash on the rock, kills sin, those who have not been too deeply stained with it, that they may live to justice'. Augustine (Enarr. 136.12, NPNF1-8: 'What are the little ones of Babylon? Evil desires at their birth'), Hilary (Tract. 136.14, PL 9 col. 784: 'tenera adhuc corporis vitia') and Cassiodorus (CCSL 98 p. 1235: 'carnis scilicet errores') make the little ones the nascent vices themselves. Bellarmine shares the Rock as Christ and the early killing of sin, but he differs on what the little ones are. 'Differs only by adding the literal and allegorical senses' is therefore untrue, and a study following section 2.6 would credit him with Augustine's identification."
+required_result = "Revise the three sentences so that Bellarmine is credited with the Rock as Christ and the early death of sin against it, and record the difference: his little ones are Babylon's young (the pagans' children, or those not yet deeply stained), brought to Christ to die to sin and live, where Augustine, Hilary and Cassiodorus make them the nascent desires or vices."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-011"
+severity = "advisory"
+location = "research/scope.md section 2.1 (Berno row and the bullet 'The wedding-feast Gospel is the source of both the chant voices and the two choirs'), section 3.2 (Collect, Berno), section 4.4 (Berno bullet) and the note after the section 1.3 table; research/interpretations.md section 2.2 (Sicard, Durandus and Berno bullet, 'Propter haec omnia'), section 2.3 Collect row and section 3.2 (documented reception of the compilation, Berno)"
+problem = "The RES-009 repair records that Rupert's chant voices and Fromage's two choirs are read out of the wedding-feast Gospel, and bounds them. Berno's locus has the same shape and is not recorded that way. In Libellus c. 5 (PL 142 cols. 1070-1071, tracked OCR lines 85820-85870) the scene of the guest without the wedding garment, cast into the outer darkness (Mt 22), comes first. Then 'Quod intuens populus poenitens: Super flumina ... dum recordaremur tui, Sion' follows, then the cantor's Omnia quae fecisti and the responsory 'jam aspirans ad convivium Dei'. The Collect's petition is 'Propter haec omnia', and that 'all' includes the scene. The records use Berno's penitent people, his cantor and his 'propter haec omnia' join (scope 4.4; interpretations 2.2, 2.3 and 3.2) without saying that the parable is their motive; only the responsory's banquet terms are flagged (scope 3.4). Separately, the note under the section 1.3 table names Berno only for the Offertory's tui. The same locus also quotes the Gradual as 'tu das illis escam', the Missal's order that the table reports as not found in any psalter text, and the Communion with 'servo tuo, Domine'."
+required_result = "Record in section 2.1, as was done for Rupert and Fromage, that Berno's penitent people, his cantor and his Collect join follow the wedding-feast scene of his Mass ('Quod intuens ...'). Bound their use so that a study cites only what he says of a shared element, without that frame. Complete the section 1.3 note with Berno's chant forms of the Gradual and Communion, kept as chant witnesses and not as sources of the wording."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-012"
+severity = "advisory"
+location = "research/scope.md section 3.5 (Alleluia, Ps 107:2) and section 1.3 (Alleluia row, 'PL 9 has no tractate of Hilary on Ps 107')"
+problem = "The Alleluia's words are Ps 56:8-9 as well as Ps 107:2-3 (scope 1.2), and the sweep follows that route for Augustine (Enarr. 56, NPNF1-8) and Bellarmine (Ps 56:8). It does not follow it for Hilary. His Tractatus in Ps 56 stands in the bound PL 9 OCR layer: the edition's psalm-text heading at about physical lines 29070-29095 prints 'Paratum cor meum, Deus, paratum cor meum: cantabo et psalmum dicam tibi. Exsurge gloria mea', and the commentary follows. `commentary-work-index discover` reports Hilary as held for Psalm 56. The matrix records neither a reading nor a disposition. Section 1.3 says only that PL 9 has no tractate on Ps 107, which leaves out a psalter-text witness to the same verse."
+required_result = "Read Hilary's Tract. in Ps 56 on vv. 8-9 in the bound PL 9 layer, giving the column and checking the page image before any Latin is quoted. Record in section 3.5 what it says of the prepared heart and the song, and add its psalm-text heading and lemma to the section 1.3 Alleluia row. Alternatively, record the lead and say why it was not opened."
+
+[[observations]]
+stage = "research-review"
+location = "research/chronology.toml, introit claim composition.book-of-daniel.prayer-of-azarias (src/sources/chronology/composition.yaml lines 1869-1906)"
+note = "Still true at this iteration: the corpus prefers, as catholic-traditional-v1 composition, the CE 'Book of Daniel' author's own judgment that the Prayer of Azarias is 'most likely' by an author 'long after the Exile', and it gives that judgment against the view the same article reports of 'nearly all Catholic writers' (the time of Daniel). The corpus note settles the order under scripture-chronology section 4.4 and records the contrary view without authoring it, so the record (scripture-chronology query --evidence at Dan 3:29 returns no alternative) gives the page-2 dossier no received alternative to foreground. That is a tension for the chronology and profile owners, not a defect of this leaf."

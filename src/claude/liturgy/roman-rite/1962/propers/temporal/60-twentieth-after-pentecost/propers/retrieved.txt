@@ -1,0 +1,580 @@
+RETRIEVED -- Twentieth Sunday after Pentecost, 1962 Missale Romanum
+Unedited finding aid. NOT publication text. Optical-reading errors are preserved deliberately.
+
+Three machine pulls follow. None controls any published wording: every Latin form in
+propers/verified.md was read on page images of the controlling facsimile rendered at 200 and
+400 dpi, and the 1862 antecedent was read on the page images of its tracked extractions at
+their native 300 ppi. The pulls are kept so that a later reader can see what a text layer gives
+and where it fails.
+
+==============================================================================
+PULL 1 -- the controlling facsimile's own embedded text layer, the formulary
+==============================================================================
+Represented edition : Missale Romanum, editio typica (Typis Polyglottis Vaticanis, 1962)
+Artifact            : artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+Whole-file SHA-256  : 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a
+                      82,815,941 bytes; the copy fetched on 2026-10-07 for this production was
+                      re-hashed in the research stage before any page was read; digest and byte
+                      length matched the registered record.
+Method              : poppler pdftotext in -layout mode over artifact PDF pp. 493-494
+                      (printed pp. 412-413). The two-column layout is flattened line by line,
+                      so the columns interleave; drop capitals are detached or lost.
+Extract SHA-256     : c241d818ff6c587a887cb96e2f18091313fb2fa21e1bc953facf554803a6ad30
+                      (the two pages exactly as the tool emits them, form feed included)
+Boundaries shown    : printed p. 412 opens inside the Gospel of Dominica XIX (Mt 22:2-14),
+                      then its Offertory (no. 1685), Secret (1686), Communion (1687) and
+                      Postcommunion (1688); then the heading DOMINICA VIGESIMA post Pentecosten,
+                      II classis, and nos. 1689-1691. Printed p. 413 carries the rest of the
+                      Epistle, nos. 1692-1698, and then the heading DOMINICA VIGESIMA PRIMA post
+                      Pentecosten, II classis, with no. 1699.
+Known misreadings   : the drop capitals O (Omnia), L (Largire), F (Fratres), I (In illo),
+                      C (Caelestem), U (Ut sacris) detached from their words, and the Gospel's
+                      cross rendered '.~y .' and 'T ?'; 'ofFensis' and 'ofFeri-' for
+                      offensis, offeri-; 'seciira' for secura; '!690' for the marginal number
+                      1690 and 'Ps. 137, 7I' with the L of Largire attached; 'opportune' for
+                      opportuno; 'numina' for flumina; 'qusesumus' for quaesumus; 'ilia' for
+                      illa; 'quern' for quem; 'Hie' for Hic; 'lam' for Iam; 'ludaea' for Iudaea;
+                      'Tune' for Tunc and 'hue' for huc in the Nineteenth Sunday's Gospel;
+                      'I O - I I' in the next Sunday's citation. Accents are dropped throughout.
+
+----- artifact PDF pp. 493-494 (printed pp. 412-413), pdftotext -layout -----
+   412                        Dominica XX post Pentecosten
+
+     regnum caelorum homini regi, qui fe- Dominum nostrum Iesum Christum,
+     cit nuptias filio suo. Et misit servos Filium tuum: Qui tecum vivit et re-
+     suos vocare invitatos ad nuptias, et no- gnat in unitate.
+     lebant venire. Iterum misit alios ser-        Praefatio de Ssma Trinitate.
+     vos, dicens: Dicite invitatis: Ecce
+     prandium meum paravi, tauri mei et Ant. ad Communionem Ps. 118, 4-5
+     altilia occisa sunt, et omnia parata:          Tu mandasti mandata tua custodiri 1687
+     venite ad nuptias. Illi autem neglexe- nimis: utinam dirigantur viae meae, ad
+     runt: et abierunt, alius in villam suam, custodiendas iustificationes tuas.
+     alius vero ad negotiationem suam: re-                      Postcommunio
+     liqui vero tenuerunt servos eius, et con-
+     tumeliis affectos occiderunt. Rex autem   T     ua nos, Domine, medicinalis ope- 1688
+                                                       ratio, et a nostris perversitatibus
+     cum audisset, iratus est: et missis clementer expediat, et tuis semper fa-
+     exercitibus suis, perdidit homicidas il- ciat inhaerere mandatis. Per Dominum.
+     los, et civitatem illorum succendit.
+     Tune ait servis suis: Nuptiae quidem            DOMINICA VIGESIMA
+     parata? sunt, sed qui invitati erant, non
+     fuerunt digni. Ite ergo ad exitus via-
+                                                           post Pentecosten
+     rum, et quoscumque inveneritis, voca-                         II classis
+     te ad nuptias. Et egressi servi eius in             Antiphona ad Introitum
+     vias, congregaverunt omnes, quos in-                    Dan. 3, 31, 29 et 35
+     venerunt, malos et bonos: et impletae                   mnia, quae fecisti nobis, Do- 1689
+     sunt nuptiae discumbentium. Intravit
+     autem rex, ut videret discumbentes, et
+     vidit ibi hominem non vestitum veste      O             • mine, in vero iudicio fe-
+                                                               cisti, quia peccavimus tibi,
+                                                               et mandatis tuis non oboedi-
+     nuptiali. Et ait illi: Amice, quomodo hue vimus: sed da gloriam nomini tuo, et
+     intrasti non habens vestem nuptialem ? fac nobiscum secundum multitudinem
+      At ille obmutuit. Tune dixit rex mini- misericordiae tuae. Ps. 118, 1 Beati im-
+      stris: Ligatis manibus et pedibus eius, maculati in via: qui ambulant in lege
+      mittite eum in tenebras exteriores: ibi Domini. V. Gloria Patri.
+      eritfletus et stridor dentium.Multi enim                       Oratio
+      sunt vocati, pauci vero electi.    Credo.
+      Ant. ad Offertorium             Ps. 137, 7I   argire, quaesumus, Domine, fideli- !690
+                                                    > bus tuis indulgentiam placatus et
+                                                  pacem:    ut pariter ab omnibus mun-
+1685 Si ambulavero in medio tribulationis,
+      vivificabis me, Domine: et super iram dentur ofFensis, et seciira tibi mente
+      inimicorum meorum extendes manum deserviant. Per Dominum.
+      tuam, et salvum me faciet dextera tua.
+                                                  Lectio Epistolae beati Pauli Apostoli
+                         Secreta                    ad Ephesios.             Ephes. 5, 15-21
+            aec munera, quaesumus, Domine,            atres: Videte quomodo caute am- 1691
+1686
+    H                                           F
+              quae oculis tuae maiestatis ofFeri-     buletis: non quasi insipientes, sed
+      mus, salutaria nobis esse concede. Per ut sapientes, redimentes tempus, quo-
+                                  Dominica XXI post Pentecosten                              413
+
+    niam dies mali sunt. Propterea nolite             Quia heri hora septima reliquit eum
+    fieri imprudentes, sed intellegentes              febris. Cognovit ergo pater quia ilia
+    quae sit voluntas Dei. Et nolite inebria-         hora erat, in qua dixit ei Iesus: Filius
+    ri vino, in quo est luxuria: sed imple-           tuus vivit: et credidit ipse, et domus
+    mini Spiritu Sancto, loquentes vobis-             eius tota.                               Credo.
+    metipsis in psalmis, et hymnis, et can-           Ant. ad Offertorium                   Ps. 136, 1
+    ticis spiritualibus, cantantes, et psal-
+                                                         Super numina Babylonis illic sedi- 1695
+    lentes in cordibus vestris Domino: gra-           mus, et flevimus: dum recordaremur
+    tias agentes semper pro omnibus, in               tui, Sion.
+    nomine Domini nostri Iesu Christi,                                    Secreta
+    Deo et Patri. Subiecti invicem in
+                                                      /"^aelestem nobis praebeant haec my- 1696
+    timore Christi.
+                                                      ^ - ^ steria, qusesumus, Domine, me-
+      Graduale                   Ps. 144, 15-16 dicinam: et vitia nostri cordis expur-
+1692 Oculi omnium in te sperant, Domi- gent. Per Dominum.
+      ne: et tu das illis escam in tempore               Praefatio de Ssma Trinitate.
+      opportune V. Aperis tu manum tuam:
+      et imples omne animal benedictione. Ant. ad Communionem Ps. 118,49-50
+ 1693    Alleluia, alleluia. V. P s . 1 0 7 , 2 P a -    Memento verbi tui servo tuo, Domi- 1697
+      ratum cor meum, Deus, paratum cor               ne,  in quo mihi spem dedisti: haec me
+      meum: cantabo, et psallam tibi, gloria consolata est in humilitate mea.
+      mea. Alleluia.                                                  Postcommunio
+
+1694 .~y .Sequentia sancti Evangelii secun-
+      T ? dum Ioannem.
+                                                    U        t sacris, Domine, reddamur digni 1698
+                                                               muneribus: fac nos, quaesumus,
+                                      Io. 4, 46-53 tuis semper oboedire mandatis. Per
+         n illo tempore: Erat quidam regulus, Dominum nostrum.
+    I     cuius filius infirmabatur Caphar-
+      naum. Hie cum audisset, quia Iesus ad-                         DOMINICA
+      veniret a ludaea in Galilaeam, abiit ad                  VIGESIMA PRIMA
+      eum, et rogabat eum ut descenderet, et                     post Pentecosten
+      sanaret filium eius: incipiebat enim mo-
+                                                                         II classis
+      ri. Dixit ergo Iesus ad eum: Nisi signa
+      et prodigia videritis, non creditis. Di-                  Antiphona ad Introitum
+      cit ad eum regulus: Domine, descende                         Esth. 13, 9 et I O - I I
+
+
+
+
+                                                   I
+      priusquam moriatur filius meus. Dicit                 n voluntate tua, Domine, universa 1699
+      ei Iesus: Vade, filius tuus vivit. Cre-                 sunt posita, et non est qui possit
+      didit homo sermoni, quern dixit ei Ie-                  resistere voluntati tuae: tu enim
+      sus, et ibat. lam autem eo descenden-                   fecisti omnia, caelum et terram, et
+      te, servi occurrerunt ei, et nuntiave- universa quae caeli ambitu continentur:
+      runt dicentes, quia filius eius viveret. Dominus universorum tu es. Ps. 118, 1
+      Interrogabat ergo horam ab eis, in Beati immaculati in via: qui ambulant
+      qua melius habuerit. Et dixerunt ei: in lege Domini. V. Gloria Patri.
+
+----- end of pull 1 -----
+
+==============================================================================
+PULL 2 -- the same text layer, the commemorated Maternity formulary
+==============================================================================
+Artifact            : the same facsimile, artifact PDF pp. 766-767 (printed pp. 685-686)
+Method              : as pull 1
+Extract SHA-256     : fc7f83cee469ae88f8f2991a46838adf77239abdfefca514210fce101f12cac3
+Use                 : locating only. The three Maternity orations (nos. 3847, 3855, 3857) were
+                      read on 200-dpi page images and 400-dpi crops; their wording is in
+                      propers/verified.md section "Commemorated orations".
+
+----- artifact PDF pp. 766-767 (printed pp. 685-686), pdftotext -layout -----
+                                   Festa octobris (10, n )                          685
+3841 Ant. ad Communionem        Luc. 12, 4                   Die 11 octobris
+       Dico autem vobis amicis meis: ne ter-       MATERNITATIS
+     reamini ab his qui vos persequuntur.
+                                               BBATJE MARINE VIRGINIS
+3842                Postcommunio                             II classis
+     Oumptis, Domine, sacramentis, quse-
+     O sumus: ut, intercedentibus beatis Ant. ad Introitum                   Isai. 7, 14 3846
+
+
+
+                                               E
+     Martyribus tuis Dionysio, Rustico et             cce Virgo concipiet, et pariet fi-
+     Eleutherio, ad redemptionis aeternae               Hum, et vocabitur nomen eius
+     proficiamus augmentum. Per Domi-                   Emmanuel. Ps. 97, 1 Canta-
+     num nostrum Iesum Christum, Filium                 te Domino canticum novum,
+     tuum: Qui tecum vivit et regnat.         quia mirabilia fecit. V. Gloria Patri.
+                                                               Oratio
+                    Die 10 octobris
+         S. Francisci Borgiae Conf.
+                       I l l classis
+                                               D   eus, qui de beatae Mariae Virginis 3847
+                                                    utero Verbum tuum, Angelo nun-
+                                              tiante, carnem suscipere voluisti: prae-
+        Missa Os iusti, de Communi Abba- sta supplicibus tuis; ut, qui vere earn
+     tum [27], cum orationibus ut infra:      Genetricem Dei credimus, eius apud te
+                           Oratio          P  intercessionibus  adiuvemur. Per eun-
+                                              dem Dominum nostrum Iesum Chri-
+3843 I "\6mine Iesu Christe, verae humili-
+                                              stum Filium tuum: Qui tecum vivit
+      ty. ,>/ tatis et exemplar et praemium:
+                                              et regnat in unitate.
+     quaesumus; ut, sicut beatum Franci-
+     scum in terreni honoris contemptu
+                                                       Lectio libri Sapientiae.
+     imitatorem tui gloriosum effecisti, ita
+                                                           Eccli. 24, 23-31
+     nos eiusdem imitationis et gloriae tri-
+     buas esse consortes: Qui vivis et re-
+     gnas cum Deo Patre in unitate.            E  go quasi vitis fructificavi suavita- 3848
+                                                   tern odoris: et flores mei, fructus
+                                              honoris et honestatis. Ego mater pul-
+3844                      Secreta           P
+                                              chrae dilectionis, et timoris, et agni-
+      Oacris altaribus, Domine, hostias su-
+                                              tionis, et sanctae spei. In me gratia
+     O perpositas sanctus Franciscus, quse-
+                                              omnis viae et veritatis: in me omnis
+     sumus, in salutem nobis provenire de-
+                                              spes vitae et virtutis. Transite ad me,
+     poscat. Per Dominum nostrum Iesum
+                                              omnes qui concupiscitis me, et a ge-
+     Christum, Filium tuum: Qui tecum
+                                              nerationibus meis implemini. Spiritus
+     vivit et regnat in unitate.
+                                              enim meus super mel dulcis, et here-
+3845                 Postcommunio           P ditas mea super mel et favum. Me-
+
+       P    otegat nos, Domine, cum tui per- moria mea in generationes saeculorum.
+             ceptione sacramenti beatus Fran- Qui edunt me, adhuc esurient, et qui
+     ciscus, pro nobis intercedendo: ut et bibunt me, adhuc sitient. Qui audit
+     conversationis eius experiamur insi- me, non confundetur: et qui operan-
+     gnia, et intercessionis percipiamus suf- tur in me, non peccabunt. Qui eluci-
+     fragia. Per Dominum.                     dant me, vitam aeternam habebunt.
+    686                                Festa octobris (13)
+3849 Graduale                      Isai. n , 1-2
+                                            per prudentia et responsis eius. Et vi-
+        Egredietur virga de radice Iesse, etd^ntes admirati sunt. Et dixit mater
+     flos de radice eius ascendet. V. Et re-eius ad ilium: Fili, quid fecisti nobis
+     quiescet super eum Spiritus Domini.    sic? ecce pater tuus et ego dolentes
+3850 Alleluia, alleluia. V. Virgo Dei Gene- quserebamus te. Et ait ad illos: Quid
+                                            est quod me quserebatis? nesciebatis
+     trix, quern totus non capit orbis, in tua
+                                            quia in his, quse Patris mei sunt, opor-
+     se clausit viscera factus homo. Alleluia.
+                                            tet me esse? Et ipsi non intellexerunt
+          *[ In Missis votivis post Septuagesi-
+        mam, omissis Alleluia et versu sequenti,
+                                            verbum quod locutus est ad eos. Et
+      dicitur                               descendit cum eis, et venit Nazareth:
+                      Tractus               et erat subditus illis.            Credo.
+3851     Gaude, Maria Virgo, cunctas hse-
+      reses sola interemisti. V. Quae Ga-   Ant.  ad   OfFertorium       Matth.  1, 18 3854
+      brielis Archangeli dictis credidisti.    Cum     esset  desponsata  mater   eius
+      V. D u m Virgo D e u m et hominem Maria Ioseph, inv£nta est in utero
+      genuisti: et post partum, Virgo, in- habens de Spiritu Sancto.
+      violata permansisti. V. Dei Genetrix,                    Secreta
+      intercede p r o nobis.
+         Tempore autem paschali omittitur
+      graduale, et eius loco dicitur:
+                                                   T
+                                                 ua, Domine, propitiatione, et bea- 3855
+                                                  tae Marias semper Virginis, Uni-
+                                            geniti tui Matris, intercessione, ad per-
+ 3852    Alleluia, alleluia. V. Virga Iesse petuam atque praesentem hsec oblatio
+      floruit: Virgo D e u m et hominem nobis proficiat prosperitatem et pa-
+      genuit: pacem Deus reddidit, in se cem. Per eundem Dominum.
+      reconcilians ima summis. Alleluia.       Praefatio de B. Maria Virg. Et te in fe-
+        V. Luc. 1, 28 Ave, Maria, gratia ple- stivitate.
+        na: Dominus tecum: benedicta t u in        Antiphona ad Communionem                 3856
+        mulieribus. Alleluia.
+                                                     Beata viscera Marias Virginis, quae
+                                                   portaverunt aet6rni Patris Filium.
+3853. "T" .Sequentia sancti Evangelii secun-
+    r I 7 dum Lucam.           Luc. 2, 43-51                    Postcommunio
+
+    I  n illo tempore: Cum redirent, reman-
+        sit puer Iesus in Ierusalem, et non        H    aec nos communio, Domine, pur- 3857
+                                                          get a crimine: et, intercedente
+                                                   beata Virgine Dei Genetrice Maria,
+    cognoverunt parentes eius. Existiman-
+    tes autem ilium esse in comitatu, ve-          caelestis remedii faciat esse consortes.
+    nerunt iter diei, et requirebant eum           Per eundem Dominum.
+    inter cognatos et notos. Et non inve-
+    nientes, regressi sunt in Ierusalem, re-          Die 13 octobris
+    quirentes eum. Et factum est, post tri-    S. Eduardi Regis, Conf.
+    duum invenerunt ilium in templo se-                   Ill classis
+    dentem in medio doctdrum, audientem      Missa Os iusti, de Communi Confesso-
+    illos et interrogantem eos. Stupebant ris non Pontificis I loco [24], praeter ora-
+    autem omnes, qui eum audiebant, su- tionem sequentem:
+
+----- end of pull 2 -----
+
+==============================================================================
+PULL 3 -- the 1862 antecedent's tracked text layer
+==============================================================================
+Represented edition : Missale Romanum, Ratisbon: Pustet, 1862
+Artifact            : artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf
+Whole-file SHA-256  : f34bc7cf9293ffb353159e94118f4316bb4cc0a60230b315904dc77ba2502162
+                      (recomputed in this stage and matched)
+Lines               : 51986-52142 (Dominica XX. post Pentecosten, printed pp. 352-354), and
+                      99575-99690 (appendix pro aliquibus locis, Festum Maternitatis B. Mariae
+                      Virginis, printed pp. [171]-[172])
+Extract SHA-256     : 02ffb9f7072379571407455ec37f3d3e0ea02cf18cee6c799deadb758aaf0fda (lines 51986-52142)
+                      d5c879b30c4b9154a01740571562cf73f07f0ab8c473c49c7b2fe3466174c94b (lines 99575-99690)
+Known misreadings   : 'Olitlrnitus' for Introitus; 'qua?' for quae; 'D6mine' for Domine;
+                      'niiseric6rdiae tuse' for misericordiae tuae; the drop capitals lost
+                      ('Mnia', 'Arefre', 'SEus'); a page break leaves Google's watermark line in
+                      the stream. The physical lines do not follow the printed columns in the
+                      appendix, where the layer interleaves the two columns of p. [171].
+
+----- lines 51986-52142 -----
+Dominica  XX. 
+
+post  Pentecosten. 
+
+Olitlrnitus.  Dan.  3. 
+
+Mnia,  qua?  fecisti  no- 
+bis,  D6mine,  in  vero 
+judicio  fecfsti :  quia 
+peccavimus  tibi,  et  mandatis 
+tuis  non  obedivimus:  sed  da 
+
+
+Digitized  by  Google 
+
+
+Domimca  XX.  post  Pentecosten.  353 
+
+
+gloriam  nomini  tuo,  et  fac  no- 
+biscum  secundum  multitudi- 
+nem  niiseric6rdiae  tuse. 
+
+Ps.  1 18.  Beati  immaculati  in 
+via:  qui  ambulant  in  lege 
+D6mini.       G16ria  Patri. 
+
+Oratio. 
+
+T  Arefre,  quaesumus  D6mine, 
+Jj  fia£libus  tuis  indulgentiam 
+jjlac&tus  et  pacem:  ut  p&ri- 
+ter  ab  6mnibus  mundentur 
+offensis,  et  secura  tibi  mente 
+des6rviant.  Per  D6minum. 
+Secunda  Oratio.  A  cunctis 
+nos.  fol.  315. 
+
+Tertia  ad  libitum. 
+
+Lectio  Epfstolae  beati  Pauli 
+Ap6stoh  ad  Eph6sios.  c.  5. 
+
+FRatres.  Videte  qu6raodo 
+caute  ambul6tis:  non  quasi 
+insipi£ntes,  sed  ut  saptentes, 
+redun6ntes  tempus,  qu6niam 
+dies  mali  sunt.  Propterea  no- 
+Hte  fieri  imprud6ntes.  sed 
+intelligSntes,  quae  sit  voluntas 
+Dei.  Et  nolite  inebriari  vino, 
+in  quo  est  luxuria,  sed  im- 
+plemini  Spfritu  sancto,  loqu6n- 
+tes  vobismetfpsis  in  psalmis, 
+et  hymnis,  et  c&nticis  spiri- 
+tualibus?  cantantes,  et  psal- 
+lentes  m  c6rdibus  vestris 
+Domino:  gratias  agentes  sem- 
+per  pro  6mnibus  in  n6mine 
+D6mini  nostri  Jesu  Christi, 
+Deo  et  Patri.  Subj£cti  invi- 
+cem  in  tim6re  Chrlsti. 
+
+Ciradualc.  Ps.  144. #  Oculi 
+6innium  in  te  sperant,  D6mi- 
+ne:  et  tu  das  illis  escam  in 
+t£mpore  opportuno. 
+
+Aperis  tu  manum  tuam, 
+et  imples  omne  animal  bene- 
+dictione. 
+AlleMja,  aUeWja. 
+
+Missale  Rom. 
+
+
+S.Ps.  107.  Paratum  cor  meum, 
+eus,  paratum  cor  meum: 
+cant&bo,  et  psallam  tibi,  glo- 
+ria  mea.  Alleluja. 
+
+Sequ6ntia  sancti  Evangelii  se- 
+
+cundum  Joannem.  c.  4. 
+TN  illo  tSmpore:  Erat  qui- 
+J[  dam  regulus,  cujus  filius 
+lnfirmabatur  Capharnaum.  Hic 
+cum  audisset.  quia  Jesus  ad- 
+veniret  a  Juaaea  in  Galilseam, 
+abiit  ad  eum,  et  rogabat  eum 
+ut  descSnderet ,  et  sanaret 
+filium  ejus:  inciptebat  enim 
+mori.  l)ixit  ergo  Jesus  ad 
+eum:  Nisi  signa  et  prodigia 
+videritis,  non  cr6ditis.  Dicit 
+ad  eunvr6gulus:  D6mine,  de- 
+scende  priusquam  moriatur 
+filius  meus.  Dicit  ei  Jesus: 
+Vade,  filius  tuus  vivit.  Cr6- 
+didit  homo  serm6ni,  quem  di- 
+xit  ei  Jesus,  et  ibat.  Jam 
+autem  eo  descend6nte,  servi 
+occurr6runt  ei,  et  nuntiavS- 
+runt  dic6ntes,  quia  filius  eius 
+viveret.  Interrogabat  ergo  ho- 
+ram  ab  eis,  in  qua  melius 
+habuerit.  Et  dix6runtei:  quia 
+heri  hora  septima  reliquit  eum 
+febris.  Cogn6vit  ergo  pater, 
+quia  illa  hora  erat,  in  qua 
+aixit  ei  Jesus:  Filius  tuus 
+vivit  :  et  credidit  ipse,  et 
+domus  ejus  tota. 
+Credo. 
+
+Offertorium.  Ps.  136.  Super 
+flumina  Babyl6nis  illic  sedi- 
+mus  et  flevimus,  dum  recor- 
+daremur  tui  Sion. 
+
+Seereta. 
+
+C(E16stem  nobis  prsebeant 
+hsec  myst6ria,  qusesumus 
+D6mine,  medicinam:  et  vitia 
+nostri  cordis  expurgent.  Per 
+D6minum. 
+
+23 
+
+Diaitize 
+
+
+354  Dominica  XXI. 
+
+Alia  Secrcta.  Exatidi  nos 
+Deus.  iol.  316. 
+
+Ter.tia  ad  libitum. 
+
+Communio.  Ps.  118.  Mem6nto 
+verbi  tui  servo  tuo,  D6mine, 
+in  quo  mihi  spem  dedisti: 
+hsec  me  consol&ta  est  in  hu- 
+militdte  mea. 
+
+Postcommunio. 
+
+UT  sacris,  D6mine.  reddd- 
+mur  digni  mun^ribus :  fac 
+nos,  qusesumus,  tuis  semper 
+obedlre  manddtis.  Per  1)6- 
+minum. 
+
+Alia  Postcommunio.  Mundet 
+et  rauniat.  lol.  316. 
+Tertia  ad  libitmn. 
+
+----- lines 99575-99690 -----
+verbum  bonum :  dico  ego  6pera 
+mea  Regi. 
+G16na  Patri. 
+
+Oratio. 
+
+SEus,  qui  de  be&tae  Marise 
+Virgmis  utero  Verbum 
+m,  Angelo  nunti&nte,  car- 
+nem  suscipere  vohristi:  prse- 
+sta  supphcibus  tuis;  ut  qui - 
+vere  eam  genitricem  Dei  cre- 
+dimus,  ejus  apud  te  interces- 
+sionibus  adjuv6mur.  Per  etim- 
+dem  D6minum. 
+Et  fit  commem.  Dominiccc 
+occurrentis. 
+Epistola.  Ego  quasi  vitis  fru- 
+ctinc&vi.  ut  in  Festo  Ss.  No- 
+minis  B.  Maria?  Virg.  fol.  536. 
+
+Graduale.  Isaire  11.  Egredie- 
+tur  Virga  de  radice  Jesse,  et 
+flos  de  radice  ejus  asc6ndet. 
+Y.  Et  requiSscet  super  eum 
+Smritus  l)6mini.  Alleltija, 
+afieluja.  V.  Isai.7.  EcceVirgo 
+concipiet,  et  p&riet  filium,  et 
+voc&bitur  nomen  ejus  Emma- 
+nuel.  Alleluja. 
+
+S  equ6ntia  sancti  Evang61ii  se- 
+cftndum  Lucam.      c.  2. 
+
+IN  illo  tempore:  Cum  redi- 
+rent,  rem&nsit  puer  Jesus  in 
+Jerusalem,  et  non  co^noverunt 
+parentes  ejus.  Existimdntes 
+autem  illum  esse  in  comit&tu, 
+ven6runt  iter  diei,  et  requir6- 
+bant  eum  inter  cogn&tos  et 
+notos.  Et  non  invenientes 
+regr6ssi  sunt  in  Jerusalem, 
+requirentes  eum.  Et  factum 
+est,  post  triduum  inven£runt 
+illum  in  templo  sedentem  in 
+medio  doctorum ,  audientem 
+illos,  et  interrog&ntem  eos. 
+Stup£bant  autem  omnes  <jui 
+eum  audi6bant,  super  pruden- 
+
+
+Digitized  by 
+
+
+[172] 
+
+
+Doiuiniea.  JI.  et  IJI.  Octubris. 
+
+
+tia  et  resp6nsis  ejus.  Et  vi- 
+d6ntes  admir&ti  sunt.  Et  di- 
+xit  mater  ejus  ad  illum:  Fili, 
+quid  feristi'  nobis  sic?  Ecce 
+pater  tuus,  et  ego  dol6ntes 
+quaereb&mus  te.  Et  ait  ad 
+illos:  Quid  est  quod  me  quse- 
+reb&tis?  NescicD&tis  quia  in 
+his,  quae  Patris  mei  sunt,  op6r- 
+tet  me  esse?  Et  ipsi  non  in- 
+tellex6runt  verbum,  quod  lo- 
+cutus  est  ad  eos.  Et  descen- 
+dit  cum  eis,  et  venit  N&za- 
+reth:  et  erat  sfibditus  iilis. 
+
+Credo. 
+
+Offcrtorium.  Matth.  1.  Cum 
+esset  despons&ta  Mater  ejus 
+Maria  Joseph,  inv6nta  est  in 
+utero  habens  deSpiritu  sancto. 
+
+Secrcta. 
+mUa,  D6mine,  propitiati6ne, 
+
+1  et  be&toe  Marfae  semper 
+Virginis  Unig6niti  tui  matris 
+intercessi6ne,  ad  perp6tuam, 
+atque  praes6ntem  haec  obl&tio 
+noois  proficiat  prosperit&tem, 
+et  pacem.  Per  eumdem  D6- 
+minum. 
+
+Pnefatio  de  B.  Maria.  Kt 
+te  in  Festivit&te.  f.  232.  vel  252. 
+
+Communio.  Be&ta  viscera 
+Marise  Virginis,  qujc  nortave- 
+runt  set6rni  Patns  Filium. 
+
+Postcommunio. 
+
+HtEc  nos  communio,  D6- 
+mine,  purget  a  crimine: 
+intercedente  bedta  Virgine 
+Dei  genitrice  Maria  coelestis 
+rem6dii  f&ciat  esse  cons6rtes. 
+Per  eumdem  D6minum. 
+
+ln  tine  legitur  Evangelium 
+Dominica?  occurrentis. 
+
+
+Hoininira  111. 
+
+
+----- end of pull 3 -----
