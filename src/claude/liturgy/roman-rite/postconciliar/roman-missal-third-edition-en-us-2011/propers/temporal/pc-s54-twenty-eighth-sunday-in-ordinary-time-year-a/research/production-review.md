@@ -351,3 +351,358 @@ log free of warnings, overfull boxes and undefined references;
 check of the study-preflight gate, including `provenance-matches-run` against
 this run, exit 0. The proof, its logs and rasters are recorded in the run's
 stage artifacts.
+
+## Derive-synthesis
+
+Authored 8 October 2026 in `proper-study` v9, run `0b0f756d95e3ee20`, seeded
+at commit `643a137fb493003f1d9928036b870ce96d0240e3`, at iteration 0. No
+blocking, carried or advisory finding was forwarded to the stage. The concise
+companion is *The Twenty-eighth Sunday in Ordinary Time, Year A: A Concise
+Study of the Proper in the Roman Missal, Third Edition*, built from
+`synthesis.tex` and derived from the expansive study as its independent review
+accepted it at iteration 2. No research evidence record, no component of the
+study, `main.tex`, `format.tex`, `web-edition.toml` or `proper-components.toml`
+was edited: the six concise components and the five presentation roles were
+already declared, with the synthesis mode alone, and the presentation
+environments the opening needs are the shared format's. The shared generation
+record received this stage's contribution and a new revision timestamp.
+
+### What was written
+
+- `synthesis.tex`: a compact title block naming the Sunday, the Missal and
+  Lectionary no. 142, with no cover and no contents page before the fixed
+  opening, and literal unconditional imports of the six components, the
+  generation record and the rights colophon.
+- `concise-inventory` (`sections/concise/01-inventory.tex`): the map of the
+  twelve appointed elements in the order of the Mass, both forms of the Gospel
+  and both Communion antiphons in rows of their own and marked as options,
+  the orations by Latin incipit and description, and beneath it the note that
+  the two pairs are alternatives and the standing notice on the Douay–Rheims
+  study English.
+- `concise-overview` (`sections/concise/02-overview.tex`): exactly four rows,
+  Literal, Allegorical, Moral and Anagogical. Each parenthetical name stands
+  beside what that author says of his own passage; clauses that rest on the
+  longer Gospel or on the second Communion antiphon say so.
+- `concise-date-location` (`sections/concise/03-date-location.tex`): the
+  Scriptural Date and Location sheet. It imports the generated chronology
+  annotations once and carries one `\chronodate` cell for each of the nine
+  element keys, in the study's canonical order of eight dossiers; dates,
+  relation labels, disputed alternatives and the two unresolved setting
+  answers are the generated projection, unchanged. Location cells and
+  explanatory rows are compressed from the study's appendix and still separate
+  inherited attribution, superscription setting, composition and narrated
+  event, and say what each date does not date. No date is written by hand.
+- `concise-themes` (`sections/concise/04-themes.tex`): *The Propers: Themes and
+  Movement*, two pages that open on a thesis (who comes to God's feast, and
+  what keeps a person from it), give a five-stage scan, the two books, the
+  relations the books state and the *Ordo*'s three titles, follow the Mass
+  from the Entrance Antiphon to the Prayer after Communion, and close on the
+  three questions that divide the interpretations.
+- `concise-commentary` (`sections/concise/10-commentary.tex`): *The Propers:
+  Detailed Commentary*, eight cross-proper units: what the king prepares and
+  for whom (Gregory's restated wedding, Jerome, Irenaeus, Chrysostom, Hilary;
+  Jerome and Aquinas on Isaiah 25, Aquinas's one join of Isaiah to the
+  Gospel); now or at the resurrection (Gregory, Augustine's two feasts, Hilary,
+  Aquinas following Gregory; the resurrection, and in the longer form the
+  judgment, as the joins); why the invited would not come (Chrysostom and
+  Aquinas judging the excuses, Gregory and Hilary reading them, Jerome's lesser
+  and greater crime, Gregory and Jerome on the outlets of the roads); the burnt
+  city and the parable's hearers under *Nostra aetate* 4; the wedding garment
+  (the free call examined, Augustine and Gregory on charity, the other names,
+  Hilary's disagreement with the baptismal reading labelled as the editor's);
+  "Friend", the silence and the few chosen; to be full and to be hungry
+  (Philippians 4, the *desiderium* of 4:19, the first Communion antiphon, the
+  Alleluia verse); the Missal's prayers in three hearings; and where the three
+  interpretations agree and part, with their four senses, three disputes and
+  the branches.
+- `concise-apparatus` (`sections/concise/90-apparatus.tex`): the scope note and
+  the References for the sources this companion uses.
+
+### What compression kept and what it set aside
+
+Each interpretation's controlling claim is stated in the themes section and
+developed in the commentary with its strongest difficulty beside it: for the
+feast, the burnt city and the identification of the first invited, kept as
+the reading of the Fathers who make it under *Nostra aetate* 4, with Jerome's
+*nequaquam populo Iudaeorum* his alone; for the garment, that the
+identification is left open and the reading claims only what the witnesses
+share, and that the reading holds only in the longer form; for the refusal,
+Jerome's distinction showing that a story of distraction leaves out the
+violent half, and that no witness joins Philippians or the psalm verse to the
+parable. The disputes are kept as the study keeps them: the garment (real
+disagreement), the present Church or the resurrection (emphasis), the burnt
+city. The one join a witness makes between two readings (Aquinas, Isaiah 25:6
+with Matthew 22:4) is attributed to him, Augustine's join of Psalm 33:11 to
+John 6:51 to him, and every other join is marked as the editor's. Matthew
+22:14 is reported as the study now reports it after STU-003, with Gregory 38.8
+and 38.14, Aquinas's Matthew 7:14, Irenaeus IV.36.6 and Hilary's *raritas in
+electis*; the opening of that unit says that not all the witnesses weigh how
+few are chosen, and Jerome's *non initia, sed finis* stands as his different
+reading, so the study's advisory STU-015 is not inherited.
+
+Set aside, and still in the expansive study: the appointed texts; the
+sacramentary witnesses of the orations; the Latin forms of Isaiah 25 and the
+Greek apparatus of Matthew 22; Gregory and Aquinas on Luke's great supper as
+another parable, beyond one clause; Gregory's bulls and fatlings and Hilary's
+fatlings; Augustine and Bellarmine on Psalm 22; Fromage on the Collect and
+Schuster's comment on it; Cyril's *Procatechesis*; Aquinas on the three tables
+of the Psalter, on the five effects of grace and on God alone deifying;
+Jerome on the king's name; Gregory's two beams and the love of enemies;
+Augustine's objection of excess; Jerome on Isaiah 25:9; Chrysostom's
+"not the money, but the purpose". The References were cut to match: Fromage,
+Wilson, Feltoe, the *Notitiae* list, the *Antiphonary*, the King James
+Version, the SBL Greek text and the loci not used are absent.
+
+No evidence-dependent claim was added. Every quotation is a whole or an
+unbroken part of a quotation the study prints, with its locus, or is marked
+with an ellipsis where the study's own quotation is shortened. English glosses
+of Latin, including those of the *Ordo*'s three titles, are the editor's
+renderings of the Latin beside them.
+
+### Counts
+
+**Substantive word count: 5,641 words** (`detex` of the two argumentative
+components, headings and the five-item scan included): themes 1,295 and
+commentary 4,346. The map 440, the overview 278, the dossier sheet 666 and the
+scope note with References 1,792 are excluded. Counted the same way, the
+study's three interpretations are 3,832, 4,411 and 2,726 words and its
+comparison 1,215; the companion's argument is a little under half of those
+12,184 words.
+
+### Author proof and checks
+
+`make doc` for the `-synthesis` output with `PROVIDER=claude` settles with no
+overfull or underfull box, no LaTeX warning, no undefined reference and no
+rerun request. The proof is
+`build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.pdf`:
+12 physical pages, letter size, SHA-256
+`8d88e54f8745947b4f7065570149d00bfb60bcd27cf292f8c234f7039e15b7c1`, at revision
+timestamp 2026-10-08T14:30:00Z. All font resources are Latin Modern Type 1,
+embedded and subsetted, and the document information carries the title.
+
+The settled auxiliary file (SHA-256
+`d1dd87ed243cda2218cd3de3d770e027cc090ccda63e3f10161938d9bdb924cf`) records:
+inventory start and end, overview start and end and the four sense markers on
+page 1; chronology start and end on page 2; themes start on page 3 and end on
+page 4; commentary start on page 5. `tools/check-proper-components --phase
+artifacts --edition synthesis` passes; so do the synthesis-preflight gate's
+component-contract check and its eleven content-preflight checks, run by hand,
+`provenance-matches-run` with this run's header values, and
+`tools/check-generation-metadata` against the source and against both
+rendered PDFs.
+
+Every page was inspected at full size. The map and the four rows stand
+together on page 1 with room below; the dossier stands whole on page 2; the
+themes section fills page 3 and ends one line short of the foot of page 4; the
+commentary runs from page 5 to page 10; the scope note begins on page 10 and
+the References, the revision timestamp and the rights colophon end on page 12
+with room left. The first build ran to 16 pages, with the anagogical row on
+page 2 and the themes on three pages: the map rows were cut to two lines, the
+overview rows shortened, the themes trimmed and the commentary compressed by
+about a fifth before the final build.
+
+The shared generation record changed, so the expansive study was rebuilt at
+the same timestamp: 38 pages, SHA-256
+`2b17f650c49a43e243b3b15c8185ce81eccef4c98251edce322c9a1e929fe33a`, its
+extracted text identical to the accepted iteration-2 proof except for the
+timestamp line, and its artifacts check passes. The proof, its auxiliary file,
+log and extracted text, the build, preflight, artifact, metadata and
+provenance logs, the marker pages and the font list are kept with their
+digests under the run's `artifacts/derive-synthesis-0000/proof/`, and the page
+rasters and contact sheet made with `tools/pdf-review` in the dedicated child
+`rasters/`. This is author verification; the shared-timestamp three-document
+build and the independent visual review remain to be done.
+
+### For the cold reviewer, about upstream records
+
+1. The concise components declare `research/interpretations.md` and
+   `research/scope.md` as references. Those records still carry the stale
+   summary of Matthew 22:14 and the four minor slips that the study review
+   accepted as STU-016 and STU-017. The companion follows the study at each
+   point, not the record. Nothing was repaired, because the records are the
+   research stage's.
+2. The study's standing advisory STU-015 (the topic sentence of "Many are
+   called") remains in the study; the companion does not repeat it.
+3. No other upstream defect was met while deriving.
+
+## Derive-synthesis, iteration 1
+
+Revised 8 October 2026 in `proper-study` v9, run `0b0f756d95e3ee20`, at
+iteration 1, after the independent synthesis review of iteration 0 returned
+two blocking findings, SYN-001 and SYN-002, and five advisories. Only the
+concise components `concise-themes`, `concise-commentary` and
+`concise-apparatus` and the shared generation record were edited. No research
+evidence record, no study component, `main.tex`, `synthesis.tex`,
+`format.tex`, `web-edition.toml` or `proper-components.toml` was touched.
+
+### Blocking findings
+
+- **SYN-001, repaired.** The sentence in the concise scope note on the Mass
+  from which Schuster's comment comes was deleted. The concise study now
+  names no other Mass of his; he is cited only for what he says of the Gospel
+  at vol. 3, p. 173, introduced as "commenting on the Gospel", under the
+  section's statement that no witness cited joins the Missal's antiphons and
+  orations to these readings. The one permitted clause stays in the expansive
+  study's scope appendix.
+- **SYN-002, repaired.** Aquinas on the wedding garment (*Super Matthaeum*
+  c. 22, Venice p. 282) now gives the sacrament, charity, the remembrance of
+  death and the conformity of works as ways in which some put on Christ, and
+  attaches *et si unum deficiat, malum* only to the concluding triad *per
+  operationem bonam, per conversationem sanctam, per caritatem veram*. The
+  later comparison now says that Aquinas counts the sacrament among the ways
+  Christ is put on while the garment he requires is good works, holy living
+  and true charity together. *Withdrawn at iteration 2:* this entry also said
+  that the repair quoted Aquinas's question "as the page prints it", *Quae est
+  illa vestis?*, and that the reading was checked against the retained
+  facsimile's fifth page. The page does not read *illa*. It reads *Quae est
+  ista vestis? Christus*, with the long-s and t ligature in *ista* as in *est*
+  and *vestis* on the same line; the iteration-1 check misread that ligature
+  as *ll*. The quotation was corrected at iteration 2.
+
+### Advisories cleared in the concise components
+
+SYN-003: the comparison now says "no witness cited denies another
+interpretation's claim". SYN-004: Chrysostom's own answer to why the parable
+speaks of a marriage (God's tender care and spiritual joy) now precedes the
+resurrection he hears in it "also". SYN-005: the themes section now says
+that the parable follows the vineyard parable's saying that the kingdom shall
+be taken from them (21:43), and gives "knew that he spoke of them" to the
+chief priests and Pharisees (21:45). SYN-006: "In both forms of the Gospel,
+what joins them is the resurrection" names the link. SYN-007 lies in
+`research/scope.md` section 3.1, a research record this stage does not own,
+and was left for the research owner.
+
+### Counts
+
+**Substantive word count: 5,741 words** (`detex` of the two argumentative
+components, counted as at iteration 0): themes 1,305 and commentary 4,436.
+The scope note with References is 1,765.
+
+### Author proof and checks
+
+`make doc` for the `-synthesis` output with `PROVIDER=claude` settles with no
+overfull or underfull box, no LaTeX warning and no undefined reference. The
+proof is 12 physical pages, SHA-256
+`7252542eb1be9aa3493f6e9eed410cb1d9621f8f505d6e7d54bc93f47d720292`, at
+revision timestamp 2026-10-08T14:50:41Z; its auxiliary file (SHA-256
+`9fa9be30e38d95a8a5982b2975b0f1b92be0a200bb5d6e0504fb47b87b362622`) places the
+inventory, overview and four sense markers on page 1, the chronology on page
+2, the themes on pages 3–4 and the start of the commentary on page 5. All
+fonts are embedded and subsetted. The thirteen synthesis-preflight checks run
+by hand, including `provenance-matches-run` with this run's header values,
+`tools/check-proper-components --phase artifacts` for both editions and
+`tools/check-generation-metadata` against the source and both rendered PDFs
+exit 0. The contact sheet of all twelve pages and pages 4, 8 and 12 at full
+size were inspected; the themes section ends above
+the foot of page 4 with the longer sentence on Matthew 21, and the References,
+timestamp and rights colophon end on page 12.
+
+The shared generation record changed, so the expansive study was rebuilt at
+the same timestamp: 38 pages, SHA-256
+`821d9993b25546dbba1b1cc806ccc68e8fb495dc91e600b1a14a5d3027a4c917`, its
+sources unchanged. The proof, its auxiliary file, log and extracted text, the
+build, check and marker logs and the font list are kept with their digests
+under the run's `artifacts/derive-synthesis-0001/proof/`, and the page rasters
+and contact sheet in the dedicated child `rasters/`. This is author
+verification; the shared-timestamp three-document build and the independent
+visual review remain to be done.
+
+### For the cold reviewer, about upstream records
+
+1. *Withdrawn at iteration 2.* This item reported the accepted expansive
+   study's *Quae est ista vestis?* (`sections/30-the-wedding-garment.tex`) as a
+   discrepancy with the Venice page, on the ground that the page reads *illa*.
+   The page reads *ista*, as the study prints it. There is no discrepancy, and
+   the study was correctly left unedited.
+2. SYN-007 stands in `research/scope.md` section 3.1, as the advisory says.
+3. The upstream notes of iteration 0 (the stale summaries in the research
+   records accepted as STU-016 and STU-017, and the study's advisory STU-015)
+   are unchanged.
+
+## Derive-synthesis, iteration 2
+
+Revised 8 October 2026 in `proper-study` v9, run `0b0f756d95e3ee20`, at
+iteration 2, after the independent synthesis review of iteration 1 returned
+one blocking finding, SYN-009, and the standing advisory SYN-007. Only the
+concise component `concise-commentary`, this audit and the shared generation
+record were edited. No research evidence record, no study component,
+`main.tex`, `synthesis.tex`, `format.tex`, `web-edition.toml` or
+`proper-components.toml` was touched.
+
+### Blocking finding
+
+- **SYN-009, repaired.** The concise commentary ("The guest without a wedding
+  garment", third paragraph) now quotes Aquinas, *Super Matthaeum* c. 22,
+  Venice p. 282, as *Quae est ista vestis? Christus*, "what is this garment?
+  Christ", as the expansive study glosses it. The rest of the sentence, the
+  closing clause on Aquinas's triad and the later comparison are as iteration 1
+  left them. The iteration-1 statements that the page reads *illa* are
+  withdrawn above, in that iteration's SYN-002 entry and in its first note for
+  the cold reviewer.
+
+### Verification performed at this iteration
+
+The retained facsimile `matthew-22-facsimile-d80cea1b` matched its recorded
+SHA-256. Its fifth page (printed p. 282) was rendered at the page image's
+native resolution and at three times that, and the left column was read from
+its head to the end of the exposition of Matthew 22:12. On the eleventh line,
+*Quæ eſt iſta veſtis? Chriſtus.*, the second and third letters of the
+questioned word have the same long-s and t ligature as *eſt* and *veſtis* on
+that line and *Chriſtum* on the next: a long s whose head curves over into a t
+that carries a crossbar. They do not have the form of the *ll* of *illum*
+lower in the same column, two plain stems with no crossbar. The page reads
+*ista*. The column's continuation (*per sacramentum*, *per caritatem, et
+amorem*, *per mortis rememorationem*, *per operum conformitatem*, then *Habere
+ergo vestem nuptialem est induere Christum per operationem bonam, per
+conversationem sanctam, per caritatem veram: et si unum deficiat, malum*) was
+read on the same render and agrees with the concise study as repaired at
+iteration 1.
+
+### Counts
+
+**Substantive word count: 5,741 words** (`detex` of the two argumentative
+components, counted as at iteration 0): themes 1,305 and commentary 4,436,
+unchanged, since the repair replaces one word of the Latin and one of the
+gloss. The scope note with References is 1,765.
+
+### Author proof and checks
+
+`make doc` for the `-synthesis` output with `PROVIDER=claude` settles with no
+overfull or underfull box, no LaTeX warning and no undefined reference. The
+proof is 12 physical pages, letter size, SHA-256
+`5e84ff4a15440fe54e1512a539b264fb442f719f429fc51221dd0d60812228a7`, at
+revision timestamp 2026-10-08T15:34:01Z; its auxiliary file (SHA-256
+`9fa9be30e38d95a8a5982b2975b0f1b92be0a200bb5d6e0504fb47b87b362622`, the same
+bytes as at iteration 1) places the inventory, overview and four sense markers
+on page 1, the chronology on page 2, the themes on pages 3–4 and the start of
+the commentary on page 5. The extracted text differs from the iteration-1
+proof only in the two changed words on page 7 and the revision timestamp on
+page 12, with every line break where it was. All fonts are Latin Modern Type 1,
+embedded and subsetted. The thirteen synthesis-preflight checks, run by hand
+with this run's header values for `provenance-matches-run`,
+`tools/check-proper-components --phase artifacts` for both editions and
+`tools/check-generation-metadata` against the source, both rendered PDFs and
+the provider exit 0. The contact sheet of all twelve pages and pages 7 and 12
+at full size were inspected.
+
+The shared generation record changed, so the expansive study was rebuilt at
+the same timestamp: 38 pages, SHA-256
+`2eb65a7f10c4fd3bf33561b57593e99fe256c065060c0a8fc338899c75e00e95`, its
+sources unchanged and its log free of box and LaTeX warnings. The proof, its
+auxiliary file, log and extracted text, the build, check and marker logs, the
+font list and the two facsimile crops are kept with their digests under the
+run's `artifacts/derive-synthesis-0002/proof/`, and the page rasters and
+contact sheet in the dedicated child `rasters/`. This is author verification;
+the shared-timestamp three-document build and the independent visual review
+remain to be done.
+
+### For the cold reviewer, about upstream records
+
+1. `research/interpretations.md` (the Aquinas row of the wedding-garment lane)
+   and `research/scope.md` (the *Super Matthaeum* locus row) still quote
+   *Quae est illa vestis?*. The study review accepted that lag as STU-017, and
+   the study and the concise study now both print *ista*. The records were not
+   edited, because they are the research stage's.
+2. SYN-007 stands in `research/scope.md` section 3.1, a research record this
+   stage does not own.
+3. The other upstream notes of iterations 0 and 1 are unchanged.

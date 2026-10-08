@@ -49,13 +49,13 @@ provider = "claude"
 run_id = "0b0f756d95e3ee20"
 workflow = "proper-study"
 workflow_version = 9
-stage = "study-review"
+stage = "synthesis-review"
 iteration = 2
 disposition = "PASS"
 standing = 0
 accepted_count = 2
-advisory_count = 2
-observation_count = 2
+advisory_count = 3
+observation_count = 4
 
 [[stages]]
 stage = "research-review"
@@ -80,6 +80,18 @@ standing = 0
 accepted_count = 2
 advisory_count = 1
 observation_count = 1
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 2
+disposition = "PASS"
+run_id = "0b0f756d95e3ee20"
+workflow = "proper-study"
+workflow_version = 9
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 2
 
 [[accepted]]
 stage = "study-review"
@@ -115,6 +127,14 @@ location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-editi
 problem = "The new topic sentence says that every witness who comments on Mt 22:14 weighs how few the chosen are. Jerome comments on the verse (Commentarii in Matthaeum III, PL 26 col. 161, read on the page image: 'Omnes parabolas brevi sententia comprehendit: quod ... non initia, sed finis quaeratur') and states no proportion. The subsection itself says, 47 lines later, that he 'reads the saying differently', and the closing limit (lines 360-368) rightly leaves him out of those who weigh the few. As written, the opening either credits Jerome with a judgement he does not make, or leaves the reader to take 'differently' as one more of the 'different places' from which the same judgement is reached. Chrysostom's Homily 69 does not comment on v. 14, so Jerome is the only exception. The reader is given Jerome's own words and the explicit contrast, so this is not blocking."
 required_result = "Make the opening sentence and the Jerome sentence agree. Either restrict the opening to the witnesses the paragraph reports (Gregory, Augustine, Aquinas, Irenaeus and Hilary), or say in it that Jerome reads the saying on another ground, the end rather than the beginning. Do not imply that Jerome states a proportion."
 
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-007"
+severity = "advisory"
+location = "research/scope.md, section 3.1, paragraph 'What is the wedding garment?' (line 172): \"Aquinas gathers these as putting on Christ by sacrament, by charity, by remembrance of death and by works, 'et si unum deficiat, malum'.\""
+problem = "This is unchanged since iteration 0. The summary attaches 'et si unum deficiat, malum' to the four ways of putting on Christ. The same record's locus row for Super Matthaeum c. 22 (line 143), research/interpretations.md line 232 and the Venice page (p. 282, which I re-read at this iteration) all attach it to the closing triad of good works, holy conduct and true charity. The concise study follows the page, so no reader of it is misled."
+required_result = "When the research record is next revised, attach the clause in the summary only to Aquinas's closing triad, as the locus row does."
+
 [[observations]]
 stage = "research-review"
 location = "src/sources/chronology/bindings.yaml, the `traditional-attribution` bindings of `israel.monarchy.david-traditional-era`; src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/scope.md section 8.1"
@@ -124,3 +144,13 @@ note = "The Davidic attribution bindings reach Psalms 32, 33, 39, 70, 85, 94, 97
 stage = "study-review"
 location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/production-review.md, 'Author-study, iteration 2', Scope, words and pages ('every check of the study-preflight gate, including provenance-matches-run against this run, exit 0')"
 note = "The author-study-0002 gates log stored with the run's proof records provenance-matches-run exiting 1. Its run arguments were literal '{run.workflow_id}'-style placeholders. No stored log shows the passing invocation the record reports. The engine's own study-preflight-0002 provenance-matches-run passed against this run, so the outcome holds; only the author's own check is unevidenced."
+
+[[observations]]
+stage = "synthesis-review"
+location = "run ledger, accepted SYN-008 (synthesis-review, iteration 0), on the expansive study's sections/30-the-wedding-garment.tex 'Quae est ista vestis? Christus'"
+note = "SYN-008's premise is false: the Venice page reads 'ista', as the expansive study and now the concise study print, and as I confirmed on the page image at this iteration. evaluations/blocking-findings-v1.toml no longer lists it, but the run still holds it as accepted, and its required_result (print 'illa' when the study is next revised) must not be acted on. A person should retire it."
+
+[[observations]]
+stage = "synthesis-review"
+location = "src/sources/works/thomas-aquinas/opera-editio-altera-veneta-tomus-3/editions/1745-venice-bettinelli/artifacts/ia-djvu-ocr-10aa155e/artifact.toml, notes"
+note = "The notes still warn only that this OCR reads long s as f. They do not warn that it reads the st ligature as 'll' or 'li' ('Quae ell ilia veftis? Chrillus' for 'Quae est ista vestis? Christus'), and that misreading reached research/scope.md line 143, research/interpretations.md line 232, synthesis-review 0 and derive-synthesis 1. A caveat in the source record, or a check that refuses a Latin quotation from this OCR unless it was read on the page image, would catch the whole class of error."
