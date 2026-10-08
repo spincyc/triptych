@@ -25,7 +25,7 @@ twenty weeks to 11 October). The production plan records this exact scope
 opening. The GPT leaf for the same identity is published; this is an
 independent Claude production and borrows nothing from it.
 
-**Accepted; publication to `main` in progress.** Run `9c1136f1f8d1241c`
+**Complete: accepted, pushed to `main` and verified live.** Run `9c1136f1f8d1241c`
 (`proper-study` v9) reached ACCEPTED at its publication gates with no
 escalation: 30 packets, 30 accepted results, one intervention. Every agent
 stage ran as a fresh `claude-opus-5-5[1m]` subagent at its packet's declared
@@ -42,8 +42,15 @@ standing advisories and what is left for other owners is
 [CYCLES.md](workflows/reviews/claude-1962-60-production-2026-10-07/CYCLES.md).
 `make check-sources`, `check-publication-inventories`,
 `check-release-bindings`, `check-web-editions-current` and `tmt check` pass.
-The work is committed on `feature/propers/claude` and reaches `main` by
-fast-forward after the local deploy gates pass.
+`main` was fast-forwarded from `cdb85f0a4` to `a0375f38c` after
+`make check-deployment-sources`, `make public-site` and `tools/tpt
+public-alpha verify --deployment-target github-pages` passed locally. Pages
+run `37714958365` and repository-hygiene run `37714958289` succeeded; the
+three PDFs, the web page and the Traditional Latin Mass catalog are served
+byte-identical to the locally verified site, and the catalog row links all
+four Claude artifacts. The
+[deployment evidence](workflows/reviews/claude-1962-60-production-2026-10-07/deployment-evidence.json)
+records the gates, the disclosure scan and the five live routes.
 
 ## GPT Twenty-eighth Sunday main integration, 2026-10-06
 

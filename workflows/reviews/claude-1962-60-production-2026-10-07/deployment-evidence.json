@@ -1,0 +1,80 @@
+{
+ "record_type": "deployment-verification",
+ "verified_on": "2026-10-08",
+ "commit": "a0375f38c059ed7a4cbae39bcb87a77cc086493a",
+ "main_base": "cdb85f0a41c70c68dfadd53abe770ff84f714e49",
+ "integration": "fast-forward; origin/main was an ancestor of the accepted work, no rebase, merge commit or force push",
+ "local_gates": [
+  {
+   "command": "make check-deployment-sources",
+   "exit_code": 0,
+   "log_sha256": "232127979999dcec9e10cb61cdccd2154866d71d1d0e2b24afdb670f745608c6"
+  },
+  {
+   "command": "make public-site",
+   "exit_code": 0,
+   "log_sha256": "db132a42ab5155bb0375c87f11e90f85171aa5fe4b61396f69ce1fed0534fbb1"
+  },
+  {
+   "command": "tools/tpt public-alpha verify --deployment-target github-pages",
+   "exit_code": 0,
+   "log_sha256": "b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14"
+  }
+ ],
+ "local_gate_environment": "Python Markdown 3.10.3 and PyYAML 6.0.3 from requirements-public-alpha.txt and requirements-tools.txt; pdf/ entries absent from this clone restored from the live site's SHA256SUMS and hash-checked before the gates",
+ "disclosure": "Outgoing range cdb85f0a4..a0375f38c, 6 commits, 118 files, text only; added lines scanned for machine paths, usernames, hosts and credentials with no match beyond the liturgical word 'secret'.",
+ "workflow_run": "https://github.com/spincyc/triptych/actions/runs/37714958365",
+ "workflow_conclusion": "success",
+ "repository_hygiene_run": "https://github.com/spincyc/triptych/actions/runs/37714958289",
+ "repository_hygiene_conclusion": "success",
+ "publication": "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost",
+ "provider": "claude",
+ "routes": [
+  {
+   "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.pdf",
+   "http_status": 200,
+   "physical_pages": 31,
+   "sha256": "f1a9918244721162770772663f087d2bf0e13936f4d73385846bdfd367cd87c4",
+   "compared_with": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.pdf (the installed reviewed PDF) and build/public-alpha/site/pdf/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.pdf",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis.pdf",
+   "http_status": 200,
+   "physical_pages": 12,
+   "sha256": "29d93ddd16c034d1c7c395a8a190010be9afedb1a842994b43065bb21b132511",
+   "compared_with": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis.pdf (the installed reviewed PDF) and build/public-alpha/site/pdf/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis.pdf",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-homily.pdf",
+   "http_status": 200,
+   "physical_pages": 3,
+   "sha256": "e2ad69b1b3ece4c141c8756cefed03a42e09de32b14204ce7d9445153c0e4b14",
+   "compared_with": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-homily.pdf (the installed reviewed PDF) and build/public-alpha/site/pdf/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-homily.pdf",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/web/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.html",
+   "http_status": 200,
+   "sha256": "8da7623748aa7a75088005c53c8baf7f70c5403c94c56c6de48aefba2b6485c1",
+   "bytes": 142913,
+   "compared_with": "build/public-alpha/site/web/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.html (the locally verified site)",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/library/traditional-latin-mass.html",
+   "http_status": 200,
+   "sha256": "32bae753902ac8d83dac991c644f5114fc5801549b92cabaad66747d0684a18f",
+   "bytes": 28438,
+   "compared_with": "build/public-alpha/site/library/traditional-latin-mass.html (the locally verified site)",
+   "match": "byte-identical",
+   "links_found": [
+    "pdf/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.pdf",
+    "pdf/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis.pdf",
+    "pdf/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-homily.pdf",
+    "web/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.html"
+   ]
+  }
+ ]
+}
