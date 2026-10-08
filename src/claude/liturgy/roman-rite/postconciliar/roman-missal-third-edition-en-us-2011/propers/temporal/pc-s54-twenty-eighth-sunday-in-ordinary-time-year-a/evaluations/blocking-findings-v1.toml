@@ -1,0 +1,83 @@
+# Blocking findings standing against this publication, the
+# verdicts its evaluation lanes reached, and the observations
+# they recorded outside their own criteria. Written by tpt after
+# each evaluation of this leaf.
+#
+# One record, several stages. Every entry names the stage that
+# raised it, [[stages]] says what each stage last said, and an
+# evaluation replaces its own stage's entries and leaves every
+# other stage's alone -- so what the content evaluation found
+# still stands here after the synthesis evaluation has spoken. A
+# stage that looked and found nothing leaves an empty list
+# rather than no entry: "evaluated, nothing stands" and
+# "nobody has looked" are different facts, per stage.
+#
+# The keys directly below these comments describe the write that
+# last touched this file, and count every stage's entries
+# together. They are its summary line. What a given stage found
+# is in that stage's [[stages]] entry and in the entries naming
+# it -- reading the top-level stage as the record's one stage is
+# the mistake this schema exists to stop.
+#
+# It exists because a run's own results live under build/, which
+# is ignored, which `make clean` and `wt tidy` delete without
+# asking, and which nothing preserves between productions.
+#
+# Nothing reads this back into a run. Carrying findings from one
+# production into the next wants doing where the run's identity
+# can cover it -- a committed record, or this file's hash in the
+# run id and the acceptance audit -- and until then this is a
+# record for people.
+#
+# Escalations -- defects in artifacts no stage of the run may
+# write: guidance, the source library, the tools, the workflow --
+# are written here too, from the run's whole ledger, so that the
+# decision they ask of a maintainer outlives the run directory.
+#
+# Accepted findings are true defects a lane judged not worth a
+# repair round, with the reason it judged so. Advisories are
+# defects that did not merit blocking. Both are here because a
+# verdict that dies with the run is met again by the next cold
+# read as though nobody had ever weighed it, and weighed again --
+# which is how a document in good shape spends a whole iteration
+# budget. A later evaluation reads these before it raises.
+
+standing_findings_schema = 4
+record_type = "standing-blocking-findings"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a"
+provider = "claude"
+run_id = "0b0f756d95e3ee20"
+workflow = "proper-study"
+workflow_version = 9
+stage = "research-review"
+iteration = 1
+disposition = "PASS"
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 1
+
+[[stages]]
+stage = "research-review"
+iteration = 1
+disposition = "PASS"
+run_id = "0b0f756d95e3ee20"
+workflow = "proper-study"
+workflow_version = 9
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 1
+
+[[advisories]]
+stage = "research-review"
+id = "RES-007"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/interpretations.md, Reading 1 `wedding-feast`, Element contributions table, `prayer-after-communion` row (line 167)"
+problem = "The row added at this re-entry puts (\"apertius atque securius\") in quotation marks as Gregory's own words. Gregory, Hom. in Evang. 38.3, in the bound Wikisource text (physical line 534), reads \"Apertius ergo atque securius dici potest\". The omitted ergo is not marked, and the quotation rules in scope section 3 admit only orthographic normalisation. The sense is unaffected, but a study that copies the phrase will misquote Gregory."
+required_result = "Quote the phrase as \"apertius ergo atque securius\", or mark the omission with an ellipsis, wherever the research or the studies cite Gregory's preferred formulation."
+
+[[observations]]
+stage = "research-review"
+location = "src/sources/chronology/bindings.yaml, the `traditional-attribution` bindings of `israel.monarchy.david-traditional-era`; src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/scope.md section 8.1"
+note = "The Davidic attribution bindings reach Psalms 32, 33, 39, 70, 85, 94, 97, 107, 118, 137, 140 and 144. They do not reach Vulgate Psalm 22, although its tracked Clementine title reads 'Psalmus David' (Douay 'A psalm for David'). So the responsorial psalm's chronology carries no attribution era, which scripture-chronology section 8 says should not disappear with the unproved occasion. The leaf correctly preserves the corpus state and names the gap. This is a shared-corpus binding gap for its maintainers, not a research defect of this leaf."

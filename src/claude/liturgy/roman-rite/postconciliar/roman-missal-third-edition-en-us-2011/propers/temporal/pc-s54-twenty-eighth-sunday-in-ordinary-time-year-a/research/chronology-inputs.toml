@@ -1,0 +1,126 @@
+# Appointment-query input for tools/tpt proper-chronology. It carries citations
+# and ownership only. It authors no date and is not a chronology source.
+# Citations are those of instance/manifest.md and propers/verified.md; Missal
+# elements are owned by the Week XXVIII shared owner, Lectionary elements by
+# this leaf. Each printed ref keeps the numbering of the witness that prints it.
+#
+# - Entrance antiphon: the Missal's own locator, Ps 129, 3-4, in Vulgate
+#   numbering (Hebrew 130:3-4; the verse numbers coincide). The Missal prints no
+#   Cf., but the owner's finding 1 shows an adaptation (v. 3, the first colon of
+#   v. 4 and a closing vocative found in neither Latin psalter read), so the
+#   relationship is recorded as adaptation, not appointed wording.
+# - Responsorial psalm: Hebrew numbering, the printed form of the United States
+#   witnesses (Psalm 23; the Latin Ordo prints Ps 22, 1-3a. 3b-4. 5, 6), converted
+#   by the canonical concordance. The Hebrew and Vulgate verse numbers of this
+#   psalm coincide. The response is v. 6cd as the Ordo and the dated page cite it.
+# - Gospel acclamation: the Ordo and the dated page print Cf. Ephesians 1:17-18;
+#   the verse recasts Paul's prayer in the first person plural.
+# - Communion antiphon A: the Missal's printed Vulgate locator with its Cf.
+#   (2002 Latin "Cf. Ps 33, 11"; ICEL excerpt "Cf. Ps 33: 11"); Hebrew Psalm
+#   34:11 in the count that numbers the title, 34:10 in English Bibles that do
+#   not. The United States Lectionary does not print the antiphon.
+# - Communion antiphon B: the Missal prints 1 Io 3, 2 without Cf., but the
+#   owner's finding 3 shows an adaptation (the opening clause omitted, the
+#   subject Dominus supplied), so the relationship is adaptation.
+# - The two forms of the Gospel are separate element keys, as the manifest keeps
+#   them; so are the two Communion antiphons.
+schema = 1
+record_type = "proper-chronology-inputs"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a"
+calendar = "postconciliar"
+formula = "PC-S54-A"
+shared_owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/28/propers/verified.md"
+
+[[elements]]
+key = "entrance-antiphon"
+name = "Entrance Antiphon"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/28/propers/verified.md"
+citations = [
+  { ref = "Psalm 129:3-4", citation = "Psalm 129:3-4", system = "vulgate", kind = "adaptation" },
+]
+
+[[elements]]
+key = "collect"
+name = "Collect"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/28/propers/verified.md"
+citations = []
+non_scriptural_reason = "Composed oration with no scriptural locator; its vocabulary of grace going before and following is a loose echo of no one verse, which the page-2 rule excludes."
+
+[[elements]]
+key = "first-reading"
+name = "First Reading"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Isaiah 25:6-10a", citation = "Isaiah 25:6-10a", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "responsorial-psalm"
+name = "Responsorial Psalm"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Psalm 23:1-3a, 3b-4, 5, 6", citation = "Psalm 23:1-3a, 3b-4, 5, 6", system = "hebrew", kind = "appointed" },
+  { ref = "Psalm 23:6cd", citation = "Psalm 23:6cd", system = "hebrew", kind = "response" },
+]
+
+[[elements]]
+key = "second-reading"
+name = "Second Reading"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Philippians 4:12-14, 19-20", citation = "Philippians 4:12-14, 19-20", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "gospel-acclamation"
+name = "Alleluia Verse"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Cf. Ephesians 1:17-18", citation = "Ephesians 1:17-18", system = "vulgate", kind = "adaptation" },
+]
+
+[[elements]]
+key = "gospel-long"
+name = "Gospel (longer form)"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Matthew 22:1-14", citation = "Matthew 22:1-14", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "gospel-short"
+name = "Gospel (shorter form)"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Matthew 22:1-10", citation = "Matthew 22:1-10", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "prayer-over-offerings"
+name = "Prayer over the Offerings"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/28/propers/verified.md"
+citations = []
+non_scriptural_reason = "Composed oration with no scriptural locator."
+
+[[elements]]
+key = "communion-antiphon-a"
+name = "Communion Antiphon (first)"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/28/propers/verified.md"
+citations = [
+  { ref = "Cf. Psalm 33:11", citation = "Psalm 33:11", system = "vulgate", kind = "adaptation" },
+]
+
+[[elements]]
+key = "communion-antiphon-b"
+name = "Communion Antiphon (alternative)"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/28/propers/verified.md"
+citations = [
+  { ref = "1 John 3:2", citation = "1 John 3:2", system = "vulgate", kind = "adaptation" },
+]
+
+[[elements]]
+key = "prayer-after-communion"
+name = "Prayer after Communion"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/28/propers/verified.md"
+citations = []
+non_scriptural_reason = "Composed oration with no scriptural locator. Its words divinae naturae consortes also stand in 2 Peter 1:4 in the Clementine; that is a loose echo the Missal does not cite, which the page-2 rule excludes."
