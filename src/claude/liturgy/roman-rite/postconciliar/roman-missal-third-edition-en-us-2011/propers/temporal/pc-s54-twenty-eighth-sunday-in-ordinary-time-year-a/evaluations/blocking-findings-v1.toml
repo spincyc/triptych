@@ -49,13 +49,13 @@ provider = "claude"
 run_id = "0b0f756d95e3ee20"
 workflow = "proper-study"
 workflow_version = 9
-stage = "research-review"
-iteration = 1
+stage = "study-review"
+iteration = 2
 disposition = "PASS"
 standing = 0
-accepted_count = 0
-advisory_count = 1
-observation_count = 1
+accepted_count = 2
+advisory_count = 2
+observation_count = 2
 
 [[stages]]
 stage = "research-review"
@@ -69,6 +69,36 @@ accepted_count = 0
 advisory_count = 1
 observation_count = 1
 
+[[stages]]
+stage = "study-review"
+iteration = 2
+disposition = "PASS"
+run_id = "0b0f756d95e3ee20"
+workflow = "proper-study"
+workflow_version = 9
+standing = 0
+accepted_count = 2
+advisory_count = 1
+observation_count = 1
+
+[[accepted]]
+stage = "study-review"
+id = "STU-016"
+severity = "accepted"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/interpretations.md lines 303-305 (Reading 2, '\"Few are chosen\" must not be turned into a statement about how many are saved: Augustine counts the few against the bad, Gregory draws only humility from it'); research/scope.md lines 185-190 ('How few are chosen?') and line 472 (section 7 comparison row)"
+problem = "The research records still summarize the witnesses' readings of Mt 22:14 as the study did before STU-003 was repaired. They say that Gregory draws only humility from the verse, and they give Aquinas's reason without his Matthew 7:14. They omit Gregory 38.8 (multi mali et pauci boni, the ark, Mt 7:13, the threshing floor) and 38.14 (omne malorum corpus), and Irenaeus IV.36.6 ('with many of them was He not well pleased'). All of these were checked at their bound loci at this iteration. The study now departs from the records on that evidence. research/production-review.md (Author-study, iteration 2) records the departure and asks the reviewer to route it."
+required_result = "In a later research pass, restate the Reading 2 'Strongest difficulty' paragraph, the scope.md 'How few are chosen?' paragraph and the section 7 row so that they report Gregory 38.8 and 38.14, Aquinas's Matthew 7:14 at Venice p. 282 and Irenaeus IV.36.6 beside Augustine and Hilary, as sections/30 now does."
+accepted_because = "The study owns the reader-facing prose, and the concise study and homily are reviewed against it. It now reports these readings correctly from bound loci verified at this iteration, and the production record states the departure, so no reader of the three documents is misled. Correcting two summary paragraphs in settled, reviewed research records would cost a research re-entry that reruns research review, the study and this review."
+
+[[accepted]]
+stage = "study-review"
+id = "STU-017"
+severity = "accepted"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/interpretations.md line 232 and research/scope.md line 143 ('Quae est illa vestis?'); research/scope.md line 143 (Aquinas, Super Matthaeum row: 'Sed cum videbitur sicuti est, tunc erit Rex' without 'ut dicit Origenes'); research/scope.md lines 323 and 588 (Fromage 'English, 1900'); research/interpretations.md lines 255-258 (Hilary 'not a carrying author' because he does not carry 'the identification as charity')"
+problem = "Four research-record statements lag what the study, correctly, now says. (1) The Venice p. 282 page image reads 'Quae est ista vestis?', as the study prints, not 'illa'. (2) Aquinas gives the homo rex explanation 'ut dicit Origenes' (Venice p. 279), which the study now says and the scope.md row does not. (3) The Fromage volume's edition record dates it 1909, a second edition, as the study's References give it; scope.md says 1900. (4) The reason given for leaving Hilary out of the wedding-garment lane's carrying authors assumes the lane names the garment charity. The study leaves that identification open, and Hilary shares the lane's controlling claim. The lane's standing is unaffected, since five other authors carry it. The first three were recorded as observations at iterations 0 and 1, and the fourth at iteration 1. They are recorded here as findings because they are research-owned evidence statements."
+required_result = "In a later research pass, read 'ista' at both places. Note 'ut dicit Origenes' in the scope.md Aquinas row. Give the Fromage volume as the 1909 second edition in scope.md's prose. Restate Hilary's carrying rationale to fit the lane's open identification of the garment, or add him to carrying_authors."
+accepted_because = "Each statement is in settled, reviewed research records, the study is already correct at every one of these points, and none changes a claim, a citation or an author's standing in any of the three documents. A research re-entry for them would rerun this review for no gain to a reader."
+
 [[advisories]]
 stage = "research-review"
 id = "RES-007"
@@ -77,7 +107,20 @@ location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-editi
 problem = "The row added at this re-entry puts (\"apertius atque securius\") in quotation marks as Gregory's own words. Gregory, Hom. in Evang. 38.3, in the bound Wikisource text (physical line 534), reads \"Apertius ergo atque securius dici potest\". The omitted ergo is not marked, and the quotation rules in scope section 3 admit only orthographic normalisation. The sense is unaffected, but a study that copies the phrase will misquote Gregory."
 required_result = "Quote the phrase as \"apertius ergo atque securius\", or mark the omission with an ellipsis, wherever the research or the studies cite Gregory's preferred formulation."
 
+[[advisories]]
+stage = "study-review"
+id = "STU-015"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/30-the-wedding-garment.tex, subsection 'Many are called', lines 200-201 ('The witnesses who comment on the closing saying weigh how few the chosen are, and they reach that judgement from different places') against lines 247-249 ('Jerome reads the saying differently ... non initia, sed finis quaeratur')"
+problem = "The new topic sentence says that every witness who comments on Mt 22:14 weighs how few the chosen are. Jerome comments on the verse (Commentarii in Matthaeum III, PL 26 col. 161, read on the page image: 'Omnes parabolas brevi sententia comprehendit: quod ... non initia, sed finis quaeratur') and states no proportion. The subsection itself says, 47 lines later, that he 'reads the saying differently', and the closing limit (lines 360-368) rightly leaves him out of those who weigh the few. As written, the opening either credits Jerome with a judgement he does not make, or leaves the reader to take 'differently' as one more of the 'different places' from which the same judgement is reached. Chrysostom's Homily 69 does not comment on v. 14, so Jerome is the only exception. The reader is given Jerome's own words and the explicit contrast, so this is not blocking."
+required_result = "Make the opening sentence and the Jerome sentence agree. Either restrict the opening to the witnesses the paragraph reports (Gregory, Augustine, Aquinas, Irenaeus and Hilary), or say in it that Jerome reads the saying on another ground, the end rather than the beginning. Do not imply that Jerome states a proportion."
+
 [[observations]]
 stage = "research-review"
 location = "src/sources/chronology/bindings.yaml, the `traditional-attribution` bindings of `israel.monarchy.david-traditional-era`; src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/scope.md section 8.1"
 note = "The Davidic attribution bindings reach Psalms 32, 33, 39, 70, 85, 94, 97, 107, 118, 137, 140 and 144. They do not reach Vulgate Psalm 22, although its tracked Clementine title reads 'Psalmus David' (Douay 'A psalm for David'). So the responsorial psalm's chronology carries no attribution era, which scripture-chronology section 8 says should not disappear with the unproved occasion. The leaf correctly preserves the corpus state and names the gap. This is a shared-corpus binding gap for its maintainers, not a research defect of this leaf."
+
+[[observations]]
+stage = "study-review"
+location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/production-review.md, 'Author-study, iteration 2', Scope, words and pages ('every check of the study-preflight gate, including provenance-matches-run against this run, exit 0')"
+note = "The author-study-0002 gates log stored with the run's proof records provenance-matches-run exiting 1. Its run arguments were literal '{run.workflow_id}'-style placeholders. No stored log shows the passing invocation the record reports. The engine's own study-preflight-0002 provenance-matches-run passed against this run, so the outcome holds; only the author's own check is unevidenced."
