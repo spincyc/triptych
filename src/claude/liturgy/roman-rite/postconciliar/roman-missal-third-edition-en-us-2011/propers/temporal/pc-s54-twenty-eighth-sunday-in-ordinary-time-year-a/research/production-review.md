@@ -706,3 +706,302 @@ remain to be done.
 2. SYN-007 stands in `research/scope.md` section 3.1, a research record this
    stage does not own.
 3. The other upstream notes of iterations 0 and 1 are unchanged.
+
+## Derive-homily
+
+Authored 8 October 2026 in `proper-study` v9, run `0b0f756d95e3ee20`, seeded
+at commit `643a137fb493003f1d9928036b870ce96d0240e3`, at iteration 0. No
+blocking, carried or advisory finding was forwarded to the stage. The homily is
+*The Twenty-eighth Sunday in Ordinary Time, Year A: All Things Are Ready*,
+built from `homily.tex`, for an adult parish assembly at the occurrence of 11
+October 2026, and derived from the expansive study and the concise study as
+their independent reviews accepted them at iteration 2. No research evidence
+record, no study or concise component, `main.tex`, `synthesis.tex`,
+`format.tex`, `web-edition.toml` or `proper-components.toml` was edited: the
+two homily components were already declared, with the homily mode alone.
+
+### What was written
+
+- `homily.tex`: `common/preamble`, `common/propers-format` and
+  `common/propers-homily` imported literally in that order, then the leaf's
+  format; the full-width shared title (the Sunday, the subtitle *All Things
+  Are Ready*, the Missal, Lectionary no. 142 and the date); one
+  `properhomily` environment enclosing only the literal import of the spoken
+  component; the terminal note after the environment's closing page break;
+  the generation record and the rights colophon. No local font, geometry,
+  title or column setting.
+- `homily-body` (`sections/homily/10-homily.tex`): the spoken body, seven
+  movements divided by six vertical spaces. The invitation refused for a farm
+  and a business, with Chrysostom's reasonable excuses and Aquinas's refusal
+  of every temporal excuse; what the feast is, from Isaiah 25 and Gregory's
+  wedding of the Son through the Incarnation, and what the farm and the
+  merchandise cost in Gregory's reading; the guests from the places where the
+  roads go out; the apostle who knows plenty and want, with Chrysostom on
+  plenty; the wedding garment as charity, with Augustine's "Clothe others";
+  this Mass as the feast spread now, with the Collect, the Prayer over the
+  Offerings, the Prayer after Communion and the first Communion antiphon; and
+  one practicable response, which returns to the king's opening words.
+- `homily-note` (`sections/homily/90-note.tex`): *Note on Sources and
+  Delivery* (audience and occasion, length and pace, relation to the reviewed
+  interpretations, the joins that are the homily's own, what is left to the
+  studies, the route of each quoted text, exact loci) and the References.
+
+### The argument and its relation to the studies
+
+The argument preached is chiefly the third interpretation,
+`farm-and-merchandise` (*One to His Farm, Another to His Merchandise: Why the
+Invited Would Not Come*): the first refusal is not hostility but neglect for
+good and necessary things, and nothing temporal ought to keep anyone from
+coming to God. Chrysostom (*Hom. in Matt.* 69.1), Aquinas (*Super Matt.*
+c. 22, p. 281), Gregory (*Hom. in Evang.* 38.5–6), Chrysostom on Philippians
+(*Hom. in Phil.* 15) and Augustine on the psalm of the first Communion
+antiphon (*Enarr.* 33, section 14 of the English text) carry it. It is joined
+to the first, `wedding-feast`, for what is refused: Isaiah 25:6 and 8,
+Gregory's restated wedding (38.3) and his hearers who recline at the wedding
+of the Word (38.11). From the second, `wedding-garment`, it takes the garment
+as charity with Augustine (*Sermo* 90.5–6, 95.7) and Gregory (38.9). The
+study's comparison finds that no witness cited denies another
+interpretation's claim and that Gregory contributes to all three; the
+combination preached asserts nothing any of them denies. Of the dispute over
+the garment the homily says only that the Fathers give more than one answer.
+The identification of the first invited with a people is not preached; the
+parable's first hearers are named from Matthew 21:23, and the application is
+directed to the baptized, as Gregory's 38.11 and Chrysostom's 69.2 direct it.
+
+Each Father is credited only with what he says of his own passage. The joins
+no Father makes are listed in the note as the homily's own: Gregory's
+*intentus* of the man gone to his farm set beside the Collect's *intentos*
+(corrected at iteration 1, HOM-004: the study links the Collect's word to the
+attention the invited gave to farm and trade and does not cite Gregory's
+*intentus*; matching the two words is the homily's own observation of the
+wording); Paul as the guest who would have
+come; the Philippians' gift as a way of coming closer; the farm and the
+merchandise turned into the wedding garment by giving; this Mass as the
+King's feast spread now, with the two later orations read as its course; and
+the servants still sent to farm, shop and roads. Left to the studies: the
+burnt city and its dispute; Hilary; Jerome's lesser crime of the busy;
+Irenaeus; the Alleluia verse, the Entrance Antiphon and the responsorial
+psalm; the second Communion antiphon; Aquinas on Philippians; Bellarmine; and
+the sacramentary history of the orations.
+
+Branch limits. Everything said of the invitation, the refusal, the roads and
+the full hall stands in Matthew 22:1–10, which both forms of the Gospel read.
+The guest without the garment is introduced as what "Matthew's parable goes
+on" to tell, not as words the assembly has heard, so the speech holds
+whichever form is proclaimed. The first Communion antiphon is named as one of
+the two the Missal gives.
+
+### How the appointed text changes the hearer's understanding
+
+The familiar pastoral problem is busyness: the sense that work, household
+and money crowd out God. The homily does not answer it with a call to do
+less. The decisive textual detail is Matthew 22:5, "But they neglected and
+went their ways, one to his farm and another to his merchandise", read with
+Chrysostom's "not for press of business, but from 'making light of it'" and
+Gregory's reading of the farm and the merchandise as earthly labour and
+worldly gain that will not weigh the mystery of the Incarnation (38.5). The
+refusal in the parable is made with lawful goods, so the hearer's question
+changes from "Am I doing something wrong?" to "What good and necessary thing
+am I letting stand between me and the King's invitation?" Philippians 4 then
+shows that the answer is not to own nothing but to be held by nothing, and
+Augustine's "Clothe others" turns the same goods into the wedding garment.
+The Collect's *intentos* gives the prayer of the Mass the same vocabulary as
+Gregory's man gone to his farm. Replaced with unrelated readings, the
+argument would lose its question, its image, its turn and its response: each
+rests on the two excuses of Matthew 22:5, the roads of 22:9, the garment of
+22:11–12, the plenty and want of Philippians 4:12, and the Collect.
+
+### Evidence read at this stage
+
+No evidence-dependent claim was added. Every quotation is a whole or an
+unbroken part of one the studies print, or a verse of the appointed readings,
+and each English quotation was read again at its locus in the tracked text:
+the Douay–Rheims verse files at Is 25:6 and 8, Mt 21:23, Mt 22:2–14 and Phil
+4:12–14; NPNF 1/10 at *Hom. in Matt.* 69.1–2; NPNF 1/13 at *Hom. in Phil.*
+15; NPNF 1/6 at *Sermo* 90.5–6 and 95.7; and NPNF 1/8 at *Enarr.* 33,
+sections 13–14 of the English text, where both of the quoted sentences stand
+in section 14. Gregory's Latin was read again in the tracked Latin text at
+38.3, 38.5, 38.6, 38.9 and 38.11. Aquinas's lecture on Matthew is reported
+without quotation marks in English that renders the Latin the study prints;
+that Latin was read on page images at the research stage and was not re-read
+here. Gregory is likewise reported without quotation marks. All the loci are
+bound in `research/source-bindings.toml`. Phil 4:12 is quoted with its
+parenthesis marked as omitted.
+
+### Counts, pace and rehearsal
+
+**Spoken words: 1,452**, counted as whitespace-separated tokens of the body
+with TeX comments, `\bigskip`, quotation marks and ellipsis commands removed.
+At 130 words a minute that is a little over 11 minutes, at 125 a little over
+11½, and at 120 about 12. This is an estimate from the count; no speaker
+delivered the words and no delivery was timed. The prose was rehearsed for
+sense, sentence length and oral clarity by reading it through in full,
+silently and not aloud: on the way the draft of 1,715 words was cut to its
+present length; the omission inside Phil 4:12 was marked rather than hidden
+behind a speaker attribution; a doubled "asks" was removed; and Gregory's
+sentence on the roads was restated so that its subject is the people and not
+the roads.
+
+### Author proof and checks
+
+`make doc` for the `-homily` output with `PROVIDER=claude` settles with no
+overfull or underfull box, no LaTeX or pdfTeX warning, no undefined reference
+and no rerun request; an earlier draft whose final column overran by under
+2 pt was shortened until it did not. The proof is 4 physical pages, letter
+size, SHA-256
+`26be32af156e62e00caa01fe6e0f68439a62b8c0ab0e36fce01e338f4d0f9af8`, at
+revision timestamp 2026-10-08T16:55:52Z; removing the PDF and building again
+from unchanged sources reproduced the same bytes. The title and both columns
+of the spoken body fill pages 1 and 2; the note begins page 3 after the
+environment's page break; the exact loci, the References, the revision
+timestamp and the rights colophon share page 4. All font resources are
+embedded Latin Modern Type 1, and the document information carries the title
+and the subject.
+
+`tools/check-proper-components --phase artifacts` passes for the homily, the
+research and the synthesis editions, and so do `python3
+scripts/_proper_study.py check … --phase content --edition homily
+--require-presentation --require-format --require-authority`, the twelve
+`check-content-preflight` checks with `--edition homily`
+(provenance-matches-run with this run's header; references-used: 9 entries,
+every one used; house-voice: 3 reader-facing files, none flagged) and
+`tools/check-generation-metadata` for the provider, the document and all
+three rendered PDFs. Every page was inspected at full size on rasters made
+with `tools/pdf-review`.
+
+The shared generation record carries this stage's contribution, folded into
+the adjacent declaration of the same model and qualifiers, and the revision
+timestamp above. Both studies were rebuilt at that timestamp: the expansive
+study, 38 pages, SHA-256
+`01c71216901ddfa67e38dfa366bd2180d20c0e785f2d5dc9e34a17eb2fc7675e`, and the
+concise study, 12 pages, SHA-256
+`b092a62cde1c8fb81af76c63fd4ccc5f9f65fa1aa69c3580c26a2f6fb015fe65`; the
+extracted text of each is identical to its accepted proof except for the
+timestamp line, and both logs are free of box and LaTeX warnings. The proof,
+its auxiliary file, log and extracted text, the build, preflight, artifact
+and metadata logs, the counting script and the word count are kept with their
+digests under the run's `artifacts/derive-homily-0000/proof/`, and the page
+rasters and contact sheet in the dedicated child `rasters/`. This is author
+verification; the independent homily review, the shared-timestamp
+three-document build and the independent visual review remain to be done.
+
+### For the cold reviewer, about upstream records
+
+No upstream defect was met while deriving. The research-record lags already
+accepted or standing (STU-016 and STU-017 in `research/interpretations.md`
+and `research/scope.md`, the advisory STU-015, RES-007, and SYN-007 in
+`research/scope.md` section 3.1) remain at record level and were not edited;
+the homily quotes none of the passages they concern, and in particular does
+not quote Aquinas's question on the wedding garment.
+
+## Derive-homily, iteration 1
+
+Revised 8 October 2026 in `proper-study` v9, run `0b0f756d95e3ee20`, at
+iteration 1, after the independent homily review of iteration 0 returned one
+blocking finding, HOM-001, and the advisories HOM-002 to HOM-004. Only the two
+homily components, this audit and the shared generation record were edited.
+No research evidence record, no study or concise component, `main.tex`,
+`synthesis.tex`, `homily.tex`, `format.tex`, `web-edition.toml` or
+`proper-components.toml` was touched.
+
+### Blocking finding
+
+- **HOM-001, repaired.** The second movement no longer says that "the Fathers
+  who explained this parable agree that the king is God the Father and that
+  the son is Christ", a claim of agreement that the bounded sweep in
+  `research/scope.md` cannot support. It now names one witness and reports
+  only his clause: "Saint Jerome, explaining this parable, says it plainly:
+  this king is God almighty, and the wedding he makes is for our Lord Jesus
+  Christ and for the Church." The next sentence turns to Gregory ("asked what
+  that wedding is") and is otherwise unchanged. Jerome is reported without
+  quotation marks, in English that renders the Latin the expansive study
+  prints (`sections/20-the-kings-feast.tex`). His Latin and locus,
+  *Commentarii in Matthaeum* III on Mt 22:2, PL 26, col. 159, were added to
+  the note's exact loci, and a References entry was added for that column
+  alone. The note's account of the first interpretation, its list of what
+  each Father is credited with and its account of the route of each text now
+  include him. Jerome's lesser crime of the busy stays among the things left
+  to the studies.
+
+### Advisories cleared
+
+- **HOM-002.** "The word in the Gospel is *neglected*" now reads "Matthew's
+  word, in the old translation, is *neglected*", so that the word is not
+  attributed to the English just proclaimed. The Lectionary's English is not
+  reproduced.
+- **HOM-003.** Augustine's qualification is kept in a spoken clause: "Not
+  baptism, Augustine says. No one comes to God without it, but the good and
+  the bad alike have been baptized. It is love." The sentence is followed
+  without quotation marks, and the note says so.
+- **HOM-004.** In the note, the parenthesis on *intentos* now says that the
+  study links the Collect's word to the attention the invited gave to farm
+  and trade, and that matching it to Gregory's *intentus* (38.5) is the
+  homily's own observation. The same correction is marked in the iteration-0
+  section of this audit.
+
+### Verification performed at this iteration
+
+The retained facsimile `columns-159-162-facsimile-c05e8bf0` matched its
+recorded SHA-256. Its first page was rendered and column 159 was read at the
+exposition of Matthew 22:2: *Rex iste qui fecit nuptias filio suo, Deus
+omnipotens est. Facit autem nuptias Domino nostro Iesu Christo et Ecclesiae*,
+as the study, `research/scope.md` and `research/interpretations.md` print it.
+The locus is bound in `research/source-bindings.toml`. Augustine's clause was
+read again in NPNF 1/6 at *Sermo* 90.5 (Sermon XL of the English): "Without
+Baptism it is true no one attaineth to God; but not every one that hath
+Baptism attaineth to Him." Gregory's *alius intentus labori terreno* was read
+again at 38.5 in the tracked Latin text. `sections/40-farm-and-merchandise.tex`
+was read again to confirm that it ties the Collect's *intentos* to the
+invited's attention to farm and trade and does not cite Gregory's word.
+
+### Counts, pace and rehearsal
+
+**Spoken words: 1,465**, counted with the iteration-0 script: 13 more than at
+iteration 0. At 130 words a minute that is a little over 11 minutes, at 125 a
+little over 11½, and at 120 a little over 12. This is an estimate from the
+count; no speaker delivered the words and no delivery was timed. The changed
+sentences were read through in their paragraphs for sense and ease of speech,
+silently and not aloud.
+
+### Author proof and checks
+
+`make doc` for the `-homily` output with `PROVIDER=claude` settles with no
+overfull or underfull box, no LaTeX or pdfTeX warning, no undefined reference
+and no rerun request. The proof is 4 physical pages, letter size, SHA-256
+`2e0675cc7a45aed64497ec62eebc7647fa4946a26b0ef0e67a543d67f675a7ae`, at
+revision timestamp 2026-10-08T17:28:00Z. Removing the PDF and building again
+from unchanged sources reproduced the same bytes. The title and both columns
+of the spoken body still fill pages 1 and 2. The note begins page 3, and the
+exact loci, the ten References, the revision timestamp and the rights
+colophon end on page 4. All font resources are embedded Latin Modern Type 1,
+and the document information carries the title and the subject. Every page
+was inspected at full size on 110 dpi rasters.
+
+`python3 scripts/_proper_study.py check … --phase content --edition homily
+--require-presentation --require-format --require-authority` passes, as do
+the twelve `check-content-preflight` checks with `--edition homily`
+(provenance-matches-run with this run's header; references-used: 10 entries,
+every one used; house-voice: 3 reader-facing files, none flagged).
+`tools/check-proper-components --phase artifacts` passes for the homily, the
+research and the synthesis editions, and `tools/check-generation-metadata`
+passes for the provider, the document and all three rendered PDFs.
+
+The shared generation record carries this iteration's contribution, folded
+into the adjacent declaration of the same model and qualifiers, and the
+revision timestamp above. Both studies were rebuilt at that timestamp from
+sources that are otherwise unchanged. The expansive study is 38 pages, SHA-256
+`2732e942f323b8603b962fa33baa935950db98621ca30630a5584167bacdfe13`, and the
+concise study is 12 pages, SHA-256
+`89f821ee3653c30196041d0e2a65b3509d9363004ec9e5b9097fb06428a41900`. Both logs
+are free of box and LaTeX warnings. The proof, its auxiliary file, log and
+extracted text, the build, preflight, artifact and metadata logs, the
+counting script, the word count and the rendered Jerome page are kept with
+their digests under the run's `artifacts/derive-homily-0001/proof/`, and the
+page rasters in the dedicated child `rasters/`. This is author verification;
+the independent homily review, the shared-timestamp three-document build and
+the independent visual review remain to be done.
+
+### For the cold reviewer, about upstream records
+
+No upstream defect was met at this iteration. The research-record lags listed
+at iteration 0 remain at record level and were not edited.

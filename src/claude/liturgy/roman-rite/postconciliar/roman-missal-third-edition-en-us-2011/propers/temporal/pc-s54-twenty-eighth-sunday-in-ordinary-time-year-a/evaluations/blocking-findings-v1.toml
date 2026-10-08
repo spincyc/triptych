@@ -49,13 +49,25 @@ provider = "claude"
 run_id = "0b0f756d95e3ee20"
 workflow = "proper-study"
 workflow_version = 9
-stage = "synthesis-review"
-iteration = 2
+stage = "homily-review"
+iteration = 1
 disposition = "PASS"
 standing = 0
 accepted_count = 2
-advisory_count = 3
+advisory_count = 4
 observation_count = 4
+
+[[stages]]
+stage = "homily-review"
+iteration = 1
+disposition = "PASS"
+run_id = "0b0f756d95e3ee20"
+workflow = "proper-study"
+workflow_version = 9
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
 
 [[stages]]
 stage = "research-review"
@@ -110,6 +122,14 @@ location = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-editi
 problem = "Four research-record statements lag what the study, correctly, now says. (1) The Venice p. 282 page image reads 'Quae est ista vestis?', as the study prints, not 'illa'. (2) Aquinas gives the homo rex explanation 'ut dicit Origenes' (Venice p. 279), which the study now says and the scope.md row does not. (3) The Fromage volume's edition record dates it 1909, a second edition, as the study's References give it; scope.md says 1900. (4) The reason given for leaving Hilary out of the wedding-garment lane's carrying authors assumes the lane names the garment charity. The study leaves that identification open, and Hilary shares the lane's controlling claim. The lane's standing is unaffected, since five other authors carry it. The first three were recorded as observations at iterations 0 and 1, and the fourth at iteration 1. They are recorded here as findings because they are research-owned evidence statements."
 required_result = "In a later research pass, read 'ista' at both places. Note 'ut dicit Origenes' in the scope.md Aquinas row. Give the Fromage volume as the 1909 second edition in scope.md's prose. Restate Hilary's carrying rationale to fit the lane's open identification of the garment, or add him to carrying_authors."
 accepted_because = "Each statement is in settled, reviewed research records, the study is already correct at every one of these points, and none changes a claim, a citation or an author's standing in any of the three documents. A research re-entry for them would rerun this review for no gain to a reader."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-005"
+severity = "advisory"
+location = "sections/homily/90-note.tex, 'Length and pace': 'The prose was read through in full for sense, sentence length and ease of speech, silently and not aloud.'"
+problem = "The sentence presents a full read-through of the prose as it now stands. The production audit says otherwise. Derive-homily iteration 0 read the earlier draft through in full. Iteration 1 then changed three passages: Jerome's clause in the second movement, 'Matthew's word, in the old translation' in the first, and Augustine's baptism clause in the fifth. Of these, research/production-review.md (Derive-homily, iteration 1, 'Counts, pace and rehearsal') records only that 'the changed sentences were read through in their paragraphs'. Every sentence has been read at some point, so no reader is materially misled. Still, the note states as a single completed event a check that was never made on the current text."
+required_result = "Either read the current spoken body through in full, silently, and record that in the production audit, or restate the note's sentence so it matches the record. For example: the prose was read through in full at its first drafting, and the passages revised since then were read again in their paragraphs, silently and not aloud."
 
 [[advisories]]
 stage = "research-review"
