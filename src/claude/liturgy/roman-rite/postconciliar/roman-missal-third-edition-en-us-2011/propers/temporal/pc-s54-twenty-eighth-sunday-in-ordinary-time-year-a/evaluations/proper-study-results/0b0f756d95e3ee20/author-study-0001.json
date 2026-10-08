@@ -1,0 +1,34 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STU-001",
+      "note": "All three lane openings rewritten to per-witness clauses; synthesis labelled as the editor's; third lane says Augustine and Bellarmine comment only on Psalm 33.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-002",
+      "note": "Controlling claim restated at the shared level; charity attributed to Augustine and Gregory, Aquinas including it; identification left open consistently; exclusion rationale and 'carrying witnesses' removed; opening, senses and comparison aligned.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-003",
+      "note": "Augustine's comparative reading quoted in full from Sermo 90.4; Hilary's raritas in electis reported as about the chosen; 'none reads it numerically' claims withdrawn; residual caution attributed to the editor and related to both readings.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-004",
+      "note": "Judgment link and second-antiphon inspection reading marked longer-form only; shorter form keeps the two feasts joined by the resurrection; comparison table, disputes paragraph and closing paragraph corrected.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-005",
+      "note": "Removed the other-Mass uses of the Prayer over the Offerings and Prayer after Communion and the 1970 sentence; Gregorian and Verona notes kept as text history.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "author-study",
+  "summary": "Repaired the five blocking study findings in the canonical leaf: each lane opening now credits every witness only with his own clause and gives the whole-formulary reading as the editor's synthesis; the wedding-garment lane states its controlling claim at the level its witnesses share, attributes charity to Augustine and Gregory (Aquinas including it), leaves the identification open, and drops the Hilary exclusion rationale and 'carrying witnesses'; Augustine's Sermo 90.4 (re-read in the bound NPNF text) and Hilary's raritas in electis are reported as comparative readings of Mt 22:14, with the remaining caution assigned to the editor; the first lane's Mt 22:11 claims and second-antiphon reading are marked longer-form only, with the resurrection as the link under the shorter form, and the comparison table and closing paragraph corrected; the other-Missal uses of the two orations and the 1970 sentence are removed. Advisories STU-006 (Nova Vulgata desiderium verified at the recorded vatican.va hash), STU-008, STU-009 and STU-010 cleared, STU-007 in part. Author proof: make doc exit 0, 38 physical pages, log free of overfull/underfull boxes and undefined references; check-proper-components --phase artifacts --edition research, _proper_study.py check --phase content --edition research with presentation/format/authority, all check-content-preflight checks and provenance-matches-run exit 0; every page inspected in 60-dpi rasters. Proof PDF build/tpt-runs/0b0f756d95e3ee20/artifacts/author-study-0001/proof/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.pdf, SHA-256 0a1b36d5de024639f88e05f42ef9c63979084fd9bca1ec4e132a2084a3acedf8 (identical to the build/claude output). For the cold reviewer: research/scope.md sections 3.1 and 7 and research/interpretations.md Reading 2 summarise Augustine on v. 14 incompletely (omitting that the many cast out far surpass the good) and are unchanged; the manifest's carrying_authors for wedding-garment still omits Hilary, following interpretations.md, though the prose now has him sharing the controlling claim. Both are recorded in research/production-review.md."
+}

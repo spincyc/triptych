@@ -1,0 +1,17 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/synthesis.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "SYN-001",
+      "outcome": "repaired"
+    },
+    {
+      "id": "SYN-002",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "derive-synthesis",
+  "summary": "Repaired SYN-001 (deleted the concise scope-note sentence on Schuster's other Mass; he is now cited only for the Gospel at vol. 3 p. 173) and SYN-002 (Aquinas's garment restated from the Venice page: 'Quae est illa vestis? Christus', sacrament/charity/remembrance of death/conformity of works as ways some put on Christ, 'et si unum deficiat, malum' attached only to the closing triad, later comparison aligned), and cleared advisories SYN-003 to SYN-006 in the concise components (SYN-007 is in research/scope.md, not this stage's owner). Shared timestamp 2026-10-08T14:50:41Z and iteration-1 contribution recorded; audit entry with 5,741 substantive words. Author proof: 12 pages, markers 1/1/2/3-4/5, clean log, all 13 synthesis-preflight checks, artifacts (both editions) and metadata checks pass; synthesis PDF SHA-256 7252542eb1be9aa3493f6e9eed410cb1d9621f8f505d6e7d54bc93f47d720292, aux 9fa9be30e38d95a8a5982b2975b0f1b92be0a200bb5d6e0504fb47b87b362622, retained with logs and SHA256SUMS under build/tpt-runs/0b0f756d95e3ee20/artifacts/derive-synthesis-0001/proof/ (rasters in rasters/); expansive rebuilt at the new timestamp, 38 pages, 821d9993b25546dbba1b1cc806ccc68e8fb495dc91e600b1a14a5d3027a4c917. Upstream note for the reviewer: the accepted study's 30-the-wedding-garment.tex prints 'Quae est ista vestis?' where the page reads 'illa'; not edited."
+}

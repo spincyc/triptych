@@ -1,0 +1,7 @@
+{
+  "artifact_path": "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.md",
+  "disposition": "PASS",
+  "iteration": 0,
+  "stage": "install-publication",
+  "summary": "Installed the three accepted PDFs with the normal make install-doc recipe. Build and installed bytes match the visual-review seal exactly (study 9adfbff3...ba3a, concise b748378f...b35a, homily 857e4db1...af2), and nothing was retypeset. Installed and staged the reviewed canonical web Markdown byte for byte (c6d57f06...8c85). Created three alpha release records, wired the Claude cell of the Twenty-eighth Sunday Year A row, added the claude:-prefixed marker, and refreshed the document catalogue, the source-reader projection, the scoped release bindings and the Claude source inventory and classification. All five terminal gate commands pass. make check-sources fails only on the source-family migration ledger's canonical_catalog_snapshot pin. That pin went stale at this production's research checkpoint, was current at the seed commit, and is reported as an upstream defect, not re-pinned."
+}

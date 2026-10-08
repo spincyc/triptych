@@ -1,0 +1,7 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/artifacts.json",
+  "disposition": "PASS",
+  "iteration": 0,
+  "stage": "build-artifacts",
+  "summary": "Built all three PDFs from a clean state with make doc PROVIDER=claude. The rebuilt PDFs are byte-identical to the earlier outputs: the expansive study is 38 pages, the concise study 12 and the homily 4. The final logs have no warnings, undefined references or box warnings, and all fonts are embedded Latin Modern Type 1. The concise zref markers settle as follows: inventory, overview and the four sense rows on page 1, chronology on page 2, themes on pages 3-4, and commentary from page 5. No layout repair or render-input edit was needed. I wrote the snapshot receipt research/artifacts.json, generated rasters into build/tpt-runs/0b0f756d95e3ee20/artifacts/build-artifacts-0000/rasters, kept the logs, aux files, extracted texts and check output in the sibling evidence/ directory, and appended a Build-artifacts entry to research/production-review.md. The artifacts-phase and content-phase checks, check-proper-components for all three editions, and check-generation-metadata all pass. No semantic or upstream defect was found, and the PDFs are not installed."
+}

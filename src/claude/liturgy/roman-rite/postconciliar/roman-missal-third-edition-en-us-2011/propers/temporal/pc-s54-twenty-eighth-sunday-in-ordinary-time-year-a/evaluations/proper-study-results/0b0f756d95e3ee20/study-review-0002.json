@@ -1,0 +1,517 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "STU-015",
+      "location": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/30-the-wedding-garment.tex, subsection 'Many are called', lines 200-201 ('The witnesses who comment on the closing saying weigh how few the chosen are, and they reach that judgement from different places') against lines 247-249 ('Jerome reads the saying differently ... non initia, sed finis quaeratur')",
+      "problem": "The new topic sentence says that every witness who comments on Mt 22:14 weighs how few the chosen are. Jerome comments on the verse (Commentarii in Matthaeum III, PL 26 col. 161, read on the page image: 'Omnes parabolas brevi sententia comprehendit: quod ... non initia, sed finis quaeratur') and states no proportion. The subsection itself says, 47 lines later, that he 'reads the saying differently', and the closing limit (lines 360-368) rightly leaves him out of those who weigh the few. As written, the opening either credits Jerome with a judgement he does not make, or leaves the reader to take 'differently' as one more of the 'different places' from which the same judgement is reached. Chrysostom's Homily 69 does not comment on v. 14, so Jerome is the only exception. The reader is given Jerome's own words and the explicit contrast, so this is not blocking.",
+      "required_result": "Make the opening sentence and the Jerome sentence agree. Either restrict the opening to the witnesses the paragraph reports (Gregory, Augustine, Aquinas, Irenaeus and Hilary), or say in it that Jerome reads the saying on another ground, the end rather than the beginning. Do not imply that Jerome states a proportion.",
+      "severity": "advisory"
+    },
+    {
+      "accepted_because": "The study owns the reader-facing prose, and the concise study and homily are reviewed against it. It now reports these readings correctly from bound loci verified at this iteration, and the production record states the departure, so no reader of the three documents is misled. Correcting two summary paragraphs in settled, reviewed research records would cost a research re-entry that reruns research review, the study and this review.",
+      "id": "STU-016",
+      "location": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/interpretations.md lines 303-305 (Reading 2, '\"Few are chosen\" must not be turned into a statement about how many are saved: Augustine counts the few against the bad, Gregory draws only humility from it'); research/scope.md lines 185-190 ('How few are chosen?') and line 472 (section 7 comparison row)",
+      "problem": "The research records still summarize the witnesses' readings of Mt 22:14 as the study did before STU-003 was repaired. They say that Gregory draws only humility from the verse, and they give Aquinas's reason without his Matthew 7:14. They omit Gregory 38.8 (multi mali et pauci boni, the ark, Mt 7:13, the threshing floor) and 38.14 (omne malorum corpus), and Irenaeus IV.36.6 ('with many of them was He not well pleased'). All of these were checked at their bound loci at this iteration. The study now departs from the records on that evidence. research/production-review.md (Author-study, iteration 2) records the departure and asks the reviewer to route it.",
+      "required_result": "In a later research pass, restate the Reading 2 'Strongest difficulty' paragraph, the scope.md 'How few are chosen?' paragraph and the section 7 row so that they report Gregory 38.8 and 38.14, Aquinas's Matthew 7:14 at Venice p. 282 and Irenaeus IV.36.6 beside Augustine and Hilary, as sections/30 now does.",
+      "severity": "accepted"
+    },
+    {
+      "accepted_because": "Each statement is in settled, reviewed research records, the study is already correct at every one of these points, and none changes a claim, a citation or an author's standing in any of the three documents. A research re-entry for them would rerun this review for no gain to a reader.",
+      "id": "STU-017",
+      "location": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/interpretations.md line 232 and research/scope.md line 143 ('Quae est illa vestis?'); research/scope.md line 143 (Aquinas, Super Matthaeum row: 'Sed cum videbitur sicuti est, tunc erit Rex' without 'ut dicit Origenes'); research/scope.md lines 323 and 588 (Fromage 'English, 1900'); research/interpretations.md lines 255-258 (Hilary 'not a carrying author' because he does not carry 'the identification as charity')",
+      "problem": "Four research-record statements lag what the study, correctly, now says. (1) The Venice p. 282 page image reads 'Quae est ista vestis?', as the study prints, not 'illa'. (2) Aquinas gives the homo rex explanation 'ut dicit Origenes' (Venice p. 279), which the study now says and the scope.md row does not. (3) The Fromage volume's edition record dates it 1909, a second edition, as the study's References give it; scope.md says 1900. (4) The reason given for leaving Hilary out of the wedding-garment lane's carrying authors assumes the lane names the garment charity. The study leaves that identification open, and Hilary shares the lane's controlling claim. The lane's standing is unaffected, since five other authors carry it. The first three were recorded as observations at iterations 0 and 1, and the fourth at iteration 1. They are recorded here as findings because they are research-owned evidence statements.",
+      "required_result": "In a later research pass, read 'ista' at both places. Note 'ut dicit Origenes' in the scope.md Aquinas row. Give the Fromage volume as the 1909 second edition in scope.md's prose. Restate Hilary's carrying rationale to fit the lane's open identification of the garment, or add him to carrying_authors.",
+      "severity": "accepted"
+    }
+  ],
+  "iteration": 2,
+  "observations": [
+    {
+      "location": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/production-review.md, 'Author-study, iteration 2', Scope, words and pages ('every check of the study-preflight gate, including provenance-matches-run against this run, exit 0')",
+      "note": "The author-study-0002 gates log stored with the run's proof records provenance-matches-run exiting 1. Its run arguments were literal '{run.workflow_id}'-style placeholders. No stored log shows the passing invocation the record reports. The engine's own study-preflight-0002 provenance-matches-run passed against this run, so the outcome holds; only the author's own check is unevidenced."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel-long",
+            "gospel-short",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "format.tex",
+            "research/context.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel-long",
+            "gospel-short",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "appointed-texts",
+          "kind": "appointed-text",
+          "path": "sections/05-appointed-texts.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/context.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "appointed-texts"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel-long",
+            "gospel-short",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "each-element",
+          "kind": "proper-treatment",
+          "path": "sections/10-each-element.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel-long",
+            "gospel-short",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "the-kings-feast",
+          "kind": "interpretive-lane",
+          "path": "sections/20-the-kings-feast.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel-long",
+            "gospel-short",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "the-wedding-garment",
+          "kind": "interpretive-lane",
+          "path": "sections/30-the-wedding-garment.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel-long",
+            "gospel-short",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "farm-and-merchandise",
+          "kind": "interpretive-lane",
+          "path": "sections/40-farm-and-merchandise.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "the-kings-feast",
+            "the-wedding-garment",
+            "farm-and-merchandise"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel-long",
+            "gospel-short",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel-long",
+            "gospel-short",
+            "communion-antiphon-a",
+            "communion-antiphon-b"
+          ],
+          "key": "scriptural-date-location",
+          "kind": "front-matter",
+          "path": "sections/80-date-location.tex",
+          "references": [
+            "format.tex",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel-long",
+            "gospel-short",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "liturgical-resolution",
+          "kind": "terminal-apparatus",
+          "path": "sections/85-liturgical-resolution.tex",
+          "references": [
+            "format.tex",
+            "instance/manifest.md",
+            "research/context.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel-long",
+            "gospel-short",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
+      "element_keys": [
+        "entrance-antiphon",
+        "collect",
+        "first-reading",
+        "responsorial-psalm",
+        "second-reading",
+        "gospel-acclamation",
+        "gospel-long",
+        "gospel-short",
+        "prayer-over-offerings",
+        "communion-antiphon-a",
+        "communion-antiphon-b",
+        "prayer-after-communion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "Jerome",
+            "Hilary of Poitiers",
+            "Irenaeus of Lyons",
+            "Thomas Aquinas",
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Robert Bellarmine"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "Jerome",
+            "Hilary of Poitiers",
+            "Irenaeus of Lyons",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "the-kings-feast"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel-long",
+            "gospel-short",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "wedding-feast",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Gregory the Great",
+            "John Chrysostom",
+            "Irenaeus of Lyons",
+            "Thomas Aquinas",
+            "Jerome",
+            "Hilary of Poitiers",
+            "Robert Bellarmine",
+            "Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Gregory the Great",
+            "John Chrysostom",
+            "Irenaeus of Lyons",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "the-wedding-garment"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel-long",
+            "gospel-short",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "wedding-garment",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Augustine of Hippo",
+            "Hilary of Poitiers",
+            "Jerome",
+            "Robert Bellarmine"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "farm-and-merchandise"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel-long",
+            "gospel-short",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "farm-and-merchandise",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
+    "files": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/format.tex": "ba8b73da04e9fb6ffb1ea859fe761e2b7ca9258991deab9042b51d0f24f2da88",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/instance/manifest.md": "5f9a0a20204bb48e1f099cc2ead60e603dd13b27568f5e1ab8febf6bc7e3ccbb",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/main.tex": "dd319c9febf132e6375b7faa6960bf9f4239998ff77fa9ccfa7922e56824864e",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/propers/verified.md": "5e5943cf75a72febf05fe6c61c8b1b028a15ba5f94d1b7e90d7d945e369b8984",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex": "f775c7f4193734a3a94f786f15fca014f8c5ef55020db93182cdd4ff97a1a03a",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/chronology.toml": "ced3a09d62772d73bac0bc8e9725c14552402b3b42801e39524869732fe523aa",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/context.md": "bf2bbdee97ff577b2dad7b2474c428f0293bc753527ff77dbb6899f537fec6e8",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/interpretations.md": "33fe4a945ba7d71f2b3317dc4996e83febe2fdd1315766add493f69c46826381",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/scope.md": "ca4f8f34d31e3ee8b3603300a66653bb5323bd3113718b50c2f321ded48c805f",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/source-bindings.toml": "43cfebbec1be71661d3d4a5a84b02304ca780b745125216dbd17dd552485202e",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/00-opening.tex": "0d6becda9f7810e22c6ecdd2c636df4f7696089594fbe302c8e82bf372e4673b",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/05-appointed-texts.tex": "a084490966f1f92a051aa7bfbfd76aeedc279c0c87e260a2d22f4cf052e57b51",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/10-each-element.tex": "71a36479be1647b7e2b782a05aefd95325b82a82b0bb812039c62848b4bff054",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/20-the-kings-feast.tex": "e0303ef91946f014c46db88997624946b23c4e4b996c00edc56e81925519db44",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/30-the-wedding-garment.tex": "f7edf3330fa37f6f7cebeea927d16de86be3f3e44fb526786e24e8edaf7dc98f",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/40-farm-and-merchandise.tex": "487b291c9f291d627409102a82a6894234ba4acdb9434cf10040868577e86400",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/50-comparison.tex": "3f222ff93bebf65c75e4e5c277ce25744a9fbac992ef54d9874e94b028a8907f",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/80-date-location.tex": "c42d64faf27d80c8a3ee00836e0dfe5751c46803da1b96657f55bf36d7862eb0",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/85-liturgical-resolution.tex": "5fff217001f5fad3c03a327a67c4e05e34bd962618fe1804818f611a82ac51c8",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/90-apparatus.tex": "6a8b655820d7ee39b4a720905a54134f6574d9d3674fb33aa593e2c00e5ac5ed",
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "9",
+            "ef8058d0bd73437c67569a8d24ce67dac4c273fef7688aef8a54dec9e7986b13",
+            "0b0f756d95e3ee20",
+            "643a137fb493003f1d9928036b870ce96d0240e3",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Cold review, at iteration 2, of the expansive study PC-S54-A (main.tex with sections 10-50, generation-metadata.tex and research/production-review.md, the REVIEW_SCOPE files). All 22 sealed REVIEW_INPUTS files match their hashes, and the generation record carries this run's exact provenance. I used the author proof and did not rebuild. It has 38 physical pages, inside 20-50, and a clean log. It was built at 13:59Z, after the last rendered source edit at 13:58Z. A sentence-level diff of its text against the iteration-1 proof located every change. STU-003 is repaired. The 'Many are called' subsection withdraws both sentences the finding named. Each newly reported reading was checked at its locus. Gregory's omne malorum corpus (38.14), his multi mali et pauci boni with the ark, Mt 7:13 and the threshing floor (38.8), and his indiscrete suscipit (38.7) were read in the bound Wikisource Latin. Aquinas's v. 14 sentence and 'Unde supra vii. 14 ... et pauci sunt qui inveniunt eam' were read on the Venice p. 282 page image. Irenaeus IV.36.6 ('with many of them was He not well pleased'; 'gathered from all quarters the faithful') was read in the bound ANF OCR. Augustine, Sermo 90.1 and 90.4, was read in NPNF, and Jerome's v. 14 comment on the PL 26 col. 161 page image. Gregory's humility (38.14, 16) and Jerome's non initia, sed finis are kept. The closing limit is now a claim about the saying's own words and no longer narrates restraint. The advisories STU-007, STU-011, STU-012, STU-013 and STU-014 are cleared. The repetition that remains is clause-level, as STU-007 allows. Every back-reference created by removing a quotation resolves to a passage that still quotes it, and no removed 'editor's' label leaves a join credited to a witness. The three interpretations remain distinct, cover the whole formulary, carry their own four senses and develop two or more Fathers or saints each. No contradicting summary of v. 14 remains in the unchanged sections. The new topic sentence of 'Many are called' overstates its scope by one witness, Jerome (STU-015, advisory). The research records' stale summary of v. 14, routed by the author, is accepted (STU-016), together with four minor research-record slips the study has already corrected (STU-017). Limits: sections 00, 05 and 80-90 were not re-read beyond a consistency search. Gregory's text is electronic, with no printed page; Irenaeus was read in OCR and Augustine in English only. Verdict: PASS."
+}

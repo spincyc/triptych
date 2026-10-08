@@ -1,0 +1,7 @@
+{
+  "artifact_path": "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.pdf",
+  "disposition": "PASS",
+  "iteration": 1,
+  "stage": "build-artifacts",
+  "summary": "Clean-built the expansive study (38 pp, 9adfbff3...), the concise study (12 pp, b748378f...) and the homily (4 pp, 857e4db1...) with make doc PROVIDER=claude under Python Markdown 3.10.3. The outputs are byte-identical to the derive-synthesis 3 and derive-homily 2 proofs. Final logs carry no warning, undefined reference, rerun request or bad box, and every font is embedded, subset Latin Modern Type 1 with a Unicode map. The concise zref markers are settled: inventory, overview and the four senses on page 1, chronology on 2, themes on 3-4 and commentary from 5; the page-12 colophon ends at y 744.8 of 792 pt. The stage made no layout edit and changed no render input or generation metadata. It rewrote research/artifacts.json with the current digests (schema 2, 28 render inputs, 2 auxiliary files). The artifacts and content proper-study checks, check-proper-components for all three editions and check-generation-metadata (provider, document and --pdf x3) exit 0. Rasters went to artifacts/build-artifacts-0001/rasters (38/12/4 pages), the evidence with SHA256SUMS to artifacts/build-artifacts-0001/evidence, and the result is recorded under 'Build-artifacts, iteration 1' in research/production-review.md. PDFs are not installed, and visual review remains."
+}

@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/synthesis.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "VIS-001",
+      "note": "Colophon's last line now ends at y 744.8 pt of 792 on page 12 of 12, above the footer baseline, by content-boundary edits to four References entries only; no rights-only page, no type or geometry change, markers unchanged.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 3,
+  "stage": "derive-synthesis",
+  "summary": "Repaired VIS-001 by tightening four concise References entries (Irenaeus, Mystagogical Catecheses, Schuster, Nostra aetate) so each fits one line; the rebuilt 12-page proof ends its rights colophon at y 744.8 pt (47.2 pt above the paper edge) on the same final page, with type, geometry, the shared colophon macro and opening markers 1/2/3-4/5 unchanged. Also cleared advisory VIS-002 by moving the descriptive line into the subtitle field, updated the shared revision timestamp (2026-10-08T18:33:23Z) and contribution record, and appended the production audit entry; proof evidence is under build/tpt-runs/0b0f756d95e3ee20/artifacts/derive-synthesis-0003/."
+}

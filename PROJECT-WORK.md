@@ -25,10 +25,35 @@ at Advent 2025 is A. The production plan records this exact scope opening.
 The GPT leaf for the same identity is published; this is an independent
 Claude production under its own edition tree and borrows nothing from it.
 
-**In progress.** Authorization and acceptance criteria are recorded; the run
-has not yet been seeded. Work is committed on `feature/propers/claude`, the
-workspace's required branch, and reaches `main` by fast-forward after the
-local deploy gates pass.
+**Accepted; publication to `main` in progress.**
+Run `0b0f756d95e3ee20` (`proper-study` v9) reached ACCEPTED at its publication
+gates with no escalation: 48 packets, 48 accepted results, four
+interventions. Two driver sessions drove it. The first, on Claude Code, ran
+every stage through synthesis review 1 as a fresh `claude-opus-5-5[1m]`
+subagent at its packet's declared effort, and ended after that reviewer wrote
+its result. The second, on Factory Droid, submitted that result unchanged and
+ran every remaining stage as a fresh worker on the model the host labels
+`Opus 5.5`, at the host's `heavy` tier because it has no exact effort
+control; interventions 0002 and 0003 record the handover and the deviation.
+Every review was a fresh worker. Seven cycles, none near its budget: research
+(the United States GIRM binding), study twice (five interpretation claims,
+then STU-003 again, on which witnesses read Mt 22:14 as a count), synthesis
+twice (the scope note and Aquinas's lists, then *ista*, which the OCR had
+misread and one repair printed as *illa*), homily (a "the Fathers agree"
+consensus, now credited to Jerome alone) and visual (the concise colophon
+5.4 pt from the paper edge). The installed family
+is a 38-page expansive study, a 12-page concise study, a four-page homily
+(1,465 spoken words) and the canonical web edition. The run is archived in the
+leaf under `evaluations/proper-study-results/0b0f756d95e3ee20/`; the drivers'
+account of every cycle, the host events, the standing advisories and what is
+left for other owners is
+[CYCLES.md](workflows/reviews/claude-pc-s54-production-2026-10-08/CYCLES.md).
+After acceptance the source-family migration ledger's catalog pin was
+re-pinned, as `guidance/sources.md` allows when no family needs review.
+`make check-sources`, `check-publication-inventories`,
+`check-release-bindings`, `check-web-editions-current` and `tmt check` pass.
+Work is committed on `feature/propers/claude`, the workspace's required
+branch, and reaches `main` by fast-forward after the local deploy gates pass.
 
 ## Claude 1962 Twentieth Sunday three documents, 2026-10-07
 

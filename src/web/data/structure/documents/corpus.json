@@ -1,9 +1,9 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it.",
  "counted": {
-  "documents": 206,
-  "issues": 250,
-  "pages": 6922,
+  "documents": 207,
+  "issues": 253,
+  "pages": 6960,
   "titles_unrecorded": 0,
   "works": 149
  },
@@ -13,7 +13,7 @@
    "id": "GPT-5-based Codex agent"
   },
   {
-   "documents": 88,
+   "documents": 89,
    "id": "claude-opus-5-5[1m]"
   },
   {
@@ -38,11 +38,11 @@
   },
   {
    "documents": 2,
-   "id": "claude-fable-5-1"
+   "id": "Opus 5.5"
   },
   {
-   "documents": 1,
-   "id": "Opus 5.5"
+   "documents": 2,
+   "id": "claude-fable-5-1"
   },
   {
    "documents": 1,
@@ -51,7 +51,7 @@
  ],
  "providers": [
   {
-   "documents": 59,
+   "documents": 60,
    "id": "claude",
    "label": "Claude"
   },
@@ -11230,6 +11230,64 @@
    "catalog": "library/novus-ordo-liturgy.md",
    "catalog_page": "library/novus-ordo-liturgy.html",
    "editions": [
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": 12,
+       "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+       "subject": "Concise study of the proper of the Twenty-eighth Sunday in Ordinary Time, Year A, in the Roman Missal, Third Edition, for the dioceses of the United States of America, with Lectionary no. 142: the appointed elements, four overview senses, the scriptural dossier, the movement of the formulary, and a commentary comparing three interpretations of the whole Mass",
+       "title": "Twenty-eighth Sunday in Ordinary Time, Year A: A Concise Study of the Proper in the Roman Missal, Third Edition"
+      },
+      {
+       "kind": "homily",
+       "pages": 4,
+       "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.pdf",
+       "subject": "A homily for an adult parish assembly on the proper of the Twenty-eighth Sunday in Ordinary Time, Year A, in the Roman Missal, Third Edition, for the dioceses of the United States of America, with Lectionary no. 142, 11 October 2026: the invited who went one to his farm and another to his merchandise, the feast on the mountain and the wedding of the Son, the guests from the roads, the apostle who knows plenty and want, the wedding garment of charity, and the prayers and Communion of the Mass",
+       "title": "Twenty-eighth Sunday in Ordinary Time, Year A: All Things Are Ready"
+      }
+     ],
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "packet-declared-effort=high; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code agent, a fresh general-purpose subagent with no inherited conversation (author-study stage of proper-study v9, iteration 0: the expansive study of the canonical leaf from the reviewed research records, comprising the opening and the twelve-row map of the appointed elements, with both forms of the Gospel and both Communion antiphons as alternatives; the appointed Scripture in the public-domain Douay--Rheims with every partial verse and the omitted verses of the second reading marked, and the orations and the adapted antiphons and Alleluia verse by Latin incipit and description beside their identified scriptural sources; the element-by-element settings; three whole-formulary interpretations, of the king's feast for all peoples, of the wedding garment and of the refusal for farm and merchandise, each with its own four senses and named difficulties, the first carrying the identification of the first invited under the bound of Nostra aetate 4; the comparison; the terminal Scriptural Date and Location sheet on the generated chronology projection; the Liturgical Resolution and Scope appendices and the References; the schema-2 component manifest with its authority-standing lanes, its future concise and homily components and its presentation roles; the leaf-local format, the web-edition record and the production audit entry; and the author proof checks); author-study iteration 1, the same model at the same declared effort in a fresh subagent: repair of the five blocking study findings STU-001 to STU-005, rewriting each interpretation's opening so that every witness is credited only with his own clause and the whole-formulary reading is the editor's synthesis, restating the wedding-garment interpretation's controlling claim at the level its witnesses share and leaving the identification of the garment open, reporting Augustine's and Hilary's comparative readings of Matthew 22:14 with the remaining caution assigned to the editor, marking the first interpretation's claims on Matthew 22:11 as holding only in the longer Gospel and correcting the comparison, and removing the other Masses of the present Missal from the element section; with the advisory corrections on Philippians 4:19, the Collect's verbs, the Postilla's triad, Gregory's corrected formulation, repeated quotations and the bracket convention of the adapted sources; author-study iteration 2, the same model at the same declared effort in a fresh subagent: repair of the blocking study finding STU-003 on Matthew 22:14, reporting beside Augustine and Hilary Gregory's one cast out as the whole body of the wicked and his many bad and few good in the Church with the ark and the threshing floor, Aquinas's joining of the saying to Matthew 7:14 with his reason, and Irenaeus's comparison with the former covenant, and restating the lane's closing limit as a claim about the saying's own words; with the advisory corrections of repeated quotations, Hilary's column, Origen's reason in Aquinas, narrated method in the interpretations and the comparison's grounds for each interpretation; Claude Code CLI 2.1.292; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "packet-declared-effort=high; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code agent, a fresh general-purpose subagent with no inherited conversation (derive-synthesis stage of proper-study v9, iteration 0: the concise study of the same canonical leaf, derived from the expansive study as its independent review accepted it at iteration 2, with no new evidence-dependent claim and no change to the research evidence records, any study component, main.tex, the shared or leaf format, the web-edition record or the component manifest, comprising the concise entrypoint with no cover before the fixed opening; the page-1 map of the twelve appointed elements with both forms of the Gospel and both Communion antiphons as options, followed by exactly four overview sense rows; the page-2 Scriptural Date and Location sheet on the generated chronology projection; the two pages of The Propers: Themes and Movement; the developed commentary from page 5, interleaving the three interpretations around the questions of the feast and its place, the refusal, the burnt city under the bound of Nostra aetate 4, the wedding garment, the few chosen, plenty and want, and the Missal's prayers, with a closing comparison of their four senses, disputes and branches; the concise scope note and References; the production audit entry and the author proof checks); derive-synthesis iteration 1, the same model at the same declared effort in a fresh subagent: repair of the blocking synthesis findings SYN-001 and SYN-002, removing from the concise scope note the sentence on the other Mass of a liturgical commentator, and restating Aquinas on the wedding garment so that the sacrament, charity, the remembrance of death and the conformity of works are ways in which some put on Christ and his closing clause governs only his triad of good works, holy living and true charity, with his question requoted as Quae est illa vestis, a misreading of the Venice page that iteration 2 corrected; with the advisory corrections of the comparison's qualifier, Chrysostom's own answer on the marriage, the vineyard parable's hearers and the link between the two feasts; Claude Code CLI 2.1.292; unexposed: server revision"
+      },
+      {
+       "model": "Opus 5.5",
+       "qualifiers": "packet-declared-effort=high; host-dispatch-tier=heavy; unexposed: exact API model identifier; unexposed: reasoning budget; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, a fresh general-purpose worker subagent with no inherited conversation (derive-synthesis stage of proper-study v9, iteration 2: repair of the blocking synthesis finding SYN-009, requoting Aquinas's question on the wedding garment in the concise commentary as Quae est ista vestis? Christus, glossed as the expansive study glosses it, after re-reading the long-s and t ligature on page 5 of the retained Venice facsimile; withdrawing from the production audit the iteration-1 statements that the page reads illa and recording this iteration's reading, counts, author proof and checks; and correcting the description of the iteration-1 contribution in this record); derive-homily iteration 0, the same model at the same declared effort and dispatch tier in a fresh worker subagent: the standalone homily for an adult parish assembly, derived from the expansive study as its review accepted it at iteration 2 and the concise study as its review accepted it at iteration 2, with no new evidence-dependent claim and no change to the research records, either study, the shared or leaf format, the web-edition record or the component manifest, comprising the homily entrypoint with the full-width shared title and the two-column spoken body; the spoken body, preaching chiefly the refusal for farm and merchandise joined to the king's feast and the wedding garment of charity, with the second reading, the Collect, the Prayer over the Offerings, the first Communion antiphon and the Prayer after Communion, and holding under either form of the Gospel; the terminal note on sources and delivery with its References; the production audit entry and the author proof checks); derive-homily iteration 1, the same model at the same declared effort and dispatch tier in a fresh worker subagent: repair of the blocking homily finding HOM-001, replacing the spoken claim that the Fathers agree on the king and the son with Jerome's own identification of the king as God almighty making the wedding for Christ and the Church, after reading his column on the retained Migne page image, and adding his locus to the note's exact loci and References; with the advisory corrections attaching the word neglected to Matthew in the old translation, keeping Augustine's clause that no one attains to God without baptism, and stating that matching the Collect's intentos to Gregory's intentus is the homily's own observation in the note and the production audit; the recounted spoken words and pace, the production audit entry and the author proof checks); derive-synthesis iteration 3, the same model at the same declared effort and dispatch tier in a fresh worker subagent: repair of the blocking visual finding VIS-001, tightening four entries of the concise References (Irenaeus's text, the Mystagogical Catecheses' ascription, Schuster's imprint and the Council's declaration's site) so that the final page's References, revision timestamp and rights colophon end within the footer baseline, with no change of type, geometry or the shared colophon; with the advisory correction moving the concise title's descriptive line into the subtitle field as The King's Wedding Feast: A Concise Study of Three Interpretations; the revision timestamp, the production audit entry and the author proof checks); Factory Droid CLI 0.236.0; unexposed: server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "claude-opus-5-5[1m]",
+      "Opus 5.5"
+     ],
+     "pages": 38,
+     "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.pdf",
+     "produced": {
+      "run_id": "0b0f756d95e3ee20",
+      "seed_commit": "643a137fb493003f1d9928036b870ce96d0240e3",
+      "workflow_digest": "ef8058d0bd73437c67569a8d24ce67dac4c273fef7688aef8a54dec9e7986b13",
+      "workflow_id": "proper-study",
+      "workflow_version": "9"
+     },
+     "provider": "claude",
+     "reviewed": "2026-10-08",
+     "revised": "2026-10-08T18:33:23Z",
+     "status": "alpha",
+     "subject": "Expansive study of the proper of the Twenty-eighth Sunday in Ordinary Time, Year A, in the Roman Missal, Third Edition, for the dioceses of the United States of America, with Lectionary no. 142: appointed texts, each element in its setting, three interpretations of the whole formulary with their four senses, and a comparison",
+     "title": "Twenty-eighth Sunday in Ordinary Time, Year A: A Study of the Proper in the Roman Missal, Third Edition",
+     "title_source": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/main.tex",
+     "web": "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.html"
+    },
     {
      "also": [
       {

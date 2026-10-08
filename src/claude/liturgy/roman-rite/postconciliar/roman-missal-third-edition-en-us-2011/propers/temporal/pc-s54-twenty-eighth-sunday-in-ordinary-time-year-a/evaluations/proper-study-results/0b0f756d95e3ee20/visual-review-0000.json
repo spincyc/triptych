@@ -1,0 +1,80 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "VIS-001",
+      "location": "pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.pdf, physical page 12 (References / Last revised / Reuse and rights colophon); source sections/concise/90-apparatus.tex",
+      "problem": "Page 12 is filled to the foot of the ordinary text block: 'Last revised (UTC)' sits at y 727-737 pt of 792. The shared final-page colophon therefore falls entirely below the text block and below the usual footer line. Its four 7-pt lines occupy y 757-787 pt. The last line, 'source.', ends at y 786.6 pt, 5.4 pt (0.075 in) above the bottom paper edge. The third line ('remains public domain ... See LICENSE and THIRD_PARTY.md in the') ends 13 pt (0.18 in) above it. That is far inside the 0.75-inch margin baseline, and below the footer zone that the shared macro's own comment says it recovers. On the house monochrome print baseline, a printer with an ordinary 0.17-0.25 in unprintable border would clip or drop the colophon's final lines, including the required pointer to LICENSE and THIRD_PARTY.md. The study (colophon ends y 571.7) and the homily (y 646.8) are unaffected because their final pages are not full.",
+      "repair_target": "synthesis",
+      "required_result": "In a rebuilt concise PDF, the complete four-line colophon sits on the same final physical page as the terminal content, with no rights-only page, and its lowest line ends no lower than the ordinary footer baseline (about y 764 pt, at least 0.375 in above the paper edge). The fix should come from genuine content-boundary edits in the concise terminal apparatus, such as tightening the Scope and Qualifications or References text. It must not reduce type, alter geometry or the shared colophon macro from the leaf, or exceed 12 pages. The opening page markers (1, 2, 3-4, 5) must remain unchanged.",
+      "severity": "blocking"
+    },
+    {
+      "id": "VIS-002",
+      "location": "pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.pdf, physical page 1, title block; synthesis.tex \\propertitle fields",
+      "problem": "The concise study leaves the descriptive-subtitle field empty. Its descriptive line, 'the king's wedding feast: three interpretations compared', is set in the occasion/metadata slot at small size with a lowercase initial, so it reads as a typo. It also breaks the title hierarchy that the study and homily share: the homily sets an upright \\large subtitle ('All Things Are Ready'), and both put metadata lines in the small slots. Nothing on the printed title says the document is the concise study; only the PDF metadata does.",
+      "required_result": "If acted on, the concise title block should present its descriptive subtitle in the subtitle field (or at least begin it with a capital) and keep only edition/date/use metadata in the small lines. Page 1 must still hold the complete inventory and all four sense rows.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "src/common/preamble.tex, \\TriptychRightsNotice (enlargethispage 0.58in, minipage colophon); also the installed pdf/claude/.../pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf, final page",
+      "note": "Whenever a publication's final page is full, the shared colophon macro lets the colophon descend to about 5 pt from the paper edge. The installed pc-s51 study shows the same y 786.6 pt maximum. A shared guard, or a mechanical gate on the colophon's lowest y position, would catch this class before visual review."
+    }
+  ],
+  "review_inputs": {
+    "artifacts": {
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
+      "pagination_evidence": {
+        "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.aux": "9fa9be30e38d95a8a5982b2975b0f1b92be0a200bb5d6e0504fb47b87b362622",
+        "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.aux": "3b0b26253a1351c077db812be32adfbcfdff755e6379e95ad709f3b96429c352"
+      },
+      "pdfs": {
+        "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.pdf": "2e0675cc7a45aed64497ec62eebc7647fa4946a26b0ef0e67a543d67f675a7ae",
+        "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.pdf": "89f821ee3653c30196041d0e2a65b3509d9363004ec9e5b9097fb06428a41900",
+        "build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.pdf": "2732e942f323b8603b962fa33baa935950db98621ca30630a5584167bacdfe13"
+      },
+      "provider": "claude",
+      "render_inputs": {
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/format.tex": "ba8b73da04e9fb6ffb1ea859fe761e2b7ca9258991deab9042b51d0f24f2da88",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/generation-metadata.tex": "569628492ce6e23381f888e067d146610b440ea35d3ae4215dc55681f40195ae",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/homily.tex": "4ee6cb1f7208cd272539747c47a86cc94176a3c6b84f6479af44d49363a88af5",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/main.tex": "dd319c9febf132e6375b7faa6960bf9f4239998ff77fa9ccfa7922e56824864e",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/proper-components.toml": "f21782a634d01106aa37de36c3b423406295019fdfbad951d98ba7dc82c3bae8",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex": "f775c7f4193734a3a94f786f15fca014f8c5ef55020db93182cdd4ff97a1a03a",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/00-opening.tex": "0d6becda9f7810e22c6ecdd2c636df4f7696089594fbe302c8e82bf372e4673b",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/05-appointed-texts.tex": "a084490966f1f92a051aa7bfbfd76aeedc279c0c87e260a2d22f4cf052e57b51",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/10-each-element.tex": "71a36479be1647b7e2b782a05aefd95325b82a82b0bb812039c62848b4bff054",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/20-the-kings-feast.tex": "e0303ef91946f014c46db88997624946b23c4e4b996c00edc56e81925519db44",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/30-the-wedding-garment.tex": "f7edf3330fa37f6f7cebeea927d16de86be3f3e44fb526786e24e8edaf7dc98f",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/40-farm-and-merchandise.tex": "487b291c9f291d627409102a82a6894234ba4acdb9434cf10040868577e86400",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/50-comparison.tex": "3f222ff93bebf65c75e4e5c277ce25744a9fbac992ef54d9874e94b028a8907f",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/80-date-location.tex": "c42d64faf27d80c8a3ee00836e0dfe5751c46803da1b96657f55bf36d7862eb0",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/85-liturgical-resolution.tex": "5fff217001f5fad3c03a327a67c4e05e34bd962618fe1804818f611a82ac51c8",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/90-apparatus.tex": "6a8b655820d7ee39b4a720905a54134f6574d9d3674fb33aa593e2c00e5ac5ed",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/concise/01-inventory.tex": "62ea6f5adcee5976252d6f865d922bf7e3c9b34286d301caf33d63fcb13234f0",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/concise/02-overview.tex": "738c199f16fbb5207a7988fcc9421bc76519894b63c720bea05f302e3e5939eb",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/concise/03-date-location.tex": "8f3b03d793b49d6419d8f9827d76c0784aa800418563f2bb7c6d42d48d127ebe",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/concise/04-themes.tex": "6dda36adc7eb0a45e310ba63538c6ddb0aaacb05bf581fbf660d885d7c873e06",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/concise/10-commentary.tex": "18ff22ca495e77b19cb7350be82e45a1ad101ae99fe532abc152bd5ceed13977",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/concise/90-apparatus.tex": "259bd1328512eddca081825adad634dd66dfbb4ef85f7628977f693f23b063a7",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/homily/10-homily.tex": "0e9694ce182c91c19a9d1e0a9b39c18d921b99c879d04d4dadf695b91c54b0a4",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/sections/homily/90-note.tex": "913a33f0d3d0455dd5eba69b88027a0ebc5f38b368ed2d6634a213ed8366ba67",
+        "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/synthesis.tex": "0b0283e837549ee44a1f77bc8b1ca31271025ce439635bb150ff77289dabd3ea",
+        "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+        "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+        "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+      },
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
+    "files": {},
+    "provider": "claude",
+    "review": "visual",
+    "schema": 1
+  },
+  "stage": "visual-review",
+  "summary": "Cold visual review of all three pc-s54 PDFs, each checked against its receipt hash and its contact sheets, with every page opened full-size from fresh 110 dpi rasters plus 150-400 dpi crops. The study (pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.pdf, sha256 2732e942f323b8603b962fa33baa935950db98621ca30630a5584167bacdfe13) was inspected on all 38 of 38 pages. The concise study (-synthesis.pdf, sha256 89f821ee3653c30196041d0e2a65b3509d9363004ec9e5b9097fb06428a41900) was inspected on all 12 of 12 pages. The homily (-homily.pdf, sha256 2e0675cc7a45aed64497ec62eebc7647fa4946a26b0ef0e67a543d67f675a7ae) was inspected on all 4 of 4 pages. All fonts are embedded Latin Modern Type 1. The layout is an 11-point article on letter paper with 0.75-inch margins in monochrome. The logs report no overfull or underfull boxes and no undefined references. Text bounding boxes stay within the margins, allowing for glyph slack. The table of contents, running heads, the three keyed lane headings and the four-senses blocks are consistent. The map and comparison tables carry their headers across page breaks intact. The study is 38 pages (within 20-50) and the concise study is 12 (within 10-12). In the settled synthesis .aux (sha256 9fa9be30...), the zref markers place inventory, overview and all four sense rows on page 1, chronology on page 2, themes on pages 3-4 and commentary at page 5, and the actual pages match. Page 1 holds the complete 13-row map with options labelled and exactly four sense rows. Page 2 holds only a complete, legible Scriptural Date and Location. Pages 3-4 carry substantive Themes and Movement. From page 5 the commentary interleaves the three interpretations by question. The homily has a full-width title and a two-column speech free of apparatus, ending at page 2. Its terminal note and references are full-width on pages 3-4, and its colophon fits. The study's colophon on page 38 is also compact and well placed. One blocking defect remains: on the concise study's full final page, the rights colophon descends to about 5 pt from the bottom paper edge. There is also one advisory on the concise study's title block."
+}

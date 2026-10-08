@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v9
+WORKFLOW_DIGEST: ef8058d0bd73437c67569a8d24ce67dac4c273fef7688aef8a54dec9e7986b13
+RUN_ID: 0b0f756d95e3ee20
+COMMIT: 643a137fb493003f1d9928036b870ce96d0240e3
+STAGE: synthesis-preflight
+ITERATION: 3
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-10-11","proper":"liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a","provider":"claude","research_handoff":"none"}
+DOCUMENT_ROOT: src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"VIS-002","location":"pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.pdf, physical page 1, title block; synthesis.tex \\propertitle fields","problem":"The concise study leaves the descriptive-subtitle field empty. Its descriptive line, 'the king's wedding feast: three interpretations compared', is set in the occasion/metadata slot at small size with a lowercase initial, so it reads as a typo. It also breaks the title hierarchy that the study and homily share: the homily sets an upright \\large subtitle ('All Things Are Ready'), and both put metadata lines in the small slots. Nothing on the printed title says the document is the concise study; only the PDF metadata does.","required_result":"If acted on, the concise title block should present its descriptive subtitle in the subtitle field (or at least begin it with a capital) and keep only edition/date/use metadata in the small lines. Page 1 must still hold the complete inventory and all four sense rows.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

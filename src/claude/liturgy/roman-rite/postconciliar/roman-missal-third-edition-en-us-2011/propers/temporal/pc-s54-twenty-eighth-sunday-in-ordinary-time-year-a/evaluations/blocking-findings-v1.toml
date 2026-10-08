@@ -49,10 +49,10 @@ provider = "claude"
 run_id = "0b0f756d95e3ee20"
 workflow = "proper-study"
 workflow_version = 9
-stage = "homily-review"
-iteration = 2
+stage = "web-review"
+iteration = 0
 disposition = "PASS"
-standing = 1
+standing = 0
 accepted_count = 2
 advisory_count = 4
 observation_count = 5
@@ -107,24 +107,27 @@ observation_count = 2
 
 [[stages]]
 stage = "visual-review"
-iteration = 0
-disposition = "CHANGES_REQUIRED"
+iteration = 1
+disposition = "PASS"
 run_id = "0b0f756d95e3ee20"
 workflow = "proper-study"
 workflow_version = 9
-standing = 1
+standing = 0
 accepted_count = 0
 advisory_count = 1
 observation_count = 1
 
-[[findings]]
-stage = "visual-review"
-id = "VIS-001"
-severity = "blocking"
-location = "pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.pdf, physical page 12 (References / Last revised / Reuse and rights colophon); source sections/concise/90-apparatus.tex"
-problem = "Page 12 is filled to the foot of the ordinary text block: 'Last revised (UTC)' sits at y 727-737 pt of 792. The shared final-page colophon therefore falls entirely below the text block and below the usual footer line. Its four 7-pt lines occupy y 757-787 pt. The last line, 'source.', ends at y 786.6 pt, 5.4 pt (0.075 in) above the bottom paper edge. The third line ('remains public domain ... See LICENSE and THIRD_PARTY.md in the') ends 13 pt (0.18 in) above it. That is far inside the 0.75-inch margin baseline, and below the footer zone that the shared macro's own comment says it recovers. On the house monochrome print baseline, a printer with an ordinary 0.17-0.25 in unprintable border would clip or drop the colophon's final lines, including the required pointer to LICENSE and THIRD_PARTY.md. The study (colophon ends y 571.7) and the homily (y 646.8) are unaffected because their final pages are not full."
-required_result = "In a rebuilt concise PDF, the complete four-line colophon sits on the same final physical page as the terminal content, with no rights-only page, and its lowest line ends no lower than the ordinary footer baseline (about y 764 pt, at least 0.375 in above the paper edge). The fix should come from genuine content-boundary edits in the concise terminal apparatus, such as tightening the Scope and Qualifications or References text. It must not reduce type, alter geometry or the shared colophon macro from the leaf, or exceed 12 pages. The opening page markers (1, 2, 3-4, 5) must remain unchanged."
-repair_target = "synthesis"
+[[stages]]
+stage = "web-review"
+iteration = 0
+disposition = "PASS"
+run_id = "0b0f756d95e3ee20"
+workflow = "proper-study"
+workflow_version = 9
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
 
 [[accepted]]
 stage = "study-review"
@@ -170,11 +173,11 @@ required_result = "When the research record is next revised, attach the clause i
 
 [[advisories]]
 stage = "visual-review"
-id = "VIS-002"
+id = "VIS-003"
 severity = "advisory"
-location = "pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.pdf, physical page 1, title block; synthesis.tex \\propertitle fields"
-problem = "The concise study leaves the descriptive-subtitle field empty. Its descriptive line, 'the king's wedding feast: three interpretations compared', is set in the occasion/metadata slot at small size with a lowercase initial, so it reads as a typo. It also breaks the title hierarchy that the study and homily share: the homily sets an upright \\large subtitle ('All Things Are Ready'), and both put metadata lines in the small slots. Nothing on the printed title says the document is the concise study; only the PDF metadata does."
-required_result = "If acted on, the concise title block should present its descriptive subtitle in the subtitle field (or at least begin it with a capital) and keep only edition/date/use metadata in the small lines. Page 1 must still hold the complete inventory and all four sense rows."
+location = "pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.pdf, physical page 3 running head; source sections/homily/90-note.tex (no \\runninghead after the properhomily environment)"
+problem = "The terminal Note on Sources and Delivery on page 3 sits under the running head 'Homily', which the properhomily environment set for the spoken pages. A reader skimming the furniture is told that the apparatus page is still part of the speech, although the page is full-width and titled differently. The sibling postconciliar homilies pc-s51 and pc-s52 share this pattern, and the content itself is correctly separated."
+required_result = "If acted on, sections/homily/90-note.tex should set an interior running head with the shared \\runninghead{...} command (for example 'Note on Sources and Delivery'), immediately after its \\section* heading. Page 3's head would then name the apparatus. The homily's page count, two-column speech, and final-page colophon placement must not change."
 
 [[observations]]
 stage = "research-review"
@@ -198,5 +201,5 @@ note = "The research record still carries the OCR-derived 'illa', where the Veni
 
 [[observations]]
 stage = "visual-review"
-location = "src/common/preamble.tex, \\TriptychRightsNotice (enlargethispage 0.58in, minipage colophon); also the installed pdf/claude/.../pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf, final page"
-note = "Whenever a publication's final page is full, the shared colophon macro lets the colophon descend to about 5 pt from the paper edge. The installed pc-s51 study shows the same y 786.6 pt maximum. A shared guard, or a mechanical gate on the colophon's lowest y position, would catch this class before visual review."
+location = "src/common/preamble.tex \\TriptychRightsNotice and src/common/propers-homily.tex"
+note = "Two classes of furniture issue recur across postconciliar three-document productions and are caught only by cold visual review: a colophon near the paper edge on a full final page (VIS-001 here, previously also seen on the installed pc-s51 study) and a stale 'Homily' running head on the homily's terminal note (VIS-003). A mechanical gate on the colophon's lowest y position, and a shared default running head for the homily apparatus, would retire both."

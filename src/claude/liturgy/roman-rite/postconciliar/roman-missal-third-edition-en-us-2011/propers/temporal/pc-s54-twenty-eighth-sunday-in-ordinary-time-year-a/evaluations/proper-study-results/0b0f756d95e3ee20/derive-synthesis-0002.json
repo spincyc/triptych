@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/synthesis.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "SYN-009",
+      "note": "Concise commentary line 210 now reads \\latin{Quae est ista vestis? Christus}, what is this garment? Christ; rest of the sentence and the later comparison unchanged; production-review.md withdraws the iteration-1 'illa' statements and records the page reading 'ista' with this iteration's verification; generation-metadata.tex describes the iteration-1 and iteration-2 contributions accurately. The expansive study was not edited.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 2,
+  "stage": "derive-synthesis",
+  "summary": "Repaired SYN-009: the concise commentary now quotes Aquinas, Super Matthaeum c. 22, Venice p. 282, as 'Quae est ista vestis? Christus', glossed 'what is this garment? Christ', after re-reading the long-s and t ligature on page 5 of the retained facsimile at native and triple resolution; the production audit withdraws the iteration-1 'illa' statements (SYN-002 entry and cold-reviewer note 1) and records iteration 2, and generation-metadata.tex corrects the iteration-1 description, carries a new revision timestamp 2026-10-08T15:34:01Z and a separate Opus 5.5 / Factory Droid contribution. Author proof: 12 pages, SHA-256 5e84ff4a15440fe54e1512a539b264fb442f719f429fc51221dd0d60812228a7, markers unchanged (pp. 1, 2, 3-4, 5), all 13 synthesis-preflight checks, both artifacts checks and the metadata checks exit 0; evidence under build/tpt-runs/0b0f756d95e3ee20/artifacts/derive-synthesis-0002/. SYN-007 lies in research/scope.md, a research-owned record, and was left for that owner."
+}

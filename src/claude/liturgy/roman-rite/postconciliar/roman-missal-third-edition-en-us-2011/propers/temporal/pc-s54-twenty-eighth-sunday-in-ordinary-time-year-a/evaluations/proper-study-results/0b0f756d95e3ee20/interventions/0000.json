@@ -1,0 +1,6 @@
+{
+  "encoded": false,
+  "stage": "resolve-context",
+  "text": "Dispatch envelope for this whole run: every agent stage is dispatched as a fresh Claude Code harness subagent (general-purpose) with no inherited conversation, at exactly the reasoning effort its packet's EFFORT line declares, through the harness's per-dispatch effort control; the subagent model is inherited from the driver session, claude-opus-5-5[1m]. Each worker is handed the packet by its exact path and SHA-256 and reads it in full. The driver adds only: the result path, a worker-owned scratch directory, the checkout path, the model identity and declared effort for generation provenance, the host note that Python Markdown 3.11 is installed while the repository pins 3.10.3 (with the path of a pinned scratch virtualenv to put first on PATH for web-edition and site commands), and the instruction that the driver alone runs git and tpt advance. Packet bytes, workflow digest and declared efforts are unchanged.",
+  "timestamp": "2026-10-08T08:45:12Z"
+}
