@@ -1,6 +1,51 @@
 schema_version = 1
 
 [[deliverables]]
+id = "claude-pc-s54-three-documents-2026-10-08"
+owner = "PROJECT-WORK.md"
+promise = "Drive the proper-study workflow for provider claude on the postconciliar Twenty-eighth Sunday in Ordinary Time, Year A, for Sunday 2026-10-11 through terminal acceptance: expansive study, concise study, standalone homily and canonical web edition with fresh cold reviews, every workflow cycle and host intervention documented, every contributing model declared exactly, the delivered work committed on feature/propers/claude and fast-forwarded to origin/main with its Pages deployment verified."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "claude-pc-s54-authorization"
+  criterion = "The exact provider and identity authorization is recorded in the production plan before the run is seeded, and the Claude leaf is authored independently of any other leaf, the GPT leaf for the same identity included."
+  status = "pass"
+  evidence = ["guidance/liturgy/propers-production-plan.md"]
+  check = "contains"
+  path = "guidance/liturgy/propers-production-plan.md"
+  needle = "- Authorized 2026-10-08: provider `claude`, identity `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a`."
+
+  [[deliverables.requirements]]
+  id = "claude-pc-s54-run-accepted"
+  criterion = "A proper-study v9 run for provider claude, identity liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a, date 2026-10-11, audience adult parish assembly, reaches ACCEPTED with every review a fresh worker; the three reviewed PDFs and the canonical web edition are installed with exact reviewed bytes, the owning catalog row and release records are written, and the owning leaf archives the run evidence."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-pc-s54-cycles-documented"
+  criterion = "Every repair cycle the run entered and every host intervention is recorded in a tracked record with its stage, iteration, cause, repair and outcome."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-pc-s54-model-provenance"
+  criterion = "The leaf's generation metadata declares each contributing model exactly and separately, as guidance/editorial.md requires, or a tracked record states why a stage's contribution is not declared."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-pc-s54-validated-checkpoint"
+  criterion = "Required source and publication checks pass or differ from the recorded baseline only by named inherited failures, the durable records agree with the artifacts and the actual workflow state, and the coherent delivered changes are committed on feature/propers/claude."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-pc-s54-main-and-pages"
+  criterion = "On the maintainer's 2026-10-08 instruction, the publication reaches origin/main by fast-forward after the three deploy gates pass locally, and the triggered Pages run, the three PDF routes, the web route and the postconciliar calendar row are verified live."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "claude-1962-twentieth-three-documents-2026-10-07"
 owner = "PROJECT-WORK.md"
 promise = "Drive the proper-study workflow for provider claude on the 1962 Twentieth Sunday after Pentecost for Sunday 2026-10-11 through terminal acceptance: expansive study, concise study, standalone homily and canonical web edition with fresh cold reviews, every workflow cycle and host intervention documented, every contributing model declared exactly, the delivered work committed on feature/propers/claude and fast-forwarded to origin/main with its Pages deployment verified."
