@@ -770,3 +770,277 @@ author proof inspection, not the independent visual evaluation.
 - STU-006 still stands against `research/interpretations.md` § 4.1, and RES-005
   against § 5's "presence by the Spirit everywhere"; both are research-owned,
   and the homily follows neither sentence.
+
+## Build-artifacts
+
+Iteration 0 of the build-artifacts stage built the three outputs for visual
+review from a clean build tree: the three documents' earlier build files were
+removed, and `make doc DOC=<id> PROVIDER=claude` was run for the bare
+document, `-synthesis` and `-homily`. Each build reached the Makefile's
+auxiliary fixed point, passed its declared-input audit, its contents-anchor
+check, the component-manifest check and the generation-metadata check, and
+exited 0. The clean rebuild reproduced byte for byte the three PDFs the
+derive-homily author proof recorded and both auxiliary files the snapshot
+seals.
+
+No layout repair was made. No source file was edited at this stage, so the
+render inputs, the generation record and its revision timestamp
+`2026-10-07T20:03:52Z` are unchanged, and no content review is invalidated by
+this stage.
+
+| Output | Physical pages | SHA-256 |
+| --- | --- | --- |
+| Expansive study | 31 | `f1a9918244721162770772663f087d2bf0e13936f4d73385846bdfd367cd87c4` |
+| Concise study | 12 | `29d93ddd16c034d1c7c395a8a190010be9afedb1a842994b43065bb21b132511` |
+| Homily | 3 | `e2ad69b1b3ece4c141c8756cefed03a42e09de32b14204ce7d9445153c0e4b14` |
+| Expansive study auxiliary file | | `3d7060fd5bb7ecceb3ce708961e064a2ed97a11465420c2d00e89d6ed5392fde` |
+| Concise study auxiliary file | | `ab5d73de1da3e396cdb879c48a7e7f3b4ba422e2747e3818afec406261f3bec2` |
+| Homily auxiliary file | | `96da8bd61cc21463cd3eda0260cb058d26e765e456536a181a79f8efa1798486` |
+
+The expansive study's 31 pages lie within 20–50 and the concise study's 12
+within 10–12. The concise auxiliary file records inventory and overview,
+with the literal, allegorical, moral and anagogical markers, on physical
+page 1; chronology on page 2; themes from page 3 to page 4; and commentary
+beginning on page 5. Printed and physical page numbers agree throughout.
+
+Checks on the final builds:
+
+- **Logs.** None of the three settled logs carries an overfull or underfull
+  box, a LaTeX or package warning, an undefined reference or citation, a
+  rerun request, a missing character or an error.
+- **Fonts.** `pdffonts` lists Latin Modern Roman, Roman Caps and Mono only,
+  every face an embedded Type 1 subset with a Unicode map: 16 entries in each
+  study and 11 in the homily.
+- **Structure and metadata.** Each PDF is unencrypted PDF 1.7 on US letter;
+  Poppler parses all three without error, and their titles and subjects are
+  those the entrypoints declare. `tools/check-proper-components --phase
+  artifacts` passes for the research, synthesis and homily editions, and
+  `tools/check-generation-metadata --pdf` passes for each PDF.
+- **Extraction.** `pdftotext` extracts every page of all three with no
+  replacement characters: about 20,960 words from the study, 9,850 from the
+  concise study and 2,350 from the homily, counting apparatus. The study's
+  first page holds the title and contents; no page of any output is empty or
+  stranded.
+- **Snapshot.** `scripts/_proper_study.py snapshot` wrote
+  `research/artifacts.json` (SHA-256
+  `7eb893ae90d62e0c20df3c67e5d12c855b20ff8936451074111664f61d35f78e`),
+  sealing the three PDFs, both pagination auxiliary files and 27 render
+  inputs.
+- **Rasters.** `tools/tpt pdf-review` rendered every page of the three PDFs
+  with contact sheets under the run's
+  `artifacts/build-artifacts-0000/rasters` directory; the final logs,
+  auxiliary files, contents file, extracted texts and the snapshot receipt are
+  kept beside it under `artifacts/build-artifacts-0000/evidence`.
+
+The builder looked at the four contact sheets and at the concise study's
+page 2 at full size as a build check. That is not the independent visual
+review, which still has every page to inspect.
+
+Remaining limitations: no dedicated PDF structural validator, such as
+`qpdf --check`, is installed on the build host, so structure was checked
+only by Poppler's parsing and the repository's checkers. No semantic defect
+was found to report upstream from the build.
+
+## Reviews and gates recorded by the engine
+
+These are the engine's own recorded results for run `9c1136f1f8d1241c`, as the
+run holds them when installation begins. No acceptance is claimed beyond them;
+the terminal publication gates have not yet run. Each result's SHA-256 is the
+hash the engine recorded for that result, and each was re-hashed from the run
+directory and matched.
+
+| Stage, iteration | Result | Findings and observations | Result SHA-256 |
+| --- | --- | --- | --- |
+| research-review 0 | CHANGES_REQUIRED | blocking RES-001 to RES-003; advisory RES-004 to RES-009; one observation | `5119b846bc24df2b6c71cf972a716b4f6a69a30324a7d2b0ff7684eb1addce91` |
+| research-review 1 | PASS | advisory RES-005, RES-010 to RES-012; one observation | `8e79120144c7f0186357568cac62698a5fbbe427ad484c9f9dc14040a8a36b84` |
+| study-review 0 | CHANGES_REQUIRED | blocking STU-001, STU-002; advisory STU-003 | `6bb124a064b34c7faad13d7ab4aec9563325b1d70167a314b5ddd29a7adabb19` |
+| study-review 1 | PASS | advisory STU-004 to STU-006; one observation | `24c2896ce189432fc99a58da06fdc2b1e6fc738d8aa2508cfd58784f1986b187` |
+| synthesis-review 0 | CHANGES_REQUIRED | blocking SYN-001; advisory SYN-002 to SYN-005; two observations | `c22173750b38ae7fa879606c42cd75c0d2576670414a967c428acb025c51b123` |
+| synthesis-review 1 | PASS | one observation | `1e83b78de979f60999551743742c58b5eb3584c2ca5f7b17277b1499a6d70873` |
+| homily-review 0 | PASS | advisory HOM-001 to HOM-005 | `5274320b7dc07994feda1f976223cc450859844f69e98c6ee1bdb71078592254` |
+| build-artifacts 0 | PASS | worker stage | `49e90dd654e06a26790a6eebcbce9d785ac98e03a94c83fb36ca6d1f792a3110` |
+| artifact-gates 0 | PASS | none | `97af5c9c6c70bfc4459030f6b4c4d3ef1c5d44f458a9759ff4ab5fcbb5607d3c` |
+| visual-review 0 | PASS | advisory VIS-001, VIS-002; one observation | `c8719f1c46c40896ff644366520791e5d5a0b3626de8f30aaffc413cb7b89c52` |
+| generate-web 0 | PASS | worker stage | `9cae2815c3fa6b2e9999a35a69b2e1e2a1e85678163eb3df456c630170505ec5` |
+| web-review 0 | PASS | none | `43fd4357cc003e128fa0713c451f1c151dd1a0d2707d1c468e49b5d823278c42` |
+
+The four stages after the artifact build, in brief:
+
+- **Artifact gates, iteration 0.** `_proper_study.py check --phase artifacts
+  --require-presentation --require-format --require-authority --date
+  2026-10-11` exited 0 against the snapshot in `research/artifacts.json`.
+- **Visual review, iteration 0.** Every page of the three sealed PDFs was
+  inspected at full size: 31 pages of the study, 12 of the concise study and 3
+  of the homily. VIS-001 is the untied "St" honorific, which strands "St" at a
+  line end twice in the homily's first column and also in the studies; VIS-002
+  is the homily's unspaced four-dot elision in the Augustine quotation that the
+  study sets with a spaced ellipsis. The observation records that the shared
+  template's right running head names the last section beginning on a page.
+- **Generate-web, iteration 0.** The canonical study alone was converted under
+  the pinned Markdown 3.10.3. `research/web-artifact.json` records the
+  conversion at SHA-256
+  `071cf8ce54ed16ad029e2817d7ab00b89bd92133de94c2ae73b0302bce4f0717`.
+- **Web review, iteration 0.** No finding and no observation. The reviewer
+  reproduced the conversion byte for byte, compared it with the reviewed
+  31-page PDF and viewed it rendered through the site layout at desktop and
+  phone widths.
+
+## Install-publication, iteration 0 — 8 October 2026
+
+The worker is a Claude Code harness subagent running as `claude-opus-5-5[1m]`,
+dispatched at reasoning effort `high`. No reviewed source, generation
+timestamp or receipt was changed at this stage.
+
+### Installed PDFs
+
+The snapshot was confirmed current before anything was installed.
+`_proper_study.py check --phase artifacts --require-presentation
+--require-format --require-authority --date 2026-10-11` exited 0, and all 32
+hashes in `research/artifacts.json` (three PDFs, 27 render inputs and two
+pagination `.aux` files) matched the files on disk. The three PDFs were then
+installed with the normal recipe, one at a time; nothing was suppressed: no
+`-o`, no `-t`, no timestamp change and no source edit.
+
+```sh
+make install-doc DOC=liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost PROVIDER=claude
+make install-doc DOC=liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis PROVIDER=claude
+make install-doc DOC=liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-homily PROVIDER=claude
+```
+
+Each run validated the generation metadata and copied the bytes. Nothing was
+retypeset: the build PDFs keep their build-stage times, and the three `.aux`
+and three `.log` files are byte-identical to the copies the build-artifacts
+stage kept as evidence. The build PDF and the installed PDF each hash to the
+value that the build, the artifact gates and the visual review recorded:
+
+| Output | Pages | Bytes | SHA-256 (build and installed) |
+| --- | ---: | ---: | --- |
+| `60-twentieth-after-pentecost.pdf` | 31 | 527,541 | `f1a9918244721162770772663f087d2bf0e13936f4d73385846bdfd367cd87c4` |
+| `60-twentieth-after-pentecost-synthesis.pdf` | 12 | 454,215 | `29d93ddd16c034d1c7c395a8a190010be9afedb1a842994b43065bb21b132511` |
+| `60-twentieth-after-pentecost-homily.pdf` | 3 | 261,300 | `e2ad69b1b3ece4c141c8756cefed03a42e09de32b14204ce7d9445153c0e4b14` |
+
+No hash differs, so no artifact defect is reported and no review boundary is
+reopened.
+
+### Web edition, release records and wiring
+
+The reviewed conversion
+`build/web/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.md`
+was installed byte for byte at
+`web/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.md`:
+125,447 bytes, SHA-256
+`071cf8ce54ed16ad029e2817d7ab00b89bd92133de94c2ae73b0302bce4f0717`, the value
+`research/web-artifact.json` and the web review record. It is staged, so the
+publication gate can prove it is tracked. No synthesis or homily web edition
+exists; the canonical study is the only web authority.
+
+`make add-publication ID=<id> CATALOG=library/traditional-latin-mass.md
+PROVIDER=claude STATUS=alpha` created one release record per PDF under
+`release/publications/claude/liturgy/roman-rite/1962/propers/temporal/`. No
+Claude record existed beforehand. Each has schema version 1, its own output
+id, the 1962 catalog, status `alpha` and the standing authorization
+`perpetual-public-repository-2026`.
+
+In `library/traditional-latin-mass.md`, the Claude cell of the existing row 60
+changed from `Planned` to Full PDF, Synthesis PDF, Homily PDF and Read. That is
+the order of the schema-2 manifest's `canonical_label`, `synthesis_label` and
+`homily_label`, followed by the canonical web page. The ChatGPT cell, every
+other row and every other catalog page are untouched, and no companion row was
+added. `release/public-alpha.json` names `gpt` as the primary provider, so the
+one new canonical marker carries the provider prefix,
+`claude:liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost`,
+beside the ChatGPT edition's unprefixed marker for the same identity.
+
+### Catalogue, release bindings and source inventory
+
+`make document-catalogue` regenerated
+`src/web/data/structure/documents/corpus.json`. Every change belongs to this
+leaf. The existing work for this identity gains the Claude edition: the study,
+the concise study and the homily under `also`, the web page, the five
+contribution records the leaf's generation metadata declares, and this run's
+`produced` identity. Documents moved from 205 to 206, issues from 247 to 250
+and pages from 6,891 to 6,922; the Claude provider tally moved from 58 to 59
+and `claude-opus-5-5[1m]` from 87 to 88 documents. The work count stays 149,
+because the identity's work already existed.
+
+Before the catalogue was regenerated, `make check-release-bindings` reported
+exactly this stage's two writes: the catalog page as stale and the new web
+edition as unrecorded. After regeneration it added the catalogue projection.
+The refresh followed the repository's scoped rule: `make
+refresh-release-bindings ADOPT=1 ONLY="library/traditional-latin-mass.md
+web/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.md
+src/web/data/structure/documents/corpus.json"` made five changes. It adopted
+the web edition, re-recorded the catalog page and the projection, and rewrote
+the rights table and its digest. `make check-release-bindings` then reported
+no stale binding. Nothing outside those three paths was re-recorded.
+
+`make check-sources` exits 0; the source library's reader projection was
+already current, because this production registered no new source record that
+the projection serves, so `make source-projection` was not needed.
+
+`tools/tpt source-inventory refresh
+src/sources/inventories/claude-publications-v1.toml --review
+src/sources/inventories/claude-classification-review-v1.toml --audited-on
+2026-10-08` added this publication (58 to 59) and its 35 source-bearing files
+(1,599 to 1,634) to the Claude publication inventory. The leaf's
+classification row was then replaced from its placeholder by an audit of the
+74 bindings in `research/source-bindings.toml`, the witness register and
+negative results in `research/scope.md`, the dated witnesses in
+`research/context.md` and the declarations in `research/review-dependencies.toml`:
+
+- scripture: the Clementine Vulgate, the Douay–Rheims with Haydock's notes,
+  and Swete's Greek Old Testament;
+- liturgical: the 1962 typical edition, the 1861 Cummiskey English and
+  Lasance's *New Roman Missal* for the commemorated orations;
+- patristic: Hilary, Jerome, Chrysostom, Augustine, Cyril of Alexandria,
+  Cassiodorus and Gregory, in the Migne volumes and the Nicene and
+  Post-Nicene Fathers;
+- scholastic: Aquinas, Bellarmine, Anthony of Padua, and the medieval
+  commentators on the Mass: Berno, Honorius, Rupert, Sicard and Durandus;
+- historical-primary: the Migne volumes and their facsimiles and the Aquinas
+  printings;
+- institutional-current: the FSSP France ordo and the USCCB introductions to
+  the Psalms and to Ephesians;
+- secondary: Schuster, *The Liturgical Year*, and the *Catholic Encyclopedia*;
+- finding-aid: the calendar and rubric computations `research/context.md`
+  adopts as finding aids only, the commentary and containment joins behind the
+  lead dispositions, and the text layers used to locate page-image readings;
+- repository-internal: the facsimile-rights inventory, the Latin provenance
+  ledger, the translations overlay, the Lasance rights record, the
+  author-standing inventory and the chronology corpus, each declared in
+  `research/review-dependencies.toml` or sealed by the chronology computation.
+
+No canon-law, magisterial, classical, prayer-devotional, archival or dataset
+source occurs in the leaf's records, so none of those categories was
+assigned. The review's `audited_on` became 2026-10-08, and the tool's own
+render function recomputed both of its snapshots; `tools/tpt source-inventory
+classify` then applied the row and `check` reports the inventory valid. The
+inventory records this file's hash, so the refresh and `classify` were run
+again after this entry was written. The provider-neutral inventory is
+unchanged.
+
+### Publication-gate commands run by this stage
+
+These are this stage's own runs of the terminal gate commands, in the pinned
+Markdown 3.10.3 environment. They are not an acceptance, and nothing has been
+committed.
+
+- `_proper_study.py check --phase publication --require-presentation
+  --require-format --require-authority --date 2026-10-11` exits 0.
+- `make check-release-bindings` reports no stale binding.
+- `tools/tpt public-alpha check --provider claude --document <leaf>` exits 0:
+  the scoped policy is valid for the three outputs, and the global source,
+  release and authorization records are valid for 250 publications.
+- `tools/tpt document-library check --provider claude --document <leaf>` and
+  `tools/tpt document-library structure --check` exit 0, and the projection
+  is current.
+- `make check-publication-inventories` exits 0 for both publication
+  inventories.
+- `make check-web-editions-current` exits 0: tracked web editions match
+  current sources.
+
+`make check-sources` also prints, as information that gates nothing, that two
+lane authors named in published manifests have no row in the author-standing
+inventory: Anthony of Padua and Cyril of Alexandria, both named in this leaf's
+lanes. Neither is a carrying author, so the authority check passes; the
+standing inventory belongs to research and was not changed here.

@@ -1,9 +1,9 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it.",
  "counted": {
-  "documents": 205,
-  "issues": 247,
-  "pages": 6891,
+  "documents": 206,
+  "issues": 250,
+  "pages": 6922,
   "titles_unrecorded": 0,
   "works": 149
  },
@@ -13,7 +13,7 @@
    "id": "GPT-5-based Codex agent"
   },
   {
-   "documents": 87,
+   "documents": 88,
    "id": "claude-opus-5-5[1m]"
   },
   {
@@ -51,7 +51,7 @@
  ],
  "providers": [
   {
-   "documents": 58,
+   "documents": 59,
    "id": "claude",
    "label": "Claude"
   },
@@ -7429,6 +7429,73 @@
    "catalog": "library/traditional-latin-mass.md",
    "catalog_page": "library/traditional-latin-mass.html",
    "editions": [
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": 12,
+       "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis.pdf",
+       "subject": "Concise study of the 1962 Missale Romanum proper for the Twentieth Sunday after Pentecost: the appointed elements, four overview senses, the scriptural dossier, the movement of the formulary, and a commentary comparing three readings of the whole Mass",
+       "title": "Twentieth Sunday after Pentecost: A Concise Study of the Proper in the 1962 Roman Missal"
+      },
+      {
+       "kind": "homily",
+       "pages": 3,
+       "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-homily.pdf",
+       "subject": "A homily for an adult parish assembly on the 1962 Missale Romanum proper for the Twentieth Sunday after Pentecost, 11 October 2026: the ruler's son healed by a word, the father who believed and went his way, the Gradual's due season, the Communion's hope in God's word, and the Secret's heavenly remedy",
+       "title": "Twentieth Sunday after Pentecost: The Word on the Road Home"
+      }
+     ],
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "dispatched-reasoning-effort=high; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code harness subagent (author-study stage of proper-study v9, run 9c1136f1f8d1241c, iteration 0: the expansive study of the canonical leaf from the reviewed research records, comprising the opening with its occurrence on 11 October 2026 and its element map, the appointed Latin with its public-domain English and the three commemorated Maternity orations, the element-by-element settings, three readings of the whole formulary each with its own four senses, the comparison, the Scriptural Date and Location appendix on the generated chronology projection, the scope appendix and References; the schema-2 component manifest with its future concise and homily components and presentation roles; the leaf-local format and web-edition records; the production audit; and author proof checks); installed Claude Code CLI 2.1.292, the running build not separately exposed; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "dispatched-reasoning-effort=high; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code harness subagent (author-study stage of proper-study v9, run 9c1136f1f8d1241c, iteration 1, against the two blocking findings and one advisory of the study's first cold review: the first reading's thesis, its subsection on the way and the will of God, and its moral and anagogical senses given the Alleluia, from Augustine and Bellarmine on Ps 56:8, Schuster on gloria mea and Cassiodorus on Ps 107:2, each join to the Gospel marked as the editor's; the comparison's common ground restated as what all three readings hold, with the Gospel's hinge, the healing by a word and Augustine's order of prayer each credited to the two readings that hold it, the second reading's supporting use of the Gospel described, and its treatment of the Gospel's last words replaced by what that reading says; the scope appendix's clause on the medieval commentators restated as the study uses them; the production audit updated; and author proof checks); installed Claude Code CLI 2.1.292, the running build not separately exposed; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "dispatched-reasoning-effort=high; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code harness subagent (derive-synthesis stage of proper-study v9, run 9c1136f1f8d1241c, iteration 0: the concise study derived from the accepted expansive study, comprising the synthesis entrypoint, the page-1 map of the ten appointed elements with the rubrical note on the commemoration of the Maternity and four overview sense rows, the page-2 Scriptural Date and Location sheet on the generated chronology projection, the two-page Themes and Movement, a six-unit integrated commentary setting the three readings beside one another at the questions they share, and the concise scope note and References; the production audit; and author proof checks); installed Claude Code CLI 2.1.292, the running build not separately exposed; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "dispatched-reasoning-effort=high; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code harness subagent (derive-synthesis stage of proper-study v9, run 9c1136f1f8d1241c, iteration 1, against the one blocking finding and four advisories of the concise study's first cold review: the concise scope note's clause on the liturgical commentators restated so that each is cited only for what he says of the elements of this formulary he names; the overview's anagogical clause, the first reading's use of Schuster at the Gradual, the Collect's pardon beside Cassiodorus on the Alleluia's verse, and the bound of the search for the Latin sources of the chants' departures, each restored from the study; the production audit updated; and author proof checks); installed Claude Code CLI 2.1.292, the running build not separately exposed; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "dispatched-reasoning-effort=high; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code harness subagent (derive-homily stage of proper-study v9, run 9c1136f1f8d1241c, iteration 0: the standalone homily derived from the two accepted studies, comprising its entrypoint, the spoken body for an adult parish assembly on the ruler's son healed by a word, following the first reading of the whole formulary with the Introit's order of prayer, the Epistle's thanks and the Offertory's exiles from the second, and the terminal note on sources and delivery with its References; the production audit entry; and author proof checks); installed Claude Code CLI 2.1.292, the running build not separately exposed; unexposed: server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "claude-opus-5-5[1m]"
+     ],
+     "pages": 31,
+     "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.pdf",
+     "produced": {
+      "run_id": "9c1136f1f8d1241c",
+      "seed_commit": "1fa591a03c11d064c9f1afda6c44ccdbe7903bf2",
+      "workflow_digest": "ef8058d0bd73437c67569a8d24ce67dac4c273fef7688aef8a54dec9e7986b13",
+      "workflow_id": "proper-study",
+      "workflow_version": "9"
+     },
+     "provider": "claude",
+     "reviewed": "2026-10-07",
+     "revised": "2026-10-07T20:03:52Z",
+     "status": "alpha",
+     "subject": "Expansive study of the 1962 Missale Romanum proper for the Twentieth Sunday after Pentecost: appointed texts, each element in its setting, three readings of the whole formulary with their four senses, and a comparison",
+     "title": "Twentieth Sunday after Pentecost: A Study of the Proper in the 1962 Roman Missal",
+     "title_source": "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/main.tex",
+     "web": "web/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.html"
+    },
     {
      "also": [
       {

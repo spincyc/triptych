@@ -18,26 +18,36 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-60-run-accepted"
   criterion = "A proper-study v9 run for provider claude, identity liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost, date 2026-10-11, audience adult parish assembly, reaches ACCEPTED with every review a fresh worker; the three reviewed PDFs and the canonical web edition are installed with exact reviewed bytes, the owning catalog row and release records are written, and the owning leaf archives the run evidence."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/evaluations/proper-study-results/9c1136f1f8d1241c/record.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/evaluations/proper-study-results/9c1136f1f8d1241c/terminal-status.json", "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.json", "web/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.md"]
+  check = "contains"
+  path = "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/evaluations/proper-study-results/9c1136f1f8d1241c/terminal-status.json"
+  needle = "\"disposition\": \"ACCEPTED\""
 
   [[deliverables.requirements]]
   id = "claude-60-cycles-documented"
   criterion = "Every repair cycle the run entered and every host intervention is recorded in a tracked record with its stage, iteration, cause, repair and outcome."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/claude-1962-60-production-2026-10-07/CYCLES.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/evaluations/proper-study-results/9c1136f1f8d1241c/interventions/0000.json"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "claude-60-model-provenance"
   criterion = "The leaf's generation metadata declares each contributing model exactly and separately, as guidance/editorial.md requires, or a tracked record states why a stage's contribution is not declared."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/generation-metadata.tex", "workflows/reviews/claude-1962-60-production-2026-10-07/CYCLES.md"]
+  check = "contains"
+  path = "workflows/reviews/claude-1962-60-production-2026-10-07/CYCLES.md"
+  needle = "**Model provenance.**"
 
   [[deliverables.requirements]]
   id = "claude-60-validated-checkpoint"
   criterion = "Required source and publication checks pass or differ from the recorded baseline only by named inherited failures, the durable records agree with the artifacts and the actual workflow state, and the coherent delivered changes are committed on feature/propers/claude."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/claude-1962-60-production-2026-10-07/CYCLES.md"]
+  check = "contains"
+  path = "PROJECT-WORK.md"
+  needle = "(`proper-study` v9) reached ACCEPTED"
 
   [[deliverables.requirements]]
   id = "claude-60-main-and-pages"

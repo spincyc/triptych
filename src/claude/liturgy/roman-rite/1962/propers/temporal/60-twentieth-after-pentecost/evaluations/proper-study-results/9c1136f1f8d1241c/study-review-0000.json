@@ -1,0 +1,459 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "STU-001",
+      "location": "sections/20-word-at-a-distance.tex (the whole reading, including its opening thesis paragraph, lines 6-24, and its four senses, lines 229-259); sections/00-opening.tex lines 76-78",
+      "problem": "The first reading, The Word That Heals from Afar, never mentions the Alleluia (Ps 107:2, Paratum cor meum ... cantabo, et psallam tibi, gloria mea). The words Alleluia, Paratum, Ps 107 and 'ready' do not occur in the section, and no paragraph gives the chant any role. The profile requires each interpretation to 'let every appointed element contribute, including orations and minor chants' (propers-three-documents.md, The expansive study). The study's own opening states the opposite of what the reading does: 'Every element of the formulary has a place in each reading' (00-opening.tex 76-77). The omission is not a gap in the evidence. research/interpretations.md \u00a7 1.3 assigns this reading an Alleluia contribution: Augustine on Ps 56:8, that the prepared heart accepts God's will. research/scope.md \u00a7 3.5 holds further checked reception of the verse: Cassiodorus on 107.2, that the faithful say the verse rightly when they trust their sins are forgiven by his gift; Bellarmine on 56:8, 'ready to take anything cheerfully from your hand'; and Schuster, p. 176, God as the soul's glory. The other two readings each give the Alleluia a place, so only this reading fails the whole-formulary requirement.",
+      "repair_target": "study",
+      "required_result": "The first reading gives the Alleluia a real place in its argument that faith rests on Christ's word. Ground it in checked reception that the research already holds, such as Augustine on Ps 56:8, Cassiodorus on Ps 107:2, Bellarmine on Ps 56:8 or Schuster, p. 176, each credited only with what he says of the verse. Mark any join between the verse and the Gospel or the father's readiness as the editor's, and do not repeat the second reading's fuller treatment of the Epistle's and Alleluia's singing verbs. Reflect the Alleluia in the reading's opening statement of how the formulary contributes, and in its four senses where it bears. The opening's statement that every element has a place in each reading is then true.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-002",
+      "location": "sections/50-comparison.tex, first paragraph (lines 4-17) and last paragraph (lines 77-84)",
+      "problem": "The comparison opens with 'The three readings share their ground' and then lists four features of every reading. Three of them do not hold for one of the readings. (1) 'Each takes the Gospel's word, Filius tuus vivit, and the Communion's hope in God's word as the formulary's hinge.' The second reading is not built on the Gospel. It gives the Gospel one paragraph as 'one exile's crisis' (30-songs-of-sion.tex 222-230). The comparison's own table (lines 27-29) says that reading centres on the Introit, the Offertory and the Epistle, and research/interpretations.md \u00a7 2.1 says 'The reading's centre is not the Gospel but the chants and Epistle.' (2) 'Each hears the Introit's confession as the right beginning of prayer, in the order St Augustine finds in the saints.' The third reading never invokes Augustine's order of prayer. It hears the Introit as Israel's confession, prayed by the Church through Jerome's ex persona populi and the commentators (40-israel-and-the-nations.tex 112-142). (3) 'Each rests on the Fathers' agreement that the healing at Capharnaum was done by a word.' Nothing in the second reading rests on that agreement. The closing paragraph also gives the second reading an interpretation it never makes: that the Gospel's last words, et credidit ipse, et domus eius tota, are 'a family's homecoming in a world of death and grief'. The second reading never treats those words. Acceptance requires a truthful comparison, and this one blurs the real difference in where the second reading stands toward the Gospel. research/interpretations.md \u00a7 4.1 carries the same overstated sentence, but the brief's own \u00a7\u00a7 2.1 and 2.5 record the difference. The evidence is therefore in hand, and the defect lies in how the comparison is written.",
+      "repair_target": "study",
+      "required_result": "The comparison claims as common ground only what all three readings actually hold. The Postcommunion's oboedire mandatis answering the Introit's non oboedivimus is such a ground. For each other feature, name the readings that hold it: for example, the Gospel's word as hinge and the agreement that the healing was by a word belong to the first and third; Augustine's order of prayer belongs to the first and second. Describe the second reading's use of the Gospel as the supporting place that reading gives it. In the final paragraph, either ground the second reading's account of the Gospel's last words in what the second reading itself says, or replace it with what that reading does say. No reading may be credited with a claim it does not make.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-003",
+      "location": "sections/90-apparatus.tex, Appendix: Scope and Qualifications, Reception paragraph (lines 66-71)",
+      "problem": "The appendix says that Berno of Reichenau, Rupert of Deutz, Honorius Augustodunensis, Sicard of Cremona and William Durandus 'expounded a Mass that shared this formulary's chants and Epistle but read another Gospel, and they are cited only for the elements that Mass shares with this one.' The study does not match this in three ways. (a) It cites Rupert (De divinis officiis XII.21) and Durandus (Rationale VI.138) on this formulary's Gospel (10-each-element.tex 179-185). That is legitimate reception of the Gospel at the loci where their books read it, but it is not citation 'only for the elements that Mass shares'. (b) Berno is not cited anywhere in the study and is absent from References. (c) research/scope.md \u00a7 2.1 records that Honorius's Mass had another Collect and Alleluia, and that Durandus reports another Alleluia in some churches, so 'shared this formulary's chants' is not exact. A reader of the appendix is mildly misled about how these witnesses are used.",
+      "required_result": "Rewrite the clause to state accurately whom the study cites and for what. Rupert, Honorius, Sicard and Durandus are cited for the chants and Epistle their Mass shared with this one. Rupert and Durandus are also cited on this Gospel at the chapters where their books expound it. Name Berno only if the study cites him. Stay within the one clause the profile allows for the other Gospel, and do not name the other Sunday.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "appointed-texts",
+          "kind": "appointed-text",
+          "path": "sections/05-appointed-texts.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/context.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "appointed-texts"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "each-element",
+          "kind": "proper-treatment",
+          "path": "sections/10-each-element.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "word-at-a-distance",
+          "kind": "interpretive-lane",
+          "path": "sections/20-word-at-a-distance.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "songs-of-sion-in-babylon",
+          "kind": "interpretive-lane",
+          "path": "sections/30-songs-of-sion.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "israel-and-the-nations",
+          "kind": "interpretive-lane",
+          "path": "sections/40-israel-and-the-nations.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "word-at-a-distance",
+            "songs-of-sion-in-babylon",
+            "israel-and-the-nations"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "scriptural-date-location",
+          "kind": "front-matter",
+          "path": "sections/80-date-location.tex",
+          "references": [
+            "format.tex",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml",
+            "research/chronology-profile-comparisons.toml",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Cyril of Alexandria",
+            "Hilary of Poitiers",
+            "Cassiodorus",
+            "Robert Bellarmine",
+            "Anthony of Padua",
+            "Ildefonso Schuster",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "word-at-a-distance"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "word-at-a-distance",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Hilary of Poitiers",
+            "Jerome",
+            "John Chrysostom",
+            "Robert Bellarmine",
+            "Cassiodorus",
+            "Gregory the Great",
+            "Sicard of Cremona",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Hilary of Poitiers"
+          ],
+          "component_keys": [
+            "songs-of-sion-in-babylon"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "songs-of-sion-in-babylon",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Cyril of Alexandria",
+            "Jerome",
+            "John Chrysostom",
+            "Cassiodorus",
+            "Robert Bellarmine",
+            "Rupert of Deutz",
+            "Honorius Augustodunensis",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "israel-and-the-nations"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "israel-and-the-nations",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/format.tex": "0c9c8b9d46a02ded53478e01bd1b99f77c9710f7d849be3a18d2911b44aba6a4",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/main.tex": "96353b276e76c5284f675e3cee33224b8e4aed25a38986282114c5c160e5bc94",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/propers/verified.md": "9d1ebb6a94bcea63095304a4241e496d17c00e16b576e8f08fdb6e95633ea6a6",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/chronology-annotations.tex": "2ad82f62631d74a159945273d56e136eef5b8e97e1c264f2f4af4d215b70752f",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/chronology-profile-comparisons.toml": "139a40c7f50531ff34337f64368f66dc23e9909ef9d06f2802237a8200eee01c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/chronology.toml": "75d912433455057696cea0fb130412d405490324c694c6ffcd90004391681615",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/context.md": "2b460edb1abfb14c9bb0747e77e073d5ae029dbcb1968a152eadab52c01885b9",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/interpretations.md": "7b5716fe81107e845845b65a37d41489aa7fef06142c6256e70d8bd3ac66e486",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/scope.md": "9a9317cbaedad8bd14f80e4f87b38461234ff63241c1fb2ca1cc09fb636ee642",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/source-bindings.toml": "f35fe5106303613e2da00d64ad366e53b1f259a71ce0dfe174ffbddd777cfe31",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/00-opening.tex": "9f18bd486f025e5da790ce0b90d65251eef1a0928d6bd19f2295d600a7c5407f",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/05-appointed-texts.tex": "813de7c82c2a1c8e4559e2e1b6fcbdf1b0b7495193b747f245631f81cfcf74eb",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/10-each-element.tex": "16f32b921f95d47f24924a6981050454f5afe96702b0af4ae502e201810ab4bf",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/20-word-at-a-distance.tex": "ac279b4bd92cce3a407518a9f6d9b02c909beadc317b7cb20f3a146ad5ac72f6",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/30-songs-of-sion.tex": "4a0dc42967a1276d32ab2a0338cf482a08b725d4d64729c5702826057f6ca925",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/40-israel-and-the-nations.tex": "3e1e69e164011e4933a0018e221c1585f463044d977652adb4a17f30d4a06355",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/50-comparison.tex": "c1801af3f77a9e1afd28420304c567e5079697a67a43fe5fc0c1f8d9e26d8a94",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/80-date-location.tex": "800190013915cdb5866951078fc69f1bfe922bdba5c9343f89afc83dfba5897f",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/90-apparatus.tex": "0f9f1655a1cdd78c1862ce83d968dc6f9d01b4f623fee71d0c36cbc2eff39585",
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "9",
+            "ef8058d0bd73437c67569a8d24ce67dac4c273fef7688aef8a54dec9e7986b13",
+            "9c1136f1f8d1241c",
+            "1fa591a03c11d064c9f1afda6c44ccdbe7903bf2",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Cold review of the expansive study src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost (main.tex and its nine sealed sections; all 21 sealed input hashes matched). The study builds to 31 physical pages with a clean log (rebuilt independently in the reviewer's scratch area), and all 13 study-preflight gates exit 0. It develops three distinct, coherent readings (word at a distance; the song of the exiles; Israel and the nations), each carried by two developed Fathers or saints (Gregory and Chrysostom; Augustine and Hilary; Augustine and Aquinas), each with its own difficulty and four senses, plus element-by-element treatment, a comparison, and the chronology in a terminal appendix built from the generated annotations. Quotation fidelity is high: checked word for word against the tracked or hash-matched texts were Gregory, Hom. in Ev. 28 and 4.3; Augustine, Tract. in Io. 16 and Enarr. 56, 118 s.15, 136 and 144; Aquinas, Super Io. c.4 l.7; Cyril, In Io. II.5 (registered remote OCR, fetched and SHA-256 matched); Chrysostom, Hom. 19 in Eph. and Hom. 35 in Io.; Jerome, In Dan.; Hilary on Pss 118 and 136; Bellarmine; Schuster; and Fromage, whose wedding-feast frame stays out of the readings as the research bounds require. Limits: Chrysostom Hom. 35 was checked in the Internet Archive text layer of the registered NPNF1-14 facsimile, not the facsimile itself; Jerome on Ephesians (PL 26 page images), Chrysostom's Expositio in Psalmos (PG 55), Cassiodorus (CCSL 98, restricted), St Anthony (restricted) and the Rupert, Honorius, Sicard and Durandus OCR layers were not re-read and rest on research/scope.md, which passed research review. Verdict: CHANGES_REQUIRED. The first reading gives the Alleluia no contribution at all, although the opening says every element has a place in each reading. The comparison also credits all three readings with shared grounds that the second and third do not hold. One advisory concerns the scope appendix's description of the medieval commentators' citations."
+}

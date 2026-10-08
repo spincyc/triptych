@@ -1,0 +1,25 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "note": "scope 3.1 records Augustine (PL 37 cols. 1501-1502, page image), Hilary (PL 9 cols. 503-505, page images), Cassiodorus (CCSL 98 pp. 1058-1060) and Bellarmine (lines 4127-4139) on both clauses. The loci are bound, 5.2 and 10.6 are updated, and interpretations 1.3, 2.3, 3.3 and 4.5 state each reading's use of the verse.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-002",
+      "note": "scope 1.3 and 5.1 now report the PL 9 col. 777 heading's tui with its Infra abest tui note, distinguished from Hilary's lemmas at cols. 778-779. All other headings and lemmas are re-read and recorded: PL 9 cols. 548, 854, 863 and PL 37 cols. 1430, 1540, 1761, 1881-1882. The newly found Cassiodorus lemma dum recordaremur tui, Sion is reported as a textual observation, with no origin asserted.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-003",
+      "note": "Bellarmine's literal, allegorical (rock = Christ) and moral readings of Ps 136:7-9 are restated at line 4843, and the invented contrast with Augustine is removed. Hilary sections 12-14 (cols. 782-784) were read, so the binding's cols. 777-784 now covers the whole tractate. Scope 4.9 and interpretations 2.5 report all five witnesses' readings of the close, including Chrysostom's non-figurative one.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": "Records changed: research/scope.md (header; sections 1.1, 1.3, 2.1, 3.1, 3.3, 3.4, 3.5, 3.6, 3.7, 3.9, 4.1, 4.4, 4.8, new 4.9, 5.1, 5.2, 6, 9, 10.2, 10.3, 10.6), research/interpretations.md (header; 1.1-1.3, 1.5-1.6, 2.1-2.6, 3.2-3.5, 4.1, 4.3, 4.4, new 4.5 on the Introit verse, 4.7 renumbered homily notes, 5), research/source-bindings.toml (loci and contexts updated for Augustine NPNF1-8, PL 37, PL 9 OCR, PL 70, Bellarmine, Fromage and Rupert; three new bindings: the PL 9 remote scan eab6d2f4, the PG 55 OCR layer d9b83186 and the restricted CCSL 98 scan c72410b0), and research/review-dependencies.toml (comments only; paths unchanged). tools/tpt source-library validate passes, and so do the research preflight check and the seal command. context.md, the propers/ records and the chronology records are unchanged. Remaining limits: the Introit cento, the Gradual's illis escam order, the Alleluia's psallam tibi, gloria mea and the Communion's Domine are still unlocated. Theodoret, Athanasius, Hugh, Theophylact, Origen on John, Ambrose on Ps 118 and the Breviary are held-not-opened or have no registered route. The Latin of Augustine Enarr. 118 s. 1.3 was not read. The 1962 Nineteenth Sunday's Gospel (Mt 22:1-14) is taken from the propers.yaml finding aid and was not re-read on the 1962 page image. PG 55 column figures were confirmed on Internet Archive leaf images that the library does not register. CCSL 98 is restricted: it is described only, never quoted.",
+  "stage": "research",
+  "summary": "Repaired RES-001 to RES-003. Augustine (Enarr. 118 s. 1, PL 37 cols. 1501-1502), Hilary (Aleph, PL 9 cols. 503-505), Cassiodorus (CCSL 98) and Bellarmine on Ps 118:1 were read and recorded, and every reading now says how the Introit verse contributes. Every PL 9 and PL 37 psalm-text heading and lemma for the chant forms was re-read on page images. The Offertory's tui is now reported where it actually stands: in the PL 9 heading with its Infra abest tui note, and word for word in Cassiodorus's lemma. Bellarmine on Ps 136:7-9 is restated and Hilary's sections 12-14 on vv. 7-9 were read. Advisories RES-004 to RES-009 were also cleared, including Chrysostom on Pss 136 and 144 in PG 55."
+}

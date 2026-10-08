@@ -1,0 +1,355 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 1,
+  "observations": [
+    {
+      "location": "rendered p. 11 of the concise proof (sha256 cc65a2e2fb61246b7c25d61e42fc0b7e57a547530b9e0ce37c54957aacdb169b); the \\section{Appendix: Scope and Qualifications} start in sections/concise/90-apparatus.tex",
+      "note": "The iteration-0 observation still holds after the repair. The page opens with the commentary's last two paragraphs, on the Secret and the three hopes, under the running head 'Appendix: Scope and Qualifications'. It belongs to the visual review."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/concise/01-inventory.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-inventory"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/concise/02-overview.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "concise-date-location",
+          "kind": "front-matter",
+          "path": "sections/concise/03-date-location.tex",
+          "references": [
+            "format.tex",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml",
+            "research/chronology-profile-comparisons.toml"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-overview"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/concise/04-themes.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-themes"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/concise/10-commentary.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/concise/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Cyril of Alexandria",
+            "Hilary of Poitiers",
+            "Cassiodorus",
+            "Robert Bellarmine",
+            "Anthony of Padua",
+            "Ildefonso Schuster",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "word-at-a-distance"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "word-at-a-distance",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Hilary of Poitiers",
+            "Jerome",
+            "John Chrysostom",
+            "Robert Bellarmine",
+            "Cassiodorus",
+            "Gregory the Great",
+            "Sicard of Cremona",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Hilary of Poitiers"
+          ],
+          "component_keys": [
+            "songs-of-sion-in-babylon"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "songs-of-sion-in-babylon",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Cyril of Alexandria",
+            "Jerome",
+            "John Chrysostom",
+            "Cassiodorus",
+            "Robert Bellarmine",
+            "Rupert of Deutz",
+            "Honorius Augustodunensis",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "israel-and-the-nations"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "israel-and-the-nations",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/format.tex": "0c9c8b9d46a02ded53478e01bd1b99f77c9710f7d849be3a18d2911b44aba6a4",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/propers/verified.md": "9d1ebb6a94bcea63095304a4241e496d17c00e16b576e8f08fdb6e95633ea6a6",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/chronology-annotations.tex": "2ad82f62631d74a159945273d56e136eef5b8e97e1c264f2f4af4d215b70752f",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/chronology-profile-comparisons.toml": "139a40c7f50531ff34337f64368f66dc23e9909ef9d06f2802237a8200eee01c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/chronology.toml": "75d912433455057696cea0fb130412d405490324c694c6ffcd90004391681615",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/interpretations.md": "7b5716fe81107e845845b65a37d41489aa7fef06142c6256e70d8bd3ac66e486",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/scope.md": "9a9317cbaedad8bd14f80e4f87b38461234ff63241c1fb2ca1cc09fb636ee642",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/01-inventory.tex": "fedd9089cbacedce8ec0ba1cfa73d97c27ff98b35ee3c412dc44b27150acad05",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/02-overview.tex": "20ebcd16abb57fee65cbcb623c943e2163e486e9200908ebf844345d735cf8bc",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/03-date-location.tex": "cfb5eea7da487040a909208a5b843b4a272bdea648aa6e3b30233e2897e6777f",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/04-themes.tex": "88d6aa896fb716453c4f9a2516e48747d1d3285a6bdfdb4d3569c74200106826",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/10-commentary.tex": "caac6d96c8775da5fee8e240c1d4ab7fde0080857dd0ebed09ee50cbb25b5155",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/90-apparatus.tex": "0d00d2be06c9cda6b5a618583cb4ce12343e82b75938016ae3e041108467b798",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/synthesis.tex": "44210a31eb163f60bb9168180e65a1d8a989d2ffcc359e5de9e6e3494ec2a8fe",
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "9",
+            "ef8058d0bd73437c67569a8d24ce67dac4c273fef7688aef8a54dec9e7986b13",
+            "9c1136f1f8d1241c",
+            "1fa591a03c11d064c9f1afda6c44ccdbe7903bf2",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "Cold re-review of the concise study src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/synthesis.tex. All 16 sealed REVIEW_INPUTS hashes match the working tree. I read every file in REVIEW_SCOPE in full: 02-overview.tex, 10-commentary.tex, 90-apparatus.tex, generation-metadata.tex and the new production-review.md entries. A per-page text diff of the iteration-0 and iteration-1 proofs locates every change: the Anagogical overview row (p. 1), the Collect paragraph (p. 8), the Gradual paragraph (p. 10), two apparatus sentences (p. 11) and the timestamp (p. 12). Every page break is unchanged. I rebuilt the PDF independently in scratch. It settled in two passes with no overfull, underfull or undefined-reference warning, and it is byte-identical to the author proof and to the build PDF (PDF cc65a2e2..., aux ab5d73de...). It runs to 12 letter pages. The settled zref evidence puts the inventory, the overview and all four sense markers on page 1, the chronology on page 2, the themes on pages 3-4 and the commentary from page 5. I inspected the rendered pages 1, 8, 10, 11 and 12. They are clean, and the timestamp and rights colophon share page 12. Standing findings: SYN-001 (blocking) is repaired. The scope note now says only that each liturgical commentator is cited for what he says of the elements of this formulary he names. No concise component now mentions another Mass, Gospel or Sunday. Sicard and Durandus appear only at the chants of captivity, in the reception paragraph and in the References. The four advisories are cleared, each in the study's own wording. SYN-002: Schuster's parenthesis now covers only his quoted clause, checked against the 1927 Sacramentary OCR at p. 176. SYN-003: Schuster's veil-of-faith sentence now serves the first reading, as in sections/20-word-at-a-distance.tex, and is checked at pp. 175-176. SYN-004: the Collect's 'through pardon' premise is restored before Cassiodorus, whose Ps 107:2 point matches research/scope.md. SYN-005: the search bound now matches sections/90-apparatus.tex 'Text control'. The repairs add no new source-dependent claim and introduce no defect. The generation record appends one contribution per synthesis iteration at the declared effort (high). The audit's word counts reproduce exactly (themes 1,534, commentary 5,127, overview 249). No tracked record carries machine data. Limits: Cassiodorus (CCSL 98, restricted scan) was checked against the research record, not re-read at the page image. The mechanical preflight was not re-run, because it passed at synthesis-preflight iteration 1 on these bytes. Pages 2-7 and 9 were not re-inspected, because their layout text is identical to the iteration-0 proof. Verdict: PASS, with no blocking defect remaining."
+}

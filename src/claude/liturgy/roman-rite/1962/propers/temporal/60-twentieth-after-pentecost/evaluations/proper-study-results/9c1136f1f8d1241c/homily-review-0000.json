@@ -1,0 +1,288 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "HOM-001",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/homily/10-homily.tex lines 32-34 ('Listen to what the man asked. ``Lord, come down before that my son die.'' The first answer he receives is hard.') with lines 49-50 ('So the man asks again: ``Lord, come down.''')",
+      "problem": "The speech gives the direct speech of Jn 4:49 as the request that came before the rebuke of 4:48. In John the first request is reported indirectly (4:47, Douay 'prayed him to come down and heal his son: for he was at the point of death'). The words 'Lord, come down before that my son die' are spoken only after the rebuke. So a listener who has just heard the Gospel hears v. 49 twice, the first time in the wrong place. The structure (ask, rebuke, ask again, word) is right and the argument is unharmed. But this is the one place where the homily quotes its own pericope out of order, and the textual point it blurs is that the urgent plea is the father's reply to the rebuke.",
+      "required_result": "Give the first request in the words of 4:47 (quoted from the Douay, or reported without quotation marks), and keep the quoted 'Lord, come down before that my son die' for the plea after the rebuke. If 4:47 is quoted, add it to the note's Gospel loci.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-002",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/homily/10-homily.tex lines 96-102 ('The Communion prays, ``Be thou mindful of thy word to thy servant, in which thou hast given me hope.'' ... And the psalm goes on, in words the Communion leaves out: ``because thy word hath enlivened me.''')",
+      "problem": "The Communion (no. 1697) is Ps 118:49-50a and ends 'haec me consolata est in humilitate mea' ('This hath comforted me in my humiliation'). The speech quotes only v. 49 as the Communion, then says 'the psalm goes on' with v. 50b. A listener therefore hears the unsung clause as following straight after 'hope', and the Communion's own last line is dropped without notice. The note's locus (Ps 118:49-50) is correct; the speech misdescribes how far the chant runs. Nothing doctrinal turns on this, and the fuller form would sharpen the point: the chant stops just before the psalm's 'because'.",
+      "required_result": "Let the speech say that the Communion goes on to 'This hath comforted me in my humiliation' and stops there, and that the psalm then finishes the sentence: 'because thy word hath enlivened me'. Alternatively, describe the unsung words as the close of the next verse, so that no listener takes v. 49 for the whole Communion.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-003",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/homily/10-homily.tex lines 117-121 ('On this altar Christ does come down: his Body and Blood are truly here. But he comes as he came to Capharnaum, by a word, hidden from our eyes. What we see is bread and wine.')",
+      "problem": "This is the homily's one doctrinal statement on the Eucharist, and it ends 'What we see is bread and wine.' Taken at its word, the sentence says that bread and wine are what is there to be seen. The Church's teaching (Council of Trent, sess. XIII, ch. 4 and can. 2) is that after the consecration only the appearances of bread and wine remain. The previous sentence ('truly here ... hidden from our eyes') keeps most listeners from misreading it, so it is not blocking. It is still the one imprecise clause in a carefully worded paragraph, at the point where precision matters most. The analogy 'he comes as he came to Capharnaum' also rests only on its 'by a word, hidden' qualifier. At Capharnaum Christ acted at a distance; on the altar he is substantially present.",
+      "required_result": "Word the sensory clause as appearance, for example 'What we see looks like bread and wine' or 'What our eyes see are the appearances of bread and wine'. Optionally, let the Capharnaum analogy say that what the two share is the word and the hiddenness, not the mode of presence.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-004",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/homily/10-homily.tex lines 139-141 ('And the last prayer of this Mass will answer the first. We confessed that we ``disobeyed thy commandments.'' At the end we shall ask ...')",
+      "problem": "The Postcommunion is not the last prayer of the Mass. In every 1962 Mass the Placeat, the blessing and the Last Gospel follow it. On 11 October 2026, at a low or conventual Mass, the Maternity's Postcommunion also follows the Sunday's under its own conclusion: the leaf's own records say so (propers/verified.md 'Commemorated orations on 11 October 2026'; research/interpretations.md section 6). 'The first' means the Introit, which is not the first prayer either: the prayers at the foot of the altar come before it, and the Collect is the first oration. The Introit-Postcommunion pairing (non oboedivimus / oboedire mandatis) is sound and textual. Only the first-and-last framing is inexact, and at a low Mass on the homily's own date it is false.",
+      "required_result": "Name the two texts instead of their positions, for example 'And the prayer after Communion will answer the Introit', or otherwise drop the first/last claim. The pairing and its point stay as they are.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-005",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/homily/10-homily.tex lines 87-89 ('Some here have prayed for a son or a daughter, a husband or a wife ... and the answer was not his.') read with lines 125-132 (the Introit 'Whatever thou hast done to us, O Lord, thou hast done by a just judgment: for we have sinned ...', Augustine's 'First they praised Him scourging, and so they felt Him feeding', and 'The father had to learn that order')",
+      "problem": "The homily speaks directly to listeners whose prayers for a child or spouse were not granted. A few paragraphs later it quotes the Introit's confession of just judgment for sin and Augustine's 'praised Him scourging', and it applies that order to the father of a dying son. Nothing in the speech stops the confession being heard as a verdict on each listener's loss. research/interpretations.md section 2.5 names that reading as the Introit's strongest difficulty. Jerome answers it there: the innocent youths confess ex persona populi. Augustine places the confession in the order of prayer, not as the explanation of every pain. The quotations are exact, Augustine's sentence is faithfully represented, and the homily's own gloss ('first God, and then my need') shows it does not intend the harsh reading. That is why this finding is not blocking. Still, the guard is missing exactly where a bereaved listener needs it.",
+      "required_result": "Add one clause that lets the text guard itself. For example, say that Azarias was in the furnace for his faithfulness (Dan 3:12-23) and confessed his people's sin as his own, or that confessing God's justice is not a sentence passed on each sorrow. If a Father is named for it (Jerome, Comm. in Dan. on 3:29), add his locus to the note.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "propers/verified.md",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Cyril of Alexandria",
+            "Hilary of Poitiers",
+            "Cassiodorus",
+            "Robert Bellarmine",
+            "Anthony of Padua",
+            "Ildefonso Schuster",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "word-at-a-distance"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "word-at-a-distance",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Hilary of Poitiers",
+            "Jerome",
+            "John Chrysostom",
+            "Robert Bellarmine",
+            "Cassiodorus",
+            "Gregory the Great",
+            "Sicard of Cremona",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Hilary of Poitiers"
+          ],
+          "component_keys": [
+            "songs-of-sion-in-babylon"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "songs-of-sion-in-babylon",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Cyril of Alexandria",
+            "Jerome",
+            "John Chrysostom",
+            "Cassiodorus",
+            "Robert Bellarmine",
+            "Rupert of Deutz",
+            "Honorius Augustodunensis",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "israel-and-the-nations"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "israel-and-the-nations",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/format.tex": "0c9c8b9d46a02ded53478e01bd1b99f77c9710f7d849be3a18d2911b44aba6a4",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/homily.tex": "562bed7bd93aa10e88bd5485cd03337ad9f18cb395c614f73b84bec3aa69540b",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/propers/verified.md": "9d1ebb6a94bcea63095304a4241e496d17c00e16b576e8f08fdb6e95633ea6a6",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/interpretations.md": "7b5716fe81107e845845b65a37d41489aa7fef06142c6256e70d8bd3ac66e486",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/scope.md": "9a9317cbaedad8bd14f80e4f87b38461234ff63241c1fb2ca1cc09fb636ee642",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/homily/10-homily.tex": "febab97843a239b5d5ebb240d70f48c72bcd1690144817b310e43e57c3785030",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/homily/90-note.tex": "ee8416922a91b66b72b9cf0c17a3219a0427b6742cde5d335fcdddef673b755b",
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "9",
+            "ef8058d0bd73437c67569a8d24ce67dac4c273fef7688aef8a54dec9e7986b13",
+            "9c1136f1f8d1241c",
+            "1fa591a03c11d064c9f1afda6c44ccdbe7903bf2",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Cold review of the homily 60-twentieth-after-pentecost-homily (homily.tex; spoken body sections/homily/10-homily.tex; note sections/homily/90-note.tex). All ten sealed REVIEW_INPUTS hashes match the working tree, and the built proof PDF (3 pages, sha256 e2ad69b1...) matches the hash in the production audit. I read the body straight through as a listener would hear it, then checked it against the contract. It makes one exegetical argument: Christ refuses the father's plan (Domine, descende) and grants his prayer by a word (Vade, filius tuus vivit). That turn comes from Jn 4:47-53 and Gregory's Hom. 28.1, and it changes 'God has not come' into 'God has acted by his word where he is not seen'. The Gradual's due season, the Communion and its unsung vivificavit me, the Secret's medicine, the Introit's confession answered by the Postcommunion, the Collect's secure mind and the Offertory's exiles carry the movement. The argument does not survive substituting unrelated readings. It names the Augustine-Gregory disagreement over the ruler's first faith and speaks honestly about prayers not granted. It reaches the altar, gives a practicable response for the week, and returns to the opening image. It contains no anecdote, no claim of personal experience or clerical identity, and no composed prayer. I reproduced the spoken count of 1,469 words (116 sentences, mean 12.7, longest 36), which gives 11.3-12.2 minutes at 120-130 wpm by arithmetic only. I checked every quoted or paraphrased span at its locus: the Douay verses in the tracked Challoner tables; the Cummiskey 1861 Collect, Secret and Postcommunion in the tracked payload; the Introit English in the Internet Archive OCR of the registered scan item; Augustine's Tract. 16.3 and Enarr. 144 sections 14-15, 118 (Zain) v. 49 and 136.13 in the tracked NPNF texts; Gregory Hom. 28.1 in the tracked Latin; Aquinas Super Io. c. 4 l. 7 in the tracked Venice OCR; and Chrysostom Hom. 35 at NPNF 14 pp. 124-125 in the Internet Archive OCR of the registered facsimile item and in the CCEL text. All quotations are exact. Every attribution holds, and the note's loci and review facts are true. Limits: no delivery has been timed; the remote facsimiles were read in their OCR text layers, not in the hashed PDFs; the section number '35, 2' could not be confirmed from the unnumbered online texts, though p. 124 is right; I did not rebuild the PDF; and layout is left to visual review. Verdict: PASS, with no blocking defect. Five advisories record small exegetical, doctrinal and liturgical precision repairs."
+}

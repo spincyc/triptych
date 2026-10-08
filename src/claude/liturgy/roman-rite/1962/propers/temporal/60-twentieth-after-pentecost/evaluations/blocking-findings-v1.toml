@@ -49,13 +49,13 @@ provider = "claude"
 run_id = "9c1136f1f8d1241c"
 workflow = "proper-study"
 workflow_version = 9
-stage = "homily-review"
+stage = "web-review"
 iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 12
-observation_count = 3
+advisory_count = 14
+observation_count = 4
 
 [[stages]]
 stage = "homily-review"
@@ -104,6 +104,30 @@ standing = 0
 accepted_count = 0
 advisory_count = 0
 observation_count = 1
+
+[[stages]]
+stage = "visual-review"
+iteration = 0
+disposition = "PASS"
+run_id = "9c1136f1f8d1241c"
+workflow = "proper-study"
+workflow_version = 9
+standing = 0
+accepted_count = 0
+advisory_count = 2
+observation_count = 1
+
+[[stages]]
+stage = "web-review"
+iteration = 0
+disposition = "PASS"
+run_id = "9c1136f1f8d1241c"
+workflow = "proper-study"
+workflow_version = 9
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
 
 [[advisories]]
 stage = "homily-review"
@@ -201,6 +225,22 @@ location = "research/interpretations.md section 4.1 'What the three share' (line
 problem = "The reasoning record still says that all three readings take Filius tuus vivit and the Communion's hope as the formulary's hinge, read the Introit's confession as the right beginning of prayer, and rest on the Fathers' agreement that the healing was by word without presence. Its own section 2.1 ('The reading's centre is not the Gospel but the chants and Epistle') and section 2.5 contradict this for the second reading. Section 3 hears the third reading's Introit as Israel's confession and not in Augustine's order of prayer. The reviewed comparison (sections/50-comparison.tex 4-33) now states the shared ground correctly, and research/production-review.md lines 250-254 report the discrepancy as an upstream item. No reader-facing text now depends on section 4.1. It is, however, the interpretation reasoning record that the concise-study and homily authors read, and as it stands it invites them to restore the overstatement STU-002 removed. Only a research re-entry can repair it, and that would rerun every dependent document and review for a sentence no reader sees. That is why it is not raised as blocking."
 required_result = "Whenever research is next re-entered, section 4.1 claims as common to all three readings only what all three hold: the Postcommunion's oboedire mandatis answering the Introit's non oboedivimus, the Introit's confession heard three ways, and a place for the Communion's hope in God's word. It credits the Gospel hinge and the healing-by-word agreement to readings 1 and 3, and Augustine's order of prayer to readings 1 and 2, as the study's comparison does. Until then, the concise and homily authors take the readings' shared ground from the reviewed comparison, not from section 4.1."
 
+[[advisories]]
+stage = "visual-review"
+id = "VIS-001"
+severity = "advisory"
+location = "Homily PDF p. 1, column 1: 'St' / 'Augustine took it at full weight' and 'St' / 'Gregory says that the one who made all things' (source sections/homily/10-homily.tex, which has no St~ ties). The same untied break recurs in the studies: study pp. 11, 12 (twice), 14 and 21, and the concise study's scope note on p. 11."
+problem = "None of the 'St <Name>' spaces in the leaf is a non-breaking tie, so the honorific is stranded at a line end, apart from the name. In the homily, which is read aloud from the printed page, a preacher's eye has to jump lines in the middle of a saint's name. Twice on p. 1 it happens in the first column alone."
+required_result = "Tie the honorific to the name (St~Augustine, St~Gregory and so on) throughout sections/homily/10-homily.tex, and preferably in the study and concise sources too, so that no line or page break separates 'St' from the name. Then rebuild and re-inspect the homily's column breaks."
+
+[[advisories]]
+stage = "visual-review"
+id = "VIS-002"
+severity = "advisory"
+location = "Homily PDF p. 1, column 2, last lines of the Gradual paragraph: 'which He giveth in due season.... Thou delayest, not deniest.' (sections/homily/10-homily.tex line 82)"
+problem = "The homily sets this elision as four unspaced full stops, 'season....'. The expansive study prints the same Augustine quotation on p. 15 with a spaced ellipsis, 'due season ... Thou delayest'. The two documents treat one quotation differently, and in the homily the run of dots is cramped against the word."
+required_result = "Set the elision as the studies do, for example 'due season~\\dots{} Thou delayest' (or '\\dots.' if a full stop is meant), so that the quotation looks the same in all three documents."
+
 [[observations]]
 stage = "research-review"
 location = "research/chronology.toml, introit claim composition.book-of-daniel.prayer-of-azarias (src/sources/chronology/composition.yaml lines 1869-1906)"
@@ -215,3 +255,8 @@ note = "Where a section begins mid-page, its running head governs that whole pag
 stage = "synthesis-review"
 location = "rendered p. 11 of the concise proof (sha256 cc65a2e2fb61246b7c25d61e42fc0b7e57a547530b9e0ce37c54957aacdb169b); the \\section{Appendix: Scope and Qualifications} start in sections/concise/90-apparatus.tex"
 note = "The iteration-0 observation still holds after the repair. The page opens with the commentary's last two paragraphs, on the Secret and the three hopes, under the running head 'Appendix: Scope and Qualifications'. It belongs to the visual review."
+
+[[observations]]
+stage = "visual-review"
+location = "Expansive study pp. 17, 21, 25 and 28; concise study pages where a section begins mid-page (shared src/common/propers-format.tex, \\fancyhead[R] using \\rightmark)"
+note = "The right running head names the last section that begins on the page, not the one the page opens in. Study p. 28, for example, opens with the Introit, Gospel and Epistle rows of the Scriptural Date and Location dossier but is headed 'Appendix: Scope and Qualifications'. This is the shared template's behaviour across every proper, not this leaf's, and no visual-review criterion decides between first-mark and last-mark heads."

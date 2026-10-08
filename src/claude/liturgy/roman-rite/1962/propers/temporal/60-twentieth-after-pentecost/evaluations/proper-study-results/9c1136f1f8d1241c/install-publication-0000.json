@@ -1,0 +1,7 @@
+{
+  "artifact_path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.pdf",
+  "disposition": "PASS",
+  "iteration": 0,
+  "stage": "install-publication",
+  "summary": "Installed the three reviewed PDFs with plain make install-doc (no retypesetting; build and installed bytes equal the accepted hashes f1a99182..., 29d93ddd..., e2ad69b1...), installed and staged the reviewed canonical web Markdown byte for byte (071cf8ce...), created three alpha release records with make add-publication, wired the Claude cell of TLM row 60 with a claude:-prefixed marker, regenerated the document catalogue, refreshed release bindings with a scoped ONLY refresh, refreshed and classified the Claude publication source inventory, and recorded the engine results and installation facts in research/production-review.md. All five publication-gate commands exit 0 in the pinned environment."
+}

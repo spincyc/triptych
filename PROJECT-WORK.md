@@ -25,10 +25,25 @@ twenty weeks to 11 October). The production plan records this exact scope
 opening. The GPT leaf for the same identity is published; this is an
 independent Claude production and borrows nothing from it.
 
-**In progress.** Authorization and acceptance criteria are recorded; the run
-has not yet been seeded. Work is committed on `feature/propers/claude`, the
-workspace's required branch, and reaches `main` by fast-forward after the
-local deploy gates pass.
+**Accepted; publication to `main` in progress.** Run `9c1136f1f8d1241c`
+(`proper-study` v9) reached ACCEPTED at its publication gates with no
+escalation: 30 packets, 30 accepted results, one intervention. Every agent
+stage ran as a fresh `claude-opus-5-5[1m]` subagent at its packet's declared
+effort, and every review was a fresh worker. Three cycles, each passing at
+its first re-review: research (the Introit's Ps 118:1 exegesis, the
+Offertory's *tui*, Bellarmine on Ps 136:7–9), study (the first reading's
+Alleluia, the comparison's common ground) and synthesis (a concise scope
+clause naming another Mass). The installed family is a 31-page expansive
+study, a 12-page concise study, a three-page homily (1,469 spoken words) and
+the canonical web edition. The run is archived in the leaf under
+`evaluations/proper-study-results/9c1136f1f8d1241c/`; the driver's account of
+every cycle, the one rate-limit interruption of the visual reviewer, the 14
+standing advisories and what is left for other owners is
+[CYCLES.md](workflows/reviews/claude-1962-60-production-2026-10-07/CYCLES.md).
+`make check-sources`, `check-publication-inventories`,
+`check-release-bindings`, `check-web-editions-current` and `tmt check` pass.
+The work is committed on `feature/propers/claude` and reaches `main` by
+fast-forward after the local deploy gates pass.
 
 ## GPT Twenty-eighth Sunday main integration, 2026-10-06
 

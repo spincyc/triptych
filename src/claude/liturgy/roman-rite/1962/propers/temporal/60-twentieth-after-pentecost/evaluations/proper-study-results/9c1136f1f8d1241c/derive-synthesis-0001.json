@@ -1,0 +1,13 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/synthesis.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "SYN-001",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "derive-synthesis",
+  "summary": "Repaired SYN-001: the concise scope note now says only that each liturgical commentator is cited for what he says of the elements of this formulary he names, with no reference to another Mass and no Schuster/Fromage contrast. Cleared all four advisories from the study's own wording: SYN-002 overview anagogical clause, SYN-003 Schuster tied to the first reading, SYN-004 Collect premise before Cassiodorus, SYN-005 search bound restored. Updated the shared generation timestamp (2026-10-07T19:41:00Z) and contribution record, and added an iteration-1 audit with word count 6,661 to research/production-review.md. Author proof: 12 physical pages, sha256 cc65a2e2fb61246b7c25d61e42fc0b7e57a547530b9e0ce37c54957aacdb169b (build/tpt-runs/9c1136f1f8d1241c/artifacts/derive-synthesis-0001/author-proof.pdf). Aux ab5d73de1da3e396cdb879c48a7e7f3b4ba422e2747e3818afec406261f3bec2, log c82d47f1b15e26449ec1c2d6dfecc2dd8a5f63f440589ff003fe030600ca5e4e. The rebuilt expansive study is 31 pages, sha256 59196bbbd7ecc134beb2c1fefcd163efb1b46acd9240485f6bca8e648b24531b. zref positions are unchanged: inventory, overview and four senses on page 1, chronology on page 2, themes on pages 3-4, commentary from page 5. All 18 synthesis checks pass (checks.log), and the rasters are in rasters/. No upstream owner was edited."
+}

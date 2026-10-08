@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v9
+WORKFLOW_DIGEST: ef8058d0bd73437c67569a8d24ce67dac4c273fef7688aef8a54dec9e7986b13
+RUN_ID: 9c1136f1f8d1241c
+COMMIT: 1fa591a03c11d064c9f1afda6c44ccdbe7903bf2
+STAGE: study-preflight
+ITERATION: 1
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-10-11","proper":"liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost","provider":"claude","research_handoff":"none"}
+DOCUMENT_ROOT: src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"STU-003","location":"sections/90-apparatus.tex, Appendix: Scope and Qualifications, Reception paragraph (lines 66-71)","problem":"The appendix says that Berno of Reichenau, Rupert of Deutz, Honorius Augustodunensis, Sicard of Cremona and William Durandus 'expounded a Mass that shared this formulary's chants and Epistle but read another Gospel, and they are cited only for the elements that Mass shares with this one.' The study does not match this in three ways. (a) It cites Rupert (De divinis officiis XII.21) and Durandus (Rationale VI.138) on this formulary's Gospel (10-each-element.tex 179-185). That is legitimate reception of the Gospel at the loci where their books read it, but it is not citation 'only for the elements that Mass shares'. (b) Berno is not cited anywhere in the study and is absent from References. (c) research/scope.md \u00a7 2.1 records that Honorius's Mass had another Collect and Alleluia, and that Durandus reports another Alleluia in some churches, so 'shared this formulary's chants' is not exact. A reader of the appendix is mildly misled about how these witnesses are used.","required_result":"Rewrite the clause to state accurately whom the study cites and for what. Rupert, Honorius, Sicard and Durandus are cited for the chants and Epistle their Mass shared with this one. Rupert and Durandus are also cited on this Gospel at the chapters where their books expound it. Name Berno only if the study cites him. Stay within the one clause the profile allows for the other Gospel, and do not name the other Sunday.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

@@ -1,0 +1,78 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "VIS-001",
+      "location": "Homily PDF p. 1, column 1: 'St' / 'Augustine took it at full weight' and 'St' / 'Gregory says that the one who made all things' (source sections/homily/10-homily.tex, which has no St~ ties). The same untied break recurs in the studies: study pp. 11, 12 (twice), 14 and 21, and the concise study's scope note on p. 11.",
+      "problem": "None of the 'St <Name>' spaces in the leaf is a non-breaking tie, so the honorific is stranded at a line end, apart from the name. In the homily, which is read aloud from the printed page, a preacher's eye has to jump lines in the middle of a saint's name. Twice on p. 1 it happens in the first column alone.",
+      "required_result": "Tie the honorific to the name (St~Augustine, St~Gregory and so on) throughout sections/homily/10-homily.tex, and preferably in the study and concise sources too, so that no line or page break separates 'St' from the name. Then rebuild and re-inspect the homily's column breaks.",
+      "severity": "advisory"
+    },
+    {
+      "id": "VIS-002",
+      "location": "Homily PDF p. 1, column 2, last lines of the Gradual paragraph: 'which He giveth in due season.... Thou delayest, not deniest.' (sections/homily/10-homily.tex line 82)",
+      "problem": "The homily sets this elision as four unspaced full stops, 'season....'. The expansive study prints the same Augustine quotation on p. 15 with a spaced ellipsis, 'due season ... Thou delayest'. The two documents treat one quotation differently, and in the homily the run of dots is cramped against the word.",
+      "required_result": "Set the elision as the studies do, for example 'due season~\\dots{} Thou delayest' (or '\\dots.' if a full stop is meant), so that the quotation looks the same in all three documents.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "Expansive study pp. 17, 21, 25 and 28; concise study pages where a section begins mid-page (shared src/common/propers-format.tex, \\fancyhead[R] using \\rightmark)",
+      "note": "The right running head names the last section that begins on the page, not the one the page opens in. Study p. 28, for example, opens with the Introit, Gospel and Epistle rows of the Scriptural Date and Location dossier but is headed 'Appendix: Scope and Qualifications'. This is the shared template's behaviour across every proper, not this leaf's, and no visual-review criterion decides between first-mark and last-mark heads."
+    }
+  ],
+  "review_inputs": {
+    "artifacts": {
+      "document": "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost",
+      "pagination_evidence": {
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis.aux": "ab5d73de1da3e396cdb879c48a7e7f3b4ba422e2747e3818afec406261f3bec2",
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.aux": "3d7060fd5bb7ecceb3ce708961e064a2ed97a11465420c2d00e89d6ed5392fde"
+      },
+      "pdfs": {
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-homily.pdf": "e2ad69b1b3ece4c141c8756cefed03a42e09de32b14204ce7d9445153c0e4b14",
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis.pdf": "29d93ddd16c034d1c7c395a8a190010be9afedb1a842994b43065bb21b132511",
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.pdf": "f1a9918244721162770772663f087d2bf0e13936f4d73385846bdfd367cd87c4"
+      },
+      "provider": "claude",
+      "render_inputs": {
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/format.tex": "0c9c8b9d46a02ded53478e01bd1b99f77c9710f7d849be3a18d2911b44aba6a4",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/generation-metadata.tex": "233d022e2de5a68a8b3552f50f474ad41671b629845d88e7605fd2493fd22b02",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/homily.tex": "562bed7bd93aa10e88bd5485cd03337ad9f18cb395c614f73b84bec3aa69540b",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/main.tex": "96353b276e76c5284f675e3cee33224b8e4aed25a38986282114c5c160e5bc94",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/proper-components.toml": "128ae6ee4d4c30014b7fe6b623a52653221afdf3b7f7b3e613b6d992e73f32f8",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/chronology-annotations.tex": "2ad82f62631d74a159945273d56e136eef5b8e97e1c264f2f4af4d215b70752f",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/00-opening.tex": "9f18bd486f025e5da790ce0b90d65251eef1a0928d6bd19f2295d600a7c5407f",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/05-appointed-texts.tex": "813de7c82c2a1c8e4559e2e1b6fcbdf1b0b7495193b747f245631f81cfcf74eb",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/10-each-element.tex": "16f32b921f95d47f24924a6981050454f5afe96702b0af4ae502e201810ab4bf",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/20-word-at-a-distance.tex": "0c4301db1150a59c8d76cbeabf91356adaa94ea187ffb0923ee3ef71388257bb",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/30-songs-of-sion.tex": "4a0dc42967a1276d32ab2a0338cf482a08b725d4d64729c5702826057f6ca925",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/40-israel-and-the-nations.tex": "3e1e69e164011e4933a0018e221c1585f463044d977652adb4a17f30d4a06355",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/50-comparison.tex": "399cadde2a5b480714c413634c475a867ddc3e1b839f39c887c4aa74f264aafd",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/80-date-location.tex": "800190013915cdb5866951078fc69f1bfe922bdba5c9343f89afc83dfba5897f",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/90-apparatus.tex": "7cf87091ea5511eec42c54a78054e45fdec23b5bc2aeaaf90dca15c744cc090d",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/01-inventory.tex": "fedd9089cbacedce8ec0ba1cfa73d97c27ff98b35ee3c412dc44b27150acad05",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/02-overview.tex": "20ebcd16abb57fee65cbcb623c943e2163e486e9200908ebf844345d735cf8bc",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/03-date-location.tex": "cfb5eea7da487040a909208a5b843b4a272bdea648aa6e3b30233e2897e6777f",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/04-themes.tex": "88d6aa896fb716453c4f9a2516e48747d1d3285a6bdfdb4d3569c74200106826",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/10-commentary.tex": "caac6d96c8775da5fee8e240c1d4ab7fde0080857dd0ebed09ee50cbb25b5155",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/concise/90-apparatus.tex": "0d00d2be06c9cda6b5a618583cb4ce12343e82b75938016ae3e041108467b798",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/homily/10-homily.tex": "febab97843a239b5d5ebb240d70f48c72bcd1690144817b310e43e57c3785030",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/sections/homily/90-note.tex": "ee8416922a91b66b72b9cf0c17a3219a0427b6742cde5d335fcdddef673b755b",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/synthesis.tex": "44210a31eb163f60bb9168180e65a1d8a989d2ffcc359e5de9e6e3494ec2a8fe",
+        "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+        "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+        "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+      },
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost",
+    "files": {},
+    "provider": "claude",
+    "review": "visual",
+    "schema": 1
+  },
+  "stage": "visual-review",
+  "summary": "Cold visual review of the Claude 1962 Twentieth Sunday after Pentecost leaf (DOCUMENT_ROOT src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost). All 32 sealed REVIEW_INPUTS hashes were re-verified against the files on disk with no mismatch, and research/artifacts.json carries the same three PDF and two aux hashes. The reviewer rendered independent 1700x2200 (200 dpi) page rasters and contact sheets with tools/pdf-review from the sealed bytes, then inspected every page at full size. Artifacts: build/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.pdf (sha256 f1a9918244721162770772663f087d2bf0e13936f4d73385846bdfd367cd87c4), pages 1-31 of 31; build/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis.pdf (sha256 29d93ddd16c034d1c7c395a8a190010be9afedb1a842994b43065bb21b132511), pages 1-12 of 12; build/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-homily.pdf (sha256 e2ad69b1b3ece4c141c8756cefed03a42e09de32b14204ce7d9445153c0e4b14), pages 1-3 of 3. Mechanical checks: pdffonts lists only embedded Latin Modern Type 1 subsets; pdfinfo gives title and subject on US letter; the three TeX logs carry no overfull, underfull, undefined-reference or missing-character warnings; every page has zero colour saturation, so all output is monochrome. The ink bounding box puts the text block at 0.75 in left and right, with running head and folio in the head and foot areas and no clipping or collision. The settled zref markers in the concise aux (inventory, overview and all four sense rows on abspage 1, chronology on 2, themes 3-4, commentary from 5) match the pages as rendered. Physical page 1 holds the complete ten-element map and exactly four rows: Literal, Allegorical, Moral, Anagogical. Page 2 holds only a readable, complete Scriptural Date and Location dossier of seven passages in canonical order, with alternatives and unresolved states visible. Pages 3-4 carry a substantive Themes and Movement argument, and page 5 opens the interleaved commentary. Page counts are 31 for the study (range 20-50) and 12 for the concise study (range 10-12). Both studies are single-column 11-point Latin Modern. The study has a title and contents page in the house pattern of its sibling propers, a ten-row map of the appointed elements, the full appointed texts, three keyed lane headings each closing with one four-senses block (pp. 16-17, 21, 24-25), a comparison table that breaks across pp. 25-26 with its header repeated, a two-page dossier, and the scope appendix and References. The homily has a full-width title, a speech in two ragged-bottom columns over pp. 1-2 with no inline apparatus, and a separate full-width Note on Sources and Delivery and References on p. 3. Each document ends with the compact rights colophon and revision timestamp on its last content page, with no rights-only spill page. No formatting migration was involved, so no substantive-text preservation evidence was owed. Two advisories and one observation do not block. Verdict: PASS."
+}
