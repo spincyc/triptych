@@ -1005,3 +1005,320 @@ the independent visual review remain to be done.
 
 No upstream defect was met at this iteration. The research-record lags listed
 at iteration 0 remain at record level and were not edited.
+
+## Build-artifacts
+
+Built 8 October 2026 in `proper-study` v9, run `0b0f756d95e3ee20`, at
+iteration 0, after the independent reviews of the research, the expansive
+study, the concise study and the homily. This stage built and checked the
+three PDFs. It made no layout repair and edited no render input. The prose,
+the evidence records, every component, the three entrypoints, the leaf
+format, the component manifest, the web-edition record and the shared
+generation record are unchanged. The revision timestamp
+2026-10-08T17:28:00Z therefore still governs all three artifacts. No
+contribution was added to the generation record, because nothing rendered
+changed. This audit and the build receipt `research/artifacts.json` were the
+only leaf records written.
+
+### Builds
+
+The earlier build outputs of the three documents were moved aside. Each
+document was then built from a clean state with `make doc DOC=<id>
+PROVIDER=claude`, using the repository's pinned Python Markdown 3.10.3. The
+Makefile ran two pdfLaTeX passes for each document, followed by its metadata
+validation. For both studies the first pass asked for a rerun, as a build
+without an auxiliary file must, and the second pass settled. The homily's
+first pass made no rerun request. The rebuilt PDFs and
+auxiliary files are byte-identical to the outputs they replaced.
+
+| Output | Physical pages | PDF SHA-256 |
+| --- | ---: | --- |
+| bare ID (expansive study) | 38 | `2732e942f323b8603b962fa33baa935950db98621ca30630a5584167bacdfe13` |
+| `-synthesis` (concise study) | 12 | `89f821ee3653c30196041d0e2a65b3509d9363004ec9e5b9097fb06428a41900` |
+| `-homily` | 4 | `2e0675cc7a45aed64497ec62eebc7647fa4946a26b0ef0e67a543d67f675a7ae` |
+
+All three are US letter, PDF 1.7. The expansive study is inside the
+required 20–50 pages, and the concise study is inside the required 10–12
+pages, terminal References and rights colophon included.
+
+### Log, font and extraction checks
+
+None of the three final logs contains a LaTeX or package warning, an
+undefined or multiply defined reference, a rerun request, a missing
+character, or an overfull or underfull box. `pdffonts` lists only Latin
+Modern Type 1 fonts in each PDF, and every one is embedded and subset with a
+Unicode map. The document information carries each title. `pdftotext`
+extracts about 25,400 words from the expansive study, 9,200 from the concise
+study and 3,100 from the homily. These are whole-page counts, including
+running heads, tables, notes and apparatus. The extracted text contains no
+`??` and no replacement character.
+
+### Concise opening: physical-page markers
+
+The settled concise auxiliary file records these `zref` absolute pages:
+
+- inventory start and end, overview start and end, and the four sense rows
+  (literal, allegorical, moral, anagogical): page 1;
+- chronology start and end: page 2;
+- themes: start on page 3, end on page 4;
+- commentary start: page 5.
+
+The extracted text agrees. Page 2 carries only Scriptural Date and Location,
+pages 3 and 4 carry The Propers: Themes and Movement, and page 5 opens The
+Propers: Detailed Commentary. The concise auxiliary file is SHA-256
+`9fa9be30e38d95a8a5982b2975b0f1b92be0a200bb5d6e0504fb47b87b362622`, and the
+expansive study's is
+`3b0b26253a1351c077db812be32adfbcfdff755e6379e95ad709f3b96429c352`. The
+build receipt binds both as pagination evidence.
+
+### Snapshot, gates and rasters
+
+`python3 scripts/_proper_study.py snapshot --provider claude --document …`
+wrote `research/artifacts.json`, receipt schema 2. It records the three PDF
+digests above, 28 render inputs and the two auxiliary files. After the
+snapshot, these checks pass:
+
+- `python3 scripts/_proper_study.py check … --phase artifacts
+  --require-presentation --require-format --require-authority`, which
+  includes the PDF metadata check of all three outputs;
+- the same command with `--phase content`;
+- `tools/check-proper-components --phase artifacts` for the research,
+  synthesis and homily editions;
+- `tools/check-generation-metadata --provider claude`, both for the provider
+  as a whole and with `--pdf` for each of the three PDFs.
+
+`tools/tpt pdf-review` rendered bounded page rasters and contact sheets
+into the run's dedicated `artifacts/build-artifacts-0000/rasters/`: 38, 12
+and 4 page images. The final PDFs and auxiliary files, the TeX and make
+logs, the extracted texts, the `pdfinfo` and `pdffonts` output, the check
+log, the raster log and a copy of the receipt are kept with their digests
+in the sibling `artifacts/build-artifacts-0000/evidence/`, outside the
+raster child.
+
+### Remaining limitations
+
+The contact sheets were viewed only to check that nothing had gone grossly
+wrong with the layout. They show no empty page and no obvious break in any
+of the three documents. That viewing is not the visual review: a fresh
+reviewer must still inspect every page. The PDFs are not installed. No
+semantic or upstream defect was met at this stage.
+
+## Derive-synthesis, iteration 3
+
+Revised 8 October 2026 in `proper-study` v9, run `0b0f756d95e3ee20`, at
+iteration 3, after the independent visual review of the build-artifacts
+output returned one blocking finding, VIS-001, and the advisory VIS-002, both
+against the concise study. Only the concise component `concise-apparatus`,
+the entrypoint `synthesis.tex`, this audit and the shared generation record
+were edited. No research evidence record, no study or homily component,
+`main.tex`, `homily.tex`, `format.tex`, the shared preamble or format,
+`web-edition.toml` or `proper-components.toml` was touched.
+
+### Blocking finding
+
+- **VIS-001, repaired.** The final page of the concise study was full to the
+  foot of the text block, so the rights colophon, which the shared macro sets
+  below the text block, ended 5.4 pt above the paper edge. Four entries of the
+  concise References were tightened, and each now fits on one line:
+  - Irenaeus, "in a machine-read text" in place of "in the machine-read text
+    of the printed volume". The scope note still states that the text is a
+    machine reading of the printed volume.
+  - The *Mystagogical Catecheses*, "ascribed to St Cyril of Jerusalem" in
+    place of "transmitted under the name of St Cyril of Jerusalem". The scope
+    note keeps the editor's report of manuscripts that give the work to John
+    of Jerusalem.
+  - Schuster, "(London, 1927)" in place of the publisher's full imprint. This
+    matches the place-and-year form of the other entries.
+  - *Nostra aetate*, "English and Latin texts at vatican.va" in place of
+    "English and Latin texts of the Holy See's website". This matches the
+    *Nova Vulgata* entry.
+
+  No locus, edition, volume, page or year was removed, and no entry or
+  subsection was dropped. Type size, geometry, the shared colophon macro and
+  the Scope and Qualifications text are unchanged. In the rebuilt proof, page
+  12 of 12 holds the References from their heading, the revision timestamp
+  and the four-line colophon. The colophon's last line ends at y 744.8 pt of
+  792, 47.2 pt (0.66 in) above the paper edge and above the footer baseline.
+  No rights-only page was created.
+
+### Advisory cleared
+
+- **VIS-002.** The concise title's descriptive line is now in the subtitle
+  field, in title case: *The King's Wedding Feast: A Concise Study of Three
+  Interpretations*. The printed title therefore names the document as the
+  concise study. The small line keeps only the edition metadata (Roman
+  Missal, Third Edition; Lectionary for Mass, no. 142), and the fourth field
+  is empty. Page 1 still holds the complete inventory and all four sense
+  rows; its last line ends at y 723.3 pt, against 720.0 pt before.
+
+### Counts
+
+**Substantive word count: 5,741 words** (`detex` of the two argumentative
+components, counted as at iteration 0): themes 1,305 and commentary 4,436.
+Both are unchanged. The scope note with References is 1,752 words, against
+1,765 before.
+
+### Author proof and checks
+
+`make doc` for the `-synthesis` output with `PROVIDER=claude` and the
+repository's pinned Python Markdown 3.10.3 settles with no overfull or
+underfull box, no LaTeX or package warning and no undefined reference. The
+proof is 12 physical pages, letter size, SHA-256
+`b748378f675185c8c32bc8e16b4632ecfc64a7663dc87a225b91e6c1e4b3b35a`, at
+revision timestamp 2026-10-08T18:33:23Z. Its auxiliary file (SHA-256
+`9fa9be30e38d95a8a5982b2975b0f1b92be0a200bb5d6e0504fb47b87b362622`, the same
+bytes as at iterations 1 and 2) places these markers:
+
+- inventory, overview and the four sense markers: page 1;
+- chronology: page 2;
+- themes: pages 3–4;
+- start of the commentary: page 5.
+
+Compared with the iteration-2 proof, the extracted text changes in four
+places only:
+
+- the title block;
+- the extraction order of two inventory cells on page 1, with no change in
+  their wording;
+- the four References entries on page 12;
+- the revision timestamp.
+
+All 17 fonts are embedded and subsetted with a Unicode map. These checks
+exit 0:
+
+- the thirteen synthesis-preflight checks, run by hand, with this run's
+  header values for `provenance-matches-run`;
+- `tools/check-proper-components --phase artifacts` for the synthesis,
+  research and homily editions;
+- `tools/check-generation-metadata`, against the source, against each of the
+  three rendered PDFs and for the provider.
+
+The contact sheet of all twelve pages and pages 1 and 12 at full size were
+inspected.
+
+The shared generation record changed, so the expansive study and the homily
+were rebuilt at the same timestamp, with their sources unchanged and no box
+or LaTeX warning in their logs:
+
+- the expansive study, 38 pages, SHA-256
+  `9adfbff33dfed4bf59e457a38d5e97190038d266d877f80cc3835d6fa5b5ba3a`;
+- the homily, 4 pages, SHA-256
+  `857e4db160006c23638eb94f8b25c3a2354c7300b38a5f9fee4e70904a9e0af2`.
+
+These supersede the digests and timestamp recorded under Build-artifacts
+above. The following are kept with their digests under the run's
+`artifacts/derive-synthesis-0003/proof/`:
+
+- the three PDFs;
+- the concise study's auxiliary file, log and extracted text;
+- the build, check and marker logs;
+- the page-12 geometry and the font list.
+
+The page rasters and contact sheet are in the dedicated child `rasters/`.
+This is author verification. The shared-timestamp three-document build and
+the independent visual review remain to be done.
+
+### For the cold reviewer, about upstream records
+
+No upstream defect was met at this iteration. The upstream notes of
+iterations 0 to 2 are unchanged.
+
+## Derive-homily, iteration 2
+
+Re-derived 8 October 2026 in `proper-study` v9, run `0b0f756d95e3ee20`, at
+iteration 2. The homily passed its independent review at iteration 1. The
+stage was run again because derive-synthesis iteration 3 changed the concise
+study, which is one of the homily's two sources. No blocking, carried or
+advisory finding was forwarded to the stage. Only this audit was edited. The
+two homily components, `homily.tex`, the shared generation record, every
+research evidence record, every study and concise component, `main.tex`,
+`synthesis.tex`, `format.tex`, `web-edition.toml` and
+`proper-components.toml` are unchanged.
+
+### What was read, and what stands
+
+Both studies were read as they stand after their latest reviews:
+
+- the concise study's entrypoint, its commentary and the four References
+  entries and title field that iteration 3 changed;
+- the expansive study's third interpretation (`farm-and-merchandise`) and its
+  comparison, which carry most of the homily's argument.
+
+The concise changes touch only the References entries for Irenaeus, the
+*Mystagogical Catecheses*, Schuster and *Nostra aetate*, and the descriptive
+subtitle of the title block. The homily quotes, cites or relies on none of
+the four entries. Its title block already sets its descriptive subtitle, *All
+Things Are Ready*, in the subtitle field, which is the arrangement the
+concise title now follows. The concise commentary and every expansive-study
+component are unchanged since the homily review passed.
+
+The argument therefore stands as recorded at iterations 0 and 1. It preaches
+chiefly the third interpretation, joined to the first for what is refused and
+to the second for the garment as charity, and it asserts nothing either study
+denies. The decisive textual detail is still Matthew 22:5, "But they
+neglected and went their ways, one to his farm and another to his
+merchandise". It is read with Chrysostom's "not for press of business, but
+from 'making light of it'" (69.1) and Gregory's farm and merchandise that will
+not weigh the mystery of the Incarnation (38.5). Each attribution, and each
+join that the note marks as the homily's own, was checked against the
+passages of both studies that print it, and none needed correction. No new
+evidence-dependent claim was added and no source was re-read at its locus.
+
+### Counts, pace and rehearsal
+
+**Spoken words: 1,465**, recounted with the iteration-0 script, the same as at
+iteration 1. At 130 words a minute that is a little over 11 minutes, at 125 a
+little over 11½, and at 120 a little over 12. This is an estimate from the
+count; no speaker delivered the words and no delivery was timed. The whole
+spoken body was read through again for sense and oral clarity, silently and
+not aloud, and no change was needed.
+
+### Author proof and checks
+
+The earlier homily build output was moved aside, and `make doc` for the
+`-homily` output was run with `PROVIDER=claude` and the repository's pinned
+Python Markdown 3.10.3. The rebuilt proof is byte-identical to the homily
+built at derive-synthesis iteration 3: 4 physical pages, letter size,
+SHA-256 `857e4db160006c23638eb94f8b25c3a2354c7300b38a5f9fee4e70904a9e0af2`,
+at revision timestamp 2026-10-08T18:33:23Z. The log has no overfull or
+underfull box, no LaTeX or pdfTeX warning, no undefined reference and no
+rerun request. All eleven font resources are embedded and subset Latin Modern
+Type 1 with Unicode maps. The document information carries the title and the
+subject, and the extracted text contains no `??`. All four pages were
+inspected at full size on rasters made with `tools/pdf-review`. The title and
+both columns of the spoken body fill pages 1 and 2. The note begins page 3.
+The exact loci, the ten References, the revision timestamp and the rights
+colophon end on page 4, with the colophon well above the foot of the page.
+
+No render-relevant source changed, so the revision timestamp stays
+2026-10-08T18:33:23Z and no contribution was added to the shared generation
+record. The homily contributions it already records cover the homily as
+rendered.
+
+These checks exit 0 on the current sources:
+
+- `python3 scripts/_proper_study.py check … --phase content --edition homily
+  --require-presentation --require-format --require-authority`;
+- the twelve `check-content-preflight` checks with `--edition homily`, with
+  this run's header values for `provenance-matches-run`;
+- `tools/check-proper-components --phase artifacts` for the homily, research
+  and synthesis editions;
+- `tools/check-generation-metadata`, for the provider, for the document and
+  with `--pdf` for the homily PDF.
+
+The preflight reports 10 References entries, every one used, and 3
+reader-facing files with none flagged by the house-voice check.
+
+The proof, its auxiliary file, log and extracted text, the build and check
+logs, the counting script, the word count and the font list are kept with
+their digests under the run's `artifacts/derive-homily-0002/proof/`. The page
+rasters and contact sheet are in the dedicated child `rasters/`. This is
+author verification. The independent homily review, the shared-timestamp
+three-document build and the independent visual review remain to be done.
+
+### For the cold reviewer, about upstream records
+
+No upstream defect was met at this iteration. The research-record lags
+listed at derive-homily iteration 0 remain at record level and were not
+edited. The build receipt `research/artifacts.json` still records the
+build-artifacts digests and is refreshed by that stage, not by this one.
