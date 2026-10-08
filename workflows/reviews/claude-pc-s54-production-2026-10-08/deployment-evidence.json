@@ -1,0 +1,80 @@
+{
+ "record_type": "deployment-verification",
+ "verified_on": "2026-10-08",
+ "commit": "80a562869b470e5230ff96c249cc5a1c48fa8109",
+ "main_base": "f0680927707a128e9b5ff3d3fb998c144ae14f52",
+ "integration": "fast-forward; origin/main was an ancestor of the accepted work, no rebase, merge commit or force push",
+ "local_gates": [
+  {
+   "command": "make check-deployment-sources",
+   "exit_code": 0,
+   "log_sha256": "d2a40aa2367d372e35abe6a7c688afea1b5a69c8e2bc7bd3ee4bba637c6b5a37"
+  },
+  {
+   "command": "make public-site",
+   "exit_code": 0,
+   "log_sha256": "7367fc6562fab4ae4b7896b98b7fdd48aeb69cf9bf26e695baf48181d945ef73"
+  },
+  {
+   "command": "tools/tpt public-alpha verify --deployment-target github-pages",
+   "exit_code": 0,
+   "log_sha256": "b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14"
+  }
+ ],
+ "local_gate_environment": "Python Markdown 3.10.3 and PyYAML 6.0.3 from requirements-public-alpha.txt and requirements-tools.txt in a scratch virtual environment; every pdf/ entry already in the live site's SHA256SUMS was hash-checked against it before the gates, and only this publication's three PDFs were new",
+ "disclosure": "Outgoing range f06809277..80a562869, 7 commits, 195 files: text, plus five public-domain page facsimiles under src/sources/works/ each with a recorded rights basis and no embedded metadata. Added lines were scanned for machine paths, usernames, the host name, email addresses and credentials with no match; two archived research results name repository-relative scratch directories, as earlier archived runs do, and are kept byte-exact against the engine's record.",
+ "workflow_run": "https://github.com/spincyc/triptych/actions/runs/37844926182",
+ "workflow_conclusion": "success",
+ "repository_hygiene_run": "https://github.com/spincyc/triptych/actions/runs/37844925881",
+ "repository_hygiene_conclusion": "success",
+ "publication": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
+ "provider": "claude",
+ "routes": [
+  {
+   "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.pdf",
+   "http_status": 200,
+   "physical_pages": 38,
+   "sha256": "9adfbff33dfed4bf59e457a38d5e97190038d266d877f80cc3835d6fa5b5ba3a",
+   "compared_with": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.pdf (the installed reviewed PDF) and build/public-alpha/site/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.pdf",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+   "http_status": 200,
+   "physical_pages": 12,
+   "sha256": "b748378f675185c8c32bc8e16b4632ecfc64a7663dc87a225b91e6c1e4b3b35a",
+   "compared_with": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.pdf (the installed reviewed PDF) and build/public-alpha/site/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.pdf",
+   "http_status": 200,
+   "physical_pages": 4,
+   "sha256": "857e4db160006c23638eb94f8b25c3a2354c7300b38a5f9fee4e70904a9e0af2",
+   "compared_with": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.pdf (the installed reviewed PDF) and build/public-alpha/site/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.pdf",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.html",
+   "http_status": 200,
+   "sha256": "382200236d8c35e92d1f167d0e833804d1a093b5dcf2d90b4a1cfd2c5a61fdf5",
+   "bytes": 172155,
+   "compared_with": "build/public-alpha/site/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.html (the locally verified site)",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/library/novus-ordo-liturgy.html",
+   "http_status": 200,
+   "sha256": "d31d547180571978dab6d507c9b20088c6c117b981db9e8aed3fa48d8fd0ed37",
+   "bytes": 26207,
+   "compared_with": "build/public-alpha/site/library/novus-ordo-liturgy.html (the locally verified site)",
+   "match": "byte-identical",
+   "links_found": [
+    "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.pdf",
+    "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+    "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.pdf",
+    "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.html"
+   ]
+  }
+ ]
+}

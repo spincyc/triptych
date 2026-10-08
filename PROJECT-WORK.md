@@ -25,7 +25,7 @@ at Advent 2025 is A. The production plan records this exact scope opening.
 The GPT leaf for the same identity is published; this is an independent
 Claude production under its own edition tree and borrows nothing from it.
 
-**Accepted; publication to `main` in progress.**
+**Complete: accepted, pushed to `main` and verified live.**
 Run `0b0f756d95e3ee20` (`proper-study` v9) reached ACCEPTED at its publication
 gates with no escalation: 48 packets, 48 accepted results, four
 interventions. Two driver sessions drove it. The first, on Claude Code, ran
@@ -52,8 +52,15 @@ After acceptance the source-family migration ledger's catalog pin was
 re-pinned, as `guidance/sources.md` allows when no family needs review.
 `make check-sources`, `check-publication-inventories`,
 `check-release-bindings`, `check-web-editions-current` and `tmt check` pass.
-Work is committed on `feature/propers/claude`, the workspace's required
-branch, and reaches `main` by fast-forward after the local deploy gates pass.
+`main` was fast-forwarded from `f06809277` to `80a562869` after
+`make check-deployment-sources`, `make public-site` and `tools/tpt
+public-alpha verify --deployment-target github-pages` passed locally. Pages
+run `37844926182` and repository-hygiene run `37844925881` succeeded; the
+three PDFs, the web page and the Novus Ordo catalog are served
+byte-identical to the locally verified site, and the catalog row links all
+four Claude artifacts. The
+[deployment evidence](workflows/reviews/claude-pc-s54-production-2026-10-08/deployment-evidence.json)
+records the gates, the disclosure scan and the five live routes.
 
 ## Claude 1962 Twentieth Sunday three documents, 2026-10-07
 
