@@ -1,0 +1,104 @@
+{
+  "schema": 1,
+  "deployed_commit": "90e6cdf0e07ade8830c06257c9d5a8c102b993d8",
+  "workflow_url": "https://github.com/spincyc/triptych/actions/runs/38012071168",
+  "workflow_conclusion": "success",
+  "workflow_completed_at_utc": "2026-10-10T01:15:09Z",
+  "repository_hygiene": {
+    "run_id": 38012071256,
+    "conclusion": "success"
+  },
+  "local_gates": {
+    "targeted_tests": 178,
+    "check_deployment_sources": "pass",
+    "public_site_build": "pass",
+    "github_pages_artifact_verification": "pass"
+  },
+  "live_verification": {
+    "started_at_utc": "2026-10-10T01:15:34.205454+00:00",
+    "finished_at_utc": "2026-10-10T01:15:47.664911+00:00",
+    "base_url": "https://mystago.gy/",
+    "manifest_sha256": "acbbfa44eb70ab9b1b3a6ed53b93926c2c0a6d90cffddefaeec65c1ef2d8e50f",
+    "manifest_matches_local": true,
+    "manifest_propagation_retries": 0,
+    "method": "Fetched every manifest public_pdf route, all six reading-plan aliases, six catalog/data routes, and both original angelology URLs. Required HTTP 200 without redirects, expected size, PDF signature where applicable, and SHA-256 equality with the verified local artifact. Every PDF alias was also compared locally with its canonical PDF; publication PDFs matched their manifest bindings.",
+    "expected": {
+      "pdf_alias": 257,
+      "catalog_or_data": 6,
+      "legacy_angelology": 2
+    },
+    "verified": {
+      "pdf_alias": 257,
+      "catalog_or_data": 6,
+      "legacy_angelology": 2
+    },
+    "verified_bytes": 288888813,
+    "unexpected_redirects": [],
+    "errors": [],
+    "selected_routes": [
+      {
+        "path": "browse/structure/documents/corpus.json",
+        "http_status": 200,
+        "sha256": "b4214458ce3590f3b251ace19c67249a8d16ce3c1dca03c59a2eb9ea6416a0d8",
+        "bytes": 957549
+      },
+      {
+        "path": "library/faith.html",
+        "http_status": 200,
+        "sha256": "3a9f6b7bf84a153159c98de414bef6c73599c5dd294664adbfc62263e4184e30",
+        "bytes": 13362
+      },
+      {
+        "path": "library/novus-ordo-liturgy.html",
+        "http_status": 200,
+        "sha256": "725ec60005281ffda3600f30883cea612858ad941de470c9ddd6800fdcc0aecf",
+        "bytes": 27479
+      },
+      {
+        "path": "library/scripture.html",
+        "http_status": 200,
+        "sha256": "67284983c38495563f0f443d88b6da2091dccc8c53e62aaa158fcae7aa9d5c02",
+        "bytes": 6020
+      },
+      {
+        "path": "library/traditional-latin-mass.html",
+        "http_status": 200,
+        "sha256": "12e6057ff1bcb636ae3c82dc825d8365fa24c6a2b6e3c11e4eea800c66c6aa66",
+        "bytes": 30377
+      },
+      {
+        "path": "pdf/claude/theology/angelology-claude-547c3fcec30d9731.pdf",
+        "http_status": 200,
+        "sha256": "7c7dd98cd39d0bdf5960a141cd65a9ab84b591fe7e452dd28b42aae6cf00a626",
+        "bytes": 2236612
+      },
+      {
+        "path": "pdf/claude/theology/angelology.pdf",
+        "http_status": 200,
+        "sha256": "7c7dd98cd39d0bdf5960a141cd65a9ab84b591fe7e452dd28b42aae6cf00a626",
+        "bytes": 2236612
+      },
+      {
+        "path": "pdf/gpt/theology/angelology-gpt-4a39bd0581307c9b.pdf",
+        "http_status": 200,
+        "sha256": "3392d9925872de591e30a296dcd51615d55d34998472c246414e1b7e9dce9947",
+        "bytes": 745435
+      },
+      {
+        "path": "pdf/gpt/theology/angelology.pdf",
+        "http_status": 200,
+        "sha256": "3392d9925872de591e30a296dcd51615d55d34998472c246414e1b7e9dce9947",
+        "bytes": 745435
+      },
+      {
+        "path": "web/gpt/theology/angelology.html",
+        "http_status": 200,
+        "sha256": "a5647cbfda774b0ebb0f06c1efe01a1ad00855aa901bd012f7b2cf66851ebe23",
+        "bytes": 317455
+      }
+    ],
+    "native_phone_retested": false,
+    "native_phone_limitation": "Firefox on the reporting iPhone was not directly available; upstream cache code and emulated browser tap targets were checked separately, as recorded in audit.json."
+  },
+  "disclosure_review": "Outgoing changes contain the publication-link fix, regression checks, public catalog corrections, release bindings, repository guidance, and audit records. No manuscript changes, held material, task scratch files, or private environment data were published."
+}

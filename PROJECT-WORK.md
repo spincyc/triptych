@@ -48,14 +48,22 @@ revision of the same document remains a browser limitation. Physical
 Firefox-on-iPhone testing is unavailable; the upstream code and browser
 emulation establish the mechanism and site behavior separately.
 
-The candidate passes 178 targeted tests, `make check-deployment-sources`,
+The correction passes 178 targeted tests, `make check-deployment-sources`,
 `make public-site`, and `public-alpha verify --deployment-target github-pages`.
 All 257 PDF aliases, including six reading-plan volumes, have unique
 basenames; all 257 canonical URLs remain byte-identical compatibility copies.
 The verified artifact is 768,783,943 bytes. PDFs were recovered into the local
 validation environment from the unchanged deployed snapshot and checked
-against its manifest, without rewriting their contents. Push and live
-deployment verification remain open.
+against its manifest, without rewriting their contents.
+
+**Complete: pushed to `main` and verified live.** Commit
+`90e6cdf0e07ade8830c06257c9d5a8c102b993d8` deployed successfully in Pages run
+`38012071168`; repository-hygiene run `38012071256` also passed. The deployed
+manifest matches the verified build. All 257 new PDF URLs, six affected
+catalog/data routes, and both original angelology URLs return HTTP 200,
+without redirects, with exactly the expected bytes. The 265-route check
+found no errors. Evidence:
+`workflows/reviews/publication-links-2026-10-09/deployment.json`.
 
 ## Claude postconciliar Twenty-eighth Sunday three documents, 2026-10-08
 

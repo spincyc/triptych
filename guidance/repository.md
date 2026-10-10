@@ -492,8 +492,8 @@ The postconciliar calendar adds a `Cycle` column: distinguish `A`, `B`, and
 `C` rows wherever their available editions differ; cycles with identical
 availability may share one row. The maintainer requested this separation on
 2026-09-28 so each provider's documents can be compared directly. A hidden
-stable-publication marker may own an
-installed canonical proper whose reader cell is deliberately plain text.
+stable-publication marker retains ownership for held work whose reader cell
+is plain text; it never replaces a released artifact's visible link.
 Title cells remain unlinked bold text.
 
 A componentized proper guide remains one catalog identity. In the complete

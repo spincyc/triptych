@@ -4,7 +4,7 @@ schema_version = 1
 id = "publication-links-2026-10-09"
 owner = "PROJECT-WORK.md"
 promise = "Audit publication links and document identity across both providers, recover any missing documents, correct confirmed missing or misdirected links including the mobile angelology report, guard against recurrence, and push the verified correction to main."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "publication-links-audit"
@@ -23,8 +23,11 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "publication-links-deploy"
   criterion = "Push the checked changes to main, verify the Pages deployment, and check the affected live publication routes."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/publication-links-2026-10-09/deployment.json", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "workflows/reviews/publication-links-2026-10-09/deployment.json"
+  needle = "\"workflow_conclusion\": \"success\""
 
 [[deliverables]]
 id = "claude-pc-s54-three-documents-2026-10-08"
