@@ -211,6 +211,18 @@ web/gpt/articles/canon-law/example.md
 
 The same mirroring applies to every provider branch.
 
+The generated reader site additionally serves each admitted PDF through a
+basename qualified by provider and a digest of its full canonical path.
+Its HTML and browser catalogue link that alias; the original mirrored URL
+remains a byte-identical compatibility copy. This prevents filename-only PDF
+caches from substituting another provider or collection. The alias stays stable
+across content revisions so a shared publication link does not become a 404;
+it is not an immutable snapshot URL or a same-document cache-busting scheme.
+Source IDs, installed paths, and the publication manifest's `pdf` identity stay
+canonical; its generated `public_pdf` field names the current alias. The
+generator verifies distinct alias basenames and both copies against the same
+installed bytes, including the provider-neutral reading-plan PDFs.
+
 A document leaf ID such as `articles/faith/ontological-vertigo` may exist under more than one provider. Each provider edition is an independent work on the same scope: it keeps its own research records, its own sections, and its own generation metadata, and reuses no text across providers. Publication identity is provider-qualified — the provider plus the leaf ID.
 
 Use lowercase kebab-case slugs. Stable identifiers are namespaced by their profiles and are not interchangeable across collections or editions. A number is not a claim of importance.

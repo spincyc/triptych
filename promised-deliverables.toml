@@ -1,6 +1,32 @@
 schema_version = 1
 
 [[deliverables]]
+id = "publication-links-2026-10-09"
+owner = "PROJECT-WORK.md"
+promise = "Audit publication links and document identity across both providers, recover any missing documents, correct confirmed missing or misdirected links including the mobile angelology report, guard against recurrence, and push the verified correction to main."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "publication-links-audit"
+  criterion = "Verify both angelology publications and audit all available publication links for omissions, duplicates, and incorrect provider targets; document confirmed defects and any mobile reproduction limits."
+  status = "pass"
+  evidence = ["workflows/reviews/publication-links-2026-10-09/audit.json"]
+  check = "path_exists"
+
+  [[deliverables.requirements]]
+  id = "publication-links-repair"
+  criterion = "Correct confirmed defects and verify that every released PDF remains visibly reachable from its owning catalog, with regression coverage."
+  status = "pass"
+  evidence = ["library/traditional-latin-mass.md", "library/novus-ordo-liturgy.md", "tools/tests/test_publication_links.py", "workflows/reviews/publication-links-2026-10-09/audit.json"]
+  check = "path_exists"
+
+  [[deliverables.requirements]]
+  id = "publication-links-deploy"
+  criterion = "Push the checked changes to main, verify the Pages deployment, and check the affected live publication routes."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "claude-pc-s54-three-documents-2026-10-08"
 owner = "PROJECT-WORK.md"
 promise = "Drive the proper-study workflow for provider claude on the postconciliar Twenty-eighth Sunday in Ordinary Time, Year A, for Sunday 2026-10-11 through terminal acceptance: expansive study, concise study, standalone homily and canonical web edition with fresh cold reviews, every workflow cycle and host intervention documented, every contributing model declared exactly, the delivered work committed on feature/propers/claude and fast-forwarded to origin/main with its Pages deployment verified."

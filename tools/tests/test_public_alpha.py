@@ -1623,7 +1623,7 @@ class PublicAlphaTest(unittest.TestCase):
         )
         self.assertTrue((output / "pdf/gpt/review-work.pdf").is_file())
         catalog = (output / "library/test.html").read_text(encoding="utf-8")
-        self.assertIn('href="../pdf/gpt/review-work.pdf"', catalog)
+        self.assertIn(f'href="../{review_entry["public_pdf"]}"', catalog)
 
     def test_alpha_catalog_link_may_use_terse_reader_label(self) -> None:
         self.add_unapproved_publication(
@@ -1991,7 +1991,8 @@ class PublicAlphaTest(unittest.TestCase):
         catalog_path = output / "library/test.html"
         catalog_path.write_text(
             catalog_path.read_text(encoding="utf-8").replace(
-                'href="../pdf/gpt/work.pdf"', 'href="../nonexistent.html"'
+                f'href="../{self.tool.public_pdf_path("gpt", "work")}"',
+                'href="../nonexistent.html"',
             ),
             encoding="utf-8",
         )
@@ -3025,6 +3026,136 @@ class PublicAlphaTest(unittest.TestCase):
         )
         self.assertIn("pdf/gpt/work.pdf", expected_files)
         self.assertIn("pdf/claude/work.pdf", expected_files)
+
+    def test_provider_pdfs_open_independently_in_a_filename_only_cache(self) -> None:
+        self.write("library/test.md", self.mixed_provider_catalog().encode())
+        self.add_claude_publication("work", "release")
+        self.authorize_current_inputs()
+        publications = self.tool.validate_manifest(self.manifest)
+        output = self.tool.build_site(self.manifest, publications, preview=False)
+        self.tool.verify_output(self.manifest, publications, output, preview=False)
+        artifact = json.loads((output / "PUBLICATION-MANIFEST.json").read_text())
+        links = self.tool.parsed_html(output / "library/test.html").links
+        cached: dict[str, bytes] = {}
+        # Firefox iOS DefaultTemporaryDocument.queryTempFile reuses an existing
+        # temporary filename without checking sourceURL. Exercise both orders.
+        for entries in (artifact["publications"], artifact["publications"][::-1]):
+            cached.clear()
+            for entry in entries:
+                canonical = entry["pdf"]
+                alias = entry["public_pdf"]
+                expected = (self.root / canonical).read_bytes()
+                self.assertEqual((output / canonical).read_bytes(), expected)
+                self.assertEqual((output / alias).read_bytes(), expected)
+                self.assertIn("../" + alias, links)
+                self.assertNotIn("../" + canonical, links)
+                actual = cached.setdefault(Path(alias).name, (output / alias).read_bytes())
+                self.assertEqual(actual, expected)
+            self.assertEqual(len(cached), 2)
+
+    def test_public_pdf_filename_distinguishes_path_and_survives_revision(self) -> None:
+        paths = [("gpt", "faith/work"), ("gpt", "law/work"), ("claude", "faith/work")]
+        for provider, leaf in paths:
+            self.write(f"pdf/{provider}/{leaf}.pdf", b"same bytes\n")
+        aliases = self.tool.public_pdf_aliases(paths)
+        self.assertEqual(len({Path(alias).name for alias in aliases.values()}), 3)
+        self.assertEqual(aliases, self.tool.public_pdf_aliases(paths))
+        previous = self.tool.public_pdf_path("gpt", "faith/work")
+        self.write("pdf/gpt/faith/work.pdf", b"revised bytes\n")
+        self.assertEqual(previous, self.tool.public_pdf_path("gpt", "faith/work"))
+
+    def test_pdf_revision_refreshes_both_copies_without_breaking_public_link(self) -> None:
+        publications, output = self.build_verified_artifact()
+        alias = self.tool.public_pdf_path("gpt", "work")
+        self.write("pdf/gpt/work.pdf", b"new revision\n")
+        output = self.tool.build_site(self.manifest, publications, preview=False)
+        self.tool.verify_output(self.manifest, publications, output, preview=False)
+        self.assertEqual((output / alias).read_bytes(), b"new revision\n")
+        self.assertEqual((output / "pdf/gpt/work.pdf").read_bytes(), b"new revision\n")
+        self.assertIn("../" + alias, self.tool.parsed_html(output / "library/test.html").links)
+
+    def test_public_pdf_basename_collision_is_refused(self) -> None:
+        with mock.patch.object(
+            self.tool, "public_pdf_path", side_effect=["pdf/gpt/same.pdf", "pdf/claude/same.pdf"]
+        ):
+            with self.assertRaisesRegex(self.tool.ReleaseError, "filename collision"):
+                self.tool.public_pdf_aliases([("gpt", "work"), ("claude", "work")])
+
+    def test_public_pdf_links_preserve_queries_fragments_and_subpath_portability(self) -> None:
+        alias = self.tool.public_pdf_path("gpt", "work")
+        self.assertEqual(
+            self.tool.source_to_output(
+                "web/gpt/work.md", "web/gpt/work.html", "../../pdf/gpt/work.pdf?download=1#page=3",
+                {("gpt", "work")},
+            ),
+            "../../" + alias + "?download=1#page=3",
+        )
+        html_text = (
+            '<a href="../pdf/gpt/work.pdf?x=1&amp;y=2#page=3">PDF</a>'
+            '<a href="https://example.org/work.pdf">External</a>'
+        )
+        rewritten = self.tool.rewrite_pdf_hrefs(
+            html_text, "library/test.html", {"pdf/gpt/work.pdf": alias}
+        )
+        self.assertIn(f'href="../{alias}?x=1&amp;y=2#page=3"', rewritten)
+        self.assertIn('href="https://example.org/work.pdf"', rewritten)
+
+    def test_browser_catalogue_projects_full_and_companion_pdfs_only(self) -> None:
+        self.write("pdf/gpt/work-synthesis.pdf", b"companion bytes\n")
+        aliases = self.tool.public_pdf_aliases([("gpt", "work"), ("gpt", "work-synthesis")])
+        corpus = {"works": [{"leaf": "work", "editions": [{
+            "provider": "gpt", "pdf": "pdf/gpt/work.pdf", "web": "web/gpt/work.html",
+            "also": [{"kind": "synthesis", "pdf": "pdf/gpt/work-synthesis.pdf"},
+                     {"kind": "homily", "pdf": None, "pdf_absent": "not published"}],
+        }]}]}
+        relative = "src/web/data/structure/documents/corpus.json"
+        original = json.dumps(corpus).encode()
+        self.write(relative, original)
+        projected = json.loads(self.tool.projected_document_catalogue(
+            "browse/structure/documents/corpus.json", self.root / relative, aliases
+        ))
+        edition = projected["works"][0]["editions"][0]
+        self.assertEqual(edition["pdf"], aliases["pdf/gpt/work.pdf"])
+        self.assertEqual(edition["also"][0]["pdf"], aliases["pdf/gpt/work-synthesis.pdf"])
+        self.assertEqual(edition["also"][1], corpus["works"][0]["editions"][0]["also"][1])
+        self.assertEqual(edition["web"], "web/gpt/work.html")
+        self.assertEqual((self.root / relative).read_bytes(), original)
+
+    def test_verifier_rejects_changed_alias_even_with_fresh_checksums(self) -> None:
+        publications, output = self.build_verified_artifact()
+        alias = self.tool.public_pdf_path("gpt", "work")
+        (output / alias).write_bytes(b"wrong PDF\n")
+        self.tool.write_checksums(output)
+        with self.assertRaisesRegex(self.tool.ReleaseError, "public PDF does not match"):
+            self.tool.verify_output(self.manifest, publications, output, preview=False)
+
+    def test_verifier_rejects_old_pdf_link_outside_owning_catalogue(self) -> None:
+        publications, output = self.build_verified_artifact()
+        index = output / "index.html"
+        index.write_text(index.read_text() + '<a href="pdf/gpt/work.pdf#page=2">PDF</a>')
+        self.tool.write_checksums(output)
+        with self.assertRaisesRegex(self.tool.ReleaseError, "filename-cache-unsafe canonical URL"):
+            self.tool.verify_output(self.manifest, publications, output, preview=False)
+
+    def test_reading_plan_pdfs_keep_old_routes_and_get_public_aliases(self) -> None:
+        canonical = "pdf/reading-plans/narrative-spine-story-douay-rheims.pdf"
+        self.write(canonical, b"track bytes\n")
+        with mock.patch.object(self.tool, "offered_bible_ids", return_value={"douay-rheims"}):
+            aliases = self.tool.public_pdf_aliases({("gpt", "work")})
+            self.assertIn(canonical, aliases)
+            self.assertNotEqual(Path(canonical).name, Path(aliases[canonical]).name)
+            self.assertEqual(
+                self.tool.source_to_output(
+                    "README.md", "index.html", canonical + "#page=4", {("gpt", "work")}
+                ),
+                aliases[canonical] + "#page=4",
+            )
+            self.assertIn(
+                '../' + aliases[canonical],
+                self.tool.rewrite_pdf_hrefs(
+                    f'<a href="../{canonical}">Track</a>', "scripture/index.html", aliases
+                ),
+            )
 
     def test_ark_editions_share_one_catalog_row_and_keep_their_titles(self) -> None:
         catalog = (REPOSITORY_ROOT / "library/mariology.md").read_text(

@@ -5,7 +5,57 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-08.
+Last reconciled: 2026-10-09.
+
+## Publication links and mobile angelology report, 2026-10-09
+
+<!-- promised-deliverable: publication-links-2026-10-09 -->
+
+The maintainer requested an audit and repair of duplicated, removed, or
+misdirected publication links, recovery of any missing documents, and a push
+to `main`. The reported angelology duplication occurs in Firefox on iPhone
+from Faith; the desktop links work.
+
+Investigation confirms that the live Claude PDF retains all 369 pages and
+the GPT PDF is a distinct 62-page work. Claude's extracted text matches the
+original reviewed publication exactly; no manuscript restoration is needed.
+The deliberately withdrawn, oversized Claude web edition remains recoverable
+in Git and is still subject to the separately planned multipage Reader work.
+The catalog audit found and restored four missing canonical PDF links: both
+providers for the Ninth Sunday after Pentecost and Seventeenth Sunday in
+Ordinary Time, Year A. Every released PDF now has one visible link in its
+owning catalog. The source and artifact gates reject a hidden identity marker
+as a substitute for that link; held works retain their ownership markers.
+
+All 251 deployed PDFs match the live publication manifest's checksums. All
+206 published canonical editions match their catalog title and page count;
+45 companions account for the remaining PDFs. No PDF or extracted text is
+duplicated. The catalogs expose all 251 PDFs and 131 web editions, with no
+wrong provider columns or catalog owners. Historical removals are explained
+by documented migrations, redesigns, eligibility changes, or withdrawal.
+Evidence: `workflows/reviews/publication-links-2026-10-09/audit.json`.
+
+Firefox iOS's `TemporaryDocument` cache reuses an existing file with the same
+suggested filename without comparing its source URL. The two angelology
+paths both end in `angelology.pdf`. Across the collection, 148 routes share
+73 basenames. The fix gives generated publication links stable filenames
+derived from full document identity, while keeping the canonical
+source/install paths and previous public PDF URLs. Content hashes do not go
+in the filenames: removing an old versioned alias on revision would break
+links shared by readers. Both URL forms instead serve the current PDF bytes.
+This fixes cross-document cache collisions; Firefox's caching of an older
+revision of the same document remains a browser limitation. Physical
+Firefox-on-iPhone testing is unavailable; the upstream code and browser
+emulation establish the mechanism and site behavior separately.
+
+The candidate passes 178 targeted tests, `make check-deployment-sources`,
+`make public-site`, and `public-alpha verify --deployment-target github-pages`.
+All 257 PDF aliases, including six reading-plan volumes, have unique
+basenames; all 257 canonical URLs remain byte-identical compatibility copies.
+The verified artifact is 768,783,943 bytes. PDFs were recovered into the local
+validation environment from the unchanged deployed snapshot and checked
+against its manifest, without rewriting their contents. Push and live
+deployment verification remain open.
 
 ## Claude postconciliar Twenty-eighth Sunday three documents, 2026-10-08
 

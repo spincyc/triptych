@@ -1067,6 +1067,79 @@ def reading_plan_pdfs() -> dict[str, Path]:
     return found
 
 
+def public_pdf_path(provider: str, leaf: str) -> str:
+    """A stable public filename bound to the full publication identity.
+
+    Firefox for iOS reuses temporary PDFs by suggested filename, without
+    comparing their source URLs. Canonical paths therefore remain compatibility
+    copies; reader links use this distinct basename. Content revisions keep the
+    alias so shared links do not become 404s on the next ordinary publication.
+    """
+    canonical = PurePosixPath("pdf") / provider / f"{leaf}.pdf"
+    fingerprint = hashlib.sha256(canonical.as_posix().encode("utf-8")).hexdigest()[:16]
+    return canonical.with_name(
+        f"{canonical.stem}-{provider}-{fingerprint}.pdf"
+    ).as_posix()
+
+
+def public_pdf_aliases(included_ids: Iterable[tuple[str, str]]) -> dict[str, str]:
+    """Map the admitted canonical PDFs to unique public filenames."""
+    keys = set(included_ids) | {
+        ("reading-plans", PurePosixPath(path).stem) for path in reading_plan_pdfs()
+    }
+    aliases = {
+        f"pdf/{provider}/{leaf}.pdf": public_pdf_path(provider, leaf)
+        for provider, leaf in sorted(keys)
+    }
+    names: set[str] = set()
+    for canonical, alias in aliases.items():
+        name = PurePosixPath(alias).name.casefold()
+        if name in names or alias in aliases:
+            raise ReleaseError(f"public PDF filename collision: {canonical}: {alias}")
+        names.add(name)
+    return aliases
+
+
+def rewrite_pdf_hrefs(
+    content: str, output_relative: str, aliases: dict[str, str]
+) -> str:
+    """Rewrite local HTML links while preserving their queries and fragments."""
+    def replace(match: re.Match[str]) -> str:
+        target = html.unescape(match.group(2))
+        parts = urlsplit(target)
+        if parts.scheme or parts.netloc or not parts.path or parts.path.startswith("/"):
+            return match.group(0)
+        canonical = posixpath.normpath(
+            posixpath.join(PurePosixPath(output_relative).parent.as_posix(), unquote(parts.path))
+        )
+        if canonical not in aliases:
+            return match.group(0)
+        rewritten = relative_link(output_relative, aliases[canonical])
+        if parts.query:
+            rewritten += "?" + parts.query
+        if parts.fragment:
+            rewritten += "#" + parts.fragment
+        return match.group(1) + html.escape(rewritten, quote=True) + match.group(3)
+
+    return re.sub(r'''(\bhref\s*=\s*["'])([^"']*)(["'])''', replace, content)
+
+
+def projected_document_catalogue(
+    relative: str, source: Path, aliases: dict[str, str]
+) -> str | None:
+    """Project public PDF routes without changing the canonical source catalogue."""
+    if relative != (SITE_DATA_ROOT / "structure/documents/corpus.json").as_posix():
+        return None
+    corpus = load_json_file(source, source.relative_to(ROOT).as_posix())
+    for work in corpus.get("works", []):
+        for edition in work.get("editions", []):
+            for issue in [edition, *edition.get("also", [])]:
+                canonical = issue.get("pdf")
+                if canonical in aliases:
+                    issue["pdf"] = aliases[canonical]
+    return json.dumps(corpus, ensure_ascii=False, indent=1, sort_keys=True) + "\n"
+
+
 def web_browser_pages() -> dict[str, Path]:
     """Map each served browser page to the repository HTML it is rendered from.
 
@@ -2211,9 +2284,14 @@ def catalog_occurrences(primary: str, providers: list[str]) -> tuple[
     undeclared_provider_references: list[tuple[str, str]] = []
     for path in sorted((ROOT / "library").glob("*.md")):
         relative = path.relative_to(ROOT).as_posix()
-        for line in path.read_text(encoding="utf-8").splitlines():
+        text = path.read_text(encoding="utf-8")
+        visible = re.sub(
+            r"<!--.*?-->", lambda match: "\n" * match.group(0).count("\n"),
+            text, flags=re.DOTALL,
+        )
+        for line, visible_line in zip(text.split("\n"), visible.split("\n")):
             ids: list[tuple[str, str]] = []
-            for link_provider, leaf in PDF_LINK_RE.findall(line):
+            for link_provider, leaf in PDF_LINK_RE.findall(visible_line):
                 if link_provider in provider_set:
                     ids.append((link_provider, leaf))
                 else:
@@ -2410,12 +2488,12 @@ def validate_manifest(
                 errors.append(f"{label}: expected at most one catalog link, found {len(homes)}")
             elif (
                 not secondary_hold
+                and publication.get("status") == "hold"
                 and len(homes) == 0
                 and len(marked_homes) == 1
             ):
-                # A scan-first catalog may deliberately expose only a derived
-                # synthesis while the canonical installed edition keeps its
-                # unique catalog ownership through an invisible stable marker.
+                # Held work may retain ownership without advertising a PDF.
+                # Released papers must have a visible link of their own.
                 pass
             elif not secondary_hold and len(homes) != 1:
                 errors.append(f"{label}: expected one catalog link, found {len(homes)}")
@@ -2654,6 +2732,7 @@ def artifact_manifest_data(
                 "id": publication_label(key, primary),
                 "status": "alpha",
                 "pdf": f"pdf/{provider}/{leaf}.pdf",
+                "public_pdf": public_pdf_path(provider, leaf),
                 "authorization": authorization_id,
                 "pdf_sha256": pdf_hash,
             }
@@ -2680,8 +2759,9 @@ def expected_artifact_files(
         expected.add(PICTORIAL_GALLERY_OUTPUT)
         expected.update(card["destination"] for card in pictorial_gallery_data())
     expected.update(included_document_pages(set(included)).values())
-    expected.update(f"pdf/{provider}/{leaf}.pdf" for provider, leaf in included)
-    expected.update(reading_plan_pdfs())
+    pdf_aliases = public_pdf_aliases(included)
+    expected.update(pdf_aliases)
+    expected.update(pdf_aliases.values())
     expected.update(web_data_files())
     expected.update(web_browser_pages())
     expected.update(
@@ -2916,13 +2996,11 @@ def source_to_output(
         if license_path.is_file():
             destination = resolved_text
     if destination is None and resolved_text in reading_plan_pdfs():
-        # A track keeps its repository path in the artifact, so a link written
-        # for the repository resolves unchanged once it is made relative.
-        destination = resolved_text
+        destination = public_pdf_path("reading-plans", resolved.stem)
     if destination is None:
         pdf_match = re.fullmatch(r"pdf/([a-z0-9-]+)/(.+)\.pdf", resolved_text)
         if pdf_match and (pdf_match.group(1), pdf_match.group(2)) in included_ids:
-            destination = resolved_text
+            destination = public_pdf_path(pdf_match.group(1), pdf_match.group(2))
     if destination is None:
         # A web edition's page exists only for an included publication, so the
         # link resolves against inclusion rather than against a bare path match.
@@ -3626,15 +3704,18 @@ def render_browser_page(
     output_relative: str,
     preview: bool,
     authorization: dict,
+    pdf_aliases: dict[str, str] | None = None,
 ) -> str:
     parts = browser_page_parts(source_path, output_relative)
+    if pdf_aliases is None:
+        pdf_aliases = public_pdf_aliases(())
     return wrap_in_layout(
         source_path.relative_to(ROOT).as_posix(),
         output_relative,
         parts["page_class"],
         parts["title"],
         "",
-        parts["content"],
+        rewrite_pdf_hrefs(parts["content"], output_relative, pdf_aliases),
         preview,
         authorization,
         head_extra=parts["head_extra"],
@@ -3839,7 +3920,7 @@ def verify_catalog_reachability(
     included: dict[tuple[str, str], dict],
     output: Path,
 ) -> list[str]:
-    """Require every copied PDF to remain linked or marker-owned by its catalog."""
+    """Require every copied publication PDF to be visibly linked by its catalog."""
     errors: list[str] = []
     primary, _ = declared_providers(manifest)
     # A catalog carries the rows of many publications, so its links are read
@@ -3858,7 +3939,7 @@ def verify_catalog_reachability(
         catalog_path = output / catalog_output
         if not catalog_path.is_file():
             continue
-        destination = f"pdf/{provider}/{leaf}.pdf"
+        destination = public_pdf_path(provider, leaf)
         expected_href = relative_link(catalog_output, destination)
         local_paths = catalog_local_paths.get(catalog_output)
         if local_paths is None:
@@ -3869,26 +3950,22 @@ def verify_catalog_reachability(
                     local_paths.add(unquote(parts.path))
             catalog_local_paths[catalog_output] = local_paths
         if expected_href not in local_paths:
-            catalog_markers = {
-                (marked_provider or primary, marked_leaf)
-                for marked_provider, marked_leaf in CATALOG_PUBLICATION_ID_RE.findall(
-                    (ROOT / catalog_source).read_text(encoding="utf-8")
-                )
-            }
-            if key not in catalog_markers:
-                errors.append(
-                    f"{publication_label(key, primary)}: copied PDF is not reachable "
-                    f"from {catalog_output}"
-                )
+            errors.append(
+                f"{publication_label(key, primary)}: copied PDF is not reachable "
+                f"from {catalog_output}"
+            )
     return errors
 
 
-def verify_web_data(output: Path) -> list[str]:
+def verify_web_data(
+    output: Path, pdf_aliases: dict[str, str] | None = None
+) -> list[str]:
     """Confirm copied browser machinery and data match their repository bytes."""
     expected = web_data_files()
     if not expected:
         return []
     errors: list[str] = []
+    pdf_aliases = pdf_aliases or {}
     data_root = output / SITE_DATA_ROOT
     if not data_root.is_dir():
         return ["artifact is missing the browser's data root"]
@@ -3904,7 +3981,12 @@ def verify_web_data(output: Path) -> list[str]:
         # check independently authenticates every copied byte, including JS and
         # CSS outside the data root; regenerating artifact-local checksums must
         # not make a modified browser program acceptable.
-        if artifact.is_file() and sha256(artifact) != sha256(source):
+        projection = projected_document_catalogue(relative, source, pdf_aliases)
+        expected_hash = (
+            hashlib.sha256(projection.encode("utf-8")).hexdigest()
+            if projection is not None else sha256(source)
+        )
+        if artifact.is_file() and sha256(artifact) != expected_hash:
             errors.append(
                 f"{relative}: copied browser/data file does not match its repository source"
             )
@@ -4301,12 +4383,8 @@ def _verify_snapshot_contents(
     primary, _ = declared_providers(manifest)
     included = included_publications(publications, preview)
     expected_authorization = artifact_authorization(manifest, included)
-    expected_pdf_paths = {f"pdf/{provider}/{leaf}.pdf" for provider, leaf in included}
-    # The tracks are PDFs under pdf/ that belong to no publication record, so
-    # they are named here as well as in the file set: the publication check
-    # below is what proves no publication's PDF is missing, and it must not
-    # read a track as a publication that has escaped the manifest.
-    expected_pdf_paths |= set(reading_plan_pdfs())
+    pdf_aliases = public_pdf_aliases(included)
+    expected_pdf_paths = set(pdf_aliases) | set(pdf_aliases.values())
     if not output.is_dir():
         raise ReleaseError(f"artifact does not exist: {output.relative_to(ROOT)}")
 
@@ -4380,6 +4458,10 @@ def _verify_snapshot_contents(
                 errors.append(
                     f"{publication_label(key, primary)}: artifact PDF {mismatch}"
                 )
+    for canonical, alias in pdf_aliases.items():
+        alias_path = output / alias
+        if alias_path.is_file() and sha256(alias_path) != sha256(ROOT / canonical):
+            errors.append(f"{alias}: public PDF does not match its canonical source")
 
     included_ids = set(included)
     rendered_pages = {**PAGE_MAP, **included_document_pages(included_ids)}
@@ -4401,7 +4483,7 @@ def _verify_snapshot_contents(
         if html_path.is_file() and html_path.read_text(
             encoding="utf-8", errors="replace"
         ) != render_browser_page(
-            source, output_relative, preview, expected_authorization
+            source, output_relative, preview, expected_authorization, pdf_aliases
         ):
             errors.append(f"{output_relative}: rendered page does not match its approved source")
 
@@ -4492,9 +4574,18 @@ def _verify_snapshot_contents(
         # once here rather than once per excluded publication.
         links = (
             [unquote(href) for href in parsed_html(path).links]
-            if excluded_routes and path.suffix == ".html"
+            if path.suffix == ".html"
             else ()
         )
+        for href in links:
+            parts = urlsplit(href)
+            if parts.scheme or parts.netloc or not parts.path:
+                continue
+            destination = posixpath.normpath(
+                posixpath.join(PurePosixPath(relative).parent.as_posix(), parts.path)
+            )
+            if destination in pdf_aliases:
+                errors.append(f"{relative}: PDF link uses a filename-cache-unsafe canonical URL: {href}")
         for excluded_key, excluded_targets in excluded_routes:
             if path.suffix == ".html":
                 for href in links:
@@ -4561,7 +4652,7 @@ def _verify_snapshot_contents(
     errors.extend(verify_link_previews(output, preview, expected_authorization))
     errors.extend(verify_links(output))
     errors.extend(verify_catalog_reachability(manifest, included, output))
-    errors.extend(verify_web_data(output))
+    errors.extend(verify_web_data(output, pdf_aliases))
     checksum_path = output / "SHA256SUMS"
     if not checksum_path.is_file():
         errors.append("artifact is missing SHA256SUMS")
@@ -4934,7 +5025,8 @@ class StagingWriter:
 
 
 def assemble_web_data(
-    writer: StagingWriter | Path, preview: bool, authorization: dict
+    writer: StagingWriter | Path, preview: bool, authorization: dict,
+    pdf_aliases: dict[str, str] | None = None,
 ) -> None:
     """Assemble the reading pages, their shared machinery, and the corpus."""
     if isinstance(writer, Path):
@@ -4953,17 +5045,23 @@ def assemble_web_data(
                     f"browser-data output changed while opening: {output}"
                 )
             with StagingWriter(output_fd) as anchored:
-                assemble_web_data(anchored, preview, authorization)
+                assemble_web_data(anchored, preview, authorization, pdf_aliases)
                 anchored.finish()
         finally:
             os.close(output_fd)
         return
+    if pdf_aliases is None:
+        pdf_aliases = public_pdf_aliases(())
     for destination_relative, source in sorted(web_data_files().items()):
-        writer.copy(source, destination_relative)
+        projection = projected_document_catalogue(destination_relative, source, pdf_aliases)
+        if projection is None:
+            writer.copy(source, destination_relative)
+        else:
+            writer.text(destination_relative, projection)
     for output_relative, source in sorted(web_browser_pages().items()):
         writer.text(
             output_relative,
-            render_browser_page(source, output_relative, preview, authorization),
+            render_browser_page(source, output_relative, preview, authorization, pdf_aliases),
         )
 
 
@@ -4975,6 +5073,7 @@ def _build_site_contents(
 ) -> None:
     included = included_publications(publications, preview)
     authorization = artifact_authorization(manifest, included)
+    pdf_aliases = public_pdf_aliases(included)
 
     for asset_relative in ("assets/site.css", SOCIAL_CARD_RELATIVE, SITE_ICON_RELATIVE):
         writer.copy(TEMPLATE_ROOT / asset_relative, asset_relative)
@@ -4983,18 +5082,16 @@ def _build_site_contents(
         license_path = ROOT / source_relative
         writer.copy(license_path, source_relative)
 
-    for provider, leaf in sorted(included):
-        source = ROOT / "pdf" / provider / f"{leaf}.pdf"
-        writer.copy(source, f"pdf/{provider}/{leaf}.pdf")
-
-    for destination_relative, source in sorted(reading_plan_pdfs().items()):
-        writer.copy(source, destination_relative)
+    for canonical, alias in pdf_aliases.items():
+        source = ROOT / canonical
+        writer.copy(source, canonical)
+        writer.copy(source, alias)
 
     if (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
         for card in pictorial_gallery_data():
             writer.copy(card["source"], card["destination"])
 
-    assemble_web_data(writer, preview, authorization)
+    assemble_web_data(writer, preview, authorization, pdf_aliases)
 
     included_ids = set(included)
     rendered_pages = {**PAGE_MAP, **included_document_pages(included_ids)}

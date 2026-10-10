@@ -1,0 +1,405 @@
+{
+  "schema": 1,
+  "date": "2026-10-09",
+  "deployed_base_commit": "3e607d68ba344a1e59af7f211e2ec290c514e5a8",
+  "live_manifest": "https://mystago.gy/PUBLICATION-MANIFEST.json",
+  "live_pdf_audit": {
+    "manifest_sha256": "a281cae0d2e36e36102b8a9effd4d651a8bd3fdfa259ddfc8c152e329b5bd4c2",
+    "manifest_publications": 251,
+    "verified_and_staged": 251,
+    "total_bytes": 276858871,
+    "failures": [],
+    "canonical_editions_checked": 206,
+    "identity_mismatches": [],
+    "duplicate_pdf_hashes": [],
+    "duplicate_text_hashes": [],
+    "duplicate_normalized_text_hashes": [],
+    "same_work_provider_pairs": 74
+  },
+  "catalog_audit": {
+    "released_pdfs": 251,
+    "web_editions": 131,
+    "missing_pdf_links_before": 4,
+    "missing_links_after": 0,
+    "duplicate_targets": 0,
+    "provider_column_mismatches": 0,
+    "wrong_catalog_owners": 0,
+    "source_issue_identities": 253,
+    "release_records": 253,
+    "intentional_holds": 2
+  },
+  "restored_canonical_links": [
+    "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost.pdf",
+    "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a.pdf",
+    "pdf/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost.pdf",
+    "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a.pdf"
+  ],
+  "angelology": {
+    "claude_pages": 369,
+    "gpt_pages": 62,
+    "claude_pdf_sha256": "7c7dd98cd39d0bdf5960a141cd65a9ab84b591fe7e452dd28b42aae6cf00a626",
+    "gpt_pdf_sha256": "3392d9925872de591e30a296dcd51615d55d34998472c246414e1b7e9dce9947",
+    "claude_original_reviewed_pdf_sha256": "7d641c0b2ecdb5ebf84a3376e37eda9a12feca7500a7cccfce40a4f5cfae84c7",
+    "claude_original_and_live_text_sha256": "6e568bd59f14bd75be277c7ba367644f1ae4a0a3cd7765c9650cd50c9d1eb600",
+    "manuscript_unchanged_since": "b3bfb71d63be9d22df90f6128bb66af653aca58d",
+    "shared_heading_anchor_fix": "5740b546e34f3c2ef1aa28027c12e2b66ff73b43",
+    "web_withdrawal_commit": "42916b898b4601e67b583776d4cad881608cd333",
+    "web_withdrawal_reason": "Single-page HTML exceeded the existing 1 MB ceiling; multipage reader is separately planned.",
+    "recovery_needed": false,
+    "claude_public_pdf": "https://mystago.gy/pdf/claude/theology/angelology-claude-547c3fcec30d9731.pdf",
+    "gpt_public_pdf": "https://mystago.gy/pdf/gpt/theology/angelology-gpt-4a39bd0581307c9b.pdf"
+  },
+  "mobile_report": {
+    "browser": "Firefox on iPhone",
+    "entry_page": "https://mystago.gy/library/faith.html",
+    "upstream_source": "https://github.com/mozilla-mobile/firefox-ios/blob/f22e7683f16c8946f7e9f766b925cf8789639d9e/firefox-ios/Client/TabManagement/Document/TemporaryDocument.swift",
+    "finding": "TemporaryDocument.download reuses an existing temporary file keyed only by suggested filename, ignoring source URL. Both provider URLs end in angelology.pdf.",
+    "physical_device_reproduction": false,
+    "verification_limit": "Upstream cache logic explains the report; browser emulation cannot reproduce the Firefox iOS native document cache.",
+    "original_basename_collision_groups": 73,
+    "affected_pdf_routes": 148,
+    "colliding_basenames": {
+      "clerical-celibacy-chastity-and-continence.pdf": [
+        "pdf/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.pdf",
+        "pdf/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence.pdf"
+      ],
+      "natural-positive-divine-human-law.pdf": [
+        "pdf/claude/articles/canon-law/natural-positive-divine-human-law.pdf",
+        "pdf/gpt/articles/canon-law/natural-positive-divine-human-law.pdf"
+      ],
+      "against-the-instrumentalists.pdf": [
+        "pdf/claude/articles/faith/against-the-instrumentalists.pdf",
+        "pdf/gpt/articles/faith/against-the-instrumentalists.pdf"
+      ],
+      "at-the-end-of-every-why.pdf": [
+        "pdf/claude/articles/faith/at-the-end-of-every-why.pdf",
+        "pdf/gpt/articles/faith/at-the-end-of-every-why.pdf"
+      ],
+      "council-missal-and-crisis.pdf": [
+        "pdf/claude/articles/faith/council-missal-and-crisis.pdf",
+        "pdf/gpt/articles/faith/council-missal-and-crisis.pdf"
+      ],
+      "four-last-things-01-death.pdf": [
+        "pdf/claude/articles/faith/four-last-things-01-death.pdf",
+        "pdf/gpt/articles/faith/four-last-things-01-death.pdf"
+      ],
+      "four-last-things-02-judgment.pdf": [
+        "pdf/claude/articles/faith/four-last-things-02-judgment.pdf",
+        "pdf/gpt/articles/faith/four-last-things-02-judgment.pdf"
+      ],
+      "four-last-things-03-hell.pdf": [
+        "pdf/claude/articles/faith/four-last-things-03-hell.pdf",
+        "pdf/gpt/articles/faith/four-last-things-03-hell.pdf"
+      ],
+      "four-last-things-04-heaven.pdf": [
+        "pdf/claude/articles/faith/four-last-things-04-heaven.pdf",
+        "pdf/gpt/articles/faith/four-last-things-04-heaven.pdf"
+      ],
+      "freemasonry-and-the-catholic-church.pdf": [
+        "pdf/claude/articles/faith/freemasonry-and-the-catholic-church.pdf",
+        "pdf/gpt/articles/faith/freemasonry-and-the-catholic-church.pdf"
+      ],
+      "in-defense-of-the-particular.pdf": [
+        "pdf/claude/articles/faith/in-defense-of-the-particular.pdf",
+        "pdf/gpt/articles/faith/in-defense-of-the-particular.pdf"
+      ],
+      "ontological-vertigo.pdf": [
+        "pdf/claude/articles/faith/ontological-vertigo.pdf",
+        "pdf/gpt/articles/faith/ontological-vertigo.pdf"
+      ],
+      "the-due-return.pdf": [
+        "pdf/claude/articles/faith/the-due-return.pdf",
+        "pdf/gpt/articles/faith/the-due-return.pdf"
+      ],
+      "trustful-surrender-to-divine-providence.pdf": [
+        "pdf/claude/articles/faith/trustful-surrender-to-divine-providence.pdf",
+        "pdf/gpt/articles/faith/trustful-surrender-to-divine-providence.pdf"
+      ],
+      "abraham-and-the-daylight-stars.pdf": [
+        "pdf/claude/articles/scripture/abraham-and-the-daylight-stars.pdf",
+        "pdf/gpt/articles/scripture/abraham-and-the-daylight-stars.pdf"
+      ],
+      "the-linen-cloths-at-the-empty-tomb.pdf": [
+        "pdf/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb.pdf",
+        "pdf/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb.pdf"
+      ],
+      "origen.pdf": [
+        "pdf/claude/biographies/origen.pdf",
+        "pdf/gpt/biographies/origen.pdf"
+      ],
+      "saint-augustine-of-hippo.pdf": [
+        "pdf/claude/biographies/saint-augustine-of-hippo.pdf",
+        "pdf/gpt/biographies/saint-augustine-of-hippo.pdf"
+      ],
+      "saint-jerome.pdf": [
+        "pdf/claude/biographies/saint-jerome.pdf",
+        "pdf/gpt/biographies/saint-jerome.pdf"
+      ],
+      "saint-paul.pdf": [
+        "pdf/claude/biographies/saint-paul.pdf",
+        "pdf/gpt/biographies/saint-paul.pdf"
+      ],
+      "saint-peter.pdf": [
+        "pdf/claude/biographies/saint-peter.pdf",
+        "pdf/gpt/biographies/saint-peter.pdf"
+      ],
+      "saint-robert-bellarmine.pdf": [
+        "pdf/claude/biographies/saint-robert-bellarmine.pdf",
+        "pdf/gpt/biographies/saint-robert-bellarmine.pdf"
+      ],
+      "saint-thomas-aquinas.pdf": [
+        "pdf/claude/biographies/saint-thomas-aquinas.pdf",
+        "pdf/gpt/biographies/saint-thomas-aquinas.pdf"
+      ],
+      "tertullian.pdf": [
+        "pdf/claude/biographies/tertullian.pdf",
+        "pdf/gpt/biographies/tertullian.pdf"
+      ],
+      "01-septuagint.pdf": [
+        "pdf/claude/history/biblical-translations/01-septuagint.pdf",
+        "pdf/gpt/history/biblical-translations/01-septuagint.pdf"
+      ],
+      "02-vulgate.pdf": [
+        "pdf/claude/history/biblical-translations/02-vulgate.pdf",
+        "pdf/gpt/history/biblical-translations/02-vulgate.pdf"
+      ],
+      "01-sspx.pdf": [
+        "pdf/claude/history/traditional-priestly-institutes/01-sspx.pdf",
+        "pdf/gpt/history/traditional-priestly-institutes/01-sspx.pdf"
+      ],
+      "02-fssp.pdf": [
+        "pdf/claude/history/traditional-priestly-institutes/02-fssp.pdf",
+        "pdf/gpt/history/traditional-priestly-institutes/02-fssp.pdf"
+      ],
+      "00-ordinary-of-the-mass.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf"
+      ],
+      "48-eighth-after-pentecost.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost.pdf"
+      ],
+      "49-ninth-after-pentecost.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost.pdf"
+      ],
+      "49-ninth-after-pentecost-synthesis.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost-synthesis.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost-synthesis.pdf"
+      ],
+      "51-eleventh-after-pentecost.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf"
+      ],
+      "51-eleventh-after-pentecost-synthesis.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost-synthesis.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost-synthesis.pdf"
+      ],
+      "52-twelfth-after-pentecost.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf"
+      ],
+      "52-twelfth-after-pentecost-synthesis.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost-synthesis.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost-synthesis.pdf"
+      ],
+      "53-thirteenth-after-pentecost.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf"
+      ],
+      "53-thirteenth-after-pentecost-synthesis.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis.pdf"
+      ],
+      "55-fifteenth-after-pentecost.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf"
+      ],
+      "55-fifteenth-after-pentecost-synthesis.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.pdf"
+      ],
+      "56-sixteenth-after-pentecost.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.pdf"
+      ],
+      "56-sixteenth-after-pentecost-synthesis.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis.pdf"
+      ],
+      "57-seventeenth-after-pentecost.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf"
+      ],
+      "57-seventeenth-after-pentecost-homily.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf"
+      ],
+      "57-seventeenth-after-pentecost-synthesis.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf"
+      ],
+      "59-nineteenth-after-pentecost.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.pdf"
+      ],
+      "59-nineteenth-after-pentecost-homily.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-homily.pdf"
+      ],
+      "59-nineteenth-after-pentecost-synthesis.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.pdf"
+      ],
+      "60-twentieth-after-pentecost.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.pdf"
+      ],
+      "60-twentieth-after-pentecost-homily.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-homily.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-homily.pdf"
+      ],
+      "60-twentieth-after-pentecost-synthesis.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis.pdf"
+      ],
+      "assembling-the-mass.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf"
+      ],
+      "liturgical-calendar.pdf": [
+        "pdf/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf",
+        "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.pdf",
+        "pdf/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf",
+        "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.pdf"
+      ],
+      "two-missals-one-sacrifice.pdf": [
+        "pdf/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice.pdf",
+        "pdf/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice.pdf"
+      ],
+      "00-order-of-mass.pdf": [
+        "pdf/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.pdf",
+        "pdf/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.pdf"
+      ],
+      "pc-s42-sixteenth-sunday-in-ordinary-time-year-a.pdf": [
+        "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a.pdf",
+        "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a.pdf"
+      ],
+      "pc-s43-seventeenth-sunday-in-ordinary-time-year-a.pdf": [
+        "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a.pdf",
+        "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a.pdf"
+      ],
+      "pc-s43-seventeenth-sunday-in-ordinary-time-year-a-synthesis.pdf": [
+        "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+        "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a-synthesis.pdf"
+      ],
+      "pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf": [
+        "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf",
+        "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf"
+      ],
+      "pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf": [
+        "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf",
+        "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf"
+      ],
+      "pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf": [
+        "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+        "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf"
+      ],
+      "pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.pdf": [
+        "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.pdf",
+        "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.pdf"
+      ],
+      "pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.pdf": [
+        "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.pdf",
+        "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.pdf"
+      ],
+      "pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.pdf": [
+        "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+        "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.pdf"
+      ],
+      "angelology.pdf": [
+        "pdf/claude/theology/angelology.pdf",
+        "pdf/gpt/theology/angelology.pdf"
+      ],
+      "ark-of-the-covenant.pdf": [
+        "pdf/claude/theology/mariology/ark-of-the-covenant.pdf",
+        "pdf/gpt/theology/mariology/ark-of-the-covenant.pdf"
+      ],
+      "champion.pdf": [
+        "pdf/claude/theology/mariology/champion.pdf",
+        "pdf/gpt/theology/mariology/champion.pdf"
+      ],
+      "fatima.pdf": [
+        "pdf/claude/theology/mariology/fatima.pdf",
+        "pdf/gpt/theology/mariology/fatima.pdf"
+      ],
+      "guadalupe.pdf": [
+        "pdf/claude/theology/mariology/guadalupe.pdf",
+        "pdf/gpt/theology/mariology/guadalupe.pdf"
+      ],
+      "la-salette.pdf": [
+        "pdf/claude/theology/mariology/la-salette.pdf",
+        "pdf/gpt/theology/mariology/la-salette.pdf"
+      ],
+      "lourdes.pdf": [
+        "pdf/claude/theology/mariology/lourdes.pdf",
+        "pdf/gpt/theology/mariology/lourdes.pdf"
+      ],
+      "marian-dogmas.pdf": [
+        "pdf/claude/theology/mariology/marian-dogmas.pdf",
+        "pdf/gpt/theology/mariology/marian-dogmas.pdf"
+      ],
+      "rosary.pdf": [
+        "pdf/claude/theology/mariology/rosary.pdf",
+        "pdf/gpt/theology/mariology/rosary.pdf"
+      ]
+    },
+    "call_chain": "Main-frame application/pdf response -> handlePDFDownloadRequest(response.suggestedFilename) -> DefaultTemporaryDocument -> tab.enqueueDocument -> webView.loadFileURL. This route applies when webViewDocumentFetchRefactor is disabled; the reporting device build and flag were not observed.",
+    "call_chain_source": "https://github.com/mozilla-mobile/firefox-ios/blob/f22e7683f16c8946f7e9f766b925cf8789639d9e/firefox-ios/Client/Frontend/Browser/BrowserViewController/Extensions/BrowserViewController+WebViewDelegates.swift",
+    "alias_policy": "Stable full-path identity plus provider in the basename; PDF content is verified independently. Content-versioned basenames rejected because future revisions would remove shared published URLs. Canonical and public aliases both remain current."
+  },
+  "verification": {
+    "unit_tests": 178,
+    "unit_test_suites": [
+      "tools.tests.test_public_alpha",
+      "tools.tests.test_publication_links",
+      "tools.tests.test_document_library"
+    ],
+    "deployment_source_gate": "pass",
+    "public_site_build": "pass",
+    "github_pages_artifact_verification": "pass",
+    "unique_public_pdf_basenames": 257,
+    "retained_canonical_pdf_urls": 257,
+    "artifact_bytes": 768783943,
+    "html_pages": 170,
+    "pdf_integrity": "Every public alias and canonical copy independently verified against the unchanged installed PDF.",
+    "pdf_preparation": "Fetched all 251 unchanged publication PDFs from the deployed snapshot and checked each against its manifest SHA-256; the six reading-plan PDFs remain the tracked inputs. No document was rebuilt or rewritten."
+  },
+  "browser_verification": {
+    "engine": "Chromium via Playwright",
+    "native_iphone_verified": false,
+    "hosting_prefixes": [
+      "",
+      "/triptych"
+    ],
+    "faith_touch_widths_px": [
+      1440,
+      1024,
+      768,
+      393,
+      320
+    ],
+    "faith_gpt_and_claude_tap_targets": "pass",
+    "faith_page_horizontal_overflow": false,
+    "dynamic_document_pdf_aliases": 251,
+    "primary_pdf_aliases": 206,
+    "companion_pdf_aliases": 45,
+    "reading_plan_aliases_http_200": 6,
+    "html_pages_scanned": 170,
+    "local_pdf_hrefs_scanned": 257,
+    "remaining_canonical_html_pdf_hrefs": 0,
+    "remaining_canonical_document_corpus_pdf_routes": 0,
+    "angelology_static_reader": "renders; no local PDF download link",
+    "native_mechanism_evidence": "Firefox iOS source ordinary PDF response -> enqueueDocument -> filename-only existing temporary file lookup -> loadFileURL; deployment feature flag/app version unverified"
+  }
+}
