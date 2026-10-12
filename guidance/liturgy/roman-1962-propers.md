@@ -299,6 +299,12 @@ Later proper-focused headings may use quiet parenthetical cues in liturgical ord
 
 ### Page 2: Scriptural date and location
 
+For new schema-2 runs, the [three-document profile's orientation
+table](propers-three-documents.md#a-table-that-locates-the-passage) supersedes
+the dossier layout below. Its shorter display retains the evidence distinctions
+and canonical chronology source requirement here. Existing dossier consumers
+keep their original presentation until an authorized substantive revision.
+
 Begin and end physical page 2 with forced page boundaries. It contains only `Scriptural Date and Location` and always occupies exactly one page. Inventory every distinct directly appointed biblical passage once, in Catholic canonical order and then verse order; consolidate repetitions and do not mislabel loose echoes in composed orations as direct quotations. Use the columns `Proper`, `Citation`, `Location`, and `Date`. The citation cell does not reproduce Scripture.
 
 Use a two-tier dossier table with top-aligned ragged-right columns. The first row of each dossier is a concise four-field summary: inherited or conventional orientation belongs in the short `Location` and `Date` cells, not multi-sentence qualification. Follow it with `\cmidrule(lr){1-4}` and a full-width ragged-right explanatory row that gives historical judgment, audience, life stage, uncertainty, and claim-local sources. Use `\midrule` only between complete dossiers. When a passage narrates an event, place a separately labeled italic event row between two `\cmidrule(lr){1-4}` rules before the full-width explanation. This summary-row-plus-spanning-dossier hierarchy is the standard.

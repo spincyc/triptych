@@ -1054,6 +1054,29 @@ both manifest and full claim comparisons carry this field, with a historical
 loader's missing field equivalent to an empty qualification. Neither source
 approval nor an old review acceptance is renewed by regenerating that manifest.
 
+An optional `orientation_qualification` supplies source-owned attribution or
+material uncertainty for any orientation claim. Background context falls back
+to the full `context_qualification` when the compact field is absent. It may
+shorten a bibliographic title or verification description, but must retain a
+reporting exception's attribution and any material evidence limit. An
+exception-bearing claim without either qualification is refused by orientation
+generation. The source owns the attribution: an edition's uninitialled
+apparatus must not be credited personally to its named commentator. Both fields
+participate in semantic review. This presentation field changes no date, source
+status, disposition, or profile; legacy queries and detailed proper annotations
+keep their existing wording.
+
+An event or textual unit may also carry `orientation_title`, a nonempty short
+name for that same subject. A claim with `precision: relative` may carry
+`orientation_label`, a nonempty compact restatement naming its anchor and
+preserving its direction, interval and uncertainty. This field is refused for
+other precisions; normalized absolute dates cannot be replaced by display
+prose. In particular, the Temple's 480th year after the Exodus is an ordinal
+year, not 480 completed years. Both optional fields fall back to the full title
+or existing date rendering when absent. They participate in semantic review
+but change only orientation output, never the detailed legacy annotations or
+proper audit record. Neither permits a consumer-authored abbreviation.
+
 ### 10.0 A duration is not a relative offset
 
 `relative` says **when** relative to something else. `duration` says **how
@@ -1320,6 +1343,64 @@ payload, so prose can be regenerated without re-researching the fact.
 The rule above binds the 1962 production workflow from `proper` v17. The
 postconciliar adapter uses the owning edition's reviewed appointment input;
 it does not import the 1962 calendar, source owner, or research judgments.
+
+**Compact orientation rows (2026-10-12).** A schema-2 study opts into
+`chronology_presentation = "orientation-v1"` in `proper-components.toml`.
+`proper-study` v10 requires this declaration from study preflight onward. During
+research, before that manifest exists, generate with:
+
+```sh
+tools/tpt proper-chronology annotations --document <document> --provider <provider> --presentation orientation-v1 --write
+```
+
+The explicit option must agree with a declaration once present. The same
+`research/chronology-annotations.tex` retains the detailed element annotations
+and adds schema-5 orientation rows. The audit record and legacy output are
+unchanged. The command's text and JSON output list each row's stable key,
+passages, temporal subject, relation, and concise date alternatives.
+Before the manifest exists, currency checking recognizes the generated
+presentation header and recomputes the entire orientation artifact from the
+corpus. That header grants no authority to its carried dates. Once the manifest
+exists its declaration governs; study preflight requires the schema-2 opt-in.
+
+Place every generated row once inside `chronologyorientationtable`:
+`\chronologyorientationrow{row-key}{short sourced place or context phrase}`.
+The generator owns the entire three-column row: **Passage**, **Occurrence and
+place**, **Date**. The author supplies only the short place/context phrase,
+without an authored date, a replacement subject, or table structure. Name the
+place of the subject being dated: an event site, writer's location, recipient
+location, or attribution's geographic frame are different facts. Empty or
+uncertain geography does not authorize an invented place. Source review still
+judges that prose; generated pairing is not geographic verification.
+
+Each row describes one relation and temporal subject. It carries all answerable
+alternatives for exactly the loci printed beside it, with approximation,
+derived dates, durations, dispute and named profile comparisons kept visible.
+Equal answers may share a row across appointed elements, including Gospel
+long/short forms. Different answers within one element receive separate rows;
+the Daniel and Psalm portions of an Introit cannot inherit each other's date
+or the legacy element-wide “no single date” message. Full appointed references
+are preserved for a complete element; a split row prints its exact canonical
+whole-verse chronology query envelope. Partial-verse appointment limits remain
+in the appointment record and must not be presented as a claim that the whole
+verse is appointed.
+
+Background dates of a named anchor have their own **Historical background**
+row. Its subject, relationship to the passage, and same-year possibility remain
+explicit; the dates do not become dates of the passage or its composition.
+The source-owned compact qualification is used where provided, with the full
+qualification retained in the generated detailed annotation and audit record.
+
+The detailed `\chronologyannotation` interface below remains available for the
+same-owner research appendix. The concise orientation does not replace the
+corpus's evidence or alternatives with a selected date. Preflight compares the
+entire generated artifact, rejects redefined dispatchers, unknown, omitted,
+duplicated or detached rows, authored replacement cells and dates in the place
+phrase. A row key changes with its subject, answer, or passage coverage, so regeneration cannot
+silently attach old authored geography to a different row. Web conversion
+expands each complete row and checks each cell's visible payload. These rules
+supersede the one-element/one-Date-cell requirement below only for this opt-in
+orientation table; existing dossiers retain their original interface.
 
 - `scripts/_proper_chronology.py` is the wiring. It resolves a formulary's
   appointed verses through `scripts/_calendars.py`, the machinery every other

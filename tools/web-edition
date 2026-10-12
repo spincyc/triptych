@@ -713,8 +713,12 @@ CHRONOLOGY_DEFINITION_RE = re.compile(
     r"\\expandafter\s*\\def\s*\\csname\s*"
     r"triptychchronologyannotation@([A-Za-z0-9._:-]+)\s*\\endcsname\s*\{"
 )
+ORIENTATION_DEFINITION_RE = re.compile(
+    r"\\expandafter\s*\\def\s*\\csname\s*"
+    r"triptychchronologyorientation@([A-Za-z0-9-]+)\s*\\endcsname\s*#1\s*\{"
+)
 RAW_CHRONOLOGY_TOKEN_RE = re.compile(
-    r"triptychchronologyannotation@[A-Za-z0-9._:-]+"
+    r"triptychchronology(?:annotation|orientation)@[A-Za-z0-9._:-]+"
 )
 
 
@@ -1102,13 +1106,16 @@ def expand_chronology_annotations(
 ) -> tuple[str, list[str]]:
     """Expand deterministic generated chronology definitions before pandoc."""
     definitions: dict[str, str] = {}
+    orientation: dict[str, str] = {}
     body_pieces, cursor = [], 0
     for source, in_body in ((definition_source, False), (body, True)):
-        for match in CHRONOLOGY_DEFINITION_RE.finditer(source):
+        matches = [(match, definitions) for match in CHRONOLOGY_DEFINITION_RE.finditer(source)]
+        matches += [(match, orientation) for match in ORIENTATION_DEFINITION_RE.finditer(source)]
+        for match, target in sorted(matches, key=lambda pair: pair[0].start()):
             key = match.group(1)
-            if key in definitions:
+            if key in target:
                 raise ConversionError(f"duplicate generated chronology annotation: {key}")
-            definitions[key], end = brace_group(source, match.end() - 1)
+            target[key], end = brace_group(source, match.end() - 1)
             if in_body:
                 # Generated helpers may be imported by a body component. Their
                 # definitions are not prose; only the projected calls render.
@@ -1127,7 +1134,18 @@ def expand_chronology_annotations(
         expected.append(projected)
         return projected
 
-    return replace_grouped_macro(body, "chronologyannotation", 1, resolve), expected
+    body = replace_grouped_macro(body, "chronologyannotation", 1, resolve)
+
+    def resolve_row(arguments: list[str]) -> str:
+        key, place = arguments
+        if key.strip() not in orientation:
+            raise ConversionError(f"no generated chronology orientation row for: {key}")
+        projected = chronology_projection(orientation[key.strip()].replace("#1", place))
+        cells = re.sub(r"\\\\(?:\[[^]]*\])?\s*%?\s*$", "", projected)
+        expected.extend(cell.strip() for cell in split_top_level(cells, re.compile(r"&")))
+        return projected
+
+    return replace_grouped_macro(body, "chronologyorientationrow", 2, resolve_row), expected
 
 
 # TeX's own assignments -- \def, its global and expanding forms, and \let --
@@ -1799,19 +1817,26 @@ def defined_names(text: str) -> set[str]:
 
 def mask_chronology_dispatcher(text: str) -> str:
     """The generated lookup is expanded here, not interpreted by pandoc."""
-    expected = (
+    expected = {
+        "chronologyannotation": (1,
         r"\ifcsname triptychchronologyannotation@#1\endcsname"
         r"\csname triptychchronologyannotation@#1\endcsname"
-        r"\else\PackageError{triptych}{No chronology annotation for #1}{}\fi"
-    )
-    for match in COMMAND_DEFINITION_RE.finditer(text):
-        if (match.group(1) or match.group(2)) != "chronologyannotation":
+        r"\else\PackageError{triptych}{No chronology annotation for #1}{}\fi"),
+        "chronologyorientationrow": (2,
+        r"\ifcsname triptychchronologyorientation@#1\endcsname"
+        r"\csname triptychchronologyorientation@#1\endcsname{#2}"
+        r"\else\PackageError{triptych}{No chronology orientation row for #1}{}\fi"),
+    }
+    for match in reversed(list(COMMAND_DEFINITION_RE.finditer(text))):
+        name = match.group(1) or match.group(2)
+        if name not in expected:
             continue
         count, default, body, opening = command_signature(text, match.end())
-        if (count == 1 and default is None
-                and re.sub(r"\s+", "", body) == re.sub(r"\s+", "", expected)):
+        arity, wanted = expected[name]
+        if (count == arity and default is None
+                and re.sub(r"\s+", "", body) == re.sub(r"\s+", "", wanted)):
             _, end = brace_group(text, opening)
-            return text[:opening] + "{}" + text[end:]
+            text = text[:opening] + "{}" + text[end:]
     return text
 
 

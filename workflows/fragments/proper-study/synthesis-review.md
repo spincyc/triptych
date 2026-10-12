@@ -17,9 +17,16 @@ settled physical-page evidence, not just labels or declared roles. Every
 appointed option remains recognizable. The overview cannot replace the full
 study's individual four-sense distillations. Verify canonical chronology and
 claim-local qualifications, and reject padding or compressed unreadable tables.
+Use the profile's passage-to-occurrence/place/date lookup on the rendered
+orientation table. Check the subject and scope of each visible date, shared
+answers and appendix references; complete detailed annotations in a narrow
+cell are not a concise table. Record the concrete lookup and outcome.
 
 Check that it introduces no new source-dependent claim and that the four-sense
 distinctions remain clear where they affect the argument. Judge it as a useful
 finished document, never as a teaser that requires the study to be understood.
+Recover each interpretation's distinct answer from this prose before consulting
+the expansive study. Check whether pages 5 onward explain and compare reasoning
+beyond the thematic opening, rather than repeating its conclusions.
 Use `SYN-` findings with `research`, `study`, or `synthesis` according to the
 actual owner. An upstream repair reruns this derivation and its cold review.

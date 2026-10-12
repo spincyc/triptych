@@ -123,6 +123,16 @@
 \newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{\linewidth}@{}}{#1}\\[.1em]}
 \newcommand{\dossierevent}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{\linewidth}@{}}{\textit{#1}}\\}
 
+% Opt-in orientation rows keep the dated subject beside its own place and date.
+% Legacy dossiers above retain their published measurements and rendering.
+\newenvironment{chronologyorientationtable}
+{\fontsize{9.5}{11.5}\selectfont\renewcommand{\arraystretch}{1.0}%
+ \setlength{\LTpre}{.1em}\setlength{\LTpost}{0pt}%
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{.23\linewidth}>{\raggedright\arraybackslash}p{.49\linewidth}>{\raggedright\arraybackslash}p{\dimexpr.28\linewidth-4\tabcolsep\relax}@{}}
+ \toprule\textbf{Passage} & \textbf{Occurrence and place} & \textbf{Date}\\
+ \midrule\endhead}
+{\bottomrule\end{longtable}}
+
 \newenvironment{comparisontable}[4]
 {\small\renewcommand{\arraystretch}{1.12}%
  \begin{longtable}{@{}>{\raggedright\arraybackslash}p{.17\linewidth}>{\raggedright\arraybackslash}p{.25\linewidth}>{\raggedright\arraybackslash}p{.25\linewidth}>{\raggedright\arraybackslash}p{\dimexpr.33\linewidth-6\tabcolsep\relax}@{}}

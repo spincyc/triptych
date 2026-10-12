@@ -1553,6 +1553,7 @@ units:
       - profile: catholic-traditional-v1
         disposition: preferred
         basis_class: traditional-catholic
+        orientation_qualification: "Conjectural early dating; later date possible"
         basis: >-
           McMahon's "Esther" in the Catholic Encyclopedia states that "the absence in
           the text of allusion to Jerusalem seems to lead to the conclusion that the
@@ -1868,6 +1869,7 @@ units:
 
   - id: composition.book-of-daniel.prayer-of-azarias
     title: The Prayer of Azarias and the Song of the Three Children (Dan. iii, 24-90)
+    orientation_title: "Prayer of Azarias and Song of the Three Children"
     scope: {book: Dan, chapter: 3, first: 24, last: 90}
     dates:
       - profile: catholic-traditional-v1
@@ -2961,6 +2963,7 @@ units:
 
   - id: critical.psalms.latest-composition-boundary
     title: The latest composition boundary shared by the Psalms
+    orientation_title: "Psalms"
     scope: {book: Ps}
     note: >-
       The Psalter is an anthology, so this is not one composition date for the

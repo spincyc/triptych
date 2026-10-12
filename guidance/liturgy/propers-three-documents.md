@@ -196,6 +196,17 @@ or theologically consequential feature, rather than passing over it because a
 more familiar theme is easier to write. These are judgments about the text and
 sources, not a quota of doctrines, authors or pages.
 
+Before drafting, identify a consequential textual difficulty on which each
+interpretation turns and follow the principal witnesses' reasoning through it:
+what words prompt the question,
+what inference each witness makes, and what changes if his answer is accepted.
+A thematic resemblance or a correct quotation without that reasoning does not
+carry an interpretation. Apply the editorial standard's proportionate second
+search to a promising but inaccessible witness, including the source family's
+other lawful editions; record the actual limit if the search fails. Retained
+searchable text is a research opportunity, not proof that the pertinent passage
+was read.
+
 ### Liturgical commentators
 
 A liturgical commentator expounds a Mass or office as a whole, as Rupert of
@@ -275,6 +286,14 @@ Conclude with a short comparison showing what the interpretations share and
 where their answers differ. Give each substantial argument one fullest home.
 Depth means explaining why an author reads the text as he does and what that
 reading changes, not accumulating names or repeating the same application.
+Teach the difficulty before resolving it. Identify the speaker and situation,
+explain an unfamiliar image or term when it first matters, and let the reader
+follow the inference from the appointed words to the interpretation. A compact
+quotation, concrete example or comparison earns its place by making that
+inference clearer. Repeated abstract conclusions cannot substitute for this
+development. These are reader outcomes, not compulsory paragraph labels or a
+fixed rhetorical template.
+
 For an ordinary Sunday, roughly 6,000–10,000 words of substantive exposition
 is a useful planning range, not a quota. The finished expansive PDF occupies
 20–50 physical pages, including its terminal apparatus. Evidence and reader
@@ -324,8 +343,8 @@ options as options. This brief orientation does not replace each expansive
 interpretation's own four senses or erase differences developed in the concise
 argument. No preceding cover shifts the physical page positions.
 
-Physical page 2 contains only **Scriptural Date and Location**. Follow the
-owning family's established dossier and evidence rules: the
+Physical page 2 contains only **Scriptural Date and Location**. Its evidence
+follows the owning family's rules: the
 [1962 dossier](roman-1962-propers.md#page-2-scriptural-date-and-location) or
 the [postconciliar reader sequence](postconciliar-propers.md#reader-facing-order).
 Inventory each distinct directly appointed biblical passage once, in canonical
@@ -333,6 +352,9 @@ then verse order, and distinguish composition, attributed setting, narrated
 event, and reception. Use the canonical chronology tool's generated record and
 annotations, including its alternatives, relation labels and unresolved states.
 Do not reuse another Sunday's dates or substitute hand-authored date labels.
+New runs use the concise orientation presentation below; it supersedes the
+older two-tier dossier layout for this page, without weakening those evidence
+rules.
 When the study needs to place another evidence profile beside the default
 answer, declare that exact element/profile/relation/subject selection in
 `research/chronology-profile-comparisons.toml` before regenerating. The
@@ -343,6 +365,46 @@ Postconciliar query inputs identify that edition's own verified appointments
 through the adapter specified in the [chronology profile](../scripture-chronology.md).
 Research review must inspect the new chronology and its controlling sources;
 a formerly date-free study's approval does not cover newly added dates.
+
+### A table that locates the passage
+
+The page answers three connected questions: which appointed passage is this,
+what happens or is written and where, and when does that particular thing
+belong? Declare `chronology_presentation = "orientation-v1"` and use the
+generated row interface defined in [Scripture chronology
+§14.1](../scripture-chronology.md#141-the-propers-wired), in the shared
+`chronologyorientationtable`. Its columns are **Passage**, **Occurrence and
+place**, and **Date**. The generator supplies the passage, dated subject,
+relation and concise date alternatives; the author supplies a short, sourced
+place or contextual phrase. A row must never pair one passage's label with
+an entire composite element's unrelated dates.
+
+Keep narrated events, remembered historical settings, traditional attribution
+or an author's ministry, and composition visibly distinct. Name the action:
+Israel leaves Egypt; Paul writes from captivity; Jesus tells a parable. A
+parable's setting is not a historical date for its fictional characters.
+Distinguish the writer's place from the recipients' and the event's place;
+say when a location is unknown. Do not replace the occurrence with an abstract
+theme. An author's reign or ministry dates that author, never every work
+attributed to him.
+
+Retain the generated material alternatives and uncertainty in short form.
+Consolidate identical chronological answers, including overlapping long and
+short forms, while naming all their appointed uses. Full source names,
+profile explanations, derivation details and verification detail belong in the
+same canonical family's expansive historical appendix and research record,
+precisely referenced from the concise table. Short reader-facing comparison
+labels and `(derived)` remain visible beside the affected date. A source
+qualification that changes a displayed answer remains beside it concisely, with a precise note
+to its fuller explanation. Internal profile keys, research statuses, and
+sentences explaining what a date does not prove are not table content.
+
+Read the rendered page at ordinary size. A reader must be able to find an
+appointed passage and pair its occurrence, place and date without traversing a
+paragraph in another column. Group related rows and use white space to make
+that pairing visible. Repair excessive wording or duplicated answers before
+changing type size; fitting on one page proves only fit. Keep the complete
+historical evidence in the expansive study, not in microscopic table cells.
 
 Physical pages 3 and 4 contain **The Propers: Themes and Movement**, a substantive
 two-page source-grounded argument. Open with a direct thesis and develop the
@@ -362,7 +424,8 @@ available in synthesis mode; the last is its synthesis-only
 `integrated-commentary`. An opening component may also be used within the
 same owner's research study. The inventory binds every appointed element key.
 The chronology component declares `research/chronology-annotations.tex` as a
-reference, imports those generated definitions once, and uses the required
+reference and imports those generated definitions once. New runs use the
+orientation rows above; historical manifests retain their existing
 `\chronodate{element-key}{\chronologyannotation{element-key}}` cells.
 
 Use `zref-user` and `zref-abspage` in the concise entrypoint so settled auxiliary
@@ -550,6 +613,15 @@ Cold reviewers decide those semantic questions. Acceptance requires real
 source support, coherent and distinct interpretations, truthful comparisons,
 four senses for each interpretation, meaningful whole-formulary coverage,
 genuine concision, a speakable exegetical homily, and satisfactory composition.
+The research and study reviewers must test a consequential textual difficulty
+on which an interpretation turns against the actual cited witness, including
+the reasoning that makes the
+answer persuasive. The concise reviewer must recover each reading's distinct
+answer from the concise prose alone before comparing it with the full study.
+The visual reviewer must perform the passage-to-occurrence/place/date lookup
+on the rendered table. Record the concrete locus and outcome in the review;
+a manifest declaration, a source count, physical page markers or the absence
+of overflow does not answer these questions.
 The terminal program gate verifies all three installed PDFs, their exact
 reviewed artifacts and current sources, provenance, canonical web edition,
 correct family catalog, release records, and available publication checks.

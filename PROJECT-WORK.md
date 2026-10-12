@@ -21,13 +21,15 @@ The calendar finding aid resolves that Sunday with the conditional St Luke
 commemoration; edition-specific source verification belongs to context review.
 
 Work is in progress on `feature/propers/codex`, starting from current main
-`5fc4fe6b6`. A read-only comparison of recent reader pages and an implementation
-review of chronology projection precede the new production run. The requested
-table must let a reader identify what happened or was written, where, and when,
-without mistaking an author's era for an event or composition date. Complete
-source evidence and material alternatives remain recoverable. Existing accepted
-publications retain their snapshots; reusable controls and the new Sunday are
-the implementation scope.
+`5fc4fe6b6`. The comparison of recent reader pages and the reusable foundation
+are complete: schema-2 `orientation-v1` distinguishes passage, dated occurrence
+or literary subject, place and complete date alternatives. It consolidates
+equal answers and keeps detailed evidence in the expansive appendix. Workflow
+v10 strengthens passage-level source reasoning, teaching and visual lookup.
+Focused checks and independent review passed, with no generated-output drift
+across 19 existing dossiers. The [audit and independent review](workflows/reviews/propers-quality-2026-10-12/RECORD.md)
+record the evidence, resolved defects and limits. Existing publications retain
+their snapshots. The new Sunday's actual production is next.
 
 Completion requires the improved controls to pass focused checks and independent
 review, the actual three-document workflow to reach ACCEPTED with fresh stage

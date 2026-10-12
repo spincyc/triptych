@@ -636,7 +636,8 @@ def publication(root: Path, provider: str, document: str) -> None:
 
 def check(root: Path, provider: str, document: str, phase: str,
           edition: str | None, *, require_presentation: bool = False,
-          require_format: bool = False, require_authority: bool = False) -> None:
+          require_format: bool = False, require_authority: bool = False,
+          require_orientation: bool = False) -> None:
     scope(root, provider, document)
     leaf = leaf_path(root, provider, document)
     if phase == "scope":
@@ -656,6 +657,8 @@ def check(root: Path, provider: str, document: str, phase: str,
     # Declaration only: the component checker below tests each lane's carrying
     # authors wherever the manifest declares the contract.
     authority_contract(manifest(leaf), required=require_authority)
+    from _proper_chronology import presentation_contract as chronology_presentation
+    chronology_presentation(leaf, required=require_orientation)
     if phase == "content":
         components(root, provider, document, "content", edition)
     elif phase == "artifacts":
@@ -678,6 +681,8 @@ def main() -> int:
                         help="require the shared proper typography contract (proper-study v6)")
     parser.add_argument("--require-authority", action="store_true",
                         help="require the author-standing contract (proper-study v7)")
+    parser.add_argument("--require-orientation", action="store_true",
+                        help="require generated passage/subject/date rows (proper-study v10)")
     parser.add_argument("--date", default="undated")
     parser.add_argument("--review", choices=("research", "study", "synthesis", "homily", "visual", "web"))
     parser.add_argument("--review-contract", choices=RESEARCH_REVIEW_CONTRACTS,
@@ -703,7 +708,8 @@ def main() -> int:
         else:
             check(root, args.provider, args.document, args.phase, args.edition,
                   require_presentation=args.require_presentation, require_format=args.require_format,
-                  require_authority=args.require_authority)
+                  require_authority=args.require_authority,
+                  require_orientation=args.require_orientation)
     except (OSError, ValueError, KeyError, subprocess.TimeoutExpired) as error:
         print(f"proper-study: {error}", file=sys.stderr)
         return 1

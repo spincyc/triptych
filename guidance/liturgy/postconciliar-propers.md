@@ -265,6 +265,12 @@ The following unheaded table has columns `Sense` and `Synthesis` and exactly fou
 
 ## Page-two scriptural date and location
 
+For new schema-2 runs, the [three-document profile's orientation
+table](propers-three-documents.md#a-table-that-locates-the-passage) supersedes
+the dossier layout below. Its shorter display retains the evidence distinctions
+and canonical chronology source requirement. Existing dossier consumers keep
+their original presentation until an authorized substantive revision.
+
 `Scriptural Date and Location` inventories every distinct directly appointed biblical passage and book-identified scriptural adaptation: readings, psalms, scriptural acclamations, and scriptural Missal or ritual texts. Label `Cf.` and equivalent wording as adaptation or allusion; exclude loose echoes in composed orations. Order dossiers by Catholic canonical book order and then chapter and verse. Consolidate repeated passages while naming every unit and branch. Use these conceptual columns:
 
 | `Textual unit / alternative` | `Citation` | `Location` | `Date` |

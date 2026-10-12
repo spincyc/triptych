@@ -10,7 +10,7 @@ available for legacy schema-1 work. The current three-document contract
 restores the established first four pages for the concise companion, while
 its remaining argument and the expansive study follow their distinct roles. Read
 `guidance/liturgy/propers-three-documents.md` for the owning standard. The
-`proper-study` workflow is at version 9. The version paragraphs below say what
+`proper-study` workflow is at version 10. The version paragraphs below say what
 each bump changed.
 
 The driver grammar is unchanged:
@@ -240,6 +240,17 @@ Stages, effort, page ranges and source requirements are unchanged. The v4
 research seal and automatic chronology dependency discovery from version 8
 remain in force. These packet changes require a new run; historical terminal
 records retain their identity.
+
+Version 10 applies the 12 October 2026 reader-page audit. New runs use the
+`orientation-v1` chronology presentation: generated passage/subject/date rows
+and short sourced location phrases replace exhaustive dossier cells. The full
+chronology evidence remains available, and old publications retain their
+original rendering contract. Research and content reviewers test a consequential
+textual difficulty against a witness's actual inference; concise and visual
+reviews test the rendered passage-to-occurrence/place/date lookup. These
+changes preserve stage order, effort, page ranges, and source requirements.
+Finish or supersede active runs before changing their pinned digest; never
+restamp historical verdicts.
 
 ## Overview
 

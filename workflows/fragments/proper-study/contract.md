@@ -51,8 +51,11 @@ overview sense rows on physical page 1; Scriptural Date and Location alone on
 page 2; and The Propers: Themes and Movement on pages 3–4. Developed commentary
 begins on page 5 and interleaves alternatives at their points of comparison.
 Follow the presentation contract and canonical chronology requirements in the
-owning profile; count terminal apparatus within the page limits. The
-homily speaks one intelligible exegetical argument to an adult parish assembly,
+owning profile; count terminal apparatus within the page limits. The new
+chronology presentation is `orientation-v1`: generated passage/subject/date
+rows with concise sourced place descriptions and complete evidence retained in
+the historical appendix. It replaces the legacy exhaustive dossier display.
+The homily speaks one intelligible exegetical argument to an adult parish assembly,
 unless `ARGS.audience` names another audience, ordinarily for 10–12 minutes.
 It is finished prose, not an outline or advice to
 a preacher. Exact sources and delivery estimates belong outside the speech.

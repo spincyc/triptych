@@ -21,6 +21,10 @@ Develop the particular exegetical questions and distinctive arguments or
 inferences audited under the three-document profile. Different readings may
 answer the same question. Let their textual difficulties drive the exposition;
 do not return each reading to the same application through different headings.
+Teach the question, the appointed words that raise it, and the witness's
+inference before drawing its consequence, as the profile's pedagogy standard
+requires. Concrete textual detail should carry the exposition; repeated
+abstract conclusions do not deepen it.
 
 Create or revise the full schema-2 `proper-components.toml`, declaring future
 synthesis and homily components as well as the actual research files. The
@@ -35,6 +39,9 @@ the future concise opening roles. Declare
 lets them carry the reading. Follow the checker and owning profile for exact
 fields. Each interpretive lane
 is a separate component. Keep shared source ownership and references explicit.
+Declare `chronology_presentation = "orientation-v1"` for the concise table.
+Give its generated dates and contextual claims a reviewed home in the study,
+with exact historical-appendix references for fuller alternatives and evidence.
 
 Import `common/preamble` then `common/propers-format` literally and declare
 `format_contract = "propers-format-v1"`. Use the shared title, table, dossier,

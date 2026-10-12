@@ -314,7 +314,7 @@ def annotations(arguments: argparse.Namespace) -> dict[str, object]:
     """Project the dossier into compact, grouped publication annotations."""
     dossier = _dossier(arguments)
     _require_publication_profile(arguments, dossier)
-    found = _wiring.annotations(dossier)
+    found = _wiring.annotations(dossier, presentation=arguments.presentation)
 
     requested = arguments.format
     if arguments.json:
@@ -512,6 +512,10 @@ def main(argv: list[str] | None = None) -> int:
         help="projection format (default: text; write/check imply tex)",
     )
     annotation_action = annotation_writer.add_mutually_exclusive_group()
+    annotation_writer.add_argument(
+        "--presentation", choices=(_wiring.ORIENTATION_PRESENTATION,),
+        help="generate orientation rows before the component manifest exists; must agree when declared",
+    )
     annotation_action.add_argument(
         "--write",
         action="store_true",

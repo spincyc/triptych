@@ -23,6 +23,10 @@ marker evidence with the actual pages. No padding, unreadable reduction or
 logical page-counter trick meets this contract. Beauty does not require images.
 Ensure the substantive pages actually contain the accepted argument and that
 source notes are present without intruding into the spoken homily.
+Perform the profile's passage-to-occurrence/place/date lookup at normal reading
+size. Record a concrete example and outcome. The table must make the pairing
+visible without reading a paragraph down another column; clipping-free fit and
+correct physical-page markers do not establish that usability.
 
 Use `VIS-` findings. Regenerating disposable outputs from unchanged approved
 sources belongs to `artifacts`. A repair requiring TeX, component or style

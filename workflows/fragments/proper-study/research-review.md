@@ -19,6 +19,13 @@ honest unresolved occasion alongside textual history.
 Postconciliar appointment query inputs must derive from that edition's own
 verified owner, never another family's calendar or a neighboring Sunday's data.
 Confirm that all controlling chronology evidence enters the research seal.
+Inspect the generated orientation rows against their actual passage scope,
+subject and relation. Check the research supporting the planned occurrence
+and place phrases, and that
+an author's era or a collection-wide bound has not become a passage date.
+Full evidence remains in the research; the study author subsequently supplies
+the historical appendix and precise references, judged at study review. Reader rows
+retain material alternatives and concise qualifications without audit prose.
 
 Test every proposed interpretation as a complete argument, supported by
 substantive contributions from at least two distinct Fathers or saints, as the
@@ -38,6 +45,9 @@ postconciliar Ordinary Time target, does the evidence respect independent
 semi-continuous courses and shared Missal prayers? For a 1962 target, does every
 such claim instead rest on evidence from that rite's own appointments and
 transmission? Refuse thin themes or source lists that cannot support a study.
+Perform the three-document profile's consequential-difficulty test against an
+actual cited witness and record the locus and outcome, not a declaration that
+the sources are sufficient.
 
 Use stable `RES-` finding IDs and repair target `research`. PASS authorizes
 study drafting from this bounded evidence, not a claim of exhaustive scholarship.

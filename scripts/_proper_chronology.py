@@ -39,11 +39,13 @@ canonical concordance before the same chronology queries below.
 from __future__ import annotations
 
 import json
+import hashlib
 import os
 import re
 import site
 import subprocess
 import sys
+import tomllib
 from functools import lru_cache
 from pathlib import Path
 from typing import NamedTuple
@@ -78,6 +80,8 @@ ANNOTATIONS_SCHEMA = 3
 LEGACY_ANNOTATIONS_SCHEMA = 2
 ANNOTATIONS_TYPE = "proper-chronology-annotations"
 ANNOTATIONS_GENERATOR = "tools/tpt proper-chronology annotations"
+ORIENTATION_PRESENTATION = "orientation-v1"
+ORIENTATION_SCHEMA = 5
 
 # Optional, authored selection of an additional evidence profile to show as a
 # comparison.  It is deliberately separate from both the appointment inventory
@@ -149,6 +153,10 @@ class Claim(NamedTuple):
     # The resolved link's warrant, retained for the research seal without
     # presenting it as evidence for the event's date or changing claim identity.
     binding_sources: tuple[str, ...] = ()
+    orientation_title: str = ""
+    orientation_label: str = ""
+    orientation_qualification: str = ""
+    reporting_exception: str | None = None
 
     def sort_key(self) -> tuple:
         return (
@@ -185,7 +193,9 @@ class Claim(NamedTuple):
 
 
 # Claim fields the record does not carry; see `Claim`.
-UNRECORDED_CLAIM_FIELDS = ("reaches", "derived", "binding_sources")
+UNRECORDED_CLAIM_FIELDS = ("reaches", "derived", "binding_sources",
+                         "orientation_title", "orientation_label",
+                         "orientation_qualification", "reporting_exception")
 
 
 class Element(NamedTuple):
@@ -226,6 +236,7 @@ class AnchorCandidate(NamedTuple):
     basis: str
     note: str
     reporting_exception: str | None
+    display_qualification: str = ""
 
 
 class AnchorContext(NamedTuple):
@@ -261,6 +272,7 @@ class Dossier(NamedTuple):
     profile_comparisons: tuple[ProfileComparison, ...] = ()
     comparison_dependencies: tuple[tuple[str, str], ...] = ()
     anchor_contexts: tuple[AnchorContext, ...] = ()
+    presentation: str = ""
 
     def element(self, key: str) -> Element | None:
         for item in self.elements:
@@ -313,6 +325,21 @@ class AnnotationElement(NamedTuple):
     groups: tuple[AnnotationGroup, ...]
 
 
+class OrientationPassage(NamedTuple):
+    element_key: str
+    name: str
+    refs: tuple[str, ...]
+    loci: tuple[str, ...]
+
+
+class OrientationRow(NamedTuple):
+    """One temporal subject and answer, with exactly the passages it reaches."""
+
+    key: str
+    passages: tuple[OrientationPassage, ...]
+    group: AnnotationGroup
+
+
 class AnnotationProjection(NamedTuple):
     """A stable publication projection of a proper chronology dossier."""
 
@@ -327,6 +354,8 @@ class AnnotationProjection(NamedTuple):
     appointment_dependencies: tuple[tuple[str, str], ...] = ()
     appointment_notes: tuple[str, ...] = ()
     comparison_dependencies: tuple[tuple[str, str], ...] = ()
+    presentation: str = ""
+    orientation_rows: tuple[OrientationRow, ...] = ()
 
 
 # --- From a leaf id to its mass --------------------------------------------
@@ -545,11 +574,13 @@ def _claims_at(locus: str, profile: str | None, corpus_root: Path | None) -> tup
     answer = _chronology.chronology(locus, profile=profile, root=corpus_root)
     if not answer.resolved:
         return answer.status, answer.reason, []
-    claims = [_assertion_claim(item, str(answer.locus)) for item in answer.assertions]
+    claims = [_assertion_claim(item, str(answer.locus), corpus_root) for item in answer.assertions]
     return answer.status, answer.note, claims
 
 
-def _assertion_claim(item, locus: str) -> Claim:
+def _assertion_claim(item, locus: str, corpus_root: Path | None = None) -> Claim:
+    corpus = _chronology.load(corpus_root)
+    subject = corpus.events.get(item.subject) or corpus.units.get(item.subject)
     return Claim(
             relation=item.relation,
             subject=item.subject,
@@ -571,6 +602,11 @@ def _assertion_claim(item, locus: str) -> Claim:
             ),
             derived=item.claim.date.derived,
             binding_sources=tuple(getattr(item, "binding_sources", ())),
+            orientation_title=subject.orientation_title if subject else "",
+            orientation_label=item.claim.orientation_label,
+            orientation_qualification=(item.claim.orientation_qualification
+                                       or item.claim.context_qualification),
+            reporting_exception=item.claim.reporting_exception,
         )
 
 
@@ -585,7 +621,7 @@ def _anchor_contexts(elements: tuple[Element, ...], corpus_root: Path | None) ->
             locus = parent.reaches[0].locus
             answer = _chronology.chronology(locus, profile=parent.profile, root=corpus_root)
             for context in _chronology.anchor_contexts(answer, corpus_root):
-                owner = _assertion_claim(context.parent, locus)
+                owner = _assertion_claim(context.parent, locus, corpus_root)
                 if owner.identity_key() != parent.identity_key():
                     continue
                 candidates = []
@@ -597,10 +633,15 @@ def _anchor_contexts(elements: tuple[Element, ...], corpus_root: Path | None) ->
                         disposition=claim.disposition, answerability=claim.answerability,
                         basis_class=claim.basis_class, profile=claim.profile,
                         sources=claim.sources, reaches=(), derived=claim.derived,
+                        orientation_title=_chronology.load(corpus_root).events[context.subject].orientation_title,
+                        orientation_label=claim.orientation_label,
+                        orientation_qualification=(claim.orientation_qualification
+                                                   or claim.context_qualification),
+                        reporting_exception=claim.reporting_exception,
                     )
                     candidates.append(AnchorCandidate(index, projected,
                         claim.context_qualification, claim.basis, claim.note,
-                        claim.reporting_exception))
+                        claim.reporting_exception, claim.orientation_qualification))
                 contexts.append(AnchorContext(element.key, parent, context.subject,
                     context.title, context.direction, tuple(candidates)))
     return tuple(contexts)
@@ -918,7 +959,33 @@ def dossier(
         profile_comparisons=comparisons,
         comparison_dependencies=comparison_dependencies,
         anchor_contexts=_anchor_contexts(held_elements, corpus_root),
+        presentation=presentation_contract(root / "src" / provider / document),
     )
+
+
+def presentation_contract(leaf: Path, *, required: bool = False) -> str:
+    """Presentation opts in without changing the corpus answer or old artifacts."""
+    path = leaf / "proper-components.toml"
+    if not path.is_file() and not required:
+        generated = leaf / ANNOTATIONS_RECORD
+        if generated.is_file():
+            declarations = re.findall(r"^% presentation: (.*)$", generated.read_text(), re.M)
+            if declarations:
+                if declarations != [ORIENTATION_PRESENTATION]:
+                    raise ChronologyWiringError("unknown or repeated generated chronology presentation")
+                # Before authoring creates the manifest, this generated header
+                # selects format only. Currency still regenerates every byte
+                # from the corpus, never trusting a claim in the carried file.
+                return ORIENTATION_PRESENTATION
+    data = tomllib.loads(path.read_text()) if path.is_file() else {}
+    value = data.get("chronology_presentation", "")
+    if not value and not required:
+        return ""
+    if value != ORIENTATION_PRESENTATION or data.get("schema") != 2:
+        raise ChronologyWiringError(
+            f"chronology_presentation must be {ORIENTATION_PRESENTATION!r} "
+            "in a schema-2 proper-components.toml")
+    return value
 
 
 # --- From the audit record to publication annotations ----------------------
@@ -1131,7 +1198,7 @@ def _gap_group(relation: str, status: str, reason: str) -> AnnotationGroup:
     )
 
 
-def annotations(found: Dossier) -> AnnotationProjection:
+def annotations(found: Dossier, *, presentation: str | None = None) -> AnnotationProjection:
     """Project a dossier into complete, grouped publication annotations.
 
     Only elements with appointed Scripture need a Date cell. Every candidate
@@ -1144,6 +1211,11 @@ def annotations(found: Dossier) -> AnnotationProjection:
     date. Psalm elements likewise disclose an unresolved historical occasion;
     neither an attribution nor a later prophetic referent fills that gap.
     """
+    selected = found.presentation if presentation is None else presentation
+    if selected not in ("", ORIENTATION_PRESENTATION):
+        raise ChronologyWiringError(f"unknown chronology presentation: {selected!r}")
+    if found.presentation and selected != found.presentation:
+        raise ChronologyWiringError("presentation disagrees with proper-components.toml")
     projected: list[AnnotationElement] = []
     for element in found.elements:
         if not element.loci:
@@ -1299,7 +1371,176 @@ def annotations(found: Dossier) -> AnnotationProjection:
         appointment_dependencies=found.appointment_dependencies,
         appointment_notes=found.appointment_notes,
         comparison_dependencies=found.comparison_dependencies,
+        presentation=selected,
+        orientation_rows=orientation_rows(found) if selected else (),
     )
+
+
+def _orientation_claim(claim: Claim) -> AnnotationClaim:
+    # A recurring month/day has no year; its source names the calendar/month.
+    # The normalized 01-14 alone would read as an unexplained modern date.
+    value = (claim.orientation_label or
+             (claim.label if claim.precision in {"month-day", "day"}
+              else concise_display_label(claim)))
+    if claim.derived and (claim.orientation_label or claim.precision in {"month-day", "day"}):
+        value += " (derived)"
+    if claim.reporting_exception and not claim.orientation_qualification:
+        raise ChronologyWiringError(
+            f"{claim.subject}: an orientation claim admitted by reporting exception "
+            "requires a source-owned orientation_qualification or context_qualification")
+    if claim.orientation_qualification:
+        value += f" ({claim.orientation_qualification})"
+    return _annotation_claim(claim)._replace(
+        title=claim.orientation_title or claim.title, display_label=value)
+
+
+def _locus_order(locus: str) -> tuple[int, int, int]:
+    token, chapter, verse = locus.split(".")
+    order = list(_tokens().values())
+    return (order.index(token), int(chapter), int(verse))
+
+
+def _passage_refs(loci: tuple[str, ...]) -> tuple[str, ...]:
+    """Compact canonical query envelopes, never a second citation parser."""
+    chapters: dict[tuple[str, str], list[int]] = {}
+    for locus in sorted(set(loci), key=_locus_order):
+        token, chapter, verse = locus.split(".")
+        chapters.setdefault((token, chapter), []).append(int(verse))
+    refs = []
+    for (token, chapter), verses in chapters.items():
+        spans = []
+        first = last = verses[0]
+        for verse in verses[1:]:
+            if verse == last + 1:
+                last = verse
+            else:
+                spans.append(str(first) if first == last else f"{first}–{last}")
+                first = last = verse
+        spans.append(str(first) if first == last else f"{first}–{last}")
+        refs.append(f"{token} {chapter}:{','.join(spans)}")
+    return tuple(refs)
+
+
+def orientation_rows(found: Dossier) -> tuple[OrientationRow, ...]:
+    """Group equal answers, retaining each subject's exact locus reach.
+
+    The intersection used by the legacy Date cell cannot orient a mixed
+    appointment. Here each locus contributes its complete relation/subject
+    candidate set. Only equal sets share a row; neither a union of alternatives
+    nor a date from one part can be attributed to another part.
+    """
+    held: dict[str, tuple[AnnotationGroup, dict[str, set[str]]]] = {}
+
+    def add(element: Element, loci: tuple[str, ...], group: AnnotationGroup) -> None:
+        semantic = (group.relation, group.status, group.requested_profile,
+                    tuple(claim._replace(reaches=()) for claim in group.claims),
+                    group.anchor_context._replace(element_key="")
+                    if group.anchor_context else None)
+        key = "row-" + hashlib.sha256(json.dumps(semantic).encode()).hexdigest()[:16]
+        if key not in held:
+            held[key] = (group, {})
+        previous, passages = held[key]
+        # Merge the audit reaches too: consolidation does not discard warrants.
+        claims = tuple(a._replace(reaches=tuple(sorted(set(a.reaches + b.reaches))))
+                       for a, b in zip(previous.claims, group.claims))
+        held[key] = (previous._replace(claims=claims), passages)
+        passages.setdefault(element.key, set()).update(loci)
+
+    for element in found.elements:
+        for locus in element.loci:
+            groups: dict[tuple[str, str], list[Claim]] = {}
+            for claim in element.claims:
+                if any(reach.locus == locus for reach in claim.reaches):
+                    groups.setdefault((claim.relation, claim.subject), []).append(claim)
+            for (relation, _subject), candidates in groups.items():
+                claims = tuple(_orientation_claim(claim)._replace(
+                    reaches=tuple(reach for reach in claim.reaches if reach.locus == locus))
+                    for claim in sorted(candidates, key=lambda claim: (
+                        _chronology.DISPOSITIONS.index(claim.disposition), claim.date, claim.label)))
+                add(element, (locus,), AnnotationGroup(
+                    relation, _group_status(claims), "", claims))
+            relations = {relation for relation, _subject in groups}
+            if locus.startswith("Ps.") and not relations & PSALM_OCCASION_RELATIONS:
+                add(element, (locus,), _gap_group("historical-setting", "research-pending", ""))
+            if element.key.startswith("gospel") and "narrated-event" not in relations:
+                add(element, (locus,), _gap_group("narrated-event", "research-pending", ""))
+            if not groups:
+                add(element, (locus,), _gap_group("composition", element.status, element.reason))
+        for comparison in found.profile_comparisons:
+            if comparison.element_key != element.key:
+                continue
+            for locus in element.loci:
+                claims = tuple(_orientation_claim(claim)._replace(
+                    reaches=tuple(reach for reach in claim.reaches if reach.locus == locus))
+                    for claim in comparison.claims
+                    if any(reach.locus == locus for reach in claim.reaches))
+                if claims:
+                    add(element, (locus,), AnnotationGroup(
+                        comparison.relation, _group_status(claims), comparison.reason, claims,
+                        comparison.requested_profile, comparison.requested_profile_name))
+        for context in found.anchor_contexts:
+            if context.element_key != element.key:
+                continue
+            claims = tuple(_orientation_claim(candidate.claim)._replace(
+                display_label=_orientation_anchor_value(candidate))
+                for candidate in context.candidates)
+            loci = tuple(locus for locus in element.loci
+                         if any(reach.locus == locus for reach in context.parent.reaches))
+            if not loci:
+                continue
+            add(element, loci, AnnotationGroup(
+                "anchor-context", "context", "", claims, anchor_context=context))
+
+    rows = []
+    for key, (group, by_element) in held.items():
+        passages = []
+        for element in found.elements:
+            if element.key not in by_element:
+                continue
+            loci = tuple(sorted(by_element[element.key], key=_locus_order))
+            refs = (element.refs if set(loci) == set(element.loci)
+                    else _passage_refs(loci))
+            passages.append(OrientationPassage(element.key, element.name, refs, loci))
+        coverage = tuple((p.element_key, p.refs, p.loci) for p in passages)
+        row_key = "row-" + hashlib.sha256(json.dumps((key, coverage)).encode()).hexdigest()[:16]
+        rows.append(OrientationRow(row_key, tuple(passages), group))
+    return tuple(sorted(rows, key=lambda row: (
+        min(_locus_order(locus) for passage in row.passages for locus in passage.loci),
+        ANNOTATION_RELATION_ORDER.get(row.group.relation, 999),
+        row.group.requested_profile,
+        row.group.claims[0].subject if row.group.claims else "", row.key)))
+
+
+def _orientation_anchor_value(candidate: AnchorCandidate) -> str:
+    """The source owns abbreviation; absent it, preserve the full caveat."""
+    qualification = candidate.display_qualification or candidate.qualification
+    value = concise_display_label(candidate.claim)
+    return f"{value} ({qualification})" if qualification else value
+
+
+def orientation_subject(row: OrientationRow) -> str:
+    group = row.group
+    if group.anchor_context:
+        return (f"Historical background: {group.claims[0].title}; "
+                f"setting {group.anchor_context.direction} this event, "
+                "possibly in the same year")
+    heading = _group_heading(group)
+    if not group.claims:
+        return heading
+    return f"{heading}: {group.claims[0].title}"
+
+
+def orientation_date(row: OrientationRow) -> str:
+    group = row.group
+    if not group.claims:
+        return "Occasion date unresolved" if group.relation == "historical-setting" else "Date unresolved"
+    prefix = "Disputed: " if _group_status(group.claims) == "disputed" else ""
+    return prefix + _candidate_display(group, lambda claim: claim.display_label)
+
+
+def orientation_passage(row: OrientationRow) -> str:
+    return "; ".join(dict.fromkeys(
+        f"{passage.name}: {', '.join(passage.refs)}" for passage in row.passages))
 
 
 def annotation_payload(found: AnnotationProjection) -> dict[str, object]:
@@ -1321,6 +1562,17 @@ def annotation_payload(found: AnnotationProjection) -> dict[str, object]:
            if found.appointment_dependencies else {}),
         **({"comparison_dependencies": dict(found.comparison_dependencies)}
            if found.comparison_dependencies else {}),
+        **({"presentation": found.presentation,
+            "orientation_rows": [
+                {"key": row.key, "passages": [passage._asdict() for passage in row.passages],
+                 "relation": row.group.relation,
+                 "subject": row.group.claims[0].subject if row.group.claims else "",
+                 "requested_profile": row.group.requested_profile,
+                 "passage_display": orientation_passage(row),
+                 "subject_display": orientation_subject(row),
+                 "date_display": orientation_date(row)}
+                for row in found.orientation_rows]}
+           if found.presentation else {}),
         "elements": [
             {
                 "key": element.key,
@@ -1430,6 +1682,8 @@ def _group_display(group: AnnotationGroup, *, comparison_enabled: bool = False) 
 
 
 def _annotation_schema(found: AnnotationProjection) -> int:
+    if found.presentation:
+        return ORIENTATION_SCHEMA
     if any(group.anchor_context for element in found.elements for group in element.groups):
         return ANCHOR_CONTEXT_SCHEMA
     return ANNOTATIONS_SCHEMA if found.comparison_dependencies else LEGACY_ANNOTATIONS_SCHEMA
@@ -1467,6 +1721,10 @@ def _anchor_payload(context: AnchorContext) -> dict[str, object]:
 
 def render_annotations_text(found: AnnotationProjection) -> str:
     """A compact human-readable view of the annotation projection."""
+    if found.presentation:
+        return "\n".join(
+            f"{row.key}\n  {orientation_passage(row)}\n  {orientation_subject(row)}\n  {orientation_date(row)}"
+            for row in found.orientation_rows) + "\n"
     if not found.elements:
         return (found.reason or "No scriptural element resolved for this formulary") + "\n"
     lines: list[str] = []
@@ -1677,7 +1935,7 @@ def render_annotations_tex(found: AnnotationProjection) -> str:
         r"    \PackageError{triptych}{No chronology annotation for #1}{}%",
         r"  \fi}",
     ]
-    if _annotation_schema(found) == ANCHOR_CONTEXT_SCHEMA:
+    if any(group.anchor_context for element in found.elements for group in element.groups):
         lines[6:6] = [
             r"\newcommand{\chronologyannotationanchorclaim}[9]{#9}",
             r"\newcommand{\chronologyannotationanchorgroup}[8]{#8}",
@@ -1715,6 +1973,46 @@ def render_annotations_tex(found: AnnotationProjection) -> str:
                 f"  {spacer}{_tex_group(group, comparison_enabled=bool(found.comparison_dependencies))}%"
             )
         lines.append("}")
+    if found.presentation:
+        lines.extend([
+            f"% presentation: {found.presentation}",
+            r"\newcommand{\chronologyorientationrow}[2]{%",
+            r"  \ifcsname triptychchronologyorientation@#1\endcsname",
+            r"    \csname triptychchronologyorientation@#1\endcsname{#2}%",
+            r"  \else",
+            r"    \PackageError{triptych}{No chronology orientation row for #1}{}%",
+            r"  \fi}",
+        ])
+        for row in found.orientation_rows:
+            group = row.group
+            if group.anchor_context:
+                context = group.anchor_context
+                def render_claim(claim, *, repeated=False):
+                    candidate = context.candidates[group.claims.index(claim)]
+                    return r"\chronologyannotationanchorclaim" + "".join(
+                        "{" + tex_escape(str(value)) + "}" for value in (
+                            context.subject, candidate.index, claim.profile,
+                            claim.disposition, ",".join(claim.sources), candidate.claim.basis_class,
+                            claim.label, candidate.qualification,
+                            "" if repeated else claim.display_label))
+                values = _candidate_display(group, render_claim,
+                    lambda claim: render_claim(claim, repeated=True))
+            else:
+                render_claim = (lambda claim: _tex_comparison_claim(claim, group.requested_profile)
+                                if group.requested_profile else _tex_claim(claim))
+                values = (_candidate_display(group, render_claim,
+                    lambda claim: render_claim(claim._replace(display_label="")))
+                    if group.claims else tex_escape(orientation_date(row)))
+            if group.claims and _group_status(group.claims) == "disputed":
+                values = "Disputed: " + values
+            lines.extend([
+                "\\expandafter\\def\\csname "
+                f"triptychchronologyorientation@{row.key}" + r"\endcsname#1{%",
+                tex_escape(orientation_passage(row)) + " & "
+                + tex_escape(orientation_subject(row)) + ". #1 & "
+                + values + r"\\[.25em]%",
+                "}",
+            ])
     return "\n".join(lines) + "\n"
 
 

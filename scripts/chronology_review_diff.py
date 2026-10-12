@@ -162,7 +162,9 @@ def claim(c):
             "answerability": getattr(c, "answerability", "answerable"),
             "basis_class": getattr(c, "basis_class", ""),
             "reporting_exception": getattr(c, "reporting_exception", None),
-            "context_qualification": getattr(c, "context_qualification", "")}
+            "context_qualification": getattr(c, "context_qualification", ""),
+            "orientation_qualification": getattr(c, "orientation_qualification", ""),
+            "orientation_label": getattr(c, "orientation_label", "")}
 
 def span(s):
     return [s.system, s.token, s.chapter, s.first, s.last]
@@ -175,10 +177,12 @@ for pid, entry in corpus.profiles.items():
     out["profiles"][pid] = entry
 for event in corpus.events.values():
     for i, c in enumerate(event.claims):
-        out["claims"]["event:%s#%d" % (event.id, i)] = claim(c)
+        out["claims"]["event:%s#%d" % (event.id, i)] = dict(claim(c),
+            orientation_title=getattr(event, "orientation_title", ""))
 for unit in corpus.units.values():
     for i, c in enumerate(unit.claims):
-        out["claims"]["unit:%s#%d" % (unit.id, i)] = claim(c)
+        out["claims"]["unit:%s#%d" % (unit.id, i)] = dict(claim(c),
+            orientation_title=getattr(unit, "orientation_title", ""))
 for b in corpus.bindings:
     out["bindings"].append({"relation": b.relation, "event": b.event,
                             "scope": [span(s) for s in b.scope],
@@ -294,6 +298,9 @@ FIELDS_MANIFEST = (
     ("basis_class", lambda c: c.get("basis_class", "")),
     ("reporting_exception", lambda c: c.get("reporting_exception")),
     ("context_qualification", lambda c: c.get("context_qualification", "")),
+    ("orientation_qualification", lambda c: c.get("orientation_qualification", "")),
+    ("orientation_title", lambda c: c.get("orientation_title", "")),
+    ("orientation_label", lambda c: c.get("orientation_label", "")),
     ("date", lambda c: _date_text(c["date"])),
     ("anchor", _anchor),
     ("within", _within),

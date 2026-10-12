@@ -3177,6 +3177,7 @@ events:
             of: israel.monarchy.temple-begun
             statement: "in the four hundred and eightieth year after the children of Israel came out of the land of Egypt, in the fourth year of the reign of Solomon over Israel"
           label: "the four hundred and eightieth year after the children of Israel came out of the land of Egypt"
+        orientation_label: "Temple begun in the 480th year after the Exodus (Vulgate)"
       - profile: catholic-traditional-v1
         disposition: alternate
         basis_class: traditional-catholic
@@ -3200,6 +3201,7 @@ events:
             of: israel.monarchy.temple-begun
             statement: "the 480th year (the Septuagint gives 440 years) after the Exodus"
           label: "the Septuagint gives 440 years"
+        orientation_label: "Temple begun in the 440th year after the Exodus (Septuagint)"
       - profile: catholic-traditional-v1
         disposition: alternate
         answerability: preserved
@@ -4216,6 +4218,7 @@ events:
 
   - id: israel.monarchy.david-traditional-era
     title: David (reign in the usual chronology)
+    orientation_title: "David's reign"
     note: >-
       A reference era for an explicitly witnessed traditional attribution to
       David. The regnal span orients the reader to the attributed figure; it
@@ -4292,6 +4295,7 @@ events:
         disposition: preferred
         basis_class: reported-excluded
         reporting_exception: ussher-reported-by-a-ranked-catholic-source
+        orientation_qualification: "Haydock edition reporting Ussher"
         basis: >-
           The 2014 Loreto / Feeney Memorial printing of the Douay-Rheims with
           Haydock's commentary carries a continuous marginal chronology in the
@@ -6242,6 +6246,7 @@ events:
 
   - id: israel.exile.third-captivity
     title: "The third captivity of Juda: the destruction of Jerusalem under Sedecias"
+    orientation_title: "Jerusalem's destruction under Sedecias"
     note: >-
       The Catholic Encyclopedia is not internally consistent about this year:
       the articles inspected here print 586, 587, 588 and, in one place that
@@ -6283,6 +6288,7 @@ events:
           from: {year: 3416, era: am}
           label: "A.M. 3416"
         context_qualification: "Haydock reporting Ussher; A.M. is not converted"
+        orientation_qualification: "Haydock reporting Ussher"
       - profile: catholic-traditional-v1
         disposition: alternate
         basis_class: traditional-catholic
@@ -6303,6 +6309,7 @@ events:
           from: {year: 586, era: bc}
           label: "586 B.C."
         context_qualification: "Reid and Meistermann, Catholic Encyclopedia"
+        orientation_qualification: "Reid and Meistermann"
       - profile: catholic-traditional-v1
         disposition: alternate
         basis_class: traditional-catholic
@@ -6321,6 +6328,7 @@ events:
           from: {year: 587, era: bc}
           label: "the fall of Jerusalem (587 B.C.)"
         context_qualification: "Schets, Catholic Encyclopedia"
+        orientation_qualification: "Schets"
       - profile: catholic-traditional-v1
         disposition: alternate
         basis_class: reported-traditional
@@ -6362,6 +6370,7 @@ events:
         context_qualification: >-
           Petavius table reported by Sloet; retained transcription checked,
           printed-page verification still pending
+        orientation_qualification: "Petavius via Sloet; transcription only"
       - profile: catholic-traditional-v1
         disposition: alternate
         answerability: preserved

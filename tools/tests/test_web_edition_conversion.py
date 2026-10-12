@@ -984,6 +984,35 @@ class WebEditionConversionTests(unittest.TestCase):
         self.assertNotIn("536", markdown)
         self.assertNotIn("chronologyannotationanchor", markdown)
 
+    def test_orientation_rows_keep_passage_subject_place_and_dates_through_pandoc(self) -> None:
+        import _proper_chronology as chronology
+        from tools.tests.test_chronology_orientation import TWENTIETH, NEXT, PC54
+        fixtures = (
+            (TWENTIETH, ("Introit: Ps 118:1", "Introit: Dan 3:29,31,35", "Before c. 165 B.C.",
+                          "Haydock reporting Ussher", "Petavius via Sloet; transcription only")),
+            (NEXT, ("Conjectural early dating; later date possible", "480th year after the Exodus",
+                    "440th year after the Exodus")),
+            (PC54, ("A.M. 2944 (Haydock edition reporting Ussher)",)),
+        )
+        for document, values in fixtures:
+            projection = chronology.annotations(chronology.dossier(document, provider="gpt"),
+                                                presentation="orientation-v1")
+            definitions = chronology.render_annotations_tex(projection)
+            table = (r"\begin{tabular}{lll}" + "\n"
+                     + "\n".join(rf"\chronologyorientationrow{{{row.key}}}{{Place uncertain.}}"
+                                 for row in projection.orientation_rows)
+                     + "\n" + r"\end{tabular}")
+            for imported in (False, True):
+                with self.subTest(document=document, imported=imported):
+                    markdown = self.convert(
+                        (r"\input{studies/subject/research/chronology-annotations}" + "\n" if imported else "") + table,
+                        preamble="" if imported else definitions,
+                        files={"research/chronology-annotations.tex": definitions} if imported else None)
+                    for value in values + ("Place uncertain.",):
+                        self.assertIn(value, markdown)
+                    self.assertNotIn("triptychchronologyorientation@", markdown)
+                    self.assertNotIn("catholic-traditional-v1", markdown)
+
     def test_generated_chronology_with_tex_quotation_marks_survives(self) -> None:
         markdown = self.convert(
             r"\chronologyannotation{offertory}",

@@ -45,6 +45,7 @@ CHRONOLOGY_COMMANDS = {
     "chronologyannotationcomparisonclaim", "chronologyannotationreach",
     "chronologyannotationgroup", "chronologyannotationcomparisongroup",
     "chronologyannotationanchorclaim", "chronologyannotationanchorgroup",
+    "chronologyorientationrow",
 }
 COMMAND_DEFINITION_RE = re.compile(
     r"\\(?P<kind>(?:new|renew|provide)command|DeclareRobustCommand|"
@@ -160,7 +161,7 @@ def audit_executable_tex(path: Path, leaf: Path, text: str) -> None:
     for match in computed:
         name = re.sub(r"\s+", "", match.group(1))
         if (not _generated_chronology(path, leaf)
-                or not re.fullmatch(r"triptychchronologyannotation@(?:#1|[a-z0-9-]+)", name)):
+                or not re.fullmatch(r"triptychchronology(?:annotation|orientation)@(?:#1|[a-z0-9-]+)", name)):
             raise ValueError(f"{path.name}: computed control sequences are not allowed")
 
     for match in re.finditer(r"\\([A-Za-z@]+)", text):
@@ -390,6 +391,9 @@ def presentation_contract(data: dict, *, required: bool = False) -> bool:
 def presentation_sources(data: dict, leaf: Path, provider_root: Path,
                          records: dict, *, check_files: bool) -> None:
     """Check declared membership and source-owned markers, not prose quality."""
+    from _proper_chronology import presentation_contract as chronology_presentation
+
+    orientation = bool(chronology_presentation(leaf))
     mapping = data.get("presentation")
     if not isinstance(mapping, dict) or set(mapping) != set(PRESENTATION_ROLES):
         raise ValueError("presentation must map inventory, overview, chronology, themes, commentary")
@@ -424,7 +428,7 @@ def presentation_sources(data: dict, leaf: Path, provider_root: Path,
             continue
         text = re.sub(r"(?<!\\)%[^\n]*", "", path.read_text())
         if (path.resolve() != (leaf / chronology["path"]).resolve()
-                and re.search(r"\\chronodate\s*\{", text)):
+                and re.search(r"\\(?:chronodate|chronologyorientationrow)\s*\{", text)):
             raise ValueError("synthesis chronology cells must have the sole page-two source owner")
         labels = label_pattern.findall(text)
         for label in labels:
@@ -464,11 +468,15 @@ def presentation_sources(data: dict, leaf: Path, provider_root: Path,
     if (leaf / annotations).resolve() not in include_graph(owner, leaf, provider_root):
         raise ValueError("presentation chronology must import canonical chronology annotations")
     text = re.sub(r"(?<!\\)%[^\n]*", "", owner.read_text())
-    if not re.search(r"\\chronodate\s*\{", text) or not re.search(r"\\chronologyannotation\s*\{", text):
+    if orientation:
+        if (r"\begin{chronologyorientationtable}" not in text
+                or not re.search(r"\\chronologyorientationrow\s*\{", text)):
+            raise ValueError("orientation chronology must use generated rows in chronologyorientationtable")
+    elif not re.search(r"\\chronodate\s*\{", text) or not re.search(r"\\chronologyannotation\s*\{", text):
         raise ValueError("presentation chronology must use generated annotations in chronology cells")
     markers = list(label_pattern.finditer(text))
     if any(not markers[0].end() <= match.start() < markers[-1].start()
-           for match in re.finditer(r"\\chronodate\s*\{", text)):
+           for match in re.finditer(r"\\(?:chronodate|chronologyorientationrow)\s*\{", text)):
         raise ValueError("chronology cells must lie between their physical start/end markers")
 
 

@@ -21,6 +21,9 @@ Apply the three-document profile's comparison of exegetical questions in that
 record before drafting: show the inference that distinguishes each reading,
 and address the appointed texts' consequential difficulties. Do not substitute
 different titles for different arguments.
+Apply the profile's passage-level difficulty test: record the appointed words,
+the principal witnesses' actual inferences, and what their different answers
+change. A searchable holding or a source list does not establish this reading.
 
 Preserve real disputes and identify complementary differences honestly. The
 goal is source-first interpretive depth, not a quota of names. Missing support
@@ -30,6 +33,12 @@ Prepare the concise study's required page-2 chronology through the canonical
 verified appointments and the owning adapter; preserve partial-verse and
 adaptation limits, alternatives, event/composition distinctions and absent
 dates. Follow the chronology profile for postconciliar appointment query inputs.
+Prepare the `orientation-v1` rows as the chronology profile directs. Inspect
+their actual passage scope and dated subjects before handing them to an author;
+the concise table must not print a composite element's dates beside one of its
+constituent passages or repeat identical dates for nested Gospel forms.
+Before the component manifest exists, generate them with
+`tools/tpt proper-chronology annotations --provider {provider} --document {proper} --presentation orientation-v1 --write`.
 For Psalms, verify the traditional attribution and any identified occasion or
 remembered event separately from composition; an era attached to an author is
 not an event date. Inspect a composition-only answer for missing event evidence,

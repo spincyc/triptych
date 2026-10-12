@@ -13,6 +13,11 @@ begins on page 5. Declare the presentation component roles and place the
 profile's physical-page zref markers around their actual content. No cover
 may shift these positions. Use the same owner's reviewed generated chronology;
 preserve its exact dates, alternatives, relation labels and unresolved states.
+Use `chronology_presentation = "orientation-v1"` and the generated row interface
+in `chronologyorientationtable` as the profile directs. Pair each passage with
+the actual occurrence or dated subject, its place and concise date alternatives.
+Consolidate identical answers; keep full evidence in the reviewed historical
+appendix. Do not paste detailed annotation blocks or audit statuses into cells.
 
 Write a standalone developed argument organized around cross-proper questions
 or movements. Interleave the authors' alternatives where they address the same
@@ -20,6 +25,8 @@ question; a sequence of miniature lane summaries does not satisfy the task.
 The first two thematic pages orient the reader; the later commentary earns
 its extent by explaining and comparing witnesses' reasoning. The earlier
 1,500–2,500-word and one-third ratio limits do not govern this revised contract.
+The commentary must deepen the first two thematic pages through explanations
+and comparisons the reader has not already been given.
 
 Preserve every interpretation's controlling claim, meaningful agreements and
 differences, exact source attributions, and truth-changing qualifications.

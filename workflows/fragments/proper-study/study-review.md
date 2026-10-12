@@ -24,6 +24,11 @@ different movement or consequence. Historic compositional intent needs evidence.
 
 Judge clarity and reader value as well as correctness. The complete expansive
 PDF must fall within 20–50 physical pages; a page count alone proves no depth.
+Perform the profile's consequential-difficulty test: check the author's actual
+inference at its cited locus, then judge whether the prose teaches the question
+and makes the inference intelligible. Record a concrete locus and outcome.
+Repeated general applications cannot supply development that the reader has
+not been given.
 Check the reviewed chronology needed by the concise opening in its appropriate
 place here. No padding, gallery, proposal appendix, or global four-senses table
 can satisfy this contract. Use `STU-` findings: `research` for missing or false evidence;

@@ -69,6 +69,41 @@ class AnchorQualificationReviewTests(unittest.TestCase):
             self.assertEqual(review.diff_claims({"claims": {"old": missing}},
                                                 {"claims": {"old": explicit}}, fields), [])
 
+    def test_compact_qualification_is_source_owned_and_semantic(self):
+        key = f"event:{ANCHOR}#3"
+        full = self.serialize(self.claim)
+        empty = self.serialize(self.claim._replace(orientation_qualification=""))
+        self.assertEqual(full["orientation_qualification"], "Petavius via Sloet; transcription only")
+        for fields in (review.FIELDS_MANIFEST, review.FIELDS_FULL):
+            for before, after in ((empty, full), (full, empty)):
+                rows = review.diff_claims({"claims": {key: before}}, {"claims": {key: after}}, fields)
+                self.assertEqual(rows, [{"kind": "claim", "id": key,
+                    "why": "changed:orientation_qualification", "detail": ""}])
+        values = self.claim._asdict()
+        del values["orientation_qualification"]
+        historical = self.serialize(SimpleNamespace(**values))
+        self.assertEqual(historical, empty)
+
+    def test_missing_compact_qualification_falls_back_to_full_wording(self):
+        found = proper.dossier(TWENTIETH, provider="gpt")
+        candidate = found.anchor_contexts[0].candidates[3]
+        fallback = proper._orientation_anchor_value(candidate._replace(display_qualification=""))
+        self.assertIn("printed-page verification still pending", fallback)
+
+    def test_orientation_label_and_subject_title_changes_are_semantic(self):
+        full = self.serialize(self.claim)
+        for field in ("orientation_label", "orientation_title"):
+            modified = dict(full, **{field: "Source-owned compact wording"})
+            for fields in (review.FIELDS_MANIFEST, review.FIELDS_FULL):
+                for before, after in ((full, modified), (modified, full)):
+                    rows = review.diff_claims({"claims": {"fixture": before}},
+                                             {"claims": {"fixture": after}}, fields)
+                    self.assertEqual(rows, [{"kind": "claim", "id": "fixture",
+                        "why": "changed:" + field, "detail": ""}])
+        fields = self.claim._asdict()
+        del fields["orientation_label"]
+        self.assertEqual(self.serialize(SimpleNamespace(**fields)), full)
+
 
 class AnchorQueryTests(unittest.TestCase):
     @classmethod

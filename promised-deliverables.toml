@@ -9,8 +9,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "historical-orientation-and-quality-controls"
   criterion = "Inspect recent actual reader pages, record supported quality findings, implement a concise date/place/occurrence presentation without losing sourced distinctions or material alternatives, and validate the reusable guidance and implementation with focused checks and independent review."
-  status = "open"
-  evidence = ["guidance/liturgy/roman-1962-propers.md", "guidance/liturgy/propers-three-documents.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/propers-quality-2026-10-12/RECORD.md", "workflows/reviews/propers-quality-2026-10-12/FOUNDATION-REVIEW.md", "guidance/liturgy/propers-three-documents.md", "tools/tests/test_chronology_orientation.py"]
 
   [[deliverables.requirements]]
   id = "twenty-first-workflow-accepted"

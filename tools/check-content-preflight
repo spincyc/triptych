@@ -1346,6 +1346,7 @@ SEALED_ANNOTATION_MACROS = (
     "chronologyannotationreach",
     "chronologyannotationanchorclaim",
     "chronologyannotationanchorgroup",
+    "chronologyorientationrow",
 )
 SEALED_ANNOTATION_NAMES = "|".join(SEALED_ANNOTATION_MACROS)
 LATEX_COMMAND_DEFINITION = re.compile(
@@ -2147,7 +2148,7 @@ def check_chronology_annotations_current(
     problems = _annotation_macro_definitions(leaf, path)
     if not required:
         return problems, f"not in scope: {why}"
-    if not three_document_study(leaf) or any(
+    if (not three_document_study(leaf) and not wiring.presentation_contract(leaf)) or any(
         "\\" + CHRONOLOGY_CELL in active_tex(edition_text(leaf, prose_path, edition))
         for prose_path in leaf_tex(leaf, edition)
     ):
@@ -2182,6 +2183,62 @@ def check_chronology_annotations_current(
         f"{path.relative_to(leaf)} carries the complete live projection for "
         f"{len(scriptural)} scriptural elements and {claims} projected candidates"
     )
+
+
+def _orientation_tables(printed, found, leaf, *, required):
+    """A row's passage, subject and dates are generated as one indivisible unit."""
+    expected = {row.key: row for row in _wiring().annotations(found).orientation_rows}
+    problems, cleaned, seen = [], {}, 0
+    tables_seen = 0
+    table_re = re.compile(r"\\begin\{chronologyorientationtable\}(.*?)"
+                          r"\\end\{chronologyorientationtable\}", re.S)
+    for path, text in printed.items():
+        name = path.relative_to(leaf)
+        try:
+            calls = _macro_calls(text, "chronologyorientationrow", 2)
+        except ValueError as exc:
+            problems.append(f"{name}: {exc}")
+            cleaned[path] = text
+            continue
+        tables = list(table_re.finditer(text))
+        tables_seen += len(tables)
+        for table in tables:
+            contained = [(args, start, end) for args, start, end in calls
+                         if table.start(1) <= start < end <= table.end(1)]
+            keys = [args[0].strip() for args, _start, _end in contained]
+            if sorted(keys) != sorted(expected):
+                missing = sorted(set(expected) - set(keys))
+                extra = sorted(set(keys) - set(expected))
+                duplicate = sorted(key for key in set(keys) if keys.count(key) > 1)
+                problems.append(f"{name}: orientation table must print each generated row once; "
+                                f"missing {missing}, unknown {extra}, duplicated {duplicate}")
+            bare = table.group(1)
+            for _args, start, end in reversed(contained):
+                bare = _blank(bare, start - table.start(1), end - table.start(1))
+            bare = re.sub(r"\\(?:midrule|addlinespace)\b(?:\[[^]]*\])?", "", bare)
+            if bare.strip():
+                problems.append(f"{name}: orientation table contains authored cells or prose; "
+                                "use complete generated orientation rows")
+        for (key, place), start, end in calls:
+            seen += 1
+            if not any(table.start(1) <= start < end <= table.end(1) for table in tables):
+                problems.append(f"{name}: orientation row lies outside chronologyorientationtable")
+            if key.strip() not in expected:
+                problems.append(f"{name}: unknown generated orientation row {key!r}")
+            if MANUAL_CHRONOLOGY_DATE.search(place) or QUALIFIED_ERALESS_DATE.search(place):
+                problems.append(f"{name}: place/context must not add an authored date; use the generated Date cell")
+            commands = re.findall(r"\\([A-Za-z@]+|.)", place)
+            if "&" in place or any(command not in {"emph", "textit", "textbf", "cite", "citep", "citet", "&"}
+                                   for command in commands):
+                problems.append(f"{name}: place/context may contain prose, citations and emphasis only")
+        # Generated row keys and exact dates have already been checked; retain
+        # the author's context for the ordinary prose-date and source scans.
+        for (_key, place), start, end in reversed(calls):
+            text = text[:start] + place + text[end:]
+        cleaned[path] = text
+    if required and tables_seen != 1:
+        problems.append("orientation-v1 requires exactly one complete orientation table on page two")
+    return problems, cleaned, seen
 
 
 def check_chronology_claims_supported(leaf: Path, root: Path,
@@ -2256,6 +2313,16 @@ def check_chronology_claims_supported(leaf: Path, root: Path,
     ):
         return [], f"no chronology claim printed ({why})"
     found = _corpus_answer(leaf, root)
+    orientation = bool(found.presentation)
+    orientation_seen = 0
+    orientation_problems = []
+    if orientation:
+        orientation_problems, printed, orientation_seen = _orientation_tables(
+            printed, found, leaf, required=macros)
+        if macros and any(r"\chronodate" in text for text in printed.values()):
+            orientation_problems.append("orientation page two uses generated rows, not element-wide date cells")
+    elif any(r"\chronologyorientationrow" in text for text in printed.values()):
+        orientation_problems.append("orientation rows require chronology_presentation = 'orientation-v1'")
     # `claims` is the complete per-locus audit union. Only
     # `publication_claims` is the exact assertion-identity intersection across
     # every locus an element appoints, and therefore safe to print once as the
@@ -2286,7 +2353,7 @@ def check_chronology_claims_supported(leaf: Path, root: Path,
         for value in (claim.label, _wiring().concise_display_label(claim))
         if (signature := _date_signature(value)) is not None
     }
-    problems: list[str] = []
+    problems: list[str] = list(orientation_problems)
     cells_for: dict[str, int] = {}
     cells_seen = 0
     claims_seen = 0
@@ -2536,7 +2603,7 @@ def check_chronology_claims_supported(leaf: Path, root: Path,
                     "displayed date without repeating its number."
                 )
 
-    if macros:
+    if macros and not orientation:
         wanted = [e.key for e in found.elements if e.loci]
         missing = [key for key in wanted if key not in cells_for]
         if missing:
@@ -2570,6 +2637,8 @@ def check_chronology_claims_supported(leaf: Path, root: Path,
             f"no chronology claim or date cell, and none could be supported "
             f"here ({scope}): {found.reason}"
         )
+    if orientation_seen:
+        return problems, f"{orientation_seen} generated orientation rows with exact passage reach and complete candidates"
     if not cells_seen:
         # SAY WHAT PASSED. With no cell there is no figure to hold, so this
         # line is about the claims and says only that.

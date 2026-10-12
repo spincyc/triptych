@@ -813,6 +813,11 @@ class Claim(NamedTuple):
     # Compact source attribution or material caveat carried when this claim
     # supplies background for another event's named boundary. No date is added.
     context_qualification: str = ""
+    # Source-owned compact attribution or material uncertainty for any
+    # orientation claim. Anchor context falls back to its full qualification.
+    orientation_qualification: str = ""
+    # Source-owned compact wording for a non-absolute date in orientation rows.
+    orientation_label: str = ""
 
     @property
     def derived(self) -> bool:
@@ -827,6 +832,7 @@ class Event(NamedTuple):
     parent: str | None
     claims: tuple[Claim, ...]
     note: str
+    orientation_title: str = ""
 
 
 class Unit(NamedTuple):
@@ -838,6 +844,7 @@ class Unit(NamedTuple):
     scope: tuple[Span, ...]
     claims: tuple[Claim, ...]
     note: str
+    orientation_title: str = ""
 
     def width(self) -> int:
         """How specific this unit is. A narrower unit wins over a wider one."""
@@ -1249,6 +1256,8 @@ def _claims(
                 "profile", "disposition", "date", "basis", "sources", "note",
                 "answerability", "basis_class", "reporting_exception",
                 "context_qualification",
+                "orientation_qualification",
+                "orientation_label",
             },
             spot,
         )
@@ -1265,6 +1274,8 @@ def _claims(
             )
         date = parse_date(entry.get("date"), spot)
         state, basis_class, lift = _answerability(entry, spot, policies.get(profile))
+        if "orientation_label" in entry and date.precision != "relative":
+            raise ChronologyError(f"{spot}: orientation_label is only for relative dates")
         claims.append(
             Claim(
                 profile=profile,
@@ -1279,6 +1290,11 @@ def _claims(
                 context_qualification=_text(
                     entry, "context_qualification", spot,
                     required="context_qualification" in entry),
+                orientation_qualification=_text(
+                    entry, "orientation_qualification", spot,
+                    required="orientation_qualification" in entry),
+                orientation_label=_text(entry, "orientation_label", spot,
+                    required="orientation_label" in entry),
             )
         )
     # The conflict policy, enforced rather than described: one preferred claim
@@ -1743,7 +1759,7 @@ def _load_events(root: Path, policies: dict[str, Policy]) -> dict[str, Event]:
         if not isinstance(entry, dict):
             raise ChronologyError(f"{root}/events.yaml: an event must be a mapping")
         where = f"{root}/events.yaml event {entry.get('id')!r}"
-        _keys(entry, {"id", "title", "parent", "dates", "note"}, where)
+        _keys(entry, {"id", "title", "parent", "dates", "note", "orientation_title"}, where)
         identifier = check_id(entry.get("id"), "event", where)
         if identifier in events:
             raise ChronologyError(f"{where}: duplicate event id")
@@ -1753,6 +1769,8 @@ def _load_events(root: Path, policies: dict[str, Policy]) -> dict[str, Event]:
             parent=check_id(entry["parent"], "event", where) if entry.get("parent") else None,
             claims=_claims(entry, where, policies, required=False),
             note=_text(entry, "note", where),
+            orientation_title=_text(entry, "orientation_title", where,
+                required="orientation_title" in entry),
         )
     for event in events.values():
         if event.parent and event.parent not in events:
@@ -1783,7 +1801,7 @@ def _load_units(
         if not isinstance(entry, dict):
             raise ChronologyError(f"{root}/composition.yaml: a unit must be a mapping")
         where = f"{root}/composition.yaml unit {entry.get('id')!r}"
-        _keys(entry, {"id", "title", "relation", "scope", "dates", "note"}, where)
+        _keys(entry, {"id", "title", "relation", "scope", "dates", "note", "orientation_title"}, where)
         identifier = check_id(entry.get("id"), "composition unit", where)
         if identifier in units:
             raise ChronologyError(f"{where}: duplicate unit id")
@@ -1800,6 +1818,8 @@ def _load_units(
             scope=_scope(entry.get("scope"), where, books),
             claims=_claims(entry, where, policies),
             note=_text(entry, "note", where),
+            orientation_title=_text(entry, "orientation_title", where,
+                required="orientation_title" in entry),
         )
     _refuse_ambiguous_inheritance(units, root)
     return units
