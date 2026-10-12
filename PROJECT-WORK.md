@@ -5,7 +5,35 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-09.
+Last reconciled: 2026-10-12.
+
+## GPT Twenty-first Sunday and concise historical orientation, 2026-10-12
+
+<!-- promised-deliverable: gpt-1962-twenty-first-quality-2026-10-12 -->
+
+The maintainer requested repair of the propers date/location/occurrence table,
+using the last two weeks' documents as evidence; improvements to research,
+pedagogy and elegance where the guidance or workflow causes weak results; and
+completion of the upcoming Sunday's 1962 propers workflow. The target is GPT's
+**Twenty-first Sunday after Pentecost, 18 October 2026**,
+`liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost`.
+The calendar finding aid resolves that Sunday with the conditional St Luke
+commemoration; edition-specific source verification belongs to context review.
+
+Work is in progress on `feature/propers/codex`, starting from current main
+`5fc4fe6b6`. A read-only comparison of recent reader pages and an implementation
+review of chronology projection precede the new production run. The requested
+table must let a reader identify what happened or was written, where, and when,
+without mistaking an author's era for an event or composition date. Complete
+source evidence and material alternatives remain recoverable. Existing accepted
+publications retain their snapshots; reusable controls and the new Sunday are
+the implementation scope.
+
+Completion requires the improved controls to pass focused checks and independent
+review, the actual three-document workflow to reach ACCEPTED with fresh stage
+reviews, and the verified family and canonical web edition to be installed and
+cataloged. Coherent checkpoints will be committed and pushed to the workspace
+branch. No main integration or live deployment is claimed by that branch push.
 
 ## Publication links and mobile angelology report, 2026-10-09
 

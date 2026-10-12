@@ -1,6 +1,36 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-1962-twenty-first-quality-2026-10-12"
+owner = "PROJECT-WORK.md"
+promise = "Repair the propers historical-orientation table and evidence-based research, pedagogy and presentation controls; complete the GPT 1962 Twenty-first Sunday after Pentecost three-document workflow for 2026-10-18, and commit and push the validated result on feature/propers/codex."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "historical-orientation-and-quality-controls"
+  criterion = "Inspect recent actual reader pages, record supported quality findings, implement a concise date/place/occurrence presentation without losing sourced distinctions or material alternatives, and validate the reusable guidance and implementation with focused checks and independent review."
+  status = "open"
+  evidence = ["guidance/liturgy/roman-1962-propers.md", "guidance/liturgy/propers-three-documents.md"]
+
+  [[deliverables.requirements]]
+  id = "twenty-first-workflow-accepted"
+  criterion = "The actual proper-study run for GPT identity liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost and civil date 2026-10-18 reaches ACCEPTED through fresh authors and cold reviewers at the declared effort levels, with its actual packets, results and repair cycles archived."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "reviewed-publication-family"
+  criterion = "The 20–50-page expansive study, 10–12-page concise study, standalone homily and canonical web edition meet their content and source contracts, pass visual and publication gates, and are installed with exact reviewed bytes, catalog links and separate release records."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "validated-workspace-delivery"
+  criterion = "Required source and publication checks pass, records agree with actual acceptance and artifacts, and the intended publicly distributable changes are committed and pushed to feature/propers/codex after outgoing-range review."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "publication-links-2026-10-09"
 owner = "PROJECT-WORK.md"
 promise = "Audit publication links and document identity across both providers, recover any missing documents, correct confirmed missing or misdirected links including the mobile angelology report, guard against recurrence, and push the verified correction to main."
