@@ -3,8 +3,8 @@ schema_version = 1
 [[deliverables]]
 id = "gpt-four-last-things-2026-10-12"
 owner = "PROJECT-WORK.md"
-promise = "Revise the four GPT Four Last Things essays for source accuracy, synthesis, pedagogy, seasonal coherence and presentation; preserve all Claude documents unchanged; validate and commit the completed GPT revision on feature/flt."
-state = "complete"
+promise = "Revise the four GPT Four Last Things essays for source accuracy, synthesis, pedagogy, seasonal coherence and presentation; preserve all Claude documents unchanged; resolve the subsequent cold-review findings, validate the corrected editions, and push them to main."
+state = "candidate"
 
   [[deliverables.requirements]]
   id = "gpt-flt-content"
@@ -26,6 +26,20 @@ state = "complete"
   id = "gpt-flt-integration"
   criterion = "Applicable checks pass or named inherited failures are distinguished from the revision; no Claude publication files change; the coherent GPT revision and evidence are committed on feature/flt."
   status = "pass"
+  evidence = ["src/gpt/articles/faith/four-last-things-shared/revision-review.md", "PROJECT-WORK.md"]
+  check = "path_exists"
+
+  [[deliverables.requirements]]
+  id = "gpt-flt-cold-review-corrections"
+  criterion = "The four cold-review findings are corrected with exact source attribution, clear biblical numbering, direct marriage wording, and terminal-only work-wide scope; all affected PDFs and generated web editions are reviewed again."
+  status = "pass"
+  evidence = ["src/gpt/articles/faith/four-last-things-shared/revision-review.md", "src/gpt/articles/faith/four-last-things-shared/production-review.json"]
+  check = "path_exists"
+
+  [[deliverables.requirements]]
+  id = "gpt-flt-main-publication"
+  criterion = "The validated GPT revision reaches origin/main through an ordinary push, and the automatic Pages workflow and corrected public routes are verified."
+  status = "open"
   evidence = ["src/gpt/articles/faith/four-last-things-shared/revision-review.md", "PROJECT-WORK.md"]
   check = "path_exists"
 

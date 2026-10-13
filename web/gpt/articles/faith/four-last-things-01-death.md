@@ -50,7 +50,7 @@ Christian preparation begins long before the deathbed. Romans 6:3–11 locates i
 
 The Church accompanies the sick within that same sacramental life. Anointing is appropriate when danger of death begins through sickness or old age; it need not wait for the final moments (CCC 1514–1516). Penance brings reconciliation, anointing strengthens the sick in union with Christ, and the Eucharist received as Viaticum gives food for the final journey. These sacraments have distinct gifts; calling them collectively “last rites” should not obscure the Eucharist’s particular place.
 
-In Viaticum, the dying receive the body of the Lord who promises to raise those who feed on him (Jn 6:54; CCC 1524–1525). The sacrament joins personal departure to the future resurrection. It also makes visible the Church’s companionship: the member who can no longer come to the assembly is still nourished by its Lord. Seeking a priest early gives room for this preparation; access to the sacraments should not depend on a family’s guessing the last possible hour.
+In Viaticum, the dying receive the body of the Lord who promises to raise those who feed on him (Jn 6:54, or 6:55 in the Douay–Rheims; CCC 1524–1525). The sacrament joins personal departure to the future resurrection. It also makes visible the Church’s companionship: the member who can no longer come to the assembly is still nourished by its Lord. Seeking a priest early gives room for this preparation; access to the sacraments should not depend on a family’s guessing the last possible hour.
 
 ## The Death of Another Is a Moral Event
 
@@ -78,7 +78,7 @@ This article introduces the Four Last Things for serious general Catholic reader
 
 ## References
 
-- Sacred Scripture: Genesis 2:17; 3:19; Luke 13:1–5; John 6:54; 9:1–3; 11:33–44; Romans 5:12–21; 6:3–11, 23; 14:8; 1 Corinthians 15:12–49; Hebrews 2:14–15.
+- Sacred Scripture: Genesis 2:17; 3:19; Luke 13:1–5; John 6:54; 9:1–3; 11:33–44; Romans 5:12–21; 6:3–11, 23; 14:8; 1 Corinthians 15:12–49; Hebrews 2:14–15. Romans 14:8 is quoted from the Douay–Rheims Bible, American edition (1899), Challoner revision. John 6:54 follows the numbering in CCC 1524; the same promise is John 6:55 in that Douay–Rheims edition.
 
 - *Catechism of the Catholic Church*, official English text: 624–626 (Christ’s death); 988–1014 (resurrection and dying in Christ); 1021–1032 (judgment, heaven, purification); 1514–1525 (anointing and Viaticum); 1684–1690 (funerals); 2276–2279 (care of the dying). The citation of Benedict XII’s *Benedictus Deus* follows the sources reproduced at CCC 1022–1023.
 
@@ -90,6 +90,6 @@ This article introduces the Four Last Things for serious general Catholic reader
 
 - St. Thomas Aquinas, *Summa theologiae* III, q. 50, aa. 2–3, trans. Fathers of the English Dominican Province, Project Gutenberg eBook 19950 (2006 electronic edition): the continuing personal union of the Word with Christ’s body and soul in death.
 
-**Last revised (UTC):** 2026-10-13T01:34:35Z
+**Last revised (UTC):** 2026-10-13T02:21:37Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

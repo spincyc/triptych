@@ -25,16 +25,25 @@ encounters and bounded audits, independent content review, five-page PDFs
 navigation, and a catalog section that remains readable on narrow screens.
 The source, catalog, release-binding, metadata, web, and 36 targeted unit checks
 pass. The broad `make check` remains limited by pre-existing help
-example divergences and the incomplete unrelated installed corpus; their exact
-disposition is recorded in the owning review. Applicable changed examples
-are recaptured from actual runs.
+example divergences; their exact disposition is recorded in the owning review.
+Applicable changed examples are recaptured from actual runs. The complete
+unchanged release corpus has now been recovered and verified against the
+deployed manifest, permitting full local deployment validation.
 
 Evidence: each GPT leaf's research records,
 `src/gpt/articles/faith/four-last-things-shared/revision-review.md`, and
 `src/gpt/articles/faith/four-last-things-shared/production-review.json`.
 The latter pins accepted PDF and web bytes to their render sources. Claude
 publication files and generated catalog entries remain unchanged. Changes to
-`main` and deployment are outside this task.
+`main` and deployment were outside the initial revision. The maintainer has
+now authorized the four subsequent cold-review corrections and a push to
+`main`. All four corrections are independently accepted: Judgment's
+attribution of disclosed forgiven sins, Death's edition and John 6 numbering,
+Heaven's marriage wording, and Hell's terminal-only work-wide scope. All four
+five-page PDFs and generated web editions have passed renewed production
+review and are installed. The source/deployment gates, complete site build,
+and GitHub Pages artifact verification pass. The authorized main push and live
+deployment verification remain in progress; no Claude publication was changed.
 
 ## Publication links and mobile angelology report, 2026-10-09
 

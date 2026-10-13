@@ -46,3 +46,7 @@ Historical production receipt for the earlier seven-page version: reported settl
 Coordinated production evidence for this revision is recorded in
 [the shared review](../../four-last-things-shared/revision-review.md) and
 [its artifact receipt](../../four-last-things-shared/production-review.json).
+
+## Cold-review correction — 2026-10-13
+
+Removed the body sentence announcing that the essay does not adjudicate the modern universal-hope controversy. The following substantive distinctions and the existing terminal scope remain intact. This is a reader-order correction with no change to the theological claims or source use.

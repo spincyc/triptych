@@ -61,8 +61,8 @@ EXAMPLES = {
         Example(
             "tools/document-library check",
             (
-                "147 works, 203 documents, 241 issues, 6773 pages.",
-                "  titles derived from source and confirmed against the built PDF: 239",
+                "149 works, 207 documents, 253 issues, 6877 pages.",
+                "  titles derived from source and confirmed against the built PDF: 251",
                 "  titles the sources do not state: 0",
                 "  issues with no PDF installed: 2",
                 "    claude liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost: no PDF is installed for this issue",
@@ -78,8 +78,8 @@ EXAMPLES = {
         Example(
             "tools/document-library check --provider claude",
             (
-                "58 works, 58 documents, 76 issues, 2227 pages.",
-                "  titles derived from source and confirmed against the built PDF: 74",
+                "60 works, 60 documents, 82 issues, 2296 pages.",
+                "  titles derived from source and confirmed against the built PDF: 80",
                 "  titles the sources do not state: 0",
                 "  issues with no PDF installed: 2",
                 "    claude liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost: no PDF is installed for this issue",
@@ -152,7 +152,7 @@ EXAMPLES = {
         Example(
             "tools/document-library structure --out build/example-catalogue",
             (
-                "147 works, 203 documents, 241 issues, 6773 pages.",
+                "149 works, 207 documents, 253 issues, 6877 pages.",
                 "  -> build/example-catalogue/structure/documents/corpus.json",
             ),
             "WRITES. --out here is untracked; the default writes the tracked src/web/data",
@@ -160,7 +160,7 @@ EXAMPLES = {
         Example(
             "tools/document-library structure --check",
             (
-                "147 works, 203 documents, 241 issues, 6849 pages.",
+                "149 works, 207 documents, 253 issues, 6953 pages.",
                 "  src/web/data/structure/documents/corpus.json is current",
             ),
             "writes nothing; refuses when the tracked catalogue has drifted from the sources",

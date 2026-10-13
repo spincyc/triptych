@@ -31,7 +31,7 @@ or specialist approval. Each leaf's `research/source-audit.md` identifies
 the passages actually consulted, their authority, rights, and evidence limits.
 Live consultation does not certify an uninspected registered artifact.
 
-The independent review accepted the collection after three corrections:
+The initial independent review accepted the collection after three corrections:
 Judgment's unqualified assertion about identifying a particular damned person
 was replaced by a bounded statement about our authority; its mercy heading
 was brought into line with Aquinas's argument; Death's opening reference to
@@ -58,7 +58,7 @@ means preserving the governing distinctions and connections within four
 readable essays; it does not require a fifth essay, a survey of every school,
 or added classroom apparatus.
 
-## Accepted print editions
+## Initial accepted print editions
 
 The publishable render sources were finalized at `2026-10-13T01:34:35Z`
 (12 October locally). All four PDFs were built to the repository's fixed-point
@@ -90,7 +90,7 @@ is claimed. [production-review.json](production-review.json) pins the accepted
 PDFs, generated web editions, and render sources. PDFs remain ignored local
 build/install products under the repository's normal source-build policy.
 
-## Web and integration review
+## Initial web and integration review
 
 The four tracked web editions were regenerated solely from the authoritative
 TeX, including the same companion navigation. The Faith catalog now identifies
@@ -122,7 +122,7 @@ retain existing evidence states; the added shared render owner is GPT-only.
 The family ledger remains explicitly pending where it was pending before;
 this revision does not claim a completed corpus-wide source-family migration.
 
-## Integration disposition
+## Initial integration disposition
 
 The baseline and revised `make check-sources` pass. The settled publication
 checks also pass: `make check-document-catalogue check-release-bindings
@@ -167,7 +167,81 @@ requirements. It does not supply the complete installed corpus.
 
 The staleness workflow remains suspended under `guidance/staleness.md`.
 No baseline was reset to imply a comprehensive re-reading of unrelated
-library growth, and no Claude state was cleared. The accepted work is a
-coherent GPT revision on `feature/flt`; main integration and deployment are
-outside this task. Remaining corpus-wide example maintenance and unbuilt
+library growth, and no Claude state was cleared. The initially accepted work was a
+coherent GPT revision on `feature/flt`; main integration and deployment were
+outside that first authorization. The later authorization and correction
+round are recorded below. Remaining corpus-wide example maintenance and unbuilt
 unrelated PDFs do not invalidate the inspected and accepted four editions.
+
+## Subsequent cold review and correction — 12 October 2026
+
+A fresh reviewer read each GPT essay at `ed19fb6da73b9b09bc7a3350e76b825e76f97091`,
+without relying on the initial acceptance. The coordinator reread the series,
+verified the artifact identities, inspected all twenty PDF pages on contact
+sheets with full-size openings and terminal pages, and inspected the four
+mobile web openings. No major doctrinal, structural, or visual defect emerged.
+Four minor findings were accepted and corrected after the maintainer expressly
+authorized the repairs and a push to `main`:
+
+- Death now identifies the Douay–Rheims American-1899 witness and supplies
+  John 6:55 beside the Catechism's John 6:54 numbering. Both identify the
+  same Eucharistic resurrection promise.
+- Judgment attributes disclosure of forgiven sins to Thomas's account in
+  Supplement q.87 a.2, preserves his opinion-level qualification and Peter
+  Lombard's contrary view, and identifies the posthumous Supplement in its
+  references. The source audit and catalog binding identify the live
+  English Dominican/New Advent encounter without certifying an uninspected
+  central artifact.
+- Hell's redundant work-wide scope sentence is removed from the argument;
+  the terminal limitation and all substantive hope distinctions remain.
+- Heaven states directly that the risen neither marry nor are given in
+  marriage, retaining the distinction between fulfilled love and conditions
+  not revealed to us.
+
+An independent review of these changes accepted all four corrections against
+their primary controls. This bounded correction pass does not claim another
+exhaustive review of unchanged content. The corrections preserve the existing
+four-essay architecture and all Claude source, web, and publication records.
+
+The corrected render sources were finalized at `2026-10-13T02:21:37Z`.
+All four builds reach the repository's fixed-point criterion and remain five
+pages each. The initial print hashes and browser observations above describe
+the earlier snapshot; `production-review.json` identifies the corrected
+accepted artifacts. All twenty corrected PDF pages were reviewed, including
+full-size openings and terminal pages. Judgment's expanded references remain
+legible on page five, with its colophon intact. Metadata, fonts, extracted
+text, links and bookmarks pass, and installed bytes match the reviewed builds.
+The faithful generated web editions were separately accepted at 1440, 393 and
+320 CSS pixels: twelve changed-passage states and six title/reference
+screenshots. No overflow, missing text, or navigation defect remained.
+
+The four cold-review corrections are accepted. The previously
+missing unchanged installed corpus has been recovered from the exact deployed
+base snapshot: all 247 unchanged included PDFs match the live publication
+manifest, their declared render inputs match the base, and their generation
+metadata validates. This recovery changes no publication content and allows
+complete local deployment validation of the corrected series.
+
+The corrected editions pass `make check-sources check-deployment-sources
+check-release-bindings check-web-editions check-promised-deliverables`, the
+complete `make public-site`, and `public-alpha verify --deployment-target
+github-pages`. The 36 source-inventory and publication-link tests pass again.
+The complete site's four article HTML files are byte-identical to the
+independently reviewed outputs.
+
+The renewed broad `make check` reaches all 247 runnable examples with no
+tracked-state writes. Before recapture, seventeen examples differ: two ledger
+counts, four catalog counts, one preparation-inventory length, and the ten
+inherited generation-metadata, proper-component, web-declaration, commentary-
+standing and source-reader differences identified above. The first seven
+are recaptured from actual runs for this accepted publication state; no
+implementation changes are made to the tools. All eighteen examples in the
+three refreshed tools then replay with no divergence or tracked-state writes.
+The public-alpha example refresh changes its source checksum, so its narrow
+release binding and production receipt are refreshed as well; the generated
+article HTML remains identical to the visually accepted files.
+Three unrelated examples still
+require the absent `build/core-last-20.pdf`; six model/network or writing
+examples remain deliberately exempt. The full release corpus has resolved
+the initial deployment-artifact limitation. Main integration and verification
+of the automatically deployed public routes remain outstanding.

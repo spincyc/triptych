@@ -47,3 +47,7 @@ Historical production receipt for the earlier seven-page version: reported settl
 Coordinated production evidence for this revision is recorded in
 [the shared review](../../four-last-things-shared/revision-review.md) and
 [its artifact receipt](../../four-last-things-shared/production-review.json).
+
+## Cold-review correction — 2026-10-13
+
+Rechecked [Matthew 22:23–33, especially verse 30](https://ebible.org/engDRA/MAT22.htm), and the explanatory context of [CCC 1619](https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_three/article_7/i_marriage_in_gods_plan.index.html). The sentence now directly states that the risen neither marry nor are given in marriage. The preceding account could suggest marriage continuing in another form; the revised paraphrase removes that ambiguity while preserving the fulfillment of love. These live checks do not certify new central artifact bytes.

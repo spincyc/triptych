@@ -60,7 +60,7 @@ Paul commands prayer for everyone and grounds it in God’s will that all be sav
 
 Prayer for all, hope for another, and certainty that all will finally be saved are different claims. Christians are commanded to pray; they are not given a guarantee that no human being can be lost. An argument for hoping that every person will ultimately accept grace must therefore face the warnings about final refusal. An argument stressing those warnings must equally face God’s universal saving will and the duty of intercession. The dispute concerns how those truths belong together, not whether mercy matters.
 
-This essay does not adjudicate the whole modern controversy over universal hope. A position that hopes for universal salvation while denying certainty must not be casually equated with a doctrine that everyone is necessarily saved. Equally, calling a position “hope” does not exempt its claims from examination. Hoping for each person and claiming a revealed promise about the outcome for all are not interchangeable.
+A position that hopes for universal salvation while denying certainty must not be casually equated with a doctrine that everyone is necessarily saved. Equally, calling a position “hope” does not exempt its claims from examination. Hoping for each person and claiming a revealed promise about the outcome for all are not interchangeable.
 
 *Spe salvi* 45–47 holds together possible radical rejection, complete holiness, and the need for purification in many lives. Benedict XVI’s account is a theological meditation on judgment, not a statistical revelation. It gives no warrant for turning hell into purgatory. John Paul II likewise says that we are not given knowledge of particular human damnation *without special divine revelation* (28 July 1999, 4). That qualification matters: restraint about another’s destiny is not a claim that revelation could never disclose it.
 
@@ -92,6 +92,6 @@ This article treats hell’s existence and eternity, responsibility, finality, j
 
 - St. Thomas Aquinas, *Summa theologiae* I–II, [q. 87, a. 3](https://www.newadvent.org/summa/2087.htm#article3), including its replies; II–II, [q. 83, a. 2](https://www.newadvent.org/summa/3083.htm#article2). English Dominican translation, second revised edition (1920), consulted through New Advent; explanatory theology, not additional definitions.
 
-**Last revised (UTC):** 2026-10-13T01:34:35Z
+**Last revised (UTC):** 2026-10-13T02:21:37Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

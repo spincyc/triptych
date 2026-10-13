@@ -15,7 +15,7 @@ Checked 2026-10-13 UTC (2026-10-12 local). This audit describes the revised GPT 
 | Purgatory belongs within salvation | CCC 1030–1032, complete official page read including notes 604–609 | The elect's assured salvation and real need of purification; no lesser hell or new chance after definitive refusal |
 | Purifying encounter and prayer for the dead belong together | Spe salvi 47–48, read from the complete official English HTML | Paragraph 47 introduces theologians' proposal; the article preserves that qualification. Paragraph 48 explains how intercession belongs to communion |
 | Prayer and Eucharistic suffrages actually help | CCC 1032; Spe salvi 48 | Neither mere memorial sentiment nor reversal of the deceased's judgment. All Souls application is pastoral synthesis |
-| Judgment reveals forgiveness as well as guilt and protects victims' truth | CCC 1039–1040; project synthesis from justice and mercy | No claim to know a perceptual mechanism or to describe the blessed reliving shame |
+| Judgment reveals forgiveness as well as guilt and protects victims' truth | CCC 1039–1040; Thomas, Supplement 87.2, body and reply 3; project synthesis from justice and mercy | The particular account of disclosed forgiven sins is attributed to Thomas as his more probable opinion, with Lombard's contrary view acknowledged. No perceptual mechanism or continuing shame is asserted |
 
 ## Exact witnesses and binding states
 
@@ -51,3 +51,7 @@ Earlier PDF build and visual-inspection claims concern the previous article. The
 Coordinated production evidence for this revision is recorded in
 [the shared review](../../four-last-things-shared/revision-review.md) and
 [its artifact receipt](../../four-last-things-shared/production-review.json).
+
+## Cold-review correction — 2026-10-13
+
+The complete [Supplement q.87 a.2](https://www.newadvent.org/summa/5087.htm#article2) was read in the English Dominican second revised edition (1920) delivered by New Advent. Its body calls disclosure of repented sins the more probable and common opinion, while reporting Peter Lombard's contrary view; reply 3 explains disclosure without shame. CCC 1039–1040 states the general doctrine without explicitly settling this particular detail. The body now attributes the account to Thomas and records the disagreement, and the references identify the Supplement's posthumous compilation. No new definition, unanimous consensus, or original-language collation is claimed. The work-level catalog binding records the live consultation without certifying a different central artifact; no third-party source payload is added.

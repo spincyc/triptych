@@ -48,7 +48,7 @@ Paul begins his great account with Christ’s Resurrection as the first fruits, 
 
 Irenaeus gives this teaching a strikingly concrete foundation. In *Against Heresies* V.2.2–3, he argues against those who deny salvation to flesh. The body nourished by Christ’s body and blood in the Eucharist cannot be dismissed as incapable of God’s gift. He links the created bread and wine, Christ’s real flesh, our bodily nourishment, and the resurrection God grants. The argument binds sacrament and destiny together: the Creator does not save us by repudiating his handiwork.
 
-Resurrection does not mean that every earthly arrangement continues unchanged. Christ says that risen life is not the continuation of marriage in its present form (Mt 22:23–33). The Church promises the identity and transfiguration of the person, not a duplicate of present society. We can trust that grace fulfills love without pretending to know every form its fulfillment will take.
+Resurrection does not mean that every earthly arrangement continues unchanged. Christ says that the risen neither marry nor are given in marriage (Mt 22:30). The Church promises the identity and transfiguration of the person, not a duplicate of present society. We can trust that grace fulfills love without pretending to know every form its fulfillment will take.
 
 ## The World Is Also Awaiting Redemption
 
@@ -102,6 +102,6 @@ This article treats Trinitarian communion, the beatific vision, personal identit
 
 - St. Thomas Aquinas, *Summa theologiae* I, [q. 12, aa. 2, 4–8](https://www.newadvent.org/summa/1012.htm); I–II, [q. 2, a. 8](https://www.newadvent.org/summa/2002.htm#article8) and [q. 3, a. 8](https://www.newadvent.org/summa/2003.htm#article8); [Supplement, q. 94, a. 3](https://www.newadvent.org/summa/5094.htm#article3). English Dominican translation, second revised edition (1920), through New Advent. The Supplement is a posthumous compilation drawn principally from his commentary on the *Sentences*.
 
-**Last revised (UTC):** 2026-10-13T01:34:35Z
+**Last revised (UTC):** 2026-10-13T02:21:37Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

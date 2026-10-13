@@ -40,7 +40,7 @@ The objection to a second judgment is serious: if God already knows everything a
 
 In his reply to the first objection, Aquinas expressly denies that the dead acquire new merit or demerit through these continuing effects. His point is that the whole truth of their lives belongs under God’s judgment, including relations and consequences only completed at history’s end. A child is not condemned for a parent’s choices, nor does a later reader’s abuse of a book automatically become its dead author’s new sin. God judges each person’s own freedom within the real history of its exercise. Aquinas supplies a theological explanation of the Church’s teaching that final judgment reveals deeds to their furthest consequences and makes God’s providence known (CCC 1039–1040).
 
-This public truth matters especially where earthly judgment has failed. A victim whose testimony was suppressed will not remain dependent on the oppressor’s account; unnoticed fidelity will not disappear because no archive recorded it. Yet disclosure must include mercy as truthfully as guilt. Forgiven sins are disclosed as forgiven; repentance and grace belong to the history too. The Church promises the manifestation of divine justice, not a spectacle modeled on human humiliation. We are not given the event’s perceptual mechanism or a warrant to imagine the blessed endlessly reliving shame.
+This public truth matters especially where earthly judgment has failed. A victim whose testimony was suppressed will not remain dependent on the oppressor’s account; unnoticed fidelity will not disappear because no archive recorded it. Yet disclosure must include mercy as truthfully as guilt. Thomas holds that even forgiven sins are disclosed, manifesting mercy rather than bringing the blessed shame (Supplement, q. 87, a. 2). He presents this as the more probable opinion, noting Peter Lombard’s contrary view. The Church promises the manifestation of divine justice, not a spectacle modeled on human humiliation. We are not given the event’s perceptual mechanism or a warrant to imagine the blessed endlessly reliving shame.
 
 ## The Unequal Histories of Freedom
 
@@ -92,10 +92,12 @@ This article distinguishes particular judgment from the embodied and public cons
 
 - St. Thomas Aquinas, *Summa theologiae* III, q. 59, a. 5, especially the body and replies to objections 1–3 (final judgment after particular judgment); I, q. 21, a. 4 (mercy at the root of divine justice). Translation of the Fathers of the English Dominican Province, Project Gutenberg eBooks 19950 and 17611 (2006 electronic editions).
 
+- St. Thomas Aquinas, *Summa theologiae*, [Supplement, q. 87, a. 2](https://www.newadvent.org/summa/5087.htm#article2), body and reply to objection 3: disclosure of forgiven sins as an identified theological opinion. English Dominican translation, second revised edition (1920), through New Advent. The Supplement is a posthumous compilation drawn principally from his commentary on the *Sentences*.
+
 - Benedict XVI, [*Spe salvi*](https://www.vatican.va/content/benedict-xvi/en/encyclicals/documents/hf_ben-xvi_enc_20071130_spe-salvi.html) (2007), nos. 47–48: encounter with Christ, purification, and intercession for the dead. Official English text. The account of purifying fire as encounter is distinguished from the dogmatic teaching on purification.
 
 - Roman Rite: the Creed and the Eucharistic expectation of Christ’s return. These are liturgical allusions; no territorial vernacular text is reproduced.
 
-**Last revised (UTC):** 2026-10-13T01:34:35Z
+**Last revised (UTC):** 2026-10-13T02:21:37Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

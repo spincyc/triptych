@@ -56,3 +56,7 @@ The July audit's six-page PDF hash and successful visual review concern the prev
 Coordinated production evidence for this revision is recorded in
 [the shared review](../../four-last-things-shared/revision-review.md) and
 [its artifact receipt](../../four-last-things-shared/production-review.json).
+
+## Cold-review correction — 2026-10-13
+
+John 6 was checked in the [Douay–Rheims American-1899 eBible delivery](https://ebible.org/engDRA/JHN06.htm), especially verses 54–55, against [CCC 1524](https://www.vatican.va/archive/ENG0015/__P4O.HTM). The promise of resurrection is verse 55 in that Bible and verse 54 in the Catechism's citation convention. Both loci now appear in the body, and the references identify the edition used for Romans 14:8. No doctrine or scriptural wording was changed; the correction makes the edition and numbering reproducible. This is a live delivery check, not a new verification of the entire registered edition.

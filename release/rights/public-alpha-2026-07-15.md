@@ -14131,7 +14131,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-4.json` | `7f1956b102a7b765dc36210f5557ad25f07d075c8edcc87a3acc85cd3a03473d` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-5.json` | `61abb15daa555ada778b2eeb6137cbc6114102586c9cc2a27d5e4863521de0e3` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-6.json` | `54408d9f5e1c8b684850b05976d6e3ac9ee3b88b6194c37c7e1cf83d52256d28` |
-| `src/web/data/structure/documents/corpus.json` | `09986da62e79ac17d2d7534483a17efa819069d5dd0487a346bc504105886e60` |
+| `src/web/data/structure/documents/corpus.json` | `5a4832a0ab3f2429f286f27cfcf94dc01db85154cf11f008a5cff8b1e52e0e79` |
 | `src/web/data/structure/ordinary/index.json` | `b248eefcc0b073e43dd4c0d168007cd8d09fc5f28bd2fc633d98e2f4ba9e4846` |
 | `src/web/data/structure/ordinary/postconciliar.json` | `7714e4f1c328e4adad95afb3387e81b0cc44731977bfe5866a2ae2a2a597c2b6` |
 | `src/web/data/structure/ordinary/roman-1962.json` | `2c707b7d0ac3b61602533a57a26989042af43358e1d1dc7ca58aee286b827341` |
@@ -23831,7 +23831,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.visitatione-beatae-mariae-virginis-secret.json` | `8d37bcfd80e14d1980f3ff2d4b3f20e519da9e5c72783ce07ce5125b17247739` |
 | `src/web/data/structure/sources/text/passage.westcott-and-hort.the-new-testament-in-the-original-greek.introduction-and-appendix-1882.appendix-p71-lk-24.12.json` | `199d42eced334a709244d53f41cafdd57ee93cd352aad1273287b48ce5ba6bf7` |
 | `src/web/data/structure/sources/text/passage.william-smith.dictionary-of-greek-and-roman-antiquities.1875-lacuscurtius-web-2026-07-25.sv-mantele.json` | `5e9590fc1d25d8018dc0fc12d78e539d017b66527b2857a5ba554aa026979736` |
-| `tools/public-alpha` | `143d3328e83ea641f0dc308d0a7aee7cbb0f24c43a8d94f5cbdde9ed975623fc` |
+| `tools/public-alpha` | `139d4bc9d07ca1c8d5476972586f9607e03fb77aff6ebe8b733c9d7e315c5de0` |
 | `web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.md` | `6349355c26491b0292f854a8ac2da3fceba601432e92770d3db57c3821bca039` |
 | `web/claude/articles/canon-law/natural-positive-divine-human-law.md` | `75a6f9e454d09e5597d3089f0397eb30310d36790a048599e4f19ff3448a301b` |
 | `web/claude/articles/faith/against-the-instrumentalists.md` | `309ab5bf2c00ce7ad98bec3200025af2bb88f5a0717e353e89547ef88a3e4be1` |
@@ -23893,10 +23893,10 @@ release attachment, announcement, or promotion.
 | `web/gpt/articles/faith/against-the-instrumentalists.md` | `bd1698211106e075773b9cacd9f1b7520193512132c805facce0fc861fcebd87` |
 | `web/gpt/articles/faith/at-the-end-of-every-why.md` | `638427f76ad44e1f3f6fcde5c6a92e5b462863cd9d3104d0c6166097c9eeeff1` |
 | `web/gpt/articles/faith/catholic-doctrinal-authority.md` | `f5d1d7443cec78e292fb67f0acaa0b4b486a576df5569a942da20ca6e16adb44` |
-| `web/gpt/articles/faith/four-last-things-01-death.md` | `9e2ff874fda1806d36d5c9eb410aefd762c3a9f90ec0c4aa1d80296ba8c89ac2` |
-| `web/gpt/articles/faith/four-last-things-02-judgment.md` | `cdfdc4e01140d1bfa4aa4dea0eb3d15024ea7f0633d3001b8b9bcd76e75db340` |
-| `web/gpt/articles/faith/four-last-things-03-hell.md` | `c4537c3b09b4d81e848477bad8c1b23aa142fccc66d05f3eddd5dd24fa2b5fb3` |
-| `web/gpt/articles/faith/four-last-things-04-heaven.md` | `b237a53337150d5ee6f45d4c89d0066dd5e111a3416f7da417fae9dcde51d980` |
+| `web/gpt/articles/faith/four-last-things-01-death.md` | `02239188af7e321388558a438bed050a4ac0ce3dbb24e1a79a7a47672435bf7e` |
+| `web/gpt/articles/faith/four-last-things-02-judgment.md` | `0b9ef9529bc45c604aead1c260b998cf95c9a81421ab0d2ab5833e3dcd405b44` |
+| `web/gpt/articles/faith/four-last-things-03-hell.md` | `2a38b3b4dcc4edb1f50cc7b7d24f66cc0147398123215cbb8b9722d331389fb6` |
+| `web/gpt/articles/faith/four-last-things-04-heaven.md` | `485b6948ecf633bf8c4fa3a5911ad49a758a6653e010b3a6fa7c6a4853083318` |
 | `web/gpt/articles/faith/in-defense-of-the-particular.md` | `8b7ebb2a1f488bf191df4df8465af8e07784a15e634ad4a624fbec38f94a6122` |
 | `web/gpt/articles/faith/last-supper-calvary-and-the-mass.md` | `d23b1b43000f76815b0f4895425686743082c5705ce5deb1fd2770388f0dbfd9` |
 | `web/gpt/articles/faith/ontological-vertigo.md` | `606464c31ad4cb0797874c9b881acf6fc5192a8bf1af79acf9cb1fe073fd1d42` |
