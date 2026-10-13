@@ -1,0 +1,44 @@
+{"event": "seed", "stage": "scope-gate", "timestamp": "2026-10-13T05:33:07Z", "workflow_id": "proper-study", "workflow_version": 11}
+{"event": "packet", "hash": "dd8d165f74288d94e65c2c908f16c31013f1727bcdedb7725716173f0df1d743", "iteration": 0, "size": 688, "stage": "scope-gate", "timestamp": "2026-10-13T05:33:07Z"}
+{"disposition": "PASS", "event": "result", "stage": "scope-gate", "timestamp": "2026-10-13T05:33:33Z", "transition": "resolve-context"}
+{"event": "packet", "hash": "d477898f18456021f267e1939c0cfd262cda3f56b5f2af358693530eeb574456", "iteration": 0, "size": 33298, "stage": "resolve-context", "timestamp": "2026-10-13T05:33:33Z"}
+{"disposition": "PASS", "event": "result", "stage": "resolve-context", "timestamp": "2026-10-13T05:43:19Z", "transition": "research"}
+{"event": "packet", "hash": "abf1899c2cb8e54fd8958e9695e1b3b5ef497a679881e5ce5f04e175d5036472", "iteration": 0, "size": 35662, "stage": "research", "timestamp": "2026-10-13T05:43:19Z"}
+{"disposition": "PASS", "event": "result", "stage": "research", "timestamp": "2026-10-13T06:11:43Z", "transition": "research-preflight"}
+{"event": "packet", "hash": "5f0c7c78e81083bf85d9e80df2d7577a8f7092d4a71b57c0dfddb6b728dd4663", "iteration": 0, "size": 696, "stage": "research-preflight", "timestamp": "2026-10-13T06:11:43Z"}
+{"disposition": "PASS", "event": "result", "stage": "research-preflight", "timestamp": "2026-10-13T06:11:53Z", "transition": "research-review"}
+{"event": "packet", "hash": "c80cac61faed2f499bc4f8763f3729e96599082665ac9c7152ebd2f47db17352", "iteration": 0, "size": 290932, "stage": "research-review", "timestamp": "2026-10-13T06:11:53Z"}
+{"disposition": "PASS", "event": "result", "stage": "research-review", "timestamp": "2026-10-13T06:40:04Z", "transition": "author-study"}
+{"event": "packet", "hash": "464001aa2bbc5b973602f7fca5b947b68b8bc7240f8a30ab1dfd4006a0f68476", "iteration": 0, "size": 37334, "stage": "author-study", "timestamp": "2026-10-13T06:40:04Z"}
+{"disposition": "PASS", "event": "result", "stage": "author-study", "timestamp": "2026-10-13T06:53:03Z", "transition": "study-preflight"}
+{"event": "packet", "hash": "1dd488fc7a15b2b1a58848b67aff28c837758b62d5eb110afce9a4135ea6d6fd", "iteration": 0, "size": 693, "stage": "study-preflight", "timestamp": "2026-10-13T06:53:03Z"}
+{"disposition": "PASS", "event": "result", "stage": "study-preflight", "timestamp": "2026-10-13T06:53:24Z", "transition": "study-review"}
+{"event": "packet", "hash": "9349ffeaf62cb1ea3f3a02e7d845043c9f37d23f1e9bf79897203fb722cace5f", "iteration": 0, "size": 43552, "stage": "study-review", "timestamp": "2026-10-13T06:53:24Z"}
+{"disposition": "PASS", "event": "result", "stage": "study-review", "timestamp": "2026-10-13T07:16:41Z", "transition": "derive-synthesis"}
+{"event": "packet", "hash": "6188e5fcc89ddfcdc84fe142f216a576528a8795336a172841b7f219611271f0", "iteration": 0, "size": 34638, "stage": "derive-synthesis", "timestamp": "2026-10-13T07:16:41Z"}
+{"disposition": "PASS", "event": "result", "stage": "derive-synthesis", "timestamp": "2026-10-13T07:28:31Z", "transition": "synthesis-preflight"}
+{"event": "packet", "hash": "f1c0795754b309d4ee352bf45cde5ecf8dd5400e2b75b0b82fb373238cabe19a", "iteration": 0, "size": 697, "stage": "synthesis-preflight", "timestamp": "2026-10-13T07:28:31Z"}
+{"disposition": "PASS", "event": "result", "stage": "synthesis-preflight", "timestamp": "2026-10-13T07:28:48Z", "transition": "synthesis-review"}
+{"event": "packet", "hash": "a491c4d5f62fb864fadf79dede3683501a604a3160396a83011cff57d8fece7d", "iteration": 0, "size": 42007, "stage": "synthesis-review", "timestamp": "2026-10-13T07:28:48Z"}
+{"disposition": "PASS", "event": "result", "stage": "synthesis-review", "timestamp": "2026-10-13T07:49:25Z", "transition": "derive-homily"}
+{"event": "packet", "hash": "c1fb0b0f2646421152843df513d30efaf1008974e667e1b06c6a17f52ce2d06f", "iteration": 0, "size": 33437, "stage": "derive-homily", "timestamp": "2026-10-13T07:49:25Z"}
+{"disposition": "PASS", "event": "result", "stage": "derive-homily", "timestamp": "2026-10-13T07:58:54Z", "transition": "homily-preflight"}
+{"event": "packet", "hash": "834e108d23e976d1e484a74c10f49c2c39b17540f337b6c2f9f04fdd453657d2", "iteration": 0, "size": 694, "stage": "homily-preflight", "timestamp": "2026-10-13T07:58:54Z"}
+{"disposition": "PASS", "event": "result", "stage": "homily-preflight", "timestamp": "2026-10-13T07:59:15Z", "transition": "homily-review"}
+{"event": "packet", "hash": "38f802ea40d586f08917605c4b5dbcd5f38a7e67b4c9b61d6935d25358f72e9d", "iteration": 0, "size": 38541, "stage": "homily-review", "timestamp": "2026-10-13T07:59:15Z"}
+{"disposition": "PASS", "event": "result", "stage": "homily-review", "timestamp": "2026-10-13T08:15:45Z", "transition": "build-artifacts"}
+{"event": "packet", "hash": "aa4c62e951db6900106c74f91e715fd5cf2d54ad2dbf788628b7017fc8e367a9", "iteration": 0, "size": 33869, "stage": "build-artifacts", "timestamp": "2026-10-13T08:15:45Z"}
+{"disposition": "PASS", "event": "result", "stage": "build-artifacts", "timestamp": "2026-10-13T08:25:13Z", "transition": "artifact-gates"}
+{"event": "packet", "hash": "9e397823395daca69fa01795e9b5665c071597edee6972eccb026897e138fa8d", "iteration": 0, "size": 750, "stage": "artifact-gates", "timestamp": "2026-10-13T08:25:13Z"}
+{"disposition": "PASS", "event": "result", "stage": "artifact-gates", "timestamp": "2026-10-13T08:25:26Z", "transition": "visual-review"}
+{"event": "packet", "hash": "cb0b96c323375922728ad926659031cbcc2ed12927563e2c28f7d1253a6aa512", "iteration": 0, "size": 40867, "stage": "visual-review", "timestamp": "2026-10-13T08:25:26Z"}
+{"disposition": "PASS", "event": "result", "stage": "visual-review", "timestamp": "2026-10-13T09:06:44Z", "transition": "generate-web"}
+{"event": "packet", "hash": "566810877f10a855dd6af2c6bd4fa4f5737ed345064eb1949220a6f0252499a2", "iteration": 0, "size": 32325, "stage": "generate-web", "timestamp": "2026-10-13T09:06:44Z"}
+{"disposition": "PASS", "event": "result", "stage": "generate-web", "timestamp": "2026-10-13T09:31:14Z", "transition": "web-review"}
+{"event": "packet", "hash": "0e8174d8afe8133da87b6743a6961e4a0064cb6caf6906b230ff20d4f0cef8e8", "iteration": 0, "size": 34242, "stage": "web-review", "timestamp": "2026-10-13T09:31:14Z"}
+{"disposition": "PASS", "event": "result", "stage": "web-review", "timestamp": "2026-10-13T09:53:12Z", "transition": "install-publication"}
+{"event": "packet", "hash": "faf257b1070986985f4b8e4d6a555bcb1ac80e7c582b04f826ea125dec373f60", "iteration": 0, "size": 34813, "stage": "install-publication", "timestamp": "2026-10-13T09:53:12Z"}
+{"disposition": "PASS", "event": "result", "stage": "install-publication", "timestamp": "2026-10-13T10:04:40Z", "transition": "publication-gates"}
+{"event": "packet", "hash": "9a0258c9b5f43851d2aa9563cd09251899c091bd7864a789ac5dfde38879c929", "iteration": 0, "size": 779, "stage": "publication-gates", "timestamp": "2026-10-13T10:04:40Z"}
+{"disposition": "PASS", "event": "result", "stage": "publication-gates", "timestamp": "2026-10-13T10:05:48Z", "transition": "ACCEPTED"}
+{"event": "accepted", "timestamp": "2026-10-13T10:05:48Z"}

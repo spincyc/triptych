@@ -1,0 +1,17 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+    "files": {},
+    "provider": "gpt",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md": "0a12ed464a3838f64e9e16f2820f1f55b87cd599466058919a440701f09fbd44"
+    }
+  },
+  "stage": "web-review",
+  "summary": "PASS: The complete canonical web study at build/web/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md (SHA-256 0a12ed464a3838f64e9e16f2820f1f55b87cd599466058919a440701f09fbd44, as recorded in research/web-artifact.json) preserves the 26-page research PDF and canonical source: both interpretations with their four senses, all 17 appointed entries, tables, and 44 exact source notes. Full reading, bidirectional text comparison, and locked Markdown 3.10.3 HTML inspection found no blocking conversion defect; browser appearance/click behavior and remote-link availability were not verified after the local browser socket denial and interrupted escalation."
+}

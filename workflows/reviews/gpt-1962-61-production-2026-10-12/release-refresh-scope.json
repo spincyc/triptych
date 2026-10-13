@@ -1,0 +1,95 @@
+{
+  "scope": "Coordinator authorization for explicit release-binding refresh during installation; no blanket adoption or new review verdict",
+  "checkpoint": "ebef2e1ba64d469ce05d1178a78d439282bd1770",
+  "status_log_sha256": "7f7c47622834e86a94c0ca5fdd409f3296dde1be122687c4e11693f0920542ec",
+  "review_basis": [
+    "workflows/reviews/propers-quality-2026-10-12/reviewed-state.json",
+    "workflows/reviews/propers-quality-2026-10-12/SOURCE-IMPACT.md",
+    "workflows/reviews/gpt-1962-61-production-2026-10-12/checkpoint-validation.json"
+  ],
+  "authorized_prior_paths": [
+    {
+      "path": "scripts/_proper_components.py",
+      "sha256": "78a72984080ed9a54b8f4a96697bd9cfd492a4506c2d7341a3cba6cb1409264c",
+      "byte_identical_to_pushed_checkpoint": true
+    },
+    {
+      "path": "src/web/data/structure/documents/corpus.json",
+      "sha256": "73e13ab2a400bbf0fc89b2063b394927a90a69f59444507449f4448b94c0df92",
+      "byte_identical_to_pushed_checkpoint": true
+    },
+    {
+      "path": "src/web/data/structure/ordinary/roman-1962.json",
+      "sha256": "7d8eeba961c7e8ffa46f9fc57a486d6a4ddf7df23d011a0bbba015e87c404000",
+      "byte_identical_to_pushed_checkpoint": true
+    },
+    {
+      "path": "src/web/data/structure/ordinary/roman-pre-1955.json",
+      "sha256": "85a45f1095af71b1cf5f240473fb2037660e972134c24cca31a82e2c990d07fb",
+      "byte_identical_to_pushed_checkpoint": true
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/catholic-church/missale-romanum/1922-1922-tours-mame-editio-quarta-iuxta-typicam.json",
+      "sha256": "150db0b63f62f292e9f6f90f8bbf8e91fa24b4bb265f62b6940c2c6a7bc86705",
+      "byte_identical_to_pushed_checkpoint": true
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/eugene-cummiskey/roman-missal-english-laity/1861-philadelphia-1861.json",
+      "sha256": "50a2936b2c7cf638745e55f850e4fba43e78588d05dcf08315ce1b16f72683f3",
+      "byte_identical_to_pushed_checkpoint": true
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/francis-xavier-lasance/the-new-roman-missal/1945-benziger-revised-1945.json",
+      "sha256": "1131aa4b9c6b53f197d90f469078f2151894dcc1986ab15f9b77e7ff02d61b97",
+      "byte_identical_to_pushed_checkpoint": true
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/fssp-france/ordo-du-mois/2026-2026-10-12-web.json",
+      "sha256": "1830e4d0e2b0da805f7b69fa43dceb6588541029dadeb27e27110a6e9c9cd1e3",
+      "byte_identical_to_pushed_checkpoint": true
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/gregory-the-great/moralia-in-iob/2026-2026-10-12-library-of-fathers-lectionarycentral.json",
+      "sha256": "622d287f0cdea78cc06f4fbefe6f5cc927109af289ee65ea7e1a551f7fb08ecc",
+      "byte_identical_to_pushed_checkpoint": true
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/rabanus-maurus/expositio-in-librum-esther/2026-2026-10-12-migne-pl109-wikisource.json",
+      "sha256": "a67e0d7167e876a466da130e199087cb8fdff5cbe33762b8885059616b6650c3",
+      "byte_identical_to_pushed_checkpoint": true
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/thomas-aquinas/summa-theologiae/2026-2026-10-12-english-dominicans-newadvent-q88.json",
+      "sha256": "a4b009167caaa9dfc1d267b2a1de066c0ed3537ad0bdbf1221a2f38b09225cb0",
+      "byte_identical_to_pushed_checkpoint": true
+    },
+    {
+      "path": "src/web/data/structure/sources/index.json",
+      "sha256": "ec99a669ae0bb8509f107b66e4cdd0840b80fa623fe8da3676d310bee7571e28",
+      "byte_identical_to_pushed_checkpoint": true
+    }
+  ],
+  "additional_owned_scope": "The installation worker may bind this publication\u2019s final generated document corpus, owning catalog entry, canonical web edition and exact release records. The other eleven prior paths must retain their reviewed checkpoint bytes. Use explicit file ONLY paths; blanket adoption is prohibited.",
+  "scoped_adoption": "Coordinator inspected tools/release-bindings compute_site_hashes: --adopt-new-site-sources together with exact file --only arguments adds or retires only named recognized paths and preserves every sibling binding byte-for-byte. This is authorized for the four listed unrecorded source projections and this owner\u2019s new canonical web path; final diff must contain only reviewed entries.",
+  "verified_refresh": {
+    "changed_site_bindings": {
+      "library/traditional-latin-mass.md": "c856cbb2e8d3c43adadf2ae86ffd7372318e9525c539dee1f93353b11220c3de",
+      "scripts/_proper_components.py": "78a72984080ed9a54b8f4a96697bd9cfd492a4506c2d7341a3cba6cb1409264c",
+      "src/web/data/structure/documents/corpus.json": "7bf9bf5b856f685a1df10e55e6e6617e7966445c55973d309ed42cfbe756f58e",
+      "src/web/data/structure/ordinary/roman-1962.json": "7d8eeba961c7e8ffa46f9fc57a486d6a4ddf7df23d011a0bbba015e87c404000",
+      "src/web/data/structure/ordinary/roman-pre-1955.json": "85a45f1095af71b1cf5f240473fb2037660e972134c24cca31a82e2c990d07fb",
+      "src/web/data/structure/sources/editions/catholic-church/missale-romanum/1922-1922-tours-mame-editio-quarta-iuxta-typicam.json": "150db0b63f62f292e9f6f90f8bbf8e91fa24b4bb265f62b6940c2c6a7bc86705",
+      "src/web/data/structure/sources/editions/eugene-cummiskey/roman-missal-english-laity/1861-philadelphia-1861.json": "50a2936b2c7cf638745e55f850e4fba43e78588d05dcf08315ce1b16f72683f3",
+      "src/web/data/structure/sources/editions/francis-xavier-lasance/the-new-roman-missal/1945-benziger-revised-1945.json": "1131aa4b9c6b53f197d90f469078f2151894dcc1986ab15f9b77e7ff02d61b97",
+      "src/web/data/structure/sources/editions/fssp-france/ordo-du-mois/2026-2026-10-12-web.json": "1830e4d0e2b0da805f7b69fa43dceb6588541029dadeb27e27110a6e9c9cd1e3",
+      "src/web/data/structure/sources/editions/gregory-the-great/moralia-in-iob/2026-2026-10-12-library-of-fathers-lectionarycentral.json": "622d287f0cdea78cc06f4fbefe6f5cc927109af289ee65ea7e1a551f7fb08ecc",
+      "src/web/data/structure/sources/editions/rabanus-maurus/expositio-in-librum-esther/2026-2026-10-12-migne-pl109-wikisource.json": "a67e0d7167e876a466da130e199087cb8fdff5cbe33762b8885059616b6650c3",
+      "src/web/data/structure/sources/editions/thomas-aquinas/summa-theologiae/2026-2026-10-12-english-dominicans-newadvent-q88.json": "a4b009167caaa9dfc1d267b2a1de066c0ed3537ad0bdbf1221a2f38b09225cb0",
+      "src/web/data/structure/sources/index.json": "ec99a669ae0bb8509f107b66e4cdd0840b80fa623fe8da3676d310bee7571e28",
+      "web/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md": "0a12ed464a3838f64e9e16f2820f1f55b87cd599466058919a440701f09fbd44"
+    },
+    "new_adoptions": 5,
+    "other_authorization_metadata_unchanged": true,
+    "rights_record_diff": "Only the same fourteen source-hash rows changed; no rights-policy prose changed."
+  }
+}

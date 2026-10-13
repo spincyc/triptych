@@ -1,0 +1,50 @@
+PASS: independent implementation review of the orientation-v1 literal pageref repair.
+
+Reviewed uncommitted candidate atop ebef2e1ba64d469ce05d1178a78d439282bd1770:
+tools/web-edition SHA-256 610491f4aa22838e2969efbe331644d7062d85d4234ba1211594939a551abe33
+tools/tests/test_web_edition_pageref.py SHA-256 b3ac9448c6ed4753dcd7228cd0a40eeead1d6ee8cf734d07a3f71469e209ccc9
+
+Outcome:
+The schema-2 orientation-v1 gate confines this repair to the new contract.
+Literal page references become links named by their rendered headings; their
+surrounding text remains. Missing/duplicate source labels, missing/nonheading/
+duplicate rendered targets, and lost/repeated markers are refused. Re-rendering
+proves link text and destination survive the site's locked renderer. A conservative
+refusal covers carried local macro definitions containing pageref. This is an
+intentional supported-path boundary, including unused such definitions.
+
+Final verification, all exit 0:
+1. Seventeen unittest cases: all twelve tools.tests.test_web_edition_pageref tests,
+   plus tools.tests.test_web_edition_conversion.WebEditionConversionTests methods:
+   test_schema_two_explicit_heading_and_paragraph_anchors_reach_the_site
+   test_schema_two_adjacent_labels_survive_as_distinct_ids
+   test_schema_two_proper_preserves_contents_at_its_source_position
+   test_schema_two_requires_exact_active_source_label_coverage
+   test_orientation_rows_keep_passage_subject_place_and_dates_through_pandoc
+   Evidence: regression-final.log.
+2. Independent probes.py: adjacent references, starred headings, Unicode fragment
+   identifiers and footnotes succeeded. Comment-only labels, macro-produced labels,
+   macro-dropped targets, malformed references and macro-hidden references refused.
+   Headings containing literal Markdown emphasis/link syntax render as plain link
+   text after the final escape fix. Evidence: probes-final.log.
+3. tools/web-edition --provider gpt --output
+   .scratch/propers-20261018/web-pageref-review/current-leaf
+   liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost
+   Output SHA-256 0a12ed464a3838f64e9e16f2820f1f55b87cd599466058919a440701f09fbd44.
+   Real-leaf regression confirms all bytes outside the five-reference line agree
+   with conversion with the literal-reference preparation disabled.
+4. git diff --check -- tools/web-edition tools/tests/test_web_edition_pageref.py
+
+Environment: pandoc 3.11; site-pinned Markdown 3.10.3 provided through PYTHONPATH
+.scratch/tlm-2026-10-04/generate-web-0000/dependencies; PYTHONDONTWRITEBYTECODE=1;
+TMPDIR in this review directory. Final file hashes rechecked after testing.
+
+No outstanding implementation findings. Earlier intermediate-candidate findings
+(macro-hidden deletion; Markdown interpretation inside inline HTML link text)
+are resolved in the bound final candidate above.
+
+Limits: no native workflow mutation or web-content acceptance; no PDF or visual
+review; no publication/commit/stage/push. This review changed only its own scratch
+artifacts. Historical editions intentionally retain their existing conversion
+behavior. Wider existing conversion suite belongs to the implementation author's
+verification; the independent reviewer ran only the focused suite above.

@@ -1,0 +1,56 @@
+{
+  "kind": "original author verification summary; not a native tool receipt",
+  "intended_boundary": "public review evidence candidate; no installation or independent acceptance",
+  "stage": "derive-homily",
+  "iteration": 0,
+  "packet_sha256": "c1fb0b0f2646421152843df513d30efaf1008974e667e1b06c6a17f52ce2d06f",
+  "proof": {
+    "file": "homily-proof.pdf",
+    "sha256": "39081db3f44add36ed7b5a4e99491cb3e1e96b940aa81dff8fff198543435752",
+    "pages": 3,
+    "bytes": 245077,
+    "build_bytes_equal": true
+  },
+  "reviewed_upstream": {
+    "study_sha256": "878b887f73817f3a5d28100248efd6988f19bd7be262fffd7a8cfbaf7a2a524f",
+    "concise_sha256": "ac9b8f56e6982d2da2ebeb7312d4bb5ce5ae342cba84f83f3383b1c6e83cee1d",
+    "complete_read": true
+  },
+  "sources_retained_unchanged": [
+    "homily.tex",
+    "sections/homily/10-body.tex",
+    "sections/homily/90-apparatus.tex"
+  ],
+  "changed_leaf_files": [
+    "generation-metadata.tex",
+    "research/production-review.md"
+  ],
+  "spoken_words": 1257,
+  "timing": "10.5–11.4 minutes at 110–120 words per minute before pauses; approximately 11–12 minutes with brief pauses",
+  "oral_review": "Textual review of all twenty paragraphs for sense, referents, transitions, warning, pastoral distinctions, response and closing return. No audible or timed human rehearsal.",
+  "decisive_detail": "Matthew 18:26,29 repeats the plea for patience: complete remission received, even delay refused; Ephesians 6:12,15 redirects spiritual battle from the neighbor, while the Mass prayers carry prior mercy to inward fruit.",
+  "checks": {
+    "make_doc": 0,
+    "homily_components": 0,
+    "homily_content_preflight": 0,
+    "source_library_validation": "pass, 3815 bindings",
+    "make_check_sources": {
+      "exit_code": 2,
+      "remaining": "shared catalogue drift and publication-inventory stale hashes; publication owner reconciliation"
+    },
+    "tex_diagnostics": "none",
+    "pdf_fonts": "all ten rows embedded, subset and Unicode mapped Latin Modern",
+    "visual_pages": [
+      1,
+      2,
+      3
+    ],
+    "spoken_source_pdf_words_equal": true
+  },
+  "limitations": [
+    "No new facsimile collation or research sweep.",
+    "Author proof only; cold homily review and final three-document build remain.",
+    "Native operational logs and helper receipts stay local unchanged."
+  ],
+  "processes": "All author-started subprocesses completed; no background process remains."
+}

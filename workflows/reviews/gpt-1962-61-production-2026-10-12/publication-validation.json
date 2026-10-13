@@ -1,0 +1,273 @@
+{
+  "scope": "Coordinator publication identity and archive verification after actual terminal acceptance; does not substitute for native reviews",
+  "run_id": "ed4bc29b18cf1150",
+  "workflow_disposition": "ACCEPTED",
+  "stages_passed": 21,
+  "open_native_findings": 0,
+  "archive": {
+    "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150",
+    "manifest_sha256": "ebac9223b4813fa04a93223cfa44b81b91e0c7f16fc6e56eac4adb1cb086f844",
+    "native_files": 94,
+    "selected_auxiliary_files": 17,
+    "manifested_files": 111,
+    "all_native_files_byte_exact": true,
+    "packets_and_results_match_engine_state": true,
+    "original_blocked_manifest_sha256": "01aabb11ac57620a8c7e62daa63a946601dbca352ac57865d420c10459578623"
+  },
+  "installed_pdfs": [
+    {
+      "build": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily.pdf",
+      "installed": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily.pdf",
+      "sha256": "39081db3f44add36ed7b5a4e99491cb3e1e96b940aa81dff8fff198543435752",
+      "pages": 3,
+      "bytes": 245077
+    },
+    {
+      "build": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.pdf",
+      "installed": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.pdf",
+      "sha256": "17833353408ddf5abd76c6b5d0cc617bd123c8054ea99fd899e2174c5a730f4e",
+      "pages": 10,
+      "bytes": 386743
+    },
+    {
+      "build": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.pdf",
+      "installed": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.pdf",
+      "sha256": "741ab14fb48442ffaf60f2ca8dbfac866a4eb998c40697ba80bd9525c391f284",
+      "pages": 26,
+      "bytes": 447319
+    }
+  ],
+  "installed_web": {
+    "path": "web/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md",
+    "sha256": "0a12ed464a3838f64e9e16f2820f1f55b87cd599466058919a440701f09fbd44",
+    "bytes": 87646,
+    "staged_exact_bytes": true,
+    "fresh_conversion_identical": true
+  },
+  "installation_evidence_identities_rechecked": 19,
+  "checks": {
+    "full_check_sources_after_terminal_acceptance": {
+      "exit_code": 0,
+      "log_sha256": "d3aacdd5e94703f0fe26660d40b848d2b4359e0645559bca5f2d49b08c90dd3f",
+      "Markdown": "3.10.3"
+    },
+    "installer_final_source_check": {
+      "command": [
+        "make",
+        "check-sources"
+      ],
+      "exit_code": 0,
+      "after_last_source_audit_append_and_inventory_refresh": true,
+      "native_log_sha256": "053add885f591653b00c284087b983a0e379d783b8bd3f390c399d4a36b5d745"
+    },
+    "native_publication_gates": "PASS",
+    "promised_deliverable_ledger": "PASS; delivery requirement remains open until push",
+    "tracked_diff_whitespace": "PASS before adding native archive",
+    "staged_whitespace": {
+      "exit_code": 2,
+      "disposition": "Only byte-exact native gate-log blank-at-EOF exceptions; all authored files clean",
+      "exceptions": [
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/artifact-gates-0000-reviewed-artifact-snapshot.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/homily-preflight-0000-bindings-valid.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/homily-preflight-0000-chronology-annotations-current.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/homily-preflight-0000-chronology-claims-supported.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/homily-preflight-0000-chronology-record-current.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/homily-preflight-0000-component-contract.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/homily-preflight-0000-house-voice.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/homily-preflight-0000-identifiers-resolve.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/homily-preflight-0000-provenance-matches-run.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/homily-preflight-0000-references-used.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/homily-preflight-0000-relation-coverage.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/homily-preflight-0000-restricted-not-reproduced.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/homily-preflight-0000-structural-meta-labels.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/homily-preflight-0000-unquoted-not-quoted.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/publication-gates-0000-document-catalogue.log",
+          "line": 18
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/publication-gates-0000-public-alpha.log",
+          "line": 10
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/publication-gates-0000-release-bindings.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/publication-gates-0000-three-document-publication.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/publication-gates-0000-web-editions-current.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/research-preflight-0000-research-records.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/scope-gate-0000-authorized-identity.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/study-preflight-0000-bindings-valid.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/study-preflight-0000-chronology-annotations-current.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/study-preflight-0000-chronology-claims-supported.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/study-preflight-0000-chronology-record-current.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/study-preflight-0000-component-contract.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/study-preflight-0000-house-voice.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/study-preflight-0000-identifiers-resolve.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/study-preflight-0000-provenance-matches-run.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/study-preflight-0000-references-used.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/study-preflight-0000-relation-coverage.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/study-preflight-0000-restricted-not-reproduced.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/study-preflight-0000-structural-meta-labels.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/study-preflight-0000-study-web-conversion.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/study-preflight-0000-unquoted-not-quoted.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/synthesis-preflight-0000-bindings-valid.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/synthesis-preflight-0000-chronology-annotations-current.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/synthesis-preflight-0000-chronology-claims-supported.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/synthesis-preflight-0000-chronology-record-current.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/synthesis-preflight-0000-component-contract.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/synthesis-preflight-0000-house-voice.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/synthesis-preflight-0000-identifiers-resolve.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/synthesis-preflight-0000-provenance-matches-run.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/synthesis-preflight-0000-references-used.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/synthesis-preflight-0000-relation-coverage.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/synthesis-preflight-0000-restricted-not-reproduced.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/synthesis-preflight-0000-structural-meta-labels.log",
+          "line": 7
+        },
+        {
+          "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/gate-logs/synthesis-preflight-0000-unquoted-not-quoted.log",
+          "line": 7
+        }
+      ]
+    }
+  },
+  "delivery": "Accepted payload awaiting outgoing-object audit and push; delivery receipt follows verified push.",
+  "limits": [
+    "Historical v10 run remains BLOCKED.",
+    "Web review used full text and locked-renderer HTML comparison; no successful browser viewport/click test.",
+    "No physical print or timed human homily rehearsal.",
+    "Native helper receipts and expressly local-only working evidence excluded from archive.",
+    "No main integration or live deployment claimed."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "record_kind": "Public-archive-intended reviewer-authored evidence correction addendum",
+  "scope": "Correct one locator in this reviewer's checked-loci summary; no manuscript correction or review reopening.",
+  "original_evidence": {
+    "name": "checked-loci-public-summary.json",
+    "sha256": "668ef09536b5e55c98592c598425c6fc566a42d6ed8e8a4064fc223cb8b433b0",
+    "json_pointer": "/text_sources/7/inspected_loci",
+    "source_label": "Augustine, De Trinitate",
+    "original_value": "Book II, preface §3",
+    "corrected_value": "Book III, preface §3"
+  },
+  "basis": {
+    "retained_source": "src/sources/works/augustine/de-trinitate/editions/1887-haddan-english-web-2026-09-29/artifacts/complete-page-text-07b2f4f0/source.txt",
+    "source_sha256": "07b2f4f016a7f19916703c7089c2fca2d06621b57361496a9e419d825fa03c05",
+    "rechecked_lines": [1, 7, 13],
+    "explanation": "The retained source identifies Book III at line 1, the Preface at line 7, and section 3 at line 13. Section 3 begins the third book by recalling the second book's conclusion that the Son's being sent does not make him less than the Father, nor the Spirit's being sent make him less than either. The original summary's Book II label was an error in the reviewer-authored locator; the inspected source and substantive outcome remain the same.",
+    "manuscript_location": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/10-commentary.tex:54",
+    "manuscript_check": "The concise manuscript correctly cites On the Trinity III, preface §3 and correctly identifies its use as doctrinal illumination of the Trinity Preface."
+  },
+  "verdict": {
+    "original": "PASS",
+    "after_correction": "PASS",
+    "changes": false,
+    "reason": "The correction fixes only the evidence summary's book number. It reveals no manuscript defect and does not alter the source support or substantive review conclusion."
+  },
+  "preservation": {
+    "original_evidence_unchanged": true,
+    "submitted_result_unchanged": true,
+    "submitted_result_name": "result.json",
+    "submitted_result_sha256": "cdcc4823054956e9261268a7be8342c239cb6f0e5683f452ebfc87e9ee24c19d",
+    "manuscript_and_workflow_state": "No edits."
+  },
+  "reviewer_signature": {
+    "stage": "synthesis-review",
+    "iteration": 0,
+    "role": "Independent cold reviewer; author of the original evidence summary and this addendum",
+    "model": "GPT-6 (Codex)",
+    "effort": "xhigh"
+  }
+}

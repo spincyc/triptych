@@ -1,0 +1,57 @@
+{
+  "stage": "resolve-context",
+  "iteration": 0,
+  "checked_on": "2026-10-13",
+  "packet_sha256": "d477898f18456021f267e1939c0cfd262cda3f56b5f2af358693530eeb574456",
+  "outcome": "complete",
+  "changed_files": [
+    {"path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/context.md", "sha256": "7112c070e392fe3e540e162f0467ee5e4b087b3d43a57514c5194282d2adbf73"},
+    {"path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/source-plan.md", "sha256": "4ee3c562a75573502a80d07b64d12a864791e675a97abaf945177d4dd5368512"}
+  ],
+  "source_checks": [
+    {
+      "source": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+      "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "hash_matched": true,
+      "independently_read_pdf_pages": [15, 16, 25, 30, 32, 33, 374, 494, 495, 496, 770, 771, 894, 895],
+      "image_render_dpi": 130,
+      "scope": "Identity, appointed passages and text boundaries, precedence, commemoration, mission additions, Preface, Canon and Last Gospel rules. Not a complete renewed comparative word-level collation."
+    },
+    {
+      "source": "artifact.fssp-france.ordo-du-mois.web-2026-10-12.html-e5207e58",
+      "sha256": "e5207e58e6737f45d32a422390e1446a261d1b410072de8d5387abe3ac488c06",
+      "hash_matched": true,
+      "scope": "Complete retained HTML rehashed; October 18 entry independently read."
+    },
+    {
+      "url": "https://www.fssp.fr/ordo-du-mois/",
+      "retrieved_on": "2026-10-13",
+      "sha256": "dae1fa64d5702de943a23f222beaa372313c6b0afbf90e883871c7468d49331b",
+      "byte_size": 169686,
+      "scope": "Complete live HTML fetched; same October 18 appointment confirmed. Corroborating delivery, not a replacement of the registered artifact."
+    }
+  ],
+  "inventory": {
+    "base_elements": 11,
+    "mission_additions": 3,
+    "st_luke_conditional_commemorations": 3,
+    "maximum_elements": 17,
+    "manifest_order_checked": true,
+    "territory": "Unspecified; general-calendar baseline with local overlays unresolved.",
+    "mass_type": "Unspecified; low/conventual and nonconventual sung branches retained.",
+    "mission_day": "Penultimate October Sunday baseline; competent local reassignment remains conditional."
+  },
+  "checks": [
+    {"name": "check-proper-identity", "result": "pass"},
+    {"name": "calendar-days day", "result": "pass", "limit": "Unranked finding aid: nominal slot 21 of 26 and St Luke candidate; Missal determines winner and additions."},
+    {"name": "git diff --check", "result": "pass"},
+    {"name": "source-library validation within make check-sources", "result": "pass", "bindings": 3815},
+    {"name": "make check-sources", "result": "failed", "exit_code": 2, "limit": "Publication inventory has stale hashes solely for the two changed context-stage records. Shared inventory refresh belongs to the following research owner before its cold seal; no aggregate rerun after that known drift."}
+  ],
+  "limits": [
+    "No source-library artifact, binding, fingerprint or historical verification date changed.",
+    "The existing main.tex manuscript was preserved; no reservation scaffold was created.",
+    "No new liturgical text, interpretation, manuscript revision, build, installation or publication was performed.",
+    "All worker subprocesses finished before handback."
+  ]
+}

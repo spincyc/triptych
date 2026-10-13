@@ -1,3 +1,429 @@
+# Reviewed three-document installation
+
+## Proper-study v11, install-publication iteration 0 — 2026-10-13
+
+The exact installation packet has SHA-256
+`faf257b1070986985f4b8e4d6a555bcb1ac80e7c582b04f826ea125dec373f60`.
+The engine's recorded research, study, synthesis, homily, visual and web
+reviews all returned PASS at iteration 0. Their results belong to the current
+v11 production; none is inherited from the blocked v10 production below.
+The visual review reports inspection of all 39 final PDF pages. The web
+review reports a complete reading, bidirectional text comparison and locked
+Markdown 3.10.3 HTML inspection of the canonical study, including all seventeen
+appointed entries and 44 source notes. These are the reviewers' completed
+events, not new source or page inspections by the installation worker.
+
+The current artifact snapshot was checked before installation. Each normal
+`make install-doc DOC=<id> PROVIDER=gpt` recipe ran with its declared
+dependencies and checks, without timestamp changes or dependency suppression.
+All three commands completed successfully, and each build and installed PDF
+matches the exact hash accepted by visual review:
+
+| Installed PDF below `pdf/gpt/liturgy/roman-rite/1962/propers/temporal/` | Physical pages | Bytes | SHA-256 |
+| --- | ---: | ---: | --- |
+| `61-twenty-first-after-pentecost.pdf` | 26 | 447319 | `741ab14fb48442ffaf60f2ca8dbfac866a4eb998c40697ba80bd9525c391f284` |
+| `61-twenty-first-after-pentecost-synthesis.pdf` | 10 | 386743 | `17833353408ddf5abd76c6b5d0cc617bd123c8054ea99fd899e2174c5a730f4e` |
+| `61-twenty-first-after-pentecost-homily.pdf` | 3 | 245077 | `39081db3f44add36ed7b5a4e99491cb3e1e96b940aa81dff8fff198543435752` |
+
+The canonical Markdown was installed byte for byte from its accepted conversion
+to `web/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md`
+and staged as required by the publication contract. Its SHA-256 is
+`0a12ed464a3838f64e9e16f2820f1f55b87cd599466058919a440701f09fbd44`.
+A fresh conversion with Markdown 3.10.3 independently reproduces those bytes.
+There is no companion web authority. Accepted prose, metadata, PDF snapshots,
+web receipt and engine seals were preserved.
+
+Three `make add-publication` commands created the exact bare, `-synthesis`
+and `-homily` records beneath
+`release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/`.
+Each names its own ID, `library/traditional-latin-mass.md`, status `alpha`
+and standing authorization `perpetual-public-repository-2026`; PDF hashes
+remain in artifact evidence, not invented release fields. The existing
+Sunday 61 ChatGPT cell now links Full PDF, Synthesis PDF, Homily PDF and Read
+in manifest order, with exactly one canonical publication marker. The Claude
+cell and every other catalog row were preserved. The publication-wiring
+checker passes, including snapshot currency, build/install identity, exact
+release records, provider ownership, tracked web identity and web eligibility.
+
+The installation evidence summary records subsequent deterministic catalog,
+source-inventory, family-ledger and scoped release-binding refreshes and the
+full final `make check-sources` outcome. Its native command logs remain local,
+unchanged. This audit entry precedes that final refresh and check, so the check
+can validate its settled bytes without a later source append invalidating them.
+The terminal workflow gate, commit and push belong to the coordinator; this
+entry does not claim terminal acceptance or deployment.
+
+The actual limits remain: unspecified territory and Mass-type conditions are
+preserved, source reading and collation remain bounded by the research record,
+homily duration is estimated rather than a timed human delivery, and the cold
+reviews did not establish physical-print use, native-browser PDF inspection,
+browser appearance/click behavior or remote-link availability. No such event
+is supplied by successful installation.
+
+---
+
+# Replacement-run final artifact preparation
+
+## Proper-study v11, build-artifacts iteration 0
+
+The packet SHA-256 is
+`aa4c62e951db6900106c74f91e715fd5cf2d54ad2dbf788628b7017fc8e367a9`.
+All three prescribed `make doc` commands completed using normal declared
+dependencies. The settled shared revision is `2026-10-13T07:54:09Z`.
+No layout, semantic source, research, generation declaration or content-review
+seal was changed by this stage.
+
+The current run's four completed review results are PASS. Freshly computed
+research, study, synthesis and homily input seals match their native v11
+receipts exactly, including the research computation fields. The respective
+file maps contain 1,740, 17, 14 and 9 entries; the computation fields are
+additional to the research file map. No stale acceptance or upstream owner
+repair was found.
+
+## Final outputs and checks
+
+All outputs are beneath
+`build/gpt/liturgy/roman-rite/1962/propers/temporal/`:
+
+| File | Physical pages | Bytes | SHA-256 |
+| --- | ---: | ---: | --- |
+| `61-twenty-first-after-pentecost.pdf` | 26 | 447319 | `741ab14fb48442ffaf60f2ca8dbfac866a4eb998c40697ba80bd9525c391f284` |
+| `61-twenty-first-after-pentecost-synthesis.pdf` | 10 | 386743 | `17833353408ddf5abd76c6b5d0cc617bd123c8054ea99fd899e2174c5a730f4e` |
+| `61-twenty-first-after-pentecost-homily.pdf` | 3 | 245077 | `39081db3f44add36ed7b5a4e99491cb3e1e96b940aa81dff8fff198543435752` |
+
+The artifact and component checks pass, including the presentation, shared
+format, author-standing and orientation contracts. Settled concise auxiliary
+markers place inventory and all four sense rows on physical page 1,
+chronology on 2, themes on 3–4 and developed commentary on 5. The native
+auxiliary and logs are retained beside exact copies of the final PDFs.
+
+All three settled TeX logs have no warnings, overfull or underfull boxes,
+undefined references, missing characters or fatal errors. The `infwarerr`
+package's descriptive banner is not a warning. The normal builds validate
+metadata and navigation; the study and concise navigation reports resolve
+57 and 14 contents entries respectively. Poppler parsed and extracted every
+PDF, reported unencrypted Letter-size PDF 1.7 with no suspect structure,
+JavaScript or embedded attachments, and the review helper rasterized every
+page successfully. All 14 study, 15 concise and 10 homily font rows are
+embedded, subset and Unicode-mapped Latin Modern. Every extraction contains
+one final revision timestamp, no unresolved question-mark marker and no
+replacement character. Study and concise extracted text match their accepted
+v11 proofs exactly after substituting only the revision timestamp; the homily
+is byte-identical to its accepted proof.
+
+The study and concise files are 16.80 and 37.77 KiB per page. The homily's
+79.78 KiB per page crosses the size-review trigger: inspection found a small
+245,077-byte three-page PDF with ten embedded font rows and no raster images.
+It is retained without source-independent PDF optimization. None exceeds
+1 MiB.
+
+## Snapshot, rasters and locator confirmation
+
+The prescribed snapshot command wrote `research/artifacts.json`, SHA-256
+`d26470d08971982c593f4b704935f0bf311def792b6afec3f419b534ba9a0271`.
+It binds the three PDF hashes, render-input hashes and settled pagination
+auxiliaries. The approved `tools/tpt pdf-review` generated all 39 full-page
+rasters in
+`build/tpt-runs/ed4bc29b18cf1150/artifacts/build-artifacts-0000/rasters/`.
+The helper's native receipt is unchanged; logs and other evidence are outside
+that replaceable child.
+
+The worker opened the final concise page 2 and study pages 24–25. SYN-001's
+corrected pointer visibly reads **Matthew, p. 24**. The final study's entire
+Matthew subsection, both paragraphs and its footnote 43 occupy physical
+page 24; Ephesians begins physical page 25. The shared finalization timestamp
+has therefore not invalidated that locator. No change was needed.
+
+`build-summary.json` in the stage evidence directory is an original compact
+public summary, explicitly not a normalized native receipt. Native helper
+receipts, logs and operational reports remain unchanged local evidence;
+public-candidate and local-only boundaries are recorded separately. This stage
+claims artifact preparation and the targeted locator inspection, not the next
+worker's complete cold visual review or a new source collation. Shared source
+inventory and document-catalogue refresh remain publication-owner work. No
+PDF was installed, no workflow was advanced, and no staging, commit or push
+was performed. All stage-started subprocesses completed.
+
+---
+
+# Replacement-run homily author verification
+
+## Proper-study v11, derive-homily iteration 0
+
+The fresh high-effort GPT-6 author read the complete packet, SHA-256
+`c1fb0b0f2646421152843df513d30efaf1008974e667e1b06c6a17f52ce2d06f`,
+and both reviewed studies in full: the 26-page expansive proof, SHA-256
+`878b887f73817f3a5d28100248efd6988f19bd7be262fffd7a8cfbaf7a2a524f`,
+and the 10-page concise proof, SHA-256
+`ac9b8f56e6982d2da2ebeb7312d4bb5ce5ae342cba84f83f3383b1c6e83cee1d`.
+The homily entrypoint, spoken body and terminal apparatus were retained after
+independent comparison with those arguments and their evidence. No earlier
+production verdict supplies this stage's judgment. The shared generation
+record preserves the exact v11 provenance and adds this contribution; the
+current finalization timestamp is `2026-10-13T07:54:09Z`.
+
+The speech develops the first reading, mercy received and given. Its decisive
+detail is Matthew 18:26,29: the second servant repeats the first servant's
+own plea. The contrast between complete remission received and even a delay
+refused changes the listener's question from what the neighbor owes to what
+received mercy requires. Ephesians 6:12,15 then exposes revenge against a
+human neighbor as a misdirected spiritual battle; the Collect's continuing
+mercy, Secret's saving initiative and Postcommunion's inward fruit carry the
+argument through the Mass. Job's uprightness retains the studies' distinction
+between culpable refusal and a sufferer's pain. Replacing these texts with
+unrelated readings would remove both the repeated-plea inference and the
+armor-for-peace connection, rather than merely change an illustrative verse.
+
+## Oral sense and evidence checked
+
+A fresh textual rehearsal followed all twenty paragraphs in their spoken
+order, checking antecedents, sentence length, transitions and the return to
+the opening plea. The narrative establishes the first gift before the second
+encounter; the warning leads into Aquinas's distinction without cancelling
+judgment; the pain/correction paragraph prevents an accusation against the
+injured; the practical response grows out of the grip image; the final
+movement returns to received help and the neighbor outside the church.
+The speech remains continuous prose, with natural attributions and no inline
+apparatus, stage directions, invented experience or closing recited prayer.
+No wording change was needed in this pass.
+
+The recomputed count is **1,257 spoken words**, retaining internal apostrophes
+and hyphens and excluding title, terminal apparatus and metadata. At
+110–120 words per minute this is **10.5–11.4 minutes before pauses**, or
+approximately **11–12 minutes with brief pauses**. The 1,257 tokens match
+the PDF's raw extraction in order after removal of running matter and
+normalization of typographic ligatures and discretionary line hyphens.
+This is an estimated duration and textual oral-clarity review, not an audible
+or timed human delivery.
+
+The author reread Chrysostom's Matthew LXI §§1–4 and the opening of §5,
+Augustine's Sermon 83 §§1–8, Chrysostom's Ephesians XXII exposition through
+the spiritual-conflict moral discussion, Aquinas III q.88 aa.1–2, and
+Schuster III pp.178–181 in their retained textual witnesses. The exact
+Gospel quotations and prayer explanations were checked against the canonical
+appointed-text collation and both studies. Chrysostom supports the gift
+exceeding the request and the repeated plea; Augustine supports the
+debtor/creditor identity and inward pardon with correction; Aquinas preserves
+real remission alongside new culpability; Schuster supports reception's claim
+upon mind, heart and will. These are bounded readings of historical
+transcriptions and, for Schuster, OCR. No new facsimile collation, acquisition,
+research sweep or independent re-verification of the full research dossier
+is claimed. No upstream defect requiring repair was identified.
+
+## Fresh proof and checks
+
+The proof is
+`build/tpt-runs/ed4bc29b18cf1150/artifacts/derive-homily-0000/homily-proof.pdf`:
+**3 Letter pages**, **245077 bytes**, SHA-256
+`39081db3f44add36ed7b5a4e99491cb3e1e96b940aa81dff8fff198543435752`.
+It is byte-identical to the checked build.
+
+- Homily `make doc`, artifact component checking and complete homily content
+  preflight passed, including 34 source bindings and five used references.
+  Both contents anchors resolve. The settled TeX log has no warning,
+  overfull/underfull box, undefined reference, missing character or error.
+- Every page was individually opened as a full-page raster generated by
+  `tools/tpt pdf-review` in this stage's dedicated `rasters/` child. Pages
+  1–2 contain the full-width title followed by the two-column speech; page 3
+  contains the source/delivery note, References, revision and rights colophon.
+  No clipping, collision, stranded heading or illegible type was observed.
+- All ten font rows are embedded, subset and Unicode-mapped Latin Modern.
+  The PDF has no creation date or JavaScript; its modification date agrees
+  with the revision. Extracted speech matches the source as described above.
+- `make check-sources` exited 2 on shared document-catalogue drift and stale
+  publication-inventory hashes. Source-library validation passed, including
+  3815 bindings. The shared projections remain the later publication owner's
+  work and were not changed here.
+
+## Ownership and handback boundary
+
+Only `generation-metadata.tex` and this production record changed in this
+stage; the independently inspected homily sources were retained unchanged.
+Accepted research, study and concise sources, shared source owners and code
+were not edited. The stage evidence holds exact PDF, auxiliary, log, extraction,
+font and metadata bytes plus page rasters. Compact original JSON summaries
+explicitly identify public candidates; native logs, auxiliary, helper receipts
+and cache remain unchanged local operational evidence. No sanitized native
+receipt is offered as an original.
+
+This is author verification, not cold homily acceptance. The final family
+build must settle common metadata and recheck all three outputs. No install,
+staging, commit, push or workflow advancement was performed. All author-started
+subprocesses completed; no server or background process remains running.
+
+---
+
+# Replacement-run concise author verification
+
+## Proper-study v11, derive-synthesis iteration 0
+
+The fresh high-effort GPT-6 author read the complete packet, SHA-256
+`6188e5fcc89ddfcdc84fe142f216a576528a8795336a172841b7f219611271f0`,
+and compared every concise component with the complete accepted 26-page
+expansive proof, SHA-256
+`878b887f73817f3a5d28100248efd6988f19bd7be262fffd7a8cfbaf7a2a524f`.
+The current context, scope, interpretations and generated chronology were
+also inspected. No previous author or reviewer verdict supplied this judgment.
+
+The existing concise argument was retained after that comparison. Its five
+questions interleave received mercy and protected pilgrimage: the gift creates
+an obligation to forgive, while real deliverance begins a journey requiring
+perseverance. Aquinas's later distinctions remain distinct from the Fathers'
+preaching; Chrysostom's disputed Ephesians readings and Schuster's present
+judgment remain beside the other witnesses' answers. Job's innocence, the
+limits of a modern sufferer's diagnosis, correction alongside forgiveness,
+conditional mission and Luke prayers, and each reading's spiritual senses
+survive compression. No new evidence-dependent claim was added.
+
+SYN-001 was corrected by checking the current proof: Matthew's complete
+historical subsection and its source note occupy physical page 24; Ephesians
+begins page 25. The concise page-2 pointer now says Matthew, p. 24. The nine
+generated chronology rows, short sourced contexts and row spacing were
+retained. The other expansive page pointers were checked against the same
+proof. The shared generation record preserves the exact v11 provenance and
+adds the actual contribution; the finalization timestamp is
+`2026-10-13T07:20:51Z`. The already conforming manifest required no change.
+
+## Concise proof and actual checks
+
+The proof is
+`build/tpt-runs/ed4bc29b18cf1150/artifacts/derive-synthesis-0000/synthesis-proof.pdf`:
+10 Letter pages, 386743 bytes, SHA-256
+`ac9b8f56e6982d2da2ebeb7312d4bb5ce5ae342cba84f83f3383b1c6e83cee1d`.
+The recomputed substantive count is 4135 words: inventory 242, overview 70,
+themes 978, developed commentary 2845. English-alphabet tokens retain internal
+apostrophes and hyphens; headings are included, while footnotes, TeX commands,
+marker arguments, chronology and terminal apparatus are excluded.
+
+- The requested synthesis `make doc` and artifact component check passed.
+  The settled auxiliary places inventory and all four overview senses on
+  physical page 1, chronology on 2, themes on 3–4, and commentary on 5.
+  All 14 contents anchors and generation checks passed.
+- Complete synthesis content preflight passed: 34 bindings, current chronology,
+  nine exact orientation rows, two declared interpretations and used references.
+- The settled TeX log has no warnings, overfull or underfull boxes, undefined
+  references, missing characters or fatal diagnostics. All 15 font rows are
+  embedded, subset and Unicode mapped. The PDF has no creation date or
+  JavaScript; its modification date agrees with the revision.
+- The approved `tools/tpt pdf-review` generated the ten page rasters. Every
+  page was individually inspected. Page 2 pairs each passage with its subject,
+  place and alternatives legibly; the Matthew locator reads p. 24. The Exodus
+  interval ends at Temple construction, David's era remains attribution,
+  and the Galilean teaching event remains separate from Gospel composition.
+  Pages 3–4 contain substantive movement; pages 5–9 deepen the comparison;
+  page 10 contains references, timestamp and the readable rights colophon.
+  No clipping, overlap, broken table or stranded heading was observed.
+- `make check-sources` exited 2 on shared document-catalogue drift and stale
+  publication-inventory hashes, including the changed concise chronology and
+  other current owner changes. Source-library validation passed. The shared
+  projections belong to the coordinator's later reconciliation and were not
+  changed by this author.
+
+## Concise evidence and ownership boundary
+
+The stage evidence directory retains exact PDF, auxiliary and TeX log bytes,
+extracted text, metadata/font reports, word count and publication rasters.
+Its compact `author-evidence.json` and `evidence-boundary.json` are original
+public summaries and candidate inventories, not native tool receipts. Native
+logs, auxiliary, helper receipt and cache remain unchanged local evidence.
+No historical source collation, new source acquisition or cold acceptance is
+claimed. Accepted research and study prose were not edited. The final family
+build must recheck the cross-document pointers after shared metadata settles.
+No installation, staging, commit, push or engine advance was performed.
+All author-started subprocesses completed; no server or background process
+remains running.
+
+---
+
+# Replacement-run study author verification
+
+## Proper-study v11, author-study iteration 0
+
+This fresh high-effort GPT-6 worker read the complete current packet, SHA-256
+`464001aa2bbc5b973602f7fca5b947b68b8bc7240f8a30ab1dfd4006a0f68476`,
+for run `ed4bc29b18cf1150`. The records below this section describe the old
+v10 run; their verdicts do not constitute acceptance of this replacement run.
+The present result is an author-stage proof, pending the real content gate and
+independent cold review.
+
+The existing manuscript was independently read against the current reviewed
+context, scope, source plan and interpretations. Its two complete arguments
+remain distinct: received pardon calls for mercy, and received deliverance
+sustains an unfinished pilgrimage. The 17 appointed elements, historical
+English qualifications, conditional mission and St Luke prayers, all four
+senses in each reading, source differences and historical appendix remain
+substantively intact. Focused primary-text rereading included Chrysostom's
+Matthew LXI and the Ephesians XXII passage on 6:9, Augustine's Sermon 83 and
+Psalm 118 Caph, Gregory's permission/malice and without-cause distinctions,
+Aquinas's treatment of returning sins, and Schuster's Sunday exposition.
+This was not a new full facsimile collation or a replacement research review.
+The existing Ephesians 6:9 connection to Matthew 18:32 is correctly identified
+as reception of the preceding verse, not as whole-Mass patristic commentary.
+
+All 17 `proper-*` labels now immediately follow their own appointed-text
+headings. The already conforming component manifest was retained; only its
+extra blank EOF line was removed. The appointed-text and commentary files
+also received only authorized EOF whitespace cleanup beyond the new labels.
+Generation metadata records this v11 run, packet workflow digest, seed commit
+and current author contribution; its revision is `2026-10-13T06:44:25Z`.
+Web eligibility was reinspected on 2026-10-13. That declaration and the author
+conversion probe are not web acceptance receipts.
+
+## Proof and checks
+
+The current proof is
+`build/tpt-runs/ed4bc29b18cf1150/artifacts/author-study-0000/study-proof.pdf`:
+26 Letter pages, 447319 bytes, SHA-256
+`878b887f73817f3a5d28100248efd6988f19bd7be262fffd7a8cfbaf7a2a524f`.
+The substantive core contains 7233 words by the documented token method:
+opening 651, commentary 2088, mercy reading 1983, pilgrimage reading 2193,
+comparison 318. Appointed quotations, historical appendix and terminal
+apparatus are excluded; the four-senses summaries are included.
+
+- `make doc` passed, including all 57 contents anchors and generation checks.
+- Research-edition artifact component checking and content preflight passed.
+  Preflight validated 34 bindings, both lanes and the current chronology
+  apparatus, including nine complete orientation rows.
+- The author web probe passed. All 17 Markdown anchors were individually
+  matched to their source headings; the converter's rendered-target audit
+  passed. Probe Markdown SHA-256:
+  `f317bc98ce51aca0cc291c5d8c1fa2f205b9fb6d9c2991bf76f931cf5f17b479`.
+- The final TeX log contains no warnings, overfull/underfull boxes, undefined
+  references or missing characters. All 14 font rows are embedded, subset
+  and Unicode mapped. Poppler reports unencrypted PDF 1.7, no JavaScript,
+  no creation date, and the expected revision modification date.
+- Every page has extracted text without unresolved-reference or replacement
+  markers. The current revision and rights colophon appear on page 26.
+- The approved `tools/tpt pdf-review` helper generated all 26 full-page
+  rasters. Each page was inspected individually: opening and branch table
+  (1–2), appointed texts (3–10), commentary (10–14), mercy reading (14–17),
+  pilgrimage reading (18–21), comparison (22), chronology table and discussion
+  (23–25), qualifications and references (25–26). No clipping, overlapping
+  matter, broken table, stranded heading or illegible footer was found.
+  Sparse lane endings and the comparison page are deliberate section breaks.
+- `make check-sources` reached the known shared document-catalogue drift in
+  `src/web/data/structure/documents/corpus.json` and exited 2. That projection
+  belongs to the later coordinator stage; it was not changed in this lane.
+
+## Evidence and ownership boundary
+
+The evidence directory above retains the proof, extraction, font and metadata
+reports, verification facts, author web probe and approved-helper rasters.
+`evidence-boundary.json` allowlists public candidates and records their hashes.
+Native command logs, the TeX log and auxiliary, helper receipt, cache and any
+unlisted files remain local operational evidence; no native receipt was
+silently rewritten. Public candidate text and PDF text/metadata were screened
+for host paths and process identifiers. Publication rasters contain only the
+reviewed pages. These are review candidates, not installed artifacts.
+
+Accepted research and shared source evidence were not edited. Companion
+manuscripts, old archives and seals remain outside this author's changes.
+No install, staging, commit, push or engine transition was performed. All
+build/check/render subprocesses finished; no server or background process
+was left running.
+
+---
+
 # Final three-document artifact build
 
 ## Build-artifacts iteration 0

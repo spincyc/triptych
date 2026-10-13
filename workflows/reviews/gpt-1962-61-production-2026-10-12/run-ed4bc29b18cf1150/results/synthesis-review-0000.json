@@ -1,0 +1,321 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "mission-collect",
+            "luke-collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "mission-secret",
+            "luke-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "mission-postcommunion",
+            "luke-postcommunion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/concise/01-inventory.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "mission-collect",
+            "luke-collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "mission-secret",
+            "luke-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "mission-postcommunion",
+            "luke-postcommunion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/concise/02-overview.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "concise-chronology",
+          "kind": "front-matter",
+          "path": "sections/concise/03-chronology.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "mission-collect",
+            "luke-collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "mission-secret",
+            "luke-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "mission-postcommunion",
+            "luke-postcommunion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/concise/04-themes.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "mission-collect",
+            "luke-collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "mission-secret",
+            "luke-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "mission-postcommunion",
+            "luke-postcommunion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/concise/10-commentary.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/concise/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "mission-collect",
+        "luke-collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "mission-secret",
+        "luke-secret",
+        "preface",
+        "communion",
+        "postcommunion",
+        "mission-postcommunion",
+        "luke-postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "mercy-received"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "mission-collect",
+            "luke-collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "mission-secret",
+            "luke-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "mission-postcommunion",
+            "luke-postcommunion"
+          ],
+          "key": "mercy-received",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "authors": [
+            "Gregory the Great",
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Robert Bellarmine",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "protected-pilgrimage"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "mission-collect",
+            "luke-collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "mission-secret",
+            "luke-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "mission-postcommunion",
+            "luke-postcommunion"
+          ],
+          "key": "protected-pilgrimage",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+    "files": {
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology-annotations.tex": "33b9163ad02af527ee07041eaec7cbfdd9aa46782c0ce8e75ad9c13140542f6a",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology.toml": "ef61c5010a361175da81c19108772282d6eab505667433694d2f04c28dbe6422",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/interpretations.md": "cd90f2ceb40aebdf79d5cb862adafa0ad1110695d03bedc289b3b2160a534b7b",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md": "d1b766a4a1ae7543ee63127a3907c220728e25efc7d988c6009405a48b49095d",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/source-bindings.toml": "c7695743cd3b15dfbdae1fa19aedfc2ffdf9bb35829d5c28ede733baebd79712",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/01-inventory.tex": "2bc3af9dff7b00f250812afd1ecc950733c144198eb001fa451968cc0a25bb1e",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/02-overview.tex": "3d7c362c17c4d93ef1d429a1a69df5ee3025d8250a0709e30d3a08c67eff3846",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/03-chronology.tex": "22f3eb8b875581b1fe93767f5f9842720b5f3d89299d060077fb45998f3b2617",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/04-themes.tex": "957cd0957b314948f1ee0ac451647a774df17d77f34dd9632c35db455fc25b4f",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/10-commentary.tex": "95398ec14fb1e495449aa6dcf3f79bdf8cba4a329815ae83d14df7a3389aae95",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/90-apparatus.tex": "4ad5b663460cb033ced7eca4a66a9c8f63649163c3cc307290948d939553c84e",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/synthesis.tex": "f96db06abff18f4b9b7bbb5572c4446f6cf20a1d07da70d622c59de123f603af"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "11",
+            "17f12ad495885888db9045416b60df5bc828dccdf9f1eab5a1edb648cc280964",
+            "ed4bc29b18cf1150",
+            "ebef2e1ba64d469ce05d1178a78d439282bd1770",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "PASS: independently read and viewed all 10 pages of synthesis-proof.pdf (SHA256 ac9b8f56e6982d2da2ebeb7312d4bb5ce5ae342cba84f83f3383b1c6e83cee1d), recovered both arguments before comparison with study-proof.pdf (SHA256 878b887f73817f3a5d28100248efd6988f19bd7be262fffd7a8cfbaf7a2a524f), and verified the required pagination, all nine rendered chronology lookups, exact appendix pointers and the enumerated primary-source loci with no blocking defect. The final packet/14-file seal still matches; build/tpt-runs/ed4bc29b18cf1150/artifacts/synthesis-review-0000/checked-loci-public-summary.json (SHA256 668ef09536b5e55c98592c598425c6fc566a42d6ed8e8a4064fc223cb8b433b0) records inspection, hashes and limits, including that final family build/publication review remains later work and both raster sessions are complete."
+}

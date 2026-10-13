@@ -1,0 +1,442 @@
+{
+  "schema": 1,
+  "evidence_kind": "Original compact installation summary; not a rewritten native receipt",
+  "stage": "install-publication",
+  "iteration": 0,
+  "date": "2026-10-13",
+  "provider": "gpt",
+  "document": "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+  "packet_sha256": "faf257b1070986985f4b8e4d6a555bcb1ac80e7c582b04f826ea125dec373f60",
+  "environment": {
+    "Markdown": "3.10.3",
+    "Python": "3.14.8",
+    "dependency_lock": "requirements-public-alpha.txt",
+    "dependency_lock_sha256": "59bd4c5252324612c6ce5a27f4a4ba4e62aa4cc76bc3d974a29b45491c97c762",
+    "native_environment_receipts": "Local-only; exact absolute PYTHONPATH retained with every command receipt"
+  },
+  "installed_pdfs": [
+    {
+      "build": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily.pdf",
+      "installed": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily.pdf",
+      "sha256": "39081db3f44add36ed7b5a4e99491cb3e1e96b940aa81dff8fff198543435752",
+      "pages": 3,
+      "bytes": 245077
+    },
+    {
+      "build": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.pdf",
+      "installed": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.pdf",
+      "sha256": "17833353408ddf5abd76c6b5d0cc617bd123c8054ea99fd899e2174c5a730f4e",
+      "pages": 10,
+      "bytes": 386743
+    },
+    {
+      "build": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.pdf",
+      "installed": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.pdf",
+      "sha256": "741ab14fb48442ffaf60f2ca8dbfac866a4eb998c40697ba80bd9525c391f284",
+      "pages": 26,
+      "bytes": 447319
+    }
+  ],
+  "installed_web": {
+    "path": "web/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md",
+    "sha256": "0a12ed464a3838f64e9e16f2820f1f55b87cd599466058919a440701f09fbd44",
+    "bytes": 87646,
+    "staged_exact_bytes": true,
+    "fresh_conversion_identical": true
+  },
+  "reviews": [
+    {
+      "stage": "research-review",
+      "iteration": 0,
+      "disposition": "PASS",
+      "current_seal_matches": true,
+      "result_sha256": "b95336eb0d609d365b6108d0968298f8215a9340c5f7b9f3f6b54c1b1ecf5b60"
+    },
+    {
+      "stage": "study-review",
+      "iteration": 0,
+      "disposition": "PASS",
+      "current_seal_matches": true,
+      "result_sha256": "72052e3e2621ebc864b41c2175ba5a8754da7d5c991d2fa54e3784a8216446f9"
+    },
+    {
+      "stage": "synthesis-review",
+      "iteration": 0,
+      "disposition": "PASS",
+      "current_seal_matches": true,
+      "result_sha256": "325a35a43751d92a7e7702d810cf1786d3f50e8780c94219c8a472be3a0f2d92"
+    },
+    {
+      "stage": "homily-review",
+      "iteration": 0,
+      "disposition": "PASS",
+      "current_seal_matches": true,
+      "result_sha256": "b14defebb2d80065647d27fcf52ab364e39086bd8c866f9d5e69214a72136b0a"
+    },
+    {
+      "stage": "visual-review",
+      "iteration": 0,
+      "disposition": "PASS",
+      "current_seal_matches": true,
+      "result_sha256": "fb6fea36b4632526c98c14e07a2e7d1e4f450e63cf44a870a634bb9402f1a7af"
+    },
+    {
+      "stage": "web-review",
+      "iteration": 0,
+      "disposition": "PASS",
+      "current_seal_matches": true,
+      "result_sha256": "3a85bc1858ef9a3ada72f23c5bcb0d55991a0d0b5fb9f535bf186766bc4de43e"
+    }
+  ],
+  "identities": {
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/main.tex": "9199a61c3e20a758908211f53c3c32ea90580c840cc469c26b7735f05058a788",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/synthesis.tex": "f96db06abff18f4b9b7bbb5572c4446f6cf20a1d07da70d622c59de123f603af",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/homily.tex": "272c13654ed10c0be7d28df84041d2110a8f55a71e3a4c4004cdff98739bd9ad",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/generation-metadata.tex": "50fa483074e09cd82a7fa576455909e7355f3c3bc5ddcc0373133456c3009e76",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/proper-components.toml": "1252d5ee37875509319e0c651ed41d38dd4ea60750d1cb7f4afee579211dd78a",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/web-edition.toml": "6d6822112e858ed50605c6a24bce0f854d0f8b92645671127db530129839b355",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/artifacts.json": "d26470d08971982c593f4b704935f0bf311def792b6afec3f419b534ba9a0271",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/web-artifact.json": "8626fcfda334293d85951f72fc7cc89572c7de7d75ab71620544d6d2ba6f7b5b",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/production-review.md": "bb24f14935d2f8ba58d53721ca74e8844385eeddd22e94888a07a46c511b1526",
+    "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.json": "f09753baef341e4885bac57f86dd32520f2831dce7805406acea4ba366fbb46d",
+    "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.json": "213ae1527e5347474c9b8efc84727848921aa3e127ff7516f572d292b38b2e89",
+    "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily.json": "6af5fd78bd14691143d8904a02ee67085de95ecc8f4f9dd2bca242a8c6f5f4a9",
+    "library/traditional-latin-mass.md": "c856cbb2e8d3c43adadf2ae86ffd7372318e9525c539dee1f93353b11220c3de",
+    "src/web/data/structure/documents/corpus.json": "7bf9bf5b856f685a1df10e55e6e6617e7966445c55973d309ed42cfbe756f58e",
+    "src/sources/inventories/publications-v1.toml": "2382a638e4f003d76003b2a22bd2cc639c10164d012c6d7588c30802450b9d92",
+    "src/sources/inventories/source-family-migration-v1.toml": "db78696d421362507bb74c57b73e35b6c33402283d88fb0961dc735fc37b3438",
+    "release/public-alpha.json": "8a6c17a94642ab54a694f4ee6aee05196fc0804d7dc21e98075a4b7567f80992",
+    "release/rights/public-alpha-2026-07-15.md": "758590c961149cc2177ac9ad067ff33faa7ab4ff3d6f48ff3fe3bcbc9806a436",
+    "web/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md": "0a12ed464a3838f64e9e16f2820f1f55b87cd599466058919a440701f09fbd44"
+  },
+  "checks": [
+    {
+      "name": "preinstall-artifacts",
+      "command": [
+        "python3",
+        "scripts/_proper_study.py",
+        "check",
+        "--provider",
+        "gpt",
+        "--document",
+        "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+        "--phase",
+        "artifacts",
+        "--require-presentation",
+        "--require-format",
+        "--require-authority",
+        "--require-orientation"
+      ],
+      "exit_code": 0,
+      "native_log_sha256": "4796026ac28a9a668e3a74df522f374b63a07d84d2088c7297ab78ded26f196d"
+    },
+    {
+      "name": "install-research",
+      "command": [
+        "make",
+        "install-doc",
+        "DOC=liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+        "PROVIDER=gpt"
+      ],
+      "exit_code": 0,
+      "native_log_sha256": "3c95ad663772b992a5cf941975a7a309de3e70d86ca647f2fde65f6d4baae1fe"
+    },
+    {
+      "name": "install-synthesis",
+      "command": [
+        "make",
+        "install-doc",
+        "DOC=liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis",
+        "PROVIDER=gpt"
+      ],
+      "exit_code": 0,
+      "native_log_sha256": "3c95ad663772b992a5cf941975a7a309de3e70d86ca647f2fde65f6d4baae1fe"
+    },
+    {
+      "name": "install-homily",
+      "command": [
+        "make",
+        "install-doc",
+        "DOC=liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily",
+        "PROVIDER=gpt"
+      ],
+      "exit_code": 0,
+      "native_log_sha256": "3c95ad663772b992a5cf941975a7a309de3e70d86ca647f2fde65f6d4baae1fe"
+    },
+    {
+      "name": "install-web",
+      "command": [
+        "python3",
+        ".scratch/propers-20261018/driver/v11/install-publication-0000/install-web.py"
+      ],
+      "exit_code": 0,
+      "native_log_sha256": "b6207095b57ae8ae6463b42908dbfa7fbbd900caf67ec55de1b87f940d63b0b2"
+    },
+    {
+      "name": "release-research",
+      "command": [
+        "make",
+        "add-publication",
+        "ID=liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+        "CATALOG=library/traditional-latin-mass.md",
+        "PROVIDER=gpt",
+        "STATUS=alpha"
+      ],
+      "exit_code": 0,
+      "native_log_sha256": "b9b1259c49bd39d15ccda6737ab1b6afc523c40c0d7751d6d4b1e4f1a726efdb"
+    },
+    {
+      "name": "release-synthesis",
+      "command": [
+        "make",
+        "add-publication",
+        "ID=liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis",
+        "CATALOG=library/traditional-latin-mass.md",
+        "PROVIDER=gpt",
+        "STATUS=alpha"
+      ],
+      "exit_code": 0,
+      "native_log_sha256": "c981bee5ad2ad78298bf75f4ebfbb28790048c472b547e4ed102b6b63659e9aa"
+    },
+    {
+      "name": "release-homily",
+      "command": [
+        "make",
+        "add-publication",
+        "ID=liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily",
+        "CATALOG=library/traditional-latin-mass.md",
+        "PROVIDER=gpt",
+        "STATUS=alpha"
+      ],
+      "exit_code": 0,
+      "native_log_sha256": "0a11a1d44f0f624adaeb5576e078d71d8b58a3391c22281875cb990d2e3ede02"
+    },
+    {
+      "name": "publication-wiring",
+      "command": [
+        "python3",
+        "scripts/_proper_study.py",
+        "check",
+        "--provider",
+        "gpt",
+        "--document",
+        "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+        "--phase",
+        "publication",
+        "--require-presentation",
+        "--require-format",
+        "--require-authority",
+        "--require-orientation"
+      ],
+      "exit_code": 0,
+      "native_log_sha256": "1363a5fc019c78a8e8b610af21b7073608f227a6de638c8310c15f3ededc26e2"
+    },
+    {
+      "name": "web-freshness",
+      "command": [
+        "tools/tpt",
+        "web-edition",
+        "--provider",
+        "gpt",
+        "--output",
+        ".scratch/propers-20261018/driver/v11/install-publication-0000/fresh-web",
+        "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
+      ],
+      "exit_code": 0,
+      "native_log_sha256": "0a001bff216fd734626e90eb7fbea0185497a2a99eaa779924680be37de7bacd"
+    },
+    {
+      "name": "document-catalogue",
+      "command": [
+        "tools/tpt",
+        "document-library",
+        "structure"
+      ],
+      "exit_code": 0,
+      "native_log_sha256": "e47843a8d9add98b9448d752d70b2c5e1b7c8a8a5e01ffb3a85d3610e28424b2"
+    },
+    {
+      "name": "source-inventory",
+      "command": [
+        "tools/tpt",
+        "source-inventory",
+        "refresh",
+        "--audited-on",
+        "2026-10-13"
+      ],
+      "exit_code": 0,
+      "native_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "source-family",
+      "command": [
+        "tools/tpt",
+        "source-family-migration",
+        "refresh",
+        "--audited-on",
+        "2026-10-13"
+      ],
+      "exit_code": 0,
+      "native_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "release-refresh",
+      "command": [
+        "tools/tpt",
+        "release-bindings",
+        "refresh",
+        "--adopt-new-site-sources",
+        "--only",
+        "scripts/_proper_components.py",
+        "--only",
+        "src/web/data/structure/documents/corpus.json",
+        "--only",
+        "src/web/data/structure/ordinary/roman-1962.json",
+        "--only",
+        "src/web/data/structure/ordinary/roman-pre-1955.json",
+        "--only",
+        "src/web/data/structure/sources/editions/catholic-church/missale-romanum/1922-1922-tours-mame-editio-quarta-iuxta-typicam.json",
+        "--only",
+        "src/web/data/structure/sources/editions/eugene-cummiskey/roman-missal-english-laity/1861-philadelphia-1861.json",
+        "--only",
+        "src/web/data/structure/sources/editions/francis-xavier-lasance/the-new-roman-missal/1945-benziger-revised-1945.json",
+        "--only",
+        "src/web/data/structure/sources/editions/fssp-france/ordo-du-mois/2026-2026-10-12-web.json",
+        "--only",
+        "src/web/data/structure/sources/editions/gregory-the-great/moralia-in-iob/2026-2026-10-12-library-of-fathers-lectionarycentral.json",
+        "--only",
+        "src/web/data/structure/sources/editions/rabanus-maurus/expositio-in-librum-esther/2026-2026-10-12-migne-pl109-wikisource.json",
+        "--only",
+        "src/web/data/structure/sources/editions/thomas-aquinas/summa-theologiae/2026-2026-10-12-english-dominicans-newadvent-q88.json",
+        "--only",
+        "src/web/data/structure/sources/index.json",
+        "--only",
+        "library/traditional-latin-mass.md",
+        "--only",
+        "web/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md"
+      ],
+      "exit_code": 0,
+      "native_log_sha256": "4df8b3a4ea8f9e23b9816d3088bd5aaf387835b2b9dabc3ebcae208b8773a018"
+    },
+    {
+      "name": "check-sources-final",
+      "command": [
+        "make",
+        "check-sources"
+      ],
+      "exit_code": 0,
+      "native_log_sha256": "053add885f591653b00c284087b983a0e379d783b8bd3f390c399d4a36b5d745"
+    },
+    {
+      "name": "release-status-final",
+      "command": [
+        "make",
+        "check-release-bindings"
+      ],
+      "exit_code": 0,
+      "native_log_sha256": "81b5c9979e16b7295a385dc9fd585e88bef46d1c28bd0643ee7e4e47dc373c3f"
+    },
+    {
+      "name": "public-alpha-final",
+      "command": [
+        "tools/tpt",
+        "public-alpha",
+        "check",
+        "--provider",
+        "gpt",
+        "--document",
+        "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
+      ],
+      "exit_code": 0,
+      "native_log_sha256": "b409d5328bdbb539d374474077561c3928037b8b1fde6bf35df387aae6160a25"
+    },
+    {
+      "name": "tmt-check",
+      "command": [
+        "tmt",
+        "check"
+      ],
+      "exit_code": 0,
+      "native_log_sha256": "dc51b8c96c2d745df3bd5590d990230a482fd247123599548e0632fdbf97fc22"
+    }
+  ],
+  "release_scope": {
+    "command": [
+      "tools/tpt",
+      "release-bindings",
+      "refresh",
+      "--adopt-new-site-sources",
+      "--only",
+      "scripts/_proper_components.py",
+      "--only",
+      "src/web/data/structure/documents/corpus.json",
+      "--only",
+      "src/web/data/structure/ordinary/roman-1962.json",
+      "--only",
+      "src/web/data/structure/ordinary/roman-pre-1955.json",
+      "--only",
+      "src/web/data/structure/sources/editions/catholic-church/missale-romanum/1922-1922-tours-mame-editio-quarta-iuxta-typicam.json",
+      "--only",
+      "src/web/data/structure/sources/editions/eugene-cummiskey/roman-missal-english-laity/1861-philadelphia-1861.json",
+      "--only",
+      "src/web/data/structure/sources/editions/francis-xavier-lasance/the-new-roman-missal/1945-benziger-revised-1945.json",
+      "--only",
+      "src/web/data/structure/sources/editions/fssp-france/ordo-du-mois/2026-2026-10-12-web.json",
+      "--only",
+      "src/web/data/structure/sources/editions/gregory-the-great/moralia-in-iob/2026-2026-10-12-library-of-fathers-lectionarycentral.json",
+      "--only",
+      "src/web/data/structure/sources/editions/rabanus-maurus/expositio-in-librum-esther/2026-2026-10-12-migne-pl109-wikisource.json",
+      "--only",
+      "src/web/data/structure/sources/editions/thomas-aquinas/summa-theologiae/2026-2026-10-12-english-dominicans-newadvent-q88.json",
+      "--only",
+      "src/web/data/structure/sources/index.json",
+      "--only",
+      "library/traditional-latin-mass.md",
+      "--only",
+      "web/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md"
+    ],
+    "changed_bindings": [
+      "library/traditional-latin-mass.md",
+      "scripts/_proper_components.py",
+      "src/web/data/structure/documents/corpus.json",
+      "src/web/data/structure/ordinary/roman-1962.json",
+      "src/web/data/structure/ordinary/roman-pre-1955.json",
+      "src/web/data/structure/sources/editions/catholic-church/missale-romanum/1922-1922-tours-mame-editio-quarta-iuxta-typicam.json",
+      "src/web/data/structure/sources/editions/eugene-cummiskey/roman-missal-english-laity/1861-philadelphia-1861.json",
+      "src/web/data/structure/sources/editions/francis-xavier-lasance/the-new-roman-missal/1945-benziger-revised-1945.json",
+      "src/web/data/structure/sources/editions/fssp-france/ordo-du-mois/2026-2026-10-12-web.json",
+      "src/web/data/structure/sources/editions/gregory-the-great/moralia-in-iob/2026-2026-10-12-library-of-fathers-lectionarycentral.json",
+      "src/web/data/structure/sources/editions/rabanus-maurus/expositio-in-librum-esther/2026-2026-10-12-migne-pl109-wikisource.json",
+      "src/web/data/structure/sources/editions/thomas-aquinas/summa-theologiae/2026-2026-10-12-english-dominicans-newadvent-q88.json",
+      "src/web/data/structure/sources/index.json",
+      "web/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md"
+    ],
+    "new_bindings": [
+      "src/web/data/structure/sources/editions/fssp-france/ordo-du-mois/2026-2026-10-12-web.json",
+      "src/web/data/structure/sources/editions/gregory-the-great/moralia-in-iob/2026-2026-10-12-library-of-fathers-lectionarycentral.json",
+      "src/web/data/structure/sources/editions/rabanus-maurus/expositio-in-librum-esther/2026-2026-10-12-migne-pl109-wikisource.json",
+      "src/web/data/structure/sources/editions/thomas-aquinas/summa-theologiae/2026-2026-10-12-english-dominicans-newadvent-q88.json",
+      "web/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md"
+    ],
+    "unchanged_sibling_bindings": 22206,
+    "other_manifest_fields_preserved": true,
+    "predecessor_files_match_reviewed_checkpoint": true,
+    "unrelated_document_catalog_entries_preserved": true
+  },
+  "final_source_check": {
+    "command": [
+      "make",
+      "check-sources"
+    ],
+    "exit_code": 0,
+    "after_last_source_audit_append_and_inventory_refresh": true,
+    "native_log_sha256": "053add885f591653b00c284087b983a0e379d783b8bd3f390c399d4a36b5d745"
+  },
+  "limits": [
+    "Installation and wiring completed; terminal engine acceptance, commit, push and deployment belong to the coordinator.",
+    "The scoped public-alpha check validates global source, release and authorization records but does not check unrelated installed PDFs or prove global deployment.",
+    "Family ledger remains honestly pending: 159 review units, none family-screened; this routine source gate does not prove atomic citation coverage.",
+    "The reviewed conditional mission and St Luke branches retain unspecified territory and Mass-type bounds.",
+    "No new source collation, timed human homily delivery, physical-print use, native-browser PDF inspection, browser appearance/click behavior or remote-link availability was established by installation."
+  ]
+}

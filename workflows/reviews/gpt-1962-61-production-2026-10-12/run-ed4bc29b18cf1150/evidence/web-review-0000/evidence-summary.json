@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "stage": "web-review",
+  "iteration": 0,
+  "verdict": "PASS",
+  "reviewed_conversion": {
+    "path": "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md",
+    "sha256": "0a12ed464a3838f64e9e16f2820f1f55b87cd599466058919a440701f09fbd44"
+  },
+  "comparison_pdf": {
+    "path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.pdf",
+    "sha256": "741ab14fb48442ffaf60f2ca8dbfac866a4eb998c40697ba80bd9525c391f284",
+    "pages": 26
+  },
+  "input_evidence": {
+    "build/tpt-runs/ed4bc29b18cf1150/packets/web-review-0000.txt": "0e8174d8afe8133da87b6743a6961e4a0064cb6caf6906b230ff20d4f0cef8e8",
+    "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md": "0a12ed464a3838f64e9e16f2820f1f55b87cd599466058919a440701f09fbd44",
+    "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.pdf": "741ab14fb48442ffaf60f2ca8dbfac866a4eb998c40697ba80bd9525c391f284",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/main.tex": "9199a61c3e20a758908211f53c3c32ea90580c840cc469c26b7735f05058a788",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/artifacts.json": "d26470d08971982c593f4b704935f0bf311def792b6afec3f419b534ba9a0271",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/web-artifact.json": "8626fcfda334293d85951f72fc7cc89572c7de7d75ab71620544d6d2ba6f7b5b",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology-annotations.tex": "33b9163ad02af527ee07041eaec7cbfdd9aa46782c0ce8e75ad9c13140542f6a",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/generation-metadata.tex": "50fa483074e09cd82a7fa576455909e7355f3c3bc5ddcc0373133456c3009e76",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/proper-components.toml": "1252d5ee37875509319e0c651ed41d38dd4ea60750d1cb7f4afee579211dd78a",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/00-opening.tex": "bf72f98890686c5d8ce5cef46e05946bc522c21fed8db11e71b623b6a5a55aaa",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/10-appointed-text.tex": "a7c4eae5f4d34a9adc7123aae8130d09d43a38db3a9f64767e535e377eeb0a01",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/20-commentary.tex": "77d8d536b19e4ba73e8091fff7e158dda52fcfd12a4108292d161e117f80bbb7",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/30-mercy-received.tex": "1dfb0063ccf90863dfc91a361939a49265cd6dba2ed48299f5cd0664b185ac1b",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/40-protected-pilgrimage.tex": "018e2af75a0c6e6d3e2a2a06e9002f5fe1c78e3f6bcaab11dffbf6d5a3a78d56",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/50-comparison.tex": "c91305371fb5d4a390e33902aeb076b9716ab68bfbec3f07b4cf53bf19e71409",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/70-date-location.tex": "caad78ab3d107b334b975da7d80a152440dd43b2cfab464dbdf096f998f6646e",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/90-study-apparatus.tex": "96361e3ac94238e7d8e20ce03b6bb61b6ca17a7d5645b62e226d98233f5452eb",
+    "tools/web-edition": "610491f4aa22838e2969efbe331644d7062d85d4234ba1211594939a551abe33",
+    "tools/public-alpha": "143d3328e83ea641f0dc308d0a7aee7cbb0f24c43a8d94f5cbdde9ed975623fc",
+    "scripts/_markdown_render.py": "be0ffcd9d3d0b789f633be2938c07c9076d44d72eb3b6c5eb65b93307e6fa648",
+    "requirements-public-alpha.txt": "59bd4c5252324612c6ce5a27f4a4ba4e62aa4cc76bc3d974a29b45491c97c762",
+    "release/public-alpha/layout.html": "6687546feca2e378e57917fa44ed908c5abfa49f4499731c95316f1d34b3d9eb",
+    "release/public-alpha/assets/site.css": "a456caf21041256a1047560c0cee8638a99f7df819e6249ee3345e550b6b4060"
+  },
+  "methods": [
+    "Read the complete 658-line compiled packet and 737-line canonical Markdown; read governing profiles and inspect canonical study components at the appointed texts, interpretations, four senses, exact notes, historical table and five page-reference loci.",
+    "Compared the receipt-bound research PDF with pdftotext -layout and -raw. All PDF and render-input hashes in research/artifacts.json matched before review.",
+    "Rendered the sealed Markdown through the existing public-alpha render_page function and site template/CSS with exact Markdown 3.10.3, in the assigned ignored review directory. Inspected resulting HTML; did not regenerate or modify the reviewed Markdown.",
+    "Forward normalized text comparison matched 430 of 437 HTML blocks directly. Resolved all seven exceptions: five paragraphs cross PDF page/footnote boundaries, one subtitle comes from the PDF subject, and one paragraph replaces five print page locators with named same-section web anchors.",
+    "Reverse eight-token window comparison and whole-document token multiplicity accounted for all differences: PDF running matter, repeated table header, 44 callout/note-number pairs and five page locators; web breadcrumb/title/subject and five named anchor labels. No unexplained token difference remained.",
+    "Inspected semantic HTML: one h1, nine h2 and 48 h3 headings; 17 uniquely positioned appointed-text targets; two definition lists with Literal, Allegorical, Moral and Anagogical terms each; two three-column tables with 17 appointed rows and nine chronology rows; 34 distinct quotation blocks and 44 linked notes. All internal fragment targets exist and IDs are unique.",
+    "Read the theological comparison and exact note locators against the canonical source and PDF: Aquinas III q.88 aa.1-4 distinctions, Gregory Moralia III.3.3-4 reasoning, distinct mercy/pilgrimage arguments and each four-sense conclusion remain complete. This was conversion-fidelity review, not a new primary-source research sweep.",
+    "Checked notation, timestamp and rights notice; no TeX command debris or exposed workflow/model/runtime metadata was found in the Markdown."
+  ],
+  "limits": [
+    "No successful browser session or screenshot: the initial bounded ChromeDriver process exited 1 after sandbox socket denial; the required escalated retry was interrupted while awaiting approval and returned no execution handle. Locked-renderer HTML inspection is not browser visual or interaction review.",
+    "Viewport fit, browser click behavior, assistive-technology behavior and remote URL availability were not tested. Internal links were checked by rendered href/ID resolution; historical source URLs and exact note texts were checked for preservation.",
+    "No new primary-source collation, PDF visual approval, installation, deployment or terminal-publication acceptance is claimed. The packet permits preview when needed; no unresolved conversion-fidelity issue required another browser attempt."
+  ],
+  "unchanged_inputs": {
+    "files_checked": 54,
+    "changed": [],
+    "receipt_bound_pdf_and_render_inputs_match": true,
+    "sealed_markdown_unchanged": true
+  },
+  "operations": {
+    "completed_owned_commands": true,
+    "initial_browser_child_reaped": true,
+    "pending_browser_approval": false,
+    "successful_browser_session": false,
+    "live_owned_operation_handles": []
+  },
+  "public_boundary": "This compact summary is the only public auxiliary candidate. Generated HTML, extraction files, raw comparisons, scripts, browser failure log and local operation records remain private ignored review evidence."
+}

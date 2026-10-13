@@ -1,0 +1,227 @@
+{
+  "stage": "visual-review",
+  "iteration": 0,
+  "disposition": "PASS",
+  "packet": "build/tpt-runs/ed4bc29b18cf1150/packets/visual-review-0000.txt",
+  "packet_sha256": "cb0b96c323375922728ad926659031cbcc2ed12927563e2c28f7d1253a6aa512",
+  "identity_evidence": "build/tpt-runs/ed4bc29b18cf1150/artifacts/visual-review-0000/identity-check.json",
+  "identity_evidence_sha256": "411bbd1265a3aca7985af636366da6d9a74749eae5a78462f798e77eee02895b",
+  "artifact_receipt_sha256": "d26470d08971982c593f4b704935f0bf311def792b6afec3f419b534ba9a0271",
+  "immutable_artifact_snapshot_sha256": "d26470d08971982c593f4b704935f0bf311def792b6afec3f419b534ba9a0271",
+  "native_raster_run_receipt_sha256": "8294c1b430fff7af3987a7fbe611b5de2cb7cf126b3e36580c6523330ceae300",
+  "closure": {
+    "packet_and_review_inputs_match_recorded_stage_dispatch": true,
+    "sealed_file_count": 30,
+    "sealed_files_rehashed_unchanged_after_inspection": true,
+    "source_or_publication_changes_by_reviewer": false,
+    "engine_advanced_by_reviewer": false
+  },
+  "documents": [
+    {
+      "name": "study",
+      "pdf": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.pdf",
+      "sha256": "741ab14fb48442ffaf60f2ca8dbfac866a4eb998c40697ba80bd9525c391f284",
+      "pages": 26,
+      "native_raster_receipt": "build/tpt-runs/ed4bc29b18cf1150/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/review-cache.json",
+      "native_raster_receipt_sha256": "16d4efb83f36fc5f085c048d0ae6ec66cbcfac1628b56de3d789063f8ab9aeac",
+      "verified_raster_files": 54,
+      "pdf_bytes": 447319,
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "contact_sheets_inspected": [
+        1,
+        2
+      ],
+      "terminal_page_additionally_inspected_at_original_raster_detail": 26
+    },
+    {
+      "name": "synthesis",
+      "pdf": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.pdf",
+      "sha256": "17833353408ddf5abd76c6b5d0cc617bd123c8054ea99fd899e2174c5a730f4e",
+      "pages": 10,
+      "native_raster_receipt": "build/tpt-runs/ed4bc29b18cf1150/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/review-cache.json",
+      "native_raster_receipt_sha256": "674ea1a8e730b91763c06253f8d986c6a437ca3dd4770c756af41c8497bbb240",
+      "verified_raster_files": 21,
+      "pdf_bytes": 386743,
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "contact_sheets_inspected": [
+        1
+      ],
+      "terminal_page_additionally_inspected_at_original_raster_detail": 10
+    },
+    {
+      "name": "homily",
+      "pdf": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily.pdf",
+      "sha256": "39081db3f44add36ed7b5a4e99491cb3e1e96b940aa81dff8fff198543435752",
+      "pages": 3,
+      "native_raster_receipt": "build/tpt-runs/ed4bc29b18cf1150/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily/review-cache.json",
+      "native_raster_receipt_sha256": "b8afc984186f75976ffc6b6e7ea7a490485a3ff1008accba1e3a58f63ceece0a",
+      "verified_raster_files": 7,
+      "pdf_bytes": 245077,
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "contact_sheets_inspected": [
+        1
+      ],
+      "terminal_page_additionally_inspected_at_original_raster_detail": 3
+    }
+  ],
+  "visual_method": {
+    "pdf_raster_preparation": "Existing native tools/tpt pdf-review outputs; source PDF, native receipt, every full-page raster, thumbnail and sheet verified by SHA-256 and size before relying on them.",
+    "inspection": "Four contact sheets followed by every individual page image: study 1-26, synthesis 1-10, homily 1-3. Terminal pages also opened at original raster detail. Receipt verification and cache existence were not treated as visual inspection.",
+    "total_individually_inspected_pages": 39,
+    "ordinary_reading_samples": [
+      {
+        "document": "synthesis",
+        "page": 2,
+        "source_raster": "build/tpt-runs/ed4bc29b18cf1150/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/pages/page-02.png",
+        "source_raster_sha256": "fa0d682ae14a433997c93e7d4326d0400503f479bd190e6904e9aa5f54d30278",
+        "source_raster_dimensions_px": [
+          1700,
+          2200
+        ],
+        "capture": "build/tpt-runs/ed4bc29b18cf1150/artifacts/visual-review-0000/rasters/synthesis-page-02-ordinary-816x1056.png",
+        "capture_sha256": "4bc79f8cec3587e4815121727594daeb738f3dc30ba02276ee5693b368da8469",
+        "capture_dimensions_px": [
+          816,
+          1056
+        ],
+        "capture_command_exit_status": 0,
+        "capture_inspected_at_original_detail": true
+      },
+      {
+        "document": "study",
+        "page": 24,
+        "source_raster": "build/tpt-runs/ed4bc29b18cf1150/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-24.png",
+        "source_raster_sha256": "b8b6d2a4b67c8c55aab65a2e8f6ed3d1786bb457077550f34912084f45b95f18",
+        "source_raster_dimensions_px": [
+          1700,
+          2200
+        ],
+        "capture": "build/tpt-runs/ed4bc29b18cf1150/artifacts/visual-review-0000/rasters/study-24-ordinary-816x1056.png",
+        "capture_sha256": "f4559eb87304780f179866054803bbefbaaabfa9c0d3fe6e0ff4dcc26391f11b",
+        "capture_dimensions_px": [
+          816,
+          1056
+        ],
+        "capture_command_exit_status": 0,
+        "capture_inspected_at_original_detail": true
+      },
+      {
+        "document": "homily",
+        "page": 1,
+        "source_raster": "build/tpt-runs/ed4bc29b18cf1150/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily/pages/page-1.png",
+        "source_raster_sha256": "3a595067ca57cba2e2debaf165d5a6a4ea0c68b7eec736a3cc2758b26e586fdd",
+        "source_raster_dimensions_px": [
+          1700,
+          2200
+        ],
+        "capture": "build/tpt-runs/ed4bc29b18cf1150/artifacts/visual-review-0000/rasters/homily-1-ordinary-816x1056.png",
+        "capture_sha256": "8658edc0e9068fec8d8c67a8911faf84e0180f0178bba55b88b0ca966cafbadd",
+        "capture_dimensions_px": [
+          816,
+          1056
+        ],
+        "capture_command_exit_status": 0,
+        "capture_inspected_at_original_detail": true
+      }
+    ],
+    "ordinary_scale": "Headless Chromium displayed the helper-rendered Letter page raster in a marginless 816 by 1056 CSS-pixel image at device scale factor 1 (96 CSS pixels per nominal inch); each resulting 816 by 1056 screenshot was actually inspected at original detail.",
+    "ordinary_scale_limits": "This is measured screen evidence of raster display in Chromium, not native PDF rendering in the browser, a physically calibrated display, or a physical print inspection. All-page inspection used the larger native rasters; ordinary-scale samples cover the three pages identified above."
+  },
+  "visual_results": {
+    "shared_baseline": "The 11-point article and Latin Modern baseline, Letter paper, three-quarter-inch margins and grayscale presentation remain coherent. No clipping, overlaps, broken table rows, orphan headings, unreadable terminal colophons or rights-only spill pages were found.",
+    "study": "26 pages: clear appointed-text witnesses and apparatus; substantial separate mercy and protected-pilgrimage interpretations, each with its own visible four-senses treatment. The short inventory continuation on page 2 and complete comparison on page 22 are readable section boundaries, not tiny spill pages. Chronology and references on pages 23-26 remain navigable.",
+    "synthesis": "10 pages. Page 1 contains the 17-element inventory, conditional notes and exactly four senses rows. Chronology occupies page 2; substantive Themes and Movement occupy pages 3-4; commentary starts on page 5 and visibly treats both interpretations through page 9; references and colophon fit page 10. Physical-page auxiliary markers agree with the rendered pages.",
+    "homily": "Three pages: full-width title and two ragged-right speech columns on pages 1-2; notes and references occupy page 3. Paragraph breaks and continuations are easy to follow, the running head is semantic, and scholarly apparatus is outside the speech. Page 1 remains readable in the measured ordinary-scale sample."
+  },
+  "actual_chronology_lookup": {
+    "starting_point": "Synthesis page 2, inspected in the 816 by 1056 ordinary-scale screenshot.",
+    "lookups": [
+      "Matthew 18:23-35: followed the Event row to Galilee with precise venue unknown, then directly to Date unresolved; the distinct Composition row keeps disputed writing dates separate from the narrated event.",
+      "Psalm 113:1: followed the retrospective Exodus row from Israel leaving Egypt to the Jerusalem Temple endpoint; the 480th-year preference and 440th-year alternative remain visibly alternative chronology, not a Psalm-composition date.",
+      "Job: followed Composition to the story setting of Hus/Uz with writing place unknown, then to the probable seventh-to-fifth-centuries-BC window.",
+      "Ephesians 6:10-17: followed Composition to captivity with Rome favored and Caesarea possible, readers in Asia Minor, and the disputed AD 58-63 or AD 61 dating."
+    ],
+    "outcome": "The nine-row, three-column table permits direct passage-to-place-to-time lookup. Event, composition, attribution and unresolved claims remain distinguishable at this measured screen scale.",
+    "appendix_locator_checks": [
+      {
+        "concise_locator": "Esther: study page 23",
+        "actual_study_page_inspected": 23,
+        "matches": true
+      },
+      {
+        "concise_locator": "Job and Psalms: study page 24",
+        "actual_study_page_inspected": 24,
+        "matches": true
+      },
+      {
+        "concise_locator": "Matthew: study page 24",
+        "actual_study_page_inspected": 24,
+        "matches": true
+      },
+      {
+        "concise_locator": "Ephesians: study page 25",
+        "actual_study_page_inspected": 25,
+        "matches": true
+      }
+    ],
+    "appendix_scale": "All three destination pages were inspected individually; study page 24 was also read in its 816 by 1056 ordinary-scale screenshot, including the Matthew discussion and footnotes."
+  },
+  "mechanical_support": {
+    "pdfinfo_pdffonts_pdftotext": "Fresh read-only commands exited 0 for all three sealed final PDFs, including the closure rerun. All are 612 by 792 points; extraction covers all pages. All listed fonts are embedded subset Latin Modern Type 1 fonts with Unicode mappings (14 study, 15 synthesis, 10 homily).",
+    "native_build_logs": "Read unchanged study, synthesis and homily logs; the warning/error/overfull/underfull/undefined scan returned no matches.",
+    "homily_size_check": "The 245077-byte, three-page homily exceeds the per-page investigation trigger. Native image/attachment reports show no page images or attachments, and the font report contains ten embedded subset fonts. The small total and font overhead are consistent with a short vector document; no raster bloat was found.",
+    "scope_limits": "No physical printing, timed spoken rehearsal, accessibility certification, installed-mirror check or qpdf validation is claimed."
+  },
+  "operational_recovery": {
+    "initial_capture_attempt": "The sandboxed Chromium attempt exited 133 with an operation-not-permitted error. It was retried through the approved escalation path; no sandbox bypass was used.",
+    "completed_captures": "Each of the three owned capture commands returned exit status 0 before the interruption. No live capture exec session was retained.",
+    "interruption": "After page inspection and successful captures, an optional escalated read-only global process check waited for approval and was aborted after 1250 seconds without returning process data. Root recovered the interrupted reviewer turn after unanswered status requests during that tool wait.",
+    "recovery": "Recovered from existing durable evidence and command exit statuses; informed the driver and root of the exact remaining work and process-check limitation. No duplicate browser was launched, and the optional global process probe was not repeated. Only evidence/result completion and unchanged-input closure followed.",
+    "process_limit": "Capture commands exited 0 and there is no retained owned exec session; the aborted global probe supplies no independent evidence about residual browser child processes. No global process-shutdown claim is made.",
+    "record_integrity": "Native receipts, logs, review inputs and source/publication artifacts were left unchanged. These JSON summaries and the three explicitly traced screenshot derivatives are reviewer-created evidence; they do not impersonate native tool records."
+  },
+  "independence": "Judgment is based on the sealed current PDFs and actual image inspection. The required restart handoff exposed an older appendix-locator advisory; its disposition was not inherited. Current locators were checked against final study pages independently.",
+  "findings": []
+}

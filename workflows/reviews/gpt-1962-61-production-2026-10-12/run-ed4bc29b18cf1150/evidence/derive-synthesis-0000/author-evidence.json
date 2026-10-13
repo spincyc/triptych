@@ -1,0 +1,137 @@
+{
+  "record_type": "Original compact author evidence summary; not a native tool receipt",
+  "stage": "derive-synthesis",
+  "iteration": 0,
+  "accepted_study": {
+    "file": "study-proof.pdf",
+    "sha256": "878b887f73817f3a5d28100248efd6988f19bd7be262fffd7a8cfbaf7a2a524f",
+    "pages": 26,
+    "comparison": "Complete accepted proof independently compared with every concise component; no earlier verdict adopted"
+  },
+  "proof": {
+    "files": [
+      {
+        "file": "synthesis-proof.pdf",
+        "sha256": "ac9b8f56e6982d2da2ebeb7312d4bb5ce5ae342cba84f83f3383b1c6e83cee1d",
+        "bytes": 386743
+      },
+      {
+        "file": "synthesis-proof.aux",
+        "sha256": "2bfdb9c12bb938b301e7352611b4e71ea54209a60b8fbb193cab564204c643b1",
+        "bytes": 5083
+      },
+      {
+        "file": "synthesis-proof.log",
+        "sha256": "8b5614f767dd1ba6e6386bd270aaaeb3ea00a1517e52b9a93ee58514cb0e898a",
+        "bytes": 44531
+      }
+    ],
+    "pages": 10,
+    "paper": "Letter"
+  },
+  "source_changes": [
+    "sections/concise/03-chronology.tex: Matthew appendix pointer corrected from pages 24\u201325 to page 24",
+    "generation-metadata.tex: finalization timestamp and actual author contribution",
+    "research/production-review.md: fresh concise production audit"
+  ],
+  "locator_verification": {
+    "Matthew": 24,
+    "Ephesians": 25,
+    "Esther": 23,
+    "Job_and_Psalms": 24,
+    "appointed_text": [
+      3,
+      10
+    ],
+    "scope_and_references": [
+      25,
+      26
+    ]
+  },
+  "physical_pages": {
+    "inventory": [
+      1,
+      1
+    ],
+    "four_senses": [
+      1,
+      1
+    ],
+    "chronology": [
+      2,
+      2
+    ],
+    "themes": [
+      3,
+      4
+    ],
+    "commentary_start": 5
+  },
+  "word_count": {
+    "substantive_word_count": 4135,
+    "per_component": {
+      "01-inventory": 242,
+      "02-overview": 70,
+      "04-themes": 978,
+      "10-commentary": 2845
+    },
+    "count_method": "English-alphabet tokens with internal apostrophes/hyphens; inventory, overview, themes and commentary including headings; footnotes, TeX commands and marker arguments, chronology and terminal apparatus excluded."
+  },
+  "checks": {
+    "build": "PASS",
+    "artifact_components": "PASS",
+    "content_preflight": "PASS",
+    "generation_metadata": "PASS",
+    "fourteen_distinct_contents_anchors": "PASS",
+    "tex_log": "No warnings, overfull/underfull boxes, undefined references or missing characters",
+    "fonts": "15 font rows; all embedded, subset and Unicode mapped",
+    "text_screen": "No unresolved question-mark references or screened host paths/runtime keys; current timestamp and Matthew p. 24 present",
+    "source_library": "PASS",
+    "check_sources": "FAIL: shared catalogue drift and stale publication-inventory hashes; coordinator reconciliation remains"
+  },
+  "visual_inspection": {
+    "tool": "tools/tpt pdf-review",
+    "pages_individually_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "result": "No clipping, overlap, broken chronology table or stranded headings observed; readable sources, timestamp and rights colophon"
+  },
+  "native_local_receipts": [
+    {
+      "file": "build.stdout",
+      "sha256": "5c1ddc959ffc8b0794ef23a30fcb1881826fc8ad6675f9b77d64c8d36db14919"
+    },
+    {
+      "file": "components.stdout",
+      "sha256": "8a35693e1ca488cec192299f86ebc842161e9a4b8c7306040136a3cee1c77644"
+    },
+    {
+      "file": "preflight.stdout",
+      "sha256": "9021512b205220ab48935e2b4246ef22907e1b7fd32d5edcfa6018f631a623c6"
+    },
+    {
+      "file": "sources.stdout",
+      "sha256": "b5cd428abd4236f98fc0a0cc6f337d15dd6347ba91107c30f7ee5ba62dc3799a"
+    },
+    {
+      "file": "raster.stdout",
+      "sha256": "000719ffe495eb1f6b83760101a0f2c40dbc86711ec088a3d0b99e816e154e40"
+    }
+  ],
+  "scope_limits": [
+    "No new primary-source collation or source acquisition",
+    "Accepted research and study prose remain unchanged",
+    "Author proof does not replace final family build or cold visual review after shared metadata settles",
+    "No install, staging, commit, push or engine advance",
+    "All author-started subprocesses completed; no background process remains"
+  ]
+}

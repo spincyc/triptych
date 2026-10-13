@@ -3,7 +3,7 @@
  "counted": {
   "documents": 208,
   "issues": 256,
-  "pages": 6960,
+  "pages": 6986,
   "titles_unrecorded": 0,
   "works": 150
  },
@@ -7573,29 +7573,27 @@
    "section": "liturgy"
   },
   {
-   "catalog": null,
-   "catalog_page": null,
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
    "editions": [
     {
      "also": [
       {
        "kind": "synthesis",
-       "pages": null,
-       "pdf": null,
-       "pdf_absent": "no PDF is installed for this issue",
+       "pages": 10,
+       "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.pdf",
        "subject": "A concise study of the 1962 Roman Missal propers for 18 October 2026",
        "title": "Twenty-first Sunday after Pentecost: Mercy and the Unfinished Journey"
       },
       {
        "kind": "homily",
-       "pages": null,
-       "pdf": null,
-       "pdf_absent": "no PDF is installed for this issue",
+       "pages": 3,
+       "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily.pdf",
        "subject": "A homily for an adult parish assembly on the 1962 Roman Missal propers for 18 October 2026",
        "title": "Twenty-first Sunday after Pentecost: The Words He Would Not Hear"
       }
      ],
-     "authorization": null,
+     "authorization": "perpetual-public-repository-2026",
      "contributions": [
       {
        "model": "GPT-6",
@@ -7621,29 +7619,44 @@
        "model": "GPT-6",
        "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
        "runtime": "OpenAI Codex API agent; homily derivation, source and delivery note, direct source inspection and author proof verification; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; replacement-run study inspection against reviewed research, appointed-text anchors, current provenance and author proof verification; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; replacement-run concise comparison against the complete accepted study, Matthew appendix locator correction and author proof verification; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; replacement-run homily comparison against both reviewed studies, retained-source inspection, textual oral-sense review and author proof verification; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
      "models": [
       "GPT-6"
      ],
-     "pages": null,
-     "pdf": null,
-     "pdf_absent": "no PDF is installed for this issue",
+     "pages": 26,
+     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.pdf",
      "produced": {
-      "run_id": "a72731c5491066a3",
-      "seed_commit": "9c4d5e5eb1cb12bc10ceece135f344c284ff8e52",
-      "workflow_digest": "692be31073c9d612d9b08b3eb086d865bc3ed25f32a26f0a50c98f0a1e65ca65",
+      "run_id": "ed4bc29b18cf1150",
+      "seed_commit": "ebef2e1ba64d469ce05d1178a78d439282bd1770",
+      "workflow_digest": "17f12ad495885888db9045416b60df5bc828dccdf9f1eab5a1edb648cc280964",
       "workflow_id": "proper-study",
-      "workflow_version": "10"
+      "workflow_version": "11"
      },
      "provider": "gpt",
-     "reviewed": "2026-10-12",
-     "revised": "2026-10-13T04:24:11Z",
-     "status": null,
+     "reviewed": "2026-10-13",
+     "revised": "2026-10-13T07:54:09Z",
+     "status": "alpha",
      "subject": "An expansive study of the 1962 Roman Missal propers for 18 October 2026",
      "title": "Twenty-first Sunday after Pentecost: Mercy Received, Protection Promised",
-     "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/main.tex"
+     "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/main.tex",
+     "web": "web/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.html"
     }
    ],
    "leaf": "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",

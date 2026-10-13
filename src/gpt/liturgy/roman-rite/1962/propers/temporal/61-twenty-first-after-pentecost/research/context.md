@@ -1,7 +1,7 @@
 # Twenty-first Sunday after Pentecost: resolved context
 
-Resolved 12 October 2026 for the requested occurrence, Sunday 18 October
-2026, and an adult parish assembly. This record determines the research
+Independently re-resolved 13 October 2026 for the requested occurrence,
+Sunday 18 October 2026, and an adult parish assembly. This record determines the research
 object; it is not a completed transcription, publication clearance, or study.
 The concrete acquisition and verification plan is [source-plan.md](source-plan.md).
 
@@ -31,7 +31,10 @@ The inspected complete object has 1,088 PDF pages, 82,815,941 bytes, SHA-256
 `648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a`.
 All PDF page numbers below are one-based; printed pagination is stated
 separately. The visible headings, marginal numbers, appointments, and rubrics
-were inspected on page images. OCR served only to find those images.
+were inspected on newly rendered page images on 13 October 2026 at PDF
+pages 15–16, 25, 30, 32–33, 374, 494–496, 770–771 and 894–895. OCR served only
+to find those images. This inspection establishes appointments and boundaries,
+not a renewed word-for-word collation of every historical antecedent.
 
 The dated institutional witness is the [FSSP Province de France October
 2026 Ordo](https://www.fssp.fr/ordo-du-mois/): its 18 October entry appoints
@@ -39,6 +42,15 @@ the Twenty-first Sunday after Pentecost, II class, green. The page's metadata
 dates this monthly edition to 6 October 2026. The complete HTML retrieved
 12 October 2026 has 169,687 bytes, SHA-256
 `e5207e58e6737f45d32a422390e1446a261d1b410072de8d5387abe3ac488c06`.
+That retained delivery was independently rehashed and its October entry read
+on 13 October; its existing registered artifact is
+`artifact.fssp-france.ordo-du-mois.web-2026-10-12.html-e5207e58`.
+The complete live HTML was also fetched and read on 13 October: 169,686 bytes,
+SHA-256 `dae1fa64d5702de943a23f222beaa372313c6b0afbf90e883871c7468d49331b`.
+It carries the same 18 October appointment and modification date. This new
+delivery corroborates the registered dated witness; it does not replace that
+witness's artifact identity or inherited verification date. If research binds
+the new delivery, it must register those distinct bytes first.
 This is a dated official witness of that institution's calendar, not a
 decree assigning the user's parish to French territory. Its short entry
 does not settle the mission addition or Mass-type-dependent commemoration;
@@ -47,9 +59,11 @@ the Missal's rubrics do.
 Calendar arithmetic corroborates the appointment: Easter is 5 April 2026,
 Pentecost 24 May; 18 October is 147 days (21 weeks) after Pentecost. October's
 last Sunday is the 25th, so the 18th is its penultimate Sunday. The repository
-calendar command independently identifies the requested Sunday. That
-generated finding aid does not replace the Missal or justify dropping an
-addition absent from its output.
+calendar command returns nominal slot 21 of 26 and the competing St Luke
+feast; its result is unranked and has no appointed winner. Precedence and the
+additions below therefore come from the Missal, not that generated finding
+aid. The annual 1962 appointments have neither Sunday nor weekday Lectionary
+cycles to resolve.
 
 ## Ordered proper inventory
 
@@ -58,6 +72,14 @@ The ordinary temporal formulary occupies printed pp. 413–415, PDF pp.
 Sunday begins below its Postcommunion on p. 415. All eleven rows are
 required in the Sunday Mass. The three additional mission prayers and three
 conditional St Luke prayers are itemized separately immediately below.
+
+The complete ordered element keys, including both conditional groups, are:
+`introit`, `collect`, `mission-collect`, `luke-collect`, `epistle`, `gradual`,
+`alleluia`, `gospel`, `offertory`, `secret`, `mission-secret`, `luke-secret`,
+`preface`, `communion`, `postcommunion`, `mission-postcommunion`,
+`luke-postcommunion`. These are the seventeen elements declared by this
+canonical leaf; a conditional row retains its place even when a particular
+Mass omits it under the rules below.
 
 | Place | Appointed text / exact boundary | Controlling locus | Status and boundary |
 | --- | --- | --- | --- |
@@ -110,8 +132,8 @@ only an extra opening Collect.
 
 The complete mission formulary begins on p. [85], PDF 893. Its Epistle,
 Gospel, chants, or Preface do not replace the Sunday's texts merely because
-these orations are added. Rubric 369 provides a distinct permission for one
-II-class mission votive Mass in a church on an occasion of special mission
+these orations are added. Rubric 369 (p. XXVII, PDF 25) provides a distinct
+permission for one II-class mission votive Mass in a church on an occasion of special mission
 celebrations; no such celebration or choice was supplied, and this packet
 requests the Sunday proper. That separate Mass is not selected here.
 
@@ -155,12 +177,12 @@ expressly prevents a commemoration introducing its proper Preface.
 
 ## Verification boundary
 
-The image inspection establishes the inventory, its printed boundaries, and
-the rubrical branches above. It is not a claim that every word, accent,
-punctuation mark, translation, or conclusion has already received the
-publication profile's full comparative collation. That work remains with
-research. Source availability and inherited library verification flags are
-not substituted for that work. Local overlays remain conditional because no
-local authority was specified. No proclamation, local authorization to
-celebrate, page layout, interpretation, or completed review is asserted by
-this context record.
+The present image inspection establishes the inventory, its printed boundaries,
+and the rubrical branches above. The existing `propers/verified.md` and source
+bindings separately record a 12 October comparative collation. That historical
+event is preserved; this context-stage recheck does not claim to repeat it or
+transfer its acceptance to new research. Research must inspect the underlying
+evidence and retain or correct each adopted text and source judgment.
+Local overlays remain conditional because no local authority was specified.
+No proclamation, local authorization to celebrate, page layout,
+interpretation, or completed review is asserted by this context record.

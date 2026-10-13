@@ -1,0 +1,78 @@
+{
+  "stage": "generate-web",
+  "iteration": 0,
+  "provider": "gpt",
+  "document": "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+  "conversion_runtime": {
+    "Markdown": "3.10.3",
+    "converter_sha256": "610491f4aa22838e2969efbe331644d7062d85d4234ba1211594939a551abe33"
+  },
+  "original_attempt": {
+    "bytes": 87251,
+    "sha256": "4d56f7a650df9bc34cbf0bef0b93e7a148e2b73d048bdec3813ec41a5a95921a",
+    "receipt_sha256": "10f809c954a48fb2014e7cafe94a385d319e8523eb0febb0b6089b5e6c97d6c3",
+    "evidence_sha256": "0ab18c60ae88de0f935201eae57f445f277580b43e3e5d40fccf5feb18ab41c3",
+    "defect": "Five historical appendix page references lost their values and links in conversion."
+  },
+  "final_attempt": {
+    "web": "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md",
+    "bytes": 87646,
+    "sha256": "0a12ed464a3838f64e9e16f2820f1f55b87cd599466058919a440701f09fbd44",
+    "receipt": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/web-artifact.json",
+    "receipt_bytes": 311,
+    "receipt_sha256": "8626fcfda334293d85951f72fc7cc89572c7de7d75ab71620544d6d2ba6f7b5b",
+    "preserved_output": "build/tpt-runs/ed4bc29b18cf1150/artifacts/generate-web-0000/canonical-final.md"
+  },
+  "repair_verification": {
+    "changed_lines": [
+      575
+    ],
+    "repaired_targets": [
+      "hist-esther",
+      "hist-job",
+      "hist-psalms",
+      "hist-matthew",
+      "hist-ephesians"
+    ],
+    "result": "All five links use the corresponding historical heading as link text, each resolves to exactly one rendered target; all other Markdown lines are byte-identical to the original conversion."
+  },
+  "coverage": {
+    "research_components": 8,
+    "proper_anchors": 17,
+    "lane_anchors": 2,
+    "four_sense_terms": 8,
+    "footnotes": 44,
+    "blockquotes": 34,
+    "tables": 2,
+    "all_local_fragments_resolve": true,
+    "revision_timestamp_once": true,
+    "rights_notice_once": true,
+    "no_trailing_whitespace": true,
+    "receipt_and_preserved_copy_match": true
+  },
+  "accepted_input_hash_checks": {
+    "render_inputs": 25,
+    "pdfs": 3,
+    "pagination_evidence": 2
+  },
+  "commands": {
+    "canonical_conversion_exit": 0,
+    "snapshot_web_exit": 0,
+    "declaration_check_exit": 0,
+    "rendered_structure_and_identity_check_exit": 0
+  },
+  "changed_source_tree_files": [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/web-artifact.json"
+  ],
+  "public_candidates": [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/web-artifact.json",
+    "build/tpt-runs/ed4bc29b18cf1150/artifacts/generate-web-0000/conversion-final-evidence.json"
+  ],
+  "limits": [
+    "This is conversion identity and bounded fidelity checking, not independent web acceptance.",
+    "Full semantic and browser review belongs to the next cold reviewer.",
+    "Original faulty output, original receipt, native logs, and local rendered HTML are local evidence, not public archive candidates.",
+    "No semantic source, PDF, installed edition, release record, catalog, workflow state, shared code, or staging was changed by this worker."
+  ],
+  "owned_commands_completed": true
+}

@@ -1,0 +1,140 @@
+{
+  "schema": 1,
+  "record_type": "original public summary of build verification; not a normalized native receipt",
+  "stage": "build-artifacts",
+  "iteration": 0,
+  "workflow": "proper-study",
+  "version": 11,
+  "run_id": "ed4bc29b18cf1150",
+  "packet_sha256": "aa4c62e951db6900106c74f91e715fd5cf2d54ad2dbf788628b7017fc8e367a9",
+  "revision": "2026-10-13T07:54:09Z",
+  "artifacts": {
+    "study": {
+      "pdf": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.pdf",
+      "sha256": "741ab14fb48442ffaf60f2ca8dbfac866a4eb998c40697ba80bd9525c391f284",
+      "bytes": 447319,
+      "pages": 26,
+      "font_rows": 14,
+      "all_fonts_embedded_subset_unicode": true,
+      "diagnostics": [],
+      "unresolved_question_mark": false,
+      "replacement_character": false,
+      "extracted_text_equals_accepted_proof_except_timestamp": true,
+      "comparison_proof": "build/tpt-runs/ed4bc29b18cf1150/artifacts/author-study-0000/study-proof.pdf",
+      "comparison_sha256": "878b887f73817f3a5d28100248efd6988f19bd7be262fffd7a8cfbaf7a2a524f",
+      "ignored_package_banner": "infwarerr package description is not a diagnostic",
+      "revision_occurrences": 1,
+      "embedded_raster_images": 0,
+      "kib_per_page": 16.8,
+      "raster_pages": 26
+    },
+    "synthesis": {
+      "pdf": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.pdf",
+      "sha256": "17833353408ddf5abd76c6b5d0cc617bd123c8054ea99fd899e2174c5a730f4e",
+      "bytes": 386743,
+      "pages": 10,
+      "font_rows": 15,
+      "all_fonts_embedded_subset_unicode": true,
+      "diagnostics": [],
+      "unresolved_question_mark": false,
+      "replacement_character": false,
+      "extracted_text_equals_accepted_proof_except_timestamp": true,
+      "comparison_proof": "build/tpt-runs/ed4bc29b18cf1150/artifacts/derive-synthesis-0000/synthesis-proof.pdf",
+      "comparison_sha256": "ac9b8f56e6982d2da2ebeb7312d4bb5ce5ae342cba84f83f3383b1c6e83cee1d",
+      "ignored_package_banner": "infwarerr package description is not a diagnostic",
+      "revision_occurrences": 1,
+      "embedded_raster_images": 0,
+      "kib_per_page": 37.77,
+      "raster_pages": 10
+    },
+    "homily": {
+      "pdf": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily.pdf",
+      "sha256": "39081db3f44add36ed7b5a4e99491cb3e1e96b940aa81dff8fff198543435752",
+      "bytes": 245077,
+      "pages": 3,
+      "font_rows": 10,
+      "all_fonts_embedded_subset_unicode": true,
+      "diagnostics": [],
+      "unresolved_question_mark": false,
+      "replacement_character": false,
+      "extracted_text_equals_accepted_proof_except_timestamp": true,
+      "comparison_proof": "build/tpt-runs/ed4bc29b18cf1150/artifacts/derive-homily-0000/homily-proof.pdf",
+      "comparison_sha256": "39081db3f44add36ed7b5a4e99491cb3e1e96b940aa81dff8fff198543435752",
+      "ignored_package_banner": "infwarerr package description is not a diagnostic",
+      "revision_occurrences": 1,
+      "embedded_raster_images": 0,
+      "kib_per_page": 79.78,
+      "raster_pages": 3
+    }
+  },
+  "review_seals": {
+    "research": {
+      "disposition": "PASS",
+      "sealed_files": 1740,
+      "exact_seal_equal": true,
+      "changed_files": [],
+      "other_changed_keys": []
+    },
+    "study": {
+      "disposition": "PASS",
+      "sealed_files": 17,
+      "exact_seal_equal": true,
+      "changed_files": [],
+      "other_changed_keys": []
+    },
+    "synthesis": {
+      "disposition": "PASS",
+      "sealed_files": 14,
+      "exact_seal_equal": true,
+      "changed_files": [],
+      "other_changed_keys": []
+    },
+    "homily": {
+      "disposition": "PASS",
+      "sealed_files": 9,
+      "exact_seal_equal": true,
+      "changed_files": [],
+      "other_changed_keys": []
+    }
+  },
+  "physical_markers": {
+    "inventory": [
+      1,
+      1
+    ],
+    "overview": [
+      1,
+      1
+    ],
+    "literal": 1,
+    "allegorical": 1,
+    "moral": 1,
+    "anagogical": 1,
+    "chronology": [
+      2,
+      2
+    ],
+    "themes": [
+      3,
+      4
+    ],
+    "commentary_start": 5
+  },
+  "syn_001": {
+    "concise_physical_page": 2,
+    "printed_pointer": "Matthew, p. 24",
+    "final_study_physical_page": 24,
+    "verified_extent": "Complete Matthew subsection, both paragraphs, and footnote 43; Ephesians begins physical page 25.",
+    "visual_inspection": true
+  },
+  "layout_edits": [],
+  "native_snapshot_sha256": "d26470d08971982c593f4b704935f0bf311def792b6afec3f419b534ba9a0271",
+  "native_raster_receipt_sha256": "8294c1b430fff7af3987a7fbe611b5de2cb7cf126b3e36580c6523330ceae300",
+  "limits": [
+    "Artifact preparation and targeted locator inspection; independent complete visual review follows.",
+    "No new source research or collation; all four current v11 seals match.",
+    "No installation, staging, workflow advancement, commit or push.",
+    "Shared catalogue and source inventory refresh remains publication-owner work.",
+    "Homily is 79.78 KiB/page: 245077 bytes across three pages, ten embedded font rows and no raster images; retained without source-independent optimization."
+  ]
+}

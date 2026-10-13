@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost --edition homily --check provenance-matches-run --run-workflow proper-study --run-workflow-version 11 --run-workflow-digest 17f12ad495885888db9045416b60df5bc828dccdf9f1eab5a1edb648cc280964 --run-id ed4bc29b18cf1150 --run-seed-commit ebef2e1ba64d469ce05d1178a78d439282bd1770
+exit 0
+--- stdout ---
+provenance-matches-run (homily edition): the record states run ed4bc29b18cf1150 of proper-study v11, digest 17f12ad49588, seed commit ebef2e1ba64d
+
+--- stderr ---
+

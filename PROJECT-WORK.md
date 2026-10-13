@@ -11,77 +11,73 @@ Last reconciled: 2026-10-13.
 
 <!-- promised-deliverable: gpt-1962-twenty-first-quality-2026-10-12 -->
 
-The maintainer requested repair of the propers date/location/occurrence table,
-using the last two weeks' documents as evidence; improvements to research,
-pedagogy and elegance where the guidance or workflow causes weak results; and
-completion of the upcoming Sunday's 1962 propers workflow. The target is GPT's
-**Twenty-first Sunday after Pentecost, 18 October 2026**,
+The maintainer requested a clearer propers date/location/occurrence table,
+using the last two weeks as evidence; stronger research, pedagogy and elegance
+where guidance was deficient; and the upcoming Sunday's complete TLM family.
+The target is **Twenty-first Sunday after Pentecost, 18 October 2026**,
 `liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost`.
-The calendar finding aid resolves that Sunday with the conditional St Luke
-commemoration; edition-specific source verification belongs to context review.
 
-Work is in progress on `feature/propers/codex`, starting from current main
-`5fc4fe6b6`. The comparison of recent reader pages and the reusable foundation
-are complete: schema-2 `orientation-v1` distinguishes passage, dated occurrence
-or literary subject, place and complete date alternatives. It consolidates
-equal answers and keeps detailed evidence in the expansive appendix. Workflow
-v10 strengthens passage-level source reasoning, teaching and visual lookup.
-Focused checks and independent review passed, with no generated-output drift
-across 19 existing dossiers. The [audit and independent review](workflows/reviews/propers-quality-2026-10-12/RECORD.md)
-record the evidence, resolved defects and limits. Existing publications retain
-their snapshots. Foundation commit `9c4d5e5eb` is pushed to the workspace branch.
+The actual replacement `proper-study` v11 run **ed4bc29b18cf1150 is ACCEPTED**:
+all 21 stages passed at iteration 0, with fresh authors and cold reviewers.
+The exact reviewed 26-page expansive study, ten-page concise study, three-page
+homily and canonical web edition are installed, cataloged and separately
+released as alpha. The [native archive](workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/README.md)
+and [driver record](workflows/reviews/gpt-1962-61-production-2026-10-12/DRIVER-RECORD.md)
+preserve actual outcomes and limits. Final source checks, exact installation
+identity and native publication gates passed. Commit/push delivery of this
+accepted payload is still pending on `feature/propers/codex`.
 
-The first actual `proper-study` v10 run, `a72731c5491066a3`, is terminal
-**BLOCKED at canonical web conversion**, not publication accepted. Its
-[driver record](workflows/reviews/gpt-1962-61-production-2026-10-12/DRIVER-RECORD.md)
-and [native archive](workflows/reviews/gpt-1962-61-production-2026-10-12/run-a72731c5491066a3/README.md)
-preserve the actual results. Research, the 26-page expansive study, ten-page
-concise study, three-page homily and all-page visual review passed. Research
-repairs retained and sealed the carrying witnesses and corrected a Haydock
-attribution: Solomon is the pupil in a Davidic explanation, not another
-proposed author. The dated formulary includes mission-propagation orations
-and conditional St Luke commemoration with Mass-type and local-calendar
-limits. Visual review inspected all 39 pages and both chronology tables at
-nominal ordinary screen size. Its bounded browser-execution recovery and
-successful approved retry are documented without substituting a verdict.
+The new schema-2 `orientation-v1` table separates passage, occurrence/place
+and date, consolidates equal answers, and preserves uncertainty and complete
+alternatives. Its nine concise rows permit actual ordinary-size lookup;
+full evidence remains in the expansive appendix. New guidance requires a
+consequential textual difficulty, the checked witness's inference and its
+teaching consequence; the concise commentary develops its opening rather
+than repeating it. The [quality audit and independent reviews](workflows/reviews/propers-quality-2026-10-12/RECORD.md)
+record the observed defects, strengths, implementation, tests and limits.
+Existing publications retain their historical rendering contracts.
 
-The converter refused all seventeen missing `proper-<element-key>` source
-labels. Those labels belong to the study author. It produced no Markdown or
-web receipt and preserved all 38 source/PDF baseline files. The same defect
-stopped the GPT postconciliar `PC-S54` run on 6 October: the requirement was
-already in web guidance but was not enforced before the study was frozen.
-This repeated late failure is a concrete workflow-quality defect. The native
-engine supports neither upstream routing from this linear stage nor resuming
-a terminal blocked run. Its intervention command records a note only; no
-native result, seal, or state is being rewritten.
+The first v10 run **a72731c5491066a3 remains BLOCKED**, faithfully retained in
+its [separate archive](workflows/reviews/gpt-1962-61-production-2026-10-12/run-a72731c5491066a3/README.md).
+It exposed seventeen missing study-owned web anchors, a repeated late failure
+also seen in GPT PC-S54. Version 11 requires those anchors and runs the actual
+converter before cold study acceptance, returning failures to the author.
+The independently reviewed early gate closes that workflow defect. The
+replacement run was seeded at pushed checkpoint
+`ebef2e1ba64d469ce05d1178a78d439282bd1770`, digest
+`17f12ad495885888db9045416b60df5bc828dccdf9f1eab5a1edb648cc280964`;
+it inherited no verdict. During web generation, a separate converter repair
+replaced five dropped PDF page references with descriptive web-section links.
+It passed 180 author tests, the smoke test, independent focused review and
+actual-leaf conversion; fresh native web review then accepted the exact bytes.
 
-The corrected v11 contract now adds explicit study-author instructions and
-an actual converter gate before cold study acceptance, with failures routed
-back to the study author. Twenty-nine focused implementation tests passed;
-the [independent review](workflows/reviews/propers-quality-2026-10-12/anchor-preflight/report.md)
-passed with no open findings after 208 focused checks. The converter and
-engine are unchanged. A new run under this corrected contract will reuse the
-actual research and manuscripts, with independent inspection and fresh stage
-verdicts. Advisory `SYN-001` remains open for that legitimate
-concise authoring: the Matthew appendix pointer includes pp. 24–25 although
-the subsection occupies p. 24. No publication acceptance, installed family or
-canonical web edition is yet claimed. After normal source/publication inventory,
-source-family and deterministic structure refreshes, full `make check-sources`
-passes under the bound Markdown 3.10.3 environment. The two Ordinary projections
-changed only the previously corrected Cummiskey comparison note. All 38
-converter baseline source/PDF identities remain unchanged; this successful
-source checkpoint does not change the terminal workflow result.
+The research distinguishes the conditional mission-propagation orations and
+St Luke commemoration, retaining Mass-type and unspecified-local-calendar
+limits. Both whole-Mass interpretations are editorial constructions supported
+by checked passages, not attributed to a Father as commentary on this entire
+formulary. Haydock's Solomon is correctly David's proposed pupil, not an
+alternative author. The concise Matthew appendix pointer is exactly p. 24.
+The homily contains 1,257 spoken words; its 11–12-minute duration is estimated,
+with no timed human rehearsal claimed.
 
-Foundation commit `9c4d5e5eb` and research checkpoint `df85e9726` are pushed to
-the workspace branch. The first run's terminal evidence and manuscript
-checkpoint are being retained. Native gate logs preserve their exact bytes,
-including bounded blank-at-EOF whitespace exceptions; public auxiliary
-transformations identify their original hashes and omitted runtime details.
+All 39 final PDF pages were independently inspected, with measured ordinary-size
+raster-display lookups. Context's earlier direct source rendering bypassed the
+prescribed helper; later research independently covered all fourteen pages
+through that helper, with the original event unchanged. The concise reviewer's
+auxiliary Book II locator typo has a separate Book III correction addendum;
+the manuscript was already correct. Visual and web reviewers each recovered
+their own interrupted tool waits without substituted verdicts. Web acceptance
+rests on full bidirectional text comparison and locked-renderer HTML inspection;
+viewport fit and browser click behavior remain explicitly untested. Evidence
+boundaries, successful owned commands and aborted approval attempts are recorded.
 
-Completion still requires an actual three-document run to reach ACCEPTED
-through fresh reviews, and the exact reviewed family and canonical web edition to be
-installed and cataloged. The validated result will be committed and pushed to
-`feature/propers/codex`; no main integration or live deployment is claimed.
+The [release-refresh scope](workflows/reviews/gpt-1962-61-production-2026-10-12/release-refresh-scope.json)
+limits adoption to fourteen reviewed paths, including five additions; unrelated
+bindings and rights-policy prose remain unchanged. The source-family ledger
+still records 159 pending units and does not claim atomic citation coverage.
+Foundation and research checkpoints are already pushed. The accepted payload,
+complete native archive and final delivery receipt are the remaining commit/push
+work; no main integration or live deployment is claimed.
 
 ## Publication links and mobile angelology report, 2026-10-09
 

@@ -15,14 +15,16 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "twenty-first-workflow-accepted"
   criterion = "The actual proper-study run for GPT identity liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost and civil date 2026-10-18 reaches ACCEPTED through fresh authors and cold reviewers at the declared effort levels, with its actual packets, results and repair cycles archived."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/state.json", "workflows/reviews/gpt-1962-61-production-2026-10-12/DRIVER-RECORD.md"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "reviewed-publication-family"
   criterion = "The 20–50-page expansive study, 10–12-page concise study, standalone homily and canonical web edition meet their content and source contracts, pass visual and publication gates, and are installed with exact reviewed bytes, catalog links and separate release records."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/evidence/install-publication-0000/installation-evidence.json", "library/traditional-latin-mass.md"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "validated-workspace-delivery"

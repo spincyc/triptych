@@ -9,6 +9,11 @@ argument is specified. No Father is credited with explaining all seventeen
 texts or selecting their appointments. The base Sunday governs; mission and
 St Luke prayers contribute only under their recorded dated conditions.
 
+Both readings were independently reassessed on 13 October 2026 against the
+source passages recorded in scope.md's replacement-run inspection. Their
+distinct inferences, seventeen-element coverage, four senses and stated
+disagreements remain supported; the earlier text is retained on that basis.
+
 ## 1. Mercy received must become mercy given (`mercy-received`)
 
 **Controlling claim.** The assembly comes before God as a family already
@@ -28,6 +33,12 @@ response owed, judgment on refusal. Chrysostom's Ephesians Homily22 adds
 the common heavenly Master of6:9 and the redirection of wrath from fellow
 human beings to the spiritual enemy. Homilies23–24 distinguish the spiritual
 weapons from a mandate to attack people.
+
+In the exposition of 6:9, Chrysostom explicitly invokes Matthew 18:32's
+rebuke of the forgiven debtor when warning masters against oppression.
+That verse precedes the appointed 6:10–17; the connection is his reception
+of the Gospel in the surrounding Epistle context. Applying it across this
+Sunday's formulary remains the editor's synthesis.
 
 Augustine, Sermon83 §§1–8, supplies a different, substantial axis: each hearer
 is both creditor and debtor, and remains a beggar before God. A person cannot

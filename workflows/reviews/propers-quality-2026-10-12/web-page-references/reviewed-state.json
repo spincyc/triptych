@@ -1,0 +1,25 @@
+{
+  "scope": "Independent implementation review; not native web-content acceptance",
+  "base_commit": "ebef2e1ba64d469ce05d1178a78d439282bd1770",
+  "disposition": "PASS",
+  "files": {
+    "tools/web-edition": "610491f4aa22838e2969efbe331644d7062d85d4234ba1211594939a551abe33",
+    "tools/tests/test_web_edition_pageref.py": "b3ac9448c6ed4753dcd7228cd0a40eeead1d6ee8cf734d07a3f71469e209ccc9"
+  },
+  "review_report_sha256": "9924cd683d6c5dd541dc88b05833bc6698cca8c72e8f5d46154137513c1d6791",
+  "author_validation": {
+    "unittest_cases": 180,
+    "unittest_log_sha256": "525ba7438a7d1563f7559c08adccbdba7ffe2b1211d6620b8c693b32b4687c5a",
+    "smoke": "PASS",
+    "tool_registry": "PASS"
+  },
+  "independent_validation": {
+    "focused_tests": 17,
+    "edge_case_probes": 13,
+    "actual_leaf_conversion": "PASS",
+    "whitespace": "PASS"
+  },
+  "current_leaf_web_sha256": "0a12ed464a3838f64e9e16f2820f1f55b87cd599466058919a440701f09fbd44",
+  "change_extent": "Only the five-reference sentence differs from the prior conversion. Accepted source, PDF and workflow definition bytes unchanged.",
+  "compatibility": "Opt-in schema-2 orientation-v1 only; historical web behavior retained. Carried macro definitions containing page references are refused explicitly, including unused definitions."
+}

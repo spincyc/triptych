@@ -1,5 +1,119 @@
 # Research scope and evidence
 
+## Independent replacement-run inspection, 13 October 2026
+
+This section records the fresh `proper-study` v11 research iteration 0 for
+run `ed4bc29b18cf1150`, foundation
+`ebef2e1ba64d469ce05d1178a78d439282bd1770`, Codex GPT-6 at high effort.
+The earlier dated account below remains historical evidence, not inherited
+acceptance. No historical acquisition, verification date, or evidence state
+has been advanced by this inspection.
+
+Seven retained complete PDF deliveries matched their registered SHA256s.
+Fresh `pdf-review` page images were inspected for all seventeen text bodies
+and the controlling rubrics: 1962 PDF pages 15,16,25,30,32,33,374,494–496,
+770–771,894–895; Pustet 1862 pages 440–441; Cummiskey 1861 pages 39–40,
+459–461,686–687; Mame 1922 pages 852–853; Lasance pages 1474,1477–1478;
+Schuster III pages 194–197 (printed 178–181); Haydock pages 816–817
+(printed 780–781). These 34 new rasters were read at their original output
+size; this review does not claim to repeat the older 4800-pixel procedure.
+The retained historical OCR pull was read as a finding aid. No lexical
+correction to the collated bodies was required. The existing United States
+rights inventories were read and applied, including the Lasance insert
+exclusions; the registration-renewal searches were not independently rerun.
+
+Complete biblical contexts read in the registered Douay–Rheims text were
+Esther 3–4,13–14; Job 1–2,42; Matthew 17–19; Ephesians 4–6; Psalms 89,113,118;
+1 Timothy 2; 2 Thessalonians 3; 2 Corinthians 4; and John 17. Direct reception
+reads covered Chrysostom, Matthew LXI §§1–5 and Ephesians XXII–XXIV;
+Augustine, Sermon 83 (NPNF XXXIII) §§1–8, Psalm 89 §§1–4, Psalm 113 §§1–9,
+Psalm 118 Aleph §§1–8 and Caph §§81–88 in the abridged NPNF English;
+Gregory, Moralia II.10.16–11.19 and III.3.3–6.8; Aquinas, ST III q.88 aa.1–4;
+Bellarmine on Psalms 89:1–3,113:1–4,118:1–2,81–88; Rabanus's Esther preface,
+PL 109,635C–D; Augustine, De Trinitate III, preface §3; and Schuster's whole
+Sunday discussion. Exact argument, disagreement, and limits in the matrix
+and the two proposed readings below were assessed against these passages.
+
+One explicit reception connection deserves preservation: Chrysostom,
+Ephesians Homily XXII, exposition of **6:9**, immediately after “Knowing
+that both their Master and yours is in Heaven,” invokes Matthew 7:2 and
+then quotes the debt-remission rebuke of **Matthew 18:32**. The surrounding
+argument tells masters to cease threatening and oppression because they too
+serve the common heavenly Master, who shows no partiality. Ephesians 6:9
+precedes the appointed **6:10–17**. This is an actual cross-passage reception
+link, not proof that Chrysostom comments on this Sunday's whole formulary
+or its compositional intent. It may inform the first reading without
+requiring a new interpretation.
+
+The passage discovery queries were repeated with Vulgate numbering and
+**no result cap** (`--max-results 0`): Esther 13:9–11; Psalm 118:1;
+Ephesians 6:10–17; Psalm 89:1–2; Psalm 113:1; Matthew 18:23–35;
+Job 1:1,12; Job 2:6–7; Psalm 118:81,84,86. They returned respectively
+6,17,15,13,16,18,10,11,17 candidate work rows. Holdings include title and
+container matches, not passage verification. The formulary query compared
+40 loci and again listed no matching or structural locus. Schuster's
+independently read commentary prevents treating that index negative as an
+absence of whole-Mass reception.
+
+A fresh literal-phrase sweep covered 416 tracked text payloads beneath the
+registered work owners, normalizing case, accents, punctuation and whitespace.
+It searched all nine composed orations and the Trinity formula, using
+`Familiam tuam`, `continua pietate custodi`, `Suscipe Domine propitius hostias`,
+`Immortalitatis alimoniam`, `non in unius singularitate personae`,
+`Deus qui omnes homines vis salvos fieri`, `Protector noster aspice Deus`,
+`Redemptionis nostrae munere vegetati`, `Interveniat pro nobis`,
+`Donis caelestibus da nobis`, and `precibus beati Evangelistae tui Lucae`.
+The respective numbers of matching payloads were 34,13,2,5,0,0,10,1,4,2,2.
+Short shared phrases, liturgical witnesses and editorial projections are
+discovery leads, not exact-prayer exposition. OCR, ligatures and wording
+variants limit these negatives. No additional direct patristic exposition
+of these exact composed prayers was established, and no newly located hit
+was promoted to an interpretive authority. The already checked biblical
+and doctrinal comparisons remain explicitly comparisons.
+
+The canonical chronology record and `orientation-v1` annotations were
+regenerated and checked; both were already byte-current. All nine actual
+orientation rows were inspected for passage and dated subject. The retained
+Catholic Encyclopedia article bodies were read at their controlling Esther,
+Ephesians, Paul, Matthew, New Testament, Exodus-chronology and David loci.
+Haydock's Psalm 118 introduction was independently read in the page image:
+David instructing Solomon, David under Saul, and Daniel on behalf of the
+captives are alternatives, not one certain occasion. David's conventional
+reign dates therefore remain conditional attribution, separate from an
+unresolved psalm event or composition date. The Exodus interval dates the
+Temple relative to the departure, not the departure after itself. Esther
+and Matthew composition proposals are not dates of the narrated scenes;
+Ephesians' proposed place of writing is distinct from its Asian audience.
+
+For the protected USCCB introductions, the retained 28 September Psalms
+delivery was hash-matched and its chronology paragraph read. Its collection
+boundary does not date an individual psalm. The Job introduction's registered
+source record was inspected and its seventh-to-fifth-century composition
+claim corroborated by the current USCCB search result. Direct current page
+opens returned HTTP 403; this is not a new full-page or original-delivery
+verification of Job. That bounded corroboration does not date Job's lifetime.
+No protected introductory prose or native source rasters are published here.
+The historical appendix remains the study owner's home for these qualified
+claims; this research stage does not edit that prose.
+
+The local audit retains full delivery/page hashes, exact query receipts and
+native raster reports. This public record is a prose derivative of those
+checks, with the native receipt digests below.
+No source was acquired or newly registered, and no controlling source
+payload or binding changed. Remaining limits are the unknown local calendar
+and mission decree, unverified discovery leads, the abridged Psalm witness,
+and the explicitly bounded USCCB evidence above.
+
+| Native receipt | SHA256 |
+| --- | --- |
+| Complete PDF deliveries and separated page receipts | `c6672eca3d2fedb81506577d8a52dab4460f26268e0a0a56a47503a217854730` |
+| Complete biblical context extraction receipts | `81aae0c0467b9ae9b0cbcc0820ca7fcc7c3c322210071c6fb7b3b66f79f0a7c9` |
+| Uncapped passage and formulary command receipts | `53129fcd4f28e18629f9b162c3f3c91c85c5c41d7dccc4b7a1817a9e6dcb9934` |
+| Literal-phrase query results and searched payload hashes | `af2bd9d81228404233410f22dfaaa41d2a5e1bb7068020493c6ecd55d1290366` |
+| Chronology regeneration and check receipts | `c0693140e6f53e3a28d161fcbd4b6b255515220284d0ad3d3317a637c0afc5b5` |
+
+## Historical research account, 12 October 2026
+
 Research completed for the general-calendar occurrence on 18 October 2026,
 using the 1962 typical Missal alone as appointment authority. Checks were
 performed on 12 October 2026, local Chicago date. The workflow is

@@ -124,5 +124,32 @@ The historical foundation review above is not restamped.
 The engine has no supported resume or upstream route from a linear-stage
 `BLOCKED` result. The first run's native evidence remains intact in the
 [terminal archive](../gpt-1962-61-production-2026-10-12/run-a72731c5491066a3/README.md).
-A replacement run must independently inspect reused research and manuscripts
-and obtain fresh stage verdicts. Production completion remains pending.
+The replacement v11 run `ed4bc29b18cf1150` independently inspected reused
+research and manuscripts and reached **ACCEPTED** with all 21 stages passing
+at iteration 0. The exact reviewed 26/10/3-page family and canonical web edition
+are installed and cataloged. Its [native archive](../gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/README.md)
+retains the fresh verdicts, native gates, evidence boundaries and actual limits.
+The first run remains BLOCKED; no historical verdict is restamped.
+
+During the replacement run, generation found five valid PDF appendix page
+references silently dropped by Pandoc despite their web target headings being
+present. The converter now turns literal page references in the new
+`orientation-v1` contract into descriptive heading links and refuses missing or
+ambiguous targets. It removes the associated print-page abbreviation, checks
+the rendered link text and destination, and explicitly refuses page references
+hidden in carried macro definitions. Historical conversion behavior is unchanged.
+The current leaf differs by one five-reference sentence; accepted manuscripts,
+PDFs and the pinned workflow definition remain unchanged. Author verification
+passed 180 tests and the smoke test; the [independent implementation review](web-page-references/REVIEW.txt)
+passed 17 focused tests, 13 additional probes and an actual-leaf conversion.
+The [bound file hashes](web-page-references/reviewed-state.json) preserve that
+review's scope. Native web-content review and publication acceptance remain
+separate requirements.
+
+Final production validation passed full `make check-sources` after the source
+audit and generated inventories settled, exact reviewed installation checks
+and every native publication gate. The nine-row concise table was actually
+used for ordinary-size occurrence/place/date lookups; detailed appendix
+references were checked against physical study pages. Web review preserved
+the complete study through bidirectional text comparison and locked-renderer
+HTML inspection; it did not claim successful browser interaction testing.
