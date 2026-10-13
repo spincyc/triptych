@@ -1,0 +1,121 @@
+[
+  {
+    "command": [
+      "tools/tpt",
+      "source-inventory",
+      "refresh",
+      "--audited-on",
+      "2026-10-13"
+    ],
+    "exit_code": 0,
+    "log": ".scratch/propers-20261018/driver/research-0001/final-check-00.log",
+    "summary": ""
+  },
+  {
+    "command": [
+      "tools/tpt",
+      "source-family-migration",
+      "refresh",
+      "--audited-on",
+      "2026-10-13",
+      "--accept-canonical-catalog"
+    ],
+    "exit_code": 0,
+    "log": ".scratch/propers-20261018/driver/research-0001/final-check-01.log",
+    "summary": ""
+  },
+  {
+    "command": [
+      "make",
+      "source-projection"
+    ],
+    "exit_code": 0,
+    "log": ".scratch/propers-20261018/driver/research-0001/final-check-02.log",
+    "summary": "937 works, 1060 editions, 2945 artifacts, 5277 passages; 3081 readable here.\n  -> src/web/data/structure/sources (4142 files)"
+  },
+  {
+    "command": [
+      "tools/tpt",
+      "source-library",
+      "validate"
+    ],
+    "exit_code": 0,
+    "log": ".scratch/propers-20261018/driver/research-0001/final-check-03.log",
+    "summary": "source-library valid: artifact=2945 corpus=5 edition=1060 passage=5277 segment=94 work=937 bindings=3815"
+  },
+  {
+    "command": [
+      "tools/tpt",
+      "source-inventory",
+      "check"
+    ],
+    "exit_code": 0,
+    "log": ".scratch/propers-20261018/driver/research-0001/final-check-04.log",
+    "summary": "source-inventory valid: publications=148 source_surface_files=2588 owners=11"
+  },
+  {
+    "command": [
+      "tools/tpt",
+      "source-family-migration",
+      "check"
+    ],
+    "exit_code": 0,
+    "log": ".scratch/propers-20261018/driver/research-0001/final-check-05.log",
+    "summary": "source-family-migration valid: families=0 review_units=159 screened=0 pending=159 trace_records=0 atomic_citation_coverage=false"
+  },
+  {
+    "command": [
+      "tools/tpt",
+      "source-reader",
+      "structure",
+      "--out",
+      "src/web/data",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": ".scratch/propers-20261018/driver/research-0001/final-check-06.log",
+    "summary": "937 works, 1060 editions, 2945 artifacts, 5277 passages; 3081 readable here.\n  src/web/data/structure/sources is current (4142 files)"
+  },
+  {
+    "command": [
+      "tools/tpt",
+      "proper-chronology",
+      "record",
+      "--provider",
+      "gpt",
+      "--document",
+      "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": ".scratch/propers-20261018/driver/research-0001/final-check-07.log",
+    "summary": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology.toml: current with the chronology corpus"
+  },
+  {
+    "command": [
+      "tools/tpt",
+      "proper-chronology",
+      "annotations",
+      "--provider",
+      "gpt",
+      "--document",
+      "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+      "--presentation",
+      "orientation-v1",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": ".scratch/propers-20261018/driver/research-0001/final-check-08.log",
+    "summary": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology-annotations.tex: current with the chronology corpus"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": ".scratch/propers-20261018/driver/research-0001/final-check-09.log",
+    "summary": ""
+  }
+]

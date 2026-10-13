@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-10-06"
+audited_on = "2026-10-13"
 discovery_rule = "src/gpt/**/main.tex"
-publication_count = 147
-source_surface_file_count = 2576
-snapshot = "sha256:36f7002dc524593e2547f002adae5f001a1229b1d5b8339f44d7b64849e4f19f"
+publication_count = 148
+source_surface_file_count = 2588
+snapshot = "sha256:0125e8f97a186bf3ab28ab38f86828587c7da1aa8c15e987f56d609d8d899908"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -1304,6 +1304,17 @@ inventory_state = "sources-categorized"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "patristic", "repository-internal", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost"
+relationship = "local"
+
+[[documents]]
+id = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
+main = "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "patristic", "scholastic", "scripture", "secondary"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
 relationship = "local"
 
 [[documents]]
@@ -10765,7 +10776,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/source-bindings.toml"
-sha256 = "8d7a4b7c6f6d5abc873f0522711ff9df21ca32b8af9ab16c5d56b08fb8586b17"
+sha256 = "f48c427ee9032adfbcf34f42bc3a239f9a1ad64e22cedbd57de01c7a7d84facb"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost"]
 
@@ -10882,6 +10893,78 @@ path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pent
 sha256 = "74ba31462d6b1a660fe9284bc16bba8b6bfe99587371fba0748fa866b39f8042"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/evaluations/blocking-findings-v1.toml"
+sha256 = "71f160ff3848aa2d831d5b07b98f341b3b54953cc201d32a8e8732c89bd47aa2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/main.tex"
+sha256 = "6d163e91017ed9445c2ba60363fe57bcc1c88de33a605351cd0861b2f529a2d0"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/propers/retrieved.txt"
+sha256 = "45c8cfde5943e593fb727882ec844197e94cca5cd6c7ad2d264312440bd55612"
+kind = "local-evidence-payload"
+owners = ["liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/propers/verified.md"
+sha256 = "547274dd128aea9cdb5a15eea558883b7d9aea6f045f5a1963b8ed31d352d49d"
+kind = "proper-verification"
+owners = ["liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology-annotations.tex"
+sha256 = "33b9163ad02af527ee07041eaec7cbfdd9aa46782c0ce8e75ad9c13140542f6a"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology.toml"
+sha256 = "ef61c5010a361175da81c19108772282d6eab505667433694d2f04c28dbe6422"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/context.md"
+sha256 = "2f5eccdd1f34efee9b672b77aa17cd1d95162d237fa2b32eb47989efcff0423b"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/interpretations.md"
+sha256 = "e436c3374a0ed3e6b2833aeef8361af39a2e4c1bffba5cd71c60e1bb23938ef7"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/review-dependencies.toml"
+sha256 = "6a726a790110e9bab6cf0406b4e2b33bda2a007937715a838870b8df3d2d0856"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md"
+sha256 = "381e94346f1f79b34533d7656d540056b34429c6f9a2211911d6bd5a95f4caf5"
+kind = "research-scope"
+owners = ["liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/source-bindings.toml"
+sha256 = "c7695743cd3b15dfbdae1fa19aedfc2ffdf9bb35829d5c28ede733baebd79712"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/source-plan.md"
+sha256 = "fcf17e12bc4a55e1ffdd4ef7043cd82936ebc8dc234e86ec6de8b38cd6e153ba"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards/main.tex"

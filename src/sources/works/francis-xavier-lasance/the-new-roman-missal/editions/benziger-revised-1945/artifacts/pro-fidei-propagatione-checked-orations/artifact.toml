@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pro-fidei-propagatione-checked-orations"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Historical Latin and 1937/1945 revised body-text English, with United States nonrenewal clearance recorded in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. Only ordinary numbered body pages 1453, 1456, 1457 are reproduced; excluded later lettered inserts and modern scan additions are not included."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+provenance = "Model-assisted transcription independently checked word by word against the hash-matched 1945-revision facsimile at normal and 400-dpi enlarged views, then Latin compared against Vatican 1962 nos. 4833, 4841, 4843 on 2026-10-12. Misleading 1937 URL does not identify the revised printing."
+retrieved = "2026-10-12"
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+transformation = "Latin accents, ligatures, j/i, capitalization and punctuation normalized; English line divisions and typographic spacing normalized. Human English wording and printed abbreviated conclusions preserved. Optional Paschal Alleluia after Postcommunion excluded from October appointment. No 1962 translation produced."
+sha256 = "3791f8b0f8c926e57688306686e2ce97bac47f9727ea48c072d2a529ca0c1a47"
+byte_size = 1761
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/pro-fidei-propagatione-checked-orations/text.tsv"
+indexable = true
+encoding = "utf-8"

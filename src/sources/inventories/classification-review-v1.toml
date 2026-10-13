@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
 audited_on = "2026-10-06"
-publication_snapshot = "sha256:c83e5f2d0e3de6b0fc7f230fd9fd550ab19a8253afef7994218a25353ac826cc"
-classification_snapshot = "sha256:4120f5969591f65c4b4da32f1fa33138127615327b9d02b19486839057df1457"
+publication_snapshot = "sha256:6bc4e69f122210680b27c445decd965b61098dd21df197db8df1340db14eec8d"
+classification_snapshot = "sha256:89eff2d34adef10c77345cec48b6d99c5758e8f8143362f2842dfa7fa5070ed1"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -391,6 +391,10 @@ source_categories = ["finding-aid", "historical-primary", "institutional-current
 [[classifications]]
 document = "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "patristic", "repository-internal", "scripture", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "patristic", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
 document = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"

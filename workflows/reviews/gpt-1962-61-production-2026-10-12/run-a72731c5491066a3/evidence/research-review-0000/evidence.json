@@ -1,0 +1,205 @@
+{
+  "schema": "independent-research-review-evidence-v1",
+  "run_id": "a72731c5491066a3",
+  "stage": "research-review",
+  "iteration": 0,
+  "reviewer": "Codex GPT-6, xhigh; single cold reviewer; no nested agents",
+  "packet_sha256": "d838c431f335a85a30bc59d8e9bbde5f297b8a0c28fd625dc27d7ac263108d94",
+  "source_mutations": false,
+  "seal_check": {
+    "files": 1710,
+    "chronology_computation_inputs": 13,
+    "mismatches_before": 0,
+    "mismatches_after": 0
+  },
+  "facsimile_hashes": [
+    {
+      "witness": "1962 Vatican",
+      "path": ".scratch/tlm-2026-10-04/resolve-context-0000/missale62.pdf",
+      "bytes": 82815941,
+      "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "matches": true
+    },
+    {
+      "witness": "Pustet 1862",
+      "path": ".scratch/tlm-2026-10-04/research-0000/pustet1862.pdf",
+      "bytes": 102880787,
+      "sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+      "matches": true
+    },
+    {
+      "witness": "Cummiskey 1861",
+      "path": ".scratch/tlm-2026-10-04/research-0000/cummiskey1861.pdf",
+      "bytes": 24767551,
+      "sha256": "85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898",
+      "matches": true
+    },
+    {
+      "witness": "Mame 1922",
+      "path": ".scratch/proper-production-2026-10-05/research-v9-0000/mame1922.pdf",
+      "bytes": 51720493,
+      "sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+      "matches": true
+    },
+    {
+      "witness": "Lasance 1945 revision",
+      "path": ".scratch/proper-production-2026-10-05/research-v9-0000/lasance.pdf",
+      "bytes": 75268976,
+      "sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+      "matches": true
+    },
+    {
+      "witness": "Schuster III",
+      "path": ".scratch/proper-production-2026-10-05/research-v9-0000/schuster3.pdf",
+      "bytes": 158333284,
+      "sha256": "410f6d1155436714f76a4ca3645edcd33ca6ef65bed3d37b1d3e6f10b0c37239",
+      "matches": true
+    },
+    {
+      "witness": "Haydock",
+      "path": ".scratch/pc-s54/research-0000/haydock.pdf",
+      "bytes": 327647532,
+      "sha256": "9d2dd602cc4a574a8300936c37b7e2f1b3be938803acc6a607cbf5622a2fcab2",
+      "matches": true
+    }
+  ],
+  "visual_inspection": {
+    "helper": "tools/tpt pdf-review",
+    "pages": 31,
+    "raster_root": "build/tpt-runs/a72731c5491066a3/artifacts/research-review-0000/rasters",
+    "one_based_pdf_pages": {
+      "1962 Vatican": [
+        15,
+        16,
+        30,
+        32,
+        33,
+        374,
+        494,
+        495,
+        496,
+        770,
+        771,
+        894,
+        895
+      ],
+      "Pustet 1862": [
+        440,
+        441
+      ],
+      "Cummiskey 1861": [
+        39,
+        40,
+        459,
+        461,
+        686,
+        687
+      ],
+      "Mame 1922": [
+        852,
+        853
+      ],
+      "Lasance 1945 revision": [
+        1474,
+        1477,
+        1478
+      ],
+      "Schuster III": [
+        194,
+        195,
+        196,
+        197
+      ],
+      "Haydock": [
+        817
+      ]
+    },
+    "outcome": "The inspected images support the target Latin, historical English prayer witnesses, formulary boundaries and rubrical branches recorded in context.md and verified.md. Both Trinity Preface witnesses read Quam. Mame St Luke Secret is on printed 739/PDF 853."
+  },
+  "calendar_and_inventory": {
+    "identity": "General Roman 1962, Twenty-first Sunday after Pentecost, 18 October 2026, II class, green; no A/B/C cycle.",
+    "rubrics_checked": "Precedence 15/16; RG 95, 107–111, 444–446, 453, 480, 483, 494, 500–501, 505, 509.",
+    "outcome": "Eleven base texts including Trinity Preface; three mission prayers on the penultimate October Sunday unless another local date governs; three St Luke commemorative prayers in low/conventual Masses, excluded in nonconventual sung Masses. No borrowed Luke lections, feast Preface, or proper Last Gospel.",
+    "current_corroboration": "https://www.fssp.fr/ordo-du-mois/ — 18 October 2026 entry confirms Sunday/class/colour; territorial/local limits remain explicit."
+  },
+  "reception_queries": {
+    "counts": [
+      6,
+      17,
+      15,
+      13,
+      16,
+      18,
+      10,
+      11,
+      17
+    ],
+    "counts_match_scope": true,
+    "formulary_loci_compared": 40,
+    "listed_matches": 0,
+    "structural_matches": 0,
+    "saved_outputs": [
+      ".scratch/propers-20261018/driver/research-review-0000/reception-query.json",
+      ".scratch/propers-20261018/driver/research-review-0000/formulary-query.json"
+    ]
+  },
+  "consequential_difficulty_tests": [
+    {
+      "interpretation": "mercy-received",
+      "difficulty": "Does debitum dimisit denote true forgiveness, and does the final judgment undo the gift-first argument?",
+      "witnesses": [
+        "Chrysostom, Matthew Homily 61, sections 1–5 (NPNF I.10 retained text)",
+        "Augustine, Sermon 83/NPNF Sermon XXXIII, sections 1–8 (NPNF I.6 retained text)",
+        "Aquinas, Summa theologiae III q88 aa1–3, https://www.newadvent.org/summa/4088.htm"
+      ],
+      "outcome": "Survives substantively: the pardon is real; new mercilessness exposes ingratitude and incurs judgment. Chrysostom says the until does not promise eventual repayment. Augustine joins forgiveness to real correction. Aquinas provides a later technical distinction about renewed punishment, which the research does not attribute retroactively to the Fathers. Aquinas source retention/seal remains RES-001."
+    },
+    {
+      "interpretation": "protected-pilgrimage",
+      "difficulty": "Does the Collect promise immunity from the bodily suffering narrated in the Offertory?",
+      "witnesses": [
+        "Gregory, Moralia II.10.16–11.19, https://www.lectionarycentral.com/GregoryMoralia/Book02.html",
+        "Gregory, Moralia III.3.3–6.8, https://www.lectionarycentral.com/GregoryMoralia/Book03.html",
+        "Augustine, Psalm 89/NPNF 90 sections 1–4 and Psalm 118/NPNF 119 Caph 81–88",
+        "Chrysostom, Ephesians Homily 23, Ephesians 6:14"
+      ],
+      "outcome": "Survives substantively: Gregory separates malicious will from permitted power, antecedent guilt from the purpose of Job’s trial, and bodily affliction from divine custody. Augustine preserves ongoing temptation and final expectation. Chrysostom expressly develops Paschal food and an unfinished journey after Exodus. The Mass-wide connection is identified as editorial. Gregory source retention/seal remains RES-001."
+    }
+  ],
+  "other_primary_checks": [
+    "Augustine Psalm 113/NPNF 114 sections 1–6: Exodus/baptism, divine aid, and warning from those lost in the wilderness support the bounded reception claim.",
+    "Augustine Psalm 118/NPNF 119 Aleph sections 1–8 and Caph 81–88: grace-enabled obedience and Christ’s whole people longing for salvation; judgment retains the final horizon.",
+    "Bellarmine Psalms 89:1–3, 113:1 and 118:1–2,81–88: refuge, foreign language, inward obedience and final peace support the stated uses.",
+    "Chrysostom Ephesians Homilies 22–24: the research retains the heavenly-goods interpretation/editorial locative disagreement, alternative shoe readings and prayer outside the appointed boundary.",
+    "Schuster III printed 178–181: all ten shared base elements inspected in images; no claimed support for Trinity or dated Luke/mission prayers. Communion’s present judgment emphasis is distinguished from Augustine/Bellarmine’s final emphasis. Historical-transmission claims remain excluded.",
+    "Rabanus preface PL109 635C–D, https://la.wikisource.org/wiki/Expositio_in_librum_Esther_(Rabanus_Maurus): explicitly excludes exposition of the Greek additions. This supports the bounded negative; source retention/seal remains RES-001."
+  ],
+  "chronology": {
+    "currency_checks": [
+      "proper-chronology record --check: exit 0",
+      "proper-chronology annotations --presentation orientation-v1 --check: exit 0"
+    ],
+    "orientation_rows": 9,
+    "primary_loci": [
+      "CE Esther: authorship/composition discussion",
+      "CE Ephesians: addressees and Date and place of composition",
+      "CE St Paul: chief dates/captivity chronology",
+      "CE Gospel of St Matthew: Destination and Date and place of composition",
+      "CE New Testament: original Aramaic versus Greek translation chronology",
+      "CE Biblical Chronology section IV: 480/440 Temple-construction endpoint",
+      "CE David: usual regnal chronology",
+      "Haydock printed 781/PDF817: Psalm118 attribution and alternative occasions",
+      "https://bible.usccb.org/bible/job/0",
+      "https://bible.usccb.org/bible/psalms/0"
+    ],
+    "outcome": "Generated rows and planned geography preserve separate subjects/relations, unresolved psalm and Gospel occasions, qualified David attribution, alternative composition dates and the Temple endpoint. Current official USCCB introductions corroborate their bounded composition claims. Six retained CE derivatives and the CE rights inventory are absent from this immutable seal; see RES-002 and unsealed-chronology-evidence.json."
+  },
+  "limits": [
+    "Bounded research review for study drafting, not exhaustive scholarship or production/PDF/web review.",
+    "No parish, diocese, Mass type or local mission decree supplied; research correctly preserves conditional branches.",
+    "No new independent legal clearance: checked the applicability and exclusions of the project’s recorded rights positions and inspected the reused historical page bodies.",
+    "Web corroboration does not recover the exact older mutable USCCB/FSSP HTML deliveries. Gregory’s 1844 print original was not inspected; the cited transcription’s limits remain material to its new source record.",
+    "The general source/citation claims checked above do not repair missing sealed evidence. No author defense or desired verdict was received."
+  ],
+  "live_processes": []
+}

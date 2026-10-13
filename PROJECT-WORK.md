@@ -29,7 +29,30 @@ v10 strengthens passage-level source reasoning, teaching and visual lookup.
 Focused checks and independent review passed, with no generated-output drift
 across 19 existing dossiers. The [audit and independent review](workflows/reviews/propers-quality-2026-10-12/RECORD.md)
 record the evidence, resolved defects and limits. Existing publications retain
-their snapshots. The new Sunday's actual production is next.
+their snapshots. Foundation commit `9c4d5e5eb` is pushed to the workspace branch.
+
+The new Sunday's actual `proper-study` v10 run is `a72731c5491066a3`;
+the [driver record](workflows/reviews/gpt-1962-61-production-2026-10-12/DRIVER-RECORD.md)
+tracks its state. Scope and context passed. The dated inventory includes
+mission-propagation orations and the conditional St Luke commemoration, with
+the applicable Mass-type and local-calendar limits. Research iteration 0 and
+its preflight passed. The first cold review requested two evidence-boundary
+repairs: preserved and sealed Gregory, Aquinas and Rabanus witnesses, and
+inclusion of the retained chronology derivatives and their governing rights
+record. It independently supported the checked texts and substantive arguments.
+The actual engine routed a fresh research repair. Research iteration 1, its
+preflight and the second cold research review passed. The repaired seal covers
+1,738 files; all 60 requested path/hash checks matched before review. Source
+records preserve the acquired text, transmission and rights limits, including
+Gregory's modern reset rather than a claimed nineteenth-century facsimile.
+Research is accepted and the workflow is at expansive-study authoring. The
+aggregate source check still awaits the downstream web-edition declaration;
+no publication acceptance is yet claimed.
+
+The research checkpoint preserves the native packets, results and gate logs.
+Its staged whitespace audit found only final blank lines in the three native
+gate logs; their exact bytes are retained. All other staged files pass that
+check, and the archive's original/derivative identities were verified.
 
 Completion requires the improved controls to pass focused checks and independent
 review, the actual three-document workflow to reach ACCEPTED with fresh stage

@@ -1,0 +1,291 @@
+{
+  "schema_version": 1,
+  "run_id": "a72731c5491066a3",
+  "checkpoint": "research accepted; author-study-0000 compiled but undispatched",
+  "terminal_disposition": null,
+  "files": [
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/bootstrap.json",
+      "archive": "bootstrap.json",
+      "kind": "byte-exact",
+      "sha256": "7bdd9abf7bf68066e7b62b32a70c472a0abd0048bae55a3ce674be89ba99deb9",
+      "byte_size": 1161
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/events.jsonl",
+      "archive": "events.jsonl",
+      "kind": "byte-exact",
+      "sha256": "6063e553bc3f0fa03baa6408ef630a3ee7c65d1ce208c2a7685bdd20c62e4f82",
+      "byte_size": 2957
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/gate-logs/research-preflight-0000-research-records.log",
+      "archive": "gate-logs/research-preflight-0000-research-records.log",
+      "kind": "byte-exact",
+      "sha256": "30a309e6eb54aa27fd5a685cc6e06fc70371abdbb45f6728bdc1f51657f301b5",
+      "byte_size": 316
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/gate-logs/research-preflight-0001-research-records.log",
+      "archive": "gate-logs/research-preflight-0001-research-records.log",
+      "kind": "byte-exact",
+      "sha256": "30a309e6eb54aa27fd5a685cc6e06fc70371abdbb45f6728bdc1f51657f301b5",
+      "byte_size": 316
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/gate-logs/scope-gate-0000-authorized-identity.log",
+      "archive": "gate-logs/scope-gate-0000-authorized-identity.log",
+      "kind": "byte-exact",
+      "sha256": "c511f0e5ed653a6d8f47f8401a146235a074538fc162f6e08a0a30fab8016705",
+      "byte_size": 310
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/manifest.json",
+      "archive": "manifest.json",
+      "kind": "byte-exact",
+      "sha256": "e50f1c67ed17e2b29858b7a64ab6a99b50b42db9b0d8dd5bd84d03b57eb289d2",
+      "byte_size": 728
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/packets/author-study-0000.txt",
+      "archive": "packets/author-study-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "373b377ba75ab6ba011a91b82c5aa35da7a59db405cdc044864c65fecffb5ef9",
+      "byte_size": 36032
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/packets/research-0000.txt",
+      "archive": "packets/research-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "51d8872cce4fdc8118ddf7855bbf5475457d441ffe9dde9fba5363ec049199e9",
+      "byte_size": 35665
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/packets/research-0001.txt",
+      "archive": "packets/research-0001.txt",
+      "kind": "byte-exact",
+      "sha256": "1d0a6f9adb296238cf1f078d76b78e10b6c87b24da8099bc7145f289942b3ecc",
+      "byte_size": 39587
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/packets/research-preflight-0000.txt",
+      "archive": "packets/research-preflight-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "239c89d6d9ddd199c91deb2c02ccd24da2d8bd580c0362fe0651213c52587d53",
+      "byte_size": 699
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/packets/research-preflight-0001.txt",
+      "archive": "packets/research-preflight-0001.txt",
+      "kind": "byte-exact",
+      "sha256": "787c5f12cb7c576e5973e756b8e8b0829c3cfafdce565d286059a45d6b3723ab",
+      "byte_size": 699
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/packets/research-review-0000.txt",
+      "archive": "packets/research-review-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "d838c431f335a85a30bc59d8e9bbde5f297b8a0c28fd625dc27d7ac263108d94",
+      "byte_size": 284999
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/packets/research-review-0001.txt",
+      "archive": "packets/research-review-0001.txt",
+      "kind": "byte-exact",
+      "sha256": "489e651d1dcba9e9ea2720ed31b5000ec0a17496bd46d92bf07e023b1abf901e",
+      "byte_size": 290838
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/packets/resolve-context-0000.txt",
+      "archive": "packets/resolve-context-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "15e35181d3e0e2496fbd9581917cf8e8326c1e1a0dc060ac10293c6cc1c8531e",
+      "byte_size": 33301
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/packets/scope-gate-0000.txt",
+      "archive": "packets/scope-gate-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "691857f943ab312b97a40e2292c15ac6e2296002b292517df2aeee6b04303b67",
+      "byte_size": 691
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/results/research-0000.json",
+      "archive": "results/research-0000.json",
+      "kind": "byte-exact",
+      "sha256": "222d42f9d7659e0d31670e27b015a4e217512f8c8422b28ad4843458dc744525",
+      "byte_size": 646
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/results/research-0001.json",
+      "archive": "results/research-0001.json",
+      "kind": "byte-exact",
+      "sha256": "f86d5c6c4e7725579ffbad51258d24404f9836f50ebfa2569cf4c76547bfdfac",
+      "byte_size": 1384
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/results/research-preflight-0000.json",
+      "archive": "results/research-preflight-0000.json",
+      "kind": "byte-exact",
+      "sha256": "d9c4c5d71ce61eb0186e720a8b7c42807d1ab40d1053516f4841a9f45c9468f1",
+      "byte_size": 97
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/results/research-preflight-0001.json",
+      "archive": "results/research-preflight-0001.json",
+      "kind": "byte-exact",
+      "sha256": "3d41e3743c4cd6ecf837fcb791516f7a053ba74c59eeb7aa7a2100847f40b2c9",
+      "byte_size": 97
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/results/research-review-0000.json",
+      "archive": "results/research-review-0000.json",
+      "kind": "byte-exact",
+      "sha256": "1b2a6da2ea87b53a520f461e0dec81b88258b06f2a7fe5a5f7372acff95816bb",
+      "byte_size": 267277
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/results/research-review-0001.json",
+      "archive": "results/research-review-0001.json",
+      "kind": "byte-exact",
+      "sha256": "9ed9ee832a6cdef88e7d0dec06d2f5ccaeef89888b6fd2269e9551a6acb7a4bf",
+      "byte_size": 269298
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/results/resolve-context-0000.json",
+      "archive": "results/resolve-context-0000.json",
+      "kind": "byte-exact",
+      "sha256": "1824ae4253bd72903484b1cbf12a7097e1005d81f40d786ce13def3fbff8d8fa",
+      "byte_size": 546
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/results/scope-gate-0000.json",
+      "archive": "results/scope-gate-0000.json",
+      "kind": "byte-exact",
+      "sha256": "c2c5dc73384dcaa82e6a0b0b6d655a49fd9f0d8345607513add762f6826c4e2d",
+      "byte_size": 89
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/state.json",
+      "archive": "state.json",
+      "kind": "byte-exact",
+      "sha256": "75cc4c3ed1c315671ed343ba57b79cdf0081e9c384b74fb76b27beee5da5e854",
+      "byte_size": 552899
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/artifacts/research-0001/HANDOFF.md",
+      "archive": "evidence/research-0001/HANDOFF.md",
+      "kind": "byte-exact",
+      "sha256": "ffe7c42559454aba75e1edc555466be7d019e0a1e111544434287c52f4c056f4",
+      "byte_size": 1582
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/artifacts/research-0001/checks.txt",
+      "archive": "evidence/research-0001/checks.txt",
+      "kind": "byte-exact",
+      "sha256": "380f5bef2515566ea2619b8f32769a1393d9f64ca91554e8e407e33ffda09ec3",
+      "byte_size": 1150
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/artifacts/research-0001/chronology-derivative-audit.json",
+      "archive": "evidence/research-0001/chronology-derivative-audit.json",
+      "kind": "byte-exact",
+      "sha256": "8993f76e8bc5aeca6112eccc82ed9e4c67a6304d545f9ca3cba8e952130e2d5b",
+      "byte_size": 3489
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/artifacts/research-0001/closure-check.json",
+      "archive": "evidence/research-0001/closure-check.json",
+      "kind": "byte-exact",
+      "sha256": "4c6451e541c175987a908170464a7294ba406113d1f71f62fcd4198c41c37781",
+      "byte_size": 333
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/artifacts/research-0001/expected-seal-files.json",
+      "archive": "evidence/research-0001/expected-seal-files.json",
+      "kind": "byte-exact",
+      "sha256": "5ce7f1424cbbd47ee77b266ab6a81c090e1af23545f3a58126cccd4ee9c4c57d",
+      "byte_size": 11221
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/artifacts/research-0001/final-checks.json",
+      "archive": "evidence/research-0001/final-checks.json",
+      "kind": "byte-exact",
+      "sha256": "d58f2c12f5e91ad71b787f5b784902d312800a7916fb83854f5550b8c1975a27",
+      "byte_size": 3484
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/artifacts/research-0001/new-source-ids.json",
+      "archive": "evidence/research-0001/new-source-ids.json",
+      "kind": "byte-exact",
+      "sha256": "50c831a9ed8cf3bddbb7e1146e25890c93a884c32443020cc53ce95e0802a165",
+      "byte_size": 347
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/artifacts/research-review-0000/evidence.json",
+      "archive": "evidence/research-review-0000/evidence.json",
+      "kind": "byte-exact",
+      "sha256": "6b4c7be45feeec902c87c30ff4c5d1f8f2fb6b0e9b1e496a06641206cbe73948",
+      "byte_size": 9961
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/artifacts/research-review-0000/unsealed-chronology-evidence.json",
+      "archive": "evidence/research-review-0000/unsealed-chronology-evidence.json",
+      "kind": "byte-exact",
+      "sha256": "d7a9f489358614b712bb4fdd7de08eb9da4b03b737a5eda800bb55936c540bb3",
+      "byte_size": 1938
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/artifacts/research-review-0001/ce-closure-check.json",
+      "archive": "evidence/research-review-0001/ce-closure-check.json",
+      "kind": "byte-exact",
+      "sha256": "c370119e0fa02765f3705cf2627a2e20dc5af1395467cb3d798a613bdf54f69e",
+      "byte_size": 12612
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/artifacts/research-review-0001/derivative-check.json",
+      "archive": "evidence/research-review-0001/derivative-check.json",
+      "kind": "byte-exact",
+      "sha256": "c8057c4d3d2355c217602e7a36d7f1da25a81fbef66b69b42be25a2ff7505349",
+      "byte_size": 757
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/artifacts/research-review-0001/review-checks.json",
+      "source_sha256": "448e2fb7e2e46b014c90544ed8007240234ba84b64b30bc73d714d3c4e5d3433",
+      "source_byte_size": 6857,
+      "archive": "evidence/research-review-0001/review-checks.public.json",
+      "kind": "public-derivative",
+      "sha256": "2c778ee4a577ee052e6dec89685285e4d79457faac7214f5e524be876d935899",
+      "byte_size": 6893,
+      "transformation": "Only the numeric native exec session identifier in process_shutdown was replaced with an explicit omission marker. All other original bytes are unchanged. Original evidence remains at source locally; this derivative is not a native verdict or seal."
+    },
+    {
+      "source": "build/tpt-runs/a72731c5491066a3/artifacts/research-review-0001/seal-check.json",
+      "archive": "evidence/research-review-0001/seal-check.json",
+      "kind": "byte-exact",
+      "sha256": "8ee756c916966cdcc9140fd2fedc20d1f5eba4d6a4f7ca53dd002cfff526510e",
+      "byte_size": 194
+    },
+    {
+      "source": ".scratch/propers-20261018/driver/research-0000/audit.json",
+      "archive": "evidence/research-0000/audit.json",
+      "kind": "byte-exact",
+      "sha256": "926afea7417409ee7fa4dd7a576b0f54803b3cd7890cf617de4160fd46d1d53f",
+      "byte_size": 14482
+    },
+    {
+      "source": ".scratch/propers-20261018/driver/research-review-0001-seal-closure.json",
+      "archive": "evidence/driver/research-review-0001-seal-closure.json",
+      "kind": "byte-exact",
+      "sha256": "b0532dfb2f17e060579544376a3d557155df37e46257a4ab7c4cbd7db0040566",
+      "byte_size": 25098
+    },
+    {
+      "source": ".scratch/propers-20261018/driver/research-0001/changed-source-paths.json",
+      "archive": "evidence/research-0001/changed-source-paths.json",
+      "kind": "byte-exact",
+      "sha256": "2f0158027be2a39fc014efc9149216c5cc18244b399cf40a7e3e3675a44dcd69",
+      "byte_size": 1859
+    }
+  ]
+}

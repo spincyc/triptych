@@ -1,0 +1,86 @@
+{
+  "stage": "research-review",
+  "iteration": 1,
+  "document": "gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+  "packet": "build/tpt-runs/a72731c5491066a3/packets/research-review-0001.txt",
+  "scope": [
+    "research/interpretations.md",
+    "research/review-dependencies.toml",
+    "research/scope.md",
+    "research/source-bindings.toml"
+  ],
+  "standing_findings": {
+    "prior": [],
+    "carried": [],
+    "advisory": []
+  },
+  "checks": [
+    {
+      "test": "Immutable packet inputs",
+      "result": "All 1738 sealed file hashes and 13 chronology computation-input hashes match. Full 290838-byte packet read and decoded; source map parsed in full.",
+      "evidence": "seal-check.json"
+    },
+    {
+      "test": "New retained-source identity",
+      "result": "Fresh complete Gregory PDF, Aquinas question HTML and Rabanus full-document HTML reproduce registered hashes and byte sizes; no delivery was read from an author summary. Gregory derived text reproduces byte-for-byte. Aquinas and Rabanus full historical text matches the declared extraction with whitespace normalization.",
+      "evidence": "derivative-check.json"
+    },
+    {
+      "test": "Mercy-received consequential difficulty",
+      "loci": [
+        "Chrysostom, Matthew Homily 61, sections 3–5 (retained CCEL lines 34969–35150)",
+        "Augustine, Sermon 83 (= NPNF XXXIII), sections 4–8 (retained CCEL lines 35057–35185)",
+        "Aquinas, ST III q88, articles 1–4, complete question including objections and replies"
+      ],
+      "result": "The actual pardon, culpable refusal of the repeated plea and subsequent judgment remain real. Aquinas rejects undoing prior remission and distinguishes the new act’s aggravated punishment from automatic revival of the old acts’ guilt or its former numerical amount. The interpretation correctly reserves that technical clarification to Aquinas and preserves the earlier Fathers’ warning and Augustine’s inward-pardon/correction distinction."
+    },
+    {
+      "test": "Protected-pilgrimage consequential difficulty",
+      "loci": [
+        "Gregory, Moralia II.10.16–11.19",
+        "Gregory, Moralia III.3.3–6.8, with adjacent historical exposition"
+      ],
+      "result": "Gregory distinguishes malicious intention from permitted power, lack of punitive fault from lack of any providential purpose, and anthropomorphic divine movement from a mutable divine will. His III.5 explicitly holds protection and affliction together. This supports the second reading’s answer to the Collect/Job tension; the research does not diagnose a particular contemporary sufferer’s losses."
+    },
+    {
+      "test": "Reception-sweep exclusion",
+      "locus": "Rabanus, Expositio in librum Esther, dedicatory preface, PL 109:635C–D",
+      "result": "The retained complete preface expressly says he omits exposition of the added Greek material. This supports the bounded exclusion of that work as direct commentary on Esther 13:9–11. It is a checked digital transcription, not print-facsimile collation."
+    },
+    {
+      "test": "Six chronology article payloads and dependency closure",
+      "evidence": "ce-closure-check.json",
+      "result": "All six declared derivative manifests and actual payloads are in the dispatch seal, payload hashes match their manifests, parent delivery identities remain linked, and the governing Catholic Encyclopedia rights inventory is sealed. Exact chronology loci were read: Esther authorship/date discussion; Ephesians Date and place of composition; Matthew Date and place of composition; New Testament Aramaic Matthew/unknown Greek date paragraph; St Paul chronology listing; Biblical Chronology IV Temple interval discussion. The research preserves conjectural Esther dating, Matthew alternatives and Aramaic/Greek distinction, traditional captivity alternatives for Ephesians, and Temple-relative 480/440 intervals rather than an invented absolute Exodus year."
+    },
+    {
+      "test": "Interpretation sufficiency",
+      "result": "Both proposed readings remain materially distinct complete-formulary arguments with at least two eligible substantive authors, explicit four-sense distillations, contributions from all seventeen possible elements, and conditional treatment of the mission/Luke prayers. Their first question is obligation after pardon; the second is protection through continuing affliction and pilgrimage. Cross-element constructions remain editorial synthesis, with Schuster confined to his matching ten Sunday elements."
+    },
+    {
+      "command": "tools/tpt source-library validate",
+      "exit_status": 0,
+      "result": "source-library valid: artifact=2945 corpus=5 edition=1060 passage=5277 segment=94 work=937 bindings=3815"
+    },
+    {
+      "command": "tools/tpt proper-chronology record --provider gpt --document liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost --check",
+      "exit_status": 0,
+      "result": "Record current with chronology corpus."
+    },
+    {
+      "command": "tools/tpt proper-chronology annotations --provider gpt --document liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost --check",
+      "exit_status": 0,
+      "result": "Annotations current with chronology corpus; nine orientation rows inspected against the research descriptions."
+    }
+  ],
+  "limits": [
+    "This is the packet’s scoped second research evaluation, not a new review of settled unchanged collation or a rereading of every held book. No fresh finding was derived against an unchanged out-of-scope file.",
+    "The new historical-text witnesses are web transcriptions/derivatives, not newly collated historical printed editions. Gregory’s separate dedicatory Epistle and still-omitted host notes are outside the download; the research states that limit.",
+    "The registered United States rights bases were checked for applicability and separation from modern wrappers; no independent copyright-renewal search or legal opinion was performed.",
+    "No rendered study, concise study, homily, or web publication is under review at this research stage. No publication-page visual judgment is claimed, so no rasters were generated.",
+    "A trial HTMLParser comparison lost a locator inside malformed Aquinas hyperlink markup; repeating the declared tag-stripping transformation recovered all source wording and resolved the comparison. The first attempted helper used unavailable bs4; no package was installed."
+  ],
+  "verdict": "PASS",
+  "blocking_findings": [],
+  "subject_mutations": "none; no leaf, source, code, projection, guidance, workflow state, receipt or seal edited",
+  "process_shutdown": "All spawned shell commands completed. Chronology process session [identifier omitted in public derivative] completed with exit 0. No background processes or nested agents started."
+}

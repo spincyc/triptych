@@ -1,0 +1,157 @@
+{
+  "stage": "research",
+  "iteration": 0,
+  "run_id": "a72731c5491066a3",
+  "model": "actual Codex GPT-6",
+  "effort": "high",
+  "nested_agents": 0,
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md",
+  "research_files_written": [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/propers/retrieved.txt",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/propers/verified.md",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology-annotations.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology.toml",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/interpretations.md",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/review-dependencies.toml",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/source-bindings.toml",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/source-plan.md"
+  ],
+  "inherited_files_read_unchanged": [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/context.md",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/main.tex"
+  ],
+  "global_source_and_consumer_files_changed": [
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/source-bindings.toml",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/source-bindings.toml",
+    "src/sources/inventories/classification-review-v1.toml",
+    "src/sources/inventories/claude-publications-v1.toml",
+    "src/sources/inventories/publications-v1.toml",
+    "src/sources/inventories/source-family-migration-v1.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/s-lucae-evangelistae-orations.toml",
+    "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/praefationes-en/artifact.toml",
+    "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/praefationes-en/praefationes-en.tsv",
+    "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/s-lucae-checked-english/artifact.toml",
+    "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/s-lucae-checked-english/text.tsv",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/pro-fidei-propagatione-checked-orations/artifact.toml",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/pro-fidei-propagatione-checked-orations/text.tsv",
+    "src/sources/works/fssp-france/ordo-du-mois/editions/2026-10-12-web/artifacts/html-e5207e58/artifact.toml",
+    "src/sources/works/fssp-france/ordo-du-mois/editions/2026-10-12-web/edition.toml",
+    "src/web/data/structure/sources/editions/catholic-church/missale-romanum/1922-1922-tours-mame-editio-quarta-iuxta-typicam.json",
+    "src/web/data/structure/sources/editions/eugene-cummiskey/roman-missal-english-laity/1861-philadelphia-1861.json",
+    "src/web/data/structure/sources/editions/francis-xavier-lasance/the-new-roman-missal/1945-benziger-revised-1945.json",
+    "src/web/data/structure/sources/editions/fssp-france/ordo-du-mois/2026-2026-10-12-web.json",
+    "src/web/data/structure/sources/index.json"
+  ],
+  "file_sha256": {
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/propers/retrieved.txt": "45c8cfde5943e593fb727882ec844197e94cca5cd6c7ad2d264312440bd55612",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/propers/verified.md": "547274dd128aea9cdb5a15eea558883b7d9aea6f045f5a1963b8ed31d352d49d",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology-annotations.tex": "33b9163ad02af527ee07041eaec7cbfdd9aa46782c0ce8e75ad9c13140542f6a",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology.toml": "ef61c5010a361175da81c19108772282d6eab505667433694d2f04c28dbe6422",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/interpretations.md": "bae49e3dedb3ed1066e9146606d65c57daba6f112e9dff1a4bcd8f2b5569f412",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/review-dependencies.toml": "bdfd69c6f9ce53753a01f81b64bdb0c46a119a508f964d3f6054a50511337d87",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md": "c2e58f66c2fe5691cb6ec7bd0d7942a0d1dc063d446c91c5f99318013efe739f",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/source-bindings.toml": "fbbd0de111b19a446f1bbf1c509fb72cd38c22537dc1160ba9643029b1f86129",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/source-plan.md": "fcf17e12bc4a55e1ffdd4ef7043cd82936ebc8dc234e86ec6de8b38cd6e153ba",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/source-bindings.toml": "38cf6184a504b9691baebbc0f3956fad2175b50414d46b37be0fbcf3ae772ff9",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/source-bindings.toml": "f48c427ee9032adfbcf34f42bc3a239f9a1ad64e22cedbd57de01c7a7d84facb",
+    "src/sources/inventories/classification-review-v1.toml": "33cba99eb10f9e9f6bc9979dd441d54e1db346a246c030ec257ea7e96af93593",
+    "src/sources/inventories/claude-publications-v1.toml": "aa4b3a5aaa9732735fdc1279b9fe1260f7b4ff598bd6f632b2f76b27bd8fec46",
+    "src/sources/inventories/publications-v1.toml": "f4c7d77951db8f4e25431e9a05840a6f0ee07723f6a0c2022d4843d0f0323d45",
+    "src/sources/inventories/source-family-migration-v1.toml": "82482b3c65c829573f690f54cbb1abafdb243ac38e4e40af9c427cf74ba5ee6e",
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/s-lucae-evangelistae-orations.toml": "2a7d07e4fc1d1e24441325833911b27cf542b41e8bb0edcf585f7da77f3c86de",
+    "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/praefationes-en/artifact.toml": "be5f7a75a7195268fff71d590962d6bfde3e2ce14d85e1f19eb5bb26429707e5",
+    "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/praefationes-en/praefationes-en.tsv": "67400ec1b528854f45e1ab8a1b0598235d9471072b1e26e261db1ea5d1871441",
+    "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/s-lucae-checked-english/artifact.toml": "9649d9eade89ebb8bd7f15ef5083edf1105540b0e5feeb1dc1230125ef989b69",
+    "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/s-lucae-checked-english/text.tsv": "932cb5278b1dc923fefc89547c0f486d29fd3e505ff3a0992848e7b90388b20b",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/pro-fidei-propagatione-checked-orations/artifact.toml": "e0591edaf7a5a6ced8159128dfe9d5d50a1470a128b9f29c7091f2d730ebf4b7",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/pro-fidei-propagatione-checked-orations/text.tsv": "3791f8b0f8c926e57688306686e2ce97bac47f9727ea48c072d2a529ca0c1a47",
+    "src/sources/works/fssp-france/ordo-du-mois/editions/2026-10-12-web/artifacts/html-e5207e58/artifact.toml": "00d0fcb1c5480fa928f8ecc219ad1e76ed152ffa20731149137f3b3ad05cb680",
+    "src/sources/works/fssp-france/ordo-du-mois/editions/2026-10-12-web/edition.toml": "8ad131197ccc2ced4acd139348d43b7f30b77ff75e837e1102b94421da78852f",
+    "src/web/data/structure/sources/editions/catholic-church/missale-romanum/1922-1922-tours-mame-editio-quarta-iuxta-typicam.json": "150db0b63f62f292e9f6f90f8bbf8e91fa24b4bb265f62b6940c2c6a7bc86705",
+    "src/web/data/structure/sources/editions/eugene-cummiskey/roman-missal-english-laity/1861-philadelphia-1861.json": "50a2936b2c7cf638745e55f850e4fba43e78588d05dcf08315ce1b16f72683f3",
+    "src/web/data/structure/sources/editions/francis-xavier-lasance/the-new-roman-missal/1945-benziger-revised-1945.json": "1131aa4b9c6b53f197d90f469078f2151894dcc1986ab15f9b77e7ff02d61b97",
+    "src/web/data/structure/sources/editions/fssp-france/ordo-du-mois/2026-2026-10-12-web.json": "1830e4d0e2b0da805f7b69fa43dceb6588541029dadeb27e27110a6e9c9cd1e3",
+    "src/web/data/structure/sources/index.json": "9a003d8363d6e9be2e8b7ddf9d2d7027390916c4539e43503edb05601b2a437c"
+  },
+  "checks": [
+    {
+      "command": "make check-source-containment check-commentator-inventories",
+      "result": "PASS",
+      "details": "Containment: 124 containers, 329 constituents; author standing: 33 persons; formulary loci: 11 works, 46 loci. Existing absence of standing rows for Anthony of Padua and Cyril of Alexandria remains reported."
+    },
+    {
+      "command": "make check-publication-inventories",
+      "result": "PASS",
+      "details": "Source-library valid: 2939 artifacts, 5 corpora, 1057 editions, 5277 passages, 94 segments, 936 works, 3812 bindings. Claude inventory: 60 publications/1751 source files; GPT inventory: 148 publications/2587 source files."
+    },
+    {
+      "command": "tools/tpt source-family-migration check",
+      "result": "PASS",
+      "details": "159 pending review units; 0 screened; atomic_citation_coverage=false. Historic unresolved states preserved."
+    },
+    {
+      "command": "tools/tpt source-reader check",
+      "result": "PASS",
+      "details": "All 2196 rights-withheld passages listed with their reason; reader-model derivation replayed."
+    },
+    {
+      "command": "tools/tpt source-reader structure --check",
+      "result": "PASS",
+      "details": "4139 projection files current."
+    },
+    {
+      "command": "tools/tpt proper-chronology record --provider gpt --document liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost --check",
+      "result": "PASS"
+    },
+    {
+      "command": "tools/tpt proper-chronology annotations --provider gpt --document liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost --presentation orientation-v1 --check",
+      "result": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    },
+    {
+      "command": "make check-sources",
+      "result": "FAIL (downstream publication prerequisite)",
+      "details": "check-deployment-sources -> check-document-catalogue: GPT61 main.tex has no web-edition.toml beside it. No web declaration was created prematurely; parent confirmed this is expected at the research boundary. Source-specific constituent checks were run separately and passed."
+    }
+  ],
+  "mame_correction": {
+    "source_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.s-lucae-evangelistae-orations",
+    "old_secret": "printed p. 726 / PDF p. 840 (St Jerome)",
+    "new_secret": "printed p. 739 / PDF p. 853 (St Luke)",
+    "unchanged": "Collect p. 738/PDF 852; Postcommunion p. 739/PDF 853",
+    "consumer_impact": "Source uses query before repair returned no bound publication. GPT61 now binds the corrected record. Historical verification date retained in correction note; no inherited approval changed."
+  },
+  "cummiskey_correction": {
+    "source_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en",
+    "change": "Only seq 6 notes corrected: Quam appears in Cummiskey printed xxix/PDF 40 and Vatican 1962 printed 293/PDF 374; unsupported general Roman Quem comparison removed. English and all other TSV fields unchanged. Artifact manifest hash/size refreshed.",
+    "old_payload_sha256": "c3d14547a313e50ba297204cc6ee1f6abc8efbbbbef9110dd922bd8a5c32b957",
+    "new_payload_sha256": "67400ec1b528854f45e1ab8a1b0598235d9471072b1e26e261db1ea5d1871441",
+    "new_source_fingerprint": "sha256:228733d9248988b0eb27e84b159ee4053384eb72863134056c1c9ed115f753b5",
+    "consumer_impact": "Claude57 and GPT60 binding fingerprint and context note only; states, roles/loci, historic verified_on where present, prior evidence dates and approvals preserved. No content/PDF restamp or automatic reacceptance.",
+    "review": "workflows/reviews/propers-quality-2026-10-12/SOURCE-IMPACT.md",
+    "review_date": "2026-10-13 UTC"
+  },
+  "new_sources": [
+    "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.s-lucae-checked-english",
+    "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pro-fidei-propagatione-checked-orations",
+    "artifact.fssp-france.ordo-du-mois.web-2026-10-12.html-e5207e58"
+  ],
+  "evidence_rasters": "build/tpt-runs/a72731c5491066a3/artifacts/research-0000/rasters",
+  "remaining_limits": [
+    "Full aggregate source gate awaits the later web-edition.toml publication declaration.",
+    "Mission orations are conditional on the local Ordinary not assigning another mission day; FSSP corroborates the French 18 October occurrence, not every jurisdiction.",
+    "No exact Exodus year, secure Psalm occasion, or certainty for disputed composition dates is claimed; chronology bounds and alternatives are recorded.",
+    "Some registered modern chronology-source historic payload bytes were unavailable; current pages inspected are explicitly distinguished from acquisition of those historic bytes.",
+    "No historical compositional intent or direct patristic commentary on later prayers is invented; negative second searches and editorial whole-formulary syntheses are labeled.",
+    "Fresh cold research review and all downstream authoring/production checks remain to their owners."
+  ],
+  "shared_code_or_additional_ownership_needed": [],
+  "live_process_handles": [],
+  "process_status": "All launched commands completed; no retained server or background process.",
+  "workflow_advanced": false,
+  "commits_or_pushes": false
+}

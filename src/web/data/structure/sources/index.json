@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 2936,
-  "editions": 1056,
+  "artifacts": 2945,
+  "editions": 1060,
   "passages": 5277,
   "readable": 3081,
-  "works": 936
+  "works": 937
  },
  "facets": {
   "authors": [
@@ -1487,7 +1487,7 @@
    },
    {
     "id": "Rabanus Maurus",
-    "works": 1
+    "works": 2
    },
    {
     "id": "Rabbinic sages (Babylonian redaction)",
@@ -1941,7 +1941,7 @@
   "categories": [
    {
     "id": "biblical-commentary",
-    "works": 56
+    "works": 57
    },
    {
     "id": "patristic-treatise",
@@ -3434,11 +3434,11 @@
   ],
   "languages": [
    {
-    "editions": 568,
+    "editions": 570,
     "id": "en"
    },
    {
-    "editions": 312,
+    "editions": 313,
     "id": "la"
    },
    {
@@ -3446,7 +3446,7 @@
     "id": "mul"
    },
    {
-    "editions": 35,
+    "editions": 36,
     "id": "fr"
    },
    {
@@ -3574,25 +3574,25 @@
     "label": "20th century"
    },
    {
-    "editions": 570,
+    "editions": 574,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 1649,
-    "editions": 380,
+    "artifacts": 1654,
+    "editions": 383,
     "id": "public-domain"
    },
    {
-    "artifacts": 779,
-    "editions": 390,
+    "artifacts": 782,
+    "editions": 393,
     "id": "restricted"
    },
    {
-    "artifacts": 327,
-    "editions": 159,
+    "artifacts": 328,
+    "editions": 160,
     "id": "unresolved"
    },
    {
@@ -13834,6 +13834,19 @@
      ],
      "title": "Ordo du mois, October 2026 state inspected 5 October 2026",
      "year": 2026
+    },
+    {
+     "date": "2026-10-12",
+     "file": "2026-2026-10-12-web.json",
+     "id": "edition.fssp-france.ordo-du-mois.web-2026-10-12",
+     "language": "fr",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Ordo du mois, October 2026 state inspected 12 October 2026",
+     "year": 2026
     }
    ],
    "id": "work.fssp-france.ordo-du-mois",
@@ -15066,8 +15079,23 @@
    ],
    "author": "Gregory the Great",
    "category": "biblical-commentary",
-   "directory": null,
-   "editions": [],
+   "directory": "editions/gregory-the-great/moralia-in-iob/",
+   "editions": [
+    {
+     "date": "2026-10-12",
+     "file": "2026-2026-10-12-library-of-fathers-lectionarycentral.json",
+     "id": "edition.gregory-the-great.moralia-in-iob.2026-10-12-library-of-fathers-lectionarycentral",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain",
+      "restricted"
+     ],
+     "title": "Morals on the Book of Job: Lectionary Central historical English compilation",
+     "year": 2026
+    }
+   ],
    "id": "work.gregory-the-great.moralia-in-iob",
    "languages": [
     "la"
@@ -24705,6 +24733,37 @@
   },
   {
    "alternate_titles": [
+    "Expositio in librum Esther (Rabanus Maurus)",
+    "Commentary on Esther",
+    "Hrabanus Maurus on Esther"
+   ],
+   "author": "Rabanus Maurus",
+   "category": "biblical-commentary",
+   "directory": "editions/rabanus-maurus/expositio-in-librum-esther/",
+   "editions": [
+    {
+     "date": "2026-10-12",
+     "file": "2026-2026-10-12-migne-pl109-wikisource.json",
+     "id": "edition.rabanus-maurus.expositio-in-librum-esther.2026-10-12-migne-pl109-wikisource",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain",
+      "restricted"
+     ],
+     "title": "Expositio in librum Esther, PL 109, Wikisource transcription",
+     "year": 2026
+    }
+   ],
+   "id": "work.rabanus-maurus.expositio-in-librum-esther",
+   "languages": [
+    "la"
+   ],
+   "title": "Expositio in librum Esther"
+  },
+  {
+   "alternate_titles": [
     "Bavli Berakhot",
     "Berakot"
    ],
@@ -29100,6 +29159,20 @@
      ],
      "title": "Summa Theologica, Third Part, English Dominican translation, Gutenberg electronic edition",
      "year": 2006
+    },
+    {
+     "date": "2026-10-12",
+     "file": "2026-2026-10-12-english-dominicans-newadvent-q88.json",
+     "id": "edition.thomas-aquinas.summa-theologiae.2026-10-12-english-dominicans-newadvent-q88",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain",
+      "restricted"
+     ],
+     "title": "Summa Theologiae III, question 88: dated New Advent witness of the 1920 Dominican translation",
+     "year": 2026
     },
     {
      "date": "2026-09-05",

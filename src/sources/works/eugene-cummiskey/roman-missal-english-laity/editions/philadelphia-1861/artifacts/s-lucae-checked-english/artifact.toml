@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.s-lucae-checked-english"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Anonymous human English published in Philadelphia in 1861; United States public domain by publication date. Only historical wording transcribed, excluding modern scan marks and wrapper."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/romanmissaltran00churgoog/romanmissaltran00churgoog.pdf"
+provenance = "Model-assisted transcription checked word by word against the hash-matched complete facsimile, printed 677–678 / PDF 686–687, at normal and 400-dpi enlarged views on 2026-10-12."
+retrieved = "2026-10-12"
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+transformation = "Line-end divisions, small capitals and typographic spacing normalized; wording, historical spelling and abbreviated conclusions preserved. Neither translated nor corrected against the Latin. Tabular locators are project metadata."
+sha256 = "932cb5278b1dc923fefc89547c0f486d29fd3e505ff3a0992848e7b90388b20b"
+byte_size = 793
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/s-lucae-checked-english/text.tsv"
+indexable = true
+encoding = "utf-8"

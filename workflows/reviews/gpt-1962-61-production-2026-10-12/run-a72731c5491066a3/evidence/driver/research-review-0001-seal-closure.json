@@ -1,0 +1,420 @@
+{
+  "run_id": "a72731c5491066a3",
+  "packet": "build/tpt-runs/a72731c5491066a3/packets/research-review-0001.txt",
+  "packet_sha256": "489e651d1dcba9e9ea2720ed31b5000ec0a17496bd46d92bf07e023b1abf901e",
+  "purpose": "Dispatch-integrity verification; not a source-review verdict",
+  "required_file_checks": [
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/interpretations.md",
+      "expected": "e436c3374a0ed3e6b2833aeef8361af39a2e4c1bffba5cd71c60e1bb23938ef7",
+      "sealed": "e436c3374a0ed3e6b2833aeef8361af39a2e4c1bffba5cd71c60e1bb23938ef7",
+      "actual": "e436c3374a0ed3e6b2833aeef8361af39a2e4c1bffba5cd71c60e1bb23938ef7",
+      "match": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/review-dependencies.toml",
+      "expected": "6a726a790110e9bab6cf0406b4e2b33bda2a007937715a838870b8df3d2d0856",
+      "sealed": "6a726a790110e9bab6cf0406b4e2b33bda2a007937715a838870b8df3d2d0856",
+      "actual": "6a726a790110e9bab6cf0406b4e2b33bda2a007937715a838870b8df3d2d0856",
+      "match": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md",
+      "expected": "381e94346f1f79b34533d7656d540056b34429c6f9a2211911d6bd5a95f4caf5",
+      "sealed": "381e94346f1f79b34533d7656d540056b34429c6f9a2211911d6bd5a95f4caf5",
+      "actual": "381e94346f1f79b34533d7656d540056b34429c6f9a2211911d6bd5a95f4caf5",
+      "match": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/source-bindings.toml",
+      "expected": "c7695743cd3b15dfbdae1fa19aedfc2ffdf9bb35829d5c28ede733baebd79712",
+      "sealed": "c7695743cd3b15dfbdae1fa19aedfc2ffdf9bb35829d5c28ede733baebd79712",
+      "actual": "c7695743cd3b15dfbdae1fa19aedfc2ffdf9bb35829d5c28ede733baebd79712",
+      "match": true
+    },
+    {
+      "path": "src/sources/inventories/catholic-encyclopedia-rights-v1.toml",
+      "expected": "23fd15c63922894067c75f9650c2c4ed0c7388c22148339becd2073143c4171a",
+      "sealed": "23fd15c63922894067c75f9650c2c4ed0c7388c22148339becd2073143c4171a",
+      "actual": "23fd15c63922894067c75f9650c2c4ed0c7388c22148339becd2073143c4171a",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/artifacts/newadvent-10057a-e7b6ccef/artifact.toml",
+      "expected": "b294291e332e98d8f848eeb581c1c8790c50f443c1d620237f4314a673741f2d",
+      "sealed": "b294291e332e98d8f848eeb581c1c8790c50f443c1d620237f4314a673741f2d",
+      "actual": "b294291e332e98d8f848eeb581c1c8790c50f443c1d620237f4314a673741f2d",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/artifacts/newadvent-10057a-e7b6ccef-article-text/artifact.toml",
+      "expected": "064cdf2fa4756bc1f4556b7a31a8e6a4614eb59d1edc3e5ee1c5b7549b16d8b8",
+      "sealed": "064cdf2fa4756bc1f4556b7a31a8e6a4614eb59d1edc3e5ee1c5b7549b16d8b8",
+      "actual": "064cdf2fa4756bc1f4556b7a31a8e6a4614eb59d1edc3e5ee1c5b7549b16d8b8",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/artifacts/newadvent-10057a-e7b6ccef-article-text/newadvent-10057a-e7b6ccef-article-text.txt",
+      "expected": "3d9a35cc773f774ed3b423c890956ba655c61ceb7096fbd7c01a197f062168c2",
+      "sealed": "3d9a35cc773f774ed3b423c890956ba655c61ceb7096fbd7c01a197f062168c2",
+      "actual": "3d9a35cc773f774ed3b423c890956ba655c61ceb7096fbd7c01a197f062168c2",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/edition.toml",
+      "expected": "927c6f8b34914a616a6ae8e7d529f2b744bf10811c87a9fc9b1f9613efc52a83",
+      "sealed": "927c6f8b34914a616a6ae8e7d529f2b744bf10811c87a9fc9b1f9613efc52a83",
+      "actual": "927c6f8b34914a616a6ae8e7d529f2b744bf10811c87a9fc9b1f9613efc52a83",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-10/work.toml",
+      "expected": "35e69d1e21b0c1b474e7fdc146b5c77f772d02c1e7ca137b195215b7734ad90f",
+      "sealed": "35e69d1e21b0c1b474e7fdc146b5c77f772d02c1e7ca137b195215b7734ad90f",
+      "actual": "35e69d1e21b0c1b474e7fdc146b5c77f772d02c1e7ca137b195215b7734ad90f",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/artifacts/newadvent-11567b-bff0dda8/artifact.toml",
+      "expected": "b2d6bd1eaeea0fb45d04520f3c9b4ed00a134b2f68e5e1192c3b54302f981b9b",
+      "sealed": "b2d6bd1eaeea0fb45d04520f3c9b4ed00a134b2f68e5e1192c3b54302f981b9b",
+      "actual": "b2d6bd1eaeea0fb45d04520f3c9b4ed00a134b2f68e5e1192c3b54302f981b9b",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/artifacts/newadvent-11567b-bff0dda8-article-text/artifact.toml",
+      "expected": "fc12981c91a7aba5778225195ca29ed3888bd75d2e4320025778228977cbeec7",
+      "sealed": "fc12981c91a7aba5778225195ca29ed3888bd75d2e4320025778228977cbeec7",
+      "actual": "fc12981c91a7aba5778225195ca29ed3888bd75d2e4320025778228977cbeec7",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/artifacts/newadvent-11567b-bff0dda8-article-text/newadvent-11567b-bff0dda8-article-text.txt",
+      "expected": "c0f08396eca9b37415747eb06790ce986acc5bb650b2675d76af8449458bce1d",
+      "sealed": "c0f08396eca9b37415747eb06790ce986acc5bb650b2675d76af8449458bce1d",
+      "actual": "c0f08396eca9b37415747eb06790ce986acc5bb650b2675d76af8449458bce1d",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/edition.toml",
+      "expected": "a853c22a9912eca40252c6e83a5771bcbc3e4d280c93c1fa0576d5ec3e0f1c46",
+      "sealed": "a853c22a9912eca40252c6e83a5771bcbc3e4d280c93c1fa0576d5ec3e0f1c46",
+      "actual": "a853c22a9912eca40252c6e83a5771bcbc3e4d280c93c1fa0576d5ec3e0f1c46",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-11/work.toml",
+      "expected": "89c729d48c4ee457f1897e72956c99a0965d697e412655bf38e1022f580bc0f3",
+      "sealed": "89c729d48c4ee457f1897e72956c99a0965d697e412655bf38e1022f580bc0f3",
+      "actual": "89c729d48c4ee457f1897e72956c99a0965d697e412655bf38e1022f580bc0f3",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/artifacts/newadvent-14530a-0a19aa2c/artifact.toml",
+      "expected": "021921a3f483d209307f6dbf91db6b9ad97f7eea4951d9407dc90799b054af45",
+      "sealed": "021921a3f483d209307f6dbf91db6b9ad97f7eea4951d9407dc90799b054af45",
+      "actual": "021921a3f483d209307f6dbf91db6b9ad97f7eea4951d9407dc90799b054af45",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/artifacts/newadvent-14530a-0a19aa2c-article-text/artifact.toml",
+      "expected": "257dd7abc12662c518c7717dc472a969e2198bf8c9776affb75674ac739520ce",
+      "sealed": "257dd7abc12662c518c7717dc472a969e2198bf8c9776affb75674ac739520ce",
+      "actual": "257dd7abc12662c518c7717dc472a969e2198bf8c9776affb75674ac739520ce",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/artifacts/newadvent-14530a-0a19aa2c-article-text/newadvent-14530a-0a19aa2c-article-text.txt",
+      "expected": "c4e12a4a6127e8af8b7ac8e2176448f78a2be2cb2080ab5ffb6f885f8fcaa259",
+      "sealed": "c4e12a4a6127e8af8b7ac8e2176448f78a2be2cb2080ab5ffb6f885f8fcaa259",
+      "actual": "c4e12a4a6127e8af8b7ac8e2176448f78a2be2cb2080ab5ffb6f885f8fcaa259",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/edition.toml",
+      "expected": "9af0369eec24106ce972b11e835ee2021e60ee3c7472ed329806c5287e3d158f",
+      "sealed": "9af0369eec24106ce972b11e835ee2021e60ee3c7472ed329806c5287e3d158f",
+      "actual": "9af0369eec24106ce972b11e835ee2021e60ee3c7472ed329806c5287e3d158f",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-14/work.toml",
+      "expected": "a4f100c2a3bcd0d13f19ba481c850b59c7ee572f31cead4e9450e21c95c4f153",
+      "sealed": "a4f100c2a3bcd0d13f19ba481c850b59c7ee572f31cead4e9450e21c95c4f153",
+      "actual": "a4f100c2a3bcd0d13f19ba481c850b59c7ee572f31cead4e9450e21c95c4f153",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-3/editions/new-york-1908/artifacts/newadvent-03731a-f5f96f04/artifact.toml",
+      "expected": "fc77c6e59c43e7c194e33daec6742f2b534aafa9b473d58ba19d1620f57e3af8",
+      "sealed": "fc77c6e59c43e7c194e33daec6742f2b534aafa9b473d58ba19d1620f57e3af8",
+      "actual": "fc77c6e59c43e7c194e33daec6742f2b534aafa9b473d58ba19d1620f57e3af8",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-3/editions/new-york-1908/artifacts/newadvent-03731a-f5f96f04-article-text/artifact.toml",
+      "expected": "a52ff6cf523ffa747a4235633caf3a79634e66f9e630b99b9c977dd4604e7973",
+      "sealed": "a52ff6cf523ffa747a4235633caf3a79634e66f9e630b99b9c977dd4604e7973",
+      "actual": "a52ff6cf523ffa747a4235633caf3a79634e66f9e630b99b9c977dd4604e7973",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-3/editions/new-york-1908/artifacts/newadvent-03731a-f5f96f04-article-text/newadvent-03731a-f5f96f04-article-text.txt",
+      "expected": "964e22613dd4f7b47ff81004700cbb1301eb3564b0ea91cbd3f04ae8df17d720",
+      "sealed": "964e22613dd4f7b47ff81004700cbb1301eb3564b0ea91cbd3f04ae8df17d720",
+      "actual": "964e22613dd4f7b47ff81004700cbb1301eb3564b0ea91cbd3f04ae8df17d720",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-3/editions/new-york-1908/edition.toml",
+      "expected": "815d2d0c0352228e1e51bfd8e92c0951e54cf7494cd775b9a74778731173bebc",
+      "sealed": "815d2d0c0352228e1e51bfd8e92c0951e54cf7494cd775b9a74778731173bebc",
+      "actual": "815d2d0c0352228e1e51bfd8e92c0951e54cf7494cd775b9a74778731173bebc",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-3/work.toml",
+      "expected": "776a3788103c1eb9d04658885e5fa9ffe518a2c9e07b84cfb484455a43c1e0f6",
+      "sealed": "776a3788103c1eb9d04658885e5fa9ffe518a2c9e07b84cfb484455a43c1e0f6",
+      "actual": "776a3788103c1eb9d04658885e5fa9ffe518a2c9e07b84cfb484455a43c1e0f6",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05485a-66d722ae/artifact.toml",
+      "expected": "4b62ffca8a2ab3af2e5fc0dfeb62d2a0985edd98571623320dd3145b6d1b5db8",
+      "sealed": "4b62ffca8a2ab3af2e5fc0dfeb62d2a0985edd98571623320dd3145b6d1b5db8",
+      "actual": "4b62ffca8a2ab3af2e5fc0dfeb62d2a0985edd98571623320dd3145b6d1b5db8",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05485a-66d722ae-article-text/artifact.toml",
+      "expected": "05179189d4116545c9881e614f13b91b877069587fc5d1d5802cad60653234cd",
+      "sealed": "05179189d4116545c9881e614f13b91b877069587fc5d1d5802cad60653234cd",
+      "actual": "05179189d4116545c9881e614f13b91b877069587fc5d1d5802cad60653234cd",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05485a-66d722ae-article-text/newadvent-05485a-66d722ae-article-text.txt",
+      "expected": "c101da65d2c3cd40ef206bf013e2e3aae5f544b413a3006fcdd8f4909b566b1b",
+      "sealed": "c101da65d2c3cd40ef206bf013e2e3aae5f544b413a3006fcdd8f4909b566b1b",
+      "actual": "c101da65d2c3cd40ef206bf013e2e3aae5f544b413a3006fcdd8f4909b566b1b",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05549a-ab721ede/artifact.toml",
+      "expected": "84fe8bc5954ecbb4c6b8c5e2690c379585db7a601bd94448aae6c0ab6853a13f",
+      "sealed": "84fe8bc5954ecbb4c6b8c5e2690c379585db7a601bd94448aae6c0ab6853a13f",
+      "actual": "84fe8bc5954ecbb4c6b8c5e2690c379585db7a601bd94448aae6c0ab6853a13f",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05549a-ab721ede-article-text/artifact.toml",
+      "expected": "55564a6e8fa493e74c41049403673be205cce8ecf588dcff3a621b3612bb4c53",
+      "sealed": "55564a6e8fa493e74c41049403673be205cce8ecf588dcff3a621b3612bb4c53",
+      "actual": "55564a6e8fa493e74c41049403673be205cce8ecf588dcff3a621b3612bb4c53",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05549a-ab721ede-article-text/newadvent-05549a-ab721ede-article-text.txt",
+      "expected": "001300d7a30c91bb0133578f470843622aae58b3c88ed1b6a4da6c057a96bf83",
+      "sealed": "001300d7a30c91bb0133578f470843622aae58b3c88ed1b6a4da6c057a96bf83",
+      "actual": "001300d7a30c91bb0133578f470843622aae58b3c88ed1b6a4da6c057a96bf83",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/edition.toml",
+      "expected": "4cce479273bc4236d50e37d83b4af871f5acd25ad1ae8e51ddf2417f66cdbc48",
+      "sealed": "4cce479273bc4236d50e37d83b4af871f5acd25ad1ae8e51ddf2417f66cdbc48",
+      "actual": "4cce479273bc4236d50e37d83b4af871f5acd25ad1ae8e51ddf2417f66cdbc48",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-5/work.toml",
+      "expected": "532b41fbee708c3f06c33374b4068bf12a68e99c681d9540f2f4245bcf463bc5",
+      "sealed": "532b41fbee708c3f06c33374b4068bf12a68e99c681d9540f2f4245bcf463bc5",
+      "actual": "532b41fbee708c3f06c33374b4068bf12a68e99c681d9540f2f4245bcf463bc5",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/gregory-the-great/moralia-in-iob/editions/2026-10-12-library-of-fathers-lectionarycentral/artifacts/complete-delivery-20c56f3c/artifact.toml",
+      "expected": "fc0311005c05276f8c96b85a6529b6fedd7d7766dcc2046076a641639da75f23",
+      "sealed": "fc0311005c05276f8c96b85a6529b6fedd7d7766dcc2046076a641639da75f23",
+      "actual": "fc0311005c05276f8c96b85a6529b6fedd7d7766dcc2046076a641639da75f23",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/gregory-the-great/moralia-in-iob/editions/2026-10-12-library-of-fathers-lectionarycentral/artifacts/complete-text-d9f9ed86/artifact.toml",
+      "expected": "ceb532a50e41659f5f2e557dac25ce8413848fff178a91ff556d995665361cf4",
+      "sealed": "ceb532a50e41659f5f2e557dac25ce8413848fff178a91ff556d995665361cf4",
+      "actual": "ceb532a50e41659f5f2e557dac25ce8413848fff178a91ff556d995665361cf4",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/gregory-the-great/moralia-in-iob/editions/2026-10-12-library-of-fathers-lectionarycentral/artifacts/complete-text-d9f9ed86/source.txt",
+      "expected": "d9f9ed8604288dd854cff3ce5494dbc7b17f6c2d6dca521b5715af767ce30034",
+      "sealed": "d9f9ed8604288dd854cff3ce5494dbc7b17f6c2d6dca521b5715af767ce30034",
+      "actual": "d9f9ed8604288dd854cff3ce5494dbc7b17f6c2d6dca521b5715af767ce30034",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/gregory-the-great/moralia-in-iob/editions/2026-10-12-library-of-fathers-lectionarycentral/edition.toml",
+      "expected": "86b8cb0f3bb6d64369fccae26fd77ca6cb1ab3c5ec24636153fb48aeb8f414f6",
+      "sealed": "86b8cb0f3bb6d64369fccae26fd77ca6cb1ab3c5ec24636153fb48aeb8f414f6",
+      "actual": "86b8cb0f3bb6d64369fccae26fd77ca6cb1ab3c5ec24636153fb48aeb8f414f6",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/gregory-the-great/moralia-in-iob/work.toml",
+      "expected": "3c6bcef80d51abbd6881bd2f574f0df6b912a5e229b2a670f4f522748e14e8a5",
+      "sealed": "3c6bcef80d51abbd6881bd2f574f0df6b912a5e229b2a670f4f522748e14e8a5",
+      "actual": "3c6bcef80d51abbd6881bd2f574f0df6b912a5e229b2a670f4f522748e14e8a5",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/rabanus-maurus/expositio-in-librum-esther/editions/2026-10-12-migne-pl109-wikisource/artifacts/esther-delivery-7c9875a4/artifact.toml",
+      "expected": "71b0a9fbded0255feaf26ba1f540684ae94aa75a01befca27633f2fea26f9e30",
+      "sealed": "71b0a9fbded0255feaf26ba1f540684ae94aa75a01befca27633f2fea26f9e30",
+      "actual": "71b0a9fbded0255feaf26ba1f540684ae94aa75a01befca27633f2fea26f9e30",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/rabanus-maurus/expositio-in-librum-esther/editions/2026-10-12-migne-pl109-wikisource/artifacts/esther-text-6ee8f395/artifact.toml",
+      "expected": "70cd15463b391265f8f2e0de6cd5bdbd8efacd5c12bea46fd2f46310c53d9c59",
+      "sealed": "70cd15463b391265f8f2e0de6cd5bdbd8efacd5c12bea46fd2f46310c53d9c59",
+      "actual": "70cd15463b391265f8f2e0de6cd5bdbd8efacd5c12bea46fd2f46310c53d9c59",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/rabanus-maurus/expositio-in-librum-esther/editions/2026-10-12-migne-pl109-wikisource/artifacts/esther-text-6ee8f395/source.txt",
+      "expected": "6ee8f3959409664202e10cc9eea426eb617d4775ba32c003bb0fc8b650ea09a6",
+      "sealed": "6ee8f3959409664202e10cc9eea426eb617d4775ba32c003bb0fc8b650ea09a6",
+      "actual": "6ee8f3959409664202e10cc9eea426eb617d4775ba32c003bb0fc8b650ea09a6",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/rabanus-maurus/expositio-in-librum-esther/editions/2026-10-12-migne-pl109-wikisource/edition.toml",
+      "expected": "70430516a80f3ee07ed28c28f7f38561962f4f91b06e0487a0e7b0c27fa8fe0b",
+      "sealed": "70430516a80f3ee07ed28c28f7f38561962f4f91b06e0487a0e7b0c27fa8fe0b",
+      "actual": "70430516a80f3ee07ed28c28f7f38561962f4f91b06e0487a0e7b0c27fa8fe0b",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/rabanus-maurus/expositio-in-librum-esther/work.toml",
+      "expected": "e619a7c1b7c2aa43361cb33503704cffa3940fc7f8fd98a44be4e2ac78b707a3",
+      "sealed": "e619a7c1b7c2aa43361cb33503704cffa3940fc7f8fd98a44be4e2ac78b707a3",
+      "actual": "e619a7c1b7c2aa43361cb33503704cffa3940fc7f8fd98a44be4e2ac78b707a3",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/summa-theologiae/editions/2026-10-12-english-dominicans-newadvent-q88/artifacts/tertia-q88-delivery-95c8edc0/artifact.toml",
+      "expected": "808cafba9c71cca79e69c0f1ea9f1f8b31a52fa7ad35a9e38e9906d79204140b",
+      "sealed": "808cafba9c71cca79e69c0f1ea9f1f8b31a52fa7ad35a9e38e9906d79204140b",
+      "actual": "808cafba9c71cca79e69c0f1ea9f1f8b31a52fa7ad35a9e38e9906d79204140b",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/summa-theologiae/editions/2026-10-12-english-dominicans-newadvent-q88/artifacts/tertia-q88-text-a7ca2c65/artifact.toml",
+      "expected": "f758626a7d62c2002ea2b4734e4002bd15e9995c7f8c7b1d239e9b5802886716",
+      "sealed": "f758626a7d62c2002ea2b4734e4002bd15e9995c7f8c7b1d239e9b5802886716",
+      "actual": "f758626a7d62c2002ea2b4734e4002bd15e9995c7f8c7b1d239e9b5802886716",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/summa-theologiae/editions/2026-10-12-english-dominicans-newadvent-q88/artifacts/tertia-q88-text-a7ca2c65/source.txt",
+      "expected": "a7ca2c652952002d07e860085b11ed23a146409b610fb0bd8c28f399feb9784b",
+      "sealed": "a7ca2c652952002d07e860085b11ed23a146409b610fb0bd8c28f399feb9784b",
+      "actual": "a7ca2c652952002d07e860085b11ed23a146409b610fb0bd8c28f399feb9784b",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/summa-theologiae/editions/2026-10-12-english-dominicans-newadvent-q88/edition.toml",
+      "expected": "4206326fa6453336e8fde57ef9040df87ed51da70e49be61d383fc7f84fa2726",
+      "sealed": "4206326fa6453336e8fde57ef9040df87ed51da70e49be61d383fc7f84fa2726",
+      "actual": "4206326fa6453336e8fde57ef9040df87ed51da70e49be61d383fc7f84fa2726",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/summa-theologiae/work.toml",
+      "expected": "99bf96a21399140542fd6e02b51ace8f3b312ba3b0ad30446f8ceb46f18e70ab",
+      "sealed": "99bf96a21399140542fd6e02b51ace8f3b312ba3b0ad30446f8ceb46f18e70ab",
+      "actual": "99bf96a21399140542fd6e02b51ace8f3b312ba3b0ad30446f8ceb46f18e70ab",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05549a-ab721ede-article-text/newadvent-05549a-ab721ede-article-text.txt",
+      "sealed": "001300d7a30c91bb0133578f470843622aae58b3c88ed1b6a4da6c057a96bf83",
+      "actual": "001300d7a30c91bb0133578f470843622aae58b3c88ed1b6a4da6c057a96bf83",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05549a-ab721ede-article-text/artifact.toml",
+      "sealed": "55564a6e8fa493e74c41049403673be205cce8ecf588dcff3a621b3612bb4c53",
+      "actual": "55564a6e8fa493e74c41049403673be205cce8ecf588dcff3a621b3612bb4c53",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05485a-66d722ae-article-text/newadvent-05485a-66d722ae-article-text.txt",
+      "sealed": "c101da65d2c3cd40ef206bf013e2e3aae5f544b413a3006fcdd8f4909b566b1b",
+      "actual": "c101da65d2c3cd40ef206bf013e2e3aae5f544b413a3006fcdd8f4909b566b1b",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05485a-66d722ae-article-text/artifact.toml",
+      "sealed": "05179189d4116545c9881e614f13b91b877069587fc5d1d5802cad60653234cd",
+      "actual": "05179189d4116545c9881e614f13b91b877069587fc5d1d5802cad60653234cd",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-3/editions/new-york-1908/artifacts/newadvent-03731a-f5f96f04-article-text/newadvent-03731a-f5f96f04-article-text.txt",
+      "sealed": "964e22613dd4f7b47ff81004700cbb1301eb3564b0ea91cbd3f04ae8df17d720",
+      "actual": "964e22613dd4f7b47ff81004700cbb1301eb3564b0ea91cbd3f04ae8df17d720",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-3/editions/new-york-1908/artifacts/newadvent-03731a-f5f96f04-article-text/artifact.toml",
+      "sealed": "a52ff6cf523ffa747a4235633caf3a79634e66f9e630b99b9c977dd4604e7973",
+      "actual": "a52ff6cf523ffa747a4235633caf3a79634e66f9e630b99b9c977dd4604e7973",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/artifacts/newadvent-11567b-bff0dda8-article-text/newadvent-11567b-bff0dda8-article-text.txt",
+      "sealed": "c0f08396eca9b37415747eb06790ce986acc5bb650b2675d76af8449458bce1d",
+      "actual": "c0f08396eca9b37415747eb06790ce986acc5bb650b2675d76af8449458bce1d",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-11/editions/new-york-1911/artifacts/newadvent-11567b-bff0dda8-article-text/artifact.toml",
+      "sealed": "fc12981c91a7aba5778225195ca29ed3888bd75d2e4320025778228977cbeec7",
+      "actual": "fc12981c91a7aba5778225195ca29ed3888bd75d2e4320025778228977cbeec7",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/artifacts/newadvent-14530a-0a19aa2c-article-text/newadvent-14530a-0a19aa2c-article-text.txt",
+      "sealed": "c4e12a4a6127e8af8b7ac8e2176448f78a2be2cb2080ab5ffb6f885f8fcaa259",
+      "actual": "c4e12a4a6127e8af8b7ac8e2176448f78a2be2cb2080ab5ffb6f885f8fcaa259",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/artifacts/newadvent-14530a-0a19aa2c-article-text/artifact.toml",
+      "sealed": "257dd7abc12662c518c7717dc472a969e2198bf8c9776affb75674ac739520ce",
+      "actual": "257dd7abc12662c518c7717dc472a969e2198bf8c9776affb75674ac739520ce",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/artifacts/newadvent-10057a-e7b6ccef-article-text/newadvent-10057a-e7b6ccef-article-text.txt",
+      "sealed": "3d9a35cc773f774ed3b423c890956ba655c61ceb7096fbd7c01a197f062168c2",
+      "actual": "3d9a35cc773f774ed3b423c890956ba655c61ceb7096fbd7c01a197f062168c2",
+      "match": true
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/artifacts/newadvent-10057a-e7b6ccef-article-text/artifact.toml",
+      "sealed": "064cdf2fa4756bc1f4556b7a31a8e6a4614eb59d1edc3e5ee1c5b7549b16d8b8",
+      "actual": "064cdf2fa4756bc1f4556b7a31a8e6a4614eb59d1edc3e5ee1c5b7549b16d8b8",
+      "match": true
+    }
+  ],
+  "required_check_count": 60,
+  "sealed_file_count": 1738,
+  "all_sealed_files_current": true,
+  "pass": true
+}

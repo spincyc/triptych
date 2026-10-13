@@ -1,0 +1,19 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "note": "Three dated editions, six exact delivery/derivative artifact records and three complete historical-text payloads are bound; modern delivery limitations and actual reading bounds are explicit. Read-only engine input closure includes their ancestry and payloads. Driver must compare the next actual packet against expected-seal-files.json.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-002",
+      "note": "Six exact retained article directories and the CE rights inventory are declared. Their hashes match owning manifests and the prior reviewer receipt; both chronology currency checks pass without generated-record edits.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "research",
+  "summary": "Registered and bound exact retained Gregory, Aquinas and Rabanus witnesses, preserving the Rabanus dedicatory heading and correcting Aquinas article locators; declared all six omitted Catholic Encyclopedia derivative owners and the governing rights inventory. Source-specific and chronology checks pass; required aggregate make check-sources remains limited by the downstream web-edition.toml not yet present for this new leaf."
+}

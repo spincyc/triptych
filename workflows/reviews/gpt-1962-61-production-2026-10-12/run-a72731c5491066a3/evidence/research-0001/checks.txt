@@ -1,0 +1,9 @@
+Research iteration 1 checks
+
+All commands in final-checks.json exited 0 after the final Rabanus heading correction.
+make check-source-containment check-commentator-inventories: exit 0; registry reports two existing unregistered lane authors outside this leaf (Anthony of Padua and Cyril of Alexandria).
+make check-sources: exit 2, at check-deployment-sources/document-catalogue: this leaf main.tex has no web-edition.toml yet. Downstream publication declaration is outside this research repair. Other source-specific gates were run separately and pass.
+Family screening remains pending: 159 review units, zero screened; no completion audit or atomic citation coverage is claimed.
+The first inventory refresh using local 2026-10-12 was refused because the existing inventory used UTC 2026-10-13; the current UTC date was verified and final refresh used 2026-10-13.
+No PDF build or raster review performed: this repair changes research evidence/source retention only. No installed publication was changed.
+No actual workflow seal or state was written by this worker; the driver must verify the expected file/hash list against the next compiled packet.
