@@ -4,7 +4,7 @@ schema_version = 1
 id = "gpt-1962-twenty-first-quality-2026-10-12"
 owner = "PROJECT-WORK.md"
 promise = "Repair the propers historical-orientation table and evidence-based research, pedagogy and presentation controls; complete the GPT 1962 Twenty-first Sunday after Pentecost three-document workflow for 2026-10-18, and commit and push the validated result on feature/propers/codex."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "historical-orientation-and-quality-controls"
@@ -29,8 +29,11 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "validated-workspace-delivery"
   criterion = "Required source and publication checks pass, records agree with actual acceptance and artifacts, and the intended publicly distributable changes are committed and pushed to feature/propers/codex after outgoing-range review."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-1962-61-production-2026-10-12/delivery.json", "workflows/reviews/gpt-1962-61-production-2026-10-12/publication-validation.json", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "workflows/reviews/gpt-1962-61-production-2026-10-12/delivery.json"
+  needle = "\"remote_payload_verified\": true"
 
 [[deliverables]]
 id = "publication-links-2026-10-09"

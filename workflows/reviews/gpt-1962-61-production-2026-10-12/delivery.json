@@ -1,0 +1,43 @@
+{
+  "scope": "Verified workspace-branch delivery of the accepted publication payload; subsequent bookkeeping records this completed push",
+  "recorded_at_utc": "2026-10-13T10:16:44Z",
+  "repository": "spincyc/triptych",
+  "branch": "feature/propers/codex",
+  "payload_commit": "18add4f7bcda47b91fbe9d264175d325f6aed73b",
+  "previous_pushed_checkpoint": "ebef2e1ba64d469ce05d1178a78d439282bd1770",
+  "payload_paths": 148,
+  "exact_intended_commit_path_set_verified": true,
+  "worktree_clean_after_payload_commit": true,
+  "push": {
+    "command": ["git", "push", "-u", "origin", "feature/propers/codex"],
+    "exit_code": 0,
+    "fast_forward": true
+  },
+  "remote_verification": {
+    "command": ["git", "ls-remote", "--exit-code", "origin", "refs/heads/feature/propers/codex"],
+    "exit_code": 0,
+    "observed_ref": "refs/heads/feature/propers/codex",
+    "observed_sha": "18add4f7bcda47b91fbe9d264175d325f6aed73b"
+  },
+  "remote_payload_verified": true,
+  "outgoing_object_audit": {
+    "scope": "All objects newly reachable from the exact outgoing range, including intermediate commit blobs; supplements explicit path and content review",
+    "range": "ebef2e1ba64d469ce05d1178a78d439282bd1770..18add4f7bcda47b91fbe9d264175d325f6aed73b",
+    "objects": {"commit": 1, "tree": 60, "blob": 99},
+    "checks": ["workstation paths", "credential patterns", "credential-bearing URLs", "numeric runtime identifiers"],
+    "findings": [],
+    "local_report_sha256": "a85377f8e83de866b0ebdb434e5ac135902f614ce0f72852f98cc8f5a04a7d94",
+    "disposition": "PASS"
+  },
+  "publication_validation": {
+    "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/publication-validation.json",
+    "sha256": "8bebfdbb7613d0d9010a945a82e10caf3d644b69cbe1c48b4a87633458aaaddb",
+    "workflow_run": "ed4bc29b18cf1150",
+    "workflow_disposition": "ACCEPTED",
+    "native_stages_passed": 21,
+    "source_checks_after_terminal_acceptance": "PASS",
+    "reviewed_installation_identity": "PASS",
+    "note": "This receipt supersedes only the pending delivery state in the unchanged pre-push validation snapshot. Its checks, hashes and inspection limits remain applicable."
+  },
+  "deployment_scope": "Workspace branch only; no main integration or live deployment claimed"
+}

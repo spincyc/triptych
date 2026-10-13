@@ -24,8 +24,9 @@ homily and canonical web edition are installed, cataloged and separately
 released as alpha. The [native archive](workflows/reviews/gpt-1962-61-production-2026-10-12/run-ed4bc29b18cf1150/README.md)
 and [driver record](workflows/reviews/gpt-1962-61-production-2026-10-12/DRIVER-RECORD.md)
 preserve actual outcomes and limits. Final source checks, exact installation
-identity and native publication gates passed. Commit/push delivery of this
-accepted payload is still pending on `feature/propers/codex`.
+identity and native publication gates passed. Accepted payload commit
+`18add4f7bcda47b91fbe9d264175d325f6aed73b` is pushed to
+`feature/propers/codex`; an independent remote-ref query verified that exact SHA.
 
 The new schema-2 `orientation-v1` table separates passage, occurrence/place
 and date, consolidates equal answers, and preserves uncertainty and complete
@@ -75,9 +76,12 @@ The [release-refresh scope](workflows/reviews/gpt-1962-61-production-2026-10-12/
 limits adoption to fourteen reviewed paths, including five additions; unrelated
 bindings and rights-policy prose remain unchanged. The source-family ledger
 still records 159 pending units and does not claim atomic citation coverage.
-Foundation and research checkpoints are already pushed. The accepted payload,
-complete native archive and final delivery receipt are the remaining commit/push
-work; no main integration or live deployment is claimed.
+Foundation, research and accepted-publication checkpoints are pushed. The
+[delivery receipt](workflows/reviews/gpt-1962-61-production-2026-10-12/delivery.json)
+records the exact payload, outgoing-object audit and verified remote ref,
+superseding the pre-push pending state in the publication-validation snapshot.
+The requested workspace delivery is complete; no main integration or live
+deployment is claimed.
 
 ## Publication links and mobile angelology report, 2026-10-09
 
