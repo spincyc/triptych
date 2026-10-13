@@ -5,7 +5,36 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-09.
+Last reconciled: 2026-10-12.
+
+## GPT Four Last Things revision, 2026-10-12
+
+<!-- promised-deliverable: gpt-four-last-things-2026-10-12 -->
+
+The maintainer requested a cold review of the Four Last Things for the end of
+the liturgical year, then authorized revision of the GPT essays only. Claude
+documents are expressly excluded and remain for a separate Claude revision.
+The four GPT essays retain their independent identities and concise discursive
+form. The revision strengthens exact source engagement, removes repetition,
+connects death, judgment, purification, final destinies and bodily resurrection,
+and develops the sacramental and seasonal context with useful navigation.
+
+The four revisions are complete and accepted on `feature/flt`: exact source
+encounters and bounded audits, independent content review, five-page PDFs
+(all twenty pages inspected), faithful generated web editions, companion
+navigation, and a catalog section that remains readable on narrow screens.
+The source, catalog, release-binding, metadata, web, and 36 targeted unit checks
+pass. The broad `make check` remains limited by pre-existing help
+example divergences and the incomplete unrelated installed corpus; their exact
+disposition is recorded in the owning review. Applicable changed examples
+are recaptured from actual runs.
+
+Evidence: each GPT leaf's research records,
+`src/gpt/articles/faith/four-last-things-shared/revision-review.md`, and
+`src/gpt/articles/faith/four-last-things-shared/production-review.json`.
+The latter pins accepted PDF and web bytes to their render sources. Claude
+publication files and generated catalog entries remain unchanged. Changes to
+`main` and deployment are outside this task.
 
 ## Publication links and mobile angelology report, 2026-10-09
 

@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
-audited_on = "2026-10-06"
+audited_on = "2026-10-12"
 publication_snapshot = "sha256:c83e5f2d0e3de6b0fc7f230fd9fd550ab19a8253afef7994218a25353ac826cc"
-classification_snapshot = "sha256:4120f5969591f65c4b4da32f1fa33138127615327b9d02b19486839057df1457"
+classification_snapshot = "sha256:4ad4debf7f0932835539b11d69f9d3f75f346336e2a0a1c7b61bcd41a66dbd08"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -30,19 +30,19 @@ source_categories = ["canon-law", "dataset-survey", "finding-aid", "historical-p
 
 [[classifications]]
 document = "articles/faith/four-last-things-01-death"
-source_categories = ["liturgical", "magisterial", "scholastic", "scripture"]
+source_categories = ["liturgical", "magisterial", "patristic", "scholastic", "scripture"]
 
 [[classifications]]
 document = "articles/faith/four-last-things-02-judgment"
-source_categories = ["magisterial", "scholastic", "scripture"]
+source_categories = ["liturgical", "magisterial", "scholastic", "scripture"]
 
 [[classifications]]
 document = "articles/faith/four-last-things-03-hell"
-source_categories = ["magisterial", "scholastic", "scripture"]
+source_categories = ["magisterial", "patristic", "scholastic", "scripture"]
 
 [[classifications]]
 document = "articles/faith/four-last-things-04-heaven"
-source_categories = ["magisterial", "scholastic", "scripture"]
+source_categories = ["magisterial", "patristic", "scholastic", "scripture"]
 
 [[classifications]]
 document = "articles/faith/freemasonry-and-the-catholic-church"

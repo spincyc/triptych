@@ -38,7 +38,7 @@ EXAMPLES = {
                 "stale claude articles/canon-law/natural-positive-divine-human-law",
                 "stale claude articles/faith/against-the-instrumentalists",
                 "stale claude articles/faith/at-the-end-of-every-why",
-                "... 156 more lines",
+                "... 160 more lines",
             ),
         ),
         Example(
@@ -47,7 +47,7 @@ EXAMPLES = {
                 "stale claude articles/canon-law/clerical-celibacy-chastity-and-continence",
                 "stale claude articles/canon-law/natural-positive-divine-human-law",
                 "stale claude articles/faith/against-the-instrumentalists",
-                "... 54 more lines",
+                "... 56 more lines",
             ),
         ),
     ),
@@ -55,10 +55,10 @@ EXAMPLES = {
         Example(
             "tools/research-staleness explain claude articles/faith/four-last-things-01-death",
             (
-                "new input src/sources/works/augustine/de-civitate-dei/editions/1887-dods-english-web-2026-09-29/artifacts/book-11-html-b943e02f/artifact.toml",
-                "new input src/sources/works/augustine/de-civitate-dei/editions/1887-dods-english-web-2026-09-29/artifacts/book-11-text-adefed6a/artifact.toml",
-                "new input src/sources/works/augustine/de-civitate-dei/editions/1887-dods-english-web-2026-09-29/artifacts/book-12-html-1862c6e6/artifact.toml",
-                "... 264 more lines",
+                "changed input src/gpt/articles/faith/four-last-things-01-death/research/scope.md [cross-provider diagnostic only; staleness grants no authority to change this provider]",
+                "changed input src/gpt/articles/faith/four-last-things-01-death/research/source-audit.md [cross-provider diagnostic only; staleness grants no authority to change this provider]",
+                "changed input src/gpt/articles/faith/four-last-things-01-death/research/source-bindings.toml [cross-provider diagnostic only; staleness grants no authority to change this provider]",
+                "... 267 more lines",
             ),
         ),
         Example(
@@ -67,7 +67,7 @@ EXAMPLES = {
                 "changed input src/gpt/articles/faith/last-supper-calvary-and-the-mass/research/source-bindings.toml",
                 "new input src/sources/works/augustine/de-civitate-dei/editions/1887-dods-english-web-2026-09-29/artifacts/book-11-html-b943e02f/artifact.toml",
                 "new input src/sources/works/augustine/de-civitate-dei/editions/1887-dods-english-web-2026-09-29/artifacts/book-11-text-adefed6a/artifact.toml",
-                "... 1101 more lines",
+                "... 1108 more lines",
             ),
         ),
     ),

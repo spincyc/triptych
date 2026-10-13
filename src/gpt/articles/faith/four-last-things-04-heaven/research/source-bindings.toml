@@ -2,13 +2,101 @@ schema = 2
 record_type = "bindings"
 document = "articles/faith/four-last-things-04-heaven"
 
+# Live consultations do not certify exact dated central artifacts.
+
 [[bindings]]
 source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
-loci = ["988-1019", "1023-1029", "1042-1053"]
+loci = ["999-1000", "1023-1029", "1042-1050", "1402-1405"]
 role = "textual-control"
 states = ["cataloged"]
-context = "The official English Catechism edition controls bodily resurrection, beatific vision, identity in Christ, communion, and new creation. The local audit records direct official-page checks without claiming a retained exact artifact for all loci."
+context = "Official English teaching consulted at the listed passages. Live-page checks in the source audit do not assert acquisition or verification of an exact dated central artifact."
 
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183"
+loci = ["Matt.22.23-33"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete cited ranges read in the registered English verse TSV on 2026-10-12. Article paraphrases the passages; no Greek textual collation or exhaustive exegesis claimed."
+source_fingerprint = "sha256:ed47ecb092ecb6256fb84450e8ad39d0debf2efe6c65442199a76a7fb1a8b98b"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-50-john-27b8f3ed"
+loci = ["John.17.1-5", "John.17.24-26"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete cited ranges read in the registered English verse TSV on 2026-10-12. Article paraphrases the passages; no Greek textual collation or exhaustive exegesis claimed."
+source_fingerprint = "sha256:4498ea55e49e3577649969ed0bcf456423b8aec2f9edda55586c37190dfe77a4"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-52-romans-4d45c497"
+loci = ["Rom.8.18-25"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete cited ranges read in the registered English verse TSV on 2026-10-12. Article paraphrases the passages; no Greek textual collation or exhaustive exegesis claimed."
+source_fingerprint = "sha256:1b6036a02c7bcc743d143f4f4e17bb6927cb1f4d8dfff9115aeb3250cf287c64"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-53-1-corinthians-ffc4f260"
+loci = ["1Cor.15.20-28", "1Cor.15.35-54"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete cited ranges read in the registered English verse TSV on 2026-10-12. Article paraphrases the passages; no Greek textual collation or exhaustive exegesis claimed."
+source_fingerprint = "sha256:86aa4aafa5cb1a66218d81b3f7735715d33eac0a1b62c9c471499728c0838a11"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-57-philippians-4ff760a7"
+loci = ["Phil.3.20-21"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete cited ranges read in the registered English verse TSV on 2026-10-12. Article paraphrases the passages; no Greek textual collation or exhaustive exegesis claimed."
+source_fingerprint = "sha256:54e63d9ca96234397f0c14d3931dc07c142fc0ee3372786d16091c899ccc0632"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-73-apocalypse-9ae5c352"
+loci = ["Apoc.21.1-5", "Apoc.21.24-27"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete cited ranges read in the registered English verse TSV on 2026-10-12. Article paraphrases the passages; no Greek textual collation or exhaustive exegesis claimed."
+source_fingerprint = "sha256:b28bde358a8ffc3aa2486baeeeda9bb23021b0bab1a8dccd447d33b2f7225cdb"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.dods-1871.22.30"
+loci = ["22.30"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete registered Dods 1871 chapter read on 2026-10-12, lines 21430-21588, for shared happiness, degrees without envy, inability to sin, and memory of deliverance without continued suffering. Theological explanation, not a revealed psychology or claim of unanimity; no Latin critical-text or facsimile collation."
+source_fingerprint = "sha256:f82a4c399be687b0306a3fe79b705920c937edb82f241c44bf9f6171eafec972"
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.5.2.2-3.ocr"
+loci = ["5.2.2-3"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Registered OCR at lines 67955-68122 read on 2026-10-12, with chapter heading and editorial notes; compared with New Advent's revised presentation. Paraphrases the stable argument connecting Eucharist and bodily resurrection. Coxe's bracketed note is not Irenaeus. OCR is not textual control; no facsimile collation claimed."
+source_fingerprint = "sha256:c5a2e8e8e0c008e603752947eb28b4d0f955daf9ebba44ec62b85d4da3b6c580"
+
+[[bindings]]
+source_id = "work.thomas-aquinas.summa-theologiae"
+loci = ["I.12.2.corpus", "I.12.4.corpus", "I.12.5.corpus", "I.12.5.reply-2", "I.12.6.corpus", "I.12.7.corpus", "I.12.8.corpus", "I-II.2.8.corpus", "I-II.3.8.corpus", "Supplementum.94.3.corpus"]
+role = "reception"
+states = ["cataloged"]
+context = "Exact articles and relevant replies checked in the English Dominican 1920 translation delivered by New Advent on 2026-10-12. Work identity avoids misbinding them to a different Leonine volume. Live URLs and inference limits are in the audit; no exact central artifact acquisition claimed."
+
+[[bindings]]
+source_id = "work.benedict-xii.benedictus-deus"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Holy See Latin full act consulted on 2026-10-12, especially the operative paragraph beginning hac imperpetuum valitura Constitutione (DS 1000-1001). Work-level identity distinguishes this live delivery from the registered Denzinger excerpt; no acquired artifact certification claimed."
+
+[[bindings]]
+source_id = "edition.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23"
+loci = ["49-50"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Official English paragraphs read on 2026-10-12 for one Church, saints' intercession through Christ, and Eucharistic communion with heaven. Live consultation does not upgrade central artifact evidence states."
+
+# Historical verified pin retained without changing its date or scope.
 [[bindings]]
 source_id = "passage.second-vatican-council.gaudium-et-spes.english-vatican-web-2026-07-23.1-93"
 loci = ["1-93"]
@@ -17,15 +105,3 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The complete registered council passage was inspected at paragraph 39 for the unknown mode of transformation, new earth, continuity of charity's fruits, and the refusal of both earthly utopianism and eschatological neglect."
 verified_on = "2026-07-24"
 source_fingerprint = "sha256:ce58ff573c7e333ff5837d9b6088efd8f12b46611421a2d9c402b83e4dbbcf85"
-
-[[bindings]]
-source_id = "edition.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887"
-role = "reception"
-states = ["cataloged"]
-context = "Irenaeus is used as an early witness to resurrection of the flesh and continuity of the saved person. No publication-specific facsimile verification is claimed."
-
-[[bindings]]
-source_id = "edition.augustine.de-civitate-dei.dods-1871"
-role = "reception"
-states = ["cataloged"]
-context = "Book 22 is used for resurrection and final beatitude as a patristic theological witness, not as critical-text control."

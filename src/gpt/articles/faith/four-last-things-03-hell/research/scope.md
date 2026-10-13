@@ -1,15 +1,19 @@
 # Hell — Research Scope
 
-- **Publication:** `articles/faith/four-last-things-03-hell`
-- **Profile:** discursive faith/theology article (`guidance/articles.md`).
-- **Series:** third of four independent articles in *The Four Last Things*.
-- **Question:** What does the Church require Catholics to believe about hell, how can eternal punishment be considered with divine justice and mercy, and how should the doctrine govern Christian speech and life?
-- **Governing claim:** hell is the real and eternal consequence of definitive refusal under God's just judgment; the doctrine warrants repentance, intercession, and hope, never gloating, a private census, or despair.
-- **Included:** Christ's warnings, definitive teaching, mortal sin, freedom, eternity and proportionality, salvific will, hope, fear, and pastoral abuse.
-- **Excluded:** private revelations and visionary geography, a list of damned persons, a complete history of apokatastasis, and exhaustive postmortem psychology.
-- **Authority boundary:** existence and eternity are definitive. The principal punishment is loss of God. Thomistic accounts of fixed will and punishment explain without becoming new definitions. Population and detailed mode remain unrevealed.
-- **As of:** official Catechism hell loci checked on 2026-07-24.
-- **Review:** no independent dogmatic, patristic, Thomistic, pastoral, psychological, or ecclesiastical review.
+- **Publication:** `articles/faith/four-last-things-03-hell` (GPT).
+- **Profile:** discursive faith/theology article, `guidance/articles.md`.
+- **Series:** *The Four Last Things*, four independently readable studies.
+- **Authorized revision:** improve the GPT series for informed lay reading and year-end liturgical use; preserve the Claude documents. This leaf supplies substantive prose and its source apparatus; series formatting, production, and release records are coordinated separately.
+- **Question:** How does Christ's warning of final loss summon Christians to responsibility, repentance, and intercession without presumption or despair?
+- **Governing claim:** Hell is enduring punishment and loss of communion with God under his just judgment; culpable refusal, its finality, and the offer of mercy must be taught together.
+- **Included:** Matthew 25 and Luke 13; eternity and purgatory; mortal sin and responsibility; death's finality; proportionality; prayer, hope, and guarantee.
+- **Limits:** No census, named person's condemnation, physical map, private revelation, complete universalism history, or comprehensive verdict on modern universal hope. No proof of finality from habit alone.
+- **Authority:** Scripture within Catholic teaching; definitive and authoritative teaching distinguished from Augustine's and Aquinas's explanatory arguments and the article's ethical applications. Absence from a solemn definition does not itself establish theological liberty.
+- **Source review:** 2026-10-12; exact passage checks, delivery identities, rights, and limits recorded in `source-audit.md` and `source-bindings.toml`. Local inspection is not independent specialist approval.
+
+## Historical scope reviews
+
+The following entries describe earlier versions and remain historical records. They do not certify the revised text or its current production state.
 
 ## Staleness review — 2026-07-26
 Both candidates preserved defined eternity, undetermined mode/population, and pastoral limits. **No material change.** See `src/sources/inventories/four-last-things-staleness-review-2026-07-26.md`.

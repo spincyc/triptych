@@ -4,10 +4,10 @@ document = "articles/faith/four-last-things-01-death"
 
 [[bindings]]
 source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
-loci = ["624-635", "988-1014", "1020-1022", "2276-2279"]
+loci = ["624-626", "988-1014", "1021-1032", "1514-1525", "1684-1690", "2276-2279"]
 role = "textual-control"
 states = ["cataloged"]
-context = "The official English Catechism edition controls Christ's death, death as separation of soul and body, the intermediate state, resurrection, and end-of-life moral distinctions. The local audit records direct official-page checks without claiming a retained exact artifact for every locus."
+context = "The official English Catechism controls Christ's death, the same person's survival and resurrection, Baptism, anointing, Viaticum, funerals, suffrages, and care of the dying. The 2026-10-13 audit identifies direct current official-page checks for medical and sacramental boundaries. This edition-level cataloged binding does not claim exact central artifacts for every paragraph."
 
 [[bindings]]
 source_id = "passage.second-vatican-council.gaudium-et-spes.english-vatican-web-2026-07-23.16-22"
@@ -19,7 +19,32 @@ verified_on = "2026-07-24"
 source_fingerprint = "sha256:ec8a9a63b695fa783f7407672d00acb2b0f51aab5295d1a11995087c04425943"
 
 [[bindings]]
-source_id = "edition.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887"
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf"
+loci = ["13.4-5"]
 role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:3b6e07da2d1ed3cedf883f7671a37d82f99427badc4daa23239366798e78d34b"
+context = "The retained Dods transcription, physical lines 20869-20945, was read on 2026-10-13 for why the baptized still die and why God's good use of death does not make death intrinsically good. No Latin or printed-image collation is claimed."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.pg19950-body-4597132e"
+loci = ["III.50.2.corpus", "III.50.3.corpus"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:44bb2918bacdd01a424eae980d78ad285fcea31c85426a00800aafd120952178"
+context = "The retained English electronic transcription of III q50 articles 2-3 was read with objections and replies on 2026-10-13. The answers at lines 25585-25599 and 25676-25685 explain the Word's continuing personal union with body and soul. The transcription is not a critical edition."
+
+[[bindings]]
+source_id = "artifact.holy-see.cdf-letter-eschatology-1979.english-vatican-web-2026-07-25.vatican-html"
+loci = ["point-2", "point-3", "point-4", "point-5"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:8657006e327b4870753aad476379ecfa6e98abb9f1c5236bebe0a70d6eae289d"
+context = "Complete official English letter read on 2026-10-13; re-fetched raw HTML matches the registered SHA-256 ebf18296bc257292ce87641bd3db239ca4cfb53bb3bcdf2277427675f042ef06. Points 2-5 control personal continuity, consciousness and will, prayer, and deferred resurrection. Authoritative CDF teaching, not a new papal definition. Restricted bytes remain outside tracked source."
+
+[[bindings]]
+source_id = "edition.english-college-of-douay.douay-rheims-bible.american-1899-ebible"
+loci = ["Rom.6.3-11", "Rom.14.8", "1Cor.15.12-49"]
+role = "textual-control"
 states = ["cataloged"]
-context = "Irenaeus is used as a patristic witness to bodily continuity and resurrection, not as sole doctrinal control. No publication-specific facsimile collation is claimed."
+context = "Romans 6, Romans 14:8, and 1 Corinthians 15 were read in retained per-book verse tables on 2026-10-13 for baptismal death, belonging to Christ, and bodily resurrection. This cataloged edition reference does not pin or promote the entire biblical edition. The conventional phrase last enemy also appears in CCC 1008."
