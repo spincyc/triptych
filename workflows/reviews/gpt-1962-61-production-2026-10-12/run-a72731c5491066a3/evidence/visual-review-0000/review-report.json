@@ -1,0 +1,469 @@
+{
+  "stage": "visual-review",
+  "iteration": 0,
+  "disposition": "PASS",
+  "run_id": "a72731c5491066a3",
+  "reviewer": "Independent Codex GPT-6 at xhigh; no nested reviewers",
+  "packet_sha256": "acd26ac84862193e6e25985d0c425e802e3a82154bf9382cc09b445649ef1f3e",
+  "scope": "Visual review of the three actual sealed PDF artifacts; no publication acceptance claim.",
+  "read_only_subject": "No reviewed source, PDF, aux, artifact receipt, workflow state or code was edited; only assigned review evidence and scratch files were created.",
+  "reviewed_artifacts": [
+    {
+      "role": "study",
+      "pdf": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.pdf",
+      "pdf_sha256": "53a30dd4b8d95831a3540252484508c8ef3c28792a9e05e19032a78ba809635d",
+      "artifact_receipt": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/artifacts.json",
+      "artifact_receipt_sha256": "9cdfa0bfa5d687e3b8f71b8aa512b48b639d7563025cb91b4e5e620f37d0e1a9",
+      "native_helper_receipt": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/review-cache.json",
+      "native_helper_receipt_sha256": "ce5ada399a919952a5a658e976b99f1d65a6881cb465fedacb90826c2373d014",
+      "helper_pdf_identity_matches_sealed_pdf": true,
+      "page_count": 26,
+      "full_page_coverage": [
+        {
+          "physical_page": 1,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-01.png",
+          "sha256": "d503d8e5fbfd48b664c0426d5728515aeecc6e9c4a7f4683e698cccaf43b7eb9",
+          "inspected": true,
+          "observation": "Title, substantive opening question and appointed-text map have clear hierarchy; no empty title page."
+        },
+        {
+          "physical_page": 2,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-02.png",
+          "sha256": "c3c4af19d70113820904cd70e39aa405aef447b7c3c0c07a70d4bc17d34c52a0",
+          "inspected": true,
+          "observation": "The map continues intelligibly; the dated branch explanation and footnote fit. Lower whitespace is a meaningful end to the opening, not a few-line spill."
+        },
+        {
+          "physical_page": 3,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-03.png",
+          "sha256": "8e58af3027277e4e5ddaac43d8534ae7b02e4746e999fd6f78a957d8828ae644",
+          "inspected": true,
+          "observation": "Appointed-words opening clearly separates text, identifying references and historical study English."
+        },
+        {
+          "physical_page": 4,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-04.png",
+          "sha256": "ead016c673419349323be42415f3f41427d5540459a0aa3e7f2596df9c87e4c6",
+          "inspected": true,
+          "observation": "Appointed words continue with distinct prayer and Epistle blocks; footnotes do not collide with body text."
+        },
+        {
+          "physical_page": 5,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-05.png",
+          "sha256": "1f638596224df258be60542eab3bd8fc9c8c5d8e949869b265e54144ec81b89d",
+          "inspected": true,
+          "observation": "The Epistle English continuation remains identifiable after the page turn; chant blocks remain readable."
+        },
+        {
+          "physical_page": 6,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-06.png",
+          "sha256": "9171ae47b754881a6beeae6345368591e482f38b26d4c96c769e7e481bd7ba2d",
+          "inspected": true,
+          "observation": "Gospel material has a readable measure and orderly paragraph spacing."
+        },
+        {
+          "physical_page": 7,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-07.png",
+          "sha256": "e362be82bedb1e99f18c1d569a92564f495f16c300b57a7da3143542b00d2c2d",
+          "inspected": true,
+          "observation": "Offertory and prayer blocks maintain the Latin/English hierarchy and notes remain separate."
+        },
+        {
+          "physical_page": 8,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-08.png",
+          "sha256": "bf1fe1bf8439a897b8159fc0d11f684c05cc80ec417d7e6d1b12627ab861cbe6",
+          "inspected": true,
+          "observation": "St Luke Secret, Preface and Communion material retain clear boundaries; no clipping."
+        },
+        {
+          "physical_page": 9,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-09.png",
+          "sha256": "578e71b0111b87f0db56eeb9ae6c156b9db65a513ed8384a45066e9ef074b4c3",
+          "inspected": true,
+          "observation": "Communion English continuation and later prayers remain navigable under the running heading."
+        },
+        {
+          "physical_page": 10,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-10.png",
+          "sha256": "b90f61f5365669a5ed2f7c1cc25097cb7273e3587f2a9e7ac98a2a5f3a7eb700",
+          "inspected": true,
+          "observation": "The final appointed-text continuation precedes the clearly marked detailed-commentary opening."
+        },
+        {
+          "physical_page": 11,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-11.png",
+          "sha256": "93a26424333b3ea325fbd446b16f48d9c5345beca1707d7ac49eb06236c72a71",
+          "inspected": true,
+          "observation": "Detailed commentary is substantial, with clear subordinate headings and readable notes."
+        },
+        {
+          "physical_page": 12,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-12.png",
+          "sha256": "a6b38400fe721d95473f7c8481448a7c11596be75dae92de890b75fa41703932",
+          "inspected": true,
+          "observation": "Continuing argument has coherent paragraph breaks and no sparse spill or overlap."
+        },
+        {
+          "physical_page": 13,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-13.png",
+          "sha256": "3eab543df49cb0867a275d2d8e8b4e0cc91ebf49a26c202c2c670112a23ef3ff",
+          "inspected": true,
+          "observation": "Prayer and Preface commentary retains consistent hierarchy and complete footnotes."
+        },
+        {
+          "physical_page": 14,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-14.png",
+          "sha256": "136ca616367898d7a3da16c42ec988fe2ef10eba020d13215207a3768d150064",
+          "inspected": true,
+          "observation": "The St Luke discussion ends and the first interpretation starts clearly on the same page."
+        },
+        {
+          "physical_page": 15,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-15.png",
+          "sha256": "e201bdef5a078487cf2b4ac33d9d3f4d28cf3dd7985c1e0e4ff9c45fe7ba18ad",
+          "inspected": true,
+          "observation": "First interpretation develops its argument in full paragraphs with visible source notes."
+        },
+        {
+          "physical_page": 16,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-16.png",
+          "sha256": "aa6f16071d28fc9317881f4a588250507f6307fd1deccbd9e13ac892c4bf4729",
+          "inspected": true,
+          "observation": "First interpretation continues without crowded footnote/body boundaries."
+        },
+        {
+          "physical_page": 17,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-17.png",
+          "sha256": "2c549d75da80e41131c937dcfb933e3d8ebe4011b8c53b03fd65436933c68d55",
+          "inspected": true,
+          "observation": "First interpretation concludes with its own distinct four-senses block; all four rows are readable."
+        },
+        {
+          "physical_page": 18,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-18.png",
+          "sha256": "0472403eb00fc380b40dd0713eb5a11181214b3972f073b927783759562bd2c3",
+          "inspected": true,
+          "observation": "Second interpretation opens under its own keyed heading and develops a substantive argument."
+        },
+        {
+          "physical_page": 19,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-19.png",
+          "sha256": "4aa638e61d95def094815abd2f44499c3d103a0a997980c78b5bbc626ac5d60e",
+          "inspected": true,
+          "observation": "Second interpretation has readable type, paragraph spacing and source notes."
+        },
+        {
+          "physical_page": 20,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-20.png",
+          "sha256": "2fb6624229a40c6e7fa5473efa425fa79a1d93df0cfc9116065d4da4547ca542",
+          "inspected": true,
+          "observation": "Second interpretation carries the Gospel and pilgrimage argument without apparent layout loss."
+        },
+        {
+          "physical_page": 21,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-21.png",
+          "sha256": "56c8d4371615c28c5eb39be6ffc1ac1339c4cc27d9cd8dc7e4261b59ec6ac77c",
+          "inspected": true,
+          "observation": "Second interpretation concludes with its own four-senses block, clearly distinguished from the first."
+        },
+        {
+          "physical_page": 22,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-22.png",
+          "sha256": "0c383fd6cd878089ae6bff1d22d295a0ce55aafa6b8804c67ff23301aa880273",
+          "inspected": true,
+          "observation": "The four-paragraph comparison fills a meaningful section before the appendix; the lower whitespace is proportionate to the structural break."
+        },
+        {
+          "physical_page": 23,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-23.png",
+          "sha256": "6c65cb1cd4c7b0a4bc0d1feb680b92f1a0d19d40c444e9952b28a5269a5c9deb",
+          "inspected": true,
+          "observation": "Historical appendix orientation table and Esther discussion are legible; row pairing also checked at ordinary screen size."
+        },
+        {
+          "physical_page": 24,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-24.png",
+          "sha256": "b8b6d2a4b67c8c55aab65a2e8f6ed3d1786bb457077550f34912084f45b95f18",
+          "inspected": true,
+          "observation": "Job, Psalms and Matthew historical discussions preserve hierarchy and source-note integrity."
+        },
+        {
+          "physical_page": 25,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-25.png",
+          "sha256": "09d784d017c314b5b2bca96aa710201e2d0e7147e28e257a912cdef4f92f22c5",
+          "inspected": true,
+          "observation": "Ephesians, scope and reference material remain readable through the transition into apparatus."
+        },
+        {
+          "physical_page": 26,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-26.png",
+          "sha256": "e5d50de46f75a5f7107767898e364ec4aef513e9ab657a0745171f76450eea68",
+          "inspected": true,
+          "observation": "References, one finalization timestamp and the compact rights colophon share the terminal page; no rights-only spill."
+        }
+      ],
+      "contact_sheets_inspected": [
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/contact-sheets/sheet-001.png",
+          "sha256": "7f9a73f5443a5ea98de3bdcde088577e6c377bc822c365d4cf77da02cef3475e"
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/contact-sheets/sheet-002.png",
+          "sha256": "d85f1f4553f0396d39434dfd3c851c0977e5625cbb0bc10e40a7649457fdb965"
+        }
+      ]
+    },
+    {
+      "role": "homily",
+      "pdf": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily.pdf",
+      "pdf_sha256": "cf59a2d2cd49c33189a55712761da1934c1e0ed909284e5a6d9622f775dc9e17",
+      "artifact_receipt": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/artifacts.json",
+      "artifact_receipt_sha256": "9cdfa0bfa5d687e3b8f71b8aa512b48b639d7563025cb91b4e5e620f37d0e1a9",
+      "native_helper_receipt": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily/review-cache.json",
+      "native_helper_receipt_sha256": "8c7806c737f8d425a30591aa1e6ae8749d529bc65867f9fc1ac1441432297658",
+      "helper_pdf_identity_matches_sealed_pdf": true,
+      "page_count": 3,
+      "full_page_coverage": [
+        {
+          "physical_page": 1,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily/pages/page-1.png",
+          "sha256": "3a595067ca57cba2e2debaf165d5a6a4ea0c68b7eec736a3cc2758b26e586fdd",
+          "inspected": true,
+          "observation": "Full-width title leads into two speech columns; paragraph recovery is clear and scholarly apparatus does not intrude."
+        },
+        {
+          "physical_page": 2,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily/pages/page-2.png",
+          "sha256": "0dbb1339d0938c52053e39720be4ac5d473b8ecc693ee86e74d9bf9b545b857a",
+          "inspected": true,
+          "observation": "Two-column speech continues across the normal page turn and ends fully before the separate apparatus; the final lower whitespace is intentional."
+        },
+        {
+          "physical_page": 3,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily/pages/page-3.png",
+          "sha256": "8a9746318663b5267ed35a84aa7ea72d468f88ce590fa2ab84ed4f7a2a21f936",
+          "inspected": true,
+          "observation": "Full-width source/delivery note and references are separate from the spoken text, followed by the shared timestamp and compact rights colophon."
+        }
+      ],
+      "contact_sheets_inspected": [
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily/contact-sheets/sheet-001.png",
+          "sha256": "c11facc6d7bee55e245acc755fc40b66a5a0e4aeb457303e353b3000e6dd4d3b"
+        }
+      ]
+    },
+    {
+      "role": "synthesis",
+      "pdf": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.pdf",
+      "pdf_sha256": "ccb26a8cc49035b06ecfe6067679b6eef4c7d318ec59f45152bfccd1f49af325",
+      "artifact_receipt": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/artifacts.json",
+      "artifact_receipt_sha256": "9cdfa0bfa5d687e3b8f71b8aa512b48b639d7563025cb91b4e5e620f37d0e1a9",
+      "native_helper_receipt": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/review-cache.json",
+      "native_helper_receipt_sha256": "3c5671ed81b2f2dedf0d305ed640f3fabc74dd400f75d7aeeb8762091fc42cb1",
+      "helper_pdf_identity_matches_sealed_pdf": true,
+      "page_count": 10,
+      "full_page_coverage": [
+        {
+          "physical_page": 1,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/pages/page-01.png",
+          "sha256": "76c5e9b183d2f06de93d0bee5b8b57d1b79accc35f6326f6be97dc31239ed795",
+          "inspected": true,
+          "observation": "All 17 dated inventory elements and the branch note fit above exactly four overview sense rows; the hierarchy remains readable."
+        },
+        {
+          "physical_page": 2,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/pages/page-02.png",
+          "sha256": "4e1de6497e58c0a69600a13410940c44776f7fa43879b44f583a9316d3b96f76",
+          "inspected": true,
+          "observation": "Chronology alone occupies this page, with the complete table and its source/qualification notes; ordinary-size lookups succeeded."
+        },
+        {
+          "physical_page": 3,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/pages/page-03.png",
+          "sha256": "a36eb6ea3a72587641f1e3a5e2c95e8d9684b82811b0f83cf718044ddfc2bbc2",
+          "inspected": true,
+          "observation": "Themes and Movement starts here with substantial connected exposition, clear subheads and source notes."
+        },
+        {
+          "physical_page": 4,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/pages/page-04.png",
+          "sha256": "ce25710663bccbc72b6041ac47bab494b0a1c6dfeeb71a0802d9d03f0b671589",
+          "inspected": true,
+          "observation": "Themes and Movement continues with substantive argument and notes; no decorative filler or forced thin spill."
+        },
+        {
+          "physical_page": 5,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/pages/page-05.png",
+          "sha256": "d99e6c323013fafd3d300f6652b85f6a19a61776002f926a50b04a4a61ae43f0",
+          "inspected": true,
+          "observation": "Developed commentary starts here and compares mercy and pilgrimage interpretations at a shared question."
+        },
+        {
+          "physical_page": 6,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/pages/page-06.png",
+          "sha256": "3fe93d628b90a1bfb25819312f0f6624d34702638f57eb318bb9ec93cdefdb90",
+          "inspected": true,
+          "observation": "Real pardon and judgment are compared through the authorities in connected prose; source notes remain subordinate."
+        },
+        {
+          "physical_page": 7,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/pages/page-07.png",
+          "sha256": "2ee7ad1559d6745a0f42bb99a3a43cbcc995387b8d4e4cbe3e008d03d4b94ed6",
+          "inspected": true,
+          "observation": "Armor and divine protection receive developed comparison and readable footnotes."
+        },
+        {
+          "physical_page": 8,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/pages/page-08.png",
+          "sha256": "da0473f2e9ecafa0a47ec256317d2b6111accf67e195e8ba03abf0cb70652eaf",
+          "inspected": true,
+          "observation": "Food, communion and spiritual senses continue the interleaved argument; dense but readable text and notes."
+        },
+        {
+          "physical_page": 9,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/pages/page-09.png",
+          "sha256": "8467969edce4bed689d1362ec6f6a670b90fa2cdc33c3c6938deb70481d99231",
+          "inspected": true,
+          "observation": "The concluding argument, mission/Luke material and scope qualifications remain legible and organized."
+        },
+        {
+          "physical_page": 10,
+          "full_page_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/pages/page-10.png",
+          "sha256": "63d82d6147f0531bd249438b5bf8b22b1fcad26eba09fcbedd0e2f8ec0a1cfb5",
+          "inspected": true,
+          "observation": "References, the shared finalization timestamp and compact rights colophon fit together; no separate colophon page."
+        }
+      ],
+      "contact_sheets_inspected": [
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/contact-sheets/sheet-001.png",
+          "sha256": "9840c4fd1e5a6d6f4f109663e96ade735ea06a7377708e0e90a5b1aaddeb3be4"
+        }
+      ]
+    }
+  ],
+  "total_full_pages_inspected": 39,
+  "visual_method": "Opened all four existing contact sheets and all 39 individual 1700 by 2200 page rasters using original-detail image viewing. Established their PDF identity from the immutable packet snapshot, current artifacts receipt and original tools/pdf-review receipts before relying on them. Contact-sheet viewing alone was not counted as page inspection.",
+  "identity_evidence": {
+    "path": "build/tpt-runs/a72731c5491066a3/artifacts/visual-review-0000/identity-verification.json",
+    "sha256": "20f9d00ff58f5ff6abaacfeb9a013309f68e810eb9ee2d8cc05f0707b8e55294",
+    "kind": "Public normalized hash-verification derivative of the native helper receipts; native machine-path-bearing receipts remain local.",
+    "raster_run_receipt": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/review-run.json",
+    "raster_run_receipt_sha256": "c4b650a77fbfcdbebc1443c58e0ff8ea2e6fdaaed64b078f219421488cb99520",
+    "all_native_receipt_listed_raster_hashes_matched": true
+  },
+  "layout_assessment": {
+    "baseline": "The three entrypoints use the shared Latin Modern, 11-point article, Letter, 0.75-inch-margin monochrome baseline. Source configuration and rendered hierarchy agree; only the homily speech uses columns.",
+    "type_and_density": "Body type and measure are legible. The studies have substantial exposition, clear heading levels and bounded running furniture. No observed clipping, overlap, unreadable reduction, accidental blank page, or thin orphan spill.",
+    "study_interpretations": "Two distinct keyed interpretations run on pages 14–17 and 18–21, each with its own readable literal, allegorical, moral and anagogical block; a global table does not replace them.",
+    "concise_opening": "Complete dated map and exactly four sense rows are physically on page 1, chronology alone on page 2, substantive Themes and Movement on pages 3–4, developed interleaved commentary from page 5. The branch note and inventory include the mission and St Luke prayer possibilities without collapsing them into the Sunday formulary.",
+    "homily_use": "Title is full width; speech occupies two columns on pages 1–2 with recoverable paragraphs, and sources/delivery apparatus is full width on page 3. The normal mid-paragraph page turn does not disrupt the argument. No source notes interrupt the speech.",
+    "terminal_apparatus": "Each artifact ends with references, the same single finalization timestamp and a compact rights colophon on an existing terminal page.",
+    "formatting_migration": "This dispatch reviewed the sealed production and did not perform a formatting migration or alter substantive text."
+  },
+  "physical_opening_markers": {
+    "aux": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.aux",
+    "aux_sha256": "2bfdb9c12bb938b301e7352611b4e71ea54209a60b8fbb193cab564204c643b1",
+    "settled_markers": {
+      "triptych:concise:inventory:start": 1,
+      "triptych:concise:inventory:end": 1,
+      "triptych:concise:overview:start": 1,
+      "triptych:concise:sense:literal": 1,
+      "triptych:concise:sense:allegorical": 1,
+      "triptych:concise:sense:moral": 1,
+      "triptych:concise:sense:anagogical": 1,
+      "triptych:concise:overview:end": 1,
+      "triptych:concise:chronology:start": 2,
+      "triptych:concise:chronology:end": 2,
+      "triptych:concise:themes:start": 3,
+      "triptych:concise:themes:end": 4,
+      "triptych:concise:commentary:start": 5
+    },
+    "visually_matches": true
+  },
+  "ordinary_size_chronology": {
+    "evidence": "build/tpt-runs/a72731c5491066a3/artifacts/visual-review-0000/ordinary-size-display.json",
+    "sha256": "f75a7702c23fca461722beb180d85ea622f2905b18bb86a16046d3f4ec6eb91c",
+    "method": "Independently inspected both labeled 816 by 1056 display derivatives at original pixel size after displaying the verified full-page helper PNGs at nominal 96 CSS pixels per inch. No cropped enlargement was used for these lookups.",
+    "lookups": [
+      {
+        "artifact": "synthesis",
+        "physical_page": 2,
+        "passage": "Gospel: Matthew 18:23–35",
+        "occurrence_and_place": "Event: Jesus teaches in Galilee; precise venue unknown.",
+        "date": "Date unresolved.",
+        "outcome": "The first Gospel row gives this event answer directly across the row. The next row is visibly a separate composition claim, so its competing dates are not mistaken for the date of Jesus teaching."
+      },
+      {
+        "artifact": "synthesis",
+        "physical_page": 2,
+        "passage": "Epistle: Ephesians 6:10–17",
+        "occurrence_and_place": "Composition of Ephesians; captivity, Rome favored and Caesarea possible, readers in Asia Minor.",
+        "date": "Disputed: A.D. 58–63; A.D. 61.",
+        "outcome": "The final row connects passage, occurrence/place and dates directly without reading another column as a continuous paragraph."
+      },
+      {
+        "artifact": "synthesis",
+        "physical_page": 2,
+        "passage": "Alleluia: Psalm 113:1",
+        "occurrence_and_place": "Retrospective Exodus from Egypt, with the interval ending at Jerusalem’s Temple.",
+        "date": "Preferred 480th year after the Exodus (Vulgate); alternative 440th (Septuagint).",
+        "outcome": "The taller row keeps both date alternatives visibly attached to the Exodus/Temple occurrence. It remains distinct from the collection-composition bound above and the David-attribution row below."
+      },
+      {
+        "artifact": "study",
+        "physical_page": 23,
+        "passage": "Gospel: Matthew 18:23–35",
+        "occurrence_and_place": "Event: Galilean discourse after the Capharnaum scene and before departure for Judea; precise teaching venue unspecified.",
+        "date": "Date unresolved.",
+        "outcome": "The event row is directly findable at ordinary screen size. The next composition row retains all competing estimates, visibly separate from that unresolved event."
+      },
+      {
+        "artifact": "study",
+        "physical_page": 23,
+        "passage": "Introit/Communion: Psalm 118",
+        "occurrence_and_place": "Traditional attribution: David’s reign; conditional upon attribution, not an established occasion of this Psalm.",
+        "date": "Disputed: B.C. 1055–1015.",
+        "outcome": "The attribution row is readable and separate from the Psalms collection bound, which remains before c. 165 B.C. The table preserves different kinds of claim rather than supplying one date for all uses."
+      }
+    ],
+    "judgment": "The passage-to-occurrence/place/date pairing is visible at nominal ordinary screen size in both artifacts. Dense multi-line cells remain navigable through top alignment and row spacing; the explanatory prose supplies qualifications rather than being required to discover the pairing."
+  },
+  "font_log_metadata_evidence": {
+    "path": "build/tpt-runs/a72731c5491066a3/artifacts/visual-review-0000/font-log-metadata.json",
+    "sha256": "168b5061b75c5d923900997bf7648e6180d4be8a5b25623e2c1e03ef677cec8c",
+    "font_counts": {
+      "study": 14,
+      "synthesis": 15,
+      "homily": 10
+    },
+    "all_fonts_latin_modern_embedded_subset_unicode": true,
+    "native_logs_match_build_receipt_hashes": true,
+    "overfull_underfull_missing_glyph_undefined_or_warning_lines_found": 0,
+    "pdf_dimensions": "All three: 612 by 792 points, Letter, rotation zero.",
+    "titles_and_subjects": "Distinct artifact titles and subjects correctly identify the 1962 proper and requested civil date.",
+    "shared_revision": "2026-10-13T04:24:11Z; visible terminal revision and PDF modification time agree after timezone conversion."
+  },
+  "final_seal": {
+    "path": "build/tpt-runs/a72731c5491066a3/artifacts/visual-review-0000/final-seal-verification.json",
+    "sha256": "e11d079c91b36ad543bde299968df9cab5a6acbe980581763a110fba3ba77c87",
+    "all_30_sealed_files_match": true,
+    "current_receipt_matches_packet": true
+  },
+  "process_shutdown": {
+    "all_started_browser_commands_exited": true,
+    "owned_browser_profile_processes_observed_at_close": 0,
+    "active_tool_session": false,
+    "scope": "Owned browser profile checked; no unrelated browser process was signaled"
+  },
+  "meaningful_limits": [
+    "Visual judgment is based on actual page images and nominal ordinary-size screen derivatives, not physical print. Hardware physical size was not calibrated.",
+    "The initial sandbox browser failed; an approval request was interrupted without producing a screenshot. Resumed approved executions then completed successfully; only their actual screenshots support the ordinary-size checks.",
+    "No human timed or audible homily rehearsal, assistive-technology test, native interactive PDF-viewer behavior, web-edition review, or fresh external-source theological/chronological audit is claimed.",
+    "The delivery note reports 1,257 spoken words and an estimate of 11–12 minutes with pauses; this review checked its separation and readability, not a performed delivery.",
+    "This is a visual-stage verdict on the named immutable artifacts, not a publication acceptance."
+  ],
+  "findings": [],
+  "owner_action_needed": null
+}

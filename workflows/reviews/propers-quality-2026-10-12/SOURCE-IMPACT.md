@@ -34,3 +34,13 @@ The two source bindings are updated only after the impact assessment above.
 No publication prose, PDF, generation timestamp, archived packet, review seal
 or historical acceptance is renewed by this repair. The research and source
 gates for the new Sunday must still run on the resulting source graph.
+
+The complete source check later exposed two stale reader projections of this
+same comparison note: `src/web/data/structure/ordinary/roman-1962.json` and
+`src/web/data/structure/ordinary/roman-pre-1955.json`. They were regenerated
+through `mass-ordinary structure`. Independent parsed comparisons with the
+previous committed files find exactly one changed value in each:
+`sections[2].elements[5].note`. Every other parsed value is identical, including
+the prayer texts, dates and rights fields. This carries the already checked
+source correction into its existing reader consumers; it supplies no new
+collation or renewed approval.

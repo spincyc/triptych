@@ -1,0 +1,35 @@
+{
+  "stage": "generate-web",
+  "iteration": 0,
+  "packet_sha256": "d0789d12b7cde4bf118a4477303d10df28c634ce08438a686ed4ad62e4d3fc56",
+  "environment": {
+    "Markdown": "3.10.3",
+    "requirements_lock": "requirements-public-alpha.txt"
+  },
+  "command": [
+    "tools/tpt",
+    "web-edition",
+    "--provider",
+    "gpt",
+    "--output",
+    "build/web",
+    "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
+  ],
+  "returncode": 1,
+  "diagnostic": "web-edition: gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost\nmissing schema-2 source proper anchor(s): proper-alleluia, proper-collect, proper-communion, proper-epistle, proper-gospel, proper-gradual, proper-introit, proper-luke-collect, proper-luke-postcommunion, proper-luke-secret, proper-mission-collect, proper-mission-postcommunion, proper-mission-secret, proper-offertory, proper-postcommunion, proper-preface, proper-secret",
+  "log_provenance": {
+    "original_sha256": "37c627cc832d40ffdcfebc3bf5dda04bc0f3c2d13ebcaf1b64d512f34eaa63ff",
+    "transformation": "Diagnostic copied as text into this structured record; no diagnostic content changed. Native command log remains local."
+  },
+  "frozen_baseline_files": 38,
+  "frozen_changes": [],
+  "source_owner": "study",
+  "source_location": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/10-appointed-text.tex",
+  "required_result": "Add one correctly placed source label proper-<element-key> for each of the 17 declared element keys; rerun the governed dependent review/build stages before canonical web conversion.",
+  "generated_markdown": false,
+  "web_receipt_created": false,
+  "limitations": [
+    "Conversion stopped at source-anchor validation before Markdown generation; fidelity and independent web review could not be performed."
+  ],
+  "processes_remaining": []
+}

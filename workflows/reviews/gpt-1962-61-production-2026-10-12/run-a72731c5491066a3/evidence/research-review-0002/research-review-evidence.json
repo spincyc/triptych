@@ -1,0 +1,163 @@
+{
+  "schema": 1,
+  "stage": "research-review",
+  "iteration": 2,
+  "packet_path": "build/tpt-runs/a72731c5491066a3/packets/research-review-0002.txt",
+  "packet_sha256": "4f541f81598bb7f2440873fbdcb12da166b712ec52a0d4397e9d4ea8bcf74c49",
+  "document_root": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+  "scope": {
+    "owned_verdict": "Research readiness for subsequent study authoring; not acceptance of the study or release.",
+    "changed_research_record": "research/scope.md: Haydock Psalm 118 attribution and occasion correction, with the added repair account.",
+    "standing_findings": "The packet has no prior, carried, or advisory findings.",
+    "record_reads": [
+      "research/context.md",
+      "research/scope.md",
+      "research/interpretations.md",
+      "research/source-bindings.toml",
+      "research/review-dependencies.toml",
+      "propers/verified.md",
+      "research/chronology.toml",
+      "research/chronology-annotations.tex"
+    ],
+    "input_seal": "All 1,738 files and 13 computation inputs matched the packet seal before review and on completion; hashing is an identity check, not a claim to have read every file.",
+    "sealed_input_manifest": "build/tpt-runs/a72731c5491066a3/artifacts/research-review-0002/seal-verification.json"
+  },
+  "facsimile_checks": [
+    {
+      "witness": "Haydock, Douay-Rheims commentary, historical 1859 text in the registered 2014 Loreto/Feeney wrapper",
+      "artifact_id": "artifact.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.ia-facsimile-pdf-9d2dd602",
+      "whole_pdf_sha256": "9d2dd602cc4a574a8300936c37b7e2f1b3be938803acc6a607cbf5622a2fcab2",
+      "actual_locus": "PDF pages 816–817, printed pages 780–781: Psalm CXVIII heading, Alleph verse 1, and the continuing note.",
+      "outcome": "The correction is supported. One conjecture has David instructing the young Solomon: Solomon is the pupil, not a proposed author. David in his own youth under Saul and Daniel comforting captives are distinct alternatives; the general attribution to David does not determine this psalm’s occasion.",
+      "rights_limit": "The historical commentary and the modern facsimile wrapper are distinguished; inspection of this PDF does not resolve rights in the wrapper or authorize redistribution of the whole scan."
+    },
+    {
+      "witness": "Registered 1962 Missale Romanum, CMAA PDF",
+      "whole_pdf_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "actual_locus": "PDF 15, 16, 30, 494–496; printed XVII, XVIII, XXXII, 413–415.",
+      "outcome": "Independently checked II-class Sunday precedence, ordinary versus privileged commemorations, the sung/low Mass distinction, the mission oration under one conclusion and its count, and the complete XXI-Sunday proper unit and boundaries. The Missal appoints the Trinity Preface; the Job Offertory is a liturgical composite rather than a continuous biblical quotation."
+    },
+    {
+      "witness": "Ildefonso Schuster, The Sacramentary, volume III, 1927 English printing",
+      "artifact_id": "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-scan-volume-3-410f6d11",
+      "whole_pdf_sha256": "410f6d1155436714f76a4ca3645edcd33ca6ef65bed3d37b1d3e6f10b0c37239",
+      "actual_locus": "PDF 194–197, printed 178–181, complete Twenty-first Sunday unit.",
+      "outcome": "The unit supports the ten base-element interpretation map. Its historical expanded Offertory is distinguished from the appointed 1962 text; its printed Matthew xxviii reference is not used to replace the actual Matthew 18 appointment. No extension to the Trinity Preface or additional mission/Luke prayers is attributed to this unit."
+    }
+  ],
+  "exact_text_checks": [
+    {
+      "witness": "Augustine, Sermon 83 (NPNF first series, volume VI, Sermon XXXIII [LXXXIII Ben.])",
+      "actual_locus": "Complete §§1–8, retained CCEL text, lines 34943–35191.",
+      "outcome": "Read debtor/creditor, daily petition, inward forgiveness, and discipline together; practical mercy does not abolish correction or the seriousness of judgment."
+    },
+    {
+      "witness": "John Chrysostom, Homily 61 on Matthew, NPNF first series, volume X",
+      "actual_locus": "Retained CCEL text, §§4–5, lines 35035–35132.",
+      "outcome": "The pardon is real, and its recipient’s later refusal of mercy receives judgment. The argument cannot be reduced to merely pretending to forgive or to sentimental exemption from judgment."
+    },
+    {
+      "witness": "Gregory the Great, Moralia in Iob, Library of the Fathers translation",
+      "actual_locus": "Retained complete-text artifact d9f9ed86, Book II.9–11 and Book III opening through III.6.8; lines 2090–2205 and 3605–3788.",
+      "outcome": "Distinguished the adversary’s evil will from permitted power; innocent affliction does not mean an absence of a providential purpose. The protected interior life is compatible with bodily wounds."
+    },
+    {
+      "witness": "Augustine, Exposition of Psalm 118, Caph",
+      "actual_locus": "Retained NPNF VIII text, complete numbered Caph unit on verses 81–88, lines 58140–58280.",
+      "outcome": "Read the Church’s longing, judgment, persecutors, and the martyrs’ aid unto death together. The retained translation contains visible abridgment; this was not treated as inspection of an unabridged Latin text."
+    },
+    {
+      "witness": "John Chrysostom, Homily 23 on Ephesians, NPNF first series, volume XIII",
+      "actual_locus": "Retained CCEL text, the Exodus/Passover and wilderness argument with its moral application, lines 15650–15870.",
+      "outcome": "Supports the protective pilgrimage interpretation through truth, Christ’s Passover, spiritual food, danger on the way, and the final rest. This check did not claim a fresh reading of all Homilies 22–24."
+    },
+    {
+      "witness": "Thomas Aquinas, Summa theologiae III, question 88",
+      "actual_locus": "Retained English Dominican/New Advent text, all four articles with objections and replies.",
+      "outcome": "Old guilt and subsequent aggravated liability are distinguished; the text does not support automatically adding every forgiven sin back as a numerical total."
+    },
+    {
+      "witness": "Rabanus Maurus, preface to the Esther commentary, PL 109, 635C–D",
+      "actual_locus": "Retained Latin preface and adjacent opening.",
+      "outcome": "The stated omission of an exposition of the additions prevents treating this work as direct exposition of the appointed Esther addition."
+    }
+  ],
+  "consequential_difficulty_tests": [
+    {
+      "interpretation": "Mercy received becomes mercy practised",
+      "test": "Does a reading centred on mercy withstand the actual pardon, later refusal, and punitive conclusion of Matthew 18?",
+      "checked_witnesses": [
+        "Chrysostom, Matthew Homily 61 §§4–5",
+        "Augustine, Sermon 83 §§1–8",
+        "Aquinas, Summa III q.88 a.1–4"
+      ],
+      "outcome": "Yes, with the plan’s distinction between received pardon, mercy owed to the neighbour, and judgment for renewed hardness. Forgiveness and corrective discipline remain compatible; the punishment is not explained away."
+    },
+    {
+      "interpretation": "Protected pilgrimage through trial",
+      "test": "Does protection imply bodily immunity or make Job’s suffering evidence of antecedent guilt?",
+      "checked_witnesses": [
+        "Gregory, Moralia II.10–11 and III.3–6",
+        "Augustine, Psalm 118 Caph, especially the persecuted community and martyrs",
+        "Chrysostom, Ephesians Homily 23 wilderness argument"
+      ],
+      "outcome": "No. The checked witnesses allow innocent bodily suffering while God preserves and forms the inner life. Protection must mean faithful perseverance toward the end, not exemption from affliction."
+    }
+  ],
+  "chronology_checks": {
+    "actual_loci": [
+      "Haydock Psalm 118:1 note, printed 780–781",
+      "Catholic Encyclopedia, Matthew: date-of-composition alternatives",
+      "Catholic Encyclopedia, New Testament: original Aramaic Matthew around 50 and undetermined Greek date",
+      "Catholic Encyclopedia, St Paul: Roman captivity and Ephesians chronology",
+      "Catholic Encyclopedia, Biblical Chronology: Temple foundation 480th year, with the Septuagint 440-year alternative",
+      "Catholic Encyclopedia, David: usual 1055–1015 reign attribution",
+      "Catholic Encyclopedia, Ephesians: 58–63 with Roman/Caesarean alternatives",
+      "Catholic Encyclopedia, Esther: proposed Persian composition near the end of Xerxes or in Artaxerxes I’s 465–425 reign, with arguments for a later date",
+      "USCCB Job introduction",
+      "USCCB Psalms introduction"
+    ],
+    "outcome": "Reviewed the nine presentation rows against their relation, subject, alternatives, and evidence. The revised Haydock row preserves conjectural alternatives; the Davidic regnal range remains conditional attribution rather than a date of composition or occasion. Job’s proposed composition era is not Job’s lifetime. Psalter compilation does not date each psalm. Matthew’s book dates are not the date of the parable; Ephesians alternatives remain explicit. The Exodus relation is retrospective and does not supply an absolute Exodus year. Esther’s book hypothesis does not determine the date or place of the appointed prayer.",
+    "dependencies": "Checked declared chronology dependencies and the direct derived Catholic Encyclopedia text witnesses in the sealed input closure. Neither missing field values nor the brevity of a timeline label was used as a substitute for checking the asserted relation."
+  },
+  "current_external_corroboration": [
+    {
+      "url": "https://www.fssp.fr/ordo-du-mois/",
+      "checked": "October 18 entry: Twenty-first Sunday after Pentecost, II class, green. This French calendar corroborates the Sunday; it does not determine an unspecified local calendar."
+    },
+    {
+      "url": "https://bible.usccb.org/bible/job/0",
+      "checked": "The introduction’s proposed book-composition interval and nonhistorical-transcript qualification."
+    },
+    {
+      "url": "https://bible.usccb.org/bible/psalms/0",
+      "checked": "No secure individual-psalm date from superscriptions; the broad pre-Maccabean collection limit."
+    }
+  ],
+  "eligibility_and_synthesis": "Checked the bound author-standing records for Augustine, Chrysostom, Gregory, Aquinas, and Schuster. Each proposed whole-Mass interpretation has at least two distinct eligible Fathers/saints. Their direct passage claims are distinguished from the author’s cross-element synthesis; Schuster supplies a complete appointed-day unit, not a reason to pretend every patristic source comments on every proper.",
+  "limits": [
+    "This iteration did not repeat every unchanged source acquisition, historical antecedent collation, full biblical book reading, or entire corpus search. The evidence above states the actually re-read loci.",
+    "The Trinity Preface body and the mission and Saint Luke prayer bodies were not freshly recollated from facsimiles in this iteration; their branch status was checked through the recorded research and the re-read rubric pages.",
+    "Fresh web corroboration is not a claim that today’s returned pages equal the bytes of older retained snapshots.",
+    "Subsequent study authoring has not reentered after this research correction. This verdict does not establish that downstream prose has propagated the correction or passed its own content and production reviews."
+  ],
+  "raster_method": "Extracted only the identified pages to the exclusive scratch namespace, rendered them with tools/pdf-review in its dedicated bounded child process, and visually read the full-page images. Did not invoke a rasterizer directly.",
+  "visually_read_images": [
+    "build/tpt-runs/a72731c5491066a3/artifacts/research-review-0002/control-rasters/.scratch/propers-20261018/driver/research-review-0002/source-excerpts/schuster-194/pages/page-1.png",
+    "build/tpt-runs/a72731c5491066a3/artifacts/research-review-0002/control-rasters/.scratch/propers-20261018/driver/research-review-0002/source-excerpts/schuster-195/pages/page-1.png",
+    "build/tpt-runs/a72731c5491066a3/artifacts/research-review-0002/control-rasters/.scratch/propers-20261018/driver/research-review-0002/source-excerpts/schuster-196/pages/page-1.png",
+    "build/tpt-runs/a72731c5491066a3/artifacts/research-review-0002/control-rasters/.scratch/propers-20261018/driver/research-review-0002/source-excerpts/schuster-197/pages/page-1.png",
+    "build/tpt-runs/a72731c5491066a3/artifacts/research-review-0002/control-rasters/.scratch/propers-20261018/driver/research-review-0002/source-excerpts/target-15/pages/page-1.png",
+    "build/tpt-runs/a72731c5491066a3/artifacts/research-review-0002/control-rasters/.scratch/propers-20261018/driver/research-review-0002/source-excerpts/target-16/pages/page-1.png",
+    "build/tpt-runs/a72731c5491066a3/artifacts/research-review-0002/control-rasters/.scratch/propers-20261018/driver/research-review-0002/source-excerpts/target-30/pages/page-1.png",
+    "build/tpt-runs/a72731c5491066a3/artifacts/research-review-0002/control-rasters/.scratch/propers-20261018/driver/research-review-0002/source-excerpts/target-494/pages/page-1.png",
+    "build/tpt-runs/a72731c5491066a3/artifacts/research-review-0002/control-rasters/.scratch/propers-20261018/driver/research-review-0002/source-excerpts/target-495/pages/page-1.png",
+    "build/tpt-runs/a72731c5491066a3/artifacts/research-review-0002/control-rasters/.scratch/propers-20261018/driver/research-review-0002/source-excerpts/target-496/pages/page-1.png",
+    "build/tpt-runs/a72731c5491066a3/artifacts/research-review-0002/rasters/.scratch/propers-20261018/driver/research-review-0002/source-excerpts/haydock-816/pages/page-1.png",
+    "build/tpt-runs/a72731c5491066a3/artifacts/research-review-0002/rasters/.scratch/propers-20261018/driver/research-review-0002/source-excerpts/haydock-817/pages/page-1.png"
+  ],
+  "process_shutdown": "The review retained no background process. Final process inspection found no remaining pdf-review, pdftoppm, or pdftocairo command. The first helper’s completion was established by its complete receipt and outputs plus absence of a live renderer; no unobserved exit status is asserted.",
+  "mutations": "Only exclusive scratch files and this iteration’s evidence namespace were written. No reviewed input, source record, guidance, code, engine state, index, commit, or branch was changed by this review.",
+  "verdict": "PASS",
+  "findings": []
+}

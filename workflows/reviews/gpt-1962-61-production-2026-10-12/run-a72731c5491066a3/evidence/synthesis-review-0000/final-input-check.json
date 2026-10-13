@@ -1,0 +1,76 @@
+{
+  "packet_sha256": "671580d961f3361d6f3eebbc6cfe9d0bebb8c114af6942ad46b22587cb307d8d",
+  "all_inputs_unchanged": true,
+  "inputs": [
+    {
+      "path": "src/common/preamble.tex",
+      "expected": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "actual": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b"
+    },
+    {
+      "path": "src/common/propers-format.tex",
+      "expected": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "actual": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology-annotations.tex",
+      "expected": "33b9163ad02af527ee07041eaec7cbfdd9aa46782c0ce8e75ad9c13140542f6a",
+      "actual": "33b9163ad02af527ee07041eaec7cbfdd9aa46782c0ce8e75ad9c13140542f6a"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology.toml",
+      "expected": "ef61c5010a361175da81c19108772282d6eab505667433694d2f04c28dbe6422",
+      "actual": "ef61c5010a361175da81c19108772282d6eab505667433694d2f04c28dbe6422"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/interpretations.md",
+      "expected": "e436c3374a0ed3e6b2833aeef8361af39a2e4c1bffba5cd71c60e1bb23938ef7",
+      "actual": "e436c3374a0ed3e6b2833aeef8361af39a2e4c1bffba5cd71c60e1bb23938ef7"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md",
+      "expected": "ccd4b0fe7be72839009595197b84a653a1b85f3563a0f306d8537c3ea8e68d7c",
+      "actual": "ccd4b0fe7be72839009595197b84a653a1b85f3563a0f306d8537c3ea8e68d7c"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/source-bindings.toml",
+      "expected": "c7695743cd3b15dfbdae1fa19aedfc2ffdf9bb35829d5c28ede733baebd79712",
+      "actual": "c7695743cd3b15dfbdae1fa19aedfc2ffdf9bb35829d5c28ede733baebd79712"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/01-inventory.tex",
+      "expected": "2bc3af9dff7b00f250812afd1ecc950733c144198eb001fa451968cc0a25bb1e",
+      "actual": "2bc3af9dff7b00f250812afd1ecc950733c144198eb001fa451968cc0a25bb1e"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/02-overview.tex",
+      "expected": "3d7c362c17c4d93ef1d429a1a69df5ee3025d8250a0709e30d3a08c67eff3846",
+      "actual": "3d7c362c17c4d93ef1d429a1a69df5ee3025d8250a0709e30d3a08c67eff3846"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/03-chronology.tex",
+      "expected": "e654726ea669728e45449382c7549541c6c085e82e814c00f9a8498d3b818962",
+      "actual": "e654726ea669728e45449382c7549541c6c085e82e814c00f9a8498d3b818962"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/04-themes.tex",
+      "expected": "957cd0957b314948f1ee0ac451647a774df17d77f34dd9632c35db455fc25b4f",
+      "actual": "957cd0957b314948f1ee0ac451647a774df17d77f34dd9632c35db455fc25b4f"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/10-commentary.tex",
+      "expected": "95398ec14fb1e495449aa6dcf3f79bdf8cba4a329815ae83d14df7a3389aae95",
+      "actual": "95398ec14fb1e495449aa6dcf3f79bdf8cba4a329815ae83d14df7a3389aae95"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/90-apparatus.tex",
+      "expected": "4ad5b663460cb033ced7eca4a66a9c8f63649163c3cc307290948d939553c84e",
+      "actual": "4ad5b663460cb033ced7eca4a66a9c8f63649163c3cc307290948d939553c84e"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/synthesis.tex",
+      "expected": "f96db06abff18f4b9b7bbb5572c4446f6cf20a1d07da70d622c59de123f603af",
+      "actual": "f96db06abff18f4b9b7bbb5572c4446f6cf20a1d07da70d622c59de123f603af"
+    }
+  ]
+}

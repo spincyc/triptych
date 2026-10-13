@@ -1,0 +1,92 @@
+{
+  "record_type": "post-block-manuscript-checkpoint-validation",
+  "date": "2026-10-13",
+  "run_id": "a72731c5491066a3",
+  "native_run_disposition": "BLOCKED",
+  "scope": "Authorized source bookkeeping after the run ended; neither a new workflow verdict nor publication acceptance.",
+  "aggregate_check": {
+    "command": "PYTHONPATH=.scratch/tlm-2026-10-04/generate-web-0000/dependencies make check-sources",
+    "dependency_lock": "requirements-public-alpha.txt",
+    "Markdown_version": "3.10.3",
+    "exit_code": 0,
+    "original_local_log_sha256": "d2c5d98116c548de75cba3aad74cb4898fb230874b7db9201aa6c4f970020821",
+    "log_retention": "Original log remains local; no contents or workstation path reproduced here.",
+    "source_library_bindings": 3815,
+    "gpt_inventory": {
+      "publications": 148,
+      "source_surface_files": 2609
+    },
+    "claude_inventory": {
+      "publications": 60,
+      "source_surface_files": 1751
+    },
+    "family_pin": {
+      "review_units": 159,
+      "screened": 0,
+      "pending": 159,
+      "atomic_citation_coverage": false
+    }
+  },
+  "generated_files": [
+    {
+      "path": "src/sources/inventories/publications-v1.toml",
+      "sha256": "475f0d4791799bea7260b9b81c445b2d68a127d542134c524081d0dc590c99ca"
+    },
+    {
+      "path": "src/sources/inventories/source-family-migration-v1.toml",
+      "sha256": "0697ecfc3c676afe8e8d06ca5ed2d8577363c9f92873ec0092719a364316e9a6"
+    },
+    {
+      "path": "src/web/data/structure/documents/corpus.json",
+      "sha256": "73e13ab2a400bbf0fc89b2063b394927a90a69f59444507449f4448b94c0df92"
+    },
+    {
+      "path": "src/web/data/structure/ordinary/roman-1962.json",
+      "sha256": "7d8eeba961c7e8ffa46f9fc57a486d6a4ddf7df23d011a0bbba015e87c404000"
+    },
+    {
+      "path": "src/web/data/structure/ordinary/roman-pre-1955.json",
+      "sha256": "85a45f1095af71b1cf5f240473fb2037660e972134c24cca31a82e2c990d07fb"
+    }
+  ],
+  "ordinary_projection_difference": {
+    "source_impact_record": "workflows/reviews/propers-quality-2026-10-12/SOURCE-IMPACT.md",
+    "element_key": "praefatio/praefatio-de-ss-trinitate",
+    "json_path": "sections[2].elements[5].note",
+    "old_suffix": "The Latin column here prints Quam laudant angeli where the Roman text has Quem, and sets no full stop after \u00e6qualitas.",
+    "new_suffix": "The Latin column here prints Quam laudant angeli and sets no full stop after \u00e6qualitas. Comparison checked 2026-10-12: Vatican 1962 printed p. 293 / PDF p. 374 also reads Quam; no claim about every Roman edition is made.",
+    "scope_proof": "In each of the two Ordinary projections, parsed deep equality holds after excluding only this note. The earlier note prefix and every other value are unchanged.",
+    "refresh_tool": "tools/tpt mass-ordinary structure"
+  },
+  "unchanged_source_pdf_baseline": {
+    "origin": "generate-web iteration 0 frozen baseline",
+    "manifest_sha256": "a41c171734579b11f114489a5f92f01888b1dbcc55811d00bffc6c3f2dc507c8",
+    "sha256_check_manifest_sha256": "f707d89e839100a6daf0a82d3eb82a70367742c1129f8b0b7e109a9cb5299729",
+    "check": "sha256sum --check --status",
+    "files": 38,
+    "exit_code": 0,
+    "changed_files": []
+  },
+  "classification_review_changed": false,
+  "whitespace_check": "PASS for five generated files and DRIVER-RECORD.md",
+  "publication_actions": {
+    "pdf_installation": false,
+    "release_creation": false,
+    "reader_catalog_link_changes": false,
+    "replacement_seed": false
+  },
+  "processes_remaining": [],
+  "staged_checkpoint_whitespace": {
+    "full_git_diff_check_exit": 2,
+    "only_diagnostic": "new blank line at EOF",
+    "native_gate_logs": 67,
+    "reviewed_manuscript_paths": [
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/proper-components.toml",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/10-appointed-text.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/20-commentary.tex"
+    ],
+    "reviewed_manuscript_hashes_match_visual_seal": true,
+    "disposition": "Retain exact native evidence and first-run reviewed manuscript bytes; no whitespace normalization before replacement authoring.",
+    "all_other_staged_files_exit": 0
+  }
+}

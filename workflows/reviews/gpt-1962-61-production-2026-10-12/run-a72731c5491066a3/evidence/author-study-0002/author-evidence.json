@@ -1,0 +1,131 @@
+{
+  "stage": "author-study",
+  "iteration": 2,
+  "execution": "single; no nested agents",
+  "actual_model": "GPT-6",
+  "effort": "high",
+  "packet_path": "build/tpt-runs/a72731c5491066a3/packets/author-study-0002.txt",
+  "packet_sha256": "7f9dfc8f86a5c68f08b25b7b83924369ec3d2840bc0395ed5421f11a32eaafc2",
+  "proof": {
+    "path": "build/tpt-runs/a72731c5491066a3/artifacts/author-study-0002/study-proof.pdf",
+    "sha256": "324c562aebd7ba283666721403b192f9a2a9fda11a43cb063e720192b21553aa",
+    "physical_pages": 26,
+    "bytes": 447319,
+    "byte_identical_to_checked_build": true
+  },
+  "corrected_section": {
+    "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/70-date-location.tex",
+    "sha256": "caad78ab3d107b334b975da7d80a152440dd43b2cfab464dbdf096f998f6646e"
+  },
+  "changes": [
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/generation-metadata.tex",
+      "before_sha256": "81f5f367b64d6eadb2460cc7aff6264a16c81f2b35f701082232202a5ffe02bf",
+      "after_sha256": "3cae03a3ac9ecc20759472bb1f61868b9823ce8d52a20cbee5ba06d837041165"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/production-review.md",
+      "before_sha256": "dbb14e4987d413f6b6ae510cb176f1974fbde5f01cbd4dbacb0d16a4dfdb64a6",
+      "after_sha256": "ee117cfc0b9f3cddb0d22e19f7662829957be8953cf2199f19a5f1b9a3a05dbe"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/70-date-location.tex",
+      "before_sha256": "ddbccd6b59422f596a3300b45f05c2fdbd44d59428dad4cbe29e8e612749e670",
+      "after_sha256": "caad78ab3d107b334b975da7d80a152440dd43b2cfab464dbdf096f998f6646e"
+    }
+  ],
+  "verification": [
+    {
+      "command": "make doc DOC=liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost PROVIDER=gpt",
+      "exit_code": 0,
+      "log": "build.log"
+    },
+    {
+      "command": "tools/check-proper-components --provider gpt --document liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost --phase artifacts --edition research",
+      "exit_code": 0,
+      "log": "components.log"
+    },
+    {
+      "command": "tools/check-content-preflight --provider gpt --document liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost --edition research",
+      "exit_code": 0,
+      "log": "content-preflight.log"
+    },
+    {
+      "command": "make check-sources",
+      "exit_code": 2,
+      "log": "check-sources.log",
+      "limit": "Reusable source library validates, including 3815 bindings; aggregate document catalogue requires the declared future homily.tex. No new shared defect or placeholder repair."
+    },
+    {
+      "command": "tools/pdf-review --output build/tpt-runs/a72731c5491066a3/artifacts/author-study-0002/rasters --cache build/tpt-runs/a72731c5491066a3/artifacts/author-study-0002/raster-cache --jobs 2 build/tpt-runs/a72731c5491066a3/artifacts/author-study-0002/study-proof.pdf",
+      "exit_code": 0,
+      "log": "pdf-review.log"
+    },
+    {
+      "command": "git diff --check -- src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+      "exit_code": 0
+    }
+  ],
+  "visual_inspection": {
+    "method": "Fresh direct full-page view_image inspection of every final tools/pdf-review raster",
+    "pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    "observations": "No clipping, collisions, broken table, stranded heading or illegible footnote observed. Corrected Psalm paragraph and Augustine locator readable on page 24; final colophon fits page 26.",
+    "scope": "Author verification, not independent review"
+  },
+  "text_integrity": {
+    "appointed_latin_bodies": 17,
+    "appointed_english_bodies": 17,
+    "comparison": "Exact text match to propers/verified.md after TeX escaping, verse-label formatting, and trimming outer whitespace. No lexical changes.",
+    "body_word_count": 7233,
+    "per_component": {
+      "00-opening": 651,
+      "20-commentary": 2088,
+      "30-mercy-received": 1983,
+      "40-protected-pilgrimage": 2193,
+      "50-comparison": 318
+    },
+    "count_method": "English-alphabet word tokens with internal apostrophe/hyphen retained; five core exposition components, including opening map and sense distillations; excludes footnotes, TeX commands, appointed-text display, historical appendix, and terminal apparatus."
+  },
+  "native_sources": [
+    {
+      "source": "Haydock Bible historical 1859 facsimile, printed 780\u2013781, PDF 816\u2013817",
+      "inspection": "Direct visual inspection of previously acquired page images. Page 781 confirms David instructing Solomon, David under Saul, or Daniel consoling captives, with general Davidic attribution.",
+      "limits": "No fresh acquisition or full PDF hash verification; exact 2014 resetting remains unavailable and is not claimed."
+    },
+    {
+      "source": "Augustine NPNF Psalm XC sections 1\u20133, retained CCEL source.txt lines 45083\u201345155",
+      "inspection": "Direct retained-text reading; Mosaic-authorship caveat occurs in section 2.",
+      "limits": "No fresh print-edition collation."
+    }
+  ],
+  "preservation": "Only three study-owned files changed against the author-entry snapshot. Source owners, accepted research, chronology dates and fingerprints, appointed text and core exposition unchanged.",
+  "process_shutdown": "All author-started build, check, and raster processes completed. No background process remains.",
+  "workflow_boundary": "No staging, commit, push, installation, shared-code edit, archive assembly or workflow advancement performed. Cold review and later companion/publication stages remain required."
+}

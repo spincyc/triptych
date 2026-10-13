@@ -49,9 +49,21 @@ provider = "gpt"
 run_id = "a72731c5491066a3"
 workflow = "proper-study"
 workflow_version = 10
-stage = "research-review"
-iteration = 1
+stage = "visual-review"
+iteration = 0
 disposition = "PASS"
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
+[[stages]]
+stage = "homily-review"
+iteration = 0
+disposition = "PASS"
+run_id = "a72731c5491066a3"
+workflow = "proper-study"
+workflow_version = 10
 standing = 0
 accepted_count = 0
 advisory_count = 0
@@ -59,6 +71,18 @@ observation_count = 0
 
 [[stages]]
 stage = "research-review"
+iteration = 2
+disposition = "PASS"
+run_id = "a72731c5491066a3"
+workflow = "proper-study"
+workflow_version = 10
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[stages]]
+stage = "study-review"
 iteration = 1
 disposition = "PASS"
 run_id = "a72731c5491066a3"
@@ -68,3 +92,35 @@ standing = 0
 accepted_count = 0
 advisory_count = 0
 observation_count = 0
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 0
+disposition = "PASS"
+run_id = "a72731c5491066a3"
+workflow = "proper-study"
+workflow_version = 10
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
+[[stages]]
+stage = "visual-review"
+iteration = 0
+disposition = "PASS"
+run_id = "a72731c5491066a3"
+workflow = "proper-study"
+workflow_version = 10
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-001"
+severity = "advisory"
+location = "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/03-chronology.tex, appendix-reference paragraph; rendered concise p. 2"
+problem = "The Matthew pointer says pp. 24–25, but an independent current full-study build places the entire named Matthew subsection and its note on p. 24; p. 25 starts Ephesians. The range still leads the reader to the right subsection, so this is a minor locator imprecision rather than a blocking lookup failure."
+required_result = "When editing this locator, change the Matthew reference to p. 24, or regenerate it from the full study’s settled physical location."

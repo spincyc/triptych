@@ -1,0 +1,204 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "mission-collect",
+            "luke-collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "mission-secret",
+            "luke-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "mission-postcommunion",
+            "luke-postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-body.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "homily-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "mission-collect",
+        "luke-collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "mission-secret",
+        "luke-secret",
+        "preface",
+        "communion",
+        "postcommunion",
+        "mission-postcommunion",
+        "luke-postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "mercy-received"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "mission-collect",
+            "luke-collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "mission-secret",
+            "luke-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "mission-postcommunion",
+            "luke-postcommunion"
+          ],
+          "key": "mercy-received",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "authors": [
+            "Gregory the Great",
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Robert Bellarmine",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "protected-pilgrimage"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "mission-collect",
+            "luke-collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "mission-secret",
+            "luke-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "mission-postcommunion",
+            "luke-postcommunion"
+          ],
+          "key": "protected-pilgrimage",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+    "files": {
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/homily.tex": "272c13654ed10c0be7d28df84041d2110a8f55a71e3a4c4004cdff98739bd9ad",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/interpretations.md": "e436c3374a0ed3e6b2833aeef8361af39a2e4c1bffba5cd71c60e1bb23938ef7",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md": "ccd4b0fe7be72839009595197b84a653a1b85f3563a0f306d8537c3ea8e68d7c",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/source-bindings.toml": "c7695743cd3b15dfbdae1fa19aedfc2ffdf9bb35829d5c28ede733baebd79712",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/homily/10-body.tex": "919a072552936362be959c97fe2a7d363992e9765757eafb9ed7f96c2f2fc094",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/homily/90-apparatus.tex": "f85245aed3db629ed34323362b91cb7a8bd1e0e14e574bf62d1315149f85dd4b"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "10",
+            "692be31073c9d612d9b08b3eb086d865bc3ed25f32a26f0a50c98f0a1e65ca65",
+            "a72731c5491066a3",
+            "9c4d5e5eb1cb12bc10ceece135f344c284ff8e52",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "PASS for The Words He Would Not Hear (homily.tex): continuous speech review, an explicit Cana text-substitution test, comparison with both studies, and independent checks of Matthew 18, Ephesians 6, Job 1\u20132, Psalm 118, Chrysostom, Augustine, Aquinas III.88, the 1962 Missal pp.413\u2013415 and Schuster III p.181 support its exegetical movement and pastoral distinctions. All nine sealed inputs remain unchanged; the three-page proof matches the 1,257 spoken words, yielding 10.5\u201311.4 minutes at 120\u2013110 words per minute before pauses, with no audible or timed human rehearsal claimed; detailed evidence and limits are in build/tpt-runs/a72731c5491066a3/artifacts/homily-review-0000/review-evidence.json."
+}

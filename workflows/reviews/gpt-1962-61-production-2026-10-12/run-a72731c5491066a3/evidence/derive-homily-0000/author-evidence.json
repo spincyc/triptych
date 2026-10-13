@@ -1,0 +1,28 @@
+{
+  "stage": "derive-homily",
+  "iteration": 0,
+  "packet_sha256": "c9d297825dc00025e30ba91adfdca862238f7172e88ac9220f95d7e9f3a13e74",
+  "spoken_words": 1257,
+  "count_method": "Alphabetic word tokens; internal apostrophes and hyphens retained. Spoken component only.",
+  "source_matches_pdf_spoken_tokens": true,
+  "pdf_extraction_method": "pdftotext -raw pages 1-2; title, running heads and page numbers removed. Default extraction interleaves the two columns.",
+  "minutes_at_120_wpm": 10.475,
+  "minutes_at_110_wpm": 11.427272727272728,
+  "estimate_with_brief_pauses": "approximately 11-12 minutes; no audible or human timed rehearsal",
+  "pdf_pages": 3,
+  "pdf_bytes": 245076,
+  "pdf_sha256": "cf59a2d2cd49c33189a55712761da1934c1e0ed909284e5a6d9622f775dc9e17",
+  "final_revision": "2026-10-13T04:24:11Z",
+  "diagnostics": [],
+  "all_pages_visually_inspected": [
+    1,
+    2,
+    3
+  ],
+  "make_doc": "PASS",
+  "homily_content_preflight": "PASS",
+  "homily_artifact_components": "PASS",
+  "make_check_sources": "exit 2: generated document catalogue drift; global owner follow-up",
+  "upstream_defects_found": [],
+  "processes": "All worker-started build, checks and rasterization completed; no background processes started."
+}

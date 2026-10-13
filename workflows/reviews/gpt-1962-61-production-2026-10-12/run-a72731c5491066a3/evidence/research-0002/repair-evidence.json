@@ -1,0 +1,127 @@
+{
+  "stage": "research",
+  "iteration": 2,
+  "finding": "STU-001",
+  "packet_sha256": "1c124e626211b08428e619ce034b75b70f4678c2d454d6ee9772a3a6576ad0d2",
+  "verified_locus": "Haydock Bible, 1859 source printing in registered 2014 Loreto memorial facsimile, Psalm 118:1 note beginning on printed p.780 / PDF p.816 and continuing on printed p.781 / PDF p.817; attribution paragraph in left commentary column of p.781",
+  "source_pdf_sha256": "9d2dd602cc4a574a8300936c37b7e2f1b3be938803acc6a607cbf5622a2fcab2",
+  "source_check": "Complete acquired 1,942-page PDF rehashed; extracted pages 816–817 rendered by tools/pdf-review and both page images read. No re-research of unrelated accepted claims.",
+  "corrected_row": "| `row-b5b7957d62c25282` | Ps118 traditional David attribution, with CE *David* vol4(1908) usual reign1055–1015BC. Haydock's Psalm118:1 note, continued on printed781/PDF817, proposes David writing to instruct the young Solomon (Berthier), David writing in his own youth under Saul's persecution (Muis, Bossuet and others), or Daniel writing to console the captives (Calmet). Solomon is the pupil, not a proposed author. The note nevertheless reports the Psalm's general attribution to David. | Traditional author's era, conditional on that attribution, not an established date/place of Ps118 or its distress. Haydock's conjectures are not harmonized into a single historical occasion. |",
+  "changed_files": [
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md",
+      "sha256": "ccd4b0fe7be72839009595197b84a653a1b85f3563a0f306d8537c3ea8e68d7c"
+    },
+    {
+      "path": "src/sources/inventories/publications-v1.toml",
+      "sha256": "cc95aad9a8640ed93efa197ee00d4dc30596310020b4f61f44bf48fb5e998500"
+    },
+    {
+      "path": "src/sources/inventories/source-family-migration-v1.toml",
+      "sha256": "beb553879e2587ddfda6b482b29f6346f29a2d7ecca5badc3372449d86a6012f"
+    }
+  ],
+  "unchanged_canonical_passage": {
+    "path": "src/sources/works/george-leo-haydock/douay-rheims-with-haydock-commentary/editions/2014-loreto-feeney-memorial/passages/psalm-118-attribution-and-occasions.toml",
+    "sha256": "819d607ff011c46832fbe338c52f1e51841f2075a551fa8b41e54b53d135dabd",
+    "source_fingerprint": "sha256:a8c1b08afa2a0ad782f36d3dd77f9ef12c2e75faf68c8ebec35d253f52d89901"
+  },
+  "closure": {
+    "prior_seal_file_count": 1738,
+    "changed_prior_seal_files": [
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md"
+    ],
+    "all_other_prior_sealed_evidence_unchanged": true,
+    "canonical_passage_in_prior_seal": true,
+    "new_evidence_dependencies": [],
+    "source_inventory_changed_rows": [
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/evaluations/blocking-findings-v1.toml",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/main.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/proper-components.toml",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/production-review.md",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/00-opening.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/10-appointed-text.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/20-commentary.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/30-mercy-received.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/40-protected-pilgrimage.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/50-comparison.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/70-date-location.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/90-study-apparatus.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/web-edition.toml"
+    ],
+    "unrelated_consumer_inventory_rows_changed": false
+  },
+  "unchanged_chronology": [
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology.toml",
+      "sha256": "ef61c5010a361175da81c19108772282d6eab505667433694d2f04c28dbe6422"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology-annotations.tex",
+      "sha256": "33b9163ad02af527ee07041eaec7cbfdd9aa46782c0ce8e75ad9c13140542f6a"
+    }
+  ],
+  "checks": [
+    {
+      "command": "tools/tpt source-inventory refresh --audited-on 2026-10-12",
+      "exit_code": 1,
+      "result": "No write: date precedes prior inventory audit. UTC was independently checked as 2026-10-13."
+    },
+    {
+      "command": "tools/tpt source-inventory refresh --audited-on 2026-10-13",
+      "exit_code": 0,
+      "result": "Current target leaf surface recorded; classification strata unchanged."
+    },
+    {
+      "command": "tools/tpt source-family-migration refresh --audited-on 2026-10-13",
+      "exit_code": 0,
+      "result": "Only inventory/surface snapshot changed; canonical catalog and review states preserved."
+    },
+    {
+      "command": "tools/tpt proper-chronology record --provider gpt --document liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost --check",
+      "exit_code": 0,
+      "result": "Current."
+    },
+    {
+      "command": "tools/tpt proper-chronology annotations --provider gpt --document liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost --presentation orientation-v1 --check",
+      "exit_code": 0,
+      "result": "Current."
+    },
+    {
+      "command": "make check-sources",
+      "exit_code": 2,
+      "result": "Deployment prerequisite check-document-catalogue exits 70 because the current production manifest names homily.tex before that later owner has authored it. Source-library validation in this run passed (3815 bindings)."
+    },
+    {
+      "command": "tools/tpt source-inventory check",
+      "exit_code": 0,
+      "result": "148 publications, 2599 source surface files, 11 owners."
+    },
+    {
+      "command": "tools/tpt source-family-migration check",
+      "exit_code": 0,
+      "result": "159 review units honestly pending; no family-screening completion claimed."
+    },
+    {
+      "command": "make check-source-containment check-commentator-inventories",
+      "exit_code": 0,
+      "result": "Containment, standing and formulary checks passed; existing missing standing-row advisories for Anthony of Padua and Cyril of Alexandria remain."
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "result": "No whitespace errors."
+    }
+  ],
+  "owner_actions": [
+    "author-study: replace the false Solomon-authorship alternative in sections/70-date-location.tex with the verified proposals and preserve conditional Davidic era/unresolved occasion; STU-002 is an advisory for that same author to fix the Augustine citation to section 2 or sections 1–2.",
+    "Complete later authored components, then rerun make check-sources; no shared code repair is demonstrated."
+  ],
+  "limits": [
+    "This closes the research-owned part of STU-001; downstream prose propagation and cold acceptance remain separate stages.",
+    "No new source record, fingerprint, date, interpretation, appointed text, rights position or review verdict was supplied.",
+    "Source page images are private ignored review evidence; no complete PDF or raster enters tracked/public outputs."
+  ],
+  "process_shutdown": "All invoked commands completed; no task process, server or child agent remains."
+}

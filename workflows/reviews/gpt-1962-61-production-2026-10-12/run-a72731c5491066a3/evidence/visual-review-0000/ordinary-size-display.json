@@ -1,0 +1,69 @@
+{
+  "public_evidence_kind": "Explicitly labeled display derivatives of verified tools/pdf-review page rasters",
+  "displays": [
+    {
+      "artifact": "synthesis",
+      "page": 2,
+      "source_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/pages/page-02.png",
+      "source_raster_sha256": "4e1de6497e58c0a69600a13410940c44776f7fa43879b44f583a9316d3b96f76",
+      "source_pixels": [
+        1700,
+        2200
+      ],
+      "fixture_sha256": "f08027807c8b3d6e36fe45b4f08c345c65504fd871652ca443c331c898e685c4",
+      "fixture_embeds_exact_source_raster": true,
+      "display_derivative": "build/tpt-runs/a72731c5491066a3/artifacts/visual-review-0000/synthesis-page-02--96cssppi-display.png",
+      "display_derivative_sha256": "b7edaf090a2331d6a84acb27876aecbdc6dd794f9003a9c12444fd9abc097548",
+      "display_pixels": [
+        816,
+        1056
+      ],
+      "display_method": "Approved headless Chromium; embedded verified helper PNG displayed at 816 by 1056 CSS pixels, device scale factor 1, entire Letter page at nominal 96 CSS pixels per inch. This is a display derivative, not a new PDF rasterization.",
+      "browser_exit_code": 0
+    },
+    {
+      "artifact": "study",
+      "page": 23,
+      "source_raster": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-23.png",
+      "source_raster_sha256": "6c65cb1cd4c7b0a4bc0d1feb680b92f1a0d19d40c444e9952b28a5269a5c9deb",
+      "source_pixels": [
+        1700,
+        2200
+      ],
+      "fixture_sha256": "41db56a9b8fd6f54195103d81e012550def679ce6db4557c1e72d38209c6fa8a",
+      "fixture_embeds_exact_source_raster": true,
+      "display_derivative": "build/tpt-runs/a72731c5491066a3/artifacts/visual-review-0000/study-page-23--96cssppi-display.png",
+      "display_derivative_sha256": "1280aaed8102bd65b0031e2ccf8213742ee8f32f7ee4204315304e07ac061da8",
+      "display_pixels": [
+        816,
+        1056
+      ],
+      "display_method": "Approved headless Chromium; embedded verified helper PNG displayed at 816 by 1056 CSS pixels, device scale factor 1, entire Letter page at nominal 96 CSS pixels per inch. This is a display derivative, not a new PDF rasterization.",
+      "browser_exit_code": 0
+    }
+  ],
+  "initial_attempt": {
+    "sandbox_exit_code": 133,
+    "failure": "Crashpad setsockopt: Operation not permitted",
+    "local_stderr_sha256": "518b17381785a0cbc2bc87c9ceaa4f22a46495147e4fe2fc622f5c5b0adc4ad2",
+    "screenshot_produced": false
+  },
+  "interrupted_retry": {
+    "state": "Approval request interrupted before a screenshot or running-session handle was returned",
+    "screenshot_claimed": false
+  },
+  "resumed_escalated_attempts": {
+    "state": "Both approved executions completed with exit code 0 and produced the inspected screenshots",
+    "nonfatal_message": "Desktop power-service D-Bus interface unavailable; screenshot generation succeeded"
+  },
+  "process_shutdown": {
+    "all_started_browser_commands_exited": true,
+    "owned_browser_profile_processes_observed_at_close": 0,
+    "active_tool_session": false,
+    "scope": "Owned browser profile checked; no unrelated browser process was signaled"
+  },
+  "limits": [
+    "Nominal ordinary-size screen display only; hardware physical size is not calibrated.",
+    "No physical print, audible rehearsal, native interactive PDF-viewer, or assistive-technology test is claimed."
+  ]
+}

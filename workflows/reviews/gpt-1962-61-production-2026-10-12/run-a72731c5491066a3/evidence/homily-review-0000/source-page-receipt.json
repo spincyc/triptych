@@ -1,0 +1,22 @@
+{
+  "sources": [
+    {
+      "source": "Missale Romanum 1962",
+      "whole_file_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "digital_pages": [
+        494,
+        495,
+        496
+      ]
+    },
+    {
+      "source": "Schuster Sacramentary III 1927",
+      "whole_file_sha256": "410f6d1155436714f76a4ca3645edcd33ca6ef65bed3d37b1d3e6f10b0c37239",
+      "digital_pages": [
+        197
+      ]
+    }
+  ],
+  "extraction": "pdfseparate; rasterization via tools/pdf-review in dedicated source-rasters child",
+  "inspected": true
+}

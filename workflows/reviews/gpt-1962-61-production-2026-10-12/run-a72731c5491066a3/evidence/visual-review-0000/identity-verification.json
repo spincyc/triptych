@@ -1,0 +1,630 @@
+{
+  "packet_sha256": "acd26ac84862193e6e25985d0c425e802e3a82154bf9382cc09b445649ef1f3e",
+  "artifacts_receipt": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/artifacts.json",
+  "artifacts_receipt_sha256": "9cdfa0bfa5d687e3b8f71b8aa512b48b639d7563025cb91b4e5e620f37d0e1a9",
+  "receipt_matches_seal": true,
+  "sealed_files": [
+    {
+      "path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily.pdf",
+      "expected_sha256": "cf59a2d2cd49c33189a55712761da1934c1e0ed909284e5a6d9622f775dc9e17",
+      "actual_sha256": "cf59a2d2cd49c33189a55712761da1934c1e0ed909284e5a6d9622f775dc9e17",
+      "matches": true
+    },
+    {
+      "path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.pdf",
+      "expected_sha256": "ccb26a8cc49035b06ecfe6067679b6eef4c7d318ec59f45152bfccd1f49af325",
+      "actual_sha256": "ccb26a8cc49035b06ecfe6067679b6eef4c7d318ec59f45152bfccd1f49af325",
+      "matches": true
+    },
+    {
+      "path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.pdf",
+      "expected_sha256": "53a30dd4b8d95831a3540252484508c8ef3c28792a9e05e19032a78ba809635d",
+      "actual_sha256": "53a30dd4b8d95831a3540252484508c8ef3c28792a9e05e19032a78ba809635d",
+      "matches": true
+    },
+    {
+      "path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.aux",
+      "expected_sha256": "2bfdb9c12bb938b301e7352611b4e71ea54209a60b8fbb193cab564204c643b1",
+      "actual_sha256": "2bfdb9c12bb938b301e7352611b4e71ea54209a60b8fbb193cab564204c643b1",
+      "matches": true
+    },
+    {
+      "path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.aux",
+      "expected_sha256": "6fcc3d1f8a3b51af339c2212de7c8d5cf81b148b4772d820d40dd0fc027e30ca",
+      "actual_sha256": "6fcc3d1f8a3b51af339c2212de7c8d5cf81b148b4772d820d40dd0fc027e30ca",
+      "matches": true
+    },
+    {
+      "path": "src/common/preamble.tex",
+      "expected_sha256": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "actual_sha256": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "matches": true
+    },
+    {
+      "path": "src/common/propers-format.tex",
+      "expected_sha256": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "actual_sha256": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "matches": true
+    },
+    {
+      "path": "src/common/propers-homily.tex",
+      "expected_sha256": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "actual_sha256": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/generation-metadata.tex",
+      "expected_sha256": "5a2c49e9e33a9cbd72eaef7db4930f1ebd632ab82d422530e5eb376174bc26f8",
+      "actual_sha256": "5a2c49e9e33a9cbd72eaef7db4930f1ebd632ab82d422530e5eb376174bc26f8",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/homily.tex",
+      "expected_sha256": "272c13654ed10c0be7d28df84041d2110a8f55a71e3a4c4004cdff98739bd9ad",
+      "actual_sha256": "272c13654ed10c0be7d28df84041d2110a8f55a71e3a4c4004cdff98739bd9ad",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/main.tex",
+      "expected_sha256": "9199a61c3e20a758908211f53c3c32ea90580c840cc469c26b7735f05058a788",
+      "actual_sha256": "9199a61c3e20a758908211f53c3c32ea90580c840cc469c26b7735f05058a788",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/proper-components.toml",
+      "expected_sha256": "a7541bff5254a352c2b7ed84edea40290182a66f498e9dfc148ed6d819745359",
+      "actual_sha256": "a7541bff5254a352c2b7ed84edea40290182a66f498e9dfc148ed6d819745359",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology-annotations.tex",
+      "expected_sha256": "33b9163ad02af527ee07041eaec7cbfdd9aa46782c0ce8e75ad9c13140542f6a",
+      "actual_sha256": "33b9163ad02af527ee07041eaec7cbfdd9aa46782c0ce8e75ad9c13140542f6a",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/00-opening.tex",
+      "expected_sha256": "bf72f98890686c5d8ce5cef46e05946bc522c21fed8db11e71b623b6a5a55aaa",
+      "actual_sha256": "bf72f98890686c5d8ce5cef46e05946bc522c21fed8db11e71b623b6a5a55aaa",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/10-appointed-text.tex",
+      "expected_sha256": "0bd75fcf19e0208fad9559226f7dbb602d037849a7923685b845b8292506d788",
+      "actual_sha256": "0bd75fcf19e0208fad9559226f7dbb602d037849a7923685b845b8292506d788",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/20-commentary.tex",
+      "expected_sha256": "1c1fdd5c16544e45c34e1215a89dce10a4dda0249f41ec69ede1f14553240440",
+      "actual_sha256": "1c1fdd5c16544e45c34e1215a89dce10a4dda0249f41ec69ede1f14553240440",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/30-mercy-received.tex",
+      "expected_sha256": "1dfb0063ccf90863dfc91a361939a49265cd6dba2ed48299f5cd0664b185ac1b",
+      "actual_sha256": "1dfb0063ccf90863dfc91a361939a49265cd6dba2ed48299f5cd0664b185ac1b",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/40-protected-pilgrimage.tex",
+      "expected_sha256": "018e2af75a0c6e6d3e2a2a06e9002f5fe1c78e3f6bcaab11dffbf6d5a3a78d56",
+      "actual_sha256": "018e2af75a0c6e6d3e2a2a06e9002f5fe1c78e3f6bcaab11dffbf6d5a3a78d56",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/50-comparison.tex",
+      "expected_sha256": "c91305371fb5d4a390e33902aeb076b9716ab68bfbec3f07b4cf53bf19e71409",
+      "actual_sha256": "c91305371fb5d4a390e33902aeb076b9716ab68bfbec3f07b4cf53bf19e71409",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/70-date-location.tex",
+      "expected_sha256": "caad78ab3d107b334b975da7d80a152440dd43b2cfab464dbdf096f998f6646e",
+      "actual_sha256": "caad78ab3d107b334b975da7d80a152440dd43b2cfab464dbdf096f998f6646e",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/90-study-apparatus.tex",
+      "expected_sha256": "96361e3ac94238e7d8e20ce03b6bb61b6ca17a7d5645b62e226d98233f5452eb",
+      "actual_sha256": "96361e3ac94238e7d8e20ce03b6bb61b6ca17a7d5645b62e226d98233f5452eb",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/01-inventory.tex",
+      "expected_sha256": "2bc3af9dff7b00f250812afd1ecc950733c144198eb001fa451968cc0a25bb1e",
+      "actual_sha256": "2bc3af9dff7b00f250812afd1ecc950733c144198eb001fa451968cc0a25bb1e",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/02-overview.tex",
+      "expected_sha256": "3d7c362c17c4d93ef1d429a1a69df5ee3025d8250a0709e30d3a08c67eff3846",
+      "actual_sha256": "3d7c362c17c4d93ef1d429a1a69df5ee3025d8250a0709e30d3a08c67eff3846",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/03-chronology.tex",
+      "expected_sha256": "e654726ea669728e45449382c7549541c6c085e82e814c00f9a8498d3b818962",
+      "actual_sha256": "e654726ea669728e45449382c7549541c6c085e82e814c00f9a8498d3b818962",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/04-themes.tex",
+      "expected_sha256": "957cd0957b314948f1ee0ac451647a774df17d77f34dd9632c35db455fc25b4f",
+      "actual_sha256": "957cd0957b314948f1ee0ac451647a774df17d77f34dd9632c35db455fc25b4f",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/10-commentary.tex",
+      "expected_sha256": "95398ec14fb1e495449aa6dcf3f79bdf8cba4a329815ae83d14df7a3389aae95",
+      "actual_sha256": "95398ec14fb1e495449aa6dcf3f79bdf8cba4a329815ae83d14df7a3389aae95",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/90-apparatus.tex",
+      "expected_sha256": "4ad5b663460cb033ced7eca4a66a9c8f63649163c3cc307290948d939553c84e",
+      "actual_sha256": "4ad5b663460cb033ced7eca4a66a9c8f63649163c3cc307290948d939553c84e",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/homily/10-body.tex",
+      "expected_sha256": "919a072552936362be959c97fe2a7d363992e9765757eafb9ed7f96c2f2fc094",
+      "actual_sha256": "919a072552936362be959c97fe2a7d363992e9765757eafb9ed7f96c2f2fc094",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/homily/90-apparatus.tex",
+      "expected_sha256": "f85245aed3db629ed34323362b91cb7a8bd1e0e14e574bf62d1315149f85dd4b",
+      "actual_sha256": "f85245aed3db629ed34323362b91cb7a8bd1e0e14e574bf62d1315149f85dd4b",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/synthesis.tex",
+      "expected_sha256": "f96db06abff18f4b9b7bbb5572c4446f6cf20a1d07da70d622c59de123f603af",
+      "actual_sha256": "f96db06abff18f4b9b7bbb5572c4446f6cf20a1d07da70d622c59de123f603af",
+      "matches": true
+    }
+  ],
+  "all_sealed_files_match": true,
+  "raster_run_receipt": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/review-run.json",
+  "raster_run_receipt_sha256": "c4b650a77fbfcdbebc1443c58e0ff8ea2e6fdaaed64b078f219421488cb99520",
+  "raster_cache_records": [
+    {
+      "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/review-cache.json",
+      "receipt_sha256": "ce5ada399a919952a5a658e976b99f1d65a6881cb465fedacb90826c2373d014",
+      "pdf_sha256": "53a30dd4b8d95831a3540252484508c8ef3c28792a9e05e19032a78ba809635d",
+      "page_count": 26,
+      "all_files_match": true,
+      "files": [
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/contact-sheets/sheet-001.png",
+          "sha256": "7f9a73f5443a5ea98de3bdcde088577e6c377bc822c365d4cf77da02cef3475e",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/contact-sheets/sheet-002.png",
+          "sha256": "d85f1f4553f0396d39434dfd3c851c0977e5625cbb0bc10e40a7649457fdb965",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-01.png",
+          "sha256": "d503d8e5fbfd48b664c0426d5728515aeecc6e9c4a7f4683e698cccaf43b7eb9",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-02.png",
+          "sha256": "c3c4af19d70113820904cd70e39aa405aef447b7c3c0c07a70d4bc17d34c52a0",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-03.png",
+          "sha256": "8e58af3027277e4e5ddaac43d8534ae7b02e4746e999fd6f78a957d8828ae644",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-04.png",
+          "sha256": "ead016c673419349323be42415f3f41427d5540459a0aa3e7f2596df9c87e4c6",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-05.png",
+          "sha256": "1f638596224df258be60542eab3bd8fc9c8c5d8e949869b265e54144ec81b89d",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-06.png",
+          "sha256": "9171ae47b754881a6beeae6345368591e482f38b26d4c96c769e7e481bd7ba2d",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-07.png",
+          "sha256": "e362be82bedb1e99f18c1d569a92564f495f16c300b57a7da3143542b00d2c2d",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-08.png",
+          "sha256": "bf1fe1bf8439a897b8159fc0d11f684c05cc80ec417d7e6d1b12627ab861cbe6",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-09.png",
+          "sha256": "578e71b0111b87f0db56eeb9ae6c156b9db65a513ed8384a45066e9ef074b4c3",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-10.png",
+          "sha256": "b90f61f5365669a5ed2f7c1cc25097cb7273e3587f2a9e7ac98a2a5f3a7eb700",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-11.png",
+          "sha256": "93a26424333b3ea325fbd446b16f48d9c5345beca1707d7ac49eb06236c72a71",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-12.png",
+          "sha256": "a6b38400fe721d95473f7c8481448a7c11596be75dae92de890b75fa41703932",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-13.png",
+          "sha256": "3eab543df49cb0867a275d2d8e8b4e0cc91ebf49a26c202c2c670112a23ef3ff",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-14.png",
+          "sha256": "136ca616367898d7a3da16c42ec988fe2ef10eba020d13215207a3768d150064",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-15.png",
+          "sha256": "e201bdef5a078487cf2b4ac33d9d3f4d28cf3dd7985c1e0e4ff9c45fe7ba18ad",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-16.png",
+          "sha256": "aa6f16071d28fc9317881f4a588250507f6307fd1deccbd9e13ac892c4bf4729",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-17.png",
+          "sha256": "2c549d75da80e41131c937dcfb933e3d8ebe4011b8c53b03fd65436933c68d55",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-18.png",
+          "sha256": "0472403eb00fc380b40dd0713eb5a11181214b3972f073b927783759562bd2c3",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-19.png",
+          "sha256": "4aa638e61d95def094815abd2f44499c3d103a0a997980c78b5bbc626ac5d60e",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-20.png",
+          "sha256": "2fb6624229a40c6e7fa5473efa425fa79a1d93df0cfc9116065d4da4547ca542",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-21.png",
+          "sha256": "56c8d4371615c28c5eb39be6ffc1ac1339c4cc27d9cd8dc7e4261b59ec6ac77c",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-22.png",
+          "sha256": "0c383fd6cd878089ae6bff1d22d295a0ce55aafa6b8804c67ff23301aa880273",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-23.png",
+          "sha256": "6c65cb1cd4c7b0a4bc0d1feb680b92f1a0d19d40c444e9952b28a5269a5c9deb",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-24.png",
+          "sha256": "b8b6d2a4b67c8c55aab65a2e8f6ed3d1786bb457077550f34912084f45b95f18",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-25.png",
+          "sha256": "09d784d017c314b5b2bca96aa710201e2d0e7147e28e257a912cdef4f92f22c5",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/pages/page-26.png",
+          "sha256": "e5d50de46f75a5f7107767898e364ec4aef513e9ab657a0745171f76450eea68",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-01.png",
+          "sha256": "7a8edda94d321bd508eeb66718c63a622a6ae5ada936265e4ec22917cda6a790",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-02.png",
+          "sha256": "171e4721129af596532e866b7b7751e6b3d8f151e1d8a43eec28d978b0e68d44",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-03.png",
+          "sha256": "17fad218282d34b363dd0f81dc77315b855c2168a33b338982f3a509f21a492f",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-04.png",
+          "sha256": "5a11a943e9ac548b2474a245aa90d9b7c840f04bac0f731af5e0326f3e47ef11",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-05.png",
+          "sha256": "9d418e3769a9ba9771b06a1c877adf7ae5594a9c28126930576c179e262bed49",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-06.png",
+          "sha256": "58f00671fdd7c7b7a444aec2034a42a9d3050d733ad1a5f56fae4d1b72d63a16",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-07.png",
+          "sha256": "8151392a6eb0fe5ca8804420e9371b73d43c13ca89d9d3872a6299f7e7937f7b",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-08.png",
+          "sha256": "8cc8cf784a918d623f43207cdfa78e7812ee87fb9786d1b7e80eecbf4d3bfe58",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-09.png",
+          "sha256": "9e610e7f113657ee829ee5a8028084e6f6ad0519c039bb0ae53dea60242797a6",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-10.png",
+          "sha256": "7e316f21b5e32128aed964283f21f80c0984ef2123cbe6a1c8ea3d5b6dd282d8",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-11.png",
+          "sha256": "02df20b17c34cdb9b1c9bb99c08ac85df53b54b0ebd92bad4d9d1d4ad877aa1d",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-12.png",
+          "sha256": "3d86e558d2617e23fb89f825dadc53b9b5861236ffec4e88eff1b7beadb494ca",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-13.png",
+          "sha256": "0c645e53ffffe213315187e968eb4f37c3fde304c2082ff8764e2401f512e67b",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-14.png",
+          "sha256": "a1cfaac765cd01fb06bf9b12ffbf0c1dce8c806b21fa6e14902ce9d9034a81d0",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-15.png",
+          "sha256": "fb4b8f40e82f4ae325aafb347bd157189ad4f5143447e38e9e821eadc55df15b",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-16.png",
+          "sha256": "732b459c77a71adb3cf4803a08388850d05e3c5e89c858ec9f6229103bc2c1bf",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-17.png",
+          "sha256": "d6523d91bdb8764ead9adeb1b9eeb865ecf0ba9df96e49a93673666203e43538",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-18.png",
+          "sha256": "72e009fc25bc99b51977719200770e7fa940e472e6df3715bdda0e66b61cb2f9",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-19.png",
+          "sha256": "f52d5d8ce1c19534806da4ac89a495a92d1c03c323b449ef48303d921c94a908",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-20.png",
+          "sha256": "7bf9ec40c5585b49008ebe171c2cadf3778b50f99d546de8b5ab11b0fcce6f36",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-21.png",
+          "sha256": "c0e3515f1bf87a3731e4bae26305aa178432b16a59aded9cfb806b3b679d4f83",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-22.png",
+          "sha256": "4fccaeee9319c7418e06557c839b578c2095840336e659b0f7f90befebf36cca",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-23.png",
+          "sha256": "63f4869a60c64bc33ee105f84b34383a831ed204745e442da67bcce3a45075c9",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-24.png",
+          "sha256": "e8304f6b00eca9a163f281051d3d60dc1819e1b19a67a9c0321859734070ca6a",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-25.png",
+          "sha256": "5ffb11ae46df2a092610ebc1d97472193a7d5961a2e8a20e5137484d7ebe5b0a",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/thumbnails/page-26.png",
+          "sha256": "d7888e76941f39dd20cdb3596b253ff98c3f5eff249c342e6de09f5a1ed9341e",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily/review-cache.json",
+      "receipt_sha256": "8c7806c737f8d425a30591aa1e6ae8749d529bc65867f9fc1ac1441432297658",
+      "pdf_sha256": "cf59a2d2cd49c33189a55712761da1934c1e0ed909284e5a6d9622f775dc9e17",
+      "page_count": 3,
+      "all_files_match": true,
+      "files": [
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily/contact-sheets/sheet-001.png",
+          "sha256": "c11facc6d7bee55e245acc755fc40b66a5a0e4aeb457303e353b3000e6dd4d3b",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily/pages/page-1.png",
+          "sha256": "3a595067ca57cba2e2debaf165d5a6a4ea0c68b7eec736a3cc2758b26e586fdd",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily/pages/page-2.png",
+          "sha256": "0dbb1339d0938c52053e39720be4ac5d473b8ecc693ee86e74d9bf9b545b857a",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily/pages/page-3.png",
+          "sha256": "8a9746318663b5267ed35a84aa7ea72d468f88ce590fa2ab84ed4f7a2a21f936",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily/thumbnails/page-1.png",
+          "sha256": "f5e587d759e568371b43f786f5c938f4d1b685a09ede74ee70eaec6868bc458d",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily/thumbnails/page-2.png",
+          "sha256": "69c085da04c9775d5d4e718e4d0151b6c9ee849627a8bbba610f8fc513fbbc4f",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily/thumbnails/page-3.png",
+          "sha256": "181dc86533ab219d24fe73a07e656a36afea23e7956b1b1425ceee9600e57140",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/review-cache.json",
+      "receipt_sha256": "3c5671ed81b2f2dedf0d305ed640f3fabc74dd400f75d7aeeb8762091fc42cb1",
+      "pdf_sha256": "ccb26a8cc49035b06ecfe6067679b6eef4c7d318ec59f45152bfccd1f49af325",
+      "page_count": 10,
+      "all_files_match": true,
+      "files": [
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/contact-sheets/sheet-001.png",
+          "sha256": "9840c4fd1e5a6d6f4f109663e96ade735ea06a7377708e0e90a5b1aaddeb3be4",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/pages/page-01.png",
+          "sha256": "76c5e9b183d2f06de93d0bee5b8b57d1b79accc35f6326f6be97dc31239ed795",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/pages/page-02.png",
+          "sha256": "4e1de6497e58c0a69600a13410940c44776f7fa43879b44f583a9316d3b96f76",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/pages/page-03.png",
+          "sha256": "a36eb6ea3a72587641f1e3a5e2c95e8d9684b82811b0f83cf718044ddfc2bbc2",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/pages/page-04.png",
+          "sha256": "ce25710663bccbc72b6041ac47bab494b0a1c6dfeeb71a0802d9d03f0b671589",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/pages/page-05.png",
+          "sha256": "d99e6c323013fafd3d300f6652b85f6a19a61776002f926a50b04a4a61ae43f0",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/pages/page-06.png",
+          "sha256": "3fe93d628b90a1bfb25819312f0f6624d34702638f57eb318bb9ec93cdefdb90",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/pages/page-07.png",
+          "sha256": "2ee7ad1559d6745a0f42bb99a3a43cbcc995387b8d4e4cbe3e008d03d4b94ed6",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/pages/page-08.png",
+          "sha256": "da0473f2e9ecafa0a47ec256317d2b6111accf67e195e8ba03abf0cb70652eaf",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/pages/page-09.png",
+          "sha256": "8467969edce4bed689d1362ec6f6a670b90fa2cdc33c3c6938deb70481d99231",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/pages/page-10.png",
+          "sha256": "63d82d6147f0531bd249438b5bf8b22b1fcad26eba09fcbedd0e2f8ec0a1cfb5",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/thumbnails/page-01.png",
+          "sha256": "8fc48a7087fc2d06932e4848c36fd20cf72d489ee8eec44da4dc411b116f7dc0",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/thumbnails/page-02.png",
+          "sha256": "fa46f32e604ceeeba6e272de5325cd7bd4087d67cb1ce04555965ca5858f001b",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/thumbnails/page-03.png",
+          "sha256": "8ee5e7c74ec7217d7421c81795a8c89ee699a290a1a65870e55c5e469f080b5b",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/thumbnails/page-04.png",
+          "sha256": "ba3e430e853df0e7e8842b42ab9782babed069fd40c704967026de9ea3eb1d47",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/thumbnails/page-05.png",
+          "sha256": "0adac2a97eab4ef3cea5ab7e77b939149c285e768b1cf25b92e6f0fad0a2da20",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/thumbnails/page-06.png",
+          "sha256": "153fc0fda09b478a5d76c6611681e1bbc75645b2632d0c64b64e46cec87ffa5d",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/thumbnails/page-07.png",
+          "sha256": "aedec1c5176e1555ead3e02fc3e228520dce5e9ff9626e4da1787efa3bb28147",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/thumbnails/page-08.png",
+          "sha256": "0ba8e434f137a7d1fb0c4f8fa058a80beed725d445d81b9a2319afc31770d4cd",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/thumbnails/page-09.png",
+          "sha256": "90bc69b1978b26e8a3d3b61043182ceb43651a91f5894b0f70aa3c44cc3f6c95",
+          "matches": true
+        },
+        {
+          "path": "build/tpt-runs/a72731c5491066a3/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis/thumbnails/page-10.png",
+          "sha256": "554564bf6a91fcccc58960a2e56a18166c5f9c88d463d691bb55040dfdf2afe0",
+          "matches": true
+        }
+      ]
+    }
+  ]
+}

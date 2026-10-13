@@ -1,0 +1,73 @@
+{
+  "scope": "Coordinator reader check during authoring; not cold acceptance",
+  "initial_proof": {
+    "path": "build/tpt-runs/a72731c5491066a3/artifacts/derive-synthesis-0000/opening-provisional.pdf",
+    "sha256": "d6facefc7568edd9be9f8b0176fb29d5b82a5abe3a47057a3f76d68e66f377e6",
+    "full_page_images_read": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "revised_proof": {
+    "path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.pdf",
+    "sha256": "3376509e283102a01b63ec3f97b5401d8d6fa85277b6b712b455d2d18d540235",
+    "physical_pages": 10,
+    "full_page_images_read": [
+      2
+    ],
+    "page_2_png_sha256": "4e1de6497e58c0a69600a13410940c44776f7fa43879b44f583a9316d3b96f76"
+  },
+  "reader_findings": [
+    {
+      "finding": "Adjacent chronology rows ran together, especially the two Psalm groups and Gospel event/composition pair.",
+      "repair": "Added 2pt gaps between generated rows in the concise component.",
+      "outcome": "Revised page 2 inspected directly; nine rows and adjacent evidence notes fit legibly, with clearer row boundaries."
+    },
+    {
+      "finding": "Scope appendix sent PDF readers to internal authoring filenames.",
+      "repair": "Replaced them with section titles and pages in the accepted expansive study.",
+      "outcome": "Revised scope source read: appointed words pp.3-10 and scope/References pp.25-26."
+    }
+  ],
+  "content_read": [
+    "Complete concise inventory, four-sense overview, chronology, and two-page thematic opening via full-page images.",
+    "Complete 2,987-word concise commentary and 366-word provisional apparatus in source; revised apparatus opening checked after repair."
+  ],
+  "observations": [
+    "The complete appointed inventory and conditional additions are visible on page 1; the Vulgate-to-Hebrew Psalm key is clear.",
+    "The chronology separates events, composition, collection-wide boundaries and conditional attribution; story sites are distinguished from uncertain writing locations.",
+    "The concise argument explains the differing questions of mercy received and protected pilgrimage, develops the checked witnesses' inferences and retains consequential qualifications."
+  ],
+  "additional_findings": [],
+  "limit": "Later cold synthesis review, final artifact visual review and publication gates remain separate. Complete appointed Latin and English are in the expansive study; the concise edition contains the complete map and integrated commentary.",
+  "final_author_proof_comparison": {
+    "pdf_sha256": "873a34706aeb564af9f308632dd120350c10d2930b56440438742621f06da7ab",
+    "raster_manifest_sha256": "873a34706aeb564af9f308632dd120350c10d2930b56440438742621f06da7ab",
+    "manifest_matches_current_pdf": true,
+    "page_2_identical_to_inspected_image": true
+  },
+  "final_family_build_observation": {
+    "pdf_sha256": "ccb26a8cc49035b06ecfe6067679b6eef4c7d318ec59f45152bfccd1f49af325",
+    "physical_pages": 10,
+    "full_page_images_read": [
+      2
+    ],
+    "page_2_png_sha256": "4e1de6497e58c0a69600a13410940c44776f7fa43879b44f583a9316d3b96f76",
+    "page_2_identical_to_prior_inspected_image": true,
+    "additional_findings": [],
+    "limit": "Coordinator reader observation; separate final cold visual review and installation remain required."
+  },
+  "ordinary_size_coordinator_observation": {
+    "display": "build/tpt-runs/a72731c5491066a3/artifacts/visual-review-0000/synthesis-page-02--96cssppi-display.png",
+    "sha256": "b7edaf090a2331d6a84acb27876aecbdc6dd794f9003a9c12444fd9abc097548",
+    "pixels": [
+      816,
+      1056
+    ],
+    "method": "Direct original-detail viewing of the independent reviewer display derivative, whose evidence binds it to the final PDF helper raster.",
+    "observation": "All nine rows have recoverable passage/occurrence-place/date pairing. Event and composition rows for Matthew stay distinct; Psalms occasion, collection and attribution claims remain distinct. Six Matthew alternatives remain visible. Source pointers and uncertainty explanations fit below the single-page table.",
+    "limits": "Nominal screen size only; no calibrated physical print, independent rasterization or fresh source verification. Coordinator observation does not replace the cold verdict."
+  }
+}

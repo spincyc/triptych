@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost --edition research --check restricted-not-reproduced
+exit 0
+--- stdout ---
+restricted-not-reproduced (research edition): 34 bound sources, 1 of them restricted, none reproduced
+
+--- stderr ---
+

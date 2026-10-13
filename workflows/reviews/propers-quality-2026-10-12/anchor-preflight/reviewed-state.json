@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "review": "proper-study-v11-anchor-preflight",
+  "reviewed_at": "2026-10-13T05:28:15+00:00",
+  "base_commit": "df85e9726d5ea45d47af231814efe0585c703399",
+  "branch": "feature/propers/codex",
+  "verdict": "PASS",
+  "blocking_findings": [],
+  "nonblocking_findings": [],
+  "scope": "Only the four candidate files listed; not production content or historical acceptance.",
+  "uncommitted_candidate": true,
+  "files": [
+    {
+      "path": "workflows/pipelines/proper-study.json",
+      "sha256": "a38ed8f795362e8b9684e85613e35c8ae3f03d79e30282610983ed8cfb52af5c",
+      "bytes": 30924,
+      "base_sha256": "f4a54c735128d61fc4440d238a46808411c4e6efc44f871db0f92463b4ac67c7",
+      "status": "modified"
+    },
+    {
+      "path": "workflows/fragments/proper-study/author-study.md",
+      "sha256": "79fd0958f3a748ef310aae6bc7bde977ad98341b96c5f38eef6a85f6093578f4",
+      "bytes": 6188,
+      "base_sha256": "d28a647be545c10f4992ceec0fbbad362c49d94f5c23feac9880366c08f5472d",
+      "status": "modified"
+    },
+    {
+      "path": "workflows/OPERATOR.md",
+      "sha256": "1ec56a228455a4fce4afc50f04acec6aa5a753002def3708a5afca8b8ceda328",
+      "bytes": 123888,
+      "base_sha256": "94a24f2d459928b4b7ad468f9871118e921d4520835db052dabda3fbaf07a9ee",
+      "status": "modified"
+    },
+    {
+      "path": "tools/tests/test_workflow_study_web_preflight.py",
+      "sha256": "4cde936b91741c0de3aa5ba580a3977c843ce54beab8f23bc24b1c2c8cc70d3f",
+      "bytes": 9692,
+      "base_sha256": null,
+      "status": "new"
+    }
+  ],
+  "checks": {
+    "candidate_tests": {
+      "exit": 0,
+      "passed": 9
+    },
+    "existing_focused_tests": {
+      "exit": 0,
+      "passed": 197
+    },
+    "independent_probes": {
+      "exit": 0,
+      "passed": 2
+    },
+    "initial_relative_dependency_path_attempt": {
+      "exit": 1,
+      "failed": 3,
+      "total": 9,
+      "cause": "Fixture subprocess cwd selected host Markdown 3.11 instead of pinned 3.10.3; absolute dependency path fixed the environment."
+    }
+  },
+  "dependencies": {
+    "pandoc": "3.11",
+    "Markdown": "3.10.3",
+    "pythonpath_repository_relative": ".scratch/tlm-2026-10-04/generate-web-0000/dependencies",
+    "pythonpath_was_absolute": true
+  },
+  "production_run_advanced": false,
+  "candidate_files_edited_by_reviewer": false,
+  "commit_or_push": false,
+  "resolved_findings": [
+    {
+      "finding": "Operator log statement overgeneralized timeout and launch-failure logging.",
+      "disposition": "Coordinator qualified completed-command logging and explicitly described structured timeout/launch failure findings; final wording independently verified."
+    }
+  ]
+}

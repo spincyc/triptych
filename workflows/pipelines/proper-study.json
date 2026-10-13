@@ -1,6 +1,6 @@
 {
   "id": "proper-study",
-  "version": 10,
+  "version": 11,
   "description": "Source-first proper study, concise study and standalone homily, with independent reviews",
   "default_effort": "high",
   "document_argument": "proper",
@@ -172,6 +172,11 @@
           "id": "component-contract",
           "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition research --require-presentation --require-format --require-authority --require-orientation",
           "required_result": "The schema-2 component graph must faithfully describe this edition and its complete interpretive lanes."
+        },
+        {
+          "id": "study-web-conversion",
+          "command": "tools/tpt web-edition --provider {provider} --output build/tpt-runs/{run.run_id}/artifacts/study-web-probe {proper}",
+          "required_result": "The canonical study must pass the converter's source and rendered appointed-anchor coverage and fidelity audits before study review. Use pandoc and the exact Markdown pin in requirements-public-alpha.txt; this probe is not web acceptance or installation."
         },
         {
           "id": "references-used",

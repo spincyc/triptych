@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost --edition synthesis --check chronology-claims-supported
+exit 0
+--- stdout ---
+chronology-claims-supported (synthesis edition): 9 generated orientation rows with exact passage reach and complete candidates
+
+--- stderr ---
+

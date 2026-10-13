@@ -16,3 +16,45 @@
 {"event": "packet", "hash": "489e651d1dcba9e9ea2720ed31b5000ec0a17496bd46d92bf07e023b1abf901e", "iteration": 1, "size": 290838, "stage": "research-review", "timestamp": "2026-10-13T01:21:17Z"}
 {"disposition": "PASS", "event": "result", "stage": "research-review", "timestamp": "2026-10-13T01:30:34Z", "transition": "author-study"}
 {"event": "packet", "hash": "373b377ba75ab6ba011a91b82c5aa35da7a59db405cdc044864c65fecffb5ef9", "iteration": 0, "size": 36032, "stage": "author-study", "timestamp": "2026-10-13T01:30:34Z"}
+{"disposition": "PASS", "event": "result", "stage": "author-study", "timestamp": "2026-10-13T02:21:36Z", "transition": "study-preflight"}
+{"event": "packet", "hash": "27d665f813837bca57b1d23e3e2b2f6ae711a497b4f7122cd62433a099ac86f3", "iteration": 0, "size": 696, "stage": "study-preflight", "timestamp": "2026-10-13T02:21:36Z"}
+{"disposition": "FAIL", "event": "result", "stage": "study-preflight", "timestamp": "2026-10-13T02:21:56Z", "transition": "author-study"}
+{"event": "packet", "hash": "54517be9d1f0df3603ae2ae5efee3b120d7229b5b02007c6ffc4d8b53ef320d5", "iteration": 1, "size": 37351, "stage": "author-study", "timestamp": "2026-10-13T02:21:56Z"}
+{"disposition": "PASS", "event": "result", "stage": "author-study", "timestamp": "2026-10-13T02:30:35Z", "transition": "study-preflight"}
+{"event": "packet", "hash": "c71a98fc08e127d1930dfb7f70976c7442f5f09a494f356174498364654fe232", "iteration": 1, "size": 696, "stage": "study-preflight", "timestamp": "2026-10-13T02:30:35Z"}
+{"disposition": "PASS", "event": "result", "stage": "study-preflight", "timestamp": "2026-10-13T02:30:53Z", "transition": "study-review"}
+{"event": "packet", "hash": "9f2e0fe4a9743aae5f0dabc80e767984c4648473fa0e50714ad6d8430c570697", "iteration": 0, "size": 43555, "stage": "study-review", "timestamp": "2026-10-13T02:30:53Z"}
+{"disposition": "CHANGES_REQUIRED", "event": "result", "stage": "study-review", "timestamp": "2026-10-13T02:57:35Z", "transition": "research"}
+{"event": "packet", "hash": "1c124e626211b08428e619ce034b75b70f4678c2d454d6ee9772a3a6576ad0d2", "iteration": 2, "size": 37761, "stage": "research", "timestamp": "2026-10-13T02:57:35Z"}
+{"disposition": "PASS", "event": "result", "stage": "research", "timestamp": "2026-10-13T03:05:15Z", "transition": "research-preflight"}
+{"event": "packet", "hash": "b6aad37fbfa33b5bc64e87d06257835ca52bcfc2a9732c5e3a88ff834bacdb63", "iteration": 2, "size": 1385, "stage": "research-preflight", "timestamp": "2026-10-13T03:05:15Z"}
+{"disposition": "PASS", "event": "result", "stage": "research-preflight", "timestamp": "2026-10-13T03:05:31Z", "transition": "research-review"}
+{"event": "packet", "hash": "4f541f81598bb7f2440873fbdcb12da166b712ec52a0d4397e9d4ea8bcf74c49", "iteration": 2, "size": 291108, "stage": "research-review", "timestamp": "2026-10-13T03:05:31Z"}
+{"disposition": "PASS", "event": "result", "stage": "research-review", "timestamp": "2026-10-13T03:19:09Z", "transition": "author-study"}
+{"event": "packet", "hash": "7f9dfc8f86a5c68f08b25b7b83924369ec3d2840bc0395ed5421f11a32eaafc2", "iteration": 2, "size": 36032, "stage": "author-study", "timestamp": "2026-10-13T03:19:09Z"}
+{"disposition": "PASS", "event": "result", "stage": "author-study", "timestamp": "2026-10-13T03:32:14Z", "transition": "study-preflight"}
+{"event": "packet", "hash": "e0186f53130f6a6a95b7d2bc6d2ac5ff89b9720fbad1adc8b8e322e036a97cf6", "iteration": 2, "size": 1382, "stage": "study-preflight", "timestamp": "2026-10-13T03:32:14Z"}
+{"disposition": "PASS", "event": "result", "stage": "study-preflight", "timestamp": "2026-10-13T03:32:32Z", "transition": "study-review"}
+{"event": "packet", "hash": "c48c30e4e9e197084868e7495e3c8f9c7b4c01c0274b84db9008156144dc7aa9", "iteration": 1, "size": 43681, "stage": "study-review", "timestamp": "2026-10-13T03:32:32Z"}
+{"disposition": "PASS", "event": "result", "stage": "study-review", "timestamp": "2026-10-13T03:40:26Z", "transition": "derive-synthesis"}
+{"event": "packet", "hash": "47ca5e8860547fe897d80744e622e57dfa403c09c13d5f758a21c5763f212b0b", "iteration": 0, "size": 34641, "stage": "derive-synthesis", "timestamp": "2026-10-13T03:40:26Z"}
+{"disposition": "PASS", "event": "result", "stage": "derive-synthesis", "timestamp": "2026-10-13T04:00:01Z", "transition": "synthesis-preflight"}
+{"event": "packet", "hash": "b05f930d861749b3f477af722725ea63708fdd4bdeb9a64632a5bd4c8fd53106", "iteration": 0, "size": 700, "stage": "synthesis-preflight", "timestamp": "2026-10-13T04:00:01Z"}
+{"disposition": "PASS", "event": "result", "stage": "synthesis-preflight", "timestamp": "2026-10-13T04:00:24Z", "transition": "synthesis-review"}
+{"event": "packet", "hash": "671580d961f3361d6f3eebbc6cfe9d0bebb8c114af6942ad46b22587cb307d8d", "iteration": 0, "size": 42010, "stage": "synthesis-review", "timestamp": "2026-10-13T04:00:24Z"}
+{"disposition": "PASS", "event": "result", "stage": "synthesis-review", "timestamp": "2026-10-13T04:18:38Z", "transition": "derive-homily"}
+{"event": "packet", "hash": "c9d297825dc00025e30ba91adfdca862238f7172e88ac9220f95d7e9f3a13e74", "iteration": 0, "size": 33440, "stage": "derive-homily", "timestamp": "2026-10-13T04:18:38Z"}
+{"disposition": "PASS", "event": "result", "stage": "derive-homily", "timestamp": "2026-10-13T04:28:24Z", "transition": "homily-preflight"}
+{"event": "packet", "hash": "4d05bf5fef1627971b73e6a473bae3c8f4035dee9295b054094f56596fb39796", "iteration": 0, "size": 697, "stage": "homily-preflight", "timestamp": "2026-10-13T04:28:24Z"}
+{"disposition": "PASS", "event": "result", "stage": "homily-preflight", "timestamp": "2026-10-13T04:28:45Z", "transition": "homily-review"}
+{"event": "packet", "hash": "8346db613e95be0d8d9c7835b9d1f3e086aedf310e2aec2a485a496a965edebf", "iteration": 0, "size": 38544, "stage": "homily-review", "timestamp": "2026-10-13T04:28:45Z"}
+{"disposition": "PASS", "event": "result", "stage": "homily-review", "timestamp": "2026-10-13T04:37:31Z", "transition": "build-artifacts"}
+{"event": "packet", "hash": "0de56b683e35a6da261dd2131289b4838c83e4af51ebb3b4510fe6795f22110b", "iteration": 0, "size": 33872, "stage": "build-artifacts", "timestamp": "2026-10-13T04:37:31Z"}
+{"disposition": "PASS", "event": "result", "stage": "build-artifacts", "timestamp": "2026-10-13T04:44:35Z", "transition": "artifact-gates"}
+{"event": "packet", "hash": "4eec5ccdb1886332b1b2e0a2d19aca31bcceb4ca239a5a177b1e481619704604", "iteration": 0, "size": 753, "stage": "artifact-gates", "timestamp": "2026-10-13T04:44:35Z"}
+{"disposition": "PASS", "event": "result", "stage": "artifact-gates", "timestamp": "2026-10-13T04:44:51Z", "transition": "visual-review"}
+{"event": "packet", "hash": "acd26ac84862193e6e25985d0c425e802e3a82154bf9382cc09b445649ef1f3e", "iteration": 0, "size": 40870, "stage": "visual-review", "timestamp": "2026-10-13T04:44:51Z"}
+{"disposition": "PASS", "event": "result", "stage": "visual-review", "timestamp": "2026-10-13T05:11:28Z", "transition": "generate-web"}
+{"event": "packet", "hash": "d0789d12b7cde4bf118a4477303d10df28c634ce08438a686ed4ad62e4d3fc56", "iteration": 0, "size": 32328, "stage": "generate-web", "timestamp": "2026-10-13T05:11:28Z"}
+{"disposition": "BLOCKED", "event": "result", "stage": "generate-web", "timestamp": "2026-10-13T05:15:38Z", "transition": "BLOCKED"}
+{"event": "blocked", "reason": "worker at stage generate-web returned BLOCKED: The canonical converter failed source-anchor validation: all 17 required schema-2 proper-<element-key> labels are absent from sections/10-appointed-text.tex. The missing labels belong to the frozen study owner; no Markdown or web receipt was produced, and all 38 baseline source/PDF files remain byte-identical. Evidence: build/tpt-runs/a72731c5491066a3/artifacts/generate-web-0000/conversion-blocker.json.", "timestamp": "2026-10-13T05:15:38Z"}

@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-10-13"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:0125e8f97a186bf3ab28ab38f86828587c7da1aa8c15e987f56d609d8d899908"
+inventory_snapshot = "sha256:30894c7d9e86ec604acc5d8cfc5f99fb7b0bf4a90ad71879bd0e56265a9f9171"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:89eff2d34adef10c77345cec48b6d99c5758e8f8143362f2842dfa7fa5070ed1"
 canonical_catalog_snapshot = "sha256:64108909b6f11c83a95affe3aeb2d2f80ae801bfa150c50b43a3cb053e232698"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:3057728799d5b9af4f694dbb975cb021aa75e6d7526782e6c713708fe10d3be7"
+snapshot = "sha256:8e6003e7c34c0d0b9db76808202b78184f21696ba4799ae30406faffb67df20e"
 families = []
 
 [[review_units]]
@@ -498,7 +498,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
-surface_snapshot = "sha256:f0638c87455a5404906573a009037a2a23a13fce6185775711cb894c17dc9df1"
+surface_snapshot = "sha256:112cf785ce1e5d9eff3d418398b84095fc850494fb802376268089ae05afd142"
 review_state = "pending"
 
 [[review_units]]

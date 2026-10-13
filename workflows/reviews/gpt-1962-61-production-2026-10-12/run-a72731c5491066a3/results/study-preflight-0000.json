@@ -1,0 +1,28 @@
+{
+  "disposition": "FAIL",
+  "findings": [
+    {
+      "check": "references-used",
+      "id": "GATE-REFERENCES-USED",
+      "problem": "command exited 1: check-content-preflight error: references-used (research edition): the leaf prints no References section",
+      "required_result": "This edition must pass the owning references-used check.",
+      "severity": "blocking"
+    },
+    {
+      "check": "unquoted-not-quoted",
+      "id": "GATE-UNQUOTED-NOT-QUOTED",
+      "problem": "command exited 1: check-content-preflight error: unquoted-not-quoted (research edition): the leaf prints no References section",
+      "required_result": "This edition must pass the owning unquoted-not-quoted check.",
+      "severity": "blocking"
+    },
+    {
+      "check": "chronology-claims-supported",
+      "id": "GATE-CHRONOLOGY-CLAIMS-SUPPORTED",
+      "problem": "command exited 1: check-content-preflight error: chronology-claims-supported (research edition): sections/70-date-location.tex: place/context may contain prose, citations and emphasis only\ncheck-content-preflight error: chronology-claims-supported (research edition): sections/70-date-location.tex: place/context may contain prose, citations and emphasis only\ncheck-content-preflight error: chronology-claims-supported (research edition): sections/70-date-location.tex: place/context may contain prose, citations and e",
+      "required_result": "This edition must pass the owning chronology-claims-supported check.",
+      "severity": "blocking"
+    }
+  ],
+  "iteration": 0,
+  "stage": "study-preflight"
+}

@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-12.
+Last reconciled: 2026-10-13.
 
 ## GPT Twenty-first Sunday and concise historical orientation, 2026-10-12
 
@@ -31,34 +31,57 @@ across 19 existing dossiers. The [audit and independent review](workflows/review
 record the evidence, resolved defects and limits. Existing publications retain
 their snapshots. Foundation commit `9c4d5e5eb` is pushed to the workspace branch.
 
-The new Sunday's actual `proper-study` v10 run is `a72731c5491066a3`;
-the [driver record](workflows/reviews/gpt-1962-61-production-2026-10-12/DRIVER-RECORD.md)
-tracks its state. Scope and context passed. The dated inventory includes
-mission-propagation orations and the conditional St Luke commemoration, with
-the applicable Mass-type and local-calendar limits. Research iteration 0 and
-its preflight passed. The first cold review requested two evidence-boundary
-repairs: preserved and sealed Gregory, Aquinas and Rabanus witnesses, and
-inclusion of the retained chronology derivatives and their governing rights
-record. It independently supported the checked texts and substantive arguments.
-The actual engine routed a fresh research repair. Research iteration 1, its
-preflight and the second cold research review passed. The repaired seal covers
-1,738 files; all 60 requested path/hash checks matched before review. Source
-records preserve the acquired text, transmission and rights limits, including
-Gregory's modern reset rather than a claimed nineteenth-century facsimile.
-Research is accepted and the workflow is at expansive-study authoring. The
-aggregate source check still awaits the downstream web-edition declaration;
-no publication acceptance is yet claimed.
+The first actual `proper-study` v10 run, `a72731c5491066a3`, is terminal
+**BLOCKED at canonical web conversion**, not publication accepted. Its
+[driver record](workflows/reviews/gpt-1962-61-production-2026-10-12/DRIVER-RECORD.md)
+and [native archive](workflows/reviews/gpt-1962-61-production-2026-10-12/run-a72731c5491066a3/README.md)
+preserve the actual results. Research, the 26-page expansive study, ten-page
+concise study, three-page homily and all-page visual review passed. Research
+repairs retained and sealed the carrying witnesses and corrected a Haydock
+attribution: Solomon is the pupil in a Davidic explanation, not another
+proposed author. The dated formulary includes mission-propagation orations
+and conditional St Luke commemoration with Mass-type and local-calendar
+limits. Visual review inspected all 39 pages and both chronology tables at
+nominal ordinary screen size. Its bounded browser-execution recovery and
+successful approved retry are documented without substituting a verdict.
 
-The research checkpoint preserves the native packets, results and gate logs.
-Its staged whitespace audit found only final blank lines in the three native
-gate logs; their exact bytes are retained. All other staged files pass that
-check, and the archive's original/derivative identities were verified.
+The converter refused all seventeen missing `proper-<element-key>` source
+labels. Those labels belong to the study author. It produced no Markdown or
+web receipt and preserved all 38 source/PDF baseline files. The same defect
+stopped the GPT postconciliar `PC-S54` run on 6 October: the requirement was
+already in web guidance but was not enforced before the study was frozen.
+This repeated late failure is a concrete workflow-quality defect. The native
+engine supports neither upstream routing from this linear stage nor resuming
+a terminal blocked run. Its intervention command records a note only; no
+native result, seal, or state is being rewritten.
 
-Completion requires the improved controls to pass focused checks and independent
-review, the actual three-document workflow to reach ACCEPTED with fresh stage
-reviews, and the verified family and canonical web edition to be installed and
-cataloged. Coherent checkpoints will be committed and pushed to the workspace
-branch. No main integration or live deployment is claimed by that branch push.
+The corrected v11 contract now adds explicit study-author instructions and
+an actual converter gate before cold study acceptance, with failures routed
+back to the study author. Twenty-nine focused implementation tests passed;
+the [independent review](workflows/reviews/propers-quality-2026-10-12/anchor-preflight/report.md)
+passed with no open findings after 208 focused checks. The converter and
+engine are unchanged. A new run under this corrected contract will reuse the
+actual research and manuscripts, with independent inspection and fresh stage
+verdicts. Advisory `SYN-001` remains open for that legitimate
+concise authoring: the Matthew appendix pointer includes pp. 24–25 although
+the subsection occupies p. 24. No publication acceptance, installed family or
+canonical web edition is yet claimed. After normal source/publication inventory,
+source-family and deterministic structure refreshes, full `make check-sources`
+passes under the bound Markdown 3.10.3 environment. The two Ordinary projections
+changed only the previously corrected Cummiskey comparison note. All 38
+converter baseline source/PDF identities remain unchanged; this successful
+source checkpoint does not change the terminal workflow result.
+
+Foundation commit `9c4d5e5eb` and research checkpoint `df85e9726` are pushed to
+the workspace branch. The first run's terminal evidence and manuscript
+checkpoint are being retained. Native gate logs preserve their exact bytes,
+including bounded blank-at-EOF whitespace exceptions; public auxiliary
+transformations identify their original hashes and omitted runtime details.
+
+Completion still requires an actual three-document run to reach ACCEPTED
+through fresh reviews, and the exact reviewed family and canonical web edition to be
+installed and cataloged. The validated result will be committed and pushed to
+`feature/propers/codex`; no main integration or live deployment is claimed.
 
 ## Publication links and mobile angelology report, 2026-10-09
 

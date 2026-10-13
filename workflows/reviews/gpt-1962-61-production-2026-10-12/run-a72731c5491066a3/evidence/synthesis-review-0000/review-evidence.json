@@ -1,0 +1,228 @@
+{
+  "stage": "synthesis-review",
+  "iteration": 0,
+  "independence": "Cold concise-first review; no authoring conversation, defense, preferred verdict or previous acceptance was used as evidence. Independent first-read recovery retained separately.",
+  "reviewed_artifact": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/synthesis.tex",
+  "proof": "review-proof.pdf; two independent settled passes; byte-identical to the supplied author proof; ten physical Letter pages, all embedded subset fonts and no compile diagnostics.",
+  "comparison": [
+    {
+      "topic": "Distinct interpretations",
+      "study_loci": "sections/30-mercy-received.tex and 40-protected-pilgrimage.tex; comparison in 50-comparison.tex",
+      "concise_loci": "themes pp. 3–4; commentary pp. 5–9",
+      "judgment": "First-read recovery identifies two genuinely distinct questions: what received pardon demands and what promised protection means. They complement each other without invented rivalry."
+    },
+    {
+      "topic": "Mercy and liability",
+      "study_loci": "30-mercy-received: real cancellation, present debtor-creditor, restored liability",
+      "concise_loci": "commentary opening two subsections, pp. 5–6",
+      "judgment": "Preserves argument, not just conclusion: identical pleas and opposite responses, Augustine’s daily debt, and Aquinas’s distinction explain why pardon obliges the heart without falsifying the gift."
+    },
+    {
+      "topic": "Innocence and permission",
+      "study_loci": "20-commentary Offertory; 40-protected-pilgrimage Job",
+      "concise_loci": "pp. 6–7, debtor/Job comparison and guarded traveler",
+      "judgment": "Preserves literal innocence, bounded power, sustaining helper, and Christological fulfillment. Suffering is not treated as evidence of personal guilt; protection is not bodily immunity."
+    },
+    {
+      "topic": "Perseverance and food",
+      "study_loci": "20-commentary Alleluia/Postcommunion; 40-protected-pilgrimage Exodus/armor/food",
+      "concise_loci": "pp. 7–8",
+      "judgment": "Baptized deliverance, subsequent danger, the girded Passover traveler, sacramental nourishment, and future rest remain connected; reception is not automatic perseverance. Explicit editor dissent remains attached to Chrysostom’s contested glosses."
+    },
+    {
+      "topic": "Judgment and divine action",
+      "study_loci": "20-commentary Preface/Communion; 50-comparison",
+      "concise_loci": "pp. 8–9",
+      "judgment": "Preserves Trinity’s equality, personal versus corporate prayer, Bellarmine’s settled peace, Augustine’s final judgment, and Schuster’s present deprivation. These are related but not interchangeable explanations."
+    },
+    {
+      "topic": "Source-dependent additions and qualifications",
+      "study_loci": "Complete study entry graph including appointed texts, history and apparatus; research scope/source bindings",
+      "concise_loci": "all six concise components and references",
+      "judgment": "No new unsupported source-dependent claim found. Historical translations, adapted chants, editorial constructions, application, biblical context, textually disputed glosses and chronology uncertainty remain marked. The self-contained argument does not require the expansive study; appendix referral supplies further evidence."
+    }
+  ],
+  "source_checks": [
+    {
+      "work": "Chrysostom, Matthew LXI §§1–4",
+      "payload": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/editions/2026-09-17-ccel-web/artifacts/ccel-text-adb8f1c9/source.txt",
+      "lines": "34728–35120",
+      "outcome": "Creation and spiritual gifts, the threat intended to prompt supplication, cancellation beyond requested delay, repeated plea/refused mercy, receiver-caused revocation, and endless force of until repayment all support concise pp. 5–6. No inference of fictitious original remission.",
+      "payload_sha256": "adb8f1c9a988c5050a20fb9fdbf75143dcb227e95e3dad2f560a63b757923648"
+    },
+    {
+      "work": "Augustine, Sermon 83 / NPNF XXXIII §§1–8",
+      "payload": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/editions/2026-09-17-ccel-web/artifacts/ccel-text-ce371798/source.txt",
+      "lines": "34943–35250",
+      "outcome": "Debtor and creditor, the beggar seeking Christ as bread, daily forgiveness after baptism, and loving discipline without inward hatred support pp. 5–6. Modern restitution/protective-boundary applications are identified as applications, not attributed quotations.",
+      "payload_sha256": "ce37179876e5e5c9d8e7a6f1f17b8796c4fdf3ffd2815acb82a1c734c57ecd18"
+    },
+    {
+      "work": "Aquinas, Summa III q. 88 aa. 1–4",
+      "payload": "src/sources/works/thomas-aquinas/summa-theologiae/editions/2026-10-12-english-dominicans-newadvent-q88/artifacts/tertia-q88-text-a7ca2c65/source.txt",
+      "lines": "Complete retained question, especially a. 1 response/reply 1 and a. 2 response",
+      "outcome": "Real past remission remains real; subsequent mortal sin incurs liability and ingratitude rather than numerically restoring the old guilt. The concise distinction preserves the study and Aquinas without neutralizing the patristic warning.",
+      "payload_sha256": "a7ca2c652952002d07e860085b11ed23a146409b610fb0bd8c28f399feb9784b"
+    },
+    {
+      "work": "Gregory, Moralia II.10.16–11.19; III.3.3–6.8",
+      "payload": "src/sources/works/gregory-the-great/moralia-in-iob/editions/2026-10-12-library-of-fathers-lectionarycentral/artifacts/complete-text-d9f9ed86/source.txt",
+      "lines": "2139–2208; 3660–3793",
+      "outcome": "Malicious will differs from bounded permitted power; Job suffers without antecedent crime but with providential ends; the helper simultaneously sustains him. Concise pp. 6–7 preserve innocence and exclude a general diagnosis of sufferers as unforgiving debtors.",
+      "payload_sha256": "d9f9ed8604288dd854cff3ce5494dbc7b17f6c2d6dca521b5715af767ce30034"
+    },
+    {
+      "work": "Chrysostom, Ephesians XXII–XXIV and NPNF editorial notes 465, 468",
+      "payload": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/editions/2026-09-05-english-ccel-web-2026-09-05/artifacts/ccel-npnf113-text-54274dd9/source.txt",
+      "lines": "15115–15316; 15550–15587; 15705–15865; 15923–16175",
+      "outcome": "The homily itself recalls Matthew’s forgiven servant in the common-Master argument. Wiles, heavenly prizes/present evil life, Passover girding and spiritual food, all-virtue breastplate, peace/readiness, miraculous faith then confidence in promised goods support pp. 7–8. Editor dissent on high places and evil day survives; Eph. 6:18 remains contextual, beyond the appointed endpoint.",
+      "payload_sha256": "54274dd9aa73ca36e4da9e763e4a27d1818b09e42ffc73795529afec703a4210"
+    },
+    {
+      "work": "Augustine, Psalm expositions: NPNF 90 §§1–4; 114 §§1–6; 119 Aleph and Caph",
+      "payload": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/source.txt",
+      "lines": "45083–45193; 55667–55833; 56727–56875; 58149–58362",
+      "outcome": "Refuge without divine change, non-compulsory Mosaic authorship, baptized Exodus without automatic perseverance, grace-enabled walking, whole-Christ expectation and martyrs helped through death support the synthesis. Bodily immunity and date prediction are not inferred.",
+      "payload_sha256": "d6841950333024906294e6e829f7512d08b3adf62ae6cee3615d18a7ad0020e9"
+    },
+    {
+      "work": "Bellarmine, Psalm 118:81–88",
+      "payload": "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/historical-text-357551e1/text.txt",
+      "lines": "4287–4307",
+      "outcome": "Desire for settled peace and deliverance supports the concise comparison to Augustine’s corporate and eschatological reading; their emphases are not silently equated.",
+      "payload_sha256": "357551e186b7c400fcd4f442ef2a70f6e51b7148ae69ab467b93b4a64ae51bc2"
+    },
+    {
+      "work": "Augustine, De Trinitate III preface §3",
+      "payload": "src/sources/works/augustine/de-trinitate/editions/1887-haddan-english-web-2026-09-29/artifacts/complete-page-text-07b2f4f0/source.txt",
+      "lines": "13, complete section 3",
+      "outcome": "The divine missions imply no inferiority in Son or Spirit. Used as doctrinal illumination of the Preface, not as a claim that Augustine commented on this formulary.",
+      "payload_sha256": "07b2f4f016a7f19916703c7089c2fca2d06621b57361496a9e419d825fa03c05"
+    },
+    {
+      "work": "Schuster, Sacramentary III, Twenty-first Sunday, printed pp. 178–181",
+      "payload": "src/sources/works/ildefonso-schuster/the-sacramentary/editions/burns-oates-washbourne-english-1927/artifacts/ia-volume-3-ocr-4d8c8988/schuster-sacramentary-3-1927-ia-ocr.txt",
+      "lines": "11125–11340 plus independently rendered retained excerpt images for printed pp. 178 and 181",
+      "outcome": "Innocent Job as Christ’s figure, family/practical virtue, twofold Secret effect, present deprivation of light, and inward sacramental fruit are supported. Christ bears others’ sin; the literal innocent Job is not converted into the Gospel’s guilty servant. Schuster’s present judgment remains distinct from Augustine’s final judgment.",
+      "payload_sha256": "4d8c8988b954b4841acc7bbdcd91c55f54efb0de46dc66340bcc7e400a65e419"
+    }
+  ],
+  "chronology_lookups": [
+    {
+      "passage": "Introit, Esther 13:9–11",
+      "lookup": "Composition; story at Susa, writing-place uncertain; B.C. 465–425, conjectural early dating/later date possible.",
+      "source": "CE V (1909), Esther, line 17 authorship/date paragraph and following later-date discussion; DR Esth. 1:2 and 2:5.",
+      "outcome": "Date is a qualified book-composition estimate, not the prayer’s utterance or Greek addition’s independent date. Susa is the story place. Correctly scoped."
+    },
+    {
+      "passage": "Offertory, Job 1:1; 1:12; 2:6–7",
+      "lookup": "Composition of Job; story in Hus (Uz), writing-place unknown; probably seventh–fifth centuries B.C.",
+      "source": "USCCB Job introduction, https://bible.usccb.org/bible/job/0; DR Job 1:1 and the appointed composite.",
+      "outcome": "Probable composition span is not a year for Job’s suffering. Composite keeps both stages of permission recognizable. Correctly scoped."
+    },
+    {
+      "passage": "Shared Introit Ps. 118:1, Gradual Ps. 89:1–2, Communion Ps. 118:81,84,86",
+      "lookup": "Historical setting; occasion/site unknown; occasion date unresolved.",
+      "source": "Psalm passages and the study’s Psalm qualification; Augustine NPNF Ps. 90 §2 and Ps. 119 octonaries.",
+      "outcome": "Shared unresolved answer does not manufacture a common occasion. Correctly scoped."
+    },
+    {
+      "passage": "Shared Introit, Gradual, Alleluia Ps. 113:1, Communion",
+      "lookup": "Psalms composition; collection-wide bound, individual places unknown; before c. 165 B.C.",
+      "source": "USCCB Psalms introduction, https://bible.usccb.org/bible/psalms/0, superscriptions/dates paragraph.",
+      "outcome": "The bound is explicit as collection-wide and does not assign one individual date to all four liturgical uses. Correctly scoped."
+    },
+    {
+      "passage": "Alleluia, Psalm 113:1",
+      "lookup": "Retrospective Exodus event; departure from Egypt, interval ending at Jerusalem’s Temple; preferred 480th year (Vulgate), alternative 440th (Septuagint).",
+      "source": "CE III (1908), Biblical Chronology, lines 153–157, especially Temple interval paragraph.",
+      "outcome": "Both endpoints and competing transmitted intervals remain visible. No absolute Exodus year or Psalm composition year inferred. Correctly scoped."
+    },
+    {
+      "passage": "Introit and Communion, Psalm 118",
+      "lookup": "Traditional attribution to David’s reign; Psalm setting unknown; disputed B.C. 1055–1015.",
+      "source": "Haydock, printed p. 781 (retained PDF excerpt 817), independently rendered/read; CE IV (1908), David, line 3.",
+      "outcome": "The reign is conditional author-era orientation. Haydock distinguishes David instructing young Solomon, David himself young under Saul, and Daniel consoling captives; it still reports general Davidic attribution. The table does not treat Solomon as author or the reign as a secure Psalm occasion."
+    },
+    {
+      "passage": "Gospel, Matthew 18:23–35, event row",
+      "lookup": "Jesus teaches in Galilee; precise venue unknown; date unresolved.",
+      "source": "DR Matt. 17:21,17:23,18:1,19:1, retained TSV lines 578,580,584,619.",
+      "outcome": "Narrative bounds support Galilee without fixing a room, day, or year. Date belongs to delivery, not composition."
+    },
+    {
+      "passage": "Gospel, Matthew 18:23–35, composition row",
+      "lookup": "Writing-place uncertain; some estimates concern a Semitic original; six disputed historical proposals c. A.D. 38–45,40–42,40–45,60–68,64–67,50.",
+      "source": "CE X (1911), St. Matthew, lines 201–203; CE XIV (1912), New Testament, line 29.",
+      "outcome": "Alternatives preserved without averaging or claiming current consensus or one date of the extant Greek Gospel. Minor appendix page-range issue only: SYN-001."
+    },
+    {
+      "passage": "Epistle, Ephesians 6:10–17",
+      "lookup": "Composition in captivity; Rome favored, Caesarea possible; readers in Asia Minor; disputed A.D. 58–63 and A.D. 61.",
+      "source": "CE V (1909), Epistle to the Ephesians, readers and date/place paragraphs (line 69); CE XI (1911), St. Paul, line 45; Eph. 6:20.",
+      "outcome": "Writer’s possible locations are distinguished from readers and military imagery. Competing dates are not two episodes. Correctly scoped."
+    }
+  ],
+  "chronology_mechanical_check": {
+    "command": "tools/proper-chronology annotations --provider gpt --document liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost --check",
+    "exit_status": 0,
+    "result": "Annotations current with the corpus; this mechanical result supplemented the nine actual rendered-table lookups."
+  },
+  "visual_inspection": {
+    "method": "tools/pdf-review in dedicated replaceable children, then actual full-page image inspection of each of ten concise pages and three source excerpts. Contact sheet alone was not used to assert inspection.",
+    "pages": [
+      {
+        "page": 1,
+        "outcome": "All seventeen appointed entries in order, including conditional mission and Luke additions, Trinity Preface and Credo note; branch rules readable; exactly four sense overview rows."
+      },
+      {
+        "page": 2,
+        "outcome": "The sole Scriptural Date and Location dossier occupies one page. Three columns permit passage→occurrence/place/date lookup. Nine rows, shared answers and qualifications are readable; no long detailed annotation stuffed into a narrow cell."
+      },
+      {
+        "page": 3,
+        "outcome": "Substantive themes: family receives before acting; freedom meets brother and battle. Readable paragraphs and notes; no padding."
+      },
+      {
+        "page": 4,
+        "outcome": "Substantive themes: wounded still belong to their helper; food bears its destination. Completes the two-page movement with normal breathing room."
+      },
+      {
+        "page": 5,
+        "outcome": "Developed commentary begins here. Debt, gifts, Augustine and Chrysostom reason together within the question; clear footnotes."
+      },
+      {
+        "page": 6,
+        "outcome": "Aquinas’s qualification and Job’s counterexample deepen the argument beyond the opening; coherent page flow and note area."
+      },
+      {
+        "page": 7,
+        "outcome": "Armor/protection and competing glosses are readable; explanations remain interleaved rather than separate author capsules."
+      },
+      {
+        "page": 8,
+        "outcome": "Food, inward fruit and judgment develop distinct reasoning; dense but comfortable house typography and readable notes."
+      },
+      {
+        "page": 9,
+        "outcome": "Judgment discussion finishes, then scope begins. No collision, clipping, stranded heading or unexplained abbreviation."
+      },
+      {
+        "page": 10,
+        "outcome": "References and generation colophon finish the ten-page document. Remaining space is ordinary terminal matter, not length padding."
+      }
+    ]
+  },
+  "limits": [
+    "Review covers this concise derivation against the accepted full-study argument and exact adopted source loci; it is not an exhaustive search of patristic or modern scholarship.",
+    "Historical English retained editions were checked as the authoring witnesses; no fresh critical Greek/Latin edition was established.",
+    "Schuster and Haydock retained page excerpts were newly rendered and read, but their entire large source scans were not rehashed in this stage.",
+    "Direct USCCB opens returned 403; official-site search results successfully returned the relevant Job composition statement and Psalms dating paragraph. No claim of reading a successful live full-page response is made.",
+    "The general-calendar mission/Luke conditions and text distinctions were compared to the full study; this stage did not supply a new local-calendar ruling or repeat the full foundational text/rights audit."
+  ],
+  "editorial_judgment": "A useful, finished concise study with a coherent title/argument, substantial explanatory middle, recoverable alternatives, clear literal/Christological/moral/final distinctions, and proportionate apparatus. No blocking defect found. SYN-001 is a minor overbroad appendix locator.",
+  "process_shutdown": {
+    "review_owned_processes": "All compiler, text-extractor and rasterizer child processes completed with status 0. The one yielded rasterization session was awaited to completion. No browser, listener, server, persistent watcher or nested agent was started; no review-owned background process remains.",
+    "mutations": "Only assigned scratch and evidence were written. Reviewed source, research, study, synthesis, guidance and engine state were not edited; no staging, commit, push or advancement performed."
+  }
+}

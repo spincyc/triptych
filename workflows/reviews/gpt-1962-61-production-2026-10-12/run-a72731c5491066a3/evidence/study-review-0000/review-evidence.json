@@ -1,0 +1,268 @@
+{
+  "stage": "study-review",
+  "iteration": 0,
+  "run_id": "a72731c5491066a3",
+  "packet_path": "build/tpt-runs/a72731c5491066a3/packets/study-review-0000.txt",
+  "packet_sha256": "9f2e0fe4a9743aae5f0dabc80e767984c4648473fa0e50714ad6d8430c570697",
+  "reviewer": "Independent fresh Codex GPT-6 worker at xhigh; no nested workers, no authoring conversation or requested verdict.",
+  "completed_utc": "2026-10-13T02:57:14.028640+00:00",
+  "artifact": {
+    "path": "build/tpt-runs/a72731c5491066a3/artifacts/study-review-0000/study-proof.pdf",
+    "sha256": "b4717e5f3508a872c6e59c9a213cb85708871ef7e1447bcdd004e94477ac4f54",
+    "physical_pages": 26,
+    "bytes": 447250,
+    "independent_two_pass_build_matches_existing_author_proof_byte_for_byte": true
+  },
+  "inputs": {
+    "seal": "build/tpt-runs/a72731c5491066a3/artifacts/study-review-0000/input-seal.json",
+    "all_17_sealed_files_match_before_and_after_review": true,
+    "complete_canonical_study_read": [
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/main.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/00-opening.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/10-appointed-text.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/20-commentary.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/30-mercy-received.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/40-protected-pilgrimage.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/50-comparison.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/70-date-location.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/90-study-apparatus.tex"
+    ],
+    "supporting_records_read": [
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/interpretations.md",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/source-bindings.toml",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/review-dependencies.toml",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/propers/verified.md",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology.toml",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology-annotations.tex"
+    ],
+    "generated_record_limit": "Generated chronology was checked by current corpus comparison, rendered rows, and the supporting cited passages; this was not a fresh review of the entire canonical chronology corpus."
+  },
+  "build_and_visual_checks": {
+    "build": "Two isolated pdflatex passes with recorder, nonstop interaction and halt-on-error from src/gpt; both completed. The final log has no warning, undefined reference, or overfull/underfull box diagnostic.",
+    "fonts": "All 14 font subsets are embedded with Unicode mappings.",
+    "pdfinfo": "26 unencrypted US Letter pages; PDF 1.7; title and subject identify this Sunday and expansive study; no JavaScript.",
+    "proof_raster_manifest": "build/tpt-runs/a72731c5491066a3/artifacts/study-review-0000/rasters/review-run.json",
+    "proof_pages_actually_viewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    "proof_visual_outcome": "The appointed Latin/English blocks, commentary, both extended readings, comparison, chronology table and apparatus are legible throughout. No clipped text, overlapping type, broken table, unwanted blank page, or missing continuation was observed. Natural section-end whitespace on pages 2, 17, 21 and 22 does not add padding.",
+    "source_raster_manifest": "build/tpt-runs/a72731c5491066a3/artifacts/study-review-0000/source-rasters/review-run.json",
+    "initial_render_attempt": "An initial scratch cache location was refused by tools/pdf-review before rendering. Re-running with the dedicated build evidence cache succeeded; complete proof and source manifests and every page image were checked.",
+    "source_facsimiles": [
+      {
+        "name": "Schuster, The Sacramentary III",
+        "path": ".scratch/proper-production-2026-10-05/research-v9-0000/schuster3.pdf",
+        "pdf_pages": [
+          194,
+          195,
+          196,
+          197
+        ],
+        "printed_pages": "178–181",
+        "full_pdf_sha256": "410f6d1155436714f76a4ca3645edcd33ca6ef65bed3d37b1d3e6f10b0c37239",
+        "inspection": "Each listed page was extracted from the full PDF into the assigned scratch directory, rasterized with tools/pdf-review, and viewed as a page image."
+      },
+      {
+        "name": "Cummiskey, The Roman Missal (1861)",
+        "path": ".scratch/tlm-2026-10-04/research-0000/cummiskey1861.pdf",
+        "pdf_pages": [
+          39,
+          40,
+          459,
+          460,
+          461,
+          686,
+          687
+        ],
+        "printed_pages": "xxviii–xxix, 450–452, 677–678",
+        "full_pdf_sha256": "85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898",
+        "inspection": "Each listed page was extracted from the full PDF into the assigned scratch directory, rasterized with tools/pdf-review, and viewed as a page image."
+      },
+      {
+        "name": "Lasance, New Roman Missal",
+        "path": ".scratch/proper-production-2026-10-05/research-v9-0000/lasance.pdf",
+        "pdf_pages": [
+          1474,
+          1477,
+          1478
+        ],
+        "printed_pages": "1453, 1456–1457",
+        "full_pdf_sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+        "inspection": "Each listed page was extracted from the full PDF into the assigned scratch directory, rasterized with tools/pdf-review, and viewed as a page image."
+      },
+      {
+        "name": "Haydock Bible (1859)",
+        "path": ".scratch/psalm-dating-2026-10-05/haydock.pdf",
+        "pdf_pages": [
+          817
+        ],
+        "printed_pages": "781",
+        "full_pdf_sha256": "9d2dd602cc4a574a8300936c37b7e2f1b3be938803acc6a607cbf5622a2fcab2",
+        "inspection": "Each listed page was extracted from the full PDF into the assigned scratch directory, rasterized with tools/pdf-review, and viewed as a page image."
+      },
+      {
+        "name": "Missale Romanum (1962)",
+        "path": ".scratch/tlm-2026-10-04/resolve-context-0000/missale62.pdf",
+        "pdf_pages": [
+          15,
+          16,
+          30,
+          32,
+          33,
+          374,
+          494,
+          495,
+          496,
+          770,
+          771,
+          894,
+          895
+        ],
+        "printed_pages": "XVII–XVIII, XXXII, XXXIV–XXXV, 293, 413–415, 689–690, [86]–[87]",
+        "full_pdf_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "inspection": "Each listed page was extracted from the full PDF into the assigned scratch directory, rasterized with tools/pdf-review, and viewed as a page image."
+      }
+    ]
+  },
+  "formulary_and_text_checks": {
+    "outcome": "The 17 ordered elements, including three Mission Sunday prayers and the three conditional St Luke commemorations, are developed in both readings. The ordinary Creed, Gloria and Sanctus are not represented as additional propers.",
+    "missal_loci": "Calendar and General Rubrics 91, 95, 107–111, 444–446, 453, 480, 483, 494, 500–501, 505, 509; Sunday proper pp. 413–415; St Luke pp. 689–690; propagation-of-the-faith formulary [86]–[87]; Trinity preface p. 293.",
+    "scope_outcome": "The Sunday is II class and green. The same-rank feast yields under the general calendar; its ordinary commemoration has the low/conventual versus non-conventual sung-Mass distinction the study states. Mission prayers use their common conclusion and the penultimate-October rule retains the local Ordinary exception. No local decree is asserted.",
+    "text_outcome": "Appointed Latin was compared with the 1962 facsimile. Historical English prayers and preface were compared with the Cummiskey facsimile; the inherited Lasance differences are identified. Biblical comparators remain distinguished from appointed liturgical adaptation.",
+    "bible_comparison": "build/tpt-runs/a72731c5491066a3/artifacts/study-review-0000/bible-text-check.json",
+    "bible_outcome": "All 35 displayed Douay–Rheims comparator verses match their retained Gutenberg-1581 TSV text. Narrative context was also read at Matthew 17:21–26, 18:1–22 and 19:1; Ephesians 4:26–32, 5:1–2, 6:1–9 and 6:18–24; Esther 13:8,12–18; Job 2:3 and 42:7–10."
+  },
+  "interpretation_tests": [
+    {
+      "study_locus": "Reading one, pp. 14–17; sections/30-mercy-received.tex",
+      "witness_loci_checked": "Chrysostom, Matthew Homily 61 §§1–5; Augustine, Sermon 83 (NPNF Sermon XXXIII) §§1–8; Aquinas, Summa theologiae III q.88 aa.1–4 including objections and replies.",
+      "consequential_question": "How can a debt truly forgiven be exacted again, and does the later technical account soften the Gospel warning?",
+      "outcome": "The study teaches the actual inference: the original debt includes gifts and opportunities, threatened sale moves the plea, the master grants more than a delay, and the same plea becomes evidence against the unmerciful recipient. Augustine makes the baptized daily beggar also a creditor and permits corrective charity. Aquinas distinguishes formal reactivation of earlier guilt from the new ingratitude aggravated by prior pardon; the study labels this as a later distinction and preserves the severe Gospel ending. Job prevents the reasoning from turning all suffering into punishment. The literal, typological, moral and anagogical consequences are separately developed within the reading, across all 17 elements. This is substantive use of multiple saints, not a list of names."
+    },
+    {
+      "study_locus": "Reading two, pp. 18–21; sections/40-protected-pilgrimage.tex",
+      "witness_loci_checked": "Gregory, Moralia II.10.16–11.19 and III.3.3–6.8 with surrounding argument; Augustine, Psalm 89 §§1–4, Psalm 113 §§1–6, Psalm 118 Aleph and Caph; Chrysostom, Ephesians Homilies XXII–XXIV, especially the complete Passover/Christ-food/Spirit/rest argument in XXIII.",
+      "consequential_question": "What protection is actually promised when Job is innocent, enemies act by permission, and the faithful may die while asking for help?",
+      "outcome": "The argument distinguishes divine permission from the enemy’s malice, reads “without cause” as without punitive fault while retaining a purpose in manifested virtue, and explains Gregory’s accommodated divine speech. Augustine’s baptismal Exodus still has a dangerous wilderness; Chrysostom’s Passover progression develops the journey toward rest. Augustine’s Caph treatment makes martyr death a real difficulty and reasons that help may preserve truth through death rather than guarantee temporal survival. The study retains petitions for actual rescue and distinguishes present judgment prayer from final judgment. Its own four senses and all 17 elements develop that movement."
+    },
+    {
+      "study_locus": "Comparison, p. 22; sections/50-comparison.tex",
+      "outcome": "The readings differ in governing question and consequence: responsibility after real pardon versus fidelity during protected yet dangerous pilgrimage. Job tests and limits the first while supplying central evidence for the second. The comparison weighs these differences and does not manufacture a doctrinal dispute or attribute the whole Mass synthesis to an individual Father."
+    }
+  ],
+  "retained_witness_loci_actually_read": [
+    {
+      "source": "NPNF I.10, CCEL text adb8f1c9",
+      "loci": "Chrysostom, Matthew Homily 61 §§1–5 and notes, source.txt lines 34728–35270."
+    },
+    {
+      "source": "NPNF I.6, CCEL text ce371798",
+      "loci": "Augustine, Sermon XXXIII [LXXXIII, Benedictine] §§1–8, source.txt lines 34943–35186."
+    },
+    {
+      "source": "Aquinas, English Dominican/New Advent q.88 text a7ca2c65",
+      "loci": "Tertia q.88 aa.1–4, complete questions, objections and replies."
+    },
+    {
+      "source": "Gregory, Library of Fathers/Lectionary Central reset d9f9ed86",
+      "loci": "Moralia II.10.16–11.19 and III.3.3–6.8; source.txt lines 2070–2235 and 3565–3830 for context."
+    },
+    {
+      "source": "Augustine, NPNF8/CCEL d6841950",
+      "loci": "Psalm 90 (Vulgate 89) §§1–4, lines 45082–45185; Psalm 114 (Vulgate 113) §§1–6, lines 55667–55804; Psalm 119 (Vulgate 118), Aleph §§1–8 and notes, lines 56729–56890; Caph vv.81–88 and notes, lines 58135–58280."
+    },
+    {
+      "source": "Chrysostom, NPNF13/CCEL 54274dd9",
+      "loci": "Ephesians XXII, lines 15014–15425 including common Master/debt and redirected anger; notes at 15544–15620; XXIII lines 15594–15923 including the full Passover progression; XXIV lines 15923–16230 through the armor, prayer and Hannah discussion."
+    },
+    {
+      "source": "Bellarmine, O’Sullivan historical English 357551e1",
+      "loci": "Psalm 89, lines 3209–3240; Psalm 113 vv.1–9, lines 3997–4009; Psalm 118 vv.81–88, lines 4289–4303."
+    },
+    {
+      "source": "Schuster, The Sacramentary III",
+      "loci": "Printed pp. 178–181, full text and all four page images; Secret/Communion/Postcommunion are on p.181."
+    },
+    {
+      "source": "Augustine, De Trinitate, Haddan/New Advent text 07b2f4f0",
+      "loci": "Book III preface §3, full paragraph on missions and inequality; the study marks this online English transmission accurately."
+    },
+    {
+      "source": "Catholic Encyclopedia retained article texts",
+      "loci": "Esther, 05549a-ab721ede, composition paragraph; David, 04642b-f1c0bed3, reign chronology paragraph; Biblical Chronology, 03731a-f5f96f04, §IV with 480/LXX440 and historical reconstruction; Gospel of St Matthew, 10057a-e7b6ccef, language/authorship discussion and final date paragraphs; New Testament, 14530a-0a19aa2c, Matthew entry; Ephesians, 05485a-66d722ae, To Whom Addressed and Date and Place; St Paul, 11567b-bff0dda8, chronology table and captivity discussion."
+    },
+    {
+      "source": "Official USCCB introductions",
+      "loci": "Current complete Job and Psalms introduction pages, accessed directly during this review; https://bible.usccb.org/bible/job/0 and https://bible.usccb.org/bible/psalms/0 . The composition range and collection boundary were paraphrase-checked, not reproduced."
+    },
+    {
+      "source": "Haydock Bible (1859)",
+      "loci": "Printed p.781 / PDF p.817, Psalm 118:1 note continuing at the upper left. Actual page image establishes STU-001."
+    }
+  ],
+  "chronology_checks": [
+    {
+      "check": "chronology-record-current",
+      "edition": "research",
+      "exit_code": 0,
+      "output": "7 scriptural elements, 18 corpus assertions carried, current with the corpus"
+    },
+    {
+      "check": "chronology-annotations-current",
+      "edition": "research",
+      "exit_code": 0,
+      "output": "Complete live projection for 7 scriptural elements and 15 projected candidates"
+    },
+    {
+      "check": "chronology-claims-supported",
+      "edition": "research",
+      "exit_code": 0,
+      "output": "9 generated orientation rows with exact passage reach and complete candidates"
+    }
+  ],
+  "chronology_source_outcome": "The generated nine rows retain distinct subjects and relations: composition versus narrated life, traditional authorship era versus undated occasion, Exodus retrospect versus Temple-start interval endpoint, historical Matthew-language hypotheses versus a single Greek date, and traditional Pauline captivity alternatives. Haydock’s account of authorship is misreported in the research and study prose (STU-001); this is not a defect in the generated date row. The Augustine Mosaic-authorship caveat is at §2, not the appendix footnote’s §1 (STU-002).",
+  "limits": [
+    "This review judges the expansive study only; it is not a review of the derived synthesis, spoken homily, final publication bundle, or website.",
+    "The review uses the explicitly identified historical English witnesses and retained modern resets. It does not claim a new Greek or Latin critical-text collation, or fresh print-facsimile verification of every online patristic reset.",
+    "The cited paragraphs and contexts listed here were read; the entire source volumes were not reread.",
+    "The current official USCCB introductions were checked directly. The exact historical restricted HTML bytes of their earlier acquisition were not reacquired or hash-verified.",
+    "The general 1962 calendar and the study’s declared conditional branches were checked. No unspecified locality’s calendar or Ordinary’s special decree was investigated.",
+    "A byte-identical independently compiled proof and all physical page images were inspected; a press proof and physical paper copy were not produced."
+  ],
+  "process_shutdown": {
+    "all_compiler_and_proof_renderer_invocations_finished": true,
+    "complete_source_renderer_manifest_and_all_28_page_images_checked": true,
+    "owned_render_or_extraction_processes_still_running": 0,
+    "browser_or_server_processes_started": false,
+    "reviewed_input_edits": false,
+    "engine_advancement": false,
+    "staging_or_commits": false,
+    "native_process_identifiers_recorded": false
+  }
+}

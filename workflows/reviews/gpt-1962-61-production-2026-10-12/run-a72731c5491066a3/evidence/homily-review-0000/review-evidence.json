@@ -1,0 +1,124 @@
+{
+  "stage": "homily-review",
+  "iteration": 0,
+  "packet_sha256": "8346db613e95be0d8d9c7835b9d1f3e086aedf310e2aec2a485a496a965edebf",
+  "reviewer": "Codex GPT-6; xhigh effort; fresh independent single worker; no nested agents",
+  "artifact": "The Words He Would Not Hear; homily.tex and its two local components",
+  "read_order": "Complete exact packet, then continuous spoken-body read before the apparatus, evidence, studies, or author verification record.",
+  "verdict": "PASS",
+  "findings": [],
+  "input_identity": {
+    "sealed_file_count": 9,
+    "all_sealed_files_matched_at_start_and_completion": true,
+    "proof_sha256": "cf59a2d2cd49c33189a55712761da1934c1e0ed909284e5a6d9622f775dc9e17",
+    "proof_bytes": 245076,
+    "proof_pages": 3,
+    "current_spoken_source_matches_proof_tokens": true,
+    "proof_revision_timestamp": "2026-10-13T04:24:11Z",
+    "proof_identity_limit": "Existing author proof independently hashed, extracted, and visually inspected; no new TeX compilation and no claim of a fresh build receipt."
+  },
+  "text_substitution_test": {
+    "counterfactual": "Substituted the unrelated Cana narrative (John 2:1–11, read in the retained Douay–Rheims text) for Matthew 18:23–35 while testing the actual sequence of the spoken argument, not merely the possibility of changing quotations.",
+    "movement_tested": [
+      "Hear a familiar plea from a second debtor",
+      "Return to the first debtor whose request for time receives complete cancellation",
+      "Recognize his refusal of that same plea as misuse of a gift",
+      "Face renewed judgment without calling the first pardon unreal",
+      "Distinguish deliberate cruelty from an innocent sufferer’s pain",
+      "Redirect battle away from flesh and blood",
+      "Receive sacramental help for one concrete merciful action",
+      "Go out to hear the plea again"
+    ],
+    "outcome": "The argument does not substantially survive the substitution: Cana supplies neither two debtors, the repeated request, cancellation followed by cruelty, nor the king’s final account. The opening question, decisive inference, punishment/pardon difficulty, and final return would all need rewriting. Generic encouragement to charity could survive, but that is not the sermon’s actual reasoning.",
+    "decisive_turn": "Matthew 18:26 and 29 repeat the request for patience; verse 30 answers with deliberate refusal. The hearer must move from measuring what a neighbor owes to recognizing what a recipient of mercy owes. The king gives more than was requested; the freed servant refuses even the request.",
+    "other_appointed_texts": "Ephesians 6:12–17 makes cruelty a defeat in the wrong conflict, not a display of strength. The Offertory’s upright Job limits moral accusation. Collect, Secret, Communion, and Postcommunion move from continued dependence through saving gift and appeal for judgment to inward Eucharistic fruit. These are meaningful selections; the homily need not recite all seventeen declared elements."
+  },
+  "source_checks": [
+    {
+      "witness": "Missale Romanum, Vatican typical edition (1962)",
+      "loci": "Printed pp. 413–415; digital pages 494–496, especially Collect 1700, Epistle 1701, Gospel 1704, Offertory 1705, Secret 1706, Communion 1707, Postcommunion 1708",
+      "method": "Whole retained facsimile independently rehashed to 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a; fresh focused page extraction with pdfseparate, rasterized through tools/pdf-review and personally viewed.",
+      "outcome": "Appointed words support the household’s continuing mercy, spiritual conflict, identical pleas and refusal, Job’s uprightness before affliction, restored salvation through the offering, judgment/help against persecution, and immortality/inward reception. Descriptions in the speech are commentary, not substitute recitation texts."
+    },
+    {
+      "witness": "Douay–Rheims/Challoner, registered Gutenberg verse payloads",
+      "loci": "Matthew 18 complete; Ephesians 6 complete; Job 1–2 complete; Psalm 118:81–88",
+      "method": "Read exact retained verse records.",
+      "outcome": "The repeated plea and “And he would not” match exactly; the warning, human/spiritual enemy distinction, upright Job, and petition for judgment/help are supported. John 2:1–11 was read only for the review counterfactual, not adopted as an appointment."
+    },
+    {
+      "witness": "John Chrysostom, Homilies on Matthew LXI, NPNF I.10, Prevost–Riddle historical English, retained CCEL text",
+      "loci": "Sections 1–4, especially the relevant continuous argument in section 3 and section 4; read physical lines 34728–34930 and 34965–35135",
+      "outcome": "God’s prior gifts, remission exceeding delay, repetition of the servant’s own plea, misuse of newly given freedom, and judgment after genuine pardon are present in the source. Its sharper language about reversal is not attributed to Aquinas or silently made his technical account."
+    },
+    {
+      "witness": "Augustine, Sermon 83 = NPNF I.6 Sermon XXXIII [LXXXIII. Ben.], MacMullen historical English",
+      "loci": "Sections 1–8, especially 2,7,8; retained text lines 34943–35195",
+      "outcome": "Debtor/creditor identity, gentle words with a relentless heart, and inward forgiveness compatible with corrective care are explicit. Modern restitution and protective boundaries are the homily’s applications, not invented quotations or prescriptions attributed to Augustine."
+    },
+    {
+      "witness": "John Chrysostom, Homilies on Ephesians XXII, NPNF I.13, Copeland–Alexander historical English",
+      "loci": "Ephesians 6:9–13 and moral exposition, retained text lines 15080–15420",
+      "outcome": "The common Master, Matthew 18:32 connection, and resistance to spiritual enemies rather than human persecutors support the speech’s argument. The homily does not assert the disputed heavenly-goods grammar or evil-day interpretation, so their omission does not conceal a disagreement material to this argument."
+    },
+    {
+      "witness": "Thomas Aquinas, Summa theologiae III, q.88, English Dominican second revised edition (1920), retained New Advent historical-text derivative",
+      "loci": "Articles 1–4, complete including objections and replies; homily specifically uses article 1 and article 2 answer",
+      "outcome": "God’s completed pardon is not undone by a later human act; subsequent mortal sin incurs renewed liability, and ingratitude aggravates the new sin. The spoken explanation retains both real mercy and the grave warning, without promising automatic eventual release."
+    },
+    {
+      "witness": "Alfredo Ildefonso Schuster, The Sacramentary III, Arthur Levelis-Marke translation (London, 1927)",
+      "loci": "Printed p.181; digital p.197; corresponding retained OCR lines 11260–11340",
+      "method": "Whole facsimile independently rehashed to 410f6d1155436714f76a4ca3645edcd33ca6ef65bed3d37b1d3e6f10b0c37239, then fresh focused extraction and tools/pdf-review raster inspection.",
+      "outcome": "Secret’s saving restoration and Eucharistic nourishment binding mind, heart, and will are present. The note identifies the correct page and truthfully limits the author’s own derivation to OCR; this reviewer separately checked the print image. Schuster’s distinct present-judgment explanation is not attributed to the homily’s basic description of the Communion."
+    }
+  ],
+  "study_relationship": {
+    "expansive": "Read sections/30-mercy-received.tex, the pertinent complete prose movement of sections/40-protected-pilgrimage.tex, and the research scope/interpretation record. The homily develops the mercy reading’s causal order and borrows Job’s protective distinction compatibly. It does not claim to preach both full readings or transfer a whole-Mass construction to a Father.",
+    "concise": "Read sections/concise/04-themes.tex and sections/concise/10-commentary.tex. The concise explanation of real pardon/new culpability, gift before response, correction without hatred, Job, spiritual conflict, and Eucharistic inward fruit agrees with the spoken argument. No new source-dependent claim or material compression error was found."
+  },
+  "oral_review": {
+    "audience": "adult parish assembly",
+    "spoken_words": 1257,
+    "count_method": "Alphabetic words retaining internal apostrophes and hyphens; spoken body alone, no title or apparatus.",
+    "estimated_minutes_at_120_wpm": 10.475,
+    "estimated_minutes_at_110_wpm": 11.427272727272728,
+    "timing_judgment": "The note’s 10.5–11.4 minutes before pauses, approximately 11–12 with brief pauses, is a plausible estimate within the default scope, not a measured performance.",
+    "sentence_screen": {
+      "sentence_units": 116,
+      "maximum_words": 26,
+      "mean_words": 10.836206896551724,
+      "method": "Punctuation-based textual screen; this is not an audible fluency measure."
+    },
+    "judgment": "Short sentences and recoverable images carry the argument. Transitions from king to fellow debtor, inward pardon to wounded suffering, armor, practical response, and Eucharistic nourishment remain intelligible without visible notes. The return to going out and hearing the plea gives the ending a specific purpose. The proposed patient hearing, restraint of a contemptuous remark, or non-wounding correction provides concrete pastoral fruit while preserving protection and truth.",
+    "prohibited_inventions": "No invented anecdote, personal experience, clerical identity, unsupported source approval, or newly composed recited prayer found. Final “Let us” sentences exhort the assembly; they do not address God as a new prayer.",
+    "performance_limit": "Silent textual reading only; no audible rehearsal, congregation test, or timed human delivery performed or certified."
+  },
+  "proof_inspection": {
+    "viewed_pages": [
+      1,
+      2,
+      3
+    ],
+    "speech_pages": [
+      1,
+      2
+    ],
+    "terminal_apparatus_page": 3,
+    "result": "Readable two-column speech, separate source/delivery note and exact references, terminal revision and compact rights colophon; no observed clipping, collision, or missing text. All listed fonts embedded, subset, and Unicode mapped.",
+    "scope_limit": "This bounded inspection supports homily review; it is not the later final visual review or installation acceptance for the three-document set."
+  },
+  "process_and_scope": {
+    "reviewed_inputs_edited": false,
+    "staging_commits_pushes_engine_advancement": false,
+    "nested_agents": false,
+    "shutdown": "All worker-started extraction and raster operations completed. Completion receipts enumerate all requested pages; targeted process inspection found no surviving extraction or raster process. No server or background service was started.",
+    "tool_failure": "The first attempted page-extraction script could not import pypdf and produced no excerpt. The installed pdfseparate command supplied the excerpts successfully; no package was installed.",
+    "public_evidence_boundary": "This JSON, initial-facts.json, and source-page-receipt.json use repository-relative paths and no native identifiers. Source page rasters and helper-native cache/run receipts are local inspection artifacts, not an authorization to publish facsimile images or machine/tool paths."
+  },
+  "limits": [
+    "No new exhaustive reception or rights sweep; review checked the exact loci material to this homily.",
+    "No new build, installed-PDF identity, web, publication, or final three-document acceptance claimed.",
+    "The mechanical preflight was not rerun; semantic source, argument, and oral review were performed independently."
+  ]
+}

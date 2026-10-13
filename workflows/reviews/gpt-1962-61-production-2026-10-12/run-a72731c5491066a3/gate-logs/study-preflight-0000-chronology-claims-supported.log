@@ -1,0 +1,15 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost --edition research --check chronology-claims-supported
+exit 1
+--- stdout ---
+
+--- stderr ---
+check-content-preflight error: chronology-claims-supported (research edition): sections/70-date-location.tex: place/context may contain prose, citations and emphasis only
+check-content-preflight error: chronology-claims-supported (research edition): sections/70-date-location.tex: place/context may contain prose, citations and emphasis only
+check-content-preflight error: chronology-claims-supported (research edition): sections/70-date-location.tex: place/context may contain prose, citations and emphasis only
+check-content-preflight error: chronology-claims-supported (research edition): sections/70-date-location.tex: place/context may contain prose, citations and emphasis only
+check-content-preflight error: chronology-claims-supported (research edition): sections/70-date-location.tex: place/context may contain prose, citations and emphasis only
+check-content-preflight error: chronology-claims-supported (research edition): sections/70-date-location.tex: place/context may contain prose, citations and emphasis only
+check-content-preflight error: chronology-claims-supported (research edition): sections/70-date-location.tex: place/context may contain prose, citations and emphasis only
+check-content-preflight error: chronology-claims-supported (research edition): sections/70-date-location.tex: place/context may contain prose, citations and emphasis only
+check-content-preflight error: chronology-claims-supported (research edition): sections/70-date-location.tex: place/context may contain prose, citations and emphasis only
+

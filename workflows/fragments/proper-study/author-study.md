@@ -43,6 +43,14 @@ Declare `chronology_presentation = "orientation-v1"` for the concise table.
 Give its generated dates and contextual claims a reviewed home in the study,
 with exact historical-appendix references for fuller alternatives and evidence.
 
+Follow `guidance/web-editions.md` for appointed-text anchors: author exactly
+one explicit `\label{proper-<element-key>}` for every declared element key,
+including optional alternatives, at its appointed text or rights-safe locator.
+Put it immediately after a heading naming only that element, or immediately
+before its paragraph when a heading groups texts. Do not repeat it in the map
+or commentary, or add an undeclared proper key. The converter requires unique,
+complete source and rendered targets; it does not infer them from headings.
+
 Import `common/preamble` then `common/propers-format` literally and declare
 `format_contract = "propers-format-v1"`. Use the shared title, table, dossier,
 keyed lane-heading and four-senses forms described in the three-document
@@ -67,6 +75,16 @@ logs and raster evidence beneath this run's stage/iteration artifact directory,
 with rasters in their own replaceable child. Report the exact PDF path and hash
 for the cold reviewer. This is author verification; the later shared-timestamp
 three-document build and independent visual review remain required.
+
+Also run `tools/tpt web-edition --provider {provider} --output <probe-root> {proper}`,
+using this run's `build/tpt-runs/<run>/artifacts/author-study-<iteration>/web-probe`
+as the probe root. Use pandoc and the exact Python Markdown dependency pinned
+in `requirements-public-alpha.txt`. Repair source defects before submission;
+report converter defects without changing accepted research to evade them.
+Study preflight repeats this conversion before the study is sealed for review.
+It reads only the canonical study, so future companion files may still be
+absent. This proof neither accepts a web edition nor creates a web receipt;
+the later generate-web and independent web-review stages remain required.
 
 Update `research/production-review.md` with actual scope, substantive word
 count and source limits. On reentry, repair study-owned findings; the workflow

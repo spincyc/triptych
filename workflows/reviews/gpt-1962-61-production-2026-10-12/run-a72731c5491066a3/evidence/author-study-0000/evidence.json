@@ -1,0 +1,56 @@
+{
+  "stage": "author-study",
+  "iteration": 0,
+  "workflow": "proper-study",
+  "version": 10,
+  "run_id": "a72731c5491066a3",
+  "packet_sha256": "373b377ba75ab6ba011a91b82c5aa35da7a59db405cdc044864c65fecffb5ef9",
+  "proof": {
+    "path": "build/tpt-runs/a72731c5491066a3/artifacts/author-study-0000/study-proof.pdf",
+    "sha256": "4f51be986a33deb748895c8f3f5825f33c81247ab9fad8bc4dc043d1ea9b4403",
+    "page_count": 26
+  },
+  "body_word_count": 7233,
+  "checks": {
+    "build": "completed; metadata and 56 navigation anchors valid",
+    "manifest": "research artifact edition passed",
+    "diagnostics": "No warning, overfull/underfull, undefined reference, missing character, or TeX error in final build log.",
+    "appointed_text": "17 Latin and 17 English bodies exactly match verified.md after markup-only transformation.",
+    "visual": "Full-page inspection across settled drafts; final changed locator and timestamp pages directly inspected. Unchanged page image equivalence checked against inspected drafts. No clipping, collision, broken table, stranded heading, or unreadable footnote observed.",
+    "fonts": "Latin Modern fonts embedded, subset and Unicode-mapped",
+    "diff_check": "passed for study leaf",
+    "upstream_evidence": "unchanged"
+  },
+  "source_limits": [
+    "Accepted liturgical facsimile collation reused; not all facsimile pages recollated by this author.",
+    "Native retained Fathers, saints, biblical contexts and historical date sources read directly; no inherited PASS substituted for reading.",
+    "Gregory read in reset transcription; Schuster in retained OCR; De Trinitate delivery has disclosed later revisions. No fresh facsimile check claimed for these.",
+    "Haydock page image not independently reinspected by author.",
+    "USCCB introductions reopened for bounded dating claims; no hash comparison to acquisition-time pages."
+  ],
+  "upstream_defects": [],
+  "changed_files": [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/main.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/generation-metadata.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/proper-components.toml",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/web-edition.toml",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/00-opening.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/10-appointed-text.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/20-commentary.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/30-mercy-received.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/40-protected-pilgrimage.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/50-comparison.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/70-date-location.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/90-study-apparatus.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/production-review.md"
+  ],
+  "process_shutdown": "All author-started build and raster commands completed; no browser, server, background worker, or nested agent remains.",
+  "review_boundary": "Author verification only; cold study review and all subsequent workflow stages remain.",
+  "records": {
+    "production_review": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/production-review.md",
+    "text_check": "build/tpt-runs/a72731c5491066a3/artifacts/author-study-0000/text-check.json",
+    "diagnostics": "build/tpt-runs/a72731c5491066a3/artifacts/author-study-0000/diagnostics.json",
+    "raster_comparison": "build/tpt-runs/a72731c5491066a3/artifacts/author-study-0000/raster-comparison.json",
+    "raster_root": "build/tpt-runs/a72731c5491066a3/artifacts/author-study-0000/rasters"
+  }
+}

@@ -103,6 +103,26 @@ ran 21 orientation tests, repeated the 19-dossier comparison, and inspected all
 three final visual proofs. Illustrative locations in these proofs remain
 unaccepted research examples.
 
-The new Sunday's actual production remains in progress. Its production record
-will supply the concrete content, visual and publication judgments; these
-foundation checks do not constitute those verdicts.
+The new Sunday's first actual production, `a72731c5491066a3`, passed research,
+all three content reviews and the all-page visual review, then ended honestly
+`BLOCKED` at canonical web conversion. All seventeen explicit schema-2 source
+anchors were missing. The exact same late failure is documented in the GPT
+`PC-S54` production of 6 October. The web guidance already states the
+requirement; study authoring and preflight did not enforce it before accepted
+sources became frozen. This is a separate, repeatable workflow defect exposed
+by the real case. The corrected contract adds explicit author instructions and
+an actual converter probe before cold study review, returning failures to the
+study author. Version 11 changes only the pipeline, author fragment and
+operator instructions, with focused regression tests; the converter and engine
+remain unchanged. Twenty-nine implementation checks passed. The separate
+[independent review](anchor-preflight/report.md) passed with no open findings
+after nine new regression tests, 197 existing checks and two additional native
+probes. It verified failure routing, missing/rendered-away anchors, dependency
+failure, absent future companions and refusal to treat stale output as success.
+The historical foundation review above is not restamped.
+
+The engine has no supported resume or upstream route from a linear-stage
+`BLOCKED` result. The first run's native evidence remains intact in the
+[terminal archive](../gpt-1962-61-production-2026-10-12/run-a72731c5491066a3/README.md).
+A replacement run must independently inspect reused research and manuscripts
+and obtain fresh stage verdicts. Production completion remains pending.

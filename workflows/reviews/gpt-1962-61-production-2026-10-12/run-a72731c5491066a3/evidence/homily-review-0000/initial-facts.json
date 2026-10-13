@@ -1,0 +1,64 @@
+{
+  "packet_sha256": "8346db613e95be0d8d9c7835b9d1f3e086aedf310e2aec2a485a496a965edebf",
+  "sealed_files": [
+    {
+      "path": "src/common/preamble.tex",
+      "expected": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "actual": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b"
+    },
+    {
+      "path": "src/common/propers-format.tex",
+      "expected": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "actual": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70"
+    },
+    {
+      "path": "src/common/propers-homily.tex",
+      "expected": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "actual": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/homily.tex",
+      "expected": "272c13654ed10c0be7d28df84041d2110a8f55a71e3a4c4004cdff98739bd9ad",
+      "actual": "272c13654ed10c0be7d28df84041d2110a8f55a71e3a4c4004cdff98739bd9ad"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/interpretations.md",
+      "expected": "e436c3374a0ed3e6b2833aeef8361af39a2e4c1bffba5cd71c60e1bb23938ef7",
+      "actual": "e436c3374a0ed3e6b2833aeef8361af39a2e4c1bffba5cd71c60e1bb23938ef7"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md",
+      "expected": "ccd4b0fe7be72839009595197b84a653a1b85f3563a0f306d8537c3ea8e68d7c",
+      "actual": "ccd4b0fe7be72839009595197b84a653a1b85f3563a0f306d8537c3ea8e68d7c"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/source-bindings.toml",
+      "expected": "c7695743cd3b15dfbdae1fa19aedfc2ffdf9bb35829d5c28ede733baebd79712",
+      "actual": "c7695743cd3b15dfbdae1fa19aedfc2ffdf9bb35829d5c28ede733baebd79712"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/homily/10-body.tex",
+      "expected": "919a072552936362be959c97fe2a7d363992e9765757eafb9ed7f96c2f2fc094",
+      "actual": "919a072552936362be959c97fe2a7d363992e9765757eafb9ed7f96c2f2fc094"
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/homily/90-apparatus.tex",
+      "expected": "f85245aed3db629ed34323362b91cb7a8bd1e0e14e574bf62d1315149f85dd4b",
+      "actual": "f85245aed3db629ed34323362b91cb7a8bd1e0e14e574bf62d1315149f85dd4b"
+    }
+  ],
+  "spoken_words": 1257,
+  "minutes_at_110": 11.427272727272728,
+  "minutes_at_120": 10.475,
+  "proof": {
+    "path": "build/tpt-runs/a72731c5491066a3/artifacts/derive-homily-0000/homily-proof.pdf",
+    "bytes": 245076,
+    "sha256": "cf59a2d2cd49c33189a55712761da1934c1e0ed909284e5a6d9622f775dc9e17"
+  },
+  "source_proof_spoken_tokens_equal": true,
+  "proof_spoken_tokens": 1257,
+  "sentence_count": 116,
+  "longest_sentence_words": 26,
+  "mean_sentence_words": 10.836206896551724,
+  "extraction_method": "pdftotext -raw; spoken start through apparatus start; title, running head, page numerals removed; Unicode normalized and line-end hyphenation joined; alphabetic tokens with internal apostrophes or hyphens retained"
+}

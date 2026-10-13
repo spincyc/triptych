@@ -4,7 +4,7 @@ Research completed for the general-calendar occurrence on 18 October 2026,
 using the 1962 typical Missal alone as appointment authority. Checks were
 performed on 12 October 2026, local Chicago date. The workflow is
 `proper-study` v10, run `a72731c5491066a3`, foundation
-`9c4d5e5eb1cb12bc10ceece135f344c284ff8e52`, research iterations 0–1, actual
+`9c4d5e5eb1cb12bc10ceece135f344c284ff8e52`, research iterations 0–2, actual
 Codex GPT-6 at high effort. This is an evidence record, not drafted study
 prose or an assertion of completed cold review. The preliminary handoff was
 used for leads; every interpretation admitted here was read independently.
@@ -332,7 +332,7 @@ that all historical dates are modern scholarly consensus.
 | `row-b12891d28424f424` | Ps118:1,Ps89:1–2,Ps118:81,84,86: occasions unresolved. Moses heading and disputed David attribution do not identify each occasion. | Prayer within Israel's worship; no securely identified occasion/site for these precise verses. Augustine Ps89§2 explicitly resists deducing Mosaic composition. |
 | `row-483ed5cea1be714a` | Psalter composition boundary before c165BC in USCCB Psalms introduction; no secure date for any individual Psalm. | A broad collection-level boundary, not simultaneous composition of the four passages. Israelite/Jewish worship is the setting; individual place remains unestablished. |
 | `row-602ada67f8f3bb7d` | Ps113:1 retrospectively recalls Exodus. 3Kings6:1 dates Temple commencement in the480th year after Exodus; CE *Biblical Chronology* vol3(1908), §IV, quotes LXX440 as alternative. The canonical relative endpoint is Temple commencement. | Departure from Egypt, remembered in the Psalm; later endpoint Jerusalem's Temple construction. The rendered orientation text correctly says “Temple begun…” for BOTH intervals. No absolute Exodus year follows from this row; it is neither the Psalm's composition date nor Exodus480years after itself. |
-| `row-b5b7957d62c25282` | Ps118 traditional David attribution, with CE *David* vol4(1908) usual reign1055–1015BC. Haydock printed781/PDF817 note records David, Solomon and captive-period alternatives. | Traditional author's era, not an established date/place of Ps118 or its distress. Haydock's conjectures are not harmonized into a single historical occasion. |
+| `row-b5b7957d62c25282` | Ps118 traditional David attribution, with CE *David* vol4(1908) usual reign1055–1015BC. Haydock's Psalm118:1 note, continued on printed781/PDF817, proposes David writing to instruct the young Solomon (Berthier), David writing in his own youth under Saul's persecution (Muis, Bossuet and others), or Daniel writing to console the captives (Calmet). Solomon is the pupil, not a proposed author. The note nevertheless reports the Psalm's general attribution to David. | Traditional author's era, conditional on that attribution, not an established date/place of Ps118 or its distress. Haydock's conjectures are not harmonized into a single historical occasion. |
 | `row-88321469d09df574` | Matt18:23–35 narrated teaching occasion: unresolved date. | Galilean narrative frame, Capharnaum immediately preceding, before departure toward Judea (Matt17:23–19:1); precise venue is not stated by the lection. |
 | `row-02ce0f03aad7eafe` | Matthew book composition: CE *Gospel of St Matthew* vol10(1911) and *New Testament* vol14(1912). Earlier dates often concern the hypothesized Aramaic original; identity/date of the Greek translation is not settled. | Jewish/Judean audience and traditional Palestinian setting belong to those source hypotheses, not a proved Greek composition site. Preserve the generated alternatives38–45,40–42,40–45,60–68,64–67,c50 rather than average them. |
 | `row-d944994c29115eb5` | Ephesians composition58–63 or61 under traditional Pauline-captivity hypotheses; CE *Ephesians* vol5(1909), “To Whom Addressed” and “Date and Place”; CE *St Paul* vol11(1911), chronology/captivity discussion. | Rome favored within the traditional account, Caesarea alternative. Ephesus/Asia Minor audience versus circular-letter hypotheses must remain distinct from the place of writing and from later disputes about authorship. |
@@ -401,3 +401,15 @@ their stated delivery bounds. Neither historical-print collation for these
 supplementary authorities nor completeness of Gregory's omitted notes is
 claimed. No existing source metadata or another publication's reviewed
 binding was changed by this repair.
+
+Research iteration 2 rechecked STU-001 against the complete registered Haydock
+PDF, whose SHA-256 matched `9d2dd602cc4a574a8300936c37b7e2f1b3be938803acc6a607cbf5622a2fcab2`.
+The Psalm118 heading and verse-1 note were read in page images at printed
+780–781/PDF816–817. The attribution summary above now distinguishes the
+proposed authors from Solomon, David's intended pupil. The canonical passage
+`psalm-118-attribution-and-occasions` already makes that distinction; no source
+record, binding fingerprint, chronology record or generated date was changed.
+The source still establishes no single occasion for the appointed verses.
+This bounded correction does not reopen the other reception findings or
+interpretations. Its reader-facing propagation belongs to the subsequent
+study-authoring stage.

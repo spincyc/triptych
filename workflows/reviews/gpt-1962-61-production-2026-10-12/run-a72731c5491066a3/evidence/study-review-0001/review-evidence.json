@@ -1,0 +1,84 @@
+{
+  "stage": "study-review",
+  "iteration": 1,
+  "packet_sha256": "c48c30e4e9e197084868e7495e3c8f9c7b4c01c0274b84db9008156144dc7aa9",
+  "reviewer": "Fresh independent Codex GPT-6 at xhigh; single worker; no nested agents.",
+  "completed_utc": "2026-10-13T03:39:26+00:00",
+  "artifact": {
+    "path": "build/tpt-runs/a72731c5491066a3/artifacts/study-review-0001/study-proof.pdf",
+    "sha256": "324c562aebd7ba283666721403b192f9a2a9fda11a43cb063e720192b21553aa",
+    "physical_pages": 26,
+    "bytes": 447319,
+    "independent_two_pass_build_byte_identical": true
+  },
+  "scope": {
+    "review_scope": [
+      "generation-metadata.tex",
+      "research/production-review.md",
+      "research/scope.md",
+      "sections/70-date-location.tex"
+    ],
+    "reviewed_changed_prose": "research/scope.md chronology row and repair record; sections/70-date-location.tex Psalms subsection; generation and production records",
+    "standing_findings_checked": [
+      "STU-001",
+      "STU-002"
+    ],
+    "unchanged_sealed_arguments": "The two interpretive lanes, appointed texts, comparison, generated chronology, bindings, opening and apparatus are byte-identical to study-review iteration 0. They were not reopened for new findings.",
+    "sealed_file_count": 17,
+    "all_sealed_files_match_before_and_after": true,
+    "fresh_complete_study_semantic_rereview": false
+  },
+  "finding_outcomes": [
+    {
+      "id": "STU-001",
+      "outcome": "resolved",
+      "source_locus": "Haydock Bible, historical 1859 pages as scanned in the registered 1942-page artifact, printed p.781 / PDF p.817, continuing Psalm 118:1 note, left column.",
+      "study_locus": "sections/70-date-location.tex:69-76; proof p.24; research/scope.md chronology row row-b5b7957d62c25282 and final research-iteration-2 paragraph.",
+      "independent_observation": "The image distinguishes David instructing young Solomon (Berthier), David writing during his youth under Saul (Muis, Bossuet and others), and Daniel consoling captives (Calmet), then states general attribution to David. The corrected research and study preserve these alternatives without naming Solomon as author.",
+      "evidence_identity": "The complete acquired PDF hashes to the registered 9d2dd602cc4a574a8300936c37b7e2f1b3be938803acc6a607cbf5622a2fcab2. A freshly extracted PDF p.817 and the earlier excerpt rasterize identically (PNG SHA-256 195ca6fb5c1615f667dbca87a77c221a700e349ec6c2548bb1554153b1790474)."
+    },
+    {
+      "id": "STU-002",
+      "outcome": "resolved",
+      "source_locus": "Augustine, Expositions of Psalms, Vulgate Psalm 89 / NPNF Psalm XC §§1-3; retained CCEL source.txt lines 45083-45155.",
+      "study_locus": "sections/70-date-location.tex:77; proof p.24 footnote 41.",
+      "independent_observation": "Section 1 introduces the Mosaic heading; section 2 expressly rejects inferring composition by Moses. The revised footnote points to section 2 and accurately supports the prose."
+    }
+  ],
+  "consequential_inference_check": {
+    "loci": "Historical appendix Psalms paragraph and orientation row row-b5b7957d62c25282; Haydock Psalm 118:1 note; Catholic Encyclopedia IV (1908), King David, opening paragraph; Augustine Psalm XC §§2-3; protected-pilgrimage prose on refuge at sections/40-protected-pilgrimage.tex:76-84.",
+    "question": "Does attribution establish a dated psalm occasion, and does the Mosaic-heading correction disturb the interpretation of immutable refuge?",
+    "outcome": "No. The Psalm remains occasion-undated; David’s 1055-1015 B.C. reign is explicitly a conditional traditional-author era from the historical article’s usual chronology. The pupil/author correction teaches the actual alternatives. Augustine’s authorship caveat in §2 is distinct from the present-tense divine-immutability inference in §3, which supports the unchanged refuge paragraph. This is a focused dependency check; the prior full-lane difficulty tests were not rerun."
+  },
+  "render_review": {
+    "pages_opened_at_full_page_scale": [
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    "changed_pages": [
+      24,
+      26
+    ],
+    "outcome": "The page-23 orientation table remains readable; its Psalm occasion, collection boundary and Davidic attribution rows remain distinct. Corrected prose and footnote fit page 24. Source references lead to the stated appendix pages; references and one visible revision plus rights colophon fit the final page. No clipping or collision observed.",
+    "limit": "No fresh visual inspection is claimed for unchanged pages 1-21; their raster bytes were compared to the previous proof."
+  },
+  "verification": {
+    "build": "Two successful isolated pdflatex passes with TEXINPUTS=../:, recorder, nonstop interaction and halt-on-error; second-pass log has no Warning, Overfull, Underfull, undefined or Error match. An initial attempt omitted TEXINPUTS and failed before producing a PDF; it was corrected and rerun.",
+    "raster": "Both successful tools/pdf-review invocations completed. An initial cache path under .scratch was rejected before rendering; the cache was moved to the assigned evidence subtree.",
+    "metadata": "pdfinfo independently reports 26 Letter pages and the expected revision; pdffonts shows all 14 font entries embedded, subset and Unicode mapped.",
+    "current_seal": "All 17 packet-sealed files match, as do the unchanged two unsealed scoped records against the start snapshot.",
+    "new_owner_need": null
+  },
+  "limits": [
+    "Scoped return review, not a new exhaustive reception, liturgical-rights or source-library audit.",
+    "Haydock verification uses retained acquired artifact bytes and a fresh page extraction; no new network acquisition.",
+    "Augustine verification uses the retained historical English CCEL transcription; no fresh Greek/Latin or print-image collation.",
+    "Historical David dating is a checked historical source claim, not present scholarly consensus.",
+    "Later concise, homily, whole-artifact visual, web, install and publication gates remain outside this result."
+  ],
+  "process_status": "Completed. All reviewer-started build and raster processes exited; no background process remains.",
+  "mutation_boundary": "Only assigned scratch and study-review-0001 evidence outputs written. No reviewed source, source owner, guidance, code, staging, commit, push, installation or engine advancement changed."
+}

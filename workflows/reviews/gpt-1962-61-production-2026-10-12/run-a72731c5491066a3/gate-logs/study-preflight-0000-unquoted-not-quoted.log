@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost --edition research --check unquoted-not-quoted
+exit 1
+--- stdout ---
+
+--- stderr ---
+check-content-preflight error: unquoted-not-quoted (research edition): the leaf prints no References section
+

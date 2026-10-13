@@ -1,0 +1,87 @@
+{
+  "stage": "derive-synthesis",
+  "iteration": 0,
+  "packet_sha256": "47ca5e8860547fe897d80744e622e57dfa403c09c13d5f758a21c5763f212b0b",
+  "generation_timestamp": "2026-10-13T03:56:10Z",
+  "proof": {
+    "pdf": {
+      "path": "build/tpt-runs/a72731c5491066a3/artifacts/derive-synthesis-0000/synthesis-proof.pdf",
+      "bytes": 386752,
+      "sha256": "873a34706aeb564af9f308632dd120350c10d2930b56440438742621f06da7ab"
+    },
+    "aux": {
+      "path": "build/tpt-runs/a72731c5491066a3/artifacts/derive-synthesis-0000/synthesis-proof.aux",
+      "bytes": 5083,
+      "sha256": "2bfdb9c12bb938b301e7352611b4e71ea54209a60b8fbb193cab564204c643b1"
+    },
+    "log": {
+      "path": "build/tpt-runs/a72731c5491066a3/artifacts/derive-synthesis-0000/synthesis-proof.log",
+      "bytes": 44334,
+      "sha256": "ae535e28d9643abbc527e816954e9c856b42b386c3b41371c77beb4433389c14"
+    }
+  },
+  "pages": 10,
+  "word_count": {
+    "substantive_word_count": 4135,
+    "per_component": {
+      "01-inventory": 242,
+      "02-overview": 70,
+      "04-themes": 978,
+      "10-commentary": 2845
+    },
+    "count_method": "English-alphabet word tokens with internal apostrophes and hyphens retained; inventory, overview, themes and integrated commentary including headings; excludes footnotes, TeX commands and marker arguments, generated chronology and historical notes, terminal apparatus and metadata. Adapted from the existing study author count procedure."
+  },
+  "physical_markers": {
+    "pages": 10,
+    "markers": {
+      "triptych:concise:inventory:start": 1,
+      "triptych:concise:inventory:end": 1,
+      "triptych:concise:overview:start": 1,
+      "triptych:concise:sense:literal": 1,
+      "triptych:concise:sense:allegorical": 1,
+      "triptych:concise:sense:moral": 1,
+      "triptych:concise:sense:anagogical": 1,
+      "triptych:concise:overview:end": 1,
+      "triptych:concise:chronology:start": 2,
+      "triptych:concise:chronology:end": 2,
+      "triptych:concise:themes:start": 3,
+      "triptych:concise:themes:end": 4,
+      "triptych:concise:commentary:start": 5
+    }
+  },
+  "checks": {
+    "make_doc": 0,
+    "synthesis_artifact_components": 0,
+    "synthesis_content_preflight": 0,
+    "git_diff_check": 0,
+    "make_check_sources": 2
+  },
+  "known_limit": "make check-sources requires future declared homily.tex after validating source library; final three-document build and cold review remain required.",
+  "log_sanitization": "Workstation repository prefix removed across TeX line wraps; user TeX tree replaced by <user-texlive>.",
+  "original_log_sha256": "6e28900e95738fd43d6be23f50e9fedffd55f4b51ccd64cdff528459b9fd20ab",
+  "changed_files": [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/synthesis.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/01-inventory.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/02-overview.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/03-chronology.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/04-themes.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/10-commentary.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/90-apparatus.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/generation-metadata.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/production-review.md"
+  ],
+  "visual_pages_inspected": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "processes": "All author-started processes completed; no background process remains.",
+  "upstream_defects": []
+}

@@ -10,7 +10,7 @@ available for legacy schema-1 work. The current three-document contract
 restores the established first four pages for the concise companion, while
 its remaining argument and the expansive study follow their distinct roles. Read
 `guidance/liturgy/propers-three-documents.md` for the owning standard. The
-`proper-study` workflow is at version 10. The version paragraphs below say what
+`proper-study` workflow is at version 11. The version paragraphs below say what
 each bump changed.
 
 The driver grammar is unchanged:
@@ -251,6 +251,32 @@ reviews test the rendered passage-to-occurrence/place/date lookup. These
 changes preserve stage order, effort, page ranges, and source requirements.
 Finish or supersede active runs before changing their pinned digest; never
 restamp historical verdicts.
+
+Version 11 adds an early canonical web conversion probe to `study-preflight`
+before `study-review` seals the source. Missing,
+duplicate or undeclared appointed-text anchors, rendered anchor loss and other
+converter failures now return to `author-study`. The converter remains the
+single owner of these mechanical checks; the author follows the placement
+contract in `guidance/web-editions.md`, and cold review judges placement.
+This closes the late failures recorded for GPT postconciliar PC-S54 on
+6 October and GPT 1962 identity 61 on 13 October 2026.
+
+The probe needs pandoc and the exact Python Markdown pin in
+`requirements-public-alpha.txt`, just as final conversion does. Establish that
+environment before advancing the gate; a different installed version is a
+failure, not permission to skip the rendered audit. The gate writes disposable
+output beneath `build/tpt-runs/<run>/artifacts/study-web-probe`; a later attempt
+may replace it. For completed commands, the native gate log retains each
+stage/iteration's command, exit status and diagnostic. A timeout or launch
+failure instead appears in the structured gate result. An old probe file never
+proves a failed attempt passed. Future synthesis and homily files need not exist.
+The probe grants no web approval, writes no review receipt and installs nothing;
+the later generation, web review and publication gates still run.
+
+The fragment and gate change the pinned workflow digest. Seed a new version-11
+run to adopt them; do not alter historical terminal records, restamp accepted
+verdicts or try to resume a terminal blocked run. Existing schema-1 conversion
+and historical publication validation are unchanged.
 
 ## Overview
 
