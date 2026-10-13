@@ -243,5 +243,30 @@ article HTML remains identical to the visually accepted files.
 Three unrelated examples still
 require the absent `build/core-last-20.pdf`; six model/network or writing
 examples remain deliberately exempt. The full release corpus has resolved
-the initial deployment-artifact limitation. Main integration and verification
-of the automatically deployed public routes remain outstanding.
+the initial deployment-artifact limitation.
+
+## Verified publication — 13 October 2026 UTC
+
+An ordinary fast-forward push placed the accepted revision on `origin/main`
+at `6a9148ffe24fd28e05e60d87dff8b5bc12189968`. The automatically triggered
+[Pages run 38337906346](https://github.com/spincyc/triptych/actions/runs/38337906346)
+succeeded; its deployment job completed at `2026-10-13T02:52:05Z`.
+[Repository-hygiene run 38337906324](https://github.com/spincyc/triptych/actions/runs/38337906324)
+also passed. The hosted build independently passed its source gate, full
+artifact build and GitHub Pages compatibility verification.
+
+A separate reviewer fetched fifteen routes at <https://mystago.gy/> after
+deployment: four GPT article HTML routes, four canonical PDF routes, their
+four public PDF aliases, the Faith catalog, document catalog JSON, and the
+publication manifest. Every response was HTTP 200 and byte-identical to the
+accepted local site. All twelve article/PDF route hashes match the production
+receipt, and all eight downloaded PDFs pass generation-metadata validation.
+Faith retains the sixteen expected GPT and Claude links for the series.
+
+The live manifest contains the same 251 publications as the preceding
+deployment. Its four revised GPT PDF hashes match acceptance; all 247 other
+publication PDF hashes remain unchanged. All sixty Claude document catalog
+entries also compare equal to the base. This verifies both the corrected
+publication and the protected Claude boundary. `production-review.json`
+retains the commit, workflow, manifest hash and bounded live-check result.
+The authorized revision, correction and main publication are complete.

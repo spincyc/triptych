@@ -104,5 +104,21 @@
     },
     "additional_screenshots": 6
   },
-  "review_base_commit": "ed19fb6da73b9b09bc7a3350e76b825e76f97091"
+  "review_base_commit": "ed19fb6da73b9b09bc7a3350e76b825e76f97091",
+  "deployment": {
+    "commit": "6a9148ffe24fd28e05e60d87dff8b5bc12189968",
+    "workflow_url": "https://github.com/spincyc/triptych/actions/runs/38337906346",
+    "workflow_conclusion": "success",
+    "deployment_job_completed_at_utc": "2026-10-13T02:52:05Z",
+    "site_url": "https://mystago.gy/",
+    "live_routes_checked": 15,
+    "live_routes_http_200": 15,
+    "live_routes_matching_local_build": 15,
+    "publication_routes_matching_accepted_hashes": 12,
+    "downloaded_pdfs_passing_metadata": 8,
+    "unchanged_publication_pdf_hashes": 247,
+    "changed_pdf_hashes_matching_acceptance": 4,
+    "claude_catalog_entries_unchanged": 60,
+    "publication_manifest_sha256": "67e7a73ffbd37b98d2757485dd96d8ef5ca2a77c486e05702d03dca09d9445ab"
+  }
 }

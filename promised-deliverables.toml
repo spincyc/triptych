@@ -4,7 +4,7 @@ schema_version = 1
 id = "gpt-four-last-things-2026-10-12"
 owner = "PROJECT-WORK.md"
 promise = "Revise the four GPT Four Last Things essays for source accuracy, synthesis, pedagogy, seasonal coherence and presentation; preserve all Claude documents unchanged; resolve the subsequent cold-review findings, validate the corrected editions, and push them to main."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "gpt-flt-content"
@@ -39,9 +39,11 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "gpt-flt-main-publication"
   criterion = "The validated GPT revision reaches origin/main through an ordinary push, and the automatic Pages workflow and corrected public routes are verified."
-  status = "open"
-  evidence = ["src/gpt/articles/faith/four-last-things-shared/revision-review.md", "PROJECT-WORK.md"]
-  check = "path_exists"
+  status = "pass"
+  evidence = ["src/gpt/articles/faith/four-last-things-shared/revision-review.md", "src/gpt/articles/faith/four-last-things-shared/production-review.json", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "src/gpt/articles/faith/four-last-things-shared/production-review.json"
+  needle = "\"workflow_conclusion\": \"success\""
 
 [[deliverables]]
 id = "publication-links-2026-10-09"

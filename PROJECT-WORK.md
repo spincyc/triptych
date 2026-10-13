@@ -42,8 +42,17 @@ attribution of disclosed forgiven sins, Death's edition and John 6 numbering,
 Heaven's marriage wording, and Hell's terminal-only work-wide scope. All four
 five-page PDFs and generated web editions have passed renewed production
 review and are installed. The source/deployment gates, complete site build,
-and GitHub Pages artifact verification pass. The authorized main push and live
-deployment verification remain in progress; no Claude publication was changed.
+and GitHub Pages artifact verification pass.
+
+**Complete: pushed to `main` and verified live.** Commit
+`6a9148ffe24fd28e05e60d87dff8b5bc12189968` deployed successfully in
+[Pages run 38337906346](https://github.com/spincyc/triptych/actions/runs/38337906346);
+repository-hygiene run `38337906324` also passed. All fifteen checked public
+routes return HTTP 200 and match the accepted local site exactly: four GPT
+HTML editions, four canonical PDFs, four PDF aliases, Faith, the document
+catalog data, and the publication manifest. All 247 other publication PDF
+hashes remain unchanged. The production receipt records the deployment;
+no Claude publication was changed.
 
 ## Publication links and mobile angelology report, 2026-10-09
 

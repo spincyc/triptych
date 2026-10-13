@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-10-12"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:9647e2529ce90dc2ab3ca8e2eaa4987736762658188789d754f7b5362f2aa47a"
+inventory_snapshot = "sha256:4a8ab7fe66eba6ddc899992fac6b3043c3a7b20405fc74fd868d5294005df007"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:4ad4debf7f0932835539b11d69f9d3f75f346336e2a0a1c7b61bcd41a66dbd08"
 canonical_catalog_snapshot = "sha256:6a0032aa10ee0d92e9cb18ffc4220e863c07414b7e080a82130a228e75f41393"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:a21cd9f02aa017f38388ec75faf2377d17094e4e63c9e59bd32085d24c983a28"
+snapshot = "sha256:f9b4ec5c0157c3cf5440b8a44c9f379e530ef8a9a595dcd5b7dc3b0177a72c5a"
 families = []
 
 [[review_units]]
@@ -663,7 +663,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.articles.faith.four-last-things"
-surface_snapshot = "sha256:cb15121bdc6b77801fea362514ccad85bfe6e193fccc60ebe4ebd62d23ab5a6f"
+surface_snapshot = "sha256:c713238fe39eeadddc16c53d97df2549206542dbf1badacac6bed891e781c6c4"
 review_state = "pending"
 
 [[review_units]]
