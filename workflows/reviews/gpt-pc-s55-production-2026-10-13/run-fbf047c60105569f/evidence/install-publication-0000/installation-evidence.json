@@ -1,0 +1,718 @@
+{
+  "schema": 1,
+  "evidence_kind": "Original installation summary derived from executed commands and current files",
+  "stage": "install-publication",
+  "iteration": 0,
+  "run_id": "fbf047c60105569f",
+  "date": "2026-10-14",
+  "provider": "gpt",
+  "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+  "packet_sha256": "509c68bb294c158fbe0662441d07113925936ae456e14f75d68b3e7b3025c5c4",
+  "environment": {
+    "Python": "3.14.8",
+    "Markdown": "3.10.3",
+    "dependency_lock_sha256": "59bd4c5252324612c6ce5a27f4a4ba4e62aa4cc76bc3d974a29b45491c97c762",
+    "private_execution_environment": "Absolute pinned PYTHONPATH retained in stage scratch scripts; omitted here"
+  },
+  "installed_pdfs": [
+    {
+      "output": "study",
+      "build": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf",
+      "installed": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf",
+      "expected_sha256": "f2870d86da71dbf8cbb4556e16e985e169fab586e606ca8bbb141891540dc455",
+      "build_sha256": "f2870d86da71dbf8cbb4556e16e985e169fab586e606ca8bbb141891540dc455",
+      "installed_sha256": "f2870d86da71dbf8cbb4556e16e985e169fab586e606ca8bbb141891540dc455",
+      "bytes": 486166,
+      "pages": 23
+    },
+    {
+      "output": "synthesis",
+      "build": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+      "installed": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+      "expected_sha256": "441ebb1f0374d7ddbc5b8956222c2159d80b82453759b3e82d8f76cfc90e3d1b",
+      "build_sha256": "441ebb1f0374d7ddbc5b8956222c2159d80b82453759b3e82d8f76cfc90e3d1b",
+      "installed_sha256": "441ebb1f0374d7ddbc5b8956222c2159d80b82453759b3e82d8f76cfc90e3d1b",
+      "bytes": 380673,
+      "pages": 10
+    },
+    {
+      "output": "homily",
+      "build": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf",
+      "installed": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf",
+      "expected_sha256": "e7dfb622949d8d49646f0fa4e3d571160b6ecf0f73e7b54e8a7958a544327406",
+      "build_sha256": "e7dfb622949d8d49646f0fa4e3d571160b6ecf0f73e7b54e8a7958a544327406",
+      "installed_sha256": "e7dfb622949d8d49646f0fa4e3d571160b6ecf0f73e7b54e8a7958a544327406",
+      "bytes": 243648,
+      "pages": 3
+    }
+  ],
+  "installed_web": {
+    "path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md",
+    "sha256": "5dac08418643e50ef887586d343037a788d2ffff6b572a2fb855c33c721c83eb",
+    "bytes": 76469,
+    "staged_exact_bytes": true,
+    "fresh_conversion_identical": true
+  },
+  "release_records": [
+    {
+      "path": "release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.json",
+      "sha256": "c57a8be0b4399b9b6a23fbd9922622b0f4535ce63808e9743e83cebefb2e1e81",
+      "schema_version": 1,
+      "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+      "catalog": "library/novus-ordo-liturgy.md",
+      "status": "alpha",
+      "authorization": "perpetual-public-repository-2026"
+    },
+    {
+      "path": "release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.json",
+      "sha256": "303dd4d1695e3cd409954deaeb05bf6269d618c8b3bdf88717f0ec1b8557ec01",
+      "schema_version": 1,
+      "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis",
+      "catalog": "library/novus-ordo-liturgy.md",
+      "status": "alpha",
+      "authorization": "perpetual-public-repository-2026"
+    },
+    {
+      "path": "release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.json",
+      "sha256": "76e84f07897baa672fefe8a6d55b13a766ad6cada1d0d890bc14badb502ec560",
+      "schema_version": 1,
+      "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily",
+      "catalog": "library/novus-ordo-liturgy.md",
+      "status": "alpha",
+      "authorization": "perpetual-public-repository-2026"
+    }
+  ],
+  "reviews": [
+    {
+      "stage": "research-review",
+      "iteration": 1,
+      "disposition": "PASS",
+      "result_path": "build/tpt-runs/fbf047c60105569f/results/research-review-0001.json",
+      "result_sha256": "7ce6e4b1510197c196b810bf20fa72843e7dbfb01b715c03b16cb3b1eae40ee5",
+      "current_seal_matches": true
+    },
+    {
+      "stage": "study-review",
+      "iteration": 0,
+      "disposition": "PASS",
+      "result_path": "build/tpt-runs/fbf047c60105569f/results/study-review-0000.json",
+      "result_sha256": "3071f417479a2b3150d0abbc250eaddd4581cae7ee4aa56be2557d288773fb35",
+      "current_seal_matches": true
+    },
+    {
+      "stage": "synthesis-review",
+      "iteration": 1,
+      "disposition": "PASS",
+      "result_path": "build/tpt-runs/fbf047c60105569f/results/synthesis-review-0001.json",
+      "result_sha256": "a672a0c22b9321e91bdf29eecfe30a913742bbb7559ab3c36eb7c03276a9ecdb",
+      "current_seal_matches": true
+    },
+    {
+      "stage": "homily-review",
+      "iteration": 0,
+      "disposition": "PASS",
+      "result_path": "build/tpt-runs/fbf047c60105569f/results/homily-review-0000.json",
+      "result_sha256": "0c9b28f0a64737c328c3f7dc786b60571ef83d9fac3e2129fdadd08398ed5899",
+      "current_seal_matches": true
+    },
+    {
+      "stage": "visual-review",
+      "iteration": 0,
+      "disposition": "PASS",
+      "result_path": "build/tpt-runs/fbf047c60105569f/results/visual-review-0000.json",
+      "result_sha256": "8a8c595f1a6b74422a76aaf615ab997352ba5314e1a6b93004ac87e496c7332a",
+      "current_seal_matches": true
+    },
+    {
+      "stage": "web-review",
+      "iteration": 0,
+      "disposition": "PASS",
+      "result_path": "build/tpt-runs/fbf047c60105569f/results/web-review-0000.json",
+      "result_sha256": "5253b01e1ca0e77583ceb772a83942d334ef350f476aa1ac6646d26549adf20f",
+      "current_seal_matches": true
+    }
+  ],
+  "release_refresh": {
+    "scope": {
+      "library/novus-ordo-liturgy.md": {
+        "before": "289bd03e210e84b4ec10e1d4059fdf8476e52b425f158f38dc2e0eef9a06ab55",
+        "after": "6043faf44ce6915961d38461e7c1372cfbf290b2135f57b8b6c80d5e19d58080"
+      },
+      "src/web/data/structure/documents/corpus.json": {
+        "before": "2b31c4696ad8fa873c94d6ad20c2cbc14b27de065d3daab0a1d0309c973a4925",
+        "after": "0f7b1fb1cba8ef607bdd042814399b2ffe08c313990fcec30e82282863b3c821"
+      },
+      "src/web/data/structure/sources/editions/bede/in-marci-evangelium-expositio/1862-1862-migne-pl-92.json": {
+        "before": null,
+        "after": "62fba0c0b8a54eabe5976f5c61cd3fe4ab74cd378af93afe2e8220ba91cf651a"
+      },
+      "src/web/data/structure/sources/editions/bede/in-marci-evangelium-expositio/2026-2026-10-13-latin-wikisource-migne.json": {
+        "before": null,
+        "after": "3507cc651efaf0453d7416c3940be5ded081eda0a720bbbc053edb55e3d19ac3"
+      },
+      "src/web/data/structure/sources/editions/catholic-church/institutio-generalis-missalis-romani/2011-english-us-2011-emended-2021.json": {
+        "before": "0bada004c53866ebae7c52e1514b1432a32f91f9dcf514e2e047aca2b7c657f9",
+        "after": "2060b2c8d04559144ca682ac2c7d6be09993a63eccb76d5afb38ab61e0f3c115"
+      },
+      "src/web/data/structure/sources/editions/ignatius-press/pew-missal-planning-guide/2026-week-29-web-2026-10-13.json": {
+        "before": null,
+        "after": "e23c21d3c8b797e80692db6fd89da0ce46553984e11aeb0e92deedaeb944157f"
+      },
+      "src/web/data/structure/sources/editions/jacques-paul-migne/patrologia-latina-volume-92/1862-1862-paris.json": {
+        "before": "a8c8c1580258d438ae78a6ebd7d727859a31c66187b3cf72b0fc9af1a99aa568",
+        "after": "95c3dd4e4d86db85894945c7cad4d0f62e1d19881af92c02f18a1e4dbe537e35"
+      },
+      "src/web/data/structure/sources/editions/jerome/commentarii-in-isaiam/2026-dco-latin-pars-3-2026-10-13.json": {
+        "before": null,
+        "after": "c43cd1fac3a9020a2e5bedf4026edfceace7fb72f4c652e04a30a455b36659a8"
+      },
+      "src/web/data/structure/sources/editions/john-paul-ii/general-audience-2002-09-18/2026-english-vatican-web-2026-10-13.json": {
+        "before": null,
+        "after": "0e9943e2223bc47bc540114cddb6f50a5962809d8f3f4f9b753a7be8cc3c76c3"
+      },
+      "src/web/data/structure/sources/editions/thomas-aquinas/expositio-super-isaiam-ad-litteram/2026-latin-corpusthomisticum-chapters-40-49-2026-10-13.json": {
+        "before": null,
+        "after": "77fe343b7cb62f9e7bcdbe1cff0e072bf21b63123d39a761d286923280388d03"
+      },
+      "src/web/data/structure/sources/editions/thomas-aquinas/super-matthaeum/2026-latin-corpusthomisticum-chapters-21-25-2026-10-13.json": {
+        "before": null,
+        "after": "a1f6c87a92f357bc535373069fecddbf7b5d26b5c4ba35ad877d683b9d632a28"
+      },
+      "src/web/data/structure/sources/editions/thomas-aquinas/super-primum-ad-thessalonicenses/2026-latin-corpusthomisticum-2026-10-13.json": {
+        "before": null,
+        "after": "71ef13844f1509bad05e9ad23a32a33158759a13d2c62cc84e21a1f0abd0ce61"
+      },
+      "src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/daily-readings/2026-2026-10-18-web-2026-10-13.json": {
+        "before": null,
+        "after": "a282ef5a9fd14f6c1a8401bb9d78e1241144245731bf81401b62e1e32452a559"
+      },
+      "src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/2026-2026-09-21-english-usccb-web.json": {
+        "before": "1f5df6442793dc9314b196aa454b729087aca09d518823745275f290f428a253",
+        "after": "25dc43ad478c6edad6f569f4cb92c87f7f7f3557a86310012a3163e156b41f6e"
+      },
+      "src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/2026-english-usccb-web-2026-07-28.json": {
+        "before": "a44224488054c242afebbf42572205525643a992105ce27b906363ef4dbf933c",
+        "after": "afe4781544c9e96c424341a770b77d53d2e053979df7476e8bbe3b202f618c01"
+      },
+      "src/web/data/structure/sources/index.json": {
+        "before": "ec99a669ae0bb8509f107b66e4cdd0840b80fa623fe8da3676d310bee7571e28",
+        "after": "c27f2ad05ac70da49782e880f0145f35dee2f861a459d7c82aa91301941a8254"
+      },
+      "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md": {
+        "before": null,
+        "after": "5dac08418643e50ef887586d343037a788d2ffff6b572a2fb855c33c721c83eb"
+      }
+    },
+    "unrelated_binding_count": 22213,
+    "unrelated_bindings_preserved": true,
+    "other_manifest_fields_preserved": true,
+    "expected_derived_rights_record_hash_change": {
+      "before": "ee9c1248897ab4103bf5c4e8b9250048801b86a2e4790263a11ca58554c1f1eb",
+      "after": "7607a4879c7aa306cc9ae339f4e48e69911e304ab631538329c6d9e209360ee6"
+    },
+    "catalog_other_cycles_and_providers_preserved": true,
+    "existing_document_catalog_works_preserved": 150
+  },
+  "blocker": {
+    "path": "src/sources/inventories/source-containment-v1.toml",
+    "container": "work.jacques-paul-migne.patrologia-latina-volume-92",
+    "missing_constituent": "work.bede.in-marci-evangelium-expositio",
+    "accepted_segment": "segment.bede.in-marci-evangelium-expositio.1862-migne-pl-92.columns-235-236",
+    "sealed_sha256": "db35fb1148efc02146e22d13bddd4e67cdce91b1f4e26078454e52d6c68e7045",
+    "actual_sha256": "db35fb1148efc02146e22d13bddd4e67cdce91b1f4e26078454e52d6c68e7045",
+    "mutated": false,
+    "proposed_upstream_repair": "Add the PL92 constituent work.bede.in-marci-evangelium-expositio from the accepted segment, bounded to columns 235–236 with its explicit segment basis and no whole-work claim; preserve partial status and state the remaining unidentified contents. Re-review the affected research dependency and all downstream boundaries under the coordinator."
+  },
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "scripts/_proper_study.py",
+        "check",
+        "--provider",
+        "gpt",
+        "--document",
+        "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+        "--phase",
+        "artifacts"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/artifacts-before.log"
+    },
+    {
+      "command": [
+        "make",
+        "install-doc",
+        "DOC=liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+        "PROVIDER=gpt"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/install-study.log"
+    },
+    {
+      "command": [
+        "make",
+        "install-doc",
+        "DOC=liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis",
+        "PROVIDER=gpt"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/install-synthesis.log"
+    },
+    {
+      "command": [
+        "make",
+        "install-doc",
+        "DOC=liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily",
+        "PROVIDER=gpt"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/install-homily.log"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/_proper_study.py",
+        "check",
+        "--provider",
+        "gpt",
+        "--document",
+        "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+        "--phase",
+        "artifacts"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/artifacts-after.log"
+    },
+    {
+      "command": [
+        "git",
+        "add",
+        "--",
+        "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/stage-web.log"
+    },
+    {
+      "command": [
+        "make",
+        "add-publication",
+        "ID=liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+        "CATALOG=library/novus-ordo-liturgy.md",
+        "PROVIDER=gpt",
+        "STATUS=alpha"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/release-study.log"
+    },
+    {
+      "command": [
+        "make",
+        "add-publication",
+        "ID=liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis",
+        "CATALOG=library/novus-ordo-liturgy.md",
+        "PROVIDER=gpt",
+        "STATUS=alpha"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/release-synthesis.log"
+    },
+    {
+      "command": [
+        "make",
+        "add-publication",
+        "ID=liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily",
+        "CATALOG=library/novus-ordo-liturgy.md",
+        "PROVIDER=gpt",
+        "STATUS=alpha"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/release-homily.log"
+    },
+    {
+      "command": [
+        "make",
+        "document-catalogue"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/document-catalogue.log"
+    },
+    {
+      "command": [
+        "tools/release-bindings",
+        "status"
+      ],
+      "exit": 1,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/release-status-before.log"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/_proper_study.py",
+        "seal",
+        "--provider",
+        "gpt",
+        "--document",
+        "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+        "--review",
+        "research",
+        "--review-contract",
+        "proper-study-v4"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/seal-research.log"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/_proper_study.py",
+        "seal",
+        "--provider",
+        "gpt",
+        "--document",
+        "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+        "--review",
+        "study"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/seal-study.log"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/_proper_study.py",
+        "seal",
+        "--provider",
+        "gpt",
+        "--document",
+        "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+        "--review",
+        "synthesis"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/seal-synthesis.log"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/_proper_study.py",
+        "seal",
+        "--provider",
+        "gpt",
+        "--document",
+        "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+        "--review",
+        "homily"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/seal-homily.log"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/_proper_study.py",
+        "seal",
+        "--provider",
+        "gpt",
+        "--document",
+        "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+        "--review",
+        "visual"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/seal-visual.log"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/_proper_study.py",
+        "seal",
+        "--provider",
+        "gpt",
+        "--document",
+        "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+        "--review",
+        "web"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/seal-web.log"
+    },
+    {
+      "command": [
+        "make",
+        "refresh-release-bindings",
+        "ONLY=library/novus-ordo-liturgy.md src/web/data/structure/documents/corpus.json web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/refresh-release.log"
+    },
+    {
+      "command": [
+        "tools/release-bindings",
+        "status"
+      ],
+      "exit": 1,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/release-status-after.log"
+    },
+    {
+      "command": [
+        "make",
+        "refresh-release-bindings",
+        "ADOPT=1",
+        "ONLY=web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/adopt-web-scoped.log"
+    },
+    {
+      "command": [
+        "tools/release-bindings",
+        "status"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/release-status-final.log"
+    },
+    {
+      "command": [
+        "tools/source-library",
+        "validate"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/source-library.log"
+    },
+    {
+      "command": [
+        "tools/source-inventory",
+        "refresh",
+        "--audited-on",
+        "2026-10-14"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/source-inventory-refresh.log"
+    },
+    {
+      "command": [
+        "tools/source-inventory",
+        "classify",
+        "--review",
+        "src/sources/inventories/classification-review-v1.toml"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/source-classify.log"
+    },
+    {
+      "command": [
+        "tools/source-family-migration",
+        "refresh",
+        "--audited-on",
+        "2026-10-14",
+        "--accept-canonical-catalog"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/family-refresh.log"
+    },
+    {
+      "command": [
+        "tools/source-family-migration",
+        "check"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/family-check.log"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/_proper_study.py",
+        "check",
+        "--provider",
+        "gpt",
+        "--document",
+        "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+        "--phase",
+        "publication",
+        "--require-presentation",
+        "--require-format",
+        "--require-authority",
+        "--require-orientation"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/publication-contract.log"
+    },
+    {
+      "command": [
+        "tools/public-alpha",
+        "check",
+        "--provider",
+        "gpt",
+        "--document",
+        "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/public-alpha-scoped.log"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/diff-check.log"
+    },
+    {
+      "command": [
+        "make",
+        "check-sources"
+      ],
+      "exit": 2,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/check-sources-final.log"
+    },
+    {
+      "command": [
+        "make",
+        "source-projection"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/source-projection.log"
+    },
+    {
+      "command": [
+        "make",
+        "refresh-release-bindings",
+        "ADOPT=1",
+        "ONLY=src/web/data/structure/sources/editions/bede/in-marci-evangelium-expositio/1862-1862-migne-pl-92.json src/web/data/structure/sources/editions/bede/in-marci-evangelium-expositio/2026-2026-10-13-latin-wikisource-migne.json src/web/data/structure/sources/editions/catholic-church/institutio-generalis-missalis-romani/2011-english-us-2011-emended-2021.json src/web/data/structure/sources/editions/ignatius-press/pew-missal-planning-guide/2026-week-29-web-2026-10-13.json src/web/data/structure/sources/editions/jacques-paul-migne/patrologia-latina-volume-92/1862-1862-paris.json src/web/data/structure/sources/editions/jerome/commentarii-in-isaiam/2026-dco-latin-pars-3-2026-10-13.json src/web/data/structure/sources/editions/john-paul-ii/general-audience-2002-09-18/2026-english-vatican-web-2026-10-13.json src/web/data/structure/sources/editions/thomas-aquinas/expositio-super-isaiam-ad-litteram/2026-latin-corpusthomisticum-chapters-40-49-2026-10-13.json src/web/data/structure/sources/editions/thomas-aquinas/super-matthaeum/2026-latin-corpusthomisticum-chapters-21-25-2026-10-13.json src/web/data/structure/sources/editions/thomas-aquinas/super-primum-ad-thessalonicenses/2026-latin-corpusthomisticum-2026-10-13.json src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/daily-readings/2026-2026-10-18-web-2026-10-13.json src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/2026-2026-09-21-english-usccb-web.json src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/2026-english-usccb-web-2026-07-28.json src/web/data/structure/sources/index.json"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/refresh-source-projection-scoped.log"
+    },
+    {
+      "command": [
+        "tools/release-bindings",
+        "status"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/release-status-projection.log"
+    },
+    {
+      "command": [
+        "tools/source-inventory",
+        "refresh",
+        "--audited-on",
+        "2026-10-14"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/source-inventory-final-refresh.log"
+    },
+    {
+      "command": [
+        "tools/source-family-migration",
+        "refresh",
+        "--audited-on",
+        "2026-10-14"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/family-final-refresh.log"
+    },
+    {
+      "command": [
+        "make",
+        "check-sources"
+      ],
+      "exit": 2,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/check-sources-final-after-audit.log"
+    },
+    {
+      "command": [
+        "tools/source-inventory",
+        "refresh",
+        "--audited-on",
+        "2026-10-14"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/source-inventory-blocked-final.log"
+    },
+    {
+      "command": [
+        "tools/source-family-migration",
+        "refresh",
+        "--audited-on",
+        "2026-10-14"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/family-blocked-final.log"
+    },
+    {
+      "command": [
+        "tools/public-alpha",
+        "check",
+        "--provider",
+        "gpt",
+        "--document",
+        "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/public-alpha-final.log"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit": 0,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/diff-check-final.log"
+    },
+    {
+      "command": [
+        "make",
+        "check-sources"
+      ],
+      "exit": 2,
+      "log": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/check-sources-blocked-final.log"
+    },
+    {
+      "command": [
+        "tools/web-edition",
+        "--provider",
+        "gpt",
+        "--output",
+        ".scratch/pc-s55/install-publication-0000/fresh-web",
+        "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"
+      ],
+      "exit": 0,
+      "log": "Private fresh-web.raw.log; converted bytes independently compared"
+    }
+  ],
+  "family_screening": {
+    "pending": 161,
+    "screened": 0,
+    "families": 0,
+    "atomic_citation_coverage": false
+  },
+  "final_source_check": {
+    "command": "make check-sources",
+    "exit": 2,
+    "after_last_production_audit_write": true,
+    "production_audit_sha256": "32016154afca714a2acd877eb6ea907fe1c0bf49a3e8e80dd0140f4afed7803a"
+  },
+  "identities": {
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/artifacts.json": "6651e1fe7582b9e1eb1d1cae5590aeee8419f469fa03a2a540ded308e93e8154",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/web-artifact.json": "8b297c8e2518d28ae4fca277522ba341481e3ac9a9907cd81c79cc6804aa3720",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/production-review.md": "32016154afca714a2acd877eb6ea907fe1c0bf49a3e8e80dd0140f4afed7803a",
+    "release/public-alpha.json": "3f2e48b43fc6cc08381ee3398a33db8c8eb74abe780ffb43e2cb06e7130c25d6",
+    "release/rights/public-alpha-2026-07-15.md": "7607a4879c7aa306cc9ae339f4e48e69911e304ab631538329c6d9e209360ee6",
+    "library/novus-ordo-liturgy.md": "6043faf44ce6915961d38461e7c1372cfbf290b2135f57b8b6c80d5e19d58080",
+    "src/web/data/structure/documents/corpus.json": "0f7b1fb1cba8ef607bdd042814399b2ffe08c313990fcec30e82282863b3c821",
+    "src/sources/inventories/publications-v1.toml": "01558e58d0ec99dcbe4253bbbe6c942e9f82566b586c1b9e70899854c07fd9b2",
+    "src/sources/inventories/classification-review-v1.toml": "2fc86c029c7d2ab4eac5ff619c3671cbd2e7ab554c7e0eda763bdd25d128c13a",
+    "src/sources/inventories/source-family-migration-v1.toml": "195c5467588ee0fbce8e8192077ba960eb12d69bedb031ce936e291e3b6ab5c0"
+  },
+  "limits": [
+    "BLOCKED: final make check-sources fails because the sealed PL92 containment inventory omits the accepted Bede Mark segment constituent; coordinator must reopen the research boundary.",
+    "Accepted VIS-001 keeps the short Anagogical carryover on expansive pages 16–17.",
+    "Recorded source, exact altar-book and rights limitations remain; no new source adjudication.",
+    "No deployment, external approval, physical-print inspection or timed human delivery.",
+    "Global family screening remains pending; scoped public-alpha check is not global deployment approval."
+  ]
+}

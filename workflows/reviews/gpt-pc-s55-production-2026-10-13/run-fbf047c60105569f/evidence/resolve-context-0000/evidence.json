@@ -1,0 +1,101 @@
+{
+  "acquired_on": "2026-10-13",
+  "deliveries": [
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/2026cal.pdf",
+      "source_url": "https://www.usccb.org/resources/2026cal.pdf",
+      "byte_size": 839777,
+      "sha256": "4bd9add07512396a2323aa977bc4816a5fad6348262e12740bcee97c77372d02",
+      "physical_pages_image_inspected": [
+        7,
+        43
+      ]
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/latin-missal2002.pdf",
+      "source_url": "https://media.musicasacra.com/books/latin_missal2002.pdf",
+      "byte_size": 3333382,
+      "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "physical_pages_image_inspected": [
+        268,
+        291,
+        292
+      ]
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/antiphonary.pdf",
+      "source_url": "https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf",
+      "byte_size": 1120199,
+      "sha256": "e6b82741acc77fb5e0d7c887813f6f2652b4ec088abc8526f5c77320e9762aca",
+      "physical_pages_image_inspected": [
+        89
+      ]
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/fdlc.pdf",
+      "source_url": "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78d_ORDINARY_24-30_SPI2016.pdf",
+      "byte_size": 285758,
+      "sha256": "019adbadf386ee56461ec94ef7e413a0270ac663d71b30f0bfb4af9c7764f6c4",
+      "physical_pages_image_inspected": [
+        16,
+        17
+      ]
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/usccb-101826.html",
+      "source_url": "https://bible.usccb.org/bible/readings/101826.cfm",
+      "byte_size": 57444,
+      "sha256": "623dee42ea790582ac00dd78c081a70a79b7e52627424106853feace3dbc0794",
+      "physical_pages_image_inspected": []
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/girm-2.html",
+      "source_url": "https://www.usccb.org/prayer-and-worship/the-mass/general-instruction-of-the-roman-missal/girm-chapter-2",
+      "byte_size": 108756,
+      "sha256": "948449f2aa8889dc8f82c6f218c866f90356ad8027d2de9781277a7c9666b4f5",
+      "physical_pages_image_inspected": []
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/girm-7.html",
+      "source_url": "https://www.usccb.org/prayer-and-worship/the-mass/general-instruction-of-the-roman-missal/girm-chapter-7",
+      "byte_size": 57054,
+      "sha256": "54b349eeee07819bfba4e1f56a6ddedb7c04da672622ef72ac7ed9b6c1968dab",
+      "physical_pages_image_inspected": []
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/calendar-variations.html",
+      "source_url": "https://www.cultodivino.va/en/formazione/pubblicazioni/libri-liturgici/aliae/calendarium-romanum.html",
+      "byte_size": 17288,
+      "sha256": "4531f6b614a851a098f40fe6f43e2f0f6f4e31804f6d7a0b4b8493a499f7cdb6",
+      "physical_pages_image_inspected": []
+    }
+  ],
+  "source_page_images_viewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "inspection_pdf_page_order": [
+    "calendar 7",
+    "calendar 43",
+    "Missal 268",
+    "Missal 291",
+    "Missal 292",
+    "Antiphonary 89",
+    "FDLC 16",
+    "FDLC 17"
+  ],
+  "raster_root": "build/tpt-runs/fbf047c60105569f/artifacts/resolve-context-0000/rasters",
+  "limitations": [
+    "2002 digitally typeset reproduction is not a 2008 altar-book facsimile",
+    "Exact U.S. 2011 altar-book collation and English Offerings exemplar remain research work",
+    "Initial pdf-review scratch output refused; rerun in driver-authorized build namespace succeeded",
+    "pdfseparate emitted reconstructable xref diagnostics; every resulting selected image was opened and inspected",
+    "bs4 unavailable; HTML inspection used the standard-library HTMLParser; original delivery bytes preserved"
+  ]
+}

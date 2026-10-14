@@ -1,0 +1,181 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "key": "spoken",
+          "kind": "homily",
+          "path": "sections/homily-10-spoken.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "homily-notes",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily-90-notes.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+      "element_keys": [
+        "entrance",
+        "collect",
+        "first-reading",
+        "psalm",
+        "second-reading",
+        "acclamation",
+        "gospel",
+        "offerings",
+        "communion-psalm",
+        "communion-mark",
+        "after-communion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "allegiance"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "key": "rightly-ordered-allegiance",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "title": "Receiving the world without worshipping its powers"
+        },
+        {
+          "authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Thomas Aquinas",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "response"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "key": "grace-and-willing-service",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "title": "The received gift becomes willing service"
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+    "files": {
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/homily.tex": "0c1587b04397ae52ef6cf3cc484f8f922131cc8f6ee8b6a059e3a9aba4f9e7cc",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/interpretations.md": "18146c5251595142ec069f35f41cecf78f07b96287d465b4d37c0d58f8e512e1",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/homily-10-spoken.tex": "0e66431955bcafa11e32663b35e014780665c224e0789c90530567ac4bcdee1f",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/homily-90-notes.tex": "3add4acdde0f63ee170e5414f29886242d314768885d5137c13bdb5b6ed7c118"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "11",
+            "17f12ad495885888db9045416b60df5bc828dccdf9f1eab5a1edb648cc280964",
+            "fbf047c60105569f",
+            "bd50b7dcd577610ce6c8a9c9fc4610b7a0b5a23a",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "PASS: independently read The person holding the coin continuously and compared its argument with both studies, the appointed Scripture and prayer witnesses, Chrysostom\u2019s Matthew LXX and LXV and 1 Thessalonians I, Aquinas\u2019s Matthew 22.2 and Philippians 2.3, and Jerome\u2019s Isaiah XII; the coin-to-person turn survives scrutiny, governs a concrete pastoral response, and leads through Christ\u2019s prior saving gift to Eucharistic reception and hope. The 1,302-word body supports the declared 10.0\u201311.3-minute estimate at 115\u2013130 words per minute, the complete input seal matches and the three-page proof separates speech from exact source notes, with no blocking defect found; no timed human delivery or new exact altar-book collation is claimed, and the disclosed electronic-witness limits remain."
+}

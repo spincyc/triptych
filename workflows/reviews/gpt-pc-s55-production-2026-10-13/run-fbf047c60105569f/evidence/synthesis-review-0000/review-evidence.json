@@ -1,0 +1,169 @@
+{
+  "stage": "synthesis-review",
+  "iteration": 0,
+  "run_id": "fbf047c60105569f",
+  "completed_utc": "2026-10-14T03:24:41.148411+00:00",
+  "packet_sha256": "c06596b124df2e06f3d48ba6d4ade2ca24f00e5ba5e187c71cc4c73a32a28a51",
+  "review_input_file_checks": {
+    "src/common/preamble.tex": true,
+    "src/common/propers-format.tex": true,
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex": true,
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/interpretations.md": true,
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-01-inventory.tex": true,
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-02-overview.tex": true,
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-03-chronology.tex": true,
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-04-themes.tex": true,
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-05-commentary.tex": true,
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-90-apparatus.tex": true,
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/synthesis.tex": true
+  },
+  "artifact": {
+    "entrypoint": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/synthesis.tex",
+    "proof": "build/tpt-runs/fbf047c60105569f/artifacts/synthesis-review-0000/synthesis-proof.pdf",
+    "sha256": "ed195ef824165077de909d625be913839ae12bf0b45e810cc30ace10b4ee8eb6",
+    "pages": 10,
+    "settled_after_pdflatex_passes": 2,
+    "auxiliary_unchanged": true,
+    "identical_to_author_proof": true,
+    "all_fonts_embedded": true,
+    "tex_warning_overfull_underfull_undefined_search": "No matches in final log"
+  },
+  "independent_interpretation_recovery": {
+    "read_before_expansive_comparison": true,
+    "ordered_allegiance": "The decisive question is how genuine created benefits and duties can be acknowledged without treating power as the final good. Cyrus can liberate without being Christ or knowing God; render remains a real debt bounded by godliness; the divine image makes Gods claim whole-person rather than one competing compartment.",
+    "willing_service": "The decisive question is how duties become sincere human service when the capacity and the will themselves depend on grace. Cyrus lacks recognition despite effectiveness; Thessalonian work manifests rather than buys election; divine action reaches willing and doing without cancelling freedom; ransom is received before imitation.",
+    "relationship": "Complementary but distinct: the ordering of goods and obligations does not by itself convert the giver, while inward sincerity does not cancel debts. The comparison is interleaved across Cyrus, coin, Pauline action, light, shelter and both Communion options."
+  },
+  "visual_review": {
+    "pages_viewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "observations": [
+      "Physical page 1 contains all appointed ritual positions, both Communion options, and exactly four doctrinal sense overview rows.",
+      "Physical page 2 contains the complete generated orientation table and its appendix pointer; all rows remain readable at ordinary size.",
+      "Physical pages 3 and 4 contain substantive thematic movement, and page 5 begins developed comparison rather than repeating the opening.",
+      "Pages 5-9 interleave the two interpretations at each question; page 10 is the compact source, scope, and rights apparatus.",
+      "No clipping, overlap, unreadable table text, or padding requiring repair was found."
+    ]
+  },
+  "chronology_lookups": [
+    {
+      "passage": "Entrance cf. Ps 16:6,8 and Communion cf. Ps 32:18-19",
+      "subject": "historical setting",
+      "place": "specific places unknown",
+      "date": "unresolved",
+      "outcome": "Pass: both appointed uses share genuinely unresolved occasions, without importing David reign as an event."
+    },
+    {
+      "passage": "All three appointed Psalm uses",
+      "subject": "composition of Psalms",
+      "place": "individual writing places uncertain",
+      "date": "before c. 165 B.C.",
+      "outcome": "Pass: common latest boundary explicitly distinguished from individual composition dates; retained official NABRE introduction independently checked."
+    },
+    {
+      "passage": "Communion cf. Ps 32:18-19",
+      "subject": "traditional attribution to David reign",
+      "place": "Israel/Judah",
+      "date": "disputed 1055-1015 B.C.",
+      "outcome": "Pass: dates the attributed king era, not poem composition; Corbett opening paragraph checked."
+    },
+    {
+      "passage": "Responsorial Ps 96 selected verses",
+      "subject": "superscription setting / raising second Temple",
+      "place": "Jerusalem",
+      "date": "537 B.C.",
+      "outcome": "Pass: title association and uncertainty about dedication stay beside the answer; Meistermann opening checked."
+    },
+    {
+      "passage": "Responsorial Ps 96 selected verses",
+      "subject": "Christian prophetic referent / Nativity",
+      "place": "no Nativity locality named by Psalm",
+      "date": "disputed 3 B.C. or c. 7 B.C.",
+      "outcome": "Pass: Christian reception is distinct from literal worship scene; Gerard and Howlett date paragraphs checked."
+    },
+    {
+      "passage": "Isaiah 45:1,4-6",
+      "subject": "traditional attribution / Isaias ministry in Souvay",
+      "place": "Judah/Jerusalem",
+      "date": "740-701 B.C.",
+      "outcome": "Pass: ministry of attributed author is not a Cyrus event date; Souvay ministry and calling paragraphs checked."
+    },
+    {
+      "passage": "Isaiah 45:1,4-6",
+      "subject": "prophetic activity behind chapters 40-55",
+      "place": "exilic horizon, restoration toward Jerusalem",
+      "date": "toward end of Babylonian exile",
+      "outcome": "Pass: alternative source framework and subject remain distinct; official NABRE Isaiah introduction checked."
+    },
+    {
+      "passage": "Matthew 22:15-21",
+      "subject": "tribute-question event",
+      "place": "Jerusalem Temple controversies",
+      "date": "unresolved",
+      "outcome": "Pass: event context is distinct from Gospel writing place and dates."
+    },
+    {
+      "passage": "Matthew 22:15-21",
+      "subject": "Gospel composition",
+      "place": "writing place not established here",
+      "date": "six disputed alternatives including c. A.D. 50",
+      "outcome": "SYN-001: Durand explicitly dates an Aramaic original and leaves its Greek rendering undated. The expansive Matthew appendix preserves this, but the concise row displays no such qualification."
+    },
+    {
+      "passage": "Communion Mark 10:45",
+      "subject": "Gospel composition",
+      "place": "writing place not established here",
+      "date": "five numerical alternatives plus after Matthew / before Jerusalem destruction",
+      "outcome": "Pass as a composition lookup: no date is transferred to the narrated journey; MacRory date discussion, Durand interval, and AAS 4 (1912) p.464 responsa V-VI checked. Relative date remains relative."
+    },
+    {
+      "passage": "Philippians 2:15d,16a",
+      "subject": "epistle composition",
+      "place": "Rome in cited captivity account to Philippi",
+      "date": "disputed A.D. 61 or 62-64",
+      "outcome": "Pass: writer and recipients distinguished; scope qualified locally; Prat schedule and Vander Heeren date/place paragraph checked."
+    },
+    {
+      "passage": "1 Thessalonians 1:1-5b",
+      "subject": "epistle composition",
+      "place": "Corinth to Thessalonica",
+      "date": "disputed A.D. 52 or 53-54",
+      "outcome": "Pass: Prat schedule and Drum time/place argument checked; remembered acts are not redated."
+    }
+  ],
+  "appendix_reference_check": "The named expansive Appendix: Scriptural Date and Location exists with identifiable Psalms, Isaiah, Matthew, Mark, Philippians and Thessalonians subsections. All rows can be traced there. Matthew source qualification needs to remain local as well.",
+  "substantive_exact_loci_checked": [
+    "Jerome, In Isaiam XIII at Isaiah 45:1-7, retained DCO PDF physical pp.126-129: Cyrus/Christ, ignorance, type, gift and acknowledgment.",
+    "Aquinas, Super Isaiam paragraph 85005: anointing, royal dignity, idolatry, fruit for Israel and wider knowledge.",
+    "Chrysostom, Matthew LXX sections 1-2: tribute trap, rendering debt, boundary of godliness.",
+    "Aquinas, Super Matthaeum paragraph 87389: coin, divine image, actual civic debt and mystical soul.",
+    "Chrysostom, 1 Thessalonians I opening and verses 1-7; Aquinas Super 1 Thessalonicenses paragraph 87862: thanksgiving, labor, election and effective preaching.",
+    "Aquinas, Super Philippenses paragraphs 87838-87839: grace in willing and doing, freedom, no prior merit; light and word.",
+    "Chrysostom, Philippians VIII on light and word, including the NPNF editorial qualification to his seed/principle interpretation.",
+    "Augustine, Enarrationes XVI sections 1-10, XXXII exposition 1 sections 12-22, XCV sections 1-5 and 11: Christ/body voice, fear/hope, Word hunger, new love, received wood variant.",
+    "Aquinas, Super Psalmos paragraphs 86901 and 87103: eye/wings and fear/hope with corporal/spiritual food.",
+    "Bede, In Marci Evangelium III at 10:45, actual PL 92 leaf n122 cols.235-236, especially 236A-B: ransom and willing believers.",
+    "Chrysostom, Matthew LXV sections 4-5: service, ransom and humility, explicitly a Synoptic parallel.",
+    "Gregory Nazianzen, Oration XLV section 22 in context; Aquinas Summa III q.48 a.4 objections, body and replies, and a.5 opening: differing positive accounts of ransom preserved without alleging contradiction.",
+    "John Paul II audience 18 September 2002 sections 1-5, official current delivery: Christian cross reading of Psalm95.",
+    "USCCB 18 October 2026 reading page: Lectionary145 appointments, selected verse boundaries and responsorial omissions."
+  ],
+  "comparison_outcome": "No blocking defect found in the substantive interpretive comparison. Each reading is recoverable from concise prose alone, authors meet at the same questions, individual four-sense distinctions affect the argument correctly, source disagreements and textual variants survive, and editorial whole-formulary synthesis is distinguished from compositional intent.",
+  "limits": [
+    "This is an independent review of the sealed concise artifact, compared with the expansive study and exact relevant loci; it is not a whole-work critical collation.",
+    "The exact 2008 Latin and 2011 publisher altar-book pages were not newly inspected. The concise apparatus correctly discloses its layered text-control and copyright limits.",
+    "The live USCCB Psalms introduction returned HTTP403; its retained acquired HTML was read instead. Other targeted official and encyclopedia retrievals completed without a stall.",
+    "Jerome evidence is the cited modern DCO transcription rather than an independently identified historical exemplar; the concise apparatus discloses this limitation.",
+    "No artifact prose, canonical research or root-owned orchestration files were edited."
+  ]
+}

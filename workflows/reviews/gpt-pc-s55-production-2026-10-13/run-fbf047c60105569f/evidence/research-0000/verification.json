@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "stage": "research",
+  "iteration": 0,
+  "checks": [
+    {
+      "command": [
+        "tools/tpt",
+        "source-library",
+        "validate"
+      ],
+      "returncode": 0,
+      "log": ".scratch/pc-s55/research-0000/final-check-0.log"
+    },
+    {
+      "command": [
+        "make",
+        "check-source-containment",
+        "check-commentator-inventories"
+      ],
+      "returncode": 0,
+      "log": ".scratch/pc-s55/research-0000/final-check-1.log"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "log": ".scratch/pc-s55/research-0000/final-check-2.log"
+    },
+    {
+      "command": [
+        "tools/tpt",
+        "proper-chronology",
+        "record",
+        "--provider",
+        "gpt",
+        "--document",
+        "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+        "--check"
+      ],
+      "returncode": 0,
+      "log": ".scratch/pc-s55/research-0000/final-chronology-record.log"
+    },
+    {
+      "command": [
+        "tools/tpt",
+        "proper-chronology",
+        "annotations",
+        "--provider",
+        "gpt",
+        "--document",
+        "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+        "--check",
+        "--presentation",
+        "orientation-v1"
+      ],
+      "returncode": 0,
+      "log": ".scratch/pc-s55/research-0000/final-chronology-annotations.log"
+    }
+  ],
+  "binding_count": 32,
+  "declared_dependency_count": 35,
+  "manual_verification": [
+    "Complete bounded biblical contexts and direct reception loci recorded in research/scope.md read.",
+    "Twenty source page rasters independently inspected across the nine-page new-source, eight-page inherited-source and three-page chronology source review sets.",
+    "Canonical chronology orientation row subjects and twelve row keys inspected; disagreements and source scopes retained in chronology-research.md.",
+    "Dependency paths exist; all research, instance and propers text files checked for trailing whitespace."
+  ],
+  "source_identity_receipt": ".scratch/pc-s55/research-0000/source-byte-verification.json",
+  "pdf_review_receipts": [
+    "build/tpt-runs/fbf047c60105569f/artifacts/research-0000/rasters/review-run.json",
+    "build/tpt-runs/fbf047c60105569f/artifacts/research-0000/prior-rasters/review-run.json",
+    "build/tpt-runs/fbf047c60105569f/artifacts/research-0000/chronology-rasters/review-run.json"
+  ],
+  "broader_check_limitation": "make check-sources reaches deployment/catalogue checks and reports the reserved leaf has no web-edition.toml; that later authoring artifact is outside research ownership. Its source-binding errors were corrected and the independent source-library, containment and commentator checks now pass.",
+  "research_limitations": [
+    "Exact 2008 Latin and 2011 U.S. altar-book pages remain uncollated; the citation-only analytical study retains the distinct substitute witness roles.",
+    "Local calendar solemnities remain unresolved because no diocese, parish or institution was specified.",
+    "Historical prayer pedigree remains an uncollated lead; chronology disagreements and absent Psalm occasions remain explicit."
+  ],
+  "blockers": []
+}

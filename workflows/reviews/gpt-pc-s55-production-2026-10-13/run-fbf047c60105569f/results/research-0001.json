@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/review-dependencies.toml",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "GATE-RESEARCH-RECORDS",
+      "note": "The removed guidance/liturgical-text-publication-policy.md is a governing control, expressly excluded from external source owners by the three-document profile. All remaining paths resolve beneath src/; python3 scripts/_proper_study.py check --provider gpt --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a --date 2026-10-18 --phase research exited 0.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "research",
+  "summary": "Repaired GATE-RESEARCH-RECORDS by removing the global guidance path from research/review-dependencies.toml, preserving the source-specific rights inventories, same-family registry records and canonical shared Week 29 Missal owner; the exact research-phase check now passes. This reentry changes only the dependency declaration and claims no new source retrieval or substantive research review; make check-sources remains blocked by the new publication's pending global inventory refresh and missing web-edition.toml, with its output recorded in .scratch/pc-s55/research-0001/check-sources.log."
+}

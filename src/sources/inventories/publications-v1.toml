@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-10-13"
+audited_on = "2026-10-14"
 discovery_rule = "src/gpt/**/main.tex"
-publication_count = 148
-source_surface_file_count = 2611
-snapshot = "sha256:b7a81952d16daabab57fd207b66d4891f6d71fbd792d56965229eebd160f94cd"
+publication_count = 149
+source_surface_file_count = 2649
+snapshot = "sha256:8206805f0e75be731dad5ece294fa0123705a863bc75130c7563d5e623c96e35"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -1765,6 +1765,20 @@ inventory_state = "sources-categorized"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a"
+relationship = "local"
+[[documents.record_owners]]
+id = "owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"
+relationship = "source-owner"
+
+[[documents]]
+id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"
+main = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/main.tex"
+publication_kind = "proper-instance"
+source_mode = "mixed"
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"
 relationship = "local"
 [[documents.record_owners]]
 id = "owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"
@@ -13343,19 +13357,19 @@ owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/README.md"
-sha256 = "65db141bfd1ec45b556069b256d53a2e65c945e1d7ec9df8ffb07dd76ee0a2bd"
+sha256 = "454b7262c8e30f246a46629e6da476242a7166e6cb38a2370eeda52c72c5554a"
 kind = "edition-registry"
 owners = ["owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/formula-dispositions.md"
-sha256 = "c232dc6b4f3fa676c971ba081765471f366de1509dac0ddabca403f012f59879"
+sha256 = "281e5dd2484b732176f3d4136a070527dbbdb6abbcfc0adfda49e08cd90d206d"
 kind = "edition-registry"
 owners = ["owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/occurrences-2026.md"
-sha256 = "ab800f8f4da28337dbcbcbdb6034edb2f53769d48ae8ef408d161826adf5b3c9"
+sha256 = "dce29f74b2d33730123db8a5c93a03978fc14b0e180dcd5047a4a232b51a54f2"
 kind = "edition-registry"
 owners = ["owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"]
 
@@ -15250,6 +15264,228 @@ kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/evaluations/blocking-findings-v1.toml"
+sha256 = "a3e4455f84bca0af2059c99d75820f8aefd8656185b2d58b803b3797b27fc6c1"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/homily.tex"
+sha256 = "0c1587b04397ae52ef6cf3cc484f8f922131cc8f6ee8b6a059e3a9aba4f9e7cc"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/instance/manifest.md"
+sha256 = "a33c95bbbb2f9b954e8f879cdcb159ed91b18220a86e6917c9a6092c1e6d32fd"
+kind = "instance-manifest"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/main.tex"
+sha256 = "462cfe4ebf066ca84e06483346ad3902253b0cad5f29a80e9ee86d894bb41a22"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/proper-components.toml"
+sha256 = "120e344dc9bb1cd066fe48e6aa833f69f394a803acbcfae2c6d981ebebe585eb"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/propers/verified.md"
+sha256 = "4e5b677a3ceeffc388e41c1d9e2e31b690200ab9ba63365e88e975229db7de2a"
+kind = "proper-verification"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex"
+sha256 = "1be1910f835d21435f9b1faea7245d76385c5fbfac1098bd2c7c455ad8d7c088"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/chronology-inputs.toml"
+sha256 = "0b689b16340810b8d2a46dcf681626b0b7ba23be25e11a5f8fcf033b1d33dce4"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/chronology-research.md"
+sha256 = "b8028d293f2adfc7b0fe441be4eb4e269b179f6be696c0dae1d390bfc71c637b"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/chronology.toml"
+sha256 = "a398b80b0ba21151bbbb5353c472881dbf32c0ad462e7ce920968965fa1d79d5"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/context.md"
+sha256 = "4fd1502d4f51c899010d44b167d710b09c35306b03e0ef75c074180b4f3e5ba3"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/interpretations.md"
+sha256 = "18146c5251595142ec069f35f41cecf78f07b96287d465b4d37c0d58f8e512e1"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/production-review.md"
+sha256 = "32016154afca714a2acd877eb6ea907fe1c0bf49a3e8e80dd0140f4afed7803a"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/review-dependencies.toml"
+sha256 = "b09274ba5d056a57ca3fc220d308449f2e3f799c6e883aa3a79be2712612e35c"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/rights-audit.md"
+sha256 = "7057a9b8c87ed77477a9a441b88a31c7dd9c199c13660241814f2ef6c16d5ee3"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/scope.md"
+sha256 = "252a0586c8ceff8a237ea1316baa09ed8b87cda7ef6c98c1f9a57644fe44e77e"
+kind = "research-scope"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/source-bindings.toml"
+sha256 = "7d6bc2b144a91d08b1cc60b071ba1d129ef1ea4825f83b1b4ff87ab63dc2de60"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/source-plan.md"
+sha256 = "74eb5042b64a4abe984fb3dbe610cfddd70d321f37f6bbf1350f9444f7ddc8d6"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/00-opening.tex"
+sha256 = "bbfb3835837b927111346f982884f4c3dee9717e814a1e9d879a2c157e2a8828"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/01-map.tex"
+sha256 = "55a6aebd0604ea1f17cb42f53ac93670240b2f29bae6d43a8e392e36487873e3"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/10-treatment.tex"
+sha256 = "7d3d35142fc897165796069671dd3eca1d8a38af5150325178770637057cd629"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/20-texts.tex"
+sha256 = "0e3049da432978ec8c46b95696b3a3eb95bcb6f494dcc7ed7c321f9fa5f4a10f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/30-allegiance.tex"
+sha256 = "0d4f14264f919c00e5cdae5125860486c6796bd1cfb8345726b594c6b21c17d9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/40-response.tex"
+sha256 = "f0d5ba87eca9789ca84c62edef7a0c56a78220aa4ee816070ececfbb2a0795f9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/50-comparison.tex"
+sha256 = "fcf6b33d071e2ddbfa67a074be9dcf5eb3f9e6d357071249ae47d75b59988d15"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/60-history.tex"
+sha256 = "a91175fd1e8f3362844a4c45433c236cfcc1b6f20724170e91d9cb10ea994c0c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/70-apparatus.tex"
+sha256 = "2e96e3d064d6ca6d5293406508b7de06e11469787b793a6d396217284c9959ec"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/homily-10-spoken.tex"
+sha256 = "0e66431955bcafa11e32663b35e014780665c224e0789c90530567ac4bcdee1f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/homily-90-notes.tex"
+sha256 = "3add4acdde0f63ee170e5414f29886242d314768885d5137c13bdb5b6ed7c118"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-01-inventory.tex"
+sha256 = "db17c2e403ccc265b6b0972bd4705f6e39ba1506a0a1ce41716c59f4bd8b5b5d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-02-overview.tex"
+sha256 = "a8613b6e28b35bbee2e50cad358fc27b10d2b8f5e6527b2995ab5712f1ad10e4"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-03-chronology.tex"
+sha256 = "7e2a6ed853ddbaf5fc797b612a7a68cebc2d818c8c872fe4e5fc9e86a0a6f6ec"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-04-themes.tex"
+sha256 = "9ac8e0d9039e9fd4202274f136b570a02e46748d010ec81de324ce533687214b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-05-commentary.tex"
+sha256 = "9464a9d026347c597a2fb4b89d33013b8797eed9dda57e974cf44a4d6cac6dc8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-90-apparatus.tex"
+sha256 = "aea7638774da008c891e15cf4d51269fac59483336d4f6c4427e281fe874fa4f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/synthesis.tex"
+sha256 = "a01b6df3af15cf268edb5e52f7a48549985b51a356ac52f1807d23659a4fbbd6"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/web-edition.toml"
+sha256 = "8e0537af2d165ea44763392303ef1858715ae141e44aa3a14470e63bd81e3636"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/formularies/pc-s26-most-holy-trinity/propers/verified.md"
 sha256 = "77039280fb9f41918f524c002e8feb2c7c77dbf36995b1e55a3de0ba7feed429"
 kind = "proper-verification"
@@ -15324,6 +15560,12 @@ owners = ["owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/28/propers/verified.md"
 sha256 = "0affca6cbeaee7ee3111b2d8aaa5ad4696fafd00e82673fa32251987095ad657"
+kind = "proper-verification"
+owners = ["owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/29/propers/verified.md"
+sha256 = "a044c0fd9ecbb5f7be24afecea00fba8f8a77c880aad636431097babd96885db"
 kind = "proper-verification"
 owners = ["owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"]
 

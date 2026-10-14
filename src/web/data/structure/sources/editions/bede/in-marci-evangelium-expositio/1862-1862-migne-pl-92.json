@@ -1,0 +1,73 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "page-scan-image",
+   "byte_size": null,
+   "edition_owned": false,
+   "id": "artifact.jacques-paul-migne.patrologia-latina-volume-92.paris-1862.ia-leaf-n122-4cdb234f",
+   "media_type": "image/jpeg",
+   "notes": null,
+   "page_count": null,
+   "retrieved": null,
+   "rights": "public-domain",
+   "rights_basis": "The 1862 Paris printing is public domain in the United States by publication date. A faithful photographic reproduction of this public-domain printed page adds no original authorship. Same underlying printing and rights basis as the existing retained leaf n521.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/patrologiaecurs54unkngoog/page/n122.jpg",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1862",
+  "editors": [
+   "Jacques-Paul Migne"
+  ],
+  "id": "edition.bede.in-marci-evangelium-expositio.1862-migne-pl-92",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Paris: J.-P. Migne, 1862 reissue, book III, columns 235–236",
+  "title": "In Marci evangelium expositio, Patrologia Latina 92",
+  "translators": [],
+  "year": 1862
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.jacques-paul-migne.patrologia-latina-volume-92.paris-1862.ia-leaf-n122-4cdb234f",
+   "artifact_type": "page-scan-image",
+   "id": "passage.bede.in-marci-evangelium-expositio.1862-migne-pl-92.mark-10-42-45",
+   "locus": "III.Mc.10.42-45",
+   "media_type": "image/jpeg",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": "segment.bede.in-marci-evangelium-expositio.1862-migne-pl-92.columns-235-236",
+   "source_url": "https://archive.org/download/patrologiaecurs54unkngoog/page/n122.jpg",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-13",
+   "withheld": "no-transcription"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "In Evangelium S. Marci",
+   "In Marcum",
+   "Commentary on Mark"
+  ],
+  "author": "Bede the Venerable",
+  "category": "patristic-commentary",
+  "description": "Bede’s four-book Latin exposition of Mark, preceded by a letter to Acca. The commentary’s own letter distinguishes inherited patristic material from Bede’s additions. This record does not establish the source of each sentence.",
+  "id": "work.bede.in-marci-evangelium-expositio",
+  "languages": [
+   "la"
+  ],
+  "title": "In Marci evangelium expositio"
+ }
+}

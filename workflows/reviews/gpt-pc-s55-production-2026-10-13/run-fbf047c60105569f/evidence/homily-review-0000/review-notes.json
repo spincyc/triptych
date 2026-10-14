@@ -1,0 +1,63 @@
+{
+  "stage": "homily-review",
+  "iteration": 0,
+  "disposition": "PASS",
+  "artifact": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/homily.tex",
+  "reviewed_components": [
+    "homily.tex",
+    "sections/homily-10-spoken.tex",
+    "sections/homily-90-notes.tex",
+    "research/interpretations.md"
+  ],
+  "upstream_comparison": [
+    "sections/30-allegiance.tex",
+    "sections/40-response.tex",
+    "sections/synthesis-05-commentary.tex"
+  ],
+  "spoken_word_count": 1302,
+  "count_method": "Unicode alphabetic words retaining internal apostrophes and hyphens",
+  "estimated_minutes_at_130_wpm": 10.015384615384615,
+  "estimated_minutes_at_115_wpm": 11.321739130434782,
+  "oral_reading": "Read the entire spoken component continuously, then reread its movement and source-dependent assertions. Short sentences, explicit transitions, no footnote dependence or stage instructions, and a recovered closing coin image make it speakable for adults. This was silent review, not an audible or timed human performance.",
+  "text_substitution_test": "The decisive turn at paragraphs 6–8 moves from Caesar’s image on the coin to God’s image in its bearer. It changes the practical question from dividing portions of life to returning a received life in truthful duties. Isaiah 45:4–5 then makes unacknowledged gift a problem for the hearer, while the thanksgiving and active virtues of 1 Thessalonians 1:2–3 show a response. Unrelated readings would remove these inferences and require rewriting the movement.",
+  "scripture_checked": [
+    "Douay–Rheims/Challoner: Matthew 22:15–22; Isaiah 44:26–28 and 45:1–7; complete Psalm 95 (Hebrew 96); complete 1 Thessalonians 1; Mark 10:32–45.",
+    "Official USCCB dated page for 2026-10-18: Lectionary 145, appointments and selected verse boundaries."
+  ],
+  "reception_checked": [
+    "Chrysostom, Homilies on Matthew LXX §§1–2, NPNF I.10 retained source: hostile dilemma, truthful praise used deceitfully, render as dues, and the limit against detriment to godliness.",
+    "Aquinas, Super Matthaeum 22 lectio 2, paragraph 87389: literal coin exchange followed by expressly mystical soul/divine-image return; complete registered HTML payload hash matched and pertinent paragraph read, with live Corpus Thomisticum confirmation.",
+    "Chrysostom, Homilies on 1 Thessalonians I on 1:1–7, NPNF I.13 retained source: conduct grounds thanksgiving to God; work, labour and endurance remain active and costly.",
+    "Aquinas, Super Philippenses 2 lectio 3, paragraph 87838: divine help reaches willing as well as doing, while free agency is preserved; registered complete HTML hash matched and relevant paragraph read.",
+    "Jerome, Commentarii in Isaiam XII on 45:1–7, DCO Pars 3 pp.126–129: actual Cyrus, type distinguished from Christ, and gifted ecclesial teacher warned to give glory to the giver; registered complete PDF hash matched and pages extracted and read.",
+    "Chrysostom, Homilies on Matthew LXV §§4–5: disciples’ ambition, the Lord’s self-abasement and ransom for enemies; correctly identified as the Matthew parallel, not direct commentary on Mark."
+  ],
+  "prayer_checks": [
+    "FDLC Mystagogical Reflections, Week 29, printed/physical pp.16–17: Collect and Prayer after Communion read directly; homily explains their will/service and present-help/eternal-gift relations without recitation text.",
+    "Ignatius Pew Missal Week 29 publisher page: Prayer over the Offerings checked for gifts, service and purification; the page’s Year B readings were not used.",
+    "ICEL Antiphonary printed p.81 / physical p.89: Mark 10:45 is an alternative Communion excerpt; homily explicitly calls it one alternative and distinguishes surrounding Gospel context."
+  ],
+  "pastoral_fruit": "One existing weekly responsibility supplies a practicable examination of what is owed and the desire for praise or control; divine help and Christ’s prior saving gift support action without self-redemption, and the final prayer opens unfinished work toward eternal hope.",
+  "source_and_delivery_note": "Exact loci are recoverable; study translation, prayer explanation, alternative branch, original application, estimated pace, and absence of audible/human rehearsal are accurately distinguished. No invented anecdote, personal experience, clerical identity, new recited prayer, unsupported named attribution, or consequential erased disagreement found.",
+  "proof": {
+    "path": "build/tpt-runs/fbf047c60105569f/artifacts/homily-review-0000/review-proof.pdf",
+    "sha256": "e7dfb622949d8d49646f0fa4e3d571160b6ecf0f73e7b54e8a7958a544327406",
+    "pages_inspected": [
+      1,
+      2,
+      3
+    ],
+    "result": "Speech flows across pages 1–2 and the complete source/delivery note begins on page 3; no visible clipping or collided text observed. This stage does not replace the later final-build visual gate."
+  },
+  "limits": [
+    "No timed human or audible rehearsal performed.",
+    "No new exact 2008 Latin or publisher-specific 2011 U.S. altar-book collation; the homily explicitly retains the upstream evidence ceiling.",
+    "Jerome’s DCO delivery is an electronic witness with historical exemplar unidentified.",
+    "No artifact or upstream source edited, no run advanced, and no installation/publication performed."
+  ],
+  "web_sources": [
+    "https://www.corpusthomisticum.org/cml21.html",
+    "https://bible.usccb.org/bible/readings/101826.cfm",
+    "https://www.pewmissal.com/brand_new/index.php/planning-guide/ordinary-time-2/twenty-ninth-sunday-in-ordinary-time/"
+  ]
+}

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne.latin-text-b8197766"
+edition_id = "edition.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne"
+artifact_type = "web-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Public-domain Latin of Bede in a nineteenth-century Migne witness; contributor markup, navigation, headings and Corpus Corporum encoding note are removed, following the repository’s Latin Wikisource derivative procedure. The underlying wording is not licensed as project prose."
+rights_jurisdiction = "United States"
+provenance = "Complete 527-paragraph derivative of the exact export. Template census found one titulus2 template and no prose-bearing templates. Relevant paragraphs 305–314 read; paragraphs 312–313 compared against the 1862 print image, columns 236A–B."
+retrieved = "2026-10-13"
+sha256 = "b8197766e84dfbc56b1aee5ff09ebaa6b949131f964645733c907548b33049a2"
+byte_size = 495136
+path = "src/sources/works/bede/in-marci-evangelium-expositio/editions/2026-10-13-latin-wikisource-migne/artifacts/latin-text-b8197766/source.txt"
+derived_from = "artifact.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne.export-e2fc978f"
+transformation = "scripts/migne_transcribe.py EXPORT --unit page --out source.txt; removes wiki furniture and column markers, normalizes typography and whitespace, retains one paragraph per line. The generated {1.10} prefix is a page/chapter locator, not book I: the checked locus belongs to book III."
+encoding = "utf-8"
+indexable = true
+notes = "Complete searchable transcription, not a critical edition or facsimile. Only the stated locus was collated."

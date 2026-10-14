@@ -1,0 +1,142 @@
+{
+  "stage": "research-review",
+  "iteration": 0,
+  "document_root": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+  "packet_sha256": "913e95edcd9c2f32be04e8e29c0b12ac73c0ae05e3bf1f3ef4ead28eda417d09",
+  "integrity": {
+    "seal_check": "seal-check.json",
+    "sealed_files": 2101,
+    "computation_inputs": 16,
+    "missing": 0,
+    "mismatches": 0,
+    "retained_source_bytes_matched": 32,
+    "source_byte_check": "source-byte-check.json"
+  },
+  "commands": [
+    {
+      "command": "PYTHONPATH=.scratch/pc-s55/environment tools/proper-chronology record --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a --provider gpt --check",
+      "exit_code": 0,
+      "result": "Record is current"
+    },
+    {
+      "command": "PYTHONPATH=.scratch/pc-s55/environment tools/proper-chronology annotations --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a --provider gpt --check",
+      "exit_code": 0,
+      "result": "Annotations are current"
+    },
+    {
+      "command": "tools/pdf-review --output build/tpt-runs/fbf047c60105569f/artifacts/research-review-0000/rasters --cache build/tpt-runs/fbf047c60105569f/artifacts/research-review-0000/cache .scratch/pc-s55/research-review-0000/source-pages.pdf",
+      "exit_code": 0,
+      "result": "Twenty extracted source pages rendered and individually visually inspected"
+    }
+  ],
+  "source_images": {
+    "index": "source-pages-index.txt",
+    "pdf": "source-pages.pdf",
+    "sha256": "0173b8623d1fb106ffe37489349828a0dcbb4f42b6cb74194419b6028658feed",
+    "visually_inspected_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "sources": "2026 US calendar physical 7,43; 2002 Latin Missal 268,291,292; ICEL antiphonary 89; FDLC 16,17; OLM 133,134; GIL 14,15; Notitiae 2008 physical53; Jerome DCO Pars3 126-129; AAS1912 463-465"
+  },
+  "appointment_review": {
+    "outcome": "No blocking defect found",
+    "checks": [
+      "2026-10-18 is nationally OT29 Year A / PC-S55-A, Lectionary145; weekdayII resolved independently; local solemnities remain unselected qualifications",
+      "Ten ritual positions / eleven stable element keys include both Communion alternatives",
+      "Isaiah45:1,4-6; HebrewPs96:1,3,4-5,7-8,9-10a,c with response7b; 1Thess1:1-5b; Phil2:15d,16a; Matt22:15-21 boundaries agree with OLM and dated delivery",
+      "Entrance cfVulgatePs16:6,8 and Communion cfPs32:18-19 are adaptations; Mark10:45 antiphon selects the self-gift/ransom clause, not its preceding service clause",
+      "GIRM48,51,53-54,61,63,74,87,89,364-365 independently read for chant, sprinkling, Gloria, prayer conclusion and Preface/EP branches",
+      "Shared Missal owner stays in same edition/family and is explicitly depended upon; YearB publisher readings are excluded"
+    ]
+  },
+  "interpretations_review": {
+    "outcome": "Both complete constructions have distinct source-supported arguments; Mark reception repair required",
+    "A": "Rightful earthly dues under the universal Creator; Jerome distinguishes Cyrus from Christ, Chrysostom bounds civil obedience by godliness, Augustine universal worship and Aquinas image-of-God extension contribute different reasoning. Each element and all four senses have specified roles; complete formulary synthesis is labeled editorial.",
+    "B": "Divine gift precedes and enables willing fruitful service; Aquinas on Phil2 supplies inward willing and acting without fatalism or prior merit, Chrysostom links faith/love/hope to costly endurance, and Psalm32 reception explains received food and hope. Its causal movement differs from A while preserving the Gospel civil sense.",
+    "limits": "No requirement imposed for the superseded gallery/proposal quotas, author commentaries on every element, or invented disagreement."
+  },
+  "consequential_difficulty_tests": [
+    {
+      "locus": "Jerome, In Isaiam XII on45:1-7, DCO Pars3 physical126-129; Aquinas In Isaiam45 [85005]",
+      "question": "Does calling the unknowing Cyrus anointed identify him directly with Christ or justify his religion?",
+      "result": "No. Jerome rejects the direct identification because of the ignorance clause yet allows type/image; Aquinas distinguishes office and divine benefit from the king remaining idolatrous. The research preserves that difficulty and result."
+    },
+    {
+      "locus": "Chrysostom, In Matthaeum LXX1-2; Aquinas Super Matthaeum22 lectio2 [87389]",
+      "question": "Does render Caesar erase the boundary of obedience or does image spirituality replace the literal tribute problem?",
+      "result": "No. Chrysostom expressly restricts civil dues to what does not harm godliness. Aquinas explicitly marks the soul-image application mystical and retains civic peace. Research A retains the literal trap and bounded spiritual extension."
+    },
+    {
+      "locus": "Aquinas Super Philippenses2 lectio3 [87838] and lectio4 [87839]; Chrysostom PhilippiansVIII, especially the word-of-life paragraph and NPNF note637",
+      "question": "Does grace replace free agency, and do author and editor teach the same word-of-life interpretation?",
+      "result": "No. Aquinas rejects both unaided human willing and fatalism; Chrysostom describes a principle/seed of life while the editorial note objects. Research B and the comparison table retain the distinction."
+    },
+    {
+      "locus": "Augustine Enarrationes PsXCV/EnglishXCVI §§2,6,9,11,14-15; OLM145A Psalm strophe",
+      "question": "May from the wood or the fixed-world clause be treated as appointed wording?",
+      "result": "No. They support a Christian reception reading only; the research correctly excludes the added lemma and omitted10b from the appointment."
+    },
+    {
+      "locus": "Augustine Enarrationes PsXXXII/EnglishXXXIII §§16-22; Aquinas Super Psalmo32 nn15-17 [87102-87104]",
+      "question": "Does food in famine promise bodily immunity?",
+      "result": "The sources develop dependence, Word, sacrament and final hope; Aquinas distinguishes bodily, spiritual and final rescue. Research does not turn the antiphon into immunity."
+    },
+    {
+      "locus": "Gregory Nazianzen OrationXLV §§21-24, especially22; Aquinas STIII q48 a4 and beginninga5",
+      "question": "Can their ransom accounts be flattened into agreement about a payment demanded by the Father?",
+      "result": "No. Gregory denies such demand and emphasizes acceptance/sanctification; Aquinas positively describes the satisfaction-price paid to God, not the devil. The research retains this real difference without manufacturing doctrinal contradiction."
+    }
+  ],
+  "chronology_review": {
+    "outcome": "No blocking defect found",
+    "checks": [
+      "Eleven keys and eight scriptural dossiers; no chronology invented for composed prayers",
+      "Correct Vulgate/Hebrew conversion and whole-verse envelopes preserve subverse omissions as query limits",
+      "Every distinct returned date checked against the cited retained CE paragraph or current official NABRE corroboration; AAS1912V-VI read visually",
+      "Psalms16 and32 occasion unresolved; David reign is disputed attribution, never composition/event; Psalm95 temple association is expressly qualified against article completion distinction",
+      "Isaiah traditional ministry and critical late-exile activity remain separate source frameworks",
+      "Matt22 event unresolved, Gospel composition alternatives disputed; Mark composition does not date the saying",
+      "Both Pauline letters retain competing composition dates and stated places",
+      "All controlling source records and chronology computation dependencies are sealed; current NABRE corroboration does not masquerade as identical old bytes",
+      "All twelve orientation rows inspected, including no aliasing of Mark composition to event"
+    ]
+  },
+  "finding_evidence": {
+    "id": "RES-001",
+    "source": "https://la.wikisource.org/wiki/In_Evangelium_S._Marci_(Beda)",
+    "delivery": "bede-mark-wikisource.html",
+    "delivery_sha256": "43703f1c252c7ace8c943a1ab477390bff9f773a41028317c9fdb00702d05233",
+    "excerpt": "bede-mark-locus.txt",
+    "locus": "Bede, In Marci evangelium expositio III, on Mark10:42-45, transmitted PL92 columns236A-B, especially236B",
+    "inspection": "Read the full direct lemma and its preceding contrast of worldly power with humility in the electronic Latin transcript; transcript credits Migne and Corpus Corporum. No historical facsimile inspection claimed.",
+    "material_result": "Bede explains Son of Man through the servant-form, connects the blood shed for the world with many understood as those willing to believe, and thus directly engages the appointed clause and the response-to-gift problem. Current research contains no Bede search/disposition and no developed account of this phrase. A broad web search independently found the DCO text as corroborating discovery evidence; its PDF open failed, so it is not the inspected witness."
+  },
+  "meaningful_limits": [
+    "Exact2008 Latin and2011 US altar-book pages remain uninspected, as disclosed by the research; checked corroboration supports this citation-only analytical scope, not exact full-text collation or republication",
+    "Modern electronic Aquinas and DCO Jerome witnesses are not independently collated historical printings",
+    "USCCB live dated page returned403; retained complete delivery matched the source artifact hash and OLM source pages independently control boundaries",
+    "No local parish actual chant, Preface/EP choice or local solemnity overlay was inferred",
+    "No reader-facing studies or homily exist in this stage to evaluate for typeset or oral quality"
+  ],
+  "reviewed_artifact_mutated": false,
+  "verdict": "CHANGES_REQUIRED"
+}

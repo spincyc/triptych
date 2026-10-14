@@ -1,0 +1,760 @@
+{
+  "schema": 1,
+  "subject": "PC-S55-A canonical research web edition",
+  "web_sha256": "5dac08418643e50ef887586d343037a788d2ffff6b572a2fb855c33c721c83eb",
+  "research_pdf_sha256": "f2870d86da71dbf8cbb4556e16e985e169fab586e606ca8bbb141891540dc455",
+  "renderer": "Existing tools/public-alpha render_page and Python-Markdown 3.10.3",
+  "css_sha256": "a456caf21041256a1047560c0cee8638a99f7df819e6249ee3345e550b6b4060",
+  "browser_method": "Direct headless Chromium against local files. Desktop screenshots use a 1280 by 900 iframe viewport and mobile screenshots a 390 by 844 iframe viewport; the outer screenshot includes unused white margin. The disposable review copy disables smooth scrolling so fragment jumps settle deterministically. Publication text and production stylesheet are unchanged.",
+  "checks": {
+    "full_markdown_read": true,
+    "canonical_pdf_and_source_compared": true,
+    "source_prose_candidates": 146,
+    "resolved_macro_or_witness_label_exceptions": 13,
+    "unresolved_source_exceptions": 0,
+    "exact_source_footnotes": 38,
+    "interpretation_senses": 8,
+    "source_table_rows": 22,
+    "review_seal_matches": true,
+    "pdf_receipt_matches": true,
+    "render_inputs_match": true,
+    "selected_screenshots_viewed": 18
+  },
+  "browser": [
+    {
+      "label": "desktop",
+      "width": 1280,
+      "height": 813,
+      "scrollWidth": 1265,
+      "headings": [
+        {
+          "tag": "H1",
+          "id": "twenty-ninth-sunday-in-ordinary-time-year-a-what-belongs-to-god",
+          "text": "Twenty-ninth Sunday in Ordinary Time, Year A: What belongs to God"
+        },
+        {
+          "tag": "H2",
+          "id": "the-appointed-elements",
+          "text": "The appointed elements"
+        },
+        {
+          "tag": "H2",
+          "id": "the-propers-detailed-commentary",
+          "text": "The Propers: Detailed Commentary"
+        },
+        {
+          "tag": "H3",
+          "id": "a-prayer-before-the-dispute",
+          "text": "A prayer before the dispute"
+        },
+        {
+          "tag": "H3",
+          "id": "the-will-that-the-collect-brings-before-god",
+          "text": "The will that the Collect brings before God"
+        },
+        {
+          "tag": "H3",
+          "id": "cyrus-named-strengthened-and-still-unknowing",
+          "text": "Cyrus: named, strengthened, and still unknowing"
+        },
+        {
+          "tag": "H3",
+          "id": "all-peoples-give-the-creator-glory",
+          "text": "All peoples give the Creator glory"
+        },
+        {
+          "tag": "H3",
+          "id": "a-community-whose-faith-has-weight",
+          "text": "A community whose faith has weight"
+        },
+        {
+          "tag": "H3",
+          "id": "a-light-held-from-another",
+          "text": "A light held from another"
+        },
+        {
+          "tag": "H3",
+          "id": "a-trap-answered-through-its-own-evidence",
+          "text": "A trap answered through its own evidence"
+        },
+        {
+          "tag": "H3",
+          "id": "the-offering-and-the-servants-purification",
+          "text": "The offering and the servant’s purification"
+        },
+        {
+          "tag": "H3",
+          "id": "communion-through-the-psalm-of-mercy",
+          "text": "Communion through the Psalm of mercy"
+        },
+        {
+          "tag": "H3",
+          "id": "communion-through-the-sons-ransom",
+          "text": "Communion through the Son’s ransom"
+        },
+        {
+          "tag": "H3",
+          "id": "present-help-and-an-eternal-end",
+          "text": "Present help and an eternal end"
+        },
+        {
+          "tag": "H2",
+          "id": "study-texts-and-liturgical-locators",
+          "text": "Study texts and liturgical locators"
+        },
+        {
+          "tag": "H3",
+          "id": "proper-entrance",
+          "text": "Entrance"
+        },
+        {
+          "tag": "H3",
+          "id": "proper-collect",
+          "text": "Collect"
+        },
+        {
+          "tag": "H3",
+          "id": "proper-first-reading",
+          "text": "First reading"
+        },
+        {
+          "tag": "H3",
+          "id": "proper-psalm",
+          "text": "Responsorial Psalm"
+        },
+        {
+          "tag": "H3",
+          "id": "proper-second-reading",
+          "text": "Second reading"
+        },
+        {
+          "tag": "H3",
+          "id": "proper-acclamation",
+          "text": "Alleluia verse"
+        },
+        {
+          "tag": "H3",
+          "id": "proper-gospel",
+          "text": "Gospel"
+        },
+        {
+          "tag": "H3",
+          "id": "proper-offerings",
+          "text": "Prayer over the Offerings"
+        },
+        {
+          "tag": "H3",
+          "id": "proper-communion-psalm",
+          "text": "Communion: Psalm alternative"
+        },
+        {
+          "tag": "H3",
+          "id": "proper-communion-mark",
+          "text": "Communion: Mark alternative"
+        },
+        {
+          "tag": "H3",
+          "id": "proper-after-communion",
+          "text": "Prayer after Communion"
+        },
+        {
+          "tag": "H2",
+          "id": "lane-rightly-ordered-allegiance",
+          "text": "Receiving the world without worshipping its powers"
+        },
+        {
+          "tag": "H3",
+          "id": "the-instrument-does-not-become-the-saviour",
+          "text": "The instrument does not become the saviour"
+        },
+        {
+          "tag": "H3",
+          "id": "the-coin-establishes-a-debt-not-a-deity",
+          "text": "The coin establishes a debt, not a deity"
+        },
+        {
+          "tag": "H3",
+          "id": "a-people-wider-than-an-empire",
+          "text": "A people wider than an empire"
+        },
+        {
+          "tag": "H3",
+          "id": "from-shelter-to-a-salvation-power-cannot-buy",
+          "text": "From shelter to a salvation power cannot buy"
+        },
+        {
+          "tag": "H3",
+          "id": "the-four-senses",
+          "text": "The four senses"
+        },
+        {
+          "tag": "H2",
+          "id": "lane-grace-and-willing-service",
+          "text": "The received gift becomes willing service"
+        },
+        {
+          "tag": "H3",
+          "id": "a-gift-can-be-used-without-its-giver-being-known",
+          "text": "A gift can be used without its giver being known"
+        },
+        {
+          "tag": "H3",
+          "id": "god-acts-within-willing",
+          "text": "God acts within willing"
+        },
+        {
+          "tag": "H3",
+          "id": "thanksgiving-recognizes-action-instead-of-replacing-it",
+          "text": "Thanksgiving recognizes action instead of replacing it"
+        },
+        {
+          "tag": "H3",
+          "id": "from-truthful-words-to-a-sincere-offering",
+          "text": "From truthful words to a sincere offering"
+        },
+        {
+          "tag": "H3",
+          "id": "mercy-nourishes-the-son-first-gives-himself",
+          "text": "Mercy nourishes; the Son first gives himself"
+        },
+        {
+          "tag": "H3",
+          "id": "the-four-senses_1",
+          "text": "The four senses"
+        },
+        {
+          "tag": "H2",
+          "id": "one-life-returned-to-god",
+          "text": "One life returned to God"
+        },
+        {
+          "tag": "H2",
+          "id": "historical-appendix",
+          "text": "Appendix: Scriptural Date and Location"
+        },
+        {
+          "tag": "H3",
+          "id": "history-psalms",
+          "text": "Psalms of shelter, mercy and universal praise"
+        },
+        {
+          "tag": "H3",
+          "id": "history-isaiah",
+          "text": "Isaiah’s address to Cyrus"
+        },
+        {
+          "tag": "H3",
+          "id": "history-matthew",
+          "text": "Matthew’s temple controversy"
+        },
+        {
+          "tag": "H3",
+          "id": "history-mark",
+          "text": "Mark’s journey toward Jerusalem"
+        },
+        {
+          "tag": "H3",
+          "id": "history-philippians",
+          "text": "Philippians: writer and recipients"
+        },
+        {
+          "tag": "H3",
+          "id": "history-thessalonians",
+          "text": "Thessalonians: thanksgiving sent from Corinth"
+        },
+        {
+          "tag": "H2",
+          "id": "appendix-liturgical-resolution",
+          "text": "Appendix: Liturgical Resolution"
+        },
+        {
+          "tag": "H2",
+          "id": "appendix-scope-and-qualifications",
+          "text": "Appendix: Scope and Qualifications"
+        },
+        {
+          "tag": "H2",
+          "id": "references",
+          "text": "References"
+        }
+      ],
+      "definitions": [
+        "Literal.",
+        "Allegorical.",
+        "Moral.",
+        "Anagogical.",
+        "Literal.",
+        "Allegorical.",
+        "Moral.",
+        "Anagogical.",
+        "Scripture and liturgical books",
+        "Dated U.S. occurrence",
+        "Augustine",
+        "Jerome",
+        "John Chrysostom",
+        "Bede",
+        "Thomas Aquinas",
+        "Gregory Nazianzen and John Paul II",
+        "Historical orientation"
+      ],
+      "tables": [
+        {
+          "width": 632,
+          "scrollWidth": 632,
+          "overflow": "auto"
+        },
+        {
+          "width": 632,
+          "scrollWidth": 632,
+          "overflow": "auto"
+        }
+      ],
+      "footnotes": 38,
+      "footnoteLinks": 38,
+      "backlinks": 38,
+      "properAnchors": [
+        "proper-entrance",
+        "proper-collect",
+        "proper-first-reading",
+        "proper-psalm",
+        "proper-second-reading",
+        "proper-acclamation",
+        "proper-gospel",
+        "proper-offerings",
+        "proper-communion-psalm",
+        "proper-communion-mark",
+        "proper-after-communion"
+      ],
+      "missingFragments": [],
+      "duplicateIds": [],
+      "overflow": [],
+      "externalLinks": [
+        "https://bible.usccb.org/bible/readings/101826.cfm",
+        "https://www.vatican.va/content/john-paul-ii/en/audiences/2002/documents/hf_jp-ii_aud_20020918.html",
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "visibleDebris": false,
+      "fontSize": "16.64px",
+      "navigation": [
+        {
+          "number": 1,
+          "to": {
+            "hash": "#fn:1",
+            "top": 0.484375
+          },
+          "back": {
+            "hash": "#fnref:1",
+            "top": -0.25
+          }
+        },
+        {
+          "number": 20,
+          "to": {
+            "hash": "#fn:20",
+            "top": -0.015625
+          },
+          "back": {
+            "hash": "#fnref:20",
+            "top": -0.109375
+          }
+        },
+        {
+          "number": 38,
+          "to": {
+            "hash": "#fn:38",
+            "top": 460.578125
+          },
+          "back": {
+            "hash": "#fnref:38",
+            "top": 0.09375
+          }
+        }
+      ],
+      "tableScroll": [
+        {
+          "scrollLeft": 0,
+          "clientWidth": 632,
+          "scrollWidth": 632
+        },
+        {
+          "scrollLeft": 0,
+          "clientWidth": 632,
+          "scrollWidth": 632
+        }
+      ],
+      "screenshotTarget": "opening"
+    },
+    {
+      "label": "mobile",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 375,
+      "headings": [
+        {
+          "tag": "H1",
+          "id": "twenty-ninth-sunday-in-ordinary-time-year-a-what-belongs-to-god",
+          "text": "Twenty-ninth Sunday in Ordinary Time, Year A: What belongs to God"
+        },
+        {
+          "tag": "H2",
+          "id": "the-appointed-elements",
+          "text": "The appointed elements"
+        },
+        {
+          "tag": "H2",
+          "id": "the-propers-detailed-commentary",
+          "text": "The Propers: Detailed Commentary"
+        },
+        {
+          "tag": "H3",
+          "id": "a-prayer-before-the-dispute",
+          "text": "A prayer before the dispute"
+        },
+        {
+          "tag": "H3",
+          "id": "the-will-that-the-collect-brings-before-god",
+          "text": "The will that the Collect brings before God"
+        },
+        {
+          "tag": "H3",
+          "id": "cyrus-named-strengthened-and-still-unknowing",
+          "text": "Cyrus: named, strengthened, and still unknowing"
+        },
+        {
+          "tag": "H3",
+          "id": "all-peoples-give-the-creator-glory",
+          "text": "All peoples give the Creator glory"
+        },
+        {
+          "tag": "H3",
+          "id": "a-community-whose-faith-has-weight",
+          "text": "A community whose faith has weight"
+        },
+        {
+          "tag": "H3",
+          "id": "a-light-held-from-another",
+          "text": "A light held from another"
+        },
+        {
+          "tag": "H3",
+          "id": "a-trap-answered-through-its-own-evidence",
+          "text": "A trap answered through its own evidence"
+        },
+        {
+          "tag": "H3",
+          "id": "the-offering-and-the-servants-purification",
+          "text": "The offering and the servant’s purification"
+        },
+        {
+          "tag": "H3",
+          "id": "communion-through-the-psalm-of-mercy",
+          "text": "Communion through the Psalm of mercy"
+        },
+        {
+          "tag": "H3",
+          "id": "communion-through-the-sons-ransom",
+          "text": "Communion through the Son’s ransom"
+        },
+        {
+          "tag": "H3",
+          "id": "present-help-and-an-eternal-end",
+          "text": "Present help and an eternal end"
+        },
+        {
+          "tag": "H2",
+          "id": "study-texts-and-liturgical-locators",
+          "text": "Study texts and liturgical locators"
+        },
+        {
+          "tag": "H3",
+          "id": "proper-entrance",
+          "text": "Entrance"
+        },
+        {
+          "tag": "H3",
+          "id": "proper-collect",
+          "text": "Collect"
+        },
+        {
+          "tag": "H3",
+          "id": "proper-first-reading",
+          "text": "First reading"
+        },
+        {
+          "tag": "H3",
+          "id": "proper-psalm",
+          "text": "Responsorial Psalm"
+        },
+        {
+          "tag": "H3",
+          "id": "proper-second-reading",
+          "text": "Second reading"
+        },
+        {
+          "tag": "H3",
+          "id": "proper-acclamation",
+          "text": "Alleluia verse"
+        },
+        {
+          "tag": "H3",
+          "id": "proper-gospel",
+          "text": "Gospel"
+        },
+        {
+          "tag": "H3",
+          "id": "proper-offerings",
+          "text": "Prayer over the Offerings"
+        },
+        {
+          "tag": "H3",
+          "id": "proper-communion-psalm",
+          "text": "Communion: Psalm alternative"
+        },
+        {
+          "tag": "H3",
+          "id": "proper-communion-mark",
+          "text": "Communion: Mark alternative"
+        },
+        {
+          "tag": "H3",
+          "id": "proper-after-communion",
+          "text": "Prayer after Communion"
+        },
+        {
+          "tag": "H2",
+          "id": "lane-rightly-ordered-allegiance",
+          "text": "Receiving the world without worshipping its powers"
+        },
+        {
+          "tag": "H3",
+          "id": "the-instrument-does-not-become-the-saviour",
+          "text": "The instrument does not become the saviour"
+        },
+        {
+          "tag": "H3",
+          "id": "the-coin-establishes-a-debt-not-a-deity",
+          "text": "The coin establishes a debt, not a deity"
+        },
+        {
+          "tag": "H3",
+          "id": "a-people-wider-than-an-empire",
+          "text": "A people wider than an empire"
+        },
+        {
+          "tag": "H3",
+          "id": "from-shelter-to-a-salvation-power-cannot-buy",
+          "text": "From shelter to a salvation power cannot buy"
+        },
+        {
+          "tag": "H3",
+          "id": "the-four-senses",
+          "text": "The four senses"
+        },
+        {
+          "tag": "H2",
+          "id": "lane-grace-and-willing-service",
+          "text": "The received gift becomes willing service"
+        },
+        {
+          "tag": "H3",
+          "id": "a-gift-can-be-used-without-its-giver-being-known",
+          "text": "A gift can be used without its giver being known"
+        },
+        {
+          "tag": "H3",
+          "id": "god-acts-within-willing",
+          "text": "God acts within willing"
+        },
+        {
+          "tag": "H3",
+          "id": "thanksgiving-recognizes-action-instead-of-replacing-it",
+          "text": "Thanksgiving recognizes action instead of replacing it"
+        },
+        {
+          "tag": "H3",
+          "id": "from-truthful-words-to-a-sincere-offering",
+          "text": "From truthful words to a sincere offering"
+        },
+        {
+          "tag": "H3",
+          "id": "mercy-nourishes-the-son-first-gives-himself",
+          "text": "Mercy nourishes; the Son first gives himself"
+        },
+        {
+          "tag": "H3",
+          "id": "the-four-senses_1",
+          "text": "The four senses"
+        },
+        {
+          "tag": "H2",
+          "id": "one-life-returned-to-god",
+          "text": "One life returned to God"
+        },
+        {
+          "tag": "H2",
+          "id": "historical-appendix",
+          "text": "Appendix: Scriptural Date and Location"
+        },
+        {
+          "tag": "H3",
+          "id": "history-psalms",
+          "text": "Psalms of shelter, mercy and universal praise"
+        },
+        {
+          "tag": "H3",
+          "id": "history-isaiah",
+          "text": "Isaiah’s address to Cyrus"
+        },
+        {
+          "tag": "H3",
+          "id": "history-matthew",
+          "text": "Matthew’s temple controversy"
+        },
+        {
+          "tag": "H3",
+          "id": "history-mark",
+          "text": "Mark’s journey toward Jerusalem"
+        },
+        {
+          "tag": "H3",
+          "id": "history-philippians",
+          "text": "Philippians: writer and recipients"
+        },
+        {
+          "tag": "H3",
+          "id": "history-thessalonians",
+          "text": "Thessalonians: thanksgiving sent from Corinth"
+        },
+        {
+          "tag": "H2",
+          "id": "appendix-liturgical-resolution",
+          "text": "Appendix: Liturgical Resolution"
+        },
+        {
+          "tag": "H2",
+          "id": "appendix-scope-and-qualifications",
+          "text": "Appendix: Scope and Qualifications"
+        },
+        {
+          "tag": "H2",
+          "id": "references",
+          "text": "References"
+        }
+      ],
+      "definitions": [
+        "Literal.",
+        "Allegorical.",
+        "Moral.",
+        "Anagogical.",
+        "Literal.",
+        "Allegorical.",
+        "Moral.",
+        "Anagogical.",
+        "Scripture and liturgical books",
+        "Dated U.S. occurrence",
+        "Augustine",
+        "Jerome",
+        "John Chrysostom",
+        "Bede",
+        "Thomas Aquinas",
+        "Gregory Nazianzen and John Paul II",
+        "Historical orientation"
+      ],
+      "tables": [
+        {
+          "width": 327,
+          "scrollWidth": 327,
+          "overflow": "auto"
+        },
+        {
+          "width": 327,
+          "scrollWidth": 601,
+          "overflow": "auto"
+        }
+      ],
+      "footnotes": 38,
+      "footnoteLinks": 38,
+      "backlinks": 38,
+      "properAnchors": [
+        "proper-entrance",
+        "proper-collect",
+        "proper-first-reading",
+        "proper-psalm",
+        "proper-second-reading",
+        "proper-acclamation",
+        "proper-gospel",
+        "proper-offerings",
+        "proper-communion-psalm",
+        "proper-communion-mark",
+        "proper-after-communion"
+      ],
+      "missingFragments": [],
+      "duplicateIds": [],
+      "overflow": [],
+      "externalLinks": [
+        "https://bible.usccb.org/bible/readings/101826.cfm",
+        "https://www.vatican.va/content/john-paul-ii/en/audiences/2002/documents/hf_jp-ii_aud_20020918.html",
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "visibleDebris": false,
+      "fontSize": "16.64px",
+      "navigation": [
+        {
+          "number": 1,
+          "to": {
+            "hash": "#fn:1",
+            "top": -0.03125
+          },
+          "back": {
+            "hash": "#fnref:1",
+            "top": 0.3125
+          }
+        },
+        {
+          "number": 20,
+          "to": {
+            "hash": "#fn:20",
+            "top": -0.4375
+          },
+          "back": {
+            "hash": "#fnref:20",
+            "top": -0.328125
+          }
+        },
+        {
+          "number": 38,
+          "to": {
+            "hash": "#fn:38",
+            "top": 408.8125
+          },
+          "back": {
+            "hash": "#fnref:38",
+            "top": -0.390625
+          }
+        }
+      ],
+      "tableScroll": [
+        {
+          "scrollLeft": 0,
+          "clientWidth": 327,
+          "scrollWidth": 327
+        },
+        {
+          "scrollLeft": 274,
+          "clientWidth": 327,
+          "scrollWidth": 601
+        }
+      ],
+      "screenshotTarget": "opening"
+    }
+  ],
+  "limits": [
+    "This is canonical conversion review, not a new research or PDF visual acceptance.",
+    "Selected browser views were inspected; a physical mobile device, screen reader and touch gestures were not exercised.",
+    "External URL destinations were compared with canonical source links; their live network availability was not retested.",
+    "The stand-alone preview omits the site's other routes, so shell navigation and deployment were not tested.",
+    "Initial top-level deep-scroll screenshots were unsuitable headless captures and are excluded from this evidence set. The retained screenshots are the successfully rendered iframe captures."
+  ],
+  "verdict": "PASS",
+  "findings": []
+}

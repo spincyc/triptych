@@ -1,0 +1,355 @@
+[
+  {
+    "artifact": "pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+    "pdf_sha256": "f2870d86da71dbf8cbb4556e16e985e169fab586e606ca8bbb141891540dc455",
+    "page_count": 23,
+    "raster_manifest": "build/tpt-runs/fbf047c60105569f/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/review-cache.json",
+    "raster_manifest_sha256": "ccfb83d1792b1e135c2f6e7e2ac050dd4397bda09dd10657c3c45617d4f31918",
+    "renderer": {
+      "contact_sheets": {
+        "background": "white",
+        "batch_size": 20,
+        "columns": 4,
+        "fill": "black",
+        "font": {
+          "path": "/usr/share/texmf-dist/fonts/opentype/public/lm/lmsans10-regular.otf",
+          "sha256": "d431b786b9b603662718e79cfe9b441f47a8b0b3e854dde89d5acb3ed7cfd682"
+        },
+        "geometry": "+8+8",
+        "label": "Page {number}"
+      },
+      "limits": {
+        "address_space_bytes": 1073741824,
+        "magick_area": "64MP",
+        "magick_disk": "2GiB",
+        "magick_map": "512MiB",
+        "magick_memory": "256MiB",
+        "magick_threads": 1,
+        "omp_threads": 1
+      },
+      "raster": {
+        "format": "png",
+        "full_page_max_dimension": 2200,
+        "thumbnail_batch_size": 20,
+        "thumbnail_max_dimension": 420
+      },
+      "schema": "triptych-pdf-review-v3-explicit-font",
+      "tools": {
+        "magick": {
+          "path": "/usr/bin/magick",
+          "sha256": "c9b439e075a75795901641dadab39b3aee6395c2220553bb5d7ce30c75ec0b03",
+          "version": "Version: ImageMagick 7.1.2-33 Q16-HDRI x86_64 4bab3bc37:20261010 https://imagemagick.org\nCopyright: (C) 1999 ImageMagick Studio LLC\nLicense: https://imagemagick.org/license/\nFeatures: Cipher DPC HDRI Modules OpenCL OpenMP \nDelegates (built-in): bzlib cairo djvu fftw fontconfig freetype heic jbig jng jp2 jpeg jxl lcms lqr ltdl lzma openexr pangocairo png raqm raw rsvg tiff uhdr webp wmf x xml zip zlib zstd\nCompiler: gcc (16.2)"
+        },
+        "pdftoppm": {
+          "path": "/usr/bin/pdftoppm",
+          "sha256": "934e95951fc47d9643b1626b861d8a4a980a6b44ce2e64bc30139ff166706746",
+          "version": "pdftoppm version 26.08.0\nCopyright 2005-2026 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1996-2011, 2022 Glyph & Cog, LLC"
+        }
+      }
+    },
+    "verified_review_files": [
+      {
+        "path": "contact-sheets/sheet-001.png",
+        "sha256": "481e1b3bac6ff0b66338332e990f6f53605bb545c5472d91b1431c84702fe9cd",
+        "size": 914956
+      },
+      {
+        "path": "contact-sheets/sheet-002.png",
+        "sha256": "a375e35cb333045086c02846e5c8d6af188ea3f2f0c9239b938a3093eedf7ec5",
+        "size": 124022
+      },
+      {
+        "path": "pages/page-01.png",
+        "sha256": "36915fb7d1fcc589f9436985da63cbf1b29bd22a2d915396c1607adaa02b8493",
+        "size": 534111
+      },
+      {
+        "path": "pages/page-02.png",
+        "sha256": "24718ac6595aabe1e9b158e082a56af3f84bf200530a7dcf7e213bfef11bd8fe",
+        "size": 574299
+      },
+      {
+        "path": "pages/page-03.png",
+        "sha256": "8e6bfd1e7ed1d331c816d9d1eb03849eda08c93a93c2a543df36db012c28973e",
+        "size": 627250
+      },
+      {
+        "path": "pages/page-04.png",
+        "sha256": "1f4d20b083e50650e052292218a086a8426ab6de1d17628cbbec61e3841a276b",
+        "size": 592620
+      },
+      {
+        "path": "pages/page-05.png",
+        "sha256": "a2d9c3d7c3f8e5ab0b75fb0fde1b0ae32bc57231d32f061187905d84caffd3a2",
+        "size": 599423
+      },
+      {
+        "path": "pages/page-06.png",
+        "sha256": "a9394c336d7e5bc03c1f109402f2983de47a27811464aa1ee9582886a8f3bbe1",
+        "size": 625952
+      },
+      {
+        "path": "pages/page-07.png",
+        "sha256": "3814350263f9d9046a4e8a66abb02f31aa3e8d7de2d39e740cec60f7b501e999",
+        "size": 572737
+      },
+      {
+        "path": "pages/page-08.png",
+        "sha256": "b98869028e0fd950fddc6f4c2659186da5e145f9ee6c334a88ae8f8c4d4805d3",
+        "size": 444409
+      },
+      {
+        "path": "pages/page-09.png",
+        "sha256": "78552734f14df94b4ceb1798b566d5e3567a1e286623f85315013217e0c563aa",
+        "size": 436371
+      },
+      {
+        "path": "pages/page-10.png",
+        "sha256": "fe0fa34f76ad2887d8b294e9c7d92a38b1886e16d823eebfd1b7426a2339f011",
+        "size": 194573
+      },
+      {
+        "path": "pages/page-11.png",
+        "sha256": "1a4d655626d31ad988c34b1930f16dc5de9cb30426fa119e4853bc33a11a4a44",
+        "size": 636984
+      },
+      {
+        "path": "pages/page-12.png",
+        "sha256": "33a159d48ab0e3127473762027343992f770517382dfe7659f950fc85fed2da6",
+        "size": 623257
+      },
+      {
+        "path": "pages/page-13.png",
+        "sha256": "c9d7cb65a7f2d0027f0acd342d6a1b4a1aef232fa36c0513a21e3f6b2f7c6e04",
+        "size": 351477
+      },
+      {
+        "path": "pages/page-14.png",
+        "sha256": "d40049e6111cfea288a65c7f417cdd8b82d0e0328b7fdcf64a16867fd68d9d0c",
+        "size": 626509
+      },
+      {
+        "path": "pages/page-15.png",
+        "sha256": "29a4ea93c2d066ad0aa039e9c28b6f630f0e0868e0ba3b7695830498ccd79ee8",
+        "size": 572539
+      },
+      {
+        "path": "pages/page-16.png",
+        "sha256": "9c0bc02c59c795b5152d832433656d3aa1d43feec45fcff9d1b99600af6cae54",
+        "size": 591233
+      },
+      {
+        "path": "pages/page-17.png",
+        "sha256": "452966b1aa74823ee0ca6ae8fb104e651192f99e13389a8fc187fbef573b36e5",
+        "size": 258913
+      },
+      {
+        "path": "pages/page-18.png",
+        "sha256": "b8b63c7360da884b95e15c09b84fd6f4f422a7c0e186568623657f293314757b",
+        "size": 651728
+      },
+      {
+        "path": "pages/page-19.png",
+        "sha256": "b458597219a0985a9240f95949420ed81a3ae76e7c3c5a79830994cf5176d548",
+        "size": 587693
+      },
+      {
+        "path": "pages/page-20.png",
+        "sha256": "8ad786b84d6983244a9c972074b06d93f6209cb00fe1b201551ed42ce69abe34",
+        "size": 375020
+      },
+      {
+        "path": "pages/page-21.png",
+        "sha256": "076e1bef07af4aa30e50f19be17a225960386823357ed813241a228c66a67ec1",
+        "size": 586584
+      },
+      {
+        "path": "pages/page-22.png",
+        "sha256": "1392a3ec8bf922ffbfba95da5fada6b38ee242bf7ff753f7b4297b0e1167d686",
+        "size": 608051
+      },
+      {
+        "path": "pages/page-23.png",
+        "sha256": "6c9e5866a15301f0767aa660ff03f60411f22d77ef1363a650965968ab43187c",
+        "size": 333939
+      }
+    ]
+  },
+  {
+    "artifact": "pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily",
+    "pdf_sha256": "e7dfb622949d8d49646f0fa4e3d571160b6ecf0f73e7b54e8a7958a544327406",
+    "page_count": 3,
+    "raster_manifest": "build/tpt-runs/fbf047c60105569f/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily/review-cache.json",
+    "raster_manifest_sha256": "f7de1b5753597e3dc553f539eab3dcafa16575a96452aea3db5b30ed3158c852",
+    "renderer": {
+      "contact_sheets": {
+        "background": "white",
+        "batch_size": 20,
+        "columns": 4,
+        "fill": "black",
+        "font": {
+          "path": "/usr/share/texmf-dist/fonts/opentype/public/lm/lmsans10-regular.otf",
+          "sha256": "d431b786b9b603662718e79cfe9b441f47a8b0b3e854dde89d5acb3ed7cfd682"
+        },
+        "geometry": "+8+8",
+        "label": "Page {number}"
+      },
+      "limits": {
+        "address_space_bytes": 1073741824,
+        "magick_area": "64MP",
+        "magick_disk": "2GiB",
+        "magick_map": "512MiB",
+        "magick_memory": "256MiB",
+        "magick_threads": 1,
+        "omp_threads": 1
+      },
+      "raster": {
+        "format": "png",
+        "full_page_max_dimension": 2200,
+        "thumbnail_batch_size": 20,
+        "thumbnail_max_dimension": 420
+      },
+      "schema": "triptych-pdf-review-v3-explicit-font",
+      "tools": {
+        "magick": {
+          "path": "/usr/bin/magick",
+          "sha256": "c9b439e075a75795901641dadab39b3aee6395c2220553bb5d7ce30c75ec0b03",
+          "version": "Version: ImageMagick 7.1.2-33 Q16-HDRI x86_64 4bab3bc37:20261010 https://imagemagick.org\nCopyright: (C) 1999 ImageMagick Studio LLC\nLicense: https://imagemagick.org/license/\nFeatures: Cipher DPC HDRI Modules OpenCL OpenMP \nDelegates (built-in): bzlib cairo djvu fftw fontconfig freetype heic jbig jng jp2 jpeg jxl lcms lqr ltdl lzma openexr pangocairo png raqm raw rsvg tiff uhdr webp wmf x xml zip zlib zstd\nCompiler: gcc (16.2)"
+        },
+        "pdftoppm": {
+          "path": "/usr/bin/pdftoppm",
+          "sha256": "934e95951fc47d9643b1626b861d8a4a980a6b44ce2e64bc30139ff166706746",
+          "version": "pdftoppm version 26.08.0\nCopyright 2005-2026 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1996-2011, 2022 Glyph & Cog, LLC"
+        }
+      }
+    },
+    "verified_review_files": [
+      {
+        "path": "contact-sheets/sheet-001.png",
+        "sha256": "b5719a230d10a13bd3ff8cfdc76d6f56baa85c9016914bb451b6e89bacc57123",
+        "size": 151385
+      },
+      {
+        "path": "pages/page-1.png",
+        "sha256": "aaa972b9057819009d3561049a2320cdb557e1c28d1125d856e56c1d56b7fb9b",
+        "size": 653738
+      },
+      {
+        "path": "pages/page-2.png",
+        "sha256": "d0cd6916bdde5574c750112ebecdb387afa0bc5f5bdd27dab2354ee0cc376315",
+        "size": 590936
+      },
+      {
+        "path": "pages/page-3.png",
+        "sha256": "6c1a62ee1503ea22225802e31a50c365782cca413c9eedbde4ef58a837ed2878",
+        "size": 547460
+      }
+    ]
+  },
+  {
+    "artifact": "pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis",
+    "pdf_sha256": "441ebb1f0374d7ddbc5b8956222c2159d80b82453759b3e82d8f76cfc90e3d1b",
+    "page_count": 10,
+    "raster_manifest": "build/tpt-runs/fbf047c60105569f/artifacts/build-artifacts-0000/rasters/build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis/review-cache.json",
+    "raster_manifest_sha256": "754378f11a1a3e5070107d4fa841cb70f163f2176e72a7dc95245edf700c3a1e",
+    "renderer": {
+      "contact_sheets": {
+        "background": "white",
+        "batch_size": 20,
+        "columns": 4,
+        "fill": "black",
+        "font": {
+          "path": "/usr/share/texmf-dist/fonts/opentype/public/lm/lmsans10-regular.otf",
+          "sha256": "d431b786b9b603662718e79cfe9b441f47a8b0b3e854dde89d5acb3ed7cfd682"
+        },
+        "geometry": "+8+8",
+        "label": "Page {number}"
+      },
+      "limits": {
+        "address_space_bytes": 1073741824,
+        "magick_area": "64MP",
+        "magick_disk": "2GiB",
+        "magick_map": "512MiB",
+        "magick_memory": "256MiB",
+        "magick_threads": 1,
+        "omp_threads": 1
+      },
+      "raster": {
+        "format": "png",
+        "full_page_max_dimension": 2200,
+        "thumbnail_batch_size": 20,
+        "thumbnail_max_dimension": 420
+      },
+      "schema": "triptych-pdf-review-v3-explicit-font",
+      "tools": {
+        "magick": {
+          "path": "/usr/bin/magick",
+          "sha256": "c9b439e075a75795901641dadab39b3aee6395c2220553bb5d7ce30c75ec0b03",
+          "version": "Version: ImageMagick 7.1.2-33 Q16-HDRI x86_64 4bab3bc37:20261010 https://imagemagick.org\nCopyright: (C) 1999 ImageMagick Studio LLC\nLicense: https://imagemagick.org/license/\nFeatures: Cipher DPC HDRI Modules OpenCL OpenMP \nDelegates (built-in): bzlib cairo djvu fftw fontconfig freetype heic jbig jng jp2 jpeg jxl lcms lqr ltdl lzma openexr pangocairo png raqm raw rsvg tiff uhdr webp wmf x xml zip zlib zstd\nCompiler: gcc (16.2)"
+        },
+        "pdftoppm": {
+          "path": "/usr/bin/pdftoppm",
+          "sha256": "934e95951fc47d9643b1626b861d8a4a980a6b44ce2e64bc30139ff166706746",
+          "version": "pdftoppm version 26.08.0\nCopyright 2005-2026 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1996-2011, 2022 Glyph & Cog, LLC"
+        }
+      }
+    },
+    "verified_review_files": [
+      {
+        "path": "contact-sheets/sheet-001.png",
+        "sha256": "02cbef109fce8627fcc02fbcc132bd655bc339447d146463b4ed55160d72cac2",
+        "size": 468567
+      },
+      {
+        "path": "pages/page-01.png",
+        "sha256": "545b7935f5845aea8febc9e726484ca4e8bef86d2be8477ab56f4892698ce570",
+        "size": 306141
+      },
+      {
+        "path": "pages/page-02.png",
+        "sha256": "2ff5a02b56f9e3f782292b76449faadf63a00bffb9fcf142f0efd916ac329609",
+        "size": 450349
+      },
+      {
+        "path": "pages/page-03.png",
+        "sha256": "472ffc04f618de21743e5bc3b5d7b24dcafd70e2d095c9cd400864a471a4f0c9",
+        "size": 483448
+      },
+      {
+        "path": "pages/page-04.png",
+        "sha256": "ce246d9dc8b1195ff8c2a0e5342295a7e1249c80ae87bf14161c8b303f1f79c9",
+        "size": 469182
+      },
+      {
+        "path": "pages/page-05.png",
+        "sha256": "2a177a3c6b666255fb79bb8e9e1118b6556d6e8b6ef572b945a795d32bf33774",
+        "size": 617242
+      },
+      {
+        "path": "pages/page-06.png",
+        "sha256": "c847188dcc80a0a6d9da0cc2d7e910626482d41d89ed0539280f36ee3cdf014f",
+        "size": 650105
+      },
+      {
+        "path": "pages/page-07.png",
+        "sha256": "7f27f0f90b6676b090a6c117d941a825f65ab195f030e3a53b07165b7ea2ed40",
+        "size": 651695
+      },
+      {
+        "path": "pages/page-08.png",
+        "sha256": "db9b96fae8a6a423de3265886389cea14419bade5e70de6d5868f852b20cfbfd",
+        "size": 644993
+      },
+      {
+        "path": "pages/page-09.png",
+        "sha256": "a0a84591335ac3f60281705d22944ad85534eadab3eaebf1d98440e186bfd55f",
+        "size": 475501
+      },
+      {
+        "path": "pages/page-10.png",
+        "sha256": "42015392de3a047c803c5029d312b65127ca12931d6f646c313ccfafc9775bc2",
+        "size": 685039
+      }
+    ]
+  }
+]

@@ -1,0 +1,276 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "SYN-001",
+      "location": "Physical page 2, Scriptural Date and Location, Matthew 22:15-21 composition row; sections/synthesis-03-chronology.tex, row-5396102e03d2c0da.",
+      "problem": "The row displays c. A.D. 50 under Composition: The Gospel of St Matthew with no qualification beyond Disputed. Durand, The New Testament, Origin (https://www.newadvent.org/cathen/14530a.htm), explicitly applies this date to an Aramaic original and leaves the Greek rendering undated. The expansive study, sections/60-history.tex, Matthew\u2019s temple controversy, retains that distinction. Omitting it changes what the concise reader can understand the date to identify; the general appendix pointer does not meet the profile\u2019s requirement that an answer-changing source qualification remain beside the answer.",
+      "repair_target": "synthesis",
+      "required_result": "Keep the generated alternatives, but qualify the Matthew composition answer concisely and locally so the c. A.D. 50 alternative is recognizable as the source\u2019s proposed original-Aramaic dating and the Greek rendering remains undated; point precisely to the fuller Matthew appendix explanation. Preserve the readable one-page chronology and the established opening pagination, then provide a settled proof.",
+      "severity": "blocking"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/synthesis-01-inventory.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/synthesis-02-overview.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "key": "concise-chronology",
+          "kind": "front-matter",
+          "path": "sections/synthesis-03-chronology.tex",
+          "references": [
+            "research/chronology-annotations.tex"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/synthesis-04-themes.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/synthesis-05-commentary.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/synthesis-90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+      "element_keys": [
+        "entrance",
+        "collect",
+        "first-reading",
+        "psalm",
+        "second-reading",
+        "acclamation",
+        "gospel",
+        "offerings",
+        "communion-psalm",
+        "communion-mark",
+        "after-communion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "allegiance"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "key": "rightly-ordered-allegiance",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "title": "Receiving the world without worshipping its powers"
+        },
+        {
+          "authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Thomas Aquinas",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "response"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "key": "grace-and-willing-service",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "title": "The received gift becomes willing service"
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+    "files": {
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex": "1be1910f835d21435f9b1faea7245d76385c5fbfac1098bd2c7c455ad8d7c088",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/interpretations.md": "18146c5251595142ec069f35f41cecf78f07b96287d465b4d37c0d58f8e512e1",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-01-inventory.tex": "db17c2e403ccc265b6b0972bd4705f6e39ba1506a0a1ce41716c59f4bd8b5b5d",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-02-overview.tex": "a8613b6e28b35bbee2e50cad358fc27b10d2b8f5e6527b2995ab5712f1ad10e4",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-03-chronology.tex": "1f9e6278e73a92ab73663bb1a0f4dcb461fe868a69d10b40c7f78320c518710b",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-04-themes.tex": "9ac8e0d9039e9fd4202274f136b570a02e46748d010ec81de324ce533687214b",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-05-commentary.tex": "9464a9d026347c597a2fb4b89d33013b8797eed9dda57e974cf44a4d6cac6dc8",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-90-apparatus.tex": "aea7638774da008c891e15cf4d51269fac59483336d4f6c4427e281fe874fa4f",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/synthesis.tex": "a01b6df3af15cf268edb5e52f7a48549985b51a356ac52f1807d23659a4fbbd6"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "11",
+            "17f12ad495885888db9045416b60df5bc828dccdf9f1eab5a1edb648cc280964",
+            "fbf047c60105569f",
+            "bd50b7dcd577610ce6c8a9c9fc4610b7a0b5a23a",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "Independently read and compared the concise study, inspected all ten settled proof pages and the relevant exact source loci, and completed the twelve rendered chronology lookups; the main interpretive comparison and page structure are sound, within the disclosed limits of digital witnesses and uninspected exact altar-book editions. CHANGES_REQUIRED for one synthesis-owned omission: the Matthew composition row drops the source qualification distinguishing its proposed Aramaic original from the undated Greek rendering."
+}

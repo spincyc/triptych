@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 2945,
-  "editions": 1060,
-  "passages": 5277,
+  "artifacts": 2959,
+  "editions": 1069,
+  "passages": 5278,
   "readable": 3081,
-  "works": 937
+  "works": 942
  },
  "facets": {
   "authors": [
@@ -243,7 +243,7 @@
    },
    {
     "id": "Bede the Venerable",
-    "works": 4
+    "works": 5
    },
    {
     "id": "Benedict XII",
@@ -882,6 +882,10 @@
     "works": 1
    },
    {
+    "id": "Ignatius Press",
+    "works": 1
+   },
+   {
     "id": "Ignatius of Antioch",
     "works": 3
    },
@@ -1023,7 +1027,7 @@
    },
    {
     "id": "John Paul II",
-    "works": 14
+    "works": 15
    },
    {
     "id": "John XXII",
@@ -1779,11 +1783,15 @@
    },
    {
     "id": "Thomas Aquinas",
-    "works": 23
+    "works": 24
    },
    {
     "id": "Thomas Aquinas; collected edition",
     "works": 2
+   },
+   {
+    "id": "Thomas Aquinas; reportatio Leodegarii Bissuntini",
+    "works": 1
    },
    {
     "id": "Thomas de Vio Cajetan",
@@ -2056,6 +2064,10 @@
     "works": 6
    },
    {
+    "id": "patristic-commentary",
+    "works": 6
+   },
+   {
     "id": "poetry-collection",
     "works": 6
    },
@@ -2104,10 +2116,6 @@
     "works": 5
    },
    {
-    "id": "patristic-commentary",
-    "works": 5
-   },
-   {
     "id": "sermon-series",
     "works": 5
    },
@@ -2141,6 +2149,10 @@
    },
    {
     "id": "prayer-book",
+    "works": 4
+   },
+   {
+    "id": "primary-source",
     "works": 4
    },
    {
@@ -3434,11 +3446,11 @@
   ],
   "languages": [
    {
-    "editions": 570,
+    "editions": 573,
     "id": "en"
    },
    {
-    "editions": 313,
+    "editions": 319,
     "id": "la"
    },
    {
@@ -3564,7 +3576,7 @@
     "label": "18th century"
    },
    {
-    "editions": 198,
+    "editions": 199,
     "id": "1800",
     "label": "19th century"
    },
@@ -3574,20 +3586,20 @@
     "label": "20th century"
    },
    {
-    "editions": 574,
+    "editions": 582,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 1654,
-    "editions": 383,
+    "artifacts": 1657,
+    "editions": 385,
     "id": "public-domain"
    },
    {
-    "artifacts": 782,
-    "editions": 393,
+    "artifacts": 793,
+    "editions": 400,
     "id": "restricted"
    },
    {
@@ -7458,6 +7470,49 @@
     "la"
    ],
    "title": "In Lucae evangelium expositio"
+  },
+  {
+   "alternate_titles": [
+    "In Evangelium S. Marci",
+    "In Marcum",
+    "Commentary on Mark"
+   ],
+   "author": "Bede the Venerable",
+   "category": "patristic-commentary",
+   "directory": "editions/bede/in-marci-evangelium-expositio/",
+   "editions": [
+    {
+     "date": "1862",
+     "file": "1862-1862-migne-pl-92.json",
+     "id": "edition.bede.in-marci-evangelium-expositio.1862-migne-pl-92",
+     "language": "la",
+     "passages": 1,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "In Marci evangelium expositio, Patrologia Latina 92",
+     "year": 1862
+    },
+    {
+     "date": "2026-10-13",
+     "file": "2026-2026-10-13-latin-wikisource-migne.json",
+     "id": "edition.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "In Evangelium S. Marci, Latin Wikisource / Corpus Corporum Migne transcription",
+     "year": 2026
+    }
+   ],
+   "id": "work.bede.in-marci-evangelium-expositio",
+   "languages": [
+    "la"
+   ],
+   "title": "In Marci evangelium expositio"
   },
   {
    "alternate_titles": [
@@ -16286,6 +16341,32 @@
    "title": "De mysteriis"
   },
   {
+   "alternate_titles": [],
+   "author": "Ignatius Press",
+   "category": "primary-source",
+   "directory": "editions/ignatius-press/pew-missal-planning-guide/",
+   "editions": [
+    {
+     "date": "2026-10-13",
+     "file": "2026-week-29-web-2026-10-13.json",
+     "id": "edition.ignatius-press.pew-missal-planning-guide.week-29-web-2026-10-13",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Planning guide for Twenty-ninth Sunday in Ordinary Time, publisher web delivery",
+     "year": 2026
+    }
+   ],
+   "id": "work.ignatius-press.pew-missal-planning-guide",
+   "languages": [
+    "en"
+   ],
+   "title": "Ignatius Pew Missal planning guide"
+  },
+  {
    "alternate_titles": [
     "Letter to the Ephesians"
    ],
@@ -17466,6 +17547,19 @@
    "category": "biblical-commentary",
    "directory": "editions/jerome/commentarii-in-isaiam/",
    "editions": [
+    {
+     "date": "2026-10-13",
+     "file": "2026-dco-latin-pars-3-2026-10-13.json",
+     "id": "edition.jerome.commentarii-in-isaiam.dco-latin-pars-3-2026-10-13",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "In Isaiam, Latin digital delivery, Pars 3",
+     "year": 2026
+    },
     {
      "date": "2026-09-17",
      "file": "2026-2026-09-17-dco-latin-web.json",
@@ -18657,6 +18751,32 @@
     "it"
    ],
    "title": "General Audience of 28 July 1999"
+  },
+  {
+   "alternate_titles": [],
+   "author": "John Paul II",
+   "category": "primary-source",
+   "directory": "editions/john-paul-ii/general-audience-2002-09-18/",
+   "editions": [
+    {
+     "date": "2026-10-13",
+     "file": "2026-english-vatican-web-2026-10-13.json",
+     "id": "edition.john-paul-ii.general-audience-2002-09-18.english-vatican-web-2026-10-13",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "General audience 18 September 2002, official English web delivery",
+     "year": 2026
+    }
+   ],
+   "id": "work.john-paul-ii.general-audience-2002-09-18",
+   "languages": [
+    "en"
+   ],
+   "title": "General audience of 18 September 2002: Psalm 95[96]"
   },
   {
    "alternate_titles": [
@@ -28871,6 +28991,19 @@
      "year": 1863
     },
     {
+     "date": "2026-10-13",
+     "file": "2026-latin-corpusthomisticum-chapters-40-49-2026-10-13.json",
+     "id": "edition.thomas-aquinas.expositio-super-isaiam-ad-litteram.latin-corpusthomisticum-chapters-40-49-2026-10-13",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Expositio super Isaiam, chapters 40–49, Corpus Thomisticum",
+     "year": 2026
+    },
+    {
      "date": "2026-10-06",
      "file": "2026-2026-10-06-latin-corpusthomisticum.json",
      "id": "edition.thomas-aquinas.expositio-super-isaiam-ad-litteram.latin-corpusthomisticum-web-2026-10-06",
@@ -29521,6 +29654,32 @@
    "title": "Super Epistolam B. Pauli ad Philippenses lectura"
   },
   {
+   "alternate_titles": [],
+   "author": "Thomas Aquinas",
+   "category": "primary-source",
+   "directory": "editions/thomas-aquinas/super-primum-ad-thessalonicenses/",
+   "editions": [
+    {
+     "date": "2026-10-13",
+     "file": "2026-latin-corpusthomisticum-2026-10-13.json",
+     "id": "edition.thomas-aquinas.super-primum-ad-thessalonicenses.latin-corpusthomisticum-2026-10-13",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Super I Thessalonicenses, Turin 1953 text in Corpus Thomisticum",
+     "year": 2026
+    }
+   ],
+   "id": "work.thomas-aquinas.super-primum-ad-thessalonicenses",
+   "languages": [
+    "la"
+   ],
+   "title": "Super Epistolam B. Pauli ad Thessalonicenses primam lectura"
+  },
+  {
    "alternate_titles": [
     "Super Ephesios",
     "Commentary on Saint Paul's Epistle to the Ephesians",
@@ -29739,6 +29898,32 @@
     "la"
    ],
    "title": "Opera omnia, volume14: Expositio in aliquot libros Veteris Testamenti et in Psalmos L"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Thomas Aquinas; reportatio Leodegarii Bissuntini",
+   "category": "primary-source",
+   "directory": "editions/thomas-aquinas/super-matthaeum/",
+   "editions": [
+    {
+     "date": "2026-10-13",
+     "file": "2026-latin-corpusthomisticum-chapters-21-25-2026-10-13.json",
+     "id": "edition.thomas-aquinas.super-matthaeum.latin-corpusthomisticum-chapters-21-25-2026-10-13",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Super Matthaeum, chapters 21–25, Turin 1951 text in Corpus Thomisticum",
+     "year": 2026
+    }
+   ],
+   "id": "work.thomas-aquinas.super-matthaeum",
+   "languages": [
+    "la"
+   ],
+   "title": "Super Evangelium S. Matthaei lectura"
   },
   {
    "alternate_titles": [
@@ -30138,6 +30323,19 @@
       "restricted"
      ],
      "title": "Daily Readings for 11 October 2026, Twenty-eighth Sunday in Ordinary Time, web state of 6 October 2026",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-13",
+     "file": "2026-2026-10-18-web-2026-10-13.json",
+     "id": "edition.united-states-conference-of-catholic-bishops.daily-readings.2026-10-18-web-2026-10-13",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Daily Readings for 18 October 2026, Twenty-ninth Sunday in Ordinary Time",
      "year": 2026
     }
    ],

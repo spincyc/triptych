@@ -1,0 +1,98 @@
+{
+  "stage": "synthesis-review",
+  "iteration": 1,
+  "packet_sha256": "25e792bebbb26c637a2db1d6f157473b3c3789d63a25b2c30468dbe85cdbed74",
+  "sealed_files_verified": {
+    "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+    "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex": "1be1910f835d21435f9b1faea7245d76385c5fbfac1098bd2c7c455ad8d7c088",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/interpretations.md": "18146c5251595142ec069f35f41cecf78f07b96287d465b4d37c0d58f8e512e1",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-01-inventory.tex": "db17c2e403ccc265b6b0972bd4705f6e39ba1506a0a1ce41716c59f4bd8b5b5d",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-02-overview.tex": "a8613b6e28b35bbee2e50cad358fc27b10d2b8f5e6527b2995ab5712f1ad10e4",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-03-chronology.tex": "7e2a6ed853ddbaf5fc797b612a7a68cebc2d818c8c872fe4e5fc9e86a0a6f6ec",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-04-themes.tex": "9ac8e0d9039e9fd4202274f136b570a02e46748d010ec81de324ce533687214b",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-05-commentary.tex": "9464a9d026347c597a2fb4b89d33013b8797eed9dda57e974cf44a4d6cac6dc8",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/synthesis-90-apparatus.tex": "aea7638774da008c891e15cf4d51269fac59483336d4f6c4427e281fe874fa4f",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/synthesis.tex": "a01b6df3af15cf268edb5e52f7a48549985b51a356ac52f1807d23659a4fbbd6"
+  },
+  "proof": {
+    "path": "build/tpt-runs/fbf047c60105569f/artifacts/synthesis-review-0001/synthesis-proof.pdf",
+    "sha256": "8b9cf1b3d5a2ffa6e49735fd0a96be82c0f433ca3f0a276bd6d1df372a50ffdd",
+    "pages": 10,
+    "bytes": 380673,
+    "pdflatex_passes": 2,
+    "aux_pass_1_sha256": "010797d5bf27fd3561bd32484b35ff7262c2611d07ed8a2afc35f1dfb804dd20",
+    "aux_pass_2_sha256": "010797d5bf27fd3561bd32484b35ff7262c2611d07ed8a2afc35f1dfb804dd20",
+    "markers": {
+      "triptych:concise:inventory:start": 1,
+      "triptych:concise:inventory:end": 1,
+      "triptych:concise:overview:start": 1,
+      "triptych:concise:sense:literal": 1,
+      "triptych:concise:sense:allegorical": 1,
+      "triptych:concise:sense:moral": 1,
+      "triptych:concise:sense:anagogical": 1,
+      "triptych:concise:overview:end": 1,
+      "triptych:concise:chronology:start": 2,
+      "triptych:concise:chronology:end": 2,
+      "triptych:concise:themes:start": 3,
+      "triptych:concise:themes:end": 4,
+      "triptych:concise:commentary:start": 5
+    },
+    "layout_warnings": [],
+    "fonts": "Every pdffonts entry is an embedded Latin Modern subset."
+  },
+  "inspection": {
+    "pages_viewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "outcome": "No clipping, overlap, stranded heading, blank page or illegible table observed. Page 1 carries the complete ten-position map, both Communion options and four sense rows; page 2 alone carries chronology; pages 3–4 carry substantive thematic prose; comparison begins on page 5 and apparatus occupies page 10."
+  },
+  "independent_readings_recovered_before_comparison": [
+    "Ordered allegiance: earthly goods and civic claims remain real but limited beneath God’s claim; usefulness does not confer divine status or excuse impiety.",
+    "Willing service: received help reaches willing itself, enabling real costly fidelity without making effort its own origin or purchase of election."
+  ],
+  "comparison": "Compared the concise questions with accepted sections/30-allegiance.tex, sections/40-response.tex, sections/50-comparison.tex, sections/60-history.tex and research/interpretations.md. The questions interleave distinct answers and add exegetical reasoning beyond pages 3–4. No changed controlling interpretation or newly introduced source-dependent claim identified.",
+  "chronology_lookups": [
+    {
+      "passage": "Matthew 22:15–21",
+      "outcome": "Two adjacent rows distinguish the event in Jerusalem’s Temple controversies, with unresolved event date, from Gospel composition, with unresolved writing place and all six disputed alternatives. The last alternative c. A.D. 50 is now locally identified as Durand’s Aramaic-original date; his Greek rendering remains undated. The named Matthew’s temple controversy subsection exists and preserves the fuller distinction. This clears SYN-001."
+    },
+    {
+      "passage": "Cf. Psalms 16:6,8 and 32:18–19; Psalm 96 appointed verses and response",
+      "outcome": "Shared unknown occasions and shared latest composition bound remain distinct from David’s attributed reign, the Temple superscription association and the Christian Nativity referent. The shared row names every use and the appendix pointer leads to the Psalms discussion."
+    },
+    {
+      "passage": "Isaiah 45:1,4–6",
+      "outcome": "Traditional prophetic ministry in Judah/Jerusalem and late-exilic prophetic horizon/restoration toward Jerusalem remain two separately identified subjects and dates."
+    },
+    {
+      "passage": "Mark 10:45; Philippians 2:15d,16a; 1 Thessalonians 1:1–5b",
+      "outcome": "Composition rows remain distinct; Mark keeps disputed numerical and relative alternatives; Philippians identifies Rome as writer’s place under the cited captivity account and Philippi as recipient location; Thessalonians identifies Corinth and Thessalonica. Generated date answers remain unchanged."
+    }
+  ],
+  "exact_evidence_reopened": [
+    {
+      "artifact": "src/sources/works/catholic-encyclopedia/volume-14/editions/new-york-1912/artifacts/newadvent-14530a-0a19aa2c-article-text/newadvent-14530a-0a19aa2c-article-text.txt",
+      "sha256": "c4e12a4a6127e8af8b7ac8e2176448f78a2be2cb2080ab5ffb6f885f8fcaa259",
+      "locus_read": "Origin; paragraph beginning The Gospels are really the work; retained text line 29"
+    },
+    {
+      "artifact": "src/sources/works/catholic-encyclopedia/volume-10/editions/new-york-1911/artifacts/newadvent-10057a-e7b6ccef-article-text/newadvent-10057a-e7b6ccef-article-text.txt",
+      "sha256": "3d9a35cc773f774ed3b423c890956ba655c61ceb7096fbd7c01a197f062168c2",
+      "locus_read": "Date and place of composition; retained text lines 199–203"
+    }
+  ],
+  "source_check": "Durand explicitly distinguishes his Aramaic original from the Greek canonical form and leaves the Greek rendering undated; Jacquier supplies the five other retained alternatives as disputed reports. The revised qualification matches this evidence and the accepted historical appendix.",
+  "limits": "This iteration rechecked changed chronology and provenance and inspected the complete concise proof. It did not repeat the upstream reception sweep or every historical-print collation, infer replacement dates, verify deployment, install an artifact, or certify future final-build bytes. Retained witness limitations remain in the concise apparatus.",
+  "source_mutations": [],
+  "verdict": "PASS"
+}

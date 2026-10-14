@@ -1,0 +1,1412 @@
+{
+  "schema": 1,
+  "run_id": "fbf047c60105569f",
+  "checkpoint": "Actual terminal workflow disposition",
+  "terminal_disposition": "BLOCKED",
+  "files": [
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/bootstrap.json",
+      "archive": "bootstrap.json",
+      "kind": "byte-exact",
+      "sha256": "f7aac0b7522b2a713389d018d9176f22b55d056802664f7a9e4f459d0bc1a668",
+      "byte_size": 1239
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/events.jsonl",
+      "archive": "events.jsonl",
+      "kind": "byte-exact",
+      "sha256": "c0d714aa8b419fb9b4eb00013d5ff12c5da55c0f7d7b0f0cb629bfaaba6e7d50",
+      "byte_size": 12347
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/author-study-0000/components.log",
+      "archive": "evidence/author-study-0000/components.log",
+      "kind": "byte-exact",
+      "sha256": "8a35693e1ca488cec192299f86ebc842161e9a4b8c7306040136a3cee1c77644",
+      "byte_size": 37
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/author-study-0000/preflight.log",
+      "archive": "evidence/author-study-0000/preflight.log",
+      "kind": "byte-exact",
+      "sha256": "591800f3d1bd509ed672e8c9f77b45ef6f1fe5b4a852ede3a9095904e277eb54",
+      "byte_size": 1692
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/author-study-0000/rasters/review-run.json",
+      "archive": "evidence/author-study-0000/rasters-review-run.json",
+      "kind": "byte-exact",
+      "sha256": "865558d269b252cbfccc7e6c41146dcab0db09bae73d01bc8a022b29b8c7de96",
+      "byte_size": 2006
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/author-study-0000/web-probe.log",
+      "archive": "evidence/author-study-0000/web-probe.log",
+      "kind": "byte-exact",
+      "sha256": "8742e91b8ce26830c4182717aea0e7e92f370cc35a40ddf479ff597bbaf149de",
+      "byte_size": 216
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/author-study-0000/word-count.json",
+      "archive": "evidence/author-study-0000/word-count.json",
+      "kind": "byte-exact",
+      "sha256": "cdd965e0058909142138ba73114165b3f4bf299679955c7d7f6bd68caec6eb5c",
+      "byte_size": 488
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/build-artifacts-0000/build-verification.json",
+      "archive": "evidence/build-artifacts-0000/build-verification.json",
+      "kind": "byte-exact",
+      "sha256": "de1a27048bbd165530abdf3ad70905427fa5d71b09f0c6feb15023d97a410a24",
+      "byte_size": 2552
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/build-artifacts-0000/rasters/review-run.json",
+      "archive": "evidence/build-artifacts-0000/rasters-review-run.json",
+      "kind": "byte-exact",
+      "sha256": "f4a86ccb537a3fa39e6789ed547f4703c236ada84cc2fd6c9ddf71045921efa7",
+      "byte_size": 2883
+    },
+    {
+      "source": ".scratch/pc-s55/driver/new-source-disclosure.json",
+      "archive": "evidence/coordinator/new-source-disclosure.json",
+      "kind": "byte-exact",
+      "sha256": "1a503e7b5b2b3384e3b091bfefc0d1c9c1fe107a05a064ed5d6c1d3f21e1eac9",
+      "byte_size": 4545
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/derive-homily-0000/proof-sha256.json",
+      "archive": "evidence/derive-homily-0000/proof-sha256.json",
+      "kind": "byte-exact",
+      "sha256": "51df789e451035f5794309324c44672bc88dd6c2e327222933dee46c0d1dfcf0",
+      "byte_size": 363
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/derive-homily-0000/rasters/review-run.json",
+      "archive": "evidence/derive-homily-0000/rasters-review-run.json",
+      "kind": "byte-exact",
+      "sha256": "a66a888e3398102d5b01167328744109976e963210596b52b05a52b1fc7f3ec8",
+      "byte_size": 1855
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/derive-homily-0000/word-count.json",
+      "archive": "evidence/derive-homily-0000/word-count.json",
+      "kind": "byte-exact",
+      "sha256": "e982496e96df39ee3f39dacf46da1952b54504a7aa241f1f8d9ffa70ab29dd53",
+      "byte_size": 230
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/derive-synthesis-0000/proof-sha256.json",
+      "archive": "evidence/derive-synthesis-0000/proof-sha256.json",
+      "kind": "byte-exact",
+      "sha256": "6b2e99a1db4fc456aba20c9f505fb89885de3fc9aafdf34b7b6191a89f973da3",
+      "byte_size": 619
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/derive-synthesis-0000/rasters/review-run.json",
+      "archive": "evidence/derive-synthesis-0000/rasters-review-run.json",
+      "kind": "byte-exact",
+      "sha256": "675d30d88aaf7a1af40d4a026a1296e405e76a8ede158f523dbfd164bc23c7d9",
+      "byte_size": 2026
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/derive-synthesis-0000/word-count.json",
+      "archive": "evidence/derive-synthesis-0000/word-count.json",
+      "kind": "byte-exact",
+      "sha256": "aa9f72e5f3000a0873c04d2fa1e06f18e510ea2240459481ec016eec047c93a0",
+      "byte_size": 284
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/derive-synthesis-0001/proof-sha256.json",
+      "archive": "evidence/derive-synthesis-0001/proof-sha256.json",
+      "kind": "byte-exact",
+      "sha256": "56f7df8232b184fba9695abefd2d72054977a3ce9974cdc81bda6e09a2f381f2",
+      "byte_size": 619
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/derive-synthesis-0001/rasters/review-run.json",
+      "archive": "evidence/derive-synthesis-0001/rasters-review-run.json",
+      "kind": "byte-exact",
+      "sha256": "a28cd667e79da670956ec95e2a49f6f795144e2d8f806cdc44cba50e24f71c9d",
+      "byte_size": 2026
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/derive-synthesis-0001/word-count.json",
+      "archive": "evidence/derive-synthesis-0001/word-count.json",
+      "kind": "byte-exact",
+      "sha256": "17597e54b787d4bb0fce66ba94f75e3de22d83181566ec97c4249d2fb0889fef",
+      "byte_size": 320
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/generate-web-0000/conversion-audit.json",
+      "archive": "evidence/generate-web-0000/conversion-audit.json",
+      "kind": "byte-exact",
+      "sha256": "fa3397ad28e69e869e23119a44bdc20066cb61f8dfaab8d3874ddeb32537682f",
+      "byte_size": 803
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/generate-web-0000/conversion.log",
+      "archive": "evidence/generate-web-0000/conversion.log",
+      "kind": "byte-exact",
+      "sha256": "6d1a89ac882b1915cacb4b9c285a3c5b1d81d6226a5321abb0296d7ee7d0dedb",
+      "byte_size": 156
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/generate-web-0000/declaration-check.log",
+      "archive": "evidence/generate-web-0000/declaration-check.log",
+      "kind": "byte-exact",
+      "sha256": "2249a559f53e6be25000557cb1a82081525844e9d903def475b6d38e3beab0c4",
+      "byte_size": 73
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/generate-web-0000/snapshot.log",
+      "archive": "evidence/generate-web-0000/snapshot.log",
+      "kind": "byte-exact",
+      "sha256": "6f6d0f2c9143335ee9f26155d3152fa490e41e3eb8871b610abec1dd03202d19",
+      "byte_size": 167
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/generate-web-0000/web-artifact.json",
+      "archive": "evidence/generate-web-0000/web-artifact.json",
+      "kind": "byte-exact",
+      "sha256": "8b297c8e2518d28ae4fca277522ba341481e3ac9a9907cd81c79cc6804aa3720",
+      "byte_size": 443
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/homily-review-0000/rasters/review-run.json",
+      "archive": "evidence/homily-review-0000/rasters-review-run.json",
+      "kind": "byte-exact",
+      "sha256": "bd30b9236dea713641eb146670f748b72920e5607cbf5c512890b735446a2667",
+      "byte_size": 1855
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/homily-review-0000/review-notes.json",
+      "archive": "evidence/homily-review-0000/review-notes.json",
+      "kind": "byte-exact",
+      "sha256": "d432eeb0d66820cc4a5f40d43e1c54c6f93bdc3d6c4e176cde12484dcf0e4065",
+      "byte_size": 5672
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/homily-review-0000/seal-check.json",
+      "archive": "evidence/homily-review-0000/seal-check.json",
+      "kind": "byte-exact",
+      "sha256": "3f59e870173ddafb5f04d4ba46d912141e17dadd0e1e1735ca39a9313464436f",
+      "byte_size": 276
+    },
+    {
+      "source": ".scratch/pc-s55/install-publication-0000/check-sources-blocked-final.raw.log",
+      "archive": "evidence/install-publication-0000/check-sources-blocked-final.log",
+      "kind": "public-derivative",
+      "sha256": "4cf4b17c3ae0654f493d09c36254d56aa1a5eeaabd488dd9ed6e31db1e366c42",
+      "byte_size": 5679,
+      "derivative_source": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/check-sources-blocked-final.log",
+      "source_sha256": "7d7ad76a3e071d81b9214c19c9e3e24527d28afe3b91ed2101e3dbdd98a4be61",
+      "source_byte_size": 5732,
+      "transformation": "Decode combined stdout/stderr as UTF-8 with errors=replace; replace the absolute repository checkout root with [checkout] (one occurrence); encode UTF-8. No other substitutions."
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/installation-evidence.json",
+      "archive": "evidence/install-publication-0000/installation-evidence.json",
+      "kind": "byte-exact",
+      "sha256": "9883dd77f9f7c7469c3b4090008c168605c4644f98aee160d6dca44817e7bf76",
+      "byte_size": 31718
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/public-alpha-final.log",
+      "archive": "evidence/install-publication-0000/public-alpha-final.log",
+      "kind": "byte-exact",
+      "sha256": "30885d14a9f18f76e6d6b9f9c552b84dd2149912cadcdc98e92f5f18e2ad4ca5",
+      "byte_size": 790
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/install-publication-0000/publication-contract.log",
+      "archive": "evidence/install-publication-0000/publication-contract.log",
+      "kind": "byte-exact",
+      "sha256": "be44c2b600f1463fd58e7b3a9f6efe9a5ac3a0a74d1b55ba6548b6fd27f76760",
+      "byte_size": 171
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/research-0000/chronology-rasters/review-run.json",
+      "archive": "evidence/research-0000/chronology-rasters-review-run.json",
+      "kind": "byte-exact",
+      "sha256": "1d342ba66236c3dfdee626ba76f74875b744730357096cb365695ea6988f0a67",
+      "byte_size": 1861
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/research-0000/prior-rasters/review-run.json",
+      "archive": "evidence/research-0000/prior-rasters-review-run.json",
+      "kind": "byte-exact",
+      "sha256": "073634c9ec5c26fde8531b412425e7024b26e8993411a03eed5dd3f3857f31b0",
+      "byte_size": 1815
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/research-0000/rasters/review-run.json",
+      "archive": "evidence/research-0000/rasters-review-run.json",
+      "kind": "byte-exact",
+      "sha256": "a324e805d545c06340200e616f0b158e87d21c58bad73dc995eeaeed8a6a7727",
+      "byte_size": 1861
+    },
+    {
+      "source": ".scratch/pc-s55/research-0000/source-byte-verification.json",
+      "archive": "evidence/research-0000/source-byte-verification.json",
+      "kind": "byte-exact",
+      "sha256": "cb470f745a33a85d143b6ca06b6c20a7fc54cfb5941d8b21f55a0fe072a844b5",
+      "byte_size": 7865
+    },
+    {
+      "source": ".scratch/pc-s55/research-0000/verification.json",
+      "archive": "evidence/research-0000/verification.json",
+      "kind": "byte-exact",
+      "sha256": "8026250200d6c6a4127125c413698fb9103208778a7fdbd9e99aefaeaac23aab",
+      "byte_size": 3389
+    },
+    {
+      "source": ".scratch/pc-s55/research-0002/bindings-check.txt",
+      "archive": "evidence/research-0002/bindings-check.txt",
+      "kind": "byte-exact",
+      "sha256": "704f17c5e4ae7ae2a5be82e9cd1845eca9f5bdd92395c11074d29718387d8734",
+      "byte_size": 115
+    },
+    {
+      "source": ".scratch/pc-s55/research-0002/new-source-ids.json",
+      "archive": "evidence/research-0002/new-source-ids.json",
+      "kind": "byte-exact",
+      "sha256": "e118c785641aab44727545d10350793e1d56a9969e211e4769647c0ebac5fe15",
+      "byte_size": 185
+    },
+    {
+      "source": ".scratch/pc-s55/research-0002/rights-check.txt",
+      "archive": "evidence/research-0002/rights-check.txt",
+      "kind": "byte-exact",
+      "sha256": "502cc4c650d55d1e51dcd1f6eee62f520931276e4921e85a6847488e471d50ee",
+      "byte_size": 84
+    },
+    {
+      "source": ".scratch/pc-s55/research-0002/source-validation.txt",
+      "archive": "evidence/research-0002/source-validation.txt",
+      "kind": "byte-exact",
+      "sha256": "eecc4f66df176c2abf7013be21fd27598df76683f874113c2650b7d3abe9cd31",
+      "byte_size": 105
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/research-review-0000/rasters/review-run.json",
+      "archive": "evidence/research-review-0000/rasters-review-run.json",
+      "kind": "byte-exact",
+      "sha256": "74facce61c8df5872fc657bbcd0dcd0423f1fd8ff7d237658a0f7cd5b0fc1f17",
+      "byte_size": 1808
+    },
+    {
+      "source": ".scratch/pc-s55/research-review-0000/review-evidence.json",
+      "archive": "evidence/research-review-0000/review-evidence.json",
+      "kind": "byte-exact",
+      "sha256": "d22952ffb77aa3ae38d9441d36d5b161972331764fccf507fe356b71eca05b18",
+      "byte_size": 10122
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/research-review-0001/chronology-rasters/review-run.json",
+      "archive": "evidence/research-review-0001/chronology-rasters-review-run.json",
+      "kind": "byte-exact",
+      "sha256": "048df4342ce37d11bd6cd866dcbe50e92358c40f54e5a169e8efea50475b10a6",
+      "byte_size": 1797
+    },
+    {
+      "source": ".scratch/pc-s55/research-review-0001/evidence.json",
+      "archive": "evidence/research-review-0001/evidence.json",
+      "kind": "byte-exact",
+      "sha256": "922317062b899e32c467a7e99b4b0df8b85cd5ba482b7b97c93e96796b1f8fb7",
+      "byte_size": 7981
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/research-review-0001/rasters/review-run.json",
+      "archive": "evidence/research-review-0001/rasters-review-run.json",
+      "kind": "byte-exact",
+      "sha256": "bd979a158fa395fa51ca1fa7e171b04eaffbae2e19c42f2e937fac1291d54c4a",
+      "byte_size": 3547
+    },
+    {
+      "source": ".scratch/pc-s55/resolve-context-0000/evidence.json",
+      "archive": "evidence/resolve-context-0000/evidence.json",
+      "kind": "byte-exact",
+      "sha256": "adbd2eabef497e9120fff94bda126adead9802a56cd3db7d8b29c568e59a5b85",
+      "byte_size": 3758
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/resolve-context-0000/rasters/review-run.json",
+      "archive": "evidence/resolve-context-0000/rasters-review-run.json",
+      "kind": "byte-exact",
+      "sha256": "073634c9ec5c26fde8531b412425e7024b26e8993411a03eed5dd3f3857f31b0",
+      "byte_size": 1815
+    },
+    {
+      "source": ".scratch/pc-s55/resolve-context-0000/verification.json",
+      "archive": "evidence/resolve-context-0000/verification.json",
+      "kind": "byte-exact",
+      "sha256": "8f73e30e775d1e3618d7e29ce781b92656845011b39f8b301b4be0d09d256169",
+      "byte_size": 619
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/study-review-0000/final-input-seal.json",
+      "archive": "evidence/study-review-0000/final-input-seal.json",
+      "kind": "byte-exact",
+      "sha256": "63604948f1d18771d4994841d16b07179d0e4f9716d50552a639640071463d5c",
+      "byte_size": 6494
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/study-review-0000/proof-identity.json",
+      "archive": "evidence/study-review-0000/proof-identity.json",
+      "kind": "byte-exact",
+      "sha256": "2c3f220d3c8b75d45b0c95618abf09928d862a6802d45eeb0e728637ed6027a9",
+      "byte_size": 220
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/study-review-0000/rasters/review-run.json",
+      "archive": "evidence/study-review-0000/rasters-review-run.json",
+      "kind": "byte-exact",
+      "sha256": "7a7b0f34134c39cabef2892f26b567427609706a6c98b3b1accfbe48681c5cea",
+      "byte_size": 1852
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/study-review-0000/review-evidence.json",
+      "archive": "evidence/study-review-0000/review-evidence.json",
+      "kind": "byte-exact",
+      "sha256": "e1c53fbffe5429152ca29372323064928b4479be683b242e932148e2e037dc7f",
+      "byte_size": 3868
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/synthesis-review-0000/rasters/review-run.json",
+      "archive": "evidence/synthesis-review-0000/rasters-review-run.json",
+      "kind": "byte-exact",
+      "sha256": "7cfe4626a82eabdb427eba443d3a5a86ca2e31f5c5e6f75bf8c30a52ad4f48b9",
+      "byte_size": 1868
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/synthesis-review-0000/review-evidence.json",
+      "archive": "evidence/synthesis-review-0000/review-evidence.json",
+      "kind": "byte-exact",
+      "sha256": "440e0e6d9a432b6b1d13fc45fcf62e755a760747457dcd30b50d403dc84a61dd",
+      "byte_size": 12156
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/synthesis-review-0001/rasters/review-run.json",
+      "archive": "evidence/synthesis-review-0001/rasters-review-run.json",
+      "kind": "byte-exact",
+      "sha256": "513946c0daca09ea62ffbaa1b37c913f8590901d45b34886cb92ff1dbe8a1505",
+      "byte_size": 1868
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/synthesis-review-0001/review-evidence.json",
+      "archive": "evidence/synthesis-review-0001/review-evidence.json",
+      "kind": "byte-exact",
+      "sha256": "00ad671fa56423d470691ba116876d98dc32bb655712788cfba229baf0a02350",
+      "byte_size": 8141
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/visual-review-0000/inspection.json",
+      "archive": "evidence/visual-review-0000/inspection.json",
+      "kind": "byte-exact",
+      "sha256": "b969f4f73b1fd2a37cd7aabb93af817dea503d7ab49c427a0e43dc2631ffac3a",
+      "byte_size": 10003
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/visual-review-0000/raster-verification.json",
+      "archive": "evidence/visual-review-0000/raster-verification.json",
+      "kind": "byte-exact",
+      "sha256": "b4dab188c95b2c773ecdc75bd5a1892e996782ecfe18042be65204a270258bf6",
+      "byte_size": 13974
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/visual-review-0000/seal-verification.json",
+      "archive": "evidence/visual-review-0000/seal-verification.json",
+      "kind": "byte-exact",
+      "sha256": "6424ea63fa15e9ca36ed170a21d8a2d6339065069e67c3514cad889dc0e82e36",
+      "byte_size": 8841
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/web-review-0000/evidence-sha256.json",
+      "archive": "evidence/web-review-0000/evidence-sha256.json",
+      "kind": "byte-exact",
+      "sha256": "3381f6204d584516218a151aecba661525c7855362d9caf7892d21f521a959aa",
+      "byte_size": 2564
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/web-review-0000/fidelity.json",
+      "archive": "evidence/web-review-0000/fidelity.json",
+      "kind": "byte-exact",
+      "sha256": "b429614ac6cde39c4a7d7c057353dc45d2e39a4706a81aedfdcd081bff1faf4f",
+      "byte_size": 7717
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/web-review-0000/offline-comparison.json",
+      "archive": "evidence/web-review-0000/offline-comparison.json",
+      "kind": "byte-exact",
+      "sha256": "1c107d425c2166b8619fba499f3c6f0d0db9d6373fc1607749b864da91aabaa8",
+      "byte_size": 12367
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/web-review-0000/review.json",
+      "archive": "evidence/web-review-0000/review.json",
+      "kind": "byte-exact",
+      "sha256": "692f4b6fc3ed4ffa14451313afaf0ace54ca6ee5926de4be40c930f3adb76332",
+      "byte_size": 21732
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/web-review-0000/screenshots/pc-s55--allegiance-senses--desktop-frame.png",
+      "archive": "evidence/web-review-0000/screenshots/pc-s55--allegiance-senses--desktop-frame.png",
+      "kind": "byte-exact",
+      "sha256": "941052c01c7f639e3c795c862ebd5fec36616a58ff3aa46ad8f15f794505edb3",
+      "byte_size": 136716
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/web-review-0000/screenshots/pc-s55--allegiance-senses--mobile-frame.png",
+      "archive": "evidence/web-review-0000/screenshots/pc-s55--allegiance-senses--mobile-frame.png",
+      "kind": "byte-exact",
+      "sha256": "1de23d9a616a6e7784071799202c130f00c3da9ec187e9fb4490d6ab63cadb8a",
+      "byte_size": 88192
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/web-review-0000/screenshots/pc-s55--branches--desktop-frame.png",
+      "archive": "evidence/web-review-0000/screenshots/pc-s55--branches--desktop-frame.png",
+      "kind": "byte-exact",
+      "sha256": "dc3d120943d4feb401f23eb56a8aaec16130ca1702db77f756eeed8a08319ff2",
+      "byte_size": 149316
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/web-review-0000/screenshots/pc-s55--branches--mobile-frame.png",
+      "archive": "evidence/web-review-0000/screenshots/pc-s55--branches--mobile-frame.png",
+      "kind": "byte-exact",
+      "sha256": "8ae0070e3b7a86063b9c7808c2a34ffcd65c5d3bc0097b9381fb7a8c8ab86374",
+      "byte_size": 109354
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/web-review-0000/screenshots/pc-s55--chronology--desktop-frame.png",
+      "archive": "evidence/web-review-0000/screenshots/pc-s55--chronology--desktop-frame.png",
+      "kind": "byte-exact",
+      "sha256": "4d9af26ac4562b32a445daefbd046b27823986e5df434ac9ee73a5db3df3105c",
+      "byte_size": 178573
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/web-review-0000/screenshots/pc-s55--chronology--mobile-frame.png",
+      "archive": "evidence/web-review-0000/screenshots/pc-s55--chronology--mobile-frame.png",
+      "kind": "byte-exact",
+      "sha256": "11d459d56cc0ad9b6ed04125a88d5fbb3b91a7a946b49dd3636a437aa349d946",
+      "byte_size": 105095
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/web-review-0000/screenshots/pc-s55--gospel--desktop-frame.png",
+      "archive": "evidence/web-review-0000/screenshots/pc-s55--gospel--desktop-frame.png",
+      "kind": "byte-exact",
+      "sha256": "383f7508a375c1c00c4c7f96c25fdf085a3f2ea4b18b5a799fd3167d9b708494",
+      "byte_size": 118197
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/web-review-0000/screenshots/pc-s55--gospel--mobile-frame.png",
+      "archive": "evidence/web-review-0000/screenshots/pc-s55--gospel--mobile-frame.png",
+      "kind": "byte-exact",
+      "sha256": "6c0f7c1abfc1def8f7562ad6a76867cdd8b7cb9cc86ceb8a081f343ed2d97362",
+      "byte_size": 72719
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/web-review-0000/screenshots/pc-s55--inventory--desktop-frame.png",
+      "archive": "evidence/web-review-0000/screenshots/pc-s55--inventory--desktop-frame.png",
+      "kind": "byte-exact",
+      "sha256": "8fe0a2a68bde707ec14fbd0cefc5de6bdd234af2640a63759fb96a8c398558c7",
+      "byte_size": 91314
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/web-review-0000/screenshots/pc-s55--inventory--mobile-frame.png",
+      "archive": "evidence/web-review-0000/screenshots/pc-s55--inventory--mobile-frame.png",
+      "kind": "byte-exact",
+      "sha256": "36618fa5a954b0af7ae57b5f690410cc8ef7229d4e2151cf7ab10f25217b1c4e",
+      "byte_size": 59345
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/web-review-0000/screenshots/pc-s55--last-note--desktop-frame.png",
+      "archive": "evidence/web-review-0000/screenshots/pc-s55--last-note--desktop-frame.png",
+      "kind": "byte-exact",
+      "sha256": "181d06c6397f1e9cb9d8808dbf8f1d6fe9bd10ce133fb5b1a1733238cd5c1554",
+      "byte_size": 138061
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/web-review-0000/screenshots/pc-s55--last-note--mobile-frame.png",
+      "archive": "evidence/web-review-0000/screenshots/pc-s55--last-note--mobile-frame.png",
+      "kind": "byte-exact",
+      "sha256": "d0315ef2fedcd438609e7536182b2d385dd6ffe55589b0b2496e4a3982fc82ad",
+      "byte_size": 81069
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/web-review-0000/screenshots/pc-s55--opening--desktop-frame.png",
+      "archive": "evidence/web-review-0000/screenshots/pc-s55--opening--desktop-frame.png",
+      "kind": "byte-exact",
+      "sha256": "0b0ee5f8ecb8af3430227619a575003b916e3e1d6d2caf4185781fa697641dbd",
+      "byte_size": 265507
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/web-review-0000/screenshots/pc-s55--opening--mobile-frame.png",
+      "archive": "evidence/web-review-0000/screenshots/pc-s55--opening--mobile-frame.png",
+      "kind": "byte-exact",
+      "sha256": "e2ce749dffa5401f12690c0e5d3e660f02e82f6a4bd6069c641b17ea8c441ef8",
+      "byte_size": 167142
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/web-review-0000/screenshots/pc-s55--references--desktop-frame.png",
+      "archive": "evidence/web-review-0000/screenshots/pc-s55--references--desktop-frame.png",
+      "kind": "byte-exact",
+      "sha256": "a35da872118fe6f41eb4b541eedd5d887c3f1a259cbb8bbe874e5adb77fe2112",
+      "byte_size": 149983
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/web-review-0000/screenshots/pc-s55--references--mobile-frame.png",
+      "archive": "evidence/web-review-0000/screenshots/pc-s55--references--mobile-frame.png",
+      "kind": "byte-exact",
+      "sha256": "2be4b269c667f846d266feed578a575d0caee6098af4b56e1892f6b0da193d89",
+      "byte_size": 100185
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/web-review-0000/screenshots/pc-s55--response-senses--desktop-frame.png",
+      "archive": "evidence/web-review-0000/screenshots/pc-s55--response-senses--desktop-frame.png",
+      "kind": "byte-exact",
+      "sha256": "57951327b084a5049ba5b26b157d391e11baa641167456911ff1d83b0124c768",
+      "byte_size": 136118
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/artifacts/web-review-0000/screenshots/pc-s55--response-senses--mobile-frame.png",
+      "archive": "evidence/web-review-0000/screenshots/pc-s55--response-senses--mobile-frame.png",
+      "kind": "byte-exact",
+      "sha256": "7a3645987eec765bc121c153bf218ee723f0f9d1b93d4fea4b4af49d38d7c108",
+      "byte_size": 87037
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/artifact-gates-0000-reviewed-artifact-snapshot.log",
+      "archive": "gate-logs/artifact-gates-0000-reviewed-artifact-snapshot.log",
+      "kind": "byte-exact",
+      "sha256": "03b8904527017990dbbb4d122ce6e506eea5c86bc6e8675195c3dbb70362b1d7",
+      "byte_size": 532
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/homily-preflight-0000-bindings-valid.log",
+      "archive": "gate-logs/homily-preflight-0000-bindings-valid.log",
+      "kind": "byte-exact",
+      "sha256": "046282e318a0d3bac6b1f69d84e864bf6208645f7b3e354f51ad62c45a743864",
+      "byte_size": 412
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/homily-preflight-0000-chronology-annotations-current.log",
+      "archive": "gate-logs/homily-preflight-0000-chronology-annotations-current.log",
+      "kind": "byte-exact",
+      "sha256": "c6cd12c0e110ed84b15192b6bc54af3783d719a3967d8e102bb4bcf9466f3f5d",
+      "byte_size": 472
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/homily-preflight-0000-chronology-claims-supported.log",
+      "archive": "gate-logs/homily-preflight-0000-chronology-claims-supported.log",
+      "kind": "byte-exact",
+      "sha256": "7223c1f752c563c1a6c3fd61e691b4350adfc65a5976cd5c6cfd76f139da1b00",
+      "byte_size": 518
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/homily-preflight-0000-chronology-record-current.log",
+      "archive": "gate-logs/homily-preflight-0000-chronology-record-current.log",
+      "kind": "byte-exact",
+      "sha256": "8003de74b5e469ba9fe011271a5b484d4dc4510e76f676d7a5339e2865e9533e",
+      "byte_size": 412
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/homily-preflight-0000-component-contract.log",
+      "archive": "gate-logs/homily-preflight-0000-component-contract.log",
+      "kind": "byte-exact",
+      "sha256": "4cb7be6626026c2333c274949462b4a025510b4420e60c3c97cec049a038e8cc",
+      "byte_size": 545
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/homily-preflight-0000-house-voice.log",
+      "archive": "gate-logs/homily-preflight-0000-house-voice.log",
+      "kind": "byte-exact",
+      "sha256": "9d9a925b39cfd1e92243b769798cf9a9359920ddc00e8bbb949c3041bf9e3f15",
+      "byte_size": 407
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/homily-preflight-0000-identifiers-resolve.log",
+      "archive": "gate-logs/homily-preflight-0000-identifiers-resolve.log",
+      "kind": "byte-exact",
+      "sha256": "6db0a6f4ffc7347ac1e1efd059a436342ed3d7b4215841804f72ac0018d51b7f",
+      "byte_size": 360
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/homily-preflight-0000-provenance-matches-run.log",
+      "archive": "gate-logs/homily-preflight-0000-provenance-matches-run.log",
+      "kind": "byte-exact",
+      "sha256": "72c8c2e53330ede61de8b44fe06ea44f3ba494a78494dfe08630848e63ebe1df",
+      "byte_size": 661
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/homily-preflight-0000-references-used.log",
+      "archive": "gate-logs/homily-preflight-0000-references-used.log",
+      "kind": "byte-exact",
+      "sha256": "67cc76478a4fee372539ffda57b8749fe150d4ccf1b2f58be61525118edf9630",
+      "byte_size": 353
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/homily-preflight-0000-relation-coverage.log",
+      "archive": "gate-logs/homily-preflight-0000-relation-coverage.log",
+      "kind": "byte-exact",
+      "sha256": "d8a86d268be003abdeaa6b2a2559be1c100dd4f90e535afb9fb9d21caf0f0dea",
+      "byte_size": 408
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/homily-preflight-0000-restricted-not-reproduced.log",
+      "archive": "gate-logs/homily-preflight-0000-restricted-not-reproduced.log",
+      "kind": "byte-exact",
+      "sha256": "e118635c6ebe07b460448df1c313360073f172de1d7daccdfd723ae16054486e",
+      "byte_size": 392
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/homily-preflight-0000-structural-meta-labels.log",
+      "archive": "gate-logs/homily-preflight-0000-structural-meta-labels.log",
+      "kind": "byte-exact",
+      "sha256": "563c6c4d2043868a5c7d74d863a236a04743923cc24e338e98cf268725e78288",
+      "byte_size": 465
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/homily-preflight-0000-unquoted-not-quoted.log",
+      "archive": "gate-logs/homily-preflight-0000-unquoted-not-quoted.log",
+      "kind": "byte-exact",
+      "sha256": "c04b676bdbe5d6e5e0caf735a4ac9a21dd4170404e35c0de85774250a421ce3a",
+      "byte_size": 380
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/research-preflight-0000-research-records.log",
+      "archive": "gate-logs/research-preflight-0000-research-records.log",
+      "kind": "byte-exact",
+      "sha256": "5a5cb5af961cce563a93dd5ed9a6a16fcdaa249e21694034b467e8dd83bc46b3",
+      "byte_size": 359
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/research-preflight-0001-research-records.log",
+      "archive": "gate-logs/research-preflight-0001-research-records.log",
+      "kind": "byte-exact",
+      "sha256": "bb5f440ac1144b0d2f7031f65ae73452f020689ddb029e970f3091e56a03ab35",
+      "byte_size": 448
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/research-preflight-0002-research-records.log",
+      "archive": "gate-logs/research-preflight-0002-research-records.log",
+      "kind": "byte-exact",
+      "sha256": "bb5f440ac1144b0d2f7031f65ae73452f020689ddb029e970f3091e56a03ab35",
+      "byte_size": 448
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/scope-gate-0000-authorized-identity.log",
+      "archive": "gate-logs/scope-gate-0000-authorized-identity.log",
+      "kind": "byte-exact",
+      "sha256": "6249d39d3efb23615366911650b71f9a96516be4769afd3e795a443ebe21f75f",
+      "byte_size": 442
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/study-preflight-0000-bindings-valid.log",
+      "archive": "gate-logs/study-preflight-0000-bindings-valid.log",
+      "kind": "byte-exact",
+      "sha256": "0ade8a2b4be78f643fdcadb86f08988a7e38dc967a4e97d9a2f86c095101aba4",
+      "byte_size": 416
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/study-preflight-0000-chronology-annotations-current.log",
+      "archive": "gate-logs/study-preflight-0000-chronology-annotations-current.log",
+      "kind": "byte-exact",
+      "sha256": "7f8db1b30c641a238f2e1b700c4eb9c549048ff02e7a2e22a912f25ad82d0b10",
+      "byte_size": 476
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/study-preflight-0000-chronology-claims-supported.log",
+      "archive": "gate-logs/study-preflight-0000-chronology-claims-supported.log",
+      "kind": "byte-exact",
+      "sha256": "7d6a7f6748df455bcaed6bdd20b9ba0d561db75e14c94e02822fe206e59fe64a",
+      "byte_size": 619
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/study-preflight-0000-chronology-record-current.log",
+      "archive": "gate-logs/study-preflight-0000-chronology-record-current.log",
+      "kind": "byte-exact",
+      "sha256": "b29f8fe4736327f230b6b43f593b6884c3bb2db6c8abb493a1e9221ce1ef383b",
+      "byte_size": 416
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/study-preflight-0000-component-contract.log",
+      "archive": "gate-logs/study-preflight-0000-component-contract.log",
+      "kind": "byte-exact",
+      "sha256": "832dd2ecd3e3687b59850adacd9d6910de29e0c9a47538b9aac692b1ae7e1bc4",
+      "byte_size": 547
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/study-preflight-0000-house-voice.log",
+      "archive": "gate-logs/study-preflight-0000-house-voice.log",
+      "kind": "byte-exact",
+      "sha256": "feab6e064a9e44291894d64451ab10a0e8dd2589005a3773179349bac2e1bb50",
+      "byte_size": 412
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/study-preflight-0000-identifiers-resolve.log",
+      "archive": "gate-logs/study-preflight-0000-identifiers-resolve.log",
+      "kind": "byte-exact",
+      "sha256": "2504102253311c12c7ed0737cb933a36f1f95a6155c49bc02b052f4ae38d5042",
+      "byte_size": 364
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/study-preflight-0000-provenance-matches-run.log",
+      "archive": "gate-logs/study-preflight-0000-provenance-matches-run.log",
+      "kind": "byte-exact",
+      "sha256": "0e3f1317700c2dc008088510579cfdaa69f33b89e1395124e2ea40ad30398a2b",
+      "byte_size": 665
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/study-preflight-0000-references-used.log",
+      "archive": "gate-logs/study-preflight-0000-references-used.log",
+      "kind": "byte-exact",
+      "sha256": "9a250a672a8bf3d7d226dd7e7a34067306b6d7870ce4e10cf8a904a8d43ca2d7",
+      "byte_size": 357
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/study-preflight-0000-relation-coverage.log",
+      "archive": "gate-logs/study-preflight-0000-relation-coverage.log",
+      "kind": "byte-exact",
+      "sha256": "1fdb3492feb814a7372c03e83966f6c0fb8fd689e0a6a84be8e97f78187ebb9c",
+      "byte_size": 412
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/study-preflight-0000-restricted-not-reproduced.log",
+      "archive": "gate-logs/study-preflight-0000-restricted-not-reproduced.log",
+      "kind": "byte-exact",
+      "sha256": "0c809a88ba4bab2cf282bc4295f9f4f34a3882547bc54a68638717598494ed67",
+      "byte_size": 396
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/study-preflight-0000-structural-meta-labels.log",
+      "archive": "gate-logs/study-preflight-0000-structural-meta-labels.log",
+      "kind": "byte-exact",
+      "sha256": "8d81c7b4b4a49ba9e4c6d2bff4f4b1ce366b9d07c0d8329d03cdc636906b835b",
+      "byte_size": 470
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/study-preflight-0000-study-web-conversion.log",
+      "archive": "gate-logs/study-preflight-0000-study-web-conversion.log",
+      "kind": "byte-exact",
+      "sha256": "540cb1b011f038d190b6805a36dadb46f35374e38c0eb8c473d667e9e0d0a69f",
+      "byte_size": 488
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/study-preflight-0000-unquoted-not-quoted.log",
+      "archive": "gate-logs/study-preflight-0000-unquoted-not-quoted.log",
+      "kind": "byte-exact",
+      "sha256": "a2f6db2a85c1f1a296a02f9034149a30a89b025d88e43880253b8206881c2599",
+      "byte_size": 384
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0000-bindings-valid.log",
+      "archive": "gate-logs/synthesis-preflight-0000-bindings-valid.log",
+      "kind": "byte-exact",
+      "sha256": "03c483f9f98999c32cb72b5bdaa69d45227d7ca5c6ffda143135d6a47e233d8a",
+      "byte_size": 418
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0000-chronology-annotations-current.log",
+      "archive": "gate-logs/synthesis-preflight-0000-chronology-annotations-current.log",
+      "kind": "byte-exact",
+      "sha256": "addc2a27808045cc2eaf3ba55f342da05333570df372d7dd81379e2651e484cf",
+      "byte_size": 478
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0000-chronology-claims-supported.log",
+      "archive": "gate-logs/synthesis-preflight-0000-chronology-claims-supported.log",
+      "kind": "byte-exact",
+      "sha256": "9b905d91d94c3908e4903da4ecf6648a19600ac963f9985b702fe24bc61e43f4",
+      "byte_size": 424
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0000-chronology-record-current.log",
+      "archive": "gate-logs/synthesis-preflight-0000-chronology-record-current.log",
+      "kind": "byte-exact",
+      "sha256": "524b4581b54d9ec3074271469c08f2b0bb2a48fef0ff93dfedad7c9b7e45ad58",
+      "byte_size": 418
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0000-component-contract.log",
+      "archive": "gate-logs/synthesis-preflight-0000-component-contract.log",
+      "kind": "byte-exact",
+      "sha256": "b382731277664a20ed2bbc693d7fe67f1997f7a447c863d0602895eab7345401",
+      "byte_size": 548
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0000-house-voice.log",
+      "archive": "gate-logs/synthesis-preflight-0000-house-voice.log",
+      "kind": "byte-exact",
+      "sha256": "fa6ea27cf770d30e9253f87f0589e2fecf241c6fe00529bcd1507092b6475194",
+      "byte_size": 413
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0000-identifiers-resolve.log",
+      "archive": "gate-logs/synthesis-preflight-0000-identifiers-resolve.log",
+      "kind": "byte-exact",
+      "sha256": "59ba3fdb73b8a74198a703c9f09caad8a36d6cd660ea9a0f419f3ba2c44e05da",
+      "byte_size": 366
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0000-provenance-matches-run.log",
+      "archive": "gate-logs/synthesis-preflight-0000-provenance-matches-run.log",
+      "kind": "byte-exact",
+      "sha256": "2bcbc44b75978d6078af4a61a159ec0ee183d563bf0b6e41ebb9ea4edbd015b3",
+      "byte_size": 667
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0000-references-used.log",
+      "archive": "gate-logs/synthesis-preflight-0000-references-used.log",
+      "kind": "byte-exact",
+      "sha256": "f0d00bccda5bdc39d6e464459a2142f594816030764f06a233276cf11dd7b7a1",
+      "byte_size": 359
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0000-relation-coverage.log",
+      "archive": "gate-logs/synthesis-preflight-0000-relation-coverage.log",
+      "kind": "byte-exact",
+      "sha256": "0b8305632bd9e37dbc862abcdd383db3c967d45ee217cf8c875a6932b9e7690a",
+      "byte_size": 414
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0000-restricted-not-reproduced.log",
+      "archive": "gate-logs/synthesis-preflight-0000-restricted-not-reproduced.log",
+      "kind": "byte-exact",
+      "sha256": "62eda16bc66cef96f85ea39cb338345e0fbd4584e49ab62072097ea9ab6f9a41",
+      "byte_size": 398
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0000-structural-meta-labels.log",
+      "archive": "gate-logs/synthesis-preflight-0000-structural-meta-labels.log",
+      "kind": "byte-exact",
+      "sha256": "eeb5854c917a1f6a89cd158ddb7c4efab497be1afcd080aee5a37420dddda083",
+      "byte_size": 472
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0000-unquoted-not-quoted.log",
+      "archive": "gate-logs/synthesis-preflight-0000-unquoted-not-quoted.log",
+      "kind": "byte-exact",
+      "sha256": "f107698542f7a8bf69a2848c528a043dc586d103521f86e09019ce3856e86656",
+      "byte_size": 386
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0001-bindings-valid.log",
+      "archive": "gate-logs/synthesis-preflight-0001-bindings-valid.log",
+      "kind": "byte-exact",
+      "sha256": "03c483f9f98999c32cb72b5bdaa69d45227d7ca5c6ffda143135d6a47e233d8a",
+      "byte_size": 418
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0001-chronology-annotations-current.log",
+      "archive": "gate-logs/synthesis-preflight-0001-chronology-annotations-current.log",
+      "kind": "byte-exact",
+      "sha256": "addc2a27808045cc2eaf3ba55f342da05333570df372d7dd81379e2651e484cf",
+      "byte_size": 478
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0001-chronology-claims-supported.log",
+      "archive": "gate-logs/synthesis-preflight-0001-chronology-claims-supported.log",
+      "kind": "byte-exact",
+      "sha256": "9b905d91d94c3908e4903da4ecf6648a19600ac963f9985b702fe24bc61e43f4",
+      "byte_size": 424
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0001-chronology-record-current.log",
+      "archive": "gate-logs/synthesis-preflight-0001-chronology-record-current.log",
+      "kind": "byte-exact",
+      "sha256": "524b4581b54d9ec3074271469c08f2b0bb2a48fef0ff93dfedad7c9b7e45ad58",
+      "byte_size": 418
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0001-component-contract.log",
+      "archive": "gate-logs/synthesis-preflight-0001-component-contract.log",
+      "kind": "byte-exact",
+      "sha256": "b382731277664a20ed2bbc693d7fe67f1997f7a447c863d0602895eab7345401",
+      "byte_size": 548
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0001-house-voice.log",
+      "archive": "gate-logs/synthesis-preflight-0001-house-voice.log",
+      "kind": "byte-exact",
+      "sha256": "fa6ea27cf770d30e9253f87f0589e2fecf241c6fe00529bcd1507092b6475194",
+      "byte_size": 413
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0001-identifiers-resolve.log",
+      "archive": "gate-logs/synthesis-preflight-0001-identifiers-resolve.log",
+      "kind": "byte-exact",
+      "sha256": "59ba3fdb73b8a74198a703c9f09caad8a36d6cd660ea9a0f419f3ba2c44e05da",
+      "byte_size": 366
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0001-provenance-matches-run.log",
+      "archive": "gate-logs/synthesis-preflight-0001-provenance-matches-run.log",
+      "kind": "byte-exact",
+      "sha256": "2bcbc44b75978d6078af4a61a159ec0ee183d563bf0b6e41ebb9ea4edbd015b3",
+      "byte_size": 667
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0001-references-used.log",
+      "archive": "gate-logs/synthesis-preflight-0001-references-used.log",
+      "kind": "byte-exact",
+      "sha256": "f0d00bccda5bdc39d6e464459a2142f594816030764f06a233276cf11dd7b7a1",
+      "byte_size": 359
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0001-relation-coverage.log",
+      "archive": "gate-logs/synthesis-preflight-0001-relation-coverage.log",
+      "kind": "byte-exact",
+      "sha256": "0b8305632bd9e37dbc862abcdd383db3c967d45ee217cf8c875a6932b9e7690a",
+      "byte_size": 414
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0001-restricted-not-reproduced.log",
+      "archive": "gate-logs/synthesis-preflight-0001-restricted-not-reproduced.log",
+      "kind": "byte-exact",
+      "sha256": "62eda16bc66cef96f85ea39cb338345e0fbd4584e49ab62072097ea9ab6f9a41",
+      "byte_size": 398
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0001-structural-meta-labels.log",
+      "archive": "gate-logs/synthesis-preflight-0001-structural-meta-labels.log",
+      "kind": "byte-exact",
+      "sha256": "eeb5854c917a1f6a89cd158ddb7c4efab497be1afcd080aee5a37420dddda083",
+      "byte_size": 472
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/gate-logs/synthesis-preflight-0001-unquoted-not-quoted.log",
+      "archive": "gate-logs/synthesis-preflight-0001-unquoted-not-quoted.log",
+      "kind": "byte-exact",
+      "sha256": "f107698542f7a8bf69a2848c528a043dc586d103521f86e09019ce3856e86656",
+      "byte_size": 386
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/interventions/0000.json",
+      "archive": "interventions/0000.json",
+      "kind": "byte-exact",
+      "sha256": "5ecbc15c04004e100715252bc85cbab620a9c35c5823c43e4e88fc79d0c8a616",
+      "byte_size": 658
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/interventions/0001.json",
+      "archive": "interventions/0001.json",
+      "kind": "byte-exact",
+      "sha256": "a5c0a93e8ab01d4669da084117b9c4cf8e6b9e27449fffcb122985be420b52d7",
+      "byte_size": 833
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/interventions/0002.json",
+      "archive": "interventions/0002.json",
+      "kind": "byte-exact",
+      "sha256": "b4e9a191a2754fc1a048b327c6ed96cbdb983dbfa9e2e6f13b1e8c50bc707c21",
+      "byte_size": 791
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/manifest.json",
+      "archive": "manifest.json",
+      "kind": "byte-exact",
+      "sha256": "3503ed958ba38af0e9fcfcd729a6e7468a4c7c61718a4b9e9b222e7c0e30d337",
+      "byte_size": 740
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/artifact-gates-0000.txt",
+      "archive": "packets/artifact-gates-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "67a1fe1f49ee8f3ece792fbc512cead5cedfdfee06a52ea62f7f4ef12d2c5543",
+      "byte_size": 831
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/author-study-0000.txt",
+      "archive": "packets/author-study-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "bad7ef0ee4c87a58b79e96f32d83de711dc4955940d1a6ab51dbdaea276b16ca",
+      "byte_size": 37613
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/build-artifacts-0000.txt",
+      "archive": "packets/build-artifacts-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "253c74da762f77a22c058287930ddc071f2fed4eda9459ae1ddfa17ea3ee8ee8",
+      "byte_size": 34346
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/derive-homily-0000.txt",
+      "archive": "packets/derive-homily-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "fde9f059643cd11a16e872cb860d415bed91e3007acd08a4d7d600403b7100a7",
+      "byte_size": 33518
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/derive-synthesis-0000.txt",
+      "archive": "packets/derive-synthesis-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "e2ee5661ab21ec2c83bfeb7a644b84ba0948bdd6b362a7ae0b2b58eb1c8c3461",
+      "byte_size": 34851
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/derive-synthesis-0001.txt",
+      "archive": "packets/derive-synthesis-0001.txt",
+      "kind": "byte-exact",
+      "sha256": "bda2aa822d91484f613c599a42f73b647cfe265424699e4132def7813d5fc5e3",
+      "byte_size": 36131
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/generate-web-0000.txt",
+      "archive": "packets/generate-web-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "b55fbf0bc5cdffb146d97a1856f187ede3abf741ed3f40d21bce4b5b0a184659",
+      "byte_size": 32670
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/homily-preflight-0000.txt",
+      "archive": "packets/homily-preflight-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "b75092abb8fc2d90525b4a2f63d2ba3302777fcdceece2eec0678b3ef6ee41b8",
+      "byte_size": 775
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/homily-review-0000.txt",
+      "archive": "packets/homily-review-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "3c3c44cacf4afdaf85be2031c8147c3aedc0b59f64a3854a3b3768b2fe8cd5bd",
+      "byte_size": 38473
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/install-publication-0000.txt",
+      "archive": "packets/install-publication-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "509c68bb294c158fbe0662441d07113925936ae456e14f75d68b3e7b3025c5c4",
+      "byte_size": 35026
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/research-0000.txt",
+      "archive": "packets/research-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "fb84c8aa55fa7b353a90b41dbeff58380d0d26dbfd96d8be96fba6e715c788b1",
+      "byte_size": 35809
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/research-0001.txt",
+      "archive": "packets/research-0001.txt",
+      "kind": "byte-exact",
+      "sha256": "4d62f7ec5176386240231431beb6fc85e48dcad7afde5c042f4e43d205b10f13",
+      "byte_size": 36109
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/research-0002.txt",
+      "archive": "packets/research-0002.txt",
+      "kind": "byte-exact",
+      "sha256": "b622938de79f47739787af26f4b8fb9e28ba353b84e9087e81c0680b3a4215a5",
+      "byte_size": 37676
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/research-preflight-0000.txt",
+      "archive": "packets/research-preflight-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "af8158b0ddaa15b063a975bccc3e91b87d29af3f3dd768de5417b2f177de4884",
+      "byte_size": 777
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/research-preflight-0001.txt",
+      "archive": "packets/research-preflight-0001.txt",
+      "kind": "byte-exact",
+      "sha256": "43c8f0f02c935f49a5ac884e6b27c7599c6f1112d531604543c5725a125e95c1",
+      "byte_size": 777
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/research-preflight-0002.txt",
+      "archive": "packets/research-preflight-0002.txt",
+      "kind": "byte-exact",
+      "sha256": "e4a33e01e4e15034a7f64ee5af7c31e3c735376634bcd5479b0be2af786bb448",
+      "byte_size": 777
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/research-review-0000.txt",
+      "archive": "packets/research-review-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "913e95edcd9c2f32be04e8e29c0b12ac73c0ae05e3bf1f3ef4ead28eda417d09",
+      "byte_size": 345556
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/research-review-0001.txt",
+      "archive": "packets/research-review-0001.txt",
+      "kind": "byte-exact",
+      "sha256": "48e9298d42bab5d908a44a2bc40f6a16b693d11ed9845d7f94f737f1dbff8d35",
+      "byte_size": 348126
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/resolve-context-0000.txt",
+      "archive": "packets/resolve-context-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "e5f2be578e7e5dd832c7cb929de4f2a5ffabdea952ef5fd8a00abe14be3c23fd",
+      "byte_size": 33379
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/scope-gate-0000.txt",
+      "archive": "packets/scope-gate-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "78379f2f542e4426d4edacd4106284f715007b166b63d76c11d4da144954b990",
+      "byte_size": 769
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/study-preflight-0000.txt",
+      "archive": "packets/study-preflight-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "eba5b32784c414c04c024b99bb330054abc94212768b886ec2085dbbb2f517b0",
+      "byte_size": 774
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/study-review-0000.txt",
+      "archive": "packets/study-review-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "ed70bb921f5ad4315f03bee7f1f8a212893e3d2d4ba7c27831c471ec19ed4013",
+      "byte_size": 44311
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/synthesis-preflight-0000.txt",
+      "archive": "packets/synthesis-preflight-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "a09d799d3707613e2faccbbcb87f79757465514539e86ea1a1d90bd7069e07e8",
+      "byte_size": 778
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/synthesis-preflight-0001.txt",
+      "archive": "packets/synthesis-preflight-0001.txt",
+      "kind": "byte-exact",
+      "sha256": "edc97552c0264234906455d30d8cc47b39fe484d90e212a05833d4a9590f41af",
+      "byte_size": 778
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/synthesis-review-0000.txt",
+      "archive": "packets/synthesis-review-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "c06596b124df2e06f3d48ba6d4ade2ca24f00e5ba5e187c71cc4c73a32a28a51",
+      "byte_size": 41621
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/synthesis-review-0001.txt",
+      "archive": "packets/synthesis-review-0001.txt",
+      "kind": "byte-exact",
+      "sha256": "25e792bebbb26c637a2db1d6f157473b3c3789d63a25b2c30468dbe85cdbed74",
+      "byte_size": 41734
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/visual-review-0000.txt",
+      "archive": "packets/visual-review-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "275bf40f3e1d35fea1b5266e5f266186f1c5a19b020761cfd0317533e076ab68",
+      "byte_size": 43070
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/packets/web-review-0000.txt",
+      "archive": "packets/web-review-0000.txt",
+      "kind": "byte-exact",
+      "sha256": "2389faa89a1804109400ef5a6d26c87e1bd7496b440de97edcfaf8aebc554150",
+      "byte_size": 34521
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/artifact-gates-0000.json",
+      "archive": "results/artifact-gates-0000.json",
+      "kind": "byte-exact",
+      "sha256": "97af5c9c6c70bfc4459030f6b4c4d3ef1c5d44f458a9759ff4ab5fcbb5607d3c",
+      "byte_size": 93
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/author-study-0000.json",
+      "archive": "results/author-study-0000.json",
+      "kind": "byte-exact",
+      "sha256": "5eef577b7fcf358463d642c52e475e30478c2b0fc37a021f711890df7cecdf4e",
+      "byte_size": 896
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/build-artifacts-0000.json",
+      "archive": "results/build-artifacts-0000.json",
+      "kind": "byte-exact",
+      "sha256": "98fbe432f25e1b31c753b0e0df81c24399408e0982adefec5f564dc139f25737",
+      "byte_size": 686
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/derive-homily-0000.json",
+      "archive": "results/derive-homily-0000.json",
+      "kind": "byte-exact",
+      "sha256": "a7a24f80c93ac653309ae3f5bfb208e98e07f309588e516ca77c4687481f2944",
+      "byte_size": 617
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/derive-synthesis-0000.json",
+      "archive": "results/derive-synthesis-0000.json",
+      "kind": "byte-exact",
+      "sha256": "492844f9f1030c1d97eb3aa06684a24c023152e05d5ff9eed09740056c8c7ca6",
+      "byte_size": 892
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/derive-synthesis-0001.json",
+      "archive": "results/derive-synthesis-0001.json",
+      "kind": "byte-exact",
+      "sha256": "6bc419fe71cc03ff6f05bbdc7f3f7cbec6cabfa3074444662e7f308a48daf167",
+      "byte_size": 852
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/generate-web-0000.json",
+      "archive": "results/generate-web-0000.json",
+      "kind": "byte-exact",
+      "sha256": "fd1662d9fa9d5f5d90d6de910df83011c165b66a126b1f2d86fda9893b207f81",
+      "byte_size": 654
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/homily-preflight-0000.json",
+      "archive": "results/homily-preflight-0000.json",
+      "kind": "byte-exact",
+      "sha256": "38c3abc374b62eb01fe47799b263dc88821ecda5d4aac8a36d1adbda83d9b628",
+      "byte_size": 95
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/homily-review-0000.json",
+      "archive": "results/homily-review-0000.json",
+      "kind": "byte-exact",
+      "sha256": "0c9b28f0a64737c328c3f7dc786b60571ef83d9fac3e2129fdadd08398ed5899",
+      "byte_size": 6926
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/install-publication-0000.json",
+      "archive": "results/install-publication-0000.json",
+      "kind": "byte-exact",
+      "sha256": "6af3d9b785860820426f8c4d48a6cd7845930d2ec72f83265551c3a6398ca8a5",
+      "byte_size": 771
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/research-0000.json",
+      "archive": "results/research-0000.json",
+      "kind": "byte-exact",
+      "sha256": "ce5860ed3fa387b024ec206d0edabb66ed5e5ae84fe8c0abf02fea1de3d74f99",
+      "byte_size": 755
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/research-0001.json",
+      "archive": "results/research-0001.json",
+      "kind": "byte-exact",
+      "sha256": "066fb7005b0212009fe6cb7f4995ac476a85a875a0eea07fc134114596d2a84f",
+      "byte_size": 1461
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/research-0002.json",
+      "archive": "results/research-0002.json",
+      "kind": "byte-exact",
+      "sha256": "7e44ea9bf19dd6b9ce5505486471e52835ffc82b9561eb0802beecf8a303155a",
+      "byte_size": 1126
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/research-preflight-0000.json",
+      "archive": "results/research-preflight-0000.json",
+      "kind": "byte-exact",
+      "sha256": "71373d783f2245687acdc56c63bcfbeb72eb5568c1388514ef927af9a5965188",
+      "byte_size": 450
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/research-preflight-0001.json",
+      "archive": "results/research-preflight-0001.json",
+      "kind": "byte-exact",
+      "sha256": "3d41e3743c4cd6ecf837fcb791516f7a053ba74c59eeb7aa7a2100847f40b2c9",
+      "byte_size": 97
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/research-preflight-0002.json",
+      "archive": "results/research-preflight-0002.json",
+      "kind": "byte-exact",
+      "sha256": "4826841d9cf1db8e180ed8cb4eba89546e06958edef59f53b3bd0b25143da4b9",
+      "byte_size": 97
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/research-review-0000.json",
+      "archive": "results/research-review-0000.json",
+      "kind": "byte-exact",
+      "sha256": "236788cc7d10de7a4cce7bfc1c490043a8efc608d98aba6b7e20a75ef27f7d37",
+      "byte_size": 329056
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/research-review-0001.json",
+      "archive": "results/research-review-0001.json",
+      "kind": "byte-exact",
+      "sha256": "7ce6e4b1510197c196b810bf20fa72843e7dbfb01b715c03b16cb3b1eae40ee5",
+      "byte_size": 330652
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/resolve-context-0000.json",
+      "archive": "results/resolve-context-0000.json",
+      "kind": "byte-exact",
+      "sha256": "58853eb434d7d096662cbfc0946f3d1c53dbaf6acf8262fd0decb9c0886b8e13",
+      "byte_size": 1001
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/scope-gate-0000.json",
+      "archive": "results/scope-gate-0000.json",
+      "kind": "byte-exact",
+      "sha256": "c2c5dc73384dcaa82e6a0b0b6d655a49fd9f0d8345607513add762f6826c4e2d",
+      "byte_size": 89
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/study-preflight-0000.json",
+      "archive": "results/study-preflight-0000.json",
+      "kind": "byte-exact",
+      "sha256": "db4f430efb6baf21bb53a26e3ace3bc17674c5b6c4e65d8af259ee8366a0f0ae",
+      "byte_size": 94
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/study-review-0000.json",
+      "archive": "results/study-review-0000.json",
+      "kind": "byte-exact",
+      "sha256": "3071f417479a2b3150d0abbc250eaddd4581cae7ee4aa56be2557d288773fb35",
+      "byte_size": 19532
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/synthesis-preflight-0000.json",
+      "archive": "results/synthesis-preflight-0000.json",
+      "kind": "byte-exact",
+      "sha256": "67b87db41056e0690c03027475a5706f18334b8a627effc6e088c72dc2725ad3",
+      "byte_size": 98
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/synthesis-preflight-0001.json",
+      "archive": "results/synthesis-preflight-0001.json",
+      "kind": "byte-exact",
+      "sha256": "6e1973b0386d22a673b2f14206bbd01007c3c41624ed78abd9fac4f7055f4055",
+      "byte_size": 98
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/synthesis-review-0000.json",
+      "archive": "results/synthesis-review-0000.json",
+      "kind": "byte-exact",
+      "sha256": "d2214c7406c59f800749c42b3386d4058c4950b542ab1f11c977fb6ca169769b",
+      "byte_size": 11446
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/synthesis-review-0001.json",
+      "archive": "results/synthesis-review-0001.json",
+      "kind": "byte-exact",
+      "sha256": "a672a0c22b9321e91bdf29eecfe30a913742bbb7559ab3c36eb7c03276a9ecdb",
+      "byte_size": 10358
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/visual-review-0000.json",
+      "archive": "results/visual-review-0000.json",
+      "kind": "byte-exact",
+      "sha256": "8a8c595f1a6b74422a76aaf615ab997352ba5314e1a6b93004ac87e496c7332a",
+      "byte_size": 10826
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/results/web-review-0000.json",
+      "archive": "results/web-review-0000.json",
+      "kind": "byte-exact",
+      "sha256": "5253b01e1ca0e77583ceb772a83942d334ef350f476aa1ac6646d26549adf20f",
+      "byte_size": 1198
+    },
+    {
+      "source": "build/tpt-runs/fbf047c60105569f/state.json",
+      "archive": "state.json",
+      "kind": "byte-exact",
+      "sha256": "63d4f1459a4a12c7e3e539b758e478318cb37e74e7277986ee6eb9ea7eb643fd",
+      "byte_size": 764183
+    }
+  ]
+}

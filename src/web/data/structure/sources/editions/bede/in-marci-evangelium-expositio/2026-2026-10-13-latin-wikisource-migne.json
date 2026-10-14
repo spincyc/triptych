@@ -1,0 +1,63 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "wiki-export-xml",
+   "byte_size": 500901,
+   "edition_owned": true,
+   "id": "artifact.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne.export-e2fc978f",
+   "media_type": "application/xml",
+   "notes": "Remote exact markup is not retained because the source evidence is the public-domain Latin beneath the contributor templates and encoding apparatus. An offline reader can open the complete Latin derivative and the independently retained printed leaf for the decisive locus. No whole-work reading or whole-work collation claimed.",
+   "page_count": null,
+   "retrieved": "2026-10-13",
+   "rights": "public-domain",
+   "rights_basis": "Underlying eighth-century Latin and nineteenth-century Migne printing are public domain in the United States. Exact wiki markup carries CC BY-SA 4.0; the rights API was read on 2026-10-13. The markup is not retained; the complete Latin-only derivative is retained separately under the same procedure used for other Migne Wikisource texts.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://la.wikisource.org/wiki/Special:Export/In_Evangelium_S._Marci_(Beda)",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "web-transcription",
+   "byte_size": 495136,
+   "edition_owned": true,
+   "id": "artifact.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne.latin-text-b8197766",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Complete searchable transcription, not a critical edition or facsimile. Only the stated locus was collated.",
+   "page_count": null,
+   "retrieved": "2026-10-13",
+   "rights": "public-domain",
+   "rights_basis": "Public-domain Latin of Bede in a nineteenth-century Migne witness; contributor markup, navigation, headings and Corpus Corporum encoding note are removed, following the repository’s Latin Wikisource derivative procedure. The underlying wording is not licensed as project prose.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-10-13",
+  "editors": [],
+  "id": "edition.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Latin Wikisource, revision 263992, accessed 13 October 2026",
+  "title": "In Evangelium S. Marci, Latin Wikisource / Corpus Corporum Migne transcription",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "In Evangelium S. Marci",
+   "In Marcum",
+   "Commentary on Mark"
+  ],
+  "author": "Bede the Venerable",
+  "category": "patristic-commentary",
+  "description": "Bede’s four-book Latin exposition of Mark, preceded by a letter to Acca. The commentary’s own letter distinguishes inherited patristic material from Bede’s additions. This record does not establish the source of each sentence.",
+  "id": "work.bede.in-marci-evangelium-expositio",
+  "languages": [
+   "la"
+  ],
+  "title": "In Marci evangelium expositio"
+ }
+}

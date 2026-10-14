@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it.",
  "counted": {
-  "documents": 208,
-  "issues": 256,
-  "pages": 6979,
+  "documents": 209,
+  "issues": 259,
+  "pages": 7002,
   "titles_unrecorded": 0,
-  "works": 150
+  "works": 151
  },
  "models": [
   {
@@ -29,7 +29,7 @@
    "id": "claude-fable-5"
   },
   {
-   "documents": 15,
+   "documents": 16,
    "id": "GPT-6"
   },
   {
@@ -56,7 +56,7 @@
    "label": "Claude"
   },
   {
-   "documents": 148,
+   "documents": 149,
    "id": "gpt",
    "label": "GPT"
   }
@@ -85,7 +85,7 @@
   },
   {
    "id": "liturgy",
-   "works": 57
+   "works": 58
   },
   {
    "id": "theology",
@@ -11469,6 +11469,76 @@
     }
    ],
    "leaf": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a",
+   "section": "liturgy"
+  },
+  {
+   "catalog": "library/novus-ordo-liturgy.md",
+   "catalog_page": "library/novus-ordo-liturgy.html",
+   "editions": [
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": 10,
+       "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+       "subject": "Roman Missal Third Edition, United States: concise proper study for 18 October 2026",
+       "title": "Twenty-ninth Sunday in Ordinary Time, Year A: Concise study"
+      },
+      {
+       "kind": "homily",
+       "pages": 3,
+       "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf",
+       "subject": "Roman Missal Third Edition, United States: homily for an adult parish assembly, 18 October 2026",
+       "title": "Twenty-ninth Sunday in Ordinary Time, Year A: The person holding the coin"
+      }
+     ],
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "GPT-6",
+       "qualifiers": "workflow-declared-effort=high; client=Codex; unexposed: exact model variant; unexposed: model reasoning configuration; unexposed: runtime version",
+       "runtime": "OpenAI Codex API agent; unexposed: client version; unexposed: server revision. Authored the expansive study from reviewed research, reopened retained source loci, assembled public-domain study passages and canonical historical annotations, and performed author proof verification."
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "workflow-declared-effort=high; client=Codex; unexposed: exact model variant; unexposed: model reasoning configuration; unexposed: runtime version",
+       "runtime": "OpenAI Codex API agent; unexposed: client version; unexposed: server revision. Derived the concise comparison from the accepted expansive study, retained the reviewed chronology, and performed synthesis author proof verification."
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "workflow-declared-effort=high; client=Codex; unexposed: exact model variant; unexposed: model reasoning configuration; unexposed: runtime version",
+       "runtime": "OpenAI Codex API agent; unexposed: client version; unexposed: server revision. Repaired the concise Matthew chronology qualification from the accepted historical appendix and verified the revised synthesis author proof."
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "workflow-declared-effort=high; client=Codex; unexposed: exact model variant; unexposed: model reasoning configuration; unexposed: runtime version",
+       "runtime": "OpenAI Codex API agent; unexposed: client version; unexposed: server revision. Derived the spoken homily and terminal source note from the reviewed studies, reread decisive retained loci, and performed homily author proof verification."
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "GPT-6"
+     ],
+     "pages": 23,
+     "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf",
+     "produced": {
+      "run_id": "fbf047c60105569f",
+      "seed_commit": "bd50b7dcd577610ce6c8a9c9fc4610b7a0b5a23a",
+      "workflow_digest": "17f12ad495885888db9045416b60df5bc828dccdf9f1eab5a1edb648cc280964",
+      "workflow_id": "proper-study",
+      "workflow_version": "11"
+     },
+     "provider": "gpt",
+     "reviewed": "2026-10-14",
+     "revised": "2026-10-14T03:46:48Z",
+     "status": "alpha",
+     "subject": "Roman Missal Third Edition, United States: expansive proper study for 18 October 2026",
+     "title": "Twenty-ninth Sunday in Ordinary Time, Year A: What belongs to God",
+     "title_source": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/main.tex",
+     "web": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.html"
+    }
+   ],
+   "leaf": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
    "section": "liturgy"
   },
   {

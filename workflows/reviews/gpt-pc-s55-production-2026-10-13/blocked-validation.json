@@ -1,0 +1,264 @@
+{
+  "scope": "Coordinator checkpoint verification; no terminal publication acceptance or completed delivery.",
+  "run_id": "fbf047c60105569f",
+  "workflow_disposition": "BLOCKED",
+  "archive": {
+    "manifest_sha256": "9276e0e44843aa473beb5dfee441cd079fa64484776de86b97eccb5da8ce5515",
+    "native_files": 121,
+    "retained_files": 200,
+    "unexpected_files": []
+  },
+  "all_native_files_byte_exact": true,
+  "archive_identity_check": "PASS",
+  "installed_reviewed_bytes": "PASS; detailed hashes in archived installation evidence",
+  "full_check_sources": {
+    "exit_code": 2,
+    "blocker": "Sealed PL92 containment inventory omits accepted Bede Mark constituent.",
+    "public_log_sha256": "4cf4b17c3ae0654f493d09c36254d56aa1a5eeaabd488dd9ed6e31db1e366c42"
+  },
+  "promised_deliverables": "Valid; current promise remains in progress.",
+  "staged_whitespace": {
+    "exit_code": 2,
+    "disposition": "Only native byte-exact blank-at-EOF log exceptions; authored files clean.",
+    "exceptions": [
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/artifact-gates-0000-reviewed-artifact-snapshot.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/homily-preflight-0000-bindings-valid.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/homily-preflight-0000-chronology-annotations-current.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/homily-preflight-0000-chronology-claims-supported.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/homily-preflight-0000-chronology-record-current.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/homily-preflight-0000-component-contract.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/homily-preflight-0000-house-voice.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/homily-preflight-0000-identifiers-resolve.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/homily-preflight-0000-provenance-matches-run.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/homily-preflight-0000-references-used.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/homily-preflight-0000-relation-coverage.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/homily-preflight-0000-restricted-not-reproduced.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/homily-preflight-0000-structural-meta-labels.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/homily-preflight-0000-unquoted-not-quoted.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/research-preflight-0000-research-records.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/research-preflight-0001-research-records.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/research-preflight-0002-research-records.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/scope-gate-0000-authorized-identity.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/study-preflight-0000-bindings-valid.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/study-preflight-0000-chronology-annotations-current.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/study-preflight-0000-chronology-claims-supported.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/study-preflight-0000-chronology-record-current.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/study-preflight-0000-component-contract.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/study-preflight-0000-house-voice.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/study-preflight-0000-identifiers-resolve.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/study-preflight-0000-provenance-matches-run.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/study-preflight-0000-references-used.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/study-preflight-0000-relation-coverage.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/study-preflight-0000-restricted-not-reproduced.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/study-preflight-0000-structural-meta-labels.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/study-preflight-0000-study-web-conversion.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/study-preflight-0000-unquoted-not-quoted.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0000-bindings-valid.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0000-chronology-annotations-current.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0000-chronology-claims-supported.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0000-chronology-record-current.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0000-component-contract.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0000-house-voice.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0000-identifiers-resolve.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0000-provenance-matches-run.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0000-references-used.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0000-relation-coverage.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0000-restricted-not-reproduced.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0000-structural-meta-labels.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0000-unquoted-not-quoted.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0001-bindings-valid.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0001-chronology-annotations-current.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0001-chronology-claims-supported.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0001-chronology-record-current.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0001-component-contract.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0001-house-voice.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0001-identifiers-resolve.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0001-provenance-matches-run.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0001-references-used.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0001-relation-coverage.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0001-restricted-not-reproduced.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0001-structural-meta-labels.log",
+        "line": 7
+      },
+      {
+        "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/gate-logs/synthesis-preflight-0001-unquoted-not-quoted.log",
+        "line": 7
+      }
+    ]
+  },
+  "precommit_pattern_audit": {
+    "files": 307,
+    "findings": []
+  },
+  "replacement_required": true,
+  "delivery": "Checkpoint only; intended target remains workspace branch."
+}

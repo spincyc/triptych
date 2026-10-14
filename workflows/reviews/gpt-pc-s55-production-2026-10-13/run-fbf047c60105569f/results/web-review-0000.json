@@ -1,0 +1,17 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+    "files": {},
+    "provider": "gpt",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md": "5dac08418643e50ef887586d343037a788d2ffff6b572a2fb855c33c721c83eb"
+    }
+  },
+  "stage": "web-review",
+  "summary": "Reviewed the complete PC-S55-A canonical Markdown against the research PDF and canonical sources. Conversion SHA-256 5dac08418643e50ef887586d343037a788d2ffff6b572a2fb855c33c721c83eb matches research/web-artifact.json and the sealed input: both interpretation boundaries, all eight sense entries, all 38 exact source notes, chronology, tables, rights and timestamp survive; desktop and 390-pixel browser views and sampled note/backlink navigation pass. This accepts these conversion bytes only; external-link availability, deployment and physical-device testing were not repeated."
+}

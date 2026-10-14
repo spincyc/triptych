@@ -1,0 +1,7 @@
+$ tools/tpt check-content-preflight --provider gpt --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a --edition homily --check provenance-matches-run --run-workflow proper-study --run-workflow-version 11 --run-workflow-digest 17f12ad495885888db9045416b60df5bc828dccdf9f1eab5a1edb648cc280964 --run-id fbf047c60105569f --run-seed-commit bd50b7dcd577610ce6c8a9c9fc4610b7a0b5a23a
+exit 0
+--- stdout ---
+provenance-matches-run (homily edition): the record states run fbf047c60105569f of proper-study v11, digest 17f12ad49588, seed commit bd50b7dcd577
+
+--- stderr ---
+

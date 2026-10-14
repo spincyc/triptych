@@ -1,0 +1,92 @@
+{
+  "run_id": "fbf047c60105569f",
+  "stage": "study-review",
+  "iteration": 0,
+  "packet_sha256": "ed70bb921f5ad4315f03bee7f1f8a212893e3d2d4ba7c27831c471ec19ed4013",
+  "result_path": ".scratch/pc-s55/study-review-0000/result.json",
+  "result_sha256": "ea7afeed4dfcc650e2689a12df672591c1010d847e2799fa976dcb9b7f645752",
+  "sealed_file_count": 18,
+  "sealed_files_match": true,
+  "proof": {
+    "path": "build/tpt-runs/fbf047c60105569f/artifacts/study-review-0000/study-proof.pdf",
+    "sha256": "4fae31cd6dab6d5c4a9b2040be9d9d4b4aea2574e98f07560175aea445ee54e3",
+    "physical_pages": 23,
+    "build_passes": 3,
+    "pdflatex_exit_codes": [
+      0,
+      0,
+      0
+    ],
+    "full_page_rasters_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "contact_sheets_inspected": [
+      1,
+      2
+    ]
+  },
+  "raw_corpus_thomisticum_hashes_matched_to_registered_artifacts": {
+    "aquinas-isaiah40": "e257c1976d83aeea79b1595e8b1812a94604192215680040060ff0555a08b238",
+    "aquinas-thess": "fe77f056e47df4d73eab61c0c496d465b657d35b60e7fc201f9e0579bab2ef95",
+    "aquinas-phil": "f84aea54e8b71b1ba43bd087466be73d7d8ea25029396ec9782cf0a79f1bf5ec",
+    "aquinas-matt": "3d862a0e7738e8e20f8b34d43c2e5a3658fec955d758ca14db1e1ca2b7f465b8",
+    "aquinas-ps11-20": "27fad154f83226475da95ed754ab0adf8ee3ae19949ff8cfd38c31ca2f8f693e",
+    "aquinas-ps31-40": "e2d50b43f0036d33450b908632ba6d741277edb8ad9381c851eddeb005f90749"
+  },
+  "additional_checked_loci": [
+    "Augustine Psalms XVI §§1–14, XXXII §§1–22 and XCV §§1–15 (NPNF English headings XVII, XXXIII, XCVI).",
+    "Aquinas Super Psalmos 16 on hearing and shelter and 32 §§15–17; Super Isaiam 45 (85005); Super I Thessalonicenses 1.1 (87862).",
+    "Chrysostom Philippians VIII and 1 Thessalonians I; Matthew LXV §§4–5 and LXX §§1–2.",
+    "Gregory Nazianzen Oration XLV §§21–24; Aquinas Summa III q.48 a.4 and a.5.",
+    "Bede In Marci III, Mark 10:42–45; printed PL 92 cols.236A–B image compared with Latin transcription.",
+    "John Paul II, General Audience, 18 September 2002 §§1–5, official Vatican page.",
+    "Jerome DCO Pars 3 PDF pp.126–129, raw SHA-256 matched registered artifact.",
+    "Catholic Encyclopedia: Matthew date/place; Mark date/place; New Testament Gospel origins; Prat Paul chronological schedule; Philippians occasion/date/place; Thessalonians place/date; King David opening; Isaias ministry; Temple opening; General Chronology Dionysius; Biblical Chronology Nativity.",
+    "Acta Apostolicae Sedis 4 (1912), printed pp.463–465, PBC responsa V–VI.",
+    "Latin 2002 digital Missal physical pp.291–292, Week XXIX block; shared Week 29 inventory and evidence limits."
+  ],
+  "external_access": {
+    "successful_official_pages": [
+      "https://bible.usccb.org/bible/readings/101826.cfm",
+      "https://www.vatican.va/content/john-paul-ii/en/audiences/2002/documents/hf_jp-ii_aud_20020918.html"
+    ],
+    "immediate_403_with_local_retrieval_fallback": [
+      "https://bible.usccb.org/bible/psalms/0",
+      "https://bible.usccb.org/bible/isaiah/0"
+    ],
+    "stalled_calls": []
+  },
+  "limits": [
+    "No exact 2008 Latin or publisher-specific 2011 U.S. altar-book collation is claimed.",
+    "Electronic Jerome/Corpus Thomisticum witnesses are not promoted to inspected historical printings.",
+    "Bede inspection is the decisive passage, not a complete critical collation.",
+    "Historical chronology alternatives are audited as the named sources’ judgments, not asserted as exhaustive modern scholarly consensus."
+  ],
+  "verdict": "PASS",
+  "repository_source_edits": [],
+  "agents_spawned": 0,
+  "commits_or_pushes": 0,
+  "run_advanced": false
+}
