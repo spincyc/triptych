@@ -2,7 +2,7 @@ classification_schema = 1
 record_type = "publication-source-classification-review"
 audited_on = "2026-10-14"
 publication_snapshot = "sha256:71d67e6099220b5ef8405fc2c51e760b765403ea99e9d08a981fd98e556a4d2e"
-classification_snapshot = "sha256:22a7766c58c3fedef6886ccc30abe3a451b1ccb5659e24b9125981ce1621aab1"
+classification_snapshot = "sha256:d95f23179049f3d3b5655a32bae25aee01add984555e3ada621980bd27835639"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -30,19 +30,19 @@ source_categories = ["canon-law", "dataset-survey", "finding-aid", "historical-p
 
 [[classifications]]
 document = "articles/faith/four-last-things-01-death"
-source_categories = ["liturgical", "magisterial", "patristic", "scholastic", "scripture"]
+source_categories = ["liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture"]
 
 [[classifications]]
 document = "articles/faith/four-last-things-02-judgment"
-source_categories = ["liturgical", "magisterial", "scholastic", "scripture"]
+source_categories = ["liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture"]
 
 [[classifications]]
 document = "articles/faith/four-last-things-03-hell"
-source_categories = ["magisterial", "patristic", "scholastic", "scripture"]
+source_categories = ["magisterial", "patristic", "prayer-devotional", "scholastic", "scripture"]
 
 [[classifications]]
 document = "articles/faith/four-last-things-04-heaven"
-source_categories = ["magisterial", "patristic", "scholastic", "scripture"]
+source_categories = ["magisterial", "patristic", "prayer-devotional", "scholastic", "scripture"]
 
 [[classifications]]
 document = "articles/faith/freemasonry-and-the-catholic-church"

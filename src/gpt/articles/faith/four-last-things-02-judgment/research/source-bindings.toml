@@ -4,26 +4,17 @@ document = "articles/faith/four-last-things-02-judgment"
 
 [[bindings]]
 source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
-loci = ["678-679", "1021-1041", "1735", "1750-1756", "1776-1794", "1860", "2006-2011"]
+loci = ["678-679", "1021-1022", "1030-1032", "1038-1041", "1451-1460", "1468-1473", "1735", "1790-1794", "2008-2011", "2477", "2487-2489"]
 role = "textual-control"
 states = ["cataloged"]
-context = "The official English Catechism controls Christ's judicial authority, particular and final judgment, purification and suffrages, objective acts, culpability, conscience, grace, and merit. The 2026-10-13 audit records selected direct official-page checks; this edition-level cataloged binding claims no exact artifact for every cited paragraph."
+context = "Official English paragraphs directly read for the extended 2026-10-13 revision control Christ as Judge, the two judgments, purification and suffrages, responsibility and conscience, grace and merit, Penance, and truthfulness. Complete section pages supply immediate context, including 1450-1460, 1468-1470, 1471-1479, 2006-2011, 2475-2487, and 2488-2492. The article distinguishes remitted guilt and eternal punishment from temporal punishment that can remain. It asserts no indulgence conditions or new canonical rules. Exact live responses remain in excluded scratch; this cataloged binding claims no new central artifact or whole-Catechism inspection. See the local audit."
 
 [[bindings]]
-source_id = "artifact.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.pg19950-body-4597132e"
-loci = ["III.59.5.corpus", "III.59.5.reply-1", "III.59.5.reply-2", "III.59.5.reply-3"]
-role = "reception"
-states = ["cataloged", "acquired", "inspected"]
-source_fingerprint = "sha256:44bb2918bacdd01a424eae980d78ad285fcea31c85426a00800aafd120952178"
-context = "III q59 a5 was read completely on 2026-10-13 in the retained English electronic transcription. Lines 29912-29980 distinguish the completed earthly life from continuing historical effects and bodily consummation, explicitly denying new merit or demerit after death. No Latin or printed-image collation is claimed."
-
-[[bindings]]
-source_id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-prima.pg17611-body-9c99a67a"
-loci = ["I.21.4.corpus"]
-role = "reception"
-states = ["cataloged", "acquired", "inspected"]
-source_fingerprint = "sha256:c17b98dc58cabd0086fc556359882738be070d90f21f2dbaebe7f8676128b3e7"
-context = "I q21 a4 was read completely on 2026-10-13; lines 11466-11496 explain mercy as the root presupposed by divine justice. This is a bounded reading of a disclosed electronic transcription, not facsimile verification."
+source_id = "edition.english-college-of-douay.douay-rheims-bible.american-1899-ebible"
+loci = ["Matt.5.43-48", "Matt.12.22-37", "Matt.24.45-51", "Matt.25.1-46", "Lk.10.25-37", "Lk.12.35-48", "Lk.16.19-31", "Lk.23.39-43", "Jn.5.21-29", "Rom.2.1-24", "1Cor.3.10-15", "1Cor.4.1-7", "Eph.2.1-10", "James.2.1-26", "James.3.1-18", "James.5.1-9", "Apoc.20.11-15"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The cited passages were read on 2026-10-13 in retained American 1899 eBible per-book verse tables. Matthew 12 and 24-25, Luke 12, Romans 2, Ephesians 2, James 2-3 and 5, 1 Corinthians 4, and Apocalypse 20 were read as complete chapters; John 5:21-29 and remaining shorter passages were read with immediate context. This edition-level cataloged binding asserts bounded consultation, not new edition-wide verification."
 
 [[bindings]]
 source_id = "artifact.holy-see.cdf-letter-eschatology-1979.english-vatican-web-2026-07-25.vatican-html"
@@ -31,25 +22,75 @@ loci = ["point-2", "point-3", "point-4", "point-5"]
 role = "textual-control"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:8657006e327b4870753aad476379ecfa6e98abb9f1c5236bebe0a70d6eae289d"
-context = "Complete official English letter read on 2026-10-13; re-fetched bytes match the registered SHA-256 ebf18296bc257292ce87641bd3db239ca4cfb53bb3bcdf2277427675f042ef06. Points 2-5 keep the same conscious human self distinct from future bodily consummation. Restricted bytes remain outside tracked source."
+context = "The complete official English letter was read on 2026-10-13. Re-fetched bytes match registered SHA-256 ebf18296bc257292ce87641bd3db239ca4cfb53bb3bcdf2277427675f042ef06. Points 2-5 hold personal survival, consciousness and will, suffrages, and future bodily resurrection together. Restricted bytes remain outside tracked source."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06.ccel-text-56d84cfa"
+loci = ["Cyril.Catechetical-Lecture.XV.1-2", "Cyril.Catechetical-Lecture.XV.23-26"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1f357ee73bda8276cc25eb0133278376e91529929c0187de2d364f9c3b192261"
+context = "Gifford's NPNF second-series volume 7 translation: Cyril XV.1-2 and 23-26 were read with adjoining sections on 2026-10-13, retained physical lines 16154-16216 and 16580-16747. These supply the two comings, impartial judgment, hidden fidelity, conscience, and mercy. Lecture XV addresses candidates for baptism; the body was corrected accordingly during independent review. The anthology artifact identifies the actual witness; no whole-volume inspection, original-language collation, or use of a modernized New Advent text is claimed."
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+loci = ["20.1", "20.2", "20.14"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:6bd16ca34656e4a17b7967a6b8ce070ebb4fdffa9b8c855088ab3e08e30bf996"
+context = "Dods's 1871 volume 2, retained Gutenberg transcription: XX.1-2 were read completely at physical lines 13879-14001 with adjoining context; XX.14 at 14884-14951. The extended revision uses present hiddenness of providence, final disclosure of just judgment, and the opening of conscience. This restores a narrow and actually inspected Augustine engagement, superseding the short revision's removal of a broad Book XX reference. No Latin or printed-image collation is claimed."
+
+[[bindings]]
+source_id = "segment.john-chrysostom.homiliae-in-matthaeum.ccel-web-2026-09-17.complete-homilies"
+loci = ["42.1", "42.2", "42.3", "78.1", "78.2", "78.3", "79.1", "79.2"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:3256f7ab4e49f1dc14e2a0ccbd11d96e3081e94da59d9301d628ce87055c3e88"
+context = "Prevost/Riddle NPNF first-series volume 10, retained CCEL transcription: homily 78.1-3 and the surviving latter part of 79.1 plus 79.2 were read at physical lines 43502-44085 with preceding context. A lacuna at the transition into homily 79 appears in both retained text and CCEL HTML; the missing opening is excluded. Use of 79.1 is restricted to the intact later discussion of accessible merciful acts and poor believers; 79.2 supplies kingdom as grace and gift. The virgins' oil as mercy is Chrysostom's attributed interpretation. The full homily 42 was also read at lines 25444-25810 for the extension on speech; its first three sections govern Christ's response to false accusation, the speaker's own account, and examination of conscience. The attribution preserves the distinction between Chrysostom's explanation of idle speech and the further interpretation he reports; it does not forbid truthful protective testimony. The whole-homilies segment does not claim completeness against the print witness or whole-segment inspection."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.pg19950-body-4597132e"
+loci = ["III.59.2.corpus", "III.59.3.corpus", "III.59.5.corpus", "III.59.5.reply-1", "III.59.5.reply-2", "III.59.5.reply-3"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:44bb2918bacdd01a424eae980d78ad285fcea31c85426a00800aafd120952178"
+context = "III q59 aa2-3 and 5 were read completely, including objections and replies, on 2026-10-13 in the retained English Dominican electronic transcription; a4 was also read as intervening context. Christ's humanity, headship, and Passion ground the judicial discussion. Article 5 distinguishes a completed earthly life from continuing historical effects and bodily consummation, expressly denying new merit or demerit after death. Applications to household, work, and inherited influence are pastoral synthesis. No Latin or printed-image collation is claimed."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-prima.pg17611-body-9c99a67a"
+loci = ["I.21.4.corpus", "I.21.4.reply-1"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c17b98dc58cabd0086fc556359882738be070d90f21f2dbaebe7f8676128b3e7"
+context = "I q21 a4 was read completely on 2026-10-13, retained physical lines 11438-11529. The article explains mercy as the root presupposed by divine justice and every creaturely claim as dependent on prior divine gift. This is a bounded reading of the disclosed electronic transcription, not facsimile verification."
+
+[[bindings]]
+source_id = "artifact.anonymous-supplement-compiler.supplementum-tertiae-partis.english-dominicans-1922-questions-87-99.ia-ocr-21251eee"
+loci = ["87.2.corpus", "87.2.reply-3"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5116c99454b462d0f792bf2e89273bc3b61074b0f22f0a3704b9882a0c60107a"
+context = "Complete q87 a2 was read in retained OCR of the 1922 English Dominican volume containing questions 87-99 and appendices, printed pp. 5-7. The consequential corpus and reply 3 were checked directly against printed images pp. 6-7, PDF pages 18-19. This posthumous compilation transmits Thomas's earlier teaching; it is not an authorially completed part of the Summa. Disclosure of repented sins remains the more probable and common opinion, with Lombard's contrary position expressly recorded; reply 3 denies shame in the blessed. This historical artifact supersedes the short revision's work-level 1920/New Advent consultation as textual control. Bounded image inspection does not promote the entire OCR artifact to verified status."
+
+[[bindings]]
+source_id = "artifact.francis-de-sales.introduction-a-la-vie-devote.rivingtons-1876.historical-ocr-8159693d"
+loci = ["I.14"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:21e2850feaa938628c58af791f6032ab2dd8db3450e4a3d55cd1051803d5d5f2"
+context = "Rivingtons 1876 A New Translation, unnamed translator: I.14 was read completely in retained OCR lines 2766-2867. Considerations 5-6, affections and resolutions 2, and the conclusion were image-collated on printed pp. 39-40, PDF pages 62-63. The article paraphrases the two sentences, confession and conscience, and gratitude for time to repent. Scenic details of the meditation are not asserted as doctrine, and no vocal prayer is reproduced or adapted. Bounded collation does not certify the complete OCR."
+
+[[bindings]]
+source_id = "artifact.alphonsus-liguori.apparecchio-alla-morte.duffy-1843.historical-ocr-d25bba22"
+loci = ["XXIV.3"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f8f14339e6eebf3147ed446047f190ca9edb57ddcae274ff41a9c1e401dcd120"
+context = "James Duffy 1843, translation by an unnamed Catholic clergyman: consideration XXIV point 3 was read completely with surrounding context in retained OCR. The exhortation to settle the account of life before judgment was directly image-collated at printed p. 299, PDF page 316. The PDF filename's 1893 label is not the imprint; the title page establishes 1843. Only Alphonsus's own exhortation is attributed here, not the older sayings embedded in his text. No prayer is reproduced or adapted; no whole-volume inspection is claimed."
 
 [[bindings]]
 source_id = "edition.benedict-xvi.spe-salvi.english-vatican-web-2026-07-25"
 loci = ["47", "48"]
 role = "reception"
 states = ["cataloged"]
-context = "Paragraphs 47-48 were read in the complete official English HTML acquired on 2026-10-13. Paragraph 47's theological proposal is distinguished from defined purification; paragraph 48 explains intercession within communion. The complete-response hash and access URL are recorded in the local audit; cataloged status does not claim a new centrally registered exact artifact."
-
-[[bindings]]
-source_id = "edition.english-college-of-douay.douay-rheims-bible.american-1899-ebible"
-loci = ["Eph.2.8-10"]
-role = "textual-control"
-states = ["cataloged"]
-context = "Ephesians 2 was read in the retained per-book verse table on 2026-10-13: verses 8-10 hold together salvation as gift and creation in Christ for good works. This cataloged edition reference claims no new edition-wide verification."
-
-[[bindings]]
-source_id = "work.thomas-aquinas.summa-theologiae"
-loci = ["Supplementum.87.2.corpus", "Supplementum.87.2.reply-3"]
-role = "reception"
-states = ["cataloged"]
-context = "English Dominican second revised edition (1920), New Advent delivery, read on 2026-10-13 at Supplement q87 a2. The disclosure of repented sins is expressly the more probable and common opinion, with Peter Lombard's contrary view recorded; reply3 denies shame in the blessed. This live consultation adds no acquired or verified status to an exact central artifact."
+context = "Paragraphs 47-48 were read in the complete official English HTML acquired on 2026-10-13. Paragraph 47's theological proposal is distinguished from defined purification; paragraph 48 explains intercession within communion. The complete-response hash and access URL are recorded in the audit. Cataloged status claims no new centrally registered exact artifact or whole-encyclical inspection."

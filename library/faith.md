@@ -24,38 +24,18 @@
 
 ## The Four Last Things
 
-For November and Advent: death and judgment, prayer for the dead, the saints'
-communion, and hope in Christ's return. The ChatGPT treatments form a sequence
-of concise essays; the Claude treatments are extended studies. Each can also
-be read on its own.
+For annual preparation for death, especially as the liturgical year closes:
+four sustained Catholic meditations on death, judgment, hell, and heaven.
+The ChatGPT essays draw on Scripture, the Fathers, and the saints to deepen
+repentance, sacramental life, charity, and hope. Each can also be read on its
+own; the Claude studies offer a separate treatment of the same mysteries.
 
-### Death
-
-Mortality, preparation, grief, and Christ's victory over death.
-
-- **ChatGPT:** [The Hour That Cannot Be Delegated](../web/gpt/articles/faith/four-last-things-01-death.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-01-death.pdf)
-- **Claude:** [The Debt of Nature](../web/claude/articles/faith/four-last-things-01-death.html) · [PDF](../pdf/claude/articles/faith/four-last-things-01-death.pdf)
-
-### Judgment
-
-Particular and final judgment, justice, mercy, and purification.
-
-- **ChatGPT:** [The Truth of a Life](../web/gpt/articles/faith/four-last-things-02-judgment.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-02-judgment.pdf)
-- **Claude:** [What Death Does Not Finish](../web/claude/articles/faith/four-last-things-02-judgment.html) · [PDF](../pdf/claude/articles/faith/four-last-things-02-judgment.pdf)
-
-### Hell
-
-Final loss, freedom, conversion, and the limits of human judgment.
-
-- **ChatGPT:** [The Refusal That Becomes Final](../web/gpt/articles/faith/four-last-things-03-hell.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-03-hell.pdf)
-- **Claude:** [Nothing Said of Anyone](../web/claude/articles/faith/four-last-things-03-hell.html) · [PDF](../pdf/claude/articles/faith/four-last-things-03-hell.pdf)
-
-### Heaven
-
-Communion with God and the saints, bodily resurrection, and renewed creation.
-
-- **ChatGPT:** [The End for Which We Were Made](../web/gpt/articles/faith/four-last-things-04-heaven.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-04-heaven.pdf)
-- **Claude:** [Then Face to Face](../web/claude/articles/faith/four-last-things-04-heaven.html) · [PDF](../pdf/claude/articles/faith/four-last-things-04-heaven.pdf)
+| Subject | ChatGPT | Claude | Focus |
+| --- | --- | --- | --- |
+| **Death** | [The Hour That Cannot Be Delegated](../web/gpt/articles/faith/four-last-things-01-death.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-01-death.pdf) | [The Debt of Nature](../web/claude/articles/faith/four-last-things-01-death.html) · [PDF](../pdf/claude/articles/faith/four-last-things-01-death.pdf) | Mortality, preparation, grief, and Christ's victory over death. |
+| **Judgment** | [The Truth of a Life](../web/gpt/articles/faith/four-last-things-02-judgment.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-02-judgment.pdf) | [What Death Does Not Finish](../web/claude/articles/faith/four-last-things-02-judgment.html) · [PDF](../pdf/claude/articles/faith/four-last-things-02-judgment.pdf) | Particular and final judgment, justice, mercy, and purification. |
+| **Hell** | [Hell: Eternal Punishment and the Call to Conversion](../web/gpt/articles/faith/four-last-things-03-hell.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-03-hell.pdf) | [Nothing Said of Anyone](../web/claude/articles/faith/four-last-things-03-hell.html) · [PDF](../pdf/claude/articles/faith/four-last-things-03-hell.pdf) | Eternal punishment, the loss of God, repentance, and perseverance in grace. |
+| **Heaven** | [The End for Which We Were Made](../web/gpt/articles/faith/four-last-things-04-heaven.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-04-heaven.pdf) | [Then Face to Face](../web/claude/articles/faith/four-last-things-04-heaven.html) · [PDF](../pdf/claude/articles/faith/four-last-things-04-heaven.pdf) | Communion with God and the saints, bodily resurrection, and renewed creation. |
 
 ## Sacraments, Virtue, and Spiritual Life
 

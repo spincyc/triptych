@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 2959,
-  "editions": 1069,
-  "passages": 5278,
-  "readable": 3081,
-  "works": 942
+  "artifacts": 2977,
+  "editions": 1087,
+  "passages": 5284,
+  "readable": 3087,
+  "works": 947
  },
  "facets": {
   "authors": [
@@ -50,6 +50,10 @@
     "works": 2
    },
    {
+    "id": "Alphonsus Maria de Liguori",
+    "works": 1
+   },
+   {
     "id": "Amalarius of Metz",
     "works": 1
    },
@@ -59,7 +63,7 @@
    },
    {
     "id": "Ambrose of Milan",
-    "works": 8
+    "works": 9
    },
    {
     "id": "Ambrosian liturgical tradition; digital handout publisher not identified in the PDF",
@@ -267,7 +271,7 @@
    },
    {
     "id": "Bernard of Clairvaux",
-    "works": 6
+    "works": 7
    },
    {
     "id": "Berno of Reichenau",
@@ -483,7 +487,7 @@
    },
    {
     "id": "Cyprian of Carthage",
-    "works": 4
+    "works": 5
    },
    {
     "id": "Cyprian of Carthage (as printed among his treatises)",
@@ -1351,7 +1355,7 @@
    },
    {
     "id": "Philip Schaff and Henry Wace",
-    "works": 11
+    "works": 12
    },
    {
     "id": "Philip Zengel",
@@ -1953,11 +1957,11 @@
    },
    {
     "id": "patristic-treatise",
-    "works": 38
+    "works": 39
    },
    {
     "id": "patristic-translation-anthology",
-    "works": 25
+    "works": 26
    },
    {
     "id": "liturgical-book",
@@ -2016,6 +2020,10 @@
     "works": 10
    },
    {
+    "id": "spiritual-treatise",
+    "works": 10
+   },
+   {
     "id": "theological-treatise",
     "works": 10
    },
@@ -2037,10 +2045,6 @@
    },
    {
     "id": "reference-encyclopedia",
-    "works": 8
-   },
-   {
-    "id": "spiritual-treatise",
     "works": 8
    },
    {
@@ -3172,6 +3176,10 @@
     "works": 1
    },
    {
+    "id": "patristic-funeral-discourse",
+    "works": 1
+   },
+   {
     "id": "patristic-gospel-questions",
     "works": 1
    },
@@ -3446,7 +3454,7 @@
   ],
   "languages": [
    {
-    "editions": 573,
+    "editions": 591,
     "id": "en"
    },
    {
@@ -3576,25 +3584,25 @@
     "label": "18th century"
    },
    {
-    "editions": 199,
+    "editions": 203,
     "id": "1800",
     "label": "19th century"
    },
    {
-    "editions": 232,
+    "editions": 235,
     "id": "1900",
     "label": "20th century"
    },
    {
-    "editions": 582,
+    "editions": 593,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 1657,
-    "editions": 385,
+    "artifacts": 1670,
+    "editions": 400,
     "id": "public-domain"
    },
    {
@@ -3603,13 +3611,13 @@
     "id": "restricted"
    },
    {
-    "artifacts": 328,
-    "editions": 160,
+    "artifacts": 331,
+    "editions": 163,
     "id": "unresolved"
    },
    {
-    "artifacts": 113,
-    "editions": 64,
+    "artifacts": 115,
+    "editions": 66,
     "id": "licensed"
    },
    {
@@ -3817,6 +3825,19 @@
      ],
      "title": "The Ante-Nicene Fathers, Volume I: The Apostolic Fathers, Justin Martyr, and Irenaeus",
      "year": 1887
+    },
+    {
+     "date": "2026-10-13",
+     "file": "2026-2026-10-13-ccel-web-2026-10-13.json",
+     "id": "edition.ante-nicene-fathers.volume-1.ccel-web-2026-10-13",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "The Ante-Nicene Fathers, Volume I: The Apostolic Fathers, Justin Martyr, and Irenaeus",
+     "year": 2026
     }
    ],
    "id": "work.ante-nicene-fathers.volume-1",
@@ -3898,6 +3919,19 @@
      "rights": [],
      "title": "The Ante-Nicene Fathers, Volume V: Fathers of the Third Century",
      "year": 1886
+    },
+    {
+     "date": "2026-10-13",
+     "file": "2026-2026-10-13-ccel-web-2026-10-13.json",
+     "id": "edition.ante-nicene-fathers.volume-5.ccel-web-2026-10-13",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "The Ante-Nicene Fathers, Volume V: Hippolytus, Cyprian, Caius, Novatian, Appendix",
+     "year": 2026
     }
    ],
    "id": "work.ante-nicene-fathers.volume-5",
@@ -4031,6 +4065,36 @@
   },
   {
    "alternate_titles": [
+    "Preparation for Death",
+    "Preparation for death; or, Considerations on the eternal maxims"
+   ],
+   "author": "Alphonsus Maria de Liguori",
+   "category": "spiritual-treatise",
+   "directory": "editions/alphonsus-liguori/apparecchio-alla-morte/",
+   "editions": [
+    {
+     "date": "1843",
+     "file": "1843-1843-duffy-1843.json",
+     "id": "edition.alphonsus-liguori.apparecchio-alla-morte.duffy-1843",
+     "language": "en",
+     "passages": 1,
+     "readable": 1,
+     "rights": [
+      "public-domain",
+      "unresolved"
+     ],
+     "title": "Preparation for Death; or, Considerations on the Eternal Maxims",
+     "year": 1843
+    }
+   ],
+   "id": "work.alphonsus-liguori.apparecchio-alla-morte",
+   "languages": [
+    "it"
+   ],
+   "title": "Apparecchio alla morte"
+  },
+  {
+   "alternate_titles": [
     "De ordine antiphonarii",
     "Amalarii Liber de ordine antiphonarii"
    ],
@@ -4085,6 +4149,33 @@
     "la"
    ],
    "title": "De Noe"
+  },
+  {
+   "alternate_titles": [
+    "On the Decease of His Brother Satyrus",
+    "On the Belief in the Resurrection"
+   ],
+   "author": "Ambrose of Milan",
+   "category": "patristic-funeral-discourse",
+   "directory": "editions/ambrose/de-excessu-fratris-satyri/",
+   "editions": [
+    {
+     "date": "2026-10-13",
+     "file": "2026-2026-10-13-ccel-web.json",
+     "id": "edition.ambrose.de-excessu-fratris-satyri.ccel-web-2026-10-13",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "The Two Books of St. Ambrose on the Decease of His Brother Satyrus",
+     "year": 2026
+    }
+   ],
+   "id": "work.ambrose.de-excessu-fratris-satyri",
+   "languages": [
+    "la"
+   ],
+   "title": "De excessu fratris Satyri"
   },
   {
    "alternate_titles": [
@@ -5334,6 +5425,19 @@
      "year": 1906
     },
     {
+     "date": "1922",
+     "file": "1922-1922-english-dominicans-1922-questions-87-99.json",
+     "id": "edition.anonymous-supplement-compiler.supplementum-tertiae-partis.english-dominicans-1922-questions-87-99",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Summa Theologica, Third Part (Supplement), Questions LXXXVII–XCIX and Appendices",
+     "year": 1922
+    },
+    {
      "date": "2026-07-25",
      "file": "2026-english-newadvent-web-2026-07-25.json",
      "id": "edition.anonymous-supplement-compiler.supplementum-tertiae-partis.english-newadvent-web-2026-07-25",
@@ -6323,6 +6427,17 @@
      ],
      "title": "Sancti Aureli Augustini Confessionum libri tredecim",
      "year": 1896
+    },
+    {
+     "date": "2026-10-13",
+     "file": "2026-2026-10-13-ccel-web.json",
+     "id": "edition.augustine-of-hippo.confessiones.ccel-web-2026-10-13",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "The Confessions of St. Augustin",
+     "year": 2026
     }
    ],
    "id": "work.augustine-of-hippo.confessiones",
@@ -7871,6 +7986,35 @@
     "la"
    ],
    "title": "De consideratione"
+  },
+  {
+   "alternate_titles": [
+    "On Loving God",
+    "On the Love of God"
+   ],
+   "author": "Bernard of Clairvaux",
+   "category": "spiritual-treatise",
+   "directory": "editions/bernard-of-clairvaux/de-diligendo-deo/",
+   "editions": [
+    {
+     "date": "1884",
+     "file": "1884-1884-patmore-1884.json",
+     "id": "edition.bernard-of-clairvaux.de-diligendo-deo.patmore-1884",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Saint Bernard on the Love of God",
+     "year": 1884
+    }
+   ],
+   "id": "work.bernard-of-clairvaux.de-diligendo-deo",
+   "languages": [
+    "la"
+   ],
+   "title": "De diligendo Deo"
   },
   {
    "alternate_titles": [
@@ -10674,8 +10818,22 @@
    ],
    "author": "Church of Smyrna",
    "category": "martyr-act",
-   "directory": null,
-   "editions": [],
+   "directory": "editions/anonymous/martyrdom-of-polycarp/",
+   "editions": [
+    {
+     "date": "2026-10-13",
+     "file": "2026-2026-10-13-ccel-web-2026-10-13.json",
+     "id": "edition.anonymous.martyrdom-of-polycarp.ccel-web-2026-10-13",
+     "language": "en",
+     "passages": 1,
+     "readable": 1,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "The Encyclical Epistle of the Church at Smyrna Concerning the Martyrdom of the Holy Polycarp",
+     "year": 2026
+    }
+   ],
    "id": "work.anonymous.martyrdom-of-polycarp",
    "languages": [
     "grc"
@@ -11860,8 +12018,22 @@
    ],
    "author": "Cyprian of Carthage",
    "category": "patristic-treatise",
-   "directory": null,
-   "editions": [],
+   "directory": "editions/cyprian/ad-demetrianum/",
+   "editions": [
+    {
+     "date": "2026-10-13",
+     "file": "2026-2026-10-13-ccel-web-2026-10-13.json",
+     "id": "edition.cyprian.ad-demetrianum.ccel-web-2026-10-13",
+     "language": "en",
+     "passages": 1,
+     "readable": 1,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "An Address to Demetrianus",
+     "year": 2026
+    }
+   ],
    "id": "work.cyprian.ad-demetrianum",
    "languages": [
     "la"
@@ -11910,6 +12082,33 @@
     "la"
    ],
    "title": "De habitu virginum"
+  },
+  {
+   "alternate_titles": [
+    "On the Mortality",
+    "On Mortality"
+   ],
+   "author": "Cyprian of Carthage",
+   "category": "patristic-treatise",
+   "directory": "editions/cyprian/de-mortalitate/",
+   "editions": [
+    {
+     "date": "2026-10-13",
+     "file": "2026-2026-10-13-ccel-web.json",
+     "id": "edition.cyprian.de-mortalitate.ccel-web-2026-10-13",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "On the Mortality",
+     "year": 2026
+    }
+   ],
+   "id": "work.cyprian.de-mortalitate",
+   "languages": [
+    "la"
+   ],
+   "title": "De mortalitate"
   },
   {
    "alternate_titles": [
@@ -13713,6 +13912,20 @@
      ],
      "title": "Introduction à la vie dévote, édition corrigée",
      "year": 1832
+    },
+    {
+     "date": "1876",
+     "file": "1876-1876-rivingtons-1876.json",
+     "id": "edition.francis-de-sales.introduction-a-la-vie-devote.rivingtons-1876",
+     "language": "en",
+     "passages": 1,
+     "readable": 1,
+     "rights": [
+      "public-domain",
+      "unresolved"
+     ],
+     "title": "Introduction to the Devout Life: A New Translation",
+     "year": 1876
     },
     {
      "date": "2026-09-05",
@@ -16429,8 +16642,23 @@
    ],
    "author": "Ignatius of Loyola",
    "category": "spiritual-treatise",
-   "directory": null,
-   "editions": [],
+   "directory": "editions/ignatius-of-loyola/exercitia-spiritualia/",
+   "editions": [
+    {
+     "date": "1914",
+     "file": "1914-1914-mullan-1914.json",
+     "id": "edition.ignatius-of-loyola.exercitia-spiritualia.mullan-1914",
+     "language": "en",
+     "passages": 1,
+     "readable": 1,
+     "rights": [
+      "public-domain",
+      "unresolved"
+     ],
+     "title": "The Spiritual Exercises of St. Ignatius of Loyola",
+     "year": 1914
+    }
+   ],
    "id": "work.ignatius-of-loyola.exercitia-spiritualia",
    "languages": [
     "es",
@@ -18509,8 +18737,22 @@
    "alternate_titles": [],
    "author": "John Henry Newman",
    "category": "sermon-collection",
-   "directory": null,
-   "editions": [],
+   "directory": "editions/john-henry-newman/parochial-and-plain-sermons/",
+   "editions": [
+    {
+     "date": "1869",
+     "file": "1869-1869-rivingtons-1869-volume-1.json",
+     "id": "edition.john-henry-newman.parochial-and-plain-sermons.rivingtons-1869-volume-1",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Parochial and Plain Sermons, Volume I",
+     "year": 1869
+    }
+   ],
    "id": "work.john-henry-newman.parochial-and-plain-sermons",
    "languages": [
     "en"
@@ -21595,6 +21837,19 @@
      "rights": [],
      "title": "NPNF First Series, Volume I: The Confessions and Letters of St. Augustin",
      "year": 1886
+    },
+    {
+     "date": "2026-10-13",
+     "file": "2026-2026-10-13-ccel-web.json",
+     "id": "edition.nicene-and-post-nicene-fathers.series-1-volume-1.ccel-web-2026-10-13",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "The Confessions and Letters of St. Augustin, with a Sketch of His Life and Work",
+     "year": 2026
     }
    ],
    "id": "work.nicene-and-post-nicene-fathers.series-1-volume-1",
@@ -22150,6 +22405,35 @@
     "en"
    ],
    "title": "A Select Library of Nicene and Post-Nicene Fathers, Second Series, Volume VIII"
+  },
+  {
+   "alternate_titles": [
+    "Ambrose: Selected Works and Letters",
+    "NPNF2, volume 10"
+   ],
+   "author": "Philip Schaff and Henry Wace",
+   "category": "patristic-translation-anthology",
+   "directory": "editions/nicene-and-post-nicene-fathers/series-2-volume-10/",
+   "editions": [
+    {
+     "date": "2026-10-13",
+     "file": "2026-2026-10-13-ccel-web.json",
+     "id": "edition.nicene-and-post-nicene-fathers.series-2-volume-10.ccel-web-2026-10-13",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Ambrose: Selected Works and Letters",
+     "year": 2026
+    }
+   ],
+   "id": "work.nicene-and-post-nicene-fathers.series-2-volume-10",
+   "languages": [
+    "en"
+   ],
+   "title": "A Select Library of Nicene and Post-Nicene Fathers, Second Series, Volume X"
   },
   {
    "alternate_titles": [
@@ -27928,8 +28212,22 @@
    ],
    "author": "Teresa of Avila",
    "category": "autobiography",
-   "directory": null,
-   "editions": [],
+   "directory": "editions/teresa-of-avila/libro-de-la-vida/",
+   "editions": [
+    {
+     "date": "1904",
+     "file": "1904-1904-lewis-zimmerman-1904.json",
+     "id": "edition.teresa-of-avila.libro-de-la-vida.lewis-zimmerman-1904",
+     "language": "en",
+     "passages": 1,
+     "readable": 1,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "The Life of St. Teresa of Jesus, of the Order of Our Lady of Carmel",
+     "year": 1904
+    }
+   ],
    "id": "work.teresa-of-avila.libro-de-la-vida",
    "languages": [
     "es"
@@ -29278,6 +29576,34 @@
       "public-domain"
      ],
      "title": "Summa Theologica, Part I (Prima Pars), English Dominican translation, Gutenberg electronic edition",
+     "year": 2006
+    },
+    {
+     "date": "2006-03-01",
+     "file": "2006-2006-english-dominicans-gutenberg-prima-secundae.json",
+     "id": "edition.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-prima-secundae",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed",
+      "public-domain"
+     ],
+     "title": "Summa Theologica, Part I–II (Prima Secundae), English Dominican translation, Gutenberg electronic edition",
+     "year": 2006
+    },
+    {
+     "date": "2006-07-04",
+     "file": "2006-2006-english-dominicans-gutenberg-secunda-secundae.json",
+     "id": "edition.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-secunda-secundae",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed",
+      "public-domain"
+     ],
+     "title": "Summa Theologica, Part II–II (Secunda Secundae), English Dominican translation, Gutenberg electronic edition",
      "year": 2006
     },
     {

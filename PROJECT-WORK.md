@@ -11,17 +11,25 @@ Last reconciled: 2026-10-14.
 
 <!-- promised-deliverable: gpt-pc-s55-main-2026-10-14 -->
 
-The maintainer requests pushing the accepted Novus Ordo propers work to `main`.
-Accepted workspace tip `96d4c3f2375ed7937729000020a2cbe208903dde` will be
-reconciled with fetched main `e0aa02beda83f93fe935728b2595cf9eb8f4cb94`,
-preserving its subsequent Four Last Things publications and web-tool changes.
-An ordinary merge on the workspace branch will retain published history.
-The requested main push includes its automatic Pages deployment; completion
-requires the deployment source, site-build and GitHub Pages artifact gates,
-outgoing-object review, exact remote-ref verification and affected live-route
-checks. Integration and deployment are pending. Evidence will be recorded in
-`workflows/reviews/gpt-pc-s55-production-2026-10-13/main-integration.json`
-and `main-deployment.json` beside the immutable accepted production archive.
+The accepted Novus Ordo propers tip
+`96d4c3f2375ed7937729000020a2cbe208903dde` is reconciled with main
+`e0aa02beda83f93fe935728b2595cf9eb8f4cb94` through an ordinary merge on
+the workspace branch. An independent preservation review passed: all 500
+feature-only paths, 140 main-only paths and 449 accepted propers paths retain
+exact bytes; ten shared records preserve both parents' changes. Both native
+workflow archives remain manifest-exact. All 254 existing publication entries
+are unchanged, and exactly the three accepted propers PDFs are added.
+
+The full `make check-sources` (including deployment-source checks), site build
+and GitHub Pages artifact verification pass under the pinned dependencies.
+Fresh conversion with the updated web tool reproduces the accepted page
+exactly. Current main's four expanded Four Last Things PDFs were restored from
+the live site against verified hashes before regenerating the catalog.
+The [integration record](workflows/reviews/gpt-pc-s55-production-2026-10-13/main-integration.json)
+retains reviewed identities, resolution details and check-log hashes. The
+requested ordinary main push, automatic Pages deployment and affected live
+routes remain pending; their actual results will be recorded in
+`main-deployment.json`. The main-integration promise remains open.
 
 ## GPT Twenty-ninth Sunday in Ordinary Time, 2026-10-13
 
@@ -71,6 +79,77 @@ an outgoing-object audit without findings. The [delivery receipt](workflows/revi
 records the 230-path commit and completed push. All four promise requirements
 pass; this requested workspace delivery is complete. Main integration and live
 deployment remain separate work.
+
+## Four Last Things catalogue table, 2026-10-13
+
+<!-- promised-deliverable: gpt-four-last-things-catalogue-table-2026-10-13 -->
+
+The maintainer requests restoration of the document table on the web catalogue,
+reconciliation with current main, and publication to main. The Four Last Things
+section of `library/faith.md` again presents four rows with distinct ChatGPT
+and Claude titles and both reading and PDF links. The current contemplative
+introduction and subject descriptions remain appropriate. This correction owns
+catalogue presentation, not either provider's essay text or PDF.
+
+**Published and verified.** The starting workspace matched fetched main
+at `7abcb2274`; no integration commit is needed. All sixteen reading/PDF links
+are preserved. Chromium checks and screenshot review cover widths of 1440,
+1024, 768, 393 and 320 pixels. The table uses horizontal panning on phones,
+without widening the page. This is local browser review, not physical-device
+or comprehensive accessibility testing. Neither provider's publication files
+changed, and all 254 publication PDF hashes match the previous deployment.
+Deployment-source, release-binding, completion-register, site-build and
+GitHub Pages artifact checks pass. The accepted Faith HTML SHA-256 is
+`f363b10bd1dbf5c8e1cd7df2859b87914d6b1f48b36809d050435995e2e7eac6`.
+Commit `295dbe7f830ff221612c404947c385c04023bfd4` reached main by ordinary
+fast-forward. [Pages run 38499374292](https://github.com/spincyc/triptych/actions/runs/38499374292)
+and repository hygiene both succeeded. The live Faith page, all sixteen
+reading/PDF targets and the publication manifest return HTTP 200 and match
+the reviewed build byte for byte. The catalogue correction is complete.
+
+## GPT Four Last Things as spiritual reading, 2026-10-13
+
+<!-- promised-deliverable: gpt-four-last-things-contemplative-2026-10-13 -->
+
+The maintainer rejected the published Hell essay's apologetic emphasis as
+unhelpful for annual preparation for death. The requested voice is Catholic,
+affirmative and sober: define hell plainly, contemplate its reality, receive
+the teaching of the Fathers and saints, and turn toward repentance and
+perseverance. This audience correction governs the whole GPT series. The
+earlier source and production acceptance below describes a completed
+publication, not acceptance of its fitness for this clarified purpose.
+Claude publications remain excluded.
+
+**Published and verified.** The four
+expanded manuscripts contain approximately 13,400 body words each. Death,
+Judgment and Hell are 25 pages each; Heaven is 24 (99 total). Four independent
+reviewers read every final section and its source apparatus and inspected every
+rendered PDF page. All accept doctrine, source fidelity, Catholic voice,
+substantive depth and presentation. The original type size and margins remain.
+Compact contents support sustained reading in print and on the web.
+
+The first short contemplative candidates and the 19–20-page calibration were
+not installed or published. Distinct source-grounded additions achieved the
+required depth. The accepted revision is `2026-10-14T01:05:45Z`; all four PDFs
+and web editions are installed with verified hashes. Full web fidelity and 63
+Chromium states passed. Required publication checks and GitHub Pages artifact
+verification pass. Commit `170c364ca` reached main; Pages run `38495975013`
+and repository hygiene succeeded. All fifteen affected live routes match the
+verified local build, including all twelve accepted article/download routes. All 60 Claude catalogue entries and the
+other 250 publication PDF hashes are unchanged. The shared review records the
+broad example-replay limits separately from the passing release gates.
+
+Current `origin/main` at `bd50b7dcd` has been integrated by ordinary fast-forward
+on `feature/flt`, preserving the nine intervening October 18-propers commits
+and both task histories. The three additional published PDFs were recovered
+and hash-verified; all 254 installed publication PDFs matched the pre-revision
+live manifest. The final protected-Claude comparison uses this integrated
+main baseline. The opt-in web contents implementation passes 186 merged tests;
+36 related source-inventory/publication-link tests also pass.
+
+Evidence belongs in the four GPT leaves' research records and
+`src/gpt/articles/faith/four-last-things-shared/revision-review.md`; the
+production receipt identifies the accepted artifacts and verified deployment.
 
 ## October 18 propers integration and deployment, 2026-10-13
 

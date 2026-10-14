@@ -1,0 +1,132 @@
+{
+  "record_type": "main-integration-validation",
+  "date": "2026-10-14",
+  "authorization": "Maintainer requested push to main after accepted October 18 Novus Ordo workflow delivery.",
+  "strategy": "Ordinary merge on feature/propers/codex preserves published history; ordinary HEAD:main push.",
+  "feature_parent": "6a6bdc4b7f3d24cf8ec8ea986cd84ef7af1f7a87",
+  "accepted_production_tip": "96d4c3f2375ed7937729000020a2cbe208903dde",
+  "main_parent": "e0aa02beda83f93fe935728b2595cf9eb8f4cb94",
+  "shared_base": "bd50b7dcd577610ce6c8a9c9fc4610b7a0b5a23a",
+  "resolution": {
+    "register_and_ledger": "Both task records and all71 promises retained. Main integration remains open until verified live.",
+    "classification_and_inventory": "Exact merged document/category/owner/file rows retained; aggregate metadata recomputed through source-inventory implementation before normal refresh. No classifications invented.",
+    "source_family_ledger": "Merged rows retained and owning refresh accepted combined canonical catalog; families0, all161 review units pending, atomic citation coverage false.",
+    "catalogs": "Regenerated through source-projection and document-catalogue:947 works,1087 editions,2977 artifacts,5284 passages; document catalog151 works,209 documents,259 issues,7081 pages.",
+    "release_bindings": "Preserved both parents; refreshed only regenerated documents/corpus.json and sources/index.json and corresponding rights table/digest."
+  },
+  "shared_files_before_coordinator_status_update": {
+    "PROJECT-WORK.md": "4e25c4d024989b13736f3c373b05d9756ba71de3c80fee8e2e30c67ba11f9f31",
+    "promised-deliverables.toml": "2cac19752b7d4972928bd9fa51a5d5e2da46fb77e3ea6b439f93cfc2494988f3",
+    "release/public-alpha.json": "c07ddc9c8d6505ba0911a78a8584c8fdf445d5a05f5c55e6f6fd732930b1f369",
+    "release/rights/public-alpha-2026-07-15.md": "fdb23db28a53d77ffbffd28a1d7314749858c08be548a64dc53c6ed8f2b4b4fb",
+    "src/sources/inventories/classification-review-v1.toml": "885228d1ebf5260d8d59c2ccc876d59a3c84c156377396aeb6b0f1377020204d",
+    "src/sources/inventories/publications-v1.toml": "f7dfb32b0946ae0ef9616c55bf4ace75dd7611e3898614046be516644b49c315",
+    "src/sources/inventories/source-family-migration-v1.toml": "f219c9dac5506d37fdfae65ec7ffa1371924e8db303fb279ecb61d47ac1752fd",
+    "src/sources/inventories/source-containment-v1.toml": "88cf46e69d8c66724a0e50a1b182dd7c00272a3454a846ae0cd5b57786ca91ca",
+    "src/web/data/structure/documents/corpus.json": "bde15e4ca5730d848fdd11efb21f49db4b4980dadaf2ef97bf3b86f54b700bde",
+    "src/web/data/structure/sources/index.json": "3e5808049db8482e51223d00ba71e4dc50768c89bfab580a224003f3e3fbaed6"
+  },
+  "pdf_preservation": {
+    "existing_live_pdfs_verified": 254,
+    "already_matching": 250,
+    "restored_current_main_four_last_things_pdfs": 4,
+    "method": "Downloaded canonical live PDFs to scratch, required manifest SHA256 and PDF signature before replacing ignored installed copies; current main acceptance/source/web identities match.",
+    "local_receipt_sha256": "9a59587fa3392e9ed2179107df06c733adae7e52b84df7928eea701e393574cd",
+    "live_manifest_sha256": "e1264e1786e762b7147de4464c6598cf38f3771cf11c70ace9a62843337f0c05"
+  },
+  "publication_manifest_comparison": {
+    "existing_publications_unchanged": 254,
+    "new_publications": [
+      "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+      "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily",
+      "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis"
+    ],
+    "new_pdf_and_alias_hashes_verified": true,
+    "previous_live_manifest_sha256": "e1264e1786e762b7147de4464c6598cf38f3771cf11c70ace9a62843337f0c05",
+    "candidate_manifest_sha256": "007b49d3ba1af4e2c36e05a2b6c6971ca23906e3f381847848c23df93daf69ed"
+  },
+  "checks": [
+    {
+      "command": "make check-sources",
+      "includes": "make check-deployment-sources",
+      "exit_code": 0,
+      "log_sha256": "00541a89605e23aebbd6e8a146579bbd71a3715d5fe317fabf7c4a544e1a8b20"
+    },
+    {
+      "command": "make public-site",
+      "exit_code": 0,
+      "log_sha256": "7367fc6562fab4ae4b7896b98b7fdd48aeb69cf9bf26e695baf48181d945ef73"
+    },
+    {
+      "command": "python3 tools/tpt public-alpha verify --deployment-target github-pages",
+      "exit_code": 0,
+      "log_sha256": "b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14"
+    }
+  ],
+  "fresh_web_conversion": {
+    "command": "python3 tools/tpt web-edition --provider gpt --output [scratch] liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+    "exit_code": 0,
+    "byte_identical_to_accepted_web": true,
+    "sha256": "e87243499c4dd4797dbfda5226a75bd3e851d93a56be0431c636ae068a750a19"
+  },
+  "dependency_lock": {
+    "Markdown": "3.10.3",
+    "PyYAML": "6.0.3"
+  },
+  "additional_checks": {
+    "promised_deliverables": "PASS; main integration still open",
+    "staged_whitespace": "PASS"
+  },
+  "publication_status": "Validated integration candidate; actual push and Pages/live verification recorded separately.",
+  "independent_preservation_review": {
+    "schema": 1,
+    "verdict": "PASS \u2014 no integration preservation blocker found",
+    "blocking_findings": [],
+    "review_scope": "Independent read-only integration preservation review of resolved index and working tree; no fresh theological, rights-basis or page-level acceptance review.",
+    "refs": {
+      "base": "bd50b7dcd577610ce6c8a9c9fc4610b7a0b5a23a",
+      "accepted": "96d4c3f2375ed7937729000020a2cbe208903dde",
+      "feature": "6a6bdc4b7f3d24cf8ec8ea986cd84ef7af1f7a87",
+      "main": "e0aa02beda83f93fe935728b2595cf9eb8f4cb94"
+    },
+    "index_listing_sha256": "99ec7314193422e4ad12a850a3cbabf23ec6d4f9049627880d3a0b70fb2c145c",
+    "preservation": {
+      "feature_only_paths_exact": 500,
+      "main_only_paths_exact": 140,
+      "unchanged_parent_paths_exact": 41932,
+      "accepted_pc_s55_and_week29_paths_exact": 449,
+      "shared_paths_reviewed": 10,
+      "source_inventory_rows_with_correct_bytes": 2649,
+      "prior_live_pdfs_exact": 254,
+      "new_accepted_pdfs_exact": 3,
+      "accepted_archive_files_exact": 195,
+      "blocked_archive_files_exact": 200
+    },
+    "semantic_review": {
+      "promises": "Complete keyed three-way union, preserving all requirement statuses and evidence.",
+      "project_register": "All 65 sections follow the two-parent merge without lost or strengthened text.",
+      "classification_and_inventories": "All semantic rows follow the keyed union. Only owner-regenerated snapshot/date fields differ.",
+      "source_family": "161 pending review units, zero families, atomic citation coverage false. No screening completion claimed.",
+      "catalogs": "Document and source works/editions follow keyed union. All differing counts/facets equal parent deltas added to merge base.",
+      "release_and_rights": "All release bindings follow keyed union; only two catalog hashes and rights-record hash are regenerated. All 22,254 site-source bindings appear with identical hashes in rights table; 224 legacy table entries preserved. Rights prose byte-exact once table rows including their newlines are removed."
+    },
+    "accepted_pdf_sha256": {
+      "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf": "18bc8b4cbdeaf50e2fd455f8d1d394a8f224e443f746e3e13c684765399d46c5",
+      "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf": "c86015a277ef12fb278241ef858261519afed180e41eb5540f4b6de219e7a6c1",
+      "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf": "cac5c0b9ebdbd393f9df74436b0215cfd50138d718c103536124105f24f02c43"
+    },
+    "accepted_web_sha256": "e87243499c4dd4797dbfda5226a75bd3e851d93a56be0431c636ae068a750a19",
+    "limitations": [
+      "Root owns full check-sources, site build and GitHub Pages artifact gates; these were not duplicated.",
+      "No main push or deployment verified in this review. The main-integration promise correctly remains open in this candidate.",
+      "Later coordinator-only integration and deployment receipts or status edits require their own factual reconciliation; substantive changes beyond those records invalidate this snapshot verdict."
+    ],
+    "evidence": {
+      "initial-preservation.json": "a459ca12be3f4d036dd77895c8dc78a54ae01aeee81cd70964a6c7e7f75ca4f8",
+      "semantic-residuals.json": "9f5d7c0d6832ebd302472cc60727ebf1b5e517496316db65dab6b375eaf8232d",
+      "verification.json": "984b86f690b2bce94346994cb9a89912c1537c375a3be6069306482035a95fb8",
+      "prior-live-pdf-hashes.json": "4b7252d92dff82b41f25aae7965b15a9b58ec9d1a5770608e094d0ea7145b7ae"
+    },
+    "receipt_sha256": "7c67cf7a486cd5aefdcd2d00068dddf7ee99fe6df250b115eefdb8b2ff20a029"
+  }
+}

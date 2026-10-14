@@ -54,6 +54,60 @@ state = "complete"
   needle = "\"remote_payload_verified\": true"
 
 [[deliverables]]
+id = "gpt-four-last-things-catalogue-table-2026-10-13"
+owner = "PROJECT-WORK.md"
+promise = "Restore the Four Last Things document table on the Faith web catalogue, preserve the correct titles and reading/PDF links for both providers, reconcile current main, and publish the verified correction to main."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "gpt-flt-catalogue-table-rendering"
+  criterion = "The Faith catalogue presents Death, Judgment, Hell and Heaven as four table rows with distinct ChatGPT and Claude titles and all sixteen correct reading/PDF links; desktop and narrow-screen rendering is reviewed, without changing either provider's publications."
+  status = "pass"
+  evidence = ["library/faith.md", "PROJECT-WORK.md"]
+  check = "path_exists"
+
+  [[deliverables.requirements]]
+  id = "gpt-flt-catalogue-table-publication"
+  criterion = "The correction is reconciled with current main, required publication gates pass, an ordinary main push deploys successfully, and the live Faith catalogue matches the reviewed table."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "release/public-alpha.json"]
+  check = "path_exists"
+
+[[deliverables]]
+id = "gpt-four-last-things-contemplative-2026-10-13"
+owner = "PROJECT-WORK.md"
+promise = "Recast the four GPT Four Last Things essays as sober Catholic spiritual reading for annual preparation for death, each on the order of 25 pages, especially a clear account of hell enriched by the Fathers and saints; preserve Claude publications and publish the reviewed revision to main."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "gpt-flt-contemplative-content"
+  criterion = "Hell defines eternal punishment, loss of God, bodily resurrection and mortal sin plainly; exact primary witnesses from Fathers and saints shape contemplation and concrete conversion, and all four essays speak from within Catholic faith to a reader preparing for death."
+  status = "pass"
+  evidence = ["src/gpt/articles/faith/four-last-things-03-hell/main.tex", "src/gpt/articles/faith/four-last-things-03-hell/research/source-audit.md", "src/gpt/articles/faith/four-last-things-shared/revision-review.md"]
+  check = "path_exists"
+
+  [[deliverables.requirements]]
+  id = "gpt-flt-contemplative-production"
+  criterion = "Fresh independent content review accepts the intended audience and spiritual purpose; all four PDFs are rebuilt and every page inspected, and faithful web editions are reviewed and installed with current source and publication records."
+  status = "pass"
+  evidence = ["src/gpt/articles/faith/four-last-things-shared/production-review.json", "src/gpt/articles/faith/four-last-things-shared/revision-review.md"]
+  check = "path_exists"
+
+  [[deliverables.requirements]]
+  id = "gpt-flt-contemplative-publication"
+  criterion = "The accepted revision reaches main through an ordinary push; required deployment checks, automatic Pages workflow and affected live routes are verified, with Claude publication content unchanged."
+  status = "pass"
+  evidence = ["src/gpt/articles/faith/four-last-things-shared/production-review.json", "PROJECT-WORK.md"]
+  check = "path_exists"
+
+  [[deliverables.requirements]]
+  id = "gpt-flt-contemplative-depth"
+  criterion = "Each essay is a substantial meditation on the order of 25 naturally typeset pages, roughly 100 pages for the series, with sustained doctrinal exposition, contextual primary-source engagement and developed spiritual examination; length is not supplied by padding or artificial layout enlargement."
+  status = "pass"
+  evidence = ["src/gpt/articles/faith/four-last-things-shared/production-review.json", "src/gpt/articles/faith/four-last-things-shared/revision-review.md"]
+  check = "path_exists"
+
+[[deliverables]]
 id = "gpt-1962-twenty-first-main-2026-10-13"
 owner = "PROJECT-WORK.md"
 promise = "Reconcile the accepted October 18 propers work with current main, preserve concurrent publications, push the validated integration to main, and verify its automatic Pages deployment and affected public routes."

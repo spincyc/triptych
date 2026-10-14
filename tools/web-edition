@@ -3012,10 +3012,24 @@ def audit_output(
     return failures
 
 
+def declared_contents(leaf: Path) -> bool:
+    declaration = leaf / "web-edition.toml"
+    if not declaration.is_file():
+        return False
+    try:
+        contents = tomllib.loads(declaration.read_text(encoding="utf-8")).get("contents", False)
+    except tomllib.TOMLDecodeError as exc:
+        raise ConversionError(f"web-edition.toml is not valid TOML: {exc}") from exc
+    if not isinstance(contents, bool):
+        raise ConversionError("contents must be a boolean")
+    return contents
+
+
 def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     main = SRC / provider / leaf / "main.tex"
     if not main.is_file():
         raise ConversionError(f"no such document: {main}")
+    contents = declared_contents(main.parent)
     source = main.read_text(encoding="utf-8")
     proper = (main.parent / "proper-components.toml").is_file()
     components = None
@@ -3183,6 +3197,9 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     heading = f"# {title}\n"
     if subtitle:
         heading += f"\n*{subtitle}*\n"
+    # An existing proper-study Contents keeps its source position.
+    if contents and not (required_anchors is not None and toc_count):
+        heading += "\n[TOC]\n"
     rendered_anchors = None
     if required_anchors is None:
         markdown = strip_contentless_breaks(

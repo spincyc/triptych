@@ -1,0 +1,88 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 198640,
+   "edition_owned": true,
+   "id": "artifact.ignatius-of-loyola.exercitia-spiritualia.mullan-1914.historical-ocr-fe256c5b",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Full historical printing as represented in the offered OCR, with original front matter, body, notes and any terminal matter. Only the specified modern front wrapper is omitted; OCR errors and digitization labels remain. This is not a facsimile or a corrected transcription. No completeness attestation beyond the whole offered OCR response is asserted. Measured extent: 198640 bytes; 8920 physical lines. Acquisition does not imply inspection of the whole work.",
+   "page_count": null,
+   "retrieved": "2026-10-13",
+   "rights": "public-domain",
+   "rights_basis": "The identified 1914 printed English text is public domain in the United States by publication before 1931 (U.S. Copyright Office, Circular 22, https://www.copyright.gov/circs/circ22.pdf, consulted 2026-10-13). The retained text is a mechanical OCR transcription of that printing; no new editorial authorship is identified in the historical text. Triptych claims no exclusive rights in that wording. The modern introductory prose is excluded. Remaining short digitization labels identify the mechanical source and are not a license or claim of new rights in the historical wording.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/TheSpiritualExercisesOfStIgnatius/TheSpiritualExercisesOfStIgnatius_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 198857,
+   "edition_owned": true,
+   "id": "artifact.ignatius-of-loyola.exercitia-spiritualia.mullan-1914.ia-raw-ocr-a6d39530",
+   "media_type": "text/plain; charset=utf-8",
+   "page_count": null,
+   "retrieved": "2026-10-13",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/TheSpiritualExercisesOfStIgnatius/TheSpiritualExercisesOfStIgnatius_djvu.txt",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1914",
+  "editors": [],
+  "id": "edition.ignatius-of-loyola.exercitia-spiritualia.mullan-1914",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "New York: P. J. Kenedy & Sons, 1914",
+  "title": "The Spiritual Exercises of St. Ignatius of Loyola",
+  "translators": [
+   "Elder Mullan"
+  ],
+  "year": 1914
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.ignatius-of-loyola.exercitia-spiritualia.mullan-1914.historical-ocr-fe256c5b",
+   "artifact_type": "normalized-text",
+   "context": "First Week, Fifth Exercise on hell, printed pages 44–46.",
+   "id": "passage.ignatius-of-loyola.exercitia-spiritualia.mullan-1914.first-week-fifth-exercise",
+   "locus": "First Week, Fifth Exercise (65-71)",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The exercise and its surrounding sequence were read on 2026-10-13. The research collation inspected printed pages 45–46; OCR errors such as die for the, £temal for Eternal, and bum for burn remain uncorrected in the controlling artifact. This passage records inspected OCR bounds and is not a corrected quotation.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The identified 1914 printed English text is public domain in the United States by publication before 1931 (U.S. Copyright Office, Circular 22, https://www.copyright.gov/circs/circ22.pdf, consulted 2026-10-13). The retained text is a mechanical OCR transcription of that printing; no new editorial authorship is identified in the historical text. Triptych claims no exclusive rights in that wording. The modern introductory prose is excluded. Remaining short digitization labels identify the mechanical source and are not a license or claim of new rights in the historical wording.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": "https://archive.org/download/TheSpiritualExercisesOfStIgnatius/TheSpiritualExercisesOfStIgnatius_djvu.txt",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.ignatius-of-loyola.exercitia-spiritualia.mullan-1914.first-week-fifth-exercise.json",
+   "verified_on": null,
+   "words": 350
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "The Spiritual Exercises"
+  ],
+  "author": "Ignatius of Loyola",
+  "category": "spiritual-treatise",
+  "description": "The Spiritual Exercises of Ignatius of Loyola. A locus is the week and exercise, or the rule.",
+  "id": "work.ignatius-of-loyola.exercitia-spiritualia",
+  "languages": [
+   "es",
+   "la"
+  ],
+  "title": "Exercitia spiritualia"
+ }
+}

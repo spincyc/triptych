@@ -1,0 +1,89 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 735006,
+   "edition_owned": true,
+   "id": "artifact.alphonsus-liguori.apparecchio-alla-morte.duffy-1843.historical-ocr-d25bba22",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Full historical printing as represented in the offered OCR, with original front matter, body, notes and any terminal matter. Only the specified modern front wrapper is omitted; OCR errors and digitization labels remain. This is not a facsimile or a corrected transcription. No completeness attestation beyond the whole offered OCR response is asserted. Measured extent: 735006 bytes; 19468 physical lines. Acquisition does not imply inspection of the whole work.",
+   "page_count": null,
+   "retrieved": "2026-10-13",
+   "rights": "public-domain",
+   "rights_basis": "The identified 1843 printed English text is public domain in the United States by publication before 1931 (U.S. Copyright Office, Circular 22, https://www.copyright.gov/circs/circ22.pdf, consulted 2026-10-13). The retained text is a mechanical OCR transcription of that printing; no new editorial authorship is identified in the historical text. Triptych claims no exclusive rights in that wording. The modern introductory prose is excluded. Remaining short digitization labels identify the mechanical source and are not a license or claim of new rights in the historical wording.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/preparation_for_death_1893-st_alphonsus_m_liguori/preparation_for_death_1893-st_alphonsus_m_liguori_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 735229,
+   "edition_owned": true,
+   "id": "artifact.alphonsus-liguori.apparecchio-alla-morte.duffy-1843.ia-raw-ocr-0d962db3",
+   "media_type": "text/plain; charset=utf-8",
+   "page_count": null,
+   "retrieved": "2026-10-13",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/preparation_for_death_1893-st_alphonsus_m_liguori/preparation_for_death_1893-st_alphonsus_m_liguori_djvu.txt",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1843",
+  "editors": [],
+  "id": "edition.alphonsus-liguori.apparecchio-alla-morte.duffy-1843",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "Dublin: James Duffy, 1843",
+  "title": "Preparation for Death; or, Considerations on the Eternal Maxims",
+  "translators": [
+   "A Catholic clergyman (unnamed)"
+  ],
+  "year": 1843
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.alphonsus-liguori.apparecchio-alla-morte.duffy-1843.historical-ocr-d25bba22",
+   "artifact_type": "normalized-text",
+   "context": "One complete sentence from the Affections and Prayers after the First Point of the Seventeenth Consideration, printed page 209.",
+   "id": "passage.alphonsus-liguori.apparecchio-alla-morte.duffy-1843.17.1-prayer-perseverance",
+   "locus": "XVII.1, Affections and Prayers, p. 209",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The displayed source text was directly compared on 2026-10-13 with printed page 209 of the Internet Archive PDF at https://archive.org/download/preparation_for_death_1893-st_alphonsus_m_liguori/preparation_for_death_1893-st_alphonsus_m_liguori.pdf (exact PDF SHA-256 85e26b334ec341025b1b64918c919131eb76944cb0af6cad69c839d45d4e10cb). The running head says SECOND POINT, while that point’s body begins below the preceding prayer; the paragraph belongs to the First Point’s affections. The checked sentence is an excerpt, not the complete prayer. No modernization or OCR correction occurs in the displayed text.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The identified 1843 printed English text is public domain in the United States by publication before 1931 (U.S. Copyright Office, Circular 22, https://www.copyright.gov/circs/circ22.pdf, consulted 2026-10-13). The retained text is a mechanical OCR transcription of that printing; no new editorial authorship is identified in the historical text. Triptych claims no exclusive rights in that wording. The modern introductory prose is excluded. Remaining short digitization labels identify the mechanical source and are not a license or claim of new rights in the historical wording.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": "https://archive.org/download/preparation_for_death_1893-st_alphonsus_m_liguori/preparation_for_death_1893-st_alphonsus_m_liguori_djvu.txt",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.alphonsus-liguori.apparecchio-alla-morte.duffy-1843.17.1-prayer-perseverance.json",
+   "verified_on": "2026-10-13",
+   "words": 19
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Preparation for Death",
+   "Preparation for death; or, Considerations on the eternal maxims"
+  ],
+  "author": "Alphonsus Maria de Liguori",
+  "category": "spiritual-treatise",
+  "description": "Considerations on death and the eternal maxims. Loci name a consideration and its point. Some English printings append separately authored instructions.",
+  "id": "work.alphonsus-liguori.apparecchio-alla-morte",
+  "languages": [
+   "it"
+  ],
+  "title": "Apparecchio alla morte"
+ }
+}

@@ -1365,8 +1365,8 @@ EXAMPLES = {
         Example(
             "tools/source-reader check",
             (
-                "935 works, 1050 editions, 2918 artifacts, 5260 passages; 3081 readable here.",
-                "  passages the rights records withhold: 2179",
+                "942 works, 1078 editions, 2963 artifacts, 5283 passages; 3087 readable here.",
+                "  passages the rights records withhold: 2196",
                 "  every one of them listed with its reason: yes",
                 "  the page's own derivation, replayed: src/web/browser/sources/reader-model.js",
             ),
@@ -1384,7 +1384,7 @@ EXAMPLES = {
             "tools/source-reader list --author 'Augustine of Hippo'",
             (
                 "Augustine of Hippo       Confessiones                                   1896       la         0/1  edition.augustine-of-hippo.confessiones.1896-knoll-csel-33",
-                "... 41 more lines",
+                "... 42 more lines",
             ),
         ),
         Example(
@@ -1414,16 +1414,16 @@ EXAMPLES = {
         Example(
             "tools/source-reader structure --out build/example-sources",
             (
-                "935 works, 1050 editions, 2918 artifacts, 5260 passages; 3081 readable here.",
-                "  -> build/example-sources/structure/sources (4132 files)",
+                "942 works, 1078 editions, 2963 artifacts, 5283 passages; 3087 readable here.",
+                "  -> build/example-sources/structure/sources (4166 files)",
             ),
             "WRITES. --out here is untracked; the default writes the tracked src/web/data",
         ),
         Example(
             "tools/source-reader structure --check",
             (
-                "935 works, 1050 editions, 2918 artifacts, 5260 passages; 3081 readable here.",
-                "  src/web/data/structure/sources is current (4132 files)",
+                "942 works, 1078 editions, 2963 artifacts, 5283 passages; 3087 readable here.",
+                "  src/web/data/structure/sources is current (4166 files)",
             ),
             "writes nothing; refuses when the tracked projection has drifted from the records",
         ),

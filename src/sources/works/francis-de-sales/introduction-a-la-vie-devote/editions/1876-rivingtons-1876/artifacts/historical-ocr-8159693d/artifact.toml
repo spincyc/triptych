@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.francis-de-sales.introduction-a-la-vie-devote.rivingtons-1876.historical-ocr-8159693d"
+edition_id = "edition.francis-de-sales.introduction-a-la-vie-devote.rivingtons-1876"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The identified 1876 printed English text is public domain in the United States by publication before 1931 (U.S. Copyright Office, Circular 22, https://www.copyright.gov/circs/circ22.pdf, consulted 2026-10-13). The retained text is a mechanical OCR transcription of that printing; no new editorial authorship is identified in the historical text. Triptych claims no exclusive rights in that wording. The modern introductory prose is excluded. Remaining short digitization labels identify the mechanical source and are not a license or claim of new rights in the historical wording."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/introductiontod00salegoog/introductiontod00salegoog_djvu.txt"
+provenance = "Complete Internet Archive DjVuTXT response acquired directly over HTTPS on 2026-10-13. The repository work catalog was searched for the author and known work titles before registration; existing work identities were reused. Alphonsus / Liguori / Preparation for Death / Apparecchio alla morte were searched without finding an existing work record. The acquired scan’s title page establishes the printing; item-name dates are not treated as controlling evidence. Internet Archive provides automated OCR, not a corrected scholarly transcription."
+retrieved = "2026-10-13"
+sha256 = "8159693db79b26fb8bb02daca693a87ec8816e09aec0511b19c34c5d5f06e0a4"
+byte_size = 518497
+path = "src/sources/works/francis-de-sales/introduction-a-la-vie-devote/editions/1876-rivingtons-1876/artifacts/historical-ocr-8159693d/source.txt"
+derived_from = "artifact.francis-de-sales.introduction-a-la-vie-devote.rivingtons-1876.ia-raw-ocr-0ade4ec2"
+transformation = "Discard exactly the first 43 LF-delimited physical lines of the exact parent byte stream (the modern Google introductory wrapper); preserve every subsequent byte unchanged, including line endings, OCR errors and digitization labels. No text is routed through a language model."
+indexable = true
+encoding = "utf-8"
+notes = "Full historical printing as represented in the offered OCR, with original front matter, body, notes and any terminal matter. Only the specified modern front wrapper is omitted; OCR errors and digitization labels remain. This is not a facsimile or a corrected transcription. No completeness attestation beyond the whole offered OCR response is asserted. Measured extent: 518497 bytes; 16558 physical lines. Acquisition does not imply inspection of the whole work."

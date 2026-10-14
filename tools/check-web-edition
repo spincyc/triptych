@@ -53,6 +53,7 @@ FIELDS = frozenset(
         "rationale",
         "reviewed",
         "withdrawn",
+        "contents",
     }
 )
 BASIS_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
@@ -89,6 +90,7 @@ class Record:
     # what the layout allows; a withdrawn leaf gets no web edition whatever it
     # says, so --list-eligible leaves it out and no tracked edition may remain.
     withdrawn: dt.date | None = None
+    contents: bool = False
 
 
 @dataclass(frozen=True)
@@ -210,6 +212,10 @@ def parse_record(path: Path) -> Record:
     if basis is not None and not BASIS_RE.fullmatch(basis):
         raise ValueError(f"basis must be a lowercase kebab-case token: {basis!r}")
 
+    contents = data.get("contents", False)
+    if not isinstance(contents, bool):
+        raise ValueError("contents must be a boolean")
+
     withdrawn = data.get("withdrawn")
     return Record(
         document=document,
@@ -219,6 +225,7 @@ def parse_record(path: Path) -> Record:
         rationale=rationale,
         reviewed=iso_date("reviewed", data.get("reviewed")),
         withdrawn=None if withdrawn is None else iso_date("withdrawn", withdrawn),
+        contents=contents,
     )
 
 

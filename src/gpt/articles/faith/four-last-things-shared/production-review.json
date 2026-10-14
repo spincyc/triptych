@@ -1,75 +1,107 @@
 {
   "schema": 1,
   "record_type": "gpt-four-last-things-production-review",
-  "base_commit": "5fc4fe6b6071d0c4da9bc36dbf8740172d944db0",
-  "revision_timestamp": "2026-10-13T02:21:37Z",
+  "base_commit": "bd50b7dcd577610ce6c8a9c9fc4610b7a0b5a23a",
+  "revision_timestamp": "2026-10-14T01:05:45Z",
   "pdf_disposition": "accepted",
   "web_disposition": "accepted",
+  "installation": "All four installed PDFs and Markdown files match accepted artifact hashes.",
   "documents": [
     {
       "document": "articles/faith/four-last-things-01-death",
-      "pages": 5,
-      "bookmarks": 11,
+      "body_words_approximate": 13358,
+      "pages": 25,
+      "bookmarks": 19,
       "pdf": "pdf/gpt/articles/faith/four-last-things-01-death.pdf",
-      "pdf_sha256": "2c4173007ca64b17e8998538ff73eb0d45df4be9221a975535836ddbf90e000a",
+      "pdf_sha256": "5928264144ab871f1506faa901fe9de56fa5a07843e8a9cba5661886921e4a65",
       "web": "web/gpt/articles/faith/four-last-things-01-death.md",
-      "web_sha256": "02239188af7e321388558a438bed050a4ac0ce3dbb24e1a79a7a47672435bf7e",
+      "web_sha256": "8241301a75ed49cd95d5325588eb40767576da120badb6f439efcf959816ca55",
       "render_sources": {
-        "src/gpt/articles/faith/four-last-things-01-death/generation-metadata.tex": "b1cc0c35f07183735e6f22148508c54ee230ae92fe323fddd6931f20af3cc50d",
-        "src/gpt/articles/faith/four-last-things-01-death/main.tex": "35914d1f417c91c5ac97863aa5de89118d219b902bf43d520fce71dfd4afc9ea",
-        "src/gpt/articles/faith/four-last-things-01-death/references.tex": "bbedec248e7e924374c9fe1ab52846a265955d794400d6a561491ffa351d8ff5",
-        "src/gpt/articles/faith/four-last-things-shared/format.tex": "5f2cb1bef645ef28efe24ad0752ab4e9bc16bc195f29fe813d5ace6ff06b61b0"
+        "src/gpt/articles/faith/four-last-things-01-death/main.tex": "65934e0400158c4896a947c8774c7451a3ead4ea4a950b902818ae41d9a103f3",
+        "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+        "src/gpt/articles/faith/four-last-things-shared/format.tex": "98eea2ad1b83ae442f74c8688ae4695f8bf5aef17b63d8ebdafdffee70c9136d",
+        "src/gpt/articles/faith/four-last-things-01-death/references.tex": "f70d8534b1f50fea3923dc191d0a5172abf936a4dccfa6961897fe9ddb9620d7",
+        "src/gpt/articles/faith/four-last-things-01-death/generation-metadata.tex": "f0c4c740b45f0cdfb227d7c389a562027cde22bb1f7417b12c09ee5e1757589b"
       }
     },
     {
       "document": "articles/faith/four-last-things-02-judgment",
-      "pages": 5,
-      "bookmarks": 12,
+      "body_words_approximate": 13457,
+      "pages": 25,
+      "bookmarks": 16,
       "pdf": "pdf/gpt/articles/faith/four-last-things-02-judgment.pdf",
-      "pdf_sha256": "d63267042b45e3dbcf27d2bc863c9e502e54187bf5786fde6fff863b7db2de3b",
+      "pdf_sha256": "9683ca8cf87bb9a6754653d10dafc4273a3b7f49271cd3056ecca34d3432672a",
       "web": "web/gpt/articles/faith/four-last-things-02-judgment.md",
-      "web_sha256": "0b9ef9529bc45c604aead1c260b998cf95c9a81421ab0d2ab5833e3dcd405b44",
+      "web_sha256": "7e487c4c23b4c2d53ee19deedb74e03adee94b63ebe84e46bd502ce2291f9817",
       "render_sources": {
-        "src/gpt/articles/faith/four-last-things-02-judgment/generation-metadata.tex": "b1cc0c35f07183735e6f22148508c54ee230ae92fe323fddd6931f20af3cc50d",
-        "src/gpt/articles/faith/four-last-things-02-judgment/main.tex": "f1c66c1598602b430eca581f76d0179fadfaa96a0a92abed8348a541bac97bcc",
-        "src/gpt/articles/faith/four-last-things-02-judgment/references.tex": "06f2c2496c4b359f2e55f610b78d811a1d01870854f6c86c54b5c2dff38ab231",
-        "src/gpt/articles/faith/four-last-things-shared/format.tex": "5f2cb1bef645ef28efe24ad0752ab4e9bc16bc195f29fe813d5ace6ff06b61b0"
+        "src/gpt/articles/faith/four-last-things-02-judgment/main.tex": "1673c58c9424bf3cd648b48ee7899cb04b68a1c9c4a2f906ee8994b83d22ee46",
+        "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+        "src/gpt/articles/faith/four-last-things-shared/format.tex": "98eea2ad1b83ae442f74c8688ae4695f8bf5aef17b63d8ebdafdffee70c9136d",
+        "src/gpt/articles/faith/four-last-things-02-judgment/references.tex": "b6b02fa8aa7bff83c1a472f4c8c17ba00193231c12e9acd8d28d1f3558f4021a",
+        "src/gpt/articles/faith/four-last-things-02-judgment/generation-metadata.tex": "f0c4c740b45f0cdfb227d7c389a562027cde22bb1f7417b12c09ee5e1757589b"
       }
     },
     {
       "document": "articles/faith/four-last-things-03-hell",
-      "pages": 5,
-      "bookmarks": 9,
+      "body_words_approximate": 13451,
+      "pages": 25,
+      "bookmarks": 16,
       "pdf": "pdf/gpt/articles/faith/four-last-things-03-hell.pdf",
-      "pdf_sha256": "07dc15fad371297f178fb21c16da716b607e639dd70728c6b1ed5262af09fe56",
+      "pdf_sha256": "543412207301d21bf41334913496f4b6c45f1a6b78aff3197724142fae24fe68",
       "web": "web/gpt/articles/faith/four-last-things-03-hell.md",
-      "web_sha256": "2a38b3b4dcc4edb1f50cc7b7d24f66cc0147398123215cbb8b9722d331389fb6",
+      "web_sha256": "4ddb0d1f29e4da06affaf1c23f32f68a94d7e873d9c7c12d0719b2badbd26255",
       "render_sources": {
-        "src/gpt/articles/faith/four-last-things-03-hell/generation-metadata.tex": "b1cc0c35f07183735e6f22148508c54ee230ae92fe323fddd6931f20af3cc50d",
-        "src/gpt/articles/faith/four-last-things-03-hell/main.tex": "9b6ce0ae49388cd9c4c29b8f005cf8e86aed6361f3df4d6c533158a842b7c1d9",
-        "src/gpt/articles/faith/four-last-things-03-hell/references.tex": "e7cbed108094a2da3765ab379f20a71f2f3fa91ce4d879ea1da0be5576e0f56a",
-        "src/gpt/articles/faith/four-last-things-shared/format.tex": "5f2cb1bef645ef28efe24ad0752ab4e9bc16bc195f29fe813d5ace6ff06b61b0"
+        "src/gpt/articles/faith/four-last-things-03-hell/main.tex": "1d6c9abe96ddbb469784a73483c0c6a0c084440af7fc54e491a37ba89abbaaa7",
+        "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+        "src/gpt/articles/faith/four-last-things-shared/format.tex": "98eea2ad1b83ae442f74c8688ae4695f8bf5aef17b63d8ebdafdffee70c9136d",
+        "src/gpt/articles/faith/four-last-things-03-hell/references.tex": "9f1a9b1f78b5d30866747ca52a75e4aa21d4db4439244ec43f1493bd735c9773",
+        "src/gpt/articles/faith/four-last-things-03-hell/generation-metadata.tex": "f0c4c740b45f0cdfb227d7c389a562027cde22bb1f7417b12c09ee5e1757589b"
       }
     },
     {
       "document": "articles/faith/four-last-things-04-heaven",
-      "pages": 5,
-      "bookmarks": 11,
+      "body_words_approximate": 13629,
+      "pages": 24,
+      "bookmarks": 18,
       "pdf": "pdf/gpt/articles/faith/four-last-things-04-heaven.pdf",
-      "pdf_sha256": "dace76221b860c7a0cc6db65b128fb78ffc9068627f0d38562f8fa75d8227d13",
+      "pdf_sha256": "14b58ace22c48615694556df83e17a2d9eca4d50548e02da75974f51c9349bf1",
       "web": "web/gpt/articles/faith/four-last-things-04-heaven.md",
-      "web_sha256": "485b6948ecf633bf8c4fa3a5911ad49a758a6653e010b3a6fa7c6a4853083318",
+      "web_sha256": "7fd586f8e49532bfa092573633afb3a0532dc1a03ee487fbf1dcdea20a0b88e2",
       "render_sources": {
-        "src/gpt/articles/faith/four-last-things-04-heaven/generation-metadata.tex": "b1cc0c35f07183735e6f22148508c54ee230ae92fe323fddd6931f20af3cc50d",
-        "src/gpt/articles/faith/four-last-things-04-heaven/main.tex": "3103e14f570bcc4bd106bd0b0d37ee71154ca2c479119bc48be04ce55f66f5ba",
-        "src/gpt/articles/faith/four-last-things-04-heaven/references.tex": "f622407df65a79d3201ec07d8d97d14c4de2a71e2749cdf353552b2944d41226",
-        "src/gpt/articles/faith/four-last-things-shared/format.tex": "5f2cb1bef645ef28efe24ad0752ab4e9bc16bc195f29fe813d5ace6ff06b61b0"
+        "src/gpt/articles/faith/four-last-things-04-heaven/main.tex": "eb6da667b7ad864d20ad7bf4235531b371a7f9826d58931eccf023c7ac949b3c",
+        "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+        "src/gpt/articles/faith/four-last-things-shared/format.tex": "98eea2ad1b83ae442f74c8688ae4695f8bf5aef17b63d8ebdafdffee70c9136d",
+        "src/gpt/articles/faith/four-last-things-04-heaven/references.tex": "993c9b1a2c05e9897829d129a78e19ab17225226af7a3a81fa2ee92968a6a0ad",
+        "src/gpt/articles/faith/four-last-things-04-heaven/generation-metadata.tex": "f0c4c740b45f0cdfb227d7c389a562027cde22bb1f7417b12c09ee5e1757589b"
       }
     }
   ],
+  "pdf_review": {
+    "total_pages": 99,
+    "full_pages_visually_inspected": 99,
+    "contact_sheets_inspected": 8,
+    "reviewers": "Four separate content and PDF reviewers, one per essay; coordinator inspected the repaired Death contents and Hell closing bibliography.",
+    "checks": [
+      "Every page visually inspected",
+      "Embedded fonts and extractable text",
+      "Metadata timestamp",
+      "All 69 contents and bookmark destinations",
+      "Sixteen companion links and sibling files",
+      "Source and artifact hashes"
+    ],
+    "repairs": [
+      "Local contents spacing keeps each contents list on one page.",
+      "Hell appendix begins after its complete prayer and attribution; bibliography entries remain whole."
+    ],
+    "warnings": "One harmless terminal underfull-box warning per document; no overflow or unresolved reference.",
+    "limits": [
+      "No physical print proof",
+      "PDFs are untagged; assistive-technology behavior was not certified"
+    ]
+  },
   "web_review": {
     "routes": 4,
-    "viewport_states": 12,
+    "viewport_states": 63,
     "viewport_sizes": [
       [
         1440,
@@ -84,41 +116,186 @@
         852
       ]
     ],
-    "method": "Chromium local-file rendering of the four corrected essays in frames with measured CSS viewport sizes; pinned Markdown 3.10.3 and actual public-alpha renderer, layout, and stylesheet. Twelve changed-passage states and six additional title/reference screenshots reviewed.",
+    "method": "Official public-alpha renderer with pinned Markdown 3.10.3, actual layout and stylesheet; Chromium local-file pages at measured CSS viewport sizes. Full bidirectional PDF/source/HTML comparison covers 587 paragraphs, 69 headings, all references, received prayer, timestamp and rights. Every contents link was exercised; companion targets resolve.",
+    "visual_inspection": "Eight representative final screenshots and eight earlier equivalent views; all 63 final states independently checked for geometry and navigation. Not every saved screenshot was visually inspected.",
     "limitations": [
-      "Visual review uses local files rather than HTTP or deployed routes; full-site and deployment verification are recorded separately.",
-      "PDFs are untagged; no assistive-technology certification."
+      "Scoped local-file review; full-site and live verification are separate.",
+      "No physical-device, screen-reader or complete accessibility audit."
     ],
     "inputs": {
-      "library/faith.md": "df9ec465295c292851c138bcf7c67121db1ab3a1674e01a76b5a0be62180b3a6",
+      "tools/public-alpha": "64be4b04c123497d05bcedea80b3f87793620820bb4e16821c20dabbb0a4eb23",
+      "tools/web-edition": "26ba07dc0eb4d8bb36dc242d098e24bfbe9751a9b629968bfb0dad5f3da0627a",
+      "scripts/_markdown_render.py": "be0ffcd9d3d0b789f633be2938c07c9076d44d72eb3b6c5eb65b93307e6fa648",
+      "requirements-public-alpha.txt": "59bd4c5252324612c6ce5a27f4a4ba4e62aa4cc76bc3d974a29b45491c97c762",
       "release/public-alpha/layout.html": "6687546feca2e378e57917fa44ed908c5abfa49f4499731c95316f1d34b3d9eb",
-      "release/public-alpha/assets/site.css": "a456caf21041256a1047560c0cee8638a99f7df819e6249ee3345e550b6b4060",
-      "tools/public-alpha": "139d4bc9d07ca1c8d5476972586f9607e03fb77aff6ebe8b733c9d7e315c5de0",
-      "scripts/_markdown_render.py": "be0ffcd9d3d0b789f633be2938c07c9076d44d72eb3b6c5eb65b93307e6fa648"
+      "release/public-alpha/assets/site.css": "a456caf21041256a1047560c0cee8638a99f7df819e6249ee3345e550b6b4060"
     },
     "rendered_html": {
-      "web/gpt/articles/faith/four-last-things-03-hell.html": "d3985ca9160f0caab3a5699eb5c7f30ca0233a2ae6c20786650096b9c924dcc7",
-      "web/gpt/articles/faith/four-last-things-02-judgment.html": "5a757f32b9d19d9cd2906c1c0b8224866d48d5ccb5a8228a77673e7152b07403",
-      "web/gpt/articles/faith/four-last-things-01-death.html": "04133c1efb8f3bdfbdcbb9d4f4e36ebd34ef06b8ba3944e06d03c9481cc5ce17",
-      "web/gpt/articles/faith/four-last-things-04-heaven.html": "cc546b4240d6df0035bf959c3ec2f96f75e7fd27a567613656341d810ecbfc2a"
+      "web/gpt/articles/faith/four-last-things-01-death.html": "ae9da64beadc04f4b31b643028c62213637adb002c2e902de9b365aa8328e899",
+      "web/gpt/articles/faith/four-last-things-02-judgment.html": "6e98217cfbd276903dafcd77996bbd411e2d74d15387f054118d0c3373147044",
+      "web/gpt/articles/faith/four-last-things-03-hell.html": "4fcf8e38985415920b128c788851eecc5f4149f16d23cf3834264d079a14d1c3",
+      "web/gpt/articles/faith/four-last-things-04-heaven.html": "5d6be8bc11c979d00bc66b5558ae70ae34d855047e1198cb448ab8b476fe5f08"
     },
-    "additional_screenshots": 6
+    "original_renderer_sha256": "139d4bc9d07ca1c8d5476972586f9607e03fb77aff6ebe8b733c9d7e315c5de0",
+    "renderer_delta": "Only the captured prepare-example line count changed after visual review; Python AST excluding EXAMPLES is identical. Final site verification passed.",
+    "full_site_comparison": "All four final site HTML files and their three directly referenced assets match the accepted renders byte for byte. All sixteen companions and 69 section targets resolve."
   },
-  "review_base_commit": "ed19fb6da73b9b09bc7a3350e76b825e76f97091",
   "deployment": {
-    "commit": "6a9148ffe24fd28e05e60d87dff8b5bc12189968",
-    "workflow_url": "https://github.com/spincyc/triptych/actions/runs/38337906346",
+    "commit": "170c364ca342f215f6e18e8700b775f3f4b6ef18",
+    "workflow_url": "https://github.com/spincyc/triptych/actions/runs/38495975013",
     "workflow_conclusion": "success",
-    "deployment_job_completed_at_utc": "2026-10-13T02:52:05Z",
+    "deployment_job_completed_at_utc": "2026-10-14T01:35:00Z",
+    "repository_hygiene_url": "https://github.com/spincyc/triptych/actions/runs/38495975000",
+    "repository_hygiene_conclusion": "success",
     "site_url": "https://mystago.gy/",
     "live_routes_checked": 15,
     "live_routes_http_200": 15,
     "live_routes_matching_local_build": 15,
     "publication_routes_matching_accepted_hashes": 12,
     "downloaded_pdfs_passing_metadata": 8,
-    "unchanged_publication_pdf_hashes": 247,
+    "unchanged_publication_pdf_hashes": 250,
     "changed_pdf_hashes_matching_acceptance": 4,
     "claude_catalog_entries_unchanged": 60,
-    "publication_manifest_sha256": "67e7a73ffbd37b98d2757485dd96d8ef5ca2a77c486e05702d03dca09d9445ab"
+    "publication_manifest_sha256": "e32b5310640aa568c0543e02b75986e58be9286f748d955d64c2708a6a804773"
+  },
+  "previous_publication": {
+    "schema": 1,
+    "record_type": "gpt-four-last-things-production-review",
+    "base_commit": "5fc4fe6b6071d0c4da9bc36dbf8740172d944db0",
+    "revision_timestamp": "2026-10-13T02:21:37Z",
+    "pdf_disposition": "accepted",
+    "web_disposition": "accepted",
+    "documents": [
+      {
+        "document": "articles/faith/four-last-things-01-death",
+        "pages": 5,
+        "bookmarks": 11,
+        "pdf": "pdf/gpt/articles/faith/four-last-things-01-death.pdf",
+        "pdf_sha256": "2c4173007ca64b17e8998538ff73eb0d45df4be9221a975535836ddbf90e000a",
+        "web": "web/gpt/articles/faith/four-last-things-01-death.md",
+        "web_sha256": "02239188af7e321388558a438bed050a4ac0ce3dbb24e1a79a7a47672435bf7e",
+        "render_sources": {
+          "src/gpt/articles/faith/four-last-things-01-death/generation-metadata.tex": "b1cc0c35f07183735e6f22148508c54ee230ae92fe323fddd6931f20af3cc50d",
+          "src/gpt/articles/faith/four-last-things-01-death/main.tex": "35914d1f417c91c5ac97863aa5de89118d219b902bf43d520fce71dfd4afc9ea",
+          "src/gpt/articles/faith/four-last-things-01-death/references.tex": "bbedec248e7e924374c9fe1ab52846a265955d794400d6a561491ffa351d8ff5",
+          "src/gpt/articles/faith/four-last-things-shared/format.tex": "5f2cb1bef645ef28efe24ad0752ab4e9bc16bc195f29fe813d5ace6ff06b61b0"
+        }
+      },
+      {
+        "document": "articles/faith/four-last-things-02-judgment",
+        "pages": 5,
+        "bookmarks": 12,
+        "pdf": "pdf/gpt/articles/faith/four-last-things-02-judgment.pdf",
+        "pdf_sha256": "d63267042b45e3dbcf27d2bc863c9e502e54187bf5786fde6fff863b7db2de3b",
+        "web": "web/gpt/articles/faith/four-last-things-02-judgment.md",
+        "web_sha256": "0b9ef9529bc45c604aead1c260b998cf95c9a81421ab0d2ab5833e3dcd405b44",
+        "render_sources": {
+          "src/gpt/articles/faith/four-last-things-02-judgment/generation-metadata.tex": "b1cc0c35f07183735e6f22148508c54ee230ae92fe323fddd6931f20af3cc50d",
+          "src/gpt/articles/faith/four-last-things-02-judgment/main.tex": "f1c66c1598602b430eca581f76d0179fadfaa96a0a92abed8348a541bac97bcc",
+          "src/gpt/articles/faith/four-last-things-02-judgment/references.tex": "06f2c2496c4b359f2e55f610b78d811a1d01870854f6c86c54b5c2dff38ab231",
+          "src/gpt/articles/faith/four-last-things-shared/format.tex": "5f2cb1bef645ef28efe24ad0752ab4e9bc16bc195f29fe813d5ace6ff06b61b0"
+        }
+      },
+      {
+        "document": "articles/faith/four-last-things-03-hell",
+        "pages": 5,
+        "bookmarks": 9,
+        "pdf": "pdf/gpt/articles/faith/four-last-things-03-hell.pdf",
+        "pdf_sha256": "07dc15fad371297f178fb21c16da716b607e639dd70728c6b1ed5262af09fe56",
+        "web": "web/gpt/articles/faith/four-last-things-03-hell.md",
+        "web_sha256": "2a38b3b4dcc4edb1f50cc7b7d24f66cc0147398123215cbb8b9722d331389fb6",
+        "render_sources": {
+          "src/gpt/articles/faith/four-last-things-03-hell/generation-metadata.tex": "b1cc0c35f07183735e6f22148508c54ee230ae92fe323fddd6931f20af3cc50d",
+          "src/gpt/articles/faith/four-last-things-03-hell/main.tex": "9b6ce0ae49388cd9c4c29b8f005cf8e86aed6361f3df4d6c533158a842b7c1d9",
+          "src/gpt/articles/faith/four-last-things-03-hell/references.tex": "e7cbed108094a2da3765ab379f20a71f2f3fa91ce4d879ea1da0be5576e0f56a",
+          "src/gpt/articles/faith/four-last-things-shared/format.tex": "5f2cb1bef645ef28efe24ad0752ab4e9bc16bc195f29fe813d5ace6ff06b61b0"
+        }
+      },
+      {
+        "document": "articles/faith/four-last-things-04-heaven",
+        "pages": 5,
+        "bookmarks": 11,
+        "pdf": "pdf/gpt/articles/faith/four-last-things-04-heaven.pdf",
+        "pdf_sha256": "dace76221b860c7a0cc6db65b128fb78ffc9068627f0d38562f8fa75d8227d13",
+        "web": "web/gpt/articles/faith/four-last-things-04-heaven.md",
+        "web_sha256": "485b6948ecf633bf8c4fa3a5911ad49a758a6653e010b3a6fa7c6a4853083318",
+        "render_sources": {
+          "src/gpt/articles/faith/four-last-things-04-heaven/generation-metadata.tex": "b1cc0c35f07183735e6f22148508c54ee230ae92fe323fddd6931f20af3cc50d",
+          "src/gpt/articles/faith/four-last-things-04-heaven/main.tex": "3103e14f570bcc4bd106bd0b0d37ee71154ca2c479119bc48be04ce55f66f5ba",
+          "src/gpt/articles/faith/four-last-things-04-heaven/references.tex": "f622407df65a79d3201ec07d8d97d14c4de2a71e2749cdf353552b2944d41226",
+          "src/gpt/articles/faith/four-last-things-shared/format.tex": "5f2cb1bef645ef28efe24ad0752ab4e9bc16bc195f29fe813d5ace6ff06b61b0"
+        }
+      }
+    ],
+    "web_review": {
+      "routes": 4,
+      "viewport_states": 12,
+      "viewport_sizes": [
+        [
+          1440,
+          900
+        ],
+        [
+          393,
+          852
+        ],
+        [
+          320,
+          852
+        ]
+      ],
+      "method": "Chromium local-file rendering of the four corrected essays in frames with measured CSS viewport sizes; pinned Markdown 3.10.3 and actual public-alpha renderer, layout, and stylesheet. Twelve changed-passage states and six additional title/reference screenshots reviewed.",
+      "limitations": [
+        "Visual review uses local files rather than HTTP or deployed routes; full-site and deployment verification are recorded separately.",
+        "PDFs are untagged; no assistive-technology certification."
+      ],
+      "inputs": {
+        "library/faith.md": "df9ec465295c292851c138bcf7c67121db1ab3a1674e01a76b5a0be62180b3a6",
+        "release/public-alpha/layout.html": "6687546feca2e378e57917fa44ed908c5abfa49f4499731c95316f1d34b3d9eb",
+        "release/public-alpha/assets/site.css": "a456caf21041256a1047560c0cee8638a99f7df819e6249ee3345e550b6b4060",
+        "tools/public-alpha": "139d4bc9d07ca1c8d5476972586f9607e03fb77aff6ebe8b733c9d7e315c5de0",
+        "scripts/_markdown_render.py": "be0ffcd9d3d0b789f633be2938c07c9076d44d72eb3b6c5eb65b93307e6fa648"
+      },
+      "rendered_html": {
+        "web/gpt/articles/faith/four-last-things-03-hell.html": "d3985ca9160f0caab3a5699eb5c7f30ca0233a2ae6c20786650096b9c924dcc7",
+        "web/gpt/articles/faith/four-last-things-02-judgment.html": "5a757f32b9d19d9cd2906c1c0b8224866d48d5ccb5a8228a77673e7152b07403",
+        "web/gpt/articles/faith/four-last-things-01-death.html": "04133c1efb8f3bdfbdcbb9d4f4e36ebd34ef06b8ba3944e06d03c9481cc5ce17",
+        "web/gpt/articles/faith/four-last-things-04-heaven.html": "cc546b4240d6df0035bf959c3ec2f96f75e7fd27a567613656341d810ecbfc2a"
+      },
+      "additional_screenshots": 6
+    },
+    "review_base_commit": "ed19fb6da73b9b09bc7a3350e76b825e76f97091",
+    "deployment": {
+      "commit": "6a9148ffe24fd28e05e60d87dff8b5bc12189968",
+      "workflow_url": "https://github.com/spincyc/triptych/actions/runs/38337906346",
+      "workflow_conclusion": "success",
+      "deployment_job_completed_at_utc": "2026-10-13T02:52:05Z",
+      "site_url": "https://mystago.gy/",
+      "live_routes_checked": 15,
+      "live_routes_http_200": 15,
+      "live_routes_matching_local_build": 15,
+      "publication_routes_matching_accepted_hashes": 12,
+      "downloaded_pdfs_passing_metadata": 8,
+      "unchanged_publication_pdf_hashes": 247,
+      "changed_pdf_hashes_matching_acceptance": 4,
+      "claude_catalog_entries_unchanged": 60,
+      "publication_manifest_sha256": "67e7a73ffbd37b98d2757485dd96d8ef5ca2a77c486e05702d03dca09d9445ab"
+    }
+  },
+  "validation": {
+    "source_and_deployment_gates": "passed",
+    "web_declarations_and_source_currency": "passed",
+    "document_catalogue": "passed",
+    "release_bindings": "passed",
+    "public_site_build": "passed",
+    "github_pages_artifact_verification": "passed",
+    "web_edition_tests": 186,
+    "related_source_inventory_and_publication_link_tests": 36,
+    "default_and_false_contents_fixtures_unchanged": 8,
+    "broad_check": "All non-example checks passed. Initial replay: 247 examples run; 30 transcript divergences, six declared exemptions and three unavailable PDF examples. Official recapture refreshed 22 applicable outputs across eight tools; implementations are AST-identical. Five pre-existing count transcripts and three suspended raw-staleness diagnostics remain unrecaptured. No expected success was rewritten as a failure.",
+    "unchanged_other_pdf_hashes": 250,
+    "unchanged_claude_catalogue_entries": 60,
+    "public_alpha_example_replay": "Eight examples replayed on frozen inputs; zero divergences and zero tracked writes. A preceding concurrency warning was independently traced to the coordinator adding the full-site comparison receipt, not an example mutation.",
+    "final_full_example_replay": "247 examples replayed on frozen tracked inputs: eight expected residual divergences (five pre-existing count transcripts and three suspended raw-staleness diagnostics), six declared exemptions, three unavailable-PDF examples, zero tracked writes. All 22 recaptured outputs agree."
   }
 }

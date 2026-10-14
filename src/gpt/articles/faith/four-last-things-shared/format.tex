@@ -4,6 +4,7 @@
 \setlength{\parskip}{0.45em}
 \setlength{\emergencystretch}{2em}
 \widowpenalty=10000
+\clubpenalty=10000
 \def\TriptychPrintEdition{}
 
 \newcommand{\FourLastThingsTitle}[2]{%
@@ -32,4 +33,12 @@
   \enspace·\enspace
   \FourLastThingsLink{four-last-things-04-heaven}{Heaven}
   \par\endgroup
+  \ifdefined\TriptychPrintEdition
+  \begingroup
+  \setlength{\parskip}{0pt}
+  \tableofcontents
+  \endgroup
+  \clearpage
+  \else
+  \fi
 }

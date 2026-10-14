@@ -73,6 +73,20 @@ whose tracked edition no evaluation had ever reviewed; until then its
 declaration could only demand that edition, as `eligible`, or claim a
 blocking construct the leaf does not use.
 
+## Section contents
+
+An eligible leaf may declare `contents = true` in `web-edition.toml` to place
+clickable section contents immediately after its title and subtitle. The field
+is optional, defaults to `false`, and accepts only a TOML boolean. The converter
+generates the site's `[TOC]` marker; the renderer derives link labels and targets
+from the article's top-level sections (H2), without print page numbers or a
+second authored list of headings. Review the rendered links with the edition.
+
+An omitted or false field preserves the existing conversion. Schema-2 proper
+studies continue to retain their explicit source-position contents; opting in
+does not add a second list or move that list. This field neither changes PDF
+contents nor grants web eligibility or publication acceptance.
+
 ## Rights and provenance
 
 A web edition reproduces the document's rights colophon

@@ -3,26 +3,26 @@
 - **Publication:** `articles/faith/four-last-things-04-heaven` (GPT).
 - **Profile:** discursive faith/theology article, `guidance/articles.md`.
 - **Series:** *The Four Last Things*, four independently readable studies.
-- **Authorized revision:** improve the GPT series for informed lay reading and year-end liturgical use; preserve the Claude documents. This leaf supplies substantive prose and its source apparatus; series formatting, production, and release records are coordinated separately.
-- **Question:** How do direct vision of God, communion in Christ, bodily resurrection, and renewed creation form one promised fulfillment?
-- **Governing claim:** Heaven is Trinitarian communion through Christ in the Spirit: immediate vision preserves creaturely identity and awaits bodily and cosmic consummation.
-- **Included:** John 17 and 1 Corinthians 15; supernatural vision without comprehension; saints' intercession; degrees without envy; Eucharist and resurrection; new creation and present charity; freedom, memory, and another's loss.
-- **Limits:** No celestial geography, private revelation, precise psychology of blessed memory, physics of resurrection, or exhaustive account of theological schools. Irenaeus is cited at V.2.2–3, not presented as teaching the later definition of immediate vision.
-- **Authority:** Scripture within Catholic teaching; definitive and authoritative teaching distinguished from Augustine's and Aquinas's explanatory arguments and the article's ethical applications. Absence from a solemn definition does not itself establish theological liberty.
-- **Source review:** 2026-10-12; exact passage checks, delivery identities, rights, and limits recorded in `source-audit.md` and `source-bindings.toml`. Local inspection is not independent specialist approval.
+- **Reader and purpose:** Catholic spiritual reading for an annual preparation for death, especially around November and Advent. The essay speaks within the faith, develops sources in sustained prose, and orders contemplation toward prayer, charity, detachment, and hope. It is not secular apologetics, a classroom worksheet, or an anthology.
+- **Promised extent:** the maintainer's clarified target is approximately 25 pages for **each** of the four essays, approximately 100 pages for the series. This supersedes every earlier five-page or approximately 25-page series aspiration. The expanded Heaven draft contains approximately 13,600 body words before the terminal appendix and references; final page count, typography, and all-page review are coordinator-owned gates, not established by word count.
+- **Question:** How do communion with the Trinity, immediate vision of God, communion in Christ, bodily resurrection, and renewed creation form our promised fulfillment, and how does desiring that end purify our present life?
+- **Governing claim:** Heaven is personal communion with the Father through Christ in the Spirit. God is the supernatural end and happiness of the blessed; the immediate vision preserves creaturely identity and awaits bodily and cosmic consummation.
+- **Included:** John 14/17; the Beatitudes; heavenly worship in Revelation 4–5; created desire and grace; Benedictus Deus; light of glory, finite knowledge, and degrees of vision; perfected freedom and charity; Mary, angels, saints, and intercession; holiness and purification; embodied resurrection; renewed creation and earthly duty; relationships and memory; divine justice and present intercession for others; Eucharistic foretaste; growth in prayer and the theological virtue of hope; annual renewal of desire for heaven.
+- **Source depth:** Augustine XXII.30, Aquinas I.12/I–II.2.8/3.8, Irenaeus V.2.2–3, Cyprian De mortalitate 26, Bernard De diligendo Deo I/VII–X, Francis de Sales Introduction I.16, and Newman's first Parochial and Plain Sermon supply developed arguments. Newman is explicitly identified as writing before his reception into the Catholic Church. No author supplies a substitute for the governing Catholic teaching.
+- **Sibling boundaries:** Judgment owns the developed account of purgatory and sacramental repentance; Death owns dying and accompaniment; Hell owns the full treatment of eternal punishment. Heaven retains the connections required to stand independently while centering desire for God and the fullness of glory.
+- **Limits:** No celestial geography, private revelation, precise psychology of heavenly memory or recognition, physics of resurrection, exhaustive account of nature/grace controversies, or survey of theological schools. Matthew 22:30 directly excludes marriage in the resurrection. Bernard's account of final bodily fullness does not control immediate postmortem vision; Benedict XII does. Irenaeus is not presented as teaching the later definition.
+- **Authority:** Scripture within Catholic teaching; definitive and authoritative teaching distinguished from attributed theological explanations and spiritual testimony. Concrete applications are original source-grounded synthesis. No vocal prayer has been composed, translated, or adapted.
+- **Source review:** bounded direct reading and comparison on 2026-10-13, following the earlier 2026-10-12 checks. Exact witnesses, consultation bounds, rights, disagreements, and binding states are in `source-audit.md` and `source-bindings.toml`.
+- **Production boundary:** final timestamp, shared contents and formatting, source-inventory/family refresh, independent review, build, all-page inspection, installed artifacts, web edition, catalog, and release disposition are coordinated separately. Earlier brief-version acceptance does not approve this expansion. Claude publications are outside scope.
 
 ## Historical scope reviews
 
-The following entries describe earlier versions and remain historical records. They do not certify the revised text or its current production state.
+The July reviews describe earlier texts and do not certify this expansion.
 
-## Staleness review — 2026-07-26
-Both candidates preserved beatific vision, bodily resurrection, communion, and epistemic limits. **No material change.** See `src/sources/inventories/four-last-things-staleness-review-2026-07-26.md`.
+### 2026-07-26
 
-## Staleness review — 2026-07-27
+The then-current candidates preserved beatific vision, bodily resurrection, communion, and epistemic limits. No material doctrinal change was identified. See `src/sources/inventories/four-last-things-staleness-review-2026-07-26.md`.
 
-The old, minimal, and research-first treatments were compared after the bound
-Catechism and Irenaeus works expanded. Catechism 1322–1323 and Irenaeus
-I.10.1–3, III.3.1–4, III.22.4, and V.2.2–3 do not alter the controlling claims
-about beatific vision, creaturely identity, communion, bodily resurrection,
-renewed creation, or speculative limits. The candidates agree in substance.
-**No material change.**
+### 2026-07-27
+
+The then-current candidates were compared after the bound Catechism and Irenaeus works expanded. The additional loci did not alter their controlling claims concerning vision, creaturely identity, communion, resurrection, renewed creation, or speculative limits. That comparison concerned the earlier candidates, not the present extended essay.

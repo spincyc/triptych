@@ -2,30 +2,37 @@ schema = 2
 record_type = "bindings"
 document = "articles/faith/four-last-things-03-hell"
 
-# Live-page checks are documented in source-audit.md. Cataloged bindings do
-# not assert acquisition or verification of a dated central artifact.
+# Inspection and bounded scan collation are documented in source-audit.md.
 
 [[bindings]]
 source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
-loci = ["1021", "1030-1038", "1735", "1854-1861"]
+loci = ["1021", "1030-1038", "1451-1460", "1735", "1854-1863", "2284-2287"]
 role = "textual-control"
 states = ["cataloged"]
-context = "Official English teaching, directly consulted at the listed passages during this revision. Catalog identity is retained without treating live-page inspection as verification of an exact registered artifact."
+context = "Official English passages directly read for the 2026-10-13 extended contemplative revision, including mortal and venial sin, contrition, confession, reparation, finality, and suffrages for the departed. Recalibrated expansion adds the complete 2284-2287 treatment of scandal, directly read on the current official page. Live-page inspection is not verification of a dated retained artifact."
 
 [[bindings]]
 source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183"
-loci = ["Matt.25.31-46"]
+loci = ["Matt.5.21-30", "Matt.7.13-27", "Matt.13.24-50", "Matt.25.31-46"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
-context = "The complete cited ranges were read in the registered English verse TSV on 2026-10-12. Article paraphrases the passages; no Greek textual collation or exhaustive exegetical survey is claimed."
+context = "All cited ranges directly read in retained Challoner TSV on 2026-10-13, with context 5.21-32,7.13-29,13.24-50 and the whole chapter25. Develops reconciliation, heart, renunciation, obedience, harvest and charity. Quotes25.41; no Greek textual collation or exhaustive exegetical survey."
 source_fingerprint = "sha256:ed47ecb092ecb6256fb84450e8ad39d0debf2efe6c65442199a76a7fb1a8b98b"
 
 [[bindings]]
-source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
-loci = ["Luke.13.22-30"]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-48-mark-69b4cb75"
+loci = ["Mark.9.40-47"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
-context = "The complete cited ranges were read in the registered English verse TSV on 2026-10-12. Article paraphrases the passages; no Greek textual collation or exhaustive exegetical survey is claimed."
+context = "Complete retained Challoner 9.32-49 read on 2026-10-13. Printed citation follows this witness's own 9.40-47 numbering. Little ones, scandal, costly renunciation and unquenchable fire; paraphrase only."
+source_fingerprint = "sha256:2b4848908df9163a705b6532d1b80e55d35bc75bf2826f2ba03cb69b9f7ff025"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+loci = ["Luke.15.11-24", "Luke.16.13-31"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete retained Challoner15.11-32 and whole chapter16 read on2026-10-13. Rich man and Lazarus read with God/mammon and self-justification context; fixed separation and the call to hear existing revelation. Returning son's reception develops mercy. No geography inferred."
 source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
 
 [[bindings]]
@@ -33,7 +40,7 @@ source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gute
 loci = ["John.5.28-29"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
-context = "The complete cited ranges were read in the registered English verse TSV on 2026-10-12. Article paraphrases the passages; no Greek textual collation or exhaustive exegetical survey is claimed."
+context = "The complete cited ranges were read in the registered English verse TSV on 2026-10-13. Article quotes Matthew 25:41 and otherwise paraphrases; no Greek textual collation or exhaustive exegetical survey is claimed."
 source_fingerprint = "sha256:4498ea55e49e3577649969ed0bcf456423b8aec2f9edda55586c37190dfe77a4"
 
 [[bindings]]
@@ -41,42 +48,140 @@ source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gute
 loci = ["1Tim.2.1-6"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
-context = "The complete cited ranges were read in the registered English verse TSV on 2026-10-12. Article paraphrases the passages; no Greek textual collation or exhaustive exegetical survey is claimed."
+context = "The complete cited ranges were read in the registered English verse TSV on 2026-10-13. Article quotes Matthew 25:41 and otherwise paraphrases; no Greek textual collation or exhaustive exegetical survey is claimed."
 source_fingerprint = "sha256:6a1bc30255ec2edfbeffa18aff78ca993fa666cb5b4b61f17a4efd0f9c2d0018"
-
-[[bindings]]
-source_id = "passage.augustine.de-civitate-dei.dods-1871.21.11"
-loci = ["21.11"]
-role = "reception"
-states = ["cataloged", "acquired", "inspected"]
-context = "Complete registered Dods 1871 transcription passage read on 2026-10-12. Used as an identified theological argument, not an additional definition or an assertion of patristic unanimity. No facsimile or Latin critical-text collation claimed."
-source_fingerprint = "sha256:5037f4eff5d09c664e46e8e1ca3d606ada6b0127e8463b89a6adc8657f705da7"
 
 [[bindings]]
 source_id = "passage.augustine.de-civitate-dei.dods-1871.21.23"
 loci = ["21.23"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-context = "Complete registered Dods 1871 transcription passage read on 2026-10-12. Used as an identified theological argument, not an additional definition or an assertion of patristic unanimity. No facsimile or Latin critical-text collation claimed."
+context = "Complete registered Dods 1871 transcription passage read on 2026-10-13. Used as an identified theological argument, not an additional definition or an assertion of patristic unanimity. No facsimile or Latin critical-text collation claimed."
 source_fingerprint = "sha256:53f1925087447da2288ee366b35aacc8dbed1917fddfa31f14a98b3bd4ec43f5"
 
 [[bindings]]
 source_id = "work.thomas-aquinas.summa-theologiae"
-loci = ["I-II.87.3.corpus", "I-II.87.3.reply-1", "II-II.83.2.corpus"]
+loci = ["I-II.87.3.corpus", "I-II.87.3.reply-1", "I-II.87.3.reply-2", "I-II.87.3.reply-3", "I-II.87.3.reply-4"]
 role = "reception"
 states = ["cataloged"]
-context = "Exact articles and relevant replies checked in the English Dominican 1920 translation as delivered by New Advent on 2026-10-12. The work-level catalog binding deliberately does not misidentify those pages as the registered Leonine volume or claim an exact acquired artifact. URLs and inference limits are in the audit."
+context = "English Dominican 1920 translation delivered by New Advent, article 87.3 and replies directly consulted on 2026-10-13. Explains the loss of charity and its restoration by grace. Work binding does not misidentify the live English page as a retained Latin edition."
 
 [[bindings]]
-source_id = "edition.john-paul-ii.general-audience-1999-07-28.english-vatican-web-2026-07-25"
-loci = ["3", "4"]
-role = "textual-control"
-states = ["cataloged"]
-context = "Official English audience read directly on 2026-10-12. Preserves the express exception without special divine revelation and uses symbolic imagery without denying punishment. No inference from silence or claim about every rite/person is made."
+source_id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-secunda-secundae.pg18755-body-13b14d17"
+loci = ["II-II.19.1.corpus", "II-II.19.1.reply-2", "II-II.19.2.corpus", "II-II.19.2.reply-3", "II-II.19.4.corpus", "II-II.19.4.reply-1", "II-II.19.6.corpus", "II-II.19.7.corpus", "II-II.19.9.corpus", "II-II.19.9.reply-1", "II-II.19.10.corpus", "II-II.19.10.reply-3", "II-II.43.1.corpus", "II-II.43.1.reply-3", "II-II.43.1.reply-4", "II-II.43.2.corpus", "II-II.43.7.corpus", "II-II.43.7.reply-2", "II-II.43.7.reply-5"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "English Dominican Gutenberg18755 electronic text (2006), with disclosed editorial modifications, not an asserted facsimile printing. Complete selected articles read including objections and replies: 19.1-2,4,6-7,9-10 with 3,5,8 as context; 43.1-2,7. Exact read source matched retained derivative, including body lines 8179-8886,19303-19494,19741-19878. The erroneous headers for canonical 19.7-8 are retained; titles and order were checked against New Advent. Filial fear, hope, punishment-fear, scandal, free consent and prudence. No independent verification of authors quoted inside Thomas or Latin collation claimed."
+source_fingerprint = "sha256:a85980f155106dc475c0a698619c509a12e9ec9f175ff42dd4f11734323234e9"
 
 [[bindings]]
-source_id = "edition.benedict-xvi.spe-salvi.english-vatican-web-2026-07-25"
-loci = ["45", "46", "47"]
+source_id = "segment.augustine-of-hippo.confessiones.ccel-web-2026-10-13.complete-work"
+loci = ["8.5.10", "8.5.11", "8.5.12", "8.8.19", "8.8.20", "8.9.21", "8.10.22", "8.10.23", "8.10.24", "8.11.25", "8.11.26", "8.11.27", "8.12.28", "8.12.29", "8.12.30"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete cited chapters read in the exact retained Pilkington NPNF I/1 CCEL witness, 2026-10-13, anthology lines 11076-11139 and 11544-11895, with adjacent context. Habit, divided willing, personal responsibility, Continence's invitation, conversion and gratitude. The author's narrative is distinguished from the editor's extensive footnotes; no print or Latin collation claimed."
+source_fingerprint = "sha256:f47f415a9d5cf7e75e5cd075b7218c9bcd89ea7dc6e935b655fbb77e86d59a86"
+
+[[bindings]]
+source_id = "segment.fourth-lateran-council.firmiter-credimus.2026-09-29-latin-patristica.complete-constitution"
+loci = ["complete-text"]
 role = "textual-control"
-states = ["cataloged"]
-context = "Official English paragraphs read directly on 2026-10-12. Radical rejection, holiness and purification are distinguished; the qualified supposition in paragraph 46 is not a population revelation."
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete retained historical Latin text read, especially lines 29-31 on bodily resurrection and eternal destinies. English paraphrase; dated web transcription, no print-edition collation."
+source_fingerprint = "sha256:92daebd55a99f65bc1817a2f2e4c4cf3016457cc7bb36218ca2a69bcc78901f5"
+
+[[bindings]]
+source_id = "passage.anonymous.martyrdom-of-polycarp.ccel-web-2026-10-13.11"
+loci = ["11"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete chapter 11 in CCEL ANF I, with context 9-12 read. The Church of Smyrna narrates Polycarp; this is not a work authored by him. Retained download, no print-image collation."
+source_fingerprint = "sha256:8558d4d7045c7493fb4ced00a25f2652f25bbcad3138b6d8db6b80a1022e2853"
+
+[[bindings]]
+source_id = "passage.cyprian.ad-demetrianum.ccel-web-2026-10-13.24-25"
+loci = ["24-25"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete CCEL ANF V passage and preceding section 23 read: eternal punishment followed by appeal for present repentance and charity to persecutors. No print-image collation."
+source_fingerprint = "sha256:85fac8cfec9cd3b0bf0bb750eb45d76e5ab35593e503bd849a49669f353df873"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06.ccel-text-56d84cfa"
+loci = ["Catechetical Lecture 18.18-20"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Cyril Lecture XVIII.18-20 read at lines 19848-19900, with context XVIII.1 and 15-24. Uses truthful container because constituent locus grammar does not cover Lecture XVIII. Gifford revised English; resurrection is future, not at individual death."
+source_fingerprint = "sha256:1f357ee73bda8276cc25eb0133278376e91529929c0187de2d364f9c3b192261"
+
+[[bindings]]
+source_id = "segment.john-chrysostom.homiliae-in-matthaeum.ccel-web-2026-09-17.complete-homilies"
+loci = ["23.9", "23.10", "23.11", "23.12"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Retained Prevost/Riddle CCEL text, Homily 23.9-12 (lines 15499-15729), with preceding context read. Loss of Christ, the hungry, repentance and almsgiving. No New Advent modernization or print-image collation substituted."
+source_fingerprint = "sha256:3256f7ab4e49f1dc14e2a0ccbd11d96e3081e94da59d9301d628ce87055c3e88"
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf"
+loci = ["13.2"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete Dods XIII.2 read at lines 20766-20813 with surrounding context. Second death joins enduring existence, bodily punishment, and loss of life with God; not annihilation."
+source_fingerprint = "sha256:3b6e07da2d1ed3cedf883f7671a37d82f99427badc4daa23239366798e78d34b"
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+loci = ["21.9", "21.10"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete Dods XXI.9-10 read at lines 17321-17450 with context; Augustine allows different worm interpretations and affirms bodily suffering by fire. His explanation is attributed, not a claim of patristic unanimity."
+source_fingerprint = "sha256:6bd16ca34656e4a17b7967a6b8ce070ebb4fdffa9b8c855088ab3e08e30bf996"
+
+[[bindings]]
+source_id = "passage.ignatius-of-loyola.exercitia-spiritualia.mullan-1914.first-week-fifth-exercise"
+loci = ["First Week, Fifth Exercise (65-71)"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Whole Fifth Exercise read in complete Mullan 1914 English witness; printed pp.45-46 visually checked. Sensory method leads to colloquy with Christ and gratitude. OCR is imperfect; no raw OCR quotation."
+source_fingerprint = "sha256:0abe1dfa5122182521471ecf6764f1f0fb4fccb6cba9ff803f68f5069ebd711f"
+
+[[bindings]]
+source_id = "artifact.ignatius-of-loyola.exercitia-spiritualia.mullan-1914.historical-ocr-fe256c5b"
+loci = ["General Confession with Communion (44)"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Whole unnumbered General Confession with Communion leaf read and visually checked in Mullan1914 scan, PDFpage58, on2026-10-13. Voluntary general confession and its possible fruits; no annual general-confession obligation inferred."
+source_fingerprint = "sha256:c28c780420f5e9fb99a0bae8034c37344a2bccb211ca36f38b5c6ae68bfedc2c"
+
+[[bindings]]
+source_id = "artifact.francis-de-sales.introduction-a-la-vie-devote.rivingtons-1876.historical-ocr-8159693d"
+loci = ["I.15", "I.19", "V.1", "V.2", "V.3", "V.15"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Anonymous Rivingtons1876 English printing, title page checked. Whole cited loci read; bounded earlier scan checks pp.41-42,51-52,347,371-372; extended revision newly collated complete pp.348-353 (V.2-3) against retained OCR. Confession, annual renewal, gratitude, patient examination and specific resolutions are Sales; contemporary applications are synthesis."
+source_fingerprint = "sha256:21e2850feaa938628c58af791f6032ab2dd8db3450e4a3d55cd1051803d5d5f2"
+
+[[bindings]]
+source_id = "artifact.alphonsus-liguori.apparecchio-alla-morte.duffy-1843.historical-ocr-d25bba22"
+loci = ["XVI.1-3", "XVII.1", "XXVI.1", "XXVI.3", "XXVII.1", "XXXI.1"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Anonymous Duffy1843 printing, not archive label1893. Cited sections reread for extended draft; bounded image checks pp.196,205-206,209,314,329,376,378. Added XXVII.1 eternity; source advocates elsewhere numbers and physical details not adopted by this selection. Whole chapter bounds are not full image collation; embedded quotations of other authors not independently verified."
+source_fingerprint = "sha256:f8f14339e6eebf3147ed446047f190ca9edb57ddcae274ff41a9c1e401dcd120"
+
+[[bindings]]
+source_id = "passage.alphonsus-liguori.apparecchio-alla-morte.duffy-1843.17.1-prayer-perseverance"
+loci = ["XVII.1, Affections and Prayers, p. 209"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Closing prayer is one complete received English sentence, reproduced without adaptation, visually checked at printed p.209. This binding verifies this sentence, not the whole prayer or printing."
+source_fingerprint = "sha256:7bdae0dd67888b9127a9497e6fc2724b223c1c4db3eeac7740a13efe6ea45dcd"
+
+[[bindings]]
+source_id = "passage.teresa-of-avila.libro-de-la-vida.lewis-zimmerman-1904.32.6-11"
+loci = ["32.6-11"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Lewis/Zimmerman 1904 Life32.1-17 read in complete text with scan comparison; pp.287-290 visually checked. Uses personal testimony about gratitude, endurance, concern for souls and fidelity; no additional dogmatic definition."
+source_fingerprint = "sha256:5637df1d9fb336904d3e1fea24d249bf137cab5a6c60c84bbad5b173a8793cd6"
