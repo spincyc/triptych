@@ -18,7 +18,7 @@ and Claude titles and both reading and PDF links. The current contemplative
 introduction and subject descriptions remain appropriate. This correction owns
 catalogue presentation, not either provider's essay text or PDF.
 
-**Reviewed; publication pending.** The starting workspace matches fetched main
+**Published and verified.** The starting workspace matched fetched main
 at `7abcb2274`; no integration commit is needed. All sixteen reading/PDF links
 are preserved. Chromium checks and screenshot review cover widths of 1440,
 1024, 768, 393 and 320 pixels. The table uses horizontal panning on phones,
@@ -28,7 +28,11 @@ changed, and all 254 publication PDF hashes match the previous deployment.
 Deployment-source, release-binding, completion-register, site-build and
 GitHub Pages artifact checks pass. The accepted Faith HTML SHA-256 is
 `f363b10bd1dbf5c8e1cd7df2859b87914d6b1f48b36809d050435995e2e7eac6`.
-An ordinary main push and verified live deployment remain open.
+Commit `295dbe7f830ff221612c404947c385c04023bfd4` reached main by ordinary
+fast-forward. [Pages run 38499374292](https://github.com/spincyc/triptych/actions/runs/38499374292)
+and repository hygiene both succeeded. The live Faith page, all sixteen
+reading/PDF targets and the publication manifest return HTTP 200 and match
+the reviewed build byte for byte. The catalogue correction is complete.
 
 ## GPT Four Last Things as spiritual reading, 2026-10-13
 

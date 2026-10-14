@@ -4,7 +4,7 @@ schema_version = 1
 id = "gpt-four-last-things-catalogue-table-2026-10-13"
 owner = "PROJECT-WORK.md"
 promise = "Restore the Four Last Things document table on the Faith web catalogue, preserve the correct titles and reading/PDF links for both providers, reconcile current main, and publish the verified correction to main."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "gpt-flt-catalogue-table-rendering"
@@ -16,7 +16,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "gpt-flt-catalogue-table-publication"
   criterion = "The correction is reconciled with current main, required publication gates pass, an ordinary main push deploys successfully, and the live Faith catalogue matches the reviewed table."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md", "release/public-alpha.json"]
   check = "path_exists"
 
