@@ -1,0 +1,87 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 518497,
+   "edition_owned": true,
+   "id": "artifact.francis-de-sales.introduction-a-la-vie-devote.rivingtons-1876.historical-ocr-8159693d",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Full historical printing as represented in the offered OCR, with original front matter, body, notes and any terminal matter. Only the specified modern front wrapper is omitted; OCR errors and digitization labels remain. This is not a facsimile or a corrected transcription. No completeness attestation beyond the whole offered OCR response is asserted. Measured extent: 518497 bytes; 16558 physical lines. Acquisition does not imply inspection of the whole work.",
+   "page_count": null,
+   "retrieved": "2026-10-13",
+   "rights": "public-domain",
+   "rights_basis": "The identified 1876 printed English text is public domain in the United States by publication before 1931 (U.S. Copyright Office, Circular 22, https://www.copyright.gov/circs/circ22.pdf, consulted 2026-10-13). The retained text is a mechanical OCR transcription of that printing; no new editorial authorship is identified in the historical text. Triptych claims no exclusive rights in that wording. The modern introductory prose is excluded. Remaining short digitization labels identify the mechanical source and are not a license or claim of new rights in the historical wording.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/introductiontod00salegoog/introductiontod00salegoog_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 521497,
+   "edition_owned": true,
+   "id": "artifact.francis-de-sales.introduction-a-la-vie-devote.rivingtons-1876.ia-raw-ocr-0ade4ec2",
+   "media_type": "text/plain; charset=utf-8",
+   "page_count": null,
+   "retrieved": "2026-10-13",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/introductiontod00salegoog/introductiontod00salegoog_djvu.txt",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1876",
+  "editors": [],
+  "id": "edition.francis-de-sales.introduction-a-la-vie-devote.rivingtons-1876",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "London, Oxford and Cambridge: Rivingtons, 1876; Library of Spiritual Works for English Catholics",
+  "title": "Introduction to the Devout Life: A New Translation",
+  "translators": [],
+  "year": 1876
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.francis-de-sales.introduction-a-la-vie-devote.rivingtons-1876.historical-ocr-8159693d",
+   "artifact_type": "normalized-text",
+   "context": "Part I, chapter XV, Seventh Meditation, On Hell; printed pages 41–42.",
+   "id": "passage.francis-de-sales.introduction-a-la-vie-devote.rivingtons-1876.1.15",
+   "locus": "I.15",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "This complete chapter was read in the exact retained text on 2026-10-13. The research collation also visually checked printed pages 41–42 in the 1876 scan. The raw OCR remains uncorrected; no whole-work collation is implied.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The identified 1876 printed English text is public domain in the United States by publication before 1931 (U.S. Copyright Office, Circular 22, https://www.copyright.gov/circs/circ22.pdf, consulted 2026-10-13). The retained text is a mechanical OCR transcription of that printing; no new editorial authorship is identified in the historical text. Triptych claims no exclusive rights in that wording. The modern introductory prose is excluded. Remaining short digitization labels identify the mechanical source and are not a license or claim of new rights in the historical wording.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": "https://archive.org/download/introductiontod00salegoog/introductiontod00salegoog_djvu.txt",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.francis-de-sales.introduction-a-la-vie-devote.rivingtons-1876.1.15.json",
+   "verified_on": null,
+   "words": 349
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Introduction to the Devout Life",
+   "Philothea",
+   "Philothée"
+  ],
+  "author": "Francis de Sales",
+  "category": "spiritual-treatise",
+  "description": "Introduction à la vie dévote Author/search alias: François de Sales. The 2026-09-06 reconciliation retains the English title Introduction to the Devout Life and the work-title aliases Philothea and Philothée; author-name and title identity remain distinct. The independent English and French acquisition records remain separate.",
+  "id": "work.francis-de-sales.introduction-a-la-vie-devote",
+  "languages": [
+   "fr"
+  ],
+  "title": "Introduction à la vie dévote"
+ }
+}

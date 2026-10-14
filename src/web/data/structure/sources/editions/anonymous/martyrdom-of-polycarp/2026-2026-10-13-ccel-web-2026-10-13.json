@@ -1,0 +1,79 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "plain-text",
+   "byte_size": null,
+   "edition_owned": false,
+   "id": "artifact.ante-nicene-fathers.volume-1.ccel-web-2026-10-13.ccel-text-ee9c7f0a",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": null,
+   "rights": "public-domain",
+   "rights_basis": "The exact complete download explicitly states Rights: Public Domain. The historical nineteenth-century translations and editorial text are public domain in the United States by publication date. The offered text and its source credits are retained unchanged.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://ccel.org/ccel/s/schaff/anf01/cache/anf01.txt",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-10-13",
+  "editors": [
+   "Alexander Roberts",
+   "James Donaldson",
+   "A. Cleveland Coxe"
+  ],
+  "id": "edition.anonymous.martyrdom-of-polycarp.ccel-web-2026-10-13",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "English translation in Ante-Nicene Fathers, volume 1; CCEL electronic witness acquired 2026-10-13",
+  "title": "The Encyclical Epistle of the Church at Smyrna Concerning the Martyrdom of the Holy Polycarp",
+  "translators": [
+   "Alexander Roberts",
+   "James Donaldson"
+  ],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.ante-nicene-fathers.volume-1.ccel-web-2026-10-13.ccel-text-ee9c7f0a",
+   "artifact_type": "plain-text",
+   "context": "Chapter 11, with the threat of burning and Polycarp’s reply about coming judgment; chapters 9–12 supplied the inspected context.",
+   "id": "passage.anonymous.martyrdom-of-polycarp.ccel-web-2026-10-13.11",
+   "locus": "11",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The exact CCEL passage and stated context were read on 2026-10-13. No Greek/Latin critical-edition or historical page-image collation is asserted.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The exact complete download explicitly states Rights: Public Domain. The historical nineteenth-century translations and editorial text are public domain in the United States by publication date. The offered text and its source credits are retained unchanged.",
+   "rights_jurisdiction": "United States",
+   "segment_id": "segment.anonymous.martyrdom-of-polycarp.ccel-web-2026-10-13.complete-treatise",
+   "source": "physical-lines",
+   "source_url": "https://ccel.org/ccel/s/schaff/anf01/cache/anf01.txt",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.anonymous.martyrdom-of-polycarp.ccel-web-2026-10-13.11.json",
+   "verified_on": null,
+   "words": 172
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Martyrdom of Polycarp"
+  ],
+  "author": "Church of Smyrna",
+  "category": "martyr-act",
+  "description": "The letter of the church of Smyrna recounting the martyrdom of Polycarp. A locus is the chapter.",
+  "id": "work.anonymous.martyrdom-of-polycarp",
+  "languages": [
+   "grc"
+  ],
+  "title": "Martyrium Polycarpi"
+ }
+}

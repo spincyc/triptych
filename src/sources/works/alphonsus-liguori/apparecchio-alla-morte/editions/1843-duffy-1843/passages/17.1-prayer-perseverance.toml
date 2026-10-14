@@ -1,0 +1,18 @@
+schema = 1
+record_type = "passage"
+id = "passage.alphonsus-liguori.apparecchio-alla-morte.duffy-1843.17.1-prayer-perseverance"
+edition_id = "edition.alphonsus-liguori.apparecchio-alla-morte.duffy-1843"
+artifact_id = "artifact.alphonsus-liguori.apparecchio-alla-morte.duffy-1843.historical-ocr-d25bba22"
+artifact_sha256 = "d25bba225830ffe0c35578dab384fe9dcb0d719aeea089c69348755d0ffa734b"
+locus = "XVII.1, Affections and Prayers, p. 209"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "One complete sentence from the Affections and Prayers after the First Point of the Seventeenth Consideration, printed page 209."
+physical_line_ranges = [[9050, 9052]]
+text = "My God, for the love of Jesus Christ, give me holy perseverance till death, along with your holy love."
+verified_on = "2026-10-13"
+notes = "The displayed source text was directly compared on 2026-10-13 with printed page 209 of the Internet Archive PDF at https://archive.org/download/preparation_for_death_1893-st_alphonsus_m_liguori/preparation_for_death_1893-st_alphonsus_m_liguori.pdf (exact PDF SHA-256 85e26b334ec341025b1b64918c919131eb76944cb0af6cad69c839d45d4e10cb). The running head says SECOND POINT, while that point’s body begins below the preceding prayer; the paragraph belongs to the First Point’s affections. The checked sentence is an excerpt, not the complete prayer. No modernization or OCR correction occurs in the displayed text."
+transcription_segments = [
+  { line = 9050, text = "My God, for the love of Jesus Christ," },
+  { line = 9051, text = "give me holy perseverance till death, along with" },
+  { line = 9052, text = "your holy love." },
+]

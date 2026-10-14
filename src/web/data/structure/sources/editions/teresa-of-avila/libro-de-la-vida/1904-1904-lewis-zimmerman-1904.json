@@ -1,0 +1,76 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 1357438,
+   "edition_owned": true,
+   "id": "artifact.teresa-of-avila.libro-de-la-vida.lewis-zimmerman-1904.ia-ocr-3b63bc87",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Exact full offered OCR of the 1904 printing, including front matter, all chapters and terminal matter; no modern introductory Google wrapper occurs. OCR errors are retained. This is not a facsimile or a corrected transcription. No completeness attestation beyond the whole offered OCR response is asserted. Measured extent: 1357438 bytes; 26245 physical lines. Acquisition does not imply inspection of the whole work.",
+   "page_count": null,
+   "retrieved": "2026-10-13",
+   "rights": "public-domain",
+   "rights_basis": "The identified 1904 printed English text is public domain in the United States by publication before 1931 (U.S. Copyright Office, Circular 22, https://www.copyright.gov/circs/circ22.pdf, consulted 2026-10-13). The retained text is a mechanical OCR transcription of that printing; no new editorial authorship is identified in the historical text. Triptych claims no exclusive rights in that wording. ",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/lifeofteresajesu00tereuoft/lifeofteresajesu00tereuoft_djvu.txt",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1904",
+  "editors": [
+   "Benedict Zimmerman"
+  ],
+  "id": "edition.teresa-of-avila.libro-de-la-vida.lewis-zimmerman-1904",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "Third edition enlarged; London: Thomas Baker, 1904",
+  "title": "The Life of St. Teresa of Jesus, of the Order of Our Lady of Carmel",
+  "translators": [
+   "David Lewis"
+  ],
+  "year": 1904
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.teresa-of-avila.libro-de-la-vida.lewis-zimmerman-1904.ia-ocr-3b63bc87",
+   "artifact_type": "ocr-text",
+   "context": "Chapter XXXII, sections 6–11, printed pages 287–290.",
+   "id": "passage.teresa-of-avila.libro-de-la-vida.lewis-zimmerman-1904.32.6-11",
+   "locus": "32.6-11",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "These sections were read in the exact retained OCR on 2026-10-13; research collation visually checked the corresponding printed pages 287–290. OCR and historical editorial notes remain distinct from Teresa’s text. No whole-work collation is implied.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The identified 1904 printed English text is public domain in the United States by publication before 1931 (U.S. Copyright Office, Circular 22, https://www.copyright.gov/circs/circ22.pdf, consulted 2026-10-13). The retained text is a mechanical OCR transcription of that printing; no new editorial authorship is identified in the historical text. Triptych claims no exclusive rights in that wording. ",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": "https://archive.org/download/lifeofteresajesu00tereuoft/lifeofteresajesu00tereuoft_djvu.txt",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.teresa-of-avila.libro-de-la-vida.lewis-zimmerman-1904.32.6-11.json",
+   "verified_on": null,
+   "words": 1256
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "The Life of St. Teresa of Jesus"
+  ],
+  "author": "Teresa of Avila",
+  "category": "autobiography",
+  "description": "Teresa of Jesus's account of her life, written by herself. A locus is chapter and section.",
+  "id": "work.teresa-of-avila.libro-de-la-vida",
+  "languages": [
+   "es"
+  ],
+  "title": "Libro de la vida"
+ }
+}

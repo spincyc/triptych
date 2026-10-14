@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-secunda-secundae.pg18755-body-13b14d17"
+edition_id = "edition.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-secunda-secundae"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Project Gutenberg’s catalog identifies eBook 18755 as public domain in the United States. Section 1.C of the attached parent license permits redistribution of the underlying text with all Project Gutenberg references removed. The complete text here preserves the electronic-editor attribution and corrections disclosure; Triptych asserts no exclusive rights in that wording."
+source_url = "https://www.gutenberg.org/ebooks/18755.txt.utf-8"
+provenance = "The Hell author lane acquired the entire offered UTF-8 HTTPS response on 2026-10-13 at https://www.gutenberg.org/ebooks/18755.txt.utf-8. Source registration reused and independently hashed those exact acquired bytes; no duplicate retrieval was made. Local and integrated origin/main source paths were searched for a complete Secunda Secundae witness before registration. The Gutenberg catalog identifies the eBook as public domain in the USA. No source bytes were reconstructed by a model."
+retrieved = "2026-10-13"
+sha256 = "13b14d17088d5c73e9832c94de400d93a906d436fafcf8c42f08f4a235785376"
+byte_size = 4115445
+path = "src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-secunda-secundae/artifacts/pg18755-body-13b14d17/source.txt"
+encoding = "utf-8"
+indexable = true
+notes = "Entire offered Secunda Secundae, questions 1–189, not selected articles; 79474 physical lines. Acquisition and header inspection do not attest whole-source collation. The electronic-editor corrections disclosure remains. In question 19 the articles on the beginning of wisdom and on initial fear have headers numbered one too low (6 and 7 instead of 7 and 8); ninth and following resume correct numbering. This known transcription defect is not silently corrected. Only the Gutenberg wrapper is omitted and CRLF normalized; interior text is preserved."
+rights_jurisdiction = "United States"
+derived_from = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-secunda-secundae.pg18755-raw-4fc84804"
+transformation = "Decode the exact parent as UTF-8; normalize CRLF to LF; take content strictly between the full START and END marker lines; strip boundary whitespace and append one LF. Preserve all interior wording and the electronic-editor notice. Assert no Project Gutenberg reference remains. No source text passes through a language model."

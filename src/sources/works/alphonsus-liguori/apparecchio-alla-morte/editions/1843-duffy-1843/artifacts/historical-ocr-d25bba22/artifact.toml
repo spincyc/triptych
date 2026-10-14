@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.alphonsus-liguori.apparecchio-alla-morte.duffy-1843.historical-ocr-d25bba22"
+edition_id = "edition.alphonsus-liguori.apparecchio-alla-morte.duffy-1843"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The identified 1843 printed English text is public domain in the United States by publication before 1931 (U.S. Copyright Office, Circular 22, https://www.copyright.gov/circs/circ22.pdf, consulted 2026-10-13). The retained text is a mechanical OCR transcription of that printing; no new editorial authorship is identified in the historical text. Triptych claims no exclusive rights in that wording. The modern introductory prose is excluded. Remaining short digitization labels identify the mechanical source and are not a license or claim of new rights in the historical wording."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/preparation_for_death_1893-st_alphonsus_m_liguori/preparation_for_death_1893-st_alphonsus_m_liguori_djvu.txt"
+provenance = "Complete Internet Archive DjVuTXT response acquired directly over HTTPS on 2026-10-13. The repository work catalog was searched for the author and known work titles before registration; existing work identities were reused. Alphonsus / Liguori / Preparation for Death / Apparecchio alla morte were searched without finding an existing work record. The acquired scan’s title page establishes the printing; item-name dates are not treated as controlling evidence. Internet Archive provides automated OCR, not a corrected scholarly transcription."
+retrieved = "2026-10-13"
+sha256 = "d25bba225830ffe0c35578dab384fe9dcb0d719aeea089c69348755d0ffa734b"
+byte_size = 735006
+path = "src/sources/works/alphonsus-liguori/apparecchio-alla-morte/editions/1843-duffy-1843/artifacts/historical-ocr-d25bba22/source.txt"
+derived_from = "artifact.alphonsus-liguori.apparecchio-alla-morte.duffy-1843.ia-raw-ocr-0d962db3"
+transformation = "Discard exactly the first 9 LF-delimited physical lines of the exact parent byte stream (the modern Google introductory wrapper); preserve every subsequent byte unchanged, including line endings, OCR errors and digitization labels. No text is routed through a language model."
+indexable = true
+encoding = "utf-8"
+notes = "Full historical printing as represented in the offered OCR, with original front matter, body, notes and any terminal matter. Only the specified modern front wrapper is omitted; OCR errors and digitization labels remain. This is not a facsimile or a corrected transcription. No completeness attestation beyond the whole offered OCR response is asserted. Measured extent: 735006 bytes; 19468 physical lines. Acquisition does not imply inspection of the whole work."

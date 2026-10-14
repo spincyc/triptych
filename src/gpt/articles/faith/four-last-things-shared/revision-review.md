@@ -1,3 +1,146 @@
+# Four Last Things: GPT review and publication record
+
+## Contemplative essays — 13 October 2026
+
+### Purpose and extent
+
+The maintainer requested sober Catholic spiritual reading for annual preparation
+for death, with each essay on the order of 25 pages. Hell must define its subject
+plainly and contemplate its reality through Scripture, the Fathers and saints.
+The requested audience is a Catholic reader receiving the Church's teaching.
+The same affirmative, contemplative voice governs all four GPT essays. Claude
+publications are excluded.
+
+The accepted manuscripts contain approximately 13,400 body words each. Their
+natural print extents are 25/25/25/24 pages, 99 in total, including contents and
+references. The shared 11pt type, one-inch margins and line spacing are unchanged.
+A compact contents page supports the longer form; paragraph widow and club
+controls prevent isolated final or first lines. The four web declarations opt
+into generated clickable section contents. No font enlargement or repetitive
+padding supplies the length.
+
+### Coverage and spiritual movement
+
+| Essay | Distinct work of the extended meditation |
+| --- | --- |
+| Death | Seventeen sections begin with dying in Christ and develop death's wound, Christ's victory, Baptism, the surviving soul and resurrection, release from fear, uncertain time, detachment, the penitent thief, Polycarp's fidelity, the last sacraments, care of the dying, grief, suffrages and surrender. Augustine, Cyprian, Ambrose, Benedict, Sales and Alphonsus receive contextual attention. |
+| Judgment | Fourteen sections join the personal encounter with Christ to particular and final judgment, conscience, speech, grace and merit, works of mercy, stewardship and authority, justice, confession, purification and perseverance. Cyril, Chrysostom, Augustine, Aquinas, Sales and Alphonsus guide sustained examination rather than supplying decorative quotations. |
+| Hell | Fourteen sections open with eternal punishment and dwell on Christ's warnings, loss of God, real punishment of soul and risen body, and eternity. Mortal sin, scandal, mercy, Augustine's divided will, holy fear, annual renewal, compassion for souls and perseverance give the doctrine concrete spiritual fruit. The meditation draws on ten patristic and saintly witnesses, with the Fourth Lateran Council and the Catechism as doctrinal controls. |
+| Heaven | Sixteen sections develop Trinitarian communion, desire and grace, the beatific vision, perfected freedom, the Beatitudes, saints and angels, holiness, resurrection, new creation, memory, divine justice, heavenly worship, the Eucharist, prayer and hope. Cyprian, Irenaeus, Augustine, Aquinas, Bernard, Sales and Newman contribute distinct arguments. |
+
+The opening of Hell states its reality, chief punishment, eternity and bodily
+consummation directly. The governing movement throughout the series is from
+received truth into repentance, sacramental life, charity and hope. Each essay
+stands alone while companion links preserve the sequence.
+
+### Research and source boundaries
+
+Each leaf's scope, source audit and canonical bindings identify the exact
+witnesses, inspected passages, authority and limits. Complete lawfully reusable
+historical sources acquired for the work are retained centrally, with edition
+identities, rights, fingerprints and reader projections. Modern wrappers and
+historical text are distinguished; a retained volume is not a claim that its
+entire contents were critically collated.
+
+Consequential edition checks include Alphonsus's Duffy 1843 title page despite
+the host's 1893 label, the unnamed translator of Sales's Rivingtons 1876 printing,
+Newman's 1869 title page and the cited sermon's Anglican period, and the 1922
+posthumous Supplement. The II–II electronic witness's faulty numbering around
+q. 19, articles 7–8 is disclosed; canonical loci were checked independently by
+content. The damaged transition into Chrysostom's Matthew homily 79 is excluded
+from use. The cited intact material is identified precisely.
+
+Defined doctrine, attributed theological explanation and spiritual application
+remain distinguishable. Judgment preserves the disputed status of the
+Supplement's account of disclosed forgiven sins and Benedict's proposed account
+of purifying encounter. Heaven distinguishes immediate vision from bodily
+resurrection, excludes marriage in the resurrection, and qualifies accounts of
+memory and the blessed's knowledge. Teresa's experience remains private
+mystical testimony. Hell ends with one exact 19-word received sentence from
+Alphonsus, checked against printed p. 209; no prayer is model-composed.
+
+### Independent content review
+
+Four separate reviewers read the entire final essays, including their added
+sections and completed references, scope, audits and bindings. Their independent
+checks covered consequential primary passages, with facsimile inspection where
+claimed. All four accepted the Catholic voice, doctrinal distinctions, source
+fidelity, pedagogical movement and substantive depth. The repeated themes of
+repentance, charity and surrender develop across distinct doctrinal and practical
+settings. No material source or content blocker remains.
+
+Corrections completed during review include the precise description of Cyril's
+hearers, the introduction to Alphonsus's prayer excerpt, exact venial-sin citation
+bounds, and research records whose coverage initially lagged the expanded body.
+The reviews do not constitute ecclesiastical approval, original-language critical
+collation or an exhaustive collection of every Father and saint.
+
+Accepted final body SHA-256 values:
+
+| Essay | `main.tex` SHA-256 |
+| --- | --- |
+| Death | `65934e0400158c4896a947c8774c7451a3ead4ea4a950b902818ae41d9a103f3` |
+| Judgment | `1673c58c9424bf3cd648b48ee7899cb04b68a1c9c4a2f906ee8994b83d22ee46` |
+| Hell | `1d6c9abe96ddbb469784a73483c0c6a0c084440af7fc54e491a37ba89abbaaa7` |
+| Heaven | `eb6da667b7ad864d20ad7bf4235531b371a7f9826d58931eccf023c7ac949b3c` |
+
+### Production and integration
+
+The accepted editions carry revision `2026-10-14T01:05:45Z`: Death, Judgment
+and Hell are 25 pages each; Heaven is 24. Four independent PDF reviewers
+inspected all 99 full pages and eight contact sheets after the final repairs.
+Contents lists fit on one page; Hell's appendix starts after the received prayer,
+and bibliography entries remain whole. These repairs changed no prose. Fonts,
+metadata, bookmarks, all 69 contents destinations and sixteen companion links
+passed. No clipping, unresolved reference or material layout defect remains.
+
+The four web editions passed complete source/PDF/HTML comparison: 587 prose
+paragraphs, 69 headings, references, the received prayer and attribution, timestamp
+and rights. Chromium checked 63 states at measured widths of 1440, 393 and 320
+pixels, including every contents jump. Representative screenshots were visibly
+inspected; the other states received geometry and navigation checks. There was
+no horizontal overflow. This was a scoped local-file review, not an accessibility
+certification. The PDFs are untagged and no physical print proof was examined.
+
+The four installed PDFs and Markdown files match the accepted hashes in
+`production-review.json`, which preserves the previous publication separately.
+Required source, deployment-source, web, catalogue, release-binding and site
+checks pass, including GitHub Pages artifact verification. Main deployment
+remains open.
+
+The optional web-contents implementation passed 186 merged web-edition tests;
+eight default/false GPT and Claude fixture conversions remained byte-identical.
+Thirty-six related source-inventory and publication-link tests also pass.
+Current source-library validation passes with 3,869 bindings. The broad check passed
+all non-example gates. Its first replay ran 247 examples and found 30 stale
+transcripts; official recapture refreshed 22 applicable outputs across eight
+tools, with unchanged implementation ASTs. Five older metadata/component/web
+count transcripts remain outside this revision. Three raw-staleness examples
+still report library growth under the explicitly suspended workflow in
+`guidance/staleness.md`; no unrelated research was rebaselined. Six declared
+model/network/write exemptions and three examples requiring an unavailable
+`build/core-last-20.pdf` remain. No success expectation was changed to accept
+a failure. These limits do not affect the passing deployment gates.
+
+Current main at `bd50b7dcd` was integrated by ordinary fast-forward on
+`feature/flt`. Both task histories and upstream publication records are preserved.
+The three additional published propers PDFs were recovered and hash-verified;
+all 254 installed publication PDFs matched the pre-revision live manifest.
+The final protected-Claude comparison is against this integrated main baseline:
+all 60 Claude catalogue entries are identical, and all 250 other installed
+publication PDFs retain their published hashes.
+
+### Superseded candidates
+
+The initial contemplative drafts produced 21 total pages and were stopped before
+installation or publication when the maintainer clarified 25 pages per essay.
+The first long-form calibration produced 19/20/20/19 pages from approximately
+10,000 body words each; distinct source-grounded additions supplied the required
+depth. Earlier review acceptances remain historical foundations and do not
+substitute for the four complete final-text reviews or final artifact review.
+
+---
+
 # Four Last Things: GPT revision, 12 October 2026
 
 ## Scope and decisions

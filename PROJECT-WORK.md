@@ -7,6 +7,48 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-13.
 
+## GPT Four Last Things as spiritual reading, 2026-10-13
+
+<!-- promised-deliverable: gpt-four-last-things-contemplative-2026-10-13 -->
+
+The maintainer rejected the published Hell essay's apologetic emphasis as
+unhelpful for annual preparation for death. The requested voice is Catholic,
+affirmative and sober: define hell plainly, contemplate its reality, receive
+the teaching of the Fathers and saints, and turn toward repentance and
+perseverance. This audience correction governs the whole GPT series. The
+earlier source and production acceptance below describes a completed
+publication, not acceptance of its fitness for this clarified purpose.
+Claude publications remain excluded.
+
+**Content and rendered production accepted; publication in progress.** The four
+expanded manuscripts contain approximately 13,400 body words each. Death,
+Judgment and Hell are 25 pages each; Heaven is 24 (99 total). Four independent
+reviewers read every final section and its source apparatus and inspected every
+rendered PDF page. All accept doctrine, source fidelity, Catholic voice,
+substantive depth and presentation. The original type size and margins remain.
+Compact contents support sustained reading in print and on the web.
+
+The first short contemplative candidates and the 19–20-page calibration were
+not installed or published. Distinct source-grounded additions achieved the
+required depth. The accepted revision is `2026-10-14T01:05:45Z`; all four PDFs
+and web editions are installed with verified hashes. Full web fidelity and 63
+Chromium states passed. Required publication checks and GitHub Pages artifact verification pass;
+verified main deployment remains open. All 60 Claude catalogue entries and the
+other 250 publication PDF hashes are unchanged. The shared review records the
+broad example-replay limits separately from the passing release gates.
+
+Current `origin/main` at `bd50b7dcd` has been integrated by ordinary fast-forward
+on `feature/flt`, preserving the nine intervening October 18-propers commits
+and both task histories. The three additional published PDFs were recovered
+and hash-verified; all 254 installed publication PDFs matched the pre-revision
+live manifest. The final protected-Claude comparison uses this integrated
+main baseline. The opt-in web contents implementation passes 186 merged tests;
+36 related source-inventory/publication-link tests also pass.
+
+Evidence belongs in the four GPT leaves' research records and
+`src/gpt/articles/faith/four-last-things-shared/revision-review.md`; the
+production receipt will identify the newly accepted artifacts after review.
+
 ## October 18 propers integration and deployment, 2026-10-13
 
 <!-- promised-deliverable: gpt-1962-twenty-first-main-2026-10-13 -->

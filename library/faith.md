@@ -24,10 +24,11 @@
 
 ## The Four Last Things
 
-For November and Advent: death and judgment, prayer for the dead, the saints'
-communion, and hope in Christ's return. The ChatGPT treatments form a sequence
-of concise essays; the Claude treatments are extended studies. Each can also
-be read on its own.
+For annual preparation for death, especially as the liturgical year closes:
+four sustained Catholic meditations on death, judgment, hell, and heaven.
+The ChatGPT essays draw on Scripture, the Fathers, and the saints to deepen
+repentance, sacramental life, charity, and hope. Each can also be read on its
+own; the Claude studies offer a separate treatment of the same mysteries.
 
 ### Death
 
@@ -45,9 +46,9 @@ Particular and final judgment, justice, mercy, and purification.
 
 ### Hell
 
-Final loss, freedom, conversion, and the limits of human judgment.
+Eternal punishment, the loss of God, repentance, and perseverance in grace.
 
-- **ChatGPT:** [The Refusal That Becomes Final](../web/gpt/articles/faith/four-last-things-03-hell.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-03-hell.pdf)
+- **ChatGPT:** [Hell: Eternal Punishment and the Call to Conversion](../web/gpt/articles/faith/four-last-things-03-hell.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-03-hell.pdf)
 - **Claude:** [Nothing Said of Anyone](../web/claude/articles/faith/four-last-things-03-hell.html) · [PDF](../pdf/claude/articles/faith/four-last-things-03-hell.pdf)
 
 ### Heaven

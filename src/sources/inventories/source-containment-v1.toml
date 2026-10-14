@@ -726,14 +726,15 @@ id = "work.nicene-and-post-nicene-fathers.series-1-volume-1"
 manifest_sha256 = "6bda4d2d00c13091823a8f3f08c2a23b90c0f52b2bd1fb93c744f3228ec30010"
 status = "partial"
 basis = "Description: 'containing Augustine's Confessions and a selection of his letters in English'. edition.augustine.epistula-55.english-npnf1-1-new-advent-web-2026-09-05 cites this volume."
-unresolved = "The selected letters are not enumerated beyond Epistula 55. The volume's only edition registers no artifact: it is cataloged, not held."
+unresolved = "The selected letters are not enumerated beyond Epistula 55. A complete CCEL electronic witness acquired 2026-10-13 is now retained, with the Confessions separately bounded; no specific facsimile printing identity is asserted."
 
 [[containers.constituents]]
 author = "Augustine of Hippo"
 title = "Confessiones"
 work_id = "work.augustine-of-hippo.confessiones"
 whole = true
-basis = "Description; edition notes: 'Pilkington translated the Confessions'."
+locator = "CCEL NPNF I/1 acquired 2026-10-13, physical lines 2417–20391"
+basis = "Description; translator credit in the complete retained CCEL witness and segment segment.augustine-of-hippo.confessiones.ccel-web-2026-10-13.complete-work."
 
 [[containers.constituents]]
 author = "Augustine of Hippo"
@@ -1214,8 +1215,16 @@ basis = "Passages trullo-canon-6, -12, -13, -30, -48 and trullo-introductory-not
 id = "work.ante-nicene-fathers.volume-1"
 manifest_sha256 = "934cc03a69eaeac397f601c032345828e6bbe14064acef77914fa24158a49c4f"
 status = "partial"
-basis = "Edition title: 'The Apostolic Fathers, Justin Martyr, and Irenaeus'. Segments into its OCR and facsimile for four works."
-unresolved = "The Apostolic Fathers other than Ignatius's Letter to the Smyrnaeans are not enumerated."
+basis = "Edition title: 'The Apostolic Fathers, Justin Martyr, and Irenaeus'. Segments into its OCR and facsimile for four works; the complete CCEL witness acquired 2026-10-13 also carries the registered Martyrdom of Polycarp segment."
+unresolved = "The Apostolic Fathers other than Ignatius's Letter to the Smyrnaeans and the Martyrdom of Polycarp are not enumerated."
+
+[[containers.constituents]]
+author = "Church of Smyrna"
+title = "Martyrdom of Polycarp"
+work_id = "work.anonymous.martyrdom-of-polycarp"
+whole = true
+locator = "CCEL ANF I acquired 2026-10-13, physical lines 3602–4169"
+basis = "Segment segment.anonymous.martyrdom-of-polycarp.ccel-web-2026-10-13.complete-treatise bounds the complete constituent and its supplied notes in the exact whole-volume download."
 
 [[containers.constituents]]
 author = "Ignatius of Antioch"
@@ -1319,8 +1328,24 @@ basis = "edition.origen.de-principiis.crombie-anf4-ccel-web-2026-07-25 and cromb
 id = "work.ante-nicene-fathers.volume-5"
 manifest_sha256 = "feff194d5606cb3316254fa1714147cb69fcda78549d1e3370e27b65fefe67fa"
 status = "partial"
-basis = "Description: 'Hippolytus, the works and letters of Cyprian of Carthage, the fragments of Caius, and Novatian'. Edition notes: 'The volume prints one recension of De ecclesiae catholicae unitate 4'."
-unresolved = "Hippolytus, Caius and Novatian are named by author only, and Cyprian's works beyond De unitate are not named. The volume's only edition registers no artifact."
+basis = "Description: 'Hippolytus, the works and letters of Cyprian of Carthage, the fragments of Caius, and Novatian'. Edition notes: 'The volume prints one recension of De ecclesiae catholicae unitate 4'. The complete CCEL witness acquired 2026-10-13 carries registered Ad Demetrianum and De mortalitate segments."
+unresolved = "Hippolytus, Caius and Novatian are named by author only, and Cyprian's works beyond De unitate, Ad Demetrianum and De mortalitate are not enumerated here. The CCEL electronic witness is retained; no exact Buffalo printing is asserted for it."
+
+[[containers.constituents]]
+author = "Cyprian of Carthage"
+title = "De mortalitate"
+work_id = "work.cyprian.de-mortalitate"
+whole = true
+locator = "CCEL ANF V acquired 2026-10-13, physical lines 46678–47354"
+basis = "Segment segment.cyprian.de-mortalitate.ccel-web-2026-10-13.complete-work bounds the complete treatise and its supplied notes within the retained whole volume."
+
+[[containers.constituents]]
+author = "Cyprian of Carthage"
+title = "Ad Demetrianum"
+work_id = "work.cyprian.ad-demetrianum"
+whole = true
+locator = "CCEL ANF V acquired 2026-10-13, physical lines 45594–46340"
+basis = "Segment segment.cyprian.ad-demetrianum.ccel-web-2026-10-13.complete-treatise bounds the complete treatise and its supplied notes in the exact whole-volume download."
 
 [[containers.constituents]]
 author = "Cyprian of Carthage"
@@ -3448,3 +3473,75 @@ work_id = "work.pseudo-dionysius-the-areopagite.de-caelesti-hierarchia"
 whole = true
 locator = "PG3 columns119\u2013340; artifact pages60\u2013170, including interspersed Corderius commentary"
 basis = "Machine-bounded constituent segment and inspected chapter-heading/page audit."
+
+# The acquired 1843 printing includes a separately authored appendix.
+
+[[containers]]
+id = "artifact.alphonsus-liguori.apparecchio-alla-morte.duffy-1843.historical-ocr-d25bba22"
+manifest_sha256 = "ef195d924052332721ad3ea4e015c910ca747dc71d6b8f06e287d524d7a1f8a6"
+status = "partial"
+basis = "The retained 1843 printing includes Preparation for Death, followed by an instruction explicitly headed By Blessed Leonard da Porto Maurizio; the title page likewise identifies that addition."
+unresolved = "The separate bibliographic identities and attribution of the intervening Protestation of Death and short prayers have not been established. Publisher advertisements follow the terminal THE END."
+
+[[containers.constituents]]
+author = "Alphonsus Maria de Liguori"
+title = "Preparation for Death"
+work_id = "work.alphonsus-liguori.apparecchio-alla-morte"
+whole = true
+locator = "Historical front matter and complete main work through physical line 18609 in the retained derivative"
+basis = "The source prints END Or THE PREPARATION FOR DEATH at retained line 18609 (raw OCR line 18618), before the supplemental prayers and Leonard instruction."
+
+[[containers.constituents]]
+author = "Leonard of Port Maurice"
+title = "On the Great Value Which a Religious Should Set on Making a Day’s Retreat Each Month, for the Purpose of Securing a Good Death"
+locator = "Retained derivative physical lines 18740–19131; raw OCR lines 18749–19140"
+basis = "The complete supplied instruction is headed Taken from a work entitled, The Sacred Manual and By Blessed Leonard da Porto Maurizio, and ends with THE END before the publisher advertisements. It is an excerpt from a larger work, not a complete Sacred Manual."
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-2-volume-10"
+manifest_sha256 = "190e160ad0ebafc395a70b9dd2431e6ffd70ceff391ac84b11f38da504387b6a"
+status = "partial"
+basis = "The acquired complete CCEL volume identifies selected works and letters of Ambrose; the De excessu constituent is separately registered and bounded."
+unresolved = "The other selected works and letters have not been enumerated in this containment review. Acquisition of the entire offered volume does not assert inspection of all its works."
+
+[[containers.constituents]]
+author = "Ambrose of Milan"
+title = "De excessu fratris Satyri"
+work_id = "work.ambrose.de-excessu-fratris-satyri"
+whole = true
+locator = "CCEL NPNF II/10 acquired 2026-10-13, physical lines 17092–20390"
+basis = "Segment segment.ambrose.de-excessu-fratris-satyri.ccel-web-2026-10-13.complete-work includes the introduction, both books and supplied notes."
+
+[[not_containers]]
+id = "artifact.anonymous-supplement-compiler.supplementum-tertiae-partis.english-dominicans-1922-questions-87-99.ia-ocr-21251eee"
+manifest_sha256 = "b91361380c4a0339df8514d811d88a328130dd62755e8e8e1b802eb3e0b02729"
+reason = "The terminal volume of the single registered Supplement compilation, questions 87–99 and its two appendices on limbo and purgatory. The work identity explicitly includes these appendices; the volume’s historical front matter does not introduce another independently authored work."
+
+[[containers]]
+id = "artifact.bernard-of-clairvaux.de-diligendo-deo.patmore-1884.ia-ocr-8a4037c2"
+manifest_sha256 = "c7d6727a6127995e6407da754a7d1c30698ad790adcdaab8c45a22e4003a6f47"
+status = "partial"
+basis = "The retained 1884 volume’s contents explicitly name On the Love of God, Fragments from a Fragment, and Three Rosaries of Our Lady."
+unresolved = "The underlying bibliographic identity of the fragments and authorship of the rosaries have not been established here; the title’s Bernard attribution is not extended automatically to every appended text."
+
+[[containers.constituents]]
+author = "Bernard of Clairvaux"
+title = "De diligendo Deo"
+work_id = "work.bernard-of-clairvaux.de-diligendo-deo"
+locator = "Printed pp. 3–52; OCR lines 142–1553"
+extent_unresolved = "The offered English presentation prints chapters I–XI; its relation to the fifteen-chapter form has not been collated. The complete offered printing is retained, without a whole-critical-work claim."
+basis = "Contents and consecutive chapter headings in the acquired 1884 Patmore printing."
+
+[[containers.constituents]]
+author = "Attributed to Bernard of Clairvaux in the printing"
+title = "Fragments from a Fragment"
+locator = "Printed pp. 55 onward, before Three Rosaries of Our Lady"
+extent_unresolved = "Underlying work identity and selection extent unestablished."
+basis = "Explicit contents and section heading in the retained OCR."
+
+[[containers.constituents]]
+author = "Authorship unestablished in this audit"
+title = "Three Rosaries of Our Lady"
+locator = "Printed pp. 157–222"
+extent_unresolved = "Bibliographic authorship and relation to an independent work unestablished."
+basis = "Explicit contents and section title in the retained OCR; no separate author identity is inferred from the volume title."

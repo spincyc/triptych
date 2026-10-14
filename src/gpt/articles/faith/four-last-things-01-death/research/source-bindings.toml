@@ -4,27 +4,27 @@ document = "articles/faith/four-last-things-01-death"
 
 [[bindings]]
 source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
-loci = ["624-626", "988-1014", "1021-1032", "1514-1525", "1684-1690", "2276-2279"]
+loci = ["624-630", "992-1014", "1021-1032", "1514-1525", "1684-1690", "2276-2279"]
 role = "textual-control"
 states = ["cataloged"]
-context = "The official English Catechism controls Christ's death, the same person's survival and resurrection, Baptism, anointing, Viaticum, funerals, suffrages, and care of the dying. The 2026-10-13 audit identifies direct current official-page checks for medical and sacramental boundaries. This edition-level cataloged binding does not claim exact central artifacts for every paragraph."
+context = "The official English Catechism controls Christ's real human death, continuing union of soul and body with the Word, resurrection, dying in Christ, sacramental care, funerals, suffrages, and moral care boundaries. Complete official section pages were acquired and the cited passages read on 2026-10-13; new encounters include 992-1004 and 1520-1523. Current pages were used for anointing, Christ's burial, funerals, and respect for life. The local audit records exact URLs and complete-response hashes. This edition-only binding does not certify new central artifacts or the whole Catechism."
 
 [[bindings]]
 source_id = "passage.second-vatican-council.gaudium-et-spes.english-vatican-web-2026-07-23.16-22"
 loci = ["16-22"]
 role = "textual-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
-context = "The registered complete-context passage was checked for the council's account of the human riddle before death, the seed of eternity, Christ's victory, and the vocation of the whole person."
+context = "The historical registered complete-context passage check is preserved. On 2026-10-13 the complete official document was downloaded again, with matching artifact SHA-256, and paragraph 18 re-read for death's wound, the eternal seed, Christ's victory, and communion of the whole person. This new bounded encounter is not a new review of every paragraphs 16-22."
 verified_on = "2026-07-24"
 source_fingerprint = "sha256:ec8a9a63b695fa783f7407672d00acb2b0f51aab5295d1a11995087c04425943"
 
 [[bindings]]
 source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf"
-loci = ["13.4-5"]
+loci = ["13.3-6"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:3b6e07da2d1ed3cedf883f7671a37d82f99427badc4daa23239366798e78d34b"
-context = "The retained Dods transcription, physical lines 20869-20945, was read on 2026-10-13 for why the baptized still die and why God's good use of death does not make death intrinsically good. No Latin or printed-image collation is claimed."
+context = "Dods XIII.3-6, physical lines 20813-20968, read on 2026-10-13, especially XIII.4-5: why the baptized still die, faith's unseen reward, martyrdom, and God's enabling the good use of death without making death intrinsically good. Application to ordinary illness, dependence, and habits of surrender is original pastoral synthesis. No critical Latin or printed-image collation is claimed."
 
 [[bindings]]
 source_id = "artifact.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.pg19950-body-4597132e"
@@ -32,7 +32,7 @@ loci = ["III.50.2.corpus", "III.50.3.corpus"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:44bb2918bacdd01a424eae980d78ad285fcea31c85426a00800aafd120952178"
-context = "The retained English electronic transcription of III q50 articles 2-3 was read with objections and replies on 2026-10-13. The answers at lines 25585-25599 and 25676-25685 explain the Word's continuing personal union with body and soul. The transcription is not a critical edition."
+context = "III q.50 articles 2-3 read with objections and replies on 2026-10-13; answers at lines 25585-25599 and 25676-25685 distinguish separation of the human soul from the body from their continuing personal union with the Word. This is an electronic historical translation, not a critical edition."
 
 [[bindings]]
 source_id = "artifact.holy-see.cdf-letter-eschatology-1979.english-vatican-web-2026-07-25.vatican-html"
@@ -40,11 +40,69 @@ loci = ["point-2", "point-3", "point-4", "point-5"]
 role = "textual-control"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:8657006e327b4870753aad476379ecfa6e98abb9f1c5236bebe0a70d6eae289d"
-context = "Complete official English letter read on 2026-10-13; re-fetched raw HTML matches the registered SHA-256 ebf18296bc257292ce87641bd3db239ca4cfb53bb3bcdf2277427675f042ef06. Points 2-5 control personal continuity, consciousness and will, prayer, and deferred resurrection. Authoritative CDF teaching, not a new papal definition. Restricted bytes remain outside tracked source."
+context = "Complete official English letter read on 2026-10-13; full raw HTML matches registered SHA-256 ebf18296bc257292ce87641bd3db239ca4cfb53bb3bcdf2277427675f042ef06. The article uses personal continuity, consciousness and will, efficacious prayer, deferred resurrection, and limits of arbitrary imaginative pictures. Authoritative Curial teaching approved for publication, not a new papal definition. Restricted source bytes stay in excluded scratch."
 
 [[bindings]]
 source_id = "edition.english-college-of-douay.douay-rheims-bible.american-1899-ebible"
-loci = ["John.6.55", "Rom.6.3-11", "Rom.14.8", "1Cor.15.12-49"]
+loci = ["Gen.2.17", "Gen.3.19", "Matt.6.19-21", "Matt.10.26-33", "Mark.14.32-42", "Luke.12.15-21", "Luke.12.35-40", "Luke.13.1-5", "Luke.22.54-62", "Luke.23.32-49", "John.6.55", "John.10.17-18", "John.11.17-44", "John.19.25-30", "John.20.19-29", "Rom.5.12-21", "Rom.6.3-13", "Rom.6.23", "Rom.8.31-39", "Rom.14.7-9", "1Cor.15.12-49", "Phil.1.20-26", "1Thess.4.12-17", "Heb.2.1-18", "Heb.4.14-16", "Heb.5.7-9", "James.5.14-15"]
 role = "textual-control"
 states = ["cataloged"]
-context = "Romans 6, Romans 14:8, and 1 Corinthians 15 were read in retained per-book verse tables on 2026-10-13 for baptismal death, belonging to Christ, and bodily resurrection. This cataloged edition reference does not pin or promote the entire biblical edition. The conventional phrase last enemy also appears in CCC 1008. John 6:55 was checked in the eBible delivery against CCC 1524 on 2026-10-13; the article now prints both that Douay-Rheims locus and the Catechism's John 6:54 numbering."
+context = "Biblical narrative and paraphrase were checked in retained per-chapter Douay-Rheims 1899 verse tables on 2026-10-13. The pagination-driven expansion additionally read the complete Hebrews 2 and the bounded contexts Hebrews 4:14-16, Matthew 10:26-33, Luke 22:54-62 and 23:32-49, and Romans 8:31-39. These control the added movements on freedom from fear and the penitent thief. Romans 14:8 supplies the only direct biblical quotation. John 6:55 is explicitly paired with CCC 1524's 6:54; 1 Thessalonians 4:12-17 is explicitly identified as Douay-Rheims numbering and the references state the modern 4:13-18 correspondence. This edition-level binding does not pin or promote the whole edition."
+
+[[bindings]]
+source_id = "segment.augustine-of-hippo.confessiones.ccel-web-2026-10-13.complete-work"
+loci = ["9.10.23", "9.10.24", "9.10.25", "9.10.26", "9.11.27", "9.11.28", "9.12.29", "9.12.30", "9.12.31", "9.12.32", "9.12.33", "9.13.34", "9.13.35", "9.13.36", "9.13.37"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f47f415a9d5cf7e75e5cd075b7218c9bcd89ea7dc6e935b655fbb77e86d59a86"
+context = "Complete IX.10-13 read in Pilkington's translation within the retained full CCEL NPNF1-1 delivery, lines 12853-13239 with editorial-note context. Used for the Ostia conversation, Monica's changed burial concern, remembrance at the altar, grief and tears, and Augustine's prayer for her sins. Polemical editorial notes are not attributed to Augustine. No new prayer text is offered and no image or Latin collation is claimed."
+
+[[bindings]]
+source_id = "segment.cyprian.de-mortalitate.ccel-web-2026-10-13.complete-work"
+loci = ["3", "4", "5", "6", "7", "8", "16", "17", "18", "20", "21", "26"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:411dd1e1ed49b182e3bec4a4abcc18bff71731328280932d452ae78764f9e0c0"
+context = "Treatise VII On Mortality 1-26 read in the complete retained CCEL ANF5 delivery, main text lines 46700-47222. Uses shared mortality, the warfare with vice, epidemic charity, martyrdom not at our disposal, desire for the heavenly homeland, and Cyprian's severe rebuke of hopeless mourning. The essay receives the latter alongside Christ's tears and Augustine's own grief; it does not invent patristic unanimity or use Cyprian's private reports in 19-20 as revealed doctrine."
+
+[[bindings]]
+source_id = "segment.ambrose.de-excessu-fratris-satyri.ccel-web-2026-10-13.complete-work"
+loci = ["2.1", "2.2", "2.3", "2.8"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:cbee6879cb0701ca92afb18a652c5c6c04daaecd6da013a5deebf0c86d8218af"
+context = "Book II paragraphs 1-20 read for context in the retained whole CCEL NPNF2-10 delivery, beginning at line 18229. The essay closely uses 1-3 and 8 for the fresh wound, the risk of sharp remedies, room for tears, resurrection consolation, and grateful memory. Broader ancient disciplinary and rhetorical assertions in the surrounding text are not generalized. Historical English transcription, no image collation."
+
+[[bindings]]
+source_id = "artifact.benedict-of-nursia.regula-benedicti.latin-wikisource-web-2026-09-05.regula-latin-text"
+loci = ["4"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:7437374ba0f7d381913f9581217e7f4d5d89a11a6b9475f572c4f23d2949cc27"
+context = "Entire chapter 4 read in retained Latin web-witness derivative on 2026-10-13, including works of mercy, daily remembrance of death, vigilance, reconciliation, and final refusal to despair of mercy. Original English explanatory paraphrase only; no vocal-prayer translation. The controlling artifact accurately identifies the source as partly proofread, not a critical edition; this encounter does not settle disputed wording."
+
+[[bindings]]
+source_id = "artifact.francis-de-sales.introduction-a-la-vie-devote.rivingtons-1876.historical-ocr-8159693d"
+loci = ["1.13"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:21e2850feaa938628c58af791f6032ab2dd8db3450e4a3d55cd1051803d5d5f2"
+verified_on = "2026-10-13"
+context = "Complete I.13 read in retained OCR, lines 2642-2765, and collated against printed pages 35-38 in the acquired scan, physical PDF 58-61. Checked uncertainty of season/place/warning, access to final confession, universal farewell, holy friendship, conscience, and request for Marian/saintly intercession. No OCR error affects these paraphrased claims. Translator remains unnamed; no reproduced or adapted vocal prayer."
+
+[[bindings]]
+source_id = "artifact.alphonsus-liguori.apparecchio-alla-morte.duffy-1843.historical-ocr-d25bba22"
+loci = ["IV.1", "V.1", "V.2"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:f8f14339e6eebf3147ed446047f190ca9edb57ddcae274ff41a9c1e401dcd120"
+verified_on = "2026-10-13"
+context = "IV.1 and V.1-2 read in retained OCR. Consequential claims collated against printed pages 60-61,70-71,74-75, physical PDF 77-78,87-88,91-92: certainty of death, putting one's death at a convenient distance, the temptation to sin now and confess tomorrow, and immediate conversion. Verification is limited to these paraphrases/pages, not every point or embedded ancient citation. Historical 1843 title controls over 1893 host label. No vocal prayer is reproduced."
+
+[[bindings]]
+source_id = "segment.anonymous.martyrdom-of-polycarp.ccel-web-2026-10-13.complete-treatise"
+loci = ["1", "4", "5", "7", "8", "9", "10", "11", "12", "14", "17", "18"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:6f5837f525712195bf8c51e7c107cc737bca9fded85eab41d79b0e4d2a58c4d8"
+context = "Complete chapters 1-22 and editorial apparatus read in the retained ANF1 CCEL delivery, lines 3602-4169, with preceding introduction for context. The essay closely uses the bounded chapters for refusal to manufacture martyrdom, prudent withdrawal, hospitality and intercession, eighty-six years of service (not an independently fixed age), grateful confession, resurrection hope in the historical prayer, Christ's adoration distinct from love of martyrs, and annual remembrance as preparation. The prayer is described, never supplied as an adapted recitation. Miraculous details and disputed chronology are not used; editorial matter is not assigned to the ancient Church of Smyrna. No Greek or printed-image collation is claimed."

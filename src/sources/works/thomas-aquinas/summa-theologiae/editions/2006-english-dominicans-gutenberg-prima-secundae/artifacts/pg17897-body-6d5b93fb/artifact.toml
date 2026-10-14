@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-prima-secundae.pg17897-body-6d5b93fb"
+edition_id = "edition.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-prima-secundae"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Project Gutenberg’s catalog identifies eBook 17897 as public domain in the United States. Section 1.C of the attached parent license permits redistribution of the underlying text with all Project Gutenberg references removed. The complete text here preserves the electronic-editor attribution and corrections disclosure; Triptych asserts no exclusive rights in that wording."
+source_url = "https://www.gutenberg.org/ebooks/17897.txt.utf-8"
+provenance = "Complete original HTTPS response acquired 2026-10-13. Local work/edition/artifact aliases and source paths on origin/main were checked for an existing Prima Secundae Gutenberg witness; the existing Summa work identity is reused. No source text was reconstructed by a model."
+retrieved = "2026-10-13"
+sha256 = "6d5b93fb68aefa34750cff19d297a0549a294ab4c20a7482d46b159bad487367"
+byte_size = 2828866
+path = "src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-prima-secundae/artifacts/pg17897-body-6d5b93fb/source.txt"
+encoding = "utf-8"
+indexable = true
+notes = "Entire offered Prima Secundae, questions 1–114, not selected articles; 54253 physical lines. Acquisition and header/edition inspection do not attest whole-text collation. Editor corrections and presentation differences are retained without silent emendation. Bibliographic and editor inspection does not substitute for checking the particular article used."
+rights_jurisdiction = "United States"
+derived_from = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-prima-secundae.pg17897-raw-9722b299"
+transformation = "Decode the exact parent as UTF-8; normalize CRLF to LF; take content strictly between the full START and END marker lines; strip boundary whitespace and append one LF. Preserve all interior wording and the electronic-editor notice. Assert no Project Gutenberg reference remains. No source text passes through a language model."
