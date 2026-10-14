@@ -1,6 +1,26 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-four-last-things-catalogue-table-2026-10-13"
+owner = "PROJECT-WORK.md"
+promise = "Restore the Four Last Things document table on the Faith web catalogue, preserve the correct titles and reading/PDF links for both providers, reconcile current main, and publish the verified correction to main."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "gpt-flt-catalogue-table-rendering"
+  criterion = "The Faith catalogue presents Death, Judgment, Hell and Heaven as four table rows with distinct ChatGPT and Claude titles and all sixteen correct reading/PDF links; desktop and narrow-screen rendering is reviewed, without changing either provider's publications."
+  status = "pass"
+  evidence = ["library/faith.md", "PROJECT-WORK.md"]
+  check = "path_exists"
+
+  [[deliverables.requirements]]
+  id = "gpt-flt-catalogue-table-publication"
+  criterion = "The correction is reconciled with current main, required publication gates pass, an ordinary main push deploys successfully, and the live Faith catalogue matches the reviewed table."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "release/public-alpha.json"]
+  check = "path_exists"
+
+[[deliverables]]
 id = "gpt-four-last-things-contemplative-2026-10-13"
 owner = "PROJECT-WORK.md"
 promise = "Recast the four GPT Four Last Things essays as sober Catholic spiritual reading for annual preparation for death, each on the order of 25 pages, especially a clear account of hell enriched by the Fathers and saints; preserve Claude publications and publish the reviewed revision to main."

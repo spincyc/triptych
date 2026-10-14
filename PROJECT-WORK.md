@@ -7,6 +7,29 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-13.
 
+## Four Last Things catalogue table, 2026-10-13
+
+<!-- promised-deliverable: gpt-four-last-things-catalogue-table-2026-10-13 -->
+
+The maintainer requests restoration of the document table on the web catalogue,
+reconciliation with current main, and publication to main. The Four Last Things
+section of `library/faith.md` again presents four rows with distinct ChatGPT
+and Claude titles and both reading and PDF links. The current contemplative
+introduction and subject descriptions remain appropriate. This correction owns
+catalogue presentation, not either provider's essay text or PDF.
+
+**Reviewed; publication pending.** The starting workspace matches fetched main
+at `7abcb2274`; no integration commit is needed. All sixteen reading/PDF links
+are preserved. Chromium checks and screenshot review cover widths of 1440,
+1024, 768, 393 and 320 pixels. The table uses horizontal panning on phones,
+without widening the page. This is local browser review, not physical-device
+or comprehensive accessibility testing. Neither provider's publication files
+changed, and all 254 publication PDF hashes match the previous deployment.
+Deployment-source, release-binding, completion-register, site-build and
+GitHub Pages artifact checks pass. The accepted Faith HTML SHA-256 is
+`f363b10bd1dbf5c8e1cd7df2859b87914d6b1f48b36809d050435995e2e7eac6`.
+An ordinary main push and verified live deployment remain open.
+
 ## GPT Four Last Things as spiritual reading, 2026-10-13
 
 <!-- promised-deliverable: gpt-four-last-things-contemplative-2026-10-13 -->

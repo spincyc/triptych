@@ -1762,7 +1762,7 @@ release attachment, announcement, or promotion.
 | `library/catholic-exorcism.md` | `cb8dc01280320b0377bd2d48e0013379b8acee3ede3d6255beaa37356c7c63db` |
 | `library/curriculums.md` | `4d6deabc3129f825c1f11677e6ac9f0afcdf62df68fb9965f0e9f2468e95ea32` |
 | `library/ecclesiastical-latin.md` | `79045a11252f9834170b8cd25ca3e471a871adc333e021892b4310d18f9e9fdd` |
-| `library/faith.md` | `414b90a6dfb62bdc539e0401757d3446841fa3f6e02cc4b78dcbee050d77278b` |
+| `library/faith.md` | `f37ca2dce8c91c87822daa9867b3e7c84b6d8c37fee338d2e0562a5641e4a0b9` |
 | `library/formation.md` | `1f307b80404e94b64a6d57208509725254535cbfa7a21be38df9d2e2dc0d7b1d` |
 | `library/heresies.md` | `ecec196802c48c2e86cd83f593e854438086c6c9dc898805105f305dd79239ee` |
 | `library/historical-accounts.md` | `24316cda039247b1f48b9828a83bbc1c9d36b70afcf314806eacb246837375ae` |
