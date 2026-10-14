@@ -1,0 +1,191 @@
+{
+  "record_type": "verified-main-publication",
+  "integration_commit": "24165557cefe1b64e11f4b528f74420ff4e279d0",
+  "prior_main": "e0aa02beda83f93fe935728b2595cf9eb8f4cb94",
+  "push_method": "Ordinary fast-forward push of HEAD to refs/heads/main; no published commit rewritten.",
+  "main_push_verified": true,
+  "workflow_url": "https://github.com/spincyc/triptych/actions/runs/38555208374",
+  "workflow_conclusion": "success",
+  "deployment_job_completed_at_utc": "2026-10-14T11:31:19Z",
+  "repository_hygiene": {
+    "conclusion": "success",
+    "headSha": "24165557cefe1b64e11f4b528f74420ff4e279d0",
+    "status": "completed",
+    "url": "https://github.com/spincyc/triptych/actions/runs/38555208328"
+  },
+  "validation_record": {
+    "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/main-integration.json",
+    "sha256": "667e5791bb4eafc2c6a99144d76b465da624bc30d9c4d62c93afc1e8075973bc"
+  },
+  "outgoing_object_audit": {
+    "range": "e0aa02beda83f93fe935728b2595cf9eb8f4cb94..24165557cefe1b64e11f4b528f74420ff4e279d0",
+    "objects": {
+      "commit": 6,
+      "tree": 263,
+      "blob": 475
+    },
+    "findings": [],
+    "local_report_sha256": "a4229651d2326530aa6fedae87b860ad399e5eecc8464c8054be9f471ef17386"
+  },
+  "site_url": "https://mystago.gy/",
+  "live_routes_checked": 20,
+  "live_routes_http_200": 20,
+  "live_routes_matching_local_build": 20,
+  "live_routes": [
+    {
+      "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf",
+      "http_status": 200,
+      "sha256": "cac5c0b9ebdbd393f9df74436b0215cfd50138d718c103536124105f24f02c43",
+      "expected_sha256": "cac5c0b9ebdbd393f9df74436b0215cfd50138d718c103536124105f24f02c43",
+      "matches": true
+    },
+    {
+      "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-gpt-fcb62c224d2cd125.pdf",
+      "http_status": 200,
+      "sha256": "cac5c0b9ebdbd393f9df74436b0215cfd50138d718c103536124105f24f02c43",
+      "expected_sha256": "cac5c0b9ebdbd393f9df74436b0215cfd50138d718c103536124105f24f02c43",
+      "matches": true
+    },
+    {
+      "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf",
+      "http_status": 200,
+      "sha256": "18bc8b4cbdeaf50e2fd455f8d1d394a8f224e443f746e3e13c684765399d46c5",
+      "expected_sha256": "18bc8b4cbdeaf50e2fd455f8d1d394a8f224e443f746e3e13c684765399d46c5",
+      "matches": true
+    },
+    {
+      "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily-gpt-1b5446def5ed1ad8.pdf",
+      "http_status": 200,
+      "sha256": "18bc8b4cbdeaf50e2fd455f8d1d394a8f224e443f746e3e13c684765399d46c5",
+      "expected_sha256": "18bc8b4cbdeaf50e2fd455f8d1d394a8f224e443f746e3e13c684765399d46c5",
+      "matches": true
+    },
+    {
+      "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+      "http_status": 200,
+      "sha256": "c86015a277ef12fb278241ef858261519afed180e41eb5540f4b6de219e7a6c1",
+      "expected_sha256": "c86015a277ef12fb278241ef858261519afed180e41eb5540f4b6de219e7a6c1",
+      "matches": true
+    },
+    {
+      "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis-gpt-a1e0cf0d9c5c5e12.pdf",
+      "http_status": 200,
+      "sha256": "c86015a277ef12fb278241ef858261519afed180e41eb5540f4b6de219e7a6c1",
+      "expected_sha256": "c86015a277ef12fb278241ef858261519afed180e41eb5540f4b6de219e7a6c1",
+      "matches": true
+    },
+    {
+      "path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.html",
+      "http_status": 200,
+      "sha256": "e23913107b17236571d31b259162838618f70df6d0e5776fbf545335f3c38a5b",
+      "expected_sha256": "e23913107b17236571d31b259162838618f70df6d0e5776fbf545335f3c38a5b",
+      "matches": true
+    },
+    {
+      "path": "library/novus-ordo-liturgy.html",
+      "http_status": 200,
+      "sha256": "1d0731ce91f5cfa339d4386b76a0b30fdb5c36147d95b14d52de7676c48a0bd6",
+      "expected_sha256": "1d0731ce91f5cfa339d4386b76a0b30fdb5c36147d95b14d52de7676c48a0bd6",
+      "matches": true
+    },
+    {
+      "path": "browse/structure/documents/corpus.json",
+      "http_status": 200,
+      "sha256": "7221ff11a78e10b5b86a58a78140d292446a232e2490d5ec57e154dd22ee9eff",
+      "expected_sha256": "7221ff11a78e10b5b86a58a78140d292446a232e2490d5ec57e154dd22ee9eff",
+      "matches": true
+    },
+    {
+      "path": "browse/structure/sources/index.json",
+      "http_status": 200,
+      "sha256": "3e5808049db8482e51223d00ba71e4dc50768c89bfab580a224003f3e3fbaed6",
+      "expected_sha256": "3e5808049db8482e51223d00ba71e4dc50768c89bfab580a224003f3e3fbaed6",
+      "matches": true
+    },
+    {
+      "path": "PUBLICATION-MANIFEST.json",
+      "http_status": 200,
+      "sha256": "007b49d3ba1af4e2c36e05a2b6c6971ca23906e3f381847848c23df93daf69ed",
+      "expected_sha256": "007b49d3ba1af4e2c36e05a2b6c6971ca23906e3f381847848c23df93daf69ed",
+      "matches": true
+    },
+    {
+      "path": "library/faith.html",
+      "http_status": 200,
+      "sha256": "f363b10bd1dbf5c8e1cd7df2859b87914d6b1f48b36809d050435995e2e7eac6",
+      "expected_sha256": "f363b10bd1dbf5c8e1cd7df2859b87914d6b1f48b36809d050435995e2e7eac6",
+      "matches": true
+    },
+    {
+      "path": "web/gpt/articles/faith/four-last-things-01-death.html",
+      "http_status": 200,
+      "sha256": "ae9da64beadc04f4b31b643028c62213637adb002c2e902de9b365aa8328e899",
+      "expected_sha256": "ae9da64beadc04f4b31b643028c62213637adb002c2e902de9b365aa8328e899",
+      "matches": true
+    },
+    {
+      "path": "pdf/gpt/articles/faith/four-last-things-01-death.pdf",
+      "http_status": 200,
+      "sha256": "5928264144ab871f1506faa901fe9de56fa5a07843e8a9cba5661886921e4a65",
+      "expected_sha256": "5928264144ab871f1506faa901fe9de56fa5a07843e8a9cba5661886921e4a65",
+      "matches": true
+    },
+    {
+      "path": "web/gpt/articles/faith/four-last-things-02-judgment.html",
+      "http_status": 200,
+      "sha256": "6e98217cfbd276903dafcd77996bbd411e2d74d15387f054118d0c3373147044",
+      "expected_sha256": "6e98217cfbd276903dafcd77996bbd411e2d74d15387f054118d0c3373147044",
+      "matches": true
+    },
+    {
+      "path": "pdf/gpt/articles/faith/four-last-things-02-judgment.pdf",
+      "http_status": 200,
+      "sha256": "9683ca8cf87bb9a6754653d10dafc4273a3b7f49271cd3056ecca34d3432672a",
+      "expected_sha256": "9683ca8cf87bb9a6754653d10dafc4273a3b7f49271cd3056ecca34d3432672a",
+      "matches": true
+    },
+    {
+      "path": "web/gpt/articles/faith/four-last-things-03-hell.html",
+      "http_status": 200,
+      "sha256": "4fcf8e38985415920b128c788851eecc5f4149f16d23cf3834264d079a14d1c3",
+      "expected_sha256": "4fcf8e38985415920b128c788851eecc5f4149f16d23cf3834264d079a14d1c3",
+      "matches": true
+    },
+    {
+      "path": "pdf/gpt/articles/faith/four-last-things-03-hell.pdf",
+      "http_status": 200,
+      "sha256": "543412207301d21bf41334913496f4b6c45f1a6b78aff3197724142fae24fe68",
+      "expected_sha256": "543412207301d21bf41334913496f4b6c45f1a6b78aff3197724142fae24fe68",
+      "matches": true
+    },
+    {
+      "path": "web/gpt/articles/faith/four-last-things-04-heaven.html",
+      "http_status": 200,
+      "sha256": "5d6be8bc11c979d00bc66b5558ae70ae34d855047e1198cb448ab8b476fe5f08",
+      "expected_sha256": "5d6be8bc11c979d00bc66b5558ae70ae34d855047e1198cb448ab8b476fe5f08",
+      "matches": true
+    },
+    {
+      "path": "pdf/gpt/articles/faith/four-last-things-04-heaven.pdf",
+      "http_status": 200,
+      "sha256": "14b58ace22c48615694556df83e17a2d9eca4d50548e02da75974f51c9349bf1",
+      "expected_sha256": "14b58ace22c48615694556df83e17a2d9eca4d50548e02da75974f51c9349bf1",
+      "matches": true
+    }
+  ],
+  "publication_manifest_comparison": {
+    "existing_publications_unchanged": 254,
+    "new_publications": [
+      "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+      "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily",
+      "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis"
+    ],
+    "new_pdf_and_alias_hashes_verified": true,
+    "previous_live_manifest_sha256": "e1264e1786e762b7147de4464c6598cf38f3771cf11c70ace9a62843337f0c05",
+    "candidate_manifest_sha256": "007b49d3ba1af4e2c36e05a2b6c6971ca23906e3f381847848c23df93daf69ed"
+  },
+  "branch_cleanup": "Integrated remote feature/propers/codex deleted after ancestry verification; required local workspace branch retained and tracks origin/main.",
+  "limits": [
+    "Native review records remain historical and byte-exact; this deployment receipt does not replace their verdicts."
+  ]
+}

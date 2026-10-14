@@ -26,10 +26,19 @@ Fresh conversion with the updated web tool reproduces the accepted page
 exactly. Current main's four expanded Four Last Things PDFs were restored from
 the live site against verified hashes before regenerating the catalog.
 The [integration record](workflows/reviews/gpt-pc-s55-production-2026-10-13/main-integration.json)
-retains reviewed identities, resolution details and check-log hashes. The
-requested ordinary main push, automatic Pages deployment and affected live
-routes remain pending; their actual results will be recorded in
-`main-deployment.json`. The main-integration promise remains open.
+retains reviewed identities, resolution details and check-log hashes.
+
+Integration commit `24165557cefe1b64e11f4b528f74420ff4e279d0` reached `origin/main`
+through an ordinary push after review of all outgoing objects without
+findings. [Pages run 38555208374](https://github.com/spincyc/triptych/actions/runs/38555208374)
+and repository hygiene passed. All 20 checked live routes returned HTTP 200
+and match the verified artifact: three canonical PDFs and their aliases,
+the propers web edition, both affected catalogs, document/source data,
+publication manifest and all four expanded Four Last Things PDF/web pairs.
+The [deployment receipt](workflows/reviews/gpt-pc-s55-production-2026-10-13/main-deployment.json)
+records the exact hashes and successful run. Both main-integration
+requirements pass. The merged remote feature branch is deleted; the local
+workspace branch remains and tracks `origin/main`. Main publication is complete.
 
 ## GPT Twenty-ninth Sunday in Ordinary Time, 2026-10-13
 

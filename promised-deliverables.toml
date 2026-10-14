@@ -4,19 +4,25 @@ schema_version = 1
 id = "gpt-pc-s55-main-2026-10-14"
 owner = "PROJECT-WORK.md"
 promise = "Reconcile the accepted October 18 Novus Ordo propers work with current main, preserve concurrent publications, push the validated integration to main, and verify its automatic Pages deployment and affected live routes."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "pc-s55-main-integration"
   criterion = "The integration preserves accepted propers and current main publications, resolves shared records coherently, passes deployment-source, site-build and GitHub Pages artifact checks, and reaches origin/main after outgoing-object review."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-pc-s55-production-2026-10-13/main-integration.json", "workflows/reviews/gpt-pc-s55-production-2026-10-13/main-deployment.json"]
+  check = "contains"
+  path = "workflows/reviews/gpt-pc-s55-production-2026-10-13/main-deployment.json"
+  needle = "\"main_push_verified\": true"
 
   [[deliverables.requirements]]
   id = "pc-s55-live-publication"
   criterion = "The automatic Pages run succeeds and the three propers PDFs, canonical web edition, catalog and document data are verified live against the accepted site artifact, with intervening publications preserved."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-pc-s55-production-2026-10-13/main-integration.json", "workflows/reviews/gpt-pc-s55-production-2026-10-13/main-deployment.json"]
+  check = "contains"
+  path = "workflows/reviews/gpt-pc-s55-production-2026-10-13/main-deployment.json"
+  needle = "\"workflow_conclusion\": \"success\""
 
 [[deliverables]]
 id = "gpt-pc-s55-production-2026-10-13"
