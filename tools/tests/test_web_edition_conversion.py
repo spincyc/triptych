@@ -118,11 +118,12 @@ class WebEditionConversionTests(unittest.TestCase):
         proper_schema: int | None = None,
         format_contract: str | None = None,
         title: str = "Subject",
+        provider: str = "test",
     ) -> str:
         """Convert a synthetic single-section leaf and return its Markdown."""
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
-            leaf = root / "src" / "test" / "studies" / "subject"
+            leaf = root / "src" / provider / "studies" / "subject"
             leaf.mkdir(parents=True)
             if proper:
                 (leaf / "proper-components.toml").write_text(
@@ -151,7 +152,7 @@ class WebEditionConversionTests(unittest.TestCase):
             with mock.patch.object(DRIVER, "SRC", root / "src"), mock.patch.object(
                 DRIVER, "OUT", root / "build" / "web"
             ):
-                destination = DRIVER.convert("test", "studies/subject", root / "build" / "web")
+                destination = DRIVER.convert(provider, "studies/subject", root / "build" / "web")
             return destination.read_text(encoding="utf-8")
 
     def test_endnote_survives_as_a_footnote_with_its_body(self) -> None:
@@ -880,6 +881,66 @@ class WebEditionConversionTests(unittest.TestCase):
         )
         self.assertNotIn("[TOC]", markdown)
         self.assertIn("## Second part", markdown)
+
+    def test_declared_contents_changes_only_the_explicitly_opted_in_edition(self) -> None:
+        body = (
+            r"\tableofcontents" "\n\nOpening paragraph.\n\n"
+            r"\section{Second part}" "\nSecond paragraph.\n"
+        )
+        for provider in ("gpt", "claude"):
+            with self.subTest(provider=provider):
+                default = self.convert(body, provider=provider)
+                disabled = self.convert(
+                    body, provider=provider,
+                    files={"web-edition.toml": "contents = false\n"},
+                )
+                enabled = self.convert(
+                    body, provider=provider,
+                    files={"web-edition.toml": "contents = true\n"},
+                )
+                self.assertEqual(disabled, default)
+                self.assertEqual(
+                    enabled,
+                    default.replace("*A synthetic leaf*\n", "*A synthetic leaf*\n\n[TOC]\n", 1),
+                )
+                self.assertEqual(enabled.count("[TOC]"), 1)
+
+    def test_declared_contents_uses_actual_rendered_section_targets(self) -> None:
+        markdown = self.convert(
+            r"\section{A second section}\label{sec:second}" "\nProse.\n"
+            r"\subsection{A subsection}" "\nMore prose.\n",
+            files={"web-edition.toml": "contents = true\n"},
+        )
+        rendered = DRIVER.render_markdown(markdown, ROOT)
+        self.assertEqual(rendered.count('<div class="toc">'), 1)
+        self.assertIn('<a href="#body">Body</a>', rendered)
+        self.assertIn('<a href="#sec:second">A second section</a>', rendered)
+        self.assertIn('id="sec:second"', rendered)
+        contents = rendered.split('<div class="toc">', 1)[1].split("</div>", 1)[0]
+        self.assertNotIn("A subsection", contents)
+        self.assertNotIn("[TOC]", rendered)
+
+    def test_declared_contents_preserves_existing_proper_source_position(self) -> None:
+        body = (
+            r"\label{proper-introit}" "\nOpening paragraph.\n\n"
+            r"\tableofcontents" "\n\n"
+            r"\section{Second part}" "\nSecond paragraph.\n"
+        )
+        options = {"proper": True, "proper_schema": 2, "element_keys": ("introit",)}
+        default = self.convert(body, **options)
+        enabled = self.convert(
+            body, **options, files={"web-edition.toml": "contents = true\n"},
+        )
+        self.assertEqual(enabled, default)
+        self.assertEqual(enabled.count("[TOC]"), 1)
+        self.assertLess(enabled.index("Opening paragraph."), enabled.index("[TOC]"))
+
+    def test_conversion_refuses_invalid_contents_even_without_a_separate_check(self) -> None:
+        for value in ('"true"', "1", "0", "[]"):
+            with self.subTest(contents=value), self.assertRaisesRegex(
+                DRIVER.ConversionError, "contents must be a boolean"
+            ):
+                self.convert("Prose.", files={"web-edition.toml": f"contents = {value}\n"})
 
     @unittest.skipUnless(importlib.util.find_spec("markdown"), "Python Markdown is not installed")
     def test_four_senses_render_as_definition_terms_after_site_rewriting(self) -> None:

@@ -154,6 +154,25 @@ class WebEditionTreeTests(unittest.TestCase):
             output,
         )
 
+    def test_contents_is_an_optional_boolean_for_either_provider(self) -> None:
+        for provider in ("gpt", "claude"):
+            for value, expected in ((None, False), ("false", False), ("true", True)):
+                with self.subTest(provider=provider, contents=value):
+                    document = "articles/faith/contents"
+                    self.write_leaf(
+                        document, provider=provider,
+                        declaration=record(document, contents=value),
+                    )
+                    self.assertIs(self.audit(document, provider).contents, expected)
+
+    def test_contents_rejects_nonboolean_values(self) -> None:
+        for value in ('"true"', "1", "0", "[]"):
+            with self.subTest(contents=value):
+                document = "articles/faith/contents"
+                self.write_leaf(document, declaration=record(document, contents=value))
+                with self.assertRaisesRegex(ValueError, "contents must be a boolean"):
+                    self.audit(document)
+
     def test_withdrawn_must_be_an_iso_date_string(self) -> None:
         for name, value in (
             ("toml-date", "2026-10-01"),
