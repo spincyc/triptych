@@ -1,30 +1,52 @@
 # Source Audit — Hell
 
-## Claim map
+## Revision and claim control — 2026-10-12
 
-| Consequential claim | Authority and checked locus | Status / limit |
+This audit replaces broad source-family assertions with the actual passages read for the GPT revision. It is a source-aware editorial check, not independent ecclesiastical approval. Prior production claims below describe an earlier text.
+
+| Claim or inference | Passage actually consulted | Disposition and limit |
 | --- | --- | --- |
-| Christ warns of definitive punishment with multiple converging images | Mt 7:21–23; 13:40–43; 25:31–46; Mk 9:43–48 | Scriptural wording not converted into physical measurements |
-| Hell exists eternally and its principal punishment is separation from God | CCC 1033–1037, 1056–1058; Lyons II, DS 858; Florence, DS 1306 | Definitive/authoritative boundary |
-| Mortal sin requires grave matter, knowledge, and deliberate consent | CCC 1854–1861 | Individual culpability never inferred |
-| “Self-exclusion” remains within divine judgment, not private sovereignty | CCC 1033–1037 | Terminological guard |
-| Eternal punishment cannot be reduced to time-for-time arithmetic | Mt 25:46; ST Supplement, qq. 97–99 | Revealed duration; Thomistic explanatory account |
-| God wills salvation and does not delight in the death of the wicked | Ezek 18:23, 32; 1 Tim 2:4; CCC 1037, 1058 | Held together with real judgment |
-| Hope for each person differs from certainty of universal salvation | CCC 1036–1037; *Spe salvi* 44–48 | Theological debate not adjudicated |
-| Christ's diverse warning images converge without yielding a physical map | Mt 7:13–23; 10:28–39; 18:23–35; 25:31–46; Mk 9:43–48; Lk 13:22–30 | Exegetical synthesis; genre and immediate contexts remain distinct |
-| Grave matter does not by itself establish a person's mortal culpability | CCC 1735, 1857–1861 | Objective act and subjective responsibility distinguished |
-| Proportionality cannot be answered by duration arithmetic, a merely unpaid debt, or private self-administration | Mt 25:46; CCC 1033–1037; ST Supplement, qq. 97–99 | Dogmatic boundary plus delimited project critique |
+| Judgment concerns acts and omissions, including failures of mercy | Matthew 25:31–46, complete range in registered Douay–Rheims TSV; CCC 1033 | Close reading in the Catechism's moral reception. The essay does not adjudicate the scholarly debate over the exact extension of “least brethren.” It does not offer this scene as an exhaustive theory of justification. |
+| Existence, eternity, principal loss, responsibility, no predestination to hell | Official English CCC 1033–1037; John Paul II, audience 28 July 1999, 3–4 | Direct live-page reading. Symbolic imagery does not mean unreal punishment. Self-exclusion remains within God's judgment. No negative claim about every liturgy or all magisterial history. |
+| Death ends the earthly time of accepting/rejecting grace; purgatory presupposes salvation | CCC 1021; 1030–1032 | These teachings, not an analogy about habits, ground finality and the distinction from purification. |
+| All rise; final destiny is not solely a soul's concern | John 5:28–29, both verses in registered TSV; CCC 1038 | The doctrine includes the resurrection of the unjust; no inference to glorification of all. |
+| Luke's question about few saved yields an urgent personal summons and eschatological reversal | Luke 13:22–30, complete range in registered TSV | Preserves “many” unable to enter within the passage; does not claim Jesus supplies a numerical answer or forbids every theological inference. |
+| Punishment and life are correlative in Matthew's final sentence | Augustine, *City of God* XXI.23, registered Dods 1871 transcription, lines 17958–18013, read complete | Reports Augustine's contextual argument; does not claim every occurrence of “eternal” has a mechanically identical meaning. |
+| A penalty's duration need not equal the act's duration | Augustine XXI.11, same transcription, lines 17451–17508, read complete | Narrow reply to an objection, expressly insufficient alone to establish eternal punishment's justice; ancient penalties are not endorsed. |
+| Mortal sin requires knowledge and consent as well as grave matter | Official English CCC 1735, 1854–1861 | Direct reading. Feigned ignorance and culpably formed blindness are retained. Neither a grave act nor social identity alone permits an observer to pronounce final culpability. |
+| Loss of charity disorders life at its final end; God can repair what man cannot | ST I–II 87.3, corpus and replies, New Advent English Dominican delivery | Direct reading. The article does not represent this as an independent demonstration of finality at death. |
+| Prayer belongs within providence as an ordained means | ST II–II 83.2, corpus, same delivery | Direct reading. Avoids the false inference that meaningful prayer requires an unsettled divine decree or postmortem probation. |
+| Prayer for everyone has positive revealed grounds | 1 Timothy 2:1–6, registered TSV, complete range | Universal saving will and Christ's mediation ground intercession; they are not converted into a revealed guarantee of universal salvation. |
+| Restrained claims about human damnation preserve the revelation exception | John Paul II, audience 28 July 1999, 4 | Reads the full qualifying phrase concerning special divine revelation. No claim that a human fate is unknowable in principle. |
+| Radical refusal, holiness, and purification remain distinct | *Spe salvi* 45–47, official English | The tentative account of the great majority in 46 is not made a population revelation. No claim that the encyclical adjudicates the complete universal-hope debate. |
 
-## Serious objections tested
+## Consulted deliveries
 
-The essay directly considers the proportionality objection to everlasting punishment, the danger that “self-exclusion” could conceal divine judgment, and the claim that universal salvific will entails certain universal salvation. It rejects duration arithmetic as insufficient, states the limit of Thomistic postmortem psychology, and preserves both universal hope and revealed warning. It does not use Augustine or Aquinas as a mechanical authority count, nor does it make poetic imagery a geological report.
+- [CCC 1033–1037](https://www.vatican.va/archive/ENG0015/__P2O.HTM), [freedom and responsibility](https://www.vatican.va/archive/ENG0015/__P5N.HTM), [mortal and venial sin](https://www.vatican.va/archive/ENG0015/__P6C.HTM), [particular judgment](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_three/article_12/i_the_particular_judgment.index.html), and [purgatory](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_three/article_12/iii_the_final_purification%2C_or_purgatory.html).
+- [John Paul II, 28 July 1999](https://www.vatican.va/content/john-paul-ii/en/audiences/1999/documents/hf_jp-ii_aud_28071999.html); [*Spe salvi*](https://www.vatican.va/content/benedict-xvi/en/encyclicals/documents/hf_ben-xvi_enc_20071130_spe-salvi.html).
+- [ST I–II 87](https://www.newadvent.org/summa/2087.htm), [ST II–II 83](https://www.newadvent.org/summa/3083.htm): English Dominican second revised edition (1920), as delivered by New Advent. No Latin critical-text collation.
+- Scripture: registered Challoner/Gutenberg 1581 verse TSV artifacts for Matthew, Luke, John, and 1 Timothy; selected ranges read completely. Augustine: registered public-domain Dods 1871 volume II transcription, not New Advent's revised patristic delivery. Bindings pin the actually inspected artifacts/passages.
 
-The publication-local binding records the official Catechism edition and loci, Augustine at cataloged reception level, and the available Leonine Aquinas edition only for contextual identity. The Supplement questions cited by the paper are not falsely bound to the registered volume. No publication-specific patristic or Thomistic verification beyond those states is claimed.
+## Counterpositions and synthesis
 
-## Unresolved review
+The essay takes seriously medicinal punishment, proportionality, impaired freedom, and the positive case for prayer and universal hope. It distinguishes hope from necessary universal salvation without naming unexamined modern authors. This is an explicitly bounded discussion, not a comprehensive scholarly controversy survey. Finality is confessed on revealed and catechetical grounds; habits, urgency, and practical examples are explanatory synthesis. Existence and eternity are not reduced to the contents of a single solemn definition.
 
-Independent exegetical, dogmatic, patristic, Thomistic, pastoral, psychological, and ecclesiastical review remains outstanding. Distribution requires work-specific rights review and exact-snapshot authorization.
+## Rights and evidence states
 
-## Production record
+The revision paraphrases Scripture and the cited arguments; it reproduces no substantial modern translation, Vatican text, or liturgical formulary. The underlying Challoner and Dods texts are public domain in the United States under the central records; their transcriptions remain distinct from facsimiles. Modern Vatican English and New Advent deliveries are consulted and linked, not relicensed under project CC BY 4.0 or retained as new bulk artifacts. Brief terminology is used within attributed theological analysis. No territorial Missal translation is reproduced.
 
-The revised source received a settled two-pass build with no fatal, undefined-reference, overflow, underflow, or layout warnings. PDF metadata, extracted text, structure, and embedded fonts were checked. Bounded review rasters were generated through `scripts/pdf-review`; all seven pages were inspected, including page seams, terminal apparatus, and the final-page rights colophon. The reviewed build and installed mirror are byte-identical. The installed PDF SHA-256 is `d6c583a2979acc1b3041351c6780024eb73d34b5c4bd1f4a6dc0094540ecdc71`.
+Live page checks support these local interpretive dispositions. The corresponding central edition/work bindings remain cataloged where an exact registered artifact was not inspected. Local artifact readings are marked inspected with current fingerprints; no exhaustive search or new critical-text verification is claimed. No central source additions are required for this revision.
+
+## Production boundary
+
+The 2026-10-12 prose revision requires a fresh coordinated build, all-page visual review, extraction/font/metadata checks, and installation. Those checks are not asserted by this source audit.
+
+Historical production receipt for the earlier seven-page version: reported settled build and page review, installed SHA-256 `d6c583a2979acc1b3041351c6780024eb73d34b5c4bd1f4a6dc0094540ecdc71`. That receipt does not validate this revision.
+
+Coordinated production evidence for this revision is recorded in
+[the shared review](../../four-last-things-shared/revision-review.md) and
+[its artifact receipt](../../four-last-things-shared/production-review.json).
+
+## Cold-review correction — 2026-10-13
+
+Removed the body sentence announcing that the essay does not adjudicate the modern universal-hope controversy. The following substantive distinctions and the existing terminal scope remain intact. This is a reader-order correction with no change to the theological claims or source use.

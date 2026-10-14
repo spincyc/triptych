@@ -1,0 +1,35 @@
+% GPT Four Last Things only; load after common/preamble.
+\geometry{margin=1in}
+\linespread{1.04}
+\setlength{\parskip}{0.45em}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\def\TriptychPrintEdition{}
+
+\newcommand{\FourLastThingsTitle}[2]{%
+  \begin{center}
+  {\small\scshape The Four Last Things\par}
+  \vspace{0.35em}
+  {\LARGE\bfseries #1\par}
+  \vspace{0.3em}
+  {\normalsize #2\par}
+  \end{center}
+}
+
+\ifdefined\TriptychPrintEdition
+\newcommand{\FourLastThingsLink}[2]{\href{#1.pdf}{#2}}
+\else
+\newcommand{\FourLastThingsLink}[2]{\href{#1.html}{#2}}
+\fi
+
+\newcommand{\FourLastThingsNavigation}{%
+  \par\begingroup\small
+  \FourLastThingsLink{four-last-things-01-death}{Death}
+  \enspace·\enspace
+  \FourLastThingsLink{four-last-things-02-judgment}{Judgment}
+  \enspace·\enspace
+  \FourLastThingsLink{four-last-things-03-hell}{Hell}
+  \enspace·\enspace
+  \FourLastThingsLink{four-last-things-04-heaven}{Heaven}
+  \par\endgroup
+}

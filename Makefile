@@ -1241,6 +1241,12 @@ $(BUILD_ROOT)/$(1).pdf: $(shell find $(SOURCE_ROOT)/$(1) -type f \( \
 endef
 $(foreach document,$(CANONICAL_DOCUMENTS),$(eval $(call REGISTER_DOCUMENT_SOURCES,$(document))))
 
+ifeq ($(PROVIDER),gpt)
+FOUR_LAST_THINGS_DOCUMENTS := $(addprefix articles/faith/four-last-things-,01-death 02-judgment 03-hell 04-heaven)
+$(addprefix $(BUILD_ROOT)/,$(addsuffix .pdf,$(FOUR_LAST_THINGS_DOCUMENTS))): \
+	$(SOURCE_ROOT)/articles/faith/four-last-things-shared/format.tex
+endif
+
 # `evaluations/` is pruned because nothing in it is rendered and the engine
 # writes into it while a run is in flight: the standing-findings record an
 # evaluation stage writes is a `.toml` under the leaf, so registering it made

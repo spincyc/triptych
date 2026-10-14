@@ -24,12 +24,38 @@
 
 ## The Four Last Things
 
-| Publication | ChatGPT | Claude | Focus |
-| --- | --- | --- | --- |
-| **The Four Last Things: The Hour That Cannot Be Delegated** | [PDF](../pdf/gpt/articles/faith/four-last-things-01-death.pdf) · [Read](../web/gpt/articles/faith/four-last-things-01-death.html) | [PDF](../pdf/claude/articles/faith/four-last-things-01-death.pdf) · [Read](../web/claude/articles/faith/four-last-things-01-death.html) | Death: the rupture no one escapes, Christian preparation, grief, and hope in the resurrection. |
-| **The Four Last Things: The Truth of a Life** | [PDF](../pdf/gpt/articles/faith/four-last-things-02-judgment.pdf) · [Read](../web/gpt/articles/faith/four-last-things-02-judgment.html) | [PDF](../pdf/claude/articles/faith/four-last-things-02-judgment.pdf) · [Read](../web/claude/articles/faith/four-last-things-02-judgment.html) | Judgment: particular and final judgment, mercy, justice, responsibility, and the disclosure of every life in Christ. |
-| **The Four Last Things: The Refusal That Becomes Final** | [PDF](../pdf/gpt/articles/faith/four-last-things-03-hell.pdf) · [Read](../web/gpt/articles/faith/four-last-things-03-hell.html) | [PDF](../pdf/claude/articles/faith/four-last-things-03-hell.pdf) · [Read](../web/claude/articles/faith/four-last-things-03-hell.html) | Hell: definitive self-exclusion from communion with God, the gravity of freedom, and the limits of what may be claimed about any person. |
-| **The Four Last Things: The End for Which We Were Made** | [PDF](../pdf/gpt/articles/faith/four-last-things-04-heaven.pdf) · [Read](../web/gpt/articles/faith/four-last-things-04-heaven.html) | [PDF](../pdf/claude/articles/faith/four-last-things-04-heaven.pdf) · [Read](../web/claude/articles/faith/four-last-things-04-heaven.html) | Heaven: the beatific vision, communion of saints, resurrection of the body, and the renewal of creation. |
+For November and Advent: death and judgment, prayer for the dead, the saints'
+communion, and hope in Christ's return. The ChatGPT treatments form a sequence
+of concise essays; the Claude treatments are extended studies. Each can also
+be read on its own.
+
+### Death
+
+Mortality, preparation, grief, and Christ's victory over death.
+
+- **ChatGPT:** [The Hour That Cannot Be Delegated](../web/gpt/articles/faith/four-last-things-01-death.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-01-death.pdf)
+- **Claude:** [The Debt of Nature](../web/claude/articles/faith/four-last-things-01-death.html) · [PDF](../pdf/claude/articles/faith/four-last-things-01-death.pdf)
+
+### Judgment
+
+Particular and final judgment, justice, mercy, and purification.
+
+- **ChatGPT:** [The Truth of a Life](../web/gpt/articles/faith/four-last-things-02-judgment.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-02-judgment.pdf)
+- **Claude:** [What Death Does Not Finish](../web/claude/articles/faith/four-last-things-02-judgment.html) · [PDF](../pdf/claude/articles/faith/four-last-things-02-judgment.pdf)
+
+### Hell
+
+Final loss, freedom, conversion, and the limits of human judgment.
+
+- **ChatGPT:** [The Refusal That Becomes Final](../web/gpt/articles/faith/four-last-things-03-hell.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-03-hell.pdf)
+- **Claude:** [Nothing Said of Anyone](../web/claude/articles/faith/four-last-things-03-hell.html) · [PDF](../pdf/claude/articles/faith/four-last-things-03-hell.pdf)
+
+### Heaven
+
+Communion with God and the saints, bodily resurrection, and renewed creation.
+
+- **ChatGPT:** [The End for Which We Were Made](../web/gpt/articles/faith/four-last-things-04-heaven.html) · [PDF](../pdf/gpt/articles/faith/four-last-things-04-heaven.pdf)
+- **Claude:** [Then Face to Face](../web/claude/articles/faith/four-last-things-04-heaven.html) · [PDF](../pdf/claude/articles/faith/four-last-things-04-heaven.pdf)
 
 ## Sacraments, Virtue, and Spiritual Life
 

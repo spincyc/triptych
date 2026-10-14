@@ -54,6 +54,51 @@ state = "complete"
   needle = "\"remote_payload_verified\": true"
 
 [[deliverables]]
+id = "gpt-four-last-things-2026-10-12"
+owner = "PROJECT-WORK.md"
+promise = "Revise the four GPT Four Last Things essays for source accuracy, synthesis, pedagogy, seasonal coherence and presentation; preserve all Claude documents unchanged; resolve the subsequent cold-review findings, validate the corrected editions, and push them to main."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "gpt-flt-content"
+  criterion = "All four GPT essays have distinct, coherent arguments with verified consequential sources, updated research records, sacramental and seasonal connections, and an independent content-review disposition."
+  status = "pass"
+  evidence = ["src/gpt/articles/faith/four-last-things-shared/revision-review.md", "src/gpt/articles/faith/four-last-things-01-death/research/source-audit.md", "src/gpt/articles/faith/four-last-things-02-judgment/research/source-audit.md", "src/gpt/articles/faith/four-last-things-03-hell/research/source-audit.md", "src/gpt/articles/faith/four-last-things-04-heaven/research/source-audit.md"]
+  check = "path_exists"
+
+  [[deliverables.requirements]]
+  id = "gpt-flt-presentation"
+  criterion = "All four GPT PDFs are rebuilt, every rendered page reviewed, accepted bytes installed, and faithful generated web editions reviewed and installed with useful companion navigation."
+  status = "pass"
+  evidence = ["src/gpt/articles/faith/four-last-things-shared/production-review.json", "src/gpt/articles/faith/four-last-things-shared/revision-review.md", "library/faith.md"]
+  check = "contains"
+  path = "src/gpt/articles/faith/four-last-things-shared/production-review.json"
+  needle = "\"web_disposition\": \"accepted\""
+
+  [[deliverables.requirements]]
+  id = "gpt-flt-integration"
+  criterion = "Applicable checks pass or named inherited failures are distinguished from the revision; no Claude publication files change; the coherent GPT revision and evidence are committed on feature/flt."
+  status = "pass"
+  evidence = ["src/gpt/articles/faith/four-last-things-shared/revision-review.md", "PROJECT-WORK.md"]
+  check = "path_exists"
+
+  [[deliverables.requirements]]
+  id = "gpt-flt-cold-review-corrections"
+  criterion = "The four cold-review findings are corrected with exact source attribution, clear biblical numbering, direct marriage wording, and terminal-only work-wide scope; all affected PDFs and generated web editions are reviewed again."
+  status = "pass"
+  evidence = ["src/gpt/articles/faith/four-last-things-shared/revision-review.md", "src/gpt/articles/faith/four-last-things-shared/production-review.json"]
+  check = "path_exists"
+
+  [[deliverables.requirements]]
+  id = "gpt-flt-main-publication"
+  criterion = "The validated GPT revision reaches origin/main through an ordinary push, and the automatic Pages workflow and corrected public routes are verified."
+  status = "pass"
+  evidence = ["src/gpt/articles/faith/four-last-things-shared/revision-review.md", "src/gpt/articles/faith/four-last-things-shared/production-review.json", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "src/gpt/articles/faith/four-last-things-shared/production-review.json"
+  needle = "\"workflow_conclusion\": \"success\""
+
+[[deliverables]]
 id = "publication-links-2026-10-09"
 owner = "PROJECT-WORK.md"
 promise = "Audit publication links and document identity across both providers, recover any missing documents, correct confirmed missing or misdirected links including the mobile angelology report, guard against recurrence, and push the verified correction to main."

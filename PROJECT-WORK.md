@@ -15,13 +15,16 @@ The maintainer now requests reconciliation with current `main` and a push to
 `main`. The accepted workspace tip is
 `86819a273985a4a29b42936b090ed9a1da3e8005`; fetched `origin/main` is
 `3895c19af5fd30d31743e412a40a879938af904a`, containing three subsequent Four
-Last Things commits. Reconcile with an ordinary merge on the workspace branch,
-preserving the published commits named by native review and delivery records.
-Retain both publication families, reconcile shared inventories and release
-bindings, run all three deployment gates, audit every outgoing Git object,
-and push by fast-forward to `origin/main`. The automatic Pages run and affected
-public routes must then be verified. Integration and deployment are in progress;
-the earlier workspace delivery remains complete.
+Last Things commits. An ordinary merge preserves the published commits named
+by native review and delivery records. Independent review confirms all 45
+main-only files and 434 feature-only files are intact and all eight overlapping
+records preserve both parents. All three deployment gates pass. The candidate
+site preserves all 251 existing publication records and PDF hashes and adds
+only the three accepted October 18 publications. The
+[integration record](workflows/reviews/gpt-1962-61-production-2026-10-12/main-integration.json)
+records reconciliation, restored deployed PDF copies and validation. The
+outgoing-object audit, fast-forward push and automatic Pages verification
+remain pending; the earlier workspace delivery remains complete.
 
 ## GPT Twenty-first Sunday and concise historical orientation, 2026-10-12
 
@@ -98,6 +101,53 @@ records the exact payload, outgoing-object audit and verified remote ref,
 superseding the pre-push pending state in the publication-validation snapshot.
 The requested workspace delivery is complete; no main integration or live
 deployment is claimed.
+
+## GPT Four Last Things revision, 2026-10-12
+
+<!-- promised-deliverable: gpt-four-last-things-2026-10-12 -->
+
+The maintainer requested a cold review of the Four Last Things for the end of
+the liturgical year, then authorized revision of the GPT essays only. Claude
+documents are expressly excluded and remain for a separate Claude revision.
+The four GPT essays retain their independent identities and concise discursive
+form. The revision strengthens exact source engagement, removes repetition,
+connects death, judgment, purification, final destinies and bodily resurrection,
+and develops the sacramental and seasonal context with useful navigation.
+
+The four revisions are complete and accepted on `feature/flt`: exact source
+encounters and bounded audits, independent content review, five-page PDFs
+(all twenty pages inspected), faithful generated web editions, companion
+navigation, and a catalog section that remains readable on narrow screens.
+The source, catalog, release-binding, metadata, web, and 36 targeted unit checks
+pass. The broad `make check` remains limited by pre-existing help
+example divergences; their exact disposition is recorded in the owning review.
+Applicable changed examples are recaptured from actual runs. The complete
+unchanged release corpus has now been recovered and verified against the
+deployed manifest, permitting full local deployment validation.
+
+Evidence: each GPT leaf's research records,
+`src/gpt/articles/faith/four-last-things-shared/revision-review.md`, and
+`src/gpt/articles/faith/four-last-things-shared/production-review.json`.
+The latter pins accepted PDF and web bytes to their render sources. Claude
+publication files and generated catalog entries remain unchanged. Changes to
+`main` and deployment were outside the initial revision. The maintainer has
+now authorized the four subsequent cold-review corrections and a push to
+`main`. All four corrections are independently accepted: Judgment's
+attribution of disclosed forgiven sins, Death's edition and John 6 numbering,
+Heaven's marriage wording, and Hell's terminal-only work-wide scope. All four
+five-page PDFs and generated web editions have passed renewed production
+review and are installed. The source/deployment gates, complete site build,
+and GitHub Pages artifact verification pass.
+
+**Complete: pushed to `main` and verified live.** Commit
+`6a9148ffe24fd28e05e60d87dff8b5bc12189968` deployed successfully in
+[Pages run 38337906346](https://github.com/spincyc/triptych/actions/runs/38337906346);
+repository-hygiene run `38337906324` also passed. All fifteen checked public
+routes return HTTP 200 and match the accepted local site exactly: four GPT
+HTML editions, four canonical PDFs, four PDF aliases, Faith, the document
+catalog data, and the publication manifest. All 247 other publication PDF
+hashes remain unchanged. The production receipt records the deployment;
+no Claude publication was changed.
 
 ## Publication links and mobile angelology report, 2026-10-09
 

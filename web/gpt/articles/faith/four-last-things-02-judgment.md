@@ -2,9 +2,11 @@
 
 *Judgment: a Catholic study of particular and final judgment, grace, works, mercy, and justice*
 
+[Death](four-last-things-01-death.html) · [Judgment](four-last-things-02-judgment.html) · [Hell](four-last-things-03-hell.html) · [Heaven](four-last-things-04-heaven.html)
+
 ## The Court We Already Desire
 
-Human beings protest judgment until injustice reaches them. Then neutrality appears not merciful but monstrous. The betrayed want the betrayal named; the forgotten dead demand that history be more than the victor’s account. Our recoil is selective because judgment threatens not only the oppressor’s disguise but our own.
+Human beings often protest judgment until injustice reaches them. Then neutrality appears not merciful but monstrous. The betrayed want the betrayal named; the forgotten dead demand that history be more than the victor’s account. Judgment promises that wrong will finally be answered. It also threatens the disguises by which we excuse ourselves.
 
 Christian judgment is not the universe’s final administrative procedure. The judge is Jesus Christ, crucified and risen (Jn 5:22–29; Acts 17:31). The wounds of the Judge prevent two evasions at once: justice is not indifferent to what sin costs, and mercy is not the indulgence of one untouched by the cost. The one before whom every life is disclosed is the one who bore sin and offered reconciliation.
 
@@ -12,11 +14,13 @@ Christian judgment is not the universe’s final administrative procedure. The j
 
 Catholic teaching distinguishes the particular judgment from the last judgment. At death each person receives eternal retribution in the immortal soul as his life is referred to Christ: heaven immediately or through purification, or definitive loss (CCC 1021–1022). At Christ’s return the dead rise, history reaches its consummation, and the truth of hearts and deeds is manifested in their relations and consequences (Mt 25:31–46; CCC 1038–1041).
 
-These are not competing verdicts. The particular judgment concerns the person’s definitive destiny at death; the final judgment publicly discloses the justice, mercy, and providence of God across the whole human story. A private act is never only private. Cowardice can burden descendants; mercy can bear fruit beyond the giver’s knowledge. The last judgment reveals the web that no human tribunal can fully see.
+The person does not disappear between these judgments. Consciousness and will subsist in the surviving soul; the human self continues while awaiting bodily resurrection (CDF, letter on eschatology, 1979, nos. 2–5). The same person whose destiny is settled at death will stand risen before Christ. The last judgment brings no second opportunity to reverse a definitive refusal of grace and no new defendant in place of the old.
+
+What, then, does it add? First, bodily consummation: those who lived and acted through bodies receive their destiny as whole, risen human beings. Second, public truth: each life is manifested within the completed history it helped to shape. Particular judgment does not exhaust either the body’s destiny or the revelation of God’s providence. The saints already enjoy God, yet they still await resurrection and the gathering of the whole redeemed creation.
 
 ## The Judge Is the One Judged by Us
 
-The New Testament’s most destabilizing claim is not merely that a judgment will occur, but that judgment belongs to Christ. The Father has given judgment to the Son; the appointed judge is the man God raised from the dead (Jn 5:22–29; Acts 17:31). Human life is not measured against an alien standard imposed from outside creation. It is measured against the truth of humanity made visible in the obedient Son.
+The Father has given judgment to the Son; the appointed judge is the man God raised from the dead (Jn 5:22–29; Acts 17:31). Human life is measured against the truth of humanity made visible in the obedient Son. His authority is inseparable from his saving work: the one who judges has first called sinners into reconciliation with God.
 
 That judge was himself arraigned, falsely witnessed against, mocked, and condemned. This does not make the last judgment a reversal in which Jesus finally enjoys the power his enemies used. It reveals the difference between divine and fallen judgment. Pilate protects order by surrendering the innocent; Caiaphas turns political calculation into necessity; the crowd converts unanimity into truth. Christ judges without needing a victim to stabilize his authority. His wounds disclose both the world’s verdict upon God and God’s mercy toward the world.
 
@@ -24,19 +28,19 @@ Matthew 25 therefore refuses a merely interior religion. The king identifies him
 
 ## Faith, Works, and Grace
 
-Scripture speaks without embarrassment of judgment “according to works” (Rom 2:6–11; 2 Cor 5:10; Rev 20:12), and equally denies that anyone saves himself by works performed apart from grace (Rom 3:23–28; Eph 2:8–10). Catholic teaching refuses to amputate either witness. Justification begins from God’s grace, not human desert; the grace received makes a real human response possible; works done in Christ disclose and deepen living communion with him.
+Scripture speaks of judgment according to works (Rom 2:6–11; 2 Cor 5:10; Rev 20:12) and denies that anyone saves himself by works performed apart from grace. Ephesians 2:8–10 holds the two truths together within a single movement: salvation is God’s gift, and the saved are created in Christ for good works. Grace does not merely excuse a life from being assessed. It heals freedom so that a different life becomes possible.
 
 The sheep in Matthew 25 do not purchase heaven by philanthropic arithmetic. Their treatment of the hungry, stranger, sick, and imprisoned manifests whether Christ’s love has taken flesh in them. James’s claim that faith without works is dead (Jas 2:14–26) does not oppose faith to grace. It opposes living faith to verbal possession.
 
-Merit is therefore filial, not commercial. God crowns his own gifts by enabling free acts of love and truly accepting them as the acts of his adopted children (CCC 2006–2011). The language of reward protects the dignity of grace-healed agency; it does not place God in debt to unaided nature.
+The Catechism makes the order precise. No one merits the initial gift of forgiveness and justification. Once adopted into Christ, a person can act freely under the Spirit’s initiative, and these acts of charity have genuine merit before God (CCC 2008–2011). Good works are therefore more than outward evidence that something has already happened inside us: they belong to the grace-enabled growth of love and its promised reward. God crowns gifts that have truly become his children’s acts. Judgment honors both the priority of grace and the reality of the response it makes possible.
 
 ## What Is Disclosed, and Why Publicly?
 
-The last judgment is sometimes imagined as the needless public replay of information God already possesses. But revelation is not needed for God’s knowledge; it is needed for the truth of creation. Evil works by concealment, euphemism, fragmentation, and isolation of victims. Goodness too may remain hidden: a fidelity whose fruits appear only generations later, an unnoticed refusal to cooperate with cruelty, a prayer whose beneficiary never knew its source.
+The objection to a second judgment is serious: if God already knows everything and the soul already receives its eternal destiny, why await another judgment? Aquinas puts that objection directly in ST III, q. 59, a. 5. His answer distinguishes the end of a person’s earthly choosing from the unfinished history to which that life belongs. Reputation can remain false after death; teaching can continue to help or corrupt; the bodies of the dead can be honored or abused. A person’s life has ended, but everything concerning that life has not yet reached its conclusion.
 
-Public disclosure restores relations to truth. It shows the consequences of acts, the solidarities by which persons helped or harmed one another, and the providence by which God brought good without making evil good. Aquinas accordingly distinguishes the sentence concerning a person from the general manifestation of divine government and the effects of human deeds (ST Supplement, q. 88). This is school theology serving a revealed boundary, not a transcript of the event.
+In his reply to the first objection, Aquinas expressly denies that the dead acquire new merit or demerit through these continuing effects. His point is that the whole truth of their lives belongs under God’s judgment, including relations and consequences only completed at history’s end. A child is not condemned for a parent’s choices, nor does a later reader’s abuse of a book automatically become its dead author’s new sin. God judges each person’s own freedom within the real history of its exercise. Aquinas supplies a theological explanation of the Church’s teaching that final judgment reveals deeds to their furthest consequences and makes God’s providence known (CCC 1039–1040).
 
-Disclosure does not mean the triumph of humiliation. Shame as we know it often serves domination: the powerful reveal another’s weakness while hiding their own. Divine judgment has no such asymmetry. Every disguise falls before the one who already knows. The forgiven sinner’s sins are not stronger than forgiveness, and the vindicated victim is not eternally defined by victimhood. Truth is complete enough to include guilt, grace, repentance, reparation, unhealed consequence, and the good God drew from what he did not will.
+This public truth matters especially where earthly judgment has failed. A victim whose testimony was suppressed will not remain dependent on the oppressor’s account; unnoticed fidelity will not disappear because no archive recorded it. Yet disclosure must include mercy as truthfully as guilt. Thomas holds that even forgiven sins are disclosed, manifesting mercy rather than bringing the blessed shame (Supplement, q. 87, a. 2). He presents this as the more probable opinion, noting Peter Lombard’s contrary view. The Church promises the manifestation of divine justice, not a spectacle modeled on human humiliation. We are not given the event’s perceptual mechanism or a warrant to imagine the blessed endlessly reliving shame.
 
 ## The Unequal Histories of Freedom
 
@@ -50,31 +54,21 @@ Grace also prevents unequal histories from becoming fate. No one converts by una
 
 Conscience is not the final court. It is a judgment of practical reason that must seek truth and may err (CCC 1776–1794). A quiet conscience can result from innocence, but also from ignorance cultivated for convenience. A tormented conscience can identify guilt, but also suffer scrupulosity. “I feel no guilt” and “I feel unforgivable” are both insufficient verdicts.
 
-The prospect of judgment should produce examination, not obsessive self-surveillance. Repentance names concrete wrong, receives mercy, repairs what can be repaired, and resumes obedience. Scrupulosity seeks an impossible certainty by reopening what has been honestly confessed; presumption seeks immunity without conversion. Both turn the gaze away from Christ—one toward the self’s endless prosecution, the other toward its easy acquittal.
+The prospect of judgment should lead to concrete examination, repentance, reparation, and trust in received mercy. Presumption refuses the need for conversion. Scrupulous distress can instead keep reopening what has been honestly confessed; such distress should not be treated as proof of guilt or a voluntary refusal to trust. It calls for patient pastoral care, not an added accusation. The soul’s Judge is Christ; intensity of fear supplies no privileged knowledge of his verdict.
 
-## Mercy Is the Form of God’s Justice
+## Mercy at the Root of Justice
 
-Divine mercy does not persuade God to cease being just. Mercy confronts misery and acts to overcome it; justice gives what is due within the order God wisely creates. At the Cross, forgiveness does not pronounce evil harmless. It condemns sin in the flesh and opens the sinner’s return (Rom 8:3). Aquinas therefore treats mercy as the root of God’s outward works without making justice unreal (ST I, q. 21, a. 4).
+Divine mercy does not persuade God to cease being just. Mercy confronts misery and acts to overcome it; justice gives what is due within the order God wisely creates. Aquinas asks why both are present in God’s works (ST I, q. 21, a. 4). Whatever is due to a creature presupposes a gift already made: its existence, its nature, or its calling. Traced to their source, even the claims justice honors depend on God’s freely given goodness. Mercy is therefore the root of divine justice, not an exception purchased by persuading God to overlook the truth. At the Cross, forgiveness condemns sin in the flesh and opens the sinner’s return (Rom 8:3).
 
-Universal salvific will and real judgment must both be confessed. God desires all to be saved (1 Tim 2:4); Christ’s sacrifice is sufficient for all; grace precedes and enables every saving response. Yet Scripture’s summons to repent is not theater, and freedom is not redeemed by being abolished. The Church may hope and pray for every person; she does not claim knowledge that all are saved or identify any particular human being as damned.
+Universal salvific will and real judgment must both be confessed. God desires all to be saved (1 Tim 2:4); Christ’s sacrifice is sufficient for all; grace precedes and enables every saving response. Yet Scripture’s summons to repent is not theater, and freedom is not redeemed by being abolished. The Church prays for the salvation of all; these teachings give us neither a guarantee that all will be saved nor authority to pronounce on another person’s damnation.
 
 ## Purgatory and the Refusal of Cheap Acquittal
 
-The logic of judgment is incomplete if every imperfect friendship with God is forced into the alternatives of spotless glory or damnation. The Church teaches a final purification for those who die in God’s grace and friendship but remain imperfectly purified (CCC 1030–1032). Purgatory is not a second chance after definitive refusal, a lesser hell, or a payment supplementing the Cross. It is the victorious application of Christ’s grace to persons whose salvation is secure but whose healing is unfinished.
+The final alternatives are communion with God and definitive loss. Purgatory belongs wholly on the side of salvation: those who die in God’s grace and friendship but remain imperfectly purified are assured of heaven (CCC 1030–1032). Forgiveness can be real while attachment to sin and its disorder still require healing. The purified are not being invited to reverse a final refusal of God; they are being made wholly ready for the friendship they have received. Christ’s victory accomplishes this healing.
 
-Benedict XVI proposes encounter with Christ as the decisive image: before his gaze falsehood melts away, and this pain of transformation is itself salvation (*Spe salvi* 47). The encyclical offers a theological account, not a new definition of duration or mechanism. Its value is to prevent two caricatures. Judgment is not external bookkeeping that leaves the person unchanged; mercy is not God’s agreement to call an untruth true.
+Benedict XVI considers the proposal that the purifying fire is the encounter with Christ himself (*Spe salvi* 47). He develops it as a way to understand transformation: the Judge’s love exposes and heals what cannot remain in communion with God. The passage offers a theological account without defining a mechanism or an earthly duration. Its force is that mercy makes us truthful and whole; it does not simply attach a favorable verdict to an unchanged person.
 
-Prayer for the dead follows. It makes no sense if persons are isolated moral atoms whose histories close every relation. The Church’s intercession confesses that communion in Christ reaches beyond death and that love may still serve the departed, while leaving their judgment entirely to God.
-
-## The Revelation of the Person
-
-Judgment reveals more than a list of actions. It reveals what freedom has loved. A single act can be forgiven; a long habit can be broken; an outwardly impressive life can conceal a refusal of love. Only God knows the person’s full history, freedom, knowledge, wounds, helps received, and final response. Human moral judgment may be necessary, but it cannot occupy Christ’s throne.
-
-The last judgment also vindicates victims. Hidden suffering will not disappear into statistical loss. Lies that shaped nations and households will be named; secret fidelity will not remain unknown. This is terrible because no disguise survives. It is consoling for the same reason.
-
-### Augustine and Aquinas on the whole made visible
-
-Augustine’s account in *City of God* XX makes the last judgment the public rectification of a history in which appearances deceive. Aquinas distinguishes the judgment concerning each soul from the general judgment in which the effects of human acts and the divine government of history are manifested (ST Supplement, q. 88). Neither account licenses curiosity about hidden consciences. Both deny that history’s unresolved wrongs simply vanish.
+But if Christ purifies and the person’s destiny is settled, what can our prayer contribute? Benedict takes up precisely that question in the next paragraph (*Spe salvi* 48): persons belong to one another, and intercession is a real expression of their communion in Christ. The Church teaches that prayer, especially the Eucharistic sacrifice, assists the departed in their purification (CCC 1032). These suffrages are help offered within salvation, not a new conversion imposed on someone who has definitively refused God. Their efficacy comes from Christ, who includes the love of his members in his care for them. All Souls thus gives the living a work of charity: to commend the dead, have Mass offered for them, and entrust the fruit to God.
 
 ## Living Under the True Verdict
 
@@ -86,22 +80,24 @@ The liturgy makes this future judgment present without pretending to stage it. T
 
 ## Scope, Method, and Qualifications
 
-This independent theological article distinguishes particular and final judgment and treats judgment according to works, grace, merit, conscience, mercy, and the disclosure of history. It does not decide any person’s eternal state, calculate culpability, or replace sacramental and pastoral care for scrupulosity. Dogmatic and authoritative teaching governs; Thomistic language explains one received synthesis; pastoral applications and rhetorical framing are project synthesis. The relation of grace, freedom, and predestination has legitimate Catholic schools not adjudicated here. No independent dogmatic, Thomistic, pastoral, psychological, or ecclesiastical review is recorded.
+This article distinguishes particular judgment from the embodied and public consummation of final judgment. It treats works, grace, merit, conscience, mercy, purification, and suffrages for the dead. Scripture and authoritative Catholic teaching govern; Aquinas’s explanations and Benedict XVI’s account of purifying encounter retain their identified theological status. Pastoral applications are synthesis. The article neither calculates personal culpability nor adjudicates the Catholic schools on grace and predestination, and its brief treatment of scrupulosity does not replace individual care. No person’s eternal state or independent dogmatic, Thomistic, pastoral, psychological, or ecclesiastical review is claimed.
 
 ## References
 
-- Sacred Scripture: Matthew 25; Luke 16 and 23; John 3 and 5; Acts 17; Romans 2, 3, and 8; 2 Corinthians 5; Ephesians 2; 1 Timothy 2; James 2; Hebrews 9; Revelation 20.
+- Sacred Scripture: Matthew 25:31–46; John 3:19–21; 5:22–29; Acts 17:31; Romans 2:6–11; 8:3; 2 Corinthians 5:10; Ephesians 2:8–10; 1 Timothy 2:4; James 2:14–26; Revelation 20:11–15.
 
-- Second Council of Lyons, *Profession of Faith of Michael Palaeologus* (1274), DS 857–859; Council of Trent, Decree on Justification, chs. 5–16 and canons 4, 9, 16, 30–32.
+- *Catechism of the Catholic Church*, official English text: 678–679 (Christ as Judge); 1021–1023, 1030–1041 (particular judgment, purification, and final judgment); 1058 (prayer for universal salvation); 1735, 1750–1756, 1776–1794, 1860 (responsibility, acts, conscience); 2006–2011 (grace and merit).
 
-- *Catechism of the Catholic Church* 678–679, 1021–1022, 1030–1041, 1058, 1735, 1750–1756, 1776–1794, 1860, 2006–2011.
+- Congregation for the Doctrine of the Faith, [*Letter on Certain Questions Concerning Eschatology*](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19790517_escatologia_en.html) (17 May 1979), nos. 2–5. Official English text.
 
-- Second Vatican Council, pastoral constitution *Gaudium et spes* 16, 22, and 39; Benedict XVI, encyclical *Spe salvi* 44–48.
+- St. Thomas Aquinas, *Summa theologiae* III, q. 59, a. 5, especially the body and replies to objections 1–3 (final judgment after particular judgment); I, q. 21, a. 4 (mercy at the root of divine justice). Translation of the Fathers of the English Dominican Province, Project Gutenberg eBooks 19950 and 17611 (2006 electronic editions).
 
-- St. Augustine, *City of God* XX; St. Thomas Aquinas, *Summa theologiae* I, q. 21, aa. 3–4; I–II, qq. 109–114; Supplement, q. 88.
+- St. Thomas Aquinas, *Summa theologiae*, [Supplement, q. 87, a. 2](https://www.newadvent.org/summa/5087.htm#article2), body and reply to objection 3: disclosure of forgiven sins as an identified theological opinion. English Dominican translation, second revised edition (1920), through New Advent. The Supplement is a posthumous compilation drawn principally from his commentary on the *Sentences*.
 
-- Roman Rite: the Creed and Eucharistic liturgy’s expectation of Christ’s coming. No territorial vernacular is reproduced.
+- Benedict XVI, [*Spe salvi*](https://www.vatican.va/content/benedict-xvi/en/encyclicals/documents/hf_ben-xvi_enc_20071130_spe-salvi.html) (2007), nos. 47–48: encounter with Christ, purification, and intercession for the dead. Official English text. The account of purifying fire as encounter is distinguished from the dogmatic teaching on purification.
 
-**Last revised (UTC):** 2026-07-24T20:52:18Z
+- Roman Rite: the Creed and the Eucharistic expectation of Christ’s return. These are liturgical allusions; no territorial vernacular text is reproduced.
+
+**Last revised (UTC):** 2026-10-13T02:21:37Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

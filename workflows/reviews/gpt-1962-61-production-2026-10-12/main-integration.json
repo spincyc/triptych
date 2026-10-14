@@ -1,0 +1,101 @@
+{
+  "record_type": "main-integration-validation",
+  "date": "2026-10-13",
+  "authorization": "Maintainer requested reconciliation with main and push to main on 2026-10-13.",
+  "strategy": "Ordinary merge on the workspace branch preserves published native-review and delivery commit references; origin/main will be fast-forwarded without rewriting published commits.",
+  "feature_parent": "89256a015ef44569952b57379f639d6a161081c8",
+  "main_parent": "3895c19af5fd30d31743e412a40a879938af904a",
+  "shared_base": "5fc4fe6b6071d0c4da9bc36dbf8740172d944db0",
+  "independent_preservation_review": {
+    "disposition": "PASS",
+    "scope": "Cold read-only review of resolved merge; coordinator derivative of reviewer handback, not a new publication content verdict.",
+    "main_only_files_exact": 45,
+    "feature_only_files_exact": 434,
+    "overlapping_files": 8,
+    "exact_record_union": {
+      "deliverables": 67,
+      "classifications": 148,
+      "inventory_owners": 12,
+      "publications": 148,
+      "source_files": 2611,
+      "migration_units": 160,
+      "corpus_works": 150
+    },
+    "main_four_last_things_classification_changes_retained": 4,
+    "all_existing_review_archives_byte_exact": true,
+    "propers_pdf_and_web_identities": "PASS",
+    "four_last_things_source_pdf_web_identity_checks": 29,
+    "reviewed_project_work_sha256": "d5656518955a633c746a5974d4783c1df773ddd12d0f054031e75b12850a1c2e",
+    "note": "PROJECT-WORK.md was subsequently updated only with coordinator integration status; the seven other reviewed shared-file hashes remain current."
+  },
+  "resolution": {
+    "register_and_ledger": "Preserved both task blocks and all criteria.",
+    "classification_and_inventory": "Preserved the exact merged rows and recomputed aggregate identities using the owning source-inventory implementation; no classification invented.",
+    "source_family_ledger": "Refreshed from the valid propers parent; the four changed main surfaces and new shared owner remain pending, all 160 units unscreened and atomic citation coverage false.",
+    "document_catalog": "Regenerated from reconciled sources and installed accepted PDFs; 150 works, 208 documents, 6979 pages.",
+    "release_bindings": "Preserved both parents; scoped refresh of corpus.json only, plus its rights row and resulting rights-record digest."
+  },
+  "shared_files": {
+    "PROJECT-WORK.md": "502dbabfaefc0e75e133483305a305661301ae4630fdd00053ef2d0d309d3916",
+    "promised-deliverables.toml": "b374c9c6994c1f4ce30cd2d2f85578c127d69b5ec9077ad685daffa3cf06ad50",
+    "release/public-alpha.json": "170185b07be385b0f78ba00cd00760363876cdccc8b8d986e58564cdf384b68c",
+    "release/rights/public-alpha-2026-07-15.md": "ee9c1248897ab4103bf5c4e8b9250048801b86a2e4790263a11ca58554c1f1eb",
+    "src/sources/inventories/classification-review-v1.toml": "200336b69fdee31b3be533d1cd7755a9d2d1e39db2216f37cb059a9a6f77aca2",
+    "src/sources/inventories/publications-v1.toml": "2970230b37b500ed0543cc76cecb9283317d28bfe6d86b57f34d9a7b1909667e",
+    "src/sources/inventories/source-family-migration-v1.toml": "fde7e5045afd5280c5ef4d411184a5eef46d136949f59762f3dc0ab8826d2bf7",
+    "src/web/data/structure/documents/corpus.json": "2b31c4696ad8fa873c94d6ad20c2cbc14b27de065d3daab0a1d0309c973a4925"
+  },
+  "pdf_recovery": {
+    "four_last_things_current_accepted_pdfs_restored": 4,
+    "other_local_pdf_copies_restored_to_deployed_hashes": 145,
+    "method": "Downloaded existing canonical public PDFs, verified every file against its accepted production receipt or the current live publication manifest, then copied verified bytes to ignored installed paths. Tracked sources unchanged.",
+    "restored_main_receipt_sha256": "ac67edd9cecad66b6a594dfae631fb98e67ce86de3fe6a526f9dca9315ab6324",
+    "restored_deployed_receipt_sha256": "4b302b25970e192936d8e7156a23cab6623163ad168567938b7ce14300c2681d"
+  },
+  "publication_manifest_comparison": {
+    "existing_publications_unchanged": 251,
+    "new_publications": [
+      "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+      "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily",
+      "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis"
+    ],
+    "new_pdf_and_alias_hashes_verified": true,
+    "previous_live_manifest_sha256": "67e7a73ffbd37b98d2757485dd96d8ef5ca2a77c486e05702d03dca09d9445ab",
+    "candidate_manifest_sha256": "e25ac0101dc7a587c8a6b555fd87e43e9c2743c73060c517aea851af38b42b3b"
+  },
+  "checks": [
+    {
+      "command": "make check-deployment-sources",
+      "exit_code": 0,
+      "log_sha256": "c6b286a5c5e01bed6436f96fb017c018036c7b7aa6bb2612275160e9f445ceb2"
+    },
+    {
+      "command": "make public-site",
+      "exit_code": 0,
+      "log_sha256": "5e980dc469aee4a6a2ae13b11d1361be12aaa56128c5646c63fe90974a4d643d"
+    },
+    {
+      "command": "python3 tools/tpt public-alpha verify --deployment-target github-pages",
+      "exit_code": 0,
+      "log_sha256": "b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14"
+    },
+    {
+      "command": "python3 -m unittest discover -s tools/tests -p test_source_inventory.py",
+      "exit_code": 0,
+      "log_sha256": "81347e9279c7cd23f3bc4ff74fcc3d8440ef043e5d794a61ba3ca9ca63a23d20"
+    }
+  ],
+  "additional_checks": {
+    "source_inventory": "PASS",
+    "source_family_migration": "PASS",
+    "promised_deliverables": "PASS; main delivery still open",
+    "tracked_ignored_paths": "PASS",
+    "staged_whitespace": "PASS",
+    "source_inventory_tests": 31
+  },
+  "dependency_lock": {
+    "Markdown": "3.10.3",
+    "PyYAML": "6.0.3"
+  },
+  "publication_status": "Validated integration candidate; actual push and Pages verification will be recorded separately."
+}

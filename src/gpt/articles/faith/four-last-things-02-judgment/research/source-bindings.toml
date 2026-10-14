@@ -7,17 +7,49 @@ source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
 loci = ["678-679", "1021-1041", "1735", "1750-1756", "1776-1794", "1860", "2006-2011"]
 role = "textual-control"
 states = ["cataloged"]
-context = "The official English Catechism edition controls Christ's judicial authority, particular and final judgment, purification, objective acts, culpability, conscience, grace, and merit. Direct official-page review is recorded locally without claiming exact central artifacts for every locus."
+context = "The official English Catechism controls Christ's judicial authority, particular and final judgment, purification and suffrages, objective acts, culpability, conscience, grace, and merit. The 2026-10-13 audit records selected direct official-page checks; this edition-level cataloged binding claims no exact artifact for every cited paragraph."
 
 [[bindings]]
-source_id = "edition.augustine.de-civitate-dei.dods-1871"
+source_id = "artifact.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.pg19950-body-4597132e"
+loci = ["III.59.5.corpus", "III.59.5.reply-1", "III.59.5.reply-2", "III.59.5.reply-3"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:44bb2918bacdd01a424eae980d78ad285fcea31c85426a00800aafd120952178"
+context = "III q59 a5 was read completely on 2026-10-13 in the retained English electronic transcription. Lines 29912-29980 distinguish the completed earthly life from continuing historical effects and bodily consummation, explicitly denying new merit or demerit after death. No Latin or printed-image collation is claimed."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-prima.pg17611-body-9c99a67a"
+loci = ["I.21.4.corpus"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c17b98dc58cabd0086fc556359882738be070d90f21f2dbaebe7f8676128b3e7"
+context = "I q21 a4 was read completely on 2026-10-13; lines 11466-11496 explain mercy as the root presupposed by divine justice. This is a bounded reading of a disclosed electronic transcription, not facsimile verification."
+
+[[bindings]]
+source_id = "artifact.holy-see.cdf-letter-eschatology-1979.english-vatican-web-2026-07-25.vatican-html"
+loci = ["point-2", "point-3", "point-4", "point-5"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:8657006e327b4870753aad476379ecfa6e98abb9f1c5236bebe0a70d6eae289d"
+context = "Complete official English letter read on 2026-10-13; re-fetched bytes match the registered SHA-256 ebf18296bc257292ce87641bd3db239ca4cfb53bb3bcdf2277427675f042ef06. Points 2-5 keep the same conscious human self distinct from future bodily consummation. Restricted bytes remain outside tracked source."
+
+[[bindings]]
+source_id = "edition.benedict-xvi.spe-salvi.english-vatican-web-2026-07-25"
+loci = ["47", "48"]
 role = "reception"
 states = ["cataloged"]
-context = "Book 20 is used as an historical theological witness to general judgment and disclosure of history. The translation is not treated as a critical text and no book-wide verification claim is made."
+context = "Paragraphs 47-48 were read in the complete official English HTML acquired on 2026-10-13. Paragraph 47's theological proposal is distinguished from defined purification; paragraph 48 explains intercession within communion. The complete-response hash and access URL are recorded in the local audit; cataloged status does not claim a new centrally registered exact artifact."
 
 [[bindings]]
-source_id = "edition.second-vatican-council.gaudium-et-spes.english-vatican-web-2026-07-23"
-loci = ["16", "22", "39"]
-role = "context"
+source_id = "edition.english-college-of-douay.douay-rheims-bible.american-1899-ebible"
+loci = ["Eph.2.8-10"]
+role = "textual-control"
 states = ["cataloged"]
-context = "The council supplies context for conscience, Christ's revelation of humanity, resurrection, and present works in relation to consummation."
+context = "Ephesians 2 was read in the retained per-book verse table on 2026-10-13: verses 8-10 hold together salvation as gift and creation in Christ for good works. This cataloged edition reference claims no new edition-wide verification."
+
+[[bindings]]
+source_id = "work.thomas-aquinas.summa-theologiae"
+loci = ["Supplementum.87.2.corpus", "Supplementum.87.2.reply-3"]
+role = "reception"
+states = ["cataloged"]
+context = "English Dominican second revised edition (1920), New Advent delivery, read on 2026-10-13 at Supplement q87 a2. The disclosure of repented sins is expressly the more probable and common opinion, with Peter Lombard's contrary view recorded; reply3 denies shame in the blessed. This live consultation adds no acquired or verified status to an exact central artifact."

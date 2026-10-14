@@ -2,21 +2,81 @@ schema = 2
 record_type = "bindings"
 document = "articles/faith/four-last-things-03-hell"
 
+# Live-page checks are documented in source-audit.md. Cataloged bindings do
+# not assert acquisition or verification of a dated central artifact.
+
 [[bindings]]
 source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
-loci = ["1033-1037", "1056-1058", "1735", "1854-1861"]
+loci = ["1021", "1030-1038", "1735", "1854-1861"]
 role = "textual-control"
 states = ["cataloged"]
-context = "The official English Catechism edition controls existence and eternity, principal punishment, salvific will, mortal-sin conditions, and diminished culpability. The binding records the edition and loci without overstating central artifact coverage."
+context = "Official English teaching, directly consulted at the listed passages during this revision. Catalog identity is retained without treating live-page inspection as verification of an exact registered artifact."
 
 [[bindings]]
-source_id = "edition.augustine.de-civitate-dei.dods-1871"
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183"
+loci = ["Matt.25.31-46"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete cited ranges were read in the registered English verse TSV on 2026-10-12. Article paraphrases the passages; no Greek textual collation or exhaustive exegetical survey is claimed."
+source_fingerprint = "sha256:ed47ecb092ecb6256fb84450e8ad39d0debf2efe6c65442199a76a7fb1a8b98b"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+loci = ["Luke.13.22-30"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete cited ranges were read in the registered English verse TSV on 2026-10-12. Article paraphrases the passages; no Greek textual collation or exhaustive exegetical survey is claimed."
+source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-50-john-27b8f3ed"
+loci = ["John.5.28-29"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete cited ranges were read in the registered English verse TSV on 2026-10-12. Article paraphrases the passages; no Greek textual collation or exhaustive exegetical survey is claimed."
+source_fingerprint = "sha256:4498ea55e49e3577649969ed0bcf456423b8aec2f9edda55586c37190dfe77a4"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-61-1-timothy-1f76a59e"
+loci = ["1Tim.2.1-6"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete cited ranges were read in the registered English verse TSV on 2026-10-12. Article paraphrases the passages; no Greek textual collation or exhaustive exegetical survey is claimed."
+source_fingerprint = "sha256:6a1bc30255ec2edfbeffa18aff78ca993fa666cb5b4b61f17a4efd0f9c2d0018"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.dods-1871.21.11"
+loci = ["21.11"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete registered Dods 1871 transcription passage read on 2026-10-12. Used as an identified theological argument, not an additional definition or an assertion of patristic unanimity. No facsimile or Latin critical-text collation claimed."
+source_fingerprint = "sha256:5037f4eff5d09c664e46e8e1ca3d606ada6b0127e8463b89a6adc8657f705da7"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.dods-1871.21.23"
+loci = ["21.23"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete registered Dods 1871 transcription passage read on 2026-10-12. Used as an identified theological argument, not an additional definition or an assertion of patristic unanimity. No facsimile or Latin critical-text collation claimed."
+source_fingerprint = "sha256:53f1925087447da2288ee366b35aacc8dbed1917fddfa31f14a98b3bd4ec43f5"
+
+[[bindings]]
+source_id = "work.thomas-aquinas.summa-theologiae"
+loci = ["I-II.87.3.corpus", "I-II.87.3.reply-1", "II-II.83.2.corpus"]
 role = "reception"
 states = ["cataloged"]
-context = "Book 21 is used as a major Western theological witness to eternal punishment and disordered love, not as a substitute for Scripture or dogmatic teaching."
+context = "Exact articles and relevant replies checked in the English Dominican 1920 translation as delivered by New Advent on 2026-10-12. The work-level catalog binding deliberately does not misidentify those pages as the registered Leonine volume or claim an exact acquired artifact. URLs and inference limits are in the audit."
 
 [[bindings]]
-source_id = "edition.thomas-aquinas.summa-theologiae.leonine-v4-1888"
-role = "context"
+source_id = "edition.john-paul-ii.general-audience-1999-07-28.english-vatican-web-2026-07-25"
+loci = ["3", "4"]
+role = "textual-control"
 states = ["cataloged"]
-context = "The Leonine edition is registered for Aquinas's treatment of the divine will. The cited Supplement questions belong to another volume and remain bibliographically identified rather than falsely bound to this artifact."
+context = "Official English audience read directly on 2026-10-12. Preserves the express exception without special divine revelation and uses symbolic imagery without denying punishment. No inference from silence or claim about every rite/person is made."
+
+[[bindings]]
+source_id = "edition.benedict-xvi.spe-salvi.english-vatican-web-2026-07-25"
+loci = ["45", "46", "47"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Official English paragraphs read directly on 2026-10-12. Radical rejection, holiness and purification are distinguished; the qualified supposition in paragraph 46 is not a population revelation."
