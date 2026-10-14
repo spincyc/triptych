@@ -7,6 +7,22 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-14.
 
+## October 18 Novus Ordo main integration, 2026-10-14
+
+<!-- promised-deliverable: gpt-pc-s55-main-2026-10-14 -->
+
+The maintainer requests pushing the accepted Novus Ordo propers work to `main`.
+Accepted workspace tip `96d4c3f2375ed7937729000020a2cbe208903dde` will be
+reconciled with fetched main `e0aa02beda83f93fe935728b2595cf9eb8f4cb94`,
+preserving its subsequent Four Last Things publications and web-tool changes.
+An ordinary merge on the workspace branch will retain published history.
+The requested main push includes its automatic Pages deployment; completion
+requires the deployment source, site-build and GitHub Pages artifact gates,
+outgoing-object review, exact remote-ref verification and affected live-route
+checks. Integration and deployment are pending. Evidence will be recorded in
+`workflows/reviews/gpt-pc-s55-production-2026-10-13/main-integration.json`
+and `main-deployment.json` beside the immutable accepted production archive.
+
 ## GPT Twenty-ninth Sunday in Ordinary Time, 2026-10-13
 
 <!-- promised-deliverable: gpt-pc-s55-production-2026-10-13 -->

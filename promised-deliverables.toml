@@ -1,6 +1,24 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-pc-s55-main-2026-10-14"
+owner = "PROJECT-WORK.md"
+promise = "Reconcile the accepted October 18 Novus Ordo propers work with current main, preserve concurrent publications, push the validated integration to main, and verify its automatic Pages deployment and affected live routes."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "pc-s55-main-integration"
+  criterion = "The integration preserves accepted propers and current main publications, resolves shared records coherently, passes deployment-source, site-build and GitHub Pages artifact checks, and reaches origin/main after outgoing-object review."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "pc-s55-live-publication"
+  criterion = "The automatic Pages run succeeds and the three propers PDFs, canonical web edition, catalog and document data are verified live against the accepted site artifact, with intervening publications preserved."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "gpt-pc-s55-production-2026-10-13"
 owner = "PROJECT-WORK.md"
 promise = "Drive the GPT postconciliar Twenty-ninth Sunday in Ordinary Time, Year A, for 2026-10-18 through the complete proper-study workflow, independently reviewing and installing its expansive study, concise study, homily and canonical web edition, then commit and push the validated work on feature/propers/codex."
