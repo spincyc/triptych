@@ -4,19 +4,25 @@ schema_version = 1
 id = "gpt-1962-twenty-first-main-2026-10-13"
 owner = "PROJECT-WORK.md"
 promise = "Reconcile the accepted October 18 propers work with current main, preserve concurrent publications, push the validated integration to main, and verify its automatic Pages deployment and affected public routes."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "twenty-first-main-reconciliation"
   criterion = "The integration preserves the accepted propers artifacts and current main publications, resolves shared records coherently, passes deployment source, site-build and GitHub Pages artifact gates, and reaches origin/main after outgoing-object review."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-1962-61-production-2026-10-12/main-integration.json", "workflows/reviews/gpt-1962-61-production-2026-10-12/main-deployment.json"]
+  check = "contains"
+  path = "workflows/reviews/gpt-1962-61-production-2026-10-12/main-deployment.json"
+  needle = "\"main_push_verified\": true"
 
   [[deliverables.requirements]]
   id = "twenty-first-live-publication"
   criterion = "The automatic Pages run for the integration succeeds and the three propers PDFs, canonical web edition, owning catalog and document catalog data are verified on the public site against the accepted local artifact."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-1962-61-production-2026-10-12/main-deployment.json", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "workflows/reviews/gpt-1962-61-production-2026-10-12/main-deployment.json"
+  needle = "\"workflow_conclusion\": \"success\""
 
 [[deliverables]]
 id = "gpt-1962-twenty-first-quality-2026-10-12"

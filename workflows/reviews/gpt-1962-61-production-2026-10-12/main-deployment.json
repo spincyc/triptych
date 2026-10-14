@@ -1,0 +1,261 @@
+{
+  "record_type": "verified-main-publication",
+  "integration_commit": "839ad448e557a1026c79a4bcc40aa43f10266100",
+  "prior_main": "3895c19af5fd30d31743e412a40a879938af904a",
+  "push_method": "Ordinary fast-forward push of HEAD to refs/heads/main; no published commit rewritten.",
+  "main_push_verified": true,
+  "main_remote_ref": "refs/heads/main",
+  "workflow_url": "https://github.com/spincyc/triptych/actions/runs/38488865282",
+  "workflow_conclusion": "success",
+  "deployment_job_completed_at_utc": "2026-10-14T00:22:53Z",
+  "repository_hygiene": {
+    "workflow_url": "https://github.com/spincyc/triptych/actions/runs/38488865342",
+    "conclusion": "success",
+    "head_sha": "839ad448e557a1026c79a4bcc40aa43f10266100"
+  },
+  "validation_record": {
+    "path": "workflows/reviews/gpt-1962-61-production-2026-10-12/main-integration.json",
+    "sha256": "d43216227042b963aae1c6f8890261cd3eb52a3b65fc10d9d7f0dd96f4173e77"
+  },
+  "outgoing_object_audit": {
+    "range": "3895c19af5fd30d31743e412a40a879938af904a..839ad448e557a1026c79a4bcc40aa43f10266100",
+    "objects": {
+      "commit": 8,
+      "tree": 265,
+      "blob": 413
+    },
+    "findings": [],
+    "local_report_sha256": "2eb8e791fa6c0b065e35b4ef89f182733e138d068af0e8df38e70959a810def8"
+  },
+  "site_url": "https://mystago.gy/",
+  "live_routes_checked": 14,
+  "live_routes_http_200": 14,
+  "live_routes_matching_local_build": 14,
+  "live_routes": [
+    {
+      "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.pdf",
+      "http_status": 200,
+      "sha256": "741ab14fb48442ffaf60f2ca8dbfac866a4eb998c40697ba80bd9525c391f284",
+      "expected_sha256": "741ab14fb48442ffaf60f2ca8dbfac866a4eb998c40697ba80bd9525c391f284",
+      "matches": true
+    },
+    {
+      "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-gpt-b19228e949e1b1f5.pdf",
+      "http_status": 200,
+      "sha256": "741ab14fb48442ffaf60f2ca8dbfac866a4eb998c40697ba80bd9525c391f284",
+      "expected_sha256": "741ab14fb48442ffaf60f2ca8dbfac866a4eb998c40697ba80bd9525c391f284",
+      "matches": true
+    },
+    {
+      "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily.pdf",
+      "http_status": 200,
+      "sha256": "39081db3f44add36ed7b5a4e99491cb3e1e96b940aa81dff8fff198543435752",
+      "expected_sha256": "39081db3f44add36ed7b5a4e99491cb3e1e96b940aa81dff8fff198543435752",
+      "matches": true
+    },
+    {
+      "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily-gpt-87fa79d795c05c19.pdf",
+      "http_status": 200,
+      "sha256": "39081db3f44add36ed7b5a4e99491cb3e1e96b940aa81dff8fff198543435752",
+      "expected_sha256": "39081db3f44add36ed7b5a4e99491cb3e1e96b940aa81dff8fff198543435752",
+      "matches": true
+    },
+    {
+      "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.pdf",
+      "http_status": 200,
+      "sha256": "17833353408ddf5abd76c6b5d0cc617bd123c8054ea99fd899e2174c5a730f4e",
+      "expected_sha256": "17833353408ddf5abd76c6b5d0cc617bd123c8054ea99fd899e2174c5a730f4e",
+      "matches": true
+    },
+    {
+      "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis-gpt-8ec4755577db7e22.pdf",
+      "http_status": 200,
+      "sha256": "17833353408ddf5abd76c6b5d0cc617bd123c8054ea99fd899e2174c5a730f4e",
+      "expected_sha256": "17833353408ddf5abd76c6b5d0cc617bd123c8054ea99fd899e2174c5a730f4e",
+      "matches": true
+    },
+    {
+      "path": "web/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.html",
+      "http_status": 200,
+      "sha256": "82742b2aa77edf58ecf3a5cce4beec1bb2b8d48b964aaf4e9b2bef00b79f8cc1",
+      "expected_sha256": "82742b2aa77edf58ecf3a5cce4beec1bb2b8d48b964aaf4e9b2bef00b79f8cc1",
+      "matches": true
+    },
+    {
+      "path": "library/traditional-latin-mass.html",
+      "http_status": 200,
+      "sha256": "3821d7c0d27c378171949e46fd9e5c772353075e34599a03a26c5316a55a547b",
+      "expected_sha256": "3821d7c0d27c378171949e46fd9e5c772353075e34599a03a26c5316a55a547b",
+      "matches": true
+    },
+    {
+      "path": "browse/structure/documents/corpus.json",
+      "http_status": 200,
+      "sha256": "0436fd36b3fc0cf39b69854fce40122d347134d53c49d3480dd3f9de46417758",
+      "expected_sha256": "0436fd36b3fc0cf39b69854fce40122d347134d53c49d3480dd3f9de46417758",
+      "matches": true
+    },
+    {
+      "path": "PUBLICATION-MANIFEST.json",
+      "http_status": 200,
+      "sha256": "e25ac0101dc7a587c8a6b555fd87e43e9c2743c73060c517aea851af38b42b3b",
+      "expected_sha256": "e25ac0101dc7a587c8a6b555fd87e43e9c2743c73060c517aea851af38b42b3b",
+      "matches": true
+    },
+    {
+      "path": "web/gpt/articles/faith/four-last-things-01-death.html",
+      "http_status": 200,
+      "sha256": "04133c1efb8f3bdfbdcbb9d4f4e36ebd34ef06b8ba3944e06d03c9481cc5ce17",
+      "expected_sha256": "04133c1efb8f3bdfbdcbb9d4f4e36ebd34ef06b8ba3944e06d03c9481cc5ce17",
+      "matches": true
+    },
+    {
+      "path": "web/gpt/articles/faith/four-last-things-02-judgment.html",
+      "http_status": 200,
+      "sha256": "5a757f32b9d19d9cd2906c1c0b8224866d48d5ccb5a8228a77673e7152b07403",
+      "expected_sha256": "5a757f32b9d19d9cd2906c1c0b8224866d48d5ccb5a8228a77673e7152b07403",
+      "matches": true
+    },
+    {
+      "path": "web/gpt/articles/faith/four-last-things-03-hell.html",
+      "http_status": 200,
+      "sha256": "d3985ca9160f0caab3a5699eb5c7f30ca0233a2ae6c20786650096b9c924dcc7",
+      "expected_sha256": "d3985ca9160f0caab3a5699eb5c7f30ca0233a2ae6c20786650096b9c924dcc7",
+      "matches": true
+    },
+    {
+      "path": "web/gpt/articles/faith/four-last-things-04-heaven.html",
+      "http_status": 200,
+      "sha256": "cc546b4240d6df0035bf959c3ec2f96f75e7fd27a567613656341d810ecbfc2a",
+      "expected_sha256": "cc546b4240d6df0035bf959c3ec2f96f75e7fd27a567613656341d810ecbfc2a",
+      "matches": true
+    }
+  ],
+  "publication_manifest_comparison": {
+    "existing_publications_unchanged": 251,
+    "new_publications": [
+      "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+      "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily",
+      "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis"
+    ],
+    "new_pdf_and_alias_hashes_verified": true,
+    "previous_live_manifest_sha256": "67e7a73ffbd37b98d2757485dd96d8ef5ca2a77c486e05702d03dca09d9445ab",
+    "candidate_manifest_sha256": "e25ac0101dc7a587c8a6b555fd87e43e9c2743c73060c517aea851af38b42b3b"
+  },
+  "browser_supplement": {
+    "scope": "Coordinator post-acceptance functional browser check of the actual local publication artifact; does not alter native review results.",
+    "html_path": "web/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.html",
+    "html_sha256": "82742b2aa77edf58ecf3a5cce4beec1bb2b8d48b964aaf4e9b2bef00b79f8cc1",
+    "method": "Chromium via ChromeDriver, local file; automatic scrolling disabled to capture settled states and verify target positions.",
+    "viewports": [
+      {
+        "width": 1280,
+        "height": 757,
+        "page_width": 1265
+      },
+      {
+        "width": 390,
+        "height": 701,
+        "page_width": 375
+      }
+    ],
+    "chronology_table_horizontal_scroll": [
+      {
+        "clientWidth": 632,
+        "overflowX": "auto",
+        "scrollLeft": 0,
+        "scrollWidth": 632,
+        "top": 0.046875
+      },
+      {
+        "clientWidth": 327,
+        "overflowX": "auto",
+        "scrollLeft": 56,
+        "scrollWidth": 383,
+        "top": -0.421875
+      }
+    ],
+    "fragment_clicks": [
+      {
+        "found": true,
+        "hash": "#hist-esther",
+        "target": "hist-esther",
+        "text": "Esther: a threatened people in the Persian court",
+        "top": -0.21875
+      },
+      {
+        "found": true,
+        "hash": "#hist-job",
+        "target": "hist-job",
+        "text": "Job: the land of the story and the date of the book",
+        "top": 0.359375
+      },
+      {
+        "found": true,
+        "hash": "#hist-psalms",
+        "target": "hist-psalms",
+        "text": "The Psalms: remembered events and undated prayers",
+        "top": -0.5
+      },
+      {
+        "found": true,
+        "hash": "#hist-matthew",
+        "target": "hist-matthew",
+        "text": "Matthew: the location of the discourse and competing composition dates",
+        "top": 0.234375
+      },
+      {
+        "found": true,
+        "hash": "#hist-ephesians",
+        "target": "hist-ephesians",
+        "text": "Ephesians: an imprisoned writer and the readers of the letter",
+        "top": -0.078125
+      },
+      {
+        "found": true,
+        "hash": "#fn:22",
+        "target": "fn:22",
+        "text": "Thomas Aquinas, Summa theologiae III, q. 88, a. 1, answer and replies, Fathers of the English Dominican Province, second revised edition (19",
+        "top": -0.171875
+      },
+      {
+        "found": true,
+        "hash": "#fnref:22",
+        "target": "fnref:22",
+        "text": "22",
+        "top": 0.03125
+      }
+    ],
+    "duplicate_ids": [],
+    "missing_fragments": [],
+    "browser_errors": [],
+    "footnotes": 44,
+    "proper_targets": 17,
+    "screenshots_inspected": [
+      {
+        "name": "chronology--1280x900.png",
+        "sha256": "5ca1653c7eb8718c2d9708b90ef8f9443d67ab6419cf5961ace3c4e352e71619"
+      },
+      {
+        "name": "chronology--390x844.png",
+        "sha256": "fe4b9fb430ffbb53d79c34de43d8148bcf247e3858db9414eba4c716db44f1d6"
+      },
+      {
+        "name": "chronology-right--390x844.png",
+        "sha256": "d228e00c85bdceab6214c88e770f6184d41fd0959f9b5d4b11a8b1213f52bb53"
+      }
+    ],
+    "owned_processes": "WebDriver session deleted; owned ChromeDriver terminated and reaped.",
+    "raw_local_report_sha256": "aecf8d4ff966a5123068d429223a4eca63911f98301a003625b975cb5a52825a",
+    "limits": [
+      "At phone width, the chronology table requires horizontal panning to read all columns; the containing page has no horizontal overflow.",
+      "Three chronology screenshots inspected, not every viewport state of the whole document.",
+      "No physical mobile device or assistive-technology certification."
+    ]
+  },
+  "branch_cleanup": "The integrated remote feature/propers/codex ref was deleted after ancestry verification. The required local workspace branch remains and tracks origin/main.",
+  "limits": [
+    "The supplementary browser check used the exact local artifact; the HTTP checks separately prove its bytes match the deployed site.",
+    "Native publication review records remain historical and byte-exact; this deployment receipt does not replace their verdicts."
+  ]
+}

@@ -22,9 +22,22 @@ records preserve both parents. All three deployment gates pass. The candidate
 site preserves all 251 existing publication records and PDF hashes and adds
 only the three accepted October 18 publications. The
 [integration record](workflows/reviews/gpt-1962-61-production-2026-10-12/main-integration.json)
-records reconciliation, restored deployed PDF copies and validation. The
-outgoing-object audit, fast-forward push and automatic Pages verification
-remain pending; the earlier workspace delivery remains complete.
+records reconciliation, restored deployed PDF copies and validation. Commit
+`839ad448e557a1026c79a4bcc40aa43f10266100` reached `origin/main` by fast-forward
+after a clean audit of all outgoing Git objects. [Pages run 38488865282](https://github.com/spincyc/triptych/actions/runs/38488865282)
+and repository hygiene both succeeded. All fourteen checked public routes return
+HTTP 200 and match the verified local artifact byte for byte. The
+[deployment receipt](workflows/reviews/gpt-1962-61-production-2026-10-12/main-deployment.json)
+records the live PDFs, aliases, web edition, catalogs and preserved Four Last
+Things pages. The requested main integration and deployment are complete.
+
+A coordinator browser supplement inspected the actual publication artifact at
+desktop and phone widths and exercised all five appendix links plus a footnote
+and its return link. Targets resolve and the page has no horizontal overflow;
+on phones, the table requires horizontal panning. This supplements the earlier
+native web review without altering its recorded limits or verdict. The merged
+remote feature branch was retired under repository policy; the local workspace
+branch remains `feature/propers/codex` and tracks `origin/main`.
 
 ## GPT Twenty-first Sunday and concise historical orientation, 2026-10-12
 
@@ -99,8 +112,8 @@ Foundation, research and accepted-publication checkpoints are pushed. The
 [delivery receipt](workflows/reviews/gpt-1962-61-production-2026-10-12/delivery.json)
 records the exact payload, outgoing-object audit and verified remote ref,
 superseding the pre-push pending state in the publication-validation snapshot.
-The requested workspace delivery is complete; no main integration or live
-deployment is claimed.
+The requested workspace delivery is complete. The subsequently authorized main
+integration and verified deployment are recorded in the section above.
 
 ## GPT Four Last Things revision, 2026-10-12
 
