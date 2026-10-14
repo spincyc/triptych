@@ -7,6 +7,22 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-13.
 
+## October 18 propers integration and deployment, 2026-10-13
+
+<!-- promised-deliverable: gpt-1962-twenty-first-main-2026-10-13 -->
+
+The maintainer now requests reconciliation with current `main` and a push to
+`main`. The accepted workspace tip is
+`86819a273985a4a29b42936b090ed9a1da3e8005`; fetched `origin/main` is
+`3895c19af5fd30d31743e412a40a879938af904a`, containing three subsequent Four
+Last Things commits. Reconcile with an ordinary merge on the workspace branch,
+preserving the published commits named by native review and delivery records.
+Retain both publication families, reconcile shared inventories and release
+bindings, run all three deployment gates, audit every outgoing Git object,
+and push by fast-forward to `origin/main`. The automatic Pages run and affected
+public routes must then be verified. Integration and deployment are in progress;
+the earlier workspace delivery remains complete.
+
 ## GPT Twenty-first Sunday and concise historical orientation, 2026-10-12
 
 <!-- promised-deliverable: gpt-1962-twenty-first-quality-2026-10-12 -->
