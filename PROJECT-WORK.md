@@ -49,9 +49,12 @@ screening claim. Both Communion alternatives remain unselected. Ordinary PDFs
 are installed locally and remain untracked under repository policy; reproducible
 sources, hash receipts and canonical web belong to the committed payload.
 
-The promise remains open only for verified branch delivery. Scope checkpoint
-`98d31a5d1` and blocked production checkpoint `8e5f06507` are already pushed;
-the accepted payload is ready for commit and push to `feature/propers/codex`.
+The accepted publication payload `bad753364229dafb79afb87c991b3dc442522e2b`
+is pushed to `feature/propers/codex`, with exact remote-ref verification after
+an outgoing-object audit without findings. The [delivery receipt](workflows/reviews/gpt-pc-s55-production-2026-10-13/delivery.json)
+records the 230-path commit and completed push. All four promise requirements
+pass; this requested workspace delivery is complete. Main integration and live
+deployment remain separate work.
 
 ## October 18 propers integration and deployment, 2026-10-13
 

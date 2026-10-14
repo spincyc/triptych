@@ -693,3 +693,15 @@ release records, catalog and installation log hashes were rechecked. Ordinary
 PDFs and disposable proofs are excluded from the commit under standing policy.
 Workflow and publication promise requirements now pass; delivery remains open
 until the actual audited push is verified.
+
+### Verified accepted-payload delivery
+
+Commit `bad753364229dafb79afb87c991b3dc442522e2b` contains exactly the 230 intended
+paths, with a clean worktree afterward. The only staged whitespace exceptions
+were 48 native gate-log blank-at-EOF lines, preserved byte for byte and enumerated
+in publication-validation.json. All outgoing objects since the blocked checkpoint
+were checked: one commit, 61 trees and 171 blobs, with no findings. The ordinary
+feature-branch push succeeded and `git ls-remote` returned the exact payload
+commit. The delivery receipt records these actual operations. All promise
+requirements now pass and the register is complete. A final bookkeeping commit
+records this verified shipment; no main push or deployment is claimed.
