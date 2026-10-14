@@ -141,7 +141,22 @@
     "full_site_comparison": "All four final site HTML files and their three directly referenced assets match the accepted renders byte for byte. All sixteen companions and 69 section targets resolve."
   },
   "deployment": {
-    "status": "pending"
+    "commit": "170c364ca342f215f6e18e8700b775f3f4b6ef18",
+    "workflow_url": "https://github.com/spincyc/triptych/actions/runs/38495975013",
+    "workflow_conclusion": "success",
+    "deployment_job_completed_at_utc": "2026-10-14T01:35:00Z",
+    "repository_hygiene_url": "https://github.com/spincyc/triptych/actions/runs/38495975000",
+    "repository_hygiene_conclusion": "success",
+    "site_url": "https://mystago.gy/",
+    "live_routes_checked": 15,
+    "live_routes_http_200": 15,
+    "live_routes_matching_local_build": 15,
+    "publication_routes_matching_accepted_hashes": 12,
+    "downloaded_pdfs_passing_metadata": 8,
+    "unchanged_publication_pdf_hashes": 250,
+    "changed_pdf_hashes_matching_acceptance": 4,
+    "claude_catalog_entries_unchanged": 60,
+    "publication_manifest_sha256": "e32b5310640aa568c0543e02b75986e58be9286f748d955d64c2708a6a804773"
   },
   "previous_publication": {
     "schema": 1,
@@ -279,6 +294,8 @@
     "default_and_false_contents_fixtures_unchanged": 8,
     "broad_check": "All non-example checks passed. Initial replay: 247 examples run; 30 transcript divergences, six declared exemptions and three unavailable PDF examples. Official recapture refreshed 22 applicable outputs across eight tools; implementations are AST-identical. Five pre-existing count transcripts and three suspended raw-staleness diagnostics remain unrecaptured. No expected success was rewritten as a failure.",
     "unchanged_other_pdf_hashes": 250,
-    "unchanged_claude_catalogue_entries": 60
+    "unchanged_claude_catalogue_entries": 60,
+    "public_alpha_example_replay": "Eight examples replayed on frozen inputs; zero divergences and zero tracked writes. A preceding concurrency warning was independently traced to the coordinator adding the full-site comparison receipt, not an example mutation.",
+    "final_full_example_replay": "247 examples replayed on frozen tracked inputs: eight expected residual divergences (five pre-existing count transcripts and three suspended raw-staleness diagnostics), six declared exemptions, three unavailable-PDF examples, zero tracked writes. All 22 recaptured outputs agree."
   }
 }

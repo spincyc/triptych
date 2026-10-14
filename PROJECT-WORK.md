@@ -20,7 +20,7 @@ earlier source and production acceptance below describes a completed
 publication, not acceptance of its fitness for this clarified purpose.
 Claude publications remain excluded.
 
-**Content and rendered production accepted; publication in progress.** The four
+**Published and verified.** The four
 expanded manuscripts contain approximately 13,400 body words each. Death,
 Judgment and Hell are 25 pages each; Heaven is 24 (99 total). Four independent
 reviewers read every final section and its source apparatus and inspected every
@@ -32,8 +32,10 @@ The first short contemplative candidates and the 19–20-page calibration were
 not installed or published. Distinct source-grounded additions achieved the
 required depth. The accepted revision is `2026-10-14T01:05:45Z`; all four PDFs
 and web editions are installed with verified hashes. Full web fidelity and 63
-Chromium states passed. Required publication checks and GitHub Pages artifact verification pass;
-verified main deployment remains open. All 60 Claude catalogue entries and the
+Chromium states passed. Required publication checks and GitHub Pages artifact
+verification pass. Commit `170c364ca` reached main; Pages run `38495975013`
+and repository hygiene succeeded. All fifteen affected live routes match the
+verified local build, including all twelve accepted article/download routes. All 60 Claude catalogue entries and the
 other 250 publication PDF hashes are unchanged. The shared review records the
 broad example-replay limits separately from the passing release gates.
 
@@ -47,7 +49,7 @@ main baseline. The opt-in web contents implementation passes 186 merged tests;
 
 Evidence belongs in the four GPT leaves' research records and
 `src/gpt/articles/faith/four-last-things-shared/revision-review.md`; the
-production receipt will identify the newly accepted artifacts after review.
+production receipt identifies the accepted artifacts and verified deployment.
 
 ## October 18 propers integration and deployment, 2026-10-13
 

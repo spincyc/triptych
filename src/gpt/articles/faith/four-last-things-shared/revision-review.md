@@ -105,8 +105,8 @@ certification. The PDFs are untagged and no physical print proof was examined.
 The four installed PDFs and Markdown files match the accepted hashes in
 `production-review.json`, which preserves the previous publication separately.
 Required source, deployment-source, web, catalogue, release-binding and site
-checks pass, including GitHub Pages artifact verification. Main deployment
-remains open.
+checks pass, including GitHub Pages artifact verification. The revision is
+published and its live artifacts are verified.
 
 The optional web-contents implementation passed 186 merged web-edition tests;
 eight default/false GPT and Claude fixture conversions remained byte-identical.
@@ -129,6 +129,25 @@ all 254 installed publication PDFs matched the pre-revision live manifest.
 The final protected-Claude comparison is against this integrated main baseline:
 all 60 Claude catalogue entries are identical, and all 250 other installed
 publication PDFs retain their published hashes.
+
+
+### Verified publication
+
+Commit `170c364ca342f215f6e18e8700b775f3f4b6ef18` reached `origin/main`
+through an ordinary push after review of every newly reachable object.
+[Pages run 38495975013](https://github.com/spincyc/triptych/actions/runs/38495975013)
+and repository hygiene succeeded. All fifteen checked public routes return
+HTTP 200 and match the verified local artifact: the four web essays, four
+canonical PDFs, four download aliases, Faith catalogue, document catalogue
+and publication manifest. All twelve publication routes match the accepted
+hashes; all eight downloaded PDFs pass generation-metadata checks. The other
+250 publication PDF hashes and all 60 Claude catalogue entries remain unchanged.
+Exact accepted and deployed hashes are recorded in `production-review.json`.
+
+The public-alpha examples were replayed again with frozen tracked inputs:
+all eight passed with no divergence or tracked write. An earlier replay's
+concurrent-write warning was traced to the coordinator's addition of the
+full-site comparison receipt; it was not a write by the example command.
 
 ### Superseded candidates
 

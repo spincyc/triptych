@@ -4,7 +4,7 @@ schema_version = 1
 id = "gpt-four-last-things-contemplative-2026-10-13"
 owner = "PROJECT-WORK.md"
 promise = "Recast the four GPT Four Last Things essays as sober Catholic spiritual reading for annual preparation for death, each on the order of 25 pages, especially a clear account of hell enriched by the Fathers and saints; preserve Claude publications and publish the reviewed revision to main."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "gpt-flt-contemplative-content"
@@ -23,7 +23,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "gpt-flt-contemplative-publication"
   criterion = "The accepted revision reaches main through an ordinary push; required deployment checks, automatic Pages workflow and affected live routes are verified, with Claude publication content unchanged."
-  status = "open"
+  status = "pass"
   evidence = ["src/gpt/articles/faith/four-last-things-shared/production-review.json", "PROJECT-WORK.md"]
   check = "path_exists"
 
