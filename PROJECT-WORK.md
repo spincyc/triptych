@@ -7,6 +7,31 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-13.
 
+## GPT Twenty-ninth Sunday in Ordinary Time, 2026-10-13
+
+<!-- promised-deliverable: gpt-pc-s55-production-2026-10-13 -->
+
+The maintainer requests the complete Novus Ordo propers workflow for the
+upcoming Sunday. The target is **Twenty-ninth Sunday in Ordinary Time,
+Year A, 18 October 2026**, provider `gpt`, under the Roman Missal, Third
+Edition, U.S. English 2011 edition tree. The dated USCCB reading page names
+Lectionary 145; occurrence, complete appointments and local-calendar limits
+remain subject to the workflow's independent context resolution.
+
+The `proper-study` v11 run `fbf047c60105569f` is seeded at
+`bd50b7dcd577610ce6c8a9c9fc4610b7a0b5a23a`, with audience `adult parish
+assembly`. Its scope is an expansive study, concise study, standalone homily
+and canonical web edition, with fresh authors and cold reviewers at the
+declared efforts, exact reviewed installation and terminal acceptance.
+Production has not yet passed its scope gate. This workspace delivers on
+`feature/propers/codex`; integration into `main` and live deployment are
+separate from this requested workflow delivery.
+
+The durable driver and native evidence will live under
+`workflows/reviews/gpt-pc-s55-production-2026-10-13/`. The promise remains
+open until the actual run is accepted, all publication and source checks
+pass, and the validated work is committed and pushed to the workspace branch.
+
 ## October 18 propers integration and deployment, 2026-10-13
 
 <!-- promised-deliverable: gpt-1962-twenty-first-main-2026-10-13 -->

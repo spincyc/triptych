@@ -139,6 +139,7 @@ and an identity with no line here is closed.
 - Authorized 2026-10-07: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost`.
 - Authorized 2026-10-08: provider `claude`, identity `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a`.
 - Authorized 2026-10-12: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost`.
+- Authorized 2026-10-13: provider `gpt`, identity `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a`.
 
 ### Withdrawn targets
 
