@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-13.
+Last reconciled: 2026-10-14.
 
 ## GPT Twenty-ninth Sunday in Ordinary Time, 2026-10-13
 
@@ -18,27 +18,40 @@ Communion alternatives remain unselected and local overlays remain unresolved.
 The work belongs on `feature/propers/codex`; main integration and deployment
 are separate from this workspace delivery.
 
-The initial `proper-study` v11 run **fbf047c60105569f is BLOCKED** at
-installation. After the recorded research and concise repairs, all six cold
-reviews passed, all 36 PDF pages were inspected, and canonical web review
-passed full fidelity plus desktop/mobile and sampled footnote checks. Normal
-Make installed the reviewed 23-page study, ten-page synthesis and three-page
-homily byte for byte. The canonical web edition and catalog/release wiring
-are ready, but this is not final workflow acceptance.
+The replacement `proper-study` v11 run **9b5dbdfa9ba70a96 is ACCEPTED**.
+All 21 stages passed at iteration 0 with fresh authors and independent reviewers.
+The 23-page expansive study, ten-page concise study and three-page homily were
+installed through normal Make recipes with exact accepted/build/installed hash
+equality. The canonical web edition passed complete fidelity and fresh desktop
+and mobile review; all 38 note/backlink pairs and eleven appointed links were
+exercised at both widths. All 36 PDF pages were inspected. STU-001 records a
+nonblocking sparse-page advisory; VIS-001 accepts that same page as cosmetic.
 
-Final global source validation found that the PL92 containment inventory omits
-Bede's Mark exposition despite its accepted columns 235–236 segment. That
-inventory is sealed research evidence; the installer preserved it and returned
-BLOCKED. The [native archive](workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/README.md)
-and [driver record](workflows/reviews/gpt-pc-s55-production-2026-10-13/DRIVER-RECORD.md)
-preserve the actual outcome. A replacement workflow will repair the inventory
-at the research boundary and independently review every downstream stage.
+The [accepted native archive](workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/README.md)
+retains 96 native files and 99 selected evidence files, all manifest-verified.
+The [publication validation](workflows/reviews/gpt-pc-s55-production-2026-10-13/publication-validation.json)
+records exact artifacts, passing terminal publication gates and the full source
+check after acceptance. Existing catalog links and three release records are
+preserved; deterministic document/source inventories and scoped release bindings
+are current. The [driver record](workflows/reviews/gpt-pc-s55-production-2026-10-13/DRIVER-RECORD.md)
+records actual dispatches and two browser recovery interventions.
 
-The promise remains open until real acceptance, passing source/publication
-checks and verified branch delivery. The scope checkpoint `98d31a5d1` is pushed;
-this blocked production checkpoint preserves completed work without assigning
-it acceptance. Exact 2008 Latin and publisher-specific 2011 altar-book collation
-remain explicit evidence limits. The family ledger has 161 pending review units.
+The initial run **fbf047c60105569f remains BLOCKED** at installation by the
+missing bounded Bede Mark constituent in the sealed PL92 containment inventory.
+Its [archive](workflows/reviews/gpt-pc-s55-production-2026-10-13/run-fbf047c60105569f/README.md)
+is unchanged. The replacement, seeded at pushed checkpoint
+`8e5f065076d0fa449869f8a2bfa495c93bf150e8`, repaired that record at the research
+boundary and independently completed all subsequent stages.
+
+Exact 2008 Latin and publisher-specific 2011 altar-book collation remain explicit
+evidence limits. The family ledger has 161 pending review units and no complete
+screening claim. Both Communion alternatives remain unselected. Ordinary PDFs
+are installed locally and remain untracked under repository policy; reproducible
+sources, hash receipts and canonical web belong to the committed payload.
+
+The promise remains open only for verified branch delivery. Scope checkpoint
+`98d31a5d1` and blocked production checkpoint `8e5f06507` are already pushed;
+the accepted payload is ready for commit and push to `feature/propers/codex`.
 
 ## October 18 propers integration and deployment, 2026-10-13
 

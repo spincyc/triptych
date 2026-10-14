@@ -1,0 +1,21 @@
+{
+  "packet_sha256": "5f39560528b42db2bb578d39130d52590543bb204aa0730ef7c02575e485de9b",
+  "review_inputs": {
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+    "files": {},
+    "provider": "gpt",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md": "e87243499c4dd4797dbfda5226a75bd3e851d93a56be0431c636ae068a750a19"
+    }
+  },
+  "checks": [
+    {
+      "path": "build/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md",
+      "expected": "e87243499c4dd4797dbfda5226a75bd3e851d93a56be0431c636ae068a750a19",
+      "actual": "e87243499c4dd4797dbfda5226a75bd3e851d93a56be0431c636ae068a750a19",
+      "match": true
+    }
+  ]
+}

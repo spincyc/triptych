@@ -442,7 +442,23 @@ id = "work.jacques-paul-migne.patrologia-latina-volume-92"
 manifest_sha256 = "9fcc1fa5d85c0a459952f20a4f84726a9142905f358f555e517af91c1e4b78bf"
 status = "partial"
 basis = "Work description: 'the third Migne volume of Bede's works, printing his genuine exegetical works and containing the commentaries on Luke and on Acts ... Bede's exposition of Luke 7:11-17 falls at cols. 417-420.'"
-unresolved = "The description names only the commentaries on Luke and on Acts among Bede's 'genuine exegetical works'; the volume's other contents are not named."
+unresolved = "The description names the commentaries on Luke and on Acts; direct inspection additionally establishes the bounded Mark constituent below. The remainder of the volume is not identified here, and the whole Mark commentary has not been collated."
+
+[[containers.constituents]]
+author = "Bede the Venerable"
+title = "In Marci evangelium expositio"
+work_id = "work.bede.in-marci-evangelium-expositio"
+scripture = ["Mark 10:35-10:46"]
+locator = "Book III, PL 92 cols. 235-236; Internet Archive leaf n122, especially col. 236A-B on Mark 10:42-45"
+basis = "Original segment inspection on 2026-10-13 and independent page-image reinspection on 2026-10-14 of registered artifact ia-leaf-n122-4cdb234f (SHA-256 4cdb234fe27083d0f6926cb4f7753297a60dd1b9530b1576c297cf96a2c8ae3a), registered segment columns-235-236. The running heading and continuous exposition establish this bounded constituent, including the Son of Man's service and pro multis qualification; no whole-work collation is claimed."
+
+[[containers.constituents]]
+author = "Bede"
+title = "In Marci evangelium expositio"
+work_id = "work.bede.in-marci-evangelium-expositio"
+scripture = ["Mark 10:35-10:46"]
+locator = "Book III, PL 92 cols. 235-236; Internet Archive leaf n122, especially col. 236A-B on Mark 10:42-45"
+basis = "Same bounded page-image evidence as the preceding row; this exact author spelling is separately present in the discovery index and joins to the same work identity."
 
 [[containers.constituents]]
 author = "Bede the Venerable"

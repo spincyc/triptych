@@ -1,0 +1,17 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+    "files": {},
+    "provider": "gpt",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md": "e87243499c4dd4797dbfda5226a75bd3e851d93a56be0431c636ae068a750a19"
+    }
+  },
+  "stage": "web-review",
+  "summary": "PASS for the complete canonical PC-S55-A web conversion, SHA-256 e87243499c4dd4797dbfda5226a75bd3e851d93a56be0431c636ae068a750a19 from research/web-artifact.json: the full Markdown, canonical sources and research PDF extraction preserve both interpretations, all eight senses, 49 source headings, tables, chronology qualifications and 38 exact source notes. Fresh Chromium desktop/mobile previews at 1280\u00d7900 and 390\u00d7844 were visually inspected in 26 representative states plus one recapture, with all 38 footnote/backlink pairs and 11 appointed-text targets exercised at each width and three external links retrieved; this establishes local conversion fidelity and presentation, not exhaustive historical-source re-review, assistive-technology testing, live-site navigation or deployment (receipts: build/tpt-runs/9b5dbdfa9ba70a96/artifacts/web-review-0000/inspection-receipt.json)."
+}

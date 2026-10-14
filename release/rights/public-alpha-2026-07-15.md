@@ -14131,7 +14131,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-4.json` | `7f1956b102a7b765dc36210f5557ad25f07d075c8edcc87a3acc85cd3a03473d` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-5.json` | `61abb15daa555ada778b2eeb6137cbc6114102586c9cc2a27d5e4863521de0e3` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-6.json` | `54408d9f5e1c8b684850b05976d6e3ac9ee3b88b6194c37c7e1cf83d52256d28` |
-| `src/web/data/structure/documents/corpus.json` | `0f7b1fb1cba8ef607bdd042814399b2ffe08c313990fcec30e82282863b3c821` |
+| `src/web/data/structure/documents/corpus.json` | `d2b5e6c2f96d5f0e5e754e7eceafe076db2b3711f6f4438194c729f1d70767a5` |
 | `src/web/data/structure/ordinary/index.json` | `b248eefcc0b073e43dd4c0d168007cd8d09fc5f28bd2fc633d98e2f4ba9e4846` |
 | `src/web/data/structure/ordinary/postconciliar.json` | `7714e4f1c328e4adad95afb3387e81b0cc44731977bfe5866a2ae2a2a597c2b6` |
 | `src/web/data/structure/ordinary/roman-1962.json` | `7d8eeba961c7e8ffa46f9fc57a486d6a4ddf7df23d011a0bbba015e87c404000` |
@@ -23962,7 +23962,7 @@ release attachment, announcement, or promotion.
 | `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md` | `e13bf85f26b02d0ba75393494f4b6fe7f632f2126f81f27562b0e8a1bd0646a2` |
 | `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.md` | `07a676484c738e02e9b95f31fac19ed27eff64f3edfb40af2a85d729e336bb74` |
 | `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.md` | `b91cb9d304eebdfa991243f02ddfc29fa2b323632ea92639fb2f8e4a064013b8` |
-| `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md` | `5dac08418643e50ef887586d343037a788d2ffff6b572a2fb855c33c721c83eb` |
+| `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md` | `e87243499c4dd4797dbfda5226a75bd3e851d93a56be0431c636ae068a750a19` |
 | `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.md` | `84549acaf543bb57e21a41629832ab054068e89d7f04579bb2c9a7d806b0946d` |
 | `web/gpt/theology/angelology.md` | `34d3c866336e843930bcec50f5d0ae0881131378b7294f2ab0672038e81c75a6` |
 | `web/gpt/theology/heresies/heresies-in-catholic-history.md` | `857e39f664c4112acbf01a8095703a96ccd32d080eb62cfec985daa09d73864c` |

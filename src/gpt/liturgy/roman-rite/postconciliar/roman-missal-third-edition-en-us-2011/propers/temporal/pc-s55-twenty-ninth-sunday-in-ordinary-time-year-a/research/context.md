@@ -1,5 +1,48 @@
 # Context: Twenty-ninth Sunday in Ordinary Time, Year A
 
+## Fresh context verification, 2026-10-13
+
+This verification supersedes the initial scaffold and acquisition-status
+statements below, while retaining their audit history. The complete inventory
+and branch universe below remain the current context: ten ritual positions,
+eleven element keys, and two mutually exclusive Communion antiphons.
+`PC-S55-A`, Lectionary 145, the U.S. 2011 edition and the nationally appointed
+2026-10-18 occurrence agree. The requested Year A is also the actual Year A.
+
+The existing complete official calendar and dated reading-page deliveries
+were independently hashed against their registered artifact records. The
+calendar's physical pages 7 and 43 were opened as newly rendered page images;
+the reading page's five units, refrain, partial verses and actual psalm
+strophes were read. A fresh `calendar-days day` computation returned week 29,
+Sunday A and the independent ferial II, with Saint Luke an unranked candidate.
+The dated national calendar resolves the Sunday. Live official calendar and
+reading-page views also agreed on this appointment. Unknown local solemnities
+remain unresolved.
+
+The complete U.S. GIRM chapter-II and chapter-VII delivery hashes were checked
+against their registered artifacts, and nos. 48, 51, 53–54, 61–63, 65–71, 74,
+87–90 and 364–365 were read for the branch table. Fresh shared-formulary
+inspection and its precise limits are recorded only at
+[W29](../../shared/ordinary-time/weeks/29/propers/verified.md#fresh-context-reinspection-2026-10-13).
+The Makefile still explicitly binds all three PDF targets to that owner.
+
+Existing `main.tex`, `synthesis.tex` and `homily.tex` contain prior authored
+work and were preserved byte for byte. Their existence confers no acceptance
+in this fresh production. The current [source plan](source-plan.md) names
+which evidence is already registered and which checks remain. No reception,
+chronology, study, homily, visual or publication verdict is inherited here.
+
+The live calendar-variations index and bounded official-domain searches were
+checked again. The index's last listed addition is still 2021. The searches
+`site:cultodivino.va 2026 calendar October 18 decree` and
+`site:press.vatican.va 2026 calendar October 18 liturgical` returned no decree
+replacing this national appointment. Results included a Newman October 9
+memorial lead and a World Mission Day notice; neither was adopted as a new
+proper or a selected local Mass. This is a bounded currentness check, not
+exhaustive verification of all later decrees or proper calendars.
+
+## Initial context record, retained with the updates above
+
 Resolved 2026-10-13. Postconciliar Roman Rite; English; dioceses of the
 United States of America. Parent `PC-S55`, formula `PC-S55-A`, Lectionary
 145, slug `pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a`. The requested
@@ -64,8 +107,9 @@ collation limits and variation work. This leaf references that owner.
 The Makefile declares W29 as a prerequisite of each of the three intended
 PDFs; the collection already declares its registry dependencies.
 
-The new `main.tex` is only the required source-owner reservation comment.
-It is not an authored study, a built publication or an accepted result.
+At the initial context resolution, `main.tex` contained only the required
+source-owner reservation comment. Subsequent authoring replaced that scaffold;
+the fresh verification above records the present entrypoint state.
 
 ## Complete ordered proper inventory
 

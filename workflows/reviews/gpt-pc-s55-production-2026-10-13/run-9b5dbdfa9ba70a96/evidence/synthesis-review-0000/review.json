@@ -1,0 +1,51 @@
+{
+  "stage": "synthesis-review",
+  "iteration": 0,
+  "disposition": "PASS",
+  "findings": [],
+  "scope": "Independent complete concise-source reading before comparison with expansive sections 10, 30, 40, 50, and 60; independent exact-locus source checks; fresh proof and every rendered page inspected. No source changes.",
+  "input_seal": "input-seal.json verifies the complete REVIEW_INPUTS structure at entry and completion, including component contract and generation provenance, not only file hashes.",
+  "proof": {
+    "pdf": "proof/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+    "sha256": "882eeba9b5609d37c8efb25ed9fc5b9603a93bd90dcbefcf109cd0e27d7a0bfa",
+    "pages": 10,
+    "size_bytes": 380673,
+    "build": "Fresh isolated Make proof completed; final target check exit 0. Metadata, anchors, component/page markers, and recorder validation passed in the recipe. Final TeX log has no overfull, underfull, undefined-reference, or LaTeX warning diagnostics. All 13 font subsets embedded, with Unicode mappings.",
+    "raster_review": "tools/tpt pdf-review exited 0; contact sheet and all ten individual full-size page rasters inspected under rasters/.",
+    "layout": {
+      "1": "Complete ordered proper inventory, including both Communion alternatives, and all four substantive sense rows; no cover-only opening.",
+      "2": "Only the readable chronology table.",
+      "3-4": "Substantive thematic development of the two interpretations and their relationship.",
+      "5-9": "Developed integrated commentary, with deeper textual reasoning and qualifications rather than repeated opening summaries.",
+      "10": "Readable terminal scope, references, revision, and colophon; no rights-only spill."
+    }
+  },
+  "independent_argument_recovery": [
+    "Receiving the world without worshipping its powers: created goods and civil authority have real uses and obligations, while neither office nor achievement supplies divine allegiance. Cyrus can be a royal instrument without being holy; coin dues remain bounded by godliness, while the human image is owed to God.",
+    "Grace makes willing service possible: receiving a gift differs from acknowledging its giver. Grace reaches the will itself without removing costly human fidelity. Thanksgiving excludes the purchase of election and does not deny effort.",
+    "These complementary interpretations remain distinguishable in the concise study itself. The commentary compares them within Cyrus, election, tribute, the word of life, and ransom/service rather than running two disconnected summaries."
+  ],
+  "expansive_trace": "The concise claims and qualifications are present in the expansive treatment, allegiance, response, comparison, and history sections. No new source-dependent controlling claim was identified. Commentary adds usable depth through Jerome’s negative clause, Aquinas on willing, alternative readings of election’s manifestations, the Chrysostom/editor distinction, and the Bede/Gregory/Aquinas ransom comparison.",
+  "chronology_lookup": [
+    "The psalm material distinguishes an unknown occasion, a latest composition boundary before about 165 BC, traditional Davidic attribution, and the separate Temple-title and Nativity reception relations. A royal era or Christian rereading is not substituted for composition.",
+    "Isaiah separates traditional ministry in Judah/Jerusalem (740–701 BC) from the late-exilic setting attributed to Isaiah 40–55; it does not manufacture an exact Cyrus event date.",
+    "Matthew separates the Jerusalem Temple tribute event, whose date is unresolved, from disputed composition proposals. The final about-AD-50 proposal is explicitly Durand’s Aramaic original; his Greek translation date remains unknown. Durand’s registered article directly confirms this qualification.",
+    "Mark lists disputed composition proposals and the relative after-Matthew/before-Jerusalem-destruction proposal without inventing a date for the narrated ransom saying. Philippians distinguishes Rome to Philippi (61 or 62–64 AD), and 1 Thessalonians Corinth to Thessalonica (52 or 53–54 AD).",
+    "All appointed biblical loci are findable; uncertainty and differing subjects remain visible. Generated chronology annotations passed the current-corpus check (exit 0), and the concrete table was compared with the expansive historical appendix."
+  ],
+  "source_loci_checked": [
+    "Jerome, Commentary on Isaiah XII, Isaiah 45:1–7, DCO pars 3 PDF pp.126–129: Cyrus, royal anointing, type, ignorance clause, and returning glory.",
+    "Aquinas, Isaiah 45; Matthew 22 lect.2; 1 Thessalonians 1 lect.1; Philippians 2 lect.3–4; Psalm 16 n.3 and Psalm 32 n.16: literal/spiritual distinctions, grace and will, election, and nourishment. Seven retained raw artifacts matched their registered SHA256 digests; see source-byte-verification.json.",
+    "Chrysostom, Matthew homily LXX §§1–2 and LXV §§4–5: trap, dues bounded by godliness, descent and ransom; 1 Thessalonians homily I: gratitude, work, and endurance; Philippians commentary: willing service and the word-of-life passage, including the separately attributed editorial objection.",
+    "Augustine, Enarrationes, Psalms XVII §§1,6,8; XXXIII §§16–22; XCVI §§1–6,11: hearing and protection, nourishment, world-building praise, and the wood-of-the-cross reception.",
+    "Bede, Mark 10:32–45, including PL92 col.236A–B: exact Latin text checked and source scan visually inspected; world-ransom and willing believers retain their distinction.",
+    "Gregory Nazianzen, Oration XLV §22, with adjacent context: ransom neither a debt to the devil nor a demanded delight of the Father; incarnation and sanctification. Aquinas, Summa III q.48 a.4 and opening of a.5: sufficient satisfaction, charity, and payment to God rather than devil.",
+    "Durand, Catholic Encyclopedia, The New Testament: original Aramaic Matthew about AD50 and Greek date unknown; checked in registered source text.",
+    "Current USCCB October 18, 2026 readings: appointed references and boundaries. John Paul II, audience of September 18, 2002 §§4–5: Christian reception of Psalm 95 and Mark’s service/ransom saying."
+  ],
+  "online_sources": [
+    "https://bible.usccb.org/bible/readings/101826.cfm",
+    "https://www.vatican.va/content/john-paul-ii/en/audiences/2002/documents/hf_jp-ii_aud_20020918.html"
+  ],
+  "limits": "This review verifies the concise study and consequential cited uses; it does not newly establish uncertain biblical dates or a historical exemplar for the modern DCO Jerome setting. Those limitations remain explicit in the study. Protected raw payloads and machine-specific build logs remain outside this public receipt."
+}

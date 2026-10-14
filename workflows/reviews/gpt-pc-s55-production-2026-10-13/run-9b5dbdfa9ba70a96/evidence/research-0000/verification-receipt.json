@@ -1,0 +1,52 @@
+{
+  "verified_at_utc": "2026-10-14T05:15:06.025239+00:00",
+  "subject": "PC-S55-A, United States, 2026-10-18",
+  "research_owner": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research",
+  "checks": [
+    {
+      "command": "make check-sources",
+      "exit_code": 0,
+      "log": "check-sources-complete.log",
+      "sha256": "d180f190602b85640ec45d4d4d56da09434abf29601fddefaf655eb8af694c1f"
+    },
+    {
+      "command": "tools/tpt source-inventory classify",
+      "exit_code": 0
+    },
+    {
+      "command": "tools/tpt proper-chronology record --provider gpt --document <proper> --check",
+      "exit_code": 0
+    },
+    {
+      "command": "tools/tpt proper-chronology annotations --provider gpt --document <proper> --presentation orientation-v1 --check",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "environment": {
+    "pythonpath": ".scratch/pc-s55/environment",
+    "markdown_version": "3.10.3"
+  },
+  "evidence_receipts": [
+    "source-byte-and-page-verification.json",
+    "bede-containment-verification.json",
+    "chronology-orientation.json"
+  ],
+  "source_family_state": {
+    "pending": 161,
+    "screened": 0,
+    "atomic_citation_coverage": false
+  },
+  "projection_refresh": "Publication inventory and source-family snapshots refreshed deterministically; classification unchanged; source/browser projections already current; no release-binding refresh.",
+  "limits": [
+    "Research completion, not cold-review acceptance or approval of downstream prose.",
+    "Bounded reception discovery and selected primary units; further commentary and ancient prayer-antecedent leads remain uninspected.",
+    "No exact 2008 or 2011 altar-book collation; modern protected liturgical payload remains withheld.",
+    "Rights records adopted without a new civil-law determination or permission; missing 2005 authority remains unresolved.",
+    "No chronology values changed; disputed frameworks and unresolved occasions remain distinct.",
+    "No commit, push, or alteration of prior archived results."
+  ]
+}

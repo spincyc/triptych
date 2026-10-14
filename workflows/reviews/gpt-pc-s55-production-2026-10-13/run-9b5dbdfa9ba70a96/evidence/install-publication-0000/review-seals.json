@@ -1,0 +1,73 @@
+[
+  {
+    "review": "research",
+    "iteration": 0,
+    "result": "build/tpt-runs/9b5dbdfa9ba70a96/results/research-review-0000.json",
+    "sha256": "529137dbe5e23ffc534a59fa61e685d075e2f37dbfa5fd2cadb9304e321550b1",
+    "disposition": "PASS",
+    "current_inputs_match": true,
+    "findings": []
+  },
+  {
+    "review": "study",
+    "iteration": 0,
+    "result": "build/tpt-runs/9b5dbdfa9ba70a96/results/study-review-0000.json",
+    "sha256": "d2b47571fd0e163341fffdea907f3b864b2fc8d3d309a040358c28c3d3d95cd2",
+    "disposition": "PASS",
+    "current_inputs_match": true,
+    "findings": [
+      {
+        "id": "STU-001",
+        "location": "Study proof physical page 10; sections/20-texts.tex ending and sections/30-allegiance.tex opening clearpage",
+        "problem": "The final two appointed-text locator units occupy only the upper portion of page 10 before the forced start of the first interpretation, producing a conspicuously sparse intermediate page. This is layout polish and does not impair depth, accuracy or usability.",
+        "required_result": "At a convenient layout pass, reflow the locator section or its following page break to reduce the sparse spill while preserving readable type and a clear beginning for the first interpretation.",
+        "severity": "advisory"
+      }
+    ]
+  },
+  {
+    "review": "synthesis",
+    "iteration": 0,
+    "result": "build/tpt-runs/9b5dbdfa9ba70a96/results/synthesis-review-0000.json",
+    "sha256": "6c3661d3d149d70e894c8dabb7abe7e29e1f5ba26ba3b4d1a76c4daaca8d6005",
+    "disposition": "PASS",
+    "current_inputs_match": true,
+    "findings": []
+  },
+  {
+    "review": "homily",
+    "iteration": 0,
+    "result": "build/tpt-runs/9b5dbdfa9ba70a96/results/homily-review-0000.json",
+    "sha256": "79fbd64bd466a2b21164d32a41c169682733e83845f00a255cdd4fb71e5f9362",
+    "disposition": "PASS",
+    "current_inputs_match": true,
+    "findings": []
+  },
+  {
+    "review": "visual",
+    "iteration": 0,
+    "result": "build/tpt-runs/9b5dbdfa9ba70a96/results/visual-review-0000.json",
+    "sha256": "58c7340570db63728ef384a161beba9ec64b62d1301a298c6c83916b0e35b63d",
+    "disposition": "PASS",
+    "current_inputs_match": true,
+    "findings": [
+      {
+        "accepted_because": "The complete entries remain clearly headed and easy to retrieve, and the fresh-page interpretation boundary aids navigation. The study contains substantial exposition and its 23-page extent does not rely on this sparse page to reach the 20-page minimum. Reflow would disturb settled pagination for a cosmetic saving without correcting misleading or inaccessible content.",
+        "id": "VIS-001",
+        "location": "Expansive study, physical page 10; src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/30-allegiance.tex:1 (forced break following sections/20-texts.tex)",
+        "problem": "Page 10 contains only the two short final locator entries, Communion: Mark alternative and Prayer after Communion, leaving roughly three quarters of its body area empty before the first interpretation begins on page 11.",
+        "required_result": "No repair is required for this run; a future layout revision could rebalance the final locator entries and first interpretation boundary while preserving all wording, legibility, and section navigation.",
+        "severity": "accepted"
+      }
+    ]
+  },
+  {
+    "review": "web",
+    "iteration": 0,
+    "result": "build/tpt-runs/9b5dbdfa9ba70a96/results/web-review-0000.json",
+    "sha256": "d3036e0825bfcc5770bd62541a3c55a3e23b0a3cca8615ca0ba78b1353070cfa",
+    "disposition": "PASS",
+    "current_inputs_match": true,
+    "findings": []
+  }
+]

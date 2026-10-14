@@ -1,0 +1,363 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "STU-001",
+      "location": "Study proof physical page 10; sections/20-texts.tex ending and sections/30-allegiance.tex opening clearpage",
+      "problem": "The final two appointed-text locator units occupy only the upper portion of page 10 before the forced start of the first interpretation, producing a conspicuously sparse intermediate page. This is layout polish and does not impair depth, accuracy or usability.",
+      "required_result": "At a convenient layout pass, reflow the locator section or its following page break to reduce the sparse spill while preserving readable type and a clear beginning for the first interpretation.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "sections/30-allegiance.tex; proof pp.11\u201313",
+      "note": "Consequential difficulty test passed against Jerome Isaiah XII 45:1\u20137 and Chrysostom Matthew LXX \u00a7\u00a71\u20132: limited Cyrus typology and godliness-bounded civil obligation are explained and applied across the formulary."
+    },
+    {
+      "location": "sections/40-response.tex; proof pp.14\u201317",
+      "note": "Consequential difficulty test passed against Aquinas Super Philippenses 2.3 and Chrysostom 1 Thessalonians I: divine action within genuine willing and costly human response are explained rather than merely asserted."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "key": "study-map",
+          "kind": "front-matter",
+          "path": "sections/01-map.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "key": "treatment",
+          "kind": "proper-treatment",
+          "path": "sections/10-treatment.tex",
+          "references": [
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "key": "texts",
+          "kind": "appointed-text",
+          "path": "sections/20-texts.tex",
+          "references": [
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "key": "allegiance",
+          "kind": "interpretive-lane",
+          "path": "sections/30-allegiance.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "key": "response",
+          "kind": "interpretive-lane",
+          "path": "sections/40-response.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "key": "history",
+          "kind": "terminal-apparatus",
+          "path": "sections/60-history.tex",
+          "references": [
+            "research/chronology-annotations.tex",
+            "research/chronology.toml",
+            "research/chronology-research.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/70-apparatus.tex",
+          "references": [
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+      "element_keys": [
+        "entrance",
+        "collect",
+        "first-reading",
+        "psalm",
+        "second-reading",
+        "acclamation",
+        "gospel",
+        "offerings",
+        "communion-psalm",
+        "communion-mark",
+        "after-communion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "allegiance"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "key": "rightly-ordered-allegiance",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "title": "Receiving the world without worshipping its powers"
+        },
+        {
+          "authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Thomas Aquinas",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "response"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "key": "grace-and-willing-service",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "title": "The received gift becomes willing service"
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+    "files": {
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/main.tex": "462cfe4ebf066ca84e06483346ad3902253b0cad5f29a80e9ee86d894bb41a22",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex": "db444ca664a1f8d1b4849efb2ab81c652ffb725e3b9ebcc91986e83e3d138796",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/chronology-research.md": "01ce65efdd8f91b4b98dd194737e93fcfc497ed85960e0b10992b783f8498104",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/chronology.toml": "007eed7446eaa2e132e09261b4c29f6597f938f60b86179e1e69a55244772bae",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/interpretations.md": "fc20bf2239c05acc89cc5c56826bb4d3b866b6f6d1bbaba28e1faf870958c97d",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/scope.md": "a851ae2e906d3f68df08142ff3575e06e31e3b132fa985e8e51f8e8304bc7b80",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/source-bindings.toml": "7d6bc2b144a91d08b1cc60b071ba1d129ef1ea4825f83b1b4ff87ab63dc2de60",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/00-opening.tex": "bbfb3835837b927111346f982884f4c3dee9717e814a1e9d879a2c157e2a8828",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/01-map.tex": "55a6aebd0604ea1f17cb42f53ac93670240b2f29bae6d43a8e392e36487873e3",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/10-treatment.tex": "7511d4f79db6fa4287dcb5a7c90372445218e9348998bcbcb4197bc9605c8913",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/20-texts.tex": "0e3049da432978ec8c46b95696b3a3eb95bcb6f494dcc7ed7c321f9fa5f4a10f",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/30-allegiance.tex": "095ac1513d47b5729758f9125ae42f7f6281da1125e1dbd3b7413eed48460f67",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/40-response.tex": "f329e247c8c6a09a69e1f9fd0f01b7e9f78a8e24c24485019d1c2851342c536b",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/50-comparison.tex": "fcf6b33d071e2ddbfa67a074be9dcf5eb3f9e6d357071249ae47d75b59988d15",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/60-history.tex": "3cade7d574119c32bd44bbba104c8d48ba30ab6974e0f64457e976c29fabcc47",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/70-apparatus.tex": "2e96e3d064d6ca6d5293406508b7de06e11469787b793a6d396217284c9959ec"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "11",
+            "17f12ad495885888db9045416b60df5bc828dccdf9f1eab5a1edb648cc280964",
+            "9b5dbdfa9ba70a96",
+            "8e5f065076d0fa449869f8a2bfa495c93bf150e8",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Independently reviewed the sealed canonical study and all 23 proof pages, including both whole-formulary interpretations, each reading\u2019s four senses, exact carrying-author inferences, appointed-text boundaries and historical appendix; no blocking defect found. Full REVIEW_INPUTS equality, source loci, proof hashes and bounded witness limitations are recorded in build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/review-evidence.json; one layout advisory remains."
+}

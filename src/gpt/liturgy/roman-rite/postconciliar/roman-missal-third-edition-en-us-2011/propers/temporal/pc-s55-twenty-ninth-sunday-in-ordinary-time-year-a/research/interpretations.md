@@ -239,3 +239,20 @@ the entire formulary and do not substitute for these distinct distillations.
 The homily can adopt one governing argument, with exact sources and delivery
 estimate outside the speech. No cultural-gallery or exploratory-proposal
 quota is part of this research plan.
+
+
+## Independent interpretation check, 2026-10-14
+
+Both readings remain proposed editorial syntheses after fresh reading of the
+identified primary units. A asks how receiving temporal goods can coexist
+with giving God the allegiance borne by his image; B asks how prior divine
+gift enables willing fidelity and service. Those are different inferences,
+not rival claims about the redactors' intention. Their element-by-element
+contributions and separate four senses remain supported within the bounds
+above. Chrysostom's and Aquinas's different accounts of the word of life,
+Jerome's Cyrus/Christ distinction, Bede's believing reception of the gift
+for the world, and Gregory's and Aquinas's different ransom accounts must
+remain visible. Neither interpretation supplies a historical occasion for
+an undated psalm or turns shared prayers and semicontinuous readings into
+a documented single-theme composition. No downstream prose is approved by
+this research judgment.

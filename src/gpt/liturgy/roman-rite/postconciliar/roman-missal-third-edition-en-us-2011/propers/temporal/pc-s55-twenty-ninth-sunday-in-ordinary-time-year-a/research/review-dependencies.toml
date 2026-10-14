@@ -1,5 +1,14 @@
 # Controlling evidence read outside the leaf; source-ID bindings and chronology dependencies are also sealed by the workflow.
 paths = [
+  "src/sources/inventories/author-standing-v1.toml",
+  "src/sources/commentary/work-aliases.yaml",
+  "src/sources/commentary/work-extents.yaml",
+  "src/sources/commentary/formulary-loci.yaml",
+  "src/sources/commentary/fragment-loci.yaml",
+  "src/sources/commentary/mass-commentary-corpus.yaml",
+  "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/decree-implementing-canon-838-2021",
+  "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/liturgiam-authenticam-2001",
+  "src/sources/works/international-commission-on-english-in-the-liturgy/publication-policies",
   "src/sources/commentary/passage-commentary-index.yaml",
   "src/sources/inventories/source-containment-v1.toml",
   "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/README.md",

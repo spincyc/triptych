@@ -1,0 +1,218 @@
+{
+  "stage": "web-review",
+  "iteration": 0,
+  "artifact": "build/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md",
+  "sha256": "e87243499c4dd4797dbfda5226a75bd3e851d93a56be0431c636ae068a750a19",
+  "pdf_sha256": "cac5c0b9ebdbd393f9df74436b0215cfd50138d718c103536124105f24f02c43",
+  "full_fidelity_scope": [
+    "Read the complete 597-line canonical Markdown, including all interpretations, appointed texts/rights-safe locators, three appendices, references, revision/rights notice, and 38 notes.",
+    "Compared canonical main.tex input order and all nine source components using normalized source-prose and exact note comparisons; inspected special structures directly. All 49 source headings survive in source order at matching semantic levels.",
+    "Compared the research PDF extraction across the complete artifact. All word-frequency differences were traced to the web title/subject, PDF running heads/table headers, and PDF line-break joining in branch keys; no source text loss identified.",
+    "Checked 146 source-prose candidates: 133 matched directly; five witness-environment pairs match with their intervening visible labels and eight chronology invocations match their complete generated payloads. Verified eight interpretation sense entries, 22 source table rows, 38 source notes and 11 appointed-text anchors.",
+    "Rechecked complete engine REVIEW_INPUTS recursively before review and after browser work, plus web-artifact.json, the research PDF receipt, and all recorded render input hashes."
+  ],
+  "browser": {
+    "engine": "Chromium 154.0.8037.97",
+    "markdown_version": "3.10.3",
+    "renderer": "tools/public-alpha render_page; release/public-alpha/assets/site.css",
+    "css_sha256": "a456caf21041256a1047560c0cee8638a99f7df819e6249ee3345e550b6b4060",
+    "viewports": [
+      {
+        "width": 1280,
+        "height": 900
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "navigation": "Clicked all 38 actual footnote links and their backlinks and exercised all 11 appointed-text targets at each viewport; target hashes and visible positions recorded in browser-desktop.json and browser-mobile.json.",
+    "layout": "No page overflow, missing fragments, duplicate IDs or visible TeX debris. Inventory reflows within width; five-column branch table is internally scrollable on mobile (327px viewport, 601px content, 274px successful scroll). Inspected left and right positions.",
+    "capture_method": "Fresh local-file iframe previews using the actual renderer/CSS; smooth scrolling disabled in disposable preview only. 26 representative view states plus one complete recapture, not a screenshot of every scroll position.",
+    "screenshots": [
+      {
+        "path": "screenshots/allegiance-desktop.png",
+        "sha256": "76acfa0ad4d8411a5920d9cad476961b5f1cf0fc89056e92385e0831b3967623",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/allegiance-mobile.png",
+        "sha256": "970c7ecf95785347cc605f4db702386a322d779219a98aa44755ce507f60f008",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/allegiance-senses-desktop.png",
+        "sha256": "eeac5b1a2082e4e26cfbee0bd8c8316fdd3455591d58ad5075bd334d633e78fd",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/allegiance-senses-end-mobile.png",
+        "sha256": "59e894b90d2635e27f9c21e3ad0cfb0450fde0222600be22b511a14cd7f9ca16",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/allegiance-senses-mobile.png",
+        "sha256": "290e4654c0ce3394b7896815c95d7b9b0d4abc2c320f402da6e2beaa266fd359",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/branches-desktop.png",
+        "sha256": "277d581d2712eba2c6de9c25f966c075e7c49c849ce9b6eeb3cabd750cb8bff3",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/branches-mobile.png",
+        "sha256": "ae0cfe5c9310a81de31c9bd620dd0974fd3ef2018f80a84e99801996350a1ecb",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/branches-table-left-mobile.png",
+        "sha256": "7d29359db68eb1fcb7530bb4cb376b0eb0065630182cc054b287e8da52dbaa8f",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/branches-table-right-mobile.png",
+        "sha256": "a3188161dc1d416d8955a36f101d4b3343408ca3e948d98061b8bad815be2fef",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/chronology-desktop.png",
+        "sha256": "8c1a1662cf1d7f5c57c5eebda1156c6f39f103e0cd96ff2fea3d7d54d4f58c65",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/chronology-mobile.png",
+        "sha256": "b904b901d1f467005209c4a0463a56d390d16faba8c4cd61194958aa5f6a8a8a",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/colophon-desktop.png",
+        "sha256": "fda04dcbdb0744d6d450f8f6eae1ddd51887a3b5e19b3b2114e41fb6c7f52865",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/colophon-mobile.png",
+        "sha256": "e135c6f708b22cc5fb178611dddb16cd681f2bd288323306528b47f96c65a60a",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/gospel-desktop-recapture.png",
+        "sha256": "49d6261f9113c5a2bc7420e3ac3c2f4b450e39ee28838e861a6597410c284806",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/gospel-desktop.png",
+        "sha256": "61d292c38ad8d3318ded9a032e2c3bad0392ce828d26070defb0b4346f47b937",
+        "visually_inspected": true,
+        "note": "Initial capture has a blank lower strip; complete Gospel block was visible. Superseded for full-viewport evidence by gospel-desktop-recapture.png."
+      },
+      {
+        "path": "screenshots/gospel-mobile.png",
+        "sha256": "8acb297746548dcfb6ac20d76c7d4d308596fb9ab5bcd966e2ba56f8a20182a5",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/inventory-desktop.png",
+        "sha256": "13724ec99c5c23ce8b1418a6dca01d01821975833e135d13a4eecbad9c67bfde",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/inventory-mobile.png",
+        "sha256": "8053ac7aa84e8caef1b8d10b10ef45896f9981c07d48a0d51c9e39a1c30d2d68",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/last-note-desktop.png",
+        "sha256": "6bb0820f2e8ef88aca11ed7afc05ad35f07e4239c4cf5dac7deac569f9aadc59",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/last-note-mobile.png",
+        "sha256": "95243a12f6c2c1882f68085f6af2fb272195301fa2549910db8d9bbd9c4cbad8",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/opening-desktop.png",
+        "sha256": "40f601951a9b8c19472e1d6822cbe3960e48004fb51139d9ef9721f85e5c3ec0",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/opening-mobile.png",
+        "sha256": "77a2e5b66b3138c733a4e6bac19341d9d6ccc3f6800b91a8bdbb5eab5c88e1ce",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/references-desktop.png",
+        "sha256": "7f92811d6c4faea1e17b38c21b5af1b6ddb45fc70bb30d78dd90557e8c293123",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/references-mobile.png",
+        "sha256": "cb165c97efd41c0fa5d1b30067d7622e7fedb58e2967eacd411a935a714c0819",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/response-senses-desktop.png",
+        "sha256": "3d1b706f7b251c0861c98a8056a872d5b573d29a4f24db7a6dbd1eebc8939625",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/response-senses-end-mobile.png",
+        "sha256": "3c098c0343b4077926d4f705c883a2680f53a6de9b113b3d4ff10c5fb86a049f",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      },
+      {
+        "path": "screenshots/response-senses-mobile.png",
+        "sha256": "432aea912caed3f83fa50998ad6521fac6536408bd8c792c0a98ad0c761ee6f6",
+        "visually_inspected": true,
+        "note": "Fresh rendered state inspected."
+      }
+    ]
+  },
+  "source_link_checks": {
+    "method": "Retrieved through web tool on 2026-10-14; destinations match cited identities.",
+    "urls": [
+      "https://bible.usccb.org/bible/readings/101826.cfm",
+      "https://www.vatican.va/content/john-paul-ii/en/audiences/2002/documents/hf_jp-ii_aud_20020918.html",
+      "https://creativecommons.org/licenses/by/4.0/"
+    ],
+    "checked_loci": [
+      "USCCB dated page: Sunday name, Lectionary 145, all five biblical appointments and partial-verse bounds.",
+      "John Paul II audience, 18 September 2002, paragraphs 1\u20135: universal praise, idol purification, Christian cross rereading and Mark service/ransom conclusion.",
+      "Creative Commons Attribution 4.0 destination identity."
+    ]
+  },
+  "limits": [
+    "Review covers the canonical web conversion and its fidelity/presentation, not a renewed exhaustive source-research review of every historical claim.",
+    "Browser review used isolated local-file previews, not a running deployed site; global site navigation, live deployment, screen readers, touch hardware, other browser engines, and every possible viewport were not tested.",
+    "Site-preview banner is preview chrome rather than canonical document content. No publishing, installation, source changes, native workflow state changes, commits or pushes performed.",
+    "First sandboxed browser launches failed with socket permission errors. An escalated command with redirections remained unanswered for 366.1 seconds until interruption. A direct command without redirections then completed normally under the existing Chromium permission rule; no approval or rejection inferred from the interrupted call."
+  ],
+  "disposition": "PASS",
+  "findings": []
+}

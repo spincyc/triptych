@@ -15,14 +15,16 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "pc-s55-workflow-accepted"
   criterion = "The actual proper-study run reaches ACCEPTED through fresh authors and cold reviewers at declared effort levels; its native packets, results, repair cycles and material interventions are durably archived."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/state.json", "PROJECT-WORK.md"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "pc-s55-reviewed-publications"
   criterion = "The reviewed 20–50-page expansive study, 10–12-page concise study, standalone homily and canonical web edition are installed with exact reviewed bytes, owning catalog links, separate release records and passing publication and source checks."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-pc-s55-production-2026-10-13/publication-validation.json", "PROJECT-WORK.md"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "pc-s55-workspace-delivery"

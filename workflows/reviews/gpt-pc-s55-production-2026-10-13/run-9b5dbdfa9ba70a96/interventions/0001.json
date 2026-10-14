@@ -1,0 +1,6 @@
+{
+  "encoded": false,
+  "stage": "web-review",
+  "text": "The resumed reviewer reports both sandbox desktop/mobile browser attempts exited 133 with a crashpad setsockopt permission error and empty DOM outputs. Its required escalated desktop retry, although beginning with the approved Chromium prefix, included shell redirections and remained pending for 366.1 seconds until coordinator interruption. No approval or rejection was returned. The same reviewer is retrying the direct browser command without shell redirections, retaining actual tool output and using the browser screenshot flag. Offline comparison and exception resolution remain independently performed; browser acceptance is still pending.",
+  "timestamp": "2026-10-14T07:20:35Z"
+}

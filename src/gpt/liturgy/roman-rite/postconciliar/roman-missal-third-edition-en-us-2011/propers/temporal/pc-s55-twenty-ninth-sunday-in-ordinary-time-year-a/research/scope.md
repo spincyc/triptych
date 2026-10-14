@@ -1,6 +1,6 @@
 # Research scope: PC-S55-A
 
-Research date: 2026-10-13. This record belongs to the postconciliar U.S.
+Initial research: 2026-10-13. Independent reinspection: 2026-10-13–14. This record belongs to the postconciliar U.S.
 Twenty-ninth Sunday in Ordinary Time, Year A, nationally appointed on
 2026-10-18. The context and eleven-key inventory were independently checked.
 The shared Missal evidence remains with [Week 29](../../shared/ordinary-time/weeks/29/propers/verified.md).
@@ -389,3 +389,60 @@ must have a home in the expansive study's historical appendix; the concise
 orientation rows alone are not their complete explanation. No author should
 resolve source disagreements by silently choosing one date or borrowing a
 modern unregistered timeline.
+
+
+## Independent research reinspection, completed 2026-10-14
+
+The preceding dossiers were checked against their evidence anew; the earlier
+research outcome is not an approval inherited by this record. The complete
+biblical contexts listed above, the three complete Augustine expositions,
+Chrysostom's direct Matthew and Pauline units, Jerome's Isaiah 44:28–45:7
+unit, the identified Aquinas paragraphs, Bede's direct Mark exposition,
+Gregory Nazianzen's ransom discussion and John Paul II's complete Psalm 95
+catechesis were read. Their specific inferences and the distinctions between
+direct commentary, Gospel parallel and editorial synthesis remain as recorded.
+The two proposed interpretations were independently assessed against those
+units, including each appointed element and each interpretation's four senses.
+
+Eight uncapped commentary-discovery queries were rerun for the Entrance,
+Isaiah, responsorial Psalm, Thessalonians, acclamation, Gospel and both
+Communion branches. They returned respectively 14, 14, 13, 13, 16, 20, 19
+and 12 work rows. Psalm queries explicitly used Vulgate numbering. Verse
+envelopes remain discovery inputs: they neither restore Psalm 95:10b nor
+expand any appointed partial verse. Every returned holding was considered
+as a lead; a held volume does not certify inspection of a proposed locus.
+The separate postconciliar `ot-29` formulary query compared 40 recorded loci
+and returned no listed or structurally corresponding whole-formulary witness.
+That is a bounded index result, not proof that no such commentary exists.
+The unresolved historical prayer antecedents and uninspected further
+commentaries listed above remain unresolved.
+
+The PL 92 containment entry now identifies Bede's *In Marci evangelium
+expositio* under both registered author aliases. The retained leaf n122,
+SHA-256 `4cdb234fe27083d0f6926cb4f7753297a60dd1b9530b1576c297cf96a2c8ae3a`,
+was independently reinspected on 2026-10-14. Its running heading and
+continuous exposition establish Book III, columns 235–236, with the service
+and ransom gloss at 236A–B. The original segment's verification date remains
+2026-10-13. This adds a bounded constituent to a partial inventory; it does
+not identify the volume's remainder or claim a whole-work collation.
+
+The 20 selected calendar, Missal, Antiphonary, FDLC, OLM, GIL, Notitiae,
+Jerome and AAS pages described above were independently inspected as
+`pdf-review` rasters. Fresh hashing compared 55 available source-file
+instances with their prior receipts and registered hashes, and the text of
+each selected review-PDF page was compared byte-for-byte with its original
+PDF page. These are rechecks of retained deliveries, not claims of fresh
+retrieval. The shared Week 29 owner remains controlling for the modern
+Missal identity and its exact-target limitations; no 2008 altar-book or
+2011 altar-book collation has been added. The Notitiae check remains the
+bounded Ordinary Time correction block, not a certification of all amendments.
+
+The registered rights records were read and their withholding decisions
+retained. Public-domain biblical and historical commentary text remains
+separate from modern translations, editorial wrappers and protected liturgical
+wording. No new permission or civil-law determination is claimed. ICEL's
+conditional live-site permission does not clear this repository's bundled
+surfaces; no restricted prayer, antiphon or reading is reconstructed. The
+Latin audit's missing 2005 underlying decree remains an open authority lead.
+External controlling inventories, commentary discovery inputs, author standing
+and rights-source owners are declared in `review-dependencies.toml`.

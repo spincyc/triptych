@@ -1,0 +1,60 @@
+{
+  "author-proof.pdf": {
+    "sha256": "882eeba9b5609d37c8efb25ed9fc5b9603a93bd90dcbefcf109cd0e27d7a0bfa",
+    "bytes": 380673
+  },
+  "author-proof.aux": {
+    "sha256": "010797d5bf27fd3561bd32484b35ff7262c2611d07ed8a2afc35f1dfb804dd20",
+    "bytes": 5476
+  },
+  "author-proof.log": {
+    "sha256": "60d2c0c334f89d78e1e06f620c9e2253b544efe1a49a43fe466bae4078cb265b",
+    "bytes": 38947
+  },
+  "log_note": "Retained author-proof.log normalizes machine installation paths only; exact unnormalized TeX log remains in private stage scratch and canonical build.",
+  "raw_log_sha256": "cfddceb0310fe8984bf53061eef287235a4d080269582103d12131916b540f95",
+  "physical_pages": 10,
+  "canonical_build": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+  "byte_identical_to_canonical_build": true,
+  "source_timestamp_utc": "2026-10-14T06:00:25Z",
+  "pdf_checks": [
+    {
+      "command": [
+        "pdfinfo",
+        "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/derive-synthesis-0000/author-proof.pdf"
+      ],
+      "exit_code": 0,
+      "receipt": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/derive-synthesis-0000/pdfinfo.txt"
+    },
+    {
+      "command": [
+        "pdffonts",
+        "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/derive-synthesis-0000/author-proof.pdf"
+      ],
+      "exit_code": 0,
+      "receipt": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/derive-synthesis-0000/pdffonts.txt"
+    },
+    {
+      "command": [
+        "pdftotext",
+        "-layout",
+        "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/derive-synthesis-0000/author-proof.pdf",
+        "-"
+      ],
+      "exit_code": 0,
+      "receipt": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/derive-synthesis-0000/extracted.txt"
+    },
+    {
+      "command": [
+        "gs",
+        "-q",
+        "-dNOPAUSE",
+        "-dBATCH",
+        "-sDEVICE=nullpage",
+        "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/derive-synthesis-0000/author-proof.pdf"
+      ],
+      "exit_code": 0,
+      "receipt": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/derive-synthesis-0000/pdf-structure.txt"
+    }
+  ]
+}

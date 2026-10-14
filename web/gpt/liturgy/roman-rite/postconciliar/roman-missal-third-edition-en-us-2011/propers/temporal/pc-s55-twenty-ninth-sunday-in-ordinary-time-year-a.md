@@ -54,7 +54,7 @@ The pupil of the eye suggests something small, precious and carefully protected.
 
 The Collect, identified by its Latin incipit in the text section, concerns devoted willing and sincere service of divine majesty. Its position matters: before the assembly hears a command about what to render, it asks for the disposition that can render rightly. The question is not only whether a duty can be named. A divided person may know the right action yet perform it for vanity, fear or advantage.
 
-The petition thus gives an interior dimension to the Gospel’s public dilemma. Sincere service cannot be manufactured by flattering the one addressed, as Jesus’ questioners attempt. Nor does the prayer let the assembly treat good intentions as a private possession already secured. Asking God for readiness makes room for the change that the readings will demand. This is an account of the prayer’s subject and liturgical function; its approved English is not printed or replaced by a new translation.
+The petition thus gives an interior dimension to the Gospel’s public dilemma. Sincere service cannot be manufactured by flattering the one addressed, as Jesus’ questioners attempt. Nor does the prayer let the assembly treat good intentions as a private possession already secured. Asking God for readiness makes room for the change that the readings will demand.
 
 ### Cyrus: named, strengthened, and still unknowing
 
@@ -110,7 +110,7 @@ Aquinas first explains the literal civil exchange through the use of the coin. H
 
 The Prayer over the Offerings relates the gifts through which worship is offered to the purification of those serving the mysteries. A person can possess something to offer and still need cleansing. The act of giving is therefore not a certificate of innocence. In the Gospel, the possession of a coin exposes a question; at the altar, the possession of gifts becomes an occasion to receive help.
 
-The liturgical movement is especially searching for those who serve visibly. The act itself is good, yet the servant’s motives and habits remain open to healing. This is neither contempt for human work nor the claim that an imperfect person must cease every good act. It places work in a relation of dependence: service is offered through gifts received, and service itself is accompanied by a plea for purification. The prayer’s wording and source limits remain distinct from this theological explanation.
+The liturgical movement is especially searching for those who serve visibly. The act itself is good, yet the servant’s motives and habits remain open to healing. This is neither contempt for human work nor the claim that an imperfect person must cease every good act. It places work in a relation of dependence: service is offered through gifts received, and service itself is accompanied by a plea for purification.
 
 ### Communion through the Psalm of mercy
 
@@ -252,7 +252,7 @@ Matthew 22:15–21; Lectionary no.145. No shorter form is appointed for this Yea
 
 ## Receiving the world without worshipping its powers {#lane-rightly-ordered-allegiance}
 
-An earthly good can be real without being ultimate. This is the first reading’s governing answer to the apparent collision between Cyrus’s vocation and God’s sole lordship, between Caesar’s dues and God’s claim. The whole formulary teaches a person to receive created goods, discharge real obligations and seek protection, while refusing to make any of these goods the source or final measure of life. Jerome’s Cyrus and Chrysostom’s tribute exposition supply the controlling distinctions. Augustine’s universal song and Aquinas’s image of God extend their consequences into the life of the worshipping body.
+An earthly good can be real without being ultimate. This resolves the apparent collision between Cyrus’s vocation and God’s sole lordship, between Caesar’s dues and God’s claim. The whole formulary teaches a person to receive created goods, discharge real obligations and seek protection, while refusing to make any of these goods the source or final measure of life. Jerome distinguishes the ruler’s liberating office from the true Christ; Chrysostom distinguishes rightful tribute from impious demands. Augustine’s universal song and Aquinas’s image of God extend their consequences into the life of the worshipping body.
 
 ### The instrument does not become the saviour
 
@@ -312,7 +312,7 @@ Anagogical.
 
 ## The received gift becomes willing service {#lane-grace-and-willing-service}
 
-The second reading begins with a difficulty inside the worshipper’s action. If God gives strength, grace and even the capacity to will, what remains for a person to do? Conversely, if faith works and love labours, why should thanksgiving credit God? Cyrus’s unknowing reception of power, Paul’s grateful recognition of a fruitful community, and the Collect’s petition concerning the will make these questions concrete. Aquinas explains how divine action reaches willing itself; Chrysostom explains why the resulting human life must be active, costly and sincere.
+A further difficulty lies inside the worshipper’s action. If God gives strength, grace and even the capacity to will, what remains for a person to do? Conversely, if faith works and love labours, why should thanksgiving credit God? Cyrus’s unknowing reception of power, Paul’s grateful recognition of a fruitful community, and the Collect’s petition concerning the will make these questions concrete. Aquinas explains how divine action reaches willing itself; Chrysostom explains why the resulting human life must be active, costly and sincere.
 
 ### A gift can be used without its giver being known
 
@@ -422,7 +422,7 @@ Babylonian exile supplies the critical horizon; Jerusalem and its Temple are the
 
 Matthew 21:23 and the continuing controversies establish the Jerusalem temple setting of the tribute question. Its exact narrated date remains unresolved here. The composition alternatives date the Gospel, not this exchange. The temple is the scene of the narrative; it does not identify the writer’s place.
 
-Jacquier’s Matthew article reports competing early testimony and the subsequent dates drawn from it. He notes uncertainty in interpreting Irenaeus’s account. The first five alternatives above belong to that discussion, which distinguishes early reported dates from a later proposed interval and another interpretation centred on the preaching and deaths of Peter and Paul. The sixth comes from Durand’s *The New Testament* article’s original-Matthew account, accompanied by uncertainty about the Greek rendering. Overlap between intervals does not make them independent confirmations of one exact year.[^35]
+Jacquier’s Matthew article reports competing early testimony and the subsequent dates drawn from it. He notes uncertainty in interpreting Irenaeus’s account. The first five alternatives above belong to that discussion, which distinguishes early reported dates from a later proposed interval and another interpretation centred on the preaching and deaths of Peter and Paul. Durand’s *The New Testament* article assigns the sixth alternative, about A.D. 50, to an Aramaic original; he leaves the date of its Greek rendering undetermined. Overlap between intervals does not make them independent confirmations of one exact year.[^35]
 
 ### Mark’s journey toward Jerusalem {#history-mark}
 
@@ -516,7 +516,7 @@ Historical orientation
 
 : The *Catholic Encyclopedia* articles by Corbett, Gerard, Howlett, Souvay, Meistermann, Jacquier, Durand, MacRory, Vander Heeren, Prat and Drum are identified at their claims in the historical appendix. PBC, responsa of 26 June 1912, *AAS* 4 (1912), pp.463–465. USCCB, NABRE introductions to Psalms and Isaiah, official web deliveries read in the research of 13 October 2026. Historical source judgments and modern critical horizons remain distinct.
 
-**Last revised (UTC):** 2026-10-14T03:46:48Z
+**Last revised (UTC):** 2026-10-14T06:21:50Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

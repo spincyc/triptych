@@ -1,0 +1,188 @@
+{
+  "packet_sha256": "012988bb8307c1d2062f4f32ba5351304d3a2458f42f6cc8544023b938245a41",
+  "full_review_inputs_equal": true,
+  "sealed_file_count": 7,
+  "checked_fields": [
+    "component_contract",
+    "document",
+    "files",
+    "generation_provenance",
+    "provider",
+    "review",
+    "schema"
+  ],
+  "review_inputs": {
+    "schema": 1,
+    "provider": "gpt",
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+    "review": "homily",
+    "component_contract": {
+      "schema": 2,
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+      "calendar": "postconciliar",
+      "element_keys": [
+        "entrance",
+        "collect",
+        "first-reading",
+        "psalm",
+        "second-reading",
+        "acclamation",
+        "gospel",
+        "offerings",
+        "communion-psalm",
+        "communion-mark",
+        "after-communion"
+      ],
+      "lanes": [
+        {
+          "key": "rightly-ordered-allegiance",
+          "title": "Receiving the world without worshipping its powers",
+          "authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "John Chrysostom"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "component_keys": [
+            "allegiance"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ]
+        },
+        {
+          "key": "grace-and-willing-service",
+          "title": "The received gift becomes willing service",
+          "authors": [
+            "Jerome",
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Bede"
+          ],
+          "carrying_authors": [
+            "Thomas Aquinas",
+            "John Chrysostom"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ],
+          "component_keys": [
+            "response"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ]
+        }
+      ],
+      "presentation_contract": "interpretive-pagination-v1",
+      "presentation": {
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "chronology": "concise-chronology",
+        "themes": "concise-themes",
+        "commentary": "concise-commentary"
+      },
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-psalm",
+            "communion-mark",
+            "after-communion"
+          ],
+          "key": "spoken",
+          "kind": "homily",
+          "path": "sections/homily-10-spoken.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "homily-notes",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily-90-notes.tex",
+          "references": []
+        }
+      ]
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+        "production": [
+          [
+            "proper-study",
+            "11",
+            "17f12ad495885888db9045416b60df5bc828dccdf9f1eab5a1edb648cc280964",
+            "9b5dbdfa9ba70a96",
+            "8e5f065076d0fa449869f8a2bfa495c93bf150e8",
+            "unknown"
+          ]
+        ],
+        "inheritance": []
+      }
+    },
+    "files": {
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/homily.tex": "0c1587b04397ae52ef6cf3cc484f8f922131cc8f6ee8b6a059e3a9aba4f9e7cc",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/interpretations.md": "fc20bf2239c05acc89cc5c56826bb4d3b866b6f6d1bbaba28e1faf870958c97d",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/homily-10-spoken.tex": "e065b0d4044f6b807a3c572a8d5c54722cc63e24c6df178d3272c063fb7914ae",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/homily-90-notes.tex": "433266cd1e31b3837b09a0e3000918dd872539d7f2fbb7950d2fa26934f6e400"
+    }
+  }
+}

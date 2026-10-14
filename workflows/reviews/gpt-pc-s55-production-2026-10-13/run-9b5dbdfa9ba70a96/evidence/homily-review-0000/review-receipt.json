@@ -1,0 +1,28 @@
+{
+  "stage": "homily-review",
+  "iteration": 0,
+  "disposition": "PASS",
+  "packet_sha256": "012988bb8307c1d2062f4f32ba5351304d3a2458f42f6cc8544023b938245a41",
+  "full_review_inputs_equal_at_start_and_finish": true,
+  "artifact": "PC-S55-A homily: The person holding the coin",
+  "continuous_reading": "Entire 22-paragraph spoken body read continuously and silently before source checks; no audible or human rehearsal.",
+  "exegetical_judgment": "The coin establishes genuine dues; Aquinas extends its image to the person owed to God. Cyrus shows useful gifts without acknowledgment; Pauline thanksgiving shows divine gift and real human work together. The Collect then reaches willing itself, and the Eucharistic movement places received mercy before service and enduring hope.",
+  "text_substitution_test": "PASS: unrelated readings would remove the argument's decisive progression from whose image is on the coin to the person returned to God, and remove its contrast between Cyrus's twice-stated ignorance and thanksgiving for Thessalonian work. The applications are conclusions from that progression, not an independent generic sermon.",
+  "relation_to_study": "Compared the complete interpretations record and both developed study components, sections/30-allegiance.tex and sections/40-response.tex. Compatible claims are selected; no attribution of the whole formulary to an ancient author or of compositional intent to shared prayers. The speech does not assert a disputed ransom-payee theory or claim automatic reception by everyone.",
+  "oral_judgment": "Clear short sentences, recoverable coin image, explicit transitions, concrete weekly responsibility/motive exercise, and final return to the image. The body contains no stage directions, footnotes, invented personal event, clerical identity, or newly composed prayer.",
+  "evidence_read": [
+    "Douay–Rheims/Challoner, Gutenberg 1581 registered verse-text: Isaiah 44–45, Matthew 22, Mark 10, 1 Thessalonians 1 and Vulgate Psalm 95. Each retained book payload independently hash-matched to its artifact record.",
+    "Chrysostom, Homilies on Matthew LXX §§1–2 through the next controversy transition; LXV §§4–5 opening; NPNF I.10 retained CCEL text. Genuine dues and the godliness limit, truth used in a trap, saving descent against ambition.",
+    "Chrysostom, Homilies on 1 Thessalonians I, exposition of 1:1–7 with opening moral transition, NPNF I.13 retained CCEL text. Thanksgiving, strenuous love and endurance remain complementary.",
+    "Aquinas, Super Matthaeum 22 lectio 2, Corpus Thomisticum paragraph 87389 in full; Super Philippenses 2 lectio 3, paragraph 87838 in full. Complete restricted deliveries hash-matched; electronic texts, not print collation.",
+    "Jerome, Commentary on Isaiah XII, DCO Pars 3 pp.126–129: 44:28 and 45:1–7 through the book XIII boundary. Read extracted text and independently inspected all four existing page rasters after original-PDF hash, raster hash, and selected-PDF text-linkage checks. DCO historical exemplar remains unidentified.",
+    "FDLC, Mystagogical Reflections, Week 29, physical/printed pp.16–17, Collect and Prayer after Communion. Read original-PDF extraction and inspected both existing page rasters after original hash, raster hash and text-linkage checks. No claim about the historical antecedents in the accompanying reflection.",
+    "Ignatius Pew Missal Week 29 publisher delivery, Prayer over the Offerings body: independent full-delivery hash match and text inspection. Year B readings excluded. This corroborates analytical description, not exact U.S. altar-book collation.",
+    "Canonical Week 29 owner and local source-and-delivery note read; prayer explanations remain analysis and do not reconstruct recitation texts."
+  ],
+  "source_image_limit": "Six retained source images were independently inspected, not rerendered. A new source-raster invocation rejected .scratch as an output destination before rendering; retained images were linked to the hash-matched originals. Poppler emitted recoverable xref reconstruction diagnostics for the selected-source PDF; each compared page extraction returned successfully and matched its original page.",
+  "proof": "Independent isolated make build succeeded, 3 pages, SHA-256 18bc8b4cbdeaf50e2fd455f8d1d394a8f224e443f746e3e13c684765399d46c5. All 3 pages inspected; 1323 spoken tokens match extracted PDF; no build/layout warnings; all 9 font subsets embedded. See proof-checks.json and dedicated rasters/.",
+  "delivery": "1323 spoken words; 10.1769–11.5043 minutes at 130–115 wpm. Mathematical estimate only; no timed human performance.",
+  "limits": "Review covers this homily and its adopted claims. Uninspected exact 2008 Latin and publisher-specific 2011 U.S. altar-book pages remain disclosed. No claim of fresh online retrieval, whole-work commentary collation, installation, publication, or downstream visual-stage acceptance.",
+  "findings": []
+}

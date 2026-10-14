@@ -415,3 +415,281 @@ The existing drafts and source work are a checkpoint for a fresh replacement,
 whose research owner must register the supported PL92 constituent without
 claiming whole-work collation. Every subsequent author and reviewer must run
 fresh under its own packet; the blocked run's approvals are not inherited.
+
+## Replacement workflow
+
+Checkpoint `8e5f065076d0fa449869f8a2bfa495c93bf150e8` preserves the blocked
+production and its 121 byte-exact native files plus 79 selected auxiliary
+records. Its explicit 308-path commit passed outgoing-object disclosure review
+(1 commit, 168 trees, 283 blobs; zero findings), was pushed to the workspace
+branch and independently matched the remote ref. The staged whitespace check
+identified only 58 native gate-log blank-at-EOF exceptions, preserved exactly.
+The working tree was clean after the checkpoint. Source validation remains
+truthfully blocked by the sealed containment omission.
+
+A new v11 run `9b5dbdfa9ba70a96` is seeded at that checkpoint with the same
+workflow digest, date, provider and audience, without a preliminary handoff.
+Its scope gate passed and context iteration 0 is dispatched to one fresh
+worker at `high`. The earlier run remains terminal BLOCKED; no state or result
+has been resumed, rewritten or substituted. Existing evidence and draft prose
+can be independently verified; no approval carries into this new run. Full
+global source validation will be attempted before the next research seal to
+expose outstanding inventory defects at their owning boundary.
+
+### Replacement context, iteration 0
+
+The fresh worker independently rechecked eight existing delivery hashes and
+eight source-page images, with the selected-page text matched against whole
+deliveries. It checked the dated official appointment, national calendar,
+GIRM branches, local links and dependencies. The ten-position/eleven-key
+inventory is unchanged. The current verification is recorded in context,
+source plan and a narrow shared Week 29 addendum; existing entrypoints were
+preserved. The owning structural inventory refreshed exactly those three
+record hashes. Full source checking now reaches the known PL92 containment
+failure, explicitly reserved for research. The engine consumed context PASS
+and dispatched research iteration 0 to one fresh worker at `high`.
+
+### Replacement research, iteration 0
+
+Fresh research reverified the biblical contexts, principal reception, both
+interpretations, chronology and rights bounds. Its receipts cover 55 retained
+source-file instances and twenty independently inspected source-page images.
+The PL92 inventory now records Bede's bounded Mark 10:35–10:46 constituent,
+including the two discovery-index author spellings, without claiming a
+whole-work collation. Bibliographic labels for Howlett, Gerard and Durand were
+corrected against their source footers; chronology values are unchanged.
+
+The researcher refreshed the owning publication and source-family snapshots.
+Full pinned `make check-sources` passed, as did chronology, classification and
+whitespace checks. The successful source log is `check-sources-complete.log`;
+the earlier, misleadingly named `check-sources-pass.log` actually records the
+stale family-snapshot failure and is not evidence of success. The family ledger
+still has 161 pending units, zero screened, and no atomic coverage claim.
+The native engine consumed research PASS, ran the passing research preflight,
+and dispatched independent research review to one fresh worker at `xhigh`.
+
+### Replacement research review, iteration 0
+
+The independent reviewer returned PASS without findings after direct checks of
+the appointed boundaries, patristic and later reception, both interpretations,
+their consequential difficulties, and all twelve chronology orientation rows.
+It reproduced the bounded discovery searches and checked primary source pages,
+including the Bede and Jerome loci. All 2,150 sealed files and sixteen
+computation inputs remained unchanged. The evidence receipt distinguishes
+historical Catholic frameworks from modern official sources and retains the
+unresolved exact altar-book and parish-specific choices. This is research
+acceptance for drafting, not final publication approval. The engine consumed
+the result and dispatched expansive-study authoring at `high`.
+
+### Replacement expansive study and preflight, iteration 0
+
+The author independently reassessed the full draft, clarified interpretive
+attribution and the Matthew original-language chronology distinction, removed
+two procedural sentences, and updated the exact run provenance. Historical
+production verdicts remain intact; fresh verification is appended. The proof
+has 23 pages and 6,878 substantive words, with SHA-256
+`1f6bef57c221828dc9914194665658ba355becad5e29227368f8bbdcb33c7d25`.
+All 23 full-page images were inspected. Build, component, content-preflight,
+PDF and pinned web-probe checks passed, with no unresolved references or
+overflow warnings. The author reported document-catalog drift to installation
+without changing accepted research or shared publication records.
+
+The engine consumed author PASS and ran the passing native study preflight,
+including its canonical web probe. Independent study review is dispatched to
+one fresh worker at `xhigh`. The author proof is preliminary; later shared
+generation furniture can change the final PDF bytes before visual review.
+
+### Replacement study review, iteration 0
+
+Independent study review passed with no blocking findings. The reviewer read
+the complete canonical source, verified all eighteen sealed inputs and stable
+provenance, inspected every proof page, and checked the consequential author
+inferences and chronology against their actual source loci. Both full-formulary
+readings and their own four senses remain supported. The proof still matches
+the author's SHA-256. Advisory STU-001 records the sparse upper portion of page
+10 before the forced first-interpretation opening; it does not impair accuracy,
+depth or usability. It remains an advisory, not a completed repair. The engine
+consumed PASS and dispatched concise-study derivation to a fresh `high` worker.
+
+### Replacement concise study and preflight, iteration 0
+
+The fresh author compared the companion with every expansive component,
+accepted interpretation and chronology record, and decisive source passages.
+Its seven developed questions preserve both arguments. One prose clarification
+identifies Cyrus as ruler and recipient; shared generation furniture and the
+append-only production audit were refreshed. Accepted upstream sources and
+historical audit entries are unchanged.
+
+The proof has ten pages and 3,614 substantive words, SHA-256
+`882eeba9b5609d37c8efb25ed9fc5b9603a93bd90dcbefcf109cd0e27d7a0bfa`.
+The required opening remains map and four senses on page 1, chronology on page
+2, themes on pages 3–4, and developed commentary beginning on page 5. All ten
+pages were inspected; required build, component, preflight and PDF checks
+passed. The native engine consumed author PASS and ran the passing synthesis
+preflight, then dispatched one fresh independent reviewer at `xhigh`.
+
+### Replacement concise review, iteration 0
+
+Independent concise review returned PASS with no findings. The reviewer first
+read the companion on its own, then compared its argument and qualifications
+with the accepted expansive study and the decisive primary source loci. A
+fresh isolated proof exactly matches the author's ten-page PDF hash. Every
+page was inspected, including actual chronology lookup and the required
+opening sequence. The about-AD-50 Matthew proposal remains expressly attached
+to Durand's Aramaic original, with the Greek translation undated. All eleven
+sealed files, component contract and stable generation provenance matched
+again at completion. The engine consumed PASS and dispatched homily derivation
+to one fresh worker at `high`.
+
+### Replacement homily and preflight, iteration 0
+
+The fresh author read both accepted studies and rechecked decisive retained
+witnesses. A bounded revision strengthens the Cyrus-to-Thessalonians contrast;
+the spoken component, terminal note, shared generation furniture and appended
+production audit changed. Accepted upstream sources and historical entries
+remain intact. The three-page proof is 243,677 bytes, SHA-256
+`18bc8b4cbdeaf50e2fd455f8d1d394a8f224e443f746e3e13c684765399d46c5`.
+Its 1,323 spoken words give an estimated 10.2–11.5 minutes at 115–130 words per
+minute. Only silent textual rehearsal was performed; no human delivery was
+timed. All three full-page images, build, component, preflight and PDF checks
+passed. The native engine consumed author PASS and ran passing homily
+preflight, then dispatched one fresh independent reviewer at `xhigh`.
+
+### Replacement homily review, iteration 0
+
+Independent homily review returned PASS without findings. The reviewer read the
+continuous speech, verified all seven sealed files and stable provenance,
+checked adopted claims in their biblical and commentary contexts, and inspected
+an isolated three-page proof. Its SHA-256 exactly matches the author proof;
+1,323 source words match the extracted speech. Six retained Jerome and FDLC
+page images were independently reopened and linked back to hash-matched
+originals. A rejected scratch output directory and recoverable selected-PDF
+xref diagnostics are stated accurately in the receipt; neither is represented
+as successful new source rasterization. Timing remains a mathematical estimate
+after silent review. The engine consumed PASS and dispatched the final shared
+artifact build to one fresh worker at `high`.
+
+### Replacement shared build and artifact gates, iteration 0
+
+All three normal Make builds passed under the shared final generation record.
+The PDFs have 23, ten and three pages, with final build SHA-256 values:
+
+- Study: `cac5c0b9ebdbd393f9df74436b0215cfd50138d718c103536124105f24f02c43`.
+- Concise: `c86015a277ef12fb278241ef858261519afed180e41eb5540f4b6de219e7a6c1`.
+- Homily: `18bc8b4cbdeaf50e2fd455f8d1d394a8f224e443f746e3e13c684765399d46c5`.
+
+Logs are clean; all fonts are embedded, subsetted and Unicode-mapped. Structure,
+extraction, physical-page markers and artifact-snapshot validation pass. The
+builder prepared 36 full-page rasters and four contact sheets, changing only
+the artifact receipt and appended production audit. No render source or review
+seal was changed. The engine consumed build PASS and ran passing artifact
+gates, including current content-review seals, then dispatched independent
+visual review to one fresh worker at `xhigh`.
+
+### Replacement visual review, iteration 0
+
+The independent reviewer verified all 31 sealed files and 76 linked raster,
+thumbnail and contact-sheet files, inspected all 36 full pages and four contact
+sheets, and returned PASS. Its concrete chronology lookup successfully paired
+Philippians 2:15d,16a with the Rome-to-Philippi composition account and the
+disputed AD 61 / 62–64 dates at normal table size. Opening markers, typography,
+footnotes, column order and compact final colophons passed; no clipping,
+overlap or missing content was found. The homily's per-page size review trigger
+was explained by ordinary embedded-font overhead in a small text-only PDF.
+
+VIS-001 accepts the sparse study page 10 as cosmetic: entries remain clear and
+the new-page interpretation opening aids retrieval; the substantive study does
+not depend on that sparse page to reach its minimum extent. No repair is
+required for this run. The earlier STU-001 advisory remains a historical review
+observation of the same layout. No reviewed input changed. The engine consumed
+PASS and dispatched canonical web conversion to one fresh `high` worker.
+
+### Replacement canonical web conversion, iteration 0
+
+The prescribed converter and web snapshot succeeded under Markdown 3.10.3.
+The 76,252-byte output has SHA-256
+`e87243499c4dd4797dbfda5226a75bd3e851d93a56be0431c636ae068a750a19`.
+Focused fidelity checks covered 136 literal prose spans in all nine canonical
+components, both interpretations and their own four senses, eleven appointed
+anchors, all 38 source notes, source links, timestamp and rights colophon.
+All three PDFs, 26 render inputs and two pagination artifacts retain their
+accepted hashes. Only `research/web-artifact.json` changed; no converter or
+declaration repair was needed. The engine consumed PASS and dispatched fresh
+independent web review at `xhigh`. Local browser helper implementations were
+identified as mechanical leads, with new outputs and fresh inspection required;
+no previous browser verdict or screenshots supply this run's acceptance.
+
+### Replacement web-review operational recovery
+
+Both initial sandbox browser attempts exited 133 with a crashpad `setsockopt`
+permission error and empty DOM output. The reviewer correctly requested an
+escalated retry, but its shell redirections left the call pending for 366.1
+seconds. The coordinator interrupted and resumed the same reviewer; no approval
+or rejection was returned. Native interventions 0000 and 0001 retain the
+operation and its precise disposition. No completed fidelity work or review
+input was discarded or replaced.
+
+The direct Chromium command without shell redirections then completed with exit
+0 and fresh desktop DOM data. The reviewer continues mobile and screenshot
+inspection under that existing permission. This operational recovery is not a
+review verdict; subsequent native results determine acceptance.
+
+### Replacement web review, iteration 0
+
+Independent review returned PASS without findings. Complete Markdown, canonical
+source components and research-PDF extraction preserve both interpretations,
+eight senses, all 49 source headings, table rows, chronology qualifications and
+38 exact source notes. The reviewer resolved all thirteen structural exceptions
+from its 146-candidate prose comparison by inspecting the actual generated
+payloads. The sealed conversion remains SHA-256
+`e87243499c4dd4797dbfda5226a75bd3e851d93a56be0431c636ae068a750a19`.
+
+Fresh local Chromium previews at 1280 by 900 and 390 by 844 were visually
+inspected in 26 representative states plus one complete Gospel recapture.
+All 38 footnote/backlink pairs and eleven appointed-text targets were exercised
+at each width. No page overflow, missing fragments or TeX debris was found;
+the mobile branch table scrolls within its container. Three selected external
+links were retrieved. Physical devices, assistive technology, other browser
+engines, global live-site navigation and deployment were not tested. The input
+seal matched again at completion. The engine consumed PASS and dispatched one
+fresh installation worker at `high`.
+
+### Replacement installation and terminal acceptance, iteration 0
+
+All three normal Make installation commands completed successfully. Every build
+and installed PDF matches its accepted SHA-256 exactly; the canonical Markdown
+was copied byte for byte and staged. Correct existing release records and the
+Year A catalog row were preserved. Only the canonical web and document-catalog
+release bindings, their derived rights-table hashes and owning inventories were
+refreshed. All six immutable review seals remained current.
+
+After the final production-audit append and inventory refresh, the full pinned
+`make check-sources` passed, as did publication identity, release bindings,
+scoped public-alpha and document catalog checks. The source log's one removed
+checkout-root prefix is explicitly recorded with original and public hashes;
+the other installation logs are byte-exact.
+
+The coordinator consumed installation PASS and ran the native publication
+gate. It returned PASS without findings and the actual engine disposition is
+**ACCEPTED for run `9b5dbdfa9ba70a96`**. All 21 stages passed at iteration 0;
+there were no repair loops in this replacement. The two recorded browser
+interventions remain part of its real history. STU-001 remains advisory and
+VIS-001 accepted; neither is falsely represented as repaired. The earlier
+`fbf047c60105569f` archive remains genuinely BLOCKED and unchanged.
+
+Acceptance establishes the reviewed local publication family. Durable archive
+verification, coordinator source validation and verified branch delivery are
+the remaining bookkeeping steps; no main integration or deployment is implied.
+
+### Accepted archive and coordinator validation
+
+The accepted archive contains 96 byte-exact native files and 99 explicitly
+selected auxiliary files; its manifest SHA-256 is
+`e748ab5eac45b65ae9e95110a890d415297e98a560dd39fc645c3e14c9eca2f0`.
+Every retained identity, complete native inventory and engine packet/result hash
+was verified. The prior blocked archive's 200 files and manifest remain exact.
+The post-acceptance pinned source check passed; build/installed PDFs, staged web,
+release records, catalog and installation log hashes were rechecked. Ordinary
+PDFs and disposable proofs are excluded from the commit under standing policy.
+Workflow and publication promise requirements now pass; delivery remains open
+until the actual audited push is verified.

@@ -70,7 +70,8 @@ compressed date ranges, average rival dates or quietly select a favourite.
   Augustine's new-building exposition supplies Christian reception, not an
   alternative historical excavation report.
 - **The Psalm's prophetic referent:** the generated Nativity alternatives
-  come from Gerard's “General Chronology” and “Biblical Chronology.” The
+  come from John Gerard's “General Chronology” and James Howlett's
+  “Biblical Chronology.” The
   first reports a correction attributed to many interpreters of Dionysius;
   the second argues from Herod and the infancy evidence and concludes with
   a probable date. Both are marked disputed. These are dates assigned to
@@ -106,7 +107,7 @@ compressed date ranges, average rival dates or quietly select a favourite.
   controversies, not from a calendar reconstruction of Holy Week. Jacquier's
   Matthew article reports competing early-author testimony and subsequent
   datings, explicitly finding interpretive uncertainty in the Irenaeus
-  argument. The “Synoptics” article's earlier original-Matthew date is
+  argument. Alfred Durand's “The New Testament” article's earlier original-Matthew date is
   coupled with uncertainty over the Greek rendering. All six generated
   composition alternatives remain attributed and disputed; none dates this
   exchange with the Pharisees and Herodians. The reader should understand
@@ -114,7 +115,7 @@ compressed date ranges, average rival dates or quietly select a favourite.
 - **Mark10:45:** MacRory's Mark article reports early subscriptions and
   chronicles, explains their possible derivation, then weighs conflicting
   testimony and internal evidence toward its preferred broader interval.
-  The “Synoptics” article gives another interval. The 1912 PBC responsa
+  Durand's “The New Testament” article gives another interval. The 1912 PBC responsa
   V–VI supply relative order and a limit before Jerusalem's destruction/
   begun siege, not a numerical year. These are all composition claims.
   The generated orientation currently gives no separately dated event row
@@ -155,3 +156,19 @@ The Mark row may instead say simply “Gospel writing; precise location not
 established here” if its two distinct contexts would crowd the concise
 column. This editorial choice does not alter any dated subject or date.
 No row is attached to a composed prayer or a different cycle's Gospel.
+
+
+## Bibliographic reinspection, 2026-10-14
+
+The article identities were checked against their publisher citation records:
+James Howlett wrote [Biblical Chronology](https://www.newadvent.org/cathen/03731a.htm),
+John Gerard wrote [General Chronology](https://www.newadvent.org/cathen/03738a.htm),
+and Alfred Durand wrote [The New Testament](https://www.newadvent.org/cathen/14530a.htm).
+The last is not an article titled *The Synoptics*. These corrections concern
+attribution and title; the cited date paragraphs and their competing
+frameworks were independently reread, and no chronology value was changed.
+The retained AAS 4 (1912), pages 463–465, was read in page images, including
+the limits of the Mark responsa. The generated orientation rows were checked
+for their passage scope and dated subject: the unresolved psalm occasions,
+traditional David era, remembered Temple restoration, prophetic referent,
+composition ranges and unresolved Gospel event remain distinct subjects.

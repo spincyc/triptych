@@ -1,6 +1,36 @@
-> Research disposition, 2026-10-13: this context-stage plan is retained as the initial lead list. Completed acquisitions, second searches, source limits and remaining uncollated leads are recorded in [scope](scope.md), [rights audit](rights-audit.md), and the canonical Week 29 owner. It is not the current completion checklist.
-
 # Source plan: PC-S55-A
+
+## Current plan after fresh context verification, 2026-10-13
+
+The original plan below remains an acquisition history, not a statement that
+its proposed acquisitions are still missing. Prior research records are leads
+for independent verification. This plan does not inherit their judgments.
+The current inventory is [context.md](context.md#complete-ordered-proper-inventory);
+common Missal evidence remains solely at
+[Week 29](../../shared/ordinary-time/weeks/29/propers/verified.md).
+
+| Evidence family | Present verified state or holding | Work required before fresh research acceptance |
+| --- | --- | --- |
+| National occurrence and U.S. Lectionary 145 | Existing complete calendar and dated reading-page bytes match their registered hashes; calendar pages 7 and 43 and all five reading-page units independently inspected. Both are already in `source-bindings.toml`. | Preserve the exact appointment boundaries and current national/local distinction; inspect bindings and their compiled seal rather than registering duplicate deliveries. |
+| GIRM branch authorities | Existing complete chapters II and VII match their registered hashes; the controlling clauses listed in context were reread. Both deliveries are already registered and bound. | Verify that all adopted calendar, chant, Preface and Eucharistic Prayer authorities are reached by the fresh research seal. |
+| Shared Missal | W29's core witness bytes and selected source pages independently rechecked at the owner. | Independently check the already acquired 2008 variation issue and Ignatius publisher corroboration before adopting the prior research conclusions. Exact 2008 and publisher-specific U.S. 2011 altar-book pages remain uncollated; do not promote the witnesses' authority. |
+| OLM and General Introduction | Existing complete 1981 scan and English introduction deliveries are available; the leaf already binds them. | Independently inspect OLM no. 145, physical pages 133–134, and Introduction nos. 65–69, 103–104. Prior page-inspection claims are leads until checked in this fresh research. |
+| Biblical study text | Six canonical Douay–Rheims/Challoner electronic book artifacts are already bound: Psalms, Isaiah, Matthew, Mark, Philippians and 1 Thessalonians. | Read the exact appointed portions and literary contexts, verify numbering and partial-verse mapping, and retain the eight passage dossiers below. Whole verses are contextual envelopes, not permission to enlarge an appointment. |
+| Reception | Existing Augustine, Chrysostom, Jerome, Aquinas, Bede and later witnesses are identified in bindings and scope. | Reopen the exact evidence and bounded source contexts. Check every appointed passage, author standing, substantive contributions and genuine differences; do not inherit a reception or interpretation verdict. |
+| Bede in PL 92 | `segments/columns-235-236.toml` under Bede's `in-marci-evangelium-expositio/editions/1862-migne-pl-92/` identifies the exact container leaf, but the PL 92 row in `src/sources/inventories/source-containment-v1.toml` lists Luke and Acts without Mark. | Research must verify the retained column image and repair the containment declaration before compiling the new research seal. This context stage has not modified the inventory or claimed a full source-gate pass. |
+| Chronology | Existing adapter, generated chronology and evidence are available in this leaf. | Revalidate them against this inventory and inspect their controlling evidence. The concise opening remains `orientation-v1`; no chronology verdict is inherited. |
+| Rights and publication | Existing artifact-specific rights, local `rights-audit.md` and declared source-owner dependencies provide the research route. | Recheck adopted rights evidence and seal it. Continue with public-domain biblical study English, short identifiers, locators and original commentary; do not reconstruct or reproduce restricted Missal or Lectionary bodies. |
+
+No new acquisition is needed merely because a prior run stopped. The fresh
+research must first use the acquired exact evidence and record any actual access
+failure. The text-free context edits do not alter the three existing authored
+entrypoints or install any new publication.
+
+## Initial plan and subsequent research disposition, retained
+
+The initial research stage recorded completed acquisitions, second searches and
+limits in [scope](scope.md), [rights audit](rights-audit.md), and W29. Those
+records remain auditable; the current plan above controls what is reverified.
 
 Prepared 2026-10-13. This is a concrete research plan following the resolved
 [context](context.md), not a completed research sweep or a claim that the
@@ -96,3 +126,16 @@ run the prescribed source gates before submitting research for review.
 
 No reception, chronology, research review, study prose, concise prose or
 homily has been completed by this context stage.
+
+
+## Research completion, 2026-10-14
+
+The context-stage plan above is preserved as the plan, not a present-tense
+claim that research is still pending. Independent reinspection has completed
+the bounded reception and chronology work recorded in `scope.md`,
+`interpretations.md` and `chronology-research.md`. Exact retained deliveries
+were reused and checked; the PL 92 Mark constituent was repaired from its
+registered leaf. Uninspected prayer antecedents, the exact altar-book gaps,
+and the source-family ledger's pending screening remain explicit limits.
+The next workflow stages own study, concise-study and homily prose and their
+reviews. This completion record does not alter the earlier terminal outcome.

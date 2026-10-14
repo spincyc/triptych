@@ -1,0 +1,194 @@
+{
+  "stage": "install-publication",
+  "iteration": 0,
+  "run_id": "9b5dbdfa9ba70a96",
+  "packet_sha256": "5e261e05f1f6a833bb854e2bb81d32c4e6b45cfef268d5f5d4690ad22ac5982a",
+  "provider": "gpt",
+  "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+  "status": "installation-complete-awaiting-terminal-program-gate",
+  "environment": "Python Markdown 3.10.3",
+  "pdfs": [
+    {
+      "build": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf",
+      "installed": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf",
+      "expected_sha256": "18bc8b4cbdeaf50e2fd455f8d1d394a8f224e443f746e3e13c684765399d46c5",
+      "build_sha256": "18bc8b4cbdeaf50e2fd455f8d1d394a8f224e443f746e3e13c684765399d46c5",
+      "installed_sha256": "18bc8b4cbdeaf50e2fd455f8d1d394a8f224e443f746e3e13c684765399d46c5",
+      "match": true
+    },
+    {
+      "build": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+      "installed": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+      "expected_sha256": "c86015a277ef12fb278241ef858261519afed180e41eb5540f4b6de219e7a6c1",
+      "build_sha256": "c86015a277ef12fb278241ef858261519afed180e41eb5540f4b6de219e7a6c1",
+      "installed_sha256": "c86015a277ef12fb278241ef858261519afed180e41eb5540f4b6de219e7a6c1",
+      "match": true
+    },
+    {
+      "build": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf",
+      "installed": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf",
+      "expected_sha256": "cac5c0b9ebdbd393f9df74436b0215cfd50138d718c103536124105f24f02c43",
+      "build_sha256": "cac5c0b9ebdbd393f9df74436b0215cfd50138d718c103536124105f24f02c43",
+      "installed_sha256": "cac5c0b9ebdbd393f9df74436b0215cfd50138d718c103536124105f24f02c43",
+      "match": true
+    }
+  ],
+  "web": {
+    "build": "build/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md",
+    "installed": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md",
+    "sha256": "e87243499c4dd4797dbfda5226a75bd3e851d93a56be0431c636ae068a750a19",
+    "staged_bytes_equal": true
+  },
+  "release_records": [
+    {
+      "path": "release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.json",
+      "sha256": "c57a8be0b4399b9b6a23fbd9922622b0f4535ce63808e9743e83cebefb2e1e81",
+      "action": "preserved correct existing record"
+    },
+    {
+      "path": "release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.json",
+      "sha256": "303dd4d1695e3cd409954deaeb05bf6269d618c8b3bdf88717f0ec1b8557ec01",
+      "action": "preserved correct existing record"
+    },
+    {
+      "path": "release/publications/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.json",
+      "sha256": "76e84f07897baa672fefe8a6d55b13a766ad6cada1d0d890bc14badb502ec560",
+      "action": "preserved correct existing record"
+    }
+  ],
+  "catalog": {
+    "path": "library/novus-ordo-liturgy.md",
+    "sha256": "6043faf44ce6915961d38461e7c1372cfbf290b2135f57b8b6c80d5e19d58080",
+    "action": "preserved correct Year A ChatGPT row, labels, links, and sole canonical marker"
+  },
+  "review_seals": {
+    "path": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/install-publication-0000/review-seals.json",
+    "sha256": "22a191afa823793c241d90bb212a52d8fff86e6adeaaa64debdfe8c4064546d6"
+  },
+  "commands": [
+    {
+      "command": "make install-doc DOC=liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a PROVIDER=gpt",
+      "exit_code": 0,
+      "raw_log_sha256": "3c95ad663772b992a5cf941975a7a309de3e70d86ca647f2fde65f6d4baae1fe",
+      "public_log": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/install-publication-0000/install-research.log",
+      "public_log_sha256": "3c95ad663772b992a5cf941975a7a309de3e70d86ca647f2fde65f6d4baae1fe",
+      "normalization": "none"
+    },
+    {
+      "command": "make install-doc DOC=liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis PROVIDER=gpt",
+      "exit_code": 0,
+      "raw_log_sha256": "3c95ad663772b992a5cf941975a7a309de3e70d86ca647f2fde65f6d4baae1fe",
+      "public_log": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/install-publication-0000/install-synthesis.log",
+      "public_log_sha256": "3c95ad663772b992a5cf941975a7a309de3e70d86ca647f2fde65f6d4baae1fe",
+      "normalization": "none"
+    },
+    {
+      "command": "make install-doc DOC=liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily PROVIDER=gpt",
+      "exit_code": 0,
+      "raw_log_sha256": "3c95ad663772b992a5cf941975a7a309de3e70d86ca647f2fde65f6d4baae1fe",
+      "public_log": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/install-publication-0000/install-homily.log",
+      "public_log_sha256": "3c95ad663772b992a5cf941975a7a309de3e70d86ca647f2fde65f6d4baae1fe",
+      "normalization": "none"
+    },
+    {
+      "command": "make document-catalogue",
+      "exit_code": 0,
+      "raw_log_sha256": "c7ef5958fa19317a41609bb1f3549079bcc8a0be7f0fc4f38cc9c8d43fd051b5",
+      "public_log": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/install-publication-0000/document-catalogue.log",
+      "public_log_sha256": "c7ef5958fa19317a41609bb1f3549079bcc8a0be7f0fc4f38cc9c8d43fd051b5",
+      "normalization": "none"
+    },
+    {
+      "command": "make refresh-release-bindings ONLY=\"src/web/data/structure/documents/corpus.json web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md\"",
+      "exit_code": 0,
+      "raw_log_sha256": "e0accd9c4d55cc373fca362155d2e19a78d71521c6e3b417173d6066b06019f9",
+      "public_log": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/install-publication-0000/release-refresh.log",
+      "public_log_sha256": "e0accd9c4d55cc373fca362155d2e19a78d71521c6e3b417173d6066b06019f9",
+      "normalization": "none"
+    },
+    {
+      "command": "python3 scripts/_proper_study.py check --provider gpt --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a --date 2026-10-18 --phase publication --require-presentation --require-format --require-authority --require-orientation",
+      "exit_code": 0,
+      "raw_log_sha256": "be44c2b600f1463fd58e7b3a9f6efe9a5ac3a0a74d1b55ba6548b6fd27f76760",
+      "public_log": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/install-publication-0000/publication-check.log",
+      "public_log_sha256": "be44c2b600f1463fd58e7b3a9f6efe9a5ac3a0a74d1b55ba6548b6fd27f76760",
+      "normalization": "none"
+    },
+    {
+      "command": "tools/tpt source-library validate",
+      "exit_code": 0,
+      "raw_log_sha256": "4a8383a526f61229d17370b9578f4b1221a0ad23efb72c7289d9c122c28316b1",
+      "public_log": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/install-publication-0000/source-library.log",
+      "public_log_sha256": "4a8383a526f61229d17370b9578f4b1221a0ad23efb72c7289d9c122c28316b1",
+      "normalization": "none"
+    },
+    {
+      "command": "tools/tpt source-inventory refresh --audited-on 2026-10-14",
+      "exit_code": 0,
+      "raw_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_log": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/install-publication-0000/source-inventory-refresh.log",
+      "public_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "normalization": "none"
+    },
+    {
+      "command": "tools/tpt source-family-migration refresh --audited-on 2026-10-14",
+      "exit_code": 0,
+      "raw_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_log": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/install-publication-0000/family-refresh.log",
+      "public_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "normalization": "none"
+    },
+    {
+      "command": "make check-sources",
+      "exit_code": 0,
+      "raw_log_sha256": "b7d95a6fee803a85e258fb85bf58257bc4cf38443d289bda170ab66e9f334593",
+      "public_log": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/install-publication-0000/check-sources.log",
+      "public_log_sha256": "79ff4824cc4cfc22f69c13d851ff32156e39802ac24fea15b0c42080a4267b11",
+      "normalization": "checkout-root prefix removed"
+    },
+    {
+      "command": "make check-release-bindings",
+      "exit_code": 0,
+      "raw_log_sha256": "81b5c9979e16b7295a385dc9fd585e88bef46d1c28bd0643ee7e4e47dc373c3f",
+      "public_log": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/install-publication-0000/release-bindings-check.log",
+      "public_log_sha256": "81b5c9979e16b7295a385dc9fd585e88bef46d1c28bd0643ee7e4e47dc373c3f",
+      "normalization": "none"
+    },
+    {
+      "command": "tools/tpt public-alpha check --provider gpt --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+      "exit_code": 0,
+      "raw_log_sha256": "30885d14a9f18f76e6d6b9f9c552b84dd2149912cadcdc98e92f5f18e2ad4ca5",
+      "public_log": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/install-publication-0000/public-alpha.log",
+      "public_log_sha256": "30885d14a9f18f76e6d6b9f9c552b84dd2149912cadcdc98e92f5f18e2ad4ca5",
+      "normalization": "none"
+    },
+    {
+      "command": "tools/tpt document-library check --provider gpt --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+      "exit_code": 0,
+      "raw_log_sha256": "240c871b8a6a3f8c6d4479963e2d7392478181580ed7d2c111ae1c96406cb22f",
+      "public_log": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/install-publication-0000/document-check.log",
+      "public_log_sha256": "240c871b8a6a3f8c6d4479963e2d7392478181580ed7d2c111ae1c96406cb22f",
+      "normalization": "none"
+    },
+    {
+      "command": "tools/tpt document-library structure --check",
+      "exit_code": 0,
+      "raw_log_sha256": "031018e18e3f35c60fe1a2f4559b86880435f54cb5dae6dd88d149beb3a44e1c",
+      "public_log": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/install-publication-0000/document-structure-check.log",
+      "public_log_sha256": "031018e18e3f35c60fe1a2f4559b86880435f54cb5dae6dd88d149beb3a44e1c",
+      "normalization": "none"
+    }
+  ],
+  "post_audit_source_check": {
+    "exit_code": 0,
+    "production_audit_sha256": "65c1cbe4df6a30863ee186a9261d86a0363089e0d837faac4eb49c35f266989f",
+    "publication_inventory_sha256": "ecb56b375bff6c18dff312a8c19a9257bcba04e175aa426471712562efffccb0",
+    "source_family_ledger_sha256": "0cac2e0d964ecf39cc189cbef9cda3deba9c561d212306baaa0a1ad3da8f4727"
+  },
+  "limitations": [
+    "No new historical-source, independent visual or browser review was performed by installation.",
+    "No terminal native workflow advancement or deployment was performed.",
+    "Ordinary installed PDFs remain untracked under repository policy.",
+    "Global web freshness and immutable acceptance checks remain part of the coordinator-run terminal gate."
+  ]
+}

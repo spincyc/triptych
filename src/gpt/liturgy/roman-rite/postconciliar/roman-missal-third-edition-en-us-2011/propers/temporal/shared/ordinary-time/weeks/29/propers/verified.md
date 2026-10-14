@@ -89,3 +89,22 @@ pages, including the three Latin digital pages, Antiphonary 81 and FDLC
 16–17. This record settles the inventory at those disclosed witness layers;
 cold research review remains separate. All three proposed
 Year A PDF targets explicitly depend on this owner in the Makefile.
+
+## Fresh context reinspection, 2026-10-13
+
+A fresh context verification reused the complete acquired Latin 2002 PDF,
+Antiphonary and FDLC compilation, recomputed each SHA-256 and matched the
+registered identities above. It opened newly rendered page images of Latin
+physical pages 268, 291 and 292, Antiphonary physical page 89, and FDLC pages
+16–17. The selected-page text was also compared with the corresponding pages
+of each complete hash-identified artifact. This independently confirms the
+inventory and branches at those witness layers, including both Communion
+alternatives, their adaptation/excerpt boundaries, and the Ordinary Time
+Preface rule. The FDLC Collect's older conclusion remains visibly distinct
+from the conclusion in the inspected U.S. GIRM 54.
+
+This check does not renew the prior research judgment on the 2008 variations
+issue or the publisher webpage: their existing deliveries and records remain
+leads for the new research stage. It does not supply the still-uninspected
+2008 or U.S. 2011 altar-book pages. The common inventory above is established
+within that expressly limited evidence; no new liturgical wording is supplied.

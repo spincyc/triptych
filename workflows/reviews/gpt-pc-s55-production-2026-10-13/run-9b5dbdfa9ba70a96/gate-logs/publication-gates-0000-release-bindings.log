@@ -1,0 +1,7 @@
+$ make check-release-bindings
+exit 0
+--- stdout ---
+exact: 0 stale binding(s)
+
+--- stderr ---
+

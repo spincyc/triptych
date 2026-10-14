@@ -1,0 +1,108 @@
+{
+  "stage": "visual-review",
+  "iteration": 0,
+  "packet_sha256": "4f1c0146c8c34ff693dcb1ea3788fae4f385695961b45e389e024d803be0332a",
+  "artifact_receipt_path": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/artifacts.json",
+  "artifact_receipt_sha256": "5b26b1012633012624e6687a4fb8eaff5a30e9191295642a0bc4d3c1d194c2dc",
+  "all_review_inputs_verified_before_and_after": true,
+  "sealed_file_counts": {
+    "pdfs": 3,
+    "pagination_evidence": 2,
+    "render_inputs": 26
+  },
+  "linked_raster_files_verified": 76,
+  "inspection": [
+    {
+      "artifact": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf",
+      "sha256": "18bc8b4cbdeaf50e2fd455f8d1d394a8f224e443f746e3e13c684765399d46c5",
+      "raster_receipt_sha256": "11d9b78bff6e810e011ac7bcfb175693c90babdd512c42f92592e3cefb3869ac",
+      "full_pages_inspected": [
+        1,
+        2,
+        3
+      ],
+      "contact_sheets_inspected": 1
+    },
+    {
+      "artifact": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+      "sha256": "c86015a277ef12fb278241ef858261519afed180e41eb5540f4b6de219e7a6c1",
+      "raster_receipt_sha256": "36b5a86fe57ead4cf88fd520d7db5b3292003d00439895f005334eee107338e3",
+      "full_pages_inspected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "contact_sheets_inspected": 1
+    },
+    {
+      "artifact": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf",
+      "sha256": "cac5c0b9ebdbd393f9df74436b0215cfd50138d718c103536124105f24f02c43",
+      "raster_receipt_sha256": "84e65b07dcf68a33eb806ce1c0b5b50acf60d76dee2f7ac21233d500b941a282",
+      "full_pages_inspected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "contact_sheets_inspected": 2
+    }
+  ],
+  "baseline": "Source imports and rendered pages agree: shared Latin Modern, 11-point article, letter paper, 0.75-inch margins, monochrome. Studies are single-column; homily has full-width title, two-column speech on pages 1-2, separate full-width notes on page 3.",
+  "opening": "Concise page 1 contains all ten ritual positions, both Communion alternatives, and exactly Literal/Allegorical/Moral/Anagogical rows; chronology is alone on page 2; substantive Themes and Movement occupies pages 3-4; developed interleaved commentary starts on page 5. Actual pages agree with all physical zref markers.",
+  "chronology_lookup": {
+    "page": 2,
+    "passage": "Philippians 2:15d,16a (Gospel acclamation)",
+    "occurrence_and_place": "Composition: The Epistle to the Philippians. From Rome in the cited captivity account, to Philippi.",
+    "date": "Disputed: A.D. 61; A.D. 62-64",
+    "outcome": "Successful at the normal 9.5-point table setting: passage, occurrence, writer and recipient places, and date alternatives align in the same compact row without cross-column paragraph searching. Matthew 22:15-21 also distinguishes the Temple event (date unresolved) from Gospel composition alternatives in separate aligned rows."
+  },
+  "layout": "Every page inspected from full-page rasters as well as the four contact sheets. Text and footnotes are legible, table columns and repeated headers are intact, headings carry text, running heads remain separate, and no clipping or overlap was seen. Study interpretations on pages 11-13 and 14-17 have matching heading treatment and distinct four-senses blocks. Concise pages 5-9 visibly compare authors at shared questions. Homily paragraphs and column reading order remain recoverable and scholarly notes stay outside the speech.",
+  "terminal_pages": "Compact rights colophons share the final content pages: study 23, concise 10, homily 3. No rights-only spill page. Revision timestamp is present once in each extracted PDF.",
+  "mechanical_evidence": "All embedded fonts are Latin Modern Type 1, subsetted with Unicode maps. pdfinfo reports ordinary unencrypted letter PDFs without JavaScript/forms. All three final logs have no Overfull/Underfull/Warning/Undefined/Fatal matches; extraction is available for all pages in reviewer scratch. No rebuild or installation performed.",
+  "size_review": "Study 486000 bytes/23 pages; concise 380673 bytes/10 pages; homily 243677 bytes/3 pages. The homily slightly exceeds the 75 KiB/page review trigger. Its inspected pages are text-only and its nine embedded Latin Modern subsets are consistent with ordinary fixed font overhead amortized over three pages; total size is below 1 MiB, with no visual reason for optimization.",
+  "format_migration": "No formatting migration in this dispatch: shared style sources are unchanged in the worktree; no substantive-text-preservation claim based on file counts is made.",
+  "limits": "Visual review and local artifact evidence only; no new external source, liturgical rights, or theological acceptance is asserted. No physical print or human oral rehearsal performed.",
+  "physical_markers": [
+    "\\zref@newlabel{triptych:concise:inventory:start}{\\default{}\\page{1}\\abspage{1}}",
+    "\\zref@newlabel{triptych:concise:inventory:end}{\\default{}\\page{1}\\abspage{1}}",
+    "\\zref@newlabel{triptych:concise:overview:start}{\\default{}\\page{1}\\abspage{1}}",
+    "\\zref@newlabel{triptych:concise:sense:literal}{\\default{2}\\page{1}\\abspage{1}}",
+    "\\zref@newlabel{triptych:concise:sense:allegorical}{\\default{2}\\page{1}\\abspage{1}}",
+    "\\zref@newlabel{triptych:concise:sense:moral}{\\default{2}\\page{1}\\abspage{1}}",
+    "\\zref@newlabel{triptych:concise:sense:anagogical}{\\default{2}\\page{1}\\abspage{1}}",
+    "\\zref@newlabel{triptych:concise:overview:end}{\\default{}\\page{1}\\abspage{1}}",
+    "\\zref@newlabel{triptych:concise:chronology:start}{\\default{}\\page{2}\\abspage{2}}",
+    "\\zref@newlabel{triptych:concise:chronology:end}{\\default{}\\page{2}\\abspage{2}}",
+    "\\zref@newlabel{triptych:concise:themes:start}{\\default{}\\page{3}\\abspage{3}}",
+    "\\zref@newlabel{triptych:concise:themes:end}{\\default{}\\page{4}\\abspage{4}}",
+    "\\zref@newlabel{triptych:concise:commentary:start}{\\default{}\\page{5}\\abspage{5}}"
+  ],
+  "disposition": "PASS",
+  "accepted_cosmetic_finding": "VIS-001: sparse study page 10, explicitly assessed and accepted; no blocking findings."
+}

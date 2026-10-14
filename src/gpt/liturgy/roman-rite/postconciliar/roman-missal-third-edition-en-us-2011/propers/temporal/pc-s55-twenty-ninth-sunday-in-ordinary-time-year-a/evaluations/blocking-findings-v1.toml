@@ -46,7 +46,7 @@ standing_findings_schema = 4
 record_type = "standing-blocking-findings"
 document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"
 provider = "gpt"
-run_id = "fbf047c60105569f"
+run_id = "9b5dbdfa9ba70a96"
 workflow = "proper-study"
 workflow_version = 11
 stage = "web-review"
@@ -54,14 +54,14 @@ iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 1
-advisory_count = 0
-observation_count = 8
+advisory_count = 1
+observation_count = 2
 
 [[stages]]
 stage = "homily-review"
 iteration = 0
 disposition = "PASS"
-run_id = "fbf047c60105569f"
+run_id = "9b5dbdfa9ba70a96"
 workflow = "proper-study"
 workflow_version = 11
 standing = 0
@@ -71,9 +71,9 @@ observation_count = 0
 
 [[stages]]
 stage = "research-review"
-iteration = 1
+iteration = 0
 disposition = "PASS"
-run_id = "fbf047c60105569f"
+run_id = "9b5dbdfa9ba70a96"
 workflow = "proper-study"
 workflow_version = 11
 standing = 0
@@ -85,19 +85,19 @@ observation_count = 0
 stage = "study-review"
 iteration = 0
 disposition = "PASS"
-run_id = "fbf047c60105569f"
+run_id = "9b5dbdfa9ba70a96"
 workflow = "proper-study"
 workflow_version = 11
 standing = 0
 accepted_count = 0
-advisory_count = 0
-observation_count = 8
+advisory_count = 1
+observation_count = 2
 
 [[stages]]
 stage = "synthesis-review"
-iteration = 1
+iteration = 0
 disposition = "PASS"
-run_id = "fbf047c60105569f"
+run_id = "9b5dbdfa9ba70a96"
 workflow = "proper-study"
 workflow_version = 11
 standing = 0
@@ -109,7 +109,7 @@ observation_count = 0
 stage = "visual-review"
 iteration = 0
 disposition = "PASS"
-run_id = "fbf047c60105569f"
+run_id = "9b5dbdfa9ba70a96"
 workflow = "proper-study"
 workflow_version = 11
 standing = 0
@@ -121,7 +121,7 @@ observation_count = 0
 stage = "web-review"
 iteration = 0
 disposition = "PASS"
-run_id = "fbf047c60105569f"
+run_id = "9b5dbdfa9ba70a96"
 workflow = "proper-study"
 workflow_version = 11
 standing = 0
@@ -133,47 +133,25 @@ observation_count = 0
 stage = "visual-review"
 id = "VIS-001"
 severity = "accepted"
-location = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/40-response.tex: final Anagogical item, expansive PDF physical pages 16–17"
-problem = "The final Anagogical item starts at the foot of page 16 and leaves its last two lines above the comparison heading on page 17, making the otherwise consistent four-senses block slightly less easy to scan."
-required_result = "No repair is required for this run; if this passage is later repaginated, keep this short Anagogical item together on one page."
-accepted_because = "Both lines remain immediately recoverable in uninterrupted reading, no sense label or meaning is lost, and page 17 also contains the substantive comparison; changing settled pagination for this small scanability improvement is not warranted."
+location = "Expansive study, physical page 10; src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/30-allegiance.tex:1 (forced break following sections/20-texts.tex)"
+problem = "Page 10 contains only the two short final locator entries, Communion: Mark alternative and Prayer after Communion, leaving roughly three quarters of its body area empty before the first interpretation begins on page 11."
+required_result = "No repair is required for this run; a future layout revision could rebalance the final locator entries and first interpretation boundary while preserving all wording, legibility, and section navigation."
+accepted_because = "The complete entries remain clearly headed and easy to retrieve, and the fresh-page interpretation boundary aids navigation. The study contains substantial exposition and its 23-page extent does not rely on this sparse page to reach the 20-page minimum. Reflow would disturb settled pagination for a cosmetic saving without correcting misleading or inaccessible content."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-001"
+severity = "advisory"
+location = "Study proof physical page 10; sections/20-texts.tex ending and sections/30-allegiance.tex opening clearpage"
+problem = "The final two appointed-text locator units occupy only the upper portion of page 10 before the forced start of the first interpretation, producing a conspicuously sparse intermediate page. This is layout polish and does not impair depth, accuracy or usability."
+required_result = "At a convenient layout pass, reflow the locator section or its following page break to reduce the sparse spill while preserving readable type and a clear beginning for the first interpretation."
 
 [[observations]]
 stage = "study-review"
-location = "sections/30-allegiance.tex; sections/40-response.tex; sections/50-comparison.tex"
-note = "The first reading asks how real earthly duties and goods remain subordinate to God; Jerome’s unknowing Cyrus, Chrysostom’s bounded tribute, Aquinas’s explicitly mystical divine-image application and Augustine’s worldwide new song contribute different reasoning. The second asks how the person becomes willing and able to serve; Aquinas’s inward divine action and Chrysostom’s costly faith, love and hope carry the argument, with Jerome’s gifted teacher and Bede’s prior saving gift contributing further reasoning. These are distinguishable complementary interpretations, not two versions of one application. Each engages all ten ritual positions and both Communion alternatives, and differentiates literal, allegorical, moral and anagogical senses."
+location = "sections/30-allegiance.tex; proof pp.11–13"
+note = "Consequential difficulty test passed against Jerome Isaiah XII 45:1–7 and Chrysostom Matthew LXX §§1–2: limited Cyrus typology and godliness-bounded civil obligation are explained and applied across the formulary."
 
 [[observations]]
 stage = "study-review"
-location = "sections/10-treatment.tex; sections/30-allegiance.tex; Jerome, Commentary on Isaiah XII, DCO Pars 3 pp.126–129"
-note = "Consequential-difficulty test passed. The checked passage identifies Cyrus as the literal anointed king, rejects transferring his ignorance of God to Christ, yet permits a limited typological relation. The study explains why the ignorance clause controls that distinction and why useful political action is not proof of conversion. Its use of Jerome’s concluding application to the gifted ecclesial teacher follows the actual source argument. The electronic witness remains identified as modern typesetting with no established historical exemplar."
-
-[[observations]]
-stage = "study-review"
-location = "sections/10-treatment.tex; sections/30-allegiance.tex; Chrysostom, Matthew LXX §§1–2; Aquinas, Matthew 22.2 (87389)"
-note = "Consequential-difficulty test passed. Chrysostom’s distinction between rendering a debt and making a gift, with godliness limiting civil dues, supports the literal political obligation. Aquinas’s later soul/image application is explicitly mystical in the checked Latin and is correctly distinguished from that literal answer. The study therefore neither abolishes civil duties nor turns Caesar’s claim into an unlimited claim on the person."
-
-[[observations]]
-stage = "study-review"
-location = "sections/40-response.tex; Aquinas, Philippians 2, lectio 3 (87838), and lectio 4 (87839)"
-note = "Consequential-difficulty test passed. The checked Latin rejects both autonomous saving choice and the elimination of free choice; divine movement acts inwardly in the will. It also rejects assigning the beginning of willing to the person independently and only completion to God, or treating help as payment for merit before grace. The study teaches these successive distinctions and connects them intelligibly to the Collect and to received light. Philippians 2:12–13 is explicitly identified as context, not the appointed acclamation."
-
-[[observations]]
-stage = "study-review"
-location = "sections/10-treatment.tex; sections/40-response.tex; Bede, In Marci III, Mark 10:42–45, PL 92 cols.236A–B"
-note = "The PL print image confirms Bede’s sequence: the servant’s form and blood shed for the world, followed by his gloss of for many as those willing to believe. The study presents reception of Christ’s saving gift without claiming that Bede here supplies an independent origin of faith or an automatic salvation of every person. Its separate appeal to Aquinas on willing is correctly identified. Gregory Nazianzen Oration XLV §22 and Aquinas III q.48 a.4, reply 3, really differ in payee formulation; the study explains the distinct arguments without erasing the disagreement. The Gutenberg fourth-article heading’s erroneous Art.3 is disclosed."
-
-[[observations]]
-stage = "study-review"
-location = "sections/20-texts.tex; sections/60-history.tex; research/chronology.toml; research/chronology-annotations.tex"
-note = "Appointed subverses are distinguished from printed Douay–Rheims context envelopes and from adapted Missal antiphons. The current USCCB reading page confirms Lectionary 145 for 18 October 2026. Historical-source spot checks support the appendix’s displayed date alternatives, with composition, narrative event, received attribution, superscription setting and Christian prophetic reference kept distinct; PBC 1912 V–VI remains a relative chronology. Cached official NABRE introductions support the common Psalm latest boundary and the late-exile Isaiah horizon. Fresh requests for those two introduction pages returned immediate HTTP 403, without a stall."
-
-[[observations]]
-stage = "study-review"
-location = "main.tex; independently built study-proof.pdf, physical pp.1–23"
-note = "Three pdflatex passes completed successfully. The resulting 23-page PDF has SHA-256 4fae31cd6dab6d5c4a9b2040be9d9d4b4aea2574e98f07560175aea445ee54e3 and is byte-identical to the author proof. All full-page rasters and both contact sheets were inspected using tools/pdf-review output. The sustained element commentary, two developed readings and historical/source apparatus supply meaningful depth; page count is not being used as a substitute for that judgment. No build warning or unresolved reference was found."
-
-[[observations]]
-stage = "study-review"
-location = "sections/70-apparatus.tex; shared/ordinary-time/weeks/29/propers/verified.md"
-note = "The study respects the inspected witness layers and rights-safe citation-led treatment. Exact 2008 Latin and publisher-specific 2011 U.S. altar-book pages remain uninspected; the 2002 digital Latin, official-hosted Antiphonary, FDLC extracts and publisher corroboration are not elevated into a complete altar-book collation. Modern approved prayer bodies are not reconstructed for publication. The study’s conclusions stay within those disclosed limits."
+location = "sections/40-response.tex; proof pp.14–17"
+note = "Consequential difficulty test passed against Aquinas Super Philippenses 2.3 and Chrysostom 1 Thessalonians I: divine action within genuine willing and costly human response are explained rather than merely asserted."

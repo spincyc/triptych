@@ -1,0 +1,601 @@
+{
+  "verified_at_utc": "2026-10-14T05:10:58.570665+00:00",
+  "method": "Fresh SHA-256 of existing delivered bytes compared with registered artifact records; selected review PDF page text independently compared byte-for-byte with each original PDF page. Visual inspection used prescribed pdf-review rasters; extracted-text equality alone is not visual verification. No reacquisition claimed.",
+  "raw_files": [
+    {
+      "path": ".scratch/pc-s55/research-0000/olm1981.pdf",
+      "sha256": "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d",
+      "bytes": 21487058,
+      "source_id": "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e",
+      "prior_receipt_match": true,
+      "registered_record": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/artifacts/internet-archive-scan-pdf-ed4bc14e/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/notitiae2008.pdf",
+      "sha256": "74c8d1740284984d0f4d64b2223edf805dadfa55aec8a92f8cfba9ab901eca0f",
+      "bytes": 1280566,
+      "source_id": "artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174",
+      "prior_receipt_match": true,
+      "registered_record": "src/sources/works/holy-see/notitiae/editions/volume-44-numbers-503-504-2008/artifacts/official-pdf-74c8d174/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/jerome-isaiah3.pdf",
+      "sha256": "269d035c515e1e0508ba617fba122a760be8fd753f89cd503aa61dba21330630",
+      "bytes": 668956,
+      "source_id": "artifact.jerome.commentarii-in-isaiam.dco-latin-pars-3-2026-10-13.jerome-isaiah3-269d035c",
+      "prior_receipt_match": true,
+      "registered_record": "src/sources/works/jerome/commentarii-in-isaiam/editions/dco-latin-pars-3-2026-10-13/artifacts/jerome-isaiah3-269d035c/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/aas1912.pdf",
+      "sha256": "e071e825cbd2e9e4c1ca55932340882b52da72173045cc8de592706a208857b7",
+      "bytes": 3842356,
+      "source_id": "artifact.holy-see.acta-apostolicae-sedis.volume-4-1912.internet-archive-vatican-ocr-pdf-e071e825",
+      "prior_receipt_match": true,
+      "registered_record": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-4-1912/artifacts/internet-archive-vatican-ocr-pdf-e071e825/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/gil.pdf",
+      "sha256": "d286cb135d608cebc47a398e7c8c3040384f9bd5e58cca01b9b96902c32fb9f1",
+      "bytes": 298474,
+      "source_id": "artifact.catholic-church.ordo-lectionum-missae.english-liturgy-office-web-2026-07-25.liturgy-office-pdf-d286cb13",
+      "prior_receipt_match": true,
+      "registered_record": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/english-liturgy-office-web-2026-07-25/artifacts/liturgy-office-pdf-d286cb13/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/aquinas-ps31-40.html",
+      "sha256": "e2d50b43f0036d33450b908632ba6d741277edb8ad9381c851eddeb005f90749",
+      "bytes": 359759,
+      "source_id": "artifact.thomas-aquinas.super-psalmos.latin-corpusthomisticum-web-2026-09-05.cps31-html-e2d50b43",
+      "prior_receipt_match": true,
+      "registered_record": "src/sources/works/thomas-aquinas/super-psalmos/editions/2026-09-05-latin-corpusthomisticum-web-2026-09-05/artifacts/cps31-html-e2d50b43/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/aquinas-isaiah40.html",
+      "sha256": "e257c1976d83aeea79b1595e8b1812a94604192215680040060ff0555a08b238",
+      "bytes": 101747,
+      "source_id": "artifact.thomas-aquinas.expositio-super-isaiam-ad-litteram.latin-corpusthomisticum-chapters-40-49-2026-10-13.aquinas-isaiah40-e257c197",
+      "prior_receipt_match": true,
+      "registered_record": "src/sources/works/thomas-aquinas/expositio-super-isaiam-ad-litteram/editions/latin-corpusthomisticum-chapters-40-49-2026-10-13/artifacts/aquinas-isaiah40-e257c197/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/aquinas-ps11-20.html",
+      "sha256": "27fad154f83226475da95ed754ab0adf8ee3ae19949ff8cfd38c31ca2f8f693e",
+      "bytes": 254560,
+      "source_id": "artifact.thomas-aquinas.super-psalmos.latin-corpusthomisticum-web-2026-07-28.cps11-html-27fad154",
+      "prior_receipt_match": true,
+      "registered_record": "src/sources/works/thomas-aquinas/super-psalmos/editions/latin-corpusthomisticum-web-2026-07-28/artifacts/cps11-html-27fad154/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/pewmissal-week29.html",
+      "sha256": "d7d06db812f2f0b9c8a02475e992391eb718c23602644443be2ee493f96aa3e0",
+      "bytes": 49249,
+      "source_id": "artifact.ignatius-press.pew-missal-planning-guide.week-29-web-2026-10-13.pewmissal-week29-d7d06db8",
+      "prior_receipt_match": true,
+      "registered_record": "src/sources/works/ignatius-press/pew-missal-planning-guide/editions/week-29-web-2026-10-13/artifacts/pewmissal-week29-d7d06db8/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/jp2-ps95.html",
+      "sha256": "9b2ac2273ce6260cce3081605a475755afb45a9b5c0bf4a0f9ac0f2a5480b494",
+      "bytes": 41624,
+      "source_id": "artifact.john-paul-ii.general-audience-2002-09-18.english-vatican-web-2026-10-13.jp2-ps95-9b2ac227",
+      "prior_receipt_match": true,
+      "registered_record": "src/sources/works/john-paul-ii/general-audience-2002-09-18/editions/english-vatican-web-2026-10-13/artifacts/jp2-ps95-9b2ac227/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/psalms-intro.html",
+      "sha256": "8225fe4d3b545b7513c89aff0654a368f1bdb695f4cd74f53b391a8737d70aa6",
+      "bytes": 74094,
+      "source_id": "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-intro-2026-10-13-8225fe4d",
+      "prior_receipt_match": true,
+      "registered_record": "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/english-usccb-web-2026-07-28/artifacts/psalms-intro-2026-10-13-8225fe4d/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/aquinas-matt.html",
+      "sha256": "3d862a0e7738e8e20f8b34d43c2e5a3658fec955d758ca14db1e1ca2b7f465b8",
+      "bytes": 312448,
+      "source_id": "artifact.thomas-aquinas.super-matthaeum.latin-corpusthomisticum-chapters-21-25-2026-10-13.aquinas-matt-3d862a0e",
+      "prior_receipt_match": true,
+      "registered_record": "src/sources/works/thomas-aquinas/super-matthaeum/editions/latin-corpusthomisticum-chapters-21-25-2026-10-13/artifacts/aquinas-matt-3d862a0e/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/isaiah-intro.html",
+      "sha256": "d7d25fb992943e6a60e4be8c4cfec28aaf87e44d929d1daf631c2f1f86799463",
+      "bytes": 64143,
+      "source_id": "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.isaiah-intro-2026-10-13-d7d25fb9",
+      "prior_receipt_match": true,
+      "registered_record": "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-09-21-english-usccb-web/artifacts/isaiah-intro-2026-10-13-d7d25fb9/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/aquinas-phil.html",
+      "sha256": "f84aea54e8b71b1ba43bd087466be73d7d8ea25029396ec9782cf0a79f1bf5ec",
+      "bytes": 132299,
+      "source_id": "artifact.thomas-aquinas.super-philippenses.latin-corpusthomisticum-web-2026-10-06.aquinas-phil-html-f84aea54",
+      "prior_receipt_match": true,
+      "registered_record": "src/sources/works/thomas-aquinas/super-philippenses/editions/2026-10-06-latin-corpusthomisticum/artifacts/aquinas-phil-html-f84aea54/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/aquinas-thess.html",
+      "sha256": "fe77f056e47df4d73eab61c0c496d465b657d35b60e7fc201f9e0579bab2ef95",
+      "bytes": 92000,
+      "source_id": "artifact.thomas-aquinas.super-primum-ad-thessalonicenses.latin-corpusthomisticum-2026-10-13.aquinas-thess-fe77f056",
+      "prior_receipt_match": true,
+      "registered_record": "src/sources/works/thomas-aquinas/super-primum-ad-thessalonicenses/editions/latin-corpusthomisticum-2026-10-13/artifacts/aquinas-thess-fe77f056/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/aquinas-isaiah.html",
+      "sha256": "dfe2d40db729bb9d6f47d82f4e1d2dbe7605a42f4db38145251c63ff0fc9b286",
+      "bytes": 42886,
+      "source_id": null,
+      "prior_receipt_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/2026cal.pdf",
+      "sha256": "4bd9add07512396a2323aa977bc4816a5fad6348262e12740bcee97c77372d02",
+      "bytes": 839777,
+      "source_id": "artifact.united-states-conference-of-catholic-bishops.liturgical-calendar-dioceses-united-states.2026.usccb-pdf-4bd9add0",
+      "prior_receipt_match": true,
+      "registered_record": "src/sources/works/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/editions/2026/artifacts/usccb-pdf-4bd9add0/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/latin-missal2002.pdf",
+      "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "bytes": 3333382,
+      "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+      "prior_receipt_match": true,
+      "registered_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/antiphonary.pdf",
+      "sha256": "e6b82741acc77fb5e0d7c887813f6f2652b4ec088abc8526f5c77320e9762aca",
+      "bytes": 1120199,
+      "source_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+      "prior_receipt_match": true,
+      "registered_record": "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/artifacts/antiphonary-pdf/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/fdlc.pdf",
+      "sha256": "019adbadf386ee56461ec94ef7e413a0270ac663d71b30f0bfb4af9c7764f6c4",
+      "bytes": 285758,
+      "source_id": "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion.combo-col-pac-78d-ordinary-24-30",
+      "prior_receipt_match": true,
+      "registered_record": "src/sources/works/federation-of-diocesan-liturgical-commissions/mystagogical-reflections/editions/2016-collect-and-prayer-after-communion/artifacts/combo-col-pac-78d-ordinary-24-30/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/usccb-101826.html",
+      "sha256": "623dee42ea790582ac00dd78c081a70a79b7e52627424106853feace3dbc0794",
+      "bytes": 57444,
+      "source_id": "artifact.united-states-conference-of-catholic-bishops.daily-readings.2026-10-18-web-2026-10-13.usccb-101826-623dee42",
+      "prior_receipt_match": true,
+      "registered_record": "src/sources/works/united-states-conference-of-catholic-bishops/daily-readings/editions/2026-10-18-web-2026-10-13/artifacts/usccb-101826-623dee42/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/girm-2.html",
+      "sha256": "948449f2aa8889dc8f82c6f218c866f90356ad8027d2de9781277a7c9666b4f5",
+      "bytes": 108756,
+      "source_id": "artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.girm-2-2026-10-13-948449f2",
+      "prior_receipt_match": true,
+      "registered_record": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/english-us-2011-emended-2021/artifacts/girm-2-2026-10-13-948449f2/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/girm-7.html",
+      "sha256": "54b349eeee07819bfba4e1f56a6ddedb7c04da672622ef72ac7ed9b6c1968dab",
+      "bytes": 57054,
+      "source_id": "artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.girm-7-2026-10-13-54b349ee",
+      "prior_receipt_match": true,
+      "registered_record": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/english-us-2011-emended-2021/artifacts/girm-7-2026-10-13-54b349ee/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/aquinas-isaiah40.html",
+      "sha256": "e257c1976d83aeea79b1595e8b1812a94604192215680040060ff0555a08b238",
+      "source_id": "artifact.thomas-aquinas.expositio-super-isaiam-ad-litteram.latin-corpusthomisticum-chapters-40-49-2026-10-13.aquinas-isaiah40-e257c197",
+      "registered_record": "src/sources/works/thomas-aquinas/expositio-super-isaiam-ad-litteram/editions/latin-corpusthomisticum-chapters-40-49-2026-10-13/artifacts/aquinas-isaiah40-e257c197/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/aquinas-matt.html",
+      "sha256": "3d862a0e7738e8e20f8b34d43c2e5a3658fec955d758ca14db1e1ca2b7f465b8",
+      "source_id": "artifact.thomas-aquinas.super-matthaeum.latin-corpusthomisticum-chapters-21-25-2026-10-13.aquinas-matt-3d862a0e",
+      "registered_record": "src/sources/works/thomas-aquinas/super-matthaeum/editions/latin-corpusthomisticum-chapters-21-25-2026-10-13/artifacts/aquinas-matt-3d862a0e/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/aquinas-thess.html",
+      "sha256": "fe77f056e47df4d73eab61c0c496d465b657d35b60e7fc201f9e0579bab2ef95",
+      "source_id": "artifact.thomas-aquinas.super-primum-ad-thessalonicenses.latin-corpusthomisticum-2026-10-13.aquinas-thess-fe77f056",
+      "registered_record": "src/sources/works/thomas-aquinas/super-primum-ad-thessalonicenses/editions/latin-corpusthomisticum-2026-10-13/artifacts/aquinas-thess-fe77f056/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/jerome-isaiah3.pdf",
+      "sha256": "269d035c515e1e0508ba617fba122a760be8fd753f89cd503aa61dba21330630",
+      "source_id": "artifact.jerome.commentarii-in-isaiam.dco-latin-pars-3-2026-10-13.jerome-isaiah3-269d035c",
+      "registered_record": "src/sources/works/jerome/commentarii-in-isaiam/editions/dco-latin-pars-3-2026-10-13/artifacts/jerome-isaiah3-269d035c/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/jp2-ps95.html",
+      "sha256": "9b2ac2273ce6260cce3081605a475755afb45a9b5c0bf4a0f9ac0f2a5480b494",
+      "source_id": "artifact.john-paul-ii.general-audience-2002-09-18.english-vatican-web-2026-10-13.jp2-ps95-9b2ac227",
+      "registered_record": "src/sources/works/john-paul-ii/general-audience-2002-09-18/editions/english-vatican-web-2026-10-13/artifacts/jp2-ps95-9b2ac227/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/pewmissal-week29.html",
+      "sha256": "d7d06db812f2f0b9c8a02475e992391eb718c23602644443be2ee493f96aa3e0",
+      "source_id": "artifact.ignatius-press.pew-missal-planning-guide.week-29-web-2026-10-13.pewmissal-week29-d7d06db8",
+      "registered_record": "src/sources/works/ignatius-press/pew-missal-planning-guide/editions/week-29-web-2026-10-13/artifacts/pewmissal-week29-d7d06db8/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/usccb-101826.html",
+      "sha256": "623dee42ea790582ac00dd78c081a70a79b7e52627424106853feace3dbc0794",
+      "source_id": "artifact.united-states-conference-of-catholic-bishops.daily-readings.2026-10-18-web-2026-10-13.usccb-101826-623dee42",
+      "registered_record": "src/sources/works/united-states-conference-of-catholic-bishops/daily-readings/editions/2026-10-18-web-2026-10-13/artifacts/usccb-101826-623dee42/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/girm-2.html",
+      "sha256": "948449f2aa8889dc8f82c6f218c866f90356ad8027d2de9781277a7c9666b4f5",
+      "source_id": "artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.girm-2-2026-10-13-948449f2",
+      "registered_record": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/english-us-2011-emended-2021/artifacts/girm-2-2026-10-13-948449f2/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/girm-7.html",
+      "sha256": "54b349eeee07819bfba4e1f56a6ddedb7c04da672622ef72ac7ed9b6c1968dab",
+      "source_id": "artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.girm-7-2026-10-13-54b349ee",
+      "registered_record": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/english-us-2011-emended-2021/artifacts/girm-7-2026-10-13-54b349ee/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/psalms-intro.html",
+      "sha256": "8225fe4d3b545b7513c89aff0654a368f1bdb695f4cd74f53b391a8737d70aa6",
+      "source_id": "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-intro-2026-10-13-8225fe4d",
+      "registered_record": "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/english-usccb-web-2026-07-28/artifacts/psalms-intro-2026-10-13-8225fe4d/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/isaiah-intro.html",
+      "sha256": "d7d25fb992943e6a60e4be8c4cfec28aaf87e44d929d1daf631c2f1f86799463",
+      "source_id": "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.isaiah-intro-2026-10-13-d7d25fb9",
+      "registered_record": "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-09-21-english-usccb-web/artifacts/isaiah-intro-2026-10-13-d7d25fb9/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-21-psalms-578f023d/21-psalms.tsv",
+      "sha256": "578f023dfe1c830252f23df84bcdbaae79857a652e41b7546c461c4a22f601fc",
+      "source_id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d",
+      "registered_record": "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-21-psalms-578f023d/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-27-isaias-7c9a1228/27-isaias.tsv",
+      "sha256": "7c9a1228fe44b5f1ad6e3053788a6cac78e2a0fd400b8ede7b7ea8e2dc365df9",
+      "source_id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-27-isaias-7c9a1228",
+      "registered_record": "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-27-isaias-7c9a1228/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-47-matthew-dd0ba183/47-matthew.tsv",
+      "sha256": "dd0ba183f5fd1e020e733233abfb8f3f97a8c0aded6c518266f8eeed44b6c327",
+      "source_id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183",
+      "registered_record": "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-47-matthew-dd0ba183/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-48-mark-69b4cb75/48-mark.tsv",
+      "sha256": "69b4cb759feec7560e9c2098fe3a4874001be4e428872e60fa723b3d946f977e",
+      "source_id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-48-mark-69b4cb75",
+      "registered_record": "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-48-mark-69b4cb75/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-57-philippians-4ff760a7/57-philippians.tsv",
+      "sha256": "4ff760a78c5156cc125d93cfd80ea5edac2ba5705227ee8d3f69fd0162f90ed5",
+      "source_id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-57-philippians-4ff760a7",
+      "registered_record": "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-57-philippians-4ff760a7/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-59-1-thessalonians-bb539aec/59-1-thessalonians.tsv",
+      "sha256": "bb539aeca2f59b0070897953f3dbd1bfea5b9cfef7c08ba9de767ff30b88c828",
+      "source_id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-59-1-thessalonians-bb539aec",
+      "registered_record": "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-59-1-thessalonians-bb539aec/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/source.txt",
+      "sha256": "d6841950333024906294e6e829f7512d08b3adf62ae6cee3615d18a7ad0020e9",
+      "source_id": "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950",
+      "registered_record": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/editions/2026-09-17-ccel-web/artifacts/ccel-text-adb8f1c9/source.txt",
+      "sha256": "adb8f1c9a988c5050a20fb9fdbf75143dcb227e95e3dad2f560a63b757923648",
+      "source_id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-10.ccel-web-2026-09-17.ccel-text-adb8f1c9",
+      "registered_record": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/editions/2026-09-17-ccel-web/artifacts/ccel-text-adb8f1c9/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/editions/2026-09-05-english-ccel-web-2026-09-05/artifacts/ccel-npnf113-text-54274dd9/source.txt",
+      "sha256": "54274dd9aa73ca36e4da9e763e4a27d1818b09e42ffc73795529afec703a4210",
+      "source_id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-13.english-ccel-web-2026-09-05.ccel-npnf113-text-54274dd9",
+      "registered_record": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/editions/2026-09-05-english-ccel-web-2026-09-05/artifacts/ccel-npnf113-text-54274dd9/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-2-volume-7/editions/2026-10-06-ccel-web/artifacts/ccel-text-56d84cfa/source.txt",
+      "sha256": "56d84cfa94dee313af0139e2d7f3d4b5f7fffca40ce0f34794b5f56264964dfd",
+      "source_id": "artifact.nicene-and-post-nicene-fathers.series-2-volume-7.ccel-web-2026-10-06.ccel-text-56d84cfa",
+      "registered_record": "src/sources/works/nicene-and-post-nicene-fathers/series-2-volume-7/editions/2026-10-06-ccel-web/artifacts/ccel-text-56d84cfa/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/aquinas-ps11-20.html",
+      "sha256": "27fad154f83226475da95ed754ab0adf8ee3ae19949ff8cfd38c31ca2f8f693e",
+      "source_id": "artifact.thomas-aquinas.super-psalmos.latin-corpusthomisticum-web-2026-07-28.cps11-html-27fad154",
+      "registered_record": "src/sources/works/thomas-aquinas/super-psalmos/editions/latin-corpusthomisticum-web-2026-07-28/artifacts/cps11-html-27fad154/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/aquinas-ps31-40.html",
+      "sha256": "e2d50b43f0036d33450b908632ba6d741277edb8ad9381c851eddeb005f90749",
+      "source_id": "artifact.thomas-aquinas.super-psalmos.latin-corpusthomisticum-web-2026-09-05.cps31-html-e2d50b43",
+      "registered_record": "src/sources/works/thomas-aquinas/super-psalmos/editions/2026-09-05-latin-corpusthomisticum-web-2026-09-05/artifacts/cps31-html-e2d50b43/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/aquinas-phil.html",
+      "sha256": "f84aea54e8b71b1ba43bd087466be73d7d8ea25029396ec9782cf0a79f1bf5ec",
+      "source_id": "artifact.thomas-aquinas.super-philippenses.latin-corpusthomisticum-web-2026-10-06.aquinas-phil-html-f84aea54",
+      "registered_record": "src/sources/works/thomas-aquinas/super-philippenses/editions/2026-10-06-latin-corpusthomisticum/artifacts/aquinas-phil-html-f84aea54/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/artifacts/pg19950-body-4597132e/source.txt",
+      "sha256": "4597132e2dfd680253f4a52977af25245b61406d2325480f5a7308bc50265efd",
+      "source_id": "artifact.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.pg19950-body-4597132e",
+      "registered_record": "src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/artifacts/pg19950-body-4597132e/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/2026cal.pdf",
+      "sha256": "4bd9add07512396a2323aa977bc4816a5fad6348262e12740bcee97c77372d02",
+      "source_id": "artifact.united-states-conference-of-catholic-bishops.liturgical-calendar-dioceses-united-states.2026.usccb-pdf-4bd9add0",
+      "registered_record": "src/sources/works/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/editions/2026/artifacts/usccb-pdf-4bd9add0/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/olm1981.pdf",
+      "sha256": "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d",
+      "source_id": "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e",
+      "registered_record": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/artifacts/internet-archive-scan-pdf-ed4bc14e/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/gil.pdf",
+      "sha256": "d286cb135d608cebc47a398e7c8c3040384f9bd5e58cca01b9b96902c32fb9f1",
+      "source_id": "artifact.catholic-church.ordo-lectionum-missae.english-liturgy-office-web-2026-07-25.liturgy-office-pdf-d286cb13",
+      "registered_record": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/english-liturgy-office-web-2026-07-25/artifacts/liturgy-office-pdf-d286cb13/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/latin-missal2002.pdf",
+      "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+      "registered_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/antiphonary.pdf",
+      "sha256": "e6b82741acc77fb5e0d7c887813f6f2652b4ec088abc8526f5c77320e9762aca",
+      "source_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+      "registered_record": "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/artifacts/antiphonary-pdf/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/fdlc.pdf",
+      "sha256": "019adbadf386ee56461ec94ef7e413a0270ac663d71b30f0bfb4af9c7764f6c4",
+      "source_id": "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion.combo-col-pac-78d-ordinary-24-30",
+      "registered_record": "src/sources/works/federation-of-diocesan-liturgical-commissions/mystagogical-reflections/editions/2016-collect-and-prayer-after-communion/artifacts/combo-col-pac-78d-ordinary-24-30/artifact.toml",
+      "registered_sha256_match": true
+    },
+    {
+      "path": ".scratch/pc-s55/research-0000/notitiae2008.pdf",
+      "sha256": "74c8d1740284984d0f4d64b2223edf805dadfa55aec8a92f8cfba9ab901eca0f",
+      "source_id": "artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174",
+      "registered_record": "src/sources/works/holy-see/notitiae/editions/volume-44-numbers-503-504-2008/artifacts/official-pdf-74c8d174/artifact.toml",
+      "registered_sha256_match": true
+    }
+  ],
+  "selected_pdf": {
+    "path": ".scratch/pc-s55/research-review-0000/source-pages.pdf",
+    "sha256": "0173b8623d1fb106ffe37489349828a0dcbb4f42b6cb74194419b6028658feed",
+    "pages": [
+      {
+        "extract_page": 1,
+        "original_path": ".scratch/pc-s55/resolve-context-0000/2026cal.pdf",
+        "original_page": 7,
+        "text_sha256": "7fb41a734c4e3f4107b656d60e3ce642ee8ba0a51aea47817f5dc1e8ed3add96",
+        "extracted_text_exact_match": true,
+        "visually_inspected": true
+      },
+      {
+        "extract_page": 2,
+        "original_path": ".scratch/pc-s55/resolve-context-0000/2026cal.pdf",
+        "original_page": 43,
+        "text_sha256": "1450bc627d9791ab5340d6a4814dd68ae4b8b83c9fcf0393f8a02650c1db75cf",
+        "extracted_text_exact_match": true,
+        "visually_inspected": true
+      },
+      {
+        "extract_page": 3,
+        "original_path": ".scratch/pc-s55/resolve-context-0000/latin-missal2002.pdf",
+        "original_page": 268,
+        "text_sha256": "38f367f6c456688426f486178256c6422dd7ac73250f988f41769a378cb78458",
+        "extracted_text_exact_match": true,
+        "visually_inspected": true
+      },
+      {
+        "extract_page": 4,
+        "original_path": ".scratch/pc-s55/resolve-context-0000/latin-missal2002.pdf",
+        "original_page": 291,
+        "text_sha256": "bfdd0a282ae1c480ab0edc845bbbf01ff56ce67a31a750c85cecd8423060be75",
+        "extracted_text_exact_match": true,
+        "visually_inspected": true
+      },
+      {
+        "extract_page": 5,
+        "original_path": ".scratch/pc-s55/resolve-context-0000/latin-missal2002.pdf",
+        "original_page": 292,
+        "text_sha256": "d3f489545cc071a82313b3f187a6e630461bb4049fdbf9d386e30fe79d935ae0",
+        "extracted_text_exact_match": true,
+        "visually_inspected": true
+      },
+      {
+        "extract_page": 6,
+        "original_path": ".scratch/pc-s55/resolve-context-0000/antiphonary.pdf",
+        "original_page": 89,
+        "text_sha256": "77cc0201f5afbf1c8b83560e5e5075bc842d7b90e5b34a4b27f9c3bf795ae615",
+        "extracted_text_exact_match": true,
+        "visually_inspected": true
+      },
+      {
+        "extract_page": 7,
+        "original_path": ".scratch/pc-s55/resolve-context-0000/fdlc.pdf",
+        "original_page": 16,
+        "text_sha256": "ba80755a7a6f7f5639913976976e6811b28cd81f2ee48c8f27a8bdce70c81c4d",
+        "extracted_text_exact_match": true,
+        "visually_inspected": true
+      },
+      {
+        "extract_page": 8,
+        "original_path": ".scratch/pc-s55/resolve-context-0000/fdlc.pdf",
+        "original_page": 17,
+        "text_sha256": "a7a6151fcd924d8aefc94a8250270f8c5c1925cf5d44daaf6b948c2e5e81c72b",
+        "extracted_text_exact_match": true,
+        "visually_inspected": true
+      },
+      {
+        "extract_page": 9,
+        "original_path": ".scratch/pc-s55/research-0000/olm1981.pdf",
+        "original_page": 133,
+        "text_sha256": "81b082886792224cdcdae4a0305e2676566f4b11cad59038d9e67ebcabf05794",
+        "extracted_text_exact_match": true,
+        "visually_inspected": true
+      },
+      {
+        "extract_page": 10,
+        "original_path": ".scratch/pc-s55/research-0000/olm1981.pdf",
+        "original_page": 134,
+        "text_sha256": "cd6842fb1d967d1f595f69a9f48ad90f0bcb9362fa70c109602b2f7812d62cbd",
+        "extracted_text_exact_match": true,
+        "visually_inspected": true
+      },
+      {
+        "extract_page": 11,
+        "original_path": ".scratch/pc-s55/research-0000/gil.pdf",
+        "original_page": 14,
+        "text_sha256": "ef33eeb1a895892d8e19b27ee2c59ad8132cf13240c1de63e13b4cf54a168c06",
+        "extracted_text_exact_match": true,
+        "visually_inspected": true
+      },
+      {
+        "extract_page": 12,
+        "original_path": ".scratch/pc-s55/research-0000/gil.pdf",
+        "original_page": 15,
+        "text_sha256": "3aea205cbec3a644decfdd6f8bd33e0a37080381fa16b84457ce1ab54da379a2",
+        "extracted_text_exact_match": true,
+        "visually_inspected": true
+      },
+      {
+        "extract_page": 13,
+        "original_path": ".scratch/pc-s55/research-0000/notitiae2008.pdf",
+        "original_page": 53,
+        "text_sha256": "dc93719eba7e9ab80bbdc5394496ab92811a32b127c12551648cb3878613fc57",
+        "extracted_text_exact_match": true,
+        "visually_inspected": true
+      },
+      {
+        "extract_page": 14,
+        "original_path": ".scratch/pc-s55/research-0000/jerome-isaiah3.pdf",
+        "original_page": 126,
+        "text_sha256": "430b8841e70a7bac8aa049bb828321a76fed553e13b9ab4bf58cf9a67d557d67",
+        "extracted_text_exact_match": true,
+        "visually_inspected": true
+      },
+      {
+        "extract_page": 15,
+        "original_path": ".scratch/pc-s55/research-0000/jerome-isaiah3.pdf",
+        "original_page": 127,
+        "text_sha256": "27d90aec2952ece42a8700a09761ee3835d01675bdf21a419af4c0e741fd489c",
+        "extracted_text_exact_match": true,
+        "visually_inspected": true
+      },
+      {
+        "extract_page": 16,
+        "original_path": ".scratch/pc-s55/research-0000/jerome-isaiah3.pdf",
+        "original_page": 128,
+        "text_sha256": "18d77645bc954d1555c2a2f7737e06cc1619368c2369a3aa76c292dc07005f43",
+        "extracted_text_exact_match": true,
+        "visually_inspected": true
+      },
+      {
+        "extract_page": 17,
+        "original_path": ".scratch/pc-s55/research-0000/jerome-isaiah3.pdf",
+        "original_page": 129,
+        "text_sha256": "6b7a8cb71b23410598b3690e92e4b3f113d07220643a3ff2c888f522d66655dd",
+        "extracted_text_exact_match": true,
+        "visually_inspected": true
+      },
+      {
+        "extract_page": 18,
+        "original_path": ".scratch/pc-s55/research-0000/aas1912.pdf",
+        "original_page": 463,
+        "text_sha256": "93eb74b287c29a7edaedbed8b3984cd6957f4526a1408f92e65daa3bb5393aa3",
+        "extracted_text_exact_match": true,
+        "visually_inspected": true
+      },
+      {
+        "extract_page": 19,
+        "original_path": ".scratch/pc-s55/research-0000/aas1912.pdf",
+        "original_page": 464,
+        "text_sha256": "c02b1340b15ac5e99a32e21a308c73c4f572829719c1b71fc0de621bbfa49d6b",
+        "extracted_text_exact_match": true,
+        "visually_inspected": true
+      },
+      {
+        "extract_page": 20,
+        "original_path": ".scratch/pc-s55/research-0000/aas1912.pdf",
+        "original_page": 465,
+        "text_sha256": "2f5c2e7dfb7d8c9b3308e18efa43c57823518b754a2a4caba53b2af3f7b9dc76",
+        "extracted_text_exact_match": true,
+        "visually_inspected": true
+      }
+    ]
+  }
+}

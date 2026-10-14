@@ -1,0 +1,132 @@
+{
+  "checked_on": "2026-10-13",
+  "deliveries": [
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/2026cal.pdf",
+      "sha256": "4bd9add07512396a2323aa977bc4816a5fad6348262e12740bcee97c77372d02",
+      "byte_size": 839777,
+      "registered_artifacts": [
+        "src/sources/works/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/editions/2026/artifacts/usccb-pdf-4bd9add0/artifact.toml"
+      ]
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/latin-missal2002.pdf",
+      "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "byte_size": 3333382,
+      "registered_artifacts": [
+        "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+      ]
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/antiphonary.pdf",
+      "sha256": "e6b82741acc77fb5e0d7c887813f6f2652b4ec088abc8526f5c77320e9762aca",
+      "byte_size": 1120199,
+      "registered_artifacts": [
+        "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/artifacts/antiphonary-pdf/artifact.toml"
+      ]
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/fdlc.pdf",
+      "sha256": "019adbadf386ee56461ec94ef7e413a0270ac663d71b30f0bfb4af9c7764f6c4",
+      "byte_size": 285758,
+      "registered_artifacts": [
+        "src/sources/works/federation-of-diocesan-liturgical-commissions/mystagogical-reflections/editions/2016-collect-and-prayer-after-communion/artifacts/combo-col-pac-78d-ordinary-24-30/artifact.toml"
+      ]
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/usccb-101826.html",
+      "sha256": "623dee42ea790582ac00dd78c081a70a79b7e52627424106853feace3dbc0794",
+      "byte_size": 57444,
+      "registered_artifacts": [
+        "src/sources/works/united-states-conference-of-catholic-bishops/daily-readings/editions/2026-10-18-web-2026-10-13/artifacts/usccb-101826-623dee42/artifact.toml"
+      ]
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/girm-2.html",
+      "sha256": "948449f2aa8889dc8f82c6f218c866f90356ad8027d2de9781277a7c9666b4f5",
+      "byte_size": 108756,
+      "registered_artifacts": [
+        "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/english-us-2011-emended-2021/artifacts/girm-2-2026-10-13-948449f2/artifact.toml"
+      ]
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/girm-7.html",
+      "sha256": "54b349eeee07819bfba4e1f56a6ddedb7c04da672622ef72ac7ed9b6c1968dab",
+      "byte_size": 57054,
+      "registered_artifacts": [
+        "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/english-us-2011-emended-2021/artifacts/girm-7-2026-10-13-54b349ee/artifact.toml"
+      ]
+    },
+    {
+      "path": ".scratch/pc-s55/resolve-context-0000/calendar-variations.html",
+      "sha256": "4531f6b614a851a098f40fe6f43e2f0f6f4e31804f6d7a0b4b8493a499f7cdb6",
+      "byte_size": 17288,
+      "registered_artifacts": []
+    }
+  ],
+  "source_page_order": [
+    {
+      "source": "2026cal.pdf",
+      "physical_page": 7,
+      "inspection_pdf_page": 1
+    },
+    {
+      "source": "2026cal.pdf",
+      "physical_page": 43,
+      "inspection_pdf_page": 2
+    },
+    {
+      "source": "latin-missal2002.pdf",
+      "physical_page": 268,
+      "inspection_pdf_page": 3
+    },
+    {
+      "source": "latin-missal2002.pdf",
+      "physical_page": 291,
+      "inspection_pdf_page": 4
+    },
+    {
+      "source": "latin-missal2002.pdf",
+      "physical_page": 292,
+      "inspection_pdf_page": 5
+    },
+    {
+      "source": "antiphonary.pdf",
+      "physical_page": 89,
+      "inspection_pdf_page": 6
+    },
+    {
+      "source": "fdlc.pdf",
+      "physical_page": 16,
+      "inspection_pdf_page": 7
+    },
+    {
+      "source": "fdlc.pdf",
+      "physical_page": 17,
+      "inspection_pdf_page": 8
+    }
+  ],
+  "selected_page_text_matches_whole_artifact": true,
+  "image_inspection": "All eight corresponding newly rendered full-page images opened and read in the fresh context verification.",
+  "pdf_review_receipt": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/resolve-context-0000/rasters/review-run.json",
+  "entrypoints_unchanged_from_seed": {
+    "main.tex": "462cfe4ebf066ca84e06483346ad3902253b0cad5f29a80e9ee86d894bb41a22",
+    "synthesis.tex": "a01b6df3af15cf268edb5e52f7a48549985b51a356ac52f1807d23659a4fbbd6",
+    "homily.tex": "0c1587b04397ae52ef6cf3cc484f8f922131cc8f6ee8b6a059e3a9aba4f9e7cc"
+  },
+  "limits": [
+    "No exact 2008 or U.S. 2011 altar-book page collation.",
+    "Prior research findings and judgments require fresh research verification.",
+    "PL92 containment repair belongs to research; no central source records changed.",
+    "No local proper calendar supplied."
+  ],
+  "checks": {
+    "source_library": "PASS during make check-sources",
+    "source_inventory": "PASS after deterministic refresh of exactly three changed record hashes",
+    "relative_links_and_dependencies": "PASS; structure-check.json",
+    "git_diff_check": "PASS",
+    "make_check_sources": "FAIL: one known PL92 containment error; research owns repair",
+    "source_check_log": ".scratch/pc-s55-replacement/resolve-context-0000/check-sources-after-refresh.log"
+  },
+  "source_inventory_audit_date": "2026-10-14 (UTC date; preserves prior inventory date; local research date is 2026-10-13)"
+}

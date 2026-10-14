@@ -1,0 +1,191 @@
+{
+  "stage": "study-review",
+  "iteration": 0,
+  "disposition": "PASS",
+  "packet_sha256": "0e4ada9c0a9cad2aea67a787f93d24795b2460744fdca386a21e5fc8f5ef3c2d",
+  "input_verification": "input-verification.json",
+  "proof": {
+    "path": "study-proof.pdf",
+    "sha256": "1f6bef57c221828dc9914194665658ba355becad5e29227368f8bbdcb33c7d25",
+    "physical_pages": 23,
+    "visually_inspected_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "build_result": "Canonical make PDF target succeeded with generation metadata valid; dedicated pdf-review raster generation succeeded.",
+    "font_check": "All 15 fonts embedded, subsetted, with Unicode mapping.",
+    "layout_result": "Readable body, footnotes, chronology and apparatus; no clipping or illegible text observed. Sparse page 10 is advisory STU-001. Rights colophon shares terminal page 23."
+  },
+  "scope": {
+    "canonical_source": "Main and all nine included section files read; referenced interpretations, scope, source bindings and chronology research/records checked.",
+    "whole_formulary": "Each of two readings covers all eleven element keys, including both Communion alternatives, and has its own four senses. Composed prayers remain prayers rather than invented Scripture appointments.",
+    "boundaries": "Psalm Hebrew/Vulgate numbering distinguished; Psalm 96:10b omitted; 1 Thessalonians 1:5b and Philippians 2:15d,16a limits retained; Mark ransom excerpt distinguished from its wider service context. Live official 2026-10-18 appointment checked.",
+    "depth": "23 pages within 20–50 range with substantive exposition, primary-source reasoning, developed readings and historical apparatus. No blocking padding defect."
+  },
+  "consequential_difficulty_tests": [
+    {
+      "lane": "rightly-ordered-allegiance",
+      "carrying_authors": [
+        "Jerome",
+        "John Chrysostom"
+      ],
+      "prose_locus": "sections/30-allegiance.tex; proof pp.11–13, especially The instrument does not become the saviour and The coin establishes a debt, not a deity",
+      "inspected_source_locus": "Jerome Commentary on Isaiah XII, Isaiah 45:1–7, retained DCO PDF pp.126–129; Chrysostom Matthew LXX §§1–2, retained NPNF I.10.",
+      "reasoning_test": "Jerome preserves the actual unknowing Persian king and excludes identifying him with the Son while allowing limited liberating typology. Chrysostom explains render as debt while excluding demands contrary to godliness.",
+      "outcome": "PASS: the study teaches the question and inference, then develops the consequences throughout the formulary; this is substantive author compatibility, not name counting."
+    },
+    {
+      "lane": "grace-and-willing-service",
+      "carrying_authors": [
+        "Thomas Aquinas",
+        "John Chrysostom"
+      ],
+      "prose_locus": "sections/40-response.tex; proof pp.14–17, God acts within willing and Thanksgiving recognizes action instead of replacing it",
+      "inspected_source_locus": "Aquinas Super Philippenses 2.3, paragraph 87838, registered HTML delivery; Chrysostom 1 Thessalonians I on 1:2–5, retained NPNF I.13.",
+      "reasoning_test": "Aquinas excludes unaided saving choice, fatalism, autonomous willing completed by God, and prior merit; divine action moves willing internally. Chrysostom credits God while acknowledging the community’s actual costly faith, charity and endurance.",
+      "outcome": "PASS: the prose explains dependence and agency and their consequences for petition and action, distinguishing contextual Phil 2:12–13 from the appointed acclamation. The second reading has a distinct argument and its own four senses."
+    }
+  ],
+  "supporting_source_checks": [
+    "Augustine NPNF I.8: Psalm XVII/Latin XVI §§1,6,8,14; Psalm XXXIII/Latin XXXII §§16–22; Psalm XCVI/Latin XCV §§1–11. Claims concerning speaker, hearing, protection, nourishment, new song, universal Church and humility supported; from-the-wood reception distinguished from appointed wording.",
+    "Aquinas hash-matched HTML: Super Matthaeum 22.2 (87389); Super Isaiam 45 (85005); Super I Thessalonicenses 1.1 (87862); Super Philippenses 2.3–4 (87838–87839); Super Psalmo 16 §3 (86901), 32 §§15–17 (87102–87104). See source-byte-checks.json.",
+    "Chrysostom Matthew LXV §4 supports ministry and ransom for enemies in the Matthew parallel; the study calls it a parallel, not direct Mark commentary. Philippians VIII Word-of-life interpretation remains distinct from Aquinas.",
+    "Bede In Marci III, PL 92 cols.235–236, especially 236A–B: page image inspected; bloodshed for the world and believing reception support the study’s bounded explanation of many, without a standalone Greek lexical claim.",
+    "Gregory Nazianzen Oration XLV §22 and Aquinas Summa III q.48 a.4 corpus/ad3 read: distinct ransom questions/frameworks preserved. Gutenberg’s fourth-article heading has Art.3 typo; the study uses the correct standard a.4 locator.",
+    "John Paul II audience 18 September 2002 §§1–5 read from official delivery: literal kingship/anti-idolatry and Christian cross rereading distinguished."
+  ],
+  "chronology": {
+    "outcome": "PASS: all generated publication claims compared with appendix and reviewed account. Competing/disputed labels and composition/attribution/event/referent distinctions preserved; no invented date fills unresolved occasions.",
+    "checked_loci": [
+      "Retained normalized Catholic Encyclopedia date paragraphs: Howlett Biblical Chronology Nativity conclusion; Gerard General Chronology Christian era; Durand The New Testament original Matthew/Mark; Jacquier Matthew alternatives; MacRory Mark composition; Prat St Paul schedule; Drum Thessalonians time/place; Philippians Roman captivity; Corbett David usual chronology; Temple of Jerusalem opening; Souvay Isaias ministry.",
+      "AAS 4 (1912) pp.463–465 extracted text, especially responsa V–VI and approval: relative order and pre-destruction boundary.",
+      "Official NABRE Isaiah introduction read live at chapters 40–55 attribution; Psalms live request returned HTTP 403, so retained research delivery checked at paragraph preserving individual uncertainty and pre-Maccabean boundary."
+    ]
+  },
+  "limits": [
+    "Independent packet study review, not a new full research-stage certification; no prior reviewer verdict inherited.",
+    "Jerome electronic Latin delivery and Aquinas registered HTML inspected; no historical-exemplar identification or critical-edition facsimile collation claimed.",
+    "Study explicitly limits exact 2008 Latin/2011 English altar-book evidence: incipits, paraphrase and documented appointment evidence do not claim complete edition collation.",
+    "Chronology checks establish faithful handling of the named bounded corpus, not a complete survey or endorsement of current scholarship."
+  ],
+  "official_live_urls": [
+    "https://bible.usccb.org/bible/readings/101826.cfm",
+    "https://www.vatican.va/content/john-paul-ii/en/audiences/2002/documents/hf_jp-ii_aud_20020918.html",
+    "https://bible.usccb.org/bible/isaiah/0"
+  ],
+  "raster_manifest": [
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-01.png",
+      "sha256": "36915fb7d1fcc589f9436985da63cbf1b29bd22a2d915396c1607adaa02b8493"
+    },
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-02.png",
+      "sha256": "0586ca21977888e196fef0f9b03f12bb30a6a93328fea67f8cc5002de9b33bb8"
+    },
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-03.png",
+      "sha256": "336f3aa46feab97a5a37247ab7cad8504f98af630658c603edcb788cd3a80454"
+    },
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-04.png",
+      "sha256": "88325413f1116587eabc9b3a39ce47c1ff5b656dd4feb6ee67267ab2c8461d9e"
+    },
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-05.png",
+      "sha256": "6592af4a79c42260efe11c2168f71e4d98d27dcb87563237f18b6d48ed5a48f9"
+    },
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-06.png",
+      "sha256": "4cfa6eab860597bef1010fef625fdfaa82667f831acf583dbe77a6ac8f15dee4"
+    },
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-07.png",
+      "sha256": "a3f0c9a39cdeee7877d92baac7357829b183585860d5b354eb93a1e5d5311af9"
+    },
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-08.png",
+      "sha256": "58b2830fd30a16a890c94683892a6436d75f7e8ea49a85b310a12d8c56094269"
+    },
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-09.png",
+      "sha256": "9e85c18a7373629c0632330a8447c6164acdcbd6900dd6b30cb0eeb3a240a848"
+    },
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-10.png",
+      "sha256": "a83e29b8465ec0d2ba05ccfdb8ec35af05e5dfd39dd314b2459114d77a36558e"
+    },
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-11.png",
+      "sha256": "3df59dc8ac30a547c1afdde75dc04c97ad6c53f0aa76454a04c1ba528ef5867f"
+    },
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-12.png",
+      "sha256": "33a159d48ab0e3127473762027343992f770517382dfe7659f950fc85fed2da6"
+    },
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-13.png",
+      "sha256": "c9d7cb65a7f2d0027f0acd342d6a1b4a1aef232fa36c0513a21e3f6b2f7c6e04"
+    },
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-14.png",
+      "sha256": "48bb3d88b51bfafbcc4b710acd680e68a25fee5d4d806d9dd67127e99abce8ef"
+    },
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-15.png",
+      "sha256": "29a4ea93c2d066ad0aa039e9c28b6f630f0e0868e0ba3b7695830498ccd79ee8"
+    },
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-16.png",
+      "sha256": "9c0bc02c59c795b5152d832433656d3aa1d43feec45fcff9d1b99600af6cae54"
+    },
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-17.png",
+      "sha256": "452966b1aa74823ee0ca6ae8fb104e651192f99e13389a8fc187fbef573b36e5"
+    },
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-18.png",
+      "sha256": "b8b63c7360da884b95e15c09b84fd6f4f422a7c0e186568623657f293314757b"
+    },
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-19.png",
+      "sha256": "88ccaafc3101fccce18e2b9766a0f2975f8e02d89d122282e17c1610586d1239"
+    },
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-20.png",
+      "sha256": "8ad786b84d6983244a9c972074b06d93f6209cb00fe1b201551ed42ce69abe34"
+    },
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-21.png",
+      "sha256": "076e1bef07af4aa30e50f19be17a225960386823357ed813241a228c66a67ec1"
+    },
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-22.png",
+      "sha256": "1392a3ec8bf922ffbfba95da5fada6b38ee242bf7ff753f7b4297b0e1167d686"
+    },
+    {
+      "path": "rasters/build/tpt-runs/9b5dbdfa9ba70a96/artifacts/study-review-0000/study-proof/pages/page-23.png",
+      "sha256": "77960c8bcd0e363b2e0b01ddb2df077ae6452d5a91f1b5721800c05f112217ce"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+[
+  {
+    "command": "make doc DOC=liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a PROVIDER=gpt",
+    "exit_status": 0,
+    "evidence": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/build-artifacts-0000/research/build.txt"
+  },
+  {
+    "command": [
+      "pdfinfo",
+      "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf"
+    ],
+    "exit_status": 0,
+    "evidence": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/build-artifacts-0000/research/pdfinfo.txt"
+  },
+  {
+    "command": [
+      "pdffonts",
+      "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf"
+    ],
+    "exit_status": 0,
+    "evidence": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/build-artifacts-0000/research/pdffonts.txt"
+  },
+  {
+    "command": [
+      "pdftotext",
+      "-layout",
+      "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf",
+      "-"
+    ],
+    "exit_status": 0,
+    "evidence": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/build-artifacts-0000/research/extracted.txt"
+  },
+  {
+    "command": [
+      "gs",
+      "-q",
+      "-dNOPAUSE",
+      "-dBATCH",
+      "-sDEVICE=nullpage",
+      "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf"
+    ],
+    "exit_status": 0,
+    "evidence": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/build-artifacts-0000/research/pdf-structure.txt"
+  },
+  {
+    "command": "make doc DOC=liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis PROVIDER=gpt",
+    "exit_status": 0,
+    "evidence": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/build-artifacts-0000/synthesis/build.txt"
+  },
+  {
+    "command": [
+      "pdfinfo",
+      "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf"
+    ],
+    "exit_status": 0,
+    "evidence": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/build-artifacts-0000/synthesis/pdfinfo.txt"
+  },
+  {
+    "command": [
+      "pdffonts",
+      "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf"
+    ],
+    "exit_status": 0,
+    "evidence": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/build-artifacts-0000/synthesis/pdffonts.txt"
+  },
+  {
+    "command": [
+      "pdftotext",
+      "-layout",
+      "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+      "-"
+    ],
+    "exit_status": 0,
+    "evidence": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/build-artifacts-0000/synthesis/extracted.txt"
+  },
+  {
+    "command": [
+      "gs",
+      "-q",
+      "-dNOPAUSE",
+      "-dBATCH",
+      "-sDEVICE=nullpage",
+      "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf"
+    ],
+    "exit_status": 0,
+    "evidence": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/build-artifacts-0000/synthesis/pdf-structure.txt"
+  },
+  {
+    "command": "make doc DOC=liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily PROVIDER=gpt",
+    "exit_status": 0,
+    "evidence": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/build-artifacts-0000/homily/build.txt"
+  },
+  {
+    "command": [
+      "pdfinfo",
+      "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf"
+    ],
+    "exit_status": 0,
+    "evidence": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/build-artifacts-0000/homily/pdfinfo.txt"
+  },
+  {
+    "command": [
+      "pdffonts",
+      "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf"
+    ],
+    "exit_status": 0,
+    "evidence": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/build-artifacts-0000/homily/pdffonts.txt"
+  },
+  {
+    "command": [
+      "pdftotext",
+      "-layout",
+      "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf",
+      "-"
+    ],
+    "exit_status": 0,
+    "evidence": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/build-artifacts-0000/homily/extracted.txt"
+  },
+  {
+    "command": [
+      "gs",
+      "-q",
+      "-dNOPAUSE",
+      "-dBATCH",
+      "-sDEVICE=nullpage",
+      "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf"
+    ],
+    "exit_status": 0,
+    "evidence": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/build-artifacts-0000/homily/pdf-structure.txt"
+  },
+  {
+    "command": "python3 scripts/_proper_study.py snapshot --provider gpt --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+    "exit_status": 0,
+    "evidence": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/build-artifacts-0000/snapshot.txt"
+  },
+  {
+    "command": "python3 scripts/_proper_study.py check --provider gpt --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a --phase artifacts --require-presentation --require-format --require-authority --require-orientation",
+    "exit_status": 0,
+    "evidence": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/build-artifacts-0000/artifact-check.txt"
+  },
+  {
+    "command": "tools/tpt pdf-review --output build/tpt-runs/9b5dbdfa9ba70a96/artifacts/build-artifacts-0000/rasters build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf",
+    "exit_status": 0,
+    "evidence": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/build-artifacts-0000/rasters.txt"
+  }
+]

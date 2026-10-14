@@ -1,0 +1,49 @@
+{
+  "proof": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/derive-homily-0000/author-proof.pdf",
+  "sha256": "18bc8b4cbdeaf50e2fd455f8d1d394a8f224e443f746e3e13c684765399d46c5",
+  "bytes": 243677,
+  "physical_pages": 3,
+  "source_timestamp_utc": "2026-10-14T06:21:50Z",
+  "canonical_build": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf",
+  "byte_identical_to_canonical_build": true,
+  "pdf_checks": [
+    {
+      "command": [
+        "pdfinfo",
+        "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/derive-homily-0000/author-proof.pdf"
+      ],
+      "exit_code": 0,
+      "receipt": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/derive-homily-0000/pdfinfo.txt"
+    },
+    {
+      "command": [
+        "pdffonts",
+        "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/derive-homily-0000/author-proof.pdf"
+      ],
+      "exit_code": 0,
+      "receipt": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/derive-homily-0000/pdffonts.txt"
+    },
+    {
+      "command": [
+        "pdftotext",
+        "-layout",
+        "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/derive-homily-0000/author-proof.pdf",
+        "-"
+      ],
+      "exit_code": 0,
+      "receipt": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/derive-homily-0000/extracted.txt"
+    },
+    {
+      "command": [
+        "gs",
+        "-q",
+        "-dNOPAUSE",
+        "-dBATCH",
+        "-sDEVICE=nullpage",
+        "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/derive-homily-0000/author-proof.pdf"
+      ],
+      "exit_code": 0,
+      "receipt": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/derive-homily-0000/pdf-structure.txt"
+    }
+  ]
+}

@@ -1,0 +1,348 @@
+{
+  "scope": "Coordinator identity and archive verification after actual terminal acceptance; no substitute review verdict.",
+  "run_id": "9b5dbdfa9ba70a96",
+  "workflow_disposition": "ACCEPTED",
+  "stages_passed": 21,
+  "all_stage_iterations_zero": true,
+  "open_native_blocking_findings": 0,
+  "nonblocking_findings": [
+    {
+      "stage": "study-review",
+      "finding": {
+        "id": "STU-001",
+        "location": "Study proof physical page 10; sections/20-texts.tex ending and sections/30-allegiance.tex opening clearpage",
+        "problem": "The final two appointed-text locator units occupy only the upper portion of page 10 before the forced start of the first interpretation, producing a conspicuously sparse intermediate page. This is layout polish and does not impair depth, accuracy or usability.",
+        "required_result": "At a convenient layout pass, reflow the locator section or its following page break to reduce the sparse spill while preserving readable type and a clear beginning for the first interpretation.",
+        "severity": "advisory"
+      }
+    },
+    {
+      "stage": "visual-review",
+      "finding": {
+        "accepted_because": "The complete entries remain clearly headed and easy to retrieve, and the fresh-page interpretation boundary aids navigation. The study contains substantial exposition and its 23-page extent does not rely on this sparse page to reach the 20-page minimum. Reflow would disturb settled pagination for a cosmetic saving without correcting misleading or inaccessible content.",
+        "id": "VIS-001",
+        "location": "Expansive study, physical page 10; src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/30-allegiance.tex:1 (forced break following sections/20-texts.tex)",
+        "problem": "Page 10 contains only the two short final locator entries, Communion: Mark alternative and Prayer after Communion, leaving roughly three quarters of its body area empty before the first interpretation begins on page 11.",
+        "required_result": "No repair is required for this run; a future layout revision could rebalance the final locator entries and first interpretation boundary while preserving all wording, legibility, and section navigation.",
+        "severity": "accepted"
+      }
+    }
+  ],
+  "archive": {
+    "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96",
+    "manifest_sha256": "e748ab5eac45b65ae9e95110a890d415297e98a560dd39fc645c3e14c9eca2f0",
+    "native_files": 96,
+    "selected_auxiliary_files": 99,
+    "manifested_files": 195,
+    "all_native_files_byte_exact": true,
+    "packets_and_results_match_engine_state": true,
+    "original_blocked_manifest_sha256": "9276e0e44843aa473beb5dfee441cd079fa64484776de86b97eccb5da8ce5515"
+  },
+  "installed_pdfs": [
+    {
+      "build": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf",
+      "installed": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf",
+      "sha256": "18bc8b4cbdeaf50e2fd455f8d1d394a8f224e443f746e3e13c684765399d46c5",
+      "pages": 3,
+      "bytes": 243677
+    },
+    {
+      "build": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+      "installed": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+      "sha256": "c86015a277ef12fb278241ef858261519afed180e41eb5540f4b6de219e7a6c1",
+      "pages": 10,
+      "bytes": 380673
+    },
+    {
+      "build": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf",
+      "installed": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf",
+      "sha256": "cac5c0b9ebdbd393f9df74436b0215cfd50138d718c103536124105f24f02c43",
+      "pages": 23,
+      "bytes": 486000
+    }
+  ],
+  "installed_web": {
+    "path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md",
+    "sha256": "e87243499c4dd4797dbfda5226a75bd3e851d93a56be0431c636ae068a750a19",
+    "bytes": 76252,
+    "staged_exact_bytes": true,
+    "fresh_conversion_identical": "Verified by native publication-gates web-editions-current check"
+  },
+  "installation_receipt": {
+    "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/evidence/install-publication-0000/installation-evidence.json",
+    "sha256": "7d76d1efa6ec162bdb4c3f5c7b9e7e2152583ce66bfd519b80c86a075cc2afa0",
+    "release_catalog_and_command_log_identities_rechecked": true
+  },
+  "checks": {
+    "full_check_sources_after_terminal_acceptance": {
+      "command": [
+        "make",
+        "check-sources"
+      ],
+      "exit_code": 0,
+      "after_terminal_acceptance": true,
+      "Markdown": "3.10.3",
+      "original_sha256": "4be987040ce723e8747324bc346625553356aaef1d541b773a86734b099b0204",
+      "public_sha256": "2dbc278f2819cc5cc4946ab9606cc1e8433b7ab97427a5198810954ea2d8823f",
+      "transformation": "Replace the absolute checkout root with [checkout] in 1 occurrence(s); all other bytes unchanged."
+    },
+    "native_publication_gates": "PASS",
+    "tracked_diff_whitespace_before_archive": "PASS",
+    "staged_whitespace": {
+      "exit_code": 2,
+      "disposition": "Only byte-exact native gate-log blank-at-EOF exceptions; all authored files clean",
+      "exceptions": [
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/artifact-gates-0000-reviewed-artifact-snapshot.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/homily-preflight-0000-bindings-valid.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/homily-preflight-0000-chronology-annotations-current.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/homily-preflight-0000-chronology-claims-supported.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/homily-preflight-0000-chronology-record-current.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/homily-preflight-0000-component-contract.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/homily-preflight-0000-house-voice.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/homily-preflight-0000-identifiers-resolve.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/homily-preflight-0000-provenance-matches-run.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/homily-preflight-0000-references-used.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/homily-preflight-0000-relation-coverage.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/homily-preflight-0000-restricted-not-reproduced.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/homily-preflight-0000-structural-meta-labels.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/homily-preflight-0000-unquoted-not-quoted.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/publication-gates-0000-document-catalogue.log",
+          "line": 18,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/publication-gates-0000-public-alpha.log",
+          "line": 10,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/publication-gates-0000-release-bindings.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/publication-gates-0000-three-document-publication.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/publication-gates-0000-web-editions-current.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/research-preflight-0000-research-records.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/scope-gate-0000-authorized-identity.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/study-preflight-0000-bindings-valid.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/study-preflight-0000-chronology-annotations-current.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/study-preflight-0000-chronology-claims-supported.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/study-preflight-0000-chronology-record-current.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/study-preflight-0000-component-contract.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/study-preflight-0000-house-voice.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/study-preflight-0000-identifiers-resolve.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/study-preflight-0000-provenance-matches-run.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/study-preflight-0000-references-used.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/study-preflight-0000-relation-coverage.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/study-preflight-0000-restricted-not-reproduced.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/study-preflight-0000-structural-meta-labels.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/study-preflight-0000-study-web-conversion.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/study-preflight-0000-unquoted-not-quoted.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/synthesis-preflight-0000-bindings-valid.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/synthesis-preflight-0000-chronology-annotations-current.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/synthesis-preflight-0000-chronology-claims-supported.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/synthesis-preflight-0000-chronology-record-current.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/synthesis-preflight-0000-component-contract.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/synthesis-preflight-0000-house-voice.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/synthesis-preflight-0000-identifiers-resolve.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/synthesis-preflight-0000-provenance-matches-run.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/synthesis-preflight-0000-references-used.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/synthesis-preflight-0000-relation-coverage.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/synthesis-preflight-0000-restricted-not-reproduced.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/synthesis-preflight-0000-structural-meta-labels.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        },
+        {
+          "path": "workflows/reviews/gpt-pc-s55-production-2026-10-13/run-9b5dbdfa9ba70a96/gate-logs/synthesis-preflight-0000-unquoted-not-quoted.log",
+          "line": 7,
+          "reason": "Preserved byte-exact native gate log"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Exact 2008 Latin and publisher-specific 2011 altar-book pages uncollated; layered evidence limits remain explicit.",
+    "Both Communion alternatives remain unselected; parish overlays unresolved.",
+    "Public-domain study translations are not approved proclamation English; no restricted modern source bodies added in the replacement.",
+    "Family ledger remains 161 pending units, zero screened, no whole-family coverage claim.",
+    "Homily duration is an estimate after silent textual review, not timed human delivery.",
+    "Browser evidence is fresh local desktop/mobile inspection; no live deployment, global navigation, physical-device or assistive-technology testing claimed.",
+    "Ordinary PDFs are installed locally and untracked under repository policy; sources, receipts and canonical web are committed."
+  ],
+  "delivery_status": "Accepted payload ready for explicit staging, outgoing-object audit and workspace-branch push; delivery remains open."
+}

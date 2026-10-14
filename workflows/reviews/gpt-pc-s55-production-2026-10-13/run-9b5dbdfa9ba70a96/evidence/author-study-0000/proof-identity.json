@@ -1,0 +1,49 @@
+{
+  "path": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/author-study-0000/author-proof.pdf",
+  "canonical_build": "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf",
+  "sha256": "1f6bef57c221828dc9914194665658ba355becad5e29227368f8bbdcb33c7d25",
+  "bytes": 486000,
+  "physical_pages": 23,
+  "byte_identical_to_canonical_build": true,
+  "source_timestamp_utc": "2026-10-14T05:36:26Z",
+  "pdf_checks": [
+    {
+      "command": [
+        "pdfinfo",
+        "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/author-study-0000/author-proof.pdf"
+      ],
+      "exit_code": 0,
+      "receipt": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/author-study-0000/pdfinfo.txt"
+    },
+    {
+      "command": [
+        "pdffonts",
+        "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/author-study-0000/author-proof.pdf"
+      ],
+      "exit_code": 0,
+      "receipt": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/author-study-0000/pdffonts.txt"
+    },
+    {
+      "command": [
+        "pdftotext",
+        "-layout",
+        "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/author-study-0000/author-proof.pdf",
+        "-"
+      ],
+      "exit_code": 0,
+      "receipt": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/author-study-0000/extracted.txt"
+    },
+    {
+      "command": [
+        "gs",
+        "-q",
+        "-dNOPAUSE",
+        "-dBATCH",
+        "-sDEVICE=nullpage",
+        "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/author-study-0000/author-proof.pdf"
+      ],
+      "exit_code": 0,
+      "receipt": "build/tpt-runs/9b5dbdfa9ba70a96/artifacts/author-study-0000/pdf-structure.txt"
+    }
+  ]
+}

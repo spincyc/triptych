@@ -1,0 +1,46 @@
+{"event": "seed", "stage": "scope-gate", "timestamp": "2026-10-14T04:46:52Z", "workflow_id": "proper-study", "workflow_version": 11}
+{"event": "packet", "hash": "9c320e5e0b2b6cedc5f61d3872751abd77d7aecf5517f12c7728a9eb9a799dae", "iteration": 0, "size": 769, "stage": "scope-gate", "timestamp": "2026-10-14T04:46:52Z"}
+{"disposition": "PASS", "event": "result", "stage": "scope-gate", "timestamp": "2026-10-14T04:46:57Z", "transition": "resolve-context"}
+{"event": "packet", "hash": "01c596d93a1fe020b8577e2ca6fc448f57ffd73f257eeceb0cb98276e3d7c8d8", "iteration": 0, "size": 33379, "stage": "resolve-context", "timestamp": "2026-10-14T04:46:57Z"}
+{"disposition": "PASS", "event": "result", "stage": "resolve-context", "timestamp": "2026-10-14T04:54:05Z", "transition": "research"}
+{"event": "packet", "hash": "d789b14fffda881f7e982879b1c144015916a09d2f7f5a1e783942f92c701d07", "iteration": 0, "size": 35809, "stage": "research", "timestamp": "2026-10-14T04:54:05Z"}
+{"disposition": "PASS", "event": "result", "stage": "research", "timestamp": "2026-10-14T05:17:25Z", "transition": "research-preflight"}
+{"event": "packet", "hash": "d3adec2efbd568ae953ef2e867113849b78889165b44dd56745973099e416eeb", "iteration": 0, "size": 777, "stage": "research-preflight", "timestamp": "2026-10-14T05:17:25Z"}
+{"disposition": "PASS", "event": "result", "stage": "research-preflight", "timestamp": "2026-10-14T05:17:31Z", "transition": "research-review"}
+{"event": "packet", "hash": "3b8960d7cdc0d12ef0bd89df35b553db807bb7a15fa98fd02c713d783bd1697b", "iteration": 0, "size": 355520, "stage": "research-review", "timestamp": "2026-10-14T05:17:31Z"}
+{"disposition": "PASS", "event": "result", "stage": "research-review", "timestamp": "2026-10-14T05:33:30Z", "transition": "author-study"}
+{"event": "packet", "hash": "3c7cd07988f3b7387b43d7b2bc8bc233a3b443096d28775a378f353f5cf72837", "iteration": 0, "size": 37613, "stage": "author-study", "timestamp": "2026-10-14T05:33:30Z"}
+{"disposition": "PASS", "event": "result", "stage": "author-study", "timestamp": "2026-10-14T05:44:25Z", "transition": "study-preflight"}
+{"event": "packet", "hash": "55a17289afb05ce9f87f0fcff297455a3a9ffe24a9dbba1a821af4265f9a0d5e", "iteration": 0, "size": 774, "stage": "study-preflight", "timestamp": "2026-10-14T05:44:25Z"}
+{"disposition": "PASS", "event": "result", "stage": "study-preflight", "timestamp": "2026-10-14T05:44:37Z", "transition": "study-review"}
+{"event": "packet", "hash": "0e4ada9c0a9cad2aea67a787f93d24795b2460744fdca386a21e5fc8f5ef3c2d", "iteration": 0, "size": 44311, "stage": "study-review", "timestamp": "2026-10-14T05:44:37Z"}
+{"disposition": "PASS", "event": "result", "stage": "study-review", "timestamp": "2026-10-14T05:57:10Z", "transition": "derive-synthesis"}
+{"event": "packet", "hash": "c5df244d39a19768416c7b6198c88c832fcf2c0c5d441cb4a51de886912e74e4", "iteration": 0, "size": 34851, "stage": "derive-synthesis", "timestamp": "2026-10-14T05:57:10Z"}
+{"disposition": "PASS", "event": "result", "stage": "derive-synthesis", "timestamp": "2026-10-14T06:06:18Z", "transition": "synthesis-preflight"}
+{"event": "packet", "hash": "e21712b3392824a66562689a32db612833c77d0747b63c6cc15ae5e3e85f103e", "iteration": 0, "size": 778, "stage": "synthesis-preflight", "timestamp": "2026-10-14T06:06:18Z"}
+{"disposition": "PASS", "event": "result", "stage": "synthesis-preflight", "timestamp": "2026-10-14T06:06:31Z", "transition": "synthesis-review"}
+{"event": "packet", "hash": "ec86fcdcbbe3bdd8f91593cd5ced0a499d1e8c068a9ace969fff1a51ab463e1f", "iteration": 0, "size": 41621, "stage": "synthesis-review", "timestamp": "2026-10-14T06:06:31Z"}
+{"disposition": "PASS", "event": "result", "stage": "synthesis-review", "timestamp": "2026-10-14T06:18:29Z", "transition": "derive-homily"}
+{"event": "packet", "hash": "ffdf9c4de1a4b7f4bdcb1a39a1acd0b07cf4841222391cd03a42574af6de250a", "iteration": 0, "size": 33518, "stage": "derive-homily", "timestamp": "2026-10-14T06:18:29Z"}
+{"disposition": "PASS", "event": "result", "stage": "derive-homily", "timestamp": "2026-10-14T06:25:55Z", "transition": "homily-preflight"}
+{"event": "packet", "hash": "8dde7249590adb14c8c87fe49717540dd2fa91864b9cdfdb1152cbc023e7756b", "iteration": 0, "size": 775, "stage": "homily-preflight", "timestamp": "2026-10-14T06:25:55Z"}
+{"disposition": "PASS", "event": "result", "stage": "homily-preflight", "timestamp": "2026-10-14T06:26:08Z", "transition": "homily-review"}
+{"event": "packet", "hash": "012988bb8307c1d2062f4f32ba5351304d3a2458f42f6cc8544023b938245a41", "iteration": 0, "size": 38473, "stage": "homily-review", "timestamp": "2026-10-14T06:26:08Z"}
+{"disposition": "PASS", "event": "result", "stage": "homily-review", "timestamp": "2026-10-14T06:34:28Z", "transition": "build-artifacts"}
+{"event": "packet", "hash": "f3b63363a346733b08feee9f67720a7ed33f09fc5c75025d4a588022d2b6d123", "iteration": 0, "size": 34346, "stage": "build-artifacts", "timestamp": "2026-10-14T06:34:28Z"}
+{"disposition": "PASS", "event": "result", "stage": "build-artifacts", "timestamp": "2026-10-14T06:42:41Z", "transition": "artifact-gates"}
+{"event": "packet", "hash": "1959eb5405f26407f4f3c1b9369bdb598877ce9d6c2e872c067283510de85a06", "iteration": 0, "size": 831, "stage": "artifact-gates", "timestamp": "2026-10-14T06:42:41Z"}
+{"disposition": "PASS", "event": "result", "stage": "artifact-gates", "timestamp": "2026-10-14T06:43:04Z", "transition": "visual-review"}
+{"event": "packet", "hash": "4f1c0146c8c34ff693dcb1ea3788fae4f385695961b45e389e024d803be0332a", "iteration": 0, "size": 43070, "stage": "visual-review", "timestamp": "2026-10-14T06:43:04Z"}
+{"disposition": "PASS", "event": "result", "stage": "visual-review", "timestamp": "2026-10-14T06:57:35Z", "transition": "generate-web"}
+{"event": "packet", "hash": "500e6b741a421bedf09e846622624da013a0ed0f3c67d51649e13bb332a02af8", "iteration": 0, "size": 32670, "stage": "generate-web", "timestamp": "2026-10-14T06:57:35Z"}
+{"disposition": "PASS", "event": "result", "stage": "generate-web", "timestamp": "2026-10-14T07:06:59Z", "transition": "web-review"}
+{"event": "packet", "hash": "5f39560528b42db2bb578d39130d52590543bb204aa0730ef7c02575e485de9b", "iteration": 0, "size": 34521, "stage": "web-review", "timestamp": "2026-10-14T07:06:59Z"}
+{"event": "intervene", "stage": "web-review", "text": "Coordinator interrupted and resumed the same fresh reviewer after browser stderr recorded a sandbox setsockopt failure and progress requests received no response for several minutes. Existing independently checked inputs and fidelity work remain intact. Reviewer is instructed to report the exact pending action, retry required sandbox failures through escalation, and use the existing direct Chromium command permission when applicable. No approval, rejection, browser success or review verdict is inferred from the interruption.", "timestamp": "2026-10-14T07:20:00Z"}
+{"event": "intervene", "stage": "web-review", "text": "The resumed reviewer reports both sandbox desktop/mobile browser attempts exited 133 with a crashpad setsockopt permission error and empty DOM outputs. Its required escalated desktop retry, although beginning with the approved Chromium prefix, included shell redirections and remained pending for 366.1 seconds until coordinator interruption. No approval or rejection was returned. The same reviewer is retrying the direct browser command without shell redirections, retaining actual tool output and using the browser screenshot flag. Offline comparison and exception resolution remain independently performed; browser acceptance is still pending.", "timestamp": "2026-10-14T07:20:35Z"}
+{"disposition": "PASS", "event": "result", "stage": "web-review", "timestamp": "2026-10-14T07:26:42Z", "transition": "install-publication"}
+{"event": "packet", "hash": "5e261e05f1f6a833bb854e2bb81d32c4e6b45cfef268d5f5d4690ad22ac5982a", "iteration": 0, "size": 35026, "stage": "install-publication", "timestamp": "2026-10-14T07:26:42Z"}
+{"disposition": "PASS", "event": "result", "stage": "install-publication", "timestamp": "2026-10-14T07:34:43Z", "transition": "publication-gates"}
+{"event": "packet", "hash": "5b094649dde893d01aeab924f3b499c48c3ad637373316e4b2a1d0707baea7bf", "iteration": 0, "size": 860, "stage": "publication-gates", "timestamp": "2026-10-14T07:34:43Z"}
+{"disposition": "PASS", "event": "result", "stage": "publication-gates", "timestamp": "2026-10-14T07:35:44Z", "transition": "ACCEPTED"}
+{"event": "accepted", "timestamp": "2026-10-14T07:35:44Z"}
