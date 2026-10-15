@@ -1,0 +1,631 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
+
+# Publication-local record of how this leaf's research used the reusable source
+# library. It supplements, and does not replace, propers/verified.md (the text
+# control), research/scope.md (reception matrix, witness register, negative
+# results and bounds) and research/interpretations.md.
+#
+# States describe what the research stage of run a8bcc37ea3420a07 did with each
+# record on 2026-10-15. `inspected` means this stage read the bound locus itself
+# in the bytes named; `verified` is claimed only for the 1962 page images, the
+# 1962 orations passages collated against them, the 1862 scan collated against
+# them, and the English orations checked against their scans' page images.
+# Remote artifacts were fetched whole and matched to their registered digests
+# before any page was read; nothing remote was retained and no source was
+# registered. No `searched` or `negative-search` binding appears: every negative
+# this research reports rests on reading or on ad hoc literal matching, not on a
+# canonical replayable search; research/scope.md section 5 states each with its
+# bound. Sources read outside the library (Origen, Commentary on Matthew XIV, at
+# New Advent; Aquinas, Super Iob, at Corpus Thomisticum; fresh deliveries of
+# Catholic Encyclopedia articles) are not bound here. Fingerprints were taken
+# from tools/tpt source-library fingerprint. Research iteration 2 added one
+# catalog-level edition binding (the PG 27 Psalm expositions printed under
+# Athanasius's name), read on unregistered page renditions of the item that
+# edition names; its context records their hashes.
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = [
+  "Dominica vigesima prima post Pentecosten, printed pp. 413-415 = artifact PDF pp. 494-496, marginal nos. 1699-1708, with both boundaries (no. 1698 of the Twentieth Sunday above; the heading of Dominica vigesima secunda and no. 1709 below)",
+  "running heads of printed pp. 413, 414 and 415",
+  "Tabula orationum, Pro Fidei propagatione, printed p. 427, right-hand column = PDF p. 508, nos. 1806-1808",
+  "Die 18 octobris, S. Lucae Evangelistae, printed pp. 689-690 = PDF pp. 770-771, nos. 3883, 3889, 3891",
+  "Ordo Missae, printed pp. 321-322 = PDF pp. 402-403, no. 1130 Quod ore sumpsimus",
+]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-15"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+context = "The exact remote facsimile controls every Latin form, heading, citation, marginal number and boundary of this formulary and of the added orations. A copy fetched for the research stage on 2026-10-15 from the registered source_url was hashed before any page was opened; SHA-256 and byte length matched. PDF pp. 494-496 were read whole at 200 dpi and every column section carrying this formulary in 400-dpi crops; PDF p. 508 at 200 dpi with a 400-dpi crop of the right-hand column; PDF pp. 770-771 at 200 dpi with 400-dpi crops of the three St Luke orations; PDF pp. 402-403 at 150 and 100 dpi. propers/verified.md records the readings."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-pentecost-21-orations"
+loci = [
+  "Collect at printed p. 414, no. 1700; artifact PDF p. 495; Offertory at printed p. 415, no. 1705; artifact PDF p. 496; Secret at printed p. 415, no. 1706; artifact PDF p. 496; Postcommunion at printed p. 415, no. 1708; artifact PDF p. 496",
+]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-15"
+source_fingerprint = "sha256:1af8e4e30dcb8a831e4dc2a54c3308296a356f918757aeb845c38b3e37b503bd"
+context = "Collect, Offertory, Secret and Postcommunion re-read on this stage's own 400-dpi crops of PDF pp. 495-496 and found as the passage records them, with the printed conclusions (Collect in full; Secret and Postcommunion Per Dominum nostrum.)."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-lucae-evangelistae-orations"
+loci = [
+  "Collect at printed p. 689, no. 3883; artifact PDF p. 770; Secret at printed p. 690, no. 3889; artifact PDF p. 771; Postcommunion at printed p. 690, no. 3891; artifact PDF p. 771",
+]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-15"
+source_fingerprint = "sha256:716c68a8b960f353636e7842e2ce8755b66c06df78cbf3820fce2a6cb6df9639"
+context = "The three commemorated orations re-read on 400-dpi crops of PDF pp. 770-771 and found as the passage records them, each concluding Per Dominum."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio"
+loci = [
+  "Ordo Missae, Pater noster through Corpus tuum, artifact PDF pp. 393-403 (printed pp. 312-322), marginal nn. 1113-1131",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:04386467e98f0a9471df08aadf1fa9205661f6c91630f720310cea966d7b0035"
+context = "Only no. 1130, Quod ore sumpsimus, Domine, pura mente capiamus (printed p. 322, PDF p. 403), was read on the page image, as a verbal comparison for the Postcommunion (research/scope.md 1.1, 3.11)."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.praefationes"
+loci = [
+  "Praefationes, printed pp. 223-298, artifact PDF pp. 304-379",
+]
+role = "context"
+states = ["cataloged"]
+context = "Named because the Trinity Preface is appointed by the printed direction after no. 1706 and RGMR 494 b; read in the context stage, not re-read here."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+loci = [
+  "physical lines 52146-52334 (printed pp. 354-355, Dominica XXI. post Pentecosten)",
+]
+role = "rights-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:efd4426beabe5385be4e5df4542255c488fe460dee069ab999231255702d5b0f"
+context = "Tracked public-domain text layer of the 1862 antecedent, SHA-256 recomputed and matched; the formulary's lines were read and kept verbatim in propers/retrieved.txt as a finding aid. The wording was collated on the page images of the scan bound next."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+loci = [
+  "scan PDF pp. 440-441 = printed pp. 354-355, Dominica XXI. post Pentecosten, every element",
+  "scan PDF pp. 646-647 = printed pp. 560-561, Die xviii. S. Lucae, Evangelistae: Oratio, Secreta, Postcommunio",
+]
+role = "rights-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-15"
+source_fingerprint = "sha256:53cf8c027d0647a872a62d51ef6884807380f4b5050ae98f65506b3578ce4fd8"
+context = "Registered complete scan fetched on 2026-10-15 from its source_url and hashed to the registered SHA-256 and byte length before any page was opened; PDF pp. 440-441 rendered at 150 dpi and every element collated with the 1962 wording (propers/verified.md, Collation with the 1862 antecedent): same words, differences of orthography, accent, pointing, rubrication and citation form only. In research iteration 2 the same fetched copy (hash re-matched) was read at PDF pp. 646-647 at 150 and 300 dpi for St Luke's three orations, collated with the 1962 nos. 3883, 3889 and 3891: same words; pointing, accent and orthography only (propers/verified.md, Collation with the 1862 antecedent)."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.pentecost-21-orations"
+loci = [
+  "Collect at printed p. 354; text-layer lines 52167-52175 (heading Dominica XXI. post Pentecosten at 52146-52148; heading Oratio. at 52167); Offertory at printed p. 355; text-layer lines 52292-52303 (heading Oflertorium. [Offertorium.] Job 1. at 52292); Secret at printed p. 355; text-layer lines 52305-52311 (heading Seereta. [Secreta.] at 52305); Postcommunion at printed p. 355; text-layer lines 52325-52330 (heading Postcommunio. at 52325)",
+]
+role = "rights-control"
+states = ["cataloged"]
+context = "Named because the Latin provenance ledger's four permitted rows for this formulary cite it. This stage read the 1862 wording on the page images of the scan bound above, not through this passage record."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.1889-tournai-desclee-leo-xiii-recognitum.ia-djvu-ocr-715f57fd"
+loci = [
+  "Missa votiva pro Fidei propagatione: Collect physical lines 100882-100892; Secret 101004-101015; Postcommunion 101026-101031",
+]
+role = "rights-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1e2fa64e68288f89f1e52927076ec6f28c9bbf68e9feabcb6ed4ba4235d194ce"
+context = "Tracked public-domain text layer, SHA-256 recomputed and matched; read on the text layer only as a public-domain witness to the wording of the three Pro Fidei propagatione orations (propers/verified.md, Publication basis). No page image of the 1889 was read."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-19-esther-eabb4220"
+loci = [
+  "Esth.1.1-2",
+  "Esth.11.1-4",
+  "Esth.13.8-18",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:7d1a4dff1bd803198a4d2850170f74ad022fc5159a56d6a73c2e1aadd4070007"
+context = "Compared word by word with the Introit and read for the unsung context of Mardochai's prayer and the colophon of 11:1. Tracked verse text; this stage read it through tools/tpt mass-propers show --bible clementine-vulgate and directly in the TSV."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-20-job-91c227ad"
+loci = [
+  "Job.1.1-22",
+  "Job.2.1-10",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:4324eb4fa3c528a3881f8005b17049ab72581e9e22b493137f234a992a64a2f6"
+context = "Compared with the Offertory's narrative cento. Tracked verse text; this stage read it through tools/tpt mass-propers show --bible clementine-vulgate and directly in the TSV."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-21-psalms-d20e21f8"
+loci = [
+  "Ps.89.1-2",
+  "Ps.113.1",
+  "Ps.118.1",
+  "Ps.118.81-88",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1481d71b5253d2bf9644408f82c40a7cd90fce2191d6586d9fa24b0f62d49130"
+context = "Compared word by word with the Gradual, Alleluia, Introit verse and Communion. Tracked verse text; this stage read it through tools/tpt mass-propers show --bible clementine-vulgate and directly in the TSV."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-47-matthew-2d02758d"
+loci = [
+  "Matt.17.22-26",
+  "Matt.18.1",
+  "Matt.18.21-35",
+  "Matt.19.1",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:da1db83ff564af32d9e8dab7773456aa467a354ded799029638be74368323843"
+context = "Compared word by word with the Gospel; read for the setting at Capernaum and the omitted vv. 21-22. Tracked verse text; this stage read it through tools/tpt mass-propers show --bible clementine-vulgate and directly in the TSV."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-56-ephesians-d9b55031"
+loci = [
+  "Eph.1.1",
+  "Eph.6.10-24",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:4d2596708ce220f89b008d96cdf3fc6367d6f4698b2abe567517bac4f836648b"
+context = "Compared word by word with the Epistle; read for vv. 18-24. Tracked verse text; this stage read it through tools/tpt mass-propers show --bible clementine-vulgate and directly in the TSV."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-29-lamentations-11a9ada3"
+loci = [
+  "Lam.4.21",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:a10a1fe6cef38d9f2778fc43ec046e3c37322e9d20ee6c73301b546cd646e9e1"
+context = "Read for the land of Hus joined to Edom (research/scope.md 1.2). Tracked verse text; this stage read it through tools/tpt mass-propers show --bible clementine-vulgate and directly in the TSV."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-19-esther-59a9e042"
+loci = [
+  "Esth.13.9-11",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:247bed81655f053ad0f6180e0dd55f7fade8d58db96df0b1ae0996abf8c4249f"
+context = "The Douay at the Introit's loci; it cannot carry the Missal's adapted form. Read through tools/tpt mass-propers show --bible douay-rheims."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-20-job-3d1fe0a4"
+loci = [
+  "Job.1.1",
+  "Job.1.12",
+  "Job.2.6-7",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:2ed5a3d23d0cca2bd42c9b8510c560a4abe5975fa6061714c691b9ee141f86b3"
+context = "The Douay at the finding aid's Offertory loci; other sentences than the chant. Read through tools/tpt mass-propers show --bible douay-rheims."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = [
+  "Ps.89.1-2",
+  "Ps.113.1",
+  "Ps.118.1",
+  "Ps.118.81",
+  "Ps.118.84",
+  "Ps.118.86",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+context = "The Douay at the psalm loci, resolved in the Missal's Vulgate numbering. Read through tools/tpt mass-propers show --bible douay-rheims."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183"
+loci = [
+  "Matt.18.23-35",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:ed47ecb092ecb6256fb84450e8ad39d0debf2efe6c65442199a76a7fb1a8b98b"
+context = "The Douay Gospel; the Missal's liturgical opening has no Douay equivalent. Read through tools/tpt mass-propers show --bible douay-rheims."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-56-ephesians-10c79be0"
+loci = [
+  "Eph.6.10-17",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:faac3fc52bb177cb8aeb9f5f56ceb440558a3cd57823293335446f8ae7c4dbf6"
+context = "The Douay Epistle; its Finally, brethren does not carry the Missal's Fratres. Read through tools/tpt mass-propers show --bible douay-rheims."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.psalm-numbering-ee3c7757"
+loci = [
+  "Ps.89.1-2",
+  "Ps.113.1",
+  "Ps.118.1",
+  "Ps.118.81-86",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c3702f219d6641eb66186bd7d3d557375aec2843467d0d54aabe3397ec7e8fb7"
+context = "Registered concordance, SHA-256 recomputed and matched; used to state the Hebrew numbers and the zero verse offset at the appointed verses."
+
+[[bindings]]
+source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.post-pentecosten-21"
+loci = [
+  "post-pentecosten-21",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-15"
+source_fingerprint = "sha256:e202c051a2cec8d662b546ef804b9368e5c02b0298d3cfe93ad36f4e1fcdf253"
+context = "The 1861 hand missal's own English of the Collect, Secret and Postcommunion. Physical lines 173-175 of the tracked payload read and checked against the page images of the registered scan (printed pp. 450 and 452), where they stand in the payload's wording."
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+loci = [
+  "post-pentecosten-21",
+  "post-pentecosten-21/collect",
+  "post-pentecosten-21/secret",
+  "post-pentecosten-21/postcommunion",
+  "post-pentecosten-21/introit",
+  "post-pentecosten-21/gradual",
+  "post-pentecosten-21/offertory",
+  "post-pentecosten-21/communion",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-15"
+source_fingerprint = "sha256:acbf74df2947911ea8c0a461b80cd025f440b94dad8a5be1829a6a50971c1655"
+context = "Registered scan fetched on 2026-10-15 from its source_url and hashed to the registered SHA-256 and byte length; PDF pp. 459-461 (printed pp. 450-452) read at 150 dpi for the three orations and the book's own English of the Introit, Epistle opening, Gradual, Offertory and Communion (propers/verified.md)."
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.s-lucae-checked-english"
+loci = [
+  "s-lucae-evangelistae/collect",
+  "s-lucae-evangelistae/secret",
+  "s-lucae-evangelistae/postcommunion",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:dc0fe2a395989cbfd305eccc4a3ea3c927137b86eead772d43daf5a76305390c"
+context = "Tracked transcription, SHA-256 recomputed and matched; read. Its page images were read in the context stage of this run and not re-read here."
+
+[[bindings]]
+source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pro-fidei-propagatione-checked-orations"
+loci = [
+  "pro-fidei-propagatione collect (printed p. 1453), secret (p. 1456), postcommunion (p. 1457)",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-15"
+source_fingerprint = "sha256:b5fc7a46f0b101f30b46e762d6d5b57033713d24ccc88cb1e4b05e152c6d680f"
+context = "Tracked payload, SHA-256 recomputed and matched; the Collect and Secret, Latin and English, checked against the page images of the registered scan (PDF pp. 1474, 1477); the Postcommunion against that scan's text layer (PDF p. 1478) only."
+
+[[bindings]]
+source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+loci = [
+  "PDF pp. 1474, 1477 (page images, 120 dpi); PDF p. 1478 (text layer)",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:376ca4e5db5bd3291c6c11b085c73dafdd1a09a8a7af523652257183cc25d645"
+context = "Registered scan fetched on 2026-10-15 and hashed to the registered SHA-256 and byte length before reading."
+
+[[bindings]]
+source_id = "artifact.gregory-the-great.moralia-in-iob.2026-10-12-library-of-fathers-lectionarycentral.complete-text-d9f9ed86"
+loci = [
+  "1.1.1",
+  "1.11.15",
+  "2.10.18",
+  "2.11.19",
+  "9.4.4",
+  "9.5.5",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f86bcd2a0e74aedfede4a2a00415c5e8a1a545c525df8ba06e480a9fd97a0e42"
+context = "Tracked Oxford English text read at Books I.1 (line 737), I.15 (line 952), II.18-19 (lines 2160-2195), IX.4-5 (lines 14355-14385), and the Preface sections 1-3, 7-8, 11, 14 and 16 (physical lines 3-390), which the work's locus scheme cannot address: the adversary's petition and God's permission (Pref. 7), Job as type of the Redeemer with his Body (Pref. 14, 16), the bridled enemy (II.19), resistance and lost peace (IX.5), authorship of Job (Pref. 1-3). research/scope.md 3.1, 3.8; interpretations.md readings 1 and 3."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-10.ccel-web-2026-09-17.ccel-text-adb8f1c9"
+loci = [
+  "Chrysostom, Homilies on Matthew 61, physical lines 34728-35268",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0209917237dc0599614ab5b3a70d1563de63045007c4a8d4eb7776dd6ec37992"
+context = "Tracked NPNF text read whole for Homily 61 on Mt 18:21-35 (research/scope.md 3.7)."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-13.english-ccel-web-2026-09-05.ccel-npnf113-text-54274dd9"
+loci = [
+  "Chrysostom, Homilies on Ephesians 22 (lines 15014-15593), 23 (lines 15594-15922), 24 (from line 15923)",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:374d296602c0a52e4c252ad0e7704b9c9952d06f6b66b891bb391c8509c390db"
+context = "Tracked NPNF text read for Homilies 22-24 on Eph 6:10-17 (research/scope.md 3.4)."
+
+[[bindings]]
+source_id = "artifact.john-chrysostom.expositio-in-psalmos.migne-pg-55-paris.ia-djvu-ocr-d9b83186"
+loci = [
+  "Expositio in Ps. 113, section 1, physical lines 39306-39420 (PG 55, cols. ~293-296)",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:cba162b4f3fbc1418675bd030ea07524d2fa16b3814cb78905b2735eb4be6b6e"
+context = "Remote text layer fetched on 2026-10-15 from its source_url and hashed to the registered SHA-256; the Greek of section 1 read on the layer only; described, not quoted (research/scope.md 3.6)."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.ccel-text-ce371798"
+loci = [
+  "Augustine, Sermon 83 (NPNF Sermon 33), physical lines 34942-35183",
+  "Augustine, Sermon 58 (NPNF Sermon 8) 8, line 27188",
+  "Augustine, De sermone Domini in monte I.22.76-77, lines 3591-3640",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:7f21e16b88aa6eba6556891bfa99280fd5662bf42ef391de140ad6d2960b329a"
+context = "Tracked NPNF text read at these loci (research/scope.md 3.7, 3.10)."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
+loci = [
+  "89.1-5",
+  "113.1-5",
+  "118.1",
+  "118.20",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
+context = "Tracked NPNF text (abridged where it prints ....) read at Enarr. in Ps. 89 (physical lines 45083-45230), Ps. 113 (lines 55667-55760), Ps. 118 sermon 1, Aleph (lines 56727-56790) and sermon 20, Caph (lines 58124-58290) (research/scope.md 3.2, 3.5, 3.6, 3.10)."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-part-9-latin-text"
+loci = [
+  "89.2",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:4ec924c6b55bfe5458a51ad4efa23e437507b846582d1d62cca86f8d68cc730d"
+context = "Tracked Latin text, physical line 196, read for Augustine's lemma in generatione et generatione (propers/verified.md; research/scope.md 1.3)."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-26.paris-1845.internet-archive-google-pdf-0d889bd6"
+loci = [
+  "pdf-page-73",
+  "pdf-page-74",
+  "pdf-page-279",
+  "pdf-page-280",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1095d1f783cd68bdc017e71a2df9c85944875aa2184fa80ee60de0475e13b7df"
+context = "Registered remote scan fetched on 2026-10-15 and hashed to the registered SHA-256 and byte length; nothing retained. Page images read at 150-200 dpi for cols. 132-133 and 543-544; cols. 545-546 read on the item's unregistered IA text layer only (research/scope.md 3.4, 3.7)."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.internet-archive-pdf-eab6d2f4"
+loci = [
+  "pdf-page-302",
+  "pdf-page-303",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:aac0b6000cf35e826d415d4ee14e20e0a040b318ff7ddd776e3803ceec1f46eb"
+context = "Registered remote scan fetched on 2026-10-15 and hashed to the registered SHA-256 and byte length; nothing retained. Page images read at 150 dpi, and in research iteration 2 at 300 dpi in column crops (Tract. in Ps. 118, Caph 1-6, cols. 571-574). The italic summary heading each numbered paragraph is the Maurist editors', not Hilary's; only the text after each dash is quoted as his. At Caph 5 his ground for a present rather than final judgment is the unsung v. 84a (research/scope.md 3.10, 4.4; propers/verified.md, Communion)."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.ia-djvu-text-db389fea"
+loci = [
+  "column-1023",
+  "column-1024",
+  "column-571",
+  "column-572",
+  "column-573",
+  "column-574",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1ffb9ec5d69f6ca5e9957af74962f6045bdead5118c600449e3c1fce55bee5bd"
+context = "Tracked text layer: Comm. in Matth. 18.10-11 (cols. 1023-1024, physical lines 80960-80975) read for Hilary's brief comment on the parable; Tract. in Ps. 118, Caph (cols. 571-574, lines 45750-46000) used to locate the pages read on the scan above."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.ia-djvu-text-5b8a4b8b"
+loci = [
+  "column-1015",
+  "column-1016",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f46dd80fe29ddd52cbaf7d81009b328bf011400b6917c0473b5f04f9bb443bae"
+context = "Tracked text layer, physical lines 108300-108520 (Comm. in Matth. on Mt 18:23-35; the layer's column headers are damaged, the passage lying about cols. 1014-1016), read; badly damaged at the head of the passage; read for Rabanus's allegory and his citations of Jerome and Gregory (research/scope.md 3.7)."
+
+[[bindings]]
+source_id = "artifact.rabanus-maurus.expositio-in-librum-esther.2026-10-12-migne-pl109-wikisource.esther-text-6ee8f395"
+loci = [
+  "preface",
+  "6",
+  "11",
+  "13",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:8039a712ef0c7ccabdc456f306034b587646a9de200284f63932dcf888a3de3c"
+context = "Tracked Latin text read at the preface (PL 109, 635C-636C) and chapters VI (652B-C), XI (664B-C) and XIII (668D-669A) (research/scope.md 3.1)."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.opera-editio-altera-veneta-tomus-3.venice-bettinelli-1745.ia-djvu-ocr-10aa155e"
+loci = [
+  "Super Matth. c. 18 on Mt 18:21-35, printed pp. 242-244, physical lines 31100-31300",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:9fcd48561f23ea12b2a7271b5cbcdeaee88f85652a5194fe6756bfb2b4aa558f"
+context = "Tracked OCR read for Aquinas on the parable (research/scope.md 3.7)."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.in-omnes-pauli-epistolas-commentaria.dessain-volume-2-1857.book-ocr-2b7b11dc"
+loci = [
+  "Super Eph. c. 6 lect. 3-4, printed pp. 356-359, physical lines 37630-38100",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:fc0fe651fc1f34b1d124831a6538442a81cd47acb7ec6161c19a7bfb4269aadf"
+context = "Tracked OCR read for Aquinas on Eph 6:10-17 (research/scope.md 3.4)."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-prima.pg17611-body-9c99a67a"
+loci = [
+  "I.103.7.sed-contra",
+  "I.103.7.corpus",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c17b98dc58cabd0086fc556359882738be070d90f21f2dbaebe7f8676128b3e7"
+context = "Tracked English text, physical lines 47145-47190, read for the sed contra citing Esth 13:9 and the body (research/scope.md 3.1)."
+
+[[bindings]]
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+loci = [
+  "Preface I section 5 on the authorship of the Psalms, physical lines 45-47",
+  "Preface II section 4 on the authorship of the Psalms, physical line 61",
+  "Psalm 89:1-7, lines 3209-3226",
+  "Psalm 113:1, line 4003",
+  "Psalm 118:81-86, lines 4289-4298",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+context = "Tracked English text read at these loci (research/scope.md 3.5, 3.6, 3.10, 4.7, 7.4). On the titled psalms, Ps 89 among them, Bellarmine judges it not unlikely that those named in the titles were the authors (Preface II, line 61), and in Preface I calls that opinion acceptable but the Davidic-sole-author opinion more probable (line 47); his refutation of the Hebrew untitled-psalm rule concerns Pss 90-99, not Ps 89."
+
+[[bindings]]
+source_id = "artifact.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.wikimedia-pdf-72ee8714"
+loci = [
+  "pdf-page-847",
+  "pdf-page-848",
+  "pdf-page-976",
+  "pdf-page-977",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f431d1af4d23e9bc63a710fdaa7d8198d2aba0ac1853cde486c5307cbc031b66"
+context = "Registered remote facsimile fetched whole in research iteration 1 (2026-10-15) and hashed to the registered SHA-256 and byte length; nothing retained. Page images read at 250 dpi: Ps 89 title and vv. 1-2, PG 80 cols. 1597-1600 (PDF pp. 847-848, with the notes to col. 1600); Ps 118:80-88, cols. 1847-1850 (PDF pp. 976-977). Theodoret is censured (Second Council of Constantinople, ratified by Vigilius, 553, on his writings against St Cyril and the Council of Ephesus, one of the Three Chapters; author-standing-v1.toml), not for his exegesis; under the three-document profile he supplies structural and contextual evidence only. Used as context: his report of the two received opinions on the authorship of Ps 89 (the sentence assigning it to David stands in brackets supplied from one codex) and his literal-historical setting of Ps 118:83-84 (David persecuted, a short life). Not a reception witness (research/scope.md 3.5, 3.10, 4.4, 4.7)."
+
+[[bindings]]
+source_id = "edition.athanasius-of-alexandria.expositiones-in-psalmos.migne-pg-27-paris"
+loci = [
+  "Ps 89, Hypothesis and vv. 1-2, PG 27 cols. 395-396 (Internet Archive item patrologiae_cursus_completus_gr_vol_027, page/n204.jpg)",
+  "Ps 118:81-86, PG 27 cols. 493D-496C (page/n253.jpg, cols. 493-494; page/n254.jpg, cols. 495-496)",
+]
+role = "reception"
+states = ["cataloged"]
+context = "Read in research iteration 2 (2026-10-15) on Internet Archive page renditions of the item this edition names, fetched over HTTPS and hashed but not registered: n204 SHA-256 6fe49a97bc2ca6a416241c89ccb8a3056c448269ac6418148b67d1b4a85ac068, n253 288fb43ef00f5e69bad63d82d49e4d013c405e5b3ea6ef637f64fcc4dd6bce3e, n254 8f8d0ec7846e6d9cad973e92e5a55340a1e8f408cef99e4df08cc8c5af194cb1 (each 4174 x 6451 px). Greek and Migne's Latin columns read. The registered remote text layer artifact.athanasius-of-alexandria.expositiones-in-psalmos.migne-pg-27-paris.ia-djvu-ocr-969a381f was fetched and matched its registered SHA-256 but renders both columns as corrupt Greek and was not used. Attribution as the work record states: printed under Athanasius's name, recorded as the printing's. Cited as the exposition printed under Athanasius's name; contributing, carrying no reading. At Ps 118:84 the lemma prints only the unsung v. 84a (research/scope.md 3.5, 3.10, 4.4, 4.7, 5.2). Catalog-level binding; no central fingerprint replay is claimed."
+
+[[bindings]]
+source_id = "artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.ia-djvu-ocr-2e2ca850"
+loci = [
+  "De divinis officiis XII.21-22, PL 170, cols. 328-330, physical lines 23578-23700",
+  "De omnipotentia Dei 9-10, PL 170, cols. 461-462, physical lines 33360-33440",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:7ec56124e31762f147f8aed197516894e92dc2d5ec7de99bcc91a9f11d1a98d3"
+context = "Tracked OCR read; the volume also holds De omnipotentia Dei (research/scope.md 2.1, 3.1). Rupert's Mass for these chants had Jn 4 as its Gospel."
+
+[[bindings]]
+source_id = "artifact.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.ia-djvu-ocr-b9b266dd"
+loci = [
+  "Rationale VI.138-139, printed pp. 411-412, physical lines 17240-17360",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5be12620687e1829e19de144d3c79009d8b9dce221c126174799a60e3facbb4a"
+context = "Tracked OCR read (research/scope.md 2.1)."
+
+[[bindings]]
+source_id = "artifact.honorius-augustodunensis.gemma-animae.1854-migne-pl-172.migne-facsimile-pdf-906be8c5"
+loci = [
+  "IV.90",
+  "IV.91",
+  "IV.92",
+  "IV.93",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:874a719c08a9888ab068e34d623af6e59b7b6af5e5f169b19c7c9f1d13a40384"
+context = "Restricted registered facsimile fetched on 2026-10-15 and hashed to the registered SHA-256 and byte length; PDF pp. 92-93 (PL 172, cols. 723-726) read as page images at 120 dpi; nothing retained (research/scope.md 2.1, 3.3)."
+
+[[bindings]]
+source_id = "artifact.honorius-augustodunensis.gemma-animae.1895-garnier-migne-pl-172.ia-djvu-ocr-2ebfcb5f"
+loci = [
+  "IV.90",
+  "IV.91",
+  "IV.92",
+  "IV.93",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:472c828bf45f8c1c1d4e99c11211b27a8834e420d9bc76cf99a1d51833bfdffb"
+context = "Tracked OCR, physical lines 57085-57215, read to locate the passage; its interleaved columns drop words, so the facsimile above controls."
+
+[[bindings]]
+source_id = "artifact.sicard-of-cremona.mitrale.latin-migne-pl-213.ia-djvu-ocr-ea9fd813"
+loci = [
+  "Mitrale VIII.20-22, PL 213, col. ~402, physical lines 29820-29900",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f7ef227833c6454f7bea588021ba7c000d14f6dc1220746e710f6f3d8a19f761"
+context = "Tracked OCR read (research/scope.md 2.1)."
+
+[[bindings]]
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-djvu-text-95cdb0fc"
+loci = [
+  "vol-xi-p-454",
+  "vol-xi-p-455",
+  "vol-xi-p-456",
+  "vol-xi-p-457",
+  "vol-xi-p-458",
+  "vol-xi-p-459",
+  "vol-xi-p-460",
+  "vol-xi-p-461",
+  "vol-xi-p-462",
+  "vol-xi-p-463",
+  "vol-xi-p-464",
+  "vol-xi-p-465",
+  "vol-xi-p-466",
+  "vol-xi-p-467",
+  "vol-xi-p-468",
+  "vol-xi-p-469",
+  "vol-xi-p-470",
+  "vol-xi-p-472",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5704de4921a1ed8c6da6c88bc1235f8aa14d39ef3973edc2061508aaf727c16d"
+context = "Tracked OCR, physical lines ~27200-28337 (The Twenty-first Sunday after Pentecost, pp. 454-470) and the head of the Twenty-second Sunday (p. 472, the note on the Gospel formerly appointed), read; the volume is Lucien Fromage's continuation (research/scope.md 2.1)."
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-volume-3-ocr-4d8c8988"
+loci = [
+  "Nineteenth Sunday after Pentecost, printed pp. 172-173 (Wurzburg note)",
+  "Twenty-first Sunday after Pentecost, printed pp. 178-181, physical lines 11131-11320",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:04f9c86491a663faa60eb325af91ca9056441e83aadb4608fbb0d8b87136a32f"
+context = "Tracked OCR read (research/scope.md 2.1)."

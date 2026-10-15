@@ -1,0 +1,86 @@
+# Blocking findings standing against this publication, the
+# verdicts its evaluation lanes reached, and the observations
+# they recorded outside their own criteria. Written by tpt after
+# each evaluation of this leaf.
+#
+# One record, several stages. Every entry names the stage that
+# raised it, [[stages]] says what each stage last said, and an
+# evaluation replaces its own stage's entries and leaves every
+# other stage's alone -- so what the content evaluation found
+# still stands here after the synthesis evaluation has spoken. A
+# stage that looked and found nothing leaves an empty list
+# rather than no entry: "evaluated, nothing stands" and
+# "nobody has looked" are different facts, per stage.
+#
+# The keys directly below these comments describe the write that
+# last touched this file, and count every stage's entries
+# together. They are its summary line. What a given stage found
+# is in that stage's [[stages]] entry and in the entries naming
+# it -- reading the top-level stage as the record's one stage is
+# the mistake this schema exists to stop.
+#
+# It exists because a run's own results live under build/, which
+# is ignored, which `make clean` and `wt tidy` delete without
+# asking, and which nothing preserves between productions.
+#
+# Nothing reads this back into a run. Carrying findings from one
+# production into the next wants doing where the run's identity
+# can cover it -- a committed record, or this file's hash in the
+# run id and the acceptance audit -- and until then this is a
+# record for people.
+#
+# Escalations -- defects in artifacts no stage of the run may
+# write: guidance, the source library, the tools, the workflow --
+# are written here too, from the run's whole ledger, so that the
+# decision they ask of a maintainer outlives the run directory.
+#
+# Accepted findings are true defects a lane judged not worth a
+# repair round, with the reason it judged so. Advisories are
+# defects that did not merit blocking. Both are here because a
+# verdict that dies with the run is met again by the next cold
+# read as though nobody had ever weighed it, and weighed again --
+# which is how a document in good shape spends a whole iteration
+# budget. A later evaluation reads these before it raises.
+
+standing_findings_schema = 4
+record_type = "standing-blocking-findings"
+document = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
+provider = "claude"
+run_id = "a8bcc37ea3420a07"
+workflow = "proper-study"
+workflow_version = 11
+stage = "research-review"
+iteration = 2
+disposition = "PASS"
+standing = 0
+accepted_count = 0
+advisory_count = 2
+observation_count = 0
+
+[[stages]]
+stage = "research-review"
+iteration = 2
+disposition = "PASS"
+run_id = "a8bcc37ea3420a07"
+workflow = "proper-study"
+workflow_version = 11
+standing = 0
+accepted_count = 0
+advisory_count = 2
+observation_count = 0
+
+[[advisories]]
+stage = "research-review"
+id = "RES-012"
+severity = "advisory"
+location = "propers/verified.md, 'St Luke's orations in the 1862 (research iteration 2)', the Oratio, Secreta and Postcommunio rows of the collation table"
+problem = "On PDF p. 770, read at 300 dpi, the 1962 prints the Collect's 'pro tui nóminis honóre, portávit' with a comma, and verified.md's own transcription of no. 3883 keeps it. On scan PDF p. 646, read at 300 dpi, the 1862 prints 'pro tui nóminis ho-/nóre portávit' with no comma. The Oratio row's 'Kind of difference' cell lists the comma after quæsumus, the unaccented quæsumus and júgiter, but not this difference. The Secreta and Postcommunio rows likewise omit the 1862's unaccented 'quæsumus' (1962 'quǽsumus'), although the Oratio row lists it. The 'same words' conclusion and the publication basis are unaffected."
+required_result = "Add 'no comma after honóre' to the Oratio row, and 'quæsumus for quǽsumus' to the Secreta and Postcommunio rows. Alternatively, state that the table does not list every accent or pointing difference."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-013"
+severity = "advisory"
+location = "research/interpretations.md 3.3 'What follows' ('each draws his time from his own reading of the unsung v. 84a'; 'it neither needs nor uses the unsung Quot sunt dies'); research/scope.md 4.4 closing paragraph ('the difference is driven by how each reads the unsung v. 84a … Augustine takes it as the body of Christ asking about its days and so the judgment as the end, until which the Church remains')"
+problem = "These iteration-2 sentences say that Augustine draws his end-directed time from the unsung v. 84a. Reading 3's controlling claim is that same Augustinian answer: the judgment is the end, and the Church remains on earth until it. Yet 3.3 then says that reading 3 rests on what Augustine says of the sung v. 84b, and 'neither needs nor uses' v. 84a. At NPNF1-8 lines 58205-58216, Augustine's 'showing indeed that the Church would exist on earth until the judgment' explains why the judgment question follows the days question ('when he had enquired concerning the days, he added also respecting the judgment'). The martyrs' plea answered by long-suffering (Rev 6:10-11), and 'when vengeance shall fall upon Her persecutors', bear on the judgment question itself. Section 3.2 states that bearing, but 3.3 and 4.4 now describe the reading's dependence on the unsung half in two incompatible ways. The reading itself stands on the sung words through Augustine's martyrs' plea, Cassiodorus, the PG 27 exposition at v. 86b and Aquinas on the reckoning. The defect is therefore in the record's account of itself, not in its evidence."
+required_result = "Make 3.3 and 4.4 agree. One way: say that Augustine's 'the Church on earth until the judgment' comes from the order of the verse's two questions, the first of which is unsung. Then name what reading 3 takes from his comment on the sung half: the martyrs' plea answered by long-suffering, and the vengeance at the judgment. The other way: drop 'neither needs nor uses', and label the Augustinian 'until the judgment' as drawn in part from the unsung days question."

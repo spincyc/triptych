@@ -1,0 +1,423 @@
+RETRIEVED -- Twenty-first Sunday after Pentecost, 1962 Missale Romanum
+Unedited finding aid. NOT publication text. Optical-reading errors are preserved deliberately.
+
+Two machine pulls follow. Neither controls any published wording: every Latin form in
+propers/verified.md was read on page images of the controlling facsimile rendered at 200 and
+400 dpi, and the 1862 antecedent was read on page images of its registered complete scan.
+The pulls are kept so that a later reader can see what each text layer gives and where it fails.
+
+==============================================================================
+PULL 1 -- the controlling facsimile's own embedded text layer, the formulary
+==============================================================================
+Represented edition : Missale Romanum, editio typica (Typis Polyglottis Vaticanis, 1962)
+Artifact            : artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+Whole-file SHA-256  : 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a
+                      82,815,941 bytes; the copy fetched on 2026-10-15 from the registered
+                      source_url for the research stage was hashed before any page was read;
+                      digest and byte length matched the registered record.
+Method              : poppler pdftotext in -layout mode over artifact PDF pp. 494-496
+                      (printed pp. 413-415). The two-column layout is flattened line by line,
+                      so the columns interleave; drop capitals are detached or lost.
+Extract SHA-256     : d28ec181e8fff72be1dc8eb0aeca5f14d71f61c70ff823118a27935501575687
+                      (the three pages exactly as the tool emits them, form feeds included)
+Boundaries shown    : printed p. 413 carries, in its left column and most of its right
+                      column, the end of the Twentieth Sunday (Epistle close, Gradual no. 1692,
+                      Alleluia 1693, Gospel 1694, Offertory 1695, Secret 1696, Communion 1697,
+                      Postcommunion 1698), then the heading DOMINICA VIGESIMA PRIMA post
+                      Pentecosten, II classis, and the Introit, no. 1699. Printed p. 414 carries
+                      nos. 1700-1704. Printed p. 415 carries nos. 1705-1708 in its left column,
+                      then the heading DOMINICA VIGESIMA SECUNDA post Pentecosten, II classis,
+                      and no. 1709 onward of the next formulary.
+Known misreadings   : the drop capitals I (In voluntate; In illo), F (Familiam, rendered
+                      'l i r a m m a m' and 'JT'; Fratres, rendered 'TJratres' and 'X.'),
+                      S (Suscipe), I (Immortalitatis) detached or garbled; the Gospel cross
+                      rendered as stray characters; 'ssecula' and 'qusesumus' for saecula and
+                      quaesumus; 'imitate' for unitate; 'Sancti'Deus' (a stray mark on the
+                      page image between Sancti and Deus); 'Matthseum' for Matthaeum; '1?04'
+                      for the marginal number 1704; 'veniimdari' for venumdari; 'I O - I I' for
+                      the Introit citation 10-11; 'numina' for flumina, 'quern' for quem,
+                      'Hie' for Hic, 'lam' for Iam and 'ludaea' for Iudaea in the preceding
+                      formulary. Accents are dropped throughout.
+
+----- artifact PDF pp. 494-496 (printed pp. 413-415), pdftotext -layout -----
+                                  Dominica XXI post Pentecosten                              413
+
+    niam dies mali sunt. Propterea nolite             Quia heri hora septima reliquit eum
+    fieri imprudentes, sed intellegentes              febris. Cognovit ergo pater quia ilia
+    quae sit voluntas Dei. Et nolite inebria-         hora erat, in qua dixit ei Iesus: Filius
+    ri vino, in quo est luxuria: sed imple-           tuus vivit: et credidit ipse, et domus
+    mini Spiritu Sancto, loquentes vobis-             eius tota.                               Credo.
+    metipsis in psalmis, et hymnis, et can-           Ant. ad Offertorium                   Ps. 136, 1
+    ticis spiritualibus, cantantes, et psal-
+                                                         Super numina Babylonis illic sedi- 1695
+    lentes in cordibus vestris Domino: gra-           mus, et flevimus: dum recordaremur
+    tias agentes semper pro omnibus, in               tui, Sion.
+    nomine Domini nostri Iesu Christi,                                    Secreta
+    Deo et Patri. Subiecti invicem in
+                                                      /"^aelestem nobis praebeant haec my- 1696
+    timore Christi.
+                                                      ^ - ^ steria, qusesumus, Domine, me-
+      Graduale                   Ps. 144, 15-16 dicinam: et vitia nostri cordis expur-
+1692 Oculi omnium in te sperant, Domi- gent. Per Dominum.
+      ne: et tu das illis escam in tempore               Praefatio de Ssma Trinitate.
+      opportune V. Aperis tu manum tuam:
+      et imples omne animal benedictione. Ant. ad Communionem Ps. 118,49-50
+ 1693    Alleluia, alleluia. V. P s . 1 0 7 , 2 P a -    Memento verbi tui servo tuo, Domi- 1697
+      ratum cor meum, Deus, paratum cor               ne,  in quo mihi spem dedisti: haec me
+      meum: cantabo, et psallam tibi, gloria consolata est in humilitate mea.
+      mea. Alleluia.                                                  Postcommunio
+
+1694 .~y .Sequentia sancti Evangelii secun-
+      T ? dum Ioannem.
+                                                    U        t sacris, Domine, reddamur digni 1698
+                                                               muneribus: fac nos, quaesumus,
+                                      Io. 4, 46-53 tuis semper oboedire mandatis. Per
+         n illo tempore: Erat quidam regulus, Dominum nostrum.
+    I     cuius filius infirmabatur Caphar-
+      naum. Hie cum audisset, quia Iesus ad-                         DOMINICA
+      veniret a ludaea in Galilaeam, abiit ad                  VIGESIMA PRIMA
+      eum, et rogabat eum ut descenderet, et                     post Pentecosten
+      sanaret filium eius: incipiebat enim mo-
+                                                                         II classis
+      ri. Dixit ergo Iesus ad eum: Nisi signa
+      et prodigia videritis, non creditis. Di-                  Antiphona ad Introitum
+      cit ad eum regulus: Domine, descende                         Esth. 13, 9 et I O - I I
+
+
+
+
+                                                   I
+      priusquam moriatur filius meus. Dicit                 n voluntate tua, Domine, universa 1699
+      ei Iesus: Vade, filius tuus vivit. Cre-                 sunt posita, et non est qui possit
+      didit homo sermoni, quern dixit ei Ie-                  resistere voluntati tuae: tu enim
+      sus, et ibat. lam autem eo descenden-                   fecisti omnia, caelum et terram, et
+      te, servi occurrerunt ei, et nuntiave- universa quae caeli ambitu continentur:
+      runt dicentes, quia filius eius viveret. Dominus universorum tu es. Ps. 118, 1
+      Interrogabat ergo horam ab eis, in Beati immaculati in via: qui ambulant
+      qua melius habuerit. Et dixerunt ei: in lege Domini. V. Gloria Patri.
+       414                       Dominica XXI post Pentecosten
+                          Oratio                      Sequentia sancti Evangelii secun-
+1700
+       l i r a m m a m tuam, quaesumus, Domi-           dum Matthseum. Mt. 18, 23-35
+                                                   n illo tempore: Dixit Iesus discipu- 1?04
+       JT ne, continua pietate custodi: ut a
+       cunctis adversitatibus, te protegente,
+       sit libera; et in bonis actibus tuo nomi-
+                                                   Ilis suis parabolam hanc: Assimila-
+                                                tum est regnum caelorum homini regi,
+       ni sit devota. Per Dominum nostrum       qui voluit rationem ponere cum servis
+       Iesum Christum, Filium tuum: Qui te-     suis. Et cum coepisset rationem pone-
+       cum vivit et regnat in imitate Spiritus  re, oblatus est ei unus, qui debebat ei
+       Sancti'Deus: per omnia ssecula saecu-    decem milia talenta. Cum autem non
+       lorum. R. Amen.                          haberet unde redderet, iussit eum do-
+                                                minus eius veniimdari, et uxorem eius,
+     Lectio Epistolae beati Pauli Apostoli et filios, et omnia quae habebat, et red-
+        ad Ephesios.          Ephes. 6, 10-17 di. Procidens autem servus ille, ora-
+1701 TJratres: Confortamini in Domino, bat eum, dicens: Patientiam habe in
+     X. et in potentia virtutis eius. Indui- me, et omnia reddam tibi. Misertus
+     te vos armaturam Dei, ut possitis stare autem dominus servi illius, dimisit
+     adversus insidias diaboli. Quoniam non eum, et debitum dimisit ei. Egressus
+     est nobis colluctatio adversus carnem autem servus ille, invenit unum de con-
+     et sanguinem: sed adversus principes, servis suis, qui debebat ei centum de-
+     et potestates, adversus mundi rectores narios: et tenens suffocabat eum, di-
+     tenebrarum harum, contra spiritualia cens: Redde quod debes. Et procidens
+     nequitiae, in caelestibus. Propterea ac- conservus eius, rogabat eum, dicens:
+     cipite armaturam Dei, ut possitis re- Patientiam habe in me, et omnia red-
+     sistere in die malo, et in omnibus per- dam tibi. Ille autem noluit: sed abiit,
+     fecti stare. State ergo succincti lum- et misit eum in carcerem donee red-
+     bos vestros in veritate, et induti lori- deret debitum. Videntes autem con-
+     cam iustitiae, et calceati pedes in prae- servi eius quae fiebant, contristati sunt
+     paratione Evangelii pacis: in omnibus valde: et venerunt, et narraverunt do-
+     sumentes scutum fidei, in quo possitis mino suo omnia quae facta fuerant.
+     omnia tela nequissimi ignea exstingue- Tune vocavit ilium dominus suus: et
+     re: et galeam salutis assumite: et gla-
+                                                 ait illi: Serve nequam, omne debitum
+     dium spiritus, quod est verbum Dei.
+                                                 dimisi tibi, quoniam rogasti me: non-
+     Graduate                       Ps. 89, 1-2 ne ergo oportuit et te misereri con-
+1702 Domine, refugium factus es nobis, servi tui, sicut et ego tui misertus
+     a generatione et progenie. V. Prius- sum? Et iratus dominus eius, tradi-
+      quam montes fierent, aut formaretur dit eum tortoribus, quoadusque red-
+     terra et orbis: a sseculo et usque in sse- deret universum debitum. Sic et Pa-
+      culum tu es, Deus.                         ter meus caelestis faciet vobis, si non
+1703 Alleluia, alleluia. V. Ps. 113, 1 In exi- remiseritis unusquisque fratri suo de
+      tu Israel de iEgypto, domus Iacob de cordibus vestris.
+      populo barbaro. Alleluia.                     Credo.
+                                         Dominica XXII post Pentecosten                              415
+
+       Ant. ad Offertorium                             lob i                        Oratio
+1705      Vir erat in terra Hus, nomine lob:
+       simplex et rectus, ac timens Deum:
+       quern Satan petiit, ut tentaret: et data
+                                                                  D    eus, refugium nostrum et virtus: 1710
+                                                                        adesto piis Ecclesiae tuae precibus,
+                                                                  auctor ipse pietatis, et praesta: ut, quod
+       est ei potestas a Domino in facilitates                    fideliter petimus, efficaciter consequa-
+       et in carnem eius: perdiditque omnem                       mur. Per Dominum nostrum Iesum
+       substantiam ipsius et filios: carnem                       Christum, Filium tuum: Qui tecum vi-
+       quoque eius gravi ulcere vulneravit.                       vit et regnat in imitate.
+                             Secreta
+                                                                  Lectio Epistolae beati Pauli Apostoli
+1706 ^ J u s c i p e , D o m i n e , p r o p i t i u s hostias:
+                                                                    ad Philippenses.     Philipp. 1, 6-11
+     O quibus et te placari voluisti, et no-
+     bis salutem potenti pietate restitui. Per
+     Dominum nostrum.
+                                                                  P
+                                                      atres: Confidimus in Domino Ie- 1711
+                                                      su, quia qui coepit in vobis opus
+                                                bonum, perficiet usque in diem Chri-
+        Praefatio de Ssma Trinitate.
+                                                sti Iesu. Sicut est mihi iustum hoc sen-
+                                                tire pro omnibus vobis: eo quod ha-
+           Antiphona ad Communionem             beam vos in corde, et in vinculis meis,
+1707 p s . 118, 8i, 84 et 86 In salutari tuo et in defensione et confirmatione Evan-
+     anima mea, et in verbum tuum spe- gelii, socios gaudii mei omnes vos esse.
+     ravi: quando fades de persequentibus Testis enim mihi est Deus, quomodo
+     me iudicium? iniqui perseciiti sunt cupiam omnes vos in visceribus Iesu
+     me, adiuva me, Domine Deus meus. Christi. Et hoc oro ut caritas vestra ma-
+                    Postcommunio                gis ac magis abundet in scientia, et in
+                                                omni sensu: ut probetis potiora, ut si-
+1708 Tmmortalitatis alimoniam conseciiti,
+                                                tis sinceri et sine offensa in diem Chri-
+     JL qusesumus, Domine: ut, quod ore
+                                                sti, repleti fructu iustitiae per Iesum
+     percepimus, pura mente sectemur. Per
+                                                Christum, in gloriam et laud em Dei.
+     Dominum nostrum.
+                                                Graduate                       Ps. 132, 1-2
+                   DOMINICA                         Ecce  quam    bonum,   et quam  iucun- 1712
+           VIGESIMA SECUNDA                     dum,    habitare  fratres in unum!   V. Sic-
+                                                ut unguentum in capite, quod descen-
+                post Pentecosten                dit in barbam, barbam Aaron.
+                       II classis                   Alleluia, alleluia. V. Ps. 113, 11 Qui 1713
+
+
+
+
+       s
+     Ant.   ad  Introitum          Ps. 129, 3-4 timent Dominum sperent in eo: adiu-
+     Ant. aa
+1709 ^ " > i i iniquitates observaveris, Domi- tor et protector eorum est. Alleluia.
+              ne: Domine, quis sustinebit?
+              quia apud te propitiatio est,                            Sequentia sancti Evangelii secun-
+              Deus Israel. Ps. ibid., 1-2 De                           dum Matthaeum.        Mt. 22, 15-21
+       profundis clamavi ad te, Domine: Do-                       T n illo tempore: Abeiintes pharisaH 1714
+       mine, exaudi vocem meam.                                   JL consilium inierunt ut caperent Iesum
+         V. Gloria Patri.                                         in sermone. Et mittunt ei discipulos
+----- end of pull 1 -----
+
+==============================================================================
+PULL 2 -- the public-domain antecedent's tracked text layer, the formulary
+==============================================================================
+Represented edition : Missale Romanum, Pustet, Ratisbon, 1862
+                      (edition.catholic-church.missale-romanum.pustet-ratisbon-1862)
+Artifact            : artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf
+Whole-file SHA-256  : f34bc7cf9293ffb353159e94118f4316bb4cc0a60230b315904dc77ba2502162
+                      (recomputed on 2026-10-15 and matched to the registered record)
+Physical lines      : 52146-52334, verbatim
+Extract SHA-256     : e7b3166ce962d427fb46b68374d460e300ea9a3e46628bda622a8c1436771e83
+Boundaries shown    : the heading Dominica XXI. post Pentecosten (printed p. 354) through the
+                      Postcommunion and the 1862's own 'Alia Postcommunio. Mundet et muniat.
+                      fol. 316. Tertia ad libitum.' (printed p. 355). The running head of
+                      printed p. 355 already reads Dominica XXII.
+Known misreadings   : 'Introilns. Eslli.' for Introitus. Esth.; 'P>edti' for Beati;
+                      'qusesumus' for quaesumus; 'boms dctibus' for bonis actibus; 'tn|.' for
+                      fol.; 'c. 28' for the Gospel citation, which the page image of p. 354
+                      reads 'c. 18.'; 'obtetus' for oblatus; 'sufifocdbat' for suffocabat;
+                      'Oflertorium' for Offertorium; 'Seereta' for Secreta; 'Coimmmio' for
+                      Communio; 'nriqui nersecuti' for iniqui persecuti; 'axljuva' for adjuva;
+                      'ImmortalMtis' for Immortalitatis. Accents are frequently misread
+                      ('6' for o-acute, '&' for a-acute).
+
+----- physical lines 52146-52334 -----
+Dominica  XXI. 
+
+p o s t  P c ntccos t e n. 
+
+Introilns.  Eslli.  13. 
+
+IN  volunt&te  tua,  D6mine, 
+univ6rsa  sunt  p6sita,  et 
+non  est  qui  possit  resl- 
+stere  volunt&ti  tuae:  tu  enim 
+fecisti  6mnia,  ccelum  et  ter- 
+ram,  et  univ6rsa  quae  coeli 
+Ambitu  contin£ntur:  D6minus 
+univers6rum  tu  es. 
+
+Ps.  118.  P>edti  immacul&ti 
+in  via:  qui  dmbulant  in  lege 
+D6mini. 
+
+Y.  G16riaPatri. 
+
+Oratio. 
+
+FAmiliam  tuam.  qusesumus 
+D6mine,  continua  piet&te 
+cust6di:  ut  a  cunctis  adver- 
+sit&tibus,  te  proteg6nte,  sit 
+libera;  et  in  boms  dctibus 
+tuo  nomini  sit  dev6ta.  Per 
+D6minum. 
+
+Secunda  Oratio.    A  cunctis 
+nos.  tn|.  315. 
+Tertia  ad  libituin. 
+
+
+post  Ponteeosten. 
+
+L6ctio  Epistolae  bedti  Pauli 
+Ap6stoli  ad  Eph6sios.  cap.  G 
+
+FRatres.    Confort&mini  in 
+D6mino,  et  in  pot£ntia 
+virtutis  ejus.  Indftite  vos  ar- 
+maturam  Dei,  ut  possitis  stare 
+adv6rsus  insidias  di&boli :  qu6- 
+niam  non  est  nobis  colluct&tio 
+adv6rsus  carnem  et  s&ngui- 
+nem:  sed  adv6rsus  principes 
+et  potest&tes,  adversus  mundi 
+rect6res  tenebr&rum.  harum, 
+contra  spiritu&lia  nequitise,  in 
+coelestibus.  Propt6rea  accipite 
+armaturam  Dei,  ut  possitis 
+resistere  in  die  malo,  et  in 
+6mnibus  perfecti  stare.  State 
+ergo  succincti  lumbos  vestros 
+in  verit&te,  et  induti  lorfcam 
+justitiae ,  et  calcedti  pedes  in 
+prseparatione  Evang61ii  pacis: 
+m  omnibus  sum6ntes  scutum 
+fidei,  in  quo  possltis  6mnia 
+tela  nequissimi  Ignea  extin- 
+guere:  et  g&leam  saltitis  as- 
+sumite:  et  glddium  spiritus, 
+quod  est  verbum  Dei. 
+
+Graduale.  Ps.  89.  D6mine 
+refugium  factus  es  nobis  a 
+generati6ne  et  prog&rie. 
+
+Y-  Priusquam  montes  fierent 
+aut  formar6tur  terra  et  orbis: 
+a  sseculo,  et  usque  in  saecu1 
+lum  tu  es  Deus. 
+AHeluja,  alleltija. 
+T  Ps.  113.  In  exitu  Israel 
+de  iEgypto,  domus  Jacob  de 
+populo#  b&rbaro.  Alleltija. 
+
+Sequ6ntia  sancti  Evang61ii  se- 
+cundum  Matthseum.  c.  28. 
+
+T"N  illo  t6mpore :  Dixit  Jesus  . 
+_   discfpulis  suis  par&bolam 
+hanc:  AssimilAtum  est  regnum  | 
+coel6rum  h6mini  regi,  qui  v6-  ; 
+luit  rationem  p6nere  cum  ser- 
+
+Digitized  by  GooglJ 
+
+
+Dominica  XX 1T. 
+
+
+post  Pontecosten. 
+
+
+355 
+
+
+vis  suis.  Et  cum  coepfsset 
+rati6nem  p6nere,  obtetus  est 
+ei  unus,  qui  debSbat  ei  decem 
+millia  talenta.  Cum  autem  non 
+haWret  unde  r6dderet,  jussit 
+eum  dominus  ejus  venumdari, 
+et  ux6rem  ejus,  et  filios,  et 
+6mnia  qua?  liab£bat,  et  reddi. 
+Pr6cidens  autem  servus  ille, 
+ordbat  eum,  dicens:  Patien- 
+tiam  habe  in  me  et  6mnia 
+reddam  tibi.  Misertus  autem 
+dominus  servi  illms  dimisit 
+eum ,  et  d6bitum  dimisit  ei. 
+Egr6ssus  autem  servus  ille, 
+invenit  unum  de  cons6rvis 
+suis.  qui  deb6bat  ei  centum 
+denarios:  ettenens  sufifocdbat 
+eum,  dicens:  Redde  quod  de- 
+bes.  Et  pr6cidens  conservus 
+eius,  rog&bat  eum,  dicens: 
+Patieutiam  habe  in  me,  et 
+6mnia  reddam  tibi.  Ille  autem 
+noluit;  sed  abiit,  et  misit  eum 
+in  carcerem,  donec  r6dderet 
+debitum.  Videntes  autem  con- 
+s6rvi  ejus  qu»  ftebant,  con- 
+tristAti  sunt  valde:  et  venerunt 
+et  narrav6runt  domino  suo 
+6mnia  quae  factafuerant.  Tunc 
+vocAvit  illum  d6minus  suus : 
+et  ait  iili :  Serve  nequam,  omne 
+debitum  dimlsi  tibi,  qu6niam 
+ro^&sti  me :  n6nhe  ergo  op6r- 
+tuit  et  te  miser6ri  conservi 
+tui,  sicut  et  ego  tui  mis6rtus 
+sum?  Et  iratus  d6minus  ejus, 
+tr&didit  eum  tort6ribus,  quo- 
+adusque  r£dderet  universum 
+debitum.  Sic  et  Pater  meus 
+cce!6stis  f&ciet  vobis ,  si  non 
+remiseritis  unusquisque  fratri 
+suo  de  cordibus  vestris. 
+Credo. 
+
+Oflertorium.  Job  1.  Vir  erat 
+in  terra  Hus  n6mine  Job :  sim- 
+plex  et  rectus,  *c  timens  Deum: 
+
+
+quem  Satan  petiit,  ut  tentd- 
+ret:  et  data  est  ei  pot6stas 
+a  D6mino  in  facult£tes,  et  in 
+carnem  ejus:  perdidltque  om- 
+nem  substdntiam  ipsius,  et 
+filios:  carnem  quoque  ejus 
+gravi  ulcere  vulneravit. 
+
+Seereta. 
+
+SUscipe,  D6mine,  propitius 
+h6stias,  quibus  et  te  pla- 
+cari  voluisti,  et  nobis  salutem 
+pot6nti  piet&te  restitui.  Per 
+D6minum. 
+
+Alia  Secreta.    Exatidi  nos 
+Deus.  fol.  316. 
+Tertia  ad  libitum. 
+
+Coimmmio.  Ps.  118.  In  sa- 
+lutari  tuo  dnima  mea,  et  in 
+verbum  tuum  speravi:  quando 
+ftcies  de  persequ6ntibus  me 
+judicium?  nriqui  nersecuti  sunt 
+me,  axljuva  me  D6mine  Deus 
+meus. 
+
+Postcommunio. 
+
+ImmortalMtis  alim6niam  con- 
+secuti,  quaesumus  D6mine : 
+ut  quod  ore  percepimus,  pura 
+mente  sectemur.Per  D6minum. 
+
+Alia  Postcommunio.  Mundet 
+et  muniat.  fol.  316. 
+Tertia  ad  libituin. 
+----- end of pull 2 -----

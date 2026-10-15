@@ -1,0 +1,64 @@
+# Controlling external evidence this research reads outside its leaf and that
+# registered source bindings do not already seal (research/source-bindings.toml
+# seals every bound record and its ancestry). Declared on 2026-10-15 in the
+# research stage of run a8bcc37ea3420a07. Every path is a tracked record under
+# src/ in the roman-1962 family or the provider-neutral source library.
+#
+# Rights, ledgers, standing and joins
+# - missale-romanum-1962-facsimile-rights-v1.toml: the rights holding (17 U.S.C.
+#   103(b) with a public-domain antecedent) on which every Latin element's
+#   publication basis rests (propers/verified.md, Publication basis;
+#   research/scope.md section 9).
+# - roman-1962-proper-latin-provenance-v1.toml: the ledger whose four
+#   pentecost-21 rows are relied on and whose missing rows are reported
+#   (research/scope.md section 10). Its three s-lucae-evangelistae rows are
+#   noted only: from research iteration 2 St Luke's Latin rests on the 1862
+#   collation in propers/verified.md, on the bound 1862 scan.
+# - author-standing-v1.toml (below) also carries Theodoret's censure, on which
+#   his contextual-only role rests, and the absence of an Athanasius row.
+# - roman-1962-proper-translations-v1.toml: the same-family overlay whose rows
+#   for these orations are reported stale (research/scope.md sections 9, 10).
+# - lasance-new-roman-missal-rights-v1.toml: the nonrenewal record on which the
+#   Lasance English of the Pro Fidei propagatione orations rests.
+# - author-standing-v1.toml: the standing of every author the readings name and
+#   of every carrying author (research/interpretations.md section 5;
+#   research/scope.md section 6).
+# - source-containment-v1.toml and commentary/passage-commentary-index.yaml: the
+#   joins behind the holdings `commentary-work-index discover` reported for every
+#   appointed locus, and behind the lead-by-lead disposition of
+#   research/scope.md section 3.14.
+# - commentary/formulary-loci.yaml: the liturgical commentators' element
+#   comparison, whose empty result for this Mass research/scope.md section 2.1
+#   reports.
+# - calendars/roman-1962/propers.yaml and rubrics.yaml: the computation inputs
+#   research/context.md adopts for occurrence and precedence (finding aids), and
+#   the citations the chronology wiring and `mass-propers show` resolve.
+#
+# Library records relied on in research iteration 1 (unregistered reads)
+# - works/alphonsus-liguori/sermoni-compendiati/work.toml: the work record whose
+#   lack of any edition research/scope.md sections 5.2 and 10 report, before
+#   the public Callan edition was read outside the library.
+# - works/cassiodorus/expositio-psalmorum/editions/latin-corpus-corporum-
+#   monumenta-web-2026-09-05: the registered Corpus Corporum route and rights
+#   notes on which the unregistered per-psalm reads of Pss 89, 113 and 118 rest
+#   (research/scope.md sections 3.2, 3.5, 3.6, 3.10, 5.1, 9).
+#
+# The Scripture chronology corpus
+# research/chronology.toml and research/chronology-annotations.tex were generated
+# and checked with tools/tpt proper-chronology (research/scope.md section 7).
+# The engine seals every file that computation opens outside the leaf and every
+# source the record cites; those need no declaration and are not repeated here.
+paths = [
+  "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml",
+  "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+  "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+  "src/sources/inventories/lasance-new-roman-missal-rights-v1.toml",
+  "src/sources/inventories/author-standing-v1.toml",
+  "src/sources/inventories/source-containment-v1.toml",
+  "src/sources/commentary/formulary-loci.yaml",
+  "src/sources/commentary/passage-commentary-index.yaml",
+  "src/sources/calendars/roman-1962/propers.yaml",
+  "src/sources/calendars/roman-1962/rubrics.yaml",
+  "src/sources/works/alphonsus-liguori/sermoni-compendiati/work.toml",
+  "src/sources/works/cassiodorus/expositio-psalmorum/editions/latin-corpus-corporum-monumenta-web-2026-09-05",
+]
