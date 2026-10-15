@@ -355,6 +355,19 @@
       "stage": "draft",
       "usage": "proper-chronology {loci,record,annotations} --document ID [--provider P] [--profile PROFILE] [--json]"
     },
+    "proper-study-run-archive": {
+      "idempotent": false,
+      "json": false,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Archive a terminal proper-study run's engine records into its leaf.",
+      "requires": [
+        "tpt"
+      ],
+      "stage": "draft",
+      "usage": "proper-study-run-archive RUN_ID --cycles PATH [--output DIR] [--root DIR]"
+    },
     "public-alpha": {
       "idempotent": true,
       "json": false,

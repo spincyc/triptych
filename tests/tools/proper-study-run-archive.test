@@ -1,0 +1,68 @@
+#!/bin/sh
+# Test for `tools/tpt proper-study-run-archive`: exit 0 = pass (the stable gate).
+# Every write goes into a mktemp sandbox through --output, so nothing here
+# touches a leaf. The refusals run anywhere; the reproduction needs a run
+# directory under the ignored build/tpt-runs/, and is skipped, saying so,
+# where this checkout never ran the workflow.
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="proper-study-run-archive"
+cycles="workflows/reviews/example/CYCLES.md"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+fail() {
+	echo "$1" >&2
+	exit 1
+}
+
+reject() {
+	if run_tool "$@" >/dev/null 2>&1; then
+		fail "expected failure: $*"
+	fi
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+# An unknown run, a run id that is not one, and a machine path for the cycles
+# record that record.md would name in a tracked file.
+reject 0000000000000000 --cycles "$cycles"
+reject 9c1136f1 --cycles "$cycles"
+reject ../../../etc --cycles "$cycles"
+reject 0000000000000000 --cycles /tmp/CYCLES.md
+# The cycles record is required, and an unknown flag is refused, not ignored.
+reject 0000000000000000
+reject 0000000000000000 --cycles "$cycles" --badflag
+
+# A refusal names itself on stderr and prints nothing on stdout.
+if run_tool 0000000000000000 --cycles "$cycles" >"$sandbox/out" 2>"$sandbox/err"; then
+	fail "an unknown run was archived"
+fi
+[ ! -s "$sandbox/out" ] || fail "a refusal printed on stdout"
+grep -q "^proper-study-run-archive error: no run 0000000000000000" "$sandbox/err" ||
+	fail "unexpected refusal: $(cat "$sandbox/err")"
+
+# Reproduction: an archived run, archived again, is its committed archive.
+run="9c1136f1f8d1241c"
+committed="$repo/src/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/evaluations/proper-study-results/$run"
+if [ -d "$repo/build/tpt-runs/$run" ] && [ -d "$committed" ]; then
+	run_tool "$run" --cycles workflows/reviews/claude-1962-60-production-2026-10-07/CYCLES.md \
+		--output "$sandbox/$run" >/dev/null
+	diff -r "$sandbox/$run" "$committed" >/dev/null ||
+		fail "the archive of $run differs from its committed copy"
+	# A second archive into the same place is refused, and leaves it whole.
+	reject "$run" --cycles "$cycles" --output "$sandbox/$run"
+	diff -r "$sandbox/$run" "$committed" >/dev/null ||
+		fail "a refused overwrite changed the archive"
+else
+	echo "skip: build/tpt-runs/$run is not held here; reproduction not checked" >&2
+fi
+
+echo ok

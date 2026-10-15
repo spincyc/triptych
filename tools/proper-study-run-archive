@@ -1,0 +1,496 @@
+#!/usr/bin/env python3
+"""Archive a terminal proper-study run's engine records into its leaf."""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import os
+import re
+import shutil
+import subprocess
+import sys
+from dataclasses import dataclass
+from pathlib import Path, PurePosixPath
+
+# Shared CLI helpers live outside tools/ so that tmt's registry scan, which
+# requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+from _tooling import Example, with_examples  # noqa: E402
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+#
+# Only refusals are shown, and that is a property of where runs live rather
+# than a gap: `build/tpt-runs/` is ignored output that a fresh clone does not
+# hold, so an archiving example would diverge everywhere but the checkout it
+# was captured in, and a replayed write would need a scratch path the replay
+# clears first. The refusals below replay identically in every checkout.
+EXAMPLES = {
+    "": (
+        Example(
+            "tools/proper-study-run-archive 0000000000000000 "
+            "--cycles workflows/reviews/example/CYCLES.md",
+            (
+                "proper-study-run-archive error: no run 0000000000000000: "
+                "build/tpt-runs/0000000000000000 does not exist",
+            ),
+            "exits 1; nothing is written",
+        ),
+        Example(
+            "tools/proper-study-run-archive 9c1136f1 "
+            "--cycles workflows/reviews/example/CYCLES.md",
+            (
+                "proper-study-run-archive error: '9c1136f1' is not a run id; "
+                "a run id is 16 lowercase hexadecimal digits",
+            ),
+            "exits 1; a run id is never abbreviated, because the archive is "
+            "named by it",
+        ),
+        Example(
+            "tools/proper-study-run-archive 0000000000000000 "
+            "--cycles /tmp/CYCLES.md",
+            (
+                "proper-study-run-archive error: --cycles must be a "
+                "repository-relative path, because record.md is tracked and "
+                "names it: '/tmp/CYCLES.md'",
+            ),
+            "exits 1",
+        ),
+    ),
+}
+
+ROOT = Path(__file__).resolve().parents[1]
+ERROR = "proper-study-run-archive error: "
+WORKFLOW_ID = "proper-study"
+TERMINAL = ("ACCEPTED", "BLOCKED")
+RUN_ID = re.compile(r"[0-9a-f]{16}")
+RUNS = PurePosixPath("build") / "tpt-runs"
+RESULTS_DIR = PurePosixPath("evaluations") / "proper-study-results"
+RECORD = "record.md"
+
+# The archive's layout, which the committed archives already have. A reader
+# who has opened one leaf's archive can open every other, and the reproduction
+# check (archive an accepted run with --output and `diff -r` it against the
+# committed copy) holds only while the names do not move.
+#
+#   <result>.json          every engine-retained result, byte for byte
+#   packets/<packet>.txt   the packet each result answered, byte for byte
+#   seed-bootstrap.json    the run's bootstrap.json
+#   seed-manifest.json     the run's manifest.json
+#   interventions/*.json   the driver's recorded interventions
+#   terminal-status.json   `tpt proper-study <proper> status <run>`, stdout
+#   terminal-replay.json   `tpt proper-study <proper> replay <run>`, stdout
+#   record.md              the table below and what each file is
+
+
+class ArchiveError(Exception):
+    """A refusal: the run cannot be archived as asked, and nothing was written."""
+
+
+@dataclass(frozen=True)
+class Row:
+    stage: str
+    iteration: int
+    disposition: str
+    packet_hash: str
+    result_hash: str
+
+
+@dataclass
+class Archive:
+    """Everything the archive will hold, read and verified before any write."""
+
+    run_id: str
+    proper: str
+    disposition: str
+    document_root: str
+    manifest: dict
+    rows: list[Row]
+    files: dict[str, bytes]
+    interventions: int
+
+
+def sha256(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def plural(count: int, singular: str, many: str | None = None) -> str:
+    return f"{count} {singular if count == 1 else (many or singular + 's')}"
+
+
+def read_json(path: Path, what: str) -> dict:
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except OSError as error:
+        raise ArchiveError(f"cannot read {what}: {error}") from error
+    except ValueError as error:
+        raise ArchiveError(f"{what} is not valid JSON: {error}") from error
+    if not isinstance(data, dict):
+        raise ArchiveError(f"{what} is not a JSON object")
+    return data
+
+
+def read_bytes(path: Path, what: str) -> bytes:
+    try:
+        return path.read_bytes()
+    except OSError as error:
+        raise ArchiveError(f"cannot read {what}: {error}") from error
+
+
+def relative_path(value: str, what: str) -> PurePosixPath:
+    """A recorded or supplied path, refused unless it stays inside the checkout."""
+    path = PurePosixPath(value)
+    if not value or path.is_absolute() or ".." in path.parts:
+        raise ArchiveError(f"{what} is not a repository-relative path: {value!r}")
+    return path
+
+
+def verified(root: Path, record: dict, kind: str, home: PurePosixPath) -> tuple[str, bytes]:
+    """The bytes a state record names, refused unless they still hash to it.
+
+    The file is read once and the bytes that were hashed are the bytes copied,
+    so nothing can change between the check and the write. A record whose path
+    leaves the run's own directory is refused rather than followed: state.json
+    is a file on disk like any other.
+    """
+    label = f"{kind} for {record.get('stage')} iteration {record.get('iteration')}"
+    path = relative_path(str(record.get("path", "")), f"the {label}")
+    if path.parent != home:
+        raise ArchiveError(f"the {label} is recorded outside {home}/: {path}")
+    try:
+        data = (root / path).read_bytes()
+    except OSError as error:
+        raise ArchiveError(f"the {label} cannot be read: {error}") from error
+    if sha256(data) != record.get("hash"):
+        raise ArchiveError(
+            f"{kind} hash mismatch: {path} no longer hashes to the "
+            f"{record.get('hash')} state.json recorded"
+        )
+    return path.name, data
+
+
+def engine(root: Path, proper: str, verb: str, run_id: str) -> bytes:
+    """What the engine itself prints for this run, as the bytes it printed."""
+    completed = subprocess.run(
+        [str(root / "tools" / "tpt"), WORKFLOW_ID, proper, verb, run_id],
+        cwd=root,
+        capture_output=True,
+    )
+    if completed.returncode != 0:
+        detail = completed.stderr.decode("utf-8", "replace").strip()
+        raise ArchiveError(
+            f"`tpt {WORKFLOW_ID} {proper} {verb} {run_id}` exited "
+            f"{completed.returncode}: {detail}"
+        )
+    return completed.stdout
+
+
+def engine_report(root: Path, proper: str, verb: str, run_id: str,
+                  disposition: str) -> bytes:
+    """The terminal status or replay, refused unless it agrees with state.json."""
+    data = engine(root, proper, verb, run_id)
+    try:
+        report = json.loads(data.decode("utf-8"))
+    except ValueError as error:
+        raise ArchiveError(f"the engine's {verb} is not JSON: {error}") from error
+    if report.get("run_id") != run_id or report.get("disposition") != disposition:
+        raise ArchiveError(
+            f"the engine's {verb} reports run {report.get('run_id')!r} "
+            f"disposition {report.get('disposition')!r}, not {run_id} {disposition}"
+        )
+    # record.md says the terminal replay confirms the saved packet's integrity,
+    # so an archive is only written when it does.
+    if verb == "replay" and report.get("recorded_file_intact") is not True:
+        raise ArchiveError(
+            "the engine's replay does not confirm the saved packet's integrity "
+            f"(recorded_file_intact is {report.get('recorded_file_intact')!r})"
+        )
+    return data
+
+
+def collect(root: Path, run_id: str) -> Archive:
+    """Read and verify the run's own bytes, writing nothing.
+
+    The engine's terminal status and replay are asked for afterwards, by
+    `archive_run`, once the destination is known to be free.
+    """
+    if not RUN_ID.fullmatch(run_id):
+        raise ArchiveError(
+            f"{run_id!r} is not a run id; a run id is 16 lowercase hexadecimal digits"
+        )
+    run_rel = RUNS / run_id
+    run_dir = root / run_rel
+    if not run_dir.is_dir():
+        raise ArchiveError(f"no run {run_id}: {run_rel} does not exist")
+
+    state = read_json(run_dir / "state.json", f"{run_rel}/state.json")
+    manifest = read_json(run_dir / "manifest.json", f"{run_rel}/manifest.json")
+    for name, recorded in (("state.json", state.get("run_id")),
+                           ("manifest.json", manifest.get("run_id"))):
+        if recorded != run_id:
+            raise ArchiveError(f"{run_rel}/{name} names run {recorded!r}, not {run_id}")
+    if manifest.get("workflow_id") != WORKFLOW_ID:
+        raise ArchiveError(
+            f"run {run_id} is a {manifest.get('workflow_id')!r} run; this archives "
+            f"{WORKFLOW_ID} runs only"
+        )
+
+    disposition = state.get("disposition")
+    if disposition not in TERMINAL:
+        raise ArchiveError(
+            f"run {run_id} is not terminal: disposition {disposition!r}, current "
+            f"stage {state.get('current_stage')!r}; archive it once it is "
+            f"{' or '.join(TERMINAL)}"
+        )
+
+    proper = (manifest.get("normalized_args") or {}).get("proper")
+    if not isinstance(proper, str) or not proper:
+        raise ArchiveError(f"{run_rel}/manifest.json names no proper")
+    document_root = str(relative_path(str(state.get("document_root", "")),
+                                      "state.json's document_root"))
+
+    packets: dict[tuple[str, int], dict] = {}
+    for record in state.get("packet_hashes") or []:
+        key = (record.get("stage"), record.get("iteration"))
+        if key in packets:
+            raise ArchiveError(f"state.json records two packets for {key[0]} iteration {key[1]}")
+        packets[key] = record
+    results = state.get("result_hashes") or []
+    if not results:
+        raise ArchiveError(f"run {run_id} recorded no result; there is nothing to archive")
+    # This workflow runs no fan-out stage. Lane evidence would be part of the
+    # run's record, and dropping it silently would archive less than the run
+    # holds, so it is refused until the archive has somewhere to put it.
+    if any(record.get("lanes") for record in [*packets.values(), *results]):
+        raise ArchiveError(
+            f"run {run_id} carries fan-out lane evidence, which this archive "
+            "does not yet preserve"
+        )
+
+    files: dict[str, bytes] = {}
+    rows: list[Row] = []
+    for record in results:
+        key = (record.get("stage"), record.get("iteration"))
+        packet = packets.get(key)
+        if packet is None:
+            raise ArchiveError(f"no packet recorded for {key[0]} iteration {key[1]}")
+        name, data = verified(root, record, "result", run_rel / "results")
+        files[name] = data
+        name, data = verified(root, packet, "packet", run_rel / "packets")
+        files[f"packets/{name}"] = data
+        rows.append(Row(str(key[0]), int(key[1]), str(record.get("disposition", "")),
+                        str(packet["hash"]), str(record["hash"])))
+    if len(packets) != len(rows):
+        raise ArchiveError(
+            f"{plural(len(packets), 'packet')} but {plural(len(rows), 'result')}; "
+            "a terminal run answers every packet it emits"
+        )
+
+    bootstrap = read_bytes(run_dir / "bootstrap.json", f"{run_rel}/bootstrap.json")
+    expected = (manifest.get("bootstrap") or {}).get("sha256")
+    if expected and sha256(bootstrap) != expected:
+        raise ArchiveError(
+            f"{run_rel}/bootstrap.json no longer hashes to the {expected} "
+            "manifest.json recorded"
+        )
+    files["seed-bootstrap.json"] = bootstrap
+    files["seed-manifest.json"] = read_bytes(run_dir / "manifest.json",
+                                             f"{run_rel}/manifest.json")
+
+    interventions = sorted((run_dir / "interventions").glob("*.json"))
+    for path in interventions:
+        files[f"interventions/{path.name}"] = read_bytes(
+            path, f"{run_rel}/interventions/{path.name}")
+
+    return Archive(run_id, proper, disposition, document_root, manifest, rows,
+                   files, len(interventions))
+
+
+def record_text(archive: Archive, cycles: str) -> str:
+    """record.md: what the archive is, and one table row per result."""
+    manifest = archive.manifest
+    count = len(archive.rows)
+    lines = [
+        "# Actual engine results",
+        "",
+        f"Workflow `{manifest['workflow_id']}`, version {manifest['workflow_version']}, "
+        f"digest `{manifest['workflow_digest']}`.",
+        f"Run `{archive.run_id}`; seed commit `{manifest['repo_commit']}`. Terminal "
+        f"disposition **{archive.disposition}**.",
+        "",
+        "The JSON files are exact engine-retained result bytes, copied after the run "
+        "reached its terminal disposition. A stage's PASS records only its own completed "
+        "work; publication acceptance is the terminal gate's. The engine supplies any "
+        "`review_inputs` seal; workers do not author it. The interventions are the "
+        "driver's records of host facts the packets do not carry, and the driver's "
+        f"account of every cycle is in `{cycles}`.",
+        "",
+        "| Stage | Iteration | Disposition | Packet SHA-256 | Accepted result SHA-256 |",
+        "| --- | ---: | --- | --- | --- |",
+    ]
+    lines += [
+        f"| {row.stage} | {row.iteration} | {row.disposition} | `{row.packet_hash}` | "
+        f"`{row.result_hash}` |"
+        for row in archive.rows
+    ]
+    preserved = "which is" if count == 1 else "all of which are"
+    lines += [
+        "",
+        f"The run recorded {plural(count, 'result')} over {plural(count, 'packet')}, "
+        f"{preserved} preserved verbatim under `packets/`.",
+        "",
+    ]
+    if archive.interventions == 0:
+        lines.append(
+            "The run recorded no manual intervention, so there is no `interventions/` "
+            "directory."
+        )
+    elif archive.interventions == 1:
+        lines.append(
+            "`interventions/` holds the 1 manual intervention this run recorded. It is "
+            "unencoded workflow debt, not an acceptance."
+        )
+    else:
+        lines.append(
+            f"`interventions/` holds the {archive.interventions} manual interventions "
+            "this run recorded. They are unencoded workflow debt, not acceptances."
+        )
+    lines += [
+        "",
+        "`terminal-status.json` and `terminal-replay.json` are the engine's own terminal "
+        "records. A terminal replay reports `deterministic: null` by design and checks the "
+        "saved packet's integrity, which it confirms.",
+        "",
+    ]
+    return "\n".join(lines)
+
+
+def destination(root: Path, archive: Archive, output: str | None) -> Path:
+    """Where the archive goes, refused if anything is already there."""
+    if output is not None:
+        dest = Path(output)
+    else:
+        leaf = root / archive.document_root
+        # A run that blocked before its leaf existed must not create one: a leaf
+        # directory holding only evaluations/ reads as a leaf to anything that
+        # walks the tree.
+        if not leaf.is_dir():
+            raise ArchiveError(
+                f"the run's leaf {archive.document_root} does not exist; write the "
+                "archive elsewhere with --output DIR"
+            )
+        dest = leaf / RESULTS_DIR / archive.run_id
+    if dest.exists() and not (dest.is_dir() and not any(dest.iterdir())):
+        raise ArchiveError(f"refusing to overwrite {shown(root, dest)}")
+    return dest
+
+
+def write(dest: Path, files: dict[str, bytes]) -> None:
+    """Write the archive beside its destination, then move it into place whole.
+
+    A refusal part-way through a copy left a half archive in the leaf, which the
+    next attempt then refused to overwrite. Building it aside and renaming means
+    the destination either holds the whole archive or nothing.
+    """
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    staging = dest.parent / f".{dest.name}.partial-{os.getpid()}"
+    try:
+        for name, data in sorted(files.items()):
+            target = staging / name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(data)
+        if dest.is_dir():
+            dest.rmdir()  # empty, by destination()'s check
+        os.rename(staging, dest)
+    finally:
+        shutil.rmtree(staging, ignore_errors=True)
+
+
+def shown(root: Path, path: Path) -> str:
+    try:
+        return str(path.resolve().relative_to(root.resolve()))
+    except ValueError:
+        return str(path)
+
+
+def archive_run(root: Path, run_id: str, cycles: str, output: str | None) -> tuple[Path, Archive]:
+    if Path(cycles).is_absolute() or ".." in PurePosixPath(cycles).parts or not cycles:
+        raise ArchiveError(
+            "--cycles must be a repository-relative path, because record.md is "
+            f"tracked and names it: {cycles!r}"
+        )
+    archive = collect(root, run_id)
+    dest = destination(root, archive, output)
+    files = dict(archive.files)
+    # Asked of the engine only once nothing else can refuse: both are read-only,
+    # but each is a full launcher process.
+    for verb in ("status", "replay"):
+        files[f"terminal-{verb}.json"] = engine_report(
+            root, archive.proper, verb, archive.run_id, archive.disposition
+        )
+    files[RECORD] = record_text(archive, cycles).encode("utf-8")
+    write(dest, files)
+    return dest, archive
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        prog="proper-study-run-archive",
+        # with_examples installs RawDescriptionHelpFormatter, so this is wrapped
+        # here rather than by argparse.
+        description=(
+            f"{__doc__.strip()}\n\n"
+            "Reads build/tpt-runs/RUN_ID/ and writes, under the leaf state.json\n"
+            "names, evaluations/proper-study-results/RUN_ID/: every result and its\n"
+            "packet, each verified against the hash state.json recorded; the seed\n"
+            "bootstrap and manifest; the driver's interventions; the engine's own\n"
+            "terminal status and replay; and record.md, which tabulates them.\n\n"
+            "Refuses a run that is not ACCEPTED or BLOCKED, any byte that no longer\n"
+            "hashes to its record, and a destination that already holds anything.\n"
+            "Everything is read and verified before anything is written, and the\n"
+            "archive is moved into place whole, so a refusal writes nothing.\n\n"
+            "--output DIR writes the same archive to DIR instead of the leaf, which\n"
+            "is how an archive is checked: archive an already-archived run to a\n"
+            "scratch directory and `diff -r` it against the committed copy."
+        ),
+    )
+    parser.add_argument("run_id", metavar="RUN_ID", help="the terminal run to archive")
+    parser.add_argument(
+        "--cycles",
+        required=True,
+        metavar="PATH",
+        help="the driver's cycles record that record.md names, e.g. "
+        "workflows/reviews/<name>/CYCLES.md",
+    )
+    parser.add_argument(
+        "--output",
+        metavar="DIR",
+        help="write the archive to DIR (absent or empty) instead of the leaf",
+    )
+    parser.add_argument(
+        "--root",
+        metavar="DIR",
+        default=str(ROOT),
+        help="the checkout whose runs and launcher are read (default: this one)",
+    )
+    with_examples(parser, EXAMPLES[""])
+    args = parser.parse_args(argv)
+
+    root = Path(args.root).resolve()
+    try:
+        dest, archive = archive_run(root, args.run_id, args.cycles, args.output)
+    except ArchiveError as error:
+        print(f"{ERROR}{error}", file=sys.stderr)
+        return 1
+    print(
+        f"archived {archive.disposition} run {archive.run_id}: "
+        f"{plural(len(archive.rows), 'result')}, {plural(len(archive.rows), 'packet')}, "
+        f"{plural(archive.interventions, 'intervention')} -> {shown(root, dest)}"
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
