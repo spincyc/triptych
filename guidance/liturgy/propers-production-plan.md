@@ -110,6 +110,12 @@ that one identity for that one provider and nothing else, and it is an
 independent Claude production under its own edition tree, not a companion to
 or a derivative of any other leaf, the GPT leaf for the same identity
 included.
+On 2026-10-15 the maintainer authorized the Claude 1962 Twenty-first Sunday
+after Pentecost target for Sunday, 18 October 2026, on the same terms and
+under the same three-document contract. It opens that one identity for that
+one provider and nothing else, and it is an independent Claude production,
+not a companion to or a derivative of any other leaf, the GPT leaf for the
+same identity included.
 
 Each line below records one maintainer decision to open the boundary for
 one provider and one permanent identity. A line is the whole
@@ -140,6 +146,7 @@ and an identity with no line here is closed.
 - Authorized 2026-10-08: provider `claude`, identity `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a`.
 - Authorized 2026-10-12: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost`.
 - Authorized 2026-10-13: provider `gpt`, identity `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a`.
+- Authorized 2026-10-15: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost`.
 
 ### Withdrawn targets
 
