@@ -222,8 +222,135 @@ content check with all four `--require` flags, the twelve content-preflight
 checks and the canonical web conversion probe (Python Markdown 3.10.3, pandoc
 3.11) pass.
 
+## Derive-synthesis, iteration 0 (15 October 2026)
+
+Authored after the third cold study review returned PASS at its iteration 2
+with no blocking finding (advisories STU-005, STU-012, STU-013 and STU-014).
+The stage ran as a Claude Code harness subagent, `claude-opus-5-5[1m]`,
+dispatched at reasoning effort `high`. The concise companion is *The
+Twenty-first Sunday after Pentecost: A Concise Study of the Proper in the 1962
+Roman Missal*, built from `synthesis.tex` and derived from the accepted
+expansive study of this leaf for the occurrence of 18 October 2026. No research
+record, study component or manifest entry was edited for it; the manifest
+already declared the six concise components, their modes and the presentation
+roles. The shared `generation-metadata.tex` received a refreshed revision
+timestamp and one appended contribution for this stage.
+
+Components written:
+
+- `concise-inventory` (`sections/concise/01-inventory.tex`): the map of the ten
+  appointed elements in the order of the Mass, condensed from the study's map,
+  with the 1861 English for the Introit's first sentence, the Collect, the
+  Offertory, the Secret, the Communion and the Postcommunion, and the Douay at
+  the canonical verses for the Scripture. A rubrical note gives second class,
+  green, Gloria, Credo and the Trinity Preface, the commemoration of St Luke in
+  low and conventual Masses only, and the oration *pro Fidei propagatione* in
+  every Mass unless the Ordinary has appointed another day for the missions.
+- `concise-overview` (`sections/concise/02-overview.tex`): exactly four rows,
+  drawn from the three readings' own senses, each witness named beside the
+  clause he states.
+- `concise-date-location` (`sections/concise/03-date-location.tex`): the page-2
+  sheet. It imports the generated annotations once and places all eleven
+  `orientation-v1` rows once, in the generator's order and grouping, inside
+  `chronologyorientationtable`, with the place phrases of the study's reviewed
+  Scriptural Date and Location appendix unchanged (including the STU-001
+  repair of the Gospel comparison row). A closing line refers the reader to
+  that appendix for sources and attributions. No date is written by hand.
+- `concise-themes` (`sections/concise/04-themes.tex`): *The Propers: Themes and
+  Movement*, opening with a direct thesis (a will none resists, and what lives
+  inside it: an adversary who must ask, a forgiven debtor who must forgive, a
+  people out of Egypt that asks when). It follows the formulary in order with
+  the textual returns the study records: the Introit's dropped condition, the
+  Collect's *te protegente* and adversities beside the Gradual and Epistle, the
+  Collect's *pietas* returning in the Secret's *potenti pietate*, *petiit* and
+  *data est a Domino* against the Introit, Ps 118 at the Introit's verse and the
+  Communion, and the Postcommunion's mouth and mind beside *Quod ore sumpsimus*
+  (*Ordo Missae* no. 1130). It closes with the three readings' questions and
+  carrying witnesses, and what they share, in the terms of the study's
+  comparison.
+- `concise-commentary` (`sections/concise/10-commentary.tex`): *The Propers:
+  Detailed Commentary*, in six cross-proper units, each setting the readings'
+  answers beside one another:
+  - A will none resists, and an adversary who asks (Introit, Offertory,
+    Collect; Gregory, Thomas, Rupert, Schuster; the second and third readings'
+    hearing of Mardochai and Job; Rupert and Durandus).
+  - Who is the enemy, and what is the armour? (Epistle, Gradual, the Gospel's
+    torturers, the Secret; Chrysostom, Thomas, Jerome, Fromage, Bellarmine,
+    Durandus; the first and second readings' meeting at Chrysostom's sentence).
+  - What the king's mercy requires (Gospel with the Introit's verse, Collect,
+    Secret and Postcommunion; Augustine, Chrysostom, Jerome, Thomas, Rabanus,
+    Cassiodorus, Schuster; the three formulations of the pardon's return kept
+    side by side, Thomas's narrower and real difference named).
+  - When wilt thou judge? The Communion's persecutors (Augustine's answer to
+    the charge of vengeance; Hilary, Augustine, Cassiodorus, Bellarmine and the
+    PG 27 exposition on the thing asked, the persecutors and the time, with the
+    unsung v. 84a named as the source of Hilary's "now" and Augustine's
+    "until"). This is the difference's single home in the concise study, which
+    answers the repetition STU-005 noted in the study. Per STU-013, the
+    passage says "the witnesses differ", since Bellarmine and Cassiodorus are
+    not Fathers.
+  - A people on the march (Alleluia, the Epistle's girded loins and evil day,
+    the Gradual's eternity, the Gospel's reckoning, Introit, Secret and
+    Postcommunion; Augustine, Cassiodorus, Chrysostom, Fromage, Thomas,
+    Honorius, Durandus, Alphonsus, Bellarmine).
+  - One Mass, three answers (the demanding feature each reading meets, the
+    second and third readings' meeting at Sermon 58.8, and the readings'
+    allegorical, moral and anagogical senses compared where they differ).
+- `concise-apparatus` (`sections/concise/90-apparatus.tex`): the scope note and
+  the References for the sources this companion uses (24 entries). The scope
+  note does not mention the commentators' other Gospel, as the three-document
+  profile requires of the concise study.
+
+Every reading's controlling claim is preserved, and so are the study's
+differences: Gregory's two wills and Thomas's will and power; Jerome's
+Christological and Thomas's moral armour; Chrysostom's revoking receiver,
+Augustine's recalling God and Thomas's return *per ingratitudinem*; Jerome's
+rejection of the devil as debtor and Rabanus's allegory; and the Communion's
+persecutors and time in Hilary, Augustine, Cassiodorus, Bellarmine and the
+PG 27 exposition. Set aside in compression, and carried by the study: the
+element settings' Honorius, Sicard and Rabanus on Esther; Augustine and
+Bellarmine on the authorship of Ps 89; Augustine's numerology in Sermon 83.6;
+Hilary on Matthew; Chrysostom on Ps 113; Schuster on the Communion and the
+Postcommunion; and Origen's own text. No new evidence-dependent claim was
+added, and no upstream defect was found while deriving.
+
+### Word counts
+
+Counted with `detex` on the component sources, so the figures include Latin
+and quotations: inventory 402; overview 267; Scriptural Date and Location 314
+(authored text only; the generated rows are imported); Themes and Movement
+1,571; commentary 4,913; scope note and References 1,491. The substantive
+concise argument (overview, Themes and Movement, commentary) is about 6,750
+words.
+
+### Author proof
+
+- `make doc DOC=liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis PROVIDER=claude`:
+  settled with no LaTeX warning, overfull or underfull box in the log; 10
+  contents lines on distinct anchors; component manifest and generation
+  metadata valid; every font embedded (Latin Modern, Type 1). Synthesis PDF:
+  12 physical pages, SHA-256
+  `6dac0a78aba16c93ba78a9148a162d9aab480388ce89b8bfcacebecebc846b9e`; auxiliary
+  file `00c088503b8c419acd594f57901c37684856880c72c00b03508ac4d578967293`;
+  timestamp 2026-10-15T15:44:10Z.
+- Settled physical pages from the auxiliary file: inventory and all four sense
+  markers and the overview on page 1; chronology on page 2; themes from page 3
+  to page 4; commentary from page 5. The terminal apparatus ends on page 12 with
+  the timestamp and rights colophon.
+- Every page was rasterized and inspected. Two earlier proofs were repaired:
+  the first spilled the overview onto page 2 and ran to 13 pages, cured by
+  condensing the map, rubrical note and Literal row; the second left a third of
+  page 4 empty, cured by adding the formulary's textual returns and the
+  readings' meeting points to the themes.
+- `tools/check-proper-components --phase artifacts --edition synthesis`,
+  `scripts/_proper_study.py check --phase content --edition synthesis` with the
+  four `--require` flags, the twelve `check-content-preflight --edition
+  synthesis` checks and `provenance-matches-run`: pass. The research edition,
+  rebuilt with the shared metadata, still has 37 pages with no warning and its
+  colophon on the final page.
+
 ### Outstanding
 
-Cold study review; concise and homily authoring and review; the shared-
-timestamp three-document build; visual review; canonical web generation and
-review; installation and publication gates.
+Cold concise review; homily authoring and review; the shared-timestamp
+three-document build; visual review; canonical web generation and review;
+installation and publication gates.

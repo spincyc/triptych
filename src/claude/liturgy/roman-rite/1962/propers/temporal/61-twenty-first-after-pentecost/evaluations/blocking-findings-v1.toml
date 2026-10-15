@@ -49,12 +49,12 @@ provider = "claude"
 run_id = "a8bcc37ea3420a07"
 workflow = "proper-study"
 workflow_version = 11
-stage = "study-review"
-iteration = 2
+stage = "synthesis-review"
+iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 6
+advisory_count = 11
 observation_count = 1
 
 [[stages]]
@@ -80,6 +80,18 @@ standing = 0
 accepted_count = 0
 advisory_count = 4
 observation_count = 1
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 0
+disposition = "PASS"
+run_id = "a8bcc37ea3420a07"
+workflow = "proper-study"
+workflow_version = 11
+standing = 0
+accepted_count = 0
+advisory_count = 5
+observation_count = 0
 
 [[advisories]]
 stage = "research-review"
@@ -128,6 +140,46 @@ severity = "advisory"
 location = "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/production-review.md:216-218 (Author-study, iteration 2, 'Author proof')"
 problem = "The entries for iterations 0 and 1 record the proof's SHA-256. The entry for iteration 2 records only page count and timestamp. The three-document profile asks the production audit to keep 'checked artifacts and hashes'. The iteration-2 proof, which this review rebuilt byte-identically, is SHA-256 9a690e1d73f6373672b78617e136d8755f9c6028e0ebb174eaa16c2223b6b212."
 required_result = "Add the iteration-2 research-edition proof's SHA-256 to that entry, in the form the iteration-0 and iteration-1 entries use."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-001"
+severity = "advisory"
+location = "sections/concise/10-commentary.tex, unit 'A people on the march', first paragraph, last sentence (physical p. 9): 'The second, with Augustine, hears in both releases the work of mercy.'"
+problem = "The sentence follows Cassiodorus's two releases: the world's pomps leaving the mind, and release a daemonum turba. A reader therefore takes 'both releases' to mean those two. The second reading's actual join is the one the study draws: Israel's release from Egypt and the debtor's release from his debt are both the work of mercy. The study grounds it on Augustine's 'no man is turned away in heart from this world, unless aided by the gift of the Divine mercy' (sections/30-debt-forgiven-from-the-heart.tex, 'The whole Mass around the parable'). Compression has lost that join, and the second reading's view of the Alleluia is unrecoverable here."
+required_result = "Name the two releases the second reading joins, for example 'The second hears in Israel's release and the debtor's remission alike the work of mercy, since no one leaves Egypt in heart unless aided by the Divine mercy (Augustine).' Do this without crediting Augustine with the join to the parable."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-002"
+severity = "advisory"
+location = "sections/concise/10-commentary.tex, unit 'Who is the enemy, and what is the armour?', paragraph beginning 'The armour is armatura Dei' (physical p. 6): '... a figure of the spiritual war (In Ephesios III, PL 26, col. 543).'"
+problem = "The concise merges Jerome's two points into one sentence and ends it with a single citation, col. 543. That column now also covers the wars of Israel (David and Goliath, Josue, the Judges, the Kings). research/scope.md records the wars at cols. 545-546, read on the text layer. The study keeps 'col. 543' with the armour-as-Christ clause, and its wars sentence carries no column. The References' 'cols. 543-546' still lets a reader find it, so nobody is misled about the substance, but the claim-local locus is now wrong."
+required_result = "Cite col. 543 after the armour-as-Christ clause, and cols. 545-546 (or no column) for the wars of Israel."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-003"
+severity = "advisory"
+location = "sections/concise/10-commentary.tex, unit 'A will none resists, and an adversary who asks', paragraph beginning 'The other two readings hear the same two chants' (physical p. 5): 'The third hears Mardochai remind God of \"thy portion, which thou hast redeemed for thyself out of Egypt\" (13:16)'"
+problem = "Esth 13:16 is outside the Introit (Esth 13:9-11). research/interpretations.md requires unsung context to be marked wherever it is used. The study marks this verse ('in lines the Mass does not sing Mardochai reminds God of ...', sections/40-last-exodus-of-the-church.tex). The concise marks 13:15 in the sentence before but not 13:16. The page-1 map's citation keeps a careful reader from mistaking the verse for sung text, which is why this does not block."
+required_result = "Carry the mark to 13:16, for example 'The third hears Mardochai, in the same unsung lines, remind God of ...'."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-004"
+severity = "advisory"
+location = "sections/concise/02-overview.tex, Anagogical row '(Fromage)' (p. 1); sections/concise/10-commentary.tex 'the continuation of The Liturgical Year' (pp. 6, 8, 9) and 'Fromage hears', 'Fromage sets' and 'Fromage reads' (all p. 10)"
+problem = "The body never says that Fromage is the author of the continuation of Gueranger's The Liturgical Year. A reader of the concise alone meets an unidentified 'Fromage' on page 1 and again on page 10. Between those pages, 'the continuation of The Liturgical Year' reads as if it were a different witness. Only the References entry ('The continuation of Prosper Gueranger, The Liturgical Year (Dom Lucien Fromage)') joins the two names. The study makes the identification in its body (sections/10-each-element.tex, 'Lucien Fromage, continuing Dom Gueranger's The Liturgical Year')."
+required_result = "At the first body mention (p. 6), identify him once, for example 'Dom Lucien Fromage, continuing Gueranger's The Liturgical Year, commenting on this Mass, ...'. After that, use one form consistently while keeping the attribution to the continuation. The overview may keep '(Fromage)'."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-005"
+severity = "advisory"
+location = "sections/concise/04-themes.tex, final sentence (physical p. 4): 'The commentary that follows sets the readings' answers beside one another where the texts put the same question to all three.'"
+problem = "This sentence's subject is the document's own commentary, and it describes the editor's method of arrangement. guidance/editorial.md 'State the finding, not the process that produced it' names this form: the guide's own pages as grammatical subject. It occurs once, the preceding sentence already states the finding, and it does not recur as a habit, so it is advisory."
+required_result = "End the themes on the finding: drop the sentence, or recast it with the texts or witnesses as subject. For example, say that the readings part at the Communion over who the persecutors are and when the judgment comes. Keep the themes ending on physical page 4."
 
 [[observations]]
 stage = "study-review"
