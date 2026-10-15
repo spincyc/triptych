@@ -26,7 +26,7 @@ impeded and its collect said within the Mass. The production plan records this
 exact scope opening. The GPT leaf for the same identity is published; this
 is an independent Claude production and borrows nothing from it.
 
-**Accepted; fast-forward to `main` and live verification pending.** Run
+**Complete: accepted, pushed to `main` and verified live.** Run
 `a8bcc37ea3420a07` (`proper-study` v11) reached ACCEPTED at its publication
 gates with no escalation: 59 packets, 59 accepted results, two
 interventions. Every agent stage ran as a fresh `claude-opus-5-5[1m]` subagent
@@ -46,8 +46,17 @@ The run is archived in the leaf under
 every cycle, the 20 standing findings and what is left for other owners,
 including a rights question about the tracked Bellarmine transcription, is
 [CYCLES.md](workflows/reviews/claude-1962-61-production-2026-10-15/CYCLES.md).
-Work is committed on `feature/propers/claude` and reaches `main` by
-fast-forward after the local deploy gates pass.
+`make check-sources`, `check-publication-inventories`,
+`check-release-bindings`, `check-web-editions-current` and `tmt check` pass.
+`main` was fast-forwarded from `dcf5d7761` to `6ec801dc6` after
+`make check-deployment-sources`, `make public-site` and `tools/tpt
+public-alpha verify --deployment-target github-pages` passed locally. Pages
+run `38788933540` and repository-hygiene run `38788933530` succeeded; the
+three PDFs, the web page and the Traditional Latin Mass catalog are served
+byte-identical to the locally verified site, and the catalog row links all
+four Claude artifacts. The
+[deployment evidence](workflows/reviews/claude-1962-61-production-2026-10-15/deployment-evidence.json)
+records the gates, the disclosure scan and the five live routes.
 
 ## October 18 Novus Ordo main integration, 2026-10-14
 

@@ -278,6 +278,17 @@ run to adopt them; do not alter historical terminal records, restamp accepted
 verdicts or try to resume a terminal blocked run. Existing schema-1 conversion
 and historical publication validation are unchanged.
 
+A driver archives a terminal run into its leaf with
+`tools/proper-study-run-archive <run-id> --cycles <cycles-record>`, which
+verifies every result and packet against the run's state before it writes.
+While a run is live, land nothing that its stages do not own. The
+`proper-study-v4` research seal covers every module the chronology
+computation compiles, `scripts/_tooling.py` included, so registering any tool
+mid-run stales the accepted research review. The artifact gate then routes
+back to research, and the linear pipeline reruns every stage after it. The
+Claude 1962 Twenty-first Sunday run `a8bcc37ea3420a07` spent nine stages that
+way on 15 October 2026.
+
 ## Overview
 
 The deterministic AI-guidance workflow engine drives a cycle of fresh AI
