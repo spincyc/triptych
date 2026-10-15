@@ -49,12 +49,24 @@ provider = "claude"
 run_id = "a8bcc37ea3420a07"
 workflow = "proper-study"
 workflow_version = 11
-stage = "synthesis-review"
-iteration = 0
+stage = "homily-review"
+iteration = 1
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 11
+advisory_count = 13
+observation_count = 2
+
+[[stages]]
+stage = "homily-review"
+iteration = 1
+disposition = "PASS"
+run_id = "a8bcc37ea3420a07"
+workflow = "proper-study"
+workflow_version = 11
+standing = 0
+accepted_count = 0
+advisory_count = 2
 observation_count = 1
 
 [[stages]]
@@ -92,6 +104,22 @@ standing = 0
 accepted_count = 0
 advisory_count = 5
 observation_count = 0
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-006"
+severity = "advisory"
+location = "sections/homily/10-homily.tex lines 43-45 ('Who is that servant? St~Augustine answers that every one of us is both men in this story at once. We owe God a debt we cannot pay. And somewhere there is someone who owes us.')"
+problem = "The question asks about one servant, and the answer credits Augustine with saying that each of us is 'both men in this story', which a listener naturally hears as both the forgiven servant and the fellow servant. The two sentences that follow describe only the first servant's double position: a debtor to God who has a debtor of his own. That is what Sermon 83.2 states as its rule ('every man is at once God's debtor, and hath also some brother a debtor to himself'). The attribution and the gloss therefore do not match, and a listener cannot tell which two 'men' are meant."
+required_result = "Make the attributed sentence say what the gloss says and what Augustine says. For example: every one of us stands where that servant stands, at once a debtor to God and the creditor of some brother. Alternatively, keep 'both men' and add Augustine's other clause, that every man is also bound to his brother by some sin, so that the listener hears both roles."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-007"
+severity = "advisory"
+location = "sections/homily/10-homily.tex line 64 ('He goes ``straightway'', Chrysostom notices') against line 101 ('Explaining this passage, St~John Chrysostom says something startling')"
+problem = "Chrysostom is first named by his bare surname, in a parenthetical clause, and is quoted twice more under that name. The full form 'St John Chrysostom' appears only at the fourth mention, where it sounds like an introduction. A listener meets an unexplained name first and a belated introduction later. Augustine and Aquinas are both introduced in full at first mention."
+required_result = "Give the full name, 'St John Chrysostom', at line 64, and use the short form at line 101 and afterwards."
 
 [[advisories]]
 stage = "research-review"
@@ -180,6 +208,11 @@ severity = "advisory"
 location = "sections/concise/04-themes.tex, final sentence (physical p. 4): 'The commentary that follows sets the readings' answers beside one another where the texts put the same question to all three.'"
 problem = "This sentence's subject is the document's own commentary, and it describes the editor's method of arrangement. guidance/editorial.md 'State the finding, not the process that produced it' names this form: the guide's own pages as grammatical subject. It occurs once, the preceding sentence already states the finding, and it does not recur as a habit, so it is advisory."
 required_result = "End the themes on the finding: drop the sentence, or recast it with the texts or witnesses as subject. For example, say that the readings part at the Communion over who the persecutors are and when the judgment comes. Keep the themes ending on physical page 4."
+
+[[observations]]
+stage = "homily-review"
+location = "propers/verified.md, 'Publication basis', English of the Sunday's orations; sections/homily/10-homily.tex lines 112-113 and 131-132"
+note = "The speech quotes the 1861 Cummiskey English of the Introit ('All things, O Lord, are in thy power: and no one can resist thy will') and of the Communion ('when wilt thou judge those who persecute me?'), but no registered passage record covers those lines. This review confirmed both readings on the registered scan's page images (SHA-256 85034c90... matched; PDF pp. 459 and 461). A passage record would let later stages verify them without fetching the scan again."
 
 [[observations]]
 stage = "study-review"
