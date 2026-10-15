@@ -1,0 +1,477 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "STU-005",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/20-armour-under-providence.tex:291-304 (third objection; proof p. 20), sections/40-last-exodus-of-the-church.tex:226-243 (second objection; p. 29) and sections/50-comparison.tex:68-92 ('Where they differ'; p. 31)",
+      "problem": "Unchanged since iteration 2. The three files are byte-identical to the sealed bytes and were re-read for this review. Each passage names the same four witnesses on the Communion's plea in near-identical words. These are Hilary's present power and 'not the judgment of the resurrection', Augustine's martyrs and the Church's persecutors, Bellarmine's 'wicked who persecute and tempt', and Cassiodorus joining 'the devil with his ministers' to 'the judgment at the end of the world'. Each then says the Fathers differ 'in what is asked and in whom the plea names, not only in the time', and that the answers are compatible but not identical through Thomas's instruments moved by the devil. Every account is accurate. Read straight through, the reader meets the same comparison three times in twelve pages, which works against the profile's 'one fullest home'.",
+      "required_result": "Keep the full account of the four witnesses in 50-comparison.tex only. In each reading's objection, state that reading's own answer and the chief contrary one in a sentence or two, keeping the qualifications that make them true: what is asked and whom the plea names differ, not only the time, and the answers are compatible but not the same. Then point to the comparison. Do not reintroduce any claim that the witnesses agree on the persecutors or on the thing asked.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-013",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/20-armour-under-providence.tex:291-298 ('Hilary asks for power in this life ... what the prophet now asks'; 'The Fathers differ', line 297; p. 20), sections/40-last-exodus-of-the-church.tex:236-243 ('The Fathers differ', lines 236-237; 'without making it the only one', line 243; p. 29) and sections/50-comparison.tex:68-69 ('it is a difference between Fathers, not only between readings'; p. 31)",
+      "problem": "Unchanged since iteration 2; the files are byte-identical to the sealed bytes. There are three small slips. (1) 'The Fathers differ' (20, 40), and in the comparison 'a difference between Fathers', follow lists that include St Robert Bellarmine and Cassiodorus. Neither is a Father: author-standing-v1.toml records Bellarmine as 'doctor' and Cassiodorus as 'ecclesiastical-writer'. The comparison instance was not named at iteration 2 but is the same slip. (2) In 20 one sentence says both 'Hilary asks for power in this life' and 'what the prophet now asks'. In Hilary's text the prophet prays and Hilary expounds, so the reader cannot tell who is asking. (3) 40 ends with 'without making it the only one'. That clause tells the reader the study's own stance, a form the 1962 profile excludes ('Do not tell the reader ... that the guide has declined to press an inference'). None of the three misstates a witness's position.",
+      "required_result": "Say 'the witnesses differ' (or name them) in place of 'the Fathers differ' and 'a difference between Fathers' wherever Bellarmine or Cassiodorus is included. In 20, make the prophet the one who asks in Hilary's reading (for example 'In Hilary's reading the prophet asks for power in this life ... and what he now asks is not ...'). Delete 'without making it the only one'.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-014",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/production-review.md:216-223 (Author-study, iteration 2, 'Author proof')",
+      "problem": "Still true. The entries for author-study iterations 0 and 1 record the proof's SHA-256, but the iteration-2 entry records only page count and timestamp. The three-document profile asks the production audit to keep 'checked artifacts and hashes'. The new author-study iteration-3 entry (lines 844-848) records the hash of the current proof, e7c90080f6a14ba875742ebe822a86d3192027ae36c9a43a404d1ae1e1968285, which this review reproduced by rebuild. The gap is therefore confined to the superseded iteration-2 proof, SHA-256 9a690e1d73f6373672b78617e136d8755f9c6028e0ebb174eaa16c2223b6b212 (recorded in the study-review-2 result).",
+      "required_result": "Add the iteration-2 research-edition proof's SHA-256 to that entry, in the form the iteration-0 and iteration-1 entries use.",
+      "severity": "advisory"
+    },
+    {
+      "accepted_because": "The sense is unchanged and no reader is misled. Repairing one word would reopen a study that has passed cold review and is sealed, forcing a rebuild and re-review of it and its dependants for a single connective.",
+      "id": "STU-015",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/10-each-element.tex:89-90 (Introit verse: Augustine, Enarr. in Ps. 118, sermon 1.1; proof p. 9)",
+      "problem": "The quotation reads ``if thou wouldest be blessed, be undefiled''. The tracked NPNF1-8 text (artifact ccel-npnf108-text-d6841950, line 56736) reads 'if then thou wouldest be blessed, be undefiled'. The connective 'then' is dropped inside the quotation without an ellipsis.",
+      "required_result": "On the study's next substantive revision, restore 'then' ('if then thou wouldest be blessed, be undefiled') or mark the omission.",
+      "severity": "accepted"
+    }
+  ],
+  "iteration": 3,
+  "observations": [
+    {
+      "location": "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/historical-text-357551e1/artifact.toml (rights_basis; notes) and text.txt line 53",
+      "note": "This stands from earlier rounds, and the record is unchanged since. The artifact record treats the whole transcription, 'both prefaces' included, as O'Sullivan's 1866 public-domain text, yet text.txt line 53 marks Preface II as a manuscript preface 'translated by Michael J. Miller'. The study paraphrases both prefaces, quotes neither, and credits Miller in its References, so it is unaffected. The record's rights and provenance basis needs the source-library owner's attention."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "appointed-texts",
+          "kind": "appointed-text",
+          "path": "sections/05-appointed-texts.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/context.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "appointed-texts"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "each-element",
+          "kind": "proper-treatment",
+          "path": "sections/10-each-element.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "armour-under-providence",
+          "kind": "interpretive-lane",
+          "path": "sections/20-armour-under-providence.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "debt-forgiven-from-the-heart",
+          "kind": "interpretive-lane",
+          "path": "sections/30-debt-forgiven-from-the-heart.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "last-exodus-of-the-church",
+          "kind": "interpretive-lane",
+          "path": "sections/40-last-exodus-of-the-church.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "armour-under-providence",
+            "debt-forgiven-from-the-heart",
+            "last-exodus-of-the-church"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "scriptural-date-location",
+          "kind": "front-matter",
+          "path": "sections/80-date-location.tex",
+          "references": [
+            "format.tex",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml",
+            "research/chronology-profile-comparisons.toml",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Jerome",
+            "Hilary of Poitiers",
+            "Thomas Aquinas",
+            "Rabanus Maurus",
+            "Robert Bellarmine",
+            "Rupert of Deutz",
+            "William Durandus",
+            "Sicard of Cremona",
+            "Alfredo Ildefonso Schuster",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "armour-under-providence"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "armour-under-providence",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Jerome",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Rabanus Maurus",
+            "Alphonsus Liguori",
+            "Cassiodorus",
+            "Alfredo Ildefonso Schuster",
+            "Lucien Fromage",
+            "Rupert of Deutz",
+            "William Durandus",
+            "Honorius Augustodunensis"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "debt-forgiven-from-the-heart"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "debt-forgiven-from-the-heart",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Robert Bellarmine",
+            "Gregory the Great",
+            "Cassiodorus",
+            "Hilary of Poitiers",
+            "Lucien Fromage",
+            "Alfredo Ildefonso Schuster",
+            "Honorius Augustodunensis",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "last-exodus-of-the-church"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "last-exodus-of-the-church",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/format.tex": "7e1fb4f1e00ddb34599fff75ba5693875f1d6d30a20ab32e3e7fb79528a43322",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/main.tex": "2e98147e675e43395d763e24bdf16a2a163a518609ec994c5e302af47404a044",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/propers/verified.md": "1038db2ede08aac7ac07340a961bbcb6d55dd749a13aa66f335276fb888e43ba",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology-annotations.tex": "2939236e5d2ed65886eaf5e274423e01fb376e7715c2deba84b666b554c490e7",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology-profile-comparisons.toml": "1d7a538bc40cbe8f7d50f5136523fa3879fd042cf3965e244cdb9338c0d1f97b",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology.toml": "1afefba9c69716f1f0c59dbc999b73094e383f008094eec550d79aa2b2b00114",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/context.md": "0f3731e1cbcc4ac267eaeded250444fe6b88ffa9024320b2ae4e8e633e96d1d4",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/interpretations.md": "53b4147611d91e177806870fb0d91f9366bfc1dbd94ca204a81666248de630ac",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md": "0e6a972ed7c55170713262facf1f944afd3f375d221af948257ee3e7268b3e45",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/source-bindings.toml": "9f9ea7c6e5387b8e60397ecfb643a9ae88f25c02881b7de65c451b26a509c695",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/00-opening.tex": "e73171a84a4fd64ed3c141ef6a1b0c64b362a0fb475c5789fc64fb18aa97f63e",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/05-appointed-texts.tex": "d992f988272fbe6e77474b342c79ffe6b03fbe1f9e3eaa0688a071665ae7f164",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/10-each-element.tex": "62d6b31b42760c2231ede600f463682a21816500787862fed2d10a4ddd933adc",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/20-armour-under-providence.tex": "e41afcf8981139eeada4ad2fdb063c1643a56fe4ab88bd97cdfc888cdf62baab",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/30-debt-forgiven-from-the-heart.tex": "a65ad64999d30eb094b9da12a38fc03e5cf8edb973518bcb43614b64923714ab",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/40-last-exodus-of-the-church.tex": "b475f2fced489c79d2c866b1cb217fdc5421fac4b35185b4073eaf78c9ffe0cf",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/50-comparison.tex": "9a8b2c1dfb55bca08d1f0031c7f46cb8ab02fe16e53c93e6f4ae192c7f9974b3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/80-date-location.tex": "a4e8da2a828a471c27e4710e48cce4a977ccf80268356813220bb3bf52add1cf",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/90-apparatus.tex": "2b16317590259b18f73607ecccac01f0f7ea8c723d8e48bb50dea8fba415e9ac",
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "11",
+            "17f12ad495885888db9045416b60df5bc828dccdf9f1eab5a1edb648cc280964",
+            "a8bcc37ea3420a07",
+            "cc2e968320e2416ef9049f1c6910ac281df8feb9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Cold review, iteration 3, of the research-edition study of the 1962 Twenty-first Sunday after Pentecost (main.tex and its nine sections; PDF 37 pages, SHA-256 e7c90080...). Why it is repeated was verified, not trusted. Research-review 2 and 3 seals differ only in chronology_computation_inputs scripts/_tooling.py (19e041b8... to 86c302fc..., commit b9786e912, which only registers a tool). This packet's REVIEW_INPUTS equal study-review-0002's in every field, its fragments are byte-identical, and all 21 sealed files re-hash equal on disk. No study content changed. Files that moved (REVIEW_SCOPE): generation-metadata.tex now has timestamp 16:27:39Z and the derive-synthesis and derive-homily contributions; its header matches the run, and check-generation-metadata --pdf passes on the study PDF. The build-artifacts and author-study-3 entries of production-review.md are accurate: seal re-hash, 37 pages, the SHA, and 24,876 extracted words, reproduced here. All 30 hashes in artifacts.json match disk. The concise page 2's 11 orientation rows are byte-identical to the study's, so its chronology has its reviewed home here. A fixed-point scratch rebuild settled at pass 2. It is byte-identical to the build PDF, with no warning or bad box, and all 14 study-preflight-0003 gates passed. The study was read whole. Three readings with distinct questions each engage all ten elements and have their own four senses. Each has two carrying Fathers with developed reasoning: Gregory and Chrysostom; Chrysostom and Augustine; Augustine and Chrysostom. Consequential-difficulty test on reading 1, which earlier rounds had not run. The difficulty is the Introit's 'non est qui possit resistere voluntati tuae' against the Offertory's 'Satan petiit ... data est ei potestas a Domino'. It was tested at Gregory, Moralia Pref. 7-8 (tracked Oxford text lines 157-162 deficeret/proficeret, 177-178), II.19 (2179-2200) and IX.5 (14365-14388), and at Aquinas, Super Iob c. 1 on Job 1:12 (Corpus Thomisticum cio01.html, read 2026-10-15: 'non quantum vult sed quantum permittitur'; 'voluntas nocendi ... ex se ipso sed potestas non nisi a Deo'; 'ab intentione providentiae ... recedens licet ordinem providentiae effugere non valens'), and ST I q.103 a.7 (tracked English, sed contra on Esth 13:9). Outcome: the inferences are reported accurately, and the study poses the dilemma before resolving it. The test passes. Quotation sweep against tracked texts: Chrysostom, Hom. in Eph. 22-24 and Hom. in Matth. 61; Augustine, Sermons 83 and 58, De serm. Dom. I.22.77, and Enarr. 89, 113 and 118; Aquinas, Super Matth. 18 (Venice 1745 OCR 31161-31283: Job 10:20, subiicitur daemonibus, per ingratitudinem); Bellarmine; Fromage; Schuster. All are present, except one dropped word (STU-015, accepted). Limits: PL 9, PL 26, PG 27, Cassiodorus, Rabanus, Durandus, Honorius and Sicard were not re-opened. Rubrics and occurrence were taken from the four-times-reviewed research record. Only page 33 and the final page were inspected in the render. Verdict PASS, with no blocking finding. Advisories STU-005, STU-013 (extended to its comparison instance) and STU-014 are carried unchanged in substance. STU-012 is retired, because its owner's review took it up as RES-014 and RES-015."
+}

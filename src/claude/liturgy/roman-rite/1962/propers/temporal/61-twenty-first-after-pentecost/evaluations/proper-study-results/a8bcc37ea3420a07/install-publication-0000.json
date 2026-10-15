@@ -1,0 +1,7 @@
+{
+  "artifact_path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.pdf",
+  "disposition": "PASS",
+  "iteration": 0,
+  "stage": "install-publication",
+  "summary": "Confirmed the artifact snapshot current (artifacts phase exits 0; all 32 recorded hashes match), then installed the three reviewed PDFs with plain make install-doc (no retypesetting; build and installed bytes equal the accepted hashes b29d4ebd..., 963401884..., 2137ef1d...), installed the reviewed canonical web Markdown byte for byte (9681daa5..., 148,073 bytes), created three alpha release records with make add-publication for library/traditional-latin-mass.md, wired the Claude cell of TLM row 61 in Full/Synthesis/Homily/Read order with one claude:-prefixed marker (gpt is primary), regenerated the document catalogue, refreshed release bindings with a scoped ONLY refresh (5 changes, 0 stale), refreshed and classified the Claude publication source inventory (60->61 publications, 1751->1786 files), and recorded the engine results and installation facts in research/production-review.md. Staging the web Markdown is left to the driver, which alone runs git add: until it is staged the publication-phase check refuses on git pathspec; against a scratch copy of the index with that file added it exits 0, and release-bindings, public-alpha, document-library, publication-inventories, web-editions-current and check-sources all exit 0 in the pinned Markdown 3.10.3 environment."
+}

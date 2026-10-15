@@ -49,41 +49,29 @@ provider = "claude"
 run_id = "a8bcc37ea3420a07"
 workflow = "proper-study"
 workflow_version = 11
-stage = "homily-review"
-iteration = 1
+stage = "web-review"
+iteration = 0
 disposition = "PASS"
 standing = 0
-accepted_count = 0
-advisory_count = 13
-observation_count = 2
+accepted_count = 1
+advisory_count = 19
+observation_count = 7
 
 [[stages]]
 stage = "homily-review"
-iteration = 1
+iteration = 3
 disposition = "PASS"
 run_id = "a8bcc37ea3420a07"
 workflow = "proper-study"
 workflow_version = 11
 standing = 0
 accepted_count = 0
-advisory_count = 2
+advisory_count = 3
 observation_count = 1
 
 [[stages]]
 stage = "research-review"
-iteration = 2
-disposition = "PASS"
-run_id = "a8bcc37ea3420a07"
-workflow = "proper-study"
-workflow_version = 11
-standing = 0
-accepted_count = 0
-advisory_count = 2
-observation_count = 0
-
-[[stages]]
-stage = "study-review"
-iteration = 2
+iteration = 3
 disposition = "PASS"
 run_id = "a8bcc37ea3420a07"
 workflow = "proper-study"
@@ -94,7 +82,43 @@ advisory_count = 4
 observation_count = 1
 
 [[stages]]
+stage = "study-review"
+iteration = 3
+disposition = "PASS"
+run_id = "a8bcc37ea3420a07"
+workflow = "proper-study"
+workflow_version = 11
+standing = 0
+accepted_count = 1
+advisory_count = 3
+observation_count = 1
+
+[[stages]]
 stage = "synthesis-review"
+iteration = 2
+disposition = "PASS"
+run_id = "a8bcc37ea3420a07"
+workflow = "proper-study"
+workflow_version = 11
+standing = 0
+accepted_count = 0
+advisory_count = 6
+observation_count = 1
+
+[[stages]]
+stage = "visual-review"
+iteration = 1
+disposition = "PASS"
+run_id = "a8bcc37ea3420a07"
+workflow = "proper-study"
+workflow_version = 11
+standing = 0
+accepted_count = 0
+advisory_count = 3
+observation_count = 1
+
+[[stages]]
+stage = "web-review"
 iteration = 0
 disposition = "PASS"
 run_id = "a8bcc37ea3420a07"
@@ -102,119 +126,201 @@ workflow = "proper-study"
 workflow_version = 11
 standing = 0
 accepted_count = 0
-advisory_count = 5
-observation_count = 0
+advisory_count = 0
+observation_count = 2
+
+[[accepted]]
+stage = "study-review"
+id = "STU-015"
+severity = "accepted"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/10-each-element.tex:89-90 (Introit verse: Augustine, Enarr. in Ps. 118, sermon 1.1; proof p. 9)"
+problem = "The quotation reads ``if thou wouldest be blessed, be undefiled''. The tracked NPNF1-8 text (artifact ccel-npnf108-text-d6841950, line 56736) reads 'if then thou wouldest be blessed, be undefiled'. The connective 'then' is dropped inside the quotation without an ellipsis."
+required_result = "On the study's next substantive revision, restore 'then' ('if then thou wouldest be blessed, be undefiled') or mark the omission."
+accepted_because = "The sense is unchanged and no reader is misled. Repairing one word would reopen a study that has passed cold review and is sealed, forcing a rebuild and re-review of it and its dependants for a single connective."
 
 [[advisories]]
 stage = "homily-review"
 id = "HOM-006"
 severity = "advisory"
 location = "sections/homily/10-homily.tex lines 43-45 ('Who is that servant? St~Augustine answers that every one of us is both men in this story at once. We owe God a debt we cannot pay. And somewhere there is someone who owes us.')"
-problem = "The question asks about one servant, and the answer credits Augustine with saying that each of us is 'both men in this story', which a listener naturally hears as both the forgiven servant and the fellow servant. The two sentences that follow describe only the first servant's double position: a debtor to God who has a debtor of his own. That is what Sermon 83.2 states as its rule ('every man is at once God's debtor, and hath also some brother a debtor to himself'). The attribution and the gloss therefore do not match, and a listener cannot tell which two 'men' are meant."
-required_result = "Make the attributed sentence say what the gloss says and what Augustine says. For example: every one of us stands where that servant stands, at once a debtor to God and the creditor of some brother. Alternatively, keep 'both men' and add Augustine's other clause, that every man is also bound to his brother by some sin, so that the listener hears both roles."
+problem = "Unchanged since iteration 1: the file is byte-identical to the sealed bytes, and I re-read the passage and its locus for this review. The attributed sentence says that each of us is 'both men in this story', which a listener hears as both the forgiven servant and the fellow servant. The two glossing sentences describe only the forgiven servant's double position, a debtor to God who has a debtor of his own. That is the rule Sermon 83.2 states ('every man is at once God's debtor, and hath also some brother a debtor to himself', NPNF1-6 lines 34993-34995). Augustine's other clause, that every man is also 'bounden to his brother by some sin' (lines 34998-34999), is what would make him both men, and the speech does not say it. The listener therefore cannot tell which two men are meant."
+required_result = "Make the attributed sentence say what the gloss says and what Augustine says, for example that every one of us stands where that servant stands, at once a debtor to God and the creditor of some brother. Alternatively, keep 'both men' and add Augustine's other clause, that every man is also bound to his brother by some sin, so that the listener hears both roles."
 
 [[advisories]]
 stage = "homily-review"
 id = "HOM-007"
 severity = "advisory"
 location = "sections/homily/10-homily.tex line 64 ('He goes ``straightway'', Chrysostom notices') against line 101 ('Explaining this passage, St~John Chrysostom says something startling')"
-problem = "Chrysostom is first named by his bare surname, in a parenthetical clause, and is quoted twice more under that name. The full form 'St John Chrysostom' appears only at the fourth mention, where it sounds like an introduction. A listener meets an unexplained name first and a belated introduction later. Augustine and Aquinas are both introduced in full at first mention."
+problem = "Unchanged since iteration 1; the file is byte-identical to the sealed bytes. Chrysostom is first named by his bare surname, in a parenthetical clause, and is quoted twice more under that name (lines 71 and 85). The full form 'St John Chrysostom' first appears at the fourth mention, where it sounds like an introduction. The listener therefore meets an unexplained name first and a belated introduction later. Augustine and Aquinas are both introduced in full at first mention."
 required_result = "Give the full name, 'St John Chrysostom', at line 64, and use the short form at line 101 and afterwards."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-008"
+severity = "advisory"
+location = "sections/homily/10-homily.tex lines 40-41 ('And the servant asks only for time. He is given the whole debt.')"
+problem = "Unchanged since iteration 2, when it was first raised; the file is byte-identical to the sealed bytes. In current English, to be 'given' a debt means to be made to owe it. The intended sense is that the whole debt is remitted, and that needs 'forgiven'. The obsolete sense of 'give' as 'remit' is not available to a modern assembly. The sentence announces the parable's first gift in a homily whose subject is a debt that is forgiven and then 'comes back'. Its literal sense is the opposite of the intended one, at the place where the contrast with 'asks only for time' should be clearest. The witness the speech follows here says it plainly: 'He gave more than he asked, remission and forgiveness of the entire debt' (Chrysostom, Hom. 61.3, NPNF1-10 lines 34993-34995, re-located for this review). Most listeners will recover the sense from the contrast, and the next movement opens 'the king forgives with a word', so this is advisory only."
+required_result = "Say 'He is forgiven the whole debt', or 'He is given the remission of the whole debt', keeping the contrast with 'asks only for time'. No other change is needed."
 
 [[advisories]]
 stage = "research-review"
 id = "RES-012"
 severity = "advisory"
 location = "propers/verified.md, 'St Luke's orations in the 1862 (research iteration 2)', the Oratio, Secreta and Postcommunio rows of the collation table"
-problem = "On PDF p. 770, read at 300 dpi, the 1962 prints the Collect's 'pro tui nóminis honóre, portávit' with a comma, and verified.md's own transcription of no. 3883 keeps it. On scan PDF p. 646, read at 300 dpi, the 1862 prints 'pro tui nóminis ho-/nóre portávit' with no comma. The Oratio row's 'Kind of difference' cell lists the comma after quæsumus, the unaccented quæsumus and júgiter, but not this difference. The Secreta and Postcommunio rows likewise omit the 1862's unaccented 'quæsumus' (1962 'quǽsumus'), although the Oratio row lists it. The 'same words' conclusion and the publication basis are unaffected."
+problem = "Unchanged since iteration 2. The file is byte-identical to the sealed bytes, and its table rows and its transcription of no. 3883 were re-read for this review. The page readings that follow are iteration 2's and were not repeated here. On PDF p. 770, read at 300 dpi, the 1962 prints the Collect's 'pro tui nóminis honóre, portávit' with a comma, and verified.md's own transcription of no. 3883 keeps it. On scan PDF p. 646, read at 300 dpi, the 1862 prints 'pro tui nóminis ho-/nóre portávit' with no comma. The Oratio row's 'Kind of difference' cell lists the comma after quæsumus, the unaccented quæsumus and júgiter, but not this difference. The Secreta and Postcommunio rows likewise omit the 1862's unaccented 'quæsumus' (1962 'quǽsumus'), although the Oratio row lists it. The 'same words' conclusion and the publication basis are unaffected."
 required_result = "Add 'no comma after honóre' to the Oratio row, and 'quæsumus for quǽsumus' to the Secreta and Postcommunio rows. Alternatively, state that the table does not list every accent or pointing difference."
 
 [[advisories]]
 stage = "research-review"
 id = "RES-013"
 severity = "advisory"
-location = "research/interpretations.md 3.3 'What follows' ('each draws his time from his own reading of the unsung v. 84a'; 'it neither needs nor uses the unsung Quot sunt dies'); research/scope.md 4.4 closing paragraph ('the difference is driven by how each reads the unsung v. 84a … Augustine takes it as the body of Christ asking about its days and so the judgment as the end, until which the Church remains')"
-problem = "These iteration-2 sentences say that Augustine draws his end-directed time from the unsung v. 84a. Reading 3's controlling claim is that same Augustinian answer: the judgment is the end, and the Church remains on earth until it. Yet 3.3 then says that reading 3 rests on what Augustine says of the sung v. 84b, and 'neither needs nor uses' v. 84a. At NPNF1-8 lines 58205-58216, Augustine's 'showing indeed that the Church would exist on earth until the judgment' explains why the judgment question follows the days question ('when he had enquired concerning the days, he added also respecting the judgment'). The martyrs' plea answered by long-suffering (Rev 6:10-11), and 'when vengeance shall fall upon Her persecutors', bear on the judgment question itself. Section 3.2 states that bearing, but 3.3 and 4.4 now describe the reading's dependence on the unsung half in two incompatible ways. The reading itself stands on the sung words through Augustine's martyrs' plea, Cassiodorus, the PG 27 exposition at v. 86b and Aquinas on the reckoning. The defect is therefore in the record's account of itself, not in its evidence."
+location = "research/interpretations.md 3.3 'What follows' (lines 581-590: 'each draws his time from his own reading of the unsung v. 84a'; 'it neither needs nor uses the unsung Quot sunt dies'); research/scope.md 4.4 closing paragraph (lines 1145-1157: 'the difference is driven by how each reads the unsung v. 84a ... Augustine takes it as the body of Christ asking about its days and so the judgment as the end, until which the Church remains')"
+problem = "Unchanged since iteration 2; both files are byte-identical to the sealed bytes. These sentences say that Augustine draws his end-directed time from the unsung v. 84a. Reading 3's controlling claim is that same Augustinian answer: the judgment is the end, and the Church remains on earth until it. Yet 3.3 then says that reading 3 rests on what Augustine says of the sung v. 84b, and 'neither needs nor uses' v. 84a. At NPNF1-8 lines 58205-58216 (re-read for this review), Augustine's 'showing indeed that the Church would exist on earth until the judgment' explains why the judgment question follows the days question ('when he had enquired concerning the days, he added also respecting the judgment'). The martyrs' plea answered by long-suffering, and 'when vengeance shall fall upon Her persecutors', bear on the judgment question itself. Section 3.2 states that bearing, but 3.3 and 4.4 describe the reading's dependence on the unsung half in two incompatible ways. The reading itself stands on the sung words, so the defect is in the record's account of itself, not in its evidence."
 required_result = "Make 3.3 and 4.4 agree. One way: say that Augustine's 'the Church on earth until the judgment' comes from the order of the verse's two questions, the first of which is unsung. Then name what reading 3 takes from his comment on the sung half: the martyrs' plea answered by long-suffering, and the vengeance at the judgment. The other way: drop 'neither needs nor uses', and label the Augustinian 'until the judgment' as drawn in part from the unsung days question."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-014"
+severity = "advisory"
+location = "research/scope.md 3.5, Bellarmine authorship entry (line 483, 'His judgment stands against Augustine's Enarr. 89.2'); 4.7 (line 1200, 'A real disagreement between a Doctor's probable judgment for the title ... and a Father's judgment against Moses' entire authorship'); 7.4 (line 1419, 'For Moses: the title itself, and Bellarmine'; line 1434, 'the title and Bellarmine are for Moses'). Routed to this review as STU-012 (research/production-review.md, author-study iterations 1 and 2)."
+problem = "This was checked at the bound locus and holds. The O'Sullivan transcription (artifact ...historical-text-357551e1, text.txt) prints Preface II §5 (line 63) directly after the §4 sentence the record quotes: 'But neither is it improbable, it is perhaps even more likely, that all of the Psalms are by David, as Saint Augustine maintains in Book 17 of The City of God, Chapter 14'. Preface I §5 (line 47) also calls the Davidic opinion 'more probable'. In the bound locus 'Psalm 89:1-7, lines 3209-3226', Bellarmine's own exposition of Ps 89 names the psalmist as David: 'David is not alone in denouncing such folly' (v. 6, line 3223); compare v. 8, line 3227. The record omits §5 and the exposition. It files Bellarmine 'For Moses' and says that his judgment 'stands against' Enarr. 89.2. In 4.7 it calls his position a 'probable judgment for the title'. In fact both prefaces make the Davidic view his probable judgment, and that is the view he credits to Augustine. He admits Moses only as 'not unlikely' or 'acceptable'. He and Augustine therefore differ only on whether Mosaic authorship is admissible. The iteration-0 required result of RES-001 itself prescribed the 'for Moses ... Augustine against' framing. The 7.4 parenthesis does keep the 'more probable' preference, and no reading rests on Ps 89's unsung title (4.7). The study (sections/10-each-element.tex, 80-date-location.tex) states the narrow difference correctly, as does the concise page-2 row ('the unsung title of Ps 89 names Moses'), so no reader is misled. The defect is the record misplacing a Doctor's preferred opinion, which is how STU-002 entered the first study draft."
+required_result = "On the research record's next revision, add Preface II §5 (line 63) and the Davidic reading of the Ps 89 exposition (v. 6, line 3223) to the 3.5 entry. In 3.5, 4.7 and 7.4, describe Bellarmine as admitting Mosaic authorship as tenable while preferring David's, with Augustine. That puts him with Augustine except on whether Moses is admissible. Restate 7.4's 'what the studies may say' to match."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-015"
+severity = "advisory"
+location = "research/interpretations.md 4.1, line 674 ('All three use Chrysostom; two use Augustine; Gregory and Aquinas serve readings 1 and 3'). Routed to this review as part of STU-012."
+problem = "The same record makes Aquinas a contributing witness to reading 2: the 2.2 witness list and the carrying-author line (lines 356-357); the 2.3 inference; the 2.5 allegorical and anagogical senses; and 2.7. Section 4.4 also meets reading 2's most demanding feature, the reversed pardon, 'with Aquinas's distinction kept'. At the locus (Opera, Venice 1745, t. 3, tracked OCR lines 31278-31283), he says 'Hic videtur innuere quod peccata dimissa redeant, sicut vult Origenes ... Sed hoc non videtur, eo quod remissio efficaciam habet a sacramentis ... Dicuntur autem redire per ingratitudinem.' The 4.1 summary therefore contradicts the record's own sections: Aquinas serves all three readings. The study's comparison repeated 4.1 and was corrected under STU-003, and sections/50-comparison.tex now states it correctly, so no reader is misled."
+required_result = "On the research record's next revision, correct 4.1 to say that Aquinas serves all three readings (reading 2 through Super Matth. 18 on sins said to return per ingratitudinem) and that Gregory serves readings 1 and 3."
 
 [[advisories]]
 stage = "study-review"
 id = "STU-005"
 severity = "advisory"
 location = "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/20-armour-under-providence.tex:291-304 (third objection; proof p. 20), sections/40-last-exodus-of-the-church.tex:226-243 (second objection; p. 29) and sections/50-comparison.tex:68-92 ('Where they differ'; p. 31)"
-problem = "This recurs within the advisory filed at iteration 0, which named the Hilary-Augustine difference on the Communion as argued three times. Iteration 1 reduced the two readings' versions to pointers. The STU-011 repair has expanded them again into full accounts of four witnesses. Each of the three passages now names, in near-identical words, Hilary's present power and 'not the judgment of the resurrection', Augustine's martyrs and the Church's persecutors, Bellarmine's 'wicked who persecute and tempt', and Cassiodorus joining 'the devil with his ministers' to 'the judgment at the end of the world'. Each then says the Fathers 'differ in what is asked and in whom the plea names, not only in the time' and that the answers are 'compatible, not identical' through Thomas's 'instruments moved by the devil'. That is about 120, 170 and 250 words; 40 and 50 share 34 eight-word sequences. Every account is now accurate. A reader reading straight through meets the same comparison three times in twelve pages, which works against the profile's 'one fullest home'."
-required_result = "Keep the full account of the four witnesses in 50-comparison.tex only. In each reading's objection, state that reading's own answer and the chief contrary one in a sentence or two, without dropping a qualification that makes them true: what is asked and whom the plea names differ, not only the time, and the answers are compatible but not the same. Then point to the comparison. Do not reintroduce any claim that the witnesses agree on the persecutors or on the thing asked."
-
-[[advisories]]
-stage = "study-review"
-id = "STU-012"
-severity = "advisory"
-location = "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md 3.5 (Bellarmine entry, 'stands against Augustine's Enarr. 89.2', line 483), 4.7, 7.4 and 11 item 3; src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/interpretations.md 4.1 (line 674, 'Gregory and Aquinas serve readings 1 and 3')"
-problem = "This stands unchanged from iteration 1, because neither research record has changed (both hash-match the seal). The scope record files Bellarmine 'For Moses' and 'against' Augustine on Ps 89. It omits his Preface II §5 ('perhaps even more likely, that all of the Psalms are by David, as Saint Augustine maintains', text.txt line 63) and his Davidic reading in the Ps 89 exposition. Interpretations 4.1 has Aquinas serve readings 1 and 3, but he serves all three (Super Matth. 18, per ingratitudinem, in reading 2). The study states both correctly. The concise and homily components reference these records, and scope 7.4 states what 'the studies may say' of Ps 89."
-required_result = "On the research record's next revision, add Bellarmine's Preface II §5 and his Davidic reading of Ps 89 to scope.md. Recast him there as admitting Moses' authorship as tenable while preferring David's, which places him with Augustine except on whether Moses is admissible. Correct interpretations.md 4.1 to say that Aquinas serves all three readings."
+problem = "Unchanged since iteration 2. The three files are byte-identical to the sealed bytes and were re-read for this review. Each passage names the same four witnesses on the Communion's plea in near-identical words. These are Hilary's present power and 'not the judgment of the resurrection', Augustine's martyrs and the Church's persecutors, Bellarmine's 'wicked who persecute and tempt', and Cassiodorus joining 'the devil with his ministers' to 'the judgment at the end of the world'. Each then says the Fathers differ 'in what is asked and in whom the plea names, not only in the time', and that the answers are compatible but not identical through Thomas's instruments moved by the devil. Every account is accurate. Read straight through, the reader meets the same comparison three times in twelve pages, which works against the profile's 'one fullest home'."
+required_result = "Keep the full account of the four witnesses in 50-comparison.tex only. In each reading's objection, state that reading's own answer and the chief contrary one in a sentence or two, keeping the qualifications that make them true: what is asked and whom the plea names differ, not only the time, and the answers are compatible but not the same. Then point to the comparison. Do not reintroduce any claim that the witnesses agree on the persecutors or on the thing asked."
 
 [[advisories]]
 stage = "study-review"
 id = "STU-013"
 severity = "advisory"
-location = "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/20-armour-under-providence.tex:291-298 ('Hilary asks for power in this life ... what the prophet now asks'; 'The Fathers differ'; p. 20) and sections/40-last-exodus-of-the-church.tex:236-243 ('The Fathers differ'; 'without making it the only one'; p. 29)"
-problem = "The rewritten sentences have three small slips. (1) 'The Fathers differ' follows lists that include St Robert Bellarmine, a Doctor, and in 40 also Cassiodorus. Neither is a Father: author-standing-v1.toml records Bellarmine as 'doctor' and Cassiodorus as 'ecclesiastical-writer'. (2) In 20 the same sentence says both that 'Hilary asks for power in this life' and 'what the prophet now asks'. In Hilary's text the prophet prays (dari sibi id potestatis orat) and Hilary expounds, so the reader cannot tell who is asking. (3) 40 ends with 'This reading follows the end-directed answer ... without making it the only one'. The clause tells the reader the study's own stance, a form the 1962 profile excludes ('Do not tell the reader ... that the guide has declined to press an inference'), and the paragraph has already shown the other answers. None of the three misstates a witness's position."
-required_result = "Say 'the witnesses differ' (or name them) in place of 'the Fathers differ' where Bellarmine or Cassiodorus is included. In 20, make the prophet the one who asks in Hilary's reading (for example 'In Hilary's reading the prophet asks for power in this life ... and what he now asks is not ...'). Delete 'without making it the only one'."
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/20-armour-under-providence.tex:291-298 ('Hilary asks for power in this life ... what the prophet now asks'; 'The Fathers differ', line 297; p. 20), sections/40-last-exodus-of-the-church.tex:236-243 ('The Fathers differ', lines 236-237; 'without making it the only one', line 243; p. 29) and sections/50-comparison.tex:68-69 ('it is a difference between Fathers, not only between readings'; p. 31)"
+problem = "Unchanged since iteration 2; the files are byte-identical to the sealed bytes. There are three small slips. (1) 'The Fathers differ' (20, 40), and in the comparison 'a difference between Fathers', follow lists that include St Robert Bellarmine and Cassiodorus. Neither is a Father: author-standing-v1.toml records Bellarmine as 'doctor' and Cassiodorus as 'ecclesiastical-writer'. The comparison instance was not named at iteration 2 but is the same slip. (2) In 20 one sentence says both 'Hilary asks for power in this life' and 'what the prophet now asks'. In Hilary's text the prophet prays and Hilary expounds, so the reader cannot tell who is asking. (3) 40 ends with 'without making it the only one'. That clause tells the reader the study's own stance, a form the 1962 profile excludes ('Do not tell the reader ... that the guide has declined to press an inference'). None of the three misstates a witness's position."
+required_result = "Say 'the witnesses differ' (or name them) in place of 'the Fathers differ' and 'a difference between Fathers' wherever Bellarmine or Cassiodorus is included. In 20, make the prophet the one who asks in Hilary's reading (for example 'In Hilary's reading the prophet asks for power in this life ... and what he now asks is not ...'). Delete 'without making it the only one'."
 
 [[advisories]]
 stage = "study-review"
 id = "STU-014"
 severity = "advisory"
-location = "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/production-review.md:216-218 (Author-study, iteration 2, 'Author proof')"
-problem = "The entries for iterations 0 and 1 record the proof's SHA-256. The entry for iteration 2 records only page count and timestamp. The three-document profile asks the production audit to keep 'checked artifacts and hashes'. The iteration-2 proof, which this review rebuilt byte-identically, is SHA-256 9a690e1d73f6373672b78617e136d8755f9c6028e0ebb174eaa16c2223b6b212."
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/production-review.md:216-223 (Author-study, iteration 2, 'Author proof')"
+problem = "Still true. The entries for author-study iterations 0 and 1 record the proof's SHA-256, but the iteration-2 entry records only page count and timestamp. The three-document profile asks the production audit to keep 'checked artifacts and hashes'. The new author-study iteration-3 entry (lines 844-848) records the hash of the current proof, e7c90080f6a14ba875742ebe822a86d3192027ae36c9a43a404d1ae1e1968285, which this review reproduced by rebuild. The gap is therefore confined to the superseded iteration-2 proof, SHA-256 9a690e1d73f6373672b78617e136d8755f9c6028e0ebb174eaa16c2223b6b212 (recorded in the study-review-2 result)."
 required_result = "Add the iteration-2 research-edition proof's SHA-256 to that entry, in the form the iteration-0 and iteration-1 entries use."
 
 [[advisories]]
 stage = "synthesis-review"
 id = "SYN-001"
 severity = "advisory"
-location = "sections/concise/10-commentary.tex, unit 'A people on the march', first paragraph, last sentence (physical p. 9): 'The second, with Augustine, hears in both releases the work of mercy.'"
-problem = "The sentence follows Cassiodorus's two releases: the world's pomps leaving the mind, and release a daemonum turba. A reader therefore takes 'both releases' to mean those two. The second reading's actual join is the one the study draws: Israel's release from Egypt and the debtor's release from his debt are both the work of mercy. The study grounds it on Augustine's 'no man is turned away in heart from this world, unless aided by the gift of the Divine mercy' (sections/30-debt-forgiven-from-the-heart.tex, 'The whole Mass around the parable'). Compression has lost that join, and the second reading's view of the Alleluia is unrecoverable here."
-required_result = "Name the two releases the second reading joins, for example 'The second hears in Israel's release and the debtor's remission alike the work of mercy, since no one leaves Egypt in heart unless aided by the Divine mercy (Augustine).' Do this without crediting Augustine with the join to the parable."
+location = "sections/concise/10-commentary.tex lines 332-333, unit 'A people on the march', first paragraph, last sentence (physical p. 9): 'The second, with Augustine, hears in both releases the work of mercy.'"
+problem = "Unchanged since iteration 1: the file is byte-identical to the sealed bytes, and pages 3-11 of the rebuilt PDF are pixel-identical to the PDF reviewed at iteration 1. The sentence follows Cassiodorus's two releases, the world's pomps leaving the mind and release a daemonum turba, so a reader takes 'both releases' to mean those two. The second reading's actual join is the study's: the release of the Exodus and the release of the debtor are both the work of mercy (sections/30-debt-forgiven-from-the-heart.tex lines 237-240). The study grounds it on Augustine's 'no man is turned away in heart from this world, unless aided by the gift of the Divine mercy'. Compression lost that join, so the second reading's hearing of the Alleluia cannot be recovered here."
+required_result = "Name the two releases the second reading joins: Israel's release from Egypt and the debtor's remission, both the work of mercy, since no one leaves Egypt in heart unless aided by the Divine mercy (Augustine). Do not credit Augustine with the join to the parable."
 
 [[advisories]]
 stage = "synthesis-review"
 id = "SYN-002"
 severity = "advisory"
-location = "sections/concise/10-commentary.tex, unit 'Who is the enemy, and what is the armour?', paragraph beginning 'The armour is armatura Dei' (physical p. 6): '... a figure of the spiritual war (In Ephesios III, PL 26, col. 543).'"
-problem = "The concise merges Jerome's two points into one sentence and ends it with a single citation, col. 543. That column now also covers the wars of Israel (David and Goliath, Josue, the Judges, the Kings). research/scope.md records the wars at cols. 545-546, read on the text layer. The study keeps 'col. 543' with the armour-as-Christ clause, and its wars sentence carries no column. The References' 'cols. 543-546' still lets a reader find it, so nobody is misled about the substance, but the claim-local locus is now wrong."
-required_result = "Cite col. 543 after the armour-as-Christ clause, and cols. 545-546 (or no column) for the wars of Israel."
+location = "sections/concise/10-commentary.tex lines 122-128, unit 'Who is the enemy, and what is the armour?', paragraph beginning 'The armour is armatura Dei' (physical p. 6): '... a figure of the spiritual war (In Ephesios III, PL 26, col. 543).'"
+problem = "Unchanged since iteration 1: the file is byte-identical to the sealed bytes, and pages 3-11 of the rebuilt PDF are pixel-identical to the PDF reviewed at iteration 1. Jerome's two points share one sentence ending in a single column, col. 543, which therefore also covers the wars of Israel. research/scope.md (Jerome entry) and research/interpretations.md place the wars at cols. 545-546. The study keeps col. 543 with the armour-as-Christ clause alone (sections/20-armour-under-providence.tex lines 170-176). The References' 'cols. 543-546' lets a reader find both points, so no one is misled about substance, but the claim-local locus is wrong for the second clause."
+required_result = "Cite col. 543 after the armour-as-Christ clause, and cols. 545-546 (or no column) after the wars of Israel."
 
 [[advisories]]
 stage = "synthesis-review"
 id = "SYN-003"
 severity = "advisory"
-location = "sections/concise/10-commentary.tex, unit 'A will none resists, and an adversary who asks', paragraph beginning 'The other two readings hear the same two chants' (physical p. 5): 'The third hears Mardochai remind God of \"thy portion, which thou hast redeemed for thyself out of Egypt\" (13:16)'"
-problem = "Esth 13:16 is outside the Introit (Esth 13:9-11). research/interpretations.md requires unsung context to be marked wherever it is used. The study marks this verse ('in lines the Mass does not sing Mardochai reminds God of ...', sections/40-last-exodus-of-the-church.tex). The concise marks 13:15 in the sentence before but not 13:16. The page-1 map's citation keeps a careful reader from mistaking the verse for sung text, which is why this does not block."
+location = "sections/concise/10-commentary.tex lines 63-65, unit 'A will none resists, and an adversary who asks', paragraph beginning 'The other two readings hear the same two chants' (physical p. 5): 'The third hears Mardochai remind God of \"thy portion, which thou hast redeemed for thyself out of Egypt\" (13:16)'"
+problem = "Unchanged since iteration 1: the file is byte-identical to the sealed bytes, and pages 3-11 of the rebuilt PDF are pixel-identical to the PDF reviewed at iteration 1. Esth 13:16 lies outside the Introit (Esth 13:9-11). research/interpretations.md ('Unsung context is labelled as such', naming Esth 13:12-17) requires the mark wherever such a verse is used, and the study marks it (sections/40-last-exodus-of-the-church.tex lines 189-191). The concise marks 13:15 in the preceding sentence and 13:17 on p. 10, but not 13:16. The page-1 map's citation keeps a careful reader from mistaking the verse for sung text."
 required_result = "Carry the mark to 13:16, for example 'The third hears Mardochai, in the same unsung lines, remind God of ...'."
 
 [[advisories]]
 stage = "synthesis-review"
 id = "SYN-004"
 severity = "advisory"
-location = "sections/concise/02-overview.tex, Anagogical row '(Fromage)' (p. 1); sections/concise/10-commentary.tex 'the continuation of The Liturgical Year' (pp. 6, 8, 9) and 'Fromage hears', 'Fromage sets' and 'Fromage reads' (all p. 10)"
-problem = "The body never says that Fromage is the author of the continuation of Gueranger's The Liturgical Year. A reader of the concise alone meets an unidentified 'Fromage' on page 1 and again on page 10. Between those pages, 'the continuation of The Liturgical Year' reads as if it were a different witness. Only the References entry ('The continuation of Prosper Gueranger, The Liturgical Year (Dom Lucien Fromage)') joins the two names. The study makes the identification in its body (sections/10-each-element.tex, 'Lucien Fromage, continuing Dom Gueranger's The Liturgical Year')."
-required_result = "At the first body mention (p. 6), identify him once, for example 'Dom Lucien Fromage, continuing Gueranger's The Liturgical Year, commenting on this Mass, ...'. After that, use one form consistently while keeping the attribution to the continuation. The overview may keep '(Fromage)'."
+location = "sections/concise/02-overview.tex line 33, Anagogical row '(Fromage)' (p. 1); sections/concise/10-commentary.tex 'The continuation of The Liturgical Year' (line 129, p. 6; lines 316 and 346, p. 9) and 'Fromage hears', 'Fromage sets', 'Fromage reads' (lines 356, 367, 379, p. 10)"
+problem = "Unchanged since iteration 1: the file is byte-identical to the sealed bytes, and pages 3-11 of the rebuilt PDF are pixel-identical to the PDF reviewed at iteration 1. The body never says that Fromage is the author of the continuation of Gueranger's The Liturgical Year. A reader of the concise alone meets an unidentified 'Fromage' on p. 1 and again on p. 10, and in between reads 'the continuation of The Liturgical Year' as though it were a different witness. Only the References entry joins the two names. The study makes the identification in its body (sections/10-each-element.tex)."
+required_result = "At the first body mention (p. 6), identify him once, for example 'Dom Lucien Fromage, continuing Gueranger's The Liturgical Year, commenting on this Mass, ...'. After that, use one form consistently, keeping the attribution to the continuation. The overview may keep '(Fromage)'."
 
 [[advisories]]
 stage = "synthesis-review"
 id = "SYN-005"
 severity = "advisory"
-location = "sections/concise/04-themes.tex, final sentence (physical p. 4): 'The commentary that follows sets the readings' answers beside one another where the texts put the same question to all three.'"
-problem = "This sentence's subject is the document's own commentary, and it describes the editor's method of arrangement. guidance/editorial.md 'State the finding, not the process that produced it' names this form: the guide's own pages as grammatical subject. It occurs once, the preceding sentence already states the finding, and it does not recur as a habit, so it is advisory."
-required_result = "End the themes on the finding: drop the sentence, or recast it with the texts or witnesses as subject. For example, say that the readings part at the Communion over who the persecutors are and when the judgment comes. Keep the themes ending on physical page 4."
+location = "sections/concise/04-themes.tex lines 136-138, final sentence (physical p. 4): 'The commentary that follows sets the readings' answers beside one another where the texts put the same question to all three.'"
+problem = "Unchanged since iteration 1: the file is byte-identical to the sealed bytes, and pages 3-11 of the rebuilt PDF are pixel-identical to the PDF reviewed at iteration 1. The sentence's subject is the document's own commentary and it describes the editor's arrangement, the form guidance/editorial.md 'State the finding, not the process that produced it' names. It occurs once, the preceding sentence already states the finding, and it does not recur as a habit."
+required_result = "End the themes on the finding: drop the sentence, or recast it with the texts or witnesses as subject, for example by saying that the readings part at the Communion over who the persecutors are and when the judgment comes. Keep the themes ending on physical page 4."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-006"
+severity = "advisory"
+location = "sections/concise/10-commentary.tex lines 34-37, unit 'A will none resists, and an adversary who asks', second paragraph (physical p. 5): 'Rupert of Deutz, citing the Introit's words in his treatise on God's omnipotence (he gives them as St Paul's), completes them ...'"
+problem = "Unchanged since iteration 1: the file is byte-identical to the sealed bytes, and pages 3-11 of the rebuilt PDF are pixel-identical to the PDF reviewed at iteration 1. The parenthesis credits Rupert with an attribution his words do not make. In De omnipotentia Dei 9 (PL 170, col. 461) he writes only 'Nonne scriptum est: Et non est qui possit resistere voluntati tuae?'; the following '(Rom. ix)' is a printed chapter reference of the kind Migne's text supplies throughout the passage, and in c. 10 he repeats the words with no attribution. Rom 9:19 is in any case a different sentence. The concise inherits the clause from the study (sections/20-armour-under-providence.tex lines 84-86) and research/scope.md. No reading depends on the aside."
+required_result = "Drop '(he gives them as St Paul's)', or say that Migne's edition refers the words to Rom 9. When the study and research/scope.md are next revised, make the same correction there."
+
+[[advisories]]
+stage = "visual-review"
+id = "VIS-002"
+severity = "advisory"
+location = "Expansive study (61-twenty-first-after-pentecost.pdf), physical pages 11, 14 and 17; sources sections/10-each-element.tex and sections/20-armour-under-providence.tex"
+problem = "Unchanged since iteration 0. Where an inner single quotation closes together with the outer double quotation, the source's ''' sets as a closing double mark followed by a closing single mark, so the outer quotation closes first. The text layer shows 'wiles”’' (p. 11), 'trespass against us”’' (p. 14) and 'resist Thy will”’' (p. 17). The concise study and the homily have no instance."
+required_result = "When the study is next revised, each of the three closes as ’” (for example '\\,'' or '{}'' in the source), confirmed on the rendered pages."
+
+[[advisories]]
+stage = "visual-review"
+id = "VIS-003"
+severity = "advisory"
+location = "Expansive study (61-twenty-first-after-pentecost.pdf), physical page 33, Scriptural Date and Location table; source sections/80-date-location.tex"
+problem = "Unchanged since iteration 0. The appendix table still has no white space between consecutive orientation rows inside its psalm, Gospel and Epistle groups, so the psalm group's Passage and Date cells run together. The concise page-2 table of the same leaf now has that spacing, so the two tables differ. It does not block, because the notes on pp. 33-35 restate each passage's answer under its own heading, which gives the study reader a clear second route."
+required_result = "When the study is next revised, add \\addlinespace between consecutive \\chronologyorientationrow calls in sections/80-date-location.tex, as concise 03-date-location.tex now has, and re-inspect pages 33-37."
+
+[[advisories]]
+stage = "visual-review"
+id = "VIS-005"
+severity = "advisory"
+location = "Concise study page 2 and expansive study page 33: the generated Passage and Date cells from research/chronology-annotations.tex, produced by scripts/_proper_chronology.py"
+problem = "Unchanged since iteration 0. In the generated passage labels, 'Esth 13:9–11' and 'Ps 118:1' (abbreviated, en dash) stand beside 'Psalm 89:1-2', 'Job 2:6-7', 'Matthew 18:23-35' and 'Ephesians 6:10-17' (spelled out, hyphen); the rest of both studies uses en dashes for verse ranges. In the Matthew composition row's Date cell, 'c.' breaks from 'A.D.' at the line end twice ('c. / A.D. 40–42', 'c. / A.D. 50'). Leaf authors may not edit these generated cells."
+required_result = "The chronology generator emits verse ranges with en dashes, one book-name convention, and a tie between 'c.' and the era label, and the leaf regenerates its annotations. This is shared tooling outside this run's repair owners, so it is recorded for the maintainer."
 
 [[observations]]
 stage = "homily-review"
-location = "propers/verified.md, 'Publication basis', English of the Sunday's orations; sections/homily/10-homily.tex lines 112-113 and 131-132"
-note = "The speech quotes the 1861 Cummiskey English of the Introit ('All things, O Lord, are in thy power: and no one can resist thy will') and of the Communion ('when wilt thou judge those who persecute me?'), but no registered passage record covers those lines. This review confirmed both readings on the registered scan's page images (SHA-256 85034c90... matched; PDF pp. 459 and 461). A passage record would let later stages verify them without fetching the scan again."
+location = "propers/verified.md, 'Publication basis', 'English, the Sunday's orations'; sections/homily/10-homily.tex lines 112-113 (Introit) and 131-132 (Communion)"
+note = "Still stands from iterations 1 and 2. The speech quotes the 1861 Cummiskey English of the Introit ('All things, O Lord, are in thy power: and no one can resist thy will') and of the Communion ('when wilt thou judge those who persecute me?'). No tracked record carries them: the registered temporal-orations-en rows for post-pentecosten-21 (lines 173-175) cover only the Collect, Secret and Postcommunion, and the scan and OCR artifacts are remote with no retained payload. This review read both on pp. 459 and 461 (printed pp. 450 and 452) of a local copy of the registered scan whose SHA-256 matched 85034c90..., and found them exactly as quoted. A passage record, like the pentecost-19 and pentecost-20 checked-English artifacts, would let later stages verify them without the scan."
+
+[[observations]]
+stage = "research-review"
+location = "scripts/_proper_study.py chronology_reads() and review_inputs() (proper-study-v4 seal); scripts/_tooling.py GROUPS and REACHES, changed in commit b9786e912"
+note = "The v4 seal adds every module the chronology computation compiles to chronology_computation_inputs. That includes scripts/_tooling.py, which tools/proper-chronology imports for CLI helpers. Adding an unrelated tool's two registry entries there invalidated the iteration-2 research acceptance and caused this re-review, although the regenerated record and annotations are byte-identical to the leaf's files. Whether registry-only helper modules belong in the computation seal is a question for the workflow owner. Nothing in this leaf is affected."
 
 [[observations]]
 stage = "study-review"
-location = "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/historical-text-357551e1/artifact.toml (rights_basis; notes)"
-note = "This stands from earlier rounds. The artifact record treats the whole transcription, both prefaces included, as O'Sullivan's 1866 public-domain text. Yet text.txt line 53 marks Preface II as a manuscript preface 'translated by Michael J. Miller'. The study paraphrases both prefaces and quotes neither, so it is unaffected. The record's rights and provenance basis still needs the source-library owner's attention."
+location = "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/historical-text-357551e1/artifact.toml (rights_basis; notes) and text.txt line 53"
+note = "This stands from earlier rounds, and the record is unchanged since. The artifact record treats the whole transcription, 'both prefaces' included, as O'Sullivan's 1866 public-domain text, yet text.txt line 53 marks Preface II as a manuscript preface 'translated by Michael J. Miller'. The study paraphrases both prefaces, quotes neither, and credits Miller in its References, so it is unaffected. The record's rights and provenance basis needs the source-library owner's attention."
+
+[[observations]]
+stage = "synthesis-review"
+location = "research/production-review.md, 'Derive-synthesis, iteration 2' entry; build/tpt-runs/a8bcc37ea3420a07/packets/derive-synthesis-0002.txt ADVISORY_FINDINGS"
+note = "The concise review's own standing advisory SYN-006 (raised at synthesis-review iteration 1) is named nowhere in the production audit, and the iteration-2 entry has no remaining-limitations line for SYN-001 to SYN-006. That is because the derive-synthesis 2 packet forwarded only the visual review's VIS-002 to VIS-005 and not this stage's standing advisories. The audit therefore understates what still stands against the concise study, although evaluations/blocking-findings-v1.toml records it."
+
+[[observations]]
+stage = "visual-review"
+location = "scripts/_proper_chronology.py line 2013 (orientation row ending \\\\[.25em]) with src/common/propers-format.tex chronologyorientationtable"
+note = "The generated row ending still adds no visible space when a cell wraps. This leaf repaired its concise table by hand with \\addlinespace (VIS-001), and its study appendix (VIS-003) shows the same defect remains wherever the hand fix is absent. A generator-level fix would remove the need for per-leaf repairs."
+
+[[observations]]
+stage = "web-review"
+location = "build/web/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md, 'The appointed elements at a glance' table and 'The Three Readings Compared' table, rendered at 390px"
+note = "At phone width the site stylesheet's table rule (display:block; overflow-x:auto) shows these prose tables with their right-hand column cut at the box edge (scrollWidth 417 and 552 against a 342px box). The text is reachable only by horizontal swiping inside the table. Accepted Claude 59/60 and GPT 61 editions share the same glance-table shape, so this is site-wide presentation, not a defect of this conversion. No review criterion covers non-dossier prose tables at mobile width."
+
+[[observations]]
+stage = "web-review"
+location = "build/web/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md, Scriptural Date and Location table, Passage column"
+note = "The generated passage labels mix 'Ps 118:1' with 'Psalm 89:1-2' and 'Matthew 18:23-35', and use ASCII hyphens where the study prose uses en dashes. The PDF prints them identically, and research/chronology.toml marks these labels as generated values no leaf may edit. Any change belongs to the chronology generator, not to this leaf or its conversion."

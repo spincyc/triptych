@@ -1,0 +1,20 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "note": "scope.md 3.5, new 4.7, 7.4 and 10 item 3 and the Bellarmine binding (loci and context) now report Bellarmine's conclusion at line 61 ('not unlikely') and also his Preface I verdict at line 47 ('acceptable' but Davidic view 'more probable'), which the finding did not cite. They set this beside Augustine's Enarr. 89.2 as a real disagreement, list Athanasius, Hilary, Jerome's letter to Cyprian, De civ. Dei XVII.14 and Theodoret's preface as leads, and state what the studies may say with no date for Moses or for an occasion.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-002",
+      "note": "interpretations.md adds an unsung-context rule. Reading 3 is retitled 'The Church's exodus toward the judgment', and its question, controlling claim, Communion and Gradual rows, literal and allegorical senses, limits and the section 4.2 and 4.6 notes now rest on quando facies ... iudicium, in die malo, voluit rationem ponere, In exitu Israel, a saeculo ... tu es and immortalitatis alimoniam. Ps 118:84a and Ps 89:3-12 are labelled unsung context. Augustine's Enarr. 118.84 is split into his comment on the unsung 84a (reported only as his) and on the sung 84b (the Church remains on earth until the judgment). scope.md 1.2 and 3.10 match.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": "Records written: research/scope.md, research/interpretations.md, research/source-bindings.toml (50 bindings: added a Theodoret PG 80 binding for PDF pp. 847-848 and 976-977, and rewrote the Bellarmine loci and context), research/review-dependencies.toml (added the Alphonsus work record and the Cassiodorus Corpus Corporum edition), propers/verified.md (Epistle fidei, Gradual fierent, Gospel and Offertory filios, no. 1806 fieri and no. 1808 proficiat transcribed without acute as printed, checked at 600 dpi on PDF pp. 495, 496 and 508, with a convention note). Checks: source-library validate passes; check-content-preflight bindings-valid, chronology-record-current and chronology-annotations-current pass. Advisories: RES-003 Theodoret read on page images for Ps 89:1-2 and Ps 118:80-88 (present deliverance from human enemies; reports both Moses and David opinions on Ps 89), but not on Ps 118:1 or Ps 113. RES-004 Cassiodorus read for Pss 89, 113 and 118 (v. 1, Caph) on the Corpus Corporum web text; the PL 70 miss is now recorded as a text-layer limit only. RES-005 the Callan 1882 edition was found on Internet Archive and Sermon L ('On the eternity of hell', on Mt 18:34) read on its text layer. RES-006 transcribed as printed. RES-007 the verse is named as Ps 118:157 and the link is classed as editorial synthesis. Remaining limits: the Cassiodorus and Alphonsus reads are unregistered web or text-layer reads, not collated with page images. Athanasius, Theodoret on Ps 113 and 118:1, and the authorship leads Bellarmine names were not read. Alphonsus has no author-standing row (scope.md section 10 item 8).",
+  "stage": "research",
+  "summary": "Repaired both research findings. RES-001: I re-read Bellarmine's two prefaces and now record his own judgment on Ps 89 (Preface II, line 61: Mosaic authorship of the titled psalms 'not unlikely'; Preface I, lines 45-47: 'acceptable', with the Davidic view 'more probable') against Augustine's Enarr. 89.2, as a real disagreement with no date. RES-002: reading 3 is re-anchored in the sung words, every use of Ps 118:84a and Ps 89:3-12 is labelled unsung context, and the record states how Augustine's and Bellarmine's comments bear on the sung v. 84b. Advisories cleared while in these files: Cassiodorus and Theodoret were read on the psalms, Alphonsus's Sermon L was found and read, the fi-ligature words were transcribed as printed, and the Aquinas Ps 118:157 join was corrected."
+}

@@ -1,0 +1,85 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "VIS-002",
+      "location": "Expansive study (61-twenty-first-after-pentecost.pdf), physical pages 11, 14 and 17; sources sections/10-each-element.tex and sections/20-armour-under-providence.tex",
+      "problem": "Unchanged since iteration 0. Where an inner single quotation closes together with the outer double quotation, the source's ''' sets as a closing double mark followed by a closing single mark, so the outer quotation closes first. The text layer shows 'wiles\u201d\u2019' (p. 11), 'trespass against us\u201d\u2019' (p. 14) and 'resist Thy will\u201d\u2019' (p. 17). The concise study and the homily have no instance.",
+      "required_result": "When the study is next revised, each of the three closes as \u2019\u201d (for example '\\,'' or '{}'' in the source), confirmed on the rendered pages.",
+      "severity": "advisory"
+    },
+    {
+      "id": "VIS-003",
+      "location": "Expansive study (61-twenty-first-after-pentecost.pdf), physical page 33, Scriptural Date and Location table; source sections/80-date-location.tex",
+      "problem": "Unchanged since iteration 0. The appendix table still has no white space between consecutive orientation rows inside its psalm, Gospel and Epistle groups, so the psalm group's Passage and Date cells run together. The concise page-2 table of the same leaf now has that spacing, so the two tables differ. It does not block, because the notes on pp. 33-35 restate each passage's answer under its own heading, which gives the study reader a clear second route.",
+      "required_result": "When the study is next revised, add \\addlinespace between consecutive \\chronologyorientationrow calls in sections/80-date-location.tex, as concise 03-date-location.tex now has, and re-inspect pages 33-37.",
+      "severity": "advisory"
+    },
+    {
+      "id": "VIS-005",
+      "location": "Concise study page 2 and expansive study page 33: the generated Passage and Date cells from research/chronology-annotations.tex, produced by scripts/_proper_chronology.py",
+      "problem": "Unchanged since iteration 0. In the generated passage labels, 'Esth 13:9\u201311' and 'Ps 118:1' (abbreviated, en dash) stand beside 'Psalm 89:1-2', 'Job 2:6-7', 'Matthew 18:23-35' and 'Ephesians 6:10-17' (spelled out, hyphen); the rest of both studies uses en dashes for verse ranges. In the Matthew composition row's Date cell, 'c.' breaks from 'A.D.' at the line end twice ('c. / A.D. 40\u201342', 'c. / A.D. 50'). Leaf authors may not edit these generated cells.",
+      "required_result": "The chronology generator emits verse ranges with en dashes, one book-name convention, and a tie between 'c.' and the era label, and the leaf regenerates its annotations. This is shared tooling outside this run's repair owners, so it is recorded for the maintainer.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 1,
+  "observations": [
+    {
+      "location": "scripts/_proper_chronology.py line 2013 (orientation row ending \\\\[.25em]) with src/common/propers-format.tex chronologyorientationtable",
+      "note": "The generated row ending still adds no visible space when a cell wraps. This leaf repaired its concise table by hand with \\addlinespace (VIS-001), and its study appendix (VIS-003) shows the same defect remains wherever the hand fix is absent. A generator-level fix would remove the need for per-leaf repairs."
+    }
+  ],
+  "review_inputs": {
+    "artifacts": {
+      "document": "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+      "pagination_evidence": {
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.aux": "00c088503b8c419acd594f57901c37684856880c72c00b03508ac4d578967293",
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.aux": "8d378f83288e07c1f0544da91013f7da39596b575bd5a4121c82567e9d2a2b49"
+      },
+      "pdfs": {
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily.pdf": "2137ef1d58e1a99bcaf2e9d562067416dda2e95fade04541d3fe36b38fec6b16",
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.pdf": "963401884390649cde76c9dd2346bdb0c32af3597ba71cc3c364c13717717deb",
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.pdf": "b29d4ebd2c792148b552fdc4ef812f209fcd3fc215a7a45362105b29ccc223ca"
+      },
+      "provider": "claude",
+      "render_inputs": {
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/format.tex": "7e1fb4f1e00ddb34599fff75ba5693875f1d6d30a20ab32e3e7fb79528a43322",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/generation-metadata.tex": "7499d0331fc3c3a2e6db43d34d1480ab8b97364af0d1acacae0b4c3423849794",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/homily.tex": "0af1ffecc2514646c8fe18fbf99cec04f0b00a5ffbcb874e77fd5692f0cc4978",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/main.tex": "2e98147e675e43395d763e24bdf16a2a163a518609ec994c5e302af47404a044",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/proper-components.toml": "01402f081a8ed6b4aad9d22131a241ad1e1b5fe261af8e3ab12a897b08340e42",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology-annotations.tex": "2939236e5d2ed65886eaf5e274423e01fb376e7715c2deba84b666b554c490e7",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/00-opening.tex": "e73171a84a4fd64ed3c141ef6a1b0c64b362a0fb475c5789fc64fb18aa97f63e",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/05-appointed-texts.tex": "d992f988272fbe6e77474b342c79ffe6b03fbe1f9e3eaa0688a071665ae7f164",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/10-each-element.tex": "62d6b31b42760c2231ede600f463682a21816500787862fed2d10a4ddd933adc",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/20-armour-under-providence.tex": "e41afcf8981139eeada4ad2fdb063c1643a56fe4ab88bd97cdfc888cdf62baab",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/30-debt-forgiven-from-the-heart.tex": "a65ad64999d30eb094b9da12a38fc03e5cf8edb973518bcb43614b64923714ab",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/40-last-exodus-of-the-church.tex": "b475f2fced489c79d2c866b1cb217fdc5421fac4b35185b4073eaf78c9ffe0cf",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/50-comparison.tex": "9a8b2c1dfb55bca08d1f0031c7f46cb8ab02fe16e53c93e6f4ae192c7f9974b3",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/80-date-location.tex": "a4e8da2a828a471c27e4710e48cce4a977ccf80268356813220bb3bf52add1cf",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/90-apparatus.tex": "2b16317590259b18f73607ecccac01f0f7ea8c723d8e48bb50dea8fba415e9ac",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/01-inventory.tex": "e088adeee23b7d17ee1116b4924657e8dc5cca15bea18ed58e7614f1b53efcee",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/02-overview.tex": "6a496f84597e5f640d3e5d3c4c25ae8cc0dd8b4a857473b532313bb8646d8720",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/03-date-location.tex": "bcb4f180121bfae5ec77744deb311f88bf283670c939f6654b48e5668c60f6dc",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/04-themes.tex": "0f93db53da2d368f0a84d1620ec3513e34f34e047836133e85ea1dff40573b16",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/10-commentary.tex": "fdf721522b0aafe682b066231e258cb2c4bd99bc74563ec11db74fdc9029a55a",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/concise/90-apparatus.tex": "82968a9e935c81ead1057a6e452b48f59a6a807fb4ee15e829ae8761cb3a5fea",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/homily/10-homily.tex": "30909fcdc14b86551b1f73e9a5306c49edcfa35668e90d46cfbd26e13d9eba2e",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/homily/90-note.tex": "b24646db989180fef41ac8c350e5de8a9a29bc6e4310c2ed9f82365ccd90bc78",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/synthesis.tex": "a6aa70a5dd64f51b53750c704f14a54e0ace444e8b74b8d9dcbd2a7b05c25339",
+        "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+        "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+        "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+      },
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+    "files": {},
+    "provider": "claude",
+    "review": "visual",
+    "schema": 1
+  },
+  "stage": "visual-review",
+  "summary": "Cold visual review of the three Claude 1962 Twenty-first Sunday after Pentecost PDFs. Every page was opened at full size: 1700x2200 rasters from build-artifacts-2, whose review-run.json records the sealed hashes; concise page 2 was also re-rendered at 200 dpi and matched that raster pixel for pixel (AE 0). Contact sheets were opened first. Artifacts: expansive study 61-twenty-first-after-pentecost.pdf, sha256 b29d4ebd2c792148b552fdc4ef812f209fcd3fc215a7a45362105b29ccc223ca, pages 1-37 of 37; concise study 61-twenty-first-after-pentecost-synthesis.pdf, sha256 963401884390649cde76c9dd2346bdb0c32af3597ba71cc3c364c13717717deb, pages 1-12 of 12; homily 61-twenty-first-after-pentecost-homily.pdf, sha256 2137ef1d58e1a99bcaf2e9d562067416dda2e95fade04541d3fe36b38fec6b16, pages 1-3 of 3. Also checked: both sealed aux hashes and all 27 render-input hashes against the working tree. Since the last visual review only generation-metadata.tex, sections/concise/03-date-location.tex and synthesis.tex changed, so the study and homily differ only in the revision timestamp. The logs have no overfull or underfull boxes, undefined references or rerun requests. Every font is embedded Latin Modern Type 1, on letter paper, 11pt article, 0.75in margins. There are no raster images, and colour saturation is zero on all 52 pages. The concise zref markers match the pages: inventory and the four sense rows on page 1, chronology on page 2, themes on pages 3-4, commentary from page 5. Page counts 37 and 12 sit within 20-50 and 10-12. The lane headings and fourSenses blocks are consistent across all three readings (study pp. 16-30), and the comparison table on p. 30 is intact. The homily has a full-width title, a two-column speech on pp. 1-2 with no inline apparatus, and a full-width Note on Sources and Delivery with References on p. 3. Each final page carries the timestamp and the compact rights colophon. Prior blocking VIS-001 is resolved: every orientation row on concise page 2 now has white space below it, and the chronology still stands alone on that page. Lookup at ordinary size on concise page 2: the Communion, Ps 118:81, 84, 86, appears in three psalm rows. They are 'Historical setting', occasion date unresolved; 'Composition: Psalms', before c. 165 B.C.; and 'Traditional attribution: David's reign', disputed B.C. 1055-1015. Each passage label now pairs with its date at a glance, as the Offertory's Job row (seventh to fifth centuries B.C.) already did. Prior advisory VIS-004 is resolved: the descriptive line under the concise title now starts with a capital. Three standing advisories remain unchanged in files this round did not touch (VIS-002, VIS-003, VIS-005). The rubrical occurrence note between the page-1 map and the four sense rows was judged part of the map's account of the day, not displaced apparatus. Limits: the review used rasters, text layers and logs; nothing was printed on paper. Verdict PASS."
+}

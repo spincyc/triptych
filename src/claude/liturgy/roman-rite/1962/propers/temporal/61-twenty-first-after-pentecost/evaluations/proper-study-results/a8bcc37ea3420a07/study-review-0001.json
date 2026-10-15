@@ -1,0 +1,470 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "STU-011",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/40-last-exodus-of-the-church.tex:226-234 (second objection: 'The comparison at the end of the study shows that each takes his time from the verse's unsung first question, and that they do not differ about the last judgment or about the persecutors'; proof p. 29) and src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/20-armour-under-providence.tex:291-295 (third objection: 'The two Fathers differ in the time, not in the object'; proof p. 20)",
+      "problem": "Both sentences state more agreement between Hilary and the end-directed witnesses than those witnesses hold, at the point the study itself calls its sharpest difference. (1) What is asked differs, not only when. Hilary, in his own words, says the judgment the prophet asks now is 'Non illud utique quod in resurrectionis saeculo meminit futurum', and asks instead for the power of Lk 10:19 by which the devil and his ministers are crushed (PL 9 cols. 573-574; tracked text layer lines 45972-45990). Augustine reads the verse as the final judgment, 'when vengeance shall fall upon Her persecutors' (Enarr. 118, Caph 84; NPNF1-8 line 58215). So '[they] differ in the time, not in the object' is untrue: the 'object' differs whether it means the thing asked (a present power against a final judgment) or those judged. The first reading itself says that the judgment Hilary asks 'is not a curse on men but the power to tread the adversary down' (20:213-214). (2) The persecutors differ. Only Cassiodorus shares Hilary's 'the devil and his ministers'. In Augustine the persecutors are the Church's persecutors: those who told 'pleasant tales' and persecuted 'nothing save the truth', and the persecutors whose cruelty almost made an end of the Church (Caph 85-88; lines 58223-58262). Bellarmine's are 'all the wicked, consigned to hell' and 'the company of the wicked' who tempt the pious (Explanation, Ps 118:84-85; text.txt lines 4295-4297). The 40 sentence was rewritten this round. It now attributes the claim to the comparison, but the comparison does not show it: 50-comparison.tex:78-81 says only that Hilary and Cassiodorus agree, and its own 'The Communion's persecutors' row gives a different answer for each reading. The research records state the difference correctly: research/scope.md 4.4 ('Augustine ... the persecutors of the martyrs and of the Church'; 'Bellarmine: the wicked who tempt and persecute'; 'Hilary and Cassiodorus agree that the persecutors are the devil and his ministers'), and research/interpretations.md 3.7 and the 4.2 table. A reader of either reading is told that Augustine and Bellarmine identify the persecutors as Hilary does, and that the Fathers differ only on the date of one and the same judgment.",
+      "repair_target": "study",
+      "required_result": "Rewrite the two sentences so each witness is credited only with his own answer. Hilary asks for present power to crush the devil and his ministers, and says this is not the judgment of the resurrection, which he also affirms. Augustine reads the plea as the martyrs' cry for the final judgment on the Church's persecutors. Bellarmine reads it as the condemnation of the wicked who persecute and tempt. Cassiodorus joins Hilary's persecutors to the final judgment. The identifications may be called compatible (for example through Thomas's men moved by the devil, already in the first reading), but not identical. In 40, do not say the comparison shows an agreement that it does not state. Keep 50-comparison.tex consistent with whatever wording results.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-007",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/10-each-element.tex:260-262 ('a sum no servant could repay; the second reading reckons its size'; proof p. 13) and src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/30-debt-forgiven-from-the-heart.tex:40-50 (p. 21)",
+      "problem": "This was only partly cleared. The hundred pence are now made concrete (the denarius as a day's wage, Mt 20:2), and Augustine's reckoning is given (Sermon 83.3, verified). The ten thousand talents still receive no value, so the scale of the disproportion on which the reading turns stays abstract. The element sweep's cross-reference also says the second reading 'reckons its size' (the talents'), which it does not do.",
+      "required_result": "Either give a checked value for the talent (for example from a public-domain Catholic reference, against the denarius as a day's wage), or change the cross-reference to say what the second reading actually gives: the hundred pence's value and Augustine's reckoning.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-012",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md 3.5 (Bellarmine entry, 'His judgment stands against Augustine's Enarr. 89.2', about line 483), 4.7, 7.4 ('For Moses: the title itself, and Bellarmine') and 11 item 3; src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/interpretations.md 4.1 (line 674, 'Gregory and Aquinas serve readings 1 and 3')",
+      "problem": "These research-record sentences, which the author-study audit asks the reviewer to route, are contradicted by the sources and by the study's corrected text. The scope record omits Bellarmine's Preface II \u00a75: 'neither is it improbable, it is perhaps even more likely, that all of the Psalms are by David, as Saint Augustine maintains' (text.txt line 63). It also omits that his own exposition of Ps 89 calls the psalmist David: 'David is not alone in denouncing such folly' (v. 6, line 3223). It therefore files Bellarmine 'For Moses' and 'against' Augustine, although in both prefaces he prefers the Davidic view that he attributes to Augustine. Interpretations 4.1 has Aquinas serve readings 1 and 3. He serves all three: Super Matth. 18, per ingratitudinem, in reading 2. The study now states both correctly (10-each-element.tex:197-203; 80-date-location.tex:70-84; 50-comparison.tex:8-13), so no reader of the study is misled. But the concise and homily components reference these records, and scope 7.4 states what 'the studies may say' of Ps 89.",
+      "required_result": "On the research record's next revision, add Preface II \u00a75 and Bellarmine's Davidic reading of Ps 89 to scope.md's Bellarmine entries. Recast him there as admitting Moses' authorship as tenable while preferring David's, which places him with Augustine except on whether Moses is admissible. Correct interpretations.md 4.1 to say that Aquinas serves all three readings.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 1,
+  "observations": [
+    {
+      "location": "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/historical-text-357551e1/artifact.toml (rights_basis; notes)",
+      "note": "This still stands from the last round. The artifact record treats the whole transcription as O'Sullivan's 1866 public-domain text. Yet text.txt line 53 marks Preface II as a manuscript preface 'translated by Michael J. Miller'. The study now paraphrases both prefaces and quotes neither, so the study itself is unaffected. The record's rights and provenance basis still needs the source-library owner's attention."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "appointed-texts",
+          "kind": "appointed-text",
+          "path": "sections/05-appointed-texts.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/context.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "appointed-texts"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "each-element",
+          "kind": "proper-treatment",
+          "path": "sections/10-each-element.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "armour-under-providence",
+          "kind": "interpretive-lane",
+          "path": "sections/20-armour-under-providence.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "debt-forgiven-from-the-heart",
+          "kind": "interpretive-lane",
+          "path": "sections/30-debt-forgiven-from-the-heart.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "last-exodus-of-the-church",
+          "kind": "interpretive-lane",
+          "path": "sections/40-last-exodus-of-the-church.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "armour-under-providence",
+            "debt-forgiven-from-the-heart",
+            "last-exodus-of-the-church"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "scriptural-date-location",
+          "kind": "front-matter",
+          "path": "sections/80-date-location.tex",
+          "references": [
+            "format.tex",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml",
+            "research/chronology-profile-comparisons.toml",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Jerome",
+            "Hilary of Poitiers",
+            "Thomas Aquinas",
+            "Rabanus Maurus",
+            "Robert Bellarmine",
+            "Rupert of Deutz",
+            "William Durandus",
+            "Sicard of Cremona",
+            "Alfredo Ildefonso Schuster",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "armour-under-providence"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "armour-under-providence",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Jerome",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Rabanus Maurus",
+            "Alphonsus Liguori",
+            "Cassiodorus",
+            "Alfredo Ildefonso Schuster",
+            "Lucien Fromage",
+            "Rupert of Deutz",
+            "William Durandus",
+            "Honorius Augustodunensis"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "debt-forgiven-from-the-heart"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "debt-forgiven-from-the-heart",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Robert Bellarmine",
+            "Gregory the Great",
+            "Cassiodorus",
+            "Hilary of Poitiers",
+            "Lucien Fromage",
+            "Alfredo Ildefonso Schuster",
+            "Honorius Augustodunensis",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "last-exodus-of-the-church"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "last-exodus-of-the-church",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/format.tex": "7e1fb4f1e00ddb34599fff75ba5693875f1d6d30a20ab32e3e7fb79528a43322",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/main.tex": "2e98147e675e43395d763e24bdf16a2a163a518609ec994c5e302af47404a044",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/propers/verified.md": "1038db2ede08aac7ac07340a961bbcb6d55dd749a13aa66f335276fb888e43ba",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology-annotations.tex": "2939236e5d2ed65886eaf5e274423e01fb376e7715c2deba84b666b554c490e7",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology-profile-comparisons.toml": "1d7a538bc40cbe8f7d50f5136523fa3879fd042cf3965e244cdb9338c0d1f97b",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/chronology.toml": "1afefba9c69716f1f0c59dbc999b73094e383f008094eec550d79aa2b2b00114",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/context.md": "0f3731e1cbcc4ac267eaeded250444fe6b88ffa9024320b2ae4e8e633e96d1d4",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/interpretations.md": "53b4147611d91e177806870fb0d91f9366bfc1dbd94ca204a81666248de630ac",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md": "0e6a972ed7c55170713262facf1f944afd3f375d221af948257ee3e7268b3e45",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/source-bindings.toml": "9f9ea7c6e5387b8e60397ecfb643a9ae88f25c02881b7de65c451b26a509c695",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/00-opening.tex": "e73171a84a4fd64ed3c141ef6a1b0c64b362a0fb475c5789fc64fb18aa97f63e",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/05-appointed-texts.tex": "d992f988272fbe6e77474b342c79ffe6b03fbe1f9e3eaa0688a071665ae7f164",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/10-each-element.tex": "fe146edbf33cfb0c713570dfff61e76d934e7739214d97631f1eeb6389f51c03",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/20-armour-under-providence.tex": "1e83ca0a598b413280be01c8630f4c9d9b9d5e287dd700427b11d860853bc69c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/30-debt-forgiven-from-the-heart.tex": "a65ad64999d30eb094b9da12a38fc03e5cf8edb973518bcb43614b64923714ab",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/40-last-exodus-of-the-church.tex": "739bca5117fb15540899b414042ec0bbf943f17bbe8793008188fe66dfcc19b1",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/50-comparison.tex": "9c1b53fe83d1b4dec57562f5ee623509fe53d414e65f136cba58308f105d003b",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/80-date-location.tex": "a4e8da2a828a471c27e4710e48cce4a977ccf80268356813220bb3bf52add1cf",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/90-apparatus.tex": "2b16317590259b18f73607ecccac01f0f7ea8c723d8e48bb50dea8fba415e9ac",
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "11",
+            "17f12ad495885888db9045416b60df5bc828dccdf9f1eab5a1edb648cc280964",
+            "a8bcc37ea3420a07",
+            "cc2e968320e2416ef9049f1c6910ac281df8feb9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Cold re-review of the research-edition study of the 1962 Twenty-first Sunday after Pentecost (main.tex and its nine sections), with the changed components, the production audit and generation metadata read in full. All 21 sealed inputs hash-match REVIEW_INPUTS. A rebuild in scratch is byte-identical to the author proof (36 pages, SHA-256 0346d038...). A word diff against the iteration-0 proof located every change. Repairs checked at source: STU-001 is cleared, because the Matthew place phrase now matches the NABRE passage record (Antioch, offered as plausible). Advisories STU-002 to STU-006 and STU-008 to STU-010 are cleared. They were checked against the Bellarmine prefaces (text.txt lines 45-63), Moralia Pref. 1-3, Chrysostom Hom. in Matth. 61.3-5 (NPNF1-10 lines 34960-35130), Augustine Sermon 83.2-8 (NPNF1-6 lines 34990-35185), Sermon 58.8, De serm. Dom. I.22.77, the PG 27 handling, and a 10-word overlap count that now shows only short scriptural recurrences. STU-007 is only partly cleared (advisory). Three distinct readings remain, each engaging all ten elements, each with its own four senses, and each carried by two Fathers with developed contributions. Consequential-difficulty test, reading 1 (the Introit's will no one resists against the Offertory's petiit / data est a Domino): Gregory, Moralia Pref. 7 (deficeret/proficeret), II.19 and IX.5 (Oxford text lines 156-161, 2179-2200, 14365-14387), and Aquinas, ST I q.103 a.7 (sed contra and corpus) are reported accurately, and the prose teaches the question and makes the inference followable: pass. Reading 3's Communion test (Hilary, PL 9 cols. 573-574; Augustine, Enarr. 118 Caph 84-88; Bellarmine on 118:84-85): the inferences are reported accurately at their own places, but two summary sentences flatten the difference and credit Augustine and Bellarmine with Hilary's identification of the persecutors (STU-011, blocking). Limits: Cassiodorus, PG 27, PL 26, Rupert, Durandus, Honorius, Sicard, Alphonsus and Aquinas's Super Iob were checked only through the research records. Verdict: CHANGES_REQUIRED. There is one blocking defect (STU-011, study) and two advisories."
+}

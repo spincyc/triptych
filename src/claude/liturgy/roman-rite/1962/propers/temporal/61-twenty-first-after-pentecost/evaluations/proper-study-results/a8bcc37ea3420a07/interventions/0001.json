@@ -1,0 +1,6 @@
+{
+  "encoded": false,
+  "stage": "research",
+  "text": "Cause of STALE-RESEARCH-REVIEW at artifact-gates 0: while derive-homily ran, the driver committed b9786e912, a new registered tool (tools/proper-study-run-archive) whose GROUPS and REACHES entries changed scripts/_tooling.py. The chronology computation compiles that module, so proper-study-v4 seals it among chronology_computation_inputs; its digest moved from 19e041b8cc414bda07611d313084ef8a601da2ae6cbfb3ecc94b4dc90e58a15b to 86c302fcb7be450dec4dc1d45c4f529b000e79d5c548fae2b22212f7246e0afe. No file under the leaf and no other sealed input changed (1813 files and every other computation input compare equal). The driver keeps the tool commit and lands no further change to any sealed input while the run is live; research iteration 3 is told this fact in its dispatch.",
+  "timestamp": "2026-10-15T16:46:24Z"
+}

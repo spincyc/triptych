@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
-audited_on = "2026-10-08"
-publication_snapshot = "sha256:ad5c47cde509babf7931aa7544ba371a4c065d25ad0437457bb4dc900119bdf3"
-classification_snapshot = "sha256:fc6bf4b652e3e8e63f3ec0514de9ad2b47520c134f133968e12853e33ffac048"
+audited_on = "2026-10-15"
+publication_snapshot = "sha256:876689271f43ae8535c0e0dd32a026f908bb3a5e1ab8df6c7018901920309abb"
+classification_snapshot = "sha256:985dd1f2502e08ed1e9c5a4b3a4bf3658473cc4d1682676c430f6e7e681dfa2f"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -166,6 +166,10 @@ source_categories = ["finding-aid", "historical-primary", "institutional-current
 
 [[classifications]]
 document = "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 
 [[classifications]]

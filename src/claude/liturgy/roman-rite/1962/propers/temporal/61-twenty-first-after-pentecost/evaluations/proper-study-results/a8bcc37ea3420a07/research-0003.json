@@ -1,0 +1,15 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STALE-RESEARCH-REVIEW",
+      "note": "No file was edited. The research deliverable needed no repair: it is verified current, unchanged since commit 720a86499 apart from the mutable production-review.md receipt, which the seal excludes. The proper-study-v4 research seal was recomputed and compared field by field with research-review-0002 review_inputs. Of 1832 sealed entries, including 1813 leaf and binding files, every one is equal except chronology_computation_inputs scripts/_tooling.py, which moved from 19e041b8cc414bda07611d313084ef8a601da2ae6cbfb3ecc94b4dc90e58a15b to 86c302fcb7be450dec4dc1d45c4f529b000e79d5c548fae2b22212f7246e0afe. That old digest is the blob at b9786e912^. Since 720a86499, b9786e912 is the only commit touching scripts/, tools/ or requirements-tools.txt, and its _tooling.py diff adds proper-study-run-archive only to GROUPS and to REACHES (as NOTHING). Under the changed module, proper-chronology record --check and annotations --check (with and without --presentation orientation-v1) report the record and annotations current. check-content-preflight --edition research also passes bindings-valid (51 bindings), chronology-record-current (7 elements, 18 assertions) and chronology-annotations-current (17 candidates). proper_study check --phase research passes. review-dependencies.toml needs no change, because chronology computation inputs are sealed automatically. The finding's second half, a new independent review of the current bytes, is owed to the research-review stage that follows.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 3,
+  "notes": "Records written: none. Remaining limitations: unchanged from research iteration 2 (unregistered IA renditions of the PG 27 expositions with Athanasian authorship unexamined; no other Greek commentator sought; Theodoret and PG 27 not read on Ps 113 or Ps 118:1). The working tree also carries a modified research/production-review.md and an untracked research/artifacts.json, both from later stages. Neither is in the research seal, and this stage did not touch them.",
+  "stage": "research",
+  "summary": "STALE-RESEARCH-REVIEW was not caused by any research change. The only sealed input that moved is scripts/_tooling.py: the driver's tool-registry commit b9786e912 added two table entries, which moved its digest from 19e041b8 to 86c302fc. The chronology record and annotations are verified current under the changed module, so no research record needs to change and none was edited. The current bytes are ready for a fresh independent research review."
+}

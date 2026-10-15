@@ -1,0 +1,7 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/main.tex",
+  "disposition": "PASS",
+  "iteration": 3,
+  "stage": "author-study",
+  "summary": "Re-entry caused only by the research seal moving on scripts/_tooling.py (intervention 0001, verified): research iteration 3 changed no file and research review 3 passed with advisories only; no study finding was forwarded. All 21 inputs sealed by study-review 2 re-hash unchanged, so no study component, manifest, research record or generation-metadata.tex was edited; the only edit is an Author-study iteration 3 entry appended to research/production-review.md (not a render input or sealed study input). Author proof: build/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.pdf, removed and rebuilt with make doc, 37 pages, SHA-256 e7c90080f6a14ba875742ebe822a86d3192027ae36c9a43a404d1ae1e1968285 (byte-identical to the build-artifacts build; copy, log, aux and rasters in build/tpt-runs/a8bcc37ea3420a07/artifacts/author-study-3/), no LaTeX warnings, overfull/underfull boxes or undefined references, all fonts embedded Latin Modern. check-proper-components (artifacts, research), the proper-study content check with all four --require flags, all thirteen content-preflight checks including provenance-matches-run, and the canonical web conversion probe (Markdown 3.10.3, pandoc 3.11; output differs from iteration 2 only in the revision timestamp) pass."
+}

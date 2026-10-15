@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/synthesis.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "VIS-001",
+      "note": "\\addlinespace now separates every pair of consecutive orientation rows inside the psalm, Gospel and Epistle groups; page 2 inspected at 200 dpi shows a visible gap between rows, with the chronology alone on page 2 and its zref markers unchanged.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 2,
+  "stage": "derive-synthesis",
+  "summary": "Repaired VIS-001 by placing \\addlinespace between every two consecutive orientation rows not already divided by \\midrule in sections/concise/03-date-location.tex (three in the psalm group, two Gospel, one Epistle), leaving the generated rows and table type size unchanged; also capitalized the concise title block's descriptive line (advisory VIS-004), updated the shared revision timestamp and derive-synthesis contribution, and appended the production audit. Author proof: 12 pages, PDF build/tpt-runs/a8bcc37ea3420a07/artifacts/derive-synthesis-2/61-twenty-first-after-pentecost-synthesis.pdf sha256 963401884390649cde76c9dd2346bdb0c32af3597ba71cc3c364c13717717deb, aux sha256 00c088503b8c419acd594f57901c37684856880c72c00b03508ac4d578967293 (unchanged; chronology alone on page 2), log sha256 f56250eff2deac741d679b0956acd231a46648bbb53100466f1054b4730f23b0, rasters under rasters/; component, content, preflight, provenance and generation-metadata checks pass, while the artifacts-phase check reports the expected stale build snapshot, which belongs to the final build."
+}

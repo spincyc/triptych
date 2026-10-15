@@ -1,0 +1,27 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "build/web/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md, 'The appointed elements at a glance' table and 'The Three Readings Compared' table, rendered at 390px",
+      "note": "At phone width the site stylesheet's table rule (display:block; overflow-x:auto) shows these prose tables with their right-hand column cut at the box edge (scrollWidth 417 and 552 against a 342px box). The text is reachable only by horizontal swiping inside the table. Accepted Claude 59/60 and GPT 61 editions share the same glance-table shape, so this is site-wide presentation, not a defect of this conversion. No review criterion covers non-dossier prose tables at mobile width."
+    },
+    {
+      "location": "build/web/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md, Scriptural Date and Location table, Passage column",
+      "note": "The generated passage labels mix 'Ps 118:1' with 'Psalm 89:1-2' and 'Matthew 18:23-35', and use ASCII hyphens where the study prose uses en dashes. The PDF prints them identically, and research/chronology.toml marks these labels as generated values no leaf may edit. Any change belongs to the chronology generator, not to this leaf or its conversion."
+    }
+  ],
+  "review_inputs": {
+    "document": "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+    "files": {},
+    "provider": "claude",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md": "9681daa54a44cab5fb3e11f4128da27bbc7a284e4eaa04e31af2924ab771eb3f"
+    }
+  },
+  "stage": "web-review",
+  "summary": "Cold review of the sole canonical web edition build/web/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md, conversion hash 9681daa54a44cab5fb3e11f4128da27bbc7a284e4eaa04e31af2924ab771eb3f. That hash is the one research/web-artifact.json and REVIEW_INPUTS record, and the converter reproduced it byte for byte from the current sources. It was compared with the reviewed 37-page research PDF (sha256 b29d4ebd..., which matches research/artifacts.json, as do all render inputs) and with the main.tex source graph. A word-sequence and bag-of-words comparison against the PDF text shows no omitted or added prose. The only differences are running heads, the TOC page numbers, the repeated longtable header, the versicle glyph, and cell order in reflowed tables; every table cell was checked against its TeX row. All 389 source italic spans (latin/work/emph) appear as em, and the ten Latin propers render as italic quotations with upright citations. There are 21 blockquotes, matching the 21 quotations: 10 Latin texts and 11 English witnesses with small-caps labels. There is one H1, ten H2 matching the PDF contents, and H3 subsections with no skipped levels. The three interpretations are separate H2 lanes, each closing with a four-senses definition list (12 dt/dd in all). All ten proper-<element> anchors are present, and every TOC link resolves to a unique id. No TeX debris, stray escapes, trailing whitespace, or model/runtime metadata appears. The revision timestamp 2026-10-15T17:54:00Z and the rights colophon match the PDF. The page was rendered through the site's own render_page and layout with Python-Markdown 3.10.3, and checked in headless Chromium at 1280px and 390px. Neither width scrolls horizontally, there are no console or request errors, and the dossier date table renders without a clipped column. The passage, occurrence, place and date lookup works on the rendered table: Mt 18:23-35 gives Capharnaum and 'Date unresolved', and Eph 6:10-17 gives the Rome/Caesarea imprisonment and 'Disputed: A.D. 58-63; A.D. 61'. Limits: theological substance was not re-adjudicated, because it was accepted upstream. Fragment scrolling was confirmed only as far as the targets exist, since the site's smooth scrolling made headless position readings transitional. Verdict: PASS. No blocking defect remains in these bytes."
+}

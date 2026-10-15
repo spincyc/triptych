@@ -1,0 +1,286 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "HOM-006",
+      "location": "sections/homily/10-homily.tex lines 43-45 ('Who is that servant? St~Augustine answers that every one of us is both men in this story at once. We owe God a debt we cannot pay. And somewhere there is someone who owes us.')",
+      "problem": "Unchanged since iteration 1: the file is byte-identical to the sealed bytes, and I re-read the passage and its locus for this review. The attributed sentence says that each of us is 'both men in this story', which a listener hears as both the forgiven servant and the fellow servant. The two glossing sentences describe only the forgiven servant's double position, a debtor to God who has a debtor of his own. That is the rule Sermon 83.2 states ('every man is at once God's debtor, and hath also some brother a debtor to himself', NPNF1-6 lines 34993-34995). Augustine's other clause, that every man is also 'bounden to his brother by some sin' (lines 34998-34999), is what would make him both men, and the speech does not say it. The listener therefore cannot tell which two men are meant.",
+      "required_result": "Make the attributed sentence say what the gloss says and what Augustine says, for example that every one of us stands where that servant stands, at once a debtor to God and the creditor of some brother. Alternatively, keep 'both men' and add Augustine's other clause, that every man is also bound to his brother by some sin, so that the listener hears both roles.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-007",
+      "location": "sections/homily/10-homily.tex line 64 ('He goes ``straightway'', Chrysostom notices') against line 101 ('Explaining this passage, St~John Chrysostom says something startling')",
+      "problem": "Unchanged since iteration 1; the file is byte-identical to the sealed bytes. Chrysostom is first named by his bare surname, in a parenthetical clause, and is quoted twice more under that name (lines 71 and 85). The full form 'St John Chrysostom' first appears at the fourth mention, where it sounds like an introduction. The listener therefore meets an unexplained name first and a belated introduction later. Augustine and Aquinas are both introduced in full at first mention.",
+      "required_result": "Give the full name, 'St John Chrysostom', at line 64, and use the short form at line 101 and afterwards.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-008",
+      "location": "sections/homily/10-homily.tex lines 40-41 ('And the servant asks only for time. He is given the whole debt.')",
+      "problem": "Unchanged since iteration 2, when it was first raised; the file is byte-identical to the sealed bytes. In current English, to be 'given' a debt means to be made to owe it. The intended sense is that the whole debt is remitted, and that needs 'forgiven'. The obsolete sense of 'give' as 'remit' is not available to a modern assembly. The sentence announces the parable's first gift in a homily whose subject is a debt that is forgiven and then 'comes back'. Its literal sense is the opposite of the intended one, at the place where the contrast with 'asks only for time' should be clearest. The witness the speech follows here says it plainly: 'He gave more than he asked, remission and forgiveness of the entire debt' (Chrysostom, Hom. 61.3, NPNF1-10 lines 34993-34995, re-located for this review). Most listeners will recover the sense from the contrast, and the next movement opens 'the king forgives with a word', so this is advisory only.",
+      "required_result": "Say 'He is forgiven the whole debt', or 'He is given the remission of the whole debt', keeping the contrast with 'asks only for time'. No other change is needed.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 3,
+  "observations": [
+    {
+      "location": "propers/verified.md, 'Publication basis', 'English, the Sunday's orations'; sections/homily/10-homily.tex lines 112-113 (Introit) and 131-132 (Communion)",
+      "note": "Still stands from iterations 1 and 2. The speech quotes the 1861 Cummiskey English of the Introit ('All things, O Lord, are in thy power: and no one can resist thy will') and of the Communion ('when wilt thou judge those who persecute me?'). No tracked record carries them: the registered temporal-orations-en rows for post-pentecosten-21 (lines 173-175) cover only the Collect, Secret and Postcommunion, and the scan and OCR artifacts are remote with no retained payload. This review read both on pp. 459 and 461 (printed pp. 450 and 452) of a local copy of the registered scan whose SHA-256 matched 85034c90..., and found them exactly as quoted. A passage record, like the pentecost-19 and pentecost-20 checked-English artifacts, would let later stages verify them without the scan."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "propers/verified.md",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Jerome",
+            "Hilary of Poitiers",
+            "Thomas Aquinas",
+            "Rabanus Maurus",
+            "Robert Bellarmine",
+            "Rupert of Deutz",
+            "William Durandus",
+            "Sicard of Cremona",
+            "Alfredo Ildefonso Schuster",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "armour-under-providence"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "armour-under-providence",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Jerome",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Rabanus Maurus",
+            "Alphonsus Liguori",
+            "Cassiodorus",
+            "Alfredo Ildefonso Schuster",
+            "Lucien Fromage",
+            "Rupert of Deutz",
+            "William Durandus",
+            "Honorius Augustodunensis"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "debt-forgiven-from-the-heart"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "debt-forgiven-from-the-heart",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Robert Bellarmine",
+            "Gregory the Great",
+            "Cassiodorus",
+            "Hilary of Poitiers",
+            "Lucien Fromage",
+            "Alfredo Ildefonso Schuster",
+            "Honorius Augustodunensis",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "last-exodus-of-the-church"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "last-exodus-of-the-church",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/format.tex": "7e1fb4f1e00ddb34599fff75ba5693875f1d6d30a20ab32e3e7fb79528a43322",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/homily.tex": "0af1ffecc2514646c8fe18fbf99cec04f0b00a5ffbcb874e77fd5692f0cc4978",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/propers/verified.md": "1038db2ede08aac7ac07340a961bbcb6d55dd749a13aa66f335276fb888e43ba",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/interpretations.md": "53b4147611d91e177806870fb0d91f9366bfc1dbd94ca204a81666248de630ac",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md": "0e6a972ed7c55170713262facf1f944afd3f375d221af948257ee3e7268b3e45",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/homily/10-homily.tex": "30909fcdc14b86551b1f73e9a5306c49edcfa35668e90d46cfbd26e13d9eba2e",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/homily/90-note.tex": "b24646db989180fef41ac8c350e5de8a9a29bc6e4310c2ed9f82365ccd90bc78",
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "11",
+            "17f12ad495885888db9045416b60df5bc828dccdf9f1eab5a1edb648cc280964",
+            "a8bcc37ea3420a07",
+            "cc2e968320e2416ef9049f1c6910ac281df8feb9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Cold review, iteration 3, of the homily 'The Words That Saved Him' (homily.tex; sections/homily/10-homily.tex and 90-note.tex), following the layout-only concise repair of VIS-001. I checked the driver's account and it holds. Visual-review 0 raised VIS-001 against concise page 2 only. Derive-synthesis 2 added six \\addlinespace lines to sections/concise/03-date-location.tex and capitalised one word of synthesis.tex's title line. generation-metadata.tex moved the shared timestamp to 2026-10-15T17:54:00Z and added an accurate derive-synthesis iteration-2 clause. Derive-homily 3 edited nothing in the homily and appended one audit entry. All ten sealed inputs re-hash equal to the homily-review 2 seal. The upstream seals (16 concise, 21 study, 1,813 research files and 13 chronology computation inputs) all still hold. An independent three-pass pdflatex build in scratch reproduced the current homily PDF 2137ef1d58e1a99bcaf2e9d562067416dda2e95fade04541d3fe36b38fec6b16 (3 pages, aux 96da8bd6... unchanged, clean log, Latin Modern Type 1 embedded). The same build with HEAD's generation record reproduced the previously reviewed PDF 88631112... exactly. Pages 1-2 rasterise identically, the extracted text differs only in the 'Last revised' line, and check-generation-metadata --pdf passes. No scope change touches a passage, claim or locus the homily uses. I read the speech through as a listener would hear it. Its governing question is what a forgiven man owes the man who wronged him. Its decisive turn is the identical plea of Mt 18:26 and 29, which Chrysostom himself draws ('he did not regard even the words by which he had been saved', Hom. 61.4, NPNF1-10 lines 35022-35023). Its movement runs through the Cross, Baptism (Augustine, Sermon 83.7), the Secret and the Postcommunion to the brother, then back to the opening scene. It passes the text-substitution test. A script found all 24 quoted spans in the tracked witnesses: Douay Mt 18 and Eph 6:12; NPNF1-6 Sermon 83.2, 4, 7, 8 and Sermon 58.8; NPNF1-10 Hom. 61.3-4; NPNF1-13 Hom. 22 on Ephesians; and 1861 orations rows 173-175. The Introit and Communion English are not in any tracked record. I read them on pp. 459 and 461 of a local copy of the registered 1861 scan, whose SHA-256 matched 85034c90.... I read Aquinas on v. 35 (Hic videtur innuere ... redire per ingratitudinem) in the 1745 OCR, lines 31274-31283. The spoken body has 1,442 words and 114 sentences, mean 12.6 words, longest 39 (a quotation). That is 11.1-12.0 minutes at 120-130 words a minute, by arithmetic only. The note's figures, loci and routes are accurate, and it claims no timed delivery. The new derive-homily 3, derive-synthesis 2 and build-artifacts 1 audit entries agree with what I reproduced. Limits: no one has spoken or timed the text; Aquinas was read on OCR only; settled prose was re-read but not re-argued, per REVIEW_SCOPE. Verdict: PASS, with no blocking finding. HOM-006 to HOM-008 stand unchanged as advisories, and the observation on the 1861 chant English stands."
+}

@@ -1,0 +1,295 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "HOM-001",
+      "location": "sections/homily/10-homily.tex, the movement as a whole: lines 40-53 (the king's remission), 85-87 (baptism), 165-171 (Collect, Postcommunion and the altar); sections/homily/90-note.tex lines 46-47 (\"The Gradual, Alleluia and Secret are left to the studies\")",
+      "problem": "guidance/liturgy/propers-three-documents.md, The homily, adopts Homiletic Directory nos. 6-15 and 25 as the homily's liturgical orientation: the readings and prayers lead through Christ's Paschal mystery to Eucharistic participation and daily life, and this governs the homily's movement. In the Directory, nos. 12-15 make the first movement the proclamation of the Paschal Mystery through the readings, and the second the preparation of the assembly to recognize in the Eucharist its share in the Lord's death and Resurrection. The spoken body never names Christ's death, Resurrection, Cross, blood or sacrifice. The ten thousand talents are remitted by 'the king' with no word of where, or at what price, that remission reaches the hearer. Baptism appears once, unprepared, inside the Aquinas paraphrase ('A grudge does not undo your baptism', line 86), although the listener has not been told that the debt was forgiven there. The one Eucharistic sentence ('Let no one who receives the Lord at this altar go out and take his brother by the throat', lines 169-171) is a moral warning, not a preparation for participation. This formulary supplies its own bridge from the king's remission to the Sacrifice in the Secret, which the 1861 book prints as 'Mercifully receive, O Lord, these offerings, by which thou art pleased to be appeased, and restore us to salvation by thy powerful goodness' (printed p. 452, read on the image). The homily leaves the Secret to the studies, and reading 2 of research/interpretations.md (2.4, Secret row) records it as available. The result is an exegetically strong, morally concrete homily that moves from the parable to daily conduct without passing through the Paschal mystery. The forgiveness it asks the hearer to extend therefore has no proclaimed source in Christ.",
+      "repair_target": "homily",
+      "required_result": "Revise the spoken body within the default 10-12-minute scope, making room by trimming elsewhere (for instance under HOM-005) rather than lengthening it. The movement must proclaim where the unpayable debt is forgiven: Christ's death and Resurrection, received in Baptism and made present at this altar. It must then prepare the assembly to receive the Eucharist as sharing in that mystery before it draws the consequence for the brother. Ground this in the Mass's appointed words, such as the Secret's offerings by which God wills to be appeased and to restore salvation, or the Postcommunion's food of immortality. Where a Father is named, use only loci already checked, such as Augustine, Sermon 83.7, 'every man begins from Baptism; he goes out free, the \"ten thousand talents\" are forgiven him', or 83.2 on Christ the living Bread whom God's beggars ask for. Credit no Father with a join he does not make, so that the link between the parable and the Secret or Eucharist stays the homily's own. Update the terminal note's relation, texts-quoted, exact-loci and word-count/pace entries to match the revised body.",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-002",
+      "location": "sections/homily/10-homily.tex line 141: 'St~Augustine answers in a sermon on anger.'",
+      "problem": "The NPNF heading of Sermon 58 (NPNF Sermon 8) is 'Again on the Lord's Prayer, Matt. vi. To the Competentes'. Section 8 is a passage on anger within that sermon ('And what is anger? The lust of vengeance'). The spoken description of the sermon's subject is therefore inexact. The reviewed study says correctly 'Of anger he says' (sections/30-debt-forgiven-from-the-heart.tex line 254).",
+      "required_result": "Describe the source accurately. 'In a sermon on the Lord's Prayer' would also prepare the Lord's Prayer in the next movement. 'Speaking of anger' would also be accurate.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-003",
+      "location": "sections/homily/10-homily.tex line 94: 'Why does he do it?'",
+      "problem": "The question opens a new movement directly after Mt 18:35, whose last-named agent is 'my heavenly Father' (lines 88-90). A listener therefore hears 'he' as the Father. The intended subject, the forgiven servant, becomes recoverable only at 'The servant had his hands on the wrong throat' (line 106), three sentences and two quotations later.",
+      "required_result": "Name the subject in the question itself, for example 'Why does the forgiven servant do it?'.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-004",
+      "location": "sections/homily/10-homily.tex line 148: 'And his patience waits for our enemy's conversion, as it once waited for ours.'",
+      "problem": "Lines 106-108 ('was not his enemy ... The enemy was the one who wanted the grudge') and lines 162-163 ('aim it ... at the enemy who wants you to keep the grudge') train the listener to hear 'the enemy' as the adversary. Between them, 'our enemy' names the human wrongdoer, so in the ear 'our enemy's conversion' can be heard as the devil's. The redirect that the homily builds is blurred at the point where its theology must be precise.",
+      "required_result": "Name the human party here, for example 'the conversion of the one who wronged us', so that 'the enemy' keeps one referent throughout the speech.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-005",
+      "location": "sections/homily/10-homily.tex throughout; especially lines 94-118 and lines 141-145",
+      "problem": "The speech carries 33 quoted spans: 466 of its 1,446 spoken words, about 32 per cent. About twenty of these are patristic quotations, each introduced by an attribution. The Epistle movement (lines 94-118) stacks six quoted texts: Eph 6:12, Chrysostom three times, the Introit and Gregory. Several phrases belong to a reader's register rather than a listener's: 'A few lines later he says' (line 144), 'in a sermon on anger' (line 141) and 'preaching on those words' (line 98). The question, image, turn, response and return remain the homily's own, so it does not fail as a lecture assembled from quotations. The attribution rhythm nonetheless tilts toward one.",
+      "required_result": "Keep the quotations that carry a turn, for example the harbour not recognized, the pardon revoked by its receiver, the wrath poured on the devil, tongue and heart, and the surgeon. Paraphrase or drop the rest. Replace citation-register phrases such as 'A few lines later he says' with oral transitions. Use the space this frees for the repair of HOM-001.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "propers/verified.md",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "John Chrysostom",
+            "Jerome",
+            "Hilary of Poitiers",
+            "Thomas Aquinas",
+            "Rabanus Maurus",
+            "Robert Bellarmine",
+            "Rupert of Deutz",
+            "William Durandus",
+            "Sicard of Cremona",
+            "Alfredo Ildefonso Schuster",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Gregory the Great",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "armour-under-providence"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "armour-under-providence",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Jerome",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Rabanus Maurus",
+            "Alphonsus Liguori",
+            "Cassiodorus",
+            "Alfredo Ildefonso Schuster",
+            "Lucien Fromage",
+            "Rupert of Deutz",
+            "William Durandus",
+            "Honorius Augustodunensis"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "debt-forgiven-from-the-heart"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "debt-forgiven-from-the-heart",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Robert Bellarmine",
+            "Gregory the Great",
+            "Cassiodorus",
+            "Hilary of Poitiers",
+            "Lucien Fromage",
+            "Alfredo Ildefonso Schuster",
+            "Honorius Augustodunensis",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "last-exodus-of-the-church"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "last-exodus-of-the-church",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/format.tex": "7e1fb4f1e00ddb34599fff75ba5693875f1d6d30a20ab32e3e7fb79528a43322",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/homily.tex": "9dfd39ff4f2b45caa39e3f7647db8dc8ba85d257badaead0cc25c86bcb264438",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/propers/verified.md": "1038db2ede08aac7ac07340a961bbcb6d55dd749a13aa66f335276fb888e43ba",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/interpretations.md": "53b4147611d91e177806870fb0d91f9366bfc1dbd94ca204a81666248de630ac",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md": "0e6a972ed7c55170713262facf1f944afd3f375d221af948257ee3e7268b3e45",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/homily/10-homily.tex": "fff1f9a2b10981ed43dba1a40e12dcc9f4908c6dcb27f3995ee8300939869d1d",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/homily/90-note.tex": "b43e94043aabac4bba739ae56b134ce1293423cc1d790d6f34b9d1b33f5986c6",
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "11",
+            "17f12ad495885888db9045416b60df5bc828dccdf9f1eab5a1edb648cc280964",
+            "a8bcc37ea3420a07",
+            "cc2e968320e2416ef9049f1c6910ac281df8feb9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Cold review of the homily for liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost (homily.tex, sections/homily/10-homily.tex, sections/homily/90-note.tex; all ten sealed input hashes re-matched). Checked evidence: every one of the 33 quoted spans was matched at its locus by this reviewer: Chrysostom Hom. in Matth. 61.3-5 (NPNF1-10, adb8f1c9, lines 34913-35130) and Hom. in Eph. 22 (NPNF1-13, 54274dd9, lines 15353-15356, 15479-15482); Augustine Sermon 83 (NPNF Sermon 33) 2, 4, 7, 8 and Sermon 58 (NPNF Sermon 8) 8 (NPNF1-6, ce371798); Gregory Moralia II.19 (d9f9ed86, line 2180); the Challoner Mt 18:26, 28, 29, 32, 34, 35, Mt 20:2 and Eph 6:12 via tpt mass-propers show; the 1861 Cummiskey Introit, Collect, Offertory, Communion and Postcommunion on the page images of the registered scan (scratch copy SHA-256 85034c90... and 24,767,551 bytes matched; PDF pp. 459 and 461 read at 110 dpi). Aquinas's paraphrase was checked against the Venice 1745 OCR (Super Matth. c. 18 on v. 35: peccata dimissa ... Dicuntur autem redire per ingratitudinem) and is faithful. The note's loci, section numbers (Hom. 61: section 3 from line 34913, 4 from 35005, 5 from 35099), reading titles, rubrical facts and the 1,446-word count (recomputed: 1,446; 11.1-12.1 minutes at 120-130 wpm, honestly stated as untimed) are correct. The homily is exegetically specific, survives no text substitution, keeps Aquinas's narrower teaching beside Chrysostom and Augustine, invents no anecdote, persona or prayer, credits no Father with the homily's own joins, and is speakable verbatim. It is not accepted because its movement never passes through Christ's Paschal mystery, which the contract adopts from the Homiletic Directory as the governing movement (HOM-001); four advisories concern oral clarity and quotation density. Limits: no timed or audible delivery exists or is claimed; the Homiletic Directory nos. 6-15 and 25 were read at the official Vatican URL through a fetch that returned short excerpts with paraphrase, not the complete paragraphs."
+}

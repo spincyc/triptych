@@ -1,0 +1,16 @@
+WORKFLOW: proper-study v11
+WORKFLOW_DIGEST: 17f12ad495885888db9045416b60df5bc828dccdf9f1eab5a1edb648cc280964
+RUN_ID: a8bcc37ea3420a07
+COMMIT: cc2e968320e2416ef9049f1c6910ac281df8feb9
+STAGE: publication-gates
+ITERATION: 0
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-10-18","proper":"liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost","provider":"claude","research_handoff":"none"}
+DOCUMENT_ROOT: src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost
+REPAIR_TARGETS: ["research","study","synthesis","homily","artifacts","publication"]
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: []
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

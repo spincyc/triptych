@@ -23,14 +23,31 @@ parish assembly, and the canonical study's web edition. `tools/mass-today
 Pentecost, a second-class Sunday (Easter 5 April 2026, Pentecost 24 May,
 twenty-one weeks to 18 October), with the second-class feast of St Luke
 impeded and its collect said within the Mass. The production plan records this
-exact scope opening. The GPT leaf for the same identity is in production on
-its own branch; this is an independent Claude production and borrows nothing
-from it.
+exact scope opening. The GPT leaf for the same identity is published; this
+is an independent Claude production and borrows nothing from it.
 
-**In progress.** Authorization and acceptance criteria are recorded; the run
-has not yet been seeded. Work is committed on `feature/propers/claude`, the
-workspace's required branch, and reaches `main` by fast-forward after the
-local deploy gates pass.
+**Accepted; fast-forward to `main` and live verification pending.** Run
+`a8bcc37ea3420a07` (`proper-study` v11) reached ACCEPTED at its publication
+gates with no escalation: 59 packets, 59 accepted results, two
+interventions. Every agent stage ran as a fresh `claude-opus-5-5[1m]` subagent
+at its packet's declared effort, and every review was a fresh worker. Six
+cycles were real defects that cold reviews found and repaired: research
+twice (Bellarmine on Ps 89's title and a reading framed on unsung Communion
+words; Maurist summaries quoted as Hilary's and the censured Theodoret used as
+a witness), study twice (the NABRE Antioch suggestion; overstated agreement
+on the Communion's plea), the homily once (no passage through the Paschal
+mystery to the Eucharist) and the concise page-2 row spacing once. A seventh
+was the driver's: registering a tool mid-run moved `scripts/_tooling.py`,
+which the research seal covers, and every stage re-ran without a content
+change. The installed family is a 37-page expansive study, a 12-page concise
+study, a three-page homily (1,442 spoken words) and the canonical web edition.
+The run is archived in the leaf under
+`evaluations/proper-study-results/a8bcc37ea3420a07/`; the driver's account of
+every cycle, the 20 standing findings and what is left for other owners,
+including a rights question about the tracked Bellarmine transcription, is
+[CYCLES.md](workflows/reviews/claude-1962-61-production-2026-10-15/CYCLES.md).
+Work is committed on `feature/propers/claude` and reaches `main` by
+fast-forward after the local deploy gates pass.
 
 ## October 18 Novus Ordo main integration, 2026-10-14
 

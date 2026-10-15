@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STU-011",
+      "note": "Both sentences rewritten so each witness carries only his own answer (thing asked and persecutors as well as time), compatibility stated through Hilary's affirmation of the last judgment and Thomas's men moved by the devil; 50-comparison.tex paragraph and table row brought into line.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 2,
+  "stage": "author-study",
+  "summary": "Repaired STU-011 in the study's own components: the first reading's third difficulty (20-armour-under-providence.tex), the third reading's second difficulty (40-last-exodus-of-the-church.tex) and the comparison's 'Where they differ' paragraph and third-reading persecutors row (50-comparison.tex) now credit Hilary (present power against the devil and his ministers, expressly not the judgment of the resurrection, which he affirms; PL 9 Caph 5 checked on the tracked text layer), Augustine (the martyrs' cry for the final judgment on the Church's persecutors; Enarr. 118 Caph 84-88), Bellarmine (condemnation of the wicked who persecute and tempt; Ps 118:84-85) and Cassiodorus (Hilary's persecutors joined to the end) each with his own answer, say they differ in what is asked and whom the plea names as well as in time, and call them compatible but not identical; the 40 sentence no longer claims the comparison shows an agreement. Also cleared the STU-007 cross-reference in 10-each-element.tex; STU-012 is a research-record defect left for routing and recorded in research/production-review.md. Generation timestamp and model contribution updated. Author proof: build/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.pdf (copy in build/tpt-runs/a8bcc37ea3420a07/artifacts/author-study-2/), 37 pages, SHA-256 9a690e1d73f6373672b78617e136d8755f9c6028e0ebb174eaa16c2223b6b212, no LaTeX warnings or bad boxes; check-proper-components (artifacts, research), proper-study content check with all four --require flags, twelve content-preflight checks and the canonical web conversion probe (Markdown 3.10.3, pandoc 3.11) pass."
+}
