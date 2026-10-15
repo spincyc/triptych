@@ -1,0 +1,237 @@
+schema = 2
+format_contract = "propers-format-v1"
+authority_contract = "authority-standing-v1"
+record_type = "proper-components"
+document = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
+calendar = "roman-1962"
+entrypoint = "main.tex"
+synthesis_entrypoint = "synthesis.tex"
+homily_entrypoint = "homily.tex"
+appointed_text_completeness = "complete"
+presentation_contract = "interpretive-pagination-v1"
+chronology_presentation = "orientation-v1"
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+
+[outputs]
+research = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
+synthesis = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis"
+homily = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-homily"
+web = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
+canonical_label = "Full PDF"
+synthesis_label = "Synthesis PDF"
+homily_label = "Homily PDF"
+
+# Physical-page roles of the concise companion's fixed opening
+# (guidance/liturgy/propers-three-documents.md), all written by the concise
+# author. The chronology role uses the orientation-v1 rows of
+# research/chronology-annotations.tex. Their reviewed home in the study is the
+# terminal Scriptural Date and Location appendix (component
+# scriptural-date-location), which prints every generated row once with its
+# place phrase and gives each passage its fuller evidence beneath. The research
+# entrypoint imports the generated definitions in its preamble; the concise
+# page-2 owner imports them itself, once.
+[presentation]
+inventory = "concise-inventory"
+overview = "concise-overview"
+chronology = "concise-date-location"
+themes = "concise-themes"
+commentary = "concise-commentary"
+
+# --- Research study (main.tex) ------------------------------------------------
+
+[[components]]
+key = "opening"
+kind = "front-matter"
+path = "sections/00-opening.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["format.tex", "propers/verified.md", "research/context.md", "research/scope.md"]
+
+[[components]]
+key = "appointed-texts"
+kind = "appointed-text"
+path = "sections/05-appointed-texts.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["format.tex", "propers/verified.md", "research/context.md"]
+
+[[components]]
+key = "each-element"
+kind = "proper-treatment"
+path = "sections/10-each-element.tex"
+modes = ["research"]
+depends_on = ["appointed-texts"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["format.tex", "propers/verified.md", "research/scope.md"]
+
+[[components]]
+key = "armour-under-providence"
+kind = "interpretive-lane"
+path = "sections/20-armour-under-providence.tex"
+modes = ["research"]
+depends_on = ["each-element"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["format.tex", "research/interpretations.md", "research/scope.md"]
+
+[[components]]
+key = "debt-forgiven-from-the-heart"
+kind = "interpretive-lane"
+path = "sections/30-debt-forgiven-from-the-heart.tex"
+modes = ["research"]
+depends_on = ["each-element"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["format.tex", "research/interpretations.md", "research/scope.md"]
+
+[[components]]
+key = "last-exodus-of-the-church"
+kind = "interpretive-lane"
+path = "sections/40-last-exodus-of-the-church.tex"
+modes = ["research"]
+depends_on = ["each-element"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["format.tex", "research/interpretations.md", "research/scope.md"]
+
+[[components]]
+key = "comparison"
+kind = "front-matter"
+path = "sections/50-comparison.tex"
+modes = ["research"]
+depends_on = ["armour-under-providence", "debt-forgiven-from-the-heart", "last-exodus-of-the-church"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["format.tex", "research/interpretations.md"]
+
+# The study's terminal historical appendix: the reviewed home of the
+# chronology the concise page 2 will reprint.
+[[components]]
+key = "scriptural-date-location"
+kind = "front-matter"
+path = "sections/80-date-location.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "epistle", "gradual", "alleluia", "gospel", "offertory", "communion"]
+references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml", "research/chronology-profile-comparisons.toml", "research/scope.md"]
+
+[[components]]
+key = "study-apparatus"
+kind = "terminal-apparatus"
+path = "sections/90-apparatus.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["propers/verified.md", "research/context.md", "research/scope.md", "research/interpretations.md", "research/source-bindings.toml"]
+
+# --- Concise study (synthesis.tex), written by the concise author -------------
+
+[[components]]
+key = "concise-inventory"
+kind = "front-matter"
+path = "sections/concise/01-inventory.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["format.tex", "propers/verified.md"]
+
+[[components]]
+key = "concise-overview"
+kind = "front-matter"
+path = "sections/concise/02-overview.tex"
+modes = ["synthesis"]
+depends_on = ["concise-inventory"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["format.tex", "research/interpretations.md"]
+
+[[components]]
+key = "concise-date-location"
+kind = "front-matter"
+path = "sections/concise/03-date-location.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["introit", "epistle", "gradual", "alleluia", "gospel", "offertory", "communion"]
+references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml", "research/chronology-profile-comparisons.toml"]
+
+[[components]]
+key = "concise-themes"
+kind = "front-matter"
+path = "sections/concise/04-themes.tex"
+modes = ["synthesis"]
+depends_on = ["concise-overview"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["format.tex", "research/interpretations.md"]
+
+[[components]]
+key = "concise-commentary"
+kind = "integrated-commentary"
+path = "sections/concise/10-commentary.tex"
+modes = ["synthesis"]
+depends_on = ["concise-themes"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["format.tex", "research/interpretations.md", "research/scope.md"]
+
+[[components]]
+key = "concise-apparatus"
+kind = "terminal-apparatus"
+path = "sections/concise/90-apparatus.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["propers/verified.md", "research/scope.md", "research/interpretations.md"]
+
+# --- Homily (homily.tex), written by the homily author --------------------------
+
+[[components]]
+key = "homily-body"
+kind = "homily"
+path = "sections/homily/10-homily.tex"
+modes = ["homily"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["format.tex", "propers/verified.md", "research/interpretations.md"]
+
+[[components]]
+key = "homily-note"
+kind = "terminal-apparatus"
+path = "sections/homily/90-note.tex"
+modes = ["homily"]
+depends_on = ["homily-body"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["propers/verified.md", "research/interpretations.md", "research/scope.md"]
+
+# --- Interpretive readings of the whole formulary ------------------------------
+#
+# `authors` names every author a reading draws on; `carrying_authors` names the
+# ones who carry it, each a Father, a canonized saint or one of the Blessed in
+# src/sources/inventories/author-standing-v1.toml, at least one a Father or a
+# canonized saint (guidance/liturgy/propers-three-documents.md, "Liturgical
+# commentators"). St Alphonsus Liguori has no standing row in that registry;
+# he contributes to the second reading and carries none. The Psalm expositions
+# printed in PG 27 under St Athanasius's name are cited under that printed
+# attribution, contribute to the first and third readings, and carry none.
+
+[[lanes]]
+key = "armour-under-providence"
+authors = ["Gregory the Great", "John Chrysostom", "Jerome", "Hilary of Poitiers", "Thomas Aquinas", "Rabanus Maurus", "Robert Bellarmine", "Rupert of Deutz", "William Durandus", "Sicard of Cremona", "Alfredo Ildefonso Schuster", "Lucien Fromage"]
+carrying_authors = ["Gregory the Great", "John Chrysostom"]
+sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+component_keys = ["armour-under-providence"]
+
+[[lanes]]
+key = "debt-forgiven-from-the-heart"
+authors = ["John Chrysostom", "Augustine of Hippo", "Jerome", "Thomas Aquinas", "Hilary of Poitiers", "Rabanus Maurus", "Alphonsus Liguori", "Cassiodorus", "Alfredo Ildefonso Schuster", "Lucien Fromage", "Rupert of Deutz", "William Durandus", "Honorius Augustodunensis"]
+carrying_authors = ["John Chrysostom", "Augustine of Hippo"]
+sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+component_keys = ["debt-forgiven-from-the-heart"]
+
+[[lanes]]
+key = "last-exodus-of-the-church"
+authors = ["Augustine of Hippo", "John Chrysostom", "Thomas Aquinas", "Robert Bellarmine", "Gregory the Great", "Cassiodorus", "Hilary of Poitiers", "Lucien Fromage", "Alfredo Ildefonso Schuster", "Honorius Augustodunensis", "William Durandus"]
+carrying_authors = ["Augustine of Hippo", "John Chrysostom"]
+sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+component_keys = ["last-exodus-of-the-church"]

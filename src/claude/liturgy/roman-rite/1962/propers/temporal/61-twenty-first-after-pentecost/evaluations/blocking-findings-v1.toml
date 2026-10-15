@@ -49,13 +49,13 @@ provider = "claude"
 run_id = "a8bcc37ea3420a07"
 workflow = "proper-study"
 workflow_version = 11
-stage = "research-review"
+stage = "study-review"
 iteration = 2
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 2
-observation_count = 0
+advisory_count = 6
+observation_count = 1
 
 [[stages]]
 stage = "research-review"
@@ -68,6 +68,18 @@ standing = 0
 accepted_count = 0
 advisory_count = 2
 observation_count = 0
+
+[[stages]]
+stage = "study-review"
+iteration = 2
+disposition = "PASS"
+run_id = "a8bcc37ea3420a07"
+workflow = "proper-study"
+workflow_version = 11
+standing = 0
+accepted_count = 0
+advisory_count = 4
+observation_count = 1
 
 [[advisories]]
 stage = "research-review"
@@ -84,3 +96,40 @@ severity = "advisory"
 location = "research/interpretations.md 3.3 'What follows' ('each draws his time from his own reading of the unsung v. 84a'; 'it neither needs nor uses the unsung Quot sunt dies'); research/scope.md 4.4 closing paragraph ('the difference is driven by how each reads the unsung v. 84a … Augustine takes it as the body of Christ asking about its days and so the judgment as the end, until which the Church remains')"
 problem = "These iteration-2 sentences say that Augustine draws his end-directed time from the unsung v. 84a. Reading 3's controlling claim is that same Augustinian answer: the judgment is the end, and the Church remains on earth until it. Yet 3.3 then says that reading 3 rests on what Augustine says of the sung v. 84b, and 'neither needs nor uses' v. 84a. At NPNF1-8 lines 58205-58216, Augustine's 'showing indeed that the Church would exist on earth until the judgment' explains why the judgment question follows the days question ('when he had enquired concerning the days, he added also respecting the judgment'). The martyrs' plea answered by long-suffering (Rev 6:10-11), and 'when vengeance shall fall upon Her persecutors', bear on the judgment question itself. Section 3.2 states that bearing, but 3.3 and 4.4 now describe the reading's dependence on the unsung half in two incompatible ways. The reading itself stands on the sung words through Augustine's martyrs' plea, Cassiodorus, the PG 27 exposition at v. 86b and Aquinas on the reckoning. The defect is therefore in the record's account of itself, not in its evidence."
 required_result = "Make 3.3 and 4.4 agree. One way: say that Augustine's 'the Church on earth until the judgment' comes from the order of the verse's two questions, the first of which is unsung. Then name what reading 3 takes from his comment on the sung half: the martyrs' plea answered by long-suffering, and the vengeance at the judgment. The other way: drop 'neither needs nor uses', and label the Augustinian 'until the judgment' as drawn in part from the unsung days question."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-005"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/20-armour-under-providence.tex:291-304 (third objection; proof p. 20), sections/40-last-exodus-of-the-church.tex:226-243 (second objection; p. 29) and sections/50-comparison.tex:68-92 ('Where they differ'; p. 31)"
+problem = "This recurs within the advisory filed at iteration 0, which named the Hilary-Augustine difference on the Communion as argued three times. Iteration 1 reduced the two readings' versions to pointers. The STU-011 repair has expanded them again into full accounts of four witnesses. Each of the three passages now names, in near-identical words, Hilary's present power and 'not the judgment of the resurrection', Augustine's martyrs and the Church's persecutors, Bellarmine's 'wicked who persecute and tempt', and Cassiodorus joining 'the devil with his ministers' to 'the judgment at the end of the world'. Each then says the Fathers 'differ in what is asked and in whom the plea names, not only in the time' and that the answers are 'compatible, not identical' through Thomas's 'instruments moved by the devil'. That is about 120, 170 and 250 words; 40 and 50 share 34 eight-word sequences. Every account is now accurate. A reader reading straight through meets the same comparison three times in twelve pages, which works against the profile's 'one fullest home'."
+required_result = "Keep the full account of the four witnesses in 50-comparison.tex only. In each reading's objection, state that reading's own answer and the chief contrary one in a sentence or two, without dropping a qualification that makes them true: what is asked and whom the plea names differ, not only the time, and the answers are compatible but not the same. Then point to the comparison. Do not reintroduce any claim that the witnesses agree on the persecutors or on the thing asked."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-012"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/scope.md 3.5 (Bellarmine entry, 'stands against Augustine's Enarr. 89.2', line 483), 4.7, 7.4 and 11 item 3; src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/interpretations.md 4.1 (line 674, 'Gregory and Aquinas serve readings 1 and 3')"
+problem = "This stands unchanged from iteration 1, because neither research record has changed (both hash-match the seal). The scope record files Bellarmine 'For Moses' and 'against' Augustine on Ps 89. It omits his Preface II §5 ('perhaps even more likely, that all of the Psalms are by David, as Saint Augustine maintains', text.txt line 63) and his Davidic reading in the Ps 89 exposition. Interpretations 4.1 has Aquinas serve readings 1 and 3, but he serves all three (Super Matth. 18, per ingratitudinem, in reading 2). The study states both correctly. The concise and homily components reference these records, and scope 7.4 states what 'the studies may say' of Ps 89."
+required_result = "On the research record's next revision, add Bellarmine's Preface II §5 and his Davidic reading of Ps 89 to scope.md. Recast him there as admitting Moses' authorship as tenable while preferring David's, which places him with Augustine except on whether Moses is admissible. Correct interpretations.md 4.1 to say that Aquinas serves all three readings."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-013"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/20-armour-under-providence.tex:291-298 ('Hilary asks for power in this life ... what the prophet now asks'; 'The Fathers differ'; p. 20) and sections/40-last-exodus-of-the-church.tex:236-243 ('The Fathers differ'; 'without making it the only one'; p. 29)"
+problem = "The rewritten sentences have three small slips. (1) 'The Fathers differ' follows lists that include St Robert Bellarmine, a Doctor, and in 40 also Cassiodorus. Neither is a Father: author-standing-v1.toml records Bellarmine as 'doctor' and Cassiodorus as 'ecclesiastical-writer'. (2) In 20 the same sentence says both that 'Hilary asks for power in this life' and 'what the prophet now asks'. In Hilary's text the prophet prays (dari sibi id potestatis orat) and Hilary expounds, so the reader cannot tell who is asking. (3) 40 ends with 'This reading follows the end-directed answer ... without making it the only one'. The clause tells the reader the study's own stance, a form the 1962 profile excludes ('Do not tell the reader ... that the guide has declined to press an inference'), and the paragraph has already shown the other answers. None of the three misstates a witness's position."
+required_result = "Say 'the witnesses differ' (or name them) in place of 'the Fathers differ' where Bellarmine or Cassiodorus is included. In 20, make the prophet the one who asks in Hilary's reading (for example 'In Hilary's reading the prophet asks for power in this life ... and what he now asks is not ...'). Delete 'without making it the only one'."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-014"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/production-review.md:216-218 (Author-study, iteration 2, 'Author proof')"
+problem = "The entries for iterations 0 and 1 record the proof's SHA-256. The entry for iteration 2 records only page count and timestamp. The three-document profile asks the production audit to keep 'checked artifacts and hashes'. The iteration-2 proof, which this review rebuilt byte-identically, is SHA-256 9a690e1d73f6373672b78617e136d8755f9c6028e0ebb174eaa16c2223b6b212."
+required_result = "Add the iteration-2 research-edition proof's SHA-256 to that entry, in the form the iteration-0 and iteration-1 entries use."
+
+[[observations]]
+stage = "study-review"
+location = "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/historical-text-357551e1/artifact.toml (rights_basis; notes)"
+note = "This stands from earlier rounds. The artifact record treats the whole transcription, both prefaces included, as O'Sullivan's 1866 public-domain text. Yet text.txt line 53 marks Preface II as a manuscript preface 'translated by Michael J. Miller'. The study paraphrases both prefaces and quotes neither, so it is unaffected. The record's rights and provenance basis still needs the source-library owner's attention."
