@@ -1,0 +1,32 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "accepted_because": "The sentence states the evidence and its limit correctly, and no reader is misled about what was read. Repairing one clause would reopen the reviewed study owner and rerun the study, concise, homily, build, visual and web reviews.",
+      "id": "WEB-001",
+      "location": "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md line 600 (Appendix: Scope and Qualifications, 'Text control.' paragraph, last sentence); source src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/sections/90-apparatus.tex lines 33-36",
+      "problem": "Reader-facing text names a production stage. The sentence says the branch rows rest on the United States General Instruction 'as read, in its official chapter pages, at the stage that resolved this Sunday's context; a later attempt to read the same pages again was refused by the publisher's site'. 'The stage that resolved this Sunday's context' is workflow-process language that a reader cannot interpret. The research PDF carries the same words, and the conversion reproduces them faithfully, so this is a study-writing defect, not a conversion defect.",
+      "required_result": "If sections/90-apparatus.tex is reopened for another reason, identify the reading by its date instead of a production stage, for example: 'as read in its official chapter pages on 16 October 2026; a later attempt that day to read them again was refused by the publisher's site'. Then regenerate the web edition.",
+      "severity": "accepted"
+    }
+  ],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "release/public-alpha/assets/site.css lines 596-627 (the 760px rules for the Scriptural Date and Location dossier), applied to the orientation-v1 table at build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md lines 526-539, rendered at 390 px",
+      "note": "At phone width the dossier rules set this three-column orientation-v1 table on a two-column grid: Passage and Occurrence on one line, Date beneath, with an empty cell beside 'Date' in the header block and beside each date. The stylesheet's comment and rules describe only the four-column dossier. Every row still pairs passage, occurrence and date legibly, so nothing is lost here, but no rule fits the three-column orientation shape the newer propers now publish."
+    }
+  ],
+  "review_inputs": {
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+    "files": {},
+    "provider": "claude",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md": "f7b4a0795ab4df5f70ac1985c76a856788d6f504bf8b3a27b0527086f19c2a40"
+    }
+  },
+  "stage": "web-review",
+  "summary": "PASS for the canonical Claude PC-S55-A web conversion build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.md. Its SHA-256 is f7b4a0795ab4df5f70ac1985c76a856788d6f504bf8b3a27b0527086f19c2a40, the hash research/web-artifact.json records, and regenerating it from current sources with tools/tpt web-edition under the pinned Markdown 3.10.3 reproduced those bytes exactly. Checked: a word-level comparison of the whole Markdown against the text of the reviewed research PDF (build/claude/.../pc-s55-...pdf, SHA-256 bdb08313a4398333871e7a6b67d1484a6330bbfdc9dcdb05ff5e936b2c8d0782, 37 pages, matching research/artifacts.json). Every prose word matches; the differences are running heads, page numbers, the print contents and table reading order. All four tables (element map, comparison, orientation-v1 Scriptural Date and Location, branches) were compared cell by cell against the PDF. Source formatting survives exactly: 365 italic spans for 351 italic commands plus 13 \\notread brackets and the subtitle, 35 superscripts, every \\textbf. The eight Douay-Rheims blocks match the tracked Challoner verse text word for word, with the unappointed words bracketed as in the PDF. Five patristic quotations were spot-checked against the tracked NPNF texts: Augustine, Tractates 40.9 and 41.2; Chrysostom, Homilies on Matthew 70.1-2 and 65.4. Structure: the three interpretations are distinct h2 sections, each ending in its own four-senses definition list (12 terms). The heading hierarchy is h1, then 11 h2 and 61 h3. All 11 proper-<element-key> anchors are present and unique, all 12 internal links resolve, and 78 ids carry no duplicate. No TeX debris, leaked Markdown or exposed model, run or tool metadata was found. The revision timestamp 2026-10-16T16:05:28Z and the rights colophon are present. All four external links returned HTTP 200, and the USCCB page was confirmed in a headless browser as the Twenty-ninth Sunday, Lectionary 145. Presentation was judged on HTML from the site's own render_page and layout with site.css (preview mode), in static headless-Chromium screenshots at 1280 px and 390 px. In those screenshots the passage-to-occurrence/place/date lookup succeeds at both widths, for example Matthew 22:15-21: tribute question in the temple at Jerusalem, Date unresolved. Items already standing pass through unchanged and are not raised again: VIS-003, the Phil 2:16 bracket spacing, and the generator's mixed psalm numbering and ASCII-hyphen ranges, recorded as observations by study-review and visual-review. Limits: the screenshots are static, so no scrolling, clicking, assistive technology, other browser engine, site navigation or deployment was tested. This is a conversion-fidelity review, not a new comprehensive source audit. Recomputing the engine's review-input seal with scripts/_proper_study.py was refused by the host's permission policy, so the seal rests on the hash checks above. Disclosure: one repository-wide grep incidentally printed lines from workflows/reviews/gpt-pc-s55-production-2026-10-13/. Nothing from them was used."
+}

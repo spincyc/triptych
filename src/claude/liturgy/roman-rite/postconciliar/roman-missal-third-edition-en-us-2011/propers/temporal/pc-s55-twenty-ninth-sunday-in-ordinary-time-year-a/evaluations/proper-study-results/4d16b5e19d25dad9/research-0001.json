@@ -1,0 +1,30 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "note": "scope.md 3.11 rewritten from a whole-chapter OCR reading (Schuster pp. 182-185, Fromage pp. 472-485). It sets each commentator's heading beside every element and records Psalm 16:6 (their Communion) as shared in another position. Neither joins it to the Gospel, and the citation limits are stated. Section 3.6 adds both commentators' remarks with standing and role. The Lenten-use note and the Honorius lead are recorded; Honorius was read in the PL 172 OCR, where his 22nd Sunday has Matthew 18. The bindings are corrected, and interpretations.md updates the standing paragraph and the commentator rows.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-002",
+      "note": "Acclamation rekeyed `acclamation` in instance/manifest.md, propers/verified.md, research/context.md and chronology-inputs.toml. The record and annotations were regenerated and both --check runs pass. Philippians now has only row-11f6d60f0fa3c25e (composition), and the event row row-a180ccaa931e671d covers Matthew 22:15-21 only. Section 8.1 states the real cause, the startswith(\"gospel\") test in scripts/_proper_chronology.py. That generator defect is left for its maintainer.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-003",
+      "note": "The withholding alternative and its comparison entry are removed. Augustine (De serm. Dom. II.20.70; En. in Ps. 57 sec. 8), Chrysostom 70.1-2, Jerome col. 163 and Aquinas pp. 283-284 are recorded as convergent, each with locus and reasoning. The Jerome and Aquinas sentences were re-read on the page images. Reading 3's new difficulty asks whether reading hearts is a sign of Godhead (Chrysostom, Hilary, Aquinas) or any answerer's discernment (Jerome). The outcome is that the christological claim does not rest on Jerome. Scope sections 3.1 and 7 agree.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-004",
+      "note": "New scope.md section 8.3 gives each of the 12 generated rows a planned phrase, keyed by subject and current row key. Each phrase has its source and locus, or 'unknown', and keeps writer, recipient and event apart with no dates. It preserves Athens against Corinth and Caesarea against Rome. The supporting Douay, Swete and Catholic Encyclopedia loci were added to the bindings.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": "Generation provenance: claude-opus-5-5[1m] at reasoning effort high. The tool defect is for the maintainer: scripts/_proper_chronology.py, orientation_rows(), element.key.startswith(\"gospel\"), where the detailed path uses ==. It was not edited. Advisories: Bede re-tiered L and section 1 qualified (RES-005); the Reading 2 controlling claim is bounded to antiphon B's context (RES-006); the polemical sentences and the Donatist whited wall are recorded (RES-007); propers/verified.md now separates conclusions that rest on sealed evidence from those on the unsealed Nova Vulgata (RES-008). Remaining limits: Schuster and Fromage were read in OCR only, and Honorius in interleaved OCR; Mark and Matthew places rest on 1910-11 Catholic Encyclopedia articles. Independence: one repository grep for acclamation keys printed the GPT pc-s55 chronology-inputs filename only; nothing from it was opened or used. The prior Claude research stage's retained NABRE Isaiah fetch was re-read after its hash matched scope.md section 5.",
+  "stage": "research",
+  "summary": "Research re-entry repaired all four blocking findings. The two liturgical commentators now have a full element-by-element comparison, with Psalm 16:6 recorded as a shared text and citation limits stated. The acclamation is rekeyed and the chronology regenerated, so Philippians no longer carries an event row. The counter-question is recorded as Fathers' convergence, and Reading 3 has a real tested difficulty. Every orientation row has a sourced planned place phrase. Advisories RES-005 to RES-008 were cleared in the same files."
+}

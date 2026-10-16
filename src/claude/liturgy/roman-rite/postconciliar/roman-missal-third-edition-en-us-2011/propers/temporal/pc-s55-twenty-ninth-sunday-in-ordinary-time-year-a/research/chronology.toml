@@ -1,0 +1,1913 @@
+# Generated. Do not edit.
+#
+# What the Scripture chronology corpus answers about this proper's appointed
+# loci, written by `tools/tpt proper-chronology record` and held
+# against the corpus by `check-content-preflight`. Every chronology claim
+# here is the corpus's, carried so that the guide's prose can be regenerated
+# without re-researching the fact: `guidance/scripture-chronology.md` §14.
+#
+# `formulary` is `appointed` when the reviewed edition input appoints this identity a Mass
+# formulary, and `no-calendar-formulary` when it does not — a ritual Mass,
+# appointed by a rite rather than by a day, which the calendar sources here do
+# not encode. In that state the record lists no element, `formulary_reason`
+# says why, and no date may be supplied from anywhere else to fill the gap.
+#
+# `label` is the source's own words and the only value a manually authored
+# guide may display. `date` is the normalized form, for comparison and never
+# for a manual page. The sole permitted display exception is the deterministic
+# `tools/tpt proper-chronology annotations` projection: it may render its
+# concise `display_label` because the same generated contract retains the raw
+# `label` and claim `profile`. No manual consumer may mint or edit one. An
+# element's `claims` are the full audit union of assertions resolved at any of
+# its appointed loci; each claim's nested `reaches` records every locus, corpus
+# scope, and inheritance route by which it was returned. `publication_claims`
+# is the exact across-all-loci intersection that the generated one-cell
+# annotation may display. `status` and `reason` summarize the audit answer;
+# `publication_status` and `publication_reason` describe that safe
+# intersection. An element with no `status` cites no Scripture; one whose
+# publication status is
+# `undated-in-tradition` or `research-pending` has no date to print, and the
+# guide states that absence rather than filling it. `nonuniform` means its loci
+# have chronology but share no one assertion an element-wide Date cell could
+# truthfully print.
+
+
+schema = 2
+record_type = "proper-chronology"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"
+calendar = "postconciliar"
+mass = "PC-S55-A"
+system = "vulgate"
+profile = "catholic-comprehensive-v1"
+formulary = "appointed"
+formulary_reason = ""
+generated_by = "tools/tpt proper-chronology record"
+appointment_notes = ["entrance-antiphon: Cf. Psalm 16:6, 8; adaptation; vulgate numbering; canonical verse queries, not appointed wording.", "collect: Composed oration with no scriptural locator; its petition for a devoted will and service of God's majesty with a sincere heart is a loose echo of no one verse, which the page-2 rule excludes.", "first-reading: Isaiah 45:1, 4-6; appointed; vulgate numbering; canonical verse queries, not appointed wording.", "responsorial-psalm: Psalm 96:1, 3, 4-5, 7-8, 9-10a, 10c; appointed; hebrew numbering; whole-verse query envelope, not subverse chronology or appointed wording.", "responsorial-psalm: Psalm 96:7b; response; hebrew numbering; whole-verse query envelope, not subverse chronology or appointed wording.", "second-reading: 1 Thessalonians 1:1-5b; appointed; vulgate numbering; whole-verse query envelope, not subverse chronology or appointed wording.", "acclamation: Philippians 2:15d, 16a; appointed; vulgate numbering; whole-verse query envelope, not subverse chronology or appointed wording.", "gospel: Matthew 22:15-21; appointed; vulgate numbering; canonical verse queries, not appointed wording.", "prayer-over-offerings: Composed oration with no scriptural locator.", "communion-antiphon-a: Cf. Psalm 32:18-19; adaptation; vulgate numbering; canonical verse queries, not appointed wording.", "communion-antiphon-b: Mark 10:45; adaptation; vulgate numbering; canonical verse queries, not appointed wording.", "prayer-after-communion: Composed oration with no scriptural locator."]
+
+[[appointment_dependencies]]
+path = "guidance/liturgy/postconciliar-propers-registry.md"
+sha256 = "ffe8a6d8b7d79c652bdc49b3d5f6d4dbb32e3506abc7ab0310e745c2b7306ad4"
+
+[[appointment_dependencies]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/README.md"
+sha256 = "22626b14e0506b69c0ddc254b0ade2b6f7c9ae7cf8ef98fe356746a8f47fb1eb"
+
+[[appointment_dependencies]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/formula-dispositions.md"
+sha256 = "37735c7edc0fbf692a691c7c4b0487b80831108daf91621b91f7b8858e190879"
+
+[[appointment_dependencies]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/instance/manifest.md"
+sha256 = "c679e2abe683a842f71b9e5bf3ce2924d8817c9909ce0d86ddce7499c9844ece"
+
+[[appointment_dependencies]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/propers/verified.md"
+sha256 = "38519ffba2456743064ab1e894ddee8786cb537784ecfd1398e586cb5883e6d5"
+
+[[appointment_dependencies]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/chronology-inputs.toml"
+sha256 = "74b304d2a00fe93a00d5c5fa36737eb3507d2c1e4a69a95284967b0b8f0354f1"
+
+[[appointment_dependencies]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/29/propers/verified.md"
+sha256 = "7a94817ceae271f1365024ab73a59130165dbf53e96de998bb64ef69a9112437"
+
+[[elements]]
+key = "entrance-antiphon"
+name = "Entrance Antiphon"
+refs = ["Cf. Psalm 16:6, 8"]
+loci = ["Ps.16.6", "Ps.16.8"]
+status = "composition-only"
+reason = ""
+publication_status = "composition-only"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.claims.reaches]]
+locus = "Ps.16.6"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.16.8"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.16.6"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.16.8"
+inherited = true
+scope = "Ps"
+
+[[elements]]
+key = "collect"
+name = "Collect"
+refs = []
+loci = []
+status = ""
+reason = ""
+publication_status = ""
+publication_reason = ""
+
+[[elements]]
+key = "first-reading"
+name = "First Reading"
+refs = ["Isaiah 45:1, 4-6"]
+loci = ["Is.45.1", "Is.45.4", "Is.45.5", "Is.45.6"]
+status = "dated"
+reason = ""
+publication_status = "dated"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "prophecy-given"
+subject = "israel.exile.second-isaias-oracles"
+title = "The prophetic activity behind Isaiah 40-55 in the NABRE introduction"
+label = "toward the end of the Babylonian exile"
+date = "toward the end of the Babylonian exile"
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.isaiah-introduction"]
+
+[[elements.claims.reaches]]
+locus = "Is.45.1"
+inherited = true
+scope = "Is.40 Is.41 Is.42 Is.43 Is.44 Is.45 Is.46 Is.47 Is.48 Is.49 Is.50 Is.51 Is.52 Is.53 Is.54 Is.55"
+
+[[elements.claims.reaches]]
+locus = "Is.45.4"
+inherited = true
+scope = "Is.40 Is.41 Is.42 Is.43 Is.44 Is.45 Is.46 Is.47 Is.48 Is.49 Is.50 Is.51 Is.52 Is.53 Is.54 Is.55"
+
+[[elements.claims.reaches]]
+locus = "Is.45.5"
+inherited = true
+scope = "Is.40 Is.41 Is.42 Is.43 Is.44 Is.45 Is.46 Is.47 Is.48 Is.49 Is.50 Is.51 Is.52 Is.53 Is.54 Is.55"
+
+[[elements.claims.reaches]]
+locus = "Is.45.6"
+inherited = true
+scope = "Is.40 Is.41 Is.42 Is.43 Is.44 Is.45 Is.46 Is.47 Is.48 Is.49 Is.50 Is.51 Is.52 Is.53 Is.54 Is.55"
+
+[[elements.claims]]
+relation = "traditional-attribution"
+subject = "israel.prophets.isaias-traditional-era"
+title = "Isaias (ministry in Souvay's traditional account)"
+label = "from the closing year of Ozias, King of Juda (740 B.C.); no prophecies appear to be later than 701 B.C."
+date = "740 B.C.-701 B.C."
+precision = "range"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08179b-d4ee13fd-article-text"]
+
+[[elements.claims.reaches]]
+locus = "Is.45.1"
+inherited = true
+scope = "Is"
+
+[[elements.claims.reaches]]
+locus = "Is.45.4"
+inherited = true
+scope = "Is"
+
+[[elements.claims.reaches]]
+locus = "Is.45.5"
+inherited = true
+scope = "Is"
+
+[[elements.claims.reaches]]
+locus = "Is.45.6"
+inherited = true
+scope = "Is"
+
+[[elements.publication_claims]]
+relation = "prophecy-given"
+subject = "israel.exile.second-isaias-oracles"
+title = "The prophetic activity behind Isaiah 40-55 in the NABRE introduction"
+label = "toward the end of the Babylonian exile"
+date = "toward the end of the Babylonian exile"
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.isaiah-introduction"]
+
+[[elements.publication_claims.reaches]]
+locus = "Is.45.1"
+inherited = true
+scope = "Is.40 Is.41 Is.42 Is.43 Is.44 Is.45 Is.46 Is.47 Is.48 Is.49 Is.50 Is.51 Is.52 Is.53 Is.54 Is.55"
+
+[[elements.publication_claims.reaches]]
+locus = "Is.45.4"
+inherited = true
+scope = "Is.40 Is.41 Is.42 Is.43 Is.44 Is.45 Is.46 Is.47 Is.48 Is.49 Is.50 Is.51 Is.52 Is.53 Is.54 Is.55"
+
+[[elements.publication_claims.reaches]]
+locus = "Is.45.5"
+inherited = true
+scope = "Is.40 Is.41 Is.42 Is.43 Is.44 Is.45 Is.46 Is.47 Is.48 Is.49 Is.50 Is.51 Is.52 Is.53 Is.54 Is.55"
+
+[[elements.publication_claims.reaches]]
+locus = "Is.45.6"
+inherited = true
+scope = "Is.40 Is.41 Is.42 Is.43 Is.44 Is.45 Is.46 Is.47 Is.48 Is.49 Is.50 Is.51 Is.52 Is.53 Is.54 Is.55"
+
+[[elements.publication_claims]]
+relation = "traditional-attribution"
+subject = "israel.prophets.isaias-traditional-era"
+title = "Isaias (ministry in Souvay's traditional account)"
+label = "from the closing year of Ozias, King of Juda (740 B.C.); no prophecies appear to be later than 701 B.C."
+date = "740 B.C.-701 B.C."
+precision = "range"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08179b-d4ee13fd-article-text"]
+
+[[elements.publication_claims.reaches]]
+locus = "Is.45.1"
+inherited = true
+scope = "Is"
+
+[[elements.publication_claims.reaches]]
+locus = "Is.45.4"
+inherited = true
+scope = "Is"
+
+[[elements.publication_claims.reaches]]
+locus = "Is.45.5"
+inherited = true
+scope = "Is"
+
+[[elements.publication_claims.reaches]]
+locus = "Is.45.6"
+inherited = true
+scope = "Is"
+
+[[elements]]
+key = "responsorial-psalm"
+name = "Responsorial Psalm"
+refs = ["Psalm 96:1, 3, 4-5, 7-8, 9-10a, 10c", "Psalm 96:7b"]
+loci = ["Ps.95.1", "Ps.95.3", "Ps.95.4", "Ps.95.5", "Ps.95.7", "Ps.95.8", "Ps.95.9", "Ps.95.10"]
+status = "dated"
+reason = ""
+publication_status = "dated"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.claims.reaches]]
+locus = "Ps.95.1"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.10"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.3"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.4"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.5"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.7"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.8"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.9"
+inherited = true
+scope = "Ps"
+
+[[elements.claims]]
+relation = "prophetic-referent"
+subject = "life-of-christ.nativity"
+title = "The Nativity of Our Lord"
+label = "the year of Rome 750 which he styles 3 B.C."
+date = "3 B.C."
+precision = "year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03738a-5eb03e5b"]
+
+[[elements.claims.reaches]]
+locus = "Ps.95.1"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.10"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.3"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.4"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.5"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.7"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.8"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.9"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.claims]]
+relation = "prophetic-referent"
+subject = "life-of-christ.nativity"
+title = "The Nativity of Our Lord"
+label = "probably the year 7 B.C."
+date = "about 7 B.C."
+precision = "approximate-year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04"]
+
+[[elements.claims.reaches]]
+locus = "Ps.95.1"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.10"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.3"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.4"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.5"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.7"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.8"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.9"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.claims]]
+relation = "superscription-setting"
+subject = "israel.restoration.temple-raised-by-zorobabel"
+title = "The raising of the second Temple by Zorobabel"
+label = "(537 B.C.)"
+date = "537 B.C."
+precision = "year"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14499a-82b12b6e"]
+
+[[elements.claims.reaches]]
+locus = "Ps.95.1"
+inherited = true
+scope = "Ps.95"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.10"
+inherited = true
+scope = "Ps.95"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.3"
+inherited = true
+scope = "Ps.95"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.4"
+inherited = true
+scope = "Ps.95"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.5"
+inherited = true
+scope = "Ps.95"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.7"
+inherited = true
+scope = "Ps.95"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.8"
+inherited = true
+scope = "Ps.95"
+
+[[elements.claims.reaches]]
+locus = "Ps.95.9"
+inherited = true
+scope = "Ps.95"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.1"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.10"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.3"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.4"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.5"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.7"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.8"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.9"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "prophetic-referent"
+subject = "life-of-christ.nativity"
+title = "The Nativity of Our Lord"
+label = "the year of Rome 750 which he styles 3 B.C."
+date = "3 B.C."
+precision = "year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03738a-5eb03e5b"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.1"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.10"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.3"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.4"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.5"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.7"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.8"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.9"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.publication_claims]]
+relation = "prophetic-referent"
+subject = "life-of-christ.nativity"
+title = "The Nativity of Our Lord"
+label = "probably the year 7 B.C."
+date = "about 7 B.C."
+precision = "approximate-year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.1"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.10"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.3"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.4"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.5"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.7"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.8"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.9"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.publication_claims]]
+relation = "superscription-setting"
+subject = "israel.restoration.temple-raised-by-zorobabel"
+title = "The raising of the second Temple by Zorobabel"
+label = "(537 B.C.)"
+date = "537 B.C."
+precision = "year"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14499a-82b12b6e"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.1"
+inherited = true
+scope = "Ps.95"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.10"
+inherited = true
+scope = "Ps.95"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.3"
+inherited = true
+scope = "Ps.95"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.4"
+inherited = true
+scope = "Ps.95"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.5"
+inherited = true
+scope = "Ps.95"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.7"
+inherited = true
+scope = "Ps.95"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.8"
+inherited = true
+scope = "Ps.95"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.95.9"
+inherited = true
+scope = "Ps.95"
+
+[[elements]]
+key = "second-reading"
+name = "Second Reading"
+refs = ["1 Thessalonians 1:1-5b"]
+loci = ["1Thess.1.1", "1Thess.1.2", "1Thess.1.3", "1Thess.1.4", "1Thess.1.5"]
+status = "composition-only"
+reason = ""
+publication_status = "composition-only"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.first-epistle-to-the-thessalonians"
+title = "The First Epistle to the Thessalonians"
+label = "(1 and 2 Thessalonians), 52"
+date = "52 A.D."
+precision = "year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8"]
+
+[[elements.claims.reaches]]
+locus = "1Thess.1.1"
+inherited = true
+scope = "1Thess"
+
+[[elements.claims.reaches]]
+locus = "1Thess.1.2"
+inherited = true
+scope = "1Thess"
+
+[[elements.claims.reaches]]
+locus = "1Thess.1.3"
+inherited = true
+scope = "1Thess"
+
+[[elements.claims.reaches]]
+locus = "1Thess.1.4"
+inherited = true
+scope = "1Thess"
+
+[[elements.claims.reaches]]
+locus = "1Thess.1.5"
+inherited = true
+scope = "1Thess"
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.first-epistle-to-the-thessalonians"
+title = "The First Epistle to the Thessalonians"
+label = "in the year 53 or 54 according to the commonly received scheme of Pauline chronology"
+date = "53 A.D. to 54 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14629d-95947a74"]
+
+[[elements.claims.reaches]]
+locus = "1Thess.1.1"
+inherited = true
+scope = "1Thess"
+
+[[elements.claims.reaches]]
+locus = "1Thess.1.2"
+inherited = true
+scope = "1Thess"
+
+[[elements.claims.reaches]]
+locus = "1Thess.1.3"
+inherited = true
+scope = "1Thess"
+
+[[elements.claims.reaches]]
+locus = "1Thess.1.4"
+inherited = true
+scope = "1Thess"
+
+[[elements.claims.reaches]]
+locus = "1Thess.1.5"
+inherited = true
+scope = "1Thess"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.first-epistle-to-the-thessalonians"
+title = "The First Epistle to the Thessalonians"
+label = "(1 and 2 Thessalonians), 52"
+date = "52 A.D."
+precision = "year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8"]
+
+[[elements.publication_claims.reaches]]
+locus = "1Thess.1.1"
+inherited = true
+scope = "1Thess"
+
+[[elements.publication_claims.reaches]]
+locus = "1Thess.1.2"
+inherited = true
+scope = "1Thess"
+
+[[elements.publication_claims.reaches]]
+locus = "1Thess.1.3"
+inherited = true
+scope = "1Thess"
+
+[[elements.publication_claims.reaches]]
+locus = "1Thess.1.4"
+inherited = true
+scope = "1Thess"
+
+[[elements.publication_claims.reaches]]
+locus = "1Thess.1.5"
+inherited = true
+scope = "1Thess"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.first-epistle-to-the-thessalonians"
+title = "The First Epistle to the Thessalonians"
+label = "in the year 53 or 54 according to the commonly received scheme of Pauline chronology"
+date = "53 A.D. to 54 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14629d-95947a74"]
+
+[[elements.publication_claims.reaches]]
+locus = "1Thess.1.1"
+inherited = true
+scope = "1Thess"
+
+[[elements.publication_claims.reaches]]
+locus = "1Thess.1.2"
+inherited = true
+scope = "1Thess"
+
+[[elements.publication_claims.reaches]]
+locus = "1Thess.1.3"
+inherited = true
+scope = "1Thess"
+
+[[elements.publication_claims.reaches]]
+locus = "1Thess.1.4"
+inherited = true
+scope = "1Thess"
+
+[[elements.publication_claims.reaches]]
+locus = "1Thess.1.5"
+inherited = true
+scope = "1Thess"
+
+[[elements]]
+key = "acclamation"
+name = "Alleluia Verse"
+refs = ["Philippians 2:15d, 16a"]
+loci = ["Phil.2.15", "Phil.2.16"]
+status = "composition-only"
+reason = ""
+publication_status = "composition-only"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.epistle-to-the-philippians"
+title = "The Epistle to the Philippians"
+label = "(Philemon; Colossians; Ephesians; Philippians), 61"
+date = "61 A.D."
+precision = "year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8"]
+
+[[elements.claims.reaches]]
+locus = "Phil.2.15"
+inherited = true
+scope = "Phil"
+
+[[elements.claims.reaches]]
+locus = "Phil.2.16"
+inherited = true
+scope = "Phil"
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.epistle-to-the-philippians"
+title = "The Epistle to the Philippians"
+label = "at Rome (A.D. 62-64)"
+date = "62 A.D. to 64 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12008a-1e39e824"]
+
+[[elements.claims.reaches]]
+locus = "Phil.2.15"
+inherited = true
+scope = "Phil"
+
+[[elements.claims.reaches]]
+locus = "Phil.2.16"
+inherited = true
+scope = "Phil"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.epistle-to-the-philippians"
+title = "The Epistle to the Philippians"
+label = "(Philemon; Colossians; Ephesians; Philippians), 61"
+date = "61 A.D."
+precision = "year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8"]
+
+[[elements.publication_claims.reaches]]
+locus = "Phil.2.15"
+inherited = true
+scope = "Phil"
+
+[[elements.publication_claims.reaches]]
+locus = "Phil.2.16"
+inherited = true
+scope = "Phil"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.epistle-to-the-philippians"
+title = "The Epistle to the Philippians"
+label = "at Rome (A.D. 62-64)"
+date = "62 A.D. to 64 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12008a-1e39e824"]
+
+[[elements.publication_claims.reaches]]
+locus = "Phil.2.15"
+inherited = true
+scope = "Phil"
+
+[[elements.publication_claims.reaches]]
+locus = "Phil.2.16"
+inherited = true
+scope = "Phil"
+
+[[elements]]
+key = "gospel"
+name = "Gospel"
+refs = ["Matthew 22:15-21"]
+loci = ["Matt.22.15", "Matt.22.16", "Matt.22.17", "Matt.22.18", "Matt.22.19", "Matt.22.20", "Matt.22.21"]
+status = "composition-only"
+reason = ""
+publication_status = "composition-only"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "about A.D. 38-45"
+date = "38 A.D. to 45 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef", "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"]
+
+[[elements.claims.reaches]]
+locus = "Matt.22.15"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.16"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.17"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.18"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.19"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.20"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.21"
+inherited = true
+scope = "Matt"
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "about the year 40-42"
+date = "40 A.D. to 42 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef"]
+
+[[elements.claims.reaches]]
+locus = "Matt.22.15"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.16"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.17"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.18"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.19"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.20"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.21"
+inherited = true
+scope = "Matt"
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "the years 40-45"
+date = "40 A.D. to 45 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef"]
+
+[[elements.claims.reaches]]
+locus = "Matt.22.15"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.16"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.17"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.18"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.19"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.20"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.21"
+inherited = true
+scope = "Matt"
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "about the year 60-68"
+date = "60 A.D. to 68 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef"]
+
+[[elements.claims.reaches]]
+locus = "Matt.22.15"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.16"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.17"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.18"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.19"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.20"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.21"
+inherited = true
+scope = "Matt"
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "about the years 64-67"
+date = "64 A.D. to 67 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef"]
+
+[[elements.claims.reaches]]
+locus = "Matt.22.15"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.16"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.17"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.18"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.19"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.20"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.21"
+inherited = true
+scope = "Matt"
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "about the year 50"
+date = "about 50 A.D."
+precision = "approximate-year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"]
+
+[[elements.claims.reaches]]
+locus = "Matt.22.15"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.16"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.17"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.18"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.19"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.20"
+inherited = true
+scope = "Matt"
+
+[[elements.claims.reaches]]
+locus = "Matt.22.21"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "about A.D. 38-45"
+date = "38 A.D. to 45 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef", "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"]
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.15"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.16"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.17"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.18"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.19"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.20"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.21"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "about the year 40-42"
+date = "40 A.D. to 42 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef"]
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.15"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.16"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.17"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.18"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.19"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.20"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.21"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "the years 40-45"
+date = "40 A.D. to 45 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef"]
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.15"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.16"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.17"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.18"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.19"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.20"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.21"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "about the year 60-68"
+date = "60 A.D. to 68 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef"]
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.15"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.16"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.17"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.18"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.19"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.20"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.21"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "about the years 64-67"
+date = "64 A.D. to 67 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef"]
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.15"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.16"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.17"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.18"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.19"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.20"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.21"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "about the year 50"
+date = "about 50 A.D."
+precision = "approximate-year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"]
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.15"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.16"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.17"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.18"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.19"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.20"
+inherited = true
+scope = "Matt"
+
+[[elements.publication_claims.reaches]]
+locus = "Matt.22.21"
+inherited = true
+scope = "Matt"
+
+[[elements]]
+key = "prayer-over-offerings"
+name = "Prayer over the Offerings"
+refs = []
+loci = []
+status = ""
+reason = ""
+publication_status = ""
+publication_reason = ""
+
+[[elements]]
+key = "communion-antiphon-a"
+name = "Communion Antiphon (first)"
+refs = ["Cf. Psalm 32:18-19"]
+loci = ["Ps.32.18", "Ps.32.19"]
+status = "composition-only"
+reason = ""
+publication_status = "composition-only"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.claims.reaches]]
+locus = "Ps.32.18"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.32.19"
+inherited = true
+scope = "Ps"
+
+[[elements.claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.claims.reaches]]
+locus = "Ps.32.18"
+inherited = true
+scope = "Ps.32"
+
+[[elements.claims.reaches]]
+locus = "Ps.32.19"
+inherited = true
+scope = "Ps.32"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.32.18"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.32.19"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.32.18"
+inherited = true
+scope = "Ps.32"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.32.19"
+inherited = true
+scope = "Ps.32"
+
+[[elements]]
+key = "communion-antiphon-b"
+name = "Communion Antiphon (alternative)"
+refs = ["Mark 10:45"]
+loci = ["Mark.10.45"]
+status = "composition-only"
+reason = ""
+publication_status = "composition-only"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.gospel-of-mark"
+title = "The Gospel of St Mark"
+label = "the tenth or twelfth year after the Ascension (A.D. 38-40)"
+date = "38 A.D. to 40 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09674b-f5a5a8a9"]
+
+[[elements.claims.reaches]]
+locus = "Mark.10.45"
+inherited = true
+scope = "Mark"
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.gospel-of-mark"
+title = "The Gospel of St Mark"
+label = "A.D. 40"
+date = "40 A.D."
+precision = "year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09674b-f5a5a8a9"]
+
+[[elements.claims.reaches]]
+locus = "Mark.10.45"
+inherited = true
+scope = "Mark"
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.gospel-of-mark"
+title = "The Gospel of St Mark"
+label = "the third year of Claudius (A.D. 43)"
+date = "43 A.D."
+precision = "year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09674b-f5a5a8a9"]
+
+[[elements.claims.reaches]]
+locus = "Mark.10.45"
+inherited = true
+scope = "Mark"
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.gospel-of-mark"
+title = "The Gospel of St Mark"
+label = "somewhere between A.D. 50 and 67"
+date = "50 A.D. to 67 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09674b-f5a5a8a9"]
+
+[[elements.claims.reaches]]
+locus = "Mark.10.45"
+inherited = true
+scope = "Mark"
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.gospel-of-mark"
+title = "The Gospel of St Mark"
+label = "between 60 and 70"
+date = "60 A.D. to 70 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"]
+
+[[elements.claims.reaches]]
+locus = "Mark.10.45"
+inherited = true
+scope = "Mark"
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.gospel-of-mark"
+title = "The Gospel of St Mark"
+label = "after Matthew, and not as late as the destruction of Jerusalem"
+date = "second, after Matthew, and not as late as the destruction of Jerusalem or after the siege had begun"
+precision = "relative"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["passage.pontifical-biblical-commission.de-auctore-tempore-et-veritate-evangeliorum-marci-et-lucae.latin-aas-4-1912.responsa-i-ix"]
+
+[[elements.claims.reaches]]
+locus = "Mark.10.45"
+inherited = true
+scope = "Mark"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.gospel-of-mark"
+title = "The Gospel of St Mark"
+label = "the tenth or twelfth year after the Ascension (A.D. 38-40)"
+date = "38 A.D. to 40 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09674b-f5a5a8a9"]
+
+[[elements.publication_claims.reaches]]
+locus = "Mark.10.45"
+inherited = true
+scope = "Mark"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.gospel-of-mark"
+title = "The Gospel of St Mark"
+label = "A.D. 40"
+date = "40 A.D."
+precision = "year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09674b-f5a5a8a9"]
+
+[[elements.publication_claims.reaches]]
+locus = "Mark.10.45"
+inherited = true
+scope = "Mark"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.gospel-of-mark"
+title = "The Gospel of St Mark"
+label = "the third year of Claudius (A.D. 43)"
+date = "43 A.D."
+precision = "year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09674b-f5a5a8a9"]
+
+[[elements.publication_claims.reaches]]
+locus = "Mark.10.45"
+inherited = true
+scope = "Mark"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.gospel-of-mark"
+title = "The Gospel of St Mark"
+label = "somewhere between A.D. 50 and 67"
+date = "50 A.D. to 67 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09674b-f5a5a8a9"]
+
+[[elements.publication_claims.reaches]]
+locus = "Mark.10.45"
+inherited = true
+scope = "Mark"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.gospel-of-mark"
+title = "The Gospel of St Mark"
+label = "between 60 and 70"
+date = "60 A.D. to 70 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"]
+
+[[elements.publication_claims.reaches]]
+locus = "Mark.10.45"
+inherited = true
+scope = "Mark"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.gospel-of-mark"
+title = "The Gospel of St Mark"
+label = "after Matthew, and not as late as the destruction of Jerusalem"
+date = "second, after Matthew, and not as late as the destruction of Jerusalem or after the siege had begun"
+precision = "relative"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["passage.pontifical-biblical-commission.de-auctore-tempore-et-veritate-evangeliorum-marci-et-lucae.latin-aas-4-1912.responsa-i-ix"]
+
+[[elements.publication_claims.reaches]]
+locus = "Mark.10.45"
+inherited = true
+scope = "Mark"
+
+[[elements]]
+key = "prayer-after-communion"
+name = "Prayer after Communion"
+refs = []
+loci = []
+status = ""
+reason = ""
+publication_status = ""
+publication_reason = ""

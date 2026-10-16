@@ -53,6 +53,60 @@ Several new witnesses are cited by edition and stable URL, without
 source-library registration. Their list in the rewrite record is a
 follow-up for library work.
 
+## Claude postconciliar Twenty-ninth Sunday three documents, 2026-10-16
+
+<!-- promised-deliverable: claude-pc-s55-three-documents-2026-10-16 -->
+
+The maintainer asked on 2026-10-16 for the Novus Ordo propers workflow for the
+upcoming Sunday, 18 October 2026, to be driven to completion and pushed to
+`main`, with subagents permitted, and confirmed the provider authorization
+explicitly. The production targets provider `claude`, identity
+`liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a`,
+under the current `proper-study` three-document contract: a 20–50-page
+expansive study, a 10–12-page concise study, a standalone homily for an adult
+parish assembly, and the canonical study's web edition. `tools/mass-today
+--date 2026-10-18` resolves the postconciliar Twenty-ninth Sunday in Ordinary
+Time, which displaces the feast of Saint Luke, and the Sunday Lectionary cycle
+of the year that began at Advent 2025 is A. The production plan records this
+exact scope opening. The GPT leaf for the same identity is published; this is
+an independent Claude production under its own edition tree and borrows
+nothing from it.
+
+**Complete: accepted, pushed to `main` and verified live.** Run
+`4d16b5e19d25dad9` (`proper-study` v11) reached ACCEPTED at its publication
+gates with no escalation: 33 packets, 33 accepted results, one intervention.
+Every agent stage ran as a fresh `claude-opus-5-5[1m]` subagent at its
+packet's declared effort, and every review was a fresh worker. Cold reviews
+found four cycles of real defects, and the next stage repaired each one:
+- Research, twice. First, a Communion in Schuster and Fromage left unread, a
+  chronology row from a shared-tool prefix match on the acclamation key, an
+  invented patristic disagreement and unresearched place phrases. Second,
+  Mt 22:15 misread.
+- The study once: self-narrating caution, Augustine's psalter given the NPNF
+  translator's word, and four Fathers credited with the editor's link.
+- The concise once: four unused References loci.
+
+The homily, visual and web reviews passed at their first round. The installed
+family is a 37-page expansive study, an 11-page concise study, a four-page
+homily (1,466 spoken words) and the canonical web edition. The run is
+archived in the leaf under
+`evaluations/proper-study-results/4d16b5e19d25dad9/`. The driver's account of
+every cycle, the 22 standing findings and what is left for other owners is
+[CYCLES.md](workflows/reviews/claude-pc-s55-production-2026-10-16/CYCLES.md). After acceptance, on the maintainer's explicit
+confirmation, the Claude publication inventory was refreshed with this leaf's
+classification row, and the source-family ledger's catalog snapshot was
+re-pinned. `make check-sources`, `check-publication-inventories`,
+`check-release-bindings`, `check-web-editions-current` and `tmt check` pass.
+`main` was fast-forwarded from `c842e33ed` to `ee54b26b2` after
+`make check-deployment-sources`, `make public-site` and `tools/tpt
+public-alpha verify --deployment-target github-pages` passed locally. Pages
+run `38939728035` and repository-hygiene run `38939728660` succeeded. The
+three PDFs, the web page and the Novus Ordo catalog are served byte-identical
+to the locally verified site, and the catalog row links all four Claude
+artifacts. The
+[deployment evidence](workflows/reviews/claude-pc-s55-production-2026-10-16/deployment-evidence.json)
+records the gates, the disclosure scan and the five live routes.
+
 ## Claude 1962 Twenty-first Sunday three documents, 2026-10-15
 
 <!-- promised-deliverable: claude-1962-twenty-first-three-documents-2026-10-15 -->

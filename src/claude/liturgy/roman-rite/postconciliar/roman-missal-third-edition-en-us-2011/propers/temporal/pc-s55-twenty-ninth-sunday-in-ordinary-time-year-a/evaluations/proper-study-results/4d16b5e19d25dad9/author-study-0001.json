@@ -1,0 +1,24 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STU-001",
+      "note": "Disclaimers and process tags removed from 00, 10, 20, 30, 40 and 50; negative results left to Appendix: Scope and Qualifications; strain sections restated once; listed bounds kept beside their claims.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-002",
+      "note": "Clause removed. Augustine's Latin (gloriam et honorem) verified in the tracked Migne text; the matching parenthesis in research/interpretations.md (STU-004) is recorded in research/production-review.md for the research owner and was not edited.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-003",
+      "note": "All three Principal inference cells credit each witness only with his own clause; the Is 45/Mt 22 join stands uncredited as the reading's. Row 'Disagreement kept' renamed 'Disagreement among the witnesses'.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "author-study",
+  "summary": "Repaired STU-001 to STU-003 in the canonical study: removed the body's narration of evidence discipline (design disclaimers, 'the join is the editor's' tags, negative results, restraint sentences) and restated each connection in the reading's own voice with exact attribution, keeping every claim-local bound; each strain section now states its difficulty once; dropped the false claim about Augustine's psalter at Ps 95:7; split the comparison's principal-inference credits by witness. Also cleared advisories STU-005 to STU-009. Proof: build/tpt-runs/4d16b5e19d25dad9/artifacts/author-study-0001/proof.pdf, 37 pages, SHA-256 84e8166a38f5af6ae622412a962e5b4b67bde847af65f44814084176c6756db8; component check valid, all content preflight checks (house-voice, provenance-matches-run) pass, web probe converted with Markdown 3.10.3."
+}

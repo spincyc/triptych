@@ -1,0 +1,7 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/artifacts.json",
+  "disposition": "PASS",
+  "iteration": 0,
+  "stage": "build-artifacts",
+  "summary": "Built all three editions with make doc (fixed-point passes): study 37 pp (sha256 bdb08313...), concise 11 pp (5eb21cde...), homily 4 pp (2543cc51..., reproduced byte-identical after forced rebuild), all at the shared revision timestamp 2026-10-16T16:05:28Z. Logs clean (no errors, warnings, undefined refs, overfull/underfull boxes); all fonts embedded Latin Modern Type 1; pdftotext clean; concise markers settled at inventory/overview/senses p1, chronology p2, themes p3-4, commentary p5. Component-artifact and content checks pass for all editions; snapshot written to research/artifacts.json (receipt schema 2) and check --phase artifacts passes after it; rasters of all 52 pages generated with tools/tpt pdf-review into build/tpt-runs/4d16b5e19d25dad9/artifacts/build-artifacts-0/rasters. No layout repair was needed, so no source or seal-covered file was edited; the production audit (research/production-review.md) received a Build-artifacts entry. Logs and aux copies kept under .scratch/claude-pc-s55/work/build-artifacts-0000/. The GPT leaf was not opened."
+}

@@ -1,0 +1,123 @@
+# Appointment-query input for tools/tpt proper-chronology. It carries citations
+# and ownership only. It authors no date and is not a chronology source.
+# Citations are those of instance/manifest.md and propers/verified.md; Missal
+# elements are owned by the Week XXIX shared owner, Lectionary elements by
+# this leaf. Each printed ref keeps the numbering of the witness that prints it.
+#
+# - Entrance antiphon: the Missal's own locator, Cf. Ps 16, 6.8, in Vulgate
+#   numbering (Hebrew 17:6, 8). The owner's finding 1 shows an adaptation (v. 6
+#   without mihi, v. 7 passed over, the opening phrase of v. 8 omitted and a
+#   vocative added), so the relationship is adaptation.
+# - Responsorial psalm: Hebrew numbering, the printed form of the United States
+#   witnesses (Psalm 96; the Latin Ordo prints Ps 95, 1 et 3. 4-5. 7-8.
+#   9-10a et c), converted by the canonical concordance. The Hebrew and Vulgate
+#   verse numbers of this psalm coincide. The dated page prints the fourth
+#   strophe's locator as 9-10 but gives only 10a and 10c, as the Ordo cites; the
+#   Ordo's locator is entered. The response is v. 7b as the Ordo and the dated
+#   page cite it.
+# - Second reading: 1 Thessalonians 1:1-5b; the appointment ends within v. 5.
+# - Gospel acclamation: Philippians 2:15d, 16a as the Ordo and the dated page
+#   print it, without Cf. The Ordo's Latin gives the two cola as the
+#   Clementine has them without the opening inter quos, so the citation is
+#   entered as appointed partial-verse wording, not as an adaptation. The
+#   element is keyed acclamation, as in instance/manifest.md: the orientation
+#   projection gives every key beginning with gospel a narrated-event row
+#   (research/scope.md section 8.1).
+# - Communion antiphon A: the Missal's printed Vulgate locator with its Cf.
+#   (2002 Latin "Cf. Ps 32, 18-19"; ICEL excerpt "Cf. Ps 32: 18-19"); Hebrew
+#   Psalm 33:18-19, the verse numbers coinciding.
+# - Communion antiphon B: the Missal prints Mc 10, 45 without Cf., but the
+#   owner's finding 3 shows an adaptation (Nam et and the contrast of service
+#   omitted), so the relationship is adaptation.
+schema = 1
+record_type = "proper-chronology-inputs"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"
+calendar = "postconciliar"
+formula = "PC-S55-A"
+shared_owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/29/propers/verified.md"
+
+[[elements]]
+key = "entrance-antiphon"
+name = "Entrance Antiphon"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/29/propers/verified.md"
+citations = [
+  { ref = "Cf. Psalm 16:6, 8", citation = "Psalm 16:6, 8", system = "vulgate", kind = "adaptation" },
+]
+
+[[elements]]
+key = "collect"
+name = "Collect"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/29/propers/verified.md"
+citations = []
+non_scriptural_reason = "Composed oration with no scriptural locator; its petition for a devoted will and service of God's majesty with a sincere heart is a loose echo of no one verse, which the page-2 rule excludes."
+
+[[elements]]
+key = "first-reading"
+name = "First Reading"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Isaiah 45:1, 4-6", citation = "Isaiah 45:1, 4-6", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "responsorial-psalm"
+name = "Responsorial Psalm"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Psalm 96:1, 3, 4-5, 7-8, 9-10a, 10c", citation = "Psalm 96:1, 3, 4-5, 7-8, 9-10a, 10c", system = "hebrew", kind = "appointed" },
+  { ref = "Psalm 96:7b", citation = "Psalm 96:7b", system = "hebrew", kind = "response" },
+]
+
+[[elements]]
+key = "second-reading"
+name = "Second Reading"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "1 Thessalonians 1:1-5b", citation = "1 Thessalonians 1:1-5b", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "acclamation"
+name = "Alleluia Verse"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Philippians 2:15d, 16a", citation = "Philippians 2:15d, 16a", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "gospel"
+name = "Gospel"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Matthew 22:15-21", citation = "Matthew 22:15-21", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "prayer-over-offerings"
+name = "Prayer over the Offerings"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/29/propers/verified.md"
+citations = []
+non_scriptural_reason = "Composed oration with no scriptural locator."
+
+[[elements]]
+key = "communion-antiphon-a"
+name = "Communion Antiphon (first)"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/29/propers/verified.md"
+citations = [
+  { ref = "Cf. Psalm 32:18-19", citation = "Psalm 32:18-19", system = "vulgate", kind = "adaptation" },
+]
+
+[[elements]]
+key = "communion-antiphon-b"
+name = "Communion Antiphon (alternative)"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/29/propers/verified.md"
+citations = [
+  { ref = "Mark 10:45", citation = "Mark 10:45", system = "vulgate", kind = "adaptation" },
+]
+
+[[elements]]
+key = "prayer-after-communion"
+name = "Prayer after Communion"
+owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/29/propers/verified.md"
+citations = []
+non_scriptural_reason = "Composed oration with no scriptural locator."
