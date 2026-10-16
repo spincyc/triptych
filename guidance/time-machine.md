@@ -617,3 +617,36 @@ a collated text, and a reconstructed complete book are separate states. Empty
 or partial contents never constitute proof that the historical book lacked a
 prayer, rubric, or division. The inventory, generated Git history, and map must
 preserve these distinctions.
+
+## 12. Research relationships and reader acceptance, revised 2026-10-16
+
+The maintainer's review of the first preview found substantial historical gaps,
+too little represented sharing between missals, unreadable track naming, and
+two lanes labelled only `typica`. Checking that every station survived rendering
+did not establish that a reader could understand the map. The revision must
+address both the underlying research and its presentation.
+
+The overview includes identified historical witnesses and explicitly sourced
+relationships across traditions. The act-history view retains its stricter
+admission rules; an overview witness does not become a promulgation or a Git
+parent. Borrowing, reception, shared text, common ancestry and edition succession
+must have distinct labels and evidence. Shared text alone establishes neither
+direction of borrowing nor a date of introduction. When a source names a donor
+tradition but no exact donor book, show a separately typed, undated tradition
+entity rather than choosing an arbitrary edition. Source uncertainty and the
+extent of each claim remain available beside the connection.
+
+Use full, distinct reader-facing names for traditions and book sequences.
+Technical IDs remain stable for citations, but do not serve as the only labels.
+Presentation groups reconcile aliases without claiming to count rites or Churches.
+Station titles and dates must be readable on the map itself. Branches of one
+sequence must not appear as unrelated identically named lanes. Put the chronology
+rule beside the drawing; equal positions across panels must not imply equal dates,
+and topological spacing must not imply elapsed time.
+
+An all-tradition overview and linked detailed panels are permitted where a single
+sheet defeats reading. Both derive from the same source-owned records and typed
+relationships, with indexed evidence and comparison routes. Missing research or
+unestablished relations must remain distinguishable from historical absence.
+Reader review must exercise finding a named book, following a supported connection,
+identifying its evidence and limits, and reaching the corresponding text comparison.

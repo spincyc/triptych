@@ -263,6 +263,78 @@ sections:
                 finally:
                     record[field] = original
 
+    def checked_selection(self):
+        self.wilson_fixture()
+        return {"title": "Synthetic selected prayer", "edition_id": texts.WILSON_EDITION,
+                "scope": {"status": "one-complete-prayer", "omitted_book_divisions": ["all other text"]},
+                "units": [{"unit_id": "unit.synthetic.prayer", "passage_id": texts.WILSON_MEMENTO_PASSAGE,
+                           "artifact_id": texts.WILSON_MEMENTO_ARTIFACT, "text_sha256": sha(self.wilson_text),
+                           "language": "la", "division": "canon", "element_key": "synthetic", "source_order": 1}]}
+
+    def test_generic_checked_selection_keeps_native_text_and_deterministic_provenance(self):
+        selection = self.checked_selection()
+        with patch.dict(texts.CHECKED_PASSAGE_SETS, {"synthetic-checked-prayer": selection}):
+            first = self.load("synthetic-checked-prayer")
+            self.assertEqual(first, self.load("synthetic-checked-prayer"))
+        self.assertEqual(self.wilson_text, first["units"][0]["text"])
+        self.assertEqual("1915", first["target_date"])
+        self.assertIsNone(first["witness_date"])
+        self.assertEqual(["all other text"], first["scope"]["omitted_book_divisions"])
+        self.assertEqual("Synthetic test transformation", first["units"][0]["provenance"]["normalization"])
+
+    def test_generic_checked_selection_rejects_unreviewed_rehashed_text(self):
+        selection = self.checked_selection()
+        artifact = self.records[texts.WILSON_MEMENTO_ARTIFACT].data
+        changed = "Different but well-formed text.\n"
+        (self.root / artifact["path"]).write_text(changed)
+        artifact["sha256"] = sha(changed)
+        self.records[texts.WILSON_MEMENTO_PASSAGE].data["artifact_sha256"] = sha(changed)
+        with patch.dict(texts.CHECKED_PASSAGE_SETS, {"synthetic-checked-prayer": selection}):
+            with self.assertRaisesRegex(texts.AdapterError, "differs from reviewed wording"):
+                self.load("synthetic-checked-prayer")
+
+    def test_generic_checked_selection_preserves_greek_codepoints_and_speech_boundaries(self):
+        selection = self.checked_selection()
+        # Deliberately decomposed accent, lunate sigma and final sigma: neither
+        # Unicode composition nor comparison-oriented letter folding is an export.
+        body = "Α\u0301 Ϲ ϲ ς"
+        artifact = self.records[texts.WILSON_MEMENTO_ARTIFACT].data
+        passage = self.records[texts.WILSON_MEMENTO_PASSAGE].data
+        (self.root / artifact["path"]).write_text(body + "\n", encoding="utf-8")
+        artifact.update(sha256=sha(body + "\n"), byte_size=len((body + "\n").encode("utf-8")))
+        passage.update(artifact_sha256=artifact["sha256"],
+                       notes="Synthetic speech blocks [0, 4) and [5, 8); intervening response omitted.")
+        selection["units"][0].update(language="grc", text_sha256=sha(body))
+        with patch.dict(texts.CHECKED_PASSAGE_SETS, {"synthetic-checked-prayer": selection}):
+            result = self.load("synthetic-checked-prayer")
+        unit = result["units"][0]
+        self.assertEqual(body.encode("utf-8"), unit["text"].encode("utf-8"))
+        self.assertEqual(sha(body), unit["text_sha256"])
+        self.assertEqual(passage["notes"], unit["provenance"]["review_limits"])
+        self.assertEqual({"grc": 1}, result["counts"]["languages"])
+
+    def test_generic_checked_selection_requires_exact_controller_review_and_rights(self):
+        selection = self.checked_selection()
+        passage = self.records[texts.WILSON_MEMENTO_PASSAGE].data
+        artifact = self.records[texts.WILSON_MEMENTO_ARTIFACT].data
+        self.record(texts.ORDINARY_EDITION, "edition", date="1861")
+        for record, field, replacement, message in (
+            (passage, "edition_id", texts.ORDINARY_EDITION, "identity mismatch"),
+            (passage, "artifact_id", "artifact.other", "identity mismatch"),
+            (passage, "states", ["inspected"], "is not verified"),
+            (artifact, "rights_status", "unresolved", "publication basis"),
+            (passage, "physical_line_ranges", [[1, 2]], "extent/hash mismatch"),
+        ):
+            with self.subTest(field=field), patch.dict(texts.CHECKED_PASSAGE_SETS, {"synthetic-checked-prayer": selection}):
+                self.artifact("artifact.other", self.wilson_text + "\n", edition_id=texts.WILSON_EDITION)
+                original = record[field]
+                record[field] = replacement
+                try:
+                    with self.assertRaisesRegex(texts.AdapterError, message):
+                        self.load("synthetic-checked-prayer")
+                finally:
+                    record[field] = original
+
 
 if __name__ == "__main__":
     unittest.main()

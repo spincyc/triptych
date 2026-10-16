@@ -1,6 +1,36 @@
 {
  "artifacts": [
   {
+   "artifact_type": "normalized-text",
+   "byte_size": 266,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-hanc-igitur-checked-latin-75df4acf",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Complete Hanc prayer as printed in Wilson1894 bookIIIsectionXVI, excluding preceding Communicantes conclusion and following Quam. Remove superscript apparatus notes24-28, not prayer wording. This is a normalized printed-edition transcription, not diplomatic manuscript text. The exact facsimile controls typography and punctuation not represented by the normalization.",
+   "page_count": null,
+   "retrieved": "2026-10-16",
+   "rights": "public-domain",
+   "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 214,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-quam-oblationem-checked-latin-e01e1083",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Complete Quam prayer, removing notes29-31 and joining compositor line breaks. Retain Domini Dei and native punctuation/case; next Qui pridie prayer excluded. This is a normalized printed-edition transcription, not diplomatic manuscript text. The exact facsimile controls typography and punctuation not represented by the normalization.",
+   "page_count": null,
+   "retrieved": "2026-10-16",
+   "rights": "public-domain",
+   "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
    "artifact_type": "ocr-text",
    "byte_size": 1095058,
    "edition_owned": true,
@@ -90,6 +120,58 @@
    "storage": "remote",
    "verified_on": null,
    "withheld": "rights"
+  },
+  {
+   "artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-hanc-igitur-checked-latin-75df4acf",
+   "artifact_type": "normalized-text",
+   "context": "Vatican Reg. lat. 316 as mediated by Wilson's 1894 critical edition; no new manuscript collation. Complete Hanc prayer as printed in Wilson1894 bookIIIsectionXVI, excluding preceding Communicantes conclusion and following Quam. Remove superscript apparatus notes24-28, not prayer wording.",
+   "id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-hanc-igitur",
+   "locus": "canon-hanc-igitur; printed p. 235; source PDF page(s) 328",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Two independent reviewers checked this complete bounded prayer against its historical printed page image(s) on 2026-10-16. This establishes the normalized edition text and its stated extent, not an act of revision, a borrowing direction, a manuscript date or the wording of the rest of the book. See owning artifact for every transformation and the original page evidence.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-hanc-igitur.json",
+   "verified_on": "2026-10-16",
+   "words": 38
+  },
+  {
+   "artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-quam-oblationem-checked-latin-e01e1083",
+   "artifact_type": "normalized-text",
+   "context": "Vatican Reg. lat. 316 as mediated by Wilson's 1894 critical edition; no new manuscript collation. Complete Quam prayer, removing notes29-31 and joining compositor line breaks. Retain Domini Dei and native punctuation/case; next Qui pridie prayer excluded.",
+   "id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-quam-oblationem",
+   "locus": "canon-quam-oblationem; printed p. 235; source PDF page(s) 328",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Two independent reviewers checked this complete bounded prayer against its historical printed page image(s) on 2026-10-16. This establishes the normalized edition text and its stated extent, not an act of revision, a borrowing direction, a manuscript date or the wording of the rest of the book. See owning artifact for every transformation and the original page evidence.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-quam-oblationem.json",
+   "verified_on": "2026-10-16",
+   "words": 28
   }
  ],
  "schema": "triptych-source-reader/v1",

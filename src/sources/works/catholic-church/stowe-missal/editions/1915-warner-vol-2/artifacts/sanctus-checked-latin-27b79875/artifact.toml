@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.stowe-missal.warner-1915-vol-2.sanctus-checked-latin-27b79875"
+edition_id = "edition.catholic-church.stowe-missal.warner-1915-vol-2"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced."
+provenance = "Existing canonical work/edition identities, alias and artifact records were inspected before creation; the existing retained OCR and facsimile were reused, without a new edition or replacement witness. Exact bytes were mechanically extracted from the pinned OCR with an explicit correction ledger. The complete bounded body was read against the cited rendered historical page(s), then independently checked word by word by a second reviewer on 2026-10-16. Royal Irish Academy MS D. II. 3 as mediated by Warner's 1915 printed text; layers, expansions and apparatus are those of the critical edition. Verification evidence: artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-scan-27c6070e."
+retrieved = "2026-10-16"
+sha256 = "27b798758bef32f11d5fa4bd1dbe2608c74a6efa14e6f5ad68b9c1ebe66e726a"
+byte_size = 355
+path = "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/sanctus-checked-latin-27b79875/text.txt"
+encoding = "utf-8"
+indexable = true
+derived_from = "artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-raw-ocr-3d11ad59"
+transformation = "Source UTF-8 bytes SHA-256 3d11ad59b8968e9c0e2c816676d0b5a26142896a9af1a13dbf29aa8c6bd69cc4. Use LF-delimited physical line ranges [[3395, 3400]]. Select only the named complete prayer bounded by its incipit and next prayer; join whitespace to one space, excluding running heads/apparatus between disjoint ranges. Apply these exact page-verified replacements in order: [{\"from\": \"sabaoth\", \"to\": \"sabaóth\", \"count\": 1}, {\"from\": \"terra,\", \"to\": \"terra\", \"count\": 1}, {\"from\": \"•\", \"to\": \"·\", \"count\": 1}, {\"from\": \"excelsis6\", \"to\": \"excelsís\", \"count\": 1}, {\"from\": \"excelsis\", \"to\": \"excelsís\", \"count\": 1}, {\"from\": \"cell's\", \"to\": \"celís\", \"count\": 1}, {\"from\": \"conuer- saretur\", \"to\": \"conuersaretur\", \"count\": 1}, {\"from\": \"tern's\", \"to\": \"terrís\", \"count\": 1}, {\"from\": \"passion em\", \"to\": \"passionem\", \"count\": 1}, {\"from\": \"aetemam\", \"to\": \"aeternam\", \"count\": 1}, {\"from\": \"daret:~\", \"to\": \"daret :\", \"count\": 1}, {\"from\": \"domi- num.\", \"to\": \"dominum\", \"count\": 1}]. Append one LF. Complete printed Sanctus and its Christological continuation through per dominum, fol23v. Two Sanctus words exactly as printed; do not add a third. Flatten roman/italic typography and expand ligature sorts to digraphs; retain accents and native dilicta. Superscript6 excluded. The compound separator after daret is normalized to a colon, not asserted as a diplomatic character; retained page is the punctuation evidence. No final full stop is printed after dominum."
+notes = "Complete printed Sanctus and its Christological continuation through per dominum, fol23v. Two Sanctus words exactly as printed; do not add a third. Flatten roman/italic typography and expand ligature sorts to digraphs; retain accents and native dilicta. Superscript6 excluded. The compound separator after daret is normalized to a colon, not asserted as a diplomatic character; retained page is the punctuation evidence. No final full stop is printed after dominum. This is a normalized printed-edition transcription, not diplomatic manuscript text. The exact facsimile controls typography and punctuation not represented by the normalization."

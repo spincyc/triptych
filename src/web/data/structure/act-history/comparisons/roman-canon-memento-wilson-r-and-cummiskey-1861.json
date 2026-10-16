@@ -5,11 +5,42 @@
   "historical_ancestry_claimed": false,
   "id": "roman-canon-memento-wilson-r-and-cummiskey-1861",
   "identical_serialized_text": false,
+  "identity_claim": "same-prayer-witnesses",
   "inputs": [
     {
-      "byte_size": 12229,
+      "byte_size": 55362,
       "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
-      "sha256": "db2b80db0f78c7386952ce342f08d6ddff650fa8d11d19fbc650f9e18dd63301"
+      "sha256": "177dd42f9fa51826f1e62de2d4ff689893c313c0cfa7728d3627373f65510987"
+    },
+    {
+      "byte_size": 241695,
+      "path": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+      "sha256": "372bfc0ff5693af9adb81e87318341cc9f3ca1b852db74de3f81ce8c414d121d"
+    },
+    {
+      "byte_size": 89758,
+      "path": "src/sources/inventories/eucharistic-book-relationships-v1.toml",
+      "sha256": "d43fb733824f87fa46c4c5c1b81417683cbe496b140a97ea6139f1952830a91e"
+    },
+    {
+      "byte_size": 183499,
+      "path": "src/sources/inventories/latin-missal-acts-v1.toml",
+      "sha256": "7e8db6a985303a0da62c535ca536dec8f9e3d792155d1b9b74c785282892d328"
+    },
+    {
+      "byte_size": 9311,
+      "path": "src/sources/inventories/missal-timeline-holdings-v1.toml",
+      "sha256": "43d18228b997f149a6aab5605ee0397713348cc1d2f1458c49940fa89f147c8e"
+    },
+    {
+      "byte_size": 82303,
+      "path": "src/sources/inventories/roman-holy-week-acts-v1.toml",
+      "sha256": "cfbc951ec40071d5eb78c55d9453811ee194647b57893b7aa3b4768abadea9bb"
+    },
+    {
+      "byte_size": 221307,
+      "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+      "sha256": "2ca0794f773beb974b67f67d7a51fd2884b490e7fea3829eac082c9c7ce1e620"
     },
     {
       "byte_size": 3497,
@@ -246,6 +277,7 @@
         "unit_id": "unit.wilson-1915.gregorian.canon-missae.memento-vivorum"
       }
     ],
+    "record_id": "western:gregorian-wilson-1915-critical-edition",
     "reviewed_on": "2026-10-16",
     "scope": {
       "no_historical_backprojection": true,
@@ -273,6 +305,76 @@
     "The apparatus caveat must accompany any historical interpretation of this bounded passage."
   ],
   "membership_status": "established",
+  "relationship_ids": [
+    "eucharistic-books:checked-latin-prayers-3"
+  ],
+  "relationships": [
+    {
+      "ancestor_ref": null,
+      "basis": "Explicit same-prayer identity from incipit, liturgical position and bounded ending, with directly inspectable shared wording in both normalized source bodies. Native spelling, case, accents and declared typography differences remain in the full comparisons. An exact illustrative shared phrase is: diesque nostros in tua pace disponas.",
+      "certainty": "sourced",
+      "chronology": null,
+      "comparison_ids": [
+        "roman-hanc-igitur-gregorian-and-cummiskey-1861",
+        "roman-quam-oblationem-gregorian-and-cummiskey-1861",
+        "roman-canon-memento-wilson-r-and-cummiskey-1861"
+      ],
+      "comparison_links": [
+        {
+          "id": "roman-hanc-igitur-gregorian-and-cummiskey-1861",
+          "projection_path": "comparisons/roman-hanc-igitur-gregorian-and-cummiskey-1861.json"
+        },
+        {
+          "id": "roman-quam-oblationem-gregorian-and-cummiskey-1861",
+          "projection_path": "comparisons/roman-quam-oblationem-gregorian-and-cummiskey-1861.json"
+        },
+        {
+          "id": "roman-canon-memento-wilson-r-and-cummiskey-1861",
+          "projection_path": "comparisons/roman-canon-memento-wilson-r-and-cummiskey-1861.json"
+        }
+      ],
+      "date_label": null,
+      "directed": false,
+      "evidence": [
+        {
+          "locus": "Printed pp. 2–3, PDF pp. 60–61; independently checked retained page images. Canon main text follows R (Reginae 337), with variants in the apparatus.",
+          "source": {
+            "id": "checked-wilson-gregorian",
+            "inspection": "Printed pp. 2–3, PDF pp. 60–61; independently checked retained page images. Canon main text follows R (Reginae 337), with variants in the apparatus.",
+            "inspection_status": "inspected",
+            "title": "Wilson, The Gregorian Sacramentary (1915), selected Canon prayers",
+            "url": "https://archive.org/details/gregoriansacrame00cath"
+          },
+          "source_id": "checked-wilson-gregorian"
+        },
+        {
+          "locus": "Existing checked Latin-column transcription, whose artifact records visual page-image inspection and source-leaf coordinates; the English translation is excluded from these comparisons.",
+          "source": {
+            "id": "checked-cummiskey-latin",
+            "inspection": "Existing checked Latin-column transcription, whose artifact records visual page-image inspection and source-leaf coordinates; the English translation is excluded from these comparisons.",
+            "inspection_status": "inspected",
+            "title": "Cummiskey, Roman Missal for the laity (1861), original Latin Ordinary columns",
+            "url": "https://archive.org/details/romanmissaltran00churgoog"
+          },
+          "source_id": "checked-cummiskey-latin"
+        }
+      ],
+      "from": "western:gregorian-wilson-1915-critical-edition",
+      "git_ancestry": false,
+      "id": "eucharistic-books:checked-latin-prayers-3",
+      "kind": "shared-text",
+      "label": "Shared hanc igitur, quam oblationem, memento domine wording",
+      "limitations": "Critical editions mediate early witnesses; printed publication dates do not date the shared formula. The displayed phrase is an exact illustrative shared run, not a claim that all wording or punctuation matches. Stowe has substantial additions and variants; its punctuation encoding is declared by its owning artifacts.",
+      "origin": {
+        "id": "checked-latin-prayers-3",
+        "inventory": "src/sources/inventories/eucharistic-book-relationships-v1.toml",
+        "table": "relationships"
+      },
+      "scope": "Selected hanc igitur, quam oblationem, memento domine units only; variants remain in the comparisons.",
+      "text_inheritance": false,
+      "to": "western:cummiskey-1861-latin-ordinary"
+    }
+  ],
   "right": {
     "adapter": "cummiskey-1861-latin-ordinary",
     "join_rule": "insert-one-space-between-exact-source-bodies",
@@ -372,6 +474,7 @@
         "unit_id": "unit.cummiskey-1861.canon-missae.et-omnium-circumstantium"
       }
     ],
+    "record_id": "western:cummiskey-1861-latin-ordinary",
     "reviewed_on": null,
     "scope": {
       "normalization": "Exact TSV wording; source records describe closed French spacing, small capitals rendered as capitals, omitted cross glyphs noted, and abbreviations retained",
@@ -788,14 +891,14 @@
       "sha256": "9961359f38a3e390b5de4103a5222149e40b906362bba4b5620590f5ee1fed8e"
     },
     {
-      "byte_size": 35245,
+      "byte_size": 49955,
       "path": "scripts/_eucharistic_history.py",
-      "sha256": "f06d4876155665dd1bd4acb8912f3e29b3c87fdca04224fbfea3a777bfbf1fc3"
+      "sha256": "8a6287252b3c50270464fca462ec2eac5680fbc0d21c7670482fd41b8bb555ee"
     },
     {
-      "byte_size": 23144,
+      "byte_size": 60025,
       "path": "scripts/_eucharistic_texts.py",
-      "sha256": "b3760920b868ebc4638a629a14a752499619c7ab11c6881fbb5b0a234f3523e4"
+      "sha256": "cd92077fd685310b7aaf7f14bfb1ff83f23bc1417cc8ebe9687ca9a554016799"
     },
     {
       "byte_size": 48920,
@@ -808,9 +911,9 @@
       "sha256": "86c302fcb7be450dec4dc1d45c4f529b000e79d5c548fae2b22212f7246e0afe"
     },
     {
-      "byte_size": 252195,
+      "byte_size": 252547,
       "path": "tools/act-history",
-      "sha256": "adb3b1b7ee027134c95b4e8921787b413a1d028d7ca5713eeec0f869569c2caa"
+      "sha256": "f5c2926da1d093b3f84d010a9ade154d79b0637661532c30f9a83c6412154edc"
     },
     {
       "byte_size": 117989,

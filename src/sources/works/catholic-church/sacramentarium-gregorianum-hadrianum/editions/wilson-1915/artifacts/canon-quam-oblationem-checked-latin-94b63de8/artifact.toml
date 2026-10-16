@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-quam-oblationem-checked-latin-94b63de8"
+edition_id = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced."
+provenance = "Existing canonical work/edition identities, alias and artifact records were inspected before creation; the existing retained OCR and facsimile were reused, without a new edition or replacement witness. Exact bytes were mechanically extracted from the pinned OCR with an explicit correction ledger. The complete bounded body was read against the cited rendered historical page(s), then independently checked word by word by a second reviewer on 2026-10-16. R, Vatican Reginae 337, as mediated by Wilson's 1915 critical edition; no new manuscript collation. Verification evidence: artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7."
+retrieved = "2026-10-16"
+sha256 = "94b63de805aa0998d0dde05f03dd0c7d9909de4bcff585545f7434e501fd4bbc"
+byte_size = 207
+path = "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/canon-quam-oblationem-checked-latin-94b63de8/text.txt"
+encoding = "utf-8"
+indexable = true
+derived_from = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.pdf-text-layout-6ca97fd7"
+transformation = "Source UTF-8 bytes SHA-256 6ca97fd74dee383bec70078151eaa0dc918a2b310389577d30690f4e503fdb53. Use LF-delimited physical line ranges [[2309, 2309], [2328, 2330]]. Select only the named complete prayer bounded by its incipit and next prayer; join whitespace to one space, excluding running heads/apparatus between disjoint ranges. Apply these exact page-verified replacements in order: [{\"from\": \" oblationem\", \"to\": \"Quam oblationem\", \"count\": 1}, {\"from\": \"quae- sumus\", \"to\": \"quaesumus\", \"count\": 1}, {\"from\": \"accepta- bilemque\", \"to\": \"acceptabilemque\", \"count\": 1}, {\"from\": \"benedictam^\", \"to\": \"benedictam\", \"count\": 1}, {\"from\": \"adscriptam^\", \"to\": \"adscriptam\", \"count\": 1}, {\"from\": \"ratam^\", \"to\": \"ratam\", \"count\": 1}, {\"from\": \"corpus-\", \"to\": \"corpus\", \"count\": 1}, {\"from\": \"sanguis-\", \"to\": \"sanguis\", \"count\": 1}, {\"from\": \"dei''' /nostri\", \"to\": \"dei nostri\", \"count\": 1}]. Append one LF. Complete Quam prayer, excluding the intervening page2apparatus and page3heading, superscript notes1-3 and folio-boundary slash. R maintext retains dei; note3 assigns its omission to O. Ut remains capitalized."
+notes = "Complete Quam prayer, excluding the intervening page2apparatus and page3heading, superscript notes1-3 and folio-boundary slash. R maintext retains dei; note3 assigns its omission to O. Ut remains capitalized. This is a normalized printed-edition transcription, not diplomatic manuscript text. The exact facsimile controls typography and punctuation not represented by the normalization."

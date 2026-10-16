@@ -1,6 +1,36 @@
 {
  "artifacts": [
   {
+   "artifact_type": "normalized-text",
+   "byte_size": 554,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur-checked-latin-7465da67",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Complete Hanc prayer including dedication/conversion clauses and Dies quoque continuation through per dominum nostrum, fol27-27v. Flatten roman/italic typography, expand ae ligatures, retain native Quessumus, aeclesiae, idulorum, eripias and accented té. Remove apparatus4-10 and foliotag. By explicit editorial encoding, diagonal separator after aedificauit, compound wave marks after conuertas/nostrum, and curved compound after numerari are all represented as colons; no claim of exact punctuation transcription. The apparatus compares omitted clauses to other books; the text itself does not date their introduction. This is a normalized printed-edition transcription, not diplomatic manuscript text. The exact facsimile controls typography and punctuation not represented by the normalization.",
+   "page_count": null,
+   "retrieved": "2026-10-16",
+   "rights": "public-domain",
+   "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 199,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-quam-oblationem-checked-latin-e404c122",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Complete Quam prayer bounded before following qui pridie in same paragraph. Preserve té (not tu), quesumus, ascriptam, dignareque, fili and printed cross as +; no final full stop is supplied. Remove superscript notes11-13, flatten italic expansion type, and join printed line break. Footnote corrections from other books are not imported. This is a normalized printed-edition transcription, not diplomatic manuscript text. The exact facsimile controls typography and punctuation not represented by the normalization.",
+   "page_count": null,
+   "retrieved": "2026-10-16",
+   "rights": "public-domain",
+   "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
    "artifact_type": "ocr-text",
    "byte_size": 277250,
    "edition_owned": true,
@@ -29,6 +59,21 @@
    "rights_jurisdiction": "United States",
    "source_url": "https://archive.org/download/publications32henruoft/publications32henruoft.pdf",
    "storage": "tracked"
+  },
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 355,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.sanctus-checked-latin-27b79875",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Complete printed Sanctus and its Christological continuation through per dominum, fol23v. Two Sanctus words exactly as printed; do not add a third. Flatten roman/italic typography and expand ligature sorts to digraphs; retain accents and native dilicta. Superscript6 excluded. The compound separator after daret is normalized to a colon, not asserted as a diplomatic character; retained page is the punctuation evidence. No final full stop is printed after dominum. This is a normalized printed-edition transcription, not diplomatic manuscript text. The exact facsimile controls typography and punctuation not represented by the normalization.",
+   "page_count": null,
+   "retrieved": "2026-10-16",
+   "rights": "public-domain",
+   "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
   }
  ],
  "edition": {
@@ -45,7 +90,86 @@
   "translators": [],
   "year": 1915
  },
- "passages": [],
+ "passages": [
+  {
+   "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur-checked-latin-7465da67",
+   "artifact_type": "normalized-text",
+   "context": "Royal Irish Academy MS D. II. 3 as mediated by Warner's 1915 printed text; layers, expansions and apparatus are those of the critical edition. Complete Hanc prayer including dedication/conversion clauses and Dies quoque continuation through per dominum nostrum, fol27-27v. Flatten roman/italic typography, expand ae ligatures, retain native Quessumus, aeclesiae, idulorum, eripias and accented té. Remove apparatus4-10 and foliotag. By explicit editorial encoding, diagonal separator after aedificauit, compound wave marks after conuertas/nostrum, and curved compound after numerari are all represented as colons; no claim of exact punctuation transcription. The apparatus compares omitted clauses to other books; the text itself does not date their introduction.",
+   "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur",
+   "locus": "canon-hanc-igitur; printed p. 12; source PDF page(s) 98",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Two independent reviewers checked this complete bounded prayer against its historical printed page image(s) on 2026-10-16. This establishes the normalized edition text and its stated extent, not an act of revision, a borrowing direction, a manuscript date or the wording of the rest of the book. See owning artifact for every transformation and the original page evidence.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur.json",
+   "verified_on": "2026-10-16",
+   "words": 85
+  },
+  {
+   "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-quam-oblationem-checked-latin-e404c122",
+   "artifact_type": "normalized-text",
+   "context": "Royal Irish Academy MS D. II. 3 as mediated by Warner's 1915 printed text; layers, expansions and apparatus are those of the critical edition. Complete Quam prayer bounded before following qui pridie in same paragraph. Preserve té (not tu), quesumus, ascriptam, dignareque, fili and printed cross as +; no final full stop is supplied. Remove superscript notes11-13, flatten italic expansion type, and join printed line break. Footnote corrections from other books are not imported.",
+   "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-quam-oblationem",
+   "locus": "canon-quam-oblationem; printed p. 12; source PDF page(s) 98",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Two independent reviewers checked this complete bounded prayer against its historical printed page image(s) on 2026-10-16. This establishes the normalized edition text and its stated extent, not an act of revision, a borrowing direction, a manuscript date or the wording of the rest of the book. See owning artifact for every transformation and the original page evidence.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-quam-oblationem.json",
+   "verified_on": "2026-10-16",
+   "words": 27
+  },
+  {
+   "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.sanctus-checked-latin-27b79875",
+   "artifact_type": "normalized-text",
+   "context": "Royal Irish Academy MS D. II. 3 as mediated by Warner's 1915 printed text; layers, expansions and apparatus are those of the critical edition. Complete printed Sanctus and its Christological continuation through per dominum, fol23v. Two Sanctus words exactly as printed; do not add a third. Flatten roman/italic typography and expand ligature sorts to digraphs; retain accents and native dilicta. Superscript6 excluded. The compound separator after daret is normalized to a colon, not asserted as a diplomatic character; retained page is the punctuation evidence. No final full stop is printed after dominum.",
+   "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.sanctus",
+   "locus": "sanctus; printed p. 10; source PDF page(s) 96",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Two independent reviewers checked this complete bounded prayer against its historical printed page image(s) on 2026-10-16. This establishes the normalized edition text and its stated extent, not an act of revision, a borrowing direction, a manuscript date or the wording of the rest of the book. See owning artifact for every transformation and the original page evidence.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.catholic-church.stowe-missal.warner-1915-vol-2.sanctus.json",
+   "verified_on": "2026-10-16",
+   "words": 56
+  }
+ ],
  "schema": "triptych-source-reader/v1",
  "work": {
   "alternate_titles": [

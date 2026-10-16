@@ -1,0 +1,995 @@
+{
+  "apparatus_caveat": "The witnesses are mediated by their identified printed editions. Printed edition dates do not date introduction, borrowing or a common ancestor. Native words, spelling, accents and case remain in each normalized source; typographic or punctuation normalization is declared per owning artifact. Warner's italic expansion type is flattened and ligature sorts expanded; specified compound punctuation is represented by colons. The facsimile, not that editorial encoding, controls diplomatic punctuation. Stowe's complete Hanc includes dedication/conversion clauses and its Dies quoque continuation; Warner p.12 notes4 and7 explicitly compare the additional clauses with Gelasian/Gallican texts. No direction of borrowing is inferred.",
+  "basis": "Complete hanc-igitur units selected by their incipit, bounded ending and liturgical position. Each body was checked against the identified printed page; the alignment is explicit same-prayer witness membership, not a text ancestry edge.",
+  "historical_act_claimed": false,
+  "historical_ancestry_claimed": false,
+  "id": "roman-hanc-igitur-stowe-and-cummiskey-1861",
+  "identical_serialized_text": false,
+  "identity_claim": "same-prayer-witnesses",
+  "inputs": [
+    {
+      "byte_size": 55362,
+      "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
+      "sha256": "177dd42f9fa51826f1e62de2d4ff689893c313c0cfa7728d3627373f65510987"
+    },
+    {
+      "byte_size": 241695,
+      "path": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+      "sha256": "372bfc0ff5693af9adb81e87318341cc9f3ca1b852db74de3f81ce8c414d121d"
+    },
+    {
+      "byte_size": 89758,
+      "path": "src/sources/inventories/eucharistic-book-relationships-v1.toml",
+      "sha256": "d43fb733824f87fa46c4c5c1b81417683cbe496b140a97ea6139f1952830a91e"
+    },
+    {
+      "byte_size": 183499,
+      "path": "src/sources/inventories/latin-missal-acts-v1.toml",
+      "sha256": "7e8db6a985303a0da62c535ca536dec8f9e3d792155d1b9b74c785282892d328"
+    },
+    {
+      "byte_size": 9311,
+      "path": "src/sources/inventories/missal-timeline-holdings-v1.toml",
+      "sha256": "43d18228b997f149a6aab5605ee0397713348cc1d2f1458c49940fa89f147c8e"
+    },
+    {
+      "byte_size": 82303,
+      "path": "src/sources/inventories/roman-holy-week-acts-v1.toml",
+      "sha256": "cfbc951ec40071d5eb78c55d9453811ee194647b57893b7aa3b4768abadea9bb"
+    },
+    {
+      "byte_size": 221307,
+      "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+      "sha256": "2ca0794f773beb974b67f67d7a51fd2884b490e7fea3829eac082c9c7ce1e620"
+    },
+    {
+      "byte_size": 5704,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/canon-hanc-igitur-checked-latin-7465da67/artifact.toml",
+      "sha256": "efb5793e19c63af780d5e068a4ae94a15ca68ad6f4ef4dd36df8e5c8f027b23e"
+    },
+    {
+      "byte_size": 554,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/canon-hanc-igitur-checked-latin-7465da67/text.txt",
+      "sha256": "7465da67befc59c3576681e5001d1bb33a03b3f72f80a2d513c3b165a5b9dd67"
+    },
+    {
+      "byte_size": 3914,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/canon-quam-oblationem-checked-latin-e404c122/artifact.toml",
+      "sha256": "e4b640f7fac6fe6914822283d139ee69bc8ee96a23e21fb8f7e06bab59ac3204"
+    },
+    {
+      "byte_size": 199,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/canon-quam-oblationem-checked-latin-e404c122/text.txt",
+      "sha256": "e404c122389466c12f7c79304c991aae3a05d8b13297c37ed45bf221cc01727c"
+    },
+    {
+      "byte_size": 2379,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/ia-raw-ocr-3d11ad59/artifact.toml",
+      "sha256": "a3e765dc305b074c76805870a35f9ccb076bf9393814fd0f4f3538ce3be7c722"
+    },
+    {
+      "byte_size": 277250,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/ia-raw-ocr-3d11ad59/source.txt",
+      "sha256": "3d11ad59b8968e9c0e2c816676d0b5a26142896a9af1a13dbf29aa8c6bd69cc4"
+    },
+    {
+      "byte_size": 2401,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/ia-scan-27c6070e/artifact.toml",
+      "sha256": "fd42f74c38fdd1e222acb09c1cd49289e33900f8b6b5b3094d98338e5169b42c"
+    },
+    {
+      "byte_size": 6181209,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/ia-scan-27c6070e/source.pdf",
+      "sha256": "27c6070e673622fc3f976a016aff8dccd69e70a90d17ac52aa658104f20cfbcf"
+    },
+    {
+      "byte_size": 4125,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/sanctus-checked-latin-27b79875/artifact.toml",
+      "sha256": "659ac33b9824120c7b4725d96b2bffa1163459c9f28211e9712a506150d9e8b6"
+    },
+    {
+      "byte_size": 355,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/sanctus-checked-latin-27b79875/text.txt",
+      "sha256": "27b798758bef32f11d5fa4bd1dbe2608c74a6efa14e6f5ad68b9c1ebe66e726a"
+    },
+    {
+      "byte_size": 1013,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/edition.toml",
+      "sha256": "52ab6eb25940dc5471028a7caf3ef8e401c7f636f231ade9b3fd318426916e56"
+    },
+    {
+      "byte_size": 1728,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-hanc-igitur.toml",
+      "sha256": "cac0d3d95fc9c244179bbfbd0c56fc2a1b96861a48ca09e4560d72a68bab432b"
+    },
+    {
+      "byte_size": 1458,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-quam-oblationem.toml",
+      "sha256": "96ffefbc1220d34fdbeeb11ed5879e03a6a42a9f92808c958cb5ed42d2e0c61f"
+    },
+    {
+      "byte_size": 1542,
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/sanctus.toml",
+      "sha256": "17dc84481a077051ca7ea9af26a2e6fbdea181bb7587c2b5c31310d1f1824786"
+    },
+    {
+      "byte_size": 846,
+      "path": "src/sources/works/catholic-church/stowe-missal/work.toml",
+      "sha256": "51ae2664ee5b8806a428a670b7aede9778b9bf194b15d2dec9764b2f63e3d11c"
+    },
+    {
+      "byte_size": 3763,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/canon-missae-en/artifact.toml",
+      "sha256": "a553181a4380ffae5fd35d4e5d110c4c2aa89032a36eb93921361c52ae6c4ed6"
+    },
+    {
+      "byte_size": 11254,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/canon-missae-en/canon-missae-en.tsv",
+      "sha256": "9b729821becda739585c9a2fc0e6cc35186e53d6383362f85e4435212fe603c4"
+    },
+    {
+      "byte_size": 4961,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/canon-missae-la/artifact.toml",
+      "sha256": "dce27dadd1aafa7b1e021180f7205e5f748832cd85636c8ff2f9eef0a1c2fd10"
+    },
+    {
+      "byte_size": 9821,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/canon-missae-la/canon-missae-la.tsv",
+      "sha256": "dfda5e399047a3136908a0b90b6f98cfe25366f175a648240478e6f80dfe0ba7"
+    },
+    {
+      "byte_size": 1805,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-scan-pdf/artifact.toml",
+      "sha256": "92f2c4d89f3576a89dbb54b3cf0622240d5201df6ed1fe1898d706a97ac953e4"
+    },
+    {
+      "byte_size": 5352,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-en/artifact.toml",
+      "sha256": "bfeee6af60b77fc3d8060500962f617cc03f5f108ebbf1bbd3dfe6d70d8a0a0d"
+    },
+    {
+      "byte_size": 11675,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-en/ordinarium-communio-en.tsv",
+      "sha256": "f35d635ec2311ade057558ad1531bc6e007126311acc9a554b4b662dfacd0ccc"
+    },
+    {
+      "byte_size": 4982,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-la/artifact.toml",
+      "sha256": "e01145f7c245c14c5e3ba7b93b487ec6430f682386cfbfecc4eddee8dda56c76"
+    },
+    {
+      "byte_size": 5423,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-la/ordinarium-communio-la.tsv",
+      "sha256": "8a58f98ad38a0733f8b6b7645ef0f7ccc2a95995d28478d87aa351a7d87fe67d"
+    },
+    {
+      "byte_size": 4289,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-conclusio-en/artifact.toml",
+      "sha256": "874aeba626f87a376fefecff5f2ba7eee065fbd2c222938d088ef3e411e1aa7e"
+    },
+    {
+      "byte_size": 11403,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-conclusio-en/ordinarium-conclusio-en.tsv",
+      "sha256": "9af81cff76dd0f09f66fbd3e9e9da1ef00f82c84db8b6b73adf54b58703a65cd"
+    },
+    {
+      "byte_size": 5201,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-conclusio-la/artifact.toml",
+      "sha256": "501e9eb740e9b09d6d3277879ffde9851c5c590b2a05eb29415878ebca4b6d7c"
+    },
+    {
+      "byte_size": 4377,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-conclusio-la/ordinarium-conclusio-la.tsv",
+      "sha256": "4bbcc69f2285f8f43faef34bce8613979b607feee1437a433d28d2404df863e3"
+    },
+    {
+      "byte_size": 4544,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-oblatio-en/artifact.toml",
+      "sha256": "38793ef9b78e119c9d45bc4fc81bdfde5546d0b9123318de7334dd6b3e98b98f"
+    },
+    {
+      "byte_size": 25807,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-oblatio-en/ordinarium-oblatio-en.tsv",
+      "sha256": "b3a9ed6f1f15d9c08ee5603d9ce6bcb7846771648ece1271abf834e418b7203a"
+    },
+    {
+      "byte_size": 5090,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-oblatio-la/artifact.toml",
+      "sha256": "5415b0a5c68a5e7fc5fa2a6c29d80f653d4208a8133b525cfc47a942f0aeca3c"
+    },
+    {
+      "byte_size": 9246,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-oblatio-la/ordinarium-oblatio-la.tsv",
+      "sha256": "1625f8f09a81fa70be3373021ba48eae603c271b196134c4b636358b79c26d4e"
+    },
+    {
+      "byte_size": 3889,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-praeparatio-en/artifact.toml",
+      "sha256": "63bc0ddd51ef4300ed089b650d30f6a73145bbf932c17948315ed4181695b099"
+    },
+    {
+      "byte_size": 15145,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-praeparatio-en/ordinarium-praeparatio-en.tsv",
+      "sha256": "bba0bf1e5890201b7afacdce30598dcbde215908821dea0baa1cc72c76e50850"
+    },
+    {
+      "byte_size": 5027,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-praeparatio-la/artifact.toml",
+      "sha256": "71b326b6fa33c4958572622bf84d0ce4e8b38d50162f552d1bd18c92de13c0c3"
+    },
+    {
+      "byte_size": 8600,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-praeparatio-la/ordinarium-praeparatio-la.tsv",
+      "sha256": "3ecd28af160bf65d272f1faf041920b90ab7c5a9d614c985b9574c0f5f6c1d9f"
+    },
+    {
+      "byte_size": 4543,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/praefationes-en/artifact.toml",
+      "sha256": "be5f7a75a7195268fff71d590962d6bfde3e2ce14d85e1f19eb5bb26429707e5"
+    },
+    {
+      "byte_size": 16823,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/praefationes-en/praefationes-en.tsv",
+      "sha256": "67400ec1b528854f45e1ab8a1b0598235d9471072b1e26e261db1ea5d1871441"
+    },
+    {
+      "byte_size": 5136,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/praefationes-la/artifact.toml",
+      "sha256": "d2973370caffeb1742950db8d1ebaf45cb1afcd90c75646c3b91222c9f7a8b12"
+    },
+    {
+      "byte_size": 6983,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/praefationes-la/praefationes-la.tsv",
+      "sha256": "1ae62a9b1e4f96d6da17c46564a8cff2c3b0593525cd1fd87508c197255dbe5d"
+    },
+    {
+      "byte_size": 1411,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/edition.toml",
+      "sha256": "a6a946e4c1f7b470392972302a03036b151260f728ffe8a26d683f0493af7466"
+    },
+    {
+      "byte_size": 1153,
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/work.toml",
+      "sha256": "80a589340fe7fbe6284fa8cb1eef65b0f98d4bb6baee2d2f17a00b7b1b0c6358"
+    }
+  ],
+  "introduction_date_inferred": false,
+  "kind": "same-prayer-witness-comparison",
+  "left": {
+    "adapter": "warner-1915-stowe-mass-prayers",
+    "join_rule": "insert-one-space-between-exact-source-bodies",
+    "joined_source_text": "Hanc igitur oblationem seruitutis nostrae sed et cunctae familiae tuae quam tibi offerimus in honorem domini nostri iesu christi et in commemorationem beatorum martirum tuorum in hac aeclesiae quam famulus tuus ad honorem nominis gloriae tuae aedificauit : Quessumus domine ut placatus suscipias Eumque adque omnem populum ab idulorum cultura eripias et ad té deum uerum patrem omnipotentem conuertas : Dies quoque nostros in tua pace disponas atque ab aeterna damnatione nos eripias et in electorum tuorum iubeas grege numerari : per dominum nostrum :",
+    "joined_source_text_sha256": "30ad19b30cef8ad7a6df62c56a7ff2cdea94fe88eb1626d0254ef979ef4e1252",
+    "members": [
+      {
+        "comparison_order": 1,
+        "content_id": "sha256:30ad19b30cef8ad7a6df62c56a7ff2cdea94fe88eb1626d0254ef979ef4e1252",
+        "diplomatic": false,
+        "division": "canon-missae",
+        "element_key": "hanc-igitur",
+        "facsimile_pdf_page": 98,
+        "language": "la",
+        "printed_page": "12",
+        "provenance": {
+          "evidence_source_ids": [
+            "artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-scan-27c6070e"
+          ],
+          "normalization": "Source UTF-8 bytes SHA-256 3d11ad59b8968e9c0e2c816676d0b5a26142896a9af1a13dbf29aa8c6bd69cc4. Use LF-delimited physical line ranges [[3540, 3550]]. Select only the named complete prayer bounded by its incipit and next prayer; join whitespace to one space, excluding running heads/apparatus between disjoint ranges. Apply these exact page-verified replacements in order: [{\"from\": \"nostras\", \"to\": \"nostrae\", \"count\": 1}, {\"from\": \"tibi*\", \"to\": \"tibi\", \"count\": 1}, {\"from\": \"offeximus\", \"to\": \"offerimus\", \"count\": 1}, {\"from\": \"honorem5\", \"to\": \"honorem\", \"count\": 1}, {\"from\": \"ie.ru\", \"to\": \"iesu\", \"count\": 1}, {\"from\": \"chxisti\", \"to\": \"christi\", \"count\": 1}, {\"from\": \"co/;/memoratione;;/\", \"to\": \"commemorationem\", \"count\": 1}, {\"from\": \"beaton/;;/\", \"to\": \"beatorum\", \"count\": 1}, {\"from\": \"martin/;;/\", \"to\": \"martirum\", \"count\": 1}, {\"from\": \"tuoxum\", \"to\": \"tuorum\", \"count\": 2}, {\"from\": \"aeclesiae6\", \"to\": \"aeclesiae\", \"count\": 1}, {\"from\": \"qua;;z\", \"to\": \"quam\", \"count\": 1}, {\"from\": \":•\", \"to\": \":\", \"count\": 1}, {\"from\": \"Ouessum;/^\", \"to\": \"Quessumus\", \"count\": 1}, {\"from\": \"placate\", \"to\": \"placatus\", \"count\": 1}, {\"from\": \"[fo. 2jv.\", \"to\": \"\", \"count\": 1}, {\"from\": \"Eumqz/£r\", \"to\": \"Eumque\", \"count\": 1}, {\"from\": \"populu/;/\", \"to\": \"populum\", \"count\": 1}, {\"from\": \"idulon/;;/\", \"to\": \"idulorum\", \"count\": 1}, {\"from\": \"te deum\", \"to\": \"té deum\", \"count\": 1}, {\"from\": \"xxenxm\", \"to\": \"uerum\", \"count\": 1}, {\"from\": \"patre;;/\", \"to\": \"patrem\", \"count\": 1}, {\"from\": \"om;/ipotentem\", \"to\": \"omnipotentem\", \"count\": 1}, {\"from\": \"conuertas8\", \"to\": \"conuertas\", \"count\": 1}, {\"from\": \":~\", \"to\": \":\", \"count\": 2}, {\"from\": \"a.tque*\", \"to\": \"atque\", \"count\": 1}, {\"from\": \"aetema\", \"to\": \"aeterna\", \"count\": 1}, {\"from\": \"da;;matione\", \"to\": \"damnatione\", \"count\": 1}, {\"from\": \"eripias10\", \"to\": \"eripias\", \"count\": 1}, {\"from\": \"i?i\", \"to\": \"in\", \"count\": 1}, {\"from\": \"electoruw\", \"to\": \"electorum\", \"count\": 1}, {\"from\": \":2\", \"to\": \":\", \"count\": 1}, {\"from\": \"  \", \"to\": \" \", \"count\": 1}]. Append one LF. Complete Hanc prayer including dedication/conversion clauses and Dies quoque continuation through per dominum nostrum, fol27-27v. Flatten roman/italic typography, expand ae ligatures, retain native Quessumus, aeclesiae, idulorum, eripias and accented té. Remove apparatus4-10 and foliotag. By explicit editorial encoding, diagonal separator after aedificauit, compound wave marks after conuertas/nostrum, and curved compound after numerari are all represented as colons; no claim of exact punctuation transcription. The apparatus compares omitted clauses to other books; the text itself does not date their introduction.",
+          "review_limits": "Two independent reviewers checked this complete bounded prayer against its historical printed page image(s) on 2026-10-16. This establishes the normalized edition text and its stated extent, not an act of revision, a borrowing direction, a manuscript date or the wording of the rest of the book. See owning artifact for every transformation and the original page evidence.",
+          "reviewed_on": "2026-10-16",
+          "scope": "Royal Irish Academy MS D. II. 3 as mediated by Warner's 1915 printed text; layers, expansions and apparatus are those of the critical edition. Complete Hanc prayer including dedication/conversion clauses and Dies quoque continuation through per dominum nostrum, fol27-27v. Flatten roman/italic typography, expand ae ligatures, retain native Quessumus, aeclesiae, idulorum, eripias and accented té. Remove apparatus4-10 and foliotag. By explicit editorial encoding, diagonal separator after aedificauit, compound wave marks after conuertas/nostrum, and curved compound after numerari are all represented as colons; no claim of exact punctuation transcription. The apparatus compares omitted clauses to other books; the text itself does not date their introduction.",
+          "source_locator": "canon-hanc-igitur; printed p. 12; source PDF page(s) 98",
+          "status": "verified-bounded-printed-edition-transcription"
+        },
+        "publication": {
+          "basis": "public-domain",
+          "basis_source_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur-checked-latin-7465da67",
+          "jurisdiction": "United States",
+          "status": "permitted",
+          "surfaces": [
+            "public-git",
+            "corpus-data"
+          ]
+        },
+        "serialized_text": "Hanc igitur oblationem seruitutis nostrae sed et cunctae familiae tuae quam tibi offerimus in honorem domini nostri iesu christi et in commemorationem beatorum martirum tuorum in hac aeclesiae quam famulus tuus ad honorem nominis gloriae tuae aedificauit :\nQuessumus domine ut placatus suscipias Eumque adque omnem populum ab idulorum cultura eripias et ad té deum uerum patrem omnipotentem conuertas :\nDies quoque nostros in tua pace disponas atque ab aeterna damnatione nos eripias et in electorum tuorum iubeas grege numerari :\nper dominum nostrum :\n",
+        "serialized_text_sha256": "c7ac487342e5dc6b1f6927865cd20851c780ca752d198c0c5764f9cf23f18352",
+        "source_artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur-checked-latin-7465da67",
+        "source_artifact_sha256": "7465da67befc59c3576681e5001d1bb33a03b3f72f80a2d513c3b165a5b9dd67",
+        "source_id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur",
+        "source_order": 2,
+        "source_physical_line": 1,
+        "source_text": "Hanc igitur oblationem seruitutis nostrae sed et cunctae familiae tuae quam tibi offerimus in honorem domini nostri iesu christi et in commemorationem beatorum martirum tuorum in hac aeclesiae quam famulus tuus ad honorem nominis gloriae tuae aedificauit : Quessumus domine ut placatus suscipias Eumque adque omnem populum ab idulorum cultura eripias et ad té deum uerum patrem omnipotentem conuertas : Dies quoque nostros in tua pace disponas atque ab aeterna damnatione nos eripias et in electorum tuorum iubeas grege numerari : per dominum nostrum :",
+        "target_edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+        "text_edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+        "text_path": "text/ordinary/canon-missae/hanc-igitur.txt",
+        "text_sha256": "30ad19b30cef8ad7a6df62c56a7ff2cdea94fe88eb1626d0254ef979ef4e1252",
+        "transcription_kind": "witness-normalized-transcription",
+        "unit_id": "unit.warner-1915.stowe.canon-missae.hanc-igitur"
+      }
+    ],
+    "record_id": "western:stowe-warner-1915-vol2",
+    "reviewed_on": "2026-10-16",
+    "scope": {
+      "date_roles": "target_date identifies the historical printed edition; this adapter assigns no exact manuscript date",
+      "no_historical_backprojection": true,
+      "not_direct_manuscript_transcription": true,
+      "omitted_book_divisions": [
+        "all prayers outside the explicitly selected units",
+        "critical apparatus and editorial introduction",
+        "all other ritual, rubrical and supplemental material"
+      ],
+      "represented_witness": "Royal Irish Academy MS D. II. 3 as mediated by Warner's 1915 printed text; layers, expansions and apparatus are those of the critical edition",
+      "status": "selected-complete-prayers",
+      "text_identity": "Bounded normalized native-language text from the identified critical edition; apparatus and uncollected units excluded",
+      "whole_book_complete": false
+    },
+    "serialized_text": "Hanc igitur oblationem seruitutis nostrae sed et cunctae familiae tuae quam tibi offerimus in honorem domini nostri iesu christi et in commemorationem beatorum martirum tuorum in hac aeclesiae quam famulus tuus ad honorem nominis gloriae tuae aedificauit :\nQuessumus domine ut placatus suscipias Eumque adque omnem populum ab idulorum cultura eripias et ad té deum uerum patrem omnipotentem conuertas :\nDies quoque nostros in tua pace disponas atque ab aeterna damnatione nos eripias et in electorum tuorum iubeas grege numerari :\nper dominum nostrum :\n",
+    "serialized_text_sha256": "c7ac487342e5dc6b1f6927865cd20851c780ca752d198c0c5764f9cf23f18352",
+    "target_date": "1915",
+    "text_set": "warner-1915-stowe-mass-prayers",
+    "title": "Warner 1915 Stowe Missal: Sanctus and two Canon prayers",
+    "witness_date": null
+  },
+  "limitations": [
+    "This is an explicitly aligned witness comparison, not an asserted historical revision or parent relationship.",
+    "Orthography, spacing, capitalization and punctuation remain visible; a textual diff does not classify their historical significance.",
+    "The apparatus caveat must accompany any historical interpretation of this bounded passage."
+  ],
+  "membership_status": "established",
+  "relationship_ids": [
+    "eucharistic-books:checked-latin-prayers-6"
+  ],
+  "relationships": [
+    {
+      "ancestor_ref": null,
+      "basis": "Explicit same-prayer identity from incipit, liturgical position and bounded ending, with directly inspectable shared wording in both normalized source bodies. Native spelling, case, accents and declared typography differences remain in the full comparisons. An exact illustrative shared phrase is: nostros in tua pace disponas.",
+      "certainty": "sourced",
+      "chronology": null,
+      "comparison_ids": [
+        "roman-hanc-igitur-stowe-and-cummiskey-1861",
+        "roman-quam-oblationem-stowe-and-cummiskey-1861",
+        "roman-sanctus-stowe-and-cummiskey-1861"
+      ],
+      "comparison_links": [
+        {
+          "id": "roman-hanc-igitur-stowe-and-cummiskey-1861",
+          "projection_path": "comparisons/roman-hanc-igitur-stowe-and-cummiskey-1861.json"
+        },
+        {
+          "id": "roman-quam-oblationem-stowe-and-cummiskey-1861",
+          "projection_path": "comparisons/roman-quam-oblationem-stowe-and-cummiskey-1861.json"
+        },
+        {
+          "id": "roman-sanctus-stowe-and-cummiskey-1861",
+          "projection_path": "comparisons/roman-sanctus-stowe-and-cummiskey-1861.json"
+        }
+      ],
+      "date_label": null,
+      "directed": false,
+      "evidence": [
+        {
+          "locus": "Printed pp. 10, 12, PDF pp. 96, 98; independently checked retained page images, including native spelling, expansions and selected punctuation normalization declared by the artifacts.",
+          "source": {
+            "id": "checked-warner-stowe",
+            "inspection": "Printed pp. 10, 12, PDF pp. 96, 98; independently checked retained page images, including native spelling, expansions and selected punctuation normalization declared by the artifacts.",
+            "inspection_status": "inspected",
+            "title": "Warner, The Stowe Missal, volume II (1915), selected Mass prayers",
+            "url": "https://archive.org/details/publications32henruoft"
+          },
+          "source_id": "checked-warner-stowe"
+        },
+        {
+          "locus": "Existing checked Latin-column transcription, whose artifact records visual page-image inspection and source-leaf coordinates; the English translation is excluded from these comparisons.",
+          "source": {
+            "id": "checked-cummiskey-latin",
+            "inspection": "Existing checked Latin-column transcription, whose artifact records visual page-image inspection and source-leaf coordinates; the English translation is excluded from these comparisons.",
+            "inspection_status": "inspected",
+            "title": "Cummiskey, Roman Missal for the laity (1861), original Latin Ordinary columns",
+            "url": "https://archive.org/details/romanmissaltran00churgoog"
+          },
+          "source_id": "checked-cummiskey-latin"
+        }
+      ],
+      "from": "western:stowe-warner-1915-vol2",
+      "git_ancestry": false,
+      "id": "eucharistic-books:checked-latin-prayers-6",
+      "kind": "shared-text",
+      "label": "Shared hanc igitur, quam oblationem, sanctus wording",
+      "limitations": "Critical editions mediate early witnesses; printed publication dates do not date the shared formula. The displayed phrase is an exact illustrative shared run, not a claim that all wording or punctuation matches. Stowe has substantial additions and variants; its punctuation encoding is declared by its owning artifacts.",
+      "origin": {
+        "id": "checked-latin-prayers-6",
+        "inventory": "src/sources/inventories/eucharistic-book-relationships-v1.toml",
+        "table": "relationships"
+      },
+      "scope": "Selected hanc igitur, quam oblationem, sanctus units only; variants remain in the comparisons.",
+      "text_inheritance": false,
+      "to": "western:cummiskey-1861-latin-ordinary"
+    }
+  ],
+  "right": {
+    "adapter": "cummiskey-1861-latin-ordinary",
+    "join_rule": "insert-one-space-between-exact-source-bodies",
+    "joined_source_text": "Hanc igitur oblationem servitutis nostræ, sed et cunctæ familiæ tuæ, quæsumus Domine, ut placatus accipias: diesque nostros in tua pace disponas, atque ab æterna damnatione nos eripi, et in Electorum tuorum jubeas grege numerari. Per Christum Dominum nostrum. — Amen.",
+    "joined_source_text_sha256": "4f3bb53b2984c9e0b13dfc3c7701100865273700445332210ab2b216a596691a",
+    "members": [
+      {
+        "comparison_order": 1,
+        "content_id": "sha256:4f3bb53b2984c9e0b13dfc3c7701100865273700445332210ab2b216a596691a",
+        "diplomatic": false,
+        "division": "canon-missae",
+        "division_order": 4,
+        "element_key": "hanc-igitur",
+        "ia_leaf": "44-45",
+        "kind": "prayer",
+        "language": "la",
+        "part": "canon",
+        "printed_page": "xxxiv-xxxv",
+        "provenance": {
+          "artifact_provenance_source_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la",
+          "new_collation_performed": false,
+          "relation": "same-identified-witness",
+          "status": "recorded-page-image-transcription"
+        },
+        "publication": {
+          "basis": "public-domain",
+          "basis_source_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la",
+          "jurisdiction": "United States",
+          "status": "permitted",
+          "surfaces": [
+            "public-git",
+            "corpus-data"
+          ]
+        },
+        "serialized_text": "Hanc igitur oblationem servitutis nostræ, sed et cunctæ familiæ tuæ, quæsumus Domine, ut placatus accipias:\ndiesque nostros in tua pace disponas, atque ab æterna damnatione nos eripi, et in Electorum tuorum jubeas grege numerari.\nPer Christum Dominum nostrum.\n— Amen.\n",
+        "serialized_text_sha256": "85edc066238681c13dd0b9933114a2dad107a0a6f8d56756ca6cf4fe222a4393",
+        "source_artifact_sha256": "dfda5e399047a3136908a0b90b6f98cfe25366f175a648240478e6f80dfe0ba7",
+        "source_column": "latin",
+        "source_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la",
+        "source_notes": "`Hanc igitur` is set in italic, the rest in roman. Runs over the page break xxxiv/xxxv, breaking at `ut placatus accipias:` / `diesque`. An em rule stands between `nostrum.` and `Amen.`, as printed. `Amen.` italic.",
+        "source_order": 10,
+        "source_physical_line": 7,
+        "source_text": "Hanc igitur oblationem servitutis nostræ, sed et cunctæ familiæ tuæ, quæsumus Domine, ut placatus accipias: diesque nostros in tua pace disponas, atque ab æterna damnatione nos eripi, et in Electorum tuorum jubeas grege numerari. Per Christum Dominum nostrum. — Amen.",
+        "speaker": "priest",
+        "structural_metadata_source_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en",
+        "target_edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+        "text_edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+        "text_path": "text/ordinary/canon-missae/hanc-igitur.txt",
+        "text_sha256": "4f3bb53b2984c9e0b13dfc3c7701100865273700445332210ab2b216a596691a",
+        "transcription_kind": "witness-normalized-transcription",
+        "unit_id": "unit.cummiskey-1861.canon-missae.hanc-igitur"
+      }
+    ],
+    "record_id": "western:cummiskey-1861-latin-ordinary",
+    "reviewed_on": null,
+    "scope": {
+      "normalization": "Exact TSV wording; source records describe closed French spacing, small capitals rendered as capitals, omitted cross glyphs noted, and abbreviations retained",
+      "not_1920_or_1962_text": true,
+      "not_an_altar_book": true,
+      "omitted_book_divisions": [
+        "English wording and English-only rubrics/headings",
+        "temporale",
+        "sanctorale",
+        "Commons",
+        "votive and other formularies",
+        "front matter and calendar",
+        "all other book text outside the six retained Ordinary columns"
+      ],
+      "self_contained_division": {
+        "division": "canon-missae",
+        "excluded_variants": "Proper Communicantes/Hanc igitur forms are outside this bounded Canon division",
+        "ia_leaves": "n43-n49",
+        "printed_pages": "xxxiii-xxxix",
+        "scope": "Printed Latin prayer/form/dialogue blocks from Te igitur through the concluding Per omnia saecula saeculorum"
+      },
+      "status": "partial-book; complete-held-facing-language-columns",
+      "whole_book_complete": false
+    },
+    "serialized_text": "Hanc igitur oblationem servitutis nostræ, sed et cunctæ familiæ tuæ, quæsumus Domine, ut placatus accipias:\ndiesque nostros in tua pace disponas, atque ab æterna damnatione nos eripi, et in Electorum tuorum jubeas grege numerari.\nPer Christum Dominum nostrum.\n— Amen.\n",
+    "serialized_text_sha256": "85edc066238681c13dd0b9933114a2dad107a0a6f8d56756ca6cf4fe222a4393",
+    "target_date": "1861",
+    "text_set": "cummiskey-1861-latin-ordinary",
+    "title": "Cummiskey 1861 original-language Ordinary",
+    "witness_date": "1861"
+  },
+  "schema": "triptych-eucharistic-witness-comparison/v1",
+  "source_refs": [
+    "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur",
+    "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la"
+  ],
+  "sources": [
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 554,
+      "derived_from": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-raw-ocr-3d11ad59",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur-checked-latin-7465da67",
+      "manifest_path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/canon-hanc-igitur-checked-latin-7465da67/artifact.toml",
+      "manifest_sha256": "efb5793e19c63af780d5e068a4ae94a15ca68ad6f4ef4dd36df8e5c8f027b23e",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/canon-hanc-igitur-checked-latin-7465da67/text.txt",
+      "provenance": "Existing canonical work/edition identities, alias and artifact records were inspected before creation; the existing retained OCR and facsimile were reused, without a new edition or replacement witness. Exact bytes were mechanically extracted from the pinned OCR with an explicit correction ledger. The complete bounded body was read against the cited rendered historical page(s), then independently checked word by word by a second reviewer on 2026-10-16. Royal Irish Academy MS D. II. 3 as mediated by Warner's 1915 printed text; layers, expansions and apparatus are those of the critical edition. Verification evidence: artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-scan-27c6070e.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "7465da67befc59c3576681e5001d1bb33a03b3f72f80a2d513c3b165a5b9dd67",
+      "storage": "tracked",
+      "transformation": "Source UTF-8 bytes SHA-256 3d11ad59b8968e9c0e2c816676d0b5a26142896a9af1a13dbf29aa8c6bd69cc4. Use LF-delimited physical line ranges [[3540, 3550]]. Select only the named complete prayer bounded by its incipit and next prayer; join whitespace to one space, excluding running heads/apparatus between disjoint ranges. Apply these exact page-verified replacements in order: [{\"from\": \"nostras\", \"to\": \"nostrae\", \"count\": 1}, {\"from\": \"tibi*\", \"to\": \"tibi\", \"count\": 1}, {\"from\": \"offeximus\", \"to\": \"offerimus\", \"count\": 1}, {\"from\": \"honorem5\", \"to\": \"honorem\", \"count\": 1}, {\"from\": \"ie.ru\", \"to\": \"iesu\", \"count\": 1}, {\"from\": \"chxisti\", \"to\": \"christi\", \"count\": 1}, {\"from\": \"co/;/memoratione;;/\", \"to\": \"commemorationem\", \"count\": 1}, {\"from\": \"beaton/;;/\", \"to\": \"beatorum\", \"count\": 1}, {\"from\": \"martin/;;/\", \"to\": \"martirum\", \"count\": 1}, {\"from\": \"tuoxum\", \"to\": \"tuorum\", \"count\": 2}, {\"from\": \"aeclesiae6\", \"to\": \"aeclesiae\", \"count\": 1}, {\"from\": \"qua;;z\", \"to\": \"quam\", \"count\": 1}, {\"from\": \":•\", \"to\": \":\", \"count\": 1}, {\"from\": \"Ouessum;/^\", \"to\": \"Quessumus\", \"count\": 1}, {\"from\": \"placate\", \"to\": \"placatus\", \"count\": 1}, {\"from\": \"[fo. 2jv.\", \"to\": \"\", \"count\": 1}, {\"from\": \"Eumqz/£r\", \"to\": \"Eumque\", \"count\": 1}, {\"from\": \"populu/;/\", \"to\": \"populum\", \"count\": 1}, {\"from\": \"idulon/;;/\", \"to\": \"idulorum\", \"count\": 1}, {\"from\": \"te deum\", \"to\": \"té deum\", \"count\": 1}, {\"from\": \"xxenxm\", \"to\": \"uerum\", \"count\": 1}, {\"from\": \"patre;;/\", \"to\": \"patrem\", \"count\": 1}, {\"from\": \"om;/ipotentem\", \"to\": \"omnipotentem\", \"count\": 1}, {\"from\": \"conuertas8\", \"to\": \"conuertas\", \"count\": 1}, {\"from\": \":~\", \"to\": \":\", \"count\": 2}, {\"from\": \"a.tque*\", \"to\": \"atque\", \"count\": 1}, {\"from\": \"aetema\", \"to\": \"aeterna\", \"count\": 1}, {\"from\": \"da;;matione\", \"to\": \"damnatione\", \"count\": 1}, {\"from\": \"eripias10\", \"to\": \"eripias\", \"count\": 1}, {\"from\": \"i?i\", \"to\": \"in\", \"count\": 1}, {\"from\": \"electoruw\", \"to\": \"electorum\", \"count\": 1}, {\"from\": \":2\", \"to\": \":\", \"count\": 1}, {\"from\": \"  \", \"to\": \" \", \"count\": 1}]. Append one LF. Complete Hanc prayer including dedication/conversion clauses and Dies quoque continuation through per dominum nostrum, fol27-27v. Flatten roman/italic typography, expand ae ligatures, retain native Quessumus, aeclesiae, idulorum, eripias and accented té. Remove apparatus4-10 and foliotag. By explicit editorial encoding, diagonal separator after aedificauit, compound wave marks after conuertas/nostrum, and curved compound after numerari are all represented as colons; no claim of exact punctuation transcription. The apparatus compares omitted clauses to other books; the text itself does not date their introduction."
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 199,
+      "derived_from": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-raw-ocr-3d11ad59",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-quam-oblationem-checked-latin-e404c122",
+      "manifest_path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/canon-quam-oblationem-checked-latin-e404c122/artifact.toml",
+      "manifest_sha256": "e4b640f7fac6fe6914822283d139ee69bc8ee96a23e21fb8f7e06bab59ac3204",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/canon-quam-oblationem-checked-latin-e404c122/text.txt",
+      "provenance": "Existing canonical work/edition identities, alias and artifact records were inspected before creation; the existing retained OCR and facsimile were reused, without a new edition or replacement witness. Exact bytes were mechanically extracted from the pinned OCR with an explicit correction ledger. The complete bounded body was read against the cited rendered historical page(s), then independently checked word by word by a second reviewer on 2026-10-16. Royal Irish Academy MS D. II. 3 as mediated by Warner's 1915 printed text; layers, expansions and apparatus are those of the critical edition. Verification evidence: artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-scan-27c6070e.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "e404c122389466c12f7c79304c991aae3a05d8b13297c37ed45bf221cc01727c",
+      "storage": "tracked",
+      "transformation": "Source UTF-8 bytes SHA-256 3d11ad59b8968e9c0e2c816676d0b5a26142896a9af1a13dbf29aa8c6bd69cc4. Use LF-delimited physical line ranges [[3552, 3555]]. Select only the named complete prayer bounded by its incipit and next prayer; join whitespace to one space, excluding running heads/apparatus between disjoint ranges. Apply these exact page-verified replacements in order: [{\"from\": \"t6u\", \"to\": \"té\", \"count\": 1}, {\"from\": \"de?is\", \"to\": \"deus\", \"count\": 1}, {\"from\": \"omnib;^\", \"to\": \"omnibus\", \"count\": 1}, {\"from\": \"quesumw-s-\", \"to\": \"quesumus\", \"count\": 1}, {\"from\": \"benedicta;;/\", \"to\": \"benedictam\", \"count\": 1}, {\"from\": \"ascripta;;/\", \"to\": \"ascriptam\", \"count\": 1}, {\"from\": \"rata;;/\", \"to\": \"ratam\", \"count\": 1}, {\"from\": \"acceptabilemq?/£\", \"to\": \"acceptabilemque\", \"count\": 1}, {\"from\": \"dig- naxeque12\", \"to\": \"dignareque\", \"count\": 1}, {\"from\": \"coxpus\", \"to\": \"corpus\", \"count\": 1}, {\"from\": \"domini13\", \"to\": \"domini\", \"count\": 1}, {\"from\": \"chxisti\", \"to\": \"christi\", \"count\": 1}]. Append one LF. Complete Quam prayer bounded before following qui pridie in same paragraph. Preserve té (not tu), quesumus, ascriptam, dignareque, fili and printed cross as +; no final full stop is supplied. Remove superscript notes11-13, flatten italic expansion type, and join printed line break. Footnote corrections from other books are not imported."
+    },
+    {
+      "artifact_type": "ocr-text",
+      "byte_size": 277250,
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-raw-ocr-3d11ad59",
+      "manifest_path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/ia-raw-ocr-3d11ad59/artifact.toml",
+      "manifest_sha256": "a3e765dc305b074c76805870a35f9ccb076bf9393814fd0f4f3538ce3be7c722",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/ia-raw-ocr-3d11ad59/source.txt",
+      "provenance": "Aliases Stowe, Missale Stowense, Royal Irish Academy D. II. 3 checked against canonical work manifests before acquisition; no existing Stowe owner found. The catalogue handoff supplied Internet Archive item publications32henruoft. Complete PDF and DjVuTXT responses downloaded directly with curl -L; complete byte counts and SHA-1 matched the item metadata file inventory. Source bytes never passed through a model. Edition identity checked against the title, series and contents page images.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The identified historical printing was published before 1931 and is public domain in the United States by expiration of its publication term. Cornell University Library, Copyright Term and the Public Domain, updated 1 January 2026, https://guides.library.cornell.edu/copyright/publicdomain, checked 16 October 2026, gives that rule for foreign publications. Faithful mechanical reproduction and automated OCR add no new human-authored text. This record covers this historical witness and stated mechanical artifact, not a modern critical edition or translation. The retained source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "3d11ad59b8968e9c0e2c816676d0b5a26142896a9af1a13dbf29aa8c6bd69cc4",
+      "source_url": "https://archive.org/download/publications32henruoft/publications32henruoft_djvu.txt",
+      "storage": "tracked"
+    },
+    {
+      "artifact_type": "scan",
+      "byte_size": 6181209,
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-scan-27c6070e",
+      "manifest_path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/ia-scan-27c6070e/artifact.toml",
+      "manifest_sha256": "fd42f74c38fdd1e222acb09c1cd49289e33900f8b6b5b3094d98338e5169b42c",
+      "media_type": "application/pdf",
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/ia-scan-27c6070e/source.pdf",
+      "provenance": "Aliases Stowe, Missale Stowense, Royal Irish Academy D. II. 3 checked against canonical work manifests before acquisition; no existing Stowe owner found. The catalogue handoff supplied Internet Archive item publications32henruoft. Complete PDF and DjVuTXT responses downloaded directly with curl -L; complete byte counts and SHA-1 matched the item metadata file inventory. Source bytes never passed through a model. Edition identity checked against the title, series and contents page images.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The identified historical printing was published before 1931 and is public domain in the United States by expiration of its publication term. Cornell University Library, Copyright Term and the Public Domain, updated 1 January 2026, https://guides.library.cornell.edu/copyright/publicdomain, checked 16 October 2026, gives that rule for foreign publications. Faithful mechanical reproduction and automated OCR add no new human-authored text. This record covers this historical witness and stated mechanical artifact, not a modern critical edition or translation. The retained source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "27c6070e673622fc3f976a016aff8dccd69e70a90d17ac52aa658104f20cfbcf",
+      "source_url": "https://archive.org/download/publications32henruoft/publications32henruoft.pdf",
+      "storage": "tracked"
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 355,
+      "derived_from": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-raw-ocr-3d11ad59",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.sanctus-checked-latin-27b79875",
+      "manifest_path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/sanctus-checked-latin-27b79875/artifact.toml",
+      "manifest_sha256": "659ac33b9824120c7b4725d96b2bffa1163459c9f28211e9712a506150d9e8b6",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/sanctus-checked-latin-27b79875/text.txt",
+      "provenance": "Existing canonical work/edition identities, alias and artifact records were inspected before creation; the existing retained OCR and facsimile were reused, without a new edition or replacement witness. Exact bytes were mechanically extracted from the pinned OCR with an explicit correction ledger. The complete bounded body was read against the cited rendered historical page(s), then independently checked word by word by a second reviewer on 2026-10-16. Royal Irish Academy MS D. II. 3 as mediated by Warner's 1915 printed text; layers, expansions and apparatus are those of the critical edition. Verification evidence: artifact.catholic-church.stowe-missal.warner-1915-vol-2.ia-scan-27c6070e.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "27b798758bef32f11d5fa4bd1dbe2608c74a6efa14e6f5ad68b9c1ebe66e726a",
+      "storage": "tracked",
+      "transformation": "Source UTF-8 bytes SHA-256 3d11ad59b8968e9c0e2c816676d0b5a26142896a9af1a13dbf29aa8c6bd69cc4. Use LF-delimited physical line ranges [[3395, 3400]]. Select only the named complete prayer bounded by its incipit and next prayer; join whitespace to one space, excluding running heads/apparatus between disjoint ranges. Apply these exact page-verified replacements in order: [{\"from\": \"sabaoth\", \"to\": \"sabaóth\", \"count\": 1}, {\"from\": \"terra,\", \"to\": \"terra\", \"count\": 1}, {\"from\": \"•\", \"to\": \"·\", \"count\": 1}, {\"from\": \"excelsis6\", \"to\": \"excelsís\", \"count\": 1}, {\"from\": \"excelsis\", \"to\": \"excelsís\", \"count\": 1}, {\"from\": \"cell's\", \"to\": \"celís\", \"count\": 1}, {\"from\": \"conuer- saretur\", \"to\": \"conuersaretur\", \"count\": 1}, {\"from\": \"tern's\", \"to\": \"terrís\", \"count\": 1}, {\"from\": \"passion em\", \"to\": \"passionem\", \"count\": 1}, {\"from\": \"aetemam\", \"to\": \"aeternam\", \"count\": 1}, {\"from\": \"daret:~\", \"to\": \"daret :\", \"count\": 1}, {\"from\": \"domi- num.\", \"to\": \"dominum\", \"count\": 1}]. Append one LF. Complete printed Sanctus and its Christological continuation through per dominum, fol23v. Two Sanctus words exactly as printed; do not add a third. Flatten roman/italic typography and expand ligature sorts to digraphs; retain accents and native dilicta. Superscript6 excluded. The compound separator after daret is normalized to a colon, not asserted as a diplomatic character; retained page is the punctuation evidence. No final full stop is printed after dominum."
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 11254,
+      "derived_from": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+      "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en",
+      "manifest_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/canon-missae-en/artifact.toml",
+      "manifest_sha256": "a553181a4380ffae5fd35d4e5d110c4c2aa89032a36eb93921361c52ae6c4ed6",
+      "media_type": "text/tab-separated-values; charset=utf-8",
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/canon-missae-en/canon-missae-en.tsv",
+      "record_type": "artifact",
+      "retrieved": "2026-07-31",
+      "rights_basis": "The 1861 Philadelphia printing was published long before 1930 and is in the public domain in the United States. This file contains only that printing's own English wording, transcribed by this project from its page images; a faithful transcription of a public-domain text originates no new copyright, and no Google or Internet Archive front matter, markup, annotation, or page-image material is reproduced. The rights basis is a United States one: a reader elsewhere must establish the position in their own jurisdiction.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "9b729821becda739585c9a2fc0e6cc35186e53d6383362f85e4435212fe603c4",
+      "storage": "tracked",
+      "transformation": "Project transcription read visually from rendered page images of the parent facsimile, not from any optical-character-recognition layer. Artifact pages 44-50 were rendered with pdftoppm at 800 dpi in half-page slices and read; four doubtful words were re-rendered at 1600 dpi. The Canon was divided into its printed blocks, one row per block, and the block's English column transcribed as set. Nineteenth-century spelling, capitalisation, punctuation and the printing's abbreviated conclusions are reproduced as printed and were not modernised, expanded, or corrected against the Latin. Where the scan has lost ink at the right edge of the English column or a sort has failed, the damaged word is given whole and the damage is named in the row's `notes`; every such reading was controlled against the facing Latin column of the same opening. Nothing was supplied that the page does not print. Latin incipits are given in the normalised spelling of the Latin column's opening words and are apparatus, not transcription."
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 9821,
+      "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la",
+      "manifest_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/canon-missae-la/artifact.toml",
+      "manifest_sha256": "dce27dadd1aafa7b1e021180f7205e5f748832cd85636c8ff2f9eef0a1c2fd10",
+      "media_type": "text/tab-separated-values; charset=utf-8",
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/canon-missae-la/canon-missae-la.tsv",
+      "provenance": "Project transcription read visually from page images served for the same Internet Archive item as the separately registered facsimile PDF, not from that PDF's exact bytes and not from any optical-character-recognition layer. The images fetched were that item's own page derivatives, https://archive.org/download/romanmissaltran00churgoog/page/n<leaf>_w1400.jpg, each 2092x3500 pixels, which is the largest derivative the item serves. Those page responses were not retained or hashed as artifacts, so this record makes no `derived_from` claim. The Latin column was cropped from each leaf and read at full size, and every doubtful character was re-read from a further crop magnified to between 200 and 250 per cent. The section was divided into the printed blocks of its sibling -en artifact, one row per block, joined to it by element_key, and the block's LATIN column transcribed as set; a row exists only where the page prints facing Latin, and the blocks the book sets across the full measure in English alone carry no row here. Nineteenth-century spelling, capitalisation, punctuation, ligatures (ae, oe) and the printing's abbreviations (&c., Per eumdem, &c.) are reproduced as printed and were not modernised, expanded, or corrected against a 1920 or 1962 typical edition or any other book; the printing's own misprints stand and are named in the row's notes. One typographic convention is normalised and is the only one: the compositor's French spacing before a colon, semicolon, question mark or exclamation mark is closed up, that being a setting convention of the printing rather than any part of its wording. Cross glyphs are not reproduced; where the Latin column prints one, the row's notes say so. Speaker and versicle marks (P., R., Ant.) are transcribed as the Latin column prints them. Small capitals are rendered as capitals, as the sibling -en artifact renders its own. In the Kyrie blocks, which the book sets across the full measure with an italic English gloss on the same line as the Greek, the acclamations are carried with their speaker marks and the English gloss is omitted, that gloss being the -en artifact's material. Where the scan's inking fills or breaks a letter, the word is given whole and the damage is named in the row's notes; no reading was ever repaired from another edition, from a facsimile of a 1920 or 1962 book, or from the received text, and the facing English was used only to confirm which block is which and never to settle a Latin reading.",
+      "record_type": "artifact",
+      "retrieved": "2026-08-20",
+      "rights_basis": "The 1861 Philadelphia printing was published long before 1930 and is in the public domain in the United States. This file contains only that printing's own Latin wording, transcribed by this project from its page images; a faithful transcription of a public-domain text originates no new copyright, and no Google or Internet Archive front matter, markup, annotation, or page-image material is reproduced. The rights basis is a United States one: a reader elsewhere must establish the position in their own jurisdiction.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "dfda5e399047a3136908a0b90b6f98cfe25366f175a648240478e6f80dfe0ba7",
+      "storage": "tracked"
+    },
+    {
+      "artifact_type": "facsimile-pdf",
+      "byte_size": 24767551,
+      "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+      "manifest_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-scan-pdf/artifact.toml",
+      "manifest_sha256": "92f2c4d89f3576a89dbb54b3cf0622240d5201df6ed1fe1898d706a97ac953e4",
+      "media_type": "application/pdf",
+      "provenance": "801-page image PDF acquired over HTTPS from Internet Archive item romanmissaltran00churgoog and hashed before use.",
+      "record_type": "artifact",
+      "retrieved": "2026-07-26",
+      "rights_basis": "The underlying 1861 Philadelphia printing was published long before 1929 and is in the public domain in the United States. The exact bytes registered here are a Google digitisation redistributed by the Internet Archive, carrying Google's own front matter and a per-page digitisation watermark; the audit established no distribution grant for that Google-authored material. Triptych therefore records the exact remote bytes and retains no payload. The 1861 book's own printed English, quoted from the pages recorded on this edition's passages, remains public domain independently of this digitisation.",
+      "rights_status": "unresolved",
+      "sha256": "85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898",
+      "source_url": "https://archive.org/download/romanmissaltran00churgoog/romanmissaltran00churgoog.pdf",
+      "storage": "remote"
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 11675,
+      "derived_from": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+      "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en",
+      "manifest_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-en/artifact.toml",
+      "manifest_sha256": "bfeee6af60b77fc3d8060500962f617cc03f5f108ebbf1bbd3dfe6d70d8a0a0d",
+      "media_type": "text/tab-separated-values; charset=utf-8",
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-en/ordinarium-communio-en.tsv",
+      "record_type": "artifact",
+      "retrieved": "2026-07-31",
+      "rights_basis": "The 1861 Philadelphia printing was published long before 1930 and is in the public domain in the United States. This file contains only that printing's own English wording, transcribed by this project from its page images; a faithful transcription of a public-domain text originates no new copyright, and no Google or Internet Archive front matter, markup, annotation, or page-image material is reproduced. The rights basis is a United States one: a reader elsewhere must establish the position in their own jurisdiction.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "f35d635ec2311ade057558ad1531bc6e007126311acc9a554b4b662dfacd0ccc",
+      "storage": "tracked",
+      "transformation": "Project transcription read visually from rendered page images of the parent facsimile, not from any optical-character-recognition layer. Artifact pages 50-53 were rendered with pdftoppm at 640 dpi and cropped into per-column upper and lower halves, with a whole-page view at 400 dpi for layout; doubtful characters were re-rendered at 1600 dpi. The section was divided into its printed blocks, one row per block, and the block's English column transcribed as set. Nineteenth-century spelling, capitalisation, punctuation and the printing's abbreviations are reproduced as printed and were not modernised, expanded, or corrected against the Latin. One typographic convention is normalised and is the only one: the compositor's French spacing before a colon, semicolon, question mark or exclamation mark is closed up, that being a setting convention of the printing rather than any part of its wording. Where the scan has lost ink at the right edge of the English column or a sort has failed, the damaged word is given whole and the damage is named in the row's `notes`; every such reading was controlled against the facing Latin column of the same opening. Nothing was supplied that the page does not print. Latin incipits are given in the Latin column's own spelling, ligatures included, and are apparatus, not transcription."
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 5423,
+      "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la",
+      "manifest_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-la/artifact.toml",
+      "manifest_sha256": "e01145f7c245c14c5e3ba7b93b487ec6430f682386cfbfecc4eddee8dda56c76",
+      "media_type": "text/tab-separated-values; charset=utf-8",
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-la/ordinarium-communio-la.tsv",
+      "provenance": "Project transcription read visually from page images served for the same Internet Archive item as the separately registered facsimile PDF, not from that PDF's exact bytes and not from any optical-character-recognition layer. The images fetched were that item's own page derivatives, https://archive.org/download/romanmissaltran00churgoog/page/n<leaf>_w1400.jpg, each 2092x3500 pixels, which is the largest derivative the item serves. Those page responses were not retained or hashed as artifacts, so this record makes no `derived_from` claim. The Latin column was cropped from each leaf and read at full size, and every doubtful character was re-read from a further crop magnified to between 200 and 250 per cent. The section was divided into the printed blocks of its sibling -en artifact, one row per block, joined to it by element_key, and the block's LATIN column transcribed as set; a row exists only where the page prints facing Latin, and the blocks the book sets across the full measure in English alone carry no row here. Nineteenth-century spelling, capitalisation, punctuation, ligatures (ae, oe) and the printing's abbreviations (&c., Per eumdem, &c.) are reproduced as printed and were not modernised, expanded, or corrected against a 1920 or 1962 typical edition or any other book; the printing's own misprints stand and are named in the row's notes. One typographic convention is normalised and is the only one: the compositor's French spacing before a colon, semicolon, question mark or exclamation mark is closed up, that being a setting convention of the printing rather than any part of its wording. Cross glyphs are not reproduced; where the Latin column prints one, the row's notes say so. Speaker and versicle marks (P., R., Ant.) are transcribed as the Latin column prints them. Small capitals are rendered as capitals, as the sibling -en artifact renders its own. In the Kyrie blocks, which the book sets across the full measure with an italic English gloss on the same line as the Greek, the acclamations are carried with their speaker marks and the English gloss is omitted, that gloss being the -en artifact's material. Where the scan's inking fills or breaks a letter, the word is given whole and the damage is named in the row's notes; no reading was ever repaired from another edition, from a facsimile of a 1920 or 1962 book, or from the received text, and the facing English was used only to confirm which block is which and never to settle a Latin reading.",
+      "record_type": "artifact",
+      "retrieved": "2026-08-20",
+      "rights_basis": "The 1861 Philadelphia printing was published long before 1930 and is in the public domain in the United States. This file contains only that printing's own Latin wording, transcribed by this project from its page images; a faithful transcription of a public-domain text originates no new copyright, and no Google or Internet Archive front matter, markup, annotation, or page-image material is reproduced. The rights basis is a United States one: a reader elsewhere must establish the position in their own jurisdiction.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "8a58f98ad38a0733f8b6b7645ef0f7ccc2a95995d28478d87aa351a7d87fe67d",
+      "storage": "tracked"
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 11403,
+      "derived_from": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+      "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en",
+      "manifest_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-conclusio-en/artifact.toml",
+      "manifest_sha256": "874aeba626f87a376fefecff5f2ba7eee065fbd2c222938d088ef3e411e1aa7e",
+      "media_type": "text/tab-separated-values; charset=utf-8",
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-conclusio-en/ordinarium-conclusio-en.tsv",
+      "record_type": "artifact",
+      "retrieved": "2026-07-31",
+      "rights_basis": "The 1861 Philadelphia printing was published long before 1930 and is in the public domain in the United States. This file contains only that printing's own English wording, transcribed by this project from its page images; a faithful transcription of a public-domain text originates no new copyright, and no Google or Internet Archive front matter, markup, annotation, or page-image material is reproduced. The rights basis is a United States one: a reader elsewhere must establish the position in their own jurisdiction.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "9af81cff76dd0f09f66fbd3e9e9da1ef00f82c84db8b6b73adf54b58703a65cd",
+      "storage": "tracked",
+      "transformation": "Project transcription read visually from rendered page images of the parent facsimile, not from any optical-character-recognition layer. Artifact pages 53-57 were rendered with pdftoppm at 640 dpi and cropped into per-column upper and lower halves, with a whole-page view at 400 dpi for layout; doubtful characters were re-rendered at 1600 dpi. The section was divided into its printed blocks, one row per block, and the block's English column transcribed as set. Nineteenth-century spelling, capitalisation, punctuation and the printing's abbreviations are reproduced as printed and were not modernised, expanded, or corrected against the Latin. One typographic convention is normalised and is the only one: the compositor's French spacing before a colon, semicolon, question mark or exclamation mark is closed up, that being a setting convention of the printing rather than any part of its wording. Where the scan has lost ink at the right edge of the English column or a sort has failed, the damaged word is given whole and the damage is named in the row's `notes`; every such reading was controlled against the facing Latin column of the same opening. Nothing was supplied that the page does not print. Latin incipits are given in the Latin column's own spelling, ligatures included, and are apparatus, not transcription."
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 4377,
+      "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la",
+      "manifest_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-conclusio-la/artifact.toml",
+      "manifest_sha256": "501e9eb740e9b09d6d3277879ffde9851c5c590b2a05eb29415878ebca4b6d7c",
+      "media_type": "text/tab-separated-values; charset=utf-8",
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-conclusio-la/ordinarium-conclusio-la.tsv",
+      "provenance": "Project transcription read visually from page images served for the same Internet Archive item as the separately registered facsimile PDF, not from that PDF's exact bytes and not from any optical-character-recognition layer. The images fetched were that item's own page derivatives, https://archive.org/download/romanmissaltran00churgoog/page/n<leaf>_w1400.jpg, each 2092x3500 pixels, which is the largest derivative the item serves. Those page responses were not retained or hashed as artifacts, so this record makes no `derived_from` claim. The Latin column was cropped from each leaf and read at full size, and every doubtful character was re-read from a further crop magnified to between 200 and 250 per cent. The section was divided into the printed blocks of its sibling -en artifact, one row per block, joined to it by element_key, and the block's LATIN column transcribed as set; a row exists only where the page prints facing Latin, and the blocks the book sets across the full measure in English alone carry no row here. Nineteenth-century spelling, capitalisation, punctuation, ligatures (ae, oe) and the printing's abbreviations (&c., Per eumdem, &c.) are reproduced as printed and were not modernised, expanded, or corrected against a 1920 or 1962 typical edition or any other book; the printing's own misprints stand and are named in the row's notes. One typographic convention is normalised and is the only one: the compositor's French spacing before a colon, semicolon, question mark or exclamation mark is closed up, that being a setting convention of the printing rather than any part of its wording. Cross glyphs are not reproduced; where the Latin column prints one, the row's notes say so. Speaker and versicle marks (P., R., Ant.) are transcribed as the Latin column prints them. Small capitals are rendered as capitals, as the sibling -en artifact renders its own. In the Kyrie blocks, which the book sets across the full measure with an italic English gloss on the same line as the Greek, the acclamations are carried with their speaker marks and the English gloss is omitted, that gloss being the -en artifact's material. Where the scan's inking fills or breaks a letter, the word is given whole and the damage is named in the row's notes; no reading was ever repaired from another edition, from a facsimile of a 1920 or 1962 book, or from the received text, and the facing English was used only to confirm which block is which and never to settle a Latin reading.",
+      "record_type": "artifact",
+      "retrieved": "2026-08-20",
+      "rights_basis": "The 1861 Philadelphia printing was published long before 1930 and is in the public domain in the United States. This file contains only that printing's own Latin wording, transcribed by this project from its page images; a faithful transcription of a public-domain text originates no new copyright, and no Google or Internet Archive front matter, markup, annotation, or page-image material is reproduced. The rights basis is a United States one: a reader elsewhere must establish the position in their own jurisdiction.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "4bbcc69f2285f8f43faef34bce8613979b607feee1437a433d28d2404df863e3",
+      "storage": "tracked"
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 25807,
+      "derived_from": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+      "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en",
+      "manifest_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-oblatio-en/artifact.toml",
+      "manifest_sha256": "38793ef9b78e119c9d45bc4fc81bdfde5546d0b9123318de7334dd6b3e98b98f",
+      "media_type": "text/tab-separated-values; charset=utf-8",
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-oblatio-en/ordinarium-oblatio-en.tsv",
+      "record_type": "artifact",
+      "retrieved": "2026-07-31",
+      "rights_basis": "The 1861 Philadelphia printing was published long before 1930 and is in the public domain in the United States. This file contains only that printing's own English wording, transcribed by this project from its page images; a faithful transcription of a public-domain text originates no new copyright, and no Google or Internet Archive front matter, markup, annotation, or page-image material is reproduced. The rights basis is a United States one: a reader elsewhere must establish the position in their own jurisdiction.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "b3a9ed6f1f15d9c08ee5603d9ce6bcb7846771648ece1271abf834e418b7203a",
+      "storage": "tracked",
+      "transformation": "Project transcription read visually from rendered page images of the parent facsimile, not from any optical-character-recognition layer. Artifact pages 31-38 were rendered with pdftoppm at 640 dpi and cropped into per-column upper and lower halves, with a whole-page view at 400 dpi for layout; doubtful characters were re-rendered at 1600 dpi. The section was divided into its printed blocks, one row per block, and the block's English column transcribed as set. Nineteenth-century spelling, capitalisation, punctuation and the printing's abbreviations are reproduced as printed and were not modernised, expanded, or corrected against the Latin. One typographic convention is normalised and is the only one: the compositor's French spacing before a colon, semicolon, question mark or exclamation mark is closed up, that being a setting convention of the printing rather than any part of its wording. Where the scan has lost ink at the right edge of the English column or a sort has failed, the damaged word is given whole and the damage is named in the row's `notes`; every such reading was controlled against the facing Latin column of the same opening. Nothing was supplied that the page does not print. Latin incipits are given in the Latin column's own spelling, ligatures included, and are apparatus, not transcription."
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 9246,
+      "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la",
+      "manifest_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-oblatio-la/artifact.toml",
+      "manifest_sha256": "5415b0a5c68a5e7fc5fa2a6c29d80f653d4208a8133b525cfc47a942f0aeca3c",
+      "media_type": "text/tab-separated-values; charset=utf-8",
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-oblatio-la/ordinarium-oblatio-la.tsv",
+      "provenance": "Project transcription read visually from page images served for the same Internet Archive item as the separately registered facsimile PDF, not from that PDF's exact bytes and not from any optical-character-recognition layer. The images fetched were that item's own page derivatives, https://archive.org/download/romanmissaltran00churgoog/page/n<leaf>_w1400.jpg, each 2092x3500 pixels, which is the largest derivative the item serves. Those page responses were not retained or hashed as artifacts, so this record makes no `derived_from` claim. The Latin column was cropped from each leaf and read at full size, and every doubtful character was re-read from a further crop magnified to between 200 and 250 per cent. The section was divided into the printed blocks of its sibling -en artifact, one row per block, joined to it by element_key, and the block's LATIN column transcribed as set; a row exists only where the page prints facing Latin, and the blocks the book sets across the full measure in English alone carry no row here. Nineteenth-century spelling, capitalisation, punctuation, ligatures (ae, oe) and the printing's abbreviations (&c., Per eumdem, &c.) are reproduced as printed and were not modernised, expanded, or corrected against a 1920 or 1962 typical edition or any other book; the printing's own misprints stand and are named in the row's notes. One typographic convention is normalised and is the only one: the compositor's French spacing before a colon, semicolon, question mark or exclamation mark is closed up, that being a setting convention of the printing rather than any part of its wording. Cross glyphs are not reproduced; where the Latin column prints one, the row's notes say so. Speaker and versicle marks (P., R., Ant.) are transcribed as the Latin column prints them. Small capitals are rendered as capitals, as the sibling -en artifact renders its own. In the Kyrie blocks, which the book sets across the full measure with an italic English gloss on the same line as the Greek, the acclamations are carried with their speaker marks and the English gloss is omitted, that gloss being the -en artifact's material. Where the scan's inking fills or breaks a letter, the word is given whole and the damage is named in the row's notes; no reading was ever repaired from another edition, from a facsimile of a 1920 or 1962 book, or from the received text, and the facing English was used only to confirm which block is which and never to settle a Latin reading.",
+      "record_type": "artifact",
+      "retrieved": "2026-08-20",
+      "rights_basis": "The 1861 Philadelphia printing was published long before 1930 and is in the public domain in the United States. This file contains only that printing's own Latin wording, transcribed by this project from its page images; a faithful transcription of a public-domain text originates no new copyright, and no Google or Internet Archive front matter, markup, annotation, or page-image material is reproduced. The rights basis is a United States one: a reader elsewhere must establish the position in their own jurisdiction.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "1625f8f09a81fa70be3373021ba48eae603c271b196134c4b636358b79c26d4e",
+      "storage": "tracked"
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 15145,
+      "derived_from": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+      "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en",
+      "manifest_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-praeparatio-en/artifact.toml",
+      "manifest_sha256": "63bc0ddd51ef4300ed089b650d30f6a73145bbf932c17948315ed4181695b099",
+      "media_type": "text/tab-separated-values; charset=utf-8",
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-praeparatio-en/ordinarium-praeparatio-en.tsv",
+      "record_type": "artifact",
+      "retrieved": "2026-07-31",
+      "rights_basis": "The 1861 Philadelphia printing was published long before 1930 and is in the public domain in the United States. This file contains only that printing's own English wording, transcribed by this project from its page images; a faithful transcription of a public-domain text originates no new copyright, and no Google or Internet Archive front matter, markup, annotation, or page-image material is reproduced. The rights basis is a United States one: a reader elsewhere must establish the position in their own jurisdiction.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "bba0bf1e5890201b7afacdce30598dcbde215908821dea0baa1cc72c76e50850",
+      "storage": "tracked",
+      "transformation": "Project transcription read visually from rendered page images of the parent facsimile, not from any optical-character-recognition layer. Artifact pages 26-30 were rendered with pdftoppm at 640 dpi and cropped into per-column upper and lower halves, with a whole-page view at 400 dpi for layout; doubtful characters were re-rendered at 1600 dpi. The section was divided into its printed blocks, one row per block, and the block's English column transcribed as set. Nineteenth-century spelling, capitalisation, punctuation and the printing's abbreviations are reproduced as printed and were not modernised, expanded, or corrected against the Latin. One typographic convention is normalised and is the only one: the compositor's French spacing before a colon, semicolon, question mark or exclamation mark is closed up, that being a setting convention of the printing rather than any part of its wording. Where the scan has lost ink at the right edge of the English column or a sort has failed, the damaged word is given whole and the damage is named in the row's `notes`; every such reading was controlled against the facing Latin column of the same opening. Nothing was supplied that the page does not print. Latin incipits are given in the Latin column's own spelling, ligatures included, and are apparatus, not transcription."
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 8600,
+      "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la",
+      "manifest_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-praeparatio-la/artifact.toml",
+      "manifest_sha256": "71b326b6fa33c4958572622bf84d0ce4e8b38d50162f552d1bd18c92de13c0c3",
+      "media_type": "text/tab-separated-values; charset=utf-8",
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-praeparatio-la/ordinarium-praeparatio-la.tsv",
+      "provenance": "Project transcription read visually from page images served for the same Internet Archive item as the separately registered facsimile PDF, not from that PDF's exact bytes and not from any optical-character-recognition layer. The images fetched were that item's own page derivatives, https://archive.org/download/romanmissaltran00churgoog/page/n<leaf>_w1400.jpg, each 2092x3500 pixels, which is the largest derivative the item serves. Those page responses were not retained or hashed as artifacts, so this record makes no `derived_from` claim. The Latin column was cropped from each leaf and read at full size, and every doubtful character was re-read from a further crop magnified to between 200 and 250 per cent. The section was divided into the printed blocks of its sibling -en artifact, one row per block, joined to it by element_key, and the block's LATIN column transcribed as set; a row exists only where the page prints facing Latin, and the blocks the book sets across the full measure in English alone carry no row here. Nineteenth-century spelling, capitalisation, punctuation, ligatures (ae, oe) and the printing's abbreviations (&c., Per eumdem, &c.) are reproduced as printed and were not modernised, expanded, or corrected against a 1920 or 1962 typical edition or any other book; the printing's own misprints stand and are named in the row's notes. One typographic convention is normalised and is the only one: the compositor's French spacing before a colon, semicolon, question mark or exclamation mark is closed up, that being a setting convention of the printing rather than any part of its wording. Cross glyphs are not reproduced; where the Latin column prints one, the row's notes say so. Speaker and versicle marks (P., R., Ant.) are transcribed as the Latin column prints them. Small capitals are rendered as capitals, as the sibling -en artifact renders its own. In the Kyrie blocks, which the book sets across the full measure with an italic English gloss on the same line as the Greek, the acclamations are carried with their speaker marks and the English gloss is omitted, that gloss being the -en artifact's material. Where the scan's inking fills or breaks a letter, the word is given whole and the damage is named in the row's notes; no reading was ever repaired from another edition, from a facsimile of a 1920 or 1962 book, or from the received text, and the facing English was used only to confirm which block is which and never to settle a Latin reading.",
+      "record_type": "artifact",
+      "retrieved": "2026-08-20",
+      "rights_basis": "The 1861 Philadelphia printing was published long before 1930 and is in the public domain in the United States. This file contains only that printing's own Latin wording, transcribed by this project from its page images; a faithful transcription of a public-domain text originates no new copyright, and no Google or Internet Archive front matter, markup, annotation, or page-image material is reproduced. The rights basis is a United States one: a reader elsewhere must establish the position in their own jurisdiction.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "3ecd28af160bf65d272f1faf041920b90ab7c5a9d614c985b9574c0f5f6c1d9f",
+      "storage": "tracked"
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 16823,
+      "derived_from": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+      "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en",
+      "manifest_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/praefationes-en/artifact.toml",
+      "manifest_sha256": "be5f7a75a7195268fff71d590962d6bfde3e2ce14d85e1f19eb5bb26429707e5",
+      "media_type": "text/tab-separated-values; charset=utf-8",
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/praefationes-en/praefationes-en.tsv",
+      "record_type": "artifact",
+      "retrieved": "2026-07-31",
+      "rights_basis": "The 1861 Philadelphia printing was published long before 1930 and is in the public domain in the United States. This file contains only that printing's own English wording, transcribed by this project from its page images; a faithful transcription of a public-domain text originates no new copyright, and no Google or Internet Archive front matter, markup, annotation, or page-image material is reproduced. The rights basis is a United States one: a reader elsewhere must establish the position in their own jurisdiction.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "67400ec1b528854f45e1ab8a1b0598235d9471072b1e26e261db1ea5d1871441",
+      "storage": "tracked",
+      "transformation": "Project transcription read visually from rendered page images of the parent facsimile, not from any optical-character-recognition layer. Artifact pages 39-43 were rendered with pdftoppm at 640 dpi and cropped into per-column upper and lower halves, with a whole-page view at 400 dpi for layout; doubtful characters were re-rendered at 1600 dpi. The section was divided into its printed blocks, one row per block, and the block's English column transcribed as set. Nineteenth-century spelling, capitalisation, punctuation and the printing's abbreviations are reproduced as printed and were not modernised, expanded, or corrected against the Latin. One typographic convention is normalised and is the only one: the compositor's French spacing before a colon, semicolon, question mark or exclamation mark is closed up, that being a setting convention of the printing rather than any part of its wording. Where the scan has lost ink at the right edge of the English column or a sort has failed, the damaged word is given whole and the damage is named in the row's `notes`; every such reading was controlled against the facing Latin column of the same opening. Nothing was supplied that the page does not print. Latin incipits are given in the Latin column's own spelling, ligatures included, and are apparatus, not transcription."
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 6983,
+      "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la",
+      "manifest_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/praefationes-la/artifact.toml",
+      "manifest_sha256": "d2973370caffeb1742950db8d1ebaf45cb1afcd90c75646c3b91222c9f7a8b12",
+      "media_type": "text/tab-separated-values; charset=utf-8",
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/praefationes-la/praefationes-la.tsv",
+      "provenance": "Project transcription read visually from page images served for the same Internet Archive item as the separately registered facsimile PDF, not from that PDF's exact bytes and not from any optical-character-recognition layer. The images fetched were that item's own page derivatives, https://archive.org/download/romanmissaltran00churgoog/page/n<leaf>_w1400.jpg, each 2092x3500 pixels, which is the largest derivative the item serves. Those page responses were not retained or hashed as artifacts, so this record makes no `derived_from` claim. The Latin column was cropped from each leaf and read at full size, and every doubtful character was re-read from a further crop magnified to between 200 and 250 per cent. The section was divided into the printed blocks of its sibling -en artifact, one row per block, joined to it by element_key, and the block's LATIN column transcribed as set; a row exists only where the page prints facing Latin, and the blocks the book sets across the full measure in English alone carry no row here. Nineteenth-century spelling, capitalisation, punctuation, ligatures (ae, oe) and the printing's abbreviations (&c., Per eumdem, &c.) are reproduced as printed and were not modernised, expanded, or corrected against a 1920 or 1962 typical edition or any other book; the printing's own misprints stand and are named in the row's notes. One typographic convention is normalised and is the only one: the compositor's French spacing before a colon, semicolon, question mark or exclamation mark is closed up, that being a setting convention of the printing rather than any part of its wording. Cross glyphs are not reproduced; where the Latin column prints one, the row's notes say so. Speaker and versicle marks (P., R., Ant.) are transcribed as the Latin column prints them. Small capitals are rendered as capitals, as the sibling -en artifact renders its own. In the Kyrie blocks, which the book sets across the full measure with an italic English gloss on the same line as the Greek, the acclamations are carried with their speaker marks and the English gloss is omitted, that gloss being the -en artifact's material. Where the scan's inking fills or breaks a letter, the word is given whole and the damage is named in the row's notes; no reading was ever repaired from another edition, from a facsimile of a 1920 or 1962 book, or from the received text, and the facing English was used only to confirm which block is which and never to settle a Latin reading.",
+      "record_type": "artifact",
+      "retrieved": "2026-08-20",
+      "rights_basis": "The 1861 Philadelphia printing was published long before 1930 and is in the public domain in the United States. This file contains only that printing's own Latin wording, transcribed by this project from its page images; a faithful transcription of a public-domain text originates no new copyright, and no Google or Internet Archive front matter, markup, annotation, or page-image material is reproduced. The rights basis is a United States one: a reader elsewhere must establish the position in their own jurisdiction.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "1ae62a9b1e4f96d6da17c46564a8cff2c3b0593525cd1fd87508c197255dbe5d",
+      "storage": "tracked"
+    },
+    {
+      "date": "1915",
+      "id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "language": "la",
+      "manifest_path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/edition.toml",
+      "manifest_sha256": "52ab6eb25940dc5471028a7caf3ef8e401c7f636f231ade9b3fd318426916e56",
+      "publication": "London: Henry Bradshaw Society, vol. XXXII; Harrison and Sons, 1915.",
+      "record_type": "edition",
+      "title": "The Stowe Missal, MS. D. II. 3 in the Library of the Royal Irish Academy, Dublin. Vol. II: Printed Text",
+      "work_id": "work.catholic-church.stowe-missal"
+    },
+    {
+      "date": "1861",
+      "id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "language": "en",
+      "manifest_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/edition.toml",
+      "manifest_sha256": "a6a946e4c1f7b470392972302a03036b151260f728ffe8a26d683f0493af7466",
+      "publication": "Philadelphia: Published by Eugene Cummiskey, South Sixth Street, 1861. Title matter: \"THE ROMAN MISSAL, TRANSLATED INTO THE ENGLISH LANGUAGE FOR THE USE OF THE LAITY ... PUBLISHED WITH THE APPROBATION OF THE RIGHT REV. THE BISHOP OF PHILADELPHIA. FIRST REVISED EDITION.\"",
+      "record_type": "edition",
+      "title": "The Roman Missal translated into the English language for the use of the laity, first revised edition",
+      "work_id": "work.eugene-cummiskey.roman-missal-english-laity"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur-checked-latin-7465da67",
+      "artifact_sha256": "7465da67befc59c3576681e5001d1bb33a03b3f72f80a2d513c3b165a5b9dd67",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-hanc-igitur",
+      "locus": "canon-hanc-igitur; printed p. 12; source PDF page(s) 98",
+      "manifest_path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-hanc-igitur.toml",
+      "manifest_sha256": "cac0d3d95fc9c244179bbfbd0c56fc2a1b96861a48ca09e4560d72a68bab432b",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.canon-quam-oblationem-checked-latin-e404c122",
+      "artifact_sha256": "e404c122389466c12f7c79304c991aae3a05d8b13297c37ed45bf221cc01727c",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.canon-quam-oblationem",
+      "locus": "canon-quam-oblationem; printed p. 12; source PDF page(s) 98",
+      "manifest_path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/canon-quam-oblationem.toml",
+      "manifest_sha256": "96ffefbc1220d34fdbeeb11ed5879e03a6a42a9f92808c958cb5ed42d2e0c61f",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.stowe-missal.warner-1915-vol-2.sanctus-checked-latin-27b79875",
+      "artifact_sha256": "27b798758bef32f11d5fa4bd1dbe2608c74a6efa14e6f5ad68b9c1ebe66e726a",
+      "edition_id": "edition.catholic-church.stowe-missal.warner-1915-vol-2",
+      "id": "passage.catholic-church.stowe-missal.warner-1915-vol-2.sanctus",
+      "locus": "sanctus; printed p. 10; source PDF page(s) 96",
+      "manifest_path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/passages/sanctus.toml",
+      "manifest_sha256": "17dc84481a077051ca7ea9af26a2e6fbdea181bb7587c2b5c31310d1f1824786",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "work.catholic-church.stowe-missal",
+      "manifest_path": "src/sources/works/catholic-church/stowe-missal/work.toml",
+      "manifest_sha256": "51ae2664ee5b8806a428a670b7aede9778b9bf194b15d2dec9764b2f63e3d11c",
+      "record_type": "work",
+      "title": "The Stowe Missal"
+    },
+    {
+      "id": "work.eugene-cummiskey.roman-missal-english-laity",
+      "manifest_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/work.toml",
+      "manifest_sha256": "80a589340fe7fbe6284fa8cb1eef65b0f98d4bb6baee2d2f17a00b7b1b0c6358",
+      "record_type": "work",
+      "title": "The Roman Missal translated into the English language for the use of the laity"
+    }
+  ],
+  "text_serialization": {
+    "encoding": "UTF-8",
+    "final_newline": true,
+    "id": "act-history-ventilate/v1",
+    "line_ending": "LF",
+    "output_hash_field": "serialized_text_sha256",
+    "owner": "tools/act-history:ventilate",
+    "source_hash_field": "text_sha256"
+  },
+  "tool_inputs": [
+    {
+      "byte_size": 67556,
+      "path": "guidance/liturgical-text-publication-policy.md",
+      "sha256": "3a035f6e50c06da9597ea99020efb0fa93939d6ef88f6204ed83ffbdf9aae32f"
+    },
+    {
+      "byte_size": 90723,
+      "path": "scripts/_calendars.py",
+      "sha256": "9961359f38a3e390b5de4103a5222149e40b906362bba4b5620590f5ee1fed8e"
+    },
+    {
+      "byte_size": 49955,
+      "path": "scripts/_eucharistic_history.py",
+      "sha256": "8a6287252b3c50270464fca462ec2eac5680fbc0d21c7670482fd41b8bb555ee"
+    },
+    {
+      "byte_size": 60025,
+      "path": "scripts/_eucharistic_texts.py",
+      "sha256": "cd92077fd685310b7aaf7f14bfb1ff83f23bc1417cc8ebe9687ca9a554016799"
+    },
+    {
+      "byte_size": 48920,
+      "path": "scripts/_proper_latin.py",
+      "sha256": "b24579434c8887a3b8527776790689b3b9f3262ee686eca745ec950845699bd7"
+    },
+    {
+      "byte_size": 33120,
+      "path": "scripts/_tooling.py",
+      "sha256": "86c302fcb7be450dec4dc1d45c4f529b000e79d5c548fae2b22212f7246e0afe"
+    },
+    {
+      "byte_size": 252547,
+      "path": "tools/act-history",
+      "sha256": "f5c2926da1d093b3f84d010a9ade154d79b0637661532c30f9a83c6412154edc"
+    },
+    {
+      "byte_size": 117989,
+      "path": "tools/source-library",
+      "sha256": "7a85be155005821a197b5ee6f3b423424669c074c827898cdf2be39e8388aa2f"
+    }
+  ],
+  "unified_diff": "--- left/warner-1915-stowe-mass-prayers\n+++ right/cummiskey-1861-latin-ordinary\n@@ -1,4 +1,4 @@\n-Hanc igitur oblationem seruitutis nostrae sed et cunctae familiae tuae quam tibi offerimus in honorem domini nostri iesu christi et in commemorationem beatorum martirum tuorum in hac aeclesiae quam famulus tuus ad honorem nominis gloriae tuae aedificauit :\n-Quessumus domine ut placatus suscipias Eumque adque omnem populum ab idulorum cultura eripias et ad té deum uerum patrem omnipotentem conuertas :\n-Dies quoque nostros in tua pace disponas atque ab aeterna damnatione nos eripias et in electorum tuorum iubeas grege numerari :\n-per dominum nostrum :\n+Hanc igitur oblationem servitutis nostræ, sed et cunctæ familiæ tuæ, quæsumus Domine, ut placatus accipias:\n+diesque nostros in tua pace disponas, atque ab æterna damnatione nos eripi, et in Electorum tuorum jubeas grege numerari.\n+Per Christum Dominum nostrum.\n+— Amen.\n"
+}

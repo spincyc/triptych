@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-hanc-igitur-checked-latin-b46e0e89"
+edition_id = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced."
+provenance = "Existing canonical work/edition identities, alias and artifact records were inspected before creation; the existing retained OCR and facsimile were reused, without a new edition or replacement witness. Exact bytes were mechanically extracted from the pinned OCR with an explicit correction ledger. The complete bounded body was read against the cited rendered historical page(s), then independently checked word by word by a second reviewer on 2026-10-16. R, Vatican Reginae 337, as mediated by Wilson's 1915 critical edition; no new manuscript collation. Verification evidence: artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7."
+retrieved = "2026-10-16"
+sha256 = "b46e0e89dd83e69c5befee20965e19263ec54c8ee8742720b941d962eabf83a4"
+byte_size = 263
+path = "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/canon-hanc-igitur-checked-latin-b46e0e89/text.txt"
+encoding = "utf-8"
+indexable = true
+derived_from = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.pdf-text-layout-6ca97fd7"
+transformation = "Source UTF-8 bytes SHA-256 6ca97fd74dee383bec70078151eaa0dc918a2b310389577d30690f4e503fdb53. Use LF-delimited physical line ranges [[2305, 2309]]. Select only the named complete prayer bounded by its incipit and next prayer; join whitespace to one space, excluding running heads/apparatus between disjoint ranges. Apply these exact page-verified replacements in order: [{\"from\": \"famiHae\", \"to\": \"familiae\", \"count\": 1}]. Append one LF. Main text of R mediated by Wilson. Starts Hanc and ends dominum nostrum; exclude following Quam and footnotes. Preserve spacing around printed points as retained OCR, with source lines joined."
+notes = "Main text of R mediated by Wilson. Starts Hanc and ends dominum nostrum; exclude following Quam and footnotes. Preserve spacing around printed points as retained OCR, with source lines joined. This is a normalized printed-edition transcription, not diplomatic manuscript text. The exact facsimile controls typography and punctuation not represented by the normalization."

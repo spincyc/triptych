@@ -135,7 +135,9 @@ class HistoryReceptionBrowserTests(unittest.TestCase):
                     "width": width, "height": 900, "deviceScaleFactor": 1, "mobile": False}},
                 {"do": "eval", "name": str(width), "expression": """({
                   viewport: innerWidth, page: document.documentElement.scrollWidth,
-                  scrollable: document.querySelector('.map-scroll').scrollWidth > document.querySelector('.map-scroll').clientWidth,
+                  labels: [...document.querySelectorAll('.route-title-text')].map(n => n.textContent),
+                  direction: document.getElementById('map').textContent.includes('Read dates downward within each line'),
+                  panels: document.querySelectorAll('.route-panel').length,
                   evidence: document.querySelector('.detail-receptions').getBoundingClientRect().width
                 })"""},
             ])
@@ -150,7 +152,9 @@ class HistoryReceptionBrowserTests(unittest.TestCase):
         seen = drive({"acts": actions})
         for width in (1440, 320):
             self.assertLessEqual(seen[str(width)]["page"], width + 1)
-            self.assertTrue(seen[str(width)]["scrollable"])
+            self.assertEqual(set(seen[str(width)]["labels"]), {row["title"] for row in self.spine["stations"]})
+            self.assertTrue(seen[str(width)]["direction"])
+            self.assertEqual(seen[str(width)]["panels"], len({row["line"] for row in self.spine["stations"]}))
             self.assertGreater(seen[str(width)]["evidence"], 0)
         self.assertNotEqual(seen["colors"]["outer"], seen["colors"]["inner"])
 

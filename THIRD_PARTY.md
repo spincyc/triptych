@@ -397,6 +397,26 @@ main text was checked against the retained page image by two reviewers. It
 retains the historical text's public-domain basis and the same CC BY exclusion;
 that bounded verification does not extend to the remaining extraction.
 
+Seven further Latin prayer selections are separately registered and checked
+against the printed pages: *Hanc igitur* and *Quam oblationem* in Wilson's
+Gregorian and Gelasian editions, and those two prayers plus the *Sanctus* in
+Warner's Stowe edition. Their artifact records declare abbreviation, ligature,
+apparatus and punctuation treatment; retained facsimiles control diplomatic
+detail. Two Gelasian page images derive from the already identified 1894 scan.
+These bounded transcriptions and images retain the source editions' recorded
+public-domain basis and are excluded from Triptych's CC BY licence.
+
+Brightman's *Liturgies Eastern and Western*, volume I (Oxford, 1896), is held
+under `src/sources/works/frank-edward-brightman/liturgies-eastern-and-western/`.
+The complete 714-page scan is the Wellcome copy distributed through Internet
+Archive item `b29353233`; the source records retain the provider's public-domain
+notice separately from the historical edition's U.S. public-domain basis. Six
+Greek selections from the James, Basil and Chrysostom anaphoras have independent
+page-image checks. Each retains its exact speech blocks, printed loci and
+declared typographic transformations. The edition, facsimile and historical
+Greek wording are not relicensed under CC BY 4.0. Comparing these selected
+passages does not establish a checked transcription of the whole volume.
+
 ## Fonts and External Software
 
 Published PDFs embed Latin Modern font programs. The altar-server guides and the

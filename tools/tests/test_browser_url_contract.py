@@ -804,6 +804,17 @@ class HistoryViewURLTest(unittest.TestCase):
                        bindings={"window": {"location": {"search": search}}})
         self.assertEqual(answer["value"], expected)
 
+  def test_overview_is_additive_and_keeps_catalogue_links_source_qualified(self):
+    for search, expected in (("", False), ("?slice=latin-missal", False),
+                             ("?view=map", False), ("?view=catalogue", False),
+                             ("?view=overview", True)):
+      result = probe(probe="assigned", file="history/history.js", anchor="const overviewMode =",
+                     bindings={"window": {"location": {"search": search}}})
+      self.assertEqual(result["value"], expected)
+    link = probe(probe="replay", file="history/history.js", extract=["historyURL"], call="historyURL",
+                 search="?data=fixture&slice=latin-missal&view=map", args=["overview"])
+    self.assertEqual(link["returned"], "?data=fixture&slice=latin-missal&view=overview")
+
   def test_view_switch_and_station_links_preserve_data_and_select_the_requested_slice(self):
     original = "?data=fixture&slice=roman-holy-week&view=map"
     catalogue = probe(probe="replay", file="history/history.js", extract=["historyURL"], call="historyURL",

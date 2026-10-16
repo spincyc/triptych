@@ -1,5 +1,5 @@
-/* How the Missal changed. The map is wide by nature, so it scrolls inside its
-   own box and the page body never does.
+/* How the Missal changed. Recorded lines reflow as dated route panels;
+   research connections retain their own evidence and responsive diagrams.
 
    Everything this page shares with the law page — the station panel, the
    term-and-value list, the change card, the basis, the marker, the fold, the
@@ -536,3 +536,100 @@
   .history-views a[aria-current] { border-color: CanvasText; }
   .catalogue-filter :is(input, select, button) { border-color: ButtonText; }
 }
+
+/* Date-led route panels keep branches together; labels flow independently of
+   the narrow track drawing, including at 320px and enlarged text. */
+.map-scope { border-left: 4px solid var(--section-accent); padding-left: 1rem; max-width: 75ch; }
+.line-index { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .4rem 1.4rem; margin: 1.4rem 0 2rem; }
+.line-index a { padding: .4rem 0; font-size: .95rem; }
+.route-panel { margin: 2rem 0; border-top: 4px solid var(--route-color,var(--section-accent)); scroll-margin-top: 1rem; }
+.route-panel h3 { max-width: 65ch; font-size: 1.25rem; margin-bottom: .5rem; }
+.route-body { position: relative; }
+.route-geometry { position: absolute; top: 0; left: 0; pointer-events: none; overflow: visible; }
+.route-panel .track, .route-panel .station-mark, .route-panel .station-interchange-ring { stroke: var(--route-color,var(--section-accent)); }
+.route-panel .station-mark { fill: var(--route-color,var(--section-accent)); }
+.route-panel .kind-printed .station-mark, .route-panel .kind-unstated .station-mark { fill: var(--panel,#fff); }
+.route-labels { list-style: none; padding: 12px 0 12px; margin-block: 0; }
+.route-stop { min-height: 104px; box-sizing: border-box; padding: 22px 0 14px; max-width: 74ch; }
+.route-date { margin: 0 0 .15rem; font-family: var(--sans); font-size: .85rem; color: var(--ink-soft); }
+.route-title { display: block; border: 0; background: transparent; padding: .25rem 0; color: var(--ink); text-align: left; font: inherit; font-size: 1.05rem; line-height: 1.4; text-decoration: underline; text-underline-offset: .16em; }
+.route-title:hover, .route-title.station-selected { text-decoration-thickness: 3px; }
+.route-title:focus-visible, .route-panel:focus-visible { outline: 3px solid #185ea8; outline-offset: 3px; }
+.route-reference { display: block; margin: .3rem 0 0; font-size: .85rem; line-height: 1.4; }
+.route-panel:nth-of-type(6n+1) { --route-color: #386650; }
+.route-panel:nth-of-type(6n+2) { --route-color: #77513c; }
+.route-panel:nth-of-type(6n+3) { --route-color: #395f87; }
+.route-panel:nth-of-type(6n+4) { --route-color: #72527c; }
+.route-panel:nth-of-type(6n+5) { --route-color: #8b493f; }
+.route-panel:nth-of-type(6n) { --route-color: #626324; }
+
+.relationship-key { border-block: 1px solid var(--section-line); margin: 1rem 0 2rem; padding: .5rem 0; font-size: .9rem; max-width: 80ch; }
+.relationship-key p { margin: .65rem 0; }
+.relationship-key span { display: inline-block; width: 2rem; font-weight: bold; }
+.research-connection { border-top: 1px solid var(--section-line); padding: 1rem 0 1.5rem; margin-top: 1rem; --relation-color: #395f87; }
+.research-connection h4 { font-family: var(--sans); margin: .25rem 0; font-size: 1rem; }
+.relation-subtitle { margin: .4rem 0 1rem; }
+.relationship-diagram { display: grid; grid-template-columns: minmax(0,1fr) 4rem minmax(0,1fr); align-items: center; margin: 1.2rem 0; }
+.relationship-endpoint { border-left: 5px solid var(--relation-color); padding: .5rem .8rem; min-width: 0; overflow-wrap: anywhere; }
+.relationship-endpoint a, .relation-entity { font-weight: 600; }
+.conceptual-endpoint { border-left-style: dashed; }
+.endpoint-group { margin: 0 0 .4rem; font-family: var(--sans); font-size: .8rem; color: var(--ink-soft); }
+.relationship-bridge { display: block; border-top: 4px solid var(--relation-color); position: relative; height: 0; color: var(--relation-color); }
+.relationship-bridge span { position: absolute; right: -2px; top: -17px; font-size: 26px; font-weight: bold; line-height: 28px; background: var(--panel,#fff); }
+.relation-shared-text { --relation-color: #386650; }
+.relation-shared-text .relationship-bridge { border-top: 6px double var(--relation-color); }
+.relation-common-ancestry { --relation-color: #72527c; }
+.relation-common-ancestry .relationship-bridge { border-top-style: dotted; }
+.relation-borrowing { --relation-color: #8b493f; }
+.relation-edition-succession { --relation-color: #77513c; }
+.relation-evidence summary { cursor: pointer; padding: .6rem 0; }
+.relation-evidence { max-width: 85ch; overflow-wrap: anywhere; }
+.relation-evidence:focus-within { outline-offset: 4px; }
+.overview-groups { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .8rem 1.8rem; list-style: none; padding: 0; }
+.overview-group { border-left: 4px solid var(--section-line); padding: .4rem 0 .4rem 1rem; min-width: 0; }
+.overview-group-title { display: inline-block; padding: .3rem 0; font-size: 1rem; font-weight: 600; }
+.overview-group .panel-note { margin: .25rem 0; }
+@media (max-width: 40rem) {
+  .line-index, .overview-groups { grid-template-columns: minmax(0,1fr); }
+  .route-title { font-size: 1rem; }
+  .relationship-diagram { grid-template-columns: minmax(0,1fr); gap: .3rem; }
+  .relationship-bridge { width: 1px; height: 1.8rem; margin-left: 1.1rem; border-top: 0 !important; border-left: 4px solid var(--relation-color); }
+  .relationship-bridge span { transform: rotate(90deg); top: 4px; left: -15px; right: auto; }
+  .relation-shared-text .relationship-bridge { border-left-style: double; border-left-width: 6px; }
+  .relation-common-ancestry .relationship-bridge { border-left-style: dotted; }
+}
+@media (forced-colors: active) {
+  .route-panel, .research-connection { --route-color: CanvasText; --relation-color: CanvasText; }
+  .route-panel .kind-printed .station-mark, .route-panel .kind-unstated .station-mark { fill: Canvas; }
+  .relationship-bridge span { background: Canvas; }
+}
+@media print {
+  .history-views, .line-index, .catalogue-filter { display: none; }
+  .route-panel, .research-connection { break-inside: avoid; }
+  .route-title { text-decoration: none; }
+}
+
+.track-evidence-use-continuity, .track-evidence-line-order { stroke-width: 3; }
+.track-evidence-attributed { stroke-width: 4; }
+.track.track-reception { stroke-width: 8; }
+.endpoint-status { font-size: .85rem; font-weight: 600; margin: .4rem 0; }
+.unconnected-pairs summary { cursor: pointer; padding: .7rem 0; }
+
+.route-count-caption { display: block; margin-top: .2rem; color: var(--ink-soft); font-size: .8rem; font-weight: normal; }
+.route-count-caption .station-count { font-size: inherit; color: inherit; }
+
+.legend-stated .legend-mark, .legend-attributed .legend-mark, .legend-sequence .legend-mark { width: 1.6rem; height: 0; border: 0; border-radius: 0; border-top: 6px solid var(--section-accent); }
+.legend-sequence .legend-mark { border-top-width: 3px; }
+.entity-evidence summary { cursor: pointer; padding: .4rem 0; font-size: .85rem; }
+
+.legend-attributed .legend-mark { border-top-width: 4px; }
+.network-legend { display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; list-style:none; padding:0; }
+.network-legend li { display:flex; align-items:center; gap:.45rem; }
+.network-component { margin-block:2rem; max-width:100%; min-width:0; }
+.network-viewport { max-width:100%; overflow-x:auto; border:1px solid var(--rule,#ccc); background:#fffdf8; }
+.tradition-network { display:block; width:100%; min-width:1000px; height:auto; color:#34302c; }
+.network-node-label { fill:#34302c; stroke:#fffdf8; stroke-width:6px; paint-order:stroke; stroke-linejoin:round; font-family:inherit; }
+.tradition-network a:focus { outline:3px solid #176c79; }
+.network-references { margin-block:1rem; }
+.network-references li { margin-block:.65rem; }
+@media print { .network-viewport { overflow:visible; } .tradition-network { min-width:0; } }

@@ -2,8 +2,8 @@
 schema = "western-eucharistic-books-research-inventory/v1"
 researched_on = "2026-10-16"
 scope = "Non-exhaustive Western Eucharistic service-book research census: current Catholic traditions, shared historical ancestors and extinct local uses. Original liturgical-language books have priority. Witnesses and revision candidates are distinguished; metadata only."
-evidence_limit = "Catalogue/official metadata research is supplemented by registered acquisitions from the Western acquisition lane. Five new artifacts across four historical edition witnesses are linked; the already retained Gregorian scan is also linked. Registration manifests and all six linked payload hashes/byte sizes were checked here. Image inspection was bounded and reported by the acquisition lane; no complete manuscript/prayer collation or corrected transcription is claimed."
-further_leads_not_researched = ["Verona LXXXV(80): obtain holding-library manuscript description and cleared old full edition; distinguish collected Roman libelli from a complete annual sacramentary.", "Additional early Gallican and Roman-Frankish witnesses, Mone Masses, Gregorian supplements and Old Gelasian layers: manuscript-wide census and textual relationships remain open.", "Medieval Ambrosian sacramentaries, 1582/1588 reforms and subsequent Latin typical editions: direct witnesses and reform instruments still needed.", "Old Hispanic manuscripts beyond BL Add MS 30846; distinguish Liber misticus, Liber missarum, Liber ordinum and Liber commicus by actual Eucharistic contents.", "Roman-curial Ordines, Haymo, late-medieval curial missal states and Burchard: normative instruments and complete missal comparisons still needed.", "Roman experimental Easter Vigil stages, 1969 separate Ordo Missae and later amendments: coordinate with existing Roman and Holy Week inventories instead of duplicating acts.", "Slavonic/Glagolitic Roman books: distinguish source-recension changes from permissions and translations; original historical source status and publication rights need review.", "Order trajectories still lacking a revision census: Benedictine houses/Cassinese, Teutonic, Paulines, Gilbertines, Windesheim, Camaldolese, Augustinian, Humiliati, Trinitarian, Minims and Discalced Carmelite.", "Iberian diocesan catalogue coverage is particularly incomplete because Usuarium origin-index offset 200 was unavailable; Toledo Roman use must not be merged with Old Hispanic.", "Book of Divine Worship edition history, later Divine Worship corrections, Zaire source-language edition and approved regional adaptations beyond it need primary front matter.", "Post-medieval diocesan missals require comparison of prayers, rubrics, calendar and order. A long dated printing series is not a revision series."]
+evidence_limit = "Catalogue/official metadata research is supplemented by registered acquisitions from the Western acquisition lane. Five new artifacts across four historical edition witnesses are linked; the already retained Gregorian scan is also linked. Registration manifests and all six linked payload hashes/byte sizes were checked here. Image inspection was bounded and reported by the acquisition lane; no complete manuscript/prayer collation or corrected transcription is claimed. Continuity research adds metadata and attributed scholarly comparisons, plus six hash-verified preexisting Cummiskey Latin transcription links. No new complete source book or verified transcription acquired in this pass."
+further_leads_not_researched = ["Verona LXXXV(80): obtain holding-library manuscript description and cleared old full edition; distinguish collected Roman libelli from a complete annual sacramentary.", "Additional early Gallican and Roman-Frankish witnesses, Mone Masses, Gregorian supplements and Old Gelasian layers: manuscript-wide census and textual relationships remain open.", "Medieval Ambrosian sacramentaries, 1582/1588 reforms and subsequent Latin typical editions: direct witnesses and reform instruments still needed.", "Old Hispanic manuscripts beyond BL Add MS 30846; distinguish Liber misticus, Liber missarum, Liber ordinum and Liber commicus by actual Eucharistic contents.", "Roman-curial/Haymo manuscript succession and full missal revisions remain incomplete. Burchard1501/1502 ceremonial states and specified reception are now documented, with partial comparison limits.", "Roman experimental Easter Vigil stages, 1969 separate Ordo Missae and later amendments: coordinate with existing Roman and Holy Week inventories instead of duplicating acts.", "Slavonic/Glagolitic Roman books: distinguish source-recension changes from permissions and translations; original historical source status and publication rights need review.", "Order trajectories still lacking a revision census: Benedictine houses/Cassinese, Teutonic, Paulines, Gilbertines, Windesheim, Camaldolese, Augustinian, Humiliati, Trinitarian, Minims and Discalced Carmelite.", "Iberian diocesan catalogue coverage is particularly incomplete because Usuarium origin-index offset 200 was unavailable; Toledo Roman use must not be merged with Old Hispanic.", "Book of Divine Worship edition history, later Divine Worship corrections, Zaire source-language edition and approved regional adaptations beyond it need primary front matter.", "Post-medieval diocesan missals require comparison of prayers, rubrics, calendar and order. A long dated printing series is not a revision series."]
 research_scope = "agreed-current-Catholic-traditions-shared-ancestors-and-extinct-local-uses"
 exhaustive = false
 new_complete_source_books_acquired = 2
@@ -14,10 +14,10 @@ existing_inventories = ["src/sources/inventories/latin-missal-acts-v1.toml", "sr
 coverage_note = "Systematic trajectory checklist plus selected catalogue witnesses, not an exhaustive manuscript or edition census. A trajectory may have thousands of witnesses. Documented witness dates are not automatically dates of normative revision. Existing inventories remain the references for already represented Roman and order editions."
 distinctness_rules = ["A distinct source state requires demonstrated substantive changes to prayers, rubrics, calendar or order, or an authoritative instrument specifying such changes. A different printer, year or scanner alone is insufficient; approval alone may concern a translation or reprint.", "Distinguish complete books, partial Orders, supplements, lectionaries, calendar amendments and legislation about permission to use a book.", "Keep translations and other language expressions separate from underlying source recensions; an approval applies only to its stated textual extent.", "Complementary volumes belong to one edition unless evidence establishes a later revision; their publication dates do not form a succession of recensions.", "Critical editions and reprints witness earlier texts; editorial apparatus alone does not demonstrate a normative liturgical reform.", "Keep composition, manuscript copying, approval, publication, effective use and reprinting dates distinct. Approximate or disputed dates remain explicit.", "Chronological continuity within a use does not prove textual descent. Do not infer a universal Western trunk or direct parentage by sorting dates.", "A bibliographic record or partial text is not a complete missal. Missing acquired content does not demonstrate ritual absence.", "A manuscript with interleaved books, later additions, correctors or independent supplements may preserve multiple textual states. Do not make the whole codex a single normative edition.", "A witness census, a bibliography of printed editions and a genealogy of substantive versions are separate datasets. Retain one-to-many links and unresolved duplicate records.", "A named religious house or order in a catalogue origin field does not establish that all its holdings represent a distinctive order use; pre-foundation manuscript dates require special scrutiny.", "For historical extinct uses, identify manuscripts, printed witnesses and reform evidence without implying that the use survives today as an independent Catholic rite."]
 language_priority = "Original source books first, including books originally composed or adapted in a modern language. Independently translated expressions are deferred. Latin is not assumed to be the original language of every modern Catholic adaptation."
-chronology_policy = "Only independently inspected catalogue/official dates receive integer coordinates. chronology_kind identifies the dated object; intervals may describe approximate copying or a witness cluster, never automatically a recension duration. Inherited unverified dates and unresolved/disputed leads stay outside the dated layout. Source composition, copying, publication, approval, effective use and modern critical publication are distinct."
+chronology_policy = "Dates from inspected official records, catalogues and identified critical or original scholarly studies receive integer coordinates. chronology_kind distinguishes redaction, copying, approval and publication. Attributed or approximate dates remain explicit; witness dates do not become normative acts."
 usuarium_attribution = "Data retrieved from USUARIUM (Eötvös Loránd University, Budapest), built by Miklós István Földváry and colleagues, Research Group of Liturgical History, 2015 onwards; https://usuarium.elte.hu. This inventory paraphrases selected bibliographic facts and links the underlying records."
 usuarium_census_limit = "Seven origin-index pages inspected (offsets 0,100,300,400,500,600,700); offset 200 could not be fetched. Cached pages overlap and reflect different crawl dates. No stable total or exhaustive use count is asserted. Origins mix Mass, Office and other ritual books; an origin association alone does not establish the age or normative use of a religious-order rite."
-record_count_note = "83 candidates, 50 coverage trajectories and 84 source records are research objects, not distinct historical-version counts. Six exact canonical artifact links represent four historical edition witnesses; five artifacts are newly registered and one scan pre-existed."
+record_count_note = "108 candidates, 54 coverage trajectories and 102 source records are research objects, not distinct-version counts. Twelve exact artifact links include six preexisting Cummiskey native-Latin transcriptions; acquisition routes remain unchanged."
 initial_catalogue_pass_complete_books_acquired = 0
 acquisition_update_registered_witnesses = 4
 acquisition_update_new_artifacts = 5
@@ -25,6 +25,7 @@ acquisition_update_new_text_artifacts = 3
 acquisition_count_note = "Two newly retained complete scan volumes: Stowe1915 VolII and Bobbio1917 facsimile VolI. Three new text artifacts: Stowe host OCR,Gregorian extraction from an existing432-page scan,and Gelasian historical-book OCR excluding modern wrapper. Four edition witnesses gain registered access; this is not four newly downloaded complete books. No text was fully collated."
 source_library_binding_policy = "A manuscript candidate may link a much later critical edition or facsimile as evidence. The linked edition publication date never replaces the manuscript copying date. Original manuscripts,facsimile volumes,edited texts,OCR derivatives and corrected transcriptions remain separate. Acquisition of a complete host delivery does not establish page-by-page completeness or verified readings."
 modern_research_update = "Bounded primary-act/official-publication pass establishes five substantive source reforms or adaptations; intermediate translation, volume and printing relationships remain qualified per row. No modern full book acquired or transcribed, and no complete source collation performed."
+continuity_research_update = "Medieval-to-modern pass adds exact ceremonial witnesses and scoped comparisons. Relationship proposals are separately reviewed; no inferred universal Western trunk, full-book identity or new verified source transcription. Seven early manuscript/contact witnesses and four historical-interpretation corrections integrated after review of the early research lane; canonical1861 native Latin comparison witness also linked."
 
 [[sources]]
 id = "milan-publisher-2024"
@@ -554,6 +555,155 @@ type = "official-publisher-live-product-page"
 inspection = "Opened current CTS study edition page: photoreduction, ISBN9781784695644,1086 pages, product date23 April2018; current description advertises added music and updated St John Henry Newman texts. Product date does not establish the date of these current additions. No title-page or content comparison."
 inspected_on = "2026-10-16"
 
+[[sources]]
+id = "legg-tracts-1904"
+url = "https://archive.org/stream/tractsonmass00leggrich/tractsonmass00leggrich_djvu.txt"
+type = "primary-critical-edition-host-ocr"
+inspection = "J. Wickham Legg, Tracts on the Mass (HBS27,1904): inspected web-rendered OCR, introduction pp.xxiv–xxx, edited texts pp.113–117,121–194,195–215, comparative notes pp.248–250. No page images or fresh full collation; OCR is unverified. Modern incunable catalogues supersede its claim that the first standalone Burchard appeared in1502."
+catalogue_url = "https://archive.org/details/tractsonmass00leggrich"
+availability = "Host offers complete public-domain PDF and OCR; metadata says NOT_IN_COPYRIGHT. Shell retrieval failed DNS; no bytes acquired in this pass."
+
+[[sources]]
+id = "burchard-badw-repertory"
+url = "https://geschichtsquellen.de/werk/747"
+type = "academic-source-repertory"
+inspection = "Opened Bavarian Academy repertory: Latin Ordo, composition around1496; Rome1496 Fritag/Besicken,1498 Plannck and1502 Besicken listed separately, with GW/ISTC links. Catalogue evidence, not collation of1496/1498 copies."
+
+[[sources]]
+id = "ocarroll-1979-pericopes"
+url = "https://heyjoe.fbk.eu/index.php/afp/article/download/8504/8505/8506"
+type = "original-manuscript-comparison"
+inspection = "Maura O’Carroll, AFP49(1979)79–103, inspected rendered PDF pp.80–84 and comparison tables. Dates BLAdd23935 to1255–1263; compares its Temporal pericopes with SantaSabinaXIVL1 and critically edited Franciscan Ordines. Wrapper is two pages; scholarly conclusions remain attributed, not a fresh manuscript collation."
+availability = "Article accessible with CC BY-NC-ND4.0 wrapper; no locally retained article or manuscript bytes."
+
+[[sources]]
+id = "boyce-carmelite-2004"
+url = "https://real.mtak.hu/65294/1/smus.45.2004.1-2.2.pdf"
+type = "original-manuscript-research"
+inspection = "James Boyce, Studia Musicologica45(2004)17–34: rendered pp.18–20,28–29 inspected. Distinguishes Sibert1312 Mass/Office incipits from musical practice; Table1 identifies Krakow Mass books. Most detailed later comparisons concern Office, not Mass."
+
+[[sources]]
+id = "palecki-carthusian-2015"
+url = "https://repozytorium.kul.pl/bitstreams/1781a58a-e2ce-4358-bc6f-fc4d9ff9f2c2/download"
+type = "original-primary-book-comparison"
+inspection = "Waldemar Pałęcki, Roczniki Teologiczne62/8(2015)109–130, DOI10.18290/rt.2015.62.8-8. Rendered pp.109–115,120–123 and bibliography inspected:1582 Ordinarium,1603 missal and Roman1570 comparison. Historical overview has a Guigo identification error and is not adopted as authority for early Carthusian origins."
+
+[[sources]]
+id = "lippe-1474-critical-text"
+url = "https://archive.org/stream/missaleromanumme01cath/missaleromanumme01cath_djvu.txt"
+type = "primary-critical-edition-host-ocr"
+inspection = "Robert Lippe, Missale Romanum Mediolani1474,I(1899), title, preface pp.v–vii and opening edited rubric inspected in host OCR. Copy at Ambrosiana; Roman-curial use despite Milan printing. Lacunae supplied from other witnesses are editorial reconstruction.1899 publication is distinct from1474 witness."
+availability = "Public-domain critical edition with full host PDF/OCR routes; already catalogued by acquisition audit; no new bytes retained."
+
+[[sources]]
+id = "early-westwell2024-ch1"
+url = "https://epub.uni-regensburg.de/59552/1/10.1515_9781501517563-1.pdf"
+type = "original-manuscript-research"
+inspected_loci = "Chapter1 pp39–84; focused pp53–63,66–81"
+inspection = "Mechanically acquired complete published PDF from author university repository; local text read; sample images pp53,61,69–70,81–82 checked. Manuscripts themselves not collated."
+rights = "2024 CC BY-NC-ND4.0, exceptions for third-party content; research scratch only, no source text proposed for project redistribution."
+inspection_reported_by = "western_acquisition research lane; no assertion of fresh manuscript collation by inventory integrator"
+integration_review = "Inventory integrator independently reopened scholarly PDF and checked key loci: Westwellpp53–54,70–71,192–194; Miklaspp222–223."
+
+[[sources]]
+id = "early-westwell2024-ch3"
+url = "https://epub.uni-regensburg.de/59552/1/10.1515_9781501517563-1.pdf"
+type = "original-manuscript-research"
+inspected_loci = "Chapter3 pp 191–196; especially 192–194"
+inspection = "Local mechanically extracted text read; exact manuscript folios and edition formula numbers recorded. Modern author analysis, not medieval promulgation."
+rights = "Same 2024 licensed book; research scratch only."
+inspection_reported_by = "western_acquisition research lane; no assertion of fresh manuscript collation by inventory integrator"
+integration_review = "Inventory integrator independently reopened scholarly PDF and checked key loci: Westwellpp53–54,70–71,192–194; Miklaspp222–223."
+
+[[sources]]
+id = "early-wilson1894-comparison"
+url = "https://archive.org/download/gelasiansacrame00wilsgoog/gelasiansacrame00wilsgoog.pdf"
+type = "historical-critical-edition-analysis"
+inspected_loci = "Introduction ppxxxii–xxxv, xl–xli, lxiii–lxxvi; abbreviation table; textp 181"
+inspection = "Held historical-book raw OCR inspected. Abbreviation table image at PDF88 identifies R=Rheinau30, S=St Gall 348, V=Reg 316. Intro conclusions not a modern consensus."
+rights = "Underlying 1894 text public domain; full Google-wrapped PDF scratch only; existing canonical historical-book OCR derivative retained."
+inspection_reported_by = "western_acquisition research lane; no assertion of fresh manuscript collation by inventory integrator"
+
+[[sources]]
+id = "early-wilson1915-hucusque"
+url = "https://archive.org/download/gregoriansacrame00cath/gregoriansacrame00cath.pdf"
+type = "historical-critical-edition-and-edited-medieval-preface"
+inspected_loci = "ppxvii–xxii,145–146; edited Ottob 313 ff 103–104"
+inspection = "Image checked PDF28–29=ppxviii–xix and PDF 203=p 145. Latin Hucusque preface explicitly distinguishes prior Gregorian book from additions. Editor attributes author to Alcuin; contested."
+rights = "Underlying 1915 publication public domain; canonical complete scan and raw extraction held."
+inspection_reported_by = "western_acquisition research lane; no assertion of fresh manuscript collation by inventory integrator"
+
+[[sources]]
+id = "early-warner1915-shared-prayers"
+url = "https://archive.org/download/publications32henruoft/publications32henruoft.pdf"
+type = "historical-critical-edition-comparison"
+inspected_loci = "p4 n10 (MSf13v), p9 nn3–4,11; pp10–12 (MSff22v–27v)"
+inspection = "Image checked PDF90,95,96=printed4,9,10; edition annotations identify parallel prayers and distinguish inserted Moelcaich quire. No new diplomatic transcription."
+rights = "1915 text public domain; existing complete scan and raw OCR retained."
+inspection_reported_by = "western_acquisition research lane; no assertion of fresh manuscript collation by inventory integrator"
+
+[[sources]]
+id = "early-bobbio1917-name-key"
+url = "https://archive.org/download/bobbiomissalgall01cath/bobbiomissalgall01cath.pdf"
+type = "historical-edition-prefatory-note"
+inspected_loci = "unnumbered prefatory note, PDF9"
+inspection = "Mechanical PDF text inspected: Bobbio also called Sacramentarium Gallicanum; identifies Neale/Forbes printed text beginningp 205. Actual Bobbio prayer folios not collated here."
+rights = "1917 publication public domain; existing complete facsimile retained."
+inspection_reported_by = "western_acquisition research lane; no assertion of fresh manuscript collation by inventory integrator"
+
+[[sources]]
+id = "early-morgan-g57"
+url = "https://www.themorgan.org/manuscript/76982"
+type = "holding-library-catalogue"
+inspected_loci = "Created; Notes; Provenance"
+inspection = "Search-index full catalogue record inspected; direct open 403. ca 860, northern France, probably Saint-Amand,170 leaves, Latin. Older catalogue calls supplement Alcuinian; author attribution not adopted."
+rights = "Metadata only; no manuscript image reuse established."
+inspection_reported_by = "western_acquisition research lane; no assertion of fresh manuscript collation by inventory integrator"
+
+[[sources]]
+id = "early-stgall350-biblissima"
+url = "https://iiif.biblissima.fr/collections/manifest/7dca53822c1a219accb56dc05051169712377673"
+type = "holding-library-metadata-aggregator"
+inspected_loci = "Date; Description; digitization link"
+inspection = "e-codices-supplied metadata: near end of the eighth century Chur fragment, soon at St Gall, closelyrelated Cod 348; date fields8th–9th. Primary holding site inaccessible."
+rights = "Catalogue says CCBYNC4.0; no images downloaded."
+inspection_reported_by = "western_acquisition research lane; no assertion of fresh manuscript collation by inventory integrator"
+
+[[sources]]
+id = "early-rheinau30-usuarium"
+url = "https://usuarium.elte.hu/book/5958/view"
+type = "scholarly-source-catalogue"
+inspected_loci = "identity and folio extent"
+inspection = "Opened catalogue identifies ZBZ Rh30, ff27r–165r, edition Hänggi/Schönherr 1970. Catalogue origin Chur requires reconciliation with other attributions."
+rights = "Metadata only."
+inspection_reported_by = "western_acquisition research lane; no assertion of fresh manuscript collation by inventory integrator"
+
+[[sources]]
+id = "early-miklas-sinai"
+url = "https://austriaca.at/0xc1aa5572%200x003e8cb3.pdf"
+type = "original-manuscript-research"
+inspected_loci = "pp 222–223, n43, n47, n51, n54; p 219 dating"
+inspection = "Browser full PDF text inspected. Precise shared-text and translation claims; author cautions connections need further review."
+rights = "Copyright Austrian Academy; citation/metadata only; no full source text retained."
+inspection_reported_by = "western_acquisition research lane; no assertion of fresh manuscript collation by inventory integrator"
+integration_review = "Inventory integrator independently reopened scholarly PDF and checked key loci: Westwellpp53–54,70–71,192–194; Miklaspp222–223."
+
+[[sources]]
+id = "early-kiev-nbuv"
+url = "https://irbis-nbuv.gov.ua/dlib/item/0000039"
+type = "holding-library-catalogue"
+inspected_loci = "shelfmark, title, date, contents"
+inspection = "Indexed library catalogue inspected via exact record0000039: NBUVf301no328п,801–995/ninth–tenth century; direct short URL timeout."
+rights = "Metadata only; manuscript images not acquired."
+inspection_reported_by = "western_acquisition research lane; no assertion of fresh manuscript collation by inventory integrator"
+
+[[sources]]
+id = "cummiskey1861-canonical-latin"
+url = "https://archive.org/details/romanmissaltran00churgoog"
+type = "held-canonical-edition-and-transcription-provenance"
+inspection = "Read existing edition and six native-Latin artifact manifests; verified retained bytes against all six registered hashes/lengths.1861 is title publication date; printed Ordinary/Canonpp.xv–xlvi. Exact remote Google-wrapped scan remains unresolved and is not retained."
+edition_manifest = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/edition.toml"
+
 [[candidates]]
 id = "roman-1474"
 family = "roman"
@@ -563,12 +713,17 @@ kind = "early-printed-witness"
 status = "recorded-existing-acquisition-audit"
 existing_record = "missale-romanum-mediolani-1474-lippe"
 route = "https://archive.org/details/missaleromanumme01cath"
-qualification = "Lippe 1899/1907 critical edition witnesses 1474; do not date liturgical recension to critical-edition publication. Not yet a station in latin-missal-acts-v1."
+qualification = "Lippe 1899/1907 critical edition witnesses 1474; do not date liturgical recension to critical-edition publication. Not yet a station in latin-missal-acts-v1. Inspected critical edition identifies Roman-curial use, not Ambrosian use; its supplied lacunae are not original1474 surviving readings."
 existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
-date_role = "catalogue/publication date or candidate date as qualified; not necessarily approval or effective date"
+date_role = "printed-witness-publication"
 version_status = "witness-or-revision-candidate-see-qualification"
 scope_disposition = "in-scope-original-book-or-historical-witness"
-chronology_layout = "unpositioned-pending-date-evidence-or-dispute-resolution"
+sources = ["lippe-1474-critical-text"]
+chronology_start = 1474
+chronology_end = 1474
+chronology_kind = "printed-witness-publication"
+chronology_certainty = "critical-edition-identification"
+source_locus = "Lippe1899 title, prefatory identification and edited opening rubric"
 
 [[candidates]]
 id = "roman-1884"
@@ -1117,8 +1272,8 @@ title = "Sacramentarium Gelasianum, Vatican Reg.lat.316"
 date = "eighth-century (catalogue)"
 kind = "manuscript-witness"
 status = "catalogue-lead-viewer-opened"
-sources = ["gelasian-vatican", "gelasian-1894-registered"]
-qualification = "Sacramentary, not plenary missal. Manuscript dating separate from composition/strata; no papal authorship or linear ancestor relationship asserted. Wilson1894 offers an old critical-edition acquisition route; publication and OCR do not supersede the manuscript dating."
+sources = ["gelasian-vatican", "gelasian-1894-registered", "early-westwell2024-ch1"]
+qualification = "Sacramentary, not plenary missal. Manuscript dating separate from composition/strata; no papal authorship or linear ancestor relationship asserted. Wilson1894 offers an old critical-edition acquisition route; publication and OCR do not supersede the manuscript dating. Preserve competing dating claims: existing indexed Vatican Sec VIIIin versus scholarshipc 750/later760s–770s. Do not force single date. Add Paris Bn Flat7193ff41–56 detachedsupplement as same codex context, not automatically another work."
 date_role = "manuscript dating; not composition date"
 version_status = "witness-or-revision-candidate-see-qualification"
 scope_disposition = "in-scope-original-book-or-historical-witness"
@@ -1132,6 +1287,7 @@ acquisition_extent = "Historical-book OCR from half-title through THE END.; intr
 transcription_status = "historical-book-ocr-derivative-uncorrected"
 collation_status = "not-fully-collated"
 inspection_status = "bounded-identity-inspection-reported-by-acquisition-lane;hashes-checked-in-this-lane"
+additional_source_locus = "pp53–54"
 
 [[candidates]]
 id = "gregorian-hadrianum-cambrai164"
@@ -1140,8 +1296,8 @@ title = "Gregorian Hadrianum tradition, Cambrai MS164(159)"
 date = "early-ninth-century witness; precise dating disputed"
 kind = "manuscript-tradition-witness"
 status = "checked-research-catalogue"
-sources = ["gregorian-usuarium", "gregorian-hamburg", "gregorian-1915-registered"]
-qualification = "Do not identify 790-800 master-copy conjecture with codex date; catalogue disagreement 811/812 versus 812/813 versus later paleographic dating. Critical edition 1921 is separate witness apparatus. No direct descent into every Western rite asserted."
+sources = ["gregorian-usuarium", "gregorian-hamburg", "gregorian-1915-registered", "early-westwell2024-ch1"]
+qualification = "Do not identify 790-800 master-copy conjecture with codex date; catalogue disagreement 811/812 versus 812/813 versus later paleographic dating. Critical edition 1921 is separate witness apparatus. No direct descent into every Western rite asserted. Keep Romanexemplar dispatch separate from actualcopy date and later additions; avoid trajectory claiming universal immediate replacement of Gelasians."
 date_role = "manuscript dating; not composition date"
 version_status = "witness-or-revision-candidate-see-qualification"
 scope_disposition = "in-scope-original-book-or-historical-witness"
@@ -1155,6 +1311,7 @@ acquisition_extent = "Existing complete432-page scan plus new full extraction,wi
 transcription_status = "full-pdf-text-extraction-uncorrected-embedded-ocr"
 collation_status = "not-fully-collated"
 inspection_status = "bounded-identity-inspection-reported-by-acquisition-lane;hashes-checked-in-this-lane"
+additional_source_locus = "pp46,65–66"
 
 [[candidates]]
 id = "veronense-cod85"
@@ -1250,8 +1407,8 @@ family = "roman-frankish-sacramentary-context"
 title = "Gellone Sacramentary, BnF Latin12048"
 kind = "manuscript-sacramentary-with-additions"
 status = "checked-catalogue-metadata"
-sources = ["gellone-biblissima"]
-qualification = "Mixed traditions and subsequent additions must be separated before defining textual states; modern1981 edition is not a normative reform."
+sources = ["gellone-biblissima", "early-westwell2024-ch1"]
+qualification = "Mixed traditions and subsequent additions must be separated before defining textual states; modern1981 edition is not a normative reform. Do not assert Gellone archetype → all other Gelasians or Old Gelasian Reg 316→Gellone directdescent."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-revision-candidate-not-yet-collated"
 date = "circa780-800"
@@ -1260,6 +1417,7 @@ chronology_start = 780
 chronology_end = 800
 chronology_kind = "manuscript-copying"
 chronology_certainty = "catalogue-reported-approximate"
+additional_source_locus = "pp60–63"
 
 [[candidates]]
 id = "stowe-ria-dii3"
@@ -1293,8 +1451,8 @@ family = "roman-frankish-sacramentary-context"
 title = "Rheinau and St Gall Gelasian witnesses"
 kind = "manuscript-tradition-cluster"
 status = "checked-catalogue-metadata"
-sources = ["gelasian-wilson-1894", "gelasian-wilson-1894-ocr", "gelasian-1894-registered"]
-qualification = "Wilson1894 preface differentiates manuscript arrangements and readings.1894 dates the editor,not these textual states. Exact shelfmarks/dates remain to verify."
+sources = ["gelasian-wilson-1894", "gelasian-wilson-1894-ocr", "gelasian-1894-registered", "early-wilson1894-comparison"]
+qualification = "Wilson1894 preface differentiates manuscript arrangements and readings.1894 dates the editor,not these textual states. Exact shelfmarks/dates remain to verify. Replace vague cluster as plotted witness with explicit 348/Rh30 nodes; retain cluster as material tradition grouping for qualified incorporation edge."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-revision-candidate-not-yet-collated"
 date_status = "unresolved"
@@ -1364,16 +1522,20 @@ chronology_certainty = "catalogue-reported-approximate"
 [[candidates]]
 id = "haymo-curial-ordinal"
 family = "roman-franciscan-curial"
-title = "Haymo Ordinal and Indutus planeta tradition"
+title = "Franciscan Ordo Missalis associated with Haymo of Faversham"
 kind = "ordinal-reform-lead"
-status = "catalogue-reported-reform-lead"
-sources = ["haymo-victoria"]
-qualification = "Holding description of a choir breviary reports Ordinal chronology; complete missal and reform instrument not inspected. No integer reform coordinate assigned until primary confirmation."
+status = "checked-scholarly-critical-edition-identification"
+sources = ["haymo-victoria", "ocarroll-1979-pericopes"]
+qualification = "Ordo Missalis edited vanDijk, Sources II(1963)105–331 and HBS85(1953)177–252; distinct from Indutus ceremonial edited II3–14. Authorship, local implementation and exact relation between these components require manuscript-level study; no universal uniform recension or direct whole-missal descent asserted. Integer coordinate follows O’Carroll’s1243 presentation report;1244 remains earlier catalogue context, not independently dated here."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-revision-candidate-not-yet-collated"
-date = "1243-1244 (reported); surviving witness post1260"
-date_role = "unresolved or non-coordinate date; see qualification"
-chronology_layout = "unpositioned-pending-date-evidence-or-dispute-resolution"
+date = "1243–1244 (previously reported redaction chronology);1243 presentation in inspected scholarship"
+date_role = "reported-chapter-presentation-not-copying-or-universal-effective-date"
+source_locus = "O’Carroll1979 pp.82–84, citing critical editions"
+chronology_start = 1243
+chronology_end = 1243
+chronology_kind = "reported-chapter-presentation"
+chronology_certainty = "attributed-critical-chronology"
 
 [[candidates]]
 id = "franciscan-curial-bnf8887"
@@ -1744,15 +1906,15 @@ family = "carmelite"
 title = "Sibert de Beka Ordinal, Lambeth193"
 kind = "ordinal-witness"
 status = "checked-catalogue-metadata"
-sources = ["carmelite-ordinal-1312"]
-qualification = "1910 critical edition separate. An Ordinal may prescribe materially different rites but is not the complete missal."
+sources = ["carmelite-ordinal-1312", "boyce-carmelite-2004"]
+qualification = "1910 critical edition separate. An Ordinal may prescribe materially different rites but is not the complete missal. Boyce2004p.18 identifies London general-chapter promulgation1312 and Mass/Office incipits; this date concerns the ordinal promulgation, not a new dating of Lambeth193 copying."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-revision-candidate-not-yet-collated"
 date = "circa1312"
-date_role = "catalogue-approximate-ordinal-date"
+date_role = "ordinal-promulgation-reported-by-scholarship"
 chronology_start = 1312
 chronology_end = 1312
-chronology_kind = "catalogue-approximate-ordinal-date"
+chronology_kind = "ordinal-promulgation-reported-by-scholarship"
 chronology_certainty = "catalogue-reported-approximate"
 
 [[candidates]]
@@ -1793,7 +1955,7 @@ title = "Carthusian printed missal witnesses"
 kind = "printed-witness-cluster"
 status = "checked-catalogue-metadata"
 sources = ["carthusian-usuarium"]
-qualification = "IDs8356/8357 supplement existing1496/1517/1541/1679 acquisition leads. Not two established liturgical versions."
+qualification = "IDs8356/8357 supplement existing1496/1517/1541/1679 acquisition leads. Not two established liturgical versions. The1603 member is separately resolved in carthusian-missale-1603; this cluster remains a census record, not another distinct version."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-revision-candidate-not-yet-collated"
 date = "1603/1627"
@@ -1843,8 +2005,8 @@ family = "dominican"
 title = "Ordinary of the Roman Correctorium"
 kind = "ordinal-prototype-witness"
 status = "checked-catalogue-metadata"
-sources = ["dominican-correctorium-1256"]
-qualification = "1921 critical publication separate. Catalogue1256 date does not replace investigation of prototype codex components or their approval."
+sources = ["dominican-correctorium-1256", "ocarroll-1979-pericopes"]
+qualification = "1921 critical publication separate. Catalogue1256 date does not replace investigation of prototype codex components or their approval. O’Carrollpp.80–82 identifies the1256 chapter revision and fourteen complementary books. The Ordinary is a component of SantaSabinaXIVL1; only the compared Temporal pericopes establish the stated agreement with Add23935."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-revision-candidate-not-yet-collated"
 date = "1256"
@@ -2075,6 +2237,529 @@ related_candidate_ids = ["divine-worship-2015"]
 source_availability = "CTS altar ISBN9781784690205 and study ISBN9781784695644; need actual current title/verso and dated change notice or approval. Study photoreduction is a format relationship, not proof all current text matches2015."
 remaining_work = "Determine whether changes belong to one or multiple source revisions and whether altar/study publications share them. Do not infer a dated substantive version from advertised reissue alone."
 
+[[candidates]]
+id = "burchard-ordo-1496"
+family = "roman-curial"
+title = "Burchard, Ordo servandus: Rome1496 Fritag/Besicken"
+date = "1496"
+kind = "printed-partial-mass-ordo"
+status = "checked-critical-edition-or-original-research"
+sources = ["burchard-badw-repertory"]
+source_locus = "Ausgaben, Rome1496; ISTC/GW links"
+qualification = "An identified first printing, not proof of identity with the1501 short witness; original1496 text still needs comparison."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-state-not-independently-established"
+date_role = "publication-witness-date"
+chronology_start = 1496
+chronology_end = 1496
+chronology_kind = "publication-witness-date"
+chronology_certainty = "reported-by-inspected-critical-edition"
+acquisition_status = "not-acquired-in-this-pass"
+transcription_status = "no-verified-transcription"
+collation_status = "relies-on-cited-scholarly-comparison-not-new-full-collation"
+
+[[candidates]]
+id = "roman-1501-liechtenstein-burchard"
+family = "roman-curial"
+title = "Burchard shorter ceremonial in Roman Missal, Venice1501"
+date = "1501"
+kind = "printed-missal-with-partial-ordo"
+status = "checked-critical-edition-or-original-research"
+sources = ["legg-tracts-1904"]
+source_locus = "pp.xxvi and121–174 apparatus V; BL/BM3365.a.22"
+qualification = "Nicholas deFrankford expense; Peter Liechtenstein and Johann Herzog printers. Separate from existing1501Giunta station. Short recension demonstrably differs from1502."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "substantive-difference-established-for-ceremonial-component"
+date_role = "publication-witness-date"
+chronology_start = 1501
+chronology_end = 1501
+chronology_kind = "publication-witness-date"
+chronology_certainty = "reported-by-inspected-critical-edition"
+acquisition_status = "not-acquired-in-this-pass"
+transcription_status = "no-verified-transcription"
+collation_status = "relies-on-cited-scholarly-comparison-not-new-full-collation"
+
+[[candidates]]
+id = "burchard-ordo-1502"
+family = "roman-curial"
+title = "Burchard, Ordo Missae: Rome1502 Johann Besicken"
+date = "1502"
+kind = "revised-partial-mass-ordo"
+status = "checked-critical-edition-or-original-research"
+sources = ["legg-tracts-1904", "burchard-badw-repertory"]
+source_locus = "pp.xxvi–xxvii,121–174; BL/BM C.52.d.14"
+qualification = "Expanded ceremonial compared with1501 V. Papal preliminary letter concerns a printing privilege; no universal mandatory-use act inferred."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "substantive-revision-established-for-ceremonial-component"
+date_role = "publication-witness-date"
+chronology_start = 1502
+chronology_end = 1502
+chronology_kind = "publication-witness-date"
+chronology_certainty = "reported-by-inspected-critical-edition"
+acquisition_status = "not-acquired-in-this-pass"
+transcription_status = "no-verified-transcription"
+collation_status = "relies-on-cited-scholarly-comparison-not-new-full-collation"
+
+[[candidates]]
+id = "roman-1541-liechtenstein-burchard"
+family = "roman"
+title = "Roman Missal containing Burchard, Venice1541 Liechtenstein"
+date = "1541"
+kind = "printed-reception-witness"
+status = "checked-critical-edition-or-original-research"
+sources = ["legg-tracts-1904"]
+source_locus = "p.xxviii, Roman Missals table"
+qualification = "Repertory identifies reception of the ceremonial. Full missal state and precise copy shelfmark remain uncollated."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-state-not-independently-established"
+date_role = "publication-witness-date"
+chronology_start = 1541
+chronology_end = 1541
+chronology_kind = "publication-witness-date"
+chronology_certainty = "reported-by-inspected-critical-edition"
+acquisition_status = "not-acquired-in-this-pass"
+transcription_status = "no-verified-transcription"
+collation_status = "relies-on-cited-scholarly-comparison-not-new-full-collation"
+
+[[candidates]]
+id = "cosenza-1549-burchard"
+family = "cosenza-local"
+title = "Cosenza Missal, Venice1549 Liechtenstein/deJardano"
+date = "1549"
+kind = "printed-local-reception-witness"
+status = "checked-critical-edition-or-original-research"
+sources = ["legg-tracts-1904"]
+source_locus = "p.xxviii, Local Missals"
+qualification = "Title names Gallicorum and Ecclesie Cosentitie. This is not evidence of direct ancestry from ancient Gallican sacramentaries."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-state-not-independently-established"
+date_role = "publication-witness-date"
+chronology_start = 1549
+chronology_end = 1549
+chronology_kind = "publication-witness-date"
+chronology_certainty = "reported-by-inspected-critical-edition"
+acquisition_status = "not-acquired-in-this-pass"
+transcription_status = "no-verified-transcription"
+collation_status = "relies-on-cited-scholarly-comparison-not-new-full-collation"
+
+[[candidates]]
+id = "roman-1571-varisco-ritus"
+family = "roman"
+title = "Pian Roman Missal, Venice1571 Joannes Variscus"
+date = "1571"
+kind = "printed-comparison-witness"
+status = "checked-critical-edition-or-original-research"
+sources = ["legg-tracts-1904"]
+source_locus = "pp.249–250, notes to Burchard"
+qualification = "Actual Pian witness used by Legg. Do not silently substitute the original1570 Roman printing or claim complete identity of the two impressions."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-state-not-independently-established"
+date_role = "publication-witness-date"
+chronology_start = 1571
+chronology_end = 1571
+chronology_kind = "publication-witness-date"
+chronology_certainty = "reported-by-inspected-critical-edition"
+acquisition_status = "not-acquired-in-this-pass"
+transcription_status = "no-verified-transcription"
+collation_status = "relies-on-cited-scholarly-comparison-not-new-full-collation"
+
+[[candidates]]
+id = "langres-c1492-preparatio"
+family = "langres-local"
+title = "Langres Missal, Paris JeanDuPré, circa1492"
+date = "circa1492"
+kind = "printed-local-witness"
+status = "checked-critical-edition-or-original-research"
+sources = ["legg-tracts-1904"]
+source_locus = "p.xxiv n3; pp.113–114 and248; BL/BM IB.39833, final leaf"
+qualification = "Witness date is approximate. Shared preparation text does not establish the direction of borrowing."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-state-not-independently-established"
+date_role = "publication-witness-date"
+chronology_start = 1492
+chronology_end = 1492
+chronology_kind = "publication-witness-date"
+chronology_certainty = "critical-editor-approximate-year"
+acquisition_status = "not-acquired-in-this-pass"
+transcription_status = "no-verified-transcription"
+collation_status = "relies-on-cited-scholarly-comparison-not-new-full-collation"
+
+[[candidates]]
+id = "roman-1493-preparatio"
+family = "roman"
+title = "Roman Missal, Venice1493 deFrankford/Herzog: Preparatio"
+date = "1493"
+kind = "printed-missal-component-witness"
+status = "checked-critical-edition-or-original-research"
+sources = ["legg-tracts-1904"]
+source_locus = "pp.xxv,113–117; edited colophon p.117"
+qualification = "Specifically the deFrankford/Herzog July printing; another1493Scotus printing exists. Component identified, not a universal reform."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-state-not-independently-established"
+date_role = "publication-witness-date"
+chronology_start = 1493
+chronology_end = 1493
+chronology_kind = "publication-witness-date"
+chronology_certainty = "reported-by-inspected-critical-edition"
+acquisition_status = "not-acquired-in-this-pass"
+transcription_status = "no-verified-transcription"
+collation_status = "relies-on-cited-scholarly-comparison-not-new-full-collation"
+
+[[candidates]]
+id = "uzes-1495-ordo"
+family = "uzes-local"
+title = "Uzès Missal, Lyon1495 Neumeister/Topié: Mass Ordo"
+date = "1495"
+kind = "printed-local-mass-ordo"
+status = "checked-critical-edition-or-original-research"
+sources = ["legg-tracts-1904"]
+source_locus = "pp.xxviii–xxix,189–194; BL/BM IB.41877"
+qualification = "Claims Roman usage; its relation to the longer1507 text is documented, but direct transmission and actual papal-court practice are unresolved."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-state-not-independently-established"
+date_role = "publication-witness-date"
+chronology_start = 1495
+chronology_end = 1495
+chronology_kind = "publication-witness-date"
+chronology_certainty = "reported-by-inspected-critical-edition"
+acquisition_status = "not-acquired-in-this-pass"
+transcription_status = "no-verified-transcription"
+collation_status = "relies-on-cited-scholarly-comparison-not-new-full-collation"
+
+[[candidates]]
+id = "roman-lyon-1507-indutus"
+family = "roman"
+title = "Roman Missal, Lyon1507 François Fradin: Indutus planeta"
+date = "1507"
+kind = "printed-missal-ceremonial-component"
+status = "checked-critical-edition-or-original-research"
+sources = ["legg-tracts-1904"]
+source_locus = "pp.xxix,179–188"
+qualification = "Later redaction sharing an incipit with medieval Indutus; do not equate automatically with the1243 text or infer direct descent from Uzès1495."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-state-not-independently-established"
+date_role = "publication-witness-date"
+chronology_start = 1507
+chronology_end = 1507
+chronology_kind = "publication-witness-date"
+chronology_certainty = "reported-by-inspected-critical-edition"
+acquisition_status = "not-acquired-in-this-pass"
+transcription_status = "no-verified-transcription"
+collation_status = "relies-on-cited-scholarly-comparison-not-new-full-collation"
+
+[[candidates]]
+id = "ciconiolanus-directorium-1539"
+family = "roman-franciscan-curial"
+title = "Ludovico Ciconiolanus, Directorium divinorum officiorum, Rome1539"
+date = "1539"
+kind = "directory-with-mass-rubrics"
+status = "checked-critical-edition-or-original-research"
+sources = ["legg-tracts-1904"]
+source_locus = "pp.xxix–xxx,195–215; reproduced title p.196"
+qualification = "Mass portions are within a broader directory; title reports PaulIII approval, without independent approval-instrument inspection."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-state-not-independently-established"
+date_role = "publication-witness-date"
+chronology_start = 1539
+chronology_end = 1539
+chronology_kind = "publication-witness-date"
+chronology_certainty = "reported-by-inspected-critical-edition"
+acquisition_status = "not-acquired-in-this-pass"
+transcription_status = "no-verified-transcription"
+collation_status = "relies-on-cited-scholarly-comparison-not-new-full-collation"
+
+[[candidates]]
+id = "roman-1563-giunta-opus-aureum"
+family = "roman"
+title = "Roman Missal, Venice September1563 heirs of Giunta: Opus aureum"
+date = "1563"
+kind = "printed-reception-witness"
+status = "checked-critical-edition-or-original-research"
+sources = ["legg-tracts-1904"]
+source_locus = "p.xxx; signed double-cross gathering following calendar, leaves i–ii"
+qualification = "Legg collates the incorporated Ciconiolanus Mass extracts;1556Spinelli reception is separately reported but was only briefly inspected by him."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-state-not-independently-established"
+date_role = "publication-witness-date"
+chronology_start = 1563
+chronology_end = 1563
+chronology_kind = "publication-witness-date"
+chronology_certainty = "reported-by-inspected-critical-edition"
+acquisition_status = "not-acquired-in-this-pass"
+transcription_status = "no-verified-transcription"
+collation_status = "relies-on-cited-scholarly-comparison-not-new-full-collation"
+
+[[candidates]]
+id = "dominican-master-exemplar-add23935"
+family = "dominican"
+title = "Dominican master exemplar, British Library AddMS23935"
+date = "1255–1263"
+kind = "composite-manuscript-mass-office-witness"
+status = "checked-critical-edition-or-original-research"
+sources = ["ocarroll-1979-pericopes"]
+source_locus = "pp.80–82; Mass Epistles ff.526ff and Gospels ff.545ff"
+qualification = "Portable exemplar includes Mass and Office books and later additions. Shared pericopes do not make its entire contents identical to SantaSabinaXIVL1."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-state-not-independently-established"
+date_role = "manuscript-copying-interval"
+chronology_start = 1255
+chronology_end = 1263
+chronology_kind = "manuscript-copying-interval"
+chronology_certainty = "scholarly-manuscript-dating"
+acquisition_status = "not-acquired-in-this-pass"
+transcription_status = "no-verified-transcription"
+collation_status = "relies-on-cited-scholarly-comparison-not-new-full-collation"
+
+[[candidates]]
+id = "carthusian-ordinarium-1582"
+family = "carthusian"
+title = "Ordinarium Cartusiense, Paris1582 HenriThierry"
+date = "1582"
+kind = "printed-ordinal-mass-and-office"
+status = "checked-critical-edition-or-original-research"
+sources = ["palecki-carthusian-2015"]
+source_locus = "p.112 n13; Mass order ff.71v–86v cited throughout"
+qualification = "Complementary ordinal; not a complete missal and not interchangeable with1603 Mass-book contents."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-state-not-independently-established"
+date_role = "publication-witness-date"
+chronology_start = 1582
+chronology_end = 1582
+chronology_kind = "publication-witness-date"
+chronology_certainty = "reported-by-inspected-critical-edition"
+acquisition_status = "not-acquired-in-this-pass"
+transcription_status = "no-verified-transcription"
+collation_status = "relies-on-cited-scholarly-comparison-not-new-full-collation"
+
+[[candidates]]
+id = "carthusian-missale-1603"
+family = "carthusian"
+title = "Missale Cartusiani Ordinis, Paris1603 JametMettayer"
+date = "1603"
+kind = "printed-missal-witness"
+status = "checked-critical-edition-or-original-research"
+sources = ["palecki-carthusian-2015"]
+source_locus = "p.115 n32; Ordinary ff.92v–95v; Canon comparison pp.120–122"
+qualification = "Title specifies general chapter1602 under BrunoDaffringues.1603 is publication date. Comparison with Roman1570 does not prove direct borrowing or measure change from the preceding Carthusian book."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-state-not-independently-established"
+date_role = "publication-witness-date"
+chronology_start = 1603
+chronology_end = 1603
+chronology_kind = "publication-witness-date"
+chronology_certainty = "reported-by-inspected-critical-edition"
+acquisition_status = "not-acquired-in-this-pass"
+transcription_status = "no-verified-transcription"
+collation_status = "relies-on-cited-scholarly-comparison-not-new-full-collation"
+
+[[candidates]]
+id = "carmelite-krakow-gradual-1644"
+family = "carmelite"
+title = "Krakow Carmelite Gradual, Rkp.perg.1"
+date = "1644"
+kind = "mass-chant-manuscript-companion"
+status = "checked-critical-edition-or-original-research"
+sources = ["boyce-carmelite-2004"]
+source_locus = "p.20 Table1; p.28"
+qualification = "279folios, Temporal and votive Masses; copied by Stanisław deStolec. A companion witness, not evidence of a1644 universal missal reform."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-state-not-independently-established"
+date_role = "manuscript-completion-year"
+chronology_start = 1644
+chronology_end = 1644
+chronology_kind = "manuscript-completion-year"
+chronology_certainty = "scholarly-manuscript-description"
+acquisition_status = "not-acquired-in-this-pass"
+transcription_status = "no-verified-transcription"
+collation_status = "relies-on-cited-scholarly-comparison-not-new-full-collation"
+
+[[candidates]]
+id = "gelasian-stgall348"
+title = "Remedius Sacramentary, St Gall Cod.Sang.348"
+family = "roman-frankish-sacramentary-context"
+kind = "manuscript-witness"
+date = "around 800; Remedius addition belongs to bishop c 800–820"
+date_role = "manuscript-copying"
+sources = ["early-wilson1894-comparison", "early-westwell2024-ch1"]
+qualification = "Exact shelfmark verified. Separate copying from contemporary episcopal addition; do not convert bishop dates into copying bounds. Supersedes one member of generic later-gelasian-rheinau-stgall cluster."
+status = "researched-witness-proposal"
+language_priority = ["Latin"]
+version_status = "historical-witness-not-modern-edition"
+chronology_layout = "unpositioned-pending-date-evidence"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+acquisition_status = "no-new-manuscript-payload-acquired"
+transcription_status = "no-new-verified-transcription"
+collation_status = "relies-on-cited-scholarly-study"
+
+[[candidates]]
+id = "gelasian-rheinau30"
+title = "Gelasian Sacramentary, Zürich Zentralbibliothek Rh30"
+family = "roman-frankish-sacramentary-context"
+kind = "manuscript-witness"
+date = "early medieval; exact bounds unresolved here"
+date_role = "manuscript-copying"
+sources = ["early-wilson1894-comparison", "early-rheinau30-usuarium"]
+qualification = "Exact shelfmark resolved; origin/date need current holding catalogue. Do not turn Fintan provenance legend into copying date. Supersedes second member of generic cluster."
+status = "researched-witness-proposal"
+language_priority = ["Latin"]
+version_status = "historical-witness-not-modern-edition"
+chronology_layout = "unpositioned-pending-date-evidence"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+acquisition_status = "no-new-manuscript-payload-acquired"
+transcription_status = "no-new-verified-transcription"
+collation_status = "relies-on-cited-scholarly-study"
+
+[[candidates]]
+id = "gelasian-stgall350"
+title = "Gelasian Sacramentary fragment, St Gall Cod.Sang.350"
+family = "roman-frankish-sacramentary-context"
+kind = "manuscript-witness"
+date = "near end of the eighth century; catalogue envelope eighth–ninth centuries"
+date_role = "manuscript-copying"
+sources = ["early-stgall350-biblissima"]
+qualification = "Broad numeric envelope follows catalogue fields; prose narrower estimate preserved. Chur place uncertain; no direct-copy relationship to 348."
+status = "researched-witness-proposal"
+language_priority = ["Latin"]
+version_status = "historical-witness-not-modern-edition"
+chronology_start = 701
+chronology_end = 900
+chronology_kind = "manuscript-copying"
+chronology_certainty = "source-attributed-approximate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+acquisition_status = "no-new-manuscript-payload-acquired"
+transcription_status = "no-new-verified-transcription"
+collation_status = "relies-on-cited-scholarly-study"
+
+[[candidates]]
+id = "gregorian-reg-lat337"
+title = "Supplemented Gregorian, Vatican Reg.lat.337"
+family = "roman-frankish-sacramentary-context"
+kind = "manuscript-witness"
+date = "c 835–838"
+date_role = "manuscript-copying"
+sources = ["early-westwell2024-ch1", "early-wilson1915-hucusque"]
+qualification = "Modern research dating; Lyon prototype supplement begins capitula atf140r and lacks Hucusque preface. Wilson older attribution/dates differ. Exact modern holding date remains to check."
+status = "researched-witness-proposal"
+language_priority = ["Latin"]
+version_status = "historical-witness-not-modern-edition"
+chronology_start = 835
+chronology_end = 838
+chronology_kind = "manuscript-copying"
+chronology_certainty = "source-attributed-approximate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+acquisition_status = "no-new-manuscript-payload-acquired"
+transcription_status = "no-new-verified-transcription"
+collation_status = "relies-on-cited-scholarly-study"
+
+[[candidates]]
+id = "gregorian-ottob-lat313"
+title = "Supplemented Gregorian, Vatican Ottob.lat.313"
+family = "roman-frankish-sacramentary-context"
+kind = "manuscript-witness"
+date = "ninth century"
+date_role = "manuscript-copying"
+sources = ["early-wilson1915-hucusque", "early-westwell2024-ch1"]
+qualification = "Hucusque preface ff 103–104 edited Wilsonp 145. Full-supplement witness; no uncontested single-author attribution. Modern research places Paris origin; precise copying interval requires holding catalogue."
+status = "researched-witness-proposal"
+language_priority = ["Latin"]
+version_status = "historical-witness-not-modern-edition"
+chronology_start = 801
+chronology_end = 900
+chronology_kind = "manuscript-copying"
+chronology_certainty = "source-attributed-approximate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+acquisition_status = "no-new-manuscript-payload-acquired"
+transcription_status = "no-new-verified-transcription"
+collation_status = "relies-on-cited-scholarly-study"
+
+[[candidates]]
+id = "gregorian-chelles-morgan-g57"
+title = "Chelles Sacramentary, Morgan MSG.57"
+family = "roman-frankish-sacramentary-context"
+kind = "manuscript-witness"
+date = "ca 860"
+date_role = "manuscript-copying"
+sources = ["early-morgan-g57", "early-westwell2024-ch3"]
+qualification = "Approximate catalogue coordinate, not exact year. Manuscript combines retained Hucusque apparatus with inserted seasonal material. Saint-Amand production probable; later Chelles provenance does not settle initial intended recipient."
+status = "researched-witness-proposal"
+language_priority = ["Latin"]
+version_status = "historical-witness-not-modern-edition"
+chronology_start = 860
+chronology_end = 860
+chronology_kind = "manuscript-copying"
+chronology_certainty = "source-attributed-approximate"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+acquisition_status = "no-new-manuscript-payload-acquired"
+transcription_status = "no-new-verified-transcription"
+collation_status = "relies-on-cited-scholarly-study"
+
+[[candidates]]
+id = "kiev-folia-nbu301-328"
+title = "Kyiv/Kiev Glagolitic Folia, NBUVf301no328п"
+family = "western-slavonic-and-sinai-contact"
+kind = "fragmentary-translated-sacramentary-witness"
+date = "library 801–995; Miklas: probably second quarter of the tenth century"
+date_role = "manuscript-copying"
+sources = ["early-kiev-nbuv", "early-miklas-sinai"]
+qualification = "Separate originalmain text from Demetrius additions (last quarter of the eleventh century). Mixed West/South Old Church Slavonic; source closest to Paduense but extant D47 is not established exemplar. Scholars disagree on scribal origin. Included as a historical contact witness required to explain Western/Eastern sharing; no independent modern vernacular translation series added."
+status = "researched-witness-proposal"
+language_priority = ["Old Church Slavonic"]
+version_status = "historical-witness-not-modern-edition"
+chronology_start = 801
+chronology_end = 995
+chronology_kind = "manuscript-copying"
+chronology_certainty = "source-attributed-approximate"
+alternative_date_claims = ["926–950: Miklas probable main copying date", "1076–1100: Demetrius secondary additions; not main copying"]
+scope_disposition = "in-scope-historical-contact-witness"
+acquisition_status = "no-new-manuscript-payload-acquired"
+transcription_status = "no-new-verified-transcription"
+collation_status = "relies-on-cited-scholarly-study"
+
+[[candidates]]
+id = "cummiskey-1861-latin-ordinary"
+family = "roman-latin-lay-book-witness"
+title = "Cummiskey1861 lay missal: native Latin Ordinary and Canon columns"
+date = "1861"
+kind = "lay-missal-native-latin-comparison-witness"
+status = "registered-preexisting-latin-transcriptions"
+sources = ["cummiskey1861-canonical-latin"]
+qualification = "Identified Philadelphia first revised lay edition; only its own native Latin Ordinary/Canon/preface columns are comparison evidence. Not an altar edition, a new universal Roman recension, or an independent English translation-history project."
+date_role = "identified-book-publication"
+chronology_start = 1861
+chronology_end = 1861
+chronology_kind = "identified-book-publication"
+chronology_certainty = "registered-title-identification"
+scope_disposition = "in-scope-native-latin-comparison-witness-only"
+version_status = "comparison-witness-not-new-normative-version"
+source_library_work_id = "work.eugene-cummiskey.roman-missal-english-laity"
+source_library_edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+source_library_artifact_ids = ["artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la", "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la", "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la", "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la", "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la", "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la"]
+source_library_evidence_relation = "Six preexisting page-image transcriptions of the book’s own Latin columns; exact remote scan is separately unresolved."
+acquisition_status = "preexisting-retained-latin-artifacts-hash-verified"
+transcription_status = "existing-project-checked-latin-transcriptions"
+collation_status = "no-new-full-image-collation-in-this-lane"
+
+[[candidates]]
+id = "roman-1570-rome-faletti-varisco"
+family = "roman"
+title = "Roman Missal, Rome1570: heirs of BartolomeoFaletti, JoannesVariscus and associates"
+date = "1570"
+kind = "identified-printed-missal-comparison-witness"
+status = "checked-primary-book-citation-in-scholarly-comparison"
+sources = ["palecki-carthusian-2015"]
+source_locus = "Pałęcki2015p.114 n22; Canonpp.283–285 cited pp.120–122"
+qualification = "Exact Rome1570 imprint cited by the comparative study. Distinct from Quo primum legislation and the separately identified Venice1571Varisco witness. Original copy/shelfmark and scan not independently acquired here."
+date_role = "printed-witness-publication"
+chronology_start = 1570
+chronology_end = 1570
+chronology_kind = "printed-witness-publication"
+chronology_certainty = "scholarly-primary-book-identification"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "comparison-witness-not-separately-established-new-recension"
+acquisition_status = "not-acquired-in-this-pass"
+transcription_status = "no-new-verified-transcription"
+collation_status = "cited-scholar-comparison-only"
+
 [[existing_history_review_flags]]
 issue = "Existing text calls Migne a reprint of Lesley while making it a printed station. New catalogue should classify it as witness/critical republication unless material liturgical revision is shown; preserve underlying existing record rather than silently changing it."
 record_or_topic = "mozarabicum-migne-1862"
@@ -2099,9 +2784,9 @@ inventory = "src/sources/inventories/latin-missal-acts-v1.toml"
 id = "roman-ancient"
 title = "Ancient Roman, Gallican and Roman-Frankish sacramentary traditions"
 status = "selected-witnesses-documented"
-sources = ["verona-beweb", "gelasian-wilson-1894-ocr", "gellone-biblissima", "paduense-usuarium", "tridentinum-usuarium"]
-candidate_ids = ["veronense-cod85", "old-gelasian-reg-lat-316", "later-gelasian-rheinau-stgall", "gellone-bnf12048", "gregorian-hadrianum-cambrai164", "gregorian-paduense-d47", "gregorian-tridentinum-1590", "gregorian-wilson-1915-critical-edition", "gelasian-wilson-1894-critical-edition"]
-remaining_work = "Extend manuscript census and distinguish textual layers, supplements and exemplar hypotheses. No universal Western trunk asserted."
+sources = ["verona-beweb", "gelasian-wilson-1894-ocr", "gellone-biblissima", "paduense-usuarium", "tridentinum-usuarium", "early-westwell2024-ch1", "early-westwell2024-ch3"]
+candidate_ids = ["veronense-cod85", "old-gelasian-reg-lat-316", "later-gelasian-rheinau-stgall", "gellone-bnf12048", "gregorian-hadrianum-cambrai164", "gregorian-paduense-d47", "gregorian-tridentinum-1590", "gregorian-wilson-1915-critical-edition", "gelasian-wilson-1894-critical-edition", "gelasian-stgall348", "gelasian-rheinau30", "gelasian-stgall350", "gregorian-reg-lat337", "gregorian-ottob-lat313", "gregorian-chelles-morgan-g57"]
+remaining_work = "Selected supplemented Gregorian and later Gelasian witnesses now identified; Gellone-type material in Chelles and Hucusque reordering documented. Supplement authorship/stages remain disputed; no single-author or universal replacement model. Broader manuscript census, early Roman libelli and exact exemplars remain open."
 scope = "western-original-source-trajectory"
 
 [[coverage]]
@@ -2116,10 +2801,10 @@ scope = "western-original-source-trajectory"
 [[coverage]]
 id = "roman-curial"
 title = "Roman-curial and Franciscan medieval stages"
-status = "selected-witnesses-and-reform-leads"
-sources = ["haymo-victoria", "franciscan-usuarium"]
-candidate_ids = ["haymo-curial-ordinal", "franciscan-curial-bnf8887", "franciscan-1482-1483", "roman-1474"]
-remaining_work = "Identify original Ordines, Haymo witnesses, Burchard and full missal revisions; no direct ancestor edges established."
+status = "selected-witnesses-and-scoped-textual-relationships-documented"
+sources = ["haymo-victoria", "franciscan-usuarium", "legg-tracts-1904", "burchard-badw-repertory", "ocarroll-1979-pericopes", "lippe-1474-critical-text"]
+candidate_ids = ["haymo-curial-ordinal", "franciscan-curial-bnf8887", "franciscan-1482-1483", "roman-1474", "burchard-ordo-1496", "roman-1501-liechtenstein-burchard", "burchard-ordo-1502", "roman-1541-liechtenstein-burchard", "roman-1571-varisco-ritus", "roman-1493-preparatio", "roman-lyon-1507-indutus", "ciconiolanus-directorium-1539", "roman-1563-giunta-opus-aureum", "roman-1570-rome-faletti-varisco"]
+remaining_work = "Scoped ceremonial reception and shared readings now documented. Remaining: original1496/1498 collation, medieval-curial missal manuscript succession, direct1474-to1570 full-book comparison and geographical implementation; no uninterrupted stemma established."
 scope = "western-original-source-trajectory"
 existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
 existing_record_ids = ["missale-secundum-consuetudinem-romanae-curiae", "missale-romanum-mediolani-1474-lippe"]
@@ -2282,10 +2967,10 @@ scope = "western-original-source-trajectory"
 [[coverage]]
 id = "carmelite"
 title = "Carmelite trajectory"
-status = "selected-witness-census-documented"
-sources = ["carmelite-usuarium"]
-candidate_ids = ["carmelite-sibert-ordinal", "carmelite-early-missals"]
-remaining_work = "Deduplicate catalogue records,extend witness census,acquire cleared complete witnesses and compare prayers,rubrics,calendar and order before promoting distinct versions."
+status = "selected-witnesses-and-scoped-textual-relationships-documented"
+sources = ["carmelite-usuarium", "boyce-carmelite-2004"]
+candidate_ids = ["carmelite-sibert-ordinal", "carmelite-early-missals", "carmelite-krakow-gradual-1644"]
+remaining_work = "1312 promulgation and HolySepulchre reception documented by scholarship. Exact Jerusalem source witnesses, full Mass-text comparison, later Carmelite missal revisions and adaptation boundaries remain open; Office comparisons do not establish Mass changes."
 scope = "western-original-source-trajectory"
 existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
 existing_record_ids = ["missale-carmelitarum"]
@@ -2293,10 +2978,10 @@ existing_record_ids = ["missale-carmelitarum"]
 [[coverage]]
 id = "carthusian"
 title = "Carthusian trajectory"
-status = "selected-witness-census-documented"
-sources = ["carthusian-usuarium"]
-candidate_ids = ["carthusian-medieval", "carthusian-1603-1627", "carthusian-1981"]
-remaining_work = "Deduplicate catalogue records,extend witness census,acquire cleared complete witnesses and compare prayers,rubrics,calendar and order before promoting distinct versions."
+status = "selected-witnesses-and-scoped-textual-relationships-documented"
+sources = ["carthusian-usuarium", "palecki-carthusian-2015"]
+candidate_ids = ["carthusian-medieval", "carthusian-1603-1627", "carthusian-1981", "carthusian-ordinarium-1582", "carthusian-missale-1603"]
+remaining_work = "1582 ordinal and1603 missal identified separately; Roman comparison scoped to specified passages. Earlier/later Carthusian revision boundaries, alleged1620 printing and1981 original source need full witnesses."
 scope = "western-original-source-trajectory"
 existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
 existing_record_ids = ["missale-cartusiense"]
@@ -2313,10 +2998,10 @@ scope = "western-original-source-trajectory"
 [[coverage]]
 id = "dominican"
 title = "Dominican trajectory"
-status = "selected-witness-census-documented"
-sources = ["dominican-usuarium"]
-candidate_ids = ["dominican-correctorium-1256", "dominican-early-prints", "dominican-1933-1939-1965"]
-remaining_work = "Deduplicate catalogue records,extend witness census,acquire cleared complete witnesses and compare prayers,rubrics,calendar and order before promoting distinct versions."
+status = "selected-witnesses-and-scoped-textual-relationships-documented"
+sources = ["dominican-usuarium", "ocarroll-1979-pericopes"]
+candidate_ids = ["dominican-correctorium-1256", "dominican-early-prints", "dominican-1933-1939-1965", "dominican-master-exemplar-add23935"]
+remaining_work = "Documented1256 reform context and shared Temporal pericopes. Still need component-level prototype revisions,1267 instrument, pre-Humbert witnesses and substantive boundaries of printed series."
 scope = "western-original-source-trajectory"
 existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
 existing_record_ids = ["missale-ordinis-praedicatorum"]
@@ -2561,12 +3246,48 @@ scope = "western-original-source-trajectory"
 id = "slavonic-roman"
 title = "Slavonic/Glagolitic Roman books"
 status = "existing-inventory-and-unresearched-context"
-sources = []
-candidate_ids = []
-remaining_work = "Existing1893 witness is referenced by acquisition inventory. Determine older source status and version differences independently from translation permission; no new lineage asserted."
+sources = ["early-miklas-sinai", "early-kiev-nbuv"]
+candidate_ids = ["kiev-folia-nbu301-328"]
+remaining_work = "Historical Kyiv/Paduense/Sinai contact now documented at attributed textual-parallel level. Independent modern translation history remains deferred; exact Latin/Slavonic prayer collation and all copying intermediaries remain unresolved."
 scope = "western-original-source-trajectory"
 existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
 existing_record_ids = ["missale-romanum-slavonico-idiomate"]
+
+[[coverage]]
+id = "langres"
+title = "Langres local Mass books"
+status = "specified-textual-reception-or-sharing-documented"
+sources = ["legg-tracts-1904"]
+candidate_ids = ["langres-c1492-preparatio"]
+remaining_work = "Acquire exact local missal and establish earlier/later substantive states; shared component alone does not establish whole-rite descent."
+scope = "western-original-source-trajectory"
+
+[[coverage]]
+id = "uzes"
+title = "Uzès local Mass books"
+status = "specified-textual-reception-or-sharing-documented"
+sources = ["legg-tracts-1904"]
+candidate_ids = ["uzes-1495-ordo"]
+remaining_work = "Acquire exact local missal and establish earlier/later substantive states; shared component alone does not establish whole-rite descent."
+scope = "western-original-source-trajectory"
+
+[[coverage]]
+id = "cosenza"
+title = "Cosenza local Mass books"
+status = "specified-textual-reception-or-sharing-documented"
+sources = ["legg-tracts-1904"]
+candidate_ids = ["cosenza-1549-burchard"]
+remaining_work = "Acquire exact local missal and establish earlier/later substantive states; shared component alone does not establish whole-rite descent."
+scope = "western-original-source-trajectory"
+
+[[coverage]]
+id = "roman-lay-latin-comparison"
+title = "Roman Latin in identified lay-book witnesses"
+status = "bounded-comparison-witness-documented"
+sources = ["cummiskey1861-canonical-latin"]
+candidate_ids = ["cummiskey-1861-latin-ordinary"]
+remaining_work = "Only retained native Latin columns included. Independent translation history is deferred; do not infer normative status from episcopal approbation of a lay book."
+scope = "native-latin-comparison-context"
 
 [[acquisition_routes]]
 id = "wilson1894-pdf"
@@ -2839,3 +3560,111 @@ collation_status = "not-fully-collated"
 page_count = 432
 source_url = "https://archive.org/download/gregoriansacrame00cath/gregoriansacrame00cath.pdf"
 inspection_limit = "Whole host scan retained earlier; bounded image inspections documented in manifest. This update rechecks payload hash and links complete text extraction; no new page-by-page collation."
+
+[[source_library_artifacts]]
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+work_id = "work.eugene-cummiskey.roman-missal-english-laity"
+manifest_path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-praeparatio-la/artifact.toml"
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-praeparatio-la/ordinarium-praeparatio-la.tsv"
+sha256 = "3ecd28af160bf65d272f1faf041920b90ab7c5a9d614c985b9574c0f5f6c1d9f"
+byte_size = 8600
+artifact_type = "normalized-text"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+registration_scope = "preexisting-latin-transcriptions-new-inventory-link"
+acquisition_status = "preexisting-retained-payload-hash-verified"
+transcription_status = "existing-project-checked-transcription-not-recollated-here"
+collation_status = "no-new-full-image-collation-in-this-lane"
+inspection_limit = "Read canonical manifest and checked payload hash/length. Its recorded page-image transcription provenance remains controlling; no source-image reacquisition."
+
+[[source_library_artifacts]]
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+work_id = "work.eugene-cummiskey.roman-missal-english-laity"
+manifest_path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-oblatio-la/artifact.toml"
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-oblatio-la/ordinarium-oblatio-la.tsv"
+sha256 = "1625f8f09a81fa70be3373021ba48eae603c271b196134c4b636358b79c26d4e"
+byte_size = 9246
+artifact_type = "normalized-text"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+registration_scope = "preexisting-latin-transcriptions-new-inventory-link"
+acquisition_status = "preexisting-retained-payload-hash-verified"
+transcription_status = "existing-project-checked-transcription-not-recollated-here"
+collation_status = "no-new-full-image-collation-in-this-lane"
+inspection_limit = "Read canonical manifest and checked payload hash/length. Its recorded page-image transcription provenance remains controlling; no source-image reacquisition."
+
+[[source_library_artifacts]]
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+work_id = "work.eugene-cummiskey.roman-missal-english-laity"
+manifest_path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/praefationes-la/artifact.toml"
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/praefationes-la/praefationes-la.tsv"
+sha256 = "1ae62a9b1e4f96d6da17c46564a8cff2c3b0593525cd1fd87508c197255dbe5d"
+byte_size = 6983
+artifact_type = "normalized-text"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+registration_scope = "preexisting-latin-transcriptions-new-inventory-link"
+acquisition_status = "preexisting-retained-payload-hash-verified"
+transcription_status = "existing-project-checked-transcription-not-recollated-here"
+collation_status = "no-new-full-image-collation-in-this-lane"
+inspection_limit = "Read canonical manifest and checked payload hash/length. Its recorded page-image transcription provenance remains controlling; no source-image reacquisition."
+
+[[source_library_artifacts]]
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+work_id = "work.eugene-cummiskey.roman-missal-english-laity"
+manifest_path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/canon-missae-la/artifact.toml"
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/canon-missae-la/canon-missae-la.tsv"
+sha256 = "dfda5e399047a3136908a0b90b6f98cfe25366f175a648240478e6f80dfe0ba7"
+byte_size = 9821
+artifact_type = "normalized-text"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+registration_scope = "preexisting-latin-transcriptions-new-inventory-link"
+acquisition_status = "preexisting-retained-payload-hash-verified"
+transcription_status = "existing-project-checked-transcription-not-recollated-here"
+collation_status = "no-new-full-image-collation-in-this-lane"
+inspection_limit = "Read canonical manifest and checked payload hash/length. Its recorded page-image transcription provenance remains controlling; no source-image reacquisition."
+
+[[source_library_artifacts]]
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+work_id = "work.eugene-cummiskey.roman-missal-english-laity"
+manifest_path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-la/artifact.toml"
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-la/ordinarium-communio-la.tsv"
+sha256 = "8a58f98ad38a0733f8b6b7645ef0f7ccc2a95995d28478d87aa351a7d87fe67d"
+byte_size = 5423
+artifact_type = "normalized-text"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+registration_scope = "preexisting-latin-transcriptions-new-inventory-link"
+acquisition_status = "preexisting-retained-payload-hash-verified"
+transcription_status = "existing-project-checked-transcription-not-recollated-here"
+collation_status = "no-new-full-image-collation-in-this-lane"
+inspection_limit = "Read canonical manifest and checked payload hash/length. Its recorded page-image transcription provenance remains controlling; no source-image reacquisition."
+
+[[source_library_artifacts]]
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+work_id = "work.eugene-cummiskey.roman-missal-english-laity"
+manifest_path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-conclusio-la/artifact.toml"
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-conclusio-la/ordinarium-conclusio-la.tsv"
+sha256 = "4bbcc69f2285f8f43faef34bce8613979b607feee1437a433d28d2404df863e3"
+byte_size = 4377
+artifact_type = "normalized-text"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+registration_scope = "preexisting-latin-transcriptions-new-inventory-link"
+acquisition_status = "preexisting-retained-payload-hash-verified"
+transcription_status = "existing-project-checked-transcription-not-recollated-here"
+collation_status = "no-new-full-image-collation-in-this-lane"
+inspection_limit = "Read canonical manifest and checked payload hash/length. Its recorded page-image transcription provenance remains controlling; no source-image reacquisition."

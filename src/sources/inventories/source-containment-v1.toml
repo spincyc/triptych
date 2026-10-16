@@ -3561,3 +3561,31 @@ title = "Three Rosaries of Our Lady"
 locator = "Printed pp. 157–222"
 extent_unresolved = "Bibliographic authorship and relation to an independent work unestablished."
 basis = "Explicit contents and section title in the retained OCR; no separate author identity is inferred from the volume title."
+
+[[containers]]
+id = "work.frank-edward-brightman.liturgies-eastern-and-western"
+manifest_sha256 = "e86166b7c37d6e10ca4a64053444cc3924722730bbd945c3b607d27bdf0aba94"
+status = "partial"
+basis = "The work manifest identifies a liturgical source collection. The registered 1896 volume I edition, its retained 714-page scan, and inspected source-note passages identify the three Greek liturgy sections below. The source notes are printed p. 2/PDF 108 and p. 308/PDF 414; six bounded priestly prayer selections were independently checked against the original pages on 2026-10-16."
+unresolved = "The remaining liturgies, preliminary material, appendices and other constituents of volume I have not been enumerated in this containment audit. The three section ranges are the editor's stated ranges; their complete text has not been collated. Checked textual coverage is limited to two prayer units in each selected liturgy, not three entire anaphoras or whole liturgies. No other volume, direct manuscript inspection, Catholic reception or composition date is established."
+
+[[containers.constituents]]
+author = "Anonymous liturgical compilers; conventional attribution to St James"
+title = "Greek Liturgy of St James"
+locator = "1896 volume I, section printed pp. 31–68 according to source note p. 2/PDF 108. Checked anamnesis/oblation: printed 52.30–33 and 53.1–13, PDF 158–159. Checked invocation over gifts: printed 53.19–22,24–31 and 54.2–3,5–6,10, PDF 159–160."
+extent_unresolved = "The section is named and bounded by the editor; only the two specified priestly prayer units are checked transcriptions. The rest of the Greek James section is not asserted to be completely inspected or collated, and the separately printed Syriac James is not included in this entry."
+basis = "Registered passage greek-james-source-and-corrigendum and the paired james-anamnesis-oblation / james-invocation-gifts text and facsimile passages under edition.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1. The source note identifies Paris graec. 2509, ff. 194–210; the edition's p. cii/PDF 104 corrigendum changes its stated century from xivth to xvth. That qualified attribution is mediated through Brightman, not a new manuscript attribution."
+
+[[containers.constituents]]
+author = "Anonymous liturgical compilers; conventional attribution to St John Chrysostom"
+title = "Liturgy of St Chrysostom (modern Greek section)"
+locator = "1896 volume I, section printed pp. 353–399 according to source note p. 308/PDF 414. Checked anamnesis/oblation: printed 386.14–17,19, PDF 492. Checked invocation over gifts: printed 386.24–27 and 387.5,11,17, PDF 492–493."
+extent_unresolved = "The complete modern section has not been collated. Checked textual coverage comprises the two specified priestly prayer units; rubrics, interventions, apparatus and the remaining liturgy are outside the transcriptions. The separately printed earlier Byzantine manuscript section is not included here."
+basis = "Registered passage byzantine-modern-text-sources and the paired chrysostom-anamnesis-oblation / chrysostom-invocation-gifts text and facsimile passages under edition.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1. The inspected source note identifies the Venice 1869 Euchologion and Athens 1890 reader material as sources for the modern section; it does not assign the earlier Barberini manuscript's date to these selected prayers."
+
+[[containers.constituents]]
+author = "Anonymous liturgical compilers; conventional attribution to St Basil"
+title = "Liturgy of St Basil (modern Greek section)"
+locator = "1896 volume I, section printed pp. 400–411 according to source note p. 308/PDF 414. Checked anamnesis/oblation: printed 405.18–22,24, PDF 511. Checked invocation over gifts: printed 405.29–33 and 406.1–10, PDF 511–512."
+extent_unresolved = "The complete modern section has not been collated. Checked textual coverage comprises the two specified priestly prayer units; rubrics, interventions, apparatus and the remaining liturgy are outside the transcriptions. The p. 406 Metabalon footnote is separately registered as apparatus, not included in the prayer, and the earlier Barberini/Grottaferrata section is not included here."
+basis = "Registered passage byzantine-modern-text-sources and the paired basil-anamnesis-oblation / basil-invocation-gifts text and facsimile passages under edition.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1. The inspected source note identifies the Venice 1869 Euchologion, pp. 80–97, as the source for these modern Basil prayers."

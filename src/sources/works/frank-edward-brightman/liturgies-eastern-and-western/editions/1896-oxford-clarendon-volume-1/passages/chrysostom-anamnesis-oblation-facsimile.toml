@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+id = "passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.chrysostom-anamnesis-oblation-facsimile"
+edition_id = "edition.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1"
+artifact_id = "artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.ia-pdf-254f7d21"
+artifact_sha256 = "254f7d21b44436bdbac565b6f932d9e38d6ef8a062d9a8d944957e1a5d607ef0"
+locus = "Brightman 1896, Chrysostom; printed pp. 386; printed lines 14–19; PDF pages 492 (one-based)."
+states = ["cataloged", "acquired", "inspected", "verified"]
+artifact_page_ranges = [[492, 492]]
+context = "Complete priestly anamnesis and its concluding offering formula; excludes the intervening mode-of-delivery rubric and following choir response. Printed p. 386 lines 14–17 and 19. Modern Greek Chrysostom text as printed in Brightman 1896, attributed on printed p. 308 to the Venice 1869 Euchologion with Athens 1890 reader material. Not the separate Barberini manuscript section. Shared wording is a textual observation; this selection does not establish Catholic reception, a historical borrowing act, direction of dependence, a reconstructed common ancestor, or the entire anaphora."
+notes = "The artifact-page range retains the whole controlling pages; verification concerns only the printed line locus and declared priestly prayer scope. The paired normalized-text passage has the same identifier without -facsimile. On 2026-10-16 two AI readers checked these bounded original page images and the final serialized text, including accents, case, punctuation, source typography and boundaries. The independent review reported no remaining glyph or word discrepancy. It confirmed 2 recoverable priestly speech block(s). This is an explicitly normalized comparison transcription, not a facsimile or a complete liturgical service. Speech-block metadata, using zero-based half-open Unicode codepoint ranges in the NFC body excluding final LF: [{\"source_printed_lines\":\"386.14–17\",\"codepoint_range\":[0,226],\"incipit\":\"Μεμνημένοι τοίνυν τῆς σωτηρίου\"},{\"source_printed_lines\":\"386.19\",\"codepoint_range\":[227,286],\"incipit\":\"τὰ ϹᾺ ἘΚ ΤΩ͂Ν\"}]. Single separating spaces between blocks are derivative layout, not added punctuation."
+verified_on = "2026-10-16"

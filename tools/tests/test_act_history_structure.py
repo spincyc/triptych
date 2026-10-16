@@ -18,6 +18,7 @@ import pathlib
 import shutil
 import subprocess
 import tempfile
+import tomllib
 import unittest
 from unittest import mock
 
@@ -25,6 +26,18 @@ from unittest import mock
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 TPT = ROOT / "tools" / "tpt"
 TRACKED = ROOT / "src" / "web" / "data" / "structure" / "act-history"
+
+
+def comparison_paths() -> set[str]:
+    routing = ROOT / "src/sources/inventories/catholic-eucharistic-history-v1.toml"
+    configured = tomllib.loads(routing.read_text())
+    return {f"comparisons/{row['id']}.json" for row in configured.get("comparisons", [])}
+
+
+def expected_file_count() -> int:
+    # The three recovered slices retain 505 fragments; coverage adds one
+    # catalogue and exactly one file per explicitly declared comparison.
+    return 506 + len(comparison_paths())
 
 
 def load_tool():
@@ -72,9 +85,12 @@ class ActHistoryStructureTests(unittest.TestCase):
     def test_the_tracked_projection_is_a_fresh_complete_derivation(self) -> None:
         checked = run("structure", "--check")
         self.assertEqual(checked.returncode, 0, checked.stdout + checked.stderr)
-        self.assertIn("current: 507 files for 3 slices", checked.stdout)
+        self.assertIn(f"current: {expected_file_count()} files for 3 slices", checked.stdout)
         self.assertTrue((TRACKED / "catalogue.json").is_file())
         catalogue = json.loads((TRACKED / "catalogue.json").read_text())
+        self.assertEqual(comparison_paths(), {path.relative_to(TRACKED).as_posix()
+                                             for path in (TRACKED / "comparisons").rglob("*") if path.is_file()})
+        self.assertEqual(comparison_paths(), {row["projection_path"] for row in catalogue["comparisons"]})
         for declaration in catalogue["comparisons"]:
             comparison = json.loads((TRACKED / declaration["projection_path"]).read_text())
             self.assertEqual(comparison["id"], declaration["id"])
@@ -212,7 +228,7 @@ class ActHistoryStructureTests(unittest.TestCase):
 
         self.assertEqual(before, files(projection))
         checked = tool.structure_all(out, check_only=True)
-        self.assertEqual(507, checked["files"])
+        self.assertEqual(expected_file_count(), checked["files"])
 
         (projection / "index.json").write_text('{"stale":true}\n', encoding="utf-8")
         refreshed = tool.structure_all(out, check_only=False)
@@ -257,7 +273,7 @@ class ActHistoryStructureTests(unittest.TestCase):
                 retained.rename(replacement)
 
         checked = tool.structure_all(out, check_only=True)
-        self.assertEqual(507, checked["files"])
+        self.assertEqual(expected_file_count(), checked["files"])
 
     def test_projection_root_exchange_is_rejected_before_traversal(self) -> None:
         tool = load_tool()
@@ -297,7 +313,7 @@ class ActHistoryStructureTests(unittest.TestCase):
                 retained.rename(projection)
 
         checked = tool.structure_all(out, check_only=True)
-        self.assertEqual(507, checked["files"])
+        self.assertEqual(expected_file_count(), checked["files"])
 
     def test_scoped_manifest_discovery_refuses_a_symlinked_map(self) -> None:
         tool = load_tool()
@@ -428,7 +444,7 @@ class ActHistoryStructureTests(unittest.TestCase):
             ):
                 result = tool.structure_all(out, check_only=False)
 
-            self.assertEqual(507, result["files"])
+            self.assertEqual(expected_file_count(), result["files"])
             self.assertEqual("outside\n", sentinel.read_text(encoding="utf-8"))
 
     def test_staging_swap_cannot_redirect_writer_writes_or_install_symlink(self) -> None:

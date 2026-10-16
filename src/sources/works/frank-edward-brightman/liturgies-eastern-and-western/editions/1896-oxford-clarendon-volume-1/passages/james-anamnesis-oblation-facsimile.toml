@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+id = "passage.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.james-anamnesis-oblation-facsimile"
+edition_id = "edition.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1"
+artifact_id = "artifact.frank-edward-brightman.liturgies-eastern-and-western.1896-oxford-clarendon-volume-1.ia-pdf-254f7d21"
+artifact_sha256 = "254f7d21b44436bdbac565b6f932d9e38d6ef8a062d9a8d944957e1a5d607ef0"
+locus = "Brightman 1896, James; printed pp. 52–53; printed lines 52.30–33; 53.1–13; PDF pages 158,159 (one-based)."
+states = ["cataloged", "acquired", "inspected", "verified"]
+artifact_page_ranges = [[158, 159]]
+context = "Complete anamnesis and its offering petition from Μεμνημένοι through φιλάνθρωπε Κύριε. Excludes the following separately cued priestly invitation Ὁ γὰρ λαός σου and the people's response. This is the Greek James text under Brightman's Syrian Rite heading, not the separately printed Syriac text. Greek James as printed in Brightman 1896 from Paris Bibliothèque nationale MS graec. 2509, ff. 194–210, according to printed p. 2. Its manuscript date is source-stated fifteenth century after the printed p. cii correction; the manuscript itself was not inspected. This is not the separately printed Syriac James text. Shared wording is a textual observation; this selection does not establish Catholic reception, a historical borrowing act, direction of dependence, a reconstructed common ancestor, or the entire anaphora."
+notes = "The artifact-page range retains the whole controlling pages; verification concerns only the printed line locus and declared priestly prayer scope. The paired normalized-text passage has the same identifier without -facsimile. On 2026-10-16 two AI readers checked these bounded original page images and the final serialized text, including accents, case, punctuation, source typography and boundaries. The independent review reported no remaining glyph or word discrepancy. It confirmed 1 recoverable priestly speech block(s). This is an explicitly normalized comparison transcription, not a facsimile or a complete liturgical service. Speech-block metadata, using zero-based half-open Unicode codepoint ranges in the NFC body excluding final LF: [{\"source_printed_lines\":\"52.30–33;53.1–13\",\"codepoint_range\":[0,993],\"incipit\":\"Μεμνημένοι οὖν καὶ ἡμεῖς\"}]. Single separating spaces between blocks are derivative layout, not added punctuation."
+verified_on = "2026-10-16"

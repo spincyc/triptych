@@ -1,0 +1,811 @@
+{
+  "apparatus_caveat": "The witnesses are mediated by their identified printed editions. Printed edition dates do not date introduction, borrowing or a common ancestor. Native words, spelling, accents and case remain in each normalized source; typographic or punctuation normalization is declared per owning artifact. The selected unit ends before Qui pridie; no following institution narrative is included. Gregorian p.3 note3 assigns omission of dei to O, so the displayed manuscript traditions cannot be ordered by that variant.",
+  "basis": "Complete quam-oblationem units selected by their incipit, bounded ending and liturgical position. Each body was checked against the identified printed page; the alignment is explicit same-prayer witness membership, not a text ancestry edge.",
+  "historical_act_claimed": false,
+  "historical_ancestry_claimed": false,
+  "id": "roman-quam-oblationem-gregorian-and-gelasian",
+  "identical_serialized_text": false,
+  "identity_claim": "same-prayer-witnesses",
+  "inputs": [
+    {
+      "byte_size": 55362,
+      "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
+      "sha256": "177dd42f9fa51826f1e62de2d4ff689893c313c0cfa7728d3627373f65510987"
+    },
+    {
+      "byte_size": 241695,
+      "path": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+      "sha256": "372bfc0ff5693af9adb81e87318341cc9f3ca1b852db74de3f81ce8c414d121d"
+    },
+    {
+      "byte_size": 89758,
+      "path": "src/sources/inventories/eucharistic-book-relationships-v1.toml",
+      "sha256": "d43fb733824f87fa46c4c5c1b81417683cbe496b140a97ea6139f1952830a91e"
+    },
+    {
+      "byte_size": 183499,
+      "path": "src/sources/inventories/latin-missal-acts-v1.toml",
+      "sha256": "7e8db6a985303a0da62c535ca536dec8f9e3d792155d1b9b74c785282892d328"
+    },
+    {
+      "byte_size": 9311,
+      "path": "src/sources/inventories/missal-timeline-holdings-v1.toml",
+      "sha256": "43d18228b997f149a6aab5605ee0397713348cc1d2f1458c49940fa89f147c8e"
+    },
+    {
+      "byte_size": 82303,
+      "path": "src/sources/inventories/roman-holy-week-acts-v1.toml",
+      "sha256": "cfbc951ec40071d5eb78c55d9453811ee194647b57893b7aa3b4768abadea9bb"
+    },
+    {
+      "byte_size": 221307,
+      "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+      "sha256": "2ca0794f773beb974b67f67d7a51fd2884b490e7fea3829eac082c9c7ce1e620"
+    },
+    {
+      "byte_size": 1240,
+      "path": "src/sources/works/anonymous/gelasian-sacramentary/editions/wilson-clarendon-1894/artifacts/internet-archive-google-books-pdf/artifact.toml",
+      "sha256": "3ce32dd3ea67cb455016ef9174ee4ba557412e8aadcdd9541d92dd7f4893be3e"
+    },
+    {
+      "byte_size": 2507,
+      "path": "src/sources/works/anonymous/gelasian-sacramentary/editions/wilson-clarendon-1894/artifacts/printed-p235-image-d98c2326/artifact.toml",
+      "sha256": "b2ac1c37cce650834545c4442c29184d0d0e63c69602c65aeda362642df317c1"
+    },
+    {
+      "byte_size": 239722,
+      "path": "src/sources/works/anonymous/gelasian-sacramentary/editions/wilson-clarendon-1894/artifacts/printed-p235-image-d98c2326/page.png",
+      "sha256": "d98c23264281d39b37686d691eae71dca5e1c9d506d399e546c48bb88725dc57"
+    },
+    {
+      "byte_size": 683,
+      "path": "src/sources/works/anonymous/gelasian-sacramentary/editions/wilson-clarendon-1894/edition.toml",
+      "sha256": "45b414e9f0f740cadd5660a72ff299e63b9943a6e7e9a6fc75ec5b1ced56ce63"
+    },
+    {
+      "byte_size": 666,
+      "path": "src/sources/works/anonymous/gelasian-sacramentary/work.toml",
+      "sha256": "a41c01cc8c194696663fab1631d3c4f96828ab0ab07be883df92d243805690e3"
+    },
+    {
+      "byte_size": 3368,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/canon-hanc-igitur-checked-latin-75df4acf/artifact.toml",
+      "sha256": "c54e950ef7d41a606dd52ad8ed7c643797cff230746541febd5cff64fc0413df"
+    },
+    {
+      "byte_size": 266,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/canon-hanc-igitur-checked-latin-75df4acf/text.txt",
+      "sha256": "75df4acff246918a08cf9d2d7c8089c6bb560e76e0f76e3a79669c9bb07e762c"
+    },
+    {
+      "byte_size": 3346,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/canon-quam-oblationem-checked-latin-e01e1083/artifact.toml",
+      "sha256": "4eb2870bba4c0165af5e179a9e9949d0ca889afdd46dfe81562082c25302a844"
+    },
+    {
+      "byte_size": 214,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/canon-quam-oblationem-checked-latin-e01e1083/text.txt",
+      "sha256": "e01e1083c750fdc4a7c74a7e37c092e8989a9d3427292b5c6fba29f36698b327"
+    },
+    {
+      "byte_size": 3309,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/historical-book-ocr-e4500b54/artifact.toml",
+      "sha256": "544f418b08e643b657cd97c51f731ab5d5b9ad59d0a7ed798a4fee05af29cca3"
+    },
+    {
+      "byte_size": 1095058,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/historical-book-ocr-e4500b54/source.txt",
+      "sha256": "e4500b548776621c720a0c7cb313f9de041969531da3814b7a4ef6444038a4e9"
+    },
+    {
+      "byte_size": 1715,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ia-djvu-ocr-gelasiansacrame00wilsgoog/artifact.toml",
+      "sha256": "da4c10d7a94d948537ce637b1edc7d6d15f36118e8a65aa2cfca4a52539901e3"
+    },
+    {
+      "byte_size": 898,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/edition.toml",
+      "sha256": "7bb097f4c19699a224a5bf589d039b7b39a3aad66d9db0e3d70845f353df5670"
+    },
+    {
+      "byte_size": 1293,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/canon-hanc-igitur.toml",
+      "sha256": "84faaaec950d643e9bba8bedbd3f9f21313a8abcca10be692697b8a58ca42666"
+    },
+    {
+      "byte_size": 1272,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/canon-quam-oblationem.toml",
+      "sha256": "3a92c4358e4ab1f4b123d4dd688d8efcb1e11506dabd2bf40bca301cfa593d76"
+    },
+    {
+      "byte_size": 754,
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/work.toml",
+      "sha256": "034be9e2898ee8994a5aa64c1d4316d18271274e68532d1e37b0ba576071a618"
+    },
+    {
+      "byte_size": 2975,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/canon-hanc-igitur-checked-latin-b46e0e89/artifact.toml",
+      "sha256": "0d7961d4a77bc4a4b7c53e19c07ec5e879e69334e1e8d49c9b12458fc35830fb"
+    },
+    {
+      "byte_size": 263,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/canon-hanc-igitur-checked-latin-b46e0e89/text.txt",
+      "sha256": "b46e0e89dd83e69c5befee20965e19263ec54c8ee8742720b941d962eabf83a4"
+    },
+    {
+      "byte_size": 3565,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/canon-quam-oblationem-checked-latin-94b63de8/artifact.toml",
+      "sha256": "c43bee21dae83d0466e83b806d7a51e6bdfacdc409364a6798e670909240cbf7"
+    },
+    {
+      "byte_size": 207,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/canon-quam-oblationem-checked-latin-94b63de8/text.txt",
+      "sha256": "94b63de805aa0998d0dde05f03dd0c7d9909de4bcff585545f7434e501fd4bbc"
+    },
+    {
+      "byte_size": 5511,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/ia-pdf-96fd93c7/artifact.toml",
+      "sha256": "13f26a56084ef752aed19acc46d4ac74dce893174409b24a85646c9805bb2cd6"
+    },
+    {
+      "byte_size": 28655931,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/ia-pdf-96fd93c7/source.pdf",
+      "sha256": "96fd93c73f8c9df47b6911981155b8b02cf2f2183ca6e87baad15128682d8681"
+    },
+    {
+      "byte_size": 2582,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/pdf-text-layout-6ca97fd7/artifact.toml",
+      "sha256": "4e8b9130e03978b916d6ecc861e7b8843db827d29b7572bff729f145b64a20c5"
+    },
+    {
+      "byte_size": 1063448,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/pdf-text-layout-6ca97fd7/source.txt",
+      "sha256": "6ca97fd74dee383bec70078151eaa0dc918a2b310389577d30690f4e503fdb53"
+    },
+    {
+      "byte_size": 740,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/edition.toml",
+      "sha256": "13a47b3f68978894a35e8836fa4f4fc119c09e3ba3c45bddf69158a7694f5578"
+    },
+    {
+      "byte_size": 1309,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/canon-hanc-igitur.toml",
+      "sha256": "c80b95d7fe1ec798fd8cc955c50f69935150159c24454293622a4e6f8965e42b"
+    },
+    {
+      "byte_size": 1343,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/canon-quam-oblationem.toml",
+      "sha256": "5ba281e5552e47e17a4dd7e10beed9d954368fc91835f8991f67cbb72710e962"
+    },
+    {
+      "byte_size": 667,
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/work.toml",
+      "sha256": "a801fe981738068dc5f02764d856715549c8ee63e28b6635973242b765eb79e3"
+    }
+  ],
+  "introduction_date_inferred": false,
+  "kind": "same-prayer-witness-comparison",
+  "left": {
+    "adapter": "wilson-1915-gregorian-canon-prayers",
+    "join_rule": "insert-one-space-between-exact-source-bodies",
+    "joined_source_text": "Quam oblationem tu deus in omnibus . quaesumus benedictam adscriptam ratam rationabilem acceptabilemque facere digneris Ut nobis corpus et sanguis fiat dilectissimi filii tui domini dei nostri iesu christi.",
+    "joined_source_text_sha256": "19287cda6b3f4d8a027e0cbcc63d4c2399a22827ab75668e1294e596f796d734",
+    "members": [
+      {
+        "comparison_order": 1,
+        "content_id": "sha256:19287cda6b3f4d8a027e0cbcc63d4c2399a22827ab75668e1294e596f796d734",
+        "diplomatic": false,
+        "division": "canon-missae",
+        "element_key": "quam-oblationem",
+        "facsimile_pdf_page": [
+          60,
+          61
+        ],
+        "language": "la",
+        "printed_page": "2-3",
+        "provenance": {
+          "evidence_source_ids": [
+            "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7"
+          ],
+          "normalization": "Source UTF-8 bytes SHA-256 6ca97fd74dee383bec70078151eaa0dc918a2b310389577d30690f4e503fdb53. Use LF-delimited physical line ranges [[2309, 2309], [2328, 2330]]. Select only the named complete prayer bounded by its incipit and next prayer; join whitespace to one space, excluding running heads/apparatus between disjoint ranges. Apply these exact page-verified replacements in order: [{\"from\": \" oblationem\", \"to\": \"Quam oblationem\", \"count\": 1}, {\"from\": \"quae- sumus\", \"to\": \"quaesumus\", \"count\": 1}, {\"from\": \"accepta- bilemque\", \"to\": \"acceptabilemque\", \"count\": 1}, {\"from\": \"benedictam^\", \"to\": \"benedictam\", \"count\": 1}, {\"from\": \"adscriptam^\", \"to\": \"adscriptam\", \"count\": 1}, {\"from\": \"ratam^\", \"to\": \"ratam\", \"count\": 1}, {\"from\": \"corpus-\", \"to\": \"corpus\", \"count\": 1}, {\"from\": \"sanguis-\", \"to\": \"sanguis\", \"count\": 1}, {\"from\": \"dei''' /nostri\", \"to\": \"dei nostri\", \"count\": 1}]. Append one LF. Complete Quam prayer, excluding the intervening page2apparatus and page3heading, superscript notes1-3 and folio-boundary slash. R maintext retains dei; note3 assigns its omission to O. Ut remains capitalized.",
+          "review_limits": "Two independent reviewers checked this complete bounded prayer against its historical printed page image(s) on 2026-10-16. This establishes the normalized edition text and its stated extent, not an act of revision, a borrowing direction, a manuscript date or the wording of the rest of the book. See owning artifact for every transformation and the original page evidence.",
+          "reviewed_on": "2026-10-16",
+          "scope": "R, Vatican Reginae 337, as mediated by Wilson's 1915 critical edition; no new manuscript collation. Complete Quam prayer, excluding the intervening page2apparatus and page3heading, superscript notes1-3 and folio-boundary slash. R maintext retains dei; note3 assigns its omission to O. Ut remains capitalized.",
+          "source_locator": "canon-quam-oblationem; printed p. 2-3; source PDF page(s) 60, 61",
+          "status": "verified-bounded-printed-edition-transcription"
+        },
+        "publication": {
+          "basis": "public-domain",
+          "basis_source_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-quam-oblationem-checked-latin-94b63de8",
+          "jurisdiction": "United States",
+          "status": "permitted",
+          "surfaces": [
+            "public-git",
+            "corpus-data"
+          ]
+        },
+        "serialized_text": "Quam oblationem tu deus in omnibus .\nquaesumus benedictam adscriptam ratam rationabilem acceptabilemque facere digneris Ut nobis corpus et sanguis fiat dilectissimi filii tui domini dei nostri iesu christi.\n",
+        "serialized_text_sha256": "b694a0c775ebd15b7f256767de5bc31238115bc2453382a1b10b4139bbac64b6",
+        "source_artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-quam-oblationem-checked-latin-94b63de8",
+        "source_artifact_sha256": "94b63de805aa0998d0dde05f03dd0c7d9909de4bcff585545f7434e501fd4bbc",
+        "source_id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-quam-oblationem",
+        "source_order": 2,
+        "source_physical_line": 1,
+        "source_text": "Quam oblationem tu deus in omnibus . quaesumus benedictam adscriptam ratam rationabilem acceptabilemque facere digneris Ut nobis corpus et sanguis fiat dilectissimi filii tui domini dei nostri iesu christi.",
+        "target_edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+        "text_edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+        "text_path": "text/ordinary/canon-missae/quam-oblationem.txt",
+        "text_sha256": "19287cda6b3f4d8a027e0cbcc63d4c2399a22827ab75668e1294e596f796d734",
+        "transcription_kind": "witness-normalized-transcription",
+        "unit_id": "unit.wilson-1915.gregorian.canon-missae.quam-oblationem"
+      }
+    ],
+    "record_id": "western:gregorian-wilson-1915-critical-edition",
+    "reviewed_on": "2026-10-16",
+    "scope": {
+      "date_roles": "target_date identifies the historical printed edition; this adapter assigns no exact manuscript date",
+      "no_historical_backprojection": true,
+      "not_direct_manuscript_transcription": true,
+      "omitted_book_divisions": [
+        "all prayers outside the explicitly selected units",
+        "critical apparatus and editorial introduction",
+        "all other ritual, rubrical and supplemental material"
+      ],
+      "represented_witness": "R, Vatican Reginae 337, as mediated by Wilson's 1915 critical edition; no new manuscript collation",
+      "status": "selected-complete-prayers",
+      "text_identity": "Bounded normalized native-language text from the identified critical edition; apparatus and uncollected units excluded",
+      "whole_book_complete": false
+    },
+    "serialized_text": "Quam oblationem tu deus in omnibus .\nquaesumus benedictam adscriptam ratam rationabilem acceptabilemque facere digneris Ut nobis corpus et sanguis fiat dilectissimi filii tui domini dei nostri iesu christi.\n",
+    "serialized_text_sha256": "b694a0c775ebd15b7f256767de5bc31238115bc2453382a1b10b4139bbac64b6",
+    "target_date": "1915",
+    "text_set": "wilson-1915-gregorian-canon-prayers",
+    "title": "Wilson 1915 Gregorian Canon: Hanc igitur and Quam oblationem",
+    "witness_date": null
+  },
+  "limitations": [
+    "This is an explicitly aligned witness comparison, not an asserted historical revision or parent relationship.",
+    "Orthography, spacing, capitalization and punctuation remain visible; a textual diff does not classify their historical significance.",
+    "The apparatus caveat must accompany any historical interpretation of this bounded passage."
+  ],
+  "membership_status": "established",
+  "relationship_ids": [
+    "eucharistic-books:checked-latin-prayers-1"
+  ],
+  "relationships": [
+    {
+      "ancestor_ref": null,
+      "basis": "Explicit same-prayer identity from incipit, liturgical position and bounded ending, with directly inspectable shared wording in both normalized source bodies. Native spelling, case, accents and declared typography differences remain in the full comparisons. An exact illustrative shared phrase is: et in electorum tuorum iubeas grege numerari.",
+      "certainty": "sourced",
+      "chronology": null,
+      "comparison_ids": [
+        "roman-hanc-igitur-gregorian-and-gelasian",
+        "roman-quam-oblationem-gregorian-and-gelasian"
+      ],
+      "comparison_links": [
+        {
+          "id": "roman-hanc-igitur-gregorian-and-gelasian",
+          "projection_path": "comparisons/roman-hanc-igitur-gregorian-and-gelasian.json"
+        },
+        {
+          "id": "roman-quam-oblationem-gregorian-and-gelasian",
+          "projection_path": "comparisons/roman-quam-oblationem-gregorian-and-gelasian.json"
+        }
+      ],
+      "date_label": null,
+      "directed": false,
+      "evidence": [
+        {
+          "locus": "Printed pp. 2–3, PDF pp. 60–61; independently checked retained page images. Canon main text follows R (Reginae 337), with variants in the apparatus.",
+          "source": {
+            "id": "checked-wilson-gregorian",
+            "inspection": "Printed pp. 2–3, PDF pp. 60–61; independently checked retained page images. Canon main text follows R (Reginae 337), with variants in the apparatus.",
+            "inspection_status": "inspected",
+            "title": "Wilson, The Gregorian Sacramentary (1915), selected Canon prayers",
+            "url": "https://archive.org/details/gregoriansacrame00cath"
+          },
+          "source_id": "checked-wilson-gregorian"
+        },
+        {
+          "locus": "Printed p. 235, PDF p. 328; independently checked retained page image. Critical edition mediates the manuscript; marginal apparatus excluded from the selected prayer bodies.",
+          "source": {
+            "id": "checked-wilson-gelasian",
+            "inspection": "Printed p. 235, PDF p. 328; independently checked retained page image. Critical edition mediates the manuscript; marginal apparatus excluded from the selected prayer bodies.",
+            "inspection_status": "inspected",
+            "title": "Wilson, The Gelasian Sacramentary (1894), selected Canon prayers",
+            "url": "https://archive.org/details/gelasiansacrame00wilsgoog"
+          },
+          "source_id": "checked-wilson-gelasian"
+        }
+      ],
+      "from": "western:gregorian-wilson-1915-critical-edition",
+      "git_ancestry": false,
+      "id": "eucharistic-books:checked-latin-prayers-1",
+      "kind": "shared-text",
+      "label": "Shared hanc igitur, quam oblationem wording",
+      "limitations": "Critical editions mediate early witnesses; printed publication dates do not date the shared formula. The displayed phrase is an exact illustrative shared run, not a claim that all wording or punctuation matches. Stowe has substantial additions and variants; its punctuation encoding is declared by its owning artifacts.",
+      "origin": {
+        "id": "checked-latin-prayers-1",
+        "inventory": "src/sources/inventories/eucharistic-book-relationships-v1.toml",
+        "table": "relationships"
+      },
+      "scope": "Selected hanc igitur, quam oblationem units only; variants remain in the comparisons.",
+      "text_inheritance": false,
+      "to": "western:gelasian-wilson-1894-critical-edition"
+    }
+  ],
+  "right": {
+    "adapter": "wilson-1894-gelasian-canon-prayers",
+    "join_rule": "insert-one-space-between-exact-source-bodies",
+    "joined_source_text": "Quam oblationem tu, Deus, in omnibus, quaesumus, benedictam, adscriptam, ratam, rationabilem, acceptabilemque facere digneris, ut nobis corpus et sanguis fiat dilectissimi Filii tui Domini Dei nostri Iesu Christi.",
+    "joined_source_text_sha256": "ebe2f0b6c0222d064ce2da46220e62306228bc3f7f83fd5ffbe08284eee36683",
+    "members": [
+      {
+        "comparison_order": 1,
+        "content_id": "sha256:ebe2f0b6c0222d064ce2da46220e62306228bc3f7f83fd5ffbe08284eee36683",
+        "diplomatic": false,
+        "division": "canon-missae",
+        "element_key": "quam-oblationem",
+        "facsimile_pdf_page": 328,
+        "language": "la",
+        "printed_page": "235",
+        "provenance": {
+          "evidence_source_ids": [
+            "artifact.anonymous.gelasian-sacramentary.wilson-clarendon-1894.printed-p235-image-d98c2326"
+          ],
+          "normalization": "Source UTF-8 bytes SHA-256 e4500b548776621c720a0c7cb313f9de041969531da3814b7a4ef6444038a4e9. Use LF-delimited physical line ranges [[21678, 21684]]. Select only the named complete prayer bounded by its incipit and next prayer; join whitespace to one space, excluding running heads/apparatus between disjoint ranges. Apply these exact page-verified replacements in order: [{\"from\": \" oblationem\", \"to\": \"Quam oblationem\", \"count\": 1}, {\"from\": \"oblationem ^\", \"to\": \"oblationem\", \"count\": 1}, {\"from\": \"quae- sumus\", \"to\": \"quaesumus\", \"count\": 1}, {\"from\": \"ratam^\", \"to\": \"ratam,\", \"count\": 1}, {\"from\": \"accep- tabilemque\", \"to\": \"acceptabilemque\", \"count\": 1}, {\"from\": \"ut'^\", \"to\": \"ut\", \"count\": 1}, {\"from\": \"nostri '^\", \"to\": \"nostri\", \"count\": 1}, {\"from\": \"lesu\", \"to\": \"Iesu\", \"count\": 1}]. Append one LF. Complete Quam prayer, removing notes29-31 and joining compositor line breaks. Retain Domini Dei and native punctuation/case; next Qui pridie prayer excluded.",
+          "review_limits": "Two independent reviewers checked this complete bounded prayer against its historical printed page image(s) on 2026-10-16. This establishes the normalized edition text and its stated extent, not an act of revision, a borrowing direction, a manuscript date or the wording of the rest of the book. See owning artifact for every transformation and the original page evidence.",
+          "reviewed_on": "2026-10-16",
+          "scope": "Vatican Reg. lat. 316 as mediated by Wilson's 1894 critical edition; no new manuscript collation. Complete Quam prayer, removing notes29-31 and joining compositor line breaks. Retain Domini Dei and native punctuation/case; next Qui pridie prayer excluded.",
+          "source_locator": "canon-quam-oblationem; printed p. 235; source PDF page(s) 328",
+          "status": "verified-bounded-printed-edition-transcription"
+        },
+        "publication": {
+          "basis": "public-domain",
+          "basis_source_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-quam-oblationem-checked-latin-e01e1083",
+          "jurisdiction": "United States",
+          "status": "permitted",
+          "surfaces": [
+            "public-git",
+            "corpus-data"
+          ]
+        },
+        "serialized_text": "Quam oblationem tu, Deus, in omnibus, quaesumus, benedictam, adscriptam, ratam, rationabilem, acceptabilemque facere digneris, ut nobis corpus et sanguis fiat dilectissimi Filii tui Domini Dei nostri Iesu Christi.\n",
+        "serialized_text_sha256": "e01e1083c750fdc4a7c74a7e37c092e8989a9d3427292b5c6fba29f36698b327",
+        "source_artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-quam-oblationem-checked-latin-e01e1083",
+        "source_artifact_sha256": "e01e1083c750fdc4a7c74a7e37c092e8989a9d3427292b5c6fba29f36698b327",
+        "source_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-quam-oblationem",
+        "source_order": 2,
+        "source_physical_line": 1,
+        "source_text": "Quam oblationem tu, Deus, in omnibus, quaesumus, benedictam, adscriptam, ratam, rationabilem, acceptabilemque facere digneris, ut nobis corpus et sanguis fiat dilectissimi Filii tui Domini Dei nostri Iesu Christi.",
+        "target_edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+        "text_edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+        "text_path": "text/ordinary/canon-missae/quam-oblationem.txt",
+        "text_sha256": "ebe2f0b6c0222d064ce2da46220e62306228bc3f7f83fd5ffbe08284eee36683",
+        "transcription_kind": "witness-normalized-transcription",
+        "unit_id": "unit.wilson-1894.gelasian.canon-missae.quam-oblationem"
+      }
+    ],
+    "record_id": "western:gelasian-wilson-1894-critical-edition",
+    "reviewed_on": "2026-10-16",
+    "scope": {
+      "date_roles": "target_date identifies the historical printed edition; this adapter assigns no exact manuscript date",
+      "no_historical_backprojection": true,
+      "not_direct_manuscript_transcription": true,
+      "omitted_book_divisions": [
+        "all prayers outside the explicitly selected units",
+        "critical apparatus and editorial introduction",
+        "all other ritual, rubrical and supplemental material"
+      ],
+      "represented_witness": "Vatican Reg. lat. 316 as mediated by Wilson's 1894 critical edition; no new manuscript collation",
+      "status": "selected-complete-prayers",
+      "text_identity": "Bounded normalized native-language text from the identified critical edition; apparatus and uncollected units excluded",
+      "whole_book_complete": false
+    },
+    "serialized_text": "Quam oblationem tu, Deus, in omnibus, quaesumus, benedictam, adscriptam, ratam, rationabilem, acceptabilemque facere digneris, ut nobis corpus et sanguis fiat dilectissimi Filii tui Domini Dei nostri Iesu Christi.\n",
+    "serialized_text_sha256": "e01e1083c750fdc4a7c74a7e37c092e8989a9d3427292b5c6fba29f36698b327",
+    "target_date": "1894",
+    "text_set": "wilson-1894-gelasian-canon-prayers",
+    "title": "Wilson 1894 Gelasian Canon: Hanc igitur and Quam oblationem",
+    "witness_date": null
+  },
+  "schema": "triptych-eucharistic-witness-comparison/v1",
+  "source_refs": [
+    "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-quam-oblationem",
+    "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-quam-oblationem"
+  ],
+  "sources": [
+    {
+      "artifact_type": "scan",
+      "byte_size": 14980268,
+      "edition_id": "edition.anonymous.gelasian-sacramentary.wilson-clarendon-1894",
+      "id": "artifact.anonymous.gelasian-sacramentary.wilson-clarendon-1894.internet-archive-google-books-pdf",
+      "manifest_path": "src/sources/works/anonymous/gelasian-sacramentary/editions/wilson-clarendon-1894/artifacts/internet-archive-google-books-pdf/artifact.toml",
+      "manifest_sha256": "3ce32dd3ea67cb455016ef9174ee4ba557412e8aadcdd9541d92dd7f4893be3e",
+      "media_type": "application/pdf",
+      "provenance": "Internet Archive item gelasiansacrame00wilsgoog, Google Books scan.",
+      "record_type": "artifact",
+      "retrieved": "2026-07-27",
+      "rights_basis": "The 1894 Clarendon Press edition is public domain in the United States. The artifact is a Google Books scan delivered by Internet Archive; no scan bytes are redistributed by Triptych.",
+      "rights_jurisdiction": "US",
+      "rights_status": "public-domain",
+      "sha256": "404f7df5d06059676cacccaca05f997ca59407d0bff74b6a867c509eeefac72b",
+      "source_url": "https://archive.org/download/gelasiansacrame00wilsgoog/gelasiansacrame00wilsgoog.pdf",
+      "storage": "remote"
+    },
+    {
+      "artifact_type": "page-scan-image",
+      "byte_size": 239722,
+      "derived_from": "artifact.anonymous.gelasian-sacramentary.wilson-clarendon-1894.internet-archive-google-books-pdf",
+      "edition_id": "edition.anonymous.gelasian-sacramentary.wilson-clarendon-1894",
+      "id": "artifact.anonymous.gelasian-sacramentary.wilson-clarendon-1894.printed-p235-image-d98c2326",
+      "manifest_path": "src/sources/works/anonymous/gelasian-sacramentary/editions/wilson-clarendon-1894/artifacts/printed-p235-image-d98c2326/artifact.toml",
+      "manifest_sha256": "b2ac1c37cce650834545c4442c29184d0d0e63c69602c65aeda362642df317c1",
+      "media_type": "image/png",
+      "path": "src/sources/works/anonymous/gelasian-sacramentary/editions/wilson-clarendon-1894/artifacts/printed-p235-image-d98c2326/page.png",
+      "provenance": "Existing Gregorian/Gelasian/Wilson canonical owners and aliases were checked before registration. The complete exact PDF already acquired by the Western-witness lane was used locally; no new download or duplicate complete PDF was retained. Its SHA-256 was independently replayed before rendering. Printed page number and Canon Actionis heading were visually checked on this image. The parent PDF remains separately registered under its pre-existing anonymous owner; this derivative preserves that ownership rather than inventing a cross-edition derived_from relation.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "This is a mechanical rendering of one historical page of the 1894 Clarendon Press printing, public domain in the United States by publication date. It contains no modern Google wrapper, library borrower notice or added commentary. The whole-delivery metadata does not license a modern wrapper; this bounded derivative has its own historical-page basis.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "d98c23264281d39b37686d691eae71dca5e1c9d506d399e546c48bb88725dc57",
+      "storage": "tracked",
+      "transformation": "From exact parent PDF SHA-256 404f7df5d06059676cacccaca05f997ca59407d0bff74b6a867c509eeefac72b: Poppler pdftoppm 26.08.0, -f 328 -l 328 -r 200 -png -singlefile. Retain the complete rendered historical printed page 235; no crop, rescaling after render, enhancement or OCR correction. The other 496 PDF pages, including all modern wrapper matter, are excluded."
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 266,
+      "derived_from": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.historical-book-ocr-e4500b54",
+      "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+      "id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-hanc-igitur-checked-latin-75df4acf",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/canon-hanc-igitur-checked-latin-75df4acf/artifact.toml",
+      "manifest_sha256": "c54e950ef7d41a606dd52ad8ed7c643797cff230746541febd5cff64fc0413df",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/canon-hanc-igitur-checked-latin-75df4acf/text.txt",
+      "provenance": "Existing canonical work/edition identities, alias and artifact records were inspected before creation; the existing retained OCR and facsimile were reused, without a new edition or replacement witness. Exact bytes were mechanically extracted from the pinned OCR with an explicit correction ledger. The complete bounded body was read against the cited rendered historical page(s), then independently checked word by word by a second reviewer on 2026-10-16. Vatican Reg. lat. 316 as mediated by Wilson's 1894 critical edition; no new manuscript collation. Verification evidence: artifact.anonymous.gelasian-sacramentary.wilson-clarendon-1894.printed-p235-image-d98c2326.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "75df4acff246918a08cf9d2d7c8089c6bb560e76e0f76e3a79669c9bb07e762c",
+      "storage": "tracked",
+      "transformation": "Source UTF-8 bytes SHA-256 e4500b548776621c720a0c7cb313f9de041969531da3814b7a4ef6444038a4e9. Use LF-delimited physical line ranges [[21668, 21678]]. Select only the named complete prayer bounded by its incipit and next prayer; join whitespace to one space, excluding running heads/apparatus between disjoint ranges. Apply these exact page-verified replacements in order: [{\"from\": \" igitur\", \"to\": \"Hanc igitur\", \"count\": 1}, {\"from\": \"tuae^^\", \"to\": \"tuae\", \"count\": 1}, {\"from\": \"ut^\", \"to\": \"ut\", \"count\": 1}, {\"from\": \"accipias^\", \"to\": \"accipias\", \"count\": 1}, {\"from\": \"disponas*^\", \"to\": \"disponas\", \"count\": 1}, {\"from\": \"eripi^\", \"to\": \"eripi\", \"count\": 1}, {\"from\": \"dectorum\", \"to\": \"electorum\", \"count\": 1}, {\"from\": \"gr^e\", \"to\": \"grege\", \"count\": 1}]. Append one LF. Complete Hanc prayer as printed in Wilson1894 bookIIIsectionXVI, excluding preceding Communicantes conclusion and following Quam. Remove superscript apparatus notes24-28, not prayer wording."
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 214,
+      "derived_from": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.historical-book-ocr-e4500b54",
+      "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+      "id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-quam-oblationem-checked-latin-e01e1083",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/canon-quam-oblationem-checked-latin-e01e1083/artifact.toml",
+      "manifest_sha256": "4eb2870bba4c0165af5e179a9e9949d0ca889afdd46dfe81562082c25302a844",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/canon-quam-oblationem-checked-latin-e01e1083/text.txt",
+      "provenance": "Existing canonical work/edition identities, alias and artifact records were inspected before creation; the existing retained OCR and facsimile were reused, without a new edition or replacement witness. Exact bytes were mechanically extracted from the pinned OCR with an explicit correction ledger. The complete bounded body was read against the cited rendered historical page(s), then independently checked word by word by a second reviewer on 2026-10-16. Vatican Reg. lat. 316 as mediated by Wilson's 1894 critical edition; no new manuscript collation. Verification evidence: artifact.anonymous.gelasian-sacramentary.wilson-clarendon-1894.printed-p235-image-d98c2326.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "e01e1083c750fdc4a7c74a7e37c092e8989a9d3427292b5c6fba29f36698b327",
+      "storage": "tracked",
+      "transformation": "Source UTF-8 bytes SHA-256 e4500b548776621c720a0c7cb313f9de041969531da3814b7a4ef6444038a4e9. Use LF-delimited physical line ranges [[21678, 21684]]. Select only the named complete prayer bounded by its incipit and next prayer; join whitespace to one space, excluding running heads/apparatus between disjoint ranges. Apply these exact page-verified replacements in order: [{\"from\": \" oblationem\", \"to\": \"Quam oblationem\", \"count\": 1}, {\"from\": \"oblationem ^\", \"to\": \"oblationem\", \"count\": 1}, {\"from\": \"quae- sumus\", \"to\": \"quaesumus\", \"count\": 1}, {\"from\": \"ratam^\", \"to\": \"ratam,\", \"count\": 1}, {\"from\": \"accep- tabilemque\", \"to\": \"acceptabilemque\", \"count\": 1}, {\"from\": \"ut'^\", \"to\": \"ut\", \"count\": 1}, {\"from\": \"nostri '^\", \"to\": \"nostri\", \"count\": 1}, {\"from\": \"lesu\", \"to\": \"Iesu\", \"count\": 1}]. Append one LF. Complete Quam prayer, removing notes29-31 and joining compositor line breaks. Retain Domini Dei and native punctuation/case; next Qui pridie prayer excluded."
+    },
+    {
+      "artifact_type": "ocr-text",
+      "byte_size": 1095058,
+      "derived_from": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-gelasiansacrame00wilsgoog",
+      "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+      "id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.historical-book-ocr-e4500b54",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/historical-book-ocr-e4500b54/artifact.toml",
+      "manifest_sha256": "544f418b08e643b657cd97c51f731ab5d5b9ad59d0a7ed798a4fee05af29cca3",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/historical-book-ocr-e4500b54/source.txt",
+      "provenance": "Aliases Gelasian, Sacramentarium Gelasianum and Wilson checked against both existing canonical owners before retrieval. Complete PDF and DjVuTXT fetched directly with curl -L; size and SHA-1 matched the host inventory, and SHA-256 matched both pre-existing parent records. The exact host OCR remains remote under its existing unresolved-wrapper record; this separately identified derivative retains the historical publication on its own public-domain basis.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The identified historical printing was published before 1931 and is public domain in the United States by expiration of its publication term. Cornell University Library, Copyright Term and the Public Domain, updated 1 January 2026, https://guides.library.cornell.edu/copyright/publicdomain, checked 16 October 2026, gives that rule for foreign publications. Faithful mechanical reproduction and automated OCR add no new human-authored text. This record covers this historical witness and stated mechanical artifact, not a modern critical edition or translation. The retained source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "e4500b548776621c720a0c7cb313f9de041969531da3814b7a4ef6444038a4e9",
+      "storage": "tracked",
+      "transformation": "Byte-preserving slice of the exact UTF-8 IA DjVuTXT parent: split on LF while retaining terminators; concatenate 1-based inclusive raw physical lines 100–37063. The retained start is THE preceding GELASIAN SACRAMENTARY; the end is THE END. No other lines or characters changed. Omit original lines 1–99 (modern Google wrapper and library preliminaries) and 37064–37086 (trailing blanks, barcode and library borrower notice)."
+    },
+    {
+      "artifact_type": "ocr-text",
+      "byte_size": 1098845,
+      "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+      "id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-gelasiansacrame00wilsgoog",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ia-djvu-ocr-gelasiansacrame00wilsgoog/artifact.toml",
+      "manifest_sha256": "da4c10d7a94d948537ce637b1edc7d6d15f36118e8a65aa2cfca4a52539901e3",
+      "media_type": "text/plain; charset=utf-8",
+      "provenance": "Internet Archive DjVuTXT derivative of item gelasiansacrame00wilsgoog. Fetched whole over HTTPS with curl on 2026-08-01, its length checked against the length the item's own metadata declares, and hashed before use. Nothing in the retrieval path passed through a model.",
+      "record_type": "artifact",
+      "retrieved": "2026-08-01",
+      "rights_basis": "The underlying printing is in the public domain in the United States by publication date. The exact bytes registered here are an Internet Archive DjVuTXT optical-character-recognition derivative of that printing, and no distribution grant was established for the derivative itself or for the digitiser's own front matter where the file carries it. Triptych therefore records the exact remote bytes and their digest, retains no payload, and quotes from the underlying edition only what a locus needs.",
+      "rights_status": "unresolved",
+      "sha256": "039123ca029bf1684b2e8b0dec014cc3fa9057ecb30da3494f7165cb89684d84",
+      "source_url": "https://archive.org/download/gelasiansacrame00wilsgoog/gelasiansacrame00wilsgoog_djvu.txt",
+      "storage": "remote"
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 263,
+      "derived_from": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.pdf-text-layout-6ca97fd7",
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-hanc-igitur-checked-latin-b46e0e89",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/canon-hanc-igitur-checked-latin-b46e0e89/artifact.toml",
+      "manifest_sha256": "0d7961d4a77bc4a4b7c53e19c07ec5e879e69334e1e8d49c9b12458fc35830fb",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/canon-hanc-igitur-checked-latin-b46e0e89/text.txt",
+      "provenance": "Existing canonical work/edition identities, alias and artifact records were inspected before creation; the existing retained OCR and facsimile were reused, without a new edition or replacement witness. Exact bytes were mechanically extracted from the pinned OCR with an explicit correction ledger. The complete bounded body was read against the cited rendered historical page(s), then independently checked word by word by a second reviewer on 2026-10-16. R, Vatican Reginae 337, as mediated by Wilson's 1915 critical edition; no new manuscript collation. Verification evidence: artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "b46e0e89dd83e69c5befee20965e19263ec54c8ee8742720b941d962eabf83a4",
+      "storage": "tracked",
+      "transformation": "Source UTF-8 bytes SHA-256 6ca97fd74dee383bec70078151eaa0dc918a2b310389577d30690f4e503fdb53. Use LF-delimited physical line ranges [[2305, 2309]]. Select only the named complete prayer bounded by its incipit and next prayer; join whitespace to one space, excluding running heads/apparatus between disjoint ranges. Apply these exact page-verified replacements in order: [{\"from\": \"famiHae\", \"to\": \"familiae\", \"count\": 1}]. Append one LF. Main text of R mediated by Wilson. Starts Hanc and ends dominum nostrum; exclude following Quam and footnotes. Preserve spacing around printed points as retained OCR, with source lines joined."
+    },
+    {
+      "artifact_type": "normalized-text",
+      "byte_size": 207,
+      "derived_from": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.pdf-text-layout-6ca97fd7",
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-quam-oblationem-checked-latin-94b63de8",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/canon-quam-oblationem-checked-latin-94b63de8/artifact.toml",
+      "manifest_sha256": "c43bee21dae83d0466e83b806d7a51e6bdfacdc409364a6798e670909240cbf7",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/canon-quam-oblationem-checked-latin-94b63de8/text.txt",
+      "provenance": "Existing canonical work/edition identities, alias and artifact records were inspected before creation; the existing retained OCR and facsimile were reused, without a new edition or replacement witness. Exact bytes were mechanically extracted from the pinned OCR with an explicit correction ledger. The complete bounded body was read against the cited rendered historical page(s), then independently checked word by word by a second reviewer on 2026-10-16. R, Vatican Reginae 337, as mediated by Wilson's 1915 critical edition; no new manuscript collation. Verification evidence: artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The identified historical critical edition was published before 1931 and is public domain in the United States by expiration of its publication term, as recorded for the existing source artifacts. This bounded faithful transcription of its Latin text contributes no new authorship and is excluded from Triptych's CC BY 4.0 license. Modern wrappers and modern translations are not reproduced.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "94b63de805aa0998d0dde05f03dd0c7d9909de4bcff585545f7434e501fd4bbc",
+      "storage": "tracked",
+      "transformation": "Source UTF-8 bytes SHA-256 6ca97fd74dee383bec70078151eaa0dc918a2b310389577d30690f4e503fdb53. Use LF-delimited physical line ranges [[2309, 2309], [2328, 2330]]. Select only the named complete prayer bounded by its incipit and next prayer; join whitespace to one space, excluding running heads/apparatus between disjoint ranges. Apply these exact page-verified replacements in order: [{\"from\": \" oblationem\", \"to\": \"Quam oblationem\", \"count\": 1}, {\"from\": \"quae- sumus\", \"to\": \"quaesumus\", \"count\": 1}, {\"from\": \"accepta- bilemque\", \"to\": \"acceptabilemque\", \"count\": 1}, {\"from\": \"benedictam^\", \"to\": \"benedictam\", \"count\": 1}, {\"from\": \"adscriptam^\", \"to\": \"adscriptam\", \"count\": 1}, {\"from\": \"ratam^\", \"to\": \"ratam\", \"count\": 1}, {\"from\": \"corpus-\", \"to\": \"corpus\", \"count\": 1}, {\"from\": \"sanguis-\", \"to\": \"sanguis\", \"count\": 1}, {\"from\": \"dei''' /nostri\", \"to\": \"dei nostri\", \"count\": 1}]. Append one LF. Complete Quam prayer, excluding the intervening page2apparatus and page3heading, superscript notes1-3 and folio-boundary slash. R maintext retains dei; note3 assigns its omission to O. Ut remains capitalized."
+    },
+    {
+      "artifact_type": "scan",
+      "byte_size": 28655931,
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/ia-pdf-96fd93c7/artifact.toml",
+      "manifest_sha256": "13f26a56084ef752aed19acc46d4ac74dce893174409b24a85646c9805bb2cd6",
+      "media_type": "application/pdf",
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/ia-pdf-96fd93c7/source.pdf",
+      "provenance": "Whole response acquired directly by a research lane on 2026-09-05 and handed to source registration with URL, digest, byte size and extent. Registration independently ran sha256sum and checked the byte size. No source URL was reconstructed and no new source was fetched. Existing work aliases and sibling artifact provenance/transformation were checked before registration. Additional independently recorded acquisition, preserved during 2026-09-06 metadata reconciliation from artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915-facsimile-web-2026-09-05.ia-gregorian-pdf-96fd93c7: Exact complete response acquired directly by the liturgical-history research sweep on 2026-09-05, retained as bytes and hashed before registration. The recorded URL, size and SHA-256 were replayed against the saved file with sha256sum. Identity reconciliation used source-reader catalog queries Gregorian, followed by inspection of the matching works, editions and aliases; existing artifact transformations and provenance were checked before adding this artifact. This records acquisition, not whole-work inspection or image collation. Additional GPT55 acquisition receipt: Retrieved directly by the liturgical-history research lane on 2026-09-05; receipt(s) LIT-008, LIT-009 in run 9bf9d40d825f419f. Registration re-read the complete receipt, verified every supplied path against its SHA-256 and byte size, resolved catalog aliases before assigning the work, and checked existing editions for superseding derivations. No source was fetched by registration.",
+      "record_type": "artifact",
+      "retrieved": "2026-09-05",
+      "rights_basis": "The represented Henry Bradshaw Society volume was published in London in 1915 and is public domain in the United States by publication date. This exact file is a mechanical scan with an automated text layer; the digitisation credit is factual and does not add a newly authored edition. The entire 28,655,931-byte file is retained as a reasonably sized reusable facsimile.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "96fd93c73f8c9df47b6911981155b8b02cf2f2183ca6e87baad15128682d8681",
+      "source_url": "https://archive.org/download/gregoriansacrame00cath/gregoriansacrame00cath.pdf",
+      "storage": "tracked"
+    },
+    {
+      "artifact_type": "extracted-text",
+      "byte_size": 1063448,
+      "derived_from": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7",
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.pdf-text-layout-6ca97fd7",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/pdf-text-layout-6ca97fd7/artifact.toml",
+      "manifest_sha256": "4e8b9130e03978b916d6ecc861e7b8843db827d29b7572bff729f145b64a20c5",
+      "media_type": "text/plain; charset=utf-8",
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/pdf-text-layout-6ca97fd7/source.txt",
+      "provenance": "Canonical aliases Gregorian Sacramentary, Hadrianum and Wilson checked before acquisition. Existing full scan retained at its original canonical owner; parent hash independently replayed during registration. A new text artifact supplies offline search without altering that scan or duplicating the remote IA DjVuTXT identity.",
+      "record_type": "artifact",
+      "retrieved": "2026-10-16",
+      "rights_basis": "The identified historical printing was published before 1931 and is public domain in the United States by expiration of its publication term. Cornell University Library, Copyright Term and the Public Domain, updated 1 January 2026, https://guides.library.cornell.edu/copyright/publicdomain, checked 16 October 2026, gives that rule for foreign publications. Faithful mechanical reproduction and automated OCR add no new human-authored text. This record covers this historical witness and stated mechanical artifact, not a modern critical edition or translation. The retained source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "6ca97fd74dee383bec70078151eaa0dc918a2b310389577d30690f4e503fdb53",
+      "storage": "tracked",
+      "transformation": "Poppler pdftotext 26.08.0: pdftotext -layout source.pdf source.txt; process the complete 432-page PDF without a page range. UTF-8 output, layout spaces and form feeds retained exactly; no corrections, filtering or normalization."
+    },
+    {
+      "date": "1894",
+      "id": "edition.anonymous.gelasian-sacramentary.wilson-clarendon-1894",
+      "language": "la",
+      "manifest_path": "src/sources/works/anonymous/gelasian-sacramentary/editions/wilson-clarendon-1894/edition.toml",
+      "manifest_sha256": "45b414e9f0f740cadd5660a72ff299e63b9943a6e7e9a6fc75ec5b1ced56ce63",
+      "publication": "Edited by H. A. Wilson, Oxford: Clarendon Press, 1894",
+      "record_type": "edition",
+      "title": "The Gelasian Sacramentary: Liber Sacramentorum Romanae Ecclesiae",
+      "work_id": "work.anonymous.gelasian-sacramentary"
+    },
+    {
+      "date": "1894",
+      "id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+      "language": "la",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/edition.toml",
+      "manifest_sha256": "7bb097f4c19699a224a5bf589d039b7b39a3aad66d9db0e3d70845f353df5670",
+      "publication": "Oxford: at the Clarendon Press, 1894. Edited by Henry Austin Wilson from Vatican, Reg. lat. 316, with the readings of the eighth-century Gelasians in the margins and apparatus.",
+      "record_type": "edition",
+      "title": "The Gelasian Sacramentary: Liber sacramentorum Romanae ecclesiae, edited with introduction, critical notes and appendix by H. A. Wilson",
+      "work_id": "work.catholic-church.sacramentarium-gelasianum-vetus"
+    },
+    {
+      "date": "1915",
+      "id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "language": "la",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/edition.toml",
+      "manifest_sha256": "13a47b3f68978894a35e8836fa4f4fc119c09e3ba3c45bddf69158a7694f5578",
+      "publication": "London: Henry Bradshaw Society, vol. XLIX, 1915. Edited by Henry Austin Wilson from Cambrai 164 with two further ninth-century manuscripts.",
+      "record_type": "edition",
+      "title": "The Gregorian Sacramentary under Charles the Great, edited from three MSS. of the ninth century by H. A. Wilson",
+      "work_id": "work.catholic-church.sacramentarium-gregorianum-hadrianum"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-hanc-igitur-checked-latin-75df4acf",
+      "artifact_sha256": "75df4acff246918a08cf9d2d7c8089c6bb560e76e0f76e3a79669c9bb07e762c",
+      "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+      "id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-hanc-igitur",
+      "locus": "canon-hanc-igitur; printed p. 235; source PDF page(s) 328",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/canon-hanc-igitur.toml",
+      "manifest_sha256": "84faaaec950d643e9bba8bedbd3f9f21313a8abcca10be692697b8a58ca42666",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-quam-oblationem-checked-latin-e01e1083",
+      "artifact_sha256": "e01e1083c750fdc4a7c74a7e37c092e8989a9d3427292b5c6fba29f36698b327",
+      "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+      "id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.canon-quam-oblationem",
+      "locus": "canon-quam-oblationem; printed p. 235; source PDF page(s) 328",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/canon-quam-oblationem.toml",
+      "manifest_sha256": "3a92c4358e4ab1f4b123d4dd688d8efcb1e11506dabd2bf40bca301cfa593d76",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-hanc-igitur-checked-latin-b46e0e89",
+      "artifact_sha256": "b46e0e89dd83e69c5befee20965e19263ec54c8ee8742720b941d962eabf83a4",
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-hanc-igitur",
+      "locus": "canon-hanc-igitur; printed p. 2; source PDF page(s) 60",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/canon-hanc-igitur.toml",
+      "manifest_sha256": "c80b95d7fe1ec798fd8cc955c50f69935150159c24454293622a4e6f8965e42b",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-quam-oblationem-checked-latin-94b63de8",
+      "artifact_sha256": "94b63de805aa0998d0dde05f03dd0c7d9909de4bcff585545f7434e501fd4bbc",
+      "edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.canon-quam-oblationem",
+      "locus": "canon-quam-oblationem; printed p. 2-3; source PDF page(s) 60, 61",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/canon-quam-oblationem.toml",
+      "manifest_sha256": "5ba281e5552e47e17a4dd7e10beed9d954368fc91835f8991f67cbb72710e962",
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_type": "passage",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "verified_on": "2026-10-16"
+    },
+    {
+      "id": "work.anonymous.gelasian-sacramentary",
+      "manifest_path": "src/sources/works/anonymous/gelasian-sacramentary/work.toml",
+      "manifest_sha256": "a41c01cc8c194696663fab1631d3c4f96828ab0ab07be883df92d243805690e3",
+      "record_type": "work",
+      "title": "Liber sacramentorum Romanae ecclesiae"
+    },
+    {
+      "id": "work.catholic-church.sacramentarium-gelasianum-vetus",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/work.toml",
+      "manifest_sha256": "034be9e2898ee8994a5aa64c1d4316d18271274e68532d1e37b0ba576071a618",
+      "record_type": "work",
+      "title": "Liber sacramentorum Romanae aeclesiae ordinis anni circuli"
+    },
+    {
+      "id": "work.catholic-church.sacramentarium-gregorianum-hadrianum",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/work.toml",
+      "manifest_sha256": "a801fe981738068dc5f02764d856715549c8ee63e28b6635973242b765eb79e3",
+      "record_type": "work",
+      "title": "Sacramentarium Gregorianum (Hadrianum)"
+    }
+  ],
+  "text_serialization": {
+    "encoding": "UTF-8",
+    "final_newline": true,
+    "id": "act-history-ventilate/v1",
+    "line_ending": "LF",
+    "output_hash_field": "serialized_text_sha256",
+    "owner": "tools/act-history:ventilate",
+    "source_hash_field": "text_sha256"
+  },
+  "tool_inputs": [
+    {
+      "byte_size": 67556,
+      "path": "guidance/liturgical-text-publication-policy.md",
+      "sha256": "3a035f6e50c06da9597ea99020efb0fa93939d6ef88f6204ed83ffbdf9aae32f"
+    },
+    {
+      "byte_size": 90723,
+      "path": "scripts/_calendars.py",
+      "sha256": "9961359f38a3e390b5de4103a5222149e40b906362bba4b5620590f5ee1fed8e"
+    },
+    {
+      "byte_size": 49955,
+      "path": "scripts/_eucharistic_history.py",
+      "sha256": "8a6287252b3c50270464fca462ec2eac5680fbc0d21c7670482fd41b8bb555ee"
+    },
+    {
+      "byte_size": 60025,
+      "path": "scripts/_eucharistic_texts.py",
+      "sha256": "cd92077fd685310b7aaf7f14bfb1ff83f23bc1417cc8ebe9687ca9a554016799"
+    },
+    {
+      "byte_size": 48920,
+      "path": "scripts/_proper_latin.py",
+      "sha256": "b24579434c8887a3b8527776790689b3b9f3262ee686eca745ec950845699bd7"
+    },
+    {
+      "byte_size": 33120,
+      "path": "scripts/_tooling.py",
+      "sha256": "86c302fcb7be450dec4dc1d45c4f529b000e79d5c548fae2b22212f7246e0afe"
+    },
+    {
+      "byte_size": 252547,
+      "path": "tools/act-history",
+      "sha256": "f5c2926da1d093b3f84d010a9ade154d79b0637661532c30f9a83c6412154edc"
+    },
+    {
+      "byte_size": 117989,
+      "path": "tools/source-library",
+      "sha256": "7a85be155005821a197b5ee6f3b423424669c074c827898cdf2be39e8388aa2f"
+    }
+  ],
+  "unified_diff": "--- left/wilson-1915-gregorian-canon-prayers\n+++ right/wilson-1894-gelasian-canon-prayers\n@@ -1,2 +1 @@\n-Quam oblationem tu deus in omnibus .\n-quaesumus benedictam adscriptam ratam rationabilem acceptabilemque facere digneris Ut nobis corpus et sanguis fiat dilectissimi filii tui domini dei nostri iesu christi.\n+Quam oblationem tu, Deus, in omnibus, quaesumus, benedictam, adscriptam, ratam, rationabilem, acceptabilemque facere digneris, ut nobis corpus et sanguis fiat dilectissimi Filii tui Domini Dei nostri Iesu Christi.\n"
+}

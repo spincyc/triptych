@@ -4,6 +4,7 @@ from __future__ import annotations
 import copy
 import json
 from pathlib import Path
+import re
 import tempfile
 import unittest
 import xml.etree.ElementTree as ET
@@ -13,7 +14,7 @@ from tools.tests import test_act_history_reception as reception
 
 
 ROOT = Path(__file__).resolve().parents[2]
-SCRATCH = ROOT / ".scratch/map-renderer"
+SCRATCH = ROOT / ".scratch/map-readability-revision/print-panels"
 BROWSER = ROOT / "src/web/browser/history/history.js"
 NS = {"s": preview.NS}
 
@@ -76,6 +77,86 @@ class ActHistoryPreviewTests(unittest.TestCase):
         for station in self.spine["stations"]:
             self.assertIn(station["id"], result.stdout)
         self.assertTrue((self.output / "latin-missal-preview.pdf").read_bytes().startswith(b"%PDF"))
+
+    def test_full_titles_and_single_named_panel_replace_numeric_only_lanes(self):
+        visible = self.svg.findall('.//s:text[@data-label-for]', NS)
+        for station in self.spine["stations"]:
+            label = " ".join(node.text for node in visible if node.get("data-label-for") == station["id"])
+            self.assertEqual(" ".join(station["title"].split()), " ".join(label.split()))
+        geometry = json.loads((self.output / "latin-missal-preview-parts/browser-geometry.json").read_text())
+        panels = geometry["panels"]
+        self.assertEqual(len(panels), len({s["line"] for s in self.spine["stations"]}))
+        roman = [p for p in panels if p["line"] == "typica"]
+        self.assertEqual(len(roman), 1)
+        self.assertGreater(roman[0]["tracks"], 1, "the fixture must retain the Holy Week branch inside its line")
+        self.assertGreater(self.audit["detail_pages"], 1)
+        self.assertEqual(set(self.audit["station_sheets"]), {s["id"] for s in self.spine["stations"]})
+
+    def test_research_relationship_is_visible_without_becoming_an_act_parent(self):
+        evidence = {"source_id": "constructed-source", "locus": "fixture p. 1", "source": {
+            "title": "Constructed research citation", "inspection_status": "inspected",
+            "inspection": "A test fixture, not historical evidence.", "url": "https://example.org/fixture"}}
+        group = {"id": "test-group", "label": "Constructed group", "status": "declared"}
+        catalogue = {
+            "presentation_groups": [group],
+            "entries": [{"id": "candidate-book", "title": "A candidate book", "family": "fixture",
+                         "date_label": "1500", "chronology": {"start": 1500, "end": 1500},
+                         "presentation_group": group}],
+            "relationship_entities": [{"id": "undated-donor", "label": "An undated textual tradition",
+                                       "kind": "textual-tradition", "family": "fixture", "presentation_group": group,
+                                       "scope": "Only the donor tradition named by the source.",
+                                       "basis": "A qualified conceptual donor, not an identified edition.",
+                                       "limitations": "The exact donor witness remains unidentified.", "evidence": [evidence]}],
+            "relationships": [{"id": "constructed-relationship", "kind": "borrowing", "label": "A bounded borrowing claim",
+                               "from": "undated-donor", "to": "candidate-book", "directed": True, "certainty": "sourced",
+                               "scope": "A single named prayer.", "basis": "A constructed basis.",
+                               "limitations": "Does not establish an edition, date or act.", "evidence": [evidence]}],
+        }
+        output = self.root / "research-preview"
+        audit = preview.render_preview(plate_path=self.plate, spine=self.spine, out_dir=output,
+                                       browser_source=BROWSER, catalogue=catalogue)
+        svg = ET.parse(output / "latin-missal-preview.svg").getroot()
+        links = svg.findall('.//s:path[@data-relationship]', NS)
+        self.assertEqual([link.get("data-relationship") for link in links], ["constructed-relationship"])
+        marks = {m.get("data-station") for m in svg.findall('.//s:g[@data-station]', NS)}
+        self.assertNotIn("undated-donor", marks)
+        self.assertNotIn("candidate-book", marks)
+        words = " ".join(svg.itertext())
+        self.assertIn("Context entity; no dated witness plotted", words)
+        self.assertIn("A candidate book", words)
+        self.assertIn("Source record; text not assessed", words)
+        self.assertIn("not the lifespan", words.lower())
+        self.assertIn("#family=group%3Atest-group", words)
+        self.assertEqual(audit["station_count"], self.audit["station_count"])
+        self.assertEqual(audit["edge_count"], self.audit["edge_count"])
+        self.assertEqual(audit["research_relationship_count"], 1)
+        self.assertGreater(audit["network_pages"], 0)
+        network_ids = [identifier for node in svg.findall('.//s:g[@data-network-group]', NS)
+                       for identifier in node.get("data-within-relationships", "").split()]
+        network_ids += [identifier for edge in svg.findall('.//s:path[@data-network-bundle]', NS)
+                        for identifier in edge.get("data-relationship-ids").split()]
+        self.assertEqual(network_ids, ["constructed-relationship"])
+        self.assertIn("Constructed group · within-group assertion", words)
+        appendix = " ".join(" ".join(ET.parse(p).getroot().itertext())
+                            for p in (output / "latin-missal-preview-parts").glob("relationships-*.svg"))
+        self.assertIn("Constructed research citation", appendix)
+        self.assertIn("Does not establish an edition, date or act.", appendix)
+        self.assertIn("The exact donor witness remains unidentified.", appendix)
+        self.assertIn("E01", appendix)
+
+    def test_branch_route_does_not_pass_through_an_unrelated_station(self):
+        geometry = preview.browser_geometry(self.spine, BROWSER)
+        for panel in geometry["panels"]:
+            for edge in panel["edges"]:
+                points = [(float(x), float(y)) for x, y in re.findall(r"[ML] ([\d.]+) ([\d.]+)", edge["path"])]
+                for node in panel["nodes"]:
+                    if node["id"] in (edge["from"], edge["to"]):
+                        continue
+                    for (ax, ay), (bx, by) in zip(points, points[1:]):
+                        nx, ny = node["x"], node["y"]
+                        on_segment = (min(ax, bx) <= nx <= max(ax, bx) and min(ay, by) <= ny <= max(ay, by)
+                                      and abs((nx - ax) * (by - ay) - (ny - ay) * (bx - ax)) < .001)
+                        self.assertFalse(on_segment, f"{edge['from']} → {edge['to']} falsely touches {node['id']}")
 
     def test_missing_isolated_station_is_a_refusal_not_a_smaller_map(self):
         changed = copy.deepcopy(self.spine)
