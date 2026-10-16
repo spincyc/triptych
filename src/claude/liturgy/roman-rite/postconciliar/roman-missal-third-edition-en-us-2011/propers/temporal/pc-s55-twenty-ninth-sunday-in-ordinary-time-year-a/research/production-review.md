@@ -1179,3 +1179,146 @@ about 6,180 words.
 Cold concise review; homily revision and review; the shared-timestamp
 three-document build; visual review; canonical web generation and review;
 installation and publication gates.
+
+## Derive-homily of the revision, iteration 0 (16 October 2026)
+
+`proper-study` v12, run `821c824684b0c7a7`, after the revised concise study's
+review (PASS at iteration 0, advisory SYN-006). The stage ran as a Claude Code
+harness subagent, `claude-opus-5-5[1m]`, dispatched at reasoning effort
+`high`. No blocking, carried or advisory finding was forwarded in the packet;
+the standing homily findings of run `4d16b5e19d25dad9` carried by the research
+handoff, and the revised studies' changes that bear on the homily, were taken
+up as below. Only the two homily components, the shared
+`generation-metadata.tex` (revision timestamp 2026-10-16T23:16:24Z, one
+appended contribution) and this record were changed. No research record,
+study or concise component, entrypoint, format file, manifest or web-edition
+record was edited; `homily.tex` is unchanged.
+
+### Revisions
+
+- HOM-001. The spoken body now introduces Mark 10:45 as Scripture: "As he says
+  in Saint Mark's Gospel, the Son of man came 'to give his life a redemption
+  for many.'" The antiphon clause is gone and no sentence about the Communion
+  antiphon replaces it, so nothing in the speech depends on which antiphon or
+  chant is sung. The note's occasion paragraph and the component's header
+  comment say the same.
+- HOM-002. The research owner has corrected `research/scope.md` section 2
+  ("v. 8 is sung whole") and `research/context.md` records the readings-page
+  capture's third strophe ending with v. 8b. The sentence "The psalm told us how
+  to come: 'Bring up sacrifices, and come into his courts'" stands on that
+  record, and Douay–Rheims Psalm 95:8 was read again.
+- The ground of the debt (STU-011 and STU-014 as the revised studies repair
+  them). The note no longer says that Chrysostom and Augustine "accept" a
+  ground shared with Hilary and Ambrose. It names each witness's ground as the
+  concise study gives it (possession for Hilary and Ambrose; for Chrysostom a
+  debt that binds monks and Apostles; for Augustine God's ordering of his
+  Church) and says the speech preaches none of them, only the coin the
+  questioners carried and the command to render it. The speech is unchanged
+  here.
+- World Mission Day (handoff item 6, as the studies now record it). The note
+  states that the Sunday is the hundredth World Mission Day, which gives the
+  Mass no rank or text and is not preached, and that the Mass for the
+  Evangelization of Peoples, permitted and not prescribed, would replace this
+  formulary and this homily. Leo XIV's message is added to the References.
+  The speech does not mention the observance.
+- Dated readings (WEB-001 as the studies repair it). The References' Lectionary
+  entry names the Internet Archive capture of 15 March 2026 for the page of
+  readings.
+- Three small corrections in the speech found on re-reading the sources. "The
+  Thessalonians' labour of charity" is now "labour of love", the phrase as
+  Chrysostom's NPNF English gives 1 Thessalonians 1:3, with his own question
+  ("what labor is it to love?") leading into the quotation; the note records
+  that the Douay–Rheims reads "labour and charity", and 1 Thessalonians 1:3 is
+  added to the Douay–Rheims entry. "To be stamped again by a new birth" is now
+  "to be stamped by a new birth", Augustine's words at *En. in Ps.* 4.8. The
+  Prayer over the Offerings sentence no longer says the prayer names the gifts
+  "before we have offered anything", a timing the description of
+  *Tribue nos, Domine, quaesumus, donis tuis* does not give.
+- In the note, the soldiers under Julian "giving the emperor their service but
+  not themselves" is added to the list of the homily's own connections, and
+  Jerome's Latin is printed as the PL 26 page image prints it (*decimas,
+  primitias, et oblationes, ac victimas*). The note was condensed so that the
+  homily stays at four pages with the colophon on the last.
+- VIS-004 is not repaired: the movement break in the left column of page 1
+  again opens wider than the others, because the shared `properhomily`
+  environment sets flush-bottom columns. The remedy, ragged-bottom columns, is a
+  change to `src/common/propers-homily.tex` for its owner; no leaf-local
+  setting was added.
+
+The argument, its relation to the three interpretations, and the decisive
+textual detail are those of the iteration-0 entry above and are unchanged. The
+familiar question "What portion does God get?" becomes "Whose image do I
+bear?" through Matthew 22:20–21: the questioners name the image on their own
+coin, the command is *reddite* and not *dare* (22:17), and the second clause
+names no object, which Augustine reads through Genesis 1:26 ("to Caesar his
+money, to God yourselves"). The true praise of 22:16 rebuked as hypocrisy at
+22:18 turns that answer on the hearer.
+
+### Evidence read at this stage
+
+No evidence-dependent claim was added beyond what the revised studies print.
+Each quotation in the speech and the note was read again at its locus: the
+Douay–Rheims (Challoner) verse files at Gn 1:26, Ps 95:7–8, Is 45:1–6,
+Mt 22:15–21, Mk 10:45, Phil 2:15, 1 Thes 1:3 and 1 Jn 3:2; the Clementine at
+Mt 22:17, 21 and Phil 2:15; NPNF 1/7 *Tract. in Ioh.* 40.9 (tracked lines
+18170–18206); NPNF 1/8 *En. in Ps.* 4.8 (lines 1290–1316), 57.8 (lines
+24005–24035), 95.8–9 (lines 48040–48068) and 124.7 (lines 61094–61148); NPNF
+1/10 *Hom. in Matt.* 70.1–2 (lines 39518–39605); NPNF 1/13 *Hom. in 1 Thess.* 1
+(lines 29170–29192); Ambrose *Exp. Luc.* IX.34–36 in the tracked electronic
+Latin (the text prints *Major*; the note keeps the study's *Maior*). Jerome's
+*decimas, primitias, et oblationes, ac victimas* was read on the PL 26 col. 163
+page image, Aquinas's *hypocritae sunt proprie qui aliud in ore habent, aliud
+in corde* on the Venice p. 283 page image, and *Deus autem simplex est ...
+quando intentio est ad unum* on the Dessain p. 383 page image (artifact page
+387). The orations are described after the study's descriptions in
+`sections/05-appointed-texts.tex`.
+
+No search, listing or file of the other provider's leaf for this identity, its
+PDFs or web edition, or its production reviews was opened at this stage.
+
+### Counts, pace and rehearsal
+
+**Spoken words: 1,459**, counted as whitespace-separated tokens of the body
+with TeX comments, `\bigskip`, `\emph` markup and quotation marks removed: a
+little over 11 minutes at 130 words a minute, a little under 12 at 125, and a
+little over 12 at 120. This is an estimate from the count; no speaker
+delivered the words and no delivery was timed. The revised body was read
+through in full in its final form, silently and not aloud, for sense, the
+reference of each pronoun (the "he" of the Mark sentence is the one who bears
+God's image, named in the sentence before) and sentence length.
+
+### Author proof and checks
+
+- `make doc DOC=liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily PROVIDER=claude`
+  at revision timestamp 2026-10-16T23:16:24Z: no LaTeX or package warning,
+  overfull or underfull box, or undefined reference; component manifest and
+  generation metadata valid. 4 physical pages, SHA-256
+  `6c71eddb0515a3015a5630b5862e69e265870acc886fff47df8d03208cefce55`;
+  removing the PDF and building again reproduced the same bytes. The title
+  and both columns of the speech fill pages 1 and 2; the note begins page 3;
+  the exact loci, the References, the revision timestamp and the rights
+  colophon share page 4. Every page was rasterized and inspected. All nine
+  font resources are embedded Latin Modern. Two earlier proofs of this
+  revision ran to five pages, the colophon alone on the last, and were cured by
+  condensing the note, not by changing type.
+- `scripts/_proper_study.py check --phase content --edition homily` with the
+  five `--require` flags, `tools/check-proper-components --phase artifacts
+  --edition homily`, the eleven `tools/tpt check-content-preflight --edition
+  homily` checks (`references-used`: 11 entries, every one used;
+  `house-voice`: 3 reader-facing files) and `provenance-matches-run`: pass.
+- The research and synthesis editions, rebuilt with the shared metadata, have
+  37 and 12 pages with no warning.
+
+### Upstream observations for the homily reviewer
+
+None of the following was changed here. The expansive study's comparison
+table (`sections/50-comparison.tex`, Disagreement row) still lists Augustine on
+the "yes" side of whether one who keeps nothing still owes Caesar (advisory
+STU-014), while the concise study gives that answer to Chrysostom alone; the
+homily note follows the narrower account, which is what *En. in Ps.* 124.7
+states. VIS-004 belongs to the shared homily environment.
+
+### Outstanding
+
+Cold homily review; the shared-timestamp three-document build; visual review;
+canonical web generation and review; installation and publication gates.

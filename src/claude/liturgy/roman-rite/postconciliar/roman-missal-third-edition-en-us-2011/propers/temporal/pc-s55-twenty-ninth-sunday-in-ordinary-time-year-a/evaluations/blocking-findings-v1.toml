@@ -49,24 +49,24 @@ provider = "claude"
 run_id = "821c824684b0c7a7"
 workflow = "proper-study"
 workflow_version = 12
-stage = "synthesis-review"
+stage = "homily-review"
 iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 2
-advisory_count = 16
+advisory_count = 15
 observation_count = 9
 
 [[stages]]
 stage = "homily-review"
 iteration = 0
 disposition = "PASS"
-run_id = "4d16b5e19d25dad9"
+run_id = "821c824684b0c7a7"
 workflow = "proper-study"
-workflow_version = 11
+workflow_version = 12
 standing = 0
 accepted_count = 0
-advisory_count = 2
+advisory_count = 1
 observation_count = 0
 
 [[stages]]
@@ -149,19 +149,11 @@ accepted_because = "The sentence states the evidence and its limit correctly, an
 
 [[advisories]]
 stage = "homily-review"
-id = "HOM-001"
+id = "HOM-003"
 severity = "advisory"
-location = "sections/homily/10-homily.tex, fourth movement (the worn coin restamped), the sentence beginning \"In Saint Mark's words, which one of the two Communion antiphons today takes up\""
-problem = "The relative clause \"which one of the two Communion antiphons today takes up\" puts liturgical apparatus inside the speech. It refers to a Missal option that an assembly rarely hears as such, because a hymn often replaces the antiphon. It also holds a ten-word aside between \"In Saint Mark's words\" and the quotation, which makes this the hardest sentence in the speech to follow by ear. The argument does not need it: Mark 10:45 carries the point as Scripture, and the terminal note already records the branch and the antiphon relation."
-required_result = "Introduce Mark 10:45 directly as Scripture without the embedded antiphon clause, for example \"In Saint Mark's Gospel the Son of man came ...\". If the link to the Communion antiphon is kept, give it a short sentence of its own after the quotation, one that stays true whichever antiphon or substitute is sung. Keep the terminal note's branch statement consistent with whatever the speech then says."
-
-[[advisories]]
-stage = "homily-review"
-id = "HOM-002"
-severity = "advisory"
-location = "research/scope.md section 2, textual-observations paragraph (\"in v. 8, bring sacrifices (*tollite hostias*, not sung)\"), on which the sentence \"The psalm told us how to come: 'Bring up sacrifices, and come into his courts.'\" in the seventh movement of sections/homily/10-homily.tex depends"
-problem = "Scope section 2's parenthetical says that v. 8's \"bring sacrifices\" is not sung. That contradicts three other statements in the records: the Ordo and US locator 7-8, given as whole verses in propers/verified.md (unit 4) and research/context.md (row 4); context.md's list of what is not sung (v. 2, v. 6 and the middle clause of v. 10 only); and scope.md's own section-2 table row for Psalm 95, which marks v. 8 without \"not sung\". The homily's claim that the psalm told the assembly to come into his courts with sacrifices holds only if v. 8b is sung. The bound locator supports the homily, so the defect is the research record's inconsistent parenthetical and not the speech. A later reader of scope.md would still find the homily's sentence contradicted there."
-required_result = "Make the research records agree that v. 8 is sung whole by correcting the scope.md section 2 parenthetical when the research owner next touches that file. Alternatively, if a reading of the printed Lectionary shows v. 8b omitted, revise the homily's sentence so that it no longer says the psalm told the assembly to bring sacrifices into his courts."
+location = "sections/homily/90-note.tex, 'Relation to the reviewed interpretations' paragraph (lines 30-44): 'The argument preached joins the first and third of the expansive study's three interpretations ...' and 'From the second, The Lord Who Grasps the Hand of Kings, it takes only what all three share, that Caesar's claim stands beneath God's: the Lord's hand on Cyrus, Chrysostom's render and not give and his limit at godliness, and Augustine's soldiers under Julian.'"
+problem = "The note says the speech takes from the second interpretation 'only what all three share'. The reviewed comparison names two of the listed items as the very things that set the second interpretation apart (sections/50-comparison.tex lines 63-72; research/interpretations.md, Comparison, 'Where they differ'). First, only the second 'needs the first reading as an argument', and the speech's sixth movement uses Isaiah 45 exactly that way ('Caesar's coin is minted in God's world'). Second, the second alone 'asks, in addition, where the tax must be refused, and finds the answer in a soldier's refusal to offer incense', and the speech preaches that limit through Chrysostom and Augustine's soldiers under Julian. The speech itself is sound. It combines all three readings compatibly and, as the note rightly says, leaves unpreached the witnesses' disagreement over what the debt to Caesar rests on. But the audit statement understates what the speech takes from the second reading, and 'joins the first and third' reads as excluding the second."
+required_result = "The note says that the speech joins the first and third interpretations and takes from the second its argument from Isaiah 45 (the Lord's hand on a king who does not know him) and its limit on Caesar's claim (Chrysostom's limit at godliness; Augustine's soldiers under Julian). It also says that the speech leaves the witnesses' disagreement over the ground of the debt to Caesar unpreached. The spoken body does not change."
 
 [[advisories]]
 stage = "research-review"
