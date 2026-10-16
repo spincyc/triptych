@@ -7,6 +7,28 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-16.
 
+## Claude postconciliar Twenty-ninth Sunday revision, 2026-10-16
+
+<!-- promised-deliverable: claude-pc-s55-revision-2026-10-16 -->
+
+After the first accepted run was published, the maintainer asked on
+2026-10-16 for its standing issues and its sourcing to be fixed, and for the
+result to be pushed to `main`. The maintainer then chose to fix every shared
+tool the run had exposed, with display changes gated to new runs. Three
+commits landed before any new run was seeded:
+- the three-column page-2 table at phone width (`6cd55152a`);
+- locus-aware `references-used` and the extended house-voice screen
+  (`13423ec4c`);
+- `orientation-v2` and `proper-study` version 12 (`1b7eba7e0`).
+
+The identity's provider authorization of 2026-10-16 already opens it, so the
+scope boundary is unchanged. A new version-12 run revises the leaf in place.
+It is seeded with the [research handoff](workflows/reviews/claude-pc-s55-revision-2026-10-16/HANDOFF.md), which lists the 22 standing
+findings and seven sourcing defects as leads, and keeps the GPT leaf closed.
+
+**In progress.** The tool commits are on `feature/propers/claude`; the
+revision run is next.
+
 ## Claude postconciliar Twenty-ninth Sunday three documents, 2026-10-16
 
 <!-- promised-deliverable: claude-pc-s55-three-documents-2026-10-16 -->
