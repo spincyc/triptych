@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.chaldean-catholic-church.missale.1901-mosul-dominican.bonn-scan-pdf-dbc2a822"
+edition_id = "edition.chaldean-catholic-church.missale.1901-mosul-dominican"
+artifact_type = "scan-pdf"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Historical 1901 printing, public domain in the United States by expired publication term. ULB Bonn identifies this exact digitized item as Public Domain Mark 1.0 at https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3058397 (Lizenz-/Rechtehinweis, checked 2026-10-16), linking https://creativecommons.org/publicdomain/mark/1.0/deed.de. The mark identifies a public-domain assessment, not a new copyright licence. The retained scan is the library’s mechanical page reproduction, including its identification cover; no modern scholarly edition or translation has been substituted. These source bytes are not offered under Triptych’s CC BY 4.0 licence."
+rights_jurisdiction = "United States"
+source_url = "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3058397"
+provenance = "Located by browsing ULB Bonn’s Syrian collection index https://digitale-sammlungen.ulb.uni-bonn.de/topic/titles/17267?max=100&offset=101 and following its title link, then retrieving the whole catalogue HTML and its advertised complete PDF mechanically. Catalogue HTML SHA-256 c54dcf7f32d60531d52317f969dfcf09386fb10b6e8546327684f4e4f316d158. No keyword query is claimed for this route. Exact PDF bytes fetched over HTTPS on 2026-10-16 and hashed; no model stood in the source retrieval path."
+retrieved = "2026-10-16"
+sha256 = "dbc2a822e960ec581479e864968f6a4441dcf7ccf78fddd3fa28e89ef6a8abca"
+byte_size = 25095094
+page_count = 107
+indexable = false
+notes = "Visual survey bounded to exact PDF pages 1–8 and 92–107; title and approval leaves identified in the edition notes were examined in page rasters made by the repository pdf-review renderer. This is a front-matter identity check, not complete page inspection or full-text collation. Whole-file pdftotext extraction yields only the provider cover metadata, with no searchable historical body; no OCR or checked transcription has been registered. PDF page order is the provider’s order and differs from printed page numbering and right-to-left reading order."
+path = "src/sources/works/chaldean-catholic-church/missale/editions/1901-mosul-dominican/artifacts/bonn-scan-pdf-dbc2a822/scan.pdf"

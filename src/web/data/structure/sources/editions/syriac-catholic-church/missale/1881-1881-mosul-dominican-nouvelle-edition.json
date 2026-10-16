@@ -1,0 +1,51 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "scan-pdf",
+   "byte_size": 39383271,
+   "edition_owned": true,
+   "id": "artifact.syriac-catholic-church.missale.1881-mosul-dominican-nouvelle-edition.bonn-scan-pdf-1089aee7",
+   "media_type": "application/pdf",
+   "notes": "Visual survey bounded to exact PDF pages 1–8 and 376–391; title and approval leaves identified in the edition notes were examined in page rasters made by the repository pdf-review renderer. This is a front-matter identity check, not complete page inspection or full-text collation. Whole-file pdftotext extraction yields only the provider cover metadata, with no searchable historical body; no OCR or checked transcription has been registered. PDF page order is the provider’s order and differs from printed page numbering and right-to-left reading order.",
+   "page_count": 391,
+   "retrieved": "2026-10-16",
+   "rights": "public-domain",
+   "rights_basis": "Historical 1881 printing, public domain in the United States by expired publication term. ULB Bonn identifies this exact digitized item as Public Domain Mark 1.0 at https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/310934 (Lizenz-/Rechtehinweis, checked 2026-10-16), linking https://creativecommons.org/publicdomain/mark/1.0/deed.de. The mark identifies a public-domain assessment, not a new copyright licence. The retained scan is the library’s mechanical page reproduction, including its identification cover; no modern scholarly edition or translation has been substituted. These source bytes are not offered under Triptych’s CC BY 4.0 licence.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/310934",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "PDF page 383 carries an Arabic approbation dated 8 September 1880 whose signature identifies the archbishop of Mosul over the Syriac Catholics; below it is the Latin imprimatur of Fr. Eug. Ludovicus-Maria Lion, Archiep. Dam. Del. Ap. Catholic affiliation is established by this leaf, not inferred solely from the Dominican printer.",
+  "date": "1881",
+  "editors": [],
+  "id": "edition.syriac-catholic-church.missale.1881-mosul-dominican-nouvelle-edition",
+  "jurisdiction": "Syriac Catholic Church liturgical tradition",
+  "language": "syr",
+  "publication": "Mossoul: Imprimerie des Pères Dominicains, 1881. French title: Nouvelle édition.",
+  "title": "Ketābā de-tešmeštā de-qurābā be-kullkēn dīlējātā le-fut teksā de-'ēdtā qaddīštā de-Surjājē",
+  "translators": [],
+  "year": 1881
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Service de la Messe selon le rit syrien avec les prières qui se disent pour les morts",
+   "Kitāb hidmat al-quddās",
+   "Syrisch-Antiochenisches Missale"
+  ],
+  "author": "Syriac Catholic Church liturgical tradition",
+  "category": "liturgical-book",
+  "description": "Syriac Catholic Mass service and prayers for the dead, represented by the Mosul edition whose approbation expressly identifies the Syriac Catholic community.",
+  "id": "work.syriac-catholic-church.missale",
+  "languages": [
+   "syr",
+   "ar",
+   "fr",
+   "la"
+  ],
+  "title": "Ketābā de-tešmeštā de-qurābā be-kullkēn dīlējātā le-fut teksā de-'ēdtā qaddīštā de-Surjājē"
+ }
+}

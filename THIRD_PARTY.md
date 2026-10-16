@@ -367,6 +367,34 @@ source records. The Cambridge chapter itself was not acquired or read.
 Historical calendar facts do not relicense contemporary liturgical texts.
 No contemporary prayer translation is reproduced in the study.
 
+## Historical Eastern service-book facsimiles
+
+The missal-history collection retains ULB Bonn digitizations of six historical
+books: the Syriac Catholic missal (1881), Malabar preparation for Qurbana (1898),
+Chaldean missal and proper Masses (1901), Malabar *Ordo Chaldaicus* (1906), and
+Maronite *Qurbono* (1908). Their exact editions, download locations, hashes,
+bounded inspection and rights evidence are recorded under
+`src/sources/works/{syriac-catholic-church,syro-malabar-catholic-church,chaldean-catholic-church,maronite-church}/`.
+
+ULB Bonn marks the identified digital items with Public Domain Mark 1.0. Each
+artifact records that notice separately from the historical text's U.S.
+public-domain basis. Two PDFs exceed the hosting limit for a single Git object;
+their complete page content is retained in lossless page-range derivatives,
+linked to the exact original hashes. The derivatives are not byte-identical
+copies of the original PDF containers. These facsimiles and their historical
+wording are not relicensed under Triptych's CC BY 4.0 licence. Acquisition and
+limited title-page inspection do not establish a checked full transcription.
+
+The Western historical witnesses added alongside them retain their own rights
+records: Warner's 1915 *Stowe Missal*, volume II (scan and raw OCR); Lowe's 1917
+*Bobbio Missal* facsimile volume; a searchable extraction of Wilson's 1915
+Gregorian sacramentary; and the historical-book portion of the OCR of Wilson's
+1894 Gelasian sacramentary. The Gelasian derivative excludes the modern Google
+wrapper and library notices, whose exact parent remains separately identified.
+These historical editions and their scholarly apparatus have recorded U.S.
+public-domain bases; they are not relicensed under CC BY 4.0. The OCR and PDF
+extractions remain uncorrected source evidence, not checked liturgical text.
+
 ## Fonts and External Software
 
 Published PDFs embed Latin Modern font programs. The altar-server guides and the
