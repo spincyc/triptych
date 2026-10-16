@@ -61,6 +61,14 @@ qualification control. Patristic breadth can show reception but is not a
 mechanical authority count. Do not turn one theologian's view into “the Church
 teaches,” or attribute exploratory synthesis to a source.
 
+The voice rules in `guidance/editorial.md`, "Speaking from within the
+tradition", govern every faith and theology article. Under them, the
+counterarguments the profile gate requires to be treated fairly are genuine
+disagreements among Catholic witnesses and difficulties the reader actually
+brings. They are not a skeptic's case assembled in order to answer it.
+Authority grading belongs in a compact clause or a terminal graded appendix,
+not in the argument's governing question.
+
 ## Scriptural studies
 
 A study under `articles/scripture/` takes one passage, or one claim about

@@ -98,6 +98,34 @@ at arm's length by their grammar, whatever the sentence goes on to concede.
 Do not apologise for typology, doctrine, sacramental interpretation, or
 saintly reception merely because they are theological.
 
+State a teaching at its degree of determination and move on. The verb carries
+the degree: "the Church confesses", "the council defines", "Scripture
+teaches", "the Fathers commonly hold", "Aquinas determines", "it is piously
+believed". A profile's grading apparatus, where it has one, carries the
+grade. One compact clause is the most a body paragraph spends on authority.
+
+Do not write sentences about what an act is not or what the Church has not
+decided: "not a definition", "defines nothing", "adds no grade", "no
+magisterial act addresses", "carries weight only by", "left to theology".
+Name an act's kind once, where it is introduced, and then state what it
+teaches. Where silence would mislead because the Church has left a question
+open, say so once, at that claim, and give the positions the Fathers and
+Doctors actually hold.
+
+Let the Fathers, Doctors, and saints speak at length. A major witness receives
+its own exposition, covering its argument, exegesis, and images, with focused
+quotations at identified loci rather than a citation list. Relate hagiography,
+devotional tradition, and approved private revelation as the Church receives
+them, without debunking: "tradition relates", "Teresa records". State their
+status once, where they are introduced. Do not stage a skeptic's objection
+the reader did not bring merely to answer it.
+
+These rules were first set for the Claude angelology on 30 September 2026.
+On 16 October 2026 the maintainer extended them to all faith and theology
+work, after a series of essays on the last things had organised itself around
+what was not defined
+(`src/claude/articles/faith/four-last-things-shared/cold-review-2026-10-16.md`).
+
 Three things this rule does not touch, each of them already required by the
 evidence standard below:
 

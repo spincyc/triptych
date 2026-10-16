@@ -18,8 +18,11 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-flt-voice-rule"
   criterion = "The 30 September voice rule (declare each teaching at its degree; no sentences about what the Church has not decided; Fathers and saints speak at length; devotional tradition as the Church receives it) is stated once in guidance/editorial.md, and guidance/theology/angelology.md cross-references it rather than restating it."
-  status = "open"
-  evidence = ["guidance/editorial.md", "guidance/theology/angelology.md"]
+  status = "pass"
+  evidence = ["guidance/editorial.md", "guidance/theology/angelology.md", "guidance/articles.md"]
+  check = "contains"
+  path = "guidance/editorial.md"
+  needle = "On 16 October 2026 the maintainer extended them to all faith and theology"
 
   [[deliverables.requirements]]
   id = "claude-flt-content"
