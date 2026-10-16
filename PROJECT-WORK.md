@@ -26,7 +26,7 @@ exact scope opening. The GPT leaf for the same identity is published; this is
 an independent Claude production under its own edition tree and borrows
 nothing from it.
 
-**Accepted and committed; the push to `main` is next.** Run
+**Complete: accepted, pushed to `main` and verified live.** Run
 `4d16b5e19d25dad9` (`proper-study` v11) reached ACCEPTED at its publication
 gates with no escalation: 33 packets, 33 accepted results, one intervention.
 Every agent stage ran as a fresh `claude-opus-5-5[1m]` subagent at its
@@ -51,6 +51,15 @@ confirmation, the Claude publication inventory was refreshed with this leaf's
 classification row, and the source-family ledger's catalog snapshot was
 re-pinned. `make check-sources`, `check-publication-inventories`,
 `check-release-bindings`, `check-web-editions-current` and `tmt check` pass.
+`main` was fast-forwarded from `c842e33ed` to `ee54b26b2` after
+`make check-deployment-sources`, `make public-site` and `tools/tpt
+public-alpha verify --deployment-target github-pages` passed locally. Pages
+run `38939728035` and repository-hygiene run `38939728660` succeeded. The
+three PDFs, the web page and the Novus Ordo catalog are served byte-identical
+to the locally verified site, and the catalog row links all four Claude
+artifacts. The
+[deployment evidence](workflows/reviews/claude-pc-s55-production-2026-10-16/deployment-evidence.json)
+records the gates, the disclosure scan and the five live routes.
 
 ## Claude 1962 Twenty-first Sunday three documents, 2026-10-15
 

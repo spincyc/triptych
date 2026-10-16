@@ -1,0 +1,81 @@
+{
+ "record_type": "deployment-verification",
+ "verified_on": "2026-10-16",
+ "commit": "ee54b26b2a0b40b0ba8d477230a9dc138b471241",
+ "main_base": "c842e33ed5bd3a59d7dad8b4991d198f20472a2e",
+ "integration": "fast-forward; origin/main was an ancestor of the accepted work, no rebase, merge commit or force push",
+ "local_gates": [
+  {
+   "command": "make check-deployment-sources",
+   "exit_code": 0,
+   "log_sha256": "d556a0dc5e956c4da476bb7fd524c709ec888a4caf4bb34c33d7d8db7a550f0a"
+  },
+  {
+   "command": "make public-site",
+   "exit_code": 0,
+   "log_sha256": "649c1ce55f4753bdbb6e5a976595a7596f874702d4642340cd58509b7e8654d1"
+  },
+  {
+   "command": "tools/tpt public-alpha verify --deployment-target github-pages",
+   "exit_code": 0,
+   "log_sha256": "b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14"
+  }
+ ],
+ "local_gate_environment": "Python Markdown 3.10.3 and PyYAML 6.0.3 from requirements-public-alpha.txt and requirements-tools.txt; before the run every pdf/ entry of the live site's SHA256SUMS other than the hashed site-build aliases was found present in this clone, so none was restored",
+ "disclosure": "Outgoing range c842e33ed..ee54b26b2, 6 commits, 161 files; added text lines scanned for machine paths, usernames, hosts, addresses and credentials with no match; the five added binaries are public-domain facsimile excerpts (PL 9, 24, 26; Aquinas, Venice 1745 and Parma 1863) whose strings carry no host path or user name. Archived engine results carry repository-relative .scratch paths, as earlier archives do.",
+ "workflow_run": "https://github.com/spincyc/triptych/actions/runs/38939728035",
+ "workflow_conclusion": "success",
+ "repository_hygiene_run": "https://github.com/spincyc/triptych/actions/runs/38939728660",
+ "repository_hygiene_conclusion": "success",
+ "publication": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a",
+ "provider": "claude",
+ "routes": [
+  {
+   "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf",
+   "http_status": 200,
+   "sha256": "bdb08313a4398333871e7a6b67d1484a6330bbfdc9dcdb05ff5e936b2c8d0782",
+   "physical_pages": 37,
+   "compared_with": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf (the installed reviewed PDF) and build/public-alpha/site/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.pdf",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+   "http_status": 200,
+   "sha256": "5eb21cde1e38c507b9622084d11763b11db6182dce8e148968a292f5cdf507c2",
+   "physical_pages": 11,
+   "compared_with": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf (the installed reviewed PDF) and build/public-alpha/site/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf",
+   "http_status": 200,
+   "sha256": "2543cc5187959b2baa9a8afd34c4105d45072a681e2b41586a12f2037953d1d3",
+   "physical_pages": 4,
+   "compared_with": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf (the installed reviewed PDF) and build/public-alpha/site/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.html",
+   "http_status": 200,
+   "sha256": "c4a1fa81c180f6f4c236a9a2d775ed226def0a91f5c9317b54da8517f30f3125",
+   "bytes": 156253,
+   "compared_with": "build/public-alpha/site/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.html (the locally verified site)",
+   "match": "byte-identical"
+  },
+  {
+   "url": "https://mystago.gy/library/novus-ordo-liturgy.html",
+   "http_status": 200,
+   "sha256": "366a63e7c104fc1b60e8b6a420fe17a227fcbd28adac9de4749eab102698f04a",
+   "bytes": 29210,
+   "compared_with": "build/public-alpha/site/library/novus-ordo-liturgy.html (the locally verified site)",
+   "match": "byte-identical",
+   "links_found": [
+    "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-claude-27a86667518812dc.pdf",
+    "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily-claude-8fa2e02c5fa60f1c.pdf",
+    "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis-claude-48194c125850f84a.pdf",
+    "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.html"
+   ],
+   "link_note": "The catalog row links each PDF through its provider-qualified alias; each alias was fetched live (HTTP 200) and is byte-identical to the canonical route above."
+  }
+ ]
+}
