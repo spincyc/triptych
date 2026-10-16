@@ -401,7 +401,8 @@ EXAMPLES = {
                 "exempt-uses / typica",
                 "  shared base : quo-primum-1570",
                 "  tips        : quo-primum-exemption-1570 / editio-typica-1962",
-                "  units       : 0 identical, 0 differing, 0 only in exempt-uses, 24 only in typica",
+                "  units       : 0 identical, 0 differing, 0 only in exempt-uses, 16 only in typica",
+                "  structure   : 0 identical, 0 differing, 0 only in exempt-uses, 8 only in typica",
             ),
             note=(
                 "omitting the line ids reports every pair; the repository is emitted"
@@ -412,7 +413,7 @@ EXAMPLES = {
             "tools/act-history commonality typica exempt-uses"
             " --repo build/act-history/roman-holy-week --json",
             (
-                "{\"pairs\":[{\"a\":\"exempt-uses\",\"a_head\":\"quo-primum-exemption-1570\",\"b\":\"typica\",\"b_head\":\"editio-typi... [+1391 chars]",
+                "{\"pairs\":[{\"a\":\"exempt-uses\",\"a_head\":\"quo-primum-exemption-1570\",\"b\":\"typica\",\"b_head\":\"editio-typi... [+2701 chars]",
             ),
             note=(
                 "two ids select one pair, and --json carries the unit lists the table"
@@ -2931,6 +2932,27 @@ def blobs(repo: Path, ref: str) -> dict[str, str]:
     return out
 
 
+def compare_blobs(left: dict[str, str], right: dict[str, str]) -> dict[str, list[str]]:
+    both = sorted(set(left) & set(right))
+    return {
+        "same_text": [path for path in both if left[path] == right[path]],
+        "differing_text": [path for path in both if left[path] != right[path]],
+        "only_a": sorted(set(left) - set(right)),
+        "only_b": sorted(set(right) - set(left)),
+    }
+
+
+def unit_paths(state: State) -> set[str]:
+    """Identify unit files from the resolved state, not a filename heuristic."""
+    return {
+        unit_path(
+            state.masses[unit["mass"]].get("book") or state.vocab.default_book,
+            unit["mass"], unit["slot"],
+        )
+        for unit in state.units.values()
+    }
+
+
 def commonality(data: dict, repo: Path, wanted: tuple[str, str] | None) -> dict:
     """What two lines share and where they part, from the emitted repository.
 
@@ -2941,15 +2963,17 @@ def commonality(data: dict, repo: Path, wanted: tuple[str, str] | None) -> dict:
       the answer is none, the two rites have no act in common in this record and
       the tool says exactly that.
 
-      THE DIVERGENCE is about TEXT. It compares the two tips' trees and reports
-      what stands in both identically, in both differently, and in one alone.
+      THE DIVERGENCE compares unit files separately from group headers and
+      order files. The original top-level arrays retain the whole-file
+      comparison for JSON consumers; `units` and `structural_files` partition
+      it so a Mass heading is never counted as a prayer.
       Two lines with no shared act can still hold the same prayer, and that is
       the interesting case -- inheritance older than anything this record
       carries, visible as agreement without an edge.
     """
     if not repo.exists():
         emit(data, repo)
-    order, _, _ = build(data)
+    order, states, _ = build(data)
     acts = indexed(data.get("acts", []), "id", "acts")
     heads = line_heads(acts, order)
     derived = {(row["a"], row["b"]): row for row in shared_bases(data)}
@@ -2979,16 +3003,22 @@ def commonality(data: dict, repo: Path, wanted: tuple[str, str] | None) -> dict:
                 f"git says {found}, the graph says {expected}"
             )
         left_tree, right_tree = blobs(repo, f"act/{left_ref}"), blobs(repo, f"act/{right_ref}")
-        both = sorted(set(left_tree) & set(right_tree))
-        same = [path for path in both if left_tree[path] == right_tree[path]]
+        left_units, right_units = unit_paths(states[left_ref]), unit_paths(states[right_ref])
+        units = compare_blobs(
+            {path: blob for path, blob in left_tree.items() if path in left_units},
+            {path: blob for path, blob in right_tree.items() if path in right_units},
+        )
+        structural_files = compare_blobs(
+            {path: blob for path, blob in left_tree.items() if path not in left_units},
+            {path: blob for path, blob in right_tree.items() if path not in right_units},
+        )
         rows.append({
             **row,
             "a_head": key[0] and heads[key[0]][0],
             "b_head": heads[key[1]][0],
-            "same_text": same,
-            "differing_text": [path for path in both if left_tree[path] != right_tree[path]],
-            "only_a": sorted(set(left_tree) - set(right_tree)),
-            "only_b": sorted(set(right_tree) - set(left_tree)),
+            **compare_blobs(left_tree, right_tree),
+            "units": units,
+            "structural_files": structural_files,
         })
     return {"pairs": rows, "repo": str(repo), "status": "ok"}
 
@@ -4956,11 +4986,15 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
             print(f"{row['a']} / {row['b']}")
             print(f"  shared base : {base}")
             print(f"  tips        : {row['a_head']} / {row['b_head']}")
-            print(
-                f"  units       : {len(row['same_text'])} identical, {len(row['differing_text'])} differing, "
-                f"{len(row['only_a'])} only in {row['a']}, {len(row['only_b'])} only in {row['b']}"
-            )
-            for path in row["same_text"][:5]:
+            for label, comparison in (("units       ", row["units"]),
+                                      ("structure   ", row["structural_files"])):
+                print(
+                    f"  {label}: {len(comparison['same_text'])} identical, "
+                    f"{len(comparison['differing_text'])} differing, "
+                    f"{len(comparison['only_a'])} only in {row['a']}, "
+                    f"{len(comparison['only_b'])} only in {row['b']}"
+                )
+            for path in row["units"]["same_text"][:5]:
                 print(f"    = {path}")
     else:
         print(f"wrote {payload['commits']} commits on {len(payload['branches'])} branches to {payload['out']}")

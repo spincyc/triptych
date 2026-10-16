@@ -295,6 +295,19 @@
     return (line && line.label) || id;
   }
 
+  // Only a declared reception changes the edge's meaning. A crossing or a
+  // parent on another line alone is not evidence of reception.
+  function receptionsOf(station) {
+    return (station.receptions || []).filter(function (row) {
+      return (station.parents || []).indexOf(row.from) !== -1;
+    });
+  }
+
+  const RECEPTION_WORDS = {
+    'translates-typical-edition': 'Translation of a typical edition',
+    'receives-into-wider-use': 'Reception into wider use'
+  };
+
   /* ------------------------------------------------------------------------
    * What this slice calls things
    *
@@ -309,13 +322,10 @@
    *
    * A SLICE THAT DECLARES THE GENERIC NOUN HAS DECLARED NOTHING. `unit` is the
    * word this page reaches for when it has NOT been told what a thing is, so
-   * reading it back out of a file says no more than silence — and taking it for
-   * a declaration costs the two places where this page has always had a better
-   * word of its own: a PRAYER is what a reader follows through the Missal, and
-   * a MISSAL is what stood after an act. The Missal's slice declares exactly
-   * that generic, so those two keep the page's words. The durable fix is for
-   * the generator to declare `prayer` there; until it does, a placeholder must
-   * not displace a word that carries meaning.
+   * reading it back out of a file says no more than silence. A reader follows
+   * a prayer through the Missal; a state fold shows recorded units, because
+   * the record does not carry a complete missal. Neither label implies that
+   * an indexed unit has been transcribed in full.
    * --------------------------------------------------------------------- */
 
   const DEFAULT_WORDS = { unit_word: 'unit', group_word: 'mass', group_key: 'masses' };
@@ -430,18 +440,9 @@
       viewBox: '0 0 ' + width + ' ' + height,
       width: width,
       height: height,
-      role: 'img',
-      // NOT "this missal". `role="img"` prunes every station button out of the
-      // accessibility tree, so this string is very nearly the whole of the map
-      // to a reader who cannot see it — and on the Code slice it told them
-      // they were looking at a missal and then gave them nothing else.
-      //
-      // The neutral word is used rather than the slice's declared one. This
-      // page has two places where an undeclared vocabulary falls back to the
-      // Missal's own words, and both are defended above because the slice that
-      // declares nothing IS a missal; a third would put the same falsehood one
-      // undeclared slice away from returning. "This record" is what the rest
-      // of the file already calls whatever it has been handed.
+      // A group preserves the station buttons in the accessibility tree.
+      role: 'group',
+      'aria-describedby': 'legend',
       'aria-label': 'The acts this record carries, drawn as a line with ' +
         stations.length + ' stations on ' + size.rows + ' tracks'
     });
@@ -451,14 +452,31 @@
       const kind = M.kindOf(station, kindsStated);
       (station.parents || []).forEach(function (parent) {
         if (!at.has(parent)) return;
+        const reception = receptionsOf(station).find(function (row) { return row.from === parent; });
         const classes = ['track', 'track-to-' + kind];
+        if (reception) classes.push('track-reception');
         // The record says the descent crosses an edition it does not hold, so
         // the connector says so rather than joining the ends.
         if ((station.via_unrepresented || []).length) classes.push('track-gap');
-        canvas.appendChild(svg('path', {
+        const path = svg('path', {
           d: connector(at.get(parent), at.get(station.id)),
           class: classes.join(' '),
-          fill: 'none'
+          fill: 'none',
+          'data-from': parent,
+          'data-to': station.id,
+          role: 'img',
+          'aria-label': (reception ? 'Documented reception' : 'Recorded parent link') +
+            ' from ' + nameOf(byId.get(parent)) + ' to ' + nameOf(station) +
+            (reception ? ': ' + (RECEPTION_WORDS[reception.kind] || reception.kind)
+              : station.parent_kind ? ': ' + station.parent_kind : '')
+        });
+        canvas.appendChild(path);
+        // A hollow band distinguishes reception without borrowing the broken
+        // stroke that already means an unrepresented edition.
+        if (reception) canvas.appendChild(svg('path', {
+          d: path.getAttribute('d'),
+          class: 'track-reception-core' + (classes.includes('track-gap') ? ' track-gap' : ''),
+          'aria-hidden': 'true'
         }));
       });
     });
@@ -468,14 +486,22 @@
       const x = PAD + where.col * COL;
       const y = PAD + where.row * ROW;
       const kind = M.kindOf(station, kindsStated);
+      const received = receptionsOf(station);
       const group = svg('g', {
-        class: 'station line-' + station.line + ' kind-' + kind,
+        class: 'station line-' + station.line + ' kind-' + kind +
+          (received.length ? ' station-interchange' : ''),
         tabindex: '0',
         role: 'button',
         'data-station': station.id,
         'aria-label': nameOf(station) + ', ' + station.date + ', ' + kind +
-          ', ' + changeSummary(station)
+          ', ' + changeSummary(station) +
+          (received.length ? ', documented reception from ' + received.map(function (row) {
+            return nameOf(byId.get(row.from));
+          }).join('; ') : '')
       });
+      if (received.length) group.appendChild(svg('circle', {
+        cx: x, cy: y, r: 16, class: 'station-interchange-ring', 'aria-hidden': 'true'
+      }));
       group.appendChild(svg('circle', { cx: x, cy: y, r: 9, class: 'station-mark' }));
       const name = svg('text', { x: x, y: y - 24, class: 'station-name' });
       name.textContent = M.shortName(station.id);
@@ -501,6 +527,9 @@
 
     T.clear(map);
     const scroller = T.el('div', 'map-scroll');
+    scroller.tabIndex = 0;
+    scroller.setAttribute('role', 'region');
+    scroller.setAttribute('aria-label', 'History map; scroll horizontally to reach further stations');
     scroller.appendChild(canvas);
     map.appendChild(scroller);
     map.setAttribute('aria-busy', 'false');
@@ -762,6 +791,28 @@
     act_citation_note: 'On the instrument'
   };
 
+  function renderReceptions(host, rows) {
+    T.clear(host);
+    host.appendChild(T.el('h3', 'detail-section-title', 'Documented reception'));
+    host.appendChild(T.el('p', 'detail-weak',
+      'These links record reception between lines. They carry ancestry, not a ' +
+      'copy of the received parent’s text; this station’s own changes are shown below.'));
+    rows.forEach(function (row) {
+      const head = T.el('h4', 'edge-title', 'Receives from ');
+      head.appendChild(stationLink(row.from));
+      host.appendChild(head);
+      const list = T.el('dl', 'detail-list');
+      [['Relationship', RECEPTION_WORDS[row.kind] || row.kind],
+        ['Instrument', row.instrument], ['Citation', row.citation], ['Basis', row.basis]]
+        .forEach(function (entry) {
+          if (!entry[1]) return;
+          list.appendChild(T.el('dt', null, entry[0]));
+          list.appendChild(T.el('dd', null, entry[1]));
+        });
+      host.appendChild(list);
+    });
+  }
+
   function renderChanges(host, payload, station) {
     T.clear(host);
     const totals = payload.totals || {};
@@ -848,6 +899,10 @@
       tallyOf(totals.units || 0, unitWord()) + ' across ' +
       tallyOf(totals[words.group_key] || 0, groupWord()) +
       ', as this record holds them after ' + payload.title + '.'));
+    host.appendChild(T.el('p', 'detail-weak',
+      'These counts describe recorded units, not complete transcriptions. ' +
+      'A unit may carry only its heading or incipit; unread and withheld words ' +
+      'are marked where the text would stand.'));
     if (payload.station_kind && payload.station_kind !== M.PROMULGATED) {
       host.appendChild(T.el('p', 'detail-weak',
         'This is what the surviving book prints at this point. No act stands ' +
@@ -958,6 +1013,12 @@
     detail.hidden = false;
     detail.appendChild(T.el('h2', 'detail-title', nameOf(station)));
     detail.appendChild(facts(station));
+    const received = receptionsOf(station);
+    const receptionHost = received.length ? T.el('section', 'detail-section detail-receptions') : null;
+    if (receptionHost) {
+      renderReceptions(receptionHost, received);
+      detail.appendChild(receptionHost);
+    }
     const note = kindNote(M.kindOf(station, kindsStated));
     if (note) detail.appendChild(note);
     if ((station.via_unrepresented || []).length) {
@@ -975,9 +1036,8 @@
     if ((station.parents || []).length > 1) {
       const note = T.el('p', 'detail-weak');
       note.appendChild(document.createTextNode(
-        'Two descents converge here, and a merge asserts that a reception ' +
-        'happened. What this station shows below is what IT changed; what it ' +
-        'received stands at '));
+        'This station records ' + station.parents.length + ' parents. Its own ' +
+        'changes are shown below; the parent stations are '));
       station.parents.forEach(function (parent, index) {
         if (index) note.appendChild(document.createTextNode(index === station.parents.length - 1
           ? ' and ' : ', '));
@@ -994,6 +1054,9 @@
     detail.appendChild(changes);
     if (station.station_path) {
       fragment('structure/act-history/' + station.station_path).then(function (payload) {
+        if (receptionHost && (payload.edges || {}).receptions) {
+          renderReceptions(receptionHost, payload.edges.receptions);
+        }
         renderChanges(changes, payload, station);
       }).catch(function (error) {
         T.clear(changes);
@@ -1012,7 +1075,7 @@
       detail.appendChild(lazyBlock(
         words.unit_named
           ? 'Read the ' + plural(words.unit_named) + ' as they stood after this act'
-          : 'Read the missal as it stood after this act',
+          : 'Read the recorded units as they stood after this act',
         'structure/act-history/' + station.state_path,
         renderState));
     }
@@ -1209,8 +1272,9 @@
         'The last act both lines descend from is '));
       base.appendChild(stationLink(parted));
       base.appendChild(document.createTextNode(
-        '. Everything standing there is what the two lines held in common; ' +
-        'everything below it is what each did afterwards.'));
+        '. This is shared ancestry in the recorded graph. A reception does ' +
+        'not copy text between lines, so a shared ancestor alone does not ' +
+        'establish identical texts. The stations below show each line’s later record.'));
       card.appendChild(base);
       if (bases.length > 1) {
         card.appendChild(T.el('p', 'detail-weak',
@@ -1226,7 +1290,7 @@
       const at = byId.get(parted);
       if (at && at.state_path) {
         card.appendChild(lazyBlock(
-          'Read what both lines held in common',
+          'Read the recorded state at this shared ancestor',
           'structure/act-history/' + at.state_path,
           renderState));
       }
@@ -1259,6 +1323,22 @@
             : ' — this file says nothing about which')));
       legend.appendChild(item);
     });
+    const receptionCount = stations.reduce(function (count, station) {
+      return count + receptionsOf(station).length;
+    }, 0);
+    if (receptionCount) {
+      const item = T.el('span', 'legend-item legend-reception');
+      const mark = T.el('span', 'legend-mark');
+      mark.setAttribute('aria-hidden', 'true');
+      item.appendChild(mark);
+      item.appendChild(document.createTextNode(
+        receptionCount + ' documented reception' + (receptionCount === 1 ? '' : 's') +
+        ' — a hollow track enters a double-ring station; open it for the instrument and evidence'));
+      legend.appendChild(item);
+    }
+    legend.appendChild(T.el('span', 'legend-item',
+      'A crossing without a station marker asserts no connection. Parent links ' +
+      'follow the recorded evidence; order alone does not establish textual descent.'));
     const broken = stations.filter(function (station) {
       return (station.via_unrepresented || []).length;
     }).length;
