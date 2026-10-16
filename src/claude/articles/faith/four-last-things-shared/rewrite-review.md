@@ -120,3 +120,31 @@ The revision timestamp of all four is `2026-10-16T17:56:47Z`. Every build has se
 | IV | `4b977944fa7992cba1bd350bb71272786f6584093fc8d8fbba41fd03094411d8` | 29 | `bd9a02b8b0a1fa159b6027e1b7cc8307dcbf47e7937dd697c4fef8fc4bf3db1d` | `7190355dd2088826dd21993cfde704b0daeb6ba1117db1559d0baa448a5dc8e8` |
 
 The PDFs are built by the Pages workflow; the hashes above are those of the reviewed local build. The GPT publications are unchanged.
+
+## Verified publication
+
+Six commits reached `origin/main` by ordinary fast-forward, together with
+one ordinary merge of main's Claude Twenty-ninth Sunday publication. The
+tip is `449423861`. Every newly reachable object was reviewed before the push.
+
+On the pushed tree:
+
+- `make check-deployment-sources`, `make public-site` and
+  `tools/public-alpha verify --deployment-target github-pages` pass.
+- The release bindings are exact.
+- `make check` fails only on `check-examples`, as it does on main. Its 26
+  divergences are a strict subset of the 29 measured on main at
+  `c842e33ed`; none is new.
+
+[Pages run 38946472459](https://github.com/spincyc/triptych/actions/runs/38946472459)
+and repository-hygiene run 38946472309 succeeded. Fifteen live routes at
+`https://mystago.gy` return HTTP 200 and match the verified local site byte
+for byte:
+
+- the four web essays;
+- the four canonical PDFs and their four download aliases;
+- the Faith catalogue;
+- the document catalogue;
+- the publication manifest.
+
+All four live PDFs carry the accepted hashes above.

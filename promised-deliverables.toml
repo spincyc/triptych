@@ -4,7 +4,7 @@ schema_version = 1
 id = "claude-four-last-things-rewrite-2026-10-16"
 owner = "PROJECT-WORK.md"
 promise = "Rewrite the four Claude Four Last Things essays as unapologetically Catholic spiritual reading for the close of the liturgical year, with hell set out soberly through the Fathers, Doctors, saints and liturgy; correct the review's confirmed errors; promote the 30 September voice rule to the universal editorial standard; publish the reviewed result to main and verify the deployment, leaving GPT publications unchanged."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "claude-flt-cold-review"
@@ -45,8 +45,11 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-flt-publication"
   criterion = "The reviewed revision reaches origin/main through an ordinary push after the deployment gates pass. The automatic Pages workflow succeeds, and the affected live routes match the verified local build."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", "release/public-alpha.json"]
+  status = "pass"
+  evidence = ["src/claude/articles/faith/four-last-things-shared/rewrite-review.md", "PROJECT-WORK.md", "release/public-alpha.json"]
+  check = "contains"
+  path = "src/claude/articles/faith/four-last-things-shared/rewrite-review.md"
+  needle = "## Verified publication"
 
 [[deliverables]]
 id = "claude-pc-s55-three-documents-2026-10-16"

@@ -29,7 +29,12 @@ audit to a short graded appendix; promote the 30 September voice rule to the
 universal editorial standard; and publish to `main` after review, aiming for
 before All Saints. GPT publications are excluded.
 
-**State: rewritten, reviewed and installed locally. Publication to main is pending.**
+**State: complete. Published to main and verified live.** The commits
+reached `origin/main` at `449423861` by ordinary fast-forward, after an
+ordinary merge of main's Claude Twenty-ninth Sunday publication.
+[Pages run 38946472459](https://github.com/spincyc/triptych/actions/runs/38946472459)
+and repository hygiene succeeded. All fifteen affected live routes match the
+verified build byte for byte, and the four live PDFs carry the accepted hashes.
 
 The four essays are rewritten in place under one shared series format.
 `src/claude/articles/faith/four-last-things-shared/rewrite-review.md`
